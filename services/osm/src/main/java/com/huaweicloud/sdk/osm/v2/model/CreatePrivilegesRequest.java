@@ -40,7 +40,7 @@ public class CreatePrivilegesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAndDeletePrivilegeReq body = null;
+    private CreateAndDeletePrivilegeReq body;
 
     public CreatePrivilegesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -66,6 +66,8 @@ public class CreatePrivilegesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CreatePrivilegesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -88,6 +90,8 @@ public class CreatePrivilegesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CreatePrivilegesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -109,6 +113,8 @@ public class CreatePrivilegesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public CreatePrivilegesRequest withBody(CreateAndDeletePrivilegeReq body) {
         this.body = body;
@@ -136,6 +142,9 @@ public class CreatePrivilegesRequest  {
     public void setBody(CreateAndDeletePrivilegeReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

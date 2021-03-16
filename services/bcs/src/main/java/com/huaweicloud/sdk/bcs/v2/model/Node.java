@@ -51,6 +51,8 @@ public class Node  {
         this.ipPort = ipPort;
     }
 
+    
+
     public Node withChannels(List<String> channels) {
         this.channels = channels;
         return this;
@@ -58,9 +60,6 @@ public class Node  {
 
     
     public Node addChannelsItem(String channelsItem) {
-        if (this.channels == null) {
-            this.channels = new ArrayList<>();
-        }
         this.channels.add(channelsItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class Node  {
     public void setChannels(List<String> channels) {
         this.channels = channels;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

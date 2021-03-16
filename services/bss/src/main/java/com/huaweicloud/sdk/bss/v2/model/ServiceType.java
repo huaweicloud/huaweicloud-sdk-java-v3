@@ -55,6 +55,8 @@ public class ServiceType  {
         this.serviceTypeName = serviceTypeName;
     }
 
+    
+
     public ServiceType withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -75,6 +77,8 @@ public class ServiceType  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    
+
     public ServiceType withAbbreviation(String abbreviation) {
         this.abbreviation = abbreviation;
         return this;
@@ -94,6 +98,9 @@ public class ServiceType  {
     public void setAbbreviation(String abbreviation) {
         this.abbreviation = abbreviation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

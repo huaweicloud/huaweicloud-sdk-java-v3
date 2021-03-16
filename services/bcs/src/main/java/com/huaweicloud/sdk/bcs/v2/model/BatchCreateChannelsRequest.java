@@ -28,7 +28,7 @@ public class BatchCreateChannelsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreateChannelsRequestBody body = null;
+    private BatchCreateChannelsRequestBody body;
 
     public BatchCreateChannelsRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
@@ -49,6 +49,8 @@ public class BatchCreateChannelsRequest  {
     public void setBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
     }
+
+    
 
     public BatchCreateChannelsRequest withBody(BatchCreateChannelsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchCreateChannelsRequest  {
     public void setBody(BatchCreateChannelsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

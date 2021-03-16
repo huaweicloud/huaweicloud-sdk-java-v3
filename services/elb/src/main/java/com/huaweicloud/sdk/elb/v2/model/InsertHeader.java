@@ -51,6 +51,8 @@ public class InsertHeader  {
         this.xForwardedELBIP = xForwardedELBIP;
     }
 
+    
+
     public InsertHeader withXForwardedHost(Boolean xForwardedHost) {
         this.xForwardedHost = xForwardedHost;
         return this;
@@ -72,6 +74,9 @@ public class InsertHeader  {
     public void setXForwardedHost(Boolean xForwardedHost) {
         this.xForwardedHost = xForwardedHost;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

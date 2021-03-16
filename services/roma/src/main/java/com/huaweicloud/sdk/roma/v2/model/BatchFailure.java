@@ -61,6 +61,8 @@ public class BatchFailure  {
         this.apiId = apiId;
     }
 
+    
+
     public BatchFailure withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -80,6 +82,8 @@ public class BatchFailure  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
 
     public BatchFailure withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -101,6 +105,8 @@ public class BatchFailure  {
         this.errorCode = errorCode;
     }
 
+    
+
     public BatchFailure withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -120,6 +126,9 @@ public class BatchFailure  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

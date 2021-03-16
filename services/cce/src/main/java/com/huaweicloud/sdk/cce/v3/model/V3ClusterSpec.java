@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cce.v3.model.Authentication;
 import com.huaweicloud.sdk.cce.v3.model.ContainerNetwork;
-import com.huaweicloud.sdk.cce.v3.model.ENINetwork;
+import com.huaweicloud.sdk.cce.v3.model.EniNetwork;
 import com.huaweicloud.sdk.cce.v3.model.HostNetwork;
 import com.huaweicloud.sdk.cce.v3.model.MasterSpec;
 import com.huaweicloud.sdk.cce.v3.model.ResourceTag;
@@ -35,7 +35,7 @@ public class V3ClusterSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authentication")
     
-    private Authentication authentication = null;
+    private Authentication authentication;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,7 +47,7 @@ public class V3ClusterSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billingMode")
     
-    private Integer billingMode = 0;
+    private Integer billingMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,7 +59,7 @@ public class V3ClusterSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="containerNetwork")
     
-    private ContainerNetwork containerNetwork = null;
+    private ContainerNetwork containerNetwork;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,7 +71,7 @@ public class V3ClusterSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eniNetwork")
     
-    private ENINetwork eniNetwork = null;
+    private EniNetwork eniNetwork;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,7 +89,7 @@ public class V3ClusterSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostNetwork")
     
-    private HostNetwork hostNetwork = null;
+    private HostNetwork hostNetwork;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -322,6 +322,8 @@ public class V3ClusterSpec  {
         this.authentication = authentication;
     }
 
+    
+
     public V3ClusterSpec withAz(String az) {
         this.az = az;
         return this;
@@ -341,6 +343,8 @@ public class V3ClusterSpec  {
     public void setAz(String az) {
         this.az = az;
     }
+
+    
 
     public V3ClusterSpec withBillingMode(Integer billingMode) {
         this.billingMode = billingMode;
@@ -362,6 +366,8 @@ public class V3ClusterSpec  {
         this.billingMode = billingMode;
     }
 
+    
+
     public V3ClusterSpec withClusterTags(List<ResourceTag> clusterTags) {
         this.clusterTags = clusterTags;
         return this;
@@ -369,9 +375,6 @@ public class V3ClusterSpec  {
 
     
     public V3ClusterSpec addClusterTagsItem(ResourceTag clusterTagsItem) {
-        if (this.clusterTags == null) {
-            this.clusterTags = new ArrayList<>();
-        }
         this.clusterTags.add(clusterTagsItem);
         return this;
     }
@@ -395,6 +398,8 @@ public class V3ClusterSpec  {
     public void setClusterTags(List<ResourceTag> clusterTags) {
         this.clusterTags = clusterTags;
     }
+
+    
 
     public V3ClusterSpec withContainerNetwork(ContainerNetwork containerNetwork) {
         this.containerNetwork = containerNetwork;
@@ -423,6 +428,8 @@ public class V3ClusterSpec  {
         this.containerNetwork = containerNetwork;
     }
 
+    
+
     public V3ClusterSpec withDescription(String description) {
         this.description = description;
         return this;
@@ -443,14 +450,16 @@ public class V3ClusterSpec  {
         this.description = description;
     }
 
-    public V3ClusterSpec withEniNetwork(ENINetwork eniNetwork) {
+    
+
+    public V3ClusterSpec withEniNetwork(EniNetwork eniNetwork) {
         this.eniNetwork = eniNetwork;
         return this;
     }
 
-    public V3ClusterSpec withEniNetwork(Consumer<ENINetwork> eniNetworkSetter) {
+    public V3ClusterSpec withEniNetwork(Consumer<EniNetwork> eniNetworkSetter) {
         if(this.eniNetwork == null ){
-            this.eniNetwork = new ENINetwork();
+            this.eniNetwork = new EniNetwork();
             eniNetworkSetter.accept(this.eniNetwork);
         }
         
@@ -462,13 +471,15 @@ public class V3ClusterSpec  {
      * Get eniNetwork
      * @return eniNetwork
      */
-    public ENINetwork getEniNetwork() {
+    public EniNetwork getEniNetwork() {
         return eniNetwork;
     }
 
-    public void setEniNetwork(ENINetwork eniNetwork) {
+    public void setEniNetwork(EniNetwork eniNetwork) {
         this.eniNetwork = eniNetwork;
     }
+
+    
 
     public V3ClusterSpec withExtendParam(Map<String, String> extendParam) {
         this.extendParam = extendParam;
@@ -478,9 +489,6 @@ public class V3ClusterSpec  {
     
 
     public V3ClusterSpec putExtendParamItem(String key, String extendParamItem) {
-         if (this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-         }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
@@ -504,6 +512,8 @@ public class V3ClusterSpec  {
         this.extendParam = extendParam;
     }
 
+    
+
     public V3ClusterSpec withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -523,6 +533,8 @@ public class V3ClusterSpec  {
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }
+
+    
 
     public V3ClusterSpec withHostNetwork(HostNetwork hostNetwork) {
         this.hostNetwork = hostNetwork;
@@ -551,6 +563,8 @@ public class V3ClusterSpec  {
         this.hostNetwork = hostNetwork;
     }
 
+    
+
     public V3ClusterSpec withIpv6enable(Boolean ipv6enable) {
         this.ipv6enable = ipv6enable;
         return this;
@@ -570,6 +584,8 @@ public class V3ClusterSpec  {
     public void setIpv6enable(Boolean ipv6enable) {
         this.ipv6enable = ipv6enable;
     }
+
+    
 
     public V3ClusterSpec withKubeProxyMode(KubeProxyModeEnum kubeProxyMode) {
         this.kubeProxyMode = kubeProxyMode;
@@ -591,6 +607,8 @@ public class V3ClusterSpec  {
         this.kubeProxyMode = kubeProxyMode;
     }
 
+    
+
     public V3ClusterSpec withKubernetesSvcIpRange(String kubernetesSvcIpRange) {
         this.kubernetesSvcIpRange = kubernetesSvcIpRange;
         return this;
@@ -611,6 +629,8 @@ public class V3ClusterSpec  {
         this.kubernetesSvcIpRange = kubernetesSvcIpRange;
     }
 
+    
+
     public V3ClusterSpec withMasters(List<MasterSpec> masters) {
         this.masters = masters;
         return this;
@@ -618,9 +638,6 @@ public class V3ClusterSpec  {
 
     
     public V3ClusterSpec addMastersItem(MasterSpec mastersItem) {
-        if (this.masters == null) {
-            this.masters = new ArrayList<>();
-        }
         this.masters.add(mastersItem);
         return this;
     }
@@ -645,6 +662,8 @@ public class V3ClusterSpec  {
         this.masters = masters;
     }
 
+    
+
     public V3ClusterSpec withSupportIstio(Boolean supportIstio) {
         this.supportIstio = supportIstio;
         return this;
@@ -664,6 +683,8 @@ public class V3ClusterSpec  {
     public void setSupportIstio(Boolean supportIstio) {
         this.supportIstio = supportIstio;
     }
+
+    
 
     public V3ClusterSpec withType(TypeEnum type) {
         this.type = type;
@@ -685,6 +706,8 @@ public class V3ClusterSpec  {
         this.type = type;
     }
 
+    
+
     public V3ClusterSpec withVersion(String version) {
         this.version = version;
         return this;
@@ -704,6 +727,9 @@ public class V3ClusterSpec  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class CheckVerifyCodesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VerifyVerifyCodeV2Req body = null;
+    private VerifyVerifyCodeV2Req body;
 
     public CheckVerifyCodesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -66,6 +66,8 @@ public class CheckVerifyCodesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CheckVerifyCodesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -88,6 +90,8 @@ public class CheckVerifyCodesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CheckVerifyCodesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -109,6 +113,8 @@ public class CheckVerifyCodesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public CheckVerifyCodesRequest withBody(VerifyVerifyCodeV2Req body) {
         this.body = body;
@@ -136,6 +142,9 @@ public class CheckVerifyCodesRequest  {
     public void setBody(VerifyVerifyCodeV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

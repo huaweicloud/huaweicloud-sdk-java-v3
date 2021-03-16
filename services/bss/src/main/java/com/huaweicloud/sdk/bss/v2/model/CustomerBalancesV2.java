@@ -67,6 +67,8 @@ public class CustomerBalancesV2  {
         this.customerId = customerId;
     }
 
+    
+
     public CustomerBalancesV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
@@ -86,6 +88,8 @@ public class CustomerBalancesV2  {
     public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
+
+    
 
     public CustomerBalancesV2 withAmount(Double amount) {
         this.amount = amount;
@@ -107,6 +111,8 @@ public class CustomerBalancesV2  {
         this.amount = amount;
     }
 
+    
+
     public CustomerBalancesV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -127,6 +133,8 @@ public class CustomerBalancesV2  {
         this.currency = currency;
     }
 
+    
+
     public CustomerBalancesV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -146,6 +154,9 @@ public class CustomerBalancesV2  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

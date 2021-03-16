@@ -24,7 +24,7 @@ public class QueryCustomersBalancesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_infos")
     
-    private List<CustomerInfoV2> customerInfos = new ArrayList<>();
+    private List<CustomerInfoV2> customerInfos = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class QueryCustomersBalancesReq  {
         this.customerInfos = customerInfos;
     }
 
+    
+
     public QueryCustomersBalancesReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -82,6 +84,9 @@ public class QueryCustomersBalancesReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

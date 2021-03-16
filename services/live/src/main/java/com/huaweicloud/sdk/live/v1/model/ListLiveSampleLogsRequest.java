@@ -28,13 +28,13 @@ public class ListLiveSampleLogsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime = null;
+    private OffsetDateTime startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private OffsetDateTime endTime;
 
     public ListLiveSampleLogsRequest withPlayDomain(String playDomain) {
         this.playDomain = playDomain;
@@ -56,6 +56,8 @@ public class ListLiveSampleLogsRequest  {
         this.playDomain = playDomain;
     }
 
+    
+
     public ListLiveSampleLogsRequest withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
@@ -76,6 +78,8 @@ public class ListLiveSampleLogsRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListLiveSampleLogsRequest withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
         return this;
@@ -95,6 +99,9 @@ public class ListLiveSampleLogsRequest  {
     public void setEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

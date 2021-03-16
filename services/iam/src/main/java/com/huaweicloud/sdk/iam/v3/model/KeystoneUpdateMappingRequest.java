@@ -28,7 +28,7 @@ public class KeystoneUpdateMappingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneUpdateMappingRequestBody body = null;
+    private KeystoneUpdateMappingRequestBody body;
 
     public KeystoneUpdateMappingRequest withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class KeystoneUpdateMappingRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public KeystoneUpdateMappingRequest withBody(KeystoneUpdateMappingRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class KeystoneUpdateMappingRequest  {
     public void setBody(KeystoneUpdateMappingRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

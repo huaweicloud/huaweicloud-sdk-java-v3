@@ -32,13 +32,13 @@ public class TagResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    private List<Vault> resourceDetail = new ArrayList<>();
+    private List<Vault> resourceDetail = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Tag> tags = new ArrayList<>();
+    private List<Tag> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,7 +50,7 @@ public class TagResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
-    private List<SysTag> sysTags = new ArrayList<>();
+    private List<SysTag> sysTags = null;
     
     public TagResource withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -71,6 +71,8 @@ public class TagResource  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public TagResource withResourceDetail(List<Vault> resourceDetail) {
         this.resourceDetail = resourceDetail;
@@ -103,6 +105,8 @@ public class TagResource  {
         this.resourceDetail = resourceDetail;
     }
 
+    
+
     public TagResource withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -134,6 +138,8 @@ public class TagResource  {
         this.tags = tags;
     }
 
+    
+
     public TagResource withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -153,6 +159,8 @@ public class TagResource  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public TagResource withSysTags(List<SysTag> sysTags) {
         this.sysTags = sysTags;
@@ -184,6 +192,9 @@ public class TagResource  {
     public void setSysTags(List<SysTag> sysTags) {
         this.sysTags = sysTags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

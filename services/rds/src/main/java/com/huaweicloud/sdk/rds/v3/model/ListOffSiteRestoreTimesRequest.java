@@ -57,6 +57,8 @@ public class ListOffSiteRestoreTimesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListOffSiteRestoreTimesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class ListOffSiteRestoreTimesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListOffSiteRestoreTimesRequest withDate(String date) {
         this.date = date;
         return this;
@@ -96,6 +100,9 @@ public class ListOffSiteRestoreTimesRequest  {
     public void setDate(String date) {
         this.date = date;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

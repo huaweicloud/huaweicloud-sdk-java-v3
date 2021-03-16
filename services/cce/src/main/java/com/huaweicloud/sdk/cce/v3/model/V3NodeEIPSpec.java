@@ -22,7 +22,7 @@ public class V3NodeEIPSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private V3NodeBandwidth bandwidth = null;
+    private V3NodeBandwidth bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class V3NodeEIPSpec  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public V3NodeEIPSpec withIptype(String iptype) {
         this.iptype = iptype;
         return this;
@@ -76,6 +78,9 @@ public class V3NodeEIPSpec  {
     public void setIptype(String iptype) {
         this.iptype = iptype;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

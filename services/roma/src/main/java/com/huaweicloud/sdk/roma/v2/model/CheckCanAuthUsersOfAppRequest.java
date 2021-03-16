@@ -55,6 +55,8 @@ public class CheckCanAuthUsersOfAppRequest  {
         this.appId = appId;
     }
 
+    
+
     public CheckCanAuthUsersOfAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class CheckCanAuthUsersOfAppRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CheckCanAuthUsersOfAppRequest withFilter(String filter) {
         this.filter = filter;
         return this;
@@ -94,6 +98,9 @@ public class CheckCanAuthUsersOfAppRequest  {
     public void setFilter(String filter) {
         this.filter = filter;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

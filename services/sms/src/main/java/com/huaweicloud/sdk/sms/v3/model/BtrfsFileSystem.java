@@ -114,7 +114,7 @@ public class BtrfsFileSystem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subvolumn")
     
-    private List<BtrfsSubvolumn> subvolumn = new ArrayList<>();
+    private List<BtrfsSubvolumn> subvolumn = null;
     
     public BtrfsFileSystem withName(String name) {
         this.name = name;
@@ -136,6 +136,8 @@ public class BtrfsFileSystem  {
         this.name = name;
     }
 
+    
+
     public BtrfsFileSystem withLabel(String label) {
         this.label = label;
         return this;
@@ -155,6 +157,8 @@ public class BtrfsFileSystem  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
 
     public BtrfsFileSystem withUuid(String uuid) {
         this.uuid = uuid;
@@ -176,6 +180,8 @@ public class BtrfsFileSystem  {
         this.uuid = uuid;
     }
 
+    
+
     public BtrfsFileSystem withDevice(String device) {
         this.device = device;
         return this;
@@ -195,6 +201,8 @@ public class BtrfsFileSystem  {
     public void setDevice(String device) {
         this.device = device;
     }
+
+    
 
     public BtrfsFileSystem withSize(Long size) {
         this.size = size;
@@ -218,6 +226,8 @@ public class BtrfsFileSystem  {
         this.size = size;
     }
 
+    
+
     public BtrfsFileSystem withNodesize(Long nodesize) {
         this.nodesize = nodesize;
         return this;
@@ -239,6 +249,8 @@ public class BtrfsFileSystem  {
     public void setNodesize(Long nodesize) {
         this.nodesize = nodesize;
     }
+
+    
 
     public BtrfsFileSystem withSectorsize(Integer sectorsize) {
         this.sectorsize = sectorsize;
@@ -262,6 +274,8 @@ public class BtrfsFileSystem  {
         this.sectorsize = sectorsize;
     }
 
+    
+
     public BtrfsFileSystem withDataProfile(String dataProfile) {
         this.dataProfile = dataProfile;
         return this;
@@ -281,6 +295,8 @@ public class BtrfsFileSystem  {
     public void setDataProfile(String dataProfile) {
         this.dataProfile = dataProfile;
     }
+
+    
 
     public BtrfsFileSystem withSystemProfile(String systemProfile) {
         this.systemProfile = systemProfile;
@@ -302,6 +318,8 @@ public class BtrfsFileSystem  {
         this.systemProfile = systemProfile;
     }
 
+    
+
     public BtrfsFileSystem withMetadataProfile(String metadataProfile) {
         this.metadataProfile = metadataProfile;
         return this;
@@ -322,6 +340,8 @@ public class BtrfsFileSystem  {
         this.metadataProfile = metadataProfile;
     }
 
+    
+
     public BtrfsFileSystem withGlobalReserve1(String globalReserve1) {
         this.globalReserve1 = globalReserve1;
         return this;
@@ -341,6 +361,8 @@ public class BtrfsFileSystem  {
     public void setGlobalReserve1(String globalReserve1) {
         this.globalReserve1 = globalReserve1;
     }
+
+    
 
     public BtrfsFileSystem withGVolUsedSize(Long gVolUsedSize) {
         this.gVolUsedSize = gVolUsedSize;
@@ -366,6 +388,8 @@ public class BtrfsFileSystem  {
         this.gVolUsedSize = gVolUsedSize;
     }
 
+    
+
     public BtrfsFileSystem withDefaultSubvolid(String defaultSubvolid) {
         this.defaultSubvolid = defaultSubvolid;
         return this;
@@ -385,6 +409,8 @@ public class BtrfsFileSystem  {
     public void setDefaultSubvolid(String defaultSubvolid) {
         this.defaultSubvolid = defaultSubvolid;
     }
+
+    
 
     public BtrfsFileSystem withDefaultSubvolName(String defaultSubvolName) {
         this.defaultSubvolName = defaultSubvolName;
@@ -406,6 +432,8 @@ public class BtrfsFileSystem  {
         this.defaultSubvolName = defaultSubvolName;
     }
 
+    
+
     public BtrfsFileSystem withDefaultSubvolMountpath(String defaultSubvolMountpath) {
         this.defaultSubvolMountpath = defaultSubvolMountpath;
         return this;
@@ -425,6 +453,8 @@ public class BtrfsFileSystem  {
     public void setDefaultSubvolMountpath(String defaultSubvolMountpath) {
         this.defaultSubvolMountpath = defaultSubvolMountpath;
     }
+
+    
 
     public BtrfsFileSystem withSubvolumn(List<BtrfsSubvolumn> subvolumn) {
         this.subvolumn = subvolumn;
@@ -456,6 +486,9 @@ public class BtrfsFileSystem  {
     public void setSubvolumn(List<BtrfsSubvolumn> subvolumn) {
         this.subvolumn = subvolumn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

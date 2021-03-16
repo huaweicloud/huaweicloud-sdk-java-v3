@@ -42,6 +42,9 @@ public class NeutronDeleteFirewallPolicyRequest  {
     public void setFirewallPolicyId(String firewallPolicyId) {
         this.firewallPolicyId = firewallPolicyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

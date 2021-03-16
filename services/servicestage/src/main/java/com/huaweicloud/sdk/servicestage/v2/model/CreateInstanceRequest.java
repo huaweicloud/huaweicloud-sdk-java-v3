@@ -34,7 +34,7 @@ public class CreateInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceCreate body = null;
+    private InstanceCreate body;
 
     public CreateInstanceRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -56,6 +56,8 @@ public class CreateInstanceRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public CreateInstanceRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -75,6 +77,8 @@ public class CreateInstanceRequest  {
     public void setComponentId(String componentId) {
         this.componentId = componentId;
     }
+
+    
 
     public CreateInstanceRequest withBody(InstanceCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateInstanceRequest  {
     public void setBody(InstanceCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

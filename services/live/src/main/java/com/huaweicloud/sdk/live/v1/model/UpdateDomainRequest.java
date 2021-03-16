@@ -22,7 +22,7 @@ public class UpdateDomainRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LiveDomainModifyReq body = null;
+    private LiveDomainModifyReq body;
 
     public UpdateDomainRequest withBody(LiveDomainModifyReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateDomainRequest  {
     public void setBody(LiveDomainModifyReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,6 +57,8 @@ public class OpExtendInfoCommon  {
         this.progress = progress;
     }
 
+    
+
     public OpExtendInfoCommon withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -77,6 +79,8 @@ public class OpExtendInfoCommon  {
         this.requestId = requestId;
     }
 
+    
+
     public OpExtendInfoCommon withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -96,6 +100,9 @@ public class OpExtendInfoCommon  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

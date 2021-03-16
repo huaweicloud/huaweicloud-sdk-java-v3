@@ -28,7 +28,7 @@ public class BatchCreateOrDeleteTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateOrDeleteInstanceTags body = null;
+    private CreateOrDeleteInstanceTags body;
 
     public BatchCreateOrDeleteTagsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class BatchCreateOrDeleteTagsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BatchCreateOrDeleteTagsRequest withBody(CreateOrDeleteInstanceTags body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchCreateOrDeleteTagsRequest  {
     public void setBody(CreateOrDeleteInstanceTags body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

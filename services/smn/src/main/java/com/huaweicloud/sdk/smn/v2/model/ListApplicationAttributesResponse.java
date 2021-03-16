@@ -36,7 +36,7 @@ public class ListApplicationAttributesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    private ListApplicationAttributesResponseBodyAttributes attributes = null;
+    private ListApplicationAttributesResponseBodyAttributes attributes;
 
     public ListApplicationAttributesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -58,6 +58,8 @@ public class ListApplicationAttributesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListApplicationAttributesResponse withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
@@ -77,6 +79,8 @@ public class ListApplicationAttributesResponse extends SdkResponse {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
 
     public ListApplicationAttributesResponse withAttributes(ListApplicationAttributesResponseBodyAttributes attributes) {
         this.attributes = attributes;
@@ -104,6 +108,9 @@ public class ListApplicationAttributesResponse extends SdkResponse {
     public void setAttributes(ListApplicationAttributesResponseBodyAttributes attributes) {
         this.attributes = attributes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

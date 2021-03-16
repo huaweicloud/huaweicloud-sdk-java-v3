@@ -41,9 +41,6 @@ public class ListBareMetalServersResponse extends SdkResponse {
 
     
     public ListBareMetalServersResponse addServersItem(ServerDetails serversItem) {
-        if (this.servers == null) {
-            this.servers = new ArrayList<>();
-        }
         this.servers.add(serversItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListBareMetalServersResponse extends SdkResponse {
         this.servers = servers;
     }
 
+    
+
     public ListBareMetalServersResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class ListBareMetalServersResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

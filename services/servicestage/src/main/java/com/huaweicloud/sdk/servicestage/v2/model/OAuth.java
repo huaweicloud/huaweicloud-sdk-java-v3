@@ -55,6 +55,8 @@ public class OAuth  {
         this.name = name;
     }
 
+    
+
     public OAuth withCode(String code) {
         this.code = code;
         return this;
@@ -75,6 +77,8 @@ public class OAuth  {
         this.code = code;
     }
 
+    
+
     public OAuth withState(String state) {
         this.state = state;
         return this;
@@ -94,6 +98,9 @@ public class OAuth  {
     public void setState(String state) {
         this.state = state;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

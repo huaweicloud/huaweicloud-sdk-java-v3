@@ -61,6 +61,8 @@ public class CreateDeviceGroupRequestBody  {
         this.parentId = parentId;
     }
 
+    
+
     public CreateDeviceGroupRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class CreateDeviceGroupRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateDeviceGroupRequestBody withDescription(String description) {
         this.description = description;
@@ -101,6 +105,8 @@ public class CreateDeviceGroupRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateDeviceGroupRequestBody withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -120,6 +126,9 @@ public class CreateDeviceGroupRequestBody  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

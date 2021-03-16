@@ -64,7 +64,7 @@ public class ListPtrRecordsFloatingResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class ListPtrRecordsFloatingResp  {
         this.id = id;
     }
 
+    
+
     public ListPtrRecordsFloatingResp withPtrdname(String ptrdname) {
         this.ptrdname = ptrdname;
         return this;
@@ -111,6 +113,8 @@ public class ListPtrRecordsFloatingResp  {
     public void setPtrdname(String ptrdname) {
         this.ptrdname = ptrdname;
     }
+
+    
 
     public ListPtrRecordsFloatingResp withDescription(String description) {
         this.description = description;
@@ -132,6 +136,8 @@ public class ListPtrRecordsFloatingResp  {
         this.description = description;
     }
 
+    
+
     public ListPtrRecordsFloatingResp withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -151,6 +157,8 @@ public class ListPtrRecordsFloatingResp  {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public ListPtrRecordsFloatingResp withAddress(String address) {
         this.address = address;
@@ -172,6 +180,8 @@ public class ListPtrRecordsFloatingResp  {
         this.address = address;
     }
 
+    
+
     public ListPtrRecordsFloatingResp withStatus(String status) {
         this.status = status;
         return this;
@@ -192,6 +202,8 @@ public class ListPtrRecordsFloatingResp  {
         this.status = status;
     }
 
+    
+
     public ListPtrRecordsFloatingResp withAction(String action) {
         this.action = action;
         return this;
@@ -211,6 +223,8 @@ public class ListPtrRecordsFloatingResp  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
 
     public ListPtrRecordsFloatingResp withLinks(PageLink links) {
         this.links = links;
@@ -239,6 +253,8 @@ public class ListPtrRecordsFloatingResp  {
         this.links = links;
     }
 
+    
+
     public ListPtrRecordsFloatingResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -258,6 +274,9 @@ public class ListPtrRecordsFloatingResp  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

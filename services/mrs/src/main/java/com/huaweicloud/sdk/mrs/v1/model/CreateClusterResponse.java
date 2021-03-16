@@ -57,6 +57,8 @@ public class CreateClusterResponse extends SdkResponse {
         this.result = result;
     }
 
+    
+
     public CreateClusterResponse withMsg(String msg) {
         this.msg = msg;
         return this;
@@ -77,6 +79,8 @@ public class CreateClusterResponse extends SdkResponse {
         this.msg = msg;
     }
 
+    
+
     public CreateClusterResponse withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -96,6 +100,9 @@ public class CreateClusterResponse extends SdkResponse {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

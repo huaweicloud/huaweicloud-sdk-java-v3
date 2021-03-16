@@ -42,6 +42,9 @@ public class UpdateDbPortRequest  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

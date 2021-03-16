@@ -51,6 +51,8 @@ public class ShowCertKeyResponse extends SdkResponse {
         this.cert = cert;
     }
 
+    
+
     public ShowCertKeyResponse withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -70,6 +72,9 @@ public class ShowCertKeyResponse extends SdkResponse {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

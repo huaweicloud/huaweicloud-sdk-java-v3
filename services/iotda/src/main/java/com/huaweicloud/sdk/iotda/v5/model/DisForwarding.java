@@ -61,6 +61,8 @@ public class DisForwarding  {
         this.regionName = regionName;
     }
 
+    
+
     public DisForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -80,6 +82,8 @@ public class DisForwarding  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public DisForwarding withStreamName(String streamName) {
         this.streamName = streamName;
@@ -101,6 +105,8 @@ public class DisForwarding  {
         this.streamName = streamName;
     }
 
+    
+
     public DisForwarding withStreamId(String streamId) {
         this.streamId = streamId;
         return this;
@@ -120,6 +126,9 @@ public class DisForwarding  {
     public void setStreamId(String streamId) {
         this.streamId = streamId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

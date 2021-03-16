@@ -44,6 +44,9 @@ public class ListNamespacesRequest  {
     public void setXRepoAuth(String xRepoAuth) {
         this.xRepoAuth = xRepoAuth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

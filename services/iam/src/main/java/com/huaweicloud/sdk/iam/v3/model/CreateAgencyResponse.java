@@ -24,7 +24,7 @@ public class CreateAgencyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency")
     
-    private AgencyResult agency = null;
+    private AgencyResult agency;
 
     public CreateAgencyResponse withAgency(AgencyResult agency) {
         this.agency = agency;
@@ -52,6 +52,9 @@ public class CreateAgencyResponse extends SdkResponse {
     public void setAgency(AgencyResult agency) {
         this.agency = agency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

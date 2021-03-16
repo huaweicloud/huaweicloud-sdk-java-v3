@@ -28,7 +28,7 @@ public class CheckPasswordRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CheckPasswordRequestBody body = null;
+    private CheckPasswordRequestBody body;
 
     public CheckPasswordRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CheckPasswordRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CheckPasswordRequest withBody(CheckPasswordRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CheckPasswordRequest  {
     public void setBody(CheckPasswordRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

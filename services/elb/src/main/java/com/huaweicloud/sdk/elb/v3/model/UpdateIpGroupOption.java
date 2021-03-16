@@ -58,6 +58,8 @@ public class UpdateIpGroupOption  {
         this.description = description;
     }
 
+    
+
     public UpdateIpGroupOption withName(String name) {
         this.name = name;
         return this;
@@ -78,6 +80,8 @@ public class UpdateIpGroupOption  {
         this.name = name;
     }
 
+    
+
     public UpdateIpGroupOption withIpList(List<UpadateIpGroupIpOption> ipList) {
         this.ipList = ipList;
         return this;
@@ -85,9 +89,6 @@ public class UpdateIpGroupOption  {
 
     
     public UpdateIpGroupOption addIpListItem(UpadateIpGroupIpOption ipListItem) {
-        if (this.ipList == null) {
-            this.ipList = new ArrayList<>();
-        }
         this.ipList.add(ipListItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class UpdateIpGroupOption  {
     public void setIpList(List<UpadateIpGroupIpOption> ipList) {
         this.ipList = ipList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -133,6 +133,8 @@ public class DataBucket  {
         this.dataBucketName = dataBucketName;
     }
 
+    
+
     public DataBucket withDataEvent(List<DataEventEnum> dataEvent) {
         this.dataEvent = dataEvent;
         return this;
@@ -140,9 +142,6 @@ public class DataBucket  {
 
     
     public DataBucket addDataEventItem(DataEventEnum dataEventItem) {
-        if (this.dataEvent == null) {
-            this.dataEvent = new ArrayList<>();
-        }
         this.dataEvent.add(dataEventItem);
         return this;
     }
@@ -166,6 +165,9 @@ public class DataBucket  {
     public void setDataEvent(List<DataEventEnum> dataEvent) {
         this.dataEvent = dataEvent;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

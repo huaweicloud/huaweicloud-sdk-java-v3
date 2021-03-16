@@ -109,6 +109,8 @@ public class AddJobs  {
         this.jobType = jobType;
     }
 
+    
+
     public AddJobs withJobName(String jobName) {
         this.jobName = jobName;
         return this;
@@ -128,6 +130,8 @@ public class AddJobs  {
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
+
+    
 
     public AddJobs withJarPath(String jarPath) {
         this.jarPath = jarPath;
@@ -149,6 +153,8 @@ public class AddJobs  {
         this.jarPath = jarPath;
     }
 
+    
+
     public AddJobs withArguments(String arguments) {
         this.arguments = arguments;
         return this;
@@ -168,6 +174,8 @@ public class AddJobs  {
     public void setArguments(String arguments) {
         this.arguments = arguments;
     }
+
+    
 
     public AddJobs withInput(String input) {
         this.input = input;
@@ -189,6 +197,8 @@ public class AddJobs  {
         this.input = input;
     }
 
+    
+
     public AddJobs withOutput(String output) {
         this.output = output;
         return this;
@@ -208,6 +218,8 @@ public class AddJobs  {
     public void setOutput(String output) {
         this.output = output;
     }
+
+    
 
     public AddJobs withJobLog(String jobLog) {
         this.jobLog = jobLog;
@@ -229,6 +241,8 @@ public class AddJobs  {
         this.jobLog = jobLog;
     }
 
+    
+
     public AddJobs withHiveScriptPath(String hiveScriptPath) {
         this.hiveScriptPath = hiveScriptPath;
         return this;
@@ -248,6 +262,8 @@ public class AddJobs  {
     public void setHiveScriptPath(String hiveScriptPath) {
         this.hiveScriptPath = hiveScriptPath;
     }
+
+    
 
     public AddJobs withHql(String hql) {
         this.hql = hql;
@@ -269,6 +285,8 @@ public class AddJobs  {
         this.hql = hql;
     }
 
+    
+
     public AddJobs withShutdownCluster(Boolean shutdownCluster) {
         this.shutdownCluster = shutdownCluster;
         return this;
@@ -288,6 +306,8 @@ public class AddJobs  {
     public void setShutdownCluster(Boolean shutdownCluster) {
         this.shutdownCluster = shutdownCluster;
     }
+
+    
 
     public AddJobs withSubmitJobOnceClusterRun(Boolean submitJobOnceClusterRun) {
         this.submitJobOnceClusterRun = submitJobOnceClusterRun;
@@ -309,6 +329,8 @@ public class AddJobs  {
         this.submitJobOnceClusterRun = submitJobOnceClusterRun;
     }
 
+    
+
     public AddJobs withFileAction(String fileAction) {
         this.fileAction = fileAction;
         return this;
@@ -328,6 +350,9 @@ public class AddJobs  {
     public void setFileAction(String fileAction) {
         this.fileAction = fileAction;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

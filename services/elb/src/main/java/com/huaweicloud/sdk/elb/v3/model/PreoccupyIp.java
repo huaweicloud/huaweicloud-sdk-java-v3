@@ -42,6 +42,9 @@ public class PreoccupyIp  {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

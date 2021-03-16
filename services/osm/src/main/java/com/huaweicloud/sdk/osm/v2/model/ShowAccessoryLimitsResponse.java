@@ -24,7 +24,7 @@ public class ShowAccessoryLimitsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="accessory_limit")
     
-    private AccessoryLimitVo accessoryLimit = null;
+    private AccessoryLimitVo accessoryLimit;
 
     public ShowAccessoryLimitsResponse withAccessoryLimit(AccessoryLimitVo accessoryLimit) {
         this.accessoryLimit = accessoryLimit;
@@ -52,6 +52,9 @@ public class ShowAccessoryLimitsResponse extends SdkResponse {
     public void setAccessoryLimit(AccessoryLimitVo accessoryLimit) {
         this.accessoryLimit = accessoryLimit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

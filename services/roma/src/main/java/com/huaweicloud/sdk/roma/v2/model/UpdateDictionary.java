@@ -67,6 +67,8 @@ public class UpdateDictionary  {
         this.name = name;
     }
 
+    
+
     public UpdateDictionary withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -86,6 +88,8 @@ public class UpdateDictionary  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public UpdateDictionary withOrder(Integer order) {
         this.order = order;
@@ -109,6 +113,8 @@ public class UpdateDictionary  {
         this.order = order;
     }
 
+    
+
     public UpdateDictionary withExtendOne(String extendOne) {
         this.extendOne = extendOne;
         return this;
@@ -129,6 +135,8 @@ public class UpdateDictionary  {
         this.extendOne = extendOne;
     }
 
+    
+
     public UpdateDictionary withExtendTwo(String extendTwo) {
         this.extendTwo = extendTwo;
         return this;
@@ -148,6 +156,9 @@ public class UpdateDictionary  {
     public void setExtendTwo(String extendTwo) {
         this.extendTwo = extendTwo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

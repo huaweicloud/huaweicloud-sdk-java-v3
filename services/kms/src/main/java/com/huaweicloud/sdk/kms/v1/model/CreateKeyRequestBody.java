@@ -149,6 +149,8 @@ public class CreateKeyRequestBody  {
         this.keyAlias = keyAlias;
     }
 
+    
+
     public CreateKeyRequestBody withKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
         return this;
@@ -168,6 +170,8 @@ public class CreateKeyRequestBody  {
     public void setKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
     }
+
+    
 
     public CreateKeyRequestBody withOrigin(OriginEnum origin) {
         this.origin = origin;
@@ -189,6 +193,8 @@ public class CreateKeyRequestBody  {
         this.origin = origin;
     }
 
+    
+
     public CreateKeyRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -209,6 +215,8 @@ public class CreateKeyRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateKeyRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -228,6 +236,9 @@ public class CreateKeyRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

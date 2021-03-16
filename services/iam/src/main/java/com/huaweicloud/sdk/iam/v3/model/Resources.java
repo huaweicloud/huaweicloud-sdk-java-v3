@@ -67,6 +67,8 @@ public class Resources  {
         this.max = max;
     }
 
+    
+
     public Resources withMin(Integer min) {
         this.min = min;
         return this;
@@ -86,6 +88,8 @@ public class Resources  {
     public void setMin(Integer min) {
         this.min = min;
     }
+
+    
 
     public Resources withQuota(Integer quota) {
         this.quota = quota;
@@ -107,6 +111,8 @@ public class Resources  {
         this.quota = quota;
     }
 
+    
+
     public Resources withType(String type) {
         this.type = type;
         return this;
@@ -127,6 +133,8 @@ public class Resources  {
         this.type = type;
     }
 
+    
+
     public Resources withUsed(Integer used) {
         this.used = used;
         return this;
@@ -146,6 +154,9 @@ public class Resources  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class CreateRepoDomainsRequestBody  {
         this.accessDomain = accessDomain;
     }
 
+    
+
     public CreateRepoDomainsRequestBody withPermit(String permit) {
         this.permit = permit;
         return this;
@@ -80,6 +82,8 @@ public class CreateRepoDomainsRequestBody  {
     public void setPermit(String permit) {
         this.permit = permit;
     }
+
+    
 
     public CreateRepoDomainsRequestBody withDeadline(String deadline) {
         this.deadline = deadline;
@@ -101,6 +105,8 @@ public class CreateRepoDomainsRequestBody  {
         this.deadline = deadline;
     }
 
+    
+
     public CreateRepoDomainsRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -120,6 +126,9 @@ public class CreateRepoDomainsRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class UpdateServerAutoTerminateTimeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateServerAutoTerminateTimeRequestBody body = null;
+    private UpdateServerAutoTerminateTimeRequestBody body;
 
     public UpdateServerAutoTerminateTimeRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class UpdateServerAutoTerminateTimeRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public UpdateServerAutoTerminateTimeRequest withBody(UpdateServerAutoTerminateTimeRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateServerAutoTerminateTimeRequest  {
     public void setBody(UpdateServerAutoTerminateTimeRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

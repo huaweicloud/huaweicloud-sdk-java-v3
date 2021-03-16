@@ -24,7 +24,7 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    private CreateInstanceRespItem instance = null;
+    private CreateInstanceRespItem instance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,6 +65,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.instance = instance;
     }
 
+    
+
     public CreateInstanceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -85,6 +87,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public CreateInstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -104,6 +108,9 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

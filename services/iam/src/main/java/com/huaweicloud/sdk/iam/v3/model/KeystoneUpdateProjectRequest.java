@@ -28,7 +28,7 @@ public class KeystoneUpdateProjectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneUpdateProjectRequestBody body = null;
+    private KeystoneUpdateProjectRequestBody body;
 
     public KeystoneUpdateProjectRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class KeystoneUpdateProjectRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public KeystoneUpdateProjectRequest withBody(KeystoneUpdateProjectRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class KeystoneUpdateProjectRequest  {
     public void setBody(KeystoneUpdateProjectRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

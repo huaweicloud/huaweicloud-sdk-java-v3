@@ -38,9 +38,6 @@ public class ChangeInstanceStatusBody  {
 
     
     public ChangeInstanceStatusBody addInstancesItem(String instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
         this.instances.add(instancesItem);
         return this;
     }
@@ -65,6 +62,8 @@ public class ChangeInstanceStatusBody  {
         this.instances = instances;
     }
 
+    
+
     public ChangeInstanceStatusBody withAction(String action) {
         this.action = action;
         return this;
@@ -84,6 +83,9 @@ public class ChangeInstanceStatusBody  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,7 +23,7 @@ public class FreezeSubCustomersReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_ids")
     
-    private List<String> customerIds = new ArrayList<>();
+    private List<String> customerIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class FreezeSubCustomersReq  {
         this.customerIds = customerIds;
     }
 
+    
+
     public FreezeSubCustomersReq withReason(String reason) {
         this.reason = reason;
         return this;
@@ -81,6 +83,9 @@ public class FreezeSubCustomersReq  {
     public void setReason(String reason) {
         this.reason = reason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

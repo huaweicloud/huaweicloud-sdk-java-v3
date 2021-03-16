@@ -105,7 +105,7 @@ public class LdApiCheckInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.PATH;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -241,6 +241,8 @@ public class LdApiCheckInfo  {
         this.type = type;
     }
 
+    
+
     public LdApiCheckInfo withLdApiName(String ldApiName) {
         this.ldApiName = ldApiName;
         return this;
@@ -260,6 +262,8 @@ public class LdApiCheckInfo  {
     public void setLdApiName(String ldApiName) {
         this.ldApiName = ldApiName;
     }
+
+    
 
     public LdApiCheckInfo withLdApiMethod(LdApiMethodEnum ldApiMethod) {
         this.ldApiMethod = ldApiMethod;
@@ -281,6 +285,8 @@ public class LdApiCheckInfo  {
         this.ldApiMethod = ldApiMethod;
     }
 
+    
+
     public LdApiCheckInfo withLdApiPath(String ldApiPath) {
         this.ldApiPath = ldApiPath;
         return this;
@@ -301,6 +307,8 @@ public class LdApiCheckInfo  {
         this.ldApiPath = ldApiPath;
     }
 
+    
+
     public LdApiCheckInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -320,6 +328,9 @@ public class LdApiCheckInfo  {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

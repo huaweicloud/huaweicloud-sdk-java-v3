@@ -26,31 +26,31 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v1";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "PersistentVolumeClaim";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private PersistentVolumeClaimMetadata metadata = null;
+    private PersistentVolumeClaimMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private PersistentVolumeClaimSpec spec = null;
+    private PersistentVolumeClaimSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private PersistentVolumeClaimStatus status = null;
+    private PersistentVolumeClaimStatus status;
 
     public CreateCloudPersistentVolumeClaimsResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -72,6 +72,8 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public CreateCloudPersistentVolumeClaimsResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -91,6 +93,8 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public CreateCloudPersistentVolumeClaimsResponse withMetadata(PersistentVolumeClaimMetadata metadata) {
         this.metadata = metadata;
@@ -119,6 +123,8 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public CreateCloudPersistentVolumeClaimsResponse withSpec(PersistentVolumeClaimSpec spec) {
         this.spec = spec;
         return this;
@@ -146,6 +152,8 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
         this.spec = spec;
     }
 
+    
+
     public CreateCloudPersistentVolumeClaimsResponse withStatus(PersistentVolumeClaimStatus status) {
         this.status = status;
         return this;
@@ -172,6 +180,9 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
     public void setStatus(PersistentVolumeClaimStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

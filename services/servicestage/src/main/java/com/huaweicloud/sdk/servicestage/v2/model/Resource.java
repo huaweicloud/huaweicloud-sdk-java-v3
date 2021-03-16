@@ -28,7 +28,7 @@ public class Resource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private ResourceType type = null;
+    private ResourceType type;
 
     public Resource withId(String id) {
         this.id = id;
@@ -50,6 +50,8 @@ public class Resource  {
         this.id = id;
     }
 
+    
+
     public Resource withType(ResourceType type) {
         this.type = type;
         return this;
@@ -69,6 +71,9 @@ public class Resource  {
     public void setType(ResourceType type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

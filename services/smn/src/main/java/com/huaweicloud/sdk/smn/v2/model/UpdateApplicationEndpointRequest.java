@@ -28,7 +28,7 @@ public class UpdateApplicationEndpointRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateApplicationEndpointRequestBody body = null;
+    private UpdateApplicationEndpointRequestBody body;
 
     public UpdateApplicationEndpointRequest withEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
@@ -49,6 +49,8 @@ public class UpdateApplicationEndpointRequest  {
     public void setEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
     }
+
+    
 
     public UpdateApplicationEndpointRequest withBody(UpdateApplicationEndpointRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateApplicationEndpointRequest  {
     public void setBody(UpdateApplicationEndpointRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

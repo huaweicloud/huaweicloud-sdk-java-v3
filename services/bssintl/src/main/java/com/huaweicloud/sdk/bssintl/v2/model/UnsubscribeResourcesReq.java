@@ -23,7 +23,7 @@ public class UnsubscribeResourcesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
-    private List<String> resourceIds = new ArrayList<>();
+    private List<String> resourceIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class UnsubscribeResourcesReq  {
         this.resourceIds = resourceIds;
     }
 
+    
+
     public UnsubscribeResourcesReq withUnsubscribeType(Integer unsubscribeType) {
         this.unsubscribeType = unsubscribeType;
         return this;
@@ -95,6 +97,8 @@ public class UnsubscribeResourcesReq  {
     public void setUnsubscribeType(Integer unsubscribeType) {
         this.unsubscribeType = unsubscribeType;
     }
+
+    
 
     public UnsubscribeResourcesReq withUnsubscribeReasonType(Integer unsubscribeReasonType) {
         this.unsubscribeReasonType = unsubscribeReasonType;
@@ -118,6 +122,8 @@ public class UnsubscribeResourcesReq  {
         this.unsubscribeReasonType = unsubscribeReasonType;
     }
 
+    
+
     public UnsubscribeResourcesReq withUnsubscribeReason(String unsubscribeReason) {
         this.unsubscribeReason = unsubscribeReason;
         return this;
@@ -137,6 +143,9 @@ public class UnsubscribeResourcesReq  {
     public void setUnsubscribeReason(String unsubscribeReason) {
         this.unsubscribeReason = unsubscribeReason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

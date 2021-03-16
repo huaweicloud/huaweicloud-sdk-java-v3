@@ -425,6 +425,8 @@ public class ListInstancesRequest  {
         this.engine = engine;
     }
 
+    
+
     public ListInstancesRequest withName(String name) {
         this.name = name;
         return this;
@@ -444,6 +446,8 @@ public class ListInstancesRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListInstancesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -465,6 +469,8 @@ public class ListInstancesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListInstancesRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -484,6 +490,8 @@ public class ListInstancesRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListInstancesRequest withIncludeFailure(IncludeFailureEnum includeFailure) {
         this.includeFailure = includeFailure;
@@ -505,6 +513,8 @@ public class ListInstancesRequest  {
         this.includeFailure = includeFailure;
     }
 
+    
+
     public ListInstancesRequest withExactMatchName(ExactMatchNameEnum exactMatchName) {
         this.exactMatchName = exactMatchName;
         return this;
@@ -525,6 +535,8 @@ public class ListInstancesRequest  {
         this.exactMatchName = exactMatchName;
     }
 
+    
+
     public ListInstancesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -544,6 +556,9 @@ public class ListInstancesRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

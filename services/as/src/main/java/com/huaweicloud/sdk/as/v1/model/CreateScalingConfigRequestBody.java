@@ -28,7 +28,7 @@ public class CreateScalingConfigRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_config")
     
-    private InstanceConfig instanceConfig = null;
+    private InstanceConfig instanceConfig;
 
     public CreateScalingConfigRequestBody withScalingConfigurationName(String scalingConfigurationName) {
         this.scalingConfigurationName = scalingConfigurationName;
@@ -49,6 +49,8 @@ public class CreateScalingConfigRequestBody  {
     public void setScalingConfigurationName(String scalingConfigurationName) {
         this.scalingConfigurationName = scalingConfigurationName;
     }
+
+    
 
     public CreateScalingConfigRequestBody withInstanceConfig(InstanceConfig instanceConfig) {
         this.instanceConfig = instanceConfig;
@@ -76,6 +78,9 @@ public class CreateScalingConfigRequestBody  {
     public void setInstanceConfig(InstanceConfig instanceConfig) {
         this.instanceConfig = instanceConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

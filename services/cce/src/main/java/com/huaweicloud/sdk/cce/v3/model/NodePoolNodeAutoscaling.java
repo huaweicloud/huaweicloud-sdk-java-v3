@@ -21,7 +21,7 @@ public class NodePoolNodeAutoscaling  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
-    private Boolean enable = false;
+    private Boolean enable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,6 +67,8 @@ public class NodePoolNodeAutoscaling  {
         this.enable = enable;
     }
 
+    
+
     public NodePoolNodeAutoscaling withMaxNodeCount(Integer maxNodeCount) {
         this.maxNodeCount = maxNodeCount;
         return this;
@@ -87,6 +89,8 @@ public class NodePoolNodeAutoscaling  {
     public void setMaxNodeCount(Integer maxNodeCount) {
         this.maxNodeCount = maxNodeCount;
     }
+
+    
 
     public NodePoolNodeAutoscaling withMinNodeCount(Integer minNodeCount) {
         this.minNodeCount = minNodeCount;
@@ -109,6 +113,8 @@ public class NodePoolNodeAutoscaling  {
         this.minNodeCount = minNodeCount;
     }
 
+    
+
     public NodePoolNodeAutoscaling withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -128,6 +134,8 @@ public class NodePoolNodeAutoscaling  {
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
+
+    
 
     public NodePoolNodeAutoscaling withScaleDownCooldownTime(Integer scaleDownCooldownTime) {
         this.scaleDownCooldownTime = scaleDownCooldownTime;
@@ -150,6 +158,9 @@ public class NodePoolNodeAutoscaling  {
     public void setScaleDownCooldownTime(Integer scaleDownCooldownTime) {
         this.scaleDownCooldownTime = scaleDownCooldownTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

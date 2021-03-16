@@ -58,7 +58,7 @@ public class ModifyJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_notify")
     
-    private AlarmNotifyInfo alarmNotify = null;
+    private AlarmNotifyInfo alarmNotify;
     /**
      * 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
      */
@@ -154,13 +154,13 @@ public class ModifyJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_endpoint")
     
-    private Endpoint sourceEndpoint = null;
+    private Endpoint sourceEndpoint;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_endpoint")
     
-    private Endpoint targetEndpoint = null;
+    private Endpoint targetEndpoint;
     /**
      * node规格类型，测试连接之后修改调用时必填。
      */
@@ -238,7 +238,7 @@ public class ModifyJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_type")
     
-    private NodeTypeEnum nodeType = NodeTypeEnum.HIGH;
+    private NodeTypeEnum nodeType;
     /**
      * 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
      */
@@ -656,6 +656,8 @@ public class ModifyJobReq  {
         this.jobId = jobId;
     }
 
+    
+
     public ModifyJobReq withDescription(String description) {
         this.description = description;
         return this;
@@ -676,6 +678,8 @@ public class ModifyJobReq  {
         this.description = description;
     }
 
+    
+
     public ModifyJobReq withName(String name) {
         this.name = name;
         return this;
@@ -695,6 +699,8 @@ public class ModifyJobReq  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ModifyJobReq withAlarmNotify(AlarmNotifyInfo alarmNotify) {
         this.alarmNotify = alarmNotify;
@@ -723,6 +729,8 @@ public class ModifyJobReq  {
         this.alarmNotify = alarmNotify;
     }
 
+    
+
     public ModifyJobReq withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
@@ -742,6 +750,8 @@ public class ModifyJobReq  {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
+
+    
 
     public ModifyJobReq withSourceEndpoint(Endpoint sourceEndpoint) {
         this.sourceEndpoint = sourceEndpoint;
@@ -770,6 +780,8 @@ public class ModifyJobReq  {
         this.sourceEndpoint = sourceEndpoint;
     }
 
+    
+
     public ModifyJobReq withTargetEndpoint(Endpoint targetEndpoint) {
         this.targetEndpoint = targetEndpoint;
         return this;
@@ -797,6 +809,8 @@ public class ModifyJobReq  {
         this.targetEndpoint = targetEndpoint;
     }
 
+    
+
     public ModifyJobReq withNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -816,6 +830,8 @@ public class ModifyJobReq  {
     public void setNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public ModifyJobReq withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
@@ -837,6 +853,8 @@ public class ModifyJobReq  {
         this.engineType = engineType;
     }
 
+    
+
     public ModifyJobReq withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
@@ -856,6 +874,8 @@ public class ModifyJobReq  {
     public void setNetType(NetTypeEnum netType) {
         this.netType = netType;
     }
+
+    
 
     public ModifyJobReq withStoreDbInfo(Boolean storeDbInfo) {
         this.storeDbInfo = storeDbInfo;
@@ -877,6 +897,8 @@ public class ModifyJobReq  {
         this.storeDbInfo = storeDbInfo;
     }
 
+    
+
     public ModifyJobReq withIsRecreate(Boolean isRecreate) {
         this.isRecreate = isRecreate;
         return this;
@@ -896,6 +918,8 @@ public class ModifyJobReq  {
     public void setIsRecreate(Boolean isRecreate) {
         this.isRecreate = isRecreate;
     }
+
+    
 
     public ModifyJobReq withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
@@ -917,6 +941,8 @@ public class ModifyJobReq  {
         this.jobDirection = jobDirection;
     }
 
+    
+
     public ModifyJobReq withIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
         return this;
@@ -936,6 +962,8 @@ public class ModifyJobReq  {
     public void setIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
     }
+
+    
 
     public ModifyJobReq withReplaceDefiner(Boolean replaceDefiner) {
         this.replaceDefiner = replaceDefiner;
@@ -957,6 +985,8 @@ public class ModifyJobReq  {
         this.replaceDefiner = replaceDefiner;
     }
 
+    
+
     public ModifyJobReq withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -964,9 +994,6 @@ public class ModifyJobReq  {
 
     
     public ModifyJobReq addTagsItem(ResourceTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -991,6 +1018,8 @@ public class ModifyJobReq  {
         this.tags = tags;
     }
 
+    
+
     public ModifyJobReq withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
@@ -1011,6 +1040,8 @@ public class ModifyJobReq  {
         this.dbUseType = dbUseType;
     }
 
+    
+
     public ModifyJobReq withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -1030,6 +1061,9 @@ public class ModifyJobReq  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

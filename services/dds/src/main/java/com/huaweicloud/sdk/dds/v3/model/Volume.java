@@ -49,6 +49,8 @@ public class Volume  {
         this.size = size;
     }
 
+    
+
     public Volume withUsed(String used) {
         this.used = used;
         return this;
@@ -68,6 +70,9 @@ public class Volume  {
     public void setUsed(String used) {
         this.used = used;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

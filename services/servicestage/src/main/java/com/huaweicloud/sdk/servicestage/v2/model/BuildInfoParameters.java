@@ -55,6 +55,8 @@ public class BuildInfoParameters  {
         this.buildCmd = buildCmd;
     }
 
+    
+
     public BuildInfoParameters withDockerfilePath(String dockerfilePath) {
         this.dockerfilePath = dockerfilePath;
         return this;
@@ -75,6 +77,8 @@ public class BuildInfoParameters  {
         this.dockerfilePath = dockerfilePath;
     }
 
+    
+
     public BuildInfoParameters withArtifactNamespace(String artifactNamespace) {
         this.artifactNamespace = artifactNamespace;
         return this;
@@ -94,6 +98,9 @@ public class BuildInfoParameters  {
     public void setArtifactNamespace(String artifactNamespace) {
         this.artifactNamespace = artifactNamespace;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

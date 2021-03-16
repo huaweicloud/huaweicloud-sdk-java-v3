@@ -28,7 +28,7 @@ public class Login  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="userPassword")
     
-    private UserPassword userPassword = null;
+    private UserPassword userPassword;
 
     public Login withSshKey(String sshKey) {
         this.sshKey = sshKey;
@@ -49,6 +49,8 @@ public class Login  {
     public void setSshKey(String sshKey) {
         this.sshKey = sshKey;
     }
+
+    
 
     public Login withUserPassword(UserPassword userPassword) {
         this.userPassword = userPassword;
@@ -76,6 +78,9 @@ public class Login  {
     public void setUserPassword(UserPassword userPassword) {
         this.userPassword = userPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

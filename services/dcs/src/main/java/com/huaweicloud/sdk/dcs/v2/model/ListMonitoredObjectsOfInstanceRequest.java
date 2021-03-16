@@ -49,6 +49,8 @@ public class ListMonitoredObjectsOfInstanceRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListMonitoredObjectsOfInstanceRequest withDimName(String dimName) {
         this.dimName = dimName;
         return this;
@@ -68,6 +70,9 @@ public class ListMonitoredObjectsOfInstanceRequest  {
     public void setDimName(String dimName) {
         this.dimName = dimName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

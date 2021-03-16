@@ -114,13 +114,13 @@ public class MetadataLock  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_process")
     
-    private List<Process> blockProcess = new ArrayList<>();
+    private List<Process> blockProcess = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="wait_process")
     
-    private List<Process> waitProcess = new ArrayList<>();
+    private List<Process> waitProcess = null;
     
     public MetadataLock withThreadId(String threadId) {
         this.threadId = threadId;
@@ -142,6 +142,8 @@ public class MetadataLock  {
         this.threadId = threadId;
     }
 
+    
+
     public MetadataLock withLockStatus(String lockStatus) {
         this.lockStatus = lockStatus;
         return this;
@@ -161,6 +163,8 @@ public class MetadataLock  {
     public void setLockStatus(String lockStatus) {
         this.lockStatus = lockStatus;
     }
+
+    
 
     public MetadataLock withLockMode(String lockMode) {
         this.lockMode = lockMode;
@@ -182,6 +186,8 @@ public class MetadataLock  {
         this.lockMode = lockMode;
     }
 
+    
+
     public MetadataLock withLockType(String lockType) {
         this.lockType = lockType;
         return this;
@@ -201,6 +207,8 @@ public class MetadataLock  {
     public void setLockType(String lockType) {
         this.lockType = lockType;
     }
+
+    
 
     public MetadataLock withLockDuration(String lockDuration) {
         this.lockDuration = lockDuration;
@@ -222,6 +230,8 @@ public class MetadataLock  {
         this.lockDuration = lockDuration;
     }
 
+    
+
     public MetadataLock withTableSchema(String tableSchema) {
         this.tableSchema = tableSchema;
         return this;
@@ -241,6 +251,8 @@ public class MetadataLock  {
     public void setTableSchema(String tableSchema) {
         this.tableSchema = tableSchema;
     }
+
+    
 
     public MetadataLock withTableName(String tableName) {
         this.tableName = tableName;
@@ -262,6 +274,8 @@ public class MetadataLock  {
         this.tableName = tableName;
     }
 
+    
+
     public MetadataLock withUser(String user) {
         this.user = user;
         return this;
@@ -281,6 +295,8 @@ public class MetadataLock  {
     public void setUser(String user) {
         this.user = user;
     }
+
+    
 
     public MetadataLock withTime(String time) {
         this.time = time;
@@ -302,6 +318,8 @@ public class MetadataLock  {
         this.time = time;
     }
 
+    
+
     public MetadataLock withHost(String host) {
         this.host = host;
         return this;
@@ -321,6 +339,8 @@ public class MetadataLock  {
     public void setHost(String host) {
         this.host = host;
     }
+
+    
 
     public MetadataLock withDatabase(String database) {
         this.database = database;
@@ -342,6 +362,8 @@ public class MetadataLock  {
         this.database = database;
     }
 
+    
+
     public MetadataLock withCommand(String command) {
         this.command = command;
         return this;
@@ -361,6 +383,8 @@ public class MetadataLock  {
     public void setCommand(String command) {
         this.command = command;
     }
+
+    
 
     public MetadataLock withState(String state) {
         this.state = state;
@@ -382,6 +406,8 @@ public class MetadataLock  {
         this.state = state;
     }
 
+    
+
     public MetadataLock withSql(String sql) {
         this.sql = sql;
         return this;
@@ -402,6 +428,8 @@ public class MetadataLock  {
         this.sql = sql;
     }
 
+    
+
     public MetadataLock withTrxExecTime(String trxExecTime) {
         this.trxExecTime = trxExecTime;
         return this;
@@ -421,6 +449,8 @@ public class MetadataLock  {
     public void setTrxExecTime(String trxExecTime) {
         this.trxExecTime = trxExecTime;
     }
+
+    
 
     public MetadataLock withBlockProcess(List<Process> blockProcess) {
         this.blockProcess = blockProcess;
@@ -453,6 +483,8 @@ public class MetadataLock  {
         this.blockProcess = blockProcess;
     }
 
+    
+
     public MetadataLock withWaitProcess(List<Process> waitProcess) {
         this.waitProcess = waitProcess;
         return this;
@@ -483,6 +515,9 @@ public class MetadataLock  {
     public void setWaitProcess(List<Process> waitProcess) {
         this.waitProcess = waitProcess;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

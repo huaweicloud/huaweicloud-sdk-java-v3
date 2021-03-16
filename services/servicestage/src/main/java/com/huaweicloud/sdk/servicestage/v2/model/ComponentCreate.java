@@ -32,19 +32,19 @@ public class ComponentCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="runtime")
     
-    private RuntimeType runtime = null;
+    private RuntimeType runtime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category")
     
-    private ComponentCategory category = null;
+    private ComponentCategory category;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_category")
     
-    private ComponentSubCategory subCategory = null;
+    private ComponentSubCategory subCategory;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,13 +56,13 @@ public class ComponentCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    private SourceObject source = null;
+    private SourceObject source;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="build")
     
-    private Build build = null;
+    private Build build;
 
     public ComponentCreate withName(String name) {
         this.name = name;
@@ -84,6 +84,8 @@ public class ComponentCreate  {
         this.name = name;
     }
 
+    
+
     public ComponentCreate withRuntime(RuntimeType runtime) {
         this.runtime = runtime;
         return this;
@@ -103,6 +105,8 @@ public class ComponentCreate  {
     public void setRuntime(RuntimeType runtime) {
         this.runtime = runtime;
     }
+
+    
 
     public ComponentCreate withCategory(ComponentCategory category) {
         this.category = category;
@@ -124,6 +128,8 @@ public class ComponentCreate  {
         this.category = category;
     }
 
+    
+
     public ComponentCreate withSubCategory(ComponentSubCategory subCategory) {
         this.subCategory = subCategory;
         return this;
@@ -144,6 +150,8 @@ public class ComponentCreate  {
         this.subCategory = subCategory;
     }
 
+    
+
     public ComponentCreate withDescription(String description) {
         this.description = description;
         return this;
@@ -163,6 +171,8 @@ public class ComponentCreate  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ComponentCreate withSource(SourceObject source) {
         this.source = source;
@@ -191,6 +201,8 @@ public class ComponentCreate  {
         this.source = source;
     }
 
+    
+
     public ComponentCreate withBuild(Build build) {
         this.build = build;
         return this;
@@ -217,6 +229,9 @@ public class ComponentCreate  {
     public void setBuild(Build build) {
         this.build = build;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

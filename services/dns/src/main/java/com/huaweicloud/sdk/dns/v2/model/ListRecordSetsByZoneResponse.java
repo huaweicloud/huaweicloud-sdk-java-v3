@@ -28,7 +28,7 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,7 +40,7 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metedata metadata = null;
+    private Metedata metadata;
 
     public ListRecordSetsByZoneResponse withLinks(PageLink links) {
         this.links = links;
@@ -69,6 +69,8 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public ListRecordSetsByZoneResponse withRecordsets(List<ListRecordSets> recordsets) {
         this.recordsets = recordsets;
         return this;
@@ -76,9 +78,6 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
 
     
     public ListRecordSetsByZoneResponse addRecordsetsItem(ListRecordSets recordsetsItem) {
-        if (this.recordsets == null) {
-            this.recordsets = new ArrayList<>();
-        }
         this.recordsets.add(recordsetsItem);
         return this;
     }
@@ -102,6 +101,8 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
     public void setRecordsets(List<ListRecordSets> recordsets) {
         this.recordsets = recordsets;
     }
+
+    
 
     public ListRecordSetsByZoneResponse withMetadata(Metedata metadata) {
         this.metadata = metadata;
@@ -129,6 +130,9 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
     public void setMetadata(Metedata metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

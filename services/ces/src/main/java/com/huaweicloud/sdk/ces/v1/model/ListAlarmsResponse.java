@@ -33,7 +33,7 @@ public class ListAlarmsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaData metaData = null;
+    private MetaData metaData;
 
     public ListAlarmsResponse withMetricAlarms(List<MetricAlarms> metricAlarms) {
         this.metricAlarms = metricAlarms;
@@ -42,9 +42,6 @@ public class ListAlarmsResponse extends SdkResponse {
 
     
     public ListAlarmsResponse addMetricAlarmsItem(MetricAlarms metricAlarmsItem) {
-        if (this.metricAlarms == null) {
-            this.metricAlarms = new ArrayList<>();
-        }
         this.metricAlarms.add(metricAlarmsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListAlarmsResponse extends SdkResponse {
     public void setMetricAlarms(List<MetricAlarms> metricAlarms) {
         this.metricAlarms = metricAlarms;
     }
+
+    
 
     public ListAlarmsResponse withMetaData(MetaData metaData) {
         this.metaData = metaData;
@@ -95,6 +94,9 @@ public class ListAlarmsResponse extends SdkResponse {
     public void setMetaData(MetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

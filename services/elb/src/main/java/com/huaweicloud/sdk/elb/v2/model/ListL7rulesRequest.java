@@ -111,6 +111,8 @@ public class ListL7rulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListL7rulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -130,6 +132,8 @@ public class ListL7rulesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListL7rulesRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
@@ -151,6 +155,8 @@ public class ListL7rulesRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListL7rulesRequest withL7policyId(String l7policyId) {
         this.l7policyId = l7policyId;
         return this;
@@ -170,6 +176,8 @@ public class ListL7rulesRequest  {
     public void setL7policyId(String l7policyId) {
         this.l7policyId = l7policyId;
     }
+
+    
 
     public ListL7rulesRequest withId(String id) {
         this.id = id;
@@ -191,6 +199,8 @@ public class ListL7rulesRequest  {
         this.id = id;
     }
 
+    
+
     public ListL7rulesRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -210,6 +220,8 @@ public class ListL7rulesRequest  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public ListL7rulesRequest withType(String type) {
         this.type = type;
@@ -231,6 +243,8 @@ public class ListL7rulesRequest  {
         this.type = type;
     }
 
+    
+
     public ListL7rulesRequest withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
@@ -250,6 +264,8 @@ public class ListL7rulesRequest  {
     public void setCompareType(String compareType) {
         this.compareType = compareType;
     }
+
+    
 
     public ListL7rulesRequest withInvert(Boolean invert) {
         this.invert = invert;
@@ -271,6 +287,8 @@ public class ListL7rulesRequest  {
         this.invert = invert;
     }
 
+    
+
     public ListL7rulesRequest withKey(String key) {
         this.key = key;
         return this;
@@ -290,6 +308,8 @@ public class ListL7rulesRequest  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
 
     public ListL7rulesRequest withValue(String value) {
         this.value = value;
@@ -311,6 +331,8 @@ public class ListL7rulesRequest  {
         this.value = value;
     }
 
+    
+
     public ListL7rulesRequest withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -330,6 +352,9 @@ public class ListL7rulesRequest  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

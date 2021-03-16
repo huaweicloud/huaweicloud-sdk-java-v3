@@ -35,9 +35,6 @@ public class BatchDeleteInstanceTopicResponse extends SdkResponse {
 
     
     public BatchDeleteInstanceTopicResponse addTopicsItem(BatchDeleteInstanceTopicRespTopics topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
         this.topics.add(topicsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class BatchDeleteInstanceTopicResponse extends SdkResponse {
     public void setTopics(List<BatchDeleteInstanceTopicRespTopics> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class UpdateDesired  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="desired")
     
-    private Object desired = null;
+    private Object desired;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class UpdateDesired  {
         this.serviceId = serviceId;
     }
 
+    
+
     public UpdateDesired withDesired(Object desired) {
         this.desired = desired;
         return this;
@@ -75,6 +77,8 @@ public class UpdateDesired  {
         this.desired = desired;
     }
 
+    
+
     public UpdateDesired withVersion(Long version) {
         this.version = version;
         return this;
@@ -94,6 +98,9 @@ public class UpdateDesired  {
     public void setVersion(Long version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

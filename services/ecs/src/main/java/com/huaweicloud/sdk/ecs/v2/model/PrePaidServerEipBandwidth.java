@@ -145,6 +145,8 @@ public class PrePaidServerEipBandwidth  {
         this.size = size;
     }
 
+    
+
     public PrePaidServerEipBandwidth withSharetype(SharetypeEnum sharetype) {
         this.sharetype = sharetype;
         return this;
@@ -164,6 +166,8 @@ public class PrePaidServerEipBandwidth  {
     public void setSharetype(SharetypeEnum sharetype) {
         this.sharetype = sharetype;
     }
+
+    
 
     public PrePaidServerEipBandwidth withChargemode(String chargemode) {
         this.chargemode = chargemode;
@@ -185,6 +189,8 @@ public class PrePaidServerEipBandwidth  {
         this.chargemode = chargemode;
     }
 
+    
+
     public PrePaidServerEipBandwidth withId(String id) {
         this.id = id;
         return this;
@@ -204,6 +210,9 @@ public class PrePaidServerEipBandwidth  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

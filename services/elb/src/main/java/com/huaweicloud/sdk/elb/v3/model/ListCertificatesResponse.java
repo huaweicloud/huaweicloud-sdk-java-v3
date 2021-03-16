@@ -33,7 +33,7 @@ public class ListCertificatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class ListCertificatesResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListCertificatesResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -88,6 +90,8 @@ public class ListCertificatesResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    
+
     public ListCertificatesResponse withCertificates(List<CertificateInfo> certificates) {
         this.certificates = certificates;
         return this;
@@ -95,9 +99,6 @@ public class ListCertificatesResponse extends SdkResponse {
 
     
     public ListCertificatesResponse addCertificatesItem(CertificateInfo certificatesItem) {
-        if (this.certificates == null) {
-            this.certificates = new ArrayList<>();
-        }
         this.certificates.add(certificatesItem);
         return this;
     }
@@ -121,6 +122,9 @@ public class ListCertificatesResponse extends SdkResponse {
     public void setCertificates(List<CertificateInfo> certificates) {
         this.certificates = certificates;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

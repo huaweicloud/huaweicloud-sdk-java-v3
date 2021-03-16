@@ -22,7 +22,7 @@ public class SendVerificationMessageCodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SendVerificationCodeV2Req body = null;
+    private SendVerificationCodeV2Req body;
 
     public SendVerificationMessageCodeRequest withBody(SendVerificationCodeV2Req body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class SendVerificationMessageCodeRequest  {
     public void setBody(SendVerificationCodeV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

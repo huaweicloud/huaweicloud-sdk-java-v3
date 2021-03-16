@@ -49,6 +49,8 @@ public class StopMeetingRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public StopMeetingRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
         return this;
@@ -70,6 +72,9 @@ public class StopMeetingRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

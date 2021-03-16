@@ -140,7 +140,7 @@ public class InstanceHangingInfos  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
-    private OffsetDateTime timeout = null;
+    private OffsetDateTime timeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -168,6 +168,8 @@ public class InstanceHangingInfos  {
         this.lifecycleHookName = lifecycleHookName;
     }
 
+    
+
     public InstanceHangingInfos withLifecycleActionKey(String lifecycleActionKey) {
         this.lifecycleActionKey = lifecycleActionKey;
         return this;
@@ -187,6 +189,8 @@ public class InstanceHangingInfos  {
     public void setLifecycleActionKey(String lifecycleActionKey) {
         this.lifecycleActionKey = lifecycleActionKey;
     }
+
+    
 
     public InstanceHangingInfos withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -208,6 +212,8 @@ public class InstanceHangingInfos  {
         this.instanceId = instanceId;
     }
 
+    
+
     public InstanceHangingInfos withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
         return this;
@@ -227,6 +233,8 @@ public class InstanceHangingInfos  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public InstanceHangingInfos withLifecycleHookStatus(LifecycleHookStatusEnum lifecycleHookStatus) {
         this.lifecycleHookStatus = lifecycleHookStatus;
@@ -248,6 +256,8 @@ public class InstanceHangingInfos  {
         this.lifecycleHookStatus = lifecycleHookStatus;
     }
 
+    
+
     public InstanceHangingInfos withTimeout(OffsetDateTime timeout) {
         this.timeout = timeout;
         return this;
@@ -268,6 +278,8 @@ public class InstanceHangingInfos  {
         this.timeout = timeout;
     }
 
+    
+
     public InstanceHangingInfos withDefaultResult(String defaultResult) {
         this.defaultResult = defaultResult;
         return this;
@@ -287,6 +299,9 @@ public class InstanceHangingInfos  {
     public void setDefaultResult(String defaultResult) {
         this.defaultResult = defaultResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

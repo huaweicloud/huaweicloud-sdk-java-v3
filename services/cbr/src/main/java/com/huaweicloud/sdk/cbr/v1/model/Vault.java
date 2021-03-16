@@ -27,7 +27,7 @@ public class Vault  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing")
     
-    private Billing billing = null;
+    private Billing billing;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class Vault  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private List<ResourceResp> resources = new ArrayList<>();
+    private List<ResourceResp> resources = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,7 +87,7 @@ public class Vault  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_rules")
     
-    private VaultBindRules bindRules = null;
+    private VaultBindRules bindRules;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -134,6 +134,8 @@ public class Vault  {
         this.billing = billing;
     }
 
+    
+
     public Vault withDescription(String description) {
         this.description = description;
         return this;
@@ -153,6 +155,8 @@ public class Vault  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Vault withId(String id) {
         this.id = id;
@@ -174,6 +178,8 @@ public class Vault  {
         this.id = id;
     }
 
+    
+
     public Vault withName(String name) {
         this.name = name;
         return this;
@@ -193,6 +199,8 @@ public class Vault  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Vault withProjectId(String projectId) {
         this.projectId = projectId;
@@ -214,6 +222,8 @@ public class Vault  {
         this.projectId = projectId;
     }
 
+    
+
     public Vault withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
@@ -233,6 +243,8 @@ public class Vault  {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
+    
 
     public Vault withResources(List<ResourceResp> resources) {
         this.resources = resources;
@@ -265,6 +277,8 @@ public class Vault  {
         this.resources = resources;
     }
 
+    
+
     public Vault withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -272,9 +286,6 @@ public class Vault  {
 
     
     public Vault addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -299,6 +310,8 @@ public class Vault  {
         this.tags = tags;
     }
 
+    
+
     public Vault withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -319,6 +332,8 @@ public class Vault  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public Vault withAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
         return this;
@@ -338,6 +353,8 @@ public class Vault  {
     public void setAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
     }
+
+    
 
     public Vault withBindRules(VaultBindRules bindRules) {
         this.bindRules = bindRules;
@@ -366,6 +383,8 @@ public class Vault  {
         this.bindRules = bindRules;
     }
 
+    
+
     public Vault withAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
         return this;
@@ -385,6 +404,8 @@ public class Vault  {
     public void setAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
     }
+
+    
 
     public Vault withUserId(String userId) {
         this.userId = userId;
@@ -406,6 +427,8 @@ public class Vault  {
         this.userId = userId;
     }
 
+    
+
     public Vault withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -425,6 +448,9 @@ public class Vault  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

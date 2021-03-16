@@ -80,6 +80,8 @@ public class AlarmTemplateCondition  {
         this.comparisonOperator = comparisonOperator;
     }
 
+    
+
     public AlarmTemplateCondition withCount(Integer count) {
         this.count = count;
         return this;
@@ -102,6 +104,8 @@ public class AlarmTemplateCondition  {
         this.count = count;
     }
 
+    
+
     public AlarmTemplateCondition withFilter(String filter) {
         this.filter = filter;
         return this;
@@ -121,6 +125,8 @@ public class AlarmTemplateCondition  {
     public void setFilter(String filter) {
         this.filter = filter;
     }
+
+    
 
     public AlarmTemplateCondition withPeriod(Integer period) {
         this.period = period;
@@ -142,6 +148,8 @@ public class AlarmTemplateCondition  {
         this.period = period;
     }
 
+    
+
     public AlarmTemplateCondition withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -161,6 +169,8 @@ public class AlarmTemplateCondition  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    
 
     public AlarmTemplateCondition withValue(Double value) {
         this.value = value;
@@ -182,6 +192,8 @@ public class AlarmTemplateCondition  {
         this.value = value;
     }
 
+    
+
     public AlarmTemplateCondition withSuppressDuration(Integer suppressDuration) {
         this.suppressDuration = suppressDuration;
         return this;
@@ -201,6 +213,9 @@ public class AlarmTemplateCondition  {
     public void setSuppressDuration(Integer suppressDuration) {
         this.suppressDuration = suppressDuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

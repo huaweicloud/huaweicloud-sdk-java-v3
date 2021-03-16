@@ -61,6 +61,8 @@ public class QuotaShowResp  {
         this.type = type;
     }
 
+    
+
     public QuotaShowResp withUsed(Integer used) {
         this.used = used;
         return this;
@@ -80,6 +82,8 @@ public class QuotaShowResp  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
 
     public QuotaShowResp withQuota(Integer quota) {
         this.quota = quota;
@@ -101,6 +105,8 @@ public class QuotaShowResp  {
         this.quota = quota;
     }
 
+    
+
     public QuotaShowResp withMin(Integer min) {
         this.min = min;
         return this;
@@ -120,6 +126,9 @@ public class QuotaShowResp  {
     public void setMin(Integer min) {
         this.min = min;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

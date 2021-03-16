@@ -55,6 +55,8 @@ public class ShowPartitionBeginningMessageRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowPartitionBeginningMessageRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -75,6 +77,8 @@ public class ShowPartitionBeginningMessageRequest  {
         this.topic = topic;
     }
 
+    
+
     public ShowPartitionBeginningMessageRequest withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -94,6 +98,9 @@ public class ShowPartitionBeginningMessageRequest  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class BatchUpdateMembersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="images")
     
-    private List<String> images = new ArrayList<>();
+    private List<String> images = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -156,6 +156,8 @@ public class BatchUpdateMembersRequestBody  {
         this.images = images;
     }
 
+    
+
     public BatchUpdateMembersRequestBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -175,6 +177,8 @@ public class BatchUpdateMembersRequestBody  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public BatchUpdateMembersRequestBody withStatus(StatusEnum status) {
         this.status = status;
@@ -196,6 +200,8 @@ public class BatchUpdateMembersRequestBody  {
         this.status = status;
     }
 
+    
+
     public BatchUpdateMembersRequestBody withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -215,6 +221,9 @@ public class BatchUpdateMembersRequestBody  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,9 +34,6 @@ public class DeleteMigrationTaskResponse extends SdkResponse {
 
     
     public DeleteMigrationTaskResponse addTaskIdListItem(String taskIdListItem) {
-        if (this.taskIdList == null) {
-            this.taskIdList = new ArrayList<>();
-        }
         this.taskIdList.add(taskIdListItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class DeleteMigrationTaskResponse extends SdkResponse {
     public void setTaskIdList(List<String> taskIdList) {
         this.taskIdList = taskIdList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

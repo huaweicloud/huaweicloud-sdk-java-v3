@@ -28,25 +28,25 @@ public class ListResourcesByTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QueryResourceByTagsDTO body = null;
+    private QueryResourceByTagsDTO body;
 
     public ListResourcesByTagsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -67,6 +67,8 @@ public class ListResourcesByTagsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListResourcesByTagsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -90,6 +92,8 @@ public class ListResourcesByTagsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListResourcesByTagsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -109,6 +113,8 @@ public class ListResourcesByTagsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListResourcesByTagsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -131,6 +137,8 @@ public class ListResourcesByTagsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListResourcesByTagsRequest withBody(QueryResourceByTagsDTO body) {
         this.body = body;
@@ -158,6 +166,9 @@ public class ListResourcesByTagsRequest  {
     public void setBody(QueryResourceByTagsDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class UpdatePublicZoneInfo  {
         this.description = description;
     }
 
+    
+
     public UpdatePublicZoneInfo withEmail(String email) {
         this.email = email;
         return this;
@@ -75,6 +77,8 @@ public class UpdatePublicZoneInfo  {
         this.email = email;
     }
 
+    
+
     public UpdatePublicZoneInfo withTtl(String ttl) {
         this.ttl = ttl;
         return this;
@@ -94,6 +98,9 @@ public class UpdatePublicZoneInfo  {
     public void setTtl(String ttl) {
         this.ttl = ttl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -44,6 +44,9 @@ public class OutputWatermarkPara  {
     public void setTimeDuration(Integer timeDuration) {
         this.timeDuration = timeDuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

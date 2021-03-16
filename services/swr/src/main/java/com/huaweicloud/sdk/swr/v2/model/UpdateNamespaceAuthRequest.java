@@ -52,6 +52,8 @@ public class UpdateNamespaceAuthRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public UpdateNamespaceAuthRequest withBody(List<UserAuth> body) {
         this.body = body;
         return this;
@@ -59,9 +61,6 @@ public class UpdateNamespaceAuthRequest  {
 
     
     public UpdateNamespaceAuthRequest addBodyItem(UserAuth bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class UpdateNamespaceAuthRequest  {
     public void setBody(List<UserAuth> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

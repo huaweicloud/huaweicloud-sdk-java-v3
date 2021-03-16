@@ -55,6 +55,8 @@ public class BalanceTypeDeductSumV2  {
         this.balanceType = balanceType;
     }
 
+    
+
     public BalanceTypeDeductSumV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -75,6 +77,8 @@ public class BalanceTypeDeductSumV2  {
         this.amount = amount;
     }
 
+    
+
     public BalanceTypeDeductSumV2 withBillType(String billType) {
         this.billType = billType;
         return this;
@@ -94,6 +98,9 @@ public class BalanceTypeDeductSumV2  {
     public void setBillType(String billType) {
         this.billType = billType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

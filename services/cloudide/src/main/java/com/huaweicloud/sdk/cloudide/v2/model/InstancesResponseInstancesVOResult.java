@@ -143,6 +143,8 @@ public class InstancesResponseInstancesVOResult  {
         this.link = link;
     }
 
+    
+
     public InstancesResponseInstancesVOResult withArch(ArchEnum arch) {
         this.arch = arch;
         return this;
@@ -162,6 +164,8 @@ public class InstancesResponseInstancesVOResult  {
     public void setArch(ArchEnum arch) {
         this.arch = arch;
     }
+
+    
 
     public InstancesResponseInstancesVOResult withId(String id) {
         this.id = id;
@@ -183,6 +187,8 @@ public class InstancesResponseInstancesVOResult  {
         this.id = id;
     }
 
+    
+
     public InstancesResponseInstancesVOResult withPrivate(Boolean _private) {
         this._private = _private;
         return this;
@@ -202,6 +208,9 @@ public class InstancesResponseInstancesVOResult  {
     public void setPrivate(Boolean _private) {
         this._private = _private;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

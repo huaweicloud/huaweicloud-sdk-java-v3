@@ -67,6 +67,8 @@ public class ShowInstanceTopicDetailRespReplicas  {
         this.broker = broker;
     }
 
+    
+
     public ShowInstanceTopicDetailRespReplicas withLeader(Boolean leader) {
         this.leader = leader;
         return this;
@@ -86,6 +88,8 @@ public class ShowInstanceTopicDetailRespReplicas  {
     public void setLeader(Boolean leader) {
         this.leader = leader;
     }
+
+    
 
     public ShowInstanceTopicDetailRespReplicas withInSync(Boolean inSync) {
         this.inSync = inSync;
@@ -107,6 +111,8 @@ public class ShowInstanceTopicDetailRespReplicas  {
         this.inSync = inSync;
     }
 
+    
+
     public ShowInstanceTopicDetailRespReplicas withSize(Integer size) {
         this.size = size;
         return this;
@@ -127,6 +133,8 @@ public class ShowInstanceTopicDetailRespReplicas  {
         this.size = size;
     }
 
+    
+
     public ShowInstanceTopicDetailRespReplicas withLag(Integer lag) {
         this.lag = lag;
         return this;
@@ -146,6 +154,9 @@ public class ShowInstanceTopicDetailRespReplicas  {
     public void setLag(Integer lag) {
         this.lag = lag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -71,13 +71,13 @@ public class ListPartnerCouponsRecordRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,9 +92,6 @@ public class ListPartnerCouponsRecordRequest  {
 
     
     public ListPartnerCouponsRecordRequest addOperationTypesItem(String operationTypesItem) {
-        if (this.operationTypes == null) {
-            this.operationTypes = new ArrayList<>();
-        }
         this.operationTypes.add(operationTypesItem);
         return this;
     }
@@ -119,6 +116,8 @@ public class ListPartnerCouponsRecordRequest  {
         this.operationTypes = operationTypes;
     }
 
+    
+
     public ListPartnerCouponsRecordRequest withQuotaId(String quotaId) {
         this.quotaId = quotaId;
         return this;
@@ -138,6 +137,8 @@ public class ListPartnerCouponsRecordRequest  {
     public void setQuotaId(String quotaId) {
         this.quotaId = quotaId;
     }
+
+    
 
     public ListPartnerCouponsRecordRequest withQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
@@ -161,6 +162,8 @@ public class ListPartnerCouponsRecordRequest  {
         this.quotaType = quotaType;
     }
 
+    
+
     public ListPartnerCouponsRecordRequest withCouponIds(List<String> couponIds) {
         this.couponIds = couponIds;
         return this;
@@ -168,9 +171,6 @@ public class ListPartnerCouponsRecordRequest  {
 
     
     public ListPartnerCouponsRecordRequest addCouponIdsItem(String couponIdsItem) {
-        if (this.couponIds == null) {
-            this.couponIds = new ArrayList<>();
-        }
         this.couponIds.add(couponIdsItem);
         return this;
     }
@@ -195,6 +195,8 @@ public class ListPartnerCouponsRecordRequest  {
         this.couponIds = couponIds;
     }
 
+    
+
     public ListPartnerCouponsRecordRequest withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -214,6 +216,8 @@ public class ListPartnerCouponsRecordRequest  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public ListPartnerCouponsRecordRequest withOperationTimeBegin(String operationTimeBegin) {
         this.operationTimeBegin = operationTimeBegin;
@@ -235,6 +239,8 @@ public class ListPartnerCouponsRecordRequest  {
         this.operationTimeBegin = operationTimeBegin;
     }
 
+    
+
     public ListPartnerCouponsRecordRequest withOperationTimeEnd(String operationTimeEnd) {
         this.operationTimeEnd = operationTimeEnd;
         return this;
@@ -255,6 +261,8 @@ public class ListPartnerCouponsRecordRequest  {
         this.operationTimeEnd = operationTimeEnd;
     }
 
+    
+
     public ListPartnerCouponsRecordRequest withResult(String result) {
         this.result = result;
         return this;
@@ -274,6 +282,8 @@ public class ListPartnerCouponsRecordRequest  {
     public void setResult(String result) {
         this.result = result;
     }
+
+    
 
     public ListPartnerCouponsRecordRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -297,6 +307,8 @@ public class ListPartnerCouponsRecordRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListPartnerCouponsRecordRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -319,6 +331,8 @@ public class ListPartnerCouponsRecordRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPartnerCouponsRecordRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -338,6 +352,9 @@ public class ListPartnerCouponsRecordRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

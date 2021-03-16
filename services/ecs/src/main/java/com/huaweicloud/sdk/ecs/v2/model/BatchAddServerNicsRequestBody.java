@@ -24,7 +24,7 @@ public class BatchAddServerNicsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    private List<BatchAddServerNicOption> nics = new ArrayList<>();
+    private List<BatchAddServerNicOption> nics = null;
     
     public BatchAddServerNicsRequestBody withNics(List<BatchAddServerNicOption> nics) {
         this.nics = nics;
@@ -56,6 +56,9 @@ public class BatchAddServerNicsRequestBody  {
     public void setNics(List<BatchAddServerNicOption> nics) {
         this.nics = nics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

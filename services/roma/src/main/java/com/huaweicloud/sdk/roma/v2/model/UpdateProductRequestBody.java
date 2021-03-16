@@ -79,6 +79,8 @@ public class UpdateProductRequestBody  {
         this.name = name;
     }
 
+    
+
     public UpdateProductRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -98,6 +100,8 @@ public class UpdateProductRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateProductRequestBody withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
@@ -119,6 +123,8 @@ public class UpdateProductRequestBody  {
         this.manufacturerId = manufacturerId;
     }
 
+    
+
     public UpdateProductRequestBody withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
@@ -138,6 +144,8 @@ public class UpdateProductRequestBody  {
     public void setManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
+
+    
 
     public UpdateProductRequestBody withModel(String model) {
         this.model = model;
@@ -159,6 +167,8 @@ public class UpdateProductRequestBody  {
         this.model = model;
     }
 
+    
+
     public UpdateProductRequestBody withDeviceType(String deviceType) {
         this.deviceType = deviceType;
         return this;
@@ -179,6 +189,8 @@ public class UpdateProductRequestBody  {
         this.deviceType = deviceType;
     }
 
+    
+
     public UpdateProductRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -198,6 +210,9 @@ public class UpdateProductRequestBody  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

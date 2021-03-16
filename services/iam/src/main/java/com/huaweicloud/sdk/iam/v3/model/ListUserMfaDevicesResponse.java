@@ -35,9 +35,6 @@ public class ListUserMfaDevicesResponse extends SdkResponse {
 
     
     public ListUserMfaDevicesResponse addVirtualMfaDevicesItem(MfaDeviceResult virtualMfaDevicesItem) {
-        if (this.virtualMfaDevices == null) {
-            this.virtualMfaDevices = new ArrayList<>();
-        }
         this.virtualMfaDevices.add(virtualMfaDevicesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListUserMfaDevicesResponse extends SdkResponse {
     public void setVirtualMfaDevices(List<MfaDeviceResult> virtualMfaDevices) {
         this.virtualMfaDevices = virtualMfaDevices;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

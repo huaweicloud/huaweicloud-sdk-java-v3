@@ -489,7 +489,7 @@ public class ListBackupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="own_type")
     
-    private OwnTypeEnum ownType = OwnTypeEnum.PRIVATE;
+    private OwnTypeEnum ownType;
     /**
      * Gets or Sets memberStatus
      */
@@ -613,6 +613,8 @@ public class ListBackupsRequest  {
         this.checkpointId = checkpointId;
     }
 
+    
+
     public ListBackupsRequest withDec(Boolean dec) {
         this.dec = dec;
         return this;
@@ -632,6 +634,8 @@ public class ListBackupsRequest  {
     public void setDec(Boolean dec) {
         this.dec = dec;
     }
+
+    
 
     public ListBackupsRequest withEndTime(String endTime) {
         this.endTime = endTime;
@@ -653,6 +657,8 @@ public class ListBackupsRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListBackupsRequest withImageType(ImageTypeEnum imageType) {
         this.imageType = imageType;
         return this;
@@ -672,6 +678,8 @@ public class ListBackupsRequest  {
     public void setImageType(ImageTypeEnum imageType) {
         this.imageType = imageType;
     }
+
+    
 
     public ListBackupsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -693,6 +701,8 @@ public class ListBackupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListBackupsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -712,6 +722,8 @@ public class ListBackupsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListBackupsRequest withName(String name) {
         this.name = name;
@@ -733,6 +745,8 @@ public class ListBackupsRequest  {
         this.name = name;
     }
 
+    
+
     public ListBackupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -752,6 +766,8 @@ public class ListBackupsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListBackupsRequest withResourceAz(String resourceAz) {
         this.resourceAz = resourceAz;
@@ -773,6 +789,8 @@ public class ListBackupsRequest  {
         this.resourceAz = resourceAz;
     }
 
+    
+
     public ListBackupsRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -792,6 +810,8 @@ public class ListBackupsRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public ListBackupsRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -813,6 +833,8 @@ public class ListBackupsRequest  {
         this.resourceName = resourceName;
     }
 
+    
+
     public ListBackupsRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -832,6 +854,8 @@ public class ListBackupsRequest  {
     public void setResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
     }
+
+    
 
     public ListBackupsRequest withSort(String sort) {
         this.sort = sort;
@@ -853,6 +877,8 @@ public class ListBackupsRequest  {
         this.sort = sort;
     }
 
+    
+
     public ListBackupsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -872,6 +898,8 @@ public class ListBackupsRequest  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListBackupsRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -893,6 +921,8 @@ public class ListBackupsRequest  {
         this.status = status;
     }
 
+    
+
     public ListBackupsRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -912,6 +942,8 @@ public class ListBackupsRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public ListBackupsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -933,6 +965,8 @@ public class ListBackupsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListBackupsRequest withOwnType(OwnTypeEnum ownType) {
         this.ownType = ownType;
         return this;
@@ -952,6 +986,8 @@ public class ListBackupsRequest  {
     public void setOwnType(OwnTypeEnum ownType) {
         this.ownType = ownType;
     }
+
+    
 
     public ListBackupsRequest withMemberStatus(MemberStatusEnum memberStatus) {
         this.memberStatus = memberStatus;
@@ -973,6 +1009,8 @@ public class ListBackupsRequest  {
         this.memberStatus = memberStatus;
     }
 
+    
+
     public ListBackupsRequest withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -993,6 +1031,8 @@ public class ListBackupsRequest  {
         this.parentId = parentId;
     }
 
+    
+
     public ListBackupsRequest withUsedPercent(String usedPercent) {
         this.usedPercent = usedPercent;
         return this;
@@ -1012,6 +1052,9 @@ public class ListBackupsRequest  {
     public void setUsedPercent(String usedPercent) {
         this.usedPercent = usedPercent;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

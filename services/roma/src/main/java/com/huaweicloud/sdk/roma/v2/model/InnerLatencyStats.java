@@ -28,7 +28,7 @@ public class InnerLatencyStats  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_inner_latency")
     
-    private BigDecimal avgInnerLatency = null;
+    private BigDecimal avgInnerLatency;
 
     public InnerLatencyStats withMaxInnerLatency(Integer maxInnerLatency) {
         this.maxInnerLatency = maxInnerLatency;
@@ -50,6 +50,8 @@ public class InnerLatencyStats  {
         this.maxInnerLatency = maxInnerLatency;
     }
 
+    
+
     public InnerLatencyStats withAvgInnerLatency(BigDecimal avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
         return this;
@@ -69,6 +71,9 @@ public class InnerLatencyStats  {
     public void setAvgInnerLatency(BigDecimal avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

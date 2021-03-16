@@ -30,7 +30,7 @@ public class GrantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    private List<UserWithPrivilege> users = new ArrayList<>();
+    private List<UserWithPrivilege> users = null;
     
     public GrantRequest withDbName(String dbName) {
         this.dbName = dbName;
@@ -51,6 +51,8 @@ public class GrantRequest  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
 
     public GrantRequest withUsers(List<UserWithPrivilege> users) {
         this.users = users;
@@ -82,6 +84,9 @@ public class GrantRequest  {
     public void setUsers(List<UserWithPrivilege> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

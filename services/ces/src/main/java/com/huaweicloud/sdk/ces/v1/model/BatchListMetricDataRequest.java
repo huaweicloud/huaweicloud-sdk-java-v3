@@ -22,7 +22,7 @@ public class BatchListMetricDataRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchListMetricDataRequestBody body = null;
+    private BatchListMetricDataRequestBody body;
 
     public BatchListMetricDataRequest withBody(BatchListMetricDataRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchListMetricDataRequest  {
     public void setBody(BatchListMetricDataRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

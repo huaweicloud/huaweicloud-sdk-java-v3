@@ -182,6 +182,8 @@ public class QueryPreCheckResp  {
         this.precheckId = precheckId;
     }
 
+    
+
     public QueryPreCheckResp withResult(Boolean result) {
         this.result = result;
         return this;
@@ -201,6 +203,8 @@ public class QueryPreCheckResp  {
     public void setResult(Boolean result) {
         this.result = result;
     }
+
+    
 
     public QueryPreCheckResp withProcess(String process) {
         this.process = process;
@@ -222,6 +226,8 @@ public class QueryPreCheckResp  {
         this.process = process;
     }
 
+    
+
     public QueryPreCheckResp withTotalPassedRate(String totalPassedRate) {
         this.totalPassedRate = totalPassedRate;
         return this;
@@ -241,6 +247,8 @@ public class QueryPreCheckResp  {
     public void setTotalPassedRate(String totalPassedRate) {
         this.totalPassedRate = totalPassedRate;
     }
+
+    
 
     public QueryPreCheckResp withRdsInstanceId(String rdsInstanceId) {
         this.rdsInstanceId = rdsInstanceId;
@@ -262,6 +270,8 @@ public class QueryPreCheckResp  {
         this.rdsInstanceId = rdsInstanceId;
     }
 
+    
+
     public QueryPreCheckResp withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
         return this;
@@ -282,6 +292,8 @@ public class QueryPreCheckResp  {
         this.jobDirection = jobDirection;
     }
 
+    
+
     public QueryPreCheckResp withPrecheckResult(List<PrecheckResult> precheckResult) {
         this.precheckResult = precheckResult;
         return this;
@@ -289,9 +301,6 @@ public class QueryPreCheckResp  {
 
     
     public QueryPreCheckResp addPrecheckResultItem(PrecheckResult precheckResultItem) {
-        if (this.precheckResult == null) {
-            this.precheckResult = new ArrayList<>();
-        }
         this.precheckResult.add(precheckResultItem);
         return this;
     }
@@ -316,6 +325,8 @@ public class QueryPreCheckResp  {
         this.precheckResult = precheckResult;
     }
 
+    
+
     public QueryPreCheckResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -336,6 +347,8 @@ public class QueryPreCheckResp  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public QueryPreCheckResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -355,6 +368,9 @@ public class QueryPreCheckResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

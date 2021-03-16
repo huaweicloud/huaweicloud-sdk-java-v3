@@ -42,6 +42,9 @@ public class ShowVaultTagRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

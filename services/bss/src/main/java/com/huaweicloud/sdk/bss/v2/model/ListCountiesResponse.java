@@ -56,6 +56,8 @@ public class ListCountiesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListCountiesResponse withCounties(List<County> counties) {
         this.counties = counties;
         return this;
@@ -63,9 +65,6 @@ public class ListCountiesResponse extends SdkResponse {
 
     
     public ListCountiesResponse addCountiesItem(County countiesItem) {
-        if (this.counties == null) {
-            this.counties = new ArrayList<>();
-        }
         this.counties.add(countiesItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListCountiesResponse extends SdkResponse {
     public void setCounties(List<County> counties) {
         this.counties = counties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

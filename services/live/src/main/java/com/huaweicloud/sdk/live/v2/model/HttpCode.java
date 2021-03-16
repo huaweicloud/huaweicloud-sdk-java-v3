@@ -57,6 +57,8 @@ public class HttpCode  {
         this.code = code;
     }
 
+    
+
     public HttpCode withCount(Integer count) {
         this.count = count;
         return this;
@@ -79,6 +81,8 @@ public class HttpCode  {
         this.count = count;
     }
 
+    
+
     public HttpCode withProportion(Double proportion) {
         this.proportion = proportion;
         return this;
@@ -100,6 +104,9 @@ public class HttpCode  {
     public void setProportion(Double proportion) {
         this.proportion = proportion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class Config  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_compliance")
     
-    private SecurityCompliance securityCompliance = null;
+    private SecurityCompliance securityCompliance;
 
     public Config withSecurityCompliance(SecurityCompliance securityCompliance) {
         this.securityCompliance = securityCompliance;
@@ -50,6 +50,9 @@ public class Config  {
     public void setSecurityCompliance(SecurityCompliance securityCompliance) {
         this.securityCompliance = securityCompliance;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

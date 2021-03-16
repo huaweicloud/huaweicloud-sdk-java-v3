@@ -57,7 +57,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaData metaData = null;
+    private MetaData metaData;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.groupName = groupName;
     }
 
+    
+
     public ShowResourceGroupResponse withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -105,6 +107,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.groupId = groupId;
     }
 
+    
+
     public ShowResourceGroupResponse withResources(List<ResourceGroup> resources) {
         this.resources = resources;
         return this;
@@ -112,9 +116,6 @@ public class ShowResourceGroupResponse extends SdkResponse {
 
     
     public ShowResourceGroupResponse addResourcesItem(ResourceGroup resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -139,6 +140,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.resources = resources;
     }
 
+    
+
     public ShowResourceGroupResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -159,6 +162,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowResourceGroupResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -178,6 +183,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
     public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ShowResourceGroupResponse withMetaData(MetaData metaData) {
         this.metaData = metaData;
@@ -206,6 +213,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.metaData = metaData;
     }
 
+    
+
     public ShowResourceGroupResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -225,6 +234,9 @@ public class ShowResourceGroupResponse extends SdkResponse {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

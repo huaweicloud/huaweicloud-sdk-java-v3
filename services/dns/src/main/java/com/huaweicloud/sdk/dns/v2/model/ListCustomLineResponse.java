@@ -33,7 +33,7 @@ public class ListCustomLineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metedata metadata = null;
+    private Metedata metadata;
 
     public ListCustomLineResponse withLines(List<Line> lines) {
         this.lines = lines;
@@ -42,9 +42,6 @@ public class ListCustomLineResponse extends SdkResponse {
 
     
     public ListCustomLineResponse addLinesItem(Line linesItem) {
-        if (this.lines == null) {
-            this.lines = new ArrayList<>();
-        }
         this.lines.add(linesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListCustomLineResponse extends SdkResponse {
     public void setLines(List<Line> lines) {
         this.lines = lines;
     }
+
+    
 
     public ListCustomLineResponse withMetadata(Metedata metadata) {
         this.metadata = metadata;
@@ -95,6 +94,9 @@ public class ListCustomLineResponse extends SdkResponse {
     public void setMetadata(Metedata metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

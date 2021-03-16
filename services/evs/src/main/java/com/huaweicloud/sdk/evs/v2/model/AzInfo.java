@@ -28,7 +28,7 @@ public class AzInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="zoneState")
     
-    private ZoneState zoneState = null;
+    private ZoneState zoneState;
 
     public AzInfo withZoneName(String zoneName) {
         this.zoneName = zoneName;
@@ -49,6 +49,8 @@ public class AzInfo  {
     public void setZoneName(String zoneName) {
         this.zoneName = zoneName;
     }
+
+    
 
     public AzInfo withZoneState(ZoneState zoneState) {
         this.zoneState = zoneState;
@@ -76,6 +78,9 @@ public class AzInfo  {
     public void setZoneState(ZoneState zoneState) {
         this.zoneState = zoneState;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

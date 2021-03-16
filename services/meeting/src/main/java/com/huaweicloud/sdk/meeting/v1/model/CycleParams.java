@@ -53,7 +53,7 @@ public class CycleParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="preRemindDays")
     
-    private Integer preRemindDays = 1;
+    private Integer preRemindDays;
 
     public CycleParams withStartDate(String startDate) {
         this.startDate = startDate;
@@ -75,6 +75,8 @@ public class CycleParams  {
         this.startDate = startDate;
     }
 
+    
+
     public CycleParams withEndDate(String endDate) {
         this.endDate = endDate;
         return this;
@@ -94,6 +96,8 @@ public class CycleParams  {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
+
+    
 
     public CycleParams withCycle(String cycle) {
         this.cycle = cycle;
@@ -115,6 +119,8 @@ public class CycleParams  {
         this.cycle = cycle;
     }
 
+    
+
     public CycleParams withInterval(Integer interval) {
         this.interval = interval;
         return this;
@@ -135,6 +141,8 @@ public class CycleParams  {
         this.interval = interval;
     }
 
+    
+
     public CycleParams withPoint(List<Integer> point) {
         this.point = point;
         return this;
@@ -142,9 +150,6 @@ public class CycleParams  {
 
     
     public CycleParams addPointItem(Integer pointItem) {
-        if (this.point == null) {
-            this.point = new ArrayList<>();
-        }
         this.point.add(pointItem);
         return this;
     }
@@ -169,6 +174,8 @@ public class CycleParams  {
         this.point = point;
     }
 
+    
+
     public CycleParams withPreRemindDays(Integer preRemindDays) {
         this.preRemindDays = preRemindDays;
         return this;
@@ -190,6 +197,9 @@ public class CycleParams  {
     public void setPreRemindDays(Integer preRemindDays) {
         this.preRemindDays = preRemindDays;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

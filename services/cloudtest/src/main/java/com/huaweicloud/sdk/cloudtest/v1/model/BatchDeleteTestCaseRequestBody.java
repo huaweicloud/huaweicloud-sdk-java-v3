@@ -29,7 +29,7 @@ public class BatchDeleteTestCaseRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="testcase_id_list")
     
-    private List<String> testcaseIdList = new ArrayList<>();
+    private List<String> testcaseIdList = null;
     
     public BatchDeleteTestCaseRequestBody withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
@@ -50,6 +50,8 @@ public class BatchDeleteTestCaseRequestBody  {
     public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public BatchDeleteTestCaseRequestBody withTestcaseIdList(List<String> testcaseIdList) {
         this.testcaseIdList = testcaseIdList;
@@ -81,6 +83,9 @@ public class BatchDeleteTestCaseRequestBody  {
     public void setTestcaseIdList(List<String> testcaseIdList) {
         this.testcaseIdList = testcaseIdList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

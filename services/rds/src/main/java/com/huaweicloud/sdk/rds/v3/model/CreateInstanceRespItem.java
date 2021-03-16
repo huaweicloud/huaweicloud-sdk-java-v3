@@ -45,13 +45,13 @@ public class CreateInstanceRespItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha")
     
-    private Ha ha = null;
+    private Ha ha;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class CreateInstanceRespItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private BackupStrategy backupStrategy = null;
+    private BackupStrategy backupStrategy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,7 +93,7 @@ public class CreateInstanceRespItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private Volume volume = null;
+    private Volume volume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -129,7 +129,7 @@ public class CreateInstanceRespItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    private ChargeInfo chargeInfo = null;
+    private ChargeInfo chargeInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -141,7 +141,7 @@ public class CreateInstanceRespItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore_point")
     
-    private RestorePoint restorePoint = null;
+    private RestorePoint restorePoint;
 
     public CreateInstanceRespItem withId(String id) {
         this.id = id;
@@ -163,6 +163,8 @@ public class CreateInstanceRespItem  {
         this.id = id;
     }
 
+    
+
     public CreateInstanceRespItem withName(String name) {
         this.name = name;
         return this;
@@ -183,6 +185,8 @@ public class CreateInstanceRespItem  {
         this.name = name;
     }
 
+    
+
     public CreateInstanceRespItem withStatus(String status) {
         this.status = status;
         return this;
@@ -202,6 +206,8 @@ public class CreateInstanceRespItem  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public CreateInstanceRespItem withDatastore(Datastore datastore) {
         this.datastore = datastore;
@@ -230,6 +236,8 @@ public class CreateInstanceRespItem  {
         this.datastore = datastore;
     }
 
+    
+
     public CreateInstanceRespItem withHa(Ha ha) {
         this.ha = ha;
         return this;
@@ -257,6 +265,8 @@ public class CreateInstanceRespItem  {
         this.ha = ha;
     }
 
+    
+
     public CreateInstanceRespItem withConfigurationId(String configurationId) {
         this.configurationId = configurationId;
         return this;
@@ -277,6 +287,8 @@ public class CreateInstanceRespItem  {
         this.configurationId = configurationId;
     }
 
+    
+
     public CreateInstanceRespItem withPort(String port) {
         this.port = port;
         return this;
@@ -296,6 +308,8 @@ public class CreateInstanceRespItem  {
     public void setPort(String port) {
         this.port = port;
     }
+
+    
 
     public CreateInstanceRespItem withBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
@@ -324,6 +338,8 @@ public class CreateInstanceRespItem  {
         this.backupStrategy = backupStrategy;
     }
 
+    
+
     public CreateInstanceRespItem withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -343,6 +359,8 @@ public class CreateInstanceRespItem  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public CreateInstanceRespItem withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
@@ -364,6 +382,8 @@ public class CreateInstanceRespItem  {
         this.diskEncryptionId = diskEncryptionId;
     }
 
+    
+
     public CreateInstanceRespItem withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -383,6 +403,8 @@ public class CreateInstanceRespItem  {
     public void setFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
     }
+
+    
 
     public CreateInstanceRespItem withVolume(Volume volume) {
         this.volume = volume;
@@ -411,6 +433,8 @@ public class CreateInstanceRespItem  {
         this.volume = volume;
     }
 
+    
+
     public CreateInstanceRespItem withRegion(String region) {
         this.region = region;
         return this;
@@ -430,6 +454,8 @@ public class CreateInstanceRespItem  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public CreateInstanceRespItem withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -451,6 +477,8 @@ public class CreateInstanceRespItem  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public CreateInstanceRespItem withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -470,6 +498,8 @@ public class CreateInstanceRespItem  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public CreateInstanceRespItem withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -491,6 +521,8 @@ public class CreateInstanceRespItem  {
         this.subnetId = subnetId;
     }
 
+    
+
     public CreateInstanceRespItem withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -510,6 +542,8 @@ public class CreateInstanceRespItem  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public CreateInstanceRespItem withChargeInfo(ChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
@@ -538,6 +572,8 @@ public class CreateInstanceRespItem  {
         this.chargeInfo = chargeInfo;
     }
 
+    
+
     public CreateInstanceRespItem withCollation(String collation) {
         this.collation = collation;
         return this;
@@ -557,6 +593,8 @@ public class CreateInstanceRespItem  {
     public void setCollation(String collation) {
         this.collation = collation;
     }
+
+    
 
     public CreateInstanceRespItem withRestorePoint(RestorePoint restorePoint) {
         this.restorePoint = restorePoint;
@@ -584,6 +622,9 @@ public class CreateInstanceRespItem  {
     public void setRestorePoint(RestorePoint restorePoint) {
         this.restorePoint = restorePoint;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

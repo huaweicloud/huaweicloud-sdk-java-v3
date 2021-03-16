@@ -39,7 +39,7 @@ public class RestAttendeeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private Integer role = 0;
+    private Integer role;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,13 +75,13 @@ public class RestAttendeeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isMute")
     
-    private Integer isMute = 0;
+    private Integer isMute;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isAutoInvite")
     
-    private Integer isAutoInvite = 1;
+    private Integer isAutoInvite;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,6 +133,8 @@ public class RestAttendeeDTO  {
         this.userUUID = userUUID;
     }
 
+    
+
     public RestAttendeeDTO withAccountId(String accountId) {
         this.accountId = accountId;
         return this;
@@ -153,6 +155,8 @@ public class RestAttendeeDTO  {
         this.accountId = accountId;
     }
 
+    
+
     public RestAttendeeDTO withName(String name) {
         this.name = name;
         return this;
@@ -172,6 +176,8 @@ public class RestAttendeeDTO  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public RestAttendeeDTO withRole(Integer role) {
         this.role = role;
@@ -195,6 +201,8 @@ public class RestAttendeeDTO  {
         this.role = role;
     }
 
+    
+
     public RestAttendeeDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -214,6 +222,8 @@ public class RestAttendeeDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public RestAttendeeDTO withPhone2(String phone2) {
         this.phone2 = phone2;
@@ -235,6 +245,8 @@ public class RestAttendeeDTO  {
         this.phone2 = phone2;
     }
 
+    
+
     public RestAttendeeDTO withPhone3(String phone3) {
         this.phone3 = phone3;
         return this;
@@ -254,6 +266,8 @@ public class RestAttendeeDTO  {
     public void setPhone3(String phone3) {
         this.phone3 = phone3;
     }
+
+    
 
     public RestAttendeeDTO withEmail(String email) {
         this.email = email;
@@ -275,6 +289,8 @@ public class RestAttendeeDTO  {
         this.email = email;
     }
 
+    
+
     public RestAttendeeDTO withSms(String sms) {
         this.sms = sms;
         return this;
@@ -294,6 +310,8 @@ public class RestAttendeeDTO  {
     public void setSms(String sms) {
         this.sms = sms;
     }
+
+    
 
     public RestAttendeeDTO withIsMute(Integer isMute) {
         this.isMute = isMute;
@@ -317,6 +335,8 @@ public class RestAttendeeDTO  {
         this.isMute = isMute;
     }
 
+    
+
     public RestAttendeeDTO withIsAutoInvite(Integer isAutoInvite) {
         this.isAutoInvite = isAutoInvite;
         return this;
@@ -339,6 +359,8 @@ public class RestAttendeeDTO  {
         this.isAutoInvite = isAutoInvite;
     }
 
+    
+
     public RestAttendeeDTO withType(String type) {
         this.type = type;
         return this;
@@ -358,6 +380,8 @@ public class RestAttendeeDTO  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public RestAttendeeDTO withAddress(String address) {
         this.address = address;
@@ -379,6 +403,8 @@ public class RestAttendeeDTO  {
         this.address = address;
     }
 
+    
+
     public RestAttendeeDTO withDeptUUID(String deptUUID) {
         this.deptUUID = deptUUID;
         return this;
@@ -398,6 +424,8 @@ public class RestAttendeeDTO  {
     public void setDeptUUID(String deptUUID) {
         this.deptUUID = deptUUID;
     }
+
+    
 
     public RestAttendeeDTO withDeptName(String deptName) {
         this.deptName = deptName;
@@ -419,6 +447,8 @@ public class RestAttendeeDTO  {
         this.deptName = deptName;
     }
 
+    
+
     public RestAttendeeDTO withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -438,6 +468,9 @@ public class RestAttendeeDTO  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

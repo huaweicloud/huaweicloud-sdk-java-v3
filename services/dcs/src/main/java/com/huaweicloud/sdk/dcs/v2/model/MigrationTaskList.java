@@ -339,6 +339,8 @@ public class MigrationTaskList  {
         this.taskId = taskId;
     }
 
+    
+
     public MigrationTaskList withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -358,6 +360,8 @@ public class MigrationTaskList  {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public MigrationTaskList withStatus(StatusEnum status) {
         this.status = status;
@@ -379,6 +383,8 @@ public class MigrationTaskList  {
         this.status = status;
     }
 
+    
+
     public MigrationTaskList withMigrationType(MigrationTypeEnum migrationType) {
         this.migrationType = migrationType;
         return this;
@@ -398,6 +404,8 @@ public class MigrationTaskList  {
     public void setMigrationType(MigrationTypeEnum migrationType) {
         this.migrationType = migrationType;
     }
+
+    
 
     public MigrationTaskList withMigrationMethod(MigrationMethodEnum migrationMethod) {
         this.migrationMethod = migrationMethod;
@@ -419,6 +427,8 @@ public class MigrationTaskList  {
         this.migrationMethod = migrationMethod;
     }
 
+    
+
     public MigrationTaskList withTargetInstanceName(String targetInstanceName) {
         this.targetInstanceName = targetInstanceName;
         return this;
@@ -438,6 +448,8 @@ public class MigrationTaskList  {
     public void setTargetInstanceName(String targetInstanceName) {
         this.targetInstanceName = targetInstanceName;
     }
+
+    
 
     public MigrationTaskList withDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -459,6 +471,8 @@ public class MigrationTaskList  {
         this.dataSource = dataSource;
     }
 
+    
+
     public MigrationTaskList withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -478,6 +492,9 @@ public class MigrationTaskList  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

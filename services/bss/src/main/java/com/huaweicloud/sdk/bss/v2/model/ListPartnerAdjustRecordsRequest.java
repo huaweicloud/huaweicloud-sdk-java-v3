@@ -51,13 +51,13 @@ public class ListPartnerAdjustRecordsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class ListPartnerAdjustRecordsRequest  {
         this.customerId = customerId;
     }
 
+    
+
     public ListPartnerAdjustRecordsRequest withOperationType(String operationType) {
         this.operationType = operationType;
         return this;
@@ -104,6 +106,8 @@ public class ListPartnerAdjustRecordsRequest  {
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
+
+    
 
     public ListPartnerAdjustRecordsRequest withOperationTimeBegin(String operationTimeBegin) {
         this.operationTimeBegin = operationTimeBegin;
@@ -125,6 +129,8 @@ public class ListPartnerAdjustRecordsRequest  {
         this.operationTimeBegin = operationTimeBegin;
     }
 
+    
+
     public ListPartnerAdjustRecordsRequest withOperationTimeEnd(String operationTimeEnd) {
         this.operationTimeEnd = operationTimeEnd;
         return this;
@@ -145,6 +151,8 @@ public class ListPartnerAdjustRecordsRequest  {
         this.operationTimeEnd = operationTimeEnd;
     }
 
+    
+
     public ListPartnerAdjustRecordsRequest withTransId(String transId) {
         this.transId = transId;
         return this;
@@ -164,6 +172,8 @@ public class ListPartnerAdjustRecordsRequest  {
     public void setTransId(String transId) {
         this.transId = transId;
     }
+
+    
 
     public ListPartnerAdjustRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -187,6 +197,8 @@ public class ListPartnerAdjustRecordsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListPartnerAdjustRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -209,6 +221,8 @@ public class ListPartnerAdjustRecordsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPartnerAdjustRecordsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -228,6 +242,9 @@ public class ListPartnerAdjustRecordsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -64,7 +64,7 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creator")
     
-    private ListDomainNotAddedProjectsV4ResponseBodyCreator creator = null;
+    private ListDomainNotAddedProjectsV4ResponseBodyCreator creator;
 
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectNumId(Integer projectNumId) {
         this.projectNumId = projectNumId;
@@ -86,6 +86,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.projectNumId = projectNumId;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -105,6 +107,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectName(String projectName) {
         this.projectName = projectName;
@@ -126,6 +130,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.projectName = projectName;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withDescription(String description) {
         this.description = description;
         return this;
@@ -145,6 +151,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
@@ -166,6 +174,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.createdTime = createdTime;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
@@ -186,6 +196,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.updatedTime = updatedTime;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectType(String projectType) {
         this.projectType = projectType;
         return this;
@@ -205,6 +217,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
     public void setProjectType(String projectType) {
         this.projectType = projectType;
     }
+
+    
 
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreator(ListDomainNotAddedProjectsV4ResponseBodyCreator creator) {
         this.creator = creator;
@@ -232,6 +246,9 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
     public void setCreator(ListDomainNotAddedProjectsV4ResponseBodyCreator creator) {
         this.creator = creator;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

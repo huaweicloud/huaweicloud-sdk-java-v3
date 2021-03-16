@@ -35,9 +35,6 @@ public class ListL7policiesResponse extends SdkResponse {
 
     
     public ListL7policiesResponse addL7policiesItem(L7policyResp l7policiesItem) {
-        if (this.l7policies == null) {
-            this.l7policies = new ArrayList<>();
-        }
         this.l7policies.add(l7policiesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListL7policiesResponse extends SdkResponse {
     public void setL7policies(List<L7policyResp> l7policies) {
         this.l7policies = l7policies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

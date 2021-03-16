@@ -22,7 +22,7 @@ public class CreateCustomLineRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateCustomLines body = null;
+    private CreateCustomLines body;
 
     public CreateCustomLineRequest withBody(CreateCustomLines body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateCustomLineRequest  {
     public void setBody(CreateCustomLines body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class CreateMetadataRequestBody  {
         this.domainId = domainId;
     }
 
+    
+
     public CreateMetadataRequestBody withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
         return this;
@@ -75,6 +77,8 @@ public class CreateMetadataRequestBody  {
         this.xaccountType = xaccountType;
     }
 
+    
+
     public CreateMetadataRequestBody withMetadata(String metadata) {
         this.metadata = metadata;
         return this;
@@ -94,6 +98,9 @@ public class CreateMetadataRequestBody  {
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

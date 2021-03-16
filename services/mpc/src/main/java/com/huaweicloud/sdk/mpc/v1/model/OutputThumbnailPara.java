@@ -46,7 +46,7 @@ public class OutputThumbnailPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
     public OutputThumbnailPara withTotalPictures(Integer totalPictures) {
         this.totalPictures = totalPictures;
@@ -70,6 +70,8 @@ public class OutputThumbnailPara  {
         this.totalPictures = totalPictures;
     }
 
+    
+
     public OutputThumbnailPara withWidth(Integer width) {
         this.width = width;
         return this;
@@ -91,6 +93,8 @@ public class OutputThumbnailPara  {
     public void setWidth(Integer width) {
         this.width = width;
     }
+
+    
 
     public OutputThumbnailPara withHeight(Integer height) {
         this.height = height;
@@ -114,6 +118,8 @@ public class OutputThumbnailPara  {
         this.height = height;
     }
 
+    
+
     public OutputThumbnailPara withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -133,6 +139,8 @@ public class OutputThumbnailPara  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public OutputThumbnailPara withOutput(ObsObjInfo output) {
         this.output = output;
@@ -160,6 +168,9 @@ public class OutputThumbnailPara  {
     public void setOutput(ObsObjInfo output) {
         this.output = output;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

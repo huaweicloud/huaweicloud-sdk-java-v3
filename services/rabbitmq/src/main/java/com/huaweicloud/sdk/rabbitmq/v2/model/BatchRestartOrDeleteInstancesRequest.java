@@ -22,7 +22,7 @@ public class BatchRestartOrDeleteInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchRestartOrDeleteInstanceReq body = null;
+    private BatchRestartOrDeleteInstanceReq body;
 
     public BatchRestartOrDeleteInstancesRequest withBody(BatchRestartOrDeleteInstanceReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchRestartOrDeleteInstancesRequest  {
     public void setBody(BatchRestartOrDeleteInstanceReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

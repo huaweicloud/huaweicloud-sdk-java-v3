@@ -22,7 +22,7 @@ public class SetBackupPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    private BackupPolicy backupPolicy = null;
+    private BackupPolicy backupPolicy;
 
     public SetBackupPolicyRequestBody withBackupPolicy(BackupPolicy backupPolicy) {
         this.backupPolicy = backupPolicy;
@@ -50,6 +50,9 @@ public class SetBackupPolicyRequestBody  {
     public void setBackupPolicy(BackupPolicy backupPolicy) {
         this.backupPolicy = backupPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

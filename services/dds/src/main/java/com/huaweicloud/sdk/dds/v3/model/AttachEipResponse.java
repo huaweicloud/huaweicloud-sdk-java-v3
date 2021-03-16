@@ -69,6 +69,8 @@ public class AttachEipResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public AttachEipResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -88,6 +90,8 @@ public class AttachEipResponse extends SdkResponse {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public AttachEipResponse withNodeName(String nodeName) {
         this.nodeName = nodeName;
@@ -109,6 +113,8 @@ public class AttachEipResponse extends SdkResponse {
         this.nodeName = nodeName;
     }
 
+    
+
     public AttachEipResponse withPublicIpId(String publicIpId) {
         this.publicIpId = publicIpId;
         return this;
@@ -129,6 +135,8 @@ public class AttachEipResponse extends SdkResponse {
         this.publicIpId = publicIpId;
     }
 
+    
+
     public AttachEipResponse withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -148,6 +156,9 @@ public class AttachEipResponse extends SdkResponse {
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

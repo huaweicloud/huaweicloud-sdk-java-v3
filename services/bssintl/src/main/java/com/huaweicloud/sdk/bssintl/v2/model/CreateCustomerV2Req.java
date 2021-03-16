@@ -63,7 +63,7 @@ public class CreateCustomerV2Req  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_close_market_ms")
     
-    private String isCloseMarketMs = "false";
+    private String isCloseMarketMs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,6 +103,8 @@ public class CreateCustomerV2Req  {
         this.domainName = domainName;
     }
 
+    
+
     public CreateCustomerV2Req withEmail(String email) {
         this.email = email;
         return this;
@@ -122,6 +124,8 @@ public class CreateCustomerV2Req  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public CreateCustomerV2Req withVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
@@ -143,6 +147,8 @@ public class CreateCustomerV2Req  {
         this.verificationCode = verificationCode;
     }
 
+    
+
     public CreateCustomerV2Req withDomainArea(String domainArea) {
         this.domainArea = domainArea;
         return this;
@@ -162,6 +168,8 @@ public class CreateCustomerV2Req  {
     public void setDomainArea(String domainArea) {
         this.domainArea = domainArea;
     }
+
+    
 
     public CreateCustomerV2Req withXaccountId(String xaccountId) {
         this.xaccountId = xaccountId;
@@ -183,6 +191,8 @@ public class CreateCustomerV2Req  {
         this.xaccountId = xaccountId;
     }
 
+    
+
     public CreateCustomerV2Req withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
         return this;
@@ -202,6 +212,8 @@ public class CreateCustomerV2Req  {
     public void setXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
     }
+
+    
 
     public CreateCustomerV2Req withPassword(String password) {
         this.password = password;
@@ -223,6 +235,8 @@ public class CreateCustomerV2Req  {
         this.password = password;
     }
 
+    
+
     public CreateCustomerV2Req withIsCloseMarketMs(String isCloseMarketMs) {
         this.isCloseMarketMs = isCloseMarketMs;
         return this;
@@ -242,6 +256,8 @@ public class CreateCustomerV2Req  {
     public void setIsCloseMarketMs(String isCloseMarketMs) {
         this.isCloseMarketMs = isCloseMarketMs;
     }
+
+    
 
     public CreateCustomerV2Req withCooperationType(String cooperationType) {
         this.cooperationType = cooperationType;
@@ -263,6 +279,8 @@ public class CreateCustomerV2Req  {
         this.cooperationType = cooperationType;
     }
 
+    
+
     public CreateCustomerV2Req withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -283,6 +301,8 @@ public class CreateCustomerV2Req  {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    
+
     public CreateCustomerV2Req withIncludeAssociationResult(Boolean includeAssociationResult) {
         this.includeAssociationResult = includeAssociationResult;
         return this;
@@ -302,6 +322,9 @@ public class CreateCustomerV2Req  {
     public void setIncludeAssociationResult(Boolean includeAssociationResult) {
         this.includeAssociationResult = includeAssociationResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

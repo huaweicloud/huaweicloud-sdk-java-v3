@@ -28,7 +28,7 @@ public class CreatePostPaidServersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private PostPaidServer server = null;
+    private PostPaidServer server;
 
     public CreatePostPaidServersRequestBody withDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
@@ -49,6 +49,8 @@ public class CreatePostPaidServersRequestBody  {
     public void setDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
     }
+
+    
 
     public CreatePostPaidServersRequestBody withServer(PostPaidServer server) {
         this.server = server;
@@ -76,6 +78,9 @@ public class CreatePostPaidServersRequestBody  {
     public void setServer(PostPaidServer server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

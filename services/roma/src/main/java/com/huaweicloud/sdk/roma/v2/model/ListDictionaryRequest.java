@@ -27,13 +27,13 @@ public class ListDictionaryRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private String offset = "0";
+    private String offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private String limit = "10";
+    private String limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class ListDictionaryRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDictionaryRequest withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -92,6 +94,8 @@ public class ListDictionaryRequest  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
 
     public ListDictionaryRequest withLimit(String limit) {
         this.limit = limit;
@@ -113,6 +117,8 @@ public class ListDictionaryRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListDictionaryRequest withParentCode(String parentCode) {
         this.parentCode = parentCode;
         return this;
@@ -132,6 +138,8 @@ public class ListDictionaryRequest  {
     public void setParentCode(String parentCode) {
         this.parentCode = parentCode;
     }
+
+    
 
     public ListDictionaryRequest withCode(String code) {
         this.code = code;
@@ -153,6 +161,8 @@ public class ListDictionaryRequest  {
         this.code = code;
     }
 
+    
+
     public ListDictionaryRequest withName(String name) {
         this.name = name;
         return this;
@@ -172,6 +182,9 @@ public class ListDictionaryRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

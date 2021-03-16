@@ -263,6 +263,8 @@ public class QueryJobStatusResp  {
         this.id = id;
     }
 
+    
+
     public QueryJobStatusResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -282,6 +284,8 @@ public class QueryJobStatusResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public QueryJobStatusResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -303,6 +307,8 @@ public class QueryJobStatusResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public QueryJobStatusResp withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -322,6 +328,9 @@ public class QueryJobStatusResp  {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class UpdateApplicationRequestBody  {
         this.platformPrincipal = platformPrincipal;
     }
 
+    
+
     public UpdateApplicationRequestBody withPlatformCredential(String platformCredential) {
         this.platformCredential = platformCredential;
         return this;
@@ -68,6 +70,9 @@ public class UpdateApplicationRequestBody  {
     public void setPlatformCredential(String platformCredential) {
         this.platformCredential = platformCredential;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

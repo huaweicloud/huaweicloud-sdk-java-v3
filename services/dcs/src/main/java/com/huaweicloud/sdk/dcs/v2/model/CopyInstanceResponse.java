@@ -44,6 +44,9 @@ public class CopyInstanceResponse extends SdkResponse {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

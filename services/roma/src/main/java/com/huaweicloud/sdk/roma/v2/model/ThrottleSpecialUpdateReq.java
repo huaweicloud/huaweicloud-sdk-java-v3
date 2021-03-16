@@ -42,6 +42,9 @@ public class ThrottleSpecialUpdateReq  {
     public void setCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

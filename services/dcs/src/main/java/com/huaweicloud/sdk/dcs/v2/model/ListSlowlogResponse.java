@@ -54,6 +54,8 @@ public class ListSlowlogResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListSlowlogResponse withSlowlogs(List<SlowlogItem> slowlogs) {
         this.slowlogs = slowlogs;
         return this;
@@ -61,9 +63,6 @@ public class ListSlowlogResponse extends SdkResponse {
 
     
     public ListSlowlogResponse addSlowlogsItem(SlowlogItem slowlogsItem) {
-        if (this.slowlogs == null) {
-            this.slowlogs = new ArrayList<>();
-        }
         this.slowlogs.add(slowlogsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListSlowlogResponse extends SdkResponse {
     public void setSlowlogs(List<SlowlogItem> slowlogs) {
         this.slowlogs = slowlogs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

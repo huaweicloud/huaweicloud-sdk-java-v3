@@ -50,7 +50,7 @@ public class MergeChannelsTaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,6 +90,8 @@ public class MergeChannelsTaskInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public MergeChannelsTaskInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -109,6 +111,8 @@ public class MergeChannelsTaskInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public MergeChannelsTaskInfo withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -130,6 +134,8 @@ public class MergeChannelsTaskInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public MergeChannelsTaskInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -149,6 +155,8 @@ public class MergeChannelsTaskInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public MergeChannelsTaskInfo withOutput(ObsObjInfo output) {
         this.output = output;
@@ -177,6 +185,8 @@ public class MergeChannelsTaskInfo  {
         this.output = output;
     }
 
+    
+
     public MergeChannelsTaskInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -197,6 +207,8 @@ public class MergeChannelsTaskInfo  {
         this.description = description;
     }
 
+    
+
     public MergeChannelsTaskInfo withAudioFiles(List<AudioFile> audioFiles) {
         this.audioFiles = audioFiles;
         return this;
@@ -204,9 +216,6 @@ public class MergeChannelsTaskInfo  {
 
     
     public MergeChannelsTaskInfo addAudioFilesItem(AudioFile audioFilesItem) {
-        if (this.audioFiles == null) {
-            this.audioFiles = new ArrayList<>();
-        }
         this.audioFiles.add(audioFilesItem);
         return this;
     }
@@ -231,6 +240,8 @@ public class MergeChannelsTaskInfo  {
         this.audioFiles = audioFiles;
     }
 
+    
+
     public MergeChannelsTaskInfo withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
@@ -250,6 +261,9 @@ public class MergeChannelsTaskInfo  {
     public void setOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

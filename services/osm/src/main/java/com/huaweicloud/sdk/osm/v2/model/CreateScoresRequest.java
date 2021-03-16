@@ -46,7 +46,7 @@ public class CreateScoresRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateScoreV2Req body = null;
+    private CreateScoreV2Req body;
 
     public CreateScoresRequest withCaseId(String caseId) {
         this.caseId = caseId;
@@ -67,6 +67,8 @@ public class CreateScoresRequest  {
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
+
+    
 
     public CreateScoresRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -92,6 +94,8 @@ public class CreateScoresRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CreateScoresRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -114,6 +118,8 @@ public class CreateScoresRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CreateScoresRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -135,6 +141,8 @@ public class CreateScoresRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public CreateScoresRequest withBody(CreateScoreV2Req body) {
         this.body = body;
@@ -162,6 +170,9 @@ public class CreateScoresRequest  {
     public void setBody(CreateScoreV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

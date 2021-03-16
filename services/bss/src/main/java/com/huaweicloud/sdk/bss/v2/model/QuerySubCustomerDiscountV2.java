@@ -61,6 +61,8 @@ public class QuerySubCustomerDiscountV2  {
         this.discountId = discountId;
     }
 
+    
+
     public QuerySubCustomerDiscountV2 withDiscount(Double discount) {
         this.discount = discount;
         return this;
@@ -80,6 +82,8 @@ public class QuerySubCustomerDiscountV2  {
     public void setDiscount(Double discount) {
         this.discount = discount;
     }
+
+    
 
     public QuerySubCustomerDiscountV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
@@ -101,6 +105,8 @@ public class QuerySubCustomerDiscountV2  {
         this.effectiveTime = effectiveTime;
     }
 
+    
+
     public QuerySubCustomerDiscountV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -120,6 +126,9 @@ public class QuerySubCustomerDiscountV2  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

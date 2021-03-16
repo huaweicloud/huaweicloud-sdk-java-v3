@@ -28,7 +28,7 @@ public class KeystoneUpdateIdentityProviderRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneUpdateIdentityProviderRequestBody body = null;
+    private KeystoneUpdateIdentityProviderRequestBody body;
 
     public KeystoneUpdateIdentityProviderRequest withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class KeystoneUpdateIdentityProviderRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public KeystoneUpdateIdentityProviderRequest withBody(KeystoneUpdateIdentityProviderRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class KeystoneUpdateIdentityProviderRequest  {
     public void setBody(KeystoneUpdateIdentityProviderRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -106,7 +106,7 @@ public class ReqCreatePredefineTag  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<PredefineTagRequest> tags = new ArrayList<>();
+    private List<PredefineTagRequest> tags = null;
     
     public ReqCreatePredefineTag withAction(ActionEnum action) {
         this.action = action;
@@ -127,6 +127,8 @@ public class ReqCreatePredefineTag  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public ReqCreatePredefineTag withTags(List<PredefineTagRequest> tags) {
         this.tags = tags;
@@ -158,6 +160,9 @@ public class ReqCreatePredefineTag  {
     public void setTags(List<PredefineTagRequest> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

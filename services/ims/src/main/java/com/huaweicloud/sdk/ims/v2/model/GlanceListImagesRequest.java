@@ -127,7 +127,7 @@ public class GlanceListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__isregistered")
     
-    private Boolean isregistered = true;
+    private Boolean isregistered;
     /**
      * Gets or Sets osBit
      */
@@ -505,7 +505,7 @@ public class GlanceListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_format")
     
-    private String containerFormat = "bare";
+    private String containerFormat;
     /**
      * Gets or Sets diskFormat
      */
@@ -613,7 +613,7 @@ public class GlanceListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 25;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -901,6 +901,8 @@ public class GlanceListImagesRequest  {
         this.imagetype = imagetype;
     }
 
+    
+
     public GlanceListImagesRequest withIsregistered(Boolean isregistered) {
         this.isregistered = isregistered;
         return this;
@@ -922,6 +924,8 @@ public class GlanceListImagesRequest  {
     public void setIsregistered(Boolean isregistered) {
         this.isregistered = isregistered;
     }
+
+    
 
     public GlanceListImagesRequest withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
@@ -945,6 +949,8 @@ public class GlanceListImagesRequest  {
         this.osBit = osBit;
     }
 
+    
+
     public GlanceListImagesRequest withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -966,6 +972,8 @@ public class GlanceListImagesRequest  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public GlanceListImagesRequest withPlatform(PlatformEnum platform) {
         this.platform = platform;
@@ -989,6 +997,8 @@ public class GlanceListImagesRequest  {
         this.platform = platform;
     }
 
+    
+
     public GlanceListImagesRequest withSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
         return this;
@@ -1010,6 +1020,8 @@ public class GlanceListImagesRequest  {
     public void setSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
     }
+
+    
 
     public GlanceListImagesRequest withSupportHighperformance(String supportHighperformance) {
         this.supportHighperformance = supportHighperformance;
@@ -1033,6 +1045,8 @@ public class GlanceListImagesRequest  {
         this.supportHighperformance = supportHighperformance;
     }
 
+    
+
     public GlanceListImagesRequest withSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
         return this;
@@ -1054,6 +1068,8 @@ public class GlanceListImagesRequest  {
     public void setSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
     }
+
+    
 
     public GlanceListImagesRequest withSupportKvmGpuType(String supportKvmGpuType) {
         this.supportKvmGpuType = supportKvmGpuType;
@@ -1077,6 +1093,8 @@ public class GlanceListImagesRequest  {
         this.supportKvmGpuType = supportKvmGpuType;
     }
 
+    
+
     public GlanceListImagesRequest withSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
         return this;
@@ -1098,6 +1116,8 @@ public class GlanceListImagesRequest  {
     public void setSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
     }
+
+    
 
     public GlanceListImagesRequest withSupportLargememory(String supportLargememory) {
         this.supportLargememory = supportLargememory;
@@ -1121,6 +1141,8 @@ public class GlanceListImagesRequest  {
         this.supportLargememory = supportLargememory;
     }
 
+    
+
     public GlanceListImagesRequest withSupportXen(String supportXen) {
         this.supportXen = supportXen;
         return this;
@@ -1142,6 +1164,8 @@ public class GlanceListImagesRequest  {
     public void setSupportXen(String supportXen) {
         this.supportXen = supportXen;
     }
+
+    
 
     public GlanceListImagesRequest withSupportXenGpuType(String supportXenGpuType) {
         this.supportXenGpuType = supportXenGpuType;
@@ -1165,6 +1189,8 @@ public class GlanceListImagesRequest  {
         this.supportXenGpuType = supportXenGpuType;
     }
 
+    
+
     public GlanceListImagesRequest withSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
         return this;
@@ -1187,6 +1213,8 @@ public class GlanceListImagesRequest  {
         this.supportXenHana = supportXenHana;
     }
 
+    
+
     public GlanceListImagesRequest withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
         return this;
@@ -1206,6 +1234,8 @@ public class GlanceListImagesRequest  {
     public void setContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
     }
+
+    
 
     public GlanceListImagesRequest withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
@@ -1227,6 +1257,8 @@ public class GlanceListImagesRequest  {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public GlanceListImagesRequest withId(String id) {
         this.id = id;
         return this;
@@ -1246,6 +1278,8 @@ public class GlanceListImagesRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public GlanceListImagesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -1267,6 +1301,8 @@ public class GlanceListImagesRequest  {
         this.limit = limit;
     }
 
+    
+
     public GlanceListImagesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -1287,6 +1323,8 @@ public class GlanceListImagesRequest  {
         this.marker = marker;
     }
 
+    
+
     public GlanceListImagesRequest withMemberStatus(String memberStatus) {
         this.memberStatus = memberStatus;
         return this;
@@ -1306,6 +1344,8 @@ public class GlanceListImagesRequest  {
     public void setMemberStatus(String memberStatus) {
         this.memberStatus = memberStatus;
     }
+
+    
 
     public GlanceListImagesRequest withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
@@ -1329,6 +1369,8 @@ public class GlanceListImagesRequest  {
         this.minDisk = minDisk;
     }
 
+    
+
     public GlanceListImagesRequest withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
@@ -1348,6 +1390,8 @@ public class GlanceListImagesRequest  {
     public void setMinRam(Integer minRam) {
         this.minRam = minRam;
     }
+
+    
 
     public GlanceListImagesRequest withName(String name) {
         this.name = name;
@@ -1369,6 +1413,8 @@ public class GlanceListImagesRequest  {
         this.name = name;
     }
 
+    
+
     public GlanceListImagesRequest withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -1388,6 +1434,8 @@ public class GlanceListImagesRequest  {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    
 
     public GlanceListImagesRequest withProtected(Boolean _protected) {
         this._protected = _protected;
@@ -1409,6 +1457,8 @@ public class GlanceListImagesRequest  {
         this._protected = _protected;
     }
 
+    
+
     public GlanceListImagesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -1428,6 +1478,8 @@ public class GlanceListImagesRequest  {
     public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
+
+    
 
     public GlanceListImagesRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
@@ -1449,6 +1501,8 @@ public class GlanceListImagesRequest  {
         this.sortKey = sortKey;
     }
 
+    
+
     public GlanceListImagesRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -1468,6 +1522,8 @@ public class GlanceListImagesRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public GlanceListImagesRequest withTag(String tag) {
         this.tag = tag;
@@ -1489,6 +1545,8 @@ public class GlanceListImagesRequest  {
         this.tag = tag;
     }
 
+    
+
     public GlanceListImagesRequest withVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
         return this;
@@ -1508,6 +1566,8 @@ public class GlanceListImagesRequest  {
     public void setVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
     }
+
+    
 
     public GlanceListImagesRequest withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -1529,6 +1589,8 @@ public class GlanceListImagesRequest  {
         this.createdAt = createdAt;
     }
 
+    
+
     public GlanceListImagesRequest withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -1548,6 +1610,9 @@ public class GlanceListImagesRequest  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class ListAddonInstancesRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class GlanceDeleteTagRequest  {
         this.imageId = imageId;
     }
 
+    
+
     public GlanceDeleteTagRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -68,6 +70,9 @@ public class GlanceDeleteTagRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

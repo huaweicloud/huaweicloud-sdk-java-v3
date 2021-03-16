@@ -116,7 +116,7 @@ public class DownloadSlowlogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SlowlogDownloadRequest body = null;
+    private SlowlogDownloadRequest body;
 
     public DownloadSlowlogRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class DownloadSlowlogRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DownloadSlowlogRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class DownloadSlowlogRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public DownloadSlowlogRequest withBody(SlowlogDownloadRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class DownloadSlowlogRequest  {
     public void setBody(SlowlogDownloadRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

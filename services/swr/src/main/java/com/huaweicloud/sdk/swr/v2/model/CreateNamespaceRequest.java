@@ -22,7 +22,7 @@ public class CreateNamespaceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateNamespaceRequestBody body = null;
+    private CreateNamespaceRequestBody body;
 
     public CreateNamespaceRequest withBody(CreateNamespaceRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateNamespaceRequest  {
     public void setBody(CreateNamespaceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

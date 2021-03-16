@@ -54,6 +54,8 @@ public class BatchSetDefinerResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public BatchSetDefinerResponse withResults(List<ModifyJobResp> results) {
         this.results = results;
         return this;
@@ -61,9 +63,6 @@ public class BatchSetDefinerResponse extends SdkResponse {
 
     
     public BatchSetDefinerResponse addResultsItem(ModifyJobResp resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class BatchSetDefinerResponse extends SdkResponse {
     public void setResults(List<ModifyJobResp> results) {
         this.results = results;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class CreateListenerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listener")
     
-    private ListenerResp listener = null;
+    private ListenerResp listener;
 
     public CreateListenerResponse withListener(ListenerResp listener) {
         this.listener = listener;
@@ -52,6 +52,9 @@ public class CreateListenerResponse extends SdkResponse {
     public void setListener(ListenerResp listener) {
         this.listener = listener;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -44,6 +44,9 @@ public class CreateMetadataResponse extends SdkResponse {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -143,13 +143,13 @@ public class CreateServiceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,6 +183,8 @@ public class CreateServiceResponse extends SdkResponse {
         this.productTemplateId = productTemplateId;
     }
 
+    
+
     public CreateServiceResponse withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -202,6 +204,8 @@ public class CreateServiceResponse extends SdkResponse {
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
+
+    
 
     public CreateServiceResponse withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
@@ -223,6 +227,8 @@ public class CreateServiceResponse extends SdkResponse {
         this.serviceId = serviceId;
     }
 
+    
+
     public CreateServiceResponse withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
@@ -242,6 +248,8 @@ public class CreateServiceResponse extends SdkResponse {
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
+
+    
 
     public CreateServiceResponse withDescription(String description) {
         this.description = description;
@@ -263,6 +271,8 @@ public class CreateServiceResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public CreateServiceResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -282,6 +292,8 @@ public class CreateServiceResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public CreateServiceResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -310,6 +322,8 @@ public class CreateServiceResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
+    
+
     public CreateServiceResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -337,6 +351,8 @@ public class CreateServiceResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public CreateServiceResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -359,6 +375,8 @@ public class CreateServiceResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public CreateServiceResponse withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
@@ -380,6 +398,9 @@ public class CreateServiceResponse extends SdkResponse {
     public void setLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

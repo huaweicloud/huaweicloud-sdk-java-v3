@@ -65,6 +65,8 @@ public class BatchDeleteCorpAdminsRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public BatchDeleteCorpAdminsRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class BatchDeleteCorpAdminsRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public BatchDeleteCorpAdminsRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
@@ -107,6 +111,8 @@ public class BatchDeleteCorpAdminsRequest  {
         this.accountType = accountType;
     }
 
+    
+
     public BatchDeleteCorpAdminsRequest withBody(List<String> body) {
         this.body = body;
         return this;
@@ -114,9 +120,6 @@ public class BatchDeleteCorpAdminsRequest  {
 
     
     public BatchDeleteCorpAdminsRequest addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -140,6 +143,9 @@ public class BatchDeleteCorpAdminsRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

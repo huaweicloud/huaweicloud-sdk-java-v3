@@ -22,7 +22,7 @@ public class DeletePredefineTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ReqDeletePredefineTag body = null;
+    private ReqDeletePredefineTag body;
 
     public DeletePredefineTagsRequest withBody(ReqDeletePredefineTag body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class DeletePredefineTagsRequest  {
     public void setBody(ReqDeletePredefineTag body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

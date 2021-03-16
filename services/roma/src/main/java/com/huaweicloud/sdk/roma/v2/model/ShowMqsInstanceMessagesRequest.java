@@ -97,6 +97,8 @@ public class ShowMqsInstanceMessagesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowMqsInstanceMessagesRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -116,6 +118,8 @@ public class ShowMqsInstanceMessagesRequest  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public ShowMqsInstanceMessagesRequest withAsc(Boolean asc) {
         this.asc = asc;
@@ -137,6 +141,8 @@ public class ShowMqsInstanceMessagesRequest  {
         this.asc = asc;
     }
 
+    
+
     public ShowMqsInstanceMessagesRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -156,6 +162,8 @@ public class ShowMqsInstanceMessagesRequest  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ShowMqsInstanceMessagesRequest withEndTime(String endTime) {
         this.endTime = endTime;
@@ -177,6 +185,8 @@ public class ShowMqsInstanceMessagesRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ShowMqsInstanceMessagesRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -196,6 +206,8 @@ public class ShowMqsInstanceMessagesRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
 
     public ShowMqsInstanceMessagesRequest withOffset(String offset) {
         this.offset = offset;
@@ -217,6 +229,8 @@ public class ShowMqsInstanceMessagesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowMqsInstanceMessagesRequest withDownload(Boolean download) {
         this.download = download;
         return this;
@@ -236,6 +250,8 @@ public class ShowMqsInstanceMessagesRequest  {
     public void setDownload(Boolean download) {
         this.download = download;
     }
+
+    
 
     public ShowMqsInstanceMessagesRequest withMessageOffset(String messageOffset) {
         this.messageOffset = messageOffset;
@@ -257,6 +273,8 @@ public class ShowMqsInstanceMessagesRequest  {
         this.messageOffset = messageOffset;
     }
 
+    
+
     public ShowMqsInstanceMessagesRequest withPartition(String partition) {
         this.partition = partition;
         return this;
@@ -276,6 +294,9 @@ public class ShowMqsInstanceMessagesRequest  {
     public void setPartition(String partition) {
         this.partition = partition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

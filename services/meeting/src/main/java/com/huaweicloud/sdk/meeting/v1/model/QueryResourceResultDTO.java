@@ -85,6 +85,8 @@ public class QueryResourceResultDTO  {
         this.id = id;
     }
 
+    
+
     public QueryResourceResultDTO withType(String type) {
         this.type = type;
         return this;
@@ -104,6 +106,8 @@ public class QueryResourceResultDTO  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public QueryResourceResultDTO withTypeId(String typeId) {
         this.typeId = typeId;
@@ -125,6 +129,8 @@ public class QueryResourceResultDTO  {
         this.typeId = typeId;
     }
 
+    
+
     public QueryResourceResultDTO withTypeDesc(String typeDesc) {
         this.typeDesc = typeDesc;
         return this;
@@ -144,6 +150,8 @@ public class QueryResourceResultDTO  {
     public void setTypeDesc(String typeDesc) {
         this.typeDesc = typeDesc;
     }
+
+    
 
     public QueryResourceResultDTO withCount(Integer count) {
         this.count = count;
@@ -165,6 +173,8 @@ public class QueryResourceResultDTO  {
         this.count = count;
     }
 
+    
+
     public QueryResourceResultDTO withExpireDate(Long expireDate) {
         this.expireDate = expireDate;
         return this;
@@ -184,6 +194,8 @@ public class QueryResourceResultDTO  {
     public void setExpireDate(Long expireDate) {
         this.expireDate = expireDate;
     }
+
+    
 
     public QueryResourceResultDTO withStatus(Integer status) {
         this.status = status;
@@ -205,6 +217,8 @@ public class QueryResourceResultDTO  {
         this.status = status;
     }
 
+    
+
     public QueryResourceResultDTO withEditable(Boolean editable) {
         this.editable = editable;
         return this;
@@ -224,6 +238,9 @@ public class QueryResourceResultDTO  {
     public void setEditable(Boolean editable) {
         this.editable = editable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

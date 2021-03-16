@@ -49,6 +49,8 @@ public class ListProjectPermissionsForAgencyRequest  {
         this.projectId = projectId;
     }
 
+    
+
     public ListProjectPermissionsForAgencyRequest withAgencyId(String agencyId) {
         this.agencyId = agencyId;
         return this;
@@ -68,6 +70,9 @@ public class ListProjectPermissionsForAgencyRequest  {
     public void setAgencyId(String agencyId) {
         this.agencyId = agencyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -43,7 +43,7 @@ public class JobInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schedule")
     
-    private Schedule schedule = null;
+    private Schedule schedule;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -145,7 +145,7 @@ public class JobInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basicConfig")
     
-    private BasicInfo basicConfig = null;
+    private BasicInfo basicConfig;
 
     public JobInfo withName(String name) {
         this.name = name;
@@ -167,6 +167,8 @@ public class JobInfo  {
         this.name = name;
     }
 
+    
+
     public JobInfo withNodes(List<Node> nodes) {
         this.nodes = nodes;
         return this;
@@ -174,9 +176,6 @@ public class JobInfo  {
 
     
     public JobInfo addNodesItem(Node nodesItem) {
-        if (this.nodes == null) {
-            this.nodes = new ArrayList<>();
-        }
         this.nodes.add(nodesItem);
         return this;
     }
@@ -200,6 +199,8 @@ public class JobInfo  {
     public void setNodes(List<Node> nodes) {
         this.nodes = nodes;
     }
+
+    
 
     public JobInfo withSchedule(Schedule schedule) {
         this.schedule = schedule;
@@ -228,6 +229,8 @@ public class JobInfo  {
         this.schedule = schedule;
     }
 
+    
+
     public JobInfo withParams(List<JobParam> params) {
         this.params = params;
         return this;
@@ -235,9 +238,6 @@ public class JobInfo  {
 
     
     public JobInfo addParamsItem(JobParam paramsItem) {
-        if (this.params == null) {
-            this.params = new ArrayList<>();
-        }
         this.params.add(paramsItem);
         return this;
     }
@@ -262,6 +262,8 @@ public class JobInfo  {
         this.params = params;
     }
 
+    
+
     public JobInfo withDirectory(String directory) {
         this.directory = directory;
         return this;
@@ -282,6 +284,8 @@ public class JobInfo  {
         this.directory = directory;
     }
 
+    
+
     public JobInfo withJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
         return this;
@@ -301,6 +305,8 @@ public class JobInfo  {
     public void setJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
     }
+
+    
 
     public JobInfo withBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
@@ -328,6 +334,9 @@ public class JobInfo  {
     public void setBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

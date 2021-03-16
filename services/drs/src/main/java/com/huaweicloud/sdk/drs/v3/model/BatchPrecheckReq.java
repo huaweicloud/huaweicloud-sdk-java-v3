@@ -24,7 +24,7 @@ public class BatchPrecheckReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<PreCheckInfo> jobs = new ArrayList<>();
+    private List<PreCheckInfo> jobs = null;
     
     public BatchPrecheckReq withJobs(List<PreCheckInfo> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchPrecheckReq  {
     public void setJobs(List<PreCheckInfo> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

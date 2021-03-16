@@ -22,7 +22,7 @@ public class CreateResetTracksTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateResetTracksReq body = null;
+    private CreateResetTracksReq body;
 
     public CreateResetTracksTaskRequest withBody(CreateResetTracksReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateResetTracksTaskRequest  {
     public void setBody(CreateResetTracksReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

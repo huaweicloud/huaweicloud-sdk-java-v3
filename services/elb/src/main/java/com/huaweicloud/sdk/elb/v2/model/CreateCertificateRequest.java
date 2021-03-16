@@ -22,7 +22,7 @@ public class CreateCertificateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateCertificateRequestBody body = null;
+    private CreateCertificateRequestBody body;
 
     public CreateCertificateRequest withBody(CreateCertificateRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateCertificateRequest  {
     public void setBody(CreateCertificateRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

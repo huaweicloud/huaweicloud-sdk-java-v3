@@ -135,13 +135,13 @@ public class CreateScalingPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scheduled_policy")
     
-    private ScheduledPolicy scheduledPolicy = null;
+    private ScheduledPolicy scheduledPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_policy_action")
     
-    private ScalingPolicyAction scalingPolicyAction = null;
+    private ScalingPolicyAction scalingPolicyAction;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -169,6 +169,8 @@ public class CreateScalingPolicyRequestBody  {
         this.scalingPolicyName = scalingPolicyName;
     }
 
+    
+
     public CreateScalingPolicyRequestBody withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
         return this;
@@ -188,6 +190,8 @@ public class CreateScalingPolicyRequestBody  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public CreateScalingPolicyRequestBody withScalingPolicyType(ScalingPolicyTypeEnum scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
@@ -209,6 +213,8 @@ public class CreateScalingPolicyRequestBody  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
+    
+
     public CreateScalingPolicyRequestBody withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -228,6 +234,8 @@ public class CreateScalingPolicyRequestBody  {
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
     }
+
+    
 
     public CreateScalingPolicyRequestBody withScheduledPolicy(ScheduledPolicy scheduledPolicy) {
         this.scheduledPolicy = scheduledPolicy;
@@ -256,6 +264,8 @@ public class CreateScalingPolicyRequestBody  {
         this.scheduledPolicy = scheduledPolicy;
     }
 
+    
+
     public CreateScalingPolicyRequestBody withScalingPolicyAction(ScalingPolicyAction scalingPolicyAction) {
         this.scalingPolicyAction = scalingPolicyAction;
         return this;
@@ -283,6 +293,8 @@ public class CreateScalingPolicyRequestBody  {
         this.scalingPolicyAction = scalingPolicyAction;
     }
 
+    
+
     public CreateScalingPolicyRequestBody withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
         return this;
@@ -302,6 +314,9 @@ public class CreateScalingPolicyRequestBody  {
     public void setCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

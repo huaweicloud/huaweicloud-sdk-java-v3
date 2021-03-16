@@ -28,7 +28,7 @@ public class UpdateIpWhitelistRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModifyIpWhitelistBody body = null;
+    private ModifyIpWhitelistBody body;
 
     public UpdateIpWhitelistRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateIpWhitelistRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateIpWhitelistRequest withBody(ModifyIpWhitelistBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateIpWhitelistRequest  {
     public void setBody(ModifyIpWhitelistBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

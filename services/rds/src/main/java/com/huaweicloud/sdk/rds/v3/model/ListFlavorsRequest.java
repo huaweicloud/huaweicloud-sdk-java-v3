@@ -151,6 +151,8 @@ public class ListFlavorsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListFlavorsRequest withDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
         return this;
@@ -170,6 +172,8 @@ public class ListFlavorsRequest  {
     public void setDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
     }
+
+    
 
     public ListFlavorsRequest withVersionName(String versionName) {
         this.versionName = versionName;
@@ -191,6 +195,8 @@ public class ListFlavorsRequest  {
         this.versionName = versionName;
     }
 
+    
+
     public ListFlavorsRequest withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -210,6 +216,9 @@ public class ListFlavorsRequest  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

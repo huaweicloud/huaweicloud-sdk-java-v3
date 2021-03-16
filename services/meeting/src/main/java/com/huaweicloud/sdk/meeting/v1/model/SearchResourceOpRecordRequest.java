@@ -33,13 +33,13 @@ public class SearchResourceOpRecordRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,6 +117,8 @@ public class SearchResourceOpRecordRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchResourceOpRecordRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -136,6 +138,8 @@ public class SearchResourceOpRecordRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public SearchResourceOpRecordRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -157,6 +161,8 @@ public class SearchResourceOpRecordRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchResourceOpRecordRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -180,6 +186,8 @@ public class SearchResourceOpRecordRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchResourceOpRecordRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -199,6 +207,8 @@ public class SearchResourceOpRecordRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public SearchResourceOpRecordRequest withCorpId(String corpId) {
         this.corpId = corpId;
@@ -220,6 +230,8 @@ public class SearchResourceOpRecordRequest  {
         this.corpId = corpId;
     }
 
+    
+
     public SearchResourceOpRecordRequest withStartExpireDate(Long startExpireDate) {
         this.startExpireDate = startExpireDate;
         return this;
@@ -239,6 +251,8 @@ public class SearchResourceOpRecordRequest  {
     public void setStartExpireDate(Long startExpireDate) {
         this.startExpireDate = startExpireDate;
     }
+
+    
 
     public SearchResourceOpRecordRequest withEndExpireDate(Long endExpireDate) {
         this.endExpireDate = endExpireDate;
@@ -260,6 +274,8 @@ public class SearchResourceOpRecordRequest  {
         this.endExpireDate = endExpireDate;
     }
 
+    
+
     public SearchResourceOpRecordRequest withStartOperateDate(Long startOperateDate) {
         this.startOperateDate = startOperateDate;
         return this;
@@ -279,6 +295,8 @@ public class SearchResourceOpRecordRequest  {
     public void setStartOperateDate(Long startOperateDate) {
         this.startOperateDate = startOperateDate;
     }
+
+    
 
     public SearchResourceOpRecordRequest withEndOperateDate(Long endOperateDate) {
         this.endOperateDate = endOperateDate;
@@ -300,6 +318,8 @@ public class SearchResourceOpRecordRequest  {
         this.endOperateDate = endOperateDate;
     }
 
+    
+
     public SearchResourceOpRecordRequest withType(String type) {
         this.type = type;
         return this;
@@ -320,6 +340,8 @@ public class SearchResourceOpRecordRequest  {
         this.type = type;
     }
 
+    
+
     public SearchResourceOpRecordRequest withTypeId(String typeId) {
         this.typeId = typeId;
         return this;
@@ -339,6 +361,8 @@ public class SearchResourceOpRecordRequest  {
     public void setTypeId(String typeId) {
         this.typeId = typeId;
     }
+
+    
 
     public SearchResourceOpRecordRequest withOperateType(Integer operateType) {
         this.operateType = operateType;
@@ -361,6 +385,9 @@ public class SearchResourceOpRecordRequest  {
     public void setOperateType(Integer operateType) {
         this.operateType = operateType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

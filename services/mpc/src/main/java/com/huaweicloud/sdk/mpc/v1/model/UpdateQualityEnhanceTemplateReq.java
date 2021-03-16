@@ -28,7 +28,7 @@ public class UpdateQualityEnhanceTemplateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    private QualityEnhanceTemplate template = null;
+    private QualityEnhanceTemplate template;
 
     public UpdateQualityEnhanceTemplateReq withTemplateId(Integer templateId) {
         this.templateId = templateId;
@@ -49,6 +49,8 @@ public class UpdateQualityEnhanceTemplateReq  {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
+
+    
 
     public UpdateQualityEnhanceTemplateReq withTemplate(QualityEnhanceTemplate template) {
         this.template = template;
@@ -76,6 +78,9 @@ public class UpdateQualityEnhanceTemplateReq  {
     public void setTemplate(QualityEnhanceTemplate template) {
         this.template = template;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

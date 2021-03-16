@@ -44,9 +44,6 @@ public class ServerSchedulerHints  {
 
     
     public ServerSchedulerHints addGroupItem(String groupItem) {
-        if (this.group == null) {
-            this.group = new ArrayList<>();
-        }
         this.group.add(groupItem);
         return this;
     }
@@ -71,6 +68,8 @@ public class ServerSchedulerHints  {
         this.group = group;
     }
 
+    
+
     public ServerSchedulerHints withTenancy(List<String> tenancy) {
         this.tenancy = tenancy;
         return this;
@@ -78,9 +77,6 @@ public class ServerSchedulerHints  {
 
     
     public ServerSchedulerHints addTenancyItem(String tenancyItem) {
-        if (this.tenancy == null) {
-            this.tenancy = new ArrayList<>();
-        }
         this.tenancy.add(tenancyItem);
         return this;
     }
@@ -105,6 +101,8 @@ public class ServerSchedulerHints  {
         this.tenancy = tenancy;
     }
 
+    
+
     public ServerSchedulerHints withDedicatedHostId(List<String> dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -112,9 +110,6 @@ public class ServerSchedulerHints  {
 
     
     public ServerSchedulerHints addDedicatedHostIdItem(String dedicatedHostIdItem) {
-        if (this.dedicatedHostId == null) {
-            this.dedicatedHostId = new ArrayList<>();
-        }
         this.dedicatedHostId.add(dedicatedHostIdItem);
         return this;
     }
@@ -138,6 +133,9 @@ public class ServerSchedulerHints  {
     public void setDedicatedHostId(List<String> dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

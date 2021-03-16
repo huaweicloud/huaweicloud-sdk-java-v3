@@ -34,7 +34,7 @@ public class Endpoint  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class Endpoint  {
         this.serviceId = serviceId;
     }
 
+    
+
     public Endpoint withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -105,6 +107,8 @@ public class Endpoint  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public Endpoint withLinks(Links links) {
         this.links = links;
@@ -133,6 +137,8 @@ public class Endpoint  {
         this.links = links;
     }
 
+    
+
     public Endpoint withId(String id) {
         this.id = id;
         return this;
@@ -152,6 +158,8 @@ public class Endpoint  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public Endpoint withInterface(String _interface) {
         this._interface = _interface;
@@ -173,6 +181,8 @@ public class Endpoint  {
         this._interface = _interface;
     }
 
+    
+
     public Endpoint withRegion(String region) {
         this.region = region;
         return this;
@@ -192,6 +202,8 @@ public class Endpoint  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public Endpoint withUrl(String url) {
         this.url = url;
@@ -213,6 +225,8 @@ public class Endpoint  {
         this.url = url;
     }
 
+    
+
     public Endpoint withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -232,6 +246,9 @@ public class Endpoint  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -45,9 +45,6 @@ public class EnvironmentResourceModify  {
 
     
     public EnvironmentResourceModify addAddBaseResourcesItem(Resource addBaseResourcesItem) {
-        if (this.addBaseResources == null) {
-            this.addBaseResources = new ArrayList<>();
-        }
         this.addBaseResources.add(addBaseResourcesItem);
         return this;
     }
@@ -72,6 +69,8 @@ public class EnvironmentResourceModify  {
         this.addBaseResources = addBaseResources;
     }
 
+    
+
     public EnvironmentResourceModify withAddOptionalResources(List<Resource> addOptionalResources) {
         this.addOptionalResources = addOptionalResources;
         return this;
@@ -79,9 +78,6 @@ public class EnvironmentResourceModify  {
 
     
     public EnvironmentResourceModify addAddOptionalResourcesItem(Resource addOptionalResourcesItem) {
-        if (this.addOptionalResources == null) {
-            this.addOptionalResources = new ArrayList<>();
-        }
         this.addOptionalResources.add(addOptionalResourcesItem);
         return this;
     }
@@ -106,6 +102,8 @@ public class EnvironmentResourceModify  {
         this.addOptionalResources = addOptionalResources;
     }
 
+    
+
     public EnvironmentResourceModify withRemoveResources(List<Resource> removeResources) {
         this.removeResources = removeResources;
         return this;
@@ -113,9 +111,6 @@ public class EnvironmentResourceModify  {
 
     
     public EnvironmentResourceModify addRemoveResourcesItem(Resource removeResourcesItem) {
-        if (this.removeResources == null) {
-            this.removeResources = new ArrayList<>();
-        }
         this.removeResources.add(removeResourcesItem);
         return this;
     }
@@ -139,6 +134,9 @@ public class EnvironmentResourceModify  {
     public void setRemoveResources(List<Resource> removeResources) {
         this.removeResources = removeResources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

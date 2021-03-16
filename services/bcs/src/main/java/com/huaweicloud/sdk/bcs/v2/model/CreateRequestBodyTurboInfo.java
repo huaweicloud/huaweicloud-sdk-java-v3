@@ -61,6 +61,8 @@ public class CreateRequestBodyTurboInfo  {
         this.shareType = shareType;
     }
 
+    
+
     public CreateRequestBodyTurboInfo withType(String type) {
         this.type = type;
         return this;
@@ -80,6 +82,8 @@ public class CreateRequestBodyTurboInfo  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public CreateRequestBodyTurboInfo withAvailableZone(String availableZone) {
         this.availableZone = availableZone;
@@ -101,6 +105,8 @@ public class CreateRequestBodyTurboInfo  {
         this.availableZone = availableZone;
     }
 
+    
+
     public CreateRequestBodyTurboInfo withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
@@ -120,6 +126,9 @@ public class CreateRequestBodyTurboInfo  {
     public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

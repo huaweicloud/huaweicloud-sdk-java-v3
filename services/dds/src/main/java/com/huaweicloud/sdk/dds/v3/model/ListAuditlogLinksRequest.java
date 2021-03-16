@@ -28,7 +28,7 @@ public class ListAuditlogLinksRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ProduceAuditlogLinksRequestBody body = null;
+    private ProduceAuditlogLinksRequestBody body;
 
     public ListAuditlogLinksRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class ListAuditlogLinksRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListAuditlogLinksRequest withBody(ProduceAuditlogLinksRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ListAuditlogLinksRequest  {
     public void setBody(ProduceAuditlogLinksRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

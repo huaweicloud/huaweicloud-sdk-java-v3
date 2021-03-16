@@ -231,19 +231,19 @@ public class Property  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min")
     
-    private String min = "0";
+    private String min;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max")
     
-    private String max = "65536";
+    private String max;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step")
     
-    private String step = "1";
+    private String step;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -283,6 +283,8 @@ public class Property  {
         this.propertyId = propertyId;
     }
 
+    
+
     public Property withPropertyName(String propertyName) {
         this.propertyName = propertyName;
         return this;
@@ -302,6 +304,8 @@ public class Property  {
     public void setPropertyName(String propertyName) {
         this.propertyName = propertyName;
     }
+
+    
 
     public Property withDescription(String description) {
         this.description = description;
@@ -323,6 +327,8 @@ public class Property  {
         this.description = description;
     }
 
+    
+
     public Property withDataType(DataTypeEnum dataType) {
         this.dataType = dataType;
         return this;
@@ -342,6 +348,8 @@ public class Property  {
     public void setDataType(DataTypeEnum dataType) {
         this.dataType = dataType;
     }
+
+    
 
     public Property withRequired(RequiredEnum required) {
         this.required = required;
@@ -363,6 +371,8 @@ public class Property  {
         this.required = required;
     }
 
+    
+
     public Property withMin(String min) {
         this.min = min;
         return this;
@@ -382,6 +392,8 @@ public class Property  {
     public void setMin(String min) {
         this.min = min;
     }
+
+    
 
     public Property withMax(String max) {
         this.max = max;
@@ -403,6 +415,8 @@ public class Property  {
         this.max = max;
     }
 
+    
+
     public Property withStep(String step) {
         this.step = step;
         return this;
@@ -422,6 +436,8 @@ public class Property  {
     public void setStep(String step) {
         this.step = step;
     }
+
+    
 
     public Property withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
@@ -443,6 +459,8 @@ public class Property  {
         this.maxLength = maxLength;
     }
 
+    
+
     public Property withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -463,6 +481,8 @@ public class Property  {
         this.unit = unit;
     }
 
+    
+
     public Property withEnumList(String enumList) {
         this.enumList = enumList;
         return this;
@@ -482,6 +502,9 @@ public class Property  {
     public void setEnumList(String enumList) {
         this.enumList = enumList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class ListBackendInstancesV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListBackendInstancesV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListBackendInstancesV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListBackendInstancesV2Response withMembers(List<VpcMemberInfo> members) {
         this.members = members;
         return this;
@@ -88,9 +92,6 @@ public class ListBackendInstancesV2Response extends SdkResponse {
 
     
     public ListBackendInstancesV2Response addMembersItem(VpcMemberInfo membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListBackendInstancesV2Response extends SdkResponse {
     public void setMembers(List<VpcMemberInfo> members) {
         this.members = members;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

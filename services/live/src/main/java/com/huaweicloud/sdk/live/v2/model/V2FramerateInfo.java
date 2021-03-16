@@ -75,6 +75,8 @@ public class V2FramerateInfo  {
         this.publishDomain = publishDomain;
     }
 
+    
+
     public V2FramerateInfo withApp(String app) {
         this.app = app;
         return this;
@@ -94,6 +96,8 @@ public class V2FramerateInfo  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public V2FramerateInfo withStream(String stream) {
         this.stream = stream;
@@ -115,6 +119,8 @@ public class V2FramerateInfo  {
         this.stream = stream;
     }
 
+    
+
     public V2FramerateInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -134,6 +140,8 @@ public class V2FramerateInfo  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public V2FramerateInfo withEndTime(String endTime) {
         this.endTime = endTime;
@@ -155,6 +163,8 @@ public class V2FramerateInfo  {
         this.endTime = endTime;
     }
 
+    
+
     public V2FramerateInfo withDataList(List<Long> dataList) {
         this.dataList = dataList;
         return this;
@@ -162,9 +172,6 @@ public class V2FramerateInfo  {
 
     
     public V2FramerateInfo addDataListItem(Long dataListItem) {
-        if (this.dataList == null) {
-            this.dataList = new ArrayList<>();
-        }
         this.dataList.add(dataListItem);
         return this;
     }
@@ -188,6 +195,9 @@ public class V2FramerateInfo  {
     public void setDataList(List<Long> dataList) {
         this.dataList = dataList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

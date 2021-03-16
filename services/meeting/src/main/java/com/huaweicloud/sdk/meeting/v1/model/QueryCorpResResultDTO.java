@@ -22,7 +22,7 @@ public class QueryCorpResResultDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="corpVcRes")
     
-    private QueryCorpVcResResultDTO corpVcRes = null;
+    private QueryCorpVcResResultDTO corpVcRes;
 
     public QueryCorpResResultDTO withCorpVcRes(QueryCorpVcResResultDTO corpVcRes) {
         this.corpVcRes = corpVcRes;
@@ -50,6 +50,9 @@ public class QueryCorpResResultDTO  {
     public void setCorpVcRes(QueryCorpVcResResultDTO corpVcRes) {
         this.corpVcRes = corpVcRes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

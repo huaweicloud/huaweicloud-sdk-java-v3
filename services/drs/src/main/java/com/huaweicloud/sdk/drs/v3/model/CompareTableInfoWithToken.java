@@ -55,6 +55,8 @@ public class CompareTableInfoWithToken  {
         this.tableName = tableName;
     }
 
+    
+
     public CompareTableInfoWithToken withMinToken(String minToken) {
         this.minToken = minToken;
         return this;
@@ -75,6 +77,8 @@ public class CompareTableInfoWithToken  {
         this.minToken = minToken;
     }
 
+    
+
     public CompareTableInfoWithToken withMaxToken(String maxToken) {
         this.maxToken = maxToken;
         return this;
@@ -94,6 +98,9 @@ public class CompareTableInfoWithToken  {
     public void setMaxToken(String maxToken) {
         this.maxToken = maxToken;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class PublicIp  {
         this.type = type;
     }
 
+    
+
     public PublicIp withBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
@@ -70,6 +72,9 @@ public class PublicIp  {
     public void setBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

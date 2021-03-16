@@ -135,13 +135,13 @@ public class CreateRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cce_cluster_info")
     
-    private CreateRequestBodyCceClusterInfo cceClusterInfo = null;
+    private CreateRequestBodyCceClusterInfo cceClusterInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cce_create_info")
     
-    private CreateRequestBodyCceCreateInfo cceCreateInfo = null;
+    private CreateRequestBodyCceCreateInfo cceCreateInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -171,25 +171,25 @@ public class CreateRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="couchdb_info")
     
-    private CreateRequestBodyCouchdbInfo couchdbInfo = null;
+    private CreateRequestBodyCouchdbInfo couchdbInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="turbo_info")
     
-    private CreateRequestBodyTurboInfo turboInfo = null;
+    private CreateRequestBodyTurboInfo turboInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_info")
     
-    private CreateRequestBodyBlockInfo blockInfo = null;
+    private CreateRequestBodyBlockInfo blockInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kafka_create_info")
     
-    private CreateRequestBodyKafkaCreateInfo kafkaCreateInfo = null;
+    private CreateRequestBodyKafkaCreateInfo kafkaCreateInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,7 +213,7 @@ public class CreateRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitor_infos")
     
-    private CreateRequestBodyInvitorInfos invitorInfos = null;
+    private CreateRequestBodyInvitorInfos invitorInfos;
 
     public CreateRequestBody withName(String name) {
         this.name = name;
@@ -235,6 +235,8 @@ public class CreateRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateRequestBody withVersionType(Integer versionType) {
         this.versionType = versionType;
         return this;
@@ -254,6 +256,8 @@ public class CreateRequestBody  {
     public void setVersionType(Integer versionType) {
         this.versionType = versionType;
     }
+
+    
 
     public CreateRequestBody withFabricVersion(String fabricVersion) {
         this.fabricVersion = fabricVersion;
@@ -275,6 +279,8 @@ public class CreateRequestBody  {
         this.fabricVersion = fabricVersion;
     }
 
+    
+
     public CreateRequestBody withBlockchainType(String blockchainType) {
         this.blockchainType = blockchainType;
         return this;
@@ -294,6 +300,8 @@ public class CreateRequestBody  {
     public void setBlockchainType(String blockchainType) {
         this.blockchainType = blockchainType;
     }
+
+    
 
     public CreateRequestBody withConsensus(String consensus) {
         this.consensus = consensus;
@@ -315,6 +323,8 @@ public class CreateRequestBody  {
         this.consensus = consensus;
     }
 
+    
+
     public CreateRequestBody withSignAlgorithm(String signAlgorithm) {
         this.signAlgorithm = signAlgorithm;
         return this;
@@ -334,6 +344,8 @@ public class CreateRequestBody  {
     public void setSignAlgorithm(String signAlgorithm) {
         this.signAlgorithm = signAlgorithm;
     }
+
+    
 
     public CreateRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -355,6 +367,8 @@ public class CreateRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateRequestBody withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
@@ -374,6 +388,8 @@ public class CreateRequestBody  {
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
+
+    
 
     public CreateRequestBody withEvsDiskType(String evsDiskType) {
         this.evsDiskType = evsDiskType;
@@ -395,6 +411,8 @@ public class CreateRequestBody  {
         this.evsDiskType = evsDiskType;
     }
 
+    
+
     public CreateRequestBody withOrgDiskSize(Integer orgDiskSize) {
         this.orgDiskSize = orgDiskSize;
         return this;
@@ -414,6 +432,8 @@ public class CreateRequestBody  {
     public void setOrgDiskSize(Integer orgDiskSize) {
         this.orgDiskSize = orgDiskSize;
     }
+
+    
 
     public CreateRequestBody withDatabaseType(String databaseType) {
         this.databaseType = databaseType;
@@ -435,6 +455,8 @@ public class CreateRequestBody  {
         this.databaseType = databaseType;
     }
 
+    
+
     public CreateRequestBody withResourcePassword(String resourcePassword) {
         this.resourcePassword = resourcePassword;
         return this;
@@ -454,6 +476,8 @@ public class CreateRequestBody  {
     public void setResourcePassword(String resourcePassword) {
         this.resourcePassword = resourcePassword;
     }
+
+    
 
     public CreateRequestBody withOrdererNodeNumber(Integer ordererNodeNumber) {
         this.ordererNodeNumber = ordererNodeNumber;
@@ -475,6 +499,8 @@ public class CreateRequestBody  {
         this.ordererNodeNumber = ordererNodeNumber;
     }
 
+    
+
     public CreateRequestBody withUseEip(Boolean useEip) {
         this.useEip = useEip;
         return this;
@@ -494,6 +520,8 @@ public class CreateRequestBody  {
     public void setUseEip(Boolean useEip) {
         this.useEip = useEip;
     }
+
+    
 
     public CreateRequestBody withBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
@@ -515,6 +543,8 @@ public class CreateRequestBody  {
         this.bandwidthSize = bandwidthSize;
     }
 
+    
+
     public CreateRequestBody withClusterType(String clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -535,6 +565,8 @@ public class CreateRequestBody  {
         this.clusterType = clusterType;
     }
 
+    
+
     public CreateRequestBody withCreateNewCluster(Boolean createNewCluster) {
         this.createNewCluster = createNewCluster;
         return this;
@@ -554,6 +586,8 @@ public class CreateRequestBody  {
     public void setCreateNewCluster(Boolean createNewCluster) {
         this.createNewCluster = createNewCluster;
     }
+
+    
 
     public CreateRequestBody withCceClusterInfo(CreateRequestBodyCceClusterInfo cceClusterInfo) {
         this.cceClusterInfo = cceClusterInfo;
@@ -582,6 +616,8 @@ public class CreateRequestBody  {
         this.cceClusterInfo = cceClusterInfo;
     }
 
+    
+
     public CreateRequestBody withCceCreateInfo(CreateRequestBodyCceCreateInfo cceCreateInfo) {
         this.cceCreateInfo = cceCreateInfo;
         return this;
@@ -609,6 +645,8 @@ public class CreateRequestBody  {
         this.cceCreateInfo = cceCreateInfo;
     }
 
+    
+
     public CreateRequestBody withIefDeployMode(Integer iefDeployMode) {
         this.iefDeployMode = iefDeployMode;
         return this;
@@ -629,6 +667,8 @@ public class CreateRequestBody  {
         this.iefDeployMode = iefDeployMode;
     }
 
+    
+
     public CreateRequestBody withIefNodesInfo(List<IEFNode> iefNodesInfo) {
         this.iefNodesInfo = iefNodesInfo;
         return this;
@@ -636,9 +676,6 @@ public class CreateRequestBody  {
 
     
     public CreateRequestBody addIefNodesInfoItem(IEFNode iefNodesInfoItem) {
-        if (this.iefNodesInfo == null) {
-            this.iefNodesInfo = new ArrayList<>();
-        }
         this.iefNodesInfo.add(iefNodesInfoItem);
         return this;
     }
@@ -663,6 +700,8 @@ public class CreateRequestBody  {
         this.iefNodesInfo = iefNodesInfo;
     }
 
+    
+
     public CreateRequestBody withPeerOrgs(List<OrgPeer> peerOrgs) {
         this.peerOrgs = peerOrgs;
         return this;
@@ -670,9 +709,6 @@ public class CreateRequestBody  {
 
     
     public CreateRequestBody addPeerOrgsItem(OrgPeer peerOrgsItem) {
-        if (this.peerOrgs == null) {
-            this.peerOrgs = new ArrayList<>();
-        }
         this.peerOrgs.add(peerOrgsItem);
         return this;
     }
@@ -697,6 +733,8 @@ public class CreateRequestBody  {
         this.peerOrgs = peerOrgs;
     }
 
+    
+
     public CreateRequestBody withChannels(List<ChannelInfoV2> channels) {
         this.channels = channels;
         return this;
@@ -704,9 +742,6 @@ public class CreateRequestBody  {
 
     
     public CreateRequestBody addChannelsItem(ChannelInfoV2 channelsItem) {
-        if (this.channels == null) {
-            this.channels = new ArrayList<>();
-        }
         this.channels.add(channelsItem);
         return this;
     }
@@ -730,6 +765,8 @@ public class CreateRequestBody  {
     public void setChannels(List<ChannelInfoV2> channels) {
         this.channels = channels;
     }
+
+    
 
     public CreateRequestBody withCouchdbInfo(CreateRequestBodyCouchdbInfo couchdbInfo) {
         this.couchdbInfo = couchdbInfo;
@@ -758,6 +795,8 @@ public class CreateRequestBody  {
         this.couchdbInfo = couchdbInfo;
     }
 
+    
+
     public CreateRequestBody withTurboInfo(CreateRequestBodyTurboInfo turboInfo) {
         this.turboInfo = turboInfo;
         return this;
@@ -784,6 +823,8 @@ public class CreateRequestBody  {
     public void setTurboInfo(CreateRequestBodyTurboInfo turboInfo) {
         this.turboInfo = turboInfo;
     }
+
+    
 
     public CreateRequestBody withBlockInfo(CreateRequestBodyBlockInfo blockInfo) {
         this.blockInfo = blockInfo;
@@ -812,6 +853,8 @@ public class CreateRequestBody  {
         this.blockInfo = blockInfo;
     }
 
+    
+
     public CreateRequestBody withKafkaCreateInfo(CreateRequestBodyKafkaCreateInfo kafkaCreateInfo) {
         this.kafkaCreateInfo = kafkaCreateInfo;
         return this;
@@ -839,6 +882,8 @@ public class CreateRequestBody  {
         this.kafkaCreateInfo = kafkaCreateInfo;
     }
 
+    
+
     public CreateRequestBody withTc3Need(Boolean tc3Need) {
         this.tc3Need = tc3Need;
         return this;
@@ -858,6 +903,8 @@ public class CreateRequestBody  {
     public void setTc3Need(Boolean tc3Need) {
         this.tc3Need = tc3Need;
     }
+
+    
 
     public CreateRequestBody withRestfulApiSupport(Boolean restfulApiSupport) {
         this.restfulApiSupport = restfulApiSupport;
@@ -879,6 +926,8 @@ public class CreateRequestBody  {
         this.restfulApiSupport = restfulApiSupport;
     }
 
+    
+
     public CreateRequestBody withIsInvitee(Boolean isInvitee) {
         this.isInvitee = isInvitee;
         return this;
@@ -898,6 +947,8 @@ public class CreateRequestBody  {
     public void setIsInvitee(Boolean isInvitee) {
         this.isInvitee = isInvitee;
     }
+
+    
 
     public CreateRequestBody withInvitorInfos(CreateRequestBodyInvitorInfos invitorInfos) {
         this.invitorInfos = invitorInfos;
@@ -925,6 +976,9 @@ public class CreateRequestBody  {
     public void setInvitorInfos(CreateRequestBodyInvitorInfos invitorInfos) {
         this.invitorInfos = invitorInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

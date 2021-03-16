@@ -27,19 +27,19 @@ public class SearchMeetingsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queryAll")
     
-    private Boolean queryAll = false;
+    private Boolean queryAll;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,6 +91,8 @@ public class SearchMeetingsRequest  {
         this.userUUID = userUUID;
     }
 
+    
+
     public SearchMeetingsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -110,6 +112,8 @@ public class SearchMeetingsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchMeetingsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -133,6 +137,8 @@ public class SearchMeetingsRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchMeetingsRequest withQueryAll(Boolean queryAll) {
         this.queryAll = queryAll;
         return this;
@@ -152,6 +158,8 @@ public class SearchMeetingsRequest  {
     public void setQueryAll(Boolean queryAll) {
         this.queryAll = queryAll;
     }
+
+    
 
     public SearchMeetingsRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
@@ -173,6 +181,8 @@ public class SearchMeetingsRequest  {
         this.searchKey = searchKey;
     }
 
+    
+
     public SearchMeetingsRequest withQueryConfMode(String queryConfMode) {
         this.queryConfMode = queryConfMode;
         return this;
@@ -193,6 +203,8 @@ public class SearchMeetingsRequest  {
         this.queryConfMode = queryConfMode;
     }
 
+    
+
     public SearchMeetingsRequest withSortType(String sortType) {
         this.sortType = sortType;
         return this;
@@ -212,6 +224,8 @@ public class SearchMeetingsRequest  {
     public void setSortType(String sortType) {
         this.sortType = sortType;
     }
+
+    
 
     public SearchMeetingsRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -235,6 +249,8 @@ public class SearchMeetingsRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public SearchMeetingsRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -256,6 +272,9 @@ public class SearchMeetingsRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class LoginTokenUser  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private LoginTokenDomain domain = null;
+    private LoginTokenDomain domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class LoginTokenUser  {
         this.domain = domain;
     }
 
+    
+
     public LoginTokenUser withName(String name) {
         this.name = name;
         return this;
@@ -88,6 +90,8 @@ public class LoginTokenUser  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public LoginTokenUser withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
@@ -109,6 +113,8 @@ public class LoginTokenUser  {
         this.passwordExpiresAt = passwordExpiresAt;
     }
 
+    
+
     public LoginTokenUser withId(String id) {
         this.id = id;
         return this;
@@ -128,6 +134,9 @@ public class LoginTokenUser  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

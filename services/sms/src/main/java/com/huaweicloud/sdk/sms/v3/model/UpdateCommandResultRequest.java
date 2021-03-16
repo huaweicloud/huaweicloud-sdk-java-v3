@@ -28,7 +28,7 @@ public class UpdateCommandResultRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CommandBody body = null;
+    private CommandBody body;
 
     public UpdateCommandResultRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class UpdateCommandResultRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public UpdateCommandResultRequest withBody(CommandBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateCommandResultRequest  {
     public void setBody(CommandBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

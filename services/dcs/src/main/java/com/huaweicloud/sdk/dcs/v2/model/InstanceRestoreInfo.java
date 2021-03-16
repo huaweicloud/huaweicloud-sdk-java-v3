@@ -197,6 +197,8 @@ public class InstanceRestoreInfo  {
         this.backupId = backupId;
     }
 
+    
+
     public InstanceRestoreInfo withRestoreId(String restoreId) {
         this.restoreId = restoreId;
         return this;
@@ -216,6 +218,8 @@ public class InstanceRestoreInfo  {
     public void setRestoreId(String restoreId) {
         this.restoreId = restoreId;
     }
+
+    
 
     public InstanceRestoreInfo withBackupName(String backupName) {
         this.backupName = backupName;
@@ -237,6 +241,8 @@ public class InstanceRestoreInfo  {
         this.backupName = backupName;
     }
 
+    
+
     public InstanceRestoreInfo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -256,6 +262,8 @@ public class InstanceRestoreInfo  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public InstanceRestoreInfo withRestoreRemark(String restoreRemark) {
         this.restoreRemark = restoreRemark;
@@ -277,6 +285,8 @@ public class InstanceRestoreInfo  {
         this.restoreRemark = restoreRemark;
     }
 
+    
+
     public InstanceRestoreInfo withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -296,6 +306,8 @@ public class InstanceRestoreInfo  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public InstanceRestoreInfo withProgress(String progress) {
         this.progress = progress;
@@ -317,6 +329,8 @@ public class InstanceRestoreInfo  {
         this.progress = progress;
     }
 
+    
+
     public InstanceRestoreInfo withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -336,6 +350,8 @@ public class InstanceRestoreInfo  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public InstanceRestoreInfo withRestoreName(String restoreName) {
         this.restoreName = restoreName;
@@ -357,6 +373,8 @@ public class InstanceRestoreInfo  {
         this.restoreName = restoreName;
     }
 
+    
+
     public InstanceRestoreInfo withBackupRemark(String backupRemark) {
         this.backupRemark = backupRemark;
         return this;
@@ -377,6 +395,8 @@ public class InstanceRestoreInfo  {
         this.backupRemark = backupRemark;
     }
 
+    
+
     public InstanceRestoreInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -396,6 +416,9 @@ public class InstanceRestoreInfo  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

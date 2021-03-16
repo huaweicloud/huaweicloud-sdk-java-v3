@@ -49,6 +49,8 @@ public class PlanCycle  {
         this.startDate = startDate;
     }
 
+    
+
     public PlanCycle withEndDate(String endDate) {
         this.endDate = endDate;
         return this;
@@ -68,6 +70,9 @@ public class PlanCycle  {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

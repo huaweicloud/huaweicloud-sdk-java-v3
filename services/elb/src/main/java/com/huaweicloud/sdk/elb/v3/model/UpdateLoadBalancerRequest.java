@@ -28,7 +28,7 @@ public class UpdateLoadBalancerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateLoadBalancerRequestBody body = null;
+    private UpdateLoadBalancerRequestBody body;
 
     public UpdateLoadBalancerRequest withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
@@ -49,6 +49,8 @@ public class UpdateLoadBalancerRequest  {
     public void setLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
     }
+
+    
 
     public UpdateLoadBalancerRequest withBody(UpdateLoadBalancerRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateLoadBalancerRequest  {
     public void setBody(UpdateLoadBalancerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class DownloadBackupFilesReq  {
     public void setExpiration(Integer expiration) {
         this.expiration = expiration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateProjectV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateProjectV4RequestBody body = null;
+    private CreateProjectV4RequestBody body;
 
     public CreateProjectV4Request withBody(CreateProjectV4RequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateProjectV4Request  {
     public void setBody(CreateProjectV4RequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

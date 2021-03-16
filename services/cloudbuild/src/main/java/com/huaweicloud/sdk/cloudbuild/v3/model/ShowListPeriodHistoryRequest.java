@@ -27,25 +27,25 @@ public class ShowListPeriodHistoryRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private String startTime = "2021-01-04";
+    private String startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private String endTime = "2021-02-03";
+    private String endTime;
 
     public ShowListPeriodHistoryRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -67,6 +67,8 @@ public class ShowListPeriodHistoryRequest  {
         this.jobId = jobId;
     }
 
+    
+
     public ShowListPeriodHistoryRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -87,6 +89,8 @@ public class ShowListPeriodHistoryRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ShowListPeriodHistoryRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -110,6 +114,8 @@ public class ShowListPeriodHistoryRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowListPeriodHistoryRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -130,6 +136,8 @@ public class ShowListPeriodHistoryRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ShowListPeriodHistoryRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -149,6 +157,9 @@ public class ShowListPeriodHistoryRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

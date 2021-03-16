@@ -49,6 +49,8 @@ public class KeyAliasInfo  {
         this.keyId = keyId;
     }
 
+    
+
     public KeyAliasInfo withKeyAlias(String keyAlias) {
         this.keyAlias = keyAlias;
         return this;
@@ -68,6 +70,9 @@ public class KeyAliasInfo  {
     public void setKeyAlias(String keyAlias) {
         this.keyAlias = keyAlias;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

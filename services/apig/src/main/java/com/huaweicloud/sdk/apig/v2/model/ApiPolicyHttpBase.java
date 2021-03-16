@@ -265,6 +265,8 @@ public class ApiPolicyHttpBase  {
         this.urlDomain = urlDomain;
     }
 
+    
+
     public ApiPolicyHttpBase withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -284,6 +286,8 @@ public class ApiPolicyHttpBase  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiPolicyHttpBase withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -305,6 +309,8 @@ public class ApiPolicyHttpBase  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiPolicyHttpBase withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -325,6 +331,8 @@ public class ApiPolicyHttpBase  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiPolicyHttpBase withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -344,6 +352,9 @@ public class ApiPolicyHttpBase  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

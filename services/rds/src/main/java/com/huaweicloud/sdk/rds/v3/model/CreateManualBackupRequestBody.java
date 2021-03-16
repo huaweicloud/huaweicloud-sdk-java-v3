@@ -64,6 +64,8 @@ public class CreateManualBackupRequestBody  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateManualBackupRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -83,6 +85,8 @@ public class CreateManualBackupRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateManualBackupRequestBody withDescription(String description) {
         this.description = description;
@@ -104,6 +108,8 @@ public class CreateManualBackupRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateManualBackupRequestBody withDatabases(List<BackupDatabase> databases) {
         this.databases = databases;
         return this;
@@ -111,9 +117,6 @@ public class CreateManualBackupRequestBody  {
 
     
     public CreateManualBackupRequestBody addDatabasesItem(BackupDatabase databasesItem) {
-        if (this.databases == null) {
-            this.databases = new ArrayList<>();
-        }
         this.databases.add(databasesItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class CreateManualBackupRequestBody  {
     public void setDatabases(List<BackupDatabase> databases) {
         this.databases = databases;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

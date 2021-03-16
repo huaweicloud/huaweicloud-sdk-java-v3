@@ -51,6 +51,8 @@ public class EncryptDataResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
+    
+
     public EncryptDataResponse withCipherText(String cipherText) {
         this.cipherText = cipherText;
         return this;
@@ -70,6 +72,9 @@ public class EncryptDataResponse extends SdkResponse {
     public void setCipherText(String cipherText) {
         this.cipherText = cipherText;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -259,6 +259,8 @@ public class ObsDestinationDescriptor  {
         this.topics = topics;
     }
 
+    
+
     public ObsDestinationDescriptor withTopicsRegex(String topicsRegex) {
         this.topicsRegex = topicsRegex;
         return this;
@@ -278,6 +280,8 @@ public class ObsDestinationDescriptor  {
     public void setTopicsRegex(String topicsRegex) {
         this.topicsRegex = topicsRegex;
     }
+
+    
 
     public ObsDestinationDescriptor withConsumerStrategy(ConsumerStrategyEnum consumerStrategy) {
         this.consumerStrategy = consumerStrategy;
@@ -299,6 +303,8 @@ public class ObsDestinationDescriptor  {
         this.consumerStrategy = consumerStrategy;
     }
 
+    
+
     public ObsDestinationDescriptor withDestinationFileType(DestinationFileTypeEnum destinationFileType) {
         this.destinationFileType = destinationFileType;
         return this;
@@ -318,6 +324,8 @@ public class ObsDestinationDescriptor  {
     public void setDestinationFileType(DestinationFileTypeEnum destinationFileType) {
         this.destinationFileType = destinationFileType;
     }
+
+    
 
     public ObsDestinationDescriptor withAccessKey(String accessKey) {
         this.accessKey = accessKey;
@@ -339,6 +347,8 @@ public class ObsDestinationDescriptor  {
         this.accessKey = accessKey;
     }
 
+    
+
     public ObsDestinationDescriptor withSecretKey(String secretKey) {
         this.secretKey = secretKey;
         return this;
@@ -358,6 +368,8 @@ public class ObsDestinationDescriptor  {
     public void setSecretKey(String secretKey) {
         this.secretKey = secretKey;
     }
+
+    
 
     public ObsDestinationDescriptor withObsBucketName(String obsBucketName) {
         this.obsBucketName = obsBucketName;
@@ -379,6 +391,8 @@ public class ObsDestinationDescriptor  {
         this.obsBucketName = obsBucketName;
     }
 
+    
+
     public ObsDestinationDescriptor withObsPath(String obsPath) {
         this.obsPath = obsPath;
         return this;
@@ -398,6 +412,8 @@ public class ObsDestinationDescriptor  {
     public void setObsPath(String obsPath) {
         this.obsPath = obsPath;
     }
+
+    
 
     public ObsDestinationDescriptor withPartitionFormat(String partitionFormat) {
         this.partitionFormat = partitionFormat;
@@ -419,6 +435,8 @@ public class ObsDestinationDescriptor  {
         this.partitionFormat = partitionFormat;
     }
 
+    
+
     public ObsDestinationDescriptor withRecordDelimiter(String recordDelimiter) {
         this.recordDelimiter = recordDelimiter;
         return this;
@@ -439,6 +457,8 @@ public class ObsDestinationDescriptor  {
         this.recordDelimiter = recordDelimiter;
     }
 
+    
+
     public ObsDestinationDescriptor withDeliverTimeInterval(String deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
         return this;
@@ -458,6 +478,9 @@ public class ObsDestinationDescriptor  {
     public void setDeliverTimeInterval(String deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

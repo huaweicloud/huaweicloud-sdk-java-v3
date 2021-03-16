@@ -81,13 +81,13 @@ public class ListApisV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,6 +115,8 @@ public class ListApisV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListApisV2Request withId(String id) {
         this.id = id;
         return this;
@@ -134,6 +136,8 @@ public class ListApisV2Request  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListApisV2Request withName(String name) {
         this.name = name;
@@ -155,6 +159,8 @@ public class ListApisV2Request  {
         this.name = name;
     }
 
+    
+
     public ListApisV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -174,6 +180,8 @@ public class ListApisV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListApisV2Request withReqProtocol(String reqProtocol) {
         this.reqProtocol = reqProtocol;
@@ -195,6 +203,8 @@ public class ListApisV2Request  {
         this.reqProtocol = reqProtocol;
     }
 
+    
+
     public ListApisV2Request withReqMethod(String reqMethod) {
         this.reqMethod = reqMethod;
         return this;
@@ -214,6 +224,8 @@ public class ListApisV2Request  {
     public void setReqMethod(String reqMethod) {
         this.reqMethod = reqMethod;
     }
+
+    
 
     public ListApisV2Request withReqUri(String reqUri) {
         this.reqUri = reqUri;
@@ -235,6 +247,8 @@ public class ListApisV2Request  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ListApisV2Request withAuthType(String authType) {
         this.authType = authType;
         return this;
@@ -254,6 +268,8 @@ public class ListApisV2Request  {
     public void setAuthType(String authType) {
         this.authType = authType;
     }
+
+    
 
     public ListApisV2Request withEnvId(String envId) {
         this.envId = envId;
@@ -275,6 +291,8 @@ public class ListApisV2Request  {
         this.envId = envId;
     }
 
+    
+
     public ListApisV2Request withType(Integer type) {
         this.type = type;
         return this;
@@ -295,6 +313,8 @@ public class ListApisV2Request  {
         this.type = type;
     }
 
+    
+
     public ListApisV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -314,6 +334,8 @@ public class ListApisV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListApisV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -337,6 +359,8 @@ public class ListApisV2Request  {
         this.limit = limit;
     }
 
+    
+
     public ListApisV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -356,6 +380,9 @@ public class ListApisV2Request  {
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

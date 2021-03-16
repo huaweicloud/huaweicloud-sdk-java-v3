@@ -137,6 +137,8 @@ public class CreateVpcRouteOption  {
         this.destination = destination;
     }
 
+    
+
     public CreateVpcRouteOption withNexthop(String nexthop) {
         this.nexthop = nexthop;
         return this;
@@ -156,6 +158,8 @@ public class CreateVpcRouteOption  {
     public void setNexthop(String nexthop) {
         this.nexthop = nexthop;
     }
+
+    
 
     public CreateVpcRouteOption withType(TypeEnum type) {
         this.type = type;
@@ -177,6 +181,8 @@ public class CreateVpcRouteOption  {
         this.type = type;
     }
 
+    
+
     public CreateVpcRouteOption withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -196,6 +202,9 @@ public class CreateVpcRouteOption  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

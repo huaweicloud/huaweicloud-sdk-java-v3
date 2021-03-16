@@ -41,9 +41,6 @@ public class ListDbUsersResponse extends SdkResponse {
 
     
     public ListDbUsersResponse addUsersItem(UserForList usersItem) {
-        if (this.users == null) {
-            this.users = new ArrayList<>();
-        }
         this.users.add(usersItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListDbUsersResponse extends SdkResponse {
         this.users = users;
     }
 
+    
+
     public ListDbUsersResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListDbUsersResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class CreateTriggerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateTriggerRequestBody body = null;
+    private CreateTriggerRequestBody body;
 
     public CreateTriggerRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -56,6 +56,8 @@ public class CreateTriggerRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public CreateTriggerRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class CreateTriggerRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public CreateTriggerRequest withBody(CreateTriggerRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateTriggerRequest  {
     public void setBody(CreateTriggerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

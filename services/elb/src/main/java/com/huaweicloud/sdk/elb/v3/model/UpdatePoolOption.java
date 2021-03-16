@@ -47,13 +47,13 @@ public class UpdatePoolOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_persistence")
     
-    private UpdatePoolSessionPersistenceOption sessionPersistence = null;
+    private UpdatePoolSessionPersistenceOption sessionPersistence;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slow_start")
     
-    private UpdatePoolSlowStartOption slowStart = null;
+    private UpdatePoolSlowStartOption slowStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,6 +81,8 @@ public class UpdatePoolOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public UpdatePoolOption withDescription(String description) {
         this.description = description;
         return this;
@@ -100,6 +102,8 @@ public class UpdatePoolOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdatePoolOption withLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
@@ -121,6 +125,8 @@ public class UpdatePoolOption  {
         this.lbAlgorithm = lbAlgorithm;
     }
 
+    
+
     public UpdatePoolOption withName(String name) {
         this.name = name;
         return this;
@@ -140,6 +146,8 @@ public class UpdatePoolOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdatePoolOption withSessionPersistence(UpdatePoolSessionPersistenceOption sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
@@ -168,6 +176,8 @@ public class UpdatePoolOption  {
         this.sessionPersistence = sessionPersistence;
     }
 
+    
+
     public UpdatePoolOption withSlowStart(UpdatePoolSlowStartOption slowStart) {
         this.slowStart = slowStart;
         return this;
@@ -195,6 +205,8 @@ public class UpdatePoolOption  {
         this.slowStart = slowStart;
     }
 
+    
+
     public UpdatePoolOption withMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
         return this;
@@ -214,6 +226,9 @@ public class UpdatePoolOption  {
     public void setMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

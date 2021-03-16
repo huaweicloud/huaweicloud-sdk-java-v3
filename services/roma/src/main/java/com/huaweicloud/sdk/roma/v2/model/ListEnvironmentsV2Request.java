@@ -33,13 +33,13 @@ public class ListEnvironmentsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListEnvironmentsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -61,6 +61,8 @@ public class ListEnvironmentsV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListEnvironmentsV2Request withName(String name) {
         this.name = name;
         return this;
@@ -81,6 +83,8 @@ public class ListEnvironmentsV2Request  {
         this.name = name;
     }
 
+    
+
     public ListEnvironmentsV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -100,6 +104,8 @@ public class ListEnvironmentsV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListEnvironmentsV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -122,6 +128,9 @@ public class ListEnvironmentsV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

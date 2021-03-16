@@ -47,9 +47,6 @@ public class ListSubscriptionsResponse extends SdkResponse {
 
     
     public ListSubscriptionsResponse addSubscriptionsItem(SubscriptionItem subscriptionsItem) {
-        if (this.subscriptions == null) {
-            this.subscriptions = new ArrayList<>();
-        }
         this.subscriptions.add(subscriptionsItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListSubscriptionsResponse extends SdkResponse {
         this.subscriptions = subscriptions;
     }
 
+    
+
     public ListSubscriptionsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -94,6 +93,8 @@ public class ListSubscriptionsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListSubscriptionsResponse withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -113,6 +114,9 @@ public class ListSubscriptionsResponse extends SdkResponse {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -143,6 +143,8 @@ public class UpdateBandwidthOption  {
         this.name = name;
     }
 
+    
+
     public UpdateBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
@@ -163,6 +165,8 @@ public class UpdateBandwidthOption  {
         this.size = size;
     }
 
+    
+
     public UpdateBandwidthOption withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -182,6 +186,9 @@ public class UpdateBandwidthOption  {
     public void setChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

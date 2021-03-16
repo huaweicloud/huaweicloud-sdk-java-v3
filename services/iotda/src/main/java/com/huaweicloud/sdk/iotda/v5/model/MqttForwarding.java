@@ -42,6 +42,9 @@ public class MqttForwarding  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -143,6 +143,8 @@ public class UpdateAgencyOption  {
         this.trustDomainId = trustDomainId;
     }
 
+    
+
     public UpdateAgencyOption withTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
         return this;
@@ -162,6 +164,8 @@ public class UpdateAgencyOption  {
     public void setTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
     }
+
+    
 
     public UpdateAgencyOption withDescription(String description) {
         this.description = description;
@@ -183,6 +187,8 @@ public class UpdateAgencyOption  {
         this.description = description;
     }
 
+    
+
     public UpdateAgencyOption withDuration(DurationEnum duration) {
         this.duration = duration;
         return this;
@@ -202,6 +208,9 @@ public class UpdateAgencyOption  {
     public void setDuration(DurationEnum duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

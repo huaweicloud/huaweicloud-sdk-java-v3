@@ -49,6 +49,8 @@ public class ResetServerPasswordOption  {
         this.newPassword = newPassword;
     }
 
+    
+
     public ResetServerPasswordOption withIsCheckPassword(Boolean isCheckPassword) {
         this.isCheckPassword = isCheckPassword;
         return this;
@@ -68,6 +70,9 @@ public class ResetServerPasswordOption  {
     public void setIsCheckPassword(Boolean isCheckPassword) {
         this.isCheckPassword = isCheckPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

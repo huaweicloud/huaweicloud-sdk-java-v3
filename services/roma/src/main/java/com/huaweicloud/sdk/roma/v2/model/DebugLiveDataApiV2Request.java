@@ -34,7 +34,7 @@ public class DebugLiveDataApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LdApiTest body = null;
+    private LdApiTest body;
 
     public DebugLiveDataApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class DebugLiveDataApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DebugLiveDataApiV2Request withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -75,6 +77,8 @@ public class DebugLiveDataApiV2Request  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public DebugLiveDataApiV2Request withBody(LdApiTest body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class DebugLiveDataApiV2Request  {
     public void setBody(LdApiTest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

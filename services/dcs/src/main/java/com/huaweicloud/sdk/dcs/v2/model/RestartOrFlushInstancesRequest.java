@@ -22,7 +22,7 @@ public class RestartOrFlushInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ChangeInstanceStatusBody body = null;
+    private ChangeInstanceStatusBody body;
 
     public RestartOrFlushInstancesRequest withBody(ChangeInstanceStatusBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RestartOrFlushInstancesRequest  {
     public void setBody(ChangeInstanceStatusBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

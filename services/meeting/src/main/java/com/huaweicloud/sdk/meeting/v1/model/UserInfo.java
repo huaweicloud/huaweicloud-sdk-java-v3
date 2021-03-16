@@ -115,6 +115,8 @@ public class UserInfo  {
         this.userId = userId;
     }
 
+    
+
     public UserInfo withUcloginAccount(String ucloginAccount) {
         this.ucloginAccount = ucloginAccount;
         return this;
@@ -134,6 +136,8 @@ public class UserInfo  {
     public void setUcloginAccount(String ucloginAccount) {
         this.ucloginAccount = ucloginAccount;
     }
+
+    
 
     public UserInfo withServiceAccount(String serviceAccount) {
         this.serviceAccount = serviceAccount;
@@ -155,6 +159,8 @@ public class UserInfo  {
         this.serviceAccount = serviceAccount;
     }
 
+    
+
     public UserInfo withNumberHA1(String numberHA1) {
         this.numberHA1 = numberHA1;
         return this;
@@ -174,6 +180,8 @@ public class UserInfo  {
     public void setNumberHA1(String numberHA1) {
         this.numberHA1 = numberHA1;
     }
+
+    
 
     public UserInfo withAlias1(String alias1) {
         this.alias1 = alias1;
@@ -195,6 +203,8 @@ public class UserInfo  {
         this.alias1 = alias1;
     }
 
+    
+
     public UserInfo withCompanyId(String companyId) {
         this.companyId = companyId;
         return this;
@@ -214,6 +224,8 @@ public class UserInfo  {
     public void setCompanyId(String companyId) {
         this.companyId = companyId;
     }
+
+    
 
     public UserInfo withSpId(String spId) {
         this.spId = spId;
@@ -235,6 +247,8 @@ public class UserInfo  {
         this.spId = spId;
     }
 
+    
+
     public UserInfo withCompanyDomain(String companyDomain) {
         this.companyDomain = companyDomain;
         return this;
@@ -254,6 +268,8 @@ public class UserInfo  {
     public void setCompanyDomain(String companyDomain) {
         this.companyDomain = companyDomain;
     }
+
+    
 
     public UserInfo withRealm(String realm) {
         this.realm = realm;
@@ -275,6 +291,8 @@ public class UserInfo  {
         this.realm = realm;
     }
 
+    
+
     public UserInfo withUserType(Integer userType) {
         this.userType = userType;
         return this;
@@ -294,6 +312,8 @@ public class UserInfo  {
     public void setUserType(Integer userType) {
         this.userType = userType;
     }
+
+    
 
     public UserInfo withAdminType(Integer adminType) {
         this.adminType = adminType;
@@ -315,6 +335,8 @@ public class UserInfo  {
         this.adminType = adminType;
     }
 
+    
+
     public UserInfo withName(String name) {
         this.name = name;
         return this;
@@ -335,6 +357,8 @@ public class UserInfo  {
         this.name = name;
     }
 
+    
+
     public UserInfo withNameEn(String nameEn) {
         this.nameEn = nameEn;
         return this;
@@ -354,6 +378,9 @@ public class UserInfo  {
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

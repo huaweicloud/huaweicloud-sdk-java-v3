@@ -54,6 +54,8 @@ public class ListScriptResultsResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ListScriptResultsResponse withResult(List<Result> result) {
         this.result = result;
         return this;
@@ -61,9 +63,6 @@ public class ListScriptResultsResponse extends SdkResponse {
 
     
     public ListScriptResultsResponse addResultItem(Result resultItem) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
         this.result.add(resultItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListScriptResultsResponse extends SdkResponse {
     public void setResult(List<Result> result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

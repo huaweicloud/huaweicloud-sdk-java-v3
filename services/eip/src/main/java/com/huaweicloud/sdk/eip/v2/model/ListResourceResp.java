@@ -24,7 +24,7 @@ public class ListResourceResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resouce_detail")
     
-    private Object resouceDetail = null;
+    private Object resouceDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class ListResourceResp  {
         this.resouceDetail = resouceDetail;
     }
 
+    
+
     public ListResourceResp withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -83,6 +85,8 @@ public class ListResourceResp  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public ListResourceResp withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -104,6 +108,8 @@ public class ListResourceResp  {
         this.resourceName = resourceName;
     }
 
+    
+
     public ListResourceResp withTags(List<ResourceTagResp> tags) {
         this.tags = tags;
         return this;
@@ -111,9 +117,6 @@ public class ListResourceResp  {
 
     
     public ListResourceResp addTagsItem(ResourceTagResp tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class ListResourceResp  {
     public void setTags(List<ResourceTagResp> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,7 +33,7 @@ public class Job  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="params")
     
-    private Object params = null;
+    private Object params;
 
     public Job withName(String name) {
         this.name = name;
@@ -55,6 +55,8 @@ public class Job  {
         this.name = name;
     }
 
+    
+
     public Job withPath(String path) {
         this.path = path;
         return this;
@@ -75,6 +77,8 @@ public class Job  {
         this.path = path;
     }
 
+    
+
     public Job withParams(Object params) {
         this.params = params;
         return this;
@@ -94,6 +98,9 @@ public class Job  {
     public void setParams(Object params) {
         this.params = params;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -116,7 +116,7 @@ public class SetDbUserPwdRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DbUserPwdRequest body = null;
+    private DbUserPwdRequest body;
 
     public SetDbUserPwdRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class SetDbUserPwdRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public SetDbUserPwdRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class SetDbUserPwdRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public SetDbUserPwdRequest withBody(DbUserPwdRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class SetDbUserPwdRequest  {
     public void setBody(DbUserPwdRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

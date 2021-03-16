@@ -22,7 +22,7 @@ public class CreateDomainRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LiveDomainCreateReq body = null;
+    private LiveDomainCreateReq body;
 
     public CreateDomainRequest withBody(LiveDomainCreateReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateDomainRequest  {
     public void setBody(LiveDomainCreateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

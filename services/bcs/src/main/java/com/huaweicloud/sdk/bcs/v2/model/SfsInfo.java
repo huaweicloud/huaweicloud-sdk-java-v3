@@ -61,6 +61,8 @@ public class SfsInfo  {
         this.pvcName = pvcName;
     }
 
+    
+
     public SfsInfo withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class SfsInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SfsInfo withAddr(String addr) {
         this.addr = addr;
@@ -101,6 +105,8 @@ public class SfsInfo  {
         this.addr = addr;
     }
 
+    
+
     public SfsInfo withType(String type) {
         this.type = type;
         return this;
@@ -120,6 +126,9 @@ public class SfsInfo  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

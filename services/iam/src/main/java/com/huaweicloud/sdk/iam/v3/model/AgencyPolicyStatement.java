@@ -102,7 +102,7 @@ public class AgencyPolicyStatement  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Action")
     
-    private List<ActionEnum> action = new ArrayList<>();
+    private List<ActionEnum> action = null;
         /**
      * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
      */
@@ -192,7 +192,7 @@ public class AgencyPolicyStatement  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Resource")
     
-    private AgencyPolicyResource resource = null;
+    private AgencyPolicyResource resource;
 
     public AgencyPolicyStatement withAction(List<ActionEnum> action) {
         this.action = action;
@@ -225,6 +225,8 @@ public class AgencyPolicyStatement  {
         this.action = action;
     }
 
+    
+
     public AgencyPolicyStatement withEffect(EffectEnum effect) {
         this.effect = effect;
         return this;
@@ -244,6 +246,8 @@ public class AgencyPolicyStatement  {
     public void setEffect(EffectEnum effect) {
         this.effect = effect;
     }
+
+    
 
     public AgencyPolicyStatement withResource(AgencyPolicyResource resource) {
         this.resource = resource;
@@ -271,6 +275,9 @@ public class AgencyPolicyStatement  {
     public void setResource(AgencyPolicyResource resource) {
         this.resource = resource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

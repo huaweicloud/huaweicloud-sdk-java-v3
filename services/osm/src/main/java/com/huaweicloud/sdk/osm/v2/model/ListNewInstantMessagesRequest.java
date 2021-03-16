@@ -23,7 +23,7 @@ public class ListNewInstantMessagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="case_ids")
     
-    private List<String> caseIds = new ArrayList<>();
+    private List<String> caseIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class ListNewInstantMessagesRequest  {
         this.caseIds = caseIds;
     }
 
+    
+
     public ListNewInstantMessagesRequest withLastMessageTimeId(String lastMessageTimeId) {
         this.lastMessageTimeId = lastMessageTimeId;
         return this;
@@ -106,6 +108,8 @@ public class ListNewInstantMessagesRequest  {
         this.lastMessageTimeId = lastMessageTimeId;
     }
 
+    
+
     public ListNewInstantMessagesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -125,6 +129,8 @@ public class ListNewInstantMessagesRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListNewInstantMessagesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -150,6 +156,8 @@ public class ListNewInstantMessagesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListNewInstantMessagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -172,6 +180,8 @@ public class ListNewInstantMessagesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListNewInstantMessagesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -193,6 +203,9 @@ public class ListNewInstantMessagesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class ListDatabaseRolesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDatabaseRolesRequest withRoleName(String roleName) {
         this.roleName = roleName;
         return this;
@@ -86,6 +88,8 @@ public class ListDatabaseRolesRequest  {
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
+
+    
 
     public ListDatabaseRolesRequest withDbName(String dbName) {
         this.dbName = dbName;
@@ -107,6 +111,8 @@ public class ListDatabaseRolesRequest  {
         this.dbName = dbName;
     }
 
+    
+
     public ListDatabaseRolesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -127,6 +133,8 @@ public class ListDatabaseRolesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListDatabaseRolesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -146,6 +154,9 @@ public class ListDatabaseRolesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

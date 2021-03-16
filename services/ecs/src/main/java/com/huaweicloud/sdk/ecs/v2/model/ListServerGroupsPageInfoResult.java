@@ -42,6 +42,9 @@ public class ListServerGroupsPageInfoResult  {
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

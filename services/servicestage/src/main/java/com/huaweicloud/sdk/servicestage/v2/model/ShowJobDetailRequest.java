@@ -33,19 +33,19 @@ public class ShowJobDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="desc")
     
-    private String desc = "false";
+    private String desc;
 
     public ShowJobDetailRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -67,6 +67,8 @@ public class ShowJobDetailRequest  {
         this.jobId = jobId;
     }
 
+    
+
     public ShowJobDetailRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -86,6 +88,8 @@ public class ShowJobDetailRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ShowJobDetailRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -107,6 +111,8 @@ public class ShowJobDetailRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowJobDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -127,6 +133,8 @@ public class ShowJobDetailRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowJobDetailRequest withDesc(String desc) {
         this.desc = desc;
         return this;
@@ -146,6 +154,9 @@ public class ShowJobDetailRequest  {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

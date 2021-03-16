@@ -563,6 +563,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowMqsInstanceResponse withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -582,6 +584,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setEngine(String engine) {
         this.engine = engine;
     }
+
+    
 
     public ShowMqsInstanceResponse withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -603,6 +607,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.engineVersion = engineVersion;
     }
 
+    
+
     public ShowMqsInstanceResponse withSpecification(String specification) {
         this.specification = specification;
         return this;
@@ -622,6 +628,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setSpecification(String specification) {
         this.specification = specification;
     }
+
+    
 
     public ShowMqsInstanceResponse withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
@@ -643,6 +651,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.storageSpace = storageSpace;
     }
 
+    
+
     public ShowMqsInstanceResponse withPartitionNum(Integer partitionNum) {
         this.partitionNum = partitionNum;
         return this;
@@ -662,6 +672,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setPartitionNum(Integer partitionNum) {
         this.partitionNum = partitionNum;
     }
+
+    
 
     public ShowMqsInstanceResponse withUsedStorageSpace(Integer usedStorageSpace) {
         this.usedStorageSpace = usedStorageSpace;
@@ -683,6 +695,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.usedStorageSpace = usedStorageSpace;
     }
 
+    
+
     public ShowMqsInstanceResponse withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
         return this;
@@ -702,6 +716,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
     }
+
+    
 
     public ShowMqsInstanceResponse withPort(Integer port) {
         this.port = port;
@@ -723,6 +739,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.port = port;
     }
 
+    
+
     public ShowMqsInstanceResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -742,6 +760,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ShowMqsInstanceResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -763,6 +783,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowMqsInstanceResponse withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
@@ -782,6 +804,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
     }
+
+    
 
     public ShowMqsInstanceResponse withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -803,6 +827,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ShowMqsInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -822,6 +848,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public ShowMqsInstanceResponse withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -843,6 +871,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.vpcName = vpcName;
     }
 
+    
+
     public ShowMqsInstanceResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -862,6 +892,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public ShowMqsInstanceResponse withUserId(String userId) {
         this.userId = userId;
@@ -883,6 +915,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.userId = userId;
     }
 
+    
+
     public ShowMqsInstanceResponse withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -902,6 +936,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public ShowMqsInstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
@@ -923,6 +959,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    
+
     public ShowMqsInstanceResponse withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
         return this;
@@ -942,6 +980,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
     }
+
+    
 
     public ShowMqsInstanceResponse withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
@@ -963,6 +1003,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.maintainEnd = maintainEnd;
     }
 
+    
+
     public ShowMqsInstanceResponse withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
@@ -982,6 +1024,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
     }
+
+    
 
     public ShowMqsInstanceResponse withManagementConnectAddress(String managementConnectAddress) {
         this.managementConnectAddress = managementConnectAddress;
@@ -1003,6 +1047,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.managementConnectAddress = managementConnectAddress;
     }
 
+    
+
     public ShowMqsInstanceResponse withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
         return this;
@@ -1022,6 +1068,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
     }
+
+    
 
     public ShowMqsInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -1043,6 +1091,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ShowMqsInstanceResponse withIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
         return this;
@@ -1062,6 +1112,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
     }
+
+    
 
     public ShowMqsInstanceResponse withExtendTimes(Integer extendTimes) {
         this.extendTimes = extendTimes;
@@ -1083,6 +1135,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.extendTimes = extendTimes;
     }
 
+    
+
     public ShowMqsInstanceResponse withEnableAutoTopic(Boolean enableAutoTopic) {
         this.enableAutoTopic = enableAutoTopic;
         return this;
@@ -1102,6 +1156,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setEnableAutoTopic(Boolean enableAutoTopic) {
         this.enableAutoTopic = enableAutoTopic;
     }
+
+    
 
     public ShowMqsInstanceResponse withType(TypeEnum type) {
         this.type = type;
@@ -1123,6 +1179,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.type = type;
     }
 
+    
+
     public ShowMqsInstanceResponse withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -1142,6 +1200,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public ShowMqsInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -1163,6 +1223,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public ShowMqsInstanceResponse withSecurityGroupName(String securityGroupName) {
         this.securityGroupName = securityGroupName;
         return this;
@@ -1182,6 +1244,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setSecurityGroupName(String securityGroupName) {
         this.securityGroupName = securityGroupName;
     }
+
+    
 
     public ShowMqsInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -1203,6 +1267,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.subnetId = subnetId;
     }
 
+    
+
     public ShowMqsInstanceResponse withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -1210,9 +1276,6 @@ public class ShowMqsInstanceResponse extends SdkResponse {
 
     
     public ShowMqsInstanceResponse addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -1237,6 +1300,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.availableZones = availableZones;
     }
 
+    
+
     public ShowMqsInstanceResponse withTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
         return this;
@@ -1256,6 +1321,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
     }
+
+    
 
     public ShowMqsInstanceResponse withPublicConnectAddress(String publicConnectAddress) {
         this.publicConnectAddress = publicConnectAddress;
@@ -1277,6 +1344,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.publicConnectAddress = publicConnectAddress;
     }
 
+    
+
     public ShowMqsInstanceResponse withStorageResourceId(String storageResourceId) {
         this.storageResourceId = storageResourceId;
         return this;
@@ -1296,6 +1365,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setStorageResourceId(String storageResourceId) {
         this.storageResourceId = storageResourceId;
     }
+
+    
 
     public ShowMqsInstanceResponse withStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
@@ -1317,6 +1388,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.storageSpecCode = storageSpecCode;
     }
 
+    
+
     public ShowMqsInstanceResponse withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -1336,6 +1409,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
+
+    
 
     public ShowMqsInstanceResponse withStorageType(String storageType) {
         this.storageType = storageType;
@@ -1357,6 +1432,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.storageType = storageType;
     }
 
+    
+
     public ShowMqsInstanceResponse withRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
         return this;
@@ -1376,6 +1453,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
     }
+
+    
 
     public ShowMqsInstanceResponse withKafkaPublicStatus(String kafkaPublicStatus) {
         this.kafkaPublicStatus = kafkaPublicStatus;
@@ -1397,6 +1476,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.kafkaPublicStatus = kafkaPublicStatus;
     }
 
+    
+
     public ShowMqsInstanceResponse withPublicBandwidth(Integer publicBandwidth) {
         this.publicBandwidth = publicBandwidth;
         return this;
@@ -1416,6 +1497,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setPublicBandwidth(Integer publicBandwidth) {
         this.publicBandwidth = publicBandwidth;
     }
+
+    
 
     public ShowMqsInstanceResponse withKafkaManagerUser(String kafkaManagerUser) {
         this.kafkaManagerUser = kafkaManagerUser;
@@ -1437,6 +1520,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.kafkaManagerUser = kafkaManagerUser;
     }
 
+    
+
     public ShowMqsInstanceResponse withEnableLogCollection(Boolean enableLogCollection) {
         this.enableLogCollection = enableLogCollection;
         return this;
@@ -1456,6 +1541,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setEnableLogCollection(Boolean enableLogCollection) {
         this.enableLogCollection = enableLogCollection;
     }
+
+    
 
     public ShowMqsInstanceResponse withCrossVpcInfo(String crossVpcInfo) {
         this.crossVpcInfo = crossVpcInfo;
@@ -1477,6 +1564,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.crossVpcInfo = crossVpcInfo;
     }
 
+    
+
     public ShowMqsInstanceResponse withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -1497,6 +1586,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.ipv6Enable = ipv6Enable;
     }
 
+    
+
     public ShowMqsInstanceResponse withIpv6ConnectAddresses(List<String> ipv6ConnectAddresses) {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
         return this;
@@ -1504,9 +1595,6 @@ public class ShowMqsInstanceResponse extends SdkResponse {
 
     
     public ShowMqsInstanceResponse addIpv6ConnectAddressesItem(String ipv6ConnectAddressesItem) {
-        if (this.ipv6ConnectAddresses == null) {
-            this.ipv6ConnectAddresses = new ArrayList<>();
-        }
         this.ipv6ConnectAddresses.add(ipv6ConnectAddressesItem);
         return this;
     }
@@ -1531,6 +1619,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
     }
 
+    
+
     public ShowMqsInstanceResponse withConnectorEnable(Boolean connectorEnable) {
         this.connectorEnable = connectorEnable;
         return this;
@@ -1550,6 +1640,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setConnectorEnable(Boolean connectorEnable) {
         this.connectorEnable = connectorEnable;
     }
+
+    
 
     public ShowMqsInstanceResponse withConnectorId(String connectorId) {
         this.connectorId = connectorId;
@@ -1571,6 +1663,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.connectorId = connectorId;
     }
 
+    
+
     public ShowMqsInstanceResponse withRestEnable(Boolean restEnable) {
         this.restEnable = restEnable;
         return this;
@@ -1590,6 +1684,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setRestEnable(Boolean restEnable) {
         this.restEnable = restEnable;
     }
+
+    
 
     public ShowMqsInstanceResponse withRestConnectAddress(String restConnectAddress) {
         this.restConnectAddress = restConnectAddress;
@@ -1611,6 +1707,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.restConnectAddress = restConnectAddress;
     }
 
+    
+
     public ShowMqsInstanceResponse withMessageQueryInstEnable(Boolean messageQueryInstEnable) {
         this.messageQueryInstEnable = messageQueryInstEnable;
         return this;
@@ -1630,6 +1728,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setMessageQueryInstEnable(Boolean messageQueryInstEnable) {
         this.messageQueryInstEnable = messageQueryInstEnable;
     }
+
+    
 
     public ShowMqsInstanceResponse withVpcClientPlain(Boolean vpcClientPlain) {
         this.vpcClientPlain = vpcClientPlain;
@@ -1651,6 +1751,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.vpcClientPlain = vpcClientPlain;
     }
 
+    
+
     public ShowMqsInstanceResponse withSupportFeatures(String supportFeatures) {
         this.supportFeatures = supportFeatures;
         return this;
@@ -1670,6 +1772,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setSupportFeatures(String supportFeatures) {
         this.supportFeatures = supportFeatures;
     }
+
+    
 
     public ShowMqsInstanceResponse withTraceEnable(Boolean traceEnable) {
         this.traceEnable = traceEnable;
@@ -1691,6 +1795,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.traceEnable = traceEnable;
     }
 
+    
+
     public ShowMqsInstanceResponse withPodConnectAddress(String podConnectAddress) {
         this.podConnectAddress = podConnectAddress;
         return this;
@@ -1710,6 +1816,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setPodConnectAddress(String podConnectAddress) {
         this.podConnectAddress = podConnectAddress;
     }
+
+    
 
     public ShowMqsInstanceResponse withDiskEncrypted(Boolean diskEncrypted) {
         this.diskEncrypted = diskEncrypted;
@@ -1731,6 +1839,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.diskEncrypted = diskEncrypted;
     }
 
+    
+
     public ShowMqsInstanceResponse withKafkaPrivateConnectAddress(String kafkaPrivateConnectAddress) {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
         return this;
@@ -1751,6 +1861,8 @@ public class ShowMqsInstanceResponse extends SdkResponse {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
     }
 
+    
+
     public ShowMqsInstanceResponse withCesVersion(String cesVersion) {
         this.cesVersion = cesVersion;
         return this;
@@ -1770,6 +1882,9 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     public void setCesVersion(String cesVersion) {
         this.cesVersion = cesVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

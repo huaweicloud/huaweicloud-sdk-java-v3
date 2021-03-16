@@ -28,7 +28,7 @@ public class CreateMemberRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateMemberRequestBody body = null;
+    private CreateMemberRequestBody body;
 
     public CreateMemberRequest withPoolId(String poolId) {
         this.poolId = poolId;
@@ -49,6 +49,8 @@ public class CreateMemberRequest  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public CreateMemberRequest withBody(CreateMemberRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateMemberRequest  {
     public void setBody(CreateMemberRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

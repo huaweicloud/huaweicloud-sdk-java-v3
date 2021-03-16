@@ -49,6 +49,8 @@ public class DbUserPwdRequest  {
         this.name = name;
     }
 
+    
+
     public DbUserPwdRequest withPassword(String password) {
         this.password = password;
         return this;
@@ -68,6 +70,9 @@ public class DbUserPwdRequest  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -54,6 +54,8 @@ public class ListUsageTypesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListUsageTypesResponse withUsageTypes(List<UsageType> usageTypes) {
         this.usageTypes = usageTypes;
         return this;
@@ -61,9 +63,6 @@ public class ListUsageTypesResponse extends SdkResponse {
 
     
     public ListUsageTypesResponse addUsageTypesItem(UsageType usageTypesItem) {
-        if (this.usageTypes == null) {
-            this.usageTypes = new ArrayList<>();
-        }
         this.usageTypes.add(usageTypesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListUsageTypesResponse extends SdkResponse {
     public void setUsageTypes(List<UsageType> usageTypes) {
         this.usageTypes = usageTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

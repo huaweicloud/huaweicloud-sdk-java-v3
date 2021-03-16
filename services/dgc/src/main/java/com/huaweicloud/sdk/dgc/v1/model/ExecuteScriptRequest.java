@@ -28,7 +28,7 @@ public class ExecuteScriptRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ExecuteScriptReq body = null;
+    private ExecuteScriptReq body;
 
     public ExecuteScriptRequest withScriptName(String scriptName) {
         this.scriptName = scriptName;
@@ -49,6 +49,8 @@ public class ExecuteScriptRequest  {
     public void setScriptName(String scriptName) {
         this.scriptName = scriptName;
     }
+
+    
 
     public ExecuteScriptRequest withBody(ExecuteScriptReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ExecuteScriptRequest  {
     public void setBody(ExecuteScriptReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

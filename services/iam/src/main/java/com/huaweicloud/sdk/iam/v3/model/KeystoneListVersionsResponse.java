@@ -24,7 +24,7 @@ public class KeystoneListVersionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="versions")
     
-    private Versions versions = null;
+    private Versions versions;
 
     public KeystoneListVersionsResponse withVersions(Versions versions) {
         this.versions = versions;
@@ -52,6 +52,9 @@ public class KeystoneListVersionsResponse extends SdkResponse {
     public void setVersions(Versions versions) {
         this.versions = versions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

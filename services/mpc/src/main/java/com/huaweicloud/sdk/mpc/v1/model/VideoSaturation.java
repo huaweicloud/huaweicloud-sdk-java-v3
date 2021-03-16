@@ -55,6 +55,8 @@ public class VideoSaturation  {
         this.name = name;
     }
 
+    
+
     public VideoSaturation withExecutionOrder(Integer executionOrder) {
         this.executionOrder = executionOrder;
         return this;
@@ -75,6 +77,8 @@ public class VideoSaturation  {
         this.executionOrder = executionOrder;
     }
 
+    
+
     public VideoSaturation withSaturation(String saturation) {
         this.saturation = saturation;
         return this;
@@ -94,6 +98,9 @@ public class VideoSaturation  {
     public void setSaturation(String saturation) {
         this.saturation = saturation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

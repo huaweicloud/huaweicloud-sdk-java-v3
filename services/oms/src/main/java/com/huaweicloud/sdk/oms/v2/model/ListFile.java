@@ -49,6 +49,8 @@ public class ListFile  {
         this.listFileKey = listFileKey;
     }
 
+    
+
     public ListFile withObsBucket(String obsBucket) {
         this.obsBucket = obsBucket;
         return this;
@@ -68,6 +70,9 @@ public class ListFile  {
     public void setObsBucket(String obsBucket) {
         this.obsBucket = obsBucket;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

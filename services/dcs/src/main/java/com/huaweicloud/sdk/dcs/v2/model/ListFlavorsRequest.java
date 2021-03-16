@@ -155,6 +155,8 @@ public class ListFlavorsRequest  {
         this.specCode = specCode;
     }
 
+    
+
     public ListFlavorsRequest withCacheMode(String cacheMode) {
         this.cacheMode = cacheMode;
         return this;
@@ -174,6 +176,8 @@ public class ListFlavorsRequest  {
     public void setCacheMode(String cacheMode) {
         this.cacheMode = cacheMode;
     }
+
+    
 
     public ListFlavorsRequest withEngine(String engine) {
         this.engine = engine;
@@ -195,6 +199,8 @@ public class ListFlavorsRequest  {
         this.engine = engine;
     }
 
+    
+
     public ListFlavorsRequest withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
@@ -214,6 +220,8 @@ public class ListFlavorsRequest  {
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
+
+    
 
     public ListFlavorsRequest withCpuType(CpuTypeEnum cpuType) {
         this.cpuType = cpuType;
@@ -235,6 +243,8 @@ public class ListFlavorsRequest  {
         this.cpuType = cpuType;
     }
 
+    
+
     public ListFlavorsRequest withCapacity(String capacity) {
         this.capacity = capacity;
         return this;
@@ -254,6 +264,9 @@ public class ListFlavorsRequest  {
     public void setCapacity(String capacity) {
         this.capacity = capacity;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

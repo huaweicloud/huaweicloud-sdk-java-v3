@@ -39,7 +39,7 @@ public class ListLiveStreamsOnlineRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,6 +67,8 @@ public class ListLiveStreamsOnlineRequest  {
         this.publishDomain = publishDomain;
     }
 
+    
+
     public ListLiveStreamsOnlineRequest withApp(String app) {
         this.app = app;
         return this;
@@ -86,6 +88,8 @@ public class ListLiveStreamsOnlineRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListLiveStreamsOnlineRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -107,6 +111,8 @@ public class ListLiveStreamsOnlineRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListLiveStreamsOnlineRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -130,6 +136,8 @@ public class ListLiveStreamsOnlineRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListLiveStreamsOnlineRequest withStream(String stream) {
         this.stream = stream;
         return this;
@@ -149,6 +157,9 @@ public class ListLiveStreamsOnlineRequest  {
     public void setStream(String stream) {
         this.stream = stream;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

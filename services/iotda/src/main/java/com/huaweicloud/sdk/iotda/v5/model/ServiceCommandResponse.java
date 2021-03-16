@@ -52,6 +52,8 @@ public class ServiceCommandResponse  {
         this.responseName = responseName;
     }
 
+    
+
     public ServiceCommandResponse withParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
         return this;
@@ -59,9 +61,6 @@ public class ServiceCommandResponse  {
 
     
     public ServiceCommandResponse addParasItem(ServiceCommandPara parasItem) {
-        if (this.paras == null) {
-            this.paras = new ArrayList<>();
-        }
         this.paras.add(parasItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class ServiceCommandResponse  {
     public void setParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

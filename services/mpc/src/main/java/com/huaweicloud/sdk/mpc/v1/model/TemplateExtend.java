@@ -22,7 +22,7 @@ public class TemplateExtend  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private OutputPolicy audio = null;
+    private OutputPolicy audio;
 
     public TemplateExtend withAudio(OutputPolicy audio) {
         this.audio = audio;
@@ -50,6 +50,9 @@ public class TemplateExtend  {
     public void setAudio(OutputPolicy audio) {
         this.audio = audio;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

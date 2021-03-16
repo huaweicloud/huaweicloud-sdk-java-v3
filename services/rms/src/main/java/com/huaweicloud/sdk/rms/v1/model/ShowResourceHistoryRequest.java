@@ -155,6 +155,8 @@ public class ShowResourceHistoryRequest  {
         this.resourceId = resourceId;
     }
 
+    
+
     public ShowResourceHistoryRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -174,6 +176,8 @@ public class ShowResourceHistoryRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ShowResourceHistoryRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -197,6 +201,8 @@ public class ShowResourceHistoryRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowResourceHistoryRequest withEarlierTime(Long earlierTime) {
         this.earlierTime = earlierTime;
         return this;
@@ -216,6 +222,8 @@ public class ShowResourceHistoryRequest  {
     public void setEarlierTime(Long earlierTime) {
         this.earlierTime = earlierTime;
     }
+
+    
 
     public ShowResourceHistoryRequest withLaterTime(Long laterTime) {
         this.laterTime = laterTime;
@@ -237,6 +245,8 @@ public class ShowResourceHistoryRequest  {
         this.laterTime = laterTime;
     }
 
+    
+
     public ShowResourceHistoryRequest withChronologicalOrder(ChronologicalOrderEnum chronologicalOrder) {
         this.chronologicalOrder = chronologicalOrder;
         return this;
@@ -256,6 +266,9 @@ public class ShowResourceHistoryRequest  {
     public void setChronologicalOrder(ChronologicalOrderEnum chronologicalOrder) {
         this.chronologicalOrder = chronologicalOrder;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

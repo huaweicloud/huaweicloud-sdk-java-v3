@@ -51,6 +51,8 @@ public class ShowMyInfoRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowMyInfoRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -70,6 +72,9 @@ public class ShowMyInfoRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

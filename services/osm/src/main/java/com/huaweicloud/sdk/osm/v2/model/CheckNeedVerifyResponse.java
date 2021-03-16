@@ -30,7 +30,7 @@ public class CheckNeedVerifyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expire_time")
     
-    private OffsetDateTime expireTime = null;
+    private OffsetDateTime expireTime;
 
     public CheckNeedVerifyResponse withNeedVerifyCode(Integer needVerifyCode) {
         this.needVerifyCode = needVerifyCode;
@@ -54,6 +54,8 @@ public class CheckNeedVerifyResponse extends SdkResponse {
         this.needVerifyCode = needVerifyCode;
     }
 
+    
+
     public CheckNeedVerifyResponse withExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -73,6 +75,9 @@ public class CheckNeedVerifyResponse extends SdkResponse {
     public void setExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

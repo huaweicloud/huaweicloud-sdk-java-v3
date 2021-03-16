@@ -34,7 +34,7 @@ public class CreateDatabaseRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DatabaseForCreation body = null;
+    private DatabaseForCreation body;
 
     public CreateDatabaseRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class CreateDatabaseRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CreateDatabaseRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class CreateDatabaseRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateDatabaseRequest withBody(DatabaseForCreation body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CreateDatabaseRequest  {
     public void setBody(DatabaseForCreation body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

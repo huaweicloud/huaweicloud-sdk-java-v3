@@ -105,7 +105,7 @@ public class ShowTemplateFileRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -201,7 +201,7 @@ public class ShowTemplateFileRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.SOURCE_PACKAGE;
+    private TypeEnum type;
 
     public ShowTemplateFileRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -225,6 +225,8 @@ public class ShowTemplateFileRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ShowTemplateFileRequest withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -244,6 +246,8 @@ public class ShowTemplateFileRequest  {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
+
+    
 
     public ShowTemplateFileRequest withFilePath(String filePath) {
         this.filePath = filePath;
@@ -265,6 +269,8 @@ public class ShowTemplateFileRequest  {
         this.filePath = filePath;
     }
 
+    
+
     public ShowTemplateFileRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -284,6 +290,9 @@ public class ShowTemplateFileRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

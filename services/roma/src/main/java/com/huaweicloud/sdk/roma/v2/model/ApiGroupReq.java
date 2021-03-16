@@ -62,6 +62,8 @@ public class ApiGroupReq  {
         this.name = name;
     }
 
+    
+
     public ApiGroupReq withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -81,6 +83,8 @@ public class ApiGroupReq  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ApiGroupReq withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -102,6 +106,8 @@ public class ApiGroupReq  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiGroupReq withVersion(String version) {
         this.version = version;
         return this;
@@ -121,6 +127,9 @@ public class ApiGroupReq  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

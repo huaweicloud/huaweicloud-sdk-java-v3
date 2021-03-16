@@ -28,7 +28,7 @@ public class UpdatePluginsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePluginsReq body = null;
+    private UpdatePluginsReq body;
 
     public UpdatePluginsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdatePluginsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdatePluginsRequest withBody(UpdatePluginsReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePluginsRequest  {
     public void setBody(UpdatePluginsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

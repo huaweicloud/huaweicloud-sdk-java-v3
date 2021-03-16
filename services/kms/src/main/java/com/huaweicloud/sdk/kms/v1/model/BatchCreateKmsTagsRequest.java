@@ -28,13 +28,13 @@ public class BatchCreateKmsTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreateKmsTagsRequestBody body = null;
+    private BatchCreateKmsTagsRequestBody body;
 
     public BatchCreateKmsTagsRequest withKeyId(String keyId) {
         this.keyId = keyId;
@@ -56,6 +56,8 @@ public class BatchCreateKmsTagsRequest  {
         this.keyId = keyId;
     }
 
+    
+
     public BatchCreateKmsTagsRequest withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -75,6 +77,8 @@ public class BatchCreateKmsTagsRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public BatchCreateKmsTagsRequest withBody(BatchCreateKmsTagsRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class BatchCreateKmsTagsRequest  {
     public void setBody(BatchCreateKmsTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

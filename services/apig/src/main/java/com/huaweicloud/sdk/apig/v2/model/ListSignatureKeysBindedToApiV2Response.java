@@ -60,6 +60,8 @@ public class ListSignatureKeysBindedToApiV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListSignatureKeysBindedToApiV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListSignatureKeysBindedToApiV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListSignatureKeysBindedToApiV2Response withBindings(List<SignBindingApiResp> bindings) {
         this.bindings = bindings;
         return this;
@@ -87,9 +91,6 @@ public class ListSignatureKeysBindedToApiV2Response extends SdkResponse {
 
     
     public ListSignatureKeysBindedToApiV2Response addBindingsItem(SignBindingApiResp bindingsItem) {
-        if (this.bindings == null) {
-            this.bindings = new ArrayList<>();
-        }
         this.bindings.add(bindingsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListSignatureKeysBindedToApiV2Response extends SdkResponse {
     public void setBindings(List<SignBindingApiResp> bindings) {
         this.bindings = bindings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

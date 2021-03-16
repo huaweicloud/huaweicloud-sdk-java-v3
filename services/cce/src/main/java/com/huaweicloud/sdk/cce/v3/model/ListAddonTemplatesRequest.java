@@ -42,6 +42,9 @@ public class ListAddonTemplatesRequest  {
     public void setAddonTemplateName(String addonTemplateName) {
         this.addonTemplateName = addonTemplateName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

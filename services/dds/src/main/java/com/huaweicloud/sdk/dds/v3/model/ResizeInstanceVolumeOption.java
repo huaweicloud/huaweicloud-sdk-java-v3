@@ -49,6 +49,8 @@ public class ResizeInstanceVolumeOption  {
         this.groupId = groupId;
     }
 
+    
+
     public ResizeInstanceVolumeOption withSize(String size) {
         this.size = size;
         return this;
@@ -68,6 +70,9 @@ public class ResizeInstanceVolumeOption  {
     public void setSize(String size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

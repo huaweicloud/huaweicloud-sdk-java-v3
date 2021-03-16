@@ -28,7 +28,7 @@ public class RunTaskV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RunRequestV2 body = null;
+    private RunRequestV2 body;
 
     public RunTaskV2Request withTaskId(String taskId) {
         this.taskId = taskId;
@@ -49,6 +49,8 @@ public class RunTaskV2Request  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
 
     public RunTaskV2Request withBody(RunRequestV2 body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RunTaskV2Request  {
     public void setBody(RunRequestV2 body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

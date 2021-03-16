@@ -165,13 +165,13 @@ public class ListRemuxTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListRemuxTaskRequest withTaskId(List<String> taskId) {
         this.taskId = taskId;
@@ -180,9 +180,6 @@ public class ListRemuxTaskRequest  {
 
     
     public ListRemuxTaskRequest addTaskIdItem(String taskIdItem) {
-        if (this.taskId == null) {
-            this.taskId = new ArrayList<>();
-        }
         this.taskId.add(taskIdItem);
         return this;
     }
@@ -207,6 +204,8 @@ public class ListRemuxTaskRequest  {
         this.taskId = taskId;
     }
 
+    
+
     public ListRemuxTaskRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -226,6 +225,8 @@ public class ListRemuxTaskRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListRemuxTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -247,6 +248,8 @@ public class ListRemuxTaskRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListRemuxTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -266,6 +269,8 @@ public class ListRemuxTaskRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListRemuxTaskRequest withInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
@@ -287,6 +292,8 @@ public class ListRemuxTaskRequest  {
         this.inputBucket = inputBucket;
     }
 
+    
+
     public ListRemuxTaskRequest withInputObject(String inputObject) {
         this.inputObject = inputObject;
         return this;
@@ -306,6 +313,8 @@ public class ListRemuxTaskRequest  {
     public void setInputObject(String inputObject) {
         this.inputObject = inputObject;
     }
+
+    
 
     public ListRemuxTaskRequest withPage(Integer page) {
         this.page = page;
@@ -329,6 +338,8 @@ public class ListRemuxTaskRequest  {
         this.page = page;
     }
 
+    
+
     public ListRemuxTaskRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -350,6 +361,9 @@ public class ListRemuxTaskRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -58,19 +58,19 @@ public class Pool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<ListenerRef> listeners = new ArrayList<>();
+    private List<ListenerRef> listeners = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancers")
     
-    private List<LoadBalancerRef> loadbalancers = new ArrayList<>();
+    private List<LoadBalancerRef> loadbalancers = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="members")
     
-    private List<MemberRef> members = new ArrayList<>();
+    private List<MemberRef> members = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,7 +94,7 @@ public class Pool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_persistence")
     
-    private SessionPersistence sessionPersistence = null;
+    private SessionPersistence sessionPersistence;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,7 +106,7 @@ public class Pool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slow_start")
     
-    private SlowStart slowStart = null;
+    private SlowStart slowStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -134,6 +134,8 @@ public class Pool  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public Pool withDescription(String description) {
         this.description = description;
         return this;
@@ -153,6 +155,8 @@ public class Pool  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Pool withHealthmonitorId(String healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
@@ -174,6 +178,8 @@ public class Pool  {
         this.healthmonitorId = healthmonitorId;
     }
 
+    
+
     public Pool withId(String id) {
         this.id = id;
         return this;
@@ -194,6 +200,8 @@ public class Pool  {
         this.id = id;
     }
 
+    
+
     public Pool withLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
         return this;
@@ -213,6 +221,8 @@ public class Pool  {
     public void setLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
     }
+
+    
 
     public Pool withListeners(List<ListenerRef> listeners) {
         this.listeners = listeners;
@@ -245,6 +255,8 @@ public class Pool  {
         this.listeners = listeners;
     }
 
+    
+
     public Pool withLoadbalancers(List<LoadBalancerRef> loadbalancers) {
         this.loadbalancers = loadbalancers;
         return this;
@@ -275,6 +287,8 @@ public class Pool  {
     public void setLoadbalancers(List<LoadBalancerRef> loadbalancers) {
         this.loadbalancers = loadbalancers;
     }
+
+    
 
     public Pool withMembers(List<MemberRef> members) {
         this.members = members;
@@ -307,6 +321,8 @@ public class Pool  {
         this.members = members;
     }
 
+    
+
     public Pool withName(String name) {
         this.name = name;
         return this;
@@ -326,6 +342,8 @@ public class Pool  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Pool withProjectId(String projectId) {
         this.projectId = projectId;
@@ -347,6 +365,8 @@ public class Pool  {
         this.projectId = projectId;
     }
 
+    
+
     public Pool withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -366,6 +386,8 @@ public class Pool  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public Pool withSessionPersistence(SessionPersistence sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
@@ -394,6 +416,8 @@ public class Pool  {
         this.sessionPersistence = sessionPersistence;
     }
 
+    
+
     public Pool withIpVersion(String ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -413,6 +437,8 @@ public class Pool  {
     public void setIpVersion(String ipVersion) {
         this.ipVersion = ipVersion;
     }
+
+    
 
     public Pool withSlowStart(SlowStart slowStart) {
         this.slowStart = slowStart;
@@ -441,6 +467,8 @@ public class Pool  {
         this.slowStart = slowStart;
     }
 
+    
+
     public Pool withMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
         return this;
@@ -460,6 +488,9 @@ public class Pool  {
     public void setMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

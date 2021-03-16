@@ -57,9 +57,6 @@ public class AgreeTenantAuthorizationV2Req  {
 
     
     public AgreeTenantAuthorizationV2Req addAuthDetailListItem(TenantAgreeAuthDetailV2 authDetailListItem) {
-        if (this.authDetailList == null) {
-            this.authDetailList = new ArrayList<>();
-        }
         this.authDetailList.add(authDetailListItem);
         return this;
     }
@@ -84,6 +81,8 @@ public class AgreeTenantAuthorizationV2Req  {
         this.authDetailList = authDetailList;
     }
 
+    
+
     public AgreeTenantAuthorizationV2Req withAuthEffectiveTime(Long authEffectiveTime) {
         this.authEffectiveTime = authEffectiveTime;
         return this;
@@ -105,6 +104,8 @@ public class AgreeTenantAuthorizationV2Req  {
     public void setAuthEffectiveTime(Long authEffectiveTime) {
         this.authEffectiveTime = authEffectiveTime;
     }
+
+    
 
     public AgreeTenantAuthorizationV2Req withAuthExpireTime(Long authExpireTime) {
         this.authExpireTime = authExpireTime;
@@ -128,6 +129,8 @@ public class AgreeTenantAuthorizationV2Req  {
         this.authExpireTime = authExpireTime;
     }
 
+    
+
     public AgreeTenantAuthorizationV2Req withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -148,6 +151,8 @@ public class AgreeTenantAuthorizationV2Req  {
         this.groupId = groupId;
     }
 
+    
+
     public AgreeTenantAuthorizationV2Req withAgencyId(String agencyId) {
         this.agencyId = agencyId;
         return this;
@@ -167,6 +172,9 @@ public class AgreeTenantAuthorizationV2Req  {
     public void setAgencyId(String agencyId) {
         this.agencyId = agencyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

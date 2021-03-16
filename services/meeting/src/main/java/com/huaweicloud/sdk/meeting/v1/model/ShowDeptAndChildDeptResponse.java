@@ -121,6 +121,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.corpId = corpId;
     }
 
+    
+
     public ShowDeptAndChildDeptResponse withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -140,6 +142,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
 
     public ShowDeptAndChildDeptResponse withDeptLevel(Integer deptLevel) {
         this.deptLevel = deptLevel;
@@ -161,6 +165,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.deptLevel = deptLevel;
     }
 
+    
+
     public ShowDeptAndChildDeptResponse withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -180,6 +186,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
 
     public ShowDeptAndChildDeptResponse withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
@@ -201,6 +209,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.deptNamePath = deptNamePath;
     }
 
+    
+
     public ShowDeptAndChildDeptResponse withIsLeafNode(Boolean isLeafNode) {
         this.isLeafNode = isLeafNode;
         return this;
@@ -220,6 +230,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     public void setIsLeafNode(Boolean isLeafNode) {
         this.isLeafNode = isLeafNode;
     }
+
+    
 
     public ShowDeptAndChildDeptResponse withParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
@@ -241,6 +253,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.parentDeptCode = parentDeptCode;
     }
 
+    
+
     public ShowDeptAndChildDeptResponse withDeptCodePath(String deptCodePath) {
         this.deptCodePath = deptCodePath;
         return this;
@@ -260,6 +274,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     public void setDeptCodePath(String deptCodePath) {
         this.deptCodePath = deptCodePath;
     }
+
+    
 
     public ShowDeptAndChildDeptResponse withNote(String note) {
         this.note = note;
@@ -281,6 +297,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.note = note;
     }
 
+    
+
     public ShowDeptAndChildDeptResponse withInPermission(String inPermission) {
         this.inPermission = inPermission;
         return this;
@@ -300,6 +318,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     public void setInPermission(String inPermission) {
         this.inPermission = inPermission;
     }
+
+    
 
     public ShowDeptAndChildDeptResponse withOutPermission(String outPermission) {
         this.outPermission = outPermission;
@@ -321,6 +341,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.outPermission = outPermission;
     }
 
+    
+
     public ShowDeptAndChildDeptResponse withDesignatedOutDeptCodes(List<IdMarkDTO> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
         return this;
@@ -328,9 +350,6 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
 
     
     public ShowDeptAndChildDeptResponse addDesignatedOutDeptCodesItem(IdMarkDTO designatedOutDeptCodesItem) {
-        if (this.designatedOutDeptCodes == null) {
-            this.designatedOutDeptCodes = new ArrayList<>();
-        }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
         return this;
     }
@@ -355,6 +374,8 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
     }
 
+    
+
     public ShowDeptAndChildDeptResponse withChildDepts(List<QueryDeptResultDTO> childDepts) {
         this.childDepts = childDepts;
         return this;
@@ -362,9 +383,6 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
 
     
     public ShowDeptAndChildDeptResponse addChildDeptsItem(QueryDeptResultDTO childDeptsItem) {
-        if (this.childDepts == null) {
-            this.childDepts = new ArrayList<>();
-        }
         this.childDepts.add(childDeptsItem);
         return this;
     }
@@ -388,6 +406,9 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     public void setChildDepts(List<QueryDeptResultDTO> childDepts) {
         this.childDepts = childDepts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

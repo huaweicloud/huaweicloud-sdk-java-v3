@@ -22,7 +22,7 @@ public class CreateSharedBandwidthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateSharedBandwidhRequestBody body = null;
+    private CreateSharedBandwidhRequestBody body;
 
     public CreateSharedBandwidthRequest withBody(CreateSharedBandwidhRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateSharedBandwidthRequest  {
     public void setBody(CreateSharedBandwidhRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

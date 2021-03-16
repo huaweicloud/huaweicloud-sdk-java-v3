@@ -115,6 +115,8 @@ public class CustomerOnDemandResource  {
         this.customerId = customerId;
     }
 
+    
+
     public CustomerOnDemandResource withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
@@ -134,6 +136,8 @@ public class CustomerOnDemandResource  {
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
+
+    
 
     public CustomerOnDemandResource withAvailabilityZoneCode(String availabilityZoneCode) {
         this.availabilityZoneCode = availabilityZoneCode;
@@ -155,6 +159,8 @@ public class CustomerOnDemandResource  {
         this.availabilityZoneCode = availabilityZoneCode;
     }
 
+    
+
     public CustomerOnDemandResource withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -174,6 +180,8 @@ public class CustomerOnDemandResource  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
 
     public CustomerOnDemandResource withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
@@ -195,6 +203,8 @@ public class CustomerOnDemandResource  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
+    
+
     public CustomerOnDemandResource withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -214,6 +224,8 @@ public class CustomerOnDemandResource  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public CustomerOnDemandResource withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -235,6 +247,8 @@ public class CustomerOnDemandResource  {
         this.resourceName = resourceName;
     }
 
+    
+
     public CustomerOnDemandResource withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
@@ -254,6 +268,8 @@ public class CustomerOnDemandResource  {
     public void setEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
     }
+
+    
 
     public CustomerOnDemandResource withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -275,6 +291,8 @@ public class CustomerOnDemandResource  {
         this.expireTime = expireTime;
     }
 
+    
+
     public CustomerOnDemandResource withStatus(Integer status) {
         this.status = status;
         return this;
@@ -294,6 +312,8 @@ public class CustomerOnDemandResource  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public CustomerOnDemandResource withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
@@ -315,6 +335,8 @@ public class CustomerOnDemandResource  {
         this.resourceSpecCode = resourceSpecCode;
     }
 
+    
+
     public CustomerOnDemandResource withResourceInfo(String resourceInfo) {
         this.resourceInfo = resourceInfo;
         return this;
@@ -335,6 +357,8 @@ public class CustomerOnDemandResource  {
         this.resourceInfo = resourceInfo;
     }
 
+    
+
     public CustomerOnDemandResource withProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
         return this;
@@ -354,6 +378,9 @@ public class CustomerOnDemandResource  {
     public void setProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

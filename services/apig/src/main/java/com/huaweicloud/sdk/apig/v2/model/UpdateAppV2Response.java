@@ -114,7 +114,7 @@ public class UpdateAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -150,7 +150,7 @@ public class UpdateAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -262,6 +262,8 @@ public class UpdateAppV2Response extends SdkResponse {
         this.creator = creator;
     }
 
+    
+
     public UpdateAppV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -281,6 +283,8 @@ public class UpdateAppV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public UpdateAppV2Response withAppKey(String appKey) {
         this.appKey = appKey;
@@ -302,6 +306,8 @@ public class UpdateAppV2Response extends SdkResponse {
         this.appKey = appKey;
     }
 
+    
+
     public UpdateAppV2Response withName(String name) {
         this.name = name;
         return this;
@@ -321,6 +327,8 @@ public class UpdateAppV2Response extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateAppV2Response withRemark(String remark) {
         this.remark = remark;
@@ -342,6 +350,8 @@ public class UpdateAppV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public UpdateAppV2Response withId(String id) {
         this.id = id;
         return this;
@@ -361,6 +371,8 @@ public class UpdateAppV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateAppV2Response withAppSecret(String appSecret) {
         this.appSecret = appSecret;
@@ -382,6 +394,8 @@ public class UpdateAppV2Response extends SdkResponse {
         this.appSecret = appSecret;
     }
 
+    
+
     public UpdateAppV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -401,6 +415,8 @@ public class UpdateAppV2Response extends SdkResponse {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public UpdateAppV2Response withStatus(Integer status) {
         this.status = status;
@@ -422,6 +438,8 @@ public class UpdateAppV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public UpdateAppV2Response withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
@@ -441,6 +459,9 @@ public class UpdateAppV2Response extends SdkResponse {
     public void setAppType(AppTypeEnum appType) {
         this.appType = appType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

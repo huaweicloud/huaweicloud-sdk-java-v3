@@ -229,6 +229,8 @@ public class CreateSourceRequestBody  {
         this.productId = productId;
     }
 
+    
+
     public CreateSourceRequestBody withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -248,6 +250,8 @@ public class CreateSourceRequestBody  {
     public void setDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
     }
+
+    
 
     public CreateSourceRequestBody withTopic(String topic) {
         this.topic = topic;
@@ -269,6 +273,8 @@ public class CreateSourceRequestBody  {
         this.topic = topic;
     }
 
+    
+
     public CreateSourceRequestBody withIsBase64(IsBase64Enum isBase64) {
         this.isBase64 = isBase64;
         return this;
@@ -289,6 +295,8 @@ public class CreateSourceRequestBody  {
         this.isBase64 = isBase64;
     }
 
+    
+
     public CreateSourceRequestBody withContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
         return this;
@@ -308,6 +316,9 @@ public class CreateSourceRequestBody  {
     public void setContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

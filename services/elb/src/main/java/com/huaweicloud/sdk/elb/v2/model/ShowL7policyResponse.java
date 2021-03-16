@@ -24,7 +24,7 @@ public class ShowL7policyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7policy")
     
-    private L7policyResp l7policy = null;
+    private L7policyResp l7policy;
 
     public ShowL7policyResponse withL7policy(L7policyResp l7policy) {
         this.l7policy = l7policy;
@@ -52,6 +52,9 @@ public class ShowL7policyResponse extends SdkResponse {
     public void setL7policy(L7policyResp l7policy) {
         this.l7policy = l7policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

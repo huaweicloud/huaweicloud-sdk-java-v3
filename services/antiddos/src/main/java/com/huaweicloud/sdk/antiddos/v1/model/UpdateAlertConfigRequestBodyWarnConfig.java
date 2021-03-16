@@ -85,6 +85,8 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
         this.antiDDoS = antiDDoS;
     }
 
+    
+
     public UpdateAlertConfigRequestBodyWarnConfig withBackDoors(Boolean backDoors) {
         this.backDoors = backDoors;
         return this;
@@ -104,6 +106,8 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
     public void setBackDoors(Boolean backDoors) {
         this.backDoors = backDoors;
     }
+
+    
 
     public UpdateAlertConfigRequestBodyWarnConfig withBruceForce(Boolean bruceForce) {
         this.bruceForce = bruceForce;
@@ -125,6 +129,8 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
         this.bruceForce = bruceForce;
     }
 
+    
+
     public UpdateAlertConfigRequestBodyWarnConfig withHighPrivilege(Boolean highPrivilege) {
         this.highPrivilege = highPrivilege;
         return this;
@@ -144,6 +150,8 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
     public void setHighPrivilege(Boolean highPrivilege) {
         this.highPrivilege = highPrivilege;
     }
+
+    
 
     public UpdateAlertConfigRequestBodyWarnConfig withRemoteLogin(Boolean remoteLogin) {
         this.remoteLogin = remoteLogin;
@@ -165,6 +173,8 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
         this.remoteLogin = remoteLogin;
     }
 
+    
+
     public UpdateAlertConfigRequestBodyWarnConfig withSendFrequency(Integer sendFrequency) {
         this.sendFrequency = sendFrequency;
         return this;
@@ -184,6 +194,8 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
     public void setSendFrequency(Integer sendFrequency) {
         this.sendFrequency = sendFrequency;
     }
+
+    
 
     public UpdateAlertConfigRequestBodyWarnConfig withWaf(Boolean waf) {
         this.waf = waf;
@@ -205,6 +217,8 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
         this.waf = waf;
     }
 
+    
+
     public UpdateAlertConfigRequestBodyWarnConfig withWeakPassword(Boolean weakPassword) {
         this.weakPassword = weakPassword;
         return this;
@@ -224,6 +238,9 @@ public class UpdateAlertConfigRequestBodyWarnConfig  {
     public void setWeakPassword(Boolean weakPassword) {
         this.weakPassword = weakPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

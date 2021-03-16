@@ -34,7 +34,7 @@ public class AddProgramRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateProgramRequestDTO body = null;
+    private CreateProgramRequestDTO body;
 
     public AddProgramRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -58,6 +58,8 @@ public class AddProgramRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AddProgramRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class AddProgramRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public AddProgramRequest withBody(CreateProgramRequestDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class AddProgramRequest  {
     public void setBody(CreateProgramRequestDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

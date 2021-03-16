@@ -271,6 +271,8 @@ public class AddDeviceDTO  {
         this.name = name;
     }
 
+    
+
     public AddDeviceDTO withModel(String model) {
         this.model = model;
         return this;
@@ -290,6 +292,8 @@ public class AddDeviceDTO  {
     public void setModel(String model) {
         this.model = model;
     }
+
+    
 
     public AddDeviceDTO withSn(String sn) {
         this.sn = sn;
@@ -311,6 +315,8 @@ public class AddDeviceDTO  {
         this.sn = sn;
     }
 
+    
+
     public AddDeviceDTO withPrjCodeMode(PrjCodeModeEnum prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
         return this;
@@ -330,6 +336,8 @@ public class AddDeviceDTO  {
     public void setPrjCodeMode(PrjCodeModeEnum prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
     }
+
+    
 
     public AddDeviceDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
@@ -351,6 +359,8 @@ public class AddDeviceDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public AddDeviceDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -370,6 +380,8 @@ public class AddDeviceDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public AddDeviceDTO withCountry(String country) {
         this.country = country;
@@ -391,6 +403,8 @@ public class AddDeviceDTO  {
         this.country = country;
     }
 
+    
+
     public AddDeviceDTO withEmail(String email) {
         this.email = email;
         return this;
@@ -410,6 +424,8 @@ public class AddDeviceDTO  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public AddDeviceDTO withDescription(String description) {
         this.description = description;
@@ -431,6 +447,8 @@ public class AddDeviceDTO  {
         this.description = description;
     }
 
+    
+
     public AddDeviceDTO withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -451,6 +469,8 @@ public class AddDeviceDTO  {
         this.status = status;
     }
 
+    
+
     public AddDeviceDTO withSendNotify(String sendNotify) {
         this.sendNotify = sendNotify;
         return this;
@@ -470,6 +490,9 @@ public class AddDeviceDTO  {
     public void setSendNotify(String sendNotify) {
         this.sendNotify = sendNotify;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

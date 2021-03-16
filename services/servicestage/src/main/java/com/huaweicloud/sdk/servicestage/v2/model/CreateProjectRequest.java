@@ -34,7 +34,7 @@ public class CreateProjectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ProjectCreate body = null;
+    private ProjectCreate body;
 
     public CreateProjectRequest withXRepoAuth(String xRepoAuth) {
         this.xRepoAuth = xRepoAuth;
@@ -58,6 +58,8 @@ public class CreateProjectRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public CreateProjectRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -77,6 +79,8 @@ public class CreateProjectRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public CreateProjectRequest withBody(ProjectCreate body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CreateProjectRequest  {
     public void setBody(ProjectCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

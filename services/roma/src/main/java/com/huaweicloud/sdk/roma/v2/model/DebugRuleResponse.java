@@ -44,6 +44,9 @@ public class DebugRuleResponse extends SdkResponse {
     public void setTestResult(String testResult) {
         this.testResult = testResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

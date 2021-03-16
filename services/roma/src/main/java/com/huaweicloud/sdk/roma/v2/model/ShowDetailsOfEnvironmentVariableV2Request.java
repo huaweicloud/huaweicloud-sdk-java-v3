@@ -49,6 +49,8 @@ public class ShowDetailsOfEnvironmentVariableV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfEnvironmentVariableV2Request withEnvVariableId(String envVariableId) {
         this.envVariableId = envVariableId;
         return this;
@@ -68,6 +70,9 @@ public class ShowDetailsOfEnvironmentVariableV2Request  {
     public void setEnvVariableId(String envVariableId) {
         this.envVariableId = envVariableId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

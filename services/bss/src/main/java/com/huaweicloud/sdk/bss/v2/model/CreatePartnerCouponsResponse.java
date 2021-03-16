@@ -42,9 +42,6 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
 
     
     public CreatePartnerCouponsResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
-        if (this.errorDetails == null) {
-            this.errorDetails = new ArrayList<>();
-        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
         this.errorDetails = errorDetails;
     }
 
+    
+
     public CreatePartnerCouponsResponse withCouponInfos(List<CouponSimpleInfo> couponInfos) {
         this.couponInfos = couponInfos;
         return this;
@@ -76,9 +75,6 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
 
     
     public CreatePartnerCouponsResponse addCouponInfosItem(CouponSimpleInfo couponInfosItem) {
-        if (this.couponInfos == null) {
-            this.couponInfos = new ArrayList<>();
-        }
         this.couponInfos.add(couponInfosItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
     public void setCouponInfos(List<CouponSimpleInfo> couponInfos) {
         this.couponInfos = couponInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

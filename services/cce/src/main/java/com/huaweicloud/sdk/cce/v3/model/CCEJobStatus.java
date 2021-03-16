@@ -49,6 +49,8 @@ public class CCEJobStatus  {
         this.phase = phase;
     }
 
+    
+
     public CCEJobStatus withReason(String reason) {
         this.reason = reason;
         return this;
@@ -68,6 +70,9 @@ public class CCEJobStatus  {
     public void setReason(String reason) {
         this.reason = reason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

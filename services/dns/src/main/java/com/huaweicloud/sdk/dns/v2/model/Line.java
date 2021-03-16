@@ -81,6 +81,8 @@ public class Line  {
         this.lineId = lineId;
     }
 
+    
+
     public Line withName(String name) {
         this.name = name;
         return this;
@@ -101,6 +103,8 @@ public class Line  {
         this.name = name;
     }
 
+    
+
     public Line withIpSegments(List<String> ipSegments) {
         this.ipSegments = ipSegments;
         return this;
@@ -108,9 +112,6 @@ public class Line  {
 
     
     public Line addIpSegmentsItem(String ipSegmentsItem) {
-        if (this.ipSegments == null) {
-            this.ipSegments = new ArrayList<>();
-        }
         this.ipSegments.add(ipSegmentsItem);
         return this;
     }
@@ -135,6 +136,8 @@ public class Line  {
         this.ipSegments = ipSegments;
     }
 
+    
+
     public Line withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -154,6 +157,8 @@ public class Line  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public Line withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -175,6 +180,8 @@ public class Line  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public Line withStatus(String status) {
         this.status = status;
         return this;
@@ -195,6 +202,8 @@ public class Line  {
         this.status = status;
     }
 
+    
+
     public Line withDescription(String description) {
         this.description = description;
         return this;
@@ -214,6 +223,9 @@ public class Line  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

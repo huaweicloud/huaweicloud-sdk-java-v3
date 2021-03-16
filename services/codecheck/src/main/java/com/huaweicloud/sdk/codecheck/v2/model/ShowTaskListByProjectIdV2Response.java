@@ -41,9 +41,6 @@ public class ShowTaskListByProjectIdV2Response extends SdkResponse {
 
     
     public ShowTaskListByProjectIdV2Response addTasksItem(SimpleTaskInfoV2 tasksItem) {
-        if (this.tasks == null) {
-            this.tasks = new ArrayList<>();
-        }
         this.tasks.add(tasksItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowTaskListByProjectIdV2Response extends SdkResponse {
         this.tasks = tasks;
     }
 
+    
+
     public ShowTaskListByProjectIdV2Response withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ShowTaskListByProjectIdV2Response extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

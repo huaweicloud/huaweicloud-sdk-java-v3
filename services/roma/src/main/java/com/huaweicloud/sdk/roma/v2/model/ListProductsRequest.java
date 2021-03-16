@@ -27,7 +27,7 @@ public class ListProductsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,7 +87,7 @@ public class ListProductsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListProductsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -108,6 +108,8 @@ public class ListProductsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListProductsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -131,6 +133,8 @@ public class ListProductsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListProductsRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -150,6 +154,8 @@ public class ListProductsRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ListProductsRequest withName(String name) {
         this.name = name;
@@ -171,6 +177,8 @@ public class ListProductsRequest  {
         this.name = name;
     }
 
+    
+
     public ListProductsRequest withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
         return this;
@@ -190,6 +198,8 @@ public class ListProductsRequest  {
     public void setManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
     }
+
+    
 
     public ListProductsRequest withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
@@ -211,6 +221,8 @@ public class ListProductsRequest  {
         this.manufacturerName = manufacturerName;
     }
 
+    
+
     public ListProductsRequest withModel(String model) {
         this.model = model;
         return this;
@@ -230,6 +242,8 @@ public class ListProductsRequest  {
     public void setModel(String model) {
         this.model = model;
     }
+
+    
 
     public ListProductsRequest withDeviceType(String deviceType) {
         this.deviceType = deviceType;
@@ -251,6 +265,8 @@ public class ListProductsRequest  {
         this.deviceType = deviceType;
     }
 
+    
+
     public ListProductsRequest withCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
         return this;
@@ -270,6 +286,8 @@ public class ListProductsRequest  {
     public void setCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
     }
+
+    
 
     public ListProductsRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
@@ -293,6 +311,8 @@ public class ListProductsRequest  {
         this.createdDateStart = createdDateStart;
     }
 
+    
+
     public ListProductsRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
@@ -315,6 +335,8 @@ public class ListProductsRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
+    
+
     public ListProductsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -336,6 +358,9 @@ public class ListProductsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

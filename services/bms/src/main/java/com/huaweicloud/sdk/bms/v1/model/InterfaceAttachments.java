@@ -125,13 +125,13 @@ public class InterfaceAttachments  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="net_id")
     
-    private UUID netId = null;
+    private UUID netId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port_id")
     
-    private UUID portId = null;
+    private UUID portId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -171,6 +171,8 @@ public class InterfaceAttachments  {
         this.portState = portState;
     }
 
+    
+
     public InterfaceAttachments withFixedIps(List<FixedIps> fixedIps) {
         this.fixedIps = fixedIps;
         return this;
@@ -178,9 +180,6 @@ public class InterfaceAttachments  {
 
     
     public InterfaceAttachments addFixedIpsItem(FixedIps fixedIpsItem) {
-        if (this.fixedIps == null) {
-            this.fixedIps = new ArrayList<>();
-        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
@@ -205,6 +204,8 @@ public class InterfaceAttachments  {
         this.fixedIps = fixedIps;
     }
 
+    
+
     public InterfaceAttachments withNetId(UUID netId) {
         this.netId = netId;
         return this;
@@ -224,6 +225,8 @@ public class InterfaceAttachments  {
     public void setNetId(UUID netId) {
         this.netId = netId;
     }
+
+    
 
     public InterfaceAttachments withPortId(UUID portId) {
         this.portId = portId;
@@ -245,6 +248,8 @@ public class InterfaceAttachments  {
         this.portId = portId;
     }
 
+    
+
     public InterfaceAttachments withMacAddr(String macAddr) {
         this.macAddr = macAddr;
         return this;
@@ -264,6 +269,8 @@ public class InterfaceAttachments  {
     public void setMacAddr(String macAddr) {
         this.macAddr = macAddr;
     }
+
+    
 
     public InterfaceAttachments withDriverMode(String driverMode) {
         this.driverMode = driverMode;
@@ -285,6 +292,8 @@ public class InterfaceAttachments  {
         this.driverMode = driverMode;
     }
 
+    
+
     public InterfaceAttachments withPciAddress(String pciAddress) {
         this.pciAddress = pciAddress;
         return this;
@@ -304,6 +313,9 @@ public class InterfaceAttachments  {
     public void setPciAddress(String pciAddress) {
         this.pciAddress = pciAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

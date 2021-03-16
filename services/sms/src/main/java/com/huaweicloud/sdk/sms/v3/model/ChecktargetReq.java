@@ -52,6 +52,8 @@ public class ChecktargetReq  {
         this.device = device;
     }
 
+    
+
     public ChecktargetReq withParam(Map<String, String> param) {
         this.param = param;
         return this;
@@ -60,9 +62,6 @@ public class ChecktargetReq  {
     
 
     public ChecktargetReq putParamItem(String key, String paramItem) {
-         if (this.param == null) {
-            this.param = new HashMap<>();
-         }
         this.param.put(key, paramItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class ChecktargetReq  {
     public void setParam(Map<String, String> param) {
         this.param = param;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneCreateUserTokenByPasswordAndMfaRequestBody body = null;
+    private KeystoneCreateUserTokenByPasswordAndMfaRequestBody body;
 
     public KeystoneCreateUserTokenByPasswordAndMfaRequest withNocatalog(String nocatalog) {
         this.nocatalog = nocatalog;
@@ -49,6 +49,8 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
     public void setNocatalog(String nocatalog) {
         this.nocatalog = nocatalog;
     }
+
+    
 
     public KeystoneCreateUserTokenByPasswordAndMfaRequest withBody(KeystoneCreateUserTokenByPasswordAndMfaRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
     public void setBody(KeystoneCreateUserTokenByPasswordAndMfaRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

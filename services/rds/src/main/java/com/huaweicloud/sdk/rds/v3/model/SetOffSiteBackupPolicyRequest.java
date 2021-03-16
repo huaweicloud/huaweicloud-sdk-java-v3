@@ -34,7 +34,7 @@ public class SetOffSiteBackupPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SetOffSiteBackupPolicyRequestBody body = null;
+    private SetOffSiteBackupPolicyRequestBody body;
 
     public SetOffSiteBackupPolicyRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class SetOffSiteBackupPolicyRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public SetOffSiteBackupPolicyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class SetOffSiteBackupPolicyRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public SetOffSiteBackupPolicyRequest withBody(SetOffSiteBackupPolicyRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class SetOffSiteBackupPolicyRequest  {
     public void setBody(SetOffSiteBackupPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

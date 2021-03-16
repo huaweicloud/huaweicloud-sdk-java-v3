@@ -49,6 +49,8 @@ public class TemplateViewHistory  {
         this.templateId = templateId;
     }
 
+    
+
     public TemplateViewHistory withTemplateTitle(String templateTitle) {
         this.templateTitle = templateTitle;
         return this;
@@ -68,6 +70,9 @@ public class TemplateViewHistory  {
     public void setTemplateTitle(String templateTitle) {
         this.templateTitle = templateTitle;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

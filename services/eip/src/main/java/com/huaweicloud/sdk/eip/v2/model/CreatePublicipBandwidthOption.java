@@ -105,7 +105,7 @@ public class CreatePublicipBandwidthOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    private ChargeModeEnum chargeMode = ChargeModeEnum.BANDWIDTH;
+    private ChargeModeEnum chargeMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -229,6 +229,8 @@ public class CreatePublicipBandwidthOption  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public CreatePublicipBandwidthOption withId(String id) {
         this.id = id;
         return this;
@@ -248,6 +250,8 @@ public class CreatePublicipBandwidthOption  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public CreatePublicipBandwidthOption withName(String name) {
         this.name = name;
@@ -269,6 +273,8 @@ public class CreatePublicipBandwidthOption  {
         this.name = name;
     }
 
+    
+
     public CreatePublicipBandwidthOption withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
         return this;
@@ -289,6 +295,8 @@ public class CreatePublicipBandwidthOption  {
         this.shareType = shareType;
     }
 
+    
+
     public CreatePublicipBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
@@ -308,6 +316,9 @@ public class CreatePublicipBandwidthOption  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

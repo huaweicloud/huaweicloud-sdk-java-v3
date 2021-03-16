@@ -55,6 +55,8 @@ public class CaseRealtionInfo  {
         this.caseId = caseId;
     }
 
+    
+
     public CaseRealtionInfo withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
         return this;
@@ -75,6 +77,8 @@ public class CaseRealtionInfo  {
         this.simpleDescription = simpleDescription;
     }
 
+    
+
     public CaseRealtionInfo withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -94,6 +98,9 @@ public class CaseRealtionInfo  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

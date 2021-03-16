@@ -55,6 +55,8 @@ public class ShadowValue  {
         this.propertyName = propertyName;
     }
 
+    
+
     public ShadowValue withPropertyValue(String propertyValue) {
         this.propertyValue = propertyValue;
         return this;
@@ -74,6 +76,8 @@ public class ShadowValue  {
     public void setPropertyValue(String propertyValue) {
         this.propertyValue = propertyValue;
     }
+
+    
 
     public ShadowValue withPropertyUpdatedDate(Long propertyUpdatedDate) {
         this.propertyUpdatedDate = propertyUpdatedDate;
@@ -96,6 +100,9 @@ public class ShadowValue  {
     public void setPropertyUpdatedDate(Long propertyUpdatedDate) {
         this.propertyUpdatedDate = propertyUpdatedDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

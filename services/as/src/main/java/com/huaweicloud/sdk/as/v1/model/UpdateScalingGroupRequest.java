@@ -28,7 +28,7 @@ public class UpdateScalingGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateScalingGroupRequestBody body = null;
+    private UpdateScalingGroupRequestBody body;
 
     public UpdateScalingGroupRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -49,6 +49,8 @@ public class UpdateScalingGroupRequest  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public UpdateScalingGroupRequest withBody(UpdateScalingGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateScalingGroupRequest  {
     public void setBody(UpdateScalingGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

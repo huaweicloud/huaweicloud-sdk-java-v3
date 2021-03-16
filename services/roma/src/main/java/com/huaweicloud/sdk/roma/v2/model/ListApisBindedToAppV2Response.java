@@ -61,6 +61,8 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListApisBindedToAppV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListApisBindedToAppV2Response withAuths(List<AppAuthBindedApiResp> auths) {
         this.auths = auths;
         return this;
@@ -88,9 +92,6 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
 
     
     public ListApisBindedToAppV2Response addAuthsItem(AppAuthBindedApiResp authsItem) {
-        if (this.auths == null) {
-            this.auths = new ArrayList<>();
-        }
         this.auths.add(authsItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListApisBindedToAppV2Response extends SdkResponse {
     public void setAuths(List<AppAuthBindedApiResp> auths) {
         this.auths = auths;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

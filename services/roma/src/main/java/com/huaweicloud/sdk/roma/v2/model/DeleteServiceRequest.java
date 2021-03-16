@@ -49,6 +49,8 @@ public class DeleteServiceRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteServiceRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteServiceRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

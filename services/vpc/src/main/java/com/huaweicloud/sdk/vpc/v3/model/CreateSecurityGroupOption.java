@@ -55,6 +55,8 @@ public class CreateSecurityGroupOption  {
         this.name = name;
     }
 
+    
+
     public CreateSecurityGroupOption withDescription(String description) {
         this.description = description;
         return this;
@@ -75,6 +77,8 @@ public class CreateSecurityGroupOption  {
         this.description = description;
     }
 
+    
+
     public CreateSecurityGroupOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -94,6 +98,9 @@ public class CreateSecurityGroupOption  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

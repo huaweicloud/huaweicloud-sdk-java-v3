@@ -137,7 +137,7 @@ public class ApiPolicyHttpResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<CoditionResp> conditions = new ArrayList<>();
+    private List<CoditionResp> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -399,6 +399,8 @@ public class ApiPolicyHttpResp  {
         this.id = id;
     }
 
+    
+
     public ApiPolicyHttpResp withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
@@ -418,6 +420,8 @@ public class ApiPolicyHttpResp  {
     public void setEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
     }
+
+    
 
     public ApiPolicyHttpResp withName(String name) {
         this.name = name;
@@ -439,6 +443,8 @@ public class ApiPolicyHttpResp  {
         this.name = name;
     }
 
+    
+
     public ApiPolicyHttpResp withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -446,9 +452,6 @@ public class ApiPolicyHttpResp  {
 
     
     public ApiPolicyHttpResp addBackendParamsItem(BackendParam backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -472,6 +475,8 @@ public class ApiPolicyHttpResp  {
     public void setBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
     }
+
+    
 
     public ApiPolicyHttpResp withConditions(List<CoditionResp> conditions) {
         this.conditions = conditions;
@@ -504,6 +509,8 @@ public class ApiPolicyHttpResp  {
         this.conditions = conditions;
     }
 
+    
+
     public ApiPolicyHttpResp withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -523,6 +530,8 @@ public class ApiPolicyHttpResp  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
 
     public ApiPolicyHttpResp withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
@@ -544,6 +553,8 @@ public class ApiPolicyHttpResp  {
         this.urlDomain = urlDomain;
     }
 
+    
+
     public ApiPolicyHttpResp withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -563,6 +574,8 @@ public class ApiPolicyHttpResp  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiPolicyHttpResp withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -584,6 +597,8 @@ public class ApiPolicyHttpResp  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiPolicyHttpResp withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -603,6 +618,8 @@ public class ApiPolicyHttpResp  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public ApiPolicyHttpResp withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -624,6 +641,8 @@ public class ApiPolicyHttpResp  {
         this.timeout = timeout;
     }
 
+    
+
     public ApiPolicyHttpResp withVpcChannelInfo(String vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
         return this;
@@ -644,6 +663,8 @@ public class ApiPolicyHttpResp  {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 
+    
+
     public ApiPolicyHttpResp withVpcChannelStatus(Integer vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
@@ -663,6 +684,9 @@ public class ApiPolicyHttpResp  {
     public void setVpcChannelStatus(Integer vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

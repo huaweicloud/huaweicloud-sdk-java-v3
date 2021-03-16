@@ -67,6 +67,8 @@ public class ObsInfo  {
         this.bucketName = bucketName;
     }
 
+    
+
     public ObsInfo withFilePrefixName(String filePrefixName) {
         this.filePrefixName = filePrefixName;
         return this;
@@ -86,6 +88,8 @@ public class ObsInfo  {
     public void setFilePrefixName(String filePrefixName) {
         this.filePrefixName = filePrefixName;
     }
+
+    
 
     public ObsInfo withIsObsCreated(Boolean isObsCreated) {
         this.isObsCreated = isObsCreated;
@@ -107,6 +111,8 @@ public class ObsInfo  {
         this.isObsCreated = isObsCreated;
     }
 
+    
+
     public ObsInfo withIsAuthorizedBucket(Boolean isAuthorizedBucket) {
         this.isAuthorizedBucket = isAuthorizedBucket;
         return this;
@@ -126,6 +132,8 @@ public class ObsInfo  {
     public void setIsAuthorizedBucket(Boolean isAuthorizedBucket) {
         this.isAuthorizedBucket = isAuthorizedBucket;
     }
+
+    
 
     public ObsInfo withBucketLifecycle(Long bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
@@ -148,6 +156,9 @@ public class ObsInfo  {
     public void setBucketLifecycle(Long bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

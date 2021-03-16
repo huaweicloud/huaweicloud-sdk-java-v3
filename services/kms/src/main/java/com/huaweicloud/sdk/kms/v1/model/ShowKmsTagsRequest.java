@@ -21,7 +21,7 @@ public class ShowKmsTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,6 +49,8 @@ public class ShowKmsTagsRequest  {
         this.versionId = versionId;
     }
 
+    
+
     public ShowKmsTagsRequest withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
@@ -68,6 +70,9 @@ public class ShowKmsTagsRequest  {
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

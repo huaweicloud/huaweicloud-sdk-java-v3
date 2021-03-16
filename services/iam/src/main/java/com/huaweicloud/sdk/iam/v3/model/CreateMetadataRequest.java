@@ -34,7 +34,7 @@ public class CreateMetadataRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateMetadataRequestBody body = null;
+    private CreateMetadataRequestBody body;
 
     public CreateMetadataRequest withIdpId(String idpId) {
         this.idpId = idpId;
@@ -56,6 +56,8 @@ public class CreateMetadataRequest  {
         this.idpId = idpId;
     }
 
+    
+
     public CreateMetadataRequest withProtocolId(String protocolId) {
         this.protocolId = protocolId;
         return this;
@@ -75,6 +77,8 @@ public class CreateMetadataRequest  {
     public void setProtocolId(String protocolId) {
         this.protocolId = protocolId;
     }
+
+    
 
     public CreateMetadataRequest withBody(CreateMetadataRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateMetadataRequest  {
     public void setBody(CreateMetadataRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

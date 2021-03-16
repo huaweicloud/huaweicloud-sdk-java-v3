@@ -28,7 +28,7 @@ public class CopyInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BackupInstanceBody body = null;
+    private BackupInstanceBody body;
 
     public CopyInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CopyInstanceRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CopyInstanceRequest withBody(BackupInstanceBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CopyInstanceRequest  {
     public void setBody(BackupInstanceBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class TextDetectionBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private Object detail = null;
+    private Object detail;
 
     public TextDetectionBody withSuggestion(String suggestion) {
         this.suggestion = suggestion;
@@ -49,6 +49,8 @@ public class TextDetectionBody  {
         this.suggestion = suggestion;
     }
 
+    
+
     public TextDetectionBody withDetail(Object detail) {
         this.detail = detail;
         return this;
@@ -68,6 +70,9 @@ public class TextDetectionBody  {
     public void setDetail(Object detail) {
         this.detail = detail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

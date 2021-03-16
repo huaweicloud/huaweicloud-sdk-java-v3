@@ -129,7 +129,7 @@ public class Disk  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
     
-    private VolumeTypeEnum volumeType = VolumeTypeEnum.SATA;
+    private VolumeTypeEnum volumeType;
     /**
      * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
      */
@@ -213,7 +213,7 @@ public class Disk  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_type")
     
-    private DiskTypeEnum diskType = DiskTypeEnum.SYS;
+    private DiskTypeEnum diskType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -253,6 +253,8 @@ public class Disk  {
         this.size = size;
     }
 
+    
+
     public Disk withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
         return this;
@@ -272,6 +274,8 @@ public class Disk  {
     public void setVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
     }
+
+    
 
     public Disk withDiskType(DiskTypeEnum diskType) {
         this.diskType = diskType;
@@ -293,6 +297,8 @@ public class Disk  {
         this.diskType = diskType;
     }
 
+    
+
     public Disk withDedicateStorageId(String dedicateStorageId) {
         this.dedicateStorageId = dedicateStorageId;
         return this;
@@ -312,6 +318,8 @@ public class Disk  {
     public void setDedicateStorageId(String dedicateStorageId) {
         this.dedicateStorageId = dedicateStorageId;
     }
+
+    
 
     public Disk withDataDiskImageId(String dataDiskImageId) {
         this.dataDiskImageId = dataDiskImageId;
@@ -333,6 +341,8 @@ public class Disk  {
         this.dataDiskImageId = dataDiskImageId;
     }
 
+    
+
     public Disk withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
@@ -352,6 +362,9 @@ public class Disk  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

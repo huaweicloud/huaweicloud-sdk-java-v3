@@ -243,7 +243,7 @@ public class CreateFunctionTriggerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_data")
     
-    private Object eventData = null;
+    private Object eventData;
 
     public CreateFunctionTriggerRequestBody withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
@@ -265,6 +265,8 @@ public class CreateFunctionTriggerRequestBody  {
         this.triggerTypeCode = triggerTypeCode;
     }
 
+    
+
     public CreateFunctionTriggerRequestBody withTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
         return this;
@@ -284,6 +286,8 @@ public class CreateFunctionTriggerRequestBody  {
     public void setTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
     }
+
+    
 
     public CreateFunctionTriggerRequestBody withEventTypeCode(String eventTypeCode) {
         this.eventTypeCode = eventTypeCode;
@@ -305,6 +309,8 @@ public class CreateFunctionTriggerRequestBody  {
         this.eventTypeCode = eventTypeCode;
     }
 
+    
+
     public CreateFunctionTriggerRequestBody withEventData(Object eventData) {
         this.eventData = eventData;
         return this;
@@ -324,6 +330,9 @@ public class CreateFunctionTriggerRequestBody  {
     public void setEventData(Object eventData) {
         this.eventData = eventData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

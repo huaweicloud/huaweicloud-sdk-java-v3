@@ -33,13 +33,13 @@ public class ListTopicsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListTopicsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -60,6 +60,8 @@ public class ListTopicsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListTopicsRequest withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
@@ -83,6 +85,8 @@ public class ListTopicsRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public ListTopicsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -105,6 +109,8 @@ public class ListTopicsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListTopicsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -126,6 +132,9 @@ public class ListTopicsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

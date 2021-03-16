@@ -30,7 +30,7 @@ public class ShowL7RuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule")
     
-    private L7Rule rule = null;
+    private L7Rule rule;
 
     public ShowL7RuleResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ShowL7RuleResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ShowL7RuleResponse withRule(L7Rule rule) {
         this.rule = rule;
@@ -78,6 +80,9 @@ public class ShowL7RuleResponse extends SdkResponse {
     public void setRule(L7Rule rule) {
         this.rule = rule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

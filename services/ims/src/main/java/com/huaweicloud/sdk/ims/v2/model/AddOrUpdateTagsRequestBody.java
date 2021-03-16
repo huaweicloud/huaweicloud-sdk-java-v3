@@ -34,7 +34,7 @@ public class AddOrUpdateTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image_tag")
     
-    private ResourceTag imageTag = null;
+    private ResourceTag imageTag;
 
     public AddOrUpdateTagsRequestBody withImageId(String imageId) {
         this.imageId = imageId;
@@ -56,6 +56,8 @@ public class AddOrUpdateTagsRequestBody  {
         this.imageId = imageId;
     }
 
+    
+
     public AddOrUpdateTagsRequestBody withTag(String tag) {
         this.tag = tag;
         return this;
@@ -75,6 +77,8 @@ public class AddOrUpdateTagsRequestBody  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
 
     public AddOrUpdateTagsRequestBody withImageTag(ResourceTag imageTag) {
         this.imageTag = imageTag;
@@ -102,6 +106,9 @@ public class AddOrUpdateTagsRequestBody  {
     public void setImageTag(ResourceTag imageTag) {
         this.imageTag = imageTag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ShowPublicZoneNameServerResponse extends SdkResponse {
 
     
     public ShowPublicZoneNameServerResponse addNameserversItem(Nameserver nameserversItem) {
-        if (this.nameservers == null) {
-            this.nameservers = new ArrayList<>();
-        }
         this.nameservers.add(nameserversItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowPublicZoneNameServerResponse extends SdkResponse {
     public void setNameservers(List<Nameserver> nameservers) {
         this.nameservers = nameservers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

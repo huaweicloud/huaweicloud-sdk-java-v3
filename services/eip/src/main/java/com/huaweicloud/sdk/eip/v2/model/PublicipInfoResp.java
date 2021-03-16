@@ -149,6 +149,8 @@ public class PublicipInfoResp  {
         this.publicipAddress = publicipAddress;
     }
 
+    
+
     public PublicipInfoResp withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -168,6 +170,8 @@ public class PublicipInfoResp  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public PublicipInfoResp withPublicipType(String publicipType) {
         this.publicipType = publicipType;
@@ -189,6 +193,8 @@ public class PublicipInfoResp  {
         this.publicipType = publicipType;
     }
 
+    
+
     public PublicipInfoResp withPublicipv6Address(String publicipv6Address) {
         this.publicipv6Address = publicipv6Address;
         return this;
@@ -209,6 +215,8 @@ public class PublicipInfoResp  {
         this.publicipv6Address = publicipv6Address;
     }
 
+    
+
     public PublicipInfoResp withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -228,6 +236,9 @@ public class PublicipInfoResp  {
     public void setIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

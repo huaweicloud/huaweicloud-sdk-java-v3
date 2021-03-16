@@ -23,7 +23,7 @@ public class ReclaimCouponQuotasReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_ids")
     
-    private List<String> quotaIds = new ArrayList<>();
+    private List<String> quotaIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class ReclaimCouponQuotasReq  {
         this.quotaIds = quotaIds;
     }
 
+    
+
     public ReclaimCouponQuotasReq withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -81,6 +83,9 @@ public class ReclaimCouponQuotasReq  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -223,6 +223,8 @@ public class ShowInstanceExtendProductInfoRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowInstanceExtendProductInfoRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -243,6 +245,8 @@ public class ShowInstanceExtendProductInfoRequest  {
         this.type = type;
     }
 
+    
+
     public ShowInstanceExtendProductInfoRequest withEngine(EngineEnum engine) {
         this.engine = engine;
         return this;
@@ -262,6 +266,9 @@ public class ShowInstanceExtendProductInfoRequest  {
     public void setEngine(EngineEnum engine) {
         this.engine = engine;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -51,7 +51,7 @@ public class PostPaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    private Integer count = 1;
+    private Integer count;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class PostPaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private PostPaidServerExtendParam extendparam = null;
+    private PostPaidServerExtendParam extendparam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,7 +81,7 @@ public class PostPaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isAutoRename")
     
-    private Boolean isAutoRename = true;
+    private Boolean isAutoRename;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,25 +105,25 @@ public class PostPaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    private List<PostPaidServerNic> nics = new ArrayList<>();
+    private List<PostPaidServerNic> nics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os:scheduler_hints")
     
-    private PostPaidServerSchedulerHints osSchedulerHints = null;
+    private PostPaidServerSchedulerHints osSchedulerHints;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private PostPaidServerPublicip publicip = null;
+    private PostPaidServerPublicip publicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume")
     
-    private PostPaidServerRootVolume rootVolume = null;
+    private PostPaidServerRootVolume rootVolume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -181,6 +181,8 @@ public class PostPaidServer  {
         this.autoTerminateTime = autoTerminateTime;
     }
 
+    
+
     public PostPaidServer withAdminPass(String adminPass) {
         this.adminPass = adminPass;
         return this;
@@ -201,6 +203,8 @@ public class PostPaidServer  {
         this.adminPass = adminPass;
     }
 
+    
+
     public PostPaidServer withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -220,6 +224,8 @@ public class PostPaidServer  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public PostPaidServer withCount(Integer count) {
         this.count = count;
@@ -242,6 +248,8 @@ public class PostPaidServer  {
         this.count = count;
     }
 
+    
+
     public PostPaidServer withDataVolumes(List<PostPaidServerDataVolume> dataVolumes) {
         this.dataVolumes = dataVolumes;
         return this;
@@ -249,9 +257,6 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addDataVolumesItem(PostPaidServerDataVolume dataVolumesItem) {
-        if (this.dataVolumes == null) {
-            this.dataVolumes = new ArrayList<>();
-        }
         this.dataVolumes.add(dataVolumesItem);
         return this;
     }
@@ -275,6 +280,8 @@ public class PostPaidServer  {
     public void setDataVolumes(List<PostPaidServerDataVolume> dataVolumes) {
         this.dataVolumes = dataVolumes;
     }
+
+    
 
     public PostPaidServer withExtendparam(PostPaidServerExtendParam extendparam) {
         this.extendparam = extendparam;
@@ -303,6 +310,8 @@ public class PostPaidServer  {
         this.extendparam = extendparam;
     }
 
+    
+
     public PostPaidServer withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -322,6 +331,8 @@ public class PostPaidServer  {
     public void setFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
     }
+
+    
 
     public PostPaidServer withImageRef(String imageRef) {
         this.imageRef = imageRef;
@@ -343,6 +354,8 @@ public class PostPaidServer  {
         this.imageRef = imageRef;
     }
 
+    
+
     public PostPaidServer withIsAutoRename(Boolean isAutoRename) {
         this.isAutoRename = isAutoRename;
         return this;
@@ -362,6 +375,8 @@ public class PostPaidServer  {
     public void setIsAutoRename(Boolean isAutoRename) {
         this.isAutoRename = isAutoRename;
     }
+
+    
 
     public PostPaidServer withKeyName(String keyName) {
         this.keyName = keyName;
@@ -383,6 +398,8 @@ public class PostPaidServer  {
         this.keyName = keyName;
     }
 
+    
+
     public PostPaidServer withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -391,9 +408,6 @@ public class PostPaidServer  {
     
 
     public PostPaidServer putMetadataItem(String key, String metadataItem) {
-         if (this.metadata == null) {
-            this.metadata = new HashMap<>();
-         }
         this.metadata.put(key, metadataItem);
         return this;
     }
@@ -417,6 +431,8 @@ public class PostPaidServer  {
         this.metadata = metadata;
     }
 
+    
+
     public PostPaidServer withName(String name) {
         this.name = name;
         return this;
@@ -436,6 +452,8 @@ public class PostPaidServer  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PostPaidServer withNics(List<PostPaidServerNic> nics) {
         this.nics = nics;
@@ -468,6 +486,8 @@ public class PostPaidServer  {
         this.nics = nics;
     }
 
+    
+
     public PostPaidServer withOsSchedulerHints(PostPaidServerSchedulerHints osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
         return this;
@@ -494,6 +514,8 @@ public class PostPaidServer  {
     public void setOsSchedulerHints(PostPaidServerSchedulerHints osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
     }
+
+    
 
     public PostPaidServer withPublicip(PostPaidServerPublicip publicip) {
         this.publicip = publicip;
@@ -522,6 +544,8 @@ public class PostPaidServer  {
         this.publicip = publicip;
     }
 
+    
+
     public PostPaidServer withRootVolume(PostPaidServerRootVolume rootVolume) {
         this.rootVolume = rootVolume;
         return this;
@@ -549,6 +573,8 @@ public class PostPaidServer  {
         this.rootVolume = rootVolume;
     }
 
+    
+
     public PostPaidServer withSecurityGroups(List<PostPaidServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -556,9 +582,6 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addSecurityGroupsItem(PostPaidServerSecurityGroup securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -583,6 +606,8 @@ public class PostPaidServer  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public PostPaidServer withServerTags(List<PostPaidServerTag> serverTags) {
         this.serverTags = serverTags;
         return this;
@@ -590,9 +615,6 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addServerTagsItem(PostPaidServerTag serverTagsItem) {
-        if (this.serverTags == null) {
-            this.serverTags = new ArrayList<>();
-        }
         this.serverTags.add(serverTagsItem);
         return this;
     }
@@ -617,6 +639,8 @@ public class PostPaidServer  {
         this.serverTags = serverTags;
     }
 
+    
+
     public PostPaidServer withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -624,9 +648,6 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -651,6 +672,8 @@ public class PostPaidServer  {
         this.tags = tags;
     }
 
+    
+
     public PostPaidServer withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -670,6 +693,8 @@ public class PostPaidServer  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public PostPaidServer withVpcid(String vpcid) {
         this.vpcid = vpcid;
@@ -691,6 +716,8 @@ public class PostPaidServer  {
         this.vpcid = vpcid;
     }
 
+    
+
     public PostPaidServer withDescription(String description) {
         this.description = description;
         return this;
@@ -710,6 +737,9 @@ public class PostPaidServer  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

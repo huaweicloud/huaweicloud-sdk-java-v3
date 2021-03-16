@@ -24,7 +24,7 @@ public class ShowOffSiteBackupPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_para")
     
-    private OffSiteBackupPolicy policyPara = null;
+    private OffSiteBackupPolicy policyPara;
 
     public ShowOffSiteBackupPolicyResponse withPolicyPara(OffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
@@ -52,6 +52,9 @@ public class ShowOffSiteBackupPolicyResponse extends SdkResponse {
     public void setPolicyPara(OffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

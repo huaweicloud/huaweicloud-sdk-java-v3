@@ -55,6 +55,8 @@ public class CelebrityRecognitionReq  {
         this.image = image;
     }
 
+    
+
     public CelebrityRecognitionReq withUrl(String url) {
         this.url = url;
         return this;
@@ -75,6 +77,8 @@ public class CelebrityRecognitionReq  {
         this.url = url;
     }
 
+    
+
     public CelebrityRecognitionReq withThreshold(Float threshold) {
         this.threshold = threshold;
         return this;
@@ -94,6 +98,9 @@ public class CelebrityRecognitionReq  {
     public void setThreshold(Float threshold) {
         this.threshold = threshold;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

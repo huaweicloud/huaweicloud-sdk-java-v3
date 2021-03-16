@@ -85,6 +85,8 @@ public class ListPrivateZonesRequest  {
         this.type = type;
     }
 
+    
+
     public ListPrivateZonesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -104,6 +106,8 @@ public class ListPrivateZonesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListPrivateZonesRequest withMarker(String marker) {
         this.marker = marker;
@@ -125,6 +129,8 @@ public class ListPrivateZonesRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListPrivateZonesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -144,6 +150,8 @@ public class ListPrivateZonesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListPrivateZonesRequest withTags(String tags) {
         this.tags = tags;
@@ -165,6 +173,8 @@ public class ListPrivateZonesRequest  {
         this.tags = tags;
     }
 
+    
+
     public ListPrivateZonesRequest withName(String name) {
         this.name = name;
         return this;
@@ -184,6 +194,8 @@ public class ListPrivateZonesRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListPrivateZonesRequest withStatus(String status) {
         this.status = status;
@@ -205,6 +217,8 @@ public class ListPrivateZonesRequest  {
         this.status = status;
     }
 
+    
+
     public ListPrivateZonesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -224,6 +238,9 @@ public class ListPrivateZonesRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

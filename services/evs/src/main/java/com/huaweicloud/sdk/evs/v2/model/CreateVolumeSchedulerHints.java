@@ -42,6 +42,9 @@ public class CreateVolumeSchedulerHints  {
     public void setDedicatedStorageId(String dedicatedStorageId) {
         this.dedicatedStorageId = dedicatedStorageId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

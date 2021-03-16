@@ -22,7 +22,7 @@ public class KeystoneCreateGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneCreateGroupRequestBody body = null;
+    private KeystoneCreateGroupRequestBody body;
 
     public KeystoneCreateGroupRequest withBody(KeystoneCreateGroupRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class KeystoneCreateGroupRequest  {
     public void setBody(KeystoneCreateGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

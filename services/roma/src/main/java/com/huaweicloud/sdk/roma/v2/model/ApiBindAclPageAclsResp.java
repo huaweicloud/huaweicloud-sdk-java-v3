@@ -232,7 +232,7 @@ public class ApiBindAclPageAclsResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_time")
     
-    private OffsetDateTime bindTime = null;
+    private OffsetDateTime bindTime;
 
     public ApiBindAclPageAclsResp withAclId(String aclId) {
         this.aclId = aclId;
@@ -254,6 +254,8 @@ public class ApiBindAclPageAclsResp  {
         this.aclId = aclId;
     }
 
+    
+
     public ApiBindAclPageAclsResp withAclName(String aclName) {
         this.aclName = aclName;
         return this;
@@ -273,6 +275,8 @@ public class ApiBindAclPageAclsResp  {
     public void setAclName(String aclName) {
         this.aclName = aclName;
     }
+
+    
 
     public ApiBindAclPageAclsResp withAclType(AclTypeEnum aclType) {
         this.aclType = aclType;
@@ -294,6 +298,8 @@ public class ApiBindAclPageAclsResp  {
         this.aclType = aclType;
     }
 
+    
+
     public ApiBindAclPageAclsResp withAclValue(String aclValue) {
         this.aclValue = aclValue;
         return this;
@@ -313,6 +319,8 @@ public class ApiBindAclPageAclsResp  {
     public void setAclValue(String aclValue) {
         this.aclValue = aclValue;
     }
+
+    
 
     public ApiBindAclPageAclsResp withEntityType(EntityTypeEnum entityType) {
         this.entityType = entityType;
@@ -334,6 +342,8 @@ public class ApiBindAclPageAclsResp  {
         this.entityType = entityType;
     }
 
+    
+
     public ApiBindAclPageAclsResp withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -353,6 +363,8 @@ public class ApiBindAclPageAclsResp  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public ApiBindAclPageAclsResp withEnvName(String envName) {
         this.envName = envName;
@@ -374,6 +386,8 @@ public class ApiBindAclPageAclsResp  {
         this.envName = envName;
     }
 
+    
+
     public ApiBindAclPageAclsResp withBindId(String bindId) {
         this.bindId = bindId;
         return this;
@@ -394,6 +408,8 @@ public class ApiBindAclPageAclsResp  {
         this.bindId = bindId;
     }
 
+    
+
     public ApiBindAclPageAclsResp withBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
         return this;
@@ -413,6 +429,9 @@ public class ApiBindAclPageAclsResp  {
     public void setBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

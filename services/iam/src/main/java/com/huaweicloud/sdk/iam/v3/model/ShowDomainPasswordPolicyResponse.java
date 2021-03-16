@@ -24,7 +24,7 @@ public class ShowDomainPasswordPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password_policy")
     
-    private PasswordPolicyResult passwordPolicy = null;
+    private PasswordPolicyResult passwordPolicy;
 
     public ShowDomainPasswordPolicyResponse withPasswordPolicy(PasswordPolicyResult passwordPolicy) {
         this.passwordPolicy = passwordPolicy;
@@ -52,6 +52,9 @@ public class ShowDomainPasswordPolicyResponse extends SdkResponse {
     public void setPasswordPolicy(PasswordPolicyResult passwordPolicy) {
         this.passwordPolicy = passwordPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

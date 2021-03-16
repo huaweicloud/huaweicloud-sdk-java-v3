@@ -127,7 +127,7 @@ public class AnimatedGraphicsOutputParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="frame_rate")
     
-    private Integer frameRate = 15;
+    private Integer frameRate;
 
     public AnimatedGraphicsOutputParam withFormat(FormatEnum format) {
         this.format = format;
@@ -148,6 +148,8 @@ public class AnimatedGraphicsOutputParam  {
     public void setFormat(FormatEnum format) {
         this.format = format;
     }
+
+    
 
     public AnimatedGraphicsOutputParam withWidth(Integer width) {
         this.width = width;
@@ -171,6 +173,8 @@ public class AnimatedGraphicsOutputParam  {
         this.width = width;
     }
 
+    
+
     public AnimatedGraphicsOutputParam withHeight(Integer height) {
         this.height = height;
         return this;
@@ -192,6 +196,8 @@ public class AnimatedGraphicsOutputParam  {
     public void setHeight(Integer height) {
         this.height = height;
     }
+
+    
 
     public AnimatedGraphicsOutputParam withStart(Integer start) {
         this.start = start;
@@ -215,6 +221,8 @@ public class AnimatedGraphicsOutputParam  {
         this.start = start;
     }
 
+    
+
     public AnimatedGraphicsOutputParam withEnd(Integer end) {
         this.end = end;
         return this;
@@ -237,6 +245,8 @@ public class AnimatedGraphicsOutputParam  {
         this.end = end;
     }
 
+    
+
     public AnimatedGraphicsOutputParam withFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
         return this;
@@ -258,6 +268,9 @@ public class AnimatedGraphicsOutputParam  {
     public void setFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

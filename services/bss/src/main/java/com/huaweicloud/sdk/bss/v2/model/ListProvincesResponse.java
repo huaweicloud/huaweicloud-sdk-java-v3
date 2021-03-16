@@ -56,6 +56,8 @@ public class ListProvincesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListProvincesResponse withProvinces(List<Province> provinces) {
         this.provinces = provinces;
         return this;
@@ -63,9 +65,6 @@ public class ListProvincesResponse extends SdkResponse {
 
     
     public ListProvincesResponse addProvincesItem(Province provincesItem) {
-        if (this.provinces == null) {
-            this.provinces = new ArrayList<>();
-        }
         this.provinces.add(provincesItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListProvincesResponse extends SdkResponse {
     public void setProvinces(List<Province> provinces) {
         this.provinces = provinces;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

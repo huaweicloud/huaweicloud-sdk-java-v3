@@ -35,9 +35,6 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
 
     
     public CinderListAvailabilityZonesResponse addAvailabilityZoneInfoItem(AzInfo availabilityZoneInfoItem) {
-        if (this.availabilityZoneInfo == null) {
-            this.availabilityZoneInfo = new ArrayList<>();
-        }
         this.availabilityZoneInfo.add(availabilityZoneInfoItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
     public void setAvailabilityZoneInfo(List<AzInfo> availabilityZoneInfo) {
         this.availabilityZoneInfo = availabilityZoneInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

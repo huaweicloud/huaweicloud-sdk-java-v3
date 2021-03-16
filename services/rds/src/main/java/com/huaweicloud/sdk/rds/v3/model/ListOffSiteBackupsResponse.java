@@ -41,9 +41,6 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
 
     
     public ListOffSiteBackupsResponse addOffsiteBackupsItem(OffSiteBackupForList offsiteBackupsItem) {
-        if (this.offsiteBackups == null) {
-            this.offsiteBackups = new ArrayList<>();
-        }
         this.offsiteBackups.add(offsiteBackupsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
         this.offsiteBackups = offsiteBackups;
     }
 
+    
+
     public ListOffSiteBackupsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

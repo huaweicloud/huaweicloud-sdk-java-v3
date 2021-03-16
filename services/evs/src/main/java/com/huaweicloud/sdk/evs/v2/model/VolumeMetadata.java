@@ -69,6 +69,8 @@ public class VolumeMetadata  {
         this.systemCmkid = systemCmkid;
     }
 
+    
+
     public VolumeMetadata withSystemEncrypted(String systemEncrypted) {
         this.systemEncrypted = systemEncrypted;
         return this;
@@ -91,6 +93,8 @@ public class VolumeMetadata  {
         this.systemEncrypted = systemEncrypted;
     }
 
+    
+
     public VolumeMetadata withFullClone(String fullClone) {
         this.fullClone = fullClone;
         return this;
@@ -110,6 +114,8 @@ public class VolumeMetadata  {
     public void setFullClone(String fullClone) {
         this.fullClone = fullClone;
     }
+
+    
 
     public VolumeMetadata withHwPassthrough(String hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
@@ -131,6 +137,8 @@ public class VolumeMetadata  {
         this.hwPassthrough = hwPassthrough;
     }
 
+    
+
     public VolumeMetadata withOrderID(String orderID) {
         this.orderID = orderID;
         return this;
@@ -150,6 +158,9 @@ public class VolumeMetadata  {
     public void setOrderID(String orderID) {
         this.orderID = orderID;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

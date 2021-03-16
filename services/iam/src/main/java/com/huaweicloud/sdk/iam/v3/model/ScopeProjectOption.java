@@ -34,7 +34,7 @@ public class ScopeProjectOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private ScopeDomainOption domain = null;
+    private ScopeDomainOption domain;
 
     public ScopeProjectOption withId(String id) {
         this.id = id;
@@ -56,6 +56,8 @@ public class ScopeProjectOption  {
         this.id = id;
     }
 
+    
+
     public ScopeProjectOption withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class ScopeProjectOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ScopeProjectOption withDomain(ScopeDomainOption domain) {
         this.domain = domain;
@@ -102,6 +106,9 @@ public class ScopeProjectOption  {
     public void setDomain(ScopeDomainOption domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

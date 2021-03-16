@@ -49,6 +49,8 @@ public class AttachInternalIpRequestBody  {
         this.nodeId = nodeId;
     }
 
+    
+
     public AttachInternalIpRequestBody withNewIp(String newIp) {
         this.newIp = newIp;
         return this;
@@ -68,6 +70,9 @@ public class AttachInternalIpRequestBody  {
     public void setNewIp(String newIp) {
         this.newIp = newIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,7 +55,7 @@ public class CreatePrivateZoneReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="router")
     
-    private Router router = null;
+    private Router router;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,6 +89,8 @@ public class CreatePrivateZoneReq  {
         this.name = name;
     }
 
+    
+
     public CreatePrivateZoneReq withDescription(String description) {
         this.description = description;
         return this;
@@ -108,6 +110,8 @@ public class CreatePrivateZoneReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreatePrivateZoneReq withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -129,6 +133,8 @@ public class CreatePrivateZoneReq  {
         this.zoneType = zoneType;
     }
 
+    
+
     public CreatePrivateZoneReq withEmail(String email) {
         this.email = email;
         return this;
@@ -149,6 +155,8 @@ public class CreatePrivateZoneReq  {
         this.email = email;
     }
 
+    
+
     public CreatePrivateZoneReq withTtl(String ttl) {
         this.ttl = ttl;
         return this;
@@ -168,6 +176,8 @@ public class CreatePrivateZoneReq  {
     public void setTtl(String ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public CreatePrivateZoneReq withRouter(Router router) {
         this.router = router;
@@ -196,6 +206,8 @@ public class CreatePrivateZoneReq  {
         this.router = router;
     }
 
+    
+
     public CreatePrivateZoneReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -203,9 +215,6 @@ public class CreatePrivateZoneReq  {
 
     
     public CreatePrivateZoneReq addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -230,6 +239,8 @@ public class CreatePrivateZoneReq  {
         this.tags = tags;
     }
 
+    
+
     public CreatePrivateZoneReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -249,6 +260,9 @@ public class CreatePrivateZoneReq  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

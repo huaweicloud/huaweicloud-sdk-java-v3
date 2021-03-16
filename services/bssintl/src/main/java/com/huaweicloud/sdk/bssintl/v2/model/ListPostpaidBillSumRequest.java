@@ -42,6 +42,9 @@ public class ListPostpaidBillSumRequest  {
     public void setBillCycle(String billCycle) {
         this.billCycle = billCycle;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

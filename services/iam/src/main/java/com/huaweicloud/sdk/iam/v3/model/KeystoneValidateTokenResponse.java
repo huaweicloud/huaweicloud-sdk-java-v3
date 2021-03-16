@@ -24,7 +24,7 @@ public class KeystoneValidateTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="token")
     
-    private TokenResult token = null;
+    private TokenResult token;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class KeystoneValidateTokenResponse extends SdkResponse {
         this.token = token;
     }
 
+    
+
     public KeystoneValidateTokenResponse withXSubjectToken(String xSubjectToken) {
         this.xSubjectToken = xSubjectToken;
         return this;
@@ -80,6 +82,9 @@ public class KeystoneValidateTokenResponse extends SdkResponse {
     public void setXSubjectToken(String xSubjectToken) {
         this.xSubjectToken = xSubjectToken;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

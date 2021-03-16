@@ -179,6 +179,8 @@ public class CreateRepoRequestBody  {
         this.repository = repository;
     }
 
+    
+
     public CreateRepoRequestBody withIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
         return this;
@@ -198,6 +200,8 @@ public class CreateRepoRequestBody  {
     public void setIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
     }
+
+    
 
     public CreateRepoRequestBody withCategory(CategoryEnum category) {
         this.category = category;
@@ -219,6 +223,8 @@ public class CreateRepoRequestBody  {
         this.category = category;
     }
 
+    
+
     public CreateRepoRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -238,6 +244,9 @@ public class CreateRepoRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

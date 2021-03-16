@@ -73,6 +73,8 @@ public class DailyLog  {
         this.startTime = startTime;
     }
 
+    
+
     public DailyLog withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -92,6 +94,8 @@ public class DailyLog  {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public DailyLog withStatus(Integer status) {
         this.status = status;
@@ -113,6 +117,8 @@ public class DailyLog  {
         this.status = status;
     }
 
+    
+
     public DailyLog withTriggerBps(Integer triggerBps) {
         this.triggerBps = triggerBps;
         return this;
@@ -132,6 +138,8 @@ public class DailyLog  {
     public void setTriggerBps(Integer triggerBps) {
         this.triggerBps = triggerBps;
     }
+
+    
 
     public DailyLog withTriggerPps(Integer triggerPps) {
         this.triggerPps = triggerPps;
@@ -153,6 +161,8 @@ public class DailyLog  {
         this.triggerPps = triggerPps;
     }
 
+    
+
     public DailyLog withTriggerHttpPps(Integer triggerHttpPps) {
         this.triggerHttpPps = triggerHttpPps;
         return this;
@@ -172,6 +182,9 @@ public class DailyLog  {
     public void setTriggerHttpPps(Integer triggerHttpPps) {
         this.triggerHttpPps = triggerHttpPps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

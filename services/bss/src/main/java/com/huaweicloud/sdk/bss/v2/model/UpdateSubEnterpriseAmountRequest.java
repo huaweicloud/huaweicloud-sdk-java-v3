@@ -22,7 +22,7 @@ public class UpdateSubEnterpriseAmountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TransferEnterpriseMultiAccountReq body = null;
+    private TransferEnterpriseMultiAccountReq body;
 
     public UpdateSubEnterpriseAmountRequest withBody(TransferEnterpriseMultiAccountReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateSubEnterpriseAmountRequest  {
     public void setBody(TransferEnterpriseMultiAccountReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

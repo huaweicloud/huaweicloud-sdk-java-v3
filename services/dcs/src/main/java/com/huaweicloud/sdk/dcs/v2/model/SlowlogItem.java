@@ -67,6 +67,8 @@ public class SlowlogItem  {
         this.id = id;
     }
 
+    
+
     public SlowlogItem withCommand(String command) {
         this.command = command;
         return this;
@@ -86,6 +88,8 @@ public class SlowlogItem  {
     public void setCommand(String command) {
         this.command = command;
     }
+
+    
 
     public SlowlogItem withStartTime(String startTime) {
         this.startTime = startTime;
@@ -107,6 +111,8 @@ public class SlowlogItem  {
         this.startTime = startTime;
     }
 
+    
+
     public SlowlogItem withDuration(String duration) {
         this.duration = duration;
         return this;
@@ -127,6 +133,8 @@ public class SlowlogItem  {
         this.duration = duration;
     }
 
+    
+
     public SlowlogItem withShardName(String shardName) {
         this.shardName = shardName;
         return this;
@@ -146,6 +154,9 @@ public class SlowlogItem  {
     public void setShardName(String shardName) {
         this.shardName = shardName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -84,13 +84,13 @@ public class InnodbTrx  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="innodb_wait_locks")
     
-    private List<InnodbLock> innodbWaitLocks = new ArrayList<>();
+    private List<InnodbLock> innodbWaitLocks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="innodb_hold_locks")
     
-    private List<InnodbLock> innodbHoldLocks = new ArrayList<>();
+    private List<InnodbLock> innodbHoldLocks = null;
     
     public InnodbTrx withTrxId(String trxId) {
         this.trxId = trxId;
@@ -112,6 +112,8 @@ public class InnodbTrx  {
         this.trxId = trxId;
     }
 
+    
+
     public InnodbTrx withTrxState(String trxState) {
         this.trxState = trxState;
         return this;
@@ -131,6 +133,8 @@ public class InnodbTrx  {
     public void setTrxState(String trxState) {
         this.trxState = trxState;
     }
+
+    
 
     public InnodbTrx withTrxStarted(String trxStarted) {
         this.trxStarted = trxStarted;
@@ -152,6 +156,8 @@ public class InnodbTrx  {
         this.trxStarted = trxStarted;
     }
 
+    
+
     public InnodbTrx withTrxWaitStarted(String trxWaitStarted) {
         this.trxWaitStarted = trxWaitStarted;
         return this;
@@ -172,6 +178,8 @@ public class InnodbTrx  {
         this.trxWaitStarted = trxWaitStarted;
     }
 
+    
+
     public InnodbTrx withTrxMysqlThreadId(String trxMysqlThreadId) {
         this.trxMysqlThreadId = trxMysqlThreadId;
         return this;
@@ -181,7 +189,7 @@ public class InnodbTrx  {
 
 
     /**
-     * 会话ID，同QueryProcessList接口返回的id。
+     * 会话ID，同ListProcesses接口返回的id。
      * @return trxMysqlThreadId
      */
     public String getTrxMysqlThreadId() {
@@ -191,6 +199,8 @@ public class InnodbTrx  {
     public void setTrxMysqlThreadId(String trxMysqlThreadId) {
         this.trxMysqlThreadId = trxMysqlThreadId;
     }
+
+    
 
     public InnodbTrx withTrxQuery(String trxQuery) {
         this.trxQuery = trxQuery;
@@ -212,6 +222,8 @@ public class InnodbTrx  {
         this.trxQuery = trxQuery;
     }
 
+    
+
     public InnodbTrx withTrxTablesLocked(String trxTablesLocked) {
         this.trxTablesLocked = trxTablesLocked;
         return this;
@@ -231,6 +243,8 @@ public class InnodbTrx  {
     public void setTrxTablesLocked(String trxTablesLocked) {
         this.trxTablesLocked = trxTablesLocked;
     }
+
+    
 
     public InnodbTrx withTrxRowsLocked(String trxRowsLocked) {
         this.trxRowsLocked = trxRowsLocked;
@@ -252,6 +266,8 @@ public class InnodbTrx  {
         this.trxRowsLocked = trxRowsLocked;
     }
 
+    
+
     public InnodbTrx withTrxRowsModified(String trxRowsModified) {
         this.trxRowsModified = trxRowsModified;
         return this;
@@ -272,6 +288,8 @@ public class InnodbTrx  {
         this.trxRowsModified = trxRowsModified;
     }
 
+    
+
     public InnodbTrx withTrxIsolationLevel(String trxIsolationLevel) {
         this.trxIsolationLevel = trxIsolationLevel;
         return this;
@@ -291,6 +309,8 @@ public class InnodbTrx  {
     public void setTrxIsolationLevel(String trxIsolationLevel) {
         this.trxIsolationLevel = trxIsolationLevel;
     }
+
+    
 
     public InnodbTrx withInnodbWaitLocks(List<InnodbLock> innodbWaitLocks) {
         this.innodbWaitLocks = innodbWaitLocks;
@@ -323,6 +343,8 @@ public class InnodbTrx  {
         this.innodbWaitLocks = innodbWaitLocks;
     }
 
+    
+
     public InnodbTrx withInnodbHoldLocks(List<InnodbLock> innodbHoldLocks) {
         this.innodbHoldLocks = innodbHoldLocks;
         return this;
@@ -353,6 +375,9 @@ public class InnodbTrx  {
     public void setInnodbHoldLocks(List<InnodbLock> innodbHoldLocks) {
         this.innodbHoldLocks = innodbHoldLocks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

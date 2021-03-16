@@ -10,15 +10,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIssueResponseV4Domain;
 import com.huaweicloud.sdk.projectman.v4.model.CreateIssueResponseV4ParentIssue;
 import com.huaweicloud.sdk.projectman.v4.model.CustomField;
-import com.huaweicloud.sdk.projectman.v4.model.IssueItemSFV4Domain;
-import com.huaweicloud.sdk.projectman.v4.model.IssueItemSFV4Iteration;
-import com.huaweicloud.sdk.projectman.v4.model.IssueItemSFV4Module;
-import com.huaweicloud.sdk.projectman.v4.model.IssueItemSFV4Priority;
-import com.huaweicloud.sdk.projectman.v4.model.IssueItemSFV4Severity;
-import com.huaweicloud.sdk.projectman.v4.model.IssueItemSFV4Status;
-import com.huaweicloud.sdk.projectman.v4.model.IssueItemSFV4Tracker;
+import com.huaweicloud.sdk.projectman.v4.model.IssueItemSfV4Iteration;
+import com.huaweicloud.sdk.projectman.v4.model.IssueItemSfV4Module;
+import com.huaweicloud.sdk.projectman.v4.model.IssueItemSfV4Priority;
+import com.huaweicloud.sdk.projectman.v4.model.IssueItemSfV4Severity;
+import com.huaweicloud.sdk.projectman.v4.model.IssueItemSfV4Status;
+import com.huaweicloud.sdk.projectman.v4.model.IssueItemSfV4Tracker;
 import com.huaweicloud.sdk.projectman.v4.model.IssueProjectResponseV4;
 import com.huaweicloud.sdk.projectman.v4.model.IssueUser;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class CreateIssueV4Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assigned_user")
     
-    private IssueUser assignedUser = null;
+    private IssueUser assignedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,7 +60,7 @@ public class CreateIssueV4Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creator")
     
-    private IssueUser creator = null;
+    private IssueUser creator;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,13 +72,13 @@ public class CreateIssueV4Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="developer")
     
-    private IssueUser developer = null;
+    private IssueUser developer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private IssueItemSFV4Domain domain = null;
+    private CreateIssueResponseV4Domain domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,57 +106,51 @@ public class CreateIssueV4Response extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private IssueProjectResponseV4 project = null;
+    private IssueProjectResponseV4 project;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="iteration")
     
-    private IssueItemSFV4Iteration iteration = null;
+    private IssueItemSfV4Iteration iteration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module")
     
-    private IssueItemSFV4Module module = null;
+    private IssueItemSfV4Module module;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parent_issue")
     
-    private CreateIssueResponseV4ParentIssue parentIssue = null;
+    private CreateIssueResponseV4ParentIssue parentIssue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
-    private IssueItemSFV4Priority priority = null;
+    private IssueItemSfV4Priority priority;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="severity")
     
-    private IssueItemSFV4Severity severity = null;
+    private IssueItemSfV4Severity severity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private IssueItemSFV4Status status = null;
+    private IssueItemSfV4Status status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tracker")
     
-    private IssueItemSFV4Tracker tracker = null;
+    private IssueItemSfV4Tracker tracker;
 
     public CreateIssueV4Response withActualWorkHours(Double actualWorkHours) {
         this.actualWorkHours = actualWorkHours;
@@ -178,6 +172,8 @@ public class CreateIssueV4Response extends SdkResponse {
         this.actualWorkHours = actualWorkHours;
     }
 
+    
+
     public CreateIssueV4Response withAssignedCcUser(List<IssueUser> assignedCcUser) {
         this.assignedCcUser = assignedCcUser;
         return this;
@@ -185,9 +181,6 @@ public class CreateIssueV4Response extends SdkResponse {
 
     
     public CreateIssueV4Response addAssignedCcUserItem(IssueUser assignedCcUserItem) {
-        if (this.assignedCcUser == null) {
-            this.assignedCcUser = new ArrayList<>();
-        }
         this.assignedCcUser.add(assignedCcUserItem);
         return this;
     }
@@ -211,6 +204,8 @@ public class CreateIssueV4Response extends SdkResponse {
     public void setAssignedCcUser(List<IssueUser> assignedCcUser) {
         this.assignedCcUser = assignedCcUser;
     }
+
+    
 
     public CreateIssueV4Response withAssignedUser(IssueUser assignedUser) {
         this.assignedUser = assignedUser;
@@ -239,6 +234,8 @@ public class CreateIssueV4Response extends SdkResponse {
         this.assignedUser = assignedUser;
     }
 
+    
+
     public CreateIssueV4Response withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -258,6 +255,8 @@ public class CreateIssueV4Response extends SdkResponse {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public CreateIssueV4Response withCreator(IssueUser creator) {
         this.creator = creator;
@@ -286,6 +285,8 @@ public class CreateIssueV4Response extends SdkResponse {
         this.creator = creator;
     }
 
+    
+
     public CreateIssueV4Response withCustomFields(List<CustomField> customFields) {
         this.customFields = customFields;
         return this;
@@ -293,9 +294,6 @@ public class CreateIssueV4Response extends SdkResponse {
 
     
     public CreateIssueV4Response addCustomFieldsItem(CustomField customFieldsItem) {
-        if (this.customFields == null) {
-            this.customFields = new ArrayList<>();
-        }
         this.customFields.add(customFieldsItem);
         return this;
     }
@@ -319,6 +317,8 @@ public class CreateIssueV4Response extends SdkResponse {
     public void setCustomFields(List<CustomField> customFields) {
         this.customFields = customFields;
     }
+
+    
 
     public CreateIssueV4Response withDeveloper(IssueUser developer) {
         this.developer = developer;
@@ -347,14 +347,16 @@ public class CreateIssueV4Response extends SdkResponse {
         this.developer = developer;
     }
 
-    public CreateIssueV4Response withDomain(IssueItemSFV4Domain domain) {
+    
+
+    public CreateIssueV4Response withDomain(CreateIssueResponseV4Domain domain) {
         this.domain = domain;
         return this;
     }
 
-    public CreateIssueV4Response withDomain(Consumer<IssueItemSFV4Domain> domainSetter) {
+    public CreateIssueV4Response withDomain(Consumer<CreateIssueResponseV4Domain> domainSetter) {
         if(this.domain == null ){
-            this.domain = new IssueItemSFV4Domain();
+            this.domain = new CreateIssueResponseV4Domain();
             domainSetter.accept(this.domain);
         }
         
@@ -366,13 +368,15 @@ public class CreateIssueV4Response extends SdkResponse {
      * Get domain
      * @return domain
      */
-    public IssueItemSFV4Domain getDomain() {
+    public CreateIssueResponseV4Domain getDomain() {
         return domain;
     }
 
-    public void setDomain(IssueItemSFV4Domain domain) {
+    public void setDomain(CreateIssueResponseV4Domain domain) {
         this.domain = domain;
     }
+
+    
 
     public CreateIssueV4Response withDoneRatio(Integer doneRatio) {
         this.doneRatio = doneRatio;
@@ -394,6 +398,8 @@ public class CreateIssueV4Response extends SdkResponse {
         this.doneRatio = doneRatio;
     }
 
+    
+
     public CreateIssueV4Response withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -413,6 +419,8 @@ public class CreateIssueV4Response extends SdkResponse {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public CreateIssueV4Response withExpectedWorkHours(Double expectedWorkHours) {
         this.expectedWorkHours = expectedWorkHours;
@@ -434,6 +442,8 @@ public class CreateIssueV4Response extends SdkResponse {
         this.expectedWorkHours = expectedWorkHours;
     }
 
+    
+
     public CreateIssueV4Response withId(Integer id) {
         this.id = id;
         return this;
@@ -454,25 +464,7 @@ public class CreateIssueV4Response extends SdkResponse {
         this.id = id;
     }
 
-    public CreateIssueV4Response withName(String name) {
-        this.name = name;
-        return this;
-    }
-
     
-
-
-    /**
-     * 标题
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public CreateIssueV4Response withProject(IssueProjectResponseV4 project) {
         this.project = project;
@@ -501,14 +493,16 @@ public class CreateIssueV4Response extends SdkResponse {
         this.project = project;
     }
 
-    public CreateIssueV4Response withIteration(IssueItemSFV4Iteration iteration) {
+    
+
+    public CreateIssueV4Response withIteration(IssueItemSfV4Iteration iteration) {
         this.iteration = iteration;
         return this;
     }
 
-    public CreateIssueV4Response withIteration(Consumer<IssueItemSFV4Iteration> iterationSetter) {
+    public CreateIssueV4Response withIteration(Consumer<IssueItemSfV4Iteration> iterationSetter) {
         if(this.iteration == null ){
-            this.iteration = new IssueItemSFV4Iteration();
+            this.iteration = new IssueItemSfV4Iteration();
             iterationSetter.accept(this.iteration);
         }
         
@@ -520,22 +514,24 @@ public class CreateIssueV4Response extends SdkResponse {
      * Get iteration
      * @return iteration
      */
-    public IssueItemSFV4Iteration getIteration() {
+    public IssueItemSfV4Iteration getIteration() {
         return iteration;
     }
 
-    public void setIteration(IssueItemSFV4Iteration iteration) {
+    public void setIteration(IssueItemSfV4Iteration iteration) {
         this.iteration = iteration;
     }
 
-    public CreateIssueV4Response withModule(IssueItemSFV4Module module) {
+    
+
+    public CreateIssueV4Response withModule(IssueItemSfV4Module module) {
         this.module = module;
         return this;
     }
 
-    public CreateIssueV4Response withModule(Consumer<IssueItemSFV4Module> moduleSetter) {
+    public CreateIssueV4Response withModule(Consumer<IssueItemSfV4Module> moduleSetter) {
         if(this.module == null ){
-            this.module = new IssueItemSFV4Module();
+            this.module = new IssueItemSfV4Module();
             moduleSetter.accept(this.module);
         }
         
@@ -547,13 +543,15 @@ public class CreateIssueV4Response extends SdkResponse {
      * Get module
      * @return module
      */
-    public IssueItemSFV4Module getModule() {
+    public IssueItemSfV4Module getModule() {
         return module;
     }
 
-    public void setModule(IssueItemSFV4Module module) {
+    public void setModule(IssueItemSfV4Module module) {
         this.module = module;
     }
+
+    
 
     public CreateIssueV4Response withParentIssue(CreateIssueResponseV4ParentIssue parentIssue) {
         this.parentIssue = parentIssue;
@@ -582,14 +580,16 @@ public class CreateIssueV4Response extends SdkResponse {
         this.parentIssue = parentIssue;
     }
 
-    public CreateIssueV4Response withPriority(IssueItemSFV4Priority priority) {
+    
+
+    public CreateIssueV4Response withPriority(IssueItemSfV4Priority priority) {
         this.priority = priority;
         return this;
     }
 
-    public CreateIssueV4Response withPriority(Consumer<IssueItemSFV4Priority> prioritySetter) {
+    public CreateIssueV4Response withPriority(Consumer<IssueItemSfV4Priority> prioritySetter) {
         if(this.priority == null ){
-            this.priority = new IssueItemSFV4Priority();
+            this.priority = new IssueItemSfV4Priority();
             prioritySetter.accept(this.priority);
         }
         
@@ -601,22 +601,24 @@ public class CreateIssueV4Response extends SdkResponse {
      * Get priority
      * @return priority
      */
-    public IssueItemSFV4Priority getPriority() {
+    public IssueItemSfV4Priority getPriority() {
         return priority;
     }
 
-    public void setPriority(IssueItemSFV4Priority priority) {
+    public void setPriority(IssueItemSfV4Priority priority) {
         this.priority = priority;
     }
 
-    public CreateIssueV4Response withSeverity(IssueItemSFV4Severity severity) {
+    
+
+    public CreateIssueV4Response withSeverity(IssueItemSfV4Severity severity) {
         this.severity = severity;
         return this;
     }
 
-    public CreateIssueV4Response withSeverity(Consumer<IssueItemSFV4Severity> severitySetter) {
+    public CreateIssueV4Response withSeverity(Consumer<IssueItemSfV4Severity> severitySetter) {
         if(this.severity == null ){
-            this.severity = new IssueItemSFV4Severity();
+            this.severity = new IssueItemSfV4Severity();
             severitySetter.accept(this.severity);
         }
         
@@ -628,22 +630,24 @@ public class CreateIssueV4Response extends SdkResponse {
      * Get severity
      * @return severity
      */
-    public IssueItemSFV4Severity getSeverity() {
+    public IssueItemSfV4Severity getSeverity() {
         return severity;
     }
 
-    public void setSeverity(IssueItemSFV4Severity severity) {
+    public void setSeverity(IssueItemSfV4Severity severity) {
         this.severity = severity;
     }
 
-    public CreateIssueV4Response withStatus(IssueItemSFV4Status status) {
+    
+
+    public CreateIssueV4Response withStatus(IssueItemSfV4Status status) {
         this.status = status;
         return this;
     }
 
-    public CreateIssueV4Response withStatus(Consumer<IssueItemSFV4Status> statusSetter) {
+    public CreateIssueV4Response withStatus(Consumer<IssueItemSfV4Status> statusSetter) {
         if(this.status == null ){
-            this.status = new IssueItemSFV4Status();
+            this.status = new IssueItemSfV4Status();
             statusSetter.accept(this.status);
         }
         
@@ -655,22 +659,24 @@ public class CreateIssueV4Response extends SdkResponse {
      * Get status
      * @return status
      */
-    public IssueItemSFV4Status getStatus() {
+    public IssueItemSfV4Status getStatus() {
         return status;
     }
 
-    public void setStatus(IssueItemSFV4Status status) {
+    public void setStatus(IssueItemSfV4Status status) {
         this.status = status;
     }
 
-    public CreateIssueV4Response withTracker(IssueItemSFV4Tracker tracker) {
+    
+
+    public CreateIssueV4Response withTracker(IssueItemSfV4Tracker tracker) {
         this.tracker = tracker;
         return this;
     }
 
-    public CreateIssueV4Response withTracker(Consumer<IssueItemSFV4Tracker> trackerSetter) {
+    public CreateIssueV4Response withTracker(Consumer<IssueItemSfV4Tracker> trackerSetter) {
         if(this.tracker == null ){
-            this.tracker = new IssueItemSFV4Tracker();
+            this.tracker = new IssueItemSfV4Tracker();
             trackerSetter.accept(this.tracker);
         }
         
@@ -682,13 +688,16 @@ public class CreateIssueV4Response extends SdkResponse {
      * Get tracker
      * @return tracker
      */
-    public IssueItemSFV4Tracker getTracker() {
+    public IssueItemSfV4Tracker getTracker() {
         return tracker;
     }
 
-    public void setTracker(IssueItemSFV4Tracker tracker) {
+    public void setTracker(IssueItemSfV4Tracker tracker) {
         this.tracker = tracker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -710,7 +719,6 @@ public class CreateIssueV4Response extends SdkResponse {
             Objects.equals(this.endTime, createIssueV4Response.endTime) &&
             Objects.equals(this.expectedWorkHours, createIssueV4Response.expectedWorkHours) &&
             Objects.equals(this.id, createIssueV4Response.id) &&
-            Objects.equals(this.name, createIssueV4Response.name) &&
             Objects.equals(this.project, createIssueV4Response.project) &&
             Objects.equals(this.iteration, createIssueV4Response.iteration) &&
             Objects.equals(this.module, createIssueV4Response.module) &&
@@ -722,7 +730,7 @@ public class CreateIssueV4Response extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, name, project, iteration, module, parentIssue, priority, severity, status, tracker);
+        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, parentIssue, priority, severity, status, tracker);
     }
     @Override
     public String toString() {
@@ -740,7 +748,6 @@ public class CreateIssueV4Response extends SdkResponse {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    expectedWorkHours: ").append(toIndentedString(expectedWorkHours)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    project: ").append(toIndentedString(project)).append("\n");
         sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("    module: ").append(toIndentedString(module)).append("\n");

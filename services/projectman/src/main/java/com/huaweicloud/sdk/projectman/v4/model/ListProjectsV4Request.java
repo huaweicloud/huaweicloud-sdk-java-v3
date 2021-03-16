@@ -81,6 +81,8 @@ public class ListProjectsV4Request  {
         this.offset = offset;
     }
 
+    
+
     public ListProjectsV4Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -103,6 +105,8 @@ public class ListProjectsV4Request  {
         this.limit = limit;
     }
 
+    
+
     public ListProjectsV4Request withSearch(String search) {
         this.search = search;
         return this;
@@ -122,6 +126,8 @@ public class ListProjectsV4Request  {
     public void setSearch(String search) {
         this.search = search;
     }
+
+    
 
     public ListProjectsV4Request withProjectType(String projectType) {
         this.projectType = projectType;
@@ -143,6 +149,8 @@ public class ListProjectsV4Request  {
         this.projectType = projectType;
     }
 
+    
+
     public ListProjectsV4Request withSort(String sort) {
         this.sort = sort;
         return this;
@@ -162,6 +170,8 @@ public class ListProjectsV4Request  {
     public void setSort(String sort) {
         this.sort = sort;
     }
+
+    
 
     public ListProjectsV4Request withArchive(String archive) {
         this.archive = archive;
@@ -183,6 +193,8 @@ public class ListProjectsV4Request  {
         this.archive = archive;
     }
 
+    
+
     public ListProjectsV4Request withQueryType(String queryType) {
         this.queryType = queryType;
         return this;
@@ -202,6 +214,9 @@ public class ListProjectsV4Request  {
     public void setQueryType(String queryType) {
         this.queryType = queryType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

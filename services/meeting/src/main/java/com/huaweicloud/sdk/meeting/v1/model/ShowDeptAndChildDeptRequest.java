@@ -57,6 +57,8 @@ public class ShowDeptAndChildDeptRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowDeptAndChildDeptRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class ShowDeptAndChildDeptRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ShowDeptAndChildDeptRequest withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -96,6 +100,9 @@ public class ShowDeptAndChildDeptRequest  {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

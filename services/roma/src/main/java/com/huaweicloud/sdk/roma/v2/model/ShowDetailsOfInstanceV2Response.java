@@ -936,7 +936,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private Object listeners = null;
+    private Object listeners;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -964,6 +964,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -983,6 +985,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withInstanceName(String instanceName) {
         this.instanceName = instanceName;
@@ -1004,6 +1008,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.instanceName = instanceName;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -1023,6 +1029,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withInstanceStatus(InstanceStatusEnum instanceStatus) {
         this.instanceStatus = instanceStatus;
@@ -1044,6 +1052,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.instanceStatus = instanceStatus;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withType(String type) {
         this.type = type;
         return this;
@@ -1063,6 +1073,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withSpec(SpecEnum spec) {
         this.spec = spec;
@@ -1084,6 +1096,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.spec = spec;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -1103,6 +1117,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -1124,6 +1140,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
         return this;
@@ -1143,6 +1161,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
@@ -1164,6 +1184,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withCbcMetadata(String cbcMetadata) {
         this.cbcMetadata = cbcMetadata;
         return this;
@@ -1183,6 +1205,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setCbcMetadata(String cbcMetadata) {
         this.cbcMetadata = cbcMetadata;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withDescription(String description) {
         this.description = description;
@@ -1204,6 +1228,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -1223,6 +1249,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -1244,6 +1272,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.subnetId = subnetId;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -1263,6 +1293,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
@@ -1284,6 +1316,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.maintainBegin = maintainBegin;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
         return this;
@@ -1303,6 +1337,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withIngressIp(String ingressIp) {
         this.ingressIp = ingressIp;
@@ -1324,6 +1360,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.ingressIp = ingressIp;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -1343,6 +1381,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withNatEipIpv6Cidr(String natEipIpv6Cidr) {
         this.natEipIpv6Cidr = natEipIpv6Cidr;
@@ -1364,6 +1404,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.natEipIpv6Cidr = natEipIpv6Cidr;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withEipIpv6Address(String eipIpv6Address) {
         this.eipIpv6Address = eipIpv6Address;
         return this;
@@ -1383,6 +1425,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setEipIpv6Address(String eipIpv6Address) {
         this.eipIpv6Address = eipIpv6Address;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withNatEipAddress(String natEipAddress) {
         this.natEipAddress = natEipAddress;
@@ -1404,6 +1448,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.natEipAddress = natEipAddress;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
@@ -1423,6 +1469,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withAvailableZoneIds(String availableZoneIds) {
         this.availableZoneIds = availableZoneIds;
@@ -1444,6 +1492,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.availableZoneIds = availableZoneIds;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withInstanceVersion(String instanceVersion) {
         this.instanceVersion = instanceVersion;
         return this;
@@ -1463,6 +1513,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setInstanceVersion(String instanceVersion) {
         this.instanceVersion = instanceVersion;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withVirsubnetId(String virsubnetId) {
         this.virsubnetId = virsubnetId;
@@ -1484,6 +1536,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.virsubnetId = virsubnetId;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withRomaEipAddress(String romaEipAddress) {
         this.romaEipAddress = romaEipAddress;
         return this;
@@ -1503,6 +1557,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setRomaEipAddress(String romaEipAddress) {
         this.romaEipAddress = romaEipAddress;
     }
+
+    
 
     public ShowDetailsOfInstanceV2Response withListeners(Object listeners) {
         this.listeners = listeners;
@@ -1524,6 +1580,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.listeners = listeners;
     }
 
+    
+
     public ShowDetailsOfInstanceV2Response withSupportedFeatures(List<String> supportedFeatures) {
         this.supportedFeatures = supportedFeatures;
         return this;
@@ -1531,9 +1589,6 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
 
     
     public ShowDetailsOfInstanceV2Response addSupportedFeaturesItem(String supportedFeaturesItem) {
-        if (this.supportedFeatures == null) {
-            this.supportedFeatures = new ArrayList<>();
-        }
         this.supportedFeatures.add(supportedFeaturesItem);
         return this;
     }
@@ -1557,6 +1612,9 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     public void setSupportedFeatures(List<String> supportedFeatures) {
         this.supportedFeatures = supportedFeatures;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,13 +57,13 @@ public class ListSubCustomerResFeeRecordsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,6 +103,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
         this.customerId = customerId;
     }
 
+    
+
     public ListSubCustomerResFeeRecordsRequest withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -122,6 +124,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
     public void setCycle(String cycle) {
         this.cycle = cycle;
     }
+
+    
 
     public ListSubCustomerResFeeRecordsRequest withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
@@ -143,6 +147,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
         this.cloudServiceType = cloudServiceType;
     }
 
+    
+
     public ListSubCustomerResFeeRecordsRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -163,6 +169,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
         this.region = region;
     }
 
+    
+
     public ListSubCustomerResFeeRecordsRequest withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -182,6 +190,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public ListSubCustomerResFeeRecordsRequest withBillType(Integer billType) {
         this.billType = billType;
@@ -205,6 +215,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
         this.billType = billType;
     }
 
+    
+
     public ListSubCustomerResFeeRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -226,6 +238,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListSubCustomerResFeeRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -249,6 +263,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSubCustomerResFeeRecordsRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -268,6 +284,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public ListSubCustomerResFeeRecordsRequest withIncludeZeroRecord(Boolean includeZeroRecord) {
         this.includeZeroRecord = includeZeroRecord;
@@ -289,6 +307,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
         this.includeZeroRecord = includeZeroRecord;
     }
 
+    
+
     public ListSubCustomerResFeeRecordsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -308,6 +328,9 @@ public class ListSubCustomerResFeeRecordsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

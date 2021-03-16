@@ -40,7 +40,7 @@ public class UpdateMaterialRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateMaterialRequestDTO body = null;
+    private UpdateMaterialRequestDTO body;
 
     public UpdateMaterialRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class UpdateMaterialRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateMaterialRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class UpdateMaterialRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public UpdateMaterialRequest withId(String id) {
         this.id = id;
         return this;
@@ -103,6 +107,8 @@ public class UpdateMaterialRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateMaterialRequest withBody(UpdateMaterialRequestDTO body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class UpdateMaterialRequest  {
     public void setBody(UpdateMaterialRequestDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

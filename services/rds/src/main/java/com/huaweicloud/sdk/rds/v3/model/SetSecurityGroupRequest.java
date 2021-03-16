@@ -116,7 +116,7 @@ public class SetSecurityGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SecurityGroupRequest body = null;
+    private SecurityGroupRequest body;
 
     public SetSecurityGroupRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class SetSecurityGroupRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public SetSecurityGroupRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class SetSecurityGroupRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public SetSecurityGroupRequest withBody(SecurityGroupRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class SetSecurityGroupRequest  {
     public void setBody(SecurityGroupRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class CheckpointParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_trigger")
     
-    private Boolean autoTrigger = false;
+    private Boolean autoTrigger;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,7 +36,7 @@ public class CheckpointParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="incremental")
     
-    private Boolean incremental = true;
+    private Boolean incremental;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,6 +76,8 @@ public class CheckpointParam  {
         this.autoTrigger = autoTrigger;
     }
 
+    
+
     public CheckpointParam withDescription(String description) {
         this.description = description;
         return this;
@@ -95,6 +97,8 @@ public class CheckpointParam  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CheckpointParam withIncremental(Boolean incremental) {
         this.incremental = incremental;
@@ -116,6 +120,8 @@ public class CheckpointParam  {
         this.incremental = incremental;
     }
 
+    
+
     public CheckpointParam withName(String name) {
         this.name = name;
         return this;
@@ -136,6 +142,8 @@ public class CheckpointParam  {
         this.name = name;
     }
 
+    
+
     public CheckpointParam withResources(List<String> resources) {
         this.resources = resources;
         return this;
@@ -143,9 +151,6 @@ public class CheckpointParam  {
 
     
     public CheckpointParam addResourcesItem(String resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -170,6 +175,8 @@ public class CheckpointParam  {
         this.resources = resources;
     }
 
+    
+
     public CheckpointParam withResourceDetails(List<Resource> resourceDetails) {
         this.resourceDetails = resourceDetails;
         return this;
@@ -177,9 +184,6 @@ public class CheckpointParam  {
 
     
     public CheckpointParam addResourceDetailsItem(Resource resourceDetailsItem) {
-        if (this.resourceDetails == null) {
-            this.resourceDetails = new ArrayList<>();
-        }
         this.resourceDetails.add(resourceDetailsItem);
         return this;
     }
@@ -203,6 +207,9 @@ public class CheckpointParam  {
     public void setResourceDetails(List<Resource> resourceDetails) {
         this.resourceDetails = resourceDetails;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

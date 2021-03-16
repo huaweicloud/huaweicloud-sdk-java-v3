@@ -22,7 +22,7 @@ public class CreateResourceTagRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    private CreateResourceTagRequestBodyTag tag = null;
+    private CreateResourceTagRequestBodyTag tag;
 
     public CreateResourceTagRequestBody withTag(CreateResourceTagRequestBodyTag tag) {
         this.tag = tag;
@@ -50,6 +50,9 @@ public class CreateResourceTagRequestBody  {
     public void setTag(CreateResourceTagRequestBodyTag tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

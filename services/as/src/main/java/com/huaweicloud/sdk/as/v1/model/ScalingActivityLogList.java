@@ -116,13 +116,13 @@ public class ScalingActivityLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime = null;
+    private OffsetDateTime startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private OffsetDateTime endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -192,6 +192,8 @@ public class ScalingActivityLogList  {
         this.status = status;
     }
 
+    
+
     public ScalingActivityLogList withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
@@ -211,6 +213,8 @@ public class ScalingActivityLogList  {
     public void setStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ScalingActivityLogList withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -232,6 +236,8 @@ public class ScalingActivityLogList  {
         this.endTime = endTime;
     }
 
+    
+
     public ScalingActivityLogList withId(String id) {
         this.id = id;
         return this;
@@ -251,6 +257,8 @@ public class ScalingActivityLogList  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ScalingActivityLogList withInstanceRemovedList(String instanceRemovedList) {
         this.instanceRemovedList = instanceRemovedList;
@@ -272,6 +280,8 @@ public class ScalingActivityLogList  {
         this.instanceRemovedList = instanceRemovedList;
     }
 
+    
+
     public ScalingActivityLogList withInstanceDeletedList(String instanceDeletedList) {
         this.instanceDeletedList = instanceDeletedList;
         return this;
@@ -291,6 +301,8 @@ public class ScalingActivityLogList  {
     public void setInstanceDeletedList(String instanceDeletedList) {
         this.instanceDeletedList = instanceDeletedList;
     }
+
+    
 
     public ScalingActivityLogList withInstanceAddedList(String instanceAddedList) {
         this.instanceAddedList = instanceAddedList;
@@ -312,6 +324,8 @@ public class ScalingActivityLogList  {
         this.instanceAddedList = instanceAddedList;
     }
 
+    
+
     public ScalingActivityLogList withScalingValue(String scalingValue) {
         this.scalingValue = scalingValue;
         return this;
@@ -331,6 +345,8 @@ public class ScalingActivityLogList  {
     public void setScalingValue(String scalingValue) {
         this.scalingValue = scalingValue;
     }
+
+    
 
     public ScalingActivityLogList withDescription(String description) {
         this.description = description;
@@ -352,6 +368,8 @@ public class ScalingActivityLogList  {
         this.description = description;
     }
 
+    
+
     public ScalingActivityLogList withInstanceValue(Integer instanceValue) {
         this.instanceValue = instanceValue;
         return this;
@@ -372,6 +390,8 @@ public class ScalingActivityLogList  {
         this.instanceValue = instanceValue;
     }
 
+    
+
     public ScalingActivityLogList withDesireValue(Integer desireValue) {
         this.desireValue = desireValue;
         return this;
@@ -391,6 +411,9 @@ public class ScalingActivityLogList  {
     public void setDesireValue(Integer desireValue) {
         this.desireValue = desireValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

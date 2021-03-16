@@ -35,9 +35,6 @@ public class ListPartnerBalancesResponse extends SdkResponse {
 
     
     public ListPartnerBalancesResponse addAccountBalancesItem(AccountBalanceV2 accountBalancesItem) {
-        if (this.accountBalances == null) {
-            this.accountBalances = new ArrayList<>();
-        }
         this.accountBalances.add(accountBalancesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListPartnerBalancesResponse extends SdkResponse {
     public void setAccountBalances(List<AccountBalanceV2> accountBalances) {
         this.accountBalances = accountBalances;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

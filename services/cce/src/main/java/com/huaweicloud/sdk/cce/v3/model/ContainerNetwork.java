@@ -143,6 +143,8 @@ public class ContainerNetwork  {
         this.cidr = cidr;
     }
 
+    
+
     public ContainerNetwork withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -162,6 +164,9 @@ public class ContainerNetwork  {
     public void setMode(ModeEnum mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

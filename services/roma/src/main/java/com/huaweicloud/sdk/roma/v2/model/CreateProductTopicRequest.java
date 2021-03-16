@@ -34,7 +34,7 @@ public class CreateProductTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateProductTopicRequestBody body = null;
+    private CreateProductTopicRequestBody body;
 
     public CreateProductTopicRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class CreateProductTopicRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateProductTopicRequest withProductId(Integer productId) {
         this.productId = productId;
@@ -77,6 +79,8 @@ public class CreateProductTopicRequest  {
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
+
+    
 
     public CreateProductTopicRequest withBody(CreateProductTopicRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CreateProductTopicRequest  {
     public void setBody(CreateProductTopicRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

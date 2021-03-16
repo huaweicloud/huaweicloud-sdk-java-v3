@@ -41,9 +41,6 @@ public class ListScalingTagInfosByResourceIdResponse extends SdkResponse {
 
     
     public ListScalingTagInfosByResourceIdResponse addTagsItem(TagsSingleValue tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListScalingTagInfosByResourceIdResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public ListScalingTagInfosByResourceIdResponse withSysTags(List<TagsSingleValue> sysTags) {
         this.sysTags = sysTags;
         return this;
@@ -75,9 +74,6 @@ public class ListScalingTagInfosByResourceIdResponse extends SdkResponse {
 
     
     public ListScalingTagInfosByResourceIdResponse addSysTagsItem(TagsSingleValue sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
@@ -101,6 +97,9 @@ public class ListScalingTagInfosByResourceIdResponse extends SdkResponse {
     public void setSysTags(List<TagsSingleValue> sysTags) {
         this.sysTags = sysTags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

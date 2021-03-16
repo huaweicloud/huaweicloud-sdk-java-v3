@@ -29,7 +29,7 @@ public class Whitelist  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_list")
     
-    private List<String> ipList = new ArrayList<>();
+    private List<String> ipList = null;
     
     public Whitelist withGroupName(String groupName) {
         this.groupName = groupName;
@@ -50,6 +50,8 @@ public class Whitelist  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    
 
     public Whitelist withIpList(List<String> ipList) {
         this.ipList = ipList;
@@ -81,6 +83,9 @@ public class Whitelist  {
     public void setIpList(List<String> ipList) {
         this.ipList = ipList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

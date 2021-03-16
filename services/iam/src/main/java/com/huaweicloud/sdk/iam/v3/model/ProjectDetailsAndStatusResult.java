@@ -85,6 +85,8 @@ public class ProjectDetailsAndStatusResult  {
         this.domainId = domainId;
     }
 
+    
+
     public ProjectDetailsAndStatusResult withIsDomain(Boolean isDomain) {
         this.isDomain = isDomain;
         return this;
@@ -104,6 +106,8 @@ public class ProjectDetailsAndStatusResult  {
     public void setIsDomain(Boolean isDomain) {
         this.isDomain = isDomain;
     }
+
+    
 
     public ProjectDetailsAndStatusResult withParentId(String parentId) {
         this.parentId = parentId;
@@ -125,6 +129,8 @@ public class ProjectDetailsAndStatusResult  {
         this.parentId = parentId;
     }
 
+    
+
     public ProjectDetailsAndStatusResult withName(String name) {
         this.name = name;
         return this;
@@ -144,6 +150,8 @@ public class ProjectDetailsAndStatusResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ProjectDetailsAndStatusResult withDescription(String description) {
         this.description = description;
@@ -165,6 +173,8 @@ public class ProjectDetailsAndStatusResult  {
         this.description = description;
     }
 
+    
+
     public ProjectDetailsAndStatusResult withId(String id) {
         this.id = id;
         return this;
@@ -184,6 +194,8 @@ public class ProjectDetailsAndStatusResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ProjectDetailsAndStatusResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -205,6 +217,8 @@ public class ProjectDetailsAndStatusResult  {
         this.enabled = enabled;
     }
 
+    
+
     public ProjectDetailsAndStatusResult withStatus(String status) {
         this.status = status;
         return this;
@@ -224,6 +238,9 @@ public class ProjectDetailsAndStatusResult  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

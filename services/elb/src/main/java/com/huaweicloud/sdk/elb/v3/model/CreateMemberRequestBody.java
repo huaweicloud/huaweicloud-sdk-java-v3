@@ -22,7 +22,7 @@ public class CreateMemberRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member")
     
-    private CreateMemberOption member = null;
+    private CreateMemberOption member;
 
     public CreateMemberRequestBody withMember(CreateMemberOption member) {
         this.member = member;
@@ -50,6 +50,9 @@ public class CreateMemberRequestBody  {
     public void setMember(CreateMemberOption member) {
         this.member = member;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

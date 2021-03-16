@@ -67,6 +67,8 @@ public class AudioInfo  {
         this.codec = codec;
     }
 
+    
+
     public AudioInfo withSample(Integer sample) {
         this.sample = sample;
         return this;
@@ -86,6 +88,8 @@ public class AudioInfo  {
     public void setSample(Integer sample) {
         this.sample = sample;
     }
+
+    
 
     public AudioInfo withChannels(Integer channels) {
         this.channels = channels;
@@ -107,6 +111,8 @@ public class AudioInfo  {
         this.channels = channels;
     }
 
+    
+
     public AudioInfo withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
@@ -126,6 +132,8 @@ public class AudioInfo  {
     public void setBitrate(Integer bitrate) {
         this.bitrate = bitrate;
     }
+
+    
 
     public AudioInfo withBitrateBps(Long bitrateBps) {
         this.bitrateBps = bitrateBps;
@@ -148,6 +156,9 @@ public class AudioInfo  {
     public void setBitrateBps(Long bitrateBps) {
         this.bitrateBps = bitrateBps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

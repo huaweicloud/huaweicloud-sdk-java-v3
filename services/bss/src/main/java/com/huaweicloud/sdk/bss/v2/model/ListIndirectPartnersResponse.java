@@ -54,6 +54,8 @@ public class ListIndirectPartnersResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListIndirectPartnersResponse withIndirectPartners(List<IndirectPartnerInfo> indirectPartners) {
         this.indirectPartners = indirectPartners;
         return this;
@@ -61,9 +63,6 @@ public class ListIndirectPartnersResponse extends SdkResponse {
 
     
     public ListIndirectPartnersResponse addIndirectPartnersItem(IndirectPartnerInfo indirectPartnersItem) {
-        if (this.indirectPartners == null) {
-            this.indirectPartners = new ArrayList<>();
-        }
         this.indirectPartners.add(indirectPartnersItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListIndirectPartnersResponse extends SdkResponse {
     public void setIndirectPartners(List<IndirectPartnerInfo> indirectPartners) {
         this.indirectPartners = indirectPartners;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

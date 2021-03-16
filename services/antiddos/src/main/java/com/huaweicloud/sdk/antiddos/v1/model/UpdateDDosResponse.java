@@ -57,6 +57,8 @@ public class UpdateDDosResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public UpdateDDosResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -77,6 +79,8 @@ public class UpdateDDosResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public UpdateDDosResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -96,6 +100,9 @@ public class UpdateDDosResponse extends SdkResponse {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -46,7 +46,7 @@ public class RoutingRuleAction  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel_detail")
     
-    private ChannelDetail channelDetail = null;
+    private ChannelDetail channelDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class RoutingRuleAction  {
         this.actionId = actionId;
     }
 
+    
+
     public RoutingRuleAction withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -93,6 +95,8 @@ public class RoutingRuleAction  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public RoutingRuleAction withAppId(String appId) {
         this.appId = appId;
@@ -114,6 +118,8 @@ public class RoutingRuleAction  {
         this.appId = appId;
     }
 
+    
+
     public RoutingRuleAction withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -133,6 +139,8 @@ public class RoutingRuleAction  {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
 
     public RoutingRuleAction withChannelDetail(ChannelDetail channelDetail) {
         this.channelDetail = channelDetail;
@@ -161,6 +169,8 @@ public class RoutingRuleAction  {
         this.channelDetail = channelDetail;
     }
 
+    
+
     public RoutingRuleAction withBatch(Boolean batch) {
         this.batch = batch;
         return this;
@@ -180,6 +190,9 @@ public class RoutingRuleAction  {
     public void setBatch(Boolean batch) {
         this.batch = batch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

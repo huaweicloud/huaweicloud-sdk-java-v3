@@ -54,7 +54,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dst_node")
     
-    private DstNodeResp dstNode = null;
+    private DstNodeResp dstNode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,7 +78,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_reason")
     
-    private ErrorReasonResp errorReason = null;
+    private ErrorReasonResp errorReason;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,7 +90,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failed_object_record")
     
-    private FailedObjectRecordDto failedObjectRecord = null;
+    private FailedObjectRecordDto failedObjectRecord;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -156,7 +156,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="src_node")
     
-    private SrcNodeResp srcNode = null;
+    private SrcNodeResp srcNode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -270,7 +270,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_type")
     
-    private TaskTypeEnum taskType = TaskTypeEnum.OBJECT;
+    private TaskTypeEnum taskType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -294,13 +294,13 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_info")
     
-    private SmnInfo smnInfo = null;
+    private SmnInfo smnInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_cdn")
     
-    private SourceCdnResp sourceCdn = null;
+    private SourceCdnResp sourceCdn;
 
     public ShowTaskResponse withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
@@ -309,9 +309,6 @@ public class ShowTaskResponse extends SdkResponse {
 
     
     public ShowTaskResponse addBandwidthPolicyItem(BandwidthPolicyDto bandwidthPolicyItem) {
-        if (this.bandwidthPolicy == null) {
-            this.bandwidthPolicy = new ArrayList<>();
-        }
         this.bandwidthPolicy.add(bandwidthPolicyItem);
         return this;
     }
@@ -336,6 +333,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.bandwidthPolicy = bandwidthPolicy;
     }
 
+    
+
     public ShowTaskResponse withCompleteSize(Long completeSize) {
         this.completeSize = completeSize;
         return this;
@@ -358,6 +357,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.completeSize = completeSize;
     }
 
+    
+
     public ShowTaskResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -377,6 +378,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowTaskResponse withDstNode(DstNodeResp dstNode) {
         this.dstNode = dstNode;
@@ -405,6 +408,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.dstNode = dstNode;
     }
 
+    
+
     public ShowTaskResponse withEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
         return this;
@@ -424,6 +429,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
     }
+
+    
 
     public ShowTaskResponse withEnableKms(Boolean enableKms) {
         this.enableKms = enableKms;
@@ -445,6 +452,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.enableKms = enableKms;
     }
 
+    
+
     public ShowTaskResponse withEnableRestore(Boolean enableRestore) {
         this.enableRestore = enableRestore;
         return this;
@@ -464,6 +473,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setEnableRestore(Boolean enableRestore) {
         this.enableRestore = enableRestore;
     }
+
+    
 
     public ShowTaskResponse withErrorReason(ErrorReasonResp errorReason) {
         this.errorReason = errorReason;
@@ -492,6 +503,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.errorReason = errorReason;
     }
 
+    
+
     public ShowTaskResponse withFailedNum(Long failedNum) {
         this.failedNum = failedNum;
         return this;
@@ -513,6 +526,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setFailedNum(Long failedNum) {
         this.failedNum = failedNum;
     }
+
+    
 
     public ShowTaskResponse withFailedObjectRecord(FailedObjectRecordDto failedObjectRecord) {
         this.failedObjectRecord = failedObjectRecord;
@@ -541,6 +556,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.failedObjectRecord = failedObjectRecord;
     }
 
+    
+
     public ShowTaskResponse withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -560,6 +577,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ShowTaskResponse withId(Long id) {
         this.id = id;
@@ -583,6 +602,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowTaskResponse withIsQueryOver(Boolean isQueryOver) {
         this.isQueryOver = isQueryOver;
         return this;
@@ -602,6 +623,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setIsQueryOver(Boolean isQueryOver) {
         this.isQueryOver = isQueryOver;
     }
+
+    
 
     public ShowTaskResponse withLeftTime(Long leftTime) {
         this.leftTime = leftTime;
@@ -625,6 +648,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.leftTime = leftTime;
     }
 
+    
+
     public ShowTaskResponse withMigrateSince(Long migrateSince) {
         this.migrateSince = migrateSince;
         return this;
@@ -646,6 +671,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setMigrateSince(Long migrateSince) {
         this.migrateSince = migrateSince;
     }
+
+    
 
     public ShowTaskResponse withMigrateSpeed(Long migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
@@ -669,6 +696,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.migrateSpeed = migrateSpeed;
     }
 
+    
+
     public ShowTaskResponse withName(String name) {
         this.name = name;
         return this;
@@ -688,6 +717,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowTaskResponse withProgress(Double progress) {
         this.progress = progress;
@@ -711,6 +742,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.progress = progress;
     }
 
+    
+
     public ShowTaskResponse withRealSize(Long realSize) {
         this.realSize = realSize;
         return this;
@@ -733,6 +766,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.realSize = realSize;
     }
 
+    
+
     public ShowTaskResponse withSkippedNum(Long skippedNum) {
         this.skippedNum = skippedNum;
         return this;
@@ -754,6 +789,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setSkippedNum(Long skippedNum) {
         this.skippedNum = skippedNum;
     }
+
+    
 
     public ShowTaskResponse withSrcNode(SrcNodeResp srcNode) {
         this.srcNode = srcNode;
@@ -782,6 +819,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.srcNode = srcNode;
     }
 
+    
+
     public ShowTaskResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -803,6 +842,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ShowTaskResponse withStatus(Integer status) {
         this.status = status;
@@ -826,6 +867,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowTaskResponse withSuccessfulNum(Long successfulNum) {
         this.successfulNum = successfulNum;
         return this;
@@ -848,6 +891,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.successfulNum = successfulNum;
     }
 
+    
+
     public ShowTaskResponse withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
@@ -867,6 +912,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
+
+    
 
     public ShowTaskResponse withTotalNum(Long totalNum) {
         this.totalNum = totalNum;
@@ -890,6 +937,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.totalNum = totalNum;
     }
 
+    
+
     public ShowTaskResponse withTotalSize(Long totalSize) {
         this.totalSize = totalSize;
         return this;
@@ -912,6 +961,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.totalSize = totalSize;
     }
 
+    
+
     public ShowTaskResponse withTotalTime(Long totalTime) {
         this.totalTime = totalTime;
         return this;
@@ -933,6 +984,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setTotalTime(Long totalTime) {
         this.totalTime = totalTime;
     }
+
+    
 
     public ShowTaskResponse withSmnInfo(SmnInfo smnInfo) {
         this.smnInfo = smnInfo;
@@ -961,6 +1014,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.smnInfo = smnInfo;
     }
 
+    
+
     public ShowTaskResponse withSourceCdn(SourceCdnResp sourceCdn) {
         this.sourceCdn = sourceCdn;
         return this;
@@ -987,6 +1042,9 @@ public class ShowTaskResponse extends SdkResponse {
     public void setSourceCdn(SourceCdnResp sourceCdn) {
         this.sourceCdn = sourceCdn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

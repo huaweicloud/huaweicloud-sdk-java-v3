@@ -33,13 +33,13 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_progress")
     
-    private Map<String, String> actionProgress = new HashMap<>();
+    private Map<String, String> actionProgress = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    private PublicIp publicIp = null;
+    private PublicIp publicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,13 +75,13 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ip")
     
-    private List<String> privateIp = new ArrayList<>();
+    private List<String> privateIp = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameter_group")
     
-    private ParameterGroup parameterGroup = null;
+    private ParameterGroup parameterGroup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,7 +93,7 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_endpoints")
     
-    private List<PublicEndpoints> publicEndpoints = new ArrayList<>();
+    private List<PublicEndpoints> publicEndpoints = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,7 +105,7 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failed_reasons")
     
-    private Object failedReasons = null;
+    private Object failedReasons;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,7 +117,7 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoints")
     
-    private List<Endpoints> endpoints = new ArrayList<>();
+    private List<Endpoints> endpoints = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -147,7 +147,7 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_detail")
     
-    private NodeDetail nodeDetail = null;
+    private NodeDetail nodeDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -159,19 +159,19 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maintain_window")
     
-    private MaintainWindow maintainWindow = null;
+    private MaintainWindow maintainWindow;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Tags> tags = new ArrayList<>();
+    private List<Tags> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resize_info")
     
-    private ResizeInfo resizeInfo = null;
+    private ResizeInfo resizeInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,7 +183,7 @@ public class ClusterDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    private Integer port = 8000;
+    private Integer port;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -240,6 +240,8 @@ public class ClusterDetail  {
         this.actionProgress = actionProgress;
     }
 
+    
+
     public ClusterDetail withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -267,6 +269,8 @@ public class ClusterDetail  {
         this.publicIp = publicIp;
     }
 
+    
+
     public ClusterDetail withNumberOfNode(Integer numberOfNode) {
         this.numberOfNode = numberOfNode;
         return this;
@@ -286,6 +290,8 @@ public class ClusterDetail  {
     public void setNumberOfNode(Integer numberOfNode) {
         this.numberOfNode = numberOfNode;
     }
+
+    
 
     public ClusterDetail withRecentEvent(Integer recentEvent) {
         this.recentEvent = recentEvent;
@@ -307,6 +313,8 @@ public class ClusterDetail  {
         this.recentEvent = recentEvent;
     }
 
+    
+
     public ClusterDetail withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -326,6 +334,8 @@ public class ClusterDetail  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public ClusterDetail withUserName(String userName) {
         this.userName = userName;
@@ -347,6 +357,8 @@ public class ClusterDetail  {
         this.userName = userName;
     }
 
+    
+
     public ClusterDetail withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -366,6 +378,8 @@ public class ClusterDetail  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public ClusterDetail withPrivateIp(List<String> privateIp) {
         this.privateIp = privateIp;
@@ -398,6 +412,8 @@ public class ClusterDetail  {
         this.privateIp = privateIp;
     }
 
+    
+
     public ClusterDetail withParameterGroup(ParameterGroup parameterGroup) {
         this.parameterGroup = parameterGroup;
         return this;
@@ -425,6 +441,8 @@ public class ClusterDetail  {
         this.parameterGroup = parameterGroup;
     }
 
+    
+
     public ClusterDetail withNodeType(String nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -444,6 +462,8 @@ public class ClusterDetail  {
     public void setNodeType(String nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public ClusterDetail withPublicEndpoints(List<PublicEndpoints> publicEndpoints) {
         this.publicEndpoints = publicEndpoints;
@@ -476,6 +496,8 @@ public class ClusterDetail  {
         this.publicEndpoints = publicEndpoints;
     }
 
+    
+
     public ClusterDetail withId(String id) {
         this.id = id;
         return this;
@@ -495,6 +517,8 @@ public class ClusterDetail  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ClusterDetail withFailedReasons(Object failedReasons) {
         this.failedReasons = failedReasons;
@@ -516,6 +540,8 @@ public class ClusterDetail  {
         this.failedReasons = failedReasons;
     }
 
+    
+
     public ClusterDetail withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -535,6 +561,8 @@ public class ClusterDetail  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public ClusterDetail withEndpoints(List<Endpoints> endpoints) {
         this.endpoints = endpoints;
@@ -567,6 +595,8 @@ public class ClusterDetail  {
         this.endpoints = endpoints;
     }
 
+    
+
     public ClusterDetail withTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
         return this;
@@ -586,6 +616,8 @@ public class ClusterDetail  {
     public void setTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
     }
+
+    
 
     public ClusterDetail withSubStatus(String subStatus) {
         this.subStatus = subStatus;
@@ -607,6 +639,8 @@ public class ClusterDetail  {
         this.subStatus = subStatus;
     }
 
+    
+
     public ClusterDetail withCreated(String created) {
         this.created = created;
         return this;
@@ -627,6 +661,8 @@ public class ClusterDetail  {
         this.created = created;
     }
 
+    
+
     public ClusterDetail withNodeTypeId(String nodeTypeId) {
         this.nodeTypeId = nodeTypeId;
         return this;
@@ -646,6 +682,8 @@ public class ClusterDetail  {
     public void setNodeTypeId(String nodeTypeId) {
         this.nodeTypeId = nodeTypeId;
     }
+
+    
 
     public ClusterDetail withNodeDetail(NodeDetail nodeDetail) {
         this.nodeDetail = nodeDetail;
@@ -674,6 +712,8 @@ public class ClusterDetail  {
         this.nodeDetail = nodeDetail;
     }
 
+    
+
     public ClusterDetail withVersion(String version) {
         this.version = version;
         return this;
@@ -693,6 +733,8 @@ public class ClusterDetail  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ClusterDetail withMaintainWindow(MaintainWindow maintainWindow) {
         this.maintainWindow = maintainWindow;
@@ -720,6 +762,8 @@ public class ClusterDetail  {
     public void setMaintainWindow(MaintainWindow maintainWindow) {
         this.maintainWindow = maintainWindow;
     }
+
+    
 
     public ClusterDetail withTags(List<Tags> tags) {
         this.tags = tags;
@@ -752,6 +796,8 @@ public class ClusterDetail  {
         this.tags = tags;
     }
 
+    
+
     public ClusterDetail withResizeInfo(ResizeInfo resizeInfo) {
         this.resizeInfo = resizeInfo;
         return this;
@@ -779,6 +825,8 @@ public class ClusterDetail  {
         this.resizeInfo = resizeInfo;
     }
 
+    
+
     public ClusterDetail withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -798,6 +846,8 @@ public class ClusterDetail  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ClusterDetail withPort(Integer port) {
         this.port = port;
@@ -821,6 +871,8 @@ public class ClusterDetail  {
         this.port = port;
     }
 
+    
+
     public ClusterDetail withName(String name) {
         this.name = name;
         return this;
@@ -840,6 +892,8 @@ public class ClusterDetail  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ClusterDetail withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -861,6 +915,8 @@ public class ClusterDetail  {
         this.subnetId = subnetId;
     }
 
+    
+
     public ClusterDetail withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -881,6 +937,8 @@ public class ClusterDetail  {
         this.updated = updated;
     }
 
+    
+
     public ClusterDetail withStatus(String status) {
         this.status = status;
         return this;
@@ -900,6 +958,9 @@ public class ClusterDetail  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -41,9 +41,6 @@ public class ShowListHistoryResponse extends SdkResponse {
 
     
     public ShowListHistoryResponse addHistoryRecordsItem(HistoryRecord historyRecordsItem) {
-        if (this.historyRecords == null) {
-            this.historyRecords = new ArrayList<>();
-        }
         this.historyRecords.add(historyRecordsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowListHistoryResponse extends SdkResponse {
         this.historyRecords = historyRecords;
     }
 
+    
+
     public ShowListHistoryResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ShowListHistoryResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -41,9 +41,6 @@ public class ShowPriceResponse extends SdkResponse {
 
     
     public ShowPriceResponse addPricesItem(ResourcePrice pricesItem) {
-        if (this.prices == null) {
-            this.prices = new ArrayList<>();
-        }
         this.prices.add(pricesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowPriceResponse extends SdkResponse {
         this.prices = prices;
     }
 
+    
+
     public ShowPriceResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -87,6 +86,9 @@ public class ShowPriceResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

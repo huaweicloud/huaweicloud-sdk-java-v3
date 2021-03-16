@@ -28,7 +28,7 @@ public class UpdatePoolRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePoolRequestBody body = null;
+    private UpdatePoolRequestBody body;
 
     public UpdatePoolRequest withPoolId(String poolId) {
         this.poolId = poolId;
@@ -49,6 +49,8 @@ public class UpdatePoolRequest  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public UpdatePoolRequest withBody(UpdatePoolRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePoolRequest  {
     public void setBody(UpdatePoolRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -103,6 +103,8 @@ public class PeriodProductInfo  {
         this.id = id;
     }
 
+    
+
     public PeriodProductInfo withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
@@ -122,6 +124,8 @@ public class PeriodProductInfo  {
     public void setCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
     }
+
+    
 
     public PeriodProductInfo withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -143,6 +147,8 @@ public class PeriodProductInfo  {
         this.resourceType = resourceType;
     }
 
+    
+
     public PeriodProductInfo withResourceSpec(String resourceSpec) {
         this.resourceSpec = resourceSpec;
         return this;
@@ -162,6 +168,8 @@ public class PeriodProductInfo  {
     public void setResourceSpec(String resourceSpec) {
         this.resourceSpec = resourceSpec;
     }
+
+    
 
     public PeriodProductInfo withRegion(String region) {
         this.region = region;
@@ -183,6 +191,8 @@ public class PeriodProductInfo  {
         this.region = region;
     }
 
+    
+
     public PeriodProductInfo withAvailableZone(String availableZone) {
         this.availableZone = availableZone;
         return this;
@@ -202,6 +212,8 @@ public class PeriodProductInfo  {
     public void setAvailableZone(String availableZone) {
         this.availableZone = availableZone;
     }
+
+    
 
     public PeriodProductInfo withResourceSize(Integer resourceSize) {
         this.resourceSize = resourceSize;
@@ -225,6 +237,8 @@ public class PeriodProductInfo  {
         this.resourceSize = resourceSize;
     }
 
+    
+
     public PeriodProductInfo withSizeMeasureId(Integer sizeMeasureId) {
         this.sizeMeasureId = sizeMeasureId;
         return this;
@@ -244,6 +258,8 @@ public class PeriodProductInfo  {
     public void setSizeMeasureId(Integer sizeMeasureId) {
         this.sizeMeasureId = sizeMeasureId;
     }
+
+    
 
     public PeriodProductInfo withPeriodType(Integer periodType) {
         this.periodType = periodType;
@@ -267,6 +283,8 @@ public class PeriodProductInfo  {
         this.periodType = periodType;
     }
 
+    
+
     public PeriodProductInfo withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
@@ -289,6 +307,8 @@ public class PeriodProductInfo  {
         this.periodNum = periodNum;
     }
 
+    
+
     public PeriodProductInfo withSubscriptionNum(Integer subscriptionNum) {
         this.subscriptionNum = subscriptionNum;
         return this;
@@ -310,6 +330,9 @@ public class PeriodProductInfo  {
     public void setSubscriptionNum(Integer subscriptionNum) {
         this.subscriptionNum = subscriptionNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

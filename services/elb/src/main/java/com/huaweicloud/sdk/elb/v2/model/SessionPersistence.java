@@ -143,6 +143,8 @@ public class SessionPersistence  {
         this.type = type;
     }
 
+    
+
     public SessionPersistence withCookieName(String cookieName) {
         this.cookieName = cookieName;
         return this;
@@ -163,6 +165,8 @@ public class SessionPersistence  {
         this.cookieName = cookieName;
     }
 
+    
+
     public SessionPersistence withPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
         return this;
@@ -182,6 +186,9 @@ public class SessionPersistence  {
     public void setPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateMessageV2Req  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    private CreateMessageDoV2 message = null;
+    private CreateMessageDoV2 message;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class CreateMessageV2Req  {
         this.message = message;
     }
 
+    
+
     public CreateMessageV2Req withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -76,6 +78,9 @@ public class CreateMessageV2Req  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

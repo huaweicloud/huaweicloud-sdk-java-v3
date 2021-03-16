@@ -167,6 +167,8 @@ public class ListProtectableRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListProtectableRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -186,6 +188,8 @@ public class ListProtectableRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListProtectableRequest withName(String name) {
         this.name = name;
@@ -207,6 +211,8 @@ public class ListProtectableRequest  {
         this.name = name;
     }
 
+    
+
     public ListProtectableRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -226,6 +232,8 @@ public class ListProtectableRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListProtectableRequest withProtectableType(ProtectableTypeEnum protectableType) {
         this.protectableType = protectableType;
@@ -247,6 +255,8 @@ public class ListProtectableRequest  {
         this.protectableType = protectableType;
     }
 
+    
+
     public ListProtectableRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -266,6 +276,8 @@ public class ListProtectableRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListProtectableRequest withId(String id) {
         this.id = id;
@@ -287,6 +299,8 @@ public class ListProtectableRequest  {
         this.id = id;
     }
 
+    
+
     public ListProtectableRequest withServerId(String serverId) {
         this.serverId = serverId;
         return this;
@@ -306,6 +320,9 @@ public class ListProtectableRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

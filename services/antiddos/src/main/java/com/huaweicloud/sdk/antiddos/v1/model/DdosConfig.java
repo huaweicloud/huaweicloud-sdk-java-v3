@@ -67,6 +67,8 @@ public class DdosConfig  {
         this.enableL7 = enableL7;
     }
 
+    
+
     public DdosConfig withTrafficPosId(Long trafficPosId) {
         this.trafficPosId = trafficPosId;
         return this;
@@ -86,6 +88,8 @@ public class DdosConfig  {
     public void setTrafficPosId(Long trafficPosId) {
         this.trafficPosId = trafficPosId;
     }
+
+    
 
     public DdosConfig withHttpRequestPosId(Long httpRequestPosId) {
         this.httpRequestPosId = httpRequestPosId;
@@ -107,6 +111,8 @@ public class DdosConfig  {
         this.httpRequestPosId = httpRequestPosId;
     }
 
+    
+
     public DdosConfig withCleaningAccessPosId(Long cleaningAccessPosId) {
         this.cleaningAccessPosId = cleaningAccessPosId;
         return this;
@@ -127,6 +133,8 @@ public class DdosConfig  {
         this.cleaningAccessPosId = cleaningAccessPosId;
     }
 
+    
+
     public DdosConfig withAppTypeId(Long appTypeId) {
         this.appTypeId = appTypeId;
         return this;
@@ -146,6 +154,9 @@ public class DdosConfig  {
     public void setAppTypeId(Long appTypeId) {
         this.appTypeId = appTypeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

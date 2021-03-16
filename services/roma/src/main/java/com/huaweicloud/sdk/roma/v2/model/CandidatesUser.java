@@ -49,6 +49,8 @@ public class CandidatesUser  {
         this.name = name;
     }
 
+    
+
     public CandidatesUser withId(String id) {
         this.id = id;
         return this;
@@ -68,6 +70,9 @@ public class CandidatesUser  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

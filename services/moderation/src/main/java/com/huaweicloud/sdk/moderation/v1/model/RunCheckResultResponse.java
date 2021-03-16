@@ -24,7 +24,7 @@ public class RunCheckResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private CheckResultResultBody result = null;
+    private CheckResultResultBody result;
 
     public RunCheckResultResponse withResult(CheckResultResultBody result) {
         this.result = result;
@@ -52,6 +52,9 @@ public class RunCheckResultResponse extends SdkResponse {
     public void setResult(CheckResultResultBody result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class PublicIpInfo  {
         this.publicipId = publicipId;
     }
 
+    
+
     public PublicIpInfo withPublicipAddress(String publicipAddress) {
         this.publicipAddress = publicipAddress;
         return this;
@@ -75,6 +77,8 @@ public class PublicIpInfo  {
         this.publicipAddress = publicipAddress;
     }
 
+    
+
     public PublicIpInfo withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -94,6 +98,9 @@ public class PublicIpInfo  {
     public void setIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

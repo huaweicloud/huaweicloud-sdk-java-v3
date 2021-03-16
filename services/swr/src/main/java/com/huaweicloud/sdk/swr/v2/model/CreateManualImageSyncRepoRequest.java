@@ -34,7 +34,7 @@ public class CreateManualImageSyncRepoRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateManualImageSyncRepoRequestBody body = null;
+    private CreateManualImageSyncRepoRequestBody body;
 
     public CreateManualImageSyncRepoRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -56,6 +56,8 @@ public class CreateManualImageSyncRepoRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public CreateManualImageSyncRepoRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class CreateManualImageSyncRepoRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public CreateManualImageSyncRepoRequest withBody(CreateManualImageSyncRepoRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateManualImageSyncRepoRequest  {
     public void setBody(CreateManualImageSyncRepoRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

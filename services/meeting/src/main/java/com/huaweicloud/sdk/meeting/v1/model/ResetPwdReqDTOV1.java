@@ -55,6 +55,8 @@ public class ResetPwdReqDTOV1  {
         this.user = user;
     }
 
+    
+
     public ResetPwdReqDTOV1 withNewPwd(String newPwd) {
         this.newPwd = newPwd;
         return this;
@@ -75,6 +77,8 @@ public class ResetPwdReqDTOV1  {
         this.newPwd = newPwd;
     }
 
+    
+
     public ResetPwdReqDTOV1 withPassWordType(Integer passWordType) {
         this.passWordType = passWordType;
         return this;
@@ -94,6 +98,9 @@ public class ResetPwdReqDTOV1  {
     public void setPassWordType(Integer passWordType) {
         this.passWordType = passWordType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,7 +63,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private Map<String, List<ServerAddress>> addresses = new HashMap<>();
+    private Map<String, List<ServerAddress>> addresses = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +75,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image")
     
-    private ServerImage image = null;
+    private ServerImage image;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,7 +105,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    private ServerFlavor flavor = null;
+    private ServerFlavor flavor;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,7 +117,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<ServerSecurityGroup> securityGroups = new ArrayList<>();
+    private List<ServerSecurityGroup> securityGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -171,7 +171,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fault")
     
-    private ServerFault fault = null;
+    private ServerFault fault;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -195,7 +195,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Map<String, String> metadata = new HashMap<>();
+    private Map<String, String> metadata = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,7 +213,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-extended-volumes:volumes_attached")
     
-    private List<ServerExtendVolumeAttachment> osExtendedVolumesVolumesAttached = new ArrayList<>();
+    private List<ServerExtendVolumeAttachment> osExtendedVolumesVolumesAttached = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -285,7 +285,7 @@ public class ServerDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os:scheduler_hints")
     
-    private ServerSchedulerHints osSchedulerHints = null;
+    private ServerSchedulerHints osSchedulerHints;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -319,6 +319,8 @@ public class ServerDetail  {
         this.status = status;
     }
 
+    
+
     public ServerDetail withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -338,6 +340,8 @@ public class ServerDetail  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public ServerDetail withAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
@@ -359,6 +363,8 @@ public class ServerDetail  {
         this.autoTerminateTime = autoTerminateTime;
     }
 
+    
+
     public ServerDetail withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -379,6 +385,8 @@ public class ServerDetail  {
         this.hostId = hostId;
     }
 
+    
+
     public ServerDetail withOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
         return this;
@@ -398,6 +406,8 @@ public class ServerDetail  {
     public void setOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
     }
+
+    
 
     public ServerDetail withAddresses(Map<String, List<ServerAddress>> addresses) {
         this.addresses = addresses;
@@ -430,6 +440,8 @@ public class ServerDetail  {
         this.addresses = addresses;
     }
 
+    
+
     public ServerDetail withKeyName(String keyName) {
         this.keyName = keyName;
         return this;
@@ -449,6 +461,8 @@ public class ServerDetail  {
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
+
+    
 
     public ServerDetail withImage(ServerImage image) {
         this.image = image;
@@ -477,6 +491,8 @@ public class ServerDetail  {
         this.image = image;
     }
 
+    
+
     public ServerDetail withOsEXTSTSTaskState(String osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
         return this;
@@ -496,6 +512,8 @@ public class ServerDetail  {
     public void setOsEXTSTSTaskState(String osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
     }
+
+    
 
     public ServerDetail withOsEXTSTSVmState(String osEXTSTSVmState) {
         this.osEXTSTSVmState = osEXTSTSVmState;
@@ -517,6 +535,8 @@ public class ServerDetail  {
         this.osEXTSTSVmState = osEXTSTSVmState;
     }
 
+    
+
     public ServerDetail withOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
         return this;
@@ -537,6 +557,8 @@ public class ServerDetail  {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
     }
 
+    
+
     public ServerDetail withOsEXTSRVATTRHypervisorHostname(String osEXTSRVATTRHypervisorHostname) {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
         return this;
@@ -556,6 +578,8 @@ public class ServerDetail  {
     public void setOsEXTSRVATTRHypervisorHostname(String osEXTSRVATTRHypervisorHostname) {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
     }
+
+    
 
     public ServerDetail withFlavor(ServerFlavor flavor) {
         this.flavor = flavor;
@@ -584,6 +608,8 @@ public class ServerDetail  {
         this.flavor = flavor;
     }
 
+    
+
     public ServerDetail withId(String id) {
         this.id = id;
         return this;
@@ -603,6 +629,8 @@ public class ServerDetail  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ServerDetail withSecurityGroups(List<ServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
@@ -635,6 +663,8 @@ public class ServerDetail  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public ServerDetail withOsEXTAZAvailabilityZone(String osEXTAZAvailabilityZone) {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
         return this;
@@ -654,6 +684,8 @@ public class ServerDetail  {
     public void setOsEXTAZAvailabilityZone(String osEXTAZAvailabilityZone) {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
     }
+
+    
 
     public ServerDetail withUserId(String userId) {
         this.userId = userId;
@@ -675,6 +707,8 @@ public class ServerDetail  {
         this.userId = userId;
     }
 
+    
+
     public ServerDetail withName(String name) {
         this.name = name;
         return this;
@@ -694,6 +728,8 @@ public class ServerDetail  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ServerDetail withCreated(String created) {
         this.created = created;
@@ -715,6 +751,8 @@ public class ServerDetail  {
         this.created = created;
     }
 
+    
+
     public ServerDetail withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -734,6 +772,8 @@ public class ServerDetail  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public ServerDetail withOsDCFDiskConfig(String osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
@@ -755,6 +795,8 @@ public class ServerDetail  {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
 
+    
+
     public ServerDetail withAccessIPv4(String accessIPv4) {
         this.accessIPv4 = accessIPv4;
         return this;
@@ -775,6 +817,8 @@ public class ServerDetail  {
         this.accessIPv4 = accessIPv4;
     }
 
+    
+
     public ServerDetail withAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
         return this;
@@ -794,6 +838,8 @@ public class ServerDetail  {
     public void setAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
     }
+
+    
 
     public ServerDetail withFault(ServerFault fault) {
         this.fault = fault;
@@ -822,6 +868,8 @@ public class ServerDetail  {
         this.fault = fault;
     }
 
+    
+
     public ServerDetail withProgress(Integer progress) {
         this.progress = progress;
         return this;
@@ -841,6 +889,8 @@ public class ServerDetail  {
     public void setProgress(Integer progress) {
         this.progress = progress;
     }
+
+    
 
     public ServerDetail withOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
@@ -862,6 +912,8 @@ public class ServerDetail  {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
     }
 
+    
+
     public ServerDetail withConfigDrive(String configDrive) {
         this.configDrive = configDrive;
         return this;
@@ -881,6 +933,8 @@ public class ServerDetail  {
     public void setConfigDrive(String configDrive) {
         this.configDrive = configDrive;
     }
+
+    
 
     public ServerDetail withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
@@ -913,6 +967,8 @@ public class ServerDetail  {
         this.metadata = metadata;
     }
 
+    
+
     public ServerDetail withOsSRVUSGLaunchedAt(String osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
         return this;
@@ -933,6 +989,8 @@ public class ServerDetail  {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
     }
 
+    
+
     public ServerDetail withOsSRVUSGTerminatedAt(String osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
         return this;
@@ -952,6 +1010,8 @@ public class ServerDetail  {
     public void setOsSRVUSGTerminatedAt(String osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
     }
+
+    
 
     public ServerDetail withOsExtendedVolumesVolumesAttached(List<ServerExtendVolumeAttachment> osExtendedVolumesVolumesAttached) {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
@@ -984,6 +1044,8 @@ public class ServerDetail  {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
     }
 
+    
+
     public ServerDetail withDescription(String description) {
         this.description = description;
         return this;
@@ -1003,6 +1065,8 @@ public class ServerDetail  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ServerDetail withHostStatus(String hostStatus) {
         this.hostStatus = hostStatus;
@@ -1024,6 +1088,8 @@ public class ServerDetail  {
         this.hostStatus = hostStatus;
     }
 
+    
+
     public ServerDetail withOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
         return this;
@@ -1043,6 +1109,8 @@ public class ServerDetail  {
     public void setOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
     }
+
+    
 
     public ServerDetail withOsEXTSRVATTRReservationId(String osEXTSRVATTRReservationId) {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
@@ -1064,6 +1132,8 @@ public class ServerDetail  {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
     }
 
+    
+
     public ServerDetail withOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
         return this;
@@ -1083,6 +1153,8 @@ public class ServerDetail  {
     public void setOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
     }
+
+    
 
     public ServerDetail withOsEXTSRVATTRKernelId(String osEXTSRVATTRKernelId) {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
@@ -1104,6 +1176,8 @@ public class ServerDetail  {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
     }
 
+    
+
     public ServerDetail withOsEXTSRVATTRRamdiskId(String osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
         return this;
@@ -1123,6 +1197,8 @@ public class ServerDetail  {
     public void setOsEXTSRVATTRRamdiskId(String osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
     }
+
+    
 
     public ServerDetail withOsEXTSRVATTRRootDeviceName(String osEXTSRVATTRRootDeviceName) {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
@@ -1144,6 +1220,8 @@ public class ServerDetail  {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
     }
 
+    
+
     public ServerDetail withOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
         return this;
@@ -1163,6 +1241,8 @@ public class ServerDetail  {
     public void setOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
     }
+
+    
 
     public ServerDetail withLocked(Boolean locked) {
         this.locked = locked;
@@ -1184,6 +1264,8 @@ public class ServerDetail  {
         this.locked = locked;
     }
 
+    
+
     public ServerDetail withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1191,9 +1273,6 @@ public class ServerDetail  {
 
     
     public ServerDetail addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1217,6 +1296,8 @@ public class ServerDetail  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
 
     public ServerDetail withOsSchedulerHints(ServerSchedulerHints osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
@@ -1245,6 +1326,8 @@ public class ServerDetail  {
         this.osSchedulerHints = osSchedulerHints;
     }
 
+    
+
     public ServerDetail withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -1265,6 +1348,8 @@ public class ServerDetail  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ServerDetail withSysTags(List<ServerSystemTag> sysTags) {
         this.sysTags = sysTags;
         return this;
@@ -1272,9 +1357,6 @@ public class ServerDetail  {
 
     
     public ServerDetail addSysTagsItem(ServerSystemTag sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
@@ -1298,6 +1380,9 @@ public class ServerDetail  {
     public void setSysTags(List<ServerSystemTag> sysTags) {
         this.sysTags = sysTags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

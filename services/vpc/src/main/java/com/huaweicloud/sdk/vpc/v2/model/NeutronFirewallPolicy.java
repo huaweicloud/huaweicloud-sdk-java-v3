@@ -35,7 +35,7 @@ public class NeutronFirewallPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="firewall_rules")
     
-    private List<String> firewallRules = new ArrayList<>();
+    private List<String> firewallRules = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,6 +87,8 @@ public class NeutronFirewallPolicy  {
         this.audited = audited;
     }
 
+    
+
     public NeutronFirewallPolicy withDescription(String description) {
         this.description = description;
         return this;
@@ -106,6 +108,8 @@ public class NeutronFirewallPolicy  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public NeutronFirewallPolicy withFirewallRules(List<String> firewallRules) {
         this.firewallRules = firewallRules;
@@ -138,6 +142,8 @@ public class NeutronFirewallPolicy  {
         this.firewallRules = firewallRules;
     }
 
+    
+
     public NeutronFirewallPolicy withId(String id) {
         this.id = id;
         return this;
@@ -157,6 +163,8 @@ public class NeutronFirewallPolicy  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public NeutronFirewallPolicy withName(String name) {
         this.name = name;
@@ -178,6 +186,8 @@ public class NeutronFirewallPolicy  {
         this.name = name;
     }
 
+    
+
     public NeutronFirewallPolicy withPublic(Boolean _public) {
         this._public = _public;
         return this;
@@ -197,6 +207,8 @@ public class NeutronFirewallPolicy  {
     public void setPublic(Boolean _public) {
         this._public = _public;
     }
+
+    
 
     public NeutronFirewallPolicy withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -218,6 +230,8 @@ public class NeutronFirewallPolicy  {
         this.tenantId = tenantId;
     }
 
+    
+
     public NeutronFirewallPolicy withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -237,6 +251,9 @@ public class NeutronFirewallPolicy  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

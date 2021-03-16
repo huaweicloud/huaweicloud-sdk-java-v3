@@ -79,6 +79,8 @@ public class JobInstance  {
         this.jobName = jobName;
     }
 
+    
+
     public JobInstance withStatus(String status) {
         this.status = status;
         return this;
@@ -98,6 +100,8 @@ public class JobInstance  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public JobInstance withPlanTime(Integer planTime) {
         this.planTime = planTime;
@@ -119,6 +123,8 @@ public class JobInstance  {
         this.planTime = planTime;
     }
 
+    
+
     public JobInstance withStartTime(Integer startTime) {
         this.startTime = startTime;
         return this;
@@ -138,6 +144,8 @@ public class JobInstance  {
     public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public JobInstance withEndTime(Integer endTime) {
         this.endTime = endTime;
@@ -159,6 +167,8 @@ public class JobInstance  {
         this.endTime = endTime;
     }
 
+    
+
     public JobInstance withExecuteTime(Integer executeTime) {
         this.executeTime = executeTime;
         return this;
@@ -179,6 +189,8 @@ public class JobInstance  {
         this.executeTime = executeTime;
     }
 
+    
+
     public JobInstance withInstancesId(String instancesId) {
         this.instancesId = instancesId;
         return this;
@@ -198,6 +210,9 @@ public class JobInstance  {
     public void setInstancesId(String instancesId) {
         this.instancesId = instancesId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

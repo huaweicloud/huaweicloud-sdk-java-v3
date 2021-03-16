@@ -49,6 +49,8 @@ public class CreateMfaDeviceRespon  {
         this.serialNumber = serialNumber;
     }
 
+    
+
     public CreateMfaDeviceRespon withBase32StringSeed(String base32StringSeed) {
         this.base32StringSeed = base32StringSeed;
         return this;
@@ -68,6 +70,9 @@ public class CreateMfaDeviceRespon  {
     public void setBase32StringSeed(String base32StringSeed) {
         this.base32StringSeed = base32StringSeed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

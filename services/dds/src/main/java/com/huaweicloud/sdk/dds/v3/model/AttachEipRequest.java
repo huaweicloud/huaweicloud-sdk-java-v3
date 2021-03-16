@@ -28,7 +28,7 @@ public class AttachEipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AttachEipRequestBody body = null;
+    private AttachEipRequestBody body;
 
     public AttachEipRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -49,6 +49,8 @@ public class AttachEipRequest  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public AttachEipRequest withBody(AttachEipRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AttachEipRequest  {
     public void setBody(AttachEipRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -128,9 +128,6 @@ public class BulkCreateAndDeleteVaultTagsReq  {
 
     
     public BulkCreateAndDeleteVaultTagsReq addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -155,6 +152,8 @@ public class BulkCreateAndDeleteVaultTagsReq  {
         this.tags = tags;
     }
 
+    
+
     public BulkCreateAndDeleteVaultTagsReq withSysTags(List<SysTag> sysTags) {
         this.sysTags = sysTags;
         return this;
@@ -162,9 +161,6 @@ public class BulkCreateAndDeleteVaultTagsReq  {
 
     
     public BulkCreateAndDeleteVaultTagsReq addSysTagsItem(SysTag sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
@@ -189,6 +185,8 @@ public class BulkCreateAndDeleteVaultTagsReq  {
         this.sysTags = sysTags;
     }
 
+    
+
     public BulkCreateAndDeleteVaultTagsReq withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -208,6 +206,9 @@ public class BulkCreateAndDeleteVaultTagsReq  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -58,7 +58,7 @@ public class KeystoneShowUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class KeystoneShowUserResult  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public KeystoneShowUserResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -111,6 +113,8 @@ public class KeystoneShowUserResult  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public KeystoneShowUserResult withLastProjectId(String lastProjectId) {
         this.lastProjectId = lastProjectId;
@@ -132,6 +136,8 @@ public class KeystoneShowUserResult  {
         this.lastProjectId = lastProjectId;
     }
 
+    
+
     public KeystoneShowUserResult withName(String name) {
         this.name = name;
         return this;
@@ -151,6 +157,8 @@ public class KeystoneShowUserResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneShowUserResult withDescription(String description) {
         this.description = description;
@@ -172,6 +180,8 @@ public class KeystoneShowUserResult  {
         this.description = description;
     }
 
+    
+
     public KeystoneShowUserResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -191,6 +201,8 @@ public class KeystoneShowUserResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
 
     public KeystoneShowUserResult withLinks(Links links) {
         this.links = links;
@@ -219,6 +231,8 @@ public class KeystoneShowUserResult  {
         this.links = links;
     }
 
+    
+
     public KeystoneShowUserResult withId(String id) {
         this.id = id;
         return this;
@@ -239,6 +253,8 @@ public class KeystoneShowUserResult  {
         this.id = id;
     }
 
+    
+
     public KeystoneShowUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -258,6 +274,9 @@ public class KeystoneShowUserResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

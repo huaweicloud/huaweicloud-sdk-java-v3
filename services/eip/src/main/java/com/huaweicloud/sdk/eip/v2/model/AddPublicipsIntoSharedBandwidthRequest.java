@@ -28,7 +28,7 @@ public class AddPublicipsIntoSharedBandwidthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddPublicipsIntoSharedBandwidthRequestBody body = null;
+    private AddPublicipsIntoSharedBandwidthRequestBody body;
 
     public AddPublicipsIntoSharedBandwidthRequest withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
@@ -49,6 +49,8 @@ public class AddPublicipsIntoSharedBandwidthRequest  {
     public void setBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
     }
+
+    
 
     public AddPublicipsIntoSharedBandwidthRequest withBody(AddPublicipsIntoSharedBandwidthRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AddPublicipsIntoSharedBandwidthRequest  {
     public void setBody(AddPublicipsIntoSharedBandwidthRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

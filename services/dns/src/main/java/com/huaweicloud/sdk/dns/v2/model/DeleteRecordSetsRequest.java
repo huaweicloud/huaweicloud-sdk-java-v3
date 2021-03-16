@@ -49,6 +49,8 @@ public class DeleteRecordSetsRequest  {
         this.zoneId = zoneId;
     }
 
+    
+
     public DeleteRecordSetsRequest withRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteRecordSetsRequest  {
     public void setRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

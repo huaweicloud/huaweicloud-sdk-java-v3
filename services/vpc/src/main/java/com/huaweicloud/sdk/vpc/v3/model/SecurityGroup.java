@@ -46,13 +46,13 @@ public class SecurityGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,6 +80,8 @@ public class SecurityGroup  {
         this.id = id;
     }
 
+    
+
     public SecurityGroup withName(String name) {
         this.name = name;
         return this;
@@ -99,6 +101,8 @@ public class SecurityGroup  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SecurityGroup withDescription(String description) {
         this.description = description;
@@ -120,6 +124,8 @@ public class SecurityGroup  {
         this.description = description;
     }
 
+    
+
     public SecurityGroup withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -139,6 +145,8 @@ public class SecurityGroup  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public SecurityGroup withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
@@ -160,6 +168,8 @@ public class SecurityGroup  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SecurityGroup withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -180,6 +190,8 @@ public class SecurityGroup  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public SecurityGroup withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -199,6 +211,9 @@ public class SecurityGroup  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

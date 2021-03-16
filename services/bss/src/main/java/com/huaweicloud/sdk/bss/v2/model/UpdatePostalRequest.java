@@ -22,13 +22,13 @@ public class UpdatePostalRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_CN";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePostalReq body = null;
+    private UpdatePostalReq body;
 
     public UpdatePostalRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -51,6 +51,8 @@ public class UpdatePostalRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public UpdatePostalRequest withBody(UpdatePostalReq body) {
         this.body = body;
@@ -78,6 +80,9 @@ public class UpdatePostalRequest  {
     public void setBody(UpdatePostalReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

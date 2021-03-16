@@ -59,6 +59,8 @@ public class CreateServersResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public CreateServersResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -79,6 +81,8 @@ public class CreateServersResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    
+
     public CreateServersResponse withServerIds(List<String> serverIds) {
         this.serverIds = serverIds;
         return this;
@@ -86,9 +90,6 @@ public class CreateServersResponse extends SdkResponse {
 
     
     public CreateServersResponse addServerIdsItem(String serverIdsItem) {
-        if (this.serverIds == null) {
-            this.serverIds = new ArrayList<>();
-        }
         this.serverIds.add(serverIdsItem);
         return this;
     }
@@ -112,6 +113,9 @@ public class CreateServersResponse extends SdkResponse {
     public void setServerIds(List<String> serverIds) {
         this.serverIds = serverIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

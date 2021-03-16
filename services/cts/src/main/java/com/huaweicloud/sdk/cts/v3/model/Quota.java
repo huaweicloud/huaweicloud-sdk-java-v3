@@ -55,6 +55,8 @@ public class Quota  {
         this.type = type;
     }
 
+    
+
     public Quota withUsed(Long used) {
         this.used = used;
         return this;
@@ -77,6 +79,8 @@ public class Quota  {
         this.used = used;
     }
 
+    
+
     public Quota withQuota(Long quota) {
         this.quota = quota;
         return this;
@@ -98,6 +102,9 @@ public class Quota  {
     public void setQuota(Long quota) {
         this.quota = quota;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

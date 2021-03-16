@@ -29,13 +29,13 @@ public class AppAuthReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_ids")
     
-    private List<String> appIds = new ArrayList<>();
+    private List<String> appIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="api_ids")
     
-    private List<String> apiIds = new ArrayList<>();
+    private List<String> apiIds = null;
     
     public AppAuthReq withEnvId(String envId) {
         this.envId = envId;
@@ -56,6 +56,8 @@ public class AppAuthReq  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public AppAuthReq withAppIds(List<String> appIds) {
         this.appIds = appIds;
@@ -88,6 +90,8 @@ public class AppAuthReq  {
         this.appIds = appIds;
     }
 
+    
+
     public AppAuthReq withApiIds(List<String> apiIds) {
         this.apiIds = apiIds;
         return this;
@@ -118,6 +122,9 @@ public class AppAuthReq  {
     public void setApiIds(List<String> apiIds) {
         this.apiIds = apiIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class KeystoneUpdateGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneUpdateGroupRequestBody body = null;
+    private KeystoneUpdateGroupRequestBody body;
 
     public KeystoneUpdateGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -49,6 +49,8 @@ public class KeystoneUpdateGroupRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public KeystoneUpdateGroupRequest withBody(KeystoneUpdateGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class KeystoneUpdateGroupRequest  {
     public void setBody(KeystoneUpdateGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

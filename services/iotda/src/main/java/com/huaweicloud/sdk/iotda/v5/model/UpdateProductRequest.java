@@ -34,7 +34,7 @@ public class UpdateProductRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateProduct body = null;
+    private UpdateProduct body;
 
     public UpdateProductRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateProductRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateProductRequest withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateProductRequest  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public UpdateProductRequest withBody(UpdateProduct body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateProductRequest  {
     public void setBody(UpdateProduct body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

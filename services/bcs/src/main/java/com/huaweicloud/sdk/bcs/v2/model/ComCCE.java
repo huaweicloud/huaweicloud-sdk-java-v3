@@ -22,19 +22,19 @@ public class ComCCE  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster")
     
-    private Detail cluster = null;
+    private Detail cluster;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="network")
     
-    private Detail network = null;
+    private Detail network;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group")
     
-    private Detail securityGroup = null;
+    private Detail securityGroup;
 
     public ComCCE withCluster(Detail cluster) {
         this.cluster = cluster;
@@ -63,6 +63,8 @@ public class ComCCE  {
         this.cluster = cluster;
     }
 
+    
+
     public ComCCE withNetwork(Detail network) {
         this.network = network;
         return this;
@@ -90,6 +92,8 @@ public class ComCCE  {
         this.network = network;
     }
 
+    
+
     public ComCCE withSecurityGroup(Detail securityGroup) {
         this.securityGroup = securityGroup;
         return this;
@@ -116,6 +120,9 @@ public class ComCCE  {
     public void setSecurityGroup(Detail securityGroup) {
         this.securityGroup = securityGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

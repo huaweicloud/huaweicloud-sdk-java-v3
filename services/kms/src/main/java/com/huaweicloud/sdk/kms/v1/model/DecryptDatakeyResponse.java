@@ -57,6 +57,8 @@ public class DecryptDatakeyResponse extends SdkResponse {
         this.dataKey = dataKey;
     }
 
+    
+
     public DecryptDatakeyResponse withDatakeyLength(String datakeyLength) {
         this.datakeyLength = datakeyLength;
         return this;
@@ -77,6 +79,8 @@ public class DecryptDatakeyResponse extends SdkResponse {
         this.datakeyLength = datakeyLength;
     }
 
+    
+
     public DecryptDatakeyResponse withDatakeyDgst(String datakeyDgst) {
         this.datakeyDgst = datakeyDgst;
         return this;
@@ -96,6 +100,9 @@ public class DecryptDatakeyResponse extends SdkResponse {
     public void setDatakeyDgst(String datakeyDgst) {
         this.datakeyDgst = datakeyDgst;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

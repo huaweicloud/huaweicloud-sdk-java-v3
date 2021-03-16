@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * id, 领域 14, &#39;性能&#39;, 15, &#39;功能&#39;, 16, &#39;可靠性&#39; 17, &#39;网络安全&#39; 18, &#39;可维护性&#39; 19, &#39;其他DFX&#39; 20, &#39;可用性&#39;
  */
-public class IssueItemSFV4Domain  {
+public class IssueItemSfV4Domain  {
 
 
 
@@ -29,7 +29,7 @@ public class IssueItemSFV4Domain  {
     
     private String name;
 
-    public IssueItemSFV4Domain withId(Integer id) {
+    public IssueItemSfV4Domain withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -49,7 +49,9 @@ public class IssueItemSFV4Domain  {
         this.id = id;
     }
 
-    public IssueItemSFV4Domain withName(String name) {
+    
+
+    public IssueItemSfV4Domain withName(String name) {
         this.name = name;
         return this;
     }
@@ -68,6 +70,9 @@ public class IssueItemSFV4Domain  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -76,9 +81,9 @@ public class IssueItemSFV4Domain  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        IssueItemSFV4Domain issueItemSFV4Domain = (IssueItemSFV4Domain) o;
-        return Objects.equals(this.id, issueItemSFV4Domain.id) &&
-            Objects.equals(this.name, issueItemSFV4Domain.name);
+        IssueItemSfV4Domain issueItemSfV4Domain = (IssueItemSfV4Domain) o;
+        return Objects.equals(this.id, issueItemSfV4Domain.id) &&
+            Objects.equals(this.name, issueItemSfV4Domain.name);
     }
     @Override
     public int hashCode() {
@@ -87,7 +92,7 @@ public class IssueItemSFV4Domain  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class IssueItemSFV4Domain {\n");
+        sb.append("class IssueItemSfV4Domain {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

@@ -34,7 +34,7 @@ public class CreateLiveDataApiScriptV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LdApiScriptCreate body = null;
+    private LdApiScriptCreate body;
 
     public CreateLiveDataApiScriptV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreateLiveDataApiScriptV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateLiveDataApiScriptV2Request withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -75,6 +77,8 @@ public class CreateLiveDataApiScriptV2Request  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public CreateLiveDataApiScriptV2Request withBody(LdApiScriptCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateLiveDataApiScriptV2Request  {
     public void setBody(LdApiScriptCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

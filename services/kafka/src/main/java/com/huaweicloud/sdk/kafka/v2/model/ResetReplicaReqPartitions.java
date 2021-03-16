@@ -51,6 +51,8 @@ public class ResetReplicaReqPartitions  {
         this.partition = partition;
     }
 
+    
+
     public ResetReplicaReqPartitions withReplicas(List<Integer> replicas) {
         this.replicas = replicas;
         return this;
@@ -58,9 +60,6 @@ public class ResetReplicaReqPartitions  {
 
     
     public ResetReplicaReqPartitions addReplicasItem(Integer replicasItem) {
-        if (this.replicas == null) {
-            this.replicas = new ArrayList<>();
-        }
         this.replicas.add(replicasItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class ResetReplicaReqPartitions  {
     public void setReplicas(List<Integer> replicas) {
         this.replicas = replicas;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

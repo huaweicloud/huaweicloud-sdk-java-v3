@@ -91,6 +91,8 @@ public class AdjustRecordV2  {
         this.customerId = customerId;
     }
 
+    
+
     public AdjustRecordV2 withCustomerName(String customerName) {
         this.customerName = customerName;
         return this;
@@ -110,6 +112,8 @@ public class AdjustRecordV2  {
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
+
+    
 
     public AdjustRecordV2 withOperationType(String operationType) {
         this.operationType = operationType;
@@ -131,6 +135,8 @@ public class AdjustRecordV2  {
         this.operationType = operationType;
     }
 
+    
+
     public AdjustRecordV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -150,6 +156,8 @@ public class AdjustRecordV2  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
 
     public AdjustRecordV2 withCurrency(String currency) {
         this.currency = currency;
@@ -171,6 +179,8 @@ public class AdjustRecordV2  {
         this.currency = currency;
     }
 
+    
+
     public AdjustRecordV2 withApplyScene(String applyScene) {
         this.applyScene = applyScene;
         return this;
@@ -190,6 +200,8 @@ public class AdjustRecordV2  {
     public void setApplyScene(String applyScene) {
         this.applyScene = applyScene;
     }
+
+    
 
     public AdjustRecordV2 withOperationTime(String operationTime) {
         this.operationTime = operationTime;
@@ -211,6 +223,8 @@ public class AdjustRecordV2  {
         this.operationTime = operationTime;
     }
 
+    
+
     public AdjustRecordV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -231,6 +245,8 @@ public class AdjustRecordV2  {
         this.measureId = measureId;
     }
 
+    
+
     public AdjustRecordV2 withTransId(String transId) {
         this.transId = transId;
         return this;
@@ -250,6 +266,9 @@ public class AdjustRecordV2  {
     public void setTransId(String transId) {
         this.transId = transId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

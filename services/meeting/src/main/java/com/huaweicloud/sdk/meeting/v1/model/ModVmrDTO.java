@@ -67,6 +67,8 @@ public class ModVmrDTO  {
         this.vmrName = vmrName;
     }
 
+    
+
     public ModVmrDTO withGustPwd(String gustPwd) {
         this.gustPwd = gustPwd;
         return this;
@@ -86,6 +88,8 @@ public class ModVmrDTO  {
     public void setGustPwd(String gustPwd) {
         this.gustPwd = gustPwd;
     }
+
+    
 
     public ModVmrDTO withChairPwd(String chairPwd) {
         this.chairPwd = chairPwd;
@@ -107,6 +111,8 @@ public class ModVmrDTO  {
         this.chairPwd = chairPwd;
     }
 
+    
+
     public ModVmrDTO withAllowGustFirst(Boolean allowGustFirst) {
         this.allowGustFirst = allowGustFirst;
         return this;
@@ -127,6 +133,8 @@ public class ModVmrDTO  {
         this.allowGustFirst = allowGustFirst;
     }
 
+    
+
     public ModVmrDTO withGustFirstNotice(Boolean gustFirstNotice) {
         this.gustFirstNotice = gustFirstNotice;
         return this;
@@ -146,6 +154,9 @@ public class ModVmrDTO  {
     public void setGustFirstNotice(Boolean gustFirstNotice) {
         this.gustFirstNotice = gustFirstNotice;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

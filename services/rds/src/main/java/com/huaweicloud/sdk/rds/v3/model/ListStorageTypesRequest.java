@@ -237,6 +237,8 @@ public class ListStorageTypesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListStorageTypesRequest withDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
         return this;
@@ -256,6 +258,8 @@ public class ListStorageTypesRequest  {
     public void setDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
     }
+
+    
 
     public ListStorageTypesRequest withVersionName(String versionName) {
         this.versionName = versionName;
@@ -277,6 +281,8 @@ public class ListStorageTypesRequest  {
         this.versionName = versionName;
     }
 
+    
+
     public ListStorageTypesRequest withHaMode(HaModeEnum haMode) {
         this.haMode = haMode;
         return this;
@@ -296,6 +302,9 @@ public class ListStorageTypesRequest  {
     public void setHaMode(HaModeEnum haMode) {
         this.haMode = haMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

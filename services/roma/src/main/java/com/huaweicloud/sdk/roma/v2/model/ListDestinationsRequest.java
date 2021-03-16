@@ -33,13 +33,13 @@ public class ListDestinationsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListDestinationsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -61,6 +61,8 @@ public class ListDestinationsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDestinationsRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -80,6 +82,8 @@ public class ListDestinationsRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public ListDestinationsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -103,6 +107,8 @@ public class ListDestinationsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListDestinationsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -124,6 +130,9 @@ public class ListDestinationsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

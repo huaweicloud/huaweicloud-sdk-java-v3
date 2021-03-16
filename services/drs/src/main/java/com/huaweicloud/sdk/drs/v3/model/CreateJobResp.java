@@ -73,6 +73,8 @@ public class CreateJobResp  {
         this.id = id;
     }
 
+    
+
     public CreateJobResp withName(String name) {
         this.name = name;
         return this;
@@ -92,6 +94,8 @@ public class CreateJobResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateJobResp withStatus(String status) {
         this.status = status;
@@ -113,6 +117,8 @@ public class CreateJobResp  {
         this.status = status;
     }
 
+    
+
     public CreateJobResp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -132,6 +138,8 @@ public class CreateJobResp  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public CreateJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -153,6 +161,8 @@ public class CreateJobResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public CreateJobResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -172,6 +182,9 @@ public class CreateJobResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

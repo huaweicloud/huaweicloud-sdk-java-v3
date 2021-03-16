@@ -22,7 +22,7 @@ public class CreateSubNetworkInterfaceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateSubNetworkInterfaceRequestBody body = null;
+    private CreateSubNetworkInterfaceRequestBody body;
 
     public CreateSubNetworkInterfaceRequest withBody(CreateSubNetworkInterfaceRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateSubNetworkInterfaceRequest  {
     public void setBody(CreateSubNetworkInterfaceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -21,7 +21,7 @@ public class CreateCertificateOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,7 +39,7 @@ public class CreateCertificateOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private String domain = "\"\"";
+    private String domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,6 +91,8 @@ public class CreateCertificateOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreateCertificateOption withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
@@ -110,6 +112,8 @@ public class CreateCertificateOption  {
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
+
+    
 
     public CreateCertificateOption withDescription(String description) {
         this.description = description;
@@ -131,6 +135,8 @@ public class CreateCertificateOption  {
         this.description = description;
     }
 
+    
+
     public CreateCertificateOption withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -150,6 +156,8 @@ public class CreateCertificateOption  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public CreateCertificateOption withName(String name) {
         this.name = name;
@@ -171,6 +179,8 @@ public class CreateCertificateOption  {
         this.name = name;
     }
 
+    
+
     public CreateCertificateOption withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -190,6 +200,8 @@ public class CreateCertificateOption  {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
 
     public CreateCertificateOption withProjectId(String projectId) {
         this.projectId = projectId;
@@ -211,6 +223,8 @@ public class CreateCertificateOption  {
         this.projectId = projectId;
     }
 
+    
+
     public CreateCertificateOption withType(String type) {
         this.type = type;
         return this;
@@ -231,6 +245,8 @@ public class CreateCertificateOption  {
         this.type = type;
     }
 
+    
+
     public CreateCertificateOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -250,6 +266,9 @@ public class CreateCertificateOption  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

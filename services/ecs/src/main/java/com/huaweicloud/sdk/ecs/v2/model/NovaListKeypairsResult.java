@@ -22,7 +22,7 @@ public class NovaListKeypairsResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keypair")
     
-    private NovaSimpleKeypair keypair = null;
+    private NovaSimpleKeypair keypair;
 
     public NovaListKeypairsResult withKeypair(NovaSimpleKeypair keypair) {
         this.keypair = keypair;
@@ -50,6 +50,9 @@ public class NovaListKeypairsResult  {
     public void setKeypair(NovaSimpleKeypair keypair) {
         this.keypair = keypair;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

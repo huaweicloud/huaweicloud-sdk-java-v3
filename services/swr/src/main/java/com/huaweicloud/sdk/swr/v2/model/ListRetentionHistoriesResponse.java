@@ -47,9 +47,6 @@ public class ListRetentionHistoriesResponse extends SdkResponse {
 
     
     public ListRetentionHistoriesResponse addRetentionLogItem(RetentionLog retentionLogItem) {
-        if (this.retentionLog == null) {
-            this.retentionLog = new ArrayList<>();
-        }
         this.retentionLog.add(retentionLogItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListRetentionHistoriesResponse extends SdkResponse {
         this.retentionLog = retentionLog;
     }
 
+    
+
     public ListRetentionHistoriesResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -94,6 +93,8 @@ public class ListRetentionHistoriesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListRetentionHistoriesResponse withContentRange(String contentRange) {
         this.contentRange = contentRange;
         return this;
@@ -113,6 +114,9 @@ public class ListRetentionHistoriesResponse extends SdkResponse {
     public void setContentRange(String contentRange) {
         this.contentRange = contentRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -115,6 +115,8 @@ public class TriggerHistories  {
         this.action = action;
     }
 
+    
+
     public TriggerHistories withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -134,6 +136,8 @@ public class TriggerHistories  {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public TriggerHistories withApplication(String application) {
         this.application = application;
@@ -155,6 +159,8 @@ public class TriggerHistories  {
         this.application = application;
     }
 
+    
+
     public TriggerHistories withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -174,6 +180,8 @@ public class TriggerHistories  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public TriggerHistories withClusterName(String clusterName) {
         this.clusterName = clusterName;
@@ -195,6 +203,8 @@ public class TriggerHistories  {
         this.clusterName = clusterName;
     }
 
+    
+
     public TriggerHistories withClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
         return this;
@@ -214,6 +224,8 @@ public class TriggerHistories  {
     public void setClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
     }
+
+    
 
     public TriggerHistories withCondition(String condition) {
         this.condition = condition;
@@ -235,6 +247,8 @@ public class TriggerHistories  {
         this.condition = condition;
     }
 
+    
+
     public TriggerHistories withContainer(String container) {
         this.container = container;
         return this;
@@ -254,6 +268,8 @@ public class TriggerHistories  {
     public void setContainer(String container) {
         this.container = container;
     }
+
+    
 
     public TriggerHistories withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -275,6 +291,8 @@ public class TriggerHistories  {
         this.createdAt = createdAt;
     }
 
+    
+
     public TriggerHistories withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
@@ -294,6 +312,8 @@ public class TriggerHistories  {
     public void setCreatorName(String creatorName) {
         this.creatorName = creatorName;
     }
+
+    
 
     public TriggerHistories withDetail(String detail) {
         this.detail = detail;
@@ -315,6 +335,8 @@ public class TriggerHistories  {
         this.detail = detail;
     }
 
+    
+
     public TriggerHistories withResult(String result) {
         this.result = result;
         return this;
@@ -335,6 +357,8 @@ public class TriggerHistories  {
         this.result = result;
     }
 
+    
+
     public TriggerHistories withTag(String tag) {
         this.tag = tag;
         return this;
@@ -354,6 +378,9 @@ public class TriggerHistories  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

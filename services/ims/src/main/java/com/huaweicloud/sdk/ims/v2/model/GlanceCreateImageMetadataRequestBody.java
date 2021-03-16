@@ -33,7 +33,7 @@ public class GlanceCreateImageMetadataRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_format")
     
-    private String containerFormat = "bare";
+    private String containerFormat;
     /**
      * 镜像文件格式。目前支持vhd，zvhd、zvhd2、raw，qcow2。默认取值为vhd
      */
@@ -141,13 +141,13 @@ public class GlanceCreateImageMetadataRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_disk")
     
-    private Integer minDisk = 40;
+    private Integer minDisk;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_ram")
     
-    private Integer minRam = 0;
+    private Integer minRam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -159,7 +159,7 @@ public class GlanceCreateImageMetadataRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protected")
     
-    private Boolean _protected = false;
+    private Boolean _protected;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -171,7 +171,7 @@ public class GlanceCreateImageMetadataRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="visibility")
     
-    private String visibility = "private";
+    private String visibility;
 
     public GlanceCreateImageMetadataRequestBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -195,6 +195,8 @@ public class GlanceCreateImageMetadataRequestBody  {
         this.osVersion = osVersion;
     }
 
+    
+
     public GlanceCreateImageMetadataRequestBody withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
         return this;
@@ -214,6 +216,8 @@ public class GlanceCreateImageMetadataRequestBody  {
     public void setContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
     }
+
+    
 
     public GlanceCreateImageMetadataRequestBody withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
@@ -235,6 +239,8 @@ public class GlanceCreateImageMetadataRequestBody  {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public GlanceCreateImageMetadataRequestBody withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
@@ -254,6 +260,8 @@ public class GlanceCreateImageMetadataRequestBody  {
     public void setMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
     }
+
+    
 
     public GlanceCreateImageMetadataRequestBody withMinRam(Integer minRam) {
         this.minRam = minRam;
@@ -275,6 +283,8 @@ public class GlanceCreateImageMetadataRequestBody  {
         this.minRam = minRam;
     }
 
+    
+
     public GlanceCreateImageMetadataRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -294,6 +304,8 @@ public class GlanceCreateImageMetadataRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GlanceCreateImageMetadataRequestBody withProtected(Boolean _protected) {
         this._protected = _protected;
@@ -315,6 +327,8 @@ public class GlanceCreateImageMetadataRequestBody  {
         this._protected = _protected;
     }
 
+    
+
     public GlanceCreateImageMetadataRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -322,9 +336,6 @@ public class GlanceCreateImageMetadataRequestBody  {
 
     
     public GlanceCreateImageMetadataRequestBody addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -349,6 +360,8 @@ public class GlanceCreateImageMetadataRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public GlanceCreateImageMetadataRequestBody withVisibility(String visibility) {
         this.visibility = visibility;
         return this;
@@ -368,6 +381,9 @@ public class GlanceCreateImageMetadataRequestBody  {
     public void setVisibility(String visibility) {
         this.visibility = visibility;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

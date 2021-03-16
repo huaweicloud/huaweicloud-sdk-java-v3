@@ -84,7 +84,7 @@ public class AppAuthBindedApiResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_time")
     
-    private OffsetDateTime authTime = null;
+    private OffsetDateTime authTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -310,6 +310,8 @@ public class AppAuthBindedApiResp  {
         this.apiId = apiId;
     }
 
+    
+
     public AppAuthBindedApiResp withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -329,6 +331,8 @@ public class AppAuthBindedApiResp  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public AppAuthBindedApiResp withEnvId(String envId) {
         this.envId = envId;
@@ -350,6 +354,8 @@ public class AppAuthBindedApiResp  {
         this.envId = envId;
     }
 
+    
+
     public AppAuthBindedApiResp withEnvName(String envName) {
         this.envName = envName;
         return this;
@@ -369,6 +375,8 @@ public class AppAuthBindedApiResp  {
     public void setEnvName(String envName) {
         this.envName = envName;
     }
+
+    
 
     public AppAuthBindedApiResp withGroupId(String groupId) {
         this.groupId = groupId;
@@ -390,6 +398,8 @@ public class AppAuthBindedApiResp  {
         this.groupId = groupId;
     }
 
+    
+
     public AppAuthBindedApiResp withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -409,6 +419,8 @@ public class AppAuthBindedApiResp  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    
 
     public AppAuthBindedApiResp withApiType(Integer apiType) {
         this.apiType = apiType;
@@ -430,6 +442,8 @@ public class AppAuthBindedApiResp  {
         this.apiType = apiType;
     }
 
+    
+
     public AppAuthBindedApiResp withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -449,6 +463,8 @@ public class AppAuthBindedApiResp  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
 
     public AppAuthBindedApiResp withAppId(String appId) {
         this.appId = appId;
@@ -470,6 +486,8 @@ public class AppAuthBindedApiResp  {
         this.appId = appId;
     }
 
+    
+
     public AppAuthBindedApiResp withAuthTime(OffsetDateTime authTime) {
         this.authTime = authTime;
         return this;
@@ -489,6 +507,8 @@ public class AppAuthBindedApiResp  {
     public void setAuthTime(OffsetDateTime authTime) {
         this.authTime = authTime;
     }
+
+    
 
     public AppAuthBindedApiResp withAppCreator(String appCreator) {
         this.appCreator = appCreator;
@@ -510,6 +530,8 @@ public class AppAuthBindedApiResp  {
         this.appCreator = appCreator;
     }
 
+    
+
     public AppAuthBindedApiResp withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
@@ -529,6 +551,8 @@ public class AppAuthBindedApiResp  {
     public void setAppType(AppTypeEnum appType) {
         this.appType = appType;
     }
+
+    
 
     public AppAuthBindedApiResp withId(String id) {
         this.id = id;
@@ -550,6 +574,8 @@ public class AppAuthBindedApiResp  {
         this.id = id;
     }
 
+    
+
     public AppAuthBindedApiResp withApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
         return this;
@@ -569,6 +595,8 @@ public class AppAuthBindedApiResp  {
     public void setApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
     }
+
+    
 
     public AppAuthBindedApiResp withAuthRole(String authRole) {
         this.authRole = authRole;
@@ -590,6 +618,8 @@ public class AppAuthBindedApiResp  {
         this.authRole = authRole;
     }
 
+    
+
     public AppAuthBindedApiResp withAuthTunnel(AuthTunnelEnum authTunnel) {
         this.authTunnel = authTunnel;
         return this;
@@ -610,6 +640,8 @@ public class AppAuthBindedApiResp  {
         this.authTunnel = authTunnel;
     }
 
+    
+
     public AppAuthBindedApiResp withAuthWhitelist(List<String> authWhitelist) {
         this.authWhitelist = authWhitelist;
         return this;
@@ -617,9 +649,6 @@ public class AppAuthBindedApiResp  {
 
     
     public AppAuthBindedApiResp addAuthWhitelistItem(String authWhitelistItem) {
-        if (this.authWhitelist == null) {
-            this.authWhitelist = new ArrayList<>();
-        }
         this.authWhitelist.add(authWhitelistItem);
         return this;
     }
@@ -644,6 +673,8 @@ public class AppAuthBindedApiResp  {
         this.authWhitelist = authWhitelist;
     }
 
+    
+
     public AppAuthBindedApiResp withAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
         return this;
@@ -651,9 +682,6 @@ public class AppAuthBindedApiResp  {
 
     
     public AppAuthBindedApiResp addAuthBlacklistItem(String authBlacklistItem) {
-        if (this.authBlacklist == null) {
-            this.authBlacklist = new ArrayList<>();
-        }
         this.authBlacklist.add(authBlacklistItem);
         return this;
     }
@@ -677,6 +705,9 @@ public class AppAuthBindedApiResp  {
     public void setAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

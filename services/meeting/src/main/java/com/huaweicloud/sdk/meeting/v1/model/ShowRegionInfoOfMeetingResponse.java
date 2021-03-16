@@ -51,6 +51,8 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
         this.regionIP = regionIP;
     }
 
+    
+
     public ShowRegionInfoOfMeetingResponse withRegionUrl(String regionUrl) {
         this.regionUrl = regionUrl;
         return this;
@@ -70,6 +72,9 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
     public void setRegionUrl(String regionUrl) {
         this.regionUrl = regionUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

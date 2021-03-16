@@ -22,7 +22,7 @@ public class CreateTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateTemplateReq body = null;
+    private CreateTemplateReq body;
 
     public CreateTemplateRequest withBody(CreateTemplateReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateTemplateRequest  {
     public void setBody(CreateTemplateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

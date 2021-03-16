@@ -55,6 +55,8 @@ public class NovaServerNetwork  {
         this.port = port;
     }
 
+    
+
     public NovaServerNetwork withUuid(String uuid) {
         this.uuid = uuid;
         return this;
@@ -75,6 +77,8 @@ public class NovaServerNetwork  {
         this.uuid = uuid;
     }
 
+    
+
     public NovaServerNetwork withFixedIp(String fixedIp) {
         this.fixedIp = fixedIp;
         return this;
@@ -94,6 +98,9 @@ public class NovaServerNetwork  {
     public void setFixedIp(String fixedIp) {
         this.fixedIp = fixedIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

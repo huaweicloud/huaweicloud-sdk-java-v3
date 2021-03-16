@@ -24,7 +24,7 @@ public class CreatePrivateipRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privateips")
     
-    private List<CreatePrivateipOption> privateips = new ArrayList<>();
+    private List<CreatePrivateipOption> privateips = null;
     
     public CreatePrivateipRequestBody withPrivateips(List<CreatePrivateipOption> privateips) {
         this.privateips = privateips;
@@ -56,6 +56,9 @@ public class CreatePrivateipRequestBody  {
     public void setPrivateips(List<CreatePrivateipOption> privateips) {
         this.privateips = privateips;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

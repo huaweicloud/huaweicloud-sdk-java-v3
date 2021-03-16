@@ -70,7 +70,7 @@ public class IncidentOperateLogV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timestamp_operate_time")
     
-    private OffsetDateTime timestampOperateTime = null;
+    private OffsetDateTime timestampOperateTime;
 
     public IncidentOperateLogV2 withIncidentLogId(String incidentLogId) {
         this.incidentLogId = incidentLogId;
@@ -92,6 +92,8 @@ public class IncidentOperateLogV2  {
         this.incidentLogId = incidentLogId;
     }
 
+    
+
     public IncidentOperateLogV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
@@ -111,6 +113,8 @@ public class IncidentOperateLogV2  {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
 
     public IncidentOperateLogV2 withOperateType(Integer operateType) {
         this.operateType = operateType;
@@ -134,6 +138,8 @@ public class IncidentOperateLogV2  {
         this.operateType = operateType;
     }
 
+    
+
     public IncidentOperateLogV2 withOperatorType(Integer operatorType) {
         this.operatorType = operatorType;
         return this;
@@ -156,6 +162,8 @@ public class IncidentOperateLogV2  {
         this.operatorType = operatorType;
     }
 
+    
+
     public IncidentOperateLogV2 withOperatorId(String operatorId) {
         this.operatorId = operatorId;
         return this;
@@ -175,6 +183,8 @@ public class IncidentOperateLogV2  {
     public void setOperatorId(String operatorId) {
         this.operatorId = operatorId;
     }
+
+    
 
     public IncidentOperateLogV2 withOperatorName(String operatorName) {
         this.operatorName = operatorName;
@@ -196,6 +206,8 @@ public class IncidentOperateLogV2  {
         this.operatorName = operatorName;
     }
 
+    
+
     public IncidentOperateLogV2 withOperateDesc(String operateDesc) {
         this.operateDesc = operateDesc;
         return this;
@@ -215,6 +227,8 @@ public class IncidentOperateLogV2  {
     public void setOperateDesc(String operateDesc) {
         this.operateDesc = operateDesc;
     }
+
+    
 
     public IncidentOperateLogV2 withOperateTime(String operateTime) {
         this.operateTime = operateTime;
@@ -236,6 +250,8 @@ public class IncidentOperateLogV2  {
         this.operateTime = operateTime;
     }
 
+    
+
     public IncidentOperateLogV2 withTimestampOperateTime(OffsetDateTime timestampOperateTime) {
         this.timestampOperateTime = timestampOperateTime;
         return this;
@@ -255,6 +271,9 @@ public class IncidentOperateLogV2  {
     public void setTimestampOperateTime(OffsetDateTime timestampOperateTime) {
         this.timestampOperateTime = timestampOperateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ColumnMapping  {
         this.columnName = columnName;
     }
 
+    
+
     public ColumnMapping withJsonKey(String jsonKey) {
         this.jsonKey = jsonKey;
         return this;
@@ -68,6 +70,9 @@ public class ColumnMapping  {
     public void setJsonKey(String jsonKey) {
         this.jsonKey = jsonKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

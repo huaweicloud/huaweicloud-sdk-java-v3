@@ -155,6 +155,8 @@ public class CreateL7ruleReqInPolicy  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreateL7ruleReqInPolicy withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -174,6 +176,8 @@ public class CreateL7ruleReqInPolicy  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public CreateL7ruleReqInPolicy withCompareType(String compareType) {
         this.compareType = compareType;
@@ -195,6 +199,8 @@ public class CreateL7ruleReqInPolicy  {
         this.compareType = compareType;
     }
 
+    
+
     public CreateL7ruleReqInPolicy withKey(String key) {
         this.key = key;
         return this;
@@ -214,6 +220,8 @@ public class CreateL7ruleReqInPolicy  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
 
     public CreateL7ruleReqInPolicy withValue(String value) {
         this.value = value;
@@ -235,6 +243,8 @@ public class CreateL7ruleReqInPolicy  {
         this.value = value;
     }
 
+    
+
     public CreateL7ruleReqInPolicy withInvert(Boolean invert) {
         this.invert = invert;
         return this;
@@ -254,6 +264,9 @@ public class CreateL7ruleReqInPolicy  {
     public void setInvert(Boolean invert) {
         this.invert = invert;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class DeleteCommandRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteCommandRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -74,6 +76,8 @@ public class DeleteCommandRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public DeleteCommandRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
@@ -96,6 +100,9 @@ public class DeleteCommandRequest  {
     public void setCommandId(Integer commandId) {
         this.commandId = commandId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

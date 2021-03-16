@@ -22,7 +22,7 @@ public class ReclaimSubEnterpriseAmountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RetrieveEnterpriseMultiAccountReq body = null;
+    private RetrieveEnterpriseMultiAccountReq body;
 
     public ReclaimSubEnterpriseAmountRequest withBody(RetrieveEnterpriseMultiAccountReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ReclaimSubEnterpriseAmountRequest  {
     public void setBody(RetrieveEnterpriseMultiAccountReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

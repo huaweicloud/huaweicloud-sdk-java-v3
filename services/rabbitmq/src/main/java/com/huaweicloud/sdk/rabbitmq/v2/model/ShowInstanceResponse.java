@@ -363,6 +363,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowInstanceResponse withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -382,6 +384,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setEngine(String engine) {
         this.engine = engine;
     }
+
+    
 
     public ShowInstanceResponse withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -403,6 +407,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.engineVersion = engineVersion;
     }
 
+    
+
     public ShowInstanceResponse withSpecification(String specification) {
         this.specification = specification;
         return this;
@@ -422,6 +428,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setSpecification(String specification) {
         this.specification = specification;
     }
+
+    
 
     public ShowInstanceResponse withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
@@ -443,6 +451,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.storageSpace = storageSpace;
     }
 
+    
+
     public ShowInstanceResponse withUsedStorageSpace(Integer usedStorageSpace) {
         this.usedStorageSpace = usedStorageSpace;
         return this;
@@ -462,6 +472,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setUsedStorageSpace(Integer usedStorageSpace) {
         this.usedStorageSpace = usedStorageSpace;
     }
+
+    
 
     public ShowInstanceResponse withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
@@ -483,6 +495,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.connectAddress = connectAddress;
     }
 
+    
+
     public ShowInstanceResponse withPort(Integer port) {
         this.port = port;
         return this;
@@ -502,6 +516,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
 
     public ShowInstanceResponse withStatus(String status) {
         this.status = status;
@@ -523,6 +539,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowInstanceResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -542,6 +560,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowInstanceResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -563,6 +583,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowInstanceResponse withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
@@ -582,6 +604,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
     }
+
+    
 
     public ShowInstanceResponse withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -603,6 +627,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ShowInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -622,6 +648,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public ShowInstanceResponse withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -643,6 +671,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.vpcName = vpcName;
     }
 
+    
+
     public ShowInstanceResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -662,6 +692,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public ShowInstanceResponse withUserId(String userId) {
         this.userId = userId;
@@ -683,6 +715,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.userId = userId;
     }
 
+    
+
     public ShowInstanceResponse withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -702,6 +736,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public ShowInstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
@@ -723,6 +759,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    
+
     public ShowInstanceResponse withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
         return this;
@@ -742,6 +780,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
     }
+
+    
 
     public ShowInstanceResponse withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
@@ -763,6 +803,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.maintainEnd = maintainEnd;
     }
 
+    
+
     public ShowInstanceResponse withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
@@ -782,6 +824,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
     }
+
+    
 
     public ShowInstanceResponse withPublicipAddress(String publicipAddress) {
         this.publicipAddress = publicipAddress;
@@ -803,6 +847,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.publicipAddress = publicipAddress;
     }
 
+    
+
     public ShowInstanceResponse withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -822,6 +868,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public ShowInstanceResponse withManagementConnectAddress(String managementConnectAddress) {
         this.managementConnectAddress = managementConnectAddress;
@@ -843,6 +891,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.managementConnectAddress = managementConnectAddress;
     }
 
+    
+
     public ShowInstanceResponse withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
         return this;
@@ -862,6 +912,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
     }
+
+    
 
     public ShowInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -883,6 +935,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ShowInstanceResponse withIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
         return this;
@@ -902,6 +956,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
     }
+
+    
 
     public ShowInstanceResponse withExtendTimes(Integer extendTimes) {
         this.extendTimes = extendTimes;
@@ -923,6 +979,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.extendTimes = extendTimes;
     }
 
+    
+
     public ShowInstanceResponse withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -942,6 +1000,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowInstanceResponse withProductId(String productId) {
         this.productId = productId;
@@ -963,6 +1023,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.productId = productId;
     }
 
+    
+
     public ShowInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -982,6 +1044,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public ShowInstanceResponse withSecurityGroupName(String securityGroupName) {
         this.securityGroupName = securityGroupName;
@@ -1003,6 +1067,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.securityGroupName = securityGroupName;
     }
 
+    
+
     public ShowInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -1023,6 +1089,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.subnetId = subnetId;
     }
 
+    
+
     public ShowInstanceResponse withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -1030,9 +1098,6 @@ public class ShowInstanceResponse extends SdkResponse {
 
     
     public ShowInstanceResponse addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -1057,6 +1122,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.availableZones = availableZones;
     }
 
+    
+
     public ShowInstanceResponse withTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
         return this;
@@ -1076,6 +1143,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
     }
+
+    
 
     public ShowInstanceResponse withStorageResourceId(String storageResourceId) {
         this.storageResourceId = storageResourceId;
@@ -1097,6 +1166,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.storageResourceId = storageResourceId;
     }
 
+    
+
     public ShowInstanceResponse withStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
         return this;
@@ -1116,6 +1187,8 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
     }
+
+    
 
     public ShowInstanceResponse withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
@@ -1137,6 +1210,8 @@ public class ShowInstanceResponse extends SdkResponse {
         this.ipv6Enable = ipv6Enable;
     }
 
+    
+
     public ShowInstanceResponse withIpv6ConnectAddresses(List<String> ipv6ConnectAddresses) {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
         return this;
@@ -1144,9 +1219,6 @@ public class ShowInstanceResponse extends SdkResponse {
 
     
     public ShowInstanceResponse addIpv6ConnectAddressesItem(String ipv6ConnectAddressesItem) {
-        if (this.ipv6ConnectAddresses == null) {
-            this.ipv6ConnectAddresses = new ArrayList<>();
-        }
         this.ipv6ConnectAddresses.add(ipv6ConnectAddressesItem);
         return this;
     }
@@ -1170,6 +1242,9 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setIpv6ConnectAddresses(List<String> ipv6ConnectAddresses) {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

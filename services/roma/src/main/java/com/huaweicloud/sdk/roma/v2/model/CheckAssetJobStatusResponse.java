@@ -237,13 +237,13 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    private BigDecimal beginTime = null;
+    private BigDecimal beginTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private BigDecimal endTime = null;
+    private BigDecimal endTime;
 
     public CheckAssetJobStatusResponse withId(String id) {
         this.id = id;
@@ -265,6 +265,8 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CheckAssetJobStatusResponse withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -284,6 +286,8 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public CheckAssetJobStatusResponse withStatus(StatusEnum status) {
         this.status = status;
@@ -305,6 +309,8 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CheckAssetJobStatusResponse withReasons(List<AssetJobReason> reasons) {
         this.reasons = reasons;
         return this;
@@ -312,9 +318,6 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
 
     
     public CheckAssetJobStatusResponse addReasonsItem(AssetJobReason reasonsItem) {
-        if (this.reasons == null) {
-            this.reasons = new ArrayList<>();
-        }
         this.reasons.add(reasonsItem);
         return this;
     }
@@ -339,6 +342,8 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.reasons = reasons;
     }
 
+    
+
     public CheckAssetJobStatusResponse withProgressPercent(Float progressPercent) {
         this.progressPercent = progressPercent;
         return this;
@@ -361,6 +366,8 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.progressPercent = progressPercent;
     }
 
+    
+
     public CheckAssetJobStatusResponse withArchiveId(String archiveId) {
         this.archiveId = archiveId;
         return this;
@@ -380,6 +387,8 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     public void setArchiveId(String archiveId) {
         this.archiveId = archiveId;
     }
+
+    
 
     public CheckAssetJobStatusResponse withBeginTime(BigDecimal beginTime) {
         this.beginTime = beginTime;
@@ -403,6 +412,8 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.beginTime = beginTime;
     }
 
+    
+
     public CheckAssetJobStatusResponse withEndTime(BigDecimal endTime) {
         this.endTime = endTime;
         return this;
@@ -424,6 +435,9 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     public void setEndTime(BigDecimal endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class UpdateTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateTemplateReq body = null;
+    private UpdateTemplateReq body;
 
     public UpdateTemplateRequest withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class UpdateTemplateRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateTemplateRequest withBody(UpdateTemplateReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateTemplateRequest  {
     public void setBody(UpdateTemplateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

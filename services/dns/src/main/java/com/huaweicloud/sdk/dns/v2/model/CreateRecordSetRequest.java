@@ -28,7 +28,7 @@ public class CreateRecordSetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateRecordSetReq body = null;
+    private CreateRecordSetReq body;
 
     public CreateRecordSetRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -49,6 +49,8 @@ public class CreateRecordSetRequest  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public CreateRecordSetRequest withBody(CreateRecordSetReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateRecordSetRequest  {
     public void setBody(CreateRecordSetReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

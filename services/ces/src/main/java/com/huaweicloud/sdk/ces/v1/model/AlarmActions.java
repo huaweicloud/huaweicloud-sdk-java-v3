@@ -29,7 +29,7 @@ public class AlarmActions  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="notificationList")
     
-    private List<String> notificationList = new ArrayList<>();
+    private List<String> notificationList = null;
     
     public AlarmActions withType(String type) {
         this.type = type;
@@ -50,6 +50,8 @@ public class AlarmActions  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public AlarmActions withNotificationList(List<String> notificationList) {
         this.notificationList = notificationList;
@@ -81,6 +83,9 @@ public class AlarmActions  {
     public void setNotificationList(List<String> notificationList) {
         this.notificationList = notificationList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

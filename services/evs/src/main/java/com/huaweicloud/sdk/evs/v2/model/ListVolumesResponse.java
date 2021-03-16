@@ -61,6 +61,8 @@ public class ListVolumesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListVolumesResponse withVolumesLinks(List<Link> volumesLinks) {
         this.volumesLinks = volumesLinks;
         return this;
@@ -68,9 +70,6 @@ public class ListVolumesResponse extends SdkResponse {
 
     
     public ListVolumesResponse addVolumesLinksItem(Link volumesLinksItem) {
-        if (this.volumesLinks == null) {
-            this.volumesLinks = new ArrayList<>();
-        }
         this.volumesLinks.add(volumesLinksItem);
         return this;
     }
@@ -95,6 +94,8 @@ public class ListVolumesResponse extends SdkResponse {
         this.volumesLinks = volumesLinks;
     }
 
+    
+
     public ListVolumesResponse withVolumes(List<VolumeDetail> volumes) {
         this.volumes = volumes;
         return this;
@@ -102,9 +103,6 @@ public class ListVolumesResponse extends SdkResponse {
 
     
     public ListVolumesResponse addVolumesItem(VolumeDetail volumesItem) {
-        if (this.volumes == null) {
-            this.volumes = new ArrayList<>();
-        }
         this.volumes.add(volumesItem);
         return this;
     }
@@ -128,6 +126,9 @@ public class ListVolumesResponse extends SdkResponse {
     public void setVolumes(List<VolumeDetail> volumes) {
         this.volumes = volumes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

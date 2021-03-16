@@ -42,6 +42,9 @@ public class ApiVersionInfo  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

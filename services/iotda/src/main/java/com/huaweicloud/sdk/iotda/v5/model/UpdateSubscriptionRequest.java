@@ -34,7 +34,7 @@ public class UpdateSubscriptionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateSubReq body = null;
+    private UpdateSubReq body;
 
     public UpdateSubscriptionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateSubscriptionRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateSubscriptionRequest withSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateSubscriptionRequest  {
     public void setSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
     }
+
+    
 
     public UpdateSubscriptionRequest withBody(UpdateSubReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateSubscriptionRequest  {
     public void setBody(UpdateSubReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

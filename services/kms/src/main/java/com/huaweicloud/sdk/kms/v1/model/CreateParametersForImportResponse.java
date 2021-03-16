@@ -63,6 +63,8 @@ public class CreateParametersForImportResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
+    
+
     public CreateParametersForImportResponse withImportToken(String importToken) {
         this.importToken = importToken;
         return this;
@@ -82,6 +84,8 @@ public class CreateParametersForImportResponse extends SdkResponse {
     public void setImportToken(String importToken) {
         this.importToken = importToken;
     }
+
+    
 
     public CreateParametersForImportResponse withExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
@@ -103,6 +107,8 @@ public class CreateParametersForImportResponse extends SdkResponse {
         this.expirationTime = expirationTime;
     }
 
+    
+
     public CreateParametersForImportResponse withPublicKey(String publicKey) {
         this.publicKey = publicKey;
         return this;
@@ -122,6 +128,9 @@ public class CreateParametersForImportResponse extends SdkResponse {
     public void setPublicKey(String publicKey) {
         this.publicKey = publicKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

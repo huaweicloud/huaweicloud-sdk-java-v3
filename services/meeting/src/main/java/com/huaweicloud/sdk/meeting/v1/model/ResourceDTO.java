@@ -51,7 +51,7 @@ public class ResourceDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="editable")
     
-    private Boolean editable = true;
+    private Boolean editable;
 
     public ResourceDTO withId(String id) {
         this.id = id;
@@ -73,6 +73,8 @@ public class ResourceDTO  {
         this.id = id;
     }
 
+    
+
     public ResourceDTO withType(String type) {
         this.type = type;
         return this;
@@ -92,6 +94,8 @@ public class ResourceDTO  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ResourceDTO withTypeId(String typeId) {
         this.typeId = typeId;
@@ -113,6 +117,8 @@ public class ResourceDTO  {
         this.typeId = typeId;
     }
 
+    
+
     public ResourceDTO withCount(Integer count) {
         this.count = count;
         return this;
@@ -132,6 +138,8 @@ public class ResourceDTO  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
 
     public ResourceDTO withExpireDate(Long expireDate) {
         this.expireDate = expireDate;
@@ -154,6 +162,8 @@ public class ResourceDTO  {
         this.expireDate = expireDate;
     }
 
+    
+
     public ResourceDTO withEditable(Boolean editable) {
         this.editable = editable;
         return this;
@@ -173,6 +183,9 @@ public class ResourceDTO  {
     public void setEditable(Boolean editable) {
         this.editable = editable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

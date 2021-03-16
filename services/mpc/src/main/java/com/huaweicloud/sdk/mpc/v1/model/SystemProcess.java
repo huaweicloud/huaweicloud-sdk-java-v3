@@ -116,13 +116,13 @@ public class SystemProcess  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hls_index")
     
-    private ObsObjInfo hlsIndex = null;
+    private ObsObjInfo hlsIndex;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dash_index")
     
-    private ObsObjInfo dashIndex = null;
+    private ObsObjInfo dashIndex;
 
     public SystemProcess withAppendType(AppendTypeEnum appendType) {
         this.appendType = appendType;
@@ -143,6 +143,8 @@ public class SystemProcess  {
     public void setAppendType(AppendTypeEnum appendType) {
         this.appendType = appendType;
     }
+
+    
 
     public SystemProcess withHlsIndex(ObsObjInfo hlsIndex) {
         this.hlsIndex = hlsIndex;
@@ -171,6 +173,8 @@ public class SystemProcess  {
         this.hlsIndex = hlsIndex;
     }
 
+    
+
     public SystemProcess withDashIndex(ObsObjInfo dashIndex) {
         this.dashIndex = dashIndex;
         return this;
@@ -197,6 +201,9 @@ public class SystemProcess  {
     public void setDashIndex(ObsObjInfo dashIndex) {
         this.dashIndex = dashIndex;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

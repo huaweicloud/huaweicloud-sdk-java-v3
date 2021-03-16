@@ -28,7 +28,7 @@ public class UpdateMessageTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateMessageTemplateRequestBody body = null;
+    private UpdateMessageTemplateRequestBody body;
 
     public UpdateMessageTemplateRequest withMessageTemplateId(String messageTemplateId) {
         this.messageTemplateId = messageTemplateId;
@@ -49,6 +49,8 @@ public class UpdateMessageTemplateRequest  {
     public void setMessageTemplateId(String messageTemplateId) {
         this.messageTemplateId = messageTemplateId;
     }
+
+    
 
     public UpdateMessageTemplateRequest withBody(UpdateMessageTemplateRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateMessageTemplateRequest  {
     public void setBody(UpdateMessageTemplateRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

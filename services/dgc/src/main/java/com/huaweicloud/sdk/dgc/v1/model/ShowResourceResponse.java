@@ -165,6 +165,8 @@ public class ShowResourceResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowResourceResponse withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -184,6 +186,8 @@ public class ShowResourceResponse extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowResourceResponse withLocation(String location) {
         this.location = location;
@@ -205,6 +209,8 @@ public class ShowResourceResponse extends SdkResponse {
         this.location = location;
     }
 
+    
+
     public ShowResourceResponse withDependFiles(List<String> dependFiles) {
         this.dependFiles = dependFiles;
         return this;
@@ -212,9 +218,6 @@ public class ShowResourceResponse extends SdkResponse {
 
     
     public ShowResourceResponse addDependFilesItem(String dependFilesItem) {
-        if (this.dependFiles == null) {
-            this.dependFiles = new ArrayList<>();
-        }
         this.dependFiles.add(dependFilesItem);
         return this;
     }
@@ -239,6 +242,8 @@ public class ShowResourceResponse extends SdkResponse {
         this.dependFiles = dependFiles;
     }
 
+    
+
     public ShowResourceResponse withDesc(String desc) {
         this.desc = desc;
         return this;
@@ -259,6 +264,8 @@ public class ShowResourceResponse extends SdkResponse {
         this.desc = desc;
     }
 
+    
+
     public ShowResourceResponse withDirectory(String directory) {
         this.directory = directory;
         return this;
@@ -278,6 +285,9 @@ public class ShowResourceResponse extends SdkResponse {
     public void setDirectory(String directory) {
         this.directory = directory;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

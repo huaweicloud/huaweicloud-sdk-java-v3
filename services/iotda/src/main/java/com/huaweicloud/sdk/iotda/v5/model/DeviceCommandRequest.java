@@ -33,7 +33,7 @@ public class DeviceCommandRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paras")
     
-    private Object paras = null;
+    private Object paras;
 
     public DeviceCommandRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
@@ -55,6 +55,8 @@ public class DeviceCommandRequest  {
         this.serviceId = serviceId;
     }
 
+    
+
     public DeviceCommandRequest withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
@@ -75,6 +77,8 @@ public class DeviceCommandRequest  {
         this.commandName = commandName;
     }
 
+    
+
     public DeviceCommandRequest withParas(Object paras) {
         this.paras = paras;
         return this;
@@ -94,6 +98,9 @@ public class DeviceCommandRequest  {
     public void setParas(Object paras) {
         this.paras = paras;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

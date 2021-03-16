@@ -24,7 +24,7 @@ public class ListSnapshotDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snapshot")
     
-    private SnapshoDetail snapshot = null;
+    private SnapshoDetail snapshot;
 
     public ListSnapshotDetailsResponse withSnapshot(SnapshoDetail snapshot) {
         this.snapshot = snapshot;
@@ -52,6 +52,9 @@ public class ListSnapshotDetailsResponse extends SdkResponse {
     public void setSnapshot(SnapshoDetail snapshot) {
         this.snapshot = snapshot;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

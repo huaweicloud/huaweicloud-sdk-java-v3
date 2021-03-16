@@ -59,6 +59,8 @@ public class Org  {
         this.mspId = mspId;
     }
 
+    
+
     public Org withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -79,6 +81,8 @@ public class Org  {
         this.domain = domain;
     }
 
+    
+
     public Org withPeers(Map<String, Node> peers) {
         this.peers = peers;
         return this;
@@ -87,9 +91,6 @@ public class Org  {
     
 
     public Org putPeersItem(String key, Node peersItem) {
-         if (this.peers == null) {
-            this.peers = new HashMap<>();
-         }
         this.peers.put(key, peersItem);
         return this;
     }
@@ -112,6 +113,9 @@ public class Org  {
     public void setPeers(Map<String, Node> peers) {
         this.peers = peers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ParameterGroup  {
         this.name = name;
     }
 
+    
+
     public ParameterGroup withId(String id) {
         this.id = id;
         return this;
@@ -75,6 +77,8 @@ public class ParameterGroup  {
         this.id = id;
     }
 
+    
+
     public ParameterGroup withStatus(String status) {
         this.status = status;
         return this;
@@ -94,6 +98,9 @@ public class ParameterGroup  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

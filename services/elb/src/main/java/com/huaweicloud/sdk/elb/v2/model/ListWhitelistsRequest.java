@@ -81,6 +81,8 @@ public class ListWhitelistsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListWhitelistsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -100,6 +102,8 @@ public class ListWhitelistsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListWhitelistsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
@@ -121,6 +125,8 @@ public class ListWhitelistsRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListWhitelistsRequest withId(String id) {
         this.id = id;
         return this;
@@ -140,6 +146,8 @@ public class ListWhitelistsRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListWhitelistsRequest withEnableWhitelist(Boolean enableWhitelist) {
         this.enableWhitelist = enableWhitelist;
@@ -161,6 +169,8 @@ public class ListWhitelistsRequest  {
         this.enableWhitelist = enableWhitelist;
     }
 
+    
+
     public ListWhitelistsRequest withListenerId(String listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -181,6 +191,8 @@ public class ListWhitelistsRequest  {
         this.listenerId = listenerId;
     }
 
+    
+
     public ListWhitelistsRequest withWhitelist(String whitelist) {
         this.whitelist = whitelist;
         return this;
@@ -200,6 +212,9 @@ public class ListWhitelistsRequest  {
     public void setWhitelist(String whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

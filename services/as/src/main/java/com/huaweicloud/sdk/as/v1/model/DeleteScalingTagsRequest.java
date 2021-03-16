@@ -110,7 +110,7 @@ public class DeleteScalingTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteScalingTagsRequestBody body = null;
+    private DeleteScalingTagsRequestBody body;
 
     public DeleteScalingTagsRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
@@ -132,6 +132,8 @@ public class DeleteScalingTagsRequest  {
         this.resourceType = resourceType;
     }
 
+    
+
     public DeleteScalingTagsRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -151,6 +153,8 @@ public class DeleteScalingTagsRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public DeleteScalingTagsRequest withBody(DeleteScalingTagsRequestBody body) {
         this.body = body;
@@ -178,6 +182,9 @@ public class DeleteScalingTagsRequest  {
     public void setBody(DeleteScalingTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

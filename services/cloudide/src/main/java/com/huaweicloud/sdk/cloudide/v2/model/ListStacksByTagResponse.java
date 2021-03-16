@@ -24,7 +24,7 @@ public class ListStacksByTagResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stack")
     
-    private StacksTag stack = null;
+    private StacksTag stack;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class ListStacksByTagResponse extends SdkResponse {
         this.stack = stack;
     }
 
+    
+
     public ListStacksByTagResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -78,6 +80,9 @@ public class ListStacksByTagResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

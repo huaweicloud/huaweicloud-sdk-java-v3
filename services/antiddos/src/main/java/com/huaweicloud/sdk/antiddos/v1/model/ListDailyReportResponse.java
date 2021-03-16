@@ -35,9 +35,6 @@ public class ListDailyReportResponse extends SdkResponse {
 
     
     public ListDailyReportResponse addDataItem(DailyData dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
         this.data.add(dataItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListDailyReportResponse extends SdkResponse {
     public void setData(List<DailyData> data) {
         this.data = data;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

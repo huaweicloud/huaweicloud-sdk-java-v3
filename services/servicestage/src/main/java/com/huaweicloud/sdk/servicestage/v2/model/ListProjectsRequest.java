@@ -51,6 +51,8 @@ public class ListProjectsRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public ListProjectsRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -70,6 +72,9 @@ public class ListProjectsRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

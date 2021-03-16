@@ -55,6 +55,8 @@ public class UpdateKeyDescriptionRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public UpdateKeyDescriptionRequestBody withKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
         return this;
@@ -75,6 +77,8 @@ public class UpdateKeyDescriptionRequestBody  {
         this.keyDescription = keyDescription;
     }
 
+    
+
     public UpdateKeyDescriptionRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -94,6 +98,9 @@ public class UpdateKeyDescriptionRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

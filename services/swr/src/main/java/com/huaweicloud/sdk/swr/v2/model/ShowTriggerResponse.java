@@ -132,6 +132,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.action = action;
     }
 
+    
+
     public ShowTriggerResponse withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -151,6 +153,8 @@ public class ShowTriggerResponse extends SdkResponse {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public ShowTriggerResponse withApplication(String application) {
         this.application = application;
@@ -172,6 +176,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.application = application;
     }
 
+    
+
     public ShowTriggerResponse withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -191,6 +197,8 @@ public class ShowTriggerResponse extends SdkResponse {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public ShowTriggerResponse withClusterName(String clusterName) {
         this.clusterName = clusterName;
@@ -212,6 +220,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.clusterName = clusterName;
     }
 
+    
+
     public ShowTriggerResponse withClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
         return this;
@@ -231,6 +241,8 @@ public class ShowTriggerResponse extends SdkResponse {
     public void setClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
     }
+
+    
 
     public ShowTriggerResponse withCondition(String condition) {
         this.condition = condition;
@@ -252,6 +264,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.condition = condition;
     }
 
+    
+
     public ShowTriggerResponse withContainer(String container) {
         this.container = container;
         return this;
@@ -271,6 +285,8 @@ public class ShowTriggerResponse extends SdkResponse {
     public void setContainer(String container) {
         this.container = container;
     }
+
+    
 
     public ShowTriggerResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -292,6 +308,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public ShowTriggerResponse withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
@@ -311,6 +329,8 @@ public class ShowTriggerResponse extends SdkResponse {
     public void setCreatorName(String creatorName) {
         this.creatorName = creatorName;
     }
+
+    
 
     public ShowTriggerResponse withEnable(String enable) {
         this.enable = enable;
@@ -332,6 +352,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.enable = enable;
     }
 
+    
+
     public ShowTriggerResponse withName(String name) {
         this.name = name;
         return this;
@@ -352,6 +374,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowTriggerResponse withTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
         return this;
@@ -359,9 +383,6 @@ public class ShowTriggerResponse extends SdkResponse {
 
     
     public ShowTriggerResponse addTriggerHistoryItem(TriggerHistories triggerHistoryItem) {
-        if (this.triggerHistory == null) {
-            this.triggerHistory = new ArrayList<>();
-        }
         this.triggerHistory.add(triggerHistoryItem);
         return this;
     }
@@ -386,6 +407,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.triggerHistory = triggerHistory;
     }
 
+    
+
     public ShowTriggerResponse withTriggerMode(String triggerMode) {
         this.triggerMode = triggerMode;
         return this;
@@ -406,6 +429,8 @@ public class ShowTriggerResponse extends SdkResponse {
         this.triggerMode = triggerMode;
     }
 
+    
+
     public ShowTriggerResponse withTriggerType(String triggerType) {
         this.triggerType = triggerType;
         return this;
@@ -425,6 +450,9 @@ public class ShowTriggerResponse extends SdkResponse {
     public void setTriggerType(String triggerType) {
         this.triggerType = triggerType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

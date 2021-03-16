@@ -61,6 +61,8 @@ public class CheckTaskJobsItemsBody  {
         this.jobId = jobId;
     }
 
+    
+
     public CheckTaskJobsItemsBody withStatus(String status) {
         this.status = status;
         return this;
@@ -80,6 +82,8 @@ public class CheckTaskJobsItemsBody  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public CheckTaskJobsItemsBody withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -101,6 +105,8 @@ public class CheckTaskJobsItemsBody  {
         this.createTime = createTime;
     }
 
+    
+
     public CheckTaskJobsItemsBody withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -120,6 +126,9 @@ public class CheckTaskJobsItemsBody  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

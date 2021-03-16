@@ -49,6 +49,8 @@ public class LtsForwarding  {
         this.logGroupId = logGroupId;
     }
 
+    
+
     public LtsForwarding withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
         return this;
@@ -68,6 +70,9 @@ public class LtsForwarding  {
     public void setLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

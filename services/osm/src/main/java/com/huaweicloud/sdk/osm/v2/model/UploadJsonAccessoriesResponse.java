@@ -44,6 +44,9 @@ public class UploadJsonAccessoriesResponse extends SdkResponse {
     public void setAccessoryId(String accessoryId) {
         this.accessoryId = accessoryId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

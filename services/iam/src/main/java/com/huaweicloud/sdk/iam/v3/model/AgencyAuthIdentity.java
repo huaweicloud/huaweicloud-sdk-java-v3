@@ -101,19 +101,19 @@ public class AgencyAuthIdentity  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<MethodsEnum> methods = new ArrayList<>();
+    private List<MethodsEnum> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assume_role")
     
-    private IdentityAssumerole assumeRole = null;
+    private IdentityAssumerole assumeRole;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private ServicePolicy policy = null;
+    private ServicePolicy policy;
 
     public AgencyAuthIdentity withMethods(List<MethodsEnum> methods) {
         this.methods = methods;
@@ -146,6 +146,8 @@ public class AgencyAuthIdentity  {
         this.methods = methods;
     }
 
+    
+
     public AgencyAuthIdentity withAssumeRole(IdentityAssumerole assumeRole) {
         this.assumeRole = assumeRole;
         return this;
@@ -173,6 +175,8 @@ public class AgencyAuthIdentity  {
         this.assumeRole = assumeRole;
     }
 
+    
+
     public AgencyAuthIdentity withPolicy(ServicePolicy policy) {
         this.policy = policy;
         return this;
@@ -199,6 +203,9 @@ public class AgencyAuthIdentity  {
     public void setPolicy(ServicePolicy policy) {
         this.policy = policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

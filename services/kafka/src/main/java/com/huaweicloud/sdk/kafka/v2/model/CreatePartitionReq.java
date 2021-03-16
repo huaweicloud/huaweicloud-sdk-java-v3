@@ -42,6 +42,9 @@ public class CreatePartitionReq  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

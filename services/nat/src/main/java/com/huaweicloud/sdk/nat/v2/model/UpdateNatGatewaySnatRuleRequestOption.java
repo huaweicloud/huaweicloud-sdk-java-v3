@@ -22,7 +22,7 @@ public class UpdateNatGatewaySnatRuleRequestOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snat_rule")
     
-    private UpdateNatGatewaySnatRuleOption snatRule = null;
+    private UpdateNatGatewaySnatRuleOption snatRule;
 
     public UpdateNatGatewaySnatRuleRequestOption withSnatRule(UpdateNatGatewaySnatRuleOption snatRule) {
         this.snatRule = snatRule;
@@ -50,6 +50,9 @@ public class UpdateNatGatewaySnatRuleRequestOption  {
     public void setSnatRule(UpdateNatGatewaySnatRuleOption snatRule) {
         this.snatRule = snatRule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class CreateDictionaryRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateDictionary body = null;
+    private CreateDictionary body;
 
     public CreateDictionaryRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateDictionaryRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateDictionaryRequest withBody(CreateDictionary body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateDictionaryRequest  {
     public void setBody(CreateDictionary body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

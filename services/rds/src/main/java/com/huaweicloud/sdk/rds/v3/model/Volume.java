@@ -149,6 +149,8 @@ public class Volume  {
         this.type = type;
     }
 
+    
+
     public Volume withSize(Integer size) {
         this.size = size;
         return this;
@@ -168,6 +170,9 @@ public class Volume  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

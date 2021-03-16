@@ -60,6 +60,8 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListRequestThrottlingPolicyV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListRequestThrottlingPolicyV2Response withThrottles(List<ThrottleResp> throttles) {
         this.throttles = throttles;
         return this;
@@ -87,9 +91,6 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
 
     
     public ListRequestThrottlingPolicyV2Response addThrottlesItem(ThrottleResp throttlesItem) {
-        if (this.throttles == null) {
-            this.throttles = new ArrayList<>();
-        }
         this.throttles.add(throttlesItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
     public void setThrottles(List<ThrottleResp> throttles) {
         this.throttles = throttles;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

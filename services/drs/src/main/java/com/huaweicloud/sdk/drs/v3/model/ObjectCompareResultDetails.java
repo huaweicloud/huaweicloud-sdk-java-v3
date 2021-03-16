@@ -67,6 +67,8 @@ public class ObjectCompareResultDetails  {
         this.sourceDbName = sourceDbName;
     }
 
+    
+
     public ObjectCompareResultDetails withTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
         return this;
@@ -86,6 +88,8 @@ public class ObjectCompareResultDetails  {
     public void setTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
     }
+
+    
 
     public ObjectCompareResultDetails withSourceDbValue(String sourceDbValue) {
         this.sourceDbValue = sourceDbValue;
@@ -107,6 +111,8 @@ public class ObjectCompareResultDetails  {
         this.sourceDbValue = sourceDbValue;
     }
 
+    
+
     public ObjectCompareResultDetails withTargetDbValue(String targetDbValue) {
         this.targetDbValue = targetDbValue;
         return this;
@@ -127,6 +133,8 @@ public class ObjectCompareResultDetails  {
         this.targetDbValue = targetDbValue;
     }
 
+    
+
     public ObjectCompareResultDetails withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -146,6 +154,9 @@ public class ObjectCompareResultDetails  {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

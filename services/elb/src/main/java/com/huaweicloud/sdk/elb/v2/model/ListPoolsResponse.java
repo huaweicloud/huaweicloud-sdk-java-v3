@@ -35,9 +35,6 @@ public class ListPoolsResponse extends SdkResponse {
 
     
     public ListPoolsResponse addPoolsItem(PoolResp poolsItem) {
-        if (this.pools == null) {
-            this.pools = new ArrayList<>();
-        }
         this.pools.add(poolsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListPoolsResponse extends SdkResponse {
     public void setPools(List<PoolResp> pools) {
         this.pools = pools;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

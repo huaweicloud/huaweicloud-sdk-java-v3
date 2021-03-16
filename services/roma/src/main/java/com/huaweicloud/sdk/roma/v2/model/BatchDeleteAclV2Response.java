@@ -54,6 +54,8 @@ public class BatchDeleteAclV2Response extends SdkResponse {
         this.successCount = successCount;
     }
 
+    
+
     public BatchDeleteAclV2Response withFailure(List<AclBatchResultFailureResp> failure) {
         this.failure = failure;
         return this;
@@ -61,9 +63,6 @@ public class BatchDeleteAclV2Response extends SdkResponse {
 
     
     public BatchDeleteAclV2Response addFailureItem(AclBatchResultFailureResp failureItem) {
-        if (this.failure == null) {
-            this.failure = new ArrayList<>();
-        }
         this.failure.add(failureItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class BatchDeleteAclV2Response extends SdkResponse {
     public void setFailure(List<AclBatchResultFailureResp> failure) {
         this.failure = failure;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

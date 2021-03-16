@@ -91,6 +91,8 @@ public class AgencyResult  {
         this.createTime = createTime;
     }
 
+    
+
     public AgencyResult withDescription(String description) {
         this.description = description;
         return this;
@@ -110,6 +112,8 @@ public class AgencyResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public AgencyResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -131,6 +135,8 @@ public class AgencyResult  {
         this.domainId = domainId;
     }
 
+    
+
     public AgencyResult withDuration(String duration) {
         this.duration = duration;
         return this;
@@ -150,6 +156,8 @@ public class AgencyResult  {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+
+    
 
     public AgencyResult withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -171,6 +179,8 @@ public class AgencyResult  {
         this.expireTime = expireTime;
     }
 
+    
+
     public AgencyResult withId(String id) {
         this.id = id;
         return this;
@@ -190,6 +200,8 @@ public class AgencyResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AgencyResult withName(String name) {
         this.name = name;
@@ -211,6 +223,8 @@ public class AgencyResult  {
         this.name = name;
     }
 
+    
+
     public AgencyResult withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
         return this;
@@ -231,6 +245,8 @@ public class AgencyResult  {
         this.trustDomainId = trustDomainId;
     }
 
+    
+
     public AgencyResult withTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
         return this;
@@ -250,6 +266,9 @@ public class AgencyResult  {
     public void setTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

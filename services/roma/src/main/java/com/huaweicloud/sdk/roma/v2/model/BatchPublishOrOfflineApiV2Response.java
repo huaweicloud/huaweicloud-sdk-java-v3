@@ -42,9 +42,6 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
 
     
     public BatchPublishOrOfflineApiV2Response addSuccessItem(BatchSuccess successItem) {
-        if (this.success == null) {
-            this.success = new ArrayList<>();
-        }
         this.success.add(successItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
         this.success = success;
     }
 
+    
+
     public BatchPublishOrOfflineApiV2Response withFailure(List<BatchFailure> failure) {
         this.failure = failure;
         return this;
@@ -76,9 +75,6 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
 
     
     public BatchPublishOrOfflineApiV2Response addFailureItem(BatchFailure failureItem) {
-        if (this.failure == null) {
-            this.failure = new ArrayList<>();
-        }
         this.failure.add(failureItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
     public void setFailure(List<BatchFailure> failure) {
         this.failure = failure;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

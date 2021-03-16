@@ -64,6 +64,8 @@ public class SendCommandRequestBody  {
         this.serviceId = serviceId;
     }
 
+    
+
     public SendCommandRequestBody withCommandId(Integer commandId) {
         this.commandId = commandId;
         return this;
@@ -83,6 +85,8 @@ public class SendCommandRequestBody  {
     public void setCommandId(Integer commandId) {
         this.commandId = commandId;
     }
+
+    
 
     public SendCommandRequestBody withIsSync(Boolean isSync) {
         this.isSync = isSync;
@@ -104,6 +108,8 @@ public class SendCommandRequestBody  {
         this.isSync = isSync;
     }
 
+    
+
     public SendCommandRequestBody withRequests(List<RequestParameter> requests) {
         this.requests = requests;
         return this;
@@ -111,9 +117,6 @@ public class SendCommandRequestBody  {
 
     
     public SendCommandRequestBody addRequestsItem(RequestParameter requestsItem) {
-        if (this.requests == null) {
-            this.requests = new ArrayList<>();
-        }
         this.requests.add(requestsItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class SendCommandRequestBody  {
     public void setRequests(List<RequestParameter> requests) {
         this.requests = requests;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

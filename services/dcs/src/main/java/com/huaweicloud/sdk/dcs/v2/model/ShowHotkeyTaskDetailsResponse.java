@@ -270,6 +270,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowHotkeyTaskDetailsResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -289,6 +291,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ShowHotkeyTaskDetailsResponse withStatus(StatusEnum status) {
         this.status = status;
@@ -310,6 +314,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowHotkeyTaskDetailsResponse withScanType(ScanTypeEnum scanType) {
         this.scanType = scanType;
         return this;
@@ -329,6 +335,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
     public void setScanType(ScanTypeEnum scanType) {
         this.scanType = scanType;
     }
+
+    
 
     public ShowHotkeyTaskDetailsResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -350,6 +358,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public ShowHotkeyTaskDetailsResponse withStartedAt(String startedAt) {
         this.startedAt = startedAt;
         return this;
@@ -369,6 +379,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
     public void setStartedAt(String startedAt) {
         this.startedAt = startedAt;
     }
+
+    
 
     public ShowHotkeyTaskDetailsResponse withFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
@@ -390,6 +402,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
         this.finishedAt = finishedAt;
     }
 
+    
+
     public ShowHotkeyTaskDetailsResponse withNum(Integer num) {
         this.num = num;
         return this;
@@ -410,6 +424,8 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
         this.num = num;
     }
 
+    
+
     public ShowHotkeyTaskDetailsResponse withKeys(List<HotkeysBody> keys) {
         this.keys = keys;
         return this;
@@ -417,9 +433,6 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
 
     
     public ShowHotkeyTaskDetailsResponse addKeysItem(HotkeysBody keysItem) {
-        if (this.keys == null) {
-            this.keys = new ArrayList<>();
-        }
         this.keys.add(keysItem);
         return this;
     }
@@ -443,6 +456,9 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
     public void setKeys(List<HotkeysBody> keys) {
         this.keys = keys;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

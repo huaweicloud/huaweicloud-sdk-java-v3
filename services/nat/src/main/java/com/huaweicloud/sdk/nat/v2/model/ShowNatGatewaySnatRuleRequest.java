@@ -42,6 +42,9 @@ public class ShowNatGatewaySnatRuleRequest  {
     public void setSnatRuleId(String snatRuleId) {
         this.snatRuleId = snatRuleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -104,13 +104,13 @@ public class BatchSetObjectsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchUpdateDatabaseObjectReq body = null;
+    private BatchUpdateDatabaseObjectReq body;
 
     public BatchSetObjectsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchSetObjectsRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchSetObjectsRequest withBody(BatchUpdateDatabaseObjectReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchSetObjectsRequest  {
     public void setBody(BatchUpdateDatabaseObjectReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class Context  {
         this.cluster = cluster;
     }
 
+    
+
     public Context withUser(String user) {
         this.user = user;
         return this;
@@ -68,6 +70,9 @@ public class Context  {
     public void setUser(String user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

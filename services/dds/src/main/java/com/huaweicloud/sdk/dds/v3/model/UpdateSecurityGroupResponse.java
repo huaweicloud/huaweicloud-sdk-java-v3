@@ -51,6 +51,8 @@ public class UpdateSecurityGroupResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public UpdateSecurityGroupResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -70,6 +72,9 @@ public class UpdateSecurityGroupResponse extends SdkResponse {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

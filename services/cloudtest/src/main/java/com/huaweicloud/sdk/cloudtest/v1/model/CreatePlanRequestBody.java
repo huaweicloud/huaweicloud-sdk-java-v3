@@ -36,13 +36,13 @@ public class CreatePlanRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_id_list")
     
-    private List<Integer> serviceIdList = new ArrayList<>();
+    private List<Integer> serviceIdList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="plan_cycle")
     
-    private PlanCycle planCycle = null;
+    private PlanCycle planCycle;
 
     public CreatePlanRequestBody withName(String name) {
         this.name = name;
@@ -64,6 +64,8 @@ public class CreatePlanRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreatePlanRequestBody withAssignedId(String assignedId) {
         this.assignedId = assignedId;
         return this;
@@ -83,6 +85,8 @@ public class CreatePlanRequestBody  {
     public void setAssignedId(String assignedId) {
         this.assignedId = assignedId;
     }
+
+    
 
     public CreatePlanRequestBody withServiceIdList(List<Integer> serviceIdList) {
         this.serviceIdList = serviceIdList;
@@ -115,6 +119,8 @@ public class CreatePlanRequestBody  {
         this.serviceIdList = serviceIdList;
     }
 
+    
+
     public CreatePlanRequestBody withPlanCycle(PlanCycle planCycle) {
         this.planCycle = planCycle;
         return this;
@@ -141,6 +147,9 @@ public class CreatePlanRequestBody  {
     public void setPlanCycle(PlanCycle planCycle) {
         this.planCycle = planCycle;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

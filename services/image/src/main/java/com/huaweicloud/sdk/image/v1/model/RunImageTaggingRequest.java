@@ -22,7 +22,7 @@ public class RunImageTaggingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ImageTaggingReq body = null;
+    private ImageTaggingReq body;
 
     public RunImageTaggingRequest withBody(ImageTaggingReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RunImageTaggingRequest  {
     public void setBody(ImageTaggingReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

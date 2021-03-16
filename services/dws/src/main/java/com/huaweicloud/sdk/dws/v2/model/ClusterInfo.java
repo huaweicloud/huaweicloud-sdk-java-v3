@@ -28,13 +28,13 @@ public class ClusterInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_progress")
     
-    private Map<String, String> actionProgress = new HashMap<>();
+    private Map<String, String> actionProgress = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failed_reasons")
     
-    private Object failedReasons = null;
+    private Object failedReasons;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,7 +46,7 @@ public class ClusterInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoints")
     
-    private Endpoints endpoints = null;
+    private Endpoints endpoints;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,7 +58,7 @@ public class ClusterInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    private PublicIp publicIp = null;
+    private PublicIp publicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,7 +112,7 @@ public class ClusterInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private Tags tags = null;
+    private Tags tags;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -148,7 +148,7 @@ public class ClusterInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_endpoints")
     
-    private PublicEndpoints publicEndpoints = null;
+    private PublicEndpoints publicEndpoints;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -199,6 +199,8 @@ public class ClusterInfo  {
         this.actionProgress = actionProgress;
     }
 
+    
+
     public ClusterInfo withFailedReasons(Object failedReasons) {
         this.failedReasons = failedReasons;
         return this;
@@ -219,6 +221,8 @@ public class ClusterInfo  {
         this.failedReasons = failedReasons;
     }
 
+    
+
     public ClusterInfo withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -238,6 +242,8 @@ public class ClusterInfo  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public ClusterInfo withEndpoints(Endpoints endpoints) {
         this.endpoints = endpoints;
@@ -266,6 +272,8 @@ public class ClusterInfo  {
         this.endpoints = endpoints;
     }
 
+    
+
     public ClusterInfo withTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
         return this;
@@ -285,6 +293,8 @@ public class ClusterInfo  {
     public void setTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
     }
+
+    
 
     public ClusterInfo withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
@@ -313,6 +323,8 @@ public class ClusterInfo  {
         this.publicIp = publicIp;
     }
 
+    
+
     public ClusterInfo withSubStatus(String subStatus) {
         this.subStatus = subStatus;
         return this;
@@ -332,6 +344,8 @@ public class ClusterInfo  {
     public void setSubStatus(String subStatus) {
         this.subStatus = subStatus;
     }
+
+    
 
     public ClusterInfo withNumberOfNode(Integer numberOfNode) {
         this.numberOfNode = numberOfNode;
@@ -355,6 +369,8 @@ public class ClusterInfo  {
         this.numberOfNode = numberOfNode;
     }
 
+    
+
     public ClusterInfo withRecentEvent(Integer recentEvent) {
         this.recentEvent = recentEvent;
         return this;
@@ -374,6 +390,8 @@ public class ClusterInfo  {
     public void setRecentEvent(Integer recentEvent) {
         this.recentEvent = recentEvent;
     }
+
+    
 
     public ClusterInfo withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -395,6 +413,8 @@ public class ClusterInfo  {
         this.vpcId = vpcId;
     }
 
+    
+
     public ClusterInfo withCreated(String created) {
         this.created = created;
         return this;
@@ -414,6 +434,8 @@ public class ClusterInfo  {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public ClusterInfo withUserName(String userName) {
         this.userName = userName;
@@ -435,6 +457,8 @@ public class ClusterInfo  {
         this.userName = userName;
     }
 
+    
+
     public ClusterInfo withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -455,6 +479,8 @@ public class ClusterInfo  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public ClusterInfo withVersion(String version) {
         this.version = version;
         return this;
@@ -474,6 +500,8 @@ public class ClusterInfo  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ClusterInfo withTags(Tags tags) {
         this.tags = tags;
@@ -502,6 +530,8 @@ public class ClusterInfo  {
         this.tags = tags;
     }
 
+    
+
     public ClusterInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -522,6 +552,8 @@ public class ClusterInfo  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ClusterInfo withNodeType(String nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -541,6 +573,8 @@ public class ClusterInfo  {
     public void setNodeType(String nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public ClusterInfo withPort(Integer port) {
         this.port = port;
@@ -564,6 +598,8 @@ public class ClusterInfo  {
         this.port = port;
     }
 
+    
+
     public ClusterInfo withName(String name) {
         this.name = name;
         return this;
@@ -584,6 +620,8 @@ public class ClusterInfo  {
         this.name = name;
     }
 
+    
+
     public ClusterInfo withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -603,6 +641,8 @@ public class ClusterInfo  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public ClusterInfo withPublicEndpoints(PublicEndpoints publicEndpoints) {
         this.publicEndpoints = publicEndpoints;
@@ -631,6 +671,8 @@ public class ClusterInfo  {
         this.publicEndpoints = publicEndpoints;
     }
 
+    
+
     public ClusterInfo withId(String id) {
         this.id = id;
         return this;
@@ -650,6 +692,8 @@ public class ClusterInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ClusterInfo withUpdated(String updated) {
         this.updated = updated;
@@ -671,6 +715,8 @@ public class ClusterInfo  {
         this.updated = updated;
     }
 
+    
+
     public ClusterInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -690,6 +736,9 @@ public class ClusterInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

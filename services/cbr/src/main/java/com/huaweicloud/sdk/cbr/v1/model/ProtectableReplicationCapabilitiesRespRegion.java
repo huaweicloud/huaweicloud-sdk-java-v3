@@ -29,7 +29,7 @@ public class ProtectableReplicationCapabilitiesRespRegion  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication_destinations")
     
-    private List<String> replicationDestinations = new ArrayList<>();
+    private List<String> replicationDestinations = null;
     
     public ProtectableReplicationCapabilitiesRespRegion withName(String name) {
         this.name = name;
@@ -50,6 +50,8 @@ public class ProtectableReplicationCapabilitiesRespRegion  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ProtectableReplicationCapabilitiesRespRegion withReplicationDestinations(List<String> replicationDestinations) {
         this.replicationDestinations = replicationDestinations;
@@ -81,6 +83,9 @@ public class ProtectableReplicationCapabilitiesRespRegion  {
     public void setReplicationDestinations(List<String> replicationDestinations) {
         this.replicationDestinations = replicationDestinations;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,13 +27,13 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Accept-Language")
     
-    private String acceptLanguage = "zh-CN";
+    private String acceptLanguage;
 
     public SearchAttendanceRecordsOfHisMeetingRequest withConfUUID(String confUUID) {
         this.confUUID = confUUID;
@@ -85,6 +85,8 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.confUUID = confUUID;
     }
 
+    
+
     public SearchAttendanceRecordsOfHisMeetingRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -104,6 +106,8 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchAttendanceRecordsOfHisMeetingRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -127,6 +131,8 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchAttendanceRecordsOfHisMeetingRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -147,6 +153,8 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.searchKey = searchKey;
     }
 
+    
+
     public SearchAttendanceRecordsOfHisMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -166,6 +174,8 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public SearchAttendanceRecordsOfHisMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -189,6 +199,8 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public SearchAttendanceRecordsOfHisMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -211,6 +223,8 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.xSiteId = xSiteId;
     }
 
+    
+
     public SearchAttendanceRecordsOfHisMeetingRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -230,6 +244,9 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

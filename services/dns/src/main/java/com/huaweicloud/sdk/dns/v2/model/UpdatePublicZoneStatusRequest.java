@@ -28,7 +28,7 @@ public class UpdatePublicZoneStatusRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePublicZoneStatus body = null;
+    private UpdatePublicZoneStatus body;
 
     public UpdatePublicZoneStatusRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -49,6 +49,8 @@ public class UpdatePublicZoneStatusRequest  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public UpdatePublicZoneStatusRequest withBody(UpdatePublicZoneStatus body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePublicZoneStatusRequest  {
     public void setBody(UpdatePublicZoneStatus body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -277,7 +277,7 @@ public class BackendApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_info")
     
-    private ApiBackendVpcReq vpcChannelInfo = null;
+    private ApiBackendVpcReq vpcChannelInfo;
     /**
      * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      */
@@ -383,6 +383,8 @@ public class BackendApiCreate  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public BackendApiCreate withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -402,6 +404,8 @@ public class BackendApiCreate  {
     public void setUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
     }
+
+    
 
     public BackendApiCreate withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
@@ -423,6 +427,8 @@ public class BackendApiCreate  {
         this.reqProtocol = reqProtocol;
     }
 
+    
+
     public BackendApiCreate withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -442,6 +448,8 @@ public class BackendApiCreate  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public BackendApiCreate withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -463,6 +471,8 @@ public class BackendApiCreate  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public BackendApiCreate withVersion(String version) {
         this.version = version;
         return this;
@@ -482,6 +492,8 @@ public class BackendApiCreate  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public BackendApiCreate withReqUri(String reqUri) {
         this.reqUri = reqUri;
@@ -503,6 +515,8 @@ public class BackendApiCreate  {
         this.reqUri = reqUri;
     }
 
+    
+
     public BackendApiCreate withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -523,6 +537,8 @@ public class BackendApiCreate  {
         this.timeout = timeout;
     }
 
+    
+
     public BackendApiCreate withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
         return this;
@@ -542,6 +558,8 @@ public class BackendApiCreate  {
     public void setEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
     }
+
+    
 
     public BackendApiCreate withVpcChannelInfo(ApiBackendVpcReq vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
@@ -570,6 +588,8 @@ public class BackendApiCreate  {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 
+    
+
     public BackendApiCreate withVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
@@ -589,6 +609,9 @@ public class BackendApiCreate  {
     public void setVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

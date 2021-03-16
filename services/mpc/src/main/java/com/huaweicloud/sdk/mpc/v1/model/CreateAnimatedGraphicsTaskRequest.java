@@ -22,7 +22,7 @@ public class CreateAnimatedGraphicsTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAnimatedGraphicsTaskReq body = null;
+    private CreateAnimatedGraphicsTaskReq body;
 
     public CreateAnimatedGraphicsTaskRequest withBody(CreateAnimatedGraphicsTaskReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateAnimatedGraphicsTaskRequest  {
     public void setBody(CreateAnimatedGraphicsTaskReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

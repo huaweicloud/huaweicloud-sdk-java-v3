@@ -76,7 +76,7 @@ public class Image  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
     
-    private VolumeType volumeType = null;
+    private VolumeType volumeType;
 
     public Image withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
@@ -98,6 +98,8 @@ public class Image  {
         this.containerFormat = containerFormat;
     }
 
+    
+
     public Image withDiskFormat(String diskFormat) {
         this.diskFormat = diskFormat;
         return this;
@@ -117,6 +119,8 @@ public class Image  {
     public void setDiskFormat(String diskFormat) {
         this.diskFormat = diskFormat;
     }
+
+    
 
     public Image withDisplayDescription(String displayDescription) {
         this.displayDescription = displayDescription;
@@ -138,6 +142,8 @@ public class Image  {
         this.displayDescription = displayDescription;
     }
 
+    
+
     public Image withId(String id) {
         this.id = id;
         return this;
@@ -157,6 +163,8 @@ public class Image  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public Image withImageId(String imageId) {
         this.imageId = imageId;
@@ -178,6 +186,8 @@ public class Image  {
         this.imageId = imageId;
     }
 
+    
+
     public Image withImageName(String imageName) {
         this.imageName = imageName;
         return this;
@@ -197,6 +207,8 @@ public class Image  {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
+    
 
     public Image withSize(Integer size) {
         this.size = size;
@@ -218,6 +230,8 @@ public class Image  {
         this.size = size;
     }
 
+    
+
     public Image withStatus(String status) {
         this.status = status;
         return this;
@@ -238,6 +252,8 @@ public class Image  {
         this.status = status;
     }
 
+    
+
     public Image withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -257,6 +273,8 @@ public class Image  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public Image withVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType;
@@ -284,6 +302,9 @@ public class Image  {
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class IssueCompletionRateV4IssueStatus  {
         this.closedNum = closedNum;
     }
 
+    
+
     public IssueCompletionRateV4IssueStatus withNewNum(Integer newNum) {
         this.newNum = newNum;
         return this;
@@ -92,6 +94,8 @@ public class IssueCompletionRateV4IssueStatus  {
     public void setNewNum(Integer newNum) {
         this.newNum = newNum;
     }
+
+    
 
     public IssueCompletionRateV4IssueStatus withProcessNum(Integer processNum) {
         this.processNum = processNum;
@@ -113,6 +117,8 @@ public class IssueCompletionRateV4IssueStatus  {
         this.processNum = processNum;
     }
 
+    
+
     public IssueCompletionRateV4IssueStatus withRejectedNum(Integer rejectedNum) {
         this.rejectedNum = rejectedNum;
         return this;
@@ -132,6 +138,8 @@ public class IssueCompletionRateV4IssueStatus  {
     public void setRejectedNum(Integer rejectedNum) {
         this.rejectedNum = rejectedNum;
     }
+
+    
 
     public IssueCompletionRateV4IssueStatus withSolvedNum(Integer solvedNum) {
         this.solvedNum = solvedNum;
@@ -153,6 +161,8 @@ public class IssueCompletionRateV4IssueStatus  {
         this.solvedNum = solvedNum;
     }
 
+    
+
     public IssueCompletionRateV4IssueStatus withTestNum(Integer testNum) {
         this.testNum = testNum;
         return this;
@@ -172,6 +182,9 @@ public class IssueCompletionRateV4IssueStatus  {
     public void setTestNum(Integer testNum) {
         this.testNum = testNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

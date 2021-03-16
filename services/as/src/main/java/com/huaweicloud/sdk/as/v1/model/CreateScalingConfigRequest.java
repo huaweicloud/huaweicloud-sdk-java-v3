@@ -22,7 +22,7 @@ public class CreateScalingConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateScalingConfigRequestBody body = null;
+    private CreateScalingConfigRequestBody body;
 
     public CreateScalingConfigRequest withBody(CreateScalingConfigRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateScalingConfigRequest  {
     public void setBody(CreateScalingConfigRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

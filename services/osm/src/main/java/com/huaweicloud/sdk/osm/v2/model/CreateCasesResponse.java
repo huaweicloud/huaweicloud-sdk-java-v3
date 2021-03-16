@@ -44,6 +44,9 @@ public class CreateCasesResponse extends SdkResponse {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

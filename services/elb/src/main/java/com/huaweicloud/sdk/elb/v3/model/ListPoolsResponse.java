@@ -33,7 +33,7 @@ public class ListPoolsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class ListPoolsResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListPoolsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -88,6 +90,8 @@ public class ListPoolsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    
+
     public ListPoolsResponse withPools(List<Pool> pools) {
         this.pools = pools;
         return this;
@@ -95,9 +99,6 @@ public class ListPoolsResponse extends SdkResponse {
 
     
     public ListPoolsResponse addPoolsItem(Pool poolsItem) {
-        if (this.pools == null) {
-            this.pools = new ArrayList<>();
-        }
         this.pools.add(poolsItem);
         return this;
     }
@@ -121,6 +122,9 @@ public class ListPoolsResponse extends SdkResponse {
     public void setPools(List<Pool> pools) {
         this.pools = pools;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

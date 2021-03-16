@@ -61,6 +61,8 @@ public class AccessoryJsonFormatReq  {
         this.accessoryName = accessoryName;
     }
 
+    
+
     public AccessoryJsonFormatReq withAccessoryFrom(String accessoryFrom) {
         this.accessoryFrom = accessoryFrom;
         return this;
@@ -80,6 +82,8 @@ public class AccessoryJsonFormatReq  {
     public void setAccessoryFrom(String accessoryFrom) {
         this.accessoryFrom = accessoryFrom;
     }
+
+    
 
     public AccessoryJsonFormatReq withUploadType(Integer uploadType) {
         this.uploadType = uploadType;
@@ -103,6 +107,8 @@ public class AccessoryJsonFormatReq  {
         this.uploadType = uploadType;
     }
 
+    
+
     public AccessoryJsonFormatReq withAccessoryData(String accessoryData) {
         this.accessoryData = accessoryData;
         return this;
@@ -122,6 +128,9 @@ public class AccessoryJsonFormatReq  {
     public void setAccessoryData(String accessoryData) {
         this.accessoryData = accessoryData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

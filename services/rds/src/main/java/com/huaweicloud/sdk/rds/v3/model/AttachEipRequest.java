@@ -116,7 +116,7 @@ public class AttachEipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BindEipRequest body = null;
+    private BindEipRequest body;
 
     public AttachEipRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class AttachEipRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public AttachEipRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class AttachEipRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AttachEipRequest withBody(BindEipRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class AttachEipRequest  {
     public void setBody(BindEipRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

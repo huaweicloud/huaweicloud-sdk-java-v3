@@ -129,13 +129,13 @@ public class UpdateScalingPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scheduled_policy")
     
-    private ScheduledPolicy scheduledPolicy = null;
+    private ScheduledPolicy scheduledPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_policy_action")
     
-    private ScalingPolicyAction scalingPolicyAction = null;
+    private ScalingPolicyAction scalingPolicyAction;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -163,6 +163,8 @@ public class UpdateScalingPolicyRequestBody  {
         this.scalingPolicyName = scalingPolicyName;
     }
 
+    
+
     public UpdateScalingPolicyRequestBody withScalingPolicyType(ScalingPolicyTypeEnum scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
         return this;
@@ -183,6 +185,8 @@ public class UpdateScalingPolicyRequestBody  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
+    
+
     public UpdateScalingPolicyRequestBody withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -202,6 +206,8 @@ public class UpdateScalingPolicyRequestBody  {
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
     }
+
+    
 
     public UpdateScalingPolicyRequestBody withScheduledPolicy(ScheduledPolicy scheduledPolicy) {
         this.scheduledPolicy = scheduledPolicy;
@@ -230,6 +236,8 @@ public class UpdateScalingPolicyRequestBody  {
         this.scheduledPolicy = scheduledPolicy;
     }
 
+    
+
     public UpdateScalingPolicyRequestBody withScalingPolicyAction(ScalingPolicyAction scalingPolicyAction) {
         this.scalingPolicyAction = scalingPolicyAction;
         return this;
@@ -257,6 +265,8 @@ public class UpdateScalingPolicyRequestBody  {
         this.scalingPolicyAction = scalingPolicyAction;
     }
 
+    
+
     public UpdateScalingPolicyRequestBody withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
         return this;
@@ -276,6 +286,9 @@ public class UpdateScalingPolicyRequestBody  {
     public void setCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

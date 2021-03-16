@@ -49,6 +49,8 @@ public class DeleteImageSyncRepoRequestBody  {
         this.remoteRegionId = remoteRegionId;
     }
 
+    
+
     public DeleteImageSyncRepoRequestBody withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
         return this;
@@ -68,6 +70,9 @@ public class DeleteImageSyncRepoRequestBody  {
     public void setRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -46,13 +46,13 @@ public class ListProjectsV4ResponseBodyProjects  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private String createdTime;
+    private Long createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_time")
     
-    private String updatedTime;
+    private Long updatedTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,7 +64,7 @@ public class ListProjectsV4ResponseBodyProjects  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creator")
     
-    private ListProjectsV4ResponseBodyCreator creator = null;
+    private ListProjectsV4ResponseBodyCreator creator;
 
     public ListProjectsV4ResponseBodyProjects withProjectNumId(Integer projectNumId) {
         this.projectNumId = projectNumId;
@@ -86,6 +86,8 @@ public class ListProjectsV4ResponseBodyProjects  {
         this.projectNumId = projectNumId;
     }
 
+    
+
     public ListProjectsV4ResponseBodyProjects withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -105,6 +107,8 @@ public class ListProjectsV4ResponseBodyProjects  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ListProjectsV4ResponseBodyProjects withProjectName(String projectName) {
         this.projectName = projectName;
@@ -126,6 +130,8 @@ public class ListProjectsV4ResponseBodyProjects  {
         this.projectName = projectName;
     }
 
+    
+
     public ListProjectsV4ResponseBodyProjects withDescription(String description) {
         this.description = description;
         return this;
@@ -146,7 +152,9 @@ public class ListProjectsV4ResponseBodyProjects  {
         this.description = description;
     }
 
-    public ListProjectsV4ResponseBodyProjects withCreatedTime(String createdTime) {
+    
+
+    public ListProjectsV4ResponseBodyProjects withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
@@ -158,15 +166,17 @@ public class ListProjectsV4ResponseBodyProjects  {
      * 项目创建时间
      * @return createdTime
      */
-    public String getCreatedTime() {
+    public Long getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(String createdTime) {
+    public void setCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
     }
 
-    public ListProjectsV4ResponseBodyProjects withUpdatedTime(String updatedTime) {
+    
+
+    public ListProjectsV4ResponseBodyProjects withUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
@@ -178,13 +188,15 @@ public class ListProjectsV4ResponseBodyProjects  {
      * 项目更新时间
      * @return updatedTime
      */
-    public String getUpdatedTime() {
+    public Long getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(String updatedTime) {
+    public void setUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
     }
+
+    
 
     public ListProjectsV4ResponseBodyProjects withProjectType(String projectType) {
         this.projectType = projectType;
@@ -205,6 +217,8 @@ public class ListProjectsV4ResponseBodyProjects  {
     public void setProjectType(String projectType) {
         this.projectType = projectType;
     }
+
+    
 
     public ListProjectsV4ResponseBodyProjects withCreator(ListProjectsV4ResponseBodyCreator creator) {
         this.creator = creator;
@@ -232,6 +246,9 @@ public class ListProjectsV4ResponseBodyProjects  {
     public void setCreator(ListProjectsV4ResponseBodyCreator creator) {
         this.creator = creator;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

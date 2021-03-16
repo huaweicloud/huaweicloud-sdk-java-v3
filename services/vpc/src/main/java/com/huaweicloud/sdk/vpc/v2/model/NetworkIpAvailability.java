@@ -54,7 +54,7 @@ public class NetworkIpAvailability  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_ip_availability")
     
-    private List<SubnetIpAvailability> subnetIpAvailability = new ArrayList<>();
+    private List<SubnetIpAvailability> subnetIpAvailability = null;
     
     public NetworkIpAvailability withNetworkId(String networkId) {
         this.networkId = networkId;
@@ -76,6 +76,8 @@ public class NetworkIpAvailability  {
         this.networkId = networkId;
     }
 
+    
+
     public NetworkIpAvailability withNetworkName(String networkName) {
         this.networkName = networkName;
         return this;
@@ -95,6 +97,8 @@ public class NetworkIpAvailability  {
     public void setNetworkName(String networkName) {
         this.networkName = networkName;
     }
+
+    
 
     public NetworkIpAvailability withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -116,6 +120,8 @@ public class NetworkIpAvailability  {
         this.tenantId = tenantId;
     }
 
+    
+
     public NetworkIpAvailability withTotalIps(Integer totalIps) {
         this.totalIps = totalIps;
         return this;
@@ -136,6 +142,8 @@ public class NetworkIpAvailability  {
         this.totalIps = totalIps;
     }
 
+    
+
     public NetworkIpAvailability withUsedIps(Integer usedIps) {
         this.usedIps = usedIps;
         return this;
@@ -155,6 +163,8 @@ public class NetworkIpAvailability  {
     public void setUsedIps(Integer usedIps) {
         this.usedIps = usedIps;
     }
+
+    
 
     public NetworkIpAvailability withSubnetIpAvailability(List<SubnetIpAvailability> subnetIpAvailability) {
         this.subnetIpAvailability = subnetIpAvailability;
@@ -186,6 +196,9 @@ public class NetworkIpAvailability  {
     public void setSubnetIpAvailability(List<SubnetIpAvailability> subnetIpAvailability) {
         this.subnetIpAvailability = subnetIpAvailability;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

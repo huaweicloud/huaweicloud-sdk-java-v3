@@ -40,7 +40,7 @@ public class ListVersionAliasResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private OffsetDateTime lastModified = null;
+    private OffsetDateTime lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class ListVersionAliasResult  {
         this.name = name;
     }
 
+    
+
     public ListVersionAliasResult withVersion(String version) {
         this.version = version;
         return this;
@@ -87,6 +89,8 @@ public class ListVersionAliasResult  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ListVersionAliasResult withDescription(String description) {
         this.description = description;
@@ -108,6 +112,8 @@ public class ListVersionAliasResult  {
         this.description = description;
     }
 
+    
+
     public ListVersionAliasResult withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -128,6 +134,8 @@ public class ListVersionAliasResult  {
         this.lastModified = lastModified;
     }
 
+    
+
     public ListVersionAliasResult withAliasUrn(String aliasUrn) {
         this.aliasUrn = aliasUrn;
         return this;
@@ -147,6 +155,9 @@ public class ListVersionAliasResult  {
     public void setAliasUrn(String aliasUrn) {
         this.aliasUrn = aliasUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

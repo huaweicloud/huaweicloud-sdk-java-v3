@@ -22,19 +22,19 @@ public class VolumeAttachments  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="serverId")
     
-    private UUID serverId = null;
+    private UUID serverId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeId")
     
-    private UUID volumeId = null;
+    private UUID volumeId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class VolumeAttachments  {
         this.id = id;
     }
 
+    
+
     public VolumeAttachments withServerId(UUID serverId) {
         this.serverId = serverId;
         return this;
@@ -81,6 +83,8 @@ public class VolumeAttachments  {
     public void setServerId(UUID serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public VolumeAttachments withVolumeId(UUID volumeId) {
         this.volumeId = volumeId;
@@ -102,6 +106,8 @@ public class VolumeAttachments  {
         this.volumeId = volumeId;
     }
 
+    
+
     public VolumeAttachments withDevice(String device) {
         this.device = device;
         return this;
@@ -121,6 +127,9 @@ public class VolumeAttachments  {
     public void setDevice(String device) {
         this.device = device;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

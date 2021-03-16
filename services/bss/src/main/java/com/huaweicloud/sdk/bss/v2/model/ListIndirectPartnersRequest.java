@@ -22,7 +22,7 @@ public class ListIndirectPartnersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QueryIndirectPartnersReq body = null;
+    private QueryIndirectPartnersReq body;
 
     public ListIndirectPartnersRequest withBody(QueryIndirectPartnersReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ListIndirectPartnersRequest  {
     public void setBody(QueryIndirectPartnersReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

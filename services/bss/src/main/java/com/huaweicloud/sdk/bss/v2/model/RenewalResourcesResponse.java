@@ -34,9 +34,6 @@ public class RenewalResourcesResponse extends SdkResponse {
 
     
     public RenewalResourcesResponse addOrderIdsItem(String orderIdsItem) {
-        if (this.orderIds == null) {
-            this.orderIds = new ArrayList<>();
-        }
         this.orderIds.add(orderIdsItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class RenewalResourcesResponse extends SdkResponse {
     public void setOrderIds(List<String> orderIds) {
         this.orderIds = orderIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

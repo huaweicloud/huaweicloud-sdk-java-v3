@@ -42,6 +42,9 @@ public class ListNumberOfInstancesInDifferentStatusRequest  {
     public void setIncludeFailure(String includeFailure) {
         this.includeFailure = includeFailure;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

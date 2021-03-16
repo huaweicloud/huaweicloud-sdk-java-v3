@@ -55,6 +55,8 @@ public class ResourceType  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
+    
+
     public ResourceType withResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
         return this;
@@ -75,6 +77,8 @@ public class ResourceType  {
         this.resourceTypeName = resourceTypeName;
     }
 
+    
+
     public ResourceType withResourceTypeDesc(String resourceTypeDesc) {
         this.resourceTypeDesc = resourceTypeDesc;
         return this;
@@ -94,6 +98,9 @@ public class ResourceType  {
     public void setResourceTypeDesc(String resourceTypeDesc) {
         this.resourceTypeDesc = resourceTypeDesc;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

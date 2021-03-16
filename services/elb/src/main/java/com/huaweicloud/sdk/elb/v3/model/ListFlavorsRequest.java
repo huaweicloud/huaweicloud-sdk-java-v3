@@ -68,9 +68,6 @@ public class ListFlavorsRequest  {
 
     
     public ListFlavorsRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -95,6 +92,8 @@ public class ListFlavorsRequest  {
         this.id = id;
     }
 
+    
+
     public ListFlavorsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -117,6 +116,8 @@ public class ListFlavorsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListFlavorsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -137,6 +138,8 @@ public class ListFlavorsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListFlavorsRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -144,9 +147,6 @@ public class ListFlavorsRequest  {
 
     
     public ListFlavorsRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -171,6 +171,8 @@ public class ListFlavorsRequest  {
         this.name = name;
     }
 
+    
+
     public ListFlavorsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
@@ -190,6 +192,8 @@ public class ListFlavorsRequest  {
     public void setPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
     }
+
+    
 
     public ListFlavorsRequest withShared(Boolean shared) {
         this.shared = shared;
@@ -211,6 +215,8 @@ public class ListFlavorsRequest  {
         this.shared = shared;
     }
 
+    
+
     public ListFlavorsRequest withType(List<String> type) {
         this.type = type;
         return this;
@@ -218,9 +224,6 @@ public class ListFlavorsRequest  {
 
     
     public ListFlavorsRequest addTypeItem(String typeItem) {
-        if (this.type == null) {
-            this.type = new ArrayList<>();
-        }
         this.type.add(typeItem);
         return this;
     }
@@ -244,6 +247,9 @@ public class ListFlavorsRequest  {
     public void setType(List<String> type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

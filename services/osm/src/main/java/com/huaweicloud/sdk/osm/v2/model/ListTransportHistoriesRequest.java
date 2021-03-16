@@ -45,19 +45,19 @@ public class ListTransportHistoriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort")
     
-    private Integer sort = 0;
+    private Integer sort;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,6 +99,8 @@ public class ListTransportHistoriesRequest  {
         this.authorizationId = authorizationId;
     }
 
+    
+
     public ListTransportHistoriesRequest withAuthorizationDetailId(Long authorizationDetailId) {
         this.authorizationDetailId = authorizationDetailId;
         return this;
@@ -121,6 +123,8 @@ public class ListTransportHistoriesRequest  {
         this.authorizationDetailId = authorizationDetailId;
     }
 
+    
+
     public ListTransportHistoriesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -140,6 +144,8 @@ public class ListTransportHistoriesRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListTransportHistoriesRequest withSessionId(Long sessionId) {
         this.sessionId = sessionId;
@@ -163,6 +169,8 @@ public class ListTransportHistoriesRequest  {
         this.sessionId = sessionId;
     }
 
+    
+
     public ListTransportHistoriesRequest withSort(Integer sort) {
         this.sort = sort;
         return this;
@@ -184,6 +192,8 @@ public class ListTransportHistoriesRequest  {
     public void setSort(Integer sort) {
         this.sort = sort;
     }
+
+    
 
     public ListTransportHistoriesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -207,6 +217,8 @@ public class ListTransportHistoriesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListTransportHistoriesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -228,6 +240,8 @@ public class ListTransportHistoriesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListTransportHistoriesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -253,6 +267,8 @@ public class ListTransportHistoriesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListTransportHistoriesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -275,6 +291,8 @@ public class ListTransportHistoriesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListTransportHistoriesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -296,6 +314,9 @@ public class ListTransportHistoriesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

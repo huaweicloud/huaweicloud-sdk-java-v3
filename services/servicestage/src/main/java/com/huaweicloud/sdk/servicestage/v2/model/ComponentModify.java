@@ -35,13 +35,13 @@ public class ComponentModify  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    private SourceObject source = null;
+    private SourceObject source;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="build")
     
-    private Build build = null;
+    private Build build;
 
     public ComponentModify withName(String name) {
         this.name = name;
@@ -63,6 +63,8 @@ public class ComponentModify  {
         this.name = name;
     }
 
+    
+
     public ComponentModify withDescription(String description) {
         this.description = description;
         return this;
@@ -82,6 +84,8 @@ public class ComponentModify  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ComponentModify withSource(SourceObject source) {
         this.source = source;
@@ -110,6 +114,8 @@ public class ComponentModify  {
         this.source = source;
     }
 
+    
+
     public ComponentModify withBuild(Build build) {
         this.build = build;
         return this;
@@ -136,6 +142,9 @@ public class ComponentModify  {
     public void setBuild(Build build) {
         this.build = build;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

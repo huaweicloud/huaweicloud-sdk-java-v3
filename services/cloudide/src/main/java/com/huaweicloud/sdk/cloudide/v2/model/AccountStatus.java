@@ -61,6 +61,8 @@ public class AccountStatus  {
         this.curOrgCreateRole = curOrgCreateRole;
     }
 
+    
+
     public AccountStatus withCurOrgOpen(Boolean curOrgOpen) {
         this.curOrgOpen = curOrgOpen;
         return this;
@@ -80,6 +82,8 @@ public class AccountStatus  {
     public void setCurOrgOpen(Boolean curOrgOpen) {
         this.curOrgOpen = curOrgOpen;
     }
+
+    
 
     public AccountStatus withHasFreeTrial(Boolean hasFreeTrial) {
         this.hasFreeTrial = hasFreeTrial;
@@ -101,6 +105,8 @@ public class AccountStatus  {
         this.hasFreeTrial = hasFreeTrial;
     }
 
+    
+
     public AccountStatus withShowManage(Boolean showManage) {
         this.showManage = showManage;
         return this;
@@ -120,6 +126,9 @@ public class AccountStatus  {
     public void setShowManage(Boolean showManage) {
         this.showManage = showManage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

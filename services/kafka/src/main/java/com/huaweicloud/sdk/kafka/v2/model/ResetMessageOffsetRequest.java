@@ -34,7 +34,7 @@ public class ResetMessageOffsetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResetMessageOffsetReq body = null;
+    private ResetMessageOffsetReq body;
 
     public ResetMessageOffsetRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class ResetMessageOffsetRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ResetMessageOffsetRequest withGroup(String group) {
         this.group = group;
         return this;
@@ -75,6 +77,8 @@ public class ResetMessageOffsetRequest  {
     public void setGroup(String group) {
         this.group = group;
     }
+
+    
 
     public ResetMessageOffsetRequest withBody(ResetMessageOffsetReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ResetMessageOffsetRequest  {
     public void setBody(ResetMessageOffsetReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

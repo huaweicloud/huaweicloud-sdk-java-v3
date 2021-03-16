@@ -60,6 +60,8 @@ public class AddToPersonalSpaceRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AddToPersonalSpaceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -80,6 +82,8 @@ public class AddToPersonalSpaceRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public AddToPersonalSpaceRequest withBody(Map<String, String> body) {
         this.body = body;
         return this;
@@ -88,9 +92,6 @@ public class AddToPersonalSpaceRequest  {
     
 
     public AddToPersonalSpaceRequest putBodyItem(String key, String bodyItem) {
-         if (this.body == null) {
-            this.body = new HashMap<>();
-         }
         this.body.put(key, bodyItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class AddToPersonalSpaceRequest  {
     public void setBody(Map<String, String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -58,6 +58,8 @@ public class InstanceGroupListInfo  {
         this.groupId = groupId;
     }
 
+    
+
     public InstanceGroupListInfo withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -78,6 +80,8 @@ public class InstanceGroupListInfo  {
         this.groupName = groupName;
     }
 
+    
+
     public InstanceGroupListInfo withReplicationList(List<InstanceReplicationListInfo> replicationList) {
         this.replicationList = replicationList;
         return this;
@@ -85,9 +89,6 @@ public class InstanceGroupListInfo  {
 
     
     public InstanceGroupListInfo addReplicationListItem(InstanceReplicationListInfo replicationListItem) {
-        if (this.replicationList == null) {
-            this.replicationList = new ArrayList<>();
-        }
         this.replicationList.add(replicationListItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class InstanceGroupListInfo  {
     public void setReplicationList(List<InstanceReplicationListInfo> replicationList) {
         this.replicationList = replicationList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

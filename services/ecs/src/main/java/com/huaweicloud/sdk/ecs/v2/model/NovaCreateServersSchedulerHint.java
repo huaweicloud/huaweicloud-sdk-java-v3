@@ -69,6 +69,8 @@ public class NovaCreateServersSchedulerHint  {
         this.group = group;
     }
 
+    
+
     public NovaCreateServersSchedulerHint withDifferentHost(List<String> differentHost) {
         this.differentHost = differentHost;
         return this;
@@ -76,9 +78,6 @@ public class NovaCreateServersSchedulerHint  {
 
     
     public NovaCreateServersSchedulerHint addDifferentHostItem(String differentHostItem) {
-        if (this.differentHost == null) {
-            this.differentHost = new ArrayList<>();
-        }
         this.differentHost.add(differentHostItem);
         return this;
     }
@@ -103,6 +102,8 @@ public class NovaCreateServersSchedulerHint  {
         this.differentHost = differentHost;
     }
 
+    
+
     public NovaCreateServersSchedulerHint withSameHost(List<String> sameHost) {
         this.sameHost = sameHost;
         return this;
@@ -110,9 +111,6 @@ public class NovaCreateServersSchedulerHint  {
 
     
     public NovaCreateServersSchedulerHint addSameHostItem(String sameHostItem) {
-        if (this.sameHost == null) {
-            this.sameHost = new ArrayList<>();
-        }
         this.sameHost.add(sameHostItem);
         return this;
     }
@@ -137,6 +135,8 @@ public class NovaCreateServersSchedulerHint  {
         this.sameHost = sameHost;
     }
 
+    
+
     public NovaCreateServersSchedulerHint withCidr(String cidr) {
         this.cidr = cidr;
         return this;
@@ -157,6 +157,8 @@ public class NovaCreateServersSchedulerHint  {
         this.cidr = cidr;
     }
 
+    
+
     public NovaCreateServersSchedulerHint withBuildNearHostIp(String buildNearHostIp) {
         this.buildNearHostIp = buildNearHostIp;
         return this;
@@ -176,6 +178,9 @@ public class NovaCreateServersSchedulerHint  {
     public void setBuildNearHostIp(String buildNearHostIp) {
         this.buildNearHostIp = buildNearHostIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

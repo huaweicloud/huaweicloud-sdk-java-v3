@@ -22,7 +22,7 @@ public class KeystoneCreateAgencyTokenRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth")
     
-    private AgencyTokenAuth auth = null;
+    private AgencyTokenAuth auth;
 
     public KeystoneCreateAgencyTokenRequestBody withAuth(AgencyTokenAuth auth) {
         this.auth = auth;
@@ -50,6 +50,9 @@ public class KeystoneCreateAgencyTokenRequestBody  {
     public void setAuth(AgencyTokenAuth auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -259,6 +259,8 @@ public class EventItemDetail  {
         this.content = content;
     }
 
+    
+
     public EventItemDetail withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -278,6 +280,8 @@ public class EventItemDetail  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public EventItemDetail withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -299,6 +303,8 @@ public class EventItemDetail  {
         this.resourceId = resourceId;
     }
 
+    
+
     public EventItemDetail withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -318,6 +324,8 @@ public class EventItemDetail  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public EventItemDetail withEventState(EventStateEnum eventState) {
         this.eventState = eventState;
@@ -339,6 +347,8 @@ public class EventItemDetail  {
         this.eventState = eventState;
     }
 
+    
+
     public EventItemDetail withEventLevel(EventLevelEnum eventLevel) {
         this.eventLevel = eventLevel;
         return this;
@@ -359,6 +369,8 @@ public class EventItemDetail  {
         this.eventLevel = eventLevel;
     }
 
+    
+
     public EventItemDetail withEventUser(String eventUser) {
         this.eventUser = eventUser;
         return this;
@@ -378,6 +390,9 @@ public class EventItemDetail  {
     public void setEventUser(String eventUser) {
         this.eventUser = eventUser;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

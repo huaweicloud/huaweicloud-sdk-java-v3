@@ -103,6 +103,8 @@ public class ProductSummary  {
         this.appId = appId;
     }
 
+    
+
     public ProductSummary withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -122,6 +124,8 @@ public class ProductSummary  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ProductSummary withProductId(String productId) {
         this.productId = productId;
@@ -143,6 +147,8 @@ public class ProductSummary  {
         this.productId = productId;
     }
 
+    
+
     public ProductSummary withName(String name) {
         this.name = name;
         return this;
@@ -162,6 +168,8 @@ public class ProductSummary  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ProductSummary withDeviceType(String deviceType) {
         this.deviceType = deviceType;
@@ -183,6 +191,8 @@ public class ProductSummary  {
         this.deviceType = deviceType;
     }
 
+    
+
     public ProductSummary withProtocolType(String protocolType) {
         this.protocolType = protocolType;
         return this;
@@ -202,6 +212,8 @@ public class ProductSummary  {
     public void setProtocolType(String protocolType) {
         this.protocolType = protocolType;
     }
+
+    
 
     public ProductSummary withDataFormat(String dataFormat) {
         this.dataFormat = dataFormat;
@@ -223,6 +235,8 @@ public class ProductSummary  {
         this.dataFormat = dataFormat;
     }
 
+    
+
     public ProductSummary withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
@@ -242,6 +256,8 @@ public class ProductSummary  {
     public void setManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
+
+    
 
     public ProductSummary withIndustry(String industry) {
         this.industry = industry;
@@ -263,6 +279,8 @@ public class ProductSummary  {
         this.industry = industry;
     }
 
+    
+
     public ProductSummary withDescription(String description) {
         this.description = description;
         return this;
@@ -283,6 +301,8 @@ public class ProductSummary  {
         this.description = description;
     }
 
+    
+
     public ProductSummary withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -302,6 +322,9 @@ public class ProductSummary  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

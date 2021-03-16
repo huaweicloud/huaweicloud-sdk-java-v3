@@ -28,7 +28,7 @@ public class UpdateSnapshotRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateSnapshotRequestBody body = null;
+    private UpdateSnapshotRequestBody body;
 
     public UpdateSnapshotRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -49,6 +49,8 @@ public class UpdateSnapshotRequest  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
 
     public UpdateSnapshotRequest withBody(UpdateSnapshotRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateSnapshotRequest  {
     public void setBody(UpdateSnapshotRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

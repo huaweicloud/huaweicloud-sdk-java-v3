@@ -51,6 +51,8 @@ public class CreateMessageTemplateResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public CreateMessageTemplateResponse withMessageTemplateId(String messageTemplateId) {
         this.messageTemplateId = messageTemplateId;
         return this;
@@ -70,6 +72,9 @@ public class CreateMessageTemplateResponse extends SdkResponse {
     public void setMessageTemplateId(String messageTemplateId) {
         this.messageTemplateId = messageTemplateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

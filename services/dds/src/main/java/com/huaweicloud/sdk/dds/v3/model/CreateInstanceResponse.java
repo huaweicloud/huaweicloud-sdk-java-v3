@@ -34,7 +34,7 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,7 +106,7 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private BackupStrategy backupStrategy = null;
+    private BackupStrategy backupStrategy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -152,6 +152,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateInstanceResponse withDatastore(Datastore datastore) {
         this.datastore = datastore;
         return this;
@@ -179,6 +181,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.datastore = datastore;
     }
 
+    
+
     public CreateInstanceResponse withName(String name) {
         this.name = name;
         return this;
@@ -198,6 +202,8 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateInstanceResponse withCreated(String created) {
         this.created = created;
@@ -219,6 +225,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.created = created;
     }
 
+    
+
     public CreateInstanceResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -238,6 +246,8 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public CreateInstanceResponse withRegion(String region) {
         this.region = region;
@@ -259,6 +269,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.region = region;
     }
 
+    
+
     public CreateInstanceResponse withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -278,6 +290,8 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public CreateInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -299,6 +313,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
+    
+
     public CreateInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -318,6 +334,8 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public CreateInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -339,6 +357,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public CreateInstanceResponse withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
         return this;
@@ -358,6 +378,8 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
     }
+
+    
 
     public CreateInstanceResponse withMode(String mode) {
         this.mode = mode;
@@ -379,6 +401,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.mode = mode;
     }
 
+    
+
     public CreateInstanceResponse withFlavor(List<CreateInstanceFlavorOption> flavor) {
         this.flavor = flavor;
         return this;
@@ -386,9 +410,6 @@ public class CreateInstanceResponse extends SdkResponse {
 
     
     public CreateInstanceResponse addFlavorItem(CreateInstanceFlavorOption flavorItem) {
-        if (this.flavor == null) {
-            this.flavor = new ArrayList<>();
-        }
         this.flavor.add(flavorItem);
         return this;
     }
@@ -412,6 +433,8 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setFlavor(List<CreateInstanceFlavorOption> flavor) {
         this.flavor = flavor;
     }
+
+    
 
     public CreateInstanceResponse withBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
@@ -440,6 +463,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.backupStrategy = backupStrategy;
     }
 
+    
+
     public CreateInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -459,6 +484,8 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public CreateInstanceResponse withSslOption(String sslOption) {
         this.sslOption = sslOption;
@@ -480,6 +507,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.sslOption = sslOption;
     }
 
+    
+
     public CreateInstanceResponse withDssPoolId(String dssPoolId) {
         this.dssPoolId = dssPoolId;
         return this;
@@ -500,6 +529,8 @@ public class CreateInstanceResponse extends SdkResponse {
         this.dssPoolId = dssPoolId;
     }
 
+    
+
     public CreateInstanceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -519,6 +550,9 @@ public class CreateInstanceResponse extends SdkResponse {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

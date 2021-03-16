@@ -44,9 +44,6 @@ public class NicSpec  {
 
     
     public NicSpec addFixedIpsItem(String fixedIpsItem) {
-        if (this.fixedIps == null) {
-            this.fixedIps = new ArrayList<>();
-        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
@@ -71,6 +68,8 @@ public class NicSpec  {
         this.fixedIps = fixedIps;
     }
 
+    
+
     public NicSpec withIpBlock(String ipBlock) {
         this.ipBlock = ipBlock;
         return this;
@@ -91,6 +90,8 @@ public class NicSpec  {
         this.ipBlock = ipBlock;
     }
 
+    
+
     public NicSpec withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -110,6 +111,9 @@ public class NicSpec  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

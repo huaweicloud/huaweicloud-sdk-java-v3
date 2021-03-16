@@ -233,19 +233,19 @@ public class ShowResponsePropertyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min")
     
-    private String min = "0";
+    private String min;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max")
     
-    private String max = "65536";
+    private String max;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step")
     
-    private String step = "1";
+    private String step;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -285,6 +285,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
         this.propertyId = propertyId;
     }
 
+    
+
     public ShowResponsePropertyResponse withPropertyName(String propertyName) {
         this.propertyName = propertyName;
         return this;
@@ -304,6 +306,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
     public void setPropertyName(String propertyName) {
         this.propertyName = propertyName;
     }
+
+    
 
     public ShowResponsePropertyResponse withDescription(String description) {
         this.description = description;
@@ -325,6 +329,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowResponsePropertyResponse withDataType(DataTypeEnum dataType) {
         this.dataType = dataType;
         return this;
@@ -344,6 +350,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
     public void setDataType(DataTypeEnum dataType) {
         this.dataType = dataType;
     }
+
+    
 
     public ShowResponsePropertyResponse withRequired(RequiredEnum required) {
         this.required = required;
@@ -365,6 +373,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
         this.required = required;
     }
 
+    
+
     public ShowResponsePropertyResponse withMin(String min) {
         this.min = min;
         return this;
@@ -384,6 +394,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
     public void setMin(String min) {
         this.min = min;
     }
+
+    
 
     public ShowResponsePropertyResponse withMax(String max) {
         this.max = max;
@@ -405,6 +417,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
         this.max = max;
     }
 
+    
+
     public ShowResponsePropertyResponse withStep(String step) {
         this.step = step;
         return this;
@@ -424,6 +438,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
     public void setStep(String step) {
         this.step = step;
     }
+
+    
 
     public ShowResponsePropertyResponse withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
@@ -445,6 +461,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
         this.maxLength = maxLength;
     }
 
+    
+
     public ShowResponsePropertyResponse withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -465,6 +483,8 @@ public class ShowResponsePropertyResponse extends SdkResponse {
         this.unit = unit;
     }
 
+    
+
     public ShowResponsePropertyResponse withEnumList(String enumList) {
         this.enumList = enumList;
         return this;
@@ -484,6 +504,9 @@ public class ShowResponsePropertyResponse extends SdkResponse {
     public void setEnumList(String enumList) {
         this.enumList = enumList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

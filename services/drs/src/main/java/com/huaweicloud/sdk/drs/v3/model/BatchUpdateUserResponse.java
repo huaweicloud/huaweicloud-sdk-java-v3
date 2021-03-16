@@ -54,6 +54,8 @@ public class BatchUpdateUserResponse extends SdkResponse {
         this.allCounts = allCounts;
     }
 
+    
+
     public BatchUpdateUserResponse withResults(List<QueryUserResp> results) {
         this.results = results;
         return this;
@@ -61,9 +63,6 @@ public class BatchUpdateUserResponse extends SdkResponse {
 
     
     public BatchUpdateUserResponse addResultsItem(QueryUserResp resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class BatchUpdateUserResponse extends SdkResponse {
     public void setResults(List<QueryUserResp> results) {
         this.results = results;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

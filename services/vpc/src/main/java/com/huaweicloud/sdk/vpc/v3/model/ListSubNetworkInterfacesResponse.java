@@ -39,7 +39,7 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
     public ListSubNetworkInterfacesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -61,6 +61,8 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListSubNetworkInterfacesResponse withSubNetworkInterfaces(List<SubNetworkInterface> subNetworkInterfaces) {
         this.subNetworkInterfaces = subNetworkInterfaces;
         return this;
@@ -68,9 +70,6 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
 
     
     public ListSubNetworkInterfacesResponse addSubNetworkInterfacesItem(SubNetworkInterface subNetworkInterfacesItem) {
-        if (this.subNetworkInterfaces == null) {
-            this.subNetworkInterfaces = new ArrayList<>();
-        }
         this.subNetworkInterfaces.add(subNetworkInterfacesItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
     public void setSubNetworkInterfaces(List<SubNetworkInterface> subNetworkInterfaces) {
         this.subNetworkInterfaces = subNetworkInterfaces;
     }
+
+    
 
     public ListSubNetworkInterfacesResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -121,6 +122,9 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class RegisterServerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PostSourceServerBody body = null;
+    private PostSourceServerBody body;
 
     public RegisterServerRequest withBody(PostSourceServerBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RegisterServerRequest  {
     public void setBody(PostSourceServerBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

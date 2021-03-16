@@ -62,7 +62,7 @@ public class ApiVersionResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_time")
     
-    private OffsetDateTime publishTime = null;
+    private OffsetDateTime publishTime;
     /**
      * 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
      */
@@ -168,6 +168,8 @@ public class ApiVersionResp  {
         this.versionId = versionId;
     }
 
+    
+
     public ApiVersionResp withVersionNo(String versionNo) {
         this.versionNo = versionNo;
         return this;
@@ -187,6 +189,8 @@ public class ApiVersionResp  {
     public void setVersionNo(String versionNo) {
         this.versionNo = versionNo;
     }
+
+    
 
     public ApiVersionResp withApiId(String apiId) {
         this.apiId = apiId;
@@ -208,6 +212,8 @@ public class ApiVersionResp  {
         this.apiId = apiId;
     }
 
+    
+
     public ApiVersionResp withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -227,6 +233,8 @@ public class ApiVersionResp  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public ApiVersionResp withEnvName(String envName) {
         this.envName = envName;
@@ -248,6 +256,8 @@ public class ApiVersionResp  {
         this.envName = envName;
     }
 
+    
+
     public ApiVersionResp withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -267,6 +277,8 @@ public class ApiVersionResp  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ApiVersionResp withPublishTime(OffsetDateTime publishTime) {
         this.publishTime = publishTime;
@@ -288,6 +300,8 @@ public class ApiVersionResp  {
         this.publishTime = publishTime;
     }
 
+    
+
     public ApiVersionResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -307,6 +321,9 @@ public class ApiVersionResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

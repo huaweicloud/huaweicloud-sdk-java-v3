@@ -33,7 +33,7 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public ShowDevicesInGroupResponse withDevices(List<SimplifyDevice> devices) {
         this.devices = devices;
@@ -42,9 +42,6 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
 
     
     public ShowDevicesInGroupResponse addDevicesItem(SimplifyDevice devicesItem) {
-        if (this.devices == null) {
-            this.devices = new ArrayList<>();
-        }
         this.devices.add(devicesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
     public void setDevices(List<SimplifyDevice> devices) {
         this.devices = devices;
     }
+
+    
 
     public ShowDevicesInGroupResponse withPage(Page page) {
         this.page = page;
@@ -95,6 +94,9 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

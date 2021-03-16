@@ -22,7 +22,7 @@ public class CreateVpcRouteRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="route")
     
-    private CreateVpcRouteOption route = null;
+    private CreateVpcRouteOption route;
 
     public CreateVpcRouteRequestBody withRoute(CreateVpcRouteOption route) {
         this.route = route;
@@ -50,6 +50,9 @@ public class CreateVpcRouteRequestBody  {
     public void setRoute(CreateVpcRouteOption route) {
         this.route = route;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -50,6 +50,8 @@ public class BandwidthInfo  {
         this.bwBps = bwBps;
     }
 
+    
+
     public BandwidthInfo withTimestamp(String timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -69,6 +71,9 @@ public class BandwidthInfo  {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

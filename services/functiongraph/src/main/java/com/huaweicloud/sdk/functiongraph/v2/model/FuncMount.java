@@ -61,6 +61,8 @@ public class FuncMount  {
         this.mountType = mountType;
     }
 
+    
+
     public FuncMount withMountResource(String mountResource) {
         this.mountResource = mountResource;
         return this;
@@ -80,6 +82,8 @@ public class FuncMount  {
     public void setMountResource(String mountResource) {
         this.mountResource = mountResource;
     }
+
+    
 
     public FuncMount withMountSharePath(String mountSharePath) {
         this.mountSharePath = mountSharePath;
@@ -101,6 +105,8 @@ public class FuncMount  {
         this.mountSharePath = mountSharePath;
     }
 
+    
+
     public FuncMount withLocalMountPath(String localMountPath) {
         this.localMountPath = localMountPath;
         return this;
@@ -120,6 +126,9 @@ public class FuncMount  {
     public void setLocalMountPath(String localMountPath) {
         this.localMountPath = localMountPath;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

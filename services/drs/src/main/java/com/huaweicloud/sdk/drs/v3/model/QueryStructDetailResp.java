@@ -40,7 +40,7 @@ public class QueryStructDetailResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="struct_detail")
     
-    private QueryFlowCompareDataResp structDetail = null;
+    private QueryFlowCompareDataResp structDetail;
 
     public QueryStructDetailResp withJobId(String jobId) {
         this.jobId = jobId;
@@ -62,6 +62,8 @@ public class QueryStructDetailResp  {
         this.jobId = jobId;
     }
 
+    
+
     public QueryStructDetailResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -82,6 +84,8 @@ public class QueryStructDetailResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public QueryStructDetailResp withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -101,6 +105,8 @@ public class QueryStructDetailResp  {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
 
     public QueryStructDetailResp withStructDetail(QueryFlowCompareDataResp structDetail) {
         this.structDetail = structDetail;
@@ -128,6 +134,9 @@ public class QueryStructDetailResp  {
     public void setStructDetail(QueryFlowCompareDataResp structDetail) {
         this.structDetail = structDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

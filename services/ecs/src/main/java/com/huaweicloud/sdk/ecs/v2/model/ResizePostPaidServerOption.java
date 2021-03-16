@@ -49,6 +49,8 @@ public class ResizePostPaidServerOption  {
         this.flavorRef = flavorRef;
     }
 
+    
+
     public ResizePostPaidServerOption withMode(String mode) {
         this.mode = mode;
         return this;
@@ -68,6 +70,9 @@ public class ResizePostPaidServerOption  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

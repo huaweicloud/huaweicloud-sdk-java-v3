@@ -164,9 +164,6 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addTagsItem(TagsMultiValue tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -191,6 +188,8 @@ public class ShowTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public ShowTagsRequestBody withTagsAny(List<TagsMultiValue> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
@@ -198,9 +197,6 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addTagsAnyItem(TagsMultiValue tagsAnyItem) {
-        if (this.tagsAny == null) {
-            this.tagsAny = new ArrayList<>();
-        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
@@ -225,6 +221,8 @@ public class ShowTagsRequestBody  {
         this.tagsAny = tagsAny;
     }
 
+    
+
     public ShowTagsRequestBody withNotTags(List<TagsMultiValue> notTags) {
         this.notTags = notTags;
         return this;
@@ -232,9 +230,6 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addNotTagsItem(TagsMultiValue notTagsItem) {
-        if (this.notTags == null) {
-            this.notTags = new ArrayList<>();
-        }
         this.notTags.add(notTagsItem);
         return this;
     }
@@ -259,6 +254,8 @@ public class ShowTagsRequestBody  {
         this.notTags = notTags;
     }
 
+    
+
     public ShowTagsRequestBody withNotTagsAny(List<TagsMultiValue> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
@@ -266,9 +263,6 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addNotTagsAnyItem(TagsMultiValue notTagsAnyItem) {
-        if (this.notTagsAny == null) {
-            this.notTagsAny = new ArrayList<>();
-        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
@@ -293,6 +287,8 @@ public class ShowTagsRequestBody  {
         this.notTagsAny = notTagsAny;
     }
 
+    
+
     public ShowTagsRequestBody withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -312,6 +308,8 @@ public class ShowTagsRequestBody  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
 
     public ShowTagsRequestBody withMarker(String marker) {
         this.marker = marker;
@@ -333,6 +331,8 @@ public class ShowTagsRequestBody  {
         this.marker = marker;
     }
 
+    
+
     public ShowTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -352,6 +352,8 @@ public class ShowTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public ShowTagsRequestBody withOffset(String offset) {
         this.offset = offset;
@@ -373,6 +375,8 @@ public class ShowTagsRequestBody  {
         this.offset = offset;
     }
 
+    
+
     public ShowTagsRequestBody withMatchs(List<Matches> matchs) {
         this.matchs = matchs;
         return this;
@@ -380,9 +384,6 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addMatchsItem(Matches matchsItem) {
-        if (this.matchs == null) {
-            this.matchs = new ArrayList<>();
-        }
         this.matchs.add(matchsItem);
         return this;
     }
@@ -406,6 +407,9 @@ public class ShowTagsRequestBody  {
     public void setMatchs(List<Matches> matchs) {
         this.matchs = matchs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

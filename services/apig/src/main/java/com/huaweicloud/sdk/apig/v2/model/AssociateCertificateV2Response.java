@@ -69,6 +69,8 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.sslName = sslName;
     }
 
+    
+
     public AssociateCertificateV2Response withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -88,6 +90,8 @@ public class AssociateCertificateV2Response extends SdkResponse {
     public void setUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
     }
+
+    
 
     public AssociateCertificateV2Response withSslId(String sslId) {
         this.sslId = sslId;
@@ -109,6 +113,8 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.sslId = sslId;
     }
 
+    
+
     public AssociateCertificateV2Response withId(String id) {
         this.id = id;
         return this;
@@ -129,6 +135,8 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public AssociateCertificateV2Response withStatus(Integer status) {
         this.status = status;
         return this;
@@ -148,6 +156,9 @@ public class AssociateCertificateV2Response extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

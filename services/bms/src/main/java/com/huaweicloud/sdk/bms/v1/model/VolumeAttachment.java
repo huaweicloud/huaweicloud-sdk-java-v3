@@ -22,7 +22,7 @@ public class VolumeAttachment  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeId")
     
-    private UUID volumeId = null;
+    private UUID volumeId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,6 +50,8 @@ public class VolumeAttachment  {
         this.volumeId = volumeId;
     }
 
+    
+
     public VolumeAttachment withDevice(String device) {
         this.device = device;
         return this;
@@ -69,6 +71,9 @@ public class VolumeAttachment  {
     public void setDevice(String device) {
         this.device = device;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

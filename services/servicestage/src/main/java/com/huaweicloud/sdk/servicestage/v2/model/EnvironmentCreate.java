@@ -43,13 +43,13 @@ public class EnvironmentCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    private ChargeMode chargeMode = null;
+    private ChargeMode chargeMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,7 +61,7 @@ public class EnvironmentCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base_resources")
     
-    private List<Resource> baseResources = new ArrayList<>();
+    private List<Resource> baseResources = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,6 +89,8 @@ public class EnvironmentCreate  {
         this.name = name;
     }
 
+    
+
     public EnvironmentCreate withAlias(String alias) {
         this.alias = alias;
         return this;
@@ -108,6 +110,8 @@ public class EnvironmentCreate  {
     public void setAlias(String alias) {
         this.alias = alias;
     }
+
+    
 
     public EnvironmentCreate withDescription(String description) {
         this.description = description;
@@ -129,6 +133,8 @@ public class EnvironmentCreate  {
         this.description = description;
     }
 
+    
+
     public EnvironmentCreate withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -148,6 +154,8 @@ public class EnvironmentCreate  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public EnvironmentCreate withChargeMode(ChargeMode chargeMode) {
         this.chargeMode = chargeMode;
@@ -169,6 +177,8 @@ public class EnvironmentCreate  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public EnvironmentCreate withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -188,6 +198,8 @@ public class EnvironmentCreate  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public EnvironmentCreate withBaseResources(List<Resource> baseResources) {
         this.baseResources = baseResources;
@@ -220,6 +232,8 @@ public class EnvironmentCreate  {
         this.baseResources = baseResources;
     }
 
+    
+
     public EnvironmentCreate withOptionalResources(List<Resource> optionalResources) {
         this.optionalResources = optionalResources;
         return this;
@@ -227,9 +241,6 @@ public class EnvironmentCreate  {
 
     
     public EnvironmentCreate addOptionalResourcesItem(Resource optionalResourcesItem) {
-        if (this.optionalResources == null) {
-            this.optionalResources = new ArrayList<>();
-        }
         this.optionalResources.add(optionalResourcesItem);
         return this;
     }
@@ -253,6 +264,9 @@ public class EnvironmentCreate  {
     public void setOptionalResources(List<Resource> optionalResources) {
         this.optionalResources = optionalResources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

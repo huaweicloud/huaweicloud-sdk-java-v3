@@ -51,6 +51,8 @@ public class DeleteLabelsResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public DeleteLabelsResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -70,6 +72,9 @@ public class DeleteLabelsResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

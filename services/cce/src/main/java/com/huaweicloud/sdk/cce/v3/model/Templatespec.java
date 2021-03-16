@@ -30,7 +30,7 @@ public class Templatespec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="labels")
     
-    private List<String> labels = new ArrayList<>();
+    private List<String> labels = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,7 +60,7 @@ public class Templatespec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="versions")
     
-    private List<Versions> versions = new ArrayList<>();
+    private List<Versions> versions = null;
     
     public Templatespec withDescription(String description) {
         this.description = description;
@@ -81,6 +81,8 @@ public class Templatespec  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Templatespec withLabels(List<String> labels) {
         this.labels = labels;
@@ -113,6 +115,8 @@ public class Templatespec  {
         this.labels = labels;
     }
 
+    
+
     public Templatespec withLogoURL(String logoURL) {
         this.logoURL = logoURL;
         return this;
@@ -132,6 +136,8 @@ public class Templatespec  {
     public void setLogoURL(String logoURL) {
         this.logoURL = logoURL;
     }
+
+    
 
     public Templatespec withReadmeURL(String readmeURL) {
         this.readmeURL = readmeURL;
@@ -153,6 +159,8 @@ public class Templatespec  {
         this.readmeURL = readmeURL;
     }
 
+    
+
     public Templatespec withRequire(Boolean require) {
         this.require = require;
         return this;
@@ -173,6 +181,8 @@ public class Templatespec  {
         this.require = require;
     }
 
+    
+
     public Templatespec withType(String type) {
         this.type = type;
         return this;
@@ -192,6 +202,8 @@ public class Templatespec  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public Templatespec withVersions(List<Versions> versions) {
         this.versions = versions;
@@ -223,6 +235,9 @@ public class Templatespec  {
     public void setVersions(List<Versions> versions) {
         this.versions = versions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

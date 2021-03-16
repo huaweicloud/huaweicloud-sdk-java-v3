@@ -48,13 +48,13 @@ public class AddProduct  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_format")
     
-    private String dataFormat = "json";
+    private String dataFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service_capabilities")
     
-    private List<ServiceCapability> serviceCapabilities = new ArrayList<>();
+    private List<ServiceCapability> serviceCapabilities = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,6 +100,8 @@ public class AddProduct  {
         this.productId = productId;
     }
 
+    
+
     public AddProduct withName(String name) {
         this.name = name;
         return this;
@@ -119,6 +121,8 @@ public class AddProduct  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AddProduct withDeviceType(String deviceType) {
         this.deviceType = deviceType;
@@ -140,6 +144,8 @@ public class AddProduct  {
         this.deviceType = deviceType;
     }
 
+    
+
     public AddProduct withProtocolType(String protocolType) {
         this.protocolType = protocolType;
         return this;
@@ -160,6 +166,8 @@ public class AddProduct  {
         this.protocolType = protocolType;
     }
 
+    
+
     public AddProduct withDataFormat(String dataFormat) {
         this.dataFormat = dataFormat;
         return this;
@@ -179,6 +187,8 @@ public class AddProduct  {
     public void setDataFormat(String dataFormat) {
         this.dataFormat = dataFormat;
     }
+
+    
 
     public AddProduct withServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
         this.serviceCapabilities = serviceCapabilities;
@@ -211,6 +221,8 @@ public class AddProduct  {
         this.serviceCapabilities = serviceCapabilities;
     }
 
+    
+
     public AddProduct withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
@@ -230,6 +242,8 @@ public class AddProduct  {
     public void setManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
+
+    
 
     public AddProduct withIndustry(String industry) {
         this.industry = industry;
@@ -251,6 +265,8 @@ public class AddProduct  {
         this.industry = industry;
     }
 
+    
+
     public AddProduct withDescription(String description) {
         this.description = description;
         return this;
@@ -271,6 +287,8 @@ public class AddProduct  {
         this.description = description;
     }
 
+    
+
     public AddProduct withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -290,6 +308,9 @@ public class AddProduct  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

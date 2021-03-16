@@ -22,7 +22,7 @@ public class CreateAgencyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency")
     
-    private CreateAgencyOption agency = null;
+    private CreateAgencyOption agency;
 
     public CreateAgencyRequestBody withAgency(CreateAgencyOption agency) {
         this.agency = agency;
@@ -50,6 +50,9 @@ public class CreateAgencyRequestBody  {
     public void setAgency(CreateAgencyOption agency) {
         this.agency = agency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

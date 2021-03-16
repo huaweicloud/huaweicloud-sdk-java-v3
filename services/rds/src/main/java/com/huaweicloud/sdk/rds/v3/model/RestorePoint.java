@@ -70,6 +70,8 @@ public class RestorePoint  {
         this.instanceId = instanceId;
     }
 
+    
+
     public RestorePoint withType(String type) {
         this.type = type;
         return this;
@@ -89,6 +91,8 @@ public class RestorePoint  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public RestorePoint withBackupId(String backupId) {
         this.backupId = backupId;
@@ -110,6 +114,8 @@ public class RestorePoint  {
         this.backupId = backupId;
     }
 
+    
+
     public RestorePoint withRestoreTime(Integer restoreTime) {
         this.restoreTime = restoreTime;
         return this;
@@ -130,6 +136,8 @@ public class RestorePoint  {
         this.restoreTime = restoreTime;
     }
 
+    
+
     public RestorePoint withDatabaseName(Map<String, String> databaseName) {
         this.databaseName = databaseName;
         return this;
@@ -138,9 +146,6 @@ public class RestorePoint  {
     
 
     public RestorePoint putDatabaseNameItem(String key, String databaseNameItem) {
-         if (this.databaseName == null) {
-            this.databaseName = new HashMap<>();
-         }
         this.databaseName.put(key, databaseNameItem);
         return this;
     }
@@ -163,6 +168,9 @@ public class RestorePoint  {
     public void setDatabaseName(Map<String, String> databaseName) {
         this.databaseName = databaseName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

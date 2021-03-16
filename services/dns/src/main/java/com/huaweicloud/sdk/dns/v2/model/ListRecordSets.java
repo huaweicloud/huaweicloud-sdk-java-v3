@@ -102,7 +102,7 @@ public class ListRecordSets  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
     public ListRecordSets withId(String id) {
         this.id = id;
@@ -124,6 +124,8 @@ public class ListRecordSets  {
         this.id = id;
     }
 
+    
+
     public ListRecordSets withName(String name) {
         this.name = name;
         return this;
@@ -143,6 +145,8 @@ public class ListRecordSets  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListRecordSets withDescription(String description) {
         this.description = description;
@@ -164,6 +168,8 @@ public class ListRecordSets  {
         this.description = description;
     }
 
+    
+
     public ListRecordSets withZoneId(String zoneId) {
         this.zoneId = zoneId;
         return this;
@@ -183,6 +189,8 @@ public class ListRecordSets  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public ListRecordSets withZoneName(String zoneName) {
         this.zoneName = zoneName;
@@ -204,6 +212,8 @@ public class ListRecordSets  {
         this.zoneName = zoneName;
     }
 
+    
+
     public ListRecordSets withType(String type) {
         this.type = type;
         return this;
@@ -223,6 +233,8 @@ public class ListRecordSets  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ListRecordSets withTtl(Integer ttl) {
         this.ttl = ttl;
@@ -244,6 +256,8 @@ public class ListRecordSets  {
         this.ttl = ttl;
     }
 
+    
+
     public ListRecordSets withRecords(List<String> records) {
         this.records = records;
         return this;
@@ -251,9 +265,6 @@ public class ListRecordSets  {
 
     
     public ListRecordSets addRecordsItem(String recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -278,6 +289,8 @@ public class ListRecordSets  {
         this.records = records;
     }
 
+    
+
     public ListRecordSets withCreateAt(String createAt) {
         this.createAt = createAt;
         return this;
@@ -297,6 +310,8 @@ public class ListRecordSets  {
     public void setCreateAt(String createAt) {
         this.createAt = createAt;
     }
+
+    
 
     public ListRecordSets withUpdateAt(String updateAt) {
         this.updateAt = updateAt;
@@ -318,6 +333,8 @@ public class ListRecordSets  {
         this.updateAt = updateAt;
     }
 
+    
+
     public ListRecordSets withStatus(String status) {
         this.status = status;
         return this;
@@ -337,6 +354,8 @@ public class ListRecordSets  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListRecordSets withDefault(Boolean _default) {
         this._default = _default;
@@ -358,6 +377,8 @@ public class ListRecordSets  {
         this._default = _default;
     }
 
+    
+
     public ListRecordSets withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -377,6 +398,8 @@ public class ListRecordSets  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ListRecordSets withLinks(PageLink links) {
         this.links = links;
@@ -404,6 +427,9 @@ public class ListRecordSets  {
     public void setLinks(PageLink links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

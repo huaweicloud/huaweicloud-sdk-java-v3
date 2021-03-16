@@ -55,6 +55,8 @@ public class UpdateMemberReq  {
         this.name = name;
     }
 
+    
+
     public UpdateMemberReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -74,6 +76,8 @@ public class UpdateMemberReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public UpdateMemberReq withWeight(Integer weight) {
         this.weight = weight;
@@ -96,6 +100,9 @@ public class UpdateMemberReq  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

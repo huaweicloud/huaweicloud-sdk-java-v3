@@ -103,7 +103,7 @@ public class FlavorsResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_extra_specs")
     
-    private OsExtraSpecs osExtraSpecs = null;
+    private OsExtraSpecs osExtraSpecs;
 
     public FlavorsResp withId(String id) {
         this.id = id;
@@ -125,6 +125,8 @@ public class FlavorsResp  {
         this.id = id;
     }
 
+    
+
     public FlavorsResp withName(String name) {
         this.name = name;
         return this;
@@ -144,6 +146,8 @@ public class FlavorsResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public FlavorsResp withVcpus(String vcpus) {
         this.vcpus = vcpus;
@@ -165,6 +169,8 @@ public class FlavorsResp  {
         this.vcpus = vcpus;
     }
 
+    
+
     public FlavorsResp withRam(Integer ram) {
         this.ram = ram;
         return this;
@@ -184,6 +190,8 @@ public class FlavorsResp  {
     public void setRam(Integer ram) {
         this.ram = ram;
     }
+
+    
 
     public FlavorsResp withDisk(String disk) {
         this.disk = disk;
@@ -205,6 +213,8 @@ public class FlavorsResp  {
         this.disk = disk;
     }
 
+    
+
     public FlavorsResp withSwap(String swap) {
         this.swap = swap;
         return this;
@@ -224,6 +234,8 @@ public class FlavorsResp  {
     public void setSwap(String swap) {
         this.swap = swap;
     }
+
+    
 
     public FlavorsResp withOsFLVEXTDATAEphemeral(Integer osFLVEXTDATAEphemeral) {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
@@ -245,6 +257,8 @@ public class FlavorsResp  {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
     }
 
+    
+
     public FlavorsResp withOsFLVDISABLEDDisabled(Boolean osFLVDISABLEDDisabled) {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
         return this;
@@ -264,6 +278,8 @@ public class FlavorsResp  {
     public void setOsFLVDISABLEDDisabled(Boolean osFLVDISABLEDDisabled) {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
     }
+
+    
 
     public FlavorsResp withRxtxFactor(Float rxtxFactor) {
         this.rxtxFactor = rxtxFactor;
@@ -285,6 +301,8 @@ public class FlavorsResp  {
         this.rxtxFactor = rxtxFactor;
     }
 
+    
+
     public FlavorsResp withRxtxQuota(String rxtxQuota) {
         this.rxtxQuota = rxtxQuota;
         return this;
@@ -304,6 +322,8 @@ public class FlavorsResp  {
     public void setRxtxQuota(String rxtxQuota) {
         this.rxtxQuota = rxtxQuota;
     }
+
+    
 
     public FlavorsResp withRxtxCap(String rxtxCap) {
         this.rxtxCap = rxtxCap;
@@ -325,6 +345,8 @@ public class FlavorsResp  {
         this.rxtxCap = rxtxCap;
     }
 
+    
+
     public FlavorsResp withOsFlavorAccessIsPublic(Boolean osFlavorAccessIsPublic) {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
         return this;
@@ -345,6 +367,8 @@ public class FlavorsResp  {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
     }
 
+    
+
     public FlavorsResp withLinks(List<LinksInfo> links) {
         this.links = links;
         return this;
@@ -352,9 +376,6 @@ public class FlavorsResp  {
 
     
     public FlavorsResp addLinksItem(LinksInfo linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -378,6 +399,8 @@ public class FlavorsResp  {
     public void setLinks(List<LinksInfo> links) {
         this.links = links;
     }
+
+    
 
     public FlavorsResp withOsExtraSpecs(OsExtraSpecs osExtraSpecs) {
         this.osExtraSpecs = osExtraSpecs;
@@ -405,6 +428,9 @@ public class FlavorsResp  {
     public void setOsExtraSpecs(OsExtraSpecs osExtraSpecs) {
         this.osExtraSpecs = osExtraSpecs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

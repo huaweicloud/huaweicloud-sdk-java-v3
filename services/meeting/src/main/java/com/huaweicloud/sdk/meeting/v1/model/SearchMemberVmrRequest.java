@@ -33,13 +33,13 @@ public class SearchMemberVmrRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class SearchMemberVmrRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchMemberVmrRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -94,6 +96,8 @@ public class SearchMemberVmrRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public SearchMemberVmrRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -115,6 +119,8 @@ public class SearchMemberVmrRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchMemberVmrRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -138,6 +144,8 @@ public class SearchMemberVmrRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchMemberVmrRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -158,6 +166,8 @@ public class SearchMemberVmrRequest  {
         this.searchKey = searchKey;
     }
 
+    
+
     public SearchMemberVmrRequest withSpecialVmr(Boolean specialVmr) {
         this.specialVmr = specialVmr;
         return this;
@@ -177,6 +187,9 @@ public class SearchMemberVmrRequest  {
     public void setSpecialVmr(Boolean specialVmr) {
         this.specialVmr = specialVmr;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

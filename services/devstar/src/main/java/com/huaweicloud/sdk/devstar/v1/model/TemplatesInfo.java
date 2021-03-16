@@ -23,7 +23,7 @@ public class TemplatesInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_ids")
     
-    private List<String> templateIds = new ArrayList<>();
+    private List<String> templateIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class TemplatesInfo  {
         this.templateIds = templateIds;
     }
 
+    
+
     public TemplatesInfo withPlatformSource(Integer platformSource) {
         this.platformSource = platformSource;
         return this;
@@ -81,6 +83,9 @@ public class TemplatesInfo  {
     public void setPlatformSource(Integer platformSource) {
         this.platformSource = platformSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

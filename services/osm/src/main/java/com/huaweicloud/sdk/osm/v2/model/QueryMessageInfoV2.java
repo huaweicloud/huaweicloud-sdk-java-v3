@@ -49,7 +49,7 @@ public class QueryMessageInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +97,8 @@ public class QueryMessageInfoV2  {
         this.type = type;
     }
 
+    
+
     public QueryMessageInfoV2 withReplierType(Integer replierType) {
         this.replierType = replierType;
         return this;
@@ -119,6 +121,8 @@ public class QueryMessageInfoV2  {
         this.replierType = replierType;
     }
 
+    
+
     public QueryMessageInfoV2 withReplier(String replier) {
         this.replier = replier;
         return this;
@@ -138,6 +142,8 @@ public class QueryMessageInfoV2  {
     public void setReplier(String replier) {
         this.replier = replier;
     }
+
+    
 
     public QueryMessageInfoV2 withContent(String content) {
         this.content = content;
@@ -159,6 +165,8 @@ public class QueryMessageInfoV2  {
         this.content = content;
     }
 
+    
+
     public QueryMessageInfoV2 withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -179,6 +187,8 @@ public class QueryMessageInfoV2  {
         this.createTime = createTime;
     }
 
+    
+
     public QueryMessageInfoV2 withReplierName(String replierName) {
         this.replierName = replierName;
         return this;
@@ -198,6 +208,8 @@ public class QueryMessageInfoV2  {
     public void setReplierName(String replierName) {
         this.replierName = replierName;
     }
+
+    
 
     public QueryMessageInfoV2 withIsFirstMessage(Integer isFirstMessage) {
         this.isFirstMessage = isFirstMessage;
@@ -221,6 +233,8 @@ public class QueryMessageInfoV2  {
         this.isFirstMessage = isFirstMessage;
     }
 
+    
+
     public QueryMessageInfoV2 withIamUserType(Integer iamUserType) {
         this.iamUserType = iamUserType;
         return this;
@@ -243,6 +257,8 @@ public class QueryMessageInfoV2  {
         this.iamUserType = iamUserType;
     }
 
+    
+
     public QueryMessageInfoV2 withAccessoryList(List<SimpleAccessoryV2> accessoryList) {
         this.accessoryList = accessoryList;
         return this;
@@ -250,9 +266,6 @@ public class QueryMessageInfoV2  {
 
     
     public QueryMessageInfoV2 addAccessoryListItem(SimpleAccessoryV2 accessoryListItem) {
-        if (this.accessoryList == null) {
-            this.accessoryList = new ArrayList<>();
-        }
         this.accessoryList.add(accessoryListItem);
         return this;
     }
@@ -276,6 +289,9 @@ public class QueryMessageInfoV2  {
     public void setAccessoryList(List<SimpleAccessoryV2> accessoryList) {
         this.accessoryList = accessoryList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

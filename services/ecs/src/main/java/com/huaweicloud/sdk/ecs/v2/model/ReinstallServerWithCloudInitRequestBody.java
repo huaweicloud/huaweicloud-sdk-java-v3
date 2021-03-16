@@ -22,7 +22,7 @@ public class ReinstallServerWithCloudInitRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-reinstall")
     
-    private ReinstallServerWithCloudInitOption osReinstall = null;
+    private ReinstallServerWithCloudInitOption osReinstall;
 
     public ReinstallServerWithCloudInitRequestBody withOsReinstall(ReinstallServerWithCloudInitOption osReinstall) {
         this.osReinstall = osReinstall;
@@ -50,6 +50,9 @@ public class ReinstallServerWithCloudInitRequestBody  {
     public void setOsReinstall(ReinstallServerWithCloudInitOption osReinstall) {
         this.osReinstall = osReinstall;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

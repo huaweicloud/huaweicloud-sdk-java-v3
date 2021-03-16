@@ -55,6 +55,8 @@ public class CreateManualBackupOption  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateManualBackupOption withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class CreateManualBackupOption  {
         this.name = name;
     }
 
+    
+
     public CreateManualBackupOption withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +98,9 @@ public class CreateManualBackupOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

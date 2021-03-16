@@ -23,7 +23,7 @@ public class CreatePersonalRealnameAuthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_review")
     
-    private Integer isReview = 1;
+    private Integer isReview;
 
     public CreatePersonalRealnameAuthResponse withIsReview(Integer isReview) {
         this.isReview = isReview;
@@ -44,6 +44,9 @@ public class CreatePersonalRealnameAuthResponse extends SdkResponse {
     public void setIsReview(Integer isReview) {
         this.isReview = isReview;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

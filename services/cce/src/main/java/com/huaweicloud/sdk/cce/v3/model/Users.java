@@ -28,7 +28,7 @@ public class Users  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private User user = null;
+    private User user;
 
     public Users withName(String name) {
         this.name = name;
@@ -49,6 +49,8 @@ public class Users  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Users withUser(User user) {
         this.user = user;
@@ -76,6 +78,9 @@ public class Users  {
     public void setUser(User user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

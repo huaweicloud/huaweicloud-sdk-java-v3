@@ -78,6 +78,8 @@ public class AutoScalingPolicy  {
         this.autoScalingEnable = autoScalingEnable;
     }
 
+    
+
     public AutoScalingPolicy withMinCapacity(Integer minCapacity) {
         this.minCapacity = minCapacity;
         return this;
@@ -99,6 +101,8 @@ public class AutoScalingPolicy  {
     public void setMinCapacity(Integer minCapacity) {
         this.minCapacity = minCapacity;
     }
+
+    
 
     public AutoScalingPolicy withMaxCapacity(Integer maxCapacity) {
         this.maxCapacity = maxCapacity;
@@ -122,6 +126,8 @@ public class AutoScalingPolicy  {
         this.maxCapacity = maxCapacity;
     }
 
+    
+
     public AutoScalingPolicy withResourcesPlans(List<ResourcesPlan> resourcesPlans) {
         this.resourcesPlans = resourcesPlans;
         return this;
@@ -129,9 +135,6 @@ public class AutoScalingPolicy  {
 
     
     public AutoScalingPolicy addResourcesPlansItem(ResourcesPlan resourcesPlansItem) {
-        if (this.resourcesPlans == null) {
-            this.resourcesPlans = new ArrayList<>();
-        }
         this.resourcesPlans.add(resourcesPlansItem);
         return this;
     }
@@ -156,6 +159,8 @@ public class AutoScalingPolicy  {
         this.resourcesPlans = resourcesPlans;
     }
 
+    
+
     public AutoScalingPolicy withRules(List<Rules> rules) {
         this.rules = rules;
         return this;
@@ -163,9 +168,6 @@ public class AutoScalingPolicy  {
 
     
     public AutoScalingPolicy addRulesItem(Rules rulesItem) {
-        if (this.rules == null) {
-            this.rules = new ArrayList<>();
-        }
         this.rules.add(rulesItem);
         return this;
     }
@@ -190,6 +192,8 @@ public class AutoScalingPolicy  {
         this.rules = rules;
     }
 
+    
+
     public AutoScalingPolicy withExecScripts(List<ScaleScript> execScripts) {
         this.execScripts = execScripts;
         return this;
@@ -197,9 +201,6 @@ public class AutoScalingPolicy  {
 
     
     public AutoScalingPolicy addExecScriptsItem(ScaleScript execScriptsItem) {
-        if (this.execScripts == null) {
-            this.execScripts = new ArrayList<>();
-        }
         this.execScripts.add(execScriptsItem);
         return this;
     }
@@ -223,6 +224,9 @@ public class AutoScalingPolicy  {
     public void setExecScripts(List<ScaleScript> execScripts) {
         this.execScripts = execScripts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

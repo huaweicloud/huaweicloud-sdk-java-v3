@@ -127,7 +127,7 @@ public class LdApiParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="required")
     
-    private Boolean required = false;
+    private Boolean required;
 
     public LdApiParameter withName(String name) {
         this.name = name;
@@ -149,6 +149,8 @@ public class LdApiParameter  {
         this.name = name;
     }
 
+    
+
     public LdApiParameter withIn(InEnum in) {
         this.in = in;
         return this;
@@ -168,6 +170,8 @@ public class LdApiParameter  {
     public void setIn(InEnum in) {
         this.in = in;
     }
+
+    
 
     public LdApiParameter withDefault(String _default) {
         this._default = _default;
@@ -189,6 +193,8 @@ public class LdApiParameter  {
         this._default = _default;
     }
 
+    
+
     public LdApiParameter withDescription(String description) {
         this.description = description;
         return this;
@@ -209,6 +215,8 @@ public class LdApiParameter  {
         this.description = description;
     }
 
+    
+
     public LdApiParameter withRequired(Boolean required) {
         this.required = required;
         return this;
@@ -228,6 +236,9 @@ public class LdApiParameter  {
     public void setRequired(Boolean required) {
         this.required = required;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

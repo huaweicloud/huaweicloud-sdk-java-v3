@@ -51,6 +51,8 @@ public class UpdateSubNetworkInterfaceOption  {
         this.description = description;
     }
 
+    
+
     public UpdateSubNetworkInterfaceOption withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -58,9 +60,6 @@ public class UpdateSubNetworkInterfaceOption  {
 
     
     public UpdateSubNetworkInterfaceOption addSecurityGroupsItem(String securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class UpdateSubNetworkInterfaceOption  {
     public void setSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

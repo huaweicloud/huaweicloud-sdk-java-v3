@@ -45,13 +45,13 @@ public class ListVpcChannelsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,6 +79,8 @@ public class ListVpcChannelsV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListVpcChannelsV2Request withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +100,8 @@ public class ListVpcChannelsV2Request  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListVpcChannelsV2Request withName(String name) {
         this.name = name;
@@ -119,6 +123,8 @@ public class ListVpcChannelsV2Request  {
         this.name = name;
     }
 
+    
+
     public ListVpcChannelsV2Request withVpcType(Integer vpcType) {
         this.vpcType = vpcType;
         return this;
@@ -139,6 +145,8 @@ public class ListVpcChannelsV2Request  {
         this.vpcType = vpcType;
     }
 
+    
+
     public ListVpcChannelsV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -158,6 +166,8 @@ public class ListVpcChannelsV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListVpcChannelsV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -181,6 +191,8 @@ public class ListVpcChannelsV2Request  {
         this.limit = limit;
     }
 
+    
+
     public ListVpcChannelsV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -200,6 +212,9 @@ public class ListVpcChannelsV2Request  {
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

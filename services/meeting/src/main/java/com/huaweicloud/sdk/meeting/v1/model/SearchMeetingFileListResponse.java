@@ -67,6 +67,8 @@ public class SearchMeetingFileListResponse extends SdkResponse {
         this.offset = offset;
     }
 
+    
+
     public SearchMeetingFileListResponse withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -86,6 +88,8 @@ public class SearchMeetingFileListResponse extends SdkResponse {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public SearchMeetingFileListResponse withCount(Integer count) {
         this.count = count;
@@ -107,6 +111,8 @@ public class SearchMeetingFileListResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public SearchMeetingFileListResponse withData(List<ListMeetingFileResponseDTO> data) {
         this.data = data;
         return this;
@@ -114,9 +120,6 @@ public class SearchMeetingFileListResponse extends SdkResponse {
 
     
     public SearchMeetingFileListResponse addDataItem(ListMeetingFileResponseDTO dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
         this.data.add(dataItem);
         return this;
     }
@@ -140,6 +143,9 @@ public class SearchMeetingFileListResponse extends SdkResponse {
     public void setData(List<ListMeetingFileResponseDTO> data) {
         this.data = data;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

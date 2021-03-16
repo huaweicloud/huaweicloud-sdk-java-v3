@@ -29,7 +29,7 @@ public class SelectorConfigBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_types")
     
-    private List<String> resourceTypes = new ArrayList<>();
+    private List<String> resourceTypes = null;
     
     public SelectorConfigBody withAllSupported(Boolean allSupported) {
         this.allSupported = allSupported;
@@ -50,6 +50,8 @@ public class SelectorConfigBody  {
     public void setAllSupported(Boolean allSupported) {
         this.allSupported = allSupported;
     }
+
+    
 
     public SelectorConfigBody withResourceTypes(List<String> resourceTypes) {
         this.resourceTypes = resourceTypes;
@@ -81,6 +83,9 @@ public class SelectorConfigBody  {
     public void setResourceTypes(List<String> resourceTypes) {
         this.resourceTypes = resourceTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

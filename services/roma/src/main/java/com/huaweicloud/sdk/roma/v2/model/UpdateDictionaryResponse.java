@@ -73,19 +73,19 @@ public class UpdateDictionaryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private DictionaryType type = null;
+    private DictionaryType type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private BigDecimal createTime = null;
+    private BigDecimal createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private BigDecimal updateTime = null;
+    private BigDecimal updateTime;
 
     public UpdateDictionaryResponse withId(String id) {
         this.id = id;
@@ -107,6 +107,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdateDictionaryResponse withName(String name) {
         this.name = name;
         return this;
@@ -126,6 +128,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateDictionaryResponse withRemark(String remark) {
         this.remark = remark;
@@ -147,6 +151,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public UpdateDictionaryResponse withCode(String code) {
         this.code = code;
         return this;
@@ -166,6 +172,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
 
     public UpdateDictionaryResponse withOrder(Integer order) {
         this.order = order;
@@ -189,6 +197,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.order = order;
     }
 
+    
+
     public UpdateDictionaryResponse withExtendOne(String extendOne) {
         this.extendOne = extendOne;
         return this;
@@ -208,6 +218,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
     public void setExtendOne(String extendOne) {
         this.extendOne = extendOne;
     }
+
+    
 
     public UpdateDictionaryResponse withExtendTwo(String extendTwo) {
         this.extendTwo = extendTwo;
@@ -229,6 +241,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.extendTwo = extendTwo;
     }
 
+    
+
     public UpdateDictionaryResponse withParentCode(String parentCode) {
         this.parentCode = parentCode;
         return this;
@@ -249,6 +263,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.parentCode = parentCode;
     }
 
+    
+
     public UpdateDictionaryResponse withType(DictionaryType type) {
         this.type = type;
         return this;
@@ -268,6 +284,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
     public void setType(DictionaryType type) {
         this.type = type;
     }
+
+    
 
     public UpdateDictionaryResponse withCreateTime(BigDecimal createTime) {
         this.createTime = createTime;
@@ -291,6 +309,8 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public UpdateDictionaryResponse withUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -312,6 +332,9 @@ public class UpdateDictionaryResponse extends SdkResponse {
     public void setUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

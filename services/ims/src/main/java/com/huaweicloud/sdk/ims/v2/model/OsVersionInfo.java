@@ -67,6 +67,8 @@ public class OsVersionInfo  {
         this.platform = platform;
     }
 
+    
+
     public OsVersionInfo withOsVersionKey(String osVersionKey) {
         this.osVersionKey = osVersionKey;
         return this;
@@ -86,6 +88,8 @@ public class OsVersionInfo  {
     public void setOsVersionKey(String osVersionKey) {
         this.osVersionKey = osVersionKey;
     }
+
+    
 
     public OsVersionInfo withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -107,6 +111,8 @@ public class OsVersionInfo  {
         this.osVersion = osVersion;
     }
 
+    
+
     public OsVersionInfo withOsBit(Integer osBit) {
         this.osBit = osBit;
         return this;
@@ -127,6 +133,8 @@ public class OsVersionInfo  {
         this.osBit = osBit;
     }
 
+    
+
     public OsVersionInfo withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -146,6 +154,9 @@ public class OsVersionInfo  {
     public void setOsType(String osType) {
         this.osType = osType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

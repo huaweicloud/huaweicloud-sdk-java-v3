@@ -28,13 +28,13 @@ public class TokenResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="catalog")
     
-    private List<TokenCatalog> catalog = new ArrayList<>();
+    private List<TokenCatalog> catalog = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private TokenDomainResult domain = null;
+    private TokenDomainResult domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,25 +52,25 @@ public class TokenResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<String> methods = new ArrayList<>();
+    private List<String> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private TokenProjectResult project = null;
+    private TokenProjectResult project;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roles")
     
-    private List<TokenRole> roles = new ArrayList<>();
+    private List<TokenRole> roles = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private TokenUserResult user = null;
+    private TokenUserResult user;
 
     public TokenResult withCatalog(List<TokenCatalog> catalog) {
         this.catalog = catalog;
@@ -103,6 +103,8 @@ public class TokenResult  {
         this.catalog = catalog;
     }
 
+    
+
     public TokenResult withDomain(TokenDomainResult domain) {
         this.domain = domain;
         return this;
@@ -130,6 +132,8 @@ public class TokenResult  {
         this.domain = domain;
     }
 
+    
+
     public TokenResult withExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
         return this;
@@ -150,6 +154,8 @@ public class TokenResult  {
         this.expiresAt = expiresAt;
     }
 
+    
+
     public TokenResult withIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
         return this;
@@ -169,6 +175,8 @@ public class TokenResult  {
     public void setIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
     }
+
+    
 
     public TokenResult withMethods(List<String> methods) {
         this.methods = methods;
@@ -201,6 +209,8 @@ public class TokenResult  {
         this.methods = methods;
     }
 
+    
+
     public TokenResult withProject(TokenProjectResult project) {
         this.project = project;
         return this;
@@ -227,6 +237,8 @@ public class TokenResult  {
     public void setProject(TokenProjectResult project) {
         this.project = project;
     }
+
+    
 
     public TokenResult withRoles(List<TokenRole> roles) {
         this.roles = roles;
@@ -259,6 +271,8 @@ public class TokenResult  {
         this.roles = roles;
     }
 
+    
+
     public TokenResult withUser(TokenUserResult user) {
         this.user = user;
         return this;
@@ -285,6 +299,9 @@ public class TokenResult  {
     public void setUser(TokenUserResult user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

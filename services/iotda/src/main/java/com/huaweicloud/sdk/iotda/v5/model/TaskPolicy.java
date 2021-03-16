@@ -55,6 +55,8 @@ public class TaskPolicy  {
         this.scheduleTime = scheduleTime;
     }
 
+    
+
     public TaskPolicy withRetryCount(Integer retryCount) {
         this.retryCount = retryCount;
         return this;
@@ -75,6 +77,8 @@ public class TaskPolicy  {
         this.retryCount = retryCount;
     }
 
+    
+
     public TaskPolicy withRetryInterval(Integer retryInterval) {
         this.retryInterval = retryInterval;
         return this;
@@ -94,6 +98,9 @@ public class TaskPolicy  {
     public void setRetryInterval(Integer retryInterval) {
         this.retryInterval = retryInterval;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

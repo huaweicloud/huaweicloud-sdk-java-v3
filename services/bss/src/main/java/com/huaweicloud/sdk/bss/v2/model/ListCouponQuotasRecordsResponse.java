@@ -54,6 +54,8 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCouponQuotasRecordsResponse withRecords(List<QuotaRecord> records) {
         this.records = records;
         return this;
@@ -61,9 +63,6 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
 
     
     public ListCouponQuotasRecordsResponse addRecordsItem(QuotaRecord recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
     public void setRecords(List<QuotaRecord> records) {
         this.records = records;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

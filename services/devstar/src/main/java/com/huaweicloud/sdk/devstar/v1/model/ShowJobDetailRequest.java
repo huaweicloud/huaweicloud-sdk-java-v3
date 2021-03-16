@@ -103,7 +103,7 @@ public class ShowJobDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,6 +133,8 @@ public class ShowJobDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ShowJobDetailRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -152,6 +154,9 @@ public class ShowJobDetailRequest  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

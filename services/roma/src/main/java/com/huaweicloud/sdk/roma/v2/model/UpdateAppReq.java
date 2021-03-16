@@ -33,7 +33,7 @@ public class UpdateAppReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="favorite")
     
-    private Boolean favorite = false;
+    private Boolean favorite;
 
     public UpdateAppReq withName(String name) {
         this.name = name;
@@ -55,6 +55,8 @@ public class UpdateAppReq  {
         this.name = name;
     }
 
+    
+
     public UpdateAppReq withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -75,6 +77,8 @@ public class UpdateAppReq  {
         this.remark = remark;
     }
 
+    
+
     public UpdateAppReq withFavorite(Boolean favorite) {
         this.favorite = favorite;
         return this;
@@ -94,6 +98,9 @@ public class UpdateAppReq  {
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

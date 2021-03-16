@@ -34,7 +34,7 @@ public class CreateRetentionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateRetentionRequestBody body = null;
+    private CreateRetentionRequestBody body;
 
     public CreateRetentionRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -56,6 +56,8 @@ public class CreateRetentionRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public CreateRetentionRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class CreateRetentionRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public CreateRetentionRequest withBody(CreateRetentionRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateRetentionRequest  {
     public void setBody(CreateRetentionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

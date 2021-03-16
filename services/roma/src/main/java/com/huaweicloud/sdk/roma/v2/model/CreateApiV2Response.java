@@ -232,7 +232,7 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -460,13 +460,13 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -802,13 +802,13 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -820,7 +820,7 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_version")
     
-    private String groupVersion = "V1";
+    private String groupVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -856,13 +856,13 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_info")
     
-    private ApiFunc funcInfo = null;
+    private ApiFunc funcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mock_info")
     
-    private ApiMock mockInfo = null;
+    private ApiMock mockInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -892,7 +892,7 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backend_api")
     
-    private BackendApi backendApi = null;
+    private BackendApi backendApi;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -920,6 +920,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreateApiV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -939,6 +941,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public CreateApiV2Response withVersion(String version) {
         this.version = version;
@@ -960,6 +964,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.version = version;
     }
 
+    
+
     public CreateApiV2Response withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -979,6 +985,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public CreateApiV2Response withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -1000,6 +1008,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public CreateApiV2Response withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -1020,6 +1030,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.reqUri = reqUri;
     }
 
+    
+
     public CreateApiV2Response withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -1039,6 +1051,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public CreateApiV2Response withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -1067,6 +1081,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.authOpt = authOpt;
     }
 
+    
+
     public CreateApiV2Response withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -1086,6 +1102,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public CreateApiV2Response withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -1107,6 +1125,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.matchMode = matchMode;
     }
 
+    
+
     public CreateApiV2Response withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -1126,6 +1146,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public CreateApiV2Response withRemark(String remark) {
         this.remark = remark;
@@ -1147,6 +1169,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public CreateApiV2Response withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1166,6 +1190,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public CreateApiV2Response withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1187,6 +1213,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public CreateApiV2Response withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1206,6 +1234,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public CreateApiV2Response withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1227,6 +1257,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public CreateApiV2Response withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1247,6 +1279,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public CreateApiV2Response withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1254,9 +1288,6 @@ public class CreateApiV2Response extends SdkResponse {
 
     
     public CreateApiV2Response addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1281,6 +1312,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public CreateApiV2Response withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1300,6 +1333,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public CreateApiV2Response withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1321,6 +1356,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public CreateApiV2Response withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1340,6 +1377,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public CreateApiV2Response withTag(String tag) {
         this.tag = tag;
@@ -1361,6 +1400,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.tag = tag;
     }
 
+    
+
     public CreateApiV2Response withId(String id) {
         this.id = id;
         return this;
@@ -1380,6 +1421,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public CreateApiV2Response withStatus(StatusEnum status) {
         this.status = status;
@@ -1401,6 +1444,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateApiV2Response withArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
         return this;
@@ -1420,6 +1465,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
     }
+
+    
 
     public CreateApiV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -1441,6 +1488,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.registerTime = registerTime;
     }
 
+    
+
     public CreateApiV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -1460,6 +1509,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public CreateApiV2Response withGroupName(String groupName) {
         this.groupName = groupName;
@@ -1481,6 +1532,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.groupName = groupName;
     }
 
+    
+
     public CreateApiV2Response withGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
         return this;
@@ -1500,6 +1553,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
     }
+
+    
 
     public CreateApiV2Response withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -1521,6 +1576,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public CreateApiV2Response withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -1540,6 +1597,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public CreateApiV2Response withPublishId(String publishId) {
         this.publishId = publishId;
@@ -1561,6 +1620,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.publishId = publishId;
     }
 
+    
+
     public CreateApiV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -1581,6 +1642,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.romaAppName = romaAppName;
     }
 
+    
+
     public CreateApiV2Response withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -1600,6 +1663,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public CreateApiV2Response withFuncInfo(ApiFunc funcInfo) {
         this.funcInfo = funcInfo;
@@ -1628,6 +1693,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.funcInfo = funcInfo;
     }
 
+    
+
     public CreateApiV2Response withMockInfo(ApiMock mockInfo) {
         this.mockInfo = mockInfo;
         return this;
@@ -1655,6 +1722,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.mockInfo = mockInfo;
     }
 
+    
+
     public CreateApiV2Response withReqParams(List<ReqParam> reqParams) {
         this.reqParams = reqParams;
         return this;
@@ -1662,9 +1731,6 @@ public class CreateApiV2Response extends SdkResponse {
 
     
     public CreateApiV2Response addReqParamsItem(ReqParam reqParamsItem) {
-        if (this.reqParams == null) {
-            this.reqParams = new ArrayList<>();
-        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
@@ -1689,6 +1755,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.reqParams = reqParams;
     }
 
+    
+
     public CreateApiV2Response withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -1696,9 +1764,6 @@ public class CreateApiV2Response extends SdkResponse {
 
     
     public CreateApiV2Response addBackendParamsItem(BackendParam backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -1723,6 +1788,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.backendParams = backendParams;
     }
 
+    
+
     public CreateApiV2Response withPolicyFunctions(List<ApiPolicyFunctionResp> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
@@ -1730,9 +1797,6 @@ public class CreateApiV2Response extends SdkResponse {
 
     
     public CreateApiV2Response addPolicyFunctionsItem(ApiPolicyFunctionResp policyFunctionsItem) {
-        if (this.policyFunctions == null) {
-            this.policyFunctions = new ArrayList<>();
-        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
@@ -1757,6 +1821,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.policyFunctions = policyFunctions;
     }
 
+    
+
     public CreateApiV2Response withPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
@@ -1764,9 +1830,6 @@ public class CreateApiV2Response extends SdkResponse {
 
     
     public CreateApiV2Response addPolicyMocksItem(ApiPolicyMockResp policyMocksItem) {
-        if (this.policyMocks == null) {
-            this.policyMocks = new ArrayList<>();
-        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
@@ -1790,6 +1853,8 @@ public class CreateApiV2Response extends SdkResponse {
     public void setPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
     }
+
+    
 
     public CreateApiV2Response withBackendApi(BackendApi backendApi) {
         this.backendApi = backendApi;
@@ -1818,6 +1883,8 @@ public class CreateApiV2Response extends SdkResponse {
         this.backendApi = backendApi;
     }
 
+    
+
     public CreateApiV2Response withPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
@@ -1825,9 +1892,6 @@ public class CreateApiV2Response extends SdkResponse {
 
     
     public CreateApiV2Response addPolicyHttpsItem(ApiPolicyHttpResp policyHttpsItem) {
-        if (this.policyHttps == null) {
-            this.policyHttps = new ArrayList<>();
-        }
         this.policyHttps.add(policyHttpsItem);
         return this;
     }
@@ -1851,6 +1915,9 @@ public class CreateApiV2Response extends SdkResponse {
     public void setPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

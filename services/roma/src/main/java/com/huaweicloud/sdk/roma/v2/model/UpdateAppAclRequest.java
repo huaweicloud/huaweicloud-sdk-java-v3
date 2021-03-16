@@ -34,7 +34,7 @@ public class UpdateAppAclRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppAclCreate body = null;
+    private AppAclCreate body;
 
     public UpdateAppAclRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateAppAclRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateAppAclRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateAppAclRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public UpdateAppAclRequest withBody(AppAclCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateAppAclRequest  {
     public void setBody(AppAclCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

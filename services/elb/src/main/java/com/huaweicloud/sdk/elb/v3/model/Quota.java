@@ -85,6 +85,8 @@ public class Quota  {
         this.certificate = certificate;
     }
 
+    
+
     public Quota withHealthmonitor(Integer healthmonitor) {
         this.healthmonitor = healthmonitor;
         return this;
@@ -104,6 +106,8 @@ public class Quota  {
     public void setHealthmonitor(Integer healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
+
+    
 
     public Quota withL7policy(Integer l7policy) {
         this.l7policy = l7policy;
@@ -125,6 +129,8 @@ public class Quota  {
         this.l7policy = l7policy;
     }
 
+    
+
     public Quota withListener(Integer listener) {
         this.listener = listener;
         return this;
@@ -144,6 +150,8 @@ public class Quota  {
     public void setListener(Integer listener) {
         this.listener = listener;
     }
+
+    
 
     public Quota withLoadbalancer(Integer loadbalancer) {
         this.loadbalancer = loadbalancer;
@@ -165,6 +173,8 @@ public class Quota  {
         this.loadbalancer = loadbalancer;
     }
 
+    
+
     public Quota withMember(Integer member) {
         this.member = member;
         return this;
@@ -184,6 +194,8 @@ public class Quota  {
     public void setMember(Integer member) {
         this.member = member;
     }
+
+    
 
     public Quota withPool(Integer pool) {
         this.pool = pool;
@@ -205,6 +217,8 @@ public class Quota  {
         this.pool = pool;
     }
 
+    
+
     public Quota withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -224,6 +238,9 @@ public class Quota  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

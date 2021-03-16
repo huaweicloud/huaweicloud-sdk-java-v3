@@ -37,7 +37,7 @@ public class ConditionGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_range")
     
-    private TimeRange timeRange = null;
+    private TimeRange timeRange;
 
     public ConditionGroup withConditions(List<RuleCondition> conditions) {
         this.conditions = conditions;
@@ -46,9 +46,6 @@ public class ConditionGroup  {
 
     
     public ConditionGroup addConditionsItem(RuleCondition conditionsItem) {
-        if (this.conditions == null) {
-            this.conditions = new ArrayList<>();
-        }
         this.conditions.add(conditionsItem);
         return this;
     }
@@ -73,6 +70,8 @@ public class ConditionGroup  {
         this.conditions = conditions;
     }
 
+    
+
     public ConditionGroup withLogic(String logic) {
         this.logic = logic;
         return this;
@@ -92,6 +91,8 @@ public class ConditionGroup  {
     public void setLogic(String logic) {
         this.logic = logic;
     }
+
+    
 
     public ConditionGroup withTimeRange(TimeRange timeRange) {
         this.timeRange = timeRange;
@@ -119,6 +120,9 @@ public class ConditionGroup  {
     public void setTimeRange(TimeRange timeRange) {
         this.timeRange = timeRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

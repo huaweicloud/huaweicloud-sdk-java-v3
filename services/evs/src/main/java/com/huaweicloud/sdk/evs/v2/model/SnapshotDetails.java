@@ -57,7 +57,7 @@ public class SnapshotDetails  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Object metadata = null;
+    private Object metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,6 +103,8 @@ public class SnapshotDetails  {
         this.id = id;
     }
 
+    
+
     public SnapshotDetails withStatus(String status) {
         this.status = status;
         return this;
@@ -122,6 +124,8 @@ public class SnapshotDetails  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public SnapshotDetails withName(String name) {
         this.name = name;
@@ -143,6 +147,8 @@ public class SnapshotDetails  {
         this.name = name;
     }
 
+    
+
     public SnapshotDetails withDescription(String description) {
         this.description = description;
         return this;
@@ -162,6 +168,8 @@ public class SnapshotDetails  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public SnapshotDetails withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -183,6 +191,8 @@ public class SnapshotDetails  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SnapshotDetails withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -202,6 +212,8 @@ public class SnapshotDetails  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public SnapshotDetails withMetadata(Object metadata) {
         this.metadata = metadata;
@@ -223,6 +235,8 @@ public class SnapshotDetails  {
         this.metadata = metadata;
     }
 
+    
+
     public SnapshotDetails withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -242,6 +256,8 @@ public class SnapshotDetails  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
 
     public SnapshotDetails withSize(Integer size) {
         this.size = size;
@@ -263,6 +279,8 @@ public class SnapshotDetails  {
         this.size = size;
     }
 
+    
+
     public SnapshotDetails withOsExtendedSnapshotAttributesProjectId(String osExtendedSnapshotAttributesProjectId) {
         this.osExtendedSnapshotAttributesProjectId = osExtendedSnapshotAttributesProjectId;
         return this;
@@ -283,6 +301,8 @@ public class SnapshotDetails  {
         this.osExtendedSnapshotAttributesProjectId = osExtendedSnapshotAttributesProjectId;
     }
 
+    
+
     public SnapshotDetails withOsExtendedSnapshotAttributesProgress(String osExtendedSnapshotAttributesProgress) {
         this.osExtendedSnapshotAttributesProgress = osExtendedSnapshotAttributesProgress;
         return this;
@@ -302,6 +322,9 @@ public class SnapshotDetails  {
     public void setOsExtendedSnapshotAttributesProgress(String osExtendedSnapshotAttributesProgress) {
         this.osExtendedSnapshotAttributesProgress = osExtendedSnapshotAttributesProgress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class ApiAclCreate  {
         this.aclName = aclName;
     }
 
+    
+
     public ApiAclCreate withAclType(String aclType) {
         this.aclType = aclType;
         return this;
@@ -80,6 +82,8 @@ public class ApiAclCreate  {
     public void setAclType(String aclType) {
         this.aclType = aclType;
     }
+
+    
 
     public ApiAclCreate withAclValue(String aclValue) {
         this.aclValue = aclValue;
@@ -101,6 +105,8 @@ public class ApiAclCreate  {
         this.aclValue = aclValue;
     }
 
+    
+
     public ApiAclCreate withEntityType(String entityType) {
         this.entityType = entityType;
         return this;
@@ -120,6 +126,9 @@ public class ApiAclCreate  {
     public void setEntityType(String entityType) {
         this.entityType = entityType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

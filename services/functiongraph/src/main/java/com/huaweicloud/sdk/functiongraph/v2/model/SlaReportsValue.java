@@ -49,6 +49,8 @@ public class SlaReportsValue  {
         this.timestamp = timestamp;
     }
 
+    
+
     public SlaReportsValue withValue(Integer value) {
         this.value = value;
         return this;
@@ -68,6 +70,9 @@ public class SlaReportsValue  {
     public void setValue(Integer value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

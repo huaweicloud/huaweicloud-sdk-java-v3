@@ -417,6 +417,8 @@ public class Server  {
         this.id = id;
     }
 
+    
+
     public Server withIp(String ip) {
         this.ip = ip;
         return this;
@@ -436,6 +438,8 @@ public class Server  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public Server withName(String name) {
         this.name = name;
@@ -457,6 +461,8 @@ public class Server  {
         this.name = name;
     }
 
+    
+
     public Server withHostname(String hostname) {
         this.hostname = hostname;
         return this;
@@ -476,6 +482,8 @@ public class Server  {
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
+
+    
 
     public Server withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -497,6 +505,8 @@ public class Server  {
         this.osType = osType;
     }
 
+    
+
     public Server withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
@@ -517,6 +527,8 @@ public class Server  {
         this.osVersion = osVersion;
     }
 
+    
+
     public Server withFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
         return this;
@@ -536,6 +548,8 @@ public class Server  {
     public void setFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
     }
+
+    
 
     public Server withCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
@@ -559,6 +573,8 @@ public class Server  {
         this.cpuQuantity = cpuQuantity;
     }
 
+    
+
     public Server withMemory(Long memory) {
         this.memory = memory;
         return this;
@@ -581,6 +597,8 @@ public class Server  {
         this.memory = memory;
     }
 
+    
+
     public Server withDisks(List<Disk> disks) {
         this.disks = disks;
         return this;
@@ -588,9 +606,6 @@ public class Server  {
 
     
     public Server addDisksItem(Disk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
         this.disks.add(disksItem);
         return this;
     }
@@ -615,6 +630,8 @@ public class Server  {
         this.disks = disks;
     }
 
+    
+
     public Server withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
@@ -622,9 +639,6 @@ public class Server  {
 
     
     public Server addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if (this.btrfsList == null) {
-            this.btrfsList = new ArrayList<>();
-        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
@@ -649,6 +663,8 @@ public class Server  {
         this.btrfsList = btrfsList;
     }
 
+    
+
     public Server withNetwork(List<NetWork> network) {
         this.network = network;
         return this;
@@ -656,9 +672,6 @@ public class Server  {
 
     
     public Server addNetworkItem(NetWork networkItem) {
-        if (this.network == null) {
-            this.network = new ArrayList<>();
-        }
         this.network.add(networkItem);
         return this;
     }
@@ -683,6 +696,8 @@ public class Server  {
         this.network = network;
     }
 
+    
+
     public Server withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -702,6 +717,8 @@ public class Server  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public Server withHasRsync(Boolean hasRsync) {
         this.hasRsync = hasRsync;
@@ -723,6 +740,8 @@ public class Server  {
         this.hasRsync = hasRsync;
     }
 
+    
+
     public Server withParavirtualization(Boolean paravirtualization) {
         this.paravirtualization = paravirtualization;
         return this;
@@ -742,6 +761,8 @@ public class Server  {
     public void setParavirtualization(Boolean paravirtualization) {
         this.paravirtualization = paravirtualization;
     }
+
+    
 
     public Server withRawDevices(Boolean rawDevices) {
         this.rawDevices = rawDevices;
@@ -763,6 +784,8 @@ public class Server  {
         this.rawDevices = rawDevices;
     }
 
+    
+
     public Server withDriverFiles(Boolean driverFiles) {
         this.driverFiles = driverFiles;
         return this;
@@ -782,6 +805,8 @@ public class Server  {
     public void setDriverFiles(Boolean driverFiles) {
         this.driverFiles = driverFiles;
     }
+
+    
 
     public Server withSystemServices(Boolean systemServices) {
         this.systemServices = systemServices;
@@ -803,6 +828,8 @@ public class Server  {
         this.systemServices = systemServices;
     }
 
+    
+
     public Server withAccountRights(Boolean accountRights) {
         this.accountRights = accountRights;
         return this;
@@ -822,6 +849,8 @@ public class Server  {
     public void setAccountRights(Boolean accountRights) {
         this.accountRights = accountRights;
     }
+
+    
 
     public Server withBootLoader(BootLoaderEnum bootLoader) {
         this.bootLoader = bootLoader;
@@ -843,6 +872,8 @@ public class Server  {
         this.bootLoader = bootLoader;
     }
 
+    
+
     public Server withSystemDir(String systemDir) {
         this.systemDir = systemDir;
         return this;
@@ -863,6 +894,8 @@ public class Server  {
         this.systemDir = systemDir;
     }
 
+    
+
     public Server withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
@@ -870,9 +903,6 @@ public class Server  {
 
     
     public Server addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if (this.volumeGroups == null) {
-            this.volumeGroups = new ArrayList<>();
-        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
@@ -896,6 +926,9 @@ public class Server  {
     public void setVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

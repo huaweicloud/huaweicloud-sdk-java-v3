@@ -23,13 +23,13 @@ public class AgencyTokenScope  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private AgencyTokenScopeDomain domain = null;
+    private AgencyTokenScopeDomain domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private AgencyTokenScopeProject project = null;
+    private AgencyTokenScopeProject project;
 
     public AgencyTokenScope withDomain(AgencyTokenScopeDomain domain) {
         this.domain = domain;
@@ -58,6 +58,8 @@ public class AgencyTokenScope  {
         this.domain = domain;
     }
 
+    
+
     public AgencyTokenScope withProject(AgencyTokenScopeProject project) {
         this.project = project;
         return this;
@@ -84,6 +86,9 @@ public class AgencyTokenScope  {
     public void setProject(AgencyTokenScopeProject project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ShowMemberRequest  {
         this.memberId = memberId;
     }
 
+    
+
     public ShowMemberRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -68,6 +70,9 @@ public class ShowMemberRequest  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

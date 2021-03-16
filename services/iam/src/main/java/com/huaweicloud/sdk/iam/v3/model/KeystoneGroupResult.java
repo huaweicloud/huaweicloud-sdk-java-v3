@@ -46,7 +46,7 @@ public class KeystoneGroupResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class KeystoneGroupResult  {
         this.description = description;
     }
 
+    
+
     public KeystoneGroupResult withId(String id) {
         this.id = id;
         return this;
@@ -93,6 +95,8 @@ public class KeystoneGroupResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public KeystoneGroupResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -114,6 +118,8 @@ public class KeystoneGroupResult  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneGroupResult withName(String name) {
         this.name = name;
         return this;
@@ -133,6 +139,8 @@ public class KeystoneGroupResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneGroupResult withLinks(Links links) {
         this.links = links;
@@ -161,6 +169,8 @@ public class KeystoneGroupResult  {
         this.links = links;
     }
 
+    
+
     public KeystoneGroupResult withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -180,6 +190,9 @@ public class KeystoneGroupResult  {
     public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

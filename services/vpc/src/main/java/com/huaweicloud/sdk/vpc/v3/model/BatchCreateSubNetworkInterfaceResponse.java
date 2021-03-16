@@ -54,6 +54,8 @@ public class BatchCreateSubNetworkInterfaceResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public BatchCreateSubNetworkInterfaceResponse withSubNetworkInterfaces(List<SubNetworkInterface> subNetworkInterfaces) {
         this.subNetworkInterfaces = subNetworkInterfaces;
         return this;
@@ -61,9 +63,6 @@ public class BatchCreateSubNetworkInterfaceResponse extends SdkResponse {
 
     
     public BatchCreateSubNetworkInterfaceResponse addSubNetworkInterfacesItem(SubNetworkInterface subNetworkInterfacesItem) {
-        if (this.subNetworkInterfaces == null) {
-            this.subNetworkInterfaces = new ArrayList<>();
-        }
         this.subNetworkInterfaces.add(subNetworkInterfacesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class BatchCreateSubNetworkInterfaceResponse extends SdkResponse {
     public void setSubNetworkInterfaces(List<SubNetworkInterface> subNetworkInterfaces) {
         this.subNetworkInterfaces = subNetworkInterfaces;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

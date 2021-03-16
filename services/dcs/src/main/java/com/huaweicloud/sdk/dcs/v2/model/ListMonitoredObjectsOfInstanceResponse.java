@@ -68,9 +68,6 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addRouterItem(String routerItem) {
-        if (this.router == null) {
-            this.router = new ArrayList<>();
-        }
         this.router.add(routerItem);
         return this;
     }
@@ -95,6 +92,8 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
         this.router = router;
     }
 
+    
+
     public ListMonitoredObjectsOfInstanceResponse withChildren(List<DimChild> children) {
         this.children = children;
         return this;
@@ -102,9 +101,6 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addChildrenItem(DimChild childrenItem) {
-        if (this.children == null) {
-            this.children = new ArrayList<>();
-        }
         this.children.add(childrenItem);
         return this;
     }
@@ -129,6 +125,8 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
         this.children = children;
     }
 
+    
+
     public ListMonitoredObjectsOfInstanceResponse withInstances(List<InstancesMonitoredObject> instances) {
         this.instances = instances;
         return this;
@@ -136,9 +134,6 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addInstancesItem(InstancesMonitoredObject instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
         this.instances.add(instancesItem);
         return this;
     }
@@ -163,6 +158,8 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
         this.instances = instances;
     }
 
+    
+
     public ListMonitoredObjectsOfInstanceResponse withDcsClusterRedisNode(List<ClusterRedisNodeMonitoredObject> dcsClusterRedisNode) {
         this.dcsClusterRedisNode = dcsClusterRedisNode;
         return this;
@@ -170,9 +167,6 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addDcsClusterRedisNodeItem(ClusterRedisNodeMonitoredObject dcsClusterRedisNodeItem) {
-        if (this.dcsClusterRedisNode == null) {
-            this.dcsClusterRedisNode = new ArrayList<>();
-        }
         this.dcsClusterRedisNode.add(dcsClusterRedisNodeItem);
         return this;
     }
@@ -197,6 +191,8 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
         this.dcsClusterRedisNode = dcsClusterRedisNode;
     }
 
+    
+
     public ListMonitoredObjectsOfInstanceResponse withDcsClusterProxyNode(List<ProxyNodeMonitoredObject> dcsClusterProxyNode) {
         this.dcsClusterProxyNode = dcsClusterProxyNode;
         return this;
@@ -204,9 +200,6 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addDcsClusterProxyNodeItem(ProxyNodeMonitoredObject dcsClusterProxyNodeItem) {
-        if (this.dcsClusterProxyNode == null) {
-            this.dcsClusterProxyNode = new ArrayList<>();
-        }
         this.dcsClusterProxyNode.add(dcsClusterProxyNodeItem);
         return this;
     }
@@ -231,6 +224,8 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
         this.dcsClusterProxyNode = dcsClusterProxyNode;
     }
 
+    
+
     public ListMonitoredObjectsOfInstanceResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -250,6 +245,9 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

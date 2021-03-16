@@ -61,6 +61,8 @@ public class ListRelationRequest  {
         this.caseId = caseId;
     }
 
+    
+
     public ListRelationRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
@@ -85,6 +87,8 @@ public class ListRelationRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListRelationRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -107,6 +111,8 @@ public class ListRelationRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListRelationRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -128,6 +134,9 @@ public class ListRelationRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

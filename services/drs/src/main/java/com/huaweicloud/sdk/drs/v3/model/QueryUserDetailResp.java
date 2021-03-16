@@ -87,6 +87,8 @@ public class QueryUserDetailResp  {
         this.id = id;
     }
 
+    
+
     public QueryUserDetailResp withAccount(String account) {
         this.account = account;
         return this;
@@ -106,6 +108,8 @@ public class QueryUserDetailResp  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public QueryUserDetailResp withComment(String comment) {
         this.comment = comment;
@@ -127,6 +131,8 @@ public class QueryUserDetailResp  {
         this.comment = comment;
     }
 
+    
+
     public QueryUserDetailResp withIsTransfer(Boolean isTransfer) {
         this.isTransfer = isTransfer;
         return this;
@@ -147,6 +153,8 @@ public class QueryUserDetailResp  {
         this.isTransfer = isTransfer;
     }
 
+    
+
     public QueryUserDetailResp withPrivileges(List<String> privileges) {
         this.privileges = privileges;
         return this;
@@ -154,9 +162,6 @@ public class QueryUserDetailResp  {
 
     
     public QueryUserDetailResp addPrivilegesItem(String privilegesItem) {
-        if (this.privileges == null) {
-            this.privileges = new ArrayList<>();
-        }
         this.privileges.add(privilegesItem);
         return this;
     }
@@ -181,6 +186,8 @@ public class QueryUserDetailResp  {
         this.privileges = privileges;
     }
 
+    
+
     public QueryUserDetailResp withPassword(String password) {
         this.password = password;
         return this;
@@ -201,6 +208,8 @@ public class QueryUserDetailResp  {
         this.password = password;
     }
 
+    
+
     public QueryUserDetailResp withRoles(List<String> roles) {
         this.roles = roles;
         return this;
@@ -208,9 +217,6 @@ public class QueryUserDetailResp  {
 
     
     public QueryUserDetailResp addRolesItem(String rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -235,6 +241,8 @@ public class QueryUserDetailResp  {
         this.roles = roles;
     }
 
+    
+
     public QueryUserDetailResp withSelected(Boolean selected) {
         this.selected = selected;
         return this;
@@ -254,6 +262,9 @@ public class QueryUserDetailResp  {
     public void setSelected(Boolean selected) {
         this.selected = selected;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

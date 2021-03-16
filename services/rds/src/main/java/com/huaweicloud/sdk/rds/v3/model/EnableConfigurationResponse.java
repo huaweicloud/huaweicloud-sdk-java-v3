@@ -66,6 +66,8 @@ public class EnableConfigurationResponse extends SdkResponse {
         this.configurationId = configurationId;
     }
 
+    
+
     public EnableConfigurationResponse withConfigurationName(String configurationName) {
         this.configurationName = configurationName;
         return this;
@@ -85,6 +87,8 @@ public class EnableConfigurationResponse extends SdkResponse {
     public void setConfigurationName(String configurationName) {
         this.configurationName = configurationName;
     }
+
+    
 
     public EnableConfigurationResponse withSuccess(Boolean success) {
         this.success = success;
@@ -106,6 +110,8 @@ public class EnableConfigurationResponse extends SdkResponse {
         this.success = success;
     }
 
+    
+
     public EnableConfigurationResponse withApplyResults(List<ApplyConfigurationResponseApplyResults> applyResults) {
         this.applyResults = applyResults;
         return this;
@@ -113,9 +119,6 @@ public class EnableConfigurationResponse extends SdkResponse {
 
     
     public EnableConfigurationResponse addApplyResultsItem(ApplyConfigurationResponseApplyResults applyResultsItem) {
-        if (this.applyResults == null) {
-            this.applyResults = new ArrayList<>();
-        }
         this.applyResults.add(applyResultsItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class EnableConfigurationResponse extends SdkResponse {
     public void setApplyResults(List<ApplyConfigurationResponseApplyResults> applyResults) {
         this.applyResults = applyResults;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

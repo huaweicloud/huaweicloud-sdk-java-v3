@@ -67,7 +67,7 @@ public class UpdateTestCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assigned_user")
     
-    private AssignedUserInfo assignedUser = null;
+    private AssignedUserInfo assignedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,7 +85,7 @@ public class UpdateTestCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extend_info")
     
-    private ExtendInfo extendInfo = null;
+    private ExtendInfo extendInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,6 +119,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.testcaseId = testcaseId;
     }
 
+    
+
     public UpdateTestCaseResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -138,6 +140,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public UpdateTestCaseResponse withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
@@ -159,6 +163,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.serviceId = serviceId;
     }
 
+    
+
     public UpdateTestCaseResponse withName(String name) {
         this.name = name;
         return this;
@@ -178,6 +184,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateTestCaseResponse withTestcaseNumber(String testcaseNumber) {
         this.testcaseNumber = testcaseNumber;
@@ -199,6 +207,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.testcaseNumber = testcaseNumber;
     }
 
+    
+
     public UpdateTestCaseResponse withRankId(String rankId) {
         this.rankId = rankId;
         return this;
@@ -219,6 +229,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.rankId = rankId;
     }
 
+    
+
     public UpdateTestCaseResponse withStatusId(String statusId) {
         this.statusId = statusId;
         return this;
@@ -238,6 +250,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
     public void setStatusId(String statusId) {
         this.statusId = statusId;
     }
+
+    
 
     public UpdateTestCaseResponse withAssignedUser(AssignedUserInfo assignedUser) {
         this.assignedUser = assignedUser;
@@ -266,6 +280,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.assignedUser = assignedUser;
     }
 
+    
+
     public UpdateTestCaseResponse withExecuteCount(Integer executeCount) {
         this.executeCount = executeCount;
         return this;
@@ -286,6 +302,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.executeCount = executeCount;
     }
 
+    
+
     public UpdateTestCaseResponse withResultId(String resultId) {
         this.resultId = resultId;
         return this;
@@ -305,6 +323,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
     public void setResultId(String resultId) {
         this.resultId = resultId;
     }
+
+    
 
     public UpdateTestCaseResponse withExtendInfo(ExtendInfo extendInfo) {
         this.extendInfo = extendInfo;
@@ -333,6 +353,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.extendInfo = extendInfo;
     }
 
+    
+
     public UpdateTestCaseResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -353,6 +375,8 @@ public class UpdateTestCaseResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public UpdateTestCaseResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -372,6 +396,9 @@ public class UpdateTestCaseResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -135,7 +135,7 @@ public class SourceCdnReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authentication_type")
     
-    private AuthenticationTypeEnum authenticationType = AuthenticationTypeEnum.NONE;
+    private AuthenticationTypeEnum authenticationType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -247,6 +247,8 @@ public class SourceCdnReq  {
         this.authenticationKey = authenticationKey;
     }
 
+    
+
     public SourceCdnReq withAuthenticationType(AuthenticationTypeEnum authenticationType) {
         this.authenticationType = authenticationType;
         return this;
@@ -266,6 +268,8 @@ public class SourceCdnReq  {
     public void setAuthenticationType(AuthenticationTypeEnum authenticationType) {
         this.authenticationType = authenticationType;
     }
+
+    
 
     public SourceCdnReq withDomain(String domain) {
         this.domain = domain;
@@ -287,6 +291,8 @@ public class SourceCdnReq  {
         this.domain = domain;
     }
 
+    
+
     public SourceCdnReq withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -306,6 +312,9 @@ public class SourceCdnReq  {
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

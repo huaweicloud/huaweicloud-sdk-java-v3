@@ -1,3 +1,140 @@
+# 3.0.35-rc 2021-03-15
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 当用户传入的 `endpoint` 未带协议前缀时，支持自动加上 `https` 前缀
+    - 不再支持默认值回填功能
+
+### HuaweiCloud SDK CES
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 使用资源分组创建告警规则时，维度字段调整为非必填，即 `CreateAlarmRequestBody` 类中的属性 `metric` 对应类调整：
+      `MetricInfoForAlarm` → `MetricForAlarm`
+
+### HuaweiCloud SDK DAS
+
+- _新增特性_
+    - 新增支持接口：
+        - 获取空间分析数据列表 `ListSpaceAnalysis`
+        - 创建空间分析任务 `CreateSpaceAnalysisTask`
+        - 开启/关闭DAS收集全量SQL、慢SQL开关 `ChangeSqlSwitch`
+        - 查询DAS收集全量SQL和慢SQL的开关状态 `ShowSqlSwitchStatus`
+        - 导出慢SQL数据 `ExportSlowQueryLogs`
+        - 导出全量SQL数据 `ExportSqlStatements`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+    - 新增支持接口：
+        - 根据备份恢复新实例 `RestoreNewInstance`
+        - 查询实例节点会话 `ListSessions`
+        - 终结实例节点会话 `DeleteSession`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK ECS
+
+- _新增特性_
+    - 新增支持接口：查询云服务器组详情 `ShowServerGroup`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 云服务器获取密码接口名调整：`ShowWindowsServerPasswordResponseBody` → `ShowServerPasswordResponseBody`
+    - 云服务器清除密码接口名调整：`DeleteWindowsServerPassword` → `DeleteServerPassword`
+
+### HuaweiCloud SDK ELB
+
+- _新增特性_
+    - 新增支持接口：查询当前租户下的后端服务器列表 `ListAllMembers`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口获取依赖包列表 `ListDependencies` 响应体的属性 `size` 类型调整：String → Long
+
+### HuaweiCloud SDK IAM
+
+- _新增特性_
+    - 新增支持接口：
+        - 查询身份提供商详情 `KeystoneShowIdentityProvider`
+        - 注册身份提供商 `KeystoneCreateIdentityProvider`
+        - 更新身份提供商 `KeystoneUpdateIdentityProvider`
+        - 删除身份提供商 `KeystoneDeleteIdentityProvider`
+        - 获取联邦认证token(OpenId Connect Id token方式) `CreateTokenWithIdToken`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 下线接口：获取联邦认证unscoped token `CreateUnscopeTokenByIdpInitiated`
+
+### HuaweiCloud SDK IMS
+
+- _新增特性_
+    - 新增支持接口：
+        - 按标签查询镜像 `ListImageByTags`
+        - 查询租户所有镜像标签 `ListImagesTags`
+        - 查询镜像标签 `ListImageTags`
+        - 添加镜像标签 `AddImageTag`
+        - 删除镜像标签 `DeleteImageTag`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+    - 新增支持接口：
+        - 创建工作项类型自定义字段 `CreateCustomfields`
+        - 查询人均bug `ShowBugsPerDeveloper`
+        - 查询需求按时完成率 `ShowCompletionRate`
+        - 查询缺陷密度 `ShowBugDensityV2`
+        - 获取项目详情 `ShowProjectInfoV4`
+- _解决问题_
+    - 修改接口命名错误：`ShowtIssueCompletionRate` → `ShowIssueCompletionRate`
+- _特性变更_
+    - `ListProjectV4` 接口响应体中的 `created_time` 和 `updated_time` 属性类型调整：String → Long
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+    - 支持 Postgresql 相关接口
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
+### HuaweiCloud SDK SA
+
+- _新增特性_
+    - 支持态势感知服务
+- _解决问题_
+    - 无
+- _特性变更_
+    - 无
+
 # 3.0.34-rc 2021-02-27
 
 ### HuaweiCloud SDK Core
@@ -50,8 +187,8 @@
 - _新增特性_
     - 新增支持接口：获取慢日志下载链接 `DownloadSlowlog`、获取错误日志下载链接 `DownloadErrorlog`
 - _解决问题_
-    - 修复接口方法命名不合理的问题：`ModifyConfigurationParameter` → `UpdateConfigurationParameter`，修改该接口请求体类名：`ModifyConfigurationParameterRequestBody` → `UpdateConfigurationParameterRequestBody`
-    - 
+    - 修复接口方法命名不合理的问题：`ModifyConfigurationParameter` → `UpdateConfigurationParameter`
+      ，修改该接口请求体类名：`ModifyConfigurationParameterRequestBody` → `UpdateConfigurationParameterRequestBody`
 - _特性变更_
     - 无
 
@@ -148,7 +285,7 @@
         - `ModifyConfiguration` → `UpdateConfiguration`
         - `ModifyInstanceConfiguration` → `UpdateInstanceConfiguration`
     - 修复类 `CreateInstanceResponse` 和 `CreateConfigurationResponse` 出现循环依赖的问题
-    - 修复接口 `CreateInstance` 不可用的问题 
+    - 修复接口 `CreateInstance` 不可用的问题
 - _特性变更_
     - 接口 `StartInstanceAction` 请求中单机转主备场景增加 `is_auto_pay` 属性
 
@@ -855,7 +992,8 @@
 - _解决问题_
     - 无
 - _特性变更_
-    - 生成客户端的名字调整：`DevcloudpipelineClient` → CloudPipelineClient, `DevcloudpipelineAsyncClient` → CloudPipelineAsyncClient
+    - 生成客户端的名字调整：`DevcloudpipelineClient` → CloudPipelineClient, `DevcloudpipelineAsyncClient` →
+      CloudPipelineAsyncClient
     - 生成Meta文件的名字调整：`DevcloudpipelineMeta` → `CloudPipelineMeta`
 
 ### HuaweiCloud SDK DevStar

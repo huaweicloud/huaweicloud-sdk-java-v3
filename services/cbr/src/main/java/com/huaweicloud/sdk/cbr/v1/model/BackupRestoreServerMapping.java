@@ -49,6 +49,8 @@ public class BackupRestoreServerMapping  {
         this.backupId = backupId;
     }
 
+    
+
     public BackupRestoreServerMapping withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -68,6 +70,9 @@ public class BackupRestoreServerMapping  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

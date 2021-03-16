@@ -100,7 +100,7 @@ public class CustomerOrderV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount_info")
     
-    private AmountInfomationV2 amountInfo = null;
+    private AmountInfomationV2 amountInfo;
 
     public CustomerOrderV2 withOrderId(String orderId) {
         this.orderId = orderId;
@@ -122,6 +122,8 @@ public class CustomerOrderV2  {
         this.orderId = orderId;
     }
 
+    
+
     public CustomerOrderV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -141,6 +143,8 @@ public class CustomerOrderV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public CustomerOrderV2 withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
@@ -162,6 +166,8 @@ public class CustomerOrderV2  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    
+
     public CustomerOrderV2 withSourceType(Integer sourceType) {
         this.sourceType = sourceType;
         return this;
@@ -181,6 +187,8 @@ public class CustomerOrderV2  {
     public void setSourceType(Integer sourceType) {
         this.sourceType = sourceType;
     }
+
+    
 
     public CustomerOrderV2 withStatus(Integer status) {
         this.status = status;
@@ -202,6 +210,8 @@ public class CustomerOrderV2  {
         this.status = status;
     }
 
+    
+
     public CustomerOrderV2 withOrderType(Integer orderType) {
         this.orderType = orderType;
         return this;
@@ -221,6 +231,8 @@ public class CustomerOrderV2  {
     public void setOrderType(Integer orderType) {
         this.orderType = orderType;
     }
+
+    
 
     public CustomerOrderV2 withAmountAfterDiscount(Double amountAfterDiscount) {
         this.amountAfterDiscount = amountAfterDiscount;
@@ -242,6 +254,8 @@ public class CustomerOrderV2  {
         this.amountAfterDiscount = amountAfterDiscount;
     }
 
+    
+
     public CustomerOrderV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
@@ -261,6 +275,8 @@ public class CustomerOrderV2  {
     public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
+
+    
 
     public CustomerOrderV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -282,6 +298,8 @@ public class CustomerOrderV2  {
         this.measureId = measureId;
     }
 
+    
+
     public CustomerOrderV2 withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -301,6 +319,8 @@ public class CustomerOrderV2  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public CustomerOrderV2 withPaymentTime(String paymentTime) {
         this.paymentTime = paymentTime;
@@ -322,6 +342,8 @@ public class CustomerOrderV2  {
         this.paymentTime = paymentTime;
     }
 
+    
+
     public CustomerOrderV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -342,6 +364,8 @@ public class CustomerOrderV2  {
         this.currency = currency;
     }
 
+    
+
     public CustomerOrderV2 withContractId(String contractId) {
         this.contractId = contractId;
         return this;
@@ -361,6 +385,8 @@ public class CustomerOrderV2  {
     public void setContractId(String contractId) {
         this.contractId = contractId;
     }
+
+    
 
     public CustomerOrderV2 withAmountInfo(AmountInfomationV2 amountInfo) {
         this.amountInfo = amountInfo;
@@ -388,6 +414,9 @@ public class CustomerOrderV2  {
     public void setAmountInfo(AmountInfomationV2 amountInfo) {
         this.amountInfo = amountInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

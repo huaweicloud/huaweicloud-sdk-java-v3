@@ -408,23 +408,64 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> createUnscopeTokenByIdpInitiated = genForcreateUnscopeTokenByIdpInitiated();
+    public static final HttpRequestDef<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> createOpenIdConnectConfig = genForcreateOpenIdConnectConfig();
 
-    private static HttpRequestDef<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> genForcreateUnscopeTokenByIdpInitiated() {
+    private static HttpRequestDef<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> genForcreateOpenIdConnectConfig() {
         // basic
-        HttpRequestDef.Builder<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateUnscopeTokenByIdpInitiatedRequest.class, CreateUnscopeTokenByIdpInitiatedResponse.class)
-                .withName("CreateUnscopeTokenByIdpInitiated")
-                .withUri("/v3.0/OS-FEDERATION/tokens")
-                .withContentType("application/x-www-form-urlencoded");
+        HttpRequestDef.Builder<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOpenIdConnectConfigRequest.class, CreateOpenIdConnectConfigResponse.class)
+                .withName("CreateOpenIdConnectConfig")
+                .withUri("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateOpenIdConnectConfigRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateOpenIdConnectConfigRequestBody.class,
+            f -> f.withMarshaller(CreateOpenIdConnectConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> createTokenWithIdToken = genForcreateTokenWithIdToken();
+
+    private static HttpRequestDef<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> genForcreateTokenWithIdToken() {
+        // basic
+        HttpRequestDef.Builder<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTokenWithIdTokenRequest.class, CreateTokenWithIdTokenResponse.class)
+                .withName("CreateTokenWithIdToken")
+                .withUri("/v3.0/OS-AUTH/id-token/tokens")
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.withRequestField("X-Idp-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(CreateUnscopeTokenByIdpInitiatedRequest::getXIdpId, (req, v) -> {
+            f -> f.withMarshaller(CreateTokenWithIdTokenRequest::getXIdpId, (req, v) -> {
                 req.setXIdpId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            GetIdTokenRequestBody.class,
+            f -> f.withMarshaller(CreateTokenWithIdTokenRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -436,8 +477,8 @@ public class IamMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(
-                CreateUnscopeTokenByIdpInitiatedResponse::getXSubjectToken,
-                CreateUnscopeTokenByIdpInitiatedResponse::setXSubjectToken)
+                CreateTokenWithIdTokenResponse::getXSubjectToken,
+                CreateTokenWithIdTokenResponse::setXSubjectToken)
         );
         return builder.build();
     }
@@ -2742,6 +2783,31 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> showOpenIdConnectConfig = genForshowOpenIdConnectConfig();
+
+    private static HttpRequestDef<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> genForshowOpenIdConnectConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOpenIdConnectConfigRequest.class, ShowOpenIdConnectConfigResponse.class)
+                .withName("ShowOpenIdConnectConfig")
+                .withUri("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowOpenIdConnectConfigRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> showProjectDetailsAndStatus = genForshowProjectDetailsAndStatus();
 
     private static HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> genForshowProjectDetailsAndStatus() {
@@ -3088,6 +3154,39 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateDomainProtectPolicyRequestBody.class,
             f -> f.withMarshaller(UpdateDomainProtectPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> updateOpenIdConnectConfig = genForupdateOpenIdConnectConfig();
+
+    private static HttpRequestDef<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> genForupdateOpenIdConnectConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateOpenIdConnectConfigRequest.class, UpdateOpenIdConnectConfigResponse.class)
+                .withName("UpdateOpenIdConnectConfig")
+                .withUri("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateOpenIdConnectConfigRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateOpenIdConnectConfigRequestBody.class,
+            f -> f.withMarshaller(UpdateOpenIdConnectConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

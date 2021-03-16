@@ -103,7 +103,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,7 +115,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="router")
     
-    private RouterWithStatus router = null;
+    private RouterWithStatus router;
 
     public CreatePrivateZoneResponse withId(String id) {
         this.id = id;
@@ -137,6 +137,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreatePrivateZoneResponse withName(String name) {
         this.name = name;
         return this;
@@ -156,6 +158,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreatePrivateZoneResponse withDescription(String description) {
         this.description = description;
@@ -177,6 +181,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public CreatePrivateZoneResponse withEmail(String email) {
         this.email = email;
         return this;
@@ -196,6 +202,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public CreatePrivateZoneResponse withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -217,6 +225,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.zoneType = zoneType;
     }
 
+    
+
     public CreatePrivateZoneResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -236,6 +246,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public CreatePrivateZoneResponse withSerial(Integer serial) {
         this.serial = serial;
@@ -257,6 +269,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.serial = serial;
     }
 
+    
+
     public CreatePrivateZoneResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -276,6 +290,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public CreatePrivateZoneResponse withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
@@ -297,6 +313,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.recordNum = recordNum;
     }
 
+    
+
     public CreatePrivateZoneResponse withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -316,6 +334,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public CreatePrivateZoneResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -337,6 +357,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public CreatePrivateZoneResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -357,6 +379,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public CreatePrivateZoneResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -376,6 +400,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public CreatePrivateZoneResponse withLinks(PageLink links) {
         this.links = links;
@@ -404,6 +430,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public CreatePrivateZoneResponse withMasters(String masters) {
         this.masters = masters;
         return this;
@@ -423,6 +451,8 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setMasters(String masters) {
         this.masters = masters;
     }
+
+    
 
     public CreatePrivateZoneResponse withRouter(RouterWithStatus router) {
         this.router = router;
@@ -450,6 +480,9 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     public void setRouter(RouterWithStatus router) {
         this.router = router;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

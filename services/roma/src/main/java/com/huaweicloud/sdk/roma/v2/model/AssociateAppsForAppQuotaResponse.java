@@ -35,9 +35,6 @@ public class AssociateAppsForAppQuotaResponse extends SdkResponse {
 
     
     public AssociateAppsForAppQuotaResponse addAppliesItem(AppQuotaAppBinding appliesItem) {
-        if (this.applies == null) {
-            this.applies = new ArrayList<>();
-        }
         this.applies.add(appliesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class AssociateAppsForAppQuotaResponse extends SdkResponse {
     public void setApplies(List<AppQuotaAppBinding> applies) {
         this.applies = applies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

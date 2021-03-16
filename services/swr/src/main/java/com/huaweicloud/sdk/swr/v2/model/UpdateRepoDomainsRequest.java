@@ -40,7 +40,7 @@ public class UpdateRepoDomainsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateRepoDomainsRequestBody body = null;
+    private UpdateRepoDomainsRequestBody body;
 
     public UpdateRepoDomainsRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -62,6 +62,8 @@ public class UpdateRepoDomainsRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public UpdateRepoDomainsRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -82,6 +84,8 @@ public class UpdateRepoDomainsRequest  {
         this.repository = repository;
     }
 
+    
+
     public UpdateRepoDomainsRequest withAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
         return this;
@@ -101,6 +105,8 @@ public class UpdateRepoDomainsRequest  {
     public void setAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
     }
+
+    
 
     public UpdateRepoDomainsRequest withBody(UpdateRepoDomainsRequestBody body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateRepoDomainsRequest  {
     public void setBody(UpdateRepoDomainsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

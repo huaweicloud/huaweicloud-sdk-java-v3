@@ -38,9 +38,6 @@ public class DownloadErrorlogRequestBody  {
 
     
     public DownloadErrorlogRequestBody addFileNameListItem(String fileNameListItem) {
-        if (this.fileNameList == null) {
-            this.fileNameList = new ArrayList<>();
-        }
         this.fileNameList.add(fileNameListItem);
         return this;
     }
@@ -65,6 +62,8 @@ public class DownloadErrorlogRequestBody  {
         this.fileNameList = fileNameList;
     }
 
+    
+
     public DownloadErrorlogRequestBody withNodeIdList(List<String> nodeIdList) {
         this.nodeIdList = nodeIdList;
         return this;
@@ -72,9 +71,6 @@ public class DownloadErrorlogRequestBody  {
 
     
     public DownloadErrorlogRequestBody addNodeIdListItem(String nodeIdListItem) {
-        if (this.nodeIdList == null) {
-            this.nodeIdList = new ArrayList<>();
-        }
         this.nodeIdList.add(nodeIdListItem);
         return this;
     }
@@ -98,6 +94,9 @@ public class DownloadErrorlogRequestBody  {
     public void setNodeIdList(List<String> nodeIdList) {
         this.nodeIdList = nodeIdList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

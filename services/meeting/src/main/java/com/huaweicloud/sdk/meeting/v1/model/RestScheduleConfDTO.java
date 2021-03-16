@@ -26,7 +26,7 @@ public class RestScheduleConfDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conferenceType")
     
-    private Integer conferenceType = 0;
+    private Integer conferenceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,7 +38,7 @@ public class RestScheduleConfDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="length")
     
-    private Integer length = 30;
+    private Integer length;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class RestScheduleConfDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isAutoRecord")
     
-    private Integer isAutoRecord = 0;
+    private Integer isAutoRecord;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,7 +92,7 @@ public class RestScheduleConfDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recordType")
     
-    private Integer recordType = 0;
+    private Integer recordType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,7 +116,7 @@ public class RestScheduleConfDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confConfigInfo")
     
-    private RestConfConfigDTO confConfigInfo = null;
+    private RestConfConfigDTO confConfigInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -128,13 +128,13 @@ public class RestScheduleConfDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vmrFlag")
     
-    private Integer vmrFlag = 0;
+    private Integer vmrFlag;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cycleParams")
     
-    private CycleParams cycleParams = null;
+    private CycleParams cycleParams;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -170,6 +170,8 @@ public class RestScheduleConfDTO  {
         this.conferenceType = conferenceType;
     }
 
+    
+
     public RestScheduleConfDTO withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -189,6 +191,8 @@ public class RestScheduleConfDTO  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public RestScheduleConfDTO withLength(Integer length) {
         this.length = length;
@@ -212,6 +216,8 @@ public class RestScheduleConfDTO  {
         this.length = length;
     }
 
+    
+
     public RestScheduleConfDTO withSubject(String subject) {
         this.subject = subject;
         return this;
@@ -231,6 +237,8 @@ public class RestScheduleConfDTO  {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+    
 
     public RestScheduleConfDTO withMediaTypes(String mediaTypes) {
         this.mediaTypes = mediaTypes;
@@ -252,6 +260,8 @@ public class RestScheduleConfDTO  {
         this.mediaTypes = mediaTypes;
     }
 
+    
+
     public RestScheduleConfDTO withGroupuri(String groupuri) {
         this.groupuri = groupuri;
         return this;
@@ -272,6 +282,8 @@ public class RestScheduleConfDTO  {
         this.groupuri = groupuri;
     }
 
+    
+
     public RestScheduleConfDTO withAttendees(List<RestAttendeeDTO> attendees) {
         this.attendees = attendees;
         return this;
@@ -279,9 +291,6 @@ public class RestScheduleConfDTO  {
 
     
     public RestScheduleConfDTO addAttendeesItem(RestAttendeeDTO attendeesItem) {
-        if (this.attendees == null) {
-            this.attendees = new ArrayList<>();
-        }
         this.attendees.add(attendeesItem);
         return this;
     }
@@ -306,6 +315,8 @@ public class RestScheduleConfDTO  {
         this.attendees = attendees;
     }
 
+    
+
     public RestScheduleConfDTO withIsAutoRecord(Integer isAutoRecord) {
         this.isAutoRecord = isAutoRecord;
         return this;
@@ -327,6 +338,8 @@ public class RestScheduleConfDTO  {
     public void setIsAutoRecord(Integer isAutoRecord) {
         this.isAutoRecord = isAutoRecord;
     }
+
+    
 
     public RestScheduleConfDTO withEncryptMode(Integer encryptMode) {
         this.encryptMode = encryptMode;
@@ -350,6 +363,8 @@ public class RestScheduleConfDTO  {
         this.encryptMode = encryptMode;
     }
 
+    
+
     public RestScheduleConfDTO withLanguage(String language) {
         this.language = language;
         return this;
@@ -370,6 +385,8 @@ public class RestScheduleConfDTO  {
         this.language = language;
     }
 
+    
+
     public RestScheduleConfDTO withTimeZoneID(String timeZoneID) {
         this.timeZoneID = timeZoneID;
         return this;
@@ -389,6 +406,8 @@ public class RestScheduleConfDTO  {
     public void setTimeZoneID(String timeZoneID) {
         this.timeZoneID = timeZoneID;
     }
+
+    
 
     public RestScheduleConfDTO withRecordType(Integer recordType) {
         this.recordType = recordType;
@@ -412,6 +431,8 @@ public class RestScheduleConfDTO  {
         this.recordType = recordType;
     }
 
+    
+
     public RestScheduleConfDTO withLiveAddress(String liveAddress) {
         this.liveAddress = liveAddress;
         return this;
@@ -432,6 +453,8 @@ public class RestScheduleConfDTO  {
         this.liveAddress = liveAddress;
     }
 
+    
+
     public RestScheduleConfDTO withAuxAddress(String auxAddress) {
         this.auxAddress = auxAddress;
         return this;
@@ -451,6 +474,8 @@ public class RestScheduleConfDTO  {
     public void setAuxAddress(String auxAddress) {
         this.auxAddress = auxAddress;
     }
+
+    
 
     public RestScheduleConfDTO withRecordAuxStream(Integer recordAuxStream) {
         this.recordAuxStream = recordAuxStream;
@@ -473,6 +498,8 @@ public class RestScheduleConfDTO  {
     public void setRecordAuxStream(Integer recordAuxStream) {
         this.recordAuxStream = recordAuxStream;
     }
+
+    
 
     public RestScheduleConfDTO withConfConfigInfo(RestConfConfigDTO confConfigInfo) {
         this.confConfigInfo = confConfigInfo;
@@ -501,6 +528,8 @@ public class RestScheduleConfDTO  {
         this.confConfigInfo = confConfigInfo;
     }
 
+    
+
     public RestScheduleConfDTO withRecordAuthType(Integer recordAuthType) {
         this.recordAuthType = recordAuthType;
         return this;
@@ -523,6 +552,8 @@ public class RestScheduleConfDTO  {
         this.recordAuthType = recordAuthType;
     }
 
+    
+
     public RestScheduleConfDTO withVmrFlag(Integer vmrFlag) {
         this.vmrFlag = vmrFlag;
         return this;
@@ -544,6 +575,8 @@ public class RestScheduleConfDTO  {
     public void setVmrFlag(Integer vmrFlag) {
         this.vmrFlag = vmrFlag;
     }
+
+    
 
     public RestScheduleConfDTO withCycleParams(CycleParams cycleParams) {
         this.cycleParams = cycleParams;
@@ -572,6 +605,8 @@ public class RestScheduleConfDTO  {
         this.cycleParams = cycleParams;
     }
 
+    
+
     public RestScheduleConfDTO withVmrID(String vmrID) {
         this.vmrID = vmrID;
         return this;
@@ -592,6 +627,8 @@ public class RestScheduleConfDTO  {
         this.vmrID = vmrID;
     }
 
+    
+
     public RestScheduleConfDTO withConcurrentParticipants(Integer concurrentParticipants) {
         this.concurrentParticipants = concurrentParticipants;
         return this;
@@ -611,6 +648,9 @@ public class RestScheduleConfDTO  {
     public void setConcurrentParticipants(Integer concurrentParticipants) {
         this.concurrentParticipants = concurrentParticipants;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

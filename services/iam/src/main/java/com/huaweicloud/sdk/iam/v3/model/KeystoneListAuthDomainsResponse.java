@@ -33,7 +33,7 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
     public KeystoneListAuthDomainsResponse withDomains(List<Domains> domains) {
         this.domains = domains;
@@ -42,9 +42,6 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
 
     
     public KeystoneListAuthDomainsResponse addDomainsItem(Domains domainsItem) {
-        if (this.domains == null) {
-            this.domains = new ArrayList<>();
-        }
         this.domains.add(domainsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
     public void setDomains(List<Domains> domains) {
         this.domains = domains;
     }
+
+    
 
     public KeystoneListAuthDomainsResponse withLinks(LinksSelf links) {
         this.links = links;
@@ -95,6 +94,9 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
     public void setLinks(LinksSelf links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

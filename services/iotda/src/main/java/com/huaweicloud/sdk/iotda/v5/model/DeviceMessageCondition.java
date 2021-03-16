@@ -49,6 +49,8 @@ public class DeviceMessageCondition  {
         this.productId = productId;
     }
 
+    
+
     public DeviceMessageCondition withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -68,6 +70,9 @@ public class DeviceMessageCondition  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

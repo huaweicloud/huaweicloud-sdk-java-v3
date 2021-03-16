@@ -71,6 +71,8 @@ public class AssociateVmrRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AssociateVmrRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -91,6 +93,8 @@ public class AssociateVmrRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public AssociateVmrRequest withAccount(String account) {
         this.account = account;
         return this;
@@ -110,6 +114,8 @@ public class AssociateVmrRequest  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public AssociateVmrRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
@@ -133,6 +139,8 @@ public class AssociateVmrRequest  {
         this.accountType = accountType;
     }
 
+    
+
     public AssociateVmrRequest withBody(List<String> body) {
         this.body = body;
         return this;
@@ -140,9 +148,6 @@ public class AssociateVmrRequest  {
 
     
     public AssociateVmrRequest addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -166,6 +171,9 @@ public class AssociateVmrRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

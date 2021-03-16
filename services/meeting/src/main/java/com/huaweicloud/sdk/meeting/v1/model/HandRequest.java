@@ -40,7 +40,7 @@ public class HandRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestHandsUpReqBody body = null;
+    private RestHandsUpReqBody body;
 
     public HandRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -62,6 +62,8 @@ public class HandRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public HandRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -81,6 +83,8 @@ public class HandRequest  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
 
     public HandRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -103,6 +107,8 @@ public class HandRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public HandRequest withBody(RestHandsUpReqBody body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class HandRequest  {
     public void setBody(RestHandsUpReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class LatencyStats  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_latency")
     
-    private BigDecimal avgLatency = null;
+    private BigDecimal avgLatency;
 
     public LatencyStats withMaxLatency(Integer maxLatency) {
         this.maxLatency = maxLatency;
@@ -50,6 +50,8 @@ public class LatencyStats  {
         this.maxLatency = maxLatency;
     }
 
+    
+
     public LatencyStats withAvgLatency(BigDecimal avgLatency) {
         this.avgLatency = avgLatency;
         return this;
@@ -69,6 +71,9 @@ public class LatencyStats  {
     public void setAvgLatency(BigDecimal avgLatency) {
         this.avgLatency = avgLatency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

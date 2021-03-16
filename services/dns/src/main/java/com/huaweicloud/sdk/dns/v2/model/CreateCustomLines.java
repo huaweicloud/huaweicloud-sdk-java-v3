@@ -29,7 +29,7 @@ public class CreateCustomLines  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_segments")
     
-    private List<String> ipSegments = new ArrayList<>();
+    private List<String> ipSegments = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,6 +56,8 @@ public class CreateCustomLines  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateCustomLines withIpSegments(List<String> ipSegments) {
         this.ipSegments = ipSegments;
@@ -88,6 +90,8 @@ public class CreateCustomLines  {
         this.ipSegments = ipSegments;
     }
 
+    
+
     public CreateCustomLines withDescription(String description) {
         this.description = description;
         return this;
@@ -107,6 +111,9 @@ public class CreateCustomLines  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

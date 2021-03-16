@@ -112,7 +112,7 @@ public class ModifyTargetParamsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="params")
     
-    private List<ParamsReqBean> params = new ArrayList<>();
+    private List<ParamsReqBean> params = null;
     
     public ModifyTargetParamsReq withGroup(GroupEnum group) {
         this.group = group;
@@ -133,6 +133,8 @@ public class ModifyTargetParamsReq  {
     public void setGroup(GroupEnum group) {
         this.group = group;
     }
+
+    
 
     public ModifyTargetParamsReq withParams(List<ParamsReqBean> params) {
         this.params = params;
@@ -164,6 +166,9 @@ public class ModifyTargetParamsReq  {
     public void setParams(List<ParamsReqBean> params) {
         this.params = params;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,13 +24,13 @@ public class QuerySampleParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="samples")
     
-    private List<QuerySample> samples = new ArrayList<>();
+    private List<QuerySample> samples = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistics")
     
-    private List<String> statistics = new ArrayList<>();
+    private List<String> statistics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class QuerySampleParam  {
         this.samples = samples;
     }
 
+    
+
     public QuerySampleParam withStatistics(List<String> statistics) {
         this.statistics = statistics;
         return this;
@@ -106,6 +108,8 @@ public class QuerySampleParam  {
         this.statistics = statistics;
     }
 
+    
+
     public QuerySampleParam withPeriod(Integer period) {
         this.period = period;
         return this;
@@ -126,6 +130,8 @@ public class QuerySampleParam  {
         this.period = period;
     }
 
+    
+
     public QuerySampleParam withTimeRange(String timeRange) {
         this.timeRange = timeRange;
         return this;
@@ -145,6 +151,9 @@ public class QuerySampleParam  {
     public void setTimeRange(String timeRange) {
         this.timeRange = timeRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

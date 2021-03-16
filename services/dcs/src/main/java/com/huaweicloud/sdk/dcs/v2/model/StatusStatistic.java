@@ -115,6 +115,8 @@ public class StatusStatistic  {
         this.payingCount = payingCount;
     }
 
+    
+
     public StatusStatistic withFreezingCount(Integer freezingCount) {
         this.freezingCount = freezingCount;
         return this;
@@ -134,6 +136,8 @@ public class StatusStatistic  {
     public void setFreezingCount(Integer freezingCount) {
         this.freezingCount = freezingCount;
     }
+
+    
 
     public StatusStatistic withMigratingCount(Integer migratingCount) {
         this.migratingCount = migratingCount;
@@ -155,6 +159,8 @@ public class StatusStatistic  {
         this.migratingCount = migratingCount;
     }
 
+    
+
     public StatusStatistic withFlushingCount(Integer flushingCount) {
         this.flushingCount = flushingCount;
         return this;
@@ -174,6 +180,8 @@ public class StatusStatistic  {
     public void setFlushingCount(Integer flushingCount) {
         this.flushingCount = flushingCount;
     }
+
+    
 
     public StatusStatistic withUpgradingCount(Integer upgradingCount) {
         this.upgradingCount = upgradingCount;
@@ -195,6 +203,8 @@ public class StatusStatistic  {
         this.upgradingCount = upgradingCount;
     }
 
+    
+
     public StatusStatistic withRestoringCount(Integer restoringCount) {
         this.restoringCount = restoringCount;
         return this;
@@ -214,6 +224,8 @@ public class StatusStatistic  {
     public void setRestoringCount(Integer restoringCount) {
         this.restoringCount = restoringCount;
     }
+
+    
 
     public StatusStatistic withExtendingCount(Integer extendingCount) {
         this.extendingCount = extendingCount;
@@ -235,6 +247,8 @@ public class StatusStatistic  {
         this.extendingCount = extendingCount;
     }
 
+    
+
     public StatusStatistic withCreatingCount(Integer creatingCount) {
         this.creatingCount = creatingCount;
         return this;
@@ -254,6 +268,8 @@ public class StatusStatistic  {
     public void setCreatingCount(Integer creatingCount) {
         this.creatingCount = creatingCount;
     }
+
+    
 
     public StatusStatistic withRunningCount(Integer runningCount) {
         this.runningCount = runningCount;
@@ -275,6 +291,8 @@ public class StatusStatistic  {
         this.runningCount = runningCount;
     }
 
+    
+
     public StatusStatistic withErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
         return this;
@@ -294,6 +312,8 @@ public class StatusStatistic  {
     public void setErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
     }
+
+    
 
     public StatusStatistic withFrozenCount(Integer frozenCount) {
         this.frozenCount = frozenCount;
@@ -315,6 +335,8 @@ public class StatusStatistic  {
         this.frozenCount = frozenCount;
     }
 
+    
+
     public StatusStatistic withCreatefailedCount(Integer createfailedCount) {
         this.createfailedCount = createfailedCount;
         return this;
@@ -335,6 +357,8 @@ public class StatusStatistic  {
         this.createfailedCount = createfailedCount;
     }
 
+    
+
     public StatusStatistic withRestartingCount(Integer restartingCount) {
         this.restartingCount = restartingCount;
         return this;
@@ -354,6 +378,9 @@ public class StatusStatistic  {
     public void setRestartingCount(Integer restartingCount) {
         this.restartingCount = restartingCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

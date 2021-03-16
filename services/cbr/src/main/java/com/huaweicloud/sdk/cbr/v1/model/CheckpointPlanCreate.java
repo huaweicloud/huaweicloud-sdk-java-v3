@@ -65,6 +65,8 @@ public class CheckpointPlanCreate  {
         this.id = id;
     }
 
+    
+
     public CheckpointPlanCreate withName(String name) {
         this.name = name;
         return this;
@@ -85,6 +87,8 @@ public class CheckpointPlanCreate  {
         this.name = name;
     }
 
+    
+
     public CheckpointPlanCreate withResources(List<CheckpointResourceResp> resources) {
         this.resources = resources;
         return this;
@@ -92,9 +96,6 @@ public class CheckpointPlanCreate  {
 
     
     public CheckpointPlanCreate addResourcesItem(CheckpointResourceResp resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -119,6 +120,8 @@ public class CheckpointPlanCreate  {
         this.resources = resources;
     }
 
+    
+
     public CheckpointPlanCreate withSkippedResources(List<CheckpointCreateSkippedResource> skippedResources) {
         this.skippedResources = skippedResources;
         return this;
@@ -126,9 +129,6 @@ public class CheckpointPlanCreate  {
 
     
     public CheckpointPlanCreate addSkippedResourcesItem(CheckpointCreateSkippedResource skippedResourcesItem) {
-        if (this.skippedResources == null) {
-            this.skippedResources = new ArrayList<>();
-        }
         this.skippedResources.add(skippedResourcesItem);
         return this;
     }
@@ -152,6 +152,9 @@ public class CheckpointPlanCreate  {
     public void setSkippedResources(List<CheckpointCreateSkippedResource> skippedResources) {
         this.skippedResources = skippedResources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class UpdateBandwidthPolicyReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth_policy")
     
-    private List<BandwidthPolicyDto> bandwidthPolicy = new ArrayList<>();
+    private List<BandwidthPolicyDto> bandwidthPolicy = null;
     
     public UpdateBandwidthPolicyReq withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
@@ -56,6 +56,9 @@ public class UpdateBandwidthPolicyReq  {
     public void setBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

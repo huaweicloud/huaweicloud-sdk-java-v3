@@ -187,6 +187,8 @@ public class SearchUserResultDTO  {
         this.id = id;
     }
 
+    
+
     public SearchUserResultDTO withUserAccount(String userAccount) {
         this.userAccount = userAccount;
         return this;
@@ -206,6 +208,8 @@ public class SearchUserResultDTO  {
     public void setUserAccount(String userAccount) {
         this.userAccount = userAccount;
     }
+
+    
 
     public SearchUserResultDTO withName(String name) {
         this.name = name;
@@ -227,6 +231,8 @@ public class SearchUserResultDTO  {
         this.name = name;
     }
 
+    
+
     public SearchUserResultDTO withEnglishName(String englishName) {
         this.englishName = englishName;
         return this;
@@ -246,6 +252,8 @@ public class SearchUserResultDTO  {
     public void setEnglishName(String englishName) {
         this.englishName = englishName;
     }
+
+    
 
     public SearchUserResultDTO withPhone(String phone) {
         this.phone = phone;
@@ -267,6 +275,8 @@ public class SearchUserResultDTO  {
         this.phone = phone;
     }
 
+    
+
     public SearchUserResultDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -286,6 +296,8 @@ public class SearchUserResultDTO  {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
 
     public SearchUserResultDTO withEmail(String email) {
         this.email = email;
@@ -307,6 +319,8 @@ public class SearchUserResultDTO  {
         this.email = email;
     }
 
+    
+
     public SearchUserResultDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
@@ -326,6 +340,8 @@ public class SearchUserResultDTO  {
     public void setVmrId(String vmrId) {
         this.vmrId = vmrId;
     }
+
+    
 
     public SearchUserResultDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
@@ -347,6 +363,8 @@ public class SearchUserResultDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public SearchUserResultDTO withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
@@ -366,6 +384,8 @@ public class SearchUserResultDTO  {
     public void setDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
     }
+
+    
 
     public SearchUserResultDTO withUserType(Integer userType) {
         this.userType = userType;
@@ -387,6 +407,8 @@ public class SearchUserResultDTO  {
         this.userType = userType;
     }
 
+    
+
     public SearchUserResultDTO withAdminType(Integer adminType) {
         this.adminType = adminType;
         return this;
@@ -406,6 +428,8 @@ public class SearchUserResultDTO  {
     public void setAdminType(Integer adminType) {
         this.adminType = adminType;
     }
+
+    
 
     public SearchUserResultDTO withSignature(String signature) {
         this.signature = signature;
@@ -427,6 +451,8 @@ public class SearchUserResultDTO  {
         this.signature = signature;
     }
 
+    
+
     public SearchUserResultDTO withTitle(String title) {
         this.title = title;
         return this;
@@ -446,6 +472,8 @@ public class SearchUserResultDTO  {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    
 
     public SearchUserResultDTO withDesc(String desc) {
         this.desc = desc;
@@ -467,6 +495,8 @@ public class SearchUserResultDTO  {
         this.desc = desc;
     }
 
+    
+
     public SearchUserResultDTO withStatus(Integer status) {
         this.status = status;
         return this;
@@ -486,6 +516,8 @@ public class SearchUserResultDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public SearchUserResultDTO withSortLevel(Integer sortLevel) {
         this.sortLevel = sortLevel;
@@ -507,6 +539,8 @@ public class SearchUserResultDTO  {
         this.sortLevel = sortLevel;
     }
 
+    
+
     public SearchUserResultDTO withHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
         return this;
@@ -526,6 +560,8 @@ public class SearchUserResultDTO  {
     public void setHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
     }
+
+    
 
     public SearchUserResultDTO withThirdAccount(String thirdAccount) {
         this.thirdAccount = thirdAccount;
@@ -547,6 +583,8 @@ public class SearchUserResultDTO  {
         this.thirdAccount = thirdAccount;
     }
 
+    
+
     public SearchUserResultDTO withVisionAccount(String visionAccount) {
         this.visionAccount = visionAccount;
         return this;
@@ -566,6 +604,8 @@ public class SearchUserResultDTO  {
     public void setVisionAccount(String visionAccount) {
         this.visionAccount = visionAccount;
     }
+
+    
 
     public SearchUserResultDTO withLicense(Integer license) {
         this.license = license;
@@ -587,6 +627,8 @@ public class SearchUserResultDTO  {
         this.license = license;
     }
 
+    
+
     public SearchUserResultDTO withActiveTime(Long activeTime) {
         this.activeTime = activeTime;
         return this;
@@ -606,6 +648,8 @@ public class SearchUserResultDTO  {
     public void setActiveTime(Long activeTime) {
         this.activeTime = activeTime;
     }
+
+    
 
     public SearchUserResultDTO withActiveCodeExpireTime(Long activeCodeExpireTime) {
         this.activeCodeExpireTime = activeCodeExpireTime;
@@ -627,6 +671,8 @@ public class SearchUserResultDTO  {
         this.activeCodeExpireTime = activeCodeExpireTime;
     }
 
+    
+
     public SearchUserResultDTO withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -647,6 +693,8 @@ public class SearchUserResultDTO  {
         this.expireTime = expireTime;
     }
 
+    
+
     public SearchUserResultDTO withActiveCode(String activeCode) {
         this.activeCode = activeCode;
         return this;
@@ -666,6 +714,9 @@ public class SearchUserResultDTO  {
     public void setActiveCode(String activeCode) {
         this.activeCode = activeCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

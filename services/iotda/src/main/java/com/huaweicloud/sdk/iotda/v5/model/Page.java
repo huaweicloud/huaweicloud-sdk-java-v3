@@ -49,6 +49,8 @@ public class Page  {
         this.count = count;
     }
 
+    
+
     public Page withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -68,6 +70,9 @@ public class Page  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

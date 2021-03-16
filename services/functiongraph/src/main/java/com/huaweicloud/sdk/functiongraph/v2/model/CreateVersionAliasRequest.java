@@ -28,7 +28,7 @@ public class CreateVersionAliasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateVersionAliasRequestBody body = null;
+    private CreateVersionAliasRequestBody body;
 
     public CreateVersionAliasRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -49,6 +49,8 @@ public class CreateVersionAliasRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
 
     public CreateVersionAliasRequest withBody(CreateVersionAliasRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateVersionAliasRequest  {
     public void setBody(CreateVersionAliasRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class DeleteTasksRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteTasksReq body = null;
+    private DeleteTasksReq body;
 
     public DeleteTasksRequest withBody(DeleteTasksReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class DeleteTasksRequest  {
     public void setBody(DeleteTasksReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

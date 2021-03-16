@@ -83,7 +83,7 @@ public class ListInstanceTopicsRespTopics  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="external_configs")
     
-    private Object externalConfigs = null;
+    private Object externalConfigs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,6 +123,8 @@ public class ListInstanceTopicsRespTopics  {
         this.policiesOnly = policiesOnly;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withName(String name) {
         this.name = name;
         return this;
@@ -142,6 +144,8 @@ public class ListInstanceTopicsRespTopics  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListInstanceTopicsRespTopics withReplication(Integer replication) {
         this.replication = replication;
@@ -163,6 +167,8 @@ public class ListInstanceTopicsRespTopics  {
         this.replication = replication;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -182,6 +188,8 @@ public class ListInstanceTopicsRespTopics  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
 
     public ListInstanceTopicsRespTopics withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
@@ -203,6 +211,8 @@ public class ListInstanceTopicsRespTopics  {
         this.retentionTime = retentionTime;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
@@ -222,6 +232,8 @@ public class ListInstanceTopicsRespTopics  {
     public void setSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
     }
+
+    
 
     public ListInstanceTopicsRespTopics withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
@@ -243,6 +255,8 @@ public class ListInstanceTopicsRespTopics  {
         this.syncReplication = syncReplication;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -262,6 +276,8 @@ public class ListInstanceTopicsRespTopics  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ListInstanceTopicsRespTopics withAppName(String appName) {
         this.appName = appName;
@@ -283,6 +299,8 @@ public class ListInstanceTopicsRespTopics  {
         this.appName = appName;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withPermissions(List<String> permissions) {
         this.permissions = permissions;
         return this;
@@ -290,9 +308,6 @@ public class ListInstanceTopicsRespTopics  {
 
     
     public ListInstanceTopicsRespTopics addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -317,6 +332,8 @@ public class ListInstanceTopicsRespTopics  {
         this.permissions = permissions;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withExternalConfigs(Object externalConfigs) {
         this.externalConfigs = externalConfigs;
         return this;
@@ -336,6 +353,8 @@ public class ListInstanceTopicsRespTopics  {
     public void setExternalConfigs(Object externalConfigs) {
         this.externalConfigs = externalConfigs;
     }
+
+    
 
     public ListInstanceTopicsRespTopics withDescription(String description) {
         this.description = description;
@@ -357,6 +376,8 @@ public class ListInstanceTopicsRespTopics  {
         this.description = description;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
         return this;
@@ -377,6 +398,8 @@ public class ListInstanceTopicsRespTopics  {
         this.sensitiveWord = sensitiveWord;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withTopicType(Integer topicType) {
         this.topicType = topicType;
         return this;
@@ -396,6 +419,9 @@ public class ListInstanceTopicsRespTopics  {
     public void setTopicType(Integer topicType) {
         this.topicType = topicType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

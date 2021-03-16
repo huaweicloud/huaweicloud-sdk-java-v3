@@ -24,7 +24,7 @@ public class ShowResourceQuotaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quotas")
     
-    private AllQuotas quotas = null;
+    private AllQuotas quotas;
 
     public ShowResourceQuotaResponse withQuotas(AllQuotas quotas) {
         this.quotas = quotas;
@@ -52,6 +52,9 @@ public class ShowResourceQuotaResponse extends SdkResponse {
     public void setQuotas(AllQuotas quotas) {
         this.quotas = quotas;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

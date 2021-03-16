@@ -131,6 +131,8 @@ public class AudioProcess  {
         this.volume = volume;
     }
 
+    
+
     public AudioProcess withVolumeExpr(Integer volumeExpr) {
         this.volumeExpr = volumeExpr;
         return this;
@@ -152,6 +154,9 @@ public class AudioProcess  {
     public void setVolumeExpr(Integer volumeExpr) {
         this.volumeExpr = volumeExpr;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

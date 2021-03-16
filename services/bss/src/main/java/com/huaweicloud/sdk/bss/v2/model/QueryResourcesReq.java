@@ -35,7 +35,7 @@ public class QueryResourcesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="only_main_resource")
     
-    private Integer onlyMainResource = 0;
+    private Integer onlyMainResource;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,9 +62,6 @@ public class QueryResourcesReq  {
 
     
     public QueryResourcesReq addResourceIdsItem(String resourceIdsItem) {
-        if (this.resourceIds == null) {
-            this.resourceIds = new ArrayList<>();
-        }
         this.resourceIds.add(resourceIdsItem);
         return this;
     }
@@ -89,6 +86,8 @@ public class QueryResourcesReq  {
         this.resourceIds = resourceIds;
     }
 
+    
+
     public QueryResourcesReq withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -108,6 +107,8 @@ public class QueryResourcesReq  {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    
 
     public QueryResourcesReq withOnlyMainResource(Integer onlyMainResource) {
         this.onlyMainResource = onlyMainResource;
@@ -131,6 +132,8 @@ public class QueryResourcesReq  {
         this.onlyMainResource = onlyMainResource;
     }
 
+    
+
     public QueryResourcesReq withStatusList(List<Integer> statusList) {
         this.statusList = statusList;
         return this;
@@ -138,9 +141,6 @@ public class QueryResourcesReq  {
 
     
     public QueryResourcesReq addStatusListItem(Integer statusListItem) {
-        if (this.statusList == null) {
-            this.statusList = new ArrayList<>();
-        }
         this.statusList.add(statusListItem);
         return this;
     }
@@ -165,6 +165,8 @@ public class QueryResourcesReq  {
         this.statusList = statusList;
     }
 
+    
+
     public QueryResourcesReq withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -187,6 +189,8 @@ public class QueryResourcesReq  {
         this.offset = offset;
     }
 
+    
+
     public QueryResourcesReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -208,6 +212,9 @@ public class QueryResourcesReq  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

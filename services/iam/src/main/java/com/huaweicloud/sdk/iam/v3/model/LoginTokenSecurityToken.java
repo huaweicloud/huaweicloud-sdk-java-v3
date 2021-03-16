@@ -39,7 +39,7 @@ public class LoginTokenSecurityToken  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration_seconds")
     
-    private Integer durationSeconds = 600;
+    private Integer durationSeconds;
 
     public LoginTokenSecurityToken withAccess(String access) {
         this.access = access;
@@ -61,6 +61,8 @@ public class LoginTokenSecurityToken  {
         this.access = access;
     }
 
+    
+
     public LoginTokenSecurityToken withSecret(String secret) {
         this.secret = secret;
         return this;
@@ -81,6 +83,8 @@ public class LoginTokenSecurityToken  {
         this.secret = secret;
     }
 
+    
+
     public LoginTokenSecurityToken withId(String id) {
         this.id = id;
         return this;
@@ -100,6 +104,8 @@ public class LoginTokenSecurityToken  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public LoginTokenSecurityToken withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -122,6 +128,9 @@ public class LoginTokenSecurityToken  {
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

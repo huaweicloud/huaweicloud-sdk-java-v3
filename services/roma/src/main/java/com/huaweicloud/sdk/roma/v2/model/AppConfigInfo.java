@@ -52,7 +52,7 @@ public class AppConfigInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,6 +80,8 @@ public class AppConfigInfo  {
         this.id = id;
     }
 
+    
+
     public AppConfigInfo withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -99,6 +101,8 @@ public class AppConfigInfo  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public AppConfigInfo withConfigType(String configType) {
         this.configType = configType;
@@ -120,6 +124,8 @@ public class AppConfigInfo  {
         this.configType = configType;
     }
 
+    
+
     public AppConfigInfo withConfigName(String configName) {
         this.configName = configName;
         return this;
@@ -139,6 +145,8 @@ public class AppConfigInfo  {
     public void setConfigName(String configName) {
         this.configName = configName;
     }
+
+    
 
     public AppConfigInfo withConfigValue(String configValue) {
         this.configValue = configValue;
@@ -160,6 +168,8 @@ public class AppConfigInfo  {
         this.configValue = configValue;
     }
 
+    
+
     public AppConfigInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -180,6 +190,8 @@ public class AppConfigInfo  {
         this.updateTime = updateTime;
     }
 
+    
+
     public AppConfigInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -199,6 +211,9 @@ public class AppConfigInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

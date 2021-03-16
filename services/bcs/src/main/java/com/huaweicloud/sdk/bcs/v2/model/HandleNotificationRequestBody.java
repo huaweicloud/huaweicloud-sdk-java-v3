@@ -120,13 +120,13 @@ public class HandleNotificationRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitor_info")
     
-    private HandleNotificationInvitor invitorInfo = null;
+    private HandleNotificationInvitor invitorInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitee_info")
     
-    private HandleNotificationInvitee inviteeInfo = null;
+    private HandleNotificationInvitee inviteeInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -154,6 +154,8 @@ public class HandleNotificationRequestBody  {
         this.channelName = channelName;
     }
 
+    
+
     public HandleNotificationRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -173,6 +175,8 @@ public class HandleNotificationRequestBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public HandleNotificationRequestBody withInvitorInfo(HandleNotificationInvitor invitorInfo) {
         this.invitorInfo = invitorInfo;
@@ -201,6 +205,8 @@ public class HandleNotificationRequestBody  {
         this.invitorInfo = invitorInfo;
     }
 
+    
+
     public HandleNotificationRequestBody withInviteeInfo(HandleNotificationInvitee inviteeInfo) {
         this.inviteeInfo = inviteeInfo;
         return this;
@@ -228,6 +234,8 @@ public class HandleNotificationRequestBody  {
         this.inviteeInfo = inviteeInfo;
     }
 
+    
+
     public HandleNotificationRequestBody withInvitedOrgs(List<HandleNotificationOrg> invitedOrgs) {
         this.invitedOrgs = invitedOrgs;
         return this;
@@ -235,9 +243,6 @@ public class HandleNotificationRequestBody  {
 
     
     public HandleNotificationRequestBody addInvitedOrgsItem(HandleNotificationOrg invitedOrgsItem) {
-        if (this.invitedOrgs == null) {
-            this.invitedOrgs = new ArrayList<>();
-        }
         this.invitedOrgs.add(invitedOrgsItem);
         return this;
     }
@@ -261,6 +266,9 @@ public class HandleNotificationRequestBody  {
     public void setInvitedOrgs(List<HandleNotificationOrg> invitedOrgs) {
         this.invitedOrgs = invitedOrgs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

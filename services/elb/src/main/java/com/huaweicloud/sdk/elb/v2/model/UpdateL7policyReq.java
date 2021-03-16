@@ -67,6 +67,8 @@ public class UpdateL7policyReq  {
         this.name = name;
     }
 
+    
+
     public UpdateL7policyReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -86,6 +88,8 @@ public class UpdateL7policyReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public UpdateL7policyReq withDescription(String description) {
         this.description = description;
@@ -107,6 +111,8 @@ public class UpdateL7policyReq  {
         this.description = description;
     }
 
+    
+
     public UpdateL7policyReq withRedirectListenerId(String redirectListenerId) {
         this.redirectListenerId = redirectListenerId;
         return this;
@@ -127,6 +133,8 @@ public class UpdateL7policyReq  {
         this.redirectListenerId = redirectListenerId;
     }
 
+    
+
     public UpdateL7policyReq withRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
         return this;
@@ -146,6 +154,9 @@ public class UpdateL7policyReq  {
     public void setRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

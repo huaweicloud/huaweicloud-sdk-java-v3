@@ -28,7 +28,7 @@ public class UpdateNatGatewayRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateNatGatewayRequestBody body = null;
+    private UpdateNatGatewayRequestBody body;
 
     public UpdateNatGatewayRequest withNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
@@ -49,6 +49,8 @@ public class UpdateNatGatewayRequest  {
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
+
+    
 
     public UpdateNatGatewayRequest withBody(UpdateNatGatewayRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateNatGatewayRequest  {
     public void setBody(UpdateNatGatewayRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

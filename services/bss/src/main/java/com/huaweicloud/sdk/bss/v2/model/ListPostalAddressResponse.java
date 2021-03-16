@@ -54,6 +54,8 @@ public class ListPostalAddressResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListPostalAddressResponse withPostalAddress(List<CustomerPostalAddressV2> postalAddress) {
         this.postalAddress = postalAddress;
         return this;
@@ -61,9 +63,6 @@ public class ListPostalAddressResponse extends SdkResponse {
 
     
     public ListPostalAddressResponse addPostalAddressItem(CustomerPostalAddressV2 postalAddressItem) {
-        if (this.postalAddress == null) {
-            this.postalAddress = new ArrayList<>();
-        }
         this.postalAddress.add(postalAddressItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListPostalAddressResponse extends SdkResponse {
     public void setPostalAddress(List<CustomerPostalAddressV2> postalAddress) {
         this.postalAddress = postalAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -69,6 +69,8 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         this.policyAssignmentId = policyAssignmentId;
     }
 
+    
+
     public ShowEvaluationStateByAssignmentIdResponse withState(String state) {
         this.state = state;
         return this;
@@ -88,6 +90,8 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public ShowEvaluationStateByAssignmentIdResponse withStartTime(String startTime) {
         this.startTime = startTime;
@@ -109,6 +113,8 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
+    
+
     public ShowEvaluationStateByAssignmentIdResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -129,6 +135,8 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
+    
+
     public ShowEvaluationStateByAssignmentIdResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -148,6 +156,9 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

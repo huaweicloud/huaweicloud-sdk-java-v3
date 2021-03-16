@@ -39,7 +39,7 @@ public class LdApiParameterTest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="required")
     
-    private Boolean required = false;
+    private Boolean required;
 
     public LdApiParameterTest withName(String name) {
         this.name = name;
@@ -61,6 +61,8 @@ public class LdApiParameterTest  {
         this.name = name;
     }
 
+    
+
     public LdApiParameterTest withIn(String in) {
         this.in = in;
         return this;
@@ -80,6 +82,8 @@ public class LdApiParameterTest  {
     public void setIn(String in) {
         this.in = in;
     }
+
+    
 
     public LdApiParameterTest withDefault(String _default) {
         this._default = _default;
@@ -101,6 +105,8 @@ public class LdApiParameterTest  {
         this._default = _default;
     }
 
+    
+
     public LdApiParameterTest withRequired(Boolean required) {
         this.required = required;
         return this;
@@ -120,6 +126,9 @@ public class LdApiParameterTest  {
     public void setRequired(Boolean required) {
         this.required = required;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

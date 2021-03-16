@@ -40,7 +40,7 @@ public class UpdateRetentionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateRetentionRequestBody body = null;
+    private UpdateRetentionRequestBody body;
 
     public UpdateRetentionRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -62,6 +62,8 @@ public class UpdateRetentionRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public UpdateRetentionRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -82,6 +84,8 @@ public class UpdateRetentionRequest  {
         this.repository = repository;
     }
 
+    
+
     public UpdateRetentionRequest withRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
         return this;
@@ -101,6 +105,8 @@ public class UpdateRetentionRequest  {
     public void setRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
     }
+
+    
 
     public UpdateRetentionRequest withBody(UpdateRetentionRequestBody body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateRetentionRequest  {
     public void setBody(UpdateRetentionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -29,7 +29,7 @@ public class AdjustCouponQuotasReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="indirect_partner_ids")
     
-    private List<String> indirectPartnerIds = new ArrayList<>();
+    private List<String> indirectPartnerIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,6 +56,8 @@ public class AdjustCouponQuotasReq  {
     public void setQuotaId(String quotaId) {
         this.quotaId = quotaId;
     }
+
+    
 
     public AdjustCouponQuotasReq withIndirectPartnerIds(List<String> indirectPartnerIds) {
         this.indirectPartnerIds = indirectPartnerIds;
@@ -88,6 +90,8 @@ public class AdjustCouponQuotasReq  {
         this.indirectPartnerIds = indirectPartnerIds;
     }
 
+    
+
     public AdjustCouponQuotasReq withQuotaAmount(Double quotaAmount) {
         this.quotaAmount = quotaAmount;
         return this;
@@ -109,6 +113,9 @@ public class AdjustCouponQuotasReq  {
     public void setQuotaAmount(Double quotaAmount) {
         this.quotaAmount = quotaAmount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class RestMuteReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allowUnmuteByOneself")
     
-    private Integer allowUnmuteByOneself = 1;
+    private Integer allowUnmuteByOneself;
 
     public RestMuteReqBody withIsMute(Integer isMute) {
         this.isMute = isMute;
@@ -49,6 +49,8 @@ public class RestMuteReqBody  {
         this.isMute = isMute;
     }
 
+    
+
     public RestMuteReqBody withAllowUnmuteByOneself(Integer allowUnmuteByOneself) {
         this.allowUnmuteByOneself = allowUnmuteByOneself;
         return this;
@@ -68,6 +70,9 @@ public class RestMuteReqBody  {
     public void setAllowUnmuteByOneself(Integer allowUnmuteByOneself) {
         this.allowUnmuteByOneself = allowUnmuteByOneself;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

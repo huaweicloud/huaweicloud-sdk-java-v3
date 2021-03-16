@@ -24,7 +24,7 @@ public class QuerySkuInventoriesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sku_items")
     
-    private List<SkuItem> skuItems = new ArrayList<>();
+    private List<SkuItem> skuItems = null;
     
     public QuerySkuInventoriesReq withSkuItems(List<SkuItem> skuItems) {
         this.skuItems = skuItems;
@@ -56,6 +56,9 @@ public class QuerySkuInventoriesReq  {
     public void setSkuItems(List<SkuItem> skuItems) {
         this.skuItems = skuItems;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

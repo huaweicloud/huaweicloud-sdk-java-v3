@@ -55,6 +55,8 @@ public class AddMemberRequestV4  {
         this.domainId = domainId;
     }
 
+    
+
     public AddMemberRequestV4 withRoleId(Integer roleId) {
         this.roleId = roleId;
         return this;
@@ -64,7 +66,7 @@ public class AddMemberRequestV4  {
 
 
     /**
-     * 用户在项目中的角色ID 3, 4, 5, 6, 7 , 8
+     * 用户在项目中的角色ID -1, 3, 4, 5, 6, 7 , 8
      * @return roleId
      */
     public Integer getRoleId() {
@@ -74,6 +76,8 @@ public class AddMemberRequestV4  {
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
+
+    
 
     public AddMemberRequestV4 withUserId(String userId) {
         this.userId = userId;
@@ -94,6 +98,9 @@ public class AddMemberRequestV4  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

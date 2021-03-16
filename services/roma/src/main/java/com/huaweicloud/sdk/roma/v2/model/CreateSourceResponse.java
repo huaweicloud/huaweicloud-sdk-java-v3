@@ -249,6 +249,8 @@ public class CreateSourceResponse extends SdkResponse {
         this.sourceId = sourceId;
     }
 
+    
+
     public CreateSourceResponse withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -268,6 +270,8 @@ public class CreateSourceResponse extends SdkResponse {
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
+
+    
 
     public CreateSourceResponse withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
@@ -289,6 +293,8 @@ public class CreateSourceResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
+    
+
     public CreateSourceResponse withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -308,6 +314,8 @@ public class CreateSourceResponse extends SdkResponse {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public CreateSourceResponse withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -329,6 +337,8 @@ public class CreateSourceResponse extends SdkResponse {
         this.deviceName = deviceName;
     }
 
+    
+
     public CreateSourceResponse withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -348,6 +358,8 @@ public class CreateSourceResponse extends SdkResponse {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    
 
     public CreateSourceResponse withIsBase64(IsBase64Enum isBase64) {
         this.isBase64 = isBase64;
@@ -369,6 +381,8 @@ public class CreateSourceResponse extends SdkResponse {
         this.isBase64 = isBase64;
     }
 
+    
+
     public CreateSourceResponse withContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
         return this;
@@ -388,6 +402,9 @@ public class CreateSourceResponse extends SdkResponse {
     public void setContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

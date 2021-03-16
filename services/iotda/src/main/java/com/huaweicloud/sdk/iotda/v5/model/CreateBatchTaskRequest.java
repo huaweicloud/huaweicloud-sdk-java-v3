@@ -28,7 +28,7 @@ public class CreateBatchTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateBatchTask body = null;
+    private CreateBatchTask body;
 
     public CreateBatchTaskRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateBatchTaskRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateBatchTaskRequest withBody(CreateBatchTask body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateBatchTaskRequest  {
     public void setBody(CreateBatchTask body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -105,7 +105,7 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -139,6 +139,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowPrivateZoneResponse withName(String name) {
         this.name = name;
         return this;
@@ -158,6 +160,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowPrivateZoneResponse withDescription(String description) {
         this.description = description;
@@ -179,6 +183,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowPrivateZoneResponse withEmail(String email) {
         this.email = email;
         return this;
@@ -198,6 +204,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public ShowPrivateZoneResponse withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -219,6 +227,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.zoneType = zoneType;
     }
 
+    
+
     public ShowPrivateZoneResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -238,6 +248,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public ShowPrivateZoneResponse withSerial(Integer serial) {
         this.serial = serial;
@@ -259,6 +271,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.serial = serial;
     }
 
+    
+
     public ShowPrivateZoneResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -278,6 +292,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ShowPrivateZoneResponse withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
@@ -299,6 +315,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.recordNum = recordNum;
     }
 
+    
+
     public ShowPrivateZoneResponse withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -318,6 +336,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public ShowPrivateZoneResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -339,6 +359,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public ShowPrivateZoneResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -359,6 +381,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public ShowPrivateZoneResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -378,6 +402,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public ShowPrivateZoneResponse withLinks(PageLink links) {
         this.links = links;
@@ -406,6 +432,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public ShowPrivateZoneResponse withMasters(List<String> masters) {
         this.masters = masters;
         return this;
@@ -413,9 +441,6 @@ public class ShowPrivateZoneResponse extends SdkResponse {
 
     
     public ShowPrivateZoneResponse addMastersItem(String mastersItem) {
-        if (this.masters == null) {
-            this.masters = new ArrayList<>();
-        }
         this.masters.add(mastersItem);
         return this;
     }
@@ -440,6 +465,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.masters = masters;
     }
 
+    
+
     public ShowPrivateZoneResponse withRouters(List<Router> routers) {
         this.routers = routers;
         return this;
@@ -447,9 +474,6 @@ public class ShowPrivateZoneResponse extends SdkResponse {
 
     
     public ShowPrivateZoneResponse addRoutersItem(Router routersItem) {
-        if (this.routers == null) {
-            this.routers = new ArrayList<>();
-        }
         this.routers.add(routersItem);
         return this;
     }
@@ -473,6 +497,9 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     public void setRouters(List<Router> routers) {
         this.routers = routers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

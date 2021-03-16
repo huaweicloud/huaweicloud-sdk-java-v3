@@ -123,13 +123,13 @@ public class Multidrm  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="emi")
     
-    private Integer emi = 16420;
+    private Integer emi;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="drm_list")
     
-    private List<String> drmList = new ArrayList<>();
+    private List<String> drmList = null;
     
     public Multidrm withContentId(String contentId) {
         this.contentId = contentId;
@@ -151,6 +151,8 @@ public class Multidrm  {
         this.contentId = contentId;
     }
 
+    
+
     public Multidrm withStreamingMode(StreamingModeEnum streamingMode) {
         this.streamingMode = streamingMode;
         return this;
@@ -170,6 +172,8 @@ public class Multidrm  {
     public void setStreamingMode(StreamingModeEnum streamingMode) {
         this.streamingMode = streamingMode;
     }
+
+    
 
     public Multidrm withEncryptAudio(Integer encryptAudio) {
         this.encryptAudio = encryptAudio;
@@ -193,6 +197,8 @@ public class Multidrm  {
         this.encryptAudio = encryptAudio;
     }
 
+    
+
     public Multidrm withEmi(Integer emi) {
         this.emi = emi;
         return this;
@@ -214,6 +220,8 @@ public class Multidrm  {
     public void setEmi(Integer emi) {
         this.emi = emi;
     }
+
+    
 
     public Multidrm withDrmList(List<String> drmList) {
         this.drmList = drmList;
@@ -245,6 +253,9 @@ public class Multidrm  {
     public void setDrmList(List<String> drmList) {
         this.drmList = drmList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

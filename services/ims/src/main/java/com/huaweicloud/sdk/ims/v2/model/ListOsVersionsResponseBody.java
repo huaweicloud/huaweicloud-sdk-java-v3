@@ -30,7 +30,7 @@ public class ListOsVersionsResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_list")
     
-    private List<OsVersionInfo> versionList = new ArrayList<>();
+    private List<OsVersionInfo> versionList = null;
     
     public ListOsVersionsResponseBody withPlatform(String platform) {
         this.platform = platform;
@@ -51,6 +51,8 @@ public class ListOsVersionsResponseBody  {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
+
+    
 
     public ListOsVersionsResponseBody withVersionList(List<OsVersionInfo> versionList) {
         this.versionList = versionList;
@@ -82,6 +84,9 @@ public class ListOsVersionsResponseBody  {
     public void setVersionList(List<OsVersionInfo> versionList) {
         this.versionList = versionList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

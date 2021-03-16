@@ -49,6 +49,8 @@ public class PublicIp  {
         this.publicBindType = publicBindType;
     }
 
+    
+
     public PublicIp withEipId(String eipId) {
         this.eipId = eipId;
         return this;
@@ -68,6 +70,9 @@ public class PublicIp  {
     public void setEipId(String eipId) {
         this.eipId = eipId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

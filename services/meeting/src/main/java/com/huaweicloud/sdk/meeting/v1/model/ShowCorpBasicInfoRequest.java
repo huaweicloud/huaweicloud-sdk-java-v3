@@ -51,6 +51,8 @@ public class ShowCorpBasicInfoRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowCorpBasicInfoRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -70,6 +72,9 @@ public class ShowCorpBasicInfoRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

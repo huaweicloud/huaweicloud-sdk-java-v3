@@ -64,13 +64,13 @@ public class PackageUsageInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="balance")
     
-    private BigDecimal balance = null;
+    private BigDecimal balance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    private BigDecimal total = null;
+    private BigDecimal total;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -104,6 +104,8 @@ public class PackageUsageInfo  {
         this.orderInstanceId = orderInstanceId;
     }
 
+    
+
     public PackageUsageInfo withResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
         return this;
@@ -123,6 +125,8 @@ public class PackageUsageInfo  {
     public void setResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
     }
+
+    
 
     public PackageUsageInfo withQuotaReuseMode(Integer quotaReuseMode) {
         this.quotaReuseMode = quotaReuseMode;
@@ -144,6 +148,8 @@ public class PackageUsageInfo  {
         this.quotaReuseMode = quotaReuseMode;
     }
 
+    
+
     public PackageUsageInfo withQuotaReuseCycle(Integer quotaReuseCycle) {
         this.quotaReuseCycle = quotaReuseCycle;
         return this;
@@ -163,6 +169,8 @@ public class PackageUsageInfo  {
     public void setQuotaReuseCycle(Integer quotaReuseCycle) {
         this.quotaReuseCycle = quotaReuseCycle;
     }
+
+    
 
     public PackageUsageInfo withQuotaReuseCycleType(Integer quotaReuseCycleType) {
         this.quotaReuseCycleType = quotaReuseCycleType;
@@ -184,6 +192,8 @@ public class PackageUsageInfo  {
         this.quotaReuseCycleType = quotaReuseCycleType;
     }
 
+    
+
     public PackageUsageInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -203,6 +213,8 @@ public class PackageUsageInfo  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public PackageUsageInfo withEndTime(String endTime) {
         this.endTime = endTime;
@@ -224,6 +236,8 @@ public class PackageUsageInfo  {
         this.endTime = endTime;
     }
 
+    
+
     public PackageUsageInfo withBalance(BigDecimal balance) {
         this.balance = balance;
         return this;
@@ -243,6 +257,8 @@ public class PackageUsageInfo  {
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
+
+    
 
     public PackageUsageInfo withTotal(BigDecimal total) {
         this.total = total;
@@ -264,6 +280,8 @@ public class PackageUsageInfo  {
         this.total = total;
     }
 
+    
+
     public PackageUsageInfo withMeasurementName(String measurementName) {
         this.measurementName = measurementName;
         return this;
@@ -284,6 +302,8 @@ public class PackageUsageInfo  {
         this.measurementName = measurementName;
     }
 
+    
+
     public PackageUsageInfo withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
@@ -303,6 +323,9 @@ public class PackageUsageInfo  {
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

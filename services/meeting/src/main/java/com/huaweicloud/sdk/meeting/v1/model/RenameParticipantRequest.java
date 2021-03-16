@@ -34,7 +34,7 @@ public class RenameParticipantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestRenamePartReqBody body = null;
+    private RestRenamePartReqBody body;
 
     public RenameParticipantRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -55,6 +55,8 @@ public class RenameParticipantRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public RenameParticipantRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -77,6 +79,8 @@ public class RenameParticipantRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public RenameParticipantRequest withBody(RestRenamePartReqBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class RenameParticipantRequest  {
     public void setBody(RestRenamePartReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

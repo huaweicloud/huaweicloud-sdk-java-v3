@@ -55,6 +55,8 @@ public class UpdateLoginProtectRespon  {
         this.userId = userId;
     }
 
+    
+
     public UpdateLoginProtectRespon withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -75,6 +77,8 @@ public class UpdateLoginProtectRespon  {
         this.enabled = enabled;
     }
 
+    
+
     public UpdateLoginProtectRespon withVerificationMethod(String verificationMethod) {
         this.verificationMethod = verificationMethod;
         return this;
@@ -94,6 +98,9 @@ public class UpdateLoginProtectRespon  {
     public void setVerificationMethod(String verificationMethod) {
         this.verificationMethod = verificationMethod;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

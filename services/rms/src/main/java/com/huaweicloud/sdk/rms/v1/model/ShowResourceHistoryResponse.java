@@ -33,7 +33,7 @@ public class ShowResourceHistoryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
     public ShowResourceHistoryResponse withItems(List<HistoryItem> items) {
         this.items = items;
@@ -42,9 +42,6 @@ public class ShowResourceHistoryResponse extends SdkResponse {
 
     
     public ShowResourceHistoryResponse addItemsItem(HistoryItem itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowResourceHistoryResponse extends SdkResponse {
     public void setItems(List<HistoryItem> items) {
         this.items = items;
     }
+
+    
 
     public ShowResourceHistoryResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -95,6 +94,9 @@ public class ShowResourceHistoryResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

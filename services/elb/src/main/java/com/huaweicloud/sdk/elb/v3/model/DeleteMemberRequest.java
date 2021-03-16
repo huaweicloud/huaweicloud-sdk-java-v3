@@ -49,6 +49,8 @@ public class DeleteMemberRequest  {
         this.memberId = memberId;
     }
 
+    
+
     public DeleteMemberRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteMemberRequest  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

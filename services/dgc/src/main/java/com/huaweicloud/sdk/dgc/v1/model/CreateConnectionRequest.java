@@ -22,7 +22,7 @@ public class CreateConnectionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ConnectionInfo body = null;
+    private ConnectionInfo body;
 
     public CreateConnectionRequest withBody(ConnectionInfo body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateConnectionRequest  {
     public void setBody(ConnectionInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

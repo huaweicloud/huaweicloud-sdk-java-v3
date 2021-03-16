@@ -61,6 +61,8 @@ public class ListRetentionHistoriesRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ListRetentionHistoriesRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -80,6 +82,8 @@ public class ListRetentionHistoriesRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public ListRetentionHistoriesRequest withOffset(String offset) {
         this.offset = offset;
@@ -101,6 +105,8 @@ public class ListRetentionHistoriesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListRetentionHistoriesRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -120,6 +126,9 @@ public class ListRetentionHistoriesRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

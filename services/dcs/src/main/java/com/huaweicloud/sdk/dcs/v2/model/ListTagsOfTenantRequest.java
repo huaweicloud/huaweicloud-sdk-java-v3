@@ -12,6 +12,7 @@ import java.util.Objects;
  */
 public class ListTagsOfTenantRequest  {
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

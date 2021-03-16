@@ -34,7 +34,7 @@ public class CreateCommandRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateCommandRequestBody body = null;
+    private CreateCommandRequestBody body;
 
     public CreateCommandRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreateCommandRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateCommandRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -75,6 +77,8 @@ public class CreateCommandRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public CreateCommandRequest withBody(CreateCommandRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateCommandRequest  {
     public void setBody(CreateCommandRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

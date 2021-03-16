@@ -18,7 +18,7 @@ public class DdsClient {
 
 
     /**
-     * 扩容指定集群实例的节点数量
+     * 扩容集群实例的节点数量
      * 扩容指定集群实例的节点数量。
      *
      * @param AddShardingNodeRequest 请求对象
@@ -29,7 +29,7 @@ public class DdsClient {
     }
 
     /**
-     * 扩容指定集群实例的节点数量
+     * 扩容集群实例的节点数量
      * 扩容指定集群实例的节点数量。
      *
      * @param AddShardingNodeRequest 请求对象
@@ -40,8 +40,8 @@ public class DdsClient {
     }
 
     /**
-     * 绑定节点的公网IP
-     * 绑定节点的公网IP
+     * 绑定弹性公网IP
+     * 为实例下的节点绑定弹性公网IP。
      *
      * @param AttachEipRequest 请求对象
      * @return AttachEipResponse
@@ -51,8 +51,8 @@ public class DdsClient {
     }
 
     /**
-     * 绑定节点的公网IP
-     * 绑定节点的公网IP
+     * 绑定弹性公网IP
+     * 为实例下的节点绑定弹性公网IP。
      *
      * @param AttachEipRequest 请求对象
      * @return SyncInvoker<AttachEipRequest, AttachEipResponse>
@@ -62,8 +62,8 @@ public class DdsClient {
     }
 
     /**
-     * 修改实例内网IP
-     * 修改实例内网IP
+     * 修改实例内网地址
+     * 修改实例的内网地址
      *
      * @param AttachInternalIpRequest 请求对象
      * @return AttachInternalIpResponse
@@ -73,8 +73,8 @@ public class DdsClient {
     }
 
     /**
-     * 修改实例内网IP
-     * 修改实例内网IP
+     * 修改实例内网地址
+     * 修改实例的内网地址
      *
      * @param AttachInternalIpRequest 请求对象
      * @return SyncInvoker<AttachInternalIpRequest, AttachInternalIpResponse>
@@ -84,7 +84,7 @@ public class DdsClient {
     }
 
     /**
-     * 批量添加或删除指定实例的标签
+     * 批量添加或删除资源标签
      * 批量添加或删除指定实例的标签。
      *
      * @param BatchTagActionRequest 请求对象
@@ -95,7 +95,7 @@ public class DdsClient {
     }
 
     /**
-     * 批量添加或删除指定实例的标签
+     * 批量添加或删除资源标签
      * 批量添加或删除指定实例的标签。
      *
      * @param BatchTagActionRequest 请求对象
@@ -106,8 +106,8 @@ public class DdsClient {
     }
 
     /**
-     * 节点解绑公网IP
-     * 节点解绑公网IP
+     * 解绑弹性公网IP
+     * 解绑实例下节点已经绑定的弹性公网IP。
      *
      * @param CancelEipRequest 请求对象
      * @return CancelEipResponse
@@ -117,8 +117,8 @@ public class DdsClient {
     }
 
     /**
-     * 节点解绑公网IP
-     * 节点解绑公网IP
+     * 解绑弹性公网IP
+     * 解绑实例下节点已经绑定的弹性公网IP。
      *
      * @param CancelEipRequest 请求对象
      * @return SyncInvoker<CancelEipRequest, CancelEipResponse>
@@ -128,8 +128,8 @@ public class DdsClient {
     }
 
     /**
-     * 检查数据库用户密码
-     * 检查数据库用户密码。
+     * 检查数据库密码
+     * 检查数据库密码。
      *
      * @param CheckPasswordRequest 请求对象
      * @return CheckPasswordResponse
@@ -139,8 +139,8 @@ public class DdsClient {
     }
 
     /**
-     * 检查数据库用户密码
-     * 检查数据库用户密码。
+     * 检查数据库密码
+     * 检查数据库密码。
      *
      * @param CheckPasswordRequest 请求对象
      * @return SyncInvoker<CheckPasswordRequest, CheckPasswordResponse>
@@ -194,8 +194,8 @@ public class DdsClient {
     }
 
     /**
-     * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
-     * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
+     * 创建实例
+     * 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
@@ -205,8 +205,8 @@ public class DdsClient {
     }
 
     /**
-     * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
-     * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
+     * 创建实例
+     * 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
      *
      * @param CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -238,7 +238,7 @@ public class DdsClient {
     }
 
     /**
-     * 创建数据库实例的手动备份
+     * 创建手动备份
      * 创建数据库实例的手动备份。
      *
      * @param CreateManualBackupRequest 请求对象
@@ -249,7 +249,7 @@ public class DdsClient {
     }
 
     /**
-     * 创建数据库实例的手动备份
+     * 创建手动备份
      * 创建数据库实例的手动备份。
      *
      * @param CreateManualBackupRequest 请求对象
@@ -260,7 +260,7 @@ public class DdsClient {
     }
 
     /**
-     * 删除数据库实例
+     * 删除实例
      * 删除数据库实例。
      *
      * @param DeleteInstanceRequest 请求对象
@@ -271,7 +271,7 @@ public class DdsClient {
     }
 
     /**
-     * 删除数据库实例
+     * 删除实例
      * 删除数据库实例。
      *
      * @param DeleteInstanceRequest 请求对象
@@ -282,7 +282,7 @@ public class DdsClient {
     }
 
     /**
-     * 删除数据库实例的手动备份
+     * 删除手动备份
      * 删除数据库实例的手动备份。
      *
      * @param DeleteManualBackupRequest 请求对象
@@ -293,7 +293,7 @@ public class DdsClient {
     }
 
     /**
-     * 删除数据库实例的手动备份
+     * 删除手动备份
      * 删除数据库实例的手动备份。
      *
      * @param DeleteManualBackupRequest 请求对象
@@ -301,6 +301,28 @@ public class DdsClient {
      */
     public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(DeleteManualBackupRequest request) {
         return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request, DdsMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 终结实例节点会话
+     * 终结实例节点会话。
+     *
+     * @param DeleteSessionRequest 请求对象
+     * @return DeleteSessionResponse
+     */
+    public DeleteSessionResponse deleteSession(DeleteSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteSession);
+    }
+
+    /**
+     * 终结实例节点会话
+     * 终结实例节点会话。
+     *
+     * @param DeleteSessionRequest 请求对象
+     * @return SyncInvoker<DeleteSessionRequest, DeleteSessionResponse>
+     */
+    public SyncInvoker<DeleteSessionRequest, DeleteSessionResponse> deleteSessionInvoker(DeleteSessionRequest request) {
+        return new SyncInvoker<DeleteSessionRequest, DeleteSessionResponse>(request, DdsMeta.deleteSession, hcClient);
     }
 
     /**
@@ -348,8 +370,8 @@ public class DdsClient {
     }
 
     /**
-     * 生成审计日志下载链接
-     * 生成审计日志下载链接。
+     * 获取审计日志下载链接
+     * 获取审计日志下载链接。
      *
      * @param ListAuditlogLinksRequest 请求对象
      * @return ListAuditlogLinksResponse
@@ -359,8 +381,8 @@ public class DdsClient {
     }
 
     /**
-     * 生成审计日志下载链接
-     * 生成审计日志下载链接。
+     * 获取审计日志下载链接
+     * 获取审计日志下载链接。
      *
      * @param ListAuditlogLinksRequest 请求对象
      * @return SyncInvoker<ListAuditlogLinksRequest, ListAuditlogLinksResponse>
@@ -392,7 +414,7 @@ public class DdsClient {
     }
 
     /**
-     * 根据指定条件查询备份列表
+     * 查询备份列表
      * 根据指定条件查询备份列表。
      *
      * @param ListBackupsRequest 请求对象
@@ -403,7 +425,7 @@ public class DdsClient {
     }
 
     /**
-     * 根据指定条件查询备份列表
+     * 查询备份列表
      * 根据指定条件查询备份列表。
      *
      * @param ListBackupsRequest 请求对象
@@ -502,7 +524,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询指定条件下的所有实例规格信息
+     * 查询所有实例规格信息
      * 查询指定条件下的所有实例规格信息。
      *
      * @param ListFlavorsRequest 请求对象
@@ -513,7 +535,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询指定条件下的所有实例规格信息
+     * 查询所有实例规格信息
      * 查询指定条件下的所有实例规格信息。
      *
      * @param ListFlavorsRequest 请求对象
@@ -524,7 +546,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询指定实例的标签信息
+     * 查询资源标签
      * 查询指定实例的标签信息。
      *
      * @param ListInstanceTagsRequest 请求对象
@@ -535,7 +557,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询指定实例的标签信息
+     * 查询资源标签
      * 查询指定实例的标签信息。
      *
      * @param ListInstanceTagsRequest 请求对象
@@ -546,7 +568,7 @@ public class DdsClient {
     }
 
     /**
-     * 根据指定条件查询实例列表
+     * 查询实例列表
      * 根据指定条件查询实例列表。
      *
      * @param ListInstancesRequest 请求对象
@@ -557,7 +579,7 @@ public class DdsClient {
     }
 
     /**
-     * 根据指定条件查询实例列表
+     * 查询实例列表
      * 根据指定条件查询实例列表。
      *
      * @param ListInstancesRequest 请求对象
@@ -568,7 +590,7 @@ public class DdsClient {
     }
 
     /**
-     * 根据标签查询指定的数据库实例
+     * 查询资源实例
      * 根据标签查询指定的数据库实例。
      *
      * @param ListInstancesByTagsRequest 请求对象
@@ -579,7 +601,7 @@ public class DdsClient {
     }
 
     /**
-     * 根据标签查询指定的数据库实例
+     * 查询资源实例
      * 根据标签查询指定的数据库实例。
      *
      * @param ListInstancesByTagsRequest 请求对象
@@ -590,7 +612,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询指定project ID下实例的所有标签集合
+     * 查询项目标签
      * 查询指定project ID下实例的所有标签集合。
      *
      * @param ListProjectTagsRequest 请求对象
@@ -601,7 +623,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询指定project ID下实例的所有标签集合
+     * 查询项目标签
      * 查询指定project ID下实例的所有标签集合。
      *
      * @param ListProjectTagsRequest 请求对象
@@ -678,6 +700,28 @@ public class DdsClient {
     }
 
     /**
+     * 查询实例节点会话
+     * 查询实例节点会话。
+     *
+     * @param ListSessionsRequest 请求对象
+     * @return ListSessionsResponse
+     */
+    public ListSessionsResponse listSessions(ListSessionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listSessions);
+    }
+
+    /**
+     * 查询实例节点会话
+     * 查询实例节点会话。
+     *
+     * @param ListSessionsRequest 请求对象
+     * @return SyncInvoker<ListSessionsRequest, ListSessionsResponse>
+     */
+    public SyncInvoker<ListSessionsRequest, ListSessionsResponse> listSessionsInvoker(ListSessionsRequest request) {
+        return new SyncInvoker<ListSessionsRequest, ListSessionsResponse>(request, DdsMeta.listSessions, hcClient);
+    }
+
+    /**
      * 查询数据库慢日志
      * 查询数据库慢日志信息。
      *
@@ -700,7 +744,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询当前区域下的数据库磁盘类型
+     * 查询数据库磁盘类型
      * 查询当前区域下的数据库磁盘类型。
      *
      * @param ListStorageTypeRequest 请求对象
@@ -711,7 +755,7 @@ public class DdsClient {
     }
 
     /**
-     * 查询当前区域下的数据库磁盘类型
+     * 查询数据库磁盘类型
      * 查询当前区域下的数据库磁盘类型。
      *
      * @param ListStorageTypeRequest 请求对象
@@ -744,7 +788,7 @@ public class DdsClient {
     }
 
     /**
-     * 变更实例的规格
+     * 变更实例规格
      * 变更实例的规格。
      *
      * @param ResizeInstanceRequest 请求对象
@@ -755,7 +799,7 @@ public class DdsClient {
     }
 
     /**
-     * 变更实例的规格
+     * 变更实例规格
      * 变更实例的规格。
      *
      * @param ResizeInstanceRequest 请求对象
@@ -766,7 +810,7 @@ public class DdsClient {
     }
 
     /**
-     * 扩容实例相关的存储容量大小
+     * 扩容实例存储容量
      * 扩容实例相关的存储容量大小。
      *
      * @param ResizeInstanceVolumeRequest 请求对象
@@ -777,7 +821,7 @@ public class DdsClient {
     }
 
     /**
-     * 扩容实例相关的存储容量大小
+     * 扩容实例存储容量
      * 扩容实例相关的存储容量大小。
      *
      * @param ResizeInstanceVolumeRequest 请求对象
@@ -788,7 +832,7 @@ public class DdsClient {
     }
 
     /**
-     * 重启实例的数据库服务
+     * 重启实例
      * 重启实例的数据库服务。
      *
      * @param RestartInstanceRequest 请求对象
@@ -799,7 +843,7 @@ public class DdsClient {
     }
 
     /**
-     * 重启实例的数据库服务
+     * 重启实例
      * 重启实例的数据库服务。
      *
      * @param RestartInstanceRequest 请求对象
@@ -851,6 +895,28 @@ public class DdsClient {
      */
     public SyncInvoker<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse> restoreInstanceFromCollectionInvoker(RestoreInstanceFromCollectionRequest request) {
         return new SyncInvoker<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse>(request, DdsMeta.restoreInstanceFromCollection, hcClient);
+    }
+
+    /**
+     * 恢复到新实例
+     * 根据备份恢复新实例。
+     *
+     * @param RestoreNewInstanceRequest 请求对象
+     * @return RestoreNewInstanceResponse
+     */
+    public RestoreNewInstanceResponse restoreNewInstance(RestoreNewInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.restoreNewInstance);
+    }
+
+    /**
+     * 恢复到新实例
+     * 根据备份恢复新实例。
+     *
+     * @param RestoreNewInstanceRequest 请求对象
+     * @return SyncInvoker<RestoreNewInstanceRequest, RestoreNewInstanceResponse>
+     */
+    public SyncInvoker<RestoreNewInstanceRequest, RestoreNewInstanceResponse> restoreNewInstanceInvoker(RestoreNewInstanceRequest request) {
+        return new SyncInvoker<RestoreNewInstanceRequest, RestoreNewInstanceResponse>(request, DdsMeta.restoreNewInstance, hcClient);
     }
 
     /**
@@ -964,8 +1030,8 @@ public class DdsClient {
     }
 
     /**
-     * 切换mongodb实例的SSL开关
-     * 切换mongodb实例的SSL开关
+     * 切换SSL开关
+     * 切换实例的SSL开关
      *
      * @param SwitchSslRequest 请求对象
      * @return SwitchSslResponse
@@ -975,8 +1041,8 @@ public class DdsClient {
     }
 
     /**
-     * 切换mongodb实例的SSL开关
-     * 切换mongodb实例的SSL开关
+     * 切换SSL开关
+     * 切换实例的SSL开关
      *
      * @param SwitchSslRequest 请求对象
      * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse>
@@ -986,8 +1052,8 @@ public class DdsClient {
     }
 
     /**
-     * 副本集主备倒换
-     * 副本集主备倒换
+     * 切换副本集实例的主备节点
+     * 切换副本集实例下的主备节点
      *
      * @param SwitchoverReplicaSetRequest 请求对象
      * @return SwitchoverReplicaSetResponse
@@ -997,8 +1063,8 @@ public class DdsClient {
     }
 
     /**
-     * 副本集主备倒换
-     * 副本集主备倒换
+     * 切换副本集实例的主备节点
+     * 切换副本集实例下的主备节点
      *
      * @param SwitchoverReplicaSetRequest 请求对象
      * @return SyncInvoker<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse>
@@ -1030,8 +1096,8 @@ public class DdsClient {
     }
 
     /**
-     * 修改实例端口
-     * 修改实例端口
+     * 修改数据库端口
+     * 修改数据库实例的端口。
      *
      * @param UpdateInstancePortRequest 请求对象
      * @return UpdateInstancePortResponse
@@ -1041,8 +1107,8 @@ public class DdsClient {
     }
 
     /**
-     * 修改实例端口
-     * 修改实例端口
+     * 修改数据库端口
+     * 修改数据库实例的端口。
      *
      * @param UpdateInstancePortRequest 请求对象
      * @return SyncInvoker<UpdateInstancePortRequest, UpdateInstancePortResponse>
@@ -1052,8 +1118,8 @@ public class DdsClient {
     }
 
     /**
-     * 修改实例的安全组
-     * 修改实例的安全组
+     * 变更实例安全组
+     * 变更实例关联的安全组
      *
      * @param UpdateSecurityGroupRequest 请求对象
      * @return UpdateSecurityGroupResponse
@@ -1063,8 +1129,8 @@ public class DdsClient {
     }
 
     /**
-     * 修改实例的安全组
-     * 修改实例的安全组
+     * 变更实例安全组
+     * 变更实例关联的安全组
      *
      * @param UpdateSecurityGroupRequest 请求对象
      * @return SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>

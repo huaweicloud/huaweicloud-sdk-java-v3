@@ -43,7 +43,7 @@ public class CorpBasicDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="country")
     
-    private String country = "chinaPR";
+    private String country;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -157,13 +157,13 @@ public class CorpBasicDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="language")
     
-    private LanguageEnum language = LanguageEnum.ZH_CN;
+    private LanguageEnum language;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeZoneId")
     
-    private String timeZoneId = "56";
+    private String timeZoneId;
 
     public CorpBasicDTO withName(String name) {
         this.name = name;
@@ -185,6 +185,8 @@ public class CorpBasicDTO  {
         this.name = name;
     }
 
+    
+
     public CorpBasicDTO withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -204,6 +206,8 @@ public class CorpBasicDTO  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public CorpBasicDTO withPhone(String phone) {
         this.phone = phone;
@@ -225,6 +229,8 @@ public class CorpBasicDTO  {
         this.phone = phone;
     }
 
+    
+
     public CorpBasicDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -244,6 +250,8 @@ public class CorpBasicDTO  {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
 
     public CorpBasicDTO withFax(String fax) {
         this.fax = fax;
@@ -265,6 +273,8 @@ public class CorpBasicDTO  {
         this.fax = fax;
     }
 
+    
+
     public CorpBasicDTO withEmail(String email) {
         this.email = email;
         return this;
@@ -284,6 +294,8 @@ public class CorpBasicDTO  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public CorpBasicDTO withAddress(String address) {
         this.address = address;
@@ -305,6 +317,8 @@ public class CorpBasicDTO  {
         this.address = address;
     }
 
+    
+
     public CorpBasicDTO withDescription(String description) {
         this.description = description;
         return this;
@@ -324,6 +338,8 @@ public class CorpBasicDTO  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CorpBasicDTO withSpId(String spId) {
         this.spId = spId;
@@ -345,6 +361,8 @@ public class CorpBasicDTO  {
         this.spId = spId;
     }
 
+    
+
     public CorpBasicDTO withLanguage(LanguageEnum language) {
         this.language = language;
         return this;
@@ -365,6 +383,8 @@ public class CorpBasicDTO  {
         this.language = language;
     }
 
+    
+
     public CorpBasicDTO withTimeZoneId(String timeZoneId) {
         this.timeZoneId = timeZoneId;
         return this;
@@ -384,6 +404,9 @@ public class CorpBasicDTO  {
     public void setTimeZoneId(String timeZoneId) {
         this.timeZoneId = timeZoneId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

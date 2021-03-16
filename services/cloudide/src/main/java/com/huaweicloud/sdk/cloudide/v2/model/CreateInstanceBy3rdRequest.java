@@ -28,7 +28,7 @@ public class CreateInstanceBy3rdRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceEdgeParam body = null;
+    private InstanceEdgeParam body;
 
     public CreateInstanceBy3rdRequest withInstanceLabel(String instanceLabel) {
         this.instanceLabel = instanceLabel;
@@ -49,6 +49,8 @@ public class CreateInstanceBy3rdRequest  {
     public void setInstanceLabel(String instanceLabel) {
         this.instanceLabel = instanceLabel;
     }
+
+    
 
     public CreateInstanceBy3rdRequest withBody(InstanceEdgeParam body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateInstanceBy3rdRequest  {
     public void setBody(InstanceEdgeParam body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

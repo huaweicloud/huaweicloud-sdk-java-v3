@@ -55,6 +55,8 @@ public class UpdateServerOption  {
         this.name = name;
     }
 
+    
+
     public UpdateServerOption withDescription(String description) {
         this.description = description;
         return this;
@@ -75,6 +77,8 @@ public class UpdateServerOption  {
         this.description = description;
     }
 
+    
+
     public UpdateServerOption withHostname(String hostname) {
         this.hostname = hostname;
         return this;
@@ -94,6 +98,9 @@ public class UpdateServerOption  {
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

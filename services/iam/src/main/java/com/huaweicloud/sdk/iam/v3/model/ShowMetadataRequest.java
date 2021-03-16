@@ -49,6 +49,8 @@ public class ShowMetadataRequest  {
         this.idpId = idpId;
     }
 
+    
+
     public ShowMetadataRequest withProtocolId(String protocolId) {
         this.protocolId = protocolId;
         return this;
@@ -68,6 +70,9 @@ public class ShowMetadataRequest  {
     public void setProtocolId(String protocolId) {
         this.protocolId = protocolId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

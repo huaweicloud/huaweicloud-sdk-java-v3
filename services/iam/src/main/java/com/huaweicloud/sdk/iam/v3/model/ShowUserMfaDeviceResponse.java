@@ -24,7 +24,7 @@ public class ShowUserMfaDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="virtual_mfa_device")
     
-    private MfaDeviceResult virtualMfaDevice = null;
+    private MfaDeviceResult virtualMfaDevice;
 
     public ShowUserMfaDeviceResponse withVirtualMfaDevice(MfaDeviceResult virtualMfaDevice) {
         this.virtualMfaDevice = virtualMfaDevice;
@@ -52,6 +52,9 @@ public class ShowUserMfaDeviceResponse extends SdkResponse {
     public void setVirtualMfaDevice(MfaDeviceResult virtualMfaDevice) {
         this.virtualMfaDevice = virtualMfaDevice;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

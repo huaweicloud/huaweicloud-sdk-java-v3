@@ -67,6 +67,8 @@ public class ImportKeyMaterialRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public ImportKeyMaterialRequestBody withImportToken(String importToken) {
         this.importToken = importToken;
         return this;
@@ -87,6 +89,8 @@ public class ImportKeyMaterialRequestBody  {
         this.importToken = importToken;
     }
 
+    
+
     public ImportKeyMaterialRequestBody withEncryptedKeyMaterial(String encryptedKeyMaterial) {
         this.encryptedKeyMaterial = encryptedKeyMaterial;
         return this;
@@ -106,6 +110,8 @@ public class ImportKeyMaterialRequestBody  {
     public void setEncryptedKeyMaterial(String encryptedKeyMaterial) {
         this.encryptedKeyMaterial = encryptedKeyMaterial;
     }
+
+    
 
     public ImportKeyMaterialRequestBody withExpirationTime(Long expirationTime) {
         this.expirationTime = expirationTime;
@@ -129,6 +135,8 @@ public class ImportKeyMaterialRequestBody  {
         this.expirationTime = expirationTime;
     }
 
+    
+
     public ImportKeyMaterialRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -148,6 +156,9 @@ public class ImportKeyMaterialRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

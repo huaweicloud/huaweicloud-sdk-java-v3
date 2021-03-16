@@ -85,6 +85,8 @@ public class DemandStatisticResponseV4  {
         this.closedNum = closedNum;
     }
 
+    
+
     public DemandStatisticResponseV4 withModule(String module) {
         this.module = module;
         return this;
@@ -104,6 +106,8 @@ public class DemandStatisticResponseV4  {
     public void setModule(String module) {
         this.module = module;
     }
+
+    
 
     public DemandStatisticResponseV4 withNewNum(Integer newNum) {
         this.newNum = newNum;
@@ -125,6 +129,8 @@ public class DemandStatisticResponseV4  {
         this.newNum = newNum;
     }
 
+    
+
     public DemandStatisticResponseV4 withProcessNum(Integer processNum) {
         this.processNum = processNum;
         return this;
@@ -144,6 +150,8 @@ public class DemandStatisticResponseV4  {
     public void setProcessNum(Integer processNum) {
         this.processNum = processNum;
     }
+
+    
 
     public DemandStatisticResponseV4 withRejectedNum(Integer rejectedNum) {
         this.rejectedNum = rejectedNum;
@@ -165,6 +173,8 @@ public class DemandStatisticResponseV4  {
         this.rejectedNum = rejectedNum;
     }
 
+    
+
     public DemandStatisticResponseV4 withSolvedNum(Integer solvedNum) {
         this.solvedNum = solvedNum;
         return this;
@@ -184,6 +194,8 @@ public class DemandStatisticResponseV4  {
     public void setSolvedNum(Integer solvedNum) {
         this.solvedNum = solvedNum;
     }
+
+    
 
     public DemandStatisticResponseV4 withTestNum(Integer testNum) {
         this.testNum = testNum;
@@ -205,6 +217,8 @@ public class DemandStatisticResponseV4  {
         this.testNum = testNum;
     }
 
+    
+
     public DemandStatisticResponseV4 withTotal(Integer total) {
         this.total = total;
         return this;
@@ -224,6 +238,9 @@ public class DemandStatisticResponseV4  {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

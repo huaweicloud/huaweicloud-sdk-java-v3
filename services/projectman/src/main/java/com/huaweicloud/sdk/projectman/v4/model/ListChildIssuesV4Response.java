@@ -41,9 +41,6 @@ public class ListChildIssuesV4Response extends SdkResponse {
 
     
     public ListChildIssuesV4Response addIssuesItem(IssueResponseV4 issuesItem) {
-        if (this.issues == null) {
-            this.issues = new ArrayList<>();
-        }
         this.issues.add(issuesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListChildIssuesV4Response extends SdkResponse {
         this.issues = issues;
     }
 
+    
+
     public ListChildIssuesV4Response withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ListChildIssuesV4Response extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

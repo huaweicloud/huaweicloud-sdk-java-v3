@@ -82,6 +82,8 @@ public class ShowInstanceTopicDetailRespPartitions  {
         this.partition = partition;
     }
 
+    
+
     public ShowInstanceTopicDetailRespPartitions withLeader(Integer leader) {
         this.leader = leader;
         return this;
@@ -101,6 +103,8 @@ public class ShowInstanceTopicDetailRespPartitions  {
     public void setLeader(Integer leader) {
         this.leader = leader;
     }
+
+    
 
     public ShowInstanceTopicDetailRespPartitions withLeo(Integer leo) {
         this.leo = leo;
@@ -122,6 +126,8 @@ public class ShowInstanceTopicDetailRespPartitions  {
         this.leo = leo;
     }
 
+    
+
     public ShowInstanceTopicDetailRespPartitions withHw(Integer hw) {
         this.hw = hw;
         return this;
@@ -141,6 +147,8 @@ public class ShowInstanceTopicDetailRespPartitions  {
     public void setHw(Integer hw) {
         this.hw = hw;
     }
+
+    
 
     public ShowInstanceTopicDetailRespPartitions withLso(Integer lso) {
         this.lso = lso;
@@ -162,6 +170,8 @@ public class ShowInstanceTopicDetailRespPartitions  {
         this.lso = lso;
     }
 
+    
+
     public ShowInstanceTopicDetailRespPartitions withLastUpdateTimestamp(Integer lastUpdateTimestamp) {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
         return this;
@@ -182,6 +192,8 @@ public class ShowInstanceTopicDetailRespPartitions  {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
     }
 
+    
+
     public ShowInstanceTopicDetailRespPartitions withReplicas(List<ShowInstanceTopicDetailRespReplicas> replicas) {
         this.replicas = replicas;
         return this;
@@ -189,9 +201,6 @@ public class ShowInstanceTopicDetailRespPartitions  {
 
     
     public ShowInstanceTopicDetailRespPartitions addReplicasItem(ShowInstanceTopicDetailRespReplicas replicasItem) {
-        if (this.replicas == null) {
-            this.replicas = new ArrayList<>();
-        }
         this.replicas.add(replicasItem);
         return this;
     }
@@ -215,6 +224,9 @@ public class ShowInstanceTopicDetailRespPartitions  {
     public void setReplicas(List<ShowInstanceTopicDetailRespReplicas> replicas) {
         this.replicas = replicas;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

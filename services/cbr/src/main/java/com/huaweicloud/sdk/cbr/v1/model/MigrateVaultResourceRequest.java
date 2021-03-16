@@ -28,7 +28,7 @@ public class MigrateVaultResourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VaultMigrateResourceReq body = null;
+    private VaultMigrateResourceReq body;
 
     public MigrateVaultResourceRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
@@ -49,6 +49,8 @@ public class MigrateVaultResourceRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public MigrateVaultResourceRequest withBody(VaultMigrateResourceReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class MigrateVaultResourceRequest  {
     public void setBody(VaultMigrateResourceReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

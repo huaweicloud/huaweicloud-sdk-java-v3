@@ -49,6 +49,8 @@ public class GetRestoreTimeResponseRestoreTime  {
         this.startTime = startTime;
     }
 
+    
+
     public GetRestoreTimeResponseRestoreTime withEndTime(Integer endTime) {
         this.endTime = endTime;
         return this;
@@ -68,6 +70,9 @@ public class GetRestoreTimeResponseRestoreTime  {
     public void setEndTime(Integer endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

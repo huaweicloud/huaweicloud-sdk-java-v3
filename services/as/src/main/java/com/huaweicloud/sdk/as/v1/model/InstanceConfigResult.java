@@ -70,13 +70,13 @@ public class InstanceConfigResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="personality")
     
-    private Personality personality = null;
+    private Personality personality;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    private PublicIp publicIp = null;
+    private PublicIp publicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,7 +88,7 @@ public class InstanceConfigResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaData metadata = null;
+    private MetaData metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -134,6 +134,8 @@ public class InstanceConfigResult  {
         this.flavorRef = flavorRef;
     }
 
+    
+
     public InstanceConfigResult withImageRef(String imageRef) {
         this.imageRef = imageRef;
         return this;
@@ -154,6 +156,8 @@ public class InstanceConfigResult  {
         this.imageRef = imageRef;
     }
 
+    
+
     public InstanceConfigResult withDisk(List<Disk> disk) {
         this.disk = disk;
         return this;
@@ -161,9 +165,6 @@ public class InstanceConfigResult  {
 
     
     public InstanceConfigResult addDiskItem(Disk diskItem) {
-        if (this.disk == null) {
-            this.disk = new ArrayList<>();
-        }
         this.disk.add(diskItem);
         return this;
     }
@@ -188,6 +189,8 @@ public class InstanceConfigResult  {
         this.disk = disk;
     }
 
+    
+
     public InstanceConfigResult withKeyName(String keyName) {
         this.keyName = keyName;
         return this;
@@ -207,6 +210,8 @@ public class InstanceConfigResult  {
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
+
+    
 
     public InstanceConfigResult withInstanceName(String instanceName) {
         this.instanceName = instanceName;
@@ -228,6 +233,8 @@ public class InstanceConfigResult  {
         this.instanceName = instanceName;
     }
 
+    
+
     public InstanceConfigResult withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -248,6 +255,8 @@ public class InstanceConfigResult  {
         this.instanceId = instanceId;
     }
 
+    
+
     public InstanceConfigResult withAdminPass(String adminPass) {
         this.adminPass = adminPass;
         return this;
@@ -267,6 +276,8 @@ public class InstanceConfigResult  {
     public void setAdminPass(String adminPass) {
         this.adminPass = adminPass;
     }
+
+    
 
     public InstanceConfigResult withPersonality(Personality personality) {
         this.personality = personality;
@@ -295,6 +306,8 @@ public class InstanceConfigResult  {
         this.personality = personality;
     }
 
+    
+
     public InstanceConfigResult withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -322,6 +335,8 @@ public class InstanceConfigResult  {
         this.publicIp = publicIp;
     }
 
+    
+
     public InstanceConfigResult withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -341,6 +356,8 @@ public class InstanceConfigResult  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public InstanceConfigResult withMetadata(MetaData metadata) {
         this.metadata = metadata;
@@ -369,6 +386,8 @@ public class InstanceConfigResult  {
         this.metadata = metadata;
     }
 
+    
+
     public InstanceConfigResult withSecurityGroups(List<SecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -376,9 +395,6 @@ public class InstanceConfigResult  {
 
     
     public InstanceConfigResult addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -403,6 +419,8 @@ public class InstanceConfigResult  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public InstanceConfigResult withServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
         return this;
@@ -422,6 +440,8 @@ public class InstanceConfigResult  {
     public void setServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
     }
+
+    
 
     public InstanceConfigResult withTenancy(String tenancy) {
         this.tenancy = tenancy;
@@ -443,6 +463,8 @@ public class InstanceConfigResult  {
         this.tenancy = tenancy;
     }
 
+    
+
     public InstanceConfigResult withDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -462,6 +484,9 @@ public class InstanceConfigResult  {
     public void setDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

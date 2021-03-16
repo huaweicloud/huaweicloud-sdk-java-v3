@@ -55,6 +55,8 @@ public class ObsFileAddr  {
         this.bucket = bucket;
     }
 
+    
+
     public ObsFileAddr withLocation(String location) {
         this.location = location;
         return this;
@@ -75,6 +77,8 @@ public class ObsFileAddr  {
         this.location = location;
     }
 
+    
+
     public ObsFileAddr withObject(String _object) {
         this._object = _object;
         return this;
@@ -94,6 +98,9 @@ public class ObsFileAddr  {
     public void setObject(String _object) {
         this._object = _object;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

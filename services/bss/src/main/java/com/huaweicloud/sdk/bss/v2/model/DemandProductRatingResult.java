@@ -82,6 +82,8 @@ public class DemandProductRatingResult  {
         this.id = id;
     }
 
+    
+
     public DemandProductRatingResult withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -101,6 +103,8 @@ public class DemandProductRatingResult  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public DemandProductRatingResult withAmount(Double amount) {
         this.amount = amount;
@@ -122,6 +126,8 @@ public class DemandProductRatingResult  {
         this.amount = amount;
     }
 
+    
+
     public DemandProductRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
@@ -141,6 +147,8 @@ public class DemandProductRatingResult  {
     public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
+
+    
 
     public DemandProductRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
@@ -162,6 +170,8 @@ public class DemandProductRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
+    
+
     public DemandProductRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -182,6 +192,8 @@ public class DemandProductRatingResult  {
         this.measureId = measureId;
     }
 
+    
+
     public DemandProductRatingResult withDiscountRatingResults(List<DemandDiscountRatingResult> discountRatingResults) {
         this.discountRatingResults = discountRatingResults;
         return this;
@@ -189,9 +201,6 @@ public class DemandProductRatingResult  {
 
     
     public DemandProductRatingResult addDiscountRatingResultsItem(DemandDiscountRatingResult discountRatingResultsItem) {
-        if (this.discountRatingResults == null) {
-            this.discountRatingResults = new ArrayList<>();
-        }
         this.discountRatingResults.add(discountRatingResultsItem);
         return this;
     }
@@ -215,6 +224,9 @@ public class DemandProductRatingResult  {
     public void setDiscountRatingResults(List<DemandDiscountRatingResult> discountRatingResults) {
         this.discountRatingResults = discountRatingResults;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

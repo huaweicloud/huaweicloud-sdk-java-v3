@@ -256,7 +256,7 @@ public class NatGatewayResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -296,6 +296,8 @@ public class NatGatewayResponseBody  {
         this.id = id;
     }
 
+    
+
     public NatGatewayResponseBody withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -315,6 +317,8 @@ public class NatGatewayResponseBody  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public NatGatewayResponseBody withName(String name) {
         this.name = name;
@@ -336,6 +340,8 @@ public class NatGatewayResponseBody  {
         this.name = name;
     }
 
+    
+
     public NatGatewayResponseBody withDescription(String description) {
         this.description = description;
         return this;
@@ -355,6 +361,8 @@ public class NatGatewayResponseBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public NatGatewayResponseBody withSpec(SpecEnum spec) {
         this.spec = spec;
@@ -376,6 +384,8 @@ public class NatGatewayResponseBody  {
         this.spec = spec;
     }
 
+    
+
     public NatGatewayResponseBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -395,6 +405,8 @@ public class NatGatewayResponseBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public NatGatewayResponseBody withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -416,6 +428,8 @@ public class NatGatewayResponseBody  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public NatGatewayResponseBody withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -435,6 +449,8 @@ public class NatGatewayResponseBody  {
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public NatGatewayResponseBody withRouterId(String routerId) {
         this.routerId = routerId;
@@ -456,6 +472,8 @@ public class NatGatewayResponseBody  {
         this.routerId = routerId;
     }
 
+    
+
     public NatGatewayResponseBody withInternalNetworkId(String internalNetworkId) {
         this.internalNetworkId = internalNetworkId;
         return this;
@@ -476,6 +494,8 @@ public class NatGatewayResponseBody  {
         this.internalNetworkId = internalNetworkId;
     }
 
+    
+
     public NatGatewayResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -495,6 +515,9 @@ public class NatGatewayResponseBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

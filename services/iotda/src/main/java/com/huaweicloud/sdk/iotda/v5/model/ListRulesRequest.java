@@ -39,19 +39,19 @@ public class ListRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListRulesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -73,6 +73,8 @@ public class ListRulesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListRulesRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -93,6 +95,8 @@ public class ListRulesRequest  {
         this.appId = appId;
     }
 
+    
+
     public ListRulesRequest withRuleType(String ruleType) {
         this.ruleType = ruleType;
         return this;
@@ -112,6 +116,8 @@ public class ListRulesRequest  {
     public void setRuleType(String ruleType) {
         this.ruleType = ruleType;
     }
+
+    
 
     public ListRulesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -135,6 +141,8 @@ public class ListRulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListRulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -154,6 +162,8 @@ public class ListRulesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListRulesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -176,6 +186,9 @@ public class ListRulesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

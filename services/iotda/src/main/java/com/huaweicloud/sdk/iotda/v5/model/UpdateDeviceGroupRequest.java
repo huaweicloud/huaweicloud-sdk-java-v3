@@ -34,7 +34,7 @@ public class UpdateDeviceGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDeviceGroupDTO body = null;
+    private UpdateDeviceGroupDTO body;
 
     public UpdateDeviceGroupRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateDeviceGroupRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateDeviceGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateDeviceGroupRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public UpdateDeviceGroupRequest withBody(UpdateDeviceGroupDTO body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateDeviceGroupRequest  {
     public void setBody(UpdateDeviceGroupDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

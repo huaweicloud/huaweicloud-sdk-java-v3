@@ -42,6 +42,9 @@ public class ShowQueueTagsRequest  {
     public void setQueueId(String queueId) {
         this.queueId = queueId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

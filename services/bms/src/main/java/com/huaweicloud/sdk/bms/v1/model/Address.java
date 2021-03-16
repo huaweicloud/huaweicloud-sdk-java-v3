@@ -229,6 +229,8 @@ public class Address  {
         this.version = version;
     }
 
+    
+
     public Address withAddr(String addr) {
         this.addr = addr;
         return this;
@@ -248,6 +250,8 @@ public class Address  {
     public void setAddr(String addr) {
         this.addr = addr;
     }
+
+    
 
     public Address withOsEXTIPSType(OsEXTIPSTypeEnum osEXTIPSType) {
         this.osEXTIPSType = osEXTIPSType;
@@ -269,6 +273,8 @@ public class Address  {
         this.osEXTIPSType = osEXTIPSType;
     }
 
+    
+
     public Address withOsEXTIPSMACMacAddr(String osEXTIPSMACMacAddr) {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
         return this;
@@ -289,6 +295,8 @@ public class Address  {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
     }
 
+    
+
     public Address withOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
         return this;
@@ -308,6 +316,9 @@ public class Address  {
     public void setOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

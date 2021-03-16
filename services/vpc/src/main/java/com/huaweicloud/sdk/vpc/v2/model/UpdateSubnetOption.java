@@ -88,6 +88,8 @@ public class UpdateSubnetOption  {
         this.name = name;
     }
 
+    
+
     public UpdateSubnetOption withDescription(String description) {
         this.description = description;
         return this;
@@ -107,6 +109,8 @@ public class UpdateSubnetOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateSubnetOption withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
@@ -128,6 +132,8 @@ public class UpdateSubnetOption  {
         this.ipv6Enable = ipv6Enable;
     }
 
+    
+
     public UpdateSubnetOption withDhcpEnable(Boolean dhcpEnable) {
         this.dhcpEnable = dhcpEnable;
         return this;
@@ -147,6 +153,8 @@ public class UpdateSubnetOption  {
     public void setDhcpEnable(Boolean dhcpEnable) {
         this.dhcpEnable = dhcpEnable;
     }
+
+    
 
     public UpdateSubnetOption withPrimaryDns(String primaryDns) {
         this.primaryDns = primaryDns;
@@ -168,6 +176,8 @@ public class UpdateSubnetOption  {
         this.primaryDns = primaryDns;
     }
 
+    
+
     public UpdateSubnetOption withSecondaryDns(String secondaryDns) {
         this.secondaryDns = secondaryDns;
         return this;
@@ -188,6 +198,8 @@ public class UpdateSubnetOption  {
         this.secondaryDns = secondaryDns;
     }
 
+    
+
     public UpdateSubnetOption withDnsList(List<String> dnsList) {
         this.dnsList = dnsList;
         return this;
@@ -195,9 +207,6 @@ public class UpdateSubnetOption  {
 
     
     public UpdateSubnetOption addDnsListItem(String dnsListItem) {
-        if (this.dnsList == null) {
-            this.dnsList = new ArrayList<>();
-        }
         this.dnsList.add(dnsListItem);
         return this;
     }
@@ -222,6 +231,8 @@ public class UpdateSubnetOption  {
         this.dnsList = dnsList;
     }
 
+    
+
     public UpdateSubnetOption withExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
@@ -229,9 +240,6 @@ public class UpdateSubnetOption  {
 
     
     public UpdateSubnetOption addExtraDhcpOptsItem(ExtraDhcpOption extraDhcpOptsItem) {
-        if (this.extraDhcpOpts == null) {
-            this.extraDhcpOpts = new ArrayList<>();
-        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
@@ -255,6 +263,9 @@ public class UpdateSubnetOption  {
     public void setExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

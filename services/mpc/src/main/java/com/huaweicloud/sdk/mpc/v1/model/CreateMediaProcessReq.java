@@ -22,13 +22,13 @@ public class CreateMediaProcessReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class CreateMediaProcessReq  {
         this.input = input;
     }
 
+    
+
     public CreateMediaProcessReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -90,6 +92,8 @@ public class CreateMediaProcessReq  {
         this.output = output;
     }
 
+    
+
     public CreateMediaProcessReq withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -109,6 +113,9 @@ public class CreateMediaProcessReq  {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

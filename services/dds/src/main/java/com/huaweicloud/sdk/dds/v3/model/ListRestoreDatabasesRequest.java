@@ -69,6 +69,8 @@ public class ListRestoreDatabasesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListRestoreDatabasesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -88,6 +90,8 @@ public class ListRestoreDatabasesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListRestoreDatabasesRequest withRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
@@ -109,6 +113,8 @@ public class ListRestoreDatabasesRequest  {
         this.restoreTime = restoreTime;
     }
 
+    
+
     public ListRestoreDatabasesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -129,6 +135,8 @@ public class ListRestoreDatabasesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListRestoreDatabasesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -148,6 +156,9 @@ public class ListRestoreDatabasesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

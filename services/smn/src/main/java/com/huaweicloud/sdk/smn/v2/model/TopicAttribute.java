@@ -36,7 +36,7 @@ public class TopicAttribute  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Statement")
     
-    private List<Statement> statement = new ArrayList<>();
+    private List<Statement> statement = null;
     
     public TopicAttribute withVersion(String version) {
         this.version = version;
@@ -58,6 +58,8 @@ public class TopicAttribute  {
         this.version = version;
     }
 
+    
+
     public TopicAttribute withId(String id) {
         this.id = id;
         return this;
@@ -77,6 +79,8 @@ public class TopicAttribute  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public TopicAttribute withStatement(List<Statement> statement) {
         this.statement = statement;
@@ -108,6 +112,9 @@ public class TopicAttribute  {
     public void setStatement(List<Statement> statement) {
         this.statement = statement;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -51,6 +51,8 @@ public class ImStatusV2  {
         this.status = status;
     }
 
+    
+
     public ImStatusV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
@@ -70,6 +72,9 @@ public class ImStatusV2  {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

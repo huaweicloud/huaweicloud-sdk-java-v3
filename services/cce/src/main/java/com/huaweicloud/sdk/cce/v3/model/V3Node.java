@@ -24,31 +24,31 @@ public class V3Node  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Node";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private NodeMetadata metadata = null;
+    private NodeMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3NodeSpec spec = null;
+    private V3NodeSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private V3NodeStatus status = null;
+    private V3NodeStatus status;
 
     public V3Node withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -70,6 +70,8 @@ public class V3Node  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public V3Node withKind(String kind) {
         this.kind = kind;
         return this;
@@ -89,6 +91,8 @@ public class V3Node  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public V3Node withMetadata(NodeMetadata metadata) {
         this.metadata = metadata;
@@ -117,6 +121,8 @@ public class V3Node  {
         this.metadata = metadata;
     }
 
+    
+
     public V3Node withSpec(V3NodeSpec spec) {
         this.spec = spec;
         return this;
@@ -144,6 +150,8 @@ public class V3Node  {
         this.spec = spec;
     }
 
+    
+
     public V3Node withStatus(V3NodeStatus status) {
         this.status = status;
         return this;
@@ -170,6 +178,9 @@ public class V3Node  {
     public void setStatus(V3NodeStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

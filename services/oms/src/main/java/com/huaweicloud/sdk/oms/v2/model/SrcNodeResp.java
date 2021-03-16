@@ -190,7 +190,7 @@ public class SrcNodeResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="list_file")
     
-    private ListFile listFile = null;
+    private ListFile listFile;
 
     public SrcNodeResp withBucket(String bucket) {
         this.bucket = bucket;
@@ -212,6 +212,8 @@ public class SrcNodeResp  {
         this.bucket = bucket;
     }
 
+    
+
     public SrcNodeResp withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
@@ -231,6 +233,8 @@ public class SrcNodeResp  {
     public void setCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
     }
+
+    
 
     public SrcNodeResp withRegion(String region) {
         this.region = region;
@@ -252,6 +256,8 @@ public class SrcNodeResp  {
         this.region = region;
     }
 
+    
+
     public SrcNodeResp withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -272,6 +278,8 @@ public class SrcNodeResp  {
         this.appId = appId;
     }
 
+    
+
     public SrcNodeResp withObjectKey(List<String> objectKey) {
         this.objectKey = objectKey;
         return this;
@@ -279,9 +287,6 @@ public class SrcNodeResp  {
 
     
     public SrcNodeResp addObjectKeyItem(String objectKeyItem) {
-        if (this.objectKey == null) {
-            this.objectKey = new ArrayList<>();
-        }
         this.objectKey.add(objectKeyItem);
         return this;
     }
@@ -305,6 +310,8 @@ public class SrcNodeResp  {
     public void setObjectKey(List<String> objectKey) {
         this.objectKey = objectKey;
     }
+
+    
 
     public SrcNodeResp withListFile(ListFile listFile) {
         this.listFile = listFile;
@@ -332,6 +339,9 @@ public class SrcNodeResp  {
     public void setListFile(ListFile listFile) {
         this.listFile = listFile;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

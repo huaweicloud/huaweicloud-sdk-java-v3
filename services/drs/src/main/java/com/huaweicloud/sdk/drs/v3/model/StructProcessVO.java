@@ -73,6 +73,8 @@ public class StructProcessVO  {
         this.type = type;
     }
 
+    
+
     public StructProcessVO withStatus(Integer status) {
         this.status = status;
         return this;
@@ -92,6 +94,8 @@ public class StructProcessVO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public StructProcessVO withSrcCount(Integer srcCount) {
         this.srcCount = srcCount;
@@ -113,6 +117,8 @@ public class StructProcessVO  {
         this.srcCount = srcCount;
     }
 
+    
+
     public StructProcessVO withDstCount(Integer dstCount) {
         this.dstCount = dstCount;
         return this;
@@ -132,6 +138,8 @@ public class StructProcessVO  {
     public void setDstCount(Integer dstCount) {
         this.dstCount = dstCount;
     }
+
+    
 
     public StructProcessVO withStartTime(Long startTime) {
         this.startTime = startTime;
@@ -153,6 +161,8 @@ public class StructProcessVO  {
         this.startTime = startTime;
     }
 
+    
+
     public StructProcessVO withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -172,6 +182,9 @@ public class StructProcessVO  {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

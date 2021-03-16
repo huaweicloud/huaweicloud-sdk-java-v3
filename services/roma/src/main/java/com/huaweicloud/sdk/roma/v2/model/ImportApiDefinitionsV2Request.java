@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.ImportApiDefinitionsV2RequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +28,7 @@ public class ImportApiDefinitionsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private Object body = null;
+    private ImportApiDefinitionsV2RequestBody body;
 
     public ImportApiDefinitionsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,14 +50,16 @@ public class ImportApiDefinitionsV2Request  {
         this.instanceId = instanceId;
     }
 
-    public ImportApiDefinitionsV2Request withBody(Object body) {
+    
+
+    public ImportApiDefinitionsV2Request withBody(ImportApiDefinitionsV2RequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ImportApiDefinitionsV2Request withBody(Consumer<Object> bodySetter) {
+    public ImportApiDefinitionsV2Request withBody(Consumer<ImportApiDefinitionsV2RequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new Object();
+            this.body = new ImportApiDefinitionsV2RequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,13 +71,16 @@ public class ImportApiDefinitionsV2Request  {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public ImportApiDefinitionsV2RequestBody getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(ImportApiDefinitionsV2RequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class CustomerInfoV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

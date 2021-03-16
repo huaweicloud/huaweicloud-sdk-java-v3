@@ -55,6 +55,8 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
         this.name = name;
     }
 
+    
+
     public DeleteCloudPersistentVolumeClaimsRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -74,6 +76,8 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public DeleteCloudPersistentVolumeClaimsRequest withXClusterID(String xClusterID) {
         this.xClusterID = xClusterID;
@@ -96,6 +100,9 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
     public void setXClusterID(String xClusterID) {
         this.xClusterID = xClusterID;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

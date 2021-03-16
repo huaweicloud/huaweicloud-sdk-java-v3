@@ -348,6 +348,8 @@ public class BatchBandwidthResp  {
         this.bandwidthType = bandwidthType;
     }
 
+    
+
     public BatchBandwidthResp withBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
         return this;
@@ -367,6 +369,8 @@ public class BatchBandwidthResp  {
     public void setBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
     }
+
+    
 
     public BatchBandwidthResp withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
@@ -388,6 +392,8 @@ public class BatchBandwidthResp  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public BatchBandwidthResp withId(String id) {
         this.id = id;
         return this;
@@ -407,6 +413,8 @@ public class BatchBandwidthResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public BatchBandwidthResp withName(String name) {
         this.name = name;
@@ -428,6 +436,8 @@ public class BatchBandwidthResp  {
         this.name = name;
     }
 
+    
+
     public BatchBandwidthResp withPublicipInfo(List<PublicipInfoResp> publicipInfo) {
         this.publicipInfo = publicipInfo;
         return this;
@@ -435,9 +445,6 @@ public class BatchBandwidthResp  {
 
     
     public BatchBandwidthResp addPublicipInfoItem(PublicipInfoResp publicipInfoItem) {
-        if (this.publicipInfo == null) {
-            this.publicipInfo = new ArrayList<>();
-        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
@@ -462,6 +469,8 @@ public class BatchBandwidthResp  {
         this.publicipInfo = publicipInfo;
     }
 
+    
+
     public BatchBandwidthResp withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
         return this;
@@ -481,6 +490,8 @@ public class BatchBandwidthResp  {
     public void setShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
     }
+
+    
 
     public BatchBandwidthResp withSize(Integer size) {
         this.size = size;
@@ -502,6 +513,8 @@ public class BatchBandwidthResp  {
         this.size = size;
     }
 
+    
+
     public BatchBandwidthResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -522,6 +535,8 @@ public class BatchBandwidthResp  {
         this.tenantId = tenantId;
     }
 
+    
+
     public BatchBandwidthResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -541,6 +556,9 @@ public class BatchBandwidthResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

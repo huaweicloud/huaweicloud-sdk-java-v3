@@ -39,7 +39,7 @@ public class ListStatisticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statistics")
     
-    private ListFunctionStatisticsResponseBody statistics = null;
+    private ListFunctionStatisticsResponseBody statistics;
 
     public ListStatisticsResponse withCount(List<MonthUsed> count) {
         this.count = count;
@@ -48,9 +48,6 @@ public class ListStatisticsResponse extends SdkResponse {
 
     
     public ListStatisticsResponse addCountItem(MonthUsed countItem) {
-        if (this.count == null) {
-            this.count = new ArrayList<>();
-        }
         this.count.add(countItem);
         return this;
     }
@@ -75,6 +72,8 @@ public class ListStatisticsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListStatisticsResponse withGbs(List<MonthUsed> gbs) {
         this.gbs = gbs;
         return this;
@@ -82,9 +81,6 @@ public class ListStatisticsResponse extends SdkResponse {
 
     
     public ListStatisticsResponse addGbsItem(MonthUsed gbsItem) {
-        if (this.gbs == null) {
-            this.gbs = new ArrayList<>();
-        }
         this.gbs.add(gbsItem);
         return this;
     }
@@ -108,6 +104,8 @@ public class ListStatisticsResponse extends SdkResponse {
     public void setGbs(List<MonthUsed> gbs) {
         this.gbs = gbs;
     }
+
+    
 
     public ListStatisticsResponse withStatistics(ListFunctionStatisticsResponseBody statistics) {
         this.statistics = statistics;
@@ -135,6 +133,9 @@ public class ListStatisticsResponse extends SdkResponse {
     public void setStatistics(ListFunctionStatisticsResponseBody statistics) {
         this.statistics = statistics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

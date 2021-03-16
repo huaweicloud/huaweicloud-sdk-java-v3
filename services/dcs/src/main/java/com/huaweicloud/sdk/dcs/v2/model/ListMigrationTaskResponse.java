@@ -54,6 +54,8 @@ public class ListMigrationTaskResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListMigrationTaskResponse withMigrationTasks(List<MigrationTaskList> migrationTasks) {
         this.migrationTasks = migrationTasks;
         return this;
@@ -61,9 +63,6 @@ public class ListMigrationTaskResponse extends SdkResponse {
 
     
     public ListMigrationTaskResponse addMigrationTasksItem(MigrationTaskList migrationTasksItem) {
-        if (this.migrationTasks == null) {
-            this.migrationTasks = new ArrayList<>();
-        }
         this.migrationTasks.add(migrationTasksItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListMigrationTaskResponse extends SdkResponse {
     public void setMigrationTasks(List<MigrationTaskList> migrationTasks) {
         this.migrationTasks = migrationTasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class ShowPartitionMessageRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowPartitionMessageRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -80,6 +82,8 @@ public class ShowPartitionMessageRequest  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public ShowPartitionMessageRequest withPartition(Integer partition) {
         this.partition = partition;
@@ -101,6 +105,8 @@ public class ShowPartitionMessageRequest  {
         this.partition = partition;
     }
 
+    
+
     public ShowPartitionMessageRequest withMessageOffset(String messageOffset) {
         this.messageOffset = messageOffset;
         return this;
@@ -120,6 +126,9 @@ public class ShowPartitionMessageRequest  {
     public void setMessageOffset(String messageOffset) {
         this.messageOffset = messageOffset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

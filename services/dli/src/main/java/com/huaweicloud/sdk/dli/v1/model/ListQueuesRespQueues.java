@@ -69,7 +69,7 @@ public class ListQueuesRespQueues  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,6 +115,8 @@ public class ListQueuesRespQueues  {
         this.queueName = queueName;
     }
 
+    
+
     public ListQueuesRespQueues withDescription(String description) {
         this.description = description;
         return this;
@@ -134,6 +136,8 @@ public class ListQueuesRespQueues  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ListQueuesRespQueues withOwner(String owner) {
         this.owner = owner;
@@ -155,6 +159,8 @@ public class ListQueuesRespQueues  {
         this.owner = owner;
     }
 
+    
+
     public ListQueuesRespQueues withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -174,6 +180,8 @@ public class ListQueuesRespQueues  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ListQueuesRespQueues withQueueType(String queueType) {
         this.queueType = queueType;
@@ -195,6 +203,8 @@ public class ListQueuesRespQueues  {
         this.queueType = queueType;
     }
 
+    
+
     public ListQueuesRespQueues withCuCount(Integer cuCount) {
         this.cuCount = cuCount;
         return this;
@@ -214,6 +224,8 @@ public class ListQueuesRespQueues  {
     public void setCuCount(Integer cuCount) {
         this.cuCount = cuCount;
     }
+
+    
 
     public ListQueuesRespQueues withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -235,6 +247,8 @@ public class ListQueuesRespQueues  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ListQueuesRespQueues withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -254,6 +268,8 @@ public class ListQueuesRespQueues  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public ListQueuesRespQueues withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -275,6 +291,8 @@ public class ListQueuesRespQueues  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListQueuesRespQueues withCidrInVpc(String cidrInVpc) {
         this.cidrInVpc = cidrInVpc;
         return this;
@@ -294,6 +312,8 @@ public class ListQueuesRespQueues  {
     public void setCidrInVpc(String cidrInVpc) {
         this.cidrInVpc = cidrInVpc;
     }
+
+    
 
     public ListQueuesRespQueues withCidrInMgntsubnet(String cidrInMgntsubnet) {
         this.cidrInMgntsubnet = cidrInMgntsubnet;
@@ -315,6 +335,8 @@ public class ListQueuesRespQueues  {
         this.cidrInMgntsubnet = cidrInMgntsubnet;
     }
 
+    
+
     public ListQueuesRespQueues withCidrInSubnet(String cidrInSubnet) {
         this.cidrInSubnet = cidrInSubnet;
         return this;
@@ -335,6 +357,8 @@ public class ListQueuesRespQueues  {
         this.cidrInSubnet = cidrInSubnet;
     }
 
+    
+
     public ListQueuesRespQueues withResourceMode(String resourceMode) {
         this.resourceMode = resourceMode;
         return this;
@@ -354,6 +378,9 @@ public class ListQueuesRespQueues  {
     public void setResourceMode(String resourceMode) {
         this.resourceMode = resourceMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

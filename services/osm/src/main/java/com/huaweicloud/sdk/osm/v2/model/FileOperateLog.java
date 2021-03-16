@@ -85,6 +85,8 @@ public class FileOperateLog  {
         this.duration = duration;
     }
 
+    
+
     public FileOperateLog withOperateTime(String operateTime) {
         this.operateTime = operateTime;
         return this;
@@ -104,6 +106,8 @@ public class FileOperateLog  {
     public void setOperateTime(String operateTime) {
         this.operateTime = operateTime;
     }
+
+    
 
     public FileOperateLog withOperateType(String operateType) {
         this.operateType = operateType;
@@ -125,6 +129,8 @@ public class FileOperateLog  {
         this.operateType = operateType;
     }
 
+    
+
     public FileOperateLog withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -144,6 +150,8 @@ public class FileOperateLog  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public FileOperateLog withFromPath(String fromPath) {
         this.fromPath = fromPath;
@@ -165,6 +173,8 @@ public class FileOperateLog  {
         this.fromPath = fromPath;
     }
 
+    
+
     public FileOperateLog withToPath(String toPath) {
         this.toPath = toPath;
         return this;
@@ -184,6 +194,8 @@ public class FileOperateLog  {
     public void setToPath(String toPath) {
         this.toPath = toPath;
     }
+
+    
 
     public FileOperateLog withFileSize(String fileSize) {
         this.fileSize = fileSize;
@@ -205,6 +217,8 @@ public class FileOperateLog  {
         this.fileSize = fileSize;
     }
 
+    
+
     public FileOperateLog withOperResult(String operResult) {
         this.operResult = operResult;
         return this;
@@ -224,6 +238,9 @@ public class FileOperateLog  {
     public void setOperResult(String operResult) {
         this.operResult = operResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

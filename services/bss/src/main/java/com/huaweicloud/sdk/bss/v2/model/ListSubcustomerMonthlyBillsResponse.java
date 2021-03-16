@@ -47,9 +47,6 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
 
     
     public ListSubcustomerMonthlyBillsResponse addBillSumsItem(BillSumInfoV2 billSumsItem) {
-        if (this.billSums == null) {
-            this.billSums = new ArrayList<>();
-        }
         this.billSums.add(billSumsItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
         this.billSums = billSums;
     }
 
+    
+
     public ListSubcustomerMonthlyBillsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -94,6 +93,8 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListSubcustomerMonthlyBillsResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -113,6 +114,9 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

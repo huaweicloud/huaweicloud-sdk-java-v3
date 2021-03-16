@@ -22,7 +22,7 @@ public class CreateListenerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateListenerRequestBody body = null;
+    private CreateListenerRequestBody body;
 
     public CreateListenerRequest withBody(CreateListenerRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateListenerRequest  {
     public void setBody(CreateListenerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

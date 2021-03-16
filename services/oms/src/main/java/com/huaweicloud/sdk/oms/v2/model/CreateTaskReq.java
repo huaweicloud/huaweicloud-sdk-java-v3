@@ -122,25 +122,25 @@ public class CreateTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_type")
     
-    private TaskTypeEnum taskType = TaskTypeEnum.OBJECT;
+    private TaskTypeEnum taskType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="src_node")
     
-    private SrcNodeReq srcNode = null;
+    private SrcNodeReq srcNode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dst_node")
     
-    private DstNodeReq dstNode = null;
+    private DstNodeReq dstNode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_kms")
     
-    private Boolean enableKms = false;
+    private Boolean enableKms;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -152,7 +152,7 @@ public class CreateTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="migrate_since")
     
-    private Long migrateSince = 0l;
+    private Long migrateSince;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,25 +164,25 @@ public class CreateTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_cdn")
     
-    private SourceCdnReq sourceCdn = null;
+    private SourceCdnReq sourceCdn;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_config")
     
-    private SmnConfig smnConfig = null;
+    private SmnConfig smnConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_restore")
     
-    private Boolean enableRestore = false;
+    private Boolean enableRestore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_failed_object_recording")
     
-    private Boolean enableFailedObjectRecording = true;
+    private Boolean enableFailedObjectRecording;
 
     public CreateTaskReq withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
@@ -203,6 +203,8 @@ public class CreateTaskReq  {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
+
+    
 
     public CreateTaskReq withSrcNode(SrcNodeReq srcNode) {
         this.srcNode = srcNode;
@@ -231,6 +233,8 @@ public class CreateTaskReq  {
         this.srcNode = srcNode;
     }
 
+    
+
     public CreateTaskReq withDstNode(DstNodeReq dstNode) {
         this.dstNode = dstNode;
         return this;
@@ -258,6 +262,8 @@ public class CreateTaskReq  {
         this.dstNode = dstNode;
     }
 
+    
+
     public CreateTaskReq withEnableKms(Boolean enableKms) {
         this.enableKms = enableKms;
         return this;
@@ -278,6 +284,8 @@ public class CreateTaskReq  {
         this.enableKms = enableKms;
     }
 
+    
+
     public CreateTaskReq withDescription(String description) {
         this.description = description;
         return this;
@@ -297,6 +305,8 @@ public class CreateTaskReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateTaskReq withMigrateSince(Long migrateSince) {
         this.migrateSince = migrateSince;
@@ -320,6 +330,8 @@ public class CreateTaskReq  {
         this.migrateSince = migrateSince;
     }
 
+    
+
     public CreateTaskReq withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
         return this;
@@ -327,9 +339,6 @@ public class CreateTaskReq  {
 
     
     public CreateTaskReq addBandwidthPolicyItem(BandwidthPolicyDto bandwidthPolicyItem) {
-        if (this.bandwidthPolicy == null) {
-            this.bandwidthPolicy = new ArrayList<>();
-        }
         this.bandwidthPolicy.add(bandwidthPolicyItem);
         return this;
     }
@@ -353,6 +362,8 @@ public class CreateTaskReq  {
     public void setBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
     }
+
+    
 
     public CreateTaskReq withSourceCdn(SourceCdnReq sourceCdn) {
         this.sourceCdn = sourceCdn;
@@ -381,6 +392,8 @@ public class CreateTaskReq  {
         this.sourceCdn = sourceCdn;
     }
 
+    
+
     public CreateTaskReq withSmnConfig(SmnConfig smnConfig) {
         this.smnConfig = smnConfig;
         return this;
@@ -408,6 +421,8 @@ public class CreateTaskReq  {
         this.smnConfig = smnConfig;
     }
 
+    
+
     public CreateTaskReq withEnableRestore(Boolean enableRestore) {
         this.enableRestore = enableRestore;
         return this;
@@ -428,6 +443,8 @@ public class CreateTaskReq  {
         this.enableRestore = enableRestore;
     }
 
+    
+
     public CreateTaskReq withEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
         return this;
@@ -447,6 +464,9 @@ public class CreateTaskReq  {
     public void setEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

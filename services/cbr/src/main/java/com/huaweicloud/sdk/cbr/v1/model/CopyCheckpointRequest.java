@@ -22,7 +22,7 @@ public class CopyCheckpointRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CheckpointReplicateReq body = null;
+    private CheckpointReplicateReq body;
 
     public CopyCheckpointRequest withBody(CheckpointReplicateReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CopyCheckpointRequest  {
     public void setBody(CheckpointReplicateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

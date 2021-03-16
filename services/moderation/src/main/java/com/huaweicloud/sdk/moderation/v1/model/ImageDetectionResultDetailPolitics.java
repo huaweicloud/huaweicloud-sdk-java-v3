@@ -22,7 +22,7 @@ public class ImageDetectionResultDetailPolitics  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    private Object confidence = null;
+    private Object confidence;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,7 +34,7 @@ public class ImageDetectionResultDetailPolitics  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="face_detail")
     
-    private ImageDetectionResultDetailFaceDetail faceDetail = null;
+    private ImageDetectionResultDetailFaceDetail faceDetail;
 
     public ImageDetectionResultDetailPolitics withConfidence(Object confidence) {
         this.confidence = confidence;
@@ -56,6 +56,8 @@ public class ImageDetectionResultDetailPolitics  {
         this.confidence = confidence;
     }
 
+    
+
     public ImageDetectionResultDetailPolitics withLabel(String label) {
         this.label = label;
         return this;
@@ -75,6 +77,8 @@ public class ImageDetectionResultDetailPolitics  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
 
     public ImageDetectionResultDetailPolitics withFaceDetail(ImageDetectionResultDetailFaceDetail faceDetail) {
         this.faceDetail = faceDetail;
@@ -102,6 +106,9 @@ public class ImageDetectionResultDetailPolitics  {
     public void setFaceDetail(ImageDetectionResultDetailFaceDetail faceDetail) {
         this.faceDetail = faceDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

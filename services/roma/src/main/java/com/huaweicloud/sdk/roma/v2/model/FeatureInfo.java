@@ -266,7 +266,7 @@ public class FeatureInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public FeatureInfo withId(String id) {
         this.id = id;
@@ -288,6 +288,8 @@ public class FeatureInfo  {
         this.id = id;
     }
 
+    
+
     public FeatureInfo withName(NameEnum name) {
         this.name = name;
         return this;
@@ -307,6 +309,8 @@ public class FeatureInfo  {
     public void setName(NameEnum name) {
         this.name = name;
     }
+
+    
 
     public FeatureInfo withEnable(Boolean enable) {
         this.enable = enable;
@@ -328,6 +332,8 @@ public class FeatureInfo  {
         this.enable = enable;
     }
 
+    
+
     public FeatureInfo withConfig(String config) {
         this.config = config;
         return this;
@@ -347,6 +353,8 @@ public class FeatureInfo  {
     public void setConfig(String config) {
         this.config = config;
     }
+
+    
 
     public FeatureInfo withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -368,6 +376,8 @@ public class FeatureInfo  {
         this.instanceId = instanceId;
     }
 
+    
+
     public FeatureInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -387,6 +397,9 @@ public class FeatureInfo  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

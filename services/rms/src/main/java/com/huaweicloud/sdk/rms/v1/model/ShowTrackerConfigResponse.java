@@ -25,13 +25,13 @@ public class ShowTrackerConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel")
     
-    private ChannelConfigBody channel = null;
+    private ChannelConfigBody channel;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="selector")
     
-    private SelectorConfigBody selector = null;
+    private SelectorConfigBody selector;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,6 +66,8 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         this.channel = channel;
     }
 
+    
+
     public ShowTrackerConfigResponse withSelector(SelectorConfigBody selector) {
         this.selector = selector;
         return this;
@@ -93,6 +95,8 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         this.selector = selector;
     }
 
+    
+
     public ShowTrackerConfigResponse withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -112,6 +116,9 @@ public class ShowTrackerConfigResponse extends SdkResponse {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

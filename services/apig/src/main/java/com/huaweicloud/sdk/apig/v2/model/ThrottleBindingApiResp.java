@@ -46,7 +46,7 @@ public class ThrottleBindingApiResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apply_time")
     
-    private OffsetDateTime applyTime = null;
+    private OffsetDateTime applyTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -122,6 +122,8 @@ public class ThrottleBindingApiResp  {
         this.authType = authType;
     }
 
+    
+
     public ThrottleBindingApiResp withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -141,6 +143,8 @@ public class ThrottleBindingApiResp  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    
 
     public ThrottleBindingApiResp withPublishId(String publishId) {
         this.publishId = publishId;
@@ -162,6 +166,8 @@ public class ThrottleBindingApiResp  {
         this.publishId = publishId;
     }
 
+    
+
     public ThrottleBindingApiResp withThrottleApplyId(String throttleApplyId) {
         this.throttleApplyId = throttleApplyId;
         return this;
@@ -181,6 +187,8 @@ public class ThrottleBindingApiResp  {
     public void setThrottleApplyId(String throttleApplyId) {
         this.throttleApplyId = throttleApplyId;
     }
+
+    
 
     public ThrottleBindingApiResp withApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
@@ -202,6 +210,8 @@ public class ThrottleBindingApiResp  {
         this.applyTime = applyTime;
     }
 
+    
+
     public ThrottleBindingApiResp withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -221,6 +231,8 @@ public class ThrottleBindingApiResp  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ThrottleBindingApiResp withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -242,6 +254,8 @@ public class ThrottleBindingApiResp  {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public ThrottleBindingApiResp withType(Integer type) {
         this.type = type;
         return this;
@@ -261,6 +275,8 @@ public class ThrottleBindingApiResp  {
     public void setType(Integer type) {
         this.type = type;
     }
+
+    
 
     public ThrottleBindingApiResp withThrottleName(String throttleName) {
         this.throttleName = throttleName;
@@ -282,6 +298,8 @@ public class ThrottleBindingApiResp  {
         this.throttleName = throttleName;
     }
 
+    
+
     public ThrottleBindingApiResp withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -301,6 +319,8 @@ public class ThrottleBindingApiResp  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public ThrottleBindingApiResp withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
@@ -322,6 +342,8 @@ public class ThrottleBindingApiResp  {
         this.runEnvName = runEnvName;
     }
 
+    
+
     public ThrottleBindingApiResp withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -341,6 +363,8 @@ public class ThrottleBindingApiResp  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ThrottleBindingApiResp withName(String name) {
         this.name = name;
@@ -362,6 +386,8 @@ public class ThrottleBindingApiResp  {
         this.name = name;
     }
 
+    
+
     public ThrottleBindingApiResp withId(String id) {
         this.id = id;
         return this;
@@ -381,6 +407,9 @@ public class ThrottleBindingApiResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

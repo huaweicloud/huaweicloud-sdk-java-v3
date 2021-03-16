@@ -58,6 +58,8 @@ public class CreateUserRepositoryAuthRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public CreateUserRepositoryAuthRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -78,6 +80,8 @@ public class CreateUserRepositoryAuthRequest  {
         this.repository = repository;
     }
 
+    
+
     public CreateUserRepositoryAuthRequest withBody(List<UserAuth> body) {
         this.body = body;
         return this;
@@ -85,9 +89,6 @@ public class CreateUserRepositoryAuthRequest  {
 
     
     public CreateUserRepositoryAuthRequest addBodyItem(UserAuth bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class CreateUserRepositoryAuthRequest  {
     public void setBody(List<UserAuth> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

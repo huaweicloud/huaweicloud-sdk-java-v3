@@ -58,6 +58,8 @@ public class ListProductsRespHourly  {
         this.name = name;
     }
 
+    
+
     public ListProductsRespHourly withVersion(String version) {
         this.version = version;
         return this;
@@ -78,6 +80,8 @@ public class ListProductsRespHourly  {
         this.version = version;
     }
 
+    
+
     public ListProductsRespHourly withValues(List<ListProductsRespValues> values) {
         this.values = values;
         return this;
@@ -85,9 +89,6 @@ public class ListProductsRespHourly  {
 
     
     public ListProductsRespHourly addValuesItem(ListProductsRespValues valuesItem) {
-        if (this.values == null) {
-            this.values = new ArrayList<>();
-        }
         this.values.add(valuesItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class ListProductsRespHourly  {
     public void setValues(List<ListProductsRespValues> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

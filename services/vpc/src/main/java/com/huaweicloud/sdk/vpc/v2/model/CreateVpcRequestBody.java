@@ -22,7 +22,7 @@ public class CreateVpcRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
-    private CreateVpcOption vpc = null;
+    private CreateVpcOption vpc;
 
     public CreateVpcRequestBody withVpc(CreateVpcOption vpc) {
         this.vpc = vpc;
@@ -50,6 +50,9 @@ public class CreateVpcRequestBody  {
     public void setVpc(CreateVpcOption vpc) {
         this.vpc = vpc;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

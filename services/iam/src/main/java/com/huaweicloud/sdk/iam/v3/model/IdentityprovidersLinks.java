@@ -49,6 +49,8 @@ public class IdentityprovidersLinks  {
         this.self = self;
     }
 
+    
+
     public IdentityprovidersLinks withProtocols(String protocols) {
         this.protocols = protocols;
         return this;
@@ -68,6 +70,9 @@ public class IdentityprovidersLinks  {
     public void setProtocols(String protocols) {
         this.protocols = protocols;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

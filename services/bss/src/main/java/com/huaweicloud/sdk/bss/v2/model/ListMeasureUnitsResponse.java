@@ -35,9 +35,6 @@ public class ListMeasureUnitsResponse extends SdkResponse {
 
     
     public ListMeasureUnitsResponse addMeasureUnitsItem(MeasureUnitRest measureUnitsItem) {
-        if (this.measureUnits == null) {
-            this.measureUnits = new ArrayList<>();
-        }
         this.measureUnits.add(measureUnitsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListMeasureUnitsResponse extends SdkResponse {
     public void setMeasureUnits(List<MeasureUnitRest> measureUnits) {
         this.measureUnits = measureUnits;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

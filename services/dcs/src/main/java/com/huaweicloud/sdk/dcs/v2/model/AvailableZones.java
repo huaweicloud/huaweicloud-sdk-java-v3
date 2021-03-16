@@ -149,6 +149,8 @@ public class AvailableZones  {
         this.code = code;
     }
 
+    
+
     public AvailableZones withPort(String port) {
         this.port = port;
         return this;
@@ -168,6 +170,8 @@ public class AvailableZones  {
     public void setPort(String port) {
         this.port = port;
     }
+
+    
 
     public AvailableZones withName(String name) {
         this.name = name;
@@ -189,6 +193,8 @@ public class AvailableZones  {
         this.name = name;
     }
 
+    
+
     public AvailableZones withId(String id) {
         this.id = id;
         return this;
@@ -209,6 +215,8 @@ public class AvailableZones  {
         this.id = id;
     }
 
+    
+
     public AvailableZones withResourceAvailability(ResourceAvailabilityEnum resourceAvailability) {
         this.resourceAvailability = resourceAvailability;
         return this;
@@ -228,6 +236,9 @@ public class AvailableZones  {
     public void setResourceAvailability(ResourceAvailabilityEnum resourceAvailability) {
         this.resourceAvailability = resourceAvailability;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

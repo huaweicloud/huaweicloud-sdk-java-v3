@@ -41,9 +41,6 @@ public class ListInstancesResponse extends SdkResponse {
 
     
     public ListInstancesResponse addInstancesItem(InstanceResponse instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
         this.instances.add(instancesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListInstancesResponse extends SdkResponse {
         this.instances = instances;
     }
 
+    
+
     public ListInstancesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListInstancesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

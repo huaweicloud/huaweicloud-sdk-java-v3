@@ -105,6 +105,8 @@ public class ShowApplicationResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public ShowApplicationResponse withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -124,6 +126,8 @@ public class ShowApplicationResponse extends SdkResponse {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ShowApplicationResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -145,6 +149,8 @@ public class ShowApplicationResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowApplicationResponse withDefaultApp(Boolean defaultApp) {
         this.defaultApp = defaultApp;
         return this;
@@ -164,6 +170,8 @@ public class ShowApplicationResponse extends SdkResponse {
     public void setDefaultApp(Boolean defaultApp) {
         this.defaultApp = defaultApp;
     }
+
+    
 
     public ShowApplicationResponse withAppType(String appType) {
         this.appType = appType;
@@ -185,6 +193,8 @@ public class ShowApplicationResponse extends SdkResponse {
         this.appType = appType;
     }
 
+    
+
     public ShowApplicationResponse withUsername(String username) {
         this.username = username;
         return this;
@@ -204,6 +214,8 @@ public class ShowApplicationResponse extends SdkResponse {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    
 
     public ShowApplicationResponse withPermission(String permission) {
         this.permission = permission;
@@ -225,6 +237,8 @@ public class ShowApplicationResponse extends SdkResponse {
         this.permission = permission;
     }
 
+    
+
     public ShowApplicationResponse withLastInstanceId(String lastInstanceId) {
         this.lastInstanceId = lastInstanceId;
         return this;
@@ -244,6 +258,8 @@ public class ShowApplicationResponse extends SdkResponse {
     public void setLastInstanceId(String lastInstanceId) {
         this.lastInstanceId = lastInstanceId;
     }
+
+    
 
     public ShowApplicationResponse withCurrentInstanceId(String currentInstanceId) {
         this.currentInstanceId = currentInstanceId;
@@ -265,6 +281,8 @@ public class ShowApplicationResponse extends SdkResponse {
         this.currentInstanceId = currentInstanceId;
     }
 
+    
+
     public ShowApplicationResponse withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
@@ -285,6 +303,8 @@ public class ShowApplicationResponse extends SdkResponse {
         this.serviceName = serviceName;
     }
 
+    
+
     public ShowApplicationResponse withFreezed(Boolean freezed) {
         this.freezed = freezed;
         return this;
@@ -304,6 +324,9 @@ public class ShowApplicationResponse extends SdkResponse {
     public void setFreezed(Boolean freezed) {
         this.freezed = freezed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

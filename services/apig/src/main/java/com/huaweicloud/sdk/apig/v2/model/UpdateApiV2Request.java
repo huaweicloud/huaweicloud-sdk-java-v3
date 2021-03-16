@@ -34,7 +34,7 @@ public class UpdateApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiCreate body = null;
+    private ApiCreate body;
 
     public UpdateApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateApiV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateApiV2Request  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public UpdateApiV2Request withBody(ApiCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateApiV2Request  {
     public void setBody(ApiCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

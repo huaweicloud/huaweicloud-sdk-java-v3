@@ -22,7 +22,7 @@ public class TemplateResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    private TemplateResponseBody template = null;
+    private TemplateResponseBody template;
 
     public TemplateResponse withTemplate(TemplateResponseBody template) {
         this.template = template;
@@ -50,6 +50,9 @@ public class TemplateResponse  {
     public void setTemplate(TemplateResponseBody template) {
         this.template = template;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

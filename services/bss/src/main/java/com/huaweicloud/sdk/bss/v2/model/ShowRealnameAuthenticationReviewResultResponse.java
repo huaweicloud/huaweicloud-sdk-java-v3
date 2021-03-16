@@ -51,6 +51,8 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
         this.reviewResult = reviewResult;
     }
 
+    
+
     public ShowRealnameAuthenticationReviewResultResponse withOpinion(String opinion) {
         this.opinion = opinion;
         return this;
@@ -70,6 +72,9 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
     public void setOpinion(String opinion) {
         this.opinion = opinion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

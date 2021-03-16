@@ -63,13 +63,13 @@ public class ListCustomerOrdersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,6 +115,8 @@ public class ListCustomerOrdersRequest  {
         this.orderId = orderId;
     }
 
+    
+
     public ListCustomerOrdersRequest withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -134,6 +136,8 @@ public class ListCustomerOrdersRequest  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public ListCustomerOrdersRequest withCreateTimeBegin(String createTimeBegin) {
         this.createTimeBegin = createTimeBegin;
@@ -155,6 +159,8 @@ public class ListCustomerOrdersRequest  {
         this.createTimeBegin = createTimeBegin;
     }
 
+    
+
     public ListCustomerOrdersRequest withCreateTimeEnd(String createTimeEnd) {
         this.createTimeEnd = createTimeEnd;
         return this;
@@ -175,6 +181,8 @@ public class ListCustomerOrdersRequest  {
         this.createTimeEnd = createTimeEnd;
     }
 
+    
+
     public ListCustomerOrdersRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -194,6 +202,8 @@ public class ListCustomerOrdersRequest  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
 
     public ListCustomerOrdersRequest withStatus(Integer status) {
         this.status = status;
@@ -217,6 +227,8 @@ public class ListCustomerOrdersRequest  {
         this.status = status;
     }
 
+    
+
     public ListCustomerOrdersRequest withOrderType(String orderType) {
         this.orderType = orderType;
         return this;
@@ -236,6 +248,8 @@ public class ListCustomerOrdersRequest  {
     public void setOrderType(String orderType) {
         this.orderType = orderType;
     }
+
+    
 
     public ListCustomerOrdersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -259,6 +273,8 @@ public class ListCustomerOrdersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListCustomerOrdersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -281,6 +297,8 @@ public class ListCustomerOrdersRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCustomerOrdersRequest withOrderBy(String orderBy) {
         this.orderBy = orderBy;
         return this;
@@ -300,6 +318,8 @@ public class ListCustomerOrdersRequest  {
     public void setOrderBy(String orderBy) {
         this.orderBy = orderBy;
     }
+
+    
 
     public ListCustomerOrdersRequest withPaymentTimeBegin(String paymentTimeBegin) {
         this.paymentTimeBegin = paymentTimeBegin;
@@ -321,6 +341,8 @@ public class ListCustomerOrdersRequest  {
         this.paymentTimeBegin = paymentTimeBegin;
     }
 
+    
+
     public ListCustomerOrdersRequest withPaymentTimeEnd(String paymentTimeEnd) {
         this.paymentTimeEnd = paymentTimeEnd;
         return this;
@@ -341,6 +363,8 @@ public class ListCustomerOrdersRequest  {
         this.paymentTimeEnd = paymentTimeEnd;
     }
 
+    
+
     public ListCustomerOrdersRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -360,6 +384,9 @@ public class ListCustomerOrdersRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

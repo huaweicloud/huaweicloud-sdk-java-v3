@@ -46,7 +46,7 @@ public class CheckHostsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VerifyHostV2Req body = null;
+    private VerifyHostV2Req body;
 
     public CheckHostsRequest withAuthorizationDetailId(Long authorizationDetailId) {
         this.authorizationDetailId = authorizationDetailId;
@@ -69,6 +69,8 @@ public class CheckHostsRequest  {
     public void setAuthorizationDetailId(Long authorizationDetailId) {
         this.authorizationDetailId = authorizationDetailId;
     }
+
+    
 
     public CheckHostsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -94,6 +96,8 @@ public class CheckHostsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CheckHostsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -116,6 +120,8 @@ public class CheckHostsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CheckHostsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -137,6 +143,8 @@ public class CheckHostsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public CheckHostsRequest withBody(VerifyHostV2Req body) {
         this.body = body;
@@ -164,6 +172,9 @@ public class CheckHostsRequest  {
     public void setBody(VerifyHostV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

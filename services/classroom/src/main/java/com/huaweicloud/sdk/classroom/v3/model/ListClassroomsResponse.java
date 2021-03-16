@@ -41,9 +41,6 @@ public class ListClassroomsResponse extends SdkResponse {
 
     
     public ListClassroomsResponse addClassroomsItem(ClassroomCard classroomsItem) {
-        if (this.classrooms == null) {
-            this.classrooms = new ArrayList<>();
-        }
         this.classrooms.add(classroomsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListClassroomsResponse extends SdkResponse {
         this.classrooms = classrooms;
     }
 
+    
+
     public ListClassroomsResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ListClassroomsResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

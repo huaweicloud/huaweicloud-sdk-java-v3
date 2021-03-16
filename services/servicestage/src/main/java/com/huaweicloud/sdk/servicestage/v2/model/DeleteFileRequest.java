@@ -81,6 +81,8 @@ public class DeleteFileRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public DeleteFileRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -100,6 +102,8 @@ public class DeleteFileRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public DeleteFileRequest withProject(String project) {
         this.project = project;
@@ -121,6 +125,8 @@ public class DeleteFileRequest  {
         this.project = project;
     }
 
+    
+
     public DeleteFileRequest withPath(String path) {
         this.path = path;
         return this;
@@ -140,6 +146,8 @@ public class DeleteFileRequest  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public DeleteFileRequest withRef(String ref) {
         this.ref = ref;
@@ -161,6 +169,8 @@ public class DeleteFileRequest  {
         this.ref = ref;
     }
 
+    
+
     public DeleteFileRequest withMessage(String message) {
         this.message = message;
         return this;
@@ -181,6 +191,8 @@ public class DeleteFileRequest  {
         this.message = message;
     }
 
+    
+
     public DeleteFileRequest withSha(String sha) {
         this.sha = sha;
         return this;
@@ -200,6 +212,9 @@ public class DeleteFileRequest  {
     public void setSha(String sha) {
         this.sha = sha;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

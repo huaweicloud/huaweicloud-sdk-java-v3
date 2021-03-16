@@ -35,9 +35,6 @@ public class ListSubCustomersResponse extends SdkResponse {
 
     
     public ListSubCustomersResponse addSubCustomerInfosItem(SubCutomerInfoV2 subCustomerInfosItem) {
-        if (this.subCustomerInfos == null) {
-            this.subCustomerInfos = new ArrayList<>();
-        }
         this.subCustomerInfos.add(subCustomerInfosItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListSubCustomersResponse extends SdkResponse {
     public void setSubCustomerInfos(List<SubCutomerInfoV2> subCustomerInfos) {
         this.subCustomerInfos = subCustomerInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,13 +23,13 @@ public class TokenSocpeOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private ScopeDomainOption domain = null;
+    private ScopeDomainOption domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private ScopeProjectOption project = null;
+    private ScopeProjectOption project;
 
     public TokenSocpeOption withDomain(ScopeDomainOption domain) {
         this.domain = domain;
@@ -58,6 +58,8 @@ public class TokenSocpeOption  {
         this.domain = domain;
     }
 
+    
+
     public TokenSocpeOption withProject(ScopeProjectOption project) {
         this.project = project;
         return this;
@@ -84,6 +86,9 @@ public class TokenSocpeOption  {
     public void setProject(ScopeProjectOption project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

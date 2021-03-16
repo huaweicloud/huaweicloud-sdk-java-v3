@@ -24,7 +24,7 @@ public class KeystoneUpdateProjectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private KeystoneUpdateProjectResult project = null;
+    private KeystoneUpdateProjectResult project;
 
     public KeystoneUpdateProjectResponse withProject(KeystoneUpdateProjectResult project) {
         this.project = project;
@@ -52,6 +52,9 @@ public class KeystoneUpdateProjectResponse extends SdkResponse {
     public void setProject(KeystoneUpdateProjectResult project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

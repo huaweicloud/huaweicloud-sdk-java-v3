@@ -117,6 +117,8 @@ public class ListMembersRequest  {
         this.poolId = poolId;
     }
 
+    
+
     public ListMembersRequest withAddress(List<String> address) {
         this.address = address;
         return this;
@@ -124,9 +126,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addAddressItem(String addressItem) {
-        if (this.address == null) {
-            this.address = new ArrayList<>();
-        }
         this.address.add(addressItem);
         return this;
     }
@@ -151,6 +150,8 @@ public class ListMembersRequest  {
         this.address = address;
     }
 
+    
+
     public ListMembersRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -171,6 +172,8 @@ public class ListMembersRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListMembersRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -178,9 +181,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
@@ -205,6 +205,8 @@ public class ListMembersRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListMembersRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -212,9 +214,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -239,6 +238,8 @@ public class ListMembersRequest  {
         this.id = id;
     }
 
+    
+
     public ListMembersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -261,6 +262,8 @@ public class ListMembersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListMembersRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -281,6 +284,8 @@ public class ListMembersRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListMembersRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -288,9 +293,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -315,6 +317,8 @@ public class ListMembersRequest  {
         this.name = name;
     }
 
+    
+
     public ListMembersRequest withOperatingStatus(List<String> operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -322,9 +326,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addOperatingStatusItem(String operatingStatusItem) {
-        if (this.operatingStatus == null) {
-            this.operatingStatus = new ArrayList<>();
-        }
         this.operatingStatus.add(operatingStatusItem);
         return this;
     }
@@ -349,6 +350,8 @@ public class ListMembersRequest  {
         this.operatingStatus = operatingStatus;
     }
 
+    
+
     public ListMembersRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
@@ -369,6 +372,8 @@ public class ListMembersRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListMembersRequest withProtocolPort(List<Integer> protocolPort) {
         this.protocolPort = protocolPort;
         return this;
@@ -376,9 +381,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addProtocolPortItem(Integer protocolPortItem) {
-        if (this.protocolPort == null) {
-            this.protocolPort = new ArrayList<>();
-        }
         this.protocolPort.add(protocolPortItem);
         return this;
     }
@@ -403,6 +405,8 @@ public class ListMembersRequest  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public ListMembersRequest withSubnetCidrId(List<String> subnetCidrId) {
         this.subnetCidrId = subnetCidrId;
         return this;
@@ -410,9 +414,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addSubnetCidrIdItem(String subnetCidrIdItem) {
-        if (this.subnetCidrId == null) {
-            this.subnetCidrId = new ArrayList<>();
-        }
         this.subnetCidrId.add(subnetCidrIdItem);
         return this;
     }
@@ -437,6 +438,8 @@ public class ListMembersRequest  {
         this.subnetCidrId = subnetCidrId;
     }
 
+    
+
     public ListMembersRequest withWeight(List<Integer> weight) {
         this.weight = weight;
         return this;
@@ -444,9 +447,6 @@ public class ListMembersRequest  {
 
     
     public ListMembersRequest addWeightItem(Integer weightItem) {
-        if (this.weight == null) {
-            this.weight = new ArrayList<>();
-        }
         this.weight.add(weightItem);
         return this;
     }
@@ -470,6 +470,9 @@ public class ListMembersRequest  {
     public void setWeight(List<Integer> weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

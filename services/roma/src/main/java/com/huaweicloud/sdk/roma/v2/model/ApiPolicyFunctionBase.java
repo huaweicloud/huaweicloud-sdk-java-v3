@@ -143,6 +143,8 @@ public class ApiPolicyFunctionBase  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public ApiPolicyFunctionBase withInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
         return this;
@@ -162,6 +164,8 @@ public class ApiPolicyFunctionBase  {
     public void setInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
     }
+
+    
 
     public ApiPolicyFunctionBase withVersion(String version) {
         this.version = version;
@@ -183,6 +187,8 @@ public class ApiPolicyFunctionBase  {
         this.version = version;
     }
 
+    
+
     public ApiPolicyFunctionBase withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -202,6 +208,9 @@ public class ApiPolicyFunctionBase  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

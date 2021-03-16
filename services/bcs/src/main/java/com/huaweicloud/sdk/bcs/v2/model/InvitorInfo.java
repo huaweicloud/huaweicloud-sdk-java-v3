@@ -109,6 +109,8 @@ public class InvitorInfo  {
         this.invitorId = invitorId;
     }
 
+    
+
     public InvitorInfo withInvitorName(String invitorName) {
         this.invitorName = invitorName;
         return this;
@@ -128,6 +130,8 @@ public class InvitorInfo  {
     public void setInvitorName(String invitorName) {
         this.invitorName = invitorName;
     }
+
+    
 
     public InvitorInfo withInvitorBcsId(String invitorBcsId) {
         this.invitorBcsId = invitorBcsId;
@@ -149,6 +153,8 @@ public class InvitorInfo  {
         this.invitorBcsId = invitorBcsId;
     }
 
+    
+
     public InvitorInfo withInvitorBcsName(String invitorBcsName) {
         this.invitorBcsName = invitorBcsName;
         return this;
@@ -168,6 +174,8 @@ public class InvitorInfo  {
     public void setInvitorBcsName(String invitorBcsName) {
         this.invitorBcsName = invitorBcsName;
     }
+
+    
 
     public InvitorInfo withInvitorConsensus(String invitorConsensus) {
         this.invitorConsensus = invitorConsensus;
@@ -189,6 +197,8 @@ public class InvitorInfo  {
         this.invitorConsensus = invitorConsensus;
     }
 
+    
+
     public InvitorInfo withInvitorProjectId(String invitorProjectId) {
         this.invitorProjectId = invitorProjectId;
         return this;
@@ -208,6 +218,8 @@ public class InvitorInfo  {
     public void setInvitorProjectId(String invitorProjectId) {
         this.invitorProjectId = invitorProjectId;
     }
+
+    
 
     public InvitorInfo withInvitorClusterType(String invitorClusterType) {
         this.invitorClusterType = invitorClusterType;
@@ -229,6 +241,8 @@ public class InvitorInfo  {
         this.invitorClusterType = invitorClusterType;
     }
 
+    
+
     public InvitorInfo withInvitorDatabaseType(String invitorDatabaseType) {
         this.invitorDatabaseType = invitorDatabaseType;
         return this;
@@ -248,6 +262,8 @@ public class InvitorInfo  {
     public void setInvitorDatabaseType(String invitorDatabaseType) {
         this.invitorDatabaseType = invitorDatabaseType;
     }
+
+    
 
     public InvitorInfo withInvitorSignatureAlgorithm(String invitorSignatureAlgorithm) {
         this.invitorSignatureAlgorithm = invitorSignatureAlgorithm;
@@ -269,6 +285,8 @@ public class InvitorInfo  {
         this.invitorSignatureAlgorithm = invitorSignatureAlgorithm;
     }
 
+    
+
     public InvitorInfo withInvitorFabricVersion(String invitorFabricVersion) {
         this.invitorFabricVersion = invitorFabricVersion;
         return this;
@@ -288,6 +306,8 @@ public class InvitorInfo  {
     public void setInvitorFabricVersion(String invitorFabricVersion) {
         this.invitorFabricVersion = invitorFabricVersion;
     }
+
+    
 
     public InvitorInfo withOrderFadeEnabled(Boolean orderFadeEnabled) {
         this.orderFadeEnabled = orderFadeEnabled;
@@ -309,6 +329,8 @@ public class InvitorInfo  {
         this.orderFadeEnabled = orderFadeEnabled;
     }
 
+    
+
     public InvitorInfo withOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
         return this;
@@ -328,6 +350,9 @@ public class InvitorInfo  {
     public void setOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

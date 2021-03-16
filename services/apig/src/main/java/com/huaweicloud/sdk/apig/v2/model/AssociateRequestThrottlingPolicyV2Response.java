@@ -35,9 +35,6 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
 
     
     public AssociateRequestThrottlingPolicyV2Response addThrottleApplysItem(ThrottleBindingResp throttleApplysItem) {
-        if (this.throttleApplys == null) {
-            this.throttleApplys = new ArrayList<>();
-        }
         this.throttleApplys.add(throttleApplysItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
     public void setThrottleApplys(List<ThrottleBindingResp> throttleApplys) {
         this.throttleApplys = throttleApplys;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

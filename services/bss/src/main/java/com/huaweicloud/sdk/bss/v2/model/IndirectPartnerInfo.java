@@ -73,6 +73,8 @@ public class IndirectPartnerInfo  {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    
+
     public IndirectPartnerInfo withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
@@ -92,6 +94,8 @@ public class IndirectPartnerInfo  {
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
+
+    
 
     public IndirectPartnerInfo withEmail(String email) {
         this.email = email;
@@ -113,6 +117,8 @@ public class IndirectPartnerInfo  {
         this.email = email;
     }
 
+    
+
     public IndirectPartnerInfo withAccountName(String accountName) {
         this.accountName = accountName;
         return this;
@@ -132,6 +138,8 @@ public class IndirectPartnerInfo  {
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
+
+    
 
     public IndirectPartnerInfo withName(String name) {
         this.name = name;
@@ -153,6 +161,8 @@ public class IndirectPartnerInfo  {
         this.name = name;
     }
 
+    
+
     public IndirectPartnerInfo withAssociatedOn(String associatedOn) {
         this.associatedOn = associatedOn;
         return this;
@@ -172,6 +182,9 @@ public class IndirectPartnerInfo  {
     public void setAssociatedOn(String associatedOn) {
         this.associatedOn = associatedOn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

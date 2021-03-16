@@ -42,6 +42,9 @@ public class ShowPortRequest  {
     public void setPortId(String portId) {
         this.portId = portId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

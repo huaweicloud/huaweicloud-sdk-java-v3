@@ -241,6 +241,8 @@ public class Privateip  {
         this.status = status;
     }
 
+    
+
     public Privateip withId(String id) {
         this.id = id;
         return this;
@@ -260,6 +262,8 @@ public class Privateip  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public Privateip withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -281,6 +285,8 @@ public class Privateip  {
         this.subnetId = subnetId;
     }
 
+    
+
     public Privateip withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -300,6 +306,8 @@ public class Privateip  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public Privateip withDeviceOwner(DeviceOwnerEnum deviceOwner) {
         this.deviceOwner = deviceOwner;
@@ -321,6 +329,8 @@ public class Privateip  {
         this.deviceOwner = deviceOwner;
     }
 
+    
+
     public Privateip withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -340,6 +350,9 @@ public class Privateip  {
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

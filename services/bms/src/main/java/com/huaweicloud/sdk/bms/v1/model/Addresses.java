@@ -24,7 +24,7 @@ public class Addresses  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    private List<Address> vpcId = new ArrayList<>();
+    private List<Address> vpcId = null;
     
     public Addresses withVpcId(List<Address> vpcId) {
         this.vpcId = vpcId;
@@ -56,6 +56,9 @@ public class Addresses  {
     public void setVpcId(List<Address> vpcId) {
         this.vpcId = vpcId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

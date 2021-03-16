@@ -49,6 +49,8 @@ public class UpdateDbUserRequestBody  {
         this.dbUsername = dbUsername;
     }
 
+    
+
     public UpdateDbUserRequestBody withDbUserPassword(String dbUserPassword) {
         this.dbUserPassword = dbUserPassword;
         return this;
@@ -68,6 +70,9 @@ public class UpdateDbUserRequestBody  {
     public void setDbUserPassword(String dbUserPassword) {
         this.dbUserPassword = dbUserPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

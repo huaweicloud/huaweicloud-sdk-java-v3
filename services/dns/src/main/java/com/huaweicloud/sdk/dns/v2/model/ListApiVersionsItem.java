@@ -58,6 +58,8 @@ public class ListApiVersionsItem  {
         this.status = status;
     }
 
+    
+
     public ListApiVersionsItem withId(String id) {
         this.id = id;
         return this;
@@ -78,6 +80,8 @@ public class ListApiVersionsItem  {
         this.id = id;
     }
 
+    
+
     public ListApiVersionsItem withLinks(List<LinksItem> links) {
         this.links = links;
         return this;
@@ -85,9 +89,6 @@ public class ListApiVersionsItem  {
 
     
     public ListApiVersionsItem addLinksItem(LinksItem linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class ListApiVersionsItem  {
     public void setLinks(List<LinksItem> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

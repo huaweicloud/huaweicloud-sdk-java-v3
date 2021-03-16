@@ -74,6 +74,8 @@ public class VpcInfo  {
         this.ecsId = ecsId;
     }
 
+    
+
     public VpcInfo withEcsName(Integer ecsName) {
         this.ecsName = ecsName;
         return this;
@@ -93,6 +95,8 @@ public class VpcInfo  {
     public void setEcsName(Integer ecsName) {
         this.ecsName = ecsName;
     }
+
+    
 
     public VpcInfo withCascadeFlag(Boolean cascadeFlag) {
         this.cascadeFlag = cascadeFlag;
@@ -114,6 +118,8 @@ public class VpcInfo  {
         this.cascadeFlag = cascadeFlag;
     }
 
+    
+
     public VpcInfo withVpcChannelProxyHost(String vpcChannelProxyHost) {
         this.vpcChannelProxyHost = vpcChannelProxyHost;
         return this;
@@ -133,6 +139,8 @@ public class VpcInfo  {
     public void setVpcChannelProxyHost(String vpcChannelProxyHost) {
         this.vpcChannelProxyHost = vpcChannelProxyHost;
     }
+
+    
 
     public VpcInfo withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
@@ -154,6 +162,8 @@ public class VpcInfo  {
         this.vpcChannelId = vpcChannelId;
     }
 
+    
+
     public VpcInfo withVpcChannelPort(String vpcChannelPort) {
         this.vpcChannelPort = vpcChannelPort;
         return this;
@@ -173,6 +183,9 @@ public class VpcInfo  {
     public void setVpcChannelPort(String vpcChannelPort) {
         this.vpcChannelPort = vpcChannelPort;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

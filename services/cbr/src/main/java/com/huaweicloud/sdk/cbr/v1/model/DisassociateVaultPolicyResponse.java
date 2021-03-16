@@ -24,7 +24,7 @@ public class DisassociateVaultPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dissociate_policy")
     
-    private VaultPolicyResp dissociatePolicy = null;
+    private VaultPolicyResp dissociatePolicy;
 
     public DisassociateVaultPolicyResponse withDissociatePolicy(VaultPolicyResp dissociatePolicy) {
         this.dissociatePolicy = dissociatePolicy;
@@ -52,6 +52,9 @@ public class DisassociateVaultPolicyResponse extends SdkResponse {
     public void setDissociatePolicy(VaultPolicyResp dissociatePolicy) {
         this.dissociatePolicy = dissociatePolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

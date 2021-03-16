@@ -284,19 +284,19 @@ public class Product  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authentication")
     
-    private Authentication authentication = null;
+    private Authentication authentication;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -323,9 +323,6 @@ public class Product  {
 
     
     public Product addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -350,6 +347,8 @@ public class Product  {
         this.permissions = permissions;
     }
 
+    
+
     public Product withId(Integer id) {
         this.id = id;
         return this;
@@ -369,6 +368,8 @@ public class Product  {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public Product withProductSerial(String productSerial) {
         this.productSerial = productSerial;
@@ -390,6 +391,8 @@ public class Product  {
         this.productSerial = productSerial;
     }
 
+    
+
     public Product withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -409,6 +412,8 @@ public class Product  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public Product withName(String name) {
         this.name = name;
@@ -430,6 +435,8 @@ public class Product  {
         this.name = name;
     }
 
+    
+
     public Product withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
         return this;
@@ -449,6 +456,8 @@ public class Product  {
     public void setManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
     }
+
+    
 
     public Product withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
@@ -470,6 +479,8 @@ public class Product  {
         this.manufacturerName = manufacturerName;
     }
 
+    
+
     public Product withModel(String model) {
         this.model = model;
         return this;
@@ -489,6 +500,8 @@ public class Product  {
     public void setModel(String model) {
         this.model = model;
     }
+
+    
 
     public Product withProductType(ProductTypeEnum productType) {
         this.productType = productType;
@@ -510,6 +523,8 @@ public class Product  {
         this.productType = productType;
     }
 
+    
+
     public Product withDescription(String description) {
         this.description = description;
         return this;
@@ -529,6 +544,8 @@ public class Product  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Product withProtocolType(ProtocolTypeEnum protocolType) {
         this.protocolType = protocolType;
@@ -550,6 +567,8 @@ public class Product  {
         this.protocolType = protocolType;
     }
 
+    
+
     public Product withDeviceType(String deviceType) {
         this.deviceType = deviceType;
         return this;
@@ -570,6 +589,8 @@ public class Product  {
         this.deviceType = deviceType;
     }
 
+    
+
     public Product withVersion(String version) {
         this.version = version;
         return this;
@@ -589,6 +610,8 @@ public class Product  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public Product withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -617,6 +640,8 @@ public class Product  {
         this.createdUser = createdUser;
     }
 
+    
+
     public Product withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -643,6 +668,8 @@ public class Product  {
     public void setLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
     }
+
+    
 
     public Product withAuthentication(Authentication authentication) {
         this.authentication = authentication;
@@ -671,6 +698,8 @@ public class Product  {
         this.authentication = authentication;
     }
 
+    
+
     public Product withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -693,6 +722,8 @@ public class Product  {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public Product withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -713,6 +744,8 @@ public class Product  {
         this.appName = appName;
     }
 
+    
+
     public Product withDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
         return this;
@@ -732,6 +765,9 @@ public class Product  {
     public void setDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

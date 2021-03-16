@@ -22,7 +22,7 @@ public class PublicIp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    private Eip eip = null;
+    private Eip eip;
 
     public PublicIp withEip(Eip eip) {
         this.eip = eip;
@@ -50,6 +50,9 @@ public class PublicIp  {
     public void setEip(Eip eip) {
         this.eip = eip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

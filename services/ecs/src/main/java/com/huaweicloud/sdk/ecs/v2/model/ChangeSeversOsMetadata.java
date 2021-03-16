@@ -42,6 +42,9 @@ public class ChangeSeversOsMetadata  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

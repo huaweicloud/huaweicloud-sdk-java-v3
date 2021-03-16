@@ -32,9 +32,6 @@ public class DeletetemplatesReq  {
 
     
     public DeletetemplatesReq addIdsItem(String idsItem) {
-        if (this.ids == null) {
-            this.ids = new ArrayList<>();
-        }
         this.ids.add(idsItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class DeletetemplatesReq  {
     public void setIds(List<String> ids) {
         this.ids = ids;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

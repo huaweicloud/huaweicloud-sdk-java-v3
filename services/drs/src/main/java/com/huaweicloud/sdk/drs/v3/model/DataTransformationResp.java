@@ -143,6 +143,8 @@ public class DataTransformationResp  {
         this.id = id;
     }
 
+    
+
     public DataTransformationResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -162,6 +164,8 @@ public class DataTransformationResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public DataTransformationResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -183,6 +187,8 @@ public class DataTransformationResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public DataTransformationResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -202,6 +208,9 @@ public class DataTransformationResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

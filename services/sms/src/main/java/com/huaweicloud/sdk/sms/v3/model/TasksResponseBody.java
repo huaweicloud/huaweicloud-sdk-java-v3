@@ -212,7 +212,7 @@ public class TasksResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private Boolean startTargetServer = false;
+    private Boolean startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -224,13 +224,13 @@ public class TasksResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_server")
     
-    private PostSourceServerBody sourceServer = null;
+    private PostSourceServerBody sourceServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_server")
     
-    private TargetServer targetServer = null;
+    private TargetServer targetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -284,7 +284,7 @@ public class TasksResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clone_server")
     
-    private CloneServer cloneServer = null;
+    private CloneServer cloneServer;
     /**
      * 日志收集状态 
      */
@@ -438,6 +438,8 @@ public class TasksResponseBody  {
         this.name = name;
     }
 
+    
+
     public TasksResponseBody withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -458,6 +460,8 @@ public class TasksResponseBody  {
         this.type = type;
     }
 
+    
+
     public TasksResponseBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -477,6 +481,8 @@ public class TasksResponseBody  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public TasksResponseBody withPriority(Integer priority) {
         this.priority = priority;
@@ -500,6 +506,8 @@ public class TasksResponseBody  {
         this.priority = priority;
     }
 
+    
+
     public TasksResponseBody withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
@@ -520,6 +528,8 @@ public class TasksResponseBody  {
         this.startTargetServer = startTargetServer;
     }
 
+    
+
     public TasksResponseBody withMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
         return this;
@@ -539,6 +549,8 @@ public class TasksResponseBody  {
     public void setMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
     }
+
+    
 
     public TasksResponseBody withSourceServer(PostSourceServerBody sourceServer) {
         this.sourceServer = sourceServer;
@@ -567,6 +579,8 @@ public class TasksResponseBody  {
         this.sourceServer = sourceServer;
     }
 
+    
+
     public TasksResponseBody withTargetServer(TargetServer targetServer) {
         this.targetServer = targetServer;
         return this;
@@ -594,6 +608,8 @@ public class TasksResponseBody  {
         this.targetServer = targetServer;
     }
 
+    
+
     public TasksResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -614,6 +630,8 @@ public class TasksResponseBody  {
         this.id = id;
     }
 
+    
+
     public TasksResponseBody withState(String state) {
         this.state = state;
         return this;
@@ -633,6 +651,8 @@ public class TasksResponseBody  {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public TasksResponseBody withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
@@ -656,6 +676,8 @@ public class TasksResponseBody  {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
+    
+
     public TasksResponseBody withConnected(Boolean connected) {
         this.connected = connected;
         return this;
@@ -675,6 +697,8 @@ public class TasksResponseBody  {
     public void setConnected(Boolean connected) {
         this.connected = connected;
     }
+
+    
 
     public TasksResponseBody withCreateDate(Long createDate) {
         this.createDate = createDate;
@@ -698,6 +722,8 @@ public class TasksResponseBody  {
         this.createDate = createDate;
     }
 
+    
+
     public TasksResponseBody withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
@@ -720,6 +746,8 @@ public class TasksResponseBody  {
         this.migrateSpeed = migrateSpeed;
     }
 
+    
+
     public TasksResponseBody withErrorJson(String errorJson) {
         this.errorJson = errorJson;
         return this;
@@ -739,6 +767,8 @@ public class TasksResponseBody  {
     public void setErrorJson(String errorJson) {
         this.errorJson = errorJson;
     }
+
+    
 
     public TasksResponseBody withTotalTime(Long totalTime) {
         this.totalTime = totalTime;
@@ -761,6 +791,8 @@ public class TasksResponseBody  {
     public void setTotalTime(Long totalTime) {
         this.totalTime = totalTime;
     }
+
+    
 
     public TasksResponseBody withCloneServer(CloneServer cloneServer) {
         this.cloneServer = cloneServer;
@@ -789,6 +821,8 @@ public class TasksResponseBody  {
         this.cloneServer = cloneServer;
     }
 
+    
+
     public TasksResponseBody withLogCollectStatus(LogCollectStatusEnum logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
         return this;
@@ -808,6 +842,9 @@ public class TasksResponseBody  {
     public void setLogCollectStatus(LogCollectStatusEnum logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class CreateFunctionVersionRequestBody  {
         this.digest = digest;
     }
 
+    
+
     public CreateFunctionVersionRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -75,6 +77,8 @@ public class CreateFunctionVersionRequestBody  {
         this.version = version;
     }
 
+    
+
     public CreateFunctionVersionRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +98,9 @@ public class CreateFunctionVersionRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

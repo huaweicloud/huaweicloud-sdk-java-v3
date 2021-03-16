@@ -65,6 +65,8 @@ public class PutSourceServerBody  {
         this.name = name;
     }
 
+    
+
     public PutSourceServerBody withMigprojectid(String migprojectid) {
         this.migprojectid = migprojectid;
         return this;
@@ -85,6 +87,8 @@ public class PutSourceServerBody  {
         this.migprojectid = migprojectid;
     }
 
+    
+
     public PutSourceServerBody withDisks(List<PutDisk> disks) {
         this.disks = disks;
         return this;
@@ -92,9 +96,6 @@ public class PutSourceServerBody  {
 
     
     public PutSourceServerBody addDisksItem(PutDisk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
         this.disks.add(disksItem);
         return this;
     }
@@ -119,6 +120,8 @@ public class PutSourceServerBody  {
         this.disks = disks;
     }
 
+    
+
     public PutSourceServerBody withVolumeGroups(List<PutVolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
@@ -126,9 +129,6 @@ public class PutSourceServerBody  {
 
     
     public PutSourceServerBody addVolumeGroupsItem(PutVolumeGroups volumeGroupsItem) {
-        if (this.volumeGroups == null) {
-            this.volumeGroups = new ArrayList<>();
-        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
@@ -152,6 +152,9 @@ public class PutSourceServerBody  {
     public void setVolumeGroups(List<PutVolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

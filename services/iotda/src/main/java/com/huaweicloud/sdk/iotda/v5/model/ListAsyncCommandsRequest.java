@@ -33,19 +33,19 @@ public class ListAsyncCommandsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +97,8 @@ public class ListAsyncCommandsRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public ListAsyncCommandsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -116,6 +118,8 @@ public class ListAsyncCommandsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListAsyncCommandsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -139,6 +143,8 @@ public class ListAsyncCommandsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListAsyncCommandsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -158,6 +164,8 @@ public class ListAsyncCommandsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListAsyncCommandsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -181,6 +189,8 @@ public class ListAsyncCommandsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListAsyncCommandsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -200,6 +210,8 @@ public class ListAsyncCommandsRequest  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListAsyncCommandsRequest withEndTime(String endTime) {
         this.endTime = endTime;
@@ -221,6 +233,8 @@ public class ListAsyncCommandsRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListAsyncCommandsRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -240,6 +254,8 @@ public class ListAsyncCommandsRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListAsyncCommandsRequest withCommandId(String commandId) {
         this.commandId = commandId;
@@ -261,6 +277,8 @@ public class ListAsyncCommandsRequest  {
         this.commandId = commandId;
     }
 
+    
+
     public ListAsyncCommandsRequest withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
@@ -280,6 +298,9 @@ public class ListAsyncCommandsRequest  {
     public void setCommandName(String commandName) {
         this.commandName = commandName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -116,7 +116,7 @@ public class RegisterDbUserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RegisterDbUserRequestBody body = null;
+    private RegisterDbUserRequestBody body;
 
     public RegisterDbUserRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -137,6 +137,8 @@ public class RegisterDbUserRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public RegisterDbUserRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -159,6 +161,8 @@ public class RegisterDbUserRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public RegisterDbUserRequest withBody(RegisterDbUserRequestBody body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class RegisterDbUserRequest  {
     public void setBody(RegisterDbUserRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

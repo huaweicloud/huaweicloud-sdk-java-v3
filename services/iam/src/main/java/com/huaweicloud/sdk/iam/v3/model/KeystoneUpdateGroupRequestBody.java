@@ -22,7 +22,7 @@ public class KeystoneUpdateGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group")
     
-    private KeystoneUpdateGroupOption group = null;
+    private KeystoneUpdateGroupOption group;
 
     public KeystoneUpdateGroupRequestBody withGroup(KeystoneUpdateGroupOption group) {
         this.group = group;
@@ -50,6 +50,9 @@ public class KeystoneUpdateGroupRequestBody  {
     public void setGroup(KeystoneUpdateGroupOption group) {
         this.group = group;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

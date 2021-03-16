@@ -22,7 +22,7 @@ public class CreateManualBackupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup")
     
-    private CreateManualBackupOption backup = null;
+    private CreateManualBackupOption backup;
 
     public CreateManualBackupRequestBody withBackup(CreateManualBackupOption backup) {
         this.backup = backup;
@@ -50,6 +50,9 @@ public class CreateManualBackupRequestBody  {
     public void setBackup(CreateManualBackupOption backup) {
         this.backup = backup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

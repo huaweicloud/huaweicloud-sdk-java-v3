@@ -61,6 +61,8 @@ public class DstNodeReq  {
         this.ak = ak;
     }
 
+    
+
     public DstNodeReq withSk(String sk) {
         this.sk = sk;
         return this;
@@ -80,6 +82,8 @@ public class DstNodeReq  {
     public void setSk(String sk) {
         this.sk = sk;
     }
+
+    
 
     public DstNodeReq withBucket(String bucket) {
         this.bucket = bucket;
@@ -101,6 +105,8 @@ public class DstNodeReq  {
         this.bucket = bucket;
     }
 
+    
+
     public DstNodeReq withRegion(String region) {
         this.region = region;
         return this;
@@ -120,6 +126,9 @@ public class DstNodeReq  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

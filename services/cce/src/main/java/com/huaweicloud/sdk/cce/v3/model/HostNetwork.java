@@ -61,6 +61,8 @@ public class HostNetwork  {
         this.securityGroup = securityGroup;
     }
 
+    
+
     public HostNetwork withHighwaySubnet(String highwaySubnet) {
         this.highwaySubnet = highwaySubnet;
         return this;
@@ -80,6 +82,8 @@ public class HostNetwork  {
     public void setHighwaySubnet(String highwaySubnet) {
         this.highwaySubnet = highwaySubnet;
     }
+
+    
 
     public HostNetwork withSubnet(String subnet) {
         this.subnet = subnet;
@@ -101,6 +105,8 @@ public class HostNetwork  {
         this.subnet = subnet;
     }
 
+    
+
     public HostNetwork withVpc(String vpc) {
         this.vpc = vpc;
         return this;
@@ -120,6 +126,9 @@ public class HostNetwork  {
     public void setVpc(String vpc) {
         this.vpc = vpc;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

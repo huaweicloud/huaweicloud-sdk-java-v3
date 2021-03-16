@@ -49,6 +49,8 @@ public class TrackerOBSChannelConfigBody  {
         this.bucketName = bucketName;
     }
 
+    
+
     public TrackerOBSChannelConfigBody withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -68,6 +70,9 @@ public class TrackerOBSChannelConfigBody  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class RestartClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestartClusterRequestBody body = null;
+    private RestartClusterRequestBody body;
 
     public RestartClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -49,6 +49,8 @@ public class RestartClusterRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public RestartClusterRequest withBody(RestartClusterRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RestartClusterRequest  {
     public void setBody(RestartClusterRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

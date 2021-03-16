@@ -22,7 +22,7 @@ public class PwdPassword  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private PwdPasswordUser user = null;
+    private PwdPasswordUser user;
 
     public PwdPassword withUser(PwdPasswordUser user) {
         this.user = user;
@@ -50,6 +50,9 @@ public class PwdPassword  {
     public void setUser(PwdPasswordUser user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

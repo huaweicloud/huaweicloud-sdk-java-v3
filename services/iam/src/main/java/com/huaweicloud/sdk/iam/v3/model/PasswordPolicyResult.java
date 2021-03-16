@@ -91,6 +91,8 @@ public class PasswordPolicyResult  {
         this.maximumConsecutiveIdenticalChars = maximumConsecutiveIdenticalChars;
     }
 
+    
+
     public PasswordPolicyResult withMaximumPasswordLength(Integer maximumPasswordLength) {
         this.maximumPasswordLength = maximumPasswordLength;
         return this;
@@ -110,6 +112,8 @@ public class PasswordPolicyResult  {
     public void setMaximumPasswordLength(Integer maximumPasswordLength) {
         this.maximumPasswordLength = maximumPasswordLength;
     }
+
+    
 
     public PasswordPolicyResult withMinimumPasswordAge(Integer minimumPasswordAge) {
         this.minimumPasswordAge = minimumPasswordAge;
@@ -131,6 +135,8 @@ public class PasswordPolicyResult  {
         this.minimumPasswordAge = minimumPasswordAge;
     }
 
+    
+
     public PasswordPolicyResult withMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
         return this;
@@ -150,6 +156,8 @@ public class PasswordPolicyResult  {
     public void setMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
     }
+
+    
 
     public PasswordPolicyResult withNumberOfRecentPasswordsDisallowed(Integer numberOfRecentPasswordsDisallowed) {
         this.numberOfRecentPasswordsDisallowed = numberOfRecentPasswordsDisallowed;
@@ -171,6 +179,8 @@ public class PasswordPolicyResult  {
         this.numberOfRecentPasswordsDisallowed = numberOfRecentPasswordsDisallowed;
     }
 
+    
+
     public PasswordPolicyResult withPasswordNotUsernameOrInvert(Boolean passwordNotUsernameOrInvert) {
         this.passwordNotUsernameOrInvert = passwordNotUsernameOrInvert;
         return this;
@@ -190,6 +200,8 @@ public class PasswordPolicyResult  {
     public void setPasswordNotUsernameOrInvert(Boolean passwordNotUsernameOrInvert) {
         this.passwordNotUsernameOrInvert = passwordNotUsernameOrInvert;
     }
+
+    
 
     public PasswordPolicyResult withPasswordRequirements(String passwordRequirements) {
         this.passwordRequirements = passwordRequirements;
@@ -211,6 +223,8 @@ public class PasswordPolicyResult  {
         this.passwordRequirements = passwordRequirements;
     }
 
+    
+
     public PasswordPolicyResult withPasswordValidityPeriod(Integer passwordValidityPeriod) {
         this.passwordValidityPeriod = passwordValidityPeriod;
         return this;
@@ -231,6 +245,8 @@ public class PasswordPolicyResult  {
         this.passwordValidityPeriod = passwordValidityPeriod;
     }
 
+    
+
     public PasswordPolicyResult withPasswordCharCombination(Integer passwordCharCombination) {
         this.passwordCharCombination = passwordCharCombination;
         return this;
@@ -250,6 +266,9 @@ public class PasswordPolicyResult  {
     public void setPasswordCharCombination(Integer passwordCharCombination) {
         this.passwordCharCombination = passwordCharCombination;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

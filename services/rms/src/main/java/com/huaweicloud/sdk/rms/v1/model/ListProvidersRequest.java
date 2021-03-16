@@ -115,7 +115,7 @@ public class ListProvidersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
     public ListProvidersRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -139,6 +139,8 @@ public class ListProvidersRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListProvidersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -161,6 +163,8 @@ public class ListProvidersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListProvidersRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -182,6 +186,9 @@ public class ListProvidersRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

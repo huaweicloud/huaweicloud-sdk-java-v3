@@ -61,6 +61,8 @@ public class ListWeeklyReportsResponse extends SdkResponse {
         this.ddosInterceptTimes = ddosInterceptTimes;
     }
 
+    
+
     public ListWeeklyReportsResponse withWeekdata(List<WeeklyCount> weekdata) {
         this.weekdata = weekdata;
         return this;
@@ -68,9 +70,6 @@ public class ListWeeklyReportsResponse extends SdkResponse {
 
     
     public ListWeeklyReportsResponse addWeekdataItem(WeeklyCount weekdataItem) {
-        if (this.weekdata == null) {
-            this.weekdata = new ArrayList<>();
-        }
         this.weekdata.add(weekdataItem);
         return this;
     }
@@ -95,6 +94,8 @@ public class ListWeeklyReportsResponse extends SdkResponse {
         this.weekdata = weekdata;
     }
 
+    
+
     public ListWeeklyReportsResponse withTop10(List<WeeklyTop10> top10) {
         this.top10 = top10;
         return this;
@@ -102,9 +103,6 @@ public class ListWeeklyReportsResponse extends SdkResponse {
 
     
     public ListWeeklyReportsResponse addTop10Item(WeeklyTop10 top10Item) {
-        if (this.top10 == null) {
-            this.top10 = new ArrayList<>();
-        }
         this.top10.add(top10Item);
         return this;
     }
@@ -128,6 +126,9 @@ public class ListWeeklyReportsResponse extends SdkResponse {
     public void setTop10(List<WeeklyTop10> top10) {
         this.top10 = top10;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

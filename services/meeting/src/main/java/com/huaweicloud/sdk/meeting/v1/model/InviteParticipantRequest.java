@@ -34,7 +34,7 @@ public class InviteParticipantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestInviteReqBody body = null;
+    private RestInviteReqBody body;
 
     public InviteParticipantRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -55,6 +55,8 @@ public class InviteParticipantRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public InviteParticipantRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -77,6 +79,8 @@ public class InviteParticipantRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public InviteParticipantRequest withBody(RestInviteReqBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class InviteParticipantRequest  {
     public void setBody(RestInviteReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

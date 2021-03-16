@@ -49,6 +49,8 @@ public class UpdateLabelsReq  {
         this.name = name;
     }
 
+    
+
     public UpdateLabelsReq withColor(String color) {
         this.color = color;
         return this;
@@ -68,6 +70,9 @@ public class UpdateLabelsReq  {
     public void setColor(String color) {
         this.color = color;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

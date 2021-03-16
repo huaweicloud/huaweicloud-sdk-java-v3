@@ -49,6 +49,8 @@ public class MemberBase  {
         this.host = host;
     }
 
+    
+
     public MemberBase withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -68,6 +70,9 @@ public class MemberBase  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

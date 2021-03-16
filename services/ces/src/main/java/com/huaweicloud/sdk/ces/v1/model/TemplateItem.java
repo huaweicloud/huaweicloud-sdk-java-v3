@@ -28,7 +28,7 @@ public class TemplateItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition")
     
-    private AlarmTemplateCondition condition = null;
+    private AlarmTemplateCondition condition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class TemplateItem  {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
 
     public TemplateItem withCondition(AlarmTemplateCondition condition) {
         this.condition = condition;
@@ -83,6 +85,8 @@ public class TemplateItem  {
         this.condition = condition;
     }
 
+    
+
     public TemplateItem withAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
@@ -102,6 +106,9 @@ public class TemplateItem  {
     public void setAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

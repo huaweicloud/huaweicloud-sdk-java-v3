@@ -34,7 +34,7 @@ public class RestoreInstanceFromCollectionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestoreInstanceFromCollectionRequestBody body = null;
+    private RestoreInstanceFromCollectionRequestBody body;
 
     public RestoreInstanceFromCollectionRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class RestoreInstanceFromCollectionRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public RestoreInstanceFromCollectionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class RestoreInstanceFromCollectionRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public RestoreInstanceFromCollectionRequest withBody(RestoreInstanceFromCollectionRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class RestoreInstanceFromCollectionRequest  {
     public void setBody(RestoreInstanceFromCollectionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

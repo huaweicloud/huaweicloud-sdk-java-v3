@@ -44,6 +44,9 @@ public class RestoreInstanceResponse extends SdkResponse {
     public void setRestoreId(String restoreId) {
         this.restoreId = restoreId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

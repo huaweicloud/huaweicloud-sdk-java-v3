@@ -61,6 +61,8 @@ public class ShowRecordingDetailRequest  {
         this.confUUID = confUUID;
     }
 
+    
+
     public ShowRecordingDetailRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -80,6 +82,8 @@ public class ShowRecordingDetailRequest  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public ShowRecordingDetailRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -103,6 +107,8 @@ public class ShowRecordingDetailRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public ShowRecordingDetailRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -124,6 +130,9 @@ public class ShowRecordingDetailRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

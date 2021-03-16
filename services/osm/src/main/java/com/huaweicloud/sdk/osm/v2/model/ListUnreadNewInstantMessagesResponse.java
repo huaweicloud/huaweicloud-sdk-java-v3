@@ -35,9 +35,6 @@ public class ListUnreadNewInstantMessagesResponse extends SdkResponse {
 
     
     public ListUnreadNewInstantMessagesResponse addImunreadItem(ImUnreadV2 imunreadItem) {
-        if (this.imunread == null) {
-            this.imunread = new ArrayList<>();
-        }
         this.imunread.add(imunreadItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListUnreadNewInstantMessagesResponse extends SdkResponse {
     public void setImunread(List<ImUnreadV2> imunread) {
         this.imunread = imunread;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -51,6 +51,8 @@ public class ValidateDictionaryResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ValidateDictionaryResponse withCode(String code) {
         this.code = code;
         return this;
@@ -70,6 +72,9 @@ public class ValidateDictionaryResponse extends SdkResponse {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

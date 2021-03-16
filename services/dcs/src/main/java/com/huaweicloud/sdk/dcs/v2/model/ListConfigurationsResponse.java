@@ -160,6 +160,8 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.configTime = configTime;
     }
 
+    
+
     public ListConfigurationsResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -180,6 +182,8 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListConfigurationsResponse withRedisConfig(List<QueryRedisConfig> redisConfig) {
         this.redisConfig = redisConfig;
         return this;
@@ -187,9 +191,6 @@ public class ListConfigurationsResponse extends SdkResponse {
 
     
     public ListConfigurationsResponse addRedisConfigItem(QueryRedisConfig redisConfigItem) {
-        if (this.redisConfig == null) {
-            this.redisConfig = new ArrayList<>();
-        }
         this.redisConfig.add(redisConfigItem);
         return this;
     }
@@ -214,6 +215,8 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.redisConfig = redisConfig;
     }
 
+    
+
     public ListConfigurationsResponse withConfigStatus(ConfigStatusEnum configStatus) {
         this.configStatus = configStatus;
         return this;
@@ -234,6 +237,8 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.configStatus = configStatus;
     }
 
+    
+
     public ListConfigurationsResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -253,6 +258,9 @@ public class ListConfigurationsResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,7 +23,7 @@ public class BatchDeleteMembersV4RequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_ids")
     
-    private List<String> userIds = new ArrayList<>();
+    private List<String> userIds = null;
     
     public BatchDeleteMembersV4RequestBody withUserIds(List<String> userIds) {
         this.userIds = userIds;
@@ -55,6 +55,9 @@ public class BatchDeleteMembersV4RequestBody  {
     public void setUserIds(List<String> userIds) {
         this.userIds = userIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

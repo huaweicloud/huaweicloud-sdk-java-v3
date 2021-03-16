@@ -24,7 +24,7 @@ public class KeystoneCreateUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private KeystoneCreateUserResult user = null;
+    private KeystoneCreateUserResult user;
 
     public KeystoneCreateUserResponse withUser(KeystoneCreateUserResult user) {
         this.user = user;
@@ -52,6 +52,9 @@ public class KeystoneCreateUserResponse extends SdkResponse {
     public void setUser(KeystoneCreateUserResult user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

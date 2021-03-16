@@ -36,7 +36,7 @@ public class DmsKafkaForwarding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private List<NetAddress> addresses = new ArrayList<>();
+    private List<NetAddress> addresses = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,6 +83,8 @@ public class DmsKafkaForwarding  {
         this.regionName = regionName;
     }
 
+    
+
     public DmsKafkaForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -102,6 +104,8 @@ public class DmsKafkaForwarding  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public DmsKafkaForwarding withAddresses(List<NetAddress> addresses) {
         this.addresses = addresses;
@@ -134,6 +138,8 @@ public class DmsKafkaForwarding  {
         this.addresses = addresses;
     }
 
+    
+
     public DmsKafkaForwarding withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -153,6 +159,8 @@ public class DmsKafkaForwarding  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public DmsKafkaForwarding withUsername(String username) {
         this.username = username;
@@ -174,6 +182,8 @@ public class DmsKafkaForwarding  {
         this.username = username;
     }
 
+    
+
     public DmsKafkaForwarding withPassword(String password) {
         this.password = password;
         return this;
@@ -194,6 +204,8 @@ public class DmsKafkaForwarding  {
         this.password = password;
     }
 
+    
+
     public DmsKafkaForwarding withMechanism(String mechanism) {
         this.mechanism = mechanism;
         return this;
@@ -213,6 +225,9 @@ public class DmsKafkaForwarding  {
     public void setMechanism(String mechanism) {
         this.mechanism = mechanism;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

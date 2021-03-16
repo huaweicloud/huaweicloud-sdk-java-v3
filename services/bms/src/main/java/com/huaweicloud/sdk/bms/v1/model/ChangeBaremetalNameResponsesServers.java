@@ -53,7 +53,7 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
     /**
      * 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
      */
@@ -179,31 +179,31 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    private OffsetDateTime created = null;
+    private OffsetDateTime created;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    private OffsetDateTime updated = null;
+    private OffsetDateTime updated;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    private FlavorInfo flavor = null;
+    private FlavorInfo flavor;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image")
     
-    private Image image = null;
+    private Image image;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tenant_id")
     
-    private UUID tenantId = null;
+    private UUID tenantId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -215,25 +215,25 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    private UUID userId = null;
+    private UUID userId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetadataInfos metadata = null;
+    private MetadataInfos metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostId")
     
-    private UUID hostId = null;
+    private UUID hostId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private Addresses addresses = null;
+    private Addresses addresses;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -665,13 +665,13 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-SRV-USG:launched_at")
     
-    private OffsetDateTime osSRVUSGLaunchedAt = null;
+    private OffsetDateTime osSRVUSGLaunchedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-SRV-USG:terminated_at")
     
-    private OffsetDateTime osSRVUSGTerminatedAt = null;
+    private OffsetDateTime osSRVUSGTerminatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -695,7 +695,7 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fault")
     
-    private Fault fault = null;
+    private Fault fault;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -821,7 +821,7 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-EXT-SRV-ATTR:reservation_id")
     
-    private UUID osEXTSRVATTRReservationId = null;
+    private UUID osEXTSRVATTRReservationId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -833,13 +833,13 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-EXT-SRV-ATTR:kernel_id")
     
-    private UUID osEXTSRVATTRKernelId = null;
+    private UUID osEXTSRVATTRKernelId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-EXT-SRV-ATTR:ramdisk_id")
     
-    private UUID osEXTSRVATTRRamdiskId = null;
+    private UUID osEXTSRVATTRRamdiskId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -885,6 +885,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.name = name;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withId(UUID id) {
         this.id = id;
         return this;
@@ -904,6 +906,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setId(UUID id) {
         this.id = id;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withStatus(StatusEnum status) {
         this.status = status;
@@ -925,6 +929,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.status = status;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withCreated(OffsetDateTime created) {
         this.created = created;
         return this;
@@ -945,6 +951,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.created = created;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withUpdated(OffsetDateTime updated) {
         this.updated = updated;
         return this;
@@ -964,6 +972,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setUpdated(OffsetDateTime updated) {
         this.updated = updated;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withFlavor(FlavorInfo flavor) {
         this.flavor = flavor;
@@ -992,6 +1002,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.flavor = flavor;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withImage(Image image) {
         this.image = image;
         return this;
@@ -1019,6 +1031,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.image = image;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withTenantId(UUID tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -1038,6 +1052,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setTenantId(UUID tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withKeyName(String keyName) {
         this.keyName = keyName;
@@ -1059,6 +1075,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.keyName = keyName;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withUserId(UUID userId) {
         this.userId = userId;
         return this;
@@ -1078,6 +1096,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setUserId(UUID userId) {
         this.userId = userId;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withMetadata(MetadataInfos metadata) {
         this.metadata = metadata;
@@ -1106,6 +1126,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.metadata = metadata;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withHostId(UUID hostId) {
         this.hostId = hostId;
         return this;
@@ -1125,6 +1147,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setHostId(UUID hostId) {
         this.hostId = hostId;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withAddresses(Addresses addresses) {
         this.addresses = addresses;
@@ -1153,6 +1177,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.addresses = addresses;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withSecurityGroups(List<SecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -1160,9 +1186,6 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -1187,6 +1210,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withLinks(List<Links> links) {
         this.links = links;
         return this;
@@ -1194,9 +1219,6 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addLinksItem(Links linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -1221,6 +1243,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.links = links;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
@@ -1240,6 +1264,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsEXTAZAvailabilityZone(String osEXTAZAvailabilityZone) {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
@@ -1261,6 +1287,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
         return this;
@@ -1280,6 +1308,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRHypervisorHostname(String osEXTSRVATTRHypervisorHostname) {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
@@ -1301,6 +1331,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
         return this;
@@ -1320,6 +1352,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsEXTSTSPowerState(OsEXTSTSPowerStateEnum osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
@@ -1341,6 +1375,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsEXTSTSTaskState(OsEXTSTSTaskStateEnum osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
         return this;
@@ -1360,6 +1396,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsEXTSTSTaskState(OsEXTSTSTaskStateEnum osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsEXTSTSVmState(OsEXTSTSVmStateEnum osEXTSTSVmState) {
         this.osEXTSTSVmState = osEXTSTSVmState;
@@ -1381,6 +1419,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSTSVmState = osEXTSTSVmState;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsSRVUSGLaunchedAt(OffsetDateTime osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
         return this;
@@ -1400,6 +1440,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsSRVUSGLaunchedAt(OffsetDateTime osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsSRVUSGTerminatedAt(OffsetDateTime osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
@@ -1421,6 +1463,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsExtendedVolumesVolumesAttached(List<OsExtendedVolumes> osExtendedVolumesVolumesAttached) {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
         return this;
@@ -1428,9 +1472,6 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addOsExtendedVolumesVolumesAttachedItem(OsExtendedVolumes osExtendedVolumesVolumesAttachedItem) {
-        if (this.osExtendedVolumesVolumesAttached == null) {
-            this.osExtendedVolumesVolumesAttached = new ArrayList<>();
-        }
         this.osExtendedVolumesVolumesAttached.add(osExtendedVolumesVolumesAttachedItem);
         return this;
     }
@@ -1455,6 +1496,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withAccessIPv4(String accessIPv4) {
         this.accessIPv4 = accessIPv4;
         return this;
@@ -1475,6 +1518,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.accessIPv4 = accessIPv4;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
         return this;
@@ -1494,6 +1539,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withFault(Fault fault) {
         this.fault = fault;
@@ -1522,6 +1569,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.fault = fault;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withConfigDrive(String configDrive) {
         this.configDrive = configDrive;
         return this;
@@ -1541,6 +1590,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setConfigDrive(String configDrive) {
         this.configDrive = configDrive;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withProgress(Integer progress) {
         this.progress = progress;
@@ -1562,6 +1613,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.progress = progress;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withDescription(String description) {
         this.description = description;
         return this;
@@ -1581,6 +1634,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withHostStatus(HostStatusEnum hostStatus) {
         this.hostStatus = hostStatus;
@@ -1602,6 +1657,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.hostStatus = hostStatus;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
         return this;
@@ -1621,6 +1678,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRReservationId(UUID osEXTSRVATTRReservationId) {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
@@ -1642,6 +1701,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
         return this;
@@ -1661,6 +1722,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRKernelId(UUID osEXTSRVATTRKernelId) {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
@@ -1682,6 +1745,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRRamdiskId(UUID osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
         return this;
@@ -1701,6 +1766,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsEXTSRVATTRRamdiskId(UUID osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRRootDeviceName(String osEXTSRVATTRRootDeviceName) {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
@@ -1722,6 +1789,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
         return this;
@@ -1741,6 +1810,8 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
     }
+
+    
 
     public ChangeBaremetalNameResponsesServers withLocked(Boolean locked) {
         this.locked = locked;
@@ -1762,6 +1833,8 @@ public class ChangeBaremetalNameResponsesServers  {
         this.locked = locked;
     }
 
+    
+
     public ChangeBaremetalNameResponsesServers withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1769,9 +1842,6 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1795,6 +1865,9 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

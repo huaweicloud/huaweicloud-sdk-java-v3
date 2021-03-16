@@ -55,6 +55,8 @@ public class PipelineTemplateInfo  {
         this.id = id;
     }
 
+    
+
     public PipelineTemplateInfo withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class PipelineTemplateInfo  {
         this.name = name;
     }
 
+    
+
     public PipelineTemplateInfo withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -94,6 +98,9 @@ public class PipelineTemplateInfo  {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

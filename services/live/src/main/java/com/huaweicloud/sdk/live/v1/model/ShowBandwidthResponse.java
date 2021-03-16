@@ -55,6 +55,8 @@ public class ShowBandwidthResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowBandwidthResponse withBandwidthInfo(List<BandwidthInfo> bandwidthInfo) {
         this.bandwidthInfo = bandwidthInfo;
         return this;
@@ -62,9 +64,6 @@ public class ShowBandwidthResponse extends SdkResponse {
 
     
     public ShowBandwidthResponse addBandwidthInfoItem(BandwidthInfo bandwidthInfoItem) {
-        if (this.bandwidthInfo == null) {
-            this.bandwidthInfo = new ArrayList<>();
-        }
         this.bandwidthInfo.add(bandwidthInfoItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ShowBandwidthResponse extends SdkResponse {
     public void setBandwidthInfo(List<BandwidthInfo> bandwidthInfo) {
         this.bandwidthInfo = bandwidthInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

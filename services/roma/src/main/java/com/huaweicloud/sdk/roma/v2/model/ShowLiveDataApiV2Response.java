@@ -151,7 +151,7 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content_type")
     
-    private ContentTypeEnum contentType = ContentTypeEnum.JSON;
+    private ContentTypeEnum contentType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -169,7 +169,7 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="return_format")
     
-    private Boolean returnFormat = false;
+    private Boolean returnFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -367,13 +367,13 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private OffsetDateTime createdTime = null;
+    private OffsetDateTime createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modified_time")
     
-    private OffsetDateTime modifiedTime = null;
+    private OffsetDateTime modifiedTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -407,6 +407,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowLiveDataApiV2Response withPath(String path) {
         this.path = path;
         return this;
@@ -426,6 +428,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public ShowLiveDataApiV2Response withMethod(String method) {
         this.method = method;
@@ -447,6 +451,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.method = method;
     }
 
+    
+
     public ShowLiveDataApiV2Response withDescription(String description) {
         this.description = description;
         return this;
@@ -466,6 +472,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowLiveDataApiV2Response withVersion(String version) {
         this.version = version;
@@ -487,6 +495,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.version = version;
     }
 
+    
+
     public ShowLiveDataApiV2Response withContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
         return this;
@@ -506,6 +516,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
     }
+
+    
 
     public ShowLiveDataApiV2Response withApiSignatureId(String apiSignatureId) {
         this.apiSignatureId = apiSignatureId;
@@ -527,6 +539,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.apiSignatureId = apiSignatureId;
     }
 
+    
+
     public ShowLiveDataApiV2Response withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -546,6 +560,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
+
+    
 
     public ShowLiveDataApiV2Response withReturnFormat(Boolean returnFormat) {
         this.returnFormat = returnFormat;
@@ -567,6 +583,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.returnFormat = returnFormat;
     }
 
+    
+
     public ShowLiveDataApiV2Response withParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
         return this;
@@ -574,9 +592,6 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
 
     
     public ShowLiveDataApiV2Response addParametersItem(LdApiParameter parametersItem) {
-        if (this.parameters == null) {
-            this.parameters = new ArrayList<>();
-        }
         this.parameters.add(parametersItem);
         return this;
     }
@@ -601,6 +616,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.parameters = parameters;
     }
 
+    
+
     public ShowLiveDataApiV2Response withId(String id) {
         this.id = id;
         return this;
@@ -620,6 +637,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ShowLiveDataApiV2Response withInstance(String instance) {
         this.instance = instance;
@@ -641,6 +660,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.instance = instance;
     }
 
+    
+
     public ShowLiveDataApiV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -660,6 +681,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowLiveDataApiV2Response withStatus(StatusEnum status) {
         this.status = status;
@@ -681,6 +704,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowLiveDataApiV2Response withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -700,6 +725,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
     }
+
+    
 
     public ShowLiveDataApiV2Response withModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
@@ -721,6 +748,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.modifiedTime = modifiedTime;
     }
 
+    
+
     public ShowLiveDataApiV2Response withScripts(List<LdApiScript> scripts) {
         this.scripts = scripts;
         return this;
@@ -728,9 +757,6 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
 
     
     public ShowLiveDataApiV2Response addScriptsItem(LdApiScript scriptsItem) {
-        if (this.scripts == null) {
-            this.scripts = new ArrayList<>();
-        }
         this.scripts.add(scriptsItem);
         return this;
     }
@@ -755,6 +781,8 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
         this.scripts = scripts;
     }
 
+    
+
     public ShowLiveDataApiV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -774,6 +802,9 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

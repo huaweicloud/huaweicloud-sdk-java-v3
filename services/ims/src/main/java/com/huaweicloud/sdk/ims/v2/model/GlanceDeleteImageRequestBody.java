@@ -42,6 +42,9 @@ public class GlanceDeleteImageRequestBody  {
     public void setDeleteBackup(Boolean deleteBackup) {
         this.deleteBackup = deleteBackup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

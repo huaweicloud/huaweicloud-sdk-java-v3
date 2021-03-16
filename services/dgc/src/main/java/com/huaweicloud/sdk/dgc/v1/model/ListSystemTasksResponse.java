@@ -178,6 +178,8 @@ public class ListSystemTasksResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ListSystemTasksResponse withName(String name) {
         this.name = name;
         return this;
@@ -197,6 +199,8 @@ public class ListSystemTasksResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListSystemTasksResponse withStartTime(String startTime) {
         this.startTime = startTime;
@@ -218,6 +222,8 @@ public class ListSystemTasksResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
+    
+
     public ListSystemTasksResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -237,6 +243,8 @@ public class ListSystemTasksResponse extends SdkResponse {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListSystemTasksResponse withLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
@@ -258,6 +266,8 @@ public class ListSystemTasksResponse extends SdkResponse {
         this.lastUpdate = lastUpdate;
     }
 
+    
+
     public ListSystemTasksResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -277,6 +287,8 @@ public class ListSystemTasksResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListSystemTasksResponse withMessage(String message) {
         this.message = message;
@@ -298,6 +310,8 @@ public class ListSystemTasksResponse extends SdkResponse {
         this.message = message;
     }
 
+    
+
     public ListSystemTasksResponse withSubTasks(List<SubTaskStatus> subTasks) {
         this.subTasks = subTasks;
         return this;
@@ -305,9 +319,6 @@ public class ListSystemTasksResponse extends SdkResponse {
 
     
     public ListSystemTasksResponse addSubTasksItem(SubTaskStatus subTasksItem) {
-        if (this.subTasks == null) {
-            this.subTasks = new ArrayList<>();
-        }
         this.subTasks.add(subTasksItem);
         return this;
     }
@@ -331,6 +342,9 @@ public class ListSystemTasksResponse extends SdkResponse {
     public void setSubTasks(List<SubTaskStatus> subTasks) {
         this.subTasks = subTasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

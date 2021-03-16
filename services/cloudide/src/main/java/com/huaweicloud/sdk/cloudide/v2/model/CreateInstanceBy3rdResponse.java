@@ -24,7 +24,7 @@ public class CreateInstanceBy3rdResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private InstancesResponseInstancesVOResult result = null;
+    private InstancesResponseInstancesVOResult result;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class CreateInstanceBy3rdResponse extends SdkResponse {
         this.result = result;
     }
 
+    
+
     public CreateInstanceBy3rdResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -78,6 +80,9 @@ public class CreateInstanceBy3rdResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

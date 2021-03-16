@@ -22,7 +22,7 @@ public class CheckUserIdentityRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CheckSubcustomerUserReq body = null;
+    private CheckSubcustomerUserReq body;
 
     public CheckUserIdentityRequest withBody(CheckSubcustomerUserReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CheckUserIdentityRequest  {
     public void setBody(CheckSubcustomerUserReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

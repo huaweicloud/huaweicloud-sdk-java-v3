@@ -55,6 +55,8 @@ public class UpdateMemberOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public UpdateMemberOption withName(String name) {
         this.name = name;
         return this;
@@ -74,6 +76,8 @@ public class UpdateMemberOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateMemberOption withWeight(Integer weight) {
         this.weight = weight;
@@ -96,6 +100,9 @@ public class UpdateMemberOption  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

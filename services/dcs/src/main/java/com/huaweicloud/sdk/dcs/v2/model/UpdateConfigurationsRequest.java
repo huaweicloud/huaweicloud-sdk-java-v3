@@ -28,7 +28,7 @@ public class UpdateConfigurationsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModifyRedisConfigBody body = null;
+    private ModifyRedisConfigBody body;
 
     public UpdateConfigurationsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateConfigurationsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateConfigurationsRequest withBody(ModifyRedisConfigBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateConfigurationsRequest  {
     public void setBody(ModifyRedisConfigBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

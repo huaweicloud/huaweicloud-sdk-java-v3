@@ -137,6 +137,8 @@ public class PrePaidServerSchedulerHints  {
         this.group = group;
     }
 
+    
+
     public PrePaidServerSchedulerHints withTenancy(TenancyEnum tenancy) {
         this.tenancy = tenancy;
         return this;
@@ -157,6 +159,8 @@ public class PrePaidServerSchedulerHints  {
         this.tenancy = tenancy;
     }
 
+    
+
     public PrePaidServerSchedulerHints withDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -176,6 +180,9 @@ public class PrePaidServerSchedulerHints  {
     public void setDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

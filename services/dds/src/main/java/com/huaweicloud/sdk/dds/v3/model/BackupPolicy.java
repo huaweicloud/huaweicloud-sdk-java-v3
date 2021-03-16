@@ -55,6 +55,8 @@ public class BackupPolicy  {
         this.keepDays = keepDays;
     }
 
+    
+
     public BackupPolicy withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -75,6 +77,8 @@ public class BackupPolicy  {
         this.startTime = startTime;
     }
 
+    
+
     public BackupPolicy withPeriod(String period) {
         this.period = period;
         return this;
@@ -94,6 +98,9 @@ public class BackupPolicy  {
     public void setPeriod(String period) {
         this.period = period;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

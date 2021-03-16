@@ -22,7 +22,7 @@ public class CreateMfaDeviceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="virtual_mfa_device")
     
-    private CreateMfaDevice virtualMfaDevice = null;
+    private CreateMfaDevice virtualMfaDevice;
 
     public CreateMfaDeviceReq withVirtualMfaDevice(CreateMfaDevice virtualMfaDevice) {
         this.virtualMfaDevice = virtualMfaDevice;
@@ -50,6 +50,9 @@ public class CreateMfaDeviceReq  {
     public void setVirtualMfaDevice(CreateMfaDevice virtualMfaDevice) {
         this.virtualMfaDevice = virtualMfaDevice;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

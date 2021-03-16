@@ -169,13 +169,13 @@ public class QueryTranscodingsTaskResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -217,13 +217,13 @@ public class QueryTranscodingsTaskResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transcode_detail")
     
-    private TranscodeDetail transcodeDetail = null;
+    private TranscodeDetail transcodeDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="thumbnail_output")
     
-    private ObsObjInfo thumbnailOutput = null;
+    private ObsObjInfo thumbnailOutput;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -241,7 +241,7 @@ public class QueryTranscodingsTaskResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audit_report")
     
-    private AuditReport auditReport = null;
+    private AuditReport auditReport;
 
     public QueryTranscodingsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
@@ -263,6 +263,8 @@ public class QueryTranscodingsTaskResponse  {
         this.taskId = taskId;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -282,6 +284,8 @@ public class QueryTranscodingsTaskResponse  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public QueryTranscodingsTaskResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -303,6 +307,8 @@ public class QueryTranscodingsTaskResponse  {
         this.createTime = createTime;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -323,6 +329,8 @@ public class QueryTranscodingsTaskResponse  {
         this.endTime = endTime;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withTransTemplateId(List<Integer> transTemplateId) {
         this.transTemplateId = transTemplateId;
         return this;
@@ -330,9 +338,6 @@ public class QueryTranscodingsTaskResponse  {
 
     
     public QueryTranscodingsTaskResponse addTransTemplateIdItem(Integer transTemplateIdItem) {
-        if (this.transTemplateId == null) {
-            this.transTemplateId = new ArrayList<>();
-        }
         this.transTemplateId.add(transTemplateIdItem);
         return this;
     }
@@ -356,6 +361,8 @@ public class QueryTranscodingsTaskResponse  {
     public void setTransTemplateId(List<Integer> transTemplateId) {
         this.transTemplateId = transTemplateId;
     }
+
+    
 
     public QueryTranscodingsTaskResponse withInput(ObsObjInfo input) {
         this.input = input;
@@ -384,6 +391,8 @@ public class QueryTranscodingsTaskResponse  {
         this.input = input;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -411,6 +420,8 @@ public class QueryTranscodingsTaskResponse  {
         this.output = output;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withOutputFileName(List<String> outputFileName) {
         this.outputFileName = outputFileName;
         return this;
@@ -418,9 +429,6 @@ public class QueryTranscodingsTaskResponse  {
 
     
     public QueryTranscodingsTaskResponse addOutputFileNameItem(String outputFileNameItem) {
-        if (this.outputFileName == null) {
-            this.outputFileName = new ArrayList<>();
-        }
         this.outputFileName.add(outputFileNameItem);
         return this;
     }
@@ -445,6 +453,8 @@ public class QueryTranscodingsTaskResponse  {
         this.outputFileName = outputFileName;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -464,6 +474,8 @@ public class QueryTranscodingsTaskResponse  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public QueryTranscodingsTaskResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -485,6 +497,8 @@ public class QueryTranscodingsTaskResponse  {
         this.errorCode = errorCode;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -504,6 +518,8 @@ public class QueryTranscodingsTaskResponse  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public QueryTranscodingsTaskResponse withTips(String tips) {
         this.tips = tips;
@@ -525,6 +541,8 @@ public class QueryTranscodingsTaskResponse  {
         this.tips = tips;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withOutputUrl(String outputUrl) {
         this.outputUrl = outputUrl;
         return this;
@@ -544,6 +562,8 @@ public class QueryTranscodingsTaskResponse  {
     public void setOutputUrl(String outputUrl) {
         this.outputUrl = outputUrl;
     }
+
+    
 
     public QueryTranscodingsTaskResponse withTranscodeDetail(TranscodeDetail transcodeDetail) {
         this.transcodeDetail = transcodeDetail;
@@ -572,6 +592,8 @@ public class QueryTranscodingsTaskResponse  {
         this.transcodeDetail = transcodeDetail;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withThumbnailOutput(ObsObjInfo thumbnailOutput) {
         this.thumbnailOutput = thumbnailOutput;
         return this;
@@ -599,6 +621,8 @@ public class QueryTranscodingsTaskResponse  {
         this.thumbnailOutput = thumbnailOutput;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withThumbnailOutputname(String thumbnailOutputname) {
         this.thumbnailOutputname = thumbnailOutputname;
         return this;
@@ -619,6 +643,8 @@ public class QueryTranscodingsTaskResponse  {
         this.thumbnailOutputname = thumbnailOutputname;
     }
 
+    
+
     public QueryTranscodingsTaskResponse withPicInfo(List<PicInfo> picInfo) {
         this.picInfo = picInfo;
         return this;
@@ -626,9 +652,6 @@ public class QueryTranscodingsTaskResponse  {
 
     
     public QueryTranscodingsTaskResponse addPicInfoItem(PicInfo picInfoItem) {
-        if (this.picInfo == null) {
-            this.picInfo = new ArrayList<>();
-        }
         this.picInfo.add(picInfoItem);
         return this;
     }
@@ -652,6 +675,8 @@ public class QueryTranscodingsTaskResponse  {
     public void setPicInfo(List<PicInfo> picInfo) {
         this.picInfo = picInfo;
     }
+
+    
 
     public QueryTranscodingsTaskResponse withAuditReport(AuditReport auditReport) {
         this.auditReport = auditReport;
@@ -679,6 +704,9 @@ public class QueryTranscodingsTaskResponse  {
     public void setAuditReport(AuditReport auditReport) {
         this.auditReport = auditReport;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

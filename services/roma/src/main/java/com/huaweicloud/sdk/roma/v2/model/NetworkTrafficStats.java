@@ -49,6 +49,8 @@ public class NetworkTrafficStats  {
         this.outputThroughput = outputThroughput;
     }
 
+    
+
     public NetworkTrafficStats withInputThroughput(Integer inputThroughput) {
         this.inputThroughput = inputThroughput;
         return this;
@@ -68,6 +70,9 @@ public class NetworkTrafficStats  {
     public void setInputThroughput(Integer inputThroughput) {
         this.inputThroughput = inputThroughput;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

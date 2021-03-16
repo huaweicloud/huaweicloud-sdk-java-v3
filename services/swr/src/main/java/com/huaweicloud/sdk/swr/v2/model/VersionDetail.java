@@ -28,7 +28,7 @@ public class VersionDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Link links = null;
+    private Link links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class VersionDetail  {
         this.id = id;
     }
 
+    
+
     public VersionDetail withLinks(Link links) {
         this.links = links;
         return this;
@@ -101,6 +103,8 @@ public class VersionDetail  {
         this.links = links;
     }
 
+    
+
     public VersionDetail withVersion(String version) {
         this.version = version;
         return this;
@@ -120,6 +124,8 @@ public class VersionDetail  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public VersionDetail withStatus(String status) {
         this.status = status;
@@ -141,6 +147,8 @@ public class VersionDetail  {
         this.status = status;
     }
 
+    
+
     public VersionDetail withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -161,6 +169,8 @@ public class VersionDetail  {
         this.updated = updated;
     }
 
+    
+
     public VersionDetail withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
@@ -180,6 +190,9 @@ public class VersionDetail  {
     public void setMinVersion(String minVersion) {
         this.minVersion = minVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

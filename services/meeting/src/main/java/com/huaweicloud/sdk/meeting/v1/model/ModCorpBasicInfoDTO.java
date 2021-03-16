@@ -49,6 +49,8 @@ public class ModCorpBasicInfoDTO  {
         this.address = address;
     }
 
+    
+
     public ModCorpBasicInfoDTO withAutoUserCreate(Boolean autoUserCreate) {
         this.autoUserCreate = autoUserCreate;
         return this;
@@ -68,6 +70,9 @@ public class ModCorpBasicInfoDTO  {
     public void setAutoUserCreate(Boolean autoUserCreate) {
         this.autoUserCreate = autoUserCreate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

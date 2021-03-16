@@ -55,6 +55,8 @@ public class SpeedLimitInfo  {
         this.begin = begin;
     }
 
+    
+
     public SpeedLimitInfo withEnd(String end) {
         this.end = end;
         return this;
@@ -75,6 +77,8 @@ public class SpeedLimitInfo  {
         this.end = end;
     }
 
+    
+
     public SpeedLimitInfo withSpeed(String speed) {
         this.speed = speed;
         return this;
@@ -94,6 +98,9 @@ public class SpeedLimitInfo  {
     public void setSpeed(String speed) {
         this.speed = speed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

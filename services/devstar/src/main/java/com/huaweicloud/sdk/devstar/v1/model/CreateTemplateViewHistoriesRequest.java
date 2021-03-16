@@ -104,13 +104,13 @@ public class CreateTemplateViewHistoriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TemplatesInfo body = null;
+    private TemplatesInfo body;
 
     public CreateTemplateViewHistoriesRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class CreateTemplateViewHistoriesRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public CreateTemplateViewHistoriesRequest withBody(TemplatesInfo body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class CreateTemplateViewHistoriesRequest  {
     public void setBody(TemplatesInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class AuthProjectResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class AuthProjectResult  {
         this.isDomain = isDomain;
     }
 
+    
+
     public AuthProjectResult withDescription(String description) {
         this.description = description;
         return this;
@@ -105,6 +107,8 @@ public class AuthProjectResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public AuthProjectResult withLinks(LinksSelf links) {
         this.links = links;
@@ -133,6 +137,8 @@ public class AuthProjectResult  {
         this.links = links;
     }
 
+    
+
     public AuthProjectResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -152,6 +158,8 @@ public class AuthProjectResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public AuthProjectResult withId(String id) {
         this.id = id;
@@ -173,6 +181,8 @@ public class AuthProjectResult  {
         this.id = id;
     }
 
+    
+
     public AuthProjectResult withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -192,6 +202,8 @@ public class AuthProjectResult  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public AuthProjectResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -213,6 +225,8 @@ public class AuthProjectResult  {
         this.domainId = domainId;
     }
 
+    
+
     public AuthProjectResult withName(String name) {
         this.name = name;
         return this;
@@ -232,6 +246,9 @@ public class AuthProjectResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

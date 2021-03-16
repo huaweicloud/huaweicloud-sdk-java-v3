@@ -93,6 +93,8 @@ public class CreateSubNetworkInterfaceOption  {
         this.virsubnetId = virsubnetId;
     }
 
+    
+
     public CreateSubNetworkInterfaceOption withVlanId(String vlanId) {
         this.vlanId = vlanId;
         return this;
@@ -112,6 +114,8 @@ public class CreateSubNetworkInterfaceOption  {
     public void setVlanId(String vlanId) {
         this.vlanId = vlanId;
     }
+
+    
 
     public CreateSubNetworkInterfaceOption withParentId(String parentId) {
         this.parentId = parentId;
@@ -133,6 +137,8 @@ public class CreateSubNetworkInterfaceOption  {
         this.parentId = parentId;
     }
 
+    
+
     public CreateSubNetworkInterfaceOption withDescription(String description) {
         this.description = description;
         return this;
@@ -152,6 +158,8 @@ public class CreateSubNetworkInterfaceOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateSubNetworkInterfaceOption withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
@@ -173,6 +181,8 @@ public class CreateSubNetworkInterfaceOption  {
         this.ipv6Enable = ipv6Enable;
     }
 
+    
+
     public CreateSubNetworkInterfaceOption withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
         return this;
@@ -192,6 +202,8 @@ public class CreateSubNetworkInterfaceOption  {
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
+
+    
 
     public CreateSubNetworkInterfaceOption withIpv6IpAddress(String ipv6IpAddress) {
         this.ipv6IpAddress = ipv6IpAddress;
@@ -213,6 +225,8 @@ public class CreateSubNetworkInterfaceOption  {
         this.ipv6IpAddress = ipv6IpAddress;
     }
 
+    
+
     public CreateSubNetworkInterfaceOption withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -220,9 +234,6 @@ public class CreateSubNetworkInterfaceOption  {
 
     
     public CreateSubNetworkInterfaceOption addSecurityGroupsItem(String securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -247,6 +258,8 @@ public class CreateSubNetworkInterfaceOption  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public CreateSubNetworkInterfaceOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -266,6 +279,9 @@ public class CreateSubNetworkInterfaceOption  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

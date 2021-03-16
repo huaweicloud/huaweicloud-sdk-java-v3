@@ -49,6 +49,8 @@ public class ApiGroupBase  {
         this.name = name;
     }
 
+    
+
     public ApiGroupBase withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -68,6 +70,9 @@ public class ApiGroupBase  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

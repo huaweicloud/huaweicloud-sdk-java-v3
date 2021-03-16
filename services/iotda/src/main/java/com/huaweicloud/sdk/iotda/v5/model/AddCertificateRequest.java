@@ -28,7 +28,7 @@ public class AddCertificateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateCertificateDTO body = null;
+    private CreateCertificateDTO body;
 
     public AddCertificateRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class AddCertificateRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AddCertificateRequest withBody(CreateCertificateDTO body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AddCertificateRequest  {
     public void setBody(CreateCertificateDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class CreatePersonalAuthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authorization")
     
-    private AuthorizationVO authorization = null;
+    private AuthorizationVO authorization;
 
     public CreatePersonalAuthResponse withAuthorization(AuthorizationVO authorization) {
         this.authorization = authorization;
@@ -52,6 +52,9 @@ public class CreatePersonalAuthResponse extends SdkResponse {
     public void setAuthorization(AuthorizationVO authorization) {
         this.authorization = authorization;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

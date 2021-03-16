@@ -26,31 +26,31 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Addon";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metadata metadata = null;
+    private Metadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private InstanceSpec spec = null;
+    private InstanceSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private AddonInstanceStatus status = null;
+    private AddonInstanceStatus status;
 
     public UpdateAddonInstanceResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -72,6 +72,8 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public UpdateAddonInstanceResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -91,6 +93,8 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public UpdateAddonInstanceResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
@@ -119,6 +123,8 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public UpdateAddonInstanceResponse withSpec(InstanceSpec spec) {
         this.spec = spec;
         return this;
@@ -146,6 +152,8 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
         this.spec = spec;
     }
 
+    
+
     public UpdateAddonInstanceResponse withStatus(AddonInstanceStatus status) {
         this.status = status;
         return this;
@@ -172,6 +180,9 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
     public void setStatus(AddonInstanceStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

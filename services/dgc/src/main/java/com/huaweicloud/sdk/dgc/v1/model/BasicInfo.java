@@ -45,7 +45,7 @@ public class BasicInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customFields")
     
-    private Object customFields = null;
+    private Object customFields;
 
     public BasicInfo withOwner(String owner) {
         this.owner = owner;
@@ -67,6 +67,8 @@ public class BasicInfo  {
         this.owner = owner;
     }
 
+    
+
     public BasicInfo withPriority(String priority) {
         this.priority = priority;
         return this;
@@ -86,6 +88,8 @@ public class BasicInfo  {
     public void setPriority(String priority) {
         this.priority = priority;
     }
+
+    
 
     public BasicInfo withExecuteUser(String executeUser) {
         this.executeUser = executeUser;
@@ -107,6 +111,8 @@ public class BasicInfo  {
         this.executeUser = executeUser;
     }
 
+    
+
     public BasicInfo withInstanceTimeout(String instanceTimeout) {
         this.instanceTimeout = instanceTimeout;
         return this;
@@ -127,6 +133,8 @@ public class BasicInfo  {
         this.instanceTimeout = instanceTimeout;
     }
 
+    
+
     public BasicInfo withCustomFields(Object customFields) {
         this.customFields = customFields;
         return this;
@@ -146,6 +154,9 @@ public class BasicInfo  {
     public void setCustomFields(Object customFields) {
         this.customFields = customFields;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

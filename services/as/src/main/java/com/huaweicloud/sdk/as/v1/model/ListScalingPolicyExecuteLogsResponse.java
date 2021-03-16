@@ -66,6 +66,8 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
         this.totalNumber = totalNumber;
     }
 
+    
+
     public ListScalingPolicyExecuteLogsResponse withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -85,6 +87,8 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
     public void setStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
     }
+
+    
 
     public ListScalingPolicyExecuteLogsResponse withLimit(Integer limit) {
         this.limit = limit;
@@ -106,6 +110,8 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
         this.limit = limit;
     }
 
+    
+
     public ListScalingPolicyExecuteLogsResponse withScalingPolicyExecuteLog(List<ScalingPolicyExecuteLogList> scalingPolicyExecuteLog) {
         this.scalingPolicyExecuteLog = scalingPolicyExecuteLog;
         return this;
@@ -113,9 +119,6 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
 
     
     public ListScalingPolicyExecuteLogsResponse addScalingPolicyExecuteLogItem(ScalingPolicyExecuteLogList scalingPolicyExecuteLogItem) {
-        if (this.scalingPolicyExecuteLog == null) {
-            this.scalingPolicyExecuteLog = new ArrayList<>();
-        }
         this.scalingPolicyExecuteLog.add(scalingPolicyExecuteLogItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
     public void setScalingPolicyExecuteLog(List<ScalingPolicyExecuteLogList> scalingPolicyExecuteLog) {
         this.scalingPolicyExecuteLog = scalingPolicyExecuteLog;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -39,13 +39,13 @@ public class ListBackendInstancesV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 20;
+    private Integer offset;
 
     public ListBackendInstancesV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -67,6 +67,8 @@ public class ListBackendInstancesV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListBackendInstancesV2Request withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
         return this;
@@ -86,6 +88,8 @@ public class ListBackendInstancesV2Request  {
     public void setVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
     }
+
+    
 
     public ListBackendInstancesV2Request withName(String name) {
         this.name = name;
@@ -107,6 +111,8 @@ public class ListBackendInstancesV2Request  {
         this.name = name;
     }
 
+    
+
     public ListBackendInstancesV2Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -127,6 +133,8 @@ public class ListBackendInstancesV2Request  {
         this.limit = limit;
     }
 
+    
+
     public ListBackendInstancesV2Request withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -146,6 +154,9 @@ public class ListBackendInstancesV2Request  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

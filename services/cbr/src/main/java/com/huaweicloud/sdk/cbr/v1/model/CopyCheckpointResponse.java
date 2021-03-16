@@ -24,7 +24,7 @@ public class CopyCheckpointResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    private CheckpointReplicateRespBody replication = null;
+    private CheckpointReplicateRespBody replication;
 
     public CopyCheckpointResponse withReplication(CheckpointReplicateRespBody replication) {
         this.replication = replication;
@@ -52,6 +52,9 @@ public class CopyCheckpointResponse extends SdkResponse {
     public void setReplication(CheckpointReplicateRespBody replication) {
         this.replication = replication;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

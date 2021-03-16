@@ -59,7 +59,7 @@ public class ListenerResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancers")
     
-    private List<ResourceList> loadbalancers = new ArrayList<>();
+    private List<ResourceList> loadbalancers = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -197,13 +197,13 @@ public class ListenerResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sni_container_refs")
     
-    private List<String> sniContainerRefs = new ArrayList<>();
+    private List<String> sniContainerRefs = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -221,7 +221,7 @@ public class ListenerResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insert_headers")
     
-    private InsertHeader insertHeaders = null;
+    private InsertHeader insertHeaders;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -255,6 +255,8 @@ public class ListenerResp  {
         this.id = id;
     }
 
+    
+
     public ListenerResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -274,6 +276,8 @@ public class ListenerResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public ListenerResp withName(String name) {
         this.name = name;
@@ -295,6 +299,8 @@ public class ListenerResp  {
         this.name = name;
     }
 
+    
+
     public ListenerResp withDescription(String description) {
         this.description = description;
         return this;
@@ -315,6 +321,8 @@ public class ListenerResp  {
         this.description = description;
     }
 
+    
+
     public ListenerResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -334,6 +342,8 @@ public class ListenerResp  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public ListenerResp withLoadbalancers(List<ResourceList> loadbalancers) {
         this.loadbalancers = loadbalancers;
@@ -366,6 +376,8 @@ public class ListenerResp  {
         this.loadbalancers = loadbalancers;
     }
 
+    
+
     public ListenerResp withConnectionLimit(Integer connectionLimit) {
         this.connectionLimit = connectionLimit;
         return this;
@@ -388,6 +400,8 @@ public class ListenerResp  {
         this.connectionLimit = connectionLimit;
     }
 
+    
+
     public ListenerResp withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
@@ -408,6 +422,8 @@ public class ListenerResp  {
         this.http2Enable = http2Enable;
     }
 
+    
+
     public ListenerResp withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -427,6 +443,8 @@ public class ListenerResp  {
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public ListenerResp withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -450,6 +468,8 @@ public class ListenerResp  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public ListenerResp withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
         return this;
@@ -469,6 +489,8 @@ public class ListenerResp  {
     public void setDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
     }
+
+    
 
     public ListenerResp withDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
@@ -490,6 +512,8 @@ public class ListenerResp  {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
 
+    
+
     public ListenerResp withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
         return this;
@@ -509,6 +533,8 @@ public class ListenerResp  {
     public void setClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
+
+    
 
     public ListenerResp withSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
@@ -541,6 +567,8 @@ public class ListenerResp  {
         this.sniContainerRefs = sniContainerRefs;
     }
 
+    
+
     public ListenerResp withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -572,6 +600,8 @@ public class ListenerResp  {
         this.tags = tags;
     }
 
+    
+
     public ListenerResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -592,6 +622,8 @@ public class ListenerResp  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ListenerResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -611,6 +643,8 @@ public class ListenerResp  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public ListenerResp withInsertHeaders(InsertHeader insertHeaders) {
         this.insertHeaders = insertHeaders;
@@ -639,6 +673,8 @@ public class ListenerResp  {
         this.insertHeaders = insertHeaders;
     }
 
+    
+
     public ListenerResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -659,6 +695,8 @@ public class ListenerResp  {
         this.projectId = projectId;
     }
 
+    
+
     public ListenerResp withTlsCiphersPolicy(String tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
@@ -678,6 +716,9 @@ public class ListenerResp  {
     public void setTlsCiphersPolicy(String tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -110,7 +110,7 @@ public class ResetMessagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResetMessagesReq body = null;
+    private ResetMessagesReq body;
 
     public ResetMessagesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -132,6 +132,8 @@ public class ResetMessagesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ResetMessagesRequest withActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
         return this;
@@ -151,6 +153,8 @@ public class ResetMessagesRequest  {
     public void setActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
     }
+
+    
 
     public ResetMessagesRequest withBody(ResetMessagesReq body) {
         this.body = body;
@@ -178,6 +182,9 @@ public class ResetMessagesRequest  {
     public void setBody(ResetMessagesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

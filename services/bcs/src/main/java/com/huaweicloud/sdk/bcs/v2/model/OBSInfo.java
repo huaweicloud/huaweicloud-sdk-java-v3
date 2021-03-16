@@ -49,6 +49,8 @@ public class OBSInfo  {
         this.name = name;
     }
 
+    
+
     public OBSInfo withAddr(String addr) {
         this.addr = addr;
         return this;
@@ -68,6 +70,9 @@ public class OBSInfo  {
     public void setAddr(String addr) {
         this.addr = addr;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

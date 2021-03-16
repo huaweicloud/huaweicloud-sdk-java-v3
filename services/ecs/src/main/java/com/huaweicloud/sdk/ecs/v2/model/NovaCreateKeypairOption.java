@@ -143,6 +143,8 @@ public class NovaCreateKeypairOption  {
         this.publicKey = publicKey;
     }
 
+    
+
     public NovaCreateKeypairOption withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -162,6 +164,8 @@ public class NovaCreateKeypairOption  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public NovaCreateKeypairOption withName(String name) {
         this.name = name;
@@ -183,6 +187,8 @@ public class NovaCreateKeypairOption  {
         this.name = name;
     }
 
+    
+
     public NovaCreateKeypairOption withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -202,6 +208,9 @@ public class NovaCreateKeypairOption  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

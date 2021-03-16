@@ -22,7 +22,7 @@ public class UpdateWatermarkTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private WatermarkTemplate body = null;
+    private WatermarkTemplate body;
 
     public UpdateWatermarkTemplateRequest withBody(WatermarkTemplate body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateWatermarkTemplateRequest  {
     public void setBody(WatermarkTemplate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

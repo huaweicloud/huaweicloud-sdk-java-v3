@@ -61,6 +61,8 @@ public class ShowMessagesRespMessages  {
         this.topic = topic;
     }
 
+    
+
     public ShowMessagesRespMessages withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -80,6 +82,8 @@ public class ShowMessagesRespMessages  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
 
     public ShowMessagesRespMessages withMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
@@ -101,6 +105,8 @@ public class ShowMessagesRespMessages  {
         this.messageOffset = messageOffset;
     }
 
+    
+
     public ShowMessagesRespMessages withSize(Integer size) {
         this.size = size;
         return this;
@@ -120,6 +126,9 @@ public class ShowMessagesRespMessages  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

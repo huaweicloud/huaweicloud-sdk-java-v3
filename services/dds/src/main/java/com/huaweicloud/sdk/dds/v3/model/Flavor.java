@@ -51,7 +51,7 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    private Object azStatus = null;
+    private Object azStatus;
 
     public Flavor withEngineName(String engineName) {
         this.engineName = engineName;
@@ -73,6 +73,8 @@ public class Flavor  {
         this.engineName = engineName;
     }
 
+    
+
     public Flavor withType(String type) {
         this.type = type;
         return this;
@@ -92,6 +94,8 @@ public class Flavor  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public Flavor withVcpus(String vcpus) {
         this.vcpus = vcpus;
@@ -113,6 +117,8 @@ public class Flavor  {
         this.vcpus = vcpus;
     }
 
+    
+
     public Flavor withRam(String ram) {
         this.ram = ram;
         return this;
@@ -132,6 +138,8 @@ public class Flavor  {
     public void setRam(String ram) {
         this.ram = ram;
     }
+
+    
 
     public Flavor withSpecCode(String specCode) {
         this.specCode = specCode;
@@ -153,6 +161,8 @@ public class Flavor  {
         this.specCode = specCode;
     }
 
+    
+
     public Flavor withAzStatus(Object azStatus) {
         this.azStatus = azStatus;
         return this;
@@ -172,6 +182,9 @@ public class Flavor  {
     public void setAzStatus(Object azStatus) {
         this.azStatus = azStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

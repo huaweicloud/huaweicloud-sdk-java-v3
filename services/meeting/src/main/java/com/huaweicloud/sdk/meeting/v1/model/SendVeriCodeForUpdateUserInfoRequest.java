@@ -34,7 +34,7 @@ public class SendVeriCodeForUpdateUserInfoRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VerificationCodeDTO body = null;
+    private VerificationCodeDTO body;
 
     public SendVeriCodeForUpdateUserInfoRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -58,6 +58,8 @@ public class SendVeriCodeForUpdateUserInfoRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SendVeriCodeForUpdateUserInfoRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class SendVeriCodeForUpdateUserInfoRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public SendVeriCodeForUpdateUserInfoRequest withBody(VerificationCodeDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class SendVeriCodeForUpdateUserInfoRequest  {
     public void setBody(VerificationCodeDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

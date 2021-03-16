@@ -67,6 +67,8 @@ public class Credentials  {
         this.userId = userId;
     }
 
+    
+
     public Credentials withAccess(String access) {
         this.access = access;
         return this;
@@ -86,6 +88,8 @@ public class Credentials  {
     public void setAccess(String access) {
         this.access = access;
     }
+
+    
 
     public Credentials withStatus(String status) {
         this.status = status;
@@ -107,6 +111,8 @@ public class Credentials  {
         this.status = status;
     }
 
+    
+
     public Credentials withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -127,6 +133,8 @@ public class Credentials  {
         this.createTime = createTime;
     }
 
+    
+
     public Credentials withDescription(String description) {
         this.description = description;
         return this;
@@ -146,6 +154,9 @@ public class Credentials  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

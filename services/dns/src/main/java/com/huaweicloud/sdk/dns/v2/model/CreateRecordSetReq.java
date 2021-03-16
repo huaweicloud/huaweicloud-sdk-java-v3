@@ -54,7 +54,7 @@ public class CreateRecordSetReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="records")
     
-    private List<String> records = new ArrayList<>();
+    private List<String> records = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,6 +82,8 @@ public class CreateRecordSetReq  {
         this.name = name;
     }
 
+    
+
     public CreateRecordSetReq withDescription(String description) {
         this.description = description;
         return this;
@@ -101,6 +103,8 @@ public class CreateRecordSetReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateRecordSetReq withType(String type) {
         this.type = type;
@@ -122,6 +126,8 @@ public class CreateRecordSetReq  {
         this.type = type;
     }
 
+    
+
     public CreateRecordSetReq withStatus(String status) {
         this.status = status;
         return this;
@@ -142,6 +148,8 @@ public class CreateRecordSetReq  {
         this.status = status;
     }
 
+    
+
     public CreateRecordSetReq withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -161,6 +169,8 @@ public class CreateRecordSetReq  {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public CreateRecordSetReq withRecords(List<String> records) {
         this.records = records;
@@ -193,6 +203,8 @@ public class CreateRecordSetReq  {
         this.records = records;
     }
 
+    
+
     public CreateRecordSetReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -200,9 +212,6 @@ public class CreateRecordSetReq  {
 
     
     public CreateRecordSetReq addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -226,6 +235,9 @@ public class CreateRecordSetReq  {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

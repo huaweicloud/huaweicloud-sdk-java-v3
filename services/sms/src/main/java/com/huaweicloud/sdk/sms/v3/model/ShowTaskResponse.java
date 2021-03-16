@@ -227,7 +227,13 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private Boolean startTargetServer = true;
+    private Boolean startTargetServer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -263,13 +269,13 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_server")
     
-    private PostSourceServerBody sourceServer = null;
+    private PostSourceServerBody sourceServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_server")
     
-    private TargetServer targetServer = null;
+    private TargetServer targetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -347,7 +353,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clone_server")
     
-    private CloneServer cloneServer = null;
+    private CloneServer cloneServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -375,6 +381,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowTaskResponse withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -394,6 +402,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowTaskResponse withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -415,6 +425,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.osType = osType;
     }
 
+    
+
     public ShowTaskResponse withId(String id) {
         this.id = id;
         return this;
@@ -434,6 +446,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ShowTaskResponse withPriority(Integer priority) {
         this.priority = priority;
@@ -457,6 +471,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.priority = priority;
     }
 
+    
+
     public ShowTaskResponse withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -476,6 +492,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public ShowTaskResponse withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
@@ -497,6 +515,30 @@ public class ShowTaskResponse extends SdkResponse {
         this.startTargetServer = startTargetServer;
     }
 
+    
+
+    public ShowTaskResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
+
     public ShowTaskResponse withMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
         return this;
@@ -516,6 +558,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
     }
+
+    
 
     public ShowTaskResponse withRegionName(String regionName) {
         this.regionName = regionName;
@@ -537,6 +581,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.regionName = regionName;
     }
 
+    
+
     public ShowTaskResponse withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
@@ -556,6 +602,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
+
+    
 
     public ShowTaskResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -577,6 +625,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public ShowTaskResponse withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
         return this;
@@ -596,6 +646,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
     }
+
+    
 
     public ShowTaskResponse withSourceServer(PostSourceServerBody sourceServer) {
         this.sourceServer = sourceServer;
@@ -624,6 +676,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.sourceServer = sourceServer;
     }
 
+    
+
     public ShowTaskResponse withTargetServer(TargetServer targetServer) {
         this.targetServer = targetServer;
         return this;
@@ -651,6 +705,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.targetServer = targetServer;
     }
 
+    
+
     public ShowTaskResponse withState(String state) {
         this.state = state;
         return this;
@@ -670,6 +726,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public ShowTaskResponse withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
@@ -693,6 +751,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
+    
+
     public ShowTaskResponse withConnected(Boolean connected) {
         this.connected = connected;
         return this;
@@ -712,6 +772,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setConnected(Boolean connected) {
         this.connected = connected;
     }
+
+    
 
     public ShowTaskResponse withCreateDate(Long createDate) {
         this.createDate = createDate;
@@ -735,6 +797,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.createDate = createDate;
     }
 
+    
+
     public ShowTaskResponse withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
@@ -756,6 +820,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
+
+    
 
     public ShowTaskResponse withFinishDate(Long finishDate) {
         this.finishDate = finishDate;
@@ -779,6 +845,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.finishDate = finishDate;
     }
 
+    
+
     public ShowTaskResponse withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
@@ -801,6 +869,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.migrateSpeed = migrateSpeed;
     }
 
+    
+
     public ShowTaskResponse withErrorJson(String errorJson) {
         this.errorJson = errorJson;
         return this;
@@ -820,6 +890,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setErrorJson(String errorJson) {
         this.errorJson = errorJson;
     }
+
+    
 
     public ShowTaskResponse withTotalTime(Long totalTime) {
         this.totalTime = totalTime;
@@ -843,6 +915,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.totalTime = totalTime;
     }
 
+    
+
     public ShowTaskResponse withFloatIp(String floatIp) {
         this.floatIp = floatIp;
         return this;
@@ -862,6 +936,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setFloatIp(String floatIp) {
         this.floatIp = floatIp;
     }
+
+    
 
     public ShowTaskResponse withRemainSeconds(Long remainSeconds) {
         this.remainSeconds = remainSeconds;
@@ -885,6 +961,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.remainSeconds = remainSeconds;
     }
 
+    
+
     public ShowTaskResponse withTargetSnapshotId(String targetSnapshotId) {
         this.targetSnapshotId = targetSnapshotId;
         return this;
@@ -904,6 +982,8 @@ public class ShowTaskResponse extends SdkResponse {
     public void setTargetSnapshotId(String targetSnapshotId) {
         this.targetSnapshotId = targetSnapshotId;
     }
+
+    
 
     public ShowTaskResponse withCloneServer(CloneServer cloneServer) {
         this.cloneServer = cloneServer;
@@ -932,6 +1012,8 @@ public class ShowTaskResponse extends SdkResponse {
         this.cloneServer = cloneServer;
     }
 
+    
+
     public ShowTaskResponse withSubTasks(List<SubTask> subTasks) {
         this.subTasks = subTasks;
         return this;
@@ -939,9 +1021,6 @@ public class ShowTaskResponse extends SdkResponse {
 
     
     public ShowTaskResponse addSubTasksItem(SubTask subTasksItem) {
-        if (this.subTasks == null) {
-            this.subTasks = new ArrayList<>();
-        }
         this.subTasks.add(subTasksItem);
         return this;
     }
@@ -965,6 +1044,9 @@ public class ShowTaskResponse extends SdkResponse {
     public void setSubTasks(List<SubTask> subTasks) {
         this.subTasks = subTasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -981,6 +1063,7 @@ public class ShowTaskResponse extends SdkResponse {
             Objects.equals(this.priority, showTaskResponse.priority) &&
             Objects.equals(this.regionId, showTaskResponse.regionId) &&
             Objects.equals(this.startTargetServer, showTaskResponse.startTargetServer) &&
+            Objects.equals(this.enterpriseProjectId, showTaskResponse.enterpriseProjectId) &&
             Objects.equals(this.migrationIp, showTaskResponse.migrationIp) &&
             Objects.equals(this.regionName, showTaskResponse.regionName) &&
             Objects.equals(this.projectName, showTaskResponse.projectName) &&
@@ -1005,7 +1088,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, osType, id, priority, regionId, startTargetServer, migrationIp, regionName, projectName, projectId, vmTemplateId, sourceServer, targetServer, state, estimateCompleteTime, connected, createDate, startDate, finishDate, migrateSpeed, errorJson, totalTime, floatIp, remainSeconds, targetSnapshotId, cloneServer, subTasks);
+        return Objects.hash(name, type, osType, id, priority, regionId, startTargetServer, enterpriseProjectId, migrationIp, regionName, projectName, projectId, vmTemplateId, sourceServer, targetServer, state, estimateCompleteTime, connected, createDate, startDate, finishDate, migrateSpeed, errorJson, totalTime, floatIp, remainSeconds, targetSnapshotId, cloneServer, subTasks);
     }
     @Override
     public String toString() {
@@ -1018,6 +1101,7 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    migrationIp: ").append(toIndentedString(migrationIp)).append("\n");
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");

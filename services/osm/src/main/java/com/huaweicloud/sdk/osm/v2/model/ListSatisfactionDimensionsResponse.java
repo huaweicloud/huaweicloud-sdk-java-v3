@@ -56,6 +56,8 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListSatisfactionDimensionsResponse withSatisfactionDimensionList(List<SatisfactionDimensionSimpleInfoV2> satisfactionDimensionList) {
         this.satisfactionDimensionList = satisfactionDimensionList;
         return this;
@@ -63,9 +65,6 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
 
     
     public ListSatisfactionDimensionsResponse addSatisfactionDimensionListItem(SatisfactionDimensionSimpleInfoV2 satisfactionDimensionListItem) {
-        if (this.satisfactionDimensionList == null) {
-            this.satisfactionDimensionList = new ArrayList<>();
-        }
         this.satisfactionDimensionList.add(satisfactionDimensionListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
     public void setSatisfactionDimensionList(List<SatisfactionDimensionSimpleInfoV2> satisfactionDimensionList) {
         this.satisfactionDimensionList = satisfactionDimensionList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

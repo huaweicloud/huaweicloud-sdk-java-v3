@@ -73,6 +73,8 @@ public class Chart  {
         this.date = date;
     }
 
+    
+
     public Chart withFinishedNum(Integer finishedNum) {
         this.finishedNum = finishedNum;
         return this;
@@ -92,6 +94,8 @@ public class Chart  {
     public void setFinishedNum(Integer finishedNum) {
         this.finishedNum = finishedNum;
     }
+
+    
 
     public Chart withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
@@ -113,6 +117,8 @@ public class Chart  {
         this.iterationId = iterationId;
     }
 
+    
+
     public Chart withProjectNumId(Integer projectNumId) {
         this.projectNumId = projectNumId;
         return this;
@@ -132,6 +138,8 @@ public class Chart  {
     public void setProjectNumId(Integer projectNumId) {
         this.projectNumId = projectNumId;
     }
+
+    
 
     public Chart withRemainingNum(Integer remainingNum) {
         this.remainingNum = remainingNum;
@@ -153,6 +161,8 @@ public class Chart  {
         this.remainingNum = remainingNum;
     }
 
+    
+
     public Chart withTotal(Integer total) {
         this.total = total;
         return this;
@@ -172,6 +182,9 @@ public class Chart  {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

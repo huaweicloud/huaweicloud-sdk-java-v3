@@ -57,7 +57,7 @@ public class BackupSync  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type")
     
-    private String resourceType = "OS::Native::Server";
+    private String resourceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class BackupSync  {
         this.backupId = backupId;
     }
 
+    
+
     public BackupSync withBackupName(String backupName) {
         this.backupName = backupName;
         return this;
@@ -104,6 +106,8 @@ public class BackupSync  {
     public void setBackupName(String backupName) {
         this.backupName = backupName;
     }
+
+    
 
     public BackupSync withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -125,6 +129,8 @@ public class BackupSync  {
         this.bucketName = bucketName;
     }
 
+    
+
     public BackupSync withImagePath(String imagePath) {
         this.imagePath = imagePath;
         return this;
@@ -144,6 +150,8 @@ public class BackupSync  {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
+
+    
 
     public BackupSync withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -165,6 +173,8 @@ public class BackupSync  {
         this.resourceId = resourceId;
     }
 
+    
+
     public BackupSync withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -184,6 +194,8 @@ public class BackupSync  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public BackupSync withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -205,6 +217,8 @@ public class BackupSync  {
         this.resourceType = resourceType;
     }
 
+    
+
     public BackupSync withCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -224,6 +238,9 @@ public class BackupSync  {
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

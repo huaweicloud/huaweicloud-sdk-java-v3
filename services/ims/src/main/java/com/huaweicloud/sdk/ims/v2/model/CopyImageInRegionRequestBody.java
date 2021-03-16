@@ -33,7 +33,7 @@ public class CopyImageInRegionRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class CopyImageInRegionRequestBody  {
         this.cmkId = cmkId;
     }
 
+    
+
     public CopyImageInRegionRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -80,6 +82,8 @@ public class CopyImageInRegionRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CopyImageInRegionRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -101,6 +105,8 @@ public class CopyImageInRegionRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CopyImageInRegionRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +126,9 @@ public class CopyImageInRegionRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class UpdateTestCaseResultRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execute_list")
     
-    private List<UpdateTestCaseResultBean> executeList = new ArrayList<>();
+    private List<UpdateTestCaseResultBean> executeList = null;
     
     public UpdateTestCaseResultRequestBody withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
@@ -51,6 +51,8 @@ public class UpdateTestCaseResultRequestBody  {
     public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public UpdateTestCaseResultRequestBody withExecuteList(List<UpdateTestCaseResultBean> executeList) {
         this.executeList = executeList;
@@ -82,6 +84,9 @@ public class UpdateTestCaseResultRequestBody  {
     public void setExecuteList(List<UpdateTestCaseResultBean> executeList) {
         this.executeList = executeList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class FixedIps  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_id")
     
-    private UUID subnetId = null;
+    private UUID subnetId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,6 +50,8 @@ public class FixedIps  {
         this.subnetId = subnetId;
     }
 
+    
+
     public FixedIps withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -69,6 +71,9 @@ public class FixedIps  {
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

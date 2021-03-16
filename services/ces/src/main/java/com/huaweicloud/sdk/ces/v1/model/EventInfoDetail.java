@@ -41,7 +41,7 @@ public class EventInfoDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private EventItemDetail detail = null;
+    private EventItemDetail detail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class EventInfoDetail  {
         this.eventName = eventName;
     }
 
+    
+
     public EventInfoDetail withEventSource(String eventSource) {
         this.eventSource = eventSource;
         return this;
@@ -89,6 +91,8 @@ public class EventInfoDetail  {
         this.eventSource = eventSource;
     }
 
+    
+
     public EventInfoDetail withTime(Long time) {
         this.time = time;
         return this;
@@ -108,6 +112,8 @@ public class EventInfoDetail  {
     public void setTime(Long time) {
         this.time = time;
     }
+
+    
 
     public EventInfoDetail withDetail(EventItemDetail detail) {
         this.detail = detail;
@@ -136,6 +142,8 @@ public class EventInfoDetail  {
         this.detail = detail;
     }
 
+    
+
     public EventInfoDetail withEventId(String eventId) {
         this.eventId = eventId;
         return this;
@@ -155,6 +163,9 @@ public class EventInfoDetail  {
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

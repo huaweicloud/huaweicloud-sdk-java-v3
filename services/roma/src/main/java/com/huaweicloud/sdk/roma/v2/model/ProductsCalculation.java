@@ -49,6 +49,8 @@ public class ProductsCalculation  {
         this.normalProductsNumbers = normalProductsNumbers;
     }
 
+    
+
     public ProductsCalculation withGatewayProductsNumbers(Integer gatewayProductsNumbers) {
         this.gatewayProductsNumbers = gatewayProductsNumbers;
         return this;
@@ -68,6 +70,9 @@ public class ProductsCalculation  {
     public void setGatewayProductsNumbers(Integer gatewayProductsNumbers) {
         this.gatewayProductsNumbers = gatewayProductsNumbers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

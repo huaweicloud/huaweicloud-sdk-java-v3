@@ -67,6 +67,8 @@ public class UpdateCertificateOption  {
         this.certificate = certificate;
     }
 
+    
+
     public UpdateCertificateOption withDescription(String description) {
         this.description = description;
         return this;
@@ -86,6 +88,8 @@ public class UpdateCertificateOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateCertificateOption withName(String name) {
         this.name = name;
@@ -107,6 +111,8 @@ public class UpdateCertificateOption  {
         this.name = name;
     }
 
+    
+
     public UpdateCertificateOption withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -127,6 +133,8 @@ public class UpdateCertificateOption  {
         this.privateKey = privateKey;
     }
 
+    
+
     public UpdateCertificateOption withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -146,6 +154,9 @@ public class UpdateCertificateOption  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

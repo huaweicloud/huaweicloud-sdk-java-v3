@@ -111,13 +111,13 @@ public class Eip  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private BandWidth bandwidth = null;
+    private BandWidth bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private ExtendParamEip extendparam = null;
+    private ExtendParamEip extendparam;
 
     public Eip withIptype(IptypeEnum iptype) {
         this.iptype = iptype;
@@ -138,6 +138,8 @@ public class Eip  {
     public void setIptype(IptypeEnum iptype) {
         this.iptype = iptype;
     }
+
+    
 
     public Eip withBandwidth(BandWidth bandwidth) {
         this.bandwidth = bandwidth;
@@ -166,6 +168,8 @@ public class Eip  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public Eip withExtendparam(ExtendParamEip extendparam) {
         this.extendparam = extendparam;
         return this;
@@ -192,6 +196,9 @@ public class Eip  {
     public void setExtendparam(ExtendParamEip extendparam) {
         this.extendparam = extendparam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

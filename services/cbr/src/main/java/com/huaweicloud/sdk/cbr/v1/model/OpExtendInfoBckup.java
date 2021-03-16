@@ -235,6 +235,8 @@ public class OpExtendInfoBckup  {
         this.appConsistencyErrorCode = appConsistencyErrorCode;
     }
 
+    
+
     public OpExtendInfoBckup withAppConsistencyErrorMessage(String appConsistencyErrorMessage) {
         this.appConsistencyErrorMessage = appConsistencyErrorMessage;
         return this;
@@ -254,6 +256,8 @@ public class OpExtendInfoBckup  {
     public void setAppConsistencyErrorMessage(String appConsistencyErrorMessage) {
         this.appConsistencyErrorMessage = appConsistencyErrorMessage;
     }
+
+    
 
     public OpExtendInfoBckup withAppConsistencyStatus(AppConsistencyStatusEnum appConsistencyStatus) {
         this.appConsistencyStatus = appConsistencyStatus;
@@ -275,6 +279,8 @@ public class OpExtendInfoBckup  {
         this.appConsistencyStatus = appConsistencyStatus;
     }
 
+    
+
     public OpExtendInfoBckup withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -294,6 +300,8 @@ public class OpExtendInfoBckup  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public OpExtendInfoBckup withBackupName(String backupName) {
         this.backupName = backupName;
@@ -315,6 +323,8 @@ public class OpExtendInfoBckup  {
         this.backupName = backupName;
     }
 
+    
+
     public OpExtendInfoBckup withIncremental(IncrementalEnum incremental) {
         this.incremental = incremental;
         return this;
@@ -334,6 +344,9 @@ public class OpExtendInfoBckup  {
     public void setIncremental(IncrementalEnum incremental) {
         this.incremental = incremental;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

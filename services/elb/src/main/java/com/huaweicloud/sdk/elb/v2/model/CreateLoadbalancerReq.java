@@ -161,6 +161,8 @@ public class CreateLoadbalancerReq  {
         this.tenantId = tenantId;
     }
 
+    
+
     public CreateLoadbalancerReq withName(String name) {
         this.name = name;
         return this;
@@ -180,6 +182,8 @@ public class CreateLoadbalancerReq  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateLoadbalancerReq withDescription(String description) {
         this.description = description;
@@ -201,6 +205,8 @@ public class CreateLoadbalancerReq  {
         this.description = description;
     }
 
+    
+
     public CreateLoadbalancerReq withVipSubnetId(String vipSubnetId) {
         this.vipSubnetId = vipSubnetId;
         return this;
@@ -220,6 +226,8 @@ public class CreateLoadbalancerReq  {
     public void setVipSubnetId(String vipSubnetId) {
         this.vipSubnetId = vipSubnetId;
     }
+
+    
 
     public CreateLoadbalancerReq withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
@@ -241,6 +249,8 @@ public class CreateLoadbalancerReq  {
         this.vipAddress = vipAddress;
     }
 
+    
+
     public CreateLoadbalancerReq withProvider(ProviderEnum provider) {
         this.provider = provider;
         return this;
@@ -260,6 +270,8 @@ public class CreateLoadbalancerReq  {
     public void setProvider(ProviderEnum provider) {
         this.provider = provider;
     }
+
+    
 
     public CreateLoadbalancerReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -281,6 +293,8 @@ public class CreateLoadbalancerReq  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreateLoadbalancerReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -300,6 +314,9 @@ public class CreateLoadbalancerReq  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

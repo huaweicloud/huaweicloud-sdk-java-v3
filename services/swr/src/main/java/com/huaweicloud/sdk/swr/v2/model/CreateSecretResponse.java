@@ -24,7 +24,7 @@ public class CreateSecretResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auths")
     
-    private Certification auths = null;
+    private Certification auths;
 
     public CreateSecretResponse withAuths(Certification auths) {
         this.auths = auths;
@@ -52,6 +52,9 @@ public class CreateSecretResponse extends SdkResponse {
     public void setAuths(Certification auths) {
         this.auths = auths;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

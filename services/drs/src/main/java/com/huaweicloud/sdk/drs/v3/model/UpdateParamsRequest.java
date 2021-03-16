@@ -110,13 +110,13 @@ public class UpdateParamsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModifyTargetParamsReq body = null;
+    private ModifyTargetParamsReq body;
 
     public UpdateParamsRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -137,6 +137,8 @@ public class UpdateParamsRequest  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public UpdateParamsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -159,6 +161,8 @@ public class UpdateParamsRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public UpdateParamsRequest withBody(ModifyTargetParamsReq body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class UpdateParamsRequest  {
     public void setBody(ModifyTargetParamsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

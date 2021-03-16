@@ -37,13 +37,13 @@ public class ListenersInStatusResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<PoolsInStatusResp> pools = new ArrayList<>();
+    private List<PoolsInStatusResp> pools = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7policies")
     
-    private List<L7policiesInStatusResp> l7policies = new ArrayList<>();
+    private List<L7policiesInStatusResp> l7policies = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,6 +77,8 @@ public class ListenersInStatusResp  {
         this.id = id;
     }
 
+    
+
     public ListenersInStatusResp withName(String name) {
         this.name = name;
         return this;
@@ -96,6 +98,8 @@ public class ListenersInStatusResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListenersInStatusResp withPools(List<PoolsInStatusResp> pools) {
         this.pools = pools;
@@ -128,6 +132,8 @@ public class ListenersInStatusResp  {
         this.pools = pools;
     }
 
+    
+
     public ListenersInStatusResp withL7policies(List<L7policiesInStatusResp> l7policies) {
         this.l7policies = l7policies;
         return this;
@@ -159,6 +165,8 @@ public class ListenersInStatusResp  {
         this.l7policies = l7policies;
     }
 
+    
+
     public ListenersInStatusResp withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -179,6 +187,8 @@ public class ListenersInStatusResp  {
         this.operatingStatus = operatingStatus;
     }
 
+    
+
     public ListenersInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -198,6 +208,9 @@ public class ListenersInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

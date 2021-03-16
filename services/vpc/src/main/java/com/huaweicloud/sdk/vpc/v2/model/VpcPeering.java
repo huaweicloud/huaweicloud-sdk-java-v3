@@ -141,25 +141,25 @@ public class VpcPeering  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_vpc_info")
     
-    private VpcInfo requestVpcInfo = null;
+    private VpcInfo requestVpcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="accept_vpc_info")
     
-    private VpcInfo acceptVpcInfo = null;
+    private VpcInfo acceptVpcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -187,6 +187,8 @@ public class VpcPeering  {
         this.id = id;
     }
 
+    
+
     public VpcPeering withName(String name) {
         this.name = name;
         return this;
@@ -207,6 +209,8 @@ public class VpcPeering  {
         this.name = name;
     }
 
+    
+
     public VpcPeering withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -226,6 +230,8 @@ public class VpcPeering  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public VpcPeering withRequestVpcInfo(VpcInfo requestVpcInfo) {
         this.requestVpcInfo = requestVpcInfo;
@@ -254,6 +260,8 @@ public class VpcPeering  {
         this.requestVpcInfo = requestVpcInfo;
     }
 
+    
+
     public VpcPeering withAcceptVpcInfo(VpcInfo acceptVpcInfo) {
         this.acceptVpcInfo = acceptVpcInfo;
         return this;
@@ -281,6 +289,8 @@ public class VpcPeering  {
         this.acceptVpcInfo = acceptVpcInfo;
     }
 
+    
+
     public VpcPeering withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -300,6 +310,8 @@ public class VpcPeering  {
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public VpcPeering withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
@@ -321,6 +333,8 @@ public class VpcPeering  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public VpcPeering withDescription(String description) {
         this.description = description;
         return this;
@@ -340,6 +354,9 @@ public class VpcPeering  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -64,6 +64,8 @@ public class UpdatePtrReq  {
         this.ptrdname = ptrdname;
     }
 
+    
+
     public UpdatePtrReq withDescription(String description) {
         this.description = description;
         return this;
@@ -83,6 +85,8 @@ public class UpdatePtrReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdatePtrReq withTtl(Integer ttl) {
         this.ttl = ttl;
@@ -104,6 +108,8 @@ public class UpdatePtrReq  {
         this.ttl = ttl;
     }
 
+    
+
     public UpdatePtrReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -111,9 +117,6 @@ public class UpdatePtrReq  {
 
     
     public UpdatePtrReq addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class UpdatePtrReq  {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

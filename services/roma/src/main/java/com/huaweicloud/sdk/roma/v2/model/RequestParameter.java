@@ -49,6 +49,8 @@ public class RequestParameter  {
         this.parameterName = parameterName;
     }
 
+    
+
     public RequestParameter withParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
         return this;
@@ -68,6 +70,9 @@ public class RequestParameter  {
     public void setParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

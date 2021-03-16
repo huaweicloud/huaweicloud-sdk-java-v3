@@ -101,7 +101,7 @@ public class TaskByServerSources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_server")
     
-    private TargetServerById targetServer = null;
+    private TargetServerById targetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -125,7 +125,7 @@ public class TaskByServerSources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clone_server")
     
-    private CloneServer cloneServer = null;
+    private CloneServer cloneServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,6 +153,8 @@ public class TaskByServerSources  {
         this.id = id;
     }
 
+    
+
     public TaskByServerSources withName(String name) {
         this.name = name;
         return this;
@@ -172,6 +174,8 @@ public class TaskByServerSources  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TaskByServerSources withType(String type) {
         this.type = type;
@@ -193,6 +197,8 @@ public class TaskByServerSources  {
         this.type = type;
     }
 
+    
+
     public TaskByServerSources withState(String state) {
         this.state = state;
         return this;
@@ -212,6 +218,8 @@ public class TaskByServerSources  {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public TaskByServerSources withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
@@ -235,6 +243,8 @@ public class TaskByServerSources  {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
+    
+
     public TaskByServerSources withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
@@ -256,6 +266,8 @@ public class TaskByServerSources  {
     public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
+
+    
 
     public TaskByServerSources withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
@@ -279,6 +291,8 @@ public class TaskByServerSources  {
         this.speedLimit = speedLimit;
     }
 
+    
+
     public TaskByServerSources withMigrateSpeed(Integer migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
@@ -301,6 +315,8 @@ public class TaskByServerSources  {
         this.migrateSpeed = migrateSpeed;
     }
 
+    
+
     public TaskByServerSources withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
@@ -320,6 +336,8 @@ public class TaskByServerSources  {
     public void setStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
     }
+
+    
 
     public TaskByServerSources withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
@@ -341,6 +359,8 @@ public class TaskByServerSources  {
         this.vmTemplateId = vmTemplateId;
     }
 
+    
+
     public TaskByServerSources withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -360,6 +380,8 @@ public class TaskByServerSources  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public TaskByServerSources withProjectName(String projectName) {
         this.projectName = projectName;
@@ -381,6 +403,8 @@ public class TaskByServerSources  {
         this.projectName = projectName;
     }
 
+    
+
     public TaskByServerSources withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -400,6 +424,8 @@ public class TaskByServerSources  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public TaskByServerSources withTargetServer(TargetServerById targetServer) {
         this.targetServer = targetServer;
@@ -428,6 +454,8 @@ public class TaskByServerSources  {
         this.targetServer = targetServer;
     }
 
+    
+
     public TaskByServerSources withLogCollectStatus(String logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
         return this;
@@ -447,6 +475,8 @@ public class TaskByServerSources  {
     public void setLogCollectStatus(String logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
     }
+
+    
 
     public TaskByServerSources withExistServer(Boolean existServer) {
         this.existServer = existServer;
@@ -468,6 +498,8 @@ public class TaskByServerSources  {
         this.existServer = existServer;
     }
 
+    
+
     public TaskByServerSources withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -487,6 +519,8 @@ public class TaskByServerSources  {
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
     }
+
+    
 
     public TaskByServerSources withCloneServer(CloneServer cloneServer) {
         this.cloneServer = cloneServer;
@@ -515,6 +549,8 @@ public class TaskByServerSources  {
         this.cloneServer = cloneServer;
     }
 
+    
+
     public TaskByServerSources withRemainSeconds(Long remainSeconds) {
         this.remainSeconds = remainSeconds;
         return this;
@@ -536,6 +572,9 @@ public class TaskByServerSources  {
     public void setRemainSeconds(Long remainSeconds) {
         this.remainSeconds = remainSeconds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

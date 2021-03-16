@@ -73,6 +73,8 @@ public class ListAuditlogsResult  {
         this.nodeId = nodeId;
     }
 
+    
+
     public ListAuditlogsResult withId(String id) {
         this.id = id;
         return this;
@@ -92,6 +94,8 @@ public class ListAuditlogsResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListAuditlogsResult withName(String name) {
         this.name = name;
@@ -113,6 +117,8 @@ public class ListAuditlogsResult  {
         this.name = name;
     }
 
+    
+
     public ListAuditlogsResult withSize(Long size) {
         this.size = size;
         return this;
@@ -132,6 +138,8 @@ public class ListAuditlogsResult  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public ListAuditlogsResult withStartTime(String startTime) {
         this.startTime = startTime;
@@ -153,6 +161,8 @@ public class ListAuditlogsResult  {
         this.startTime = startTime;
     }
 
+    
+
     public ListAuditlogsResult withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -172,6 +182,9 @@ public class ListAuditlogsResult  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

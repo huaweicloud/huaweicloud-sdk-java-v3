@@ -30,55 +30,55 @@ public class OpExtraInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup")
     
-    private OpExtendInfoBckup backup = null;
+    private OpExtendInfoBckup backup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="common")
     
-    private OpExtendInfoCommon common = null;
+    private OpExtendInfoCommon common;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete")
     
-    private OpExtendInfoDelete delete = null;
+    private OpExtendInfoDelete delete;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync")
     
-    private OpExtendInfoSync sync = null;
+    private OpExtendInfoSync sync;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remove_resources")
     
-    private OpExtendInfoRemoveResources removeResources = null;
+    private OpExtendInfoRemoveResources removeResources;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    private OpExtendInfoReplication replication = null;
+    private OpExtendInfoReplication replication;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource")
     
-    private Resource resource = null;
+    private Resource resource;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore")
     
-    private OpExtendInfoRestore restore = null;
+    private OpExtendInfoRestore restore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vault_delete")
     
-    private OpExtendInfoVaultDelete vaultDelete = null;
+    private OpExtendInfoVaultDelete vaultDelete;
 
     public OpExtraInfo withBackup(OpExtendInfoBckup backup) {
         this.backup = backup;
@@ -107,6 +107,8 @@ public class OpExtraInfo  {
         this.backup = backup;
     }
 
+    
+
     public OpExtraInfo withCommon(OpExtendInfoCommon common) {
         this.common = common;
         return this;
@@ -133,6 +135,8 @@ public class OpExtraInfo  {
     public void setCommon(OpExtendInfoCommon common) {
         this.common = common;
     }
+
+    
 
     public OpExtraInfo withDelete(OpExtendInfoDelete delete) {
         this.delete = delete;
@@ -161,6 +165,8 @@ public class OpExtraInfo  {
         this.delete = delete;
     }
 
+    
+
     public OpExtraInfo withSync(OpExtendInfoSync sync) {
         this.sync = sync;
         return this;
@@ -187,6 +193,8 @@ public class OpExtraInfo  {
     public void setSync(OpExtendInfoSync sync) {
         this.sync = sync;
     }
+
+    
 
     public OpExtraInfo withRemoveResources(OpExtendInfoRemoveResources removeResources) {
         this.removeResources = removeResources;
@@ -215,6 +223,8 @@ public class OpExtraInfo  {
         this.removeResources = removeResources;
     }
 
+    
+
     public OpExtraInfo withReplication(OpExtendInfoReplication replication) {
         this.replication = replication;
         return this;
@@ -241,6 +251,8 @@ public class OpExtraInfo  {
     public void setReplication(OpExtendInfoReplication replication) {
         this.replication = replication;
     }
+
+    
 
     public OpExtraInfo withResource(Resource resource) {
         this.resource = resource;
@@ -269,6 +281,8 @@ public class OpExtraInfo  {
         this.resource = resource;
     }
 
+    
+
     public OpExtraInfo withRestore(OpExtendInfoRestore restore) {
         this.restore = restore;
         return this;
@@ -296,6 +310,8 @@ public class OpExtraInfo  {
         this.restore = restore;
     }
 
+    
+
     public OpExtraInfo withVaultDelete(OpExtendInfoVaultDelete vaultDelete) {
         this.vaultDelete = vaultDelete;
         return this;
@@ -322,6 +338,9 @@ public class OpExtraInfo  {
     public void setVaultDelete(OpExtendInfoVaultDelete vaultDelete) {
         this.vaultDelete = vaultDelete;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

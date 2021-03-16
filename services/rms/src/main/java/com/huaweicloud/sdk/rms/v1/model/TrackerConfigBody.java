@@ -23,13 +23,13 @@ public class TrackerConfigBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel")
     
-    private ChannelConfigBody channel = null;
+    private ChannelConfigBody channel;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="selector")
     
-    private SelectorConfigBody selector = null;
+    private SelectorConfigBody selector;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class TrackerConfigBody  {
         this.channel = channel;
     }
 
+    
+
     public TrackerConfigBody withSelector(SelectorConfigBody selector) {
         this.selector = selector;
         return this;
@@ -91,6 +93,8 @@ public class TrackerConfigBody  {
         this.selector = selector;
     }
 
+    
+
     public TrackerConfigBody withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -110,6 +114,9 @@ public class TrackerConfigBody  {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

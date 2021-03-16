@@ -42,6 +42,9 @@ public class ShowResetPasswordFlagRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

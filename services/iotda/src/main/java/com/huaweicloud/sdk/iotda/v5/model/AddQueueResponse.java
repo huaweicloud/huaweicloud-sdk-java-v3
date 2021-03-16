@@ -63,6 +63,8 @@ public class AddQueueResponse extends SdkResponse {
         this.queueId = queueId;
     }
 
+    
+
     public AddQueueResponse withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -82,6 +84,8 @@ public class AddQueueResponse extends SdkResponse {
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
+
+    
 
     public AddQueueResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -103,6 +107,8 @@ public class AddQueueResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public AddQueueResponse withLastModifyTime(String lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
         return this;
@@ -122,6 +128,9 @@ public class AddQueueResponse extends SdkResponse {
     public void setLastModifyTime(String lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

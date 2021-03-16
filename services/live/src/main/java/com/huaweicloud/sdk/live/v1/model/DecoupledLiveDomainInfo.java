@@ -355,13 +355,13 @@ public class DecoupledLiveDomainInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_source")
     
-    private DomainSourceInfo domainSource = null;
+    private DomainSourceInfo domainSource;
 
     public DecoupledLiveDomainInfo withDomain(String domain) {
         this.domain = domain;
@@ -383,6 +383,8 @@ public class DecoupledLiveDomainInfo  {
         this.domain = domain;
     }
 
+    
+
     public DecoupledLiveDomainInfo withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
@@ -402,6 +404,8 @@ public class DecoupledLiveDomainInfo  {
     public void setDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
     }
+
+    
 
     public DecoupledLiveDomainInfo withVendor(VendorEnum vendor) {
         this.vendor = vendor;
@@ -423,6 +427,8 @@ public class DecoupledLiveDomainInfo  {
         this.vendor = vendor;
     }
 
+    
+
     public DecoupledLiveDomainInfo withRegion(String region) {
         this.region = region;
         return this;
@@ -442,6 +448,8 @@ public class DecoupledLiveDomainInfo  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public DecoupledLiveDomainInfo withDomainCname(String domainCname) {
         this.domainCname = domainCname;
@@ -463,6 +471,8 @@ public class DecoupledLiveDomainInfo  {
         this.domainCname = domainCname;
     }
 
+    
+
     public DecoupledLiveDomainInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -482,6 +492,8 @@ public class DecoupledLiveDomainInfo  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public DecoupledLiveDomainInfo withRelatedDomain(String relatedDomain) {
         this.relatedDomain = relatedDomain;
@@ -503,6 +515,8 @@ public class DecoupledLiveDomainInfo  {
         this.relatedDomain = relatedDomain;
     }
 
+    
+
     public DecoupledLiveDomainInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -522,6 +536,8 @@ public class DecoupledLiveDomainInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public DecoupledLiveDomainInfo withDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
@@ -549,6 +565,9 @@ public class DecoupledLiveDomainInfo  {
     public void setDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

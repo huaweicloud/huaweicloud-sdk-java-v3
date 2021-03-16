@@ -47,7 +47,7 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paras")
     
-    private Object paras = null;
+    private Object paras;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,7 +65,7 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private Object result = null;
+    private Object result;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,6 +117,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
+    
+
     public ShowAsyncDeviceCommandResponse withCommandId(String commandId) {
         this.commandId = commandId;
         return this;
@@ -136,6 +138,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
+
+    
 
     public ShowAsyncDeviceCommandResponse withServiceId(String serviceId) {
         this.serviceId = serviceId;
@@ -157,6 +161,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
         this.serviceId = serviceId;
     }
 
+    
+
     public ShowAsyncDeviceCommandResponse withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
@@ -176,6 +182,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     public void setCommandName(String commandName) {
         this.commandName = commandName;
     }
+
+    
 
     public ShowAsyncDeviceCommandResponse withParas(Object paras) {
         this.paras = paras;
@@ -197,6 +205,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
         this.paras = paras;
     }
 
+    
+
     public ShowAsyncDeviceCommandResponse withExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -216,6 +226,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     public void setExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public ShowAsyncDeviceCommandResponse withStatus(String status) {
         this.status = status;
@@ -237,6 +249,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowAsyncDeviceCommandResponse withResult(Object result) {
         this.result = result;
         return this;
@@ -256,6 +270,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     public void setResult(Object result) {
         this.result = result;
     }
+
+    
 
     public ShowAsyncDeviceCommandResponse withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
@@ -277,6 +293,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
         this.createdTime = createdTime;
     }
 
+    
+
     public ShowAsyncDeviceCommandResponse withSentTime(String sentTime) {
         this.sentTime = sentTime;
         return this;
@@ -296,6 +314,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     public void setSentTime(String sentTime) {
         this.sentTime = sentTime;
     }
+
+    
 
     public ShowAsyncDeviceCommandResponse withDeliveredTime(String deliveredTime) {
         this.deliveredTime = deliveredTime;
@@ -317,6 +337,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
         this.deliveredTime = deliveredTime;
     }
 
+    
+
     public ShowAsyncDeviceCommandResponse withSendStrategy(String sendStrategy) {
         this.sendStrategy = sendStrategy;
         return this;
@@ -337,6 +359,8 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
         this.sendStrategy = sendStrategy;
     }
 
+    
+
     public ShowAsyncDeviceCommandResponse withResponseTime(String responseTime) {
         this.responseTime = responseTime;
         return this;
@@ -356,6 +380,9 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     public void setResponseTime(String responseTime) {
         this.responseTime = responseTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

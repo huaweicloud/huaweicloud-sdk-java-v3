@@ -55,6 +55,8 @@ public class DeleteSourceRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteSourceRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -74,6 +76,8 @@ public class DeleteSourceRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public DeleteSourceRequest withSourceId(Integer sourceId) {
         this.sourceId = sourceId;
@@ -96,6 +100,9 @@ public class DeleteSourceRequest  {
     public void setSourceId(Integer sourceId) {
         this.sourceId = sourceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

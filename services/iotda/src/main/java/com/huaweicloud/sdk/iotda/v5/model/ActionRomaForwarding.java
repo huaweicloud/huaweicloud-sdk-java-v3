@@ -55,6 +55,8 @@ public class ActionRomaForwarding  {
         this.regionName = regionName;
     }
 
+    
+
     public ActionRomaForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -75,6 +77,8 @@ public class ActionRomaForwarding  {
         this.projectId = projectId;
     }
 
+    
+
     public ActionRomaForwarding withRomaPushType(String romaPushType) {
         this.romaPushType = romaPushType;
         return this;
@@ -94,6 +98,9 @@ public class ActionRomaForwarding  {
     public void setRomaPushType(String romaPushType) {
         this.romaPushType = romaPushType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ResizeInstanceReq  {
         this.newSpecCode = newSpecCode;
     }
 
+    
+
     public ResizeInstanceReq withNewStorageSpace(Integer newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
         return this;
@@ -68,6 +70,9 @@ public class ResizeInstanceReq  {
     public void setNewStorageSpace(Integer newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

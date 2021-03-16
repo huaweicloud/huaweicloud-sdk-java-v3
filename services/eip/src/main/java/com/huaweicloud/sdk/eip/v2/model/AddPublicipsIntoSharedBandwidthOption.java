@@ -24,7 +24,7 @@ public class AddPublicipsIntoSharedBandwidthOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip_info")
     
-    private List<InsertPublicipInfo> publicipInfo = new ArrayList<>();
+    private List<InsertPublicipInfo> publicipInfo = null;
     
     public AddPublicipsIntoSharedBandwidthOption withPublicipInfo(List<InsertPublicipInfo> publicipInfo) {
         this.publicipInfo = publicipInfo;
@@ -56,6 +56,9 @@ public class AddPublicipsIntoSharedBandwidthOption  {
     public void setPublicipInfo(List<InsertPublicipInfo> publicipInfo) {
         this.publicipInfo = publicipInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

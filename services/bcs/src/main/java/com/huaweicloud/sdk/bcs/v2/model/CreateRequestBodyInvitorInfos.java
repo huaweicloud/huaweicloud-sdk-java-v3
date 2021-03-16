@@ -55,6 +55,8 @@ public class CreateRequestBodyInvitorInfos  {
         this.tenantId = tenantId;
     }
 
+    
+
     public CreateRequestBodyInvitorInfos withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -75,6 +77,8 @@ public class CreateRequestBodyInvitorInfos  {
         this.projectId = projectId;
     }
 
+    
+
     public CreateRequestBodyInvitorInfos withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
         return this;
@@ -94,6 +98,9 @@ public class CreateRequestBodyInvitorInfos  {
     public void setBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class ListJobInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job")
     
-    private GetJobInfoResponseBodyJob job = null;
+    private GetJobInfoResponseBodyJob job;
 
     public ListJobInfoResponse withJob(GetJobInfoResponseBodyJob job) {
         this.job = job;
@@ -52,6 +52,9 @@ public class ListJobInfoResponse extends SdkResponse {
     public void setJob(GetJobInfoResponseBodyJob job) {
         this.job = job;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

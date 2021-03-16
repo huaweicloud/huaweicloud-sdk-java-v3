@@ -9,6 +9,8 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -264,6 +266,96 @@ public class QualityEnhance  {
     @JsonProperty(value="sdr_to_hdr")
     
     private SdrToHdrEnum sdrToHdr;
+    /**
+     * 视频增强模式。取值范围： - REGENERATION - CONVERSION_SDR - CONVERSION_HDR 
+     */
+    public static final class VideoEnhanceEnum {
+
+        
+        /**
+         * Enum REGENERATION for value: "REGENERATION"
+         */
+        public static final VideoEnhanceEnum REGENERATION = new VideoEnhanceEnum("REGENERATION");
+        
+        /**
+         * Enum CONVERSION_SDR for value: "CONVERSION_SDR"
+         */
+        public static final VideoEnhanceEnum CONVERSION_SDR = new VideoEnhanceEnum("CONVERSION_SDR");
+        
+        /**
+         * Enum CONVERSION_HDR for value: "CONVERSION_HDR"
+         */
+        public static final VideoEnhanceEnum CONVERSION_HDR = new VideoEnhanceEnum("CONVERSION_HDR");
+        
+
+        private static final Map<String, VideoEnhanceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VideoEnhanceEnum> createStaticFields() {
+            Map<String, VideoEnhanceEnum> map = new HashMap<>();
+            map.put("REGENERATION", REGENERATION);
+            map.put("CONVERSION_SDR", CONVERSION_SDR);
+            map.put("CONVERSION_HDR", CONVERSION_HDR);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VideoEnhanceEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VideoEnhanceEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            VideoEnhanceEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new VideoEnhanceEnum(value);
+            }
+            return result;
+        }
+
+        public static VideoEnhanceEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            VideoEnhanceEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof VideoEnhanceEnum) {
+                return this.value.equals(((VideoEnhanceEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="video_enhance")
+    
+    private VideoEnhanceEnum videoEnhance;
 
     public QualityEnhance withNormalEnhance(NormalEnhanceEnum normalEnhance) {
         this.normalEnhance = normalEnhance;
@@ -285,6 +377,8 @@ public class QualityEnhance  {
         this.normalEnhance = normalEnhance;
     }
 
+    
+
     public QualityEnhance withRevive(ReviveEnum revive) {
         this.revive = revive;
         return this;
@@ -305,6 +399,8 @@ public class QualityEnhance  {
         this.revive = revive;
     }
 
+    
+
     public QualityEnhance withSdrToHdr(SdrToHdrEnum sdrToHdr) {
         this.sdrToHdr = sdrToHdr;
         return this;
@@ -324,6 +420,31 @@ public class QualityEnhance  {
     public void setSdrToHdr(SdrToHdrEnum sdrToHdr) {
         this.sdrToHdr = sdrToHdr;
     }
+
+    
+
+    public QualityEnhance withVideoEnhance(VideoEnhanceEnum videoEnhance) {
+        this.videoEnhance = videoEnhance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 视频增强模式。取值范围： - REGENERATION - CONVERSION_SDR - CONVERSION_HDR 
+     * @return videoEnhance
+     */
+    public VideoEnhanceEnum getVideoEnhance() {
+        return videoEnhance;
+    }
+
+    public void setVideoEnhance(VideoEnhanceEnum videoEnhance) {
+        this.videoEnhance = videoEnhance;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -335,11 +456,12 @@ public class QualityEnhance  {
         QualityEnhance qualityEnhance = (QualityEnhance) o;
         return Objects.equals(this.normalEnhance, qualityEnhance.normalEnhance) &&
             Objects.equals(this.revive, qualityEnhance.revive) &&
-            Objects.equals(this.sdrToHdr, qualityEnhance.sdrToHdr);
+            Objects.equals(this.sdrToHdr, qualityEnhance.sdrToHdr) &&
+            Objects.equals(this.videoEnhance, qualityEnhance.videoEnhance);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(normalEnhance, revive, sdrToHdr);
+        return Objects.hash(normalEnhance, revive, sdrToHdr, videoEnhance);
     }
     @Override
     public String toString() {
@@ -348,6 +470,7 @@ public class QualityEnhance  {
         sb.append("    normalEnhance: ").append(toIndentedString(normalEnhance)).append("\n");
         sb.append("    revive: ").append(toIndentedString(revive)).append("\n");
         sb.append("    sdrToHdr: ").append(toIndentedString(sdrToHdr)).append("\n");
+        sb.append("    videoEnhance: ").append(toIndentedString(videoEnhance)).append("\n");
         sb.append("}");
         return sb.toString();
     }

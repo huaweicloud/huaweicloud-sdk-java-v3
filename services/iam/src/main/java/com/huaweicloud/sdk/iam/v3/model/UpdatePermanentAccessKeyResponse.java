@@ -24,7 +24,7 @@ public class UpdatePermanentAccessKeyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credential")
     
-    private UpdateCredentialResult credential = null;
+    private UpdateCredentialResult credential;
 
     public UpdatePermanentAccessKeyResponse withCredential(UpdateCredentialResult credential) {
         this.credential = credential;
@@ -52,6 +52,9 @@ public class UpdatePermanentAccessKeyResponse extends SdkResponse {
     public void setCredential(UpdateCredentialResult credential) {
         this.credential = credential;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

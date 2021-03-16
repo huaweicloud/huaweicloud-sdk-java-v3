@@ -24,7 +24,7 @@ public class BatchUpdateSrcUserReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<UpdateUserReq> jobs = new ArrayList<>();
+    private List<UpdateUserReq> jobs = null;
     
     public BatchUpdateSrcUserReq withJobs(List<UpdateUserReq> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchUpdateSrcUserReq  {
     public void setJobs(List<UpdateUserReq> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

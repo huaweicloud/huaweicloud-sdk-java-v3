@@ -48,9 +48,6 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
 
     
     public ShowResourceBindEnterpriseProjectResponse addResourcesItem(Resources resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -75,6 +72,8 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
         this.resources = resources;
     }
 
+    
+
     public ShowResourceBindEnterpriseProjectResponse withErrors(List<Errors> errors) {
         this.errors = errors;
         return this;
@@ -82,9 +81,6 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
 
     
     public ShowResourceBindEnterpriseProjectResponse addErrorsItem(Errors errorsItem) {
-        if (this.errors == null) {
-            this.errors = new ArrayList<>();
-        }
         this.errors.add(errorsItem);
         return this;
     }
@@ -109,6 +105,8 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
         this.errors = errors;
     }
 
+    
+
     public ShowResourceBindEnterpriseProjectResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -128,6 +126,9 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,13 +24,13 @@ public class ScopedTokenIdentity  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<String> methods = new ArrayList<>();
+    private List<String> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="token")
     
-    private ScopedToken token = null;
+    private ScopedToken token;
 
     public ScopedTokenIdentity withMethods(List<String> methods) {
         this.methods = methods;
@@ -63,6 +63,8 @@ public class ScopedTokenIdentity  {
         this.methods = methods;
     }
 
+    
+
     public ScopedTokenIdentity withToken(ScopedToken token) {
         this.token = token;
         return this;
@@ -89,6 +91,9 @@ public class ScopedTokenIdentity  {
     public void setToken(ScopedToken token) {
         this.token = token;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

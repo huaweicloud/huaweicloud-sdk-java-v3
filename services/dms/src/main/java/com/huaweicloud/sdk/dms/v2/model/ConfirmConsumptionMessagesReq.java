@@ -33,9 +33,6 @@ public class ConfirmConsumptionMessagesReq  {
 
     
     public ConfirmConsumptionMessagesReq addMessageItem(ConfirmDeadLettersMessagesReqMessage messageItem) {
-        if (this.message == null) {
-            this.message = new ArrayList<>();
-        }
         this.message.add(messageItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ConfirmConsumptionMessagesReq  {
     public void setMessage(List<ConfirmDeadLettersMessagesReqMessage> message) {
         this.message = message;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

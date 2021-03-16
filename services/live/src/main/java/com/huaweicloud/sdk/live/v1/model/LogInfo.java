@@ -67,6 +67,8 @@ public class LogInfo  {
         this.name = name;
     }
 
+    
+
     public LogInfo withUrl(String url) {
         this.url = url;
         return this;
@@ -86,6 +88,8 @@ public class LogInfo  {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
 
     public LogInfo withSize(Long size) {
         this.size = size;
@@ -108,6 +112,8 @@ public class LogInfo  {
         this.size = size;
     }
 
+    
+
     public LogInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -128,6 +134,8 @@ public class LogInfo  {
         this.startTime = startTime;
     }
 
+    
+
     public LogInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -147,6 +155,9 @@ public class LogInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

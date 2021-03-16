@@ -22,7 +22,7 @@ public class BatchDeleteScalingConfigsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteScalingConfigsRequestBody body = null;
+    private BatchDeleteScalingConfigsRequestBody body;
 
     public BatchDeleteScalingConfigsRequest withBody(BatchDeleteScalingConfigsRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchDeleteScalingConfigsRequest  {
     public void setBody(BatchDeleteScalingConfigsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

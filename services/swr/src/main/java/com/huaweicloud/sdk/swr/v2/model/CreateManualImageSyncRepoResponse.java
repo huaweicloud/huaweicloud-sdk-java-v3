@@ -34,9 +34,6 @@ public class CreateManualImageSyncRepoResponse extends SdkResponse {
 
     
     public CreateManualImageSyncRepoResponse addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class CreateManualImageSyncRepoResponse extends SdkResponse {
     public void setBody(List<String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

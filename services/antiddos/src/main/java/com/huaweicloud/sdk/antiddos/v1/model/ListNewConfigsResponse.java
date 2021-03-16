@@ -56,9 +56,6 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addTrafficLimitedListItem(TriggerBpsDict trafficLimitedListItem) {
-        if (this.trafficLimitedList == null) {
-            this.trafficLimitedList = new ArrayList<>();
-        }
         this.trafficLimitedList.add(trafficLimitedListItem);
         return this;
     }
@@ -83,6 +80,8 @@ public class ListNewConfigsResponse extends SdkResponse {
         this.trafficLimitedList = trafficLimitedList;
     }
 
+    
+
     public ListNewConfigsResponse withHttpLimitedList(List<TriggerQpsDict> httpLimitedList) {
         this.httpLimitedList = httpLimitedList;
         return this;
@@ -90,9 +89,6 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addHttpLimitedListItem(TriggerQpsDict httpLimitedListItem) {
-        if (this.httpLimitedList == null) {
-            this.httpLimitedList = new ArrayList<>();
-        }
         this.httpLimitedList.add(httpLimitedListItem);
         return this;
     }
@@ -117,6 +113,8 @@ public class ListNewConfigsResponse extends SdkResponse {
         this.httpLimitedList = httpLimitedList;
     }
 
+    
+
     public ListNewConfigsResponse withConnectionLimitedList(List<CleanLimitDict> connectionLimitedList) {
         this.connectionLimitedList = connectionLimitedList;
         return this;
@@ -124,9 +122,6 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addConnectionLimitedListItem(CleanLimitDict connectionLimitedListItem) {
-        if (this.connectionLimitedList == null) {
-            this.connectionLimitedList = new ArrayList<>();
-        }
         this.connectionLimitedList.add(connectionLimitedListItem);
         return this;
     }
@@ -151,6 +146,8 @@ public class ListNewConfigsResponse extends SdkResponse {
         this.connectionLimitedList = connectionLimitedList;
     }
 
+    
+
     public ListNewConfigsResponse withExtendDdosConfig(List<ExtendDDoSSet> extendDdosConfig) {
         this.extendDdosConfig = extendDdosConfig;
         return this;
@@ -158,9 +155,6 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addExtendDdosConfigItem(ExtendDDoSSet extendDdosConfigItem) {
-        if (this.extendDdosConfig == null) {
-            this.extendDdosConfig = new ArrayList<>();
-        }
         this.extendDdosConfig.add(extendDdosConfigItem);
         return this;
     }
@@ -184,6 +178,9 @@ public class ListNewConfigsResponse extends SdkResponse {
     public void setExtendDdosConfig(List<ExtendDDoSSet> extendDdosConfig) {
         this.extendDdosConfig = extendDdosConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

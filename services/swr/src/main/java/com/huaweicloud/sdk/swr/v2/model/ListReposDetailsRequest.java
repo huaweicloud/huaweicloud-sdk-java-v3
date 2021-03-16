@@ -61,6 +61,8 @@ public class ListReposDetailsRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ListReposDetailsRequest withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class ListReposDetailsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListReposDetailsRequest withCategory(String category) {
         this.category = category;
@@ -101,6 +105,8 @@ public class ListReposDetailsRequest  {
         this.category = category;
     }
 
+    
+
     public ListReposDetailsRequest withFilter(String filter) {
         this.filter = filter;
         return this;
@@ -120,6 +126,9 @@ public class ListReposDetailsRequest  {
     public void setFilter(String filter) {
         this.filter = filter;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

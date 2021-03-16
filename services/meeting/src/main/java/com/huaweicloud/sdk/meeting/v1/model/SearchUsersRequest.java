@@ -45,7 +45,7 @@ public class SearchUsersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -201,6 +201,8 @@ public class SearchUsersRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchUsersRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -221,6 +223,8 @@ public class SearchUsersRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public SearchUsersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -240,6 +244,8 @@ public class SearchUsersRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchUsersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -263,6 +269,8 @@ public class SearchUsersRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchUsersRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -282,6 +290,8 @@ public class SearchUsersRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public SearchUsersRequest withSortField(String sortField) {
         this.sortField = sortField;
@@ -303,6 +313,8 @@ public class SearchUsersRequest  {
         this.sortField = sortField;
     }
 
+    
+
     public SearchUsersRequest withIsAsc(Boolean isAsc) {
         this.isAsc = isAsc;
         return this;
@@ -322,6 +334,8 @@ public class SearchUsersRequest  {
     public void setIsAsc(Boolean isAsc) {
         this.isAsc = isAsc;
     }
+
+    
 
     public SearchUsersRequest withDeptCode(String deptCode) {
         this.deptCode = deptCode;
@@ -343,6 +357,8 @@ public class SearchUsersRequest  {
         this.deptCode = deptCode;
     }
 
+    
+
     public SearchUsersRequest withEnableSubDept(Boolean enableSubDept) {
         this.enableSubDept = enableSubDept;
         return this;
@@ -362,6 +378,8 @@ public class SearchUsersRequest  {
     public void setEnableSubDept(Boolean enableSubDept) {
         this.enableSubDept = enableSubDept;
     }
+
+    
 
     public SearchUsersRequest withAdminType(AdminTypeEnum adminType) {
         this.adminType = adminType;
@@ -383,6 +401,8 @@ public class SearchUsersRequest  {
         this.adminType = adminType;
     }
 
+    
+
     public SearchUsersRequest withEnableRoom(Boolean enableRoom) {
         this.enableRoom = enableRoom;
         return this;
@@ -403,6 +423,8 @@ public class SearchUsersRequest  {
         this.enableRoom = enableRoom;
     }
 
+    
+
     public SearchUsersRequest withUserType(List<Integer> userType) {
         this.userType = userType;
         return this;
@@ -410,9 +432,6 @@ public class SearchUsersRequest  {
 
     
     public SearchUsersRequest addUserTypeItem(Integer userTypeItem) {
-        if (this.userType == null) {
-            this.userType = new ArrayList<>();
-        }
         this.userType.add(userTypeItem);
         return this;
     }
@@ -437,6 +456,8 @@ public class SearchUsersRequest  {
         this.userType = userType;
     }
 
+    
+
     public SearchUsersRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -456,6 +477,9 @@ public class SearchUsersRequest  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class AssociateAppsForAppQuotaRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAppQuotaBindingApp body = null;
+    private CreateAppQuotaBindingApp body;
 
     public AssociateAppsForAppQuotaRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class AssociateAppsForAppQuotaRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public AssociateAppsForAppQuotaRequest withAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
         return this;
@@ -75,6 +77,8 @@ public class AssociateAppsForAppQuotaRequest  {
     public void setAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
     }
+
+    
 
     public AssociateAppsForAppQuotaRequest withBody(CreateAppQuotaBindingApp body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class AssociateAppsForAppQuotaRequest  {
     public void setBody(CreateAppQuotaBindingApp body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

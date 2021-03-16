@@ -106,6 +106,8 @@ public class ListProductsRespDetail  {
         this.tps = tps;
     }
 
+    
+
     public ListProductsRespDetail withStorage(String storage) {
         this.storage = storage;
         return this;
@@ -125,6 +127,8 @@ public class ListProductsRespDetail  {
     public void setStorage(String storage) {
         this.storage = storage;
     }
+
+    
 
     public ListProductsRespDetail withPartitionNum(String partitionNum) {
         this.partitionNum = partitionNum;
@@ -146,6 +150,8 @@ public class ListProductsRespDetail  {
         this.partitionNum = partitionNum;
     }
 
+    
+
     public ListProductsRespDetail withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -165,6 +171,8 @@ public class ListProductsRespDetail  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public ListProductsRespDetail withSpecCode(String specCode) {
         this.specCode = specCode;
@@ -186,6 +194,8 @@ public class ListProductsRespDetail  {
         this.specCode = specCode;
     }
 
+    
+
     public ListProductsRespDetail withIo(List<ListProductsRespIo> io) {
         this.io = io;
         return this;
@@ -193,9 +203,6 @@ public class ListProductsRespDetail  {
 
     
     public ListProductsRespDetail addIoItem(ListProductsRespIo ioItem) {
-        if (this.io == null) {
-            this.io = new ArrayList<>();
-        }
         this.io.add(ioItem);
         return this;
     }
@@ -220,6 +227,8 @@ public class ListProductsRespDetail  {
         this.io = io;
     }
 
+    
+
     public ListProductsRespDetail withBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
         return this;
@@ -240,6 +249,8 @@ public class ListProductsRespDetail  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public ListProductsRespDetail withUnavailableZones(List<String> unavailableZones) {
         this.unavailableZones = unavailableZones;
         return this;
@@ -247,9 +258,6 @@ public class ListProductsRespDetail  {
 
     
     public ListProductsRespDetail addUnavailableZonesItem(String unavailableZonesItem) {
-        if (this.unavailableZones == null) {
-            this.unavailableZones = new ArrayList<>();
-        }
         this.unavailableZones.add(unavailableZonesItem);
         return this;
     }
@@ -274,6 +282,8 @@ public class ListProductsRespDetail  {
         this.unavailableZones = unavailableZones;
     }
 
+    
+
     public ListProductsRespDetail withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -281,9 +291,6 @@ public class ListProductsRespDetail  {
 
     
     public ListProductsRespDetail addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -308,6 +315,8 @@ public class ListProductsRespDetail  {
         this.availableZones = availableZones;
     }
 
+    
+
     public ListProductsRespDetail withEcsFlavorId(String ecsFlavorId) {
         this.ecsFlavorId = ecsFlavorId;
         return this;
@@ -328,6 +337,8 @@ public class ListProductsRespDetail  {
         this.ecsFlavorId = ecsFlavorId;
     }
 
+    
+
     public ListProductsRespDetail withArchType(String archType) {
         this.archType = archType;
         return this;
@@ -347,6 +358,9 @@ public class ListProductsRespDetail  {
     public void setArchType(String archType) {
         this.archType = archType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -29,13 +29,13 @@ public class ListTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListTemplateRequest withTemplateId(List<Integer> templateId) {
         this.templateId = templateId;
@@ -44,9 +44,6 @@ public class ListTemplateRequest  {
 
     
     public ListTemplateRequest addTemplateIdItem(Integer templateIdItem) {
-        if (this.templateId == null) {
-            this.templateId = new ArrayList<>();
-        }
         this.templateId.add(templateIdItem);
         return this;
     }
@@ -71,6 +68,8 @@ public class ListTemplateRequest  {
         this.templateId = templateId;
     }
 
+    
+
     public ListTemplateRequest withPage(Integer page) {
         this.page = page;
         return this;
@@ -93,6 +92,8 @@ public class ListTemplateRequest  {
         this.page = page;
     }
 
+    
+
     public ListTemplateRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -114,6 +115,9 @@ public class ListTemplateRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

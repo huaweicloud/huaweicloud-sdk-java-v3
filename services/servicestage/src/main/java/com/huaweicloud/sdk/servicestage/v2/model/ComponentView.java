@@ -43,19 +43,19 @@ public class ComponentView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="runtime")
     
-    private RuntimeType runtime = null;
+    private RuntimeType runtime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category")
     
-    private ComponentCategory category = null;
+    private ComponentCategory category;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_category")
     
-    private ComponentSubCategory subCategory = null;
+    private ComponentSubCategory subCategory;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,7 +73,7 @@ public class ComponentView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    private SourceObject source = null;
+    private SourceObject source;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -113,6 +113,8 @@ public class ComponentView  {
         this.id = id;
     }
 
+    
+
     public ComponentView withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
@@ -132,6 +134,8 @@ public class ComponentView  {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
 
     public ComponentView withName(String name) {
         this.name = name;
@@ -153,6 +157,8 @@ public class ComponentView  {
         this.name = name;
     }
 
+    
+
     public ComponentView withRuntime(RuntimeType runtime) {
         this.runtime = runtime;
         return this;
@@ -172,6 +178,8 @@ public class ComponentView  {
     public void setRuntime(RuntimeType runtime) {
         this.runtime = runtime;
     }
+
+    
 
     public ComponentView withCategory(ComponentCategory category) {
         this.category = category;
@@ -193,6 +201,8 @@ public class ComponentView  {
         this.category = category;
     }
 
+    
+
     public ComponentView withSubCategory(ComponentSubCategory subCategory) {
         this.subCategory = subCategory;
         return this;
@@ -212,6 +222,8 @@ public class ComponentView  {
     public void setSubCategory(ComponentSubCategory subCategory) {
         this.subCategory = subCategory;
     }
+
+    
 
     public ComponentView withDescription(String description) {
         this.description = description;
@@ -233,6 +245,8 @@ public class ComponentView  {
         this.description = description;
     }
 
+    
+
     public ComponentView withStatus(Integer status) {
         this.status = status;
         return this;
@@ -252,6 +266,8 @@ public class ComponentView  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public ComponentView withSource(SourceObject source) {
         this.source = source;
@@ -280,6 +296,8 @@ public class ComponentView  {
         this.source = source;
     }
 
+    
+
     public ComponentView withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -299,6 +317,8 @@ public class ComponentView  {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    
 
     public ComponentView withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -320,6 +340,8 @@ public class ComponentView  {
         this.createTime = createTime;
     }
 
+    
+
     public ComponentView withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -339,6 +361,9 @@ public class ComponentView  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

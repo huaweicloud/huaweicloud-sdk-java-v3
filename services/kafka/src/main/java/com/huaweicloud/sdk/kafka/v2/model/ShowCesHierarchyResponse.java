@@ -62,9 +62,6 @@ public class ShowCesHierarchyResponse extends SdkResponse {
 
     
     public ShowCesHierarchyResponse addDimensionsItem(ShowCeshierarchyRespDimensions dimensionsItem) {
-        if (this.dimensions == null) {
-            this.dimensions = new ArrayList<>();
-        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
@@ -89,6 +86,8 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.dimensions = dimensions;
     }
 
+    
+
     public ShowCesHierarchyResponse withInstanceIds(List<ShowCeshierarchyRespInstanceIds> instanceIds) {
         this.instanceIds = instanceIds;
         return this;
@@ -96,9 +95,6 @@ public class ShowCesHierarchyResponse extends SdkResponse {
 
     
     public ShowCesHierarchyResponse addInstanceIdsItem(ShowCeshierarchyRespInstanceIds instanceIdsItem) {
-        if (this.instanceIds == null) {
-            this.instanceIds = new ArrayList<>();
-        }
         this.instanceIds.add(instanceIdsItem);
         return this;
     }
@@ -123,6 +119,8 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.instanceIds = instanceIds;
     }
 
+    
+
     public ShowCesHierarchyResponse withNodes(List<ShowCeshierarchyRespNodes> nodes) {
         this.nodes = nodes;
         return this;
@@ -130,9 +128,6 @@ public class ShowCesHierarchyResponse extends SdkResponse {
 
     
     public ShowCesHierarchyResponse addNodesItem(ShowCeshierarchyRespNodes nodesItem) {
-        if (this.nodes == null) {
-            this.nodes = new ArrayList<>();
-        }
         this.nodes.add(nodesItem);
         return this;
     }
@@ -157,6 +152,8 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.nodes = nodes;
     }
 
+    
+
     public ShowCesHierarchyResponse withQueues(List<ShowCeshierarchyRespQueues> queues) {
         this.queues = queues;
         return this;
@@ -164,9 +161,6 @@ public class ShowCesHierarchyResponse extends SdkResponse {
 
     
     public ShowCesHierarchyResponse addQueuesItem(ShowCeshierarchyRespQueues queuesItem) {
-        if (this.queues == null) {
-            this.queues = new ArrayList<>();
-        }
         this.queues.add(queuesItem);
         return this;
     }
@@ -191,6 +185,8 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.queues = queues;
     }
 
+    
+
     public ShowCesHierarchyResponse withGroups(List<String> groups) {
         this.groups = groups;
         return this;
@@ -198,9 +194,6 @@ public class ShowCesHierarchyResponse extends SdkResponse {
 
     
     public ShowCesHierarchyResponse addGroupsItem(String groupsItem) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
         this.groups.add(groupsItem);
         return this;
     }
@@ -224,6 +217,9 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     public void setGroups(List<String> groups) {
         this.groups = groups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class CreateServersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private PrePaidServer server = null;
+    private PrePaidServer server;
 
     public CreateServersRequestBody withDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
@@ -49,6 +49,8 @@ public class CreateServersRequestBody  {
     public void setDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
     }
+
+    
 
     public CreateServersRequestBody withServer(PrePaidServer server) {
         this.server = server;
@@ -76,6 +78,9 @@ public class CreateServersRequestBody  {
     public void setServer(PrePaidServer server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

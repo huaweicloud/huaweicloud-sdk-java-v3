@@ -112,7 +112,7 @@ public class BatchOperateInstanceTagRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<TagItem> tags = new ArrayList<>();
+    private List<TagItem> tags = null;
     
     public BatchOperateInstanceTagRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -133,6 +133,8 @@ public class BatchOperateInstanceTagRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public BatchOperateInstanceTagRequestBody withTags(List<TagItem> tags) {
         this.tags = tags;
@@ -164,6 +166,9 @@ public class BatchOperateInstanceTagRequestBody  {
     public void setTags(List<TagItem> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

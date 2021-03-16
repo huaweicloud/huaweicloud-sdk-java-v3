@@ -22,7 +22,7 @@ public class UpdatePoolRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool")
     
-    private UpdatePoolOption pool = null;
+    private UpdatePoolOption pool;
 
     public UpdatePoolRequestBody withPool(UpdatePoolOption pool) {
         this.pool = pool;
@@ -50,6 +50,9 @@ public class UpdatePoolRequestBody  {
     public void setPool(UpdatePoolOption pool) {
         this.pool = pool;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

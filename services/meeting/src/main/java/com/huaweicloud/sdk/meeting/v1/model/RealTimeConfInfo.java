@@ -42,6 +42,9 @@ public class RealTimeConfInfo  {
     public void setChairID(String chairID) {
         this.chairID = chairID;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

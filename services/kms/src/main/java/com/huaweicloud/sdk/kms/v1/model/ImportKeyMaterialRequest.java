@@ -22,13 +22,13 @@ public class ImportKeyMaterialRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ImportKeyMaterialRequestBody body = null;
+    private ImportKeyMaterialRequestBody body;
 
     public ImportKeyMaterialRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class ImportKeyMaterialRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public ImportKeyMaterialRequest withBody(ImportKeyMaterialRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ImportKeyMaterialRequest  {
     public void setBody(ImportKeyMaterialRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

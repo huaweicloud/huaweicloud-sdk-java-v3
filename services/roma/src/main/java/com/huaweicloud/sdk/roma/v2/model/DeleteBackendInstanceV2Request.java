@@ -55,6 +55,8 @@ public class DeleteBackendInstanceV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteBackendInstanceV2Request withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteBackendInstanceV2Request  {
         this.vpcChannelId = vpcChannelId;
     }
 
+    
+
     public DeleteBackendInstanceV2Request withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteBackendInstanceV2Request  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

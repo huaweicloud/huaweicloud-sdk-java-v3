@@ -56,6 +56,8 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListHistoryOperateLogsResponse withOpsList(List<OperateLog> opsList) {
         this.opsList = opsList;
         return this;
@@ -63,9 +65,6 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
 
     
     public ListHistoryOperateLogsResponse addOpsListItem(OperateLog opsListItem) {
-        if (this.opsList == null) {
-            this.opsList = new ArrayList<>();
-        }
         this.opsList.add(opsListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
     public void setOpsList(List<OperateLog> opsList) {
         this.opsList = opsList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

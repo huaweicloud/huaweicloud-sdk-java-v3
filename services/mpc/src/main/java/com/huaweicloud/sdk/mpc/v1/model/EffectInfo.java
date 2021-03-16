@@ -73,6 +73,8 @@ public class EffectInfo  {
         this.startTime = startTime;
     }
 
+    
+
     public EffectInfo withStopTime(String stopTime) {
         this.stopTime = stopTime;
         return this;
@@ -92,6 +94,8 @@ public class EffectInfo  {
     public void setStopTime(String stopTime) {
         this.stopTime = stopTime;
     }
+
+    
 
     public EffectInfo withDx(String dx) {
         this.dx = dx;
@@ -113,6 +117,8 @@ public class EffectInfo  {
         this.dx = dx;
     }
 
+    
+
     public EffectInfo withDy(String dy) {
         this.dy = dy;
         return this;
@@ -132,6 +138,8 @@ public class EffectInfo  {
     public void setDy(String dy) {
         this.dy = dy;
     }
+
+    
 
     public EffectInfo withWidth(String width) {
         this.width = width;
@@ -153,6 +161,8 @@ public class EffectInfo  {
         this.width = width;
     }
 
+    
+
     public EffectInfo withHeight(String height) {
         this.height = height;
         return this;
@@ -172,6 +182,9 @@ public class EffectInfo  {
     public void setHeight(String height) {
         this.height = height;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

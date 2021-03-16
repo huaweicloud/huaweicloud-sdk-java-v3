@@ -22,7 +22,7 @@ public class AddServerGroupMemberRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_member")
     
-    private ServerGroupMember addMember = null;
+    private ServerGroupMember addMember;
 
     public AddServerGroupMemberRequestBody withAddMember(ServerGroupMember addMember) {
         this.addMember = addMember;
@@ -50,6 +50,9 @@ public class AddServerGroupMemberRequestBody  {
     public void setAddMember(ServerGroupMember addMember) {
         this.addMember = addMember;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

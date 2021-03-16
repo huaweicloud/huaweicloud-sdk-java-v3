@@ -34,7 +34,7 @@ public class ConfirmDeadLettersMessagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ConfirmDeadLettersMessagesReq body = null;
+    private ConfirmDeadLettersMessagesReq body;
 
     public ConfirmDeadLettersMessagesRequest withQueueId(String queueId) {
         this.queueId = queueId;
@@ -56,6 +56,8 @@ public class ConfirmDeadLettersMessagesRequest  {
         this.queueId = queueId;
     }
 
+    
+
     public ConfirmDeadLettersMessagesRequest withConsumerGroupId(String consumerGroupId) {
         this.consumerGroupId = consumerGroupId;
         return this;
@@ -75,6 +77,8 @@ public class ConfirmDeadLettersMessagesRequest  {
     public void setConsumerGroupId(String consumerGroupId) {
         this.consumerGroupId = consumerGroupId;
     }
+
+    
 
     public ConfirmDeadLettersMessagesRequest withBody(ConfirmDeadLettersMessagesReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ConfirmDeadLettersMessagesRequest  {
     public void setBody(ConfirmDeadLettersMessagesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

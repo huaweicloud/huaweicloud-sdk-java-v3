@@ -21,7 +21,7 @@ public class ModifyAlarmActionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_enabled")
     
-    private Boolean alarmEnabled = false;
+    private Boolean alarmEnabled;
 
     public ModifyAlarmActionReq withAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
@@ -42,6 +42,9 @@ public class ModifyAlarmActionReq  {
     public void setAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

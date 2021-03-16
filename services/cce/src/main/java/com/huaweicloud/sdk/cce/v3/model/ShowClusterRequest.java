@@ -55,6 +55,8 @@ public class ShowClusterRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public ShowClusterRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -75,6 +77,8 @@ public class ShowClusterRequest  {
         this.errorStatus = errorStatus;
     }
 
+    
+
     public ShowClusterRequest withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -94,6 +98,9 @@ public class ShowClusterRequest  {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

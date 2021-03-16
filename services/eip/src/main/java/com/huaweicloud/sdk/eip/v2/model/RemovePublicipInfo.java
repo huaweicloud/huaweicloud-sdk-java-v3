@@ -49,6 +49,8 @@ public class RemovePublicipInfo  {
         this.publicipType = publicipType;
     }
 
+    
+
     public RemovePublicipInfo withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -68,6 +70,9 @@ public class RemovePublicipInfo  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

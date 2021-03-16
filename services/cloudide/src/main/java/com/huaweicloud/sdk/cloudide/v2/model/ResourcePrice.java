@@ -143,6 +143,8 @@ public class ResourcePrice  {
         this.arch = arch;
     }
 
+    
+
     public ResourcePrice withPrice(Float price) {
         this.price = price;
         return this;
@@ -165,6 +167,8 @@ public class ResourcePrice  {
         this.price = price;
     }
 
+    
+
     public ResourcePrice withSize(String size) {
         this.size = size;
         return this;
@@ -185,6 +189,8 @@ public class ResourcePrice  {
         this.size = size;
     }
 
+    
+
     public ResourcePrice withType(String type) {
         this.type = type;
         return this;
@@ -204,6 +210,9 @@ public class ResourcePrice  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

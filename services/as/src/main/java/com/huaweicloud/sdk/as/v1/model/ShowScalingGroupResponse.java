@@ -24,7 +24,7 @@ public class ShowScalingGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_group")
     
-    private ScalingGroups scalingGroup = null;
+    private ScalingGroups scalingGroup;
 
     public ShowScalingGroupResponse withScalingGroup(ScalingGroups scalingGroup) {
         this.scalingGroup = scalingGroup;
@@ -52,6 +52,9 @@ public class ShowScalingGroupResponse extends SdkResponse {
     public void setScalingGroup(ScalingGroups scalingGroup) {
         this.scalingGroup = scalingGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -155,6 +155,8 @@ public class ListBigkeyScanTasksRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListBigkeyScanTasksRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -174,6 +176,8 @@ public class ListBigkeyScanTasksRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListBigkeyScanTasksRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -195,6 +199,8 @@ public class ListBigkeyScanTasksRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListBigkeyScanTasksRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -214,6 +220,9 @@ public class ListBigkeyScanTasksRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

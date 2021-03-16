@@ -97,6 +97,8 @@ public class ListQueuesRespQueues  {
         this.id = id;
     }
 
+    
+
     public ListQueuesRespQueues withName(String name) {
         this.name = name;
         return this;
@@ -116,6 +118,8 @@ public class ListQueuesRespQueues  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListQueuesRespQueues withDescription(String description) {
         this.description = description;
@@ -137,6 +141,8 @@ public class ListQueuesRespQueues  {
         this.description = description;
     }
 
+    
+
     public ListQueuesRespQueues withQueueMode(String queueMode) {
         this.queueMode = queueMode;
         return this;
@@ -156,6 +162,8 @@ public class ListQueuesRespQueues  {
     public void setQueueMode(String queueMode) {
         this.queueMode = queueMode;
     }
+
+    
 
     public ListQueuesRespQueues withReservation(Integer reservation) {
         this.reservation = reservation;
@@ -177,6 +185,8 @@ public class ListQueuesRespQueues  {
         this.reservation = reservation;
     }
 
+    
+
     public ListQueuesRespQueues withMaxMsgSizeByte(Integer maxMsgSizeByte) {
         this.maxMsgSizeByte = maxMsgSizeByte;
         return this;
@@ -196,6 +206,8 @@ public class ListQueuesRespQueues  {
     public void setMaxMsgSizeByte(Integer maxMsgSizeByte) {
         this.maxMsgSizeByte = maxMsgSizeByte;
     }
+
+    
 
     public ListQueuesRespQueues withProducedMessages(Integer producedMessages) {
         this.producedMessages = producedMessages;
@@ -217,6 +229,8 @@ public class ListQueuesRespQueues  {
         this.producedMessages = producedMessages;
     }
 
+    
+
     public ListQueuesRespQueues withRedrivePolicy(String redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
         return this;
@@ -236,6 +250,8 @@ public class ListQueuesRespQueues  {
     public void setRedrivePolicy(String redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
     }
+
+    
 
     public ListQueuesRespQueues withMaxConsumeCount(Integer maxConsumeCount) {
         this.maxConsumeCount = maxConsumeCount;
@@ -257,6 +273,8 @@ public class ListQueuesRespQueues  {
         this.maxConsumeCount = maxConsumeCount;
     }
 
+    
+
     public ListQueuesRespQueues withGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
         return this;
@@ -276,6 +294,9 @@ public class ListQueuesRespQueues  {
     public void setGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

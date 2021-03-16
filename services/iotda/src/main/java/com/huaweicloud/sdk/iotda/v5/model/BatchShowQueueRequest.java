@@ -33,19 +33,19 @@ public class BatchShowQueueRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public BatchShowQueueRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -67,6 +67,8 @@ public class BatchShowQueueRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public BatchShowQueueRequest withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -86,6 +88,8 @@ public class BatchShowQueueRequest  {
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
+
+    
 
     public BatchShowQueueRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -109,6 +113,8 @@ public class BatchShowQueueRequest  {
         this.limit = limit;
     }
 
+    
+
     public BatchShowQueueRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -128,6 +134,8 @@ public class BatchShowQueueRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public BatchShowQueueRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -150,6 +158,9 @@ public class BatchShowQueueRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -134,7 +134,7 @@ public class Rules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger")
     
-    private Trigger trigger = null;
+    private Trigger trigger;
 
     public Rules withName(String name) {
         this.name = name;
@@ -156,6 +156,8 @@ public class Rules  {
         this.name = name;
     }
 
+    
+
     public Rules withDescription(String description) {
         this.description = description;
         return this;
@@ -176,6 +178,8 @@ public class Rules  {
         this.description = description;
     }
 
+    
+
     public Rules withAdjustmentType(AdjustmentTypeEnum adjustmentType) {
         this.adjustmentType = adjustmentType;
         return this;
@@ -195,6 +199,8 @@ public class Rules  {
     public void setAdjustmentType(AdjustmentTypeEnum adjustmentType) {
         this.adjustmentType = adjustmentType;
     }
+
+    
 
     public Rules withCoolDownMinutes(Integer coolDownMinutes) {
         this.coolDownMinutes = coolDownMinutes;
@@ -218,6 +224,8 @@ public class Rules  {
         this.coolDownMinutes = coolDownMinutes;
     }
 
+    
+
     public Rules withScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
         return this;
@@ -239,6 +247,8 @@ public class Rules  {
     public void setScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
     }
+
+    
 
     public Rules withTrigger(Trigger trigger) {
         this.trigger = trigger;
@@ -266,6 +276,9 @@ public class Rules  {
     public void setTrigger(Trigger trigger) {
         this.trigger = trigger;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

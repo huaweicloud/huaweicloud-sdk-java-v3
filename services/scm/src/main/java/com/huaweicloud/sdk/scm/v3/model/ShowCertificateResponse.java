@@ -162,6 +162,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowCertificateResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -181,6 +183,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ShowCertificateResponse withOrderId(String orderId) {
         this.orderId = orderId;
@@ -202,6 +206,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    
+
     public ShowCertificateResponse withName(String name) {
         this.name = name;
         return this;
@@ -221,6 +227,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowCertificateResponse withType(String type) {
         this.type = type;
@@ -242,6 +250,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.type = type;
     }
 
+    
+
     public ShowCertificateResponse withBrand(String brand) {
         this.brand = brand;
         return this;
@@ -261,6 +271,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
+    
 
     public ShowCertificateResponse withPushSupport(String pushSupport) {
         this.pushSupport = pushSupport;
@@ -282,6 +294,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.pushSupport = pushSupport;
     }
 
+    
+
     public ShowCertificateResponse withRevokeReason(String revokeReason) {
         this.revokeReason = revokeReason;
         return this;
@@ -301,6 +315,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setRevokeReason(String revokeReason) {
         this.revokeReason = revokeReason;
     }
+
+    
 
     public ShowCertificateResponse withSignatureAlgrithm(String signatureAlgrithm) {
         this.signatureAlgrithm = signatureAlgrithm;
@@ -322,6 +338,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.signatureAlgrithm = signatureAlgrithm;
     }
 
+    
+
     public ShowCertificateResponse withIssueTime(String issueTime) {
         this.issueTime = issueTime;
         return this;
@@ -341,6 +359,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setIssueTime(String issueTime) {
         this.issueTime = issueTime;
     }
+
+    
 
     public ShowCertificateResponse withNotBefore(String notBefore) {
         this.notBefore = notBefore;
@@ -362,6 +382,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.notBefore = notBefore;
     }
 
+    
+
     public ShowCertificateResponse withNotAfter(String notAfter) {
         this.notAfter = notAfter;
         return this;
@@ -381,6 +403,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setNotAfter(String notAfter) {
         this.notAfter = notAfter;
     }
+
+    
 
     public ShowCertificateResponse withValidityPeriod(Integer validityPeriod) {
         this.validityPeriod = validityPeriod;
@@ -402,6 +426,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.validityPeriod = validityPeriod;
     }
 
+    
+
     public ShowCertificateResponse withValidationMethod(String validationMethod) {
         this.validationMethod = validationMethod;
         return this;
@@ -421,6 +447,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setValidationMethod(String validationMethod) {
         this.validationMethod = validationMethod;
     }
+
+    
 
     public ShowCertificateResponse withDomainType(String domainType) {
         this.domainType = domainType;
@@ -442,6 +470,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.domainType = domainType;
     }
 
+    
+
     public ShowCertificateResponse withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -461,6 +491,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public ShowCertificateResponse withSans(String sans) {
         this.sans = sans;
@@ -482,6 +514,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.sans = sans;
     }
 
+    
+
     public ShowCertificateResponse withDomainCount(Integer domainCount) {
         this.domainCount = domainCount;
         return this;
@@ -501,6 +535,8 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setDomainCount(Integer domainCount) {
         this.domainCount = domainCount;
     }
+
+    
 
     public ShowCertificateResponse withWildcardCount(Integer wildcardCount) {
         this.wildcardCount = wildcardCount;
@@ -522,6 +558,8 @@ public class ShowCertificateResponse extends SdkResponse {
         this.wildcardCount = wildcardCount;
     }
 
+    
+
     public ShowCertificateResponse withAuthentification(List<Authentification> authentification) {
         this.authentification = authentification;
         return this;
@@ -529,9 +567,6 @@ public class ShowCertificateResponse extends SdkResponse {
 
     
     public ShowCertificateResponse addAuthentificationItem(Authentification authentificationItem) {
-        if (this.authentification == null) {
-            this.authentification = new ArrayList<>();
-        }
         this.authentification.add(authentificationItem);
         return this;
     }
@@ -555,6 +590,9 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setAuthentification(List<Authentification> authentification) {
         this.authentification = authentification;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

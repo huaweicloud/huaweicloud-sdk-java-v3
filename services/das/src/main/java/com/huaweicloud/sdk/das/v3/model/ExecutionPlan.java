@@ -109,6 +109,8 @@ public class ExecutionPlan  {
         this.id = id;
     }
 
+    
+
     public ExecutionPlan withSelectType(String selectType) {
         this.selectType = selectType;
         return this;
@@ -128,6 +130,8 @@ public class ExecutionPlan  {
     public void setSelectType(String selectType) {
         this.selectType = selectType;
     }
+
+    
 
     public ExecutionPlan withTable(String table) {
         this.table = table;
@@ -149,6 +153,8 @@ public class ExecutionPlan  {
         this.table = table;
     }
 
+    
+
     public ExecutionPlan withPartitions(String partitions) {
         this.partitions = partitions;
         return this;
@@ -168,6 +174,8 @@ public class ExecutionPlan  {
     public void setPartitions(String partitions) {
         this.partitions = partitions;
     }
+
+    
 
     public ExecutionPlan withType(String type) {
         this.type = type;
@@ -189,6 +197,8 @@ public class ExecutionPlan  {
         this.type = type;
     }
 
+    
+
     public ExecutionPlan withPossibleKeys(String possibleKeys) {
         this.possibleKeys = possibleKeys;
         return this;
@@ -208,6 +218,8 @@ public class ExecutionPlan  {
     public void setPossibleKeys(String possibleKeys) {
         this.possibleKeys = possibleKeys;
     }
+
+    
 
     public ExecutionPlan withKey(String key) {
         this.key = key;
@@ -229,6 +241,8 @@ public class ExecutionPlan  {
         this.key = key;
     }
 
+    
+
     public ExecutionPlan withKeyLen(String keyLen) {
         this.keyLen = keyLen;
         return this;
@@ -248,6 +262,8 @@ public class ExecutionPlan  {
     public void setKeyLen(String keyLen) {
         this.keyLen = keyLen;
     }
+
+    
 
     public ExecutionPlan withRef(String ref) {
         this.ref = ref;
@@ -269,6 +285,8 @@ public class ExecutionPlan  {
         this.ref = ref;
     }
 
+    
+
     public ExecutionPlan withRows(String rows) {
         this.rows = rows;
         return this;
@@ -288,6 +306,8 @@ public class ExecutionPlan  {
     public void setRows(String rows) {
         this.rows = rows;
     }
+
+    
 
     public ExecutionPlan withFiltered(String filtered) {
         this.filtered = filtered;
@@ -309,6 +329,8 @@ public class ExecutionPlan  {
         this.filtered = filtered;
     }
 
+    
+
     public ExecutionPlan withExtra(String extra) {
         this.extra = extra;
         return this;
@@ -328,6 +350,9 @@ public class ExecutionPlan  {
     public void setExtra(String extra) {
         this.extra = extra;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

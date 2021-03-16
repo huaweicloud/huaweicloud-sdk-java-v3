@@ -49,6 +49,8 @@ public class ProgramItemRequestBase  {
         this.materialId = materialId;
     }
 
+    
+
     public ProgramItemRequestBase withPlayTime(Integer playTime) {
         this.playTime = playTime;
         return this;
@@ -68,6 +70,9 @@ public class ProgramItemRequestBase  {
     public void setPlayTime(Integer playTime) {
         this.playTime = playTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

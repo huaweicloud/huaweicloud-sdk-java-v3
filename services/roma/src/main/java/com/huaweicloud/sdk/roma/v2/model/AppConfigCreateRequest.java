@@ -150,6 +150,8 @@ public class AppConfigCreateRequest  {
         this.configType = configType;
     }
 
+    
+
     public AppConfigCreateRequest withConfigValue(String configValue) {
         this.configValue = configValue;
         return this;
@@ -169,6 +171,8 @@ public class AppConfigCreateRequest  {
     public void setConfigValue(String configValue) {
         this.configValue = configValue;
     }
+
+    
 
     public AppConfigCreateRequest withDescription(String description) {
         this.description = description;
@@ -190,6 +194,8 @@ public class AppConfigCreateRequest  {
         this.description = description;
     }
 
+    
+
     public AppConfigCreateRequest withConfigName(String configName) {
         this.configName = configName;
         return this;
@@ -209,6 +215,9 @@ public class AppConfigCreateRequest  {
     public void setConfigName(String configName) {
         this.configName = configName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

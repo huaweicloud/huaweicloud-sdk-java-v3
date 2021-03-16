@@ -23,7 +23,7 @@ public class PolicyTriggerPropertiesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pattern")
     
-    private List<String> pattern = new ArrayList<>();
+    private List<String> pattern = null;
     
     public PolicyTriggerPropertiesReq withPattern(List<String> pattern) {
         this.pattern = pattern;
@@ -55,6 +55,9 @@ public class PolicyTriggerPropertiesReq  {
     public void setPattern(List<String> pattern) {
         this.pattern = pattern;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

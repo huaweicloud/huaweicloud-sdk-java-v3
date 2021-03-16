@@ -29,7 +29,7 @@ public class QueryTagItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    private List<String> values = new ArrayList<>();
+    private List<String> values = null;
     
     public QueryTagItem withKey(String key) {
         this.key = key;
@@ -50,6 +50,8 @@ public class QueryTagItem  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
 
     public QueryTagItem withValues(List<String> values) {
         this.values = values;
@@ -81,6 +83,9 @@ public class QueryTagItem  {
     public void setValues(List<String> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

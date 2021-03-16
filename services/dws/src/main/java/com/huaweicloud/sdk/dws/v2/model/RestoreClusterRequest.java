@@ -28,7 +28,7 @@ public class RestoreClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestoreClusterRequestBody body = null;
+    private RestoreClusterRequestBody body;
 
     public RestoreClusterRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -49,6 +49,8 @@ public class RestoreClusterRequest  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
 
     public RestoreClusterRequest withBody(RestoreClusterRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RestoreClusterRequest  {
     public void setBody(RestoreClusterRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

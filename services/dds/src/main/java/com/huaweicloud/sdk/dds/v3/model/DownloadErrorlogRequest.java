@@ -28,7 +28,7 @@ public class DownloadErrorlogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DownloadErrorlogRequestBody body = null;
+    private DownloadErrorlogRequestBody body;
 
     public DownloadErrorlogRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class DownloadErrorlogRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public DownloadErrorlogRequest withBody(DownloadErrorlogRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DownloadErrorlogRequest  {
     public void setBody(DownloadErrorlogRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

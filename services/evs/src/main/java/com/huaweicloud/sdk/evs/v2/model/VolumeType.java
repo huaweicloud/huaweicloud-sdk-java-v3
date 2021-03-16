@@ -34,7 +34,7 @@ public class VolumeType  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_specs")
     
-    private VolumeTypeExtraSpecs extraSpecs = null;
+    private VolumeTypeExtraSpecs extraSpecs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class VolumeType  {
         this.id = id;
     }
 
+    
+
     public VolumeType withName(String name) {
         this.name = name;
         return this;
@@ -93,6 +95,8 @@ public class VolumeType  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public VolumeType withExtraSpecs(VolumeTypeExtraSpecs extraSpecs) {
         this.extraSpecs = extraSpecs;
@@ -121,6 +125,8 @@ public class VolumeType  {
         this.extraSpecs = extraSpecs;
     }
 
+    
+
     public VolumeType withDescription(String description) {
         this.description = description;
         return this;
@@ -140,6 +146,8 @@ public class VolumeType  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public VolumeType withQosSpecsId(String qosSpecsId) {
         this.qosSpecsId = qosSpecsId;
@@ -161,6 +169,8 @@ public class VolumeType  {
         this.qosSpecsId = qosSpecsId;
     }
 
+    
+
     public VolumeType withIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
         return this;
@@ -180,6 +190,9 @@ public class VolumeType  {
     public void setIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

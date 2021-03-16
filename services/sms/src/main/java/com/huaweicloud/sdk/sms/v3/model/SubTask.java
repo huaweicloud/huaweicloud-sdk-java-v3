@@ -73,6 +73,8 @@ public class SubTask  {
         this.name = name;
     }
 
+    
+
     public SubTask withProgress(Integer progress) {
         this.progress = progress;
         return this;
@@ -94,6 +96,8 @@ public class SubTask  {
     public void setProgress(Integer progress) {
         this.progress = progress;
     }
+
+    
 
     public SubTask withStartDate(Long startDate) {
         this.startDate = startDate;
@@ -117,6 +121,8 @@ public class SubTask  {
         this.startDate = startDate;
     }
 
+    
+
     public SubTask withEndDate(Long endDate) {
         this.endDate = endDate;
         return this;
@@ -138,6 +144,8 @@ public class SubTask  {
     public void setEndDate(Long endDate) {
         this.endDate = endDate;
     }
+
+    
 
     public SubTask withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
@@ -161,6 +169,8 @@ public class SubTask  {
         this.migrateSpeed = migrateSpeed;
     }
 
+    
+
     public SubTask withUserOp(String userOp) {
         this.userOp = userOp;
         return this;
@@ -180,6 +190,9 @@ public class SubTask  {
     public void setUserOp(String userOp) {
         this.userOp = userOp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,9 +33,6 @@ public class CreateEventsRequest  {
 
     
     public CreateEventsRequest addBodyItem(EventItem bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class CreateEventsRequest  {
     public void setBody(List<EventItem> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

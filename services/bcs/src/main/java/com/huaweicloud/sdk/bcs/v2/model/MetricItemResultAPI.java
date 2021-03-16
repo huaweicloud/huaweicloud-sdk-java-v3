@@ -25,7 +25,7 @@ public class MetricItemResultAPI  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    private MetricDemision metric = null;
+    private MetricDemision metric;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class MetricItemResultAPI  {
         this.metric = metric;
     }
 
+    
+
     public MetricItemResultAPI withDataPoints(List<MetricDataPoints> dataPoints) {
         this.dataPoints = dataPoints;
         return this;
@@ -67,9 +69,6 @@ public class MetricItemResultAPI  {
 
     
     public MetricItemResultAPI addDataPointsItem(MetricDataPoints dataPointsItem) {
-        if (this.dataPoints == null) {
-            this.dataPoints = new ArrayList<>();
-        }
         this.dataPoints.add(dataPointsItem);
         return this;
     }
@@ -93,6 +92,9 @@ public class MetricItemResultAPI  {
     public void setDataPoints(List<MetricDataPoints> dataPoints) {
         this.dataPoints = dataPoints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

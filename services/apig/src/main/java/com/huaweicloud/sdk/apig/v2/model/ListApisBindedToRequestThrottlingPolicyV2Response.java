@@ -60,6 +60,8 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
         this.total = total;
     }
 
+    
+
     public ListApisBindedToRequestThrottlingPolicyV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
         this.size = size;
     }
 
+    
+
     public ListApisBindedToRequestThrottlingPolicyV2Response withApis(List<ThrottleBindingApiResp> apis) {
         this.apis = apis;
         return this;
@@ -87,9 +91,6 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
 
     
     public ListApisBindedToRequestThrottlingPolicyV2Response addApisItem(ThrottleBindingApiResp apisItem) {
-        if (this.apis == null) {
-            this.apis = new ArrayList<>();
-        }
         this.apis.add(apisItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
     public void setApis(List<ThrottleBindingApiResp> apis) {
         this.apis = apis;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

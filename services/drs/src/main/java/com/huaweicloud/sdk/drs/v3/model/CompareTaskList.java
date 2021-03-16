@@ -185,6 +185,8 @@ public class CompareTaskList  {
         this.compareTaskId = compareTaskId;
     }
 
+    
+
     public CompareTaskList withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
@@ -204,6 +206,8 @@ public class CompareTaskList  {
     public void setCompareType(String compareType) {
         this.compareType = compareType;
     }
+
+    
 
     public CompareTaskList withCompareTaskStatus(CompareTaskStatusEnum compareTaskStatus) {
         this.compareTaskStatus = compareTaskStatus;
@@ -225,6 +229,8 @@ public class CompareTaskList  {
         this.compareTaskStatus = compareTaskStatus;
     }
 
+    
+
     public CompareTaskList withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -245,6 +251,8 @@ public class CompareTaskList  {
         this.createTime = createTime;
     }
 
+    
+
     public CompareTaskList withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -264,6 +272,9 @@ public class CompareTaskList  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

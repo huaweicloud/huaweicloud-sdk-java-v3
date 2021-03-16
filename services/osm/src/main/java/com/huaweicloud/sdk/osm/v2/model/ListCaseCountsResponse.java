@@ -35,9 +35,6 @@ public class ListCaseCountsResponse extends SdkResponse {
 
     
     public ListCaseCountsResponse addIncidentStatusCountsItem(IncidentStatusCount incidentStatusCountsItem) {
-        if (this.incidentStatusCounts == null) {
-            this.incidentStatusCounts = new ArrayList<>();
-        }
         this.incidentStatusCounts.add(incidentStatusCountsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListCaseCountsResponse extends SdkResponse {
     public void setIncidentStatusCounts(List<IncidentStatusCount> incidentStatusCounts) {
         this.incidentStatusCounts = incidentStatusCounts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

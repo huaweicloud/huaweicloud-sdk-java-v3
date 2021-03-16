@@ -73,6 +73,8 @@ public class CheckNeedVerifyRequest  {
         this.contactValue = contactValue;
     }
 
+    
+
     public CheckNeedVerifyRequest withContactWay(Integer contactWay) {
         this.contactWay = contactWay;
         return this;
@@ -95,6 +97,8 @@ public class CheckNeedVerifyRequest  {
         this.contactWay = contactWay;
     }
 
+    
+
     public CheckNeedVerifyRequest withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
@@ -114,6 +118,8 @@ public class CheckNeedVerifyRequest  {
     public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
     }
+
+    
 
     public CheckNeedVerifyRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -139,6 +145,8 @@ public class CheckNeedVerifyRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CheckNeedVerifyRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -161,6 +169,8 @@ public class CheckNeedVerifyRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CheckNeedVerifyRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -182,6 +192,9 @@ public class CheckNeedVerifyRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class CopyImageInRegionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CopyImageInRegionRequestBody body = null;
+    private CopyImageInRegionRequestBody body;
 
     public CopyImageInRegionRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -49,6 +49,8 @@ public class CopyImageInRegionRequest  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public CopyImageInRegionRequest withBody(CopyImageInRegionRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CopyImageInRegionRequest  {
     public void setBody(CopyImageInRegionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

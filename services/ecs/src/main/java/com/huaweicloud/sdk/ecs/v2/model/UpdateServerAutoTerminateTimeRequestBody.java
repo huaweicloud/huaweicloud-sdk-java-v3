@@ -42,6 +42,9 @@ public class UpdateServerAutoTerminateTimeRequestBody  {
     public void setAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

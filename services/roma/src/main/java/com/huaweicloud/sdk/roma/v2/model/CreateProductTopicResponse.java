@@ -157,6 +157,8 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.productId = productId;
     }
 
+    
+
     public CreateProductTopicResponse withTopicId(Integer topicId) {
         this.topicId = topicId;
         return this;
@@ -176,6 +178,8 @@ public class CreateProductTopicResponse extends SdkResponse {
     public void setTopicId(Integer topicId) {
         this.topicId = topicId;
     }
+
+    
 
     public CreateProductTopicResponse withPermission(PermissionEnum permission) {
         this.permission = permission;
@@ -197,6 +201,8 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.permission = permission;
     }
 
+    
+
     public CreateProductTopicResponse withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
@@ -216,6 +222,8 @@ public class CreateProductTopicResponse extends SdkResponse {
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
+
+    
 
     public CreateProductTopicResponse withVersion(String version) {
         this.version = version;
@@ -237,6 +245,8 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.version = version;
     }
 
+    
+
     public CreateProductTopicResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -256,6 +266,9 @@ public class CreateProductTopicResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

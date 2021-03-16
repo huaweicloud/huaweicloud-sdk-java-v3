@@ -69,6 +69,8 @@ public class ListAuthorizedDatabasesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListAuthorizedDatabasesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -88,6 +90,8 @@ public class ListAuthorizedDatabasesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListAuthorizedDatabasesRequest withUserName(String userName) {
         this.userName = userName;
@@ -109,6 +113,8 @@ public class ListAuthorizedDatabasesRequest  {
         this.userName = userName;
     }
 
+    
+
     public ListAuthorizedDatabasesRequest withPage(Integer page) {
         this.page = page;
         return this;
@@ -129,6 +135,8 @@ public class ListAuthorizedDatabasesRequest  {
         this.page = page;
     }
 
+    
+
     public ListAuthorizedDatabasesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -148,6 +156,9 @@ public class ListAuthorizedDatabasesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

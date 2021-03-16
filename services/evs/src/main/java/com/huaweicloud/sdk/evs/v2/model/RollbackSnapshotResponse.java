@@ -24,7 +24,7 @@ public class RollbackSnapshotResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rollback")
     
-    private RollbackInfo rollback = null;
+    private RollbackInfo rollback;
 
     public RollbackSnapshotResponse withRollback(RollbackInfo rollback) {
         this.rollback = rollback;
@@ -52,6 +52,9 @@ public class RollbackSnapshotResponse extends SdkResponse {
     public void setRollback(RollbackInfo rollback) {
         this.rollback = rollback;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

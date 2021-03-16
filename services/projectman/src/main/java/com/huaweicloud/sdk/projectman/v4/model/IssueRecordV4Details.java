@@ -61,6 +61,8 @@ public class IssueRecordV4Details  {
         this.property = property;
     }
 
+    
+
     public IssueRecordV4Details withOldValue(String oldValue) {
         this.oldValue = oldValue;
         return this;
@@ -80,6 +82,8 @@ public class IssueRecordV4Details  {
     public void setOldValue(String oldValue) {
         this.oldValue = oldValue;
     }
+
+    
 
     public IssueRecordV4Details withNewValue(String newValue) {
         this.newValue = newValue;
@@ -101,6 +105,8 @@ public class IssueRecordV4Details  {
         this.newValue = newValue;
     }
 
+    
+
     public IssueRecordV4Details withOperation(String operation) {
         this.operation = operation;
         return this;
@@ -120,6 +126,9 @@ public class IssueRecordV4Details  {
     public void setOperation(String operation) {
         this.operation = operation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

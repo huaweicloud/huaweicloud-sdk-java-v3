@@ -73,6 +73,8 @@ public class ListPtrRecordsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListPtrRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -92,6 +94,8 @@ public class ListPtrRecordsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListPtrRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -113,6 +117,8 @@ public class ListPtrRecordsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListPtrRecordsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -132,6 +138,8 @@ public class ListPtrRecordsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ListPtrRecordsRequest withTags(String tags) {
         this.tags = tags;
@@ -153,6 +161,8 @@ public class ListPtrRecordsRequest  {
         this.tags = tags;
     }
 
+    
+
     public ListPtrRecordsRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -172,6 +182,9 @@ public class ListPtrRecordsRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

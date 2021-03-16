@@ -173,6 +173,8 @@ public class BigkeysBody  {
         this.name = name;
     }
 
+    
+
     public BigkeysBody withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -192,6 +194,8 @@ public class BigkeysBody  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public BigkeysBody withShard(String shard) {
         this.shard = shard;
@@ -213,6 +217,8 @@ public class BigkeysBody  {
         this.shard = shard;
     }
 
+    
+
     public BigkeysBody withDb(Integer db) {
         this.db = db;
         return this;
@@ -232,6 +238,8 @@ public class BigkeysBody  {
     public void setDb(Integer db) {
         this.db = db;
     }
+
+    
 
     public BigkeysBody withSize(Integer size) {
         this.size = size;
@@ -253,6 +261,8 @@ public class BigkeysBody  {
         this.size = size;
     }
 
+    
+
     public BigkeysBody withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -272,6 +282,9 @@ public class BigkeysBody  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -25,7 +25,7 @@ public class PostPaidServerExtendParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chargingMode")
     
-    private Integer chargingMode = 0;
+    private Integer chargingMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,13 +37,13 @@ public class PostPaidServerExtendParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="support_auto_recovery")
     
-    private Boolean supportAutoRecovery = false;
+    private Boolean supportAutoRecovery;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -175,6 +175,8 @@ public class PostPaidServerExtendParam  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public PostPaidServerExtendParam withRegionID(String regionID) {
         this.regionID = regionID;
         return this;
@@ -194,6 +196,8 @@ public class PostPaidServerExtendParam  {
     public void setRegionID(String regionID) {
         this.regionID = regionID;
     }
+
+    
 
     public PostPaidServerExtendParam withSupportAutoRecovery(Boolean supportAutoRecovery) {
         this.supportAutoRecovery = supportAutoRecovery;
@@ -215,6 +219,8 @@ public class PostPaidServerExtendParam  {
         this.supportAutoRecovery = supportAutoRecovery;
     }
 
+    
+
     public PostPaidServerExtendParam withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -234,6 +240,8 @@ public class PostPaidServerExtendParam  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public PostPaidServerExtendParam withMarketType(String marketType) {
         this.marketType = marketType;
@@ -255,6 +263,8 @@ public class PostPaidServerExtendParam  {
         this.marketType = marketType;
     }
 
+    
+
     public PostPaidServerExtendParam withSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
         return this;
@@ -274,6 +284,8 @@ public class PostPaidServerExtendParam  {
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
+
+    
 
     public PostPaidServerExtendParam withDiskPrior(String diskPrior) {
         this.diskPrior = diskPrior;
@@ -295,6 +307,8 @@ public class PostPaidServerExtendParam  {
         this.diskPrior = diskPrior;
     }
 
+    
+
     public PostPaidServerExtendParam withSpotDurationHours(Integer spotDurationHours) {
         this.spotDurationHours = spotDurationHours;
         return this;
@@ -314,6 +328,8 @@ public class PostPaidServerExtendParam  {
     public void setSpotDurationHours(Integer spotDurationHours) {
         this.spotDurationHours = spotDurationHours;
     }
+
+    
 
     public PostPaidServerExtendParam withInterruptionPolicy(InterruptionPolicyEnum interruptionPolicy) {
         this.interruptionPolicy = interruptionPolicy;
@@ -335,6 +351,8 @@ public class PostPaidServerExtendParam  {
         this.interruptionPolicy = interruptionPolicy;
     }
 
+    
+
     public PostPaidServerExtendParam withSpotDurationCount(Integer spotDurationCount) {
         this.spotDurationCount = spotDurationCount;
         return this;
@@ -354,6 +372,9 @@ public class PostPaidServerExtendParam  {
     public void setSpotDurationCount(Integer spotDurationCount) {
         this.spotDurationCount = spotDurationCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -133,6 +133,8 @@ public class StartFailoverRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public StartFailoverRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -152,6 +154,9 @@ public class StartFailoverRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

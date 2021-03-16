@@ -49,6 +49,8 @@ public class SwaggerInfoResp  {
         this.id = id;
     }
 
+    
+
     public SwaggerInfoResp withResult(String result) {
         this.result = result;
         return this;
@@ -68,6 +70,9 @@ public class SwaggerInfoResp  {
     public void setResult(String result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class KeystoneUpdateUserOption  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneUpdateUserOption withName(String name) {
         this.name = name;
         return this;
@@ -92,6 +94,8 @@ public class KeystoneUpdateUserOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneUpdateUserOption withPassword(String password) {
         this.password = password;
@@ -113,6 +117,8 @@ public class KeystoneUpdateUserOption  {
         this.password = password;
     }
 
+    
+
     public KeystoneUpdateUserOption withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -132,6 +138,8 @@ public class KeystoneUpdateUserOption  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public KeystoneUpdateUserOption withDescription(String description) {
         this.description = description;
@@ -153,6 +161,8 @@ public class KeystoneUpdateUserOption  {
         this.description = description;
     }
 
+    
+
     public KeystoneUpdateUserOption withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
         return this;
@@ -172,6 +182,9 @@ public class KeystoneUpdateUserOption  {
     public void setPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -54,6 +54,8 @@ public class ShowIpWhitelistResponse extends SdkResponse {
         this.enableWhitelist = enableWhitelist;
     }
 
+    
+
     public ShowIpWhitelistResponse withWhitelist(List<Whitelist> whitelist) {
         this.whitelist = whitelist;
         return this;
@@ -61,9 +63,6 @@ public class ShowIpWhitelistResponse extends SdkResponse {
 
     
     public ShowIpWhitelistResponse addWhitelistItem(Whitelist whitelistItem) {
-        if (this.whitelist == null) {
-            this.whitelist = new ArrayList<>();
-        }
         this.whitelist.add(whitelistItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ShowIpWhitelistResponse extends SdkResponse {
     public void setWhitelist(List<Whitelist> whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

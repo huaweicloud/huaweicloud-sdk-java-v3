@@ -28,7 +28,7 @@ public class SendMessagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SendMessagesReq body = null;
+    private SendMessagesReq body;
 
     public SendMessagesRequest withQueueId(String queueId) {
         this.queueId = queueId;
@@ -49,6 +49,8 @@ public class SendMessagesRequest  {
     public void setQueueId(String queueId) {
         this.queueId = queueId;
     }
+
+    
 
     public SendMessagesRequest withBody(SendMessagesReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class SendMessagesRequest  {
     public void setBody(SendMessagesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

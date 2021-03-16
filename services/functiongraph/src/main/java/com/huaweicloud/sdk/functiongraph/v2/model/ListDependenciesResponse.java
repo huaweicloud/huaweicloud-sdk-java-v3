@@ -60,6 +60,8 @@ public class ListDependenciesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListDependenciesResponse withDependencies(List<ListDependenciesResult> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -67,9 +69,6 @@ public class ListDependenciesResponse extends SdkResponse {
 
     
     public ListDependenciesResponse addDependenciesItem(ListDependenciesResult dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListDependenciesResponse extends SdkResponse {
         this.dependencies = dependencies;
     }
 
+    
+
     public ListDependenciesResponse withNextMarker(Long nextMarker) {
         this.nextMarker = nextMarker;
         return this;
@@ -113,6 +114,9 @@ public class ListDependenciesResponse extends SdkResponse {
     public void setNextMarker(Long nextMarker) {
         this.nextMarker = nextMarker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

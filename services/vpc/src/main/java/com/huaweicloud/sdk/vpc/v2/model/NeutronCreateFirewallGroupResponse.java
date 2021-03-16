@@ -24,7 +24,7 @@ public class NeutronCreateFirewallGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="firewall_group")
     
-    private NeutronFirewallGroup firewallGroup = null;
+    private NeutronFirewallGroup firewallGroup;
 
     public NeutronCreateFirewallGroupResponse withFirewallGroup(NeutronFirewallGroup firewallGroup) {
         this.firewallGroup = firewallGroup;
@@ -52,6 +52,9 @@ public class NeutronCreateFirewallGroupResponse extends SdkResponse {
     public void setFirewallGroup(NeutronFirewallGroup firewallGroup) {
         this.firewallGroup = firewallGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -104,13 +104,13 @@ public class CreateCompareTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateCompareTaskReq body = null;
+    private CreateCompareTaskReq body;
 
     public CreateCompareTaskRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class CreateCompareTaskRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public CreateCompareTaskRequest withBody(CreateCompareTaskReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class CreateCompareTaskRequest  {
     public void setBody(CreateCompareTaskReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

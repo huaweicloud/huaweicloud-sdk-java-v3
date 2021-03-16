@@ -34,7 +34,7 @@ public class ChangeApiVersionV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiVersionInfo body = null;
+    private ApiVersionInfo body;
 
     public ChangeApiVersionV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class ChangeApiVersionV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ChangeApiVersionV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -75,6 +77,8 @@ public class ChangeApiVersionV2Request  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public ChangeApiVersionV2Request withBody(ApiVersionInfo body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ChangeApiVersionV2Request  {
     public void setBody(ApiVersionInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

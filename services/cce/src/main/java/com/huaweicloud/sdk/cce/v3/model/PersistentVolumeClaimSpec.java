@@ -106,13 +106,13 @@ public class PersistentVolumeClaimSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="accessModes")
     
-    private List<AccessModesEnum> accessModes = new ArrayList<>();
+    private List<AccessModesEnum> accessModes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private ResourceRequirements resources = null;
+    private ResourceRequirements resources;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -175,6 +175,8 @@ public class PersistentVolumeClaimSpec  {
         this.accessModes = accessModes;
     }
 
+    
+
     public PersistentVolumeClaimSpec withResources(ResourceRequirements resources) {
         this.resources = resources;
         return this;
@@ -202,6 +204,8 @@ public class PersistentVolumeClaimSpec  {
         this.resources = resources;
     }
 
+    
+
     public PersistentVolumeClaimSpec withStorageClassName(String storageClassName) {
         this.storageClassName = storageClassName;
         return this;
@@ -221,6 +225,8 @@ public class PersistentVolumeClaimSpec  {
     public void setStorageClassName(String storageClassName) {
         this.storageClassName = storageClassName;
     }
+
+    
 
     public PersistentVolumeClaimSpec withStorageType(String storageType) {
         this.storageType = storageType;
@@ -242,6 +248,8 @@ public class PersistentVolumeClaimSpec  {
         this.storageType = storageType;
     }
 
+    
+
     public PersistentVolumeClaimSpec withVolumeID(String volumeID) {
         this.volumeID = volumeID;
         return this;
@@ -261,6 +269,8 @@ public class PersistentVolumeClaimSpec  {
     public void setVolumeID(String volumeID) {
         this.volumeID = volumeID;
     }
+
+    
 
     public PersistentVolumeClaimSpec withVolumeMode(String volumeMode) {
         this.volumeMode = volumeMode;
@@ -282,6 +292,8 @@ public class PersistentVolumeClaimSpec  {
         this.volumeMode = volumeMode;
     }
 
+    
+
     public PersistentVolumeClaimSpec withVolumeName(String volumeName) {
         this.volumeName = volumeName;
         return this;
@@ -301,6 +313,9 @@ public class PersistentVolumeClaimSpec  {
     public void setVolumeName(String volumeName) {
         this.volumeName = volumeName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

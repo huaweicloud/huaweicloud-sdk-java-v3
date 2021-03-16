@@ -49,6 +49,8 @@ public class TagsResp  {
         this.key = key;
     }
 
+    
+
     public TagsResp withValues(String values) {
         this.values = values;
         return this;
@@ -68,6 +70,9 @@ public class TagsResp  {
     public void setValues(String values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

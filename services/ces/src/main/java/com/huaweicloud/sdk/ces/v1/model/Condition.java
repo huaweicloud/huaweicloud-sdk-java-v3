@@ -79,6 +79,8 @@ public class Condition  {
         this.comparisonOperator = comparisonOperator;
     }
 
+    
+
     public Condition withCount(Integer count) {
         this.count = count;
         return this;
@@ -101,6 +103,8 @@ public class Condition  {
         this.count = count;
     }
 
+    
+
     public Condition withFilter(String filter) {
         this.filter = filter;
         return this;
@@ -120,6 +124,8 @@ public class Condition  {
     public void setFilter(String filter) {
         this.filter = filter;
     }
+
+    
 
     public Condition withPeriod(Integer period) {
         this.period = period;
@@ -141,6 +147,8 @@ public class Condition  {
         this.period = period;
     }
 
+    
+
     public Condition withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -160,6 +168,8 @@ public class Condition  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    
 
     public Condition withValue(Double value) {
         this.value = value;
@@ -181,6 +191,8 @@ public class Condition  {
         this.value = value;
     }
 
+    
+
     public Condition withSuppressDuration(Integer suppressDuration) {
         this.suppressDuration = suppressDuration;
         return this;
@@ -200,6 +212,9 @@ public class Condition  {
     public void setSuppressDuration(Integer suppressDuration) {
         this.suppressDuration = suppressDuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class UpdatePublicipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePublicipsRequestBody body = null;
+    private UpdatePublicipsRequestBody body;
 
     public UpdatePublicipRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -49,6 +49,8 @@ public class UpdatePublicipRequest  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public UpdatePublicipRequest withBody(UpdatePublicipsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePublicipRequest  {
     public void setBody(UpdatePublicipsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

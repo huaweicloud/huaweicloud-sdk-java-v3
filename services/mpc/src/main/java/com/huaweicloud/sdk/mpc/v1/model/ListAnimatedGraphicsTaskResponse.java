@@ -55,6 +55,8 @@ public class ListAnimatedGraphicsTaskResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListAnimatedGraphicsTaskResponse withTasks(List<AnimatedGraphicsTask> tasks) {
         this.tasks = tasks;
         return this;
@@ -62,9 +64,6 @@ public class ListAnimatedGraphicsTaskResponse extends SdkResponse {
 
     
     public ListAnimatedGraphicsTaskResponse addTasksItem(AnimatedGraphicsTask tasksItem) {
-        if (this.tasks == null) {
-            this.tasks = new ArrayList<>();
-        }
         this.tasks.add(tasksItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ListAnimatedGraphicsTaskResponse extends SdkResponse {
     public void setTasks(List<AnimatedGraphicsTask> tasks) {
         this.tasks = tasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

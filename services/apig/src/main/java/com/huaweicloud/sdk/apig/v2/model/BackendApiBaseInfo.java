@@ -283,6 +283,8 @@ public class BackendApiBaseInfo  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public BackendApiBaseInfo withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -302,6 +304,8 @@ public class BackendApiBaseInfo  {
     public void setUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
     }
+
+    
 
     public BackendApiBaseInfo withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
@@ -323,6 +327,8 @@ public class BackendApiBaseInfo  {
         this.reqProtocol = reqProtocol;
     }
 
+    
+
     public BackendApiBaseInfo withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -342,6 +348,8 @@ public class BackendApiBaseInfo  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public BackendApiBaseInfo withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -363,6 +371,8 @@ public class BackendApiBaseInfo  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public BackendApiBaseInfo withVersion(String version) {
         this.version = version;
         return this;
@@ -382,6 +392,8 @@ public class BackendApiBaseInfo  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public BackendApiBaseInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
@@ -403,6 +415,8 @@ public class BackendApiBaseInfo  {
         this.reqUri = reqUri;
     }
 
+    
+
     public BackendApiBaseInfo withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -422,6 +436,9 @@ public class BackendApiBaseInfo  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

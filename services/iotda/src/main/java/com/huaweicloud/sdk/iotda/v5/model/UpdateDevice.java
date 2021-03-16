@@ -34,13 +34,13 @@ public class UpdateDevice  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extension_info")
     
-    private Object extensionInfo = null;
+    private Object extensionInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_info")
     
-    private AuthInfoWithoutSecret authInfo = null;
+    private AuthInfoWithoutSecret authInfo;
 
     public UpdateDevice withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -62,6 +62,8 @@ public class UpdateDevice  {
         this.deviceName = deviceName;
     }
 
+    
+
     public UpdateDevice withDescription(String description) {
         this.description = description;
         return this;
@@ -82,6 +84,8 @@ public class UpdateDevice  {
         this.description = description;
     }
 
+    
+
     public UpdateDevice withExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
         return this;
@@ -101,6 +105,8 @@ public class UpdateDevice  {
     public void setExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
     }
+
+    
 
     public UpdateDevice withAuthInfo(AuthInfoWithoutSecret authInfo) {
         this.authInfo = authInfo;
@@ -128,6 +134,9 @@ public class UpdateDevice  {
     public void setAuthInfo(AuthInfoWithoutSecret authInfo) {
         this.authInfo = authInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

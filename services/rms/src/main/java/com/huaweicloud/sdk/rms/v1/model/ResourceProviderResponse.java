@@ -64,6 +64,8 @@ public class ResourceProviderResponse  {
         this.provider = provider;
     }
 
+    
+
     public ResourceProviderResponse withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -83,6 +85,8 @@ public class ResourceProviderResponse  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
 
     public ResourceProviderResponse withCategoryDisplayName(String categoryDisplayName) {
         this.categoryDisplayName = categoryDisplayName;
@@ -104,6 +108,8 @@ public class ResourceProviderResponse  {
         this.categoryDisplayName = categoryDisplayName;
     }
 
+    
+
     public ResourceProviderResponse withResourceTypes(List<ResourceTypeResponse> resourceTypes) {
         this.resourceTypes = resourceTypes;
         return this;
@@ -111,9 +117,6 @@ public class ResourceProviderResponse  {
 
     
     public ResourceProviderResponse addResourceTypesItem(ResourceTypeResponse resourceTypesItem) {
-        if (this.resourceTypes == null) {
-            this.resourceTypes = new ArrayList<>();
-        }
         this.resourceTypes.add(resourceTypesItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class ResourceProviderResponse  {
     public void setResourceTypes(List<ResourceTypeResponse> resourceTypes) {
         this.resourceTypes = resourceTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

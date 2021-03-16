@@ -28,7 +28,7 @@ public class GlanceDeleteImageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GlanceDeleteImageRequestBody body = null;
+    private GlanceDeleteImageRequestBody body;
 
     public GlanceDeleteImageRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -49,6 +49,8 @@ public class GlanceDeleteImageRequest  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public GlanceDeleteImageRequest withBody(GlanceDeleteImageRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class GlanceDeleteImageRequest  {
     public void setBody(GlanceDeleteImageRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

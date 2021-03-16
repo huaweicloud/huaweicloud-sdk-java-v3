@@ -42,6 +42,9 @@ public class DeletePrivateZoneRequest  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

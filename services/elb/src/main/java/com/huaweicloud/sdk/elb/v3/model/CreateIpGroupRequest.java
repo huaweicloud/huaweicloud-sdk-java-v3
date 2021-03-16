@@ -22,7 +22,7 @@ public class CreateIpGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateIpGroupRequestBody body = null;
+    private CreateIpGroupRequestBody body;
 
     public CreateIpGroupRequest withBody(CreateIpGroupRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateIpGroupRequest  {
     public void setBody(CreateIpGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

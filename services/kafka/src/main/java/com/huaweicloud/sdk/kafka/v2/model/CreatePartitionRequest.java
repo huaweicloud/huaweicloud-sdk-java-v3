@@ -34,7 +34,7 @@ public class CreatePartitionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePartitionReq body = null;
+    private CreatePartitionReq body;
 
     public CreatePartitionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreatePartitionRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreatePartitionRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -75,6 +77,8 @@ public class CreatePartitionRequest  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public CreatePartitionRequest withBody(CreatePartitionReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreatePartitionRequest  {
     public void setBody(CreatePartitionReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

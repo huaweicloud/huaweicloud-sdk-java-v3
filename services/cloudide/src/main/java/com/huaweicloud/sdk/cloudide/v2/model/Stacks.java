@@ -24,13 +24,13 @@ public class Stacks  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="arm_config")
     
-    private StacksConfig armConfig = null;
+    private StacksConfig armConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    private StacksConfig config = null;
+    private StacksConfig config;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,6 +119,8 @@ public class Stacks  {
         this.armConfig = armConfig;
     }
 
+    
+
     public Stacks withConfig(StacksConfig config) {
         this.config = config;
         return this;
@@ -146,6 +148,8 @@ public class Stacks  {
         this.config = config;
     }
 
+    
+
     public Stacks withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -165,6 +169,8 @@ public class Stacks  {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    
 
     public Stacks withDescription(String description) {
         this.description = description;
@@ -186,6 +192,8 @@ public class Stacks  {
         this.description = description;
     }
 
+    
+
     public Stacks withDisable(Boolean disable) {
         this.disable = disable;
         return this;
@@ -205,6 +213,8 @@ public class Stacks  {
     public void setDisable(Boolean disable) {
         this.disable = disable;
     }
+
+    
 
     public Stacks withId(Long id) {
         this.id = id;
@@ -228,6 +238,8 @@ public class Stacks  {
         this.id = id;
     }
 
+    
+
     public Stacks withLabel(String label) {
         this.label = label;
         return this;
@@ -247,6 +259,8 @@ public class Stacks  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
 
     public Stacks withLogo(String logo) {
         this.logo = logo;
@@ -268,6 +282,8 @@ public class Stacks  {
         this.logo = logo;
     }
 
+    
+
     public Stacks withName(String name) {
         this.name = name;
         return this;
@@ -287,6 +303,8 @@ public class Stacks  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Stacks withScope(String scope) {
         this.scope = scope;
@@ -308,6 +326,8 @@ public class Stacks  {
         this.scope = scope;
     }
 
+    
+
     public Stacks withStackId(String stackId) {
         this.stackId = stackId;
         return this;
@@ -328,6 +348,8 @@ public class Stacks  {
         this.stackId = stackId;
     }
 
+    
+
     public Stacks withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -335,9 +357,6 @@ public class Stacks  {
 
     
     public Stacks addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -361,6 +380,9 @@ public class Stacks  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

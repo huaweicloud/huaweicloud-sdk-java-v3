@@ -93,19 +93,19 @@ public class IncidentDetailInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message_list")
     
-    private List<IncidentMessageV2> messageList = new ArrayList<>();
+    private List<IncidentMessageV2> messageList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="incident_satisfaction")
     
-    private List<IncidentSatisfactionV2Do> incidentSatisfaction = new ArrayList<>();
+    private List<IncidentSatisfactionV2Do> incidentSatisfaction = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -135,7 +135,7 @@ public class IncidentDetailInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ext_info")
     
-    private IncidentDetailExtInfoV2 extInfo = null;
+    private IncidentDetailExtInfoV2 extInfo;
 
     public IncidentDetailInfoV2 withXcustomerId(String xcustomerId) {
         this.xcustomerId = xcustomerId;
@@ -157,6 +157,8 @@ public class IncidentDetailInfoV2  {
         this.xcustomerId = xcustomerId;
     }
 
+    
+
     public IncidentDetailInfoV2 withXcustomerName(String xcustomerName) {
         this.xcustomerName = xcustomerName;
         return this;
@@ -176,6 +178,8 @@ public class IncidentDetailInfoV2  {
     public void setXcustomerName(String xcustomerName) {
         this.xcustomerName = xcustomerName;
     }
+
+    
 
     public IncidentDetailInfoV2 withStatus(Integer status) {
         this.status = status;
@@ -199,6 +203,8 @@ public class IncidentDetailInfoV2  {
         this.status = status;
     }
 
+    
+
     public IncidentDetailInfoV2 withJudgement(String judgement) {
         this.judgement = judgement;
         return this;
@@ -218,6 +224,8 @@ public class IncidentDetailInfoV2  {
     public void setJudgement(String judgement) {
         this.judgement = judgement;
     }
+
+    
 
     public IncidentDetailInfoV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
@@ -239,6 +247,8 @@ public class IncidentDetailInfoV2  {
         this.incidentId = incidentId;
     }
 
+    
+
     public IncidentDetailInfoV2 withBusinessTypeName(String businessTypeName) {
         this.businessTypeName = businessTypeName;
         return this;
@@ -258,6 +268,8 @@ public class IncidentDetailInfoV2  {
     public void setBusinessTypeName(String businessTypeName) {
         this.businessTypeName = businessTypeName;
     }
+
+    
 
     public IncidentDetailInfoV2 withIncidentTypeName(String incidentTypeName) {
         this.incidentTypeName = incidentTypeName;
@@ -279,6 +291,8 @@ public class IncidentDetailInfoV2  {
         this.incidentTypeName = incidentTypeName;
     }
 
+    
+
     public IncidentDetailInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -298,6 +312,8 @@ public class IncidentDetailInfoV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public IncidentDetailInfoV2 withDcName(String dcName) {
         this.dcName = dcName;
@@ -319,6 +335,8 @@ public class IncidentDetailInfoV2  {
         this.dcName = dcName;
     }
 
+    
+
     public IncidentDetailInfoV2 withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
         return this;
@@ -338,6 +356,8 @@ public class IncidentDetailInfoV2  {
     public void setSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
     }
+
+    
 
     public IncidentDetailInfoV2 withSourceName(String sourceName) {
         this.sourceName = sourceName;
@@ -359,6 +379,8 @@ public class IncidentDetailInfoV2  {
         this.sourceName = sourceName;
     }
 
+    
+
     public IncidentDetailInfoV2 withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -378,6 +400,8 @@ public class IncidentDetailInfoV2  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public IncidentDetailInfoV2 withMessageList(List<IncidentMessageV2> messageList) {
         this.messageList = messageList;
@@ -410,6 +434,8 @@ public class IncidentDetailInfoV2  {
         this.messageList = messageList;
     }
 
+    
+
     public IncidentDetailInfoV2 withIncidentSatisfaction(List<IncidentSatisfactionV2Do> incidentSatisfaction) {
         this.incidentSatisfaction = incidentSatisfaction;
         return this;
@@ -441,6 +467,8 @@ public class IncidentDetailInfoV2  {
         this.incidentSatisfaction = incidentSatisfaction;
     }
 
+    
+
     public IncidentDetailInfoV2 withIsAuthorized(Integer isAuthorized) {
         this.isAuthorized = isAuthorized;
         return this;
@@ -463,6 +491,8 @@ public class IncidentDetailInfoV2  {
         this.isAuthorized = isAuthorized;
     }
 
+    
+
     public IncidentDetailInfoV2 withSeverityName(String severityName) {
         this.severityName = severityName;
         return this;
@@ -482,6 +512,8 @@ public class IncidentDetailInfoV2  {
     public void setSeverityName(String severityName) {
         this.severityName = severityName;
     }
+
+    
 
     public IncidentDetailInfoV2 withBusinessOwnership(Integer businessOwnership) {
         this.businessOwnership = businessOwnership;
@@ -505,6 +537,8 @@ public class IncidentDetailInfoV2  {
         this.businessOwnership = businessOwnership;
     }
 
+    
+
     public IncidentDetailInfoV2 withResolveTime(Long resolveTime) {
         this.resolveTime = resolveTime;
         return this;
@@ -526,6 +560,8 @@ public class IncidentDetailInfoV2  {
     public void setResolveTime(Long resolveTime) {
         this.resolveTime = resolveTime;
     }
+
+    
 
     public IncidentDetailInfoV2 withExtInfo(IncidentDetailExtInfoV2 extInfo) {
         this.extInfo = extInfo;
@@ -553,6 +589,9 @@ public class IncidentDetailInfoV2  {
     public void setExtInfo(IncidentDetailExtInfoV2 extInfo) {
         this.extInfo = extInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

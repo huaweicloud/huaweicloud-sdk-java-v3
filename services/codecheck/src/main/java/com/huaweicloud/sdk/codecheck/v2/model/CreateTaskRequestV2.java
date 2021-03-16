@@ -50,9 +50,6 @@ public class CreateTaskRequestV2  {
 
     
     public CreateTaskRequestV2 addCheckTypeItem(String checkTypeItem) {
-        if (this.checkType == null) {
-            this.checkType = new ArrayList<>();
-        }
         this.checkType.add(checkTypeItem);
         return this;
     }
@@ -77,6 +74,8 @@ public class CreateTaskRequestV2  {
         this.checkType = checkType;
     }
 
+    
+
     public CreateTaskRequestV2 withGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
         return this;
@@ -96,6 +95,8 @@ public class CreateTaskRequestV2  {
     public void setGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
     }
+
+    
 
     public CreateTaskRequestV2 withGitBranch(String gitBranch) {
         this.gitBranch = gitBranch;
@@ -117,6 +118,8 @@ public class CreateTaskRequestV2  {
         this.gitBranch = gitBranch;
     }
 
+    
+
     public CreateTaskRequestV2 withLanguage(List<String> language) {
         this.language = language;
         return this;
@@ -124,9 +127,6 @@ public class CreateTaskRequestV2  {
 
     
     public CreateTaskRequestV2 addLanguageItem(String languageItem) {
-        if (this.language == null) {
-            this.language = new ArrayList<>();
-        }
         this.language.add(languageItem);
         return this;
     }
@@ -150,6 +150,9 @@ public class CreateTaskRequestV2  {
     public void setLanguage(List<String> language) {
         this.language = language;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

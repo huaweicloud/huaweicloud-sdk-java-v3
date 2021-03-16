@@ -23,7 +23,7 @@ public class VaultRemoveResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
-    private List<String> resourceIds = new ArrayList<>();
+    private List<String> resourceIds = null;
     
     public VaultRemoveResourceReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
@@ -55,6 +55,9 @@ public class VaultRemoveResourceReq  {
     public void setResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

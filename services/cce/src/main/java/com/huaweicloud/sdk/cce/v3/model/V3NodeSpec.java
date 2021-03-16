@@ -50,7 +50,7 @@ public class V3NodeSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataVolumes")
     
-    private List<V3DataVolume> dataVolumes = new ArrayList<>();
+    private List<V3DataVolume> dataVolumes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,13 +86,13 @@ public class V3NodeSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login")
     
-    private Login login = null;
+    private Login login;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodeNicSpec")
     
-    private NodeNicSpec nodeNicSpec = null;
+    private NodeNicSpec nodeNicSpec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -110,13 +110,13 @@ public class V3NodeSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicIP")
     
-    private V3NodePublicIP publicIP = null;
+    private V3NodePublicIP publicIP;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rootVolume")
     
-    private V3RootVolume rootVolume = null;
+    private V3RootVolume rootVolume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -150,6 +150,8 @@ public class V3NodeSpec  {
         this.az = az;
     }
 
+    
+
     public V3NodeSpec withBillingMode(Integer billingMode) {
         this.billingMode = billingMode;
         return this;
@@ -170,6 +172,8 @@ public class V3NodeSpec  {
         this.billingMode = billingMode;
     }
 
+    
+
     public V3NodeSpec withCount(Integer count) {
         this.count = count;
         return this;
@@ -189,6 +193,8 @@ public class V3NodeSpec  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
 
     public V3NodeSpec withDataVolumes(List<V3DataVolume> dataVolumes) {
         this.dataVolumes = dataVolumes;
@@ -221,6 +227,8 @@ public class V3NodeSpec  {
         this.dataVolumes = dataVolumes;
     }
 
+    
+
     public V3NodeSpec withDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -240,6 +248,8 @@ public class V3NodeSpec  {
     public void setDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
     }
+
+    
 
     public V3NodeSpec withEcsGroupId(String ecsGroupId) {
         this.ecsGroupId = ecsGroupId;
@@ -261,6 +271,8 @@ public class V3NodeSpec  {
         this.ecsGroupId = ecsGroupId;
     }
 
+    
+
     public V3NodeSpec withExtendParam(Map<String, Object> extendParam) {
         this.extendParam = extendParam;
         return this;
@@ -269,9 +281,6 @@ public class V3NodeSpec  {
     
 
     public V3NodeSpec putExtendParamItem(String key, Object extendParamItem) {
-         if (this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-         }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
@@ -295,6 +304,8 @@ public class V3NodeSpec  {
         this.extendParam = extendParam;
     }
 
+    
+
     public V3NodeSpec withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -315,6 +326,8 @@ public class V3NodeSpec  {
         this.flavor = flavor;
     }
 
+    
+
     public V3NodeSpec withK8sTags(Map<String, String> k8sTags) {
         this.k8sTags = k8sTags;
         return this;
@@ -323,9 +336,6 @@ public class V3NodeSpec  {
     
 
     public V3NodeSpec putK8sTagsItem(String key, String k8sTagsItem) {
-         if (this.k8sTags == null) {
-            this.k8sTags = new HashMap<>();
-         }
         this.k8sTags.put(key, k8sTagsItem);
         return this;
     }
@@ -348,6 +358,8 @@ public class V3NodeSpec  {
     public void setK8sTags(Map<String, String> k8sTags) {
         this.k8sTags = k8sTags;
     }
+
+    
 
     public V3NodeSpec withLogin(Login login) {
         this.login = login;
@@ -376,6 +388,8 @@ public class V3NodeSpec  {
         this.login = login;
     }
 
+    
+
     public V3NodeSpec withNodeNicSpec(NodeNicSpec nodeNicSpec) {
         this.nodeNicSpec = nodeNicSpec;
         return this;
@@ -403,6 +417,8 @@ public class V3NodeSpec  {
         this.nodeNicSpec = nodeNicSpec;
     }
 
+    
+
     public V3NodeSpec withOffloadNode(Boolean offloadNode) {
         this.offloadNode = offloadNode;
         return this;
@@ -423,6 +439,8 @@ public class V3NodeSpec  {
         this.offloadNode = offloadNode;
     }
 
+    
+
     public V3NodeSpec withOs(String os) {
         this.os = os;
         return this;
@@ -442,6 +460,8 @@ public class V3NodeSpec  {
     public void setOs(String os) {
         this.os = os;
     }
+
+    
 
     public V3NodeSpec withPublicIP(V3NodePublicIP publicIP) {
         this.publicIP = publicIP;
@@ -470,6 +490,8 @@ public class V3NodeSpec  {
         this.publicIP = publicIP;
     }
 
+    
+
     public V3NodeSpec withRootVolume(V3RootVolume rootVolume) {
         this.rootVolume = rootVolume;
         return this;
@@ -497,6 +519,8 @@ public class V3NodeSpec  {
         this.rootVolume = rootVolume;
     }
 
+    
+
     public V3NodeSpec withTaints(List<Taint> taints) {
         this.taints = taints;
         return this;
@@ -504,9 +528,6 @@ public class V3NodeSpec  {
 
     
     public V3NodeSpec addTaintsItem(Taint taintsItem) {
-        if (this.taints == null) {
-            this.taints = new ArrayList<>();
-        }
         this.taints.add(taintsItem);
         return this;
     }
@@ -531,6 +552,8 @@ public class V3NodeSpec  {
         this.taints = taints;
     }
 
+    
+
     public V3NodeSpec withUserTags(List<UserTag> userTags) {
         this.userTags = userTags;
         return this;
@@ -538,9 +561,6 @@ public class V3NodeSpec  {
 
     
     public V3NodeSpec addUserTagsItem(UserTag userTagsItem) {
-        if (this.userTags == null) {
-            this.userTags = new ArrayList<>();
-        }
         this.userTags.add(userTagsItem);
         return this;
     }
@@ -564,6 +584,9 @@ public class V3NodeSpec  {
     public void setUserTags(List<UserTag> userTags) {
         this.userTags = userTags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

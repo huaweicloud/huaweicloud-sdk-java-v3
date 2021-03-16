@@ -75,6 +75,8 @@ public class ListSecurityGroupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSecurityGroupsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -95,6 +97,8 @@ public class ListSecurityGroupsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListSecurityGroupsRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -102,9 +106,6 @@ public class ListSecurityGroupsRequest  {
 
     
     public ListSecurityGroupsRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -129,6 +130,8 @@ public class ListSecurityGroupsRequest  {
         this.id = id;
     }
 
+    
+
     public ListSecurityGroupsRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -136,9 +139,6 @@ public class ListSecurityGroupsRequest  {
 
     
     public ListSecurityGroupsRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -163,6 +163,8 @@ public class ListSecurityGroupsRequest  {
         this.name = name;
     }
 
+    
+
     public ListSecurityGroupsRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -170,9 +172,6 @@ public class ListSecurityGroupsRequest  {
 
     
     public ListSecurityGroupsRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -197,6 +196,8 @@ public class ListSecurityGroupsRequest  {
         this.description = description;
     }
 
+    
+
     public ListSecurityGroupsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -216,6 +217,9 @@ public class ListSecurityGroupsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

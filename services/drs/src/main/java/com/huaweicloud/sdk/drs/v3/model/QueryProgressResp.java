@@ -187,6 +187,8 @@ public class QueryProgressResp  {
         this.jobId = jobId;
     }
 
+    
+
     public QueryProgressResp withProgress(String progress) {
         this.progress = progress;
         return this;
@@ -206,6 +208,8 @@ public class QueryProgressResp  {
     public void setProgress(String progress) {
         this.progress = progress;
     }
+
+    
 
     public QueryProgressResp withIncreTransDelay(String increTransDelay) {
         this.increTransDelay = increTransDelay;
@@ -227,6 +231,8 @@ public class QueryProgressResp  {
         this.increTransDelay = increTransDelay;
     }
 
+    
+
     public QueryProgressResp withTaskMode(TaskModeEnum taskMode) {
         this.taskMode = taskMode;
         return this;
@@ -246,6 +252,8 @@ public class QueryProgressResp  {
     public void setTaskMode(TaskModeEnum taskMode) {
         this.taskMode = taskMode;
     }
+
+    
 
     public QueryProgressResp withTransferStatus(String transferStatus) {
         this.transferStatus = transferStatus;
@@ -267,6 +275,8 @@ public class QueryProgressResp  {
         this.transferStatus = transferStatus;
     }
 
+    
+
     public QueryProgressResp withProcessTime(String processTime) {
         this.processTime = processTime;
         return this;
@@ -286,6 +296,8 @@ public class QueryProgressResp  {
     public void setProcessTime(String processTime) {
         this.processTime = processTime;
     }
+
+    
 
     public QueryProgressResp withRemainingTime(String remainingTime) {
         this.remainingTime = remainingTime;
@@ -307,6 +319,8 @@ public class QueryProgressResp  {
         this.remainingTime = remainingTime;
     }
 
+    
+
     public QueryProgressResp withProgressMap(Map<String, ProgressInfo> progressMap) {
         this.progressMap = progressMap;
         return this;
@@ -315,9 +329,6 @@ public class QueryProgressResp  {
     
 
     public QueryProgressResp putProgressMapItem(String key, ProgressInfo progressMapItem) {
-         if (this.progressMap == null) {
-            this.progressMap = new HashMap<>();
-         }
         this.progressMap.put(key, progressMapItem);
         return this;
     }
@@ -341,6 +352,8 @@ public class QueryProgressResp  {
         this.progressMap = progressMap;
     }
 
+    
+
     public QueryProgressResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -361,6 +374,8 @@ public class QueryProgressResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public QueryProgressResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -380,6 +395,9 @@ public class QueryProgressResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

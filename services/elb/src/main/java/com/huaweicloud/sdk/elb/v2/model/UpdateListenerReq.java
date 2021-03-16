@@ -72,7 +72,7 @@ public class UpdateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insert_headers")
     
-    private InsertHeader insertHeaders = null;
+    private InsertHeader insertHeaders;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,6 +106,8 @@ public class UpdateListenerReq  {
         this.name = name;
     }
 
+    
+
     public UpdateListenerReq withDescription(String description) {
         this.description = description;
         return this;
@@ -125,6 +127,8 @@ public class UpdateListenerReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateListenerReq withConnectionLimit(Integer connectionLimit) {
         this.connectionLimit = connectionLimit;
@@ -147,6 +151,8 @@ public class UpdateListenerReq  {
         this.connectionLimit = connectionLimit;
     }
 
+    
+
     public UpdateListenerReq withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
@@ -166,6 +172,8 @@ public class UpdateListenerReq  {
     public void setHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
     }
+
+    
 
     public UpdateListenerReq withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
@@ -187,6 +195,8 @@ public class UpdateListenerReq  {
         this.defaultPoolId = defaultPoolId;
     }
 
+    
+
     public UpdateListenerReq withDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
@@ -206,6 +216,8 @@ public class UpdateListenerReq  {
     public void setDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
+
+    
 
     public UpdateListenerReq withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
@@ -227,6 +239,8 @@ public class UpdateListenerReq  {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
 
+    
+
     public UpdateListenerReq withSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
         return this;
@@ -234,9 +248,6 @@ public class UpdateListenerReq  {
 
     
     public UpdateListenerReq addSniContainerRefsItem(String sniContainerRefsItem) {
-        if (this.sniContainerRefs == null) {
-            this.sniContainerRefs = new ArrayList<>();
-        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
@@ -260,6 +271,8 @@ public class UpdateListenerReq  {
     public void setSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
     }
+
+    
 
     public UpdateListenerReq withInsertHeaders(InsertHeader insertHeaders) {
         this.insertHeaders = insertHeaders;
@@ -288,6 +301,8 @@ public class UpdateListenerReq  {
         this.insertHeaders = insertHeaders;
     }
 
+    
+
     public UpdateListenerReq withTlsCiphersPolicy(String tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
@@ -308,6 +323,8 @@ public class UpdateListenerReq  {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
 
+    
+
     public UpdateListenerReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -327,6 +344,9 @@ public class UpdateListenerReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

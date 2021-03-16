@@ -53,6 +53,8 @@ public class ListCaseQuotasResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListCaseQuotasResponse withUnUsed(Integer unUsed) {
         this.unUsed = unUsed;
         return this;
@@ -74,6 +76,9 @@ public class ListCaseQuotasResponse extends SdkResponse {
     public void setUnUsed(Integer unUsed) {
         this.unUsed = unUsed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListUserLoginProtectsResponse extends SdkResponse {
 
     
     public ListUserLoginProtectsResponse addLoginProtectsItem(LoginProtectResult loginProtectsItem) {
-        if (this.loginProtects == null) {
-            this.loginProtects = new ArrayList<>();
-        }
         this.loginProtects.add(loginProtectsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListUserLoginProtectsResponse extends SdkResponse {
     public void setLoginProtects(List<LoginProtectResult> loginProtects) {
         this.loginProtects = loginProtects;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class ProtocolOption  {
     public void setMappingId(String mappingId) {
         this.mappingId = mappingId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

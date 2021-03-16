@@ -67,6 +67,8 @@ public class EventInfo  {
         this.eventName = eventName;
     }
 
+    
+
     public EventInfo withEventType(String eventType) {
         this.eventType = eventType;
         return this;
@@ -86,6 +88,8 @@ public class EventInfo  {
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
+
+    
 
     public EventInfo withEventCount(String eventCount) {
         this.eventCount = eventCount;
@@ -107,6 +111,8 @@ public class EventInfo  {
         this.eventCount = eventCount;
     }
 
+    
+
     public EventInfo withLatestOccurTime(String latestOccurTime) {
         this.latestOccurTime = latestOccurTime;
         return this;
@@ -127,6 +133,8 @@ public class EventInfo  {
         this.latestOccurTime = latestOccurTime;
     }
 
+    
+
     public EventInfo withLatestEventSource(String latestEventSource) {
         this.latestEventSource = latestEventSource;
         return this;
@@ -146,6 +154,9 @@ public class EventInfo  {
     public void setLatestEventSource(String latestEventSource) {
         this.latestEventSource = latestEventSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

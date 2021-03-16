@@ -23,13 +23,13 @@ public class CreateThumbReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,25 +41,25 @@ public class CreateThumbReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="thumbnail_para")
     
-    private ThumbnailPara thumbnailPara = null;
+    private ThumbnailPara thumbnailPara;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tar")
     
-    private Integer tar = 1;
+    private Integer tar;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync")
     
-    private Integer sync = 0;
+    private Integer sync;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="original_dir")
     
-    private Integer originalDir = 0;
+    private Integer originalDir;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,6 +112,8 @@ public class CreateThumbReq  {
         this.input = input;
     }
 
+    
+
     public CreateThumbReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -139,6 +141,8 @@ public class CreateThumbReq  {
         this.output = output;
     }
 
+    
+
     public CreateThumbReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -158,6 +162,8 @@ public class CreateThumbReq  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public CreateThumbReq withThumbnailPara(ThumbnailPara thumbnailPara) {
         this.thumbnailPara = thumbnailPara;
@@ -186,6 +192,8 @@ public class CreateThumbReq  {
         this.thumbnailPara = thumbnailPara;
     }
 
+    
+
     public CreateThumbReq withTar(Integer tar) {
         this.tar = tar;
         return this;
@@ -195,7 +203,7 @@ public class CreateThumbReq  {
 
 
     /**
-     * 是否压缩抽帧图片生成tar包。  取值如下：  - 0：压缩。 - 1：不压缩 
+     * 是否压缩抽帧图片生成tar包。  取值如下： - 0：压缩。 - 1：不压缩 默认值：1 
      * minimum: 0
      * maximum: 1
      * @return tar
@@ -208,6 +216,8 @@ public class CreateThumbReq  {
         this.tar = tar;
     }
 
+    
+
     public CreateThumbReq withSync(Integer sync) {
         this.sync = sync;
         return this;
@@ -217,7 +227,7 @@ public class CreateThumbReq  {
 
 
     /**
-     * 是否同步处理，同步处理是指不下载全部文件，快速定位到截图位置进行截图。  取值如下： - 0：排队处理。 - 1：同步处理，暂只支持按时间点截单张图。 
+     * 是否同步处理，同步处理是指不下载全部文件，快速定位到截图位置进行截图。  取值如下： - 0：排队处理。 - 1：同步处理，暂只支持按时间点截单张图。 默认值：0 
      * minimum: 0
      * maximum: 1
      * @return sync
@@ -230,6 +240,8 @@ public class CreateThumbReq  {
         this.sync = sync;
     }
 
+    
+
     public CreateThumbReq withOriginalDir(Integer originalDir) {
         this.originalDir = originalDir;
         return this;
@@ -239,7 +251,7 @@ public class CreateThumbReq  {
 
 
     /**
-     * 是否使用原始输出目录。  取值如下： - 0：不使用原始输出目录，下发的输出目录后面追加随机目录，防止截图文件outputUri相同被覆盖。 - 1：使用原始输出目录。 
+     * 是否使用原始输出目录。  取值如下： - 0：不使用原始输出目录，下发的输出目录后面追加随机目录，防止截图文件outputUri相同被覆盖。 - 1：使用原始输出目录。 默认值：0 
      * minimum: 0
      * maximum: 1
      * @return originalDir
@@ -251,6 +263,8 @@ public class CreateThumbReq  {
     public void setOriginalDir(Integer originalDir) {
         this.originalDir = originalDir;
     }
+
+    
 
     public CreateThumbReq withProjectId(String projectId) {
         this.projectId = projectId;
@@ -272,6 +286,8 @@ public class CreateThumbReq  {
         this.projectId = projectId;
     }
 
+    
+
     public CreateThumbReq withTenantProjectId(String tenantProjectId) {
         this.tenantProjectId = tenantProjectId;
         return this;
@@ -291,6 +307,8 @@ public class CreateThumbReq  {
     public void setTenantProjectId(String tenantProjectId) {
         this.tenantProjectId = tenantProjectId;
     }
+
+    
 
     public CreateThumbReq withDomainName(String domainName) {
         this.domainName = domainName;
@@ -312,6 +330,8 @@ public class CreateThumbReq  {
         this.domainName = domainName;
     }
 
+    
+
     public CreateThumbReq withCanonicalGrantId(String canonicalGrantId) {
         this.canonicalGrantId = canonicalGrantId;
         return this;
@@ -331,6 +351,9 @@ public class CreateThumbReq  {
     public void setCanonicalGrantId(String canonicalGrantId) {
         this.canonicalGrantId = canonicalGrantId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

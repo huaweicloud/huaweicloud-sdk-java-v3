@@ -97,6 +97,8 @@ public class MemberListV4Members  {
         this.domainId = domainId;
     }
 
+    
+
     public MemberListV4Members withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -116,6 +118,8 @@ public class MemberListV4Members  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public MemberListV4Members withUserId(String userId) {
         this.userId = userId;
@@ -137,6 +141,8 @@ public class MemberListV4Members  {
         this.userId = userId;
     }
 
+    
+
     public MemberListV4Members withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -156,6 +162,8 @@ public class MemberListV4Members  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public MemberListV4Members withUserNumId(Integer userNumId) {
         this.userNumId = userNumId;
@@ -177,6 +185,8 @@ public class MemberListV4Members  {
         this.userNumId = userNumId;
     }
 
+    
+
     public MemberListV4Members withRoleId(Integer roleId) {
         this.roleId = roleId;
         return this;
@@ -186,7 +196,7 @@ public class MemberListV4Members  {
 
 
     /**
-     * 成员角色 3 项目经理 4 开发人员 5 测试经理 6 测试人员 7 参与者 8 浏览者
+     * 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者,
      * @return roleId
      */
     public Integer getRoleId() {
@@ -196,6 +206,8 @@ public class MemberListV4Members  {
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
+
+    
 
     public MemberListV4Members withNickName(String nickName) {
         this.nickName = nickName;
@@ -217,6 +229,8 @@ public class MemberListV4Members  {
         this.nickName = nickName;
     }
 
+    
+
     public MemberListV4Members withRoleName(String roleName) {
         this.roleName = roleName;
         return this;
@@ -237,6 +251,8 @@ public class MemberListV4Members  {
         this.roleName = roleName;
     }
 
+    
+
     public MemberListV4Members withUserType(String userType) {
         this.userType = userType;
         return this;
@@ -246,7 +262,7 @@ public class MemberListV4Members  {
 
 
     /**
-     * 用户类型 User iam用户 Federation 联邦账号
+     * 用户类型, User iam用户, Federation 联邦账号,
      * @return userType
      */
     public String getUserType() {
@@ -256,6 +272,8 @@ public class MemberListV4Members  {
     public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    
 
     public MemberListV4Members withForbidden(Integer forbidden) {
         this.forbidden = forbidden;
@@ -276,6 +294,9 @@ public class MemberListV4Members  {
     public void setForbidden(Integer forbidden) {
         this.forbidden = forbidden;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

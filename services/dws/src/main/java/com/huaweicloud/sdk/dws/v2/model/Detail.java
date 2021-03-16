@@ -55,6 +55,8 @@ public class Detail  {
         this.unit = unit;
     }
 
+    
+
     public Detail withType(String type) {
         this.type = type;
         return this;
@@ -75,6 +77,8 @@ public class Detail  {
         this.type = type;
     }
 
+    
+
     public Detail withValue(String value) {
         this.value = value;
         return this;
@@ -94,6 +98,9 @@ public class Detail  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

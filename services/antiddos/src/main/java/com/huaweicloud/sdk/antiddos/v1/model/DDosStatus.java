@@ -85,6 +85,8 @@ public class DDosStatus  {
         this.floatingIpId = floatingIpId;
     }
 
+    
+
     public DDosStatus withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
@@ -104,6 +106,8 @@ public class DDosStatus  {
     public void setFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
     }
+
+    
 
     public DDosStatus withNetworkType(String networkType) {
         this.networkType = networkType;
@@ -125,6 +129,8 @@ public class DDosStatus  {
         this.networkType = networkType;
     }
 
+    
+
     public DDosStatus withStatus(String status) {
         this.status = status;
         return this;
@@ -144,6 +150,8 @@ public class DDosStatus  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public DDosStatus withBlackholeEndtime(Long blackholeEndtime) {
         this.blackholeEndtime = blackholeEndtime;
@@ -165,6 +173,8 @@ public class DDosStatus  {
         this.blackholeEndtime = blackholeEndtime;
     }
 
+    
+
     public DDosStatus withProtectType(String protectType) {
         this.protectType = protectType;
         return this;
@@ -184,6 +194,8 @@ public class DDosStatus  {
     public void setProtectType(String protectType) {
         this.protectType = protectType;
     }
+
+    
 
     public DDosStatus withTrafficThreshold(Long trafficThreshold) {
         this.trafficThreshold = trafficThreshold;
@@ -205,6 +217,8 @@ public class DDosStatus  {
         this.trafficThreshold = trafficThreshold;
     }
 
+    
+
     public DDosStatus withHttpThreshold(Long httpThreshold) {
         this.httpThreshold = httpThreshold;
         return this;
@@ -224,6 +238,9 @@ public class DDosStatus  {
     public void setHttpThreshold(Long httpThreshold) {
         this.httpThreshold = httpThreshold;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

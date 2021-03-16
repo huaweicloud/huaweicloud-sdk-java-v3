@@ -179,6 +179,8 @@ public class HotkeysBody  {
         this.name = name;
     }
 
+    
+
     public HotkeysBody withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -198,6 +200,8 @@ public class HotkeysBody  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public HotkeysBody withShard(String shard) {
         this.shard = shard;
@@ -219,6 +223,8 @@ public class HotkeysBody  {
         this.shard = shard;
     }
 
+    
+
     public HotkeysBody withDb(Integer db) {
         this.db = db;
         return this;
@@ -238,6 +244,8 @@ public class HotkeysBody  {
     public void setDb(Integer db) {
         this.db = db;
     }
+
+    
 
     public HotkeysBody withSize(Integer size) {
         this.size = size;
@@ -259,6 +267,8 @@ public class HotkeysBody  {
         this.size = size;
     }
 
+    
+
     public HotkeysBody withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -279,6 +289,8 @@ public class HotkeysBody  {
         this.unit = unit;
     }
 
+    
+
     public HotkeysBody withFreq(Integer freq) {
         this.freq = freq;
         return this;
@@ -298,6 +310,9 @@ public class HotkeysBody  {
     public void setFreq(Integer freq) {
         this.freq = freq;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

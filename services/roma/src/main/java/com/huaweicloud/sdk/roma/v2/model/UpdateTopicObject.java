@@ -73,6 +73,8 @@ public class UpdateTopicObject  {
         this.name = name;
     }
 
+    
+
     public UpdateTopicObject withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
@@ -92,6 +94,8 @@ public class UpdateTopicObject  {
     public void setRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
     }
+
+    
 
     public UpdateTopicObject withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
@@ -113,6 +117,8 @@ public class UpdateTopicObject  {
         this.syncReplication = syncReplication;
     }
 
+    
+
     public UpdateTopicObject withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
@@ -132,6 +138,8 @@ public class UpdateTopicObject  {
     public void setSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
     }
+
+    
 
     public UpdateTopicObject withDescription(String description) {
         this.description = description;
@@ -153,6 +161,8 @@ public class UpdateTopicObject  {
         this.description = description;
     }
 
+    
+
     public UpdateTopicObject withSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
         return this;
@@ -172,6 +182,9 @@ public class UpdateTopicObject  {
     public void setSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

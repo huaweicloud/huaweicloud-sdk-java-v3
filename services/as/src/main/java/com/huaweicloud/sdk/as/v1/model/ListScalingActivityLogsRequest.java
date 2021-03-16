@@ -28,13 +28,13 @@ public class ListScalingActivityLogsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime = null;
+    private OffsetDateTime startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private OffsetDateTime endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class ListScalingActivityLogsRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public ListScalingActivityLogsRequest withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
@@ -87,6 +89,8 @@ public class ListScalingActivityLogsRequest  {
     public void setStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListScalingActivityLogsRequest withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -108,6 +112,8 @@ public class ListScalingActivityLogsRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListScalingActivityLogsRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -127,6 +133,8 @@ public class ListScalingActivityLogsRequest  {
     public void setStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
     }
+
+    
 
     public ListScalingActivityLogsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -149,6 +157,9 @@ public class ListScalingActivityLogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

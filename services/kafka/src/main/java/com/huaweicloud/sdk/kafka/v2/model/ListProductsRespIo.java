@@ -69,6 +69,8 @@ public class ListProductsRespIo  {
         this.ioType = ioType;
     }
 
+    
+
     public ListProductsRespIo withStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
         return this;
@@ -89,6 +91,8 @@ public class ListProductsRespIo  {
         this.storageSpecCode = storageSpecCode;
     }
 
+    
+
     public ListProductsRespIo withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -96,9 +100,6 @@ public class ListProductsRespIo  {
 
     
     public ListProductsRespIo addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -123,6 +124,8 @@ public class ListProductsRespIo  {
         this.availableZones = availableZones;
     }
 
+    
+
     public ListProductsRespIo withUnavailableZones(List<String> unavailableZones) {
         this.unavailableZones = unavailableZones;
         return this;
@@ -130,9 +133,6 @@ public class ListProductsRespIo  {
 
     
     public ListProductsRespIo addUnavailableZonesItem(String unavailableZonesItem) {
-        if (this.unavailableZones == null) {
-            this.unavailableZones = new ArrayList<>();
-        }
         this.unavailableZones.add(unavailableZonesItem);
         return this;
     }
@@ -157,6 +157,8 @@ public class ListProductsRespIo  {
         this.unavailableZones = unavailableZones;
     }
 
+    
+
     public ListProductsRespIo withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
@@ -176,6 +178,9 @@ public class ListProductsRespIo  {
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

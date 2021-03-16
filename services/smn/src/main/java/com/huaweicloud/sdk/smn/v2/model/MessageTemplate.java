@@ -41,7 +41,7 @@ public class MessageTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_names")
     
-    private List<String> tagNames = new ArrayList<>();
+    private List<String> tagNames = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class MessageTemplate  {
         this.messageTemplateId = messageTemplateId;
     }
 
+    
+
     public MessageTemplate withMessageTemplateName(String messageTemplateName) {
         this.messageTemplateName = messageTemplateName;
         return this;
@@ -95,6 +97,8 @@ public class MessageTemplate  {
         this.messageTemplateName = messageTemplateName;
     }
 
+    
+
     public MessageTemplate withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -114,6 +118,8 @@ public class MessageTemplate  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public MessageTemplate withTagNames(List<String> tagNames) {
         this.tagNames = tagNames;
@@ -146,6 +152,8 @@ public class MessageTemplate  {
         this.tagNames = tagNames;
     }
 
+    
+
     public MessageTemplate withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -166,6 +174,8 @@ public class MessageTemplate  {
         this.createTime = createTime;
     }
 
+    
+
     public MessageTemplate withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -185,6 +195,9 @@ public class MessageTemplate  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

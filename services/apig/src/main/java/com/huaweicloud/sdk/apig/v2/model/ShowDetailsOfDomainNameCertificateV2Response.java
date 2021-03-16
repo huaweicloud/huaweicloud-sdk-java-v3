@@ -119,6 +119,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.commonName = commonName;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withSan(List<String> san) {
         this.san = san;
         return this;
@@ -126,9 +128,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addSanItem(String sanItem) {
-        if (this.san == null) {
-            this.san = new ArrayList<>();
-        }
         this.san.add(sanItem);
         return this;
     }
@@ -153,6 +152,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.san = san;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withVersion(String version) {
         this.version = version;
         return this;
@@ -173,6 +174,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.version = version;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withOrganization(List<String> organization) {
         this.organization = organization;
         return this;
@@ -180,9 +183,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addOrganizationItem(String organizationItem) {
-        if (this.organization == null) {
-            this.organization = new ArrayList<>();
-        }
         this.organization.add(organizationItem);
         return this;
     }
@@ -207,6 +207,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.organization = organization;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withOrganizationalUnit(List<String> organizationalUnit) {
         this.organizationalUnit = organizationalUnit;
         return this;
@@ -214,9 +216,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addOrganizationalUnitItem(String organizationalUnitItem) {
-        if (this.organizationalUnit == null) {
-            this.organizationalUnit = new ArrayList<>();
-        }
         this.organizationalUnit.add(organizationalUnitItem);
         return this;
     }
@@ -241,6 +240,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.organizationalUnit = organizationalUnit;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withLocality(List<String> locality) {
         this.locality = locality;
         return this;
@@ -248,9 +249,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addLocalityItem(String localityItem) {
-        if (this.locality == null) {
-            this.locality = new ArrayList<>();
-        }
         this.locality.add(localityItem);
         return this;
     }
@@ -275,6 +273,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.locality = locality;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withState(List<String> state) {
         this.state = state;
         return this;
@@ -282,9 +282,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addStateItem(String stateItem) {
-        if (this.state == null) {
-            this.state = new ArrayList<>();
-        }
         this.state.add(stateItem);
         return this;
     }
@@ -309,6 +306,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.state = state;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withCountry(List<String> country) {
         this.country = country;
         return this;
@@ -316,9 +315,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addCountryItem(String countryItem) {
-        if (this.country == null) {
-            this.country = new ArrayList<>();
-        }
         this.country.add(countryItem);
         return this;
     }
@@ -343,6 +339,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.country = country;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withNotBefore(String notBefore) {
         this.notBefore = notBefore;
         return this;
@@ -362,6 +360,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     public void setNotBefore(String notBefore) {
         this.notBefore = notBefore;
     }
+
+    
 
     public ShowDetailsOfDomainNameCertificateV2Response withNotAfter(String notAfter) {
         this.notAfter = notAfter;
@@ -383,6 +383,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.notAfter = notAfter;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
@@ -403,6 +405,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.serialNumber = serialNumber;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withIssuer(List<String> issuer) {
         this.issuer = issuer;
         return this;
@@ -410,9 +414,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addIssuerItem(String issuerItem) {
-        if (this.issuer == null) {
-            this.issuer = new ArrayList<>();
-        }
         this.issuer.add(issuerItem);
         return this;
     }
@@ -437,6 +438,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.issuer = issuer;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Response withSignatureAlgorithm(String signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
         return this;
@@ -456,6 +459,9 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     public void setSignatureAlgorithm(String signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

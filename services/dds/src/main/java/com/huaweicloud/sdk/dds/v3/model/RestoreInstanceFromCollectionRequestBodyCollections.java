@@ -55,6 +55,8 @@ public class RestoreInstanceFromCollectionRequestBodyCollections  {
         this.oldName = oldName;
     }
 
+    
+
     public RestoreInstanceFromCollectionRequestBodyCollections withNewName(String newName) {
         this.newName = newName;
         return this;
@@ -75,6 +77,8 @@ public class RestoreInstanceFromCollectionRequestBodyCollections  {
         this.newName = newName;
     }
 
+    
+
     public RestoreInstanceFromCollectionRequestBodyCollections withRestoreCollectionTime(String restoreCollectionTime) {
         this.restoreCollectionTime = restoreCollectionTime;
         return this;
@@ -94,6 +98,9 @@ public class RestoreInstanceFromCollectionRequestBodyCollections  {
     public void setRestoreCollectionTime(String restoreCollectionTime) {
         this.restoreCollectionTime = restoreCollectionTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

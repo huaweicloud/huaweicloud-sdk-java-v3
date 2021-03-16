@@ -61,6 +61,8 @@ public class ServerAttachableQuantity  {
         this.freeScsi = freeScsi;
     }
 
+    
+
     public ServerAttachableQuantity withFreeBlk(Integer freeBlk) {
         this.freeBlk = freeBlk;
         return this;
@@ -80,6 +82,8 @@ public class ServerAttachableQuantity  {
     public void setFreeBlk(Integer freeBlk) {
         this.freeBlk = freeBlk;
     }
+
+    
 
     public ServerAttachableQuantity withFreeDisk(Integer freeDisk) {
         this.freeDisk = freeDisk;
@@ -101,6 +105,8 @@ public class ServerAttachableQuantity  {
         this.freeDisk = freeDisk;
     }
 
+    
+
     public ServerAttachableQuantity withFreeNic(Integer freeNic) {
         this.freeNic = freeNic;
         return this;
@@ -120,6 +126,9 @@ public class ServerAttachableQuantity  {
     public void setFreeNic(Integer freeNic) {
         this.freeNic = freeNic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class KeystoneCreateUserTokenByPasswordRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth")
     
-    private PwdAuth auth = null;
+    private PwdAuth auth;
 
     public KeystoneCreateUserTokenByPasswordRequestBody withAuth(PwdAuth auth) {
         this.auth = auth;
@@ -50,6 +50,9 @@ public class KeystoneCreateUserTokenByPasswordRequestBody  {
     public void setAuth(PwdAuth auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -231,7 +231,7 @@ public class ApiPolicyFunctionCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<ApiConditionBase> conditions = new ArrayList<>();
+    private List<ApiConditionBase> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -259,6 +259,8 @@ public class ApiPolicyFunctionCreate  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public ApiPolicyFunctionCreate withInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
         return this;
@@ -278,6 +280,8 @@ public class ApiPolicyFunctionCreate  {
     public void setInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
     }
+
+    
 
     public ApiPolicyFunctionCreate withVersion(String version) {
         this.version = version;
@@ -299,6 +303,8 @@ public class ApiPolicyFunctionCreate  {
         this.version = version;
     }
 
+    
+
     public ApiPolicyFunctionCreate withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -318,6 +324,8 @@ public class ApiPolicyFunctionCreate  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
 
     public ApiPolicyFunctionCreate withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
@@ -339,6 +347,8 @@ public class ApiPolicyFunctionCreate  {
         this.effectMode = effectMode;
     }
 
+    
+
     public ApiPolicyFunctionCreate withName(String name) {
         this.name = name;
         return this;
@@ -359,6 +369,8 @@ public class ApiPolicyFunctionCreate  {
         this.name = name;
     }
 
+    
+
     public ApiPolicyFunctionCreate withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -366,9 +378,6 @@ public class ApiPolicyFunctionCreate  {
 
     
     public ApiPolicyFunctionCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -392,6 +401,8 @@ public class ApiPolicyFunctionCreate  {
     public void setBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
     }
+
+    
 
     public ApiPolicyFunctionCreate withConditions(List<ApiConditionBase> conditions) {
         this.conditions = conditions;
@@ -424,6 +435,8 @@ public class ApiPolicyFunctionCreate  {
         this.conditions = conditions;
     }
 
+    
+
     public ApiPolicyFunctionCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -443,6 +456,9 @@ public class ApiPolicyFunctionCreate  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

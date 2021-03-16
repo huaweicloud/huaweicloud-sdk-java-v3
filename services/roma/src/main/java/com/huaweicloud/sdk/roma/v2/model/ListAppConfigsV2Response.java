@@ -61,6 +61,8 @@ public class ListAppConfigsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListAppConfigsV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListAppConfigsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListAppConfigsV2Response withConfigs(List<AppConfigInfo> configs) {
         this.configs = configs;
         return this;
@@ -88,9 +92,6 @@ public class ListAppConfigsV2Response extends SdkResponse {
 
     
     public ListAppConfigsV2Response addConfigsItem(AppConfigInfo configsItem) {
-        if (this.configs == null) {
-            this.configs = new ArrayList<>();
-        }
         this.configs.add(configsItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListAppConfigsV2Response extends SdkResponse {
     public void setConfigs(List<AppConfigInfo> configs) {
         this.configs = configs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

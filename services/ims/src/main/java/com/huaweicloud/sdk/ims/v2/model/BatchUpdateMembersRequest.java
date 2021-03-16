@@ -22,7 +22,7 @@ public class BatchUpdateMembersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchUpdateMembersRequestBody body = null;
+    private BatchUpdateMembersRequestBody body;
 
     public BatchUpdateMembersRequest withBody(BatchUpdateMembersRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchUpdateMembersRequest  {
     public void setBody(BatchUpdateMembersRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

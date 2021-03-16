@@ -233,6 +233,8 @@ public class ResourceResult  {
         this.type = type;
     }
 
+    
+
     public ResourceResult withUsed(Integer used) {
         this.used = used;
         return this;
@@ -252,6 +254,8 @@ public class ResourceResult  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
 
     public ResourceResult withQuota(Integer quota) {
         this.quota = quota;
@@ -273,6 +277,8 @@ public class ResourceResult  {
         this.quota = quota;
     }
 
+    
+
     public ResourceResult withMin(Integer min) {
         this.min = min;
         return this;
@@ -292,6 +298,9 @@ public class ResourceResult  {
     public void setMin(Integer min) {
         this.min = min;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -153,6 +153,8 @@ public class ListInstancesByTagsRequestBody  {
         this.offset = offset;
     }
 
+    
+
     public ListInstancesByTagsRequestBody withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -172,6 +174,8 @@ public class ListInstancesByTagsRequestBody  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
 
     public ListInstancesByTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -193,6 +197,8 @@ public class ListInstancesByTagsRequestBody  {
         this.action = action;
     }
 
+    
+
     public ListInstancesByTagsRequestBody withMatches(List<QueryMatchItem> matches) {
         this.matches = matches;
         return this;
@@ -200,9 +206,6 @@ public class ListInstancesByTagsRequestBody  {
 
     
     public ListInstancesByTagsRequestBody addMatchesItem(QueryMatchItem matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -227,6 +230,8 @@ public class ListInstancesByTagsRequestBody  {
         this.matches = matches;
     }
 
+    
+
     public ListInstancesByTagsRequestBody withTags(List<QueryTagItem> tags) {
         this.tags = tags;
         return this;
@@ -234,9 +239,6 @@ public class ListInstancesByTagsRequestBody  {
 
     
     public ListInstancesByTagsRequestBody addTagsItem(QueryTagItem tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -260,6 +262,9 @@ public class ListInstancesByTagsRequestBody  {
     public void setTags(List<QueryTagItem> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

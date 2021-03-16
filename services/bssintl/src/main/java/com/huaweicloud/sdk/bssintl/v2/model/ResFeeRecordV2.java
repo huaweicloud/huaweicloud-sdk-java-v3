@@ -307,6 +307,8 @@ public class ResFeeRecordV2  {
         this.billDate = billDate;
     }
 
+    
+
     public ResFeeRecordV2 withBillType(Integer billType) {
         this.billType = billType;
         return this;
@@ -326,6 +328,8 @@ public class ResFeeRecordV2  {
     public void setBillType(Integer billType) {
         this.billType = billType;
     }
+
+    
 
     public ResFeeRecordV2 withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -347,6 +351,8 @@ public class ResFeeRecordV2  {
         this.customerId = customerId;
     }
 
+    
+
     public ResFeeRecordV2 withRegion(String region) {
         this.region = region;
         return this;
@@ -366,6 +372,8 @@ public class ResFeeRecordV2  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public ResFeeRecordV2 withRegionName(String regionName) {
         this.regionName = regionName;
@@ -387,6 +395,8 @@ public class ResFeeRecordV2  {
         this.regionName = regionName;
     }
 
+    
+
     public ResFeeRecordV2 withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
@@ -406,6 +416,8 @@ public class ResFeeRecordV2  {
     public void setCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
     }
+
+    
 
     public ResFeeRecordV2 withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -427,6 +439,8 @@ public class ResFeeRecordV2  {
         this.resourceType = resourceType;
     }
 
+    
+
     public ResFeeRecordV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
@@ -446,6 +460,8 @@ public class ResFeeRecordV2  {
     public void setEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
     }
+
+    
 
     public ResFeeRecordV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -467,6 +483,8 @@ public class ResFeeRecordV2  {
         this.expireTime = expireTime;
     }
 
+    
+
     public ResFeeRecordV2 withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -486,6 +504,8 @@ public class ResFeeRecordV2  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public ResFeeRecordV2 withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -507,6 +527,8 @@ public class ResFeeRecordV2  {
         this.resourceName = resourceName;
     }
 
+    
+
     public ResFeeRecordV2 withResourceTag(String resourceTag) {
         this.resourceTag = resourceTag;
         return this;
@@ -526,6 +548,8 @@ public class ResFeeRecordV2  {
     public void setResourceTag(String resourceTag) {
         this.resourceTag = resourceTag;
     }
+
+    
 
     public ResFeeRecordV2 withProductId(String productId) {
         this.productId = productId;
@@ -547,6 +571,8 @@ public class ResFeeRecordV2  {
         this.productId = productId;
     }
 
+    
+
     public ResFeeRecordV2 withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -566,6 +592,8 @@ public class ResFeeRecordV2  {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    
 
     public ResFeeRecordV2 withProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
@@ -587,6 +615,8 @@ public class ResFeeRecordV2  {
         this.productSpecDesc = productSpecDesc;
     }
 
+    
+
     public ResFeeRecordV2 withSkuCode(String skuCode) {
         this.skuCode = skuCode;
         return this;
@@ -606,6 +636,8 @@ public class ResFeeRecordV2  {
     public void setSkuCode(String skuCode) {
         this.skuCode = skuCode;
     }
+
+    
 
     public ResFeeRecordV2 withSpecSize(Double specSize) {
         this.specSize = specSize;
@@ -627,6 +659,8 @@ public class ResFeeRecordV2  {
         this.specSize = specSize;
     }
 
+    
+
     public ResFeeRecordV2 withSpecSizeMeasureId(Integer specSizeMeasureId) {
         this.specSizeMeasureId = specSizeMeasureId;
         return this;
@@ -646,6 +680,8 @@ public class ResFeeRecordV2  {
     public void setSpecSizeMeasureId(Integer specSizeMeasureId) {
         this.specSizeMeasureId = specSizeMeasureId;
     }
+
+    
 
     public ResFeeRecordV2 withTradeId(String tradeId) {
         this.tradeId = tradeId;
@@ -667,6 +703,8 @@ public class ResFeeRecordV2  {
         this.tradeId = tradeId;
     }
 
+    
+
     public ResFeeRecordV2 withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -686,6 +724,8 @@ public class ResFeeRecordV2  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ResFeeRecordV2 withEnterpriseProjectName(String enterpriseProjectName) {
         this.enterpriseProjectName = enterpriseProjectName;
@@ -707,6 +747,8 @@ public class ResFeeRecordV2  {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
+    
+
     public ResFeeRecordV2 withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -726,6 +768,8 @@ public class ResFeeRecordV2  {
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public ResFeeRecordV2 withOrderId(String orderId) {
         this.orderId = orderId;
@@ -747,6 +791,8 @@ public class ResFeeRecordV2  {
         this.orderId = orderId;
     }
 
+    
+
     public ResFeeRecordV2 withPeriodType(String periodType) {
         this.periodType = periodType;
         return this;
@@ -766,6 +812,8 @@ public class ResFeeRecordV2  {
     public void setPeriodType(String periodType) {
         this.periodType = periodType;
     }
+
+    
 
     public ResFeeRecordV2 withUsageType(String usageType) {
         this.usageType = usageType;
@@ -787,6 +835,8 @@ public class ResFeeRecordV2  {
         this.usageType = usageType;
     }
 
+    
+
     public ResFeeRecordV2 withUsage(Double usage) {
         this.usage = usage;
         return this;
@@ -806,6 +856,8 @@ public class ResFeeRecordV2  {
     public void setUsage(Double usage) {
         this.usage = usage;
     }
+
+    
 
     public ResFeeRecordV2 withUsageMeasureId(Integer usageMeasureId) {
         this.usageMeasureId = usageMeasureId;
@@ -827,6 +879,8 @@ public class ResFeeRecordV2  {
         this.usageMeasureId = usageMeasureId;
     }
 
+    
+
     public ResFeeRecordV2 withFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
         return this;
@@ -846,6 +900,8 @@ public class ResFeeRecordV2  {
     public void setFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
     }
+
+    
 
     public ResFeeRecordV2 withFreeResourceMeasureId(Integer freeResourceMeasureId) {
         this.freeResourceMeasureId = freeResourceMeasureId;
@@ -867,6 +923,8 @@ public class ResFeeRecordV2  {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
 
+    
+
     public ResFeeRecordV2 withRiUsage(Double riUsage) {
         this.riUsage = riUsage;
         return this;
@@ -886,6 +944,8 @@ public class ResFeeRecordV2  {
     public void setRiUsage(Double riUsage) {
         this.riUsage = riUsage;
     }
+
+    
 
     public ResFeeRecordV2 withRiUsageMeasureId(Integer riUsageMeasureId) {
         this.riUsageMeasureId = riUsageMeasureId;
@@ -907,6 +967,8 @@ public class ResFeeRecordV2  {
         this.riUsageMeasureId = riUsageMeasureId;
     }
 
+    
+
     public ResFeeRecordV2 withUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
         return this;
@@ -926,6 +988,8 @@ public class ResFeeRecordV2  {
     public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
     }
+
+    
 
     public ResFeeRecordV2 withUnit(String unit) {
         this.unit = unit;
@@ -947,6 +1011,8 @@ public class ResFeeRecordV2  {
         this.unit = unit;
     }
 
+    
+
     public ResFeeRecordV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
@@ -966,6 +1032,8 @@ public class ResFeeRecordV2  {
     public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
+
+    
 
     public ResFeeRecordV2 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
@@ -987,6 +1055,8 @@ public class ResFeeRecordV2  {
         this.discountAmount = discountAmount;
     }
 
+    
+
     public ResFeeRecordV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -1006,6 +1076,8 @@ public class ResFeeRecordV2  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
 
     public ResFeeRecordV2 withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
@@ -1027,6 +1099,8 @@ public class ResFeeRecordV2  {
         this.cashAmount = cashAmount;
     }
 
+    
+
     public ResFeeRecordV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
@@ -1046,6 +1120,8 @@ public class ResFeeRecordV2  {
     public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
+
+    
 
     public ResFeeRecordV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
@@ -1067,6 +1143,8 @@ public class ResFeeRecordV2  {
         this.couponAmount = couponAmount;
     }
 
+    
+
     public ResFeeRecordV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
@@ -1086,6 +1164,8 @@ public class ResFeeRecordV2  {
     public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
+
+    
 
     public ResFeeRecordV2 withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
@@ -1107,6 +1187,8 @@ public class ResFeeRecordV2  {
         this.storedCardAmount = storedCardAmount;
     }
 
+    
+
     public ResFeeRecordV2 withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
@@ -1126,6 +1208,8 @@ public class ResFeeRecordV2  {
     public void setBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
+
+    
 
     public ResFeeRecordV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
@@ -1147,6 +1231,8 @@ public class ResFeeRecordV2  {
         this.debtAmount = debtAmount;
     }
 
+    
+
     public ResFeeRecordV2 withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
@@ -1167,6 +1253,8 @@ public class ResFeeRecordV2  {
         this.adjustmentAmount = adjustmentAmount;
     }
 
+    
+
     public ResFeeRecordV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -1186,6 +1274,9 @@ public class ResFeeRecordV2  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

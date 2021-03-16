@@ -61,6 +61,8 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyRequest withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
@@ -80,6 +82,8 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
+
+    
 
     public ShowMqsInstanceTopicAccessPolicyRequest withOffset(String offset) {
         this.offset = offset;
@@ -101,6 +105,8 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -120,6 +126,9 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -48,9 +48,6 @@ public class ListTranscodeDataResponse extends SdkResponse {
 
     
     public ListTranscodeDataResponse addTranscodeDataListItem(TranscodeData transcodeDataListItem) {
-        if (this.transcodeDataList == null) {
-            this.transcodeDataList = new ArrayList<>();
-        }
         this.transcodeDataList.add(transcodeDataListItem);
         return this;
     }
@@ -75,6 +72,8 @@ public class ListTranscodeDataResponse extends SdkResponse {
         this.transcodeDataList = transcodeDataList;
     }
 
+    
+
     public ListTranscodeDataResponse withSummaryList(List<TranscodeSummary> summaryList) {
         this.summaryList = summaryList;
         return this;
@@ -82,9 +81,6 @@ public class ListTranscodeDataResponse extends SdkResponse {
 
     
     public ListTranscodeDataResponse addSummaryListItem(TranscodeSummary summaryListItem) {
-        if (this.summaryList == null) {
-            this.summaryList = new ArrayList<>();
-        }
         this.summaryList.add(summaryListItem);
         return this;
     }
@@ -109,6 +105,8 @@ public class ListTranscodeDataResponse extends SdkResponse {
         this.summaryList = summaryList;
     }
 
+    
+
     public ListTranscodeDataResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -130,6 +128,9 @@ public class ListTranscodeDataResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ListStreamForbiddenResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListStreamForbiddenResponse withBlocks(List<StreamForbiddenList> blocks) {
         this.blocks = blocks;
         return this;
@@ -62,9 +64,6 @@ public class ListStreamForbiddenResponse extends SdkResponse {
 
     
     public ListStreamForbiddenResponse addBlocksItem(StreamForbiddenList blocksItem) {
-        if (this.blocks == null) {
-            this.blocks = new ArrayList<>();
-        }
         this.blocks.add(blocksItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ListStreamForbiddenResponse extends SdkResponse {
     public void setBlocks(List<StreamForbiddenList> blocks) {
         this.blocks = blocks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

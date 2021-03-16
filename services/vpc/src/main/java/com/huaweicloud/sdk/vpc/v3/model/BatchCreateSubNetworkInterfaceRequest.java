@@ -22,7 +22,7 @@ public class BatchCreateSubNetworkInterfaceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreateSubNetworkInterfaceRequestBody body = null;
+    private BatchCreateSubNetworkInterfaceRequestBody body;
 
     public BatchCreateSubNetworkInterfaceRequest withBody(BatchCreateSubNetworkInterfaceRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchCreateSubNetworkInterfaceRequest  {
     public void setBody(BatchCreateSubNetworkInterfaceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

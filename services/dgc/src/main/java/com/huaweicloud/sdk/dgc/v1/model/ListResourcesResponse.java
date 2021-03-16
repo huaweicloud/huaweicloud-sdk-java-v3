@@ -54,6 +54,8 @@ public class ListResourcesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListResourcesResponse withResources(List<ResourceInfo> resources) {
         this.resources = resources;
         return this;
@@ -61,9 +63,6 @@ public class ListResourcesResponse extends SdkResponse {
 
     
     public ListResourcesResponse addResourcesItem(ResourceInfo resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListResourcesResponse extends SdkResponse {
     public void setResources(List<ResourceInfo> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

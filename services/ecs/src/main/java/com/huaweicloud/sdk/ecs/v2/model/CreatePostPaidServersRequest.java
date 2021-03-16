@@ -22,7 +22,7 @@ public class CreatePostPaidServersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePostPaidServersRequestBody body = null;
+    private CreatePostPaidServersRequestBody body;
 
     public CreatePostPaidServersRequest withBody(CreatePostPaidServersRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePostPaidServersRequest  {
     public void setBody(CreatePostPaidServersRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

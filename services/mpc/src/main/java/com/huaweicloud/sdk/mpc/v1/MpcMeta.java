@@ -1475,7 +1475,7 @@ public class MpcMeta {
         builder.withRequestField("template_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            Long.class,
             f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
             })

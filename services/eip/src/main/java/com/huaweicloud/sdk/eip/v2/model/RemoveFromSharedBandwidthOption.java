@@ -112,7 +112,7 @@ public class RemoveFromSharedBandwidthOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip_info")
     
-    private List<RemovePublicipInfo> publicipInfo = new ArrayList<>();
+    private List<RemovePublicipInfo> publicipInfo = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -139,6 +139,8 @@ public class RemoveFromSharedBandwidthOption  {
     public void setChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public RemoveFromSharedBandwidthOption withPublicipInfo(List<RemovePublicipInfo> publicipInfo) {
         this.publicipInfo = publicipInfo;
@@ -171,6 +173,8 @@ public class RemoveFromSharedBandwidthOption  {
         this.publicipInfo = publicipInfo;
     }
 
+    
+
     public RemoveFromSharedBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
@@ -190,6 +194,9 @@ public class RemoveFromSharedBandwidthOption  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

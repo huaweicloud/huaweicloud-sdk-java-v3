@@ -63,6 +63,8 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
         this.keyRotationEnabled = keyRotationEnabled;
     }
 
+    
+
     public ShowKeyRotationStatusResponse withRotationInterval(Integer rotationInterval) {
         this.rotationInterval = rotationInterval;
         return this;
@@ -85,6 +87,8 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
         this.rotationInterval = rotationInterval;
     }
 
+    
+
     public ShowKeyRotationStatusResponse withLastRotationTime(String lastRotationTime) {
         this.lastRotationTime = lastRotationTime;
         return this;
@@ -104,6 +108,8 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
     public void setLastRotationTime(String lastRotationTime) {
         this.lastRotationTime = lastRotationTime;
     }
+
+    
 
     public ShowKeyRotationStatusResponse withNumberOfRotations(Integer numberOfRotations) {
         this.numberOfRotations = numberOfRotations;
@@ -126,6 +132,9 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
     public void setNumberOfRotations(Integer numberOfRotations) {
         this.numberOfRotations = numberOfRotations;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class ShowCertificateRequest  {
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

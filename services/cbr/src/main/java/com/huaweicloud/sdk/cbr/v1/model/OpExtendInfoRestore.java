@@ -61,6 +61,8 @@ public class OpExtendInfoRestore  {
         this.backupId = backupId;
     }
 
+    
+
     public OpExtendInfoRestore withBackupName(String backupName) {
         this.backupName = backupName;
         return this;
@@ -80,6 +82,8 @@ public class OpExtendInfoRestore  {
     public void setBackupName(String backupName) {
         this.backupName = backupName;
     }
+
+    
 
     public OpExtendInfoRestore withTargetResourceId(String targetResourceId) {
         this.targetResourceId = targetResourceId;
@@ -101,6 +105,8 @@ public class OpExtendInfoRestore  {
         this.targetResourceId = targetResourceId;
     }
 
+    
+
     public OpExtendInfoRestore withTargetResourceName(String targetResourceName) {
         this.targetResourceName = targetResourceName;
         return this;
@@ -120,6 +126,9 @@ public class OpExtendInfoRestore  {
     public void setTargetResourceName(String targetResourceName) {
         this.targetResourceName = targetResourceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

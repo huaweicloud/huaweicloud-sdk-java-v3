@@ -28,7 +28,7 @@ public class UpdateIpGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateIpGroupRequestBody body = null;
+    private UpdateIpGroupRequestBody body;
 
     public UpdateIpGroupRequest withIpgroupId(String ipgroupId) {
         this.ipgroupId = ipgroupId;
@@ -49,6 +49,8 @@ public class UpdateIpGroupRequest  {
     public void setIpgroupId(String ipgroupId) {
         this.ipgroupId = ipgroupId;
     }
+
+    
 
     public UpdateIpGroupRequest withBody(UpdateIpGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateIpGroupRequest  {
     public void setBody(UpdateIpGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class AttachServerVolumeRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeAttachment")
     
-    private AttachServerVolumeOption volumeAttachment = null;
+    private AttachServerVolumeOption volumeAttachment;
 
     public AttachServerVolumeRequestBody withVolumeAttachment(AttachServerVolumeOption volumeAttachment) {
         this.volumeAttachment = volumeAttachment;
@@ -50,6 +50,9 @@ public class AttachServerVolumeRequestBody  {
     public void setVolumeAttachment(AttachServerVolumeOption volumeAttachment) {
         this.volumeAttachment = volumeAttachment;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class SwaggerFailureResp  {
         this.path = path;
     }
 
+    
+
     public SwaggerFailureResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -80,6 +82,8 @@ public class SwaggerFailureResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
 
     public SwaggerFailureResp withMethod(String method) {
         this.method = method;
@@ -101,6 +105,8 @@ public class SwaggerFailureResp  {
         this.method = method;
     }
 
+    
+
     public SwaggerFailureResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -120,6 +126,9 @@ public class SwaggerFailureResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

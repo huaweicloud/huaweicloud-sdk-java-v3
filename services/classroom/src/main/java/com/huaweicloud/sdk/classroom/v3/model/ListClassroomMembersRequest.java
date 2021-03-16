@@ -61,6 +61,8 @@ public class ListClassroomMembersRequest  {
         this.classroomId = classroomId;
     }
 
+    
+
     public ListClassroomMembersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -82,6 +84,8 @@ public class ListClassroomMembersRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListClassroomMembersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -105,6 +109,8 @@ public class ListClassroomMembersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListClassroomMembersRequest withFilter(String filter) {
         this.filter = filter;
         return this;
@@ -124,6 +130,9 @@ public class ListClassroomMembersRequest  {
     public void setFilter(String filter) {
         this.filter = filter;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

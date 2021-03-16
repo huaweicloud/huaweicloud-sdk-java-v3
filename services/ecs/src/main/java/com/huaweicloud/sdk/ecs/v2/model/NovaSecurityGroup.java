@@ -48,7 +48,7 @@ public class NovaSecurityGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<NovaSecurityGroupCommonRule> rules = new ArrayList<>();
+    private List<NovaSecurityGroupCommonRule> rules = null;
     
     public NovaSecurityGroup withDescription(String description) {
         this.description = description;
@@ -70,6 +70,8 @@ public class NovaSecurityGroup  {
         this.description = description;
     }
 
+    
+
     public NovaSecurityGroup withId(String id) {
         this.id = id;
         return this;
@@ -89,6 +91,8 @@ public class NovaSecurityGroup  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public NovaSecurityGroup withName(String name) {
         this.name = name;
@@ -110,6 +114,8 @@ public class NovaSecurityGroup  {
         this.name = name;
     }
 
+    
+
     public NovaSecurityGroup withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -129,6 +135,8 @@ public class NovaSecurityGroup  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public NovaSecurityGroup withRules(List<NovaSecurityGroupCommonRule> rules) {
         this.rules = rules;
@@ -160,6 +168,9 @@ public class NovaSecurityGroup  {
     public void setRules(List<NovaSecurityGroupCommonRule> rules) {
         this.rules = rules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

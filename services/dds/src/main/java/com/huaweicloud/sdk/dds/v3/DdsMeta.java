@@ -401,6 +401,39 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSessionRequest, DeleteSessionResponse> deleteSession = genFordeleteSession();
+
+    private static HttpRequestDef<DeleteSessionRequest, DeleteSessionResponse> genFordeleteSession() {
+        // basic
+        HttpRequestDef.Builder<DeleteSessionRequest, DeleteSessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteSessionRequest.class, DeleteSessionResponse.class)
+                .withName("DeleteSession")
+                .withUri("/v3/{project_id}/nodes/{node_id}/session")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSessionRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DeleteSessionRequestBody.class,
+            f -> f.withMarshaller(DeleteSessionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DownloadErrorlogRequest, DownloadErrorlogResponse> downloadErrorlog = genFordownloadErrorlog();
 
     private static HttpRequestDef<DownloadErrorlogRequest, DownloadErrorlogResponse> genFordownloadErrorlog() {
@@ -1210,6 +1243,79 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSessionsRequest, ListSessionsResponse> listSessions = genForlistSessions();
+
+    private static HttpRequestDef<ListSessionsRequest, ListSessionsResponse> genForlistSessions() {
+        // basic
+        HttpRequestDef.Builder<ListSessionsRequest, ListSessionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSessionsRequest.class, ListSessionsResponse.class)
+                .withName("ListSessions")
+                .withUri("/v3/{project_id}/nodes/{node_id}/sessions")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSessionsRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSessionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSessionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("plan_summary",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSessionsRequest::getPlanSummary, (req, v) -> {
+                req.setPlanSummary(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSessionsRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSessionsRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("cost_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSessionsRequest::getCostTime, (req, v) -> {
+                req.setCostTime(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForlistSlowLogs();
 
     private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForlistSlowLogs() {
@@ -1505,6 +1611,31 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             RestoreInstanceFromCollectionRequestBody.class,
             f -> f.withMarshaller(RestoreInstanceFromCollectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreNewInstanceRequest, RestoreNewInstanceResponse> restoreNewInstance = genForrestoreNewInstance();
+
+    private static HttpRequestDef<RestoreNewInstanceRequest, RestoreNewInstanceResponse> genForrestoreNewInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreNewInstanceRequest, RestoreNewInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreNewInstanceRequest.class, RestoreNewInstanceResponse.class)
+                .withName("RestoreNewInstance")
+                .withUri("/v3/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RestoreNewInstanceRequestBody.class,
+            f -> f.withMarshaller(RestoreNewInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

@@ -35,9 +35,6 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
 
     
     public ShowMqsInstanceMessagesResponse addMessagesItem(ShowMqsInstanceMessagesRespMessages messagesItem) {
-        if (this.messages == null) {
-            this.messages = new ArrayList<>();
-        }
         this.messages.add(messagesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
     public void setMessages(List<ShowMqsInstanceMessagesRespMessages> messages) {
         this.messages = messages;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

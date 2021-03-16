@@ -49,6 +49,8 @@ public class ShowBackgroundTaskRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowBackgroundTaskRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -68,6 +70,9 @@ public class ShowBackgroundTaskRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

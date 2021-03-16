@@ -59,13 +59,13 @@ public class CreateBatchTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="document")
     
-    private Object document = null;
+    private Object document;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_policy")
     
-    private TaskPolicy taskPolicy = null;
+    private TaskPolicy taskPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,7 +83,7 @@ public class CreateBatchTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_progress")
     
-    private TaskProgress taskProgress = null;
+    private TaskProgress taskProgress;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,6 +111,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
+    
+
     public CreateBatchTaskResponse withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -130,6 +132,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public CreateBatchTaskResponse withTaskType(String taskType) {
         this.taskType = taskType;
@@ -151,6 +155,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
         this.taskType = taskType;
     }
 
+    
+
     public CreateBatchTaskResponse withTargets(List<String> targets) {
         this.targets = targets;
         return this;
@@ -158,9 +164,6 @@ public class CreateBatchTaskResponse extends SdkResponse {
 
     
     public CreateBatchTaskResponse addTargetsItem(String targetsItem) {
-        if (this.targets == null) {
-            this.targets = new ArrayList<>();
-        }
         this.targets.add(targetsItem);
         return this;
     }
@@ -185,6 +188,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
         this.targets = targets;
     }
 
+    
+
     public CreateBatchTaskResponse withTargetsFilter(Map<String, Object> targetsFilter) {
         this.targetsFilter = targetsFilter;
         return this;
@@ -193,9 +198,6 @@ public class CreateBatchTaskResponse extends SdkResponse {
     
 
     public CreateBatchTaskResponse putTargetsFilterItem(String key, Object targetsFilterItem) {
-         if (this.targetsFilter == null) {
-            this.targetsFilter = new HashMap<>();
-         }
         this.targetsFilter.put(key, targetsFilterItem);
         return this;
     }
@@ -219,6 +221,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
         this.targetsFilter = targetsFilter;
     }
 
+    
+
     public CreateBatchTaskResponse withDocument(Object document) {
         this.document = document;
         return this;
@@ -238,6 +242,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
     public void setDocument(Object document) {
         this.document = document;
     }
+
+    
 
     public CreateBatchTaskResponse withTaskPolicy(TaskPolicy taskPolicy) {
         this.taskPolicy = taskPolicy;
@@ -266,6 +272,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
         this.taskPolicy = taskPolicy;
     }
 
+    
+
     public CreateBatchTaskResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -286,6 +294,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateBatchTaskResponse withStatusDesc(String statusDesc) {
         this.statusDesc = statusDesc;
         return this;
@@ -305,6 +315,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
     public void setStatusDesc(String statusDesc) {
         this.statusDesc = statusDesc;
     }
+
+    
 
     public CreateBatchTaskResponse withTaskProgress(TaskProgress taskProgress) {
         this.taskProgress = taskProgress;
@@ -333,6 +345,8 @@ public class CreateBatchTaskResponse extends SdkResponse {
         this.taskProgress = taskProgress;
     }
 
+    
+
     public CreateBatchTaskResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -352,6 +366,9 @@ public class CreateBatchTaskResponse extends SdkResponse {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

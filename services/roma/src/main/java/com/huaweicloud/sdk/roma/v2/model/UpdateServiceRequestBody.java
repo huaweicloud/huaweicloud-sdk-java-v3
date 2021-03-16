@@ -137,6 +137,8 @@ public class UpdateServiceRequestBody  {
         this.serviceName = serviceName;
     }
 
+    
+
     public UpdateServiceRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -157,6 +159,8 @@ public class UpdateServiceRequestBody  {
         this.description = description;
     }
 
+    
+
     public UpdateServiceRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -176,6 +180,9 @@ public class UpdateServiceRequestBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

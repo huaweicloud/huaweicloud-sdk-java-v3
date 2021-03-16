@@ -142,7 +142,7 @@ public class PostPaidServerRootVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hw:passthrough")
     
-    private Boolean hwPassthrough = false;
+    private Boolean hwPassthrough;
     /**
      * 云服务器系统盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
      */
@@ -232,7 +232,7 @@ public class PostPaidServerRootVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private PostPaidServerRootVolumeExtendParam extendparam = null;
+    private PostPaidServerRootVolumeExtendParam extendparam;
 
     public PostPaidServerRootVolume withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
@@ -253,6 +253,8 @@ public class PostPaidServerRootVolume  {
     public void setVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
     }
+
+    
 
     public PostPaidServerRootVolume withSize(Integer size) {
         this.size = size;
@@ -276,6 +278,8 @@ public class PostPaidServerRootVolume  {
         this.size = size;
     }
 
+    
+
     public PostPaidServerRootVolume withHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
         return this;
@@ -295,6 +299,8 @@ public class PostPaidServerRootVolume  {
     public void setHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
     }
+
+    
 
     public PostPaidServerRootVolume withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
@@ -316,6 +322,8 @@ public class PostPaidServerRootVolume  {
         this.clusterType = clusterType;
     }
 
+    
+
     public PostPaidServerRootVolume withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -335,6 +343,8 @@ public class PostPaidServerRootVolume  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public PostPaidServerRootVolume withExtendparam(PostPaidServerRootVolumeExtendParam extendparam) {
         this.extendparam = extendparam;
@@ -362,6 +372,9 @@ public class PostPaidServerRootVolume  {
     public void setExtendparam(PostPaidServerRootVolumeExtendParam extendparam) {
         this.extendparam = extendparam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

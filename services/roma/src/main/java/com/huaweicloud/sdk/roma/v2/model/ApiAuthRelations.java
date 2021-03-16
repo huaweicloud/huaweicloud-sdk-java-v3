@@ -35,13 +35,13 @@ public class ApiAuthRelations  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_result")
     
-    private AuthResult authResult = null;
+    private AuthResult authResult;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_time")
     
-    private OffsetDateTime authTime = null;
+    private OffsetDateTime authTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -143,7 +143,7 @@ public class ApiAuthRelations  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_tunnel")
     
-    private String authTunnel = "NORMAL";
+    private String authTunnel;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,6 +183,8 @@ public class ApiAuthRelations  {
         this.apiId = apiId;
     }
 
+    
+
     public ApiAuthRelations withAuthResult(AuthResult authResult) {
         this.authResult = authResult;
         return this;
@@ -210,6 +212,8 @@ public class ApiAuthRelations  {
         this.authResult = authResult;
     }
 
+    
+
     public ApiAuthRelations withAuthTime(OffsetDateTime authTime) {
         this.authTime = authTime;
         return this;
@@ -229,6 +233,8 @@ public class ApiAuthRelations  {
     public void setAuthTime(OffsetDateTime authTime) {
         this.authTime = authTime;
     }
+
+    
 
     public ApiAuthRelations withId(String id) {
         this.id = id;
@@ -250,6 +256,8 @@ public class ApiAuthRelations  {
         this.id = id;
     }
 
+    
+
     public ApiAuthRelations withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -269,6 +277,8 @@ public class ApiAuthRelations  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ApiAuthRelations withAuthRole(AuthRoleEnum authRole) {
         this.authRole = authRole;
@@ -290,6 +300,8 @@ public class ApiAuthRelations  {
         this.authRole = authRole;
     }
 
+    
+
     public ApiAuthRelations withAuthTunnel(String authTunnel) {
         this.authTunnel = authTunnel;
         return this;
@@ -310,6 +322,8 @@ public class ApiAuthRelations  {
         this.authTunnel = authTunnel;
     }
 
+    
+
     public ApiAuthRelations withAuthWhitelist(List<String> authWhitelist) {
         this.authWhitelist = authWhitelist;
         return this;
@@ -317,9 +331,6 @@ public class ApiAuthRelations  {
 
     
     public ApiAuthRelations addAuthWhitelistItem(String authWhitelistItem) {
-        if (this.authWhitelist == null) {
-            this.authWhitelist = new ArrayList<>();
-        }
         this.authWhitelist.add(authWhitelistItem);
         return this;
     }
@@ -344,6 +355,8 @@ public class ApiAuthRelations  {
         this.authWhitelist = authWhitelist;
     }
 
+    
+
     public ApiAuthRelations withAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
         return this;
@@ -351,9 +364,6 @@ public class ApiAuthRelations  {
 
     
     public ApiAuthRelations addAuthBlacklistItem(String authBlacklistItem) {
-        if (this.authBlacklist == null) {
-            this.authBlacklist = new ArrayList<>();
-        }
         this.authBlacklist.add(authBlacklistItem);
         return this;
     }
@@ -378,6 +388,8 @@ public class ApiAuthRelations  {
         this.authBlacklist = authBlacklist;
     }
 
+    
+
     public ApiAuthRelations withVisitParams(String visitParams) {
         this.visitParams = visitParams;
         return this;
@@ -397,6 +409,9 @@ public class ApiAuthRelations  {
     public void setVisitParams(String visitParams) {
         this.visitParams = visitParams;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

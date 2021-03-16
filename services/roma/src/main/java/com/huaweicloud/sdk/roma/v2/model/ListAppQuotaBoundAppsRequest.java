@@ -39,13 +39,13 @@ public class ListAppQuotaBoundAppsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListAppQuotaBoundAppsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -67,6 +67,8 @@ public class ListAppQuotaBoundAppsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListAppQuotaBoundAppsRequest withAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
         return this;
@@ -86,6 +88,8 @@ public class ListAppQuotaBoundAppsRequest  {
     public void setAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
     }
+
+    
 
     public ListAppQuotaBoundAppsRequest withAppName(String appName) {
         this.appName = appName;
@@ -107,6 +111,8 @@ public class ListAppQuotaBoundAppsRequest  {
         this.appName = appName;
     }
 
+    
+
     public ListAppQuotaBoundAppsRequest withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -126,6 +132,8 @@ public class ListAppQuotaBoundAppsRequest  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListAppQuotaBoundAppsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -148,6 +156,9 @@ public class ListAppQuotaBoundAppsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

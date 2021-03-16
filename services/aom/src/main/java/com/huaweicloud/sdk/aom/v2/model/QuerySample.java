@@ -30,7 +30,7 @@ public class QuerySample  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    private List<Dimension> dimensions = new ArrayList<>();
+    private List<Dimension> dimensions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class QuerySample  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public QuerySample withDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
@@ -89,6 +91,8 @@ public class QuerySample  {
         this.dimensions = dimensions;
     }
 
+    
+
     public QuerySample withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -108,6 +112,9 @@ public class QuerySample  {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

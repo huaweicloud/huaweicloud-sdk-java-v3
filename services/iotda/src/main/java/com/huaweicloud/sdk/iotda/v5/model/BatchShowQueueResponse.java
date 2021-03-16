@@ -33,7 +33,7 @@ public class BatchShowQueueResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public BatchShowQueueResponse withQueues(List<QueryQueueBase> queues) {
         this.queues = queues;
@@ -42,9 +42,6 @@ public class BatchShowQueueResponse extends SdkResponse {
 
     
     public BatchShowQueueResponse addQueuesItem(QueryQueueBase queuesItem) {
-        if (this.queues == null) {
-            this.queues = new ArrayList<>();
-        }
         this.queues.add(queuesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class BatchShowQueueResponse extends SdkResponse {
     public void setQueues(List<QueryQueueBase> queues) {
         this.queues = queues;
     }
+
+    
 
     public BatchShowQueueResponse withPage(Page page) {
         this.page = page;
@@ -95,6 +94,9 @@ public class BatchShowQueueResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

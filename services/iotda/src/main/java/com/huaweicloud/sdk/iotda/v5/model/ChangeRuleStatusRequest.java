@@ -34,7 +34,7 @@ public class ChangeRuleStatusRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RuleStatus body = null;
+    private RuleStatus body;
 
     public ChangeRuleStatusRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class ChangeRuleStatusRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ChangeRuleStatusRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -75,6 +77,8 @@ public class ChangeRuleStatusRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public ChangeRuleStatusRequest withBody(RuleStatus body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ChangeRuleStatusRequest  {
     public void setBody(RuleStatus body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

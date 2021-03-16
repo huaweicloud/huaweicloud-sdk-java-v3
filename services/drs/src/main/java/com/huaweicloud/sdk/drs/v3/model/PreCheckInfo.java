@@ -125,6 +125,8 @@ public class PreCheckInfo  {
         this.jobId = jobId;
     }
 
+    
+
     public PreCheckInfo withPrecheckMode(PrecheckModeEnum precheckMode) {
         this.precheckMode = precheckMode;
         return this;
@@ -144,6 +146,9 @@ public class PreCheckInfo  {
     public void setPrecheckMode(PrecheckModeEnum precheckMode) {
         this.precheckMode = precheckMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

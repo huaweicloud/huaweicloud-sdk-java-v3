@@ -64,7 +64,7 @@ public class UpdateVolumeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private VolumeMetadata metadata = null;
+    private VolumeMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -124,7 +124,7 @@ public class UpdateVolumeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_image_metadata")
     
-    private Object volumeImageMetadata = null;
+    private Object volumeImageMetadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -151,9 +151,6 @@ public class UpdateVolumeResponse extends SdkResponse {
 
     
     public UpdateVolumeResponse addAttachmentsItem(Attachment attachmentsItem) {
-        if (this.attachments == null) {
-            this.attachments = new ArrayList<>();
-        }
         this.attachments.add(attachmentsItem);
         return this;
     }
@@ -178,6 +175,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.attachments = attachments;
     }
 
+    
+
     public UpdateVolumeResponse withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -197,6 +196,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public UpdateVolumeResponse withBootable(String bootable) {
         this.bootable = bootable;
@@ -218,6 +219,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.bootable = bootable;
     }
 
+    
+
     public UpdateVolumeResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -237,6 +240,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public UpdateVolumeResponse withId(String id) {
         this.id = id;
@@ -258,6 +263,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdateVolumeResponse withLinks(List<Link> links) {
         this.links = links;
         return this;
@@ -265,9 +272,6 @@ public class UpdateVolumeResponse extends SdkResponse {
 
     
     public UpdateVolumeResponse addLinksItem(Link linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -291,6 +295,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setLinks(List<Link> links) {
         this.links = links;
     }
+
+    
 
     public UpdateVolumeResponse withMetadata(VolumeMetadata metadata) {
         this.metadata = metadata;
@@ -319,6 +325,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public UpdateVolumeResponse withMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
         return this;
@@ -338,6 +346,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
     }
+
+    
 
     public UpdateVolumeResponse withName(String name) {
         this.name = name;
@@ -359,6 +369,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public UpdateVolumeResponse withOsVolHostAttrHost(String osVolHostAttrHost) {
         this.osVolHostAttrHost = osVolHostAttrHost;
         return this;
@@ -378,6 +390,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setOsVolHostAttrHost(String osVolHostAttrHost) {
         this.osVolHostAttrHost = osVolHostAttrHost;
     }
+
+    
 
     public UpdateVolumeResponse withOsVolTenantAttrTenantId(String osVolTenantAttrTenantId) {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
@@ -399,6 +413,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
     }
 
+    
+
     public UpdateVolumeResponse withShareable(String shareable) {
         this.shareable = shareable;
         return this;
@@ -418,6 +434,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setShareable(String shareable) {
         this.shareable = shareable;
     }
+
+    
 
     public UpdateVolumeResponse withSize(Integer size) {
         this.size = size;
@@ -439,6 +457,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public UpdateVolumeResponse withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
@@ -458,6 +478,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
 
     public UpdateVolumeResponse withSourceVolid(String sourceVolid) {
         this.sourceVolid = sourceVolid;
@@ -479,6 +501,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.sourceVolid = sourceVolid;
     }
 
+    
+
     public UpdateVolumeResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -498,6 +522,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public UpdateVolumeResponse withVolumeImageMetadata(Object volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
@@ -519,6 +545,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.volumeImageMetadata = volumeImageMetadata;
     }
 
+    
+
     public UpdateVolumeResponse withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
@@ -538,6 +566,8 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
+
+    
 
     public UpdateVolumeResponse withDescription(String description) {
         this.description = description;
@@ -559,6 +589,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateVolumeResponse withOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
         this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
         return this;
@@ -578,6 +610,9 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
         this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

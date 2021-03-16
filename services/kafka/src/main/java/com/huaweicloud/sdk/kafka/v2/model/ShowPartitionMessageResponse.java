@@ -35,9 +35,6 @@ public class ShowPartitionMessageResponse extends SdkResponse {
 
     
     public ShowPartitionMessageResponse addMessageItem(ShowPartitionMessageRespMessage messageItem) {
-        if (this.message == null) {
-            this.message = new ArrayList<>();
-        }
         this.message.add(messageItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowPartitionMessageResponse extends SdkResponse {
     public void setMessage(List<ShowPartitionMessageRespMessage> message) {
         this.message = message;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

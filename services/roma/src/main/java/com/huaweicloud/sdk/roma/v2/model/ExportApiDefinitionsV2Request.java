@@ -28,7 +28,7 @@ public class ExportApiDefinitionsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SwaggerReq body = null;
+    private SwaggerReq body;
 
     public ExportApiDefinitionsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class ExportApiDefinitionsV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ExportApiDefinitionsV2Request withBody(SwaggerReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ExportApiDefinitionsV2Request  {
     public void setBody(SwaggerReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

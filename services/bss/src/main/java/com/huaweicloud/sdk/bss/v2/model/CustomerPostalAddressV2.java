@@ -103,6 +103,8 @@ public class CustomerPostalAddressV2  {
         this.addressId = addressId;
     }
 
+    
+
     public CustomerPostalAddressV2 withRecipient(String recipient) {
         this.recipient = recipient;
         return this;
@@ -122,6 +124,8 @@ public class CustomerPostalAddressV2  {
     public void setRecipient(String recipient) {
         this.recipient = recipient;
     }
+
+    
 
     public CustomerPostalAddressV2 withNationality(String nationality) {
         this.nationality = nationality;
@@ -143,6 +147,8 @@ public class CustomerPostalAddressV2  {
         this.nationality = nationality;
     }
 
+    
+
     public CustomerPostalAddressV2 withProvince(String province) {
         this.province = province;
         return this;
@@ -162,6 +168,8 @@ public class CustomerPostalAddressV2  {
     public void setProvince(String province) {
         this.province = province;
     }
+
+    
 
     public CustomerPostalAddressV2 withCity(String city) {
         this.city = city;
@@ -183,6 +191,8 @@ public class CustomerPostalAddressV2  {
         this.city = city;
     }
 
+    
+
     public CustomerPostalAddressV2 withDistrict(String district) {
         this.district = district;
         return this;
@@ -202,6 +212,8 @@ public class CustomerPostalAddressV2  {
     public void setDistrict(String district) {
         this.district = district;
     }
+
+    
 
     public CustomerPostalAddressV2 withAddress(String address) {
         this.address = address;
@@ -223,6 +235,8 @@ public class CustomerPostalAddressV2  {
         this.address = address;
     }
 
+    
+
     public CustomerPostalAddressV2 withZipcode(String zipcode) {
         this.zipcode = zipcode;
         return this;
@@ -242,6 +256,8 @@ public class CustomerPostalAddressV2  {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+
+    
 
     public CustomerPostalAddressV2 withAreacode(String areacode) {
         this.areacode = areacode;
@@ -263,6 +279,8 @@ public class CustomerPostalAddressV2  {
         this.areacode = areacode;
     }
 
+    
+
     public CustomerPostalAddressV2 withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
@@ -283,6 +301,8 @@ public class CustomerPostalAddressV2  {
         this.mobilePhone = mobilePhone;
     }
 
+    
+
     public CustomerPostalAddressV2 withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
         return this;
@@ -302,6 +322,9 @@ public class CustomerPostalAddressV2  {
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

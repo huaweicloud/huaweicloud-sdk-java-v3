@@ -35,9 +35,6 @@ public class ListCaseLabelsResponse extends SdkResponse {
 
     
     public ListCaseLabelsResponse addCaseLabelListItem(CaseLabelInfo caseLabelListItem) {
-        if (this.caseLabelList == null) {
-            this.caseLabelList = new ArrayList<>();
-        }
         this.caseLabelList.add(caseLabelListItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListCaseLabelsResponse extends SdkResponse {
     public void setCaseLabelList(List<CaseLabelInfo> caseLabelList) {
         this.caseLabelList = caseLabelList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

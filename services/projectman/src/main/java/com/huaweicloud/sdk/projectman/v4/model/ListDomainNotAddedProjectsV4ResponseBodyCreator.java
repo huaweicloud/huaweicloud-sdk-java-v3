@@ -73,6 +73,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyCreator  {
         this.userNumId = userNumId;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4ResponseBodyCreator withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -92,6 +94,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyCreator  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public ListDomainNotAddedProjectsV4ResponseBodyCreator withUserName(String userName) {
         this.userName = userName;
@@ -113,6 +117,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyCreator  {
         this.userName = userName;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4ResponseBodyCreator withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -132,6 +138,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyCreator  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public ListDomainNotAddedProjectsV4ResponseBodyCreator withDomainName(String domainName) {
         this.domainName = domainName;
@@ -153,6 +161,8 @@ public class ListDomainNotAddedProjectsV4ResponseBodyCreator  {
         this.domainName = domainName;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4ResponseBodyCreator withNickName(String nickName) {
         this.nickName = nickName;
         return this;
@@ -172,6 +182,9 @@ public class ListDomainNotAddedProjectsV4ResponseBodyCreator  {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

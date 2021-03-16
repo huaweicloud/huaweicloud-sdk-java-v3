@@ -22,19 +22,19 @@ public class DevicesCalculation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="normal_devices")
     
-    private Calculation normalDevices = null;
+    private Calculation normalDevices;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gateway_devices")
     
-    private Calculation gatewayDevices = null;
+    private Calculation gatewayDevices;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subsets_devices")
     
-    private Calculation subsetsDevices = null;
+    private Calculation subsetsDevices;
 
     public DevicesCalculation withNormalDevices(Calculation normalDevices) {
         this.normalDevices = normalDevices;
@@ -63,6 +63,8 @@ public class DevicesCalculation  {
         this.normalDevices = normalDevices;
     }
 
+    
+
     public DevicesCalculation withGatewayDevices(Calculation gatewayDevices) {
         this.gatewayDevices = gatewayDevices;
         return this;
@@ -90,6 +92,8 @@ public class DevicesCalculation  {
         this.gatewayDevices = gatewayDevices;
     }
 
+    
+
     public DevicesCalculation withSubsetsDevices(Calculation subsetsDevices) {
         this.subsetsDevices = subsetsDevices;
         return this;
@@ -116,6 +120,9 @@ public class DevicesCalculation  {
     public void setSubsetsDevices(Calculation subsetsDevices) {
         this.subsetsDevices = subsetsDevices;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

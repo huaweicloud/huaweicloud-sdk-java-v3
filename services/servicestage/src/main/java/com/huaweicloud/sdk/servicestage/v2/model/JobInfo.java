@@ -179,6 +179,8 @@ public class JobInfo  {
         this.createdBy = createdBy;
     }
 
+    
+
     public JobInfo withExecutionStatus(ExecutionStatusEnum executionStatus) {
         this.executionStatus = executionStatus;
         return this;
@@ -198,6 +200,8 @@ public class JobInfo  {
     public void setExecutionStatus(ExecutionStatusEnum executionStatus) {
         this.executionStatus = executionStatus;
     }
+
+    
 
     public JobInfo withJobDesc(String jobDesc) {
         this.jobDesc = jobDesc;
@@ -219,6 +223,8 @@ public class JobInfo  {
         this.jobDesc = jobDesc;
     }
 
+    
+
     public JobInfo withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -238,6 +244,8 @@ public class JobInfo  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public JobInfo withJobName(String jobName) {
         this.jobName = jobName;
@@ -259,6 +267,8 @@ public class JobInfo  {
         this.jobName = jobName;
     }
 
+    
+
     public JobInfo withJobType(String jobType) {
         this.jobType = jobType;
         return this;
@@ -278,6 +288,8 @@ public class JobInfo  {
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
+
+    
 
     public JobInfo withOrderId(String orderId) {
         this.orderId = orderId;
@@ -299,6 +311,8 @@ public class JobInfo  {
         this.orderId = orderId;
     }
 
+    
+
     public JobInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -319,6 +333,8 @@ public class JobInfo  {
         this.projectId = projectId;
     }
 
+    
+
     public JobInfo withServiceInstanceId(String serviceInstanceId) {
         this.serviceInstanceId = serviceInstanceId;
         return this;
@@ -338,6 +354,9 @@ public class JobInfo  {
     public void setServiceInstanceId(String serviceInstanceId) {
         this.serviceInstanceId = serviceInstanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

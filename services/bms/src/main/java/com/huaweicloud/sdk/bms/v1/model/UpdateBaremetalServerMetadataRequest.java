@@ -28,7 +28,7 @@ public class UpdateBaremetalServerMetadataRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private MetaData body = null;
+    private MetaData body;
 
     public UpdateBaremetalServerMetadataRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class UpdateBaremetalServerMetadataRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public UpdateBaremetalServerMetadataRequest withBody(MetaData body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateBaremetalServerMetadataRequest  {
     public void setBody(MetaData body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

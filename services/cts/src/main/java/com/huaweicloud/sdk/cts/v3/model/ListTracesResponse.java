@@ -33,7 +33,7 @@ public class ListTracesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaData metaData = null;
+    private MetaData metaData;
 
     public ListTracesResponse withTraces(List<Traces> traces) {
         this.traces = traces;
@@ -42,9 +42,6 @@ public class ListTracesResponse extends SdkResponse {
 
     
     public ListTracesResponse addTracesItem(Traces tracesItem) {
-        if (this.traces == null) {
-            this.traces = new ArrayList<>();
-        }
         this.traces.add(tracesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListTracesResponse extends SdkResponse {
     public void setTraces(List<Traces> traces) {
         this.traces = traces;
     }
+
+    
 
     public ListTracesResponse withMetaData(MetaData metaData) {
         this.metaData = metaData;
@@ -95,6 +94,9 @@ public class ListTracesResponse extends SdkResponse {
     public void setMetaData(MetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

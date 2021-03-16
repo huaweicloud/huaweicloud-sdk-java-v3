@@ -22,7 +22,7 @@ public class RunImageModerationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ImageDetectionReq body = null;
+    private ImageDetectionReq body;
 
     public RunImageModerationRequest withBody(ImageDetectionReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RunImageModerationRequest  {
     public void setBody(ImageDetectionReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

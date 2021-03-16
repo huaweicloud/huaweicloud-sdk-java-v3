@@ -104,7 +104,7 @@ public class UrlDomainCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_ssl_version")
     
-    private MinSslVersionEnum minSslVersion = MinSslVersionEnum.TLSV1_1;
+    private MinSslVersionEnum minSslVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -132,6 +132,8 @@ public class UrlDomainCreate  {
         this.minSslVersion = minSslVersion;
     }
 
+    
+
     public UrlDomainCreate withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -151,6 +153,9 @@ public class UrlDomainCreate  {
     public void setUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

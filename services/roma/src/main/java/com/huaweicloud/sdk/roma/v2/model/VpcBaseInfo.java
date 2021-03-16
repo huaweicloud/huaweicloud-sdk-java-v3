@@ -55,6 +55,8 @@ public class VpcBaseInfo  {
         this.ecsId = ecsId;
     }
 
+    
+
     public VpcBaseInfo withEcsName(Integer ecsName) {
         this.ecsName = ecsName;
         return this;
@@ -75,6 +77,8 @@ public class VpcBaseInfo  {
         this.ecsName = ecsName;
     }
 
+    
+
     public VpcBaseInfo withCascadeFlag(Boolean cascadeFlag) {
         this.cascadeFlag = cascadeFlag;
         return this;
@@ -94,6 +98,9 @@ public class VpcBaseInfo  {
     public void setCascadeFlag(Boolean cascadeFlag) {
         this.cascadeFlag = cascadeFlag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

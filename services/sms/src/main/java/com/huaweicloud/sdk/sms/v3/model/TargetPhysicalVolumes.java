@@ -109,7 +109,7 @@ public class TargetPhysicalVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_use")
     
-    private DeviceUseEnum deviceUse = DeviceUseEnum.NORMAL;
+    private DeviceUseEnum deviceUse;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -173,6 +173,8 @@ public class TargetPhysicalVolumes  {
         this.deviceUse = deviceUse;
     }
 
+    
+
     public TargetPhysicalVolumes withFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
         return this;
@@ -192,6 +194,8 @@ public class TargetPhysicalVolumes  {
     public void setFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
     }
+
+    
 
     public TargetPhysicalVolumes withIndex(Integer index) {
         this.index = index;
@@ -215,6 +219,8 @@ public class TargetPhysicalVolumes  {
         this.index = index;
     }
 
+    
+
     public TargetPhysicalVolumes withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
         return this;
@@ -235,6 +241,8 @@ public class TargetPhysicalVolumes  {
         this.mountPoint = mountPoint;
     }
 
+    
+
     public TargetPhysicalVolumes withName(String name) {
         this.name = name;
         return this;
@@ -254,6 +262,8 @@ public class TargetPhysicalVolumes  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TargetPhysicalVolumes withSize(Long size) {
         this.size = size;
@@ -277,6 +287,8 @@ public class TargetPhysicalVolumes  {
         this.size = size;
     }
 
+    
+
     public TargetPhysicalVolumes withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
@@ -299,6 +311,8 @@ public class TargetPhysicalVolumes  {
         this.usedSize = usedSize;
     }
 
+    
+
     public TargetPhysicalVolumes withUuid(String uuid) {
         this.uuid = uuid;
         return this;
@@ -318,6 +332,9 @@ public class TargetPhysicalVolumes  {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -91,6 +91,8 @@ public class ListBareMetalServersRequest  {
         this.flavor = flavor;
     }
 
+    
+
     public ListBareMetalServersRequest withName(String name) {
         this.name = name;
         return this;
@@ -110,6 +112,8 @@ public class ListBareMetalServersRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListBareMetalServersRequest withStatus(String status) {
         this.status = status;
@@ -131,6 +135,8 @@ public class ListBareMetalServersRequest  {
         this.status = status;
     }
 
+    
+
     public ListBareMetalServersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -150,6 +156,8 @@ public class ListBareMetalServersRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListBareMetalServersRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -171,6 +179,8 @@ public class ListBareMetalServersRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListBareMetalServersRequest withTags(String tags) {
         this.tags = tags;
         return this;
@@ -190,6 +200,8 @@ public class ListBareMetalServersRequest  {
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+    
 
     public ListBareMetalServersRequest withReservationId(String reservationId) {
         this.reservationId = reservationId;
@@ -211,6 +223,8 @@ public class ListBareMetalServersRequest  {
         this.reservationId = reservationId;
     }
 
+    
+
     public ListBareMetalServersRequest withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -231,6 +245,8 @@ public class ListBareMetalServersRequest  {
         this.detail = detail;
     }
 
+    
+
     public ListBareMetalServersRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -250,6 +266,9 @@ public class ListBareMetalServersRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

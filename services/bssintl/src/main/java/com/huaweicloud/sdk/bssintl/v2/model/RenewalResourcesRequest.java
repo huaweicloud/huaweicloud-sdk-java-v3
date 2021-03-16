@@ -22,7 +22,7 @@ public class RenewalResourcesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RenewalResourcesReq body = null;
+    private RenewalResourcesReq body;
 
     public RenewalResourcesRequest withBody(RenewalResourcesReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RenewalResourcesRequest  {
     public void setBody(RenewalResourcesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

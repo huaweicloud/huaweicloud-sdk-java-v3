@@ -60,6 +60,8 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListApisUnbindedToAppV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListApisUnbindedToAppV2Response withApis(List<AppAuthUnBindedApiResp> apis) {
         this.apis = apis;
         return this;
@@ -87,9 +91,6 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
 
     
     public ListApisUnbindedToAppV2Response addApisItem(AppAuthUnBindedApiResp apisItem) {
-        if (this.apis == null) {
-            this.apis = new ArrayList<>();
-        }
         this.apis.add(apisItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
     public void setApis(List<AppAuthUnBindedApiResp> apis) {
         this.apis = apis;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

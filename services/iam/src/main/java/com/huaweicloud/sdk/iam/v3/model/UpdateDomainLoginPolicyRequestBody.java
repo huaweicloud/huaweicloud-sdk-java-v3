@@ -22,7 +22,7 @@ public class UpdateDomainLoginPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_policy")
     
-    private LoginPolicyOption loginPolicy = null;
+    private LoginPolicyOption loginPolicy;
 
     public UpdateDomainLoginPolicyRequestBody withLoginPolicy(LoginPolicyOption loginPolicy) {
         this.loginPolicy = loginPolicy;
@@ -50,6 +50,9 @@ public class UpdateDomainLoginPolicyRequestBody  {
     public void setLoginPolicy(LoginPolicyOption loginPolicy) {
         this.loginPolicy = loginPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

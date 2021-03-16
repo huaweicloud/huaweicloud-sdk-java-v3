@@ -40,7 +40,7 @@ public class ListNatGatewaySnatRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,7 +70,7 @@ public class ListNatGatewaySnatRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,7 +88,7 @@ public class ListNatGatewaySnatRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_type")
     
-    private Integer sourceType = 0;
+    private Integer sourceType;
     /**
      * Gets or Sets status
      */
@@ -218,6 +218,8 @@ public class ListNatGatewaySnatRulesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListNatGatewaySnatRulesRequest withCidr(String cidr) {
         this.cidr = cidr;
         return this;
@@ -237,6 +239,8 @@ public class ListNatGatewaySnatRulesRequest  {
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
+
+    
 
     public ListNatGatewaySnatRulesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -260,6 +264,8 @@ public class ListNatGatewaySnatRulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListNatGatewaySnatRulesRequest withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
@@ -279,6 +285,8 @@ public class ListNatGatewaySnatRulesRequest  {
     public void setFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
     }
+
+    
 
     public ListNatGatewaySnatRulesRequest withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
@@ -300,6 +308,8 @@ public class ListNatGatewaySnatRulesRequest  {
         this.floatingIpId = floatingIpId;
     }
 
+    
+
     public ListNatGatewaySnatRulesRequest withId(String id) {
         this.id = id;
         return this;
@@ -319,6 +329,8 @@ public class ListNatGatewaySnatRulesRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListNatGatewaySnatRulesRequest withDescription(String description) {
         this.description = description;
@@ -340,6 +352,8 @@ public class ListNatGatewaySnatRulesRequest  {
         this.description = description;
     }
 
+    
+
     public ListNatGatewaySnatRulesRequest withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -360,6 +374,8 @@ public class ListNatGatewaySnatRulesRequest  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ListNatGatewaySnatRulesRequest withNatGatewayId(List<String> natGatewayId) {
         this.natGatewayId = natGatewayId;
         return this;
@@ -367,9 +383,6 @@ public class ListNatGatewaySnatRulesRequest  {
 
     
     public ListNatGatewaySnatRulesRequest addNatGatewayIdItem(String natGatewayIdItem) {
-        if (this.natGatewayId == null) {
-            this.natGatewayId = new ArrayList<>();
-        }
         this.natGatewayId.add(natGatewayIdItem);
         return this;
     }
@@ -394,6 +407,8 @@ public class ListNatGatewaySnatRulesRequest  {
         this.natGatewayId = natGatewayId;
     }
 
+    
+
     public ListNatGatewaySnatRulesRequest withNetworkId(String networkId) {
         this.networkId = networkId;
         return this;
@@ -413,6 +428,8 @@ public class ListNatGatewaySnatRulesRequest  {
     public void setNetworkId(String networkId) {
         this.networkId = networkId;
     }
+
+    
 
     public ListNatGatewaySnatRulesRequest withSourceType(Integer sourceType) {
         this.sourceType = sourceType;
@@ -434,6 +451,8 @@ public class ListNatGatewaySnatRulesRequest  {
         this.sourceType = sourceType;
     }
 
+    
+
     public ListNatGatewaySnatRulesRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -453,6 +472,9 @@ public class ListNatGatewaySnatRulesRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

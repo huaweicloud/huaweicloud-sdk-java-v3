@@ -34,7 +34,7 @@ public class Restore  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    private PublicIp publicIp = null;
+    private PublicIp publicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class Restore  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public Restore withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -105,6 +107,8 @@ public class Restore  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public Restore withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
@@ -133,6 +137,8 @@ public class Restore  {
         this.publicIp = publicIp;
     }
 
+    
+
     public Restore withPort(Integer port) {
         this.port = port;
         return this;
@@ -155,6 +161,8 @@ public class Restore  {
         this.port = port;
     }
 
+    
+
     public Restore withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -174,6 +182,8 @@ public class Restore  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public Restore withName(String name) {
         this.name = name;
@@ -195,6 +205,8 @@ public class Restore  {
         this.name = name;
     }
 
+    
+
     public Restore withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -215,6 +227,8 @@ public class Restore  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public Restore withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -234,6 +248,9 @@ public class Restore  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

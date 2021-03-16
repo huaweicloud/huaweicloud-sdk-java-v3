@@ -24,7 +24,7 @@ public class CreateConsumerGroupReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="groups")
     
-    private List<GroupEntity> groups = new ArrayList<>();
+    private List<GroupEntity> groups = null;
     
     public CreateConsumerGroupReq withGroups(List<GroupEntity> groups) {
         this.groups = groups;
@@ -56,6 +56,9 @@ public class CreateConsumerGroupReq  {
     public void setGroups(List<GroupEntity> groups) {
         this.groups = groups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

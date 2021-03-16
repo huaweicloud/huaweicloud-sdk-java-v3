@@ -24,7 +24,7 @@ public class BatchSpecialTestConnectionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<BatchJobActionReq> jobs = new ArrayList<>();
+    private List<BatchJobActionReq> jobs = null;
     
     public BatchSpecialTestConnectionReq withJobs(List<BatchJobActionReq> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchSpecialTestConnectionReq  {
     public void setJobs(List<BatchJobActionReq> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

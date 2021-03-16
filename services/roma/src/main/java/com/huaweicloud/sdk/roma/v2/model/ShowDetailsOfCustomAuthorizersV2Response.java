@@ -250,7 +250,7 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -284,6 +284,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -303,6 +305,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowDetailsOfCustomAuthorizersV2Response withAuthorizerType(AuthorizerTypeEnum authorizerType) {
         this.authorizerType = authorizerType;
@@ -324,6 +328,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.authorizerType = authorizerType;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
         return this;
@@ -344,6 +350,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.authorizerUri = authorizerUri;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withIdentities(List<Identity> identities) {
         this.identities = identities;
         return this;
@@ -351,9 +359,6 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
 
     
     public ShowDetailsOfCustomAuthorizersV2Response addIdentitiesItem(Identity identitiesItem) {
-        if (this.identities == null) {
-            this.identities = new ArrayList<>();
-        }
         this.identities.add(identitiesItem);
         return this;
     }
@@ -378,6 +383,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.identities = identities;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -397,6 +404,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public ShowDetailsOfCustomAuthorizersV2Response withUserData(String userData) {
         this.userData = userData;
@@ -418,6 +427,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.userData = userData;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -437,6 +448,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public ShowDetailsOfCustomAuthorizersV2Response withNeedBody(Boolean needBody) {
         this.needBody = needBody;
@@ -458,6 +471,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.needBody = needBody;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withId(String id) {
         this.id = id;
         return this;
@@ -477,6 +492,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ShowDetailsOfCustomAuthorizersV2Response withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
@@ -498,6 +515,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -518,6 +537,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -537,6 +558,9 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

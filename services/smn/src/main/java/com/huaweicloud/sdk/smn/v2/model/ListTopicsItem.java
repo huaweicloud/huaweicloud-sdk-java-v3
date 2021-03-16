@@ -67,6 +67,8 @@ public class ListTopicsItem  {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public ListTopicsItem withName(String name) {
         this.name = name;
         return this;
@@ -86,6 +88,8 @@ public class ListTopicsItem  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListTopicsItem withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -107,6 +111,8 @@ public class ListTopicsItem  {
         this.displayName = displayName;
     }
 
+    
+
     public ListTopicsItem withPushPolicy(Integer pushPolicy) {
         this.pushPolicy = pushPolicy;
         return this;
@@ -127,6 +133,8 @@ public class ListTopicsItem  {
         this.pushPolicy = pushPolicy;
     }
 
+    
+
     public ListTopicsItem withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -146,6 +154,9 @@ public class ListTopicsItem  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

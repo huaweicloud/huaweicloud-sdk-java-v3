@@ -34,7 +34,7 @@ public class AddDepartmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeptDTO body = null;
+    private DeptDTO body;
 
     public AddDepartmentRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -58,6 +58,8 @@ public class AddDepartmentRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AddDepartmentRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class AddDepartmentRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public AddDepartmentRequest withBody(DeptDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class AddDepartmentRequest  {
     public void setBody(DeptDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

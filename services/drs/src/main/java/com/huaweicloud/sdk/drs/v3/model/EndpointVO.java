@@ -528,7 +528,7 @@ public class EndpointVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kerberos_vo")
     
-    private KerberosVO kerberosVo = null;
+    private KerberosVO kerberosVo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -556,6 +556,8 @@ public class EndpointVO  {
         this.id = id;
     }
 
+    
+
     public EndpointVO withObjId(String objId) {
         this.objId = objId;
         return this;
@@ -575,6 +577,8 @@ public class EndpointVO  {
     public void setObjId(String objId) {
         this.objId = objId;
     }
+
+    
 
     public EndpointVO withInstanceName(String instanceName) {
         this.instanceName = instanceName;
@@ -596,6 +600,8 @@ public class EndpointVO  {
         this.instanceName = instanceName;
     }
 
+    
+
     public EndpointVO withDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
         return this;
@@ -615,6 +621,8 @@ public class EndpointVO  {
     public void setDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
     }
+
+    
 
     public EndpointVO withDbUser(String dbUser) {
         this.dbUser = dbUser;
@@ -636,6 +644,8 @@ public class EndpointVO  {
         this.dbUser = dbUser;
     }
 
+    
+
     public EndpointVO withDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
         return this;
@@ -655,6 +665,8 @@ public class EndpointVO  {
     public void setDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
     }
+
+    
 
     public EndpointVO withManageIp(String manageIp) {
         this.manageIp = manageIp;
@@ -676,6 +688,8 @@ public class EndpointVO  {
         this.manageIp = manageIp;
     }
 
+    
+
     public EndpointVO withTrafficIp(String trafficIp) {
         this.trafficIp = trafficIp;
         return this;
@@ -695,6 +709,8 @@ public class EndpointVO  {
     public void setTrafficIp(String trafficIp) {
         this.trafficIp = trafficIp;
     }
+
+    
 
     public EndpointVO withDbPort(Integer dbPort) {
         this.dbPort = dbPort;
@@ -716,6 +732,8 @@ public class EndpointVO  {
         this.dbPort = dbPort;
     }
 
+    
+
     public EndpointVO withRegion(String region) {
         this.region = region;
         return this;
@@ -735,6 +753,8 @@ public class EndpointVO  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public EndpointVO withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -756,6 +776,8 @@ public class EndpointVO  {
         this.createdAt = createdAt;
     }
 
+    
+
     public EndpointVO withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -775,6 +797,8 @@ public class EndpointVO  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public EndpointVO withIp(String ip) {
         this.ip = ip;
@@ -796,6 +820,8 @@ public class EndpointVO  {
         this.ip = ip;
     }
 
+    
+
     public EndpointVO withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -815,6 +841,8 @@ public class EndpointVO  {
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
+
+    
 
     public EndpointVO withAzCode(String azCode) {
         this.azCode = azCode;
@@ -836,6 +864,8 @@ public class EndpointVO  {
         this.azCode = azCode;
     }
 
+    
+
     public EndpointVO withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -855,6 +885,8 @@ public class EndpointVO  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public EndpointVO withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -876,6 +908,8 @@ public class EndpointVO  {
         this.subnetId = subnetId;
     }
 
+    
+
     public EndpointVO withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -895,6 +929,8 @@ public class EndpointVO  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public EndpointVO withVolumeSize(Long volumeSize) {
         this.volumeSize = volumeSize;
@@ -916,6 +952,8 @@ public class EndpointVO  {
         this.volumeSize = volumeSize;
     }
 
+    
+
     public EndpointVO withFullTransUserPwd(String fullTransUserPwd) {
         this.fullTransUserPwd = fullTransUserPwd;
         return this;
@@ -935,6 +973,8 @@ public class EndpointVO  {
     public void setFullTransUserPwd(String fullTransUserPwd) {
         this.fullTransUserPwd = fullTransUserPwd;
     }
+
+    
 
     public EndpointVO withIncrementTransUserPwd(String incrementTransUserPwd) {
         this.incrementTransUserPwd = incrementTransUserPwd;
@@ -956,6 +996,8 @@ public class EndpointVO  {
         this.incrementTransUserPwd = incrementTransUserPwd;
     }
 
+    
+
     public EndpointVO withSslLink(Boolean sslLink) {
         this.sslLink = sslLink;
         return this;
@@ -975,6 +1017,8 @@ public class EndpointVO  {
     public void setSslLink(Boolean sslLink) {
         this.sslLink = sslLink;
     }
+
+    
 
     public EndpointVO withSslCertKey(String sslCertKey) {
         this.sslCertKey = sslCertKey;
@@ -996,6 +1040,8 @@ public class EndpointVO  {
         this.sslCertKey = sslCertKey;
     }
 
+    
+
     public EndpointVO withSslCertName(String sslCertName) {
         this.sslCertName = sslCertName;
         return this;
@@ -1015,6 +1061,8 @@ public class EndpointVO  {
     public void setSslCertName(String sslCertName) {
         this.sslCertName = sslCertName;
     }
+
+    
 
     public EndpointVO withSslCertCheckSum(String sslCertCheckSum) {
         this.sslCertCheckSum = sslCertCheckSum;
@@ -1036,6 +1084,8 @@ public class EndpointVO  {
         this.sslCertCheckSum = sslCertCheckSum;
     }
 
+    
+
     public EndpointVO withSslCertPassword(String sslCertPassword) {
         this.sslCertPassword = sslCertPassword;
         return this;
@@ -1055,6 +1105,8 @@ public class EndpointVO  {
     public void setSslCertPassword(String sslCertPassword) {
         this.sslCertPassword = sslCertPassword;
     }
+
+    
 
     public EndpointVO withDbVersion(String dbVersion) {
         this.dbVersion = dbVersion;
@@ -1076,6 +1128,8 @@ public class EndpointVO  {
         this.dbVersion = dbVersion;
     }
 
+    
+
     public EndpointVO withMongoHaMode(MongoHaModeEnum mongoHaMode) {
         this.mongoHaMode = mongoHaMode;
         return this;
@@ -1095,6 +1149,8 @@ public class EndpointVO  {
     public void setMongoHaMode(MongoHaModeEnum mongoHaMode) {
         this.mongoHaMode = mongoHaMode;
     }
+
+    
 
     public EndpointVO withProjectId(String projectId) {
         this.projectId = projectId;
@@ -1116,6 +1172,8 @@ public class EndpointVO  {
         this.projectId = projectId;
     }
 
+    
+
     public EndpointVO withClusterMode(ClusterModeEnum clusterMode) {
         this.clusterMode = clusterMode;
         return this;
@@ -1135,6 +1193,8 @@ public class EndpointVO  {
     public void setClusterMode(ClusterModeEnum clusterMode) {
         this.clusterMode = clusterMode;
     }
+
+    
 
     public EndpointVO withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -1156,6 +1216,8 @@ public class EndpointVO  {
         this.instanceId = instanceId;
     }
 
+    
+
     public EndpointVO withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -1175,6 +1237,8 @@ public class EndpointVO  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
 
     public EndpointVO withTopic(String topic) {
         this.topic = topic;
@@ -1196,6 +1260,8 @@ public class EndpointVO  {
         this.topic = topic;
     }
 
+    
+
     public EndpointVO withSafeMode(Integer safeMode) {
         this.safeMode = safeMode;
         return this;
@@ -1215,6 +1281,8 @@ public class EndpointVO  {
     public void setSafeMode(Integer safeMode) {
         this.safeMode = safeMode;
     }
+
+    
 
     public EndpointVO withKerberosVo(KerberosVO kerberosVo) {
         this.kerberosVo = kerberosVo;
@@ -1243,6 +1311,8 @@ public class EndpointVO  {
         this.kerberosVo = kerberosVo;
     }
 
+    
+
     public EndpointVO withMultiWriteDbId(String multiWriteDbId) {
         this.multiWriteDbId = multiWriteDbId;
         return this;
@@ -1262,6 +1332,9 @@ public class EndpointVO  {
     public void setMultiWriteDbId(String multiWriteDbId) {
         this.multiWriteDbId = multiWriteDbId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

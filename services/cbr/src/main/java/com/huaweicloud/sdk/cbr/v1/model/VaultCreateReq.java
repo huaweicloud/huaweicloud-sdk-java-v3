@@ -22,7 +22,7 @@ public class VaultCreateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vault")
     
-    private VaultCreate vault = null;
+    private VaultCreate vault;
 
     public VaultCreateReq withVault(VaultCreate vault) {
         this.vault = vault;
@@ -50,6 +50,9 @@ public class VaultCreateReq  {
     public void setVault(VaultCreate vault) {
         this.vault = vault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class UpdateNodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CCEClusterNodeInformation body = null;
+    private CCEClusterNodeInformation body;
 
     public UpdateNodeRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -62,6 +62,8 @@ public class UpdateNodeRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public UpdateNodeRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateNodeRequest  {
         this.nodeId = nodeId;
     }
 
+    
+
     public UpdateNodeRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -101,6 +105,8 @@ public class UpdateNodeRequest  {
     public void setErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
     }
+
+    
 
     public UpdateNodeRequest withBody(CCEClusterNodeInformation body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateNodeRequest  {
     public void setBody(CCEClusterNodeInformation body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

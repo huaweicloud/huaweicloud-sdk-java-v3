@@ -56,6 +56,8 @@ public class ListMigprojectsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListMigprojectsResponse withMigprojects(List<MigprojectsResponseBody> migprojects) {
         this.migprojects = migprojects;
         return this;
@@ -63,9 +65,6 @@ public class ListMigprojectsResponse extends SdkResponse {
 
     
     public ListMigprojectsResponse addMigprojectsItem(MigprojectsResponseBody migprojectsItem) {
-        if (this.migprojects == null) {
-            this.migprojects = new ArrayList<>();
-        }
         this.migprojects.add(migprojectsItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListMigprojectsResponse extends SdkResponse {
     public void setMigprojects(List<MigprojectsResponseBody> migprojects) {
         this.migprojects = migprojects;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

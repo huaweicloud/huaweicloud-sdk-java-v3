@@ -22,7 +22,7 @@ public class UpdateBandwidthRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private UpdateBandwidthOption bandwidth = null;
+    private UpdateBandwidthOption bandwidth;
 
     public UpdateBandwidthRequestBody withBandwidth(UpdateBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -50,6 +50,9 @@ public class UpdateBandwidthRequestBody  {
     public void setBandwidth(UpdateBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

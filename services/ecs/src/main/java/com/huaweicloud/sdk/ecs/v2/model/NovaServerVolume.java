@@ -27,7 +27,7 @@ public class NovaServerVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_on_termination")
     
-    private Boolean deleteOnTermination = false;
+    private Boolean deleteOnTermination;
 
     public NovaServerVolume withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class NovaServerVolume  {
         this.id = id;
     }
 
+    
+
     public NovaServerVolume withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
         return this;
@@ -68,6 +70,9 @@ public class NovaServerVolume  {
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

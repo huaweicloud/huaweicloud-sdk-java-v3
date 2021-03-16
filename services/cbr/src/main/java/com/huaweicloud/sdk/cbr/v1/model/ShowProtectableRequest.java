@@ -131,6 +131,8 @@ public class ShowProtectableRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowProtectableRequest withProtectableType(ProtectableTypeEnum protectableType) {
         this.protectableType = protectableType;
         return this;
@@ -150,6 +152,9 @@ public class ShowProtectableRequest  {
     public void setProtectableType(ProtectableTypeEnum protectableType) {
         this.protectableType = protectableType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

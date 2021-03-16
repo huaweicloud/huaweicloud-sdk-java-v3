@@ -42,6 +42,9 @@ public class ShowPolicyRequest  {
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class DatabaseObjectResp  {
         this.jobId = jobId;
     }
 
+    
+
     public DatabaseObjectResp withStatus(Boolean status) {
         this.status = status;
         return this;
@@ -80,6 +82,8 @@ public class DatabaseObjectResp  {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+
+    
 
     public DatabaseObjectResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -101,6 +105,8 @@ public class DatabaseObjectResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public DatabaseObjectResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -120,6 +126,9 @@ public class DatabaseObjectResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

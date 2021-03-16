@@ -24,7 +24,7 @@ public class ShowGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group")
     
-    private ShowGroupsRespGroup group = null;
+    private ShowGroupsRespGroup group;
 
     public ShowGroupsResponse withGroup(ShowGroupsRespGroup group) {
         this.group = group;
@@ -52,6 +52,9 @@ public class ShowGroupsResponse extends SdkResponse {
     public void setGroup(ShowGroupsRespGroup group) {
         this.group = group;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

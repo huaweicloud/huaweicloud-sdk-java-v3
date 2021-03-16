@@ -48,7 +48,7 @@ public class CreateSubCustomerReqV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="new_sub_customer")
     
-    private NewCustomerV2 newSubCustomer = null;
+    private NewCustomerV2 newSubCustomer;
 
     public CreateSubCustomerReqV2 withPartyId(String partyId) {
         this.partyId = partyId;
@@ -70,6 +70,8 @@ public class CreateSubCustomerReqV2  {
         this.partyId = partyId;
     }
 
+    
+
     public CreateSubCustomerReqV2 withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -89,6 +91,8 @@ public class CreateSubCustomerReqV2  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
 
     public CreateSubCustomerReqV2 withSubCustomerAssociationType(Integer subCustomerAssociationType) {
         this.subCustomerAssociationType = subCustomerAssociationType;
@@ -112,6 +116,8 @@ public class CreateSubCustomerReqV2  {
         this.subCustomerAssociationType = subCustomerAssociationType;
     }
 
+    
+
     public CreateSubCustomerReqV2 withPermissionIds(List<String> permissionIds) {
         this.permissionIds = permissionIds;
         return this;
@@ -119,9 +125,6 @@ public class CreateSubCustomerReqV2  {
 
     
     public CreateSubCustomerReqV2 addPermissionIdsItem(String permissionIdsItem) {
-        if (this.permissionIds == null) {
-            this.permissionIds = new ArrayList<>();
-        }
         this.permissionIds.add(permissionIdsItem);
         return this;
     }
@@ -145,6 +148,8 @@ public class CreateSubCustomerReqV2  {
     public void setPermissionIds(List<String> permissionIds) {
         this.permissionIds = permissionIds;
     }
+
+    
 
     public CreateSubCustomerReqV2 withNewSubCustomer(NewCustomerV2 newSubCustomer) {
         this.newSubCustomer = newSubCustomer;
@@ -172,6 +177,9 @@ public class CreateSubCustomerReqV2  {
     public void setNewSubCustomer(NewCustomerV2 newSubCustomer) {
         this.newSubCustomer = newSubCustomer;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

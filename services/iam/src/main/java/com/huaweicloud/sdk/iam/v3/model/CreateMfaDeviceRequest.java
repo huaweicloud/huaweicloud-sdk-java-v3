@@ -22,7 +22,7 @@ public class CreateMfaDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateMfaDeviceReq body = null;
+    private CreateMfaDeviceReq body;
 
     public CreateMfaDeviceRequest withBody(CreateMfaDeviceReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateMfaDeviceRequest  {
     public void setBody(CreateMfaDeviceReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

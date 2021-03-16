@@ -28,7 +28,7 @@ public class CreateClusterInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    private PublicIp publicIp = null;
+    private PublicIp publicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,6 +116,8 @@ public class CreateClusterInfo  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public CreateClusterInfo withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -143,6 +145,8 @@ public class CreateClusterInfo  {
         this.publicIp = publicIp;
     }
 
+    
+
     public CreateClusterInfo withNumberOfNode(Integer numberOfNode) {
         this.numberOfNode = numberOfNode;
         return this;
@@ -165,6 +169,8 @@ public class CreateClusterInfo  {
         this.numberOfNode = numberOfNode;
     }
 
+    
+
     public CreateClusterInfo withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -184,6 +190,8 @@ public class CreateClusterInfo  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public CreateClusterInfo withUserName(String userName) {
         this.userName = userName;
@@ -205,6 +213,8 @@ public class CreateClusterInfo  {
         this.userName = userName;
     }
 
+    
+
     public CreateClusterInfo withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -224,6 +234,8 @@ public class CreateClusterInfo  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public CreateClusterInfo withNumberOfCn(Integer numberOfCn) {
         this.numberOfCn = numberOfCn;
@@ -245,6 +257,8 @@ public class CreateClusterInfo  {
         this.numberOfCn = numberOfCn;
     }
 
+    
+
     public CreateClusterInfo withUserPwd(String userPwd) {
         this.userPwd = userPwd;
         return this;
@@ -264,6 +278,8 @@ public class CreateClusterInfo  {
     public void setUserPwd(String userPwd) {
         this.userPwd = userPwd;
     }
+
+    
 
     public CreateClusterInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -285,6 +301,8 @@ public class CreateClusterInfo  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateClusterInfo withNodeType(String nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -304,6 +322,8 @@ public class CreateClusterInfo  {
     public void setNodeType(String nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public CreateClusterInfo withPort(Integer port) {
         this.port = port;
@@ -327,6 +347,8 @@ public class CreateClusterInfo  {
         this.port = port;
     }
 
+    
+
     public CreateClusterInfo withName(String name) {
         this.name = name;
         return this;
@@ -347,6 +369,8 @@ public class CreateClusterInfo  {
         this.name = name;
     }
 
+    
+
     public CreateClusterInfo withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -366,6 +390,9 @@ public class CreateClusterInfo  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

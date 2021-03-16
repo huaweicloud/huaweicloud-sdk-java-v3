@@ -24,7 +24,7 @@ public class ShowAccountStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private AccountStatus result = null;
+    private AccountStatus result;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class ShowAccountStatusResponse extends SdkResponse {
         this.result = result;
     }
 
+    
+
     public ShowAccountStatusResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -78,6 +80,9 @@ public class ShowAccountStatusResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

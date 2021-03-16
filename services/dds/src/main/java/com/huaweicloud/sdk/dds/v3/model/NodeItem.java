@@ -85,6 +85,8 @@ public class NodeItem  {
         this.id = id;
     }
 
+    
+
     public NodeItem withName(String name) {
         this.name = name;
         return this;
@@ -104,6 +106,8 @@ public class NodeItem  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NodeItem withStatus(String status) {
         this.status = status;
@@ -125,6 +129,8 @@ public class NodeItem  {
         this.status = status;
     }
 
+    
+
     public NodeItem withRole(String role) {
         this.role = role;
         return this;
@@ -144,6 +150,8 @@ public class NodeItem  {
     public void setRole(String role) {
         this.role = role;
     }
+
+    
 
     public NodeItem withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
@@ -165,6 +173,8 @@ public class NodeItem  {
         this.privateIp = privateIp;
     }
 
+    
+
     public NodeItem withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -184,6 +194,8 @@ public class NodeItem  {
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
+
+    
 
     public NodeItem withSpecCode(String specCode) {
         this.specCode = specCode;
@@ -205,6 +217,8 @@ public class NodeItem  {
         this.specCode = specCode;
     }
 
+    
+
     public NodeItem withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -224,6 +238,9 @@ public class NodeItem  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

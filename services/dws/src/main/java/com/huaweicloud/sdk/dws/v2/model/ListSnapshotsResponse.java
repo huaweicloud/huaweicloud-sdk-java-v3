@@ -35,9 +35,6 @@ public class ListSnapshotsResponse extends SdkResponse {
 
     
     public ListSnapshotsResponse addSnapshotsItem(Snapshots snapshotsItem) {
-        if (this.snapshots == null) {
-            this.snapshots = new ArrayList<>();
-        }
         this.snapshots.add(snapshotsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListSnapshotsResponse extends SdkResponse {
     public void setSnapshots(List<Snapshots> snapshots) {
         this.snapshots = snapshots;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

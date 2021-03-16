@@ -51,6 +51,8 @@ public class PageInfo  {
         this.currentCount = currentCount;
     }
 
+    
+
     public PageInfo withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
@@ -70,6 +72,9 @@ public class PageInfo  {
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class KeystoneShowPermissionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private RoleResult role = null;
+    private RoleResult role;
 
     public KeystoneShowPermissionResponse withRole(RoleResult role) {
         this.role = role;
@@ -52,6 +52,9 @@ public class KeystoneShowPermissionResponse extends SdkResponse {
     public void setRole(RoleResult role) {
         this.role = role;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

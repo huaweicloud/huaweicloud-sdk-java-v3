@@ -104,7 +104,7 @@ public class ListTemplatesV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,7 +116,7 @@ public class ListTemplatesV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TemplateQueryV2 body = null;
+    private TemplateQueryV2 body;
 
     public ListTemplatesV2Request withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class ListTemplatesV2Request  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListTemplatesV2Request withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -159,6 +161,8 @@ public class ListTemplatesV2Request  {
     public void setActionId(String actionId) {
         this.actionId = actionId;
     }
+
+    
 
     public ListTemplatesV2Request withBody(TemplateQueryV2 body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class ListTemplatesV2Request  {
     public void setBody(TemplateQueryV2 body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

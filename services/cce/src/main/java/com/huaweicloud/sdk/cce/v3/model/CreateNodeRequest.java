@@ -110,7 +110,7 @@ public class CreateNodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private V3NodeCreateRequest body = null;
+    private V3NodeCreateRequest body;
 
     public CreateNodeRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -132,6 +132,8 @@ public class CreateNodeRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public CreateNodeRequest withNodepoolScaleUp(NodepoolScaleUpEnum nodepoolScaleUp) {
         this.nodepoolScaleUp = nodepoolScaleUp;
         return this;
@@ -151,6 +153,8 @@ public class CreateNodeRequest  {
     public void setNodepoolScaleUp(NodepoolScaleUpEnum nodepoolScaleUp) {
         this.nodepoolScaleUp = nodepoolScaleUp;
     }
+
+    
 
     public CreateNodeRequest withBody(V3NodeCreateRequest body) {
         this.body = body;
@@ -178,6 +182,9 @@ public class CreateNodeRequest  {
     public void setBody(V3NodeCreateRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class FailoverStrategyRequest  {
     public void setRepairStrategy(String repairStrategy) {
         this.repairStrategy = repairStrategy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

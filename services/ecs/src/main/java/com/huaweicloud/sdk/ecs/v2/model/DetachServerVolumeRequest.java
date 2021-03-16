@@ -115,7 +115,7 @@ public class DetachServerVolumeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_flag")
     
-    private DeleteFlagEnum deleteFlag = DeleteFlagEnum._0;
+    private DeleteFlagEnum deleteFlag;
 
     public DetachServerVolumeRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -137,6 +137,8 @@ public class DetachServerVolumeRequest  {
         this.serverId = serverId;
     }
 
+    
+
     public DetachServerVolumeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -157,6 +159,8 @@ public class DetachServerVolumeRequest  {
         this.volumeId = volumeId;
     }
 
+    
+
     public DetachServerVolumeRequest withDeleteFlag(DeleteFlagEnum deleteFlag) {
         this.deleteFlag = deleteFlag;
         return this;
@@ -176,6 +180,9 @@ public class DetachServerVolumeRequest  {
     public void setDeleteFlag(DeleteFlagEnum deleteFlag) {
         this.deleteFlag = deleteFlag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

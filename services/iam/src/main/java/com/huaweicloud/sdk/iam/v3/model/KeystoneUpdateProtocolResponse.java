@@ -24,7 +24,7 @@ public class KeystoneUpdateProtocolResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    private ProtocolResult protocol = null;
+    private ProtocolResult protocol;
 
     public KeystoneUpdateProtocolResponse withProtocol(ProtocolResult protocol) {
         this.protocol = protocol;
@@ -52,6 +52,9 @@ public class KeystoneUpdateProtocolResponse extends SdkResponse {
     public void setProtocol(ProtocolResult protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

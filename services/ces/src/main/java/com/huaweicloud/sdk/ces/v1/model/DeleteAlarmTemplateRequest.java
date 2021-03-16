@@ -42,6 +42,9 @@ public class DeleteAlarmTemplateRequest  {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

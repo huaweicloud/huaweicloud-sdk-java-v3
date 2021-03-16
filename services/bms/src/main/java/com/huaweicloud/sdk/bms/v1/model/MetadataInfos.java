@@ -42,6 +42,9 @@ public class MetadataInfos  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

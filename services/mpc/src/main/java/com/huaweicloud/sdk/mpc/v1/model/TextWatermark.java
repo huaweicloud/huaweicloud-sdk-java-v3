@@ -26,13 +26,13 @@ public class TextWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dx")
     
-    private String dx = "0";
+    private String dx;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dy")
     
-    private String dy = "0";
+    private String dy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,7 +44,7 @@ public class TextWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeline_start")
     
-    private String timelineStart = "0";
+    private String timelineStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,21 +56,21 @@ public class TextWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="font_name")
     
-    private String fontName = "msyh";
+    private String fontName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="font_size")
     
-    private Integer fontSize = 16;
+    private Integer fontSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="font_color")
     
-    private String fontColor = "white";
+    private String fontColor;
     /**
-     * 水印叠加母体 取值如下： - input：水印叠加在输入片源上，转码输出后实际大小按图像等比例缩放 - output：水印叠加在转码输出文件上。 
+     * 水印叠加母体 取值如下： - input：水印叠加在输入片源上，转码输出后实际大小按图像等比例缩放 - output：水印叠加在转码输出文件上。 默认值：input 
      */
     public static final class BaseEnum {
 
@@ -152,7 +152,7 @@ public class TextWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base")
     
-    private BaseEnum base = BaseEnum.INPUT;
+    private BaseEnum base;
 
     public TextWatermark withDx(String dx) {
         this.dx = dx;
@@ -174,6 +174,8 @@ public class TextWatermark  {
         this.dx = dx;
     }
 
+    
+
     public TextWatermark withDy(String dy) {
         this.dy = dy;
         return this;
@@ -193,6 +195,8 @@ public class TextWatermark  {
     public void setDy(String dy) {
         this.dy = dy;
     }
+
+    
 
     public TextWatermark withReferpos(String referpos) {
         this.referpos = referpos;
@@ -214,6 +218,8 @@ public class TextWatermark  {
         this.referpos = referpos;
     }
 
+    
+
     public TextWatermark withTimelineStart(String timelineStart) {
         this.timelineStart = timelineStart;
         return this;
@@ -233,6 +239,8 @@ public class TextWatermark  {
     public void setTimelineStart(String timelineStart) {
         this.timelineStart = timelineStart;
     }
+
+    
 
     public TextWatermark withTimelineDuration(String timelineDuration) {
         this.timelineDuration = timelineDuration;
@@ -254,6 +262,8 @@ public class TextWatermark  {
         this.timelineDuration = timelineDuration;
     }
 
+    
+
     public TextWatermark withFontName(String fontName) {
         this.fontName = fontName;
         return this;
@@ -273,6 +283,8 @@ public class TextWatermark  {
     public void setFontName(String fontName) {
         this.fontName = fontName;
     }
+
+    
 
     public TextWatermark withFontSize(Integer fontSize) {
         this.fontSize = fontSize;
@@ -296,6 +308,8 @@ public class TextWatermark  {
         this.fontSize = fontSize;
     }
 
+    
+
     public TextWatermark withFontColor(String fontColor) {
         this.fontColor = fontColor;
         return this;
@@ -316,6 +330,8 @@ public class TextWatermark  {
         this.fontColor = fontColor;
     }
 
+    
+
     public TextWatermark withBase(BaseEnum base) {
         this.base = base;
         return this;
@@ -325,7 +341,7 @@ public class TextWatermark  {
 
 
     /**
-     * 水印叠加母体 取值如下： - input：水印叠加在输入片源上，转码输出后实际大小按图像等比例缩放 - output：水印叠加在转码输出文件上。 
+     * 水印叠加母体 取值如下： - input：水印叠加在输入片源上，转码输出后实际大小按图像等比例缩放 - output：水印叠加在转码输出文件上。 默认值：input 
      * @return base
      */
     public BaseEnum getBase() {
@@ -335,6 +351,9 @@ public class TextWatermark  {
     public void setBase(BaseEnum base) {
         this.base = base;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

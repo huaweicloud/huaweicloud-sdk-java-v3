@@ -47,9 +47,6 @@ public class DownloadSlowlogResponse extends SdkResponse {
 
     
     public DownloadSlowlogResponse addListItem(DownloadSlowlogResult listItem) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
-        }
         this.list.add(listItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class DownloadSlowlogResponse extends SdkResponse {
         this.list = list;
     }
 
+    
+
     public DownloadSlowlogResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -94,6 +93,8 @@ public class DownloadSlowlogResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public DownloadSlowlogResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -113,6 +114,9 @@ public class DownloadSlowlogResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

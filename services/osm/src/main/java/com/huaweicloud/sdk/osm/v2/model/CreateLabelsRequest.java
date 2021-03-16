@@ -40,7 +40,7 @@ public class CreateLabelsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateLabelsReq body = null;
+    private CreateLabelsReq body;
 
     public CreateLabelsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -66,6 +66,8 @@ public class CreateLabelsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CreateLabelsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -88,6 +90,8 @@ public class CreateLabelsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CreateLabelsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -109,6 +113,8 @@ public class CreateLabelsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public CreateLabelsRequest withBody(CreateLabelsReq body) {
         this.body = body;
@@ -136,6 +142,9 @@ public class CreateLabelsRequest  {
     public void setBody(CreateLabelsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota")
     
-    private Quota quota = null;
+    private Quota quota;
 
     public ShowQuotaDefaultsResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ShowQuotaDefaultsResponse withQuota(Quota quota) {
         this.quota = quota;
@@ -78,6 +80,9 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
     public void setQuota(Quota quota) {
         this.quota = quota;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

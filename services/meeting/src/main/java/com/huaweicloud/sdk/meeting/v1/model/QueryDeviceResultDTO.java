@@ -127,6 +127,8 @@ public class QueryDeviceResultDTO  {
         this.name = name;
     }
 
+    
+
     public QueryDeviceResultDTO withType(String type) {
         this.type = type;
         return this;
@@ -146,6 +148,8 @@ public class QueryDeviceResultDTO  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public QueryDeviceResultDTO withModel(String model) {
         this.model = model;
@@ -167,6 +171,8 @@ public class QueryDeviceResultDTO  {
         this.model = model;
     }
 
+    
+
     public QueryDeviceResultDTO withSn(String sn) {
         this.sn = sn;
         return this;
@@ -186,6 +192,8 @@ public class QueryDeviceResultDTO  {
     public void setSn(String sn) {
         this.sn = sn;
     }
+
+    
 
     public QueryDeviceResultDTO withAccount(String account) {
         this.account = account;
@@ -207,6 +215,8 @@ public class QueryDeviceResultDTO  {
         this.account = account;
     }
 
+    
+
     public QueryDeviceResultDTO withNumber(String number) {
         this.number = number;
         return this;
@@ -226,6 +236,8 @@ public class QueryDeviceResultDTO  {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    
 
     public QueryDeviceResultDTO withPrjCodeMode(Integer prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
@@ -247,6 +259,8 @@ public class QueryDeviceResultDTO  {
         this.prjCodeMode = prjCodeMode;
     }
 
+    
+
     public QueryDeviceResultDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -266,6 +280,8 @@ public class QueryDeviceResultDTO  {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
 
     public QueryDeviceResultDTO withDeptName(String deptName) {
         this.deptName = deptName;
@@ -287,6 +303,8 @@ public class QueryDeviceResultDTO  {
         this.deptName = deptName;
     }
 
+    
+
     public QueryDeviceResultDTO withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
@@ -306,6 +324,8 @@ public class QueryDeviceResultDTO  {
     public void setDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
     }
+
+    
 
     public QueryDeviceResultDTO withPhone(String phone) {
         this.phone = phone;
@@ -327,6 +347,8 @@ public class QueryDeviceResultDTO  {
         this.phone = phone;
     }
 
+    
+
     public QueryDeviceResultDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -346,6 +368,8 @@ public class QueryDeviceResultDTO  {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
 
     public QueryDeviceResultDTO withEmail(String email) {
         this.email = email;
@@ -367,6 +391,8 @@ public class QueryDeviceResultDTO  {
         this.email = email;
     }
 
+    
+
     public QueryDeviceResultDTO withDescription(String description) {
         this.description = description;
         return this;
@@ -387,6 +413,8 @@ public class QueryDeviceResultDTO  {
         this.description = description;
     }
 
+    
+
     public QueryDeviceResultDTO withStatus(Integer status) {
         this.status = status;
         return this;
@@ -406,6 +434,9 @@ public class QueryDeviceResultDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

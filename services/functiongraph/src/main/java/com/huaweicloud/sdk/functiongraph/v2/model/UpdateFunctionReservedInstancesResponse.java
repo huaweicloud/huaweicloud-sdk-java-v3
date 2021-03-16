@@ -44,6 +44,9 @@ public class UpdateFunctionReservedInstancesResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

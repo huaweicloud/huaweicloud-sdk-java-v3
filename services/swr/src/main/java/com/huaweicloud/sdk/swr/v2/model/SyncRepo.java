@@ -103,6 +103,8 @@ public class SyncRepo  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SyncRepo withDomainID(String domainID) {
         this.domainID = domainID;
         return this;
@@ -122,6 +124,8 @@ public class SyncRepo  {
     public void setDomainID(String domainID) {
         this.domainID = domainID;
     }
+
+    
 
     public SyncRepo withDomainName(String domainName) {
         this.domainName = domainName;
@@ -143,6 +147,8 @@ public class SyncRepo  {
         this.domainName = domainName;
     }
 
+    
+
     public SyncRepo withId(Integer id) {
         this.id = id;
         return this;
@@ -162,6 +168,8 @@ public class SyncRepo  {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public SyncRepo withNamespace(String namespace) {
         this.namespace = namespace;
@@ -183,6 +191,8 @@ public class SyncRepo  {
         this.namespace = namespace;
     }
 
+    
+
     public SyncRepo withOverride(Boolean override) {
         this.override = override;
         return this;
@@ -202,6 +212,8 @@ public class SyncRepo  {
     public void setOverride(Boolean override) {
         this.override = override;
     }
+
+    
 
     public SyncRepo withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
@@ -223,6 +235,8 @@ public class SyncRepo  {
         this.remoteNamespace = remoteNamespace;
     }
 
+    
+
     public SyncRepo withRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
         return this;
@@ -242,6 +256,8 @@ public class SyncRepo  {
     public void setRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
     }
+
+    
 
     public SyncRepo withRepoName(String repoName) {
         this.repoName = repoName;
@@ -263,6 +279,8 @@ public class SyncRepo  {
         this.repoName = repoName;
     }
 
+    
+
     public SyncRepo withSynAuto(Boolean synAuto) {
         this.synAuto = synAuto;
         return this;
@@ -283,6 +301,8 @@ public class SyncRepo  {
         this.synAuto = synAuto;
     }
 
+    
+
     public SyncRepo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -302,6 +322,9 @@ public class SyncRepo  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

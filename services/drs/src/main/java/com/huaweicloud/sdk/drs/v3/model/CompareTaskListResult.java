@@ -51,9 +51,6 @@ public class CompareTaskListResult  {
 
     
     public CompareTaskListResult addCompareTaskListItem(CompareTaskList compareTaskListItem) {
-        if (this.compareTaskList == null) {
-            this.compareTaskList = new ArrayList<>();
-        }
         this.compareTaskList.add(compareTaskListItem);
         return this;
     }
@@ -78,6 +75,8 @@ public class CompareTaskListResult  {
         this.compareTaskList = compareTaskList;
     }
 
+    
+
     public CompareTaskListResult withCompareTaskListCount(Integer compareTaskListCount) {
         this.compareTaskListCount = compareTaskListCount;
         return this;
@@ -97,6 +96,8 @@ public class CompareTaskListResult  {
     public void setCompareTaskListCount(Integer compareTaskListCount) {
         this.compareTaskListCount = compareTaskListCount;
     }
+
+    
 
     public CompareTaskListResult withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
@@ -118,6 +119,8 @@ public class CompareTaskListResult  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public CompareTaskListResult withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -137,6 +140,9 @@ public class CompareTaskListResult  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

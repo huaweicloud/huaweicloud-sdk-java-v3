@@ -55,6 +55,8 @@ public class CreateIpRequestBody  {
         this.type = type;
     }
 
+    
+
     public CreateIpRequestBody withTargetId(String targetId) {
         this.targetId = targetId;
         return this;
@@ -75,6 +77,8 @@ public class CreateIpRequestBody  {
         this.targetId = targetId;
     }
 
+    
+
     public CreateIpRequestBody withPassword(String password) {
         this.password = password;
         return this;
@@ -94,6 +98,9 @@ public class CreateIpRequestBody  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateNatGatewayRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nat_gateway")
     
-    private CreateNatGatewayOption natGateway = null;
+    private CreateNatGatewayOption natGateway;
 
     public CreateNatGatewayRequestBody withNatGateway(CreateNatGatewayOption natGateway) {
         this.natGateway = natGateway;
@@ -50,6 +50,9 @@ public class CreateNatGatewayRequestBody  {
     public void setNatGateway(CreateNatGatewayOption natGateway) {
         this.natGateway = natGateway;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

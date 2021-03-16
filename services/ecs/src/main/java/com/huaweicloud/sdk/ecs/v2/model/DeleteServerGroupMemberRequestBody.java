@@ -22,7 +22,7 @@ public class DeleteServerGroupMemberRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remove_member")
     
-    private ServerGroupMember removeMember = null;
+    private ServerGroupMember removeMember;
 
     public DeleteServerGroupMemberRequestBody withRemoveMember(ServerGroupMember removeMember) {
         this.removeMember = removeMember;
@@ -50,6 +50,9 @@ public class DeleteServerGroupMemberRequestBody  {
     public void setRemoveMember(ServerGroupMember removeMember) {
         this.removeMember = removeMember;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

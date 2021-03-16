@@ -52,6 +52,8 @@ public class FlavorInfo  {
         this.id = id;
     }
 
+    
+
     public FlavorInfo withLinks(List<Links> links) {
         this.links = links;
         return this;
@@ -59,9 +61,6 @@ public class FlavorInfo  {
 
     
     public FlavorInfo addLinksItem(Links linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class FlavorInfo  {
     public void setLinks(List<Links> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListBlockchainChannelsResponse extends SdkResponse {
 
     
     public ListBlockchainChannelsResponse addChannelsItem(Channel channelsItem) {
-        if (this.channels == null) {
-            this.channels = new ArrayList<>();
-        }
         this.channels.add(channelsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListBlockchainChannelsResponse extends SdkResponse {
     public void setChannels(List<Channel> channels) {
         this.channels = channels;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

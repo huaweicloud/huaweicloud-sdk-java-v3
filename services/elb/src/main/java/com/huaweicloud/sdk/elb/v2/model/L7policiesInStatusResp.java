@@ -40,7 +40,7 @@ public class L7policiesInStatusResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<L7rulesInStatusResp> rules = new ArrayList<>();
+    private List<L7rulesInStatusResp> rules = null;
         /**
      * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
      */
@@ -152,6 +152,8 @@ public class L7policiesInStatusResp  {
         this.id = id;
     }
 
+    
+
     public L7policiesInStatusResp withName(String name) {
         this.name = name;
         return this;
@@ -171,6 +173,8 @@ public class L7policiesInStatusResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public L7policiesInStatusResp withRules(List<L7rulesInStatusResp> rules) {
         this.rules = rules;
@@ -203,6 +207,8 @@ public class L7policiesInStatusResp  {
         this.rules = rules;
     }
 
+    
+
     public L7policiesInStatusResp withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -223,6 +229,8 @@ public class L7policiesInStatusResp  {
         this.action = action;
     }
 
+    
+
     public L7policiesInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -242,6 +250,9 @@ public class L7policiesInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

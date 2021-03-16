@@ -40,7 +40,7 @@ public class UpdateAppConfigV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppConfigModifyRequest body = null;
+    private AppConfigModifyRequest body;
 
     public UpdateAppConfigV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -62,6 +62,8 @@ public class UpdateAppConfigV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateAppConfigV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateAppConfigV2Request  {
         this.appId = appId;
     }
 
+    
+
     public UpdateAppConfigV2Request withAppConfigId(String appConfigId) {
         this.appConfigId = appConfigId;
         return this;
@@ -101,6 +105,8 @@ public class UpdateAppConfigV2Request  {
     public void setAppConfigId(String appConfigId) {
         this.appConfigId = appConfigId;
     }
+
+    
 
     public UpdateAppConfigV2Request withBody(AppConfigModifyRequest body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateAppConfigV2Request  {
     public void setBody(AppConfigModifyRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

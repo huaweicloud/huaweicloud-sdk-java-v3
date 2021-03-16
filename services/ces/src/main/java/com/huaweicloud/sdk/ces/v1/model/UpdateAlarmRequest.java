@@ -22,13 +22,13 @@ public class UpdateAlarmRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_id")
     
-    private String alarmId = "al15454523384878yogJg6ao";
+    private String alarmId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAlarmRequestBody body = null;
+    private UpdateAlarmRequestBody body;
 
     public UpdateAlarmRequest withAlarmId(String alarmId) {
         this.alarmId = alarmId;
@@ -49,6 +49,8 @@ public class UpdateAlarmRequest  {
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
     }
+
+    
 
     public UpdateAlarmRequest withBody(UpdateAlarmRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateAlarmRequest  {
     public void setBody(UpdateAlarmRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

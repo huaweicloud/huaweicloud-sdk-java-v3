@@ -309,7 +309,7 @@ public class Endpoint  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_mode")
     
-    private ClusterModeEnum clusterMode = ClusterModeEnum.SHARDING4_0_;
+    private ClusterModeEnum clusterMode;
 
     public Endpoint withDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
@@ -331,6 +331,8 @@ public class Endpoint  {
         this.dbType = dbType;
     }
 
+    
+
     public Endpoint withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
@@ -350,6 +352,8 @@ public class Endpoint  {
     public void setAzCode(String azCode) {
         this.azCode = azCode;
     }
+
+    
 
     public Endpoint withRegion(String region) {
         this.region = region;
@@ -371,6 +375,8 @@ public class Endpoint  {
         this.region = region;
     }
 
+    
+
     public Endpoint withInstId(String instId) {
         this.instId = instId;
         return this;
@@ -390,6 +396,8 @@ public class Endpoint  {
     public void setInstId(String instId) {
         this.instId = instId;
     }
+
+    
 
     public Endpoint withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -411,6 +419,8 @@ public class Endpoint  {
         this.vpcId = vpcId;
     }
 
+    
+
     public Endpoint withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -430,6 +440,8 @@ public class Endpoint  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public Endpoint withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -451,6 +463,8 @@ public class Endpoint  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public Endpoint withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -470,6 +484,8 @@ public class Endpoint  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public Endpoint withDbName(String dbName) {
         this.dbName = dbName;
@@ -491,6 +507,8 @@ public class Endpoint  {
         this.dbName = dbName;
     }
 
+    
+
     public Endpoint withDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
         return this;
@@ -510,6 +528,8 @@ public class Endpoint  {
     public void setDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
     }
+
+    
 
     public Endpoint withDbPort(Integer dbPort) {
         this.dbPort = dbPort;
@@ -531,6 +551,8 @@ public class Endpoint  {
         this.dbPort = dbPort;
     }
 
+    
+
     public Endpoint withDbUser(String dbUser) {
         this.dbUser = dbUser;
         return this;
@@ -550,6 +572,8 @@ public class Endpoint  {
     public void setDbUser(String dbUser) {
         this.dbUser = dbUser;
     }
+
+    
 
     public Endpoint withInstName(String instName) {
         this.instName = instName;
@@ -571,6 +595,8 @@ public class Endpoint  {
         this.instName = instName;
     }
 
+    
+
     public Endpoint withIp(String ip) {
         this.ip = ip;
         return this;
@@ -590,6 +616,8 @@ public class Endpoint  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public Endpoint withMongoHaMode(String mongoHaMode) {
         this.mongoHaMode = mongoHaMode;
@@ -611,6 +639,8 @@ public class Endpoint  {
         this.mongoHaMode = mongoHaMode;
     }
 
+    
+
     public Endpoint withSafeMode(Integer safeMode) {
         this.safeMode = safeMode;
         return this;
@@ -630,6 +660,8 @@ public class Endpoint  {
     public void setSafeMode(Integer safeMode) {
         this.safeMode = safeMode;
     }
+
+    
 
     public Endpoint withSslCertPassword(String sslCertPassword) {
         this.sslCertPassword = sslCertPassword;
@@ -651,6 +683,8 @@ public class Endpoint  {
         this.sslCertPassword = sslCertPassword;
     }
 
+    
+
     public Endpoint withSslCertCheckSum(String sslCertCheckSum) {
         this.sslCertCheckSum = sslCertCheckSum;
         return this;
@@ -670,6 +704,8 @@ public class Endpoint  {
     public void setSslCertCheckSum(String sslCertCheckSum) {
         this.sslCertCheckSum = sslCertCheckSum;
     }
+
+    
 
     public Endpoint withSslCertKey(String sslCertKey) {
         this.sslCertKey = sslCertKey;
@@ -691,6 +727,8 @@ public class Endpoint  {
         this.sslCertKey = sslCertKey;
     }
 
+    
+
     public Endpoint withSslCertName(String sslCertName) {
         this.sslCertName = sslCertName;
         return this;
@@ -710,6 +748,8 @@ public class Endpoint  {
     public void setSslCertName(String sslCertName) {
         this.sslCertName = sslCertName;
     }
+
+    
 
     public Endpoint withSslLink(String sslLink) {
         this.sslLink = sslLink;
@@ -731,6 +771,8 @@ public class Endpoint  {
         this.sslLink = sslLink;
     }
 
+    
+
     public Endpoint withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -751,6 +793,8 @@ public class Endpoint  {
         this.topic = topic;
     }
 
+    
+
     public Endpoint withClusterMode(ClusterModeEnum clusterMode) {
         this.clusterMode = clusterMode;
         return this;
@@ -770,6 +814,9 @@ public class Endpoint  {
     public void setClusterMode(ClusterModeEnum clusterMode) {
         this.clusterMode = clusterMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -78,6 +78,8 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.pageNumber = pageNumber;
     }
 
+    
+
     public ListSlowlogStatisticsResponse withPageRecord(Integer pageRecord) {
         this.pageRecord = pageRecord;
         return this;
@@ -98,6 +100,8 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.pageRecord = pageRecord;
     }
 
+    
+
     public ListSlowlogStatisticsResponse withSlowLogList(List<SlowLog> slowLogList) {
         this.slowLogList = slowLogList;
         return this;
@@ -105,9 +109,6 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
 
     
     public ListSlowlogStatisticsResponse addSlowLogListItem(SlowLog slowLogListItem) {
-        if (this.slowLogList == null) {
-            this.slowLogList = new ArrayList<>();
-        }
         this.slowLogList.add(slowLogListItem);
         return this;
     }
@@ -132,6 +133,8 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.slowLogList = slowLogList;
     }
 
+    
+
     public ListSlowlogStatisticsResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
@@ -151,6 +154,8 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
     public void setTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
     }
+
+    
 
     public ListSlowlogStatisticsResponse withStartTime(Long startTime) {
         this.startTime = startTime;
@@ -172,6 +177,8 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
+    
+
     public ListSlowlogStatisticsResponse withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -191,6 +198,9 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

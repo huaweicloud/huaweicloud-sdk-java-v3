@@ -103,7 +103,7 @@ public class BssParamForResizeVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isAutoPay")
     
-    private IsAutoPayEnum isAutoPay = IsAutoPayEnum.FALSE;
+    private IsAutoPayEnum isAutoPay;
 
     public BssParamForResizeVolume withIsAutoPay(IsAutoPayEnum isAutoPay) {
         this.isAutoPay = isAutoPay;
@@ -124,6 +124,9 @@ public class BssParamForResizeVolume  {
     public void setIsAutoPay(IsAutoPayEnum isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

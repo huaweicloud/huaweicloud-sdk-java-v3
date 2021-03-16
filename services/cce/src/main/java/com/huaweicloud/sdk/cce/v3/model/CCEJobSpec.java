@@ -78,6 +78,8 @@ public class CCEJobSpec  {
         this.clusterUID = clusterUID;
     }
 
+    
+
     public CCEJobSpec withExtendParam(Map<String, String> extendParam) {
         this.extendParam = extendParam;
         return this;
@@ -86,9 +88,6 @@ public class CCEJobSpec  {
     
 
     public CCEJobSpec putExtendParamItem(String key, String extendParamItem) {
-         if (this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-         }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
@@ -112,6 +111,8 @@ public class CCEJobSpec  {
         this.extendParam = extendParam;
     }
 
+    
+
     public CCEJobSpec withResourceID(String resourceID) {
         this.resourceID = resourceID;
         return this;
@@ -131,6 +132,8 @@ public class CCEJobSpec  {
     public void setResourceID(String resourceID) {
         this.resourceID = resourceID;
     }
+
+    
 
     public CCEJobSpec withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -152,6 +155,8 @@ public class CCEJobSpec  {
         this.resourceName = resourceName;
     }
 
+    
+
     public CCEJobSpec withSubJobs(List<CCEJob> subJobs) {
         this.subJobs = subJobs;
         return this;
@@ -159,9 +164,6 @@ public class CCEJobSpec  {
 
     
     public CCEJobSpec addSubJobsItem(CCEJob subJobsItem) {
-        if (this.subJobs == null) {
-            this.subJobs = new ArrayList<>();
-        }
         this.subJobs.add(subJobsItem);
         return this;
     }
@@ -186,6 +188,8 @@ public class CCEJobSpec  {
         this.subJobs = subJobs;
     }
 
+    
+
     public CCEJobSpec withType(String type) {
         this.type = type;
         return this;
@@ -205,6 +209,9 @@ public class CCEJobSpec  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

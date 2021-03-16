@@ -81,6 +81,8 @@ public class ShowOrgResResponse extends SdkResponse {
         this.usedRecStorage = usedRecStorage;
     }
 
+    
+
     public ShowOrgResResponse withUsedAccountsCount(Integer usedAccountsCount) {
         this.usedAccountsCount = usedAccountsCount;
         return this;
@@ -100,6 +102,8 @@ public class ShowOrgResResponse extends SdkResponse {
     public void setUsedAccountsCount(Integer usedAccountsCount) {
         this.usedAccountsCount = usedAccountsCount;
     }
+
+    
 
     public ShowOrgResResponse withUsedLiveCount(Integer usedLiveCount) {
         this.usedLiveCount = usedLiveCount;
@@ -121,6 +125,8 @@ public class ShowOrgResResponse extends SdkResponse {
         this.usedLiveCount = usedLiveCount;
     }
 
+    
+
     public ShowOrgResResponse withConfCount(Integer confCount) {
         this.confCount = confCount;
         return this;
@@ -140,6 +146,8 @@ public class ShowOrgResResponse extends SdkResponse {
     public void setConfCount(Integer confCount) {
         this.confCount = confCount;
     }
+
+    
 
     public ShowOrgResResponse withConfLength(Long confLength) {
         this.confLength = confLength;
@@ -161,6 +169,8 @@ public class ShowOrgResResponse extends SdkResponse {
         this.confLength = confLength;
     }
 
+    
+
     public ShowOrgResResponse withActiveAttendeeCount(Integer activeAttendeeCount) {
         this.activeAttendeeCount = activeAttendeeCount;
         return this;
@@ -181,6 +191,8 @@ public class ShowOrgResResponse extends SdkResponse {
         this.activeAttendeeCount = activeAttendeeCount;
     }
 
+    
+
     public ShowOrgResResponse withTotalAttendeeCount(Integer totalAttendeeCount) {
         this.totalAttendeeCount = totalAttendeeCount;
         return this;
@@ -200,6 +212,9 @@ public class ShowOrgResResponse extends SdkResponse {
     public void setTotalAttendeeCount(Integer totalAttendeeCount) {
         this.totalAttendeeCount = totalAttendeeCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

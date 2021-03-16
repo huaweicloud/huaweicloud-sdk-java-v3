@@ -39,9 +39,6 @@ public class StacksTag  {
 
     
     public StacksTag addStackListItem(Stacks stackListItem) {
-        if (this.stackList == null) {
-            this.stackList = new ArrayList<>();
-        }
         this.stackList.add(stackListItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class StacksTag  {
         this.stackList = stackList;
     }
 
+    
+
     public StacksTag withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -73,9 +72,6 @@ public class StacksTag  {
 
     
     public StacksTag addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -99,6 +95,9 @@ public class StacksTag  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

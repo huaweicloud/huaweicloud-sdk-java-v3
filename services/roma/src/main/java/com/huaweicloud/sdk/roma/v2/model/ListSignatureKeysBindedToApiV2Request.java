@@ -51,13 +51,13 @@ public class ListSignatureKeysBindedToApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListSignatureKeysBindedToApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -79,6 +79,8 @@ public class ListSignatureKeysBindedToApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListSignatureKeysBindedToApiV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -98,6 +100,8 @@ public class ListSignatureKeysBindedToApiV2Request  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public ListSignatureKeysBindedToApiV2Request withSignId(String signId) {
         this.signId = signId;
@@ -119,6 +123,8 @@ public class ListSignatureKeysBindedToApiV2Request  {
         this.signId = signId;
     }
 
+    
+
     public ListSignatureKeysBindedToApiV2Request withSignName(String signName) {
         this.signName = signName;
         return this;
@@ -138,6 +144,8 @@ public class ListSignatureKeysBindedToApiV2Request  {
     public void setSignName(String signName) {
         this.signName = signName;
     }
+
+    
 
     public ListSignatureKeysBindedToApiV2Request withEnvId(String envId) {
         this.envId = envId;
@@ -159,6 +167,8 @@ public class ListSignatureKeysBindedToApiV2Request  {
         this.envId = envId;
     }
 
+    
+
     public ListSignatureKeysBindedToApiV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -178,6 +188,8 @@ public class ListSignatureKeysBindedToApiV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListSignatureKeysBindedToApiV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -200,6 +212,9 @@ public class ListSignatureKeysBindedToApiV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -137,6 +137,8 @@ public class ThrottleSpecialReq  {
         this.callLimits = callLimits;
     }
 
+    
+
     public ThrottleSpecialReq withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -157,6 +159,8 @@ public class ThrottleSpecialReq  {
         this.objectId = objectId;
     }
 
+    
+
     public ThrottleSpecialReq withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
@@ -176,6 +180,9 @@ public class ThrottleSpecialReq  {
     public void setObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

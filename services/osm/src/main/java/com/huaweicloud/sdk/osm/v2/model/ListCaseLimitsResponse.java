@@ -24,7 +24,7 @@ public class ListCaseLimitsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    private TenantConfigV2 config = null;
+    private TenantConfigV2 config;
 
     public ListCaseLimitsResponse withConfig(TenantConfigV2 config) {
         this.config = config;
@@ -52,6 +52,9 @@ public class ListCaseLimitsResponse extends SdkResponse {
     public void setConfig(TenantConfigV2 config) {
         this.config = config;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

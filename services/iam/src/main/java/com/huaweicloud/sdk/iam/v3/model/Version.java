@@ -37,7 +37,7 @@ public class Version  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<VersionLinks> links = new ArrayList<>();
+    private List<VersionLinks> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,7 +49,7 @@ public class Version  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="media-types")
     
-    private List<VersionMediatypes> mediaTypes = new ArrayList<>();
+    private List<VersionMediatypes> mediaTypes = null;
     
     public Version withStatus(String status) {
         this.status = status;
@@ -71,6 +71,8 @@ public class Version  {
         this.status = status;
     }
 
+    
+
     public Version withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -90,6 +92,8 @@ public class Version  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public Version withLinks(List<VersionLinks> links) {
         this.links = links;
@@ -122,6 +126,8 @@ public class Version  {
         this.links = links;
     }
 
+    
+
     public Version withId(String id) {
         this.id = id;
         return this;
@@ -141,6 +147,8 @@ public class Version  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public Version withMediaTypes(List<VersionMediatypes> mediaTypes) {
         this.mediaTypes = mediaTypes;
@@ -172,6 +180,9 @@ public class Version  {
     public void setMediaTypes(List<VersionMediatypes> mediaTypes) {
         this.mediaTypes = mediaTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

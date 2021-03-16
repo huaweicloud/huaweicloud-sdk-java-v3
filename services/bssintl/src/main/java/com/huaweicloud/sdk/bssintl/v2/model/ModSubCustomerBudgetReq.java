@@ -55,6 +55,8 @@ public class ModSubCustomerBudgetReq  {
         this.customerId = customerId;
     }
 
+    
+
     public ModSubCustomerBudgetReq withBudgetAmount(Double budgetAmount) {
         this.budgetAmount = budgetAmount;
         return this;
@@ -75,6 +77,8 @@ public class ModSubCustomerBudgetReq  {
         this.budgetAmount = budgetAmount;
     }
 
+    
+
     public ModSubCustomerBudgetReq withCancelPartnerFrozen(String cancelPartnerFrozen) {
         this.cancelPartnerFrozen = cancelPartnerFrozen;
         return this;
@@ -94,6 +98,9 @@ public class ModSubCustomerBudgetReq  {
     public void setCancelPartnerFrozen(String cancelPartnerFrozen) {
         this.cancelPartnerFrozen = cancelPartnerFrozen;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

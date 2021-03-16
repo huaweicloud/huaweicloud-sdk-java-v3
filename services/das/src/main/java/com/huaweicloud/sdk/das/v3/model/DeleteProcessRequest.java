@@ -116,7 +116,7 @@ public class DeleteProcessRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteProcessReqBody body = null;
+    private DeleteProcessReqBody body;
 
     public DeleteProcessRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -137,6 +137,8 @@ public class DeleteProcessRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public DeleteProcessRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -159,6 +161,8 @@ public class DeleteProcessRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public DeleteProcessRequest withBody(DeleteProcessReqBody body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class DeleteProcessRequest  {
     public void setBody(DeleteProcessReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

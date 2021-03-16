@@ -55,6 +55,8 @@ public class Hook  {
         this.id = id;
     }
 
+    
+
     public Hook withType(String type) {
         this.type = type;
         return this;
@@ -75,6 +77,8 @@ public class Hook  {
         this.type = type;
     }
 
+    
+
     public Hook withCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
         return this;
@@ -94,6 +98,9 @@ public class Hook  {
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

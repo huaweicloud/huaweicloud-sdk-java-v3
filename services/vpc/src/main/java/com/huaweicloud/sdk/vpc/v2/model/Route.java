@@ -49,6 +49,8 @@ public class Route  {
         this.destination = destination;
     }
 
+    
+
     public Route withNexthop(String nexthop) {
         this.nexthop = nexthop;
         return this;
@@ -68,6 +70,9 @@ public class Route  {
     public void setNexthop(String nexthop) {
         this.nexthop = nexthop;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -59,13 +59,13 @@ public class ShowCurUserInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private String createdTime;
+    private Long createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_time")
     
-    private String updatedTime;
+    private Long updatedTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,6 +99,8 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
+    
+
     public ShowCurUserInfoResponse withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -118,6 +120,8 @@ public class ShowCurUserInfoResponse extends SdkResponse {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public ShowCurUserInfoResponse withUserNumId(Integer userNumId) {
         this.userNumId = userNumId;
@@ -139,6 +143,8 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.userNumId = userNumId;
     }
 
+    
+
     public ShowCurUserInfoResponse withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -158,6 +164,8 @@ public class ShowCurUserInfoResponse extends SdkResponse {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public ShowCurUserInfoResponse withUserName(String userName) {
         this.userName = userName;
@@ -179,6 +187,8 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.userName = userName;
     }
 
+    
+
     public ShowCurUserInfoResponse withNickName(String nickName) {
         this.nickName = nickName;
         return this;
@@ -199,7 +209,9 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.nickName = nickName;
     }
 
-    public ShowCurUserInfoResponse withCreatedTime(String createdTime) {
+    
+
+    public ShowCurUserInfoResponse withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
@@ -211,15 +223,17 @@ public class ShowCurUserInfoResponse extends SdkResponse {
      * 创建时间
      * @return createdTime
      */
-    public String getCreatedTime() {
+    public Long getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(String createdTime) {
+    public void setCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
     }
 
-    public ShowCurUserInfoResponse withUpdatedTime(String updatedTime) {
+    
+
+    public ShowCurUserInfoResponse withUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
@@ -231,13 +245,15 @@ public class ShowCurUserInfoResponse extends SdkResponse {
      * 更新时间
      * @return updatedTime
      */
-    public String getUpdatedTime() {
+    public Long getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(String updatedTime) {
+    public void setUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
     }
+
+    
 
     public ShowCurUserInfoResponse withGender(String gender) {
         this.gender = gender;
@@ -259,6 +275,8 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.gender = gender;
     }
 
+    
+
     public ShowCurUserInfoResponse withUserType(String userType) {
         this.userType = userType;
         return this;
@@ -268,7 +286,7 @@ public class ShowCurUserInfoResponse extends SdkResponse {
 
 
     /**
-     * 用户类型 User 云用户 Federation 联邦账号
+     * 用户类型, User 云用户, Federation 联邦账号,
      * @return userType
      */
     public String getUserType() {
@@ -278,6 +296,9 @@ public class ShowCurUserInfoResponse extends SdkResponse {
     public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

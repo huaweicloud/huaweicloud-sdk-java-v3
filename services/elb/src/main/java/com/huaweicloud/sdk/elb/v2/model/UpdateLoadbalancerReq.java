@@ -55,6 +55,8 @@ public class UpdateLoadbalancerReq  {
         this.name = name;
     }
 
+    
+
     public UpdateLoadbalancerReq withDescription(String description) {
         this.description = description;
         return this;
@@ -75,6 +77,8 @@ public class UpdateLoadbalancerReq  {
         this.description = description;
     }
 
+    
+
     public UpdateLoadbalancerReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -94,6 +98,9 @@ public class UpdateLoadbalancerReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

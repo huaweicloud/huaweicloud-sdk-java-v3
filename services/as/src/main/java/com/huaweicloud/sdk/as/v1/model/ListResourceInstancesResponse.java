@@ -47,9 +47,6 @@ public class ListResourceInstancesResponse extends SdkResponse {
 
     
     public ListResourceInstancesResponse addResourcesItem(Resources resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListResourceInstancesResponse extends SdkResponse {
         this.resources = resources;
     }
 
+    
+
     public ListResourceInstancesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -94,6 +93,8 @@ public class ListResourceInstancesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListResourceInstancesResponse withMarker(Integer marker) {
         this.marker = marker;
         return this;
@@ -113,6 +114,9 @@ public class ListResourceInstancesResponse extends SdkResponse {
     public void setMarker(Integer marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

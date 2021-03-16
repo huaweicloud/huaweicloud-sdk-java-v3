@@ -49,6 +49,8 @@ public class DimChild  {
         this.dimName = dimName;
     }
 
+    
+
     public DimChild withDimRoute(String dimRoute) {
         this.dimRoute = dimRoute;
         return this;
@@ -68,6 +70,9 @@ public class DimChild  {
     public void setDimRoute(String dimRoute) {
         this.dimRoute = dimRoute;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

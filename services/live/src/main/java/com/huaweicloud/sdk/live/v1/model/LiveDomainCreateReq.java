@@ -122,7 +122,7 @@ public class LiveDomainCreateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_source")
     
-    private DomainSourceInfo domainSource = null;
+    private DomainSourceInfo domainSource;
 
     public LiveDomainCreateReq withDomain(String domain) {
         this.domain = domain;
@@ -144,6 +144,8 @@ public class LiveDomainCreateReq  {
         this.domain = domain;
     }
 
+    
+
     public LiveDomainCreateReq withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
@@ -164,6 +166,8 @@ public class LiveDomainCreateReq  {
         this.domainType = domainType;
     }
 
+    
+
     public LiveDomainCreateReq withRegion(String region) {
         this.region = region;
         return this;
@@ -183,6 +187,8 @@ public class LiveDomainCreateReq  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public LiveDomainCreateReq withDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
@@ -210,6 +216,9 @@ public class LiveDomainCreateReq  {
     public void setDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

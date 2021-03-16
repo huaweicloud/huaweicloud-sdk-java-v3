@@ -28,7 +28,7 @@ public class ReferResources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private ResourceType type = null;
+    private ResourceType type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,7 +40,7 @@ public class ReferResources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    private Object parameters = null;
+    private Object parameters;
 
     public ReferResources withId(String id) {
         this.id = id;
@@ -62,6 +62,8 @@ public class ReferResources  {
         this.id = id;
     }
 
+    
+
     public ReferResources withType(ResourceType type) {
         this.type = type;
         return this;
@@ -81,6 +83,8 @@ public class ReferResources  {
     public void setType(ResourceType type) {
         this.type = type;
     }
+
+    
 
     public ReferResources withReferAlias(String referAlias) {
         this.referAlias = referAlias;
@@ -102,6 +106,8 @@ public class ReferResources  {
         this.referAlias = referAlias;
     }
 
+    
+
     public ReferResources withParameters(Object parameters) {
         this.parameters = parameters;
         return this;
@@ -121,6 +127,9 @@ public class ReferResources  {
     public void setParameters(Object parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

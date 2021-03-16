@@ -57,6 +57,8 @@ public class CreatePlanResponse extends SdkResponse {
         this.planId = planId;
     }
 
+    
+
     public CreatePlanResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -77,6 +79,8 @@ public class CreatePlanResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public CreatePlanResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -96,6 +100,9 @@ public class CreatePlanResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

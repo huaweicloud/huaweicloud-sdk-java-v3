@@ -30,7 +30,7 @@ public class TextDetectionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="items")
     
-    private List<TextDetectionItemsReq> items = new ArrayList<>();
+    private List<TextDetectionItemsReq> items = null;
     
     public TextDetectionReq withCategories(List<String> categories) {
         this.categories = categories;
@@ -39,9 +39,6 @@ public class TextDetectionReq  {
 
     
     public TextDetectionReq addCategoriesItem(String categoriesItem) {
-        if (this.categories == null) {
-            this.categories = new ArrayList<>();
-        }
         this.categories.add(categoriesItem);
         return this;
     }
@@ -65,6 +62,8 @@ public class TextDetectionReq  {
     public void setCategories(List<String> categories) {
         this.categories = categories;
     }
+
+    
 
     public TextDetectionReq withItems(List<TextDetectionItemsReq> items) {
         this.items = items;
@@ -96,6 +95,9 @@ public class TextDetectionReq  {
     public void setItems(List<TextDetectionItemsReq> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

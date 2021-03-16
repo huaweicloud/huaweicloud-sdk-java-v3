@@ -24,7 +24,7 @@ public class ShowProjectDetailsAndStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private ProjectDetailsAndStatusResult project = null;
+    private ProjectDetailsAndStatusResult project;
 
     public ShowProjectDetailsAndStatusResponse withProject(ProjectDetailsAndStatusResult project) {
         this.project = project;
@@ -52,6 +52,9 @@ public class ShowProjectDetailsAndStatusResponse extends SdkResponse {
     public void setProject(ProjectDetailsAndStatusResult project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

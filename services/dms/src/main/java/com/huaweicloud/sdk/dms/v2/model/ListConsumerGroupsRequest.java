@@ -67,6 +67,8 @@ public class ListConsumerGroupsRequest  {
         this.queueId = queueId;
     }
 
+    
+
     public ListConsumerGroupsRequest withIncludeDeadletter(Boolean includeDeadletter) {
         this.includeDeadletter = includeDeadletter;
         return this;
@@ -86,6 +88,8 @@ public class ListConsumerGroupsRequest  {
     public void setIncludeDeadletter(Boolean includeDeadletter) {
         this.includeDeadletter = includeDeadletter;
     }
+
+    
 
     public ListConsumerGroupsRequest withIncludeMessagesNum(Boolean includeMessagesNum) {
         this.includeMessagesNum = includeMessagesNum;
@@ -107,6 +111,8 @@ public class ListConsumerGroupsRequest  {
         this.includeMessagesNum = includeMessagesNum;
     }
 
+    
+
     public ListConsumerGroupsRequest withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
@@ -127,6 +133,8 @@ public class ListConsumerGroupsRequest  {
         this.pageSize = pageSize;
     }
 
+    
+
     public ListConsumerGroupsRequest withCurrentPage(Integer currentPage) {
         this.currentPage = currentPage;
         return this;
@@ -146,6 +154,9 @@ public class ListConsumerGroupsRequest  {
     public void setCurrentPage(Integer currentPage) {
         this.currentPage = currentPage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

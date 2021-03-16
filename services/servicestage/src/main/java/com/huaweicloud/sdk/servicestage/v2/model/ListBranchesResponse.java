@@ -34,9 +34,6 @@ public class ListBranchesResponse extends SdkResponse {
 
     
     public ListBranchesResponse addBranchesItem(String branchesItem) {
-        if (this.branches == null) {
-            this.branches = new ArrayList<>();
-        }
         this.branches.add(branchesItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class ListBranchesResponse extends SdkResponse {
     public void setBranches(List<String> branches) {
         this.branches = branches;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

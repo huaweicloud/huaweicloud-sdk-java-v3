@@ -42,6 +42,9 @@ public class AuditReport  {
     public void setBlackPosition(String blackPosition) {
         this.blackPosition = blackPosition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

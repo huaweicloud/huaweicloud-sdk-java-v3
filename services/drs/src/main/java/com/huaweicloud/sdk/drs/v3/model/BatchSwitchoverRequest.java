@@ -104,13 +104,13 @@ public class BatchSwitchoverRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchSwitchoverReq body = null;
+    private BatchSwitchoverReq body;
 
     public BatchSwitchoverRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchSwitchoverRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchSwitchoverRequest withBody(BatchSwitchoverReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchSwitchoverRequest  {
     public void setBody(BatchSwitchoverReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

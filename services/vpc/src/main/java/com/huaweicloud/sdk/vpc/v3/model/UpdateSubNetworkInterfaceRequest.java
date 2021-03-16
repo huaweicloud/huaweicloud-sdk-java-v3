@@ -28,7 +28,7 @@ public class UpdateSubNetworkInterfaceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateSubNetworkInterfaceRequestBody body = null;
+    private UpdateSubNetworkInterfaceRequestBody body;
 
     public UpdateSubNetworkInterfaceRequest withSubNetworkInterfaceId(String subNetworkInterfaceId) {
         this.subNetworkInterfaceId = subNetworkInterfaceId;
@@ -49,6 +49,8 @@ public class UpdateSubNetworkInterfaceRequest  {
     public void setSubNetworkInterfaceId(String subNetworkInterfaceId) {
         this.subNetworkInterfaceId = subNetworkInterfaceId;
     }
+
+    
 
     public UpdateSubNetworkInterfaceRequest withBody(UpdateSubNetworkInterfaceRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateSubNetworkInterfaceRequest  {
     public void setBody(UpdateSubNetworkInterfaceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

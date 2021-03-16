@@ -35,9 +35,6 @@ public class ListPluginsResponse extends SdkResponse {
 
     
     public ListPluginsResponse addPluginsItem(ListPluginsRespPlugins pluginsItem) {
-        if (this.plugins == null) {
-            this.plugins = new ArrayList<>();
-        }
         this.plugins.add(pluginsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListPluginsResponse extends SdkResponse {
     public void setPlugins(List<ListPluginsRespPlugins> plugins) {
         this.plugins = plugins;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

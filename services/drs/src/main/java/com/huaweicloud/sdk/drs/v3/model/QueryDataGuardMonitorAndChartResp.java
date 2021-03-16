@@ -28,7 +28,7 @@ public class QueryDataGuardMonitorAndChartResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_guard_minitor")
     
-    private QueryDataGuardMonitorResponse dataGuardMinitor = null;
+    private QueryDataGuardMonitorResponse dataGuardMinitor;
 
     public QueryDataGuardMonitorAndChartResp withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class QueryDataGuardMonitorAndChartResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public QueryDataGuardMonitorAndChartResp withDataGuardMinitor(QueryDataGuardMonitorResponse dataGuardMinitor) {
         this.dataGuardMinitor = dataGuardMinitor;
@@ -76,6 +78,9 @@ public class QueryDataGuardMonitorAndChartResp  {
     public void setDataGuardMinitor(QueryDataGuardMonitorResponse dataGuardMinitor) {
         this.dataGuardMinitor = dataGuardMinitor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class ModResourceDTO  {
         this.id = id;
     }
 
+    
+
     public ModResourceDTO withType(String type) {
         this.type = type;
         return this;
@@ -80,6 +82,8 @@ public class ModResourceDTO  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ModResourceDTO withExpireDate(Long expireDate) {
         this.expireDate = expireDate;
@@ -102,6 +106,8 @@ public class ModResourceDTO  {
         this.expireDate = expireDate;
     }
 
+    
+
     public ModResourceDTO withIsDisabled(Boolean isDisabled) {
         this.isDisabled = isDisabled;
         return this;
@@ -121,6 +127,9 @@ public class ModResourceDTO  {
     public void setIsDisabled(Boolean isDisabled) {
         this.isDisabled = isDisabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class NovaServerFault  {
         this.code = code;
     }
 
+    
+
     public NovaServerFault withCreated(String created) {
         this.created = created;
         return this;
@@ -80,6 +82,8 @@ public class NovaServerFault  {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public NovaServerFault withMessage(String message) {
         this.message = message;
@@ -101,6 +105,8 @@ public class NovaServerFault  {
         this.message = message;
     }
 
+    
+
     public NovaServerFault withDetails(String details) {
         this.details = details;
         return this;
@@ -120,6 +126,9 @@ public class NovaServerFault  {
     public void setDetails(String details) {
         this.details = details;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

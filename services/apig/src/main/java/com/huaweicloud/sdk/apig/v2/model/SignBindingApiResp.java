@@ -58,7 +58,7 @@ public class SignBindingApiResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="binding_time")
     
-    private OffsetDateTime bindingTime = null;
+    private OffsetDateTime bindingTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -122,6 +122,8 @@ public class SignBindingApiResp  {
         this.publishId = publishId;
     }
 
+    
+
     public SignBindingApiResp withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -141,6 +143,8 @@ public class SignBindingApiResp  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public SignBindingApiResp withSignSecret(String signSecret) {
         this.signSecret = signSecret;
@@ -162,6 +166,8 @@ public class SignBindingApiResp  {
         this.signSecret = signSecret;
     }
 
+    
+
     public SignBindingApiResp withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -181,6 +187,8 @@ public class SignBindingApiResp  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    
 
     public SignBindingApiResp withSignId(String signId) {
         this.signId = signId;
@@ -202,6 +210,8 @@ public class SignBindingApiResp  {
         this.signId = signId;
     }
 
+    
+
     public SignBindingApiResp withSignKey(String signKey) {
         this.signKey = signKey;
         return this;
@@ -221,6 +231,8 @@ public class SignBindingApiResp  {
     public void setSignKey(String signKey) {
         this.signKey = signKey;
     }
+
+    
 
     public SignBindingApiResp withBindingTime(OffsetDateTime bindingTime) {
         this.bindingTime = bindingTime;
@@ -242,6 +254,8 @@ public class SignBindingApiResp  {
         this.bindingTime = bindingTime;
     }
 
+    
+
     public SignBindingApiResp withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -261,6 +275,8 @@ public class SignBindingApiResp  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public SignBindingApiResp withEnvName(String envName) {
         this.envName = envName;
@@ -282,6 +298,8 @@ public class SignBindingApiResp  {
         this.envName = envName;
     }
 
+    
+
     public SignBindingApiResp withSignName(String signName) {
         this.signName = signName;
         return this;
@@ -301,6 +319,8 @@ public class SignBindingApiResp  {
     public void setSignName(String signName) {
         this.signName = signName;
     }
+
+    
 
     public SignBindingApiResp withApiType(Integer apiType) {
         this.apiType = apiType;
@@ -322,6 +342,8 @@ public class SignBindingApiResp  {
         this.apiType = apiType;
     }
 
+    
+
     public SignBindingApiResp withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -341,6 +363,8 @@ public class SignBindingApiResp  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
 
     public SignBindingApiResp withId(String id) {
         this.id = id;
@@ -362,6 +386,8 @@ public class SignBindingApiResp  {
         this.id = id;
     }
 
+    
+
     public SignBindingApiResp withApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
         return this;
@@ -381,6 +407,9 @@ public class SignBindingApiResp  {
     public void setApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -103,6 +103,8 @@ public class ListSnapshotsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListSnapshotsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -122,6 +124,8 @@ public class ListSnapshotsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListSnapshotsRequest withName(String name) {
         this.name = name;
@@ -143,6 +147,8 @@ public class ListSnapshotsRequest  {
         this.name = name;
     }
 
+    
+
     public ListSnapshotsRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -162,6 +168,8 @@ public class ListSnapshotsRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListSnapshotsRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -183,6 +191,8 @@ public class ListSnapshotsRequest  {
         this.volumeId = volumeId;
     }
 
+    
+
     public ListSnapshotsRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -202,6 +212,8 @@ public class ListSnapshotsRequest  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public ListSnapshotsRequest withId(String id) {
         this.id = id;
@@ -223,6 +235,8 @@ public class ListSnapshotsRequest  {
         this.id = id;
     }
 
+    
+
     public ListSnapshotsRequest withDedicatedStorageName(String dedicatedStorageName) {
         this.dedicatedStorageName = dedicatedStorageName;
         return this;
@@ -242,6 +256,8 @@ public class ListSnapshotsRequest  {
     public void setDedicatedStorageName(String dedicatedStorageName) {
         this.dedicatedStorageName = dedicatedStorageName;
     }
+
+    
 
     public ListSnapshotsRequest withDedicatedStorageId(String dedicatedStorageId) {
         this.dedicatedStorageId = dedicatedStorageId;
@@ -263,6 +279,8 @@ public class ListSnapshotsRequest  {
         this.dedicatedStorageId = dedicatedStorageId;
     }
 
+    
+
     public ListSnapshotsRequest withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -283,6 +301,8 @@ public class ListSnapshotsRequest  {
         this.serviceType = serviceType;
     }
 
+    
+
     public ListSnapshotsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -302,6 +322,9 @@ public class ListSnapshotsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

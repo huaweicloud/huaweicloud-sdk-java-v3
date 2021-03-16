@@ -62,6 +62,8 @@ public class QuotaDetailSnapshots  {
         this.inUse = inUse;
     }
 
+    
+
     public QuotaDetailSnapshots withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -81,6 +83,8 @@ public class QuotaDetailSnapshots  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public QuotaDetailSnapshots withReserved(Integer reserved) {
         this.reserved = reserved;
@@ -102,6 +106,8 @@ public class QuotaDetailSnapshots  {
         this.reserved = reserved;
     }
 
+    
+
     public QuotaDetailSnapshots withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
@@ -121,6 +127,9 @@ public class QuotaDetailSnapshots  {
     public void setAllocated(Integer allocated) {
         this.allocated = allocated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

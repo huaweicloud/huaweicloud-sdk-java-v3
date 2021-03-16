@@ -301,6 +301,8 @@ public class BackupRecordResponse  {
         this.backupId = backupId;
     }
 
+    
+
     public BackupRecordResponse withPeriod(String period) {
         this.period = period;
         return this;
@@ -320,6 +322,8 @@ public class BackupRecordResponse  {
     public void setPeriod(String period) {
         this.period = period;
     }
+
+    
 
     public BackupRecordResponse withBackupName(String backupName) {
         this.backupName = backupName;
@@ -341,6 +345,8 @@ public class BackupRecordResponse  {
         this.backupName = backupName;
     }
 
+    
+
     public BackupRecordResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -360,6 +366,8 @@ public class BackupRecordResponse  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BackupRecordResponse withSize(Long size) {
         this.size = size;
@@ -381,6 +389,8 @@ public class BackupRecordResponse  {
         this.size = size;
     }
 
+    
+
     public BackupRecordResponse withBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
         return this;
@@ -400,6 +410,8 @@ public class BackupRecordResponse  {
     public void setBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
     }
+
+    
 
     public BackupRecordResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -421,6 +433,8 @@ public class BackupRecordResponse  {
         this.createdAt = createdAt;
     }
 
+    
+
     public BackupRecordResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -440,6 +454,8 @@ public class BackupRecordResponse  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public BackupRecordResponse withProgress(String progress) {
         this.progress = progress;
@@ -461,6 +477,8 @@ public class BackupRecordResponse  {
         this.progress = progress;
     }
 
+    
+
     public BackupRecordResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -480,6 +498,8 @@ public class BackupRecordResponse  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public BackupRecordResponse withRemark(String remark) {
         this.remark = remark;
@@ -501,6 +521,8 @@ public class BackupRecordResponse  {
         this.remark = remark;
     }
 
+    
+
     public BackupRecordResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -521,6 +543,8 @@ public class BackupRecordResponse  {
         this.status = status;
     }
 
+    
+
     public BackupRecordResponse withIsSupportRestore(String isSupportRestore) {
         this.isSupportRestore = isSupportRestore;
         return this;
@@ -540,6 +564,9 @@ public class BackupRecordResponse  {
     public void setIsSupportRestore(String isSupportRestore) {
         this.isSupportRestore = isSupportRestore;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

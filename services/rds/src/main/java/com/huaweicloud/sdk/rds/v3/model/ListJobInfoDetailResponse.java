@@ -25,11 +25,11 @@ public class ListJobInfoDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private GetTaskDetailListRspJobs jobs = null;
+    private GetTaskDetailListRspJobs jobs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_detail")
+    @JsonProperty(value="taskDetail")
     
     private String taskDetail;
 
@@ -37,13 +37,13 @@ public class ListJobInfoDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    private GetTaskDetailListRspInstance instance = null;
+    private GetTaskDetailListRspInstance instance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    private Object entities = null;
+    private Object entities;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,6 +78,8 @@ public class ListJobInfoDetailResponse extends SdkResponse {
         this.jobs = jobs;
     }
 
+    
+
     public ListJobInfoDetailResponse withTaskDetail(String taskDetail) {
         this.taskDetail = taskDetail;
         return this;
@@ -97,6 +99,8 @@ public class ListJobInfoDetailResponse extends SdkResponse {
     public void setTaskDetail(String taskDetail) {
         this.taskDetail = taskDetail;
     }
+
+    
 
     public ListJobInfoDetailResponse withInstance(GetTaskDetailListRspInstance instance) {
         this.instance = instance;
@@ -125,6 +129,8 @@ public class ListJobInfoDetailResponse extends SdkResponse {
         this.instance = instance;
     }
 
+    
+
     public ListJobInfoDetailResponse withEntities(Object entities) {
         this.entities = entities;
         return this;
@@ -145,6 +151,8 @@ public class ListJobInfoDetailResponse extends SdkResponse {
         this.entities = entities;
     }
 
+    
+
     public ListJobInfoDetailResponse withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
@@ -164,6 +172,9 @@ public class ListJobInfoDetailResponse extends SdkResponse {
     public void setFailReason(String failReason) {
         this.failReason = failReason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

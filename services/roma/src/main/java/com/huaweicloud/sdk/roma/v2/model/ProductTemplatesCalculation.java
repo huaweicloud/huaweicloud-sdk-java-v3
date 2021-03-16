@@ -42,6 +42,9 @@ public class ProductTemplatesCalculation  {
     public void setProductTemplatesNumbers(Integer productTemplatesNumbers) {
         this.productTemplatesNumbers = productTemplatesNumbers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

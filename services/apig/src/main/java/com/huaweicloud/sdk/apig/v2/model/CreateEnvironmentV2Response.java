@@ -24,7 +24,7 @@ public class CreateEnvironmentV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class CreateEnvironmentV2Response extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public CreateEnvironmentV2Response withName(String name) {
         this.name = name;
         return this;
@@ -83,6 +85,8 @@ public class CreateEnvironmentV2Response extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateEnvironmentV2Response withRemark(String remark) {
         this.remark = remark;
@@ -104,6 +108,8 @@ public class CreateEnvironmentV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public CreateEnvironmentV2Response withId(String id) {
         this.id = id;
         return this;
@@ -123,6 +129,9 @@ public class CreateEnvironmentV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

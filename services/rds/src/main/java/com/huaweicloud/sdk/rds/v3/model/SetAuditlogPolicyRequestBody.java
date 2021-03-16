@@ -49,6 +49,8 @@ public class SetAuditlogPolicyRequestBody  {
         this.keepDays = keepDays;
     }
 
+    
+
     public SetAuditlogPolicyRequestBody withReserveAuditlogs(Boolean reserveAuditlogs) {
         this.reserveAuditlogs = reserveAuditlogs;
         return this;
@@ -68,6 +70,9 @@ public class SetAuditlogPolicyRequestBody  {
     public void setReserveAuditlogs(Boolean reserveAuditlogs) {
         this.reserveAuditlogs = reserveAuditlogs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

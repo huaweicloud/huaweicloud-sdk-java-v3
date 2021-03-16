@@ -26,7 +26,7 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cc_email_info")
     
-    private IncidentOrderCCEmailInfoV2 ccEmailInfo = null;
+    private IncidentOrderCCEmailInfoV2 ccEmailInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
         this.ccEmailInfo = ccEmailInfo;
     }
 
+    
+
     public ListCaseCcEmailsResponse withMcEmailInfos(List<String> mcEmailInfos) {
         this.mcEmailInfos = mcEmailInfos;
         return this;
@@ -68,9 +70,6 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
 
     
     public ListCaseCcEmailsResponse addMcEmailInfosItem(String mcEmailInfosItem) {
-        if (this.mcEmailInfos == null) {
-            this.mcEmailInfos = new ArrayList<>();
-        }
         this.mcEmailInfos.add(mcEmailInfosItem);
         return this;
     }
@@ -94,6 +93,9 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
     public void setMcEmailInfos(List<String> mcEmailInfos) {
         this.mcEmailInfos = mcEmailInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

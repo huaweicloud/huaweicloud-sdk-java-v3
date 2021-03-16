@@ -95,7 +95,7 @@ public class TaskByServerSource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_server")
     
-    private TargetServerById targetServer = null;
+    private TargetServerById targetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,7 +119,7 @@ public class TaskByServerSource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clone_server")
     
-    private CloneServer cloneServer = null;
+    private CloneServer cloneServer;
 
     public TaskByServerSource withId(String id) {
         this.id = id;
@@ -141,6 +141,8 @@ public class TaskByServerSource  {
         this.id = id;
     }
 
+    
+
     public TaskByServerSource withName(String name) {
         this.name = name;
         return this;
@@ -160,6 +162,8 @@ public class TaskByServerSource  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TaskByServerSource withType(String type) {
         this.type = type;
@@ -181,6 +185,8 @@ public class TaskByServerSource  {
         this.type = type;
     }
 
+    
+
     public TaskByServerSource withState(String state) {
         this.state = state;
         return this;
@@ -200,6 +206,8 @@ public class TaskByServerSource  {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public TaskByServerSource withStartDate(Long startDate) {
         this.startDate = startDate;
@@ -223,6 +231,8 @@ public class TaskByServerSource  {
         this.startDate = startDate;
     }
 
+    
+
     public TaskByServerSource withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
         return this;
@@ -244,6 +254,8 @@ public class TaskByServerSource  {
     public void setSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
     }
+
+    
 
     public TaskByServerSource withMigrateSpeed(Integer migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
@@ -267,6 +279,8 @@ public class TaskByServerSource  {
         this.migrateSpeed = migrateSpeed;
     }
 
+    
+
     public TaskByServerSource withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
@@ -286,6 +300,8 @@ public class TaskByServerSource  {
     public void setStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
     }
+
+    
 
     public TaskByServerSource withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
@@ -307,6 +323,8 @@ public class TaskByServerSource  {
         this.vmTemplateId = vmTemplateId;
     }
 
+    
+
     public TaskByServerSource withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -326,6 +344,8 @@ public class TaskByServerSource  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public TaskByServerSource withProjectName(String projectName) {
         this.projectName = projectName;
@@ -347,6 +367,8 @@ public class TaskByServerSource  {
         this.projectName = projectName;
     }
 
+    
+
     public TaskByServerSource withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -366,6 +388,8 @@ public class TaskByServerSource  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public TaskByServerSource withTargetServer(TargetServerById targetServer) {
         this.targetServer = targetServer;
@@ -394,6 +418,8 @@ public class TaskByServerSource  {
         this.targetServer = targetServer;
     }
 
+    
+
     public TaskByServerSource withLogCollectStatus(String logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
         return this;
@@ -413,6 +439,8 @@ public class TaskByServerSource  {
     public void setLogCollectStatus(String logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
     }
+
+    
 
     public TaskByServerSource withExistServer(Boolean existServer) {
         this.existServer = existServer;
@@ -434,6 +462,8 @@ public class TaskByServerSource  {
         this.existServer = existServer;
     }
 
+    
+
     public TaskByServerSource withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -453,6 +483,8 @@ public class TaskByServerSource  {
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
     }
+
+    
 
     public TaskByServerSource withCloneServer(CloneServer cloneServer) {
         this.cloneServer = cloneServer;
@@ -480,6 +512,9 @@ public class TaskByServerSource  {
     public void setCloneServer(CloneServer cloneServer) {
         this.cloneServer = cloneServer;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

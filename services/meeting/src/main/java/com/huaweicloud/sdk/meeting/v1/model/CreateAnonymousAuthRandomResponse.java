@@ -51,6 +51,8 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
         this.siteUrl = siteUrl;
     }
 
+    
+
     public CreateAnonymousAuthRandomResponse withRandom(String random) {
         this.random = random;
         return this;
@@ -70,6 +72,9 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
     public void setRandom(String random) {
         this.random = random;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

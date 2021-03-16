@@ -24,7 +24,7 @@ public class KeystoneShowRegionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
-    private Region region = null;
+    private Region region;
 
     public KeystoneShowRegionResponse withRegion(Region region) {
         this.region = region;
@@ -52,6 +52,9 @@ public class KeystoneShowRegionResponse extends SdkResponse {
     public void setRegion(Region region) {
         this.region = region;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

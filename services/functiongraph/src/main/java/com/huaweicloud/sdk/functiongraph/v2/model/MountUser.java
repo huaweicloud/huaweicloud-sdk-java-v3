@@ -49,6 +49,8 @@ public class MountUser  {
         this.userId = userId;
     }
 
+    
+
     public MountUser withUserGroupId(String userGroupId) {
         this.userGroupId = userGroupId;
         return this;
@@ -68,6 +70,9 @@ public class MountUser  {
     public void setUserGroupId(String userGroupId) {
         this.userGroupId = userGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

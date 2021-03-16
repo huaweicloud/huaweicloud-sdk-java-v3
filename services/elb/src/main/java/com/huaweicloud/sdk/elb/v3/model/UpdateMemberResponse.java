@@ -30,7 +30,7 @@ public class UpdateMemberResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member")
     
-    private Member member = null;
+    private Member member;
 
     public UpdateMemberResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class UpdateMemberResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public UpdateMemberResponse withMember(Member member) {
         this.member = member;
@@ -78,6 +80,9 @@ public class UpdateMemberResponse extends SdkResponse {
     public void setMember(Member member) {
         this.member = member;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

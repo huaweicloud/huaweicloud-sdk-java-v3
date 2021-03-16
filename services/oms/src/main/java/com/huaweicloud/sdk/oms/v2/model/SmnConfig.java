@@ -105,7 +105,7 @@ public class SmnConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="language")
     
-    private LanguageEnum language = LanguageEnum.EN_US;
+    private LanguageEnum language;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,7 +117,7 @@ public class SmnConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_conditions")
     
-    private List<String> triggerConditions = new ArrayList<>();
+    private List<String> triggerConditions = null;
     
     public SmnConfig withLanguage(LanguageEnum language) {
         this.language = language;
@@ -139,6 +139,8 @@ public class SmnConfig  {
         this.language = language;
     }
 
+    
+
     public SmnConfig withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -158,6 +160,8 @@ public class SmnConfig  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
+
+    
 
     public SmnConfig withTriggerConditions(List<String> triggerConditions) {
         this.triggerConditions = triggerConditions;
@@ -189,6 +193,9 @@ public class SmnConfig  {
     public void setTriggerConditions(List<String> triggerConditions) {
         this.triggerConditions = triggerConditions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

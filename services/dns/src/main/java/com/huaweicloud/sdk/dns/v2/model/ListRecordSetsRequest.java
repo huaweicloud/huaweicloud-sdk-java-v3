@@ -109,6 +109,8 @@ public class ListRecordSetsRequest  {
         this.zoneType = zoneType;
     }
 
+    
+
     public ListRecordSetsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -128,6 +130,8 @@ public class ListRecordSetsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListRecordSetsRequest withLimit(String limit) {
         this.limit = limit;
@@ -149,6 +153,8 @@ public class ListRecordSetsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListRecordSetsRequest withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -168,6 +174,8 @@ public class ListRecordSetsRequest  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
 
     public ListRecordSetsRequest withTags(String tags) {
         this.tags = tags;
@@ -189,6 +197,8 @@ public class ListRecordSetsRequest  {
         this.tags = tags;
     }
 
+    
+
     public ListRecordSetsRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -208,6 +218,8 @@ public class ListRecordSetsRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListRecordSetsRequest withType(String type) {
         this.type = type;
@@ -229,6 +241,8 @@ public class ListRecordSetsRequest  {
         this.type = type;
     }
 
+    
+
     public ListRecordSetsRequest withName(String name) {
         this.name = name;
         return this;
@@ -248,6 +262,8 @@ public class ListRecordSetsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListRecordSetsRequest withId(String id) {
         this.id = id;
@@ -269,6 +285,8 @@ public class ListRecordSetsRequest  {
         this.id = id;
     }
 
+    
+
     public ListRecordSetsRequest withRecords(String records) {
         this.records = records;
         return this;
@@ -288,6 +306,8 @@ public class ListRecordSetsRequest  {
     public void setRecords(String records) {
         this.records = records;
     }
+
+    
 
     public ListRecordSetsRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
@@ -309,6 +329,8 @@ public class ListRecordSetsRequest  {
         this.sortKey = sortKey;
     }
 
+    
+
     public ListRecordSetsRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -328,6 +350,9 @@ public class ListRecordSetsRequest  {
     public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -70,6 +70,8 @@ public class Cron  {
         this.startTime = startTime;
     }
 
+    
+
     public Cron withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -89,6 +91,8 @@ public class Cron  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public Cron withExpression(String expression) {
         this.expression = expression;
@@ -110,6 +114,8 @@ public class Cron  {
         this.expression = expression;
     }
 
+    
+
     public Cron withDependPrePeriod(Boolean dependPrePeriod) {
         this.dependPrePeriod = dependPrePeriod;
         return this;
@@ -130,6 +136,8 @@ public class Cron  {
         this.dependPrePeriod = dependPrePeriod;
     }
 
+    
+
     public Cron withDependJobs(List<DependJob> dependJobs) {
         this.dependJobs = dependJobs;
         return this;
@@ -137,9 +145,6 @@ public class Cron  {
 
     
     public Cron addDependJobsItem(DependJob dependJobsItem) {
-        if (this.dependJobs == null) {
-            this.dependJobs = new ArrayList<>();
-        }
         this.dependJobs.add(dependJobsItem);
         return this;
     }
@@ -163,6 +168,9 @@ public class Cron  {
     public void setDependJobs(List<DependJob> dependJobs) {
         this.dependJobs = dependJobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

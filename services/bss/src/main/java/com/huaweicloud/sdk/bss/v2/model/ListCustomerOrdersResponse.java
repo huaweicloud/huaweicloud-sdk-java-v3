@@ -54,6 +54,8 @@ public class ListCustomerOrdersResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCustomerOrdersResponse withOrderInfos(List<CustomerOrderV2> orderInfos) {
         this.orderInfos = orderInfos;
         return this;
@@ -61,9 +63,6 @@ public class ListCustomerOrdersResponse extends SdkResponse {
 
     
     public ListCustomerOrdersResponse addOrderInfosItem(CustomerOrderV2 orderInfosItem) {
-        if (this.orderInfos == null) {
-            this.orderInfos = new ArrayList<>();
-        }
         this.orderInfos.add(orderInfosItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListCustomerOrdersResponse extends SdkResponse {
     public void setOrderInfos(List<CustomerOrderV2> orderInfos) {
         this.orderInfos = orderInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

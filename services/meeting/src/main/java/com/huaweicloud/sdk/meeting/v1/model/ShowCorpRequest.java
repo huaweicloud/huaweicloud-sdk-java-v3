@@ -57,6 +57,8 @@ public class ShowCorpRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowCorpRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class ShowCorpRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ShowCorpRequest withId(String id) {
         this.id = id;
         return this;
@@ -96,6 +100,9 @@ public class ShowCorpRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

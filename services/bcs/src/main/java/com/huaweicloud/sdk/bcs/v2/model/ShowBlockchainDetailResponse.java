@@ -35,7 +35,7 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basic_info")
     
-    private BasicInfo basicInfo = null;
+    private BasicInfo basicInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,43 +59,43 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="orderer_info")
     
-    private PeerInfo ordererInfo = null;
+    private PeerInfo ordererInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="couch_db_info")
     
-    private CouchDBInfo couchDbInfo = null;
+    private CouchDBInfo couchDbInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dms_kafka_info")
     
-    private DmsKafkaInfo dmsKafkaInfo = null;
+    private DmsKafkaInfo dmsKafkaInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ief_info")
     
-    private IefInfo iefInfo = null;
+    private IefInfo iefInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sfs_info")
     
-    private SfsInfo sfsInfo = null;
+    private SfsInfo sfsInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agent_info")
     
-    private PeerInfo agentInfo = null;
+    private PeerInfo agentInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restapi_info")
     
-    private PeerInfo restapiInfo = null;
+    private PeerInfo restapiInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -107,13 +107,13 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tc3_taskserver_info")
     
-    private PeerInfo tc3TaskserverInfo = null;
+    private PeerInfo tc3TaskserverInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_bucket_info")
     
-    private OBSInfo obsBucketInfo = null;
+    private OBSInfo obsBucketInfo;
 
     public ShowBlockchainDetailResponse withBasicInfo(BasicInfo basicInfo) {
         this.basicInfo = basicInfo;
@@ -142,6 +142,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.basicInfo = basicInfo;
     }
 
+    
+
     public ShowBlockchainDetailResponse withChannels(List<ChannelInfo> channels) {
         this.channels = channels;
         return this;
@@ -149,9 +151,6 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
 
     
     public ShowBlockchainDetailResponse addChannelsItem(ChannelInfo channelsItem) {
-        if (this.channels == null) {
-            this.channels = new ArrayList<>();
-        }
         this.channels.add(channelsItem);
         return this;
     }
@@ -176,6 +175,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.channels = channels;
     }
 
+    
+
     public ShowBlockchainDetailResponse withPeerInfo(List<PeerInfo> peerInfo) {
         this.peerInfo = peerInfo;
         return this;
@@ -183,9 +184,6 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
 
     
     public ShowBlockchainDetailResponse addPeerInfoItem(PeerInfo peerInfoItem) {
-        if (this.peerInfo == null) {
-            this.peerInfo = new ArrayList<>();
-        }
         this.peerInfo.add(peerInfoItem);
         return this;
     }
@@ -210,6 +208,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.peerInfo = peerInfo;
     }
 
+    
+
     public ShowBlockchainDetailResponse withLightPeerInfo(List<PeerInfo> lightPeerInfo) {
         this.lightPeerInfo = lightPeerInfo;
         return this;
@@ -217,9 +217,6 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
 
     
     public ShowBlockchainDetailResponse addLightPeerInfoItem(PeerInfo lightPeerInfoItem) {
-        if (this.lightPeerInfo == null) {
-            this.lightPeerInfo = new ArrayList<>();
-        }
         this.lightPeerInfo.add(lightPeerInfoItem);
         return this;
     }
@@ -243,6 +240,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     public void setLightPeerInfo(List<PeerInfo> lightPeerInfo) {
         this.lightPeerInfo = lightPeerInfo;
     }
+
+    
 
     public ShowBlockchainDetailResponse withOrdererInfo(PeerInfo ordererInfo) {
         this.ordererInfo = ordererInfo;
@@ -271,6 +270,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.ordererInfo = ordererInfo;
     }
 
+    
+
     public ShowBlockchainDetailResponse withCouchDbInfo(CouchDBInfo couchDbInfo) {
         this.couchDbInfo = couchDbInfo;
         return this;
@@ -297,6 +298,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     public void setCouchDbInfo(CouchDBInfo couchDbInfo) {
         this.couchDbInfo = couchDbInfo;
     }
+
+    
 
     public ShowBlockchainDetailResponse withDmsKafkaInfo(DmsKafkaInfo dmsKafkaInfo) {
         this.dmsKafkaInfo = dmsKafkaInfo;
@@ -325,6 +328,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.dmsKafkaInfo = dmsKafkaInfo;
     }
 
+    
+
     public ShowBlockchainDetailResponse withIefInfo(IefInfo iefInfo) {
         this.iefInfo = iefInfo;
         return this;
@@ -351,6 +356,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     public void setIefInfo(IefInfo iefInfo) {
         this.iefInfo = iefInfo;
     }
+
+    
 
     public ShowBlockchainDetailResponse withSfsInfo(SfsInfo sfsInfo) {
         this.sfsInfo = sfsInfo;
@@ -379,6 +386,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.sfsInfo = sfsInfo;
     }
 
+    
+
     public ShowBlockchainDetailResponse withAgentInfo(PeerInfo agentInfo) {
         this.agentInfo = agentInfo;
         return this;
@@ -405,6 +414,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     public void setAgentInfo(PeerInfo agentInfo) {
         this.agentInfo = agentInfo;
     }
+
+    
 
     public ShowBlockchainDetailResponse withRestapiInfo(PeerInfo restapiInfo) {
         this.restapiInfo = restapiInfo;
@@ -433,6 +444,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.restapiInfo = restapiInfo;
     }
 
+    
+
     public ShowBlockchainDetailResponse withEvsPvcInfo(Map<String, Map<String, String>> evsPvcInfo) {
         this.evsPvcInfo = evsPvcInfo;
         return this;
@@ -441,9 +454,6 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     
 
     public ShowBlockchainDetailResponse putEvsPvcInfoItem(String key, Map<String, String> evsPvcInfoItem) {
-         if (this.evsPvcInfo == null) {
-            this.evsPvcInfo = new HashMap<>();
-         }
         this.evsPvcInfo.put(key, evsPvcInfoItem);
         return this;
     }
@@ -466,6 +476,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     public void setEvsPvcInfo(Map<String, Map<String, String>> evsPvcInfo) {
         this.evsPvcInfo = evsPvcInfo;
     }
+
+    
 
     public ShowBlockchainDetailResponse withTc3TaskserverInfo(PeerInfo tc3TaskserverInfo) {
         this.tc3TaskserverInfo = tc3TaskserverInfo;
@@ -494,6 +506,8 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.tc3TaskserverInfo = tc3TaskserverInfo;
     }
 
+    
+
     public ShowBlockchainDetailResponse withObsBucketInfo(OBSInfo obsBucketInfo) {
         this.obsBucketInfo = obsBucketInfo;
         return this;
@@ -520,6 +534,9 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     public void setObsBucketInfo(OBSInfo obsBucketInfo) {
         this.obsBucketInfo = obsBucketInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,13 +27,13 @@ public class ListTasksRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class ListTasksRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public ListTasksRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -82,6 +84,8 @@ public class ListTasksRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListTasksRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -105,6 +109,8 @@ public class ListTasksRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListTasksRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -126,6 +132,9 @@ public class ListTasksRequest  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

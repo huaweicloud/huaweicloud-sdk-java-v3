@@ -28,7 +28,7 @@ public class BatchDeleteTestCaseRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteTestCaseRequestBody body = null;
+    private BatchDeleteTestCaseRequestBody body;
 
     public BatchDeleteTestCaseRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class BatchDeleteTestCaseRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public BatchDeleteTestCaseRequest withBody(BatchDeleteTestCaseRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchDeleteTestCaseRequest  {
     public void setBody(BatchDeleteTestCaseRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

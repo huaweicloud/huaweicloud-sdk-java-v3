@@ -226,7 +226,7 @@ public class LifecycleHookList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
     public LifecycleHookList withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
@@ -248,6 +248,8 @@ public class LifecycleHookList  {
         this.lifecycleHookName = lifecycleHookName;
     }
 
+    
+
     public LifecycleHookList withLifecycleHookType(LifecycleHookTypeEnum lifecycleHookType) {
         this.lifecycleHookType = lifecycleHookType;
         return this;
@@ -267,6 +269,8 @@ public class LifecycleHookList  {
     public void setLifecycleHookType(LifecycleHookTypeEnum lifecycleHookType) {
         this.lifecycleHookType = lifecycleHookType;
     }
+
+    
 
     public LifecycleHookList withDefaultResult(DefaultResultEnum defaultResult) {
         this.defaultResult = defaultResult;
@@ -288,6 +292,8 @@ public class LifecycleHookList  {
         this.defaultResult = defaultResult;
     }
 
+    
+
     public LifecycleHookList withDefaultTimeout(Integer defaultTimeout) {
         this.defaultTimeout = defaultTimeout;
         return this;
@@ -307,6 +313,8 @@ public class LifecycleHookList  {
     public void setDefaultTimeout(Integer defaultTimeout) {
         this.defaultTimeout = defaultTimeout;
     }
+
+    
 
     public LifecycleHookList withNotificationTopicUrn(String notificationTopicUrn) {
         this.notificationTopicUrn = notificationTopicUrn;
@@ -328,6 +336,8 @@ public class LifecycleHookList  {
         this.notificationTopicUrn = notificationTopicUrn;
     }
 
+    
+
     public LifecycleHookList withNotificationTopicName(String notificationTopicName) {
         this.notificationTopicName = notificationTopicName;
         return this;
@@ -347,6 +357,8 @@ public class LifecycleHookList  {
     public void setNotificationTopicName(String notificationTopicName) {
         this.notificationTopicName = notificationTopicName;
     }
+
+    
 
     public LifecycleHookList withNotificationMetadata(String notificationMetadata) {
         this.notificationMetadata = notificationMetadata;
@@ -368,6 +380,8 @@ public class LifecycleHookList  {
         this.notificationMetadata = notificationMetadata;
     }
 
+    
+
     public LifecycleHookList withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -387,6 +401,9 @@ public class LifecycleHookList  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

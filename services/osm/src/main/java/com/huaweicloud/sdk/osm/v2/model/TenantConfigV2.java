@@ -44,6 +44,9 @@ public class TenantConfigV2  {
     public void setCreateCaseCcemailMaxCount(Integer createCaseCcemailMaxCount) {
         this.createCaseCcemailMaxCount = createCaseCcemailMaxCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

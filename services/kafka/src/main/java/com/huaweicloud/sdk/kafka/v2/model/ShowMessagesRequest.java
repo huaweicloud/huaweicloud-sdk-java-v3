@@ -79,6 +79,8 @@ public class ShowMessagesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowMessagesRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -98,6 +100,8 @@ public class ShowMessagesRequest  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public ShowMessagesRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -119,6 +123,8 @@ public class ShowMessagesRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ShowMessagesRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -138,6 +144,8 @@ public class ShowMessagesRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowMessagesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -159,6 +167,8 @@ public class ShowMessagesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowMessagesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -179,6 +189,8 @@ public class ShowMessagesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowMessagesRequest withPartition(String partition) {
         this.partition = partition;
         return this;
@@ -198,6 +210,9 @@ public class ShowMessagesRequest  {
     public void setPartition(String partition) {
         this.partition = partition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

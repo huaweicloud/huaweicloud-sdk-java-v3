@@ -34,7 +34,7 @@ public class CreateResourceTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateResourceTagRequestBody body = null;
+    private CreateResourceTagRequestBody body;
 
     public CreateResourceTagRequest withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -56,6 +56,8 @@ public class CreateResourceTagRequest  {
         this.resourceType = resourceType;
     }
 
+    
+
     public CreateResourceTagRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -75,6 +77,8 @@ public class CreateResourceTagRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public CreateResourceTagRequest withBody(CreateResourceTagRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateResourceTagRequest  {
     public void setBody(CreateResourceTagRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -51,6 +51,8 @@ public class ShowNewTaskStatusResponse extends SdkResponse {
         this.taskStatus = taskStatus;
     }
 
+    
+
     public ShowNewTaskStatusResponse withTaskMsg(String taskMsg) {
         this.taskMsg = taskMsg;
         return this;
@@ -70,6 +72,9 @@ public class ShowNewTaskStatusResponse extends SdkResponse {
     public void setTaskMsg(String taskMsg) {
         this.taskMsg = taskMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

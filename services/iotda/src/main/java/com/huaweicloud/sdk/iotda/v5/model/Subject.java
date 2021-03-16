@@ -49,6 +49,8 @@ public class Subject  {
         this.resource = resource;
     }
 
+    
+
     public Subject withEvent(String event) {
         this.event = event;
         return this;
@@ -68,6 +70,9 @@ public class Subject  {
     public void setEvent(String event) {
         this.event = event;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

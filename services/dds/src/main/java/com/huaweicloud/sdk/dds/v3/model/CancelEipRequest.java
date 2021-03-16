@@ -42,6 +42,9 @@ public class CancelEipRequest  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

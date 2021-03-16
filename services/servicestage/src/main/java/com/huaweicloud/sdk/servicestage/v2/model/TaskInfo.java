@@ -185,6 +185,8 @@ public class TaskInfo  {
         this.createdAt = createdAt;
     }
 
+    
+
     public TaskInfo withLastHealthCheck(String lastHealthCheck) {
         this.lastHealthCheck = lastHealthCheck;
         return this;
@@ -204,6 +206,8 @@ public class TaskInfo  {
     public void setLastHealthCheck(String lastHealthCheck) {
         this.lastHealthCheck = lastHealthCheck;
     }
+
+    
 
     public TaskInfo withMessages(String messages) {
         this.messages = messages;
@@ -225,6 +229,8 @@ public class TaskInfo  {
         this.messages = messages;
     }
 
+    
+
     public TaskInfo withOwnerId(String ownerId) {
         this.ownerId = ownerId;
         return this;
@@ -244,6 +250,8 @@ public class TaskInfo  {
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
+
+    
 
     public TaskInfo withTaskId(String taskId) {
         this.taskId = taskId;
@@ -265,6 +273,8 @@ public class TaskInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public TaskInfo withTaskIndex(Integer taskIndex) {
         this.taskIndex = taskIndex;
         return this;
@@ -284,6 +294,8 @@ public class TaskInfo  {
     public void setTaskIndex(Integer taskIndex) {
         this.taskIndex = taskIndex;
     }
+
+    
 
     public TaskInfo withTaskName(String taskName) {
         this.taskName = taskName;
@@ -305,6 +317,8 @@ public class TaskInfo  {
         this.taskName = taskName;
     }
 
+    
+
     public TaskInfo withTaskStatus(TaskStatusEnum taskStatus) {
         this.taskStatus = taskStatus;
         return this;
@@ -325,6 +339,8 @@ public class TaskInfo  {
         this.taskStatus = taskStatus;
     }
 
+    
+
     public TaskInfo withTaskType(String taskType) {
         this.taskType = taskType;
         return this;
@@ -344,6 +360,9 @@ public class TaskInfo  {
     public void setTaskType(String taskType) {
         this.taskType = taskType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

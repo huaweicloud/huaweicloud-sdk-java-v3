@@ -155,6 +155,8 @@ public class AuthResultResp  {
         this.apiName = apiName;
     }
 
+    
+
     public AuthResultResp withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -174,6 +176,8 @@ public class AuthResultResp  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public AuthResultResp withStatus(StatusEnum status) {
         this.status = status;
@@ -195,6 +199,8 @@ public class AuthResultResp  {
         this.status = status;
     }
 
+    
+
     public AuthResultResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -215,6 +221,8 @@ public class AuthResultResp  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public AuthResultResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -234,6 +242,9 @@ public class AuthResultResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

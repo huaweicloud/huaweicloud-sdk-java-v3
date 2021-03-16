@@ -42,6 +42,9 @@ public class DeleteConnctionRequest  {
     public void setConnectionName(String connectionName) {
         this.connectionName = connectionName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -85,6 +85,8 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
         this.consumerStrategy = consumerStrategy;
     }
 
+    
+
     public ShowSinkTaskDetailRespObsDestinationDescriptor withDestinationFileType(String destinationFileType) {
         this.destinationFileType = destinationFileType;
         return this;
@@ -104,6 +106,8 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
     public void setDestinationFileType(String destinationFileType) {
         this.destinationFileType = destinationFileType;
     }
+
+    
 
     public ShowSinkTaskDetailRespObsDestinationDescriptor withObsBucketName(String obsBucketName) {
         this.obsBucketName = obsBucketName;
@@ -125,6 +129,8 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
         this.obsBucketName = obsBucketName;
     }
 
+    
+
     public ShowSinkTaskDetailRespObsDestinationDescriptor withObsPath(String obsPath) {
         this.obsPath = obsPath;
         return this;
@@ -144,6 +150,8 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
     public void setObsPath(String obsPath) {
         this.obsPath = obsPath;
     }
+
+    
 
     public ShowSinkTaskDetailRespObsDestinationDescriptor withPartitionFormat(String partitionFormat) {
         this.partitionFormat = partitionFormat;
@@ -165,6 +173,8 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
         this.partitionFormat = partitionFormat;
     }
 
+    
+
     public ShowSinkTaskDetailRespObsDestinationDescriptor withRecordDelimiter(String recordDelimiter) {
         this.recordDelimiter = recordDelimiter;
         return this;
@@ -184,6 +194,8 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
     public void setRecordDelimiter(String recordDelimiter) {
         this.recordDelimiter = recordDelimiter;
     }
+
+    
 
     public ShowSinkTaskDetailRespObsDestinationDescriptor withDeliverTimeInterval(String deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
@@ -205,6 +217,8 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
         this.deliverTimeInterval = deliverTimeInterval;
     }
 
+    
+
     public ShowSinkTaskDetailRespObsDestinationDescriptor withObsPartSize(String obsPartSize) {
         this.obsPartSize = obsPartSize;
         return this;
@@ -224,6 +238,9 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
     public void setObsPartSize(String obsPartSize) {
         this.obsPartSize = obsPartSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

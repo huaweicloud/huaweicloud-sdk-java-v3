@@ -67,6 +67,8 @@ public class ListBackgroundTaskRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListBackgroundTaskRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -86,6 +88,8 @@ public class ListBackgroundTaskRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListBackgroundTaskRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -107,6 +111,8 @@ public class ListBackgroundTaskRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListBackgroundTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -127,6 +133,8 @@ public class ListBackgroundTaskRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListBackgroundTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -146,6 +154,9 @@ public class ListBackgroundTaskRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

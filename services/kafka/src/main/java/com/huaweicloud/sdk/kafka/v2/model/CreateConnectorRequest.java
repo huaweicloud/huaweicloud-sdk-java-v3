@@ -28,7 +28,7 @@ public class CreateConnectorRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateConnectorReq body = null;
+    private CreateConnectorReq body;
 
     public CreateConnectorRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateConnectorRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateConnectorRequest withBody(CreateConnectorReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateConnectorRequest  {
     public void setBody(CreateConnectorReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

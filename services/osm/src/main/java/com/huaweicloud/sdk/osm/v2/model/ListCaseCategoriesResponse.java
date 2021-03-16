@@ -56,6 +56,8 @@ public class ListCaseCategoriesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCaseCategoriesResponse withIncidentSubTypeList(List<IncidentSubTypeV2Do> incidentSubTypeList) {
         this.incidentSubTypeList = incidentSubTypeList;
         return this;
@@ -63,9 +65,6 @@ public class ListCaseCategoriesResponse extends SdkResponse {
 
     
     public ListCaseCategoriesResponse addIncidentSubTypeListItem(IncidentSubTypeV2Do incidentSubTypeListItem) {
-        if (this.incidentSubTypeList == null) {
-            this.incidentSubTypeList = new ArrayList<>();
-        }
         this.incidentSubTypeList.add(incidentSubTypeListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListCaseCategoriesResponse extends SdkResponse {
     public void setIncidentSubTypeList(List<IncidentSubTypeV2Do> incidentSubTypeList) {
         this.incidentSubTypeList = incidentSubTypeList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -107,6 +107,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.confUUID = confUUID;
     }
 
+    
+
     public ShowRecordingDetailResponse withConfID(String confID) {
         this.confID = confID;
         return this;
@@ -127,6 +129,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.confID = confID;
     }
 
+    
+
     public ShowRecordingDetailResponse withUrl(List<String> url) {
         this.url = url;
         return this;
@@ -134,9 +138,6 @@ public class ShowRecordingDetailResponse extends SdkResponse {
 
     
     public ShowRecordingDetailResponse addUrlItem(String urlItem) {
-        if (this.url == null) {
-            this.url = new ArrayList<>();
-        }
         this.url.add(urlItem);
         return this;
     }
@@ -161,6 +162,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.url = url;
     }
 
+    
+
     public ShowRecordingDetailResponse withRcdTime(Integer rcdTime) {
         this.rcdTime = rcdTime;
         return this;
@@ -180,6 +183,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     public void setRcdTime(Integer rcdTime) {
         this.rcdTime = rcdTime;
     }
+
+    
 
     public ShowRecordingDetailResponse withRcdSize(Integer rcdSize) {
         this.rcdSize = rcdSize;
@@ -201,6 +206,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.rcdSize = rcdSize;
     }
 
+    
+
     public ShowRecordingDetailResponse withSubject(String subject) {
         this.subject = subject;
         return this;
@@ -220,6 +227,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+    
 
     public ShowRecordingDetailResponse withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
@@ -241,6 +250,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.scheduserName = scheduserName;
     }
 
+    
+
     public ShowRecordingDetailResponse withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -260,6 +271,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ShowRecordingDetailResponse withIsDecodeFinish(Boolean isDecodeFinish) {
         this.isDecodeFinish = isDecodeFinish;
@@ -281,6 +294,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.isDecodeFinish = isDecodeFinish;
     }
 
+    
+
     public ShowRecordingDetailResponse withDecodeEndTime(Long decodeEndTime) {
         this.decodeEndTime = decodeEndTime;
         return this;
@@ -301,6 +316,8 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.decodeEndTime = decodeEndTime;
     }
 
+    
+
     public ShowRecordingDetailResponse withAvailable(Boolean available) {
         this.available = available;
         return this;
@@ -320,6 +337,9 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

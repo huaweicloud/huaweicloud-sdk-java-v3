@@ -21,7 +21,7 @@ public class ListResourceUsagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
     public ListResourceUsagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -44,6 +44,9 @@ public class ListResourceUsagesRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

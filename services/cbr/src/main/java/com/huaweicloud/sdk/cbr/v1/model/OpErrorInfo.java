@@ -49,6 +49,8 @@ public class OpErrorInfo  {
         this.code = code;
     }
 
+    
+
     public OpErrorInfo withMessage(String message) {
         this.message = message;
         return this;
@@ -68,6 +70,9 @@ public class OpErrorInfo  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

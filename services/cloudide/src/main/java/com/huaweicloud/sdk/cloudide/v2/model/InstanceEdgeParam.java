@@ -378,6 +378,8 @@ public class InstanceEdgeParam  {
         this.arch = arch;
     }
 
+    
+
     public InstanceEdgeParam withCpuMemory(CpuMemoryEnum cpuMemory) {
         this.cpuMemory = cpuMemory;
         return this;
@@ -397,6 +399,8 @@ public class InstanceEdgeParam  {
     public void setCpuMemory(CpuMemoryEnum cpuMemory) {
         this.cpuMemory = cpuMemory;
     }
+
+    
 
     public InstanceEdgeParam withDescription(String description) {
         this.description = description;
@@ -418,6 +422,8 @@ public class InstanceEdgeParam  {
         this.description = description;
     }
 
+    
+
     public InstanceEdgeParam withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -437,6 +443,8 @@ public class InstanceEdgeParam  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
+
+    
 
     public InstanceEdgeParam withInstanceUserDomainId(String instanceUserDomainId) {
         this.instanceUserDomainId = instanceUserDomainId;
@@ -458,6 +466,8 @@ public class InstanceEdgeParam  {
         this.instanceUserDomainId = instanceUserDomainId;
     }
 
+    
+
     public InstanceEdgeParam withInstanceUserDomainName(String instanceUserDomainName) {
         this.instanceUserDomainName = instanceUserDomainName;
         return this;
@@ -477,6 +487,8 @@ public class InstanceEdgeParam  {
     public void setInstanceUserDomainName(String instanceUserDomainName) {
         this.instanceUserDomainName = instanceUserDomainName;
     }
+
+    
 
     public InstanceEdgeParam withInstanceUserId(String instanceUserId) {
         this.instanceUserId = instanceUserId;
@@ -498,6 +510,8 @@ public class InstanceEdgeParam  {
         this.instanceUserId = instanceUserId;
     }
 
+    
+
     public InstanceEdgeParam withInstanceUserName(String instanceUserName) {
         this.instanceUserName = instanceUserName;
         return this;
@@ -517,6 +531,8 @@ public class InstanceEdgeParam  {
     public void setInstanceUserName(String instanceUserName) {
         this.instanceUserName = instanceUserName;
     }
+
+    
 
     public InstanceEdgeParam withIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
@@ -538,6 +554,8 @@ public class InstanceEdgeParam  {
         this.isTemporary = isTemporary;
     }
 
+    
+
     public InstanceEdgeParam withPlugins(List<Plugin> plugins) {
         this.plugins = plugins;
         return this;
@@ -545,9 +563,6 @@ public class InstanceEdgeParam  {
 
     
     public InstanceEdgeParam addPluginsItem(Plugin pluginsItem) {
-        if (this.plugins == null) {
-            this.plugins = new ArrayList<>();
-        }
         this.plugins.add(pluginsItem);
         return this;
     }
@@ -572,6 +587,8 @@ public class InstanceEdgeParam  {
         this.plugins = plugins;
     }
 
+    
+
     public InstanceEdgeParam withPvcQuantity(PvcQuantityEnum pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
         return this;
@@ -591,6 +608,8 @@ public class InstanceEdgeParam  {
     public void setPvcQuantity(PvcQuantityEnum pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
     }
+
+    
 
     public InstanceEdgeParam withRefreshTime(String refreshTime) {
         this.refreshTime = refreshTime;
@@ -612,6 +631,8 @@ public class InstanceEdgeParam  {
         this.refreshTime = refreshTime;
     }
 
+    
+
     public InstanceEdgeParam withStackId(String stackId) {
         this.stackId = stackId;
         return this;
@@ -631,6 +652,9 @@ public class InstanceEdgeParam  {
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

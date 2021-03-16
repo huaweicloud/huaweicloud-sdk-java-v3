@@ -24,7 +24,7 @@ public class UpdatePolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private Policy policy = null;
+    private Policy policy;
 
     public UpdatePolicyResponse withPolicy(Policy policy) {
         this.policy = policy;
@@ -52,6 +52,9 @@ public class UpdatePolicyResponse extends SdkResponse {
     public void setPolicy(Policy policy) {
         this.policy = policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

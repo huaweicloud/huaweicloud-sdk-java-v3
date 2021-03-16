@@ -64,6 +64,8 @@ public class ShowGroupsRespGroupMembers  {
         this.host = host;
     }
 
+    
+
     public ShowGroupsRespGroupMembers withAssignment(List<ShowGroupsRespGroupAssignment> assignment) {
         this.assignment = assignment;
         return this;
@@ -71,9 +73,6 @@ public class ShowGroupsRespGroupMembers  {
 
     
     public ShowGroupsRespGroupMembers addAssignmentItem(ShowGroupsRespGroupAssignment assignmentItem) {
-        if (this.assignment == null) {
-            this.assignment = new ArrayList<>();
-        }
         this.assignment.add(assignmentItem);
         return this;
     }
@@ -98,6 +97,8 @@ public class ShowGroupsRespGroupMembers  {
         this.assignment = assignment;
     }
 
+    
+
     public ShowGroupsRespGroupMembers withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
@@ -118,6 +119,8 @@ public class ShowGroupsRespGroupMembers  {
         this.memberId = memberId;
     }
 
+    
+
     public ShowGroupsRespGroupMembers withClientId(String clientId) {
         this.clientId = clientId;
         return this;
@@ -137,6 +140,9 @@ public class ShowGroupsRespGroupMembers  {
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,13 +27,13 @@ public class ListOrgInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Long limit = 30l;
+    private Long limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,6 +67,8 @@ public class ListOrgInstancesRequest  {
         this.isTemporary = isTemporary;
     }
 
+    
+
     public ListOrgInstancesRequest withLimit(Long limit) {
         this.limit = limit;
         return this;
@@ -88,6 +90,8 @@ public class ListOrgInstancesRequest  {
     public void setLimit(Long limit) {
         this.limit = limit;
     }
+
+    
 
     public ListOrgInstancesRequest withOffset(Long offset) {
         this.offset = offset;
@@ -111,6 +115,8 @@ public class ListOrgInstancesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListOrgInstancesRequest withOrgId(String orgId) {
         this.orgId = orgId;
         return this;
@@ -131,6 +137,8 @@ public class ListOrgInstancesRequest  {
         this.orgId = orgId;
     }
 
+    
+
     public ListOrgInstancesRequest withSearch(String search) {
         this.search = search;
         return this;
@@ -150,6 +158,9 @@ public class ListOrgInstancesRequest  {
     public void setSearch(String search) {
         this.search = search;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

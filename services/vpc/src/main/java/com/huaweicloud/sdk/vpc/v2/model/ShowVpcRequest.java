@@ -42,6 +42,9 @@ public class ShowVpcRequest  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

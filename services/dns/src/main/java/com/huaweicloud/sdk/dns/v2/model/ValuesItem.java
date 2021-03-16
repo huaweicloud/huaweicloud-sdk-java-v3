@@ -33,9 +33,6 @@ public class ValuesItem  {
 
     
     public ValuesItem addValuesItem(ListApiVersionsItem valuesItem) {
-        if (this.values == null) {
-            this.values = new ArrayList<>();
-        }
         this.values.add(valuesItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ValuesItem  {
     public void setValues(List<ListApiVersionsItem> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

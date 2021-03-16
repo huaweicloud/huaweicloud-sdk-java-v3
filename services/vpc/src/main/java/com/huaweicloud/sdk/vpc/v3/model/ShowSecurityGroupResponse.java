@@ -30,7 +30,7 @@ public class ShowSecurityGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group")
     
-    private SecurityGroupInfo securityGroup = null;
+    private SecurityGroupInfo securityGroup;
 
     public ShowSecurityGroupResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ShowSecurityGroupResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ShowSecurityGroupResponse withSecurityGroup(SecurityGroupInfo securityGroup) {
         this.securityGroup = securityGroup;
@@ -78,6 +80,9 @@ public class ShowSecurityGroupResponse extends SdkResponse {
     public void setSecurityGroup(SecurityGroupInfo securityGroup) {
         this.securityGroup = securityGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

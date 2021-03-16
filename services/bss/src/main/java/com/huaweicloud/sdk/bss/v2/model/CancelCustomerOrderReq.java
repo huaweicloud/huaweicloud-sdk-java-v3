@@ -42,6 +42,9 @@ public class CancelCustomerOrderReq  {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

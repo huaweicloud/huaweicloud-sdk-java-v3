@@ -25,7 +25,7 @@ public class CreateSharedBandwidthOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -143,6 +143,8 @@ public class CreateSharedBandwidthOption  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateSharedBandwidthOption withName(String name) {
         this.name = name;
         return this;
@@ -162,6 +164,8 @@ public class CreateSharedBandwidthOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateSharedBandwidthOption withSize(Integer size) {
         this.size = size;
@@ -183,6 +187,8 @@ public class CreateSharedBandwidthOption  {
         this.size = size;
     }
 
+    
+
     public CreateSharedBandwidthOption withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -202,6 +208,9 @@ public class CreateSharedBandwidthOption  {
     public void setChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

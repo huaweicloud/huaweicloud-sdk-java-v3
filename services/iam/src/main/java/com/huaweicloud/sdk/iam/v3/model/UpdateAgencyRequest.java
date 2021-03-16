@@ -28,7 +28,7 @@ public class UpdateAgencyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAgencyRequestBody body = null;
+    private UpdateAgencyRequestBody body;
 
     public UpdateAgencyRequest withAgencyId(String agencyId) {
         this.agencyId = agencyId;
@@ -49,6 +49,8 @@ public class UpdateAgencyRequest  {
     public void setAgencyId(String agencyId) {
         this.agencyId = agencyId;
     }
+
+    
 
     public UpdateAgencyRequest withBody(UpdateAgencyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateAgencyRequest  {
     public void setBody(UpdateAgencyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

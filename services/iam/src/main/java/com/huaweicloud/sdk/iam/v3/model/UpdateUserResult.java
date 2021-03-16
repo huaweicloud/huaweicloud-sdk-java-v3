@@ -88,7 +88,7 @@ public class UpdateUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,6 +116,8 @@ public class UpdateUserResult  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public UpdateUserResult withXuserId(String xuserId) {
         this.xuserId = xuserId;
         return this;
@@ -135,6 +137,8 @@ public class UpdateUserResult  {
     public void setXuserId(String xuserId) {
         this.xuserId = xuserId;
     }
+
+    
 
     public UpdateUserResult withXuserType(String xuserType) {
         this.xuserType = xuserType;
@@ -156,6 +160,8 @@ public class UpdateUserResult  {
         this.xuserType = xuserType;
     }
 
+    
+
     public UpdateUserResult withDescription(String description) {
         this.description = description;
         return this;
@@ -175,6 +181,8 @@ public class UpdateUserResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateUserResult withName(String name) {
         this.name = name;
@@ -196,6 +204,8 @@ public class UpdateUserResult  {
         this.name = name;
     }
 
+    
+
     public UpdateUserResult withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -215,6 +225,8 @@ public class UpdateUserResult  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public UpdateUserResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -236,6 +248,8 @@ public class UpdateUserResult  {
         this.domainId = domainId;
     }
 
+    
+
     public UpdateUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -255,6 +269,8 @@ public class UpdateUserResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public UpdateUserResult withAreacode(String areacode) {
         this.areacode = areacode;
@@ -276,6 +292,8 @@ public class UpdateUserResult  {
         this.areacode = areacode;
     }
 
+    
+
     public UpdateUserResult withEmail(String email) {
         this.email = email;
         return this;
@@ -296,6 +314,8 @@ public class UpdateUserResult  {
         this.email = email;
     }
 
+    
+
     public UpdateUserResult withId(String id) {
         this.id = id;
         return this;
@@ -315,6 +335,8 @@ public class UpdateUserResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateUserResult withLinks(LinksSelf links) {
         this.links = links;
@@ -343,6 +365,8 @@ public class UpdateUserResult  {
         this.links = links;
     }
 
+    
+
     public UpdateUserResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -362,6 +386,9 @@ public class UpdateUserResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

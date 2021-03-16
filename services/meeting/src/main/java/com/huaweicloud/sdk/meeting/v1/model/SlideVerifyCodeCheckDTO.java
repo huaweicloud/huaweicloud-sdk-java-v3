@@ -73,6 +73,8 @@ public class SlideVerifyCodeCheckDTO  {
         this.user = user;
     }
 
+    
+
     public SlideVerifyCodeCheckDTO withClientType(Integer clientType) {
         this.clientType = clientType;
         return this;
@@ -92,6 +94,8 @@ public class SlideVerifyCodeCheckDTO  {
     public void setClientType(Integer clientType) {
         this.clientType = clientType;
     }
+
+    
 
     public SlideVerifyCodeCheckDTO withCheckType(Integer checkType) {
         this.checkType = checkType;
@@ -113,6 +117,8 @@ public class SlideVerifyCodeCheckDTO  {
         this.checkType = checkType;
     }
 
+    
+
     public SlideVerifyCodeCheckDTO withToken(String token) {
         this.token = token;
         return this;
@@ -132,6 +138,8 @@ public class SlideVerifyCodeCheckDTO  {
     public void setToken(String token) {
         this.token = token;
     }
+
+    
 
     public SlideVerifyCodeCheckDTO withPointX(Integer pointX) {
         this.pointX = pointX;
@@ -153,6 +161,8 @@ public class SlideVerifyCodeCheckDTO  {
         this.pointX = pointX;
     }
 
+    
+
     public SlideVerifyCodeCheckDTO withSlideTime(Integer slideTime) {
         this.slideTime = slideTime;
         return this;
@@ -172,6 +182,9 @@ public class SlideVerifyCodeCheckDTO  {
     public void setSlideTime(Integer slideTime) {
         this.slideTime = slideTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

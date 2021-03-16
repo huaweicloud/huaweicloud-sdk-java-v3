@@ -22,7 +22,7 @@ public class OsReinstallBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-reinstall")
     
-    private OsReinstall osReinstall = null;
+    private OsReinstall osReinstall;
 
     public OsReinstallBody withOsReinstall(OsReinstall osReinstall) {
         this.osReinstall = osReinstall;
@@ -50,6 +50,9 @@ public class OsReinstallBody  {
     public void setOsReinstall(OsReinstall osReinstall) {
         this.osReinstall = osReinstall;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

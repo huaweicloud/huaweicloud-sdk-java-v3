@@ -34,9 +34,6 @@ public class ListTreesResponse extends SdkResponse {
 
     
     public ListTreesResponse addPathsItem(String pathsItem) {
-        if (this.paths == null) {
-            this.paths = new ArrayList<>();
-        }
         this.paths.add(pathsItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class ListTreesResponse extends SdkResponse {
     public void setPaths(List<String> paths) {
         this.paths = paths;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

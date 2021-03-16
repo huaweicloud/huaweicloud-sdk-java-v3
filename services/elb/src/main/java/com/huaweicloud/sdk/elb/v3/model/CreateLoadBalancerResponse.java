@@ -24,7 +24,7 @@ public class CreateLoadBalancerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancer")
     
-    private LoadBalancer loadbalancer = null;
+    private LoadBalancer loadbalancer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class CreateLoadBalancerResponse extends SdkResponse {
         this.loadbalancer = loadbalancer;
     }
 
+    
+
     public CreateLoadBalancerResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -78,6 +80,9 @@ public class CreateLoadBalancerResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

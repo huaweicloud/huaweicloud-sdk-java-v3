@@ -33,13 +33,13 @@ public class ListIssueRecordsV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListIssueRecordsV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -61,6 +61,8 @@ public class ListIssueRecordsV4Request  {
         this.projectId = projectId;
     }
 
+    
+
     public ListIssueRecordsV4Request withIssueId(Integer issueId) {
         this.issueId = issueId;
         return this;
@@ -80,6 +82,8 @@ public class ListIssueRecordsV4Request  {
     public void setIssueId(Integer issueId) {
         this.issueId = issueId;
     }
+
+    
 
     public ListIssueRecordsV4Request withOffset(Integer offset) {
         this.offset = offset;
@@ -102,6 +106,8 @@ public class ListIssueRecordsV4Request  {
         this.offset = offset;
     }
 
+    
+
     public ListIssueRecordsV4Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -123,6 +129,9 @@ public class ListIssueRecordsV4Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

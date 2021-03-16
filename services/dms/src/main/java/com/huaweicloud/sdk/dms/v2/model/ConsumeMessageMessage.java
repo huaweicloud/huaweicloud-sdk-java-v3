@@ -23,13 +23,13 @@ public class ConsumeMessageMessage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private Object body = null;
+    private Object body;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    private Object attributes = null;
+    private Object attributes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class ConsumeMessageMessage  {
         this.body = body;
     }
 
+    
+
     public ConsumeMessageMessage withAttributes(Object attributes) {
         this.attributes = attributes;
         return this;
@@ -77,6 +79,8 @@ public class ConsumeMessageMessage  {
         this.attributes = attributes;
     }
 
+    
+
     public ConsumeMessageMessage withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -84,9 +88,6 @@ public class ConsumeMessageMessage  {
 
     
     public ConsumeMessageMessage addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -110,6 +111,9 @@ public class ConsumeMessageMessage  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class UpdateMemberRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member")
     
-    private UpdateMemberOption member = null;
+    private UpdateMemberOption member;
 
     public UpdateMemberRequestBody withMember(UpdateMemberOption member) {
         this.member = member;
@@ -50,6 +50,9 @@ public class UpdateMemberRequestBody  {
     public void setMember(UpdateMemberOption member) {
         this.member = member;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

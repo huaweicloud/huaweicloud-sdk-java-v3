@@ -248,7 +248,7 @@ public class AuthorizerResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -282,6 +282,8 @@ public class AuthorizerResp  {
         this.name = name;
     }
 
+    
+
     public AuthorizerResp withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -301,6 +303,8 @@ public class AuthorizerResp  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public AuthorizerResp withAuthorizerType(AuthorizerTypeEnum authorizerType) {
         this.authorizerType = authorizerType;
@@ -322,6 +326,8 @@ public class AuthorizerResp  {
         this.authorizerType = authorizerType;
     }
 
+    
+
     public AuthorizerResp withAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
         return this;
@@ -342,6 +348,8 @@ public class AuthorizerResp  {
         this.authorizerUri = authorizerUri;
     }
 
+    
+
     public AuthorizerResp withIdentities(List<Identity> identities) {
         this.identities = identities;
         return this;
@@ -349,9 +357,6 @@ public class AuthorizerResp  {
 
     
     public AuthorizerResp addIdentitiesItem(Identity identitiesItem) {
-        if (this.identities == null) {
-            this.identities = new ArrayList<>();
-        }
         this.identities.add(identitiesItem);
         return this;
     }
@@ -376,6 +381,8 @@ public class AuthorizerResp  {
         this.identities = identities;
     }
 
+    
+
     public AuthorizerResp withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -395,6 +402,8 @@ public class AuthorizerResp  {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public AuthorizerResp withUserData(String userData) {
         this.userData = userData;
@@ -416,6 +425,8 @@ public class AuthorizerResp  {
         this.userData = userData;
     }
 
+    
+
     public AuthorizerResp withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -435,6 +446,8 @@ public class AuthorizerResp  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public AuthorizerResp withNeedBody(Boolean needBody) {
         this.needBody = needBody;
@@ -456,6 +469,8 @@ public class AuthorizerResp  {
         this.needBody = needBody;
     }
 
+    
+
     public AuthorizerResp withId(String id) {
         this.id = id;
         return this;
@@ -475,6 +490,8 @@ public class AuthorizerResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AuthorizerResp withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
@@ -496,6 +513,8 @@ public class AuthorizerResp  {
         this.createTime = createTime;
     }
 
+    
+
     public AuthorizerResp withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -516,6 +535,8 @@ public class AuthorizerResp  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public AuthorizerResp withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -535,6 +556,9 @@ public class AuthorizerResp  {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

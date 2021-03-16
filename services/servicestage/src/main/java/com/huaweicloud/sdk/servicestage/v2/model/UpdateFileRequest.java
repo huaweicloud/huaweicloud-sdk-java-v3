@@ -52,7 +52,7 @@ public class UpdateFileRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FileUpdate body = null;
+    private FileUpdate body;
 
     public UpdateFileRequest withXRepoAuth(String xRepoAuth) {
         this.xRepoAuth = xRepoAuth;
@@ -76,6 +76,8 @@ public class UpdateFileRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public UpdateFileRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -95,6 +97,8 @@ public class UpdateFileRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public UpdateFileRequest withProject(String project) {
         this.project = project;
@@ -116,6 +120,8 @@ public class UpdateFileRequest  {
         this.project = project;
     }
 
+    
+
     public UpdateFileRequest withPath(String path) {
         this.path = path;
         return this;
@@ -136,6 +142,8 @@ public class UpdateFileRequest  {
         this.path = path;
     }
 
+    
+
     public UpdateFileRequest withRef(String ref) {
         this.ref = ref;
         return this;
@@ -155,6 +163,8 @@ public class UpdateFileRequest  {
     public void setRef(String ref) {
         this.ref = ref;
     }
+
+    
 
     public UpdateFileRequest withBody(FileUpdate body) {
         this.body = body;
@@ -182,6 +192,9 @@ public class UpdateFileRequest  {
     public void setBody(FileUpdate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

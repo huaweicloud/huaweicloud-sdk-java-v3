@@ -93,9 +93,6 @@ public class QueryCorpVcResResultDTO  {
 
     
     public QueryCorpVcResResultDTO addVmrPkgListItem(QueryVmrPkgResResultDTO vmrPkgListItem) {
-        if (this.vmrPkgList == null) {
-            this.vmrPkgList = new ArrayList<>();
-        }
         this.vmrPkgList.add(vmrPkgListItem);
         return this;
     }
@@ -120,6 +117,8 @@ public class QueryCorpVcResResultDTO  {
         this.vmrPkgList = vmrPkgList;
     }
 
+    
+
     public QueryCorpVcResResultDTO withTe1080pHardCount(Integer te1080pHardCount) {
         this.te1080pHardCount = te1080pHardCount;
         return this;
@@ -139,6 +138,8 @@ public class QueryCorpVcResResultDTO  {
     public void setTe1080pHardCount(Integer te1080pHardCount) {
         this.te1080pHardCount = te1080pHardCount;
     }
+
+    
 
     public QueryCorpVcResResultDTO withTe720pHardCount(Integer te720pHardCount) {
         this.te720pHardCount = te720pHardCount;
@@ -160,6 +161,8 @@ public class QueryCorpVcResResultDTO  {
         this.te720pHardCount = te720pHardCount;
     }
 
+    
+
     public QueryCorpVcResResultDTO withTeSoftCount(Integer teSoftCount) {
         this.teSoftCount = teSoftCount;
         return this;
@@ -179,6 +182,8 @@ public class QueryCorpVcResResultDTO  {
     public void setTeSoftCount(Integer teSoftCount) {
         this.teSoftCount = teSoftCount;
     }
+
+    
 
     public QueryCorpVcResResultDTO withRoomCount(Integer roomCount) {
         this.roomCount = roomCount;
@@ -200,6 +205,8 @@ public class QueryCorpVcResResultDTO  {
         this.roomCount = roomCount;
     }
 
+    
+
     public QueryCorpVcResResultDTO withRecordCapability(Integer recordCapability) {
         this.recordCapability = recordCapability;
         return this;
@@ -219,6 +226,8 @@ public class QueryCorpVcResResultDTO  {
     public void setRecordCapability(Integer recordCapability) {
         this.recordCapability = recordCapability;
     }
+
+    
 
     public QueryCorpVcResResultDTO withConfCallCount(Integer confCallCount) {
         this.confCallCount = confCallCount;
@@ -240,6 +249,8 @@ public class QueryCorpVcResResultDTO  {
         this.confCallCount = confCallCount;
     }
 
+    
+
     public QueryCorpVcResResultDTO withLiveCount(Integer liveCount) {
         this.liveCount = liveCount;
         return this;
@@ -259,6 +270,8 @@ public class QueryCorpVcResResultDTO  {
     public void setLiveCount(Integer liveCount) {
         this.liveCount = liveCount;
     }
+
+    
 
     public QueryCorpVcResResultDTO withThirdPartyHardCount(Integer thirdPartyHardCount) {
         this.thirdPartyHardCount = thirdPartyHardCount;
@@ -280,6 +293,8 @@ public class QueryCorpVcResResultDTO  {
         this.thirdPartyHardCount = thirdPartyHardCount;
     }
 
+    
+
     public QueryCorpVcResResultDTO withHwVisionCount(Integer hwVisionCount) {
         this.hwVisionCount = hwVisionCount;
         return this;
@@ -300,6 +315,8 @@ public class QueryCorpVcResResultDTO  {
         this.hwVisionCount = hwVisionCount;
     }
 
+    
+
     public QueryCorpVcResResultDTO withIdeaHubCount(Integer ideaHubCount) {
         this.ideaHubCount = ideaHubCount;
         return this;
@@ -319,6 +336,9 @@ public class QueryCorpVcResResultDTO  {
     public void setIdeaHubCount(Integer ideaHubCount) {
         this.ideaHubCount = ideaHubCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

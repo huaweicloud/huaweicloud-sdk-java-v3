@@ -63,6 +63,8 @@ public class VerifyHostV2Req  {
         this.port = port;
     }
 
+    
+
     public VerifyHostV2Req withAccount(String account) {
         this.account = account;
         return this;
@@ -82,6 +84,8 @@ public class VerifyHostV2Req  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public VerifyHostV2Req withPassword(String password) {
         this.password = password;
@@ -103,6 +107,8 @@ public class VerifyHostV2Req  {
         this.password = password;
     }
 
+    
+
     public VerifyHostV2Req withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -122,6 +128,9 @@ public class VerifyHostV2Req  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

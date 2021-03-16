@@ -56,13 +56,13 @@ public class CreateBatchTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="document")
     
-    private Object document = null;
+    private Object document;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_policy")
     
-    private TaskPolicy taskPolicy = null;
+    private TaskPolicy taskPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,6 +90,8 @@ public class CreateBatchTask  {
         this.appId = appId;
     }
 
+    
+
     public CreateBatchTask withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -109,6 +111,8 @@ public class CreateBatchTask  {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public CreateBatchTask withTaskType(String taskType) {
         this.taskType = taskType;
@@ -130,6 +134,8 @@ public class CreateBatchTask  {
         this.taskType = taskType;
     }
 
+    
+
     public CreateBatchTask withTargets(List<String> targets) {
         this.targets = targets;
         return this;
@@ -137,9 +143,6 @@ public class CreateBatchTask  {
 
     
     public CreateBatchTask addTargetsItem(String targetsItem) {
-        if (this.targets == null) {
-            this.targets = new ArrayList<>();
-        }
         this.targets.add(targetsItem);
         return this;
     }
@@ -164,6 +167,8 @@ public class CreateBatchTask  {
         this.targets = targets;
     }
 
+    
+
     public CreateBatchTask withTargetsFilter(Map<String, Object> targetsFilter) {
         this.targetsFilter = targetsFilter;
         return this;
@@ -172,9 +177,6 @@ public class CreateBatchTask  {
     
 
     public CreateBatchTask putTargetsFilterItem(String key, Object targetsFilterItem) {
-         if (this.targetsFilter == null) {
-            this.targetsFilter = new HashMap<>();
-         }
         this.targetsFilter.put(key, targetsFilterItem);
         return this;
     }
@@ -198,6 +200,8 @@ public class CreateBatchTask  {
         this.targetsFilter = targetsFilter;
     }
 
+    
+
     public CreateBatchTask withDocument(Object document) {
         this.document = document;
         return this;
@@ -217,6 +221,8 @@ public class CreateBatchTask  {
     public void setDocument(Object document) {
         this.document = document;
     }
+
+    
 
     public CreateBatchTask withTaskPolicy(TaskPolicy taskPolicy) {
         this.taskPolicy = taskPolicy;
@@ -245,6 +251,8 @@ public class CreateBatchTask  {
         this.taskPolicy = taskPolicy;
     }
 
+    
+
     public CreateBatchTask withDocumentSource(String documentSource) {
         this.documentSource = documentSource;
         return this;
@@ -264,6 +272,9 @@ public class CreateBatchTask  {
     public void setDocumentSource(String documentSource) {
         this.documentSource = documentSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

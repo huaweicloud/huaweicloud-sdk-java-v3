@@ -90,6 +90,8 @@ public class ShowJobInstanceResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowJobInstanceResponse withPlanTime(Integer planTime) {
         this.planTime = planTime;
         return this;
@@ -109,6 +111,8 @@ public class ShowJobInstanceResponse extends SdkResponse {
     public void setPlanTime(Integer planTime) {
         this.planTime = planTime;
     }
+
+    
 
     public ShowJobInstanceResponse withStartTime(Integer startTime) {
         this.startTime = startTime;
@@ -130,6 +134,8 @@ public class ShowJobInstanceResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
+    
+
     public ShowJobInstanceResponse withEndTime(Integer endTime) {
         this.endTime = endTime;
         return this;
@@ -149,6 +155,8 @@ public class ShowJobInstanceResponse extends SdkResponse {
     public void setEndTime(Integer endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowJobInstanceResponse withExecuteTime(Integer executeTime) {
         this.executeTime = executeTime;
@@ -170,6 +178,8 @@ public class ShowJobInstanceResponse extends SdkResponse {
         this.executeTime = executeTime;
     }
 
+    
+
     public ShowJobInstanceResponse withInstancesId(String instancesId) {
         this.instancesId = instancesId;
         return this;
@@ -189,6 +199,8 @@ public class ShowJobInstanceResponse extends SdkResponse {
     public void setInstancesId(String instancesId) {
         this.instancesId = instancesId;
     }
+
+    
 
     public ShowJobInstanceResponse withTotal(Integer total) {
         this.total = total;
@@ -210,6 +222,8 @@ public class ShowJobInstanceResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowJobInstanceResponse withNodes(List<NodeInstance> nodes) {
         this.nodes = nodes;
         return this;
@@ -217,9 +231,6 @@ public class ShowJobInstanceResponse extends SdkResponse {
 
     
     public ShowJobInstanceResponse addNodesItem(NodeInstance nodesItem) {
-        if (this.nodes == null) {
-            this.nodes = new ArrayList<>();
-        }
         this.nodes.add(nodesItem);
         return this;
     }
@@ -243,6 +254,9 @@ public class ShowJobInstanceResponse extends SdkResponse {
     public void setNodes(List<NodeInstance> nodes) {
         this.nodes = nodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

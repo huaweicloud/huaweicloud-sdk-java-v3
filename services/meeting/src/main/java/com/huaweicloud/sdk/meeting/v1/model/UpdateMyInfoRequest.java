@@ -34,7 +34,7 @@ public class UpdateMyInfoRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModMemberDTO body = null;
+    private ModMemberDTO body;
 
     public UpdateMyInfoRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -58,6 +58,8 @@ public class UpdateMyInfoRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateMyInfoRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class UpdateMyInfoRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public UpdateMyInfoRequest withBody(ModMemberDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class UpdateMyInfoRequest  {
     public void setBody(ModMemberDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -75,6 +75,8 @@ public class QueryRoleDetailResp  {
         this.role = role;
     }
 
+    
+
     public QueryRoleDetailResp withComment(String comment) {
         this.comment = comment;
         return this;
@@ -94,6 +96,8 @@ public class QueryRoleDetailResp  {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    
 
     public QueryRoleDetailResp withIsTransfer(Boolean isTransfer) {
         this.isTransfer = isTransfer;
@@ -115,6 +119,8 @@ public class QueryRoleDetailResp  {
         this.isTransfer = isTransfer;
     }
 
+    
+
     public QueryRoleDetailResp withPrivileges(String privileges) {
         this.privileges = privileges;
         return this;
@@ -135,6 +141,8 @@ public class QueryRoleDetailResp  {
         this.privileges = privileges;
     }
 
+    
+
     public QueryRoleDetailResp withInheritsRoles(List<String> inheritsRoles) {
         this.inheritsRoles = inheritsRoles;
         return this;
@@ -142,9 +150,6 @@ public class QueryRoleDetailResp  {
 
     
     public QueryRoleDetailResp addInheritsRolesItem(String inheritsRolesItem) {
-        if (this.inheritsRoles == null) {
-            this.inheritsRoles = new ArrayList<>();
-        }
         this.inheritsRoles.add(inheritsRolesItem);
         return this;
     }
@@ -169,6 +174,8 @@ public class QueryRoleDetailResp  {
         this.inheritsRoles = inheritsRoles;
     }
 
+    
+
     public QueryRoleDetailResp withSelected(Boolean selected) {
         this.selected = selected;
         return this;
@@ -188,6 +195,9 @@ public class QueryRoleDetailResp  {
     public void setSelected(Boolean selected) {
         this.selected = selected;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

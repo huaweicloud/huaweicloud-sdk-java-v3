@@ -22,7 +22,7 @@ public class BatchCreateSharedBandwidthsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreateBandwidthRequestBody body = null;
+    private BatchCreateBandwidthRequestBody body;
 
     public BatchCreateSharedBandwidthsRequest withBody(BatchCreateBandwidthRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchCreateSharedBandwidthsRequest  {
     public void setBody(BatchCreateBandwidthRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

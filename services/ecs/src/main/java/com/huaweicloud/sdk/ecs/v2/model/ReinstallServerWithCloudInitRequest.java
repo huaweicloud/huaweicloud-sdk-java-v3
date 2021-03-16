@@ -28,7 +28,7 @@ public class ReinstallServerWithCloudInitRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ReinstallServerWithCloudInitRequestBody body = null;
+    private ReinstallServerWithCloudInitRequestBody body;
 
     public ReinstallServerWithCloudInitRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class ReinstallServerWithCloudInitRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public ReinstallServerWithCloudInitRequest withBody(ReinstallServerWithCloudInitRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ReinstallServerWithCloudInitRequest  {
     public void setBody(ReinstallServerWithCloudInitRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

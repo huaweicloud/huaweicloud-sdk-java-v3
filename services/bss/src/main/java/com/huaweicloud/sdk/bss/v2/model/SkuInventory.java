@@ -55,6 +55,8 @@ public class SkuInventory  {
         this.productId = productId;
     }
 
+    
+
     public SkuInventory withSkuCode(String skuCode) {
         this.skuCode = skuCode;
         return this;
@@ -74,6 +76,8 @@ public class SkuInventory  {
     public void setSkuCode(String skuCode) {
         this.skuCode = skuCode;
     }
+
+    
 
     public SkuInventory withSaleableQuantity(Integer saleableQuantity) {
         this.saleableQuantity = saleableQuantity;
@@ -96,6 +100,9 @@ public class SkuInventory  {
     public void setSaleableQuantity(Integer saleableQuantity) {
         this.saleableQuantity = saleableQuantity;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

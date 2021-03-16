@@ -178,6 +178,8 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowJobStatusResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -197,6 +199,8 @@ public class ShowJobStatusResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ShowJobStatusResponse withStarttime(String starttime) {
         this.starttime = starttime;
@@ -218,6 +222,8 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.starttime = starttime;
     }
 
+    
+
     public ShowJobStatusResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -237,6 +243,8 @@ public class ShowJobStatusResponse extends SdkResponse {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowJobStatusResponse withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
@@ -258,6 +266,8 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.lastUpdateTime = lastUpdateTime;
     }
 
+    
+
     public ShowJobStatusResponse withNodes(List<RealTimeNodeStatus> nodes) {
         this.nodes = nodes;
         return this;
@@ -265,9 +275,6 @@ public class ShowJobStatusResponse extends SdkResponse {
 
     
     public ShowJobStatusResponse addNodesItem(RealTimeNodeStatus nodesItem) {
-        if (this.nodes == null) {
-            this.nodes = new ArrayList<>();
-        }
         this.nodes.add(nodesItem);
         return this;
     }
@@ -291,6 +298,9 @@ public class ShowJobStatusResponse extends SdkResponse {
     public void setNodes(List<RealTimeNodeStatus> nodes) {
         this.nodes = nodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

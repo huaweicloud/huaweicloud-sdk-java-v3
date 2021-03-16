@@ -63,6 +63,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.groupId = groupId;
     }
 
+    
+
     public UpdateDeviceGroupResponse withName(String name) {
         this.name = name;
         return this;
@@ -82,6 +84,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateDeviceGroupResponse withDescription(String description) {
         this.description = description;
@@ -103,6 +107,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateDeviceGroupResponse withSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
         return this;
@@ -122,6 +128,9 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     public void setSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -36,9 +36,6 @@ public class ListVolumeTagsResponse extends SdkResponse {
     
 
     public ListVolumeTagsResponse putTagsItem(String key, List<String> tagsItem) {
-         if (this.tags == null) {
-            this.tags = new HashMap<>();
-         }
         this.tags.put(key, tagsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListVolumeTagsResponse extends SdkResponse {
     public void setTags(Map<String, List<String>> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

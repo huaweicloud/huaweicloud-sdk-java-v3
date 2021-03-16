@@ -32,9 +32,6 @@ public class BatchDeleteInstanceTopicReq  {
 
     
     public BatchDeleteInstanceTopicReq addTopicsItem(String topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
         this.topics.add(topicsItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class BatchDeleteInstanceTopicReq  {
     public void setTopics(List<String> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

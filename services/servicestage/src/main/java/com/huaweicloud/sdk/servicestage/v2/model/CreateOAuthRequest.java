@@ -128,7 +128,7 @@ public class CreateOAuthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private OAuth body = null;
+    private OAuth body;
 
     public CreateOAuthRequest withRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
@@ -150,6 +150,8 @@ public class CreateOAuthRequest  {
         this.repoType = repoType;
     }
 
+    
+
     public CreateOAuthRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -169,6 +171,8 @@ public class CreateOAuthRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
 
     public CreateOAuthRequest withBody(OAuth body) {
         this.body = body;
@@ -196,6 +200,9 @@ public class CreateOAuthRequest  {
     public void setBody(OAuth body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

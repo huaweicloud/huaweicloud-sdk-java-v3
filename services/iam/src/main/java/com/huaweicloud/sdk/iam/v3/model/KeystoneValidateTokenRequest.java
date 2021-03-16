@@ -52,6 +52,8 @@ public class KeystoneValidateTokenRequest  {
         this.xSubjectToken = xSubjectToken;
     }
 
+    
+
     public KeystoneValidateTokenRequest withNocatalog(String nocatalog) {
         this.nocatalog = nocatalog;
         return this;
@@ -71,6 +73,9 @@ public class KeystoneValidateTokenRequest  {
     public void setNocatalog(String nocatalog) {
         this.nocatalog = nocatalog;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

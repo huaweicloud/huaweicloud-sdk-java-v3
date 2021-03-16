@@ -241,6 +241,8 @@ public class DevicesInGroup  {
         this.deviceId = deviceId;
     }
 
+    
+
     public DevicesInGroup withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -260,6 +262,8 @@ public class DevicesInGroup  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public DevicesInGroup withProductId(Integer productId) {
         this.productId = productId;
@@ -281,6 +285,8 @@ public class DevicesInGroup  {
         this.productId = productId;
     }
 
+    
+
     public DevicesInGroup withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -300,6 +306,8 @@ public class DevicesInGroup  {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    
 
     public DevicesInGroup withStatus(StatusEnum status) {
         this.status = status;
@@ -321,6 +329,8 @@ public class DevicesInGroup  {
         this.status = status;
     }
 
+    
+
     public DevicesInGroup withOnlineStatus(OnlineStatusEnum onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
@@ -340,6 +350,9 @@ public class DevicesInGroup  {
     public void setOnlineStatus(OnlineStatusEnum onlineStatus) {
         this.onlineStatus = onlineStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

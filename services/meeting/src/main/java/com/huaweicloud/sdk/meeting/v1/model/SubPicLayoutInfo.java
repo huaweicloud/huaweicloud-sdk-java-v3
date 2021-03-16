@@ -68,6 +68,8 @@ public class SubPicLayoutInfo  {
         this.id = id;
     }
 
+    
+
     public SubPicLayoutInfo withLeft(Integer left) {
         this.left = left;
         return this;
@@ -88,6 +90,8 @@ public class SubPicLayoutInfo  {
     public void setLeft(Integer left) {
         this.left = left;
     }
+
+    
 
     public SubPicLayoutInfo withTop(Integer top) {
         this.top = top;
@@ -110,6 +114,8 @@ public class SubPicLayoutInfo  {
         this.top = top;
     }
 
+    
+
     public SubPicLayoutInfo withXSize(Integer xSize) {
         this.xSize = xSize;
         return this;
@@ -131,6 +137,8 @@ public class SubPicLayoutInfo  {
         this.xSize = xSize;
     }
 
+    
+
     public SubPicLayoutInfo withYSize(Integer ySize) {
         this.ySize = ySize;
         return this;
@@ -151,6 +159,9 @@ public class SubPicLayoutInfo  {
     public void setYSize(Integer ySize) {
         this.ySize = ySize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -85,6 +85,8 @@ public class ShowMqsInstanceMessagesRespMessages  {
         this.topic = topic;
     }
 
+    
+
     public ShowMqsInstanceMessagesRespMessages withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -104,6 +106,8 @@ public class ShowMqsInstanceMessagesRespMessages  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
 
     public ShowMqsInstanceMessagesRespMessages withKey(String key) {
         this.key = key;
@@ -125,6 +129,8 @@ public class ShowMqsInstanceMessagesRespMessages  {
         this.key = key;
     }
 
+    
+
     public ShowMqsInstanceMessagesRespMessages withValue(String value) {
         this.value = value;
         return this;
@@ -144,6 +150,8 @@ public class ShowMqsInstanceMessagesRespMessages  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
 
     public ShowMqsInstanceMessagesRespMessages withHugeMessage(Boolean hugeMessage) {
         this.hugeMessage = hugeMessage;
@@ -165,6 +173,8 @@ public class ShowMqsInstanceMessagesRespMessages  {
         this.hugeMessage = hugeMessage;
     }
 
+    
+
     public ShowMqsInstanceMessagesRespMessages withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
@@ -184,6 +194,8 @@ public class ShowMqsInstanceMessagesRespMessages  {
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
+
+    
 
     public ShowMqsInstanceMessagesRespMessages withAppId(String appId) {
         this.appId = appId;
@@ -205,6 +217,8 @@ public class ShowMqsInstanceMessagesRespMessages  {
         this.appId = appId;
     }
 
+    
+
     public ShowMqsInstanceMessagesRespMessages withTag(String tag) {
         this.tag = tag;
         return this;
@@ -224,6 +238,9 @@ public class ShowMqsInstanceMessagesRespMessages  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

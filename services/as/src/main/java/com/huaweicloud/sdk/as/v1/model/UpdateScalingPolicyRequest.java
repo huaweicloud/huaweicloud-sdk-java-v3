@@ -28,7 +28,7 @@ public class UpdateScalingPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateScalingPolicyRequestBody body = null;
+    private UpdateScalingPolicyRequestBody body;
 
     public UpdateScalingPolicyRequest withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
@@ -49,6 +49,8 @@ public class UpdateScalingPolicyRequest  {
     public void setScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
     }
+
+    
 
     public UpdateScalingPolicyRequest withBody(UpdateScalingPolicyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateScalingPolicyRequest  {
     public void setBody(UpdateScalingPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class HttpForwarding  {
         this.url = url;
     }
 
+    
+
     public HttpForwarding withCertId(String certId) {
         this.certId = certId;
         return this;
@@ -80,6 +82,8 @@ public class HttpForwarding  {
     public void setCertId(String certId) {
         this.certId = certId;
     }
+
+    
 
     public HttpForwarding withCnName(String cnName) {
         this.cnName = cnName;
@@ -101,6 +105,8 @@ public class HttpForwarding  {
         this.cnName = cnName;
     }
 
+    
+
     public HttpForwarding withSniEnable(Boolean sniEnable) {
         this.sniEnable = sniEnable;
         return this;
@@ -120,6 +126,9 @@ public class HttpForwarding  {
     public void setSniEnable(Boolean sniEnable) {
         this.sniEnable = sniEnable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -271,6 +271,8 @@ public class ApiPolicyHttpBase  {
         this.urlDomain = urlDomain;
     }
 
+    
+
     public ApiPolicyHttpBase withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -290,6 +292,8 @@ public class ApiPolicyHttpBase  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiPolicyHttpBase withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -311,6 +315,8 @@ public class ApiPolicyHttpBase  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiPolicyHttpBase withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -330,6 +336,8 @@ public class ApiPolicyHttpBase  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public ApiPolicyHttpBase withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -351,6 +359,8 @@ public class ApiPolicyHttpBase  {
         this.timeout = timeout;
     }
 
+    
+
     public ApiPolicyHttpBase withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
         return this;
@@ -370,6 +380,9 @@ public class ApiPolicyHttpBase  {
     public void setEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

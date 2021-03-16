@@ -23,7 +23,7 @@ public class ListUnreadNewInstantMessagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="case_ids")
     
-    private List<String> caseIds = new ArrayList<>();
+    private List<String> caseIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,6 +80,8 @@ public class ListUnreadNewInstantMessagesRequest  {
         this.caseIds = caseIds;
     }
 
+    
+
     public ListUnreadNewInstantMessagesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -99,6 +101,8 @@ public class ListUnreadNewInstantMessagesRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListUnreadNewInstantMessagesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -124,6 +128,8 @@ public class ListUnreadNewInstantMessagesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListUnreadNewInstantMessagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -146,6 +152,8 @@ public class ListUnreadNewInstantMessagesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListUnreadNewInstantMessagesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -167,6 +175,9 @@ public class ListUnreadNewInstantMessagesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

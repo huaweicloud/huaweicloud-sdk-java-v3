@@ -106,6 +106,8 @@ public class BillSumInfoV2  {
         this.customerId = customerId;
     }
 
+    
+
     public BillSumInfoV2 withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
@@ -125,6 +127,8 @@ public class BillSumInfoV2  {
     public void setCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
     }
+
+    
 
     public BillSumInfoV2 withBillType(String billType) {
         this.billType = billType;
@@ -146,6 +150,8 @@ public class BillSumInfoV2  {
         this.billType = billType;
     }
 
+    
+
     public BillSumInfoV2 withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -165,6 +171,8 @@ public class BillSumInfoV2  {
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public BillSumInfoV2 withAmount(Double amount) {
         this.amount = amount;
@@ -186,6 +194,8 @@ public class BillSumInfoV2  {
         this.amount = amount;
     }
 
+    
+
     public BillSumInfoV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
@@ -205,6 +215,8 @@ public class BillSumInfoV2  {
     public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
+
+    
 
     public BillSumInfoV2 withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
@@ -226,6 +238,8 @@ public class BillSumInfoV2  {
         this.adjustmentAmount = adjustmentAmount;
     }
 
+    
+
     public BillSumInfoV2 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
@@ -245,6 +259,8 @@ public class BillSumInfoV2  {
     public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
+
+    
 
     public BillSumInfoV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -266,6 +282,8 @@ public class BillSumInfoV2  {
         this.measureId = measureId;
     }
 
+    
+
     public BillSumInfoV2 withAccountDetails(List<BalanceTypeDeductSumV2> accountDetails) {
         this.accountDetails = accountDetails;
         return this;
@@ -273,9 +291,6 @@ public class BillSumInfoV2  {
 
     
     public BillSumInfoV2 addAccountDetailsItem(BalanceTypeDeductSumV2 accountDetailsItem) {
-        if (this.accountDetails == null) {
-            this.accountDetails = new ArrayList<>();
-        }
         this.accountDetails.add(accountDetailsItem);
         return this;
     }
@@ -300,6 +315,8 @@ public class BillSumInfoV2  {
         this.accountDetails = accountDetails;
     }
 
+    
+
     public BillSumInfoV2 withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
@@ -319,6 +336,9 @@ public class BillSumInfoV2  {
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

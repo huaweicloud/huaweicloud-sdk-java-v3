@@ -49,6 +49,8 @@ public class TagsSingleValue  {
         this.key = key;
     }
 
+    
+
     public TagsSingleValue withValue(String value) {
         this.value = value;
         return this;
@@ -68,6 +70,9 @@ public class TagsSingleValue  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

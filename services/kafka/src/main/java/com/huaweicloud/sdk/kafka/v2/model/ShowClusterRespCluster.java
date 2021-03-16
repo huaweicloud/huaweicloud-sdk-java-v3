@@ -88,6 +88,8 @@ public class ShowClusterRespCluster  {
         this.controller = controller;
     }
 
+    
+
     public ShowClusterRespCluster withBrokers(List<ShowClusterRespClusterBrokers> brokers) {
         this.brokers = brokers;
         return this;
@@ -95,9 +97,6 @@ public class ShowClusterRespCluster  {
 
     
     public ShowClusterRespCluster addBrokersItem(ShowClusterRespClusterBrokers brokersItem) {
-        if (this.brokers == null) {
-            this.brokers = new ArrayList<>();
-        }
         this.brokers.add(brokersItem);
         return this;
     }
@@ -122,6 +121,8 @@ public class ShowClusterRespCluster  {
         this.brokers = brokers;
     }
 
+    
+
     public ShowClusterRespCluster withTopicsCount(Integer topicsCount) {
         this.topicsCount = topicsCount;
         return this;
@@ -141,6 +142,8 @@ public class ShowClusterRespCluster  {
     public void setTopicsCount(Integer topicsCount) {
         this.topicsCount = topicsCount;
     }
+
+    
 
     public ShowClusterRespCluster withPartitionsCount(Integer partitionsCount) {
         this.partitionsCount = partitionsCount;
@@ -162,6 +165,8 @@ public class ShowClusterRespCluster  {
         this.partitionsCount = partitionsCount;
     }
 
+    
+
     public ShowClusterRespCluster withOnlinePartitionsCount(Integer onlinePartitionsCount) {
         this.onlinePartitionsCount = onlinePartitionsCount;
         return this;
@@ -181,6 +186,8 @@ public class ShowClusterRespCluster  {
     public void setOnlinePartitionsCount(Integer onlinePartitionsCount) {
         this.onlinePartitionsCount = onlinePartitionsCount;
     }
+
+    
 
     public ShowClusterRespCluster withReplicasCount(Integer replicasCount) {
         this.replicasCount = replicasCount;
@@ -202,6 +209,8 @@ public class ShowClusterRespCluster  {
         this.replicasCount = replicasCount;
     }
 
+    
+
     public ShowClusterRespCluster withIsrReplicasCount(Integer isrReplicasCount) {
         this.isrReplicasCount = isrReplicasCount;
         return this;
@@ -222,6 +231,8 @@ public class ShowClusterRespCluster  {
         this.isrReplicasCount = isrReplicasCount;
     }
 
+    
+
     public ShowClusterRespCluster withConsumersCount(Integer consumersCount) {
         this.consumersCount = consumersCount;
         return this;
@@ -241,6 +252,9 @@ public class ShowClusterRespCluster  {
     public void setConsumersCount(Integer consumersCount) {
         this.consumersCount = consumersCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

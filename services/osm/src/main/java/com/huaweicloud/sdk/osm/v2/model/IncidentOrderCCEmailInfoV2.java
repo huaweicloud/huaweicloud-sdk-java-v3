@@ -55,6 +55,8 @@ public class IncidentOrderCCEmailInfoV2  {
         this.userId = userId;
     }
 
+    
+
     public IncidentOrderCCEmailInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -75,6 +77,8 @@ public class IncidentOrderCCEmailInfoV2  {
         this.customerId = customerId;
     }
 
+    
+
     public IncidentOrderCCEmailInfoV2 withCcEmail(String ccEmail) {
         this.ccEmail = ccEmail;
         return this;
@@ -94,6 +98,9 @@ public class IncidentOrderCCEmailInfoV2  {
     public void setCcEmail(String ccEmail) {
         this.ccEmail = ccEmail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

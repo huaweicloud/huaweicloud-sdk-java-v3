@@ -67,6 +67,8 @@ public class UpdateCredentialResult  {
         this.userId = userId;
     }
 
+    
+
     public UpdateCredentialResult withAccess(String access) {
         this.access = access;
         return this;
@@ -86,6 +88,8 @@ public class UpdateCredentialResult  {
     public void setAccess(String access) {
         this.access = access;
     }
+
+    
 
     public UpdateCredentialResult withStatus(String status) {
         this.status = status;
@@ -107,6 +111,8 @@ public class UpdateCredentialResult  {
         this.status = status;
     }
 
+    
+
     public UpdateCredentialResult withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -127,6 +133,8 @@ public class UpdateCredentialResult  {
         this.createTime = createTime;
     }
 
+    
+
     public UpdateCredentialResult withDescription(String description) {
         this.description = description;
         return this;
@@ -146,6 +154,9 @@ public class UpdateCredentialResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

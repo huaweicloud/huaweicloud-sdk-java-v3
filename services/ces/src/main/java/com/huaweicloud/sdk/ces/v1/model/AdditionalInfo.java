@@ -55,6 +55,8 @@ public class AdditionalInfo  {
         this.resourceId = resourceId;
     }
 
+    
+
     public AdditionalInfo withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -75,6 +77,8 @@ public class AdditionalInfo  {
         this.resourceName = resourceName;
     }
 
+    
+
     public AdditionalInfo withEventId(String eventId) {
         this.eventId = eventId;
         return this;
@@ -94,6 +98,9 @@ public class AdditionalInfo  {
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

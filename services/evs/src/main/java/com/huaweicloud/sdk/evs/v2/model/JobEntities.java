@@ -70,6 +70,8 @@ public class JobEntities  {
         this.volumeType = volumeType;
     }
 
+    
+
     public JobEntities withSize(Integer size) {
         this.size = size;
         return this;
@@ -89,6 +91,8 @@ public class JobEntities  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
 
     public JobEntities withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -110,6 +114,8 @@ public class JobEntities  {
         this.volumeId = volumeId;
     }
 
+    
+
     public JobEntities withName(String name) {
         this.name = name;
         return this;
@@ -130,6 +136,8 @@ public class JobEntities  {
         this.name = name;
     }
 
+    
+
     public JobEntities withSubJobs(List<SubJob> subJobs) {
         this.subJobs = subJobs;
         return this;
@@ -137,9 +145,6 @@ public class JobEntities  {
 
     
     public JobEntities addSubJobsItem(SubJob subJobsItem) {
-        if (this.subJobs == null) {
-            this.subJobs = new ArrayList<>();
-        }
         this.subJobs.add(subJobsItem);
         return this;
     }
@@ -163,6 +168,9 @@ public class JobEntities  {
     public void setSubJobs(List<SubJob> subJobs) {
         this.subJobs = subJobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

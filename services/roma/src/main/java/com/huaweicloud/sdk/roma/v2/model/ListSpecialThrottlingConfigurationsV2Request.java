@@ -45,13 +45,13 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListSpecialThrottlingConfigurationsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -73,6 +73,8 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListSpecialThrottlingConfigurationsV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
@@ -92,6 +94,8 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
     public void setThrottleId(String throttleId) {
         this.throttleId = throttleId;
     }
+
+    
 
     public ListSpecialThrottlingConfigurationsV2Request withObjectType(String objectType) {
         this.objectType = objectType;
@@ -113,6 +117,8 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
         this.objectType = objectType;
     }
 
+    
+
     public ListSpecialThrottlingConfigurationsV2Request withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -133,6 +139,8 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
         this.appName = appName;
     }
 
+    
+
     public ListSpecialThrottlingConfigurationsV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -152,6 +160,8 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListSpecialThrottlingConfigurationsV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -174,6 +184,9 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

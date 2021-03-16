@@ -28,7 +28,7 @@ public class CreateRoutingRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddRuleReq body = null;
+    private AddRuleReq body;
 
     public CreateRoutingRuleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateRoutingRuleRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateRoutingRuleRequest withBody(AddRuleReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateRoutingRuleRequest  {
     public void setBody(AddRuleReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

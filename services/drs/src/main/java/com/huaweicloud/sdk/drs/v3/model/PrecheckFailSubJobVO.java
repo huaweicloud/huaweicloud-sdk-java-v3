@@ -55,6 +55,8 @@ public class PrecheckFailSubJobVO  {
         this.id = id;
     }
 
+    
+
     public PrecheckFailSubJobVO withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class PrecheckFailSubJobVO  {
         this.name = name;
     }
 
+    
+
     public PrecheckFailSubJobVO withCheckResult(String checkResult) {
         this.checkResult = checkResult;
         return this;
@@ -94,6 +98,9 @@ public class PrecheckFailSubJobVO  {
     public void setCheckResult(String checkResult) {
         this.checkResult = checkResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class KeystoneCreateIdentityProviderResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity_provider")
     
-    private IdentityprovidersResult identityProvider = null;
+    private IdentityprovidersResult identityProvider;
 
     public KeystoneCreateIdentityProviderResponse withIdentityProvider(IdentityprovidersResult identityProvider) {
         this.identityProvider = identityProvider;
@@ -52,6 +52,9 @@ public class KeystoneCreateIdentityProviderResponse extends SdkResponse {
     public void setIdentityProvider(IdentityprovidersResult identityProvider) {
         this.identityProvider = identityProvider;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

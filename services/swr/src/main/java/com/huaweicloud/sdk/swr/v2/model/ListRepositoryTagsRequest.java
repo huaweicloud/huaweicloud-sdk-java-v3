@@ -161,6 +161,8 @@ public class ListRepositoryTagsRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ListRepositoryTagsRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -180,6 +182,8 @@ public class ListRepositoryTagsRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public ListRepositoryTagsRequest withOffset(String offset) {
         this.offset = offset;
@@ -201,6 +205,8 @@ public class ListRepositoryTagsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListRepositoryTagsRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -220,6 +226,8 @@ public class ListRepositoryTagsRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
 
     public ListRepositoryTagsRequest withOrderColumn(String orderColumn) {
         this.orderColumn = orderColumn;
@@ -241,6 +249,8 @@ public class ListRepositoryTagsRequest  {
         this.orderColumn = orderColumn;
     }
 
+    
+
     public ListRepositoryTagsRequest withOrderType(OrderTypeEnum orderType) {
         this.orderType = orderType;
         return this;
@@ -261,6 +271,8 @@ public class ListRepositoryTagsRequest  {
         this.orderType = orderType;
     }
 
+    
+
     public ListRepositoryTagsRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -280,6 +292,9 @@ public class ListRepositoryTagsRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

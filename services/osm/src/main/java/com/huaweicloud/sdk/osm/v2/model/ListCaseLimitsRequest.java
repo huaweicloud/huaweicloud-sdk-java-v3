@@ -59,6 +59,8 @@ public class ListCaseLimitsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListCaseLimitsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -81,6 +83,8 @@ public class ListCaseLimitsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListCaseLimitsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -102,6 +106,9 @@ public class ListCaseLimitsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

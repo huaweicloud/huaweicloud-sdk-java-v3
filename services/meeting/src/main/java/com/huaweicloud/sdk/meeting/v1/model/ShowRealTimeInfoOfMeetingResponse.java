@@ -40,7 +40,7 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confInfo")
     
-    private RealTimeConfInfo confInfo = null;
+    private RealTimeConfInfo confInfo;
 
     public ShowRealTimeInfoOfMeetingResponse withAttendees(List<RealTimeAttendee> attendees) {
         this.attendees = attendees;
@@ -49,9 +49,6 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
 
     
     public ShowRealTimeInfoOfMeetingResponse addAttendeesItem(RealTimeAttendee attendeesItem) {
-        if (this.attendees == null) {
-            this.attendees = new ArrayList<>();
-        }
         this.attendees.add(attendeesItem);
         return this;
     }
@@ -76,6 +73,8 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         this.attendees = attendees;
     }
 
+    
+
     public ShowRealTimeInfoOfMeetingResponse withParticipants(List<RealTimeParticipant> participants) {
         this.participants = participants;
         return this;
@@ -83,9 +82,6 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
 
     
     public ShowRealTimeInfoOfMeetingResponse addParticipantsItem(RealTimeParticipant participantsItem) {
-        if (this.participants == null) {
-            this.participants = new ArrayList<>();
-        }
         this.participants.add(participantsItem);
         return this;
     }
@@ -109,6 +105,8 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
     public void setParticipants(List<RealTimeParticipant> participants) {
         this.participants = participants;
     }
+
+    
 
     public ShowRealTimeInfoOfMeetingResponse withConfInfo(RealTimeConfInfo confInfo) {
         this.confInfo = confInfo;
@@ -136,6 +134,9 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
     public void setConfInfo(RealTimeConfInfo confInfo) {
         this.confInfo = confInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

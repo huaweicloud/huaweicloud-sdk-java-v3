@@ -85,6 +85,8 @@ public class CertificatesRspDTO  {
         this.certificateId = certificateId;
     }
 
+    
+
     public CertificatesRspDTO withCnName(String cnName) {
         this.cnName = cnName;
         return this;
@@ -104,6 +106,8 @@ public class CertificatesRspDTO  {
     public void setCnName(String cnName) {
         this.cnName = cnName;
     }
+
+    
 
     public CertificatesRspDTO withOwner(String owner) {
         this.owner = owner;
@@ -125,6 +129,8 @@ public class CertificatesRspDTO  {
         this.owner = owner;
     }
 
+    
+
     public CertificatesRspDTO withStatus(Boolean status) {
         this.status = status;
         return this;
@@ -144,6 +150,8 @@ public class CertificatesRspDTO  {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+
+    
 
     public CertificatesRspDTO withVerifyCode(String verifyCode) {
         this.verifyCode = verifyCode;
@@ -165,6 +173,8 @@ public class CertificatesRspDTO  {
         this.verifyCode = verifyCode;
     }
 
+    
+
     public CertificatesRspDTO withCreateDate(String createDate) {
         this.createDate = createDate;
         return this;
@@ -184,6 +194,8 @@ public class CertificatesRspDTO  {
     public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
+
+    
 
     public CertificatesRspDTO withEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -205,6 +217,8 @@ public class CertificatesRspDTO  {
         this.effectiveDate = effectiveDate;
     }
 
+    
+
     public CertificatesRspDTO withExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
         return this;
@@ -224,6 +238,9 @@ public class CertificatesRspDTO  {
     public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

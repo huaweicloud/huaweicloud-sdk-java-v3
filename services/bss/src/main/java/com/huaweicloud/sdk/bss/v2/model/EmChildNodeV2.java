@@ -63,6 +63,8 @@ public class EmChildNodeV2  {
         this.relationId = relationId;
     }
 
+    
+
     public EmChildNodeV2 withId(String id) {
         this.id = id;
         return this;
@@ -82,6 +84,8 @@ public class EmChildNodeV2  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public EmChildNodeV2 withName(String name) {
         this.name = name;
@@ -103,6 +107,8 @@ public class EmChildNodeV2  {
         this.name = name;
     }
 
+    
+
     public EmChildNodeV2 withChildNodes(List<EmChildNodeV2> childNodes) {
         this.childNodes = childNodes;
         return this;
@@ -110,9 +116,6 @@ public class EmChildNodeV2  {
 
     
     public EmChildNodeV2 addChildNodesItem(EmChildNodeV2 childNodesItem) {
-        if (this.childNodes == null) {
-            this.childNodes = new ArrayList<>();
-        }
         this.childNodes.add(childNodesItem);
         return this;
     }
@@ -136,6 +139,9 @@ public class EmChildNodeV2  {
     public void setChildNodes(List<EmChildNodeV2> childNodes) {
         this.childNodes = childNodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

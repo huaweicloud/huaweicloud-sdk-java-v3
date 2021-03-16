@@ -42,6 +42,9 @@ public class IefInfo  {
     public void setDeployMode(Integer deployMode) {
         this.deployMode = deployMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class CloneServer  {
         this.vmId = vmId;
     }
 
+    
+
     public CloneServer withCloneError(String cloneError) {
         this.cloneError = cloneError;
         return this;
@@ -86,6 +88,8 @@ public class CloneServer  {
     public void setCloneError(String cloneError) {
         this.cloneError = cloneError;
     }
+
+    
 
     public CloneServer withCloneState(String cloneState) {
         this.cloneState = cloneState;
@@ -107,6 +111,8 @@ public class CloneServer  {
         this.cloneState = cloneState;
     }
 
+    
+
     public CloneServer withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -127,6 +133,8 @@ public class CloneServer  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public CloneServer withName(String name) {
         this.name = name;
         return this;
@@ -146,6 +154,9 @@ public class CloneServer  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

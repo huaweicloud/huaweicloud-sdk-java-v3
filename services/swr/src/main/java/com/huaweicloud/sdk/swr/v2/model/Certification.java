@@ -22,7 +22,7 @@ public class Certification  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cert")
     
-    private AuthInfo cert = null;
+    private AuthInfo cert;
 
     public Certification withCert(AuthInfo cert) {
         this.cert = cert;
@@ -50,6 +50,9 @@ public class Certification  {
     public void setCert(AuthInfo cert) {
         this.cert = cert;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

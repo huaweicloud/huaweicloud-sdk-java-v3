@@ -21,7 +21,7 @@ public class ListQueuesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queue_type")
     
-    private String queueType = "sql";
+    private String queueType;
 
     public ListQueuesRequest withQueueType(String queueType) {
         this.queueType = queueType;
@@ -42,6 +42,9 @@ public class ListQueuesRequest  {
     public void setQueueType(String queueType) {
         this.queueType = queueType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

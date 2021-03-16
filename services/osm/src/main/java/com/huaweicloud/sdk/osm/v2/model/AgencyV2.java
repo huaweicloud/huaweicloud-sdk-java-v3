@@ -79,6 +79,8 @@ public class AgencyV2  {
         this.id = id;
     }
 
+    
+
     public AgencyV2 withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +100,8 @@ public class AgencyV2  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AgencyV2 withDuration(String duration) {
         this.duration = duration;
@@ -119,6 +123,8 @@ public class AgencyV2  {
         this.duration = duration;
     }
 
+    
+
     public AgencyV2 withTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
         return this;
@@ -138,6 +144,8 @@ public class AgencyV2  {
     public void setTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
     }
+
+    
 
     public AgencyV2 withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
@@ -159,6 +167,8 @@ public class AgencyV2  {
         this.trustDomainId = trustDomainId;
     }
 
+    
+
     public AgencyV2 withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -179,6 +189,8 @@ public class AgencyV2  {
         this.createTime = createTime;
     }
 
+    
+
     public AgencyV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -198,6 +210,9 @@ public class AgencyV2  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,6 +57,8 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
         this.instanceNum = instanceNum;
     }
 
+    
+
     public ListApiQuantitiesV2Response withNumsOnRelease(Integer numsOnRelease) {
         this.numsOnRelease = numsOnRelease;
         return this;
@@ -77,6 +79,8 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
         this.numsOnRelease = numsOnRelease;
     }
 
+    
+
     public ListApiQuantitiesV2Response withNumsOffRelease(Integer numsOffRelease) {
         this.numsOffRelease = numsOffRelease;
         return this;
@@ -96,6 +100,9 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
     public void setNumsOffRelease(Integer numsOffRelease) {
         this.numsOffRelease = numsOffRelease;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ListFunctionStatisticsRequest  {
         this.funcUrn = funcUrn;
     }
 
+    
+
     public ListFunctionStatisticsRequest withPeriod(String period) {
         this.period = period;
         return this;
@@ -68,6 +70,9 @@ public class ListFunctionStatisticsRequest  {
     public void setPeriod(String period) {
         this.period = period;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

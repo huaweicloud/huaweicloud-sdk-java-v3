@@ -22,13 +22,13 @@ public class CreateDatakeyWithoutPlaintextRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateDatakeyRequestBody body = null;
+    private CreateDatakeyRequestBody body;
 
     public CreateDatakeyWithoutPlaintextRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class CreateDatakeyWithoutPlaintextRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public CreateDatakeyWithoutPlaintextRequest withBody(CreateDatakeyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateDatakeyWithoutPlaintextRequest  {
     public void setBody(CreateDatakeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

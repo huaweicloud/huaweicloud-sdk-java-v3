@@ -104,13 +104,13 @@ public class BatchSetSpeedRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchLimitSpeedReq body = null;
+    private BatchLimitSpeedReq body;
 
     public BatchSetSpeedRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchSetSpeedRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchSetSpeedRequest withBody(BatchLimitSpeedReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchSetSpeedRequest  {
     public void setBody(BatchLimitSpeedReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

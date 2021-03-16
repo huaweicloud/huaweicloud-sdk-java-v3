@@ -40,7 +40,7 @@ public class IssueCommentV4  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private CommentUserV4 user = null;
+    private CommentUserV4 user;
 
     public IssueCommentV4 withComment(String comment) {
         this.comment = comment;
@@ -62,6 +62,8 @@ public class IssueCommentV4  {
         this.comment = comment;
     }
 
+    
+
     public IssueCommentV4 withId(Integer id) {
         this.id = id;
         return this;
@@ -82,6 +84,8 @@ public class IssueCommentV4  {
         this.id = id;
     }
 
+    
+
     public IssueCommentV4 withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -101,6 +105,8 @@ public class IssueCommentV4  {
     public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
+
+    
 
     public IssueCommentV4 withUser(CommentUserV4 user) {
         this.user = user;
@@ -128,6 +134,9 @@ public class IssueCommentV4  {
     public void setUser(CommentUserV4 user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

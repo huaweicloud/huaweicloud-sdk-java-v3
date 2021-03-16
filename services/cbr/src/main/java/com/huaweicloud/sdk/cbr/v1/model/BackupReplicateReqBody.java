@@ -45,7 +45,7 @@ public class BackupReplicateReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_acceleration")
     
-    private Boolean enableAcceleration = false;
+    private Boolean enableAcceleration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class BackupReplicateReqBody  {
         this.description = description;
     }
 
+    
+
     public BackupReplicateReqBody withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
@@ -92,6 +94,8 @@ public class BackupReplicateReqBody  {
     public void setDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
     }
+
+    
 
     public BackupReplicateReqBody withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
@@ -113,6 +117,8 @@ public class BackupReplicateReqBody  {
         this.destinationRegion = destinationRegion;
     }
 
+    
+
     public BackupReplicateReqBody withDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
         return this;
@@ -132,6 +138,8 @@ public class BackupReplicateReqBody  {
     public void setDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
     }
+
+    
 
     public BackupReplicateReqBody withEnableAcceleration(Boolean enableAcceleration) {
         this.enableAcceleration = enableAcceleration;
@@ -153,6 +161,8 @@ public class BackupReplicateReqBody  {
         this.enableAcceleration = enableAcceleration;
     }
 
+    
+
     public BackupReplicateReqBody withName(String name) {
         this.name = name;
         return this;
@@ -172,6 +182,9 @@ public class BackupReplicateReqBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateSnapshotRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateSnapshotRequestBody body = null;
+    private CreateSnapshotRequestBody body;
 
     public CreateSnapshotRequest withBody(CreateSnapshotRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateSnapshotRequest  {
     public void setBody(CreateSnapshotRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

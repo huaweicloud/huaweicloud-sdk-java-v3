@@ -25,7 +25,7 @@ public class MysqlForwarding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="address")
     
-    private NetAddress address = null;
+    private NetAddress address;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,7 +56,7 @@ public class MysqlForwarding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="column_mappings")
     
-    private List<ColumnMapping> columnMappings = new ArrayList<>();
+    private List<ColumnMapping> columnMappings = null;
     
     public MysqlForwarding withAddress(NetAddress address) {
         this.address = address;
@@ -85,6 +85,8 @@ public class MysqlForwarding  {
         this.address = address;
     }
 
+    
+
     public MysqlForwarding withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -104,6 +106,8 @@ public class MysqlForwarding  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
 
     public MysqlForwarding withUsername(String username) {
         this.username = username;
@@ -125,6 +129,8 @@ public class MysqlForwarding  {
         this.username = username;
     }
 
+    
+
     public MysqlForwarding withPassword(String password) {
         this.password = password;
         return this;
@@ -145,6 +151,8 @@ public class MysqlForwarding  {
         this.password = password;
     }
 
+    
+
     public MysqlForwarding withTableName(String tableName) {
         this.tableName = tableName;
         return this;
@@ -164,6 +172,8 @@ public class MysqlForwarding  {
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
+
+    
 
     public MysqlForwarding withColumnMappings(List<ColumnMapping> columnMappings) {
         this.columnMappings = columnMappings;
@@ -195,6 +205,9 @@ public class MysqlForwarding  {
     public void setColumnMappings(List<ColumnMapping> columnMappings) {
         this.columnMappings = columnMappings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

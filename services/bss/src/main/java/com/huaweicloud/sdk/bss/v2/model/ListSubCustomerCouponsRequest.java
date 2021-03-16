@@ -103,6 +103,8 @@ public class ListSubCustomerCouponsRequest  {
         this.couponId = couponId;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -123,6 +125,8 @@ public class ListSubCustomerCouponsRequest  {
         this.orderId = orderId;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withPromotionPlanId(String promotionPlanId) {
         this.promotionPlanId = promotionPlanId;
         return this;
@@ -142,6 +146,8 @@ public class ListSubCustomerCouponsRequest  {
     public void setPromotionPlanId(String promotionPlanId) {
         this.promotionPlanId = promotionPlanId;
     }
+
+    
 
     public ListSubCustomerCouponsRequest withCouponType(Integer couponType) {
         this.couponType = couponType;
@@ -165,6 +171,8 @@ public class ListSubCustomerCouponsRequest  {
         this.couponType = couponType;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -187,6 +195,8 @@ public class ListSubCustomerCouponsRequest  {
         this.status = status;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withActiveStartTime(String activeStartTime) {
         this.activeStartTime = activeStartTime;
         return this;
@@ -207,6 +217,8 @@ public class ListSubCustomerCouponsRequest  {
         this.activeStartTime = activeStartTime;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withActiveEndTime(String activeEndTime) {
         this.activeEndTime = activeEndTime;
         return this;
@@ -226,6 +238,8 @@ public class ListSubCustomerCouponsRequest  {
     public void setActiveEndTime(String activeEndTime) {
         this.activeEndTime = activeEndTime;
     }
+
+    
 
     public ListSubCustomerCouponsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -249,6 +263,8 @@ public class ListSubCustomerCouponsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -271,6 +287,8 @@ public class ListSubCustomerCouponsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withSourceId(String sourceId) {
         this.sourceId = sourceId;
         return this;
@@ -291,6 +309,8 @@ public class ListSubCustomerCouponsRequest  {
         this.sourceId = sourceId;
     }
 
+    
+
     public ListSubCustomerCouponsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -310,6 +330,9 @@ public class ListSubCustomerCouponsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

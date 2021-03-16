@@ -155,6 +155,8 @@ public class UrlDomainBaseInfo  {
         this.urlDomain = urlDomain;
     }
 
+    
+
     public UrlDomainBaseInfo withId(String id) {
         this.id = id;
         return this;
@@ -174,6 +176,8 @@ public class UrlDomainBaseInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UrlDomainBaseInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -195,6 +199,8 @@ public class UrlDomainBaseInfo  {
         this.status = status;
     }
 
+    
+
     public UrlDomainBaseInfo withMinSslVersion(String minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
@@ -214,6 +220,9 @@ public class UrlDomainBaseInfo  {
     public void setMinSslVersion(String minSslVersion) {
         this.minSslVersion = minSslVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

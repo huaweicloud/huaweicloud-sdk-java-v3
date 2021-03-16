@@ -49,6 +49,8 @@ public class BackupStrategy  {
         this.startTime = startTime;
     }
 
+    
+
     public BackupStrategy withKeepDays(String keepDays) {
         this.keepDays = keepDays;
         return this;
@@ -68,6 +70,9 @@ public class BackupStrategy  {
     public void setKeepDays(String keepDays) {
         this.keepDays = keepDays;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

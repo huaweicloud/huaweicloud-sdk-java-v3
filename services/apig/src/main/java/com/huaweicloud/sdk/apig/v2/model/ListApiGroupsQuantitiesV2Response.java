@@ -51,6 +51,8 @@ public class ListApiGroupsQuantitiesV2Response extends SdkResponse {
         this.offsellNums = offsellNums;
     }
 
+    
+
     public ListApiGroupsQuantitiesV2Response withOnsellNums(Integer onsellNums) {
         this.onsellNums = onsellNums;
         return this;
@@ -70,6 +72,9 @@ public class ListApiGroupsQuantitiesV2Response extends SdkResponse {
     public void setOnsellNums(Integer onsellNums) {
         this.onsellNums = onsellNums;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

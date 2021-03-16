@@ -28,7 +28,7 @@ public class AssociateSignatureKeyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SignApiBinding body = null;
+    private SignApiBinding body;
 
     public AssociateSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class AssociateSignatureKeyV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AssociateSignatureKeyV2Request withBody(SignApiBinding body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AssociateSignatureKeyV2Request  {
     public void setBody(SignApiBinding body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

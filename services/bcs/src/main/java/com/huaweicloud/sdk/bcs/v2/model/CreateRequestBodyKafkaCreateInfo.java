@@ -55,6 +55,8 @@ public class CreateRequestBodyKafkaCreateInfo  {
         this.spec = spec;
     }
 
+    
+
     public CreateRequestBodyKafkaCreateInfo withStorage(Integer storage) {
         this.storage = storage;
         return this;
@@ -75,6 +77,8 @@ public class CreateRequestBodyKafkaCreateInfo  {
         this.storage = storage;
     }
 
+    
+
     public CreateRequestBodyKafkaCreateInfo withAz(String az) {
         this.az = az;
         return this;
@@ -94,6 +98,9 @@ public class CreateRequestBodyKafkaCreateInfo  {
     public void setAz(String az) {
         this.az = az;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class BatchAddServerNicsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchAddServerNicsRequestBody body = null;
+    private BatchAddServerNicsRequestBody body;
 
     public BatchAddServerNicsRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class BatchAddServerNicsRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public BatchAddServerNicsRequest withBody(BatchAddServerNicsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchAddServerNicsRequest  {
     public void setBody(BatchAddServerNicsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

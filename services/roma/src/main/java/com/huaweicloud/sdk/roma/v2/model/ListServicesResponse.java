@@ -60,6 +60,8 @@ public class ListServicesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListServicesResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListServicesResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListServicesResponse withItems(List<Service> items) {
         this.items = items;
         return this;
@@ -87,9 +91,6 @@ public class ListServicesResponse extends SdkResponse {
 
     
     public ListServicesResponse addItemsItem(Service itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListServicesResponse extends SdkResponse {
     public void setItems(List<Service> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

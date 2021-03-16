@@ -94,7 +94,7 @@ public class Subnet  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dnsList")
     
-    private List<String> dnsList = new ArrayList<>();
+    private List<String> dnsList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -220,7 +220,7 @@ public class Subnet  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_dhcp_opts")
     
-    private List<ExtraDhcpOption> extraDhcpOpts = new ArrayList<>();
+    private List<ExtraDhcpOption> extraDhcpOpts = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -248,6 +248,8 @@ public class Subnet  {
         this.id = id;
     }
 
+    
+
     public Subnet withName(String name) {
         this.name = name;
         return this;
@@ -267,6 +269,8 @@ public class Subnet  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Subnet withDescription(String description) {
         this.description = description;
@@ -288,6 +292,8 @@ public class Subnet  {
         this.description = description;
     }
 
+    
+
     public Subnet withCidr(String cidr) {
         this.cidr = cidr;
         return this;
@@ -307,6 +313,8 @@ public class Subnet  {
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
+
+    
 
     public Subnet withGatewayIp(String gatewayIp) {
         this.gatewayIp = gatewayIp;
@@ -328,6 +336,8 @@ public class Subnet  {
         this.gatewayIp = gatewayIp;
     }
 
+    
+
     public Subnet withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -347,6 +357,8 @@ public class Subnet  {
     public void setIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
     }
+
+    
 
     public Subnet withCidrV6(String cidrV6) {
         this.cidrV6 = cidrV6;
@@ -368,6 +380,8 @@ public class Subnet  {
         this.cidrV6 = cidrV6;
     }
 
+    
+
     public Subnet withGatewayIpV6(String gatewayIpV6) {
         this.gatewayIpV6 = gatewayIpV6;
         return this;
@@ -387,6 +401,8 @@ public class Subnet  {
     public void setGatewayIpV6(String gatewayIpV6) {
         this.gatewayIpV6 = gatewayIpV6;
     }
+
+    
 
     public Subnet withDhcpEnable(Boolean dhcpEnable) {
         this.dhcpEnable = dhcpEnable;
@@ -408,6 +424,8 @@ public class Subnet  {
         this.dhcpEnable = dhcpEnable;
     }
 
+    
+
     public Subnet withPrimaryDns(String primaryDns) {
         this.primaryDns = primaryDns;
         return this;
@@ -428,6 +446,8 @@ public class Subnet  {
         this.primaryDns = primaryDns;
     }
 
+    
+
     public Subnet withSecondaryDns(String secondaryDns) {
         this.secondaryDns = secondaryDns;
         return this;
@@ -447,6 +467,8 @@ public class Subnet  {
     public void setSecondaryDns(String secondaryDns) {
         this.secondaryDns = secondaryDns;
     }
+
+    
 
     public Subnet withDnsList(List<String> dnsList) {
         this.dnsList = dnsList;
@@ -479,6 +501,8 @@ public class Subnet  {
         this.dnsList = dnsList;
     }
 
+    
+
     public Subnet withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -498,6 +522,8 @@ public class Subnet  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public Subnet withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -519,6 +545,8 @@ public class Subnet  {
         this.vpcId = vpcId;
     }
 
+    
+
     public Subnet withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -538,6 +566,8 @@ public class Subnet  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public Subnet withNeutronNetworkId(String neutronNetworkId) {
         this.neutronNetworkId = neutronNetworkId;
@@ -559,6 +589,8 @@ public class Subnet  {
         this.neutronNetworkId = neutronNetworkId;
     }
 
+    
+
     public Subnet withNeutronSubnetId(String neutronSubnetId) {
         this.neutronSubnetId = neutronSubnetId;
         return this;
@@ -579,6 +611,8 @@ public class Subnet  {
         this.neutronSubnetId = neutronSubnetId;
     }
 
+    
+
     public Subnet withNeutronSubnetIdV6(String neutronSubnetIdV6) {
         this.neutronSubnetIdV6 = neutronSubnetIdV6;
         return this;
@@ -598,6 +632,8 @@ public class Subnet  {
     public void setNeutronSubnetIdV6(String neutronSubnetIdV6) {
         this.neutronSubnetIdV6 = neutronSubnetIdV6;
     }
+
+    
 
     public Subnet withExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
@@ -630,6 +666,8 @@ public class Subnet  {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
+    
+
     public Subnet withScope(String scope) {
         this.scope = scope;
         return this;
@@ -649,6 +687,9 @@ public class Subnet  {
     public void setScope(String scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

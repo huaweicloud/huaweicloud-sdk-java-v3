@@ -49,6 +49,8 @@ public class ShowHotkeyTaskDetailsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowHotkeyTaskDetailsRequest withHotkeyId(String hotkeyId) {
         this.hotkeyId = hotkeyId;
         return this;
@@ -68,6 +70,9 @@ public class ShowHotkeyTaskDetailsRequest  {
     public void setHotkeyId(String hotkeyId) {
         this.hotkeyId = hotkeyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

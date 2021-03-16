@@ -22,7 +22,7 @@ public class ServiceResourceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basic_info")
     
-    private ResourceBasicInfo basicInfo = null;
+    private ResourceBasicInfo basicInfo;
 
     public ServiceResourceInfo withBasicInfo(ResourceBasicInfo basicInfo) {
         this.basicInfo = basicInfo;
@@ -50,6 +50,9 @@ public class ServiceResourceInfo  {
     public void setBasicInfo(ResourceBasicInfo basicInfo) {
         this.basicInfo = basicInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

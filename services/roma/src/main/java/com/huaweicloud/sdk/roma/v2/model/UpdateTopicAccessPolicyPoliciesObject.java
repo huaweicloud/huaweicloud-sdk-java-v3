@@ -155,6 +155,8 @@ public class UpdateTopicAccessPolicyPoliciesObject  {
         this.owner = owner;
     }
 
+    
+
     public UpdateTopicAccessPolicyPoliciesObject withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -174,6 +176,8 @@ public class UpdateTopicAccessPolicyPoliciesObject  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public UpdateTopicAccessPolicyPoliciesObject withAppName(String appName) {
         this.appName = appName;
@@ -195,6 +199,8 @@ public class UpdateTopicAccessPolicyPoliciesObject  {
         this.appName = appName;
     }
 
+    
+
     public UpdateTopicAccessPolicyPoliciesObject withAccessPolicy(AccessPolicyEnum accessPolicy) {
         this.accessPolicy = accessPolicy;
         return this;
@@ -215,6 +221,8 @@ public class UpdateTopicAccessPolicyPoliciesObject  {
         this.accessPolicy = accessPolicy;
     }
 
+    
+
     public UpdateTopicAccessPolicyPoliciesObject withTag(String tag) {
         this.tag = tag;
         return this;
@@ -234,6 +242,9 @@ public class UpdateTopicAccessPolicyPoliciesObject  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

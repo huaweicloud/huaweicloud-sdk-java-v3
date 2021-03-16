@@ -37,7 +37,7 @@ public class MetricInfoForAlarm  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    private List<MetricsDimension> dimensions = new ArrayList<>();
+    private List<MetricsDimension> dimensions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,6 +71,8 @@ public class MetricInfoForAlarm  {
         this.namespace = namespace;
     }
 
+    
+
     public MetricInfoForAlarm withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -90,6 +92,8 @@ public class MetricInfoForAlarm  {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
 
     public MetricInfoForAlarm withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
@@ -122,6 +126,8 @@ public class MetricInfoForAlarm  {
         this.dimensions = dimensions;
     }
 
+    
+
     public MetricInfoForAlarm withResourceGroupId(String resourceGroupId) {
         this.resourceGroupId = resourceGroupId;
         return this;
@@ -131,7 +137,7 @@ public class MetricInfoForAlarm  {
 
 
     /**
-     * 创建告警规则时选择的资源分组ID，如：rg1603786526428bWbVmk4rP
+     * 创建告警规则时选择的资源分组ID，如：rg1603786526428bWbVmk4rP；如果根据资源分组创建告警规则，则resource_group_id不能为空，且alarm_type值为RESOURCE_GROUP
      * @return resourceGroupId
      */
     public String getResourceGroupId() {
@@ -141,6 +147,8 @@ public class MetricInfoForAlarm  {
     public void setResourceGroupId(String resourceGroupId) {
         this.resourceGroupId = resourceGroupId;
     }
+
+    
 
     public MetricInfoForAlarm withResourceGroupName(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -161,6 +169,9 @@ public class MetricInfoForAlarm  {
     public void setResourceGroupName(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

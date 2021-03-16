@@ -24,7 +24,7 @@ public class ShowUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private ShowUserResult user = null;
+    private ShowUserResult user;
 
     public ShowUserResponse withUser(ShowUserResult user) {
         this.user = user;
@@ -52,6 +52,9 @@ public class ShowUserResponse extends SdkResponse {
     public void setUser(ShowUserResult user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

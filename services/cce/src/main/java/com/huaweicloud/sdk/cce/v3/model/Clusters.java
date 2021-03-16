@@ -22,7 +22,7 @@ public class Clusters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster")
     
-    private ClusterCert cluster = null;
+    private ClusterCert cluster;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class Clusters  {
         this.cluster = cluster;
     }
 
+    
+
     public Clusters withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +78,9 @@ public class Clusters  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

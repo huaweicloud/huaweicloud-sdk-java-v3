@@ -85,6 +85,8 @@ public class QueryCorpBasicResultDTO  {
         this.name = name;
     }
 
+    
+
     public QueryCorpBasicResultDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -104,6 +106,8 @@ public class QueryCorpBasicResultDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public QueryCorpBasicResultDTO withCountry(String country) {
         this.country = country;
@@ -125,6 +129,8 @@ public class QueryCorpBasicResultDTO  {
         this.country = country;
     }
 
+    
+
     public QueryCorpBasicResultDTO withFax(String fax) {
         this.fax = fax;
         return this;
@@ -144,6 +150,8 @@ public class QueryCorpBasicResultDTO  {
     public void setFax(String fax) {
         this.fax = fax;
     }
+
+    
 
     public QueryCorpBasicResultDTO withEmail(String email) {
         this.email = email;
@@ -165,6 +173,8 @@ public class QueryCorpBasicResultDTO  {
         this.email = email;
     }
 
+    
+
     public QueryCorpBasicResultDTO withAddress(String address) {
         this.address = address;
         return this;
@@ -184,6 +194,8 @@ public class QueryCorpBasicResultDTO  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public QueryCorpBasicResultDTO withDescription(String description) {
         this.description = description;
@@ -205,6 +217,8 @@ public class QueryCorpBasicResultDTO  {
         this.description = description;
     }
 
+    
+
     public QueryCorpBasicResultDTO withSpId(String spId) {
         this.spId = spId;
         return this;
@@ -224,6 +238,9 @@ public class QueryCorpBasicResultDTO  {
     public void setSpId(String spId) {
         this.spId = spId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

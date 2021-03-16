@@ -23,13 +23,13 @@ public class MfaAuth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity")
     
-    private MfaIdentity identity = null;
+    private MfaIdentity identity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scope")
     
-    private AuthScope scope = null;
+    private AuthScope scope;
 
     public MfaAuth withIdentity(MfaIdentity identity) {
         this.identity = identity;
@@ -58,6 +58,8 @@ public class MfaAuth  {
         this.identity = identity;
     }
 
+    
+
     public MfaAuth withScope(AuthScope scope) {
         this.scope = scope;
         return this;
@@ -84,6 +86,9 @@ public class MfaAuth  {
     public void setScope(AuthScope scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

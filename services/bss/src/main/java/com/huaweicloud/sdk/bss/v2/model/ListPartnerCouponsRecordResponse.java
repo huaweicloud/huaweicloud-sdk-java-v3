@@ -54,6 +54,8 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListPartnerCouponsRecordResponse withRecords(List<CouponRecordV2> records) {
         this.records = records;
         return this;
@@ -61,9 +63,6 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
 
     
     public ListPartnerCouponsRecordResponse addRecordsItem(CouponRecordV2 recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
     public void setRecords(List<CouponRecordV2> records) {
         this.records = records;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

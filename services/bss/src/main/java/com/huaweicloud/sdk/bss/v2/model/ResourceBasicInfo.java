@@ -61,6 +61,8 @@ public class ResourceBasicInfo  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
+    
+
     public ResourceBasicInfo withProductOwnerService(String productOwnerService) {
         this.productOwnerService = productOwnerService;
         return this;
@@ -80,6 +82,8 @@ public class ResourceBasicInfo  {
     public void setProductOwnerService(String productOwnerService) {
         this.productOwnerService = productOwnerService;
     }
+
+    
 
     public ResourceBasicInfo withName(String name) {
         this.name = name;
@@ -101,6 +105,8 @@ public class ResourceBasicInfo  {
         this.name = name;
     }
 
+    
+
     public ResourceBasicInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -120,6 +126,9 @@ public class ResourceBasicInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListVpcsResponse extends SdkResponse {
 
     
     public ListVpcsResponse addVpcsItem(Vpc vpcsItem) {
-        if (this.vpcs == null) {
-            this.vpcs = new ArrayList<>();
-        }
         this.vpcs.add(vpcsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListVpcsResponse extends SdkResponse {
     public void setVpcs(List<Vpc> vpcs) {
         this.vpcs = vpcs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

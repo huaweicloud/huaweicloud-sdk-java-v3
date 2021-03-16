@@ -49,6 +49,8 @@ public class RestSwitchModeReqBody  {
         this.switchMode = switchMode;
     }
 
+    
+
     public RestSwitchModeReqBody withImageType(Integer imageType) {
         this.imageType = imageType;
         return this;
@@ -68,6 +70,9 @@ public class RestSwitchModeReqBody  {
     public void setImageType(Integer imageType) {
         this.imageType = imageType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

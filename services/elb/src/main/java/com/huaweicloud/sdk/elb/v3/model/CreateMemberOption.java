@@ -57,7 +57,7 @@ public class CreateMemberOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="weight")
     
-    private Integer weight = 1;
+    private Integer weight;
 
     public CreateMemberOption withAddress(String address) {
         this.address = address;
@@ -79,6 +79,8 @@ public class CreateMemberOption  {
         this.address = address;
     }
 
+    
+
     public CreateMemberOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -98,6 +100,8 @@ public class CreateMemberOption  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateMemberOption withName(String name) {
         this.name = name;
@@ -119,6 +123,8 @@ public class CreateMemberOption  {
         this.name = name;
     }
 
+    
+
     public CreateMemberOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -138,6 +144,8 @@ public class CreateMemberOption  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreateMemberOption withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -161,6 +169,8 @@ public class CreateMemberOption  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public CreateMemberOption withSubnetCidrId(String subnetCidrId) {
         this.subnetCidrId = subnetCidrId;
         return this;
@@ -180,6 +190,8 @@ public class CreateMemberOption  {
     public void setSubnetCidrId(String subnetCidrId) {
         this.subnetCidrId = subnetCidrId;
     }
+
+    
 
     public CreateMemberOption withWeight(Integer weight) {
         this.weight = weight;
@@ -202,6 +214,9 @@ public class CreateMemberOption  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

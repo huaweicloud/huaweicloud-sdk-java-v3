@@ -51,6 +51,8 @@ public class FlavorAzObject  {
         this.capacity = capacity;
     }
 
+    
+
     public FlavorAzObject withAzCodes(List<String> azCodes) {
         this.azCodes = azCodes;
         return this;
@@ -58,9 +60,6 @@ public class FlavorAzObject  {
 
     
     public FlavorAzObject addAzCodesItem(String azCodesItem) {
-        if (this.azCodes == null) {
-            this.azCodes = new ArrayList<>();
-        }
         this.azCodes.add(azCodesItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class FlavorAzObject  {
     public void setAzCodes(List<String> azCodes) {
         this.azCodes = azCodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class ResourceDetail  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ResourceDetail withDetailId(String detailId) {
         this.detailId = detailId;
         return this;
@@ -80,6 +82,8 @@ public class ResourceDetail  {
     public void setDetailId(String detailId) {
         this.detailId = detailId;
     }
+
+    
 
     public ResourceDetail withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
@@ -101,6 +105,8 @@ public class ResourceDetail  {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public ResourceDetail withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -120,6 +126,9 @@ public class ResourceDetail  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

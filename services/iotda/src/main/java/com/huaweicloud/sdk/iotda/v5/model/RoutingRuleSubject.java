@@ -49,6 +49,8 @@ public class RoutingRuleSubject  {
         this.resource = resource;
     }
 
+    
+
     public RoutingRuleSubject withEvent(String event) {
         this.event = event;
         return this;
@@ -68,6 +70,9 @@ public class RoutingRuleSubject  {
     public void setEvent(String event) {
         this.event = event;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class RestoreTablesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestoreTablesRequestBody body = null;
+    private RestoreTablesRequestBody body;
 
     public RestoreTablesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class RestoreTablesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public RestoreTablesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class RestoreTablesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public RestoreTablesRequest withBody(RestoreTablesRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class RestoreTablesRequest  {
     public void setBody(RestoreTablesRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

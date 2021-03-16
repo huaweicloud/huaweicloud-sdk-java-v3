@@ -35,7 +35,7 @@ public class ServiceCommandPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="required")
     
-    private Boolean required = false;
+    private Boolean required;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,6 +99,8 @@ public class ServiceCommandPara  {
         this.paraName = paraName;
     }
 
+    
+
     public ServiceCommandPara withDataType(String dataType) {
         this.dataType = dataType;
         return this;
@@ -118,6 +120,8 @@ public class ServiceCommandPara  {
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
+
+    
 
     public ServiceCommandPara withRequired(Boolean required) {
         this.required = required;
@@ -139,6 +143,8 @@ public class ServiceCommandPara  {
         this.required = required;
     }
 
+    
+
     public ServiceCommandPara withEnumList(List<String> enumList) {
         this.enumList = enumList;
         return this;
@@ -146,9 +152,6 @@ public class ServiceCommandPara  {
 
     
     public ServiceCommandPara addEnumListItem(String enumListItem) {
-        if (this.enumList == null) {
-            this.enumList = new ArrayList<>();
-        }
         this.enumList.add(enumListItem);
         return this;
     }
@@ -173,6 +176,8 @@ public class ServiceCommandPara  {
         this.enumList = enumList;
     }
 
+    
+
     public ServiceCommandPara withMin(String min) {
         this.min = min;
         return this;
@@ -192,6 +197,8 @@ public class ServiceCommandPara  {
     public void setMin(String min) {
         this.min = min;
     }
+
+    
 
     public ServiceCommandPara withMax(String max) {
         this.max = max;
@@ -213,6 +220,8 @@ public class ServiceCommandPara  {
         this.max = max;
     }
 
+    
+
     public ServiceCommandPara withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
         return this;
@@ -232,6 +241,8 @@ public class ServiceCommandPara  {
     public void setMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
     }
+
+    
 
     public ServiceCommandPara withStep(Double step) {
         this.step = step;
@@ -253,6 +264,8 @@ public class ServiceCommandPara  {
         this.step = step;
     }
 
+    
+
     public ServiceCommandPara withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -273,6 +286,8 @@ public class ServiceCommandPara  {
         this.unit = unit;
     }
 
+    
+
     public ServiceCommandPara withDescription(String description) {
         this.description = description;
         return this;
@@ -292,6 +307,9 @@ public class ServiceCommandPara  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

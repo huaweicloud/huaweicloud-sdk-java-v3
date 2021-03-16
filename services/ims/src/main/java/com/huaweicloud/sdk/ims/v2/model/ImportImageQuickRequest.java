@@ -22,7 +22,7 @@ public class ImportImageQuickRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QuickImportImageByFileRequestBody body = null;
+    private QuickImportImageByFileRequestBody body;
 
     public ImportImageQuickRequest withBody(QuickImportImageByFileRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ImportImageQuickRequest  {
     public void setBody(QuickImportImageByFileRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

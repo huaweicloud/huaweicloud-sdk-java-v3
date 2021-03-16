@@ -149,6 +149,8 @@ public class UpdateNatGatewayOption  {
         this.name = name;
     }
 
+    
+
     public UpdateNatGatewayOption withDescription(String description) {
         this.description = description;
         return this;
@@ -169,6 +171,8 @@ public class UpdateNatGatewayOption  {
         this.description = description;
     }
 
+    
+
     public UpdateNatGatewayOption withSpec(SpecEnum spec) {
         this.spec = spec;
         return this;
@@ -188,6 +192,9 @@ public class UpdateNatGatewayOption  {
     public void setSpec(SpecEnum spec) {
         this.spec = spec;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

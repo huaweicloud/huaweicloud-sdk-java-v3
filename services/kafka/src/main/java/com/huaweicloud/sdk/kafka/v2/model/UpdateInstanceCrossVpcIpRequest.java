@@ -28,7 +28,7 @@ public class UpdateInstanceCrossVpcIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateInstanceCrossVpcIpReq body = null;
+    private UpdateInstanceCrossVpcIpReq body;
 
     public UpdateInstanceCrossVpcIpRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateInstanceCrossVpcIpRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateInstanceCrossVpcIpRequest withBody(UpdateInstanceCrossVpcIpReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateInstanceCrossVpcIpRequest  {
     public void setBody(UpdateInstanceCrossVpcIpReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

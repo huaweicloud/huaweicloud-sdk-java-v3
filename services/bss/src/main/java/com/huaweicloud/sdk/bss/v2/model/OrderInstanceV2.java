@@ -127,6 +127,8 @@ public class OrderInstanceV2  {
         this.id = id;
     }
 
+    
+
     public OrderInstanceV2 withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -146,6 +148,8 @@ public class OrderInstanceV2  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public OrderInstanceV2 withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -167,6 +171,8 @@ public class OrderInstanceV2  {
         this.resourceName = resourceName;
     }
 
+    
+
     public OrderInstanceV2 withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
@@ -186,6 +192,8 @@ public class OrderInstanceV2  {
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
+
+    
 
     public OrderInstanceV2 withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
@@ -207,6 +215,8 @@ public class OrderInstanceV2  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    
+
     public OrderInstanceV2 withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
@@ -226,6 +236,8 @@ public class OrderInstanceV2  {
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
     }
+
+    
 
     public OrderInstanceV2 withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
@@ -247,6 +259,8 @@ public class OrderInstanceV2  {
         this.resourceSpecCode = resourceSpecCode;
     }
 
+    
+
     public OrderInstanceV2 withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -266,6 +280,8 @@ public class OrderInstanceV2  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public OrderInstanceV2 withProductId(String productId) {
         this.productId = productId;
@@ -287,6 +303,8 @@ public class OrderInstanceV2  {
         this.productId = productId;
     }
 
+    
+
     public OrderInstanceV2 withParentResourceId(String parentResourceId) {
         this.parentResourceId = parentResourceId;
         return this;
@@ -306,6 +324,8 @@ public class OrderInstanceV2  {
     public void setParentResourceId(String parentResourceId) {
         this.parentResourceId = parentResourceId;
     }
+
+    
 
     public OrderInstanceV2 withIsMainResource(Integer isMainResource) {
         this.isMainResource = isMainResource;
@@ -327,6 +347,8 @@ public class OrderInstanceV2  {
         this.isMainResource = isMainResource;
     }
 
+    
+
     public OrderInstanceV2 withStatus(Integer status) {
         this.status = status;
         return this;
@@ -346,6 +368,8 @@ public class OrderInstanceV2  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public OrderInstanceV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
@@ -367,6 +391,8 @@ public class OrderInstanceV2  {
         this.effectiveTime = effectiveTime;
     }
 
+    
+
     public OrderInstanceV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -387,6 +413,8 @@ public class OrderInstanceV2  {
         this.expireTime = expireTime;
     }
 
+    
+
     public OrderInstanceV2 withExpirePolicy(Integer expirePolicy) {
         this.expirePolicy = expirePolicy;
         return this;
@@ -406,6 +434,9 @@ public class OrderInstanceV2  {
     public void setExpirePolicy(Integer expirePolicy) {
         this.expirePolicy = expirePolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

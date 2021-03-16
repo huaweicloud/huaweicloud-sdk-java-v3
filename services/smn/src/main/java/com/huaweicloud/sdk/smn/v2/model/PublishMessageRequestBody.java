@@ -76,6 +76,8 @@ public class PublishMessageRequestBody  {
         this.subject = subject;
     }
 
+    
+
     public PublishMessageRequestBody withMessage(String message) {
         this.message = message;
         return this;
@@ -95,6 +97,8 @@ public class PublishMessageRequestBody  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
 
     public PublishMessageRequestBody withMessageStructure(String messageStructure) {
         this.messageStructure = messageStructure;
@@ -116,6 +120,8 @@ public class PublishMessageRequestBody  {
         this.messageStructure = messageStructure;
     }
 
+    
+
     public PublishMessageRequestBody withMessageTemplateName(String messageTemplateName) {
         this.messageTemplateName = messageTemplateName;
         return this;
@@ -136,6 +142,8 @@ public class PublishMessageRequestBody  {
         this.messageTemplateName = messageTemplateName;
     }
 
+    
+
     public PublishMessageRequestBody withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
@@ -144,9 +152,6 @@ public class PublishMessageRequestBody  {
     
 
     public PublishMessageRequestBody putTagsItem(String key, String tagsItem) {
-         if (this.tags == null) {
-            this.tags = new HashMap<>();
-         }
         this.tags.put(key, tagsItem);
         return this;
     }
@@ -170,6 +175,8 @@ public class PublishMessageRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public PublishMessageRequestBody withTimeToLive(String timeToLive) {
         this.timeToLive = timeToLive;
         return this;
@@ -189,6 +196,9 @@ public class PublishMessageRequestBody  {
     public void setTimeToLive(String timeToLive) {
         this.timeToLive = timeToLive;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

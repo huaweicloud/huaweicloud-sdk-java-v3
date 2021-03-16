@@ -57,6 +57,8 @@ public class ListHooksRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public ListHooksRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -77,6 +79,8 @@ public class ListHooksRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ListHooksRequest withProject(String project) {
         this.project = project;
         return this;
@@ -96,6 +100,9 @@ public class ListHooksRequest  {
     public void setProject(String project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

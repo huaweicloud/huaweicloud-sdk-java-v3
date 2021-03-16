@@ -28,7 +28,7 @@ public class UpdateSinkTaskQuotaRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateSinkTaskQuotaReq body = null;
+    private UpdateSinkTaskQuotaReq body;
 
     public UpdateSinkTaskQuotaRequest withConnectorId(String connectorId) {
         this.connectorId = connectorId;
@@ -49,6 +49,8 @@ public class UpdateSinkTaskQuotaRequest  {
     public void setConnectorId(String connectorId) {
         this.connectorId = connectorId;
     }
+
+    
 
     public UpdateSinkTaskQuotaRequest withBody(UpdateSinkTaskQuotaReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateSinkTaskQuotaRequest  {
     public void setBody(UpdateSinkTaskQuotaReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

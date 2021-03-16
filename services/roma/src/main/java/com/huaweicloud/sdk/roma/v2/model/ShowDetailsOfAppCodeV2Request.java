@@ -55,6 +55,8 @@ public class ShowDetailsOfAppCodeV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfAppCodeV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class ShowDetailsOfAppCodeV2Request  {
         this.appId = appId;
     }
 
+    
+
     public ShowDetailsOfAppCodeV2Request withAppCodeId(String appCodeId) {
         this.appCodeId = appCodeId;
         return this;
@@ -94,6 +98,9 @@ public class ShowDetailsOfAppCodeV2Request  {
     public void setAppCodeId(String appCodeId) {
         this.appCodeId = appCodeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

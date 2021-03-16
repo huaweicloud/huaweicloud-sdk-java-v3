@@ -67,6 +67,8 @@ public class FlavorInfos  {
         this.id = id;
     }
 
+    
+
     public FlavorInfos withName(String name) {
         this.name = name;
         return this;
@@ -86,6 +88,8 @@ public class FlavorInfos  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public FlavorInfos withDisk(String disk) {
         this.disk = disk;
@@ -107,6 +111,8 @@ public class FlavorInfos  {
         this.disk = disk;
     }
 
+    
+
     public FlavorInfos withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
@@ -127,6 +133,8 @@ public class FlavorInfos  {
         this.vcpus = vcpus;
     }
 
+    
+
     public FlavorInfos withRam(String ram) {
         this.ram = ram;
         return this;
@@ -146,6 +154,9 @@ public class FlavorInfos  {
     public void setRam(String ram) {
         this.ram = ram;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

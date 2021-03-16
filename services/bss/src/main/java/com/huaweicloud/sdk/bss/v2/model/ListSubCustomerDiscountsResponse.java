@@ -24,7 +24,7 @@ public class ListSubCustomerDiscountsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_customer_discount")
     
-    private QuerySubCustomerDiscountV2 subCustomerDiscount = null;
+    private QuerySubCustomerDiscountV2 subCustomerDiscount;
 
     public ListSubCustomerDiscountsResponse withSubCustomerDiscount(QuerySubCustomerDiscountV2 subCustomerDiscount) {
         this.subCustomerDiscount = subCustomerDiscount;
@@ -52,6 +52,9 @@ public class ListSubCustomerDiscountsResponse extends SdkResponse {
     public void setSubCustomerDiscount(QuerySubCustomerDiscountV2 subCustomerDiscount) {
         this.subCustomerDiscount = subCustomerDiscount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

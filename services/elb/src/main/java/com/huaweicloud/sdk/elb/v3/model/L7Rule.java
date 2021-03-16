@@ -91,6 +91,8 @@ public class L7Rule  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public L7Rule withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
@@ -110,6 +112,8 @@ public class L7Rule  {
     public void setCompareType(String compareType) {
         this.compareType = compareType;
     }
+
+    
 
     public L7Rule withKey(String key) {
         this.key = key;
@@ -131,6 +135,8 @@ public class L7Rule  {
         this.key = key;
     }
 
+    
+
     public L7Rule withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -150,6 +156,8 @@ public class L7Rule  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public L7Rule withType(String type) {
         this.type = type;
@@ -171,6 +179,8 @@ public class L7Rule  {
         this.type = type;
     }
 
+    
+
     public L7Rule withValue(String value) {
         this.value = value;
         return this;
@@ -190,6 +200,8 @@ public class L7Rule  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
 
     public L7Rule withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
@@ -211,6 +223,8 @@ public class L7Rule  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public L7Rule withInvert(Boolean invert) {
         this.invert = invert;
         return this;
@@ -231,6 +245,8 @@ public class L7Rule  {
         this.invert = invert;
     }
 
+    
+
     public L7Rule withId(String id) {
         this.id = id;
         return this;
@@ -250,6 +266,9 @@ public class L7Rule  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

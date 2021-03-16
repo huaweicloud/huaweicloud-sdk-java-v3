@@ -42,6 +42,9 @@ public class UpdateEventRequestBody  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

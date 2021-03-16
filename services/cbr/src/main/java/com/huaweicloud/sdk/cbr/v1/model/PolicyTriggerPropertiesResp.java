@@ -23,7 +23,7 @@ public class PolicyTriggerPropertiesResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pattern")
     
-    private List<String> pattern = new ArrayList<>();
+    private List<String> pattern = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class PolicyTriggerPropertiesResp  {
         this.pattern = pattern;
     }
 
+    
+
     public PolicyTriggerPropertiesResp withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -81,6 +83,9 @@ public class PolicyTriggerPropertiesResp  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

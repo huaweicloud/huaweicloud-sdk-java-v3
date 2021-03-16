@@ -170,6 +170,8 @@ public class InstanceReplicationListInfo  {
         this.replicationRole = replicationRole;
     }
 
+    
+
     public InstanceReplicationListInfo withReplicationIp(String replicationIp) {
         this.replicationIp = replicationIp;
         return this;
@@ -189,6 +191,8 @@ public class InstanceReplicationListInfo  {
     public void setReplicationIp(String replicationIp) {
         this.replicationIp = replicationIp;
     }
+
+    
 
     public InstanceReplicationListInfo withIsReplication(Boolean isReplication) {
         this.isReplication = isReplication;
@@ -210,6 +214,8 @@ public class InstanceReplicationListInfo  {
         this.isReplication = isReplication;
     }
 
+    
+
     public InstanceReplicationListInfo withReplicationId(String replicationId) {
         this.replicationId = replicationId;
         return this;
@@ -229,6 +235,8 @@ public class InstanceReplicationListInfo  {
     public void setReplicationId(String replicationId) {
         this.replicationId = replicationId;
     }
+
+    
 
     public InstanceReplicationListInfo withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -250,6 +258,8 @@ public class InstanceReplicationListInfo  {
         this.nodeId = nodeId;
     }
 
+    
+
     public InstanceReplicationListInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -269,6 +279,8 @@ public class InstanceReplicationListInfo  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public InstanceReplicationListInfo withAzCode(String azCode) {
         this.azCode = azCode;
@@ -290,6 +302,8 @@ public class InstanceReplicationListInfo  {
         this.azCode = azCode;
     }
 
+    
+
     public InstanceReplicationListInfo withDimensions(List<InstanceReplicationDimensionsInfo> dimensions) {
         this.dimensions = dimensions;
         return this;
@@ -297,9 +311,6 @@ public class InstanceReplicationListInfo  {
 
     
     public InstanceReplicationListInfo addDimensionsItem(InstanceReplicationDimensionsInfo dimensionsItem) {
-        if (this.dimensions == null) {
-            this.dimensions = new ArrayList<>();
-        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
@@ -323,6 +334,9 @@ public class InstanceReplicationListInfo  {
     public void setDimensions(List<InstanceReplicationDimensionsInfo> dimensions) {
         this.dimensions = dimensions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

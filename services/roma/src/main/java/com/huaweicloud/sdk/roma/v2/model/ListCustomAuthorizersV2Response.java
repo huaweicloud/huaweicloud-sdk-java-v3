@@ -61,6 +61,8 @@ public class ListCustomAuthorizersV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListCustomAuthorizersV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListCustomAuthorizersV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListCustomAuthorizersV2Response withAuthorizerList(List<AuthorizerResp> authorizerList) {
         this.authorizerList = authorizerList;
         return this;
@@ -88,9 +92,6 @@ public class ListCustomAuthorizersV2Response extends SdkResponse {
 
     
     public ListCustomAuthorizersV2Response addAuthorizerListItem(AuthorizerResp authorizerListItem) {
-        if (this.authorizerList == null) {
-            this.authorizerList = new ArrayList<>();
-        }
         this.authorizerList.add(authorizerListItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListCustomAuthorizersV2Response extends SdkResponse {
     public void setAuthorizerList(List<AuthorizerResp> authorizerList) {
         this.authorizerList = authorizerList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

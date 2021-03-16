@@ -22,7 +22,7 @@ public class UpdateDomainProtectPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protect_policy")
     
-    private ProtectPolicyOption protectPolicy = null;
+    private ProtectPolicyOption protectPolicy;
 
     public UpdateDomainProtectPolicyRequestBody withProtectPolicy(ProtectPolicyOption protectPolicy) {
         this.protectPolicy = protectPolicy;
@@ -50,6 +50,9 @@ public class UpdateDomainProtectPolicyRequestBody  {
     public void setProtectPolicy(ProtectPolicyOption protectPolicy) {
         this.protectPolicy = protectPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

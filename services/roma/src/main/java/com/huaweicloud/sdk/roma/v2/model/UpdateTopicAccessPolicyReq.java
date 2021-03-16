@@ -24,7 +24,7 @@ public class UpdateTopicAccessPolicyReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topics")
     
-    private List<UpdateTopicAccessPolicyTopicsObject> topics = new ArrayList<>();
+    private List<UpdateTopicAccessPolicyTopicsObject> topics = null;
     
     public UpdateTopicAccessPolicyReq withTopics(List<UpdateTopicAccessPolicyTopicsObject> topics) {
         this.topics = topics;
@@ -56,6 +56,9 @@ public class UpdateTopicAccessPolicyReq  {
     public void setTopics(List<UpdateTopicAccessPolicyTopicsObject> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

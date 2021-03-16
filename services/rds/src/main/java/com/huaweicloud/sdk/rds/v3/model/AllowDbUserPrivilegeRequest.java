@@ -34,7 +34,7 @@ public class AllowDbUserPrivilegeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GrantRequest body = null;
+    private GrantRequest body;
 
     public AllowDbUserPrivilegeRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class AllowDbUserPrivilegeRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public AllowDbUserPrivilegeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class AllowDbUserPrivilegeRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AllowDbUserPrivilegeRequest withBody(GrantRequest body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class AllowDbUserPrivilegeRequest  {
     public void setBody(GrantRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

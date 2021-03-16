@@ -35,9 +35,6 @@ public class NovaListServerSecurityGroupsResponse extends SdkResponse {
 
     
     public NovaListServerSecurityGroupsResponse addSecurityGroupsItem(NovaSecurityGroup securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class NovaListServerSecurityGroupsResponse extends SdkResponse {
     public void setSecurityGroups(List<NovaSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

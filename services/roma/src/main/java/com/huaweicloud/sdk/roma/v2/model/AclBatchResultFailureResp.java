@@ -61,6 +61,8 @@ public class AclBatchResultFailureResp  {
         this.aclId = aclId;
     }
 
+    
+
     public AclBatchResultFailureResp withAclName(String aclName) {
         this.aclName = aclName;
         return this;
@@ -80,6 +82,8 @@ public class AclBatchResultFailureResp  {
     public void setAclName(String aclName) {
         this.aclName = aclName;
     }
+
+    
 
     public AclBatchResultFailureResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -101,6 +105,8 @@ public class AclBatchResultFailureResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public AclBatchResultFailureResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -120,6 +126,9 @@ public class AclBatchResultFailureResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class PwdPasswordUser  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private PwdPasswordUserDomain domain = null;
+    private PwdPasswordUserDomain domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class PwdPasswordUser  {
         this.domain = domain;
     }
 
+    
+
     public PwdPasswordUser withName(String name) {
         this.name = name;
         return this;
@@ -83,6 +85,8 @@ public class PwdPasswordUser  {
         this.name = name;
     }
 
+    
+
     public PwdPasswordUser withPassword(String password) {
         this.password = password;
         return this;
@@ -102,6 +106,9 @@ public class PwdPasswordUser  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

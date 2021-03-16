@@ -30,7 +30,7 @@ public class CreateScoreV2Req  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="incident_satisfaction_list")
     
-    private List<IncidentSatisfactionV2Do> incidentSatisfactionList = new ArrayList<>();
+    private List<IncidentSatisfactionV2Do> incidentSatisfactionList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class CreateScoreV2Req  {
     public void setJudgement(String judgement) {
         this.judgement = judgement;
     }
+
+    
 
     public CreateScoreV2Req withIncidentSatisfactionList(List<IncidentSatisfactionV2Do> incidentSatisfactionList) {
         this.incidentSatisfactionList = incidentSatisfactionList;
@@ -89,6 +91,8 @@ public class CreateScoreV2Req  {
         this.incidentSatisfactionList = incidentSatisfactionList;
     }
 
+    
+
     public CreateScoreV2Req withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -108,6 +112,9 @@ public class CreateScoreV2Req  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

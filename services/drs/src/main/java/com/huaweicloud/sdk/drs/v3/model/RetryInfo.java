@@ -49,6 +49,8 @@ public class RetryInfo  {
         this.jobId = jobId;
     }
 
+    
+
     public RetryInfo withIsSyncReEdit(Boolean isSyncReEdit) {
         this.isSyncReEdit = isSyncReEdit;
         return this;
@@ -68,6 +70,9 @@ public class RetryInfo  {
     public void setIsSyncReEdit(Boolean isSyncReEdit) {
         this.isSyncReEdit = isSyncReEdit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

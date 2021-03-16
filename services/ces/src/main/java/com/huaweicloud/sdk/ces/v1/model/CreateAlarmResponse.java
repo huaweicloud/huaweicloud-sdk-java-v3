@@ -44,6 +44,9 @@ public class CreateAlarmResponse extends SdkResponse {
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

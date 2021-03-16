@@ -67,6 +67,8 @@ public class ShowJobExercisesRequest  {
         this.jobId = jobId;
     }
 
+    
+
     public ShowJobExercisesRequest withSourceFrom(String sourceFrom) {
         this.sourceFrom = sourceFrom;
         return this;
@@ -87,6 +89,8 @@ public class ShowJobExercisesRequest  {
         this.sourceFrom = sourceFrom;
     }
 
+    
+
     public ShowJobExercisesRequest withSourceId(String sourceId) {
         this.sourceId = sourceId;
         return this;
@@ -106,6 +110,8 @@ public class ShowJobExercisesRequest  {
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
+
+    
 
     public ShowJobExercisesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -129,6 +135,8 @@ public class ShowJobExercisesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowJobExercisesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -150,6 +158,9 @@ public class ShowJobExercisesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

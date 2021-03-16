@@ -27,7 +27,7 @@ public class ListSecurityGroupRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class ListSecurityGroupRulesRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -75,6 +77,8 @@ public class ListSecurityGroupRulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -94,6 +98,9 @@ public class ListSecurityGroupRulesRequest  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

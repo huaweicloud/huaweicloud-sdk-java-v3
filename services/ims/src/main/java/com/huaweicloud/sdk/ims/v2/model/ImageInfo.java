@@ -1013,7 +1013,7 @@ public class ImageInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1589,6 +1589,8 @@ public class ImageInfo  {
         this.backupId = backupId;
     }
 
+    
+
     public ImageInfo withDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
         return this;
@@ -1610,6 +1612,8 @@ public class ImageInfo  {
     public void setDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
     }
+
+    
 
     public ImageInfo withDescription(String description) {
         this.description = description;
@@ -1633,6 +1637,8 @@ public class ImageInfo  {
         this.description = description;
     }
 
+    
+
     public ImageInfo withImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
         return this;
@@ -1654,6 +1660,8 @@ public class ImageInfo  {
     public void setImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
     }
+
+    
 
     public ImageInfo withImageSize(String imageSize) {
         this.imageSize = imageSize;
@@ -1677,6 +1685,8 @@ public class ImageInfo  {
         this.imageSize = imageSize;
     }
 
+    
+
     public ImageInfo withImageSourceType(ImageSourceTypeEnum imageSourceType) {
         this.imageSourceType = imageSourceType;
         return this;
@@ -1698,6 +1708,8 @@ public class ImageInfo  {
     public void setImageSourceType(ImageSourceTypeEnum imageSourceType) {
         this.imageSourceType = imageSourceType;
     }
+
+    
 
     public ImageInfo withImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
@@ -1721,6 +1733,8 @@ public class ImageInfo  {
         this.imagetype = imagetype;
     }
 
+    
+
     public ImageInfo withIsConfigInit(IsConfigInitEnum isConfigInit) {
         this.isConfigInit = isConfigInit;
         return this;
@@ -1742,6 +1756,8 @@ public class ImageInfo  {
     public void setIsConfigInit(IsConfigInitEnum isConfigInit) {
         this.isConfigInit = isConfigInit;
     }
+
+    
 
     public ImageInfo withIsregistered(IsregisteredEnum isregistered) {
         this.isregistered = isregistered;
@@ -1765,6 +1781,8 @@ public class ImageInfo  {
         this.isregistered = isregistered;
     }
 
+    
+
     public ImageInfo withOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
         return this;
@@ -1786,6 +1804,8 @@ public class ImageInfo  {
     public void setOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
     }
+
+    
 
     public ImageInfo withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
@@ -1809,6 +1829,8 @@ public class ImageInfo  {
         this.osBit = osBit;
     }
 
+    
+
     public ImageInfo withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -1830,6 +1852,8 @@ public class ImageInfo  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public ImageInfo withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -1853,6 +1877,8 @@ public class ImageInfo  {
         this.osVersion = osVersion;
     }
 
+    
+
     public ImageInfo withPlatform(PlatformEnum platform) {
         this.platform = platform;
         return this;
@@ -1874,6 +1900,8 @@ public class ImageInfo  {
     public void setPlatform(PlatformEnum platform) {
         this.platform = platform;
     }
+
+    
 
     public ImageInfo withProductcode(String productcode) {
         this.productcode = productcode;
@@ -1897,6 +1925,8 @@ public class ImageInfo  {
         this.productcode = productcode;
     }
 
+    
+
     public ImageInfo withSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
         return this;
@@ -1918,6 +1948,8 @@ public class ImageInfo  {
     public void setSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
     }
+
+    
 
     public ImageInfo withSupportHighperformance(String supportHighperformance) {
         this.supportHighperformance = supportHighperformance;
@@ -1941,6 +1973,8 @@ public class ImageInfo  {
         this.supportHighperformance = supportHighperformance;
     }
 
+    
+
     public ImageInfo withSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
         return this;
@@ -1962,6 +1996,8 @@ public class ImageInfo  {
     public void setSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
     }
+
+    
 
     public ImageInfo withSupportKvmGpuType(String supportKvmGpuType) {
         this.supportKvmGpuType = supportKvmGpuType;
@@ -1985,6 +2021,8 @@ public class ImageInfo  {
         this.supportKvmGpuType = supportKvmGpuType;
     }
 
+    
+
     public ImageInfo withSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
         return this;
@@ -2006,6 +2044,8 @@ public class ImageInfo  {
     public void setSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
     }
+
+    
 
     public ImageInfo withSupportLargememory(String supportLargememory) {
         this.supportLargememory = supportLargememory;
@@ -2029,6 +2069,8 @@ public class ImageInfo  {
         this.supportLargememory = supportLargememory;
     }
 
+    
+
     public ImageInfo withSupportXen(String supportXen) {
         this.supportXen = supportXen;
         return this;
@@ -2050,6 +2092,8 @@ public class ImageInfo  {
     public void setSupportXen(String supportXen) {
         this.supportXen = supportXen;
     }
+
+    
 
     public ImageInfo withSupportXenGpuType(String supportXenGpuType) {
         this.supportXenGpuType = supportXenGpuType;
@@ -2073,6 +2117,8 @@ public class ImageInfo  {
         this.supportXenGpuType = supportXenGpuType;
     }
 
+    
+
     public ImageInfo withSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
         return this;
@@ -2094,6 +2140,8 @@ public class ImageInfo  {
     public void setSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
     }
+
+    
 
     public ImageInfo withSystemSupportMarket(Boolean systemSupportMarket) {
         this.systemSupportMarket = systemSupportMarket;
@@ -2117,6 +2165,8 @@ public class ImageInfo  {
         this.systemSupportMarket = systemSupportMarket;
     }
 
+    
+
     public ImageInfo withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
@@ -2136,6 +2186,8 @@ public class ImageInfo  {
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
+
+    
 
     public ImageInfo withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
@@ -2157,6 +2209,8 @@ public class ImageInfo  {
         this.containerFormat = containerFormat;
     }
 
+    
+
     public ImageInfo withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -2176,6 +2230,8 @@ public class ImageInfo  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public ImageInfo withDiskFormat(String diskFormat) {
         this.diskFormat = diskFormat;
@@ -2197,6 +2253,8 @@ public class ImageInfo  {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public ImageInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -2216,6 +2274,8 @@ public class ImageInfo  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ImageInfo withFile(String file) {
         this.file = file;
@@ -2237,6 +2297,8 @@ public class ImageInfo  {
         this.file = file;
     }
 
+    
+
     public ImageInfo withId(String id) {
         this.id = id;
         return this;
@@ -2256,6 +2318,8 @@ public class ImageInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ImageInfo withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
@@ -2279,6 +2343,8 @@ public class ImageInfo  {
         this.minDisk = minDisk;
     }
 
+    
+
     public ImageInfo withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
@@ -2298,6 +2364,8 @@ public class ImageInfo  {
     public void setMinRam(Integer minRam) {
         this.minRam = minRam;
     }
+
+    
 
     public ImageInfo withName(String name) {
         this.name = name;
@@ -2319,6 +2387,8 @@ public class ImageInfo  {
         this.name = name;
     }
 
+    
+
     public ImageInfo withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -2338,6 +2408,8 @@ public class ImageInfo  {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    
 
     public ImageInfo withProtected(Boolean _protected) {
         this._protected = _protected;
@@ -2359,6 +2431,8 @@ public class ImageInfo  {
         this._protected = _protected;
     }
 
+    
+
     public ImageInfo withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -2378,6 +2452,8 @@ public class ImageInfo  {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    
 
     public ImageInfo withSelf(String self) {
         this.self = self;
@@ -2399,6 +2475,8 @@ public class ImageInfo  {
         this.self = self;
     }
 
+    
+
     public ImageInfo withSize(Integer size) {
         this.size = size;
         return this;
@@ -2419,6 +2497,8 @@ public class ImageInfo  {
         this.size = size;
     }
 
+    
+
     public ImageInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -2438,6 +2518,8 @@ public class ImageInfo  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ImageInfo withTags(List<String> tags) {
         this.tags = tags;
@@ -2470,6 +2552,8 @@ public class ImageInfo  {
         this.tags = tags;
     }
 
+    
+
     public ImageInfo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -2489,6 +2573,8 @@ public class ImageInfo  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public ImageInfo withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
@@ -2510,6 +2596,8 @@ public class ImageInfo  {
         this.virtualEnvType = virtualEnvType;
     }
 
+    
+
     public ImageInfo withVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
         return this;
@@ -2529,6 +2617,8 @@ public class ImageInfo  {
     public void setVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
     }
+
+    
 
     public ImageInfo withVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
@@ -2550,6 +2640,8 @@ public class ImageInfo  {
         this.visibility = visibility;
     }
 
+    
+
     public ImageInfo withArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
         return this;
@@ -2569,6 +2661,8 @@ public class ImageInfo  {
     public void setArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
     }
+
+    
 
     public ImageInfo withSupportFcInject(SupportFcInjectEnum supportFcInject) {
         this.supportFcInject = supportFcInject;
@@ -2592,6 +2686,8 @@ public class ImageInfo  {
         this.supportFcInject = supportFcInject;
     }
 
+    
+
     public ImageInfo withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
         return this;
@@ -2611,6 +2707,8 @@ public class ImageInfo  {
     public void setHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
     }
+
+    
 
     public ImageInfo withSupportArm(SupportArmEnum supportArm) {
         this.supportArm = supportArm;
@@ -2634,6 +2732,8 @@ public class ImageInfo  {
         this.supportArm = supportArm;
     }
 
+    
+
     public ImageInfo withMaxRam(String maxRam) {
         this.maxRam = maxRam;
         return this;
@@ -2653,6 +2753,8 @@ public class ImageInfo  {
     public void setMaxRam(String maxRam) {
         this.maxRam = maxRam;
     }
+
+    
 
     public ImageInfo withSystemCmkid(String systemCmkid) {
         this.systemCmkid = systemCmkid;
@@ -2676,6 +2778,8 @@ public class ImageInfo  {
         this.systemCmkid = systemCmkid;
     }
 
+    
+
     public ImageInfo withOsFeatureList(String osFeatureList) {
         this.osFeatureList = osFeatureList;
         return this;
@@ -2697,6 +2801,8 @@ public class ImageInfo  {
     public void setOsFeatureList(String osFeatureList) {
         this.osFeatureList = osFeatureList;
     }
+
+    
 
     public ImageInfo withAccountCode(String accountCode) {
         this.accountCode = accountCode;
@@ -2720,6 +2826,8 @@ public class ImageInfo  {
         this.accountCode = accountCode;
     }
 
+    
+
     public ImageInfo withHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
         this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
         return this;
@@ -2739,6 +2847,9 @@ public class ImageInfo  {
     public void setHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
         this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

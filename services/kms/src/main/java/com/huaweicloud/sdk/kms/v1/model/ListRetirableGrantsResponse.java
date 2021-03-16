@@ -129,9 +129,6 @@ public class ListRetirableGrantsResponse extends SdkResponse {
 
     
     public ListRetirableGrantsResponse addGrantsItem(Grants grantsItem) {
-        if (this.grants == null) {
-            this.grants = new ArrayList<>();
-        }
         this.grants.add(grantsItem);
         return this;
     }
@@ -156,6 +153,8 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         this.grants = grants;
     }
 
+    
+
     public ListRetirableGrantsResponse withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
@@ -176,6 +175,8 @@ public class ListRetirableGrantsResponse extends SdkResponse {
         this.nextMarker = nextMarker;
     }
 
+    
+
     public ListRetirableGrantsResponse withTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
         return this;
@@ -195,6 +196,9 @@ public class ListRetirableGrantsResponse extends SdkResponse {
     public void setTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

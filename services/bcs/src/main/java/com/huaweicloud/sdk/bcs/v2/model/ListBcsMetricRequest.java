@@ -28,7 +28,7 @@ public class ListBcsMetricRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListBcsMetricRequestBody body = null;
+    private ListBcsMetricRequestBody body;
 
     public ListBcsMetricRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
@@ -49,6 +49,8 @@ public class ListBcsMetricRequest  {
     public void setBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
     }
+
+    
 
     public ListBcsMetricRequest withBody(ListBcsMetricRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ListBcsMetricRequest  {
     public void setBody(ListBcsMetricRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

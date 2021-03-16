@@ -34,7 +34,7 @@ public class BatchAddDeviceToGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchAddDeviceToGroupRequestBody body = null;
+    private BatchAddDeviceToGroupRequestBody body;
 
     public BatchAddDeviceToGroupRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class BatchAddDeviceToGroupRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BatchAddDeviceToGroupRequest withGroupId(Integer groupId) {
         this.groupId = groupId;
@@ -77,6 +79,8 @@ public class BatchAddDeviceToGroupRequest  {
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public BatchAddDeviceToGroupRequest withBody(BatchAddDeviceToGroupRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class BatchAddDeviceToGroupRequest  {
     public void setBody(BatchAddDeviceToGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

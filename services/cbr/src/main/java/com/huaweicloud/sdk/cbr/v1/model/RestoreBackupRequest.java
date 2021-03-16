@@ -28,7 +28,7 @@ public class RestoreBackupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BackupRestoreReq body = null;
+    private BackupRestoreReq body;
 
     public RestoreBackupRequest withBackupId(String backupId) {
         this.backupId = backupId;
@@ -49,6 +49,8 @@ public class RestoreBackupRequest  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public RestoreBackupRequest withBody(BackupRestoreReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RestoreBackupRequest  {
     public void setBody(BackupRestoreReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -60,6 +60,8 @@ public class ListMessageTemplatesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListMessageTemplatesResponse withMessageTemplateCount(Integer messageTemplateCount) {
         this.messageTemplateCount = messageTemplateCount;
         return this;
@@ -80,6 +82,8 @@ public class ListMessageTemplatesResponse extends SdkResponse {
         this.messageTemplateCount = messageTemplateCount;
     }
 
+    
+
     public ListMessageTemplatesResponse withMessageTemplates(List<MessageTemplate> messageTemplates) {
         this.messageTemplates = messageTemplates;
         return this;
@@ -87,9 +91,6 @@ public class ListMessageTemplatesResponse extends SdkResponse {
 
     
     public ListMessageTemplatesResponse addMessageTemplatesItem(MessageTemplate messageTemplatesItem) {
-        if (this.messageTemplates == null) {
-            this.messageTemplates = new ArrayList<>();
-        }
         this.messageTemplates.add(messageTemplatesItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListMessageTemplatesResponse extends SdkResponse {
     public void setMessageTemplates(List<MessageTemplate> messageTemplates) {
         this.messageTemplates = messageTemplates;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

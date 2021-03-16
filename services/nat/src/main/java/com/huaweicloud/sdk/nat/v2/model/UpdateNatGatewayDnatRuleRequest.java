@@ -28,7 +28,7 @@ public class UpdateNatGatewayDnatRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateNatGatewayDnatRuleRequestBody body = null;
+    private UpdateNatGatewayDnatRuleRequestBody body;
 
     public UpdateNatGatewayDnatRuleRequest withDnatRuleId(String dnatRuleId) {
         this.dnatRuleId = dnatRuleId;
@@ -49,6 +49,8 @@ public class UpdateNatGatewayDnatRuleRequest  {
     public void setDnatRuleId(String dnatRuleId) {
         this.dnatRuleId = dnatRuleId;
     }
+
+    
 
     public UpdateNatGatewayDnatRuleRequest withBody(UpdateNatGatewayDnatRuleRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateNatGatewayDnatRuleRequest  {
     public void setBody(UpdateNatGatewayDnatRuleRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

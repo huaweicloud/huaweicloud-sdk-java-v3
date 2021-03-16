@@ -55,6 +55,8 @@ public class PrePaidServerDataVolumeExtendParam  {
         this.resourceSpecCode = resourceSpecCode;
     }
 
+    
+
     public PrePaidServerDataVolumeExtendParam withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -75,6 +77,8 @@ public class PrePaidServerDataVolumeExtendParam  {
         this.resourceType = resourceType;
     }
 
+    
+
     public PrePaidServerDataVolumeExtendParam withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
@@ -94,6 +98,9 @@ public class PrePaidServerDataVolumeExtendParam  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

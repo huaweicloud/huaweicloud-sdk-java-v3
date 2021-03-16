@@ -35,13 +35,13 @@ public class ContentCompareDiff  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_key_value")
     
-    private List<String> sourceKeyValue = new ArrayList<>();
+    private List<String> sourceKeyValue = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_key_value")
     
-    private List<String> targetKeyValue = new ArrayList<>();
+    private List<String> targetKeyValue = null;
     
     public ContentCompareDiff withTargetSelectSql(String targetSelectSql) {
         this.targetSelectSql = targetSelectSql;
@@ -63,6 +63,8 @@ public class ContentCompareDiff  {
         this.targetSelectSql = targetSelectSql;
     }
 
+    
+
     public ContentCompareDiff withSourceSelectSql(String sourceSelectSql) {
         this.sourceSelectSql = sourceSelectSql;
         return this;
@@ -82,6 +84,8 @@ public class ContentCompareDiff  {
     public void setSourceSelectSql(String sourceSelectSql) {
         this.sourceSelectSql = sourceSelectSql;
     }
+
+    
 
     public ContentCompareDiff withSourceKeyValue(List<String> sourceKeyValue) {
         this.sourceKeyValue = sourceKeyValue;
@@ -114,6 +118,8 @@ public class ContentCompareDiff  {
         this.sourceKeyValue = sourceKeyValue;
     }
 
+    
+
     public ContentCompareDiff withTargetKeyValue(List<String> targetKeyValue) {
         this.targetKeyValue = targetKeyValue;
         return this;
@@ -144,6 +150,9 @@ public class ContentCompareDiff  {
     public void setTargetKeyValue(List<String> targetKeyValue) {
         this.targetKeyValue = targetKeyValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

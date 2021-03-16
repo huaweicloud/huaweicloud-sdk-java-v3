@@ -22,7 +22,7 @@ public class AssociateRouterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="router")
     
-    private Router router = null;
+    private Router router;
 
     public AssociateRouterReq withRouter(Router router) {
         this.router = router;
@@ -50,6 +50,9 @@ public class AssociateRouterReq  {
     public void setRouter(Router router) {
         this.router = router;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

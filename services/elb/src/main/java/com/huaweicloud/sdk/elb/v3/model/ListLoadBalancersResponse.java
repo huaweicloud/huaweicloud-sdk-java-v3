@@ -33,7 +33,7 @@ public class ListLoadBalancersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +48,6 @@ public class ListLoadBalancersResponse extends SdkResponse {
 
     
     public ListLoadBalancersResponse addLoadbalancersItem(LoadBalancer loadbalancersItem) {
-        if (this.loadbalancers == null) {
-            this.loadbalancers = new ArrayList<>();
-        }
         this.loadbalancers.add(loadbalancersItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListLoadBalancersResponse extends SdkResponse {
     public void setLoadbalancers(List<LoadBalancer> loadbalancers) {
         this.loadbalancers = loadbalancers;
     }
+
+    
 
     public ListLoadBalancersResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -102,6 +101,8 @@ public class ListLoadBalancersResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    
+
     public ListLoadBalancersResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -121,6 +122,9 @@ public class ListLoadBalancersResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

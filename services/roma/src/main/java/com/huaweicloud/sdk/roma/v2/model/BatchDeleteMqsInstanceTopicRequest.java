@@ -28,7 +28,7 @@ public class BatchDeleteMqsInstanceTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteMqsInstanceTopicReq body = null;
+    private BatchDeleteMqsInstanceTopicReq body;
 
     public BatchDeleteMqsInstanceTopicRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class BatchDeleteMqsInstanceTopicRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BatchDeleteMqsInstanceTopicRequest withBody(BatchDeleteMqsInstanceTopicReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchDeleteMqsInstanceTopicRequest  {
     public void setBody(BatchDeleteMqsInstanceTopicReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

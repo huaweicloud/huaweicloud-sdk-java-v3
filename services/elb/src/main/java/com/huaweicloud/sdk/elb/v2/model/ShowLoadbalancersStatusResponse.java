@@ -24,7 +24,7 @@ public class ShowLoadbalancersStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statuses")
     
-    private StatusResp statuses = null;
+    private StatusResp statuses;
 
     public ShowLoadbalancersStatusResponse withStatuses(StatusResp statuses) {
         this.statuses = statuses;
@@ -52,6 +52,9 @@ public class ShowLoadbalancersStatusResponse extends SdkResponse {
     public void setStatuses(StatusResp statuses) {
         this.statuses = statuses;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

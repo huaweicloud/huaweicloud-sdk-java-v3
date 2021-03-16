@@ -22,7 +22,7 @@ public class CreateMergeChannelsTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateMergeChannelsReq body = null;
+    private CreateMergeChannelsReq body;
 
     public CreateMergeChannelsTaskRequest withBody(CreateMergeChannelsReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateMergeChannelsTaskRequest  {
     public void setBody(CreateMergeChannelsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

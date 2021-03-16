@@ -22,7 +22,7 @@ public class CreateFunctionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateFunctionRequestBody body = null;
+    private CreateFunctionRequestBody body;
 
     public CreateFunctionRequest withBody(CreateFunctionRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateFunctionRequest  {
     public void setBody(CreateFunctionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

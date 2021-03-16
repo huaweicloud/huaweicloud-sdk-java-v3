@@ -56,6 +56,8 @@ public class ListCaseTemplatesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCaseTemplatesResponse withIncidentTemplateList(List<IncidentTempV2> incidentTemplateList) {
         this.incidentTemplateList = incidentTemplateList;
         return this;
@@ -63,9 +65,6 @@ public class ListCaseTemplatesResponse extends SdkResponse {
 
     
     public ListCaseTemplatesResponse addIncidentTemplateListItem(IncidentTempV2 incidentTemplateListItem) {
-        if (this.incidentTemplateList == null) {
-            this.incidentTemplateList = new ArrayList<>();
-        }
         this.incidentTemplateList.add(incidentTemplateListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListCaseTemplatesResponse extends SdkResponse {
     public void setIncidentTemplateList(List<IncidentTempV2> incidentTemplateList) {
         this.incidentTemplateList = incidentTemplateList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

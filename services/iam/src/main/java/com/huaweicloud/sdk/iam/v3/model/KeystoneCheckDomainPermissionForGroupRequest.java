@@ -55,6 +55,8 @@ public class KeystoneCheckDomainPermissionForGroupRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneCheckDomainPermissionForGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -75,6 +77,8 @@ public class KeystoneCheckDomainPermissionForGroupRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public KeystoneCheckDomainPermissionForGroupRequest withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -94,6 +98,9 @@ public class KeystoneCheckDomainPermissionForGroupRequest  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

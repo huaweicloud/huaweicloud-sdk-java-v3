@@ -64,9 +64,6 @@ public class ShowClusterMetadata  {
     
 
     public ShowClusterMetadata putAnnotationsItem(String key, String annotationsItem) {
-         if (this.annotations == null) {
-            this.annotations = new HashMap<>();
-         }
         this.annotations.put(key, annotationsItem);
         return this;
     }
@@ -90,6 +87,8 @@ public class ShowClusterMetadata  {
         this.annotations = annotations;
     }
 
+    
+
     public ShowClusterMetadata withCreationTimestamp(String creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
         return this;
@@ -109,6 +108,8 @@ public class ShowClusterMetadata  {
     public void setCreationTimestamp(String creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
     }
+
+    
 
     public ShowClusterMetadata withLabels(String labels) {
         this.labels = labels;
@@ -130,6 +131,8 @@ public class ShowClusterMetadata  {
         this.labels = labels;
     }
 
+    
+
     public ShowClusterMetadata withName(String name) {
         this.name = name;
         return this;
@@ -149,6 +152,8 @@ public class ShowClusterMetadata  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowClusterMetadata withUid(String uid) {
         this.uid = uid;
@@ -170,6 +175,8 @@ public class ShowClusterMetadata  {
         this.uid = uid;
     }
 
+    
+
     public ShowClusterMetadata withUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
         return this;
@@ -189,6 +196,9 @@ public class ShowClusterMetadata  {
     public void setUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

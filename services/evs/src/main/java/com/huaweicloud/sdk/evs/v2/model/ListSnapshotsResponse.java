@@ -61,6 +61,8 @@ public class ListSnapshotsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListSnapshotsResponse withSnapshots(List<SnapshotList> snapshots) {
         this.snapshots = snapshots;
         return this;
@@ -68,9 +70,6 @@ public class ListSnapshotsResponse extends SdkResponse {
 
     
     public ListSnapshotsResponse addSnapshotsItem(SnapshotList snapshotsItem) {
-        if (this.snapshots == null) {
-            this.snapshots = new ArrayList<>();
-        }
         this.snapshots.add(snapshotsItem);
         return this;
     }
@@ -95,6 +94,8 @@ public class ListSnapshotsResponse extends SdkResponse {
         this.snapshots = snapshots;
     }
 
+    
+
     public ListSnapshotsResponse withSnapshotsLinks(List<Link> snapshotsLinks) {
         this.snapshotsLinks = snapshotsLinks;
         return this;
@@ -102,9 +103,6 @@ public class ListSnapshotsResponse extends SdkResponse {
 
     
     public ListSnapshotsResponse addSnapshotsLinksItem(Link snapshotsLinksItem) {
-        if (this.snapshotsLinks == null) {
-            this.snapshotsLinks = new ArrayList<>();
-        }
         this.snapshotsLinks.add(snapshotsLinksItem);
         return this;
     }
@@ -128,6 +126,9 @@ public class ListSnapshotsResponse extends SdkResponse {
     public void setSnapshotsLinks(List<Link> snapshotsLinks) {
         this.snapshotsLinks = snapshotsLinks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

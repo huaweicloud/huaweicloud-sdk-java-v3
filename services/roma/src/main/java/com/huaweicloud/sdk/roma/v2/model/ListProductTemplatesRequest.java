@@ -31,7 +31,7 @@ public class ListProductTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -151,7 +151,7 @@ public class ListProductTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListProductTemplatesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -172,6 +172,8 @@ public class ListProductTemplatesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListProductTemplatesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -195,6 +197,8 @@ public class ListProductTemplatesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListProductTemplatesRequest withId(Integer id) {
         this.id = id;
         return this;
@@ -217,6 +221,8 @@ public class ListProductTemplatesRequest  {
         this.id = id;
     }
 
+    
+
     public ListProductTemplatesRequest withName(String name) {
         this.name = name;
         return this;
@@ -236,6 +242,8 @@ public class ListProductTemplatesRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListProductTemplatesRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -259,6 +267,8 @@ public class ListProductTemplatesRequest  {
         this.status = status;
     }
 
+    
+
     public ListProductTemplatesRequest withCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
         return this;
@@ -278,6 +288,8 @@ public class ListProductTemplatesRequest  {
     public void setCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
     }
+
+    
 
     public ListProductTemplatesRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
@@ -301,6 +313,8 @@ public class ListProductTemplatesRequest  {
         this.createdDateStart = createdDateStart;
     }
 
+    
+
     public ListProductTemplatesRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
@@ -323,6 +337,8 @@ public class ListProductTemplatesRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
+    
+
     public ListProductTemplatesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -344,6 +360,9 @@ public class ListProductTemplatesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

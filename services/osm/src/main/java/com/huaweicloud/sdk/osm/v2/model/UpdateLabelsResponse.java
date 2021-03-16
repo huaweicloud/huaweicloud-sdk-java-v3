@@ -51,6 +51,8 @@ public class UpdateLabelsResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public UpdateLabelsResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -70,6 +72,9 @@ public class UpdateLabelsResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

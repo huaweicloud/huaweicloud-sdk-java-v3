@@ -41,13 +41,13 @@ public class UpdateAlarmRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition")
     
-    private Condition condition = null;
+    private Condition condition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_action_enabled")
     
-    private Boolean alarmActionEnabled = true;
+    private Boolean alarmActionEnabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,6 +183,8 @@ public class UpdateAlarmRequestBody  {
         this.alarmName = alarmName;
     }
 
+    
+
     public UpdateAlarmRequestBody withAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
         return this;
@@ -202,6 +204,8 @@ public class UpdateAlarmRequestBody  {
     public void setAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
     }
+
+    
 
     public UpdateAlarmRequestBody withCondition(Condition condition) {
         this.condition = condition;
@@ -230,6 +234,8 @@ public class UpdateAlarmRequestBody  {
         this.condition = condition;
     }
 
+    
+
     public UpdateAlarmRequestBody withAlarmActionEnabled(Boolean alarmActionEnabled) {
         this.alarmActionEnabled = alarmActionEnabled;
         return this;
@@ -249,6 +255,8 @@ public class UpdateAlarmRequestBody  {
     public void setAlarmActionEnabled(Boolean alarmActionEnabled) {
         this.alarmActionEnabled = alarmActionEnabled;
     }
+
+    
 
     public UpdateAlarmRequestBody withAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
@@ -270,6 +278,8 @@ public class UpdateAlarmRequestBody  {
         this.alarmLevel = alarmLevel;
     }
 
+    
+
     public UpdateAlarmRequestBody withAlarmType(AlarmTypeEnum alarmType) {
         this.alarmType = alarmType;
         return this;
@@ -290,6 +300,8 @@ public class UpdateAlarmRequestBody  {
         this.alarmType = alarmType;
     }
 
+    
+
     public UpdateAlarmRequestBody withAlarmActions(List<AlarmActions> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
@@ -297,9 +309,6 @@ public class UpdateAlarmRequestBody  {
 
     
     public UpdateAlarmRequestBody addAlarmActionsItem(AlarmActions alarmActionsItem) {
-        if (this.alarmActions == null) {
-            this.alarmActions = new ArrayList<>();
-        }
         this.alarmActions.add(alarmActionsItem);
         return this;
     }
@@ -324,6 +333,8 @@ public class UpdateAlarmRequestBody  {
         this.alarmActions = alarmActions;
     }
 
+    
+
     public UpdateAlarmRequestBody withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
         return this;
@@ -331,9 +342,6 @@ public class UpdateAlarmRequestBody  {
 
     
     public UpdateAlarmRequestBody addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
-        if (this.insufficientdataActions == null) {
-            this.insufficientdataActions = new ArrayList<>();
-        }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
@@ -358,6 +366,8 @@ public class UpdateAlarmRequestBody  {
         this.insufficientdataActions = insufficientdataActions;
     }
 
+    
+
     public UpdateAlarmRequestBody withOkActions(List<AlarmActions> okActions) {
         this.okActions = okActions;
         return this;
@@ -365,9 +375,6 @@ public class UpdateAlarmRequestBody  {
 
     
     public UpdateAlarmRequestBody addOkActionsItem(AlarmActions okActionsItem) {
-        if (this.okActions == null) {
-            this.okActions = new ArrayList<>();
-        }
         this.okActions.add(okActionsItem);
         return this;
     }
@@ -391,6 +398,9 @@ public class UpdateAlarmRequestBody  {
     public void setOkActions(List<AlarmActions> okActions) {
         this.okActions = okActions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

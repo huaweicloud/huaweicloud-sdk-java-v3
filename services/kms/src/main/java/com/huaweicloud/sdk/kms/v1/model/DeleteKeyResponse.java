@@ -51,6 +51,8 @@ public class DeleteKeyResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
+    
+
     public DeleteKeyResponse withKeyState(String keyState) {
         this.keyState = keyState;
         return this;
@@ -70,6 +72,9 @@ public class DeleteKeyResponse extends SdkResponse {
     public void setKeyState(String keyState) {
         this.keyState = keyState;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

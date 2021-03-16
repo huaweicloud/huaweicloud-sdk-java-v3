@@ -135,13 +135,13 @@ public class SignatureWithBindNum  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -181,6 +181,8 @@ public class SignatureWithBindNum  {
         this.name = name;
     }
 
+    
+
     public SignatureWithBindNum withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -200,6 +202,8 @@ public class SignatureWithBindNum  {
     public void setSignType(SignTypeEnum signType) {
         this.signType = signType;
     }
+
+    
 
     public SignatureWithBindNum withSignKey(String signKey) {
         this.signKey = signKey;
@@ -221,6 +225,8 @@ public class SignatureWithBindNum  {
         this.signKey = signKey;
     }
 
+    
+
     public SignatureWithBindNum withSignSecret(String signSecret) {
         this.signSecret = signSecret;
         return this;
@@ -240,6 +246,8 @@ public class SignatureWithBindNum  {
     public void setSignSecret(String signSecret) {
         this.signSecret = signSecret;
     }
+
+    
 
     public SignatureWithBindNum withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
@@ -261,6 +269,8 @@ public class SignatureWithBindNum  {
         this.updateTime = updateTime;
     }
 
+    
+
     public SignatureWithBindNum withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -280,6 +290,8 @@ public class SignatureWithBindNum  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public SignatureWithBindNum withId(String id) {
         this.id = id;
@@ -301,6 +313,8 @@ public class SignatureWithBindNum  {
         this.id = id;
     }
 
+    
+
     public SignatureWithBindNum withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
@@ -321,6 +335,8 @@ public class SignatureWithBindNum  {
         this.bindNum = bindNum;
     }
 
+    
+
     public SignatureWithBindNum withLdapiBindNum(Integer ldapiBindNum) {
         this.ldapiBindNum = ldapiBindNum;
         return this;
@@ -340,6 +356,9 @@ public class SignatureWithBindNum  {
     public void setLdapiBindNum(Integer ldapiBindNum) {
         this.ldapiBindNum = ldapiBindNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

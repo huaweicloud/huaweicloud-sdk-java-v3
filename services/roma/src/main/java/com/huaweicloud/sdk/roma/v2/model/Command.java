@@ -61,6 +61,8 @@ public class Command  {
         this.serviceId = serviceId;
     }
 
+    
+
     public Command withCommandId(Integer commandId) {
         this.commandId = commandId;
         return this;
@@ -80,6 +82,8 @@ public class Command  {
     public void setCommandId(Integer commandId) {
         this.commandId = commandId;
     }
+
+    
 
     public Command withCommandName(String commandName) {
         this.commandName = commandName;
@@ -101,6 +105,8 @@ public class Command  {
         this.commandName = commandName;
     }
 
+    
+
     public Command withDescription(String description) {
         this.description = description;
         return this;
@@ -120,6 +126,9 @@ public class Command  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

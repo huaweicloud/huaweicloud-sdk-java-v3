@@ -60,6 +60,8 @@ public class ListSubscriptionsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListSubscriptionsResponse withSubscriptionCount(Integer subscriptionCount) {
         this.subscriptionCount = subscriptionCount;
         return this;
@@ -80,6 +82,8 @@ public class ListSubscriptionsResponse extends SdkResponse {
         this.subscriptionCount = subscriptionCount;
     }
 
+    
+
     public ListSubscriptionsResponse withSubscriptions(List<ListSubscriptionsItem> subscriptions) {
         this.subscriptions = subscriptions;
         return this;
@@ -87,9 +91,6 @@ public class ListSubscriptionsResponse extends SdkResponse {
 
     
     public ListSubscriptionsResponse addSubscriptionsItem(ListSubscriptionsItem subscriptionsItem) {
-        if (this.subscriptions == null) {
-            this.subscriptions = new ArrayList<>();
-        }
         this.subscriptions.add(subscriptionsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListSubscriptionsResponse extends SdkResponse {
     public void setSubscriptions(List<ListSubscriptionsItem> subscriptions) {
         this.subscriptions = subscriptions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

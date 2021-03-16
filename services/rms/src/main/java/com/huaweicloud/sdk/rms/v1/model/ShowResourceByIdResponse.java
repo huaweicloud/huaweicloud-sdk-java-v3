@@ -132,6 +132,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowResourceByIdResponse withName(String name) {
         this.name = name;
         return this;
@@ -151,6 +153,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowResourceByIdResponse withProvider(String provider) {
         this.provider = provider;
@@ -172,6 +176,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.provider = provider;
     }
 
+    
+
     public ShowResourceByIdResponse withType(String type) {
         this.type = type;
         return this;
@@ -191,6 +197,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ShowResourceByIdResponse withRegionId(String regionId) {
         this.regionId = regionId;
@@ -212,6 +220,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.regionId = regionId;
     }
 
+    
+
     public ShowResourceByIdResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -231,6 +241,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ShowResourceByIdResponse withProjectName(String projectName) {
         this.projectName = projectName;
@@ -252,6 +264,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.projectName = projectName;
     }
 
+    
+
     public ShowResourceByIdResponse withEpId(String epId) {
         this.epId = epId;
         return this;
@@ -271,6 +285,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
     public void setEpId(String epId) {
         this.epId = epId;
     }
+
+    
 
     public ShowResourceByIdResponse withEpName(String epName) {
         this.epName = epName;
@@ -292,6 +308,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.epName = epName;
     }
 
+    
+
     public ShowResourceByIdResponse withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
@@ -311,6 +329,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
+
+    
 
     public ShowResourceByIdResponse withCreated(String created) {
         this.created = created;
@@ -332,6 +352,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.created = created;
     }
 
+    
+
     public ShowResourceByIdResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -351,6 +373,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public ShowResourceByIdResponse withProvisioningState(String provisioningState) {
         this.provisioningState = provisioningState;
@@ -372,6 +396,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.provisioningState = provisioningState;
     }
 
+    
+
     public ShowResourceByIdResponse withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
@@ -380,9 +406,6 @@ public class ShowResourceByIdResponse extends SdkResponse {
     
 
     public ShowResourceByIdResponse putTagsItem(String key, String tagsItem) {
-         if (this.tags == null) {
-            this.tags = new HashMap<>();
-         }
         this.tags.put(key, tagsItem);
         return this;
     }
@@ -406,6 +429,8 @@ public class ShowResourceByIdResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public ShowResourceByIdResponse withProperties(Map<String, Object> properties) {
         this.properties = properties;
         return this;
@@ -414,9 +439,6 @@ public class ShowResourceByIdResponse extends SdkResponse {
     
 
     public ShowResourceByIdResponse putPropertiesItem(String key, Object propertiesItem) {
-         if (this.properties == null) {
-            this.properties = new HashMap<>();
-         }
         this.properties.put(key, propertiesItem);
         return this;
     }
@@ -439,6 +461,9 @@ public class ShowResourceByIdResponse extends SdkResponse {
     public void setProperties(Map<String, Object> properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

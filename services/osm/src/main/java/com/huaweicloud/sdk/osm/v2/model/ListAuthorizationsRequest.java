@@ -97,6 +97,8 @@ public class ListAuthorizationsRequest  {
         this.subCustomerName = subCustomerName;
     }
 
+    
+
     public ListAuthorizationsRequest withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
@@ -116,6 +118,8 @@ public class ListAuthorizationsRequest  {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
 
     public ListAuthorizationsRequest withStatus(Integer status) {
         this.status = status;
@@ -139,6 +143,8 @@ public class ListAuthorizationsRequest  {
         this.status = status;
     }
 
+    
+
     public ListAuthorizationsRequest withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
         return this;
@@ -158,6 +164,8 @@ public class ListAuthorizationsRequest  {
     public void setSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
     }
+
+    
 
     public ListAuthorizationsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -181,6 +189,8 @@ public class ListAuthorizationsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListAuthorizationsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -203,6 +213,8 @@ public class ListAuthorizationsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListAuthorizationsRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -222,6 +234,8 @@ public class ListAuthorizationsRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListAuthorizationsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -247,6 +261,8 @@ public class ListAuthorizationsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListAuthorizationsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -269,6 +285,8 @@ public class ListAuthorizationsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListAuthorizationsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -290,6 +308,9 @@ public class ListAuthorizationsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

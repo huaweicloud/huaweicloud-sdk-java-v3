@@ -55,6 +55,8 @@ public class UpdateNatGatewaySnatRuleOption  {
         this.natGatewayId = natGatewayId;
     }
 
+    
+
     public UpdateNatGatewaySnatRuleOption withPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
         return this;
@@ -75,6 +77,8 @@ public class UpdateNatGatewaySnatRuleOption  {
         this.publicIpAddress = publicIpAddress;
     }
 
+    
+
     public UpdateNatGatewaySnatRuleOption withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +98,9 @@ public class UpdateNatGatewaySnatRuleOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

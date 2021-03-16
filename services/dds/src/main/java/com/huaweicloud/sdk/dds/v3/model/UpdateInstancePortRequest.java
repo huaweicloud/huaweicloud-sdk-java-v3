@@ -28,7 +28,7 @@ public class UpdateInstancePortRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePortRequestBody body = null;
+    private UpdatePortRequestBody body;
 
     public UpdateInstancePortRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateInstancePortRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateInstancePortRequest withBody(UpdatePortRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateInstancePortRequest  {
     public void setBody(UpdatePortRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

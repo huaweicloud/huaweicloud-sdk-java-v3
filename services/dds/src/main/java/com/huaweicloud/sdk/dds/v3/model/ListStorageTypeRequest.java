@@ -124,6 +124,9 @@ public class ListStorageTypeRequest  {
     public void setEngineName(EngineNameEnum engineName) {
         this.engineName = engineName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

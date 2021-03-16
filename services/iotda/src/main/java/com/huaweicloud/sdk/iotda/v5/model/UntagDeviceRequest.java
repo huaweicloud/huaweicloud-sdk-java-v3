@@ -28,7 +28,7 @@ public class UntagDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UnbindTagsDTO body = null;
+    private UnbindTagsDTO body;
 
     public UntagDeviceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UntagDeviceRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UntagDeviceRequest withBody(UnbindTagsDTO body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UntagDeviceRequest  {
     public void setBody(UnbindTagsDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

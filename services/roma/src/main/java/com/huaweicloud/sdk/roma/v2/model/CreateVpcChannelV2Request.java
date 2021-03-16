@@ -28,7 +28,7 @@ public class CreateVpcChannelV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VpcCreate body = null;
+    private VpcCreate body;
 
     public CreateVpcChannelV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateVpcChannelV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateVpcChannelV2Request withBody(VpcCreate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateVpcChannelV2Request  {
     public void setBody(VpcCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

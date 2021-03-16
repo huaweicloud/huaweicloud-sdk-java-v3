@@ -22,7 +22,7 @@ public class UpdateCustomerAccountAmountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AdjustAccountReq body = null;
+    private AdjustAccountReq body;
 
     public UpdateCustomerAccountAmountRequest withBody(AdjustAccountReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateCustomerAccountAmountRequest  {
     public void setBody(AdjustAccountReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

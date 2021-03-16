@@ -22,7 +22,7 @@ public class BatchStopServersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchStopServersRequestBody body = null;
+    private BatchStopServersRequestBody body;
 
     public BatchStopServersRequest withBody(BatchStopServersRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchStopServersRequest  {
     public void setBody(BatchStopServersRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

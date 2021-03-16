@@ -55,6 +55,8 @@ public class InstancesMonitoredObject  {
         this.dcsInstanceId = dcsInstanceId;
     }
 
+    
+
     public InstancesMonitoredObject withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class InstancesMonitoredObject  {
         this.name = name;
     }
 
+    
+
     public InstancesMonitoredObject withStatus(String status) {
         this.status = status;
         return this;
@@ -94,6 +98,9 @@ public class InstancesMonitoredObject  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

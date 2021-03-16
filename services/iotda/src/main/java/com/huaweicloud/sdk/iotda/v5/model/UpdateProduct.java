@@ -94,6 +94,8 @@ public class UpdateProduct  {
         this.appId = appId;
     }
 
+    
+
     public UpdateProduct withName(String name) {
         this.name = name;
         return this;
@@ -113,6 +115,8 @@ public class UpdateProduct  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateProduct withDeviceType(String deviceType) {
         this.deviceType = deviceType;
@@ -134,6 +138,8 @@ public class UpdateProduct  {
         this.deviceType = deviceType;
     }
 
+    
+
     public UpdateProduct withProtocolType(String protocolType) {
         this.protocolType = protocolType;
         return this;
@@ -153,6 +159,8 @@ public class UpdateProduct  {
     public void setProtocolType(String protocolType) {
         this.protocolType = protocolType;
     }
+
+    
 
     public UpdateProduct withDataFormat(String dataFormat) {
         this.dataFormat = dataFormat;
@@ -174,6 +182,8 @@ public class UpdateProduct  {
         this.dataFormat = dataFormat;
     }
 
+    
+
     public UpdateProduct withServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
         this.serviceCapabilities = serviceCapabilities;
         return this;
@@ -181,9 +191,6 @@ public class UpdateProduct  {
 
     
     public UpdateProduct addServiceCapabilitiesItem(ServiceCapability serviceCapabilitiesItem) {
-        if (this.serviceCapabilities == null) {
-            this.serviceCapabilities = new ArrayList<>();
-        }
         this.serviceCapabilities.add(serviceCapabilitiesItem);
         return this;
     }
@@ -208,6 +215,8 @@ public class UpdateProduct  {
         this.serviceCapabilities = serviceCapabilities;
     }
 
+    
+
     public UpdateProduct withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
@@ -227,6 +236,8 @@ public class UpdateProduct  {
     public void setManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
+
+    
 
     public UpdateProduct withIndustry(String industry) {
         this.industry = industry;
@@ -248,6 +259,8 @@ public class UpdateProduct  {
         this.industry = industry;
     }
 
+    
+
     public UpdateProduct withDescription(String description) {
         this.description = description;
         return this;
@@ -267,6 +280,9 @@ public class UpdateProduct  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

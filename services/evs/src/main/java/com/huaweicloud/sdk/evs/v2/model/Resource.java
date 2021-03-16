@@ -37,13 +37,13 @@ public class Resource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    private VolumeDetailForTag resourceDetail = null;
+    private VolumeDetailForTag resourceDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Map<String, String>> tags = new ArrayList<>();
+    private List<Map<String, String>> tags = null;
     
     public Resource withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -65,6 +65,8 @@ public class Resource  {
         this.resourceId = resourceId;
     }
 
+    
+
     public Resource withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -84,6 +86,8 @@ public class Resource  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public Resource withResourceDetail(VolumeDetailForTag resourceDetail) {
         this.resourceDetail = resourceDetail;
@@ -111,6 +115,8 @@ public class Resource  {
     public void setResourceDetail(VolumeDetailForTag resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
+
+    
 
     public Resource withTags(List<Map<String, String>> tags) {
         this.tags = tags;
@@ -142,6 +148,9 @@ public class Resource  {
     public void setTags(List<Map<String, String>> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

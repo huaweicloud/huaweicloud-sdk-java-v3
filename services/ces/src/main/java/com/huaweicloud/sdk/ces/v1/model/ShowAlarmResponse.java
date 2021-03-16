@@ -35,9 +35,6 @@ public class ShowAlarmResponse extends SdkResponse {
 
     
     public ShowAlarmResponse addMetricAlarmsItem(MetricAlarms metricAlarmsItem) {
-        if (this.metricAlarms == null) {
-            this.metricAlarms = new ArrayList<>();
-        }
         this.metricAlarms.add(metricAlarmsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowAlarmResponse extends SdkResponse {
     public void setMetricAlarms(List<MetricAlarms> metricAlarms) {
         this.metricAlarms = metricAlarms;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

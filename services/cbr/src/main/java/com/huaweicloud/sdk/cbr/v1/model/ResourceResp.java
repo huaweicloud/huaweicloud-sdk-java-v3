@@ -26,7 +26,7 @@ public class ResourceResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_info")
     
-    private ResourceExtraInfo extraInfo = null;
+    private ResourceExtraInfo extraInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -193,6 +193,8 @@ public class ResourceResp  {
         this.extraInfo = extraInfo;
     }
 
+    
+
     public ResourceResp withId(String id) {
         this.id = id;
         return this;
@@ -212,6 +214,8 @@ public class ResourceResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ResourceResp withName(String name) {
         this.name = name;
@@ -233,6 +237,8 @@ public class ResourceResp  {
         this.name = name;
     }
 
+    
+
     public ResourceResp withProtectStatus(ProtectStatusEnum protectStatus) {
         this.protectStatus = protectStatus;
         return this;
@@ -252,6 +258,8 @@ public class ResourceResp  {
     public void setProtectStatus(ProtectStatusEnum protectStatus) {
         this.protectStatus = protectStatus;
     }
+
+    
 
     public ResourceResp withSize(Integer size) {
         this.size = size;
@@ -273,6 +281,8 @@ public class ResourceResp  {
         this.size = size;
     }
 
+    
+
     public ResourceResp withType(String type) {
         this.type = type;
         return this;
@@ -292,6 +302,8 @@ public class ResourceResp  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ResourceResp withBackupSize(Integer backupSize) {
         this.backupSize = backupSize;
@@ -313,6 +325,8 @@ public class ResourceResp  {
         this.backupSize = backupSize;
     }
 
+    
+
     public ResourceResp withBackupCount(Integer backupCount) {
         this.backupCount = backupCount;
         return this;
@@ -332,6 +346,9 @@ public class ResourceResp  {
     public void setBackupCount(Integer backupCount) {
         this.backupCount = backupCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

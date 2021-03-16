@@ -79,6 +79,8 @@ public class CreateMemberReq  {
         this.tenantId = tenantId;
     }
 
+    
+
     public CreateMemberReq withName(String name) {
         this.name = name;
         return this;
@@ -99,6 +101,8 @@ public class CreateMemberReq  {
         this.name = name;
     }
 
+    
+
     public CreateMemberReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -118,6 +122,8 @@ public class CreateMemberReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateMemberReq withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -141,6 +147,8 @@ public class CreateMemberReq  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public CreateMemberReq withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -161,6 +169,8 @@ public class CreateMemberReq  {
         this.subnetId = subnetId;
     }
 
+    
+
     public CreateMemberReq withAddress(String address) {
         this.address = address;
         return this;
@@ -180,6 +190,8 @@ public class CreateMemberReq  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public CreateMemberReq withWeight(Integer weight) {
         this.weight = weight;
@@ -202,6 +214,9 @@ public class CreateMemberReq  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

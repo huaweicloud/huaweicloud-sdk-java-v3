@@ -61,6 +61,8 @@ public class NovaNetwork  {
         this.addr = addr;
     }
 
+    
+
     public NovaNetwork withVersion(Integer version) {
         this.version = version;
         return this;
@@ -80,6 +82,8 @@ public class NovaNetwork  {
     public void setVersion(Integer version) {
         this.version = version;
     }
+
+    
 
     public NovaNetwork withOsEXTIPSMACMacAddr(String osEXTIPSMACMacAddr) {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
@@ -101,6 +105,8 @@ public class NovaNetwork  {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
     }
 
+    
+
     public NovaNetwork withOsEXTIPSType(String osEXTIPSType) {
         this.osEXTIPSType = osEXTIPSType;
         return this;
@@ -120,6 +126,9 @@ public class NovaNetwork  {
     public void setOsEXTIPSType(String osEXTIPSType) {
         this.osEXTIPSType = osEXTIPSType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

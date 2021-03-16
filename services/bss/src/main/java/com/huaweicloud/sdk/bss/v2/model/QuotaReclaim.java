@@ -49,6 +49,8 @@ public class QuotaReclaim  {
         this.quotaId = quotaId;
     }
 
+    
+
     public QuotaReclaim withQuotaBalance(Double quotaBalance) {
         this.quotaBalance = quotaBalance;
         return this;
@@ -68,6 +70,9 @@ public class QuotaReclaim  {
     public void setQuotaBalance(Double quotaBalance) {
         this.quotaBalance = quotaBalance;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

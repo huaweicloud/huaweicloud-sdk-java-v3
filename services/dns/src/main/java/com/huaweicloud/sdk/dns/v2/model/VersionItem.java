@@ -76,6 +76,8 @@ public class VersionItem  {
         this.id = id;
     }
 
+    
+
     public VersionItem withStatus(String status) {
         this.status = status;
         return this;
@@ -96,6 +98,8 @@ public class VersionItem  {
         this.status = status;
     }
 
+    
+
     public VersionItem withLinks(List<LinksItem> links) {
         this.links = links;
         return this;
@@ -103,9 +107,6 @@ public class VersionItem  {
 
     
     public VersionItem addLinksItem(LinksItem linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -130,6 +131,8 @@ public class VersionItem  {
         this.links = links;
     }
 
+    
+
     public VersionItem withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -149,6 +152,8 @@ public class VersionItem  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public VersionItem withVersion(String version) {
         this.version = version;
@@ -170,6 +175,8 @@ public class VersionItem  {
         this.version = version;
     }
 
+    
+
     public VersionItem withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
@@ -189,6 +196,9 @@ public class VersionItem  {
     public void setMinVersion(String minVersion) {
         this.minVersion = minVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

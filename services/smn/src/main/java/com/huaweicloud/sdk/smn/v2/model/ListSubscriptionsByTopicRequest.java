@@ -27,13 +27,13 @@ public class ListSubscriptionsByTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
     public ListSubscriptionsByTopicRequest withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
@@ -55,6 +55,8 @@ public class ListSubscriptionsByTopicRequest  {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public ListSubscriptionsByTopicRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -75,6 +77,8 @@ public class ListSubscriptionsByTopicRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListSubscriptionsByTopicRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -94,6 +98,9 @@ public class ListSubscriptionsByTopicRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

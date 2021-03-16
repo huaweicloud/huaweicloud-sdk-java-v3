@@ -24,7 +24,7 @@ public class ShowServerRemoteConsoleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remote_console")
     
-    private ServerRemoteConsole remoteConsole = null;
+    private ServerRemoteConsole remoteConsole;
 
     public ShowServerRemoteConsoleResponse withRemoteConsole(ServerRemoteConsole remoteConsole) {
         this.remoteConsole = remoteConsole;
@@ -52,6 +52,9 @@ public class ShowServerRemoteConsoleResponse extends SdkResponse {
     public void setRemoteConsole(ServerRemoteConsole remoteConsole) {
         this.remoteConsole = remoteConsole;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -38,7 +38,7 @@ public class BatchAddMemberRequestV4  {
 
 
     /**
-     * 用户在项目中的角色ID 3, 4, 5, 6, 7 , 8
+     * 用户在项目中的角色ID -1, 3, 4, 5, 6, 7 , 8
      * @return roleId
      */
     public Integer getRoleId() {
@@ -48,6 +48,8 @@ public class BatchAddMemberRequestV4  {
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
+
+    
 
     public BatchAddMemberRequestV4 withUserId(String userId) {
         this.userId = userId;
@@ -68,6 +70,9 @@ public class BatchAddMemberRequestV4  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

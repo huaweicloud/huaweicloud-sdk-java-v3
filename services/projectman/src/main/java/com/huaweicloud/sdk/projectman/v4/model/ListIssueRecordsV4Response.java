@@ -66,6 +66,8 @@ public class ListIssueRecordsV4Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ListIssueRecordsV4Response withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -86,6 +88,8 @@ public class ListIssueRecordsV4Response extends SdkResponse {
         this.createdTime = createdTime;
     }
 
+    
+
     public ListIssueRecordsV4Response withRecords(List<IssueRecordV4> records) {
         this.records = records;
         return this;
@@ -93,9 +97,6 @@ public class ListIssueRecordsV4Response extends SdkResponse {
 
     
     public ListIssueRecordsV4Response addRecordsItem(IssueRecordV4 recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -120,6 +121,8 @@ public class ListIssueRecordsV4Response extends SdkResponse {
         this.records = records;
     }
 
+    
+
     public ListIssueRecordsV4Response withTotal(Integer total) {
         this.total = total;
         return this;
@@ -139,6 +142,9 @@ public class ListIssueRecordsV4Response extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

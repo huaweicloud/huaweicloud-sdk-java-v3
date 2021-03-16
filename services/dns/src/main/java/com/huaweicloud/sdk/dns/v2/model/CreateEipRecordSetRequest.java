@@ -34,7 +34,7 @@ public class CreateEipRecordSetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePtrReq body = null;
+    private CreatePtrReq body;
 
     public CreateEipRecordSetRequest withRegion(String region) {
         this.region = region;
@@ -56,6 +56,8 @@ public class CreateEipRecordSetRequest  {
         this.region = region;
     }
 
+    
+
     public CreateEipRecordSetRequest withFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
         return this;
@@ -75,6 +77,8 @@ public class CreateEipRecordSetRequest  {
     public void setFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
     }
+
+    
 
     public CreateEipRecordSetRequest withBody(CreatePtrReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateEipRecordSetRequest  {
     public void setBody(CreatePtrReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

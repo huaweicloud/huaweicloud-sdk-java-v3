@@ -22,7 +22,7 @@ public class CreatePoolRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool")
     
-    private CreatePoolOption pool = null;
+    private CreatePoolOption pool;
 
     public CreatePoolRequestBody withPool(CreatePoolOption pool) {
         this.pool = pool;
@@ -50,6 +50,9 @@ public class CreatePoolRequestBody  {
     public void setPool(CreatePoolOption pool) {
         this.pool = pool;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

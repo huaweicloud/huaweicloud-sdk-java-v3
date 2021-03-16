@@ -42,6 +42,9 @@ public class StrategyConfig  {
     public void setConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

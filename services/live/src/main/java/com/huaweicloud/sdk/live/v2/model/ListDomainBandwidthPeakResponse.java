@@ -41,9 +41,6 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
 
     
     public ListDomainBandwidthPeakResponse addBandwidthListItem(PeakBandwidthData bandwidthListItem) {
-        if (this.bandwidthList == null) {
-            this.bandwidthList = new ArrayList<>();
-        }
         this.bandwidthList.add(bandwidthListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
         this.bandwidthList = bandwidthList;
     }
 
+    
+
     public ListDomainBandwidthPeakResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -89,6 +88,9 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

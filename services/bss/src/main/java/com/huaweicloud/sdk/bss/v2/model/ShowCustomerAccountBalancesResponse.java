@@ -53,9 +53,6 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
 
     
     public ShowCustomerAccountBalancesResponse addAccountBalancesItem(AccountBalanceV3 accountBalancesItem) {
-        if (this.accountBalances == null) {
-            this.accountBalances = new ArrayList<>();
-        }
         this.accountBalances.add(accountBalancesItem);
         return this;
     }
@@ -80,6 +77,8 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         this.accountBalances = accountBalances;
     }
 
+    
+
     public ShowCustomerAccountBalancesResponse withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
@@ -99,6 +98,8 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
     public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
+
+    
 
     public ShowCustomerAccountBalancesResponse withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -120,6 +121,8 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
         this.measureId = measureId;
     }
 
+    
+
     public ShowCustomerAccountBalancesResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -139,6 +142,9 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,6 +57,8 @@ public class CreateHookResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateHookResponse withType(String type) {
         this.type = type;
         return this;
@@ -77,6 +79,8 @@ public class CreateHookResponse extends SdkResponse {
         this.type = type;
     }
 
+    
+
     public CreateHookResponse withCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
         return this;
@@ -96,6 +100,9 @@ public class CreateHookResponse extends SdkResponse {
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

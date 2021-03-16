@@ -35,9 +35,6 @@ public class CreatePrivateipResponse extends SdkResponse {
 
     
     public CreatePrivateipResponse addPrivateipsItem(Privateip privateipsItem) {
-        if (this.privateips == null) {
-            this.privateips = new ArrayList<>();
-        }
         this.privateips.add(privateipsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class CreatePrivateipResponse extends SdkResponse {
     public void setPrivateips(List<Privateip> privateips) {
         this.privateips = privateips;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

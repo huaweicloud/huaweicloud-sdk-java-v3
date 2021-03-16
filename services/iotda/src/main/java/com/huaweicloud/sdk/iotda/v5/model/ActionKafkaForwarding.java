@@ -82,6 +82,8 @@ public class ActionKafkaForwarding  {
         this.regionName = regionName;
     }
 
+    
+
     public ActionKafkaForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -102,6 +104,8 @@ public class ActionKafkaForwarding  {
         this.projectId = projectId;
     }
 
+    
+
     public ActionKafkaForwarding withKafkaAddresses(List<NetAddress> kafkaAddresses) {
         this.kafkaAddresses = kafkaAddresses;
         return this;
@@ -109,9 +113,6 @@ public class ActionKafkaForwarding  {
 
     
     public ActionKafkaForwarding addKafkaAddressesItem(NetAddress kafkaAddressesItem) {
-        if (this.kafkaAddresses == null) {
-            this.kafkaAddresses = new ArrayList<>();
-        }
         this.kafkaAddresses.add(kafkaAddressesItem);
         return this;
     }
@@ -136,6 +137,8 @@ public class ActionKafkaForwarding  {
         this.kafkaAddresses = kafkaAddresses;
     }
 
+    
+
     public ActionKafkaForwarding withKafkaTopic(String kafkaTopic) {
         this.kafkaTopic = kafkaTopic;
         return this;
@@ -155,6 +158,8 @@ public class ActionKafkaForwarding  {
     public void setKafkaTopic(String kafkaTopic) {
         this.kafkaTopic = kafkaTopic;
     }
+
+    
 
     public ActionKafkaForwarding withKafkaUsername(String kafkaUsername) {
         this.kafkaUsername = kafkaUsername;
@@ -176,6 +181,8 @@ public class ActionKafkaForwarding  {
         this.kafkaUsername = kafkaUsername;
     }
 
+    
+
     public ActionKafkaForwarding withKafkaPassword(String kafkaPassword) {
         this.kafkaPassword = kafkaPassword;
         return this;
@@ -196,6 +203,8 @@ public class ActionKafkaForwarding  {
         this.kafkaPassword = kafkaPassword;
     }
 
+    
+
     public ActionKafkaForwarding withKafkaMechanism(String kafkaMechanism) {
         this.kafkaMechanism = kafkaMechanism;
         return this;
@@ -215,6 +224,9 @@ public class ActionKafkaForwarding  {
     public void setKafkaMechanism(String kafkaMechanism) {
         this.kafkaMechanism = kafkaMechanism;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

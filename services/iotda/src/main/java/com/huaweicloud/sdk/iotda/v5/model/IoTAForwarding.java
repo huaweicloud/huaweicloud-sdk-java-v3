@@ -49,6 +49,8 @@ public class IoTAForwarding  {
         this.dataSourceId = dataSourceId;
     }
 
+    
+
     public IoTAForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -68,6 +70,9 @@ public class IoTAForwarding  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

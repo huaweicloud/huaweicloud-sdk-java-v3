@@ -61,6 +61,8 @@ public class RetryTaskResp  {
         this.id = id;
     }
 
+    
+
     public RetryTaskResp withStatus(String status) {
         this.status = status;
         return this;
@@ -80,6 +82,8 @@ public class RetryTaskResp  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public RetryTaskResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -101,6 +105,8 @@ public class RetryTaskResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public RetryTaskResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -120,6 +126,9 @@ public class RetryTaskResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

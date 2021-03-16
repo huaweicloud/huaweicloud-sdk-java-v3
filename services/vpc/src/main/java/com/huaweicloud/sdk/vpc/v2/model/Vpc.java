@@ -52,7 +52,7 @@ public class Vpc  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="routes")
     
-    private List<Route> routes = new ArrayList<>();
+    private List<Route> routes = null;
         /**
      * 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功
      */
@@ -170,6 +170,8 @@ public class Vpc  {
         this.id = id;
     }
 
+    
+
     public Vpc withName(String name) {
         this.name = name;
         return this;
@@ -189,6 +191,8 @@ public class Vpc  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Vpc withCidr(String cidr) {
         this.cidr = cidr;
@@ -210,6 +214,8 @@ public class Vpc  {
         this.cidr = cidr;
     }
 
+    
+
     public Vpc withDescription(String description) {
         this.description = description;
         return this;
@@ -229,6 +235,8 @@ public class Vpc  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Vpc withRoutes(List<Route> routes) {
         this.routes = routes;
@@ -261,6 +269,8 @@ public class Vpc  {
         this.routes = routes;
     }
 
+    
+
     public Vpc withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -281,6 +291,8 @@ public class Vpc  {
         this.status = status;
     }
 
+    
+
     public Vpc withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -300,6 +312,9 @@ public class Vpc  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

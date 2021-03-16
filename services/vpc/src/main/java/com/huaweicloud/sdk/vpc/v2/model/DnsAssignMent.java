@@ -55,6 +55,8 @@ public class DnsAssignMent  {
         this.hostname = hostname;
     }
 
+    
+
     public DnsAssignMent withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -75,6 +77,8 @@ public class DnsAssignMent  {
         this.ipAddress = ipAddress;
     }
 
+    
+
     public DnsAssignMent withFqdn(String fqdn) {
         this.fqdn = fqdn;
         return this;
@@ -94,6 +98,9 @@ public class DnsAssignMent  {
     public void setFqdn(String fqdn) {
         this.fqdn = fqdn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

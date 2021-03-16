@@ -24,7 +24,7 @@ public class ShowDbUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db_user")
     
-    private DbUser dbUser = null;
+    private DbUser dbUser;
 
     public ShowDbUserResponse withDbUser(DbUser dbUser) {
         this.dbUser = dbUser;
@@ -52,6 +52,9 @@ public class ShowDbUserResponse extends SdkResponse {
     public void setDbUser(DbUser dbUser) {
         this.dbUser = dbUser;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

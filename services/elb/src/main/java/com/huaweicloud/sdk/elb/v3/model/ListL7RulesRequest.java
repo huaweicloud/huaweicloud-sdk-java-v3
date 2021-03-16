@@ -117,6 +117,8 @@ public class ListL7RulesRequest  {
         this.l7policyId = l7policyId;
     }
 
+    
+
     public ListL7RulesRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -137,6 +139,8 @@ public class ListL7RulesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListL7RulesRequest withCompareType(List<String> compareType) {
         this.compareType = compareType;
         return this;
@@ -144,9 +148,6 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addCompareTypeItem(String compareTypeItem) {
-        if (this.compareType == null) {
-            this.compareType = new ArrayList<>();
-        }
         this.compareType.add(compareTypeItem);
         return this;
     }
@@ -171,6 +172,8 @@ public class ListL7RulesRequest  {
         this.compareType = compareType;
     }
 
+    
+
     public ListL7RulesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -178,9 +181,6 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
@@ -205,6 +205,8 @@ public class ListL7RulesRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListL7RulesRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -212,9 +214,6 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -239,6 +238,8 @@ public class ListL7RulesRequest  {
         this.id = id;
     }
 
+    
+
     public ListL7RulesRequest withInvert(Boolean invert) {
         this.invert = invert;
         return this;
@@ -259,6 +260,8 @@ public class ListL7RulesRequest  {
         this.invert = invert;
     }
 
+    
+
     public ListL7RulesRequest withKey(List<String> key) {
         this.key = key;
         return this;
@@ -266,9 +269,6 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addKeyItem(String keyItem) {
-        if (this.key == null) {
-            this.key = new ArrayList<>();
-        }
         this.key.add(keyItem);
         return this;
     }
@@ -293,6 +293,8 @@ public class ListL7RulesRequest  {
         this.key = key;
     }
 
+    
+
     public ListL7RulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -315,6 +317,8 @@ public class ListL7RulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListL7RulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -334,6 +338,8 @@ public class ListL7RulesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListL7RulesRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
@@ -355,6 +361,8 @@ public class ListL7RulesRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListL7RulesRequest withProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -362,9 +370,6 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addProvisioningStatusItem(String provisioningStatusItem) {
-        if (this.provisioningStatus == null) {
-            this.provisioningStatus = new ArrayList<>();
-        }
         this.provisioningStatus.add(provisioningStatusItem);
         return this;
     }
@@ -389,6 +394,8 @@ public class ListL7RulesRequest  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public ListL7RulesRequest withType(List<String> type) {
         this.type = type;
         return this;
@@ -396,9 +403,6 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addTypeItem(String typeItem) {
-        if (this.type == null) {
-            this.type = new ArrayList<>();
-        }
         this.type.add(typeItem);
         return this;
     }
@@ -423,6 +427,8 @@ public class ListL7RulesRequest  {
         this.type = type;
     }
 
+    
+
     public ListL7RulesRequest withValue(List<String> value) {
         this.value = value;
         return this;
@@ -430,9 +436,6 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addValueItem(String valueItem) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
-        }
         this.value.add(valueItem);
         return this;
     }
@@ -456,6 +459,9 @@ public class ListL7RulesRequest  {
     public void setValue(List<String> value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

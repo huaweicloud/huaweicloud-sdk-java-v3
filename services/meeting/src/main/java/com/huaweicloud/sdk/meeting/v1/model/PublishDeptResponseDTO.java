@@ -49,6 +49,8 @@ public class PublishDeptResponseDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public PublishDeptResponseDTO withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -68,6 +70,9 @@ public class PublishDeptResponseDTO  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

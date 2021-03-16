@@ -22,7 +22,7 @@ public class ChangeEnterpriseRealnameAuthenticationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ChangeEnterpriseRealnameAuthsReq body = null;
+    private ChangeEnterpriseRealnameAuthsReq body;
 
     public ChangeEnterpriseRealnameAuthenticationRequest withBody(ChangeEnterpriseRealnameAuthsReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ChangeEnterpriseRealnameAuthenticationRequest  {
     public void setBody(ChangeEnterpriseRealnameAuthsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

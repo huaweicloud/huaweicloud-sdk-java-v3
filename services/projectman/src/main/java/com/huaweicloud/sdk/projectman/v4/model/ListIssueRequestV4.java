@@ -63,16 +63,16 @@ public class ListIssueRequestV4  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_ids")
-    
-    private List<Integer> moduleIds = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
     private Integer offset;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="module_ids")
+    
+    private List<Integer> moduleIds = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority_ids")
@@ -116,9 +116,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addAssignedIdsItem(Integer assignedIdsItem) {
-        if (this.assignedIds == null) {
-            this.assignedIds = new ArrayList<>();
-        }
         this.assignedIds.add(assignedIdsItem);
         return this;
     }
@@ -143,6 +140,8 @@ public class ListIssueRequestV4  {
         this.assignedIds = assignedIds;
     }
 
+    
+
     public ListIssueRequestV4 withCreatorIds(List<Integer> creatorIds) {
         this.creatorIds = creatorIds;
         return this;
@@ -150,9 +149,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addCreatorIdsItem(Integer creatorIdsItem) {
-        if (this.creatorIds == null) {
-            this.creatorIds = new ArrayList<>();
-        }
         this.creatorIds.add(creatorIdsItem);
         return this;
     }
@@ -177,6 +173,8 @@ public class ListIssueRequestV4  {
         this.creatorIds = creatorIds;
     }
 
+    
+
     public ListIssueRequestV4 withDeveloperIds(List<Integer> developerIds) {
         this.developerIds = developerIds;
         return this;
@@ -184,9 +182,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addDeveloperIdsItem(Integer developerIdsItem) {
-        if (this.developerIds == null) {
-            this.developerIds = new ArrayList<>();
-        }
         this.developerIds.add(developerIdsItem);
         return this;
     }
@@ -211,6 +206,8 @@ public class ListIssueRequestV4  {
         this.developerIds = developerIds;
     }
 
+    
+
     public ListIssueRequestV4 withDomainIds(List<Integer> domainIds) {
         this.domainIds = domainIds;
         return this;
@@ -218,9 +215,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addDomainIdsItem(Integer domainIdsItem) {
-        if (this.domainIds == null) {
-            this.domainIds = new ArrayList<>();
-        }
         this.domainIds.add(domainIdsItem);
         return this;
     }
@@ -234,7 +228,7 @@ public class ListIssueRequestV4  {
     }
 
     /**
-     * id, 领域 14, '性能', 15, '功能', 16, '可靠性' 17, '网络安全' 18, '可维护性' 19, '其他DFX' 20, '可用性'
+     * id, 领域, 14 '性能', 15 '功能', 16 '可靠性', 17 '网络安全', 18 '可维护性', 19 '其他DFX', 20 '可用性',
      * @return domainIds
      */
     public List<Integer> getDomainIds() {
@@ -245,6 +239,8 @@ public class ListIssueRequestV4  {
         this.domainIds = domainIds;
     }
 
+    
+
     public ListIssueRequestV4 withDoneRatios(List<Integer> doneRatios) {
         this.doneRatios = doneRatios;
         return this;
@@ -252,9 +248,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addDoneRatiosItem(Integer doneRatiosItem) {
-        if (this.doneRatios == null) {
-            this.doneRatios = new ArrayList<>();
-        }
         this.doneRatios.add(doneRatiosItem);
         return this;
     }
@@ -279,6 +272,8 @@ public class ListIssueRequestV4  {
         this.doneRatios = doneRatios;
     }
 
+    
+
     public ListIssueRequestV4 withIterationIds(List<Integer> iterationIds) {
         this.iterationIds = iterationIds;
         return this;
@@ -286,9 +281,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addIterationIdsItem(Integer iterationIdsItem) {
-        if (this.iterationIds == null) {
-            this.iterationIds = new ArrayList<>();
-        }
         this.iterationIds.add(iterationIdsItem);
         return this;
     }
@@ -313,6 +305,8 @@ public class ListIssueRequestV4  {
         this.iterationIds = iterationIds;
     }
 
+    
+
     public ListIssueRequestV4 withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -335,6 +329,31 @@ public class ListIssueRequestV4  {
         this.limit = limit;
     }
 
+    
+
+    public ListIssueRequestV4 withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 分页索引，偏移量，offset是limit的整数倍数，limit=10,offset=0,10,20...
+     * minimum: 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    
+
     public ListIssueRequestV4 withModuleIds(List<Integer> moduleIds) {
         this.moduleIds = moduleIds;
         return this;
@@ -342,9 +361,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addModuleIdsItem(Integer moduleIdsItem) {
-        if (this.moduleIds == null) {
-            this.moduleIds = new ArrayList<>();
-        }
         this.moduleIds.add(moduleIdsItem);
         return this;
     }
@@ -369,27 +385,7 @@ public class ListIssueRequestV4  {
         this.moduleIds = moduleIds;
     }
 
-    public ListIssueRequestV4 withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
     
-
-
-    /**
-     * 分页索引，偏移量
-     * minimum: 0
-     * maximum: 100000
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
 
     public ListIssueRequestV4 withPriorityIds(List<Integer> priorityIds) {
         this.priorityIds = priorityIds;
@@ -398,9 +394,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addPriorityIdsItem(Integer priorityIdsItem) {
-        if (this.priorityIds == null) {
-            this.priorityIds = new ArrayList<>();
-        }
         this.priorityIds.add(priorityIdsItem);
         return this;
     }
@@ -425,6 +418,8 @@ public class ListIssueRequestV4  {
         this.priorityIds = priorityIds;
     }
 
+    
+
     public ListIssueRequestV4 withQueryType(String queryType) {
         this.queryType = queryType;
         return this;
@@ -445,6 +440,8 @@ public class ListIssueRequestV4  {
         this.queryType = queryType;
     }
 
+    
+
     public ListIssueRequestV4 withSeverityIds(List<Integer> severityIds) {
         this.severityIds = severityIds;
         return this;
@@ -452,9 +449,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addSeverityIdsItem(Integer severityIdsItem) {
-        if (this.severityIds == null) {
-            this.severityIds = new ArrayList<>();
-        }
         this.severityIds.add(severityIdsItem);
         return this;
     }
@@ -479,6 +473,8 @@ public class ListIssueRequestV4  {
         this.severityIds = severityIds;
     }
 
+    
+
     public ListIssueRequestV4 withStatusIds(List<Integer> statusIds) {
         this.statusIds = statusIds;
         return this;
@@ -486,9 +482,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addStatusIdsItem(Integer statusIdsItem) {
-        if (this.statusIds == null) {
-            this.statusIds = new ArrayList<>();
-        }
         this.statusIds.add(statusIdsItem);
         return this;
     }
@@ -502,7 +495,7 @@ public class ListIssueRequestV4  {
     }
 
     /**
-     * 状态   id 开始   1 进行中 2 已解决 3 测试中 4 已关闭 5 已解决 6
+     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
      * @return statusIds
      */
     public List<Integer> getStatusIds() {
@@ -513,6 +506,8 @@ public class ListIssueRequestV4  {
         this.statusIds = statusIds;
     }
 
+    
+
     public ListIssueRequestV4 withStoryPointIds(List<Integer> storyPointIds) {
         this.storyPointIds = storyPointIds;
         return this;
@@ -520,9 +515,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addStoryPointIdsItem(Integer storyPointIdsItem) {
-        if (this.storyPointIds == null) {
-            this.storyPointIds = new ArrayList<>();
-        }
         this.storyPointIds.add(storyPointIdsItem);
         return this;
     }
@@ -547,6 +539,8 @@ public class ListIssueRequestV4  {
         this.storyPointIds = storyPointIds;
     }
 
+    
+
     public ListIssueRequestV4 withTrackerIds(List<Integer> trackerIds) {
         this.trackerIds = trackerIds;
         return this;
@@ -554,9 +548,6 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addTrackerIdsItem(Integer trackerIdsItem) {
-        if (this.trackerIds == null) {
-            this.trackerIds = new ArrayList<>();
-        }
         this.trackerIds.add(trackerIdsItem);
         return this;
     }
@@ -580,6 +571,9 @@ public class ListIssueRequestV4  {
     public void setTrackerIds(List<Integer> trackerIds) {
         this.trackerIds = trackerIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -596,8 +590,8 @@ public class ListIssueRequestV4  {
             Objects.equals(this.doneRatios, listIssueRequestV4.doneRatios) &&
             Objects.equals(this.iterationIds, listIssueRequestV4.iterationIds) &&
             Objects.equals(this.limit, listIssueRequestV4.limit) &&
-            Objects.equals(this.moduleIds, listIssueRequestV4.moduleIds) &&
             Objects.equals(this.offset, listIssueRequestV4.offset) &&
+            Objects.equals(this.moduleIds, listIssueRequestV4.moduleIds) &&
             Objects.equals(this.priorityIds, listIssueRequestV4.priorityIds) &&
             Objects.equals(this.queryType, listIssueRequestV4.queryType) &&
             Objects.equals(this.severityIds, listIssueRequestV4.severityIds) &&
@@ -607,7 +601,7 @@ public class ListIssueRequestV4  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(assignedIds, creatorIds, developerIds, domainIds, doneRatios, iterationIds, limit, moduleIds, offset, priorityIds, queryType, severityIds, statusIds, storyPointIds, trackerIds);
+        return Objects.hash(assignedIds, creatorIds, developerIds, domainIds, doneRatios, iterationIds, limit, offset, moduleIds, priorityIds, queryType, severityIds, statusIds, storyPointIds, trackerIds);
     }
     @Override
     public String toString() {
@@ -620,8 +614,8 @@ public class ListIssueRequestV4  {
         sb.append("    doneRatios: ").append(toIndentedString(doneRatios)).append("\n");
         sb.append("    iterationIds: ").append(toIndentedString(iterationIds)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    moduleIds: ").append(toIndentedString(moduleIds)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    moduleIds: ").append(toIndentedString(moduleIds)).append("\n");
         sb.append("    priorityIds: ").append(toIndentedString(priorityIds)).append("\n");
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
         sb.append("    severityIds: ").append(toIndentedString(severityIds)).append("\n");

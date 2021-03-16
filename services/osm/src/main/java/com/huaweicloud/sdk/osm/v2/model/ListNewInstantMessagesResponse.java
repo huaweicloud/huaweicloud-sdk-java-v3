@@ -48,9 +48,6 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
 
     
     public ListNewInstantMessagesResponse addImstatusItem(ImStatusV2 imstatusItem) {
-        if (this.imstatus == null) {
-            this.imstatus = new ArrayList<>();
-        }
         this.imstatus.add(imstatusItem);
         return this;
     }
@@ -75,6 +72,8 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
         this.imstatus = imstatus;
     }
 
+    
+
     public ListNewInstantMessagesResponse withImmsg(List<UserInstantIncidentMsgV2> immsg) {
         this.immsg = immsg;
         return this;
@@ -82,9 +81,6 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
 
     
     public ListNewInstantMessagesResponse addImmsgItem(UserInstantIncidentMsgV2 immsgItem) {
-        if (this.immsg == null) {
-            this.immsg = new ArrayList<>();
-        }
         this.immsg.add(immsgItem);
         return this;
     }
@@ -109,6 +105,8 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
         this.immsg = immsg;
     }
 
+    
+
     public ListNewInstantMessagesResponse withLastMessageTimeId(String lastMessageTimeId) {
         this.lastMessageTimeId = lastMessageTimeId;
         return this;
@@ -128,6 +126,9 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
     public void setLastMessageTimeId(String lastMessageTimeId) {
         this.lastMessageTimeId = lastMessageTimeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

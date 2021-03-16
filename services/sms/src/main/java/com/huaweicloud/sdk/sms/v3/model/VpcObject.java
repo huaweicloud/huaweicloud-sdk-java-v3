@@ -55,6 +55,8 @@ public class VpcObject  {
         this.id = id;
     }
 
+    
+
     public VpcObject withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class VpcObject  {
         this.name = name;
     }
 
+    
+
     public VpcObject withCidr(String cidr) {
         this.cidr = cidr;
         return this;
@@ -94,6 +98,9 @@ public class VpcObject  {
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

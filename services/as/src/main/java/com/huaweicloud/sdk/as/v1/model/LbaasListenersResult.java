@@ -61,6 +61,8 @@ public class LbaasListenersResult  {
         this.listenersId = listenersId;
     }
 
+    
+
     public LbaasListenersResult withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -80,6 +82,8 @@ public class LbaasListenersResult  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public LbaasListenersResult withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -103,6 +107,8 @@ public class LbaasListenersResult  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public LbaasListenersResult withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -122,6 +128,9 @@ public class LbaasListenersResult  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

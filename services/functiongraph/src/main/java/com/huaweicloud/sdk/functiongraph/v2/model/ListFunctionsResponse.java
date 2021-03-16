@@ -41,9 +41,6 @@ public class ListFunctionsResponse extends SdkResponse {
 
     
     public ListFunctionsResponse addFunctionsItem(ListFunctionResult functionsItem) {
-        if (this.functions == null) {
-            this.functions = new ArrayList<>();
-        }
         this.functions.add(functionsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListFunctionsResponse extends SdkResponse {
         this.functions = functions;
     }
 
+    
+
     public ListFunctionsResponse withNextMarker(Integer nextMarker) {
         this.nextMarker = nextMarker;
         return this;
@@ -87,6 +86,9 @@ public class ListFunctionsResponse extends SdkResponse {
     public void setNextMarker(Integer nextMarker) {
         this.nextMarker = nextMarker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

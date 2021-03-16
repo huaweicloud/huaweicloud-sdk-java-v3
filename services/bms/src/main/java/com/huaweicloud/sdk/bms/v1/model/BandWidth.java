@@ -118,7 +118,7 @@ public class BandWidth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -230,6 +230,8 @@ public class BandWidth  {
         this.name = name;
     }
 
+    
+
     public BandWidth withSharetype(SharetypeEnum sharetype) {
         this.sharetype = sharetype;
         return this;
@@ -249,6 +251,8 @@ public class BandWidth  {
     public void setSharetype(SharetypeEnum sharetype) {
         this.sharetype = sharetype;
     }
+
+    
 
     public BandWidth withId(UUID id) {
         this.id = id;
@@ -270,6 +274,8 @@ public class BandWidth  {
         this.id = id;
     }
 
+    
+
     public BandWidth withSize(Integer size) {
         this.size = size;
         return this;
@@ -290,6 +296,8 @@ public class BandWidth  {
         this.size = size;
     }
 
+    
+
     public BandWidth withChargemode(ChargemodeEnum chargemode) {
         this.chargemode = chargemode;
         return this;
@@ -309,6 +317,9 @@ public class BandWidth  {
     public void setChargemode(ChargemodeEnum chargemode) {
         this.chargemode = chargemode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

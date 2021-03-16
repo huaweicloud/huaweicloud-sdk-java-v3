@@ -55,6 +55,8 @@ public class DeleteAppConfigV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteAppConfigV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteAppConfigV2Request  {
         this.appId = appId;
     }
 
+    
+
     public DeleteAppConfigV2Request withAppConfigId(String appConfigId) {
         this.appConfigId = appConfigId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteAppConfigV2Request  {
     public void setAppConfigId(String appConfigId) {
         this.appConfigId = appConfigId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -29,13 +29,13 @@ public class QualityEnhanceTemplateInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    private QualityEnhanceTemplate template = null;
+    private QualityEnhanceTemplate template;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error")
     
-    private XCodeError error = null;
+    private XCodeError error;
 
     public QualityEnhanceTemplateInfo withTemplateId(Integer templateId) {
         this.templateId = templateId;
@@ -56,6 +56,8 @@ public class QualityEnhanceTemplateInfo  {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
+
+    
 
     public QualityEnhanceTemplateInfo withTemplate(QualityEnhanceTemplate template) {
         this.template = template;
@@ -84,6 +86,8 @@ public class QualityEnhanceTemplateInfo  {
         this.template = template;
     }
 
+    
+
     public QualityEnhanceTemplateInfo withError(XCodeError error) {
         this.error = error;
         return this;
@@ -110,6 +114,9 @@ public class QualityEnhanceTemplateInfo  {
     public void setError(XCodeError error) {
         this.error = error;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

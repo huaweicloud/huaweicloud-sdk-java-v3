@@ -116,7 +116,7 @@ public class ChangeOpsWindowRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private OpsWindowRequest body = null;
+    private OpsWindowRequest body;
 
     public ChangeOpsWindowRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class ChangeOpsWindowRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ChangeOpsWindowRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class ChangeOpsWindowRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ChangeOpsWindowRequest withBody(OpsWindowRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class ChangeOpsWindowRequest  {
     public void setBody(OpsWindowRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

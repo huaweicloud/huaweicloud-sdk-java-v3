@@ -51,6 +51,8 @@ public class TrafficSummaryData  {
         this.value = value;
     }
 
+    
+
     public TrafficSummaryData withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -70,6 +72,9 @@ public class TrafficSummaryData  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

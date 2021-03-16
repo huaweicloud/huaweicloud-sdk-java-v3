@@ -24,7 +24,7 @@ public class CopyBackupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication")
     
-    private BackupReplicateRespBody replication = null;
+    private BackupReplicateRespBody replication;
 
     public CopyBackupResponse withReplication(BackupReplicateRespBody replication) {
         this.replication = replication;
@@ -52,6 +52,9 @@ public class CopyBackupResponse extends SdkResponse {
     public void setReplication(BackupReplicateRespBody replication) {
         this.replication = replication;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -72,7 +72,7 @@ public class UpdateLoadBalancerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_bandwidth")
     
-    private BandwidthRef ipv6Bandwidth = null;
+    private BandwidthRef ipv6Bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,6 +112,8 @@ public class UpdateLoadBalancerOption  {
         this.name = name;
     }
 
+    
+
     public UpdateLoadBalancerOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -131,6 +133,8 @@ public class UpdateLoadBalancerOption  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public UpdateLoadBalancerOption withDescription(String description) {
         this.description = description;
@@ -152,6 +156,8 @@ public class UpdateLoadBalancerOption  {
         this.description = description;
     }
 
+    
+
     public UpdateLoadBalancerOption withIpv6VipVirsubnetId(String ipv6VipVirsubnetId) {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
         return this;
@@ -171,6 +177,8 @@ public class UpdateLoadBalancerOption  {
     public void setIpv6VipVirsubnetId(String ipv6VipVirsubnetId) {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
     }
+
+    
 
     public UpdateLoadBalancerOption withVipSubnetCidrId(String vipSubnetCidrId) {
         this.vipSubnetCidrId = vipSubnetCidrId;
@@ -192,6 +200,8 @@ public class UpdateLoadBalancerOption  {
         this.vipSubnetCidrId = vipSubnetCidrId;
     }
 
+    
+
     public UpdateLoadBalancerOption withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
         return this;
@@ -211,6 +221,8 @@ public class UpdateLoadBalancerOption  {
     public void setVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
     }
+
+    
 
     public UpdateLoadBalancerOption withL4FlavorId(String l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
@@ -232,6 +244,8 @@ public class UpdateLoadBalancerOption  {
         this.l4FlavorId = l4FlavorId;
     }
 
+    
+
     public UpdateLoadBalancerOption withL7FlavorId(String l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
         return this;
@@ -251,6 +265,8 @@ public class UpdateLoadBalancerOption  {
     public void setL7FlavorId(String l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
     }
+
+    
 
     public UpdateLoadBalancerOption withIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
@@ -279,6 +295,8 @@ public class UpdateLoadBalancerOption  {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
 
+    
+
     public UpdateLoadBalancerOption withIpTargetEnable(Boolean ipTargetEnable) {
         this.ipTargetEnable = ipTargetEnable;
         return this;
@@ -298,6 +316,8 @@ public class UpdateLoadBalancerOption  {
     public void setIpTargetEnable(Boolean ipTargetEnable) {
         this.ipTargetEnable = ipTargetEnable;
     }
+
+    
 
     public UpdateLoadBalancerOption withDeletionProtectionEnable(Boolean deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
@@ -319,6 +339,8 @@ public class UpdateLoadBalancerOption  {
         this.deletionProtectionEnable = deletionProtectionEnable;
     }
 
+    
+
     public UpdateLoadBalancerOption withElbVirsubnetIds(List<String> elbVirsubnetIds) {
         this.elbVirsubnetIds = elbVirsubnetIds;
         return this;
@@ -326,9 +348,6 @@ public class UpdateLoadBalancerOption  {
 
     
     public UpdateLoadBalancerOption addElbVirsubnetIdsItem(String elbVirsubnetIdsItem) {
-        if (this.elbVirsubnetIds == null) {
-            this.elbVirsubnetIds = new ArrayList<>();
-        }
         this.elbVirsubnetIds.add(elbVirsubnetIdsItem);
         return this;
     }
@@ -352,6 +371,9 @@ public class UpdateLoadBalancerOption  {
     public void setElbVirsubnetIds(List<String> elbVirsubnetIds) {
         this.elbVirsubnetIds = elbVirsubnetIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

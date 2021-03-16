@@ -39,9 +39,6 @@ public class HttpCodeSummary  {
 
     
     public HttpCodeSummary addHttpCodesItem(HttpCode httpCodesItem) {
-        if (this.httpCodes == null) {
-            this.httpCodes = new ArrayList<>();
-        }
         this.httpCodes.add(httpCodesItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class HttpCodeSummary  {
         this.httpCodes = httpCodes;
     }
 
+    
+
     public HttpCodeSummary withTime(String time) {
         this.time = time;
         return this;
@@ -85,6 +84,9 @@ public class HttpCodeSummary  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -46,6 +46,9 @@ public class CreateTransTemplateResponse extends SdkResponse {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

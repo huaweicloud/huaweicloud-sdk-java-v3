@@ -49,6 +49,8 @@ public class VerifyCodeCheckDTO  {
         this.user = user;
     }
 
+    
+
     public VerifyCodeCheckDTO withCode(String code) {
         this.code = code;
         return this;
@@ -68,6 +70,9 @@ public class VerifyCodeCheckDTO  {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

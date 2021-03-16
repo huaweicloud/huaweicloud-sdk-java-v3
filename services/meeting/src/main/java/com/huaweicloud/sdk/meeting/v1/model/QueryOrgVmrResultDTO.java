@@ -52,13 +52,13 @@ public class QueryOrgVmrResultDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member")
     
-    private IdMarkDTO member = null;
+    private IdMarkDTO member;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device")
     
-    private IdMarkDTO device = null;
+    private IdMarkDTO device;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class QueryOrgVmrResultDTO  {
         this.id = id;
     }
 
+    
+
     public QueryOrgVmrResultDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
@@ -105,6 +107,8 @@ public class QueryOrgVmrResultDTO  {
     public void setVmrId(String vmrId) {
         this.vmrId = vmrId;
     }
+
+    
 
     public QueryOrgVmrResultDTO withVmrName(String vmrName) {
         this.vmrName = vmrName;
@@ -126,6 +130,8 @@ public class QueryOrgVmrResultDTO  {
         this.vmrName = vmrName;
     }
 
+    
+
     public QueryOrgVmrResultDTO withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
         return this;
@@ -146,6 +152,8 @@ public class QueryOrgVmrResultDTO  {
         this.vmrPkgName = vmrPkgName;
     }
 
+    
+
     public QueryOrgVmrResultDTO withVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
         return this;
@@ -165,6 +173,8 @@ public class QueryOrgVmrResultDTO  {
     public void setVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
     }
+
+    
 
     public QueryOrgVmrResultDTO withMember(IdMarkDTO member) {
         this.member = member;
@@ -193,6 +203,8 @@ public class QueryOrgVmrResultDTO  {
         this.member = member;
     }
 
+    
+
     public QueryOrgVmrResultDTO withDevice(IdMarkDTO device) {
         this.device = device;
         return this;
@@ -220,6 +232,8 @@ public class QueryOrgVmrResultDTO  {
         this.device = device;
     }
 
+    
+
     public QueryOrgVmrResultDTO withStatus(Integer status) {
         this.status = status;
         return this;
@@ -239,6 +253,9 @@ public class QueryOrgVmrResultDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

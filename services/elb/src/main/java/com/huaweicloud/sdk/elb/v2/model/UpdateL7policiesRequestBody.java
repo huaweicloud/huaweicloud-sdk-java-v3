@@ -22,7 +22,7 @@ public class UpdateL7policiesRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7policy")
     
-    private UpdateL7policyReq l7policy = null;
+    private UpdateL7policyReq l7policy;
 
     public UpdateL7policiesRequestBody withL7policy(UpdateL7policyReq l7policy) {
         this.l7policy = l7policy;
@@ -50,6 +50,9 @@ public class UpdateL7policiesRequestBody  {
     public void setL7policy(UpdateL7policyReq l7policy) {
         this.l7policy = l7policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

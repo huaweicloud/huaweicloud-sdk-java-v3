@@ -49,6 +49,8 @@ public class CreateLabelsReq  {
         this.name = name;
     }
 
+    
+
     public CreateLabelsReq withColor(String color) {
         this.color = color;
         return this;
@@ -68,6 +70,9 @@ public class CreateLabelsReq  {
     public void setColor(String color) {
         this.color = color;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

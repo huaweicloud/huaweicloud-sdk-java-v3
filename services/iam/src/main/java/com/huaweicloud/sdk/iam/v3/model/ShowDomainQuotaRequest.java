@@ -149,6 +149,8 @@ public class ShowDomainQuotaRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public ShowDomainQuotaRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -168,6 +170,9 @@ public class ShowDomainQuotaRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -29,7 +29,7 @@ public class GlanceShowImageMemberSchemasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private Object properties = null;
+    private Object properties;
 
     public GlanceShowImageMemberSchemasResponse withName(String name) {
         this.name = name;
@@ -51,6 +51,8 @@ public class GlanceShowImageMemberSchemasResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public GlanceShowImageMemberSchemasResponse withProperties(Object properties) {
         this.properties = properties;
         return this;
@@ -70,6 +72,9 @@ public class GlanceShowImageMemberSchemasResponse extends SdkResponse {
     public void setProperties(Object properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

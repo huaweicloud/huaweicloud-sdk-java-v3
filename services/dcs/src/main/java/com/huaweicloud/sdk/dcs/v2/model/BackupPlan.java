@@ -29,7 +29,7 @@ public class BackupPlan  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_at")
     
-    private List<Integer> backupAt = new ArrayList<>();
+    private List<Integer> backupAt = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class BackupPlan  {
         this.timezoneOffset = timezoneOffset;
     }
 
+    
+
     public BackupPlan withBackupAt(List<Integer> backupAt) {
         this.backupAt = backupAt;
         return this;
@@ -94,6 +96,8 @@ public class BackupPlan  {
         this.backupAt = backupAt;
     }
 
+    
+
     public BackupPlan withPeriodType(String periodType) {
         this.periodType = periodType;
         return this;
@@ -114,6 +118,8 @@ public class BackupPlan  {
         this.periodType = periodType;
     }
 
+    
+
     public BackupPlan withBeginAt(String beginAt) {
         this.beginAt = beginAt;
         return this;
@@ -133,6 +139,9 @@ public class BackupPlan  {
     public void setBeginAt(String beginAt) {
         this.beginAt = beginAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

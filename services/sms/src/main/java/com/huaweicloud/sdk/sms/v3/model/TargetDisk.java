@@ -112,7 +112,7 @@ public class TargetDisk  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_use")
     
-    private DeviceUseEnum deviceUse = DeviceUseEnum.NORMAL;
+    private DeviceUseEnum deviceUse;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,6 +164,8 @@ public class TargetDisk  {
         this.deviceUse = deviceUse;
     }
 
+    
+
     public TargetDisk withDiskId(String diskId) {
         this.diskId = diskId;
         return this;
@@ -183,6 +185,8 @@ public class TargetDisk  {
     public void setDiskId(String diskId) {
         this.diskId = diskId;
     }
+
+    
 
     public TargetDisk withName(String name) {
         this.name = name;
@@ -204,6 +208,8 @@ public class TargetDisk  {
         this.name = name;
     }
 
+    
+
     public TargetDisk withPhysicalVolumes(List<TargetPhysicalVolumes> physicalVolumes) {
         this.physicalVolumes = physicalVolumes;
         return this;
@@ -211,9 +217,6 @@ public class TargetDisk  {
 
     
     public TargetDisk addPhysicalVolumesItem(TargetPhysicalVolumes physicalVolumesItem) {
-        if (this.physicalVolumes == null) {
-            this.physicalVolumes = new ArrayList<>();
-        }
         this.physicalVolumes.add(physicalVolumesItem);
         return this;
     }
@@ -238,6 +241,8 @@ public class TargetDisk  {
         this.physicalVolumes = physicalVolumes;
     }
 
+    
+
     public TargetDisk withSize(Long size) {
         this.size = size;
         return this;
@@ -260,6 +265,8 @@ public class TargetDisk  {
         this.size = size;
     }
 
+    
+
     public TargetDisk withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
@@ -281,6 +288,9 @@ public class TargetDisk  {
     public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

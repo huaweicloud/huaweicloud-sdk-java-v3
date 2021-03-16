@@ -124,6 +124,9 @@ public class EnableOrDisableScalingGroupRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

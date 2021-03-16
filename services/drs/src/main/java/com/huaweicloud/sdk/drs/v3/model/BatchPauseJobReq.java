@@ -24,7 +24,7 @@ public class BatchPauseJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<PauseInfo> jobs = new ArrayList<>();
+    private List<PauseInfo> jobs = null;
     
     public BatchPauseJobReq withJobs(List<PauseInfo> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchPauseJobReq  {
     public void setJobs(List<PauseInfo> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

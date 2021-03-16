@@ -55,13 +55,13 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    private Map<String, String> azStatus = new HashMap<>();
+    private Map<String, String> azStatus = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_name")
     
-    private List<String> versionName = new ArrayList<>();
+    private List<String> versionName = null;
     
     public Flavor withId(String id) {
         this.id = id;
@@ -83,6 +83,8 @@ public class Flavor  {
         this.id = id;
     }
 
+    
+
     public Flavor withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
@@ -102,6 +104,8 @@ public class Flavor  {
     public void setVcpus(String vcpus) {
         this.vcpus = vcpus;
     }
+
+    
 
     public Flavor withRam(Integer ram) {
         this.ram = ram;
@@ -123,6 +127,8 @@ public class Flavor  {
         this.ram = ram;
     }
 
+    
+
     public Flavor withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -143,6 +149,8 @@ public class Flavor  {
         this.specCode = specCode;
     }
 
+    
+
     public Flavor withInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
         return this;
@@ -162,6 +170,8 @@ public class Flavor  {
     public void setInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
     }
+
+    
 
     public Flavor withAzStatus(Map<String, String> azStatus) {
         this.azStatus = azStatus;
@@ -194,6 +204,8 @@ public class Flavor  {
         this.azStatus = azStatus;
     }
 
+    
+
     public Flavor withVersionName(List<String> versionName) {
         this.versionName = versionName;
         return this;
@@ -224,6 +236,9 @@ public class Flavor  {
     public void setVersionName(List<String> versionName) {
         this.versionName = versionName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

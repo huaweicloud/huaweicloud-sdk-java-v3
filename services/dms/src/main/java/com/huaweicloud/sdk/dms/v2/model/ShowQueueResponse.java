@@ -279,6 +279,8 @@ public class ShowQueueResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowQueueResponse withName(String name) {
         this.name = name;
         return this;
@@ -298,6 +300,8 @@ public class ShowQueueResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowQueueResponse withDescription(String description) {
         this.description = description;
@@ -319,6 +323,8 @@ public class ShowQueueResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowQueueResponse withQueueMode(QueueModeEnum queueMode) {
         this.queueMode = queueMode;
         return this;
@@ -338,6 +344,8 @@ public class ShowQueueResponse extends SdkResponse {
     public void setQueueMode(QueueModeEnum queueMode) {
         this.queueMode = queueMode;
     }
+
+    
 
     public ShowQueueResponse withReservation(Integer reservation) {
         this.reservation = reservation;
@@ -359,6 +367,8 @@ public class ShowQueueResponse extends SdkResponse {
         this.reservation = reservation;
     }
 
+    
+
     public ShowQueueResponse withMaxMsgSizeByte(Integer maxMsgSizeByte) {
         this.maxMsgSizeByte = maxMsgSizeByte;
         return this;
@@ -378,6 +388,8 @@ public class ShowQueueResponse extends SdkResponse {
     public void setMaxMsgSizeByte(Integer maxMsgSizeByte) {
         this.maxMsgSizeByte = maxMsgSizeByte;
     }
+
+    
 
     public ShowQueueResponse withProducedMessages(Integer producedMessages) {
         this.producedMessages = producedMessages;
@@ -399,6 +411,8 @@ public class ShowQueueResponse extends SdkResponse {
         this.producedMessages = producedMessages;
     }
 
+    
+
     public ShowQueueResponse withRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
         return this;
@@ -418,6 +432,8 @@ public class ShowQueueResponse extends SdkResponse {
     public void setRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
     }
+
+    
 
     public ShowQueueResponse withMaxConsumeCount(Integer maxConsumeCount) {
         this.maxConsumeCount = maxConsumeCount;
@@ -439,6 +455,8 @@ public class ShowQueueResponse extends SdkResponse {
         this.maxConsumeCount = maxConsumeCount;
     }
 
+    
+
     public ShowQueueResponse withGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
         return this;
@@ -459,6 +477,8 @@ public class ShowQueueResponse extends SdkResponse {
         this.groupCount = groupCount;
     }
 
+    
+
     public ShowQueueResponse withKafkaTopic(String kafkaTopic) {
         this.kafkaTopic = kafkaTopic;
         return this;
@@ -478,6 +498,9 @@ public class ShowQueueResponse extends SdkResponse {
     public void setKafkaTopic(String kafkaTopic) {
         this.kafkaTopic = kafkaTopic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

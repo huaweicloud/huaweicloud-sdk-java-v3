@@ -24,7 +24,7 @@ public class BatchDeleteServerNicsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    private List<BatchDeleteServerNicOption> nics = new ArrayList<>();
+    private List<BatchDeleteServerNicOption> nics = null;
     
     public BatchDeleteServerNicsRequestBody withNics(List<BatchDeleteServerNicOption> nics) {
         this.nics = nics;
@@ -56,6 +56,9 @@ public class BatchDeleteServerNicsRequestBody  {
     public void setNics(List<BatchDeleteServerNicOption> nics) {
         this.nics = nics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

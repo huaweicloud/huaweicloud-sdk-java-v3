@@ -29,7 +29,7 @@ public class CountPreoccupyIpNumRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_target_enable")
     
-    private Boolean ipTargetEnable = false;
+    private Boolean ipTargetEnable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +56,6 @@ public class CountPreoccupyIpNumRequest  {
 
     
     public CountPreoccupyIpNumRequest addAvailabilityZoneIdItem(String availabilityZoneIdItem) {
-        if (this.availabilityZoneId == null) {
-            this.availabilityZoneId = new ArrayList<>();
-        }
         this.availabilityZoneId.add(availabilityZoneIdItem);
         return this;
     }
@@ -83,6 +80,8 @@ public class CountPreoccupyIpNumRequest  {
         this.availabilityZoneId = availabilityZoneId;
     }
 
+    
+
     public CountPreoccupyIpNumRequest withIpTargetEnable(Boolean ipTargetEnable) {
         this.ipTargetEnable = ipTargetEnable;
         return this;
@@ -102,6 +101,8 @@ public class CountPreoccupyIpNumRequest  {
     public void setIpTargetEnable(Boolean ipTargetEnable) {
         this.ipTargetEnable = ipTargetEnable;
     }
+
+    
 
     public CountPreoccupyIpNumRequest withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
@@ -123,6 +124,8 @@ public class CountPreoccupyIpNumRequest  {
         this.ipVersion = ipVersion;
     }
 
+    
+
     public CountPreoccupyIpNumRequest withL7FlavorId(String l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
         return this;
@@ -143,6 +146,8 @@ public class CountPreoccupyIpNumRequest  {
         this.l7FlavorId = l7FlavorId;
     }
 
+    
+
     public CountPreoccupyIpNumRequest withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
@@ -162,6 +167,9 @@ public class CountPreoccupyIpNumRequest  {
     public void setLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

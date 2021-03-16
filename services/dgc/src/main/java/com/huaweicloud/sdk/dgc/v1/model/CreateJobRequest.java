@@ -22,7 +22,7 @@ public class CreateJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private JobInfo body = null;
+    private JobInfo body;
 
     public CreateJobRequest withBody(JobInfo body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateJobRequest  {
     public void setBody(JobInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

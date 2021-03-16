@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dds.v3.model.BackupStrategy;
 import com.huaweicloud.sdk.dds.v3.model.CreateInstanceFlavorOption;
 import com.huaweicloud.sdk.dds.v3.model.Datastore;
-import com.huaweicloud.sdk.dds.v3.model.RestorePoint;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -33,7 +32,7 @@ public class CreateInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,13 +86,13 @@ public class CreateInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    private List<CreateInstanceFlavorOption> flavor = new ArrayList<>();
+    private List<CreateInstanceFlavorOption> flavor = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private BackupStrategy backupStrategy = null;
+    private BackupStrategy backupStrategy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,12 +118,6 @@ public class CreateInstanceRequestBody  {
     
     private List<String> serverGroupPolicies = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore_point")
-    
-    private RestorePoint restorePoint = null;
-
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -144,6 +137,8 @@ public class CreateInstanceRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateInstanceRequestBody withDatastore(Datastore datastore) {
         this.datastore = datastore;
@@ -172,6 +167,8 @@ public class CreateInstanceRequestBody  {
         this.datastore = datastore;
     }
 
+    
+
     public CreateInstanceRequestBody withRegion(String region) {
         this.region = region;
         return this;
@@ -181,7 +178,7 @@ public class CreateInstanceRequestBody  {
 
 
     /**
-     * 区域ID，恢复到新实例时不可选。
+     * - 区域ID - 取值：非空。
      * @return region
      */
     public String getRegion() {
@@ -192,6 +189,8 @@ public class CreateInstanceRequestBody  {
         this.region = region;
     }
 
+    
+
     public CreateInstanceRequestBody withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -201,7 +200,7 @@ public class CreateInstanceRequestBody  {
 
 
     /**
-     * 可用区ID。
+     * 可用区ID。非专属云用户可以选择多个AZ，创建跨AZ的集群。专属云用户暂不支持创建跨AZ的集群。取值：非空。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -211,6 +210,8 @@ public class CreateInstanceRequestBody  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public CreateInstanceRequestBody withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -232,6 +233,8 @@ public class CreateInstanceRequestBody  {
         this.vpcId = vpcId;
     }
 
+    
+
     public CreateInstanceRequestBody withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -251,6 +254,8 @@ public class CreateInstanceRequestBody  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public CreateInstanceRequestBody withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -272,6 +277,8 @@ public class CreateInstanceRequestBody  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public CreateInstanceRequestBody withPassword(String password) {
         this.password = password;
         return this;
@@ -291,6 +298,8 @@ public class CreateInstanceRequestBody  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
 
     public CreateInstanceRequestBody withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
@@ -312,6 +321,8 @@ public class CreateInstanceRequestBody  {
         this.diskEncryptionId = diskEncryptionId;
     }
 
+    
+
     public CreateInstanceRequestBody withMode(String mode) {
         this.mode = mode;
         return this;
@@ -331,6 +342,8 @@ public class CreateInstanceRequestBody  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
 
     public CreateInstanceRequestBody withFlavor(List<CreateInstanceFlavorOption> flavor) {
         this.flavor = flavor;
@@ -363,6 +376,8 @@ public class CreateInstanceRequestBody  {
         this.flavor = flavor;
     }
 
+    
+
     public CreateInstanceRequestBody withBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
@@ -390,6 +405,8 @@ public class CreateInstanceRequestBody  {
         this.backupStrategy = backupStrategy;
     }
 
+    
+
     public CreateInstanceRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -409,6 +426,8 @@ public class CreateInstanceRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public CreateInstanceRequestBody withSslOption(String sslOption) {
         this.sslOption = sslOption;
@@ -430,6 +449,8 @@ public class CreateInstanceRequestBody  {
         this.sslOption = sslOption;
     }
 
+    
+
     public CreateInstanceRequestBody withDssPoolId(String dssPoolId) {
         this.dssPoolId = dssPoolId;
         return this;
@@ -439,7 +460,7 @@ public class CreateInstanceRequestBody  {
 
 
     /**
-     * 创建新实例所在专属存储池ID，仅专属云创建实例时有效。
+     * Dec用户专属存储ID，默认为空。仅Dec用户支持该参数。
      * @return dssPoolId
      */
     public String getDssPoolId() {
@@ -450,6 +471,8 @@ public class CreateInstanceRequestBody  {
         this.dssPoolId = dssPoolId;
     }
 
+    
+
     public CreateInstanceRequestBody withServerGroupPolicies(List<String> serverGroupPolicies) {
         this.serverGroupPolicies = serverGroupPolicies;
         return this;
@@ -457,9 +480,6 @@ public class CreateInstanceRequestBody  {
 
     
     public CreateInstanceRequestBody addServerGroupPoliciesItem(String serverGroupPoliciesItem) {
-        if (this.serverGroupPolicies == null) {
-            this.serverGroupPolicies = new ArrayList<>();
-        }
         this.serverGroupPolicies.add(serverGroupPoliciesItem);
         return this;
     }
@@ -484,32 +504,8 @@ public class CreateInstanceRequestBody  {
         this.serverGroupPolicies = serverGroupPolicies;
     }
 
-    public CreateInstanceRequestBody withRestorePoint(RestorePoint restorePoint) {
-        this.restorePoint = restorePoint;
-        return this;
-    }
+    
 
-    public CreateInstanceRequestBody withRestorePoint(Consumer<RestorePoint> restorePointSetter) {
-        if(this.restorePoint == null ){
-            this.restorePoint = new RestorePoint();
-            restorePointSetter.accept(this.restorePoint);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get restorePoint
-     * @return restorePoint
-     */
-    public RestorePoint getRestorePoint() {
-        return restorePoint;
-    }
-
-    public void setRestorePoint(RestorePoint restorePoint) {
-        this.restorePoint = restorePoint;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -534,12 +530,11 @@ public class CreateInstanceRequestBody  {
             Objects.equals(this.enterpriseProjectId, createInstanceRequestBody.enterpriseProjectId) &&
             Objects.equals(this.sslOption, createInstanceRequestBody.sslOption) &&
             Objects.equals(this.dssPoolId, createInstanceRequestBody.dssPoolId) &&
-            Objects.equals(this.serverGroupPolicies, createInstanceRequestBody.serverGroupPolicies) &&
-            Objects.equals(this.restorePoint, createInstanceRequestBody.restorePoint);
+            Objects.equals(this.serverGroupPolicies, createInstanceRequestBody.serverGroupPolicies);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, datastore, region, availabilityZone, vpcId, subnetId, securityGroupId, password, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, serverGroupPolicies, restorePoint);
+        return Objects.hash(name, datastore, region, availabilityZone, vpcId, subnetId, securityGroupId, password, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, serverGroupPolicies);
     }
     @Override
     public String toString() {
@@ -561,7 +556,6 @@ public class CreateInstanceRequestBody  {
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    serverGroupPolicies: ").append(toIndentedString(serverGroupPolicies)).append("\n");
-        sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

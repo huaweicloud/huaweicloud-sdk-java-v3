@@ -34,7 +34,7 @@ public class CreateDestinationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateDestinationRequestBody body = null;
+    private CreateDestinationRequestBody body;
 
     public CreateDestinationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreateDestinationRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateDestinationRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -75,6 +77,8 @@ public class CreateDestinationRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public CreateDestinationRequest withBody(CreateDestinationRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateDestinationRequest  {
     public void setBody(CreateDestinationRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -56,6 +56,8 @@ public class ListLabelsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListLabelsResponse withLabelList(List<CaseLabelInfo> labelList) {
         this.labelList = labelList;
         return this;
@@ -63,9 +65,6 @@ public class ListLabelsResponse extends SdkResponse {
 
     
     public ListLabelsResponse addLabelListItem(CaseLabelInfo labelListItem) {
-        if (this.labelList == null) {
-            this.labelList = new ArrayList<>();
-        }
         this.labelList.add(labelListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListLabelsResponse extends SdkResponse {
     public void setLabelList(List<CaseLabelInfo> labelList) {
         this.labelList = labelList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

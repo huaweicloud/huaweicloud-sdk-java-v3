@@ -67,6 +67,8 @@ public class MemberJobCard  {
         this.name = name;
     }
 
+    
+
     public MemberJobCard withAverageScore(String averageScore) {
         this.averageScore = averageScore;
         return this;
@@ -86,6 +88,8 @@ public class MemberJobCard  {
     public void setAverageScore(String averageScore) {
         this.averageScore = averageScore;
     }
+
+    
 
     public MemberJobCard withScore(Integer score) {
         this.score = score;
@@ -107,6 +111,8 @@ public class MemberJobCard  {
         this.score = score;
     }
 
+    
+
     public MemberJobCard withSendTime(String sendTime) {
         this.sendTime = sendTime;
         return this;
@@ -127,6 +133,8 @@ public class MemberJobCard  {
         this.sendTime = sendTime;
     }
 
+    
+
     public MemberJobCard withLastSubmitTime(String lastSubmitTime) {
         this.lastSubmitTime = lastSubmitTime;
         return this;
@@ -146,6 +154,9 @@ public class MemberJobCard  {
     public void setLastSubmitTime(String lastSubmitTime) {
         this.lastSubmitTime = lastSubmitTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

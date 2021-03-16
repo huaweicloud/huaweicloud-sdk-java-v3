@@ -49,6 +49,8 @@ public class ListSubCustomerDiscountsRequest  {
         this.customerId = customerId;
     }
 
+    
+
     public ListSubCustomerDiscountsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -68,6 +70,9 @@ public class ListSubCustomerDiscountsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

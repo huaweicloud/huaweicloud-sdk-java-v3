@@ -22,7 +22,7 @@ public class UpdateSnapshotRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snapshot")
     
-    private UpdateSnapshotOption snapshot = null;
+    private UpdateSnapshotOption snapshot;
 
     public UpdateSnapshotRequestBody withSnapshot(UpdateSnapshotOption snapshot) {
         this.snapshot = snapshot;
@@ -50,6 +50,9 @@ public class UpdateSnapshotRequestBody  {
     public void setSnapshot(UpdateSnapshotOption snapshot) {
         this.snapshot = snapshot;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

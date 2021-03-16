@@ -48,13 +48,13 @@ public class EachEncryptRsp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,6 +94,8 @@ public class EachEncryptRsp  {
         this.taskId = taskId;
     }
 
+    
+
     public EachEncryptRsp withStatus(String status) {
         this.status = status;
         return this;
@@ -113,6 +115,8 @@ public class EachEncryptRsp  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public EachEncryptRsp withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -134,6 +138,8 @@ public class EachEncryptRsp  {
         this.createTime = createTime;
     }
 
+    
+
     public EachEncryptRsp withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -153,6 +159,8 @@ public class EachEncryptRsp  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public EachEncryptRsp withInput(ObsObjInfo input) {
         this.input = input;
@@ -181,6 +189,8 @@ public class EachEncryptRsp  {
         this.input = input;
     }
 
+    
+
     public EachEncryptRsp withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -208,6 +218,8 @@ public class EachEncryptRsp  {
         this.output = output;
     }
 
+    
+
     public EachEncryptRsp withOutputFileName(List<String> outputFileName) {
         this.outputFileName = outputFileName;
         return this;
@@ -215,9 +227,6 @@ public class EachEncryptRsp  {
 
     
     public EachEncryptRsp addOutputFileNameItem(String outputFileNameItem) {
-        if (this.outputFileName == null) {
-            this.outputFileName = new ArrayList<>();
-        }
         this.outputFileName.add(outputFileNameItem);
         return this;
     }
@@ -242,6 +251,8 @@ public class EachEncryptRsp  {
         this.outputFileName = outputFileName;
     }
 
+    
+
     public EachEncryptRsp withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -262,6 +273,8 @@ public class EachEncryptRsp  {
         this.userData = userData;
     }
 
+    
+
     public EachEncryptRsp withDescription(String description) {
         this.description = description;
         return this;
@@ -281,6 +294,9 @@ public class EachEncryptRsp  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

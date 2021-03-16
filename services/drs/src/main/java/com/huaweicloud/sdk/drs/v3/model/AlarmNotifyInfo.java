@@ -24,19 +24,19 @@ public class AlarmNotifyInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delay_time")
     
-    private Long delayTime = 0l;
+    private Long delayTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rto_delay")
     
-    private Long rtoDelay = 0l;
+    private Long rtoDelay;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rpo_delay")
     
-    private Long rpoDelay = 0l;
+    private Long rpoDelay;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,6 +72,8 @@ public class AlarmNotifyInfo  {
         this.delayTime = delayTime;
     }
 
+    
+
     public AlarmNotifyInfo withRtoDelay(Long rtoDelay) {
         this.rtoDelay = rtoDelay;
         return this;
@@ -93,6 +95,8 @@ public class AlarmNotifyInfo  {
     public void setRtoDelay(Long rtoDelay) {
         this.rtoDelay = rtoDelay;
     }
+
+    
 
     public AlarmNotifyInfo withRpoDelay(Long rpoDelay) {
         this.rpoDelay = rpoDelay;
@@ -116,6 +120,8 @@ public class AlarmNotifyInfo  {
         this.rpoDelay = rpoDelay;
     }
 
+    
+
     public AlarmNotifyInfo withAlarmToUser(String alarmToUser) {
         this.alarmToUser = alarmToUser;
         return this;
@@ -136,6 +142,8 @@ public class AlarmNotifyInfo  {
         this.alarmToUser = alarmToUser;
     }
 
+    
+
     public AlarmNotifyInfo withSubscriptions(List<SubscriptionInfo> subscriptions) {
         this.subscriptions = subscriptions;
         return this;
@@ -143,9 +151,6 @@ public class AlarmNotifyInfo  {
 
     
     public AlarmNotifyInfo addSubscriptionsItem(SubscriptionInfo subscriptionsItem) {
-        if (this.subscriptions == null) {
-            this.subscriptions = new ArrayList<>();
-        }
         this.subscriptions.add(subscriptionsItem);
         return this;
     }
@@ -169,6 +174,9 @@ public class AlarmNotifyInfo  {
     public void setSubscriptions(List<SubscriptionInfo> subscriptions) {
         this.subscriptions = subscriptions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateBindingDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BindMfaDevice body = null;
+    private BindMfaDevice body;
 
     public CreateBindingDeviceRequest withBody(BindMfaDevice body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateBindingDeviceRequest  {
     public void setBody(BindMfaDevice body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

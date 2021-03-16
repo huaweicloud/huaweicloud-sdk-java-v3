@@ -24,7 +24,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_group")
     
-    private CreateServerGroupResult serverGroup = null;
+    private CreateServerGroupResult serverGroup;
 
     public CreateServerGroupResponse withServerGroup(CreateServerGroupResult serverGroup) {
         this.serverGroup = serverGroup;
@@ -52,6 +52,9 @@ public class CreateServerGroupResponse extends SdkResponse {
     public void setServerGroup(CreateServerGroupResult serverGroup) {
         this.serverGroup = serverGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateInstanceRequestBody body = null;
+    private CreateInstanceRequestBody body;
 
     public CreateInstanceRequest withBody(CreateInstanceRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateInstanceRequest  {
     public void setBody(CreateInstanceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

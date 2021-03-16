@@ -49,6 +49,8 @@ public class DeleteEventRequest  {
         this.eventId = eventId;
     }
 
+    
+
     public DeleteEventRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
         return this;
@@ -68,6 +70,9 @@ public class DeleteEventRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

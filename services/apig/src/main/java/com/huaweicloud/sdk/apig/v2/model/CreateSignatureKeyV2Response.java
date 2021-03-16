@@ -34,13 +34,13 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,6 +164,8 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
         this.signSecret = signSecret;
     }
 
+    
+
     public CreateSignatureKeyV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -183,6 +185,8 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public CreateSignatureKeyV2Response withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
@@ -204,6 +208,8 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public CreateSignatureKeyV2Response withName(String name) {
         this.name = name;
         return this;
@@ -223,6 +229,8 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateSignatureKeyV2Response withId(String id) {
         this.id = id;
@@ -244,6 +252,8 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateSignatureKeyV2Response withSignKey(String signKey) {
         this.signKey = signKey;
         return this;
@@ -264,6 +274,8 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
         this.signKey = signKey;
     }
 
+    
+
     public CreateSignatureKeyV2Response withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -283,6 +295,9 @@ public class CreateSignatureKeyV2Response extends SdkResponse {
     public void setSignType(SignTypeEnum signType) {
         this.signType = signType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

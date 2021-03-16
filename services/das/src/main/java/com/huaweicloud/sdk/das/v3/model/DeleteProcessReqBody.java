@@ -63,6 +63,8 @@ public class DeleteProcessReqBody  {
         this.dbUserId = dbUserId;
     }
 
+    
+
     public DeleteProcessReqBody withProcessIds(List<String> processIds) {
         this.processIds = processIds;
         return this;
@@ -70,9 +72,6 @@ public class DeleteProcessReqBody  {
 
     
     public DeleteProcessReqBody addProcessIdsItem(String processIdsItem) {
-        if (this.processIds == null) {
-            this.processIds = new ArrayList<>();
-        }
         this.processIds.add(processIdsItem);
         return this;
     }
@@ -97,6 +96,8 @@ public class DeleteProcessReqBody  {
         this.processIds = processIds;
     }
 
+    
+
     public DeleteProcessReqBody withUser(String user) {
         this.user = user;
         return this;
@@ -117,6 +118,8 @@ public class DeleteProcessReqBody  {
         this.user = user;
     }
 
+    
+
     public DeleteProcessReqBody withDatabase(String database) {
         this.database = database;
         return this;
@@ -136,6 +139,9 @@ public class DeleteProcessReqBody  {
     public void setDatabase(String database) {
         this.database = database;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

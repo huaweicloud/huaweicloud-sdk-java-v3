@@ -23,7 +23,7 @@ public class ListVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    private Object version = null;
+    private Object version;
 
     public ListVersionResponse withVersion(Object version) {
         this.version = version;
@@ -44,6 +44,9 @@ public class ListVersionResponse extends SdkResponse {
     public void setVersion(Object version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

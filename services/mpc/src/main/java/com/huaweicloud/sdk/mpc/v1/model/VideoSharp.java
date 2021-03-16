@@ -55,6 +55,8 @@ public class VideoSharp  {
         this.name = name;
     }
 
+    
+
     public VideoSharp withExecutionOrder(Integer executionOrder) {
         this.executionOrder = executionOrder;
         return this;
@@ -75,6 +77,8 @@ public class VideoSharp  {
         this.executionOrder = executionOrder;
     }
 
+    
+
     public VideoSharp withAmount(String amount) {
         this.amount = amount;
         return this;
@@ -94,6 +98,9 @@ public class VideoSharp  {
     public void setAmount(String amount) {
         this.amount = amount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

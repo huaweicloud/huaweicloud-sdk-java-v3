@@ -56,7 +56,7 @@ public class CreateTrackerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lts")
     
-    private Lts lts = null;
+    private Lts lts;
     /**
      * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。
      */
@@ -260,13 +260,13 @@ public class CreateTrackerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_info")
     
-    private ObsInfo obsInfo = null;
+    private ObsInfo obsInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_bucket")
     
-    private DataBucketQuery dataBucket = null;
+    private DataBucketQuery dataBucket;
 
     public CreateTrackerResponse withId(String id) {
         this.id = id;
@@ -287,6 +287,8 @@ public class CreateTrackerResponse extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public CreateTrackerResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -310,6 +312,8 @@ public class CreateTrackerResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public CreateTrackerResponse withKmsId(String kmsId) {
         this.kmsId = kmsId;
         return this;
@@ -330,6 +334,8 @@ public class CreateTrackerResponse extends SdkResponse {
         this.kmsId = kmsId;
     }
 
+    
+
     public CreateTrackerResponse withIsSupportValidate(Boolean isSupportValidate) {
         this.isSupportValidate = isSupportValidate;
         return this;
@@ -349,6 +355,8 @@ public class CreateTrackerResponse extends SdkResponse {
     public void setIsSupportValidate(Boolean isSupportValidate) {
         this.isSupportValidate = isSupportValidate;
     }
+
+    
 
     public CreateTrackerResponse withLts(Lts lts) {
         this.lts = lts;
@@ -377,6 +385,8 @@ public class CreateTrackerResponse extends SdkResponse {
         this.lts = lts;
     }
 
+    
+
     public CreateTrackerResponse withTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
         return this;
@@ -396,6 +406,8 @@ public class CreateTrackerResponse extends SdkResponse {
     public void setTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
     }
+
+    
 
     public CreateTrackerResponse withDomainId(String domainId) {
         this.domainId = domainId;
@@ -417,6 +429,8 @@ public class CreateTrackerResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
+    
+
     public CreateTrackerResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -436,6 +450,8 @@ public class CreateTrackerResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreateTrackerResponse withTrackerName(String trackerName) {
         this.trackerName = trackerName;
@@ -457,6 +473,8 @@ public class CreateTrackerResponse extends SdkResponse {
         this.trackerName = trackerName;
     }
 
+    
+
     public CreateTrackerResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -476,6 +494,8 @@ public class CreateTrackerResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public CreateTrackerResponse withDetail(String detail) {
         this.detail = detail;
@@ -497,6 +517,8 @@ public class CreateTrackerResponse extends SdkResponse {
         this.detail = detail;
     }
 
+    
+
     public CreateTrackerResponse withIsSupportTraceFilesEncryption(Boolean isSupportTraceFilesEncryption) {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
         return this;
@@ -516,6 +538,8 @@ public class CreateTrackerResponse extends SdkResponse {
     public void setIsSupportTraceFilesEncryption(Boolean isSupportTraceFilesEncryption) {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
     }
+
+    
 
     public CreateTrackerResponse withObsInfo(ObsInfo obsInfo) {
         this.obsInfo = obsInfo;
@@ -544,6 +568,8 @@ public class CreateTrackerResponse extends SdkResponse {
         this.obsInfo = obsInfo;
     }
 
+    
+
     public CreateTrackerResponse withDataBucket(DataBucketQuery dataBucket) {
         this.dataBucket = dataBucket;
         return this;
@@ -570,6 +596,9 @@ public class CreateTrackerResponse extends SdkResponse {
     public void setDataBucket(DataBucketQuery dataBucket) {
         this.dataBucket = dataBucket;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

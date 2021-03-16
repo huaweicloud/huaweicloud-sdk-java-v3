@@ -27,13 +27,13 @@ public class SearchHisMeetingsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,7 +45,7 @@ public class SearchHisMeetingsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queryAll")
     
-    private Boolean queryAll = false;
+    private Boolean queryAll;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +97,8 @@ public class SearchHisMeetingsRequest  {
         this.userUUID = userUUID;
     }
 
+    
+
     public SearchHisMeetingsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -116,6 +118,8 @@ public class SearchHisMeetingsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchHisMeetingsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -139,6 +143,8 @@ public class SearchHisMeetingsRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchHisMeetingsRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -158,6 +164,8 @@ public class SearchHisMeetingsRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public SearchHisMeetingsRequest withQueryAll(Boolean queryAll) {
         this.queryAll = queryAll;
@@ -179,6 +187,8 @@ public class SearchHisMeetingsRequest  {
         this.queryAll = queryAll;
     }
 
+    
+
     public SearchHisMeetingsRequest withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
@@ -198,6 +208,8 @@ public class SearchHisMeetingsRequest  {
     public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
+
+    
 
     public SearchHisMeetingsRequest withEndDate(Long endDate) {
         this.endDate = endDate;
@@ -219,6 +231,8 @@ public class SearchHisMeetingsRequest  {
         this.endDate = endDate;
     }
 
+    
+
     public SearchHisMeetingsRequest withSortType(String sortType) {
         this.sortType = sortType;
         return this;
@@ -238,6 +252,8 @@ public class SearchHisMeetingsRequest  {
     public void setSortType(String sortType) {
         this.sortType = sortType;
     }
+
+    
 
     public SearchHisMeetingsRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -261,6 +277,8 @@ public class SearchHisMeetingsRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public SearchHisMeetingsRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -282,6 +300,9 @@ public class SearchHisMeetingsRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

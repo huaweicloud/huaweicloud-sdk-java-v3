@@ -28,13 +28,13 @@ public class ListPrivateZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metedata metadata = null;
+    private Metedata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class ListPrivateZonesResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public ListPrivateZonesResponse withMetadata(Metedata metadata) {
         this.metadata = metadata;
         return this;
@@ -96,6 +98,8 @@ public class ListPrivateZonesResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public ListPrivateZonesResponse withZones(List<PrivateZoneResp> zones) {
         this.zones = zones;
         return this;
@@ -103,9 +107,6 @@ public class ListPrivateZonesResponse extends SdkResponse {
 
     
     public ListPrivateZonesResponse addZonesItem(PrivateZoneResp zonesItem) {
-        if (this.zones == null) {
-            this.zones = new ArrayList<>();
-        }
         this.zones.add(zonesItem);
         return this;
     }
@@ -129,6 +130,9 @@ public class ListPrivateZonesResponse extends SdkResponse {
     public void setZones(List<PrivateZoneResp> zones) {
         this.zones = zones;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

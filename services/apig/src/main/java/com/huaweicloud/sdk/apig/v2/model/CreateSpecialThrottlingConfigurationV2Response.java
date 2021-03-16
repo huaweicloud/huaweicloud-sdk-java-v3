@@ -54,7 +54,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apply_time")
     
-    private OffsetDateTime applyTime = null;
+    private OffsetDateTime applyTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,6 +94,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         this.callLimits = callLimits;
     }
 
+    
+
     public CreateSpecialThrottlingConfigurationV2Response withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -113,6 +115,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public CreateSpecialThrottlingConfigurationV2Response withObjectName(String objectName) {
         this.objectName = objectName;
@@ -134,6 +138,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         this.objectName = objectName;
     }
 
+    
+
     public CreateSpecialThrottlingConfigurationV2Response withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -153,6 +159,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
+
+    
 
     public CreateSpecialThrottlingConfigurationV2Response withThrottleId(String throttleId) {
         this.throttleId = throttleId;
@@ -174,6 +182,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         this.throttleId = throttleId;
     }
 
+    
+
     public CreateSpecialThrottlingConfigurationV2Response withApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
         return this;
@@ -193,6 +203,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     public void setApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
     }
+
+    
 
     public CreateSpecialThrottlingConfigurationV2Response withId(String id) {
         this.id = id;
@@ -214,6 +226,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         this.id = id;
     }
 
+    
+
     public CreateSpecialThrottlingConfigurationV2Response withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -234,6 +248,8 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         this.appId = appId;
     }
 
+    
+
     public CreateSpecialThrottlingConfigurationV2Response withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
@@ -253,6 +269,9 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     public void setObjectType(String objectType) {
         this.objectType = objectType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class FollowerMigrateRequest  {
         this.nodeId = nodeId;
     }
 
+    
+
     public FollowerMigrateRequest withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
@@ -68,6 +70,9 @@ public class FollowerMigrateRequest  {
     public void setAzCode(String azCode) {
         this.azCode = azCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

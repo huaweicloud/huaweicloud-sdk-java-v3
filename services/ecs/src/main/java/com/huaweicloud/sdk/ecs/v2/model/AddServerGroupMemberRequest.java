@@ -28,7 +28,7 @@ public class AddServerGroupMemberRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddServerGroupMemberRequestBody body = null;
+    private AddServerGroupMemberRequestBody body;
 
     public AddServerGroupMemberRequest withServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
@@ -49,6 +49,8 @@ public class AddServerGroupMemberRequest  {
     public void setServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
     }
+
+    
 
     public AddServerGroupMemberRequest withBody(AddServerGroupMemberRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AddServerGroupMemberRequest  {
     public void setBody(AddServerGroupMemberRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

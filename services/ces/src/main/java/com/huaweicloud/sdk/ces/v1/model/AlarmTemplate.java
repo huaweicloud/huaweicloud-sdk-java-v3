@@ -76,6 +76,8 @@ public class AlarmTemplate  {
         this.templateName = templateName;
     }
 
+    
+
     public AlarmTemplate withTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
         return this;
@@ -95,6 +97,8 @@ public class AlarmTemplate  {
     public void setTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
     }
+
+    
 
     public AlarmTemplate withNamespace(String namespace) {
         this.namespace = namespace;
@@ -116,6 +120,8 @@ public class AlarmTemplate  {
         this.namespace = namespace;
     }
 
+    
+
     public AlarmTemplate withDimensionName(String dimensionName) {
         this.dimensionName = dimensionName;
         return this;
@@ -136,6 +142,8 @@ public class AlarmTemplate  {
         this.dimensionName = dimensionName;
     }
 
+    
+
     public AlarmTemplate withTemplateItems(List<TemplateItem> templateItems) {
         this.templateItems = templateItems;
         return this;
@@ -143,9 +151,6 @@ public class AlarmTemplate  {
 
     
     public AlarmTemplate addTemplateItemsItem(TemplateItem templateItemsItem) {
-        if (this.templateItems == null) {
-            this.templateItems = new ArrayList<>();
-        }
         this.templateItems.add(templateItemsItem);
         return this;
     }
@@ -170,6 +175,8 @@ public class AlarmTemplate  {
         this.templateItems = templateItems;
     }
 
+    
+
     public AlarmTemplate withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -189,6 +196,9 @@ public class AlarmTemplate  {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

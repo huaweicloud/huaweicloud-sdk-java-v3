@@ -22,7 +22,7 @@ public class ImportJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ImportFileReq body = null;
+    private ImportFileReq body;
 
     public ImportJobRequest withBody(ImportFileReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ImportJobRequest  {
     public void setBody(ImportFileReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

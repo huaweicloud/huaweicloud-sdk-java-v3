@@ -34,7 +34,7 @@ public class UpdateDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDeviceRequestBody body = null;
+    private UpdateDeviceRequestBody body;
 
     public UpdateDeviceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class UpdateDeviceRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateDeviceRequest withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
@@ -77,6 +79,8 @@ public class UpdateDeviceRequest  {
     public void setDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
     }
+
+    
 
     public UpdateDeviceRequest withBody(UpdateDeviceRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class UpdateDeviceRequest  {
     public void setBody(UpdateDeviceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class UpdateServerNameRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PutSourceServerBody body = null;
+    private PutSourceServerBody body;
 
     public UpdateServerNameRequest withSourceId(String sourceId) {
         this.sourceId = sourceId;
@@ -49,6 +49,8 @@ public class UpdateServerNameRequest  {
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
+
+    
 
     public UpdateServerNameRequest withBody(PutSourceServerBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateServerNameRequest  {
     public void setBody(PutSourceServerBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

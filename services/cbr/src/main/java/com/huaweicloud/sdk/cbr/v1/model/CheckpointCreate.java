@@ -147,13 +147,13 @@ public class CheckpointCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vault")
     
-    private CheckpointPlanCreate vault = null;
+    private CheckpointPlanCreate vault;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_info")
     
-    private CheckpointExtraInfoResp extraInfo = null;
+    private CheckpointExtraInfoResp extraInfo;
 
     public CheckpointCreate withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -175,6 +175,8 @@ public class CheckpointCreate  {
         this.createdAt = createdAt;
     }
 
+    
+
     public CheckpointCreate withId(String id) {
         this.id = id;
         return this;
@@ -194,6 +196,8 @@ public class CheckpointCreate  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public CheckpointCreate withProjectId(String projectId) {
         this.projectId = projectId;
@@ -215,6 +219,8 @@ public class CheckpointCreate  {
         this.projectId = projectId;
     }
 
+    
+
     public CheckpointCreate withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -234,6 +240,8 @@ public class CheckpointCreate  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public CheckpointCreate withVault(CheckpointPlanCreate vault) {
         this.vault = vault;
@@ -262,6 +270,8 @@ public class CheckpointCreate  {
         this.vault = vault;
     }
 
+    
+
     public CheckpointCreate withExtraInfo(CheckpointExtraInfoResp extraInfo) {
         this.extraInfo = extraInfo;
         return this;
@@ -288,6 +298,9 @@ public class CheckpointCreate  {
     public void setExtraInfo(CheckpointExtraInfoResp extraInfo) {
         this.extraInfo = extraInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

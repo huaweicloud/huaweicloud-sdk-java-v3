@@ -46,7 +46,7 @@ public class ShowUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -146,6 +146,8 @@ public class ShowUserResult  {
         this.enabled = enabled;
     }
 
+    
+
     public ShowUserResult withId(String id) {
         this.id = id;
         return this;
@@ -165,6 +167,8 @@ public class ShowUserResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ShowUserResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -186,6 +190,8 @@ public class ShowUserResult  {
         this.domainId = domainId;
     }
 
+    
+
     public ShowUserResult withName(String name) {
         this.name = name;
         return this;
@@ -205,6 +211,8 @@ public class ShowUserResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowUserResult withLinks(Links links) {
         this.links = links;
@@ -233,6 +241,8 @@ public class ShowUserResult  {
         this.links = links;
     }
 
+    
+
     public ShowUserResult withXuserId(String xuserId) {
         this.xuserId = xuserId;
         return this;
@@ -252,6 +262,8 @@ public class ShowUserResult  {
     public void setXuserId(String xuserId) {
         this.xuserId = xuserId;
     }
+
+    
 
     public ShowUserResult withXuserType(String xuserType) {
         this.xuserType = xuserType;
@@ -273,6 +285,8 @@ public class ShowUserResult  {
         this.xuserType = xuserType;
     }
 
+    
+
     public ShowUserResult withAreacode(String areacode) {
         this.areacode = areacode;
         return this;
@@ -292,6 +306,8 @@ public class ShowUserResult  {
     public void setAreacode(String areacode) {
         this.areacode = areacode;
     }
+
+    
 
     public ShowUserResult withEmail(String email) {
         this.email = email;
@@ -313,6 +329,8 @@ public class ShowUserResult  {
         this.email = email;
     }
 
+    
+
     public ShowUserResult withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -332,6 +350,8 @@ public class ShowUserResult  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public ShowUserResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
@@ -353,6 +373,8 @@ public class ShowUserResult  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public ShowUserResult withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -372,6 +394,8 @@ public class ShowUserResult  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ShowUserResult withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -393,6 +417,8 @@ public class ShowUserResult  {
         this.createTime = createTime;
     }
 
+    
+
     public ShowUserResult withLastLoginTime(String lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
         return this;
@@ -412,6 +438,8 @@ public class ShowUserResult  {
     public void setLastLoginTime(String lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
     }
+
+    
 
     public ShowUserResult withPwdStrength(String pwdStrength) {
         this.pwdStrength = pwdStrength;
@@ -433,6 +461,8 @@ public class ShowUserResult  {
         this.pwdStrength = pwdStrength;
     }
 
+    
+
     public ShowUserResult withIsDomainOwner(Boolean isDomainOwner) {
         this.isDomainOwner = isDomainOwner;
         return this;
@@ -452,6 +482,8 @@ public class ShowUserResult  {
     public void setIsDomainOwner(Boolean isDomainOwner) {
         this.isDomainOwner = isDomainOwner;
     }
+
+    
 
     public ShowUserResult withAccessMode(String accessMode) {
         this.accessMode = accessMode;
@@ -473,6 +505,8 @@ public class ShowUserResult  {
         this.accessMode = accessMode;
     }
 
+    
+
     public ShowUserResult withDescription(String description) {
         this.description = description;
         return this;
@@ -492,6 +526,9 @@ public class ShowUserResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

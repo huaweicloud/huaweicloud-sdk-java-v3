@@ -28,7 +28,7 @@ public class CreateNodePoolRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NodePool body = null;
+    private NodePool body;
 
     public CreateNodePoolRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -49,6 +49,8 @@ public class CreateNodePoolRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public CreateNodePoolRequest withBody(NodePool body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateNodePoolRequest  {
     public void setBody(NodePool body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

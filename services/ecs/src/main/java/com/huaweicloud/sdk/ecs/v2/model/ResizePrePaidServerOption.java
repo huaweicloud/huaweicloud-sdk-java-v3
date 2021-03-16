@@ -34,7 +34,7 @@ public class ResizePrePaidServerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private ResizeServerExtendParam extendparam = null;
+    private ResizeServerExtendParam extendparam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class ResizePrePaidServerOption  {
         this.flavorRef = flavorRef;
     }
 
+    
+
     public ResizePrePaidServerOption withDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -81,6 +83,8 @@ public class ResizePrePaidServerOption  {
     public void setDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
     }
+
+    
 
     public ResizePrePaidServerOption withExtendparam(ResizeServerExtendParam extendparam) {
         this.extendparam = extendparam;
@@ -109,6 +113,8 @@ public class ResizePrePaidServerOption  {
         this.extendparam = extendparam;
     }
 
+    
+
     public ResizePrePaidServerOption withMode(String mode) {
         this.mode = mode;
         return this;
@@ -128,6 +134,9 @@ public class ResizePrePaidServerOption  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

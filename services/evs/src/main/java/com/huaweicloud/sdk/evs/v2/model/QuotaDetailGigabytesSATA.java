@@ -62,6 +62,8 @@ public class QuotaDetailGigabytesSATA  {
         this.inUse = inUse;
     }
 
+    
+
     public QuotaDetailGigabytesSATA withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -81,6 +83,8 @@ public class QuotaDetailGigabytesSATA  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public QuotaDetailGigabytesSATA withReserved(Integer reserved) {
         this.reserved = reserved;
@@ -102,6 +106,8 @@ public class QuotaDetailGigabytesSATA  {
         this.reserved = reserved;
     }
 
+    
+
     public QuotaDetailGigabytesSATA withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
@@ -121,6 +127,9 @@ public class QuotaDetailGigabytesSATA  {
     public void setAllocated(Integer allocated) {
         this.allocated = allocated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

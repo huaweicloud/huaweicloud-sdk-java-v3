@@ -1579,6 +1579,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.backupId = backupId;
     }
 
+    
+
     public GlanceShowImageResponse withDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
         return this;
@@ -1600,6 +1602,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
     }
+
+    
 
     public GlanceShowImageResponse withDescription(String description) {
         this.description = description;
@@ -1623,6 +1627,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public GlanceShowImageResponse withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
@@ -1644,6 +1650,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setImageSize(String imageSize) {
         this.imageSize = imageSize;
     }
+
+    
 
     public GlanceShowImageResponse withImageSourceType(ImageSourceTypeEnum imageSourceType) {
         this.imageSourceType = imageSourceType;
@@ -1667,6 +1675,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.imageSourceType = imageSourceType;
     }
 
+    
+
     public GlanceShowImageResponse withImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
         return this;
@@ -1688,6 +1698,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
     }
+
+    
 
     public GlanceShowImageResponse withIsregistered(IsregisteredEnum isregistered) {
         this.isregistered = isregistered;
@@ -1711,6 +1723,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.isregistered = isregistered;
     }
 
+    
+
     public GlanceShowImageResponse withOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
         return this;
@@ -1732,6 +1746,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
     }
+
+    
 
     public GlanceShowImageResponse withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
@@ -1755,6 +1771,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.osBit = osBit;
     }
 
+    
+
     public GlanceShowImageResponse withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -1776,6 +1794,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public GlanceShowImageResponse withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -1799,6 +1819,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.osVersion = osVersion;
     }
 
+    
+
     public GlanceShowImageResponse withPlatform(PlatformEnum platform) {
         this.platform = platform;
         return this;
@@ -1820,6 +1842,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setPlatform(PlatformEnum platform) {
         this.platform = platform;
     }
+
+    
 
     public GlanceShowImageResponse withProductcode(String productcode) {
         this.productcode = productcode;
@@ -1843,6 +1867,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.productcode = productcode;
     }
 
+    
+
     public GlanceShowImageResponse withSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
         return this;
@@ -1864,6 +1890,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
     }
+
+    
 
     public GlanceShowImageResponse withSupportHighperformance(String supportHighperformance) {
         this.supportHighperformance = supportHighperformance;
@@ -1887,6 +1915,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.supportHighperformance = supportHighperformance;
     }
 
+    
+
     public GlanceShowImageResponse withSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
         return this;
@@ -1908,6 +1938,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
     }
+
+    
 
     public GlanceShowImageResponse withSupportKvmGpuType(String supportKvmGpuType) {
         this.supportKvmGpuType = supportKvmGpuType;
@@ -1931,6 +1963,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.supportKvmGpuType = supportKvmGpuType;
     }
 
+    
+
     public GlanceShowImageResponse withSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
         return this;
@@ -1952,6 +1986,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
     }
+
+    
 
     public GlanceShowImageResponse withSupportLargememory(String supportLargememory) {
         this.supportLargememory = supportLargememory;
@@ -1975,6 +2011,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.supportLargememory = supportLargememory;
     }
 
+    
+
     public GlanceShowImageResponse withSupportXen(String supportXen) {
         this.supportXen = supportXen;
         return this;
@@ -1996,6 +2034,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setSupportXen(String supportXen) {
         this.supportXen = supportXen;
     }
+
+    
 
     public GlanceShowImageResponse withSupportXenGpuType(String supportXenGpuType) {
         this.supportXenGpuType = supportXenGpuType;
@@ -2019,6 +2059,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.supportXenGpuType = supportXenGpuType;
     }
 
+    
+
     public GlanceShowImageResponse withSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
         return this;
@@ -2041,6 +2083,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.supportXenHana = supportXenHana;
     }
 
+    
+
     public GlanceShowImageResponse withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
@@ -2060,6 +2104,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
+
+    
 
     public GlanceShowImageResponse withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
@@ -2081,6 +2127,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.containerFormat = containerFormat;
     }
 
+    
+
     public GlanceShowImageResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -2100,6 +2148,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public GlanceShowImageResponse withDeleted(Boolean deleted) {
         this.deleted = deleted;
@@ -2121,6 +2171,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.deleted = deleted;
     }
 
+    
+
     public GlanceShowImageResponse withDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
         return this;
@@ -2140,6 +2192,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
+
+    
 
     public GlanceShowImageResponse withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
@@ -2161,6 +2215,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public GlanceShowImageResponse withFile(String file) {
         this.file = file;
         return this;
@@ -2180,6 +2236,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setFile(String file) {
         this.file = file;
     }
+
+    
 
     public GlanceShowImageResponse withId(String id) {
         this.id = id;
@@ -2201,6 +2259,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public GlanceShowImageResponse withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
@@ -2220,6 +2280,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
     }
+
+    
 
     public GlanceShowImageResponse withMinRam(Integer minRam) {
         this.minRam = minRam;
@@ -2241,6 +2303,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.minRam = minRam;
     }
 
+    
+
     public GlanceShowImageResponse withName(String name) {
         this.name = name;
         return this;
@@ -2260,6 +2324,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GlanceShowImageResponse withOwner(String owner) {
         this.owner = owner;
@@ -2281,6 +2347,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.owner = owner;
     }
 
+    
+
     public GlanceShowImageResponse withProtected(Boolean _protected) {
         this._protected = _protected;
         return this;
@@ -2300,6 +2368,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setProtected(Boolean _protected) {
         this._protected = _protected;
     }
+
+    
 
     public GlanceShowImageResponse withSchema(String schema) {
         this.schema = schema;
@@ -2321,6 +2391,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.schema = schema;
     }
 
+    
+
     public GlanceShowImageResponse withSelf(String self) {
         this.self = self;
         return this;
@@ -2340,6 +2412,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setSelf(String self) {
         this.self = self;
     }
+
+    
 
     public GlanceShowImageResponse withSize(Long size) {
         this.size = size;
@@ -2361,6 +2435,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public GlanceShowImageResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -2381,6 +2457,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public GlanceShowImageResponse withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -2388,9 +2466,6 @@ public class GlanceShowImageResponse extends SdkResponse {
 
     
     public GlanceShowImageResponse addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -2415,6 +2490,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public GlanceShowImageResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -2434,6 +2511,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public GlanceShowImageResponse withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
@@ -2455,6 +2534,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.virtualEnvType = virtualEnvType;
     }
 
+    
+
     public GlanceShowImageResponse withVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
         return this;
@@ -2475,6 +2556,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.virtualSize = virtualSize;
     }
 
+    
+
     public GlanceShowImageResponse withVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
         return this;
@@ -2494,6 +2577,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
     }
+
+    
 
     public GlanceShowImageResponse withSupportFcInject(SupportFcInjectEnum supportFcInject) {
         this.supportFcInject = supportFcInject;
@@ -2517,6 +2602,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.supportFcInject = supportFcInject;
     }
 
+    
+
     public GlanceShowImageResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -2537,6 +2624,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public GlanceShowImageResponse withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
         return this;
@@ -2556,6 +2645,8 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
     }
+
+    
 
     public GlanceShowImageResponse withSupportArm(SupportArmEnum supportArm) {
         this.supportArm = supportArm;
@@ -2579,6 +2670,8 @@ public class GlanceShowImageResponse extends SdkResponse {
         this.supportArm = supportArm;
     }
 
+    
+
     public GlanceShowImageResponse withIsOffshelved(IsOffshelvedEnum isOffshelved) {
         this.isOffshelved = isOffshelved;
         return this;
@@ -2600,6 +2693,9 @@ public class GlanceShowImageResponse extends SdkResponse {
     public void setIsOffshelved(IsOffshelvedEnum isOffshelved) {
         this.isOffshelved = isOffshelved;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

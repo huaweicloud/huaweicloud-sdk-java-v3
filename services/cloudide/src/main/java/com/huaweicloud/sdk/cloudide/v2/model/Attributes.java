@@ -55,6 +55,8 @@ public class Attributes  {
         this.cpuLimit = cpuLimit;
     }
 
+    
+
     public Attributes withMemoryLimitBytes(String memoryLimitBytes) {
         this.memoryLimitBytes = memoryLimitBytes;
         return this;
@@ -75,6 +77,8 @@ public class Attributes  {
         this.memoryLimitBytes = memoryLimitBytes;
     }
 
+    
+
     public Attributes withPvcQuantity(String pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
         return this;
@@ -94,6 +98,9 @@ public class Attributes  {
     public void setPvcQuantity(String pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

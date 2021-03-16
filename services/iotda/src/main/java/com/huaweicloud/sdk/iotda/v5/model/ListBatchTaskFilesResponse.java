@@ -35,9 +35,6 @@ public class ListBatchTaskFilesResponse extends SdkResponse {
 
     
     public ListBatchTaskFilesResponse addFilesItem(BatchTaskFile filesItem) {
-        if (this.files == null) {
-            this.files = new ArrayList<>();
-        }
         this.files.add(filesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListBatchTaskFilesResponse extends SdkResponse {
     public void setFiles(List<BatchTaskFile> files) {
         this.files = files;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

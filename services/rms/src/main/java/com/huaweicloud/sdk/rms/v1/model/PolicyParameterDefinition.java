@@ -175,6 +175,8 @@ public class PolicyParameterDefinition  {
         this.name = name;
     }
 
+    
+
     public PolicyParameterDefinition withDescription(String description) {
         this.description = description;
         return this;
@@ -195,6 +197,8 @@ public class PolicyParameterDefinition  {
         this.description = description;
     }
 
+    
+
     public PolicyParameterDefinition withAllowedValues(List<Object> allowedValues) {
         this.allowedValues = allowedValues;
         return this;
@@ -202,9 +206,6 @@ public class PolicyParameterDefinition  {
 
     
     public PolicyParameterDefinition addAllowedValuesItem(Object allowedValuesItem) {
-        if (this.allowedValues == null) {
-            this.allowedValues = new ArrayList<>();
-        }
         this.allowedValues.add(allowedValuesItem);
         return this;
     }
@@ -229,6 +230,8 @@ public class PolicyParameterDefinition  {
         this.allowedValues = allowedValues;
     }
 
+    
+
     public PolicyParameterDefinition withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
@@ -249,6 +252,8 @@ public class PolicyParameterDefinition  {
         this.defaultValue = defaultValue;
     }
 
+    
+
     public PolicyParameterDefinition withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -268,6 +273,9 @@ public class PolicyParameterDefinition  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

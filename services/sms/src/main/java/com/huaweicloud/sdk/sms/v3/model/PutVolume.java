@@ -27,13 +27,13 @@ public class PutVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_migration")
     
-    private Boolean needMigration = true;
+    private Boolean needMigration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjust_size")
     
-    private Long adjustSize = 0l;
+    private Long adjustSize;
 
     public PutVolume withId(String id) {
         this.id = id;
@@ -55,6 +55,8 @@ public class PutVolume  {
         this.id = id;
     }
 
+    
+
     public PutVolume withNeedMigration(Boolean needMigration) {
         this.needMigration = needMigration;
         return this;
@@ -74,6 +76,8 @@ public class PutVolume  {
     public void setNeedMigration(Boolean needMigration) {
         this.needMigration = needMigration;
     }
+
+    
 
     public PutVolume withAdjustSize(Long adjustSize) {
         this.adjustSize = adjustSize;
@@ -96,6 +100,9 @@ public class PutVolume  {
     public void setAdjustSize(Long adjustSize) {
         this.adjustSize = adjustSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

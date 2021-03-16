@@ -21,7 +21,7 @@ public class ListResourceTypesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,6 +51,8 @@ public class ListResourceTypesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListResourceTypesRequest withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
@@ -70,6 +72,9 @@ public class ListResourceTypesRequest  {
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

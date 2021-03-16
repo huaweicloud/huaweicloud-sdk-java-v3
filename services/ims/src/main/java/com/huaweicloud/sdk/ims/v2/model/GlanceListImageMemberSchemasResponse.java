@@ -38,7 +38,7 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private Object properties = null;
+    private Object properties;
 
     public GlanceListImageMemberSchemasResponse withLinks(List<Links> links) {
         this.links = links;
@@ -47,9 +47,6 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
 
     
     public GlanceListImageMemberSchemasResponse addLinksItem(Links linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public GlanceListImageMemberSchemasResponse withName(String name) {
         this.name = name;
         return this;
@@ -94,6 +93,8 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public GlanceListImageMemberSchemasResponse withProperties(Object properties) {
         this.properties = properties;
         return this;
@@ -113,6 +114,9 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
     public void setProperties(Object properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class RestoreInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestoreInstanceBody body = null;
+    private RestoreInstanceBody body;
 
     public RestoreInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class RestoreInstanceRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public RestoreInstanceRequest withBody(RestoreInstanceBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RestoreInstanceRequest  {
     public void setBody(RestoreInstanceBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

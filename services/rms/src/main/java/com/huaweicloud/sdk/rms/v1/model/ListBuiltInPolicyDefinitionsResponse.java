@@ -33,7 +33,7 @@ public class ListBuiltInPolicyDefinitionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
     public ListBuiltInPolicyDefinitionsResponse withValue(List<PolicyDefinition> value) {
         this.value = value;
@@ -42,9 +42,6 @@ public class ListBuiltInPolicyDefinitionsResponse extends SdkResponse {
 
     
     public ListBuiltInPolicyDefinitionsResponse addValueItem(PolicyDefinition valueItem) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
-        }
         this.value.add(valueItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListBuiltInPolicyDefinitionsResponse extends SdkResponse {
     public void setValue(List<PolicyDefinition> value) {
         this.value = value;
     }
+
+    
 
     public ListBuiltInPolicyDefinitionsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -95,6 +94,9 @@ public class ListBuiltInPolicyDefinitionsResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

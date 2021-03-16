@@ -61,6 +61,8 @@ public class KeystoneCreateProjectOption  {
         this.name = name;
     }
 
+    
+
     public KeystoneCreateProjectOption withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -80,6 +82,8 @@ public class KeystoneCreateProjectOption  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public KeystoneCreateProjectOption withDomainId(String domainId) {
         this.domainId = domainId;
@@ -101,6 +105,8 @@ public class KeystoneCreateProjectOption  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneCreateProjectOption withDescription(String description) {
         this.description = description;
         return this;
@@ -120,6 +126,9 @@ public class KeystoneCreateProjectOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class BandwidthPolicyDto  {
         this.end = end;
     }
 
+    
+
     public BandwidthPolicyDto withMaxBandwidth(Long maxBandwidth) {
         this.maxBandwidth = maxBandwidth;
         return this;
@@ -77,6 +79,8 @@ public class BandwidthPolicyDto  {
         this.maxBandwidth = maxBandwidth;
     }
 
+    
+
     public BandwidthPolicyDto withStart(String start) {
         this.start = start;
         return this;
@@ -96,6 +100,9 @@ public class BandwidthPolicyDto  {
     public void setStart(String start) {
         this.start = start;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

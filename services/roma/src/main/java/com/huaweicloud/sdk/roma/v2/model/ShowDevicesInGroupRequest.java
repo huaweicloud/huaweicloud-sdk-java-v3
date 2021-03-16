@@ -33,7 +33,7 @@ public class ShowDevicesInGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class ShowDevicesInGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ShowDevicesInGroupRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -72,6 +72,8 @@ public class ShowDevicesInGroupRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ShowDevicesInGroupRequest withGroupId(Integer groupId) {
         this.groupId = groupId;
@@ -95,6 +97,8 @@ public class ShowDevicesInGroupRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public ShowDevicesInGroupRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -117,6 +121,8 @@ public class ShowDevicesInGroupRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowDevicesInGroupRequest withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -137,6 +143,8 @@ public class ShowDevicesInGroupRequest  {
         this.productName = productName;
     }
 
+    
+
     public ShowDevicesInGroupRequest withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -156,6 +164,8 @@ public class ShowDevicesInGroupRequest  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public ShowDevicesInGroupRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -178,6 +188,9 @@ public class ShowDevicesInGroupRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

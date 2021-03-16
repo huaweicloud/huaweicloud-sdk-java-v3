@@ -22,7 +22,7 @@ public class NodeTypes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private Detail detail = null;
+    private Detail detail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class NodeTypes  {
         this.detail = detail;
     }
 
+    
+
     public NodeTypes withId(String id) {
         this.id = id;
         return this;
@@ -83,6 +85,8 @@ public class NodeTypes  {
         this.id = id;
     }
 
+    
+
     public NodeTypes withSpecName(String specName) {
         this.specName = specName;
         return this;
@@ -102,6 +106,9 @@ public class NodeTypes  {
     public void setSpecName(String specName) {
         this.specName = specName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

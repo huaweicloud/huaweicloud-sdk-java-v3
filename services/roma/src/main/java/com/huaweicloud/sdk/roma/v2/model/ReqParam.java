@@ -548,6 +548,8 @@ public class ReqParam  {
         this.name = name;
     }
 
+    
+
     public ReqParam withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -567,6 +569,8 @@ public class ReqParam  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ReqParam withLocation(LocationEnum location) {
         this.location = location;
@@ -588,6 +592,8 @@ public class ReqParam  {
         this.location = location;
     }
 
+    
+
     public ReqParam withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
@@ -607,6 +613,8 @@ public class ReqParam  {
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
     }
+
+    
 
     public ReqParam withSampleValue(String sampleValue) {
         this.sampleValue = sampleValue;
@@ -628,6 +636,8 @@ public class ReqParam  {
         this.sampleValue = sampleValue;
     }
 
+    
+
     public ReqParam withRequired(RequiredEnum required) {
         this.required = required;
         return this;
@@ -647,6 +657,8 @@ public class ReqParam  {
     public void setRequired(RequiredEnum required) {
         this.required = required;
     }
+
+    
 
     public ReqParam withValidEnable(ValidEnableEnum validEnable) {
         this.validEnable = validEnable;
@@ -668,6 +680,8 @@ public class ReqParam  {
         this.validEnable = validEnable;
     }
 
+    
+
     public ReqParam withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -687,6 +701,8 @@ public class ReqParam  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ReqParam withEnumerations(String enumerations) {
         this.enumerations = enumerations;
@@ -708,6 +724,8 @@ public class ReqParam  {
         this.enumerations = enumerations;
     }
 
+    
+
     public ReqParam withMinNum(Integer minNum) {
         this.minNum = minNum;
         return this;
@@ -727,6 +745,8 @@ public class ReqParam  {
     public void setMinNum(Integer minNum) {
         this.minNum = minNum;
     }
+
+    
 
     public ReqParam withMaxNum(Integer maxNum) {
         this.maxNum = maxNum;
@@ -748,6 +768,8 @@ public class ReqParam  {
         this.maxNum = maxNum;
     }
 
+    
+
     public ReqParam withMinSize(Integer minSize) {
         this.minSize = minSize;
         return this;
@@ -767,6 +789,8 @@ public class ReqParam  {
     public void setMinSize(Integer minSize) {
         this.minSize = minSize;
     }
+
+    
 
     public ReqParam withMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
@@ -788,6 +812,8 @@ public class ReqParam  {
         this.maxSize = maxSize;
     }
 
+    
+
     public ReqParam withRegular(String regular) {
         this.regular = regular;
         return this;
@@ -807,6 +833,8 @@ public class ReqParam  {
     public void setRegular(String regular) {
         this.regular = regular;
     }
+
+    
 
     public ReqParam withJsonSchema(String jsonSchema) {
         this.jsonSchema = jsonSchema;
@@ -828,6 +856,8 @@ public class ReqParam  {
         this.jsonSchema = jsonSchema;
     }
 
+    
+
     public ReqParam withPassThrough(PassThroughEnum passThrough) {
         this.passThrough = passThrough;
         return this;
@@ -848,6 +878,8 @@ public class ReqParam  {
         this.passThrough = passThrough;
     }
 
+    
+
     public ReqParam withId(String id) {
         this.id = id;
         return this;
@@ -867,6 +899,9 @@ public class ReqParam  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

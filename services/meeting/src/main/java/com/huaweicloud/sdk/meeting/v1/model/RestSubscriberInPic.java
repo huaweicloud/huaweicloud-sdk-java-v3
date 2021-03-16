@@ -59,6 +59,8 @@ public class RestSubscriberInPic  {
         this.index = index;
     }
 
+    
+
     public RestSubscriberInPic withSubscriber(List<String> subscriber) {
         this.subscriber = subscriber;
         return this;
@@ -66,9 +68,6 @@ public class RestSubscriberInPic  {
 
     
     public RestSubscriberInPic addSubscriberItem(String subscriberItem) {
-        if (this.subscriber == null) {
-            this.subscriber = new ArrayList<>();
-        }
         this.subscriber.add(subscriberItem);
         return this;
     }
@@ -93,6 +92,8 @@ public class RestSubscriberInPic  {
         this.subscriber = subscriber;
     }
 
+    
+
     public RestSubscriberInPic withIsAssistStream(Integer isAssistStream) {
         this.isAssistStream = isAssistStream;
         return this;
@@ -114,6 +115,9 @@ public class RestSubscriberInPic  {
     public void setIsAssistStream(Integer isAssistStream) {
         this.isAssistStream = isAssistStream;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

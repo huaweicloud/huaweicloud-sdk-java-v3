@@ -67,6 +67,8 @@ public class WhitelistResp  {
         this.id = id;
     }
 
+    
+
     public WhitelistResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -86,6 +88,8 @@ public class WhitelistResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public WhitelistResp withListenerId(String listenerId) {
         this.listenerId = listenerId;
@@ -107,6 +111,8 @@ public class WhitelistResp  {
         this.listenerId = listenerId;
     }
 
+    
+
     public WhitelistResp withEnableWhitelist(Boolean enableWhitelist) {
         this.enableWhitelist = enableWhitelist;
         return this;
@@ -127,6 +133,8 @@ public class WhitelistResp  {
         this.enableWhitelist = enableWhitelist;
     }
 
+    
+
     public WhitelistResp withWhitelist(String whitelist) {
         this.whitelist = whitelist;
         return this;
@@ -146,6 +154,9 @@ public class WhitelistResp  {
     public void setWhitelist(String whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

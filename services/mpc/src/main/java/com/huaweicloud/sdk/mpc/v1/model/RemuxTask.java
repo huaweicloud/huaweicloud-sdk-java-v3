@@ -61,13 +61,13 @@ public class RemuxTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,7 +79,7 @@ public class RemuxTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_param")
     
-    private RemuxOutputParam outputParam = null;
+    private RemuxOutputParam outputParam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,7 +91,7 @@ public class RemuxTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_metadata")
     
-    private MetaData outputMetadata = null;
+    private MetaData outputMetadata;
 
     public RemuxTask withTaskId(String taskId) {
         this.taskId = taskId;
@@ -113,6 +113,8 @@ public class RemuxTask  {
         this.taskId = taskId;
     }
 
+    
+
     public RemuxTask withStatus(String status) {
         this.status = status;
         return this;
@@ -132,6 +134,8 @@ public class RemuxTask  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public RemuxTask withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -153,6 +157,8 @@ public class RemuxTask  {
         this.createTime = createTime;
     }
 
+    
+
     public RemuxTask withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -172,6 +178,8 @@ public class RemuxTask  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public RemuxTask withEndTime(String endTime) {
         this.endTime = endTime;
@@ -193,6 +201,8 @@ public class RemuxTask  {
         this.endTime = endTime;
     }
 
+    
+
     public RemuxTask withDescription(String description) {
         this.description = description;
         return this;
@@ -212,6 +222,8 @@ public class RemuxTask  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public RemuxTask withInput(ObsObjInfo input) {
         this.input = input;
@@ -240,6 +252,8 @@ public class RemuxTask  {
         this.input = input;
     }
 
+    
+
     public RemuxTask withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -267,6 +281,8 @@ public class RemuxTask  {
         this.output = output;
     }
 
+    
+
     public RemuxTask withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -286,6 +302,8 @@ public class RemuxTask  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public RemuxTask withOutputParam(RemuxOutputParam outputParam) {
         this.outputParam = outputParam;
@@ -314,6 +332,8 @@ public class RemuxTask  {
         this.outputParam = outputParam;
     }
 
+    
+
     public RemuxTask withCompleteRatio(Integer completeRatio) {
         this.completeRatio = completeRatio;
         return this;
@@ -333,6 +353,8 @@ public class RemuxTask  {
     public void setCompleteRatio(Integer completeRatio) {
         this.completeRatio = completeRatio;
     }
+
+    
 
     public RemuxTask withOutputMetadata(MetaData outputMetadata) {
         this.outputMetadata = outputMetadata;
@@ -360,6 +382,9 @@ public class RemuxTask  {
     public void setOutputMetadata(MetaData outputMetadata) {
         this.outputMetadata = outputMetadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,13 +35,13 @@ public class Region  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="locales")
     
-    private RegionLocales locales = null;
+    private RegionLocales locales;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class Region  {
         this.description = description;
     }
 
+    
+
     public Region withParentRegionId(String parentRegionId) {
         this.parentRegionId = parentRegionId;
         return this;
@@ -94,6 +96,8 @@ public class Region  {
     public void setParentRegionId(String parentRegionId) {
         this.parentRegionId = parentRegionId;
     }
+
+    
 
     public Region withLinks(LinksSelf links) {
         this.links = links;
@@ -122,6 +126,8 @@ public class Region  {
         this.links = links;
     }
 
+    
+
     public Region withLocales(RegionLocales locales) {
         this.locales = locales;
         return this;
@@ -149,6 +155,8 @@ public class Region  {
         this.locales = locales;
     }
 
+    
+
     public Region withId(String id) {
         this.id = id;
         return this;
@@ -169,6 +177,8 @@ public class Region  {
         this.id = id;
     }
 
+    
+
     public Region withType(String type) {
         this.type = type;
         return this;
@@ -188,6 +198,9 @@ public class Region  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

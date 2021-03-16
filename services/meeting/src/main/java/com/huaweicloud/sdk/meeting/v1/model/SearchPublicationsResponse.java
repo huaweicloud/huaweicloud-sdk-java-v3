@@ -67,6 +67,8 @@ public class SearchPublicationsResponse extends SdkResponse {
         this.offset = offset;
     }
 
+    
+
     public SearchPublicationsResponse withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -86,6 +88,8 @@ public class SearchPublicationsResponse extends SdkResponse {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public SearchPublicationsResponse withCount(Integer count) {
         this.count = count;
@@ -107,6 +111,8 @@ public class SearchPublicationsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public SearchPublicationsResponse withData(List<PublicationResponseBase> data) {
         this.data = data;
         return this;
@@ -114,9 +120,6 @@ public class SearchPublicationsResponse extends SdkResponse {
 
     
     public SearchPublicationsResponse addDataItem(PublicationResponseBase dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
         this.data.add(dataItem);
         return this;
     }
@@ -140,6 +143,9 @@ public class SearchPublicationsResponse extends SdkResponse {
     public void setData(List<PublicationResponseBase> data) {
         this.data = data;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -123,7 +123,7 @@ public class SubJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    private Entitie entities = null;
+    private Entitie entities;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -141,13 +141,13 @@ public class SubJobs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    private OffsetDateTime beginTime = null;
+    private OffsetDateTime beginTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private OffsetDateTime endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -193,6 +193,8 @@ public class SubJobs  {
         this.status = status;
     }
 
+    
+
     public SubJobs withEntities(Entitie entities) {
         this.entities = entities;
         return this;
@@ -220,6 +222,8 @@ public class SubJobs  {
         this.entities = entities;
     }
 
+    
+
     public SubJobs withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -239,6 +243,8 @@ public class SubJobs  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public SubJobs withJobType(String jobType) {
         this.jobType = jobType;
@@ -260,6 +266,8 @@ public class SubJobs  {
         this.jobType = jobType;
     }
 
+    
+
     public SubJobs withBeginTime(OffsetDateTime beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -279,6 +287,8 @@ public class SubJobs  {
     public void setBeginTime(OffsetDateTime beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public SubJobs withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -300,6 +310,8 @@ public class SubJobs  {
         this.endTime = endTime;
     }
 
+    
+
     public SubJobs withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -319,6 +331,8 @@ public class SubJobs  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public SubJobs withFailReason(String failReason) {
         this.failReason = failReason;
@@ -340,6 +354,8 @@ public class SubJobs  {
         this.failReason = failReason;
     }
 
+    
+
     public SubJobs withMessage(String message) {
         this.message = message;
         return this;
@@ -360,6 +376,8 @@ public class SubJobs  {
         this.message = message;
     }
 
+    
+
     public SubJobs withCode(String code) {
         this.code = code;
         return this;
@@ -379,6 +397,9 @@ public class SubJobs  {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

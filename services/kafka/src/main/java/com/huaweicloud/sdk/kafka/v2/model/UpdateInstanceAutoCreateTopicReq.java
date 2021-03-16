@@ -42,6 +42,9 @@ public class UpdateInstanceAutoCreateTopicReq  {
     public void setEnableAutoTopic(Boolean enableAutoTopic) {
         this.enableAutoTopic = enableAutoTopic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

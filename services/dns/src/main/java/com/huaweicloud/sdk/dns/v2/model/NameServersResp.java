@@ -58,6 +58,8 @@ public class NameServersResp  {
         this.type = type;
     }
 
+    
+
     public NameServersResp withRegion(String region) {
         this.region = region;
         return this;
@@ -78,6 +80,8 @@ public class NameServersResp  {
         this.region = region;
     }
 
+    
+
     public NameServersResp withNsRecords(List<NsRecords> nsRecords) {
         this.nsRecords = nsRecords;
         return this;
@@ -85,9 +89,6 @@ public class NameServersResp  {
 
     
     public NameServersResp addNsRecordsItem(NsRecords nsRecordsItem) {
-        if (this.nsRecords == null) {
-            this.nsRecords = new ArrayList<>();
-        }
         this.nsRecords.add(nsRecordsItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class NameServersResp  {
     public void setNsRecords(List<NsRecords> nsRecords) {
         this.nsRecords = nsRecords;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

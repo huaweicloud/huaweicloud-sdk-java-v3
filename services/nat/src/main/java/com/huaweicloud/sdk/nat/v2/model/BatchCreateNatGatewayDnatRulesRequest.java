@@ -22,7 +22,7 @@ public class BatchCreateNatGatewayDnatRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreateNatGatewayDnatRulesRequestBody body = null;
+    private BatchCreateNatGatewayDnatRulesRequestBody body;
 
     public BatchCreateNatGatewayDnatRulesRequest withBody(BatchCreateNatGatewayDnatRulesRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchCreateNatGatewayDnatRulesRequest  {
     public void setBody(BatchCreateNatGatewayDnatRulesRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

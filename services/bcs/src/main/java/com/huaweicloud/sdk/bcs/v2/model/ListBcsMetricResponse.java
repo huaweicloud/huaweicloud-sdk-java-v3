@@ -35,9 +35,6 @@ public class ListBcsMetricResponse extends SdkResponse {
 
     
     public ListBcsMetricResponse addMetricsItem(MetricItemResultAPI metricsItem) {
-        if (this.metrics == null) {
-            this.metrics = new ArrayList<>();
-        }
         this.metrics.add(metricsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListBcsMetricResponse extends SdkResponse {
     public void setMetrics(List<MetricItemResultAPI> metrics) {
         this.metrics = metrics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

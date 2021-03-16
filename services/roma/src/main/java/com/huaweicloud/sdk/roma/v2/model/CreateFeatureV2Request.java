@@ -28,7 +28,7 @@ public class CreateFeatureV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FeatureToggle body = null;
+    private FeatureToggle body;
 
     public CreateFeatureV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateFeatureV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateFeatureV2Request withBody(FeatureToggle body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateFeatureV2Request  {
     public void setBody(FeatureToggle body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

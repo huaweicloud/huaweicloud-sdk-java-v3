@@ -103,7 +103,7 @@ public class ListUsersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -139,6 +139,8 @@ public class ListUsersRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListUsersRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -159,6 +161,8 @@ public class ListUsersRequest  {
         this.projectId = projectId;
     }
 
+    
+
     public ListUsersRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -178,6 +182,9 @@ public class ListUsersRequest  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

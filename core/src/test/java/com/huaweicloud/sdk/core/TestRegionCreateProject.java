@@ -27,7 +27,7 @@ public class TestRegionCreateProject {
     private static final String EXPECTED_PROJECT_ID = "123456789";
     private static final String IAM_ENDPOINT = "http://127.0.0.1:10086";
     private static final BasicCredentials CREDENTIALS = new BasicCredentials().withAk("ak").withSk("sk")
-        .withIamEndpoint(IAM_ENDPOINT);
+            .withIamEndpoint(IAM_ENDPOINT);
     private final HttpConfig config = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
 
     @Rule
@@ -38,32 +38,32 @@ public class TestRegionCreateProject {
         System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
         System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
 
-        wireMockRule
-            = new WireMockRule(WireMockConfiguration.options().httpsPort(10010).port(10086).disableRequestJournal());
+        wireMockRule =
+                new WireMockRule(WireMockConfiguration.options().httpsPort(10010).port(10086).disableRequestJournal());
 
         // mock request: GET /v3/projects
         wireMockRule.stubFor(WireMock.get("/v3/projects?name=cn-north-201")
-            .willReturn(WireMock.aResponse()
-                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
-                .withBody("{\"projects\": []}")
-                .withStatus(200)
-            )
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"projects\": []}")
+                        .withStatus(200)
+                )
         );
         // mock request: GET /v3/regions
         wireMockRule.stubFor(WireMock.get("/v3/regions")
-            .willReturn(WireMock.aResponse()
-                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
-                .withBody("{\"regions\": [{\"id\": \"cn-north-201\", \"type\": \"public\"}]}")
-                .withStatus(200)
-            )
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"regions\": [{\"id\": \"cn-north-201\", \"type\": \"public\"}]}")
+                        .withStatus(200)
+                )
         );
         // mock request: GET /v3/auth/domains
         wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
-            .willReturn(WireMock.aResponse()
-                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
-                .withBody("{\"domains\": [{\"id\": \"987654321\"}]}")
-                .withStatus(200)
-            )
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"domains\": [{\"id\": \"987654321\"}]}")
+                        .withStatus(200)
+                )
         );
         // mock request: POST /v3/projects
         Map<String, String> map = new HashMap<String, String>(2) {
@@ -79,12 +79,12 @@ public class TestRegionCreateProject {
         };
         String bodyStr = JsonUtils.toJSON(body);
         wireMockRule.stubFor(WireMock.post(WireMock.urlEqualTo("/v3/projects"))
-            .withRequestBody(equalTo(bodyStr))
-            .willReturn(WireMock.aResponse()
-                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
-                .withBody("{\"project\": {\"id\": \"123456789\"}}")
-                .withStatus(201)
-            )
+                .withRequestBody(equalTo(bodyStr))
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"project\": {\"id\": \"123456789\"}}")
+                        .withStatus(201)
+                )
         );
         wireMockRule.start();
     }
@@ -97,10 +97,10 @@ public class TestRegionCreateProject {
     @Test
     public void testCreateProject() {
         TestServiceClient.newBuilder()
-            .withCredential(CREDENTIALS)
-            .withHttpConfig(config)
-            .withRegion(TestRegion.CN_NORTH_201)
-            .build();
+                .withCredential(CREDENTIALS)
+                .withHttpConfig(config)
+                .withRegion(TestRegion.CN_NORTH_201)
+                .build();
 
         try {
             Field projectId = BasicCredentials.class.getDeclaredField("projectId");

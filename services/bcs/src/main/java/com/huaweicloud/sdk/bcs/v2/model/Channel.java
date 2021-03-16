@@ -64,6 +64,8 @@ public class Channel  {
         this.name = name;
     }
 
+    
+
     public Channel withDescription(String description) {
         this.description = description;
         return this;
@@ -83,6 +85,8 @@ public class Channel  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Channel withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -104,6 +108,8 @@ public class Channel  {
         this.createTime = createTime;
     }
 
+    
+
     public Channel withPeers(Map<String, List<String>> peers) {
         this.peers = peers;
         return this;
@@ -112,9 +118,6 @@ public class Channel  {
     
 
     public Channel putPeersItem(String key, List<String> peersItem) {
-         if (this.peers == null) {
-            this.peers = new HashMap<>();
-         }
         this.peers.put(key, peersItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class Channel  {
     public void setPeers(Map<String, List<String>> peers) {
         this.peers = peers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

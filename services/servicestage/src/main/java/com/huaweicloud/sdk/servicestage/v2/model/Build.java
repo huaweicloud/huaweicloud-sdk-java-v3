@@ -22,7 +22,7 @@ public class Build  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    private BuildInfoParameters parameters = null;
+    private BuildInfoParameters parameters;
 
     public Build withParameters(BuildInfoParameters parameters) {
         this.parameters = parameters;
@@ -50,6 +50,9 @@ public class Build  {
     public void setParameters(BuildInfoParameters parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

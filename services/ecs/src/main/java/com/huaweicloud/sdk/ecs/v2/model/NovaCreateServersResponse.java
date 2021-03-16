@@ -24,7 +24,7 @@ public class NovaCreateServersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private NovaCreateServersResult server = null;
+    private NovaCreateServersResult server;
 
     public NovaCreateServersResponse withServer(NovaCreateServersResult server) {
         this.server = server;
@@ -52,6 +52,9 @@ public class NovaCreateServersResponse extends SdkResponse {
     public void setServer(NovaCreateServersResult server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

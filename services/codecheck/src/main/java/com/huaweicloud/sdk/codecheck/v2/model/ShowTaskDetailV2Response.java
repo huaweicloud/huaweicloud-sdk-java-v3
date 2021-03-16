@@ -159,6 +159,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.taskId = taskId;
     }
 
+    
+
     public ShowTaskDetailV2Response withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -178,6 +180,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public ShowTaskDetailV2Response withCreatorId(String creatorId) {
         this.creatorId = creatorId;
@@ -199,6 +203,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.creatorId = creatorId;
     }
 
+    
+
     public ShowTaskDetailV2Response withGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
         return this;
@@ -218,6 +224,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
     }
+
+    
 
     public ShowTaskDetailV2Response withGitBranch(String gitBranch) {
         this.gitBranch = gitBranch;
@@ -239,6 +247,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.gitBranch = gitBranch;
     }
 
+    
+
     public ShowTaskDetailV2Response withLastCheckTime(String lastCheckTime) {
         this.lastCheckTime = lastCheckTime;
         return this;
@@ -258,6 +268,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setLastCheckTime(String lastCheckTime) {
         this.lastCheckTime = lastCheckTime;
     }
+
+    
 
     public ShowTaskDetailV2Response withCodeLineTotal(String codeLineTotal) {
         this.codeLineTotal = codeLineTotal;
@@ -279,6 +291,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.codeLineTotal = codeLineTotal;
     }
 
+    
+
     public ShowTaskDetailV2Response withCodeLine(String codeLine) {
         this.codeLine = codeLine;
         return this;
@@ -298,6 +312,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setCodeLine(String codeLine) {
         this.codeLine = codeLine;
     }
+
+    
 
     public ShowTaskDetailV2Response withCodeQuality(String codeQuality) {
         this.codeQuality = codeQuality;
@@ -319,6 +335,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.codeQuality = codeQuality;
     }
 
+    
+
     public ShowTaskDetailV2Response withIssueCount(String issueCount) {
         this.issueCount = issueCount;
         return this;
@@ -338,6 +356,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setIssueCount(String issueCount) {
         this.issueCount = issueCount;
     }
+
+    
 
     public ShowTaskDetailV2Response withRiskCoefficient(String riskCoefficient) {
         this.riskCoefficient = riskCoefficient;
@@ -359,6 +379,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.riskCoefficient = riskCoefficient;
     }
 
+    
+
     public ShowTaskDetailV2Response withDuplicationRatio(String duplicationRatio) {
         this.duplicationRatio = duplicationRatio;
         return this;
@@ -378,6 +400,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setDuplicationRatio(String duplicationRatio) {
         this.duplicationRatio = duplicationRatio;
     }
+
+    
 
     public ShowTaskDetailV2Response withComplexityCount(String complexityCount) {
         this.complexityCount = complexityCount;
@@ -399,6 +423,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.complexityCount = complexityCount;
     }
 
+    
+
     public ShowTaskDetailV2Response withDuplicatedLines(String duplicatedLines) {
         this.duplicatedLines = duplicatedLines;
         return this;
@@ -418,6 +444,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setDuplicatedLines(String duplicatedLines) {
         this.duplicatedLines = duplicatedLines;
     }
+
+    
 
     public ShowTaskDetailV2Response withCommentLines(String commentLines) {
         this.commentLines = commentLines;
@@ -439,6 +467,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.commentLines = commentLines;
     }
 
+    
+
     public ShowTaskDetailV2Response withCommentRatio(String commentRatio) {
         this.commentRatio = commentRatio;
         return this;
@@ -458,6 +488,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setCommentRatio(String commentRatio) {
         this.commentRatio = commentRatio;
     }
+
+    
 
     public ShowTaskDetailV2Response withDuplicatedBlocks(String duplicatedBlocks) {
         this.duplicatedBlocks = duplicatedBlocks;
@@ -479,6 +511,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.duplicatedBlocks = duplicatedBlocks;
     }
 
+    
+
     public ShowTaskDetailV2Response withLastExecTime(String lastExecTime) {
         this.lastExecTime = lastExecTime;
         return this;
@@ -498,6 +532,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setLastExecTime(String lastExecTime) {
         this.lastExecTime = lastExecTime;
     }
+
+    
 
     public ShowTaskDetailV2Response withCheckType(String checkType) {
         this.checkType = checkType;
@@ -519,6 +555,8 @@ public class ShowTaskDetailV2Response extends SdkResponse {
         this.checkType = checkType;
     }
 
+    
+
     public ShowTaskDetailV2Response withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -538,6 +576,9 @@ public class ShowTaskDetailV2Response extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

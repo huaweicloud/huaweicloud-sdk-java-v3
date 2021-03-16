@@ -29,7 +29,7 @@ public class UpdateMembesRoleV4RequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_ids")
     
-    private List<String> userIds = new ArrayList<>();
+    private List<String> userIds = null;
     
     public UpdateMembesRoleV4RequestBody withRoleId(Integer roleId) {
         this.roleId = roleId;
@@ -40,7 +40,7 @@ public class UpdateMembesRoleV4RequestBody  {
 
 
     /**
-     * 成员角色 3 项目经理 4 开发人员 5 测试经理 6 测试人员 7 参与者 8 浏览者
+     * 成员角色, -1 项目创建者, 3 项目经理, 4 开发人员, 5 测试经理, 6 测试人员, 7 参与者, 8 浏览者,
      * @return roleId
      */
     public Integer getRoleId() {
@@ -50,6 +50,8 @@ public class UpdateMembesRoleV4RequestBody  {
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
+
+    
 
     public UpdateMembesRoleV4RequestBody withUserIds(List<String> userIds) {
         this.userIds = userIds;
@@ -81,6 +83,9 @@ public class UpdateMembesRoleV4RequestBody  {
     public void setUserIds(List<String> userIds) {
         this.userIds = userIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

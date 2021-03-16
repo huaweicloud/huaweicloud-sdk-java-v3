@@ -131,6 +131,8 @@ public class ListTrackersRequest  {
         this.trackerName = trackerName;
     }
 
+    
+
     public ListTrackersRequest withTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
         return this;
@@ -150,6 +152,9 @@ public class ListTrackersRequest  {
     public void setTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

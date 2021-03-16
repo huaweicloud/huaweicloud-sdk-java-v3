@@ -24,7 +24,7 @@ public class RunImageTaggingResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private ImageTaggingBody result = null;
+    private ImageTaggingBody result;
 
     public RunImageTaggingResponse withResult(ImageTaggingBody result) {
         this.result = result;
@@ -52,6 +52,9 @@ public class RunImageTaggingResponse extends SdkResponse {
     public void setResult(ImageTaggingBody result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class AgencyAuth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity")
     
-    private AgencyAuthIdentity identity = null;
+    private AgencyAuthIdentity identity;
 
     public AgencyAuth withIdentity(AgencyAuthIdentity identity) {
         this.identity = identity;
@@ -50,6 +50,9 @@ public class AgencyAuth  {
     public void setIdentity(AgencyAuthIdentity identity) {
         this.identity = identity;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

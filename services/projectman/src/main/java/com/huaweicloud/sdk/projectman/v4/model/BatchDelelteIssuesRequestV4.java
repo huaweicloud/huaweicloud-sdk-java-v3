@@ -23,7 +23,7 @@ public class BatchDelelteIssuesRequestV4  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="issue_ids")
     
-    private List<Integer> issueIds = new ArrayList<>();
+    private List<Integer> issueIds = null;
     
     public BatchDelelteIssuesRequestV4 withIssueIds(List<Integer> issueIds) {
         this.issueIds = issueIds;
@@ -55,6 +55,9 @@ public class BatchDelelteIssuesRequestV4  {
     public void setIssueIds(List<Integer> issueIds) {
         this.issueIds = issueIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

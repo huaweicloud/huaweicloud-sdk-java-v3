@@ -125,6 +125,8 @@ public class ExtraDhcpOption  {
         this.optName = optName;
     }
 
+    
+
     public ExtraDhcpOption withOptValue(String optValue) {
         this.optValue = optValue;
         return this;
@@ -144,6 +146,9 @@ public class ExtraDhcpOption  {
     public void setOptValue(String optValue) {
         this.optValue = optValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

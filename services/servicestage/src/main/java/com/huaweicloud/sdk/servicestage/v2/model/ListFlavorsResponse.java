@@ -35,9 +35,6 @@ public class ListFlavorsResponse extends SdkResponse {
 
     
     public ListFlavorsResponse addFlavorsItem(FlavorView flavorsItem) {
-        if (this.flavors == null) {
-            this.flavors = new ArrayList<>();
-        }
         this.flavors.add(flavorsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListFlavorsResponse extends SdkResponse {
     public void setFlavors(List<FlavorView> flavors) {
         this.flavors = flavors;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

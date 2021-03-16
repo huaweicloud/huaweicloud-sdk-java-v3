@@ -49,6 +49,8 @@ public class VersionMediatypes  {
         this.type = type;
     }
 
+    
+
     public VersionMediatypes withBase(String base) {
         this.base = base;
         return this;
@@ -68,6 +70,9 @@ public class VersionMediatypes  {
     public void setBase(String base) {
         this.base = base;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

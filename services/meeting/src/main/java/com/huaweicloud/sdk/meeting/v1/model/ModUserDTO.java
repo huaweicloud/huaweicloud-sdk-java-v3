@@ -197,6 +197,8 @@ public class ModUserDTO  {
         this.name = name;
     }
 
+    
+
     public ModUserDTO withEnglishName(String englishName) {
         this.englishName = englishName;
         return this;
@@ -216,6 +218,8 @@ public class ModUserDTO  {
     public void setEnglishName(String englishName) {
         this.englishName = englishName;
     }
+
+    
 
     public ModUserDTO withPhone(String phone) {
         this.phone = phone;
@@ -237,6 +241,8 @@ public class ModUserDTO  {
         this.phone = phone;
     }
 
+    
+
     public ModUserDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -256,6 +262,8 @@ public class ModUserDTO  {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
 
     public ModUserDTO withEmail(String email) {
         this.email = email;
@@ -277,6 +285,8 @@ public class ModUserDTO  {
         this.email = email;
     }
 
+    
+
     public ModUserDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
@@ -296,6 +306,8 @@ public class ModUserDTO  {
     public void setVmrId(String vmrId) {
         this.vmrId = vmrId;
     }
+
+    
 
     public ModUserDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
@@ -317,6 +329,8 @@ public class ModUserDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public ModUserDTO withSignature(String signature) {
         this.signature = signature;
         return this;
@@ -336,6 +350,8 @@ public class ModUserDTO  {
     public void setSignature(String signature) {
         this.signature = signature;
     }
+
+    
 
     public ModUserDTO withTitle(String title) {
         this.title = title;
@@ -357,6 +373,8 @@ public class ModUserDTO  {
         this.title = title;
     }
 
+    
+
     public ModUserDTO withDesc(String desc) {
         this.desc = desc;
         return this;
@@ -376,6 +394,8 @@ public class ModUserDTO  {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    
 
     public ModUserDTO withStatus(StatusEnum status) {
         this.status = status;
@@ -397,6 +417,8 @@ public class ModUserDTO  {
         this.status = status;
     }
 
+    
+
     public ModUserDTO withSortLevel(Integer sortLevel) {
         this.sortLevel = sortLevel;
         return this;
@@ -417,6 +439,8 @@ public class ModUserDTO  {
         this.sortLevel = sortLevel;
     }
 
+    
+
     public ModUserDTO withHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
         return this;
@@ -436,6 +460,9 @@ public class ModUserDTO  {
     public void setHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

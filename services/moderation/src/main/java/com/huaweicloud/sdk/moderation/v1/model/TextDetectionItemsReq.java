@@ -49,6 +49,8 @@ public class TextDetectionItemsReq  {
         this.text = text;
     }
 
+    
+
     public TextDetectionItemsReq withType(String type) {
         this.type = type;
         return this;
@@ -68,6 +70,9 @@ public class TextDetectionItemsReq  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

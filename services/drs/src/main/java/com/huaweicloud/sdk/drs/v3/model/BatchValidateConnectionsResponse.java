@@ -41,9 +41,6 @@ public class BatchValidateConnectionsResponse extends SdkResponse {
 
     
     public BatchValidateConnectionsResponse addResultsItem(CheckJobResp resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class BatchValidateConnectionsResponse extends SdkResponse {
         this.results = results;
     }
 
+    
+
     public BatchValidateConnectionsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class BatchValidateConnectionsResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

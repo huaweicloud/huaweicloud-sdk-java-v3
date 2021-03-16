@@ -24,7 +24,7 @@ public class ShowIpGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipgroup")
     
-    private IpGroup ipgroup = null;
+    private IpGroup ipgroup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class ShowIpGroupResponse extends SdkResponse {
         this.ipgroup = ipgroup;
     }
 
+    
+
     public ShowIpGroupResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -78,6 +80,9 @@ public class ShowIpGroupResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

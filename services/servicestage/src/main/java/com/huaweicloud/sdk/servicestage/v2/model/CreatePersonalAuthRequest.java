@@ -116,7 +116,7 @@ public class CreatePersonalAuthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AccessToken body = null;
+    private AccessToken body;
 
     public CreatePersonalAuthRequest withRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
@@ -137,6 +137,8 @@ public class CreatePersonalAuthRequest  {
     public void setRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
     }
+
+    
 
     public CreatePersonalAuthRequest withBody(AccessToken body) {
         this.body = body;
@@ -164,6 +166,9 @@ public class CreatePersonalAuthRequest  {
     public void setBody(AccessToken body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

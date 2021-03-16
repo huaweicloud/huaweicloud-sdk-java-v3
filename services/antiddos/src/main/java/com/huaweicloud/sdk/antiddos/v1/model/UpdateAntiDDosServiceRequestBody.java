@@ -67,6 +67,8 @@ public class UpdateAntiDDosServiceRequestBody  {
         this.appTypeId = appTypeId;
     }
 
+    
+
     public UpdateAntiDDosServiceRequestBody withCleaningAccessPosId(Integer cleaningAccessPosId) {
         this.cleaningAccessPosId = cleaningAccessPosId;
         return this;
@@ -86,6 +88,8 @@ public class UpdateAntiDDosServiceRequestBody  {
     public void setCleaningAccessPosId(Integer cleaningAccessPosId) {
         this.cleaningAccessPosId = cleaningAccessPosId;
     }
+
+    
 
     public UpdateAntiDDosServiceRequestBody withEnableL7(Boolean enableL7) {
         this.enableL7 = enableL7;
@@ -107,6 +111,8 @@ public class UpdateAntiDDosServiceRequestBody  {
         this.enableL7 = enableL7;
     }
 
+    
+
     public UpdateAntiDDosServiceRequestBody withHttpRequestPosId(Integer httpRequestPosId) {
         this.httpRequestPosId = httpRequestPosId;
         return this;
@@ -127,6 +133,8 @@ public class UpdateAntiDDosServiceRequestBody  {
         this.httpRequestPosId = httpRequestPosId;
     }
 
+    
+
     public UpdateAntiDDosServiceRequestBody withTrafficPosId(Integer trafficPosId) {
         this.trafficPosId = trafficPosId;
         return this;
@@ -146,6 +154,9 @@ public class UpdateAntiDDosServiceRequestBody  {
     public void setTrafficPosId(Integer trafficPosId) {
         this.trafficPosId = trafficPosId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

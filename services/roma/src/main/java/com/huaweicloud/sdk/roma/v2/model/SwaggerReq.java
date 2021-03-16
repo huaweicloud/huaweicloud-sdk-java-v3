@@ -125,7 +125,7 @@ public class SwaggerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="define")
     
-    private DefineEnum define = DefineEnum.SPEC;
+    private DefineEnum define;
     /**
      * 导出的API定义的格式
      */
@@ -215,7 +215,7 @@ public class SwaggerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.JSON;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -255,6 +255,8 @@ public class SwaggerReq  {
         this.envId = envId;
     }
 
+    
+
     public SwaggerReq withDefine(DefineEnum define) {
         this.define = define;
         return this;
@@ -274,6 +276,8 @@ public class SwaggerReq  {
     public void setDefine(DefineEnum define) {
         this.define = define;
     }
+
+    
 
     public SwaggerReq withType(TypeEnum type) {
         this.type = type;
@@ -295,6 +299,8 @@ public class SwaggerReq  {
         this.type = type;
     }
 
+    
+
     public SwaggerReq withVersion(String version) {
         this.version = version;
         return this;
@@ -315,6 +321,8 @@ public class SwaggerReq  {
         this.version = version;
     }
 
+    
+
     public SwaggerReq withApis(List<String> apis) {
         this.apis = apis;
         return this;
@@ -322,9 +330,6 @@ public class SwaggerReq  {
 
     
     public SwaggerReq addApisItem(String apisItem) {
-        if (this.apis == null) {
-            this.apis = new ArrayList<>();
-        }
         this.apis.add(apisItem);
         return this;
     }
@@ -349,6 +354,8 @@ public class SwaggerReq  {
         this.apis = apis;
     }
 
+    
+
     public SwaggerReq withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -368,6 +375,9 @@ public class SwaggerReq  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -153,6 +153,8 @@ public class BatchUpdateUserStatusRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public BatchUpdateUserStatusRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -173,6 +175,8 @@ public class BatchUpdateUserStatusRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public BatchUpdateUserStatusRequest withValue(ValueEnum value) {
         this.value = value;
         return this;
@@ -192,6 +196,8 @@ public class BatchUpdateUserStatusRequest  {
     public void setValue(ValueEnum value) {
         this.value = value;
     }
+
+    
 
     public BatchUpdateUserStatusRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
@@ -215,6 +221,8 @@ public class BatchUpdateUserStatusRequest  {
         this.accountType = accountType;
     }
 
+    
+
     public BatchUpdateUserStatusRequest withBody(List<String> body) {
         this.body = body;
         return this;
@@ -222,9 +230,6 @@ public class BatchUpdateUserStatusRequest  {
 
     
     public BatchUpdateUserStatusRequest addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -248,6 +253,9 @@ public class BatchUpdateUserStatusRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class LinksItem  {
         this.fileName = fileName;
     }
 
+    
+
     public LinksItem withLink(String link) {
         this.link = link;
         return this;
@@ -68,6 +70,9 @@ public class LinksItem  {
     public void setLink(String link) {
         this.link = link;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

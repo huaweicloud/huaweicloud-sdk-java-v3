@@ -143,6 +143,8 @@ public class SignatureReq  {
         this.signSecret = signSecret;
     }
 
+    
+
     public SignatureReq withName(String name) {
         this.name = name;
         return this;
@@ -162,6 +164,8 @@ public class SignatureReq  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SignatureReq withSignKey(String signKey) {
         this.signKey = signKey;
@@ -183,6 +187,8 @@ public class SignatureReq  {
         this.signKey = signKey;
     }
 
+    
+
     public SignatureReq withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -202,6 +208,9 @@ public class SignatureReq  {
     public void setSignType(SignTypeEnum signType) {
         this.signType = signType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class ExternalAccesses  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    private ExternalAccessProtocol protocol = null;
+    private ExternalAccessProtocol protocol;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,13 +48,13 @@ public class ExternalAccesses  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private ExternalAccessType type = null;
+    private ExternalAccessType type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private ExternalAccessStatus status = null;
+    private ExternalAccessStatus status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,6 +88,8 @@ public class ExternalAccesses  {
         this.id = id;
     }
 
+    
+
     public ExternalAccesses withProtocol(ExternalAccessProtocol protocol) {
         this.protocol = protocol;
         return this;
@@ -107,6 +109,8 @@ public class ExternalAccesses  {
     public void setProtocol(ExternalAccessProtocol protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public ExternalAccesses withAddress(String address) {
         this.address = address;
@@ -128,6 +132,8 @@ public class ExternalAccesses  {
         this.address = address;
     }
 
+    
+
     public ExternalAccesses withForwardPort(Integer forwardPort) {
         this.forwardPort = forwardPort;
         return this;
@@ -147,6 +153,8 @@ public class ExternalAccesses  {
     public void setForwardPort(Integer forwardPort) {
         this.forwardPort = forwardPort;
     }
+
+    
 
     public ExternalAccesses withType(ExternalAccessType type) {
         this.type = type;
@@ -168,6 +176,8 @@ public class ExternalAccesses  {
         this.type = type;
     }
 
+    
+
     public ExternalAccesses withStatus(ExternalAccessStatus status) {
         this.status = status;
         return this;
@@ -187,6 +197,8 @@ public class ExternalAccesses  {
     public void setStatus(ExternalAccessStatus status) {
         this.status = status;
     }
+
+    
 
     public ExternalAccesses withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -208,6 +220,8 @@ public class ExternalAccesses  {
         this.createTime = createTime;
     }
 
+    
+
     public ExternalAccesses withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -227,6 +241,9 @@ public class ExternalAccesses  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

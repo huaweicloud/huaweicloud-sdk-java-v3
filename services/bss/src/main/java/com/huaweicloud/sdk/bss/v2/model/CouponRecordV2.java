@@ -97,6 +97,8 @@ public class CouponRecordV2  {
         this.id = id;
     }
 
+    
+
     public CouponRecordV2 withOperationType(String operationType) {
         this.operationType = operationType;
         return this;
@@ -116,6 +118,8 @@ public class CouponRecordV2  {
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
+
+    
 
     public CouponRecordV2 withQuotaId(String quotaId) {
         this.quotaId = quotaId;
@@ -137,6 +141,8 @@ public class CouponRecordV2  {
         this.quotaId = quotaId;
     }
 
+    
+
     public CouponRecordV2 withQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
         return this;
@@ -156,6 +162,8 @@ public class CouponRecordV2  {
     public void setQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
     }
+
+    
 
     public CouponRecordV2 withCouponId(String couponId) {
         this.couponId = couponId;
@@ -177,6 +185,8 @@ public class CouponRecordV2  {
         this.couponId = couponId;
     }
 
+    
+
     public CouponRecordV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -196,6 +206,8 @@ public class CouponRecordV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public CouponRecordV2 withOperationAmount(Double operationAmount) {
         this.operationAmount = operationAmount;
@@ -217,6 +229,8 @@ public class CouponRecordV2  {
         this.operationAmount = operationAmount;
     }
 
+    
+
     public CouponRecordV2 withOperationTime(String operationTime) {
         this.operationTime = operationTime;
         return this;
@@ -236,6 +250,8 @@ public class CouponRecordV2  {
     public void setOperationTime(String operationTime) {
         this.operationTime = operationTime;
     }
+
+    
 
     public CouponRecordV2 withResult(String result) {
         this.result = result;
@@ -257,6 +273,8 @@ public class CouponRecordV2  {
         this.result = result;
     }
 
+    
+
     public CouponRecordV2 withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -276,6 +294,9 @@ public class CouponRecordV2  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

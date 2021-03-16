@@ -49,6 +49,8 @@ public class RolesOption  {
         this.roleDbName = roleDbName;
     }
 
+    
+
     public RolesOption withRoleName(String roleName) {
         this.roleName = roleName;
         return this;
@@ -68,6 +70,9 @@ public class RolesOption  {
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class AccessoryLimitVo  {
         this.limitCount = limitCount;
     }
 
+    
+
     public AccessoryLimitVo withLimitSize(String limitSize) {
         this.limitSize = limitSize;
         return this;
@@ -75,6 +77,8 @@ public class AccessoryLimitVo  {
         this.limitSize = limitSize;
     }
 
+    
+
     public AccessoryLimitVo withLimitFileType(String limitFileType) {
         this.limitFileType = limitFileType;
         return this;
@@ -94,6 +98,9 @@ public class AccessoryLimitVo  {
     public void setLimitFileType(String limitFileType) {
         this.limitFileType = limitFileType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

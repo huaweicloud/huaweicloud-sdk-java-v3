@@ -24,7 +24,7 @@ public class Versions  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    private List<Version> values = new ArrayList<>();
+    private List<Version> values = null;
     
     public Versions withValues(List<Version> values) {
         this.values = values;
@@ -56,6 +56,9 @@ public class Versions  {
     public void setValues(List<Version> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

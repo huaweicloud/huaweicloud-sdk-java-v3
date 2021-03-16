@@ -37,13 +37,13 @@ public class AppAuthResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_result")
     
-    private AuthResultResp authResult = null;
+    private AuthResultResp authResult;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_time")
     
-    private OffsetDateTime authTime = null;
+    private OffsetDateTime authTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -257,6 +257,8 @@ public class AppAuthResp  {
         this.apiId = apiId;
     }
 
+    
+
     public AppAuthResp withAuthResult(AuthResultResp authResult) {
         this.authResult = authResult;
         return this;
@@ -284,6 +286,8 @@ public class AppAuthResp  {
         this.authResult = authResult;
     }
 
+    
+
     public AppAuthResp withAuthTime(OffsetDateTime authTime) {
         this.authTime = authTime;
         return this;
@@ -303,6 +307,8 @@ public class AppAuthResp  {
     public void setAuthTime(OffsetDateTime authTime) {
         this.authTime = authTime;
     }
+
+    
 
     public AppAuthResp withId(String id) {
         this.id = id;
@@ -324,6 +330,8 @@ public class AppAuthResp  {
         this.id = id;
     }
 
+    
+
     public AppAuthResp withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -343,6 +351,8 @@ public class AppAuthResp  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public AppAuthResp withAuthRole(AuthRoleEnum authRole) {
         this.authRole = authRole;
@@ -364,6 +374,8 @@ public class AppAuthResp  {
         this.authRole = authRole;
     }
 
+    
+
     public AppAuthResp withAuthTunnel(AuthTunnelEnum authTunnel) {
         this.authTunnel = authTunnel;
         return this;
@@ -384,6 +396,8 @@ public class AppAuthResp  {
         this.authTunnel = authTunnel;
     }
 
+    
+
     public AppAuthResp withAuthWhitelist(List<String> authWhitelist) {
         this.authWhitelist = authWhitelist;
         return this;
@@ -391,9 +405,6 @@ public class AppAuthResp  {
 
     
     public AppAuthResp addAuthWhitelistItem(String authWhitelistItem) {
-        if (this.authWhitelist == null) {
-            this.authWhitelist = new ArrayList<>();
-        }
         this.authWhitelist.add(authWhitelistItem);
         return this;
     }
@@ -418,6 +429,8 @@ public class AppAuthResp  {
         this.authWhitelist = authWhitelist;
     }
 
+    
+
     public AppAuthResp withAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
         return this;
@@ -425,9 +438,6 @@ public class AppAuthResp  {
 
     
     public AppAuthResp addAuthBlacklistItem(String authBlacklistItem) {
-        if (this.authBlacklist == null) {
-            this.authBlacklist = new ArrayList<>();
-        }
         this.authBlacklist.add(authBlacklistItem);
         return this;
     }
@@ -451,6 +461,9 @@ public class AppAuthResp  {
     public void setAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

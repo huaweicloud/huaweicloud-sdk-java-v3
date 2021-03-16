@@ -35,9 +35,6 @@ public class ListHealthmonitorsResponse extends SdkResponse {
 
     
     public ListHealthmonitorsResponse addHealthmonitorsItem(HealthmonitorResp healthmonitorsItem) {
-        if (this.healthmonitors == null) {
-            this.healthmonitors = new ArrayList<>();
-        }
         this.healthmonitors.add(healthmonitorsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListHealthmonitorsResponse extends SdkResponse {
     public void setHealthmonitors(List<HealthmonitorResp> healthmonitors) {
         this.healthmonitors = healthmonitors;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

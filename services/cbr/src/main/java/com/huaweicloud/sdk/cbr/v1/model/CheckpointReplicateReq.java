@@ -22,7 +22,7 @@ public class CheckpointReplicateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replicate")
     
-    private CheckpointReplicateParam replicate = null;
+    private CheckpointReplicateParam replicate;
 
     public CheckpointReplicateReq withReplicate(CheckpointReplicateParam replicate) {
         this.replicate = replicate;
@@ -50,6 +50,9 @@ public class CheckpointReplicateReq  {
     public void setReplicate(CheckpointReplicateParam replicate) {
         this.replicate = replicate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

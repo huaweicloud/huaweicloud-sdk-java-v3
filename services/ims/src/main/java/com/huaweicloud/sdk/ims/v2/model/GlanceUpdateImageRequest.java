@@ -52,6 +52,8 @@ public class GlanceUpdateImageRequest  {
         this.imageId = imageId;
     }
 
+    
+
     public GlanceUpdateImageRequest withBody(List<GlanceUpdateImageRequestBody> body) {
         this.body = body;
         return this;
@@ -59,9 +61,6 @@ public class GlanceUpdateImageRequest  {
 
     
     public GlanceUpdateImageRequest addBodyItem(GlanceUpdateImageRequestBody bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class GlanceUpdateImageRequest  {
     public void setBody(List<GlanceUpdateImageRequestBody> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

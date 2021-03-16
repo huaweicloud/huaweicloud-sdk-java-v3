@@ -42,6 +42,9 @@ public class RestLockReqBody  {
     public void setIsLock(Integer isLock) {
         this.isLock = isLock;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

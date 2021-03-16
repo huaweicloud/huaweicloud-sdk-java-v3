@@ -49,6 +49,8 @@ public class UserWithPrivilege  {
         this.name = name;
     }
 
+    
+
     public UserWithPrivilege withReadonly(Boolean readonly) {
         this.readonly = readonly;
         return this;
@@ -68,6 +70,9 @@ public class UserWithPrivilege  {
     public void setReadonly(Boolean readonly) {
         this.readonly = readonly;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

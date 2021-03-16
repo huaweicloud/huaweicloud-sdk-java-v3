@@ -55,6 +55,8 @@ public class NovaListKeypairsRequest  {
         this.limit = limit;
     }
 
+    
+
     public NovaListKeypairsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -75,6 +77,8 @@ public class NovaListKeypairsRequest  {
         this.marker = marker;
     }
 
+    
+
     public NovaListKeypairsRequest withOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
         return this;
@@ -94,6 +98,9 @@ public class NovaListKeypairsRequest  {
     public void setOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

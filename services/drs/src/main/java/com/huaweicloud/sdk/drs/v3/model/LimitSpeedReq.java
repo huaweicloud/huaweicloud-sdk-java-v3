@@ -30,7 +30,7 @@ public class LimitSpeedReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="speed_limit")
     
-    private List<SpeedLimitInfo> speedLimit = new ArrayList<>();
+    private List<SpeedLimitInfo> speedLimit = null;
     
     public LimitSpeedReq withJobId(String jobId) {
         this.jobId = jobId;
@@ -51,6 +51,8 @@ public class LimitSpeedReq  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public LimitSpeedReq withSpeedLimit(List<SpeedLimitInfo> speedLimit) {
         this.speedLimit = speedLimit;
@@ -82,6 +84,9 @@ public class LimitSpeedReq  {
     public void setSpeedLimit(List<SpeedLimitInfo> speedLimit) {
         this.speedLimit = speedLimit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

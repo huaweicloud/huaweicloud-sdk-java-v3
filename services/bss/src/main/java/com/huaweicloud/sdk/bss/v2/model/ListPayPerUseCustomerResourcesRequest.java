@@ -22,7 +22,7 @@ public class ListPayPerUseCustomerResourcesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QueryResourcesReq body = null;
+    private QueryResourcesReq body;
 
     public ListPayPerUseCustomerResourcesRequest withBody(QueryResourcesReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ListPayPerUseCustomerResourcesRequest  {
     public void setBody(QueryResourcesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class ModifyIpWhitelistBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="whitelist")
     
-    private List<Whitelist> whitelist = new ArrayList<>();
+    private List<Whitelist> whitelist = null;
     
     public ModifyIpWhitelistBody withEnableWhitelist(Boolean enableWhitelist) {
         this.enableWhitelist = enableWhitelist;
@@ -51,6 +51,8 @@ public class ModifyIpWhitelistBody  {
     public void setEnableWhitelist(Boolean enableWhitelist) {
         this.enableWhitelist = enableWhitelist;
     }
+
+    
 
     public ModifyIpWhitelistBody withWhitelist(List<Whitelist> whitelist) {
         this.whitelist = whitelist;
@@ -82,6 +84,9 @@ public class ModifyIpWhitelistBody  {
     public void setWhitelist(List<Whitelist> whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

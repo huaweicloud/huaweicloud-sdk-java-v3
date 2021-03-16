@@ -24,7 +24,7 @@ public class BatchLimitSpeedReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="speed_limits")
     
-    private List<LimitSpeedReq> speedLimits = new ArrayList<>();
+    private List<LimitSpeedReq> speedLimits = null;
     
     public BatchLimitSpeedReq withSpeedLimits(List<LimitSpeedReq> speedLimits) {
         this.speedLimits = speedLimits;
@@ -56,6 +56,9 @@ public class BatchLimitSpeedReq  {
     public void setSpeedLimits(List<LimitSpeedReq> speedLimits) {
         this.speedLimits = speedLimits;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

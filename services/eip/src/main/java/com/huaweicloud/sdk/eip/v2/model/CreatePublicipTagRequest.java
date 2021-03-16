@@ -28,7 +28,7 @@ public class CreatePublicipTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePublicipTagRequestBody body = null;
+    private CreatePublicipTagRequestBody body;
 
     public CreatePublicipTagRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -49,6 +49,8 @@ public class CreatePublicipTagRequest  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public CreatePublicipTagRequest withBody(CreatePublicipTagRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreatePublicipTagRequest  {
     public void setBody(CreatePublicipTagRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

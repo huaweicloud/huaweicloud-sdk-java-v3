@@ -67,6 +67,8 @@ public class ListCustomLineRequest  {
         this.lineId = lineId;
     }
 
+    
+
     public ListCustomLineRequest withName(String name) {
         this.name = name;
         return this;
@@ -86,6 +88,8 @@ public class ListCustomLineRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListCustomLineRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -107,6 +111,8 @@ public class ListCustomLineRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListCustomLineRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -127,6 +133,8 @@ public class ListCustomLineRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCustomLineRequest withShowDetail(Boolean showDetail) {
         this.showDetail = showDetail;
         return this;
@@ -146,6 +154,9 @@ public class ListCustomLineRequest  {
     public void setShowDetail(Boolean showDetail) {
         this.showDetail = showDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

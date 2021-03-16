@@ -110,7 +110,7 @@ public class CreateConfigurationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ConfigurationForCreation body = null;
+    private ConfigurationForCreation body;
 
     public CreateConfigurationRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class CreateConfigurationRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public CreateConfigurationRequest withBody(ConfigurationForCreation body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class CreateConfigurationRequest  {
     public void setBody(ConfigurationForCreation body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

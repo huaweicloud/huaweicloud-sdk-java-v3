@@ -28,7 +28,7 @@ public class ApplicationConfigModify  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration")
     
-    private ApplicationConfigModifyConfiguration _configuration = null;
+    private ApplicationConfigModifyConfiguration _configuration;
 
     public ApplicationConfigModify withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -49,6 +49,8 @@ public class ApplicationConfigModify  {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
 
     public ApplicationConfigModify withConfiguration(ApplicationConfigModifyConfiguration _configuration) {
         this._configuration = _configuration;
@@ -76,6 +78,9 @@ public class ApplicationConfigModify  {
     public void setConfiguration(ApplicationConfigModifyConfiguration _configuration) {
         this._configuration = _configuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

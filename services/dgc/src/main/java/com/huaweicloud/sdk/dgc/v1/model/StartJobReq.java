@@ -33,9 +33,6 @@ public class StartJobReq  {
 
     
     public StartJobReq addJobParamsItem(JobParam jobParamsItem) {
-        if (this.jobParams == null) {
-            this.jobParams = new ArrayList<>();
-        }
         this.jobParams.add(jobParamsItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class StartJobReq  {
     public void setJobParams(List<JobParam> jobParams) {
         this.jobParams = jobParams;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

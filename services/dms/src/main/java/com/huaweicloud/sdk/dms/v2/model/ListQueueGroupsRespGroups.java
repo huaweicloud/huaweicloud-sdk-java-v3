@@ -79,6 +79,8 @@ public class ListQueueGroupsRespGroups  {
         this.id = id;
     }
 
+    
+
     public ListQueueGroupsRespGroups withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +100,8 @@ public class ListQueueGroupsRespGroups  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListQueueGroupsRespGroups withProducedMessages(Integer producedMessages) {
         this.producedMessages = producedMessages;
@@ -119,6 +123,8 @@ public class ListQueueGroupsRespGroups  {
         this.producedMessages = producedMessages;
     }
 
+    
+
     public ListQueueGroupsRespGroups withConsumedMessages(Integer consumedMessages) {
         this.consumedMessages = consumedMessages;
         return this;
@@ -138,6 +144,8 @@ public class ListQueueGroupsRespGroups  {
     public void setConsumedMessages(Integer consumedMessages) {
         this.consumedMessages = consumedMessages;
     }
+
+    
 
     public ListQueueGroupsRespGroups withAvailableMessages(Integer availableMessages) {
         this.availableMessages = availableMessages;
@@ -159,6 +167,8 @@ public class ListQueueGroupsRespGroups  {
         this.availableMessages = availableMessages;
     }
 
+    
+
     public ListQueueGroupsRespGroups withProducedDeadletters(Integer producedDeadletters) {
         this.producedDeadletters = producedDeadletters;
         return this;
@@ -179,6 +189,8 @@ public class ListQueueGroupsRespGroups  {
         this.producedDeadletters = producedDeadletters;
     }
 
+    
+
     public ListQueueGroupsRespGroups withAvailableDeadletters(Integer availableDeadletters) {
         this.availableDeadletters = availableDeadletters;
         return this;
@@ -198,6 +210,9 @@ public class ListQueueGroupsRespGroups  {
     public void setAvailableDeadletters(Integer availableDeadletters) {
         this.availableDeadletters = availableDeadletters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

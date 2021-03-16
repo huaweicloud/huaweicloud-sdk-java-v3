@@ -60,6 +60,8 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
         this.topic = topic;
     }
 
+    
+
     public ShowInstanceTopicDetailResponse withPartitions(List<ShowInstanceTopicDetailRespPartitions> partitions) {
         this.partitions = partitions;
         return this;
@@ -67,9 +69,6 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
 
     
     public ShowInstanceTopicDetailResponse addPartitionsItem(ShowInstanceTopicDetailRespPartitions partitionsItem) {
-        if (this.partitions == null) {
-            this.partitions = new ArrayList<>();
-        }
         this.partitions.add(partitionsItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
         this.partitions = partitions;
     }
 
+    
+
     public ShowInstanceTopicDetailResponse withGroupSubscribed(List<String> groupSubscribed) {
         this.groupSubscribed = groupSubscribed;
         return this;
@@ -101,9 +102,6 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
 
     
     public ShowInstanceTopicDetailResponse addGroupSubscribedItem(String groupSubscribedItem) {
-        if (this.groupSubscribed == null) {
-            this.groupSubscribed = new ArrayList<>();
-        }
         this.groupSubscribed.add(groupSubscribedItem);
         return this;
     }
@@ -127,6 +125,9 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
     public void setGroupSubscribed(List<String> groupSubscribed) {
         this.groupSubscribed = groupSubscribed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

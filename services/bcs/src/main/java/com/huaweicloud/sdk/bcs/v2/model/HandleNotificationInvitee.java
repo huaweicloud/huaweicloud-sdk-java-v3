@@ -61,6 +61,8 @@ public class HandleNotificationInvitee  {
         this.inviteeBcsId = inviteeBcsId;
     }
 
+    
+
     public HandleNotificationInvitee withInviteeBcsName(String inviteeBcsName) {
         this.inviteeBcsName = inviteeBcsName;
         return this;
@@ -80,6 +82,8 @@ public class HandleNotificationInvitee  {
     public void setInviteeBcsName(String inviteeBcsName) {
         this.inviteeBcsName = inviteeBcsName;
     }
+
+    
 
     public HandleNotificationInvitee withInviteeProjectId(String inviteeProjectId) {
         this.inviteeProjectId = inviteeProjectId;
@@ -101,6 +105,8 @@ public class HandleNotificationInvitee  {
         this.inviteeProjectId = inviteeProjectId;
     }
 
+    
+
     public HandleNotificationInvitee withInviteeUserId(String inviteeUserId) {
         this.inviteeUserId = inviteeUserId;
         return this;
@@ -120,6 +126,9 @@ public class HandleNotificationInvitee  {
     public void setInviteeUserId(String inviteeUserId) {
         this.inviteeUserId = inviteeUserId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

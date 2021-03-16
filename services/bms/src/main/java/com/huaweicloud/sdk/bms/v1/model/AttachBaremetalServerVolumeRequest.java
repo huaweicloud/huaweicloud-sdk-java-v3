@@ -28,7 +28,7 @@ public class AttachBaremetalServerVolumeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AttachVolumeBody body = null;
+    private AttachVolumeBody body;
 
     public AttachBaremetalServerVolumeRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class AttachBaremetalServerVolumeRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public AttachBaremetalServerVolumeRequest withBody(AttachVolumeBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AttachBaremetalServerVolumeRequest  {
     public void setBody(AttachVolumeBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

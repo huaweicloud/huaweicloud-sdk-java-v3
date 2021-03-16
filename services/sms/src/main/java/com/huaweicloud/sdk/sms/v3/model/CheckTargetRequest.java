@@ -22,7 +22,7 @@ public class CheckTargetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ChecktargetReq body = null;
+    private ChecktargetReq body;
 
     public CheckTargetRequest withBody(ChecktargetReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CheckTargetRequest  {
     public void setBody(ChecktargetReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

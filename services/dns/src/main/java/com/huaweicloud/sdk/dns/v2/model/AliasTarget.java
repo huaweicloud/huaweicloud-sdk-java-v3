@@ -49,6 +49,8 @@ public class AliasTarget  {
         this.resourceType = resourceType;
     }
 
+    
+
     public AliasTarget withResourceDomainName(String resourceDomainName) {
         this.resourceDomainName = resourceDomainName;
         return this;
@@ -68,6 +70,9 @@ public class AliasTarget  {
     public void setResourceDomainName(String resourceDomainName) {
         this.resourceDomainName = resourceDomainName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

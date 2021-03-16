@@ -21,7 +21,7 @@ public class ListBuiltInPolicyDefinitionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh-cn";
+    private String xLanguage;
 
     public ListBuiltInPolicyDefinitionsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -44,6 +44,9 @@ public class ListBuiltInPolicyDefinitionsRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -25,7 +25,7 @@ public class IssueRecordV4  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private IssueRecordV4User user = null;
+    private IssueRecordV4User user;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class IssueRecordV4  {
         this.user = user;
     }
 
+    
+
     public IssueRecordV4 withDetails(List<IssueRecordV4Details> details) {
         this.details = details;
         return this;
@@ -67,9 +69,6 @@ public class IssueRecordV4  {
 
     
     public IssueRecordV4 addDetailsItem(IssueRecordV4Details detailsItem) {
-        if (this.details == null) {
-            this.details = new ArrayList<>();
-        }
         this.details.add(detailsItem);
         return this;
     }
@@ -93,6 +92,9 @@ public class IssueRecordV4  {
     public void setDetails(List<IssueRecordV4Details> details) {
         this.details = details;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

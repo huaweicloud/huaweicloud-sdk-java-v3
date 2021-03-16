@@ -24,7 +24,7 @@ public class VaultAddResourceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private List<ResourceCreate> resources = new ArrayList<>();
+    private List<ResourceCreate> resources = null;
     
     public VaultAddResourceReq withResources(List<ResourceCreate> resources) {
         this.resources = resources;
@@ -56,6 +56,9 @@ public class VaultAddResourceReq  {
     public void setResources(List<ResourceCreate> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

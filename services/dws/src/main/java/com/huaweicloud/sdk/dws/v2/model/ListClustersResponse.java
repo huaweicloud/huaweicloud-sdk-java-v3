@@ -35,9 +35,6 @@ public class ListClustersResponse extends SdkResponse {
 
     
     public ListClustersResponse addClustersItem(ClusterInfo clustersItem) {
-        if (this.clusters == null) {
-            this.clusters = new ArrayList<>();
-        }
         this.clusters.add(clustersItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListClustersResponse extends SdkResponse {
     public void setClusters(List<ClusterInfo> clusters) {
         this.clusters = clusters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

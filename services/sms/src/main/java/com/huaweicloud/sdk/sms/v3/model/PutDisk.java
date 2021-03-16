@@ -24,7 +24,7 @@ public class PutDisk  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_migration")
     
-    private Boolean needMigration = true;
+    private Boolean needMigration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,7 +36,7 @@ public class PutDisk  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjust_size")
     
-    private Long adjustSize = 0l;
+    private Long adjustSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class PutDisk  {
         this.needMigration = needMigration;
     }
 
+    
+
     public PutDisk withId(String id) {
         this.id = id;
         return this;
@@ -83,6 +85,8 @@ public class PutDisk  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public PutDisk withAdjustSize(Long adjustSize) {
         this.adjustSize = adjustSize;
@@ -106,6 +110,8 @@ public class PutDisk  {
         this.adjustSize = adjustSize;
     }
 
+    
+
     public PutDisk withPhysicalVolumes(List<PutVolume> physicalVolumes) {
         this.physicalVolumes = physicalVolumes;
         return this;
@@ -113,9 +119,6 @@ public class PutDisk  {
 
     
     public PutDisk addPhysicalVolumesItem(PutVolume physicalVolumesItem) {
-        if (this.physicalVolumes == null) {
-            this.physicalVolumes = new ArrayList<>();
-        }
         this.physicalVolumes.add(physicalVolumesItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class PutDisk  {
     public void setPhysicalVolumes(List<PutVolume> physicalVolumes) {
         this.physicalVolumes = physicalVolumes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

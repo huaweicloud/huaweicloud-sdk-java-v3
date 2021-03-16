@@ -255,13 +255,13 @@ public class UpdateRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -282,9 +282,6 @@ public class UpdateRuleResponse extends SdkResponse {
 
     
     public UpdateRuleResponse addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -309,6 +306,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
+    
+
     public UpdateRuleResponse withRuleId(Integer ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -328,6 +327,8 @@ public class UpdateRuleResponse extends SdkResponse {
     public void setRuleId(Integer ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public UpdateRuleResponse withName(String name) {
         this.name = name;
@@ -349,6 +350,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public UpdateRuleResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -368,6 +371,8 @@ public class UpdateRuleResponse extends SdkResponse {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public UpdateRuleResponse withAppName(String appName) {
         this.appName = appName;
@@ -389,6 +394,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.appName = appName;
     }
 
+    
+
     public UpdateRuleResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -408,6 +415,8 @@ public class UpdateRuleResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateRuleResponse withStatus(StatusEnum status) {
         this.status = status;
@@ -429,6 +438,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public UpdateRuleResponse withDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
         return this;
@@ -448,6 +459,8 @@ public class UpdateRuleResponse extends SdkResponse {
     public void setDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
     }
+
+    
 
     public UpdateRuleResponse withSqlField(String sqlField) {
         this.sqlField = sqlField;
@@ -469,6 +482,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.sqlField = sqlField;
     }
 
+    
+
     public UpdateRuleResponse withSqlWhere(String sqlWhere) {
         this.sqlWhere = sqlWhere;
         return this;
@@ -489,6 +504,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.sqlWhere = sqlWhere;
     }
 
+    
+
     public UpdateRuleResponse withRuleExpress(String ruleExpress) {
         this.ruleExpress = ruleExpress;
         return this;
@@ -508,6 +525,8 @@ public class UpdateRuleResponse extends SdkResponse {
     public void setRuleExpress(String ruleExpress) {
         this.ruleExpress = ruleExpress;
     }
+
+    
 
     public UpdateRuleResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -536,6 +555,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
+    
+
     public UpdateRuleResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -563,6 +584,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public UpdateRuleResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -585,6 +608,8 @@ public class UpdateRuleResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public UpdateRuleResponse withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
@@ -606,6 +631,9 @@ public class UpdateRuleResponse extends SdkResponse {
     public void setLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

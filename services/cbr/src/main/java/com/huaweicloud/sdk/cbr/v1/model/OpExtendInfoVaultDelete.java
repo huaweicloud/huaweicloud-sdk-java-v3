@@ -49,6 +49,8 @@ public class OpExtendInfoVaultDelete  {
         this.failCount = failCount;
     }
 
+    
+
     public OpExtendInfoVaultDelete withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -68,6 +70,9 @@ public class OpExtendInfoVaultDelete  {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -45,9 +45,6 @@ public class BatchCreateKmsTagsRequestBody  {
 
     
     public BatchCreateKmsTagsRequestBody addTagsItem(TagItem tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -72,6 +69,8 @@ public class BatchCreateKmsTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public BatchCreateKmsTagsRequestBody withAction(String action) {
         this.action = action;
         return this;
@@ -92,6 +91,8 @@ public class BatchCreateKmsTagsRequestBody  {
         this.action = action;
     }
 
+    
+
     public BatchCreateKmsTagsRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -111,6 +112,9 @@ public class BatchCreateKmsTagsRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

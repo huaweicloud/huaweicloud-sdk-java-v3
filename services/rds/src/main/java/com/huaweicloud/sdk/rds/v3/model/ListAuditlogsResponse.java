@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.rds.v3.model.Auditlog;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,47 +24,42 @@ public class ListAuditlogsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auditlogs")
     
-    private List<Auditlog> auditlogs = null;
-    
+    private Auditlog auditlogs;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_record")
     
     private Integer totalRecord;
 
-    public ListAuditlogsResponse withAuditlogs(List<Auditlog> auditlogs) {
+    public ListAuditlogsResponse withAuditlogs(Auditlog auditlogs) {
         this.auditlogs = auditlogs;
         return this;
     }
 
-    
-    public ListAuditlogsResponse addAuditlogsItem(Auditlog auditlogsItem) {
-        if (this.auditlogs == null) {
-            this.auditlogs = new ArrayList<>();
+    public ListAuditlogsResponse withAuditlogs(Consumer<Auditlog> auditlogsSetter) {
+        if(this.auditlogs == null ){
+            this.auditlogs = new Auditlog();
+            auditlogsSetter.accept(this.auditlogs);
         }
-        this.auditlogs.add(auditlogsItem);
+        
         return this;
     }
 
-    public ListAuditlogsResponse withAuditlogs(Consumer<List<Auditlog>> auditlogsSetter) {
-        if(this.auditlogs == null ){
-            this.auditlogs = new ArrayList<>();
-        }
-        auditlogsSetter.accept(this.auditlogs);
-        return this;
-    }
 
     /**
      * Get auditlogs
      * @return auditlogs
      */
-    public List<Auditlog> getAuditlogs() {
+    public Auditlog getAuditlogs() {
         return auditlogs;
     }
 
-    public void setAuditlogs(List<Auditlog> auditlogs) {
+    public void setAuditlogs(Auditlog auditlogs) {
         this.auditlogs = auditlogs;
     }
+
+    
 
     public ListAuditlogsResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
@@ -87,6 +80,9 @@ public class ListAuditlogsResponse extends SdkResponse {
     public void setTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

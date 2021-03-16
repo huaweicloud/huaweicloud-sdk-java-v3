@@ -84,7 +84,7 @@ public class HealthMonitor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<PoolRef> pools = new ArrayList<>();
+    private List<PoolRef> pools = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -130,6 +130,8 @@ public class HealthMonitor  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public HealthMonitor withDelay(Integer delay) {
         this.delay = delay;
         return this;
@@ -152,6 +154,8 @@ public class HealthMonitor  {
         this.delay = delay;
     }
 
+    
+
     public HealthMonitor withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -171,6 +175,8 @@ public class HealthMonitor  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public HealthMonitor withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
@@ -192,6 +198,8 @@ public class HealthMonitor  {
         this.expectedCodes = expectedCodes;
     }
 
+    
+
     public HealthMonitor withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
@@ -212,6 +220,8 @@ public class HealthMonitor  {
         this.httpMethod = httpMethod;
     }
 
+    
+
     public HealthMonitor withId(String id) {
         this.id = id;
         return this;
@@ -231,6 +241,8 @@ public class HealthMonitor  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public HealthMonitor withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
@@ -254,6 +266,8 @@ public class HealthMonitor  {
         this.maxRetries = maxRetries;
     }
 
+    
+
     public HealthMonitor withMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
         return this;
@@ -275,6 +289,8 @@ public class HealthMonitor  {
     public void setMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
     }
+
+    
 
     public HealthMonitor withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
@@ -298,6 +314,8 @@ public class HealthMonitor  {
         this.monitorPort = monitorPort;
     }
 
+    
+
     public HealthMonitor withName(String name) {
         this.name = name;
         return this;
@@ -317,6 +335,8 @@ public class HealthMonitor  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public HealthMonitor withPools(List<PoolRef> pools) {
         this.pools = pools;
@@ -349,6 +369,8 @@ public class HealthMonitor  {
         this.pools = pools;
     }
 
+    
+
     public HealthMonitor withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -368,6 +390,8 @@ public class HealthMonitor  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public HealthMonitor withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -391,6 +415,8 @@ public class HealthMonitor  {
         this.timeout = timeout;
     }
 
+    
+
     public HealthMonitor withType(String type) {
         this.type = type;
         return this;
@@ -411,6 +437,8 @@ public class HealthMonitor  {
         this.type = type;
     }
 
+    
+
     public HealthMonitor withUrlPath(String urlPath) {
         this.urlPath = urlPath;
         return this;
@@ -430,6 +458,9 @@ public class HealthMonitor  {
     public void setUrlPath(String urlPath) {
         this.urlPath = urlPath;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

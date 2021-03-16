@@ -253,6 +253,8 @@ public class ModDeviceDTO  {
         this.name = name;
     }
 
+    
+
     public ModDeviceDTO withPrjCodeMode(PrjCodeModeEnum prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
         return this;
@@ -272,6 +274,8 @@ public class ModDeviceDTO  {
     public void setPrjCodeMode(PrjCodeModeEnum prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
     }
+
+    
 
     public ModDeviceDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
@@ -293,6 +297,8 @@ public class ModDeviceDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public ModDeviceDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -312,6 +318,8 @@ public class ModDeviceDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public ModDeviceDTO withCountry(String country) {
         this.country = country;
@@ -333,6 +341,8 @@ public class ModDeviceDTO  {
         this.country = country;
     }
 
+    
+
     public ModDeviceDTO withEmail(String email) {
         this.email = email;
         return this;
@@ -352,6 +362,8 @@ public class ModDeviceDTO  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public ModDeviceDTO withDescription(String description) {
         this.description = description;
@@ -373,6 +385,8 @@ public class ModDeviceDTO  {
         this.description = description;
     }
 
+    
+
     public ModDeviceDTO withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -392,6 +406,9 @@ public class ModDeviceDTO  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,19 +57,19 @@ public class ListSubscriptionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListSubscriptionsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -91,6 +91,8 @@ public class ListSubscriptionsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListSubscriptionsRequest withResource(String resource) {
         this.resource = resource;
         return this;
@@ -110,6 +112,8 @@ public class ListSubscriptionsRequest  {
     public void setResource(String resource) {
         this.resource = resource;
     }
+
+    
 
     public ListSubscriptionsRequest withEvent(String event) {
         this.event = event;
@@ -131,6 +135,8 @@ public class ListSubscriptionsRequest  {
         this.event = event;
     }
 
+    
+
     public ListSubscriptionsRequest withCallbackurl(String callbackurl) {
         this.callbackurl = callbackurl;
         return this;
@@ -150,6 +156,8 @@ public class ListSubscriptionsRequest  {
     public void setCallbackurl(String callbackurl) {
         this.callbackurl = callbackurl;
     }
+
+    
 
     public ListSubscriptionsRequest withAppId(String appId) {
         this.appId = appId;
@@ -171,6 +179,8 @@ public class ListSubscriptionsRequest  {
         this.appId = appId;
     }
 
+    
+
     public ListSubscriptionsRequest withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -190,6 +200,8 @@ public class ListSubscriptionsRequest  {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
 
     public ListSubscriptionsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -213,6 +225,8 @@ public class ListSubscriptionsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSubscriptionsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -232,6 +246,8 @@ public class ListSubscriptionsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListSubscriptionsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -254,6 +270,9 @@ public class ListSubscriptionsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class ListMemberJobRecordsRequest  {
         this.jobId = jobId;
     }
 
+    
+
     public ListMemberJobRecordsRequest withExerciseId(String exerciseId) {
         this.exerciseId = exerciseId;
         return this;
@@ -87,6 +89,8 @@ public class ListMemberJobRecordsRequest  {
         this.exerciseId = exerciseId;
     }
 
+    
+
     public ListMemberJobRecordsRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
@@ -106,6 +110,8 @@ public class ListMemberJobRecordsRequest  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    
 
     public ListMemberJobRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -129,6 +135,8 @@ public class ListMemberJobRecordsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListMemberJobRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -150,6 +158,9 @@ public class ListMemberJobRecordsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

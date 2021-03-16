@@ -61,6 +61,8 @@ public class ValidateRomaAppRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ValidateRomaAppRequest withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class ValidateRomaAppRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ValidateRomaAppRequest withId(String id) {
         this.id = id;
@@ -101,6 +105,8 @@ public class ValidateRomaAppRequest  {
         this.id = id;
     }
 
+    
+
     public ValidateRomaAppRequest withKey(String key) {
         this.key = key;
         return this;
@@ -120,6 +126,9 @@ public class ValidateRomaAppRequest  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

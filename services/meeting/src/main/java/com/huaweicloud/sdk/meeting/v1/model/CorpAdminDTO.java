@@ -49,6 +49,8 @@ public class CorpAdminDTO  {
         this.account = account;
     }
 
+    
+
     public CorpAdminDTO withMenuTemplateId(String menuTemplateId) {
         this.menuTemplateId = menuTemplateId;
         return this;
@@ -68,6 +70,9 @@ public class CorpAdminDTO  {
     public void setMenuTemplateId(String menuTemplateId) {
         this.menuTemplateId = menuTemplateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

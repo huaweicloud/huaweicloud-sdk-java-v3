@@ -48,7 +48,7 @@ public class CreateRuleActionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel_detail")
     
-    private ChannelDetail channelDetail = null;
+    private ChannelDetail channelDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,6 +76,8 @@ public class CreateRuleActionResponse extends SdkResponse {
         this.actionId = actionId;
     }
 
+    
+
     public CreateRuleActionResponse withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -95,6 +97,8 @@ public class CreateRuleActionResponse extends SdkResponse {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public CreateRuleActionResponse withAppId(String appId) {
         this.appId = appId;
@@ -116,6 +120,8 @@ public class CreateRuleActionResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public CreateRuleActionResponse withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -135,6 +141,8 @@ public class CreateRuleActionResponse extends SdkResponse {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
 
     public CreateRuleActionResponse withChannelDetail(ChannelDetail channelDetail) {
         this.channelDetail = channelDetail;
@@ -163,6 +171,8 @@ public class CreateRuleActionResponse extends SdkResponse {
         this.channelDetail = channelDetail;
     }
 
+    
+
     public CreateRuleActionResponse withBatch(Boolean batch) {
         this.batch = batch;
         return this;
@@ -182,6 +192,9 @@ public class CreateRuleActionResponse extends SdkResponse {
     public void setBatch(Boolean batch) {
         this.batch = batch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -431,6 +431,8 @@ public class ListInstancesDetailsRequest  {
         this.engine = engine;
     }
 
+    
+
     public ListInstancesDetailsRequest withName(String name) {
         this.name = name;
         return this;
@@ -450,6 +452,8 @@ public class ListInstancesDetailsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListInstancesDetailsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -471,6 +475,8 @@ public class ListInstancesDetailsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListInstancesDetailsRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -490,6 +496,8 @@ public class ListInstancesDetailsRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListInstancesDetailsRequest withIncludeFailure(IncludeFailureEnum includeFailure) {
         this.includeFailure = includeFailure;
@@ -511,6 +519,8 @@ public class ListInstancesDetailsRequest  {
         this.includeFailure = includeFailure;
     }
 
+    
+
     public ListInstancesDetailsRequest withExactMatchName(ExactMatchNameEnum exactMatchName) {
         this.exactMatchName = exactMatchName;
         return this;
@@ -531,6 +541,8 @@ public class ListInstancesDetailsRequest  {
         this.exactMatchName = exactMatchName;
     }
 
+    
+
     public ListInstancesDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -550,6 +562,9 @@ public class ListInstancesDetailsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

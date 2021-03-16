@@ -116,7 +116,7 @@ public class MigrateFollowerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FollowerMigrateRequest body = null;
+    private FollowerMigrateRequest body;
 
     public MigrateFollowerRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class MigrateFollowerRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public MigrateFollowerRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class MigrateFollowerRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public MigrateFollowerRequest withBody(FollowerMigrateRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class MigrateFollowerRequest  {
     public void setBody(FollowerMigrateRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

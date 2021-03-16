@@ -23,7 +23,7 @@ public class TemplateView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_name")
     
-    private Template templateName = null;
+    private Template templateName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,7 +47,7 @@ public class TemplateView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="runtime")
     
-    private RuntimeType runtime = null;
+    private RuntimeType runtime;
 
     public TemplateView withTemplateName(Template templateName) {
         this.templateName = templateName;
@@ -69,6 +69,8 @@ public class TemplateView  {
         this.templateName = templateName;
     }
 
+    
+
     public TemplateView withTemplateDesc(String templateDesc) {
         this.templateDesc = templateDesc;
         return this;
@@ -88,6 +90,8 @@ public class TemplateView  {
     public void setTemplateDesc(String templateDesc) {
         this.templateDesc = templateDesc;
     }
+
+    
 
     public TemplateView withSourceType(String sourceType) {
         this.sourceType = sourceType;
@@ -109,6 +113,8 @@ public class TemplateView  {
         this.sourceType = sourceType;
     }
 
+    
+
     public TemplateView withSourceRepoUrl(String sourceRepoUrl) {
         this.sourceRepoUrl = sourceRepoUrl;
         return this;
@@ -129,6 +135,8 @@ public class TemplateView  {
         this.sourceRepoUrl = sourceRepoUrl;
     }
 
+    
+
     public TemplateView withRuntime(RuntimeType runtime) {
         this.runtime = runtime;
         return this;
@@ -148,6 +156,9 @@ public class TemplateView  {
     public void setRuntime(RuntimeType runtime) {
         this.runtime = runtime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

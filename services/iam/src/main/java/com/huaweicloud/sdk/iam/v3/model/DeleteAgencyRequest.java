@@ -42,6 +42,9 @@ public class DeleteAgencyRequest  {
     public void setAgencyId(String agencyId) {
         this.agencyId = agencyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

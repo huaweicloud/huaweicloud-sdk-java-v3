@@ -42,6 +42,9 @@ public class ShowIterationV4Request  {
     public void setIterationId(Integer iterationId) {
         this.iterationId = iterationId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

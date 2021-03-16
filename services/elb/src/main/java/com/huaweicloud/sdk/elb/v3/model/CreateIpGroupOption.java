@@ -42,7 +42,7 @@ public class CreateIpGroupOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_list")
     
-    private List<CreateIpGroupIpOption> ipList = new ArrayList<>();
+    private List<CreateIpGroupIpOption> ipList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,6 +70,8 @@ public class CreateIpGroupOption  {
         this.projectId = projectId;
     }
 
+    
+
     public CreateIpGroupOption withDescription(String description) {
         this.description = description;
         return this;
@@ -90,6 +92,8 @@ public class CreateIpGroupOption  {
         this.description = description;
     }
 
+    
+
     public CreateIpGroupOption withName(String name) {
         this.name = name;
         return this;
@@ -109,6 +113,8 @@ public class CreateIpGroupOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateIpGroupOption withIpList(List<CreateIpGroupIpOption> ipList) {
         this.ipList = ipList;
@@ -141,6 +147,8 @@ public class CreateIpGroupOption  {
         this.ipList = ipList;
     }
 
+    
+
     public CreateIpGroupOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -160,6 +168,9 @@ public class CreateIpGroupOption  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

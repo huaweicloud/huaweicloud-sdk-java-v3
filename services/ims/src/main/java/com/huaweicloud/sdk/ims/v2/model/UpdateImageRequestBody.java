@@ -143,6 +143,8 @@ public class UpdateImageRequestBody  {
         this.op = op;
     }
 
+    
+
     public UpdateImageRequestBody withPath(String path) {
         this.path = path;
         return this;
@@ -163,6 +165,8 @@ public class UpdateImageRequestBody  {
         this.path = path;
     }
 
+    
+
     public UpdateImageRequestBody withValue(String value) {
         this.value = value;
         return this;
@@ -182,6 +186,9 @@ public class UpdateImageRequestBody  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

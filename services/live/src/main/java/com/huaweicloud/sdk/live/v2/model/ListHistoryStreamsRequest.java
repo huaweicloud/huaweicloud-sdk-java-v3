@@ -33,13 +33,13 @@ public class ListHistoryStreamsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListHistoryStreamsRequest withDomain(String domain) {
         this.domain = domain;
@@ -61,6 +61,8 @@ public class ListHistoryStreamsRequest  {
         this.domain = domain;
     }
 
+    
+
     public ListHistoryStreamsRequest withApp(String app) {
         this.app = app;
         return this;
@@ -80,6 +82,8 @@ public class ListHistoryStreamsRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListHistoryStreamsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -103,6 +107,8 @@ public class ListHistoryStreamsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListHistoryStreamsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -124,6 +130,9 @@ public class ListHistoryStreamsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

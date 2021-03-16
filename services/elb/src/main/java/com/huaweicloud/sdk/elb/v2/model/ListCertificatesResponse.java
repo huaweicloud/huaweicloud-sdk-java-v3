@@ -41,9 +41,6 @@ public class ListCertificatesResponse extends SdkResponse {
 
     
     public ListCertificatesResponse addCertificatesItem(CertificateResp certificatesItem) {
-        if (this.certificates == null) {
-            this.certificates = new ArrayList<>();
-        }
         this.certificates.add(certificatesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListCertificatesResponse extends SdkResponse {
         this.certificates = certificates;
     }
 
+    
+
     public ListCertificatesResponse withInstanceNum(Integer instanceNum) {
         this.instanceNum = instanceNum;
         return this;
@@ -87,6 +86,9 @@ public class ListCertificatesResponse extends SdkResponse {
     public void setInstanceNum(Integer instanceNum) {
         this.instanceNum = instanceNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

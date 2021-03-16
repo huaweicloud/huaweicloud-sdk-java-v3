@@ -55,6 +55,8 @@ public class ListRecordConfigsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListRecordConfigsResponse withRecordConfig(List<RecordConfigInfo> recordConfig) {
         this.recordConfig = recordConfig;
         return this;
@@ -62,9 +64,6 @@ public class ListRecordConfigsResponse extends SdkResponse {
 
     
     public ListRecordConfigsResponse addRecordConfigItem(RecordConfigInfo recordConfigItem) {
-        if (this.recordConfig == null) {
-            this.recordConfig = new ArrayList<>();
-        }
         this.recordConfig.add(recordConfigItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ListRecordConfigsResponse extends SdkResponse {
     public void setRecordConfig(List<RecordConfigInfo> recordConfig) {
         this.recordConfig = recordConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

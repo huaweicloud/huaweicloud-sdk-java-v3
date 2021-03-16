@@ -28,7 +28,7 @@ public class BatchDeleteInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteBody body = null;
+    private BatchDeleteBody body;
 
     public BatchDeleteInstancesRequest withAllFailure(Boolean allFailure) {
         this.allFailure = allFailure;
@@ -49,6 +49,8 @@ public class BatchDeleteInstancesRequest  {
     public void setAllFailure(Boolean allFailure) {
         this.allFailure = allFailure;
     }
+
+    
 
     public BatchDeleteInstancesRequest withBody(BatchDeleteBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchDeleteInstancesRequest  {
     public void setBody(BatchDeleteBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

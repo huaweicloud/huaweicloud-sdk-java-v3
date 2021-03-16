@@ -27,7 +27,7 @@ public class ListPrivateipsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class ListPrivateipsRequest  {
         this.subnetId = subnetId;
     }
 
+    
+
     public ListPrivateipsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -75,6 +77,8 @@ public class ListPrivateipsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPrivateipsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -94,6 +98,9 @@ public class ListPrivateipsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

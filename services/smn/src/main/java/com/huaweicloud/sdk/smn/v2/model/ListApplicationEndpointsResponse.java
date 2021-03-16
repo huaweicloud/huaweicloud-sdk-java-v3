@@ -60,6 +60,8 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListApplicationEndpointsResponse withNextPageFlag(Boolean nextPageFlag) {
         this.nextPageFlag = nextPageFlag;
         return this;
@@ -80,6 +82,8 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
         this.nextPageFlag = nextPageFlag;
     }
 
+    
+
     public ListApplicationEndpointsResponse withEndpoints(List<ApplicationEndpoint> endpoints) {
         this.endpoints = endpoints;
         return this;
@@ -87,9 +91,6 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
 
     
     public ListApplicationEndpointsResponse addEndpointsItem(ApplicationEndpoint endpointsItem) {
-        if (this.endpoints == null) {
-            this.endpoints = new ArrayList<>();
-        }
         this.endpoints.add(endpointsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
     public void setEndpoints(List<ApplicationEndpoint> endpoints) {
         this.endpoints = endpoints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

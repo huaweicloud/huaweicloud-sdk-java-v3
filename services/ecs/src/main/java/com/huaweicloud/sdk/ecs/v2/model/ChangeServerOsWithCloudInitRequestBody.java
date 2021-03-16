@@ -22,7 +22,7 @@ public class ChangeServerOsWithCloudInitRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-change")
     
-    private ChangeServerOsWithCloudInitOption osChange = null;
+    private ChangeServerOsWithCloudInitOption osChange;
 
     public ChangeServerOsWithCloudInitRequestBody withOsChange(ChangeServerOsWithCloudInitOption osChange) {
         this.osChange = osChange;
@@ -50,6 +50,9 @@ public class ChangeServerOsWithCloudInitRequestBody  {
     public void setOsChange(ChangeServerOsWithCloudInitOption osChange) {
         this.osChange = osChange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

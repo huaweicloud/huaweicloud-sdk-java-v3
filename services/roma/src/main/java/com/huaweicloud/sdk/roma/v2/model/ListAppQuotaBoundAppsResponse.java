@@ -61,6 +61,8 @@ public class ListAppQuotaBoundAppsResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListAppQuotaBoundAppsResponse withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListAppQuotaBoundAppsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListAppQuotaBoundAppsResponse withApps(List<AppQuotaAppInfo> apps) {
         this.apps = apps;
         return this;
@@ -88,9 +92,6 @@ public class ListAppQuotaBoundAppsResponse extends SdkResponse {
 
     
     public ListAppQuotaBoundAppsResponse addAppsItem(AppQuotaAppInfo appsItem) {
-        if (this.apps == null) {
-            this.apps = new ArrayList<>();
-        }
         this.apps.add(appsItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListAppQuotaBoundAppsResponse extends SdkResponse {
     public void setApps(List<AppQuotaAppInfo> apps) {
         this.apps = apps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateApplicationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateApplicationRequestBody body = null;
+    private CreateApplicationRequestBody body;
 
     public CreateApplicationRequest withBody(CreateApplicationRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateApplicationRequest  {
     public void setBody(CreateApplicationRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

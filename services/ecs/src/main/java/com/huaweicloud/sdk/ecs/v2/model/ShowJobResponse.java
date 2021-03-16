@@ -46,7 +46,7 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    private JobEntities entities = null;
+    private JobEntities entities;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -194,6 +194,8 @@ public class ShowJobResponse extends SdkResponse {
         this.beginTime = beginTime;
     }
 
+    
+
     public ShowJobResponse withCode(String code) {
         this.code = code;
         return this;
@@ -214,6 +216,8 @@ public class ShowJobResponse extends SdkResponse {
         this.code = code;
     }
 
+    
+
     public ShowJobResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -233,6 +237,8 @@ public class ShowJobResponse extends SdkResponse {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowJobResponse withEntities(JobEntities entities) {
         this.entities = entities;
@@ -261,6 +267,8 @@ public class ShowJobResponse extends SdkResponse {
         this.entities = entities;
     }
 
+    
+
     public ShowJobResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -280,6 +288,8 @@ public class ShowJobResponse extends SdkResponse {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public ShowJobResponse withFailReason(String failReason) {
         this.failReason = failReason;
@@ -301,6 +311,8 @@ public class ShowJobResponse extends SdkResponse {
         this.failReason = failReason;
     }
 
+    
+
     public ShowJobResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -320,6 +332,8 @@ public class ShowJobResponse extends SdkResponse {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public ShowJobResponse withJobType(String jobType) {
         this.jobType = jobType;
@@ -341,6 +355,8 @@ public class ShowJobResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
+    
+
     public ShowJobResponse withMessage(String message) {
         this.message = message;
         return this;
@@ -361,6 +377,8 @@ public class ShowJobResponse extends SdkResponse {
         this.message = message;
     }
 
+    
+
     public ShowJobResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -380,6 +398,9 @@ public class ShowJobResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

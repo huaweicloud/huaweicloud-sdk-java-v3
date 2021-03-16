@@ -27,7 +27,7 @@ public class ShowDomainResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total")
     
-    private BigDecimal total = null;
+    private BigDecimal total;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class ShowDomainResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowDomainResponse withDomainInfo(List<DecoupledLiveDomainInfo> domainInfo) {
         this.domainInfo = domainInfo;
         return this;
@@ -62,9 +64,6 @@ public class ShowDomainResponse extends SdkResponse {
 
     
     public ShowDomainResponse addDomainInfoItem(DecoupledLiveDomainInfo domainInfoItem) {
-        if (this.domainInfo == null) {
-            this.domainInfo = new ArrayList<>();
-        }
         this.domainInfo.add(domainInfoItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ShowDomainResponse extends SdkResponse {
     public void setDomainInfo(List<DecoupledLiveDomainInfo> domainInfo) {
         this.domainInfo = domainInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

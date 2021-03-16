@@ -65,7 +65,7 @@ public class UserAccountVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roles")
     
-    private List<String> roles = new ArrayList<>();
+    private List<String> roles = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,6 +93,8 @@ public class UserAccountVO  {
         this.id = id;
     }
 
+    
+
     public UserAccountVO withAccount(String account) {
         this.account = account;
         return this;
@@ -112,6 +114,8 @@ public class UserAccountVO  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public UserAccountVO withComment(String comment) {
         this.comment = comment;
@@ -133,6 +137,8 @@ public class UserAccountVO  {
         this.comment = comment;
     }
 
+    
+
     public UserAccountVO withIsTransfer(String isTransfer) {
         this.isTransfer = isTransfer;
         return this;
@@ -153,6 +159,8 @@ public class UserAccountVO  {
         this.isTransfer = isTransfer;
     }
 
+    
+
     public UserAccountVO withPrivileges(List<String> privileges) {
         this.privileges = privileges;
         return this;
@@ -160,9 +168,6 @@ public class UserAccountVO  {
 
     
     public UserAccountVO addPrivilegesItem(String privilegesItem) {
-        if (this.privileges == null) {
-            this.privileges = new ArrayList<>();
-        }
         this.privileges.add(privilegesItem);
         return this;
     }
@@ -187,6 +192,8 @@ public class UserAccountVO  {
         this.privileges = privileges;
     }
 
+    
+
     public UserAccountVO withPassword(String password) {
         this.password = password;
         return this;
@@ -207,6 +214,8 @@ public class UserAccountVO  {
         this.password = password;
     }
 
+    
+
     public UserAccountVO withIsSetPassword(Boolean isSetPassword) {
         this.isSetPassword = isSetPassword;
         return this;
@@ -226,6 +235,8 @@ public class UserAccountVO  {
     public void setIsSetPassword(Boolean isSetPassword) {
         this.isSetPassword = isSetPassword;
     }
+
+    
 
     public UserAccountVO withRoles(List<String> roles) {
         this.roles = roles;
@@ -258,6 +269,8 @@ public class UserAccountVO  {
         this.roles = roles;
     }
 
+    
+
     public UserAccountVO withSelected(String selected) {
         this.selected = selected;
         return this;
@@ -277,6 +290,9 @@ public class UserAccountVO  {
     public void setSelected(String selected) {
         this.selected = selected;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -191,6 +191,8 @@ public class ScriptInfo  {
         this.name = name;
     }
 
+    
+
     public ScriptInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -210,6 +212,8 @@ public class ScriptInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ScriptInfo withDirectory(String directory) {
         this.directory = directory;
@@ -231,6 +235,8 @@ public class ScriptInfo  {
         this.directory = directory;
     }
 
+    
+
     public ScriptInfo withContent(String content) {
         this.content = content;
         return this;
@@ -250,6 +256,8 @@ public class ScriptInfo  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
 
     public ScriptInfo withConnectionName(String connectionName) {
         this.connectionName = connectionName;
@@ -271,6 +279,8 @@ public class ScriptInfo  {
         this.connectionName = connectionName;
     }
 
+    
+
     public ScriptInfo withDatabase(String database) {
         this.database = database;
         return this;
@@ -290,6 +300,8 @@ public class ScriptInfo  {
     public void setDatabase(String database) {
         this.database = database;
     }
+
+    
 
     public ScriptInfo withQueueName(String queueName) {
         this.queueName = queueName;
@@ -311,6 +323,8 @@ public class ScriptInfo  {
         this.queueName = queueName;
     }
 
+    
+
     public ScriptInfo withConfiguration(String _configuration) {
         this._configuration = _configuration;
         return this;
@@ -330,6 +344,9 @@ public class ScriptInfo  {
     public void setConfiguration(String _configuration) {
         this._configuration = _configuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

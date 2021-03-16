@@ -22,7 +22,7 @@ public class Contexts  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="context")
     
-    private Context context = null;
+    private Context context;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class Contexts  {
         this.context = context;
     }
 
+    
+
     public Contexts withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +78,9 @@ public class Contexts  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

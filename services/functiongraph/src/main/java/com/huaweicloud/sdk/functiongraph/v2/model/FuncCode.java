@@ -49,6 +49,8 @@ public class FuncCode  {
         this.file = file;
     }
 
+    
+
     public FuncCode withLink(String link) {
         this.link = link;
         return this;
@@ -68,6 +70,9 @@ public class FuncCode  {
     public void setLink(String link) {
         this.link = link;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

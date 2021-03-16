@@ -34,7 +34,7 @@ public class CheckSlideVerifyCodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SlideVerifyCodeCheckDTO body = null;
+    private SlideVerifyCodeCheckDTO body;
 
     public CheckSlideVerifyCodeRequest withXRequestID(String xRequestID) {
         this.xRequestID = xRequestID;
@@ -58,6 +58,8 @@ public class CheckSlideVerifyCodeRequest  {
         this.xRequestID = xRequestID;
     }
 
+    
+
     public CheckSlideVerifyCodeRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class CheckSlideVerifyCodeRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public CheckSlideVerifyCodeRequest withBody(SlideVerifyCodeCheckDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CheckSlideVerifyCodeRequest  {
     public void setBody(SlideVerifyCodeCheckDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

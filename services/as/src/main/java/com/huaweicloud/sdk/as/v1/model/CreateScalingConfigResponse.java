@@ -44,6 +44,9 @@ public class CreateScalingConfigResponse extends SdkResponse {
     public void setScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

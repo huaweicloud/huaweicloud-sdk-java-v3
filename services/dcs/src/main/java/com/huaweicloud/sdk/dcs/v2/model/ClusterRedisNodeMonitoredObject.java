@@ -61,6 +61,8 @@ public class ClusterRedisNodeMonitoredObject  {
         this.dcsInstanceId = dcsInstanceId;
     }
 
+    
+
     public ClusterRedisNodeMonitoredObject withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class ClusterRedisNodeMonitoredObject  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ClusterRedisNodeMonitoredObject withDcsClusterRedisNode(String dcsClusterRedisNode) {
         this.dcsClusterRedisNode = dcsClusterRedisNode;
@@ -101,6 +105,8 @@ public class ClusterRedisNodeMonitoredObject  {
         this.dcsClusterRedisNode = dcsClusterRedisNode;
     }
 
+    
+
     public ClusterRedisNodeMonitoredObject withStatus(String status) {
         this.status = status;
         return this;
@@ -120,6 +126,9 @@ public class ClusterRedisNodeMonitoredObject  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

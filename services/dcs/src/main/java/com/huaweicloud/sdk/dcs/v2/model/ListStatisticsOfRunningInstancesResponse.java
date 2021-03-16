@@ -35,9 +35,6 @@ public class ListStatisticsOfRunningInstancesResponse extends SdkResponse {
 
     
     public ListStatisticsOfRunningInstancesResponse addStatisticsItem(InstanceStatistic statisticsItem) {
-        if (this.statistics == null) {
-            this.statistics = new ArrayList<>();
-        }
         this.statistics.add(statisticsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListStatisticsOfRunningInstancesResponse extends SdkResponse {
     public void setStatistics(List<InstanceStatistic> statistics) {
         this.statistics = statistics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

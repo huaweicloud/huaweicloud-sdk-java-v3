@@ -35,9 +35,6 @@ public class ListResourceUsagesResponse extends SdkResponse {
 
     
     public ListResourceUsagesResponse addPackageUsageInfosItem(PackageUsageInfo packageUsageInfosItem) {
-        if (this.packageUsageInfos == null) {
-            this.packageUsageInfos = new ArrayList<>();
-        }
         this.packageUsageInfos.add(packageUsageInfosItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListResourceUsagesResponse extends SdkResponse {
     public void setPackageUsageInfos(List<PackageUsageInfo> packageUsageInfos) {
         this.packageUsageInfos = packageUsageInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

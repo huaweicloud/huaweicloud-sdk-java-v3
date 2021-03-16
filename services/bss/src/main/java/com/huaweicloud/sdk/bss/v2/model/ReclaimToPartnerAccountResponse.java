@@ -44,6 +44,9 @@ public class ReclaimToPartnerAccountResponse extends SdkResponse {
     public void setTransId(String transId) {
         this.transId = transId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

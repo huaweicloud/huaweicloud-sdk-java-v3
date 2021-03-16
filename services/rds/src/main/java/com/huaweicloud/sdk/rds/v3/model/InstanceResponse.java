@@ -43,7 +43,7 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ips")
     
-    private List<String> privateIps = new ArrayList<>();
+    private List<String> privateIps = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,7 +55,7 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
-    private List<String> publicIps = new ArrayList<>();
+    private List<String> publicIps = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,13 +97,13 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    private List<NodeResponse> nodes = new ArrayList<>();
+    private List<NodeResponse> nodes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="related_instance")
     
-    private List<RelatedInstance> relatedInstance = new ArrayList<>();
+    private List<RelatedInstance> relatedInstance = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,13 +115,13 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha")
     
-    private HaResponse ha = null;
+    private HaResponse ha;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,7 +133,7 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private BackupStrategyForResponse backupStrategy = null;
+    private BackupStrategyForResponse backupStrategy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -155,9 +155,21 @@ public class InstanceResponse  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cpu")
+    
+    private String cpu;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="mem")
+    
+    private String mem;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private Volume volume = null;
+    private Volume volume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -187,7 +199,7 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    private ChargeInfoResponse chargeInfo = null;
+    private ChargeInfoResponse chargeInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -199,7 +211,7 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<TagResponse> tags = new ArrayList<>();
+    private List<TagResponse> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -245,6 +257,8 @@ public class InstanceResponse  {
         this.id = id;
     }
 
+    
+
     public InstanceResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -264,6 +278,8 @@ public class InstanceResponse  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public InstanceResponse withPrivateIps(List<String> privateIps) {
         this.privateIps = privateIps;
@@ -296,6 +312,8 @@ public class InstanceResponse  {
         this.privateIps = privateIps;
     }
 
+    
+
     public InstanceResponse withPrivateDnsNames(List<String> privateDnsNames) {
         this.privateDnsNames = privateDnsNames;
         return this;
@@ -303,9 +321,6 @@ public class InstanceResponse  {
 
     
     public InstanceResponse addPrivateDnsNamesItem(String privateDnsNamesItem) {
-        if (this.privateDnsNames == null) {
-            this.privateDnsNames = new ArrayList<>();
-        }
         this.privateDnsNames.add(privateDnsNamesItem);
         return this;
     }
@@ -329,6 +344,8 @@ public class InstanceResponse  {
     public void setPrivateDnsNames(List<String> privateDnsNames) {
         this.privateDnsNames = privateDnsNames;
     }
+
+    
 
     public InstanceResponse withPublicIps(List<String> publicIps) {
         this.publicIps = publicIps;
@@ -361,6 +378,8 @@ public class InstanceResponse  {
         this.publicIps = publicIps;
     }
 
+    
+
     public InstanceResponse withType(String type) {
         this.type = type;
         return this;
@@ -380,6 +399,8 @@ public class InstanceResponse  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public InstanceResponse withCreated(String created) {
         this.created = created;
@@ -401,6 +422,8 @@ public class InstanceResponse  {
         this.created = created;
     }
 
+    
+
     public InstanceResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -420,6 +443,8 @@ public class InstanceResponse  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public InstanceResponse withDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;
@@ -441,6 +466,8 @@ public class InstanceResponse  {
         this.dbUserName = dbUserName;
     }
 
+    
+
     public InstanceResponse withSwitchStrategy(String switchStrategy) {
         this.switchStrategy = switchStrategy;
         return this;
@@ -461,6 +488,8 @@ public class InstanceResponse  {
         this.switchStrategy = switchStrategy;
     }
 
+    
+
     public InstanceResponse withMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
         return this;
@@ -480,6 +509,8 @@ public class InstanceResponse  {
     public void setMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
     }
+
+    
 
     public InstanceResponse withNodes(List<NodeResponse> nodes) {
         this.nodes = nodes;
@@ -512,6 +543,8 @@ public class InstanceResponse  {
         this.nodes = nodes;
     }
 
+    
+
     public InstanceResponse withRelatedInstance(List<RelatedInstance> relatedInstance) {
         this.relatedInstance = relatedInstance;
         return this;
@@ -543,6 +576,8 @@ public class InstanceResponse  {
         this.relatedInstance = relatedInstance;
     }
 
+    
+
     public InstanceResponse withName(String name) {
         this.name = name;
         return this;
@@ -562,6 +597,8 @@ public class InstanceResponse  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public InstanceResponse withDatastore(Datastore datastore) {
         this.datastore = datastore;
@@ -590,6 +627,8 @@ public class InstanceResponse  {
         this.datastore = datastore;
     }
 
+    
+
     public InstanceResponse withHa(HaResponse ha) {
         this.ha = ha;
         return this;
@@ -617,6 +656,8 @@ public class InstanceResponse  {
         this.ha = ha;
     }
 
+    
+
     public InstanceResponse withPort(Integer port) {
         this.port = port;
         return this;
@@ -636,6 +677,8 @@ public class InstanceResponse  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
 
     public InstanceResponse withBackupStrategy(BackupStrategyForResponse backupStrategy) {
         this.backupStrategy = backupStrategy;
@@ -664,6 +707,8 @@ public class InstanceResponse  {
         this.backupStrategy = backupStrategy;
     }
 
+    
+
     public InstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -683,6 +728,8 @@ public class InstanceResponse  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public InstanceResponse withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
@@ -704,6 +751,8 @@ public class InstanceResponse  {
         this.diskEncryptionId = diskEncryptionId;
     }
 
+    
+
     public InstanceResponse withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -723,6 +772,52 @@ public class InstanceResponse  {
     public void setFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
     }
+
+    
+
+    public InstanceResponse withCpu(String cpu) {
+        this.cpu = cpu;
+        return this;
+    }
+
+    
+
+
+    /**
+     * CPU大小。例如，1表示1U。
+     * @return cpu
+     */
+    public String getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    
+
+    public InstanceResponse withMem(String mem) {
+        this.mem = mem;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 内存大小（单位：GB）。
+     * @return mem
+     */
+    public String getMem() {
+        return mem;
+    }
+
+    public void setMem(String mem) {
+        this.mem = mem;
+    }
+
+    
 
     public InstanceResponse withVolume(Volume volume) {
         this.volume = volume;
@@ -751,6 +846,8 @@ public class InstanceResponse  {
         this.volume = volume;
     }
 
+    
+
     public InstanceResponse withRegion(String region) {
         this.region = region;
         return this;
@@ -770,6 +867,8 @@ public class InstanceResponse  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public InstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -791,6 +890,8 @@ public class InstanceResponse  {
         this.vpcId = vpcId;
     }
 
+    
+
     public InstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -811,6 +912,8 @@ public class InstanceResponse  {
         this.subnetId = subnetId;
     }
 
+    
+
     public InstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -830,6 +933,8 @@ public class InstanceResponse  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public InstanceResponse withChargeInfo(ChargeInfoResponse chargeInfo) {
         this.chargeInfo = chargeInfo;
@@ -858,6 +963,8 @@ public class InstanceResponse  {
         this.chargeInfo = chargeInfo;
     }
 
+    
+
     public InstanceResponse withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
@@ -877,6 +984,8 @@ public class InstanceResponse  {
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }
+
+    
 
     public InstanceResponse withTags(List<TagResponse> tags) {
         this.tags = tags;
@@ -909,6 +1018,8 @@ public class InstanceResponse  {
         this.tags = tags;
     }
 
+    
+
     public InstanceResponse withBackupUsedSpace(Double backupUsedSpace) {
         this.backupUsedSpace = backupUsedSpace;
         return this;
@@ -928,6 +1039,8 @@ public class InstanceResponse  {
     public void setBackupUsedSpace(Double backupUsedSpace) {
         this.backupUsedSpace = backupUsedSpace;
     }
+
+    
 
     public InstanceResponse withStorageUsedSpace(Double storageUsedSpace) {
         this.storageUsedSpace = storageUsedSpace;
@@ -949,6 +1062,8 @@ public class InstanceResponse  {
         this.storageUsedSpace = storageUsedSpace;
     }
 
+    
+
     public InstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -969,6 +1084,8 @@ public class InstanceResponse  {
         this.orderId = orderId;
     }
 
+    
+
     public InstanceResponse withAssociatedWithDdm(Boolean associatedWithDdm) {
         this.associatedWithDdm = associatedWithDdm;
         return this;
@@ -988,6 +1105,9 @@ public class InstanceResponse  {
     public void setAssociatedWithDdm(Boolean associatedWithDdm) {
         this.associatedWithDdm = associatedWithDdm;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1018,6 +1138,8 @@ public class InstanceResponse  {
             Objects.equals(this.enterpriseProjectId, instanceResponse.enterpriseProjectId) &&
             Objects.equals(this.diskEncryptionId, instanceResponse.diskEncryptionId) &&
             Objects.equals(this.flavorRef, instanceResponse.flavorRef) &&
+            Objects.equals(this.cpu, instanceResponse.cpu) &&
+            Objects.equals(this.mem, instanceResponse.mem) &&
             Objects.equals(this.volume, instanceResponse.volume) &&
             Objects.equals(this.region, instanceResponse.region) &&
             Objects.equals(this.vpcId, instanceResponse.vpcId) &&
@@ -1033,7 +1155,7 @@ public class InstanceResponse  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, privateIps, privateDnsNames, publicIps, type, created, updated, dbUserName, switchStrategy, maintenanceWindow, nodes, relatedInstance, name, datastore, ha, port, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, tags, backupUsedSpace, storageUsedSpace, orderId, associatedWithDdm);
+        return Objects.hash(id, status, privateIps, privateDnsNames, publicIps, type, created, updated, dbUserName, switchStrategy, maintenanceWindow, nodes, relatedInstance, name, datastore, ha, port, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, cpu, mem, volume, region, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, tags, backupUsedSpace, storageUsedSpace, orderId, associatedWithDdm);
     }
     @Override
     public String toString() {
@@ -1060,6 +1182,8 @@ public class InstanceResponse  {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
+        sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
+        sb.append("    mem: ").append(toIndentedString(mem)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");

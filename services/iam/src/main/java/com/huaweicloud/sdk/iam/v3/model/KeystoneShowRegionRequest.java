@@ -42,6 +42,9 @@ public class KeystoneShowRegionRequest  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

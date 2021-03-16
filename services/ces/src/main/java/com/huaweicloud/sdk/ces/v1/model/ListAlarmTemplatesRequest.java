@@ -67,6 +67,8 @@ public class ListAlarmTemplatesRequest  {
         this.alarmTemplateId = alarmTemplateId;
     }
 
+    
+
     public ListAlarmTemplatesRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -86,6 +88,8 @@ public class ListAlarmTemplatesRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public ListAlarmTemplatesRequest withDname(String dname) {
         this.dname = dname;
@@ -107,6 +111,8 @@ public class ListAlarmTemplatesRequest  {
         this.dname = dname;
     }
 
+    
+
     public ListAlarmTemplatesRequest withStart(String start) {
         this.start = start;
         return this;
@@ -127,6 +133,8 @@ public class ListAlarmTemplatesRequest  {
         this.start = start;
     }
 
+    
+
     public ListAlarmTemplatesRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -146,6 +154,9 @@ public class ListAlarmTemplatesRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

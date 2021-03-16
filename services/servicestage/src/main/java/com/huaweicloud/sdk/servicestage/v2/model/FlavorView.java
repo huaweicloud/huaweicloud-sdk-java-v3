@@ -22,7 +22,7 @@ public class FlavorView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_id")
     
-    private FlavorId flavorId = null;
+    private FlavorId flavorId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,6 +80,8 @@ public class FlavorView  {
         this.flavorId = flavorId;
     }
 
+    
+
     public FlavorView withStorageSize(String storageSize) {
         this.storageSize = storageSize;
         return this;
@@ -99,6 +101,8 @@ public class FlavorView  {
     public void setStorageSize(String storageSize) {
         this.storageSize = storageSize;
     }
+
+    
 
     public FlavorView withNumCpu(String numCpu) {
         this.numCpu = numCpu;
@@ -120,6 +124,8 @@ public class FlavorView  {
         this.numCpu = numCpu;
     }
 
+    
+
     public FlavorView withNumCpuInit(String numCpuInit) {
         this.numCpuInit = numCpuInit;
         return this;
@@ -139,6 +145,8 @@ public class FlavorView  {
     public void setNumCpuInit(String numCpuInit) {
         this.numCpuInit = numCpuInit;
     }
+
+    
 
     public FlavorView withMemorySize(String memorySize) {
         this.memorySize = memorySize;
@@ -160,6 +168,8 @@ public class FlavorView  {
         this.memorySize = memorySize;
     }
 
+    
+
     public FlavorView withMemorySizeInit(String memorySizeInit) {
         this.memorySizeInit = memorySizeInit;
         return this;
@@ -180,6 +190,8 @@ public class FlavorView  {
         this.memorySizeInit = memorySizeInit;
     }
 
+    
+
     public FlavorView withLabel(String label) {
         this.label = label;
         return this;
@@ -199,6 +211,9 @@ public class FlavorView  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

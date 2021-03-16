@@ -79,6 +79,8 @@ public class KeystoneListProjectsRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneListProjectsRequest withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +100,8 @@ public class KeystoneListProjectsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneListProjectsRequest withParentId(String parentId) {
         this.parentId = parentId;
@@ -119,6 +123,8 @@ public class KeystoneListProjectsRequest  {
         this.parentId = parentId;
     }
 
+    
+
     public KeystoneListProjectsRequest withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -139,6 +145,8 @@ public class KeystoneListProjectsRequest  {
         this.enabled = enabled;
     }
 
+    
+
     public KeystoneListProjectsRequest withIsDomain(Boolean isDomain) {
         this.isDomain = isDomain;
         return this;
@@ -158,6 +166,8 @@ public class KeystoneListProjectsRequest  {
     public void setIsDomain(Boolean isDomain) {
         this.isDomain = isDomain;
     }
+
+    
 
     public KeystoneListProjectsRequest withPage(Integer page) {
         this.page = page;
@@ -180,6 +190,8 @@ public class KeystoneListProjectsRequest  {
         this.page = page;
     }
 
+    
+
     public KeystoneListProjectsRequest withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
@@ -201,6 +213,9 @@ public class KeystoneListProjectsRequest  {
     public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

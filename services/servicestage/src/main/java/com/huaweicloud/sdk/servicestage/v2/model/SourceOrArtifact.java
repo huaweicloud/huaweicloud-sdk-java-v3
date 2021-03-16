@@ -196,13 +196,13 @@ public class SourceOrArtifact  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth")
     
-    private String auth = "iam";
+    private String auth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="repo_type")
     
-    private SourceRepoType repoType = null;
+    private SourceRepoType repoType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -242,6 +242,8 @@ public class SourceOrArtifact  {
         this.storage = storage;
     }
 
+    
+
     public SourceOrArtifact withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -261,6 +263,8 @@ public class SourceOrArtifact  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public SourceOrArtifact withUrl(String url) {
         this.url = url;
@@ -282,6 +286,8 @@ public class SourceOrArtifact  {
         this.url = url;
     }
 
+    
+
     public SourceOrArtifact withAuth(String auth) {
         this.auth = auth;
         return this;
@@ -301,6 +307,8 @@ public class SourceOrArtifact  {
     public void setAuth(String auth) {
         this.auth = auth;
     }
+
+    
 
     public SourceOrArtifact withRepoType(SourceRepoType repoType) {
         this.repoType = repoType;
@@ -322,6 +330,8 @@ public class SourceOrArtifact  {
         this.repoType = repoType;
     }
 
+    
+
     public SourceOrArtifact withRepoUrl(String repoUrl) {
         this.repoUrl = repoUrl;
         return this;
@@ -341,6 +351,8 @@ public class SourceOrArtifact  {
     public void setRepoUrl(String repoUrl) {
         this.repoUrl = repoUrl;
     }
+
+    
 
     public SourceOrArtifact withRepoRef(String repoRef) {
         this.repoRef = repoRef;
@@ -362,6 +374,8 @@ public class SourceOrArtifact  {
         this.repoRef = repoRef;
     }
 
+    
+
     public SourceOrArtifact withRepoAuth(String repoAuth) {
         this.repoAuth = repoAuth;
         return this;
@@ -381,6 +395,9 @@ public class SourceOrArtifact  {
     public void setRepoAuth(String repoAuth) {
         this.repoAuth = repoAuth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

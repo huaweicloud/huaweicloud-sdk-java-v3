@@ -49,6 +49,8 @@ public class Condition  {
         this.preNodeName = preNodeName;
     }
 
+    
+
     public Condition withExpression(String expression) {
         this.expression = expression;
         return this;
@@ -68,6 +70,9 @@ public class Condition  {
     public void setExpression(String expression) {
         this.expression = expression;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

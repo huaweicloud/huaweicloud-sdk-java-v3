@@ -24,7 +24,7 @@ public class CreateConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration")
     
-    private ConfigurationSummaryForCreate _configuration = null;
+    private ConfigurationSummaryForCreate _configuration;
 
     public CreateConfigurationResponse withConfiguration(ConfigurationSummaryForCreate _configuration) {
         this._configuration = _configuration;
@@ -52,6 +52,9 @@ public class CreateConfigurationResponse extends SdkResponse {
     public void setConfiguration(ConfigurationSummaryForCreate _configuration) {
         this._configuration = _configuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

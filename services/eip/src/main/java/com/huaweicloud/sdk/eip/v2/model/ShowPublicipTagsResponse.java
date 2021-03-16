@@ -35,9 +35,6 @@ public class ShowPublicipTagsResponse extends SdkResponse {
 
     
     public ShowPublicipTagsResponse addTagsItem(ResourceTagResp tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowPublicipTagsResponse extends SdkResponse {
     public void setTags(List<ResourceTagResp> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

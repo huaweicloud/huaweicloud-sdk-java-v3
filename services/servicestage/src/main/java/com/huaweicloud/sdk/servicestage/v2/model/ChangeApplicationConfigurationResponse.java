@@ -36,7 +36,7 @@ public class ChangeApplicationConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration")
     
-    private ApplicationListConfigConfiguration _configuration = null;
+    private ApplicationListConfigConfiguration _configuration;
 
     public ChangeApplicationConfigurationResponse withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -58,6 +58,8 @@ public class ChangeApplicationConfigurationResponse extends SdkResponse {
         this.applicationId = applicationId;
     }
 
+    
+
     public ChangeApplicationConfigurationResponse withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
         return this;
@@ -77,6 +79,8 @@ public class ChangeApplicationConfigurationResponse extends SdkResponse {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
 
     public ChangeApplicationConfigurationResponse withConfiguration(ApplicationListConfigConfiguration _configuration) {
         this._configuration = _configuration;
@@ -104,6 +108,9 @@ public class ChangeApplicationConfigurationResponse extends SdkResponse {
     public void setConfiguration(ApplicationListConfigConfiguration _configuration) {
         this._configuration = _configuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

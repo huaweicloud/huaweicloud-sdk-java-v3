@@ -61,6 +61,8 @@ public class ListPluginsRespPlugins  {
         this.running = running;
     }
 
+    
+
     public ListPluginsRespPlugins withEnable(Boolean enable) {
         this.enable = enable;
         return this;
@@ -80,6 +82,8 @@ public class ListPluginsRespPlugins  {
     public void setEnable(Boolean enable) {
         this.enable = enable;
     }
+
+    
 
     public ListPluginsRespPlugins withName(String name) {
         this.name = name;
@@ -101,6 +105,8 @@ public class ListPluginsRespPlugins  {
         this.name = name;
     }
 
+    
+
     public ListPluginsRespPlugins withVersion(String version) {
         this.version = version;
         return this;
@@ -120,6 +126,9 @@ public class ListPluginsRespPlugins  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

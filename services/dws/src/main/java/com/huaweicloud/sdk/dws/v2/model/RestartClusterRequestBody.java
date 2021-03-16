@@ -21,7 +21,7 @@ public class RestartClusterRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restart")
     
-    private Object restart = null;
+    private Object restart;
 
     public RestartClusterRequestBody withRestart(Object restart) {
         this.restart = restart;
@@ -42,6 +42,9 @@ public class RestartClusterRequestBody  {
     public void setRestart(Object restart) {
         this.restart = restart;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

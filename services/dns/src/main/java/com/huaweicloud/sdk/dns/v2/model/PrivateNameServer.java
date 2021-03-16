@@ -49,6 +49,8 @@ public class PrivateNameServer  {
         this.priority = priority;
     }
 
+    
+
     public PrivateNameServer withAddress(String address) {
         this.address = address;
         return this;
@@ -68,6 +70,9 @@ public class PrivateNameServer  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

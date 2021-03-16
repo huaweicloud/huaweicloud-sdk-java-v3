@@ -38,7 +38,7 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="self_auth")
     
-    private UserAuth selfAuth = null;
+    private UserAuth selfAuth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,6 +66,8 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowUserRepositoryAuthResponse withName(String name) {
         this.name = name;
         return this;
@@ -85,6 +87,8 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowUserRepositoryAuthResponse withSelfAuth(UserAuth selfAuth) {
         this.selfAuth = selfAuth;
@@ -113,6 +117,8 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
         this.selfAuth = selfAuth;
     }
 
+    
+
     public ShowUserRepositoryAuthResponse withOthersAuths(List<UserAuth> othersAuths) {
         this.othersAuths = othersAuths;
         return this;
@@ -120,9 +126,6 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
 
     
     public ShowUserRepositoryAuthResponse addOthersAuthsItem(UserAuth othersAuthsItem) {
-        if (this.othersAuths == null) {
-            this.othersAuths = new ArrayList<>();
-        }
         this.othersAuths.add(othersAuthsItem);
         return this;
     }
@@ -146,6 +149,9 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
     public void setOthersAuths(List<UserAuth> othersAuths) {
         this.othersAuths = othersAuths;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

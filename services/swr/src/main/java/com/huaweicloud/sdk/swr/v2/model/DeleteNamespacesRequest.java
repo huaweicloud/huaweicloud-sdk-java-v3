@@ -42,6 +42,9 @@ public class DeleteNamespacesRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

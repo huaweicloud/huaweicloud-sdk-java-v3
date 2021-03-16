@@ -152,6 +152,8 @@ public class Version  {
         this.id = id;
     }
 
+    
+
     public Version withLinks(List<Link> links) {
         this.links = links;
         return this;
@@ -159,9 +161,6 @@ public class Version  {
 
     
     public Version addLinksItem(Link linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -186,6 +185,8 @@ public class Version  {
         this.links = links;
     }
 
+    
+
     public Version withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -206,6 +207,8 @@ public class Version  {
         this.status = status;
     }
 
+    
+
     public Version withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -225,6 +228,9 @@ public class Version  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

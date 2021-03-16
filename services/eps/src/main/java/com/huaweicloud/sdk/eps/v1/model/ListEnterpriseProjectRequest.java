@@ -241,6 +241,8 @@ public class ListEnterpriseProjectRequest  {
         this.id = id;
     }
 
+    
+
     public ListEnterpriseProjectRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -260,6 +262,8 @@ public class ListEnterpriseProjectRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListEnterpriseProjectRequest withName(String name) {
         this.name = name;
@@ -281,6 +285,8 @@ public class ListEnterpriseProjectRequest  {
         this.name = name;
     }
 
+    
+
     public ListEnterpriseProjectRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -300,6 +306,8 @@ public class ListEnterpriseProjectRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListEnterpriseProjectRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
@@ -321,6 +329,8 @@ public class ListEnterpriseProjectRequest  {
         this.sortDir = sortDir;
     }
 
+    
+
     public ListEnterpriseProjectRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -341,6 +351,8 @@ public class ListEnterpriseProjectRequest  {
         this.sortKey = sortKey;
     }
 
+    
+
     public ListEnterpriseProjectRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -360,6 +372,9 @@ public class ListEnterpriseProjectRequest  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

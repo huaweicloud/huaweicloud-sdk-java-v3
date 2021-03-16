@@ -49,6 +49,8 @@ public class CheckRomaAppSecretRequest  {
         this.appId = appId;
     }
 
+    
+
     public CheckRomaAppSecretRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -68,6 +70,9 @@ public class CheckRomaAppSecretRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

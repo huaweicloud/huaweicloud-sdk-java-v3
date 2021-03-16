@@ -21,25 +21,25 @@ public class SendMessageEntity  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private Object body = null;
+    private Object body;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    private Object attributes = null;
+    private Object attributes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private Object tags = null;
+    private Object tags;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delay_time")
     
-    private Object delayTime = null;
+    private Object delayTime;
 
     public SendMessageEntity withBody(Object body) {
         this.body = body;
@@ -61,6 +61,8 @@ public class SendMessageEntity  {
         this.body = body;
     }
 
+    
+
     public SendMessageEntity withAttributes(Object attributes) {
         this.attributes = attributes;
         return this;
@@ -80,6 +82,8 @@ public class SendMessageEntity  {
     public void setAttributes(Object attributes) {
         this.attributes = attributes;
     }
+
+    
 
     public SendMessageEntity withTags(Object tags) {
         this.tags = tags;
@@ -101,6 +105,8 @@ public class SendMessageEntity  {
         this.tags = tags;
     }
 
+    
+
     public SendMessageEntity withDelayTime(Object delayTime) {
         this.delayTime = delayTime;
         return this;
@@ -120,6 +126,9 @@ public class SendMessageEntity  {
     public void setDelayTime(Object delayTime) {
         this.delayTime = delayTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

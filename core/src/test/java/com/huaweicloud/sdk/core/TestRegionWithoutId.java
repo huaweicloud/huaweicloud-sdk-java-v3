@@ -31,10 +31,10 @@ public class TestRegionWithoutId {
     private static final String IAM_ENDPOINT = "http://127.0.0.1:10086";
     private static final String BASIC_EXPECTED = "123456789";
     private static final BasicCredentials BASIC_CREDENTIALS = new BasicCredentials().withAk("ak").withSk("sk")
-        .withIamEndpoint(IAM_ENDPOINT);
+            .withIamEndpoint(IAM_ENDPOINT);
     private static final String GLOBAL_EXPECTED = "987654321";
     private static final GlobalCredentials GLOBAL_CREDENTIALS = new GlobalCredentials().withAk("ak").withSk("sk")
-        .withIamEndpoint(IAM_ENDPOINT);
+            .withIamEndpoint(IAM_ENDPOINT);
     private final HttpConfig config = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
 
     @Rule
@@ -45,32 +45,33 @@ public class TestRegionWithoutId {
         System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
         System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
 
-        wireMockRule
-            = new WireMockRule(WireMockConfiguration.options().httpsPort(10010).port(10086).disableRequestJournal());
+        wireMockRule = new WireMockRule(
+                WireMockConfiguration.options().httpsPort(10010).port(10086).disableRequestJournal());
 
         // operationId: KeystoneListProjects
         wireMockRule.stubFor(WireMock.get("/v3/projects?name=cn-north-7")
-            .willReturn(WireMock.aResponse()
-                .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
-                .withBody("{\"projects\": [{\"id\": \"123456789\"}]}")
-                .withStatus(200)
-            )
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"projects\": [{\"id\": \"123456789\"}]}")
+                        .withStatus(200)
+                )
         );
         // operationId: KeystoneListProjects
         wireMockRule.stubFor(WireMock.get("/v3/projects?name=cn-north-400")
-            .willReturn(WireMock.aResponse()
-                .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
-                .withBody("{\"error_msg\": \"Incorrect IAM authentication information: verify aksk signature fail\"}")
-                .withStatus(401)
-            )
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"error_msg\": \"Incorrect IAM authentication information: "
+                                + "verify aksk signature fail\"}")
+                        .withStatus(401)
+                )
         );
         // operationId: KeystoneListAuthDomains
         wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
-            .willReturn(WireMock.aResponse()
-                .withHeader("Content-type", MEDIATYPE.APPLICATION_JSON)
-                .withBody("{\"domains\": [{\"enabled\": true, \"id\": \"987654321\"}]}")
-                .withStatus(200)
-            )
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"domains\": [{\"enabled\": true, \"id\": \"987654321\"}]}")
+                        .withStatus(200)
+                )
         );
 
         wireMockRule.start();
@@ -84,10 +85,10 @@ public class TestRegionWithoutId {
     @Test
     public void testProjectWithRegion() {
         TestServiceClient.newBuilder()
-            .withCredential(BASIC_CREDENTIALS)
-            .withHttpConfig(config)
-            .withRegion(TestRegion.CN_NORTH_7)
-            .build();
+                .withCredential(BASIC_CREDENTIALS)
+                .withHttpConfig(config)
+                .withRegion(TestRegion.CN_NORTH_7)
+                .build();
 
         try {
             Field projectId = BasicCredentials.class.getDeclaredField("projectId");
@@ -101,10 +102,10 @@ public class TestRegionWithoutId {
     @Test
     public void testProjectWithRegionValueOf() {
         TestServiceClient.newBuilder()
-            .withCredential(BASIC_CREDENTIALS)
-            .withHttpConfig(config)
-            .withRegion(TestRegion.valueOf("cn-north-7"))
-            .build();
+                .withCredential(BASIC_CREDENTIALS)
+                .withHttpConfig(config)
+                .withRegion(TestRegion.valueOf("cn-north-7"))
+                .build();
 
         try {
             Field projectId = BasicCredentials.class.getDeclaredField("projectId");
@@ -118,10 +119,10 @@ public class TestRegionWithoutId {
     @Test
     public void testProjectWithNewRegion() {
         TestServiceClient.newBuilder()
-            .withCredential(BASIC_CREDENTIALS)
-            .withHttpConfig(config)
-            .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
-            .build();
+                .withCredential(BASIC_CREDENTIALS)
+                .withHttpConfig(config)
+                .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
+                .build();
         try {
             Field projectId = BasicCredentials.class.getDeclaredField("projectId");
             projectId.setAccessible(true);
@@ -134,10 +135,10 @@ public class TestRegionWithoutId {
     @Test
     public void testDomainWithRegion() {
         TestServiceClient.newBuilder()
-            .withCredential(GLOBAL_CREDENTIALS)
-            .withHttpConfig(config)
-            .withRegion(TestRegion.CN_NORTH_7)
-            .build();
+                .withCredential(GLOBAL_CREDENTIALS)
+                .withHttpConfig(config)
+                .withRegion(TestRegion.CN_NORTH_7)
+                .build();
 
         try {
             Field domainId = GlobalCredentials.class.getDeclaredField("domainId");
@@ -151,10 +152,10 @@ public class TestRegionWithoutId {
     @Test
     public void testDomainWithRegionValueOf() {
         TestServiceClient.newBuilder()
-            .withCredential(GLOBAL_CREDENTIALS)
-            .withHttpConfig(config)
-            .withRegion(TestRegion.valueOf("cn-north-7"))
-            .build();
+                .withCredential(GLOBAL_CREDENTIALS)
+                .withHttpConfig(config)
+                .withRegion(TestRegion.valueOf("cn-north-7"))
+                .build();
 
         try {
             Field domainId = GlobalCredentials.class.getDeclaredField("domainId");
@@ -168,10 +169,10 @@ public class TestRegionWithoutId {
     @Test
     public void testDomainWithNewRegion() {
         TestServiceClient.newBuilder()
-            .withCredential(GLOBAL_CREDENTIALS)
-            .withHttpConfig(config)
-            .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
-            .build();
+                .withCredential(GLOBAL_CREDENTIALS)
+                .withHttpConfig(config)
+                .withRegion(new Region("cn-north-7", TEST_ENDPOINT))
+                .build();
         try {
             Field domainId = GlobalCredentials.class.getDeclaredField("domainId");
             domainId.setAccessible(true);
@@ -185,13 +186,13 @@ public class TestRegionWithoutId {
     public void testWrongCredential() {
         try {
             TestServiceClient.newBuilder()
-                .withCredential(GLOBAL_CREDENTIALS)
-                .withHttpConfig(config)
-                .withRegion(TestRegion.CN_NORTH_400)
-                .build();
+                    .withCredential(GLOBAL_CREDENTIALS)
+                    .withHttpConfig(config)
+                    .withRegion(TestRegion.CN_NORTH_400)
+                    .build();
         } catch (SdkException e) {
             String errMessage = "Failed to get project id, Incorrect IAM authentication information: "
-                + "verify aksk signature fail";
+                    + "verify aksk signature fail";
             Assert.assertEquals(e.getMessage(), errMessage);
         }
     }

@@ -52,7 +52,7 @@ public class BackupForList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private BackupDatabase datastore = null;
+    private BackupDatabase datastore;
     /**
      * 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。
      */
@@ -290,6 +290,8 @@ public class BackupForList  {
         this.id = id;
     }
 
+    
+
     public BackupForList withName(String name) {
         this.name = name;
         return this;
@@ -309,6 +311,8 @@ public class BackupForList  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public BackupForList withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -330,6 +334,8 @@ public class BackupForList  {
         this.instanceId = instanceId;
     }
 
+    
+
     public BackupForList withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -349,6 +355,8 @@ public class BackupForList  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
+
+    
 
     public BackupForList withDatastore(BackupDatabase datastore) {
         this.datastore = datastore;
@@ -377,6 +385,8 @@ public class BackupForList  {
         this.datastore = datastore;
     }
 
+    
+
     public BackupForList withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -396,6 +406,8 @@ public class BackupForList  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public BackupForList withBeginTime(String beginTime) {
         this.beginTime = beginTime;
@@ -417,6 +429,8 @@ public class BackupForList  {
         this.beginTime = beginTime;
     }
 
+    
+
     public BackupForList withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -436,6 +450,8 @@ public class BackupForList  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public BackupForList withStatus(StatusEnum status) {
         this.status = status;
@@ -457,6 +473,8 @@ public class BackupForList  {
         this.status = status;
     }
 
+    
+
     public BackupForList withSize(Long size) {
         this.size = size;
         return this;
@@ -477,6 +495,8 @@ public class BackupForList  {
         this.size = size;
     }
 
+    
+
     public BackupForList withDescription(String description) {
         this.description = description;
         return this;
@@ -496,6 +516,9 @@ public class BackupForList  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

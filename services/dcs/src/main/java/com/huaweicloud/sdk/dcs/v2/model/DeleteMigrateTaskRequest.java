@@ -23,7 +23,7 @@ public class DeleteMigrateTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_id_list")
     
-    private List<String> taskIdList = new ArrayList<>();
+    private List<String> taskIdList = null;
     
     public DeleteMigrateTaskRequest withTaskIdList(List<String> taskIdList) {
         this.taskIdList = taskIdList;
@@ -55,6 +55,9 @@ public class DeleteMigrateTaskRequest  {
     public void setTaskIdList(List<String> taskIdList) {
         this.taskIdList = taskIdList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class DeleteCustomLineRequest  {
     public void setLineId(String lineId) {
         this.lineId = lineId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

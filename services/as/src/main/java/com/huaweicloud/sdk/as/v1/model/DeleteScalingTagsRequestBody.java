@@ -106,7 +106,7 @@ public class DeleteScalingTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action = ActionEnum.DELETE;
+    private ActionEnum action;
 
     public DeleteScalingTagsRequestBody withTags(List<TagsSingleValue> tags) {
         this.tags = tags;
@@ -115,9 +115,6 @@ public class DeleteScalingTagsRequestBody  {
 
     
     public DeleteScalingTagsRequestBody addTagsItem(TagsSingleValue tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -142,6 +139,8 @@ public class DeleteScalingTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public DeleteScalingTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -161,6 +160,9 @@ public class DeleteScalingTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

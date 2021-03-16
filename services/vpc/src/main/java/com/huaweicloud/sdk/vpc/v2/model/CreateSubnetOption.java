@@ -112,6 +112,8 @@ public class CreateSubnetOption  {
         this.name = name;
     }
 
+    
+
     public CreateSubnetOption withDescription(String description) {
         this.description = description;
         return this;
@@ -131,6 +133,8 @@ public class CreateSubnetOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateSubnetOption withCidr(String cidr) {
         this.cidr = cidr;
@@ -152,6 +156,8 @@ public class CreateSubnetOption  {
         this.cidr = cidr;
     }
 
+    
+
     public CreateSubnetOption withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -171,6 +177,8 @@ public class CreateSubnetOption  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public CreateSubnetOption withGatewayIp(String gatewayIp) {
         this.gatewayIp = gatewayIp;
@@ -192,6 +200,8 @@ public class CreateSubnetOption  {
         this.gatewayIp = gatewayIp;
     }
 
+    
+
     public CreateSubnetOption withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -211,6 +221,8 @@ public class CreateSubnetOption  {
     public void setIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
     }
+
+    
 
     public CreateSubnetOption withDhcpEnable(Boolean dhcpEnable) {
         this.dhcpEnable = dhcpEnable;
@@ -232,6 +244,8 @@ public class CreateSubnetOption  {
         this.dhcpEnable = dhcpEnable;
     }
 
+    
+
     public CreateSubnetOption withPrimaryDns(String primaryDns) {
         this.primaryDns = primaryDns;
         return this;
@@ -251,6 +265,8 @@ public class CreateSubnetOption  {
     public void setPrimaryDns(String primaryDns) {
         this.primaryDns = primaryDns;
     }
+
+    
 
     public CreateSubnetOption withSecondaryDns(String secondaryDns) {
         this.secondaryDns = secondaryDns;
@@ -272,6 +288,8 @@ public class CreateSubnetOption  {
         this.secondaryDns = secondaryDns;
     }
 
+    
+
     public CreateSubnetOption withDnsList(List<String> dnsList) {
         this.dnsList = dnsList;
         return this;
@@ -279,9 +297,6 @@ public class CreateSubnetOption  {
 
     
     public CreateSubnetOption addDnsListItem(String dnsListItem) {
-        if (this.dnsList == null) {
-            this.dnsList = new ArrayList<>();
-        }
         this.dnsList.add(dnsListItem);
         return this;
     }
@@ -306,6 +321,8 @@ public class CreateSubnetOption  {
         this.dnsList = dnsList;
     }
 
+    
+
     public CreateSubnetOption withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -326,6 +343,8 @@ public class CreateSubnetOption  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public CreateSubnetOption withExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
@@ -333,9 +352,6 @@ public class CreateSubnetOption  {
 
     
     public CreateSubnetOption addExtraDhcpOptsItem(ExtraDhcpOption extraDhcpOptsItem) {
-        if (this.extraDhcpOpts == null) {
-            this.extraDhcpOpts = new ArrayList<>();
-        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
@@ -359,6 +375,9 @@ public class CreateSubnetOption  {
     public void setExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

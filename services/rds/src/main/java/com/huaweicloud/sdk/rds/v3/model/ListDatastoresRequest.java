@@ -139,6 +139,8 @@ public class ListDatastoresRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListDatastoresRequest withDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
         return this;
@@ -158,6 +160,9 @@ public class ListDatastoresRequest  {
     public void setDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

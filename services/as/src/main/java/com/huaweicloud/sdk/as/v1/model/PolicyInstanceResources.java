@@ -61,6 +61,8 @@ public class PolicyInstanceResources  {
         this.type = type;
     }
 
+    
+
     public PolicyInstanceResources withUsed(Integer used) {
         this.used = used;
         return this;
@@ -80,6 +82,8 @@ public class PolicyInstanceResources  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
 
     public PolicyInstanceResources withQuota(Integer quota) {
         this.quota = quota;
@@ -101,6 +105,8 @@ public class PolicyInstanceResources  {
         this.quota = quota;
     }
 
+    
+
     public PolicyInstanceResources withMax(Integer max) {
         this.max = max;
         return this;
@@ -120,6 +126,9 @@ public class PolicyInstanceResources  {
     public void setMax(Integer max) {
         this.max = max;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

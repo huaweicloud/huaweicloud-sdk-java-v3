@@ -49,7 +49,7 @@ public class MetaData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bitrate")
     
-    private Integer bitrate;
+    private Long bitrate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class MetaData  {
         this.size = size;
     }
 
+    
+
     public MetaData withDurationMs(Double durationMs) {
         this.durationMs = durationMs;
         return this;
@@ -106,6 +108,8 @@ public class MetaData  {
     public void setDurationMs(Double durationMs) {
         this.durationMs = durationMs;
     }
+
+    
 
     public MetaData withDuration(Long duration) {
         this.duration = duration;
@@ -129,6 +133,8 @@ public class MetaData  {
         this.duration = duration;
     }
 
+    
+
     public MetaData withFormat(String format) {
         this.format = format;
         return this;
@@ -149,7 +155,9 @@ public class MetaData  {
         this.format = format;
     }
 
-    public MetaData withBitrate(Integer bitrate) {
+    
+
+    public MetaData withBitrate(Long bitrate) {
         this.bitrate = bitrate;
         return this;
     }
@@ -158,18 +166,20 @@ public class MetaData  {
 
 
     /**
-     * 总码率。 
+     * 总码率。单位：bit/秒 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 9223372036854775807
      * @return bitrate
      */
-    public Integer getBitrate() {
+    public Long getBitrate() {
         return bitrate;
     }
 
-    public void setBitrate(Integer bitrate) {
+    public void setBitrate(Long bitrate) {
         this.bitrate = bitrate;
     }
+
+    
 
     public MetaData withVideo(List<VideoInfo> video) {
         this.video = video;
@@ -178,9 +188,6 @@ public class MetaData  {
 
     
     public MetaData addVideoItem(VideoInfo videoItem) {
-        if (this.video == null) {
-            this.video = new ArrayList<>();
-        }
         this.video.add(videoItem);
         return this;
     }
@@ -205,6 +212,8 @@ public class MetaData  {
         this.video = video;
     }
 
+    
+
     public MetaData withAudio(List<AudioInfo> audio) {
         this.audio = audio;
         return this;
@@ -212,9 +221,6 @@ public class MetaData  {
 
     
     public MetaData addAudioItem(AudioInfo audioItem) {
-        if (this.audio == null) {
-            this.audio = new ArrayList<>();
-        }
         this.audio.add(audioItem);
         return this;
     }
@@ -238,6 +244,9 @@ public class MetaData  {
     public void setAudio(List<AudioInfo> audio) {
         this.audio = audio;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

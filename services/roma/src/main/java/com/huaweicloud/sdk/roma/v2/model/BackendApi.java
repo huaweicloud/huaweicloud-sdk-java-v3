@@ -362,19 +362,19 @@ public class BackendApi  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_info")
     
-    private VpcInfo vpcChannelInfo = null;
+    private VpcInfo vpcChannelInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -402,6 +402,8 @@ public class BackendApi  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public BackendApi withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -421,6 +423,8 @@ public class BackendApi  {
     public void setUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
     }
+
+    
 
     public BackendApi withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
@@ -442,6 +446,8 @@ public class BackendApi  {
         this.reqProtocol = reqProtocol;
     }
 
+    
+
     public BackendApi withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -461,6 +467,8 @@ public class BackendApi  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public BackendApi withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -482,6 +490,8 @@ public class BackendApi  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public BackendApi withVersion(String version) {
         this.version = version;
         return this;
@@ -501,6 +511,8 @@ public class BackendApi  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public BackendApi withReqUri(String reqUri) {
         this.reqUri = reqUri;
@@ -522,6 +534,8 @@ public class BackendApi  {
         this.reqUri = reqUri;
     }
 
+    
+
     public BackendApi withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -541,6 +555,8 @@ public class BackendApi  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
 
     public BackendApi withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
@@ -562,6 +578,8 @@ public class BackendApi  {
         this.enableClientSsl = enableClientSsl;
     }
 
+    
+
     public BackendApi withId(String id) {
         this.id = id;
         return this;
@@ -581,6 +599,8 @@ public class BackendApi  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public BackendApi withStatus(StatusEnum status) {
         this.status = status;
@@ -602,6 +622,8 @@ public class BackendApi  {
         this.status = status;
     }
 
+    
+
     public BackendApi withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -622,6 +644,8 @@ public class BackendApi  {
         this.registerTime = registerTime;
     }
 
+    
+
     public BackendApi withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -641,6 +665,8 @@ public class BackendApi  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public BackendApi withVpcChannelInfo(VpcInfo vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
@@ -669,6 +695,8 @@ public class BackendApi  {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 
+    
+
     public BackendApi withVpcChannelStatus(Integer vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
@@ -688,6 +716,9 @@ public class BackendApi  {
     public void setVpcChannelStatus(Integer vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

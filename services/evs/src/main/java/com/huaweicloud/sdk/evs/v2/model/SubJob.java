@@ -122,7 +122,7 @@ public class SubJob  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    private SubJobEntities entities = null;
+    private SubJobEntities entities;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -180,6 +180,8 @@ public class SubJob  {
         this.status = status;
     }
 
+    
+
     public SubJob withEntities(SubJobEntities entities) {
         this.entities = entities;
         return this;
@@ -207,6 +209,8 @@ public class SubJob  {
         this.entities = entities;
     }
 
+    
+
     public SubJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -226,6 +230,8 @@ public class SubJob  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public SubJob withJobType(String jobType) {
         this.jobType = jobType;
@@ -247,6 +253,8 @@ public class SubJob  {
         this.jobType = jobType;
     }
 
+    
+
     public SubJob withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -266,6 +274,8 @@ public class SubJob  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public SubJob withEndTime(String endTime) {
         this.endTime = endTime;
@@ -287,6 +297,8 @@ public class SubJob  {
         this.endTime = endTime;
     }
 
+    
+
     public SubJob withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -307,6 +319,8 @@ public class SubJob  {
         this.errorCode = errorCode;
     }
 
+    
+
     public SubJob withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
@@ -326,6 +340,9 @@ public class SubJob  {
     public void setFailReason(String failReason) {
         this.failReason = failReason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

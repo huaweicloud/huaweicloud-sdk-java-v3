@@ -361,13 +361,13 @@ public class BackendApiBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public BackendApiBase withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
@@ -389,6 +389,8 @@ public class BackendApiBase  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public BackendApiBase withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -408,6 +410,8 @@ public class BackendApiBase  {
     public void setUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
     }
+
+    
 
     public BackendApiBase withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
@@ -429,6 +433,8 @@ public class BackendApiBase  {
         this.reqProtocol = reqProtocol;
     }
 
+    
+
     public BackendApiBase withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -448,6 +454,8 @@ public class BackendApiBase  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public BackendApiBase withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -469,6 +477,8 @@ public class BackendApiBase  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public BackendApiBase withVersion(String version) {
         this.version = version;
         return this;
@@ -488,6 +498,8 @@ public class BackendApiBase  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public BackendApiBase withReqUri(String reqUri) {
         this.reqUri = reqUri;
@@ -509,6 +521,8 @@ public class BackendApiBase  {
         this.reqUri = reqUri;
     }
 
+    
+
     public BackendApiBase withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -528,6 +542,8 @@ public class BackendApiBase  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
 
     public BackendApiBase withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
@@ -549,6 +565,8 @@ public class BackendApiBase  {
         this.enableClientSsl = enableClientSsl;
     }
 
+    
+
     public BackendApiBase withId(String id) {
         this.id = id;
         return this;
@@ -568,6 +586,8 @@ public class BackendApiBase  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public BackendApiBase withStatus(StatusEnum status) {
         this.status = status;
@@ -589,6 +609,8 @@ public class BackendApiBase  {
         this.status = status;
     }
 
+    
+
     public BackendApiBase withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -609,6 +631,8 @@ public class BackendApiBase  {
         this.registerTime = registerTime;
     }
 
+    
+
     public BackendApiBase withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -628,6 +652,9 @@ public class BackendApiBase  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

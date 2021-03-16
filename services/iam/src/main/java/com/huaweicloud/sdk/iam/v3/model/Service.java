@@ -34,7 +34,7 @@ public class Service  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class Service  {
         this.name = name;
     }
 
+    
+
     public Service withDescription(String description) {
         this.description = description;
         return this;
@@ -93,6 +95,8 @@ public class Service  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Service withLinks(Links links) {
         this.links = links;
@@ -121,6 +125,8 @@ public class Service  {
         this.links = links;
     }
 
+    
+
     public Service withId(String id) {
         this.id = id;
         return this;
@@ -140,6 +146,8 @@ public class Service  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public Service withType(String type) {
         this.type = type;
@@ -161,6 +169,8 @@ public class Service  {
         this.type = type;
     }
 
+    
+
     public Service withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -180,6 +190,9 @@ public class Service  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

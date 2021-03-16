@@ -42,6 +42,9 @@ public class ShowVpcPeeringRequest  {
     public void setPeeringId(String peeringId) {
         this.peeringId = peeringId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

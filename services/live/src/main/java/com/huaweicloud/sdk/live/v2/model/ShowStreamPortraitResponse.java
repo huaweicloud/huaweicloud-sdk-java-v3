@@ -41,9 +41,6 @@ public class ShowStreamPortraitResponse extends SdkResponse {
 
     
     public ShowStreamPortraitResponse addStreamPortraitsItem(StreamPortrait streamPortraitsItem) {
-        if (this.streamPortraits == null) {
-            this.streamPortraits = new ArrayList<>();
-        }
         this.streamPortraits.add(streamPortraitsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowStreamPortraitResponse extends SdkResponse {
         this.streamPortraits = streamPortraits;
     }
 
+    
+
     public ShowStreamPortraitResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -89,6 +88,9 @@ public class ShowStreamPortraitResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

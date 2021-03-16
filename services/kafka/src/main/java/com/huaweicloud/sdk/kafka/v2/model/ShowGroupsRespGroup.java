@@ -77,6 +77,8 @@ public class ShowGroupsRespGroup  {
         this.groupId = groupId;
     }
 
+    
+
     public ShowGroupsRespGroup withState(String state) {
         this.state = state;
         return this;
@@ -96,6 +98,8 @@ public class ShowGroupsRespGroup  {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public ShowGroupsRespGroup withCoordinatorId(Integer coordinatorId) {
         this.coordinatorId = coordinatorId;
@@ -117,6 +121,8 @@ public class ShowGroupsRespGroup  {
         this.coordinatorId = coordinatorId;
     }
 
+    
+
     public ShowGroupsRespGroup withMembers(List<ShowGroupsRespGroupMembers> members) {
         this.members = members;
         return this;
@@ -124,9 +130,6 @@ public class ShowGroupsRespGroup  {
 
     
     public ShowGroupsRespGroup addMembersItem(ShowGroupsRespGroupMembers membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -151,6 +154,8 @@ public class ShowGroupsRespGroup  {
         this.members = members;
     }
 
+    
+
     public ShowGroupsRespGroup withGroupMessageOffsets(List<ShowGroupsRespGroupGroupMessageOffsets> groupMessageOffsets) {
         this.groupMessageOffsets = groupMessageOffsets;
         return this;
@@ -158,9 +163,6 @@ public class ShowGroupsRespGroup  {
 
     
     public ShowGroupsRespGroup addGroupMessageOffsetsItem(ShowGroupsRespGroupGroupMessageOffsets groupMessageOffsetsItem) {
-        if (this.groupMessageOffsets == null) {
-            this.groupMessageOffsets = new ArrayList<>();
-        }
         this.groupMessageOffsets.add(groupMessageOffsetsItem);
         return this;
     }
@@ -185,6 +187,8 @@ public class ShowGroupsRespGroup  {
         this.groupMessageOffsets = groupMessageOffsets;
     }
 
+    
+
     public ShowGroupsRespGroup withAssignmentStrategy(String assignmentStrategy) {
         this.assignmentStrategy = assignmentStrategy;
         return this;
@@ -204,6 +208,9 @@ public class ShowGroupsRespGroup  {
     public void setAssignmentStrategy(String assignmentStrategy) {
         this.assignmentStrategy = assignmentStrategy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

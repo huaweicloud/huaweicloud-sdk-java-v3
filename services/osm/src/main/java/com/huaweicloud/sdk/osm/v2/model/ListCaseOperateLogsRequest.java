@@ -79,6 +79,8 @@ public class ListCaseOperateLogsRequest  {
         this.caseId = caseId;
     }
 
+    
+
     public ListCaseOperateLogsRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -98,6 +100,8 @@ public class ListCaseOperateLogsRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListCaseOperateLogsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -121,6 +125,8 @@ public class ListCaseOperateLogsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCaseOperateLogsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -142,6 +148,8 @@ public class ListCaseOperateLogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListCaseOperateLogsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -167,6 +175,8 @@ public class ListCaseOperateLogsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListCaseOperateLogsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -189,6 +199,8 @@ public class ListCaseOperateLogsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListCaseOperateLogsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -210,6 +222,9 @@ public class ListCaseOperateLogsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class UpdateVpcPeeringOption  {
         this.name = name;
     }
 
+    
+
     public UpdateVpcPeeringOption withDescription(String description) {
         this.description = description;
         return this;
@@ -68,6 +70,9 @@ public class UpdateVpcPeeringOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

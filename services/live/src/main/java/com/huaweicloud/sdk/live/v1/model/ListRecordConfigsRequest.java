@@ -43,13 +43,13 @@ public class ListRecordConfigsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
     /**
      * Gets or Sets recordType
      */
@@ -149,6 +149,8 @@ public class ListRecordConfigsRequest  {
         this.domain = domain;
     }
 
+    
+
     public ListRecordConfigsRequest withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -168,6 +170,8 @@ public class ListRecordConfigsRequest  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ListRecordConfigsRequest withStreamName(String streamName) {
         this.streamName = streamName;
@@ -189,6 +193,8 @@ public class ListRecordConfigsRequest  {
         this.streamName = streamName;
     }
 
+    
+
     public ListRecordConfigsRequest withPage(Integer page) {
         this.page = page;
         return this;
@@ -209,6 +215,8 @@ public class ListRecordConfigsRequest  {
     public void setPage(Integer page) {
         this.page = page;
     }
+
+    
 
     public ListRecordConfigsRequest withSize(Integer size) {
         this.size = size;
@@ -232,6 +240,8 @@ public class ListRecordConfigsRequest  {
         this.size = size;
     }
 
+    
+
     public ListRecordConfigsRequest withRecordType(RecordTypeEnum recordType) {
         this.recordType = recordType;
         return this;
@@ -251,6 +261,9 @@ public class ListRecordConfigsRequest  {
     public void setRecordType(RecordTypeEnum recordType) {
         this.recordType = recordType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

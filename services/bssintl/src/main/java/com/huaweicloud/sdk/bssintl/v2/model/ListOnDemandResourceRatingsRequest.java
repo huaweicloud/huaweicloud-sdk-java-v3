@@ -22,7 +22,7 @@ public class ListOnDemandResourceRatingsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RateOnDemandReq body = null;
+    private RateOnDemandReq body;
 
     public ListOnDemandResourceRatingsRequest withBody(RateOnDemandReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ListOnDemandResourceRatingsRequest  {
     public void setBody(RateOnDemandReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

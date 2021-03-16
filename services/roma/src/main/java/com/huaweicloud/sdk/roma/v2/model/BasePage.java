@@ -49,6 +49,8 @@ public class BasePage  {
         this.size = size;
     }
 
+    
+
     public BasePage withTotal(Long total) {
         this.total = total;
         return this;
@@ -68,6 +70,9 @@ public class BasePage  {
     public void setTotal(Long total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

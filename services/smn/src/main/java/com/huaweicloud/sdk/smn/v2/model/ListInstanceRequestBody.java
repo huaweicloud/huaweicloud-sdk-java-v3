@@ -49,13 +49,13 @@ public class ListInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private String offset = "0";
+    private String offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private String limit = "1000";
+    private String limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +76,6 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addTagsItem(ResourceTags tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -103,6 +100,8 @@ public class ListInstanceRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public ListInstanceRequestBody withTagsAny(List<ResourceTags> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
@@ -110,9 +109,6 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addTagsAnyItem(ResourceTags tagsAnyItem) {
-        if (this.tagsAny == null) {
-            this.tagsAny = new ArrayList<>();
-        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
@@ -137,6 +133,8 @@ public class ListInstanceRequestBody  {
         this.tagsAny = tagsAny;
     }
 
+    
+
     public ListInstanceRequestBody withNotTags(List<ResourceTags> notTags) {
         this.notTags = notTags;
         return this;
@@ -144,9 +142,6 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addNotTagsItem(ResourceTags notTagsItem) {
-        if (this.notTags == null) {
-            this.notTags = new ArrayList<>();
-        }
         this.notTags.add(notTagsItem);
         return this;
     }
@@ -171,6 +166,8 @@ public class ListInstanceRequestBody  {
         this.notTags = notTags;
     }
 
+    
+
     public ListInstanceRequestBody withNotTagsAny(List<ResourceTags> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
@@ -178,9 +175,6 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addNotTagsAnyItem(ResourceTags notTagsAnyItem) {
-        if (this.notTagsAny == null) {
-            this.notTagsAny = new ArrayList<>();
-        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
@@ -205,6 +199,8 @@ public class ListInstanceRequestBody  {
         this.notTagsAny = notTagsAny;
     }
 
+    
+
     public ListInstanceRequestBody withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -224,6 +220,8 @@ public class ListInstanceRequestBody  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
 
     public ListInstanceRequestBody withLimit(String limit) {
         this.limit = limit;
@@ -245,6 +243,8 @@ public class ListInstanceRequestBody  {
         this.limit = limit;
     }
 
+    
+
     public ListInstanceRequestBody withAction(String action) {
         this.action = action;
         return this;
@@ -265,6 +265,8 @@ public class ListInstanceRequestBody  {
         this.action = action;
     }
 
+    
+
     public ListInstanceRequestBody withMatches(List<TagMatch> matches) {
         this.matches = matches;
         return this;
@@ -272,9 +274,6 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addMatchesItem(TagMatch matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -298,6 +297,9 @@ public class ListInstanceRequestBody  {
     public void setMatches(List<TagMatch> matches) {
         this.matches = matches;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

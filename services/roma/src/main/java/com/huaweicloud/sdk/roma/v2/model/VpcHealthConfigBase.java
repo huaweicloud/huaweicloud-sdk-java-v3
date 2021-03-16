@@ -201,7 +201,7 @@ public class VpcHealthConfigBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="method")
     
-    private MethodEnum method = MethodEnum.GET;
+    private MethodEnum method;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -237,7 +237,7 @@ public class VpcHealthConfigBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_client_ssl")
     
-    private Boolean enableClientSsl = false;
+    private Boolean enableClientSsl;
 
     public VpcHealthConfigBase withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
@@ -259,6 +259,8 @@ public class VpcHealthConfigBase  {
         this.protocol = protocol;
     }
 
+    
+
     public VpcHealthConfigBase withPath(String path) {
         this.path = path;
         return this;
@@ -278,6 +280,8 @@ public class VpcHealthConfigBase  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public VpcHealthConfigBase withMethod(MethodEnum method) {
         this.method = method;
@@ -299,6 +303,8 @@ public class VpcHealthConfigBase  {
         this.method = method;
     }
 
+    
+
     public VpcHealthConfigBase withPort(Integer port) {
         this.port = port;
         return this;
@@ -318,6 +324,8 @@ public class VpcHealthConfigBase  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
 
     public VpcHealthConfigBase withThresholdNormal(Integer thresholdNormal) {
         this.thresholdNormal = thresholdNormal;
@@ -339,6 +347,8 @@ public class VpcHealthConfigBase  {
         this.thresholdNormal = thresholdNormal;
     }
 
+    
+
     public VpcHealthConfigBase withThresholdAbnormal(Integer thresholdAbnormal) {
         this.thresholdAbnormal = thresholdAbnormal;
         return this;
@@ -358,6 +368,8 @@ public class VpcHealthConfigBase  {
     public void setThresholdAbnormal(Integer thresholdAbnormal) {
         this.thresholdAbnormal = thresholdAbnormal;
     }
+
+    
 
     public VpcHealthConfigBase withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -379,6 +391,8 @@ public class VpcHealthConfigBase  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public VpcHealthConfigBase withHttpCode(String httpCode) {
         this.httpCode = httpCode;
         return this;
@@ -399,6 +413,8 @@ public class VpcHealthConfigBase  {
         this.httpCode = httpCode;
     }
 
+    
+
     public VpcHealthConfigBase withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
         return this;
@@ -418,6 +434,9 @@ public class VpcHealthConfigBase  {
     public void setEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

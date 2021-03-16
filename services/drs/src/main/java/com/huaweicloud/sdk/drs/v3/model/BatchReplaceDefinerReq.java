@@ -24,7 +24,7 @@ public class BatchReplaceDefinerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<ReplaceDefinerInfo> jobs = new ArrayList<>();
+    private List<ReplaceDefinerInfo> jobs = null;
     
     public BatchReplaceDefinerReq withJobs(List<ReplaceDefinerInfo> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchReplaceDefinerReq  {
     public void setJobs(List<ReplaceDefinerInfo> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

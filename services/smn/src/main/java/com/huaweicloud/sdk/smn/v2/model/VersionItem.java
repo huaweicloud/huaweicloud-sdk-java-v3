@@ -54,7 +54,7 @@ public class VersionItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<LinksItem> links = new ArrayList<>();
+    private List<LinksItem> links = null;
     
     public VersionItem withId(String id) {
         this.id = id;
@@ -76,6 +76,8 @@ public class VersionItem  {
         this.id = id;
     }
 
+    
+
     public VersionItem withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
@@ -95,6 +97,8 @@ public class VersionItem  {
     public void setMinVersion(String minVersion) {
         this.minVersion = minVersion;
     }
+
+    
 
     public VersionItem withStatus(String status) {
         this.status = status;
@@ -116,6 +120,8 @@ public class VersionItem  {
         this.status = status;
     }
 
+    
+
     public VersionItem withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -136,6 +142,8 @@ public class VersionItem  {
         this.updated = updated;
     }
 
+    
+
     public VersionItem withVersion(String version) {
         this.version = version;
         return this;
@@ -155,6 +163,8 @@ public class VersionItem  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public VersionItem withLinks(List<LinksItem> links) {
         this.links = links;
@@ -186,6 +196,9 @@ public class VersionItem  {
     public void setLinks(List<LinksItem> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

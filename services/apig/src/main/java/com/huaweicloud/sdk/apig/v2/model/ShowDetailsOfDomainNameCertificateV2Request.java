@@ -61,6 +61,8 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Request withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -80,6 +82,8 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public ShowDetailsOfDomainNameCertificateV2Request withGroupId(String groupId) {
         this.groupId = groupId;
@@ -101,6 +105,8 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         this.groupId = groupId;
     }
 
+    
+
     public ShowDetailsOfDomainNameCertificateV2Request withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -120,6 +126,9 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

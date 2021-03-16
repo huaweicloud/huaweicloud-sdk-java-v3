@@ -161,6 +161,8 @@ public class ListProcessesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListProcessesRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
@@ -180,6 +182,8 @@ public class ListProcessesRequest  {
     public void setDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
     }
+
+    
 
     public ListProcessesRequest withUser(String user) {
         this.user = user;
@@ -201,6 +205,8 @@ public class ListProcessesRequest  {
         this.user = user;
     }
 
+    
+
     public ListProcessesRequest withDatabase(String database) {
         this.database = database;
         return this;
@@ -220,6 +226,8 @@ public class ListProcessesRequest  {
     public void setDatabase(String database) {
         this.database = database;
     }
+
+    
 
     public ListProcessesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -241,6 +249,8 @@ public class ListProcessesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListProcessesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -260,6 +270,8 @@ public class ListProcessesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListProcessesRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -282,6 +294,9 @@ public class ListProcessesRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

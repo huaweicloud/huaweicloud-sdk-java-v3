@@ -49,13 +49,13 @@ public class GroupResponseItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private Volume volume = null;
+    private Volume volume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    private List<NodeItem> nodes = new ArrayList<>();
+    private List<NodeItem> nodes = null;
     
     public GroupResponseItem withType(String type) {
         this.type = type;
@@ -77,6 +77,8 @@ public class GroupResponseItem  {
         this.type = type;
     }
 
+    
+
     public GroupResponseItem withId(String id) {
         this.id = id;
         return this;
@@ -96,6 +98,8 @@ public class GroupResponseItem  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public GroupResponseItem withName(String name) {
         this.name = name;
@@ -117,6 +121,8 @@ public class GroupResponseItem  {
         this.name = name;
     }
 
+    
+
     public GroupResponseItem withStatus(String status) {
         this.status = status;
         return this;
@@ -136,6 +142,8 @@ public class GroupResponseItem  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public GroupResponseItem withVolume(Volume volume) {
         this.volume = volume;
@@ -163,6 +171,8 @@ public class GroupResponseItem  {
     public void setVolume(Volume volume) {
         this.volume = volume;
     }
+
+    
 
     public GroupResponseItem withNodes(List<NodeItem> nodes) {
         this.nodes = nodes;
@@ -194,6 +204,9 @@ public class GroupResponseItem  {
     public void setNodes(List<NodeItem> nodes) {
         this.nodes = nodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

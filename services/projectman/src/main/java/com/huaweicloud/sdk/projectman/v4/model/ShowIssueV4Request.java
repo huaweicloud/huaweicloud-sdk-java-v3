@@ -49,6 +49,8 @@ public class ShowIssueV4Request  {
         this.projectId = projectId;
     }
 
+    
+
     public ShowIssueV4Request withIssueId(Integer issueId) {
         this.issueId = issueId;
         return this;
@@ -68,6 +70,9 @@ public class ShowIssueV4Request  {
     public void setIssueId(Integer issueId) {
         this.issueId = issueId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

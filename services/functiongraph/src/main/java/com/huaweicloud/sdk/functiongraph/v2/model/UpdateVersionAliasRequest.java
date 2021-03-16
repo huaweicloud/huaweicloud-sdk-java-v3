@@ -34,7 +34,7 @@ public class UpdateVersionAliasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateVersionAliasRequestBody body = null;
+    private UpdateVersionAliasRequestBody body;
 
     public UpdateVersionAliasRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -56,6 +56,8 @@ public class UpdateVersionAliasRequest  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public UpdateVersionAliasRequest withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class UpdateVersionAliasRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateVersionAliasRequest withBody(UpdateVersionAliasRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateVersionAliasRequest  {
     public void setBody(UpdateVersionAliasRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

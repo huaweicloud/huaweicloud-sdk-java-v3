@@ -56,6 +56,8 @@ public class ListTemplatesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListTemplatesResponse withTemplates(List<TemplateResponse> templates) {
         this.templates = templates;
         return this;
@@ -63,9 +65,6 @@ public class ListTemplatesResponse extends SdkResponse {
 
     
     public ListTemplatesResponse addTemplatesItem(TemplateResponse templatesItem) {
-        if (this.templates == null) {
-            this.templates = new ArrayList<>();
-        }
         this.templates.add(templatesItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListTemplatesResponse extends SdkResponse {
     public void setTemplates(List<TemplateResponse> templates) {
         this.templates = templates;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

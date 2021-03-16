@@ -63,6 +63,8 @@ public class ListDatabasesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListDatabasesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -82,6 +84,8 @@ public class ListDatabasesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListDatabasesRequest withPage(Integer page) {
         this.page = page;
@@ -103,6 +107,8 @@ public class ListDatabasesRequest  {
         this.page = page;
     }
 
+    
+
     public ListDatabasesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -122,6 +128,9 @@ public class ListDatabasesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -54,6 +54,8 @@ public class ListEnterpriseMultiAccountResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListEnterpriseMultiAccountResponse withAmountInfos(List<RetrieveAmountInfoV2> amountInfos) {
         this.amountInfos = amountInfos;
         return this;
@@ -61,9 +63,6 @@ public class ListEnterpriseMultiAccountResponse extends SdkResponse {
 
     
     public ListEnterpriseMultiAccountResponse addAmountInfosItem(RetrieveAmountInfoV2 amountInfosItem) {
-        if (this.amountInfos == null) {
-            this.amountInfos = new ArrayList<>();
-        }
         this.amountInfos.add(amountInfosItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListEnterpriseMultiAccountResponse extends SdkResponse {
     public void setAmountInfos(List<RetrieveAmountInfoV2> amountInfos) {
         this.amountInfos = amountInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

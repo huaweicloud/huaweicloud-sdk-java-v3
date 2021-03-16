@@ -35,9 +35,6 @@ public class ListNotificationsResponse extends SdkResponse {
 
     
     public ListNotificationsResponse addNotificationsItem(NotificationList notificationsItem) {
-        if (this.notifications == null) {
-            this.notifications = new ArrayList<>();
-        }
         this.notifications.add(notificationsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListNotificationsResponse extends SdkResponse {
     public void setNotifications(List<NotificationList> notifications) {
         this.notifications = notifications;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

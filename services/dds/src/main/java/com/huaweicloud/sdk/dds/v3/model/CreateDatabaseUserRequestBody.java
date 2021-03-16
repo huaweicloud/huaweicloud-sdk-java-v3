@@ -42,7 +42,7 @@ public class CreateDatabaseUserRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roles")
     
-    private List<RolesOption> roles = new ArrayList<>();
+    private List<RolesOption> roles = null;
     
     public CreateDatabaseUserRequestBody withUserName(String userName) {
         this.userName = userName;
@@ -64,6 +64,8 @@ public class CreateDatabaseUserRequestBody  {
         this.userName = userName;
     }
 
+    
+
     public CreateDatabaseUserRequestBody withUserPwd(String userPwd) {
         this.userPwd = userPwd;
         return this;
@@ -84,6 +86,8 @@ public class CreateDatabaseUserRequestBody  {
         this.userPwd = userPwd;
     }
 
+    
+
     public CreateDatabaseUserRequestBody withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -103,6 +107,8 @@ public class CreateDatabaseUserRequestBody  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
 
     public CreateDatabaseUserRequestBody withRoles(List<RolesOption> roles) {
         this.roles = roles;
@@ -134,6 +140,9 @@ public class CreateDatabaseUserRequestBody  {
     public void setRoles(List<RolesOption> roles) {
         this.roles = roles;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

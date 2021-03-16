@@ -26,19 +26,19 @@ public class ExtendInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="author")
     
-    private ExtendAuthorInfo author = null;
+    private ExtendAuthorInfo author;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updator")
     
-    private ExtendAuthorInfo updator = null;
+    private ExtendAuthorInfo updator;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private AssignedUserInfo domain = null;
+    private AssignedUserInfo domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,13 +74,13 @@ public class ExtendInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="module")
     
-    private AssignedUserInfo module = null;
+    private AssignedUserInfo module;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="issue")
     
-    private AssignedUserInfo issue = null;
+    private AssignedUserInfo issue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,7 +92,7 @@ public class ExtendInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fixed_version")
     
-    private AssignedUserInfo fixedVersion = null;
+    private AssignedUserInfo fixedVersion;
 
     public ExtendInfo withAuthor(ExtendAuthorInfo author) {
         this.author = author;
@@ -121,6 +121,8 @@ public class ExtendInfo  {
         this.author = author;
     }
 
+    
+
     public ExtendInfo withUpdator(ExtendAuthorInfo updator) {
         this.updator = updator;
         return this;
@@ -147,6 +149,8 @@ public class ExtendInfo  {
     public void setUpdator(ExtendAuthorInfo updator) {
         this.updator = updator;
     }
+
+    
 
     public ExtendInfo withDomain(AssignedUserInfo domain) {
         this.domain = domain;
@@ -175,6 +179,8 @@ public class ExtendInfo  {
         this.domain = domain;
     }
 
+    
+
     public ExtendInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -194,6 +200,8 @@ public class ExtendInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ExtendInfo withPreparation(String preparation) {
         this.preparation = preparation;
@@ -215,6 +223,8 @@ public class ExtendInfo  {
         this.preparation = preparation;
     }
 
+    
+
     public ExtendInfo withSteps(List<ExternalServiceCaseStep> steps) {
         this.steps = steps;
         return this;
@@ -222,9 +232,6 @@ public class ExtendInfo  {
 
     
     public ExtendInfo addStepsItem(ExternalServiceCaseStep stepsItem) {
-        if (this.steps == null) {
-            this.steps = new ArrayList<>();
-        }
         this.steps.add(stepsItem);
         return this;
     }
@@ -249,6 +256,8 @@ public class ExtendInfo  {
         this.steps = steps;
     }
 
+    
+
     public ExtendInfo withLabelList(List<AssignedUserInfo> labelList) {
         this.labelList = labelList;
         return this;
@@ -256,9 +265,6 @@ public class ExtendInfo  {
 
     
     public ExtendInfo addLabelListItem(AssignedUserInfo labelListItem) {
-        if (this.labelList == null) {
-            this.labelList = new ArrayList<>();
-        }
         this.labelList.add(labelListItem);
         return this;
     }
@@ -283,6 +289,8 @@ public class ExtendInfo  {
         this.labelList = labelList;
     }
 
+    
+
     public ExtendInfo withDefectList(List<AssignedUserInfo> defectList) {
         this.defectList = defectList;
         return this;
@@ -290,9 +298,6 @@ public class ExtendInfo  {
 
     
     public ExtendInfo addDefectListItem(AssignedUserInfo defectListItem) {
-        if (this.defectList == null) {
-            this.defectList = new ArrayList<>();
-        }
         this.defectList.add(defectListItem);
         return this;
     }
@@ -316,6 +321,8 @@ public class ExtendInfo  {
     public void setDefectList(List<AssignedUserInfo> defectList) {
         this.defectList = defectList;
     }
+
+    
 
     public ExtendInfo withModule(AssignedUserInfo module) {
         this.module = module;
@@ -344,6 +351,8 @@ public class ExtendInfo  {
         this.module = module;
     }
 
+    
+
     public ExtendInfo withIssue(AssignedUserInfo issue) {
         this.issue = issue;
         return this;
@@ -371,6 +380,8 @@ public class ExtendInfo  {
         this.issue = issue;
     }
 
+    
+
     public ExtendInfo withTestVersionId(String testVersionId) {
         this.testVersionId = testVersionId;
         return this;
@@ -390,6 +401,8 @@ public class ExtendInfo  {
     public void setTestVersionId(String testVersionId) {
         this.testVersionId = testVersionId;
     }
+
+    
 
     public ExtendInfo withFixedVersion(AssignedUserInfo fixedVersion) {
         this.fixedVersion = fixedVersion;
@@ -417,6 +430,9 @@ public class ExtendInfo  {
     public void setFixedVersion(AssignedUserInfo fixedVersion) {
         this.fixedVersion = fixedVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -45,7 +45,7 @@ public class CreateAppReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="favorite")
     
-    private Boolean favorite = false;
+    private Boolean favorite;
 
     public CreateAppReq withName(String name) {
         this.name = name;
@@ -67,6 +67,8 @@ public class CreateAppReq  {
         this.name = name;
     }
 
+    
+
     public CreateAppReq withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -86,6 +88,8 @@ public class CreateAppReq  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public CreateAppReq withKey(String key) {
         this.key = key;
@@ -107,6 +111,8 @@ public class CreateAppReq  {
         this.key = key;
     }
 
+    
+
     public CreateAppReq withSecret(String secret) {
         this.secret = secret;
         return this;
@@ -127,6 +133,8 @@ public class CreateAppReq  {
         this.secret = secret;
     }
 
+    
+
     public CreateAppReq withFavorite(Boolean favorite) {
         this.favorite = favorite;
         return this;
@@ -146,6 +154,9 @@ public class CreateAppReq  {
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

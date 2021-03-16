@@ -173,6 +173,8 @@ public class UserVmrDTO  {
         this.id = id;
     }
 
+    
+
     public UserVmrDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
@@ -192,6 +194,8 @@ public class UserVmrDTO  {
     public void setVmrId(String vmrId) {
         this.vmrId = vmrId;
     }
+
+    
 
     public UserVmrDTO withVmrName(String vmrName) {
         this.vmrName = vmrName;
@@ -213,6 +217,8 @@ public class UserVmrDTO  {
         this.vmrName = vmrName;
     }
 
+    
+
     public UserVmrDTO withVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
         return this;
@@ -232,6 +238,8 @@ public class UserVmrDTO  {
     public void setVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
     }
+
+    
 
     public UserVmrDTO withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
@@ -253,6 +261,8 @@ public class UserVmrDTO  {
         this.vmrPkgName = vmrPkgName;
     }
 
+    
+
     public UserVmrDTO withVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
         return this;
@@ -272,6 +282,8 @@ public class UserVmrDTO  {
     public void setVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
     }
+
+    
 
     public UserVmrDTO withVmrPkgLength(Integer vmrPkgLength) {
         this.vmrPkgLength = vmrPkgLength;
@@ -293,6 +305,8 @@ public class UserVmrDTO  {
         this.vmrPkgLength = vmrPkgLength;
     }
 
+    
+
     public UserVmrDTO withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -312,6 +326,9 @@ public class UserVmrDTO  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

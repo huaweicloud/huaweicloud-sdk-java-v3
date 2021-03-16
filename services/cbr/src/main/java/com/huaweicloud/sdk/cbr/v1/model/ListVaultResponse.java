@@ -41,9 +41,6 @@ public class ListVaultResponse extends SdkResponse {
 
     
     public ListVaultResponse addVaultsItem(Vault vaultsItem) {
-        if (this.vaults == null) {
-            this.vaults = new ArrayList<>();
-        }
         this.vaults.add(vaultsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListVaultResponse extends SdkResponse {
         this.vaults = vaults;
     }
 
+    
+
     public ListVaultResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class ListVaultResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class CheckPasswordRequestBody  {
         this.userPwd = userPwd;
     }
 
+    
+
     public CheckPasswordRequestBody withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -75,6 +77,8 @@ public class CheckPasswordRequestBody  {
         this.userName = userName;
     }
 
+    
+
     public CheckPasswordRequestBody withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -94,6 +98,9 @@ public class CheckPasswordRequestBody  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

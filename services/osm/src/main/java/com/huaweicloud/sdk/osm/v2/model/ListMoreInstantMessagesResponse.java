@@ -56,6 +56,8 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListMoreInstantMessagesResponse withMessageList(List<QueryMessageInfoV2> messageList) {
         this.messageList = messageList;
         return this;
@@ -63,9 +65,6 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
 
     
     public ListMoreInstantMessagesResponse addMessageListItem(QueryMessageInfoV2 messageListItem) {
-        if (this.messageList == null) {
-            this.messageList = new ArrayList<>();
-        }
         this.messageList.add(messageListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
     public void setMessageList(List<QueryMessageInfoV2> messageList) {
         this.messageList = messageList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

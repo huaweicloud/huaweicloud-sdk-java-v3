@@ -55,13 +55,13 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_time")
     
-    private OffsetDateTime deployTime = null;
+    private OffsetDateTime deployTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="api_definition")
     
-    private LdApiInfo apiDefinition = null;
+    private LdApiInfo apiDefinition;
 
     public PublishLiveDataApiV2Response withId(String id) {
         this.id = id;
@@ -83,6 +83,8 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public PublishLiveDataApiV2Response withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -102,6 +104,8 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public PublishLiveDataApiV2Response withGroupId(String groupId) {
         this.groupId = groupId;
@@ -123,6 +127,8 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
         this.groupId = groupId;
     }
 
+    
+
     public PublishLiveDataApiV2Response withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -142,6 +148,8 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public PublishLiveDataApiV2Response withApiId(String apiId) {
         this.apiId = apiId;
@@ -163,6 +171,8 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
         this.apiId = apiId;
     }
 
+    
+
     public PublishLiveDataApiV2Response withDeployTime(OffsetDateTime deployTime) {
         this.deployTime = deployTime;
         return this;
@@ -182,6 +192,8 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
     public void setDeployTime(OffsetDateTime deployTime) {
         this.deployTime = deployTime;
     }
+
+    
 
     public PublishLiveDataApiV2Response withApiDefinition(LdApiInfo apiDefinition) {
         this.apiDefinition = apiDefinition;
@@ -209,6 +221,9 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
     public void setApiDefinition(LdApiInfo apiDefinition) {
         this.apiDefinition = apiDefinition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

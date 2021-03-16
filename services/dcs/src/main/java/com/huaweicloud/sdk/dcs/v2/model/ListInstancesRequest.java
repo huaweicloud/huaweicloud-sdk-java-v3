@@ -91,6 +91,8 @@ public class ListInstancesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListInstancesRequest withIncludeFailure(String includeFailure) {
         this.includeFailure = includeFailure;
         return this;
@@ -110,6 +112,8 @@ public class ListInstancesRequest  {
     public void setIncludeFailure(String includeFailure) {
         this.includeFailure = includeFailure;
     }
+
+    
 
     public ListInstancesRequest withName(String name) {
         this.name = name;
@@ -131,6 +135,8 @@ public class ListInstancesRequest  {
         this.name = name;
     }
 
+    
+
     public ListInstancesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -150,6 +156,8 @@ public class ListInstancesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListInstancesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -171,6 +179,8 @@ public class ListInstancesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListInstancesRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -190,6 +200,8 @@ public class ListInstancesRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListInstancesRequest withNameEqual(String nameEqual) {
         this.nameEqual = nameEqual;
@@ -211,6 +223,8 @@ public class ListInstancesRequest  {
         this.nameEqual = nameEqual;
     }
 
+    
+
     public ListInstancesRequest withTags(String tags) {
         this.tags = tags;
         return this;
@@ -231,6 +245,8 @@ public class ListInstancesRequest  {
         this.tags = tags;
     }
 
+    
+
     public ListInstancesRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -250,6 +266,9 @@ public class ListInstancesRequest  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

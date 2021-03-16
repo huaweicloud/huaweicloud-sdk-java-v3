@@ -52,7 +52,7 @@ public class CreateFileRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FileCreate body = null;
+    private FileCreate body;
 
     public CreateFileRequest withXRepoAuth(String xRepoAuth) {
         this.xRepoAuth = xRepoAuth;
@@ -76,6 +76,8 @@ public class CreateFileRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public CreateFileRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -95,6 +97,8 @@ public class CreateFileRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public CreateFileRequest withProject(String project) {
         this.project = project;
@@ -116,6 +120,8 @@ public class CreateFileRequest  {
         this.project = project;
     }
 
+    
+
     public CreateFileRequest withPath(String path) {
         this.path = path;
         return this;
@@ -136,6 +142,8 @@ public class CreateFileRequest  {
         this.path = path;
     }
 
+    
+
     public CreateFileRequest withRef(String ref) {
         this.ref = ref;
         return this;
@@ -155,6 +163,8 @@ public class CreateFileRequest  {
     public void setRef(String ref) {
         this.ref = ref;
     }
+
+    
 
     public CreateFileRequest withBody(FileCreate body) {
         this.body = body;
@@ -182,6 +192,9 @@ public class CreateFileRequest  {
     public void setBody(FileCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

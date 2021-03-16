@@ -49,6 +49,8 @@ public class GlanceCreateTagRequest  {
         this.imageId = imageId;
     }
 
+    
+
     public GlanceCreateTagRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -68,6 +70,9 @@ public class GlanceCreateTagRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

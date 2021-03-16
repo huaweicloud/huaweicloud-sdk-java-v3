@@ -40,7 +40,7 @@ public class UpdateProgramRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateProgramRequestDTO body = null;
+    private UpdateProgramRequestDTO body;
 
     public UpdateProgramRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class UpdateProgramRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateProgramRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class UpdateProgramRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public UpdateProgramRequest withId(String id) {
         this.id = id;
         return this;
@@ -103,6 +107,8 @@ public class UpdateProgramRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateProgramRequest withBody(UpdateProgramRequestDTO body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class UpdateProgramRequest  {
     public void setBody(UpdateProgramRequestDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

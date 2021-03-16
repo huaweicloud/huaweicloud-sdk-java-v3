@@ -51,6 +51,8 @@ public class AclApiBindingCreate  {
         this.aclId = aclId;
     }
 
+    
+
     public AclApiBindingCreate withPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
         return this;
@@ -58,9 +60,6 @@ public class AclApiBindingCreate  {
 
     
     public AclApiBindingCreate addPublishIdsItem(String publishIdsItem) {
-        if (this.publishIds == null) {
-            this.publishIds = new ArrayList<>();
-        }
         this.publishIds.add(publishIdsItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class AclApiBindingCreate  {
     public void setPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

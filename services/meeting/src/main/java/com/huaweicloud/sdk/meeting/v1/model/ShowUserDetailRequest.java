@@ -63,6 +63,8 @@ public class ShowUserDetailRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowUserDetailRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -83,6 +85,8 @@ public class ShowUserDetailRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ShowUserDetailRequest withAccount(String account) {
         this.account = account;
         return this;
@@ -102,6 +106,8 @@ public class ShowUserDetailRequest  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public ShowUserDetailRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
@@ -124,6 +130,9 @@ public class ShowUserDetailRequest  {
     public void setAccountType(Integer accountType) {
         this.accountType = accountType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class ShowOpLogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operation_log")
     
-    private OperationLog operationLog = null;
+    private OperationLog operationLog;
 
     public ShowOpLogResponse withOperationLog(OperationLog operationLog) {
         this.operationLog = operationLog;
@@ -52,6 +52,9 @@ public class ShowOpLogResponse extends SdkResponse {
     public void setOperationLog(OperationLog operationLog) {
         this.operationLog = operationLog;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

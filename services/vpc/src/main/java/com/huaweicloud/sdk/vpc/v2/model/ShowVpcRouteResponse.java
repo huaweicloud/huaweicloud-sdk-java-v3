@@ -24,7 +24,7 @@ public class ShowVpcRouteResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="route")
     
-    private VpcRoute route = null;
+    private VpcRoute route;
 
     public ShowVpcRouteResponse withRoute(VpcRoute route) {
         this.route = route;
@@ -52,6 +52,9 @@ public class ShowVpcRouteResponse extends SdkResponse {
     public void setRoute(VpcRoute route) {
         this.route = route;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

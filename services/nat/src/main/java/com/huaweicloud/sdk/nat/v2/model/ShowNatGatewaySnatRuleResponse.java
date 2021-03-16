@@ -24,7 +24,7 @@ public class ShowNatGatewaySnatRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snat_rule")
     
-    private NatGatewaySnatRuleResponseBody snatRule = null;
+    private NatGatewaySnatRuleResponseBody snatRule;
 
     public ShowNatGatewaySnatRuleResponse withSnatRule(NatGatewaySnatRuleResponseBody snatRule) {
         this.snatRule = snatRule;
@@ -52,6 +52,9 @@ public class ShowNatGatewaySnatRuleResponse extends SdkResponse {
     public void setSnatRule(NatGatewaySnatRuleResponseBody snatRule) {
         this.snatRule = snatRule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

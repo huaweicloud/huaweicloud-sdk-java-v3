@@ -25,7 +25,7 @@ public class MpcMultiAudio  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,6 +66,8 @@ public class MpcMultiAudio  {
         this.output = output;
     }
 
+    
+
     public MpcMultiAudio withAudioFiles(List<AudioFile> audioFiles) {
         this.audioFiles = audioFiles;
         return this;
@@ -73,9 +75,6 @@ public class MpcMultiAudio  {
 
     
     public MpcMultiAudio addAudioFilesItem(AudioFile audioFilesItem) {
-        if (this.audioFiles == null) {
-            this.audioFiles = new ArrayList<>();
-        }
         this.audioFiles.add(audioFilesItem);
         return this;
     }
@@ -100,6 +99,8 @@ public class MpcMultiAudio  {
         this.audioFiles = audioFiles;
     }
 
+    
+
     public MpcMultiAudio withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
@@ -119,6 +120,9 @@ public class MpcMultiAudio  {
     public void setOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

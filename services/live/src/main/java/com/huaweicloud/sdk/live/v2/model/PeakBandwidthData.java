@@ -51,6 +51,8 @@ public class PeakBandwidthData  {
         this.value = value;
     }
 
+    
+
     public PeakBandwidthData withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -70,6 +72,9 @@ public class PeakBandwidthData  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -29,7 +29,7 @@ public class ImageInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,6 +153,8 @@ public class ImageInfo  {
         this.id = id;
     }
 
+    
+
     public ImageInfo withName(String name) {
         this.name = name;
         return this;
@@ -172,6 +174,8 @@ public class ImageInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ImageInfo withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -195,6 +199,8 @@ public class ImageInfo  {
         this.osType = osType;
     }
 
+    
+
     public ImageInfo withLinks(List<Links> links) {
         this.links = links;
         return this;
@@ -202,9 +208,6 @@ public class ImageInfo  {
 
     
     public ImageInfo addLinksItem(Links linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -228,6 +231,9 @@ public class ImageInfo  {
     public void setLinks(List<Links> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

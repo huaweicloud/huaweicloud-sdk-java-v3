@@ -28,7 +28,7 @@ public class BatchDeleteVolumeTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteVolumeTagsRequestBody body = null;
+    private BatchDeleteVolumeTagsRequestBody body;
 
     public BatchDeleteVolumeTagsRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -49,6 +49,8 @@ public class BatchDeleteVolumeTagsRequest  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
 
     public BatchDeleteVolumeTagsRequest withBody(BatchDeleteVolumeTagsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchDeleteVolumeTagsRequest  {
     public void setBody(BatchDeleteVolumeTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

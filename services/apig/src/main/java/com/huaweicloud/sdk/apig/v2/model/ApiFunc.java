@@ -147,7 +147,7 @@ public class ApiFunc  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -159,7 +159,7 @@ public class ApiFunc  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public ApiFunc withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -181,6 +181,8 @@ public class ApiFunc  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public ApiFunc withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -200,6 +202,8 @@ public class ApiFunc  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ApiFunc withInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
@@ -221,6 +225,8 @@ public class ApiFunc  {
         this.invocationType = invocationType;
     }
 
+    
+
     public ApiFunc withVersion(String version) {
         this.version = version;
         return this;
@@ -240,6 +246,8 @@ public class ApiFunc  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ApiFunc withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -261,6 +269,8 @@ public class ApiFunc  {
         this.timeout = timeout;
     }
 
+    
+
     public ApiFunc withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -280,6 +290,8 @@ public class ApiFunc  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
 
     public ApiFunc withId(String id) {
         this.id = id;
@@ -301,6 +313,8 @@ public class ApiFunc  {
         this.id = id;
     }
 
+    
+
     public ApiFunc withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -320,6 +334,8 @@ public class ApiFunc  {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public ApiFunc withStatus(Integer status) {
         this.status = status;
@@ -341,6 +357,8 @@ public class ApiFunc  {
         this.status = status;
     }
 
+    
+
     public ApiFunc withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -360,6 +378,9 @@ public class ApiFunc  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

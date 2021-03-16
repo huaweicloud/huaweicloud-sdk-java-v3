@@ -71,7 +71,7 @@ public class PolicyRoleResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -95,7 +95,7 @@ public class PolicyRoleResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private ServicePolicy policy = null;
+    private ServicePolicy policy;
 
     public PolicyRoleResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -117,6 +117,8 @@ public class PolicyRoleResult  {
         this.domainId = domainId;
     }
 
+    
+
     public PolicyRoleResult withReferences(Integer references) {
         this.references = references;
         return this;
@@ -136,6 +138,8 @@ public class PolicyRoleResult  {
     public void setReferences(Integer references) {
         this.references = references;
     }
+
+    
 
     public PolicyRoleResult withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
@@ -157,6 +161,8 @@ public class PolicyRoleResult  {
         this.updatedTime = updatedTime;
     }
 
+    
+
     public PolicyRoleResult withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -176,6 +182,8 @@ public class PolicyRoleResult  {
     public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
+
+    
 
     public PolicyRoleResult withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
@@ -197,6 +205,8 @@ public class PolicyRoleResult  {
         this.descriptionCn = descriptionCn;
     }
 
+    
+
     public PolicyRoleResult withCatalog(String catalog) {
         this.catalog = catalog;
         return this;
@@ -216,6 +226,8 @@ public class PolicyRoleResult  {
     public void setCatalog(String catalog) {
         this.catalog = catalog;
     }
+
+    
 
     public PolicyRoleResult withName(String name) {
         this.name = name;
@@ -237,6 +249,8 @@ public class PolicyRoleResult  {
         this.name = name;
     }
 
+    
+
     public PolicyRoleResult withDescription(String description) {
         this.description = description;
         return this;
@@ -256,6 +270,8 @@ public class PolicyRoleResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public PolicyRoleResult withLinks(LinksSelf links) {
         this.links = links;
@@ -284,6 +300,8 @@ public class PolicyRoleResult  {
         this.links = links;
     }
 
+    
+
     public PolicyRoleResult withId(String id) {
         this.id = id;
         return this;
@@ -303,6 +321,8 @@ public class PolicyRoleResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public PolicyRoleResult withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -324,6 +344,8 @@ public class PolicyRoleResult  {
         this.displayName = displayName;
     }
 
+    
+
     public PolicyRoleResult withType(String type) {
         this.type = type;
         return this;
@@ -343,6 +365,8 @@ public class PolicyRoleResult  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public PolicyRoleResult withPolicy(ServicePolicy policy) {
         this.policy = policy;
@@ -370,6 +394,9 @@ public class PolicyRoleResult  {
     public void setPolicy(ServicePolicy policy) {
         this.policy = policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

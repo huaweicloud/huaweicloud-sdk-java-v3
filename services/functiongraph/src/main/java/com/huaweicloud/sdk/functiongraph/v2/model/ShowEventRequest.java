@@ -49,6 +49,8 @@ public class ShowEventRequest  {
         this.eventId = eventId;
     }
 
+    
+
     public ShowEventRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
         return this;
@@ -68,6 +70,9 @@ public class ShowEventRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

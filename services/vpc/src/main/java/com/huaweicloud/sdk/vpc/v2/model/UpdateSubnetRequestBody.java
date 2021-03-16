@@ -22,7 +22,7 @@ public class UpdateSubnetRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet")
     
-    private UpdateSubnetOption subnet = null;
+    private UpdateSubnetOption subnet;
 
     public UpdateSubnetRequestBody withSubnet(UpdateSubnetOption subnet) {
         this.subnet = subnet;
@@ -50,6 +50,9 @@ public class UpdateSubnetRequestBody  {
     public void setSubnet(UpdateSubnetOption subnet) {
         this.subnet = subnet;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

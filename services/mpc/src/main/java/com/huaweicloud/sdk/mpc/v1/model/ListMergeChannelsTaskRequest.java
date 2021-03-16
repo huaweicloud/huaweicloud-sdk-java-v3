@@ -147,13 +147,13 @@ public class ListMergeChannelsTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListMergeChannelsTaskRequest withTaskId(List<String> taskId) {
         this.taskId = taskId;
@@ -162,9 +162,6 @@ public class ListMergeChannelsTaskRequest  {
 
     
     public ListMergeChannelsTaskRequest addTaskIdItem(String taskIdItem) {
-        if (this.taskId == null) {
-            this.taskId = new ArrayList<>();
-        }
         this.taskId.add(taskIdItem);
         return this;
     }
@@ -189,6 +186,8 @@ public class ListMergeChannelsTaskRequest  {
         this.taskId = taskId;
     }
 
+    
+
     public ListMergeChannelsTaskRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -208,6 +207,8 @@ public class ListMergeChannelsTaskRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListMergeChannelsTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -229,6 +230,8 @@ public class ListMergeChannelsTaskRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListMergeChannelsTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -248,6 +251,8 @@ public class ListMergeChannelsTaskRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListMergeChannelsTaskRequest withPage(Integer page) {
         this.page = page;
@@ -271,6 +276,8 @@ public class ListMergeChannelsTaskRequest  {
         this.page = page;
     }
 
+    
+
     public ListMergeChannelsTaskRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -292,6 +299,9 @@ public class ListMergeChannelsTaskRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

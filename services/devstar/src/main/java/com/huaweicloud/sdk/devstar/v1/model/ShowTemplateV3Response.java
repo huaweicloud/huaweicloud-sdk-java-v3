@@ -123,7 +123,7 @@ public class ShowTemplateV3Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private Object properties = null;
+    private Object properties;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -159,7 +159,7 @@ public class ShowTemplateV3Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deployment")
     
-    private Object deployment = null;
+    private Object deployment;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -205,6 +205,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowTemplateV3Response withTitle(String title) {
         this.title = title;
         return this;
@@ -224,6 +226,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    
 
     public ShowTemplateV3Response withDescription(String description) {
         this.description = description;
@@ -245,6 +249,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowTemplateV3Response withCreatorId(String creatorId) {
         this.creatorId = creatorId;
         return this;
@@ -264,6 +270,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setCreatorId(String creatorId) {
         this.creatorId = creatorId;
     }
+
+    
 
     public ShowTemplateV3Response withCreator(String creator) {
         this.creator = creator;
@@ -285,6 +293,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.creator = creator;
     }
 
+    
+
     public ShowTemplateV3Response withNickname(String nickname) {
         this.nickname = nickname;
         return this;
@@ -304,6 +314,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
+
+    
 
     public ShowTemplateV3Response withScore(Integer score) {
         this.score = score;
@@ -325,6 +337,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.score = score;
     }
 
+    
+
     public ShowTemplateV3Response withStatus(Integer status) {
         this.status = status;
         return this;
@@ -344,6 +358,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public ShowTemplateV3Response withViewCount(Integer viewCount) {
         this.viewCount = viewCount;
@@ -365,6 +381,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.viewCount = viewCount;
     }
 
+    
+
     public ShowTemplateV3Response withUsageCount(Integer usageCount) {
         this.usageCount = usageCount;
         return this;
@@ -384,6 +402,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setUsageCount(Integer usageCount) {
         this.usageCount = usageCount;
     }
+
+    
 
     public ShowTemplateV3Response withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -405,6 +425,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public ShowTemplateV3Response withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -424,6 +446,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public ShowTemplateV3Response withPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
@@ -445,6 +469,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.publishedAt = publishedAt;
     }
 
+    
+
     public ShowTemplateV3Response withFavoriteState(Integer favoriteState) {
         this.favoriteState = favoriteState;
         return this;
@@ -465,6 +491,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.favoriteState = favoriteState;
     }
 
+    
+
     public ShowTemplateV3Response withMaintainers(List<String> maintainers) {
         this.maintainers = maintainers;
         return this;
@@ -472,9 +500,6 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addMaintainersItem(String maintainersItem) {
-        if (this.maintainers == null) {
-            this.maintainers = new ArrayList<>();
-        }
         this.maintainers.add(maintainersItem);
         return this;
     }
@@ -499,6 +524,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.maintainers = maintainers;
     }
 
+    
+
     public ShowTemplateV3Response withPlatformSource(Integer platformSource) {
         this.platformSource = platformSource;
         return this;
@@ -518,6 +545,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setPlatformSource(Integer platformSource) {
         this.platformSource = platformSource;
     }
+
+    
 
     public ShowTemplateV3Response withProperties(Object properties) {
         this.properties = properties;
@@ -539,6 +568,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.properties = properties;
     }
 
+    
+
     public ShowTemplateV3Response withDependencies(List<Object> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -546,9 +577,6 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addDependenciesItem(Object dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
@@ -573,6 +601,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.dependencies = dependencies;
     }
 
+    
+
     public ShowTemplateV3Response withDependencyType(String dependencyType) {
         this.dependencyType = dependencyType;
         return this;
@@ -592,6 +622,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setDependencyType(String dependencyType) {
         this.dependencyType = dependencyType;
     }
+
+    
 
     public ShowTemplateV3Response withStore(Integer store) {
         this.store = store;
@@ -613,6 +645,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.store = store;
     }
 
+    
+
     public ShowTemplateV3Response withStoreInfo(String storeInfo) {
         this.storeInfo = storeInfo;
         return this;
@@ -632,6 +666,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setStoreInfo(String storeInfo) {
         this.storeInfo = storeInfo;
     }
+
+    
 
     public ShowTemplateV3Response withFileSize(Integer fileSize) {
         this.fileSize = fileSize;
@@ -653,6 +689,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.fileSize = fileSize;
     }
 
+    
+
     public ShowTemplateV3Response withDeployment(Object deployment) {
         this.deployment = deployment;
         return this;
@@ -672,6 +710,8 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setDeployment(Object deployment) {
         this.deployment = deployment;
     }
+
+    
 
     public ShowTemplateV3Response withIsStatic(Integer isStatic) {
         this.isStatic = isStatic;
@@ -693,6 +733,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.isStatic = isStatic;
     }
 
+    
+
     public ShowTemplateV3Response withUpdateId(String updateId) {
         this.updateId = updateId;
         return this;
@@ -713,6 +755,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.updateId = updateId;
     }
 
+    
+
     public ShowTemplateV3Response withTopic(List<TopicCategory> topic) {
         this.topic = topic;
         return this;
@@ -720,9 +764,6 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addTopicItem(TopicCategory topicItem) {
-        if (this.topic == null) {
-            this.topic = new ArrayList<>();
-        }
         this.topic.add(topicItem);
         return this;
     }
@@ -747,6 +788,8 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.topic = topic;
     }
 
+    
+
     public ShowTemplateV3Response withTags(List<TagInfo> tags) {
         this.tags = tags;
         return this;
@@ -754,9 +797,6 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addTagsItem(TagInfo tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -780,6 +820,9 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setTags(List<TagInfo> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

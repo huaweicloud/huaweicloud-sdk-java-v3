@@ -54,6 +54,8 @@ public class ListBackupRecordsResponse extends SdkResponse {
         this.totalNum = totalNum;
     }
 
+    
+
     public ListBackupRecordsResponse withBackupRecordResponse(List<BackupRecordResponse> backupRecordResponse) {
         this.backupRecordResponse = backupRecordResponse;
         return this;
@@ -61,9 +63,6 @@ public class ListBackupRecordsResponse extends SdkResponse {
 
     
     public ListBackupRecordsResponse addBackupRecordResponseItem(BackupRecordResponse backupRecordResponseItem) {
-        if (this.backupRecordResponse == null) {
-            this.backupRecordResponse = new ArrayList<>();
-        }
         this.backupRecordResponse.add(backupRecordResponseItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListBackupRecordsResponse extends SdkResponse {
     public void setBackupRecordResponse(List<BackupRecordResponse> backupRecordResponse) {
         this.backupRecordResponse = backupRecordResponse;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

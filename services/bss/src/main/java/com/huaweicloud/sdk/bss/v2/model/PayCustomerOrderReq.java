@@ -59,6 +59,8 @@ public class PayCustomerOrderReq  {
         this.orderId = orderId;
     }
 
+    
+
     public PayCustomerOrderReq withCouponInfos(List<CouponSimpleInfoOrderPay> couponInfos) {
         this.couponInfos = couponInfos;
         return this;
@@ -66,9 +68,6 @@ public class PayCustomerOrderReq  {
 
     
     public PayCustomerOrderReq addCouponInfosItem(CouponSimpleInfoOrderPay couponInfosItem) {
-        if (this.couponInfos == null) {
-            this.couponInfos = new ArrayList<>();
-        }
         this.couponInfos.add(couponInfosItem);
         return this;
     }
@@ -93,6 +92,8 @@ public class PayCustomerOrderReq  {
         this.couponInfos = couponInfos;
     }
 
+    
+
     public PayCustomerOrderReq withDiscountInfos(List<DiscountSimpleInfo> discountInfos) {
         this.discountInfos = discountInfos;
         return this;
@@ -100,9 +101,6 @@ public class PayCustomerOrderReq  {
 
     
     public PayCustomerOrderReq addDiscountInfosItem(DiscountSimpleInfo discountInfosItem) {
-        if (this.discountInfos == null) {
-            this.discountInfos = new ArrayList<>();
-        }
         this.discountInfos.add(discountInfosItem);
         return this;
     }
@@ -126,6 +124,9 @@ public class PayCustomerOrderReq  {
     public void setDiscountInfos(List<DiscountSimpleInfo> discountInfos) {
         this.discountInfos = discountInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

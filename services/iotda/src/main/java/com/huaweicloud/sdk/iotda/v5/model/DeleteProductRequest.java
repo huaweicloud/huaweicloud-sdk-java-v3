@@ -55,6 +55,8 @@ public class DeleteProductRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteProductRequest withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteProductRequest  {
         this.productId = productId;
     }
 
+    
+
     public DeleteProductRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteProductRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

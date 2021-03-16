@@ -35,9 +35,6 @@ public class ListMembersResponse extends SdkResponse {
 
     
     public ListMembersResponse addMembersItem(MemberResp membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListMembersResponse extends SdkResponse {
     public void setMembers(List<MemberResp> members) {
         this.members = members;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

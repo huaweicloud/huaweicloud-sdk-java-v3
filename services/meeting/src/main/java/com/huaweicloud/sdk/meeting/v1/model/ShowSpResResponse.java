@@ -44,6 +44,9 @@ public class ShowSpResResponse extends SdkResponse {
     public void setUsedAccountsCount(Integer usedAccountsCount) {
         this.usedAccountsCount = usedAccountsCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

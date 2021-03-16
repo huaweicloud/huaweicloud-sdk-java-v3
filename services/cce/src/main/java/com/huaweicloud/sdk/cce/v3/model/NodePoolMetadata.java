@@ -49,6 +49,8 @@ public class NodePoolMetadata  {
         this.name = name;
     }
 
+    
+
     public NodePoolMetadata withUid(String uid) {
         this.uid = uid;
         return this;
@@ -68,6 +70,9 @@ public class NodePoolMetadata  {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

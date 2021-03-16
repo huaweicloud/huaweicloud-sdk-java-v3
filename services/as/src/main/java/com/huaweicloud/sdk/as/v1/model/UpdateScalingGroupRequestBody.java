@@ -428,6 +428,8 @@ public class UpdateScalingGroupRequestBody  {
         this.scalingGroupName = scalingGroupName;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withDesireInstanceNumber(Integer desireInstanceNumber) {
         this.desireInstanceNumber = desireInstanceNumber;
         return this;
@@ -447,6 +449,8 @@ public class UpdateScalingGroupRequestBody  {
     public void setDesireInstanceNumber(Integer desireInstanceNumber) {
         this.desireInstanceNumber = desireInstanceNumber;
     }
+
+    
 
     public UpdateScalingGroupRequestBody withMinInstanceNumber(Integer minInstanceNumber) {
         this.minInstanceNumber = minInstanceNumber;
@@ -468,6 +472,8 @@ public class UpdateScalingGroupRequestBody  {
         this.minInstanceNumber = minInstanceNumber;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withMaxInstanceNumber(Integer maxInstanceNumber) {
         this.maxInstanceNumber = maxInstanceNumber;
         return this;
@@ -487,6 +493,8 @@ public class UpdateScalingGroupRequestBody  {
     public void setMaxInstanceNumber(Integer maxInstanceNumber) {
         this.maxInstanceNumber = maxInstanceNumber;
     }
+
+    
 
     public UpdateScalingGroupRequestBody withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
@@ -510,6 +518,8 @@ public class UpdateScalingGroupRequestBody  {
         this.coolDownTime = coolDownTime;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -517,9 +527,6 @@ public class UpdateScalingGroupRequestBody  {
 
     
     public UpdateScalingGroupRequestBody addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -544,6 +551,8 @@ public class UpdateScalingGroupRequestBody  {
         this.availableZones = availableZones;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withNetworks(List<Networks> networks) {
         this.networks = networks;
         return this;
@@ -551,9 +560,6 @@ public class UpdateScalingGroupRequestBody  {
 
     
     public UpdateScalingGroupRequestBody addNetworksItem(Networks networksItem) {
-        if (this.networks == null) {
-            this.networks = new ArrayList<>();
-        }
         this.networks.add(networksItem);
         return this;
     }
@@ -578,6 +584,8 @@ public class UpdateScalingGroupRequestBody  {
         this.networks = networks;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withSecurityGroups(List<SecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -585,9 +593,6 @@ public class UpdateScalingGroupRequestBody  {
 
     
     public UpdateScalingGroupRequestBody addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -612,6 +617,8 @@ public class UpdateScalingGroupRequestBody  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withLbListenerId(String lbListenerId) {
         this.lbListenerId = lbListenerId;
         return this;
@@ -632,6 +639,8 @@ public class UpdateScalingGroupRequestBody  {
         this.lbListenerId = lbListenerId;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withLbaasListeners(List<LbaasListeners> lbaasListeners) {
         this.lbaasListeners = lbaasListeners;
         return this;
@@ -639,9 +648,6 @@ public class UpdateScalingGroupRequestBody  {
 
     
     public UpdateScalingGroupRequestBody addLbaasListenersItem(LbaasListeners lbaasListenersItem) {
-        if (this.lbaasListeners == null) {
-            this.lbaasListeners = new ArrayList<>();
-        }
         this.lbaasListeners.add(lbaasListenersItem);
         return this;
     }
@@ -666,6 +672,8 @@ public class UpdateScalingGroupRequestBody  {
         this.lbaasListeners = lbaasListeners;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withHealthPeriodicAuditMethod(HealthPeriodicAuditMethodEnum healthPeriodicAuditMethod) {
         this.healthPeriodicAuditMethod = healthPeriodicAuditMethod;
         return this;
@@ -686,6 +694,8 @@ public class UpdateScalingGroupRequestBody  {
         this.healthPeriodicAuditMethod = healthPeriodicAuditMethod;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
         return this;
@@ -705,6 +715,8 @@ public class UpdateScalingGroupRequestBody  {
     public void setHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
     }
+
+    
 
     public UpdateScalingGroupRequestBody withHealthPeriodicAuditGracePeriod(Integer healthPeriodicAuditGracePeriod) {
         this.healthPeriodicAuditGracePeriod = healthPeriodicAuditGracePeriod;
@@ -728,6 +740,8 @@ public class UpdateScalingGroupRequestBody  {
         this.healthPeriodicAuditGracePeriod = healthPeriodicAuditGracePeriod;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withInstanceTerminatePolicy(InstanceTerminatePolicyEnum instanceTerminatePolicy) {
         this.instanceTerminatePolicy = instanceTerminatePolicy;
         return this;
@@ -747,6 +761,8 @@ public class UpdateScalingGroupRequestBody  {
     public void setInstanceTerminatePolicy(InstanceTerminatePolicyEnum instanceTerminatePolicy) {
         this.instanceTerminatePolicy = instanceTerminatePolicy;
     }
+
+    
 
     public UpdateScalingGroupRequestBody withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
@@ -768,6 +784,8 @@ public class UpdateScalingGroupRequestBody  {
         this.scalingConfigurationId = scalingConfigurationId;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withNotifications(List<String> notifications) {
         this.notifications = notifications;
         return this;
@@ -775,9 +793,6 @@ public class UpdateScalingGroupRequestBody  {
 
     
     public UpdateScalingGroupRequestBody addNotificationsItem(String notificationsItem) {
-        if (this.notifications == null) {
-            this.notifications = new ArrayList<>();
-        }
         this.notifications.add(notificationsItem);
         return this;
     }
@@ -802,6 +817,8 @@ public class UpdateScalingGroupRequestBody  {
         this.notifications = notifications;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withDeletePublicip(Boolean deletePublicip) {
         this.deletePublicip = deletePublicip;
         return this;
@@ -822,6 +839,8 @@ public class UpdateScalingGroupRequestBody  {
         this.deletePublicip = deletePublicip;
     }
 
+    
+
     public UpdateScalingGroupRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -841,6 +860,9 @@ public class UpdateScalingGroupRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

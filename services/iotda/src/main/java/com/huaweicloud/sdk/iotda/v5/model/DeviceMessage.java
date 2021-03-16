@@ -33,7 +33,7 @@ public class DeviceMessage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    private Object message = null;
+    private Object message;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,6 +91,8 @@ public class DeviceMessage  {
         this.messageId = messageId;
     }
 
+    
+
     public DeviceMessage withName(String name) {
         this.name = name;
         return this;
@@ -110,6 +112,8 @@ public class DeviceMessage  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public DeviceMessage withMessage(Object message) {
         this.message = message;
@@ -131,6 +135,8 @@ public class DeviceMessage  {
         this.message = message;
     }
 
+    
+
     public DeviceMessage withEncoding(String encoding) {
         this.encoding = encoding;
         return this;
@@ -150,6 +156,8 @@ public class DeviceMessage  {
     public void setEncoding(String encoding) {
         this.encoding = encoding;
     }
+
+    
 
     public DeviceMessage withPayloadFormat(String payloadFormat) {
         this.payloadFormat = payloadFormat;
@@ -171,6 +179,8 @@ public class DeviceMessage  {
         this.payloadFormat = payloadFormat;
     }
 
+    
+
     public DeviceMessage withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -190,6 +200,8 @@ public class DeviceMessage  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public DeviceMessage withStatus(String status) {
         this.status = status;
@@ -211,6 +223,8 @@ public class DeviceMessage  {
         this.status = status;
     }
 
+    
+
     public DeviceMessage withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -231,6 +245,8 @@ public class DeviceMessage  {
         this.createdTime = createdTime;
     }
 
+    
+
     public DeviceMessage withFinishedTime(String finishedTime) {
         this.finishedTime = finishedTime;
         return this;
@@ -250,6 +266,9 @@ public class DeviceMessage  {
     public void setFinishedTime(String finishedTime) {
         this.finishedTime = finishedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

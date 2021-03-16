@@ -61,6 +61,8 @@ public class NovaSimpleKeypair  {
         this.fingerprint = fingerprint;
     }
 
+    
+
     public NovaSimpleKeypair withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class NovaSimpleKeypair  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NovaSimpleKeypair withPublicKey(String publicKey) {
         this.publicKey = publicKey;
@@ -101,6 +105,8 @@ public class NovaSimpleKeypair  {
         this.publicKey = publicKey;
     }
 
+    
+
     public NovaSimpleKeypair withType(String type) {
         this.type = type;
         return this;
@@ -120,6 +126,9 @@ public class NovaSimpleKeypair  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

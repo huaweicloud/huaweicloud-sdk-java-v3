@@ -62,6 +62,8 @@ public class QuotaDetailBackups  {
         this.inUse = inUse;
     }
 
+    
+
     public QuotaDetailBackups withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -81,6 +83,8 @@ public class QuotaDetailBackups  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public QuotaDetailBackups withReserved(Integer reserved) {
         this.reserved = reserved;
@@ -102,6 +106,8 @@ public class QuotaDetailBackups  {
         this.reserved = reserved;
     }
 
+    
+
     public QuotaDetailBackups withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
@@ -121,6 +127,9 @@ public class QuotaDetailBackups  {
     public void setAllocated(Integer allocated) {
         this.allocated = allocated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

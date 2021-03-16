@@ -52,6 +52,8 @@ public class CompareObjectInfoWithToken  {
         this.dbName = dbName;
     }
 
+    
+
     public CompareObjectInfoWithToken withTableNameWithToken(List<CompareTableInfoWithToken> tableNameWithToken) {
         this.tableNameWithToken = tableNameWithToken;
         return this;
@@ -59,9 +61,6 @@ public class CompareObjectInfoWithToken  {
 
     
     public CompareObjectInfoWithToken addTableNameWithTokenItem(CompareTableInfoWithToken tableNameWithTokenItem) {
-        if (this.tableNameWithToken == null) {
-            this.tableNameWithToken = new ArrayList<>();
-        }
         this.tableNameWithToken.add(tableNameWithTokenItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class CompareObjectInfoWithToken  {
     public void setTableNameWithToken(List<CompareTableInfoWithToken> tableNameWithToken) {
         this.tableNameWithToken = tableNameWithToken;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -32,9 +32,6 @@ public class ThrottleBindingBatchDelete  {
 
     
     public ThrottleBindingBatchDelete addThrottleBindingsItem(String throttleBindingsItem) {
-        if (this.throttleBindings == null) {
-            this.throttleBindings = new ArrayList<>();
-        }
         this.throttleBindings.add(throttleBindingsItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class ThrottleBindingBatchDelete  {
     public void setThrottleBindings(List<String> throttleBindings) {
         this.throttleBindings = throttleBindings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

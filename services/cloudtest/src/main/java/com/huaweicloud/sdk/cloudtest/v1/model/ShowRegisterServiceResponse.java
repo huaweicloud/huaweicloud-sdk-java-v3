@@ -35,9 +35,6 @@ public class ShowRegisterServiceResponse extends SdkResponse {
 
     
     public ShowRegisterServiceResponse addServicesItem(ServicesInfo servicesItem) {
-        if (this.services == null) {
-            this.services = new ArrayList<>();
-        }
         this.services.add(servicesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowRegisterServiceResponse extends SdkResponse {
     public void setServices(List<ServicesInfo> services) {
         this.services = services;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

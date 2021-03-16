@@ -59,6 +59,8 @@ public class ServiceCommand  {
         this.commandName = commandName;
     }
 
+    
+
     public ServiceCommand withParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
         return this;
@@ -66,9 +68,6 @@ public class ServiceCommand  {
 
     
     public ServiceCommand addParasItem(ServiceCommandPara parasItem) {
-        if (this.paras == null) {
-            this.paras = new ArrayList<>();
-        }
         this.paras.add(parasItem);
         return this;
     }
@@ -93,6 +92,8 @@ public class ServiceCommand  {
         this.paras = paras;
     }
 
+    
+
     public ServiceCommand withResponses(List<ServiceCommandResponse> responses) {
         this.responses = responses;
         return this;
@@ -100,9 +101,6 @@ public class ServiceCommand  {
 
     
     public ServiceCommand addResponsesItem(ServiceCommandResponse responsesItem) {
-        if (this.responses == null) {
-            this.responses = new ArrayList<>();
-        }
         this.responses.add(responsesItem);
         return this;
     }
@@ -126,6 +124,9 @@ public class ServiceCommand  {
     public void setResponses(List<ServiceCommandResponse> responses) {
         this.responses = responses;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

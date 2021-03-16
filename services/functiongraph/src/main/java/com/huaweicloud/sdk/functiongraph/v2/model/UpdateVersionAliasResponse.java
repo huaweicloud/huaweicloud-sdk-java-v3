@@ -45,7 +45,7 @@ public class UpdateVersionAliasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private OffsetDateTime lastModified = null;
+    private OffsetDateTime lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,6 +79,8 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public UpdateVersionAliasResponse withVersion(String version) {
         this.version = version;
         return this;
@@ -98,6 +100,8 @@ public class UpdateVersionAliasResponse extends SdkResponse {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public UpdateVersionAliasResponse withDescription(String description) {
         this.description = description;
@@ -119,6 +123,8 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateVersionAliasResponse withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -138,6 +144,8 @@ public class UpdateVersionAliasResponse extends SdkResponse {
     public void setLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
     }
+
+    
 
     public UpdateVersionAliasResponse withAliasUrn(String aliasUrn) {
         this.aliasUrn = aliasUrn;
@@ -159,6 +167,8 @@ public class UpdateVersionAliasResponse extends SdkResponse {
         this.aliasUrn = aliasUrn;
     }
 
+    
+
     public UpdateVersionAliasResponse withAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
         return this;
@@ -167,9 +177,6 @@ public class UpdateVersionAliasResponse extends SdkResponse {
     
 
     public UpdateVersionAliasResponse putAdditionalVersionWeightsItem(String key, Integer additionalVersionWeightsItem) {
-         if (this.additionalVersionWeights == null) {
-            this.additionalVersionWeights = new HashMap<>();
-         }
         this.additionalVersionWeights.put(key, additionalVersionWeightsItem);
         return this;
     }
@@ -192,6 +199,9 @@ public class UpdateVersionAliasResponse extends SdkResponse {
     public void setAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

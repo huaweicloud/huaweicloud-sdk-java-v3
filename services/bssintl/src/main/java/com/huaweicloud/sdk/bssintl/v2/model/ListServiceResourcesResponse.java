@@ -54,6 +54,8 @@ public class ListServiceResourcesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListServiceResourcesResponse withInfos(List<ServiceResourceInfo> infos) {
         this.infos = infos;
         return this;
@@ -61,9 +63,6 @@ public class ListServiceResourcesResponse extends SdkResponse {
 
     
     public ListServiceResourcesResponse addInfosItem(ServiceResourceInfo infosItem) {
-        if (this.infos == null) {
-            this.infos = new ArrayList<>();
-        }
         this.infos.add(infosItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListServiceResourcesResponse extends SdkResponse {
     public void setInfos(List<ServiceResourceInfo> infos) {
         this.infos = infos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

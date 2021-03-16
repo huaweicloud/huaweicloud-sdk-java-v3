@@ -22,7 +22,7 @@ public class UpdateTranscodingsTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private StreamTranscodingTemplate body = null;
+    private StreamTranscodingTemplate body;
 
     public UpdateTranscodingsTemplateRequest withBody(StreamTranscodingTemplate body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateTranscodingsTemplateRequest  {
     public void setBody(StreamTranscodingTemplate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

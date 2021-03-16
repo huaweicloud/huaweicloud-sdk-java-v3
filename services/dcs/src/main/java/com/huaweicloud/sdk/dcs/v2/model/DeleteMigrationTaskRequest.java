@@ -22,7 +22,7 @@ public class DeleteMigrationTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteMigrateTaskRequest body = null;
+    private DeleteMigrateTaskRequest body;
 
     public DeleteMigrationTaskRequest withBody(DeleteMigrateTaskRequest body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class DeleteMigrationTaskRequest  {
     public void setBody(DeleteMigrateTaskRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -38,7 +38,7 @@ public class StatisticsAPI  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_latency")
     
-    private BigDecimal avgLatency = null;
+    private BigDecimal avgLatency;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,7 +80,7 @@ public class StatisticsAPI  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_inner_latency")
     
-    private BigDecimal avgInnerLatency = null;
+    private BigDecimal avgInnerLatency;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,7 +92,7 @@ public class StatisticsAPI  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_backend_latency")
     
-    private BigDecimal avgBackendLatency = null;
+    private BigDecimal avgBackendLatency;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -224,13 +224,13 @@ public class StatisticsAPI  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_time")
     
-    private OffsetDateTime reqTime = null;
+    private OffsetDateTime reqTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -258,6 +258,8 @@ public class StatisticsAPI  {
         this.maxLatency = maxLatency;
     }
 
+    
+
     public StatisticsAPI withAvgLatency(BigDecimal avgLatency) {
         this.avgLatency = avgLatency;
         return this;
@@ -277,6 +279,8 @@ public class StatisticsAPI  {
     public void setAvgLatency(BigDecimal avgLatency) {
         this.avgLatency = avgLatency;
     }
+
+    
 
     public StatisticsAPI withReqCount(Integer reqCount) {
         this.reqCount = reqCount;
@@ -298,6 +302,8 @@ public class StatisticsAPI  {
         this.reqCount = reqCount;
     }
 
+    
+
     public StatisticsAPI withReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
         return this;
@@ -317,6 +323,8 @@ public class StatisticsAPI  {
     public void setReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
     }
+
+    
 
     public StatisticsAPI withReqCount4xx(Integer reqCount4xx) {
         this.reqCount4xx = reqCount4xx;
@@ -338,6 +346,8 @@ public class StatisticsAPI  {
         this.reqCount4xx = reqCount4xx;
     }
 
+    
+
     public StatisticsAPI withReqCount5xx(Integer reqCount5xx) {
         this.reqCount5xx = reqCount5xx;
         return this;
@@ -357,6 +367,8 @@ public class StatisticsAPI  {
     public void setReqCount5xx(Integer reqCount5xx) {
         this.reqCount5xx = reqCount5xx;
     }
+
+    
 
     public StatisticsAPI withReqCountError(Integer reqCountError) {
         this.reqCountError = reqCountError;
@@ -378,6 +390,8 @@ public class StatisticsAPI  {
         this.reqCountError = reqCountError;
     }
 
+    
+
     public StatisticsAPI withMaxInnerLatency(Integer maxInnerLatency) {
         this.maxInnerLatency = maxInnerLatency;
         return this;
@@ -397,6 +411,8 @@ public class StatisticsAPI  {
     public void setMaxInnerLatency(Integer maxInnerLatency) {
         this.maxInnerLatency = maxInnerLatency;
     }
+
+    
 
     public StatisticsAPI withAvgInnerLatency(BigDecimal avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
@@ -418,6 +434,8 @@ public class StatisticsAPI  {
         this.avgInnerLatency = avgInnerLatency;
     }
 
+    
+
     public StatisticsAPI withMaxBackendLatency(Integer maxBackendLatency) {
         this.maxBackendLatency = maxBackendLatency;
         return this;
@@ -437,6 +455,8 @@ public class StatisticsAPI  {
     public void setMaxBackendLatency(Integer maxBackendLatency) {
         this.maxBackendLatency = maxBackendLatency;
     }
+
+    
 
     public StatisticsAPI withAvgBackendLatency(BigDecimal avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
@@ -458,6 +478,8 @@ public class StatisticsAPI  {
         this.avgBackendLatency = avgBackendLatency;
     }
 
+    
+
     public StatisticsAPI withOutputThroughput(Integer outputThroughput) {
         this.outputThroughput = outputThroughput;
         return this;
@@ -477,6 +499,8 @@ public class StatisticsAPI  {
     public void setOutputThroughput(Integer outputThroughput) {
         this.outputThroughput = outputThroughput;
     }
+
+    
 
     public StatisticsAPI withInputThroughput(Integer inputThroughput) {
         this.inputThroughput = inputThroughput;
@@ -498,6 +522,8 @@ public class StatisticsAPI  {
         this.inputThroughput = inputThroughput;
     }
 
+    
+
     public StatisticsAPI withCurrentMinute(Integer currentMinute) {
         this.currentMinute = currentMinute;
         return this;
@@ -517,6 +543,8 @@ public class StatisticsAPI  {
     public void setCurrentMinute(Integer currentMinute) {
         this.currentMinute = currentMinute;
     }
+
+    
 
     public StatisticsAPI withCycle(CycleEnum cycle) {
         this.cycle = cycle;
@@ -538,6 +566,8 @@ public class StatisticsAPI  {
         this.cycle = cycle;
     }
 
+    
+
     public StatisticsAPI withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -557,6 +587,8 @@ public class StatisticsAPI  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public StatisticsAPI withGroupId(String groupId) {
         this.groupId = groupId;
@@ -578,6 +610,8 @@ public class StatisticsAPI  {
         this.groupId = groupId;
     }
 
+    
+
     public StatisticsAPI withProvider(String provider) {
         this.provider = provider;
         return this;
@@ -597,6 +631,8 @@ public class StatisticsAPI  {
     public void setProvider(String provider) {
         this.provider = provider;
     }
+
+    
 
     public StatisticsAPI withReqTime(OffsetDateTime reqTime) {
         this.reqTime = reqTime;
@@ -618,6 +654,8 @@ public class StatisticsAPI  {
         this.reqTime = reqTime;
     }
 
+    
+
     public StatisticsAPI withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -638,6 +676,8 @@ public class StatisticsAPI  {
         this.registerTime = registerTime;
     }
 
+    
+
     public StatisticsAPI withStatus(String status) {
         this.status = status;
         return this;
@@ -657,6 +697,9 @@ public class StatisticsAPI  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

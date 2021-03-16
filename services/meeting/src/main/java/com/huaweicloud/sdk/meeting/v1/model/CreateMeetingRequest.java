@@ -40,7 +40,7 @@ public class CreateMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestScheduleConfDTO body = null;
+    private RestScheduleConfDTO body;
 
     public CreateMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
@@ -61,6 +61,8 @@ public class CreateMeetingRequest  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public CreateMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -84,6 +86,8 @@ public class CreateMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public CreateMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -105,6 +109,8 @@ public class CreateMeetingRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
 
     public CreateMeetingRequest withBody(RestScheduleConfDTO body) {
         this.body = body;
@@ -132,6 +138,9 @@ public class CreateMeetingRequest  {
     public void setBody(RestScheduleConfDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

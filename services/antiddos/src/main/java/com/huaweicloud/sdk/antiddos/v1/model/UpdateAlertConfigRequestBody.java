@@ -34,7 +34,7 @@ public class UpdateAlertConfigRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="warn_config")
     
-    private UpdateAlertConfigRequestBodyWarnConfig warnConfig = null;
+    private UpdateAlertConfigRequestBodyWarnConfig warnConfig;
 
     public UpdateAlertConfigRequestBody withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -56,6 +56,8 @@ public class UpdateAlertConfigRequestBody  {
         this.displayName = displayName;
     }
 
+    
+
     public UpdateAlertConfigRequestBody withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -75,6 +77,8 @@ public class UpdateAlertConfigRequestBody  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
+
+    
 
     public UpdateAlertConfigRequestBody withWarnConfig(UpdateAlertConfigRequestBodyWarnConfig warnConfig) {
         this.warnConfig = warnConfig;
@@ -102,6 +106,9 @@ public class UpdateAlertConfigRequestBody  {
     public void setWarnConfig(UpdateAlertConfigRequestBodyWarnConfig warnConfig) {
         this.warnConfig = warnConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class CreateEventsResponseBody  {
         this.eventId = eventId;
     }
 
+    
+
     public CreateEventsResponseBody withEventName(String eventName) {
         this.eventName = eventName;
         return this;
@@ -68,6 +70,9 @@ public class CreateEventsResponseBody  {
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

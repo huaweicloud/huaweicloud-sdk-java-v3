@@ -21,7 +21,7 @@ public class ListCustomerBillsFeeRecordsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,13 +105,13 @@ public class ListCustomerBillsFeeRecordsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListCustomerBillsFeeRecordsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -135,6 +135,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -154,6 +156,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
     public void setBillCycle(String billCycle) {
         this.billCycle = billCycle;
     }
+
+    
 
     public ListCustomerBillsFeeRecordsRequest withProviderType(Integer providerType) {
         this.providerType = providerType;
@@ -177,6 +181,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.providerType = providerType;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -196,6 +202,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
 
     public ListCustomerBillsFeeRecordsRequest withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
@@ -217,6 +225,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
@@ -236,6 +246,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
+
+    
 
     public ListCustomerBillsFeeRecordsRequest withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -259,6 +271,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withBillType(Integer billType) {
         this.billType = billType;
         return this;
@@ -281,6 +295,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.billType = billType;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withTradeId(String tradeId) {
         this.tradeId = tradeId;
         return this;
@@ -300,6 +316,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
     public void setTradeId(String tradeId) {
         this.tradeId = tradeId;
     }
+
+    
 
     public ListCustomerBillsFeeRecordsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -321,6 +339,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withIncludeZeroRecord(Boolean includeZeroRecord) {
         this.includeZeroRecord = includeZeroRecord;
         return this;
@@ -340,6 +360,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
     public void setIncludeZeroRecord(Boolean includeZeroRecord) {
         this.includeZeroRecord = includeZeroRecord;
     }
+
+    
 
     public ListCustomerBillsFeeRecordsRequest withStatus(Integer status) {
         this.status = status;
@@ -363,6 +385,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.status = status;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withMethod(String method) {
         this.method = method;
         return this;
@@ -383,6 +407,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.method = method;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
         return this;
@@ -402,6 +428,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
     public void setSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
     }
+
+    
 
     public ListCustomerBillsFeeRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -425,6 +453,8 @@ public class ListCustomerBillsFeeRecordsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -446,6 +476,9 @@ public class ListCustomerBillsFeeRecordsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

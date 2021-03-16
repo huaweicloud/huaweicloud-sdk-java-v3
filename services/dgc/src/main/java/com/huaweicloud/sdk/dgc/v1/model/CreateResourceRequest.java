@@ -22,7 +22,7 @@ public class CreateResourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResourceInfo body = null;
+    private ResourceInfo body;
 
     public CreateResourceRequest withBody(ResourceInfo body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateResourceRequest  {
     public void setBody(ResourceInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

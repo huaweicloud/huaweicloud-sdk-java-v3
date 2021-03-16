@@ -42,6 +42,9 @@ public class DeleteWhitelistRequest  {
     public void setWhitelistId(String whitelistId) {
         this.whitelistId = whitelistId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

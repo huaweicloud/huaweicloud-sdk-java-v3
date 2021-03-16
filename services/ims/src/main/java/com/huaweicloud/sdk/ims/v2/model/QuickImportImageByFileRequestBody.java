@@ -152,13 +152,13 @@ public class QuickImportImageByFileRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.ECS;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
     /**
      * 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。
      */
@@ -242,7 +242,7 @@ public class QuickImportImageByFileRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="architecture")
     
-    private ArchitectureEnum architecture = ArchitectureEnum.X86;
+    private ArchitectureEnum architecture;
     /**
      * 操作系统版本。 创建数据盘镜像时该参数必填，取值为Linux或Windows。
      */
@@ -354,6 +354,8 @@ public class QuickImportImageByFileRequestBody  {
         this.name = name;
     }
 
+    
+
     public QuickImportImageByFileRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -373,6 +375,8 @@ public class QuickImportImageByFileRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public QuickImportImageByFileRequestBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -394,6 +398,8 @@ public class QuickImportImageByFileRequestBody  {
         this.osVersion = osVersion;
     }
 
+    
+
     public QuickImportImageByFileRequestBody withImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
@@ -413,6 +419,8 @@ public class QuickImportImageByFileRequestBody  {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    
 
     public QuickImportImageByFileRequestBody withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
@@ -436,6 +444,8 @@ public class QuickImportImageByFileRequestBody  {
         this.minDisk = minDisk;
     }
 
+    
+
     public QuickImportImageByFileRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -443,9 +453,6 @@ public class QuickImportImageByFileRequestBody  {
 
     
     public QuickImportImageByFileRequestBody addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -470,6 +477,8 @@ public class QuickImportImageByFileRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public QuickImportImageByFileRequestBody withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -489,6 +498,8 @@ public class QuickImportImageByFileRequestBody  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public QuickImportImageByFileRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -510,6 +521,8 @@ public class QuickImportImageByFileRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public QuickImportImageByFileRequestBody withArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
         return this;
@@ -529,6 +542,8 @@ public class QuickImportImageByFileRequestBody  {
     public void setArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
     }
+
+    
 
     public QuickImportImageByFileRequestBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -550,6 +565,8 @@ public class QuickImportImageByFileRequestBody  {
         this.osType = osType;
     }
 
+    
+
     public QuickImportImageByFileRequestBody withImageTags(List<ResourceTag> imageTags) {
         this.imageTags = imageTags;
         return this;
@@ -557,9 +574,6 @@ public class QuickImportImageByFileRequestBody  {
 
     
     public QuickImportImageByFileRequestBody addImageTagsItem(ResourceTag imageTagsItem) {
-        if (this.imageTags == null) {
-            this.imageTags = new ArrayList<>();
-        }
         this.imageTags.add(imageTagsItem);
         return this;
     }
@@ -583,6 +597,9 @@ public class QuickImportImageByFileRequestBody  {
     public void setImageTags(List<ResourceTag> imageTags) {
         this.imageTags = imageTags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

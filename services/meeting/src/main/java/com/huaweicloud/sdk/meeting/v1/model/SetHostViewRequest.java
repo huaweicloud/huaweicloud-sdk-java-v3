@@ -34,7 +34,7 @@ public class SetHostViewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestChairViewReqBody body = null;
+    private RestChairViewReqBody body;
 
     public SetHostViewRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -55,6 +55,8 @@ public class SetHostViewRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public SetHostViewRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -77,6 +79,8 @@ public class SetHostViewRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public SetHostViewRequest withBody(RestChairViewReqBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class SetHostViewRequest  {
     public void setBody(RestChairViewReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

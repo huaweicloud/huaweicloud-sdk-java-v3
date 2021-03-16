@@ -51,6 +51,8 @@ public class CreateNotificationRequestBody  {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public CreateNotificationRequestBody withTopicScene(List<String> topicScene) {
         this.topicScene = topicScene;
         return this;
@@ -58,9 +60,6 @@ public class CreateNotificationRequestBody  {
 
     
     public CreateNotificationRequestBody addTopicSceneItem(String topicSceneItem) {
-        if (this.topicScene == null) {
-            this.topicScene = new ArrayList<>();
-        }
         this.topicScene.add(topicSceneItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class CreateNotificationRequestBody  {
     public void setTopicScene(List<String> topicScene) {
         this.topicScene = topicScene;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

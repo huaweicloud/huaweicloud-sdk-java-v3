@@ -116,7 +116,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -152,7 +152,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
     /**
      * 状态   - 1： 有效
      */
@@ -320,7 +320,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_app_type")
     
-    private Object romaAppType = null;
+    private Object romaAppType;
 
     public ShowDetailsOfAppV2Response withCreator(CreatorEnum creator) {
         this.creator = creator;
@@ -342,6 +342,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.creator = creator;
     }
 
+    
+
     public ShowDetailsOfAppV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -361,6 +363,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ShowDetailsOfAppV2Response withAppKey(String appKey) {
         this.appKey = appKey;
@@ -382,6 +386,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appKey = appKey;
     }
 
+    
+
     public ShowDetailsOfAppV2Response withName(String name) {
         this.name = name;
         return this;
@@ -401,6 +407,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowDetailsOfAppV2Response withRemark(String remark) {
         this.remark = remark;
@@ -422,6 +430,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public ShowDetailsOfAppV2Response withId(String id) {
         this.id = id;
         return this;
@@ -441,6 +451,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ShowDetailsOfAppV2Response withAppSecret(String appSecret) {
         this.appSecret = appSecret;
@@ -462,6 +474,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appSecret = appSecret;
     }
 
+    
+
     public ShowDetailsOfAppV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -481,6 +495,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public ShowDetailsOfAppV2Response withStatus(StatusEnum status) {
         this.status = status;
@@ -502,6 +518,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowDetailsOfAppV2Response withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
@@ -522,6 +540,8 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appType = appType;
     }
 
+    
+
     public ShowDetailsOfAppV2Response withRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
         return this;
@@ -541,6 +561,9 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     public void setRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

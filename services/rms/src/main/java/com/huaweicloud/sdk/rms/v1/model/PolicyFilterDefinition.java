@@ -73,6 +73,8 @@ public class PolicyFilterDefinition  {
         this.regionId = regionId;
     }
 
+    
+
     public PolicyFilterDefinition withResourceProvider(String resourceProvider) {
         this.resourceProvider = resourceProvider;
         return this;
@@ -92,6 +94,8 @@ public class PolicyFilterDefinition  {
     public void setResourceProvider(String resourceProvider) {
         this.resourceProvider = resourceProvider;
     }
+
+    
 
     public PolicyFilterDefinition withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -113,6 +117,8 @@ public class PolicyFilterDefinition  {
         this.resourceType = resourceType;
     }
 
+    
+
     public PolicyFilterDefinition withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -132,6 +138,8 @@ public class PolicyFilterDefinition  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public PolicyFilterDefinition withTagKey(String tagKey) {
         this.tagKey = tagKey;
@@ -153,6 +161,8 @@ public class PolicyFilterDefinition  {
         this.tagKey = tagKey;
     }
 
+    
+
     public PolicyFilterDefinition withTagValue(String tagValue) {
         this.tagValue = tagValue;
         return this;
@@ -172,6 +182,9 @@ public class PolicyFilterDefinition  {
     public void setTagValue(String tagValue) {
         this.tagValue = tagValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

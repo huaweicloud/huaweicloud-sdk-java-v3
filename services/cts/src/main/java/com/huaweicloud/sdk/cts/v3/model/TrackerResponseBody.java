@@ -54,7 +54,7 @@ public class TrackerResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lts")
     
-    private Lts lts = null;
+    private Lts lts;
     /**
      * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。
      */
@@ -258,13 +258,13 @@ public class TrackerResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_info")
     
-    private ObsInfo obsInfo = null;
+    private ObsInfo obsInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_bucket")
     
-    private DataBucketQuery dataBucket = null;
+    private DataBucketQuery dataBucket;
 
     public TrackerResponseBody withId(String id) {
         this.id = id;
@@ -285,6 +285,8 @@ public class TrackerResponseBody  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public TrackerResponseBody withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -308,6 +310,8 @@ public class TrackerResponseBody  {
         this.createTime = createTime;
     }
 
+    
+
     public TrackerResponseBody withKmsId(String kmsId) {
         this.kmsId = kmsId;
         return this;
@@ -328,6 +332,8 @@ public class TrackerResponseBody  {
         this.kmsId = kmsId;
     }
 
+    
+
     public TrackerResponseBody withIsSupportValidate(Boolean isSupportValidate) {
         this.isSupportValidate = isSupportValidate;
         return this;
@@ -347,6 +353,8 @@ public class TrackerResponseBody  {
     public void setIsSupportValidate(Boolean isSupportValidate) {
         this.isSupportValidate = isSupportValidate;
     }
+
+    
 
     public TrackerResponseBody withLts(Lts lts) {
         this.lts = lts;
@@ -375,6 +383,8 @@ public class TrackerResponseBody  {
         this.lts = lts;
     }
 
+    
+
     public TrackerResponseBody withTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
         return this;
@@ -394,6 +404,8 @@ public class TrackerResponseBody  {
     public void setTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
     }
+
+    
 
     public TrackerResponseBody withDomainId(String domainId) {
         this.domainId = domainId;
@@ -415,6 +427,8 @@ public class TrackerResponseBody  {
         this.domainId = domainId;
     }
 
+    
+
     public TrackerResponseBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -434,6 +448,8 @@ public class TrackerResponseBody  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public TrackerResponseBody withTrackerName(String trackerName) {
         this.trackerName = trackerName;
@@ -455,6 +471,8 @@ public class TrackerResponseBody  {
         this.trackerName = trackerName;
     }
 
+    
+
     public TrackerResponseBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -474,6 +492,8 @@ public class TrackerResponseBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public TrackerResponseBody withDetail(String detail) {
         this.detail = detail;
@@ -495,6 +515,8 @@ public class TrackerResponseBody  {
         this.detail = detail;
     }
 
+    
+
     public TrackerResponseBody withIsSupportTraceFilesEncryption(Boolean isSupportTraceFilesEncryption) {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
         return this;
@@ -514,6 +536,8 @@ public class TrackerResponseBody  {
     public void setIsSupportTraceFilesEncryption(Boolean isSupportTraceFilesEncryption) {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
     }
+
+    
 
     public TrackerResponseBody withObsInfo(ObsInfo obsInfo) {
         this.obsInfo = obsInfo;
@@ -542,6 +566,8 @@ public class TrackerResponseBody  {
         this.obsInfo = obsInfo;
     }
 
+    
+
     public TrackerResponseBody withDataBucket(DataBucketQuery dataBucket) {
         this.dataBucket = dataBucket;
         return this;
@@ -568,6 +594,9 @@ public class TrackerResponseBody  {
     public void setDataBucket(DataBucketQuery dataBucket) {
         this.dataBucket = dataBucket;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

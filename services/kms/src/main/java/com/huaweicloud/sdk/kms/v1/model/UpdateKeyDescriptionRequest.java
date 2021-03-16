@@ -22,13 +22,13 @@ public class UpdateKeyDescriptionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateKeyDescriptionRequestBody body = null;
+    private UpdateKeyDescriptionRequestBody body;
 
     public UpdateKeyDescriptionRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class UpdateKeyDescriptionRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public UpdateKeyDescriptionRequest withBody(UpdateKeyDescriptionRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateKeyDescriptionRequest  {
     public void setBody(UpdateKeyDescriptionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

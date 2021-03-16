@@ -79,6 +79,8 @@ public class ApplicationItem  {
         this.name = name;
     }
 
+    
+
     public ApplicationItem withPlatform(String platform) {
         this.platform = platform;
         return this;
@@ -98,6 +100,8 @@ public class ApplicationItem  {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
+
+    
 
     public ApplicationItem withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -119,6 +123,8 @@ public class ApplicationItem  {
         this.createTime = createTime;
     }
 
+    
+
     public ApplicationItem withApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
         return this;
@@ -138,6 +144,8 @@ public class ApplicationItem  {
     public void setApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
     }
+
+    
 
     public ApplicationItem withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -159,6 +167,8 @@ public class ApplicationItem  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ApplicationItem withEnabled(String enabled) {
         this.enabled = enabled;
         return this;
@@ -179,6 +189,8 @@ public class ApplicationItem  {
         this.enabled = enabled;
     }
 
+    
+
     public ApplicationItem withAppleCertificateExpirationDate(String appleCertificateExpirationDate) {
         this.appleCertificateExpirationDate = appleCertificateExpirationDate;
         return this;
@@ -198,6 +210,9 @@ public class ApplicationItem  {
     public void setAppleCertificateExpirationDate(String appleCertificateExpirationDate) {
         this.appleCertificateExpirationDate = appleCertificateExpirationDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

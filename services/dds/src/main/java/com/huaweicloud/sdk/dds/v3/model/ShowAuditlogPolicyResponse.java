@@ -59,6 +59,8 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         this.keepDays = keepDays;
     }
 
+    
+
     public ShowAuditlogPolicyResponse withAuditScope(String auditScope) {
         this.auditScope = auditScope;
         return this;
@@ -79,6 +81,8 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         this.auditScope = auditScope;
     }
 
+    
+
     public ShowAuditlogPolicyResponse withAuditTypes(List<String> auditTypes) {
         this.auditTypes = auditTypes;
         return this;
@@ -86,9 +90,6 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
 
     
     public ShowAuditlogPolicyResponse addAuditTypesItem(String auditTypesItem) {
-        if (this.auditTypes == null) {
-            this.auditTypes = new ArrayList<>();
-        }
         this.auditTypes.add(auditTypesItem);
         return this;
     }
@@ -112,6 +113,9 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
     public void setAuditTypes(List<String> auditTypes) {
         this.auditTypes = auditTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,6 +63,8 @@ public class UpdateServiceResponse extends SdkResponse {
         this.serviceName = serviceName;
     }
 
+    
+
     public UpdateServiceResponse withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateServiceResponse extends SdkResponse {
     public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public UpdateServiceResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -103,6 +107,8 @@ public class UpdateServiceResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public UpdateServiceResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -122,6 +128,9 @@ public class UpdateServiceResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

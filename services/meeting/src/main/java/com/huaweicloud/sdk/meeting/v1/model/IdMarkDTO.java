@@ -49,6 +49,8 @@ public class IdMarkDTO  {
         this.id = id;
     }
 
+    
+
     public IdMarkDTO withMark(String mark) {
         this.mark = mark;
         return this;
@@ -68,6 +70,9 @@ public class IdMarkDTO  {
     public void setMark(String mark) {
         this.mark = mark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

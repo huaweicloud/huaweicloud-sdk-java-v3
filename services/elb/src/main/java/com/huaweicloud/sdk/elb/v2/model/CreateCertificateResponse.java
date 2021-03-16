@@ -193,6 +193,8 @@ public class CreateCertificateResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateCertificateResponse withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -212,6 +214,8 @@ public class CreateCertificateResponse extends SdkResponse {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public CreateCertificateResponse withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -233,6 +237,8 @@ public class CreateCertificateResponse extends SdkResponse {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreateCertificateResponse withName(String name) {
         this.name = name;
         return this;
@@ -252,6 +258,8 @@ public class CreateCertificateResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateCertificateResponse withDescription(String description) {
         this.description = description;
@@ -273,6 +281,8 @@ public class CreateCertificateResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public CreateCertificateResponse withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -292,6 +302,8 @@ public class CreateCertificateResponse extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public CreateCertificateResponse withDomain(String domain) {
         this.domain = domain;
@@ -313,6 +325,8 @@ public class CreateCertificateResponse extends SdkResponse {
         this.domain = domain;
     }
 
+    
+
     public CreateCertificateResponse withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -332,6 +346,8 @@ public class CreateCertificateResponse extends SdkResponse {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
 
     public CreateCertificateResponse withCertificate(String certificate) {
         this.certificate = certificate;
@@ -353,6 +369,8 @@ public class CreateCertificateResponse extends SdkResponse {
         this.certificate = certificate;
     }
 
+    
+
     public CreateCertificateResponse withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -372,6 +390,8 @@ public class CreateCertificateResponse extends SdkResponse {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public CreateCertificateResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -393,6 +413,8 @@ public class CreateCertificateResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public CreateCertificateResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -412,6 +434,9 @@ public class CreateCertificateResponse extends SdkResponse {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

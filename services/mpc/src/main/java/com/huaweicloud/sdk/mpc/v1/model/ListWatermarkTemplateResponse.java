@@ -39,7 +39,7 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error")
     
-    private XCodeError error = null;
+    private XCodeError error;
 
     public ListWatermarkTemplateResponse withTotal(Integer total) {
         this.total = total;
@@ -61,6 +61,8 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListWatermarkTemplateResponse withTemplates(List<WatermarkTemplate> templates) {
         this.templates = templates;
         return this;
@@ -68,9 +70,6 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
 
     
     public ListWatermarkTemplateResponse addTemplatesItem(WatermarkTemplate templatesItem) {
-        if (this.templates == null) {
-            this.templates = new ArrayList<>();
-        }
         this.templates.add(templatesItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
     public void setTemplates(List<WatermarkTemplate> templates) {
         this.templates = templates;
     }
+
+    
 
     public ListWatermarkTemplateResponse withError(XCodeError error) {
         this.error = error;
@@ -121,6 +122,9 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
     public void setError(XCodeError error) {
         this.error = error;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

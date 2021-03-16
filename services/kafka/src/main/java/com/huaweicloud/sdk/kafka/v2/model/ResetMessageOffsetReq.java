@@ -61,6 +61,8 @@ public class ResetMessageOffsetReq  {
         this.topic = topic;
     }
 
+    
+
     public ResetMessageOffsetReq withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -80,6 +82,8 @@ public class ResetMessageOffsetReq  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
 
     public ResetMessageOffsetReq withMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
@@ -101,6 +105,8 @@ public class ResetMessageOffsetReq  {
         this.messageOffset = messageOffset;
     }
 
+    
+
     public ResetMessageOffsetReq withTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -120,6 +126,9 @@ public class ResetMessageOffsetReq  {
     public void setTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

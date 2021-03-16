@@ -67,6 +67,8 @@ public class DssPoolInfo  {
         this.azName = azName;
     }
 
+    
+
     public DssPoolInfo withFreeCapacityGb(String freeCapacityGb) {
         this.freeCapacityGb = freeCapacityGb;
         return this;
@@ -86,6 +88,8 @@ public class DssPoolInfo  {
     public void setFreeCapacityGb(String freeCapacityGb) {
         this.freeCapacityGb = freeCapacityGb;
     }
+
+    
 
     public DssPoolInfo withDssPoolVolumeType(String dssPoolVolumeType) {
         this.dssPoolVolumeType = dssPoolVolumeType;
@@ -107,6 +111,8 @@ public class DssPoolInfo  {
         this.dssPoolVolumeType = dssPoolVolumeType;
     }
 
+    
+
     public DssPoolInfo withDssPoolId(String dssPoolId) {
         this.dssPoolId = dssPoolId;
         return this;
@@ -127,6 +133,8 @@ public class DssPoolInfo  {
         this.dssPoolId = dssPoolId;
     }
 
+    
+
     public DssPoolInfo withDssPoolStatus(String dssPoolStatus) {
         this.dssPoolStatus = dssPoolStatus;
         return this;
@@ -146,6 +154,9 @@ public class DssPoolInfo  {
     public void setDssPoolStatus(String dssPoolStatus) {
         this.dssPoolStatus = dssPoolStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

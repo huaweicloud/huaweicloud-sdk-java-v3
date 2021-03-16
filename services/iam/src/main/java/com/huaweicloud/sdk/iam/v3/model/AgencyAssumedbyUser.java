@@ -34,7 +34,7 @@ public class AgencyAssumedbyUser  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private AgencyAssumedbyUserDomain domain = null;
+    private AgencyAssumedbyUserDomain domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class AgencyAssumedbyUser  {
         this.name = name;
     }
 
+    
+
     public AgencyAssumedbyUser withId(String id) {
         this.id = id;
         return this;
@@ -81,6 +83,8 @@ public class AgencyAssumedbyUser  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AgencyAssumedbyUser withDomain(AgencyAssumedbyUserDomain domain) {
         this.domain = domain;
@@ -109,6 +113,8 @@ public class AgencyAssumedbyUser  {
         this.domain = domain;
     }
 
+    
+
     public AgencyAssumedbyUser withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -128,6 +134,9 @@ public class AgencyAssumedbyUser  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateNewBlockchainRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateRequestBody body = null;
+    private CreateRequestBody body;
 
     public CreateNewBlockchainRequest withBody(CreateRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateNewBlockchainRequest  {
     public void setBody(CreateRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

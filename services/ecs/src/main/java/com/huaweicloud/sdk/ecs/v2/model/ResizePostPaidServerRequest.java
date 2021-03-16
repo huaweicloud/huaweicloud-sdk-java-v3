@@ -28,7 +28,7 @@ public class ResizePostPaidServerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResizePostPaidServerRequestBody body = null;
+    private ResizePostPaidServerRequestBody body;
 
     public ResizePostPaidServerRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class ResizePostPaidServerRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public ResizePostPaidServerRequest withBody(ResizePostPaidServerRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ResizePostPaidServerRequest  {
     public void setBody(ResizePostPaidServerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

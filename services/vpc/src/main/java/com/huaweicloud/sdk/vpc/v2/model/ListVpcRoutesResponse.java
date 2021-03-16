@@ -42,9 +42,6 @@ public class ListVpcRoutesResponse extends SdkResponse {
 
     
     public ListVpcRoutesResponse addRoutesItem(VpcRoute routesItem) {
-        if (this.routes == null) {
-            this.routes = new ArrayList<>();
-        }
         this.routes.add(routesItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class ListVpcRoutesResponse extends SdkResponse {
         this.routes = routes;
     }
 
+    
+
     public ListVpcRoutesResponse withRoutesLinks(List<NeutronPageLink> routesLinks) {
         this.routesLinks = routesLinks;
         return this;
@@ -76,9 +75,6 @@ public class ListVpcRoutesResponse extends SdkResponse {
 
     
     public ListVpcRoutesResponse addRoutesLinksItem(NeutronPageLink routesLinksItem) {
-        if (this.routesLinks == null) {
-            this.routesLinks = new ArrayList<>();
-        }
         this.routesLinks.add(routesLinksItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class ListVpcRoutesResponse extends SdkResponse {
     public void setRoutesLinks(List<NeutronPageLink> routesLinks) {
         this.routesLinks = routesLinks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

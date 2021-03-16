@@ -57,6 +57,8 @@ public class AttachInternalIpResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public AttachInternalIpResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -77,6 +79,8 @@ public class AttachInternalIpResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
+    
+
     public AttachInternalIpResponse withNewIp(String newIp) {
         this.newIp = newIp;
         return this;
@@ -96,6 +100,9 @@ public class AttachInternalIpResponse extends SdkResponse {
     public void setNewIp(String newIp) {
         this.newIp = newIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

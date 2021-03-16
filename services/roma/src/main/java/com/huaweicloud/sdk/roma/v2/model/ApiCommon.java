@@ -228,7 +228,7 @@ public class ApiCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -456,13 +456,13 @@ public class ApiCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -798,13 +798,13 @@ public class ApiCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -816,7 +816,7 @@ public class ApiCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_version")
     
-    private String groupVersion = "V1";
+    private String groupVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -852,13 +852,13 @@ public class ApiCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_info")
     
-    private ApiFunc funcInfo = null;
+    private ApiFunc funcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mock_info")
     
-    private ApiMock mockInfo = null;
+    private ApiMock mockInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -904,6 +904,8 @@ public class ApiCommon  {
         this.name = name;
     }
 
+    
+
     public ApiCommon withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -923,6 +925,8 @@ public class ApiCommon  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ApiCommon withVersion(String version) {
         this.version = version;
@@ -944,6 +948,8 @@ public class ApiCommon  {
         this.version = version;
     }
 
+    
+
     public ApiCommon withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -963,6 +969,8 @@ public class ApiCommon  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiCommon withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -984,6 +992,8 @@ public class ApiCommon  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiCommon withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -1004,6 +1014,8 @@ public class ApiCommon  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiCommon withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -1023,6 +1035,8 @@ public class ApiCommon  {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ApiCommon withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -1051,6 +1065,8 @@ public class ApiCommon  {
         this.authOpt = authOpt;
     }
 
+    
+
     public ApiCommon withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -1070,6 +1086,8 @@ public class ApiCommon  {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ApiCommon withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -1091,6 +1109,8 @@ public class ApiCommon  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiCommon withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -1110,6 +1130,8 @@ public class ApiCommon  {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ApiCommon withRemark(String remark) {
         this.remark = remark;
@@ -1131,6 +1153,8 @@ public class ApiCommon  {
         this.remark = remark;
     }
 
+    
+
     public ApiCommon withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1150,6 +1174,8 @@ public class ApiCommon  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiCommon withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1171,6 +1197,8 @@ public class ApiCommon  {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ApiCommon withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1190,6 +1218,8 @@ public class ApiCommon  {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ApiCommon withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1211,6 +1241,8 @@ public class ApiCommon  {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ApiCommon withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1231,6 +1263,8 @@ public class ApiCommon  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiCommon withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1238,9 +1272,6 @@ public class ApiCommon  {
 
     
     public ApiCommon addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1265,6 +1296,8 @@ public class ApiCommon  {
         this.tags = tags;
     }
 
+    
+
     public ApiCommon withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1284,6 +1317,8 @@ public class ApiCommon  {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ApiCommon withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1305,6 +1340,8 @@ public class ApiCommon  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiCommon withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1324,6 +1361,8 @@ public class ApiCommon  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public ApiCommon withTag(String tag) {
         this.tag = tag;
@@ -1345,6 +1384,8 @@ public class ApiCommon  {
         this.tag = tag;
     }
 
+    
+
     public ApiCommon withId(String id) {
         this.id = id;
         return this;
@@ -1364,6 +1405,8 @@ public class ApiCommon  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ApiCommon withStatus(StatusEnum status) {
         this.status = status;
@@ -1385,6 +1428,8 @@ public class ApiCommon  {
         this.status = status;
     }
 
+    
+
     public ApiCommon withArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
         return this;
@@ -1404,6 +1449,8 @@ public class ApiCommon  {
     public void setArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
     }
+
+    
 
     public ApiCommon withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -1425,6 +1472,8 @@ public class ApiCommon  {
         this.registerTime = registerTime;
     }
 
+    
+
     public ApiCommon withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -1444,6 +1493,8 @@ public class ApiCommon  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ApiCommon withGroupName(String groupName) {
         this.groupName = groupName;
@@ -1465,6 +1516,8 @@ public class ApiCommon  {
         this.groupName = groupName;
     }
 
+    
+
     public ApiCommon withGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
         return this;
@@ -1484,6 +1537,8 @@ public class ApiCommon  {
     public void setGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
     }
+
+    
 
     public ApiCommon withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -1505,6 +1560,8 @@ public class ApiCommon  {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public ApiCommon withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -1524,6 +1581,8 @@ public class ApiCommon  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public ApiCommon withPublishId(String publishId) {
         this.publishId = publishId;
@@ -1545,6 +1604,8 @@ public class ApiCommon  {
         this.publishId = publishId;
     }
 
+    
+
     public ApiCommon withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -1565,6 +1626,8 @@ public class ApiCommon  {
         this.romaAppName = romaAppName;
     }
 
+    
+
     public ApiCommon withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -1584,6 +1647,8 @@ public class ApiCommon  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public ApiCommon withFuncInfo(ApiFunc funcInfo) {
         this.funcInfo = funcInfo;
@@ -1612,6 +1677,8 @@ public class ApiCommon  {
         this.funcInfo = funcInfo;
     }
 
+    
+
     public ApiCommon withMockInfo(ApiMock mockInfo) {
         this.mockInfo = mockInfo;
         return this;
@@ -1639,6 +1706,8 @@ public class ApiCommon  {
         this.mockInfo = mockInfo;
     }
 
+    
+
     public ApiCommon withReqParams(List<ReqParam> reqParams) {
         this.reqParams = reqParams;
         return this;
@@ -1646,9 +1715,6 @@ public class ApiCommon  {
 
     
     public ApiCommon addReqParamsItem(ReqParam reqParamsItem) {
-        if (this.reqParams == null) {
-            this.reqParams = new ArrayList<>();
-        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
@@ -1673,6 +1739,8 @@ public class ApiCommon  {
         this.reqParams = reqParams;
     }
 
+    
+
     public ApiCommon withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -1680,9 +1748,6 @@ public class ApiCommon  {
 
     
     public ApiCommon addBackendParamsItem(BackendParam backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -1707,6 +1772,8 @@ public class ApiCommon  {
         this.backendParams = backendParams;
     }
 
+    
+
     public ApiCommon withPolicyFunctions(List<ApiPolicyFunctionResp> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
@@ -1714,9 +1781,6 @@ public class ApiCommon  {
 
     
     public ApiCommon addPolicyFunctionsItem(ApiPolicyFunctionResp policyFunctionsItem) {
-        if (this.policyFunctions == null) {
-            this.policyFunctions = new ArrayList<>();
-        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
@@ -1741,6 +1805,8 @@ public class ApiCommon  {
         this.policyFunctions = policyFunctions;
     }
 
+    
+
     public ApiCommon withPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
@@ -1748,9 +1814,6 @@ public class ApiCommon  {
 
     
     public ApiCommon addPolicyMocksItem(ApiPolicyMockResp policyMocksItem) {
-        if (this.policyMocks == null) {
-            this.policyMocks = new ArrayList<>();
-        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
@@ -1774,6 +1837,9 @@ public class ApiCommon  {
     public void setPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

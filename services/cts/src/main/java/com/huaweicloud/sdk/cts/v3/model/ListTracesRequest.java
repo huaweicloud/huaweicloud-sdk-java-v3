@@ -289,6 +289,8 @@ public class ListTracesRequest  {
         this.traceType = traceType;
     }
 
+    
+
     public ListTracesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -310,6 +312,8 @@ public class ListTracesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListTracesRequest withFrom(Long from) {
         this.from = from;
@@ -333,6 +337,8 @@ public class ListTracesRequest  {
         this.from = from;
     }
 
+    
+
     public ListTracesRequest withNext(String next) {
         this.next = next;
         return this;
@@ -352,6 +358,8 @@ public class ListTracesRequest  {
     public void setNext(String next) {
         this.next = next;
     }
+
+    
 
     public ListTracesRequest withTo(Long to) {
         this.to = to;
@@ -375,6 +383,8 @@ public class ListTracesRequest  {
         this.to = to;
     }
 
+    
+
     public ListTracesRequest withTrackerName(String trackerName) {
         this.trackerName = trackerName;
         return this;
@@ -394,6 +404,8 @@ public class ListTracesRequest  {
     public void setTrackerName(String trackerName) {
         this.trackerName = trackerName;
     }
+
+    
 
     public ListTracesRequest withServiceType(String serviceType) {
         this.serviceType = serviceType;
@@ -415,6 +427,8 @@ public class ListTracesRequest  {
         this.serviceType = serviceType;
     }
 
+    
+
     public ListTracesRequest withUser(String user) {
         this.user = user;
         return this;
@@ -434,6 +448,8 @@ public class ListTracesRequest  {
     public void setUser(String user) {
         this.user = user;
     }
+
+    
 
     public ListTracesRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -455,6 +471,8 @@ public class ListTracesRequest  {
         this.resourceId = resourceId;
     }
 
+    
+
     public ListTracesRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -474,6 +492,8 @@ public class ListTracesRequest  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public ListTracesRequest withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -495,6 +515,8 @@ public class ListTracesRequest  {
         this.resourceType = resourceType;
     }
 
+    
+
     public ListTracesRequest withTraceId(String traceId) {
         this.traceId = traceId;
         return this;
@@ -514,6 +536,8 @@ public class ListTracesRequest  {
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
+
+    
 
     public ListTracesRequest withTraceName(String traceName) {
         this.traceName = traceName;
@@ -535,6 +559,8 @@ public class ListTracesRequest  {
         this.traceName = traceName;
     }
 
+    
+
     public ListTracesRequest withTraceRating(TraceRatingEnum traceRating) {
         this.traceRating = traceRating;
         return this;
@@ -554,6 +580,9 @@ public class ListTracesRequest  {
     public void setTraceRating(TraceRatingEnum traceRating) {
         this.traceRating = traceRating;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

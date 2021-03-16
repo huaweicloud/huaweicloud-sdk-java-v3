@@ -30,7 +30,7 @@ public class EntityMetricList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    private Object values = null;
+    private Object values;
 
     public EntityMetricList withDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
@@ -39,9 +39,6 @@ public class EntityMetricList  {
 
     
     public EntityMetricList addDimensionsItem(Dimension dimensionsItem) {
-        if (this.dimensions == null) {
-            this.dimensions = new ArrayList<>();
-        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class EntityMetricList  {
         this.dimensions = dimensions;
     }
 
+    
+
     public EntityMetricList withValues(Object values) {
         this.values = values;
         return this;
@@ -85,6 +84,9 @@ public class EntityMetricList  {
     public void setValues(Object values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

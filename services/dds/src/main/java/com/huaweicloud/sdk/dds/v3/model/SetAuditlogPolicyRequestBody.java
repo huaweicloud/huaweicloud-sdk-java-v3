@@ -63,6 +63,8 @@ public class SetAuditlogPolicyRequestBody  {
         this.keepDays = keepDays;
     }
 
+    
+
     public SetAuditlogPolicyRequestBody withReserveAuditlogs(String reserveAuditlogs) {
         this.reserveAuditlogs = reserveAuditlogs;
         return this;
@@ -82,6 +84,8 @@ public class SetAuditlogPolicyRequestBody  {
     public void setReserveAuditlogs(String reserveAuditlogs) {
         this.reserveAuditlogs = reserveAuditlogs;
     }
+
+    
 
     public SetAuditlogPolicyRequestBody withAuditScope(String auditScope) {
         this.auditScope = auditScope;
@@ -103,6 +107,8 @@ public class SetAuditlogPolicyRequestBody  {
         this.auditScope = auditScope;
     }
 
+    
+
     public SetAuditlogPolicyRequestBody withAuditTypes(List<String> auditTypes) {
         this.auditTypes = auditTypes;
         return this;
@@ -110,9 +116,6 @@ public class SetAuditlogPolicyRequestBody  {
 
     
     public SetAuditlogPolicyRequestBody addAuditTypesItem(String auditTypesItem) {
-        if (this.auditTypes == null) {
-            this.auditTypes = new ArrayList<>();
-        }
         this.auditTypes.add(auditTypesItem);
         return this;
     }
@@ -136,6 +139,9 @@ public class SetAuditlogPolicyRequestBody  {
     public void setAuditTypes(List<String> auditTypes) {
         this.auditTypes = auditTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

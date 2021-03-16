@@ -27,7 +27,7 @@ public class EncryptDatakeyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption_context")
     
-    private Object encryptionContext = null;
+    private Object encryptionContext;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,6 +67,8 @@ public class EncryptDatakeyRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public EncryptDatakeyRequestBody withEncryptionContext(Object encryptionContext) {
         this.encryptionContext = encryptionContext;
         return this;
@@ -86,6 +88,8 @@ public class EncryptDatakeyRequestBody  {
     public void setEncryptionContext(Object encryptionContext) {
         this.encryptionContext = encryptionContext;
     }
+
+    
 
     public EncryptDatakeyRequestBody withPlainText(String plainText) {
         this.plainText = plainText;
@@ -107,6 +111,8 @@ public class EncryptDatakeyRequestBody  {
         this.plainText = plainText;
     }
 
+    
+
     public EncryptDatakeyRequestBody withDatakeyPlainLength(String datakeyPlainLength) {
         this.datakeyPlainLength = datakeyPlainLength;
         return this;
@@ -127,6 +133,8 @@ public class EncryptDatakeyRequestBody  {
         this.datakeyPlainLength = datakeyPlainLength;
     }
 
+    
+
     public EncryptDatakeyRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -146,6 +154,9 @@ public class EncryptDatakeyRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

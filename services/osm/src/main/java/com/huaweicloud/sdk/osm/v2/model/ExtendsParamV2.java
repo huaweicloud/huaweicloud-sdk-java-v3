@@ -121,6 +121,8 @@ public class ExtendsParamV2  {
         this.tips = tips;
     }
 
+    
+
     public ExtendsParamV2 withRequired(Integer required) {
         this.required = required;
         return this;
@@ -142,6 +144,8 @@ public class ExtendsParamV2  {
     public void setRequired(Integer required) {
         this.required = required;
     }
+
+    
 
     public ExtendsParamV2 withLength(Integer length) {
         this.length = length;
@@ -165,6 +169,8 @@ public class ExtendsParamV2  {
         this.length = length;
     }
 
+    
+
     public ExtendsParamV2 withLanguage(String language) {
         this.language = language;
         return this;
@@ -184,6 +190,8 @@ public class ExtendsParamV2  {
     public void setLanguage(String language) {
         this.language = language;
     }
+
+    
 
     public ExtendsParamV2 withParamKey(String paramKey) {
         this.paramKey = paramKey;
@@ -205,6 +213,8 @@ public class ExtendsParamV2  {
         this.paramKey = paramKey;
     }
 
+    
+
     public ExtendsParamV2 withParamName(String paramName) {
         this.paramName = paramName;
         return this;
@@ -224,6 +234,8 @@ public class ExtendsParamV2  {
     public void setParamName(String paramName) {
         this.paramName = paramName;
     }
+
+    
 
     public ExtendsParamV2 withParamType(Integer paramType) {
         this.paramType = paramType;
@@ -247,6 +259,8 @@ public class ExtendsParamV2  {
         this.paramType = paramType;
     }
 
+    
+
     public ExtendsParamV2 withParamDesc(String paramDesc) {
         this.paramDesc = paramDesc;
         return this;
@@ -267,6 +281,8 @@ public class ExtendsParamV2  {
         this.paramDesc = paramDesc;
     }
 
+    
+
     public ExtendsParamV2 withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
@@ -286,6 +302,8 @@ public class ExtendsParamV2  {
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
     }
+
+    
 
     public ExtendsParamV2 withMaxValue(Long maxValue) {
         this.maxValue = maxValue;
@@ -309,6 +327,8 @@ public class ExtendsParamV2  {
         this.maxValue = maxValue;
     }
 
+    
+
     public ExtendsParamV2 withMinValue(Long minValue) {
         this.minValue = minValue;
         return this;
@@ -331,6 +351,8 @@ public class ExtendsParamV2  {
         this.minValue = minValue;
     }
 
+    
+
     public ExtendsParamV2 withSelectItem(String selectItem) {
         this.selectItem = selectItem;
         return this;
@@ -350,6 +372,8 @@ public class ExtendsParamV2  {
     public void setSelectItem(String selectItem) {
         this.selectItem = selectItem;
     }
+
+    
 
     public ExtendsParamV2 withIsShow(Integer isShow) {
         this.isShow = isShow;
@@ -373,6 +397,8 @@ public class ExtendsParamV2  {
         this.isShow = isShow;
     }
 
+    
+
     public ExtendsParamV2 withIsSensitive(Integer isSensitive) {
         this.isSensitive = isSensitive;
         return this;
@@ -394,6 +420,9 @@ public class ExtendsParamV2  {
     public void setIsSensitive(Integer isSensitive) {
         this.isSensitive = isSensitive;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

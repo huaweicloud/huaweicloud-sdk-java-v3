@@ -54,6 +54,8 @@ public class ListVolumesByTagsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListVolumesByTagsResponse withResources(List<Resource> resources) {
         this.resources = resources;
         return this;
@@ -61,9 +63,6 @@ public class ListVolumesByTagsResponse extends SdkResponse {
 
     
     public ListVolumesByTagsResponse addResourcesItem(Resource resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListVolumesByTagsResponse extends SdkResponse {
     public void setResources(List<Resource> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class AssociateRouterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AssociateRouterReq body = null;
+    private AssociateRouterReq body;
 
     public AssociateRouterRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -49,6 +49,8 @@ public class AssociateRouterRequest  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public AssociateRouterRequest withBody(AssociateRouterReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AssociateRouterRequest  {
     public void setBody(AssociateRouterReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class UserPassword  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="username")
     
-    private String username = "root";
+    private String username;
 
     public UserPassword withPassword(String password) {
         this.password = password;
@@ -49,6 +49,8 @@ public class UserPassword  {
         this.password = password;
     }
 
+    
+
     public UserPassword withUsername(String username) {
         this.username = username;
         return this;
@@ -68,6 +70,9 @@ public class UserPassword  {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

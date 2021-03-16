@@ -216,6 +216,8 @@ public class DebugApiReq  {
         this.body = body;
     }
 
+    
+
     public DebugApiReq withHeader(Map<String, List<String>> header) {
         this.header = header;
         return this;
@@ -224,9 +226,6 @@ public class DebugApiReq  {
     
 
     public DebugApiReq putHeaderItem(String key, List<String> headerItem) {
-         if (this.header == null) {
-            this.header = new HashMap<>();
-         }
         this.header.put(key, headerItem);
         return this;
     }
@@ -250,6 +249,8 @@ public class DebugApiReq  {
         this.header = header;
     }
 
+    
+
     public DebugApiReq withMethod(MethodEnum method) {
         this.method = method;
         return this;
@@ -269,6 +270,8 @@ public class DebugApiReq  {
     public void setMethod(MethodEnum method) {
         this.method = method;
     }
+
+    
 
     public DebugApiReq withMode(String mode) {
         this.mode = mode;
@@ -290,6 +293,8 @@ public class DebugApiReq  {
         this.mode = mode;
     }
 
+    
+
     public DebugApiReq withPath(String path) {
         this.path = path;
         return this;
@@ -310,6 +315,8 @@ public class DebugApiReq  {
         this.path = path;
     }
 
+    
+
     public DebugApiReq withQuery(Map<String, List<String>> query) {
         this.query = query;
         return this;
@@ -318,9 +325,6 @@ public class DebugApiReq  {
     
 
     public DebugApiReq putQueryItem(String key, List<String> queryItem) {
-         if (this.query == null) {
-            this.query = new HashMap<>();
-         }
         this.query.put(key, queryItem);
         return this;
     }
@@ -344,6 +348,8 @@ public class DebugApiReq  {
         this.query = query;
     }
 
+    
+
     public DebugApiReq withScheme(String scheme) {
         this.scheme = scheme;
         return this;
@@ -363,6 +369,8 @@ public class DebugApiReq  {
     public void setScheme(String scheme) {
         this.scheme = scheme;
     }
+
+    
 
     public DebugApiReq withAppKey(String appKey) {
         this.appKey = appKey;
@@ -384,6 +392,8 @@ public class DebugApiReq  {
         this.appKey = appKey;
     }
 
+    
+
     public DebugApiReq withAppSecret(String appSecret) {
         this.appSecret = appSecret;
         return this;
@@ -403,6 +413,8 @@ public class DebugApiReq  {
     public void setAppSecret(String appSecret) {
         this.appSecret = appSecret;
     }
+
+    
 
     public DebugApiReq withDomain(String domain) {
         this.domain = domain;
@@ -424,6 +436,8 @@ public class DebugApiReq  {
         this.domain = domain;
     }
 
+    
+
     public DebugApiReq withStage(String stage) {
         this.stage = stage;
         return this;
@@ -443,6 +457,9 @@ public class DebugApiReq  {
     public void setStage(String stage) {
         this.stage = stage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

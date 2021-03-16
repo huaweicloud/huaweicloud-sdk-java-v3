@@ -124,7 +124,7 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    private JobEntities entities = null;
+    private JobEntities entities;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -182,6 +182,8 @@ public class ShowJobResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowJobResponse withEntities(JobEntities entities) {
         this.entities = entities;
         return this;
@@ -209,6 +211,8 @@ public class ShowJobResponse extends SdkResponse {
         this.entities = entities;
     }
 
+    
+
     public ShowJobResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -228,6 +232,8 @@ public class ShowJobResponse extends SdkResponse {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public ShowJobResponse withJobType(String jobType) {
         this.jobType = jobType;
@@ -249,6 +255,8 @@ public class ShowJobResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
+    
+
     public ShowJobResponse withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -268,6 +276,8 @@ public class ShowJobResponse extends SdkResponse {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public ShowJobResponse withEndTime(String endTime) {
         this.endTime = endTime;
@@ -289,6 +299,8 @@ public class ShowJobResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
+    
+
     public ShowJobResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -309,6 +321,8 @@ public class ShowJobResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public ShowJobResponse withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
@@ -328,6 +342,9 @@ public class ShowJobResponse extends SdkResponse {
     public void setFailReason(String failReason) {
         this.failReason = failReason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -43,7 +43,7 @@ public class UpdateVersionAliasRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private OffsetDateTime lastModified = null;
+    private OffsetDateTime lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,6 +77,8 @@ public class UpdateVersionAliasRequestBody  {
         this.name = name;
     }
 
+    
+
     public UpdateVersionAliasRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -96,6 +98,8 @@ public class UpdateVersionAliasRequestBody  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public UpdateVersionAliasRequestBody withDescription(String description) {
         this.description = description;
@@ -117,6 +121,8 @@ public class UpdateVersionAliasRequestBody  {
         this.description = description;
     }
 
+    
+
     public UpdateVersionAliasRequestBody withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -136,6 +142,8 @@ public class UpdateVersionAliasRequestBody  {
     public void setLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
     }
+
+    
 
     public UpdateVersionAliasRequestBody withAliasUrn(String aliasUrn) {
         this.aliasUrn = aliasUrn;
@@ -157,6 +165,8 @@ public class UpdateVersionAliasRequestBody  {
         this.aliasUrn = aliasUrn;
     }
 
+    
+
     public UpdateVersionAliasRequestBody withAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
         return this;
@@ -165,9 +175,6 @@ public class UpdateVersionAliasRequestBody  {
     
 
     public UpdateVersionAliasRequestBody putAdditionalVersionWeightsItem(String key, Integer additionalVersionWeightsItem) {
-         if (this.additionalVersionWeights == null) {
-            this.additionalVersionWeights = new HashMap<>();
-         }
         this.additionalVersionWeights.put(key, additionalVersionWeightsItem);
         return this;
     }
@@ -190,6 +197,9 @@ public class UpdateVersionAliasRequestBody  {
     public void setAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

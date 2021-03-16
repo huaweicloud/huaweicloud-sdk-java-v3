@@ -28,7 +28,7 @@ public class UpdateAlarmTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAlarmTemplateRequestBody body = null;
+    private UpdateAlarmTemplateRequestBody body;
 
     public UpdateAlarmTemplateRequest withTemplateId(String templateId) {
         this.templateId = templateId;
@@ -49,6 +49,8 @@ public class UpdateAlarmTemplateRequest  {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
+
+    
 
     public UpdateAlarmTemplateRequest withBody(UpdateAlarmTemplateRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateAlarmTemplateRequest  {
     public void setBody(UpdateAlarmTemplateRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

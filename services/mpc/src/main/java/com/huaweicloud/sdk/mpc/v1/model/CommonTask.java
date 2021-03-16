@@ -58,13 +58,13 @@ public class CommonTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class CommonTask  {
         this.taskId = taskId;
     }
 
+    
+
     public CommonTask withStatus(String status) {
         this.status = status;
         return this;
@@ -111,6 +113,8 @@ public class CommonTask  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public CommonTask withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -132,6 +136,8 @@ public class CommonTask  {
         this.createTime = createTime;
     }
 
+    
+
     public CommonTask withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -151,6 +157,8 @@ public class CommonTask  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public CommonTask withEndTime(String endTime) {
         this.endTime = endTime;
@@ -172,6 +180,8 @@ public class CommonTask  {
         this.endTime = endTime;
     }
 
+    
+
     public CommonTask withDescription(String description) {
         this.description = description;
         return this;
@@ -191,6 +201,8 @@ public class CommonTask  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CommonTask withInput(ObsObjInfo input) {
         this.input = input;
@@ -219,6 +231,8 @@ public class CommonTask  {
         this.input = input;
     }
 
+    
+
     public CommonTask withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -246,6 +260,8 @@ public class CommonTask  {
         this.output = output;
     }
 
+    
+
     public CommonTask withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -265,6 +281,9 @@ public class CommonTask  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

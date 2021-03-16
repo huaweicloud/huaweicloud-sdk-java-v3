@@ -33,13 +33,13 @@ public class SearchCorpVmrRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class SearchCorpVmrRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchCorpVmrRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -94,6 +96,8 @@ public class SearchCorpVmrRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public SearchCorpVmrRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -115,6 +119,8 @@ public class SearchCorpVmrRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchCorpVmrRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -138,6 +144,8 @@ public class SearchCorpVmrRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchCorpVmrRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -157,6 +165,8 @@ public class SearchCorpVmrRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public SearchCorpVmrRequest withStatus(Integer status) {
         this.status = status;
@@ -179,6 +189,9 @@ public class SearchCorpVmrRequest  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

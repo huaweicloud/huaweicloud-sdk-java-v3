@@ -55,6 +55,8 @@ public class CheckAuthUsersOfAppRequest  {
         this.appId = appId;
     }
 
+    
+
     public CheckAuthUsersOfAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class CheckAuthUsersOfAppRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CheckAuthUsersOfAppRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -94,6 +98,9 @@ public class CheckAuthUsersOfAppRequest  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

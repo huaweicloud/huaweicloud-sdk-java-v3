@@ -103,6 +103,8 @@ public class MeetingFileBase  {
         this.fileCode = fileCode;
     }
 
+    
+
     public MeetingFileBase withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -122,6 +124,8 @@ public class MeetingFileBase  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public MeetingFileBase withFileId(String fileId) {
         this.fileId = fileId;
@@ -143,6 +147,8 @@ public class MeetingFileBase  {
         this.fileId = fileId;
     }
 
+    
+
     public MeetingFileBase withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -162,6 +168,8 @@ public class MeetingFileBase  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public MeetingFileBase withFileSize(Long fileSize) {
         this.fileSize = fileSize;
@@ -183,6 +191,8 @@ public class MeetingFileBase  {
         this.fileSize = fileSize;
     }
 
+    
+
     public MeetingFileBase withThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
         return this;
@@ -202,6 +212,8 @@ public class MeetingFileBase  {
     public void setThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
     }
+
+    
 
     public MeetingFileBase withThumbnailFileName(String thumbnailFileName) {
         this.thumbnailFileName = thumbnailFileName;
@@ -223,6 +235,8 @@ public class MeetingFileBase  {
         this.thumbnailFileName = thumbnailFileName;
     }
 
+    
+
     public MeetingFileBase withThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
         return this;
@@ -242,6 +256,8 @@ public class MeetingFileBase  {
     public void setThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
     }
+
+    
 
     public MeetingFileBase withPdfFileId(String pdfFileId) {
         this.pdfFileId = pdfFileId;
@@ -263,6 +279,8 @@ public class MeetingFileBase  {
         this.pdfFileId = pdfFileId;
     }
 
+    
+
     public MeetingFileBase withPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
         return this;
@@ -283,6 +301,8 @@ public class MeetingFileBase  {
         this.pdfFileName = pdfFileName;
     }
 
+    
+
     public MeetingFileBase withPdfFileSize(Long pdfFileSize) {
         this.pdfFileSize = pdfFileSize;
         return this;
@@ -302,6 +322,9 @@ public class MeetingFileBase  {
     public void setPdfFileSize(Long pdfFileSize) {
         this.pdfFileSize = pdfFileSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

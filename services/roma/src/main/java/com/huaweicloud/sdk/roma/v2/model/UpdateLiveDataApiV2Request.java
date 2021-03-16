@@ -34,7 +34,7 @@ public class UpdateLiveDataApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LdApiCreate body = null;
+    private LdApiCreate body;
 
     public UpdateLiveDataApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateLiveDataApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateLiveDataApiV2Request withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateLiveDataApiV2Request  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public UpdateLiveDataApiV2Request withBody(LdApiCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateLiveDataApiV2Request  {
     public void setBody(LdApiCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

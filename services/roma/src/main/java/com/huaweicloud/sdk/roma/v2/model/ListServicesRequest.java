@@ -27,7 +27,7 @@ public class ListServicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +75,7 @@ public class ListServicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListServicesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -96,6 +96,8 @@ public class ListServicesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListServicesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -119,6 +121,8 @@ public class ListServicesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListServicesRequest withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -141,6 +145,8 @@ public class ListServicesRequest  {
         this.serviceId = serviceId;
     }
 
+    
+
     public ListServicesRequest withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
@@ -160,6 +166,8 @@ public class ListServicesRequest  {
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
+
+    
 
     public ListServicesRequest withProductTemplateId(Integer productTemplateId) {
         this.productTemplateId = productTemplateId;
@@ -183,6 +191,8 @@ public class ListServicesRequest  {
         this.productTemplateId = productTemplateId;
     }
 
+    
+
     public ListServicesRequest withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -205,6 +215,8 @@ public class ListServicesRequest  {
         this.productId = productId;
     }
 
+    
+
     public ListServicesRequest withCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
         return this;
@@ -224,6 +236,8 @@ public class ListServicesRequest  {
     public void setCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
     }
+
+    
 
     public ListServicesRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
@@ -247,6 +261,8 @@ public class ListServicesRequest  {
         this.createdDateStart = createdDateStart;
     }
 
+    
+
     public ListServicesRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
@@ -269,6 +285,8 @@ public class ListServicesRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
+    
+
     public ListServicesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -290,6 +308,9 @@ public class ListServicesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -339,6 +339,8 @@ public class Params  {
         this.compareResult = compareResult;
     }
 
+    
+
     public Params withDataType(String dataType) {
         this.dataType = dataType;
         return this;
@@ -358,6 +360,8 @@ public class Params  {
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
+
+    
 
     public Params withGroup(GroupEnum group) {
         this.group = group;
@@ -379,6 +383,8 @@ public class Params  {
         this.group = group;
     }
 
+    
+
     public Params withKey(String key) {
         this.key = key;
         return this;
@@ -398,6 +404,8 @@ public class Params  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
 
     public Params withNeedRestart(NeedRestartEnum needRestart) {
         this.needRestart = needRestart;
@@ -419,6 +427,8 @@ public class Params  {
         this.needRestart = needRestart;
     }
 
+    
+
     public Params withSourceValue(String sourceValue) {
         this.sourceValue = sourceValue;
         return this;
@@ -438,6 +448,8 @@ public class Params  {
     public void setSourceValue(String sourceValue) {
         this.sourceValue = sourceValue;
     }
+
+    
 
     public Params withTargetValue(String targetValue) {
         this.targetValue = targetValue;
@@ -459,6 +471,8 @@ public class Params  {
         this.targetValue = targetValue;
     }
 
+    
+
     public Params withValueRange(String valueRange) {
         this.valueRange = valueRange;
         return this;
@@ -478,6 +492,8 @@ public class Params  {
     public void setValueRange(String valueRange) {
         this.valueRange = valueRange;
     }
+
+    
 
     public Params withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -499,6 +515,8 @@ public class Params  {
         this.errorCode = errorCode;
     }
 
+    
+
     public Params withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -518,6 +536,9 @@ public class Params  {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

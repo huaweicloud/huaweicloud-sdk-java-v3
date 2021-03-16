@@ -27,7 +27,7 @@ public class CreateQueueReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queue_type")
     
-    private String queueType = "sql";
+    private String queueType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class CreateQueueReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
     public CreateQueueReq withQueueName(String queueName) {
         this.queueName = queueName;
@@ -73,6 +73,8 @@ public class CreateQueueReq  {
         this.queueName = queueName;
     }
 
+    
+
     public CreateQueueReq withQueueType(String queueType) {
         this.queueType = queueType;
         return this;
@@ -92,6 +94,8 @@ public class CreateQueueReq  {
     public void setQueueType(String queueType) {
         this.queueType = queueType;
     }
+
+    
 
     public CreateQueueReq withDescription(String description) {
         this.description = description;
@@ -113,6 +117,8 @@ public class CreateQueueReq  {
         this.description = description;
     }
 
+    
+
     public CreateQueueReq withCuCount(Integer cuCount) {
         this.cuCount = cuCount;
         return this;
@@ -132,6 +138,8 @@ public class CreateQueueReq  {
     public void setCuCount(Integer cuCount) {
         this.cuCount = cuCount;
     }
+
+    
 
     public CreateQueueReq withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -153,6 +161,8 @@ public class CreateQueueReq  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public CreateQueueReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -172,6 +182,9 @@ public class CreateQueueReq  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

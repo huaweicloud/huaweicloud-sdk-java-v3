@@ -37,9 +37,6 @@ public class ShowBlockchainNodesResponse extends SdkResponse {
     
 
     public ShowBlockchainNodesResponse putNodeOrgsItem(String key, Org nodeOrgsItem) {
-         if (this.nodeOrgs == null) {
-            this.nodeOrgs = new HashMap<>();
-         }
         this.nodeOrgs.put(key, nodeOrgsItem);
         return this;
     }
@@ -62,6 +59,9 @@ public class ShowBlockchainNodesResponse extends SdkResponse {
     public void setNodeOrgs(Map<String, Org> nodeOrgs) {
         this.nodeOrgs = nodeOrgs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

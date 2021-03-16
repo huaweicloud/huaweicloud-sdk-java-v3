@@ -22,7 +22,7 @@ public class CancelCustomerOrderRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CancelCustomerOrderReq body = null;
+    private CancelCustomerOrderReq body;
 
     public CancelCustomerOrderRequest withBody(CancelCustomerOrderReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CancelCustomerOrderRequest  {
     public void setBody(CancelCustomerOrderReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

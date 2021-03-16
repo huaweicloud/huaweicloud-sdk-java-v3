@@ -61,6 +61,8 @@ public class CreateApplicationRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateApplicationRequestBody withPlatform(String platform) {
         this.platform = platform;
         return this;
@@ -80,6 +82,8 @@ public class CreateApplicationRequestBody  {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
+
+    
 
     public CreateApplicationRequestBody withPlatformPrincipal(String platformPrincipal) {
         this.platformPrincipal = platformPrincipal;
@@ -101,6 +105,8 @@ public class CreateApplicationRequestBody  {
         this.platformPrincipal = platformPrincipal;
     }
 
+    
+
     public CreateApplicationRequestBody withPlatformCredential(String platformCredential) {
         this.platformCredential = platformCredential;
         return this;
@@ -120,6 +126,9 @@ public class CreateApplicationRequestBody  {
     public void setPlatformCredential(String platformCredential) {
         this.platformCredential = platformCredential;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

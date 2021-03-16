@@ -129,13 +129,13 @@ public class ProductTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -169,6 +169,8 @@ public class ProductTemplate  {
         this.id = id;
     }
 
+    
+
     public ProductTemplate withName(String name) {
         this.name = name;
         return this;
@@ -188,6 +190,8 @@ public class ProductTemplate  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ProductTemplate withDescription(String description) {
         this.description = description;
@@ -209,6 +213,8 @@ public class ProductTemplate  {
         this.description = description;
     }
 
+    
+
     public ProductTemplate withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -228,6 +234,8 @@ public class ProductTemplate  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ProductTemplate withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -256,6 +264,8 @@ public class ProductTemplate  {
         this.createdUser = createdUser;
     }
 
+    
+
     public ProductTemplate withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -283,6 +293,8 @@ public class ProductTemplate  {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public ProductTemplate withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -305,6 +317,8 @@ public class ProductTemplate  {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public ProductTemplate withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
@@ -326,6 +340,9 @@ public class ProductTemplate  {
     public void setLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

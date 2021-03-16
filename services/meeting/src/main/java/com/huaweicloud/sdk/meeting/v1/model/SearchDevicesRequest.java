@@ -39,7 +39,7 @@ public class SearchDevicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,6 +87,8 @@ public class SearchDevicesRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchDevicesRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -107,6 +109,8 @@ public class SearchDevicesRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public SearchDevicesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -126,6 +130,8 @@ public class SearchDevicesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchDevicesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -149,6 +155,8 @@ public class SearchDevicesRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchDevicesRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -168,6 +176,8 @@ public class SearchDevicesRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public SearchDevicesRequest withModel(String model) {
         this.model = model;
@@ -189,6 +199,8 @@ public class SearchDevicesRequest  {
         this.model = model;
     }
 
+    
+
     public SearchDevicesRequest withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -209,6 +221,8 @@ public class SearchDevicesRequest  {
         this.deptCode = deptCode;
     }
 
+    
+
     public SearchDevicesRequest withEnableSubDept(Boolean enableSubDept) {
         this.enableSubDept = enableSubDept;
         return this;
@@ -228,6 +242,9 @@ public class SearchDevicesRequest  {
     public void setEnableSubDept(Boolean enableSubDept) {
         this.enableSubDept = enableSubDept;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

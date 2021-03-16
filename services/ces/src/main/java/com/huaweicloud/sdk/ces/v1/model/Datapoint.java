@@ -79,6 +79,8 @@ public class Datapoint  {
         this.max = max;
     }
 
+    
+
     public Datapoint withMin(Double min) {
         this.min = min;
         return this;
@@ -98,6 +100,8 @@ public class Datapoint  {
     public void setMin(Double min) {
         this.min = min;
     }
+
+    
 
     public Datapoint withAverage(Double average) {
         this.average = average;
@@ -119,6 +123,8 @@ public class Datapoint  {
         this.average = average;
     }
 
+    
+
     public Datapoint withSum(Double sum) {
         this.sum = sum;
         return this;
@@ -138,6 +144,8 @@ public class Datapoint  {
     public void setSum(Double sum) {
         this.sum = sum;
     }
+
+    
 
     public Datapoint withVariance(Double variance) {
         this.variance = variance;
@@ -159,6 +167,8 @@ public class Datapoint  {
         this.variance = variance;
     }
 
+    
+
     public Datapoint withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -179,6 +189,8 @@ public class Datapoint  {
         this.timestamp = timestamp;
     }
 
+    
+
     public Datapoint withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -198,6 +210,9 @@ public class Datapoint  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

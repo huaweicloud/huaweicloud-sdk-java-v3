@@ -49,6 +49,8 @@ public class ActionIoTAForwarding  {
         this.regionName = regionName;
     }
 
+    
+
     public ActionIoTAForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -68,6 +70,9 @@ public class ActionIoTAForwarding  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

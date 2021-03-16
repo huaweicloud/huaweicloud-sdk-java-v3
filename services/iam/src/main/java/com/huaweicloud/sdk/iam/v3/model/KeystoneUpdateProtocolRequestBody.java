@@ -22,7 +22,7 @@ public class KeystoneUpdateProtocolRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    private ProtocolOption protocol = null;
+    private ProtocolOption protocol;
 
     public KeystoneUpdateProtocolRequestBody withProtocol(ProtocolOption protocol) {
         this.protocol = protocol;
@@ -50,6 +50,9 @@ public class KeystoneUpdateProtocolRequestBody  {
     public void setProtocol(ProtocolOption protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

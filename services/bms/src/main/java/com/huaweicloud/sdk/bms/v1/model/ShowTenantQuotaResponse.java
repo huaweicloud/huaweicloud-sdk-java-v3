@@ -24,7 +24,7 @@ public class ShowTenantQuotaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="absolute")
     
-    private Absolute absolute = null;
+    private Absolute absolute;
 
     public ShowTenantQuotaResponse withAbsolute(Absolute absolute) {
         this.absolute = absolute;
@@ -52,6 +52,9 @@ public class ShowTenantQuotaResponse extends SdkResponse {
     public void setAbsolute(Absolute absolute) {
         this.absolute = absolute;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class RunOnceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private StartJobReq body = null;
+    private StartJobReq body;
 
     public RunOnceRequest withJobName(String jobName) {
         this.jobName = jobName;
@@ -49,6 +49,8 @@ public class RunOnceRequest  {
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
+
+    
 
     public RunOnceRequest withBody(StartJobReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RunOnceRequest  {
     public void setBody(StartJobReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

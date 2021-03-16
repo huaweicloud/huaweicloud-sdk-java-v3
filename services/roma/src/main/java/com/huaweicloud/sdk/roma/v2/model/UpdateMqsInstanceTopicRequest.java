@@ -28,7 +28,7 @@ public class UpdateMqsInstanceTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateMqsInstanceTopicReq body = null;
+    private UpdateMqsInstanceTopicReq body;
 
     public UpdateMqsInstanceTopicRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateMqsInstanceTopicRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateMqsInstanceTopicRequest withBody(UpdateMqsInstanceTopicReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateMqsInstanceTopicRequest  {
     public void setBody(UpdateMqsInstanceTopicReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

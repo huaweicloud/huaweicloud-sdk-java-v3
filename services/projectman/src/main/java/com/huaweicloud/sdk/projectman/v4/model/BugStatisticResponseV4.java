@@ -79,6 +79,8 @@ public class BugStatisticResponseV4  {
         this.criticalNum = criticalNum;
     }
 
+    
+
     public BugStatisticResponseV4 withDefectIndex(Double defectIndex) {
         this.defectIndex = defectIndex;
         return this;
@@ -98,6 +100,8 @@ public class BugStatisticResponseV4  {
     public void setDefectIndex(Double defectIndex) {
         this.defectIndex = defectIndex;
     }
+
+    
 
     public BugStatisticResponseV4 withModule(String module) {
         this.module = module;
@@ -119,6 +123,8 @@ public class BugStatisticResponseV4  {
         this.module = module;
     }
 
+    
+
     public BugStatisticResponseV4 withNormalNum(Integer normalNum) {
         this.normalNum = normalNum;
         return this;
@@ -138,6 +144,8 @@ public class BugStatisticResponseV4  {
     public void setNormalNum(Integer normalNum) {
         this.normalNum = normalNum;
     }
+
+    
 
     public BugStatisticResponseV4 withSeriousNum(Integer seriousNum) {
         this.seriousNum = seriousNum;
@@ -159,6 +167,8 @@ public class BugStatisticResponseV4  {
         this.seriousNum = seriousNum;
     }
 
+    
+
     public BugStatisticResponseV4 withTipNum(Integer tipNum) {
         this.tipNum = tipNum;
         return this;
@@ -179,6 +189,8 @@ public class BugStatisticResponseV4  {
         this.tipNum = tipNum;
     }
 
+    
+
     public BugStatisticResponseV4 withTotal(Integer total) {
         this.total = total;
         return this;
@@ -198,6 +210,9 @@ public class BugStatisticResponseV4  {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

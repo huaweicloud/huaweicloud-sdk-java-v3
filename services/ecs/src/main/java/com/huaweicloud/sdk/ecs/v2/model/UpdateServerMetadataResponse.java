@@ -36,9 +36,6 @@ public class UpdateServerMetadataResponse extends SdkResponse {
     
 
     public UpdateServerMetadataResponse putMetadataItem(String key, String metadataItem) {
-         if (this.metadata == null) {
-            this.metadata = new HashMap<>();
-         }
         this.metadata.put(key, metadataItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class UpdateServerMetadataResponse extends SdkResponse {
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

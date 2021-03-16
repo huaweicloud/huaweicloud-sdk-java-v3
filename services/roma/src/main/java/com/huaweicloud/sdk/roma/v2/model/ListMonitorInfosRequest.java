@@ -31,13 +31,13 @@ public class ListMonitorInfosRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 1;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -173,6 +173,8 @@ public class ListMonitorInfosRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListMonitorInfosRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -194,6 +196,8 @@ public class ListMonitorInfosRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListMonitorInfosRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -217,6 +221,8 @@ public class ListMonitorInfosRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListMonitorInfosRequest withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -237,6 +243,8 @@ public class ListMonitorInfosRequest  {
         this.taskName = taskName;
     }
 
+    
+
     public ListMonitorInfosRequest withExecuteStatus(ExecuteStatusEnum executeStatus) {
         this.executeStatus = executeStatus;
         return this;
@@ -256,6 +264,9 @@ public class ListMonitorInfosRequest  {
     public void setExecuteStatus(ExecuteStatusEnum executeStatus) {
         this.executeStatus = executeStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

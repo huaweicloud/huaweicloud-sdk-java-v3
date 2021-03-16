@@ -42,6 +42,9 @@ public class NeutronShowFloatingIpRequest  {
     public void setFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

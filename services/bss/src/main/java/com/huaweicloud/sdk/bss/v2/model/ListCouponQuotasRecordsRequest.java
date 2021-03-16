@@ -85,6 +85,8 @@ public class ListCouponQuotasRecordsRequest  {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    
+
     public ListCouponQuotasRecordsRequest withQuotaId(String quotaId) {
         this.quotaId = quotaId;
         return this;
@@ -104,6 +106,8 @@ public class ListCouponQuotasRecordsRequest  {
     public void setQuotaId(String quotaId) {
         this.quotaId = quotaId;
     }
+
+    
 
     public ListCouponQuotasRecordsRequest withOperationTimeBegin(String operationTimeBegin) {
         this.operationTimeBegin = operationTimeBegin;
@@ -125,6 +129,8 @@ public class ListCouponQuotasRecordsRequest  {
         this.operationTimeBegin = operationTimeBegin;
     }
 
+    
+
     public ListCouponQuotasRecordsRequest withOperationTimeEnd(String operationTimeEnd) {
         this.operationTimeEnd = operationTimeEnd;
         return this;
@@ -144,6 +150,8 @@ public class ListCouponQuotasRecordsRequest  {
     public void setOperationTimeEnd(String operationTimeEnd) {
         this.operationTimeEnd = operationTimeEnd;
     }
+
+    
 
     public ListCouponQuotasRecordsRequest withParentQuotaId(String parentQuotaId) {
         this.parentQuotaId = parentQuotaId;
@@ -165,6 +173,8 @@ public class ListCouponQuotasRecordsRequest  {
         this.parentQuotaId = parentQuotaId;
     }
 
+    
+
     public ListCouponQuotasRecordsRequest withOperationType(String operationType) {
         this.operationType = operationType;
         return this;
@@ -184,6 +194,8 @@ public class ListCouponQuotasRecordsRequest  {
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
+
+    
 
     public ListCouponQuotasRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -207,6 +219,8 @@ public class ListCouponQuotasRecordsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCouponQuotasRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -228,6 +242,9 @@ public class ListCouponQuotasRecordsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -257,6 +257,8 @@ public class AuthorizerCreate  {
         this.name = name;
     }
 
+    
+
     public AuthorizerCreate withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -276,6 +278,8 @@ public class AuthorizerCreate  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public AuthorizerCreate withAuthorizerType(AuthorizerTypeEnum authorizerType) {
         this.authorizerType = authorizerType;
@@ -297,6 +301,8 @@ public class AuthorizerCreate  {
         this.authorizerType = authorizerType;
     }
 
+    
+
     public AuthorizerCreate withAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
         return this;
@@ -317,6 +323,8 @@ public class AuthorizerCreate  {
         this.authorizerUri = authorizerUri;
     }
 
+    
+
     public AuthorizerCreate withIdentities(List<Identity> identities) {
         this.identities = identities;
         return this;
@@ -324,9 +332,6 @@ public class AuthorizerCreate  {
 
     
     public AuthorizerCreate addIdentitiesItem(Identity identitiesItem) {
-        if (this.identities == null) {
-            this.identities = new ArrayList<>();
-        }
         this.identities.add(identitiesItem);
         return this;
     }
@@ -351,6 +356,8 @@ public class AuthorizerCreate  {
         this.identities = identities;
     }
 
+    
+
     public AuthorizerCreate withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -370,6 +377,8 @@ public class AuthorizerCreate  {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public AuthorizerCreate withUserData(String userData) {
         this.userData = userData;
@@ -391,6 +400,8 @@ public class AuthorizerCreate  {
         this.userData = userData;
     }
 
+    
+
     public AuthorizerCreate withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -411,6 +422,8 @@ public class AuthorizerCreate  {
         this.ldApiId = ldApiId;
     }
 
+    
+
     public AuthorizerCreate withNeedBody(Boolean needBody) {
         this.needBody = needBody;
         return this;
@@ -430,6 +443,9 @@ public class AuthorizerCreate  {
     public void setNeedBody(Boolean needBody) {
         this.needBody = needBody;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

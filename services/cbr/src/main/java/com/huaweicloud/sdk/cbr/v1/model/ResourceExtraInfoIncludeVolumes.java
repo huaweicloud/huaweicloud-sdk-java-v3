@@ -49,6 +49,8 @@ public class ResourceExtraInfoIncludeVolumes  {
         this.id = id;
     }
 
+    
+
     public ResourceExtraInfoIncludeVolumes withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
@@ -68,6 +70,9 @@ public class ResourceExtraInfoIncludeVolumes  {
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

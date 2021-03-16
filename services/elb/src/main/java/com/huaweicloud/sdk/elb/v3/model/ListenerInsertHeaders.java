@@ -21,25 +21,25 @@ public class ListenerInsertHeaders  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Forwarded-ELB-IP")
     
-    private Boolean xForwardedELBIP = false;
+    private Boolean xForwardedELBIP;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Forwarded-Port")
     
-    private Boolean xForwardedPort = false;
+    private Boolean xForwardedPort;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Forwarded-For-Port")
     
-    private Boolean xForwardedForPort = false;
+    private Boolean xForwardedForPort;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Forwarded-Host")
     
-    private Boolean xForwardedHost = true;
+    private Boolean xForwardedHost;
 
     public ListenerInsertHeaders withXForwardedELBIP(Boolean xForwardedELBIP) {
         this.xForwardedELBIP = xForwardedELBIP;
@@ -63,6 +63,8 @@ public class ListenerInsertHeaders  {
         this.xForwardedELBIP = xForwardedELBIP;
     }
 
+    
+
     public ListenerInsertHeaders withXForwardedPort(Boolean xForwardedPort) {
         this.xForwardedPort = xForwardedPort;
         return this;
@@ -84,6 +86,8 @@ public class ListenerInsertHeaders  {
     public void setXForwardedPort(Boolean xForwardedPort) {
         this.xForwardedPort = xForwardedPort;
     }
+
+    
 
     public ListenerInsertHeaders withXForwardedForPort(Boolean xForwardedForPort) {
         this.xForwardedForPort = xForwardedForPort;
@@ -107,6 +111,8 @@ public class ListenerInsertHeaders  {
         this.xForwardedForPort = xForwardedForPort;
     }
 
+    
+
     public ListenerInsertHeaders withXForwardedHost(Boolean xForwardedHost) {
         this.xForwardedHost = xForwardedHost;
         return this;
@@ -128,6 +134,9 @@ public class ListenerInsertHeaders  {
     public void setXForwardedHost(Boolean xForwardedHost) {
         this.xForwardedHost = xForwardedHost;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

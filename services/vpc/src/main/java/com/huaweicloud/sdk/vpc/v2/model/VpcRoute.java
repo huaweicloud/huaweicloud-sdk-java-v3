@@ -149,6 +149,8 @@ public class VpcRoute  {
         this.id = id;
     }
 
+    
+
     public VpcRoute withDestination(String destination) {
         this.destination = destination;
         return this;
@@ -168,6 +170,8 @@ public class VpcRoute  {
     public void setDestination(String destination) {
         this.destination = destination;
     }
+
+    
 
     public VpcRoute withNexthop(String nexthop) {
         this.nexthop = nexthop;
@@ -189,6 +193,8 @@ public class VpcRoute  {
         this.nexthop = nexthop;
     }
 
+    
+
     public VpcRoute withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -208,6 +214,8 @@ public class VpcRoute  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public VpcRoute withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -229,6 +237,8 @@ public class VpcRoute  {
         this.vpcId = vpcId;
     }
 
+    
+
     public VpcRoute withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -248,6 +258,9 @@ public class VpcRoute  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -149,6 +149,8 @@ public class CheckJobResp  {
         this.id = id;
     }
 
+    
+
     public CheckJobResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -168,6 +170,8 @@ public class CheckJobResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public CheckJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -189,6 +193,8 @@ public class CheckJobResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public CheckJobResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -209,6 +215,8 @@ public class CheckJobResp  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public CheckJobResp withSuccess(Boolean success) {
         this.success = success;
         return this;
@@ -228,6 +236,9 @@ public class CheckJobResp  {
     public void setSuccess(Boolean success) {
         this.success = success;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

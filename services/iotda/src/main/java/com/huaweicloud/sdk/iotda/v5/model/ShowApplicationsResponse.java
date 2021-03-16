@@ -35,9 +35,6 @@ public class ShowApplicationsResponse extends SdkResponse {
 
     
     public ShowApplicationsResponse addApplicationsItem(ApplicationDTO applicationsItem) {
-        if (this.applications == null) {
-            this.applications = new ArrayList<>();
-        }
         this.applications.add(applicationsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowApplicationsResponse extends SdkResponse {
     public void setApplications(List<ApplicationDTO> applications) {
         this.applications = applications;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

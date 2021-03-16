@@ -185,6 +185,8 @@ public class PostAndPutFloatingIpResp  {
         this.fixedIpAddress = fixedIpAddress;
     }
 
+    
+
     public PostAndPutFloatingIpResp withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
@@ -204,6 +206,8 @@ public class PostAndPutFloatingIpResp  {
     public void setFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
     }
+
+    
 
     public PostAndPutFloatingIpResp withFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
@@ -225,6 +229,8 @@ public class PostAndPutFloatingIpResp  {
         this.floatingNetworkId = floatingNetworkId;
     }
 
+    
+
     public PostAndPutFloatingIpResp withId(String id) {
         this.id = id;
         return this;
@@ -244,6 +250,8 @@ public class PostAndPutFloatingIpResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public PostAndPutFloatingIpResp withPortId(String portId) {
         this.portId = portId;
@@ -265,6 +273,8 @@ public class PostAndPutFloatingIpResp  {
         this.portId = portId;
     }
 
+    
+
     public PostAndPutFloatingIpResp withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
@@ -284,6 +294,8 @@ public class PostAndPutFloatingIpResp  {
     public void setRouterId(String routerId) {
         this.routerId = routerId;
     }
+
+    
 
     public PostAndPutFloatingIpResp withStatus(StatusEnum status) {
         this.status = status;
@@ -305,6 +317,8 @@ public class PostAndPutFloatingIpResp  {
         this.status = status;
     }
 
+    
+
     public PostAndPutFloatingIpResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -324,6 +338,8 @@ public class PostAndPutFloatingIpResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public PostAndPutFloatingIpResp withDnsName(String dnsName) {
         this.dnsName = dnsName;
@@ -345,6 +361,8 @@ public class PostAndPutFloatingIpResp  {
         this.dnsName = dnsName;
     }
 
+    
+
     public PostAndPutFloatingIpResp withDnsDomain(String dnsDomain) {
         this.dnsDomain = dnsDomain;
         return this;
@@ -364,6 +382,9 @@ public class PostAndPutFloatingIpResp  {
     public void setDnsDomain(String dnsDomain) {
         this.dnsDomain = dnsDomain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

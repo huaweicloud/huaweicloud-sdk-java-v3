@@ -49,6 +49,8 @@ public class UpdateSnapshotOption  {
         this.description = description;
     }
 
+    
+
     public UpdateSnapshotOption withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +70,9 @@ public class UpdateSnapshotOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

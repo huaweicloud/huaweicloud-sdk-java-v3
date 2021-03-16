@@ -28,7 +28,7 @@ public class UpdateActionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel_detail")
     
-    private ChannelDetail channelDetail = null;
+    private ChannelDetail channelDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class UpdateActionReq  {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
 
     public UpdateActionReq withChannelDetail(ChannelDetail channelDetail) {
         this.channelDetail = channelDetail;
@@ -83,6 +85,8 @@ public class UpdateActionReq  {
         this.channelDetail = channelDetail;
     }
 
+    
+
     public UpdateActionReq withBatch(Boolean batch) {
         this.batch = batch;
         return this;
@@ -102,6 +106,9 @@ public class UpdateActionReq  {
     public void setBatch(Boolean batch) {
         this.batch = batch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -41,9 +41,6 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
 
     
     public ShowBackupDownloadLinkResponse addFilesItem(GetBackupDownloadLinkResponseBodyFiles filesItem) {
-        if (this.files == null) {
-            this.files = new ArrayList<>();
-        }
         this.files.add(filesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
         this.files = files;
     }
 
+    
+
     public ShowBackupDownloadLinkResponse withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -87,6 +86,9 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

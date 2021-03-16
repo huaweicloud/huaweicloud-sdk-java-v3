@@ -39,7 +39,7 @@ public class MigrateResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="associated")
     
-    private Boolean associated = false;
+    private Boolean associated;
 
     public MigrateResource withProjectId(String projectId) {
         this.projectId = projectId;
@@ -61,6 +61,8 @@ public class MigrateResource  {
         this.projectId = projectId;
     }
 
+    
+
     public MigrateResource withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -80,6 +82,8 @@ public class MigrateResource  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public MigrateResource withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -101,6 +105,8 @@ public class MigrateResource  {
         this.resourceType = resourceType;
     }
 
+    
+
     public MigrateResource withAssociated(Boolean associated) {
         this.associated = associated;
         return this;
@@ -120,6 +126,9 @@ public class MigrateResource  {
     public void setAssociated(Boolean associated) {
         this.associated = associated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

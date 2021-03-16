@@ -31,12 +31,6 @@ public class ShowMigprojectResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    private String domainId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
@@ -45,7 +39,7 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isdefault")
     
-    private Boolean isdefault = false;
+    private Boolean isdefault;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +51,7 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private Boolean startTargetServer = true;
+    private Boolean startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,13 +63,13 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="use_public_ip")
     
-    private Boolean usePublicIp = true;
+    private Boolean usePublicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exist_server")
     
-    private Boolean existServer = true;
+    private Boolean existServer;
     /**
      * 迁移项目类型
      */
@@ -165,13 +159,13 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project")
     
-    private String enterpriseProject = "default";
+    private String enterpriseProject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="syncing")
     
-    private Boolean syncing = false;
+    private Boolean syncing;
 
     public ShowMigprojectResponse withName(String name) {
         this.name = name;
@@ -193,25 +187,7 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.name = name;
     }
 
-    public ShowMigprojectResponse withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
     
-
-
-    /**
-     * 用户ID
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
 
     public ShowMigprojectResponse withDescription(String description) {
         this.description = description;
@@ -233,6 +209,8 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowMigprojectResponse withIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
         return this;
@@ -252,6 +230,8 @@ public class ShowMigprojectResponse extends SdkResponse {
     public void setIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
     }
+
+    
 
     public ShowMigprojectResponse withRegion(String region) {
         this.region = region;
@@ -273,6 +253,8 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.region = region;
     }
 
+    
+
     public ShowMigprojectResponse withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
@@ -292,6 +274,8 @@ public class ShowMigprojectResponse extends SdkResponse {
     public void setStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
     }
+
+    
 
     public ShowMigprojectResponse withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
@@ -315,6 +299,8 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.speedLimit = speedLimit;
     }
 
+    
+
     public ShowMigprojectResponse withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -334,6 +320,8 @@ public class ShowMigprojectResponse extends SdkResponse {
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
     }
+
+    
 
     public ShowMigprojectResponse withExistServer(Boolean existServer) {
         this.existServer = existServer;
@@ -355,6 +343,8 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.existServer = existServer;
     }
 
+    
+
     public ShowMigprojectResponse withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -374,6 +364,8 @@ public class ShowMigprojectResponse extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowMigprojectResponse withEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
@@ -395,6 +387,8 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.enterpriseProject = enterpriseProject;
     }
 
+    
+
     public ShowMigprojectResponse withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
@@ -414,6 +408,9 @@ public class ShowMigprojectResponse extends SdkResponse {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -424,7 +421,6 @@ public class ShowMigprojectResponse extends SdkResponse {
         }
         ShowMigprojectResponse showMigprojectResponse = (ShowMigprojectResponse) o;
         return Objects.equals(this.name, showMigprojectResponse.name) &&
-            Objects.equals(this.domainId, showMigprojectResponse.domainId) &&
             Objects.equals(this.description, showMigprojectResponse.description) &&
             Objects.equals(this.isdefault, showMigprojectResponse.isdefault) &&
             Objects.equals(this.region, showMigprojectResponse.region) &&
@@ -438,14 +434,13 @@ public class ShowMigprojectResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, domainId, description, isdefault, region, startTargetServer, speedLimit, usePublicIp, existServer, type, enterpriseProject, syncing);
+        return Objects.hash(name, description, isdefault, region, startTargetServer, speedLimit, usePublicIp, existServer, type, enterpriseProject, syncing);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMigprojectResponse {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

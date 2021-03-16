@@ -33,7 +33,7 @@ public class AsyncDeviceCommandRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paras")
     
-    private Object paras = null;
+    private Object paras;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,6 +67,8 @@ public class AsyncDeviceCommandRequest  {
         this.serviceId = serviceId;
     }
 
+    
+
     public AsyncDeviceCommandRequest withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
@@ -87,6 +89,8 @@ public class AsyncDeviceCommandRequest  {
         this.commandName = commandName;
     }
 
+    
+
     public AsyncDeviceCommandRequest withParas(Object paras) {
         this.paras = paras;
         return this;
@@ -106,6 +110,8 @@ public class AsyncDeviceCommandRequest  {
     public void setParas(Object paras) {
         this.paras = paras;
     }
+
+    
 
     public AsyncDeviceCommandRequest withExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
@@ -129,6 +135,8 @@ public class AsyncDeviceCommandRequest  {
         this.expireTime = expireTime;
     }
 
+    
+
     public AsyncDeviceCommandRequest withSendStrategy(String sendStrategy) {
         this.sendStrategy = sendStrategy;
         return this;
@@ -148,6 +156,9 @@ public class AsyncDeviceCommandRequest  {
     public void setSendStrategy(String sendStrategy) {
         this.sendStrategy = sendStrategy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

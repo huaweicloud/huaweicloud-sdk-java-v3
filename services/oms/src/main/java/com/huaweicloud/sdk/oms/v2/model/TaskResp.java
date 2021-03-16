@@ -52,7 +52,7 @@ public class TaskResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dst_node")
     
-    private DstNodeResp dstNode = null;
+    private DstNodeResp dstNode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,7 +76,7 @@ public class TaskResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_reason")
     
-    private ErrorReasonResp errorReason = null;
+    private ErrorReasonResp errorReason;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,7 +88,7 @@ public class TaskResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failed_object_record")
     
-    private FailedObjectRecordDto failedObjectRecord = null;
+    private FailedObjectRecordDto failedObjectRecord;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -154,7 +154,7 @@ public class TaskResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="src_node")
     
-    private SrcNodeResp srcNode = null;
+    private SrcNodeResp srcNode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -268,7 +268,7 @@ public class TaskResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_type")
     
-    private TaskTypeEnum taskType = TaskTypeEnum.OBJECT;
+    private TaskTypeEnum taskType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -292,13 +292,13 @@ public class TaskResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_info")
     
-    private SmnInfo smnInfo = null;
+    private SmnInfo smnInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_cdn")
     
-    private SourceCdnResp sourceCdn = null;
+    private SourceCdnResp sourceCdn;
 
     public TaskResp withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
@@ -307,9 +307,6 @@ public class TaskResp  {
 
     
     public TaskResp addBandwidthPolicyItem(BandwidthPolicyDto bandwidthPolicyItem) {
-        if (this.bandwidthPolicy == null) {
-            this.bandwidthPolicy = new ArrayList<>();
-        }
         this.bandwidthPolicy.add(bandwidthPolicyItem);
         return this;
     }
@@ -334,6 +331,8 @@ public class TaskResp  {
         this.bandwidthPolicy = bandwidthPolicy;
     }
 
+    
+
     public TaskResp withCompleteSize(Long completeSize) {
         this.completeSize = completeSize;
         return this;
@@ -356,6 +355,8 @@ public class TaskResp  {
         this.completeSize = completeSize;
     }
 
+    
+
     public TaskResp withDescription(String description) {
         this.description = description;
         return this;
@@ -375,6 +376,8 @@ public class TaskResp  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public TaskResp withDstNode(DstNodeResp dstNode) {
         this.dstNode = dstNode;
@@ -403,6 +406,8 @@ public class TaskResp  {
         this.dstNode = dstNode;
     }
 
+    
+
     public TaskResp withEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
         return this;
@@ -422,6 +427,8 @@ public class TaskResp  {
     public void setEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
     }
+
+    
 
     public TaskResp withEnableKms(Boolean enableKms) {
         this.enableKms = enableKms;
@@ -443,6 +450,8 @@ public class TaskResp  {
         this.enableKms = enableKms;
     }
 
+    
+
     public TaskResp withEnableRestore(Boolean enableRestore) {
         this.enableRestore = enableRestore;
         return this;
@@ -462,6 +471,8 @@ public class TaskResp  {
     public void setEnableRestore(Boolean enableRestore) {
         this.enableRestore = enableRestore;
     }
+
+    
 
     public TaskResp withErrorReason(ErrorReasonResp errorReason) {
         this.errorReason = errorReason;
@@ -490,6 +501,8 @@ public class TaskResp  {
         this.errorReason = errorReason;
     }
 
+    
+
     public TaskResp withFailedNum(Long failedNum) {
         this.failedNum = failedNum;
         return this;
@@ -511,6 +524,8 @@ public class TaskResp  {
     public void setFailedNum(Long failedNum) {
         this.failedNum = failedNum;
     }
+
+    
 
     public TaskResp withFailedObjectRecord(FailedObjectRecordDto failedObjectRecord) {
         this.failedObjectRecord = failedObjectRecord;
@@ -539,6 +554,8 @@ public class TaskResp  {
         this.failedObjectRecord = failedObjectRecord;
     }
 
+    
+
     public TaskResp withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -558,6 +575,8 @@ public class TaskResp  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public TaskResp withId(Long id) {
         this.id = id;
@@ -581,6 +600,8 @@ public class TaskResp  {
         this.id = id;
     }
 
+    
+
     public TaskResp withIsQueryOver(Boolean isQueryOver) {
         this.isQueryOver = isQueryOver;
         return this;
@@ -600,6 +621,8 @@ public class TaskResp  {
     public void setIsQueryOver(Boolean isQueryOver) {
         this.isQueryOver = isQueryOver;
     }
+
+    
 
     public TaskResp withLeftTime(Long leftTime) {
         this.leftTime = leftTime;
@@ -623,6 +646,8 @@ public class TaskResp  {
         this.leftTime = leftTime;
     }
 
+    
+
     public TaskResp withMigrateSince(Long migrateSince) {
         this.migrateSince = migrateSince;
         return this;
@@ -644,6 +669,8 @@ public class TaskResp  {
     public void setMigrateSince(Long migrateSince) {
         this.migrateSince = migrateSince;
     }
+
+    
 
     public TaskResp withMigrateSpeed(Long migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
@@ -667,6 +694,8 @@ public class TaskResp  {
         this.migrateSpeed = migrateSpeed;
     }
 
+    
+
     public TaskResp withName(String name) {
         this.name = name;
         return this;
@@ -686,6 +715,8 @@ public class TaskResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TaskResp withProgress(Double progress) {
         this.progress = progress;
@@ -709,6 +740,8 @@ public class TaskResp  {
         this.progress = progress;
     }
 
+    
+
     public TaskResp withRealSize(Long realSize) {
         this.realSize = realSize;
         return this;
@@ -731,6 +764,8 @@ public class TaskResp  {
         this.realSize = realSize;
     }
 
+    
+
     public TaskResp withSkippedNum(Long skippedNum) {
         this.skippedNum = skippedNum;
         return this;
@@ -752,6 +787,8 @@ public class TaskResp  {
     public void setSkippedNum(Long skippedNum) {
         this.skippedNum = skippedNum;
     }
+
+    
 
     public TaskResp withSrcNode(SrcNodeResp srcNode) {
         this.srcNode = srcNode;
@@ -780,6 +817,8 @@ public class TaskResp  {
         this.srcNode = srcNode;
     }
 
+    
+
     public TaskResp withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -801,6 +840,8 @@ public class TaskResp  {
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public TaskResp withStatus(Integer status) {
         this.status = status;
@@ -824,6 +865,8 @@ public class TaskResp  {
         this.status = status;
     }
 
+    
+
     public TaskResp withSuccessfulNum(Long successfulNum) {
         this.successfulNum = successfulNum;
         return this;
@@ -846,6 +889,8 @@ public class TaskResp  {
         this.successfulNum = successfulNum;
     }
 
+    
+
     public TaskResp withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
@@ -865,6 +910,8 @@ public class TaskResp  {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
+
+    
 
     public TaskResp withTotalNum(Long totalNum) {
         this.totalNum = totalNum;
@@ -888,6 +935,8 @@ public class TaskResp  {
         this.totalNum = totalNum;
     }
 
+    
+
     public TaskResp withTotalSize(Long totalSize) {
         this.totalSize = totalSize;
         return this;
@@ -910,6 +959,8 @@ public class TaskResp  {
         this.totalSize = totalSize;
     }
 
+    
+
     public TaskResp withTotalTime(Long totalTime) {
         this.totalTime = totalTime;
         return this;
@@ -931,6 +982,8 @@ public class TaskResp  {
     public void setTotalTime(Long totalTime) {
         this.totalTime = totalTime;
     }
+
+    
 
     public TaskResp withSmnInfo(SmnInfo smnInfo) {
         this.smnInfo = smnInfo;
@@ -959,6 +1012,8 @@ public class TaskResp  {
         this.smnInfo = smnInfo;
     }
 
+    
+
     public TaskResp withSourceCdn(SourceCdnResp sourceCdn) {
         this.sourceCdn = sourceCdn;
         return this;
@@ -985,6 +1040,9 @@ public class TaskResp  {
     public void setSourceCdn(SourceCdnResp sourceCdn) {
         this.sourceCdn = sourceCdn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

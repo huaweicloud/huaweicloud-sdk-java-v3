@@ -85,6 +85,8 @@ public class StreamPortrait  {
         this.time = time;
     }
 
+    
+
     public StreamPortrait withFlow(Long flow) {
         this.flow = flow;
         return this;
@@ -106,6 +108,8 @@ public class StreamPortrait  {
     public void setFlow(Long flow) {
         this.flow = flow;
     }
+
+    
 
     public StreamPortrait withPlayDuration(Long playDuration) {
         this.playDuration = playDuration;
@@ -129,6 +133,8 @@ public class StreamPortrait  {
         this.playDuration = playDuration;
     }
 
+    
+
     public StreamPortrait withRequestCount(Long requestCount) {
         this.requestCount = requestCount;
         return this;
@@ -150,6 +156,8 @@ public class StreamPortrait  {
     public void setRequestCount(Long requestCount) {
         this.requestCount = requestCount;
     }
+
+    
 
     public StreamPortrait withUserCount(Long userCount) {
         this.userCount = userCount;
@@ -173,6 +181,8 @@ public class StreamPortrait  {
         this.userCount = userCount;
     }
 
+    
+
     public StreamPortrait withPeakUserCount(Long peakUserCount) {
         this.peakUserCount = peakUserCount;
         return this;
@@ -194,6 +204,8 @@ public class StreamPortrait  {
     public void setPeakUserCount(Long peakUserCount) {
         this.peakUserCount = peakUserCount;
     }
+
+    
 
     public StreamPortrait withPeakBandwidth(Long peakBandwidth) {
         this.peakBandwidth = peakBandwidth;
@@ -217,6 +229,8 @@ public class StreamPortrait  {
         this.peakBandwidth = peakBandwidth;
     }
 
+    
+
     public StreamPortrait withPushDuration(Long pushDuration) {
         this.pushDuration = pushDuration;
         return this;
@@ -238,6 +252,9 @@ public class StreamPortrait  {
     public void setPushDuration(Long pushDuration) {
         this.pushDuration = pushDuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

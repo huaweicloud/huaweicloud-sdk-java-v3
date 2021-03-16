@@ -28,7 +28,7 @@ public class CreateApiAclBindingV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AclApiBindingCreate body = null;
+    private AclApiBindingCreate body;
 
     public CreateApiAclBindingV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateApiAclBindingV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateApiAclBindingV2Request withBody(AclApiBindingCreate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateApiAclBindingV2Request  {
     public void setBody(AclApiBindingCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

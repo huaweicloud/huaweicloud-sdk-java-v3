@@ -35,9 +35,6 @@ public class RunCelebrityRecognitionResponse extends SdkResponse {
 
     
     public RunCelebrityRecognitionResponse addResultItem(CelebrityRecognitionResultBody resultItem) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
         this.result.add(resultItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class RunCelebrityRecognitionResponse extends SdkResponse {
     public void setResult(List<CelebrityRecognitionResultBody> result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

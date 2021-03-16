@@ -49,6 +49,8 @@ public class UpdateProjectRequestV4  {
         this.description = description;
     }
 
+    
+
     public UpdateProjectRequestV4 withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
@@ -68,6 +70,9 @@ public class UpdateProjectRequestV4  {
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

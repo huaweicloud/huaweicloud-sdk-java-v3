@@ -167,6 +167,8 @@ public class CreateInstanceFlavorOption  {
         this.type = type;
     }
 
+    
+
     public CreateInstanceFlavorOption withNum(String num) {
         this.num = num;
         return this;
@@ -176,7 +178,7 @@ public class CreateInstanceFlavorOption  {
 
 
     /**
-     * 节点数量。 取值：   - 集群实例下“mongos”类型的节点数量可取2~16。   - 集群实例下“shard”类型的组数量可取2~16。   - “shard”类型的组数量可取2~16，恢复到新实例不传该参数。   - “config”类型的组数量只能取1。   - “replica”类型的组数量只能取1。   - “single”类型的节点数量只能取1。
+     * 节点数量。 取值：   - 集群实例下“mongos”类型的节点数量可取2~16。   - 集群实例下“shard”类型的组数量可取2~16。   - “shard”类型的组数量可取2~16。   - “config”类型的组数量只能取1。   - “replica”类型的组数量只能取1。   - “single”类型的节点数量只能取1。
      * @return num
      */
     public String getNum() {
@@ -187,6 +189,8 @@ public class CreateInstanceFlavorOption  {
         this.num = num;
     }
 
+    
+
     public CreateInstanceFlavorOption withStorage(String storage) {
         this.storage = storage;
         return this;
@@ -196,7 +200,7 @@ public class CreateInstanceFlavorOption  {
 
 
     /**
-     * 磁盘类型。 取值：ULTRAHIGH，表示SSD。   - 对于集群实例的shard和config节点、副本集、以及单节点实例，该参数有效。mongos节点不涉及选择磁盘，该参数无意义。   - 恢复到新实例，不传该参数。
+     * 磁盘类型。 取值：ULTRAHIGH，表示SSD。   - 对于集群实例的shard和config节点、副本集、以及单节点实例，该参数有效。mongos节点不涉及选择磁盘，该参数无意义。
      * @return storage
      */
     public String getStorage() {
@@ -206,6 +210,8 @@ public class CreateInstanceFlavorOption  {
     public void setStorage(String storage) {
         this.storage = storage;
     }
+
+    
 
     public CreateInstanceFlavorOption withSize(String size) {
         this.size = size;
@@ -227,6 +233,8 @@ public class CreateInstanceFlavorOption  {
         this.size = size;
     }
 
+    
+
     public CreateInstanceFlavorOption withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -246,6 +254,9 @@ public class CreateInstanceFlavorOption  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

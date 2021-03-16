@@ -55,6 +55,8 @@ public class Pages  {
         this.offset = offset;
     }
 
+    
+
     public Pages withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -75,6 +77,8 @@ public class Pages  {
         this.limit = limit;
     }
 
+    
+
     public Pages withCount(Integer count) {
         this.count = count;
         return this;
@@ -94,6 +98,9 @@ public class Pages  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

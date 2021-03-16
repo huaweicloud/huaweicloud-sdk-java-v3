@@ -46,13 +46,13 @@ public class AlarmHistoryInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    private MetricInfo metric = null;
+    private MetricInfo metric;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition")
     
-    private Condition condition = null;
+    private Condition condition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -130,7 +130,7 @@ public class AlarmHistoryInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="additional_info")
     
-    private AdditionalInfo additionalInfo = null;
+    private AdditionalInfo additionalInfo;
 
     public AlarmHistoryInfo withAlarmId(String alarmId) {
         this.alarmId = alarmId;
@@ -152,6 +152,8 @@ public class AlarmHistoryInfo  {
         this.alarmId = alarmId;
     }
 
+    
+
     public AlarmHistoryInfo withAlarmName(String alarmName) {
         this.alarmName = alarmName;
         return this;
@@ -172,6 +174,8 @@ public class AlarmHistoryInfo  {
         this.alarmName = alarmName;
     }
 
+    
+
     public AlarmHistoryInfo withAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
         return this;
@@ -191,6 +195,8 @@ public class AlarmHistoryInfo  {
     public void setAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
     }
+
+    
 
     public AlarmHistoryInfo withMetric(MetricInfo metric) {
         this.metric = metric;
@@ -219,6 +225,8 @@ public class AlarmHistoryInfo  {
         this.metric = metric;
     }
 
+    
+
     public AlarmHistoryInfo withCondition(Condition condition) {
         this.condition = condition;
         return this;
@@ -246,6 +254,8 @@ public class AlarmHistoryInfo  {
         this.condition = condition;
     }
 
+    
+
     public AlarmHistoryInfo withAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
@@ -265,6 +275,8 @@ public class AlarmHistoryInfo  {
     public void setAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
     }
+
+    
 
     public AlarmHistoryInfo withAlarmType(String alarmType) {
         this.alarmType = alarmType;
@@ -286,6 +298,8 @@ public class AlarmHistoryInfo  {
         this.alarmType = alarmType;
     }
 
+    
+
     public AlarmHistoryInfo withAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
         return this;
@@ -305,6 +319,8 @@ public class AlarmHistoryInfo  {
     public void setAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
     }
+
+    
 
     public AlarmHistoryInfo withAlarmActionEnabled(Boolean alarmActionEnabled) {
         this.alarmActionEnabled = alarmActionEnabled;
@@ -326,6 +342,8 @@ public class AlarmHistoryInfo  {
         this.alarmActionEnabled = alarmActionEnabled;
     }
 
+    
+
     public AlarmHistoryInfo withAlarmActions(List<AlarmActions> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
@@ -333,9 +351,6 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addAlarmActionsItem(AlarmActions alarmActionsItem) {
-        if (this.alarmActions == null) {
-            this.alarmActions = new ArrayList<>();
-        }
         this.alarmActions.add(alarmActionsItem);
         return this;
     }
@@ -360,6 +375,8 @@ public class AlarmHistoryInfo  {
         this.alarmActions = alarmActions;
     }
 
+    
+
     public AlarmHistoryInfo withOkActions(List<AlarmActions> okActions) {
         this.okActions = okActions;
         return this;
@@ -367,9 +384,6 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addOkActionsItem(AlarmActions okActionsItem) {
-        if (this.okActions == null) {
-            this.okActions = new ArrayList<>();
-        }
         this.okActions.add(okActionsItem);
         return this;
     }
@@ -394,6 +408,8 @@ public class AlarmHistoryInfo  {
         this.okActions = okActions;
     }
 
+    
+
     public AlarmHistoryInfo withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
         return this;
@@ -401,9 +417,6 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
-        if (this.insufficientdataActions == null) {
-            this.insufficientdataActions = new ArrayList<>();
-        }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
@@ -428,6 +441,8 @@ public class AlarmHistoryInfo  {
         this.insufficientdataActions = insufficientdataActions;
     }
 
+    
+
     public AlarmHistoryInfo withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -447,6 +462,8 @@ public class AlarmHistoryInfo  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public AlarmHistoryInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -468,6 +485,8 @@ public class AlarmHistoryInfo  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public AlarmHistoryInfo withTriggerTime(Long triggerTime) {
         this.triggerTime = triggerTime;
         return this;
@@ -487,6 +506,8 @@ public class AlarmHistoryInfo  {
     public void setTriggerTime(Long triggerTime) {
         this.triggerTime = triggerTime;
     }
+
+    
 
     public AlarmHistoryInfo withAlarmStatus(String alarmStatus) {
         this.alarmStatus = alarmStatus;
@@ -508,6 +529,8 @@ public class AlarmHistoryInfo  {
         this.alarmStatus = alarmStatus;
     }
 
+    
+
     public AlarmHistoryInfo withDatapoints(List<DataPointForAlarmHistory> datapoints) {
         this.datapoints = datapoints;
         return this;
@@ -515,9 +538,6 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addDatapointsItem(DataPointForAlarmHistory datapointsItem) {
-        if (this.datapoints == null) {
-            this.datapoints = new ArrayList<>();
-        }
         this.datapoints.add(datapointsItem);
         return this;
     }
@@ -541,6 +561,8 @@ public class AlarmHistoryInfo  {
     public void setDatapoints(List<DataPointForAlarmHistory> datapoints) {
         this.datapoints = datapoints;
     }
+
+    
 
     public AlarmHistoryInfo withAdditionalInfo(AdditionalInfo additionalInfo) {
         this.additionalInfo = additionalInfo;
@@ -568,6 +590,9 @@ public class AlarmHistoryInfo  {
     public void setAdditionalInfo(AdditionalInfo additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -125,7 +125,7 @@ public class CinderExportToImageOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="container_format")
     
-    private ContainerFormatEnum containerFormat = ContainerFormatEnum.BARE;
+    private ContainerFormatEnum containerFormat;
     /**
      * 云硬盘导出镜像的格式。  目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。
      */
@@ -227,7 +227,7 @@ public class CinderExportToImageOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_format")
     
-    private DiskFormatEnum diskFormat = DiskFormatEnum.VHD;
+    private DiskFormatEnum diskFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -323,7 +323,7 @@ public class CinderExportToImageOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__os_type")
     
-    private OsTypeEnum osType = OsTypeEnum.LINUX;
+    private OsTypeEnum osType;
 
     public CinderExportToImageOption withContainerFormat(ContainerFormatEnum containerFormat) {
         this.containerFormat = containerFormat;
@@ -345,6 +345,8 @@ public class CinderExportToImageOption  {
         this.containerFormat = containerFormat;
     }
 
+    
+
     public CinderExportToImageOption withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
         return this;
@@ -364,6 +366,8 @@ public class CinderExportToImageOption  {
     public void setDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
     }
+
+    
 
     public CinderExportToImageOption withForce(Boolean force) {
         this.force = force;
@@ -385,6 +389,8 @@ public class CinderExportToImageOption  {
         this.force = force;
     }
 
+    
+
     public CinderExportToImageOption withImageName(String imageName) {
         this.imageName = imageName;
         return this;
@@ -404,6 +410,8 @@ public class CinderExportToImageOption  {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
+    
 
     public CinderExportToImageOption withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -426,6 +434,9 @@ public class CinderExportToImageOption  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

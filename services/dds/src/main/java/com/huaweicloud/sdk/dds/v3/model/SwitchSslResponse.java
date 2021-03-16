@@ -51,6 +51,8 @@ public class SwitchSslResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public SwitchSslResponse withSslOption(String sslOption) {
         this.sslOption = sslOption;
         return this;
@@ -70,6 +72,9 @@ public class SwitchSslResponse extends SdkResponse {
     public void setSslOption(String sslOption) {
         this.sslOption = sslOption;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

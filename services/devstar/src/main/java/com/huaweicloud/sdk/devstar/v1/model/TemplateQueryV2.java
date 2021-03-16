@@ -41,13 +41,13 @@ public class TemplateQueryV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label")
     
-    private String label = "all";
+    private String label;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="my_templates")
     
-    private Boolean myTemplates = false;
+    private Boolean myTemplates;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,9 +116,6 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addCategoryItem(String categoryItem) {
-        if (this.category == null) {
-            this.category = new ArrayList<>();
-        }
         this.category.add(categoryItem);
         return this;
     }
@@ -143,6 +140,8 @@ public class TemplateQueryV2  {
         this.category = category;
     }
 
+    
+
     public TemplateQueryV2 withKeyword(String keyword) {
         this.keyword = keyword;
         return this;
@@ -162,6 +161,8 @@ public class TemplateQueryV2  {
     public void setKeyword(String keyword) {
         this.keyword = keyword;
     }
+
+    
 
     public TemplateQueryV2 withSortBy(String sortBy) {
         this.sortBy = sortBy;
@@ -183,6 +184,8 @@ public class TemplateQueryV2  {
         this.sortBy = sortBy;
     }
 
+    
+
     public TemplateQueryV2 withLabel(String label) {
         this.label = label;
         return this;
@@ -202,6 +205,8 @@ public class TemplateQueryV2  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
 
     public TemplateQueryV2 withMyTemplates(Boolean myTemplates) {
         this.myTemplates = myTemplates;
@@ -223,6 +228,8 @@ public class TemplateQueryV2  {
         this.myTemplates = myTemplates;
     }
 
+    
+
     public TemplateQueryV2 withStatus(Integer status) {
         this.status = status;
         return this;
@@ -243,6 +250,8 @@ public class TemplateQueryV2  {
         this.status = status;
     }
 
+    
+
     public TemplateQueryV2 withStatusArray(List<Integer> statusArray) {
         this.statusArray = statusArray;
         return this;
@@ -250,9 +259,6 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addStatusArrayItem(Integer statusArrayItem) {
-        if (this.statusArray == null) {
-            this.statusArray = new ArrayList<>();
-        }
         this.statusArray.add(statusArrayItem);
         return this;
     }
@@ -277,6 +283,8 @@ public class TemplateQueryV2  {
         this.statusArray = statusArray;
     }
 
+    
+
     public TemplateQueryV2 withProductshorts(List<String> productshorts) {
         this.productshorts = productshorts;
         return this;
@@ -284,9 +292,6 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addProductshortsItem(String productshortsItem) {
-        if (this.productshorts == null) {
-            this.productshorts = new ArrayList<>();
-        }
         this.productshorts.add(productshortsItem);
         return this;
     }
@@ -311,6 +316,8 @@ public class TemplateQueryV2  {
         this.productshorts = productshorts;
     }
 
+    
+
     public TemplateQueryV2 withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -330,6 +337,8 @@ public class TemplateQueryV2  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public TemplateQueryV2 withLimit(Integer limit) {
         this.limit = limit;
@@ -351,6 +360,8 @@ public class TemplateQueryV2  {
         this.limit = limit;
     }
 
+    
+
     public TemplateQueryV2 withTagIds(List<String> tagIds) {
         this.tagIds = tagIds;
         return this;
@@ -358,9 +369,6 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addTagIdsItem(String tagIdsItem) {
-        if (this.tagIds == null) {
-            this.tagIds = new ArrayList<>();
-        }
         this.tagIds.add(tagIdsItem);
         return this;
     }
@@ -385,6 +393,8 @@ public class TemplateQueryV2  {
         this.tagIds = tagIds;
     }
 
+    
+
     public TemplateQueryV2 withTypes(List<Integer> types) {
         this.types = types;
         return this;
@@ -392,9 +402,6 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addTypesItem(Integer typesItem) {
-        if (this.types == null) {
-            this.types = new ArrayList<>();
-        }
         this.types.add(typesItem);
         return this;
     }
@@ -419,6 +426,8 @@ public class TemplateQueryV2  {
         this.types = types;
     }
 
+    
+
     public TemplateQueryV2 withIsStatic(Integer isStatic) {
         this.isStatic = isStatic;
         return this;
@@ -439,6 +448,8 @@ public class TemplateQueryV2  {
         this.isStatic = isStatic;
     }
 
+    
+
     public TemplateQueryV2 withPlatformSource(List<Integer> platformSource) {
         this.platformSource = platformSource;
         return this;
@@ -446,9 +457,6 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addPlatformSourceItem(Integer platformSourceItem) {
-        if (this.platformSource == null) {
-            this.platformSource = new ArrayList<>();
-        }
         this.platformSource.add(platformSourceItem);
         return this;
     }
@@ -473,6 +481,8 @@ public class TemplateQueryV2  {
         this.platformSource = platformSource;
     }
 
+    
+
     public TemplateQueryV2 withTagNames(List<String> tagNames) {
         this.tagNames = tagNames;
         return this;
@@ -480,9 +490,6 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addTagNamesItem(String tagNamesItem) {
-        if (this.tagNames == null) {
-            this.tagNames = new ArrayList<>();
-        }
         this.tagNames.add(tagNamesItem);
         return this;
     }
@@ -506,6 +513,9 @@ public class TemplateQueryV2  {
     public void setTagNames(List<String> tagNames) {
         this.tagNames = tagNames;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class BatchStopServersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-stop")
     
-    private BatchStopServersOption osStop = null;
+    private BatchStopServersOption osStop;
 
     public BatchStopServersRequestBody withOsStop(BatchStopServersOption osStop) {
         this.osStop = osStop;
@@ -50,6 +50,9 @@ public class BatchStopServersRequestBody  {
     public void setOsStop(BatchStopServersOption osStop) {
         this.osStop = osStop;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

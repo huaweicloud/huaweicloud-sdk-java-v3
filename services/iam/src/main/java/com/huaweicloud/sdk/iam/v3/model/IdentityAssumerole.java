@@ -40,13 +40,13 @@ public class IdentityAssumerole  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration_seconds")
     
-    private Integer durationSeconds = 900;
+    private Integer durationSeconds;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_user")
     
-    private AssumeroleSessionuser sessionUser = null;
+    private AssumeroleSessionuser sessionUser;
 
     public IdentityAssumerole withAgencyName(String agencyName) {
         this.agencyName = agencyName;
@@ -68,6 +68,8 @@ public class IdentityAssumerole  {
         this.agencyName = agencyName;
     }
 
+    
+
     public IdentityAssumerole withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -88,6 +90,8 @@ public class IdentityAssumerole  {
         this.domainId = domainId;
     }
 
+    
+
     public IdentityAssumerole withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -107,6 +111,8 @@ public class IdentityAssumerole  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public IdentityAssumerole withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -129,6 +135,8 @@ public class IdentityAssumerole  {
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
+
+    
 
     public IdentityAssumerole withSessionUser(AssumeroleSessionuser sessionUser) {
         this.sessionUser = sessionUser;
@@ -156,6 +164,9 @@ public class IdentityAssumerole  {
     public void setSessionUser(AssumeroleSessionuser sessionUser) {
         this.sessionUser = sessionUser;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

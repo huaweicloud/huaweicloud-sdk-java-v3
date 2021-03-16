@@ -161,6 +161,8 @@ public class UpdateInstanceReq  {
         this.name = name;
     }
 
+    
+
     public UpdateInstanceReq withDescription(String description) {
         this.description = description;
         return this;
@@ -180,6 +182,8 @@ public class UpdateInstanceReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateInstanceReq withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
@@ -201,6 +205,8 @@ public class UpdateInstanceReq  {
         this.maintainBegin = maintainBegin;
     }
 
+    
+
     public UpdateInstanceReq withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
         return this;
@@ -220,6 +226,8 @@ public class UpdateInstanceReq  {
     public void setMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
     }
+
+    
 
     public UpdateInstanceReq withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -241,6 +249,8 @@ public class UpdateInstanceReq  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public UpdateInstanceReq withRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
         return this;
@@ -261,6 +271,8 @@ public class UpdateInstanceReq  {
         this.retentionPolicy = retentionPolicy;
     }
 
+    
+
     public UpdateInstanceReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -280,6 +292,9 @@ public class UpdateInstanceReq  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

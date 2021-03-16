@@ -55,6 +55,8 @@ public class SubJobEntities  {
         this.serverId = serverId;
     }
 
+    
+
     public SubJobEntities withNicId(String nicId) {
         this.nicId = nicId;
         return this;
@@ -75,6 +77,8 @@ public class SubJobEntities  {
         this.nicId = nicId;
     }
 
+    
+
     public SubJobEntities withErrorcodeMessage(String errorcodeMessage) {
         this.errorcodeMessage = errorcodeMessage;
         return this;
@@ -94,6 +98,9 @@ public class SubJobEntities  {
     public void setErrorcodeMessage(String errorcodeMessage) {
         this.errorcodeMessage = errorcodeMessage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

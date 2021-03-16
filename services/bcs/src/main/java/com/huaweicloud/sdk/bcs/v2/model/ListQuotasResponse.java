@@ -35,9 +35,6 @@ public class ListQuotasResponse extends SdkResponse {
 
     
     public ListQuotasResponse addResourcesItem(Resource resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListQuotasResponse extends SdkResponse {
     public void setResources(List<Resource> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

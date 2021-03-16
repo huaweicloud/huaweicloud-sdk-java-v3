@@ -28,7 +28,7 @@ public class CreateRequestThrottlingPolicyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ThrottleReq body = null;
+    private ThrottleReq body;
 
     public CreateRequestThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateRequestThrottlingPolicyV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateRequestThrottlingPolicyV2Request withBody(ThrottleReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateRequestThrottlingPolicyV2Request  {
     public void setBody(ThrottleReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

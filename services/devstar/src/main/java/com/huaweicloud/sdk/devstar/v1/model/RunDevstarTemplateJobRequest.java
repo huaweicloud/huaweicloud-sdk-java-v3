@@ -104,13 +104,13 @@ public class RunDevstarTemplateJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TemplateJobInfo body = null;
+    private TemplateJobInfo body;
 
     public RunDevstarTemplateJobRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class RunDevstarTemplateJobRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public RunDevstarTemplateJobRequest withBody(TemplateJobInfo body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class RunDevstarTemplateJobRequest  {
     public void setBody(TemplateJobInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

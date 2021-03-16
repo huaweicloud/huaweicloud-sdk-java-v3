@@ -21,7 +21,7 @@ public class ListSubnetsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class ListSubnetsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSubnetsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -80,6 +82,8 @@ public class ListSubnetsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListSubnetsRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -101,6 +105,8 @@ public class ListSubnetsRequest  {
         this.vpcId = vpcId;
     }
 
+    
+
     public ListSubnetsRequest withScope(String scope) {
         this.scope = scope;
         return this;
@@ -120,6 +126,9 @@ public class ListSubnetsRequest  {
     public void setScope(String scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

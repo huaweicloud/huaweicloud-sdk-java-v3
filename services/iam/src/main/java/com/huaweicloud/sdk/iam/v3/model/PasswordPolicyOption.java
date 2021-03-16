@@ -57,7 +57,7 @@ public class PasswordPolicyOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password_char_combination")
     
-    private Integer passwordCharCombination = 2;
+    private Integer passwordCharCombination;
 
     public PasswordPolicyOption withMaximumConsecutiveIdenticalChars(Integer maximumConsecutiveIdenticalChars) {
         this.maximumConsecutiveIdenticalChars = maximumConsecutiveIdenticalChars;
@@ -79,6 +79,8 @@ public class PasswordPolicyOption  {
         this.maximumConsecutiveIdenticalChars = maximumConsecutiveIdenticalChars;
     }
 
+    
+
     public PasswordPolicyOption withMinimumPasswordAge(Integer minimumPasswordAge) {
         this.minimumPasswordAge = minimumPasswordAge;
         return this;
@@ -98,6 +100,8 @@ public class PasswordPolicyOption  {
     public void setMinimumPasswordAge(Integer minimumPasswordAge) {
         this.minimumPasswordAge = minimumPasswordAge;
     }
+
+    
 
     public PasswordPolicyOption withMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
@@ -119,6 +123,8 @@ public class PasswordPolicyOption  {
         this.minimumPasswordLength = minimumPasswordLength;
     }
 
+    
+
     public PasswordPolicyOption withNumberOfRecentPasswordsDisallowed(Integer numberOfRecentPasswordsDisallowed) {
         this.numberOfRecentPasswordsDisallowed = numberOfRecentPasswordsDisallowed;
         return this;
@@ -138,6 +144,8 @@ public class PasswordPolicyOption  {
     public void setNumberOfRecentPasswordsDisallowed(Integer numberOfRecentPasswordsDisallowed) {
         this.numberOfRecentPasswordsDisallowed = numberOfRecentPasswordsDisallowed;
     }
+
+    
 
     public PasswordPolicyOption withPasswordNotUsernameOrInvert(Boolean passwordNotUsernameOrInvert) {
         this.passwordNotUsernameOrInvert = passwordNotUsernameOrInvert;
@@ -159,6 +167,8 @@ public class PasswordPolicyOption  {
         this.passwordNotUsernameOrInvert = passwordNotUsernameOrInvert;
     }
 
+    
+
     public PasswordPolicyOption withPasswordValidityPeriod(Integer passwordValidityPeriod) {
         this.passwordValidityPeriod = passwordValidityPeriod;
         return this;
@@ -178,6 +188,8 @@ public class PasswordPolicyOption  {
     public void setPasswordValidityPeriod(Integer passwordValidityPeriod) {
         this.passwordValidityPeriod = passwordValidityPeriod;
     }
+
+    
 
     public PasswordPolicyOption withPasswordCharCombination(Integer passwordCharCombination) {
         this.passwordCharCombination = passwordCharCombination;
@@ -200,6 +212,9 @@ public class PasswordPolicyOption  {
     public void setPasswordCharCombination(Integer passwordCharCombination) {
         this.passwordCharCombination = passwordCharCombination;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

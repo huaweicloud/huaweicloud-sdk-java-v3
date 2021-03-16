@@ -28,7 +28,7 @@ public class BatchCreateSubNetworkInterfaceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_network_interface")
     
-    private BatchCreateSubNetworkInterfaceOption subNetworkInterface = null;
+    private BatchCreateSubNetworkInterfaceOption subNetworkInterface;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class BatchCreateSubNetworkInterfaceRequestBody  {
     public void setDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
     }
+
+    
 
     public BatchCreateSubNetworkInterfaceRequestBody withSubNetworkInterface(BatchCreateSubNetworkInterfaceOption subNetworkInterface) {
         this.subNetworkInterface = subNetworkInterface;
@@ -83,6 +85,8 @@ public class BatchCreateSubNetworkInterfaceRequestBody  {
         this.subNetworkInterface = subNetworkInterface;
     }
 
+    
+
     public BatchCreateSubNetworkInterfaceRequestBody withCount(Integer count) {
         this.count = count;
         return this;
@@ -104,6 +108,9 @@ public class BatchCreateSubNetworkInterfaceRequestBody  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

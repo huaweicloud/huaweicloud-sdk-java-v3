@@ -28,7 +28,7 @@ public class ChangeApplicationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApplicationModify body = null;
+    private ApplicationModify body;
 
     public ChangeApplicationRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -49,6 +49,8 @@ public class ChangeApplicationRequest  {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
 
     public ChangeApplicationRequest withBody(ApplicationModify body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ChangeApplicationRequest  {
     public void setBody(ApplicationModify body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

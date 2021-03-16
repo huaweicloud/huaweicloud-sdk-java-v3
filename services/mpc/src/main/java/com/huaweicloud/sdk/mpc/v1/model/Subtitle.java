@@ -25,7 +25,7 @@ public class Subtitle  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,6 +66,8 @@ public class Subtitle  {
         this.input = input;
     }
 
+    
+
     public Subtitle withInputs(List<MulInputFileInfo> inputs) {
         this.inputs = inputs;
         return this;
@@ -73,9 +75,6 @@ public class Subtitle  {
 
     
     public Subtitle addInputsItem(MulInputFileInfo inputsItem) {
-        if (this.inputs == null) {
-            this.inputs = new ArrayList<>();
-        }
         this.inputs.add(inputsItem);
         return this;
     }
@@ -100,6 +99,8 @@ public class Subtitle  {
         this.inputs = inputs;
     }
 
+    
+
     public Subtitle withSubtitleType(Integer subtitleType) {
         this.subtitleType = subtitleType;
         return this;
@@ -109,7 +110,7 @@ public class Subtitle  {
 
 
     /**
-     * 字幕类型 
+     * 字幕类型。取值如下：  - 0，表示不输出字幕 - 1，表示外部字幕文件嵌入视频流 - 2，表示输出WebVTT格式字幕 
      * minimum: 0
      * maximum: 2
      * @return subtitleType
@@ -121,6 +122,9 @@ public class Subtitle  {
     public void setSubtitleType(Integer subtitleType) {
         this.subtitleType = subtitleType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

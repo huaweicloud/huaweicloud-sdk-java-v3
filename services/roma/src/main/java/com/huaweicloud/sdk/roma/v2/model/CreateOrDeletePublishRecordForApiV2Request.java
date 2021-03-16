@@ -28,7 +28,7 @@ public class CreateOrDeletePublishRecordForApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiPublishReq body = null;
+    private ApiPublishReq body;
 
     public CreateOrDeletePublishRecordForApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateOrDeletePublishRecordForApiV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateOrDeletePublishRecordForApiV2Request withBody(ApiPublishReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateOrDeletePublishRecordForApiV2Request  {
     public void setBody(ApiPublishReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

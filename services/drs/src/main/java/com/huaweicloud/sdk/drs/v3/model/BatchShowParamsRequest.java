@@ -104,13 +104,13 @@ public class BatchShowParamsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchQueryJobReq body = null;
+    private BatchQueryJobReq body;
 
     public BatchShowParamsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchShowParamsRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchShowParamsRequest withBody(BatchQueryJobReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchShowParamsRequest  {
     public void setBody(BatchQueryJobReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

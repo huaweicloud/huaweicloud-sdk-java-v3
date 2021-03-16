@@ -39,7 +39,7 @@ public class AccountBalanceV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currency")
     
-    private String currency = "CNY";
+    private String currency;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class AccountBalanceV2  {
         this.accountId = accountId;
     }
 
+    
+
     public AccountBalanceV2 withAccountType(Integer accountType) {
         this.accountType = accountType;
         return this;
@@ -104,6 +106,8 @@ public class AccountBalanceV2  {
     public void setAccountType(Integer accountType) {
         this.accountType = accountType;
     }
+
+    
 
     public AccountBalanceV2 withAmount(Double amount) {
         this.amount = amount;
@@ -125,6 +129,8 @@ public class AccountBalanceV2  {
         this.amount = amount;
     }
 
+    
+
     public AccountBalanceV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -144,6 +150,8 @@ public class AccountBalanceV2  {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
 
     public AccountBalanceV2 withDesignatedAmount(Double designatedAmount) {
         this.designatedAmount = designatedAmount;
@@ -165,6 +173,8 @@ public class AccountBalanceV2  {
         this.designatedAmount = designatedAmount;
     }
 
+    
+
     public AccountBalanceV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
@@ -184,6 +194,8 @@ public class AccountBalanceV2  {
     public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
+
+    
 
     public AccountBalanceV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -205,6 +217,8 @@ public class AccountBalanceV2  {
         this.measureId = measureId;
     }
 
+    
+
     public AccountBalanceV2 withMemo(String memo) {
         this.memo = memo;
         return this;
@@ -224,6 +238,9 @@ public class AccountBalanceV2  {
     public void setMemo(String memo) {
         this.memo = memo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

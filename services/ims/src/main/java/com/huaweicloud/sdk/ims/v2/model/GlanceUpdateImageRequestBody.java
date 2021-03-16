@@ -143,6 +143,8 @@ public class GlanceUpdateImageRequestBody  {
         this.op = op;
     }
 
+    
+
     public GlanceUpdateImageRequestBody withPath(String path) {
         this.path = path;
         return this;
@@ -163,6 +165,8 @@ public class GlanceUpdateImageRequestBody  {
         this.path = path;
     }
 
+    
+
     public GlanceUpdateImageRequestBody withValue(String value) {
         this.value = value;
         return this;
@@ -182,6 +186,9 @@ public class GlanceUpdateImageRequestBody  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class BankCardInfoV2  {
         this.bankAccount = bankAccount;
     }
 
+    
+
     public BankCardInfoV2 withAreacode(String areacode) {
         this.areacode = areacode;
         return this;
@@ -80,6 +82,8 @@ public class BankCardInfoV2  {
     public void setAreacode(String areacode) {
         this.areacode = areacode;
     }
+
+    
 
     public BankCardInfoV2 withMobile(String mobile) {
         this.mobile = mobile;
@@ -101,6 +105,8 @@ public class BankCardInfoV2  {
         this.mobile = mobile;
     }
 
+    
+
     public BankCardInfoV2 withVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
         return this;
@@ -120,6 +126,9 @@ public class BankCardInfoV2  {
     public void setVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

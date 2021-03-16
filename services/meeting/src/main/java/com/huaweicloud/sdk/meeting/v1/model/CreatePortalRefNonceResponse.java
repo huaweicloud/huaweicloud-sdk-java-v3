@@ -44,6 +44,9 @@ public class CreatePortalRefNonceResponse extends SdkResponse {
     public void setNonce(String nonce) {
         this.nonce = nonce;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

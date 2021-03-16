@@ -22,7 +22,7 @@ public class AddPublicipsIntoSharedBandwidthRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private AddPublicipsIntoSharedBandwidthOption bandwidth = null;
+    private AddPublicipsIntoSharedBandwidthOption bandwidth;
 
     public AddPublicipsIntoSharedBandwidthRequestBody withBandwidth(AddPublicipsIntoSharedBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -50,6 +50,9 @@ public class AddPublicipsIntoSharedBandwidthRequestBody  {
     public void setBandwidth(AddPublicipsIntoSharedBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

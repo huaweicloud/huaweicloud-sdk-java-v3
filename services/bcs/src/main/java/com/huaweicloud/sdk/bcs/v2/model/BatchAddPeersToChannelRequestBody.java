@@ -24,7 +24,7 @@ public class BatchAddPeersToChannelRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel_peers")
     
-    private List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers = new ArrayList<>();
+    private List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers = null;
     
     public BatchAddPeersToChannelRequestBody withChannelPeers(List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers) {
         this.channelPeers = channelPeers;
@@ -56,6 +56,9 @@ public class BatchAddPeersToChannelRequestBody  {
     public void setChannelPeers(List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers) {
         this.channelPeers = channelPeers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

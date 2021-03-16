@@ -34,7 +34,7 @@ public class CheckResultItemsBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private ImageDetectionResultDetail detail = null;
+    private ImageDetectionResultDetail detail;
 
     public CheckResultItemsBody withUrl(String url) {
         this.url = url;
@@ -56,6 +56,8 @@ public class CheckResultItemsBody  {
         this.url = url;
     }
 
+    
+
     public CheckResultItemsBody withSuggestion(String suggestion) {
         this.suggestion = suggestion;
         return this;
@@ -75,6 +77,8 @@ public class CheckResultItemsBody  {
     public void setSuggestion(String suggestion) {
         this.suggestion = suggestion;
     }
+
+    
 
     public CheckResultItemsBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
@@ -102,6 +106,9 @@ public class CheckResultItemsBody  {
     public void setDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

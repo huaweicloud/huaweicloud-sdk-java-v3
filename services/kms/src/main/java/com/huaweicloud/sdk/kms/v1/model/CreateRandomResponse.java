@@ -44,6 +44,9 @@ public class CreateRandomResponse extends SdkResponse {
     public void setRandomData(String randomData) {
         this.randomData = randomData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

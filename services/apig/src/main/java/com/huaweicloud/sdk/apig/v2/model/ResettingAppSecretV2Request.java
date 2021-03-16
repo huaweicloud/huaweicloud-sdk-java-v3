@@ -34,7 +34,7 @@ public class ResettingAppSecretV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppSecretReq body = null;
+    private AppSecretReq body;
 
     public ResettingAppSecretV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class ResettingAppSecretV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ResettingAppSecretV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class ResettingAppSecretV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ResettingAppSecretV2Request withBody(AppSecretReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ResettingAppSecretV2Request  {
     public void setBody(AppSecretReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class Location  {
         this.x = x;
     }
 
+    
+
     public Location withY(Integer y) {
         this.y = y;
         return this;
@@ -68,6 +70,9 @@ public class Location  {
     public void setY(Integer y) {
         this.y = y;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

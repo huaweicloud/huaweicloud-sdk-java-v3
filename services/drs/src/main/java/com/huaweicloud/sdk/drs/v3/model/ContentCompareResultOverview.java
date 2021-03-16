@@ -167,6 +167,8 @@ public class ContentCompareResultOverview  {
         this.sourceDbName = sourceDbName;
     }
 
+    
+
     public ContentCompareResultOverview withTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
         return this;
@@ -187,6 +189,8 @@ public class ContentCompareResultOverview  {
         this.targetDbName = targetDbName;
     }
 
+    
+
     public ContentCompareResultOverview withContentCompareResult(ContentCompareResultEnum contentCompareResult) {
         this.contentCompareResult = contentCompareResult;
         return this;
@@ -206,6 +210,9 @@ public class ContentCompareResultOverview  {
     public void setContentCompareResult(ContentCompareResultEnum contentCompareResult) {
         this.contentCompareResult = contentCompareResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

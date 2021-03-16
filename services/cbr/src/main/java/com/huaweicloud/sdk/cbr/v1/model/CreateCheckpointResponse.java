@@ -24,7 +24,7 @@ public class CreateCheckpointResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkpoint")
     
-    private CheckpointCreate checkpoint = null;
+    private CheckpointCreate checkpoint;
 
     public CreateCheckpointResponse withCheckpoint(CheckpointCreate checkpoint) {
         this.checkpoint = checkpoint;
@@ -52,6 +52,9 @@ public class CreateCheckpointResponse extends SdkResponse {
     public void setCheckpoint(CheckpointCreate checkpoint) {
         this.checkpoint = checkpoint;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateCheckpointRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VaultBackupReq body = null;
+    private VaultBackupReq body;
 
     public CreateCheckpointRequest withBody(VaultBackupReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateCheckpointRequest  {
     public void setBody(VaultBackupReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

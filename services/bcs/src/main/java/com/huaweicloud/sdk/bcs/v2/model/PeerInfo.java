@@ -76,6 +76,8 @@ public class PeerInfo  {
         this.name = name;
     }
 
+    
+
     public PeerInfo withNodeCnt(Integer nodeCnt) {
         this.nodeCnt = nodeCnt;
         return this;
@@ -95,6 +97,8 @@ public class PeerInfo  {
     public void setNodeCnt(Integer nodeCnt) {
         this.nodeCnt = nodeCnt;
     }
+
+    
 
     public PeerInfo withStatus(String status) {
         this.status = status;
@@ -116,6 +120,8 @@ public class PeerInfo  {
         this.status = status;
     }
 
+    
+
     public PeerInfo withStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
         return this;
@@ -135,6 +141,8 @@ public class PeerInfo  {
     public void setStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
     }
+
+    
 
     public PeerInfo withPvcName(String pvcName) {
         this.pvcName = pvcName;
@@ -156,6 +164,8 @@ public class PeerInfo  {
         this.pvcName = pvcName;
     }
 
+    
+
     public PeerInfo withAddress(List<PeerAddress> address) {
         this.address = address;
         return this;
@@ -163,9 +173,6 @@ public class PeerInfo  {
 
     
     public PeerInfo addAddressItem(PeerAddress addressItem) {
-        if (this.address == null) {
-            this.address = new ArrayList<>();
-        }
         this.address.add(addressItem);
         return this;
     }
@@ -189,6 +196,9 @@ public class PeerInfo  {
     public void setAddress(List<PeerAddress> address) {
         this.address = address;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

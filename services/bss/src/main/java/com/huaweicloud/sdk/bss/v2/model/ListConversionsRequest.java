@@ -21,7 +21,7 @@ public class ListConversionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,6 +51,8 @@ public class ListConversionsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListConversionsRequest withMeasureType(Integer measureType) {
         this.measureType = measureType;
         return this;
@@ -70,6 +72,9 @@ public class ListConversionsRequest  {
     public void setMeasureType(Integer measureType) {
         this.measureType = measureType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -19,35 +19,9 @@ public class ShowJobRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
-    private String projectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_id")
     
     private String jobId;
-
-    public ShowJobRequest withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get projectId
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
 
     public ShowJobRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -68,6 +42,9 @@ public class ShowJobRequest  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -77,18 +54,16 @@ public class ShowJobRequest  {
             return false;
         }
         ShowJobRequest showJobRequest = (ShowJobRequest) o;
-        return Objects.equals(this.projectId, showJobRequest.projectId) &&
-            Objects.equals(this.jobId, showJobRequest.jobId);
+        return Objects.equals(this.jobId, showJobRequest.jobId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, jobId);
+        return Objects.hash(jobId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowJobRequest {\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();

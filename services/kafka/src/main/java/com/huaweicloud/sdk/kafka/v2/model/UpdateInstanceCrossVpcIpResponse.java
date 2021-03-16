@@ -54,6 +54,8 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
         this.success = success;
     }
 
+    
+
     public UpdateInstanceCrossVpcIpResponse withResults(List<UpdateInstanceCrossVpcIpRespResults> results) {
         this.results = results;
         return this;
@@ -61,9 +63,6 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
 
     
     public UpdateInstanceCrossVpcIpResponse addResultsItem(UpdateInstanceCrossVpcIpRespResults resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
     public void setResults(List<UpdateInstanceCrossVpcIpRespResults> results) {
         this.results = results;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

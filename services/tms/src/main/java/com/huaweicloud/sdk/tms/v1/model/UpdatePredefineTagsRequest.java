@@ -22,7 +22,7 @@ public class UpdatePredefineTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModifyPrefineTag body = null;
+    private ModifyPrefineTag body;
 
     public UpdatePredefineTagsRequest withBody(ModifyPrefineTag body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdatePredefineTagsRequest  {
     public void setBody(ModifyPrefineTag body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

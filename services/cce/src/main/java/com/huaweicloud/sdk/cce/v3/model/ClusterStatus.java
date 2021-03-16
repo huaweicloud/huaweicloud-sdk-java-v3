@@ -24,13 +24,13 @@ public class ClusterStatus  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deleteOption")
     
-    private Object deleteOption = null;
+    private Object deleteOption;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deleteStatus")
     
-    private Object deleteStatus = null;
+    private Object deleteStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,6 +106,8 @@ public class ClusterStatus  {
         this.deleteOption = deleteOption;
     }
 
+    
+
     public ClusterStatus withDeleteStatus(Object deleteStatus) {
         this.deleteStatus = deleteStatus;
         return this;
@@ -126,6 +128,8 @@ public class ClusterStatus  {
         this.deleteStatus = deleteStatus;
     }
 
+    
+
     public ClusterStatus withEndpoints(List<ClusterEndpoints> endpoints) {
         this.endpoints = endpoints;
         return this;
@@ -133,9 +137,6 @@ public class ClusterStatus  {
 
     
     public ClusterStatus addEndpointsItem(ClusterEndpoints endpointsItem) {
-        if (this.endpoints == null) {
-            this.endpoints = new ArrayList<>();
-        }
         this.endpoints.add(endpointsItem);
         return this;
     }
@@ -160,6 +161,8 @@ public class ClusterStatus  {
         this.endpoints = endpoints;
     }
 
+    
+
     public ClusterStatus withIsLocked(Boolean isLocked) {
         this.isLocked = isLocked;
         return this;
@@ -179,6 +182,8 @@ public class ClusterStatus  {
     public void setIsLocked(Boolean isLocked) {
         this.isLocked = isLocked;
     }
+
+    
 
     public ClusterStatus withJobID(String jobID) {
         this.jobID = jobID;
@@ -200,6 +205,8 @@ public class ClusterStatus  {
         this.jobID = jobID;
     }
 
+    
+
     public ClusterStatus withLockScene(String lockScene) {
         this.lockScene = lockScene;
         return this;
@@ -219,6 +226,8 @@ public class ClusterStatus  {
     public void setLockScene(String lockScene) {
         this.lockScene = lockScene;
     }
+
+    
 
     public ClusterStatus withLockSource(String lockSource) {
         this.lockSource = lockSource;
@@ -240,6 +249,8 @@ public class ClusterStatus  {
         this.lockSource = lockSource;
     }
 
+    
+
     public ClusterStatus withLockSourceId(String lockSourceId) {
         this.lockSourceId = lockSourceId;
         return this;
@@ -259,6 +270,8 @@ public class ClusterStatus  {
     public void setLockSourceId(String lockSourceId) {
         this.lockSourceId = lockSourceId;
     }
+
+    
 
     public ClusterStatus withMessage(String message) {
         this.message = message;
@@ -280,6 +293,8 @@ public class ClusterStatus  {
         this.message = message;
     }
 
+    
+
     public ClusterStatus withPhase(String phase) {
         this.phase = phase;
         return this;
@@ -300,6 +315,8 @@ public class ClusterStatus  {
         this.phase = phase;
     }
 
+    
+
     public ClusterStatus withReason(String reason) {
         this.reason = reason;
         return this;
@@ -319,6 +336,9 @@ public class ClusterStatus  {
     public void setReason(String reason) {
         this.reason = reason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

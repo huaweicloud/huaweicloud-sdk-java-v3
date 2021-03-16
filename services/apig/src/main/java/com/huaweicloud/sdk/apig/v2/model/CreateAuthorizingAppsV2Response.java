@@ -35,9 +35,6 @@ public class CreateAuthorizingAppsV2Response extends SdkResponse {
 
     
     public CreateAuthorizingAppsV2Response addAuthsItem(AppAuthResp authsItem) {
-        if (this.auths == null) {
-            this.auths = new ArrayList<>();
-        }
         this.auths.add(authsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class CreateAuthorizingAppsV2Response extends SdkResponse {
     public void setAuths(List<AppAuthResp> auths) {
         this.auths = auths;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

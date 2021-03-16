@@ -59,7 +59,7 @@ public class KeystoneUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,7 +83,7 @@ public class KeystoneUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra")
     
-    private KeystoneUserResultExtra extra = null;
+    private KeystoneUserResultExtra extra;
 
     public KeystoneUserResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
@@ -105,6 +105,8 @@ public class KeystoneUserResult  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public KeystoneUserResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -124,6 +126,8 @@ public class KeystoneUserResult  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public KeystoneUserResult withLastProjectId(String lastProjectId) {
         this.lastProjectId = lastProjectId;
@@ -145,6 +149,8 @@ public class KeystoneUserResult  {
         this.lastProjectId = lastProjectId;
     }
 
+    
+
     public KeystoneUserResult withName(String name) {
         this.name = name;
         return this;
@@ -164,6 +170,8 @@ public class KeystoneUserResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneUserResult withDescription(String description) {
         this.description = description;
@@ -185,6 +193,8 @@ public class KeystoneUserResult  {
         this.description = description;
     }
 
+    
+
     public KeystoneUserResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -204,6 +214,8 @@ public class KeystoneUserResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
 
     public KeystoneUserResult withLinks(Links links) {
         this.links = links;
@@ -232,6 +244,8 @@ public class KeystoneUserResult  {
         this.links = links;
     }
 
+    
+
     public KeystoneUserResult withId(String id) {
         this.id = id;
         return this;
@@ -251,6 +265,8 @@ public class KeystoneUserResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public KeystoneUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -272,6 +288,8 @@ public class KeystoneUserResult  {
         this.enabled = enabled;
     }
 
+    
+
     public KeystoneUserResult withPwdStrength(String pwdStrength) {
         this.pwdStrength = pwdStrength;
         return this;
@@ -291,6 +309,8 @@ public class KeystoneUserResult  {
     public void setPwdStrength(String pwdStrength) {
         this.pwdStrength = pwdStrength;
     }
+
+    
 
     public KeystoneUserResult withExtra(KeystoneUserResultExtra extra) {
         this.extra = extra;
@@ -318,6 +338,9 @@ public class KeystoneUserResult  {
     public void setExtra(KeystoneUserResultExtra extra) {
         this.extra = extra;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

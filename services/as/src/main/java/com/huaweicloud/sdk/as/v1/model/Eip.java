@@ -122,7 +122,7 @@ public class Eip  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private Bandwidth bandwidth = null;
+    private Bandwidth bandwidth;
 
     public Eip withIpType(IpTypeEnum ipType) {
         this.ipType = ipType;
@@ -143,6 +143,8 @@ public class Eip  {
     public void setIpType(IpTypeEnum ipType) {
         this.ipType = ipType;
     }
+
+    
 
     public Eip withBandwidth(Bandwidth bandwidth) {
         this.bandwidth = bandwidth;
@@ -170,6 +172,9 @@ public class Eip  {
     public void setBandwidth(Bandwidth bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

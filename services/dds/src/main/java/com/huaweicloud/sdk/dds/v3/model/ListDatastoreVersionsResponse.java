@@ -34,9 +34,6 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
 
     
     public ListDatastoreVersionsResponse addVersionsItem(String versionsItem) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
-        }
         this.versions.add(versionsItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
     public void setVersions(List<String> versions) {
         this.versions = versions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

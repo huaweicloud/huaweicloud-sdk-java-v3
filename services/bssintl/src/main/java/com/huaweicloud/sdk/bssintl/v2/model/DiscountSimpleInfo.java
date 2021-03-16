@@ -49,6 +49,8 @@ public class DiscountSimpleInfo  {
         this.id = id;
     }
 
+    
+
     public DiscountSimpleInfo withType(Integer type) {
         this.type = type;
         return this;
@@ -70,6 +72,9 @@ public class DiscountSimpleInfo  {
     public void setType(Integer type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

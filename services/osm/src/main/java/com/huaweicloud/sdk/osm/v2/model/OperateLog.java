@@ -49,6 +49,8 @@ public class OperateLog  {
         this.oper = oper;
     }
 
+    
+
     public OperateLog withOperateTime(String operateTime) {
         this.operateTime = operateTime;
         return this;
@@ -68,6 +70,9 @@ public class OperateLog  {
     public void setOperateTime(String operateTime) {
         this.operateTime = operateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

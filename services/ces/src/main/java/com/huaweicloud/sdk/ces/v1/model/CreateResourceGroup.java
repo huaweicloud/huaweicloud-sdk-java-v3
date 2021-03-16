@@ -30,7 +30,7 @@ public class CreateResourceGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    private List<MetricsDimension> dimensions = new ArrayList<>();
+    private List<MetricsDimension> dimensions = null;
     
     public CreateResourceGroup withNamespace(String namespace) {
         this.namespace = namespace;
@@ -51,6 +51,8 @@ public class CreateResourceGroup  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public CreateResourceGroup withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
@@ -82,6 +84,9 @@ public class CreateResourceGroup  {
     public void setDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

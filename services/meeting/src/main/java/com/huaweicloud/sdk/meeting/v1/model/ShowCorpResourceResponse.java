@@ -27,61 +27,61 @@ public class ShowCorpResourceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="te1080pHardCount")
     
-    private ResDetailDTO te1080pHardCount = null;
+    private ResDetailDTO te1080pHardCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="te720pHardCount")
     
-    private ResDetailDTO te720pHardCount = null;
+    private ResDetailDTO te720pHardCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="teSoftCount")
     
-    private ResDetailDTO teSoftCount = null;
+    private ResDetailDTO teSoftCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roomCount")
     
-    private ResDetailDTO roomCount = null;
+    private ResDetailDTO roomCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recordCapability")
     
-    private ResDetailDTO recordCapability = null;
+    private ResDetailDTO recordCapability;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confCallCount")
     
-    private ResDetailDTO confCallCount = null;
+    private ResDetailDTO confCallCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="liveCount")
     
-    private ResDetailDTO liveCount = null;
+    private ResDetailDTO liveCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="thirdPartyHardCount")
     
-    private ResDetailDTO thirdPartyHardCount = null;
+    private ResDetailDTO thirdPartyHardCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hwVisionCount")
     
-    private ResDetailDTO hwVisionCount = null;
+    private ResDetailDTO hwVisionCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ideaHubCount")
     
-    private ResDetailDTO ideaHubCount = null;
+    private ResDetailDTO ideaHubCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,6 +164,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.te1080pHardCount = te1080pHardCount;
     }
 
+    
+
     public ShowCorpResourceResponse withTe720pHardCount(ResDetailDTO te720pHardCount) {
         this.te720pHardCount = te720pHardCount;
         return this;
@@ -190,6 +192,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setTe720pHardCount(ResDetailDTO te720pHardCount) {
         this.te720pHardCount = te720pHardCount;
     }
+
+    
 
     public ShowCorpResourceResponse withTeSoftCount(ResDetailDTO teSoftCount) {
         this.teSoftCount = teSoftCount;
@@ -218,6 +222,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.teSoftCount = teSoftCount;
     }
 
+    
+
     public ShowCorpResourceResponse withRoomCount(ResDetailDTO roomCount) {
         this.roomCount = roomCount;
         return this;
@@ -244,6 +250,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setRoomCount(ResDetailDTO roomCount) {
         this.roomCount = roomCount;
     }
+
+    
 
     public ShowCorpResourceResponse withRecordCapability(ResDetailDTO recordCapability) {
         this.recordCapability = recordCapability;
@@ -272,6 +280,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.recordCapability = recordCapability;
     }
 
+    
+
     public ShowCorpResourceResponse withConfCallCount(ResDetailDTO confCallCount) {
         this.confCallCount = confCallCount;
         return this;
@@ -298,6 +308,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setConfCallCount(ResDetailDTO confCallCount) {
         this.confCallCount = confCallCount;
     }
+
+    
 
     public ShowCorpResourceResponse withLiveCount(ResDetailDTO liveCount) {
         this.liveCount = liveCount;
@@ -326,6 +338,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.liveCount = liveCount;
     }
 
+    
+
     public ShowCorpResourceResponse withThirdPartyHardCount(ResDetailDTO thirdPartyHardCount) {
         this.thirdPartyHardCount = thirdPartyHardCount;
         return this;
@@ -352,6 +366,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setThirdPartyHardCount(ResDetailDTO thirdPartyHardCount) {
         this.thirdPartyHardCount = thirdPartyHardCount;
     }
+
+    
 
     public ShowCorpResourceResponse withHwVisionCount(ResDetailDTO hwVisionCount) {
         this.hwVisionCount = hwVisionCount;
@@ -380,6 +396,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.hwVisionCount = hwVisionCount;
     }
 
+    
+
     public ShowCorpResourceResponse withIdeaHubCount(ResDetailDTO ideaHubCount) {
         this.ideaHubCount = ideaHubCount;
         return this;
@@ -407,6 +425,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.ideaHubCount = ideaHubCount;
     }
 
+    
+
     public ShowCorpResourceResponse withVmr(List<QueryVmrPkgResResultDTO> vmr) {
         this.vmr = vmr;
         return this;
@@ -414,9 +434,6 @@ public class ShowCorpResourceResponse extends SdkResponse {
 
     
     public ShowCorpResourceResponse addVmrItem(QueryVmrPkgResResultDTO vmrItem) {
-        if (this.vmr == null) {
-            this.vmr = new ArrayList<>();
-        }
         this.vmr.add(vmrItem);
         return this;
     }
@@ -441,6 +458,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.vmr = vmr;
     }
 
+    
+
     public ShowCorpResourceResponse withEnablePstn(Boolean enablePstn) {
         this.enablePstn = enablePstn;
         return this;
@@ -460,6 +479,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setEnablePstn(Boolean enablePstn) {
         this.enablePstn = enablePstn;
     }
+
+    
 
     public ShowCorpResourceResponse withEnableSMS(Boolean enableSMS) {
         this.enableSMS = enableSMS;
@@ -481,6 +502,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableSMS = enableSMS;
     }
 
+    
+
     public ShowCorpResourceResponse withEnableHybridCloud(Boolean enableHybridCloud) {
         this.enableHybridCloud = enableHybridCloud;
         return this;
@@ -500,6 +523,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setEnableHybridCloud(Boolean enableHybridCloud) {
         this.enableHybridCloud = enableHybridCloud;
     }
+
+    
 
     public ShowCorpResourceResponse withEnableCloudDisk(Boolean enableCloudDisk) {
         this.enableCloudDisk = enableCloudDisk;
@@ -521,6 +546,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableCloudDisk = enableCloudDisk;
     }
 
+    
+
     public ShowCorpResourceResponse withEnableUc(Boolean enableUc) {
         this.enableUc = enableUc;
         return this;
@@ -540,6 +567,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setEnableUc(Boolean enableUc) {
         this.enableUc = enableUc;
     }
+
+    
 
     public ShowCorpResourceResponse withEnableAiMinutes(Boolean enableAiMinutes) {
         this.enableAiMinutes = enableAiMinutes;
@@ -561,6 +590,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableAiMinutes = enableAiMinutes;
     }
 
+    
+
     public ShowCorpResourceResponse withSingleConfCallCount(Integer singleConfCallCount) {
         this.singleConfCallCount = singleConfCallCount;
         return this;
@@ -581,6 +612,8 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.singleConfCallCount = singleConfCallCount;
     }
 
+    
+
     public ShowCorpResourceResponse withConfLength(Integer confLength) {
         this.confLength = confLength;
         return this;
@@ -600,6 +633,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setConfLength(Integer confLength) {
         this.confLength = confLength;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

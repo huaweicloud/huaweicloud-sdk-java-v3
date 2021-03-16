@@ -24,7 +24,7 @@ public class UpdateServerMetadataRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Map<String, String> metadata = new HashMap<>();
+    private Map<String, String> metadata = null;
     
     public UpdateServerMetadataRequestBody withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
@@ -56,6 +56,9 @@ public class UpdateServerMetadataRequestBody  {
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

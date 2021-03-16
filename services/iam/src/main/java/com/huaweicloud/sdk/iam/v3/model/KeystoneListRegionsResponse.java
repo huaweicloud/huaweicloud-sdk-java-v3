@@ -27,7 +27,7 @@ public class KeystoneListRegionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListRegionsResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListRegionsResponse withRegions(List<Region> regions) {
         this.regions = regions;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListRegionsResponse extends SdkResponse {
 
     
     public KeystoneListRegionsResponse addRegionsItem(Region regionsItem) {
-        if (this.regions == null) {
-            this.regions = new ArrayList<>();
-        }
         this.regions.add(regionsItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListRegionsResponse extends SdkResponse {
     public void setRegions(List<Region> regions) {
         this.regions = regions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

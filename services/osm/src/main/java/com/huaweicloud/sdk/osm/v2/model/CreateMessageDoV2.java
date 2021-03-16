@@ -63,6 +63,8 @@ public class CreateMessageDoV2  {
         this.content = content;
     }
 
+    
+
     public CreateMessageDoV2 withIsAuthorized(Integer isAuthorized) {
         this.isAuthorized = isAuthorized;
         return this;
@@ -85,6 +87,8 @@ public class CreateMessageDoV2  {
         this.isAuthorized = isAuthorized;
     }
 
+    
+
     public CreateMessageDoV2 withAuthorizationContent(String authorizationContent) {
         this.authorizationContent = authorizationContent;
         return this;
@@ -105,6 +109,8 @@ public class CreateMessageDoV2  {
         this.authorizationContent = authorizationContent;
     }
 
+    
+
     public CreateMessageDoV2 withAccessoryIds(List<String> accessoryIds) {
         this.accessoryIds = accessoryIds;
         return this;
@@ -112,9 +118,6 @@ public class CreateMessageDoV2  {
 
     
     public CreateMessageDoV2 addAccessoryIdsItem(String accessoryIdsItem) {
-        if (this.accessoryIds == null) {
-            this.accessoryIds = new ArrayList<>();
-        }
         this.accessoryIds.add(accessoryIdsItem);
         return this;
     }
@@ -138,6 +141,9 @@ public class CreateMessageDoV2  {
     public void setAccessoryIds(List<String> accessoryIds) {
         this.accessoryIds = accessoryIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

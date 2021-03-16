@@ -51,6 +51,8 @@ public class CreateTopicResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public CreateTopicResponse withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -70,6 +72,9 @@ public class CreateTopicResponse extends SdkResponse {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

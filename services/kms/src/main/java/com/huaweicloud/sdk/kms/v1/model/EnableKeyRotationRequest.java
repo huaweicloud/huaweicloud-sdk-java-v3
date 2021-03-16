@@ -22,13 +22,13 @@ public class EnableKeyRotationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private OperateKeyRequestBody body = null;
+    private OperateKeyRequestBody body;
 
     public EnableKeyRotationRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class EnableKeyRotationRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public EnableKeyRotationRequest withBody(OperateKeyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class EnableKeyRotationRequest  {
     public void setBody(OperateKeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

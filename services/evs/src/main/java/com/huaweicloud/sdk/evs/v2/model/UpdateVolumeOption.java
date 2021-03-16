@@ -49,6 +49,8 @@ public class UpdateVolumeOption  {
         this.description = description;
     }
 
+    
+
     public UpdateVolumeOption withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +70,9 @@ public class UpdateVolumeOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

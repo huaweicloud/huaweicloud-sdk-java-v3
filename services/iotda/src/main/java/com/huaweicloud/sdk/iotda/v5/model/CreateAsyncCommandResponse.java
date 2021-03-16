@@ -47,7 +47,7 @@ public class CreateAsyncCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paras")
     
-    private Object paras = null;
+    private Object paras;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,6 +93,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
+    
+
     public CreateAsyncCommandResponse withCommandId(String commandId) {
         this.commandId = commandId;
         return this;
@@ -112,6 +114,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
+
+    
 
     public CreateAsyncCommandResponse withServiceId(String serviceId) {
         this.serviceId = serviceId;
@@ -133,6 +137,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
         this.serviceId = serviceId;
     }
 
+    
+
     public CreateAsyncCommandResponse withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
@@ -152,6 +158,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
     public void setCommandName(String commandName) {
         this.commandName = commandName;
     }
+
+    
 
     public CreateAsyncCommandResponse withParas(Object paras) {
         this.paras = paras;
@@ -173,6 +181,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
         this.paras = paras;
     }
 
+    
+
     public CreateAsyncCommandResponse withExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -192,6 +202,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
     public void setExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public CreateAsyncCommandResponse withStatus(String status) {
         this.status = status;
@@ -213,6 +225,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateAsyncCommandResponse withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -233,6 +247,8 @@ public class CreateAsyncCommandResponse extends SdkResponse {
         this.createdTime = createdTime;
     }
 
+    
+
     public CreateAsyncCommandResponse withSendStrategy(String sendStrategy) {
         this.sendStrategy = sendStrategy;
         return this;
@@ -252,6 +268,9 @@ public class CreateAsyncCommandResponse extends SdkResponse {
     public void setSendStrategy(String sendStrategy) {
         this.sendStrategy = sendStrategy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

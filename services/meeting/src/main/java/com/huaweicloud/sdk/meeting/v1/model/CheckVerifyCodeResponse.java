@@ -51,6 +51,8 @@ public class CheckVerifyCodeResponse extends SdkResponse {
         this.token = token;
     }
 
+    
+
     public CheckVerifyCodeResponse withExpire(Integer expire) {
         this.expire = expire;
         return this;
@@ -70,6 +72,9 @@ public class CheckVerifyCodeResponse extends SdkResponse {
     public void setExpire(Integer expire) {
         this.expire = expire;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

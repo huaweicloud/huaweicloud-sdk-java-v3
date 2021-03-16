@@ -54,6 +54,8 @@ public class ListJobInstancesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListJobInstancesResponse withInstances(List<JobInstance> instances) {
         this.instances = instances;
         return this;
@@ -61,9 +63,6 @@ public class ListJobInstancesResponse extends SdkResponse {
 
     
     public ListJobInstancesResponse addInstancesItem(JobInstance instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
         this.instances.add(instancesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListJobInstancesResponse extends SdkResponse {
     public void setInstances(List<JobInstance> instances) {
         this.instances = instances;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

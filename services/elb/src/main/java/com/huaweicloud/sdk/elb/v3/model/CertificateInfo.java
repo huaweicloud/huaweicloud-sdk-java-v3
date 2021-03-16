@@ -109,6 +109,8 @@ public class CertificateInfo  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CertificateInfo withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
@@ -128,6 +130,8 @@ public class CertificateInfo  {
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
+
+    
 
     public CertificateInfo withDescription(String description) {
         this.description = description;
@@ -149,6 +153,8 @@ public class CertificateInfo  {
         this.description = description;
     }
 
+    
+
     public CertificateInfo withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -168,6 +174,8 @@ public class CertificateInfo  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public CertificateInfo withId(String id) {
         this.id = id;
@@ -189,6 +197,8 @@ public class CertificateInfo  {
         this.id = id;
     }
 
+    
+
     public CertificateInfo withName(String name) {
         this.name = name;
         return this;
@@ -208,6 +218,8 @@ public class CertificateInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CertificateInfo withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
@@ -229,6 +241,8 @@ public class CertificateInfo  {
         this.privateKey = privateKey;
     }
 
+    
+
     public CertificateInfo withType(String type) {
         this.type = type;
         return this;
@@ -248,6 +262,8 @@ public class CertificateInfo  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public CertificateInfo withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -269,6 +285,8 @@ public class CertificateInfo  {
         this.createdAt = createdAt;
     }
 
+    
+
     public CertificateInfo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -288,6 +306,8 @@ public class CertificateInfo  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public CertificateInfo withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -309,6 +329,8 @@ public class CertificateInfo  {
         this.expireTime = expireTime;
     }
 
+    
+
     public CertificateInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -328,6 +350,9 @@ public class CertificateInfo  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

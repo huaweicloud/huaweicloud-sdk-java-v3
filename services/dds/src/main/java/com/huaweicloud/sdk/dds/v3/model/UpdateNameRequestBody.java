@@ -42,6 +42,9 @@ public class UpdateNameRequestBody  {
     public void setNewInstanceName(String newInstanceName) {
         this.newInstanceName = newInstanceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

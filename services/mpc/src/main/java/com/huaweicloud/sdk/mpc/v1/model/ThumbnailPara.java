@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -111,7 +113,7 @@ public class ThumbnailPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.TIME;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,13 +125,13 @@ public class ThumbnailPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time")
     
-    private Integer time = 12;
+    private Integer time;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private Integer startTime = 0;
+    private Integer startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,13 +155,13 @@ public class ThumbnailPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="format")
     
-    private Integer format = 1;
+    private Integer format;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aspect_ratio")
     
-    private Integer aspectRatio = 0;
+    private Integer aspectRatio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -177,7 +179,91 @@ public class ThumbnailPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_length")
     
-    private Integer maxLength = 480;
+    private Integer maxLength;
+    /**
+     * 截图的帧类型 
+     */
+    public static final class FrameTypeEnum {
+
+        
+        /**
+         * Enum INTRA for value: "INTRA"
+         */
+        public static final FrameTypeEnum INTRA = new FrameTypeEnum("INTRA");
+        
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final FrameTypeEnum NORMAL = new FrameTypeEnum("NORMAL");
+        
+
+        private static final Map<String, FrameTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FrameTypeEnum> createStaticFields() {
+            Map<String, FrameTypeEnum> map = new HashMap<>();
+            map.put("INTRA", INTRA);
+            map.put("NORMAL", NORMAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        FrameTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FrameTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            FrameTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new FrameTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static FrameTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            FrameTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof FrameTypeEnum) {
+                return this.value.equals(((FrameTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="frame_type")
+    
+    private FrameTypeEnum frameType;
 
     public ThumbnailPara withType(TypeEnum type) {
         this.type = type;
@@ -199,6 +285,8 @@ public class ThumbnailPara  {
         this.type = type;
     }
 
+    
+
     public ThumbnailPara withPercent(Integer percent) {
         this.percent = percent;
         return this;
@@ -218,6 +306,8 @@ public class ThumbnailPara  {
     public void setPercent(Integer percent) {
         this.percent = percent;
     }
+
+    
 
     public ThumbnailPara withTime(Integer time) {
         this.time = time;
@@ -241,6 +331,8 @@ public class ThumbnailPara  {
         this.time = time;
     }
 
+    
+
     public ThumbnailPara withStartTime(Integer startTime) {
         this.startTime = startTime;
         return this;
@@ -262,6 +354,8 @@ public class ThumbnailPara  {
     public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ThumbnailPara withDuration(Integer duration) {
         this.duration = duration;
@@ -285,6 +379,8 @@ public class ThumbnailPara  {
         this.duration = duration;
     }
 
+    
+
     public ThumbnailPara withDots(List<Integer> dots) {
         this.dots = dots;
         return this;
@@ -292,9 +388,6 @@ public class ThumbnailPara  {
 
     
     public ThumbnailPara addDotsItem(Integer dotsItem) {
-        if (this.dots == null) {
-            this.dots = new ArrayList<>();
-        }
         this.dots.add(dotsItem);
         return this;
     }
@@ -319,6 +412,8 @@ public class ThumbnailPara  {
         this.dots = dots;
     }
 
+    
+
     public ThumbnailPara withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
@@ -338,6 +433,8 @@ public class ThumbnailPara  {
     public void setOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
     }
+
+    
 
     public ThumbnailPara withFormat(Integer format) {
         this.format = format;
@@ -361,6 +458,8 @@ public class ThumbnailPara  {
         this.format = format;
     }
 
+    
+
     public ThumbnailPara withAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
         return this;
@@ -383,6 +482,8 @@ public class ThumbnailPara  {
         this.aspectRatio = aspectRatio;
     }
 
+    
+
     public ThumbnailPara withWidth(Integer width) {
         this.width = width;
         return this;
@@ -403,6 +504,8 @@ public class ThumbnailPara  {
         this.width = width;
     }
 
+    
+
     public ThumbnailPara withHeight(Integer height) {
         this.height = height;
         return this;
@@ -422,6 +525,8 @@ public class ThumbnailPara  {
     public void setHeight(Integer height) {
         this.height = height;
     }
+
+    
 
     public ThumbnailPara withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
@@ -444,6 +549,31 @@ public class ThumbnailPara  {
     public void setMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
     }
+
+    
+
+    public ThumbnailPara withFrameType(FrameTypeEnum frameType) {
+        this.frameType = frameType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 截图的帧类型 
+     * @return frameType
+     */
+    public FrameTypeEnum getFrameType() {
+        return frameType;
+    }
+
+    public void setFrameType(FrameTypeEnum frameType) {
+        this.frameType = frameType;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -464,11 +594,12 @@ public class ThumbnailPara  {
             Objects.equals(this.aspectRatio, thumbnailPara.aspectRatio) &&
             Objects.equals(this.width, thumbnailPara.width) &&
             Objects.equals(this.height, thumbnailPara.height) &&
-            Objects.equals(this.maxLength, thumbnailPara.maxLength);
+            Objects.equals(this.maxLength, thumbnailPara.maxLength) &&
+            Objects.equals(this.frameType, thumbnailPara.frameType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, percent, time, startTime, duration, dots, outputFilename, format, aspectRatio, width, height, maxLength);
+        return Objects.hash(type, percent, time, startTime, duration, dots, outputFilename, format, aspectRatio, width, height, maxLength, frameType);
     }
     @Override
     public String toString() {
@@ -486,6 +617,7 @@ public class ThumbnailPara  {
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
+        sb.append("    frameType: ").append(toIndentedString(frameType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

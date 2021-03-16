@@ -55,6 +55,8 @@ public class ErrorCaseInfoBean  {
         this.errorCode = errorCode;
     }
 
+    
+
     public ErrorCaseInfoBean withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -75,6 +77,8 @@ public class ErrorCaseInfoBean  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public ErrorCaseInfoBean withTestcaseId(String testcaseId) {
         this.testcaseId = testcaseId;
         return this;
@@ -94,6 +98,9 @@ public class ErrorCaseInfoBean  {
     public void setTestcaseId(String testcaseId) {
         this.testcaseId = testcaseId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

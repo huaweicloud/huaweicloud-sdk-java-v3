@@ -40,7 +40,7 @@ public class UpdateDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModDeviceDTO body = null;
+    private ModDeviceDTO body;
 
     public UpdateDeviceRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class UpdateDeviceRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateDeviceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class UpdateDeviceRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public UpdateDeviceRequest withSn(String sn) {
         this.sn = sn;
         return this;
@@ -103,6 +107,8 @@ public class UpdateDeviceRequest  {
     public void setSn(String sn) {
         this.sn = sn;
     }
+
+    
 
     public UpdateDeviceRequest withBody(ModDeviceDTO body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class UpdateDeviceRequest  {
     public void setBody(ModDeviceDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

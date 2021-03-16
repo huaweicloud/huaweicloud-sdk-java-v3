@@ -25,7 +25,7 @@ public class ListVpcPeeringsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -179,6 +179,8 @@ public class ListVpcPeeringsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListVpcPeeringsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -198,6 +200,8 @@ public class ListVpcPeeringsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListVpcPeeringsRequest withId(String id) {
         this.id = id;
@@ -219,6 +223,8 @@ public class ListVpcPeeringsRequest  {
         this.id = id;
     }
 
+    
+
     public ListVpcPeeringsRequest withName(String name) {
         this.name = name;
         return this;
@@ -238,6 +244,8 @@ public class ListVpcPeeringsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListVpcPeeringsRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -259,6 +267,8 @@ public class ListVpcPeeringsRequest  {
         this.status = status;
     }
 
+    
+
     public ListVpcPeeringsRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -279,6 +289,8 @@ public class ListVpcPeeringsRequest  {
         this.tenantId = tenantId;
     }
 
+    
+
     public ListVpcPeeringsRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -298,6 +310,9 @@ public class ListVpcPeeringsRequest  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

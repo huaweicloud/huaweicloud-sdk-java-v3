@@ -69,6 +69,8 @@ public class ShowContentRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public ShowContentRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -88,6 +90,8 @@ public class ShowContentRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public ShowContentRequest withProject(String project) {
         this.project = project;
@@ -109,6 +113,8 @@ public class ShowContentRequest  {
         this.project = project;
     }
 
+    
+
     public ShowContentRequest withPath(String path) {
         this.path = path;
         return this;
@@ -129,6 +135,8 @@ public class ShowContentRequest  {
         this.path = path;
     }
 
+    
+
     public ShowContentRequest withRef(String ref) {
         this.ref = ref;
         return this;
@@ -148,6 +156,9 @@ public class ShowContentRequest  {
     public void setRef(String ref) {
         this.ref = ref;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

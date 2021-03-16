@@ -51,6 +51,8 @@ public class AppAclCreate  {
         this.appAclType = appAclType;
     }
 
+    
+
     public AppAclCreate withAppAclValues(List<String> appAclValues) {
         this.appAclValues = appAclValues;
         return this;
@@ -58,9 +60,6 @@ public class AppAclCreate  {
 
     
     public AppAclCreate addAppAclValuesItem(String appAclValuesItem) {
-        if (this.appAclValues == null) {
-            this.appAclValues = new ArrayList<>();
-        }
         this.appAclValues.add(appAclValuesItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class AppAclCreate  {
     public void setAppAclValues(List<String> appAclValues) {
         this.appAclValues = appAclValues;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

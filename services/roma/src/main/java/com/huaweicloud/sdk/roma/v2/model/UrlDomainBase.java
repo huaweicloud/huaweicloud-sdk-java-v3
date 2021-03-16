@@ -103,7 +103,7 @@ public class UrlDomainBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_ssl_version")
     
-    private MinSslVersionEnum minSslVersion = MinSslVersionEnum.TLSV1_1;
+    private MinSslVersionEnum minSslVersion;
 
     public UrlDomainBase withMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
@@ -124,6 +124,9 @@ public class UrlDomainBase  {
     public void setMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

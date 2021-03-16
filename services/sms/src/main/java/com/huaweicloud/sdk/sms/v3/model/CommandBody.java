@@ -33,7 +33,7 @@ public class CommandBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result_detail")
     
-    private Object resultDetail = null;
+    private Object resultDetail;
 
     public CommandBody withCommandName(String commandName) {
         this.commandName = commandName;
@@ -55,6 +55,8 @@ public class CommandBody  {
         this.commandName = commandName;
     }
 
+    
+
     public CommandBody withResult(String result) {
         this.result = result;
         return this;
@@ -75,6 +77,8 @@ public class CommandBody  {
         this.result = result;
     }
 
+    
+
     public CommandBody withResultDetail(Object resultDetail) {
         this.resultDetail = resultDetail;
         return this;
@@ -94,6 +98,9 @@ public class CommandBody  {
     public void setResultDetail(Object resultDetail) {
         this.resultDetail = resultDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

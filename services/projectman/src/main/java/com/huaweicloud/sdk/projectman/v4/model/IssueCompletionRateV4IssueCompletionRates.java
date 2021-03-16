@@ -22,7 +22,7 @@ public class IssueCompletionRateV4IssueCompletionRates  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="issue_status")
     
-    private IssueCompletionRateV4IssueStatus issueStatus = null;
+    private IssueCompletionRateV4IssueStatus issueStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class IssueCompletionRateV4IssueCompletionRates  {
         this.issueStatus = issueStatus;
     }
 
+    
+
     public IssueCompletionRateV4IssueCompletionRates withTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
         return this;
@@ -76,6 +78,9 @@ public class IssueCompletionRateV4IssueCompletionRates  {
     public void setTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

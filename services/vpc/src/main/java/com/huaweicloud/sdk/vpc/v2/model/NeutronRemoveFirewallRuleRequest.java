@@ -28,7 +28,7 @@ public class NeutronRemoveFirewallRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NeutronRemoveFirewallRuleRequestBody body = null;
+    private NeutronRemoveFirewallRuleRequestBody body;
 
     public NeutronRemoveFirewallRuleRequest withFirewallPolicyId(String firewallPolicyId) {
         this.firewallPolicyId = firewallPolicyId;
@@ -49,6 +49,8 @@ public class NeutronRemoveFirewallRuleRequest  {
     public void setFirewallPolicyId(String firewallPolicyId) {
         this.firewallPolicyId = firewallPolicyId;
     }
+
+    
 
     public NeutronRemoveFirewallRuleRequest withBody(NeutronRemoveFirewallRuleRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class NeutronRemoveFirewallRuleRequest  {
     public void setBody(NeutronRemoveFirewallRuleRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

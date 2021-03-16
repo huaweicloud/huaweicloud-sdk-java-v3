@@ -22,7 +22,7 @@ public class ResizePostPaidServerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resize")
     
-    private ResizePostPaidServerOption resize = null;
+    private ResizePostPaidServerOption resize;
 
     public ResizePostPaidServerRequestBody withResize(ResizePostPaidServerOption resize) {
         this.resize = resize;
@@ -50,6 +50,9 @@ public class ResizePostPaidServerRequestBody  {
     public void setResize(ResizePostPaidServerOption resize) {
         this.resize = resize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

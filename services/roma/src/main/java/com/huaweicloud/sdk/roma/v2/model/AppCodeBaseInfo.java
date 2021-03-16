@@ -62,6 +62,8 @@ public class AppCodeBaseInfo  {
         this.appCode = appCode;
     }
 
+    
+
     public AppCodeBaseInfo withId(String id) {
         this.id = id;
         return this;
@@ -81,6 +83,8 @@ public class AppCodeBaseInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AppCodeBaseInfo withAppId(String appId) {
         this.appId = appId;
@@ -102,6 +106,8 @@ public class AppCodeBaseInfo  {
         this.appId = appId;
     }
 
+    
+
     public AppCodeBaseInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -121,6 +127,9 @@ public class AppCodeBaseInfo  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

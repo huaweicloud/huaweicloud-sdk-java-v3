@@ -49,6 +49,8 @@ public class BackupDatabase  {
         this.type = type;
     }
 
+    
+
     public BackupDatabase withVersion(String version) {
         this.version = version;
         return this;
@@ -68,6 +70,9 @@ public class BackupDatabase  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

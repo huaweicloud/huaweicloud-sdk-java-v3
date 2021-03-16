@@ -22,7 +22,7 @@ public class KeystoneUpdateUserByAdminRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private KeystoneUpdateUserOption user = null;
+    private KeystoneUpdateUserOption user;
 
     public KeystoneUpdateUserByAdminRequestBody withUser(KeystoneUpdateUserOption user) {
         this.user = user;
@@ -50,6 +50,9 @@ public class KeystoneUpdateUserByAdminRequestBody  {
     public void setUser(KeystoneUpdateUserOption user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

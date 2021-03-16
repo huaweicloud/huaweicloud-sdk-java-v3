@@ -63,7 +63,7 @@ public class Port  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fixed_ips")
     
-    private List<FixedIp> fixedIps = new ArrayList<>();
+    private List<FixedIp> fixedIps = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -267,19 +267,19 @@ public class Port  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<String> securityGroups = new ArrayList<>();
+    private List<String> securityGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allowed_address_pairs")
     
-    private List<AllowedAddressPair> allowedAddressPairs = new ArrayList<>();
+    private List<AllowedAddressPair> allowedAddressPairs = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_dhcp_opts")
     
-    private List<ExtraDhcpOpt> extraDhcpOpts = new ArrayList<>();
+    private List<ExtraDhcpOpt> extraDhcpOpts = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -291,7 +291,7 @@ public class Port  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dns_assignment")
     
-    private List<DnsAssignMent> dnsAssignment = new ArrayList<>();
+    private List<DnsAssignMent> dnsAssignment = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -303,13 +303,13 @@ public class Port  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="binding:vif_details")
     
-    private Object bindingVifDetails = null;
+    private Object bindingVifDetails;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="binding:profile")
     
-    private Object bindingProfile = null;
+    private Object bindingProfile;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -355,6 +355,8 @@ public class Port  {
         this.id = id;
     }
 
+    
+
     public Port withName(String name) {
         this.name = name;
         return this;
@@ -374,6 +376,8 @@ public class Port  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Port withNetworkId(String networkId) {
         this.networkId = networkId;
@@ -395,6 +399,8 @@ public class Port  {
         this.networkId = networkId;
     }
 
+    
+
     public Port withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -415,6 +421,8 @@ public class Port  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public Port withMacAddress(String macAddress) {
         this.macAddress = macAddress;
         return this;
@@ -434,6 +442,8 @@ public class Port  {
     public void setMacAddress(String macAddress) {
         this.macAddress = macAddress;
     }
+
+    
 
     public Port withFixedIps(List<FixedIp> fixedIps) {
         this.fixedIps = fixedIps;
@@ -466,6 +476,8 @@ public class Port  {
         this.fixedIps = fixedIps;
     }
 
+    
+
     public Port withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -485,6 +497,8 @@ public class Port  {
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
+
+    
 
     public Port withDeviceOwner(DeviceOwnerEnum deviceOwner) {
         this.deviceOwner = deviceOwner;
@@ -506,6 +520,8 @@ public class Port  {
         this.deviceOwner = deviceOwner;
     }
 
+    
+
     public Port withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -526,6 +542,8 @@ public class Port  {
         this.tenantId = tenantId;
     }
 
+    
+
     public Port withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -545,6 +563,8 @@ public class Port  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public Port withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
@@ -577,6 +597,8 @@ public class Port  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public Port withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
         this.allowedAddressPairs = allowedAddressPairs;
         return this;
@@ -607,6 +629,8 @@ public class Port  {
     public void setAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
         this.allowedAddressPairs = allowedAddressPairs;
     }
+
+    
 
     public Port withExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
@@ -639,6 +663,8 @@ public class Port  {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
+    
+
     public Port withBindingVnicType(String bindingVnicType) {
         this.bindingVnicType = bindingVnicType;
         return this;
@@ -658,6 +684,8 @@ public class Port  {
     public void setBindingVnicType(String bindingVnicType) {
         this.bindingVnicType = bindingVnicType;
     }
+
+    
 
     public Port withDnsAssignment(List<DnsAssignMent> dnsAssignment) {
         this.dnsAssignment = dnsAssignment;
@@ -690,6 +718,8 @@ public class Port  {
         this.dnsAssignment = dnsAssignment;
     }
 
+    
+
     public Port withDnsName(String dnsName) {
         this.dnsName = dnsName;
         return this;
@@ -709,6 +739,8 @@ public class Port  {
     public void setDnsName(String dnsName) {
         this.dnsName = dnsName;
     }
+
+    
 
     public Port withBindingVifDetails(Object bindingVifDetails) {
         this.bindingVifDetails = bindingVifDetails;
@@ -730,6 +762,8 @@ public class Port  {
         this.bindingVifDetails = bindingVifDetails;
     }
 
+    
+
     public Port withBindingProfile(Object bindingProfile) {
         this.bindingProfile = bindingProfile;
         return this;
@@ -749,6 +783,8 @@ public class Port  {
     public void setBindingProfile(Object bindingProfile) {
         this.bindingProfile = bindingProfile;
     }
+
+    
 
     public Port withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -770,6 +806,8 @@ public class Port  {
         this.instanceId = instanceId;
     }
 
+    
+
     public Port withInstanceType(String instanceType) {
         this.instanceType = instanceType;
         return this;
@@ -789,6 +827,8 @@ public class Port  {
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
+
+    
 
     public Port withPortSecurityEnabled(Boolean portSecurityEnabled) {
         this.portSecurityEnabled = portSecurityEnabled;
@@ -810,6 +850,8 @@ public class Port  {
         this.portSecurityEnabled = portSecurityEnabled;
     }
 
+    
+
     public Port withZoneId(String zoneId) {
         this.zoneId = zoneId;
         return this;
@@ -829,6 +871,9 @@ public class Port  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

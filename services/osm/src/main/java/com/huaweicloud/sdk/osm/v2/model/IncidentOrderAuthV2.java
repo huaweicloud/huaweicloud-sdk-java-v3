@@ -58,19 +58,19 @@ public class IncidentOrderAuthV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_effective_time")
     
-    private OffsetDateTime authEffectiveTime = null;
+    private OffsetDateTime authEffectiveTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_expire_time")
     
-    private OffsetDateTime authExpireTime = null;
+    private OffsetDateTime authExpireTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,6 +118,8 @@ public class IncidentOrderAuthV2  {
         this.id = id;
     }
 
+    
+
     public IncidentOrderAuthV2 withStatus(Integer status) {
         this.status = status;
         return this;
@@ -140,6 +142,8 @@ public class IncidentOrderAuthV2  {
         this.status = status;
     }
 
+    
+
     public IncidentOrderAuthV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
@@ -159,6 +163,8 @@ public class IncidentOrderAuthV2  {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
 
     public IncidentOrderAuthV2 withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
@@ -180,6 +186,8 @@ public class IncidentOrderAuthV2  {
         this.simpleDescription = simpleDescription;
     }
 
+    
+
     public IncidentOrderAuthV2 withResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
         return this;
@@ -199,6 +207,8 @@ public class IncidentOrderAuthV2  {
     public void setResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
     }
+
+    
 
     public IncidentOrderAuthV2 withVisitTypeName(String visitTypeName) {
         this.visitTypeName = visitTypeName;
@@ -220,6 +230,8 @@ public class IncidentOrderAuthV2  {
         this.visitTypeName = visitTypeName;
     }
 
+    
+
     public IncidentOrderAuthV2 withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -239,6 +251,8 @@ public class IncidentOrderAuthV2  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public IncidentOrderAuthV2 withAuthEffectiveTime(OffsetDateTime authEffectiveTime) {
         this.authEffectiveTime = authEffectiveTime;
@@ -260,6 +274,8 @@ public class IncidentOrderAuthV2  {
         this.authEffectiveTime = authEffectiveTime;
     }
 
+    
+
     public IncidentOrderAuthV2 withAuthExpireTime(OffsetDateTime authExpireTime) {
         this.authExpireTime = authExpireTime;
         return this;
@@ -279,6 +295,8 @@ public class IncidentOrderAuthV2  {
     public void setAuthExpireTime(OffsetDateTime authExpireTime) {
         this.authExpireTime = authExpireTime;
     }
+
+    
 
     public IncidentOrderAuthV2 withRejectReason(String rejectReason) {
         this.rejectReason = rejectReason;
@@ -300,6 +318,8 @@ public class IncidentOrderAuthV2  {
         this.rejectReason = rejectReason;
     }
 
+    
+
     public IncidentOrderAuthV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -319,6 +339,8 @@ public class IncidentOrderAuthV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public IncidentOrderAuthV2 withXCustomerId(String xCustomerId) {
         this.xCustomerId = xCustomerId;
@@ -342,6 +364,8 @@ public class IncidentOrderAuthV2  {
         this.xCustomerId = xCustomerId;
     }
 
+    
+
     public IncidentOrderAuthV2 withXCustomerName(String xCustomerName) {
         this.xCustomerName = xCustomerName;
         return this;
@@ -363,6 +387,9 @@ public class IncidentOrderAuthV2  {
     public void setXCustomerName(String xCustomerName) {
         this.xCustomerName = xCustomerName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

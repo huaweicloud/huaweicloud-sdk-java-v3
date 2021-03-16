@@ -103,6 +103,8 @@ public class ListRecordSetsByZoneRequest  {
         this.zoneId = zoneId;
     }
 
+    
+
     public ListRecordSetsByZoneRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -122,6 +124,8 @@ public class ListRecordSetsByZoneRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListRecordSetsByZoneRequest withLimit(String limit) {
         this.limit = limit;
@@ -143,6 +147,8 @@ public class ListRecordSetsByZoneRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListRecordSetsByZoneRequest withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -162,6 +168,8 @@ public class ListRecordSetsByZoneRequest  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
 
     public ListRecordSetsByZoneRequest withTags(String tags) {
         this.tags = tags;
@@ -183,6 +191,8 @@ public class ListRecordSetsByZoneRequest  {
         this.tags = tags;
     }
 
+    
+
     public ListRecordSetsByZoneRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -202,6 +212,8 @@ public class ListRecordSetsByZoneRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListRecordSetsByZoneRequest withType(String type) {
         this.type = type;
@@ -223,6 +235,8 @@ public class ListRecordSetsByZoneRequest  {
         this.type = type;
     }
 
+    
+
     public ListRecordSetsByZoneRequest withName(String name) {
         this.name = name;
         return this;
@@ -242,6 +256,8 @@ public class ListRecordSetsByZoneRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListRecordSetsByZoneRequest withId(String id) {
         this.id = id;
@@ -263,6 +279,8 @@ public class ListRecordSetsByZoneRequest  {
         this.id = id;
     }
 
+    
+
     public ListRecordSetsByZoneRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -283,6 +301,8 @@ public class ListRecordSetsByZoneRequest  {
         this.sortKey = sortKey;
     }
 
+    
+
     public ListRecordSetsByZoneRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -302,6 +322,9 @@ public class ListRecordSetsByZoneRequest  {
     public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

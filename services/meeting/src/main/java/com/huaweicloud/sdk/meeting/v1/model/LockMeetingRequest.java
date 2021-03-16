@@ -34,7 +34,7 @@ public class LockMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestLockReqBody body = null;
+    private RestLockReqBody body;
 
     public LockMeetingRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -55,6 +55,8 @@ public class LockMeetingRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public LockMeetingRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -77,6 +79,8 @@ public class LockMeetingRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public LockMeetingRequest withBody(RestLockReqBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class LockMeetingRequest  {
     public void setBody(RestLockReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

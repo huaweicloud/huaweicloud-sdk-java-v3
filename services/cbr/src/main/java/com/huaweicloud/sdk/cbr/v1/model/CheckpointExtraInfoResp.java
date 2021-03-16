@@ -55,6 +55,8 @@ public class CheckpointExtraInfoResp  {
         this.name = name;
     }
 
+    
+
     public CheckpointExtraInfoResp withDescription(String description) {
         this.description = description;
         return this;
@@ -75,6 +77,8 @@ public class CheckpointExtraInfoResp  {
         this.description = description;
     }
 
+    
+
     public CheckpointExtraInfoResp withRetentionDuration(Integer retentionDuration) {
         this.retentionDuration = retentionDuration;
         return this;
@@ -94,6 +98,9 @@ public class CheckpointExtraInfoResp  {
     public void setRetentionDuration(Integer retentionDuration) {
         this.retentionDuration = retentionDuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class UpdateScriptRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ScriptInfo body = null;
+    private ScriptInfo body;
 
     public UpdateScriptRequest withScriptName(String scriptName) {
         this.scriptName = scriptName;
@@ -49,6 +49,8 @@ public class UpdateScriptRequest  {
     public void setScriptName(String scriptName) {
         this.scriptName = scriptName;
     }
+
+    
 
     public UpdateScriptRequest withBody(ScriptInfo body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateScriptRequest  {
     public void setBody(ScriptInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

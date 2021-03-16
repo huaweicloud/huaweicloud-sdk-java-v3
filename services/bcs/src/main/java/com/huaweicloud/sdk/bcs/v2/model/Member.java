@@ -44,13 +44,13 @@ public class Member  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitor_info")
     
-    private MemberInvitor invitorInfo = null;
+    private MemberInvitor invitorInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitee_info")
     
-    private MemberInvitee inviteeInfo = null;
+    private MemberInvitee inviteeInfo;
 
     public Member withTcsNeed(Boolean tcsNeed) {
         this.tcsNeed = tcsNeed;
@@ -72,6 +72,8 @@ public class Member  {
         this.tcsNeed = tcsNeed;
     }
 
+    
+
     public Member withChannelName(String channelName) {
         this.channelName = channelName;
         return this;
@@ -92,6 +94,8 @@ public class Member  {
         this.channelName = channelName;
     }
 
+    
+
     public Member withInvitedOrgs(List<OrganizationV2> invitedOrgs) {
         this.invitedOrgs = invitedOrgs;
         return this;
@@ -99,9 +103,6 @@ public class Member  {
 
     
     public Member addInvitedOrgsItem(OrganizationV2 invitedOrgsItem) {
-        if (this.invitedOrgs == null) {
-            this.invitedOrgs = new ArrayList<>();
-        }
         this.invitedOrgs.add(invitedOrgsItem);
         return this;
     }
@@ -125,6 +126,8 @@ public class Member  {
     public void setInvitedOrgs(List<OrganizationV2> invitedOrgs) {
         this.invitedOrgs = invitedOrgs;
     }
+
+    
 
     public Member withInvitorInfo(MemberInvitor invitorInfo) {
         this.invitorInfo = invitorInfo;
@@ -153,6 +156,8 @@ public class Member  {
         this.invitorInfo = invitorInfo;
     }
 
+    
+
     public Member withInviteeInfo(MemberInvitee inviteeInfo) {
         this.inviteeInfo = inviteeInfo;
         return this;
@@ -179,6 +184,9 @@ public class Member  {
     public void setInviteeInfo(MemberInvitee inviteeInfo) {
         this.inviteeInfo = inviteeInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,13 +33,13 @@ public class RestChairViewReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="switchTime")
     
-    private Integer switchTime = 30;
+    private Integer switchTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status = 0;
+    private Integer status;
 
     public RestChairViewReqBody withViewType(Integer viewType) {
         this.viewType = viewType;
@@ -61,6 +61,8 @@ public class RestChairViewReqBody  {
         this.viewType = viewType;
     }
 
+    
+
     public RestChairViewReqBody withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -80,6 +82,8 @@ public class RestChairViewReqBody  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
 
     public RestChairViewReqBody withSwitchTime(Integer switchTime) {
         this.switchTime = switchTime;
@@ -101,6 +105,8 @@ public class RestChairViewReqBody  {
         this.switchTime = switchTime;
     }
 
+    
+
     public RestChairViewReqBody withStatus(Integer status) {
         this.status = status;
         return this;
@@ -120,6 +126,9 @@ public class RestChairViewReqBody  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

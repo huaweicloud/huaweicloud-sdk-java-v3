@@ -130,6 +130,9 @@ public class HaResponse  {
     public void setReplicationMode(ReplicationModeEnum replicationMode) {
         this.replicationMode = replicationMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

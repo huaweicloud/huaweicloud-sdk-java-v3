@@ -35,7 +35,7 @@ public class ServiceProperty  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="required")
     
-    private Boolean required = false;
+    private Boolean required;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,7 +89,7 @@ public class ServiceProperty  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_value")
     
-    private Object defaultValue = null;
+    private Object defaultValue;
 
     public ServiceProperty withPropertyName(String propertyName) {
         this.propertyName = propertyName;
@@ -111,6 +111,8 @@ public class ServiceProperty  {
         this.propertyName = propertyName;
     }
 
+    
+
     public ServiceProperty withDataType(String dataType) {
         this.dataType = dataType;
         return this;
@@ -130,6 +132,8 @@ public class ServiceProperty  {
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
+
+    
 
     public ServiceProperty withRequired(Boolean required) {
         this.required = required;
@@ -151,6 +155,8 @@ public class ServiceProperty  {
         this.required = required;
     }
 
+    
+
     public ServiceProperty withEnumList(List<String> enumList) {
         this.enumList = enumList;
         return this;
@@ -158,9 +164,6 @@ public class ServiceProperty  {
 
     
     public ServiceProperty addEnumListItem(String enumListItem) {
-        if (this.enumList == null) {
-            this.enumList = new ArrayList<>();
-        }
         this.enumList.add(enumListItem);
         return this;
     }
@@ -185,6 +188,8 @@ public class ServiceProperty  {
         this.enumList = enumList;
     }
 
+    
+
     public ServiceProperty withMin(String min) {
         this.min = min;
         return this;
@@ -204,6 +209,8 @@ public class ServiceProperty  {
     public void setMin(String min) {
         this.min = min;
     }
+
+    
 
     public ServiceProperty withMax(String max) {
         this.max = max;
@@ -225,6 +232,8 @@ public class ServiceProperty  {
         this.max = max;
     }
 
+    
+
     public ServiceProperty withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
         return this;
@@ -244,6 +253,8 @@ public class ServiceProperty  {
     public void setMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
     }
+
+    
 
     public ServiceProperty withStep(Double step) {
         this.step = step;
@@ -265,6 +276,8 @@ public class ServiceProperty  {
         this.step = step;
     }
 
+    
+
     public ServiceProperty withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -284,6 +297,8 @@ public class ServiceProperty  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    
 
     public ServiceProperty withMethod(String method) {
         this.method = method;
@@ -305,6 +320,8 @@ public class ServiceProperty  {
         this.method = method;
     }
 
+    
+
     public ServiceProperty withDescription(String description) {
         this.description = description;
         return this;
@@ -325,6 +342,8 @@ public class ServiceProperty  {
         this.description = description;
     }
 
+    
+
     public ServiceProperty withDefaultValue(Object defaultValue) {
         this.defaultValue = defaultValue;
         return this;
@@ -344,6 +363,9 @@ public class ServiceProperty  {
     public void setDefaultValue(Object defaultValue) {
         this.defaultValue = defaultValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

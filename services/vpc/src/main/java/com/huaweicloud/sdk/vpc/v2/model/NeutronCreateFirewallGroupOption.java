@@ -53,7 +53,7 @@ public class NeutronCreateFirewallGroupOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
     public NeutronCreateFirewallGroupOption withName(String name) {
         this.name = name;
@@ -75,6 +75,8 @@ public class NeutronCreateFirewallGroupOption  {
         this.name = name;
     }
 
+    
+
     public NeutronCreateFirewallGroupOption withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +96,8 @@ public class NeutronCreateFirewallGroupOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public NeutronCreateFirewallGroupOption withIngressFirewallPolicyId(String ingressFirewallPolicyId) {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
@@ -115,6 +119,8 @@ public class NeutronCreateFirewallGroupOption  {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
     }
 
+    
+
     public NeutronCreateFirewallGroupOption withEgressFirewallPolicyId(String egressFirewallPolicyId) {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
         return this;
@@ -135,6 +141,8 @@ public class NeutronCreateFirewallGroupOption  {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
     }
 
+    
+
     public NeutronCreateFirewallGroupOption withPorts(List<String> ports) {
         this.ports = ports;
         return this;
@@ -142,9 +150,6 @@ public class NeutronCreateFirewallGroupOption  {
 
     
     public NeutronCreateFirewallGroupOption addPortsItem(String portsItem) {
-        if (this.ports == null) {
-            this.ports = new ArrayList<>();
-        }
         this.ports.add(portsItem);
         return this;
     }
@@ -169,6 +174,8 @@ public class NeutronCreateFirewallGroupOption  {
         this.ports = ports;
     }
 
+    
+
     public NeutronCreateFirewallGroupOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -188,6 +195,9 @@ public class NeutronCreateFirewallGroupOption  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

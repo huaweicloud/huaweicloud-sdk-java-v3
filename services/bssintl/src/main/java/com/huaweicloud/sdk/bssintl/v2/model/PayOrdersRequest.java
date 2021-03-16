@@ -22,7 +22,7 @@ public class PayOrdersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PayCustomerOrderReq body = null;
+    private PayCustomerOrderReq body;
 
     public PayOrdersRequest withBody(PayCustomerOrderReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class PayOrdersRequest  {
     public void setBody(PayCustomerOrderReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

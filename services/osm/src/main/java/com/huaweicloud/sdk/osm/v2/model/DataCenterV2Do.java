@@ -63,6 +63,8 @@ public class DataCenterV2Do  {
         this.type = type;
     }
 
+    
+
     public DataCenterV2Do withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -83,6 +85,8 @@ public class DataCenterV2Do  {
         this.regionId = regionId;
     }
 
+    
+
     public DataCenterV2Do withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
@@ -102,6 +106,8 @@ public class DataCenterV2Do  {
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
+
+    
 
     public DataCenterV2Do withIsSensitive(Integer isSensitive) {
         this.isSensitive = isSensitive;
@@ -124,6 +130,9 @@ public class DataCenterV2Do  {
     public void setIsSensitive(Integer isSensitive) {
         this.isSensitive = isSensitive;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

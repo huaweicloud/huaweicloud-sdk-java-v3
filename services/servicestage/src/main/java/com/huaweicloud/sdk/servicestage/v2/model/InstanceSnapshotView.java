@@ -61,6 +61,8 @@ public class InstanceSnapshotView  {
         this.createTime = createTime;
     }
 
+    
+
     public InstanceSnapshotView withDescription(String description) {
         this.description = description;
         return this;
@@ -80,6 +82,8 @@ public class InstanceSnapshotView  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public InstanceSnapshotView withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -101,6 +105,8 @@ public class InstanceSnapshotView  {
         this.instanceId = instanceId;
     }
 
+    
+
     public InstanceSnapshotView withVersion(String version) {
         this.version = version;
         return this;
@@ -120,6 +126,9 @@ public class InstanceSnapshotView  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

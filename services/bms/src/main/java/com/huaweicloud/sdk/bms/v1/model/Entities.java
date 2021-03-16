@@ -52,6 +52,8 @@ public class Entities  {
         this.subJobsTotal = subJobsTotal;
     }
 
+    
+
     public Entities withSubJobs(List<SubJobs> subJobs) {
         this.subJobs = subJobs;
         return this;
@@ -59,9 +61,6 @@ public class Entities  {
 
     
     public Entities addSubJobsItem(SubJobs subJobsItem) {
-        if (this.subJobs == null) {
-            this.subJobs = new ArrayList<>();
-        }
         this.subJobs.add(subJobsItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class Entities  {
     public void setSubJobs(List<SubJobs> subJobs) {
         this.subJobs = subJobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

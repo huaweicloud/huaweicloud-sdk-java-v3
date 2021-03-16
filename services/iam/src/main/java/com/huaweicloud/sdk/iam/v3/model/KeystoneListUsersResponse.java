@@ -27,7 +27,7 @@ public class KeystoneListUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListUsersResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListUsersResponse withUsers(List<KeystoneListUsersResult> users) {
         this.users = users;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListUsersResponse extends SdkResponse {
 
     
     public KeystoneListUsersResponse addUsersItem(KeystoneListUsersResult usersItem) {
-        if (this.users == null) {
-            this.users = new ArrayList<>();
-        }
         this.users.add(usersItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListUsersResponse extends SdkResponse {
     public void setUsers(List<KeystoneListUsersResult> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

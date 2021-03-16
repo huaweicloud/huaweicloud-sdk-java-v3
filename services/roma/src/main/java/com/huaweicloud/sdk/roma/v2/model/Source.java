@@ -247,6 +247,8 @@ public class Source  {
         this.sourceId = sourceId;
     }
 
+    
+
     public Source withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -266,6 +268,8 @@ public class Source  {
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
+
+    
 
     public Source withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
@@ -287,6 +291,8 @@ public class Source  {
         this.deviceId = deviceId;
     }
 
+    
+
     public Source withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -306,6 +312,8 @@ public class Source  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public Source withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -327,6 +335,8 @@ public class Source  {
         this.deviceName = deviceName;
     }
 
+    
+
     public Source withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -346,6 +356,8 @@ public class Source  {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    
 
     public Source withIsBase64(IsBase64Enum isBase64) {
         this.isBase64 = isBase64;
@@ -367,6 +379,8 @@ public class Source  {
         this.isBase64 = isBase64;
     }
 
+    
+
     public Source withContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
         return this;
@@ -386,6 +400,9 @@ public class Source  {
     public void setContainDeviceInfo(ContainDeviceInfoEnum containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

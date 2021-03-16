@@ -131,6 +131,8 @@ public class DeleteScalingInstanceRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteScalingInstanceRequest withInstanceDelete(InstanceDeleteEnum instanceDelete) {
         this.instanceDelete = instanceDelete;
         return this;
@@ -150,6 +152,9 @@ public class DeleteScalingInstanceRequest  {
     public void setInstanceDelete(InstanceDeleteEnum instanceDelete) {
         this.instanceDelete = instanceDelete;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

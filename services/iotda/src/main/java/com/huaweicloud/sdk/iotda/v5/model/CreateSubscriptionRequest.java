@@ -28,7 +28,7 @@ public class CreateSubscriptionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateSubReq body = null;
+    private CreateSubReq body;
 
     public CreateSubscriptionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateSubscriptionRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateSubscriptionRequest withBody(CreateSubReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateSubscriptionRequest  {
     public void setBody(CreateSubReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -54,6 +54,88 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> changeSqlSwitch = genForchangeSqlSwitch();
+
+    private static HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> genForchangeSqlSwitch() {
+        // basic
+        HttpRequestDef.Builder<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeSqlSwitchRequest.class, ChangeSqlSwitchResponse.class)
+                .withName("ChangeSqlSwitch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ChangeSqlSwitchRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ChangeSqlSwitchRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ChangeSqlSwitchRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ChangeSqlSwitchBody.class,
+            f -> f.withMarshaller(ChangeSqlSwitchRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> createSpaceAnalysisTask = genForcreateSpaceAnalysisTask();
+
+    private static HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> genForcreateSpaceAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSpaceAnalysisTaskRequest.class, CreateSpaceAnalysisTaskResponse.class)
+                .withName("CreateSpaceAnalysisTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/space-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            CreateSpaceAnalysisTaskRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSpaceAnalysisTaskBody.class,
+            f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUser = genFordeleteDbUser();
 
     private static HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> genFordeleteDbUser() {
@@ -128,6 +210,152 @@ public class DasMeta {
             DeleteProcessReqBody.class,
             f -> f.withMarshaller(DeleteProcessRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> exportSlowQueryLogs = genForexportSlowQueryLogs();
+
+    private static HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> genForexportSlowQueryLogs() {
+        // basic
+        HttpRequestDef.Builder<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExportSlowQueryLogsRequest.class, ExportSlowQueryLogsResponse.class)
+                .withName("ExportSlowQueryLogs")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slow-query-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            })
+        );
+        builder.withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getStartAt, (req, v) -> {
+                req.setStartAt(v);
+            })
+        );
+        builder.withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getEndAt, (req, v) -> {
+                req.setEndAt(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ExportSlowQueryLogsRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ExportSlowQueryLogsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> exportSqlStatements = genForexportSqlStatements();
+
+    private static HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> genForexportSqlStatements() {
+        // basic
+        HttpRequestDef.Builder<ExportSqlStatementsRequest, ExportSqlStatementsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExportSqlStatementsRequest.class, ExportSqlStatementsResponse.class)
+                .withName("ExportSqlStatements")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-statements")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getStartAt, (req, v) -> {
+                req.setStartAt(v);
+            })
+        );
+        builder.withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getEndAt, (req, v) -> {
+                req.setEndAt(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ExportSqlStatementsRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ExportSqlStatementsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 
@@ -380,6 +608,87 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> listSpaceAnalysis = genForlistSpaceAnalysis();
+
+    private static HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> genForlistSpaceAnalysis() {
+        // basic
+        HttpRequestDef.Builder<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSpaceAnalysisRequest.class, ListSpaceAnalysisResponse.class)
+                .withName("ListSpaceAnalysis")
+                .withUri("/v3/{project_id}/instances/{instance_id}/space-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("object_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListSpaceAnalysisRequest.ObjectTypeEnum.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getObjectType, (req, v) -> {
+                req.setObjectType(v);
+            })
+        );
+        builder.withRequestField("database_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatabaseId, (req, v) -> {
+                req.setDatabaseId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("show_instance_info",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getShowInstanceInfo, (req, v) -> {
+                req.setShowInstanceInfo(v);
+            })
+        );
+        builder.withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListSpaceAnalysisRequest.DatastoreTypeEnum.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSpaceAnalysisRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> registerDbUser = genForregisterDbUser();
 
     private static HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> genForregisterDbUser() {
@@ -510,6 +819,55 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             ShowSqlExecutionPlanRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatus = genForshowSqlSwitchStatus();
+
+    private static HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> genForshowSqlSwitchStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSqlSwitchStatusRequest.class, ShowSqlSwitchStatusResponse.class)
+                .withName("ShowSqlSwitchStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ShowSqlSwitchStatusRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

@@ -151,6 +151,8 @@ public class ShowNamespaceResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowNamespaceResponse withName(String name) {
         this.name = name;
         return this;
@@ -170,6 +172,8 @@ public class ShowNamespaceResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowNamespaceResponse withCreatorName(String creatorName) {
         this.creatorName = creatorName;
@@ -191,6 +195,8 @@ public class ShowNamespaceResponse extends SdkResponse {
         this.creatorName = creatorName;
     }
 
+    
+
     public ShowNamespaceResponse withAuth(AuthEnum auth) {
         this.auth = auth;
         return this;
@@ -210,6 +216,9 @@ public class ShowNamespaceResponse extends SdkResponse {
     public void setAuth(AuthEnum auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

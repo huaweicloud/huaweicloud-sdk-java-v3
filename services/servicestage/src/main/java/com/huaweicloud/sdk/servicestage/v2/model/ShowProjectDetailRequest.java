@@ -51,6 +51,8 @@ public class ShowProjectDetailRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public ShowProjectDetailRequest withCloneUrl(String cloneUrl) {
         this.cloneUrl = cloneUrl;
         return this;
@@ -70,6 +72,9 @@ public class ShowProjectDetailRequest  {
     public void setCloneUrl(String cloneUrl) {
         this.cloneUrl = cloneUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

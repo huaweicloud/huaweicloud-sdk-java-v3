@@ -51,6 +51,8 @@ public class Tag  {
         this.key = key;
     }
 
+    
+
     public Tag withValues(List<String> values) {
         this.values = values;
         return this;
@@ -58,9 +60,6 @@ public class Tag  {
 
     
     public Tag addValuesItem(String valuesItem) {
-        if (this.values == null) {
-            this.values = new ArrayList<>();
-        }
         this.values.add(valuesItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class Tag  {
     public void setValues(List<String> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

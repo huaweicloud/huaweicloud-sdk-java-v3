@@ -22,7 +22,7 @@ public class CreateTemporaryAccessKeyByAgencyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateTemporaryAccessKeyByAgencyRequestBody body = null;
+    private CreateTemporaryAccessKeyByAgencyRequestBody body;
 
     public CreateTemporaryAccessKeyByAgencyRequest withBody(CreateTemporaryAccessKeyByAgencyRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateTemporaryAccessKeyByAgencyRequest  {
     public void setBody(CreateTemporaryAccessKeyByAgencyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

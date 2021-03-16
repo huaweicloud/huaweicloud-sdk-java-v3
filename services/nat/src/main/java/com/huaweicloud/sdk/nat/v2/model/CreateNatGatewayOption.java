@@ -145,7 +145,7 @@ public class CreateNatGatewayOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
     public CreateNatGatewayOption withName(String name) {
         this.name = name;
@@ -167,6 +167,8 @@ public class CreateNatGatewayOption  {
         this.name = name;
     }
 
+    
+
     public CreateNatGatewayOption withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
@@ -186,6 +188,8 @@ public class CreateNatGatewayOption  {
     public void setRouterId(String routerId) {
         this.routerId = routerId;
     }
+
+    
 
     public CreateNatGatewayOption withInternalNetworkId(String internalNetworkId) {
         this.internalNetworkId = internalNetworkId;
@@ -207,6 +211,8 @@ public class CreateNatGatewayOption  {
         this.internalNetworkId = internalNetworkId;
     }
 
+    
+
     public CreateNatGatewayOption withDescription(String description) {
         this.description = description;
         return this;
@@ -226,6 +232,8 @@ public class CreateNatGatewayOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateNatGatewayOption withSpec(SpecEnum spec) {
         this.spec = spec;
@@ -247,6 +255,8 @@ public class CreateNatGatewayOption  {
         this.spec = spec;
     }
 
+    
+
     public CreateNatGatewayOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -266,6 +276,9 @@ public class CreateNatGatewayOption  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

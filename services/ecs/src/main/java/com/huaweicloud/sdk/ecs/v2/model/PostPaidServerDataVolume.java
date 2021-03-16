@@ -143,25 +143,25 @@ public class PostPaidServerDataVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shareable")
     
-    private Boolean shareable = false;
+    private Boolean shareable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="multiattach")
     
-    private Boolean multiattach = false;
+    private Boolean multiattach;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hw:passthrough")
     
-    private Boolean hwPassthrough = false;
+    private Boolean hwPassthrough;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private PostPaidServerDataVolumeExtendParam extendparam = null;
+    private PostPaidServerDataVolumeExtendParam extendparam;
     /**
      * 云服务器数据盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
      */
@@ -251,7 +251,7 @@ public class PostPaidServerDataVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private PostPaidServerDataVolumeMetadata metadata = null;
+    private PostPaidServerDataVolumeMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -279,6 +279,8 @@ public class PostPaidServerDataVolume  {
         this.volumetype = volumetype;
     }
 
+    
+
     public PostPaidServerDataVolume withSize(Integer size) {
         this.size = size;
         return this;
@@ -301,6 +303,8 @@ public class PostPaidServerDataVolume  {
         this.size = size;
     }
 
+    
+
     public PostPaidServerDataVolume withShareable(Boolean shareable) {
         this.shareable = shareable;
         return this;
@@ -320,6 +324,8 @@ public class PostPaidServerDataVolume  {
     public void setShareable(Boolean shareable) {
         this.shareable = shareable;
     }
+
+    
 
     public PostPaidServerDataVolume withMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
@@ -341,6 +347,8 @@ public class PostPaidServerDataVolume  {
         this.multiattach = multiattach;
     }
 
+    
+
     public PostPaidServerDataVolume withHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
         return this;
@@ -360,6 +368,8 @@ public class PostPaidServerDataVolume  {
     public void setHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
     }
+
+    
 
     public PostPaidServerDataVolume withExtendparam(PostPaidServerDataVolumeExtendParam extendparam) {
         this.extendparam = extendparam;
@@ -388,6 +398,8 @@ public class PostPaidServerDataVolume  {
         this.extendparam = extendparam;
     }
 
+    
+
     public PostPaidServerDataVolume withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -408,6 +420,8 @@ public class PostPaidServerDataVolume  {
         this.clusterType = clusterType;
     }
 
+    
+
     public PostPaidServerDataVolume withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -427,6 +441,8 @@ public class PostPaidServerDataVolume  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public PostPaidServerDataVolume withMetadata(PostPaidServerDataVolumeMetadata metadata) {
         this.metadata = metadata;
@@ -455,6 +471,8 @@ public class PostPaidServerDataVolume  {
         this.metadata = metadata;
     }
 
+    
+
     public PostPaidServerDataVolume withDataImageId(String dataImageId) {
         this.dataImageId = dataImageId;
         return this;
@@ -474,6 +492,9 @@ public class PostPaidServerDataVolume  {
     public void setDataImageId(String dataImageId) {
         this.dataImageId = dataImageId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

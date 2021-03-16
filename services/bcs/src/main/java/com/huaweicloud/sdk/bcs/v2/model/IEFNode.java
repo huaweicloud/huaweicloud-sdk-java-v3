@@ -55,6 +55,8 @@ public class IEFNode  {
         this.id = id;
     }
 
+    
+
     public IEFNode withStatus(String status) {
         this.status = status;
         return this;
@@ -75,6 +77,8 @@ public class IEFNode  {
         this.status = status;
     }
 
+    
+
     public IEFNode withPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
         return this;
@@ -94,6 +98,9 @@ public class IEFNode  {
     public void setPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

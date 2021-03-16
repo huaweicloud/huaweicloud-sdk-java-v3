@@ -91,6 +91,8 @@ public class CreateSecurityGroupRuleOption  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public CreateSecurityGroupRuleOption withDescription(String description) {
         this.description = description;
         return this;
@@ -110,6 +112,8 @@ public class CreateSecurityGroupRuleOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateSecurityGroupRuleOption withDirection(String direction) {
         this.direction = direction;
@@ -131,6 +135,8 @@ public class CreateSecurityGroupRuleOption  {
         this.direction = direction;
     }
 
+    
+
     public CreateSecurityGroupRuleOption withEthertype(String ethertype) {
         this.ethertype = ethertype;
         return this;
@@ -150,6 +156,8 @@ public class CreateSecurityGroupRuleOption  {
     public void setEthertype(String ethertype) {
         this.ethertype = ethertype;
     }
+
+    
 
     public CreateSecurityGroupRuleOption withProtocol(String protocol) {
         this.protocol = protocol;
@@ -171,6 +179,8 @@ public class CreateSecurityGroupRuleOption  {
         this.protocol = protocol;
     }
 
+    
+
     public CreateSecurityGroupRuleOption withPortRangeMin(Integer portRangeMin) {
         this.portRangeMin = portRangeMin;
         return this;
@@ -190,6 +200,8 @@ public class CreateSecurityGroupRuleOption  {
     public void setPortRangeMin(Integer portRangeMin) {
         this.portRangeMin = portRangeMin;
     }
+
+    
 
     public CreateSecurityGroupRuleOption withPortRangeMax(Integer portRangeMax) {
         this.portRangeMax = portRangeMax;
@@ -211,6 +223,8 @@ public class CreateSecurityGroupRuleOption  {
         this.portRangeMax = portRangeMax;
     }
 
+    
+
     public CreateSecurityGroupRuleOption withRemoteIpPrefix(String remoteIpPrefix) {
         this.remoteIpPrefix = remoteIpPrefix;
         return this;
@@ -231,6 +245,8 @@ public class CreateSecurityGroupRuleOption  {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
+    
+
     public CreateSecurityGroupRuleOption withRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
         return this;
@@ -250,6 +266,9 @@ public class CreateSecurityGroupRuleOption  {
     public void setRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

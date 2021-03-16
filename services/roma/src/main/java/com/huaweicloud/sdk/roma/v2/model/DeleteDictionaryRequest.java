@@ -49,6 +49,8 @@ public class DeleteDictionaryRequest  {
         this.dictId = dictId;
     }
 
+    
+
     public DeleteDictionaryRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteDictionaryRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

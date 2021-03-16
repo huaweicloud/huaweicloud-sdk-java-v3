@@ -60,6 +60,8 @@ public class ListPredefineTagsResponse extends SdkResponse {
         this.marker = marker;
     }
 
+    
+
     public ListPredefineTagsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -80,6 +82,8 @@ public class ListPredefineTagsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListPredefineTagsResponse withTags(List<PredefineTag> tags) {
         this.tags = tags;
         return this;
@@ -87,9 +91,6 @@ public class ListPredefineTagsResponse extends SdkResponse {
 
     
     public ListPredefineTagsResponse addTagsItem(PredefineTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListPredefineTagsResponse extends SdkResponse {
     public void setTags(List<PredefineTag> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

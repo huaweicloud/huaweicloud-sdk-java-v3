@@ -35,9 +35,6 @@ public class BatchSetSubCustomerDiscountResponse extends SdkResponse {
 
     
     public BatchSetSubCustomerDiscountResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
-        if (this.errorDetails == null) {
-            this.errorDetails = new ArrayList<>();
-        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class BatchSetSubCustomerDiscountResponse extends SdkResponse {
     public void setErrorDetails(List<ErrorDetail> errorDetails) {
         this.errorDetails = errorDetails;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

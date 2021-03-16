@@ -40,30 +40,52 @@ public class RdsClient {
     }
 
     /**
-     * 批量添加删除标签
-     * 批量添加删除标签。
+     * 批量添加标签
+     * 批量添加标签。
      *
-     * @param BatchTagActionRequest 请求对象
-     * @return BatchTagActionResponse
+     * @param BatchTagAddActionRequest 请求对象
+     * @return BatchTagAddActionResponse
      */
-    public BatchTagActionResponse batchTagAction(BatchTagActionRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.batchTagAction);
+    public BatchTagAddActionResponse batchTagAddAction(BatchTagAddActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.batchTagAddAction);
     }
 
     /**
-     * 批量添加删除标签
-     * 批量添加删除标签。
+     * 批量添加标签
+     * 批量添加标签。
      *
-     * @param BatchTagActionRequest 请求对象
-     * @return SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
+     * @param BatchTagAddActionRequest 请求对象
+     * @return SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse>
      */
-    public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(BatchTagActionRequest request) {
-        return new SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request, RdsMeta.batchTagAction, hcClient);
+    public SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse> batchTagAddActionInvoker(BatchTagAddActionRequest request) {
+        return new SyncInvoker<BatchTagAddActionRequest, BatchTagAddActionResponse>(request, RdsMeta.batchTagAddAction, hcClient);
     }
 
     /**
-     * 更改主备实例的同步模式
-     * 更改主备实例的同步模式.
+     * 批量删除标签
+     * 批量删除标签。
+     *
+     * @param BatchTagDelActionRequest 请求对象
+     * @return BatchTagDelActionResponse
+     */
+    public BatchTagDelActionResponse batchTagDelAction(BatchTagDelActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.batchTagDelAction);
+    }
+
+    /**
+     * 批量删除标签
+     * 批量删除标签。
+     *
+     * @param BatchTagDelActionRequest 请求对象
+     * @return SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse>
+     */
+    public SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse> batchTagDelActionInvoker(BatchTagDelActionRequest request) {
+        return new SyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse>(request, RdsMeta.batchTagDelAction, hcClient);
+    }
+
+    /**
+     * 更改主备实例的数据同步方式
+     * 更改主备实例的数据同步方式。
      *
      * @param ChangeFailoverModeRequest 请求对象
      * @return ChangeFailoverModeResponse
@@ -73,8 +95,8 @@ public class RdsClient {
     }
 
     /**
-     * 更改主备实例的同步模式
-     * 更改主备实例的同步模式.
+     * 更改主备实例的数据同步方式
+     * 更改主备实例的数据同步方式。
      *
      * @param ChangeFailoverModeRequest 请求对象
      * @return SyncInvoker<ChangeFailoverModeRequest, ChangeFailoverModeResponse>
@@ -150,8 +172,30 @@ public class RdsClient {
     }
 
     /**
-     * 创建数据库实例/恢复到新实例
-     * 创建数据库实例/恢复到新实例。
+     * 申请域名
+     * 申请域名
+     *
+     * @param CreateDnsNameRequest 请求对象
+     * @return CreateDnsNameResponse
+     */
+    public CreateDnsNameResponse createDnsName(CreateDnsNameRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createDnsName);
+    }
+
+    /**
+     * 申请域名
+     * 申请域名
+     *
+     * @param CreateDnsNameRequest 请求对象
+     * @return SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse>
+     */
+    public SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse> createDnsNameInvoker(CreateDnsNameRequest request) {
+        return new SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse>(request, RdsMeta.createDnsName, hcClient);
+    }
+
+    /**
+     * 创建数据库实例
+     * 创建数据库实例。
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
@@ -161,8 +205,8 @@ public class RdsClient {
     }
 
     /**
-     * 创建数据库实例/恢复到新实例
-     * 创建数据库实例/恢复到新实例。
+     * 创建数据库实例
+     * 创建数据库实例。
      *
      * @param CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -194,6 +238,28 @@ public class RdsClient {
     }
 
     /**
+     * 恢复到新实例
+     * 恢复到新实例。
+     *
+     * @param CreateRestoreInstanceRequest 请求对象
+     * @return CreateRestoreInstanceResponse
+     */
+    public CreateRestoreInstanceResponse createRestoreInstance(CreateRestoreInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createRestoreInstance);
+    }
+
+    /**
+     * 恢复到新实例
+     * 恢复到新实例。
+     *
+     * @param CreateRestoreInstanceRequest 请求对象
+     * @return SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>
+     */
+    public SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstanceInvoker(CreateRestoreInstanceRequest request) {
+        return new SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request, RdsMeta.createRestoreInstance, hcClient);
+    }
+
+    /**
      * 删除参数模板
      * 删除参数模板。
      *
@@ -216,8 +282,8 @@ public class RdsClient {
     }
 
     /**
-     * 删除实例
-     * 删除实例。
+     * 删除数据库实例
+     * 删除数据库实例。
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
@@ -227,8 +293,8 @@ public class RdsClient {
     }
 
     /**
-     * 删除实例
-     * 删除实例。
+     * 删除数据库实例
+     * 删除数据库实例。
      *
      * @param DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -260,8 +326,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取日志信息
-     * 获取日志信息
+     * 获取慢日志下载链接
+     * 获取慢日志下载链接。
      *
      * @param DownloadSlowlogRequest 请求对象
      * @return DownloadSlowlogResponse
@@ -271,8 +337,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取日志信息
-     * 获取日志信息
+     * 获取慢日志下载链接
+     * 获取慢日志下载链接。
      *
      * @param DownloadSlowlogRequest 请求对象
      * @return SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>
@@ -480,8 +546,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取任务信息
-     * 获取任务信息。
+     * 获取指定ID的任务信息
+     * 获取指定ID的任务信息。
      *
      * @param ListJobInfoRequest 请求对象
      * @return ListJobInfoResponse
@@ -491,8 +557,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取任务信息
-     * 获取任务信息。
+     * 获取指定ID的任务信息
+     * 获取指定ID的任务信息。
      *
      * @param ListJobInfoRequest 请求对象
      * @return SyncInvoker<ListJobInfoRequest, ListJobInfoResponse>
@@ -502,8 +568,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取所有任务详细信息
-     * 获取所有任务详细信息。
+     * 获取指定实例和时间范围的任务信息（SQL Server）
+     * 获取指定实例和时间范围的任务信息（SQL Server）。
      *
      * @param ListJobInfoDetailRequest 请求对象
      * @return ListJobInfoDetailResponse
@@ -513,8 +579,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取所有任务详细信息
-     * 获取所有任务详细信息。
+     * 获取指定实例和时间范围的任务信息（SQL Server）
+     * 获取指定实例和时间范围的任务信息（SQL Server）。
      *
      * @param ListJobInfoDetailRequest 请求对象
      * @return SyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse>
@@ -986,6 +1052,28 @@ public class RdsClient {
     }
 
     /**
+     * 查询跨云容灾复制状态
+     * 查询跨云容灾复制状态。
+     *
+     * @param ShowDrReplicaStatusRequest 请求对象
+     * @return ShowDrReplicaStatusResponse
+     */
+    public ShowDrReplicaStatusResponse showDrReplicaStatus(ShowDrReplicaStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showDrReplicaStatus);
+    }
+
+    /**
+     * 查询跨云容灾复制状态
+     * 查询跨云容灾复制状态。
+     *
+     * @param ShowDrReplicaStatusRequest 请求对象
+     * @return SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>
+     */
+    public SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatusInvoker(ShowDrReplicaStatusRequest request) {
+        return new SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>(request, RdsMeta.showDrReplicaStatus, hcClient);
+    }
+
+    /**
      * 获取指定实例的参数模板
      * 获取指定实例的参数模板。
      *
@@ -1030,7 +1118,7 @@ public class RdsClient {
     }
 
     /**
-     * 手动倒换主备实例
+     * 手动倒换主备
      * 手动倒换主备.
      *
      * @param StartFailoverRequest 请求对象
@@ -1041,7 +1129,7 @@ public class RdsClient {
     }
 
     /**
-     * 手动倒换主备实例
+     * 手动倒换主备
      * 手动倒换主备.
      *
      * @param StartFailoverRequest 请求对象
@@ -1052,30 +1140,184 @@ public class RdsClient {
     }
 
     /**
-     * 变更实例规格/扩容实例磁盘/重启实例/单机转主备
-     * 变更实例规格/扩容实例磁盘/重启实例/单机转主备。
+     * 灾备实例升主
+     * 灾备实例升主。
      *
-     * @param StartInstanceActionRequest 请求对象
-     * @return StartInstanceActionResponse
+     * @param StartInstanceDrToMasterActionRequest 请求对象
+     * @return StartInstanceDrToMasterActionResponse
      */
-    public StartInstanceActionResponse startInstanceAction(StartInstanceActionRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceAction);
+    public StartInstanceDrToMasterActionResponse startInstanceDrToMasterAction(StartInstanceDrToMasterActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceDrToMasterAction);
     }
 
     /**
-     * 变更实例规格/扩容实例磁盘/重启实例/单机转主备
-     * 变更实例规格/扩容实例磁盘/重启实例/单机转主备。
+     * 灾备实例升主
+     * 灾备实例升主。
      *
-     * @param StartInstanceActionRequest 请求对象
-     * @return SyncInvoker<StartInstanceActionRequest, StartInstanceActionResponse>
+     * @param StartInstanceDrToMasterActionRequest 请求对象
+     * @return SyncInvoker<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse>
      */
-    public SyncInvoker<StartInstanceActionRequest, StartInstanceActionResponse> startInstanceActionInvoker(StartInstanceActionRequest request) {
-        return new SyncInvoker<StartInstanceActionRequest, StartInstanceActionResponse>(request, RdsMeta.startInstanceAction, hcClient);
+    public SyncInvoker<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse> startInstanceDrToMasterActionInvoker(StartInstanceDrToMasterActionRequest request) {
+        return new SyncInvoker<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse>(request, RdsMeta.startInstanceDrToMasterAction, hcClient);
     }
 
     /**
-     * SSL开关
-     * SSL开关
+     * 扩容数据库实例的磁盘空间
+     * 扩容数据库实例的磁盘空间。
+     *
+     * @param StartInstanceEnlargeVolumeActionRequest 请求对象
+     * @return StartInstanceEnlargeVolumeActionResponse
+     */
+    public StartInstanceEnlargeVolumeActionResponse startInstanceEnlargeVolumeAction(StartInstanceEnlargeVolumeActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceEnlargeVolumeAction);
+    }
+
+    /**
+     * 扩容数据库实例的磁盘空间
+     * 扩容数据库实例的磁盘空间。
+     *
+     * @param StartInstanceEnlargeVolumeActionRequest 请求对象
+     * @return SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse>
+     */
+    public SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse> startInstanceEnlargeVolumeActionInvoker(StartInstanceEnlargeVolumeActionRequest request) {
+        return new SyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse>(request, RdsMeta.startInstanceEnlargeVolumeAction, hcClient);
+    }
+
+    /**
+     * 配置主实例容灾能力
+     * 配置主实例容灾能力。
+     *
+     * @param StartInstanceMasterDrActionRequest 请求对象
+     * @return StartInstanceMasterDrActionResponse
+     */
+    public StartInstanceMasterDrActionResponse startInstanceMasterDrAction(StartInstanceMasterDrActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceMasterDrAction);
+    }
+
+    /**
+     * 配置主实例容灾能力
+     * 配置主实例容灾能力。
+     *
+     * @param StartInstanceMasterDrActionRequest 请求对象
+     * @return SyncInvoker<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse>
+     */
+    public SyncInvoker<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse> startInstanceMasterDrActionInvoker(StartInstanceMasterDrActionRequest request) {
+        return new SyncInvoker<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse>(request, RdsMeta.startInstanceMasterDrAction, hcClient);
+    }
+
+    /**
+     * 重启数据库实例
+     * 重启数据库实例。
+     *
+     * @param StartInstanceRestartActionRequest 请求对象
+     * @return StartInstanceRestartActionResponse
+     */
+    public StartInstanceRestartActionResponse startInstanceRestartAction(StartInstanceRestartActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceRestartAction);
+    }
+
+    /**
+     * 重启数据库实例
+     * 重启数据库实例。
+     *
+     * @param StartInstanceRestartActionRequest 请求对象
+     * @return SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse>
+     */
+    public SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse> startInstanceRestartActionInvoker(StartInstanceRestartActionRequest request) {
+        return new SyncInvoker<StartInstanceRestartActionRequest, StartInstanceRestartActionResponse>(request, RdsMeta.startInstanceRestartAction, hcClient);
+    }
+
+    /**
+     * 单机转主备实例
+     * 单机转主备实例。
+     *
+     * @param StartInstanceSingleToHaActionRequest 请求对象
+     * @return StartInstanceSingleToHaActionResponse
+     */
+    public StartInstanceSingleToHaActionResponse startInstanceSingleToHaAction(StartInstanceSingleToHaActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceSingleToHaAction);
+    }
+
+    /**
+     * 单机转主备实例
+     * 单机转主备实例。
+     *
+     * @param StartInstanceSingleToHaActionRequest 请求对象
+     * @return SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse>
+     */
+    public SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse> startInstanceSingleToHaActionInvoker(StartInstanceSingleToHaActionRequest request) {
+        return new SyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse>(request, RdsMeta.startInstanceSingleToHaAction, hcClient);
+    }
+
+    /**
+     * 配置灾备实例容灾能力
+     * 配置灾备实例容灾能力。
+     *
+     * @param StartInstanceSlaveDrActionRequest 请求对象
+     * @return StartInstanceSlaveDrActionResponse
+     */
+    public StartInstanceSlaveDrActionResponse startInstanceSlaveDrAction(StartInstanceSlaveDrActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceSlaveDrAction);
+    }
+
+    /**
+     * 配置灾备实例容灾能力
+     * 配置灾备实例容灾能力。
+     *
+     * @param StartInstanceSlaveDrActionRequest 请求对象
+     * @return SyncInvoker<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse>
+     */
+    public SyncInvoker<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse> startInstanceSlaveDrActionInvoker(StartInstanceSlaveDrActionRequest request) {
+        return new SyncInvoker<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse>(request, RdsMeta.startInstanceSlaveDrAction, hcClient);
+    }
+
+    /**
+     * 设置回收站策略
+     * 设置回收站策略。
+     *
+     * @param StartRecyclePolicyRequest 请求对象
+     * @return StartRecyclePolicyResponse
+     */
+    public StartRecyclePolicyResponse startRecyclePolicy(StartRecyclePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startRecyclePolicy);
+    }
+
+    /**
+     * 设置回收站策略
+     * 设置回收站策略。
+     *
+     * @param StartRecyclePolicyRequest 请求对象
+     * @return SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse>
+     */
+    public SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse> startRecyclePolicyInvoker(StartRecyclePolicyRequest request) {
+        return new SyncInvoker<StartRecyclePolicyRequest, StartRecyclePolicyResponse>(request, RdsMeta.startRecyclePolicy, hcClient);
+    }
+
+    /**
+     * 变更数据库实例的规格
+     * 变更数据库实例的规格。
+     *
+     * @param StartResizeFlavorActionRequest 请求对象
+     * @return StartResizeFlavorActionResponse
+     */
+    public StartResizeFlavorActionResponse startResizeFlavorAction(StartResizeFlavorActionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startResizeFlavorAction);
+    }
+
+    /**
+     * 变更数据库实例的规格
+     * 变更数据库实例的规格。
+     *
+     * @param StartResizeFlavorActionRequest 请求对象
+     * @return SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse>
+     */
+    public SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse> startResizeFlavorActionInvoker(StartResizeFlavorActionRequest request) {
+        return new SyncInvoker<StartResizeFlavorActionRequest, StartResizeFlavorActionResponse>(request, RdsMeta.startResizeFlavorAction, hcClient);
+    }
+
+    /**
+     * 设置SSL数据加密
+     * 设置SSL数据加密。
      *
      * @param SwitchSslRequest 请求对象
      * @return SwitchSslResponse
@@ -1085,8 +1327,8 @@ public class RdsClient {
     }
 
     /**
-     * SSL开关
-     * SSL开关
+     * 设置SSL数据加密
+     * 设置SSL数据加密。
      *
      * @param SwitchSslRequest 请求对象
      * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse>
@@ -1140,6 +1382,28 @@ public class RdsClient {
     }
 
     /**
+     * 修改域名
+     * 修改域名
+     *
+     * @param UpdateDnsNameRequest 请求对象
+     * @return UpdateDnsNameResponse
+     */
+    public UpdateDnsNameResponse updateDnsName(UpdateDnsNameRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateDnsName);
+    }
+
+    /**
+     * 修改域名
+     * 修改域名
+     *
+     * @param UpdateDnsNameRequest 请求对象
+     * @return SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse>
+     */
+    public SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse> updateDnsNameInvoker(UpdateDnsNameRequest request) {
+        return new SyncInvoker<UpdateDnsNameRequest, UpdateDnsNameResponse>(request, RdsMeta.updateDnsName, hcClient);
+    }
+
+    /**
      * 修改指定实例的参数
      * 修改指定实例的参数。
      *
@@ -1159,6 +1423,28 @@ public class RdsClient {
      */
     public SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationInvoker(UpdateInstanceConfigurationRequest request) {
         return new SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request, RdsMeta.updateInstanceConfiguration, hcClient);
+    }
+
+    /**
+     * 修改实例名称
+     * 修改实例名称。
+     *
+     * @param UpdateInstanceNameRequest 请求对象
+     * @return UpdateInstanceNameResponse
+     */
+    public UpdateInstanceNameResponse updateInstanceName(UpdateInstanceNameRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateInstanceName);
+    }
+
+    /**
+     * 修改实例名称
+     * 修改实例名称。
+     *
+     * @param UpdateInstanceNameRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
+     */
+    public SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameInvoker(UpdateInstanceNameRequest request) {
+        return new SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request, RdsMeta.updateInstanceName, hcClient);
     }
 
     /**
@@ -1423,6 +1709,314 @@ public class RdsClient {
      */
     public SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwdInvoker(SetDbUserPwdRequest request) {
         return new SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, RdsMeta.setDbUserPwd, hcClient);
+    }
+
+    /**
+     * 授权数据库帐号
+     * 授权数据库帐号。
+     *
+     * @param AllowDbPrivilegeRequest 请求对象
+     * @return AllowDbPrivilegeResponse
+     */
+    public AllowDbPrivilegeResponse allowDbPrivilege(AllowDbPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.allowDbPrivilege);
+    }
+
+    /**
+     * 授权数据库帐号
+     * 授权数据库帐号。
+     *
+     * @param AllowDbPrivilegeRequest 请求对象
+     * @return SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse>
+     */
+    public SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse> allowDbPrivilegeInvoker(AllowDbPrivilegeRequest request) {
+        return new SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse>(request, RdsMeta.allowDbPrivilege, hcClient);
+    }
+
+    /**
+     * 修改读写分离阈值
+     * 修改读写分离阈值
+     *
+     * @param ChangeTheDelayThresholdRequest 请求对象
+     * @return ChangeTheDelayThresholdResponse
+     */
+    public ChangeTheDelayThresholdResponse changeTheDelayThreshold(ChangeTheDelayThresholdRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.changeTheDelayThreshold);
+    }
+
+    /**
+     * 修改读写分离阈值
+     * 修改读写分离阈值
+     *
+     * @param ChangeTheDelayThresholdRequest 请求对象
+     * @return SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>
+     */
+    public SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> changeTheDelayThresholdInvoker(ChangeTheDelayThresholdRequest request) {
+        return new SyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>(request, RdsMeta.changeTheDelayThreshold, hcClient);
+    }
+
+    /**
+     * 创建数据库
+     * 创建数据库。
+     *
+     * @param CreatePostgresqlDatabaseRequest 请求对象
+     * @return CreatePostgresqlDatabaseResponse
+     */
+    public CreatePostgresqlDatabaseResponse createPostgresqlDatabase(CreatePostgresqlDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createPostgresqlDatabase);
+    }
+
+    /**
+     * 创建数据库
+     * 创建数据库。
+     *
+     * @param CreatePostgresqlDatabaseRequest 请求对象
+     * @return SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse>
+     */
+    public SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse> createPostgresqlDatabaseInvoker(CreatePostgresqlDatabaseRequest request) {
+        return new SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse>(request, RdsMeta.createPostgresqlDatabase, hcClient);
+    }
+
+    /**
+     * 创建数据库SCHEMA
+     * 创建数据库SCHEMA。
+     *
+     * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
+     * @return CreatePostgresqlDatabaseSchemaResponse
+     */
+    public CreatePostgresqlDatabaseSchemaResponse createPostgresqlDatabaseSchema(CreatePostgresqlDatabaseSchemaRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createPostgresqlDatabaseSchema);
+    }
+
+    /**
+     * 创建数据库SCHEMA
+     * 创建数据库SCHEMA。
+     *
+     * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
+     * @return SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse>
+     */
+    public SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse> createPostgresqlDatabaseSchemaInvoker(CreatePostgresqlDatabaseSchemaRequest request) {
+        return new SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse>(request, RdsMeta.createPostgresqlDatabaseSchema, hcClient);
+    }
+
+    /**
+     * 创建数据库用户
+     * 创建数据库用户。
+     *
+     * @param CreatePostgresqlDbUserRequest 请求对象
+     * @return CreatePostgresqlDbUserResponse
+     */
+    public CreatePostgresqlDbUserResponse createPostgresqlDbUser(CreatePostgresqlDbUserRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createPostgresqlDbUser);
+    }
+
+    /**
+     * 创建数据库用户
+     * 创建数据库用户。
+     *
+     * @param CreatePostgresqlDbUserRequest 请求对象
+     * @return SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse>
+     */
+    public SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse> createPostgresqlDbUserInvoker(CreatePostgresqlDbUserRequest request) {
+        return new SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse>(request, RdsMeta.createPostgresqlDbUser, hcClient);
+    }
+
+    /**
+     * 查询数据库SCHEMA列表
+     * 查询数据库SCHEMA列表。
+     *
+     * @param ListPostgresqlDatabaseSchemasRequest 请求对象
+     * @return ListPostgresqlDatabaseSchemasResponse
+     */
+    public ListPostgresqlDatabaseSchemasResponse listPostgresqlDatabaseSchemas(ListPostgresqlDatabaseSchemasRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlDatabaseSchemas);
+    }
+
+    /**
+     * 查询数据库SCHEMA列表
+     * 查询数据库SCHEMA列表。
+     *
+     * @param ListPostgresqlDatabaseSchemasRequest 请求对象
+     * @return SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse>
+     */
+    public SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse> listPostgresqlDatabaseSchemasInvoker(ListPostgresqlDatabaseSchemasRequest request) {
+        return new SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse>(request, RdsMeta.listPostgresqlDatabaseSchemas, hcClient);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListPostgresqlDatabasesRequest 请求对象
+     * @return ListPostgresqlDatabasesResponse
+     */
+    public ListPostgresqlDatabasesResponse listPostgresqlDatabases(ListPostgresqlDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlDatabases);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListPostgresqlDatabasesRequest 请求对象
+     * @return SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse>
+     */
+    public SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse> listPostgresqlDatabasesInvoker(ListPostgresqlDatabasesRequest request) {
+        return new SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse>(request, RdsMeta.listPostgresqlDatabases, hcClient);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListPostgresqlDbUserPaginatedRequest 请求对象
+     * @return ListPostgresqlDbUserPaginatedResponse
+     */
+    public ListPostgresqlDbUserPaginatedResponse listPostgresqlDbUserPaginated(ListPostgresqlDbUserPaginatedRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlDbUserPaginated);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListPostgresqlDbUserPaginatedRequest 请求对象
+     * @return SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>
+     */
+    public SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse> listPostgresqlDbUserPaginatedInvoker(ListPostgresqlDbUserPaginatedRequest request) {
+        return new SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>(request, RdsMeta.listPostgresqlDbUserPaginated, hcClient);
+    }
+
+    /**
+     * 重置数据库帐号密码
+     * 重置数据库帐号密码。
+     *
+     * @param SetPostgresqlDbUserPwdRequest 请求对象
+     * @return SetPostgresqlDbUserPwdResponse
+     */
+    public SetPostgresqlDbUserPwdResponse setPostgresqlDbUserPwd(SetPostgresqlDbUserPwdRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setPostgresqlDbUserPwd);
+    }
+
+    /**
+     * 重置数据库帐号密码
+     * 重置数据库帐号密码。
+     *
+     * @param SetPostgresqlDbUserPwdRequest 请求对象
+     * @return SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>
+     */
+    public SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse> setPostgresqlDbUserPwdInvoker(SetPostgresqlDbUserPwdRequest request) {
+        return new SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>(request, RdsMeta.setPostgresqlDbUserPwd, hcClient);
+    }
+
+    /**
+     * 查询数据库代理信息
+     * 查询数据库代理信息
+     *
+     * @param ShowInformationAboutDatabaseProxyRequest 请求对象
+     * @return ShowInformationAboutDatabaseProxyResponse
+     */
+    public ShowInformationAboutDatabaseProxyResponse showInformationAboutDatabaseProxy(ShowInformationAboutDatabaseProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showInformationAboutDatabaseProxy);
+    }
+
+    /**
+     * 查询数据库代理信息
+     * 查询数据库代理信息
+     *
+     * @param ShowInformationAboutDatabaseProxyRequest 请求对象
+     * @return SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>
+     */
+    public SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxyInvoker(ShowInformationAboutDatabaseProxyRequest request) {
+        return new SyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>(request, RdsMeta.showInformationAboutDatabaseProxy, hcClient);
+    }
+
+    /**
+     * 开启数据库代理
+     * 开启数据库代理
+     *
+     * @param StartDatabaseProxyRequest 请求对象
+     * @return StartDatabaseProxyResponse
+     */
+    public StartDatabaseProxyResponse startDatabaseProxy(StartDatabaseProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startDatabaseProxy);
+    }
+
+    /**
+     * 开启数据库代理
+     * 开启数据库代理
+     *
+     * @param StartDatabaseProxyRequest 请求对象
+     * @return SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>
+     */
+    public SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxyInvoker(StartDatabaseProxyRequest request) {
+        return new SyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>(request, RdsMeta.startDatabaseProxy, hcClient);
+    }
+
+    /**
+     * 关闭数据库代理
+     * 关闭数据库代理
+     *
+     * @param StopDatabaseProxyRequest 请求对象
+     * @return StopDatabaseProxyResponse
+     */
+    public StopDatabaseProxyResponse stopDatabaseProxy(StopDatabaseProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.stopDatabaseProxy);
+    }
+
+    /**
+     * 关闭数据库代理
+     * 关闭数据库代理
+     *
+     * @param StopDatabaseProxyRequest 请求对象
+     * @return SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>
+     */
+    public SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxyInvoker(StopDatabaseProxyRequest request) {
+        return new SyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>(request, RdsMeta.stopDatabaseProxy, hcClient);
+    }
+
+    /**
+     * 修改实例备注信息
+     * 修改实例备注信息。
+     *
+     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
+     * @return UpdatePostgresqlInstanceAliasResponse
+     */
+    public UpdatePostgresqlInstanceAliasResponse updatePostgresqlInstanceAlias(UpdatePostgresqlInstanceAliasRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updatePostgresqlInstanceAlias);
+    }
+
+    /**
+     * 修改实例备注信息
+     * 修改实例备注信息。
+     *
+     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
+     * @return SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
+     */
+    public SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasInvoker(UpdatePostgresqlInstanceAliasRequest request) {
+        return new SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
+    }
+
+    /**
+     * 修改读写分离权重
+     * 修改读写分离权重
+     *
+     * @param UpdateReadWeightRequest 请求对象
+     * @return UpdateReadWeightResponse
+     */
+    public UpdateReadWeightResponse updateReadWeight(UpdateReadWeightRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateReadWeight);
+    }
+
+    /**
+     * 修改读写分离权重
+     * 修改读写分离权重
+     *
+     * @param UpdateReadWeightRequest 请求对象
+     * @return SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>
+     */
+    public SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse> updateReadWeightInvoker(UpdateReadWeightRequest request) {
+        return new SyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>(request, RdsMeta.updateReadWeight, hcClient);
     }
 
 }

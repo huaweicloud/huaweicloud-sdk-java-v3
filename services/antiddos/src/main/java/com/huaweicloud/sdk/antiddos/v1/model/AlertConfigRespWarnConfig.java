@@ -85,6 +85,8 @@ public class AlertConfigRespWarnConfig  {
         this.antiDDoS = antiDDoS;
     }
 
+    
+
     public AlertConfigRespWarnConfig withBackDoors(Boolean backDoors) {
         this.backDoors = backDoors;
         return this;
@@ -104,6 +106,8 @@ public class AlertConfigRespWarnConfig  {
     public void setBackDoors(Boolean backDoors) {
         this.backDoors = backDoors;
     }
+
+    
 
     public AlertConfigRespWarnConfig withBruceForce(Boolean bruceForce) {
         this.bruceForce = bruceForce;
@@ -125,6 +129,8 @@ public class AlertConfigRespWarnConfig  {
         this.bruceForce = bruceForce;
     }
 
+    
+
     public AlertConfigRespWarnConfig withHighPrivilege(Boolean highPrivilege) {
         this.highPrivilege = highPrivilege;
         return this;
@@ -144,6 +150,8 @@ public class AlertConfigRespWarnConfig  {
     public void setHighPrivilege(Boolean highPrivilege) {
         this.highPrivilege = highPrivilege;
     }
+
+    
 
     public AlertConfigRespWarnConfig withRemoteLogin(Boolean remoteLogin) {
         this.remoteLogin = remoteLogin;
@@ -165,6 +173,8 @@ public class AlertConfigRespWarnConfig  {
         this.remoteLogin = remoteLogin;
     }
 
+    
+
     public AlertConfigRespWarnConfig withSendFrequency(Integer sendFrequency) {
         this.sendFrequency = sendFrequency;
         return this;
@@ -184,6 +194,8 @@ public class AlertConfigRespWarnConfig  {
     public void setSendFrequency(Integer sendFrequency) {
         this.sendFrequency = sendFrequency;
     }
+
+    
 
     public AlertConfigRespWarnConfig withWaf(Boolean waf) {
         this.waf = waf;
@@ -205,6 +217,8 @@ public class AlertConfigRespWarnConfig  {
         this.waf = waf;
     }
 
+    
+
     public AlertConfigRespWarnConfig withWeakPassword(Boolean weakPassword) {
         this.weakPassword = weakPassword;
         return this;
@@ -224,6 +238,9 @@ public class AlertConfigRespWarnConfig  {
     public void setWeakPassword(Boolean weakPassword) {
         this.weakPassword = weakPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

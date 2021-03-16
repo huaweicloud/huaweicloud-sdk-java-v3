@@ -67,6 +67,8 @@ public class CancelMeetingRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public CancelMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -87,6 +89,8 @@ public class CancelMeetingRequest  {
         this.userUUID = userUUID;
     }
 
+    
+
     public CancelMeetingRequest withType(Integer type) {
         this.type = type;
         return this;
@@ -106,6 +110,8 @@ public class CancelMeetingRequest  {
     public void setType(Integer type) {
         this.type = type;
     }
+
+    
 
     public CancelMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -129,6 +135,8 @@ public class CancelMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public CancelMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -150,6 +158,9 @@ public class CancelMeetingRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

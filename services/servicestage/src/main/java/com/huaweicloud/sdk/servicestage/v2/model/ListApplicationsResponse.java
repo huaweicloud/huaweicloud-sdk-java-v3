@@ -54,6 +54,8 @@ public class ListApplicationsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListApplicationsResponse withApplications(List<ApplicationView> applications) {
         this.applications = applications;
         return this;
@@ -61,9 +63,6 @@ public class ListApplicationsResponse extends SdkResponse {
 
     
     public ListApplicationsResponse addApplicationsItem(ApplicationView applicationsItem) {
-        if (this.applications == null) {
-            this.applications = new ArrayList<>();
-        }
         this.applications.add(applicationsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListApplicationsResponse extends SdkResponse {
     public void setApplications(List<ApplicationView> applications) {
         this.applications = applications;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

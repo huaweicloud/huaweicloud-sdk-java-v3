@@ -49,6 +49,8 @@ public class ApiAuthVisitParam  {
         this.apiId = apiId;
     }
 
+    
+
     public ApiAuthVisitParam withVisitParam(String visitParam) {
         this.visitParam = visitParam;
         return this;
@@ -68,6 +70,9 @@ public class ApiAuthVisitParam  {
     public void setVisitParam(String visitParam) {
         this.visitParam = visitParam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

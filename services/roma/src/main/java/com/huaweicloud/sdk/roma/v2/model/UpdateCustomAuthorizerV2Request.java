@@ -34,7 +34,7 @@ public class UpdateCustomAuthorizerV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AuthorizerCreate body = null;
+    private AuthorizerCreate body;
 
     public UpdateCustomAuthorizerV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateCustomAuthorizerV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateCustomAuthorizerV2Request withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateCustomAuthorizerV2Request  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
 
     public UpdateCustomAuthorizerV2Request withBody(AuthorizerCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateCustomAuthorizerV2Request  {
     public void setBody(AuthorizerCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class KeystoneAddUserToGroupRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public KeystoneAddUserToGroupRequest withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -68,6 +70,9 @@ public class KeystoneAddUserToGroupRequest  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

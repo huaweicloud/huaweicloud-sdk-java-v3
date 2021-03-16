@@ -196,6 +196,8 @@ public class ServerLimits  {
         this.maxImageMeta = maxImageMeta;
     }
 
+    
+
     public ServerLimits withMaxPersonality(Integer maxPersonality) {
         this.maxPersonality = maxPersonality;
         return this;
@@ -215,6 +217,8 @@ public class ServerLimits  {
     public void setMaxPersonality(Integer maxPersonality) {
         this.maxPersonality = maxPersonality;
     }
+
+    
 
     public ServerLimits withMaxPersonalitySize(Integer maxPersonalitySize) {
         this.maxPersonalitySize = maxPersonalitySize;
@@ -236,6 +240,8 @@ public class ServerLimits  {
         this.maxPersonalitySize = maxPersonalitySize;
     }
 
+    
+
     public ServerLimits withMaxSecurityGroupRules(Integer maxSecurityGroupRules) {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
         return this;
@@ -255,6 +261,8 @@ public class ServerLimits  {
     public void setMaxSecurityGroupRules(Integer maxSecurityGroupRules) {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
     }
+
+    
 
     public ServerLimits withMaxSecurityGroups(Integer maxSecurityGroups) {
         this.maxSecurityGroups = maxSecurityGroups;
@@ -276,6 +284,8 @@ public class ServerLimits  {
         this.maxSecurityGroups = maxSecurityGroups;
     }
 
+    
+
     public ServerLimits withMaxServerGroupMembers(Integer maxServerGroupMembers) {
         this.maxServerGroupMembers = maxServerGroupMembers;
         return this;
@@ -295,6 +305,8 @@ public class ServerLimits  {
     public void setMaxServerGroupMembers(Integer maxServerGroupMembers) {
         this.maxServerGroupMembers = maxServerGroupMembers;
     }
+
+    
 
     public ServerLimits withMaxServerGroups(Integer maxServerGroups) {
         this.maxServerGroups = maxServerGroups;
@@ -316,6 +328,8 @@ public class ServerLimits  {
         this.maxServerGroups = maxServerGroups;
     }
 
+    
+
     public ServerLimits withMaxServerMeta(Integer maxServerMeta) {
         this.maxServerMeta = maxServerMeta;
         return this;
@@ -335,6 +349,8 @@ public class ServerLimits  {
     public void setMaxServerMeta(Integer maxServerMeta) {
         this.maxServerMeta = maxServerMeta;
     }
+
+    
 
     public ServerLimits withMaxTotalCores(Integer maxTotalCores) {
         this.maxTotalCores = maxTotalCores;
@@ -356,6 +372,8 @@ public class ServerLimits  {
         this.maxTotalCores = maxTotalCores;
     }
 
+    
+
     public ServerLimits withMaxTotalFloatingIps(Integer maxTotalFloatingIps) {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
         return this;
@@ -375,6 +393,8 @@ public class ServerLimits  {
     public void setMaxTotalFloatingIps(Integer maxTotalFloatingIps) {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
     }
+
+    
 
     public ServerLimits withMaxTotalInstances(Integer maxTotalInstances) {
         this.maxTotalInstances = maxTotalInstances;
@@ -396,6 +416,8 @@ public class ServerLimits  {
         this.maxTotalInstances = maxTotalInstances;
     }
 
+    
+
     public ServerLimits withMaxTotalKeypairs(Integer maxTotalKeypairs) {
         this.maxTotalKeypairs = maxTotalKeypairs;
         return this;
@@ -415,6 +437,8 @@ public class ServerLimits  {
     public void setMaxTotalKeypairs(Integer maxTotalKeypairs) {
         this.maxTotalKeypairs = maxTotalKeypairs;
     }
+
+    
 
     public ServerLimits withMaxTotalRAMSize(Integer maxTotalRAMSize) {
         this.maxTotalRAMSize = maxTotalRAMSize;
@@ -436,6 +460,8 @@ public class ServerLimits  {
         this.maxTotalRAMSize = maxTotalRAMSize;
     }
 
+    
+
     public ServerLimits withTotalCoresUsed(Integer totalCoresUsed) {
         this.totalCoresUsed = totalCoresUsed;
         return this;
@@ -455,6 +481,8 @@ public class ServerLimits  {
     public void setTotalCoresUsed(Integer totalCoresUsed) {
         this.totalCoresUsed = totalCoresUsed;
     }
+
+    
 
     public ServerLimits withTotalFloatingIpsUsed(Integer totalFloatingIpsUsed) {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
@@ -476,6 +504,8 @@ public class ServerLimits  {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
     }
 
+    
+
     public ServerLimits withTotalInstancesUsed(Integer totalInstancesUsed) {
         this.totalInstancesUsed = totalInstancesUsed;
         return this;
@@ -495,6 +525,8 @@ public class ServerLimits  {
     public void setTotalInstancesUsed(Integer totalInstancesUsed) {
         this.totalInstancesUsed = totalInstancesUsed;
     }
+
+    
 
     public ServerLimits withTotalRAMUsed(Integer totalRAMUsed) {
         this.totalRAMUsed = totalRAMUsed;
@@ -516,6 +548,8 @@ public class ServerLimits  {
         this.totalRAMUsed = totalRAMUsed;
     }
 
+    
+
     public ServerLimits withTotalSecurityGroupsUsed(Integer totalSecurityGroupsUsed) {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
         return this;
@@ -535,6 +569,8 @@ public class ServerLimits  {
     public void setTotalSecurityGroupsUsed(Integer totalSecurityGroupsUsed) {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
     }
+
+    
 
     public ServerLimits withTotalServerGroupsUsed(Integer totalServerGroupsUsed) {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
@@ -556,6 +592,8 @@ public class ServerLimits  {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
     }
 
+    
+
     public ServerLimits withMaxTotalSpotInstances(Integer maxTotalSpotInstances) {
         this.maxTotalSpotInstances = maxTotalSpotInstances;
         return this;
@@ -575,6 +613,8 @@ public class ServerLimits  {
     public void setMaxTotalSpotInstances(Integer maxTotalSpotInstances) {
         this.maxTotalSpotInstances = maxTotalSpotInstances;
     }
+
+    
 
     public ServerLimits withMaxTotalSpotCores(Integer maxTotalSpotCores) {
         this.maxTotalSpotCores = maxTotalSpotCores;
@@ -596,6 +636,8 @@ public class ServerLimits  {
         this.maxTotalSpotCores = maxTotalSpotCores;
     }
 
+    
+
     public ServerLimits withMaxTotalSpotRAMSize(Integer maxTotalSpotRAMSize) {
         this.maxTotalSpotRAMSize = maxTotalSpotRAMSize;
         return this;
@@ -615,6 +657,8 @@ public class ServerLimits  {
     public void setMaxTotalSpotRAMSize(Integer maxTotalSpotRAMSize) {
         this.maxTotalSpotRAMSize = maxTotalSpotRAMSize;
     }
+
+    
 
     public ServerLimits withTotalSpotInstancesUsed(Integer totalSpotInstancesUsed) {
         this.totalSpotInstancesUsed = totalSpotInstancesUsed;
@@ -636,6 +680,8 @@ public class ServerLimits  {
         this.totalSpotInstancesUsed = totalSpotInstancesUsed;
     }
 
+    
+
     public ServerLimits withTotalSpotCoresUsed(Integer totalSpotCoresUsed) {
         this.totalSpotCoresUsed = totalSpotCoresUsed;
         return this;
@@ -655,6 +701,8 @@ public class ServerLimits  {
     public void setTotalSpotCoresUsed(Integer totalSpotCoresUsed) {
         this.totalSpotCoresUsed = totalSpotCoresUsed;
     }
+
+    
 
     public ServerLimits withTotalSpotRAMUsed(Integer totalSpotRAMUsed) {
         this.totalSpotRAMUsed = totalSpotRAMUsed;
@@ -676,6 +724,8 @@ public class ServerLimits  {
         this.totalSpotRAMUsed = totalSpotRAMUsed;
     }
 
+    
+
     public ServerLimits withLimitByFlavor(List<ProjectFlavorLimit> limitByFlavor) {
         this.limitByFlavor = limitByFlavor;
         return this;
@@ -683,9 +733,6 @@ public class ServerLimits  {
 
     
     public ServerLimits addLimitByFlavorItem(ProjectFlavorLimit limitByFlavorItem) {
-        if (this.limitByFlavor == null) {
-            this.limitByFlavor = new ArrayList<>();
-        }
         this.limitByFlavor.add(limitByFlavorItem);
         return this;
     }
@@ -709,6 +756,9 @@ public class ServerLimits  {
     public void setLimitByFlavor(List<ProjectFlavorLimit> limitByFlavor) {
         this.limitByFlavor = limitByFlavor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

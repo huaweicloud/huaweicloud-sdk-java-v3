@@ -73,6 +73,8 @@ public class QueryDeviceTypeResultDTO  {
         this.type = type;
     }
 
+    
+
     public QueryDeviceTypeResultDTO withModel(String model) {
         this.model = model;
         return this;
@@ -92,6 +94,8 @@ public class QueryDeviceTypeResultDTO  {
     public void setModel(String model) {
         this.model = model;
     }
+
+    
 
     public QueryDeviceTypeResultDTO withEnableActiveCode(Boolean enableActiveCode) {
         this.enableActiveCode = enableActiveCode;
@@ -113,6 +117,8 @@ public class QueryDeviceTypeResultDTO  {
         this.enableActiveCode = enableActiveCode;
     }
 
+    
+
     public QueryDeviceTypeResultDTO withResolution(String resolution) {
         this.resolution = resolution;
         return this;
@@ -132,6 +138,8 @@ public class QueryDeviceTypeResultDTO  {
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
+
+    
 
     public QueryDeviceTypeResultDTO withSupportProjectionCode(Boolean supportProjectionCode) {
         this.supportProjectionCode = supportProjectionCode;
@@ -153,6 +161,8 @@ public class QueryDeviceTypeResultDTO  {
         this.supportProjectionCode = supportProjectionCode;
     }
 
+    
+
     public QueryDeviceTypeResultDTO withSupportSVC(Boolean supportSVC) {
         this.supportSVC = supportSVC;
         return this;
@@ -172,6 +182,9 @@ public class QueryDeviceTypeResultDTO  {
     public void setSupportSVC(Boolean supportSVC) {
         this.supportSVC = supportSVC;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,13 +23,13 @@ public class AgencyTokenAuth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity")
     
-    private AgencyTokenIdentity identity = null;
+    private AgencyTokenIdentity identity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scope")
     
-    private AgencyTokenScope scope = null;
+    private AgencyTokenScope scope;
 
     public AgencyTokenAuth withIdentity(AgencyTokenIdentity identity) {
         this.identity = identity;
@@ -58,6 +58,8 @@ public class AgencyTokenAuth  {
         this.identity = identity;
     }
 
+    
+
     public AgencyTokenAuth withScope(AgencyTokenScope scope) {
         this.scope = scope;
         return this;
@@ -84,6 +86,9 @@ public class AgencyTokenAuth  {
     public void setScope(AgencyTokenScope scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

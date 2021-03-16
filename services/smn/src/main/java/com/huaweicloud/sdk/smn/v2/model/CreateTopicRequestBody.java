@@ -33,7 +33,7 @@ public class CreateTopicRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
     public CreateTopicRequestBody withName(String name) {
         this.name = name;
@@ -55,6 +55,8 @@ public class CreateTopicRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateTopicRequestBody withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -75,6 +77,8 @@ public class CreateTopicRequestBody  {
         this.displayName = displayName;
     }
 
+    
+
     public CreateTopicRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -94,6 +98,9 @@ public class CreateTopicRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

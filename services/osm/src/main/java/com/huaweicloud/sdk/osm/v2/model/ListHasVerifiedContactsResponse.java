@@ -56,6 +56,8 @@ public class ListHasVerifiedContactsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListHasVerifiedContactsResponse withContactList(List<ContactV2> contactList) {
         this.contactList = contactList;
         return this;
@@ -63,9 +65,6 @@ public class ListHasVerifiedContactsResponse extends SdkResponse {
 
     
     public ListHasVerifiedContactsResponse addContactListItem(ContactV2 contactListItem) {
-        if (this.contactList == null) {
-            this.contactList = new ArrayList<>();
-        }
         this.contactList.add(contactListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListHasVerifiedContactsResponse extends SdkResponse {
     public void setContactList(List<ContactV2> contactList) {
         this.contactList = contactList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

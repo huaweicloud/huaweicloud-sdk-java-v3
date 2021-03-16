@@ -137,6 +137,8 @@ public class KeystoneListEndpointsRequest  {
         this._interface = _interface;
     }
 
+    
+
     public KeystoneListEndpointsRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -156,6 +158,9 @@ public class KeystoneListEndpointsRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

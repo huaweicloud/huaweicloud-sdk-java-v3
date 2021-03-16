@@ -35,9 +35,6 @@ public class ShowCoordinatorsResponse extends SdkResponse {
 
     
     public ShowCoordinatorsResponse addCoordinatorsItem(ShowCoordinatorsRespCoordinators coordinatorsItem) {
-        if (this.coordinators == null) {
-            this.coordinators = new ArrayList<>();
-        }
         this.coordinators.add(coordinatorsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowCoordinatorsResponse extends SdkResponse {
     public void setCoordinators(List<ShowCoordinatorsRespCoordinators> coordinators) {
         this.coordinators = coordinators;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

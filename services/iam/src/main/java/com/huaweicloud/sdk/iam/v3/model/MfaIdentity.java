@@ -107,19 +107,19 @@ public class MfaIdentity  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<MethodsEnum> methods = new ArrayList<>();
+    private List<MethodsEnum> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    private PwdPassword password = null;
+    private PwdPassword password;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="totp")
     
-    private MfaTotp totp = null;
+    private MfaTotp totp;
 
     public MfaIdentity withMethods(List<MethodsEnum> methods) {
         this.methods = methods;
@@ -152,6 +152,8 @@ public class MfaIdentity  {
         this.methods = methods;
     }
 
+    
+
     public MfaIdentity withPassword(PwdPassword password) {
         this.password = password;
         return this;
@@ -179,6 +181,8 @@ public class MfaIdentity  {
         this.password = password;
     }
 
+    
+
     public MfaIdentity withTotp(MfaTotp totp) {
         this.totp = totp;
         return this;
@@ -205,6 +209,9 @@ public class MfaIdentity  {
     public void setTotp(MfaTotp totp) {
         this.totp = totp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

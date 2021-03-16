@@ -213,7 +213,7 @@ public class NovaServerBlockDeviceMapping  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_on_termination")
     
-    private Boolean deleteOnTermination = false;
+    private Boolean deleteOnTermination;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -259,6 +259,8 @@ public class NovaServerBlockDeviceMapping  {
         this.sourceType = sourceType;
     }
 
+    
+
     public NovaServerBlockDeviceMapping withDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
         return this;
@@ -278,6 +280,8 @@ public class NovaServerBlockDeviceMapping  {
     public void setDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
     }
+
+    
 
     public NovaServerBlockDeviceMapping withGuestFormat(String guestFormat) {
         this.guestFormat = guestFormat;
@@ -299,6 +303,8 @@ public class NovaServerBlockDeviceMapping  {
         this.guestFormat = guestFormat;
     }
 
+    
+
     public NovaServerBlockDeviceMapping withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -318,6 +324,8 @@ public class NovaServerBlockDeviceMapping  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public NovaServerBlockDeviceMapping withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
@@ -339,6 +347,8 @@ public class NovaServerBlockDeviceMapping  {
         this.deleteOnTermination = deleteOnTermination;
     }
 
+    
+
     public NovaServerBlockDeviceMapping withBootIndex(String bootIndex) {
         this.bootIndex = bootIndex;
         return this;
@@ -358,6 +368,8 @@ public class NovaServerBlockDeviceMapping  {
     public void setBootIndex(String bootIndex) {
         this.bootIndex = bootIndex;
     }
+
+    
 
     public NovaServerBlockDeviceMapping withUuid(String uuid) {
         this.uuid = uuid;
@@ -379,6 +391,8 @@ public class NovaServerBlockDeviceMapping  {
         this.uuid = uuid;
     }
 
+    
+
     public NovaServerBlockDeviceMapping withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
         return this;
@@ -399,6 +413,8 @@ public class NovaServerBlockDeviceMapping  {
         this.volumeSize = volumeSize;
     }
 
+    
+
     public NovaServerBlockDeviceMapping withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
@@ -418,6 +434,9 @@ public class NovaServerBlockDeviceMapping  {
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

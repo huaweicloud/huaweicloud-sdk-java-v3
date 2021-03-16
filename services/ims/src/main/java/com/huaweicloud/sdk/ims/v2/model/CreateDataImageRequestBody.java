@@ -40,7 +40,7 @@ public class CreateDataImageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -176,6 +176,8 @@ public class CreateDataImageRequestBody  {
         this.cmkId = cmkId;
     }
 
+    
+
     public CreateDataImageRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -195,6 +197,8 @@ public class CreateDataImageRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateDataImageRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -216,6 +220,8 @@ public class CreateDataImageRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateDataImageRequestBody withImageTags(List<ImageTag> imageTags) {
         this.imageTags = imageTags;
         return this;
@@ -223,9 +229,6 @@ public class CreateDataImageRequestBody  {
 
     
     public CreateDataImageRequestBody addImageTagsItem(ImageTag imageTagsItem) {
-        if (this.imageTags == null) {
-            this.imageTags = new ArrayList<>();
-        }
         this.imageTags.add(imageTagsItem);
         return this;
     }
@@ -250,6 +253,8 @@ public class CreateDataImageRequestBody  {
         this.imageTags = imageTags;
     }
 
+    
+
     public CreateDataImageRequestBody withImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
@@ -269,6 +274,8 @@ public class CreateDataImageRequestBody  {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    
 
     public CreateDataImageRequestBody withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
@@ -292,6 +299,8 @@ public class CreateDataImageRequestBody  {
         this.minDisk = minDisk;
     }
 
+    
+
     public CreateDataImageRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -311,6 +320,8 @@ public class CreateDataImageRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateDataImageRequestBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -332,6 +343,8 @@ public class CreateDataImageRequestBody  {
         this.osType = osType;
     }
 
+    
+
     public CreateDataImageRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -339,9 +352,6 @@ public class CreateDataImageRequestBody  {
 
     
     public CreateDataImageRequestBody addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -365,6 +375,9 @@ public class CreateDataImageRequestBody  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

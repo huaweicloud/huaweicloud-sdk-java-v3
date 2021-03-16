@@ -28,7 +28,7 @@ public class DeleteServerGroupMemberRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteServerGroupMemberRequestBody body = null;
+    private DeleteServerGroupMemberRequestBody body;
 
     public DeleteServerGroupMemberRequest withServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
@@ -49,6 +49,8 @@ public class DeleteServerGroupMemberRequest  {
     public void setServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
     }
+
+    
 
     public DeleteServerGroupMemberRequest withBody(DeleteServerGroupMemberRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DeleteServerGroupMemberRequest  {
     public void setBody(DeleteServerGroupMemberRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

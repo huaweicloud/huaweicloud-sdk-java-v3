@@ -24,7 +24,7 @@ public class CreateLoginTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logintoken")
     
-    private LoginToken logintoken = null;
+    private LoginToken logintoken;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class CreateLoginTokenResponse extends SdkResponse {
         this.logintoken = logintoken;
     }
 
+    
+
     public CreateLoginTokenResponse withXSubjectLoginToken(String xSubjectLoginToken) {
         this.xSubjectLoginToken = xSubjectLoginToken;
         return this;
@@ -80,6 +82,9 @@ public class CreateLoginTokenResponse extends SdkResponse {
     public void setXSubjectLoginToken(String xSubjectLoginToken) {
         this.xSubjectLoginToken = xSubjectLoginToken;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

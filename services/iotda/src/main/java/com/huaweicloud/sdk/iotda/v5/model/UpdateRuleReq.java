@@ -67,6 +67,8 @@ public class UpdateRuleReq  {
         this.ruleName = ruleName;
     }
 
+    
+
     public UpdateRuleReq withDescription(String description) {
         this.description = description;
         return this;
@@ -86,6 +88,8 @@ public class UpdateRuleReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateRuleReq withSelect(String select) {
         this.select = select;
@@ -107,6 +111,8 @@ public class UpdateRuleReq  {
         this.select = select;
     }
 
+    
+
     public UpdateRuleReq withWhere(String where) {
         this.where = where;
         return this;
@@ -127,6 +133,8 @@ public class UpdateRuleReq  {
         this.where = where;
     }
 
+    
+
     public UpdateRuleReq withActive(Boolean active) {
         this.active = active;
         return this;
@@ -146,6 +154,9 @@ public class UpdateRuleReq  {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

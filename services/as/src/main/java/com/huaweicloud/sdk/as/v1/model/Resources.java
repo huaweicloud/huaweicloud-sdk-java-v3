@@ -64,6 +64,8 @@ public class Resources  {
         this.resourceId = resourceId;
     }
 
+    
+
     public Resources withResourceDetail(String resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
@@ -84,6 +86,8 @@ public class Resources  {
         this.resourceDetail = resourceDetail;
     }
 
+    
+
     public Resources withTags(List<ResourceTags> tags) {
         this.tags = tags;
         return this;
@@ -91,9 +95,6 @@ public class Resources  {
 
     
     public Resources addTagsItem(ResourceTags tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -118,6 +119,8 @@ public class Resources  {
         this.tags = tags;
     }
 
+    
+
     public Resources withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -137,6 +140,9 @@ public class Resources  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

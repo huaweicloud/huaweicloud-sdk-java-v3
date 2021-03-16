@@ -22,7 +22,7 @@ public class CreateIpGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipgroup")
     
-    private CreateIpGroupOption ipgroup = null;
+    private CreateIpGroupOption ipgroup;
 
     public CreateIpGroupRequestBody withIpgroup(CreateIpGroupOption ipgroup) {
         this.ipgroup = ipgroup;
@@ -50,6 +50,9 @@ public class CreateIpGroupRequestBody  {
     public void setIpgroup(CreateIpGroupOption ipgroup) {
         this.ipgroup = ipgroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

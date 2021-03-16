@@ -51,6 +51,8 @@ public class AddSubscriptionResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public AddSubscriptionResponse withSubscriptionUrn(String subscriptionUrn) {
         this.subscriptionUrn = subscriptionUrn;
         return this;
@@ -70,6 +72,9 @@ public class AddSubscriptionResponse extends SdkResponse {
     public void setSubscriptionUrn(String subscriptionUrn) {
         this.subscriptionUrn = subscriptionUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

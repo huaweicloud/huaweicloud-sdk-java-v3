@@ -34,7 +34,7 @@ public class UpdateTopicAttributeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateTopicAttributeRequestBody body = null;
+    private UpdateTopicAttributeRequestBody body;
 
     public UpdateTopicAttributeRequest withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
@@ -56,6 +56,8 @@ public class UpdateTopicAttributeRequest  {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public UpdateTopicAttributeRequest withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class UpdateTopicAttributeRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateTopicAttributeRequest withBody(UpdateTopicAttributeRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateTopicAttributeRequest  {
     public void setBody(UpdateTopicAttributeRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

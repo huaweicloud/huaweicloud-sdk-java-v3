@@ -56,6 +56,8 @@ public class ListProductCategoriesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListProductCategoriesResponse withIncidentProductCategoryList(List<IncidentProductCategoryV2> incidentProductCategoryList) {
         this.incidentProductCategoryList = incidentProductCategoryList;
         return this;
@@ -63,9 +65,6 @@ public class ListProductCategoriesResponse extends SdkResponse {
 
     
     public ListProductCategoriesResponse addIncidentProductCategoryListItem(IncidentProductCategoryV2 incidentProductCategoryListItem) {
-        if (this.incidentProductCategoryList == null) {
-            this.incidentProductCategoryList = new ArrayList<>();
-        }
         this.incidentProductCategoryList.add(incidentProductCategoryListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListProductCategoriesResponse extends SdkResponse {
     public void setIncidentProductCategoryList(List<IncidentProductCategoryV2> incidentProductCategoryList) {
         this.incidentProductCategoryList = incidentProductCategoryList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

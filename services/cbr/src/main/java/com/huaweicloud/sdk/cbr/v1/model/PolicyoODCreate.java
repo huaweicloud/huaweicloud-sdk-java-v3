@@ -45,7 +45,7 @@ public class PolicyoODCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_backups")
     
-    private Integer maxBackups = -1;
+    private Integer maxBackups;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class PolicyoODCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="retention_duration_days")
     
-    private Integer retentionDurationDays = -1;
+    private Integer retentionDurationDays;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,6 +99,8 @@ public class PolicyoODCreate  {
         this.dayBackups = dayBackups;
     }
 
+    
+
     public PolicyoODCreate withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
@@ -118,6 +120,8 @@ public class PolicyoODCreate  {
     public void setDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
     }
+
+    
 
     public PolicyoODCreate withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
@@ -139,6 +143,8 @@ public class PolicyoODCreate  {
         this.destinationRegion = destinationRegion;
     }
 
+    
+
     public PolicyoODCreate withEnableAcceleration(Boolean enableAcceleration) {
         this.enableAcceleration = enableAcceleration;
         return this;
@@ -158,6 +164,8 @@ public class PolicyoODCreate  {
     public void setEnableAcceleration(Boolean enableAcceleration) {
         this.enableAcceleration = enableAcceleration;
     }
+
+    
 
     public PolicyoODCreate withMaxBackups(Integer maxBackups) {
         this.maxBackups = maxBackups;
@@ -181,6 +189,8 @@ public class PolicyoODCreate  {
         this.maxBackups = maxBackups;
     }
 
+    
+
     public PolicyoODCreate withMonthBackups(Integer monthBackups) {
         this.monthBackups = monthBackups;
         return this;
@@ -202,6 +212,8 @@ public class PolicyoODCreate  {
     public void setMonthBackups(Integer monthBackups) {
         this.monthBackups = monthBackups;
     }
+
+    
 
     public PolicyoODCreate withRetentionDurationDays(Integer retentionDurationDays) {
         this.retentionDurationDays = retentionDurationDays;
@@ -225,6 +237,8 @@ public class PolicyoODCreate  {
         this.retentionDurationDays = retentionDurationDays;
     }
 
+    
+
     public PolicyoODCreate withTimezone(String timezone) {
         this.timezone = timezone;
         return this;
@@ -245,6 +259,8 @@ public class PolicyoODCreate  {
         this.timezone = timezone;
     }
 
+    
+
     public PolicyoODCreate withWeekBackups(Integer weekBackups) {
         this.weekBackups = weekBackups;
         return this;
@@ -264,6 +280,8 @@ public class PolicyoODCreate  {
     public void setWeekBackups(Integer weekBackups) {
         this.weekBackups = weekBackups;
     }
+
+    
 
     public PolicyoODCreate withYearBackups(Integer yearBackups) {
         this.yearBackups = yearBackups;
@@ -286,6 +304,9 @@ public class PolicyoODCreate  {
     public void setYearBackups(Integer yearBackups) {
         this.yearBackups = yearBackups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

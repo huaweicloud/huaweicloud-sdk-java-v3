@@ -28,7 +28,7 @@ public class CreateLiveDataApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LdApiCreate body = null;
+    private LdApiCreate body;
 
     public CreateLiveDataApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateLiveDataApiV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateLiveDataApiV2Request withBody(LdApiCreate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateLiveDataApiV2Request  {
     public void setBody(LdApiCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

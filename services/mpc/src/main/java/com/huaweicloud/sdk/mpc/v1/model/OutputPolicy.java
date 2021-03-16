@@ -109,7 +109,7 @@ public class OutputPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_policy")
     
-    private OutputPolicyEnum outputPolicy = OutputPolicyEnum.TRANSCODE;
+    private OutputPolicyEnum outputPolicy;
 
     public OutputPolicy withOutputPolicy(OutputPolicyEnum outputPolicy) {
         this.outputPolicy = outputPolicy;
@@ -130,6 +130,9 @@ public class OutputPolicy  {
     public void setOutputPolicy(OutputPolicyEnum outputPolicy) {
         this.outputPolicy = outputPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

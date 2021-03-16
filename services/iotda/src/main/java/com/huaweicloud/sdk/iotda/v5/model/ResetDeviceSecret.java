@@ -28,7 +28,7 @@ public class ResetDeviceSecret  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="force_disconnect")
     
-    private Boolean forceDisconnect = false;
+    private Boolean forceDisconnect;
 
     public ResetDeviceSecret withSecret(String secret) {
         this.secret = secret;
@@ -50,6 +50,8 @@ public class ResetDeviceSecret  {
         this.secret = secret;
     }
 
+    
+
     public ResetDeviceSecret withForceDisconnect(Boolean forceDisconnect) {
         this.forceDisconnect = forceDisconnect;
         return this;
@@ -69,6 +71,9 @@ public class ResetDeviceSecret  {
     public void setForceDisconnect(Boolean forceDisconnect) {
         this.forceDisconnect = forceDisconnect;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

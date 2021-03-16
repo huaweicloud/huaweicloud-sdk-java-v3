@@ -55,6 +55,8 @@ public class CleanLimitDict  {
         this.cleaningAccessPosId = cleaningAccessPosId;
     }
 
+    
+
     public CleanLimitDict withNewConnectionLimited(Long newConnectionLimited) {
         this.newConnectionLimited = newConnectionLimited;
         return this;
@@ -75,6 +77,8 @@ public class CleanLimitDict  {
         this.newConnectionLimited = newConnectionLimited;
     }
 
+    
+
     public CleanLimitDict withTotalConnectionLimited(Long totalConnectionLimited) {
         this.totalConnectionLimited = totalConnectionLimited;
         return this;
@@ -94,6 +98,9 @@ public class CleanLimitDict  {
     public void setTotalConnectionLimited(Long totalConnectionLimited) {
         this.totalConnectionLimited = totalConnectionLimited;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

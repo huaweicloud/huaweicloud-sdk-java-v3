@@ -52,13 +52,13 @@ public class AppQuotaAppInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,7 +76,7 @@ public class AppQuotaAppInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bound_time")
     
-    private OffsetDateTime boundTime = null;
+    private OffsetDateTime boundTime;
 
     public AppQuotaAppInfo withAppId(String appId) {
         this.appId = appId;
@@ -98,6 +98,8 @@ public class AppQuotaAppInfo  {
         this.appId = appId;
     }
 
+    
+
     public AppQuotaAppInfo withName(String name) {
         this.name = name;
         return this;
@@ -117,6 +119,8 @@ public class AppQuotaAppInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AppQuotaAppInfo withStatus(Integer status) {
         this.status = status;
@@ -138,6 +142,8 @@ public class AppQuotaAppInfo  {
         this.status = status;
     }
 
+    
+
     public AppQuotaAppInfo withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
@@ -157,6 +163,8 @@ public class AppQuotaAppInfo  {
     public void setAppKey(String appKey) {
         this.appKey = appKey;
     }
+
+    
 
     public AppQuotaAppInfo withRemark(String remark) {
         this.remark = remark;
@@ -178,6 +186,8 @@ public class AppQuotaAppInfo  {
         this.remark = remark;
     }
 
+    
+
     public AppQuotaAppInfo withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -197,6 +207,8 @@ public class AppQuotaAppInfo  {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public AppQuotaAppInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
@@ -218,6 +230,8 @@ public class AppQuotaAppInfo  {
         this.updateTime = updateTime;
     }
 
+    
+
     public AppQuotaAppInfo withAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
         return this;
@@ -237,6 +251,8 @@ public class AppQuotaAppInfo  {
     public void setAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
     }
+
+    
 
     public AppQuotaAppInfo withAppQuotaName(String appQuotaName) {
         this.appQuotaName = appQuotaName;
@@ -258,6 +274,8 @@ public class AppQuotaAppInfo  {
         this.appQuotaName = appQuotaName;
     }
 
+    
+
     public AppQuotaAppInfo withBoundTime(OffsetDateTime boundTime) {
         this.boundTime = boundTime;
         return this;
@@ -277,6 +295,9 @@ public class AppQuotaAppInfo  {
     public void setBoundTime(OffsetDateTime boundTime) {
         this.boundTime = boundTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

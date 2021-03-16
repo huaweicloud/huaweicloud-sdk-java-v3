@@ -139,6 +139,8 @@ public class CreateIssueRequestV4  {
         this.actualWorkHours = actualWorkHours;
     }
 
+    
+
     public CreateIssueRequestV4 withAssignedId(Integer assignedId) {
         this.assignedId = assignedId;
         return this;
@@ -158,6 +160,8 @@ public class CreateIssueRequestV4  {
     public void setAssignedId(Integer assignedId) {
         this.assignedId = assignedId;
     }
+
+    
 
     public CreateIssueRequestV4 withBeginTime(String beginTime) {
         this.beginTime = beginTime;
@@ -179,6 +183,8 @@ public class CreateIssueRequestV4  {
         this.beginTime = beginTime;
     }
 
+    
+
     public CreateIssueRequestV4 withDescription(String description) {
         this.description = description;
         return this;
@@ -198,6 +204,8 @@ public class CreateIssueRequestV4  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateIssueRequestV4 withDeveloperId(Integer developerId) {
         this.developerId = developerId;
@@ -219,6 +227,8 @@ public class CreateIssueRequestV4  {
         this.developerId = developerId;
     }
 
+    
+
     public CreateIssueRequestV4 withDomainId(Integer domainId) {
         this.domainId = domainId;
         return this;
@@ -228,7 +238,7 @@ public class CreateIssueRequestV4  {
 
 
     /**
-     * 领域id 14, '性能', 15, '功能', 16, '可靠性' 17, '网络安全' 18, '可维护性' 19, '其他DFX' 20, '可用性'
+     * id 领域, 14 '性能', 15 '功能', 16 '可靠性' 17 '网络安全' 18 '可维护性' 19 '其他DFX' 20 '可用性'
      * @return domainId
      */
     public Integer getDomainId() {
@@ -238,6 +248,8 @@ public class CreateIssueRequestV4  {
     public void setDomainId(Integer domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public CreateIssueRequestV4 withDoneRatio(Integer doneRatio) {
         this.doneRatio = doneRatio;
@@ -259,6 +271,8 @@ public class CreateIssueRequestV4  {
         this.doneRatio = doneRatio;
     }
 
+    
+
     public CreateIssueRequestV4 withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -278,6 +292,8 @@ public class CreateIssueRequestV4  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public CreateIssueRequestV4 withExpectedWorkHours(Double expectedWorkHours) {
         this.expectedWorkHours = expectedWorkHours;
@@ -299,6 +315,8 @@ public class CreateIssueRequestV4  {
         this.expectedWorkHours = expectedWorkHours;
     }
 
+    
+
     public CreateIssueRequestV4 withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
         return this;
@@ -318,6 +336,8 @@ public class CreateIssueRequestV4  {
     public void setIterationId(Integer iterationId) {
         this.iterationId = iterationId;
     }
+
+    
 
     public CreateIssueRequestV4 withModuleId(Integer moduleId) {
         this.moduleId = moduleId;
@@ -339,6 +359,8 @@ public class CreateIssueRequestV4  {
         this.moduleId = moduleId;
     }
 
+    
+
     public CreateIssueRequestV4 withName(String name) {
         this.name = name;
         return this;
@@ -358,6 +380,8 @@ public class CreateIssueRequestV4  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateIssueRequestV4 withParentIssueId(Integer parentIssueId) {
         this.parentIssueId = parentIssueId;
@@ -379,6 +403,8 @@ public class CreateIssueRequestV4  {
         this.parentIssueId = parentIssueId;
     }
 
+    
+
     public CreateIssueRequestV4 withPriorityId(Integer priorityId) {
         this.priorityId = priorityId;
         return this;
@@ -388,7 +414,7 @@ public class CreateIssueRequestV4  {
 
 
     /**
-     * 优先级   1 低   2 中   3 高
+     * 优先级,   1 低,   2 中,   3 高,
      * @return priorityId
      */
     public Integer getPriorityId() {
@@ -399,6 +425,8 @@ public class CreateIssueRequestV4  {
         this.priorityId = priorityId;
     }
 
+    
+
     public CreateIssueRequestV4 withSeverityId(Integer severityId) {
         this.severityId = severityId;
         return this;
@@ -408,7 +436,7 @@ public class CreateIssueRequestV4  {
 
 
     /**
-     * 重要程度   10 关键   11 重要   12 一般   13 提示
+     * 重要程度,   10 关键,   11 重要,   12 一般,   13 提示,
      * @return severityId
      */
     public Integer getSeverityId() {
@@ -419,6 +447,8 @@ public class CreateIssueRequestV4  {
         this.severityId = severityId;
     }
 
+    
+
     public CreateIssueRequestV4 withStatusId(Integer statusId) {
         this.statusId = statusId;
         return this;
@@ -428,7 +458,7 @@ public class CreateIssueRequestV4  {
 
 
     /**
-     * 状态   id 开始   1 进行中 2 已解决 3 测试中 4 已关闭 5 已解决 6
+     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
      * @return statusId
      */
     public Integer getStatusId() {
@@ -439,6 +469,8 @@ public class CreateIssueRequestV4  {
         this.statusId = statusId;
     }
 
+    
+
     public CreateIssueRequestV4 withTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
         return this;
@@ -448,7 +480,7 @@ public class CreateIssueRequestV4  {
 
 
     /**
-     * 工作项类型, 2任务/task,3缺陷/bug,5epic,6feature,7story 父工作项类型     5 只能为 6 的父工作项类型     6 只能为 7 的父工作项类型     7 只能为 2,3的父
+     * 工作项类型, 2任务/task,3缺陷/bug,5epic,6feature,7story;     5 只能为 6 的父工作项类型;     6 只能为 7 的父工作项类型;     7 只能为 2,3的父;
      * @return trackerId
      */
     public Integer getTrackerId() {
@@ -458,6 +490,9 @@ public class CreateIssueRequestV4  {
     public void setTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

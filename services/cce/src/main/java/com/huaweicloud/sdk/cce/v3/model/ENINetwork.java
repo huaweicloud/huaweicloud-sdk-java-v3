@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * ENI网络配置，创建集群指定使用Yangtse网络模式时必填。
  */
-public class ENINetwork  {
+public class EniNetwork  {
 
 
 
@@ -29,7 +29,7 @@ public class ENINetwork  {
     
     private String eniSubnetId;
 
-    public ENINetwork withEniSubnetCIDR(String eniSubnetCIDR) {
+    public EniNetwork withEniSubnetCIDR(String eniSubnetCIDR) {
         this.eniSubnetCIDR = eniSubnetCIDR;
         return this;
     }
@@ -49,7 +49,9 @@ public class ENINetwork  {
         this.eniSubnetCIDR = eniSubnetCIDR;
     }
 
-    public ENINetwork withEniSubnetId(String eniSubnetId) {
+    
+
+    public EniNetwork withEniSubnetId(String eniSubnetId) {
         this.eniSubnetId = eniSubnetId;
         return this;
     }
@@ -68,6 +70,9 @@ public class ENINetwork  {
     public void setEniSubnetId(String eniSubnetId) {
         this.eniSubnetId = eniSubnetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -76,9 +81,9 @@ public class ENINetwork  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ENINetwork enINetwork = (ENINetwork) o;
-        return Objects.equals(this.eniSubnetCIDR, enINetwork.eniSubnetCIDR) &&
-            Objects.equals(this.eniSubnetId, enINetwork.eniSubnetId);
+        EniNetwork eniNetwork = (EniNetwork) o;
+        return Objects.equals(this.eniSubnetCIDR, eniNetwork.eniSubnetCIDR) &&
+            Objects.equals(this.eniSubnetId, eniNetwork.eniSubnetId);
     }
     @Override
     public int hashCode() {
@@ -87,7 +92,7 @@ public class ENINetwork  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ENINetwork {\n");
+        sb.append("class EniNetwork {\n");
         sb.append("    eniSubnetCIDR: ").append(toIndentedString(eniSubnetCIDR)).append("\n");
         sb.append("    eniSubnetId: ").append(toIndentedString(eniSubnetId)).append("\n");
         sb.append("}");

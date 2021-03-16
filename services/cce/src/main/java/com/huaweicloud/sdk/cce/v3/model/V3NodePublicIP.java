@@ -30,7 +30,7 @@ public class V3NodePublicIP  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    private V3NodeEIPSpec eip = null;
+    private V3NodeEIPSpec eip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class V3NodePublicIP  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
 
     public V3NodePublicIP withEip(V3NodeEIPSpec eip) {
         this.eip = eip;
@@ -85,6 +87,8 @@ public class V3NodePublicIP  {
         this.eip = eip;
     }
 
+    
+
     public V3NodePublicIP withIds(List<String> ids) {
         this.ids = ids;
         return this;
@@ -92,9 +96,6 @@ public class V3NodePublicIP  {
 
     
     public V3NodePublicIP addIdsItem(String idsItem) {
-        if (this.ids == null) {
-            this.ids = new ArrayList<>();
-        }
         this.ids.add(idsItem);
         return this;
     }
@@ -118,6 +119,9 @@ public class V3NodePublicIP  {
     public void setIds(List<String> ids) {
         this.ids = ids;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

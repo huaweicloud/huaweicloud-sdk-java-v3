@@ -85,6 +85,8 @@ public class DetailsBody  {
         this.oldCapacity = oldCapacity;
     }
 
+    
+
     public DetailsBody withNewCapacity(String newCapacity) {
         this.newCapacity = newCapacity;
         return this;
@@ -104,6 +106,8 @@ public class DetailsBody  {
     public void setNewCapacity(String newCapacity) {
         this.newCapacity = newCapacity;
     }
+
+    
 
     public DetailsBody withEnablePublicIp(Boolean enablePublicIp) {
         this.enablePublicIp = enablePublicIp;
@@ -125,6 +129,8 @@ public class DetailsBody  {
         this.enablePublicIp = enablePublicIp;
     }
 
+    
+
     public DetailsBody withPublicIpId(String publicIpId) {
         this.publicIpId = publicIpId;
         return this;
@@ -144,6 +150,8 @@ public class DetailsBody  {
     public void setPublicIpId(String publicIpId) {
         this.publicIpId = publicIpId;
     }
+
+    
 
     public DetailsBody withPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
@@ -165,6 +173,8 @@ public class DetailsBody  {
         this.publicIpAddress = publicIpAddress;
     }
 
+    
+
     public DetailsBody withEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
         return this;
@@ -184,6 +194,8 @@ public class DetailsBody  {
     public void setEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
     }
+
+    
 
     public DetailsBody withOldCacheMode(String oldCacheMode) {
         this.oldCacheMode = oldCacheMode;
@@ -205,6 +217,8 @@ public class DetailsBody  {
         this.oldCacheMode = oldCacheMode;
     }
 
+    
+
     public DetailsBody withNewCacheMode(String newCacheMode) {
         this.newCacheMode = newCacheMode;
         return this;
@@ -224,6 +238,9 @@ public class DetailsBody  {
     public void setNewCacheMode(String newCacheMode) {
         this.newCacheMode = newCacheMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

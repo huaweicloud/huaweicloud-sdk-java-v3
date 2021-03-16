@@ -33,9 +33,6 @@ public class ModifyRedisConfigBody  {
 
     
     public ModifyRedisConfigBody addRedisConfigItem(RedisConfig redisConfigItem) {
-        if (this.redisConfig == null) {
-            this.redisConfig = new ArrayList<>();
-        }
         this.redisConfig.add(redisConfigItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ModifyRedisConfigBody  {
     public void setRedisConfig(List<RedisConfig> redisConfig) {
         this.redisConfig = redisConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

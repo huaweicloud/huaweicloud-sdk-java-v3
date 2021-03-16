@@ -63,6 +63,8 @@ public class DeleteTagRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public DeleteTagRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -82,6 +84,8 @@ public class DeleteTagRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public DeleteTagRequest withProject(String project) {
         this.project = project;
@@ -103,6 +107,8 @@ public class DeleteTagRequest  {
         this.project = project;
     }
 
+    
+
     public DeleteTagRequest withTagName(String tagName) {
         this.tagName = tagName;
         return this;
@@ -122,6 +128,9 @@ public class DeleteTagRequest  {
     public void setTagName(String tagName) {
         this.tagName = tagName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

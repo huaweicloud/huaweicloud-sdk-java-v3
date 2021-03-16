@@ -54,6 +54,8 @@ public class ListAuditlogsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListAuditlogsResponse withAuditLogs(List<ListAuditlogsResult> auditLogs) {
         this.auditLogs = auditLogs;
         return this;
@@ -61,9 +63,6 @@ public class ListAuditlogsResponse extends SdkResponse {
 
     
     public ListAuditlogsResponse addAuditLogsItem(ListAuditlogsResult auditLogsItem) {
-        if (this.auditLogs == null) {
-            this.auditLogs = new ArrayList<>();
-        }
         this.auditLogs.add(auditLogsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListAuditlogsResponse extends SdkResponse {
     public void setAuditLogs(List<ListAuditlogsResult> auditLogs) {
         this.auditLogs = auditLogs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

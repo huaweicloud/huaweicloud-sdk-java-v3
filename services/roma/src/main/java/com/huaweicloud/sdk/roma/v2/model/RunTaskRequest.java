@@ -49,6 +49,8 @@ public class RunTaskRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public RunTaskRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -68,6 +70,9 @@ public class RunTaskRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -56,6 +56,8 @@ public class ListHistorySessionsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListHistorySessionsResponse withSessionList(List<OperateHistorySession> sessionList) {
         this.sessionList = sessionList;
         return this;
@@ -63,9 +65,6 @@ public class ListHistorySessionsResponse extends SdkResponse {
 
     
     public ListHistorySessionsResponse addSessionListItem(OperateHistorySession sessionListItem) {
-        if (this.sessionList == null) {
-            this.sessionList = new ArrayList<>();
-        }
         this.sessionList.add(sessionListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListHistorySessionsResponse extends SdkResponse {
     public void setSessionList(List<OperateHistorySession> sessionList) {
         this.sessionList = sessionList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

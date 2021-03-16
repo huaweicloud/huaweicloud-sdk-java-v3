@@ -52,7 +52,7 @@ public class BatchSuccess  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_time")
     
-    private OffsetDateTime publishTime = null;
+    private OffsetDateTime publishTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,6 +80,8 @@ public class BatchSuccess  {
         this.publishId = publishId;
     }
 
+    
+
     public BatchSuccess withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -99,6 +101,8 @@ public class BatchSuccess  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public BatchSuccess withApiName(String apiName) {
         this.apiName = apiName;
@@ -120,6 +124,8 @@ public class BatchSuccess  {
         this.apiName = apiName;
     }
 
+    
+
     public BatchSuccess withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -139,6 +145,8 @@ public class BatchSuccess  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public BatchSuccess withRemark(String remark) {
         this.remark = remark;
@@ -160,6 +168,8 @@ public class BatchSuccess  {
         this.remark = remark;
     }
 
+    
+
     public BatchSuccess withPublishTime(OffsetDateTime publishTime) {
         this.publishTime = publishTime;
         return this;
@@ -180,6 +190,8 @@ public class BatchSuccess  {
         this.publishTime = publishTime;
     }
 
+    
+
     public BatchSuccess withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -199,6 +211,9 @@ public class BatchSuccess  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

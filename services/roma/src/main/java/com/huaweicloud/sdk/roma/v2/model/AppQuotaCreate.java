@@ -167,6 +167,8 @@ public class AppQuotaCreate  {
         this.name = name;
     }
 
+    
+
     public AppQuotaCreate withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
         return this;
@@ -186,6 +188,8 @@ public class AppQuotaCreate  {
     public void setCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
     }
+
+    
 
     public AppQuotaCreate withTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
@@ -207,6 +211,8 @@ public class AppQuotaCreate  {
         this.timeUnit = timeUnit;
     }
 
+    
+
     public AppQuotaCreate withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
         return this;
@@ -226,6 +232,8 @@ public class AppQuotaCreate  {
     public void setTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
     }
+
+    
 
     public AppQuotaCreate withResetTime(String resetTime) {
         this.resetTime = resetTime;
@@ -247,6 +255,8 @@ public class AppQuotaCreate  {
         this.resetTime = resetTime;
     }
 
+    
+
     public AppQuotaCreate withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -266,6 +276,9 @@ public class AppQuotaCreate  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

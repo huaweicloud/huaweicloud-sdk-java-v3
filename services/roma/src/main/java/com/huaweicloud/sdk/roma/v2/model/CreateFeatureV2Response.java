@@ -268,7 +268,7 @@ public class CreateFeatureV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public CreateFeatureV2Response withId(String id) {
         this.id = id;
@@ -290,6 +290,8 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateFeatureV2Response withName(NameEnum name) {
         this.name = name;
         return this;
@@ -309,6 +311,8 @@ public class CreateFeatureV2Response extends SdkResponse {
     public void setName(NameEnum name) {
         this.name = name;
     }
+
+    
 
     public CreateFeatureV2Response withEnable(Boolean enable) {
         this.enable = enable;
@@ -330,6 +334,8 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.enable = enable;
     }
 
+    
+
     public CreateFeatureV2Response withConfig(String config) {
         this.config = config;
         return this;
@@ -349,6 +355,8 @@ public class CreateFeatureV2Response extends SdkResponse {
     public void setConfig(String config) {
         this.config = config;
     }
+
+    
 
     public CreateFeatureV2Response withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -370,6 +378,8 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateFeatureV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -389,6 +399,9 @@ public class CreateFeatureV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

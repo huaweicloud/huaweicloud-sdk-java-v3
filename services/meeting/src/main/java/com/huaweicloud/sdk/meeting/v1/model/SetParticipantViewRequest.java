@@ -40,7 +40,7 @@ public class SetParticipantViewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestParticipantViewReqBody body = null;
+    private RestParticipantViewReqBody body;
 
     public SetParticipantViewRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -62,6 +62,8 @@ public class SetParticipantViewRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public SetParticipantViewRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -81,6 +83,8 @@ public class SetParticipantViewRequest  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
 
     public SetParticipantViewRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -103,6 +107,8 @@ public class SetParticipantViewRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public SetParticipantViewRequest withBody(RestParticipantViewReqBody body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class SetParticipantViewRequest  {
     public void setBody(RestParticipantViewReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

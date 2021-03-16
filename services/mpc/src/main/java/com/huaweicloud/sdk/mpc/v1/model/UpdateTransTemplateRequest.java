@@ -22,7 +22,7 @@ public class UpdateTransTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModifyTransTemplateReq body = null;
+    private ModifyTransTemplateReq body;
 
     public UpdateTransTemplateRequest withBody(ModifyTransTemplateReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateTransTemplateRequest  {
     public void setBody(ModifyTransTemplateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

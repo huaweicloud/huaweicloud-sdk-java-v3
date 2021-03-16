@@ -33,9 +33,6 @@ public class QueryDbParamsResp  {
 
     
     public QueryDbParamsResp addParamsItem(Params paramsItem) {
-        if (this.params == null) {
-            this.params = new ArrayList<>();
-        }
         this.params.add(paramsItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class QueryDbParamsResp  {
     public void setParams(List<Params> params) {
         this.params = params;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

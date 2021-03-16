@@ -34,7 +34,7 @@ public class UpdateApiGroupV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiGroupReq body = null;
+    private ApiGroupReq body;
 
     public UpdateApiGroupV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateApiGroupV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateApiGroupV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateApiGroupV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public UpdateApiGroupV2Request withBody(ApiGroupReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateApiGroupV2Request  {
     public void setBody(ApiGroupReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

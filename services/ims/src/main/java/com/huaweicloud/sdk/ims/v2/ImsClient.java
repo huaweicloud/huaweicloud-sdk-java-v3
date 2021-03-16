@@ -18,6 +18,28 @@ public class ImsClient {
 
 
     /**
+     * 添加镜像标签
+     * 该接口用于为指定镜像添加或更新指定的单个标签
+     *
+     * @param AddImageTagRequest 请求对象
+     * @return AddImageTagResponse
+     */
+    public AddImageTagResponse addImageTag(AddImageTagRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.addImageTag);
+    }
+
+    /**
+     * 添加镜像标签
+     * 该接口用于为指定镜像添加或更新指定的单个标签
+     *
+     * @param AddImageTagRequest 请求对象
+     * @return SyncInvoker<AddImageTagRequest, AddImageTagResponse>
+     */
+    public SyncInvoker<AddImageTagRequest, AddImageTagResponse> addImageTagInvoker(AddImageTagRequest request) {
+        return new SyncInvoker<AddImageTagRequest, AddImageTagResponse>(request, ImsMeta.addImageTag, hcClient);
+    }
+
+    /**
      * 批量添加镜像成员
      * 该接口为扩展接口，主要用于镜像共享时用户将多个镜像共享给多个用户。 该接口为异步接口，返回job_id说明任务下发成功，查询异步任务状态，如果是success说明任务执行成功，如果是failed说明任务执行失败。如何查询异步任务，请参见异步任务查询。
      *
@@ -37,6 +59,28 @@ public class ImsClient {
      */
     public SyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse> batchAddMembersInvoker(BatchAddMembersRequest request) {
         return new SyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse>(request, ImsMeta.batchAddMembers, hcClient);
+    }
+
+    /**
+     * 批量添加删除镜像标签
+     * 该接口用于为指定镜像批量添加/更新、删除标签。
+     *
+     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @return BatchAddOrDeleteTagsResponse
+     */
+    public BatchAddOrDeleteTagsResponse batchAddOrDeleteTags(BatchAddOrDeleteTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.batchAddOrDeleteTags);
+    }
+
+    /**
+     * 批量添加删除镜像标签
+     * 该接口用于为指定镜像批量添加/更新、删除标签。
+     *
+     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @return SyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>
+     */
+    public SyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse> batchAddOrDeleteTagsInvoker(BatchAddOrDeleteTagsRequest request) {
+        return new SyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>(request, ImsMeta.batchAddOrDeleteTags, hcClient);
     }
 
     /**
@@ -216,6 +260,28 @@ public class ImsClient {
     }
 
     /**
+     * 删除镜像标签
+     * 该接口用于为镜像删除指定的标签
+     *
+     * @param DeleteImageTagRequest 请求对象
+     * @return DeleteImageTagResponse
+     */
+    public DeleteImageTagResponse deleteImageTag(DeleteImageTagRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.deleteImageTag);
+    }
+
+    /**
+     * 删除镜像标签
+     * 该接口用于为镜像删除指定的标签
+     *
+     * @param DeleteImageTagRequest 请求对象
+     * @return SyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>
+     */
+    public SyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse> deleteImageTagInvoker(DeleteImageTagRequest request) {
+        return new SyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>(request, ImsMeta.deleteImageTag, hcClient);
+    }
+
+    /**
      * 导出镜像
      * 该接口为扩展接口，用于用户将自己的私有镜像导出到指定的OBS桶中。
      *
@@ -260,6 +326,50 @@ public class ImsClient {
     }
 
     /**
+     * 按标签查询镜像
+     * 该接口用于按标签或其他条件对镜像进行过滤或者计数使用。
+     *
+     * @param ListImageByTagsRequest 请求对象
+     * @return ListImageByTagsResponse
+     */
+    public ListImageByTagsResponse listImageByTags(ListImageByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.listImageByTags);
+    }
+
+    /**
+     * 按标签查询镜像
+     * 该接口用于按标签或其他条件对镜像进行过滤或者计数使用。
+     *
+     * @param ListImageByTagsRequest 请求对象
+     * @return SyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>
+     */
+    public SyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse> listImageByTagsInvoker(ListImageByTagsRequest request) {
+        return new SyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>(request, ImsMeta.listImageByTags, hcClient);
+    }
+
+    /**
+     * 查询镜像标签
+     * 该接口用于为查询指定镜像上的所有标签
+     *
+     * @param ListImageTagsRequest 请求对象
+     * @return ListImageTagsResponse
+     */
+    public ListImageTagsResponse listImageTags(ListImageTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.listImageTags);
+    }
+
+    /**
+     * 查询镜像标签
+     * 该接口用于为查询指定镜像上的所有标签
+     *
+     * @param ListImageTagsRequest 请求对象
+     * @return SyncInvoker<ListImageTagsRequest, ListImageTagsResponse>
+     */
+    public SyncInvoker<ListImageTagsRequest, ListImageTagsResponse> listImageTagsInvoker(ListImageTagsRequest request) {
+        return new SyncInvoker<ListImageTagsRequest, ListImageTagsResponse>(request, ImsMeta.listImageTags, hcClient);
+    }
+
+    /**
      * 查询镜像列表
      * 根据不同条件查询镜像列表信息。 可以在URI后面用‘?’和‘&amp;’添加不同的查询条件组合，请参考请求样例。
      *
@@ -279,6 +389,28 @@ public class ImsClient {
      */
     public SyncInvoker<ListImagesRequest, ListImagesResponse> listImagesInvoker(ListImagesRequest request) {
         return new SyncInvoker<ListImagesRequest, ListImagesResponse>(request, ImsMeta.listImages, hcClient);
+    }
+
+    /**
+     * 查询租户所有镜像标签
+     * 该接口用于为查询租户的所有镜像上的标签。
+     *
+     * @param ListImagesTagsRequest 请求对象
+     * @return ListImagesTagsResponse
+     */
+    public ListImagesTagsResponse listImagesTags(ListImagesTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.listImagesTags);
+    }
+
+    /**
+     * 查询租户所有镜像标签
+     * 该接口用于为查询租户的所有镜像上的标签。
+     *
+     * @param ListImagesTagsRequest 请求对象
+     * @return SyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>
+     */
+    public SyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse> listImagesTagsInvoker(ListImagesTagsRequest request) {
+        return new SyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>(request, ImsMeta.listImagesTags, hcClient);
     }
 
     /**

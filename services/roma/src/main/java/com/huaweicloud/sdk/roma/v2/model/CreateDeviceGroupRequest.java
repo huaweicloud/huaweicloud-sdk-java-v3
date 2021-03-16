@@ -28,7 +28,7 @@ public class CreateDeviceGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateDeviceGroupRequestBody body = null;
+    private CreateDeviceGroupRequestBody body;
 
     public CreateDeviceGroupRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateDeviceGroupRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateDeviceGroupRequest withBody(CreateDeviceGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateDeviceGroupRequest  {
     public void setBody(CreateDeviceGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

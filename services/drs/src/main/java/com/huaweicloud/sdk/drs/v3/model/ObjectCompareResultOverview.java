@@ -361,6 +361,8 @@ public class ObjectCompareResultOverview  {
         this.objectType = objectType;
     }
 
+    
+
     public ObjectCompareResultOverview withObjectCompareResult(ObjectCompareResultEnum objectCompareResult) {
         this.objectCompareResult = objectCompareResult;
         return this;
@@ -380,6 +382,8 @@ public class ObjectCompareResultOverview  {
     public void setObjectCompareResult(ObjectCompareResultEnum objectCompareResult) {
         this.objectCompareResult = objectCompareResult;
     }
+
+    
 
     public ObjectCompareResultOverview withTargetCount(Integer targetCount) {
         this.targetCount = targetCount;
@@ -401,6 +405,8 @@ public class ObjectCompareResultOverview  {
         this.targetCount = targetCount;
     }
 
+    
+
     public ObjectCompareResultOverview withSourceCount(Integer sourceCount) {
         this.sourceCount = sourceCount;
         return this;
@@ -421,6 +427,8 @@ public class ObjectCompareResultOverview  {
         this.sourceCount = sourceCount;
     }
 
+    
+
     public ObjectCompareResultOverview withDiffCount(Integer diffCount) {
         this.diffCount = diffCount;
         return this;
@@ -440,6 +448,9 @@ public class ObjectCompareResultOverview  {
     public void setDiffCount(Integer diffCount) {
         this.diffCount = diffCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

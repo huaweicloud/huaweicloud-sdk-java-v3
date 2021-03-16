@@ -66,7 +66,7 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="test_date")
     
-    private OffsetDateTime testDate = null;
+    private OffsetDateTime testDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,6 +94,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testStatusCode = testStatusCode;
     }
 
+    
+
     public DebugLiveDataApiV2Response withTestRequest(String testRequest) {
         this.testRequest = testRequest;
         return this;
@@ -113,6 +115,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     public void setTestRequest(String testRequest) {
         this.testRequest = testRequest;
     }
+
+    
 
     public DebugLiveDataApiV2Response withTestUsedTime(Integer testUsedTime) {
         this.testUsedTime = testUsedTime;
@@ -134,6 +138,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testUsedTime = testUsedTime;
     }
 
+    
+
     public DebugLiveDataApiV2Response withTestOperator(String testOperator) {
         this.testOperator = testOperator;
         return this;
@@ -153,6 +159,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     public void setTestOperator(String testOperator) {
         this.testOperator = testOperator;
     }
+
+    
 
     public DebugLiveDataApiV2Response withTestResponse(String testResponse) {
         this.testResponse = testResponse;
@@ -174,6 +182,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testResponse = testResponse;
     }
 
+    
+
     public DebugLiveDataApiV2Response withTestMethod(String testMethod) {
         this.testMethod = testMethod;
         return this;
@@ -193,6 +203,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     public void setTestMethod(String testMethod) {
         this.testMethod = testMethod;
     }
+
+    
 
     public DebugLiveDataApiV2Response withTestId(Integer testId) {
         this.testId = testId;
@@ -214,6 +226,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testId = testId;
     }
 
+    
+
     public DebugLiveDataApiV2Response withTestDate(OffsetDateTime testDate) {
         this.testDate = testDate;
         return this;
@@ -234,6 +248,8 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testDate = testDate;
     }
 
+    
+
     public DebugLiveDataApiV2Response withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -253,6 +269,9 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

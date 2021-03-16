@@ -24,7 +24,7 @@ public class ShowServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private ServerDetail server = null;
+    private ServerDetail server;
 
     public ShowServerResponse withServer(ServerDetail server) {
         this.server = server;
@@ -52,6 +52,9 @@ public class ShowServerResponse extends SdkResponse {
     public void setServer(ServerDetail server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

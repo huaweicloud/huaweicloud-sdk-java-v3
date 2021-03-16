@@ -43,49 +43,49 @@ public class RuleAction  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_forwarding")
     
-    private ActionSmnForwarding smnForwarding = null;
+    private ActionSmnForwarding smnForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_alarm")
     
-    private ActionDeviceAlarm deviceAlarm = null;
+    private ActionDeviceAlarm deviceAlarm;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_command")
     
-    private ActionDeviceCommand deviceCommand = null;
+    private ActionDeviceCommand deviceCommand;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dis_forwarding")
     
-    private ActionDisForwarding disForwarding = null;
+    private ActionDisForwarding disForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_forwarding")
     
-    private ActionObsForwarding obsForwarding = null;
+    private ActionObsForwarding obsForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_forwarding")
     
-    private ActionRomaForwarding romaForwarding = null;
+    private ActionRomaForwarding romaForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="iota_forwarding")
     
-    private ActionIoTAForwarding iotaForwarding = null;
+    private ActionIoTAForwarding iotaForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kafka_forwarding")
     
-    private ActionKafkaForwarding kafkaForwarding = null;
+    private ActionKafkaForwarding kafkaForwarding;
 
     public RuleAction withType(String type) {
         this.type = type;
@@ -107,6 +107,8 @@ public class RuleAction  {
         this.type = type;
     }
 
+    
+
     public RuleAction withAddition(List<String> addition) {
         this.addition = addition;
         return this;
@@ -114,9 +116,6 @@ public class RuleAction  {
 
     
     public RuleAction addAdditionItem(String additionItem) {
-        if (this.addition == null) {
-            this.addition = new ArrayList<>();
-        }
         this.addition.add(additionItem);
         return this;
     }
@@ -140,6 +139,8 @@ public class RuleAction  {
     public void setAddition(List<String> addition) {
         this.addition = addition;
     }
+
+    
 
     public RuleAction withSmnForwarding(ActionSmnForwarding smnForwarding) {
         this.smnForwarding = smnForwarding;
@@ -168,6 +169,8 @@ public class RuleAction  {
         this.smnForwarding = smnForwarding;
     }
 
+    
+
     public RuleAction withDeviceAlarm(ActionDeviceAlarm deviceAlarm) {
         this.deviceAlarm = deviceAlarm;
         return this;
@@ -194,6 +197,8 @@ public class RuleAction  {
     public void setDeviceAlarm(ActionDeviceAlarm deviceAlarm) {
         this.deviceAlarm = deviceAlarm;
     }
+
+    
 
     public RuleAction withDeviceCommand(ActionDeviceCommand deviceCommand) {
         this.deviceCommand = deviceCommand;
@@ -222,6 +227,8 @@ public class RuleAction  {
         this.deviceCommand = deviceCommand;
     }
 
+    
+
     public RuleAction withDisForwarding(ActionDisForwarding disForwarding) {
         this.disForwarding = disForwarding;
         return this;
@@ -248,6 +255,8 @@ public class RuleAction  {
     public void setDisForwarding(ActionDisForwarding disForwarding) {
         this.disForwarding = disForwarding;
     }
+
+    
 
     public RuleAction withObsForwarding(ActionObsForwarding obsForwarding) {
         this.obsForwarding = obsForwarding;
@@ -276,6 +285,8 @@ public class RuleAction  {
         this.obsForwarding = obsForwarding;
     }
 
+    
+
     public RuleAction withRomaForwarding(ActionRomaForwarding romaForwarding) {
         this.romaForwarding = romaForwarding;
         return this;
@@ -302,6 +313,8 @@ public class RuleAction  {
     public void setRomaForwarding(ActionRomaForwarding romaForwarding) {
         this.romaForwarding = romaForwarding;
     }
+
+    
 
     public RuleAction withIotaForwarding(ActionIoTAForwarding iotaForwarding) {
         this.iotaForwarding = iotaForwarding;
@@ -330,6 +343,8 @@ public class RuleAction  {
         this.iotaForwarding = iotaForwarding;
     }
 
+    
+
     public RuleAction withKafkaForwarding(ActionKafkaForwarding kafkaForwarding) {
         this.kafkaForwarding = kafkaForwarding;
         return this;
@@ -356,6 +371,9 @@ public class RuleAction  {
     public void setKafkaForwarding(ActionKafkaForwarding kafkaForwarding) {
         this.kafkaForwarding = kafkaForwarding;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

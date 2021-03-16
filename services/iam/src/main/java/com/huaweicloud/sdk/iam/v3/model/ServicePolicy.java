@@ -24,13 +24,13 @@ public class ServicePolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Version")
     
-    private String version = "1.1";
+    private String version;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Statement")
     
-    private List<ServiceStatement> statement = new ArrayList<>();
+    private List<ServiceStatement> statement = null;
     
     public ServicePolicy withVersion(String version) {
         this.version = version;
@@ -51,6 +51,8 @@ public class ServicePolicy  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ServicePolicy withStatement(List<ServiceStatement> statement) {
         this.statement = statement;
@@ -82,6 +84,9 @@ public class ServicePolicy  {
     public void setStatement(List<ServiceStatement> statement) {
         this.statement = statement;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

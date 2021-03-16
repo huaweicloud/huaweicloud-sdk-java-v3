@@ -30,7 +30,7 @@ public class CreateSubscriptionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subject")
     
-    private Subject subject = null;
+    private Subject subject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class CreateSubscriptionResponse extends SdkResponse {
         this.subscriptionId = subscriptionId;
     }
 
+    
+
     public CreateSubscriptionResponse withSubject(Subject subject) {
         this.subject = subject;
         return this;
@@ -91,6 +93,8 @@ public class CreateSubscriptionResponse extends SdkResponse {
         this.subject = subject;
     }
 
+    
+
     public CreateSubscriptionResponse withCallbackurl(String callbackurl) {
         this.callbackurl = callbackurl;
         return this;
@@ -111,6 +115,8 @@ public class CreateSubscriptionResponse extends SdkResponse {
         this.callbackurl = callbackurl;
     }
 
+    
+
     public CreateSubscriptionResponse withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -130,6 +136,9 @@ public class CreateSubscriptionResponse extends SdkResponse {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

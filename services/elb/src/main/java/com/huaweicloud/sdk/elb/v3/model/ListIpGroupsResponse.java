@@ -39,7 +39,7 @@ public class ListIpGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
     public ListIpGroupsResponse withIpgroups(List<IpGroup> ipgroups) {
         this.ipgroups = ipgroups;
@@ -48,9 +48,6 @@ public class ListIpGroupsResponse extends SdkResponse {
 
     
     public ListIpGroupsResponse addIpgroupsItem(IpGroup ipgroupsItem) {
-        if (this.ipgroups == null) {
-            this.ipgroups = new ArrayList<>();
-        }
         this.ipgroups.add(ipgroupsItem);
         return this;
     }
@@ -75,6 +72,8 @@ public class ListIpGroupsResponse extends SdkResponse {
         this.ipgroups = ipgroups;
     }
 
+    
+
     public ListIpGroupsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -94,6 +93,8 @@ public class ListIpGroupsResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListIpGroupsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -121,6 +122,9 @@ public class ListIpGroupsResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

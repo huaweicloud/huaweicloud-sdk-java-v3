@@ -54,6 +54,8 @@ public class ListIssuedCouponQuotasResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListIssuedCouponQuotasResponse withQuotas(List<IssuedCouponQuota> quotas) {
         this.quotas = quotas;
         return this;
@@ -61,9 +63,6 @@ public class ListIssuedCouponQuotasResponse extends SdkResponse {
 
     
     public ListIssuedCouponQuotasResponse addQuotasItem(IssuedCouponQuota quotasItem) {
-        if (this.quotas == null) {
-            this.quotas = new ArrayList<>();
-        }
         this.quotas.add(quotasItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListIssuedCouponQuotasResponse extends SdkResponse {
     public void setQuotas(List<IssuedCouponQuota> quotas) {
         this.quotas = quotas;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -50,13 +50,13 @@ public class EpDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
     /**
      * 项目类型。prod-商用项目；poc-测试项目
      */
@@ -156,6 +156,8 @@ public class EpDetail  {
         this.id = id;
     }
 
+    
+
     public EpDetail withName(String name) {
         this.name = name;
         return this;
@@ -175,6 +177,8 @@ public class EpDetail  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public EpDetail withDescription(String description) {
         this.description = description;
@@ -196,6 +200,8 @@ public class EpDetail  {
         this.description = description;
     }
 
+    
+
     public EpDetail withStatus(Integer status) {
         this.status = status;
         return this;
@@ -215,6 +221,8 @@ public class EpDetail  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public EpDetail withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
@@ -236,6 +244,8 @@ public class EpDetail  {
         this.createdAt = createdAt;
     }
 
+    
+
     public EpDetail withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -256,6 +266,8 @@ public class EpDetail  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public EpDetail withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -275,6 +287,9 @@ public class EpDetail  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -29,12 +29,6 @@ public class MigProject  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    private String domainId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
@@ -43,7 +37,7 @@ public class MigProject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isdefault")
     
-    private Boolean isdefault = false;
+    private Boolean isdefault;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,7 +49,7 @@ public class MigProject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private Boolean startTargetServer = true;
+    private Boolean startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,13 +61,13 @@ public class MigProject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="use_public_ip")
     
-    private Boolean usePublicIp = true;
+    private Boolean usePublicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exist_server")
     
-    private Boolean existServer = true;
+    private Boolean existServer;
     /**
      * 迁移项目类型
      */
@@ -163,13 +157,13 @@ public class MigProject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project")
     
-    private String enterpriseProject = "default";
+    private String enterpriseProject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="syncing")
     
-    private Boolean syncing = false;
+    private Boolean syncing;
 
     public MigProject withName(String name) {
         this.name = name;
@@ -191,25 +185,7 @@ public class MigProject  {
         this.name = name;
     }
 
-    public MigProject withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
     
-
-
-    /**
-     * 用户ID
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
 
     public MigProject withDescription(String description) {
         this.description = description;
@@ -231,6 +207,8 @@ public class MigProject  {
         this.description = description;
     }
 
+    
+
     public MigProject withIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
         return this;
@@ -250,6 +228,8 @@ public class MigProject  {
     public void setIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
     }
+
+    
 
     public MigProject withRegion(String region) {
         this.region = region;
@@ -271,6 +251,8 @@ public class MigProject  {
         this.region = region;
     }
 
+    
+
     public MigProject withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
@@ -290,6 +272,8 @@ public class MigProject  {
     public void setStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
     }
+
+    
 
     public MigProject withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
@@ -313,6 +297,8 @@ public class MigProject  {
         this.speedLimit = speedLimit;
     }
 
+    
+
     public MigProject withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -332,6 +318,8 @@ public class MigProject  {
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
     }
+
+    
 
     public MigProject withExistServer(Boolean existServer) {
         this.existServer = existServer;
@@ -353,6 +341,8 @@ public class MigProject  {
         this.existServer = existServer;
     }
 
+    
+
     public MigProject withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -372,6 +362,8 @@ public class MigProject  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public MigProject withEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
@@ -393,6 +385,8 @@ public class MigProject  {
         this.enterpriseProject = enterpriseProject;
     }
 
+    
+
     public MigProject withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
@@ -412,6 +406,9 @@ public class MigProject  {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -422,7 +419,6 @@ public class MigProject  {
         }
         MigProject migProject = (MigProject) o;
         return Objects.equals(this.name, migProject.name) &&
-            Objects.equals(this.domainId, migProject.domainId) &&
             Objects.equals(this.description, migProject.description) &&
             Objects.equals(this.isdefault, migProject.isdefault) &&
             Objects.equals(this.region, migProject.region) &&
@@ -436,14 +432,13 @@ public class MigProject  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, domainId, description, isdefault, region, startTargetServer, speedLimit, usePublicIp, existServer, type, enterpriseProject, syncing);
+        return Objects.hash(name, description, isdefault, region, startTargetServer, speedLimit, usePublicIp, existServer, type, enterpriseProject, syncing);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MigProject {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

@@ -148,7 +148,7 @@ public class BatchListStructDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.DATABASE;
+    private TypeEnum type;
     /**
      * Gets or Sets xLanguage
      */
@@ -232,13 +232,13 @@ public class BatchListStructDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchQueryJobReqPage body = null;
+    private BatchQueryJobReqPage body;
 
     public BatchListStructDetailRequest withType(TypeEnum type) {
         this.type = type;
@@ -259,6 +259,8 @@ public class BatchListStructDetailRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public BatchListStructDetailRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -281,6 +283,8 @@ public class BatchListStructDetailRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchListStructDetailRequest withBody(BatchQueryJobReqPage body) {
         this.body = body;
@@ -308,6 +312,9 @@ public class BatchListStructDetailRequest  {
     public void setBody(BatchQueryJobReqPage body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

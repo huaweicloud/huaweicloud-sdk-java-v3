@@ -22,7 +22,7 @@ public class UpdateIndirectPartnerAccountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AdjustToIndirectPartnerReq body = null;
+    private AdjustToIndirectPartnerReq body;
 
     public UpdateIndirectPartnerAccountRequest withBody(AdjustToIndirectPartnerReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateIndirectPartnerAccountRequest  {
     public void setBody(AdjustToIndirectPartnerReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

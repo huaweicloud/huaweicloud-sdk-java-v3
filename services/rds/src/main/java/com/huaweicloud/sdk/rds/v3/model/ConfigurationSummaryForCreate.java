@@ -167,6 +167,8 @@ public class ConfigurationSummaryForCreate  {
         this.id = id;
     }
 
+    
+
     public ConfigurationSummaryForCreate withName(String name) {
         this.name = name;
         return this;
@@ -186,6 +188,8 @@ public class ConfigurationSummaryForCreate  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ConfigurationSummaryForCreate withDescription(String description) {
         this.description = description;
@@ -207,6 +211,8 @@ public class ConfigurationSummaryForCreate  {
         this.description = description;
     }
 
+    
+
     public ConfigurationSummaryForCreate withDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
         return this;
@@ -226,6 +232,8 @@ public class ConfigurationSummaryForCreate  {
     public void setDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
     }
+
+    
 
     public ConfigurationSummaryForCreate withDatastoreName(DatastoreNameEnum datastoreName) {
         this.datastoreName = datastoreName;
@@ -247,6 +255,8 @@ public class ConfigurationSummaryForCreate  {
         this.datastoreName = datastoreName;
     }
 
+    
+
     public ConfigurationSummaryForCreate withCreated(String created) {
         this.created = created;
         return this;
@@ -267,6 +277,8 @@ public class ConfigurationSummaryForCreate  {
         this.created = created;
     }
 
+    
+
     public ConfigurationSummaryForCreate withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -286,6 +298,9 @@ public class ConfigurationSummaryForCreate  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

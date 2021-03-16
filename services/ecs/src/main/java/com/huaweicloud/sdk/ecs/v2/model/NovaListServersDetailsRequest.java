@@ -51,7 +51,7 @@ public class NovaListServersDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 25;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,7 +213,7 @@ public class NovaListServersDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_key")
     
-    private SortKeyEnum sortKey = SortKeyEnum.CREATED_AT;
+    private SortKeyEnum sortKey;
     /**
      * Gets or Sets status
      */
@@ -403,6 +403,8 @@ public class NovaListServersDetailsRequest  {
         this.changesSince = changesSince;
     }
 
+    
+
     public NovaListServersDetailsRequest withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -422,6 +424,8 @@ public class NovaListServersDetailsRequest  {
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }
+
+    
 
     public NovaListServersDetailsRequest withImage(String image) {
         this.image = image;
@@ -443,6 +447,8 @@ public class NovaListServersDetailsRequest  {
         this.image = image;
     }
 
+    
+
     public NovaListServersDetailsRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -462,6 +468,8 @@ public class NovaListServersDetailsRequest  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public NovaListServersDetailsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -485,6 +493,8 @@ public class NovaListServersDetailsRequest  {
         this.limit = limit;
     }
 
+    
+
     public NovaListServersDetailsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -504,6 +514,8 @@ public class NovaListServersDetailsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public NovaListServersDetailsRequest withName(String name) {
         this.name = name;
@@ -525,6 +537,8 @@ public class NovaListServersDetailsRequest  {
         this.name = name;
     }
 
+    
+
     public NovaListServersDetailsRequest withNotTags(String notTags) {
         this.notTags = notTags;
         return this;
@@ -544,6 +558,8 @@ public class NovaListServersDetailsRequest  {
     public void setNotTags(String notTags) {
         this.notTags = notTags;
     }
+
+    
 
     public NovaListServersDetailsRequest withReservationId(String reservationId) {
         this.reservationId = reservationId;
@@ -565,6 +581,8 @@ public class NovaListServersDetailsRequest  {
         this.reservationId = reservationId;
     }
 
+    
+
     public NovaListServersDetailsRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -584,6 +602,8 @@ public class NovaListServersDetailsRequest  {
     public void setSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
     }
+
+    
 
     public NovaListServersDetailsRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -605,6 +625,8 @@ public class NovaListServersDetailsRequest  {
         this.status = status;
     }
 
+    
+
     public NovaListServersDetailsRequest withTags(String tags) {
         this.tags = tags;
         return this;
@@ -625,6 +647,8 @@ public class NovaListServersDetailsRequest  {
         this.tags = tags;
     }
 
+    
+
     public NovaListServersDetailsRequest withOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
         return this;
@@ -644,6 +668,9 @@ public class NovaListServersDetailsRequest  {
     public void setOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

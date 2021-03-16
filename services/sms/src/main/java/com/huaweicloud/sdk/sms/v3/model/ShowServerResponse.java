@@ -62,6 +62,12 @@ public class ShowServerResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_date")
     
     private Long addDate;
@@ -322,7 +328,7 @@ public class ShowServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="init_target_server")
     
-    private InitTargetServer initTargetServer = null;
+    private InitTargetServer initTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -340,7 +346,7 @@ public class ShowServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="current_task")
     
-    private TaskByServerSource currentTask = null;
+    private TaskByServerSource currentTask;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -536,6 +542,8 @@ public class ShowServerResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowServerResponse withIp(String ip) {
         this.ip = ip;
         return this;
@@ -555,6 +563,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public ShowServerResponse withName(String name) {
         this.name = name;
@@ -576,6 +586,8 @@ public class ShowServerResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowServerResponse withHostname(String hostname) {
         this.hostname = hostname;
         return this;
@@ -595,6 +607,30 @@ public class ShowServerResponse extends SdkResponse {
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
+
+    
+
+    public ShowServerResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
 
     public ShowServerResponse withAddDate(Long addDate) {
         this.addDate = addDate;
@@ -618,6 +654,8 @@ public class ShowServerResponse extends SdkResponse {
         this.addDate = addDate;
     }
 
+    
+
     public ShowServerResponse withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -637,6 +675,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setOsType(String osType) {
         this.osType = osType;
     }
+
+    
 
     public ShowServerResponse withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -658,6 +698,8 @@ public class ShowServerResponse extends SdkResponse {
         this.osVersion = osVersion;
     }
 
+    
+
     public ShowServerResponse withOemSystem(Boolean oemSystem) {
         this.oemSystem = oemSystem;
         return this;
@@ -677,6 +719,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setOemSystem(Boolean oemSystem) {
         this.oemSystem = oemSystem;
     }
+
+    
 
     public ShowServerResponse withState(StateEnum state) {
         this.state = state;
@@ -698,6 +742,8 @@ public class ShowServerResponse extends SdkResponse {
         this.state = state;
     }
 
+    
+
     public ShowServerResponse withConnected(Boolean connected) {
         this.connected = connected;
         return this;
@@ -718,6 +764,8 @@ public class ShowServerResponse extends SdkResponse {
         this.connected = connected;
     }
 
+    
+
     public ShowServerResponse withFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
         return this;
@@ -737,6 +785,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
     }
+
+    
 
     public ShowServerResponse withInitTargetServer(InitTargetServer initTargetServer) {
         this.initTargetServer = initTargetServer;
@@ -765,6 +815,8 @@ public class ShowServerResponse extends SdkResponse {
         this.initTargetServer = initTargetServer;
     }
 
+    
+
     public ShowServerResponse withCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
         return this;
@@ -787,6 +839,8 @@ public class ShowServerResponse extends SdkResponse {
         this.cpuQuantity = cpuQuantity;
     }
 
+    
+
     public ShowServerResponse withMemory(Long memory) {
         this.memory = memory;
         return this;
@@ -808,6 +862,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setMemory(Long memory) {
         this.memory = memory;
     }
+
+    
 
     public ShowServerResponse withCurrentTask(TaskByServerSource currentTask) {
         this.currentTask = currentTask;
@@ -836,6 +892,8 @@ public class ShowServerResponse extends SdkResponse {
         this.currentTask = currentTask;
     }
 
+    
+
     public ShowServerResponse withDisks(List<Disk> disks) {
         this.disks = disks;
         return this;
@@ -843,9 +901,6 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addDisksItem(Disk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
         this.disks.add(disksItem);
         return this;
     }
@@ -870,6 +925,8 @@ public class ShowServerResponse extends SdkResponse {
         this.disks = disks;
     }
 
+    
+
     public ShowServerResponse withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
@@ -877,9 +934,6 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if (this.volumeGroups == null) {
-            this.volumeGroups = new ArrayList<>();
-        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
@@ -904,6 +958,8 @@ public class ShowServerResponse extends SdkResponse {
         this.volumeGroups = volumeGroups;
     }
 
+    
+
     public ShowServerResponse withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
@@ -911,9 +967,6 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if (this.btrfsList == null) {
-            this.btrfsList = new ArrayList<>();
-        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
@@ -938,6 +991,8 @@ public class ShowServerResponse extends SdkResponse {
         this.btrfsList = btrfsList;
     }
 
+    
+
     public ShowServerResponse withNetworks(List<NetWork> networks) {
         this.networks = networks;
         return this;
@@ -945,9 +1000,6 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addNetworksItem(NetWork networksItem) {
-        if (this.networks == null) {
-            this.networks = new ArrayList<>();
-        }
         this.networks.add(networksItem);
         return this;
     }
@@ -972,6 +1024,8 @@ public class ShowServerResponse extends SdkResponse {
         this.networks = networks;
     }
 
+    
+
     public ShowServerResponse withChecks(List<EnvironmentCheck> checks) {
         this.checks = checks;
         return this;
@@ -979,9 +1033,6 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addChecksItem(EnvironmentCheck checksItem) {
-        if (this.checks == null) {
-            this.checks = new ArrayList<>();
-        }
         this.checks.add(checksItem);
         return this;
     }
@@ -1006,6 +1057,8 @@ public class ShowServerResponse extends SdkResponse {
         this.checks = checks;
     }
 
+    
+
     public ShowServerResponse withMigrationCycle(MigrationCycleEnum migrationCycle) {
         this.migrationCycle = migrationCycle;
         return this;
@@ -1025,6 +1078,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setMigrationCycle(MigrationCycleEnum migrationCycle) {
         this.migrationCycle = migrationCycle;
     }
+
+    
 
     public ShowServerResponse withStateActionTime(Long stateActionTime) {
         this.stateActionTime = stateActionTime;
@@ -1048,6 +1103,8 @@ public class ShowServerResponse extends SdkResponse {
         this.stateActionTime = stateActionTime;
     }
 
+    
+
     public ShowServerResponse withReplicatesize(Long replicatesize) {
         this.replicatesize = replicatesize;
         return this;
@@ -1069,6 +1126,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setReplicatesize(Long replicatesize) {
         this.replicatesize = replicatesize;
     }
+
+    
 
     public ShowServerResponse withTotalsize(Long totalsize) {
         this.totalsize = totalsize;
@@ -1092,6 +1151,8 @@ public class ShowServerResponse extends SdkResponse {
         this.totalsize = totalsize;
     }
 
+    
+
     public ShowServerResponse withLastVisitTime(Long lastVisitTime) {
         this.lastVisitTime = lastVisitTime;
         return this;
@@ -1113,6 +1174,8 @@ public class ShowServerResponse extends SdkResponse {
     public void setLastVisitTime(Long lastVisitTime) {
         this.lastVisitTime = lastVisitTime;
     }
+
+    
 
     public ShowServerResponse withStageActionTime(Long stageActionTime) {
         this.stageActionTime = stageActionTime;
@@ -1136,6 +1199,8 @@ public class ShowServerResponse extends SdkResponse {
         this.stageActionTime = stageActionTime;
     }
 
+    
+
     public ShowServerResponse withAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
         return this;
@@ -1155,6 +1220,9 @@ public class ShowServerResponse extends SdkResponse {
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1168,6 +1236,7 @@ public class ShowServerResponse extends SdkResponse {
             Objects.equals(this.ip, showServerResponse.ip) &&
             Objects.equals(this.name, showServerResponse.name) &&
             Objects.equals(this.hostname, showServerResponse.hostname) &&
+            Objects.equals(this.enterpriseProjectId, showServerResponse.enterpriseProjectId) &&
             Objects.equals(this.addDate, showServerResponse.addDate) &&
             Objects.equals(this.osType, showServerResponse.osType) &&
             Objects.equals(this.osVersion, showServerResponse.osVersion) &&
@@ -1194,7 +1263,7 @@ public class ShowServerResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, ip, name, hostname, addDate, osType, osVersion, oemSystem, state, connected, firmware, initTargetServer, cpuQuantity, memory, currentTask, disks, volumeGroups, btrfsList, networks, checks, migrationCycle, stateActionTime, replicatesize, totalsize, lastVisitTime, stageActionTime, agentVersion);
+        return Objects.hash(id, ip, name, hostname, enterpriseProjectId, addDate, osType, osVersion, oemSystem, state, connected, firmware, initTargetServer, cpuQuantity, memory, currentTask, disks, volumeGroups, btrfsList, networks, checks, migrationCycle, stateActionTime, replicatesize, totalsize, lastVisitTime, stageActionTime, agentVersion);
     }
     @Override
     public String toString() {
@@ -1204,6 +1273,7 @@ public class ShowServerResponse extends SdkResponse {
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    addDate: ").append(toIndentedString(addDate)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");

@@ -66,6 +66,8 @@ public class ListStatisticsApiResponse extends SdkResponse {
         this.code = code;
     }
 
+    
+
     public ListStatisticsApiResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -85,6 +87,8 @@ public class ListStatisticsApiResponse extends SdkResponse {
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListStatisticsApiResponse withEndTime(Long endTime) {
         this.endTime = endTime;
@@ -106,6 +110,8 @@ public class ListStatisticsApiResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
+    
+
     public ListStatisticsApiResponse withList(List<Statistics> list) {
         this.list = list;
         return this;
@@ -113,9 +119,6 @@ public class ListStatisticsApiResponse extends SdkResponse {
 
     
     public ListStatisticsApiResponse addListItem(Statistics listItem) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
-        }
         this.list.add(listItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class ListStatisticsApiResponse extends SdkResponse {
     public void setList(List<Statistics> list) {
         this.list = list;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

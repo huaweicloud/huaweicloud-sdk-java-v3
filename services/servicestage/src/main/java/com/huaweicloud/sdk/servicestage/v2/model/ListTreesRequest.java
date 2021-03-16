@@ -63,6 +63,8 @@ public class ListTreesRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public ListTreesRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -82,6 +84,8 @@ public class ListTreesRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public ListTreesRequest withProject(String project) {
         this.project = project;
@@ -103,6 +107,8 @@ public class ListTreesRequest  {
         this.project = project;
     }
 
+    
+
     public ListTreesRequest withRef(String ref) {
         this.ref = ref;
         return this;
@@ -122,6 +128,9 @@ public class ListTreesRequest  {
     public void setRef(String ref) {
         this.ref = ref;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

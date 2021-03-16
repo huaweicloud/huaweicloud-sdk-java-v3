@@ -22,7 +22,7 @@ public class CreateScalingGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateScalingGroupRequestBody body = null;
+    private CreateScalingGroupRequestBody body;
 
     public CreateScalingGroupRequest withBody(CreateScalingGroupRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateScalingGroupRequest  {
     public void setBody(CreateScalingGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

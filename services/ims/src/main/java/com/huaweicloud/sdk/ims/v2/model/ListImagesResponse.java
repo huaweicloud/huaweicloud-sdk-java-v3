@@ -35,9 +35,6 @@ public class ListImagesResponse extends SdkResponse {
 
     
     public ListImagesResponse addImagesItem(ImageInfo imagesItem) {
-        if (this.images == null) {
-            this.images = new ArrayList<>();
-        }
         this.images.add(imagesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListImagesResponse extends SdkResponse {
     public void setImages(List<ImageInfo> images) {
         this.images = images;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

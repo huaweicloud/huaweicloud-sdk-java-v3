@@ -64,6 +64,8 @@ public class UpdateDatabaseObjectReq  {
         this.jobId = jobId;
     }
 
+    
+
     public UpdateDatabaseObjectReq withSelected(Boolean selected) {
         this.selected = selected;
         return this;
@@ -83,6 +85,8 @@ public class UpdateDatabaseObjectReq  {
     public void setSelected(Boolean selected) {
         this.selected = selected;
     }
+
+    
 
     public UpdateDatabaseObjectReq withSyncDatabase(Boolean syncDatabase) {
         this.syncDatabase = syncDatabase;
@@ -104,6 +108,8 @@ public class UpdateDatabaseObjectReq  {
         this.syncDatabase = syncDatabase;
     }
 
+    
+
     public UpdateDatabaseObjectReq withJob(List<DatabaseInfo> job) {
         this.job = job;
         return this;
@@ -111,9 +117,6 @@ public class UpdateDatabaseObjectReq  {
 
     
     public UpdateDatabaseObjectReq addJobItem(DatabaseInfo jobItem) {
-        if (this.job == null) {
-            this.job = new ArrayList<>();
-        }
         this.job.add(jobItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class UpdateDatabaseObjectReq  {
     public void setJob(List<DatabaseInfo> job) {
         this.job = job;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

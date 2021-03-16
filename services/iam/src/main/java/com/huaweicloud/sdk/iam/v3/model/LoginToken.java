@@ -64,7 +64,7 @@ public class LoginToken  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assumed_by")
     
-    private LoginTokenAssumedBy assumedBy = null;
+    private LoginTokenAssumedBy assumedBy;
 
     public LoginToken withDomainId(String domainId) {
         this.domainId = domainId;
@@ -86,6 +86,8 @@ public class LoginToken  {
         this.domainId = domainId;
     }
 
+    
+
     public LoginToken withExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
         return this;
@@ -105,6 +107,8 @@ public class LoginToken  {
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
     }
+
+    
 
     public LoginToken withMethod(String method) {
         this.method = method;
@@ -126,6 +130,8 @@ public class LoginToken  {
         this.method = method;
     }
 
+    
+
     public LoginToken withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -145,6 +151,8 @@ public class LoginToken  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public LoginToken withUserName(String userName) {
         this.userName = userName;
@@ -166,6 +174,8 @@ public class LoginToken  {
         this.userName = userName;
     }
 
+    
+
     public LoginToken withSessionId(String sessionId) {
         this.sessionId = sessionId;
         return this;
@@ -186,6 +196,8 @@ public class LoginToken  {
         this.sessionId = sessionId;
     }
 
+    
+
     public LoginToken withSessionName(String sessionName) {
         this.sessionName = sessionName;
         return this;
@@ -205,6 +217,8 @@ public class LoginToken  {
     public void setSessionName(String sessionName) {
         this.sessionName = sessionName;
     }
+
+    
 
     public LoginToken withAssumedBy(LoginTokenAssumedBy assumedBy) {
         this.assumedBy = assumedBy;
@@ -232,6 +246,9 @@ public class LoginToken  {
     public void setAssumedBy(LoginTokenAssumedBy assumedBy) {
         this.assumedBy = assumedBy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

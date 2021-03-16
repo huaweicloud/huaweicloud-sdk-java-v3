@@ -61,6 +61,8 @@ public class ObsObjInfo  {
         this.bucket = bucket;
     }
 
+    
+
     public ObsObjInfo withLocation(String location) {
         this.location = location;
         return this;
@@ -80,6 +82,8 @@ public class ObsObjInfo  {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    
 
     public ObsObjInfo withObject(String _object) {
         this._object = _object;
@@ -101,6 +105,8 @@ public class ObsObjInfo  {
         this._object = _object;
     }
 
+    
+
     public ObsObjInfo withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -120,6 +126,9 @@ public class ObsObjInfo  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

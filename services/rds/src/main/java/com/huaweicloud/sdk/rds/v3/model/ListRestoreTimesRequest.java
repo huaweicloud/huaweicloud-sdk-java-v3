@@ -57,6 +57,8 @@ public class ListRestoreTimesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListRestoreTimesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class ListRestoreTimesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListRestoreTimesRequest withDate(String date) {
         this.date = date;
         return this;
@@ -96,6 +100,9 @@ public class ListRestoreTimesRequest  {
     public void setDate(String date) {
         this.date = date;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

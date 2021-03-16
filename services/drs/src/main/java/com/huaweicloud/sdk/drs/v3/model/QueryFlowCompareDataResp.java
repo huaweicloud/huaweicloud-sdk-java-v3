@@ -58,6 +58,8 @@ public class QueryFlowCompareDataResp  {
         this.totalRecord = totalRecord;
     }
 
+    
+
     public QueryFlowCompareDataResp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -78,6 +80,8 @@ public class QueryFlowCompareDataResp  {
         this.createTime = createTime;
     }
 
+    
+
     public QueryFlowCompareDataResp withList(List<StructDetailVO> list) {
         this.list = list;
         return this;
@@ -85,9 +89,6 @@ public class QueryFlowCompareDataResp  {
 
     
     public QueryFlowCompareDataResp addListItem(StructDetailVO listItem) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
-        }
         this.list.add(listItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class QueryFlowCompareDataResp  {
     public void setList(List<StructDetailVO> list) {
         this.list = list;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

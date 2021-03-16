@@ -131,6 +131,8 @@ public class DeleteScalingGroupRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public DeleteScalingGroupRequest withForceDelete(ForceDeleteEnum forceDelete) {
         this.forceDelete = forceDelete;
         return this;
@@ -150,6 +152,9 @@ public class DeleteScalingGroupRequest  {
     public void setForceDelete(ForceDeleteEnum forceDelete) {
         this.forceDelete = forceDelete;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

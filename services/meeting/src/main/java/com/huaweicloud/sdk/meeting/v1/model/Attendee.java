@@ -39,7 +39,7 @@ public class Attendee  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private Integer role = 0;
+    private Integer role;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -109,6 +109,8 @@ public class Attendee  {
         this.userUUID = userUUID;
     }
 
+    
+
     public Attendee withAccountId(String accountId) {
         this.accountId = accountId;
         return this;
@@ -129,6 +131,8 @@ public class Attendee  {
         this.accountId = accountId;
     }
 
+    
+
     public Attendee withName(String name) {
         this.name = name;
         return this;
@@ -148,6 +152,8 @@ public class Attendee  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Attendee withRole(Integer role) {
         this.role = role;
@@ -171,6 +177,8 @@ public class Attendee  {
         this.role = role;
     }
 
+    
+
     public Attendee withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -190,6 +198,8 @@ public class Attendee  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public Attendee withPhone2(String phone2) {
         this.phone2 = phone2;
@@ -211,6 +221,8 @@ public class Attendee  {
         this.phone2 = phone2;
     }
 
+    
+
     public Attendee withPhone3(String phone3) {
         this.phone3 = phone3;
         return this;
@@ -230,6 +242,8 @@ public class Attendee  {
     public void setPhone3(String phone3) {
         this.phone3 = phone3;
     }
+
+    
 
     public Attendee withEmail(String email) {
         this.email = email;
@@ -251,6 +265,8 @@ public class Attendee  {
         this.email = email;
     }
 
+    
+
     public Attendee withSms(String sms) {
         this.sms = sms;
         return this;
@@ -270,6 +286,8 @@ public class Attendee  {
     public void setSms(String sms) {
         this.sms = sms;
     }
+
+    
 
     public Attendee withType(String type) {
         this.type = type;
@@ -291,6 +309,8 @@ public class Attendee  {
         this.type = type;
     }
 
+    
+
     public Attendee withDeptUUID(String deptUUID) {
         this.deptUUID = deptUUID;
         return this;
@@ -311,6 +331,8 @@ public class Attendee  {
         this.deptUUID = deptUUID;
     }
 
+    
+
     public Attendee withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -330,6 +352,9 @@ public class Attendee  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

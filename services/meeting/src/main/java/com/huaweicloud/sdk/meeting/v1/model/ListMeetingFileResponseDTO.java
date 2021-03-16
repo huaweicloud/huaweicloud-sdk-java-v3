@@ -116,6 +116,8 @@ public class ListMeetingFileResponseDTO  {
         this.fileCode = fileCode;
     }
 
+    
+
     public ListMeetingFileResponseDTO withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -135,6 +137,8 @@ public class ListMeetingFileResponseDTO  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public ListMeetingFileResponseDTO withFileId(String fileId) {
         this.fileId = fileId;
@@ -156,6 +160,8 @@ public class ListMeetingFileResponseDTO  {
         this.fileId = fileId;
     }
 
+    
+
     public ListMeetingFileResponseDTO withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -175,6 +181,8 @@ public class ListMeetingFileResponseDTO  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public ListMeetingFileResponseDTO withFileSize(Long fileSize) {
         this.fileSize = fileSize;
@@ -196,6 +204,8 @@ public class ListMeetingFileResponseDTO  {
         this.fileSize = fileSize;
     }
 
+    
+
     public ListMeetingFileResponseDTO withThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
         return this;
@@ -215,6 +225,8 @@ public class ListMeetingFileResponseDTO  {
     public void setThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
     }
+
+    
 
     public ListMeetingFileResponseDTO withThumbnailFileName(String thumbnailFileName) {
         this.thumbnailFileName = thumbnailFileName;
@@ -236,6 +248,8 @@ public class ListMeetingFileResponseDTO  {
         this.thumbnailFileName = thumbnailFileName;
     }
 
+    
+
     public ListMeetingFileResponseDTO withThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
         return this;
@@ -255,6 +269,8 @@ public class ListMeetingFileResponseDTO  {
     public void setThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
     }
+
+    
 
     public ListMeetingFileResponseDTO withPdfFileId(String pdfFileId) {
         this.pdfFileId = pdfFileId;
@@ -276,6 +292,8 @@ public class ListMeetingFileResponseDTO  {
         this.pdfFileId = pdfFileId;
     }
 
+    
+
     public ListMeetingFileResponseDTO withPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
         return this;
@@ -295,6 +313,8 @@ public class ListMeetingFileResponseDTO  {
     public void setPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
     }
+
+    
 
     public ListMeetingFileResponseDTO withPdfFileSize(Long pdfFileSize) {
         this.pdfFileSize = pdfFileSize;
@@ -316,6 +336,8 @@ public class ListMeetingFileResponseDTO  {
         this.pdfFileSize = pdfFileSize;
     }
 
+    
+
     public ListMeetingFileResponseDTO withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -336,6 +358,8 @@ public class ListMeetingFileResponseDTO  {
         this.userId = userId;
     }
 
+    
+
     public ListMeetingFileResponseDTO withCreationTimestamp(Long creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
         return this;
@@ -355,6 +379,9 @@ public class ListMeetingFileResponseDTO  {
     public void setCreationTimestamp(Long creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

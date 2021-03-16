@@ -28,7 +28,7 @@ public class UpdateProjectStatusRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateProjectStatusRequestBody body = null;
+    private UpdateProjectStatusRequestBody body;
 
     public UpdateProjectStatusRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class UpdateProjectStatusRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public UpdateProjectStatusRequest withBody(UpdateProjectStatusRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateProjectStatusRequest  {
     public void setBody(UpdateProjectStatusRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

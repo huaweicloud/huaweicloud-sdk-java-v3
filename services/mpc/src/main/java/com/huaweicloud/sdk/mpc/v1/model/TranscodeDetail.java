@@ -31,7 +31,7 @@ public class TranscodeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input_file")
     
-    private SourceInfo inputFile = null;
+    private SourceInfo inputFile;
 
     public TranscodeDetail withMultitaskInfo(List<MultiTaskInfo> multitaskInfo) {
         this.multitaskInfo = multitaskInfo;
@@ -40,9 +40,6 @@ public class TranscodeDetail  {
 
     
     public TranscodeDetail addMultitaskInfoItem(MultiTaskInfo multitaskInfoItem) {
-        if (this.multitaskInfo == null) {
-            this.multitaskInfo = new ArrayList<>();
-        }
         this.multitaskInfo.add(multitaskInfoItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class TranscodeDetail  {
     public void setMultitaskInfo(List<MultiTaskInfo> multitaskInfo) {
         this.multitaskInfo = multitaskInfo;
     }
+
+    
 
     public TranscodeDetail withInputFile(SourceInfo inputFile) {
         this.inputFile = inputFile;
@@ -93,6 +92,9 @@ public class TranscodeDetail  {
     public void setInputFile(SourceInfo inputFile) {
         this.inputFile = inputFile;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

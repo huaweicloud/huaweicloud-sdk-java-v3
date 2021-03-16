@@ -131,6 +131,8 @@ public class PauseInfo  {
         this.jobId = jobId;
     }
 
+    
+
     public PauseInfo withPauseMode(PauseModeEnum pauseMode) {
         this.pauseMode = pauseMode;
         return this;
@@ -150,6 +152,9 @@ public class PauseInfo  {
     public void setPauseMode(PauseModeEnum pauseMode) {
         this.pauseMode = pauseMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

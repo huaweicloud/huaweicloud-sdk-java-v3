@@ -24,7 +24,7 @@ public class ShowClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster")
     
-    private ShowClusterRespCluster cluster = null;
+    private ShowClusterRespCluster cluster;
 
     public ShowClusterResponse withCluster(ShowClusterRespCluster cluster) {
         this.cluster = cluster;
@@ -52,6 +52,9 @@ public class ShowClusterResponse extends SdkResponse {
     public void setCluster(ShowClusterRespCluster cluster) {
         this.cluster = cluster;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

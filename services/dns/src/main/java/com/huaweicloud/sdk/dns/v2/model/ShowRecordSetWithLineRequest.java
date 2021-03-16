@@ -49,6 +49,8 @@ public class ShowRecordSetWithLineRequest  {
         this.zoneId = zoneId;
     }
 
+    
+
     public ShowRecordSetWithLineRequest withRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
         return this;
@@ -68,6 +70,9 @@ public class ShowRecordSetWithLineRequest  {
     public void setRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

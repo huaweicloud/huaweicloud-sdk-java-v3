@@ -41,9 +41,6 @@ public class ListAuthorizedDatabasesResponse extends SdkResponse {
 
     
     public ListAuthorizedDatabasesResponse addDatabasesItem(DatabaseWithPrivilege databasesItem) {
-        if (this.databases == null) {
-            this.databases = new ArrayList<>();
-        }
         this.databases.add(databasesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListAuthorizedDatabasesResponse extends SdkResponse {
         this.databases = databases;
     }
 
+    
+
     public ListAuthorizedDatabasesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListAuthorizedDatabasesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

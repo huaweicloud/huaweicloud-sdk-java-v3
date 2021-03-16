@@ -61,6 +61,8 @@ public class DeleteBlockchainRequest  {
         this.blockchainId = blockchainId;
     }
 
+    
+
     public DeleteBlockchainRequest withIsDeleteStorage(Boolean isDeleteStorage) {
         this.isDeleteStorage = isDeleteStorage;
         return this;
@@ -80,6 +82,8 @@ public class DeleteBlockchainRequest  {
     public void setIsDeleteStorage(Boolean isDeleteStorage) {
         this.isDeleteStorage = isDeleteStorage;
     }
+
+    
 
     public DeleteBlockchainRequest withIsDeleteObs(Boolean isDeleteObs) {
         this.isDeleteObs = isDeleteObs;
@@ -101,6 +105,8 @@ public class DeleteBlockchainRequest  {
         this.isDeleteObs = isDeleteObs;
     }
 
+    
+
     public DeleteBlockchainRequest withIsDeleteResource(Boolean isDeleteResource) {
         this.isDeleteResource = isDeleteResource;
         return this;
@@ -120,6 +126,9 @@ public class DeleteBlockchainRequest  {
     public void setIsDeleteResource(Boolean isDeleteResource) {
         this.isDeleteResource = isDeleteResource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

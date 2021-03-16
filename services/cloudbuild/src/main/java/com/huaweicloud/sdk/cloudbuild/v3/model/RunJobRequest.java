@@ -22,7 +22,7 @@ public class RunJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RunJobRequestBody body = null;
+    private RunJobRequestBody body;
 
     public RunJobRequest withBody(RunJobRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RunJobRequest  {
     public void setBody(RunJobRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

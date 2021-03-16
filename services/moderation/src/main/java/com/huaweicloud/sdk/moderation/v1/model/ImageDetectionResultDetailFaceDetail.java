@@ -61,6 +61,8 @@ public class ImageDetectionResultDetailFaceDetail  {
         this.h = h;
     }
 
+    
+
     public ImageDetectionResultDetailFaceDetail withW(Integer w) {
         this.w = w;
         return this;
@@ -80,6 +82,8 @@ public class ImageDetectionResultDetailFaceDetail  {
     public void setW(Integer w) {
         this.w = w;
     }
+
+    
 
     public ImageDetectionResultDetailFaceDetail withX(Integer x) {
         this.x = x;
@@ -101,6 +105,8 @@ public class ImageDetectionResultDetailFaceDetail  {
         this.x = x;
     }
 
+    
+
     public ImageDetectionResultDetailFaceDetail withY(Integer y) {
         this.y = y;
         return this;
@@ -120,6 +126,9 @@ public class ImageDetectionResultDetailFaceDetail  {
     public void setY(Integer y) {
         this.y = y;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

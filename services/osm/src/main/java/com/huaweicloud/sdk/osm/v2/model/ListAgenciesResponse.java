@@ -56,6 +56,8 @@ public class ListAgenciesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListAgenciesResponse withAgencyList(List<AgencyV2> agencyList) {
         this.agencyList = agencyList;
         return this;
@@ -63,9 +65,6 @@ public class ListAgenciesResponse extends SdkResponse {
 
     
     public ListAgenciesResponse addAgencyListItem(AgencyV2 agencyListItem) {
-        if (this.agencyList == null) {
-            this.agencyList = new ArrayList<>();
-        }
         this.agencyList.add(agencyListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListAgenciesResponse extends SdkResponse {
     public void setAgencyList(List<AgencyV2> agencyList) {
         this.agencyList = agencyList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

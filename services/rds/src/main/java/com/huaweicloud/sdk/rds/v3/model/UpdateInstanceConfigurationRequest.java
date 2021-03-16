@@ -34,7 +34,7 @@ public class UpdateInstanceConfigurationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateInstanceConfigurationRequestBody body = null;
+    private UpdateInstanceConfigurationRequestBody body;
 
     public UpdateInstanceConfigurationRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class UpdateInstanceConfigurationRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UpdateInstanceConfigurationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class UpdateInstanceConfigurationRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateInstanceConfigurationRequest withBody(UpdateInstanceConfigurationRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class UpdateInstanceConfigurationRequest  {
     public void setBody(UpdateInstanceConfigurationRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

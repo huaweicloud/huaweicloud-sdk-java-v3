@@ -35,9 +35,6 @@ public class ListConversionsResponse extends SdkResponse {
 
     
     public ListConversionsResponse addConversionsItem(Conversion conversionsItem) {
-        if (this.conversions == null) {
-            this.conversions = new ArrayList<>();
-        }
         this.conversions.add(conversionsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListConversionsResponse extends SdkResponse {
     public void setConversions(List<Conversion> conversions) {
         this.conversions = conversions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

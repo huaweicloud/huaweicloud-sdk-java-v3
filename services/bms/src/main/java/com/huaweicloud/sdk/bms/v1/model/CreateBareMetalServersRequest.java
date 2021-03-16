@@ -22,7 +22,7 @@ public class CreateBareMetalServersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateBaremetalServersBody body = null;
+    private CreateBaremetalServersBody body;
 
     public CreateBareMetalServersRequest withBody(CreateBaremetalServersBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateBareMetalServersRequest  {
     public void setBody(CreateBaremetalServersBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

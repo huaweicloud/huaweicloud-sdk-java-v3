@@ -25,13 +25,13 @@ public class Versions  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creationTimestamp")
     
-    private LocalDate creationTimestamp = null;
+    private LocalDate creationTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private Object input = null;
+    private Object input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,19 +43,19 @@ public class Versions  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="supportVersions")
     
-    private List<SupportVersions> supportVersions = new ArrayList<>();
+    private List<SupportVersions> supportVersions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="translate")
     
-    private Object translate = null;
+    private Object translate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateTimestamp")
     
-    private LocalDate updateTimestamp = null;
+    private LocalDate updateTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,6 +83,8 @@ public class Versions  {
         this.creationTimestamp = creationTimestamp;
     }
 
+    
+
     public Versions withInput(Object input) {
         this.input = input;
         return this;
@@ -103,6 +105,8 @@ public class Versions  {
         this.input = input;
     }
 
+    
+
     public Versions withStable(Boolean stable) {
         this.stable = stable;
         return this;
@@ -122,6 +126,8 @@ public class Versions  {
     public void setStable(Boolean stable) {
         this.stable = stable;
     }
+
+    
 
     public Versions withSupportVersions(List<SupportVersions> supportVersions) {
         this.supportVersions = supportVersions;
@@ -154,6 +160,8 @@ public class Versions  {
         this.supportVersions = supportVersions;
     }
 
+    
+
     public Versions withTranslate(Object translate) {
         this.translate = translate;
         return this;
@@ -173,6 +181,8 @@ public class Versions  {
     public void setTranslate(Object translate) {
         this.translate = translate;
     }
+
+    
 
     public Versions withUpdateTimestamp(LocalDate updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
@@ -194,6 +204,8 @@ public class Versions  {
         this.updateTimestamp = updateTimestamp;
     }
 
+    
+
     public Versions withVersion(String version) {
         this.version = version;
         return this;
@@ -213,6 +225,9 @@ public class Versions  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

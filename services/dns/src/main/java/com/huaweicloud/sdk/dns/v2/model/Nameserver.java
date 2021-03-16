@@ -49,6 +49,8 @@ public class Nameserver  {
         this.hostname = hostname;
     }
 
+    
+
     public Nameserver withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -68,6 +70,9 @@ public class Nameserver  {
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

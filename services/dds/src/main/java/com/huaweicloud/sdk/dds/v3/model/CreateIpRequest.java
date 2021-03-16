@@ -28,7 +28,7 @@ public class CreateIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateIpRequestBody body = null;
+    private CreateIpRequestBody body;
 
     public CreateIpRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateIpRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateIpRequest withBody(CreateIpRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateIpRequest  {
     public void setBody(CreateIpRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

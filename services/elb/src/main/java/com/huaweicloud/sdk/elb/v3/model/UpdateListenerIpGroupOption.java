@@ -137,6 +137,8 @@ public class UpdateListenerIpGroupOption  {
         this.ipgroupId = ipgroupId;
     }
 
+    
+
     public UpdateListenerIpGroupOption withEnableIpgroup(Boolean enableIpgroup) {
         this.enableIpgroup = enableIpgroup;
         return this;
@@ -157,6 +159,8 @@ public class UpdateListenerIpGroupOption  {
         this.enableIpgroup = enableIpgroup;
     }
 
+    
+
     public UpdateListenerIpGroupOption withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -176,6 +180,9 @@ public class UpdateListenerIpGroupOption  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

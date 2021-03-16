@@ -140,9 +140,6 @@ public class ListPublicipsByTagsRequestBody  {
 
     
     public ListPublicipsByTagsRequestBody addTagsItem(TagReq tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -167,6 +164,8 @@ public class ListPublicipsByTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public ListPublicipsByTagsRequestBody withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -189,6 +188,8 @@ public class ListPublicipsByTagsRequestBody  {
         this.limit = limit;
     }
 
+    
+
     public ListPublicipsByTagsRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -208,6 +209,8 @@ public class ListPublicipsByTagsRequestBody  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListPublicipsByTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -229,6 +232,8 @@ public class ListPublicipsByTagsRequestBody  {
         this.action = action;
     }
 
+    
+
     public ListPublicipsByTagsRequestBody withMatches(List<MatchReq> matches) {
         this.matches = matches;
         return this;
@@ -236,9 +241,6 @@ public class ListPublicipsByTagsRequestBody  {
 
     
     public ListPublicipsByTagsRequestBody addMatchesItem(MatchReq matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -262,6 +264,9 @@ public class ListPublicipsByTagsRequestBody  {
     public void setMatches(List<MatchReq> matches) {
         this.matches = matches;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -41,9 +41,6 @@ public class ListProjectWorkHoursResponse extends SdkResponse {
 
     
     public ListProjectWorkHoursResponse addWorkHoursItem(ShowProjectWorkHoursResponseBodyWorkHours workHoursItem) {
-        if (this.workHours == null) {
-            this.workHours = new ArrayList<>();
-        }
         this.workHours.add(workHoursItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListProjectWorkHoursResponse extends SdkResponse {
         this.workHours = workHours;
     }
 
+    
+
     public ListProjectWorkHoursResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ListProjectWorkHoursResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

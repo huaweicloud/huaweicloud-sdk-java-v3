@@ -51,7 +51,7 @@ public class StartTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="migrate_failed_object")
     
-    private Boolean migrateFailedObject = false;
+    private Boolean migrateFailedObject;
 
     public StartTaskReq withSrcAk(String srcAk) {
         this.srcAk = srcAk;
@@ -73,6 +73,8 @@ public class StartTaskReq  {
         this.srcAk = srcAk;
     }
 
+    
+
     public StartTaskReq withSrcSk(String srcSk) {
         this.srcSk = srcSk;
         return this;
@@ -92,6 +94,8 @@ public class StartTaskReq  {
     public void setSrcSk(String srcSk) {
         this.srcSk = srcSk;
     }
+
+    
 
     public StartTaskReq withDstAk(String dstAk) {
         this.dstAk = dstAk;
@@ -113,6 +117,8 @@ public class StartTaskReq  {
         this.dstAk = dstAk;
     }
 
+    
+
     public StartTaskReq withDstSk(String dstSk) {
         this.dstSk = dstSk;
         return this;
@@ -132,6 +138,8 @@ public class StartTaskReq  {
     public void setDstSk(String dstSk) {
         this.dstSk = dstSk;
     }
+
+    
 
     public StartTaskReq withSourceCdnAuthenticationKey(String sourceCdnAuthenticationKey) {
         this.sourceCdnAuthenticationKey = sourceCdnAuthenticationKey;
@@ -153,6 +161,8 @@ public class StartTaskReq  {
         this.sourceCdnAuthenticationKey = sourceCdnAuthenticationKey;
     }
 
+    
+
     public StartTaskReq withMigrateFailedObject(Boolean migrateFailedObject) {
         this.migrateFailedObject = migrateFailedObject;
         return this;
@@ -172,6 +182,9 @@ public class StartTaskReq  {
     public void setMigrateFailedObject(Boolean migrateFailedObject) {
         this.migrateFailedObject = migrateFailedObject;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

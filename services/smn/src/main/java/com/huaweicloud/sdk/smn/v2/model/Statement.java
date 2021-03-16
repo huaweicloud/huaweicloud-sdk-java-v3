@@ -85,6 +85,8 @@ public class Statement  {
         this.sid = sid;
     }
 
+    
+
     public Statement withEffect(String effect) {
         this.effect = effect;
         return this;
@@ -104,6 +106,8 @@ public class Statement  {
     public void setEffect(String effect) {
         this.effect = effect;
     }
+
+    
 
     public Statement withPrincipal(String principal) {
         this.principal = principal;
@@ -125,6 +129,8 @@ public class Statement  {
         this.principal = principal;
     }
 
+    
+
     public Statement withNotPrincipal(String notPrincipal) {
         this.notPrincipal = notPrincipal;
         return this;
@@ -144,6 +150,8 @@ public class Statement  {
     public void setNotPrincipal(String notPrincipal) {
         this.notPrincipal = notPrincipal;
     }
+
+    
 
     public Statement withAction(String action) {
         this.action = action;
@@ -165,6 +173,8 @@ public class Statement  {
         this.action = action;
     }
 
+    
+
     public Statement withNotAction(String notAction) {
         this.notAction = notAction;
         return this;
@@ -184,6 +194,8 @@ public class Statement  {
     public void setNotAction(String notAction) {
         this.notAction = notAction;
     }
+
+    
 
     public Statement withResource(String resource) {
         this.resource = resource;
@@ -205,6 +217,8 @@ public class Statement  {
         this.resource = resource;
     }
 
+    
+
     public Statement withNotResource(String notResource) {
         this.notResource = notResource;
         return this;
@@ -224,6 +238,9 @@ public class Statement  {
     public void setNotResource(String notResource) {
         this.notResource = notResource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

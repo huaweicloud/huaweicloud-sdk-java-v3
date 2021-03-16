@@ -34,7 +34,7 @@ public class ProjectResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class ProjectResult  {
         this.isDomain = isDomain;
     }
 
+    
+
     public ProjectResult withDescription(String description) {
         this.description = description;
         return this;
@@ -105,6 +107,8 @@ public class ProjectResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ProjectResult withLinks(Links links) {
         this.links = links;
@@ -133,6 +137,8 @@ public class ProjectResult  {
         this.links = links;
     }
 
+    
+
     public ProjectResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -152,6 +158,8 @@ public class ProjectResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public ProjectResult withId(String id) {
         this.id = id;
@@ -173,6 +181,8 @@ public class ProjectResult  {
         this.id = id;
     }
 
+    
+
     public ProjectResult withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -192,6 +202,8 @@ public class ProjectResult  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public ProjectResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -213,6 +225,8 @@ public class ProjectResult  {
         this.domainId = domainId;
     }
 
+    
+
     public ProjectResult withName(String name) {
         this.name = name;
         return this;
@@ -232,6 +246,9 @@ public class ProjectResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class LoginTokenAssumedBy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private LoginTokenUser user = null;
+    private LoginTokenUser user;
 
     public LoginTokenAssumedBy withUser(LoginTokenUser user) {
         this.user = user;
@@ -50,6 +50,9 @@ public class LoginTokenAssumedBy  {
     public void setUser(LoginTokenUser user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

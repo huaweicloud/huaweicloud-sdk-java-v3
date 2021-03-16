@@ -52,13 +52,13 @@ public class UpdateServerResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Map<String, String> metadata = new HashMap<>();
+    private Map<String, String> metadata = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private Map<String, List<UpdateServerAddress>> addresses = new HashMap<>();
+    private Map<String, List<UpdateServerAddress>> addresses = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,7 +76,7 @@ public class UpdateServerResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    private SimpleFlavor flavor = null;
+    private SimpleFlavor flavor;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,7 +106,7 @@ public class UpdateServerResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<Link> links = new ArrayList<>();
+    private List<Link> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -136,7 +136,7 @@ public class UpdateServerResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -170,6 +170,8 @@ public class UpdateServerResult  {
         this.tenantId = tenantId;
     }
 
+    
+
     public UpdateServerResult withImage(String image) {
         this.image = image;
         return this;
@@ -189,6 +191,8 @@ public class UpdateServerResult  {
     public void setImage(String image) {
         this.image = image;
     }
+
+    
 
     public UpdateServerResult withAccessIPv4(String accessIPv4) {
         this.accessIPv4 = accessIPv4;
@@ -210,6 +214,8 @@ public class UpdateServerResult  {
         this.accessIPv4 = accessIPv4;
     }
 
+    
+
     public UpdateServerResult withAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
         return this;
@@ -229,6 +235,8 @@ public class UpdateServerResult  {
     public void setAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
     }
+
+    
 
     public UpdateServerResult withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
@@ -261,6 +269,8 @@ public class UpdateServerResult  {
         this.metadata = metadata;
     }
 
+    
+
     public UpdateServerResult withAddresses(Map<String, List<UpdateServerAddress>> addresses) {
         this.addresses = addresses;
         return this;
@@ -292,6 +302,8 @@ public class UpdateServerResult  {
         this.addresses = addresses;
     }
 
+    
+
     public UpdateServerResult withCreated(String created) {
         this.created = created;
         return this;
@@ -312,6 +324,8 @@ public class UpdateServerResult  {
         this.created = created;
     }
 
+    
+
     public UpdateServerResult withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -331,6 +345,8 @@ public class UpdateServerResult  {
     public void setHostId(String hostId) {
         this.hostId = hostId;
     }
+
+    
 
     public UpdateServerResult withFlavor(SimpleFlavor flavor) {
         this.flavor = flavor;
@@ -359,6 +375,8 @@ public class UpdateServerResult  {
         this.flavor = flavor;
     }
 
+    
+
     public UpdateServerResult withOsDCFDiskConfig(String osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
@@ -378,6 +396,8 @@ public class UpdateServerResult  {
     public void setOsDCFDiskConfig(String osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
+
+    
 
     public UpdateServerResult withUserId(String userId) {
         this.userId = userId;
@@ -399,6 +419,8 @@ public class UpdateServerResult  {
         this.userId = userId;
     }
 
+    
+
     public UpdateServerResult withName(String name) {
         this.name = name;
         return this;
@@ -419,6 +441,8 @@ public class UpdateServerResult  {
         this.name = name;
     }
 
+    
+
     public UpdateServerResult withProgress(Integer progress) {
         this.progress = progress;
         return this;
@@ -438,6 +462,8 @@ public class UpdateServerResult  {
     public void setProgress(Integer progress) {
         this.progress = progress;
     }
+
+    
 
     public UpdateServerResult withLinks(List<Link> links) {
         this.links = links;
@@ -470,6 +496,8 @@ public class UpdateServerResult  {
         this.links = links;
     }
 
+    
+
     public UpdateServerResult withId(String id) {
         this.id = id;
         return this;
@@ -489,6 +517,8 @@ public class UpdateServerResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateServerResult withUpdated(String updated) {
         this.updated = updated;
@@ -510,6 +540,8 @@ public class UpdateServerResult  {
         this.updated = updated;
     }
 
+    
+
     public UpdateServerResult withLocked(Boolean locked) {
         this.locked = locked;
         return this;
@@ -530,6 +562,8 @@ public class UpdateServerResult  {
         this.locked = locked;
     }
 
+    
+
     public UpdateServerResult withDescription(String description) {
         this.description = description;
         return this;
@@ -549,6 +583,8 @@ public class UpdateServerResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateServerResult withTags(List<String> tags) {
         this.tags = tags;
@@ -581,6 +617,8 @@ public class UpdateServerResult  {
         this.tags = tags;
     }
 
+    
+
     public UpdateServerResult withStatus(String status) {
         this.status = status;
         return this;
@@ -601,6 +639,8 @@ public class UpdateServerResult  {
         this.status = status;
     }
 
+    
+
     public UpdateServerResult withOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
         return this;
@@ -620,6 +660,9 @@ public class UpdateServerResult  {
     public void setOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

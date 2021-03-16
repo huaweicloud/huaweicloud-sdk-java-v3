@@ -49,6 +49,8 @@ public class ShowQueueRequest  {
         this.queueId = queueId;
     }
 
+    
+
     public ShowQueueRequest withIncludeDeadletter(Boolean includeDeadletter) {
         this.includeDeadletter = includeDeadletter;
         return this;
@@ -68,6 +70,9 @@ public class ShowQueueRequest  {
     public void setIncludeDeadletter(Boolean includeDeadletter) {
         this.includeDeadletter = includeDeadletter;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

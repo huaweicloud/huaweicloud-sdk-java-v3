@@ -29,7 +29,7 @@ public class SupportVersions  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusterVersion")
     
-    private List<String> clusterVersion = new ArrayList<>();
+    private List<String> clusterVersion = null;
     
     public SupportVersions withClusterType(String clusterType) {
         this.clusterType = clusterType;
@@ -50,6 +50,8 @@ public class SupportVersions  {
     public void setClusterType(String clusterType) {
         this.clusterType = clusterType;
     }
+
+    
 
     public SupportVersions withClusterVersion(List<String> clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -81,6 +83,9 @@ public class SupportVersions  {
     public void setClusterVersion(List<String> clusterVersion) {
         this.clusterVersion = clusterVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class CreateMessageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private MessageResult result = null;
+    private MessageResult result;
 
     public CreateMessageResponse withMessageId(String messageId) {
         this.messageId = messageId;
@@ -51,6 +51,8 @@ public class CreateMessageResponse extends SdkResponse {
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
+
+    
 
     public CreateMessageResponse withResult(MessageResult result) {
         this.result = result;
@@ -78,6 +80,9 @@ public class CreateMessageResponse extends SdkResponse {
     public void setResult(MessageResult result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

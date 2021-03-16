@@ -57,6 +57,8 @@ public class RulesRemote  {
         this.type = type;
     }
 
+    
+
     public RulesRemote withAnyOneOf(List<String> anyOneOf) {
         this.anyOneOf = anyOneOf;
         return this;
@@ -64,9 +66,6 @@ public class RulesRemote  {
 
     
     public RulesRemote addAnyOneOfItem(String anyOneOfItem) {
-        if (this.anyOneOf == null) {
-            this.anyOneOf = new ArrayList<>();
-        }
         this.anyOneOf.add(anyOneOfItem);
         return this;
     }
@@ -91,6 +90,8 @@ public class RulesRemote  {
         this.anyOneOf = anyOneOf;
     }
 
+    
+
     public RulesRemote withNotAnyOf(List<String> notAnyOf) {
         this.notAnyOf = notAnyOf;
         return this;
@@ -98,9 +99,6 @@ public class RulesRemote  {
 
     
     public RulesRemote addNotAnyOfItem(String notAnyOfItem) {
-        if (this.notAnyOf == null) {
-            this.notAnyOf = new ArrayList<>();
-        }
         this.notAnyOf.add(notAnyOfItem);
         return this;
     }
@@ -124,6 +122,9 @@ public class RulesRemote  {
     public void setNotAnyOf(List<String> notAnyOf) {
         this.notAnyOf = notAnyOf;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,7 +33,7 @@ public class ListProductsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public ListProductsResponse withProducts(List<ProductSummary> products) {
         this.products = products;
@@ -42,9 +42,6 @@ public class ListProductsResponse extends SdkResponse {
 
     
     public ListProductsResponse addProductsItem(ProductSummary productsItem) {
-        if (this.products == null) {
-            this.products = new ArrayList<>();
-        }
         this.products.add(productsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListProductsResponse extends SdkResponse {
     public void setProducts(List<ProductSummary> products) {
         this.products = products;
     }
+
+    
 
     public ListProductsResponse withPage(Page page) {
         this.page = page;
@@ -95,6 +94,9 @@ public class ListProductsResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

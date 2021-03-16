@@ -34,7 +34,7 @@ public class AddPublicationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePublicationRequestDTO body = null;
+    private CreatePublicationRequestDTO body;
 
     public AddPublicationRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -58,6 +58,8 @@ public class AddPublicationRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AddPublicationRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class AddPublicationRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public AddPublicationRequest withBody(CreatePublicationRequestDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class AddPublicationRequest  {
     public void setBody(CreatePublicationRequestDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

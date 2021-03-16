@@ -42,6 +42,9 @@ public class ProgramRequestBase  {
     public void setProgramName(String programName) {
         this.programName = programName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

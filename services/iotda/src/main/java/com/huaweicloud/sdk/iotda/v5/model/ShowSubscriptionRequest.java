@@ -49,6 +49,8 @@ public class ShowSubscriptionRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowSubscriptionRequest withSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
         return this;
@@ -68,6 +70,9 @@ public class ShowSubscriptionRequest  {
     public void setSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

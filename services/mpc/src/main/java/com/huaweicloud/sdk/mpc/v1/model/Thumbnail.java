@@ -23,19 +23,19 @@ public class Thumbnail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tar")
     
-    private Integer tar = 1;
+    private Integer tar;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="out")
     
-    private ObsObjInfo out = null;
+    private ObsObjInfo out;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="params")
     
-    private ThumbnailPara params = null;
+    private ThumbnailPara params;
 
     public Thumbnail withTar(Integer tar) {
         this.tar = tar;
@@ -58,6 +58,8 @@ public class Thumbnail  {
     public void setTar(Integer tar) {
         this.tar = tar;
     }
+
+    
 
     public Thumbnail withOut(ObsObjInfo out) {
         this.out = out;
@@ -86,6 +88,8 @@ public class Thumbnail  {
         this.out = out;
     }
 
+    
+
     public Thumbnail withParams(ThumbnailPara params) {
         this.params = params;
         return this;
@@ -112,6 +116,9 @@ public class Thumbnail  {
     public void setParams(ThumbnailPara params) {
         this.params = params;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

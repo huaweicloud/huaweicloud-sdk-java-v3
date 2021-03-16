@@ -143,6 +143,8 @@ public class ShowResourceRelationsRequest  {
         this.resourceId = resourceId;
     }
 
+    
+
     public ShowResourceRelationsRequest withDirection(DirectionEnum direction) {
         this.direction = direction;
         return this;
@@ -162,6 +164,8 @@ public class ShowResourceRelationsRequest  {
     public void setDirection(DirectionEnum direction) {
         this.direction = direction;
     }
+
+    
 
     public ShowResourceRelationsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -185,6 +189,8 @@ public class ShowResourceRelationsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowResourceRelationsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -204,6 +210,9 @@ public class ShowResourceRelationsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

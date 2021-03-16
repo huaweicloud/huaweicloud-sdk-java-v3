@@ -28,7 +28,7 @@ public class EnableOrDisableScalingGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnableOrDisableScalingGroupRequestBody body = null;
+    private EnableOrDisableScalingGroupRequestBody body;
 
     public EnableOrDisableScalingGroupRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -49,6 +49,8 @@ public class EnableOrDisableScalingGroupRequest  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public EnableOrDisableScalingGroupRequest withBody(EnableOrDisableScalingGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class EnableOrDisableScalingGroupRequest  {
     public void setBody(EnableOrDisableScalingGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

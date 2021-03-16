@@ -54,7 +54,7 @@ public class SecurityGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_rules")
     
-    private List<SecurityGroupRule> securityGroupRules = new ArrayList<>();
+    private List<SecurityGroupRule> securityGroupRules = null;
     
     public SecurityGroup withName(String name) {
         this.name = name;
@@ -76,6 +76,8 @@ public class SecurityGroup  {
         this.name = name;
     }
 
+    
+
     public SecurityGroup withDescription(String description) {
         this.description = description;
         return this;
@@ -95,6 +97,8 @@ public class SecurityGroup  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public SecurityGroup withId(String id) {
         this.id = id;
@@ -116,6 +120,8 @@ public class SecurityGroup  {
         this.id = id;
     }
 
+    
+
     public SecurityGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -136,6 +142,8 @@ public class SecurityGroup  {
         this.vpcId = vpcId;
     }
 
+    
+
     public SecurityGroup withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -155,6 +163,8 @@ public class SecurityGroup  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public SecurityGroup withSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
@@ -186,6 +196,9 @@ public class SecurityGroup  {
     public void setSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

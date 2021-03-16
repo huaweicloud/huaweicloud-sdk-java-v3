@@ -96,6 +96,8 @@ public class NovaServerFlavor  {
         this.id = id;
     }
 
+    
+
     public NovaServerFlavor withLinks(List<NovaLink> links) {
         this.links = links;
         return this;
@@ -103,9 +105,6 @@ public class NovaServerFlavor  {
 
     
     public NovaServerFlavor addLinksItem(NovaLink linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -130,6 +129,8 @@ public class NovaServerFlavor  {
         this.links = links;
     }
 
+    
+
     public NovaServerFlavor withVcpus(Integer vcpus) {
         this.vcpus = vcpus;
         return this;
@@ -149,6 +150,8 @@ public class NovaServerFlavor  {
     public void setVcpus(Integer vcpus) {
         this.vcpus = vcpus;
     }
+
+    
 
     public NovaServerFlavor withRam(Integer ram) {
         this.ram = ram;
@@ -170,6 +173,8 @@ public class NovaServerFlavor  {
         this.ram = ram;
     }
 
+    
+
     public NovaServerFlavor withDisk(Integer disk) {
         this.disk = disk;
         return this;
@@ -189,6 +194,8 @@ public class NovaServerFlavor  {
     public void setDisk(Integer disk) {
         this.disk = disk;
     }
+
+    
 
     public NovaServerFlavor withEphemeral(Integer ephemeral) {
         this.ephemeral = ephemeral;
@@ -210,6 +217,8 @@ public class NovaServerFlavor  {
         this.ephemeral = ephemeral;
     }
 
+    
+
     public NovaServerFlavor withSwap(Integer swap) {
         this.swap = swap;
         return this;
@@ -229,6 +238,8 @@ public class NovaServerFlavor  {
     public void setSwap(Integer swap) {
         this.swap = swap;
     }
+
+    
 
     public NovaServerFlavor withOriginalName(String originalName) {
         this.originalName = originalName;
@@ -250,6 +261,8 @@ public class NovaServerFlavor  {
         this.originalName = originalName;
     }
 
+    
+
     public NovaServerFlavor withExtraSpecs(Map<String, String> extraSpecs) {
         this.extraSpecs = extraSpecs;
         return this;
@@ -258,9 +271,6 @@ public class NovaServerFlavor  {
     
 
     public NovaServerFlavor putExtraSpecsItem(String key, String extraSpecsItem) {
-         if (this.extraSpecs == null) {
-            this.extraSpecs = new HashMap<>();
-         }
         this.extraSpecs.put(key, extraSpecsItem);
         return this;
     }
@@ -283,6 +293,9 @@ public class NovaServerFlavor  {
     public void setExtraSpecs(Map<String, String> extraSpecs) {
         this.extraSpecs = extraSpecs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

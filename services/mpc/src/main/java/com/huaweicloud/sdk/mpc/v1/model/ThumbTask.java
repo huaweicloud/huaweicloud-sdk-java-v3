@@ -155,13 +155,13 @@ public class ThumbTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -207,6 +207,8 @@ public class ThumbTask  {
         this.taskId = taskId;
     }
 
+    
+
     public ThumbTask withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -226,6 +228,8 @@ public class ThumbTask  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ThumbTask withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -247,6 +251,8 @@ public class ThumbTask  {
         this.createTime = createTime;
     }
 
+    
+
     public ThumbTask withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -266,6 +272,8 @@ public class ThumbTask  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ThumbTask withInput(ObsObjInfo input) {
         this.input = input;
@@ -294,6 +302,8 @@ public class ThumbTask  {
         this.input = input;
     }
 
+    
+
     public ThumbTask withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -321,6 +331,8 @@ public class ThumbTask  {
         this.output = output;
     }
 
+    
+
     public ThumbTask withOutputFileName(String outputFileName) {
         this.outputFileName = outputFileName;
         return this;
@@ -340,6 +352,8 @@ public class ThumbTask  {
     public void setOutputFileName(String outputFileName) {
         this.outputFileName = outputFileName;
     }
+
+    
 
     public ThumbTask withUserData(String userData) {
         this.userData = userData;
@@ -361,6 +375,8 @@ public class ThumbTask  {
         this.userData = userData;
     }
 
+    
+
     public ThumbTask withDescription(String description) {
         this.description = description;
         return this;
@@ -381,6 +397,8 @@ public class ThumbTask  {
         this.description = description;
     }
 
+    
+
     public ThumbTask withThumbnailInfo(List<PicInfo> thumbnailInfo) {
         this.thumbnailInfo = thumbnailInfo;
         return this;
@@ -388,9 +406,6 @@ public class ThumbTask  {
 
     
     public ThumbTask addThumbnailInfoItem(PicInfo thumbnailInfoItem) {
-        if (this.thumbnailInfo == null) {
-            this.thumbnailInfo = new ArrayList<>();
-        }
         this.thumbnailInfo.add(thumbnailInfoItem);
         return this;
     }
@@ -414,6 +429,9 @@ public class ThumbTask  {
     public void setThumbnailInfo(List<PicInfo> thumbnailInfo) {
         this.thumbnailInfo = thumbnailInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class WeeklyCount  {
         this.ddosInterceptTimes = ddosInterceptTimes;
     }
 
+    
+
     public WeeklyCount withDdosBlackholeTimes(Integer ddosBlackholeTimes) {
         this.ddosBlackholeTimes = ddosBlackholeTimes;
         return this;
@@ -86,6 +88,8 @@ public class WeeklyCount  {
     public void setDdosBlackholeTimes(Integer ddosBlackholeTimes) {
         this.ddosBlackholeTimes = ddosBlackholeTimes;
     }
+
+    
 
     public WeeklyCount withMaxAttackBps(Integer maxAttackBps) {
         this.maxAttackBps = maxAttackBps;
@@ -107,6 +111,8 @@ public class WeeklyCount  {
         this.maxAttackBps = maxAttackBps;
     }
 
+    
+
     public WeeklyCount withMaxAttackConns(Integer maxAttackConns) {
         this.maxAttackConns = maxAttackConns;
         return this;
@@ -127,6 +133,8 @@ public class WeeklyCount  {
         this.maxAttackConns = maxAttackConns;
     }
 
+    
+
     public WeeklyCount withPeriodStartDate(Long periodStartDate) {
         this.periodStartDate = periodStartDate;
         return this;
@@ -146,6 +154,9 @@ public class WeeklyCount  {
     public void setPeriodStartDate(Long periodStartDate) {
         this.periodStartDate = periodStartDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

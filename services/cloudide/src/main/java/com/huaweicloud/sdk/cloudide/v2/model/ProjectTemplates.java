@@ -66,7 +66,7 @@ public class ProjectTemplates  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    private SourceStorage source = null;
+    private SourceStorage source;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,6 +100,8 @@ public class ProjectTemplates  {
         this.description = description;
     }
 
+    
+
     public ProjectTemplates withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -119,6 +121,8 @@ public class ProjectTemplates  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
 
     public ProjectTemplates withLogo(String logo) {
         this.logo = logo;
@@ -140,6 +144,8 @@ public class ProjectTemplates  {
         this.logo = logo;
     }
 
+    
+
     public ProjectTemplates withName(String name) {
         this.name = name;
         return this;
@@ -159,6 +165,8 @@ public class ProjectTemplates  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ProjectTemplates withPath(String path) {
         this.path = path;
@@ -180,6 +188,8 @@ public class ProjectTemplates  {
         this.path = path;
     }
 
+    
+
     public ProjectTemplates withProjectType(String projectType) {
         this.projectType = projectType;
         return this;
@@ -200,6 +210,8 @@ public class ProjectTemplates  {
         this.projectType = projectType;
     }
 
+    
+
     public ProjectTemplates withRegion(String region) {
         this.region = region;
         return this;
@@ -219,6 +231,8 @@ public class ProjectTemplates  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public ProjectTemplates withSource(SourceStorage source) {
         this.source = source;
@@ -247,6 +261,8 @@ public class ProjectTemplates  {
         this.source = source;
     }
 
+    
+
     public ProjectTemplates withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -254,9 +270,6 @@ public class ProjectTemplates  {
 
     
     public ProjectTemplates addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -281,6 +294,8 @@ public class ProjectTemplates  {
         this.tags = tags;
     }
 
+    
+
     public ProjectTemplates withTemplateId(Long templateId) {
         this.templateId = templateId;
         return this;
@@ -302,6 +317,9 @@ public class ProjectTemplates  {
     public void setTemplateId(Long templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

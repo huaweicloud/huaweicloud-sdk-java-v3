@@ -148,6 +148,8 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         this.queueId = queueId;
     }
 
+    
+
     public ListConsumerGroupsResponse withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -168,6 +170,8 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         this.queueName = queueName;
     }
 
+    
+
     public ListConsumerGroupsResponse withGroups(List<ListQueueGroupsRespGroups> groups) {
         this.groups = groups;
         return this;
@@ -175,9 +179,6 @@ public class ListConsumerGroupsResponse extends SdkResponse {
 
     
     public ListConsumerGroupsResponse addGroupsItem(ListQueueGroupsRespGroups groupsItem) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
         this.groups.add(groupsItem);
         return this;
     }
@@ -202,6 +203,8 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         this.groups = groups;
     }
 
+    
+
     public ListConsumerGroupsResponse withRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
         return this;
@@ -221,6 +224,9 @@ public class ListConsumerGroupsResponse extends SdkResponse {
     public void setRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

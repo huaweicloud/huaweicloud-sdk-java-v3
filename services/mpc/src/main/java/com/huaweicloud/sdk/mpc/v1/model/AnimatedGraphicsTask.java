@@ -60,13 +60,13 @@ public class AnimatedGraphicsTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,7 +78,7 @@ public class AnimatedGraphicsTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_param")
     
-    private AnimatedGraphicsOutputParam outputParam = null;
+    private AnimatedGraphicsOutputParam outputParam;
 
     public AnimatedGraphicsTask withTaskId(String taskId) {
         this.taskId = taskId;
@@ -100,6 +100,8 @@ public class AnimatedGraphicsTask  {
         this.taskId = taskId;
     }
 
+    
+
     public AnimatedGraphicsTask withStatus(String status) {
         this.status = status;
         return this;
@@ -119,6 +121,8 @@ public class AnimatedGraphicsTask  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public AnimatedGraphicsTask withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -140,6 +144,8 @@ public class AnimatedGraphicsTask  {
         this.createTime = createTime;
     }
 
+    
+
     public AnimatedGraphicsTask withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -159,6 +165,8 @@ public class AnimatedGraphicsTask  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public AnimatedGraphicsTask withEndTime(String endTime) {
         this.endTime = endTime;
@@ -180,6 +188,8 @@ public class AnimatedGraphicsTask  {
         this.endTime = endTime;
     }
 
+    
+
     public AnimatedGraphicsTask withDescription(String description) {
         this.description = description;
         return this;
@@ -199,6 +209,8 @@ public class AnimatedGraphicsTask  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public AnimatedGraphicsTask withInput(ObsObjInfo input) {
         this.input = input;
@@ -227,6 +239,8 @@ public class AnimatedGraphicsTask  {
         this.input = input;
     }
 
+    
+
     public AnimatedGraphicsTask withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -254,6 +268,8 @@ public class AnimatedGraphicsTask  {
         this.output = output;
     }
 
+    
+
     public AnimatedGraphicsTask withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -273,6 +289,8 @@ public class AnimatedGraphicsTask  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public AnimatedGraphicsTask withOutputParam(AnimatedGraphicsOutputParam outputParam) {
         this.outputParam = outputParam;
@@ -300,6 +318,9 @@ public class AnimatedGraphicsTask  {
     public void setOutputParam(AnimatedGraphicsOutputParam outputParam) {
         this.outputParam = outputParam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

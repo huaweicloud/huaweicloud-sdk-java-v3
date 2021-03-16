@@ -129,6 +129,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowDeviceDetailResponse withType(String type) {
         this.type = type;
         return this;
@@ -148,6 +150,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ShowDeviceDetailResponse withModel(String model) {
         this.model = model;
@@ -169,6 +173,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.model = model;
     }
 
+    
+
     public ShowDeviceDetailResponse withSn(String sn) {
         this.sn = sn;
         return this;
@@ -188,6 +194,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
     public void setSn(String sn) {
         this.sn = sn;
     }
+
+    
 
     public ShowDeviceDetailResponse withAccount(String account) {
         this.account = account;
@@ -209,6 +217,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.account = account;
     }
 
+    
+
     public ShowDeviceDetailResponse withNumber(String number) {
         this.number = number;
         return this;
@@ -228,6 +238,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    
 
     public ShowDeviceDetailResponse withPrjCodeMode(Integer prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
@@ -249,6 +261,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.prjCodeMode = prjCodeMode;
     }
 
+    
+
     public ShowDeviceDetailResponse withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -268,6 +282,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
 
     public ShowDeviceDetailResponse withDeptName(String deptName) {
         this.deptName = deptName;
@@ -289,6 +305,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.deptName = deptName;
     }
 
+    
+
     public ShowDeviceDetailResponse withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
@@ -308,6 +326,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
     public void setDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
     }
+
+    
 
     public ShowDeviceDetailResponse withPhone(String phone) {
         this.phone = phone;
@@ -329,6 +349,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.phone = phone;
     }
 
+    
+
     public ShowDeviceDetailResponse withCountry(String country) {
         this.country = country;
         return this;
@@ -348,6 +370,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
 
     public ShowDeviceDetailResponse withEmail(String email) {
         this.email = email;
@@ -369,6 +393,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.email = email;
     }
 
+    
+
     public ShowDeviceDetailResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -389,6 +415,8 @@ public class ShowDeviceDetailResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowDeviceDetailResponse withStatus(Integer status) {
         this.status = status;
         return this;
@@ -408,6 +436,9 @@ public class ShowDeviceDetailResponse extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

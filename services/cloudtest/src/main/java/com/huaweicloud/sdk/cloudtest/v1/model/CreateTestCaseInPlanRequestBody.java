@@ -29,7 +29,7 @@ public class CreateTestCaseInPlanRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="testcase_id_list")
     
-    private List<String> testcaseIdList = new ArrayList<>();
+    private List<String> testcaseIdList = null;
     
     public CreateTestCaseInPlanRequestBody withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
@@ -50,6 +50,8 @@ public class CreateTestCaseInPlanRequestBody  {
     public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public CreateTestCaseInPlanRequestBody withTestcaseIdList(List<String> testcaseIdList) {
         this.testcaseIdList = testcaseIdList;
@@ -81,6 +83,9 @@ public class CreateTestCaseInPlanRequestBody  {
     public void setTestcaseIdList(List<String> testcaseIdList) {
         this.testcaseIdList = testcaseIdList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -44,6 +44,9 @@ public class DeleteTranscodingTaskRequest  {
     public void setTaskId(Integer taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -60,6 +60,8 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListSpecialThrottlingConfigurationsV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListSpecialThrottlingConfigurationsV2Response withThrottleSpecials(List<ThrottleSpecialResp> throttleSpecials) {
         this.throttleSpecials = throttleSpecials;
         return this;
@@ -87,9 +91,6 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
 
     
     public ListSpecialThrottlingConfigurationsV2Response addThrottleSpecialsItem(ThrottleSpecialResp throttleSpecialsItem) {
-        if (this.throttleSpecials == null) {
-            this.throttleSpecials = new ArrayList<>();
-        }
         this.throttleSpecials.add(throttleSpecialsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
     public void setThrottleSpecials(List<ThrottleSpecialResp> throttleSpecials) {
         this.throttleSpecials = throttleSpecials;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

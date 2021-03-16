@@ -52,6 +52,8 @@ public class QuotaLimitInfo  {
         this.limitKey = limitKey;
     }
 
+    
+
     public QuotaLimitInfo withLimitValues(List<LimitValue> limitValues) {
         this.limitValues = limitValues;
         return this;
@@ -59,9 +61,6 @@ public class QuotaLimitInfo  {
 
     
     public QuotaLimitInfo addLimitValuesItem(LimitValue limitValuesItem) {
-        if (this.limitValues == null) {
-            this.limitValues = new ArrayList<>();
-        }
         this.limitValues.add(limitValuesItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class QuotaLimitInfo  {
     public void setLimitValues(List<LimitValue> limitValues) {
         this.limitValues = limitValues;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

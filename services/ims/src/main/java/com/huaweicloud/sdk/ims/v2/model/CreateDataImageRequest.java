@@ -22,7 +22,7 @@ public class CreateDataImageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateDataImageRequestBody body = null;
+    private CreateDataImageRequestBody body;
 
     public CreateDataImageRequest withBody(CreateDataImageRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateDataImageRequest  {
     public void setBody(CreateDataImageRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

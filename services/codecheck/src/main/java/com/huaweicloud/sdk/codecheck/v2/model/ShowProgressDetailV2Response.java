@@ -30,7 +30,7 @@ public class ShowProgressDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="progress")
     
-    private ProgressDetailV2 progress = null;
+    private ProgressDetailV2 progress;
 
     public ShowProgressDetailV2Response withTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
@@ -51,6 +51,8 @@ public class ShowProgressDetailV2Response extends SdkResponse {
     public void setTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
     }
+
+    
 
     public ShowProgressDetailV2Response withProgress(ProgressDetailV2 progress) {
         this.progress = progress;
@@ -78,6 +80,9 @@ public class ShowProgressDetailV2Response extends SdkResponse {
     public void setProgress(ProgressDetailV2 progress) {
         this.progress = progress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

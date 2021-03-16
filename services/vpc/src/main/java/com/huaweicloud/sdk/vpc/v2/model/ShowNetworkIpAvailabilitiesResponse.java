@@ -24,7 +24,7 @@ public class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="network_ip_availability")
     
-    private NetworkIpAvailability networkIpAvailability = null;
+    private NetworkIpAvailability networkIpAvailability;
 
     public ShowNetworkIpAvailabilitiesResponse withNetworkIpAvailability(NetworkIpAvailability networkIpAvailability) {
         this.networkIpAvailability = networkIpAvailability;
@@ -52,6 +52,9 @@ public class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
     public void setNetworkIpAvailability(NetworkIpAvailability networkIpAvailability) {
         this.networkIpAvailability = networkIpAvailability;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class CopyImageCrossRegionRequestBody  {
         this.agencyName = agencyName;
     }
 
+    
+
     public CopyImageCrossRegionRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -86,6 +88,8 @@ public class CopyImageCrossRegionRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CopyImageCrossRegionRequestBody withName(String name) {
         this.name = name;
@@ -107,6 +111,8 @@ public class CopyImageCrossRegionRequestBody  {
         this.name = name;
     }
 
+    
+
     public CopyImageCrossRegionRequestBody withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
@@ -127,6 +133,8 @@ public class CopyImageCrossRegionRequestBody  {
         this.projectName = projectName;
     }
 
+    
+
     public CopyImageCrossRegionRequestBody withRegion(String region) {
         this.region = region;
         return this;
@@ -146,6 +154,9 @@ public class CopyImageCrossRegionRequestBody  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

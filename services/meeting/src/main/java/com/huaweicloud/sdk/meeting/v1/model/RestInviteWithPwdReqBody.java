@@ -73,6 +73,8 @@ public class RestInviteWithPwdReqBody  {
         this.callNum = callNum;
     }
 
+    
+
     public RestInviteWithPwdReqBody withOrgID(String orgID) {
         this.orgID = orgID;
         return this;
@@ -92,6 +94,8 @@ public class RestInviteWithPwdReqBody  {
     public void setOrgID(String orgID) {
         this.orgID = orgID;
     }
+
+    
 
     public RestInviteWithPwdReqBody withConfID(String confID) {
         this.confID = confID;
@@ -113,6 +117,8 @@ public class RestInviteWithPwdReqBody  {
         this.confID = confID;
     }
 
+    
+
     public RestInviteWithPwdReqBody withPwd(String pwd) {
         this.pwd = pwd;
         return this;
@@ -132,6 +138,8 @@ public class RestInviteWithPwdReqBody  {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
+    
 
     public RestInviteWithPwdReqBody withNumBelongsType(Integer numBelongsType) {
         this.numBelongsType = numBelongsType;
@@ -153,6 +161,8 @@ public class RestInviteWithPwdReqBody  {
         this.numBelongsType = numBelongsType;
     }
 
+    
+
     public RestInviteWithPwdReqBody withIsNotOverlayPidName(Boolean isNotOverlayPidName) {
         this.isNotOverlayPidName = isNotOverlayPidName;
         return this;
@@ -172,6 +182,9 @@ public class RestInviteWithPwdReqBody  {
     public void setIsNotOverlayPidName(Boolean isNotOverlayPidName) {
         this.isNotOverlayPidName = isNotOverlayPidName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

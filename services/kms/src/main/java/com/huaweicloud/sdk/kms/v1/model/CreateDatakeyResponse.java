@@ -57,6 +57,8 @@ public class CreateDatakeyResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
+    
+
     public CreateDatakeyResponse withPlainText(String plainText) {
         this.plainText = plainText;
         return this;
@@ -77,6 +79,8 @@ public class CreateDatakeyResponse extends SdkResponse {
         this.plainText = plainText;
     }
 
+    
+
     public CreateDatakeyResponse withCipherText(String cipherText) {
         this.cipherText = cipherText;
         return this;
@@ -96,6 +100,9 @@ public class CreateDatakeyResponse extends SdkResponse {
     public void setCipherText(String cipherText) {
         this.cipherText = cipherText;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

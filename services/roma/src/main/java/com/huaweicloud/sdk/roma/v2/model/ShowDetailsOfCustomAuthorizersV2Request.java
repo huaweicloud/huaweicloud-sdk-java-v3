@@ -49,6 +49,8 @@ public class ShowDetailsOfCustomAuthorizersV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfCustomAuthorizersV2Request withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -68,6 +70,9 @@ public class ShowDetailsOfCustomAuthorizersV2Request  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

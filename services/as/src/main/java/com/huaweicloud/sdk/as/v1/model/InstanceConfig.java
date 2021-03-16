@@ -72,7 +72,7 @@ public class InstanceConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    private PublicIp publicIp = null;
+    private PublicIp publicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,7 +84,7 @@ public class InstanceConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaData metadata = null;
+    private MetaData metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -364,6 +364,8 @@ public class InstanceConfig  {
         this.instanceId = instanceId;
     }
 
+    
+
     public InstanceConfig withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -383,6 +385,8 @@ public class InstanceConfig  {
     public void setFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
     }
+
+    
 
     public InstanceConfig withImageRef(String imageRef) {
         this.imageRef = imageRef;
@@ -404,6 +408,8 @@ public class InstanceConfig  {
         this.imageRef = imageRef;
     }
 
+    
+
     public InstanceConfig withDisk(List<Disk> disk) {
         this.disk = disk;
         return this;
@@ -411,9 +417,6 @@ public class InstanceConfig  {
 
     
     public InstanceConfig addDiskItem(Disk diskItem) {
-        if (this.disk == null) {
-            this.disk = new ArrayList<>();
-        }
         this.disk.add(diskItem);
         return this;
     }
@@ -438,6 +441,8 @@ public class InstanceConfig  {
         this.disk = disk;
     }
 
+    
+
     public InstanceConfig withKeyName(String keyName) {
         this.keyName = keyName;
         return this;
@@ -458,6 +463,8 @@ public class InstanceConfig  {
         this.keyName = keyName;
     }
 
+    
+
     public InstanceConfig withPersonality(List<Personality> personality) {
         this.personality = personality;
         return this;
@@ -465,9 +472,6 @@ public class InstanceConfig  {
 
     
     public InstanceConfig addPersonalityItem(Personality personalityItem) {
-        if (this.personality == null) {
-            this.personality = new ArrayList<>();
-        }
         this.personality.add(personalityItem);
         return this;
     }
@@ -491,6 +495,8 @@ public class InstanceConfig  {
     public void setPersonality(List<Personality> personality) {
         this.personality = personality;
     }
+
+    
 
     public InstanceConfig withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
@@ -519,6 +525,8 @@ public class InstanceConfig  {
         this.publicIp = publicIp;
     }
 
+    
+
     public InstanceConfig withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -538,6 +546,8 @@ public class InstanceConfig  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public InstanceConfig withMetadata(MetaData metadata) {
         this.metadata = metadata;
@@ -566,6 +576,8 @@ public class InstanceConfig  {
         this.metadata = metadata;
     }
 
+    
+
     public InstanceConfig withSecurityGroups(List<SecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -573,9 +585,6 @@ public class InstanceConfig  {
 
     
     public InstanceConfig addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -600,6 +609,8 @@ public class InstanceConfig  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public InstanceConfig withServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
         return this;
@@ -619,6 +630,8 @@ public class InstanceConfig  {
     public void setServerGroupId(String serverGroupId) {
         this.serverGroupId = serverGroupId;
     }
+
+    
 
     public InstanceConfig withTenancy(TenancyEnum tenancy) {
         this.tenancy = tenancy;
@@ -640,6 +653,8 @@ public class InstanceConfig  {
         this.tenancy = tenancy;
     }
 
+    
+
     public InstanceConfig withDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -659,6 +674,8 @@ public class InstanceConfig  {
     public void setDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
     }
+
+    
 
     public InstanceConfig withMultiFlavorPriorityPolicy(MultiFlavorPriorityPolicyEnum multiFlavorPriorityPolicy) {
         this.multiFlavorPriorityPolicy = multiFlavorPriorityPolicy;
@@ -680,6 +697,8 @@ public class InstanceConfig  {
         this.multiFlavorPriorityPolicy = multiFlavorPriorityPolicy;
     }
 
+    
+
     public InstanceConfig withMarketType(MarketTypeEnum marketType) {
         this.marketType = marketType;
         return this;
@@ -699,6 +718,9 @@ public class InstanceConfig  {
     public void setMarketType(MarketTypeEnum marketType) {
         this.marketType = marketType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -122,13 +122,13 @@ public class MetadataList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    private UUID vpcId = null;
+    private UUID vpcId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metering.image_id")
     
-    private UUID meteringImageId = null;
+    private UUID meteringImageId;
     /**
      * 镜像类型，目前支持：公共镜像（gold）私有镜像（private）共享镜像（shared）
      */
@@ -444,6 +444,8 @@ public class MetadataList  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public MetadataList withMeteringOrderId(String meteringOrderId) {
         this.meteringOrderId = meteringOrderId;
         return this;
@@ -463,6 +465,8 @@ public class MetadataList  {
     public void setMeteringOrderId(String meteringOrderId) {
         this.meteringOrderId = meteringOrderId;
     }
+
+    
 
     public MetadataList withMeteringProductId(String meteringProductId) {
         this.meteringProductId = meteringProductId;
@@ -484,6 +488,8 @@ public class MetadataList  {
         this.meteringProductId = meteringProductId;
     }
 
+    
+
     public MetadataList withVpcId(UUID vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -503,6 +509,8 @@ public class MetadataList  {
     public void setVpcId(UUID vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public MetadataList withMeteringImageId(UUID meteringImageId) {
         this.meteringImageId = meteringImageId;
@@ -524,6 +532,8 @@ public class MetadataList  {
         this.meteringImageId = meteringImageId;
     }
 
+    
+
     public MetadataList withMeteringImagetype(MeteringImagetypeEnum meteringImagetype) {
         this.meteringImagetype = meteringImagetype;
         return this;
@@ -543,6 +553,8 @@ public class MetadataList  {
     public void setMeteringImagetype(MeteringImagetypeEnum meteringImagetype) {
         this.meteringImagetype = meteringImagetype;
     }
+
+    
 
     public MetadataList withBaremetalPortIDList(String baremetalPortIDList) {
         this.baremetalPortIDList = baremetalPortIDList;
@@ -564,6 +576,8 @@ public class MetadataList  {
         this.baremetalPortIDList = baremetalPortIDList;
     }
 
+    
+
     public MetadataList withMeteringResourcespeccode(String meteringResourcespeccode) {
         this.meteringResourcespeccode = meteringResourcespeccode;
         return this;
@@ -583,6 +597,8 @@ public class MetadataList  {
     public void setMeteringResourcespeccode(String meteringResourcespeccode) {
         this.meteringResourcespeccode = meteringResourcespeccode;
     }
+
+    
 
     public MetadataList withMeteringResourcetype(String meteringResourcetype) {
         this.meteringResourcetype = meteringResourcetype;
@@ -604,6 +620,8 @@ public class MetadataList  {
         this.meteringResourcetype = meteringResourcetype;
     }
 
+    
+
     public MetadataList withImageName(String imageName) {
         this.imageName = imageName;
         return this;
@@ -623,6 +641,8 @@ public class MetadataList  {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
+    
 
     public MetadataList withOpSvcUserid(String opSvcUserid) {
         this.opSvcUserid = opSvcUserid;
@@ -644,6 +664,8 @@ public class MetadataList  {
         this.opSvcUserid = opSvcUserid;
     }
 
+    
+
     public MetadataList withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -663,6 +685,8 @@ public class MetadataList  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public MetadataList withBmsSupportEvs(String bmsSupportEvs) {
         this.bmsSupportEvs = bmsSupportEvs;
@@ -686,6 +710,8 @@ public class MetadataList  {
         this.bmsSupportEvs = bmsSupportEvs;
     }
 
+    
+
     public MetadataList withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
         return this;
@@ -705,6 +731,9 @@ public class MetadataList  {
     public void setOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

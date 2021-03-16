@@ -49,6 +49,8 @@ public class ExternalServiceCaseStep  {
         this.expectResult = expectResult;
     }
 
+    
+
     public ExternalServiceCaseStep withTestStep(String testStep) {
         this.testStep = testStep;
         return this;
@@ -68,6 +70,9 @@ public class ExternalServiceCaseStep  {
     public void setTestStep(String testStep) {
         this.testStep = testStep;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

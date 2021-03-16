@@ -63,6 +63,8 @@ public class UpdateCommandResponse extends SdkResponse {
         this.serviceId = serviceId;
     }
 
+    
+
     public UpdateCommandResponse withCommandId(Integer commandId) {
         this.commandId = commandId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateCommandResponse extends SdkResponse {
     public void setCommandId(Integer commandId) {
         this.commandId = commandId;
     }
+
+    
 
     public UpdateCommandResponse withCommandName(String commandName) {
         this.commandName = commandName;
@@ -103,6 +107,8 @@ public class UpdateCommandResponse extends SdkResponse {
         this.commandName = commandName;
     }
 
+    
+
     public UpdateCommandResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -122,6 +128,9 @@ public class UpdateCommandResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

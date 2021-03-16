@@ -55,6 +55,8 @@ public class AddSubscriptionRequestBody  {
         this.endpoint = endpoint;
     }
 
+    
+
     public AddSubscriptionRequestBody withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -75,6 +77,8 @@ public class AddSubscriptionRequestBody  {
         this.protocol = protocol;
     }
 
+    
+
     public AddSubscriptionRequestBody withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -94,6 +98,9 @@ public class AddSubscriptionRequestBody  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

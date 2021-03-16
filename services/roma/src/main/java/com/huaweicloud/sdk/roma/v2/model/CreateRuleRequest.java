@@ -28,7 +28,7 @@ public class CreateRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateRuleRequestBody body = null;
+    private CreateRuleRequestBody body;
 
     public CreateRuleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateRuleRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateRuleRequest withBody(CreateRuleRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateRuleRequest  {
     public void setBody(CreateRuleRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

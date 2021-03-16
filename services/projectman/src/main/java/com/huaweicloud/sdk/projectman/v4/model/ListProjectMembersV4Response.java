@@ -41,9 +41,6 @@ public class ListProjectMembersV4Response extends SdkResponse {
 
     
     public ListProjectMembersV4Response addMembersItem(MemberListV4Members membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListProjectMembersV4Response extends SdkResponse {
         this.members = members;
     }
 
+    
+
     public ListProjectMembersV4Response withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ListProjectMembersV4Response extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

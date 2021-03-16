@@ -82,7 +82,7 @@ public class PostSourceServerBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<Disk> disks = new ArrayList<>();
+    private List<Disk> disks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -172,7 +172,7 @@ public class PostSourceServerBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="boot_dir_normal")
     
-    private Boolean bootDirNormal = true;
+    private Boolean bootDirNormal;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -182,15 +182,9 @@ public class PostSourceServerBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="abnormal_components")
+    @JsonProperty(value="enterprise_project_id")
     
-    private String abnormalComponents;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lost_system_files")
-    
-    private String lostSystemFiles;
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -208,7 +202,7 @@ public class PostSourceServerBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="networks")
     
-    private NetWork networks = null;
+    private NetWork networks;
 
     public PostSourceServerBody withId(String id) {
         this.id = id;
@@ -230,6 +224,8 @@ public class PostSourceServerBody  {
         this.id = id;
     }
 
+    
+
     public PostSourceServerBody withIp(String ip) {
         this.ip = ip;
         return this;
@@ -249,6 +245,8 @@ public class PostSourceServerBody  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public PostSourceServerBody withName(String name) {
         this.name = name;
@@ -270,6 +268,8 @@ public class PostSourceServerBody  {
         this.name = name;
     }
 
+    
+
     public PostSourceServerBody withHostname(String hostname) {
         this.hostname = hostname;
         return this;
@@ -289,6 +289,8 @@ public class PostSourceServerBody  {
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
+
+    
 
     public PostSourceServerBody withOsType(String osType) {
         this.osType = osType;
@@ -310,6 +312,8 @@ public class PostSourceServerBody  {
         this.osType = osType;
     }
 
+    
+
     public PostSourceServerBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
@@ -330,6 +334,8 @@ public class PostSourceServerBody  {
         this.osVersion = osVersion;
     }
 
+    
+
     public PostSourceServerBody withFirmware(String firmware) {
         this.firmware = firmware;
         return this;
@@ -349,6 +355,8 @@ public class PostSourceServerBody  {
     public void setFirmware(String firmware) {
         this.firmware = firmware;
     }
+
+    
 
     public PostSourceServerBody withCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
@@ -372,6 +380,8 @@ public class PostSourceServerBody  {
         this.cpuQuantity = cpuQuantity;
     }
 
+    
+
     public PostSourceServerBody withMemory(Long memory) {
         this.memory = memory;
         return this;
@@ -393,6 +403,8 @@ public class PostSourceServerBody  {
     public void setMemory(Long memory) {
         this.memory = memory;
     }
+
+    
 
     public PostSourceServerBody withDisks(List<Disk> disks) {
         this.disks = disks;
@@ -425,6 +437,8 @@ public class PostSourceServerBody  {
         this.disks = disks;
     }
 
+    
+
     public PostSourceServerBody withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
@@ -432,9 +446,6 @@ public class PostSourceServerBody  {
 
     
     public PostSourceServerBody addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if (this.btrfsList == null) {
-            this.btrfsList = new ArrayList<>();
-        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
@@ -459,6 +470,8 @@ public class PostSourceServerBody  {
         this.btrfsList = btrfsList;
     }
 
+    
+
     public PostSourceServerBody withNetwork(List<NetWork> network) {
         this.network = network;
         return this;
@@ -466,9 +479,6 @@ public class PostSourceServerBody  {
 
     
     public PostSourceServerBody addNetworkItem(NetWork networkItem) {
-        if (this.network == null) {
-            this.network = new ArrayList<>();
-        }
         this.network.add(networkItem);
         return this;
     }
@@ -493,6 +503,8 @@ public class PostSourceServerBody  {
         this.network = network;
     }
 
+    
+
     public PostSourceServerBody withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -512,6 +524,8 @@ public class PostSourceServerBody  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public PostSourceServerBody withHasRsync(Boolean hasRsync) {
         this.hasRsync = hasRsync;
@@ -533,6 +547,8 @@ public class PostSourceServerBody  {
         this.hasRsync = hasRsync;
     }
 
+    
+
     public PostSourceServerBody withParavirtualization(Boolean paravirtualization) {
         this.paravirtualization = paravirtualization;
         return this;
@@ -552,6 +568,8 @@ public class PostSourceServerBody  {
     public void setParavirtualization(Boolean paravirtualization) {
         this.paravirtualization = paravirtualization;
     }
+
+    
 
     public PostSourceServerBody withRawDevices(Boolean rawDevices) {
         this.rawDevices = rawDevices;
@@ -573,6 +591,8 @@ public class PostSourceServerBody  {
         this.rawDevices = rawDevices;
     }
 
+    
+
     public PostSourceServerBody withDriverFiles(Boolean driverFiles) {
         this.driverFiles = driverFiles;
         return this;
@@ -592,6 +612,8 @@ public class PostSourceServerBody  {
     public void setDriverFiles(Boolean driverFiles) {
         this.driverFiles = driverFiles;
     }
+
+    
 
     public PostSourceServerBody withSystemServices(Boolean systemServices) {
         this.systemServices = systemServices;
@@ -613,6 +635,8 @@ public class PostSourceServerBody  {
         this.systemServices = systemServices;
     }
 
+    
+
     public PostSourceServerBody withAccountRights(Boolean accountRights) {
         this.accountRights = accountRights;
         return this;
@@ -632,6 +656,8 @@ public class PostSourceServerBody  {
     public void setAccountRights(Boolean accountRights) {
         this.accountRights = accountRights;
     }
+
+    
 
     public PostSourceServerBody withBootLoader(String bootLoader) {
         this.bootLoader = bootLoader;
@@ -653,6 +679,8 @@ public class PostSourceServerBody  {
         this.bootLoader = bootLoader;
     }
 
+    
+
     public PostSourceServerBody withSystemDir(String systemDir) {
         this.systemDir = systemDir;
         return this;
@@ -673,6 +701,8 @@ public class PostSourceServerBody  {
         this.systemDir = systemDir;
     }
 
+    
+
     public PostSourceServerBody withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
@@ -680,9 +710,6 @@ public class PostSourceServerBody  {
 
     
     public PostSourceServerBody addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if (this.volumeGroups == null) {
-            this.volumeGroups = new ArrayList<>();
-        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
@@ -707,6 +734,8 @@ public class PostSourceServerBody  {
         this.volumeGroups = volumeGroups;
     }
 
+    
+
     public PostSourceServerBody withOemSystem(String oemSystem) {
         this.oemSystem = oemSystem;
         return this;
@@ -726,6 +755,8 @@ public class PostSourceServerBody  {
     public void setOemSystem(String oemSystem) {
         this.oemSystem = oemSystem;
     }
+
+    
 
     public PostSourceServerBody withAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
@@ -747,6 +778,8 @@ public class PostSourceServerBody  {
         this.agentVersion = agentVersion;
     }
 
+    
+
     public PostSourceServerBody withBootDirNormal(Boolean bootDirNormal) {
         this.bootDirNormal = bootDirNormal;
         return this;
@@ -766,6 +799,8 @@ public class PostSourceServerBody  {
     public void setBootDirNormal(Boolean bootDirNormal) {
         this.bootDirNormal = bootDirNormal;
     }
+
+    
 
     public PostSourceServerBody withLinuxBlockCheck(String linuxBlockCheck) {
         this.linuxBlockCheck = linuxBlockCheck;
@@ -787,8 +822,10 @@ public class PostSourceServerBody  {
         this.linuxBlockCheck = linuxBlockCheck;
     }
 
-    public PostSourceServerBody withAbnormalComponents(String abnormalComponents) {
-        this.abnormalComponents = abnormalComponents;
+    
+
+    public PostSourceServerBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
@@ -796,36 +833,18 @@ public class PostSourceServerBody  {
 
 
     /**
-     * 不满足要求的组件，多个组件之间用分号分号
-     * @return abnormalComponents
+     * 企业项目id
+     * @return enterpriseProjectId
      */
-    public String getAbnormalComponents() {
-        return abnormalComponents;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setAbnormalComponents(String abnormalComponents) {
-        this.abnormalComponents = abnormalComponents;
-    }
-
-    public PostSourceServerBody withLostSystemFiles(String lostSystemFiles) {
-        this.lostSystemFiles = lostSystemFiles;
-        return this;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     
-
-
-    /**
-     * 缺少的系统文件(Linux)，多个系统文件之间用分号分隔
-     * @return lostSystemFiles
-     */
-    public String getLostSystemFiles() {
-        return lostSystemFiles;
-    }
-
-    public void setLostSystemFiles(String lostSystemFiles) {
-        this.lostSystemFiles = lostSystemFiles;
-    }
 
     public PostSourceServerBody withKernelVersion(String kernelVersion) {
         this.kernelVersion = kernelVersion;
@@ -847,6 +866,8 @@ public class PostSourceServerBody  {
         this.kernelVersion = kernelVersion;
     }
 
+    
+
     public PostSourceServerBody withVirtualizationType(String virtualizationType) {
         this.virtualizationType = virtualizationType;
         return this;
@@ -866,6 +887,8 @@ public class PostSourceServerBody  {
     public void setVirtualizationType(String virtualizationType) {
         this.virtualizationType = virtualizationType;
     }
+
+    
 
     public PostSourceServerBody withNetworks(NetWork networks) {
         this.networks = networks;
@@ -893,6 +916,9 @@ public class PostSourceServerBody  {
     public void setNetworks(NetWork networks) {
         this.networks = networks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -928,15 +954,14 @@ public class PostSourceServerBody  {
             Objects.equals(this.agentVersion, postSourceServerBody.agentVersion) &&
             Objects.equals(this.bootDirNormal, postSourceServerBody.bootDirNormal) &&
             Objects.equals(this.linuxBlockCheck, postSourceServerBody.linuxBlockCheck) &&
-            Objects.equals(this.abnormalComponents, postSourceServerBody.abnormalComponents) &&
-            Objects.equals(this.lostSystemFiles, postSourceServerBody.lostSystemFiles) &&
+            Objects.equals(this.enterpriseProjectId, postSourceServerBody.enterpriseProjectId) &&
             Objects.equals(this.kernelVersion, postSourceServerBody.kernelVersion) &&
             Objects.equals(this.virtualizationType, postSourceServerBody.virtualizationType) &&
             Objects.equals(this.networks, postSourceServerBody.networks);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, ip, name, hostname, osType, osVersion, firmware, cpuQuantity, memory, disks, btrfsList, network, domainId, hasRsync, paravirtualization, rawDevices, driverFiles, systemServices, accountRights, bootLoader, systemDir, volumeGroups, oemSystem, agentVersion, bootDirNormal, linuxBlockCheck, abnormalComponents, lostSystemFiles, kernelVersion, virtualizationType, networks);
+        return Objects.hash(id, ip, name, hostname, osType, osVersion, firmware, cpuQuantity, memory, disks, btrfsList, network, domainId, hasRsync, paravirtualization, rawDevices, driverFiles, systemServices, accountRights, bootLoader, systemDir, volumeGroups, oemSystem, agentVersion, bootDirNormal, linuxBlockCheck, enterpriseProjectId, kernelVersion, virtualizationType, networks);
     }
     @Override
     public String toString() {
@@ -968,8 +993,7 @@ public class PostSourceServerBody  {
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("    bootDirNormal: ").append(toIndentedString(bootDirNormal)).append("\n");
         sb.append("    linuxBlockCheck: ").append(toIndentedString(linuxBlockCheck)).append("\n");
-        sb.append("    abnormalComponents: ").append(toIndentedString(abnormalComponents)).append("\n");
-        sb.append("    lostSystemFiles: ").append(toIndentedString(lostSystemFiles)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    kernelVersion: ").append(toIndentedString(kernelVersion)).append("\n");
         sb.append("    virtualizationType: ").append(toIndentedString(virtualizationType)).append("\n");
         sb.append("    networks: ").append(toIndentedString(networks)).append("\n");

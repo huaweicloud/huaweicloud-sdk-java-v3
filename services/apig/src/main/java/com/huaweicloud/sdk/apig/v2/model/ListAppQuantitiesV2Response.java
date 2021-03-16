@@ -51,6 +51,8 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
         this.authedNums = authedNums;
     }
 
+    
+
     public ListAppQuantitiesV2Response withUnauthedNums(Integer unauthedNums) {
         this.unauthedNums = unauthedNums;
         return this;
@@ -70,6 +72,9 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
     public void setUnauthedNums(Integer unauthedNums) {
         this.unauthedNums = unauthedNums;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

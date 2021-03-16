@@ -49,6 +49,8 @@ public class OrgPeer  {
         this.name = name;
     }
 
+    
+
     public OrgPeer withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
         return this;
@@ -68,6 +70,9 @@ public class OrgPeer  {
     public void setNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

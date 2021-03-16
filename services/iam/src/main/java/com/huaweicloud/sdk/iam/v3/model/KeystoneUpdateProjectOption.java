@@ -49,6 +49,8 @@ public class KeystoneUpdateProjectOption  {
         this.name = name;
     }
 
+    
+
     public KeystoneUpdateProjectOption withDescription(String description) {
         this.description = description;
         return this;
@@ -68,6 +70,9 @@ public class KeystoneUpdateProjectOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

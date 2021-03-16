@@ -42,6 +42,9 @@ public class AppSecretReq  {
     public void setAppSecret(String appSecret) {
         this.appSecret = appSecret;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class ShowListenerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listener")
     
-    private Listener listener = null;
+    private Listener listener;
 
     public ShowListenerResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ShowListenerResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ShowListenerResponse withListener(Listener listener) {
         this.listener = listener;
@@ -78,6 +80,9 @@ public class ShowListenerResponse extends SdkResponse {
     public void setListener(Listener listener) {
         this.listener = listener;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

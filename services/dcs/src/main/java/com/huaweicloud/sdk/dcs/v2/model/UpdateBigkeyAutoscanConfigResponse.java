@@ -65,6 +65,8 @@ public class UpdateBigkeyAutoscanConfigResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateBigkeyAutoscanConfigResponse withEnableAutoScan(Boolean enableAutoScan) {
         this.enableAutoScan = enableAutoScan;
         return this;
@@ -85,6 +87,8 @@ public class UpdateBigkeyAutoscanConfigResponse extends SdkResponse {
         this.enableAutoScan = enableAutoScan;
     }
 
+    
+
     public UpdateBigkeyAutoscanConfigResponse withScheduleAt(List<String> scheduleAt) {
         this.scheduleAt = scheduleAt;
         return this;
@@ -92,9 +96,6 @@ public class UpdateBigkeyAutoscanConfigResponse extends SdkResponse {
 
     
     public UpdateBigkeyAutoscanConfigResponse addScheduleAtItem(String scheduleAtItem) {
-        if (this.scheduleAt == null) {
-            this.scheduleAt = new ArrayList<>();
-        }
         this.scheduleAt.add(scheduleAtItem);
         return this;
     }
@@ -119,6 +120,8 @@ public class UpdateBigkeyAutoscanConfigResponse extends SdkResponse {
         this.scheduleAt = scheduleAt;
     }
 
+    
+
     public UpdateBigkeyAutoscanConfigResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -138,6 +141,9 @@ public class UpdateBigkeyAutoscanConfigResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

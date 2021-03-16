@@ -40,7 +40,7 @@ public class TaskDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error")
     
-    private ErrorInfo error = null;
+    private ErrorInfo error;
 
     public TaskDetail withTarget(String target) {
         this.target = target;
@@ -62,6 +62,8 @@ public class TaskDetail  {
         this.target = target;
     }
 
+    
+
     public TaskDetail withStatus(String status) {
         this.status = status;
         return this;
@@ -82,6 +84,8 @@ public class TaskDetail  {
         this.status = status;
     }
 
+    
+
     public TaskDetail withOutput(String output) {
         this.output = output;
         return this;
@@ -101,6 +105,8 @@ public class TaskDetail  {
     public void setOutput(String output) {
         this.output = output;
     }
+
+    
 
     public TaskDetail withError(ErrorInfo error) {
         this.error = error;
@@ -128,6 +134,9 @@ public class TaskDetail  {
     public void setError(ErrorInfo error) {
         this.error = error;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -259,6 +259,8 @@ public class ListBackupsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListBackupsRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -278,6 +280,8 @@ public class ListBackupsRequest  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public ListBackupsRequest withBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
@@ -299,6 +303,8 @@ public class ListBackupsRequest  {
         this.backupType = backupType;
     }
 
+    
+
     public ListBackupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -319,6 +325,8 @@ public class ListBackupsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListBackupsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -342,6 +350,8 @@ public class ListBackupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListBackupsRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -361,6 +371,8 @@ public class ListBackupsRequest  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public ListBackupsRequest withEndTime(String endTime) {
         this.endTime = endTime;
@@ -382,6 +394,8 @@ public class ListBackupsRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListBackupsRequest withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -401,6 +415,9 @@ public class ListBackupsRequest  {
     public void setMode(ModeEnum mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

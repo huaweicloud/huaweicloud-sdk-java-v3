@@ -42,6 +42,9 @@ public class OsExtend  {
     public void setNewSize(Integer newSize) {
         this.newSize = newSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

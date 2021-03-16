@@ -23,7 +23,7 @@ public class RenewalResourcesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_ids")
     
-    private List<String> resourceIds = new ArrayList<>();
+    private List<String> resourceIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,7 +47,7 @@ public class RenewalResourcesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    private Integer isAutoPay = 0;
+    private Integer isAutoPay;
 
     public RenewalResourcesReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
@@ -80,6 +80,8 @@ public class RenewalResourcesReq  {
         this.resourceIds = resourceIds;
     }
 
+    
+
     public RenewalResourcesReq withPeriodType(Integer periodType) {
         this.periodType = periodType;
         return this;
@@ -101,6 +103,8 @@ public class RenewalResourcesReq  {
     public void setPeriodType(Integer periodType) {
         this.periodType = periodType;
     }
+
+    
 
     public RenewalResourcesReq withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
@@ -124,6 +128,8 @@ public class RenewalResourcesReq  {
         this.periodNum = periodNum;
     }
 
+    
+
     public RenewalResourcesReq withExpirePolicy(Integer expirePolicy) {
         this.expirePolicy = expirePolicy;
         return this;
@@ -146,6 +152,8 @@ public class RenewalResourcesReq  {
         this.expirePolicy = expirePolicy;
     }
 
+    
+
     public RenewalResourcesReq withIsAutoPay(Integer isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -167,6 +175,9 @@ public class RenewalResourcesReq  {
     public void setIsAutoPay(Integer isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

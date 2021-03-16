@@ -80,7 +80,7 @@ public class ThrottleBindingThrottleResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
     /**
      * 是否包含特殊流控 - 1：包含 - 2：不包含
      */
@@ -188,7 +188,7 @@ public class ThrottleBindingThrottleResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_time")
     
-    private OffsetDateTime bindTime = null;
+    private OffsetDateTime bindTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -222,6 +222,8 @@ public class ThrottleBindingThrottleResp  {
         this.id = id;
     }
 
+    
+
     public ThrottleBindingThrottleResp withName(String name) {
         this.name = name;
         return this;
@@ -241,6 +243,8 @@ public class ThrottleBindingThrottleResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ThrottleBindingThrottleResp withApiCallLimits(Integer apiCallLimits) {
         this.apiCallLimits = apiCallLimits;
@@ -262,6 +266,8 @@ public class ThrottleBindingThrottleResp  {
         this.apiCallLimits = apiCallLimits;
     }
 
+    
+
     public ThrottleBindingThrottleResp withUserCallLimits(Integer userCallLimits) {
         this.userCallLimits = userCallLimits;
         return this;
@@ -281,6 +287,8 @@ public class ThrottleBindingThrottleResp  {
     public void setUserCallLimits(Integer userCallLimits) {
         this.userCallLimits = userCallLimits;
     }
+
+    
 
     public ThrottleBindingThrottleResp withAppCallLimits(Integer appCallLimits) {
         this.appCallLimits = appCallLimits;
@@ -302,6 +310,8 @@ public class ThrottleBindingThrottleResp  {
         this.appCallLimits = appCallLimits;
     }
 
+    
+
     public ThrottleBindingThrottleResp withIpCallLimits(Integer ipCallLimits) {
         this.ipCallLimits = ipCallLimits;
         return this;
@@ -321,6 +331,8 @@ public class ThrottleBindingThrottleResp  {
     public void setIpCallLimits(Integer ipCallLimits) {
         this.ipCallLimits = ipCallLimits;
     }
+
+    
 
     public ThrottleBindingThrottleResp withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -342,6 +354,8 @@ public class ThrottleBindingThrottleResp  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public ThrottleBindingThrottleResp withTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
         return this;
@@ -361,6 +375,8 @@ public class ThrottleBindingThrottleResp  {
     public void setTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
     }
+
+    
 
     public ThrottleBindingThrottleResp withRemark(String remark) {
         this.remark = remark;
@@ -382,6 +398,8 @@ public class ThrottleBindingThrottleResp  {
         this.remark = remark;
     }
 
+    
+
     public ThrottleBindingThrottleResp withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -401,6 +419,8 @@ public class ThrottleBindingThrottleResp  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ThrottleBindingThrottleResp withIsIncludeSpecialThrottle(IsIncludeSpecialThrottleEnum isIncludeSpecialThrottle) {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
@@ -422,6 +442,8 @@ public class ThrottleBindingThrottleResp  {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
     }
 
+    
+
     public ThrottleBindingThrottleResp withEnvName(String envName) {
         this.envName = envName;
         return this;
@@ -441,6 +463,8 @@ public class ThrottleBindingThrottleResp  {
     public void setEnvName(String envName) {
         this.envName = envName;
     }
+
+    
 
     public ThrottleBindingThrottleResp withType(Integer type) {
         this.type = type;
@@ -462,6 +486,8 @@ public class ThrottleBindingThrottleResp  {
         this.type = type;
     }
 
+    
+
     public ThrottleBindingThrottleResp withBindId(String bindId) {
         this.bindId = bindId;
         return this;
@@ -481,6 +507,8 @@ public class ThrottleBindingThrottleResp  {
     public void setBindId(String bindId) {
         this.bindId = bindId;
     }
+
+    
 
     public ThrottleBindingThrottleResp withBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
@@ -502,6 +530,8 @@ public class ThrottleBindingThrottleResp  {
         this.bindTime = bindTime;
     }
 
+    
+
     public ThrottleBindingThrottleResp withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
@@ -522,6 +552,8 @@ public class ThrottleBindingThrottleResp  {
         this.bindNum = bindNum;
     }
 
+    
+
     public ThrottleBindingThrottleResp withEnableAdaptiveControl(String enableAdaptiveControl) {
         this.enableAdaptiveControl = enableAdaptiveControl;
         return this;
@@ -541,6 +573,9 @@ public class ThrottleBindingThrottleResp  {
     public void setEnableAdaptiveControl(String enableAdaptiveControl) {
         this.enableAdaptiveControl = enableAdaptiveControl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

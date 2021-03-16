@@ -67,6 +67,8 @@ public class ListMqsInstanceTopicsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListMqsInstanceTopicsRequest withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -86,6 +88,8 @@ public class ListMqsInstanceTopicsRequest  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ListMqsInstanceTopicsRequest withName(String name) {
         this.name = name;
@@ -107,6 +111,8 @@ public class ListMqsInstanceTopicsRequest  {
         this.name = name;
     }
 
+    
+
     public ListMqsInstanceTopicsRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -127,6 +133,8 @@ public class ListMqsInstanceTopicsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListMqsInstanceTopicsRequest withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -146,6 +154,9 @@ public class ListMqsInstanceTopicsRequest  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

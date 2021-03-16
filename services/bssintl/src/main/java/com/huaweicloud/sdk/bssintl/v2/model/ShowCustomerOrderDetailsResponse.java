@@ -33,7 +33,7 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_info")
     
-    private CustomerOrderV2 orderInfo = null;
+    private CustomerOrderV2 orderInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
 
     public ShowCustomerOrderDetailsResponse withOrderInfo(CustomerOrderV2 orderInfo) {
         this.orderInfo = orderInfo;
@@ -88,6 +90,8 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
         this.orderInfo = orderInfo;
     }
 
+    
+
     public ShowCustomerOrderDetailsResponse withOrderLineItems(List<OrderLineItemEntityV2> orderLineItems) {
         this.orderLineItems = orderLineItems;
         return this;
@@ -95,9 +99,6 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
 
     
     public ShowCustomerOrderDetailsResponse addOrderLineItemsItem(OrderLineItemEntityV2 orderLineItemsItem) {
-        if (this.orderLineItems == null) {
-            this.orderLineItems = new ArrayList<>();
-        }
         this.orderLineItems.add(orderLineItemsItem);
         return this;
     }
@@ -121,6 +122,9 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
     public void setOrderLineItems(List<OrderLineItemEntityV2> orderLineItems) {
         this.orderLineItems = orderLineItems;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

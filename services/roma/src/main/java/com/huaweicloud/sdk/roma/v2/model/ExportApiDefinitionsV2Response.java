@@ -13,6 +13,7 @@ import java.util.Objects;
  */
 public class ExportApiDefinitionsV2Response extends SdkStreamResponse {
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

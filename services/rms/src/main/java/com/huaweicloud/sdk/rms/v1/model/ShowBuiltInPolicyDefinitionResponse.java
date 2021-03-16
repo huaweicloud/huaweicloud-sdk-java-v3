@@ -58,7 +58,7 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_rule")
     
-    private Object policyRule = null;
+    private Object policyRule;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowBuiltInPolicyDefinitionResponse withName(String name) {
         this.name = name;
         return this;
@@ -111,6 +113,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowBuiltInPolicyDefinitionResponse withPolicyType(String policyType) {
         this.policyType = policyType;
@@ -132,6 +136,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         this.policyType = policyType;
     }
 
+    
+
     public ShowBuiltInPolicyDefinitionResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -151,6 +157,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowBuiltInPolicyDefinitionResponse withPolicyRuleType(String policyRuleType) {
         this.policyRuleType = policyRuleType;
@@ -172,6 +180,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         this.policyRuleType = policyRuleType;
     }
 
+    
+
     public ShowBuiltInPolicyDefinitionResponse withPolicyRule(Object policyRule) {
         this.policyRule = policyRule;
         return this;
@@ -192,6 +202,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         this.policyRule = policyRule;
     }
 
+    
+
     public ShowBuiltInPolicyDefinitionResponse withKeywords(List<String> keywords) {
         this.keywords = keywords;
         return this;
@@ -199,9 +211,6 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
 
     
     public ShowBuiltInPolicyDefinitionResponse addKeywordsItem(String keywordsItem) {
-        if (this.keywords == null) {
-            this.keywords = new ArrayList<>();
-        }
         this.keywords.add(keywordsItem);
         return this;
     }
@@ -226,6 +235,8 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
         this.keywords = keywords;
     }
 
+    
+
     public ShowBuiltInPolicyDefinitionResponse withParameters(Map<String, PolicyParameterDefinition> parameters) {
         this.parameters = parameters;
         return this;
@@ -234,9 +245,6 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     
 
     public ShowBuiltInPolicyDefinitionResponse putParametersItem(String key, PolicyParameterDefinition parametersItem) {
-         if (this.parameters == null) {
-            this.parameters = new HashMap<>();
-         }
         this.parameters.put(key, parametersItem);
         return this;
     }
@@ -259,6 +267,9 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     public void setParameters(Map<String, PolicyParameterDefinition> parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

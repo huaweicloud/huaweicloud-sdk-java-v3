@@ -52,6 +52,8 @@ public class LdApiScriptCreate  {
         this.apiType = apiType;
     }
 
+    
+
     public LdApiScriptCreate withScripts(List<LdApiScript> scripts) {
         this.scripts = scripts;
         return this;
@@ -59,9 +61,6 @@ public class LdApiScriptCreate  {
 
     
     public LdApiScriptCreate addScriptsItem(LdApiScript scriptsItem) {
-        if (this.scripts == null) {
-            this.scripts = new ArrayList<>();
-        }
         this.scripts.add(scriptsItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class LdApiScriptCreate  {
     public void setScripts(List<LdApiScript> scripts) {
         this.scripts = scripts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

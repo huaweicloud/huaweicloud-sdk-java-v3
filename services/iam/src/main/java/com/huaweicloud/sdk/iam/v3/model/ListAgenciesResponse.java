@@ -35,9 +35,6 @@ public class ListAgenciesResponse extends SdkResponse {
 
     
     public ListAgenciesResponse addAgenciesItem(AgencyResult agenciesItem) {
-        if (this.agencies == null) {
-            this.agencies = new ArrayList<>();
-        }
         this.agencies.add(agenciesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListAgenciesResponse extends SdkResponse {
     public void setAgencies(List<AgencyResult> agencies) {
         this.agencies = agencies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

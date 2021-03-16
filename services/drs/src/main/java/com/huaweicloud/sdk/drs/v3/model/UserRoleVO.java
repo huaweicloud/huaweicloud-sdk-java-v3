@@ -75,6 +75,8 @@ public class UserRoleVO  {
         this.role = role;
     }
 
+    
+
     public UserRoleVO withComment(String comment) {
         this.comment = comment;
         return this;
@@ -94,6 +96,8 @@ public class UserRoleVO  {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    
 
     public UserRoleVO withIsTransfer(String isTransfer) {
         this.isTransfer = isTransfer;
@@ -115,6 +119,8 @@ public class UserRoleVO  {
         this.isTransfer = isTransfer;
     }
 
+    
+
     public UserRoleVO withPrivileges(String privileges) {
         this.privileges = privileges;
         return this;
@@ -135,6 +141,8 @@ public class UserRoleVO  {
         this.privileges = privileges;
     }
 
+    
+
     public UserRoleVO withInheritsRoles(List<String> inheritsRoles) {
         this.inheritsRoles = inheritsRoles;
         return this;
@@ -142,9 +150,6 @@ public class UserRoleVO  {
 
     
     public UserRoleVO addInheritsRolesItem(String inheritsRolesItem) {
-        if (this.inheritsRoles == null) {
-            this.inheritsRoles = new ArrayList<>();
-        }
         this.inheritsRoles.add(inheritsRolesItem);
         return this;
     }
@@ -169,6 +174,8 @@ public class UserRoleVO  {
         this.inheritsRoles = inheritsRoles;
     }
 
+    
+
     public UserRoleVO withSelected(String selected) {
         this.selected = selected;
         return this;
@@ -188,6 +195,9 @@ public class UserRoleVO  {
     public void setSelected(String selected) {
         this.selected = selected;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

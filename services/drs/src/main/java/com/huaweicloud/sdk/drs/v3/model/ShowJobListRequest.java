@@ -104,13 +104,13 @@ public class ShowJobListRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QueryJobsReq body = null;
+    private QueryJobsReq body;
 
     public ShowJobListRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class ShowJobListRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public ShowJobListRequest withBody(QueryJobsReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class ShowJobListRequest  {
     public void setBody(QueryJobsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

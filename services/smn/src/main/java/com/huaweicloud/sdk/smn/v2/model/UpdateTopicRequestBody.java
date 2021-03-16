@@ -42,6 +42,9 @@ public class UpdateTopicRequestBody  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class ShowRegionInfoOfMeetingRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

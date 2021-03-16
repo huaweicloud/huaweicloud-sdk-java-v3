@@ -55,6 +55,8 @@ public class LabelInfo  {
         this.labelId = labelId;
     }
 
+    
+
     public LabelInfo withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class LabelInfo  {
         this.name = name;
     }
 
+    
+
     public LabelInfo withColor(String color) {
         this.color = color;
         return this;
@@ -94,6 +98,9 @@ public class LabelInfo  {
     public void setColor(String color) {
         this.color = color;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -41,9 +41,6 @@ public class ListProductsResponse extends SdkResponse {
 
     
     public ListProductsResponse addHourlyItem(ListProductsRespHourly hourlyItem) {
-        if (this.hourly == null) {
-            this.hourly = new ArrayList<>();
-        }
         this.hourly.add(hourlyItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListProductsResponse extends SdkResponse {
         this.hourly = hourly;
     }
 
+    
+
     public ListProductsResponse withMonthly(List<ListProductsRespHourly> monthly) {
         this.monthly = monthly;
         return this;
@@ -75,9 +74,6 @@ public class ListProductsResponse extends SdkResponse {
 
     
     public ListProductsResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
-        if (this.monthly == null) {
-            this.monthly = new ArrayList<>();
-        }
         this.monthly.add(monthlyItem);
         return this;
     }
@@ -101,6 +97,9 @@ public class ListProductsResponse extends SdkResponse {
     public void setMonthly(List<ListProductsRespHourly> monthly) {
         this.monthly = monthly;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

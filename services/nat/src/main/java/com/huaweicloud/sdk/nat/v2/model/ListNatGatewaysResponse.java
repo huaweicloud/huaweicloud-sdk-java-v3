@@ -35,9 +35,6 @@ public class ListNatGatewaysResponse extends SdkResponse {
 
     
     public ListNatGatewaysResponse addNatGatewaysItem(NatGatewayResponseBody natGatewaysItem) {
-        if (this.natGateways == null) {
-            this.natGateways = new ArrayList<>();
-        }
         this.natGateways.add(natGatewaysItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListNatGatewaysResponse extends SdkResponse {
     public void setNatGateways(List<NatGatewayResponseBody> natGateways) {
         this.natGateways = natGateways;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

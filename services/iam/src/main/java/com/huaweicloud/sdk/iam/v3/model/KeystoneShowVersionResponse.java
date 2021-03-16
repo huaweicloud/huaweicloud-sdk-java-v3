@@ -24,7 +24,7 @@ public class KeystoneShowVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    private Version version = null;
+    private Version version;
 
     public KeystoneShowVersionResponse withVersion(Version version) {
         this.version = version;
@@ -52,6 +52,9 @@ public class KeystoneShowVersionResponse extends SdkResponse {
     public void setVersion(Version version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

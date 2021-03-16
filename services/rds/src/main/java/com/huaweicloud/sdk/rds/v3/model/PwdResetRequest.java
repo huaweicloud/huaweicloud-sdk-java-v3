@@ -42,6 +42,9 @@ public class PwdResetRequest  {
     public void setDbUserPwd(String dbUserPwd) {
         this.dbUserPwd = dbUserPwd;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

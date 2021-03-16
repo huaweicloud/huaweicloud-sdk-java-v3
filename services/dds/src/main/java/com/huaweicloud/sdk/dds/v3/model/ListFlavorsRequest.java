@@ -131,6 +131,8 @@ public class ListFlavorsRequest  {
         this.region = region;
     }
 
+    
+
     public ListFlavorsRequest withEngineName(EngineNameEnum engineName) {
         this.engineName = engineName;
         return this;
@@ -150,6 +152,9 @@ public class ListFlavorsRequest  {
     public void setEngineName(EngineNameEnum engineName) {
         this.engineName = engineName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

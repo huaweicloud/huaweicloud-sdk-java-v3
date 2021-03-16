@@ -85,6 +85,8 @@ public class PhysicalVolumes  {
         this.deviceUse = deviceUse;
     }
 
+    
+
     public PhysicalVolumes withFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
         return this;
@@ -104,6 +106,8 @@ public class PhysicalVolumes  {
     public void setFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
     }
+
+    
 
     public PhysicalVolumes withIndex(Integer index) {
         this.index = index;
@@ -127,6 +131,8 @@ public class PhysicalVolumes  {
         this.index = index;
     }
 
+    
+
     public PhysicalVolumes withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
         return this;
@@ -147,6 +153,8 @@ public class PhysicalVolumes  {
         this.mountPoint = mountPoint;
     }
 
+    
+
     public PhysicalVolumes withName(String name) {
         this.name = name;
         return this;
@@ -166,6 +174,8 @@ public class PhysicalVolumes  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PhysicalVolumes withSize(Long size) {
         this.size = size;
@@ -189,6 +199,8 @@ public class PhysicalVolumes  {
         this.size = size;
     }
 
+    
+
     public PhysicalVolumes withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
@@ -211,6 +223,8 @@ public class PhysicalVolumes  {
         this.usedSize = usedSize;
     }
 
+    
+
     public PhysicalVolumes withUuid(String uuid) {
         this.uuid = uuid;
         return this;
@@ -230,6 +244,9 @@ public class PhysicalVolumes  {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

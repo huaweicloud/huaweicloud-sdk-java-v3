@@ -55,6 +55,8 @@ public class PostPaidServerSchedulerHints  {
         this.group = group;
     }
 
+    
+
     public PostPaidServerSchedulerHints withDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -75,6 +77,8 @@ public class PostPaidServerSchedulerHints  {
         this.dedicatedHostId = dedicatedHostId;
     }
 
+    
+
     public PostPaidServerSchedulerHints withTenancy(String tenancy) {
         this.tenancy = tenancy;
         return this;
@@ -94,6 +98,9 @@ public class PostPaidServerSchedulerHints  {
     public void setTenancy(String tenancy) {
         this.tenancy = tenancy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

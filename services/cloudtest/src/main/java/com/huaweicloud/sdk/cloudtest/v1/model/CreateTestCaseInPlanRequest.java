@@ -34,7 +34,7 @@ public class CreateTestCaseInPlanRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateTestCaseInPlanRequestBody body = null;
+    private CreateTestCaseInPlanRequestBody body;
 
     public CreateTestCaseInPlanRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -56,6 +56,8 @@ public class CreateTestCaseInPlanRequest  {
         this.projectId = projectId;
     }
 
+    
+
     public CreateTestCaseInPlanRequest withPlanId(String planId) {
         this.planId = planId;
         return this;
@@ -75,6 +77,8 @@ public class CreateTestCaseInPlanRequest  {
     public void setPlanId(String planId) {
         this.planId = planId;
     }
+
+    
 
     public CreateTestCaseInPlanRequest withBody(CreateTestCaseInPlanRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateTestCaseInPlanRequest  {
     public void setBody(CreateTestCaseInPlanRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

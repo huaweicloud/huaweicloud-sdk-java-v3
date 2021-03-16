@@ -57,6 +57,8 @@ public class SearchDepartmentByNameRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchDepartmentByNameRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class SearchDepartmentByNameRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public SearchDepartmentByNameRequest withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -96,6 +100,9 @@ public class SearchDepartmentByNameRequest  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

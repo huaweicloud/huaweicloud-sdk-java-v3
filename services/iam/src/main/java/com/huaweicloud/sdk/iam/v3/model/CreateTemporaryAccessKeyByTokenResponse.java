@@ -24,7 +24,7 @@ public class CreateTemporaryAccessKeyByTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credential")
     
-    private Credential credential = null;
+    private Credential credential;
 
     public CreateTemporaryAccessKeyByTokenResponse withCredential(Credential credential) {
         this.credential = credential;
@@ -52,6 +52,9 @@ public class CreateTemporaryAccessKeyByTokenResponse extends SdkResponse {
     public void setCredential(Credential credential) {
         this.credential = credential;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

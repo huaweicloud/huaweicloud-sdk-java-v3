@@ -143,6 +143,8 @@ public class DiskIntargetServer  {
         this.name = name;
     }
 
+    
+
     public DiskIntargetServer withSize(Long size) {
         this.size = size;
         return this;
@@ -165,6 +167,8 @@ public class DiskIntargetServer  {
         this.size = size;
     }
 
+    
+
     public DiskIntargetServer withDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
         return this;
@@ -184,6 +188,9 @@ public class DiskIntargetServer  {
     public void setDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

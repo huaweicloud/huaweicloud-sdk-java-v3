@@ -41,9 +41,6 @@ public class ListPayPerUseCustomerResourcesResponse extends SdkResponse {
 
     
     public ListPayPerUseCustomerResourcesResponse addDataItem(OrderInstanceV2 dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
         this.data.add(dataItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListPayPerUseCustomerResourcesResponse extends SdkResponse {
         this.data = data;
     }
 
+    
+
     public ListPayPerUseCustomerResourcesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListPayPerUseCustomerResourcesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

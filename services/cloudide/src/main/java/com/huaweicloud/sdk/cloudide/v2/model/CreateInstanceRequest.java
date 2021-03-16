@@ -28,7 +28,7 @@ public class CreateInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceParam body = null;
+    private InstanceParam body;
 
     public CreateInstanceRequest withOrgId(String orgId) {
         this.orgId = orgId;
@@ -49,6 +49,8 @@ public class CreateInstanceRequest  {
     public void setOrgId(String orgId) {
         this.orgId = orgId;
     }
+
+    
 
     public CreateInstanceRequest withBody(InstanceParam body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateInstanceRequest  {
     public void setBody(InstanceParam body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

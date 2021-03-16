@@ -29,7 +29,7 @@ public class CreateCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="response")
     
-    private Object response = null;
+    private Object response;
 
     public CreateCommandResponse withCommandId(String commandId) {
         this.commandId = commandId;
@@ -51,6 +51,8 @@ public class CreateCommandResponse extends SdkResponse {
         this.commandId = commandId;
     }
 
+    
+
     public CreateCommandResponse withResponse(Object response) {
         this.response = response;
         return this;
@@ -70,6 +72,9 @@ public class CreateCommandResponse extends SdkResponse {
     public void setResponse(Object response) {
         this.response = response;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -79,6 +79,8 @@ public class TaskProgress  {
         this.total = total;
     }
 
+    
+
     public TaskProgress withProcessing(Integer processing) {
         this.processing = processing;
         return this;
@@ -98,6 +100,8 @@ public class TaskProgress  {
     public void setProcessing(Integer processing) {
         this.processing = processing;
     }
+
+    
 
     public TaskProgress withSuccess(Integer success) {
         this.success = success;
@@ -119,6 +123,8 @@ public class TaskProgress  {
         this.success = success;
     }
 
+    
+
     public TaskProgress withFail(Integer fail) {
         this.fail = fail;
         return this;
@@ -138,6 +144,8 @@ public class TaskProgress  {
     public void setFail(Integer fail) {
         this.fail = fail;
     }
+
+    
 
     public TaskProgress withWaitting(Integer waitting) {
         this.waitting = waitting;
@@ -159,6 +167,8 @@ public class TaskProgress  {
         this.waitting = waitting;
     }
 
+    
+
     public TaskProgress withFailWaitRetry(Integer failWaitRetry) {
         this.failWaitRetry = failWaitRetry;
         return this;
@@ -179,6 +189,8 @@ public class TaskProgress  {
         this.failWaitRetry = failWaitRetry;
     }
 
+    
+
     public TaskProgress withStopped(Integer stopped) {
         this.stopped = stopped;
         return this;
@@ -198,6 +210,9 @@ public class TaskProgress  {
     public void setStopped(Integer stopped) {
         this.stopped = stopped;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

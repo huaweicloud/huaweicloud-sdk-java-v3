@@ -22,7 +22,7 @@ public class CreatePolicyAssignmentsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PolicyAssignmentRequestBody body = null;
+    private PolicyAssignmentRequestBody body;
 
     public CreatePolicyAssignmentsRequest withBody(PolicyAssignmentRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePolicyAssignmentsRequest  {
     public void setBody(PolicyAssignmentRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -85,6 +85,8 @@ public class ListMoreInstantMessagesRequest  {
         this.caseId = caseId;
     }
 
+    
+
     public ListMoreInstantMessagesRequest withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -104,6 +106,8 @@ public class ListMoreInstantMessagesRequest  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ListMoreInstantMessagesRequest withType(Integer type) {
         this.type = type;
@@ -127,6 +131,8 @@ public class ListMoreInstantMessagesRequest  {
         this.type = type;
     }
 
+    
+
     public ListMoreInstantMessagesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -146,6 +152,8 @@ public class ListMoreInstantMessagesRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListMoreInstantMessagesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -168,6 +176,8 @@ public class ListMoreInstantMessagesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListMoreInstantMessagesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -193,6 +203,8 @@ public class ListMoreInstantMessagesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListMoreInstantMessagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -215,6 +227,8 @@ public class ListMoreInstantMessagesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListMoreInstantMessagesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -236,6 +250,9 @@ public class ListMoreInstantMessagesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

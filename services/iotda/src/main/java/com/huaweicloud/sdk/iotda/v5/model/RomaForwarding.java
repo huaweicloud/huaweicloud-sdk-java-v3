@@ -24,7 +24,7 @@ public class RomaForwarding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private List<NetAddress> addresses = new ArrayList<>();
+    private List<NetAddress> addresses = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,6 +76,8 @@ public class RomaForwarding  {
         this.addresses = addresses;
     }
 
+    
+
     public RomaForwarding withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -95,6 +97,8 @@ public class RomaForwarding  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public RomaForwarding withUsername(String username) {
         this.username = username;
@@ -116,6 +120,8 @@ public class RomaForwarding  {
         this.username = username;
     }
 
+    
+
     public RomaForwarding withPassword(String password) {
         this.password = password;
         return this;
@@ -135,6 +141,9 @@ public class RomaForwarding  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -143,6 +143,8 @@ public class ApiPublishReq  {
         this.action = action;
     }
 
+    
+
     public ApiPublishReq withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -162,6 +164,8 @@ public class ApiPublishReq  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public ApiPublishReq withApiId(String apiId) {
         this.apiId = apiId;
@@ -183,6 +187,8 @@ public class ApiPublishReq  {
         this.apiId = apiId;
     }
 
+    
+
     public ApiPublishReq withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -202,6 +208,9 @@ public class ApiPublishReq  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

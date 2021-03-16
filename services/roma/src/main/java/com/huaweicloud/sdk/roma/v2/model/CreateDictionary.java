@@ -79,6 +79,8 @@ public class CreateDictionary  {
         this.name = name;
     }
 
+    
+
     public CreateDictionary withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -99,6 +101,8 @@ public class CreateDictionary  {
         this.remark = remark;
     }
 
+    
+
     public CreateDictionary withCode(String code) {
         this.code = code;
         return this;
@@ -118,6 +122,8 @@ public class CreateDictionary  {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
 
     public CreateDictionary withOrder(Integer order) {
         this.order = order;
@@ -141,6 +147,8 @@ public class CreateDictionary  {
         this.order = order;
     }
 
+    
+
     public CreateDictionary withExtendOne(String extendOne) {
         this.extendOne = extendOne;
         return this;
@@ -160,6 +168,8 @@ public class CreateDictionary  {
     public void setExtendOne(String extendOne) {
         this.extendOne = extendOne;
     }
+
+    
 
     public CreateDictionary withExtendTwo(String extendTwo) {
         this.extendTwo = extendTwo;
@@ -181,6 +191,8 @@ public class CreateDictionary  {
         this.extendTwo = extendTwo;
     }
 
+    
+
     public CreateDictionary withParentCode(String parentCode) {
         this.parentCode = parentCode;
         return this;
@@ -200,6 +212,9 @@ public class CreateDictionary  {
     public void setParentCode(String parentCode) {
         this.parentCode = parentCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

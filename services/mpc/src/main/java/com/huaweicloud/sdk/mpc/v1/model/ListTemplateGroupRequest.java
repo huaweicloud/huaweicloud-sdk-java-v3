@@ -35,13 +35,13 @@ public class ListTemplateGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListTemplateGroupRequest withGroupId(List<String> groupId) {
         this.groupId = groupId;
@@ -50,9 +50,6 @@ public class ListTemplateGroupRequest  {
 
     
     public ListTemplateGroupRequest addGroupIdItem(String groupIdItem) {
-        if (this.groupId == null) {
-            this.groupId = new ArrayList<>();
-        }
         this.groupId.add(groupIdItem);
         return this;
     }
@@ -77,6 +74,8 @@ public class ListTemplateGroupRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public ListTemplateGroupRequest withGroupName(List<String> groupName) {
         this.groupName = groupName;
         return this;
@@ -84,9 +83,6 @@ public class ListTemplateGroupRequest  {
 
     
     public ListTemplateGroupRequest addGroupNameItem(String groupNameItem) {
-        if (this.groupName == null) {
-            this.groupName = new ArrayList<>();
-        }
         this.groupName.add(groupNameItem);
         return this;
     }
@@ -111,6 +107,8 @@ public class ListTemplateGroupRequest  {
         this.groupName = groupName;
     }
 
+    
+
     public ListTemplateGroupRequest withPage(Integer page) {
         this.page = page;
         return this;
@@ -133,6 +131,8 @@ public class ListTemplateGroupRequest  {
         this.page = page;
     }
 
+    
+
     public ListTemplateGroupRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -154,6 +154,9 @@ public class ListTemplateGroupRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

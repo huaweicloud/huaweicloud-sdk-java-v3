@@ -142,7 +142,7 @@ public class PrePaidServerRootVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private PrePaidServerRootVolumeExtendParam extendparam = null;
+    private PrePaidServerRootVolumeExtendParam extendparam;
     /**
      * 云服务器系统盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
      */
@@ -232,7 +232,7 @@ public class PrePaidServerRootVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hw:passthrough")
     
-    private Boolean hwPassthrough = false;
+    private Boolean hwPassthrough;
 
     public PrePaidServerRootVolume withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
@@ -253,6 +253,8 @@ public class PrePaidServerRootVolume  {
     public void setVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
     }
+
+    
 
     public PrePaidServerRootVolume withSize(Integer size) {
         this.size = size;
@@ -275,6 +277,8 @@ public class PrePaidServerRootVolume  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
 
     public PrePaidServerRootVolume withExtendparam(PrePaidServerRootVolumeExtendParam extendparam) {
         this.extendparam = extendparam;
@@ -303,6 +307,8 @@ public class PrePaidServerRootVolume  {
         this.extendparam = extendparam;
     }
 
+    
+
     public PrePaidServerRootVolume withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -322,6 +328,8 @@ public class PrePaidServerRootVolume  {
     public void setClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
     }
+
+    
 
     public PrePaidServerRootVolume withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -343,6 +351,8 @@ public class PrePaidServerRootVolume  {
         this.clusterId = clusterId;
     }
 
+    
+
     public PrePaidServerRootVolume withHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
         return this;
@@ -362,6 +372,9 @@ public class PrePaidServerRootVolume  {
     public void setHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

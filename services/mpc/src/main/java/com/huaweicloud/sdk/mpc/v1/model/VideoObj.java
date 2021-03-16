@@ -57,6 +57,8 @@ public class VideoObj  {
         this.width = width;
     }
 
+    
+
     public VideoObj withHeight(Integer height) {
         this.height = height;
         return this;
@@ -79,6 +81,8 @@ public class VideoObj  {
         this.height = height;
     }
 
+    
+
     public VideoObj withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
@@ -100,6 +104,9 @@ public class VideoObj  {
     public void setBitrate(Integer bitrate) {
         this.bitrate = bitrate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

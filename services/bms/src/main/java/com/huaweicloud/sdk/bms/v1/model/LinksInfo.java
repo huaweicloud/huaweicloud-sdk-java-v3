@@ -55,6 +55,8 @@ public class LinksInfo  {
         this.rel = rel;
     }
 
+    
+
     public LinksInfo withHref(String href) {
         this.href = href;
         return this;
@@ -75,6 +77,8 @@ public class LinksInfo  {
         this.href = href;
     }
 
+    
+
     public LinksInfo withType(String type) {
         this.type = type;
         return this;
@@ -94,6 +98,9 @@ public class LinksInfo  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

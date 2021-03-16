@@ -22,7 +22,7 @@ public class CheckProjectNameV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CheckProjectNameRequestV4 body = null;
+    private CheckProjectNameRequestV4 body;
 
     public CheckProjectNameV4Request withBody(CheckProjectNameRequestV4 body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CheckProjectNameV4Request  {
     public void setBody(CheckProjectNameRequestV4 body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class CheckpointReplicateParam  {
         this.autoTrigger = autoTrigger;
     }
 
+    
+
     public CheckpointReplicateParam withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
@@ -92,6 +94,8 @@ public class CheckpointReplicateParam  {
     public void setDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
     }
+
+    
 
     public CheckpointReplicateParam withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
@@ -113,6 +117,8 @@ public class CheckpointReplicateParam  {
         this.destinationRegion = destinationRegion;
     }
 
+    
+
     public CheckpointReplicateParam withDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
         return this;
@@ -132,6 +138,8 @@ public class CheckpointReplicateParam  {
     public void setDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
     }
+
+    
 
     public CheckpointReplicateParam withEnableAcceleration(Boolean enableAcceleration) {
         this.enableAcceleration = enableAcceleration;
@@ -153,6 +161,8 @@ public class CheckpointReplicateParam  {
         this.enableAcceleration = enableAcceleration;
     }
 
+    
+
     public CheckpointReplicateParam withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -172,6 +182,9 @@ public class CheckpointReplicateParam  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

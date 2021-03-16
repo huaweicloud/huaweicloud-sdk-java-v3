@@ -79,6 +79,8 @@ public class QueryRedisConfig  {
         this.paramValue = paramValue;
     }
 
+    
+
     public QueryRedisConfig withValueType(String valueType) {
         this.valueType = valueType;
         return this;
@@ -98,6 +100,8 @@ public class QueryRedisConfig  {
     public void setValueType(String valueType) {
         this.valueType = valueType;
     }
+
+    
 
     public QueryRedisConfig withValueRange(String valueRange) {
         this.valueRange = valueRange;
@@ -119,6 +123,8 @@ public class QueryRedisConfig  {
         this.valueRange = valueRange;
     }
 
+    
+
     public QueryRedisConfig withDescription(String description) {
         this.description = description;
         return this;
@@ -138,6 +144,8 @@ public class QueryRedisConfig  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public QueryRedisConfig withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -159,6 +167,8 @@ public class QueryRedisConfig  {
         this.defaultValue = defaultValue;
     }
 
+    
+
     public QueryRedisConfig withParamName(String paramName) {
         this.paramName = paramName;
         return this;
@@ -179,6 +189,8 @@ public class QueryRedisConfig  {
         this.paramName = paramName;
     }
 
+    
+
     public QueryRedisConfig withParamId(String paramId) {
         this.paramId = paramId;
         return this;
@@ -198,6 +210,9 @@ public class QueryRedisConfig  {
     public void setParamId(String paramId) {
         this.paramId = paramId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

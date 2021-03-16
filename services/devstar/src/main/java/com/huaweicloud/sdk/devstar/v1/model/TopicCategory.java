@@ -61,6 +61,8 @@ public class TopicCategory  {
         this.topicId = topicId;
     }
 
+    
+
     public TopicCategory withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
@@ -80,6 +82,8 @@ public class TopicCategory  {
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
+
+    
 
     public TopicCategory withCategoryId(String categoryId) {
         this.categoryId = categoryId;
@@ -101,6 +105,8 @@ public class TopicCategory  {
         this.categoryId = categoryId;
     }
 
+    
+
     public TopicCategory withCategoryName(String categoryName) {
         this.categoryName = categoryName;
         return this;
@@ -120,6 +126,9 @@ public class TopicCategory  {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

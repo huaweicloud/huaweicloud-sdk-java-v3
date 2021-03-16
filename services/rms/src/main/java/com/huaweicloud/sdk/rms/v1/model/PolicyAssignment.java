@@ -44,7 +44,7 @@ public class PolicyAssignment  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_filter")
     
-    private PolicyFilterDefinition policyFilter = null;
+    private PolicyFilterDefinition policyFilter;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,6 +96,8 @@ public class PolicyAssignment  {
         this.id = id;
     }
 
+    
+
     public PolicyAssignment withName(String name) {
         this.name = name;
         return this;
@@ -116,6 +118,8 @@ public class PolicyAssignment  {
         this.name = name;
     }
 
+    
+
     public PolicyAssignment withDescription(String description) {
         this.description = description;
         return this;
@@ -135,6 +139,8 @@ public class PolicyAssignment  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public PolicyAssignment withPolicyFilter(PolicyFilterDefinition policyFilter) {
         this.policyFilter = policyFilter;
@@ -163,6 +169,8 @@ public class PolicyAssignment  {
         this.policyFilter = policyFilter;
     }
 
+    
+
     public PolicyAssignment withState(String state) {
         this.state = state;
         return this;
@@ -182,6 +190,8 @@ public class PolicyAssignment  {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public PolicyAssignment withCreated(String created) {
         this.created = created;
@@ -203,6 +213,8 @@ public class PolicyAssignment  {
         this.created = created;
     }
 
+    
+
     public PolicyAssignment withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -222,6 +234,8 @@ public class PolicyAssignment  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public PolicyAssignment withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
@@ -243,6 +257,8 @@ public class PolicyAssignment  {
         this.policyDefinitionId = policyDefinitionId;
     }
 
+    
+
     public PolicyAssignment withParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
         return this;
@@ -251,9 +267,6 @@ public class PolicyAssignment  {
     
 
     public PolicyAssignment putParametersItem(String key, PolicyParameterValue parametersItem) {
-         if (this.parameters == null) {
-            this.parameters = new HashMap<>();
-         }
         this.parameters.put(key, parametersItem);
         return this;
     }
@@ -276,6 +289,9 @@ public class PolicyAssignment  {
     public void setParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

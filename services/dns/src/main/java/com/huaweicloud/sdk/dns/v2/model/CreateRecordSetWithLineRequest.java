@@ -28,7 +28,7 @@ public class CreateRecordSetWithLineRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateRecordSetWithLineReq body = null;
+    private CreateRecordSetWithLineReq body;
 
     public CreateRecordSetWithLineRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -49,6 +49,8 @@ public class CreateRecordSetWithLineRequest  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public CreateRecordSetWithLineRequest withBody(CreateRecordSetWithLineReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateRecordSetWithLineRequest  {
     public void setBody(CreateRecordSetWithLineReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

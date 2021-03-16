@@ -42,6 +42,9 @@ public class DeleteEnvironmentRequest  {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

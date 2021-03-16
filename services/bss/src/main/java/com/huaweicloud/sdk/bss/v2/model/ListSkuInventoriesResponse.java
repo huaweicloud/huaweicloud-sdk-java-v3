@@ -35,9 +35,6 @@ public class ListSkuInventoriesResponse extends SdkResponse {
 
     
     public ListSkuInventoriesResponse addSkuInventoriesItem(SkuInventory skuInventoriesItem) {
-        if (this.skuInventories == null) {
-            this.skuInventories = new ArrayList<>();
-        }
         this.skuInventories.add(skuInventoriesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListSkuInventoriesResponse extends SdkResponse {
     public void setSkuInventories(List<SkuInventory> skuInventories) {
         this.skuInventories = skuInventories;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

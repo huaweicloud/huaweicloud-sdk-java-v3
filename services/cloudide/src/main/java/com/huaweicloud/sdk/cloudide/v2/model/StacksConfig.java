@@ -23,13 +23,13 @@ public class StacksConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    private StacksAttribute attributes = null;
+    private StacksAttribute attributes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recipe")
     
-    private Recipe recipe = null;
+    private Recipe recipe;
 
     public StacksConfig withAttributes(StacksAttribute attributes) {
         this.attributes = attributes;
@@ -58,6 +58,8 @@ public class StacksConfig  {
         this.attributes = attributes;
     }
 
+    
+
     public StacksConfig withRecipe(Recipe recipe) {
         this.recipe = recipe;
         return this;
@@ -84,6 +86,9 @@ public class StacksConfig  {
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

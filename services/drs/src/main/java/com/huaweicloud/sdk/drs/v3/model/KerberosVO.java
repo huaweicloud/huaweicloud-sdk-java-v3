@@ -61,6 +61,8 @@ public class KerberosVO  {
         this.krb5ConfFile = krb5ConfFile;
     }
 
+    
+
     public KerberosVO withKeyTabFile(String keyTabFile) {
         this.keyTabFile = keyTabFile;
         return this;
@@ -80,6 +82,8 @@ public class KerberosVO  {
     public void setKeyTabFile(String keyTabFile) {
         this.keyTabFile = keyTabFile;
     }
+
+    
 
     public KerberosVO withDomainName(String domainName) {
         this.domainName = domainName;
@@ -101,6 +105,8 @@ public class KerberosVO  {
         this.domainName = domainName;
     }
 
+    
+
     public KerberosVO withUserPrincipal(String userPrincipal) {
         this.userPrincipal = userPrincipal;
         return this;
@@ -120,6 +126,9 @@ public class KerberosVO  {
     public void setUserPrincipal(String userPrincipal) {
         this.userPrincipal = userPrincipal;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

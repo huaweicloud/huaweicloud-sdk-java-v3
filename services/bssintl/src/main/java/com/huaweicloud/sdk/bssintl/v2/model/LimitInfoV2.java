@@ -79,6 +79,8 @@ public class LimitInfoV2  {
         this.useLimitiInfoId = useLimitiInfoId;
     }
 
+    
+
     public LimitInfoV2 withLimitKey(String limitKey) {
         this.limitKey = limitKey;
         return this;
@@ -98,6 +100,8 @@ public class LimitInfoV2  {
     public void setLimitKey(String limitKey) {
         this.limitKey = limitKey;
     }
+
+    
 
     public LimitInfoV2 withValue1(String value1) {
         this.value1 = value1;
@@ -119,6 +123,8 @@ public class LimitInfoV2  {
         this.value1 = value1;
     }
 
+    
+
     public LimitInfoV2 withValue2(String value2) {
         this.value2 = value2;
         return this;
@@ -138,6 +144,8 @@ public class LimitInfoV2  {
     public void setValue2(String value2) {
         this.value2 = value2;
     }
+
+    
 
     public LimitInfoV2 withValueUnit(String valueUnit) {
         this.valueUnit = valueUnit;
@@ -159,6 +167,8 @@ public class LimitInfoV2  {
         this.valueUnit = valueUnit;
     }
 
+    
+
     public LimitInfoV2 withLimitType(String limitType) {
         this.limitType = limitType;
         return this;
@@ -179,6 +189,8 @@ public class LimitInfoV2  {
         this.limitType = limitType;
     }
 
+    
+
     public LimitInfoV2 withPromotionPlanId(String promotionPlanId) {
         this.promotionPlanId = promotionPlanId;
         return this;
@@ -198,6 +210,9 @@ public class LimitInfoV2  {
     public void setPromotionPlanId(String promotionPlanId) {
         this.promotionPlanId = promotionPlanId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

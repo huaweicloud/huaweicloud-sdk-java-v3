@@ -132,6 +132,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public DeletePublicZoneResponse withName(String name) {
         this.name = name;
         return this;
@@ -151,6 +153,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public DeletePublicZoneResponse withDescription(String description) {
         this.description = description;
@@ -172,6 +176,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public DeletePublicZoneResponse withEmail(String email) {
         this.email = email;
         return this;
@@ -191,6 +197,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public DeletePublicZoneResponse withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -212,6 +220,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.zoneType = zoneType;
     }
 
+    
+
     public DeletePublicZoneResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -231,6 +241,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public DeletePublicZoneResponse withSerial(Integer serial) {
         this.serial = serial;
@@ -252,6 +264,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.serial = serial;
     }
 
+    
+
     public DeletePublicZoneResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -271,6 +285,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public DeletePublicZoneResponse withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
@@ -292,6 +308,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.recordNum = recordNum;
     }
 
+    
+
     public DeletePublicZoneResponse withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -311,6 +329,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public DeletePublicZoneResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -332,6 +352,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public DeletePublicZoneResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -351,6 +373,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public DeletePublicZoneResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -372,6 +396,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public DeletePublicZoneResponse withMasters(String masters) {
         this.masters = masters;
         return this;
@@ -392,6 +418,8 @@ public class DeletePublicZoneResponse extends SdkResponse {
         this.masters = masters;
     }
 
+    
+
     public DeletePublicZoneResponse withLinks(List<PageLink> links) {
         this.links = links;
         return this;
@@ -399,9 +427,6 @@ public class DeletePublicZoneResponse extends SdkResponse {
 
     
     public DeletePublicZoneResponse addLinksItem(PageLink linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -425,6 +450,9 @@ public class DeletePublicZoneResponse extends SdkResponse {
     public void setLinks(List<PageLink> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

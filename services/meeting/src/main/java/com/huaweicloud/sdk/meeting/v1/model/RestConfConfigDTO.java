@@ -21,7 +21,7 @@ public class RestConfConfigDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="callInRestriction")
     
-    private Integer callInRestriction = 0;
+    private Integer callInRestriction;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,6 +81,8 @@ public class RestConfConfigDTO  {
         this.callInRestriction = callInRestriction;
     }
 
+    
+
     public RestConfConfigDTO withIsSendNotify(Boolean isSendNotify) {
         this.isSendNotify = isSendNotify;
         return this;
@@ -100,6 +102,8 @@ public class RestConfConfigDTO  {
     public void setIsSendNotify(Boolean isSendNotify) {
         this.isSendNotify = isSendNotify;
     }
+
+    
 
     public RestConfConfigDTO withIsSendSms(Boolean isSendSms) {
         this.isSendSms = isSendSms;
@@ -121,6 +125,8 @@ public class RestConfConfigDTO  {
         this.isSendSms = isSendSms;
     }
 
+    
+
     public RestConfConfigDTO withIsSendCalendar(Boolean isSendCalendar) {
         this.isSendCalendar = isSendCalendar;
         return this;
@@ -140,6 +146,8 @@ public class RestConfConfigDTO  {
     public void setIsSendCalendar(Boolean isSendCalendar) {
         this.isSendCalendar = isSendCalendar;
     }
+
+    
 
     public RestConfConfigDTO withIsAutoMute(Boolean isAutoMute) {
         this.isAutoMute = isAutoMute;
@@ -161,6 +169,8 @@ public class RestConfConfigDTO  {
         this.isAutoMute = isAutoMute;
     }
 
+    
+
     public RestConfConfigDTO withIsGuestFreePwd(Boolean isGuestFreePwd) {
         this.isGuestFreePwd = isGuestFreePwd;
         return this;
@@ -181,6 +191,8 @@ public class RestConfConfigDTO  {
         this.isGuestFreePwd = isGuestFreePwd;
     }
 
+    
+
     public RestConfConfigDTO withAllowGuestStartConf(Boolean allowGuestStartConf) {
         this.allowGuestStartConf = allowGuestStartConf;
         return this;
@@ -200,6 +212,9 @@ public class RestConfConfigDTO  {
     public void setAllowGuestStartConf(Boolean allowGuestStartConf) {
         this.allowGuestStartConf = allowGuestStartConf;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -39,7 +39,7 @@ public class ListRequestPropertiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class ListRequestPropertiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListRequestPropertiesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -79,6 +79,8 @@ public class ListRequestPropertiesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListRequestPropertiesRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -98,6 +100,8 @@ public class ListRequestPropertiesRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public ListRequestPropertiesRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
@@ -121,6 +125,8 @@ public class ListRequestPropertiesRequest  {
         this.commandId = commandId;
     }
 
+    
+
     public ListRequestPropertiesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -142,6 +148,8 @@ public class ListRequestPropertiesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListRequestPropertiesRequest withRequestId(Integer requestId) {
         this.requestId = requestId;
@@ -165,6 +173,8 @@ public class ListRequestPropertiesRequest  {
         this.requestId = requestId;
     }
 
+    
+
     public ListRequestPropertiesRequest withRequestName(String requestName) {
         this.requestName = requestName;
         return this;
@@ -184,6 +194,8 @@ public class ListRequestPropertiesRequest  {
     public void setRequestName(String requestName) {
         this.requestName = requestName;
     }
+
+    
 
     public ListRequestPropertiesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -206,6 +218,9 @@ public class ListRequestPropertiesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

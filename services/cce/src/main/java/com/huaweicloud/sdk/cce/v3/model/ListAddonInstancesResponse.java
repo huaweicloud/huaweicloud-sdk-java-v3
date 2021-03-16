@@ -26,7 +26,7 @@ public class ListAddonInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,7 +38,7 @@ public class ListAddonInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Addon";
+    private String kind;
 
     public ListAddonInstancesResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -60,6 +60,8 @@ public class ListAddonInstancesResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public ListAddonInstancesResponse withItems(List<AddonInstance> items) {
         this.items = items;
         return this;
@@ -67,9 +69,6 @@ public class ListAddonInstancesResponse extends SdkResponse {
 
     
     public ListAddonInstancesResponse addItemsItem(AddonInstance itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListAddonInstancesResponse extends SdkResponse {
         this.items = items;
     }
 
+    
+
     public ListAddonInstancesResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -113,6 +114,9 @@ public class ListAddonInstancesResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

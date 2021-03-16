@@ -78,6 +78,8 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListMqsInstanceTopicsResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -98,6 +100,8 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListMqsInstanceTopicsResponse withPermissions(List<String> permissions) {
         this.permissions = permissions;
         return this;
@@ -105,9 +109,6 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
 
     
     public ListMqsInstanceTopicsResponse addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -132,6 +133,8 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
+    
+
     public ListMqsInstanceTopicsResponse withTopics(List<ListInstanceTopicsRespTopics> topics) {
         this.topics = topics;
         return this;
@@ -139,9 +142,6 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
 
     
     public ListMqsInstanceTopicsResponse addTopicsItem(ListInstanceTopicsRespTopics topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
         this.topics.add(topicsItem);
         return this;
     }
@@ -166,6 +166,8 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.topics = topics;
     }
 
+    
+
     public ListMqsInstanceTopicsResponse withRemainPartitions(Integer remainPartitions) {
         this.remainPartitions = remainPartitions;
         return this;
@@ -186,6 +188,8 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.remainPartitions = remainPartitions;
     }
 
+    
+
     public ListMqsInstanceTopicsResponse withMaxPartitions(Integer maxPartitions) {
         this.maxPartitions = maxPartitions;
         return this;
@@ -205,6 +209,9 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
     public void setMaxPartitions(Integer maxPartitions) {
         this.maxPartitions = maxPartitions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class SetRoleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestChairTokenReqBody body = null;
+    private RestChairTokenReqBody body;
 
     public SetRoleRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -62,6 +62,8 @@ public class SetRoleRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public SetRoleRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -81,6 +83,8 @@ public class SetRoleRequest  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
 
     public SetRoleRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -103,6 +107,8 @@ public class SetRoleRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public SetRoleRequest withBody(RestChairTokenReqBody body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class SetRoleRequest  {
     public void setBody(RestChairTokenReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

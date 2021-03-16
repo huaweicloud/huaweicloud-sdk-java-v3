@@ -104,7 +104,7 @@ public class ListResourceInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ShowTagsRequestBody body = null;
+    private ShowTagsRequestBody body;
 
     public ListResourceInstancesRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
@@ -125,6 +125,8 @@ public class ListResourceInstancesRequest  {
     public void setResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
     }
+
+    
 
     public ListResourceInstancesRequest withBody(ShowTagsRequestBody body) {
         this.body = body;
@@ -152,6 +154,9 @@ public class ListResourceInstancesRequest  {
     public void setBody(ShowTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

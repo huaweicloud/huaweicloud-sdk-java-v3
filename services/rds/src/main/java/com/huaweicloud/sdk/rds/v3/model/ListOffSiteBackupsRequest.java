@@ -169,6 +169,8 @@ public class ListOffSiteBackupsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListOffSiteBackupsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -188,6 +190,8 @@ public class ListOffSiteBackupsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListOffSiteBackupsRequest withBackupId(String backupId) {
         this.backupId = backupId;
@@ -209,6 +213,8 @@ public class ListOffSiteBackupsRequest  {
         this.backupId = backupId;
     }
 
+    
+
     public ListOffSiteBackupsRequest withBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
         return this;
@@ -228,6 +234,8 @@ public class ListOffSiteBackupsRequest  {
     public void setBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
     }
+
+    
 
     public ListOffSiteBackupsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -249,6 +257,8 @@ public class ListOffSiteBackupsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListOffSiteBackupsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -272,6 +282,8 @@ public class ListOffSiteBackupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListOffSiteBackupsRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -292,6 +304,8 @@ public class ListOffSiteBackupsRequest  {
         this.beginTime = beginTime;
     }
 
+    
+
     public ListOffSiteBackupsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -311,6 +325,9 @@ public class ListOffSiteBackupsRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

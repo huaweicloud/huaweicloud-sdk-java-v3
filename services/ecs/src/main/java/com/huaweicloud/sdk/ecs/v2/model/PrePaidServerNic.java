@@ -40,7 +40,7 @@ public class PrePaidServerNic  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_bandwidth")
     
-    private PrePaidServerIpv6Bandwidth ipv6Bandwidth = null;
+    private PrePaidServerIpv6Bandwidth ipv6Bandwidth;
 
     public PrePaidServerNic withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -62,6 +62,8 @@ public class PrePaidServerNic  {
         this.subnetId = subnetId;
     }
 
+    
+
     public PrePaidServerNic withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -82,6 +84,8 @@ public class PrePaidServerNic  {
         this.ipAddress = ipAddress;
     }
 
+    
+
     public PrePaidServerNic withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -101,6 +105,8 @@ public class PrePaidServerNic  {
     public void setIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
     }
+
+    
 
     public PrePaidServerNic withIpv6Bandwidth(PrePaidServerIpv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
@@ -128,6 +134,9 @@ public class PrePaidServerNic  {
     public void setIpv6Bandwidth(PrePaidServerIpv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

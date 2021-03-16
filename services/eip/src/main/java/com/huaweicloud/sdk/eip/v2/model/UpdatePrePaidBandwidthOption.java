@@ -49,6 +49,8 @@ public class UpdatePrePaidBandwidthOption  {
         this.name = name;
     }
 
+    
+
     public UpdatePrePaidBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
@@ -68,6 +70,9 @@ public class UpdatePrePaidBandwidthOption  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

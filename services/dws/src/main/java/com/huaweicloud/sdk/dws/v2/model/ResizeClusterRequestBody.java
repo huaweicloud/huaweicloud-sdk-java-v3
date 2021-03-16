@@ -22,7 +22,7 @@ public class ResizeClusterRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scale_out")
     
-    private ScaleOut scaleOut = null;
+    private ScaleOut scaleOut;
 
     public ResizeClusterRequestBody withScaleOut(ScaleOut scaleOut) {
         this.scaleOut = scaleOut;
@@ -50,6 +50,9 @@ public class ResizeClusterRequestBody  {
     public void setScaleOut(ScaleOut scaleOut) {
         this.scaleOut = scaleOut;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class AddApplicationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddApplication body = null;
+    private AddApplication body;
 
     public AddApplicationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class AddApplicationRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AddApplicationRequest withBody(AddApplication body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AddApplicationRequest  {
     public void setBody(AddApplication body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

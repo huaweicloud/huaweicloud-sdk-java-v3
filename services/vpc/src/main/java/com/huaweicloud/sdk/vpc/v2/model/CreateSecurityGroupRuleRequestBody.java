@@ -22,7 +22,7 @@ public class CreateSecurityGroupRuleRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_rule")
     
-    private CreateSecurityGroupRuleOption securityGroupRule = null;
+    private CreateSecurityGroupRuleOption securityGroupRule;
 
     public CreateSecurityGroupRuleRequestBody withSecurityGroupRule(CreateSecurityGroupRuleOption securityGroupRule) {
         this.securityGroupRule = securityGroupRule;
@@ -50,6 +50,9 @@ public class CreateSecurityGroupRuleRequestBody  {
     public void setSecurityGroupRule(CreateSecurityGroupRuleOption securityGroupRule) {
         this.securityGroupRule = securityGroupRule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

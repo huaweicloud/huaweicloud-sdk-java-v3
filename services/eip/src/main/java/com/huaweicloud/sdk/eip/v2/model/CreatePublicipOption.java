@@ -115,7 +115,7 @@ public class CreatePublicipOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_version")
     
-    private IpVersionEnum ipVersion = IpVersionEnum.NUMBER_4;
+    private IpVersionEnum ipVersion;
 
     public CreatePublicipOption withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
@@ -137,6 +137,8 @@ public class CreatePublicipOption  {
         this.ipAddress = ipAddress;
     }
 
+    
+
     public CreatePublicipOption withType(String type) {
         this.type = type;
         return this;
@@ -157,6 +159,8 @@ public class CreatePublicipOption  {
         this.type = type;
     }
 
+    
+
     public CreatePublicipOption withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -176,6 +180,9 @@ public class CreatePublicipOption  {
     public void setIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

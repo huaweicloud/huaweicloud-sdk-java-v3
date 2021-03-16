@@ -54,6 +54,8 @@ public class ListDDosStatusResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListDDosStatusResponse withDdosStatus(List<DDosStatus> ddosStatus) {
         this.ddosStatus = ddosStatus;
         return this;
@@ -61,9 +63,6 @@ public class ListDDosStatusResponse extends SdkResponse {
 
     
     public ListDDosStatusResponse addDdosStatusItem(DDosStatus ddosStatusItem) {
-        if (this.ddosStatus == null) {
-            this.ddosStatus = new ArrayList<>();
-        }
         this.ddosStatus.add(ddosStatusItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListDDosStatusResponse extends SdkResponse {
     public void setDdosStatus(List<DDosStatus> ddosStatus) {
         this.ddosStatus = ddosStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

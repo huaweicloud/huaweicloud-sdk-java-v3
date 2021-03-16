@@ -362,7 +362,7 @@ public class Config  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_time")
     
-    private OffsetDateTime configTime = null;
+    private OffsetDateTime configTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -396,6 +396,8 @@ public class Config  {
         this.configId = configId;
     }
 
+    
+
     public Config withConfigName(ConfigNameEnum configName) {
         this.configName = configName;
         return this;
@@ -415,6 +417,8 @@ public class Config  {
     public void setConfigName(ConfigNameEnum configName) {
         this.configName = configName;
     }
+
+    
 
     public Config withConfigValue(String configValue) {
         this.configValue = configValue;
@@ -436,6 +440,8 @@ public class Config  {
         this.configValue = configValue;
     }
 
+    
+
     public Config withConfigTime(OffsetDateTime configTime) {
         this.configTime = configTime;
         return this;
@@ -455,6 +461,8 @@ public class Config  {
     public void setConfigTime(OffsetDateTime configTime) {
         this.configTime = configTime;
     }
+
+    
 
     public Config withRemark(String remark) {
         this.remark = remark;
@@ -476,6 +484,8 @@ public class Config  {
         this.remark = remark;
     }
 
+    
+
     public Config withUsed(Integer used) {
         this.used = used;
         return this;
@@ -495,6 +505,9 @@ public class Config  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

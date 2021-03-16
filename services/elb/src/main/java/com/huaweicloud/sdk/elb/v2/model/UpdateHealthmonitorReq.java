@@ -103,6 +103,8 @@ public class UpdateHealthmonitorReq  {
         this.name = name;
     }
 
+    
+
     public UpdateHealthmonitorReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -122,6 +124,8 @@ public class UpdateHealthmonitorReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public UpdateHealthmonitorReq withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
@@ -145,6 +149,8 @@ public class UpdateHealthmonitorReq  {
         this.monitorPort = monitorPort;
     }
 
+    
+
     public UpdateHealthmonitorReq withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -167,6 +173,8 @@ public class UpdateHealthmonitorReq  {
         this.timeout = timeout;
     }
 
+    
+
     public UpdateHealthmonitorReq withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
         return this;
@@ -186,6 +194,8 @@ public class UpdateHealthmonitorReq  {
     public void setExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
     }
+
+    
 
     public UpdateHealthmonitorReq withDomainName(String domainName) {
         this.domainName = domainName;
@@ -207,6 +217,8 @@ public class UpdateHealthmonitorReq  {
         this.domainName = domainName;
     }
 
+    
+
     public UpdateHealthmonitorReq withUrlPath(String urlPath) {
         this.urlPath = urlPath;
         return this;
@@ -227,6 +239,8 @@ public class UpdateHealthmonitorReq  {
         this.urlPath = urlPath;
     }
 
+    
+
     public UpdateHealthmonitorReq withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
@@ -246,6 +260,8 @@ public class UpdateHealthmonitorReq  {
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
+
+    
 
     public UpdateHealthmonitorReq withDelay(Integer delay) {
         this.delay = delay;
@@ -269,6 +285,8 @@ public class UpdateHealthmonitorReq  {
         this.delay = delay;
     }
 
+    
+
     public UpdateHealthmonitorReq withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
         return this;
@@ -291,6 +309,8 @@ public class UpdateHealthmonitorReq  {
         this.maxRetries = maxRetries;
     }
 
+    
+
     public UpdateHealthmonitorReq withType(String type) {
         this.type = type;
         return this;
@@ -310,6 +330,9 @@ public class UpdateHealthmonitorReq  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

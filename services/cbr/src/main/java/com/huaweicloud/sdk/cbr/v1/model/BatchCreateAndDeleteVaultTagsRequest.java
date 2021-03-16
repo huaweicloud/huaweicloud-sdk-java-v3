@@ -28,7 +28,7 @@ public class BatchCreateAndDeleteVaultTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BulkCreateAndDeleteVaultTagsReq body = null;
+    private BulkCreateAndDeleteVaultTagsReq body;
 
     public BatchCreateAndDeleteVaultTagsRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
@@ -49,6 +49,8 @@ public class BatchCreateAndDeleteVaultTagsRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public BatchCreateAndDeleteVaultTagsRequest withBody(BulkCreateAndDeleteVaultTagsReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchCreateAndDeleteVaultTagsRequest  {
     public void setBody(BulkCreateAndDeleteVaultTagsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

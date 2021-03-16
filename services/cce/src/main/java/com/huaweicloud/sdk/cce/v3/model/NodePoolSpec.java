@@ -28,7 +28,7 @@ public class NodePoolSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="autoscaling")
     
-    private NodePoolNodeAutoscaling autoscaling = null;
+    private NodePoolNodeAutoscaling autoscaling;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,13 +40,13 @@ public class NodePoolSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodeManagement")
     
-    private NodeManagement nodeManagement = null;
+    private NodeManagement nodeManagement;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodeTemplate")
     
-    private V3NodeSpec nodeTemplate = null;
+    private V3NodeSpec nodeTemplate;
     /**
      * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
      */
@@ -159,6 +159,8 @@ public class NodePoolSpec  {
         this.autoscaling = autoscaling;
     }
 
+    
+
     public NodePoolSpec withInitialNodeCount(Integer initialNodeCount) {
         this.initialNodeCount = initialNodeCount;
         return this;
@@ -178,6 +180,8 @@ public class NodePoolSpec  {
     public void setInitialNodeCount(Integer initialNodeCount) {
         this.initialNodeCount = initialNodeCount;
     }
+
+    
 
     public NodePoolSpec withNodeManagement(NodeManagement nodeManagement) {
         this.nodeManagement = nodeManagement;
@@ -206,6 +210,8 @@ public class NodePoolSpec  {
         this.nodeManagement = nodeManagement;
     }
 
+    
+
     public NodePoolSpec withNodeTemplate(V3NodeSpec nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
         return this;
@@ -233,6 +239,8 @@ public class NodePoolSpec  {
         this.nodeTemplate = nodeTemplate;
     }
 
+    
+
     public NodePoolSpec withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -252,6 +260,9 @@ public class NodePoolSpec  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

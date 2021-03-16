@@ -61,6 +61,8 @@ public class UsageType  {
         this.code = code;
     }
 
+    
+
     public UsageType withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class UsageType  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UsageType withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
@@ -101,6 +105,8 @@ public class UsageType  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
+    
+
     public UsageType withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -120,6 +126,9 @@ public class UsageType  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -627,6 +627,8 @@ public class Billing  {
         this.allocated = allocated;
     }
 
+    
+
     public Billing withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -646,6 +648,8 @@ public class Billing  {
     public void setChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
     }
+
+    
 
     public Billing withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
@@ -667,6 +671,8 @@ public class Billing  {
         this.cloudType = cloudType;
     }
 
+    
+
     public Billing withConsistentLevel(String consistentLevel) {
         this.consistentLevel = consistentLevel;
         return this;
@@ -686,6 +692,8 @@ public class Billing  {
     public void setConsistentLevel(String consistentLevel) {
         this.consistentLevel = consistentLevel;
     }
+
+    
 
     public Billing withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
@@ -707,6 +715,8 @@ public class Billing  {
         this.objectType = objectType;
     }
 
+    
+
     public Billing withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -726,6 +736,8 @@ public class Billing  {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    
 
     public Billing withProductId(String productId) {
         this.productId = productId;
@@ -747,6 +759,8 @@ public class Billing  {
         this.productId = productId;
     }
 
+    
+
     public Billing withProtectType(ProtectTypeEnum protectType) {
         this.protectType = protectType;
         return this;
@@ -766,6 +780,8 @@ public class Billing  {
     public void setProtectType(ProtectTypeEnum protectType) {
         this.protectType = protectType;
     }
+
+    
 
     public Billing withSize(Integer size) {
         this.size = size;
@@ -789,6 +805,8 @@ public class Billing  {
         this.size = size;
     }
 
+    
+
     public Billing withSpecCode(SpecCodeEnum specCode) {
         this.specCode = specCode;
         return this;
@@ -808,6 +826,8 @@ public class Billing  {
     public void setSpecCode(SpecCodeEnum specCode) {
         this.specCode = specCode;
     }
+
+    
 
     public Billing withStatus(StatusEnum status) {
         this.status = status;
@@ -829,6 +849,8 @@ public class Billing  {
         this.status = status;
     }
 
+    
+
     public Billing withStorageUnit(String storageUnit) {
         this.storageUnit = storageUnit;
         return this;
@@ -848,6 +870,8 @@ public class Billing  {
     public void setStorageUnit(String storageUnit) {
         this.storageUnit = storageUnit;
     }
+
+    
 
     public Billing withUsed(Integer used) {
         this.used = used;
@@ -869,6 +893,8 @@ public class Billing  {
         this.used = used;
     }
 
+    
+
     public Billing withFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
         return this;
@@ -888,6 +914,9 @@ public class Billing  {
     public void setFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

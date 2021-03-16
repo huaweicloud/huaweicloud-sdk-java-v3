@@ -70,6 +70,8 @@ public class CheckResultResultBody  {
         this.jobId = jobId;
     }
 
+    
+
     public CheckResultResultBody withStatus(String status) {
         this.status = status;
         return this;
@@ -89,6 +91,8 @@ public class CheckResultResultBody  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public CheckResultResultBody withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -110,6 +114,8 @@ public class CheckResultResultBody  {
         this.createTime = createTime;
     }
 
+    
+
     public CheckResultResultBody withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -130,6 +136,8 @@ public class CheckResultResultBody  {
         this.updateTime = updateTime;
     }
 
+    
+
     public CheckResultResultBody withItems(List<CheckResultItemsBody> items) {
         this.items = items;
         return this;
@@ -137,9 +145,6 @@ public class CheckResultResultBody  {
 
     
     public CheckResultResultBody addItemsItem(CheckResultItemsBody itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -163,6 +168,9 @@ public class CheckResultResultBody  {
     public void setItems(List<CheckResultItemsBody> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

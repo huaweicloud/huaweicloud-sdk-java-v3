@@ -85,6 +85,8 @@ public class Dependency  {
         this.owner = owner;
     }
 
+    
+
     public Dependency withLink(String link) {
         this.link = link;
         return this;
@@ -104,6 +106,8 @@ public class Dependency  {
     public void setLink(String link) {
         this.link = link;
     }
+
+    
 
     public Dependency withRuntime(String runtime) {
         this.runtime = runtime;
@@ -125,6 +129,8 @@ public class Dependency  {
         this.runtime = runtime;
     }
 
+    
+
     public Dependency withEtag(String etag) {
         this.etag = etag;
         return this;
@@ -144,6 +150,8 @@ public class Dependency  {
     public void setEtag(String etag) {
         this.etag = etag;
     }
+
+    
 
     public Dependency withSize(Long size) {
         this.size = size;
@@ -165,6 +173,8 @@ public class Dependency  {
         this.size = size;
     }
 
+    
+
     public Dependency withName(String name) {
         this.name = name;
         return this;
@@ -184,6 +194,8 @@ public class Dependency  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Dependency withDescription(String description) {
         this.description = description;
@@ -205,6 +217,8 @@ public class Dependency  {
         this.description = description;
     }
 
+    
+
     public Dependency withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -224,6 +238,9 @@ public class Dependency  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

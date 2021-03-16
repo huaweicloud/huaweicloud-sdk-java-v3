@@ -42,6 +42,9 @@ public class UpdateDefaultMigprojectRequest  {
     public void setMigProjectId(String migProjectId) {
         this.migProjectId = migProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

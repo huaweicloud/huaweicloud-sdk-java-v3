@@ -149,6 +149,8 @@ public class CreateConnectorReq  {
         this.specification = specification;
     }
 
+    
+
     public CreateConnectorReq withNodeCnt(String nodeCnt) {
         this.nodeCnt = nodeCnt;
         return this;
@@ -169,6 +171,8 @@ public class CreateConnectorReq  {
         this.nodeCnt = nodeCnt;
     }
 
+    
+
     public CreateConnectorReq withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -188,6 +192,9 @@ public class CreateConnectorReq  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

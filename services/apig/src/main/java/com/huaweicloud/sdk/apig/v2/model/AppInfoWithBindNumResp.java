@@ -28,7 +28,7 @@ public class AppInfoWithBindNumResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,7 +64,7 @@ public class AppInfoWithBindNumResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,6 +98,8 @@ public class AppInfoWithBindNumResp  {
         this.creator = creator;
     }
 
+    
+
     public AppInfoWithBindNumResp withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -117,6 +119,8 @@ public class AppInfoWithBindNumResp  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public AppInfoWithBindNumResp withAppKey(String appKey) {
         this.appKey = appKey;
@@ -138,6 +142,8 @@ public class AppInfoWithBindNumResp  {
         this.appKey = appKey;
     }
 
+    
+
     public AppInfoWithBindNumResp withName(String name) {
         this.name = name;
         return this;
@@ -157,6 +163,8 @@ public class AppInfoWithBindNumResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AppInfoWithBindNumResp withRemark(String remark) {
         this.remark = remark;
@@ -178,6 +186,8 @@ public class AppInfoWithBindNumResp  {
         this.remark = remark;
     }
 
+    
+
     public AppInfoWithBindNumResp withId(String id) {
         this.id = id;
         return this;
@@ -197,6 +207,8 @@ public class AppInfoWithBindNumResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AppInfoWithBindNumResp withAppSecret(String appSecret) {
         this.appSecret = appSecret;
@@ -218,6 +230,8 @@ public class AppInfoWithBindNumResp  {
         this.appSecret = appSecret;
     }
 
+    
+
     public AppInfoWithBindNumResp withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -237,6 +251,8 @@ public class AppInfoWithBindNumResp  {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public AppInfoWithBindNumResp withStatus(Integer status) {
         this.status = status;
@@ -258,6 +274,8 @@ public class AppInfoWithBindNumResp  {
         this.status = status;
     }
 
+    
+
     public AppInfoWithBindNumResp withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
@@ -277,6 +295,9 @@ public class AppInfoWithBindNumResp  {
     public void setBindNum(Integer bindNum) {
         this.bindNum = bindNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

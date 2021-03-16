@@ -53,6 +53,8 @@ public class ListRestoreDatabasesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListRestoreDatabasesResponse withDatabases(List<String> databases) {
         this.databases = databases;
         return this;
@@ -60,9 +62,6 @@ public class ListRestoreDatabasesResponse extends SdkResponse {
 
     
     public ListRestoreDatabasesResponse addDatabasesItem(String databasesItem) {
-        if (this.databases == null) {
-            this.databases = new ArrayList<>();
-        }
         this.databases.add(databasesItem);
         return this;
     }
@@ -86,6 +85,9 @@ public class ListRestoreDatabasesResponse extends SdkResponse {
     public void setDatabases(List<String> databases) {
         this.databases = databases;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class CreateAuthorizingAppsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiAuthCreate body = null;
+    private ApiAuthCreate body;
 
     public CreateAuthorizingAppsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateAuthorizingAppsV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateAuthorizingAppsV2Request withBody(ApiAuthCreate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateAuthorizingAppsV2Request  {
     public void setBody(ApiAuthCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

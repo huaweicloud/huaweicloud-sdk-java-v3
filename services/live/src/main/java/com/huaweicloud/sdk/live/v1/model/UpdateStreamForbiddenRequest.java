@@ -28,7 +28,7 @@ public class UpdateStreamForbiddenRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private StreamForbiddenSetting body = null;
+    private StreamForbiddenSetting body;
 
     public UpdateStreamForbiddenRequest withSpecifyProject(String specifyProject) {
         this.specifyProject = specifyProject;
@@ -49,6 +49,8 @@ public class UpdateStreamForbiddenRequest  {
     public void setSpecifyProject(String specifyProject) {
         this.specifyProject = specifyProject;
     }
+
+    
 
     public UpdateStreamForbiddenRequest withBody(StreamForbiddenSetting body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateStreamForbiddenRequest  {
     public void setBody(StreamForbiddenSetting body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

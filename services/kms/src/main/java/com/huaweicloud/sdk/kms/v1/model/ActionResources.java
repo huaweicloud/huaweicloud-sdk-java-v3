@@ -31,7 +31,7 @@ public class ActionResources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    private KeyDetails resourceDetail = null;
+    private KeyDetails resourceDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,6 +65,8 @@ public class ActionResources  {
         this.resourceId = resourceId;
     }
 
+    
+
     public ActionResources withResourceDetail(KeyDetails resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
@@ -92,6 +94,8 @@ public class ActionResources  {
         this.resourceDetail = resourceDetail;
     }
 
+    
+
     public ActionResources withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -112,6 +116,8 @@ public class ActionResources  {
         this.resourceName = resourceName;
     }
 
+    
+
     public ActionResources withTags(List<TagItem> tags) {
         this.tags = tags;
         return this;
@@ -119,9 +125,6 @@ public class ActionResources  {
 
     
     public ActionResources addTagsItem(TagItem tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -145,6 +148,9 @@ public class ActionResources  {
     public void setTags(List<TagItem> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

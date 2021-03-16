@@ -29,7 +29,7 @@ public class SignBindingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_ids")
     
-    private List<String> publishIds = new ArrayList<>();
+    private List<String> publishIds = null;
     
     public SignBindingReq withSignId(String signId) {
         this.signId = signId;
@@ -50,6 +50,8 @@ public class SignBindingReq  {
     public void setSignId(String signId) {
         this.signId = signId;
     }
+
+    
 
     public SignBindingReq withPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
@@ -81,6 +83,9 @@ public class SignBindingReq  {
     public void setPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

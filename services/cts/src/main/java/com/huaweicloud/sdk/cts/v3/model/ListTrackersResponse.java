@@ -35,9 +35,6 @@ public class ListTrackersResponse extends SdkResponse {
 
     
     public ListTrackersResponse addTrackersItem(TrackerResponseBody trackersItem) {
-        if (this.trackers == null) {
-            this.trackers = new ArrayList<>();
-        }
         this.trackers.add(trackersItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListTrackersResponse extends SdkResponse {
     public void setTrackers(List<TrackerResponseBody> trackers) {
         this.trackers = trackers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

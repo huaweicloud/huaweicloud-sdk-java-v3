@@ -28,7 +28,7 @@ public class CopyBackupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BackupReplicateReq body = null;
+    private BackupReplicateReq body;
 
     public CopyBackupRequest withBackupId(String backupId) {
         this.backupId = backupId;
@@ -49,6 +49,8 @@ public class CopyBackupRequest  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public CopyBackupRequest withBody(BackupReplicateReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CopyBackupRequest  {
     public void setBody(BackupReplicateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

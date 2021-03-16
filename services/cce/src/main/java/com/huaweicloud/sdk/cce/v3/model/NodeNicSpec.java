@@ -30,7 +30,7 @@ public class NodeNicSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="primaryNic")
     
-    private NicSpec primaryNic = null;
+    private NicSpec primaryNic;
 
     public NodeNicSpec withExtNics(List<NicSpec> extNics) {
         this.extNics = extNics;
@@ -39,9 +39,6 @@ public class NodeNicSpec  {
 
     
     public NodeNicSpec addExtNicsItem(NicSpec extNicsItem) {
-        if (this.extNics == null) {
-            this.extNics = new ArrayList<>();
-        }
         this.extNics.add(extNicsItem);
         return this;
     }
@@ -65,6 +62,8 @@ public class NodeNicSpec  {
     public void setExtNics(List<NicSpec> extNics) {
         this.extNics = extNics;
     }
+
+    
 
     public NodeNicSpec withPrimaryNic(NicSpec primaryNic) {
         this.primaryNic = primaryNic;
@@ -92,6 +91,9 @@ public class NodeNicSpec  {
     public void setPrimaryNic(NicSpec primaryNic) {
         this.primaryNic = primaryNic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

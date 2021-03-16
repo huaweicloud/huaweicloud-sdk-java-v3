@@ -42,6 +42,9 @@ public class SkuItem  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

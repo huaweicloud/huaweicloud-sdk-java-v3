@@ -67,6 +67,8 @@ public class ResourcesPlan  {
         this.periodType = periodType;
     }
 
+    
+
     public ResourcesPlan withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -87,6 +89,8 @@ public class ResourcesPlan  {
         this.startTime = startTime;
     }
 
+    
+
     public ResourcesPlan withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -106,6 +110,8 @@ public class ResourcesPlan  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ResourcesPlan withMinCapacity(Integer minCapacity) {
         this.minCapacity = minCapacity;
@@ -129,6 +135,8 @@ public class ResourcesPlan  {
         this.minCapacity = minCapacity;
     }
 
+    
+
     public ResourcesPlan withMaxCapacity(Integer maxCapacity) {
         this.maxCapacity = maxCapacity;
         return this;
@@ -150,6 +158,9 @@ public class ResourcesPlan  {
     public void setMaxCapacity(Integer maxCapacity) {
         this.maxCapacity = maxCapacity;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

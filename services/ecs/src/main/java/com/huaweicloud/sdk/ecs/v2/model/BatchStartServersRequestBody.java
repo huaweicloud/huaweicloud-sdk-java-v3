@@ -22,7 +22,7 @@ public class BatchStartServersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-start")
     
-    private BatchStartServersOption osStart = null;
+    private BatchStartServersOption osStart;
 
     public BatchStartServersRequestBody withOsStart(BatchStartServersOption osStart) {
         this.osStart = osStart;
@@ -50,6 +50,9 @@ public class BatchStartServersRequestBody  {
     public void setOsStart(BatchStartServersOption osStart) {
         this.osStart = osStart;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

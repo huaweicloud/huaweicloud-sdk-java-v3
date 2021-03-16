@@ -73,6 +73,8 @@ public class GlanceImageMembers  {
         this.status = status;
     }
 
+    
+
     public GlanceImageMembers withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -92,6 +94,8 @@ public class GlanceImageMembers  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public GlanceImageMembers withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -113,6 +117,8 @@ public class GlanceImageMembers  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public GlanceImageMembers withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -132,6 +138,8 @@ public class GlanceImageMembers  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public GlanceImageMembers withMemberId(String memberId) {
         this.memberId = memberId;
@@ -153,6 +161,8 @@ public class GlanceImageMembers  {
         this.memberId = memberId;
     }
 
+    
+
     public GlanceImageMembers withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -172,6 +182,9 @@ public class GlanceImageMembers  {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

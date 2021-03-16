@@ -53,6 +53,8 @@ public class CreateProgramRequestDTO  {
         this.programName = programName;
     }
 
+    
+
     public CreateProgramRequestDTO withProgramItemList(List<ProgramItemRequestBase> programItemList) {
         this.programItemList = programItemList;
         return this;
@@ -60,9 +62,6 @@ public class CreateProgramRequestDTO  {
 
     
     public CreateProgramRequestDTO addProgramItemListItem(ProgramItemRequestBase programItemListItem) {
-        if (this.programItemList == null) {
-            this.programItemList = new ArrayList<>();
-        }
         this.programItemList.add(programItemListItem);
         return this;
     }
@@ -86,6 +85,9 @@ public class CreateProgramRequestDTO  {
     public void setProgramItemList(List<ProgramItemRequestBase> programItemList) {
         this.programItemList = programItemList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

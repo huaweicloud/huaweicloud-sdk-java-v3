@@ -24,7 +24,7 @@ public class CreateL7ruleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule")
     
-    private L7ruleResp rule = null;
+    private L7ruleResp rule;
 
     public CreateL7ruleResponse withRule(L7ruleResp rule) {
         this.rule = rule;
@@ -52,6 +52,9 @@ public class CreateL7ruleResponse extends SdkResponse {
     public void setRule(L7ruleResp rule) {
         this.rule = rule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

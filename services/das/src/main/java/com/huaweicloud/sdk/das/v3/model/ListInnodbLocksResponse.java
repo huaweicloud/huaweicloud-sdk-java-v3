@@ -42,9 +42,6 @@ public class ListInnodbLocksResponse extends SdkResponse {
 
     
     public ListInnodbLocksResponse addInnodbTrxItem(InnodbTrx innodbTrxItem) {
-        if (this.innodbTrx == null) {
-            this.innodbTrx = new ArrayList<>();
-        }
         this.innodbTrx.add(innodbTrxItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class ListInnodbLocksResponse extends SdkResponse {
         this.innodbTrx = innodbTrx;
     }
 
+    
+
     public ListInnodbLocksResponse withInnodbLockWaits(List<InnodbLockWaits> innodbLockWaits) {
         this.innodbLockWaits = innodbLockWaits;
         return this;
@@ -76,9 +75,6 @@ public class ListInnodbLocksResponse extends SdkResponse {
 
     
     public ListInnodbLocksResponse addInnodbLockWaitsItem(InnodbLockWaits innodbLockWaitsItem) {
-        if (this.innodbLockWaits == null) {
-            this.innodbLockWaits = new ArrayList<>();
-        }
         this.innodbLockWaits.add(innodbLockWaitsItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class ListInnodbLocksResponse extends SdkResponse {
     public void setInnodbLockWaits(List<InnodbLockWaits> innodbLockWaits) {
         this.innodbLockWaits = innodbLockWaits;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -119,39 +119,6 @@ public class ProjectManMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> batchDeleteIterationsV4 = genForbatchDeleteIterationsV4();
-
-    private static HttpRequestDef<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> genForbatchDeleteIterationsV4() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteIterationsV4Request.class, BatchDeleteIterationsV4Response.class)
-                .withName("BatchDeleteIterationsV4")
-                .withUri("/v4/projects/{project_id}/iterations")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(BatchDeleteIterationsV4Request::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteIterationsV4RequestBody.class,
-            f -> f.withMarshaller(BatchDeleteIterationsV4Request::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchDeleteMembersV4Request, BatchDeleteMembersV4Response> batchDeleteMembersV4 = genForbatchDeleteMembersV4();
 
     private static HttpRequestDef<BatchDeleteMembersV4Request, BatchDeleteMembersV4Response> genForbatchDeleteMembersV4() {
@@ -210,39 +177,6 @@ public class ProjectManMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateIterationV4Request, CreateIterationV4Response> createIterationV4 = genForcreateIterationV4();
-
-    private static HttpRequestDef<CreateIterationV4Request, CreateIterationV4Response> genForcreateIterationV4() {
-        // basic
-        HttpRequestDef.Builder<CreateIterationV4Request, CreateIterationV4Response> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateIterationV4Request.class, CreateIterationV4Response.class)
-                .withName("CreateIterationV4")
-                .withUri("/v4/projects/{project_id}/iteration")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(CreateIterationV4Request::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            CreateIterationRequestV4.class,
-            f -> f.withMarshaller(CreateIterationV4Request::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateProjectV4Request, CreateProjectV4Response> createProjectV4 = genForcreateProjectV4();
 
     private static HttpRequestDef<CreateProjectV4Request, CreateProjectV4Response> genForcreateProjectV4() {
@@ -260,39 +194,6 @@ public class ProjectManMeta {
             CreateProjectV4RequestBody.class,
             f -> f.withMarshaller(CreateProjectV4Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteIterationV4Request, DeleteIterationV4Response> deleteIterationV4 = genFordeleteIterationV4();
-
-    private static HttpRequestDef<DeleteIterationV4Request, DeleteIterationV4Response> genFordeleteIterationV4() {
-        // basic
-        HttpRequestDef.Builder<DeleteIterationV4Request, DeleteIterationV4Response> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIterationV4Request.class, DeleteIterationV4Response.class)
-                .withName("DeleteIterationV4")
-                .withUri("/v4/projects/{project_id}/iterations/{iteration_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(DeleteIterationV4Request::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("iteration_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
-            f -> f.withMarshaller(DeleteIterationV4Request::getIterationId, (req, v) -> {
-                req.setIterationId(v);
             })
         );
 
@@ -400,31 +301,6 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ListProjectDemandStaticV4Request::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListProjectIterationsV4Request, ListProjectIterationsV4Response> listProjectIterationsV4 = genForlistProjectIterationsV4();
-
-    private static HttpRequestDef<ListProjectIterationsV4Request, ListProjectIterationsV4Response> genForlistProjectIterationsV4() {
-        // basic
-        HttpRequestDef.Builder<ListProjectIterationsV4Request, ListProjectIterationsV4Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListProjectIterationsV4Request.class, ListProjectIterationsV4Response.class)
-                .withName("ListProjectIterationsV4")
-                .withUri("/v4/projects/{project_id}/iterations")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListProjectIterationsV4Request::getProjectId, (req, v) -> {
                 req.setProjectId(v);
             })
         );
@@ -573,6 +449,105 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBugDensityV2Request, ShowBugDensityV2Response> showBugDensityV2 = genForshowBugDensityV2();
+
+    private static HttpRequestDef<ShowBugDensityV2Request, ShowBugDensityV2Response> genForshowBugDensityV2() {
+        // basic
+        HttpRequestDef.Builder<ShowBugDensityV2Request, ShowBugDensityV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowBugDensityV2Request.class, ShowBugDensityV2Response.class)
+                .withName("ShowBugDensityV2")
+                .withUri("/v2/{project_id}/bug-density/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBugDensityV2Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            MetricRequestV2.class,
+            f -> f.withMarshaller(ShowBugDensityV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse> showBugsPerDeveloper = genForshowBugsPerDeveloper();
+
+    private static HttpRequestDef<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse> genForshowBugsPerDeveloper() {
+        // basic
+        HttpRequestDef.Builder<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowBugsPerDeveloperRequest.class, ShowBugsPerDeveloperResponse.class)
+                .withName("ShowBugsPerDeveloper")
+                .withUri("/v1/{project_id}/bugs-per-developer/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBugsPerDeveloperRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            MetricRequest2.class,
+            f -> f.withMarshaller(ShowBugsPerDeveloperRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCompletionRateRequest, ShowCompletionRateResponse> showCompletionRate = genForshowCompletionRate();
+
+    private static HttpRequestDef<ShowCompletionRateRequest, ShowCompletionRateResponse> genForshowCompletionRate() {
+        // basic
+        HttpRequestDef.Builder<ShowCompletionRateRequest, ShowCompletionRateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowCompletionRateRequest.class, ShowCompletionRateResponse.class)
+                .withName("ShowCompletionRate")
+                .withUri("/v1/{project_id}/completion-rate/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowCompletionRateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            MetricRequest3.class,
+            f -> f.withMarshaller(ShowCompletionRateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCurUserInfoRequest, ShowCurUserInfoResponse> showCurUserInfo = genForshowCurUserInfo();
 
     private static HttpRequestDef<ShowCurUserInfoRequest, ShowCurUserInfoResponse> genForshowCurUserInfo() {
@@ -615,23 +590,23 @@ public class ProjectManMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIterationV4Request, ShowIterationV4Response> showIterationV4 = genForshowIterationV4();
+    public static final HttpRequestDef<ShowProjectInfoV4Request, ShowProjectInfoV4Response> showProjectInfoV4 = genForshowProjectInfoV4();
 
-    private static HttpRequestDef<ShowIterationV4Request, ShowIterationV4Response> genForshowIterationV4() {
+    private static HttpRequestDef<ShowProjectInfoV4Request, ShowProjectInfoV4Response> genForshowProjectInfoV4() {
         // basic
-        HttpRequestDef.Builder<ShowIterationV4Request, ShowIterationV4Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowIterationV4Request.class, ShowIterationV4Response.class)
-                .withName("ShowIterationV4")
-                .withUri("/v4/iterations/{iteration_id}")
+        HttpRequestDef.Builder<ShowProjectInfoV4Request, ShowProjectInfoV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProjectInfoV4Request.class, ShowProjectInfoV4Response.class)
+                .withName("ShowProjectInfoV4")
+                .withUri("/v4/projects/{project_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("iteration_id",
+        builder.withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
-            f -> f.withMarshaller(ShowIterationV4Request::getIterationId, (req, v) -> {
-                req.setIterationId(v);
+            String.class,
+            f -> f.withMarshaller(ShowProjectInfoV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
             })
         );
 
@@ -657,47 +632,6 @@ public class ProjectManMeta {
             String.class,
             f -> f.withMarshaller(ShowProjectSummaryV4Request::getProjectId, (req, v) -> {
                 req.setProjectId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateIterationV4Request, UpdateIterationV4Response> updateIterationV4 = genForupdateIterationV4();
-
-    private static HttpRequestDef<UpdateIterationV4Request, UpdateIterationV4Response> genForupdateIterationV4() {
-        // basic
-        HttpRequestDef.Builder<UpdateIterationV4Request, UpdateIterationV4Response> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateIterationV4Request.class, UpdateIterationV4Response.class)
-                .withName("UpdateIterationV4")
-                .withUri("/v4/projects/{project_id}/iterations/{iteration_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateIterationV4Request::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("iteration_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
-            f -> f.withMarshaller(UpdateIterationV4Request::getIterationId, (req, v) -> {
-                req.setIterationId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            CreateIterationRequestV4.class,
-            f -> f.withMarshaller(UpdateIterationV4Request::getBody, (req, v) -> {
-                req.setBody(v);
             })
         );
 
@@ -830,6 +764,72 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> batchDeleteIterationsV4 = genForbatchDeleteIterationsV4();
+
+    private static HttpRequestDef<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> genForbatchDeleteIterationsV4() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteIterationsV4Request.class, BatchDeleteIterationsV4Response.class)
+                .withName("BatchDeleteIterationsV4")
+                .withUri("/v4/projects/{project_id}/iterations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteIterationsV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteIterationsV4RequestBody.class,
+            f -> f.withMarshaller(BatchDeleteIterationsV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomfieldsRequest, CreateCustomfieldsResponse> createCustomfields = genForcreateCustomfields();
+
+    private static HttpRequestDef<CreateCustomfieldsRequest, CreateCustomfieldsResponse> genForcreateCustomfields() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomfieldsRequest, CreateCustomfieldsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCustomfieldsRequest.class, CreateCustomfieldsResponse.class)
+                .withName("CreateCustomfields")
+                .withUri("/v3/{project_id}/custom-fields")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateCustomfieldsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateCustomfieldV1Req.class,
+            f -> f.withMarshaller(CreateCustomfieldsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateIssueV4Request, CreateIssueV4Response> createIssueV4 = genForcreateIssueV4();
 
     private static HttpRequestDef<CreateIssueV4Request, CreateIssueV4Response> genForcreateIssueV4() {
@@ -854,6 +854,39 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             CreateIssueRequestV4.class,
             f -> f.withMarshaller(CreateIssueV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateIterationV4Request, CreateIterationV4Response> createIterationV4 = genForcreateIterationV4();
+
+    private static HttpRequestDef<CreateIterationV4Request, CreateIterationV4Response> genForcreateIterationV4() {
+        // basic
+        HttpRequestDef.Builder<CreateIterationV4Request, CreateIterationV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateIterationV4Request.class, CreateIterationV4Response.class)
+                .withName("CreateIterationV4")
+                .withUri("/v4/projects/{project_id}/iteration")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateIterationV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateIterationRequestV4.class,
+            f -> f.withMarshaller(CreateIterationV4Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -888,6 +921,39 @@ public class ProjectManMeta {
             Integer.class,
             f -> f.withMarshaller(DeleteIssueV4Request::getIssueId, (req, v) -> {
                 req.setIssueId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteIterationV4Request, DeleteIterationV4Response> deleteIterationV4 = genFordeleteIterationV4();
+
+    private static HttpRequestDef<DeleteIterationV4Request, DeleteIterationV4Response> genFordeleteIterationV4() {
+        // basic
+        HttpRequestDef.Builder<DeleteIterationV4Request, DeleteIterationV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIterationV4Request.class, DeleteIterationV4Response.class)
+                .withName("DeleteIterationV4")
+                .withUri("/v4/projects/{project_id}/iterations/{iteration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteIterationV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("iteration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(DeleteIterationV4Request::getIterationId, (req, v) -> {
+                req.setIterationId(v);
             })
         );
 
@@ -1060,6 +1126,31 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectIterationsV4Request, ListProjectIterationsV4Response> listProjectIterationsV4 = genForlistProjectIterationsV4();
+
+    private static HttpRequestDef<ListProjectIterationsV4Request, ListProjectIterationsV4Response> genForlistProjectIterationsV4() {
+        // basic
+        HttpRequestDef.Builder<ListProjectIterationsV4Request, ListProjectIterationsV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectIterationsV4Request.class, ListProjectIterationsV4Response.class)
+                .withName("ListProjectIterationsV4")
+                .withUri("/v4/projects/{project_id}/iterations")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListProjectIterationsV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse> listProjectWorkHours = genForlistProjectWorkHours();
 
     private static HttpRequestDef<ListProjectWorkHoursRequest, ListProjectWorkHoursResponse> genForlistProjectWorkHours() {
@@ -1077,6 +1168,31 @@ public class ProjectManMeta {
             ListProjectWorkHoursRequestBody.class,
             f -> f.withMarshaller(ListProjectWorkHoursRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse> showIssueCompletionRate = genForshowIssueCompletionRate();
+
+    private static HttpRequestDef<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse> genForshowIssueCompletionRate() {
+        // basic
+        HttpRequestDef.Builder<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowIssueCompletionRateRequest.class, ShowIssueCompletionRateResponse.class)
+                .withName("ShowIssueCompletionRate")
+                .withUri("/v4/projects/{project_id}/issue-completion-rate")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowIssueCompletionRateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
             })
         );
 
@@ -1118,6 +1234,31 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowIterationV4Request, ShowIterationV4Response> showIterationV4 = genForshowIterationV4();
+
+    private static HttpRequestDef<ShowIterationV4Request, ShowIterationV4Response> genForshowIterationV4() {
+        // basic
+        HttpRequestDef.Builder<ShowIterationV4Request, ShowIterationV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowIterationV4Request.class, ShowIterationV4Response.class)
+                .withName("ShowIterationV4")
+                .withUri("/v4/iterations/{iteration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("iteration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowIterationV4Request::getIterationId, (req, v) -> {
+                req.setIterationId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProjectWorkHoursRequest, ShowProjectWorkHoursResponse> showProjectWorkHours = genForshowProjectWorkHours();
 
     private static HttpRequestDef<ShowProjectWorkHoursRequest, ShowProjectWorkHoursResponse> genForshowProjectWorkHours() {
@@ -1143,31 +1284,6 @@ public class ProjectManMeta {
             ShowProjectWorkHoursRequestBody.class,
             f -> f.withMarshaller(ShowProjectWorkHoursRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowtIssueCompletionRateRequest, ShowtIssueCompletionRateResponse> showtIssueCompletionRate = genForshowtIssueCompletionRate();
-
-    private static HttpRequestDef<ShowtIssueCompletionRateRequest, ShowtIssueCompletionRateResponse> genForshowtIssueCompletionRate() {
-        // basic
-        HttpRequestDef.Builder<ShowtIssueCompletionRateRequest, ShowtIssueCompletionRateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowtIssueCompletionRateRequest.class, ShowtIssueCompletionRateResponse.class)
-                .withName("ShowtIssueCompletionRate")
-                .withUri("/v4/projects/{project_id}/issue-completion-rate")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowtIssueCompletionRateRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
             })
         );
 
@@ -1208,6 +1324,47 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             IssueRequestV4.class,
             f -> f.withMarshaller(UpdateIssueV4Request::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateIterationV4Request, UpdateIterationV4Response> updateIterationV4 = genForupdateIterationV4();
+
+    private static HttpRequestDef<UpdateIterationV4Request, UpdateIterationV4Response> genForupdateIterationV4() {
+        // basic
+        HttpRequestDef.Builder<UpdateIterationV4Request, UpdateIterationV4Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateIterationV4Request.class, UpdateIterationV4Response.class)
+                .withName("UpdateIterationV4")
+                .withUri("/v4/projects/{project_id}/iterations/{iteration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateIterationV4Request::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("iteration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(UpdateIterationV4Request::getIterationId, (req, v) -> {
+                req.setIterationId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateIterationRequestV4.class,
+            f -> f.withMarshaller(UpdateIterationV4Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

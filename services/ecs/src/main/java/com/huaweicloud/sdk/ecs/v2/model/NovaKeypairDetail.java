@@ -40,7 +40,7 @@ public class NovaKeypairDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,7 +52,7 @@ public class NovaKeypairDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deleted_at")
     
-    private OffsetDateTime deletedAt = null;
+    private OffsetDateTime deletedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,7 +64,7 @@ public class NovaKeypairDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,6 +98,8 @@ public class NovaKeypairDetail  {
         this.publicKey = publicKey;
     }
 
+    
+
     public NovaKeypairDetail withName(String name) {
         this.name = name;
         return this;
@@ -117,6 +119,8 @@ public class NovaKeypairDetail  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NovaKeypairDetail withFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
@@ -138,6 +142,8 @@ public class NovaKeypairDetail  {
         this.fingerprint = fingerprint;
     }
 
+    
+
     public NovaKeypairDetail withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -157,6 +163,8 @@ public class NovaKeypairDetail  {
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public NovaKeypairDetail withDeleted(Boolean deleted) {
         this.deleted = deleted;
@@ -178,6 +186,8 @@ public class NovaKeypairDetail  {
         this.deleted = deleted;
     }
 
+    
+
     public NovaKeypairDetail withDeletedAt(OffsetDateTime deletedAt) {
         this.deletedAt = deletedAt;
         return this;
@@ -197,6 +207,8 @@ public class NovaKeypairDetail  {
     public void setDeletedAt(OffsetDateTime deletedAt) {
         this.deletedAt = deletedAt;
     }
+
+    
 
     public NovaKeypairDetail withId(String id) {
         this.id = id;
@@ -218,6 +230,8 @@ public class NovaKeypairDetail  {
         this.id = id;
     }
 
+    
+
     public NovaKeypairDetail withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -237,6 +251,8 @@ public class NovaKeypairDetail  {
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public NovaKeypairDetail withUserId(String userId) {
         this.userId = userId;
@@ -258,6 +274,8 @@ public class NovaKeypairDetail  {
         this.userId = userId;
     }
 
+    
+
     public NovaKeypairDetail withType(String type) {
         this.type = type;
         return this;
@@ -277,6 +295,9 @@ public class NovaKeypairDetail  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

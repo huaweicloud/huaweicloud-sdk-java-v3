@@ -44,6 +44,9 @@ public class ShowRedirectUrlResponse extends SdkResponse {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

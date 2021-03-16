@@ -75,13 +75,13 @@ public class QueryResRecordsDetailReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,6 +115,8 @@ public class QueryResRecordsDetailReq  {
         this.cycle = cycle;
     }
 
+    
+
     public QueryResRecordsDetailReq withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
@@ -134,6 +136,8 @@ public class QueryResRecordsDetailReq  {
     public void setCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
     }
+
+    
 
     public QueryResRecordsDetailReq withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -155,6 +159,8 @@ public class QueryResRecordsDetailReq  {
         this.resourceType = resourceType;
     }
 
+    
+
     public QueryResRecordsDetailReq withRegion(String region) {
         this.region = region;
         return this;
@@ -175,6 +181,8 @@ public class QueryResRecordsDetailReq  {
         this.region = region;
     }
 
+    
+
     public QueryResRecordsDetailReq withResInstanceId(String resInstanceId) {
         this.resInstanceId = resInstanceId;
         return this;
@@ -194,6 +202,8 @@ public class QueryResRecordsDetailReq  {
     public void setResInstanceId(String resInstanceId) {
         this.resInstanceId = resInstanceId;
     }
+
+    
 
     public QueryResRecordsDetailReq withChargeMode(Integer chargeMode) {
         this.chargeMode = chargeMode;
@@ -217,6 +227,8 @@ public class QueryResRecordsDetailReq  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public QueryResRecordsDetailReq withBillType(Integer billType) {
         this.billType = billType;
         return this;
@@ -239,6 +251,8 @@ public class QueryResRecordsDetailReq  {
         this.billType = billType;
     }
 
+    
+
     public QueryResRecordsDetailReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -259,6 +273,8 @@ public class QueryResRecordsDetailReq  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public QueryResRecordsDetailReq withIncludeZeroRecord(Boolean includeZeroRecord) {
         this.includeZeroRecord = includeZeroRecord;
         return this;
@@ -278,6 +294,8 @@ public class QueryResRecordsDetailReq  {
     public void setIncludeZeroRecord(Boolean includeZeroRecord) {
         this.includeZeroRecord = includeZeroRecord;
     }
+
+    
 
     public QueryResRecordsDetailReq withOffset(Integer offset) {
         this.offset = offset;
@@ -301,6 +319,8 @@ public class QueryResRecordsDetailReq  {
         this.offset = offset;
     }
 
+    
+
     public QueryResRecordsDetailReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -323,6 +343,8 @@ public class QueryResRecordsDetailReq  {
         this.limit = limit;
     }
 
+    
+
     public QueryResRecordsDetailReq withMethod(String method) {
         this.method = method;
         return this;
@@ -343,6 +365,8 @@ public class QueryResRecordsDetailReq  {
         this.method = method;
     }
 
+    
+
     public QueryResRecordsDetailReq withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
         return this;
@@ -362,6 +386,9 @@ public class QueryResRecordsDetailReq  {
     public void setSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

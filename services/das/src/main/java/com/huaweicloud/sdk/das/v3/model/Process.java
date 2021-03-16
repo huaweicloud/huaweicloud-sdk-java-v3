@@ -91,6 +91,8 @@ public class Process  {
         this.id = id;
     }
 
+    
+
     public Process withUser(String user) {
         this.user = user;
         return this;
@@ -110,6 +112,8 @@ public class Process  {
     public void setUser(String user) {
         this.user = user;
     }
+
+    
 
     public Process withHost(String host) {
         this.host = host;
@@ -131,6 +135,8 @@ public class Process  {
         this.host = host;
     }
 
+    
+
     public Process withDatabase(String database) {
         this.database = database;
         return this;
@@ -150,6 +156,8 @@ public class Process  {
     public void setDatabase(String database) {
         this.database = database;
     }
+
+    
 
     public Process withCommand(String command) {
         this.command = command;
@@ -171,6 +179,8 @@ public class Process  {
         this.command = command;
     }
 
+    
+
     public Process withTime(String time) {
         this.time = time;
         return this;
@@ -190,6 +200,8 @@ public class Process  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
 
     public Process withState(String state) {
         this.state = state;
@@ -211,6 +223,8 @@ public class Process  {
         this.state = state;
     }
 
+    
+
     public Process withSql(String sql) {
         this.sql = sql;
         return this;
@@ -231,6 +245,8 @@ public class Process  {
         this.sql = sql;
     }
 
+    
+
     public Process withTrxExecutedTime(String trxExecutedTime) {
         this.trxExecutedTime = trxExecutedTime;
         return this;
@@ -250,6 +266,9 @@ public class Process  {
     public void setTrxExecutedTime(String trxExecutedTime) {
         this.trxExecutedTime = trxExecutedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

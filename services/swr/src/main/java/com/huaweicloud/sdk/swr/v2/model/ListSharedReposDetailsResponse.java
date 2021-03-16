@@ -41,9 +41,6 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
 
     
     public ListSharedReposDetailsResponse addBodyItem(ShowReposResp bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
         this.body = body;
     }
 
+    
+
     public ListSharedReposDetailsResponse withContentRange(String contentRange) {
         this.contentRange = contentRange;
         return this;
@@ -87,6 +86,9 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
     public void setContentRange(String contentRange) {
         this.contentRange = contentRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

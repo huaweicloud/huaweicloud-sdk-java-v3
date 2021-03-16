@@ -49,6 +49,8 @@ public class ComandParam  {
         this.taskId = taskId;
     }
 
+    
+
     public ComandParam withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -68,6 +70,9 @@ public class ComandParam  {
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

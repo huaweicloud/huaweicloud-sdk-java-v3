@@ -24,31 +24,31 @@ public class V3Cluster  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Cluster";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private ClusterMetadata metadata = null;
+    private ClusterMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3ClusterSpec spec = null;
+    private V3ClusterSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private ClusterStatus status = null;
+    private ClusterStatus status;
 
     public V3Cluster withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -70,6 +70,8 @@ public class V3Cluster  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public V3Cluster withKind(String kind) {
         this.kind = kind;
         return this;
@@ -89,6 +91,8 @@ public class V3Cluster  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public V3Cluster withMetadata(ClusterMetadata metadata) {
         this.metadata = metadata;
@@ -117,6 +121,8 @@ public class V3Cluster  {
         this.metadata = metadata;
     }
 
+    
+
     public V3Cluster withSpec(V3ClusterSpec spec) {
         this.spec = spec;
         return this;
@@ -144,6 +150,8 @@ public class V3Cluster  {
         this.spec = spec;
     }
 
+    
+
     public V3Cluster withStatus(ClusterStatus status) {
         this.status = status;
         return this;
@@ -170,6 +178,9 @@ public class V3Cluster  {
     public void setStatus(ClusterStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

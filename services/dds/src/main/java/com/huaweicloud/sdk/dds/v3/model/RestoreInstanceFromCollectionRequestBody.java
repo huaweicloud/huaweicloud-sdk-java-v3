@@ -24,7 +24,7 @@ public class RestoreInstanceFromCollectionRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore_collections")
     
-    private List<RestoreInstanceFromCollectionRequestBodyRestoreCollections> restoreCollections = new ArrayList<>();
+    private List<RestoreInstanceFromCollectionRequestBodyRestoreCollections> restoreCollections = null;
     
     public RestoreInstanceFromCollectionRequestBody withRestoreCollections(List<RestoreInstanceFromCollectionRequestBodyRestoreCollections> restoreCollections) {
         this.restoreCollections = restoreCollections;
@@ -56,6 +56,9 @@ public class RestoreInstanceFromCollectionRequestBody  {
     public void setRestoreCollections(List<RestoreInstanceFromCollectionRequestBodyRestoreCollections> restoreCollections) {
         this.restoreCollections = restoreCollections;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

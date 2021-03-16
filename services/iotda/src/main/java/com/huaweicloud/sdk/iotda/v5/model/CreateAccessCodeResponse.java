@@ -51,6 +51,8 @@ public class CreateAccessCodeResponse extends SdkResponse {
         this.accessKey = accessKey;
     }
 
+    
+
     public CreateAccessCodeResponse withAccessCode(String accessCode) {
         this.accessCode = accessCode;
         return this;
@@ -70,6 +72,9 @@ public class CreateAccessCodeResponse extends SdkResponse {
     public void setAccessCode(String accessCode) {
         this.accessCode = accessCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

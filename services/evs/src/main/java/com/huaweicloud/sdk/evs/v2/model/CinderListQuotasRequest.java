@@ -125,6 +125,8 @@ public class CinderListQuotasRequest  {
         this.targetProjectId = targetProjectId;
     }
 
+    
+
     public CinderListQuotasRequest withUsage(UsageEnum usage) {
         this.usage = usage;
         return this;
@@ -144,6 +146,9 @@ public class CinderListQuotasRequest  {
     public void setUsage(UsageEnum usage) {
         this.usage = usage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

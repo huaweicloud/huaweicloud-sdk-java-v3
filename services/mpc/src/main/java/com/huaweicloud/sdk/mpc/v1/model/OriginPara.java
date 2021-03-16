@@ -41,13 +41,13 @@ public class OriginPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video")
     
-    private VideoInfo video = null;
+    private VideoInfo video;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private AudioInfo audio = null;
+    private AudioInfo audio;
 
     public OriginPara withDuration(Integer duration) {
         this.duration = duration;
@@ -68,6 +68,8 @@ public class OriginPara  {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
+
+    
 
     public OriginPara withDurationMs(Long durationMs) {
         this.durationMs = durationMs;
@@ -91,6 +93,8 @@ public class OriginPara  {
         this.durationMs = durationMs;
     }
 
+    
+
     public OriginPara withFileFormat(String fileFormat) {
         this.fileFormat = fileFormat;
         return this;
@@ -110,6 +114,8 @@ public class OriginPara  {
     public void setFileFormat(String fileFormat) {
         this.fileFormat = fileFormat;
     }
+
+    
 
     public OriginPara withVideo(VideoInfo video) {
         this.video = video;
@@ -138,6 +144,8 @@ public class OriginPara  {
         this.video = video;
     }
 
+    
+
     public OriginPara withAudio(AudioInfo audio) {
         this.audio = audio;
         return this;
@@ -164,6 +172,9 @@ public class OriginPara  {
     public void setAudio(AudioInfo audio) {
         this.audio = audio;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

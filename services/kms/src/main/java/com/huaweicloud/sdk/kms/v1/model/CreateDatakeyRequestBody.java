@@ -31,7 +31,7 @@ public class CreateDatakeyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption_context")
     
-    private Object encryptionContext = null;
+    private Object encryptionContext;
     /**
      * 指定生成的密钥bit位长度。有效值：AES_256、AES_128。  - AES_256：表示256比特的对称密钥。  - AES_128：表示128比特的对称密钥。 说明：  datakey_length和key_spec二选一。   - 若datakey_length和key_spec都为空，默认生成256bit的密钥。   - 若datakey_length和key_spec都指定了值，仅datakey_length生效。
      */
@@ -149,6 +149,8 @@ public class CreateDatakeyRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public CreateDatakeyRequestBody withEncryptionContext(Object encryptionContext) {
         this.encryptionContext = encryptionContext;
         return this;
@@ -168,6 +170,8 @@ public class CreateDatakeyRequestBody  {
     public void setEncryptionContext(Object encryptionContext) {
         this.encryptionContext = encryptionContext;
     }
+
+    
 
     public CreateDatakeyRequestBody withKeySpec(KeySpecEnum keySpec) {
         this.keySpec = keySpec;
@@ -189,6 +193,8 @@ public class CreateDatakeyRequestBody  {
         this.keySpec = keySpec;
     }
 
+    
+
     public CreateDatakeyRequestBody withDatakeyLength(String datakeyLength) {
         this.datakeyLength = datakeyLength;
         return this;
@@ -209,6 +215,8 @@ public class CreateDatakeyRequestBody  {
         this.datakeyLength = datakeyLength;
     }
 
+    
+
     public CreateDatakeyRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -228,6 +236,9 @@ public class CreateDatakeyRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

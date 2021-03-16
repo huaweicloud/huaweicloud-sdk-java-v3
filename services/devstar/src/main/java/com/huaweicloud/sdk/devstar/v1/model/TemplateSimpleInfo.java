@@ -55,6 +55,8 @@ public class TemplateSimpleInfo  {
         this.id = id;
     }
 
+    
+
     public TemplateSimpleInfo withTitle(String title) {
         this.title = title;
         return this;
@@ -75,6 +77,8 @@ public class TemplateSimpleInfo  {
         this.title = title;
     }
 
+    
+
     public TemplateSimpleInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +98,9 @@ public class TemplateSimpleInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

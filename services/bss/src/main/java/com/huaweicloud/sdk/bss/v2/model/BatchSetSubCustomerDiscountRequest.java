@@ -22,7 +22,7 @@ public class BatchSetSubCustomerDiscountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SetPartnerDiscountsReq body = null;
+    private SetPartnerDiscountsReq body;
 
     public BatchSetSubCustomerDiscountRequest withBody(SetPartnerDiscountsReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchSetSubCustomerDiscountRequest  {
     public void setBody(SetPartnerDiscountsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

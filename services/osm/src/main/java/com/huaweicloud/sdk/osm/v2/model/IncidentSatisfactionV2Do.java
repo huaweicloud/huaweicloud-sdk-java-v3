@@ -81,6 +81,8 @@ public class IncidentSatisfactionV2Do  {
         this.value = value;
     }
 
+    
+
     public IncidentSatisfactionV2Do withSatisfactionId(Integer satisfactionId) {
         this.satisfactionId = satisfactionId;
         return this;
@@ -102,6 +104,8 @@ public class IncidentSatisfactionV2Do  {
     public void setSatisfactionId(Integer satisfactionId) {
         this.satisfactionId = satisfactionId;
     }
+
+    
 
     public IncidentSatisfactionV2Do withSatisfactionValue(Integer satisfactionValue) {
         this.satisfactionValue = satisfactionValue;
@@ -125,6 +129,8 @@ public class IncidentSatisfactionV2Do  {
         this.satisfactionValue = satisfactionValue;
     }
 
+    
+
     public IncidentSatisfactionV2Do withSatisfactionName(String satisfactionName) {
         this.satisfactionName = satisfactionName;
         return this;
@@ -144,6 +150,8 @@ public class IncidentSatisfactionV2Do  {
     public void setSatisfactionName(String satisfactionName) {
         this.satisfactionName = satisfactionName;
     }
+
+    
 
     public IncidentSatisfactionV2Do withPerValue(Integer perValue) {
         this.perValue = perValue;
@@ -167,6 +175,8 @@ public class IncidentSatisfactionV2Do  {
         this.perValue = perValue;
     }
 
+    
+
     public IncidentSatisfactionV2Do withSatCategoryId(String satCategoryId) {
         this.satCategoryId = satCategoryId;
         return this;
@@ -187,6 +197,8 @@ public class IncidentSatisfactionV2Do  {
         this.satCategoryId = satCategoryId;
     }
 
+    
+
     public IncidentSatisfactionV2Do withSatCategoryName(String satCategoryName) {
         this.satCategoryName = satCategoryName;
         return this;
@@ -206,6 +218,9 @@ public class IncidentSatisfactionV2Do  {
     public void setSatCategoryName(String satCategoryName) {
         this.satCategoryName = satCategoryName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

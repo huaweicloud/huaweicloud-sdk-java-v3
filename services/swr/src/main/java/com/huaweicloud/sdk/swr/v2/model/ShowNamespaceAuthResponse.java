@@ -44,7 +44,7 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="self_auth")
     
-    private UserAuth selfAuth = null;
+    private UserAuth selfAuth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,6 +72,8 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowNamespaceAuthResponse withName(String name) {
         this.name = name;
         return this;
@@ -92,6 +94,8 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowNamespaceAuthResponse withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
@@ -111,6 +115,8 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
     public void setCreatorName(String creatorName) {
         this.creatorName = creatorName;
     }
+
+    
 
     public ShowNamespaceAuthResponse withSelfAuth(UserAuth selfAuth) {
         this.selfAuth = selfAuth;
@@ -139,6 +145,8 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
         this.selfAuth = selfAuth;
     }
 
+    
+
     public ShowNamespaceAuthResponse withOthersAuths(List<UserAuth> othersAuths) {
         this.othersAuths = othersAuths;
         return this;
@@ -146,9 +154,6 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
 
     
     public ShowNamespaceAuthResponse addOthersAuthsItem(UserAuth othersAuthsItem) {
-        if (this.othersAuths == null) {
-            this.othersAuths = new ArrayList<>();
-        }
         this.othersAuths.add(othersAuthsItem);
         return this;
     }
@@ -172,6 +177,9 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
     public void setOthersAuths(List<UserAuth> othersAuths) {
         this.othersAuths = othersAuths;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

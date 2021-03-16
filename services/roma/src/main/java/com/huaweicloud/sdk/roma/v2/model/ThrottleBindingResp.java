@@ -128,7 +128,7 @@ public class ThrottleBindingResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apply_time")
     
-    private OffsetDateTime applyTime = null;
+    private OffsetDateTime applyTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -156,6 +156,8 @@ public class ThrottleBindingResp  {
         this.publishId = publishId;
     }
 
+    
+
     public ThrottleBindingResp withScope(ScopeEnum scope) {
         this.scope = scope;
         return this;
@@ -175,6 +177,8 @@ public class ThrottleBindingResp  {
     public void setScope(ScopeEnum scope) {
         this.scope = scope;
     }
+
+    
 
     public ThrottleBindingResp withStrategyId(String strategyId) {
         this.strategyId = strategyId;
@@ -196,6 +200,8 @@ public class ThrottleBindingResp  {
         this.strategyId = strategyId;
     }
 
+    
+
     public ThrottleBindingResp withApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
         return this;
@@ -216,6 +222,8 @@ public class ThrottleBindingResp  {
         this.applyTime = applyTime;
     }
 
+    
+
     public ThrottleBindingResp withId(String id) {
         this.id = id;
         return this;
@@ -235,6 +243,9 @@ public class ThrottleBindingResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

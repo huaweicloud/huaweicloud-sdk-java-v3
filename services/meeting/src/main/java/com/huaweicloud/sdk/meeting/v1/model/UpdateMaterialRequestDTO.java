@@ -42,6 +42,9 @@ public class UpdateMaterialRequestDTO  {
     public void setMaterialName(String materialName) {
         this.materialName = materialName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

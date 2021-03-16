@@ -30,19 +30,19 @@ public class TransTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video")
     
-    private Video video = null;
+    private Video video;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private Audio audio = null;
+    private Audio audio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="common")
     
-    private Common common = null;
+    private Common common;
 
     public TransTemplate withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -63,6 +63,8 @@ public class TransTemplate  {
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
+
+    
 
     public TransTemplate withVideo(Video video) {
         this.video = video;
@@ -91,6 +93,8 @@ public class TransTemplate  {
         this.video = video;
     }
 
+    
+
     public TransTemplate withAudio(Audio audio) {
         this.audio = audio;
         return this;
@@ -118,6 +122,8 @@ public class TransTemplate  {
         this.audio = audio;
     }
 
+    
+
     public TransTemplate withCommon(Common common) {
         this.common = common;
         return this;
@@ -144,6 +150,9 @@ public class TransTemplate  {
     public void setCommon(Common common) {
         this.common = common;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

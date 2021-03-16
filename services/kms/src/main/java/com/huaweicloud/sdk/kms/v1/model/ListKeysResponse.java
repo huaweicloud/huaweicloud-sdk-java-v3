@@ -141,9 +141,6 @@ public class ListKeysResponse extends SdkResponse {
 
     
     public ListKeysResponse addKeysItem(String keysItem) {
-        if (this.keys == null) {
-            this.keys = new ArrayList<>();
-        }
         this.keys.add(keysItem);
         return this;
     }
@@ -168,6 +165,8 @@ public class ListKeysResponse extends SdkResponse {
         this.keys = keys;
     }
 
+    
+
     public ListKeysResponse withKeyDetails(List<KeyDetails> keyDetails) {
         this.keyDetails = keyDetails;
         return this;
@@ -175,9 +174,6 @@ public class ListKeysResponse extends SdkResponse {
 
     
     public ListKeysResponse addKeyDetailsItem(KeyDetails keyDetailsItem) {
-        if (this.keyDetails == null) {
-            this.keyDetails = new ArrayList<>();
-        }
         this.keyDetails.add(keyDetailsItem);
         return this;
     }
@@ -202,6 +198,8 @@ public class ListKeysResponse extends SdkResponse {
         this.keyDetails = keyDetails;
     }
 
+    
+
     public ListKeysResponse withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
@@ -222,6 +220,8 @@ public class ListKeysResponse extends SdkResponse {
         this.nextMarker = nextMarker;
     }
 
+    
+
     public ListKeysResponse withTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
         return this;
@@ -241,6 +241,8 @@ public class ListKeysResponse extends SdkResponse {
     public void setTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
     }
+
+    
 
     public ListKeysResponse withTotal(Integer total) {
         this.total = total;
@@ -263,6 +265,9 @@ public class ListKeysResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

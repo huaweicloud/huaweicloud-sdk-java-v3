@@ -49,6 +49,8 @@ public class DeletePublicipTagRequest  {
         this.publicipId = publicipId;
     }
 
+    
+
     public DeletePublicipTagRequest withKey(String key) {
         this.key = key;
         return this;
@@ -68,6 +70,9 @@ public class DeletePublicipTagRequest  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

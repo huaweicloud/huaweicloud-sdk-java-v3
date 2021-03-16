@@ -49,6 +49,8 @@ public class DatabaseForCreation  {
         this.name = name;
     }
 
+    
+
     public DatabaseForCreation withCharacterSet(String characterSet) {
         this.characterSet = characterSet;
         return this;
@@ -58,7 +60,7 @@ public class DatabaseForCreation  {
 
 
     /**
-     * 数据库使用的字符集。
+     * 数据库使用的字符集，例如utf8、gbk、ascii等MySQL支持的字符集。
      * @return characterSet
      */
     public String getCharacterSet() {
@@ -68,6 +70,9 @@ public class DatabaseForCreation  {
     public void setCharacterSet(String characterSet) {
         this.characterSet = characterSet;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

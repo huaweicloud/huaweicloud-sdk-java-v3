@@ -114,6 +114,8 @@ public class ShowIterationV4Response extends SdkResponse {
         this.beginTime = beginTime;
     }
 
+    
+
     public ShowIterationV4Response withCharts(List<Chart> charts) {
         this.charts = charts;
         return this;
@@ -121,9 +123,6 @@ public class ShowIterationV4Response extends SdkResponse {
 
     
     public ShowIterationV4Response addChartsItem(Chart chartsItem) {
-        if (this.charts == null) {
-            this.charts = new ArrayList<>();
-        }
         this.charts.add(chartsItem);
         return this;
     }
@@ -148,6 +147,8 @@ public class ShowIterationV4Response extends SdkResponse {
         this.charts = charts;
     }
 
+    
+
     public ShowIterationV4Response withClosedTotal(Integer closedTotal) {
         this.closedTotal = closedTotal;
         return this;
@@ -167,6 +168,8 @@ public class ShowIterationV4Response extends SdkResponse {
     public void setClosedTotal(Integer closedTotal) {
         this.closedTotal = closedTotal;
     }
+
+    
 
     public ShowIterationV4Response withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
@@ -188,6 +191,8 @@ public class ShowIterationV4Response extends SdkResponse {
         this.createdTime = createdTime;
     }
 
+    
+
     public ShowIterationV4Response withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -207,6 +212,8 @@ public class ShowIterationV4Response extends SdkResponse {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowIterationV4Response withHaveTask(Boolean haveTask) {
         this.haveTask = haveTask;
@@ -228,6 +235,8 @@ public class ShowIterationV4Response extends SdkResponse {
         this.haveTask = haveTask;
     }
 
+    
+
     public ShowIterationV4Response withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
         return this;
@@ -247,6 +256,8 @@ public class ShowIterationV4Response extends SdkResponse {
     public void setIterationId(Integer iterationId) {
         this.iterationId = iterationId;
     }
+
+    
 
     public ShowIterationV4Response withName(String name) {
         this.name = name;
@@ -268,6 +279,8 @@ public class ShowIterationV4Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowIterationV4Response withOpenedTotal(Integer openedTotal) {
         this.openedTotal = openedTotal;
         return this;
@@ -287,6 +300,8 @@ public class ShowIterationV4Response extends SdkResponse {
     public void setOpenedTotal(Integer openedTotal) {
         this.openedTotal = openedTotal;
     }
+
+    
 
     public ShowIterationV4Response withProgress(String progress) {
         this.progress = progress;
@@ -308,6 +323,8 @@ public class ShowIterationV4Response extends SdkResponse {
         this.progress = progress;
     }
 
+    
+
     public ShowIterationV4Response withTotal(Integer total) {
         this.total = total;
         return this;
@@ -328,6 +345,8 @@ public class ShowIterationV4Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowIterationV4Response withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
@@ -347,6 +366,9 @@ public class ShowIterationV4Response extends SdkResponse {
     public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

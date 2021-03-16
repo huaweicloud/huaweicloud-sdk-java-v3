@@ -170,7 +170,7 @@ public class MpeCallBackReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MpeMetaData metaData = null;
+    private MpeMetaData metaData;
 
     public MpeCallBackReq withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
@@ -192,6 +192,8 @@ public class MpeCallBackReq  {
         this.taskType = taskType;
     }
 
+    
+
     public MpeCallBackReq withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -212,6 +214,8 @@ public class MpeCallBackReq  {
         this.taskId = taskId;
     }
 
+    
+
     public MpeCallBackReq withStatus(String status) {
         this.status = status;
         return this;
@@ -231,6 +235,8 @@ public class MpeCallBackReq  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public MpeCallBackReq withCompleteRatio(Integer completeRatio) {
         this.completeRatio = completeRatio;
@@ -254,6 +260,8 @@ public class MpeCallBackReq  {
         this.completeRatio = completeRatio;
     }
 
+    
+
     public MpeCallBackReq withDescription(String description) {
         this.description = description;
         return this;
@@ -273,6 +281,8 @@ public class MpeCallBackReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public MpeCallBackReq withMetaData(MpeMetaData metaData) {
         this.metaData = metaData;
@@ -300,6 +310,9 @@ public class MpeCallBackReq  {
     public void setMetaData(MpeMetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

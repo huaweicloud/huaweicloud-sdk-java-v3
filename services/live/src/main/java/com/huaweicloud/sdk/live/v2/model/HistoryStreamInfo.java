@@ -173,6 +173,8 @@ public class HistoryStreamInfo  {
         this.domain = domain;
     }
 
+    
+
     public HistoryStreamInfo withApp(String app) {
         this.app = app;
         return this;
@@ -192,6 +194,8 @@ public class HistoryStreamInfo  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public HistoryStreamInfo withStream(String stream) {
         this.stream = stream;
@@ -213,6 +217,8 @@ public class HistoryStreamInfo  {
         this.stream = stream;
     }
 
+    
+
     public HistoryStreamInfo withType(Integer type) {
         this.type = type;
         return this;
@@ -232,6 +238,8 @@ public class HistoryStreamInfo  {
     public void setType(Integer type) {
         this.type = type;
     }
+
+    
 
     public HistoryStreamInfo withVideoCodec(VideoCodecEnum videoCodec) {
         this.videoCodec = videoCodec;
@@ -253,6 +261,8 @@ public class HistoryStreamInfo  {
         this.videoCodec = videoCodec;
     }
 
+    
+
     public HistoryStreamInfo withAudioCodec(String audioCodec) {
         this.audioCodec = audioCodec;
         return this;
@@ -272,6 +282,8 @@ public class HistoryStreamInfo  {
     public void setAudioCodec(String audioCodec) {
         this.audioCodec = audioCodec;
     }
+
+    
 
     public HistoryStreamInfo withClientIp(String clientIp) {
         this.clientIp = clientIp;
@@ -293,6 +305,8 @@ public class HistoryStreamInfo  {
         this.clientIp = clientIp;
     }
 
+    
+
     public HistoryStreamInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -313,6 +327,8 @@ public class HistoryStreamInfo  {
         this.startTime = startTime;
     }
 
+    
+
     public HistoryStreamInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -332,6 +348,9 @@ public class HistoryStreamInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

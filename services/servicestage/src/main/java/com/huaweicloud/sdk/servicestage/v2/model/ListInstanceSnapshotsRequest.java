@@ -161,6 +161,8 @@ public class ListInstanceSnapshotsRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ListInstanceSnapshotsRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -181,6 +183,8 @@ public class ListInstanceSnapshotsRequest  {
         this.componentId = componentId;
     }
 
+    
+
     public ListInstanceSnapshotsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -200,6 +204,8 @@ public class ListInstanceSnapshotsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListInstanceSnapshotsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -223,6 +229,8 @@ public class ListInstanceSnapshotsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListInstanceSnapshotsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -242,6 +250,8 @@ public class ListInstanceSnapshotsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListInstanceSnapshotsRequest withSnapshotOrderBy(String snapshotOrderBy) {
         this.snapshotOrderBy = snapshotOrderBy;
@@ -263,6 +273,8 @@ public class ListInstanceSnapshotsRequest  {
         this.snapshotOrderBy = snapshotOrderBy;
     }
 
+    
+
     public ListInstanceSnapshotsRequest withOrder(OrderEnum order) {
         this.order = order;
         return this;
@@ -282,6 +294,9 @@ public class ListInstanceSnapshotsRequest  {
     public void setOrder(OrderEnum order) {
         this.order = order;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

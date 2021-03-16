@@ -561,6 +561,8 @@ public class ListInstancesRespInstances  {
         this.name = name;
     }
 
+    
+
     public ListInstancesRespInstances withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -580,6 +582,8 @@ public class ListInstancesRespInstances  {
     public void setEngine(String engine) {
         this.engine = engine;
     }
+
+    
 
     public ListInstancesRespInstances withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -601,6 +605,8 @@ public class ListInstancesRespInstances  {
         this.engineVersion = engineVersion;
     }
 
+    
+
     public ListInstancesRespInstances withSpecification(String specification) {
         this.specification = specification;
         return this;
@@ -620,6 +626,8 @@ public class ListInstancesRespInstances  {
     public void setSpecification(String specification) {
         this.specification = specification;
     }
+
+    
 
     public ListInstancesRespInstances withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
@@ -641,6 +649,8 @@ public class ListInstancesRespInstances  {
         this.storageSpace = storageSpace;
     }
 
+    
+
     public ListInstancesRespInstances withPartitionNum(String partitionNum) {
         this.partitionNum = partitionNum;
         return this;
@@ -660,6 +670,8 @@ public class ListInstancesRespInstances  {
     public void setPartitionNum(String partitionNum) {
         this.partitionNum = partitionNum;
     }
+
+    
 
     public ListInstancesRespInstances withUsedStorageSpace(Integer usedStorageSpace) {
         this.usedStorageSpace = usedStorageSpace;
@@ -681,6 +693,8 @@ public class ListInstancesRespInstances  {
         this.usedStorageSpace = usedStorageSpace;
     }
 
+    
+
     public ListInstancesRespInstances withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
         return this;
@@ -700,6 +714,8 @@ public class ListInstancesRespInstances  {
     public void setConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
     }
+
+    
 
     public ListInstancesRespInstances withPort(Integer port) {
         this.port = port;
@@ -721,6 +737,8 @@ public class ListInstancesRespInstances  {
         this.port = port;
     }
 
+    
+
     public ListInstancesRespInstances withStatus(String status) {
         this.status = status;
         return this;
@@ -740,6 +758,8 @@ public class ListInstancesRespInstances  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListInstancesRespInstances withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -761,6 +781,8 @@ public class ListInstancesRespInstances  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListInstancesRespInstances withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
@@ -780,6 +802,8 @@ public class ListInstancesRespInstances  {
     public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
     }
+
+    
 
     public ListInstancesRespInstances withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -801,6 +825,8 @@ public class ListInstancesRespInstances  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ListInstancesRespInstances withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -820,6 +846,8 @@ public class ListInstancesRespInstances  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public ListInstancesRespInstances withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -841,6 +869,8 @@ public class ListInstancesRespInstances  {
         this.vpcName = vpcName;
     }
 
+    
+
     public ListInstancesRespInstances withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -860,6 +890,8 @@ public class ListInstancesRespInstances  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public ListInstancesRespInstances withUserId(String userId) {
         this.userId = userId;
@@ -881,6 +913,8 @@ public class ListInstancesRespInstances  {
         this.userId = userId;
     }
 
+    
+
     public ListInstancesRespInstances withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -900,6 +934,8 @@ public class ListInstancesRespInstances  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public ListInstancesRespInstances withOrderId(String orderId) {
         this.orderId = orderId;
@@ -921,6 +957,8 @@ public class ListInstancesRespInstances  {
         this.orderId = orderId;
     }
 
+    
+
     public ListInstancesRespInstances withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
         return this;
@@ -940,6 +978,8 @@ public class ListInstancesRespInstances  {
     public void setMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
     }
+
+    
 
     public ListInstancesRespInstances withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
@@ -961,6 +1001,8 @@ public class ListInstancesRespInstances  {
         this.maintainEnd = maintainEnd;
     }
 
+    
+
     public ListInstancesRespInstances withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
@@ -980,6 +1022,8 @@ public class ListInstancesRespInstances  {
     public void setEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
     }
+
+    
 
     public ListInstancesRespInstances withManagementConnectAddress(String managementConnectAddress) {
         this.managementConnectAddress = managementConnectAddress;
@@ -1001,6 +1045,8 @@ public class ListInstancesRespInstances  {
         this.managementConnectAddress = managementConnectAddress;
     }
 
+    
+
     public ListInstancesRespInstances withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
         return this;
@@ -1020,6 +1066,8 @@ public class ListInstancesRespInstances  {
     public void setSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
     }
+
+    
 
     public ListInstancesRespInstances withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -1041,6 +1089,8 @@ public class ListInstancesRespInstances  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListInstancesRespInstances withIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
         return this;
@@ -1060,6 +1110,8 @@ public class ListInstancesRespInstances  {
     public void setIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
     }
+
+    
 
     public ListInstancesRespInstances withExtendTimes(Integer extendTimes) {
         this.extendTimes = extendTimes;
@@ -1081,6 +1133,8 @@ public class ListInstancesRespInstances  {
         this.extendTimes = extendTimes;
     }
 
+    
+
     public ListInstancesRespInstances withEnableAutoTopic(Boolean enableAutoTopic) {
         this.enableAutoTopic = enableAutoTopic;
         return this;
@@ -1100,6 +1154,8 @@ public class ListInstancesRespInstances  {
     public void setEnableAutoTopic(Boolean enableAutoTopic) {
         this.enableAutoTopic = enableAutoTopic;
     }
+
+    
 
     public ListInstancesRespInstances withType(TypeEnum type) {
         this.type = type;
@@ -1121,6 +1177,8 @@ public class ListInstancesRespInstances  {
         this.type = type;
     }
 
+    
+
     public ListInstancesRespInstances withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -1140,6 +1198,8 @@ public class ListInstancesRespInstances  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public ListInstancesRespInstances withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -1161,6 +1221,8 @@ public class ListInstancesRespInstances  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public ListInstancesRespInstances withSecurityGroupName(String securityGroupName) {
         this.securityGroupName = securityGroupName;
         return this;
@@ -1180,6 +1242,8 @@ public class ListInstancesRespInstances  {
     public void setSecurityGroupName(String securityGroupName) {
         this.securityGroupName = securityGroupName;
     }
+
+    
 
     public ListInstancesRespInstances withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -1201,6 +1265,8 @@ public class ListInstancesRespInstances  {
         this.subnetId = subnetId;
     }
 
+    
+
     public ListInstancesRespInstances withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -1208,9 +1274,6 @@ public class ListInstancesRespInstances  {
 
     
     public ListInstancesRespInstances addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -1235,6 +1298,8 @@ public class ListInstancesRespInstances  {
         this.availableZones = availableZones;
     }
 
+    
+
     public ListInstancesRespInstances withTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
         return this;
@@ -1254,6 +1319,8 @@ public class ListInstancesRespInstances  {
     public void setTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
     }
+
+    
 
     public ListInstancesRespInstances withPublicConnectAddress(String publicConnectAddress) {
         this.publicConnectAddress = publicConnectAddress;
@@ -1275,6 +1342,8 @@ public class ListInstancesRespInstances  {
         this.publicConnectAddress = publicConnectAddress;
     }
 
+    
+
     public ListInstancesRespInstances withStorageResourceId(String storageResourceId) {
         this.storageResourceId = storageResourceId;
         return this;
@@ -1294,6 +1363,8 @@ public class ListInstancesRespInstances  {
     public void setStorageResourceId(String storageResourceId) {
         this.storageResourceId = storageResourceId;
     }
+
+    
 
     public ListInstancesRespInstances withStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
@@ -1315,6 +1386,8 @@ public class ListInstancesRespInstances  {
         this.storageSpecCode = storageSpecCode;
     }
 
+    
+
     public ListInstancesRespInstances withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -1334,6 +1407,8 @@ public class ListInstancesRespInstances  {
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
+
+    
 
     public ListInstancesRespInstances withStorageType(String storageType) {
         this.storageType = storageType;
@@ -1355,6 +1430,8 @@ public class ListInstancesRespInstances  {
         this.storageType = storageType;
     }
 
+    
+
     public ListInstancesRespInstances withRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
         return this;
@@ -1374,6 +1451,8 @@ public class ListInstancesRespInstances  {
     public void setRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
     }
+
+    
 
     public ListInstancesRespInstances withKafkaPublicStatus(String kafkaPublicStatus) {
         this.kafkaPublicStatus = kafkaPublicStatus;
@@ -1395,6 +1474,8 @@ public class ListInstancesRespInstances  {
         this.kafkaPublicStatus = kafkaPublicStatus;
     }
 
+    
+
     public ListInstancesRespInstances withPublicBandwidth(Integer publicBandwidth) {
         this.publicBandwidth = publicBandwidth;
         return this;
@@ -1414,6 +1495,8 @@ public class ListInstancesRespInstances  {
     public void setPublicBandwidth(Integer publicBandwidth) {
         this.publicBandwidth = publicBandwidth;
     }
+
+    
 
     public ListInstancesRespInstances withKafkaManagerUser(String kafkaManagerUser) {
         this.kafkaManagerUser = kafkaManagerUser;
@@ -1435,6 +1518,8 @@ public class ListInstancesRespInstances  {
         this.kafkaManagerUser = kafkaManagerUser;
     }
 
+    
+
     public ListInstancesRespInstances withEnableLogCollection(Boolean enableLogCollection) {
         this.enableLogCollection = enableLogCollection;
         return this;
@@ -1454,6 +1539,8 @@ public class ListInstancesRespInstances  {
     public void setEnableLogCollection(Boolean enableLogCollection) {
         this.enableLogCollection = enableLogCollection;
     }
+
+    
 
     public ListInstancesRespInstances withCrossVpcInfo(String crossVpcInfo) {
         this.crossVpcInfo = crossVpcInfo;
@@ -1475,6 +1562,8 @@ public class ListInstancesRespInstances  {
         this.crossVpcInfo = crossVpcInfo;
     }
 
+    
+
     public ListInstancesRespInstances withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -1495,6 +1584,8 @@ public class ListInstancesRespInstances  {
         this.ipv6Enable = ipv6Enable;
     }
 
+    
+
     public ListInstancesRespInstances withIpv6ConnectAddresses(List<String> ipv6ConnectAddresses) {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
         return this;
@@ -1502,9 +1593,6 @@ public class ListInstancesRespInstances  {
 
     
     public ListInstancesRespInstances addIpv6ConnectAddressesItem(String ipv6ConnectAddressesItem) {
-        if (this.ipv6ConnectAddresses == null) {
-            this.ipv6ConnectAddresses = new ArrayList<>();
-        }
         this.ipv6ConnectAddresses.add(ipv6ConnectAddressesItem);
         return this;
     }
@@ -1529,6 +1617,8 @@ public class ListInstancesRespInstances  {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
     }
 
+    
+
     public ListInstancesRespInstances withConnectorEnable(Boolean connectorEnable) {
         this.connectorEnable = connectorEnable;
         return this;
@@ -1548,6 +1638,8 @@ public class ListInstancesRespInstances  {
     public void setConnectorEnable(Boolean connectorEnable) {
         this.connectorEnable = connectorEnable;
     }
+
+    
 
     public ListInstancesRespInstances withConnectorId(String connectorId) {
         this.connectorId = connectorId;
@@ -1569,6 +1661,8 @@ public class ListInstancesRespInstances  {
         this.connectorId = connectorId;
     }
 
+    
+
     public ListInstancesRespInstances withRestEnable(Boolean restEnable) {
         this.restEnable = restEnable;
         return this;
@@ -1588,6 +1682,8 @@ public class ListInstancesRespInstances  {
     public void setRestEnable(Boolean restEnable) {
         this.restEnable = restEnable;
     }
+
+    
 
     public ListInstancesRespInstances withRestConnectAddress(String restConnectAddress) {
         this.restConnectAddress = restConnectAddress;
@@ -1609,6 +1705,8 @@ public class ListInstancesRespInstances  {
         this.restConnectAddress = restConnectAddress;
     }
 
+    
+
     public ListInstancesRespInstances withMessageQueryInstEnable(Boolean messageQueryInstEnable) {
         this.messageQueryInstEnable = messageQueryInstEnable;
         return this;
@@ -1628,6 +1726,8 @@ public class ListInstancesRespInstances  {
     public void setMessageQueryInstEnable(Boolean messageQueryInstEnable) {
         this.messageQueryInstEnable = messageQueryInstEnable;
     }
+
+    
 
     public ListInstancesRespInstances withVpcClientPlain(Boolean vpcClientPlain) {
         this.vpcClientPlain = vpcClientPlain;
@@ -1649,6 +1749,8 @@ public class ListInstancesRespInstances  {
         this.vpcClientPlain = vpcClientPlain;
     }
 
+    
+
     public ListInstancesRespInstances withSupportFeatures(String supportFeatures) {
         this.supportFeatures = supportFeatures;
         return this;
@@ -1668,6 +1770,8 @@ public class ListInstancesRespInstances  {
     public void setSupportFeatures(String supportFeatures) {
         this.supportFeatures = supportFeatures;
     }
+
+    
 
     public ListInstancesRespInstances withTraceEnable(Boolean traceEnable) {
         this.traceEnable = traceEnable;
@@ -1689,6 +1793,8 @@ public class ListInstancesRespInstances  {
         this.traceEnable = traceEnable;
     }
 
+    
+
     public ListInstancesRespInstances withPodConnectAddress(String podConnectAddress) {
         this.podConnectAddress = podConnectAddress;
         return this;
@@ -1708,6 +1814,8 @@ public class ListInstancesRespInstances  {
     public void setPodConnectAddress(String podConnectAddress) {
         this.podConnectAddress = podConnectAddress;
     }
+
+    
 
     public ListInstancesRespInstances withDiskEncrypted(Boolean diskEncrypted) {
         this.diskEncrypted = diskEncrypted;
@@ -1729,6 +1837,8 @@ public class ListInstancesRespInstances  {
         this.diskEncrypted = diskEncrypted;
     }
 
+    
+
     public ListInstancesRespInstances withKafkaPrivateConnectAddress(String kafkaPrivateConnectAddress) {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
         return this;
@@ -1749,6 +1859,8 @@ public class ListInstancesRespInstances  {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
     }
 
+    
+
     public ListInstancesRespInstances withCesVersion(String cesVersion) {
         this.cesVersion = cesVersion;
         return this;
@@ -1768,6 +1880,9 @@ public class ListInstancesRespInstances  {
     public void setCesVersion(String cesVersion) {
         this.cesVersion = cesVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

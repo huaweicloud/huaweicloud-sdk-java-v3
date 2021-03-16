@@ -46,7 +46,7 @@ public class CreateTestCaseRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extend_info")
     
-    private ExternalServiceCaseInfo extendInfo = null;
+    private ExternalServiceCaseInfo extendInfo;
 
     public CreateTestCaseRequestBody withName(String name) {
         this.name = name;
@@ -68,6 +68,8 @@ public class CreateTestCaseRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateTestCaseRequestBody withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -87,6 +89,8 @@ public class CreateTestCaseRequestBody  {
     public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public CreateTestCaseRequestBody withRankId(String rankId) {
         this.rankId = rankId;
@@ -108,6 +112,8 @@ public class CreateTestCaseRequestBody  {
         this.rankId = rankId;
     }
 
+    
+
     public CreateTestCaseRequestBody withTestcaseNumber(String testcaseNumber) {
         this.testcaseNumber = testcaseNumber;
         return this;
@@ -127,6 +133,8 @@ public class CreateTestCaseRequestBody  {
     public void setTestcaseNumber(String testcaseNumber) {
         this.testcaseNumber = testcaseNumber;
     }
+
+    
 
     public CreateTestCaseRequestBody withExtendInfo(ExternalServiceCaseInfo extendInfo) {
         this.extendInfo = extendInfo;
@@ -154,6 +162,9 @@ public class CreateTestCaseRequestBody  {
     public void setExtendInfo(ExternalServiceCaseInfo extendInfo) {
         this.extendInfo = extendInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

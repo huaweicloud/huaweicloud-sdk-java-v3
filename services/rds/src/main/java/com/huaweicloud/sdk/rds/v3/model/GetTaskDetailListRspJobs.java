@@ -161,6 +161,8 @@ public class GetTaskDetailListRspJobs  {
         this.id = id;
     }
 
+    
+
     public GetTaskDetailListRspJobs withName(String name) {
         this.name = name;
         return this;
@@ -180,6 +182,8 @@ public class GetTaskDetailListRspJobs  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GetTaskDetailListRspJobs withStatus(StatusEnum status) {
         this.status = status;
@@ -201,6 +205,8 @@ public class GetTaskDetailListRspJobs  {
         this.status = status;
     }
 
+    
+
     public GetTaskDetailListRspJobs withCreated(String created) {
         this.created = created;
         return this;
@@ -220,6 +226,8 @@ public class GetTaskDetailListRspJobs  {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public GetTaskDetailListRspJobs withEnded(String ended) {
         this.ended = ended;
@@ -241,6 +249,8 @@ public class GetTaskDetailListRspJobs  {
         this.ended = ended;
     }
 
+    
+
     public GetTaskDetailListRspJobs withProcess(String process) {
         this.process = process;
         return this;
@@ -260,6 +270,9 @@ public class GetTaskDetailListRspJobs  {
     public void setProcess(String process) {
         this.process = process;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

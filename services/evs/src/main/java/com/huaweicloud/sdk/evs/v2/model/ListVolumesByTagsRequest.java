@@ -22,7 +22,7 @@ public class ListVolumesByTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListVolumesByTagsRequestBody body = null;
+    private ListVolumesByTagsRequestBody body;
 
     public ListVolumesByTagsRequest withBody(ListVolumesByTagsRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ListVolumesByTagsRequest  {
     public void setBody(ListVolumesByTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

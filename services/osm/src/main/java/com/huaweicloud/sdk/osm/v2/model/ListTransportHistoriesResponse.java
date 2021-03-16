@@ -56,6 +56,8 @@ public class ListTransportHistoriesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListTransportHistoriesResponse withFileOpsList(List<FileOperateLog> fileOpsList) {
         this.fileOpsList = fileOpsList;
         return this;
@@ -63,9 +65,6 @@ public class ListTransportHistoriesResponse extends SdkResponse {
 
     
     public ListTransportHistoriesResponse addFileOpsListItem(FileOperateLog fileOpsListItem) {
-        if (this.fileOpsList == null) {
-            this.fileOpsList = new ArrayList<>();
-        }
         this.fileOpsList.add(fileOpsListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListTransportHistoriesResponse extends SdkResponse {
     public void setFileOpsList(List<FileOperateLog> fileOpsList) {
         this.fileOpsList = fileOpsList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

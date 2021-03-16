@@ -30,7 +30,7 @@ public class CreateWholeImageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,7 +78,7 @@ public class CreateWholeImageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_ram")
     
-    private Integer minRam = 0;
+    private Integer minRam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,6 +106,8 @@ public class CreateWholeImageRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateWholeImageRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -126,6 +128,8 @@ public class CreateWholeImageRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateWholeImageRequestBody withImageTags(List<TagKeyValue> imageTags) {
         this.imageTags = imageTags;
         return this;
@@ -133,9 +137,6 @@ public class CreateWholeImageRequestBody  {
 
     
     public CreateWholeImageRequestBody addImageTagsItem(TagKeyValue imageTagsItem) {
-        if (this.imageTags == null) {
-            this.imageTags = new ArrayList<>();
-        }
         this.imageTags.add(imageTagsItem);
         return this;
     }
@@ -160,6 +161,8 @@ public class CreateWholeImageRequestBody  {
         this.imageTags = imageTags;
     }
 
+    
+
     public CreateWholeImageRequestBody withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -179,6 +182,8 @@ public class CreateWholeImageRequestBody  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateWholeImageRequestBody withName(String name) {
         this.name = name;
@@ -200,6 +205,8 @@ public class CreateWholeImageRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateWholeImageRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -207,9 +214,6 @@ public class CreateWholeImageRequestBody  {
 
     
     public CreateWholeImageRequestBody addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -234,6 +238,8 @@ public class CreateWholeImageRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public CreateWholeImageRequestBody withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -253,6 +259,8 @@ public class CreateWholeImageRequestBody  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public CreateWholeImageRequestBody withWholeImageType(String wholeImageType) {
         this.wholeImageType = wholeImageType;
@@ -274,6 +282,8 @@ public class CreateWholeImageRequestBody  {
         this.wholeImageType = wholeImageType;
     }
 
+    
+
     public CreateWholeImageRequestBody withMaxRam(Integer maxRam) {
         this.maxRam = maxRam;
         return this;
@@ -293,6 +303,8 @@ public class CreateWholeImageRequestBody  {
     public void setMaxRam(Integer maxRam) {
         this.maxRam = maxRam;
     }
+
+    
 
     public CreateWholeImageRequestBody withMinRam(Integer minRam) {
         this.minRam = minRam;
@@ -314,6 +326,8 @@ public class CreateWholeImageRequestBody  {
         this.minRam = minRam;
     }
 
+    
+
     public CreateWholeImageRequestBody withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -333,6 +347,9 @@ public class CreateWholeImageRequestBody  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class ChangeEnvironmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnvironmentModify body = null;
+    private EnvironmentModify body;
 
     public ChangeEnvironmentRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -49,6 +49,8 @@ public class ChangeEnvironmentRequest  {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
 
     public ChangeEnvironmentRequest withBody(EnvironmentModify body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ChangeEnvironmentRequest  {
     public void setBody(EnvironmentModify body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

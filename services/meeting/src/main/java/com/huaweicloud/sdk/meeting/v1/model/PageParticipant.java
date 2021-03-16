@@ -51,9 +51,6 @@ public class PageParticipant  {
 
     
     public PageParticipant addDataItem(ParticipantInfo dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
         this.data.add(dataItem);
         return this;
     }
@@ -78,6 +75,8 @@ public class PageParticipant  {
         this.data = data;
     }
 
+    
+
     public PageParticipant withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -97,6 +96,8 @@ public class PageParticipant  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public PageParticipant withLimit(Integer limit) {
         this.limit = limit;
@@ -118,6 +119,8 @@ public class PageParticipant  {
         this.limit = limit;
     }
 
+    
+
     public PageParticipant withCount(Integer count) {
         this.count = count;
         return this;
@@ -137,6 +140,9 @@ public class PageParticipant  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

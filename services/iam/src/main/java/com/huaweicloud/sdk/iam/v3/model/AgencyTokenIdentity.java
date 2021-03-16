@@ -100,13 +100,13 @@ public class AgencyTokenIdentity  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<MethodsEnum> methods = new ArrayList<>();
+    private List<MethodsEnum> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assume_role")
     
-    private AgencyTokenAssumerole assumeRole = null;
+    private AgencyTokenAssumerole assumeRole;
 
     public AgencyTokenIdentity withMethods(List<MethodsEnum> methods) {
         this.methods = methods;
@@ -139,6 +139,8 @@ public class AgencyTokenIdentity  {
         this.methods = methods;
     }
 
+    
+
     public AgencyTokenIdentity withAssumeRole(AgencyTokenAssumerole assumeRole) {
         this.assumeRole = assumeRole;
         return this;
@@ -165,6 +167,9 @@ public class AgencyTokenIdentity  {
     public void setAssumeRole(AgencyTokenAssumerole assumeRole) {
         this.assumeRole = assumeRole;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class DeleteScriptRequest  {
     public void setScriptName(String scriptName) {
         this.scriptName = scriptName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,6 +63,8 @@ public class ListJobInfoDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListJobInfoDetailRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -82,6 +84,8 @@ public class ListJobInfoDetailRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListJobInfoDetailRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -103,6 +107,8 @@ public class ListJobInfoDetailRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListJobInfoDetailRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -122,6 +128,9 @@ public class ListJobInfoDetailRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

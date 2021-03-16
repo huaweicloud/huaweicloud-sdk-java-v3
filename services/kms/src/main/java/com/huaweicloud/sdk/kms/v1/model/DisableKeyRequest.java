@@ -22,13 +22,13 @@ public class DisableKeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private OperateKeyRequestBody body = null;
+    private OperateKeyRequestBody body;
 
     public DisableKeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class DisableKeyRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public DisableKeyRequest withBody(OperateKeyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DisableKeyRequest  {
     public void setBody(OperateKeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,9 +33,6 @@ public class ErrorDetailInfo  {
 
     
     public ErrorDetailInfo addFailedItem(ErrorCaseInfoBean failedItem) {
-        if (this.failed == null) {
-            this.failed = new ArrayList<>();
-        }
         this.failed.add(failedItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ErrorDetailInfo  {
     public void setFailed(List<ErrorCaseInfoBean> failed) {
         this.failed = failed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

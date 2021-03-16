@@ -61,6 +61,8 @@ public class ImportCertificateRequestBody  {
         this.name = name;
     }
 
+    
+
     public ImportCertificateRequestBody withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
@@ -80,6 +82,8 @@ public class ImportCertificateRequestBody  {
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
+
+    
 
     public ImportCertificateRequestBody withCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
@@ -101,6 +105,8 @@ public class ImportCertificateRequestBody  {
         this.certificateChain = certificateChain;
     }
 
+    
+
     public ImportCertificateRequestBody withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -120,6 +126,9 @@ public class ImportCertificateRequestBody  {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class RestHandsUpReqBody  {
     public void setHandsState(Integer handsState) {
         this.handsState = handsState;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

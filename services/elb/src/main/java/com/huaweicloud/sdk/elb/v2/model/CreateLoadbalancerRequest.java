@@ -22,7 +22,7 @@ public class CreateLoadbalancerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateLoadbalancerRequestBody body = null;
+    private CreateLoadbalancerRequestBody body;
 
     public CreateLoadbalancerRequest withBody(CreateLoadbalancerRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateLoadbalancerRequest  {
     public void setBody(CreateLoadbalancerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

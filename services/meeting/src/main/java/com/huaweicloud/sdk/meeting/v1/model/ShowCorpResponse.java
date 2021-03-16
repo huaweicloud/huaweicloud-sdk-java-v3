@@ -26,19 +26,19 @@ public class ShowCorpResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basicInfo")
     
-    private QueryCorpBasicResultDTO basicInfo = null;
+    private QueryCorpBasicResultDTO basicInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adminInfo")
     
-    private QueryAdminResultDTO adminInfo = null;
+    private QueryAdminResultDTO adminInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resInfo")
     
-    private QueryCorpResResultDTO resInfo = null;
+    private QueryCorpResResultDTO resInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class ShowCorpResponse extends SdkResponse {
         this.basicInfo = basicInfo;
     }
 
+    
+
     public ShowCorpResponse withAdminInfo(QueryAdminResultDTO adminInfo) {
         this.adminInfo = adminInfo;
         return this;
@@ -99,6 +101,8 @@ public class ShowCorpResponse extends SdkResponse {
     public void setAdminInfo(QueryAdminResultDTO adminInfo) {
         this.adminInfo = adminInfo;
     }
+
+    
 
     public ShowCorpResponse withResInfo(QueryCorpResResultDTO resInfo) {
         this.resInfo = resInfo;
@@ -127,6 +131,8 @@ public class ShowCorpResponse extends SdkResponse {
         this.resInfo = resInfo;
     }
 
+    
+
     public ShowCorpResponse withId(String id) {
         this.id = id;
         return this;
@@ -146,6 +152,9 @@ public class ShowCorpResponse extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

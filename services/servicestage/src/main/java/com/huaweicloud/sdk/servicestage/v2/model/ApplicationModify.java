@@ -49,6 +49,8 @@ public class ApplicationModify  {
         this.name = name;
     }
 
+    
+
     public ApplicationModify withDescription(String description) {
         this.description = description;
         return this;
@@ -68,6 +70,9 @@ public class ApplicationModify  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

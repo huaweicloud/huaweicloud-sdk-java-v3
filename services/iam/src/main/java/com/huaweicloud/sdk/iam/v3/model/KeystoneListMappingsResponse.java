@@ -27,7 +27,7 @@ public class KeystoneListMappingsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListMappingsResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListMappingsResponse withMappings(List<MappingResult> mappings) {
         this.mappings = mappings;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListMappingsResponse extends SdkResponse {
 
     
     public KeystoneListMappingsResponse addMappingsItem(MappingResult mappingsItem) {
-        if (this.mappings == null) {
-            this.mappings = new ArrayList<>();
-        }
         this.mappings.add(mappingsItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListMappingsResponse extends SdkResponse {
     public void setMappings(List<MappingResult> mappings) {
         this.mappings = mappings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

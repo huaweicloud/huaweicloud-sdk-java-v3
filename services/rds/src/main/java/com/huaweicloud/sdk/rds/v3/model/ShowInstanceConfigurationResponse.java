@@ -160,6 +160,8 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         this.datastoreVersionName = datastoreVersionName;
     }
 
+    
+
     public ShowInstanceConfigurationResponse withDatastoreName(DatastoreNameEnum datastoreName) {
         this.datastoreName = datastoreName;
         return this;
@@ -179,6 +181,8 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     public void setDatastoreName(DatastoreNameEnum datastoreName) {
         this.datastoreName = datastoreName;
     }
+
+    
 
     public ShowInstanceConfigurationResponse withCreated(String created) {
         this.created = created;
@@ -200,6 +204,8 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         this.created = created;
     }
 
+    
+
     public ShowInstanceConfigurationResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -220,6 +226,8 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         this.updated = updated;
     }
 
+    
+
     public ShowInstanceConfigurationResponse withConfigurationParameters(List<ConfigurationParameter> configurationParameters) {
         this.configurationParameters = configurationParameters;
         return this;
@@ -227,9 +235,6 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
 
     
     public ShowInstanceConfigurationResponse addConfigurationParametersItem(ConfigurationParameter configurationParametersItem) {
-        if (this.configurationParameters == null) {
-            this.configurationParameters = new ArrayList<>();
-        }
         this.configurationParameters.add(configurationParametersItem);
         return this;
     }
@@ -253,6 +258,9 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     public void setConfigurationParameters(List<ConfigurationParameter> configurationParameters) {
         this.configurationParameters = configurationParameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

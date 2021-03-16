@@ -61,6 +61,8 @@ public class CreateOrDeleteDeviceInGroupRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateOrDeleteDeviceInGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -80,6 +82,8 @@ public class CreateOrDeleteDeviceInGroupRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public CreateOrDeleteDeviceInGroupRequest withActionId(String actionId) {
         this.actionId = actionId;
@@ -101,6 +105,8 @@ public class CreateOrDeleteDeviceInGroupRequest  {
         this.actionId = actionId;
     }
 
+    
+
     public CreateOrDeleteDeviceInGroupRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -120,6 +126,9 @@ public class CreateOrDeleteDeviceInGroupRequest  {
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

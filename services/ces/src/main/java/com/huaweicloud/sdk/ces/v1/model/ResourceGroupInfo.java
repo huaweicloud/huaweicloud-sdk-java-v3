@@ -40,7 +40,7 @@ public class ResourceGroupInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_statistics")
     
-    private InstanceStatistics instanceStatistics = null;
+    private InstanceStatistics instanceStatistics;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class ResourceGroupInfo  {
         this.groupName = groupName;
     }
 
+    
+
     public ResourceGroupInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -94,6 +96,8 @@ public class ResourceGroupInfo  {
         this.groupId = groupId;
     }
 
+    
+
     public ResourceGroupInfo withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -113,6 +117,8 @@ public class ResourceGroupInfo  {
     public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ResourceGroupInfo withInstanceStatistics(InstanceStatistics instanceStatistics) {
         this.instanceStatistics = instanceStatistics;
@@ -141,6 +147,8 @@ public class ResourceGroupInfo  {
         this.instanceStatistics = instanceStatistics;
     }
 
+    
+
     public ResourceGroupInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -161,6 +169,8 @@ public class ResourceGroupInfo  {
         this.status = status;
     }
 
+    
+
     public ResourceGroupInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -180,6 +190,9 @@ public class ResourceGroupInfo  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

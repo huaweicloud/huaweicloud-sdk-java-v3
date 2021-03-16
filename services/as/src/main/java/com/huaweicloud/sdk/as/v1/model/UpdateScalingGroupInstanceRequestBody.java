@@ -27,7 +27,7 @@ public class UpdateScalingGroupInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances_id")
     
-    private List<String> instancesId = new ArrayList<>();
+    private List<String> instancesId = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -180,6 +180,8 @@ public class UpdateScalingGroupInstanceRequestBody  {
         this.instancesId = instancesId;
     }
 
+    
+
     public UpdateScalingGroupInstanceRequestBody withInstanceDelete(String instanceDelete) {
         this.instanceDelete = instanceDelete;
         return this;
@@ -199,6 +201,8 @@ public class UpdateScalingGroupInstanceRequestBody  {
     public void setInstanceDelete(String instanceDelete) {
         this.instanceDelete = instanceDelete;
     }
+
+    
 
     public UpdateScalingGroupInstanceRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -220,6 +224,8 @@ public class UpdateScalingGroupInstanceRequestBody  {
         this.action = action;
     }
 
+    
+
     public UpdateScalingGroupInstanceRequestBody withInstanceAppend(String instanceAppend) {
         this.instanceAppend = instanceAppend;
         return this;
@@ -239,6 +245,9 @@ public class UpdateScalingGroupInstanceRequestBody  {
     public void setInstanceAppend(String instanceAppend) {
         this.instanceAppend = instanceAppend;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

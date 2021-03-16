@@ -49,6 +49,8 @@ public class VideoDenoise  {
         this.name = name;
     }
 
+    
+
     public VideoDenoise withExecutionOrder(Integer executionOrder) {
         this.executionOrder = executionOrder;
         return this;
@@ -68,6 +70,9 @@ public class VideoDenoise  {
     public void setExecutionOrder(Integer executionOrder) {
         this.executionOrder = executionOrder;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

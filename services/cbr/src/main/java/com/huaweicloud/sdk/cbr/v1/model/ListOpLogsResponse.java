@@ -41,9 +41,6 @@ public class ListOpLogsResponse extends SdkResponse {
 
     
     public ListOpLogsResponse addOperationLogsItem(OperationLog operationLogsItem) {
-        if (this.operationLogs == null) {
-            this.operationLogs = new ArrayList<>();
-        }
         this.operationLogs.add(operationLogsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListOpLogsResponse extends SdkResponse {
         this.operationLogs = operationLogs;
     }
 
+    
+
     public ListOpLogsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class ListOpLogsResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

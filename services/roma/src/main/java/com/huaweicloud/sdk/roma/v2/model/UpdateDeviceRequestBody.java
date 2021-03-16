@@ -145,6 +145,8 @@ public class UpdateDeviceRequestBody  {
         this.deviceName = deviceName;
     }
 
+    
+
     public UpdateDeviceRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -164,6 +166,8 @@ public class UpdateDeviceRequestBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public UpdateDeviceRequestBody withDescription(String description) {
         this.description = description;
@@ -185,6 +189,8 @@ public class UpdateDeviceRequestBody  {
         this.description = description;
     }
 
+    
+
     public UpdateDeviceRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -192,9 +198,6 @@ public class UpdateDeviceRequestBody  {
 
     
     public UpdateDeviceRequestBody addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -218,6 +221,9 @@ public class UpdateDeviceRequestBody  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

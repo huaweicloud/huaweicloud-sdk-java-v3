@@ -42,6 +42,9 @@ public class UpdateTriggerRequestBody  {
     public void setEnable(String enable) {
         this.enable = enable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

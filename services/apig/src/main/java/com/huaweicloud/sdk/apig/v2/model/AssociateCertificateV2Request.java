@@ -40,7 +40,7 @@ public class AssociateCertificateV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DomainCertReq body = null;
+    private DomainCertReq body;
 
     public AssociateCertificateV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -62,6 +62,8 @@ public class AssociateCertificateV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public AssociateCertificateV2Request withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -82,6 +84,8 @@ public class AssociateCertificateV2Request  {
         this.domainId = domainId;
     }
 
+    
+
     public AssociateCertificateV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -101,6 +105,8 @@ public class AssociateCertificateV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public AssociateCertificateV2Request withBody(DomainCertReq body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class AssociateCertificateV2Request  {
     public void setBody(DomainCertReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

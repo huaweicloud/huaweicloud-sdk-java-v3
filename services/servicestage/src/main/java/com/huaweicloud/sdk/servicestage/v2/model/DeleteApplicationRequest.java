@@ -42,6 +42,9 @@ public class DeleteApplicationRequest  {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

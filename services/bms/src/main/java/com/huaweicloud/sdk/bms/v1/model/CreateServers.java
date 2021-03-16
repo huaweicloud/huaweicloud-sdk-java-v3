@@ -33,7 +33,7 @@ public class CreateServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="imageRef")
     
-    private UUID imageRef = null;
+    private UUID imageRef;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class CreateServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaDataInfo metadata = null;
+    private MetaDataInfo metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,7 +81,7 @@ public class CreateServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    private List<Nics> nics = new ArrayList<>();
+    private List<Nics> nics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,25 +93,25 @@ public class CreateServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpcid")
     
-    private UUID vpcid = null;
+    private UUID vpcid;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private PublicIp publicip = null;
+    private PublicIp publicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    private Integer count = 1;
+    private Integer count;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume")
     
-    private RootVolume rootVolume = null;
+    private RootVolume rootVolume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,13 +123,13 @@ public class CreateServers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private ExtendParam extendparam = null;
+    private ExtendParam extendparam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schedulerHints")
     
-    private CreateSchedulerHints schedulerHints = null;
+    private CreateSchedulerHints schedulerHints;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -157,6 +157,8 @@ public class CreateServers  {
         this.imageRef = imageRef;
     }
 
+    
+
     public CreateServers withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -177,6 +179,8 @@ public class CreateServers  {
         this.flavorRef = flavorRef;
     }
 
+    
+
     public CreateServers withName(String name) {
         this.name = name;
         return this;
@@ -196,6 +200,8 @@ public class CreateServers  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateServers withMetadata(MetaDataInfo metadata) {
         this.metadata = metadata;
@@ -224,6 +230,8 @@ public class CreateServers  {
         this.metadata = metadata;
     }
 
+    
+
     public CreateServers withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -243,6 +251,8 @@ public class CreateServers  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public CreateServers withAdminPass(String adminPass) {
         this.adminPass = adminPass;
@@ -264,6 +274,8 @@ public class CreateServers  {
         this.adminPass = adminPass;
     }
 
+    
+
     public CreateServers withKeyName(String keyName) {
         this.keyName = keyName;
         return this;
@@ -284,6 +296,8 @@ public class CreateServers  {
         this.keyName = keyName;
     }
 
+    
+
     public CreateServers withSecurityGroups(List<SecurityGroupsInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -291,9 +305,6 @@ public class CreateServers  {
 
     
     public CreateServers addSecurityGroupsItem(SecurityGroupsInfo securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -317,6 +328,8 @@ public class CreateServers  {
     public void setSecurityGroups(List<SecurityGroupsInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
+
+    
 
     public CreateServers withNics(List<Nics> nics) {
         this.nics = nics;
@@ -349,6 +362,8 @@ public class CreateServers  {
         this.nics = nics;
     }
 
+    
+
     public CreateServers withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -369,6 +384,8 @@ public class CreateServers  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public CreateServers withVpcid(UUID vpcid) {
         this.vpcid = vpcid;
         return this;
@@ -388,6 +405,8 @@ public class CreateServers  {
     public void setVpcid(UUID vpcid) {
         this.vpcid = vpcid;
     }
+
+    
 
     public CreateServers withPublicip(PublicIp publicip) {
         this.publicip = publicip;
@@ -416,6 +435,8 @@ public class CreateServers  {
         this.publicip = publicip;
     }
 
+    
+
     public CreateServers withCount(Integer count) {
         this.count = count;
         return this;
@@ -435,6 +456,8 @@ public class CreateServers  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
 
     public CreateServers withRootVolume(RootVolume rootVolume) {
         this.rootVolume = rootVolume;
@@ -463,6 +486,8 @@ public class CreateServers  {
         this.rootVolume = rootVolume;
     }
 
+    
+
     public CreateServers withDataVolumes(List<DataVolumes> dataVolumes) {
         this.dataVolumes = dataVolumes;
         return this;
@@ -470,9 +495,6 @@ public class CreateServers  {
 
     
     public CreateServers addDataVolumesItem(DataVolumes dataVolumesItem) {
-        if (this.dataVolumes == null) {
-            this.dataVolumes = new ArrayList<>();
-        }
         this.dataVolumes.add(dataVolumesItem);
         return this;
     }
@@ -496,6 +518,8 @@ public class CreateServers  {
     public void setDataVolumes(List<DataVolumes> dataVolumes) {
         this.dataVolumes = dataVolumes;
     }
+
+    
 
     public CreateServers withExtendparam(ExtendParam extendparam) {
         this.extendparam = extendparam;
@@ -524,6 +548,8 @@ public class CreateServers  {
         this.extendparam = extendparam;
     }
 
+    
+
     public CreateServers withSchedulerHints(CreateSchedulerHints schedulerHints) {
         this.schedulerHints = schedulerHints;
         return this;
@@ -551,6 +577,8 @@ public class CreateServers  {
         this.schedulerHints = schedulerHints;
     }
 
+    
+
     public CreateServers withServerTags(List<SystemTags> serverTags) {
         this.serverTags = serverTags;
         return this;
@@ -558,9 +586,6 @@ public class CreateServers  {
 
     
     public CreateServers addServerTagsItem(SystemTags serverTagsItem) {
-        if (this.serverTags == null) {
-            this.serverTags = new ArrayList<>();
-        }
         this.serverTags.add(serverTagsItem);
         return this;
     }
@@ -584,6 +609,9 @@ public class CreateServers  {
     public void setServerTags(List<SystemTags> serverTags) {
         this.serverTags = serverTags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

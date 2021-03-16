@@ -54,7 +54,7 @@ public class VpcMemberInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private BigDecimal status = null;
+    private BigDecimal status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,7 +66,7 @@ public class VpcMemberInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
     public VpcMemberInfo withHost(String host) {
         this.host = host;
@@ -88,6 +88,8 @@ public class VpcMemberInfo  {
         this.host = host;
     }
 
+    
+
     public VpcMemberInfo withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -107,6 +109,8 @@ public class VpcMemberInfo  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
 
     public VpcMemberInfo withEcsId(String ecsId) {
         this.ecsId = ecsId;
@@ -128,6 +132,8 @@ public class VpcMemberInfo  {
         this.ecsId = ecsId;
     }
 
+    
+
     public VpcMemberInfo withEcsName(String ecsName) {
         this.ecsName = ecsName;
         return this;
@@ -147,6 +153,8 @@ public class VpcMemberInfo  {
     public void setEcsName(String ecsName) {
         this.ecsName = ecsName;
     }
+
+    
 
     public VpcMemberInfo withId(String id) {
         this.id = id;
@@ -168,6 +176,8 @@ public class VpcMemberInfo  {
         this.id = id;
     }
 
+    
+
     public VpcMemberInfo withStatus(BigDecimal status) {
         this.status = status;
         return this;
@@ -187,6 +197,8 @@ public class VpcMemberInfo  {
     public void setStatus(BigDecimal status) {
         this.status = status;
     }
+
+    
 
     public VpcMemberInfo withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
@@ -208,6 +220,8 @@ public class VpcMemberInfo  {
         this.vpcChannelId = vpcChannelId;
     }
 
+    
+
     public VpcMemberInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -227,6 +241,9 @@ public class VpcMemberInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

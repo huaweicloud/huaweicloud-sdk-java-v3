@@ -61,6 +61,8 @@ public class CreateWhitelistReq  {
         this.tenantId = tenantId;
     }
 
+    
+
     public CreateWhitelistReq withListenerId(String listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -80,6 +82,8 @@ public class CreateWhitelistReq  {
     public void setListenerId(String listenerId) {
         this.listenerId = listenerId;
     }
+
+    
 
     public CreateWhitelistReq withEnableWhitelist(Boolean enableWhitelist) {
         this.enableWhitelist = enableWhitelist;
@@ -101,6 +105,8 @@ public class CreateWhitelistReq  {
         this.enableWhitelist = enableWhitelist;
     }
 
+    
+
     public CreateWhitelistReq withWhitelist(String whitelist) {
         this.whitelist = whitelist;
         return this;
@@ -120,6 +126,9 @@ public class CreateWhitelistReq  {
     public void setWhitelist(String whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class SetOffSiteBackupPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_para")
     
-    private OffSiteBackupPolicy policyPara = null;
+    private OffSiteBackupPolicy policyPara;
 
     public SetOffSiteBackupPolicyRequestBody withPolicyPara(OffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
@@ -50,6 +50,9 @@ public class SetOffSiteBackupPolicyRequestBody  {
     public void setPolicyPara(OffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

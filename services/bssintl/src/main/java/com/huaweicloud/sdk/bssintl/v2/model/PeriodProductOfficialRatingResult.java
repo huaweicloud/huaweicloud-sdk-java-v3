@@ -61,6 +61,8 @@ public class PeriodProductOfficialRatingResult  {
         this.id = id;
     }
 
+    
+
     public PeriodProductOfficialRatingResult withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -80,6 +82,8 @@ public class PeriodProductOfficialRatingResult  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
@@ -101,6 +105,8 @@ public class PeriodProductOfficialRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
+    
+
     public PeriodProductOfficialRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -120,6 +126,9 @@ public class PeriodProductOfficialRatingResult  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

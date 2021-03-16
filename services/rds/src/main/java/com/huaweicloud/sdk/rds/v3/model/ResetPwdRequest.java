@@ -116,7 +116,7 @@ public class ResetPwdRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PwdResetRequest body = null;
+    private PwdResetRequest body;
 
     public ResetPwdRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class ResetPwdRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ResetPwdRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class ResetPwdRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ResetPwdRequest withBody(PwdResetRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class ResetPwdRequest  {
     public void setBody(PwdResetRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

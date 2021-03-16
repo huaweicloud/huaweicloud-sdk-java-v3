@@ -61,6 +61,8 @@ public class ShowBandwidthRequest  {
         this.domain = domain;
     }
 
+    
+
     public ShowBandwidthRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -81,6 +83,8 @@ public class ShowBandwidthRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ShowBandwidthRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -100,6 +104,8 @@ public class ShowBandwidthRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowBandwidthRequest withStep(Integer step) {
         this.step = step;
@@ -122,6 +128,9 @@ public class ShowBandwidthRequest  {
     public void setStep(Integer step) {
         this.step = step;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

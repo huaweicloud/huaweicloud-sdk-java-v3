@@ -21,9 +21,9 @@ public class DeleteTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    private Integer templateId;
+    private Long templateId;
 
-    public DeleteTemplateRequest withTemplateId(Integer templateId) {
+    public DeleteTemplateRequest withTemplateId(Long templateId) {
         this.templateId = templateId;
         return this;
     }
@@ -37,13 +37,16 @@ public class DeleteTemplateRequest  {
      * maximum: 2147483647
      * @return templateId
      */
-    public Integer getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
-    public void setTemplateId(Integer templateId) {
+    public void setTemplateId(Long templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

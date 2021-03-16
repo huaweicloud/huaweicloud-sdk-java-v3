@@ -84,28 +84,6 @@ public class ProjectManClient {
     }
 
     /**
-     * 批量删除项目的迭代
-     * 批量删除项目的迭代
-     *
-     * @param BatchDeleteIterationsV4Request 请求对象
-     * @return BatchDeleteIterationsV4Response
-     */
-    public BatchDeleteIterationsV4Response batchDeleteIterationsV4(BatchDeleteIterationsV4Request request) {
-        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchDeleteIterationsV4);
-    }
-
-    /**
-     * 批量删除项目的迭代
-     * 批量删除项目的迭代
-     *
-     * @param BatchDeleteIterationsV4Request 请求对象
-     * @return SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response>
-     */
-    public SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> batchDeleteIterationsV4Invoker(BatchDeleteIterationsV4Request request) {
-        return new SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response>(request, ProjectManMeta.batchDeleteIterationsV4, hcClient);
-    }
-
-    /**
      * 批量删除项目成员
      * 批量删除项目成员
      *
@@ -150,28 +128,6 @@ public class ProjectManClient {
     }
 
     /**
-     * 创建Scrum项目迭代
-     * 创建Scrum项目迭代
-     *
-     * @param CreateIterationV4Request 请求对象
-     * @return CreateIterationV4Response
-     */
-    public CreateIterationV4Response createIterationV4(CreateIterationV4Request request) {
-        return hcClient.syncInvokeHttp(request, ProjectManMeta.createIterationV4);
-    }
-
-    /**
-     * 创建Scrum项目迭代
-     * 创建Scrum项目迭代
-     *
-     * @param CreateIterationV4Request 请求对象
-     * @return SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>
-     */
-    public SyncInvoker<CreateIterationV4Request, CreateIterationV4Response> createIterationV4Invoker(CreateIterationV4Request request) {
-        return new SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>(request, ProjectManMeta.createIterationV4, hcClient);
-    }
-
-    /**
      * 创建项目
      * 创建项目
      *
@@ -191,28 +147,6 @@ public class ProjectManClient {
      */
     public SyncInvoker<CreateProjectV4Request, CreateProjectV4Response> createProjectV4Invoker(CreateProjectV4Request request) {
         return new SyncInvoker<CreateProjectV4Request, CreateProjectV4Response>(request, ProjectManMeta.createProjectV4, hcClient);
-    }
-
-    /**
-     * 删除项目迭代
-     * 删除项目迭代
-     *
-     * @param DeleteIterationV4Request 请求对象
-     * @return DeleteIterationV4Response
-     */
-    public DeleteIterationV4Response deleteIterationV4(DeleteIterationV4Request request) {
-        return hcClient.syncInvokeHttp(request, ProjectManMeta.deleteIterationV4);
-    }
-
-    /**
-     * 删除项目迭代
-     * 删除项目迭代
-     *
-     * @param DeleteIterationV4Request 请求对象
-     * @return SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>
-     */
-    public SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response> deleteIterationV4Invoker(DeleteIterationV4Request request) {
-        return new SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>(request, ProjectManMeta.deleteIterationV4, hcClient);
     }
 
     /**
@@ -304,28 +238,6 @@ public class ProjectManClient {
     }
 
     /**
-     * 获取指定项目的迭代列表
-     * 获取项目迭代
-     *
-     * @param ListProjectIterationsV4Request 请求对象
-     * @return ListProjectIterationsV4Response
-     */
-    public ListProjectIterationsV4Response listProjectIterationsV4(ListProjectIterationsV4Request request) {
-        return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectIterationsV4);
-    }
-
-    /**
-     * 获取指定项目的迭代列表
-     * 获取项目迭代
-     *
-     * @param ListProjectIterationsV4Request 请求对象
-     * @return SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response>
-     */
-    public SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response> listProjectIterationsV4Invoker(ListProjectIterationsV4Request request) {
-        return new SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response>(request, ProjectManMeta.listProjectIterationsV4, hcClient);
-    }
-
-    /**
      * 获取指定项目的成员用户列表
      * 获取项目成员列表
      *
@@ -392,6 +304,72 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询缺陷密度
+     * 查询缺陷密度
+     *
+     * @param ShowBugDensityV2Request 请求对象
+     * @return ShowBugDensityV2Response
+     */
+    public ShowBugDensityV2Response showBugDensityV2(ShowBugDensityV2Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showBugDensityV2);
+    }
+
+    /**
+     * 查询缺陷密度
+     * 查询缺陷密度
+     *
+     * @param ShowBugDensityV2Request 请求对象
+     * @return SyncInvoker<ShowBugDensityV2Request, ShowBugDensityV2Response>
+     */
+    public SyncInvoker<ShowBugDensityV2Request, ShowBugDensityV2Response> showBugDensityV2Invoker(ShowBugDensityV2Request request) {
+        return new SyncInvoker<ShowBugDensityV2Request, ShowBugDensityV2Response>(request, ProjectManMeta.showBugDensityV2, hcClient);
+    }
+
+    /**
+     * 查询人均bug
+     * 查询人均bug
+     *
+     * @param ShowBugsPerDeveloperRequest 请求对象
+     * @return ShowBugsPerDeveloperResponse
+     */
+    public ShowBugsPerDeveloperResponse showBugsPerDeveloper(ShowBugsPerDeveloperRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showBugsPerDeveloper);
+    }
+
+    /**
+     * 查询人均bug
+     * 查询人均bug
+     *
+     * @param ShowBugsPerDeveloperRequest 请求对象
+     * @return SyncInvoker<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse>
+     */
+    public SyncInvoker<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse> showBugsPerDeveloperInvoker(ShowBugsPerDeveloperRequest request) {
+        return new SyncInvoker<ShowBugsPerDeveloperRequest, ShowBugsPerDeveloperResponse>(request, ProjectManMeta.showBugsPerDeveloper, hcClient);
+    }
+
+    /**
+     * 查询需求按时完成率
+     * 查询需求按时完成率
+     *
+     * @param ShowCompletionRateRequest 请求对象
+     * @return ShowCompletionRateResponse
+     */
+    public ShowCompletionRateResponse showCompletionRate(ShowCompletionRateRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showCompletionRate);
+    }
+
+    /**
+     * 查询需求按时完成率
+     * 查询需求按时完成率
+     *
+     * @param ShowCompletionRateRequest 请求对象
+     * @return SyncInvoker<ShowCompletionRateRequest, ShowCompletionRateResponse>
+     */
+    public SyncInvoker<ShowCompletionRateRequest, ShowCompletionRateResponse> showCompletionRateInvoker(ShowCompletionRateRequest request) {
+        return new SyncInvoker<ShowCompletionRateRequest, ShowCompletionRateResponse>(request, ProjectManMeta.showCompletionRate, hcClient);
+    }
+
+    /**
      * 获取当前用户信息
      * 获取当前用户信息
      *
@@ -436,25 +414,25 @@ public class ProjectManClient {
     }
 
     /**
-     * 查看迭代详情
-     * 查看迭代详情
+     * 获取项目详情
+     * 获取项目详情
      *
-     * @param ShowIterationV4Request 请求对象
-     * @return ShowIterationV4Response
+     * @param ShowProjectInfoV4Request 请求对象
+     * @return ShowProjectInfoV4Response
      */
-    public ShowIterationV4Response showIterationV4(ShowIterationV4Request request) {
-        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIterationV4);
+    public ShowProjectInfoV4Response showProjectInfoV4(ShowProjectInfoV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showProjectInfoV4);
     }
 
     /**
-     * 查看迭代详情
-     * 查看迭代详情
+     * 获取项目详情
+     * 获取项目详情
      *
-     * @param ShowIterationV4Request 请求对象
-     * @return SyncInvoker<ShowIterationV4Request, ShowIterationV4Response>
+     * @param ShowProjectInfoV4Request 请求对象
+     * @return SyncInvoker<ShowProjectInfoV4Request, ShowProjectInfoV4Response>
      */
-    public SyncInvoker<ShowIterationV4Request, ShowIterationV4Response> showIterationV4Invoker(ShowIterationV4Request request) {
-        return new SyncInvoker<ShowIterationV4Request, ShowIterationV4Response>(request, ProjectManMeta.showIterationV4, hcClient);
+    public SyncInvoker<ShowProjectInfoV4Request, ShowProjectInfoV4Response> showProjectInfoV4Invoker(ShowProjectInfoV4Request request) {
+        return new SyncInvoker<ShowProjectInfoV4Request, ShowProjectInfoV4Response>(request, ProjectManMeta.showProjectInfoV4, hcClient);
     }
 
     /**
@@ -477,28 +455,6 @@ public class ProjectManClient {
      */
     public SyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response> showProjectSummaryV4Invoker(ShowProjectSummaryV4Request request) {
         return new SyncInvoker<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response>(request, ProjectManMeta.showProjectSummaryV4, hcClient);
-    }
-
-    /**
-     * 更新Scrum项目迭代
-     * 更新Scrum项目迭代
-     *
-     * @param UpdateIterationV4Request 请求对象
-     * @return UpdateIterationV4Response
-     */
-    public UpdateIterationV4Response updateIterationV4(UpdateIterationV4Request request) {
-        return hcClient.syncInvokeHttp(request, ProjectManMeta.updateIterationV4);
-    }
-
-    /**
-     * 更新Scrum项目迭代
-     * 更新Scrum项目迭代
-     *
-     * @param UpdateIterationV4Request 请求对象
-     * @return SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>
-     */
-    public SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response> updateIterationV4Invoker(UpdateIterationV4Request request) {
-        return new SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>(request, ProjectManMeta.updateIterationV4, hcClient);
     }
 
     /**
@@ -590,6 +546,50 @@ public class ProjectManClient {
     }
 
     /**
+     * 批量删除项目的迭代
+     * 批量删除项目的迭代
+     *
+     * @param BatchDeleteIterationsV4Request 请求对象
+     * @return BatchDeleteIterationsV4Response
+     */
+    public BatchDeleteIterationsV4Response batchDeleteIterationsV4(BatchDeleteIterationsV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchDeleteIterationsV4);
+    }
+
+    /**
+     * 批量删除项目的迭代
+     * 批量删除项目的迭代
+     *
+     * @param BatchDeleteIterationsV4Request 请求对象
+     * @return SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response>
+     */
+    public SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response> batchDeleteIterationsV4Invoker(BatchDeleteIterationsV4Request request) {
+        return new SyncInvoker<BatchDeleteIterationsV4Request, BatchDeleteIterationsV4Response>(request, ProjectManMeta.batchDeleteIterationsV4, hcClient);
+    }
+
+    /**
+     * 创建工作项类型自定义字段
+     * 创建工作项类型自定义字段
+     *
+     * @param CreateCustomfieldsRequest 请求对象
+     * @return CreateCustomfieldsResponse
+     */
+    public CreateCustomfieldsResponse createCustomfields(CreateCustomfieldsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createCustomfields);
+    }
+
+    /**
+     * 创建工作项类型自定义字段
+     * 创建工作项类型自定义字段
+     *
+     * @param CreateCustomfieldsRequest 请求对象
+     * @return SyncInvoker<CreateCustomfieldsRequest, CreateCustomfieldsResponse>
+     */
+    public SyncInvoker<CreateCustomfieldsRequest, CreateCustomfieldsResponse> createCustomfieldsInvoker(CreateCustomfieldsRequest request) {
+        return new SyncInvoker<CreateCustomfieldsRequest, CreateCustomfieldsResponse>(request, ProjectManMeta.createCustomfields, hcClient);
+    }
+
+    /**
      * 创建工作项
      * 创建工作项
      *
@@ -612,6 +612,28 @@ public class ProjectManClient {
     }
 
     /**
+     * 创建Scrum项目迭代
+     * 创建Scrum项目迭代
+     *
+     * @param CreateIterationV4Request 请求对象
+     * @return CreateIterationV4Response
+     */
+    public CreateIterationV4Response createIterationV4(CreateIterationV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createIterationV4);
+    }
+
+    /**
+     * 创建Scrum项目迭代
+     * 创建Scrum项目迭代
+     *
+     * @param CreateIterationV4Request 请求对象
+     * @return SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>
+     */
+    public SyncInvoker<CreateIterationV4Request, CreateIterationV4Response> createIterationV4Invoker(CreateIterationV4Request request) {
+        return new SyncInvoker<CreateIterationV4Request, CreateIterationV4Response>(request, ProjectManMeta.createIterationV4, hcClient);
+    }
+
+    /**
      * 删除工作项
      * 删除工作项
      *
@@ -631,6 +653,28 @@ public class ProjectManClient {
      */
     public SyncInvoker<DeleteIssueV4Request, DeleteIssueV4Response> deleteIssueV4Invoker(DeleteIssueV4Request request) {
         return new SyncInvoker<DeleteIssueV4Request, DeleteIssueV4Response>(request, ProjectManMeta.deleteIssueV4, hcClient);
+    }
+
+    /**
+     * 删除项目迭代
+     * 删除项目迭代
+     *
+     * @param DeleteIterationV4Request 请求对象
+     * @return DeleteIterationV4Response
+     */
+    public DeleteIterationV4Response deleteIterationV4(DeleteIterationV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.deleteIterationV4);
+    }
+
+    /**
+     * 删除项目迭代
+     * 删除项目迭代
+     *
+     * @param DeleteIterationV4Request 请求对象
+     * @return SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>
+     */
+    public SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response> deleteIterationV4Invoker(DeleteIterationV4Request request) {
+        return new SyncInvoker<DeleteIterationV4Request, DeleteIterationV4Response>(request, ProjectManMeta.deleteIterationV4, hcClient);
     }
 
     /**
@@ -679,7 +723,7 @@ public class ProjectManClient {
 
     /**
      * 获取工作项历史记录
-     * 获取项目成员列表
+     * 获取工作项历史记录
      *
      * @param ListIssueRecordsV4Request 请求对象
      * @return ListIssueRecordsV4Response
@@ -690,7 +734,7 @@ public class ProjectManClient {
 
     /**
      * 获取工作项历史记录
-     * 获取项目成员列表
+     * 获取工作项历史记录
      *
      * @param ListIssueRecordsV4Request 请求对象
      * @return SyncInvoker<ListIssueRecordsV4Request, ListIssueRecordsV4Response>
@@ -701,7 +745,7 @@ public class ProjectManClient {
 
     /**
      * 高级查询工作项
-     * 高级查询工作项,根据筛选条件查询工作中
+     * 根据筛选条件查询工作项
      *
      * @param ListIssuesV4Request 请求对象
      * @return ListIssuesV4Response
@@ -712,13 +756,35 @@ public class ProjectManClient {
 
     /**
      * 高级查询工作项
-     * 高级查询工作项,根据筛选条件查询工作中
+     * 根据筛选条件查询工作项
      *
      * @param ListIssuesV4Request 请求对象
      * @return SyncInvoker<ListIssuesV4Request, ListIssuesV4Response>
      */
     public SyncInvoker<ListIssuesV4Request, ListIssuesV4Response> listIssuesV4Invoker(ListIssuesV4Request request) {
         return new SyncInvoker<ListIssuesV4Request, ListIssuesV4Response>(request, ProjectManMeta.listIssuesV4, hcClient);
+    }
+
+    /**
+     * 获取指定项目的迭代列表
+     * 获取项目迭代
+     *
+     * @param ListProjectIterationsV4Request 请求对象
+     * @return ListProjectIterationsV4Response
+     */
+    public ListProjectIterationsV4Response listProjectIterationsV4(ListProjectIterationsV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectIterationsV4);
+    }
+
+    /**
+     * 获取指定项目的迭代列表
+     * 获取项目迭代
+     *
+     * @param ListProjectIterationsV4Request 请求对象
+     * @return SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response>
+     */
+    public SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response> listProjectIterationsV4Invoker(ListProjectIterationsV4Request request) {
+        return new SyncInvoker<ListProjectIterationsV4Request, ListProjectIterationsV4Response>(request, ProjectManMeta.listProjectIterationsV4, hcClient);
     }
 
     /**
@@ -744,6 +810,28 @@ public class ProjectManClient {
     }
 
     /**
+     * 获取工作项完成率
+     * 获取工作项的完成率
+     *
+     * @param ShowIssueCompletionRateRequest 请求对象
+     * @return ShowIssueCompletionRateResponse
+     */
+    public ShowIssueCompletionRateResponse showIssueCompletionRate(ShowIssueCompletionRateRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIssueCompletionRate);
+    }
+
+    /**
+     * 获取工作项完成率
+     * 获取工作项的完成率
+     *
+     * @param ShowIssueCompletionRateRequest 请求对象
+     * @return SyncInvoker<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse>
+     */
+    public SyncInvoker<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse> showIssueCompletionRateInvoker(ShowIssueCompletionRateRequest request) {
+        return new SyncInvoker<ShowIssueCompletionRateRequest, ShowIssueCompletionRateResponse>(request, ProjectManMeta.showIssueCompletionRate, hcClient);
+    }
+
+    /**
      * 查询工作项详情
      * 查询工作项详情
      *
@@ -763,6 +851,28 @@ public class ProjectManClient {
      */
     public SyncInvoker<ShowIssueV4Request, ShowIssueV4Response> showIssueV4Invoker(ShowIssueV4Request request) {
         return new SyncInvoker<ShowIssueV4Request, ShowIssueV4Response>(request, ProjectManMeta.showIssueV4, hcClient);
+    }
+
+    /**
+     * 查看迭代详情
+     * 查看迭代详情
+     *
+     * @param ShowIterationV4Request 请求对象
+     * @return ShowIterationV4Response
+     */
+    public ShowIterationV4Response showIterationV4(ShowIterationV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIterationV4);
+    }
+
+    /**
+     * 查看迭代详情
+     * 查看迭代详情
+     *
+     * @param ShowIterationV4Request 请求对象
+     * @return SyncInvoker<ShowIterationV4Request, ShowIterationV4Response>
+     */
+    public SyncInvoker<ShowIterationV4Request, ShowIterationV4Response> showIterationV4Invoker(ShowIterationV4Request request) {
+        return new SyncInvoker<ShowIterationV4Request, ShowIterationV4Response>(request, ProjectManMeta.showIterationV4, hcClient);
     }
 
     /**
@@ -788,28 +898,6 @@ public class ProjectManClient {
     }
 
     /**
-     * 获取工作项完成率
-     * 获取工作项的完成率
-     *
-     * @param ShowtIssueCompletionRateRequest 请求对象
-     * @return ShowtIssueCompletionRateResponse
-     */
-    public ShowtIssueCompletionRateResponse showtIssueCompletionRate(ShowtIssueCompletionRateRequest request) {
-        return hcClient.syncInvokeHttp(request, ProjectManMeta.showtIssueCompletionRate);
-    }
-
-    /**
-     * 获取工作项完成率
-     * 获取工作项的完成率
-     *
-     * @param ShowtIssueCompletionRateRequest 请求对象
-     * @return SyncInvoker<ShowtIssueCompletionRateRequest, ShowtIssueCompletionRateResponse>
-     */
-    public SyncInvoker<ShowtIssueCompletionRateRequest, ShowtIssueCompletionRateResponse> showtIssueCompletionRateInvoker(ShowtIssueCompletionRateRequest request) {
-        return new SyncInvoker<ShowtIssueCompletionRateRequest, ShowtIssueCompletionRateResponse>(request, ProjectManMeta.showtIssueCompletionRate, hcClient);
-    }
-
-    /**
      * 更新工作项
      * 更新工作项
      *
@@ -829,6 +917,28 @@ public class ProjectManClient {
      */
     public SyncInvoker<UpdateIssueV4Request, UpdateIssueV4Response> updateIssueV4Invoker(UpdateIssueV4Request request) {
         return new SyncInvoker<UpdateIssueV4Request, UpdateIssueV4Response>(request, ProjectManMeta.updateIssueV4, hcClient);
+    }
+
+    /**
+     * 更新Scrum项目迭代
+     * 更新Scrum项目迭代
+     *
+     * @param UpdateIterationV4Request 请求对象
+     * @return UpdateIterationV4Response
+     */
+    public UpdateIterationV4Response updateIterationV4(UpdateIterationV4Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.updateIterationV4);
+    }
+
+    /**
+     * 更新Scrum项目迭代
+     * 更新Scrum项目迭代
+     *
+     * @param UpdateIterationV4Request 请求对象
+     * @return SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>
+     */
+    public SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response> updateIterationV4Invoker(UpdateIterationV4Request request) {
+        return new SyncInvoker<UpdateIterationV4Request, UpdateIterationV4Response>(request, ProjectManMeta.updateIterationV4, hcClient);
     }
 
 }

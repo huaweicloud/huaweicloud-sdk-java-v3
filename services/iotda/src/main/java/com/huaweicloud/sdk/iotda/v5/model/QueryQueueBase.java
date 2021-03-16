@@ -61,6 +61,8 @@ public class QueryQueueBase  {
         this.queueId = queueId;
     }
 
+    
+
     public QueryQueueBase withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -80,6 +82,8 @@ public class QueryQueueBase  {
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
+
+    
 
     public QueryQueueBase withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -101,6 +105,8 @@ public class QueryQueueBase  {
         this.createTime = createTime;
     }
 
+    
+
     public QueryQueueBase withLastModifyTime(String lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
         return this;
@@ -120,6 +126,9 @@ public class QueryQueueBase  {
     public void setLastModifyTime(String lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

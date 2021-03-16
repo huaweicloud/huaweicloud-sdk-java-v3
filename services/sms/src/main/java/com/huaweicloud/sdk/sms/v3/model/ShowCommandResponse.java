@@ -30,7 +30,7 @@ public class ShowCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="command_param")
     
-    private ComandParam commandParam = null;
+    private ComandParam commandParam;
 
     public ShowCommandResponse withCommandName(String commandName) {
         this.commandName = commandName;
@@ -51,6 +51,8 @@ public class ShowCommandResponse extends SdkResponse {
     public void setCommandName(String commandName) {
         this.commandName = commandName;
     }
+
+    
 
     public ShowCommandResponse withCommandParam(ComandParam commandParam) {
         this.commandParam = commandParam;
@@ -78,6 +80,9 @@ public class ShowCommandResponse extends SdkResponse {
     public void setCommandParam(ComandParam commandParam) {
         this.commandParam = commandParam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

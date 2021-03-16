@@ -69,6 +69,8 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         this.datasource = datasource;
     }
 
+    
+
     public ListLiveDataQuotaV2Response withApi(String api) {
         this.api = api;
         return this;
@@ -88,6 +90,8 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
     public void setApi(String api) {
         this.api = api;
     }
+
+    
 
     public ListLiveDataQuotaV2Response withScripts(String scripts) {
         this.scripts = scripts;
@@ -109,6 +113,8 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         this.scripts = scripts;
     }
 
+    
+
     public ListLiveDataQuotaV2Response withDatasourceUsed(String datasourceUsed) {
         this.datasourceUsed = datasourceUsed;
         return this;
@@ -129,6 +135,8 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         this.datasourceUsed = datasourceUsed;
     }
 
+    
+
     public ListLiveDataQuotaV2Response withApiUsed(String apiUsed) {
         this.apiUsed = apiUsed;
         return this;
@@ -148,6 +156,9 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
     public void setApiUsed(String apiUsed) {
         this.apiUsed = apiUsed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

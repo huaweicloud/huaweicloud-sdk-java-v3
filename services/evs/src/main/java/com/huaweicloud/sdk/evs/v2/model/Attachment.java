@@ -79,6 +79,8 @@ public class Attachment  {
         this.attachedAt = attachedAt;
     }
 
+    
+
     public Attachment withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
         return this;
@@ -98,6 +100,8 @@ public class Attachment  {
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
+
+    
 
     public Attachment withDevice(String device) {
         this.device = device;
@@ -119,6 +123,8 @@ public class Attachment  {
         this.device = device;
     }
 
+    
+
     public Attachment withHostName(String hostName) {
         this.hostName = hostName;
         return this;
@@ -138,6 +144,8 @@ public class Attachment  {
     public void setHostName(String hostName) {
         this.hostName = hostName;
     }
+
+    
 
     public Attachment withId(String id) {
         this.id = id;
@@ -159,6 +167,8 @@ public class Attachment  {
         this.id = id;
     }
 
+    
+
     public Attachment withServerId(String serverId) {
         this.serverId = serverId;
         return this;
@@ -179,6 +189,8 @@ public class Attachment  {
         this.serverId = serverId;
     }
 
+    
+
     public Attachment withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -198,6 +210,9 @@ public class Attachment  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

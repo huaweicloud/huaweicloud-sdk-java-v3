@@ -57,6 +57,8 @@ public class DeleteDatabaseRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DeleteDatabaseRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class DeleteDatabaseRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteDatabaseRequest withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -96,6 +100,9 @@ public class DeleteDatabaseRequest  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

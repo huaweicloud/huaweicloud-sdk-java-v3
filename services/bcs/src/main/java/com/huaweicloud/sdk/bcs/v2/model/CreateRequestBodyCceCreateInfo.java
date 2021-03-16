@@ -73,6 +73,8 @@ public class CreateRequestBodyCceCreateInfo  {
         this.nodeNum = nodeNum;
     }
 
+    
+
     public CreateRequestBodyCceCreateInfo withNodeFlavor(String nodeFlavor) {
         this.nodeFlavor = nodeFlavor;
         return this;
@@ -92,6 +94,8 @@ public class CreateRequestBodyCceCreateInfo  {
     public void setNodeFlavor(String nodeFlavor) {
         this.nodeFlavor = nodeFlavor;
     }
+
+    
 
     public CreateRequestBodyCceCreateInfo withCceFlavor(String cceFlavor) {
         this.cceFlavor = cceFlavor;
@@ -113,6 +117,8 @@ public class CreateRequestBodyCceCreateInfo  {
         this.cceFlavor = cceFlavor;
     }
 
+    
+
     public CreateRequestBodyCceCreateInfo withInitNodePwd(String initNodePwd) {
         this.initNodePwd = initNodePwd;
         return this;
@@ -132,6 +138,8 @@ public class CreateRequestBodyCceCreateInfo  {
     public void setInitNodePwd(String initNodePwd) {
         this.initNodePwd = initNodePwd;
     }
+
+    
 
     public CreateRequestBodyCceCreateInfo withAz(String az) {
         this.az = az;
@@ -153,6 +161,8 @@ public class CreateRequestBodyCceCreateInfo  {
         this.az = az;
     }
 
+    
+
     public CreateRequestBodyCceCreateInfo withClusterPlatformType(String clusterPlatformType) {
         this.clusterPlatformType = clusterPlatformType;
         return this;
@@ -172,6 +182,9 @@ public class CreateRequestBodyCceCreateInfo  {
     public void setClusterPlatformType(String clusterPlatformType) {
         this.clusterPlatformType = clusterPlatformType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

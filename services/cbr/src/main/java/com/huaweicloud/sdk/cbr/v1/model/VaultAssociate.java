@@ -49,6 +49,8 @@ public class VaultAssociate  {
         this.destinationVaultId = destinationVaultId;
     }
 
+    
+
     public VaultAssociate withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -68,6 +70,9 @@ public class VaultAssociate  {
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

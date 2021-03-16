@@ -55,6 +55,8 @@ public class KeystoneAssociateGroupWithProjectPermissionRequest  {
         this.projectId = projectId;
     }
 
+    
+
     public KeystoneAssociateGroupWithProjectPermissionRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -75,6 +77,8 @@ public class KeystoneAssociateGroupWithProjectPermissionRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public KeystoneAssociateGroupWithProjectPermissionRequest withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -94,6 +98,9 @@ public class KeystoneAssociateGroupWithProjectPermissionRequest  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

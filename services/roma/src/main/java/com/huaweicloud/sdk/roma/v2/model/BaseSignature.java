@@ -149,6 +149,8 @@ public class BaseSignature  {
         this.name = name;
     }
 
+    
+
     public BaseSignature withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -168,6 +170,8 @@ public class BaseSignature  {
     public void setSignType(SignTypeEnum signType) {
         this.signType = signType;
     }
+
+    
 
     public BaseSignature withSignKey(String signKey) {
         this.signKey = signKey;
@@ -189,6 +193,8 @@ public class BaseSignature  {
         this.signKey = signKey;
     }
 
+    
+
     public BaseSignature withSignSecret(String signSecret) {
         this.signSecret = signSecret;
         return this;
@@ -208,6 +214,9 @@ public class BaseSignature  {
     public void setSignSecret(String signSecret) {
         this.signSecret = signSecret;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

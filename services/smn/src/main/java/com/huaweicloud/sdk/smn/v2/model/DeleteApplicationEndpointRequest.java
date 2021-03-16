@@ -42,6 +42,9 @@ public class DeleteApplicationEndpointRequest  {
     public void setEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

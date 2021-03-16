@@ -55,6 +55,8 @@ public class StreamForbiddenList  {
         this.appName = appName;
     }
 
+    
+
     public StreamForbiddenList withStreamName(String streamName) {
         this.streamName = streamName;
         return this;
@@ -75,6 +77,8 @@ public class StreamForbiddenList  {
         this.streamName = streamName;
     }
 
+    
+
     public StreamForbiddenList withResumeTime(String resumeTime) {
         this.resumeTime = resumeTime;
         return this;
@@ -94,6 +98,9 @@ public class StreamForbiddenList  {
     public void setResumeTime(String resumeTime) {
         this.resumeTime = resumeTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

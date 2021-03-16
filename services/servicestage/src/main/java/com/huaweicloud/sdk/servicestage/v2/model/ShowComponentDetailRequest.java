@@ -49,6 +49,8 @@ public class ShowComponentDetailRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ShowComponentDetailRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -68,6 +70,9 @@ public class ShowComponentDetailRequest  {
     public void setComponentId(String componentId) {
         this.componentId = componentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

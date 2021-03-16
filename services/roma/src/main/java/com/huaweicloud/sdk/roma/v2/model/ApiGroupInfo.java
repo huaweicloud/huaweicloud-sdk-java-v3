@@ -137,13 +137,13 @@ public class ApiGroupInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -197,7 +197,7 @@ public class ApiGroupInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_app_name")
     
-    private Object romaAppName = null;
+    private Object romaAppName;
 
     public ApiGroupInfo withId(String id) {
         this.id = id;
@@ -219,6 +219,8 @@ public class ApiGroupInfo  {
         this.id = id;
     }
 
+    
+
     public ApiGroupInfo withName(String name) {
         this.name = name;
         return this;
@@ -238,6 +240,8 @@ public class ApiGroupInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ApiGroupInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -259,6 +263,8 @@ public class ApiGroupInfo  {
         this.status = status;
     }
 
+    
+
     public ApiGroupInfo withSlDomain(String slDomain) {
         this.slDomain = slDomain;
         return this;
@@ -279,6 +285,8 @@ public class ApiGroupInfo  {
         this.slDomain = slDomain;
     }
 
+    
+
     public ApiGroupInfo withSlDomains(List<String> slDomains) {
         this.slDomains = slDomains;
         return this;
@@ -286,9 +294,6 @@ public class ApiGroupInfo  {
 
     
     public ApiGroupInfo addSlDomainsItem(String slDomainsItem) {
-        if (this.slDomains == null) {
-            this.slDomains = new ArrayList<>();
-        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
@@ -313,6 +318,8 @@ public class ApiGroupInfo  {
         this.slDomains = slDomains;
     }
 
+    
+
     public ApiGroupInfo withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -332,6 +339,8 @@ public class ApiGroupInfo  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ApiGroupInfo withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -353,6 +362,8 @@ public class ApiGroupInfo  {
         this.registerTime = registerTime;
     }
 
+    
+
     public ApiGroupInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -372,6 +383,8 @@ public class ApiGroupInfo  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ApiGroupInfo withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
@@ -393,6 +406,8 @@ public class ApiGroupInfo  {
         this.callLimits = callLimits;
     }
 
+    
+
     public ApiGroupInfo withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
         return this;
@@ -412,6 +427,8 @@ public class ApiGroupInfo  {
     public void setTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
     }
+
+    
 
     public ApiGroupInfo withTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
@@ -433,6 +450,8 @@ public class ApiGroupInfo  {
         this.timeUnit = timeUnit;
     }
 
+    
+
     public ApiGroupInfo withUrlDomains(List<UrlDomain> urlDomains) {
         this.urlDomains = urlDomains;
         return this;
@@ -440,9 +459,6 @@ public class ApiGroupInfo  {
 
     
     public ApiGroupInfo addUrlDomainsItem(UrlDomain urlDomainsItem) {
-        if (this.urlDomains == null) {
-            this.urlDomains = new ArrayList<>();
-        }
         this.urlDomains.add(urlDomainsItem);
         return this;
     }
@@ -467,6 +483,8 @@ public class ApiGroupInfo  {
         this.urlDomains = urlDomains;
     }
 
+    
+
     public ApiGroupInfo withOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
         return this;
@@ -486,6 +504,8 @@ public class ApiGroupInfo  {
     public void setOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
     }
+
+    
 
     public ApiGroupInfo withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
@@ -507,6 +527,8 @@ public class ApiGroupInfo  {
         this.isDefault = isDefault;
     }
 
+    
+
     public ApiGroupInfo withVersion(String version) {
         this.version = version;
         return this;
@@ -526,6 +548,8 @@ public class ApiGroupInfo  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ApiGroupInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -547,6 +571,8 @@ public class ApiGroupInfo  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiGroupInfo withRomaAppName(Object romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -566,6 +592,9 @@ public class ApiGroupInfo  {
     public void setRomaAppName(Object romaAppName) {
         this.romaAppName = romaAppName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

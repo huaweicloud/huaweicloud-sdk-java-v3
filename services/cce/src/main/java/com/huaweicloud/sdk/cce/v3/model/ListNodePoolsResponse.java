@@ -60,6 +60,8 @@ public class ListNodePoolsResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public ListNodePoolsResponse withItems(List<NodePool> items) {
         this.items = items;
         return this;
@@ -67,9 +69,6 @@ public class ListNodePoolsResponse extends SdkResponse {
 
     
     public ListNodePoolsResponse addItemsItem(NodePool itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListNodePoolsResponse extends SdkResponse {
         this.items = items;
     }
 
+    
+
     public ListNodePoolsResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -113,6 +114,9 @@ public class ListNodePoolsResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

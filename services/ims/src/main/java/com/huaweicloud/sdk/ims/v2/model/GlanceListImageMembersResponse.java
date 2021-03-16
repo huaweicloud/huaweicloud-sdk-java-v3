@@ -41,9 +41,6 @@ public class GlanceListImageMembersResponse extends SdkResponse {
 
     
     public GlanceListImageMembersResponse addMembersItem(GlanceImageMembers membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         this.members = members;
     }
 
+    
+
     public GlanceListImageMembersResponse withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -87,6 +86,9 @@ public class GlanceListImageMembersResponse extends SdkResponse {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class ListIssuedCouponQuotasRequest  {
         this.quotaId = quotaId;
     }
 
+    
+
     public ListIssuedCouponQuotasRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -87,6 +89,8 @@ public class ListIssuedCouponQuotasRequest  {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    
+
     public ListIssuedCouponQuotasRequest withParentQuotaId(String parentQuotaId) {
         this.parentQuotaId = parentQuotaId;
         return this;
@@ -106,6 +110,8 @@ public class ListIssuedCouponQuotasRequest  {
     public void setParentQuotaId(String parentQuotaId) {
         this.parentQuotaId = parentQuotaId;
     }
+
+    
 
     public ListIssuedCouponQuotasRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -129,6 +135,8 @@ public class ListIssuedCouponQuotasRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListIssuedCouponQuotasRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -150,6 +158,9 @@ public class ListIssuedCouponQuotasRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

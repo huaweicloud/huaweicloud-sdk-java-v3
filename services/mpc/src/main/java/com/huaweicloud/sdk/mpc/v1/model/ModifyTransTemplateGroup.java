@@ -45,19 +45,19 @@ public class ModifyTransTemplateGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private Audio audio = null;
+    private Audio audio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_common")
     
-    private VideoCommon videoCommon = null;
+    private VideoCommon videoCommon;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="common")
     
-    private Common common = null;
+    private Common common;
 
     public ModifyTransTemplateGroup withGroupId(String groupId) {
         this.groupId = groupId;
@@ -79,6 +79,8 @@ public class ModifyTransTemplateGroup  {
         this.groupId = groupId;
     }
 
+    
+
     public ModifyTransTemplateGroup withName(String name) {
         this.name = name;
         return this;
@@ -99,6 +101,8 @@ public class ModifyTransTemplateGroup  {
         this.name = name;
     }
 
+    
+
     public ModifyTransTemplateGroup withVideos(List<VideoObj> videos) {
         this.videos = videos;
         return this;
@@ -106,9 +110,6 @@ public class ModifyTransTemplateGroup  {
 
     
     public ModifyTransTemplateGroup addVideosItem(VideoObj videosItem) {
-        if (this.videos == null) {
-            this.videos = new ArrayList<>();
-        }
         this.videos.add(videosItem);
         return this;
     }
@@ -132,6 +133,8 @@ public class ModifyTransTemplateGroup  {
     public void setVideos(List<VideoObj> videos) {
         this.videos = videos;
     }
+
+    
 
     public ModifyTransTemplateGroup withAudio(Audio audio) {
         this.audio = audio;
@@ -160,6 +163,8 @@ public class ModifyTransTemplateGroup  {
         this.audio = audio;
     }
 
+    
+
     public ModifyTransTemplateGroup withVideoCommon(VideoCommon videoCommon) {
         this.videoCommon = videoCommon;
         return this;
@@ -187,6 +192,8 @@ public class ModifyTransTemplateGroup  {
         this.videoCommon = videoCommon;
     }
 
+    
+
     public ModifyTransTemplateGroup withCommon(Common common) {
         this.common = common;
         return this;
@@ -213,6 +220,9 @@ public class ModifyTransTemplateGroup  {
     public void setCommon(Common common) {
         this.common = common;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

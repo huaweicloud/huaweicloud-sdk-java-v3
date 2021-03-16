@@ -28,7 +28,7 @@ public class ShowProjectWorkHoursRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ShowProjectWorkHoursRequestBody body = null;
+    private ShowProjectWorkHoursRequestBody body;
 
     public ShowProjectWorkHoursRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class ShowProjectWorkHoursRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ShowProjectWorkHoursRequest withBody(ShowProjectWorkHoursRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ShowProjectWorkHoursRequest  {
     public void setBody(ShowProjectWorkHoursRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

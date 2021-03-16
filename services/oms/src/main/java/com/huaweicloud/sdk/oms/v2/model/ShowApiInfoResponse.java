@@ -154,6 +154,8 @@ public class ShowApiInfoResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowApiInfoResponse withLinks(List<Link> links) {
         this.links = links;
         return this;
@@ -161,9 +163,6 @@ public class ShowApiInfoResponse extends SdkResponse {
 
     
     public ShowApiInfoResponse addLinksItem(Link linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -188,6 +187,8 @@ public class ShowApiInfoResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public ShowApiInfoResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -208,6 +209,8 @@ public class ShowApiInfoResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowApiInfoResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -227,6 +230,9 @@ public class ShowApiInfoResponse extends SdkResponse {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -53,13 +53,13 @@ public class ListTranscodingTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListTranscodingTaskRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -83,6 +83,8 @@ public class ListTranscodingTaskRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListTranscodingTaskRequest withTaskId(List<Long> taskId) {
         this.taskId = taskId;
         return this;
@@ -90,9 +92,6 @@ public class ListTranscodingTaskRequest  {
 
     
     public ListTranscodingTaskRequest addTaskIdItem(Long taskIdItem) {
-        if (this.taskId == null) {
-            this.taskId = new ArrayList<>();
-        }
         this.taskId.add(taskIdItem);
         return this;
     }
@@ -117,6 +116,8 @@ public class ListTranscodingTaskRequest  {
         this.taskId = taskId;
     }
 
+    
+
     public ListTranscodingTaskRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -136,6 +137,8 @@ public class ListTranscodingTaskRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListTranscodingTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -157,6 +160,8 @@ public class ListTranscodingTaskRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListTranscodingTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -176,6 +181,8 @@ public class ListTranscodingTaskRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListTranscodingTaskRequest withPage(Integer page) {
         this.page = page;
@@ -199,6 +206,8 @@ public class ListTranscodingTaskRequest  {
         this.page = page;
     }
 
+    
+
     public ListTranscodingTaskRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -220,6 +229,9 @@ public class ListTranscodingTaskRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

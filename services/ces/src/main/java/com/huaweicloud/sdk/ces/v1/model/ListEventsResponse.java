@@ -33,7 +33,7 @@ public class ListEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private TotalMetaData metaData = null;
+    private TotalMetaData metaData;
 
     public ListEventsResponse withEvents(List<EventInfo> events) {
         this.events = events;
@@ -42,9 +42,6 @@ public class ListEventsResponse extends SdkResponse {
 
     
     public ListEventsResponse addEventsItem(EventInfo eventsItem) {
-        if (this.events == null) {
-            this.events = new ArrayList<>();
-        }
         this.events.add(eventsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListEventsResponse extends SdkResponse {
     public void setEvents(List<EventInfo> events) {
         this.events = events;
     }
+
+    
 
     public ListEventsResponse withMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
@@ -95,6 +94,9 @@ public class ListEventsResponse extends SdkResponse {
     public void setMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

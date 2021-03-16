@@ -73,6 +73,8 @@ public class VerifyVerifyCodeV2Req  {
         this.verifyCode = verifyCode;
     }
 
+    
+
     public VerifyVerifyCodeV2Req withContactValue(String contactValue) {
         this.contactValue = contactValue;
         return this;
@@ -92,6 +94,8 @@ public class VerifyVerifyCodeV2Req  {
     public void setContactValue(String contactValue) {
         this.contactValue = contactValue;
     }
+
+    
 
     public VerifyVerifyCodeV2Req withContactWay(Integer contactWay) {
         this.contactWay = contactWay;
@@ -115,6 +119,8 @@ public class VerifyVerifyCodeV2Req  {
         this.contactWay = contactWay;
     }
 
+    
+
     public VerifyVerifyCodeV2Req withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
@@ -134,6 +140,8 @@ public class VerifyVerifyCodeV2Req  {
     public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
     }
+
+    
 
     public VerifyVerifyCodeV2Req withXCustomerId(String xCustomerId) {
         this.xCustomerId = xCustomerId;
@@ -157,6 +165,8 @@ public class VerifyVerifyCodeV2Req  {
         this.xCustomerId = xCustomerId;
     }
 
+    
+
     public VerifyVerifyCodeV2Req withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -176,6 +186,9 @@ public class VerifyVerifyCodeV2Req  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

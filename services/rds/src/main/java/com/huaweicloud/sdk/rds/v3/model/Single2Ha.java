@@ -61,6 +61,8 @@ public class Single2Ha  {
         this.azCodeNewNode = azCodeNewNode;
     }
 
+    
+
     public Single2Ha withPassword(String password) {
         this.password = password;
         return this;
@@ -70,7 +72,7 @@ public class Single2Ha  {
 
 
     /**
-     * 仅在支持SQL Server数据库实例进行单机转主备时必选，有效。
+     * 仅在支持SQL Server数据库实例进行单机转主备时可选，指定时会验证密码有效性。
      * @return password
      */
     public String getPassword() {
@@ -81,6 +83,8 @@ public class Single2Ha  {
         this.password = password;
     }
 
+    
+
     public Single2Ha withDsspoolId(String dsspoolId) {
         this.dsspoolId = dsspoolId;
         return this;
@@ -90,7 +94,7 @@ public class Single2Ha  {
 
 
     /**
-     * 创建新节点所在专属存储池ID，仅专属云创建实例时有效。
+     * Dec用户专属存储ID，每个az配置的专属存储不同，实例节点所在专属存储ID，仅支持DEC用户创建时使用。
      * @return dsspoolId
      */
     public String getDsspoolId() {
@@ -101,6 +105,8 @@ public class Single2Ha  {
         this.dsspoolId = dsspoolId;
     }
 
+    
+
     public Single2Ha withIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -110,7 +116,7 @@ public class Single2Ha  {
 
 
     /**
-     * 包周期实例单转主备时可指定，表示是否自动从客户的账户中支付。
+     * 仅包周期实例进行单机转主备时可指定，表示是否自动从客户的账户中支付。 - true，为自动支付。 - false，为手动支付，默认该方式。
      * @return isAutoPay
      */
     public Boolean getIsAutoPay() {
@@ -120,6 +126,9 @@ public class Single2Ha  {
     public void setIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

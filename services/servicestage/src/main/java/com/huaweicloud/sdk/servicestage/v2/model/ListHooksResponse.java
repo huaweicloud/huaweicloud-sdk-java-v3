@@ -35,9 +35,6 @@ public class ListHooksResponse extends SdkResponse {
 
     
     public ListHooksResponse addHooksItem(Hook hooksItem) {
-        if (this.hooks == null) {
-            this.hooks = new ArrayList<>();
-        }
         this.hooks.add(hooksItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListHooksResponse extends SdkResponse {
     public void setHooks(List<Hook> hooks) {
         this.hooks = hooks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

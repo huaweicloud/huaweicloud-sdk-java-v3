@@ -115,6 +115,8 @@ public class QueryVmrResultDTO  {
         this.id = id;
     }
 
+    
+
     public QueryVmrResultDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
@@ -134,6 +136,8 @@ public class QueryVmrResultDTO  {
     public void setVmrId(String vmrId) {
         this.vmrId = vmrId;
     }
+
+    
 
     public QueryVmrResultDTO withVmrName(String vmrName) {
         this.vmrName = vmrName;
@@ -155,6 +159,8 @@ public class QueryVmrResultDTO  {
         this.vmrName = vmrName;
     }
 
+    
+
     public QueryVmrResultDTO withGustPwd(String gustPwd) {
         this.gustPwd = gustPwd;
         return this;
@@ -174,6 +180,8 @@ public class QueryVmrResultDTO  {
     public void setGustPwd(String gustPwd) {
         this.gustPwd = gustPwd;
     }
+
+    
 
     public QueryVmrResultDTO withGustJoinUrl(String gustJoinUrl) {
         this.gustJoinUrl = gustJoinUrl;
@@ -195,6 +203,8 @@ public class QueryVmrResultDTO  {
         this.gustJoinUrl = gustJoinUrl;
     }
 
+    
+
     public QueryVmrResultDTO withChairPwd(String chairPwd) {
         this.chairPwd = chairPwd;
         return this;
@@ -214,6 +224,8 @@ public class QueryVmrResultDTO  {
     public void setChairPwd(String chairPwd) {
         this.chairPwd = chairPwd;
     }
+
+    
 
     public QueryVmrResultDTO withChairJoinUrl(String chairJoinUrl) {
         this.chairJoinUrl = chairJoinUrl;
@@ -235,6 +247,8 @@ public class QueryVmrResultDTO  {
         this.chairJoinUrl = chairJoinUrl;
     }
 
+    
+
     public QueryVmrResultDTO withAllowGustFirst(Boolean allowGustFirst) {
         this.allowGustFirst = allowGustFirst;
         return this;
@@ -254,6 +268,8 @@ public class QueryVmrResultDTO  {
     public void setAllowGustFirst(Boolean allowGustFirst) {
         this.allowGustFirst = allowGustFirst;
     }
+
+    
 
     public QueryVmrResultDTO withGustFirstNotice(Boolean gustFirstNotice) {
         this.gustFirstNotice = gustFirstNotice;
@@ -275,6 +291,8 @@ public class QueryVmrResultDTO  {
         this.gustFirstNotice = gustFirstNotice;
     }
 
+    
+
     public QueryVmrResultDTO withVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
         return this;
@@ -294,6 +312,8 @@ public class QueryVmrResultDTO  {
     public void setVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
     }
+
+    
 
     public QueryVmrResultDTO withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
@@ -315,6 +335,8 @@ public class QueryVmrResultDTO  {
         this.vmrPkgName = vmrPkgName;
     }
 
+    
+
     public QueryVmrResultDTO withVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
         return this;
@@ -335,6 +357,8 @@ public class QueryVmrResultDTO  {
         this.vmrPkgParties = vmrPkgParties;
     }
 
+    
+
     public QueryVmrResultDTO withStatus(Integer status) {
         this.status = status;
         return this;
@@ -354,6 +378,9 @@ public class QueryVmrResultDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

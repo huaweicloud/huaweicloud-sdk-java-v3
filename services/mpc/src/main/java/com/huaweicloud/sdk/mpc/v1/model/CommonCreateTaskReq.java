@@ -22,25 +22,19 @@ public class CommonCreateTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_data")
     
     private String userData;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync")
-    
-    private Integer sync = 0;
 
     public CommonCreateTaskReq withInput(ObsObjInfo input) {
         this.input = input;
@@ -69,6 +63,8 @@ public class CommonCreateTaskReq  {
         this.input = input;
     }
 
+    
+
     public CommonCreateTaskReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -96,6 +92,8 @@ public class CommonCreateTaskReq  {
         this.output = output;
     }
 
+    
+
     public CommonCreateTaskReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -116,27 +114,8 @@ public class CommonCreateTaskReq  {
         this.userData = userData;
     }
 
-    public CommonCreateTaskReq withSync(Integer sync) {
-        this.sync = sync;
-        return this;
-    }
-
     
 
-
-    /**
-     * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
-     * minimum: 0
-     * maximum: 2
-     * @return sync
-     */
-    public Integer getSync() {
-        return sync;
-    }
-
-    public void setSync(Integer sync) {
-        this.sync = sync;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,12 +127,11 @@ public class CommonCreateTaskReq  {
         CommonCreateTaskReq commonCreateTaskReq = (CommonCreateTaskReq) o;
         return Objects.equals(this.input, commonCreateTaskReq.input) &&
             Objects.equals(this.output, commonCreateTaskReq.output) &&
-            Objects.equals(this.userData, commonCreateTaskReq.userData) &&
-            Objects.equals(this.sync, commonCreateTaskReq.sync);
+            Objects.equals(this.userData, commonCreateTaskReq.userData);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, userData, sync);
+        return Objects.hash(input, output, userData);
     }
     @Override
     public String toString() {
@@ -162,7 +140,6 @@ public class CommonCreateTaskReq  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-        sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
         sb.append("}");
         return sb.toString();
     }

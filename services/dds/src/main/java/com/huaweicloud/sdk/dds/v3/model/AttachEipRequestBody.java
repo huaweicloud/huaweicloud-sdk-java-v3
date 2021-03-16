@@ -49,6 +49,8 @@ public class AttachEipRequestBody  {
         this.publicIpId = publicIpId;
     }
 
+    
+
     public AttachEipRequestBody withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -68,6 +70,9 @@ public class AttachEipRequestBody  {
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListTemplatesResponse extends SdkResponse {
 
     
     public ListTemplatesResponse addTemplatesItem(TemplateView templatesItem) {
-        if (this.templates == null) {
-            this.templates = new ArrayList<>();
-        }
         this.templates.add(templatesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListTemplatesResponse extends SdkResponse {
     public void setTemplates(List<TemplateView> templates) {
         this.templates = templates;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

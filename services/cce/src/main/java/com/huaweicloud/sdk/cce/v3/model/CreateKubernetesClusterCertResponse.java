@@ -52,13 +52,13 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Config";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="preferences")
     
-    private Object preferences = null;
+    private Object preferences;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public CreateKubernetesClusterCertResponse withClusters(List<Clusters> clusters) {
         this.clusters = clusters;
         return this;
@@ -93,9 +95,6 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
     public CreateKubernetesClusterCertResponse addClustersItem(Clusters clustersItem) {
-        if (this.clusters == null) {
-            this.clusters = new ArrayList<>();
-        }
         this.clusters.add(clustersItem);
         return this;
     }
@@ -120,6 +119,8 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         this.clusters = clusters;
     }
 
+    
+
     public CreateKubernetesClusterCertResponse withContexts(List<Contexts> contexts) {
         this.contexts = contexts;
         return this;
@@ -127,9 +128,6 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
     public CreateKubernetesClusterCertResponse addContextsItem(Contexts contextsItem) {
-        if (this.contexts == null) {
-            this.contexts = new ArrayList<>();
-        }
         this.contexts.add(contextsItem);
         return this;
     }
@@ -154,6 +152,8 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         this.contexts = contexts;
     }
 
+    
+
     public CreateKubernetesClusterCertResponse withCurrentContext(String currentContext) {
         this.currentContext = currentContext;
         return this;
@@ -173,6 +173,8 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
     public void setCurrentContext(String currentContext) {
         this.currentContext = currentContext;
     }
+
+    
 
     public CreateKubernetesClusterCertResponse withKind(String kind) {
         this.kind = kind;
@@ -194,6 +196,8 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         this.kind = kind;
     }
 
+    
+
     public CreateKubernetesClusterCertResponse withPreferences(Object preferences) {
         this.preferences = preferences;
         return this;
@@ -214,6 +218,8 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         this.preferences = preferences;
     }
 
+    
+
     public CreateKubernetesClusterCertResponse withUsers(List<Users> users) {
         this.users = users;
         return this;
@@ -221,9 +227,6 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
     public CreateKubernetesClusterCertResponse addUsersItem(Users usersItem) {
-        if (this.users == null) {
-            this.users = new ArrayList<>();
-        }
         this.users.add(usersItem);
         return this;
     }
@@ -247,6 +250,9 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
     public void setUsers(List<Users> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

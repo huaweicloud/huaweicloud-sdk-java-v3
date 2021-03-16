@@ -51,6 +51,8 @@ public class ShowBackupDownloadLinkRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ShowBackupDownloadLinkRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -70,6 +72,9 @@ public class ShowBackupDownloadLinkRequest  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

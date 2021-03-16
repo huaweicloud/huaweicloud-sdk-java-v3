@@ -49,7 +49,7 @@ public class UpdateAlarmTemplateRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_items")
     
-    private List<TemplateItem> templateItems = new ArrayList<>();
+    private List<TemplateItem> templateItems = null;
     
     public UpdateAlarmTemplateRequestBody withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -71,6 +71,8 @@ public class UpdateAlarmTemplateRequestBody  {
         this.templateName = templateName;
     }
 
+    
+
     public UpdateAlarmTemplateRequestBody withTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
         return this;
@@ -90,6 +92,8 @@ public class UpdateAlarmTemplateRequestBody  {
     public void setTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
     }
+
+    
 
     public UpdateAlarmTemplateRequestBody withNamespace(String namespace) {
         this.namespace = namespace;
@@ -111,6 +115,8 @@ public class UpdateAlarmTemplateRequestBody  {
         this.namespace = namespace;
     }
 
+    
+
     public UpdateAlarmTemplateRequestBody withDimensionName(String dimensionName) {
         this.dimensionName = dimensionName;
         return this;
@@ -130,6 +136,8 @@ public class UpdateAlarmTemplateRequestBody  {
     public void setDimensionName(String dimensionName) {
         this.dimensionName = dimensionName;
     }
+
+    
 
     public UpdateAlarmTemplateRequestBody withTemplateItems(List<TemplateItem> templateItems) {
         this.templateItems = templateItems;
@@ -161,6 +169,9 @@ public class UpdateAlarmTemplateRequestBody  {
     public void setTemplateItems(List<TemplateItem> templateItems) {
         this.templateItems = templateItems;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

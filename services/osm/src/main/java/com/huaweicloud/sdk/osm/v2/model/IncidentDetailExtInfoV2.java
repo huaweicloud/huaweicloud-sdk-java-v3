@@ -79,6 +79,8 @@ public class IncidentDetailExtInfoV2  {
         this.areaCode = areaCode;
     }
 
+    
+
     public IncidentDetailExtInfoV2 withRemindMobile(String remindMobile) {
         this.remindMobile = remindMobile;
         return this;
@@ -98,6 +100,8 @@ public class IncidentDetailExtInfoV2  {
     public void setRemindMobile(String remindMobile) {
         this.remindMobile = remindMobile;
     }
+
+    
 
     public IncidentDetailExtInfoV2 withRemindMail(String remindMail) {
         this.remindMail = remindMail;
@@ -119,6 +123,8 @@ public class IncidentDetailExtInfoV2  {
         this.remindMail = remindMail;
     }
 
+    
+
     public IncidentDetailExtInfoV2 withContactType(String contactType) {
         this.contactType = contactType;
         return this;
@@ -138,6 +144,8 @@ public class IncidentDetailExtInfoV2  {
     public void setContactType(String contactType) {
         this.contactType = contactType;
     }
+
+    
 
     public IncidentDetailExtInfoV2 withRemindTime(String remindTime) {
         this.remindTime = remindTime;
@@ -159,6 +167,8 @@ public class IncidentDetailExtInfoV2  {
         this.remindTime = remindTime;
     }
 
+    
+
     public IncidentDetailExtInfoV2 withCcEmail(String ccEmail) {
         this.ccEmail = ccEmail;
         return this;
@@ -179,6 +189,8 @@ public class IncidentDetailExtInfoV2  {
         this.ccEmail = ccEmail;
     }
 
+    
+
     public IncidentDetailExtInfoV2 withCommodityId(String commodityId) {
         this.commodityId = commodityId;
         return this;
@@ -198,6 +210,9 @@ public class IncidentDetailExtInfoV2  {
     public void setCommodityId(String commodityId) {
         this.commodityId = commodityId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

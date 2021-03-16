@@ -60,6 +60,8 @@ public class ListMonitorInfosResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListMonitorInfosResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListMonitorInfosResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListMonitorInfosResponse withEntities(List<TaskMonitorInfo> entities) {
         this.entities = entities;
         return this;
@@ -87,9 +91,6 @@ public class ListMonitorInfosResponse extends SdkResponse {
 
     
     public ListMonitorInfosResponse addEntitiesItem(TaskMonitorInfo entitiesItem) {
-        if (this.entities == null) {
-            this.entities = new ArrayList<>();
-        }
         this.entities.add(entitiesItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListMonitorInfosResponse extends SdkResponse {
     public void setEntities(List<TaskMonitorInfo> entities) {
         this.entities = entities;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

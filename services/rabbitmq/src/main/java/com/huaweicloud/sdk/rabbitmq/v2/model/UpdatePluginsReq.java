@@ -49,6 +49,8 @@ public class UpdatePluginsReq  {
         this.enable = enable;
     }
 
+    
+
     public UpdatePluginsReq withPlugins(String plugins) {
         this.plugins = plugins;
         return this;
@@ -68,6 +70,9 @@ public class UpdatePluginsReq  {
     public void setPlugins(String plugins) {
         this.plugins = plugins;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

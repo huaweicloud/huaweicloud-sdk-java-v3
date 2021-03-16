@@ -42,7 +42,7 @@ public class BackupDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,13 +54,13 @@ public class BackupDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expired_at")
     
-    private OffsetDateTime expiredAt = null;
+    private OffsetDateTime expiredAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extend_info")
     
-    private BackupExtendInfo extendInfo = null;
+    private BackupExtendInfo extendInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -174,7 +174,7 @@ public class BackupDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protected_at")
     
-    private LocalDate protectedAt = null;
+    private LocalDate protectedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -408,7 +408,7 @@ public class BackupDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -420,7 +420,7 @@ public class BackupDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replication_records")
     
-    private List<ReplicationRecordGet> replicationRecords = new ArrayList<>();
+    private List<ReplicationRecordGet> replicationRecords = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -432,7 +432,7 @@ public class BackupDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="children")
     
-    private List<BackupResp> children = new ArrayList<>();
+    private List<BackupResp> children = null;
     
     public BackupDetail withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
@@ -454,6 +454,8 @@ public class BackupDetail  {
         this.checkpointId = checkpointId;
     }
 
+    
+
     public BackupDetail withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -473,6 +475,8 @@ public class BackupDetail  {
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public BackupDetail withDescription(String description) {
         this.description = description;
@@ -494,6 +498,8 @@ public class BackupDetail  {
         this.description = description;
     }
 
+    
+
     public BackupDetail withExpiredAt(OffsetDateTime expiredAt) {
         this.expiredAt = expiredAt;
         return this;
@@ -513,6 +519,8 @@ public class BackupDetail  {
     public void setExpiredAt(OffsetDateTime expiredAt) {
         this.expiredAt = expiredAt;
     }
+
+    
 
     public BackupDetail withExtendInfo(BackupExtendInfo extendInfo) {
         this.extendInfo = extendInfo;
@@ -541,6 +549,8 @@ public class BackupDetail  {
         this.extendInfo = extendInfo;
     }
 
+    
+
     public BackupDetail withId(String id) {
         this.id = id;
         return this;
@@ -560,6 +570,8 @@ public class BackupDetail  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public BackupDetail withImageType(ImageTypeEnum imageType) {
         this.imageType = imageType;
@@ -581,6 +593,8 @@ public class BackupDetail  {
         this.imageType = imageType;
     }
 
+    
+
     public BackupDetail withName(String name) {
         this.name = name;
         return this;
@@ -600,6 +614,8 @@ public class BackupDetail  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public BackupDetail withParentId(String parentId) {
         this.parentId = parentId;
@@ -621,6 +637,8 @@ public class BackupDetail  {
         this.parentId = parentId;
     }
 
+    
+
     public BackupDetail withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -640,6 +658,8 @@ public class BackupDetail  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public BackupDetail withProtectedAt(LocalDate protectedAt) {
         this.protectedAt = protectedAt;
@@ -661,6 +681,8 @@ public class BackupDetail  {
         this.protectedAt = protectedAt;
     }
 
+    
+
     public BackupDetail withResourceAz(String resourceAz) {
         this.resourceAz = resourceAz;
         return this;
@@ -680,6 +702,8 @@ public class BackupDetail  {
     public void setResourceAz(String resourceAz) {
         this.resourceAz = resourceAz;
     }
+
+    
 
     public BackupDetail withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -701,6 +725,8 @@ public class BackupDetail  {
         this.resourceId = resourceId;
     }
 
+    
+
     public BackupDetail withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -720,6 +746,8 @@ public class BackupDetail  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public BackupDetail withResourceSize(Integer resourceSize) {
         this.resourceSize = resourceSize;
@@ -741,6 +769,8 @@ public class BackupDetail  {
         this.resourceSize = resourceSize;
     }
 
+    
+
     public BackupDetail withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -760,6 +790,8 @@ public class BackupDetail  {
     public void setResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
     }
+
+    
 
     public BackupDetail withStatus(StatusEnum status) {
         this.status = status;
@@ -781,6 +813,8 @@ public class BackupDetail  {
         this.status = status;
     }
 
+    
+
     public BackupDetail withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -801,6 +835,8 @@ public class BackupDetail  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public BackupDetail withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -820,6 +856,8 @@ public class BackupDetail  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public BackupDetail withReplicationRecords(List<ReplicationRecordGet> replicationRecords) {
         this.replicationRecords = replicationRecords;
@@ -852,6 +890,8 @@ public class BackupDetail  {
         this.replicationRecords = replicationRecords;
     }
 
+    
+
     public BackupDetail withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -871,6 +911,8 @@ public class BackupDetail  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public BackupDetail withChildren(List<BackupResp> children) {
         this.children = children;
@@ -902,6 +944,9 @@ public class BackupDetail  {
     public void setChildren(List<BackupResp> children) {
         this.children = children;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -32,9 +32,6 @@ public class ListStacksByTagRequest  {
 
     
     public ListStacksByTagRequest addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class ListStacksByTagRequest  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

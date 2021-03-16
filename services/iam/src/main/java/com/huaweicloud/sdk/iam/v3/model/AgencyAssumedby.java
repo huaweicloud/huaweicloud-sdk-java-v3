@@ -22,7 +22,7 @@ public class AgencyAssumedby  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private AgencyAssumedbyUser user = null;
+    private AgencyAssumedbyUser user;
 
     public AgencyAssumedby withUser(AgencyAssumedbyUser user) {
         this.user = user;
@@ -50,6 +50,9 @@ public class AgencyAssumedby  {
     public void setUser(AgencyAssumedbyUser user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

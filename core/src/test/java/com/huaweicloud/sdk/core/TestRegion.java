@@ -14,6 +14,7 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 public class TestRegion {
     public static final String SERVICE_ENDPOINT = "http://127.0.0.1:10086";
     public static final String TEST_ENDPOINT = "https://test.huaweicloud.com";
+    public static final String TEST_ENDPOINT_WITHOUT_SCHEME = "test.huaweicloud.com";
 
     public static final Region CN_NORTH_7 = new Region("cn-north-7", SERVICE_ENDPOINT);
     public static final Region CN_NORTH_201 = new Region("cn-north-201", SERVICE_ENDPOINT);

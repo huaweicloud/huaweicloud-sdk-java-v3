@@ -26,7 +26,7 @@ public class ListNodesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,7 +38,7 @@ public class ListNodesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "List";
+    private String kind;
 
     public ListNodesResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -60,6 +60,8 @@ public class ListNodesResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public ListNodesResponse withItems(List<V3Node> items) {
         this.items = items;
         return this;
@@ -67,9 +69,6 @@ public class ListNodesResponse extends SdkResponse {
 
     
     public ListNodesResponse addItemsItem(V3Node itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListNodesResponse extends SdkResponse {
         this.items = items;
     }
 
+    
+
     public ListNodesResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -113,6 +114,9 @@ public class ListNodesResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

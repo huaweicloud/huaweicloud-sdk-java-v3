@@ -39,7 +39,7 @@ public class ListSubsetsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -225,7 +225,7 @@ public class ListSubsetsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListSubsetsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -246,6 +246,8 @@ public class ListSubsetsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListSubsetsRequest withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
@@ -269,6 +271,8 @@ public class ListSubsetsRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public ListSubsetsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -291,6 +295,8 @@ public class ListSubsetsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSubsetsRequest withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -310,6 +316,8 @@ public class ListSubsetsRequest  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public ListSubsetsRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -333,6 +341,8 @@ public class ListSubsetsRequest  {
         this.status = status;
     }
 
+    
+
     public ListSubsetsRequest withOnlineStatus(OnlineStatusEnum onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
@@ -355,6 +365,8 @@ public class ListSubsetsRequest  {
         this.onlineStatus = onlineStatus;
     }
 
+    
+
     public ListSubsetsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -376,6 +388,9 @@ public class ListSubsetsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

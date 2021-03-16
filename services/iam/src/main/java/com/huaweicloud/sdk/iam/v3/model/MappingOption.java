@@ -24,7 +24,7 @@ public class MappingOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<MappingRules> rules = new ArrayList<>();
+    private List<MappingRules> rules = null;
     
     public MappingOption withRules(List<MappingRules> rules) {
         this.rules = rules;
@@ -56,6 +56,9 @@ public class MappingOption  {
     public void setRules(List<MappingRules> rules) {
         this.rules = rules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

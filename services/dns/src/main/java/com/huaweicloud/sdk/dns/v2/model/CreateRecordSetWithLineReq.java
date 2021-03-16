@@ -55,7 +55,7 @@ public class CreateRecordSetWithLineReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="records")
     
-    private List<String> records = new ArrayList<>();
+    private List<String> records = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,7 +79,7 @@ public class CreateRecordSetWithLineReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alias_target")
     
-    private AliasTarget aliasTarget = null;
+    private AliasTarget aliasTarget;
 
     public CreateRecordSetWithLineReq withName(String name) {
         this.name = name;
@@ -101,6 +101,8 @@ public class CreateRecordSetWithLineReq  {
         this.name = name;
     }
 
+    
+
     public CreateRecordSetWithLineReq withDescription(String description) {
         this.description = description;
         return this;
@@ -120,6 +122,8 @@ public class CreateRecordSetWithLineReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateRecordSetWithLineReq withType(String type) {
         this.type = type;
@@ -141,6 +145,8 @@ public class CreateRecordSetWithLineReq  {
         this.type = type;
     }
 
+    
+
     public CreateRecordSetWithLineReq withStatus(String status) {
         this.status = status;
         return this;
@@ -161,6 +167,8 @@ public class CreateRecordSetWithLineReq  {
         this.status = status;
     }
 
+    
+
     public CreateRecordSetWithLineReq withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -180,6 +188,8 @@ public class CreateRecordSetWithLineReq  {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public CreateRecordSetWithLineReq withRecords(List<String> records) {
         this.records = records;
@@ -212,6 +222,8 @@ public class CreateRecordSetWithLineReq  {
         this.records = records;
     }
 
+    
+
     public CreateRecordSetWithLineReq withLine(String line) {
         this.line = line;
         return this;
@@ -232,6 +244,8 @@ public class CreateRecordSetWithLineReq  {
         this.line = line;
     }
 
+    
+
     public CreateRecordSetWithLineReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -239,9 +253,6 @@ public class CreateRecordSetWithLineReq  {
 
     
     public CreateRecordSetWithLineReq addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -266,6 +277,8 @@ public class CreateRecordSetWithLineReq  {
         this.tags = tags;
     }
 
+    
+
     public CreateRecordSetWithLineReq withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -285,6 +298,8 @@ public class CreateRecordSetWithLineReq  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
 
     public CreateRecordSetWithLineReq withAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
@@ -312,6 +327,9 @@ public class CreateRecordSetWithLineReq  {
     public void setAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

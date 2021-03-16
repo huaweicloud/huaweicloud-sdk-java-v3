@@ -42,7 +42,7 @@ public class TokenCatalog  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoints")
     
-    private List<TokenCatalogEndpoint> endpoints = new ArrayList<>();
+    private List<TokenCatalogEndpoint> endpoints = null;
     
     public TokenCatalog withType(String type) {
         this.type = type;
@@ -64,6 +64,8 @@ public class TokenCatalog  {
         this.type = type;
     }
 
+    
+
     public TokenCatalog withId(String id) {
         this.id = id;
         return this;
@@ -84,6 +86,8 @@ public class TokenCatalog  {
         this.id = id;
     }
 
+    
+
     public TokenCatalog withName(String name) {
         this.name = name;
         return this;
@@ -103,6 +107,8 @@ public class TokenCatalog  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TokenCatalog withEndpoints(List<TokenCatalogEndpoint> endpoints) {
         this.endpoints = endpoints;
@@ -134,6 +140,9 @@ public class TokenCatalog  {
     public void setEndpoints(List<TokenCatalogEndpoint> endpoints) {
         this.endpoints = endpoints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

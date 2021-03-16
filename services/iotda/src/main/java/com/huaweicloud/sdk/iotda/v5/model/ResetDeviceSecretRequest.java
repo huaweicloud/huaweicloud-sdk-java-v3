@@ -40,7 +40,7 @@ public class ResetDeviceSecretRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResetDeviceSecret body = null;
+    private ResetDeviceSecret body;
 
     public ResetDeviceSecretRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -62,6 +62,8 @@ public class ResetDeviceSecretRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ResetDeviceSecretRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -82,6 +84,8 @@ public class ResetDeviceSecretRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public ResetDeviceSecretRequest withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -101,6 +105,8 @@ public class ResetDeviceSecretRequest  {
     public void setActionId(String actionId) {
         this.actionId = actionId;
     }
+
+    
 
     public ResetDeviceSecretRequest withBody(ResetDeviceSecret body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class ResetDeviceSecretRequest  {
     public void setBody(ResetDeviceSecret body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

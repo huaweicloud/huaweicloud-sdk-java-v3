@@ -23,7 +23,7 @@ public class CreateManualImageSyncRepoRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="imageTag")
     
-    private List<String> imageTag = new ArrayList<>();
+    private List<String> imageTag = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class CreateManualImageSyncRepoRequestBody  {
         this.imageTag = imageTag;
     }
 
+    
+
     public CreateManualImageSyncRepoRequestBody withOverride(Boolean override) {
         this.override = override;
         return this;
@@ -93,6 +95,8 @@ public class CreateManualImageSyncRepoRequestBody  {
     public void setOverride(Boolean override) {
         this.override = override;
     }
+
+    
 
     public CreateManualImageSyncRepoRequestBody withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
@@ -114,6 +118,8 @@ public class CreateManualImageSyncRepoRequestBody  {
         this.remoteNamespace = remoteNamespace;
     }
 
+    
+
     public CreateManualImageSyncRepoRequestBody withRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
         return this;
@@ -133,6 +139,9 @@ public class CreateManualImageSyncRepoRequestBody  {
     public void setRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

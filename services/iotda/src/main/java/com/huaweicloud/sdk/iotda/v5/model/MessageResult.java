@@ -55,6 +55,8 @@ public class MessageResult  {
         this.status = status;
     }
 
+    
+
     public MessageResult withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -75,6 +77,8 @@ public class MessageResult  {
         this.createdTime = createdTime;
     }
 
+    
+
     public MessageResult withFinishedTime(String finishedTime) {
         this.finishedTime = finishedTime;
         return this;
@@ -94,6 +98,9 @@ public class MessageResult  {
     public void setFinishedTime(String finishedTime) {
         this.finishedTime = finishedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

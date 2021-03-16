@@ -55,6 +55,8 @@ public class NodeOrgs  {
         this.name = name;
     }
 
+    
+
     public NodeOrgs withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
         return this;
@@ -75,6 +77,8 @@ public class NodeOrgs  {
         this.nodeCount = nodeCount;
     }
 
+    
+
     public NodeOrgs withPvcName(String pvcName) {
         this.pvcName = pvcName;
         return this;
@@ -94,6 +98,9 @@ public class NodeOrgs  {
     public void setPvcName(String pvcName) {
         this.pvcName = pvcName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

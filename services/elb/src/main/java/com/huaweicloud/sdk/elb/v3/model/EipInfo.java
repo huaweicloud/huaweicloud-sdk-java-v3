@@ -49,6 +49,8 @@ public class EipInfo  {
         this.eipId = eipId;
     }
 
+    
+
     public EipInfo withEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
         return this;
@@ -68,6 +70,9 @@ public class EipInfo  {
     public void setEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

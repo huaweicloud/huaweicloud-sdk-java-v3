@@ -55,6 +55,8 @@ public class ShowDetailsOfAppConfigV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfAppConfigV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class ShowDetailsOfAppConfigV2Request  {
         this.appId = appId;
     }
 
+    
+
     public ShowDetailsOfAppConfigV2Request withAppConfigId(String appConfigId) {
         this.appConfigId = appConfigId;
         return this;
@@ -94,6 +98,9 @@ public class ShowDetailsOfAppConfigV2Request  {
     public void setAppConfigId(String appConfigId) {
         this.appConfigId = appConfigId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

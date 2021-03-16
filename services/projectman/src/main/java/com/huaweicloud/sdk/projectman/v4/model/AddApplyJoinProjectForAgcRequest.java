@@ -55,6 +55,8 @@ public class AddApplyJoinProjectForAgcRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public AddApplyJoinProjectForAgcRequest withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -75,6 +77,8 @@ public class AddApplyJoinProjectForAgcRequest  {
         this.userId = userId;
     }
 
+    
+
     public AddApplyJoinProjectForAgcRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -94,6 +98,9 @@ public class AddApplyJoinProjectForAgcRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

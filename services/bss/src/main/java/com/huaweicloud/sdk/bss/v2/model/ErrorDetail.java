@@ -55,6 +55,8 @@ public class ErrorDetail  {
         this.errorCode = errorCode;
     }
 
+    
+
     public ErrorDetail withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -75,6 +77,8 @@ public class ErrorDetail  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public ErrorDetail withId(String id) {
         this.id = id;
         return this;
@@ -94,6 +98,9 @@ public class ErrorDetail  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

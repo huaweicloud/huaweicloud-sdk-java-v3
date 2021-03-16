@@ -41,9 +41,6 @@ public class ListKmsByTagsResponse extends SdkResponse {
 
     
     public ListKmsByTagsResponse addResourcesItem(ActionResources resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListKmsByTagsResponse extends SdkResponse {
         this.resources = resources;
     }
 
+    
+
     public ListKmsByTagsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -89,6 +88,9 @@ public class ListKmsByTagsResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

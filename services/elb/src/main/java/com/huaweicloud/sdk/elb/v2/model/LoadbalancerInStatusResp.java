@@ -43,13 +43,13 @@ public class LoadbalancerInStatusResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<ListenersInStatusResp> listeners = new ArrayList<>();
+    private List<ListenersInStatusResp> listeners = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<PoolsInStatusResp> pools = new ArrayList<>();
+    private List<PoolsInStatusResp> pools = null;
         /**
      * 负载均衡器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
      */
@@ -263,6 +263,8 @@ public class LoadbalancerInStatusResp  {
         this.name = name;
     }
 
+    
+
     public LoadbalancerInStatusResp withId(String id) {
         this.id = id;
         return this;
@@ -282,6 +284,8 @@ public class LoadbalancerInStatusResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public LoadbalancerInStatusResp withListeners(List<ListenersInStatusResp> listeners) {
         this.listeners = listeners;
@@ -314,6 +318,8 @@ public class LoadbalancerInStatusResp  {
         this.listeners = listeners;
     }
 
+    
+
     public LoadbalancerInStatusResp withPools(List<PoolsInStatusResp> pools) {
         this.pools = pools;
         return this;
@@ -345,6 +351,8 @@ public class LoadbalancerInStatusResp  {
         this.pools = pools;
     }
 
+    
+
     public LoadbalancerInStatusResp withOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -365,6 +373,8 @@ public class LoadbalancerInStatusResp  {
         this.operatingStatus = operatingStatus;
     }
 
+    
+
     public LoadbalancerInStatusResp withProvisioningStatus(ProvisioningStatusEnum provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -384,6 +394,9 @@ public class LoadbalancerInStatusResp  {
     public void setProvisioningStatus(ProvisioningStatusEnum provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

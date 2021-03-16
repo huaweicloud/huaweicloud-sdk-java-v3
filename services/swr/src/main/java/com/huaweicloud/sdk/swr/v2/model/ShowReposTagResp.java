@@ -81,7 +81,7 @@ public class ShowReposTagResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_trusted")
     
-    private Boolean isTrusted = false;
+    private Boolean isTrusted;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -121,6 +121,8 @@ public class ShowReposTagResp  {
         this.id = id;
     }
 
+    
+
     public ShowReposTagResp withRepoId(Long repoId) {
         this.repoId = repoId;
         return this;
@@ -140,6 +142,8 @@ public class ShowReposTagResp  {
     public void setRepoId(Long repoId) {
         this.repoId = repoId;
     }
+
+    
 
     public ShowReposTagResp withTag(String tag) {
         this.tag = tag;
@@ -161,6 +165,8 @@ public class ShowReposTagResp  {
         this.tag = tag;
     }
 
+    
+
     public ShowReposTagResp withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -180,6 +186,8 @@ public class ShowReposTagResp  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public ShowReposTagResp withManifest(String manifest) {
         this.manifest = manifest;
@@ -201,6 +209,8 @@ public class ShowReposTagResp  {
         this.manifest = manifest;
     }
 
+    
+
     public ShowReposTagResp withDigest(String digest) {
         this.digest = digest;
         return this;
@@ -220,6 +230,8 @@ public class ShowReposTagResp  {
     public void setDigest(String digest) {
         this.digest = digest;
     }
+
+    
 
     public ShowReposTagResp withSchema(Long schema) {
         this.schema = schema;
@@ -241,6 +253,8 @@ public class ShowReposTagResp  {
         this.schema = schema;
     }
 
+    
+
     public ShowReposTagResp withPath(String path) {
         this.path = path;
         return this;
@@ -260,6 +274,8 @@ public class ShowReposTagResp  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public ShowReposTagResp withInternalPath(String internalPath) {
         this.internalPath = internalPath;
@@ -281,6 +297,8 @@ public class ShowReposTagResp  {
         this.internalPath = internalPath;
     }
 
+    
+
     public ShowReposTagResp withSize(Long size) {
         this.size = size;
         return this;
@@ -300,6 +318,8 @@ public class ShowReposTagResp  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public ShowReposTagResp withIsTrusted(Boolean isTrusted) {
         this.isTrusted = isTrusted;
@@ -321,6 +341,8 @@ public class ShowReposTagResp  {
         this.isTrusted = isTrusted;
     }
 
+    
+
     public ShowReposTagResp withCreated(String created) {
         this.created = created;
         return this;
@@ -340,6 +362,8 @@ public class ShowReposTagResp  {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public ShowReposTagResp withUpdated(String updated) {
         this.updated = updated;
@@ -361,6 +385,8 @@ public class ShowReposTagResp  {
         this.updated = updated;
     }
 
+    
+
     public ShowReposTagResp withDeleted(String deleted) {
         this.deleted = deleted;
         return this;
@@ -380,6 +406,9 @@ public class ShowReposTagResp  {
     public void setDeleted(String deleted) {
         this.deleted = deleted;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

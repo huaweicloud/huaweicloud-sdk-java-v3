@@ -32,31 +32,31 @@ public class RuleCondition  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_property_condition")
     
-    private DeviceDataCondition devicePropertyCondition = null;
+    private DeviceDataCondition devicePropertyCondition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="simple_timer_condition")
     
-    private SimpleTimerType simpleTimerCondition = null;
+    private SimpleTimerType simpleTimerCondition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="daily_timer_condition")
     
-    private DailyTimerType dailyTimerCondition = null;
+    private DailyTimerType dailyTimerCondition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_message_condition")
     
-    private DeviceMessageCondition deviceMessageCondition = null;
+    private DeviceMessageCondition deviceMessageCondition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_status_condition")
     
-    private DeviceStatusCondition deviceStatusCondition = null;
+    private DeviceStatusCondition deviceStatusCondition;
 
     public RuleCondition withType(String type) {
         this.type = type;
@@ -77,6 +77,8 @@ public class RuleCondition  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public RuleCondition withDevicePropertyCondition(DeviceDataCondition devicePropertyCondition) {
         this.devicePropertyCondition = devicePropertyCondition;
@@ -105,6 +107,8 @@ public class RuleCondition  {
         this.devicePropertyCondition = devicePropertyCondition;
     }
 
+    
+
     public RuleCondition withSimpleTimerCondition(SimpleTimerType simpleTimerCondition) {
         this.simpleTimerCondition = simpleTimerCondition;
         return this;
@@ -131,6 +135,8 @@ public class RuleCondition  {
     public void setSimpleTimerCondition(SimpleTimerType simpleTimerCondition) {
         this.simpleTimerCondition = simpleTimerCondition;
     }
+
+    
 
     public RuleCondition withDailyTimerCondition(DailyTimerType dailyTimerCondition) {
         this.dailyTimerCondition = dailyTimerCondition;
@@ -159,6 +165,8 @@ public class RuleCondition  {
         this.dailyTimerCondition = dailyTimerCondition;
     }
 
+    
+
     public RuleCondition withDeviceMessageCondition(DeviceMessageCondition deviceMessageCondition) {
         this.deviceMessageCondition = deviceMessageCondition;
         return this;
@@ -186,6 +194,8 @@ public class RuleCondition  {
         this.deviceMessageCondition = deviceMessageCondition;
     }
 
+    
+
     public RuleCondition withDeviceStatusCondition(DeviceStatusCondition deviceStatusCondition) {
         this.deviceStatusCondition = deviceStatusCondition;
         return this;
@@ -212,6 +222,9 @@ public class RuleCondition  {
     public void setDeviceStatusCondition(DeviceStatusCondition deviceStatusCondition) {
         this.deviceStatusCondition = deviceStatusCondition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

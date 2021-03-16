@@ -22,7 +22,7 @@ public class BatchCreateBandwidthRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private BatchCreateBandwidthOption bandwidth = null;
+    private BatchCreateBandwidthOption bandwidth;
 
     public BatchCreateBandwidthRequestBody withBandwidth(BatchCreateBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -50,6 +50,9 @@ public class BatchCreateBandwidthRequestBody  {
     public void setBandwidth(BatchCreateBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

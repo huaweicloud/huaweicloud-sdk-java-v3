@@ -35,9 +35,6 @@ public class CheckCanAuthUsersOfAppResponse extends SdkResponse {
 
     
     public CheckCanAuthUsersOfAppResponse addUsersItem(CandidatesUser usersItem) {
-        if (this.users == null) {
-            this.users = new ArrayList<>();
-        }
         this.users.add(usersItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class CheckCanAuthUsersOfAppResponse extends SdkResponse {
     public void setUsers(List<CandidatesUser> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

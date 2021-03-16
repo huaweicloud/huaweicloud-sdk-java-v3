@@ -33,7 +33,7 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaDataForAlarmHistory metaData = null;
+    private MetaDataForAlarmHistory metaData;
 
     public ListAlarmHistoriesResponse withAlarmHistories(List<AlarmHistoryInfo> alarmHistories) {
         this.alarmHistories = alarmHistories;
@@ -42,9 +42,6 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
 
     
     public ListAlarmHistoriesResponse addAlarmHistoriesItem(AlarmHistoryInfo alarmHistoriesItem) {
-        if (this.alarmHistories == null) {
-            this.alarmHistories = new ArrayList<>();
-        }
         this.alarmHistories.add(alarmHistoriesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     public void setAlarmHistories(List<AlarmHistoryInfo> alarmHistories) {
         this.alarmHistories = alarmHistories;
     }
+
+    
 
     public ListAlarmHistoriesResponse withMetaData(MetaDataForAlarmHistory metaData) {
         this.metaData = metaData;
@@ -95,6 +94,9 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     public void setMetaData(MetaDataForAlarmHistory metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

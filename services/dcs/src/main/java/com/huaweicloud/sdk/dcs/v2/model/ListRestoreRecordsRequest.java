@@ -67,6 +67,8 @@ public class ListRestoreRecordsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListRestoreRecordsRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -86,6 +88,8 @@ public class ListRestoreRecordsRequest  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public ListRestoreRecordsRequest withEndTime(String endTime) {
         this.endTime = endTime;
@@ -107,6 +111,8 @@ public class ListRestoreRecordsRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListRestoreRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -127,6 +133,8 @@ public class ListRestoreRecordsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListRestoreRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -146,6 +154,9 @@ public class ListRestoreRecordsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

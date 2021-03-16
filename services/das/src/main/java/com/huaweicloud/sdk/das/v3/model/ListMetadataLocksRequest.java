@@ -155,6 +155,8 @@ public class ListMetadataLocksRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListMetadataLocksRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
@@ -174,6 +176,8 @@ public class ListMetadataLocksRequest  {
     public void setDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
     }
+
+    
 
     public ListMetadataLocksRequest withThreadId(String threadId) {
         this.threadId = threadId;
@@ -195,6 +199,8 @@ public class ListMetadataLocksRequest  {
         this.threadId = threadId;
     }
 
+    
+
     public ListMetadataLocksRequest withDatabase(String database) {
         this.database = database;
         return this;
@@ -215,6 +221,8 @@ public class ListMetadataLocksRequest  {
         this.database = database;
     }
 
+    
+
     public ListMetadataLocksRequest withTable(String table) {
         this.table = table;
         return this;
@@ -234,6 +242,8 @@ public class ListMetadataLocksRequest  {
     public void setTable(String table) {
         this.table = table;
     }
+
+    
 
     public ListMetadataLocksRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -256,6 +266,9 @@ public class ListMetadataLocksRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

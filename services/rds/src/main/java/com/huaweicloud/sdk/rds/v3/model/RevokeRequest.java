@@ -34,7 +34,7 @@ public class RevokeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RevokeRequestBody body = null;
+    private RevokeRequestBody body;
 
     public RevokeRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class RevokeRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public RevokeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class RevokeRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public RevokeRequest withBody(RevokeRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class RevokeRequest  {
     public void setBody(RevokeRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

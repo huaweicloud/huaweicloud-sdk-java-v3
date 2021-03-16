@@ -55,6 +55,8 @@ public class UpdateRepoDomainsRequestBody  {
         this.permit = permit;
     }
 
+    
+
     public UpdateRepoDomainsRequestBody withDeadline(String deadline) {
         this.deadline = deadline;
         return this;
@@ -75,6 +77,8 @@ public class UpdateRepoDomainsRequestBody  {
         this.deadline = deadline;
     }
 
+    
+
     public UpdateRepoDomainsRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +98,9 @@ public class UpdateRepoDomainsRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

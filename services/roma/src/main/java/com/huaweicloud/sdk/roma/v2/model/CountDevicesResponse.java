@@ -26,19 +26,19 @@ public class CountDevicesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_templates")
     
-    private ProductTemplatesCalculation productTemplates = null;
+    private ProductTemplatesCalculation productTemplates;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="products")
     
-    private ProductsCalculation products = null;
+    private ProductsCalculation products;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="devices")
     
-    private DevicesCalculation devices = null;
+    private DevicesCalculation devices;
 
     public CountDevicesResponse withProductTemplates(ProductTemplatesCalculation productTemplates) {
         this.productTemplates = productTemplates;
@@ -67,6 +67,8 @@ public class CountDevicesResponse extends SdkResponse {
         this.productTemplates = productTemplates;
     }
 
+    
+
     public CountDevicesResponse withProducts(ProductsCalculation products) {
         this.products = products;
         return this;
@@ -94,6 +96,8 @@ public class CountDevicesResponse extends SdkResponse {
         this.products = products;
     }
 
+    
+
     public CountDevicesResponse withDevices(DevicesCalculation devices) {
         this.devices = devices;
         return this;
@@ -120,6 +124,9 @@ public class CountDevicesResponse extends SdkResponse {
     public void setDevices(DevicesCalculation devices) {
         this.devices = devices;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

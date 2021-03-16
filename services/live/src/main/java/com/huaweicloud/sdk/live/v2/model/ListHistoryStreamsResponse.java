@@ -47,9 +47,6 @@ public class ListHistoryStreamsResponse extends SdkResponse {
 
     
     public ListHistoryStreamsResponse addHistoryStreamListItem(HistoryStreamInfo historyStreamListItem) {
-        if (this.historyStreamList == null) {
-            this.historyStreamList = new ArrayList<>();
-        }
         this.historyStreamList.add(historyStreamListItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListHistoryStreamsResponse extends SdkResponse {
         this.historyStreamList = historyStreamList;
     }
 
+    
+
     public ListHistoryStreamsResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -96,6 +95,8 @@ public class ListHistoryStreamsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListHistoryStreamsResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -117,6 +118,9 @@ public class ListHistoryStreamsResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

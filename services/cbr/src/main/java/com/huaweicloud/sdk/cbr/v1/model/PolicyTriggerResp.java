@@ -38,7 +38,7 @@ public class PolicyTriggerResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private PolicyTriggerPropertiesResp properties = null;
+    private PolicyTriggerPropertiesResp properties;
     /**
      * 调度器类型,目前只支持 time: 定时调度。
      */
@@ -138,6 +138,8 @@ public class PolicyTriggerResp  {
         this.id = id;
     }
 
+    
+
     public PolicyTriggerResp withName(String name) {
         this.name = name;
         return this;
@@ -157,6 +159,8 @@ public class PolicyTriggerResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PolicyTriggerResp withProperties(PolicyTriggerPropertiesResp properties) {
         this.properties = properties;
@@ -185,6 +189,8 @@ public class PolicyTriggerResp  {
         this.properties = properties;
     }
 
+    
+
     public PolicyTriggerResp withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -204,6 +210,9 @@ public class PolicyTriggerResp  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

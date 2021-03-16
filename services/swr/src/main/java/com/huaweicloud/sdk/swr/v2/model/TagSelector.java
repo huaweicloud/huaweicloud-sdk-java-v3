@@ -49,6 +49,8 @@ public class TagSelector  {
         this.kind = kind;
     }
 
+    
+
     public TagSelector withPattern(String pattern) {
         this.pattern = pattern;
         return this;
@@ -68,6 +70,9 @@ public class TagSelector  {
     public void setPattern(String pattern) {
         this.pattern = pattern;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

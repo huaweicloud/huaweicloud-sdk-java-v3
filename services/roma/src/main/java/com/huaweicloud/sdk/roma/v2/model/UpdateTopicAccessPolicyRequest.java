@@ -28,7 +28,7 @@ public class UpdateTopicAccessPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateTopicAccessPolicyReq body = null;
+    private UpdateTopicAccessPolicyReq body;
 
     public UpdateTopicAccessPolicyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateTopicAccessPolicyRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateTopicAccessPolicyRequest withBody(UpdateTopicAccessPolicyReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateTopicAccessPolicyRequest  {
     public void setBody(UpdateTopicAccessPolicyReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

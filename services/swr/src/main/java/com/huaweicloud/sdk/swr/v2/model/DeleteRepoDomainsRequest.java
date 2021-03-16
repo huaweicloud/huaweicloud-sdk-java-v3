@@ -55,6 +55,8 @@ public class DeleteRepoDomainsRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public DeleteRepoDomainsRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class DeleteRepoDomainsRequest  {
         this.repository = repository;
     }
 
+    
+
     public DeleteRepoDomainsRequest withAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
         return this;
@@ -94,6 +98,9 @@ public class DeleteRepoDomainsRequest  {
     public void setAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

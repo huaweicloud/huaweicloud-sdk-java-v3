@@ -49,6 +49,8 @@ public class HookCreate  {
         this.secret = secret;
     }
 
+    
+
     public HookCreate withUrl(String url) {
         this.url = url;
         return this;
@@ -68,6 +70,9 @@ public class HookCreate  {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

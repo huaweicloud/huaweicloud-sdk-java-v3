@@ -51,6 +51,8 @@ public class DeleteConfigurationRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DeleteConfigurationRequest withConfigId(String configId) {
         this.configId = configId;
         return this;
@@ -70,6 +72,9 @@ public class DeleteConfigurationRequest  {
     public void setConfigId(String configId) {
         this.configId = configId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

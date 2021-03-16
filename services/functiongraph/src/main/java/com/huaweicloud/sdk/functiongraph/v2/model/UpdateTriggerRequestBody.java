@@ -124,6 +124,9 @@ public class UpdateTriggerRequestBody  {
     public void setTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

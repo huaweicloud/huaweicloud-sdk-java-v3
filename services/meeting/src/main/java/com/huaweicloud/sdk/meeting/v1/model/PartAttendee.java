@@ -67,6 +67,8 @@ public class PartAttendee  {
         this.name = name;
     }
 
+    
+
     public PartAttendee withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -86,6 +88,8 @@ public class PartAttendee  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public PartAttendee withPhone2(String phone2) {
         this.phone2 = phone2;
@@ -107,6 +111,8 @@ public class PartAttendee  {
         this.phone2 = phone2;
     }
 
+    
+
     public PartAttendee withPhone3(String phone3) {
         this.phone3 = phone3;
         return this;
@@ -127,6 +133,8 @@ public class PartAttendee  {
         this.phone3 = phone3;
     }
 
+    
+
     public PartAttendee withType(String type) {
         this.type = type;
         return this;
@@ -146,6 +154,9 @@ public class PartAttendee  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

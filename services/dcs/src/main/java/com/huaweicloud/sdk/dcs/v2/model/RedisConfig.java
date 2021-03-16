@@ -55,6 +55,8 @@ public class RedisConfig  {
         this.paramValue = paramValue;
     }
 
+    
+
     public RedisConfig withParamName(String paramName) {
         this.paramName = paramName;
         return this;
@@ -75,6 +77,8 @@ public class RedisConfig  {
         this.paramName = paramName;
     }
 
+    
+
     public RedisConfig withParamId(String paramId) {
         this.paramId = paramId;
         return this;
@@ -94,6 +98,9 @@ public class RedisConfig  {
     public void setParamId(String paramId) {
         this.paramId = paramId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

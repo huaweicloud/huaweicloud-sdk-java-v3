@@ -47,9 +47,6 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
 
     
     public ListCustomerselfResourceRecordDetailsResponse addMonthlyRecordsItem(MonthlyBillRes monthlyRecordsItem) {
-        if (this.monthlyRecords == null) {
-            this.monthlyRecords = new ArrayList<>();
-        }
         this.monthlyRecords.add(monthlyRecordsItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         this.monthlyRecords = monthlyRecords;
     }
 
+    
+
     public ListCustomerselfResourceRecordDetailsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -94,6 +93,8 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCustomerselfResourceRecordDetailsResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -113,6 +114,9 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class PolicyStatement  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Action")
     
-    private List<String> action = new ArrayList<>();
+    private List<String> action = null;
         /**
      * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
      */
@@ -117,7 +117,7 @@ public class PolicyStatement  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Condition")
     
-    private Object condition = null;
+    private Object condition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -156,6 +156,8 @@ public class PolicyStatement  {
         this.action = action;
     }
 
+    
+
     public PolicyStatement withEffect(EffectEnum effect) {
         this.effect = effect;
         return this;
@@ -175,6 +177,8 @@ public class PolicyStatement  {
     public void setEffect(EffectEnum effect) {
         this.effect = effect;
     }
+
+    
 
     public PolicyStatement withCondition(Object condition) {
         this.condition = condition;
@@ -196,6 +200,8 @@ public class PolicyStatement  {
         this.condition = condition;
     }
 
+    
+
     public PolicyStatement withResource(List<String> resource) {
         this.resource = resource;
         return this;
@@ -203,9 +209,6 @@ public class PolicyStatement  {
 
     
     public PolicyStatement addResourceItem(String resourceItem) {
-        if (this.resource == null) {
-            this.resource = new ArrayList<>();
-        }
         this.resource.add(resourceItem);
         return this;
     }
@@ -229,6 +232,9 @@ public class PolicyStatement  {
     public void setResource(List<String> resource) {
         this.resource = resource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

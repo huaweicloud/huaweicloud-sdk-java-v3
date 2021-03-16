@@ -28,7 +28,7 @@ public class ExportImageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ExportImageRequestBody body = null;
+    private ExportImageRequestBody body;
 
     public ExportImageRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -49,6 +49,8 @@ public class ExportImageRequest  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public ExportImageRequest withBody(ExportImageRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ExportImageRequest  {
     public void setBody(ExportImageRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

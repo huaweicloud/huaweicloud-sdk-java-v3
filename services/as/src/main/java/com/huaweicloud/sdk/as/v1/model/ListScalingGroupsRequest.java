@@ -161,6 +161,8 @@ public class ListScalingGroupsRequest  {
         this.scalingGroupName = scalingGroupName;
     }
 
+    
+
     public ListScalingGroupsRequest withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
         return this;
@@ -180,6 +182,8 @@ public class ListScalingGroupsRequest  {
     public void setScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
     }
+
+    
 
     public ListScalingGroupsRequest withScalingGroupStatus(ScalingGroupStatusEnum scalingGroupStatus) {
         this.scalingGroupStatus = scalingGroupStatus;
@@ -201,6 +205,8 @@ public class ListScalingGroupsRequest  {
         this.scalingGroupStatus = scalingGroupStatus;
     }
 
+    
+
     public ListScalingGroupsRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -221,6 +227,8 @@ public class ListScalingGroupsRequest  {
         this.startNumber = startNumber;
     }
 
+    
+
     public ListScalingGroupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -240,6 +248,9 @@ public class ListScalingGroupsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

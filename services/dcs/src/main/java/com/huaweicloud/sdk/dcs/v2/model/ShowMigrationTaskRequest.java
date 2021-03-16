@@ -42,6 +42,9 @@ public class ShowMigrationTaskRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class RestorePtrRecordRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestorePtrReq body = null;
+    private RestorePtrReq body;
 
     public RestorePtrRecordRequest withRegion(String region) {
         this.region = region;
@@ -56,6 +56,8 @@ public class RestorePtrRecordRequest  {
         this.region = region;
     }
 
+    
+
     public RestorePtrRecordRequest withFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
         return this;
@@ -75,6 +77,8 @@ public class RestorePtrRecordRequest  {
     public void setFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
     }
+
+    
 
     public RestorePtrRecordRequest withBody(RestorePtrReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class RestorePtrRecordRequest  {
     public void setBody(RestorePtrReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class DatabaseWithPrivilege  {
         this.name = name;
     }
 
+    
+
     public DatabaseWithPrivilege withReadonly(Boolean readonly) {
         this.readonly = readonly;
         return this;
@@ -68,6 +70,9 @@ public class DatabaseWithPrivilege  {
     public void setReadonly(Boolean readonly) {
         this.readonly = readonly;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

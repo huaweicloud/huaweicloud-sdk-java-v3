@@ -24,7 +24,7 @@ public class UpdateInstanceCrossVpcIpReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="advertised_ip_contents")
     
-    private Map<String, String> advertisedIpContents = new HashMap<>();
+    private Map<String, String> advertisedIpContents = null;
     
     public UpdateInstanceCrossVpcIpReq withAdvertisedIpContents(Map<String, String> advertisedIpContents) {
         this.advertisedIpContents = advertisedIpContents;
@@ -56,6 +56,9 @@ public class UpdateInstanceCrossVpcIpReq  {
     public void setAdvertisedIpContents(Map<String, String> advertisedIpContents) {
         this.advertisedIpContents = advertisedIpContents;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

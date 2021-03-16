@@ -102,6 +102,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowTemplateDetailResponse withTitle(String title) {
         this.title = title;
         return this;
@@ -121,6 +123,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    
 
     public ShowTemplateDetailResponse withDescription(String description) {
         this.description = description;
@@ -142,6 +146,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowTemplateDetailResponse withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -161,6 +167,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public ShowTemplateDetailResponse withRepostoryId(String repostoryId) {
         this.repostoryId = repostoryId;
@@ -182,6 +190,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         this.repostoryId = repostoryId;
     }
 
+    
+
     public ShowTemplateDetailResponse withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
         return this;
@@ -201,6 +211,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     public void setCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
     }
+
+    
 
     public ShowTemplateDetailResponse withSshUrl(String sshUrl) {
         this.sshUrl = sshUrl;
@@ -222,6 +234,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         this.sshUrl = sshUrl;
     }
 
+    
+
     public ShowTemplateDetailResponse withProjectUuid(String projectUuid) {
         this.projectUuid = projectUuid;
         return this;
@@ -241,6 +255,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     public void setProjectUuid(String projectUuid) {
         this.projectUuid = projectUuid;
     }
+
+    
 
     public ShowTemplateDetailResponse withStatus(Integer status) {
         this.status = status;
@@ -262,6 +278,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowTemplateDetailResponse withProperties(List<PropertiesInfo> properties) {
         this.properties = properties;
         return this;
@@ -269,9 +287,6 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     
     public ShowTemplateDetailResponse addPropertiesItem(PropertiesInfo propertiesItem) {
-        if (this.properties == null) {
-            this.properties = new ArrayList<>();
-        }
         this.properties.add(propertiesItem);
         return this;
     }
@@ -295,6 +310,9 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     public void setProperties(List<PropertiesInfo> properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class UpdateNickNameV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateUserNickNameRequestV4 body = null;
+    private UpdateUserNickNameRequestV4 body;
 
     public UpdateNickNameV4Request withBody(UpdateUserNickNameRequestV4 body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateNickNameV4Request  {
     public void setBody(UpdateUserNickNameRequestV4 body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreatePartnerCouponsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePartnerCouponsReq body = null;
+    private CreatePartnerCouponsReq body;
 
     public CreatePartnerCouponsRequest withBody(CreatePartnerCouponsReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePartnerCouponsRequest  {
     public void setBody(CreatePartnerCouponsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

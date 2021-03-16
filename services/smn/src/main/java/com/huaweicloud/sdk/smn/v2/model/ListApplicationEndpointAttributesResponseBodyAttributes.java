@@ -55,6 +55,8 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
         this.enabled = enabled;
     }
 
+    
+
     public ListApplicationEndpointAttributesResponseBodyAttributes withToken(String token) {
         this.token = token;
         return this;
@@ -75,6 +77,8 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
         this.token = token;
     }
 
+    
+
     public ListApplicationEndpointAttributesResponseBodyAttributes withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -94,6 +98,9 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

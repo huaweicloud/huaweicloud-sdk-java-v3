@@ -49,6 +49,8 @@ public class QuotaSimpleInfo  {
         this.id = id;
     }
 
+    
+
     public QuotaSimpleInfo withQuotaId(String quotaId) {
         this.quotaId = quotaId;
         return this;
@@ -68,6 +70,9 @@ public class QuotaSimpleInfo  {
     public void setQuotaId(String quotaId) {
         this.quotaId = quotaId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

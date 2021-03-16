@@ -36,13 +36,13 @@ public class InstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ha")
     
-    private Ha ha = null;
+    private Ha ha;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,7 +66,7 @@ public class InstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private BackupStrategy backupStrategy = null;
+    private BackupStrategy backupStrategy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,7 +90,7 @@ public class InstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private Volume volume = null;
+    private Volume volume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -132,7 +132,7 @@ public class InstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_info")
     
-    private ChargeInfo chargeInfo = null;
+    private ChargeInfo chargeInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -156,7 +156,7 @@ public class InstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore_point")
     
-    private RestorePoint restorePoint = null;
+    private RestorePoint restorePoint;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -190,6 +190,8 @@ public class InstanceRequest  {
         this.name = name;
     }
 
+    
+
     public InstanceRequest withDatastore(Datastore datastore) {
         this.datastore = datastore;
         return this;
@@ -216,6 +218,8 @@ public class InstanceRequest  {
     public void setDatastore(Datastore datastore) {
         this.datastore = datastore;
     }
+
+    
 
     public InstanceRequest withHa(Ha ha) {
         this.ha = ha;
@@ -244,6 +248,8 @@ public class InstanceRequest  {
         this.ha = ha;
     }
 
+    
+
     public InstanceRequest withConfigurationId(String configurationId) {
         this.configurationId = configurationId;
         return this;
@@ -263,6 +269,8 @@ public class InstanceRequest  {
     public void setConfigurationId(String configurationId) {
         this.configurationId = configurationId;
     }
+
+    
 
     public InstanceRequest withPort(String port) {
         this.port = port;
@@ -284,6 +292,8 @@ public class InstanceRequest  {
         this.port = port;
     }
 
+    
+
     public InstanceRequest withPassword(String password) {
         this.password = password;
         return this;
@@ -303,6 +313,8 @@ public class InstanceRequest  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
 
     public InstanceRequest withBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
@@ -331,6 +343,8 @@ public class InstanceRequest  {
         this.backupStrategy = backupStrategy;
     }
 
+    
+
     public InstanceRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -350,6 +364,8 @@ public class InstanceRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public InstanceRequest withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
@@ -371,6 +387,8 @@ public class InstanceRequest  {
         this.diskEncryptionId = diskEncryptionId;
     }
 
+    
+
     public InstanceRequest withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -390,6 +408,8 @@ public class InstanceRequest  {
     public void setFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
     }
+
+    
 
     public InstanceRequest withVolume(Volume volume) {
         this.volume = volume;
@@ -418,6 +438,8 @@ public class InstanceRequest  {
         this.volume = volume;
     }
 
+    
+
     public InstanceRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -437,6 +459,8 @@ public class InstanceRequest  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public InstanceRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -458,6 +482,8 @@ public class InstanceRequest  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public InstanceRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -477,6 +503,8 @@ public class InstanceRequest  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public InstanceRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -498,6 +526,8 @@ public class InstanceRequest  {
         this.subnetId = subnetId;
     }
 
+    
+
     public InstanceRequest withDataVip(String dataVip) {
         this.dataVip = dataVip;
         return this;
@@ -518,6 +548,8 @@ public class InstanceRequest  {
         this.dataVip = dataVip;
     }
 
+    
+
     public InstanceRequest withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -537,6 +569,8 @@ public class InstanceRequest  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public InstanceRequest withChargeInfo(ChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
@@ -565,6 +599,8 @@ public class InstanceRequest  {
         this.chargeInfo = chargeInfo;
     }
 
+    
+
     public InstanceRequest withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
@@ -584,6 +620,8 @@ public class InstanceRequest  {
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }
+
+    
 
     public InstanceRequest withDsspoolId(String dsspoolId) {
         this.dsspoolId = dsspoolId;
@@ -605,6 +643,8 @@ public class InstanceRequest  {
         this.dsspoolId = dsspoolId;
     }
 
+    
+
     public InstanceRequest withReplicaOfId(String replicaOfId) {
         this.replicaOfId = replicaOfId;
         return this;
@@ -624,6 +664,8 @@ public class InstanceRequest  {
     public void setReplicaOfId(String replicaOfId) {
         this.replicaOfId = replicaOfId;
     }
+
+    
 
     public InstanceRequest withRestorePoint(RestorePoint restorePoint) {
         this.restorePoint = restorePoint;
@@ -652,6 +694,8 @@ public class InstanceRequest  {
         this.restorePoint = restorePoint;
     }
 
+    
+
     public InstanceRequest withCollation(String collation) {
         this.collation = collation;
         return this;
@@ -672,6 +716,8 @@ public class InstanceRequest  {
         this.collation = collation;
     }
 
+    
+
     public InstanceRequest withTags(List<TagWithKeyValue> tags) {
         this.tags = tags;
         return this;
@@ -679,9 +725,6 @@ public class InstanceRequest  {
 
     
     public InstanceRequest addTagsItem(TagWithKeyValue tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -705,6 +748,9 @@ public class InstanceRequest  {
     public void setTags(List<TagWithKeyValue> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

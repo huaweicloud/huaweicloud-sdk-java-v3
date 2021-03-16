@@ -97,6 +97,8 @@ public class AuthorizationVO  {
         this.name = name;
     }
 
+    
+
     public AuthorizationVO withRepoType(String repoType) {
         this.repoType = repoType;
         return this;
@@ -116,6 +118,8 @@ public class AuthorizationVO  {
     public void setRepoType(String repoType) {
         this.repoType = repoType;
     }
+
+    
 
     public AuthorizationVO withRepoHost(String repoHost) {
         this.repoHost = repoHost;
@@ -137,6 +141,8 @@ public class AuthorizationVO  {
         this.repoHost = repoHost;
     }
 
+    
+
     public AuthorizationVO withRepoHome(String repoHome) {
         this.repoHome = repoHome;
         return this;
@@ -156,6 +162,8 @@ public class AuthorizationVO  {
     public void setRepoHome(String repoHome) {
         this.repoHome = repoHome;
     }
+
+    
 
     public AuthorizationVO withRepoUser(String repoUser) {
         this.repoUser = repoUser;
@@ -177,6 +185,8 @@ public class AuthorizationVO  {
         this.repoUser = repoUser;
     }
 
+    
+
     public AuthorizationVO withAvartar(String avartar) {
         this.avartar = avartar;
         return this;
@@ -196,6 +206,8 @@ public class AuthorizationVO  {
     public void setAvartar(String avartar) {
         this.avartar = avartar;
     }
+
+    
 
     public AuthorizationVO withTokenType(String tokenType) {
         this.tokenType = tokenType;
@@ -217,6 +229,8 @@ public class AuthorizationVO  {
         this.tokenType = tokenType;
     }
 
+    
+
     public AuthorizationVO withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -236,6 +250,8 @@ public class AuthorizationVO  {
     public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public AuthorizationVO withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
@@ -257,6 +273,8 @@ public class AuthorizationVO  {
         this.updateTime = updateTime;
     }
 
+    
+
     public AuthorizationVO withStatus(Integer status) {
         this.status = status;
         return this;
@@ -276,6 +294,9 @@ public class AuthorizationVO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

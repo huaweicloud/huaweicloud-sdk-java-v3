@@ -181,6 +181,8 @@ public class ListBackupsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListBackupsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -200,6 +202,8 @@ public class ListBackupsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListBackupsRequest withBackupId(String backupId) {
         this.backupId = backupId;
@@ -221,6 +225,8 @@ public class ListBackupsRequest  {
         this.backupId = backupId;
     }
 
+    
+
     public ListBackupsRequest withBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
         return this;
@@ -240,6 +246,8 @@ public class ListBackupsRequest  {
     public void setBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
     }
+
+    
 
     public ListBackupsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -261,6 +269,8 @@ public class ListBackupsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListBackupsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -284,6 +294,8 @@ public class ListBackupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListBackupsRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -304,6 +316,8 @@ public class ListBackupsRequest  {
         this.beginTime = beginTime;
     }
 
+    
+
     public ListBackupsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -323,6 +337,9 @@ public class ListBackupsRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

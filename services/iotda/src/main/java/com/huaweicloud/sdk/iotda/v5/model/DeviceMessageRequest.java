@@ -33,19 +33,19 @@ public class DeviceMessageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    private Object message = null;
+    private Object message;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encoding")
     
-    private String encoding = "none";
+    private String encoding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="payload_format")
     
-    private String payloadFormat = "standard";
+    private String payloadFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,6 +79,8 @@ public class DeviceMessageRequest  {
         this.messageId = messageId;
     }
 
+    
+
     public DeviceMessageRequest withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +100,8 @@ public class DeviceMessageRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public DeviceMessageRequest withMessage(Object message) {
         this.message = message;
@@ -119,6 +123,8 @@ public class DeviceMessageRequest  {
         this.message = message;
     }
 
+    
+
     public DeviceMessageRequest withEncoding(String encoding) {
         this.encoding = encoding;
         return this;
@@ -138,6 +144,8 @@ public class DeviceMessageRequest  {
     public void setEncoding(String encoding) {
         this.encoding = encoding;
     }
+
+    
 
     public DeviceMessageRequest withPayloadFormat(String payloadFormat) {
         this.payloadFormat = payloadFormat;
@@ -159,6 +167,8 @@ public class DeviceMessageRequest  {
         this.payloadFormat = payloadFormat;
     }
 
+    
+
     public DeviceMessageRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -179,6 +189,8 @@ public class DeviceMessageRequest  {
         this.topic = topic;
     }
 
+    
+
     public DeviceMessageRequest withTopicFullName(String topicFullName) {
         this.topicFullName = topicFullName;
         return this;
@@ -198,6 +210,9 @@ public class DeviceMessageRequest  {
     public void setTopicFullName(String topicFullName) {
         this.topicFullName = topicFullName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

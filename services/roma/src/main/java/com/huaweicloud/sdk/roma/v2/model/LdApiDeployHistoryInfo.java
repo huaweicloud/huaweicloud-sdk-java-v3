@@ -53,13 +53,13 @@ public class LdApiDeployHistoryInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_time")
     
-    private OffsetDateTime deployTime = null;
+    private OffsetDateTime deployTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="api_definition")
     
-    private LdApiInfo apiDefinition = null;
+    private LdApiInfo apiDefinition;
 
     public LdApiDeployHistoryInfo withId(String id) {
         this.id = id;
@@ -81,6 +81,8 @@ public class LdApiDeployHistoryInfo  {
         this.id = id;
     }
 
+    
+
     public LdApiDeployHistoryInfo withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -100,6 +102,8 @@ public class LdApiDeployHistoryInfo  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public LdApiDeployHistoryInfo withGroupId(String groupId) {
         this.groupId = groupId;
@@ -121,6 +125,8 @@ public class LdApiDeployHistoryInfo  {
         this.groupId = groupId;
     }
 
+    
+
     public LdApiDeployHistoryInfo withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -140,6 +146,8 @@ public class LdApiDeployHistoryInfo  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public LdApiDeployHistoryInfo withApiId(String apiId) {
         this.apiId = apiId;
@@ -161,6 +169,8 @@ public class LdApiDeployHistoryInfo  {
         this.apiId = apiId;
     }
 
+    
+
     public LdApiDeployHistoryInfo withDeployTime(OffsetDateTime deployTime) {
         this.deployTime = deployTime;
         return this;
@@ -180,6 +190,8 @@ public class LdApiDeployHistoryInfo  {
     public void setDeployTime(OffsetDateTime deployTime) {
         this.deployTime = deployTime;
     }
+
+    
 
     public LdApiDeployHistoryInfo withApiDefinition(LdApiInfo apiDefinition) {
         this.apiDefinition = apiDefinition;
@@ -207,6 +219,9 @@ public class LdApiDeployHistoryInfo  {
     public void setApiDefinition(LdApiInfo apiDefinition) {
         this.apiDefinition = apiDefinition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

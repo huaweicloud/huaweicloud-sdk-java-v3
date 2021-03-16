@@ -41,9 +41,6 @@ public class ListTemplateViewHistoriesResponse extends SdkResponse {
 
     
     public ListTemplateViewHistoriesResponse addTemplatesItem(TemplateViewHistory templatesItem) {
-        if (this.templates == null) {
-            this.templates = new ArrayList<>();
-        }
         this.templates.add(templatesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListTemplateViewHistoriesResponse extends SdkResponse {
         this.templates = templates;
     }
 
+    
+
     public ListTemplateViewHistoriesResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class ListTemplateViewHistoriesResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

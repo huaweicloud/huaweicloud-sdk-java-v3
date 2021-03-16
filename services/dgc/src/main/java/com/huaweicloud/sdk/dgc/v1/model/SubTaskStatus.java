@@ -161,6 +161,8 @@ public class SubTaskStatus  {
         this.id = id;
     }
 
+    
+
     public SubTaskStatus withName(String name) {
         this.name = name;
         return this;
@@ -180,6 +182,8 @@ public class SubTaskStatus  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SubTaskStatus withStartTime(String startTime) {
         this.startTime = startTime;
@@ -201,6 +205,8 @@ public class SubTaskStatus  {
         this.startTime = startTime;
     }
 
+    
+
     public SubTaskStatus withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -220,6 +226,8 @@ public class SubTaskStatus  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public SubTaskStatus withLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
@@ -241,6 +249,8 @@ public class SubTaskStatus  {
         this.lastUpdate = lastUpdate;
     }
 
+    
+
     public SubTaskStatus withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -260,6 +270,9 @@ public class SubTaskStatus  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

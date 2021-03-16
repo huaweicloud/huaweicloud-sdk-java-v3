@@ -55,6 +55,8 @@ public class DomainCertReq  {
         this.certContent = certContent;
     }
 
+    
+
     public DomainCertReq withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class DomainCertReq  {
         this.name = name;
     }
 
+    
+
     public DomainCertReq withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -94,6 +98,9 @@ public class DomainCertReq  {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

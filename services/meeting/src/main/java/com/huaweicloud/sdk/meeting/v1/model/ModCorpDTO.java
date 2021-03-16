@@ -23,13 +23,13 @@ public class ModCorpDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basicInfo")
     
-    private ModCorpBasicDTO basicInfo = null;
+    private ModCorpBasicDTO basicInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adminInfo")
     
-    private ModAdminDTO adminInfo = null;
+    private ModAdminDTO adminInfo;
 
     public ModCorpDTO withBasicInfo(ModCorpBasicDTO basicInfo) {
         this.basicInfo = basicInfo;
@@ -58,6 +58,8 @@ public class ModCorpDTO  {
         this.basicInfo = basicInfo;
     }
 
+    
+
     public ModCorpDTO withAdminInfo(ModAdminDTO adminInfo) {
         this.adminInfo = adminInfo;
         return this;
@@ -84,6 +86,9 @@ public class ModCorpDTO  {
     public void setAdminInfo(ModAdminDTO adminInfo) {
         this.adminInfo = adminInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

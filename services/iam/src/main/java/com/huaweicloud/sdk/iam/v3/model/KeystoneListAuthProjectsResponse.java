@@ -27,7 +27,7 @@ public class KeystoneListAuthProjectsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListAuthProjectsResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListAuthProjectsResponse withProjects(List<AuthProjectResult> projects) {
         this.projects = projects;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListAuthProjectsResponse extends SdkResponse {
 
     
     public KeystoneListAuthProjectsResponse addProjectsItem(AuthProjectResult projectsItem) {
-        if (this.projects == null) {
-            this.projects = new ArrayList<>();
-        }
         this.projects.add(projectsItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListAuthProjectsResponse extends SdkResponse {
     public void setProjects(List<AuthProjectResult> projects) {
         this.projects = projects;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

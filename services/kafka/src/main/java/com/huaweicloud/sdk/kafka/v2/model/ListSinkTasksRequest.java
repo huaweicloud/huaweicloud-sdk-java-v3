@@ -42,6 +42,9 @@ public class ListSinkTasksRequest  {
     public void setConnectorId(String connectorId) {
         this.connectorId = connectorId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class NovaDisassociateSecurityGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="removeSecurityGroup")
     
-    private NovaRemoveSecurityGroupOption removeSecurityGroup = null;
+    private NovaRemoveSecurityGroupOption removeSecurityGroup;
 
     public NovaDisassociateSecurityGroupRequestBody withRemoveSecurityGroup(NovaRemoveSecurityGroupOption removeSecurityGroup) {
         this.removeSecurityGroup = removeSecurityGroup;
@@ -50,6 +50,9 @@ public class NovaDisassociateSecurityGroupRequestBody  {
     public void setRemoveSecurityGroup(NovaRemoveSecurityGroupOption removeSecurityGroup) {
         this.removeSecurityGroup = removeSecurityGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

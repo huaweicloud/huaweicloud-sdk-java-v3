@@ -66,7 +66,7 @@ public class UpdatePtrRecordResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
     public UpdatePtrRecordResponse withId(String id) {
         this.id = id;
@@ -88,6 +88,8 @@ public class UpdatePtrRecordResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdatePtrRecordResponse withPtrdname(String ptrdname) {
         this.ptrdname = ptrdname;
         return this;
@@ -107,6 +109,8 @@ public class UpdatePtrRecordResponse extends SdkResponse {
     public void setPtrdname(String ptrdname) {
         this.ptrdname = ptrdname;
     }
+
+    
 
     public UpdatePtrRecordResponse withDescription(String description) {
         this.description = description;
@@ -128,6 +132,8 @@ public class UpdatePtrRecordResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdatePtrRecordResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -147,6 +153,8 @@ public class UpdatePtrRecordResponse extends SdkResponse {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public UpdatePtrRecordResponse withAddress(String address) {
         this.address = address;
@@ -168,6 +176,8 @@ public class UpdatePtrRecordResponse extends SdkResponse {
         this.address = address;
     }
 
+    
+
     public UpdatePtrRecordResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -188,6 +198,8 @@ public class UpdatePtrRecordResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public UpdatePtrRecordResponse withAction(String action) {
         this.action = action;
         return this;
@@ -207,6 +219,8 @@ public class UpdatePtrRecordResponse extends SdkResponse {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
 
     public UpdatePtrRecordResponse withLinks(PageLink links) {
         this.links = links;
@@ -234,6 +248,9 @@ public class UpdatePtrRecordResponse extends SdkResponse {
     public void setLinks(PageLink links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

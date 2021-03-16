@@ -51,6 +51,8 @@ public class StreamCountData  {
         this.value = value;
     }
 
+    
+
     public StreamCountData withTime(String time) {
         this.time = time;
         return this;
@@ -70,6 +72,9 @@ public class StreamCountData  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

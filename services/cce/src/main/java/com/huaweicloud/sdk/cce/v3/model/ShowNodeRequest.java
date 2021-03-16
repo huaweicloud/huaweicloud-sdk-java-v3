@@ -55,6 +55,8 @@ public class ShowNodeRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public ShowNodeRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -75,6 +77,8 @@ public class ShowNodeRequest  {
         this.nodeId = nodeId;
     }
 
+    
+
     public ShowNodeRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -94,6 +98,9 @@ public class ShowNodeRequest  {
     public void setErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

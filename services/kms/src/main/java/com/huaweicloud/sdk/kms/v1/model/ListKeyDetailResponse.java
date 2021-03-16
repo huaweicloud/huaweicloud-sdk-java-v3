@@ -24,7 +24,7 @@ public class ListKeyDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_info")
     
-    private KeyDetails keyInfo = null;
+    private KeyDetails keyInfo;
 
     public ListKeyDetailResponse withKeyInfo(KeyDetails keyInfo) {
         this.keyInfo = keyInfo;
@@ -52,6 +52,9 @@ public class ListKeyDetailResponse extends SdkResponse {
     public void setKeyInfo(KeyDetails keyInfo) {
         this.keyInfo = keyInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

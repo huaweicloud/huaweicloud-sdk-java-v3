@@ -37,7 +37,7 @@ public class ConfigurationForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,6 +65,8 @@ public class ConfigurationForCreation  {
         this.name = name;
     }
 
+    
+
     public ConfigurationForCreation withDescription(String description) {
         this.description = description;
         return this;
@@ -84,6 +86,8 @@ public class ConfigurationForCreation  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ConfigurationForCreation withDatastore(Datastore datastore) {
         this.datastore = datastore;
@@ -112,6 +116,8 @@ public class ConfigurationForCreation  {
         this.datastore = datastore;
     }
 
+    
+
     public ConfigurationForCreation withValues(Map<String, String> values) {
         this.values = values;
         return this;
@@ -120,9 +126,6 @@ public class ConfigurationForCreation  {
     
 
     public ConfigurationForCreation putValuesItem(String key, String valuesItem) {
-         if (this.values == null) {
-            this.values = new HashMap<>();
-         }
         this.values.put(key, valuesItem);
         return this;
     }
@@ -145,6 +148,9 @@ public class ConfigurationForCreation  {
     public void setValues(Map<String, String> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

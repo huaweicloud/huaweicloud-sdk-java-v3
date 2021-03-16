@@ -40,7 +40,7 @@ public class UpdateDomainV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UrlDomainBase body = null;
+    private UrlDomainBase body;
 
     public UpdateDomainV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -62,6 +62,8 @@ public class UpdateDomainV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateDomainV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateDomainV2Request  {
         this.groupId = groupId;
     }
 
+    
+
     public UpdateDomainV2Request withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -101,6 +105,8 @@ public class UpdateDomainV2Request  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public UpdateDomainV2Request withBody(UrlDomainBase body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateDomainV2Request  {
     public void setBody(UrlDomainBase body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

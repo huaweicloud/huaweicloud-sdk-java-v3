@@ -35,7 +35,7 @@ public class ModDeptDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parentDeptCode")
     
-    private String parentDeptCode = "1";
+    private String parentDeptCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -261,6 +261,8 @@ public class ModDeptDTO  {
         this.deptName = deptName;
     }
 
+    
+
     public ModDeptDTO withParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
         return this;
@@ -280,6 +282,8 @@ public class ModDeptDTO  {
     public void setParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
     }
+
+    
 
     public ModDeptDTO withNote(String note) {
         this.note = note;
@@ -301,6 +305,8 @@ public class ModDeptDTO  {
         this.note = note;
     }
 
+    
+
     public ModDeptDTO withInPermission(InPermissionEnum inPermission) {
         this.inPermission = inPermission;
         return this;
@@ -320,6 +326,8 @@ public class ModDeptDTO  {
     public void setInPermission(InPermissionEnum inPermission) {
         this.inPermission = inPermission;
     }
+
+    
 
     public ModDeptDTO withOutPermission(OutPermissionEnum outPermission) {
         this.outPermission = outPermission;
@@ -341,6 +349,8 @@ public class ModDeptDTO  {
         this.outPermission = outPermission;
     }
 
+    
+
     public ModDeptDTO withDesignatedOutDeptCodes(List<String> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
         return this;
@@ -348,9 +358,6 @@ public class ModDeptDTO  {
 
     
     public ModDeptDTO addDesignatedOutDeptCodesItem(String designatedOutDeptCodesItem) {
-        if (this.designatedOutDeptCodes == null) {
-            this.designatedOutDeptCodes = new ArrayList<>();
-        }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
         return this;
     }
@@ -374,6 +381,9 @@ public class ModDeptDTO  {
     public void setDesignatedOutDeptCodes(List<String> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

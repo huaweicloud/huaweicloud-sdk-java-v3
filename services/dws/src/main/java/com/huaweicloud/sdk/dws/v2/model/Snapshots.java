@@ -91,6 +91,8 @@ public class Snapshots  {
         this.clusterId = clusterId;
     }
 
+    
+
     public Snapshots withSize(Double size) {
         this.size = size;
         return this;
@@ -110,6 +112,8 @@ public class Snapshots  {
     public void setSize(Double size) {
         this.size = size;
     }
+
+    
 
     public Snapshots withName(String name) {
         this.name = name;
@@ -131,6 +135,8 @@ public class Snapshots  {
         this.name = name;
     }
 
+    
+
     public Snapshots withDescription(String description) {
         this.description = description;
         return this;
@@ -150,6 +156,8 @@ public class Snapshots  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Snapshots withFinished(String finished) {
         this.finished = finished;
@@ -171,6 +179,8 @@ public class Snapshots  {
         this.finished = finished;
     }
 
+    
+
     public Snapshots withStarted(String started) {
         this.started = started;
         return this;
@@ -190,6 +200,8 @@ public class Snapshots  {
     public void setStarted(String started) {
         this.started = started;
     }
+
+    
 
     public Snapshots withId(String id) {
         this.id = id;
@@ -211,6 +223,8 @@ public class Snapshots  {
         this.id = id;
     }
 
+    
+
     public Snapshots withType(String type) {
         this.type = type;
         return this;
@@ -231,6 +245,8 @@ public class Snapshots  {
         this.type = type;
     }
 
+    
+
     public Snapshots withStatus(String status) {
         this.status = status;
         return this;
@@ -250,6 +266,9 @@ public class Snapshots  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

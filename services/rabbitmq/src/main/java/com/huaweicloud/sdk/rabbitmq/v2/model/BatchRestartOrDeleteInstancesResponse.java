@@ -35,9 +35,6 @@ public class BatchRestartOrDeleteInstancesResponse extends SdkResponse {
 
     
     public BatchRestartOrDeleteInstancesResponse addResultsItem(BatchRestartOrDeleteInstanceRespResults resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class BatchRestartOrDeleteInstancesResponse extends SdkResponse {
     public void setResults(List<BatchRestartOrDeleteInstanceRespResults> results) {
         this.results = results;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

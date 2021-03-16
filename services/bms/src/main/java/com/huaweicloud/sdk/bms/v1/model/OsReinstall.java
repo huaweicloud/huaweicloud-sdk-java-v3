@@ -40,7 +40,7 @@ public class OsReinstall  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetadataInstall metadata = null;
+    private MetadataInstall metadata;
 
     public OsReinstall withAdminpass(String adminpass) {
         this.adminpass = adminpass;
@@ -62,6 +62,8 @@ public class OsReinstall  {
         this.adminpass = adminpass;
     }
 
+    
+
     public OsReinstall withKeyname(String keyname) {
         this.keyname = keyname;
         return this;
@@ -82,6 +84,8 @@ public class OsReinstall  {
         this.keyname = keyname;
     }
 
+    
+
     public OsReinstall withUserid(String userid) {
         this.userid = userid;
         return this;
@@ -101,6 +105,8 @@ public class OsReinstall  {
     public void setUserid(String userid) {
         this.userid = userid;
     }
+
+    
 
     public OsReinstall withMetadata(MetadataInstall metadata) {
         this.metadata = metadata;
@@ -128,6 +134,9 @@ public class OsReinstall  {
     public void setMetadata(MetadataInstall metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

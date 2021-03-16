@@ -41,9 +41,6 @@ public class ShowMetricDataResponse extends SdkResponse {
 
     
     public ShowMetricDataResponse addDatapointsItem(Datapoint datapointsItem) {
-        if (this.datapoints == null) {
-            this.datapoints = new ArrayList<>();
-        }
         this.datapoints.add(datapointsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowMetricDataResponse extends SdkResponse {
         this.datapoints = datapoints;
     }
 
+    
+
     public ShowMetricDataResponse withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -87,6 +86,9 @@ public class ShowMetricDataResponse extends SdkResponse {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

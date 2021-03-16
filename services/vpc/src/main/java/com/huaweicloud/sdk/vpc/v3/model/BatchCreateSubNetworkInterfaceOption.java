@@ -75,6 +75,8 @@ public class BatchCreateSubNetworkInterfaceOption  {
         this.virsubnetId = virsubnetId;
     }
 
+    
+
     public BatchCreateSubNetworkInterfaceOption withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -95,6 +97,8 @@ public class BatchCreateSubNetworkInterfaceOption  {
         this.parentId = parentId;
     }
 
+    
+
     public BatchCreateSubNetworkInterfaceOption withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -102,9 +106,6 @@ public class BatchCreateSubNetworkInterfaceOption  {
 
     
     public BatchCreateSubNetworkInterfaceOption addSecurityGroupsItem(String securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -129,6 +130,8 @@ public class BatchCreateSubNetworkInterfaceOption  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public BatchCreateSubNetworkInterfaceOption withDescription(String description) {
         this.description = description;
         return this;
@@ -148,6 +151,8 @@ public class BatchCreateSubNetworkInterfaceOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public BatchCreateSubNetworkInterfaceOption withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
@@ -169,6 +174,8 @@ public class BatchCreateSubNetworkInterfaceOption  {
         this.ipv6Enable = ipv6Enable;
     }
 
+    
+
     public BatchCreateSubNetworkInterfaceOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -188,6 +195,9 @@ public class BatchCreateSubNetworkInterfaceOption  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

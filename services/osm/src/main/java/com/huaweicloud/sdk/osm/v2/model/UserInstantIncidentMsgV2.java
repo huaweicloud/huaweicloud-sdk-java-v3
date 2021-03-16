@@ -52,6 +52,8 @@ public class UserInstantIncidentMsgV2  {
         this.incidentId = incidentId;
     }
 
+    
+
     public UserInstantIncidentMsgV2 withMessageList(List<QueryMessageInfoV2> messageList) {
         this.messageList = messageList;
         return this;
@@ -59,9 +61,6 @@ public class UserInstantIncidentMsgV2  {
 
     
     public UserInstantIncidentMsgV2 addMessageListItem(QueryMessageInfoV2 messageListItem) {
-        if (this.messageList == null) {
-            this.messageList = new ArrayList<>();
-        }
         this.messageList.add(messageListItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class UserInstantIncidentMsgV2  {
     public void setMessageList(List<QueryMessageInfoV2> messageList) {
         this.messageList = messageList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

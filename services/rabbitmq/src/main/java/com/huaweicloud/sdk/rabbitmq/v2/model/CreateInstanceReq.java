@@ -236,7 +236,7 @@ public class CreateInstanceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available_zones")
     
-    private List<String> availableZones = new ArrayList<>();
+    private List<String> availableZones = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -396,6 +396,8 @@ public class CreateInstanceReq  {
         this.name = name;
     }
 
+    
+
     public CreateInstanceReq withDescription(String description) {
         this.description = description;
         return this;
@@ -415,6 +417,8 @@ public class CreateInstanceReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateInstanceReq withEngine(EngineEnum engine) {
         this.engine = engine;
@@ -436,6 +440,8 @@ public class CreateInstanceReq  {
         this.engine = engine;
     }
 
+    
+
     public CreateInstanceReq withEngineVersion(EngineVersionEnum engineVersion) {
         this.engineVersion = engineVersion;
         return this;
@@ -455,6 +461,8 @@ public class CreateInstanceReq  {
     public void setEngineVersion(EngineVersionEnum engineVersion) {
         this.engineVersion = engineVersion;
     }
+
+    
 
     public CreateInstanceReq withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
@@ -476,6 +484,8 @@ public class CreateInstanceReq  {
         this.storageSpace = storageSpace;
     }
 
+    
+
     public CreateInstanceReq withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
@@ -495,6 +505,8 @@ public class CreateInstanceReq  {
     public void setAccessUser(String accessUser) {
         this.accessUser = accessUser;
     }
+
+    
 
     public CreateInstanceReq withPassword(String password) {
         this.password = password;
@@ -516,6 +528,8 @@ public class CreateInstanceReq  {
         this.password = password;
     }
 
+    
+
     public CreateInstanceReq withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -535,6 +549,8 @@ public class CreateInstanceReq  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public CreateInstanceReq withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -556,6 +572,8 @@ public class CreateInstanceReq  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public CreateInstanceReq withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -575,6 +593,8 @@ public class CreateInstanceReq  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public CreateInstanceReq withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
@@ -607,6 +627,8 @@ public class CreateInstanceReq  {
         this.availableZones = availableZones;
     }
 
+    
+
     public CreateInstanceReq withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -626,6 +648,8 @@ public class CreateInstanceReq  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public CreateInstanceReq withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
@@ -647,6 +671,8 @@ public class CreateInstanceReq  {
         this.maintainBegin = maintainBegin;
     }
 
+    
+
     public CreateInstanceReq withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
         return this;
@@ -666,6 +692,8 @@ public class CreateInstanceReq  {
     public void setMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
     }
+
+    
 
     public CreateInstanceReq withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
@@ -687,6 +715,8 @@ public class CreateInstanceReq  {
         this.enablePublicip = enablePublicip;
     }
 
+    
+
     public CreateInstanceReq withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -706,6 +736,8 @@ public class CreateInstanceReq  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public CreateInstanceReq withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
@@ -727,6 +759,8 @@ public class CreateInstanceReq  {
         this.sslEnable = sslEnable;
     }
 
+    
+
     public CreateInstanceReq withStorageSpecCode(StorageSpecCodeEnum storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
         return this;
@@ -746,6 +780,8 @@ public class CreateInstanceReq  {
     public void setStorageSpecCode(StorageSpecCodeEnum storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
     }
+
+    
 
     public CreateInstanceReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -767,6 +803,8 @@ public class CreateInstanceReq  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateInstanceReq withTags(List<CreateInstanceReqTags> tags) {
         this.tags = tags;
         return this;
@@ -774,9 +812,6 @@ public class CreateInstanceReq  {
 
     
     public CreateInstanceReq addTagsItem(CreateInstanceReqTags tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -800,6 +835,9 @@ public class CreateInstanceReq  {
     public void setTags(List<CreateInstanceReqTags> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

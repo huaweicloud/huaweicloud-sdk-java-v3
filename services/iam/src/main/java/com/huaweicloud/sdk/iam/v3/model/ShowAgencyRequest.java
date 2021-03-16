@@ -42,6 +42,9 @@ public class ShowAgencyRequest  {
     public void setAgencyId(String agencyId) {
         this.agencyId = agencyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

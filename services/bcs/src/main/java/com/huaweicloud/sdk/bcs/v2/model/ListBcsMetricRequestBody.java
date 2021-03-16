@@ -32,9 +32,6 @@ public class ListBcsMetricRequestBody  {
 
     
     public ListBcsMetricRequestBody addMetricNamesItem(String metricNamesItem) {
-        if (this.metricNames == null) {
-            this.metricNames = new ArrayList<>();
-        }
         this.metricNames.add(metricNamesItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class ListBcsMetricRequestBody  {
     public void setMetricNames(List<String> metricNames) {
         this.metricNames = metricNames;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

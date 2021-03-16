@@ -34,7 +34,7 @@ public class AppQuotaAppBinding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bound_time")
     
-    private OffsetDateTime boundTime = null;
+    private OffsetDateTime boundTime;
 
     public AppQuotaAppBinding withAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
@@ -56,6 +56,8 @@ public class AppQuotaAppBinding  {
         this.appQuotaId = appQuotaId;
     }
 
+    
+
     public AppQuotaAppBinding withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -76,6 +78,8 @@ public class AppQuotaAppBinding  {
         this.appId = appId;
     }
 
+    
+
     public AppQuotaAppBinding withBoundTime(OffsetDateTime boundTime) {
         this.boundTime = boundTime;
         return this;
@@ -95,6 +99,9 @@ public class AppQuotaAppBinding  {
     public void setBoundTime(OffsetDateTime boundTime) {
         this.boundTime = boundTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

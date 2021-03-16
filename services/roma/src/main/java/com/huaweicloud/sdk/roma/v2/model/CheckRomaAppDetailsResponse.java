@@ -152,25 +152,25 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private BigDecimal createTime = null;
+    private BigDecimal createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private BigDecimal updateTime = null;
+    private BigDecimal updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private ServerAppInfoCreatedUser createdUser = null;
+    private ServerAppInfoCreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private ServerAppInfoLastUpdatedUser lastUpdatedUser = null;
+    private ServerAppInfoLastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -188,7 +188,7 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="favorite")
     
-    private Boolean favorite = false;
+    private Boolean favorite;
 
     public CheckRomaAppDetailsResponse withId(String id) {
         this.id = id;
@@ -210,6 +210,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CheckRomaAppDetailsResponse withName(String name) {
         this.name = name;
         return this;
@@ -229,6 +231,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CheckRomaAppDetailsResponse withRemark(String remark) {
         this.remark = remark;
@@ -250,6 +254,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public CheckRomaAppDetailsResponse withRoles(List<RolesEnum> roles) {
         this.roles = roles;
         return this;
@@ -257,9 +263,6 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
 
     
     public CheckRomaAppDetailsResponse addRolesItem(RolesEnum rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -284,6 +287,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.roles = roles;
     }
 
+    
+
     public CheckRomaAppDetailsResponse withCreateTime(BigDecimal createTime) {
         this.createTime = createTime;
         return this;
@@ -306,6 +311,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public CheckRomaAppDetailsResponse withUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -327,6 +334,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     public void setUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public CheckRomaAppDetailsResponse withCreatedUser(ServerAppInfoCreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -355,6 +364,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
+    
+
     public CheckRomaAppDetailsResponse withLastUpdatedUser(ServerAppInfoLastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -382,6 +393,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public CheckRomaAppDetailsResponse withOwner(Boolean owner) {
         this.owner = owner;
         return this;
@@ -401,6 +414,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     public void setOwner(Boolean owner) {
         this.owner = owner;
     }
+
+    
 
     public CheckRomaAppDetailsResponse withKey(String key) {
         this.key = key;
@@ -422,6 +437,8 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.key = key;
     }
 
+    
+
     public CheckRomaAppDetailsResponse withFavorite(Boolean favorite) {
         this.favorite = favorite;
         return this;
@@ -441,6 +458,9 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

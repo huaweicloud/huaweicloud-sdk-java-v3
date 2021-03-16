@@ -51,6 +51,8 @@ public class AutoscanConfigRequest  {
         this.enableAutoScan = enableAutoScan;
     }
 
+    
+
     public AutoscanConfigRequest withScheduleAt(List<String> scheduleAt) {
         this.scheduleAt = scheduleAt;
         return this;
@@ -58,9 +60,6 @@ public class AutoscanConfigRequest  {
 
     
     public AutoscanConfigRequest addScheduleAtItem(String scheduleAtItem) {
-        if (this.scheduleAt == null) {
-            this.scheduleAt = new ArrayList<>();
-        }
         this.scheduleAt.add(scheduleAtItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class AutoscanConfigRequest  {
     public void setScheduleAt(List<String> scheduleAt) {
         this.scheduleAt = scheduleAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class SubCustomerInfoV2  {
         this.id = id;
     }
 
+    
+
     public SubCustomerInfoV2 withName(String name) {
         this.name = name;
         return this;
@@ -92,6 +94,8 @@ public class SubCustomerInfoV2  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SubCustomerInfoV2 withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -113,6 +117,8 @@ public class SubCustomerInfoV2  {
         this.displayName = displayName;
     }
 
+    
+
     public SubCustomerInfoV2 withStatus(Integer status) {
         this.status = status;
         return this;
@@ -132,6 +138,8 @@ public class SubCustomerInfoV2  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public SubCustomerInfoV2 withOrgId(String orgId) {
         this.orgId = orgId;
@@ -153,6 +161,8 @@ public class SubCustomerInfoV2  {
         this.orgId = orgId;
     }
 
+    
+
     public SubCustomerInfoV2 withOrgName(String orgName) {
         this.orgName = orgName;
         return this;
@@ -172,6 +182,9 @@ public class SubCustomerInfoV2  {
     public void setOrgName(String orgName) {
         this.orgName = orgName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

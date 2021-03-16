@@ -61,7 +61,7 @@ public class HistoryItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource")
     
-    private ResourceEntity resource = null;
+    private ResourceEntity resource;
 
     public HistoryItem withDomainId(String domainId) {
         this.domainId = domainId;
@@ -83,6 +83,8 @@ public class HistoryItem  {
         this.domainId = domainId;
     }
 
+    
+
     public HistoryItem withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -102,6 +104,8 @@ public class HistoryItem  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public HistoryItem withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -123,6 +127,8 @@ public class HistoryItem  {
         this.resourceType = resourceType;
     }
 
+    
+
     public HistoryItem withCaptureTime(String captureTime) {
         this.captureTime = captureTime;
         return this;
@@ -142,6 +148,8 @@ public class HistoryItem  {
     public void setCaptureTime(String captureTime) {
         this.captureTime = captureTime;
     }
+
+    
 
     public HistoryItem withStatus(String status) {
         this.status = status;
@@ -163,6 +171,8 @@ public class HistoryItem  {
         this.status = status;
     }
 
+    
+
     public HistoryItem withRelations(List<ResourceRelation> relations) {
         this.relations = relations;
         return this;
@@ -170,9 +180,6 @@ public class HistoryItem  {
 
     
     public HistoryItem addRelationsItem(ResourceRelation relationsItem) {
-        if (this.relations == null) {
-            this.relations = new ArrayList<>();
-        }
         this.relations.add(relationsItem);
         return this;
     }
@@ -196,6 +203,8 @@ public class HistoryItem  {
     public void setRelations(List<ResourceRelation> relations) {
         this.relations = relations;
     }
+
+    
 
     public HistoryItem withResource(ResourceEntity resource) {
         this.resource = resource;
@@ -223,6 +232,9 @@ public class HistoryItem  {
     public void setResource(ResourceEntity resource) {
         this.resource = resource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

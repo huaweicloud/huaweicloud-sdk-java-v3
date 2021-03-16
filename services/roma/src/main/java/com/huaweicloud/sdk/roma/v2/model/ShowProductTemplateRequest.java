@@ -49,6 +49,8 @@ public class ShowProductTemplateRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowProductTemplateRequest withProductTemplateId(Integer productTemplateId) {
         this.productTemplateId = productTemplateId;
         return this;
@@ -70,6 +72,9 @@ public class ShowProductTemplateRequest  {
     public void setProductTemplateId(Integer productTemplateId) {
         this.productTemplateId = productTemplateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

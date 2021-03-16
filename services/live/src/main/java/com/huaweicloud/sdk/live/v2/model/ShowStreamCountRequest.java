@@ -23,7 +23,7 @@ public class ShowStreamCountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_domains")
     
-    private List<String> publishDomains = new ArrayList<>();
+    private List<String> publishDomains = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class ShowStreamCountRequest  {
         this.publishDomains = publishDomains;
     }
 
+    
+
     public ShowStreamCountRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -88,6 +90,8 @@ public class ShowStreamCountRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ShowStreamCountRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -107,6 +111,9 @@ public class ShowStreamCountRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

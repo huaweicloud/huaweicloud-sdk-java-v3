@@ -106,7 +106,7 @@ public class CreateScalingTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action = ActionEnum.CREATE;
+    private ActionEnum action;
 
     public CreateScalingTagsRequestBody withTags(List<TagsSingleValue> tags) {
         this.tags = tags;
@@ -115,9 +115,6 @@ public class CreateScalingTagsRequestBody  {
 
     
     public CreateScalingTagsRequestBody addTagsItem(TagsSingleValue tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -142,6 +139,8 @@ public class CreateScalingTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public CreateScalingTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -161,6 +160,9 @@ public class CreateScalingTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateTagReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    private Tag tag = null;
+    private Tag tag;
 
     public CreateTagReq withTag(Tag tag) {
         this.tag = tag;
@@ -50,6 +50,9 @@ public class CreateTagReq  {
     public void setTag(Tag tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -137,6 +137,8 @@ public class FlavorsItems  {
         this.specCode = specCode;
     }
 
+    
+
     public FlavorsItems withCloudServiceTypeCode(String cloudServiceTypeCode) {
         this.cloudServiceTypeCode = cloudServiceTypeCode;
         return this;
@@ -156,6 +158,8 @@ public class FlavorsItems  {
     public void setCloudServiceTypeCode(String cloudServiceTypeCode) {
         this.cloudServiceTypeCode = cloudServiceTypeCode;
     }
+
+    
 
     public FlavorsItems withCloudResourceTypeCode(String cloudResourceTypeCode) {
         this.cloudResourceTypeCode = cloudResourceTypeCode;
@@ -177,6 +181,8 @@ public class FlavorsItems  {
         this.cloudResourceTypeCode = cloudResourceTypeCode;
     }
 
+    
+
     public FlavorsItems withCacheMode(String cacheMode) {
         this.cacheMode = cacheMode;
         return this;
@@ -196,6 +202,8 @@ public class FlavorsItems  {
     public void setCacheMode(String cacheMode) {
         this.cacheMode = cacheMode;
     }
+
+    
 
     public FlavorsItems withEngine(String engine) {
         this.engine = engine;
@@ -217,6 +225,8 @@ public class FlavorsItems  {
         this.engine = engine;
     }
 
+    
+
     public FlavorsItems withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
@@ -236,6 +246,8 @@ public class FlavorsItems  {
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
+
+    
 
     public FlavorsItems withProductType(String productType) {
         this.productType = productType;
@@ -257,6 +269,8 @@ public class FlavorsItems  {
         this.productType = productType;
     }
 
+    
+
     public FlavorsItems withCpuType(String cpuType) {
         this.cpuType = cpuType;
         return this;
@@ -276,6 +290,8 @@ public class FlavorsItems  {
     public void setCpuType(String cpuType) {
         this.cpuType = cpuType;
     }
+
+    
 
     public FlavorsItems withStorageType(String storageType) {
         this.storageType = storageType;
@@ -297,6 +313,8 @@ public class FlavorsItems  {
         this.storageType = storageType;
     }
 
+    
+
     public FlavorsItems withCapacity(List<String> capacity) {
         this.capacity = capacity;
         return this;
@@ -304,9 +322,6 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addCapacityItem(String capacityItem) {
-        if (this.capacity == null) {
-            this.capacity = new ArrayList<>();
-        }
         this.capacity.add(capacityItem);
         return this;
     }
@@ -331,6 +346,8 @@ public class FlavorsItems  {
         this.capacity = capacity;
     }
 
+    
+
     public FlavorsItems withBillingMode(List<String> billingMode) {
         this.billingMode = billingMode;
         return this;
@@ -338,9 +355,6 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addBillingModeItem(String billingModeItem) {
-        if (this.billingMode == null) {
-            this.billingMode = new ArrayList<>();
-        }
         this.billingMode.add(billingModeItem);
         return this;
     }
@@ -365,6 +379,8 @@ public class FlavorsItems  {
         this.billingMode = billingMode;
     }
 
+    
+
     public FlavorsItems withTenantIpCount(Integer tenantIpCount) {
         this.tenantIpCount = tenantIpCount;
         return this;
@@ -384,6 +400,8 @@ public class FlavorsItems  {
     public void setTenantIpCount(Integer tenantIpCount) {
         this.tenantIpCount = tenantIpCount;
     }
+
+    
 
     public FlavorsItems withPricingType(String pricingType) {
         this.pricingType = pricingType;
@@ -405,6 +423,8 @@ public class FlavorsItems  {
         this.pricingType = pricingType;
     }
 
+    
+
     public FlavorsItems withIsDec(Boolean isDec) {
         this.isDec = isDec;
         return this;
@@ -425,6 +445,8 @@ public class FlavorsItems  {
         this.isDec = isDec;
     }
 
+    
+
     public FlavorsItems withAttrs(List<AttrsObject> attrs) {
         this.attrs = attrs;
         return this;
@@ -432,9 +454,6 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addAttrsItem(AttrsObject attrsItem) {
-        if (this.attrs == null) {
-            this.attrs = new ArrayList<>();
-        }
         this.attrs.add(attrsItem);
         return this;
     }
@@ -459,6 +478,8 @@ public class FlavorsItems  {
         this.attrs = attrs;
     }
 
+    
+
     public FlavorsItems withFlavorsAvailableZones(List<FlavorAzObject> flavorsAvailableZones) {
         this.flavorsAvailableZones = flavorsAvailableZones;
         return this;
@@ -466,9 +487,6 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addFlavorsAvailableZonesItem(FlavorAzObject flavorsAvailableZonesItem) {
-        if (this.flavorsAvailableZones == null) {
-            this.flavorsAvailableZones = new ArrayList<>();
-        }
         this.flavorsAvailableZones.add(flavorsAvailableZonesItem);
         return this;
     }
@@ -492,6 +510,9 @@ public class FlavorsItems  {
     public void setFlavorsAvailableZones(List<FlavorAzObject> flavorsAvailableZones) {
         this.flavorsAvailableZones = flavorsAvailableZones;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

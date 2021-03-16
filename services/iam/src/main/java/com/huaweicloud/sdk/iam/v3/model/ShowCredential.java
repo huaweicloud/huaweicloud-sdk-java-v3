@@ -73,6 +73,8 @@ public class ShowCredential  {
         this.userId = userId;
     }
 
+    
+
     public ShowCredential withAccess(String access) {
         this.access = access;
         return this;
@@ -92,6 +94,8 @@ public class ShowCredential  {
     public void setAccess(String access) {
         this.access = access;
     }
+
+    
 
     public ShowCredential withStatus(String status) {
         this.status = status;
@@ -113,6 +117,8 @@ public class ShowCredential  {
         this.status = status;
     }
 
+    
+
     public ShowCredential withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -132,6 +138,8 @@ public class ShowCredential  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ShowCredential withLastUseTime(String lastUseTime) {
         this.lastUseTime = lastUseTime;
@@ -153,6 +161,8 @@ public class ShowCredential  {
         this.lastUseTime = lastUseTime;
     }
 
+    
+
     public ShowCredential withDescription(String description) {
         this.description = description;
         return this;
@@ -172,6 +182,9 @@ public class ShowCredential  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

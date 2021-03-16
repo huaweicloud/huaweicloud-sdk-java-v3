@@ -42,7 +42,7 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="verified_file_url")
     
-    private List<String> verifiedFileUrl = new ArrayList<>();
+    private List<String> verifiedFileUrl = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,7 +78,7 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_person")
     
-    private EnterprisePersonNew enterprisePerson = null;
+    private EnterprisePersonNew enterprisePerson;
 
     public ApplyEnterpriseRealnameAuthsReq withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -99,6 +99,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public ApplyEnterpriseRealnameAuthsReq withIdentifyType(Integer identifyType) {
         this.identifyType = identifyType;
@@ -122,6 +124,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
         this.identifyType = identifyType;
     }
 
+    
+
     public ApplyEnterpriseRealnameAuthsReq withCertificateType(Integer certificateType) {
         this.certificateType = certificateType;
         return this;
@@ -143,6 +147,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     public void setCertificateType(Integer certificateType) {
         this.certificateType = certificateType;
     }
+
+    
 
     public ApplyEnterpriseRealnameAuthsReq withVerifiedFileUrl(List<String> verifiedFileUrl) {
         this.verifiedFileUrl = verifiedFileUrl;
@@ -175,6 +181,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
         this.verifiedFileUrl = verifiedFileUrl;
     }
 
+    
+
     public ApplyEnterpriseRealnameAuthsReq withCorpName(String corpName) {
         this.corpName = corpName;
         return this;
@@ -194,6 +202,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     public void setCorpName(String corpName) {
         this.corpName = corpName;
     }
+
+    
 
     public ApplyEnterpriseRealnameAuthsReq withVerifiedNumber(String verifiedNumber) {
         this.verifiedNumber = verifiedNumber;
@@ -215,6 +225,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
         this.verifiedNumber = verifiedNumber;
     }
 
+    
+
     public ApplyEnterpriseRealnameAuthsReq withRegCountry(String regCountry) {
         this.regCountry = regCountry;
         return this;
@@ -234,6 +246,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     public void setRegCountry(String regCountry) {
         this.regCountry = regCountry;
     }
+
+    
 
     public ApplyEnterpriseRealnameAuthsReq withRegAddress(String regAddress) {
         this.regAddress = regAddress;
@@ -255,6 +269,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
         this.regAddress = regAddress;
     }
 
+    
+
     public ApplyEnterpriseRealnameAuthsReq withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
         return this;
@@ -274,6 +290,8 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     public void setXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
     }
+
+    
 
     public ApplyEnterpriseRealnameAuthsReq withEnterprisePerson(EnterprisePersonNew enterprisePerson) {
         this.enterprisePerson = enterprisePerson;
@@ -301,6 +319,9 @@ public class ApplyEnterpriseRealnameAuthsReq  {
     public void setEnterprisePerson(EnterprisePersonNew enterprisePerson) {
         this.enterprisePerson = enterprisePerson;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

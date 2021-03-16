@@ -44,6 +44,9 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
     public void setKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

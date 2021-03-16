@@ -40,7 +40,7 @@ public class UpdateProductTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateProductTopicRequestBody body = null;
+    private UpdateProductTopicRequestBody body;
 
     public UpdateProductTopicRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -61,6 +61,8 @@ public class UpdateProductTopicRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateProductTopicRequest withProductId(Integer productId) {
         this.productId = productId;
@@ -84,6 +86,8 @@ public class UpdateProductTopicRequest  {
         this.productId = productId;
     }
 
+    
+
     public UpdateProductTopicRequest withTopicId(Integer topicId) {
         this.topicId = topicId;
         return this;
@@ -105,6 +109,8 @@ public class UpdateProductTopicRequest  {
     public void setTopicId(Integer topicId) {
         this.topicId = topicId;
     }
+
+    
 
     public UpdateProductTopicRequest withBody(UpdateProductTopicRequestBody body) {
         this.body = body;
@@ -132,6 +138,9 @@ public class UpdateProductTopicRequest  {
     public void setBody(UpdateProductTopicRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

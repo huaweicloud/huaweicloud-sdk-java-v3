@@ -76,6 +76,8 @@ public class BandWidthRules  {
         this.id = id;
     }
 
+    
+
     public BandWidthRules withName(String name) {
         this.name = name;
         return this;
@@ -95,6 +97,8 @@ public class BandWidthRules  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public BandWidthRules withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -116,6 +120,8 @@ public class BandWidthRules  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public BandWidthRules withEgressSize(Integer egressSize) {
         this.egressSize = egressSize;
         return this;
@@ -135,6 +141,8 @@ public class BandWidthRules  {
     public void setEgressSize(Integer egressSize) {
         this.egressSize = egressSize;
     }
+
+    
 
     public BandWidthRules withEgressGuarentedSize(Integer egressGuarentedSize) {
         this.egressGuarentedSize = egressGuarentedSize;
@@ -156,6 +164,8 @@ public class BandWidthRules  {
         this.egressGuarentedSize = egressGuarentedSize;
     }
 
+    
+
     public BandWidthRules withPublicipInfo(List<PublicipInfoResp> publicipInfo) {
         this.publicipInfo = publicipInfo;
         return this;
@@ -163,9 +173,6 @@ public class BandWidthRules  {
 
     
     public BandWidthRules addPublicipInfoItem(PublicipInfoResp publicipInfoItem) {
-        if (this.publicipInfo == null) {
-            this.publicipInfo = new ArrayList<>();
-        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
@@ -189,6 +196,9 @@ public class BandWidthRules  {
     public void setPublicipInfo(List<PublicipInfoResp> publicipInfo) {
         this.publicipInfo = publicipInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

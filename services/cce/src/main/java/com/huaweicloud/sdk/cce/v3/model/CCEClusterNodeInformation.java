@@ -22,7 +22,7 @@ public class CCEClusterNodeInformation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private CCEClusterNodeInformationMetadata metadata = null;
+    private CCEClusterNodeInformationMetadata metadata;
 
     public CCEClusterNodeInformation withMetadata(CCEClusterNodeInformationMetadata metadata) {
         this.metadata = metadata;
@@ -50,6 +50,9 @@ public class CCEClusterNodeInformation  {
     public void setMetadata(CCEClusterNodeInformationMetadata metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

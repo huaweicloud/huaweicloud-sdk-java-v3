@@ -143,6 +143,8 @@ public class SwaggerSuccessResp  {
         this.path = path;
     }
 
+    
+
     public SwaggerSuccessResp withMethod(String method) {
         this.method = method;
         return this;
@@ -162,6 +164,8 @@ public class SwaggerSuccessResp  {
     public void setMethod(String method) {
         this.method = method;
     }
+
+    
 
     public SwaggerSuccessResp withAction(ActionEnum action) {
         this.action = action;
@@ -183,6 +187,8 @@ public class SwaggerSuccessResp  {
         this.action = action;
     }
 
+    
+
     public SwaggerSuccessResp withId(String id) {
         this.id = id;
         return this;
@@ -202,6 +208,9 @@ public class SwaggerSuccessResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class UpdateMigprojectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private MigProject body = null;
+    private MigProject body;
 
     public UpdateMigprojectRequest withMigProjectId(String migProjectId) {
         this.migProjectId = migProjectId;
@@ -49,6 +49,8 @@ public class UpdateMigprojectRequest  {
     public void setMigProjectId(String migProjectId) {
         this.migProjectId = migProjectId;
     }
+
+    
 
     public UpdateMigprojectRequest withBody(MigProject body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateMigprojectRequest  {
     public void setBody(MigProject body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

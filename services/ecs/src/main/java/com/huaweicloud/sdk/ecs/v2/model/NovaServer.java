@@ -222,13 +222,13 @@ public class NovaServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    private NovaServerFlavor flavor = null;
+    private NovaServerFlavor flavor;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image")
     
-    private NovaServerImage image = null;
+    private NovaServerImage image;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -252,7 +252,7 @@ public class NovaServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Map<String, String> metadata = new HashMap<>();
+    private Map<String, String> metadata = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -264,19 +264,19 @@ public class NovaServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private Map<String, List<NovaNetwork>> addresses = new HashMap<>();
+    private Map<String, List<NovaNetwork>> addresses = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<NovaServerSecurityGroup> securityGroups = new ArrayList<>();
+    private List<NovaServerSecurityGroup> securityGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<NovaLink> links = new ArrayList<>();
+    private List<NovaLink> links = null;
         /**
      * 扩展属性，磁盘配置方式。对镜像启动云服务器生效。  取值范围：  - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 - MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
      */
@@ -708,13 +708,13 @@ public class NovaServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-extended-volumes:volumes_attached")
     
-    private List<NovaServerVolume> osExtendedVolumesVolumesAttached = new ArrayList<>();
+    private List<NovaServerVolume> osExtendedVolumesVolumesAttached = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fault")
     
-    private NovaServerFault fault = null;
+    private NovaServerFault fault;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -864,7 +864,7 @@ public class NovaServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -916,6 +916,8 @@ public class NovaServer  {
         this.name = name;
     }
 
+    
+
     public NovaServer withId(String id) {
         this.id = id;
         return this;
@@ -935,6 +937,8 @@ public class NovaServer  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public NovaServer withStatus(StatusEnum status) {
         this.status = status;
@@ -956,6 +960,8 @@ public class NovaServer  {
         this.status = status;
     }
 
+    
+
     public NovaServer withCreated(String created) {
         this.created = created;
         return this;
@@ -976,6 +982,8 @@ public class NovaServer  {
         this.created = created;
     }
 
+    
+
     public NovaServer withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -995,6 +1003,8 @@ public class NovaServer  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public NovaServer withFlavor(NovaServerFlavor flavor) {
         this.flavor = flavor;
@@ -1023,6 +1033,8 @@ public class NovaServer  {
         this.flavor = flavor;
     }
 
+    
+
     public NovaServer withImage(NovaServerImage image) {
         this.image = image;
         return this;
@@ -1050,6 +1062,8 @@ public class NovaServer  {
         this.image = image;
     }
 
+    
+
     public NovaServer withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -1069,6 +1083,8 @@ public class NovaServer  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public NovaServer withKeyName(String keyName) {
         this.keyName = keyName;
@@ -1090,6 +1106,8 @@ public class NovaServer  {
         this.keyName = keyName;
     }
 
+    
+
     public NovaServer withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -1109,6 +1127,8 @@ public class NovaServer  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public NovaServer withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
@@ -1141,6 +1161,8 @@ public class NovaServer  {
         this.metadata = metadata;
     }
 
+    
+
     public NovaServer withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -1160,6 +1182,8 @@ public class NovaServer  {
     public void setHostId(String hostId) {
         this.hostId = hostId;
     }
+
+    
 
     public NovaServer withAddresses(Map<String, List<NovaNetwork>> addresses) {
         this.addresses = addresses;
@@ -1192,6 +1216,8 @@ public class NovaServer  {
         this.addresses = addresses;
     }
 
+    
+
     public NovaServer withSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -1222,6 +1248,8 @@ public class NovaServer  {
     public void setSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
+
+    
 
     public NovaServer withLinks(List<NovaLink> links) {
         this.links = links;
@@ -1254,6 +1282,8 @@ public class NovaServer  {
         this.links = links;
     }
 
+    
+
     public NovaServer withOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
@@ -1273,6 +1303,8 @@ public class NovaServer  {
     public void setOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
+
+    
 
     public NovaServer withOsEXTAZAvailabilityZone(String osEXTAZAvailabilityZone) {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
@@ -1294,6 +1326,8 @@ public class NovaServer  {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
     }
 
+    
+
     public NovaServer withOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
         return this;
@@ -1313,6 +1347,8 @@ public class NovaServer  {
     public void setOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
     }
+
+    
 
     public NovaServer withOsEXTSRVATTRHypervisorHostname(String osEXTSRVATTRHypervisorHostname) {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
@@ -1334,6 +1370,8 @@ public class NovaServer  {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
     }
 
+    
+
     public NovaServer withOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
         return this;
@@ -1353,6 +1391,8 @@ public class NovaServer  {
     public void setOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
     }
+
+    
 
     public NovaServer withOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
@@ -1376,6 +1416,8 @@ public class NovaServer  {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
     }
 
+    
+
     public NovaServer withOsEXTSTSTaskState(OsEXTSTSTaskStateEnum osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
         return this;
@@ -1395,6 +1437,8 @@ public class NovaServer  {
     public void setOsEXTSTSTaskState(OsEXTSTSTaskStateEnum osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
     }
+
+    
 
     public NovaServer withOsEXTSTSVmState(OsEXTSTSVmStateEnum osEXTSTSVmState) {
         this.osEXTSTSVmState = osEXTSTSVmState;
@@ -1416,6 +1460,8 @@ public class NovaServer  {
         this.osEXTSTSVmState = osEXTSTSVmState;
     }
 
+    
+
     public NovaServer withOsSRVUSGLaunchedAt(String osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
         return this;
@@ -1436,6 +1482,8 @@ public class NovaServer  {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
     }
 
+    
+
     public NovaServer withOsSRVUSGTerminatedAt(String osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
         return this;
@@ -1455,6 +1503,8 @@ public class NovaServer  {
     public void setOsSRVUSGTerminatedAt(String osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
     }
+
+    
 
     public NovaServer withOsExtendedVolumesVolumesAttached(List<NovaServerVolume> osExtendedVolumesVolumesAttached) {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
@@ -1487,6 +1537,8 @@ public class NovaServer  {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
     }
 
+    
+
     public NovaServer withFault(NovaServerFault fault) {
         this.fault = fault;
         return this;
@@ -1514,6 +1566,8 @@ public class NovaServer  {
         this.fault = fault;
     }
 
+    
+
     public NovaServer withDescription(String description) {
         this.description = description;
         return this;
@@ -1533,6 +1587,8 @@ public class NovaServer  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public NovaServer withHostStatus(HostStatusEnum hostStatus) {
         this.hostStatus = hostStatus;
@@ -1554,6 +1610,8 @@ public class NovaServer  {
         this.hostStatus = hostStatus;
     }
 
+    
+
     public NovaServer withOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
         return this;
@@ -1573,6 +1631,8 @@ public class NovaServer  {
     public void setOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
     }
+
+    
 
     public NovaServer withOsEXTSRVATTRReservationId(String osEXTSRVATTRReservationId) {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
@@ -1594,6 +1654,8 @@ public class NovaServer  {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
     }
 
+    
+
     public NovaServer withOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
         return this;
@@ -1613,6 +1675,8 @@ public class NovaServer  {
     public void setOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
     }
+
+    
 
     public NovaServer withOsEXTSRVATTRKernelId(String osEXTSRVATTRKernelId) {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
@@ -1634,6 +1698,8 @@ public class NovaServer  {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
     }
 
+    
+
     public NovaServer withOsEXTSRVATTRRamdiskId(String osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
         return this;
@@ -1653,6 +1719,8 @@ public class NovaServer  {
     public void setOsEXTSRVATTRRamdiskId(String osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
     }
+
+    
 
     public NovaServer withOsEXTSRVATTRRootDeviceName(String osEXTSRVATTRRootDeviceName) {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
@@ -1674,6 +1742,8 @@ public class NovaServer  {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
     }
 
+    
+
     public NovaServer withOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
         return this;
@@ -1693,6 +1763,8 @@ public class NovaServer  {
     public void setOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
     }
+
+    
 
     public NovaServer withTags(List<String> tags) {
         this.tags = tags;
@@ -1725,6 +1797,8 @@ public class NovaServer  {
         this.tags = tags;
     }
 
+    
+
     public NovaServer withLocked(Boolean locked) {
         this.locked = locked;
         return this;
@@ -1744,6 +1818,8 @@ public class NovaServer  {
     public void setLocked(Boolean locked) {
         this.locked = locked;
     }
+
+    
 
     public NovaServer withAccessIPv4(String accessIPv4) {
         this.accessIPv4 = accessIPv4;
@@ -1765,6 +1841,8 @@ public class NovaServer  {
         this.accessIPv4 = accessIPv4;
     }
 
+    
+
     public NovaServer withAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
         return this;
@@ -1784,6 +1862,8 @@ public class NovaServer  {
     public void setAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
     }
+
+    
 
     public NovaServer withConfigDrive(String configDrive) {
         this.configDrive = configDrive;
@@ -1805,6 +1885,8 @@ public class NovaServer  {
         this.configDrive = configDrive;
     }
 
+    
+
     public NovaServer withProgress(Integer progress) {
         this.progress = progress;
         return this;
@@ -1824,6 +1906,9 @@ public class NovaServer  {
     public void setProgress(Integer progress) {
         this.progress = progress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

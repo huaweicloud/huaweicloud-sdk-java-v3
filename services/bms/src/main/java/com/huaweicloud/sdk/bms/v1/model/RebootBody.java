@@ -22,7 +22,7 @@ public class RebootBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reboot")
     
-    private ServersInfoType reboot = null;
+    private ServersInfoType reboot;
 
     public RebootBody withReboot(ServersInfoType reboot) {
         this.reboot = reboot;
@@ -50,6 +50,9 @@ public class RebootBody  {
     public void setReboot(ServersInfoType reboot) {
         this.reboot = reboot;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

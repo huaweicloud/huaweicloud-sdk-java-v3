@@ -34,7 +34,7 @@ public class UpdateRequestThrottlingPolicyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ThrottleBaseInfo body = null;
+    private ThrottleBaseInfo body;
 
     public UpdateRequestThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateRequestThrottlingPolicyV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateRequestThrottlingPolicyV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateRequestThrottlingPolicyV2Request  {
     public void setThrottleId(String throttleId) {
         this.throttleId = throttleId;
     }
+
+    
 
     public UpdateRequestThrottlingPolicyV2Request withBody(ThrottleBaseInfo body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateRequestThrottlingPolicyV2Request  {
     public void setBody(ThrottleBaseInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

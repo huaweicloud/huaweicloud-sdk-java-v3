@@ -167,6 +167,8 @@ public class DatabaseInfo  {
         this.id = id;
     }
 
+    
+
     public DatabaseInfo withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -186,6 +188,8 @@ public class DatabaseInfo  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public DatabaseInfo withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
@@ -207,6 +211,8 @@ public class DatabaseInfo  {
         this.objectType = objectType;
     }
 
+    
+
     public DatabaseInfo withObjectName(String objectName) {
         this.objectName = objectName;
         return this;
@@ -226,6 +232,8 @@ public class DatabaseInfo  {
     public void setObjectName(String objectName) {
         this.objectName = objectName;
     }
+
+    
 
     public DatabaseInfo withObjectAliasName(String objectAliasName) {
         this.objectAliasName = objectAliasName;
@@ -247,6 +255,8 @@ public class DatabaseInfo  {
         this.objectAliasName = objectAliasName;
     }
 
+    
+
     public DatabaseInfo withSelect(String select) {
         this.select = select;
         return this;
@@ -266,6 +276,9 @@ public class DatabaseInfo  {
     public void setSelect(String select) {
         this.select = select;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

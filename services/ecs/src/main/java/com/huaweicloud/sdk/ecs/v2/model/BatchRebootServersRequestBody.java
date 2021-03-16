@@ -22,7 +22,7 @@ public class BatchRebootServersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reboot")
     
-    private BatchRebootSeversOption reboot = null;
+    private BatchRebootSeversOption reboot;
 
     public BatchRebootServersRequestBody withReboot(BatchRebootSeversOption reboot) {
         this.reboot = reboot;
@@ -50,6 +50,9 @@ public class BatchRebootServersRequestBody  {
     public void setReboot(BatchRebootSeversOption reboot) {
         this.reboot = reboot;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

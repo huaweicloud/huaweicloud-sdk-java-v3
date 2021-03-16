@@ -24,7 +24,7 @@ public class BatchAddMembersV4RequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    private List<BatchAddMemberRequestV4> users = new ArrayList<>();
+    private List<BatchAddMemberRequestV4> users = null;
     
     public BatchAddMembersV4RequestBody withUsers(List<BatchAddMemberRequestV4> users) {
         this.users = users;
@@ -56,6 +56,9 @@ public class BatchAddMembersV4RequestBody  {
     public void setUsers(List<BatchAddMemberRequestV4> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

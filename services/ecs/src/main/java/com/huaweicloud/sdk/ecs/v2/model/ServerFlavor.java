@@ -67,6 +67,8 @@ public class ServerFlavor  {
         this.id = id;
     }
 
+    
+
     public ServerFlavor withName(String name) {
         this.name = name;
         return this;
@@ -86,6 +88,8 @@ public class ServerFlavor  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ServerFlavor withDisk(String disk) {
         this.disk = disk;
@@ -107,6 +111,8 @@ public class ServerFlavor  {
         this.disk = disk;
     }
 
+    
+
     public ServerFlavor withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
@@ -127,6 +133,8 @@ public class ServerFlavor  {
         this.vcpus = vcpus;
     }
 
+    
+
     public ServerFlavor withRam(String ram) {
         this.ram = ram;
         return this;
@@ -146,6 +154,9 @@ public class ServerFlavor  {
     public void setRam(String ram) {
         this.ram = ram;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

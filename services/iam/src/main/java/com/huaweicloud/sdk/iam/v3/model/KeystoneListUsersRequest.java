@@ -62,6 +62,8 @@ public class KeystoneListUsersRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneListUsersRequest withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -81,6 +83,8 @@ public class KeystoneListUsersRequest  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public KeystoneListUsersRequest withName(String name) {
         this.name = name;
@@ -102,6 +106,8 @@ public class KeystoneListUsersRequest  {
         this.name = name;
     }
 
+    
+
     public KeystoneListUsersRequest withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -121,6 +127,9 @@ public class KeystoneListUsersRequest  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

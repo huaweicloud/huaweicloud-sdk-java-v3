@@ -73,6 +73,8 @@ public class ListSinkTasksRespTasks  {
         this.taskId = taskId;
     }
 
+    
+
     public ListSinkTasksRespTasks withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -92,6 +94,8 @@ public class ListSinkTasksRespTasks  {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public ListSinkTasksRespTasks withDestinationType(String destinationType) {
         this.destinationType = destinationType;
@@ -113,6 +117,8 @@ public class ListSinkTasksRespTasks  {
         this.destinationType = destinationType;
     }
 
+    
+
     public ListSinkTasksRespTasks withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -132,6 +138,8 @@ public class ListSinkTasksRespTasks  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ListSinkTasksRespTasks withStatus(String status) {
         this.status = status;
@@ -153,6 +161,8 @@ public class ListSinkTasksRespTasks  {
         this.status = status;
     }
 
+    
+
     public ListSinkTasksRespTasks withTopics(String topics) {
         this.topics = topics;
         return this;
@@ -172,6 +182,9 @@ public class ListSinkTasksRespTasks  {
     public void setTopics(String topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

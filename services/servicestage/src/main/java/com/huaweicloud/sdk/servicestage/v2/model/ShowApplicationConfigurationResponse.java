@@ -35,9 +35,6 @@ public class ShowApplicationConfigurationResponse extends SdkResponse {
 
     
     public ShowApplicationConfigurationResponse addConfigurationItem(ApplicationListConfigConfiguration1 _configurationItem) {
-        if (this._configuration == null) {
-            this._configuration = new ArrayList<>();
-        }
         this._configuration.add(_configurationItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowApplicationConfigurationResponse extends SdkResponse {
     public void setConfiguration(List<ApplicationListConfigConfiguration1> _configuration) {
         this._configuration = _configuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

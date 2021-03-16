@@ -110,7 +110,7 @@ public class CreateInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceRequest body = null;
+    private InstanceRequest body;
 
     public CreateInstanceRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class CreateInstanceRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public CreateInstanceRequest withBody(InstanceRequest body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class CreateInstanceRequest  {
     public void setBody(InstanceRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

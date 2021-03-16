@@ -362,7 +362,7 @@ public class ApiPolicyHttpCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<ApiConditionBase> conditions = new ArrayList<>();
+    private List<ApiConditionBase> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -374,7 +374,7 @@ public class ApiPolicyHttpCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_info")
     
-    private ApiBackendVpcReq vpcChannelInfo = null;
+    private ApiBackendVpcReq vpcChannelInfo;
     /**
      * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
      */
@@ -480,6 +480,8 @@ public class ApiPolicyHttpCreate  {
         this.urlDomain = urlDomain;
     }
 
+    
+
     public ApiPolicyHttpCreate withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -499,6 +501,8 @@ public class ApiPolicyHttpCreate  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiPolicyHttpCreate withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -520,6 +524,8 @@ public class ApiPolicyHttpCreate  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiPolicyHttpCreate withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -539,6 +545,8 @@ public class ApiPolicyHttpCreate  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public ApiPolicyHttpCreate withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -560,6 +568,8 @@ public class ApiPolicyHttpCreate  {
         this.timeout = timeout;
     }
 
+    
+
     public ApiPolicyHttpCreate withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
         return this;
@@ -579,6 +589,8 @@ public class ApiPolicyHttpCreate  {
     public void setEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
     }
+
+    
 
     public ApiPolicyHttpCreate withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
@@ -600,6 +612,8 @@ public class ApiPolicyHttpCreate  {
         this.effectMode = effectMode;
     }
 
+    
+
     public ApiPolicyHttpCreate withName(String name) {
         this.name = name;
         return this;
@@ -620,6 +634,8 @@ public class ApiPolicyHttpCreate  {
         this.name = name;
     }
 
+    
+
     public ApiPolicyHttpCreate withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -627,9 +643,6 @@ public class ApiPolicyHttpCreate  {
 
     
     public ApiPolicyHttpCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -653,6 +666,8 @@ public class ApiPolicyHttpCreate  {
     public void setBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
     }
+
+    
 
     public ApiPolicyHttpCreate withConditions(List<ApiConditionBase> conditions) {
         this.conditions = conditions;
@@ -685,6 +700,8 @@ public class ApiPolicyHttpCreate  {
         this.conditions = conditions;
     }
 
+    
+
     public ApiPolicyHttpCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -704,6 +721,8 @@ public class ApiPolicyHttpCreate  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
 
     public ApiPolicyHttpCreate withVpcChannelInfo(ApiBackendVpcReq vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
@@ -732,6 +751,8 @@ public class ApiPolicyHttpCreate  {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 
+    
+
     public ApiPolicyHttpCreate withVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
@@ -751,6 +772,9 @@ public class ApiPolicyHttpCreate  {
     public void setVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

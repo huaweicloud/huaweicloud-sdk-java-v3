@@ -203,6 +203,8 @@ public class KeyDetails  {
         this.keyId = keyId;
     }
 
+    
+
     public KeyDetails withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -222,6 +224,8 @@ public class KeyDetails  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public KeyDetails withKeyAlias(String keyAlias) {
         this.keyAlias = keyAlias;
@@ -243,6 +247,8 @@ public class KeyDetails  {
         this.keyAlias = keyAlias;
     }
 
+    
+
     public KeyDetails withRealm(String realm) {
         this.realm = realm;
         return this;
@@ -262,6 +268,8 @@ public class KeyDetails  {
     public void setRealm(String realm) {
         this.realm = realm;
     }
+
+    
 
     public KeyDetails withKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
@@ -283,6 +291,8 @@ public class KeyDetails  {
         this.keyDescription = keyDescription;
     }
 
+    
+
     public KeyDetails withCreationDate(String creationDate) {
         this.creationDate = creationDate;
         return this;
@@ -302,6 +312,8 @@ public class KeyDetails  {
     public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
+
+    
 
     public KeyDetails withScheduledDeletionDate(String scheduledDeletionDate) {
         this.scheduledDeletionDate = scheduledDeletionDate;
@@ -323,6 +335,8 @@ public class KeyDetails  {
         this.scheduledDeletionDate = scheduledDeletionDate;
     }
 
+    
+
     public KeyDetails withKeyState(String keyState) {
         this.keyState = keyState;
         return this;
@@ -342,6 +356,8 @@ public class KeyDetails  {
     public void setKeyState(String keyState) {
         this.keyState = keyState;
     }
+
+    
 
     public KeyDetails withDefaultKeyFlag(String defaultKeyFlag) {
         this.defaultKeyFlag = defaultKeyFlag;
@@ -363,6 +379,8 @@ public class KeyDetails  {
         this.defaultKeyFlag = defaultKeyFlag;
     }
 
+    
+
     public KeyDetails withKeyType(String keyType) {
         this.keyType = keyType;
         return this;
@@ -382,6 +400,8 @@ public class KeyDetails  {
     public void setKeyType(String keyType) {
         this.keyType = keyType;
     }
+
+    
 
     public KeyDetails withExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
@@ -403,6 +423,8 @@ public class KeyDetails  {
         this.expirationTime = expirationTime;
     }
 
+    
+
     public KeyDetails withOrigin(OriginEnum origin) {
         this.origin = origin;
         return this;
@@ -422,6 +444,8 @@ public class KeyDetails  {
     public void setOrigin(OriginEnum origin) {
         this.origin = origin;
     }
+
+    
 
     public KeyDetails withKeyRotationEnabled(String keyRotationEnabled) {
         this.keyRotationEnabled = keyRotationEnabled;
@@ -443,6 +467,8 @@ public class KeyDetails  {
         this.keyRotationEnabled = keyRotationEnabled;
     }
 
+    
+
     public KeyDetails withSysEnterpriseProjectId(String sysEnterpriseProjectId) {
         this.sysEnterpriseProjectId = sysEnterpriseProjectId;
         return this;
@@ -462,6 +488,9 @@ public class KeyDetails  {
     public void setSysEnterpriseProjectId(String sysEnterpriseProjectId) {
         this.sysEnterpriseProjectId = sysEnterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

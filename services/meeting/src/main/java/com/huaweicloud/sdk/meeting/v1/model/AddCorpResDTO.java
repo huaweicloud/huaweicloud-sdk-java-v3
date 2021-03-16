@@ -33,9 +33,6 @@ public class AddCorpResDTO  {
 
     
     public AddCorpResDTO addResourceItem(ResourceDTO resourceItem) {
-        if (this.resource == null) {
-            this.resource = new ArrayList<>();
-        }
         this.resource.add(resourceItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class AddCorpResDTO  {
     public void setResource(List<ResourceDTO> resource) {
         this.resource = resource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

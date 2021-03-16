@@ -24,7 +24,7 @@ public class NovaAvailabilityZone  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hosts")
     
-    private List<String> hosts = new ArrayList<>();
+    private List<String> hosts = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,7 +36,7 @@ public class NovaAvailabilityZone  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="zoneState")
     
-    private NovaAvailabilityZoneState zoneState = null;
+    private NovaAvailabilityZoneState zoneState;
 
     public NovaAvailabilityZone withHosts(List<String> hosts) {
         this.hosts = hosts;
@@ -69,6 +69,8 @@ public class NovaAvailabilityZone  {
         this.hosts = hosts;
     }
 
+    
+
     public NovaAvailabilityZone withZoneName(String zoneName) {
         this.zoneName = zoneName;
         return this;
@@ -88,6 +90,8 @@ public class NovaAvailabilityZone  {
     public void setZoneName(String zoneName) {
         this.zoneName = zoneName;
     }
+
+    
 
     public NovaAvailabilityZone withZoneState(NovaAvailabilityZoneState zoneState) {
         this.zoneState = zoneState;
@@ -115,6 +119,9 @@ public class NovaAvailabilityZone  {
     public void setZoneState(NovaAvailabilityZoneState zoneState) {
         this.zoneState = zoneState;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -309,13 +309,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_type")
     
-    private MemberTypeEnum memberType = MemberTypeEnum.ECS;
+    private MemberTypeEnum memberType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -423,7 +423,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_health_config")
     
-    private VpcHealthConfigInfo vpcHealthConfig = null;
+    private VpcHealthConfigInfo vpcHealthConfig;
 
     public ShowDetailsOfVpcChannelV2Response withName(String name) {
         this.name = name;
@@ -445,6 +445,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowDetailsOfVpcChannelV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -464,6 +466,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowDetailsOfVpcChannelV2Response withPort(Integer port) {
         this.port = port;
@@ -485,6 +489,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         this.port = port;
     }
 
+    
+
     public ShowDetailsOfVpcChannelV2Response withBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
@@ -504,6 +510,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     public void setBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
     }
+
+    
 
     public ShowDetailsOfVpcChannelV2Response withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
@@ -525,6 +533,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         this.memberType = memberType;
     }
 
+    
+
     public ShowDetailsOfVpcChannelV2Response withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -544,6 +554,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ShowDetailsOfVpcChannelV2Response withId(String id) {
         this.id = id;
@@ -565,6 +577,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowDetailsOfVpcChannelV2Response withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -584,6 +598,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ShowDetailsOfVpcChannelV2Response withElbId(String elbId) {
         this.elbId = elbId;
@@ -605,6 +621,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         this.elbId = elbId;
     }
 
+    
+
     public ShowDetailsOfVpcChannelV2Response withMembers(List<VpcMemberInfo> members) {
         this.members = members;
         return this;
@@ -612,9 +630,6 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     
     public ShowDetailsOfVpcChannelV2Response addMembersItem(VpcMemberInfo membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -638,6 +653,8 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     public void setMembers(List<VpcMemberInfo> members) {
         this.members = members;
     }
+
+    
 
     public ShowDetailsOfVpcChannelV2Response withVpcHealthConfig(VpcHealthConfigInfo vpcHealthConfig) {
         this.vpcHealthConfig = vpcHealthConfig;
@@ -665,6 +682,9 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     public void setVpcHealthConfig(VpcHealthConfigInfo vpcHealthConfig) {
         this.vpcHealthConfig = vpcHealthConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

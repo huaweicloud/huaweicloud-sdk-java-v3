@@ -61,6 +61,8 @@ public class ListDDosStatusRequest  {
         this.status = status;
     }
 
+    
+
     public ListDDosStatusRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -80,6 +82,8 @@ public class ListDDosStatusRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
 
     public ListDDosStatusRequest withOffset(String offset) {
         this.offset = offset;
@@ -101,6 +105,8 @@ public class ListDDosStatusRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListDDosStatusRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -120,6 +126,9 @@ public class ListDDosStatusRequest  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,13 +40,13 @@ public class CreateTranscodingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,91 +82,91 @@ public class CreateTranscodingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="thumbnail")
     
-    private Thumbnail thumbnail = null;
+    private Thumbnail thumbnail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="digital_watermark")
     
-    private DigitalWatermark digitalWatermark = null;
+    private DigitalWatermark digitalWatermark;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
-    private Integer priority = 6;
+    private Integer priority;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audit")
     
-    private Audit audit = null;
+    private Audit audit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subtitle")
     
-    private Subtitle subtitle = null;
+    private Subtitle subtitle;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="special_effect")
     
-    private SpecialEffect specialEffect = null;
+    private SpecialEffect specialEffect;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    private Encryption encryption = null;
+    private Encryption encryption;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="crop")
     
-    private Crop crop = null;
+    private Crop crop;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio_track")
     
-    private AudioTrack audioTrack = null;
+    private AudioTrack audioTrack;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="multi_audio")
     
-    private MultiAudio multiAudio = null;
+    private MultiAudio multiAudio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_process")
     
-    private VideoProcess videoProcess = null;
+    private VideoProcess videoProcess;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio_process")
     
-    private AudioProcess audioProcess = null;
+    private AudioProcess audioProcess;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quality_enhance")
     
-    private QualityEnhance qualityEnhance = null;
+    private QualityEnhance qualityEnhance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="system_process")
     
-    private SystemProcess systemProcess = null;
+    private SystemProcess systemProcess;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_extend")
     
-    private TemplateExtend templateExtend = null;
+    private TemplateExtend templateExtend;
 
     public CreateTranscodingReq withInput(ObsObjInfo input) {
         this.input = input;
@@ -195,6 +195,8 @@ public class CreateTranscodingReq  {
         this.input = input;
     }
 
+    
+
     public CreateTranscodingReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -222,6 +224,8 @@ public class CreateTranscodingReq  {
         this.output = output;
     }
 
+    
+
     public CreateTranscodingReq withTransTemplateId(List<Integer> transTemplateId) {
         this.transTemplateId = transTemplateId;
         return this;
@@ -229,9 +233,6 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addTransTemplateIdItem(Integer transTemplateIdItem) {
-        if (this.transTemplateId == null) {
-            this.transTemplateId = new ArrayList<>();
-        }
         this.transTemplateId.add(transTemplateIdItem);
         return this;
     }
@@ -256,6 +257,8 @@ public class CreateTranscodingReq  {
         this.transTemplateId = transTemplateId;
     }
 
+    
+
     public CreateTranscodingReq withAvParameters(List<AvParameters> avParameters) {
         this.avParameters = avParameters;
         return this;
@@ -263,9 +266,6 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addAvParametersItem(AvParameters avParametersItem) {
-        if (this.avParameters == null) {
-            this.avParameters = new ArrayList<>();
-        }
         this.avParameters.add(avParametersItem);
         return this;
     }
@@ -290,6 +290,8 @@ public class CreateTranscodingReq  {
         this.avParameters = avParameters;
     }
 
+    
+
     public CreateTranscodingReq withOutputFilenames(List<String> outputFilenames) {
         this.outputFilenames = outputFilenames;
         return this;
@@ -297,9 +299,6 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addOutputFilenamesItem(String outputFilenamesItem) {
-        if (this.outputFilenames == null) {
-            this.outputFilenames = new ArrayList<>();
-        }
         this.outputFilenames.add(outputFilenamesItem);
         return this;
     }
@@ -324,6 +323,8 @@ public class CreateTranscodingReq  {
         this.outputFilenames = outputFilenames;
     }
 
+    
+
     public CreateTranscodingReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -344,6 +345,8 @@ public class CreateTranscodingReq  {
         this.userData = userData;
     }
 
+    
+
     public CreateTranscodingReq withWatermarks(List<WatermarkRequest> watermarks) {
         this.watermarks = watermarks;
         return this;
@@ -351,9 +354,6 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addWatermarksItem(WatermarkRequest watermarksItem) {
-        if (this.watermarks == null) {
-            this.watermarks = new ArrayList<>();
-        }
         this.watermarks.add(watermarksItem);
         return this;
     }
@@ -377,6 +377,8 @@ public class CreateTranscodingReq  {
     public void setWatermarks(List<WatermarkRequest> watermarks) {
         this.watermarks = watermarks;
     }
+
+    
 
     public CreateTranscodingReq withThumbnail(Thumbnail thumbnail) {
         this.thumbnail = thumbnail;
@@ -405,6 +407,8 @@ public class CreateTranscodingReq  {
         this.thumbnail = thumbnail;
     }
 
+    
+
     public CreateTranscodingReq withDigitalWatermark(DigitalWatermark digitalWatermark) {
         this.digitalWatermark = digitalWatermark;
         return this;
@@ -432,6 +436,8 @@ public class CreateTranscodingReq  {
         this.digitalWatermark = digitalWatermark;
     }
 
+    
+
     public CreateTranscodingReq withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -453,6 +459,8 @@ public class CreateTranscodingReq  {
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
+
+    
 
     public CreateTranscodingReq withAudit(Audit audit) {
         this.audit = audit;
@@ -481,6 +489,8 @@ public class CreateTranscodingReq  {
         this.audit = audit;
     }
 
+    
+
     public CreateTranscodingReq withSubtitle(Subtitle subtitle) {
         this.subtitle = subtitle;
         return this;
@@ -507,6 +517,8 @@ public class CreateTranscodingReq  {
     public void setSubtitle(Subtitle subtitle) {
         this.subtitle = subtitle;
     }
+
+    
 
     public CreateTranscodingReq withSpecialEffect(SpecialEffect specialEffect) {
         this.specialEffect = specialEffect;
@@ -535,6 +547,8 @@ public class CreateTranscodingReq  {
         this.specialEffect = specialEffect;
     }
 
+    
+
     public CreateTranscodingReq withEncryption(Encryption encryption) {
         this.encryption = encryption;
         return this;
@@ -561,6 +575,8 @@ public class CreateTranscodingReq  {
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
+
+    
 
     public CreateTranscodingReq withCrop(Crop crop) {
         this.crop = crop;
@@ -589,6 +605,8 @@ public class CreateTranscodingReq  {
         this.crop = crop;
     }
 
+    
+
     public CreateTranscodingReq withAudioTrack(AudioTrack audioTrack) {
         this.audioTrack = audioTrack;
         return this;
@@ -615,6 +633,8 @@ public class CreateTranscodingReq  {
     public void setAudioTrack(AudioTrack audioTrack) {
         this.audioTrack = audioTrack;
     }
+
+    
 
     public CreateTranscodingReq withMultiAudio(MultiAudio multiAudio) {
         this.multiAudio = multiAudio;
@@ -643,6 +663,8 @@ public class CreateTranscodingReq  {
         this.multiAudio = multiAudio;
     }
 
+    
+
     public CreateTranscodingReq withVideoProcess(VideoProcess videoProcess) {
         this.videoProcess = videoProcess;
         return this;
@@ -669,6 +691,8 @@ public class CreateTranscodingReq  {
     public void setVideoProcess(VideoProcess videoProcess) {
         this.videoProcess = videoProcess;
     }
+
+    
 
     public CreateTranscodingReq withAudioProcess(AudioProcess audioProcess) {
         this.audioProcess = audioProcess;
@@ -697,6 +721,8 @@ public class CreateTranscodingReq  {
         this.audioProcess = audioProcess;
     }
 
+    
+
     public CreateTranscodingReq withQualityEnhance(QualityEnhance qualityEnhance) {
         this.qualityEnhance = qualityEnhance;
         return this;
@@ -723,6 +749,8 @@ public class CreateTranscodingReq  {
     public void setQualityEnhance(QualityEnhance qualityEnhance) {
         this.qualityEnhance = qualityEnhance;
     }
+
+    
 
     public CreateTranscodingReq withSystemProcess(SystemProcess systemProcess) {
         this.systemProcess = systemProcess;
@@ -751,6 +779,8 @@ public class CreateTranscodingReq  {
         this.systemProcess = systemProcess;
     }
 
+    
+
     public CreateTranscodingReq withTemplateExtend(TemplateExtend templateExtend) {
         this.templateExtend = templateExtend;
         return this;
@@ -777,6 +807,9 @@ public class CreateTranscodingReq  {
     public void setTemplateExtend(TemplateExtend templateExtend) {
         this.templateExtend = templateExtend;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

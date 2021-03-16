@@ -103,7 +103,7 @@ public class AuthOpt  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_code_auth_type")
     
-    private AppCodeAuthTypeEnum appCodeAuthType = AppCodeAuthTypeEnum.DISABLE;
+    private AppCodeAuthTypeEnum appCodeAuthType;
 
     public AuthOpt withAppCodeAuthType(AppCodeAuthTypeEnum appCodeAuthType) {
         this.appCodeAuthType = appCodeAuthType;
@@ -124,6 +124,9 @@ public class AuthOpt  {
     public void setAppCodeAuthType(AppCodeAuthTypeEnum appCodeAuthType) {
         this.appCodeAuthType = appCodeAuthType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

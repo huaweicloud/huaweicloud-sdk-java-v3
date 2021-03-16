@@ -12,6 +12,39 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class ImsMeta {
 
+    public static final HttpRequestDef<AddImageTagRequest, AddImageTagResponse> addImageTag = genForaddImageTag();
+
+    private static HttpRequestDef<AddImageTagRequest, AddImageTagResponse> genForaddImageTag() {
+        // basic
+        HttpRequestDef.Builder<AddImageTagRequest, AddImageTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddImageTagRequest.class, AddImageTagResponse.class)
+                .withName("AddImageTag")
+                .withUri("/v2/{project_id}/images/{image_id}/tags")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AddImageTagRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AddImageTagRequestBody.class,
+            f -> f.withMarshaller(AddImageTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchAddMembersRequest, BatchAddMembersResponse> batchAddMembers = genForbatchAddMembers();
 
     private static HttpRequestDef<BatchAddMembersRequest, BatchAddMembersResponse> genForbatchAddMembers() {
@@ -28,6 +61,39 @@ public class ImsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchAddMembersRequestBody.class,
             f -> f.withMarshaller(BatchAddMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse> batchAddOrDeleteTags = genForbatchAddOrDeleteTags();
+
+    private static HttpRequestDef<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse> genForbatchAddOrDeleteTags() {
+        // basic
+        HttpRequestDef.Builder<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchAddOrDeleteTagsRequest.class, BatchAddOrDeleteTagsResponse.class)
+                .withName("BatchAddOrDeleteTags")
+                .withUri("/v2/{project_id}/images/{image_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchAddOrDeleteTagsRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchAddOrDeleteTagsRequestBody.class,
+            f -> f.withMarshaller(BatchAddOrDeleteTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -253,6 +319,39 @@ public class ImsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteImageTagRequest, DeleteImageTagResponse> deleteImageTag = genFordeleteImageTag();
+
+    private static HttpRequestDef<DeleteImageTagRequest, DeleteImageTagResponse> genFordeleteImageTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteImageTagRequest, DeleteImageTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteImageTagRequest.class, DeleteImageTagResponse.class)
+                .withName("DeleteImageTag")
+                .withUri("/v2/{project_id}/images/{image_id}/tags/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteImageTagRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
+            })
+        );
+        builder.withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteImageTagRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportImageRequest, ExportImageResponse> exportImage = genForexportImage();
 
     private static HttpRequestDef<ExportImageRequest, ExportImageResponse> genForexportImage() {
@@ -303,6 +402,56 @@ public class ImsMeta {
             QuickImportImageByFileRequestBody.class,
             f -> f.withMarshaller(ImportImageQuickRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageByTagsRequest, ListImageByTagsResponse> listImageByTags = genForlistImageByTags();
+
+    private static HttpRequestDef<ListImageByTagsRequest, ListImageByTagsResponse> genForlistImageByTags() {
+        // basic
+        HttpRequestDef.Builder<ListImageByTagsRequest, ListImageByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListImageByTagsRequest.class, ListImageByTagsResponse.class)
+                .withName("ListImageByTags")
+                .withUri("/v2/{project_id}/images/resource_instances/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListImageByTagsRequestBody.class,
+            f -> f.withMarshaller(ListImageByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageTagsRequest, ListImageTagsResponse> listImageTags = genForlistImageTags();
+
+    private static HttpRequestDef<ListImageTagsRequest, ListImageTagsResponse> genForlistImageTags() {
+        // basic
+        HttpRequestDef.Builder<ListImageTagsRequest, ListImageTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageTagsRequest.class, ListImageTagsResponse.class)
+                .withName("ListImageTags")
+                .withUri("/v2/{project_id}/images/{image_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListImageTagsRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
             })
         );
 
@@ -624,6 +773,23 @@ public class ImsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListImagesTagsRequest, ListImagesTagsResponse> listImagesTags = genForlistImagesTags();
+
+    private static HttpRequestDef<ListImagesTagsRequest, ListImagesTagsResponse> genForlistImagesTags() {
+        // basic
+        HttpRequestDef.Builder<ListImagesTagsRequest, ListImagesTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImagesTagsRequest.class, ListImagesTagsResponse.class)
+                .withName("ListImagesTags")
+                .withUri("/v2/{project_id}/images/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOsVersionsRequest, ListOsVersionsResponse> listOsVersions = genForlistOsVersions();
 
     private static HttpRequestDef<ListOsVersionsRequest, ListOsVersionsResponse> genForlistOsVersions() {
@@ -889,14 +1055,6 @@ public class ImsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowJobRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            })
-        );
         builder.withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,

@@ -40,7 +40,7 @@ public class ResetActivecodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ActiveDTO body = null;
+    private ActiveDTO body;
 
     public ResetActivecodeRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class ResetActivecodeRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ResetActivecodeRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class ResetActivecodeRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ResetActivecodeRequest withSn(String sn) {
         this.sn = sn;
         return this;
@@ -103,6 +107,8 @@ public class ResetActivecodeRequest  {
     public void setSn(String sn) {
         this.sn = sn;
     }
+
+    
 
     public ResetActivecodeRequest withBody(ActiveDTO body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class ResetActivecodeRequest  {
     public void setBody(ActiveDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

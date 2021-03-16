@@ -67,6 +67,8 @@ public class PartnersServiceInfo  {
         this.customerId = customerId;
     }
 
+    
+
     public PartnersServiceInfo withCustomerName(String customerName) {
         this.customerName = customerName;
         return this;
@@ -86,6 +88,8 @@ public class PartnersServiceInfo  {
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
+
+    
 
     public PartnersServiceInfo withServiceTimeZone(String serviceTimeZone) {
         this.serviceTimeZone = serviceTimeZone;
@@ -107,6 +111,8 @@ public class PartnersServiceInfo  {
         this.serviceTimeZone = serviceTimeZone;
     }
 
+    
+
     public PartnersServiceInfo withServiceTimeDay(String serviceTimeDay) {
         this.serviceTimeDay = serviceTimeDay;
         return this;
@@ -127,6 +133,8 @@ public class PartnersServiceInfo  {
         this.serviceTimeDay = serviceTimeDay;
     }
 
+    
+
     public PartnersServiceInfo withServiceTimeHour(String serviceTimeHour) {
         this.serviceTimeHour = serviceTimeHour;
         return this;
@@ -146,6 +154,9 @@ public class PartnersServiceInfo  {
     public void setServiceTimeHour(String serviceTimeHour) {
         this.serviceTimeHour = serviceTimeHour;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

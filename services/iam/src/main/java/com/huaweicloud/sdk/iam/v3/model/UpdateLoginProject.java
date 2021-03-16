@@ -49,6 +49,8 @@ public class UpdateLoginProject  {
         this.enabled = enabled;
     }
 
+    
+
     public UpdateLoginProject withVerificationMethod(String verificationMethod) {
         this.verificationMethod = verificationMethod;
         return this;
@@ -68,6 +70,9 @@ public class UpdateLoginProject  {
     public void setVerificationMethod(String verificationMethod) {
         this.verificationMethod = verificationMethod;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

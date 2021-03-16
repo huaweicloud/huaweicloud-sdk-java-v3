@@ -40,7 +40,7 @@ public class Fault  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    private OffsetDateTime created = null;
+    private OffsetDateTime created;
 
     public Fault withMessage(String message) {
         this.message = message;
@@ -62,6 +62,8 @@ public class Fault  {
         this.message = message;
     }
 
+    
+
     public Fault withCode(Integer code) {
         this.code = code;
         return this;
@@ -81,6 +83,8 @@ public class Fault  {
     public void setCode(Integer code) {
         this.code = code;
     }
+
+    
 
     public Fault withDetails(String details) {
         this.details = details;
@@ -102,6 +106,8 @@ public class Fault  {
         this.details = details;
     }
 
+    
+
     public Fault withCreated(OffsetDateTime created) {
         this.created = created;
         return this;
@@ -121,6 +127,9 @@ public class Fault  {
     public void setCreated(OffsetDateTime created) {
         this.created = created;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

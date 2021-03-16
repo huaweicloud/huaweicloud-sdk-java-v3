@@ -42,9 +42,6 @@ public class NovaListServersDetailsResponse extends SdkResponse {
 
     
     public NovaListServersDetailsResponse addServersItem(NovaServer serversItem) {
-        if (this.servers == null) {
-            this.servers = new ArrayList<>();
-        }
         this.servers.add(serversItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class NovaListServersDetailsResponse extends SdkResponse {
         this.servers = servers;
     }
 
+    
+
     public NovaListServersDetailsResponse withServersLinks(List<PageLink> serversLinks) {
         this.serversLinks = serversLinks;
         return this;
@@ -76,9 +75,6 @@ public class NovaListServersDetailsResponse extends SdkResponse {
 
     
     public NovaListServersDetailsResponse addServersLinksItem(PageLink serversLinksItem) {
-        if (this.serversLinks == null) {
-            this.serversLinks = new ArrayList<>();
-        }
         this.serversLinks.add(serversLinksItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class NovaListServersDetailsResponse extends SdkResponse {
     public void setServersLinks(List<PageLink> serversLinks) {
         this.serversLinks = serversLinks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

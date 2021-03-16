@@ -38,7 +38,7 @@ public class PolicyAssignmentRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_filter")
     
-    private PolicyFilterDefinition policyFilter = null;
+    private PolicyFilterDefinition policyFilter;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,6 +72,8 @@ public class PolicyAssignmentRequestBody  {
         this.name = name;
     }
 
+    
+
     public PolicyAssignmentRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -91,6 +93,8 @@ public class PolicyAssignmentRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public PolicyAssignmentRequestBody withPolicyFilter(PolicyFilterDefinition policyFilter) {
         this.policyFilter = policyFilter;
@@ -119,6 +123,8 @@ public class PolicyAssignmentRequestBody  {
         this.policyFilter = policyFilter;
     }
 
+    
+
     public PolicyAssignmentRequestBody withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
         return this;
@@ -139,6 +145,8 @@ public class PolicyAssignmentRequestBody  {
         this.policyDefinitionId = policyDefinitionId;
     }
 
+    
+
     public PolicyAssignmentRequestBody withParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
         return this;
@@ -147,9 +155,6 @@ public class PolicyAssignmentRequestBody  {
     
 
     public PolicyAssignmentRequestBody putParametersItem(String key, PolicyParameterValue parametersItem) {
-         if (this.parameters == null) {
-            this.parameters = new HashMap<>();
-         }
         this.parameters.put(key, parametersItem);
         return this;
     }
@@ -172,6 +177,9 @@ public class PolicyAssignmentRequestBody  {
     public void setParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

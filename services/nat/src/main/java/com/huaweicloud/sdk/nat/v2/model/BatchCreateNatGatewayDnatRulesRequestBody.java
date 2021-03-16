@@ -24,7 +24,7 @@ public class BatchCreateNatGatewayDnatRulesRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dnat_rules")
     
-    private List<CreateNatGatewayDnatOption> dnatRules = new ArrayList<>();
+    private List<CreateNatGatewayDnatOption> dnatRules = null;
     
     public BatchCreateNatGatewayDnatRulesRequestBody withDnatRules(List<CreateNatGatewayDnatOption> dnatRules) {
         this.dnatRules = dnatRules;
@@ -56,6 +56,9 @@ public class BatchCreateNatGatewayDnatRulesRequestBody  {
     public void setDnatRules(List<CreateNatGatewayDnatOption> dnatRules) {
         this.dnatRules = dnatRules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

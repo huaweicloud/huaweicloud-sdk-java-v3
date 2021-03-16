@@ -27,13 +27,13 @@ public class ListFeaturesV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListFeaturesV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class ListFeaturesV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListFeaturesV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -74,6 +76,8 @@ public class ListFeaturesV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListFeaturesV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -96,6 +100,9 @@ public class ListFeaturesV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

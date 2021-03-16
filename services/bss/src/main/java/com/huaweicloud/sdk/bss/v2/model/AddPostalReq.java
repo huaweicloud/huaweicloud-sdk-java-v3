@@ -63,7 +63,7 @@ public class AddPostalReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_default")
     
-    private Integer isDefault = 0;
+    private Integer isDefault;
 
     public AddPostalReq withRecipient(String recipient) {
         this.recipient = recipient;
@@ -85,6 +85,8 @@ public class AddPostalReq  {
         this.recipient = recipient;
     }
 
+    
+
     public AddPostalReq withProvince(String province) {
         this.province = province;
         return this;
@@ -104,6 +106,8 @@ public class AddPostalReq  {
     public void setProvince(String province) {
         this.province = province;
     }
+
+    
 
     public AddPostalReq withCity(String city) {
         this.city = city;
@@ -125,6 +129,8 @@ public class AddPostalReq  {
         this.city = city;
     }
 
+    
+
     public AddPostalReq withDistrict(String district) {
         this.district = district;
         return this;
@@ -144,6 +150,8 @@ public class AddPostalReq  {
     public void setDistrict(String district) {
         this.district = district;
     }
+
+    
 
     public AddPostalReq withAddress(String address) {
         this.address = address;
@@ -165,6 +173,8 @@ public class AddPostalReq  {
         this.address = address;
     }
 
+    
+
     public AddPostalReq withZipcode(String zipcode) {
         this.zipcode = zipcode;
         return this;
@@ -185,6 +195,8 @@ public class AddPostalReq  {
         this.zipcode = zipcode;
     }
 
+    
+
     public AddPostalReq withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
@@ -204,6 +216,8 @@ public class AddPostalReq  {
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
+
+    
 
     public AddPostalReq withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
@@ -226,6 +240,9 @@ public class AddPostalReq  {
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

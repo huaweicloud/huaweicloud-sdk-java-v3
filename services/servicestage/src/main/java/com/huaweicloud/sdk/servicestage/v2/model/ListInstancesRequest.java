@@ -155,6 +155,8 @@ public class ListInstancesRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ListInstancesRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -174,6 +176,8 @@ public class ListInstancesRequest  {
     public void setComponentId(String componentId) {
         this.componentId = componentId;
     }
+
+    
 
     public ListInstancesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -197,6 +201,8 @@ public class ListInstancesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListInstancesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -216,6 +222,8 @@ public class ListInstancesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListInstancesRequest withOrderBy(String orderBy) {
         this.orderBy = orderBy;
@@ -237,6 +245,8 @@ public class ListInstancesRequest  {
         this.orderBy = orderBy;
     }
 
+    
+
     public ListInstancesRequest withOrder(OrderEnum order) {
         this.order = order;
         return this;
@@ -256,6 +266,9 @@ public class ListInstancesRequest  {
     public void setOrder(OrderEnum order) {
         this.order = order;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -258,7 +258,7 @@ public class TaskMonitorDetailLog  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_size")
     
-    private BigDecimal dataSize = null;
+    private BigDecimal dataSize;
     /**
      * 成功数据大小的计量单位
      */
@@ -406,6 +406,8 @@ public class TaskMonitorDetailLog  {
         this.id = id;
     }
 
+    
+
     public TaskMonitorDetailLog withStatus(Integer status) {
         this.status = status;
         return this;
@@ -425,6 +427,8 @@ public class TaskMonitorDetailLog  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public TaskMonitorDetailLog withPosition(PositionEnum position) {
         this.position = position;
@@ -446,6 +450,8 @@ public class TaskMonitorDetailLog  {
         this.position = position;
     }
 
+    
+
     public TaskMonitorDetailLog withPositionStatus(PositionStatusEnum positionStatus) {
         this.positionStatus = positionStatus;
         return this;
@@ -465,6 +471,8 @@ public class TaskMonitorDetailLog  {
     public void setPositionStatus(PositionStatusEnum positionStatus) {
         this.positionStatus = positionStatus;
     }
+
+    
 
     public TaskMonitorDetailLog withStage(String stage) {
         this.stage = stage;
@@ -486,6 +494,8 @@ public class TaskMonitorDetailLog  {
         this.stage = stage;
     }
 
+    
+
     public TaskMonitorDetailLog withDirtyDataCount(Integer dirtyDataCount) {
         this.dirtyDataCount = dirtyDataCount;
         return this;
@@ -506,6 +516,8 @@ public class TaskMonitorDetailLog  {
         this.dirtyDataCount = dirtyDataCount;
     }
 
+    
+
     public TaskMonitorDetailLog withDataCount(Integer dataCount) {
         this.dataCount = dataCount;
         return this;
@@ -525,6 +537,8 @@ public class TaskMonitorDetailLog  {
     public void setDataCount(Integer dataCount) {
         this.dataCount = dataCount;
     }
+
+    
 
     public TaskMonitorDetailLog withDataSize(BigDecimal dataSize) {
         this.dataSize = dataSize;
@@ -548,6 +562,8 @@ public class TaskMonitorDetailLog  {
         this.dataSize = dataSize;
     }
 
+    
+
     public TaskMonitorDetailLog withDataSizeUnit(DataSizeUnitEnum dataSizeUnit) {
         this.dataSizeUnit = dataSizeUnit;
         return this;
@@ -567,6 +583,8 @@ public class TaskMonitorDetailLog  {
     public void setDataSizeUnit(DataSizeUnitEnum dataSizeUnit) {
         this.dataSizeUnit = dataSizeUnit;
     }
+
+    
 
     public TaskMonitorDetailLog withSpendTime(Integer spendTime) {
         this.spendTime = spendTime;
@@ -588,6 +606,8 @@ public class TaskMonitorDetailLog  {
         this.spendTime = spendTime;
     }
 
+    
+
     public TaskMonitorDetailLog withRemarks(String remarks) {
         this.remarks = remarks;
         return this;
@@ -607,6 +627,8 @@ public class TaskMonitorDetailLog  {
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
+
+    
 
     public TaskMonitorDetailLog withStepBeginTime(Long stepBeginTime) {
         this.stepBeginTime = stepBeginTime;
@@ -630,6 +652,8 @@ public class TaskMonitorDetailLog  {
         this.stepBeginTime = stepBeginTime;
     }
 
+    
+
     public TaskMonitorDetailLog withStepEndTime(Long stepEndTime) {
         this.stepEndTime = stepEndTime;
         return this;
@@ -651,6 +675,9 @@ public class TaskMonitorDetailLog  {
     public void setStepEndTime(Long stepEndTime) {
         this.stepEndTime = stepEndTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

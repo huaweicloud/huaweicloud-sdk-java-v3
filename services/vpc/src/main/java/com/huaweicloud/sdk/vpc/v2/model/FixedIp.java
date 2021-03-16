@@ -49,6 +49,8 @@ public class FixedIp  {
         this.ipAddress = ipAddress;
     }
 
+    
+
     public FixedIp withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -68,6 +70,9 @@ public class FixedIp  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

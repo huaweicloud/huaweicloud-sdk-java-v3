@@ -60,6 +60,8 @@ public class ListLiveSampleLogsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListLiveSampleLogsResponse withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -80,6 +82,8 @@ public class ListLiveSampleLogsResponse extends SdkResponse {
         this.domain = domain;
     }
 
+    
+
     public ListLiveSampleLogsResponse withLogs(List<LogInfo> logs) {
         this.logs = logs;
         return this;
@@ -87,9 +91,6 @@ public class ListLiveSampleLogsResponse extends SdkResponse {
 
     
     public ListLiveSampleLogsResponse addLogsItem(LogInfo logsItem) {
-        if (this.logs == null) {
-            this.logs = new ArrayList<>();
-        }
         this.logs.add(logsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListLiveSampleLogsResponse extends SdkResponse {
     public void setLogs(List<LogInfo> logs) {
         this.logs = logs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

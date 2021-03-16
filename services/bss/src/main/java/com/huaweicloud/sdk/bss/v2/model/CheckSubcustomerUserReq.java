@@ -49,6 +49,8 @@ public class CheckSubcustomerUserReq  {
         this.searchType = searchType;
     }
 
+    
+
     public CheckSubcustomerUserReq withSearchValue(String searchValue) {
         this.searchValue = searchValue;
         return this;
@@ -68,6 +70,9 @@ public class CheckSubcustomerUserReq  {
     public void setSearchValue(String searchValue) {
         this.searchValue = searchValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

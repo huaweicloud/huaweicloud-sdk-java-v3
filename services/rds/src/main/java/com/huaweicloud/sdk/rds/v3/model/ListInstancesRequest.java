@@ -353,6 +353,8 @@ public class ListInstancesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListInstancesRequest withId(String id) {
         this.id = id;
         return this;
@@ -372,6 +374,8 @@ public class ListInstancesRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListInstancesRequest withName(String name) {
         this.name = name;
@@ -393,6 +397,8 @@ public class ListInstancesRequest  {
         this.name = name;
     }
 
+    
+
     public ListInstancesRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -412,6 +418,8 @@ public class ListInstancesRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ListInstancesRequest withDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
@@ -433,6 +441,8 @@ public class ListInstancesRequest  {
         this.datastoreType = datastoreType;
     }
 
+    
+
     public ListInstancesRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -452,6 +462,8 @@ public class ListInstancesRequest  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public ListInstancesRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -473,6 +485,8 @@ public class ListInstancesRequest  {
         this.subnetId = subnetId;
     }
 
+    
+
     public ListInstancesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -492,6 +506,8 @@ public class ListInstancesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListInstancesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -513,6 +529,8 @@ public class ListInstancesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListInstancesRequest withTags(String tags) {
         this.tags = tags;
         return this;
@@ -532,6 +550,9 @@ public class ListInstancesRequest  {
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

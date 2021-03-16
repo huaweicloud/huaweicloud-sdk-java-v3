@@ -97,6 +97,8 @@ public class JobCard  {
         this.name = name;
     }
 
+    
+
     public JobCard withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -116,6 +118,8 @@ public class JobCard  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public JobCard withIsSend(String isSend) {
         this.isSend = isSend;
@@ -137,6 +141,8 @@ public class JobCard  {
         this.isSend = isSend;
     }
 
+    
+
     public JobCard withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -156,6 +162,8 @@ public class JobCard  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public JobCard withAverageScore(String averageScore) {
         this.averageScore = averageScore;
@@ -177,6 +185,8 @@ public class JobCard  {
         this.averageScore = averageScore;
     }
 
+    
+
     public JobCard withSubmitJobNum(Integer submitJobNum) {
         this.submitJobNum = submitJobNum;
         return this;
@@ -196,6 +206,8 @@ public class JobCard  {
     public void setSubmitJobNum(Integer submitJobNum) {
         this.submitJobNum = submitJobNum;
     }
+
+    
 
     public JobCard withCreateStatus(String createStatus) {
         this.createStatus = createStatus;
@@ -217,6 +229,8 @@ public class JobCard  {
         this.createStatus = createStatus;
     }
 
+    
+
     public JobCard withSendType(String sendType) {
         this.sendType = sendType;
         return this;
@@ -236,6 +250,8 @@ public class JobCard  {
     public void setSendType(String sendType) {
         this.sendType = sendType;
     }
+
+    
 
     public JobCard withIsScoreVisibility(String isScoreVisibility) {
         this.isScoreVisibility = isScoreVisibility;
@@ -257,6 +273,8 @@ public class JobCard  {
         this.isScoreVisibility = isScoreVisibility;
     }
 
+    
+
     public JobCard withSendTime(String sendTime) {
         this.sendTime = sendTime;
         return this;
@@ -276,6 +294,9 @@ public class JobCard  {
     public void setSendTime(String sendTime) {
         this.sendTime = sendTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

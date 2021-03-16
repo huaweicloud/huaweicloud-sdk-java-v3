@@ -23,7 +23,7 @@ public class RestBulkHangUpReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bulkHangUpParticipants")
     
-    private List<String> bulkHangUpParticipants = new ArrayList<>();
+    private List<String> bulkHangUpParticipants = null;
     
     public RestBulkHangUpReqBody withBulkHangUpParticipants(List<String> bulkHangUpParticipants) {
         this.bulkHangUpParticipants = bulkHangUpParticipants;
@@ -55,6 +55,9 @@ public class RestBulkHangUpReqBody  {
     public void setBulkHangUpParticipants(List<String> bulkHangUpParticipants) {
         this.bulkHangUpParticipants = bulkHangUpParticipants;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

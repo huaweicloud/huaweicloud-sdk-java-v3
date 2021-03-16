@@ -24,7 +24,7 @@ public class ShowPublicipResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private PublicipShowResp publicip = null;
+    private PublicipShowResp publicip;
 
     public ShowPublicipResponse withPublicip(PublicipShowResp publicip) {
         this.publicip = publicip;
@@ -52,6 +52,9 @@ public class ShowPublicipResponse extends SdkResponse {
     public void setPublicip(PublicipShowResp publicip) {
         this.publicip = publicip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

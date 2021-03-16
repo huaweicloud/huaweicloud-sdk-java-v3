@@ -35,9 +35,6 @@ public class ListProjectBugStaticsV4Response extends SdkResponse {
 
     
     public ListProjectBugStaticsV4Response addBugStatisticsItem(BugStatisticResponseV4 bugStatisticsItem) {
-        if (this.bugStatistics == null) {
-            this.bugStatistics = new ArrayList<>();
-        }
         this.bugStatistics.add(bugStatisticsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListProjectBugStaticsV4Response extends SdkResponse {
     public void setBugStatistics(List<BugStatisticResponseV4> bugStatistics) {
         this.bugStatistics = bugStatistics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

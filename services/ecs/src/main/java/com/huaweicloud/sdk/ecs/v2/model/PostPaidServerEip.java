@@ -29,13 +29,13 @@ public class PostPaidServerEip  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private PostPaidServerEipBandwidth bandwidth = null;
+    private PostPaidServerEipBandwidth bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private PostPaidServerEipExtendParam extendparam = null;
+    private PostPaidServerEipExtendParam extendparam;
 
     public PostPaidServerEip withIptype(String iptype) {
         this.iptype = iptype;
@@ -56,6 +56,8 @@ public class PostPaidServerEip  {
     public void setIptype(String iptype) {
         this.iptype = iptype;
     }
+
+    
 
     public PostPaidServerEip withBandwidth(PostPaidServerEipBandwidth bandwidth) {
         this.bandwidth = bandwidth;
@@ -84,6 +86,8 @@ public class PostPaidServerEip  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public PostPaidServerEip withExtendparam(PostPaidServerEipExtendParam extendparam) {
         this.extendparam = extendparam;
         return this;
@@ -110,6 +114,9 @@ public class PostPaidServerEip  {
     public void setExtendparam(PostPaidServerEipExtendParam extendparam) {
         this.extendparam = extendparam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

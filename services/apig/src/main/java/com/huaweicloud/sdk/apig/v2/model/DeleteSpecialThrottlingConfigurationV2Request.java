@@ -55,6 +55,8 @@ public class DeleteSpecialThrottlingConfigurationV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteSpecialThrottlingConfigurationV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteSpecialThrottlingConfigurationV2Request  {
         this.throttleId = throttleId;
     }
 
+    
+
     public DeleteSpecialThrottlingConfigurationV2Request withStrategyId(String strategyId) {
         this.strategyId = strategyId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteSpecialThrottlingConfigurationV2Request  {
     public void setStrategyId(String strategyId) {
         this.strategyId = strategyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

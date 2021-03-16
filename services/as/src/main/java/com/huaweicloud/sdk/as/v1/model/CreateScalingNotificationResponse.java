@@ -59,6 +59,8 @@ public class CreateScalingNotificationResponse extends SdkResponse {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public CreateScalingNotificationResponse withTopicScene(List<String> topicScene) {
         this.topicScene = topicScene;
         return this;
@@ -66,9 +68,6 @@ public class CreateScalingNotificationResponse extends SdkResponse {
 
     
     public CreateScalingNotificationResponse addTopicSceneItem(String topicSceneItem) {
-        if (this.topicScene == null) {
-            this.topicScene = new ArrayList<>();
-        }
         this.topicScene.add(topicSceneItem);
         return this;
     }
@@ -93,6 +92,8 @@ public class CreateScalingNotificationResponse extends SdkResponse {
         this.topicScene = topicScene;
     }
 
+    
+
     public CreateScalingNotificationResponse withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
@@ -112,6 +113,9 @@ public class CreateScalingNotificationResponse extends SdkResponse {
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

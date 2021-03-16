@@ -63,6 +63,8 @@ public class ShowProjectDetailResponse extends SdkResponse {
         this.namespaceId = namespaceId;
     }
 
+    
+
     public ShowProjectDetailResponse withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -82,6 +84,8 @@ public class ShowProjectDetailResponse extends SdkResponse {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public ShowProjectDetailResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -103,6 +107,8 @@ public class ShowProjectDetailResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public ShowProjectDetailResponse withProject(String project) {
         this.project = project;
         return this;
@@ -122,6 +128,9 @@ public class ShowProjectDetailResponse extends SdkResponse {
     public void setProject(String project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

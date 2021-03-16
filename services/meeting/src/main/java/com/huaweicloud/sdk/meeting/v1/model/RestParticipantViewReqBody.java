@@ -49,6 +49,8 @@ public class RestParticipantViewReqBody  {
         this.viewType = viewType;
     }
 
+    
+
     public RestParticipantViewReqBody withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -68,6 +70,9 @@ public class RestParticipantViewReqBody  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -32,9 +32,6 @@ public class BatchDeleteBody  {
 
     
     public BatchDeleteBody addInstancesItem(String instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
         this.instances.add(instancesItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class BatchDeleteBody  {
     public void setInstances(List<String> instances) {
         this.instances = instances;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

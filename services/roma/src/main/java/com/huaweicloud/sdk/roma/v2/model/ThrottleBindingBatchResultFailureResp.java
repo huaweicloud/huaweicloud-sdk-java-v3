@@ -67,6 +67,8 @@ public class ThrottleBindingBatchResultFailureResp  {
         this.bindId = bindId;
     }
 
+    
+
     public ThrottleBindingBatchResultFailureResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -86,6 +88,8 @@ public class ThrottleBindingBatchResultFailureResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public ThrottleBindingBatchResultFailureResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
@@ -107,6 +111,8 @@ public class ThrottleBindingBatchResultFailureResp  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public ThrottleBindingBatchResultFailureResp withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -127,6 +133,8 @@ public class ThrottleBindingBatchResultFailureResp  {
         this.apiId = apiId;
     }
 
+    
+
     public ThrottleBindingBatchResultFailureResp withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -146,6 +154,9 @@ public class ThrottleBindingBatchResultFailureResp  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

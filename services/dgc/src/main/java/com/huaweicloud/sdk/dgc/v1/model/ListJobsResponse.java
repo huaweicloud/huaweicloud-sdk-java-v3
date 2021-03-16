@@ -54,6 +54,8 @@ public class ListJobsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListJobsResponse withJobs(List<JobInfo> jobs) {
         this.jobs = jobs;
         return this;
@@ -61,9 +63,6 @@ public class ListJobsResponse extends SdkResponse {
 
     
     public ListJobsResponse addJobsItem(JobInfo jobsItem) {
-        if (this.jobs == null) {
-            this.jobs = new ArrayList<>();
-        }
         this.jobs.add(jobsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListJobsResponse extends SdkResponse {
     public void setJobs(List<JobInfo> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

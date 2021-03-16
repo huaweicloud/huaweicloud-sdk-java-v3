@@ -59,13 +59,13 @@ public class QueryCustomerOnDemandResourcesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,6 +99,8 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.customerId = customerId;
     }
 
+    
+
     public QueryCustomerOnDemandResourcesReq withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
@@ -118,6 +120,8 @@ public class QueryCustomerOnDemandResourcesReq  {
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
+
+    
 
     public QueryCustomerOnDemandResourcesReq withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
@@ -139,6 +143,8 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    
+
     public QueryCustomerOnDemandResourcesReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -146,9 +152,6 @@ public class QueryCustomerOnDemandResourcesReq  {
 
     
     public QueryCustomerOnDemandResourcesReq addResourceIdsItem(String resourceIdsItem) {
-        if (this.resourceIds == null) {
-            this.resourceIds = new ArrayList<>();
-        }
         this.resourceIds.add(resourceIdsItem);
         return this;
     }
@@ -173,6 +176,8 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.resourceIds = resourceIds;
     }
 
+    
+
     public QueryCustomerOnDemandResourcesReq withEffectiveTimeBegin(String effectiveTimeBegin) {
         this.effectiveTimeBegin = effectiveTimeBegin;
         return this;
@@ -193,6 +198,8 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.effectiveTimeBegin = effectiveTimeBegin;
     }
 
+    
+
     public QueryCustomerOnDemandResourcesReq withEffectiveTimeEnd(String effectiveTimeEnd) {
         this.effectiveTimeEnd = effectiveTimeEnd;
         return this;
@@ -212,6 +219,8 @@ public class QueryCustomerOnDemandResourcesReq  {
     public void setEffectiveTimeEnd(String effectiveTimeEnd) {
         this.effectiveTimeEnd = effectiveTimeEnd;
     }
+
+    
 
     public QueryCustomerOnDemandResourcesReq withOffset(Integer offset) {
         this.offset = offset;
@@ -235,6 +244,8 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.offset = offset;
     }
 
+    
+
     public QueryCustomerOnDemandResourcesReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -256,6 +267,8 @@ public class QueryCustomerOnDemandResourcesReq  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public QueryCustomerOnDemandResourcesReq withStatus(Integer status) {
         this.status = status;
@@ -279,6 +292,8 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.status = status;
     }
 
+    
+
     public QueryCustomerOnDemandResourcesReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -298,6 +313,9 @@ public class QueryCustomerOnDemandResourcesReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

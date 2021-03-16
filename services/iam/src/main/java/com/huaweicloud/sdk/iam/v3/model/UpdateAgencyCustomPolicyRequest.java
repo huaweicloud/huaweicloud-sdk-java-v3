@@ -28,7 +28,7 @@ public class UpdateAgencyCustomPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAgencyCustomPolicyRequestBody body = null;
+    private UpdateAgencyCustomPolicyRequestBody body;
 
     public UpdateAgencyCustomPolicyRequest withRoleId(String roleId) {
         this.roleId = roleId;
@@ -49,6 +49,8 @@ public class UpdateAgencyCustomPolicyRequest  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
+
+    
 
     public UpdateAgencyCustomPolicyRequest withBody(UpdateAgencyCustomPolicyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateAgencyCustomPolicyRequest  {
     public void setBody(UpdateAgencyCustomPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

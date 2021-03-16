@@ -185,6 +185,8 @@ public class Destination  {
         this.destinationId = destinationId;
     }
 
+    
+
     public Destination withDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
         return this;
@@ -204,6 +206,8 @@ public class Destination  {
     public void setDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
     }
+
+    
 
     public Destination withAppId(String appId) {
         this.appId = appId;
@@ -225,6 +229,8 @@ public class Destination  {
         this.appId = appId;
     }
 
+    
+
     public Destination withDestinationName(String destinationName) {
         this.destinationName = destinationName;
         return this;
@@ -244,6 +250,8 @@ public class Destination  {
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
     }
+
+    
 
     public Destination withTopic(String topic) {
         this.topic = topic;
@@ -265,6 +273,8 @@ public class Destination  {
         this.topic = topic;
     }
 
+    
+
     public Destination withServer(String server) {
         this.server = server;
         return this;
@@ -284,6 +294,8 @@ public class Destination  {
     public void setServer(String server) {
         this.server = server;
     }
+
+    
 
     public Destination withToken(String token) {
         this.token = token;
@@ -305,6 +317,8 @@ public class Destination  {
         this.token = token;
     }
 
+    
+
     public Destination withTag(String tag) {
         this.tag = tag;
         return this;
@@ -324,6 +338,8 @@ public class Destination  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
 
     public Destination withMqsSaslSsl(Boolean mqsSaslSsl) {
         this.mqsSaslSsl = mqsSaslSsl;
@@ -345,6 +361,8 @@ public class Destination  {
         this.mqsSaslSsl = mqsSaslSsl;
     }
 
+    
+
     public Destination withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -365,6 +383,8 @@ public class Destination  {
         this.userName = userName;
     }
 
+    
+
     public Destination withPassword(String password) {
         this.password = password;
         return this;
@@ -384,6 +404,9 @@ public class Destination  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

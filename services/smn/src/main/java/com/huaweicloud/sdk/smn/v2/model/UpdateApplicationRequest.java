@@ -28,7 +28,7 @@ public class UpdateApplicationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateApplicationRequestBody body = null;
+    private UpdateApplicationRequestBody body;
 
     public UpdateApplicationRequest withApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
@@ -49,6 +49,8 @@ public class UpdateApplicationRequest  {
     public void setApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
     }
+
+    
 
     public UpdateApplicationRequest withBody(UpdateApplicationRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateApplicationRequest  {
     public void setBody(UpdateApplicationRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

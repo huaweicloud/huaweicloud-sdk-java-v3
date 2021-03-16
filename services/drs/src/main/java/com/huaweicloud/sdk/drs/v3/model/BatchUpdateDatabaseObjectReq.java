@@ -24,7 +24,7 @@ public class BatchUpdateDatabaseObjectReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<UpdateDatabaseObjectReq> jobs = new ArrayList<>();
+    private List<UpdateDatabaseObjectReq> jobs = null;
     
     public BatchUpdateDatabaseObjectReq withJobs(List<UpdateDatabaseObjectReq> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchUpdateDatabaseObjectReq  {
     public void setJobs(List<UpdateDatabaseObjectReq> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

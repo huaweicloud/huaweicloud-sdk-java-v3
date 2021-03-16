@@ -209,6 +209,8 @@ public class RoleAction  {
         this.actionCname = actionCname;
     }
 
+    
+
     public RoleAction withActions(ActionsEnum actions) {
         this.actions = actions;
         return this;
@@ -228,6 +230,8 @@ public class RoleAction  {
     public void setActions(ActionsEnum actions) {
         this.actions = actions;
     }
+
+    
 
     public RoleAction withId(String id) {
         this.id = id;
@@ -249,6 +253,8 @@ public class RoleAction  {
         this.id = id;
     }
 
+    
+
     public RoleAction withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -268,6 +274,9 @@ public class RoleAction  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

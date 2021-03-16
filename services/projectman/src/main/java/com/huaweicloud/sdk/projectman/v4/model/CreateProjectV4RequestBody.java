@@ -73,6 +73,8 @@ public class CreateProjectV4RequestBody  {
         this.projectName = projectName;
     }
 
+    
+
     public CreateProjectV4RequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -92,6 +94,8 @@ public class CreateProjectV4RequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateProjectV4RequestBody withSource(String source) {
         this.source = source;
@@ -113,6 +117,8 @@ public class CreateProjectV4RequestBody  {
         this.source = source;
     }
 
+    
+
     public CreateProjectV4RequestBody withProjectType(String projectType) {
         this.projectType = projectType;
         return this;
@@ -132,6 +138,8 @@ public class CreateProjectV4RequestBody  {
     public void setProjectType(String projectType) {
         this.projectType = projectType;
     }
+
+    
 
     public CreateProjectV4RequestBody withEnterpriseId(String enterpriseId) {
         this.enterpriseId = enterpriseId;
@@ -153,6 +161,8 @@ public class CreateProjectV4RequestBody  {
         this.enterpriseId = enterpriseId;
     }
 
+    
+
     public CreateProjectV4RequestBody withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
@@ -172,6 +182,9 @@ public class CreateProjectV4RequestBody  {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

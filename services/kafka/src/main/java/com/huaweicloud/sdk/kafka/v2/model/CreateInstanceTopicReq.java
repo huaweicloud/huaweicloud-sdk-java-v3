@@ -73,6 +73,8 @@ public class CreateInstanceTopicReq  {
         this.name = name;
     }
 
+    
+
     public CreateInstanceTopicReq withReplication(Integer replication) {
         this.replication = replication;
         return this;
@@ -92,6 +94,8 @@ public class CreateInstanceTopicReq  {
     public void setReplication(Integer replication) {
         this.replication = replication;
     }
+
+    
 
     public CreateInstanceTopicReq withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
@@ -113,6 +117,8 @@ public class CreateInstanceTopicReq  {
         this.syncMessageFlush = syncMessageFlush;
     }
 
+    
+
     public CreateInstanceTopicReq withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -132,6 +138,8 @@ public class CreateInstanceTopicReq  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
 
     public CreateInstanceTopicReq withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
@@ -153,6 +161,8 @@ public class CreateInstanceTopicReq  {
         this.syncReplication = syncReplication;
     }
 
+    
+
     public CreateInstanceTopicReq withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
@@ -172,6 +182,9 @@ public class CreateInstanceTopicReq  {
     public void setRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

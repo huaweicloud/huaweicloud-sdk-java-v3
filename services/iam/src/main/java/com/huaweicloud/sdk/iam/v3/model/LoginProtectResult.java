@@ -55,6 +55,8 @@ public class LoginProtectResult  {
         this.enabled = enabled;
     }
 
+    
+
     public LoginProtectResult withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -75,6 +77,8 @@ public class LoginProtectResult  {
         this.userId = userId;
     }
 
+    
+
     public LoginProtectResult withVerificationMethod(String verificationMethod) {
         this.verificationMethod = verificationMethod;
         return this;
@@ -94,6 +98,9 @@ public class LoginProtectResult  {
     public void setVerificationMethod(String verificationMethod) {
         this.verificationMethod = verificationMethod;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

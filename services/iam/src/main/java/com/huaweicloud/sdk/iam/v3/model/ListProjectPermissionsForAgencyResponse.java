@@ -35,9 +35,6 @@ public class ListProjectPermissionsForAgencyResponse extends SdkResponse {
 
     
     public ListProjectPermissionsForAgencyResponse addRolesItem(RoleResult rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListProjectPermissionsForAgencyResponse extends SdkResponse {
     public void setRoles(List<RoleResult> roles) {
         this.roles = roles;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

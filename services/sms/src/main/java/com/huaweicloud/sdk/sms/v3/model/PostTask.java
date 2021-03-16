@@ -117,7 +117,7 @@ public class PostTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private Boolean startTargetServer = true;
+    private Boolean startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -129,13 +129,13 @@ public class PostTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_server")
     
-    private SourceServerByTask sourceServer = null;
+    private SourceServerByTask sourceServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_server")
     
-    private TargetServerByTask targetServer = null;
+    private TargetServerByTask targetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -177,13 +177,13 @@ public class PostTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="use_public_ip")
     
-    private Boolean usePublicIp = true;
+    private Boolean usePublicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="syncing")
     
-    private Boolean syncing = false;
+    private Boolean syncing;
 
     public PostTask withName(String name) {
         this.name = name;
@@ -205,6 +205,8 @@ public class PostTask  {
         this.name = name;
     }
 
+    
+
     public PostTask withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -224,6 +226,8 @@ public class PostTask  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public PostTask withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
@@ -245,6 +249,8 @@ public class PostTask  {
         this.startTargetServer = startTargetServer;
     }
 
+    
+
     public PostTask withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -264,6 +270,8 @@ public class PostTask  {
     public void setOsType(String osType) {
         this.osType = osType;
     }
+
+    
 
     public PostTask withSourceServer(SourceServerByTask sourceServer) {
         this.sourceServer = sourceServer;
@@ -292,6 +300,8 @@ public class PostTask  {
         this.sourceServer = sourceServer;
     }
 
+    
+
     public PostTask withTargetServer(TargetServerByTask targetServer) {
         this.targetServer = targetServer;
         return this;
@@ -319,6 +329,8 @@ public class PostTask  {
         this.targetServer = targetServer;
     }
 
+    
+
     public PostTask withMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
         return this;
@@ -338,6 +350,8 @@ public class PostTask  {
     public void setMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
     }
+
+    
 
     public PostTask withRegionName(String regionName) {
         this.regionName = regionName;
@@ -359,6 +373,8 @@ public class PostTask  {
         this.regionName = regionName;
     }
 
+    
+
     public PostTask withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -378,6 +394,8 @@ public class PostTask  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public PostTask withProjectName(String projectName) {
         this.projectName = projectName;
@@ -399,6 +417,8 @@ public class PostTask  {
         this.projectName = projectName;
     }
 
+    
+
     public PostTask withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -418,6 +438,8 @@ public class PostTask  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public PostTask withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
@@ -439,6 +461,8 @@ public class PostTask  {
         this.vmTemplateId = vmTemplateId;
     }
 
+    
+
     public PostTask withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -459,6 +483,8 @@ public class PostTask  {
         this.usePublicIp = usePublicIp;
     }
 
+    
+
     public PostTask withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
@@ -478,6 +504,9 @@ public class PostTask  {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

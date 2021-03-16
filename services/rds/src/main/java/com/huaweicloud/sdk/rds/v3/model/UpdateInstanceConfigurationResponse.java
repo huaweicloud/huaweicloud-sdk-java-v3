@@ -44,6 +44,9 @@ public class UpdateInstanceConfigurationResponse extends SdkResponse {
     public void setRestartRequired(Boolean restartRequired) {
         this.restartRequired = restartRequired;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

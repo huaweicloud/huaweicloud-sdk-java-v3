@@ -41,9 +41,6 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
 
     
     public ListAvailabilityZonesResponse addAvailabilityZonesItem(List<AvailabilityZone> availabilityZonesItem) {
-        if (this.availabilityZones == null) {
-            this.availabilityZones = new ArrayList<>();
-        }
         this.availabilityZones.add(availabilityZonesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
         this.availabilityZones = availabilityZones;
     }
 
+    
+
     public ListAvailabilityZonesResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -87,6 +86,9 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

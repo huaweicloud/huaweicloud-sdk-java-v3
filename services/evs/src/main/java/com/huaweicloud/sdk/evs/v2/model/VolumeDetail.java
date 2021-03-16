@@ -34,7 +34,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<Link> links = new ArrayList<>();
+    private List<Link> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,7 +52,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attachments")
     
-    private List<Attachment> attachments = new ArrayList<>();
+    private List<Attachment> attachments = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,7 +100,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_image_metadata")
     
-    private Map<String, Object> volumeImageMetadata = new HashMap<>();
+    private Map<String, Object> volumeImageMetadata = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -130,7 +130,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private VolumeMetadata metadata = null;
+    private VolumeMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -208,7 +208,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private Map<String, String> tags = new HashMap<>();
+    private Map<String, String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -242,6 +242,8 @@ public class VolumeDetail  {
         this.id = id;
     }
 
+    
+
     public VolumeDetail withLinks(List<Link> links) {
         this.links = links;
         return this;
@@ -273,6 +275,8 @@ public class VolumeDetail  {
         this.links = links;
     }
 
+    
+
     public VolumeDetail withName(String name) {
         this.name = name;
         return this;
@@ -293,6 +297,8 @@ public class VolumeDetail  {
         this.name = name;
     }
 
+    
+
     public VolumeDetail withStatus(String status) {
         this.status = status;
         return this;
@@ -312,6 +318,8 @@ public class VolumeDetail  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public VolumeDetail withAttachments(List<Attachment> attachments) {
         this.attachments = attachments;
@@ -344,6 +352,8 @@ public class VolumeDetail  {
         this.attachments = attachments;
     }
 
+    
+
     public VolumeDetail withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -363,6 +373,8 @@ public class VolumeDetail  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public VolumeDetail withOsVolHostAttrHost(String osVolHostAttrHost) {
         this.osVolHostAttrHost = osVolHostAttrHost;
@@ -384,6 +396,8 @@ public class VolumeDetail  {
         this.osVolHostAttrHost = osVolHostAttrHost;
     }
 
+    
+
     public VolumeDetail withSourceVolid(String sourceVolid) {
         this.sourceVolid = sourceVolid;
         return this;
@@ -403,6 +417,8 @@ public class VolumeDetail  {
     public void setSourceVolid(String sourceVolid) {
         this.sourceVolid = sourceVolid;
     }
+
+    
 
     public VolumeDetail withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -424,6 +440,8 @@ public class VolumeDetail  {
         this.snapshotId = snapshotId;
     }
 
+    
+
     public VolumeDetail withDescription(String description) {
         this.description = description;
         return this;
@@ -443,6 +461,8 @@ public class VolumeDetail  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public VolumeDetail withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -464,6 +484,8 @@ public class VolumeDetail  {
         this.createdAt = createdAt;
     }
 
+    
+
     public VolumeDetail withOsVolTenantAttrTenantId(String osVolTenantAttrTenantId) {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
         return this;
@@ -483,6 +505,8 @@ public class VolumeDetail  {
     public void setOsVolTenantAttrTenantId(String osVolTenantAttrTenantId) {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
     }
+
+    
 
     public VolumeDetail withVolumeImageMetadata(Map<String, Object> volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
@@ -515,6 +539,8 @@ public class VolumeDetail  {
         this.volumeImageMetadata = volumeImageMetadata;
     }
 
+    
+
     public VolumeDetail withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
@@ -534,6 +560,8 @@ public class VolumeDetail  {
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
+
+    
 
     public VolumeDetail withSize(Integer size) {
         this.size = size;
@@ -555,6 +583,8 @@ public class VolumeDetail  {
         this.size = size;
     }
 
+    
+
     public VolumeDetail withConsistencygroupId(String consistencygroupId) {
         this.consistencygroupId = consistencygroupId;
         return this;
@@ -575,6 +605,8 @@ public class VolumeDetail  {
         this.consistencygroupId = consistencygroupId;
     }
 
+    
+
     public VolumeDetail withBootable(String bootable) {
         this.bootable = bootable;
         return this;
@@ -594,6 +626,8 @@ public class VolumeDetail  {
     public void setBootable(String bootable) {
         this.bootable = bootable;
     }
+
+    
 
     public VolumeDetail withMetadata(VolumeMetadata metadata) {
         this.metadata = metadata;
@@ -622,6 +656,8 @@ public class VolumeDetail  {
         this.metadata = metadata;
     }
 
+    
+
     public VolumeDetail withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -641,6 +677,8 @@ public class VolumeDetail  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public VolumeDetail withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
@@ -662,6 +700,8 @@ public class VolumeDetail  {
         this.encrypted = encrypted;
     }
 
+    
+
     public VolumeDetail withReplicationStatus(String replicationStatus) {
         this.replicationStatus = replicationStatus;
         return this;
@@ -681,6 +721,8 @@ public class VolumeDetail  {
     public void setReplicationStatus(String replicationStatus) {
         this.replicationStatus = replicationStatus;
     }
+
+    
 
     public VolumeDetail withOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
         this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
@@ -702,6 +744,8 @@ public class VolumeDetail  {
         this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
     }
 
+    
+
     public VolumeDetail withOsVolMigStatusAttrMigstat(String osVolMigStatusAttrMigstat) {
         this.osVolMigStatusAttrMigstat = osVolMigStatusAttrMigstat;
         return this;
@@ -721,6 +765,8 @@ public class VolumeDetail  {
     public void setOsVolMigStatusAttrMigstat(String osVolMigStatusAttrMigstat) {
         this.osVolMigStatusAttrMigstat = osVolMigStatusAttrMigstat;
     }
+
+    
 
     public VolumeDetail withOsVolMigStatusAttrNameId(String osVolMigStatusAttrNameId) {
         this.osVolMigStatusAttrNameId = osVolMigStatusAttrNameId;
@@ -742,6 +788,8 @@ public class VolumeDetail  {
         this.osVolMigStatusAttrNameId = osVolMigStatusAttrNameId;
     }
 
+    
+
     public VolumeDetail withShareable(String shareable) {
         this.shareable = shareable;
         return this;
@@ -761,6 +809,8 @@ public class VolumeDetail  {
     public void setShareable(String shareable) {
         this.shareable = shareable;
     }
+
+    
 
     public VolumeDetail withUserId(String userId) {
         this.userId = userId;
@@ -782,6 +832,8 @@ public class VolumeDetail  {
         this.userId = userId;
     }
 
+    
+
     public VolumeDetail withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -801,6 +853,8 @@ public class VolumeDetail  {
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
+
+    
 
     public VolumeDetail withMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
@@ -822,6 +876,8 @@ public class VolumeDetail  {
         this.multiattach = multiattach;
     }
 
+    
+
     public VolumeDetail withDedicatedStorageId(String dedicatedStorageId) {
         this.dedicatedStorageId = dedicatedStorageId;
         return this;
@@ -842,6 +898,8 @@ public class VolumeDetail  {
         this.dedicatedStorageId = dedicatedStorageId;
     }
 
+    
+
     public VolumeDetail withDedicatedStorageName(String dedicatedStorageName) {
         this.dedicatedStorageName = dedicatedStorageName;
         return this;
@@ -861,6 +919,8 @@ public class VolumeDetail  {
     public void setDedicatedStorageName(String dedicatedStorageName) {
         this.dedicatedStorageName = dedicatedStorageName;
     }
+
+    
 
     public VolumeDetail withTags(Map<String, String> tags) {
         this.tags = tags;
@@ -893,6 +953,8 @@ public class VolumeDetail  {
         this.tags = tags;
     }
 
+    
+
     public VolumeDetail withWwn(String wwn) {
         this.wwn = wwn;
         return this;
@@ -913,6 +975,8 @@ public class VolumeDetail  {
         this.wwn = wwn;
     }
 
+    
+
     public VolumeDetail withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -932,6 +996,9 @@ public class VolumeDetail  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

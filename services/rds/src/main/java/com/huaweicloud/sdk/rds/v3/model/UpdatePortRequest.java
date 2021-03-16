@@ -116,7 +116,7 @@ public class UpdatePortRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDbPortRequest body = null;
+    private UpdateDbPortRequest body;
 
     public UpdatePortRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class UpdatePortRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UpdatePortRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class UpdatePortRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdatePortRequest withBody(UpdateDbPortRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class UpdatePortRequest  {
     public void setBody(UpdateDbPortRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

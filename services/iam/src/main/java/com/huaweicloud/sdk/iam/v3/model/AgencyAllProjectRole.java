@@ -28,7 +28,7 @@ public class AgencyAllProjectRole  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class AgencyAllProjectRole  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AgencyAllProjectRole withLinks(LinksSelf links) {
         this.links = links;
@@ -83,6 +85,8 @@ public class AgencyAllProjectRole  {
         this.links = links;
     }
 
+    
+
     public AgencyAllProjectRole withName(String name) {
         this.name = name;
         return this;
@@ -102,6 +106,9 @@ public class AgencyAllProjectRole  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

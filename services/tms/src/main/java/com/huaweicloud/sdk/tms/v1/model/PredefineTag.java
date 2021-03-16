@@ -34,7 +34,7 @@ public class PredefineTag  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public PredefineTag withKey(String key) {
         this.key = key;
@@ -56,6 +56,8 @@ public class PredefineTag  {
         this.key = key;
     }
 
+    
+
     public PredefineTag withValue(String value) {
         this.value = value;
         return this;
@@ -76,6 +78,8 @@ public class PredefineTag  {
         this.value = value;
     }
 
+    
+
     public PredefineTag withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -95,6 +99,9 @@ public class PredefineTag  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

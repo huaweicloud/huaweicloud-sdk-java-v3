@@ -124,6 +124,9 @@ public class ExtendParamEip  {
     public void setChargingmode(ChargingmodeEnum chargingmode) {
         this.chargingmode = chargingmode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

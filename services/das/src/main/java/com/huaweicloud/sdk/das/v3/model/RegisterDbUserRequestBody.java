@@ -55,6 +55,8 @@ public class RegisterDbUserRequestBody  {
         this.dbUsername = dbUsername;
     }
 
+    
+
     public RegisterDbUserRequestBody withDbUserPassword(String dbUserPassword) {
         this.dbUserPassword = dbUserPassword;
         return this;
@@ -75,6 +77,8 @@ public class RegisterDbUserRequestBody  {
         this.dbUserPassword = dbUserPassword;
     }
 
+    
+
     public RegisterDbUserRequestBody withDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
         return this;
@@ -94,6 +98,9 @@ public class RegisterDbUserRequestBody  {
     public void setDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,13 +49,13 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audited")
     
-    private Boolean audited = false;
+    private Boolean audited;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public")
     
-    private Boolean _public = false;
+    private Boolean _public;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,6 +89,8 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public NeutronRemoveFirewallRuleResponse withName(String name) {
         this.name = name;
         return this;
@@ -108,6 +110,8 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NeutronRemoveFirewallRuleResponse withDescription(String description) {
         this.description = description;
@@ -129,6 +133,8 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public NeutronRemoveFirewallRuleResponse withFirewallRules(List<String> firewallRules) {
         this.firewallRules = firewallRules;
         return this;
@@ -136,9 +142,6 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
 
     
     public NeutronRemoveFirewallRuleResponse addFirewallRulesItem(String firewallRulesItem) {
-        if (this.firewallRules == null) {
-            this.firewallRules = new ArrayList<>();
-        }
         this.firewallRules.add(firewallRulesItem);
         return this;
     }
@@ -163,6 +166,8 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
         this.firewallRules = firewallRules;
     }
 
+    
+
     public NeutronRemoveFirewallRuleResponse withAudited(Boolean audited) {
         this.audited = audited;
         return this;
@@ -182,6 +187,8 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
     public void setAudited(Boolean audited) {
         this.audited = audited;
     }
+
+    
 
     public NeutronRemoveFirewallRuleResponse withPublic(Boolean _public) {
         this._public = _public;
@@ -203,6 +210,8 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
         this._public = _public;
     }
 
+    
+
     public NeutronRemoveFirewallRuleResponse withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -223,6 +232,8 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
         this.tenantId = tenantId;
     }
 
+    
+
     public NeutronRemoveFirewallRuleResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -242,6 +253,9 @@ public class NeutronRemoveFirewallRuleResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

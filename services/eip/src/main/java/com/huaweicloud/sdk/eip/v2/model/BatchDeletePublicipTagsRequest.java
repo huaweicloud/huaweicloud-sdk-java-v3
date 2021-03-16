@@ -28,7 +28,7 @@ public class BatchDeletePublicipTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeletePublicipTagsRequestBody body = null;
+    private BatchDeletePublicipTagsRequestBody body;
 
     public BatchDeletePublicipTagsRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -49,6 +49,8 @@ public class BatchDeletePublicipTagsRequest  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public BatchDeletePublicipTagsRequest withBody(BatchDeletePublicipTagsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchDeletePublicipTagsRequest  {
     public void setBody(BatchDeletePublicipTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

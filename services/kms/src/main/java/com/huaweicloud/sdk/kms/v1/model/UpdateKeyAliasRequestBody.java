@@ -55,6 +55,8 @@ public class UpdateKeyAliasRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public UpdateKeyAliasRequestBody withKeyAlias(String keyAlias) {
         this.keyAlias = keyAlias;
         return this;
@@ -75,6 +77,8 @@ public class UpdateKeyAliasRequestBody  {
         this.keyAlias = keyAlias;
     }
 
+    
+
     public UpdateKeyAliasRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -94,6 +98,9 @@ public class UpdateKeyAliasRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

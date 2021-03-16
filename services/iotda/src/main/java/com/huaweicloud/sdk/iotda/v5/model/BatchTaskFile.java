@@ -55,6 +55,8 @@ public class BatchTaskFile  {
         this.fileId = fileId;
     }
 
+    
+
     public BatchTaskFile withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -75,6 +77,8 @@ public class BatchTaskFile  {
         this.fileName = fileName;
     }
 
+    
+
     public BatchTaskFile withUploadTime(String uploadTime) {
         this.uploadTime = uploadTime;
         return this;
@@ -94,6 +98,9 @@ public class BatchTaskFile  {
     public void setUploadTime(String uploadTime) {
         this.uploadTime = uploadTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

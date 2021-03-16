@@ -34,7 +34,7 @@ public class BatchPublishOrOfflineApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiBatchPublish body = null;
+    private ApiBatchPublish body;
 
     public BatchPublishOrOfflineApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class BatchPublishOrOfflineApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public BatchPublishOrOfflineApiV2Request withAction(String action) {
         this.action = action;
         return this;
@@ -75,6 +77,8 @@ public class BatchPublishOrOfflineApiV2Request  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
 
     public BatchPublishOrOfflineApiV2Request withBody(ApiBatchPublish body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class BatchPublishOrOfflineApiV2Request  {
     public void setBody(ApiBatchPublish body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

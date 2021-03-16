@@ -49,6 +49,8 @@ public class DeleteAppQuotaRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteAppQuotaRequest withAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteAppQuotaRequest  {
     public void setAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

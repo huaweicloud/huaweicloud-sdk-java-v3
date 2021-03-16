@@ -49,6 +49,8 @@ public class ShowAppBoundAppQuotaRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowAppBoundAppQuotaRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -68,6 +70,9 @@ public class ShowAppBoundAppQuotaRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

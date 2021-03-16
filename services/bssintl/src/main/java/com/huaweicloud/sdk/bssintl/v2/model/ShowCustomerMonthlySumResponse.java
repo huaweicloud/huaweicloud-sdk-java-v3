@@ -114,6 +114,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ShowCustomerMonthlySumResponse withBillSums(List<BillSumRecordInfoV2> billSums) {
         this.billSums = billSums;
         return this;
@@ -121,9 +123,6 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
 
     
     public ShowCustomerMonthlySumResponse addBillSumsItem(BillSumRecordInfoV2 billSumsItem) {
-        if (this.billSums == null) {
-            this.billSums = new ArrayList<>();
-        }
         this.billSums.add(billSumsItem);
         return this;
     }
@@ -148,6 +147,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.billSums = billSums;
     }
 
+    
+
     public ShowCustomerMonthlySumResponse withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
@@ -167,6 +168,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
     public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
+
+    
 
     public ShowCustomerMonthlySumResponse withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
@@ -188,6 +191,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.debtAmount = debtAmount;
     }
 
+    
+
     public ShowCustomerMonthlySumResponse withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
@@ -207,6 +212,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
     public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
+
+    
 
     public ShowCustomerMonthlySumResponse withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
@@ -228,6 +235,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
+    
+
     public ShowCustomerMonthlySumResponse withStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
@@ -247,6 +256,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
     public void setStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
     }
+
+    
 
     public ShowCustomerMonthlySumResponse withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
@@ -268,6 +279,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.cashAmount = cashAmount;
     }
 
+    
+
     public ShowCustomerMonthlySumResponse withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
@@ -287,6 +300,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
     public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
+
+    
 
     public ShowCustomerMonthlySumResponse withWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
@@ -308,6 +323,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.writeoffAmount = writeoffAmount;
     }
 
+    
+
     public ShowCustomerMonthlySumResponse withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -328,6 +345,8 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.measureId = measureId;
     }
 
+    
+
     public ShowCustomerMonthlySumResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -347,6 +366,9 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

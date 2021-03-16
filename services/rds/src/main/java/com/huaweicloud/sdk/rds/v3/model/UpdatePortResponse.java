@@ -44,6 +44,9 @@ public class UpdatePortResponse extends SdkResponse {
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class ProlongMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestProlongDurReqBody body = null;
+    private RestProlongDurReqBody body;
 
     public ProlongMeetingRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -55,6 +55,8 @@ public class ProlongMeetingRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public ProlongMeetingRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -77,6 +79,8 @@ public class ProlongMeetingRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public ProlongMeetingRequest withBody(RestProlongDurReqBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class ProlongMeetingRequest  {
     public void setBody(RestProlongDurReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

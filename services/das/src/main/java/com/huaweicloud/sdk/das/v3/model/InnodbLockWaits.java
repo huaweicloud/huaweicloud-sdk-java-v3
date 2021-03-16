@@ -61,6 +61,8 @@ public class InnodbLockWaits  {
         this.requestingTrxId = requestingTrxId;
     }
 
+    
+
     public InnodbLockWaits withRequestedLockId(String requestedLockId) {
         this.requestedLockId = requestedLockId;
         return this;
@@ -80,6 +82,8 @@ public class InnodbLockWaits  {
     public void setRequestedLockId(String requestedLockId) {
         this.requestedLockId = requestedLockId;
     }
+
+    
 
     public InnodbLockWaits withBlockingTrxId(String blockingTrxId) {
         this.blockingTrxId = blockingTrxId;
@@ -101,6 +105,8 @@ public class InnodbLockWaits  {
         this.blockingTrxId = blockingTrxId;
     }
 
+    
+
     public InnodbLockWaits withBlockingLockId(String blockingLockId) {
         this.blockingLockId = blockingLockId;
         return this;
@@ -120,6 +126,9 @@ public class InnodbLockWaits  {
     public void setBlockingLockId(String blockingLockId) {
         this.blockingLockId = blockingLockId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

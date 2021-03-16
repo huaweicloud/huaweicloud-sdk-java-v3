@@ -26,7 +26,7 @@ public class OsExtendedVolumesInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -144,6 +144,8 @@ public class OsExtendedVolumesInfo  {
         this.id = id;
     }
 
+    
+
     public OsExtendedVolumesInfo withDeleteOnTermination(String deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
         return this;
@@ -163,6 +165,8 @@ public class OsExtendedVolumesInfo  {
     public void setDeleteOnTermination(String deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
+
+    
 
     public OsExtendedVolumesInfo withBootIndex(BootIndexEnum bootIndex) {
         this.bootIndex = bootIndex;
@@ -184,6 +188,8 @@ public class OsExtendedVolumesInfo  {
         this.bootIndex = bootIndex;
     }
 
+    
+
     public OsExtendedVolumesInfo withDevice(String device) {
         this.device = device;
         return this;
@@ -203,6 +209,9 @@ public class OsExtendedVolumesInfo  {
     public void setDevice(String device) {
         this.device = device;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

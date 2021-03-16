@@ -67,6 +67,8 @@ public class ConsumeDeadlettersMessageRequest  {
         this.queueId = queueId;
     }
 
+    
+
     public ConsumeDeadlettersMessageRequest withConsumerGroupId(String consumerGroupId) {
         this.consumerGroupId = consumerGroupId;
         return this;
@@ -86,6 +88,8 @@ public class ConsumeDeadlettersMessageRequest  {
     public void setConsumerGroupId(String consumerGroupId) {
         this.consumerGroupId = consumerGroupId;
     }
+
+    
 
     public ConsumeDeadlettersMessageRequest withMaxMsgs(Integer maxMsgs) {
         this.maxMsgs = maxMsgs;
@@ -107,6 +111,8 @@ public class ConsumeDeadlettersMessageRequest  {
         this.maxMsgs = maxMsgs;
     }
 
+    
+
     public ConsumeDeadlettersMessageRequest withTimeWait(Integer timeWait) {
         this.timeWait = timeWait;
         return this;
@@ -127,6 +133,8 @@ public class ConsumeDeadlettersMessageRequest  {
         this.timeWait = timeWait;
     }
 
+    
+
     public ConsumeDeadlettersMessageRequest withAckWait(Integer ackWait) {
         this.ackWait = ackWait;
         return this;
@@ -146,6 +154,9 @@ public class ConsumeDeadlettersMessageRequest  {
     public void setAckWait(Integer ackWait) {
         this.ackWait = ackWait;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

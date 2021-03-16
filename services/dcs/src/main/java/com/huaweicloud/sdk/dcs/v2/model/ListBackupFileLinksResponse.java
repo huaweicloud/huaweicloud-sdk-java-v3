@@ -60,6 +60,8 @@ public class ListBackupFileLinksResponse extends SdkResponse {
         this.filePath = filePath;
     }
 
+    
+
     public ListBackupFileLinksResponse withBucketName(String bucketName) {
         this.bucketName = bucketName;
         return this;
@@ -80,6 +82,8 @@ public class ListBackupFileLinksResponse extends SdkResponse {
         this.bucketName = bucketName;
     }
 
+    
+
     public ListBackupFileLinksResponse withLinks(List<LinksItem> links) {
         this.links = links;
         return this;
@@ -87,9 +91,6 @@ public class ListBackupFileLinksResponse extends SdkResponse {
 
     
     public ListBackupFileLinksResponse addLinksItem(LinksItem linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListBackupFileLinksResponse extends SdkResponse {
     public void setLinks(List<LinksItem> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

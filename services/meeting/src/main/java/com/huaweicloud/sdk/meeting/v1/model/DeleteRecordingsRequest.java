@@ -61,6 +61,8 @@ public class DeleteRecordingsRequest  {
         this.confUUIDs = confUUIDs;
     }
 
+    
+
     public DeleteRecordingsRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -80,6 +82,8 @@ public class DeleteRecordingsRequest  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public DeleteRecordingsRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -103,6 +107,8 @@ public class DeleteRecordingsRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public DeleteRecordingsRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -124,6 +130,9 @@ public class DeleteRecordingsRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

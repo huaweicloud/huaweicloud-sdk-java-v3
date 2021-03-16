@@ -24,7 +24,7 @@ public class ChangeBaremetalServerNameResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private ChangeBaremetalNameResponsesServers server = null;
+    private ChangeBaremetalNameResponsesServers server;
 
     public ChangeBaremetalServerNameResponse withServer(ChangeBaremetalNameResponsesServers server) {
         this.server = server;
@@ -52,6 +52,9 @@ public class ChangeBaremetalServerNameResponse extends SdkResponse {
     public void setServer(ChangeBaremetalNameResponsesServers server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

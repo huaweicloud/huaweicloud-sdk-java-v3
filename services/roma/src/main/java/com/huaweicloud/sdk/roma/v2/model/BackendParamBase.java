@@ -241,6 +241,8 @@ public class BackendParamBase  {
         this.origin = origin;
     }
 
+    
+
     public BackendParamBase withName(String name) {
         this.name = name;
         return this;
@@ -260,6 +262,8 @@ public class BackendParamBase  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public BackendParamBase withRemark(String remark) {
         this.remark = remark;
@@ -281,6 +285,8 @@ public class BackendParamBase  {
         this.remark = remark;
     }
 
+    
+
     public BackendParamBase withLocation(LocationEnum location) {
         this.location = location;
         return this;
@@ -301,6 +307,8 @@ public class BackendParamBase  {
         this.location = location;
     }
 
+    
+
     public BackendParamBase withValue(String value) {
         this.value = value;
         return this;
@@ -320,6 +328,9 @@ public class BackendParamBase  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

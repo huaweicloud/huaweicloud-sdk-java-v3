@@ -94,6 +94,8 @@ public class ExternalServiceCaseInfo  {
         this.description = description;
     }
 
+    
+
     public ExternalServiceCaseInfo withPreparation(String preparation) {
         this.preparation = preparation;
         return this;
@@ -114,6 +116,8 @@ public class ExternalServiceCaseInfo  {
         this.preparation = preparation;
     }
 
+    
+
     public ExternalServiceCaseInfo withSteps(List<ExternalServiceCaseStep> steps) {
         this.steps = steps;
         return this;
@@ -121,9 +125,6 @@ public class ExternalServiceCaseInfo  {
 
     
     public ExternalServiceCaseInfo addStepsItem(ExternalServiceCaseStep stepsItem) {
-        if (this.steps == null) {
-            this.steps = new ArrayList<>();
-        }
         this.steps.add(stepsItem);
         return this;
     }
@@ -148,6 +149,8 @@ public class ExternalServiceCaseInfo  {
         this.steps = steps;
     }
 
+    
+
     public ExternalServiceCaseInfo withLabelList(List<String> labelList) {
         this.labelList = labelList;
         return this;
@@ -155,9 +158,6 @@ public class ExternalServiceCaseInfo  {
 
     
     public ExternalServiceCaseInfo addLabelListItem(String labelListItem) {
-        if (this.labelList == null) {
-            this.labelList = new ArrayList<>();
-        }
         this.labelList.add(labelListItem);
         return this;
     }
@@ -182,6 +182,8 @@ public class ExternalServiceCaseInfo  {
         this.labelList = labelList;
     }
 
+    
+
     public ExternalServiceCaseInfo withModuleId(String moduleId) {
         this.moduleId = moduleId;
         return this;
@@ -201,6 +203,8 @@ public class ExternalServiceCaseInfo  {
     public void setModuleId(String moduleId) {
         this.moduleId = moduleId;
     }
+
+    
 
     public ExternalServiceCaseInfo withTestVersionId(String testVersionId) {
         this.testVersionId = testVersionId;
@@ -222,6 +226,8 @@ public class ExternalServiceCaseInfo  {
         this.testVersionId = testVersionId;
     }
 
+    
+
     public ExternalServiceCaseInfo withFixVersionId(String fixVersionId) {
         this.fixVersionId = fixVersionId;
         return this;
@@ -241,6 +247,8 @@ public class ExternalServiceCaseInfo  {
     public void setFixVersionId(String fixVersionId) {
         this.fixVersionId = fixVersionId;
     }
+
+    
 
     public ExternalServiceCaseInfo withAssignedId(String assignedId) {
         this.assignedId = assignedId;
@@ -262,6 +270,8 @@ public class ExternalServiceCaseInfo  {
         this.assignedId = assignedId;
     }
 
+    
+
     public ExternalServiceCaseInfo withIssueId(String issueId) {
         this.issueId = issueId;
         return this;
@@ -281,6 +291,9 @@ public class ExternalServiceCaseInfo  {
     public void setIssueId(String issueId) {
         this.issueId = issueId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

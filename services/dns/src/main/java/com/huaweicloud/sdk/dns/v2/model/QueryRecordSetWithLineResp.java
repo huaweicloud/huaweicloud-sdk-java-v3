@@ -103,7 +103,7 @@ public class QueryRecordSetWithLineResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -127,7 +127,7 @@ public class QueryRecordSetWithLineResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alias_target")
     
-    private AliasTarget aliasTarget = null;
+    private AliasTarget aliasTarget;
 
     public QueryRecordSetWithLineResp withId(String id) {
         this.id = id;
@@ -149,6 +149,8 @@ public class QueryRecordSetWithLineResp  {
         this.id = id;
     }
 
+    
+
     public QueryRecordSetWithLineResp withName(String name) {
         this.name = name;
         return this;
@@ -168,6 +170,8 @@ public class QueryRecordSetWithLineResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public QueryRecordSetWithLineResp withDescription(String description) {
         this.description = description;
@@ -189,6 +193,8 @@ public class QueryRecordSetWithLineResp  {
         this.description = description;
     }
 
+    
+
     public QueryRecordSetWithLineResp withZoneId(String zoneId) {
         this.zoneId = zoneId;
         return this;
@@ -208,6 +214,8 @@ public class QueryRecordSetWithLineResp  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public QueryRecordSetWithLineResp withZoneName(String zoneName) {
         this.zoneName = zoneName;
@@ -229,6 +237,8 @@ public class QueryRecordSetWithLineResp  {
         this.zoneName = zoneName;
     }
 
+    
+
     public QueryRecordSetWithLineResp withType(String type) {
         this.type = type;
         return this;
@@ -248,6 +258,8 @@ public class QueryRecordSetWithLineResp  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public QueryRecordSetWithLineResp withTtl(Integer ttl) {
         this.ttl = ttl;
@@ -269,6 +281,8 @@ public class QueryRecordSetWithLineResp  {
         this.ttl = ttl;
     }
 
+    
+
     public QueryRecordSetWithLineResp withRecords(List<String> records) {
         this.records = records;
         return this;
@@ -276,9 +290,6 @@ public class QueryRecordSetWithLineResp  {
 
     
     public QueryRecordSetWithLineResp addRecordsItem(String recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -303,6 +314,8 @@ public class QueryRecordSetWithLineResp  {
         this.records = records;
     }
 
+    
+
     public QueryRecordSetWithLineResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -322,6 +335,8 @@ public class QueryRecordSetWithLineResp  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public QueryRecordSetWithLineResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -343,6 +358,8 @@ public class QueryRecordSetWithLineResp  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public QueryRecordSetWithLineResp withStatus(String status) {
         this.status = status;
         return this;
@@ -362,6 +379,8 @@ public class QueryRecordSetWithLineResp  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public QueryRecordSetWithLineResp withDefault(Boolean _default) {
         this._default = _default;
@@ -383,6 +402,8 @@ public class QueryRecordSetWithLineResp  {
         this._default = _default;
     }
 
+    
+
     public QueryRecordSetWithLineResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -402,6 +423,8 @@ public class QueryRecordSetWithLineResp  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public QueryRecordSetWithLineResp withLinks(PageLink links) {
         this.links = links;
@@ -430,6 +453,8 @@ public class QueryRecordSetWithLineResp  {
         this.links = links;
     }
 
+    
+
     public QueryRecordSetWithLineResp withLine(String line) {
         this.line = line;
         return this;
@@ -449,6 +474,8 @@ public class QueryRecordSetWithLineResp  {
     public void setLine(String line) {
         this.line = line;
     }
+
+    
 
     public QueryRecordSetWithLineResp withWeight(Integer weight) {
         this.weight = weight;
@@ -470,6 +497,8 @@ public class QueryRecordSetWithLineResp  {
         this.weight = weight;
     }
 
+    
+
     public QueryRecordSetWithLineResp withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
         return this;
@@ -489,6 +518,8 @@ public class QueryRecordSetWithLineResp  {
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
+
+    
 
     public QueryRecordSetWithLineResp withAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
@@ -516,6 +547,9 @@ public class QueryRecordSetWithLineResp  {
     public void setAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

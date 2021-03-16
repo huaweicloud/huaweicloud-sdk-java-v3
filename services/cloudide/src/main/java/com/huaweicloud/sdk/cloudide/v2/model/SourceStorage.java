@@ -58,6 +58,8 @@ public class SourceStorage  {
         this.location = location;
     }
 
+    
+
     public SourceStorage withParameters(Map<String, String> parameters) {
         this.parameters = parameters;
         return this;
@@ -66,9 +68,6 @@ public class SourceStorage  {
     
 
     public SourceStorage putParametersItem(String key, String parametersItem) {
-         if (this.parameters == null) {
-            this.parameters = new HashMap<>();
-         }
         this.parameters.put(key, parametersItem);
         return this;
     }
@@ -92,6 +91,8 @@ public class SourceStorage  {
         this.parameters = parameters;
     }
 
+    
+
     public SourceStorage withType(String type) {
         this.type = type;
         return this;
@@ -111,6 +112,9 @@ public class SourceStorage  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

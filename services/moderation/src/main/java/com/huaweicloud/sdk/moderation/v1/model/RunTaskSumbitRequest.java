@@ -22,7 +22,7 @@ public class RunTaskSumbitRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TaskSumbitReq body = null;
+    private TaskSumbitReq body;
 
     public RunTaskSumbitRequest withBody(TaskSumbitReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RunTaskSumbitRequest  {
     public void setBody(TaskSumbitReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class DataIpRequest  {
     public void setNewIp(String newIp) {
         this.newIp = newIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

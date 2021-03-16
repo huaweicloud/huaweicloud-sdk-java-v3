@@ -28,7 +28,7 @@ public class BatchDeletePublicipTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ResourceTagOption> tags = new ArrayList<>();
+    private List<ResourceTagOption> tags = null;
         /**
      * 操作标识  delete：删除  action为delete时，value可选
      */
@@ -139,6 +139,8 @@ public class BatchDeletePublicipTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public BatchDeletePublicipTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -158,6 +160,9 @@ public class BatchDeletePublicipTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

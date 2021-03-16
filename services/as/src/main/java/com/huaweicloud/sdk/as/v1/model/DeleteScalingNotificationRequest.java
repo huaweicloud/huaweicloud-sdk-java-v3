@@ -49,6 +49,8 @@ public class DeleteScalingNotificationRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public DeleteScalingNotificationRequest withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -68,6 +70,9 @@ public class DeleteScalingNotificationRequest  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

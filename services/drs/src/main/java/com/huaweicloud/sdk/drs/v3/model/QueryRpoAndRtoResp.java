@@ -28,13 +28,13 @@ public class QueryRpoAndRtoResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rpo_info")
     
-    private RpoAndRtoInfo rpoInfo = null;
+    private RpoAndRtoInfo rpoInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rto_info")
     
-    private RpoAndRtoInfo rtoInfo = null;
+    private RpoAndRtoInfo rtoInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class QueryRpoAndRtoResp  {
         this.jobId = jobId;
     }
 
+    
+
     public QueryRpoAndRtoResp withRpoInfo(RpoAndRtoInfo rpoInfo) {
         this.rpoInfo = rpoInfo;
         return this;
@@ -94,6 +96,8 @@ public class QueryRpoAndRtoResp  {
     public void setRpoInfo(RpoAndRtoInfo rpoInfo) {
         this.rpoInfo = rpoInfo;
     }
+
+    
 
     public QueryRpoAndRtoResp withRtoInfo(RpoAndRtoInfo rtoInfo) {
         this.rtoInfo = rtoInfo;
@@ -122,6 +126,8 @@ public class QueryRpoAndRtoResp  {
         this.rtoInfo = rtoInfo;
     }
 
+    
+
     public QueryRpoAndRtoResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -142,6 +148,8 @@ public class QueryRpoAndRtoResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public QueryRpoAndRtoResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -161,6 +169,9 @@ public class QueryRpoAndRtoResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

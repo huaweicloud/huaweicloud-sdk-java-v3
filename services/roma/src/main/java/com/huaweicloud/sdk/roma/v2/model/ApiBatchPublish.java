@@ -44,9 +44,6 @@ public class ApiBatchPublish  {
 
     
     public ApiBatchPublish addApisItem(String apisItem) {
-        if (this.apis == null) {
-            this.apis = new ArrayList<>();
-        }
         this.apis.add(apisItem);
         return this;
     }
@@ -71,6 +68,8 @@ public class ApiBatchPublish  {
         this.apis = apis;
     }
 
+    
+
     public ApiBatchPublish withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -91,6 +90,8 @@ public class ApiBatchPublish  {
         this.envId = envId;
     }
 
+    
+
     public ApiBatchPublish withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -110,6 +111,9 @@ public class ApiBatchPublish  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

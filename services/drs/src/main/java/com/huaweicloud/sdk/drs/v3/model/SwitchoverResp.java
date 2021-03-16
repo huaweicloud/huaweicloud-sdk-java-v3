@@ -38,13 +38,13 @@ public class SwitchoverResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_db")
     
-    private EndpointVO sourceDb = null;
+    private EndpointVO sourceDb;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_db")
     
-    private EndpointVO targetDb = null;
+    private EndpointVO targetDb;
     /**
      * 任务方向。
      */
@@ -174,6 +174,8 @@ public class SwitchoverResp  {
         this.jobId = jobId;
     }
 
+    
+
     public SwitchoverResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -193,6 +195,8 @@ public class SwitchoverResp  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public SwitchoverResp withSourceDb(EndpointVO sourceDb) {
         this.sourceDb = sourceDb;
@@ -221,6 +225,8 @@ public class SwitchoverResp  {
         this.sourceDb = sourceDb;
     }
 
+    
+
     public SwitchoverResp withTargetDb(EndpointVO targetDb) {
         this.targetDb = targetDb;
         return this;
@@ -248,6 +254,8 @@ public class SwitchoverResp  {
         this.targetDb = targetDb;
     }
 
+    
+
     public SwitchoverResp withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
         return this;
@@ -267,6 +275,8 @@ public class SwitchoverResp  {
     public void setJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
     }
+
+    
 
     public SwitchoverResp withIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
@@ -288,6 +298,8 @@ public class SwitchoverResp  {
         this.isTargetReadonly = isTargetReadonly;
     }
 
+    
+
     public SwitchoverResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -308,6 +320,8 @@ public class SwitchoverResp  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public SwitchoverResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -327,6 +341,9 @@ public class SwitchoverResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

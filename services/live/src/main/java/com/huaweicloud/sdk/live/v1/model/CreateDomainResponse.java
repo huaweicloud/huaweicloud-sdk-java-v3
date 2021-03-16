@@ -223,13 +223,13 @@ public class CreateDomainResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_source")
     
-    private DomainSourceInfo domainSource = null;
+    private DomainSourceInfo domainSource;
 
     public CreateDomainResponse withDomain(String domain) {
         this.domain = domain;
@@ -251,6 +251,8 @@ public class CreateDomainResponse extends SdkResponse {
         this.domain = domain;
     }
 
+    
+
     public CreateDomainResponse withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
@@ -270,6 +272,8 @@ public class CreateDomainResponse extends SdkResponse {
     public void setDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
     }
+
+    
 
     public CreateDomainResponse withDomainCname(String domainCname) {
         this.domainCname = domainCname;
@@ -291,6 +295,8 @@ public class CreateDomainResponse extends SdkResponse {
         this.domainCname = domainCname;
     }
 
+    
+
     public CreateDomainResponse withRegion(String region) {
         this.region = region;
         return this;
@@ -310,6 +316,8 @@ public class CreateDomainResponse extends SdkResponse {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public CreateDomainResponse withStatus(StatusEnum status) {
         this.status = status;
@@ -331,6 +339,8 @@ public class CreateDomainResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateDomainResponse withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -350,6 +360,8 @@ public class CreateDomainResponse extends SdkResponse {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public CreateDomainResponse withDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
@@ -377,6 +389,9 @@ public class CreateDomainResponse extends SdkResponse {
     public void setDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

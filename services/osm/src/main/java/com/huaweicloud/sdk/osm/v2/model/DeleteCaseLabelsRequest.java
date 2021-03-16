@@ -29,7 +29,7 @@ public class DeleteCaseLabelsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="label_ids")
     
-    private List<Integer> labelIds = new ArrayList<>();
+    private List<Integer> labelIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class DeleteCaseLabelsRequest  {
         this.caseId = caseId;
     }
 
+    
+
     public DeleteCaseLabelsRequest withLabelIds(List<Integer> labelIds) {
         this.labelIds = labelIds;
         return this;
@@ -100,6 +102,8 @@ public class DeleteCaseLabelsRequest  {
         this.labelIds = labelIds;
     }
 
+    
+
     public DeleteCaseLabelsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
@@ -124,6 +128,8 @@ public class DeleteCaseLabelsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public DeleteCaseLabelsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -146,6 +152,8 @@ public class DeleteCaseLabelsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DeleteCaseLabelsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -167,6 +175,9 @@ public class DeleteCaseLabelsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class RunTestCaseRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RunTestCaseRequestBody body = null;
+    private RunTestCaseRequestBody body;
 
     public RunTestCaseRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class RunTestCaseRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public RunTestCaseRequest withBody(RunTestCaseRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RunTestCaseRequest  {
     public void setBody(RunTestCaseRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

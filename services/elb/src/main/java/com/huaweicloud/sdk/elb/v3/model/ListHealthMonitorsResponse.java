@@ -33,7 +33,7 @@ public class ListHealthMonitorsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class ListHealthMonitorsResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListHealthMonitorsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -88,6 +90,8 @@ public class ListHealthMonitorsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    
+
     public ListHealthMonitorsResponse withHealthmonitors(List<HealthMonitor> healthmonitors) {
         this.healthmonitors = healthmonitors;
         return this;
@@ -95,9 +99,6 @@ public class ListHealthMonitorsResponse extends SdkResponse {
 
     
     public ListHealthMonitorsResponse addHealthmonitorsItem(HealthMonitor healthmonitorsItem) {
-        if (this.healthmonitors == null) {
-            this.healthmonitors = new ArrayList<>();
-        }
         this.healthmonitors.add(healthmonitorsItem);
         return this;
     }
@@ -121,6 +122,9 @@ public class ListHealthMonitorsResponse extends SdkResponse {
     public void setHealthmonitors(List<HealthMonitor> healthmonitors) {
         this.healthmonitors = healthmonitors;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

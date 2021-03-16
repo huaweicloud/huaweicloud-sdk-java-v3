@@ -24,13 +24,13 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="redis")
     
-    private StatusStatistic redis = null;
+    private StatusStatistic redis;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="memcached")
     
-    private StatusStatistic memcached = null;
+    private StatusStatistic memcached;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -137,6 +137,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.redis = redis;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withMemcached(StatusStatistic memcached) {
         this.memcached = memcached;
         return this;
@@ -164,6 +166,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.memcached = memcached;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withPayingCount(Integer payingCount) {
         this.payingCount = payingCount;
         return this;
@@ -183,6 +187,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public void setPayingCount(Integer payingCount) {
         this.payingCount = payingCount;
     }
+
+    
 
     public ListNumberOfInstancesInDifferentStatusResponse withFreezingCount(Integer freezingCount) {
         this.freezingCount = freezingCount;
@@ -204,6 +210,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.freezingCount = freezingCount;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withMigratingCount(Integer migratingCount) {
         this.migratingCount = migratingCount;
         return this;
@@ -223,6 +231,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public void setMigratingCount(Integer migratingCount) {
         this.migratingCount = migratingCount;
     }
+
+    
 
     public ListNumberOfInstancesInDifferentStatusResponse withFlushingCount(Integer flushingCount) {
         this.flushingCount = flushingCount;
@@ -244,6 +254,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.flushingCount = flushingCount;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withUpgradingCount(Integer upgradingCount) {
         this.upgradingCount = upgradingCount;
         return this;
@@ -263,6 +275,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public void setUpgradingCount(Integer upgradingCount) {
         this.upgradingCount = upgradingCount;
     }
+
+    
 
     public ListNumberOfInstancesInDifferentStatusResponse withRestoringCount(Integer restoringCount) {
         this.restoringCount = restoringCount;
@@ -284,6 +298,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.restoringCount = restoringCount;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withExtendingCount(Integer extendingCount) {
         this.extendingCount = extendingCount;
         return this;
@@ -303,6 +319,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public void setExtendingCount(Integer extendingCount) {
         this.extendingCount = extendingCount;
     }
+
+    
 
     public ListNumberOfInstancesInDifferentStatusResponse withCreatingCount(Integer creatingCount) {
         this.creatingCount = creatingCount;
@@ -324,6 +342,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.creatingCount = creatingCount;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withRunningCount(Integer runningCount) {
         this.runningCount = runningCount;
         return this;
@@ -343,6 +363,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public void setRunningCount(Integer runningCount) {
         this.runningCount = runningCount;
     }
+
+    
 
     public ListNumberOfInstancesInDifferentStatusResponse withErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
@@ -364,6 +386,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.errorCount = errorCount;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withFrozenCount(Integer frozenCount) {
         this.frozenCount = frozenCount;
         return this;
@@ -383,6 +407,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public void setFrozenCount(Integer frozenCount) {
         this.frozenCount = frozenCount;
     }
+
+    
 
     public ListNumberOfInstancesInDifferentStatusResponse withCreatefailedCount(Integer createfailedCount) {
         this.createfailedCount = createfailedCount;
@@ -404,6 +430,8 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
         this.createfailedCount = createfailedCount;
     }
 
+    
+
     public ListNumberOfInstancesInDifferentStatusResponse withRestartingCount(Integer restartingCount) {
         this.restartingCount = restartingCount;
         return this;
@@ -423,6 +451,9 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public void setRestartingCount(Integer restartingCount) {
         this.restartingCount = restartingCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

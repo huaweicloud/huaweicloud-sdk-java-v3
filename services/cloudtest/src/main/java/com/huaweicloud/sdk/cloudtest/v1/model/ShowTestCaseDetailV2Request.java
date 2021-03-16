@@ -55,6 +55,8 @@ public class ShowTestCaseDetailV2Request  {
         this.projectId = projectId;
     }
 
+    
+
     public ShowTestCaseDetailV2Request withTestcaseNumber(String testcaseNumber) {
         this.testcaseNumber = testcaseNumber;
         return this;
@@ -75,6 +77,8 @@ public class ShowTestCaseDetailV2Request  {
         this.testcaseNumber = testcaseNumber;
     }
 
+    
+
     public ShowTestCaseDetailV2Request withTestcaseId(String testcaseId) {
         this.testcaseId = testcaseId;
         return this;
@@ -94,6 +98,9 @@ public class ShowTestCaseDetailV2Request  {
     public void setTestcaseId(String testcaseId) {
         this.testcaseId = testcaseId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

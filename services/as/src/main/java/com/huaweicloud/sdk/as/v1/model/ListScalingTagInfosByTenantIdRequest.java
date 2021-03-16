@@ -118,6 +118,9 @@ public class ListScalingTagInfosByTenantIdRequest  {
     public void setResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

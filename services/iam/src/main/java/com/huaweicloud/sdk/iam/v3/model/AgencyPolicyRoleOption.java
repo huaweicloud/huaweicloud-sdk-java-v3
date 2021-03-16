@@ -46,7 +46,7 @@ public class AgencyPolicyRoleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private AgencyPolicy policy = null;
+    private AgencyPolicy policy;
 
     public AgencyPolicyRoleOption withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -68,6 +68,8 @@ public class AgencyPolicyRoleOption  {
         this.displayName = displayName;
     }
 
+    
+
     public AgencyPolicyRoleOption withType(String type) {
         this.type = type;
         return this;
@@ -87,6 +89,8 @@ public class AgencyPolicyRoleOption  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public AgencyPolicyRoleOption withDescription(String description) {
         this.description = description;
@@ -108,6 +112,8 @@ public class AgencyPolicyRoleOption  {
         this.description = description;
     }
 
+    
+
     public AgencyPolicyRoleOption withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
         return this;
@@ -127,6 +133,8 @@ public class AgencyPolicyRoleOption  {
     public void setDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
     }
+
+    
 
     public AgencyPolicyRoleOption withPolicy(AgencyPolicy policy) {
         this.policy = policy;
@@ -154,6 +162,9 @@ public class AgencyPolicyRoleOption  {
     public void setPolicy(AgencyPolicy policy) {
         this.policy = policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class KeystoneListProjectsForUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListProjectsForUserResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListProjectsForUserResponse withProjects(List<ProjectResult> projects) {
         this.projects = projects;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListProjectsForUserResponse extends SdkResponse {
 
     
     public KeystoneListProjectsForUserResponse addProjectsItem(ProjectResult projectsItem) {
-        if (this.projects == null) {
-            this.projects = new ArrayList<>();
-        }
         this.projects.add(projectsItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListProjectsForUserResponse extends SdkResponse {
     public void setProjects(List<ProjectResult> projects) {
         this.projects = projects;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

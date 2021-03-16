@@ -39,9 +39,6 @@ public class JobEntities  {
 
     
     public JobEntities addSubJobsItem(SubJob subJobsItem) {
-        if (this.subJobs == null) {
-            this.subJobs = new ArrayList<>();
-        }
         this.subJobs.add(subJobsItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class JobEntities  {
         this.subJobs = subJobs;
     }
 
+    
+
     public JobEntities withSubJobsTotal(Integer subJobsTotal) {
         this.subJobsTotal = subJobsTotal;
         return this;
@@ -85,6 +84,9 @@ public class JobEntities  {
     public void setSubJobsTotal(Integer subJobsTotal) {
         this.subJobsTotal = subJobsTotal;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

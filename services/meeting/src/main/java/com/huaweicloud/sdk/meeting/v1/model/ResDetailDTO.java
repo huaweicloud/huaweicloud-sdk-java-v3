@@ -49,6 +49,8 @@ public class ResDetailDTO  {
         this.sumCount = sumCount;
     }
 
+    
+
     public ResDetailDTO withUsedCount(Integer usedCount) {
         this.usedCount = usedCount;
         return this;
@@ -68,6 +70,9 @@ public class ResDetailDTO  {
     public void setUsedCount(Integer usedCount) {
         this.usedCount = usedCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

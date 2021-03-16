@@ -55,6 +55,8 @@ public class RouterWithStatus  {
         this.status = status;
     }
 
+    
+
     public RouterWithStatus withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
@@ -75,6 +77,8 @@ public class RouterWithStatus  {
         this.routerId = routerId;
     }
 
+    
+
     public RouterWithStatus withRouterRegion(String routerRegion) {
         this.routerRegion = routerRegion;
         return this;
@@ -94,6 +98,9 @@ public class RouterWithStatus  {
     public void setRouterRegion(String routerRegion) {
         this.routerRegion = routerRegion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

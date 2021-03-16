@@ -106,6 +106,8 @@ public class CreateL7PolicyOption  {
         this.action = action;
     }
 
+    
+
     public CreateL7PolicyOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -125,6 +127,8 @@ public class CreateL7PolicyOption  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateL7PolicyOption withDescription(String description) {
         this.description = description;
@@ -146,6 +150,8 @@ public class CreateL7PolicyOption  {
         this.description = description;
     }
 
+    
+
     public CreateL7PolicyOption withListenerId(String listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -166,6 +172,8 @@ public class CreateL7PolicyOption  {
         this.listenerId = listenerId;
     }
 
+    
+
     public CreateL7PolicyOption withName(String name) {
         this.name = name;
         return this;
@@ -185,6 +193,8 @@ public class CreateL7PolicyOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateL7PolicyOption withPosition(Integer position) {
         this.position = position;
@@ -208,6 +218,8 @@ public class CreateL7PolicyOption  {
         this.position = position;
     }
 
+    
+
     public CreateL7PolicyOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -227,6 +239,8 @@ public class CreateL7PolicyOption  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreateL7PolicyOption withRedirectListenerId(String redirectListenerId) {
         this.redirectListenerId = redirectListenerId;
@@ -248,6 +262,8 @@ public class CreateL7PolicyOption  {
         this.redirectListenerId = redirectListenerId;
     }
 
+    
+
     public CreateL7PolicyOption withRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
         return this;
@@ -267,6 +283,8 @@ public class CreateL7PolicyOption  {
     public void setRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
     }
+
+    
 
     public CreateL7PolicyOption withRedirectUrl(String redirectUrl) {
         this.redirectUrl = redirectUrl;
@@ -288,6 +306,8 @@ public class CreateL7PolicyOption  {
         this.redirectUrl = redirectUrl;
     }
 
+    
+
     public CreateL7PolicyOption withRules(List<CreateL7PolicyRuleOption> rules) {
         this.rules = rules;
         return this;
@@ -295,9 +315,6 @@ public class CreateL7PolicyOption  {
 
     
     public CreateL7PolicyOption addRulesItem(CreateL7PolicyRuleOption rulesItem) {
-        if (this.rules == null) {
-            this.rules = new ArrayList<>();
-        }
         this.rules.add(rulesItem);
         return this;
     }
@@ -321,6 +338,9 @@ public class CreateL7PolicyOption  {
     public void setRules(List<CreateL7PolicyRuleOption> rules) {
         this.rules = rules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

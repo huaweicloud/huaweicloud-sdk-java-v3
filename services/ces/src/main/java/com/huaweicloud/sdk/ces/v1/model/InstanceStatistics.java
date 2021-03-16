@@ -55,6 +55,8 @@ public class InstanceStatistics  {
         this.unhealth = unhealth;
     }
 
+    
+
     public InstanceStatistics withTotal(Integer total) {
         this.total = total;
         return this;
@@ -75,6 +77,8 @@ public class InstanceStatistics  {
         this.total = total;
     }
 
+    
+
     public InstanceStatistics withTypeStatistics(String typeStatistics) {
         this.typeStatistics = typeStatistics;
         return this;
@@ -94,6 +98,9 @@ public class InstanceStatistics  {
     public void setTypeStatistics(String typeStatistics) {
         this.typeStatistics = typeStatistics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

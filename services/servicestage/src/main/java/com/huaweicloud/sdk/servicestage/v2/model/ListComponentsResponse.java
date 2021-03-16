@@ -54,6 +54,8 @@ public class ListComponentsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListComponentsResponse withComponents(List<ComponentView> components) {
         this.components = components;
         return this;
@@ -61,9 +63,6 @@ public class ListComponentsResponse extends SdkResponse {
 
     
     public ListComponentsResponse addComponentsItem(ComponentView componentsItem) {
-        if (this.components == null) {
-            this.components = new ArrayList<>();
-        }
         this.components.add(componentsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListComponentsResponse extends SdkResponse {
     public void setComponents(List<ComponentView> components) {
         this.components = components;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

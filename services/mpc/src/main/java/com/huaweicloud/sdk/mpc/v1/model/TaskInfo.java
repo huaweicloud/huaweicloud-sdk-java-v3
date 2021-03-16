@@ -49,7 +49,7 @@ public class TaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,7 +67,7 @@ public class TaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
     public TaskInfo withTaskId(String taskId) {
         this.taskId = taskId;
@@ -89,6 +89,8 @@ public class TaskInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public TaskInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -108,6 +110,8 @@ public class TaskInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public TaskInfo withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -129,6 +133,8 @@ public class TaskInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public TaskInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -148,6 +154,8 @@ public class TaskInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public TaskInfo withOutput(ObsObjInfo output) {
         this.output = output;
@@ -176,6 +184,8 @@ public class TaskInfo  {
         this.output = output;
     }
 
+    
+
     public TaskInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -196,6 +206,8 @@ public class TaskInfo  {
         this.description = description;
     }
 
+    
+
     public TaskInfo withOutputFileName(List<String> outputFileName) {
         this.outputFileName = outputFileName;
         return this;
@@ -203,9 +215,6 @@ public class TaskInfo  {
 
     
     public TaskInfo addOutputFileNameItem(String outputFileNameItem) {
-        if (this.outputFileName == null) {
-            this.outputFileName = new ArrayList<>();
-        }
         this.outputFileName.add(outputFileNameItem);
         return this;
     }
@@ -229,6 +238,8 @@ public class TaskInfo  {
     public void setOutputFileName(List<String> outputFileName) {
         this.outputFileName = outputFileName;
     }
+
+    
 
     public TaskInfo withInput(ObsObjInfo input) {
         this.input = input;
@@ -256,6 +267,9 @@ public class TaskInfo  {
     public void setInput(ObsObjInfo input) {
         this.input = input;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

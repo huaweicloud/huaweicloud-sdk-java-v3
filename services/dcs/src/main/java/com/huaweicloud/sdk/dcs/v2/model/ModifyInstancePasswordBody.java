@@ -49,6 +49,8 @@ public class ModifyInstancePasswordBody  {
         this.oldPassword = oldPassword;
     }
 
+    
+
     public ModifyInstancePasswordBody withNewPassword(String newPassword) {
         this.newPassword = newPassword;
         return this;
@@ -68,6 +70,9 @@ public class ModifyInstancePasswordBody  {
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

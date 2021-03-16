@@ -30,13 +30,13 @@ public class CreateCompareTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="object_level_compare_create_result")
     
-    private CreateCompareTaskResult objectLevelCompareCreateResult = null;
+    private CreateCompareTaskResult objectLevelCompareCreateResult;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_level_compare_create_result")
     
-    private CreateCompareTaskResult dataLevelCompareCreateResult = null;
+    private CreateCompareTaskResult dataLevelCompareCreateResult;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,6 +70,8 @@ public class CreateCompareTaskResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public CreateCompareTaskResponse withObjectLevelCompareCreateResult(CreateCompareTaskResult objectLevelCompareCreateResult) {
         this.objectLevelCompareCreateResult = objectLevelCompareCreateResult;
         return this;
@@ -96,6 +98,8 @@ public class CreateCompareTaskResponse extends SdkResponse {
     public void setObjectLevelCompareCreateResult(CreateCompareTaskResult objectLevelCompareCreateResult) {
         this.objectLevelCompareCreateResult = objectLevelCompareCreateResult;
     }
+
+    
 
     public CreateCompareTaskResponse withDataLevelCompareCreateResult(CreateCompareTaskResult dataLevelCompareCreateResult) {
         this.dataLevelCompareCreateResult = dataLevelCompareCreateResult;
@@ -124,6 +128,8 @@ public class CreateCompareTaskResponse extends SdkResponse {
         this.dataLevelCompareCreateResult = dataLevelCompareCreateResult;
     }
 
+    
+
     public CreateCompareTaskResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -144,6 +150,8 @@ public class CreateCompareTaskResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public CreateCompareTaskResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -163,6 +171,9 @@ public class CreateCompareTaskResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

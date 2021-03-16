@@ -49,6 +49,8 @@ public class CreateRequestBodyCceClusterInfo  {
         this.clusterId = clusterId;
     }
 
+    
+
     public CreateRequestBodyCceClusterInfo withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
@@ -68,6 +70,9 @@ public class CreateRequestBodyCceClusterInfo  {
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

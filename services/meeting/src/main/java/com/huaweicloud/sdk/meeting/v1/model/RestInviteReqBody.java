@@ -24,7 +24,7 @@ public class RestInviteReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attendees")
     
-    private List<Attendee> attendees = new ArrayList<>();
+    private List<Attendee> attendees = null;
     
     public RestInviteReqBody withAttendees(List<Attendee> attendees) {
         this.attendees = attendees;
@@ -56,6 +56,9 @@ public class RestInviteReqBody  {
     public void setAttendees(List<Attendee> attendees) {
         this.attendees = attendees;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

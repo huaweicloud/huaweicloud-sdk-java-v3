@@ -155,6 +155,8 @@ public class ScheduledPolicy  {
         this.launchTime = launchTime;
     }
 
+    
+
     public ScheduledPolicy withRecurrenceType(RecurrenceTypeEnum recurrenceType) {
         this.recurrenceType = recurrenceType;
         return this;
@@ -174,6 +176,8 @@ public class ScheduledPolicy  {
     public void setRecurrenceType(RecurrenceTypeEnum recurrenceType) {
         this.recurrenceType = recurrenceType;
     }
+
+    
 
     public ScheduledPolicy withRecurrenceValue(String recurrenceValue) {
         this.recurrenceValue = recurrenceValue;
@@ -195,6 +199,8 @@ public class ScheduledPolicy  {
         this.recurrenceValue = recurrenceValue;
     }
 
+    
+
     public ScheduledPolicy withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -215,6 +221,8 @@ public class ScheduledPolicy  {
         this.startTime = startTime;
     }
 
+    
+
     public ScheduledPolicy withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -234,6 +242,9 @@ public class ScheduledPolicy  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

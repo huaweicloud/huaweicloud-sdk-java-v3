@@ -33,9 +33,6 @@ public class UpdateDesireds  {
 
     
     public UpdateDesireds addShadowItem(UpdateDesired shadowItem) {
-        if (this.shadow == null) {
-            this.shadow = new ArrayList<>();
-        }
         this.shadow.add(shadowItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class UpdateDesireds  {
     public void setShadow(List<UpdateDesired> shadow) {
         this.shadow = shadow;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

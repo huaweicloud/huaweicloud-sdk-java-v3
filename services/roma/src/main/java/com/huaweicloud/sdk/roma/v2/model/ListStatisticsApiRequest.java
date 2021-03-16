@@ -123,7 +123,7 @@ public class ListStatisticsApiRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    private ModeEnum mode = ModeEnum.INSTANCE;
+    private ModeEnum mode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -225,7 +225,7 @@ public class ListStatisticsApiRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cycle")
     
-    private CycleEnum cycle = CycleEnum.MINUTE;
+    private CycleEnum cycle;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -265,6 +265,8 @@ public class ListStatisticsApiRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListStatisticsApiRequest withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -284,6 +286,8 @@ public class ListStatisticsApiRequest  {
     public void setMode(ModeEnum mode) {
         this.mode = mode;
     }
+
+    
 
     public ListStatisticsApiRequest withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -305,6 +309,8 @@ public class ListStatisticsApiRequest  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ListStatisticsApiRequest withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -324,6 +330,8 @@ public class ListStatisticsApiRequest  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public ListStatisticsApiRequest withCycle(CycleEnum cycle) {
         this.cycle = cycle;
@@ -345,6 +353,8 @@ public class ListStatisticsApiRequest  {
         this.cycle = cycle;
     }
 
+    
+
     public ListStatisticsApiRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -364,6 +374,8 @@ public class ListStatisticsApiRequest  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListStatisticsApiRequest withEndTime(String endTime) {
         this.endTime = endTime;
@@ -385,6 +397,8 @@ public class ListStatisticsApiRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListStatisticsApiRequest withDuration(String duration) {
         this.duration = duration;
         return this;
@@ -404,6 +418,9 @@ public class ListStatisticsApiRequest  {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

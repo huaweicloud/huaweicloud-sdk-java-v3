@@ -67,6 +67,8 @@ public class Auditlog  {
         this.id = id;
     }
 
+    
+
     public Auditlog withName(String name) {
         this.name = name;
         return this;
@@ -86,6 +88,8 @@ public class Auditlog  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Auditlog withSize(Long size) {
         this.size = size;
@@ -107,6 +111,8 @@ public class Auditlog  {
         this.size = size;
     }
 
+    
+
     public Auditlog withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -127,6 +133,8 @@ public class Auditlog  {
         this.beginTime = beginTime;
     }
 
+    
+
     public Auditlog withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -146,6 +154,9 @@ public class Auditlog  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

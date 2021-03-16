@@ -46,7 +46,7 @@ public class CreateRelationsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateRelationsReq body = null;
+    private CreateRelationsReq body;
 
     public CreateRelationsRequest withCaseId(String caseId) {
         this.caseId = caseId;
@@ -67,6 +67,8 @@ public class CreateRelationsRequest  {
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
+
+    
 
     public CreateRelationsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -92,6 +94,8 @@ public class CreateRelationsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CreateRelationsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -114,6 +118,8 @@ public class CreateRelationsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CreateRelationsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -135,6 +141,8 @@ public class CreateRelationsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public CreateRelationsRequest withBody(CreateRelationsReq body) {
         this.body = body;
@@ -162,6 +170,9 @@ public class CreateRelationsRequest  {
     public void setBody(CreateRelationsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

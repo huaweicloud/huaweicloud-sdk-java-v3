@@ -22,7 +22,7 @@ public class CreateMbTasksReportRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private MbTasksReportReq body = null;
+    private MbTasksReportReq body;
 
     public CreateMbTasksReportRequest withBody(MbTasksReportReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateMbTasksReportRequest  {
     public void setBody(MbTasksReportReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

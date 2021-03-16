@@ -34,7 +34,7 @@ public class PublicipCreateResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -326,6 +326,8 @@ public class PublicipCreateResp  {
         this.bandwidthSize = bandwidthSize;
     }
 
+    
+
     public PublicipCreateResp withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -345,6 +347,8 @@ public class PublicipCreateResp  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public PublicipCreateResp withId(String id) {
         this.id = id;
@@ -366,6 +370,8 @@ public class PublicipCreateResp  {
         this.id = id;
     }
 
+    
+
     public PublicipCreateResp withPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
         return this;
@@ -385,6 +391,8 @@ public class PublicipCreateResp  {
     public void setPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
     }
+
+    
 
     public PublicipCreateResp withStatus(StatusEnum status) {
         this.status = status;
@@ -406,6 +414,8 @@ public class PublicipCreateResp  {
         this.status = status;
     }
 
+    
+
     public PublicipCreateResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -425,6 +435,8 @@ public class PublicipCreateResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public PublicipCreateResp withType(String type) {
         this.type = type;
@@ -446,6 +458,8 @@ public class PublicipCreateResp  {
         this.type = type;
     }
 
+    
+
     public PublicipCreateResp withPublicIpv6Address(String publicIpv6Address) {
         this.publicIpv6Address = publicIpv6Address;
         return this;
@@ -465,6 +479,8 @@ public class PublicipCreateResp  {
     public void setPublicIpv6Address(String publicIpv6Address) {
         this.publicIpv6Address = publicIpv6Address;
     }
+
+    
 
     public PublicipCreateResp withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
@@ -486,6 +502,8 @@ public class PublicipCreateResp  {
         this.ipVersion = ipVersion;
     }
 
+    
+
     public PublicipCreateResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -505,6 +523,9 @@ public class PublicipCreateResp  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

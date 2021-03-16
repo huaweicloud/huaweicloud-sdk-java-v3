@@ -28,7 +28,7 @@ public class EnableEnterpriseProjectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnableAction body = null;
+    private EnableAction body;
 
     public EnableEnterpriseProjectRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -49,6 +49,8 @@ public class EnableEnterpriseProjectRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public EnableEnterpriseProjectRequest withBody(EnableAction body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class EnableEnterpriseProjectRequest  {
     public void setBody(EnableAction body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

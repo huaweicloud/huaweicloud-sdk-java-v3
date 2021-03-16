@@ -61,6 +61,8 @@ public class ErrorlogResult  {
         this.nodeName = nodeName;
     }
 
+    
+
     public ErrorlogResult withLevel(String level) {
         this.level = level;
         return this;
@@ -80,6 +82,8 @@ public class ErrorlogResult  {
     public void setLevel(String level) {
         this.level = level;
     }
+
+    
 
     public ErrorlogResult withTime(String time) {
         this.time = time;
@@ -101,6 +105,8 @@ public class ErrorlogResult  {
         this.time = time;
     }
 
+    
+
     public ErrorlogResult withContent(String content) {
         this.content = content;
         return this;
@@ -120,6 +126,9 @@ public class ErrorlogResult  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -52,6 +52,8 @@ public class ShowCeshierarchyRespQueues  {
         this.name = name;
     }
 
+    
+
     public ShowCeshierarchyRespQueues withPartitions(List<ShowCeshierarchyRespPartitions> partitions) {
         this.partitions = partitions;
         return this;
@@ -59,9 +61,6 @@ public class ShowCeshierarchyRespQueues  {
 
     
     public ShowCeshierarchyRespQueues addPartitionsItem(ShowCeshierarchyRespPartitions partitionsItem) {
-        if (this.partitions == null) {
-            this.partitions = new ArrayList<>();
-        }
         this.partitions.add(partitionsItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class ShowCeshierarchyRespQueues  {
     public void setPartitions(List<ShowCeshierarchyRespPartitions> partitions) {
         this.partitions = partitions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

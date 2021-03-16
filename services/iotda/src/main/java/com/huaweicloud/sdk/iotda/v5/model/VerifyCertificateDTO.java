@@ -42,6 +42,9 @@ public class VerifyCertificateDTO  {
     public void setVerifyContent(String verifyContent) {
         this.verifyContent = verifyContent;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -45,7 +45,7 @@ public class ShowRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition_group")
     
-    private ConditionGroup conditionGroup = null;
+    private ConditionGroup conditionGroup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,6 +103,8 @@ public class ShowRuleResponse extends SdkResponse {
         this.ruleId = ruleId;
     }
 
+    
+
     public ShowRuleResponse withName(String name) {
         this.name = name;
         return this;
@@ -123,6 +125,8 @@ public class ShowRuleResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowRuleResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -142,6 +146,8 @@ public class ShowRuleResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowRuleResponse withConditionGroup(ConditionGroup conditionGroup) {
         this.conditionGroup = conditionGroup;
@@ -170,6 +176,8 @@ public class ShowRuleResponse extends SdkResponse {
         this.conditionGroup = conditionGroup;
     }
 
+    
+
     public ShowRuleResponse withActions(List<RuleAction> actions) {
         this.actions = actions;
         return this;
@@ -177,9 +185,6 @@ public class ShowRuleResponse extends SdkResponse {
 
     
     public ShowRuleResponse addActionsItem(RuleAction actionsItem) {
-        if (this.actions == null) {
-            this.actions = new ArrayList<>();
-        }
         this.actions.add(actionsItem);
         return this;
     }
@@ -204,6 +209,8 @@ public class ShowRuleResponse extends SdkResponse {
         this.actions = actions;
     }
 
+    
+
     public ShowRuleResponse withRuleType(String ruleType) {
         this.ruleType = ruleType;
         return this;
@@ -223,6 +230,8 @@ public class ShowRuleResponse extends SdkResponse {
     public void setRuleType(String ruleType) {
         this.ruleType = ruleType;
     }
+
+    
 
     public ShowRuleResponse withStatus(String status) {
         this.status = status;
@@ -244,6 +253,8 @@ public class ShowRuleResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowRuleResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -264,6 +275,8 @@ public class ShowRuleResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public ShowRuleResponse withEdgeNodeIds(List<String> edgeNodeIds) {
         this.edgeNodeIds = edgeNodeIds;
         return this;
@@ -271,9 +284,6 @@ public class ShowRuleResponse extends SdkResponse {
 
     
     public ShowRuleResponse addEdgeNodeIdsItem(String edgeNodeIdsItem) {
-        if (this.edgeNodeIds == null) {
-            this.edgeNodeIds = new ArrayList<>();
-        }
         this.edgeNodeIds.add(edgeNodeIdsItem);
         return this;
     }
@@ -298,6 +308,8 @@ public class ShowRuleResponse extends SdkResponse {
         this.edgeNodeIds = edgeNodeIds;
     }
 
+    
+
     public ShowRuleResponse withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
@@ -317,6 +329,9 @@ public class ShowRuleResponse extends SdkResponse {
     public void setLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

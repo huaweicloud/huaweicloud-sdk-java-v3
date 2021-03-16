@@ -40,7 +40,7 @@ public class LockViewRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestLockSiteViewReqBody body = null;
+    private RestLockSiteViewReqBody body;
 
     public LockViewRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -62,6 +62,8 @@ public class LockViewRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public LockViewRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -81,6 +83,8 @@ public class LockViewRequest  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
 
     public LockViewRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -103,6 +107,8 @@ public class LockViewRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public LockViewRequest withBody(RestLockSiteViewReqBody body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class LockViewRequest  {
     public void setBody(RestLockSiteViewReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

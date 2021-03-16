@@ -73,6 +73,8 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.policyAssignmentId = policyAssignmentId;
     }
 
+    
+
     public ListPolicyStatesByAssignmentIdRequest withComplianceState(String complianceState) {
         this.complianceState = complianceState;
         return this;
@@ -92,6 +94,8 @@ public class ListPolicyStatesByAssignmentIdRequest  {
     public void setComplianceState(String complianceState) {
         this.complianceState = complianceState;
     }
+
+    
 
     public ListPolicyStatesByAssignmentIdRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -113,6 +117,8 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.resourceId = resourceId;
     }
 
+    
+
     public ListPolicyStatesByAssignmentIdRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -132,6 +138,8 @@ public class ListPolicyStatesByAssignmentIdRequest  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public ListPolicyStatesByAssignmentIdRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -155,6 +163,8 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPolicyStatesByAssignmentIdRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -174,6 +184,9 @@ public class ListPolicyStatesByAssignmentIdRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

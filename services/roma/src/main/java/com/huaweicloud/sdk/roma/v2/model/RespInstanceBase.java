@@ -851,6 +851,8 @@ public class RespInstanceBase  {
         this.id = id;
     }
 
+    
+
     public RespInstanceBase withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -870,6 +872,8 @@ public class RespInstanceBase  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public RespInstanceBase withInstanceName(String instanceName) {
         this.instanceName = instanceName;
@@ -891,6 +895,8 @@ public class RespInstanceBase  {
         this.instanceName = instanceName;
     }
 
+    
+
     public RespInstanceBase withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -910,6 +916,8 @@ public class RespInstanceBase  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public RespInstanceBase withInstanceStatus(InstanceStatusEnum instanceStatus) {
         this.instanceStatus = instanceStatus;
@@ -931,6 +939,8 @@ public class RespInstanceBase  {
         this.instanceStatus = instanceStatus;
     }
 
+    
+
     public RespInstanceBase withType(String type) {
         this.type = type;
         return this;
@@ -950,6 +960,8 @@ public class RespInstanceBase  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public RespInstanceBase withSpec(SpecEnum spec) {
         this.spec = spec;
@@ -971,6 +983,8 @@ public class RespInstanceBase  {
         this.spec = spec;
     }
 
+    
+
     public RespInstanceBase withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -990,6 +1004,8 @@ public class RespInstanceBase  {
     public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public RespInstanceBase withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -1011,6 +1027,8 @@ public class RespInstanceBase  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public RespInstanceBase withEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
         return this;
@@ -1030,6 +1048,8 @@ public class RespInstanceBase  {
     public void setEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
     }
+
+    
 
     public RespInstanceBase withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
@@ -1051,6 +1071,8 @@ public class RespInstanceBase  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public RespInstanceBase withCbcMetadata(String cbcMetadata) {
         this.cbcMetadata = cbcMetadata;
         return this;
@@ -1070,6 +1092,9 @@ public class RespInstanceBase  {
     public void setCbcMetadata(String cbcMetadata) {
         this.cbcMetadata = cbcMetadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

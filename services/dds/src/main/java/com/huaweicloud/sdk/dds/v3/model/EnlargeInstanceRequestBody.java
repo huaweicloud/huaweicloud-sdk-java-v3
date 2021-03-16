@@ -122,7 +122,7 @@ public class EnlargeInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private AddShardingNodeVolumeOption volume = null;
+    private AddShardingNodeVolumeOption volume;
 
     public EnlargeInstanceRequestBody withType(TypeEnum type) {
         this.type = type;
@@ -144,6 +144,8 @@ public class EnlargeInstanceRequestBody  {
         this.type = type;
     }
 
+    
+
     public EnlargeInstanceRequestBody withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -164,6 +166,8 @@ public class EnlargeInstanceRequestBody  {
         this.specCode = specCode;
     }
 
+    
+
     public EnlargeInstanceRequestBody withNum(String num) {
         this.num = num;
         return this;
@@ -183,6 +187,8 @@ public class EnlargeInstanceRequestBody  {
     public void setNum(String num) {
         this.num = num;
     }
+
+    
 
     public EnlargeInstanceRequestBody withVolume(AddShardingNodeVolumeOption volume) {
         this.volume = volume;
@@ -210,6 +216,9 @@ public class EnlargeInstanceRequestBody  {
     public void setVolume(AddShardingNodeVolumeOption volume) {
         this.volume = volume;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -60,6 +60,8 @@ public class ListRulesResponse extends SdkResponse {
         this.marker = marker;
     }
 
+    
+
     public ListRulesResponse withCount(Long count) {
         this.count = count;
         return this;
@@ -80,6 +82,8 @@ public class ListRulesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListRulesResponse withRules(List<RuleResponse> rules) {
         this.rules = rules;
         return this;
@@ -87,9 +91,6 @@ public class ListRulesResponse extends SdkResponse {
 
     
     public ListRulesResponse addRulesItem(RuleResponse rulesItem) {
-        if (this.rules == null) {
-            this.rules = new ArrayList<>();
-        }
         this.rules.add(rulesItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListRulesResponse extends SdkResponse {
     public void setRules(List<RuleResponse> rules) {
         this.rules = rules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class CreatePoolSessionPersistenceOption  {
         this.cookieName = cookieName;
     }
 
+    
+
     public CreatePoolSessionPersistenceOption withType(String type) {
         this.type = type;
         return this;
@@ -75,6 +77,8 @@ public class CreatePoolSessionPersistenceOption  {
         this.type = type;
     }
 
+    
+
     public CreatePoolSessionPersistenceOption withPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
         return this;
@@ -94,6 +98,9 @@ public class CreatePoolSessionPersistenceOption  {
     public void setPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

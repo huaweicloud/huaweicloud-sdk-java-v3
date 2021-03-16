@@ -29,7 +29,7 @@ public class CreatePartnerCouponsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_ids")
     
-    private List<String> customerIds = new ArrayList<>();
+    private List<String> customerIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,6 +93,8 @@ public class CreatePartnerCouponsReq  {
         this.quotaId = quotaId;
     }
 
+    
+
     public CreatePartnerCouponsReq withCustomerIds(List<String> customerIds) {
         this.customerIds = customerIds;
         return this;
@@ -124,6 +126,8 @@ public class CreatePartnerCouponsReq  {
         this.customerIds = customerIds;
     }
 
+    
+
     public CreatePartnerCouponsReq withFaceValue(Double faceValue) {
         this.faceValue = faceValue;
         return this;
@@ -146,6 +150,8 @@ public class CreatePartnerCouponsReq  {
         this.faceValue = faceValue;
     }
 
+    
+
     public CreatePartnerCouponsReq withValidTime(String validTime) {
         this.validTime = validTime;
         return this;
@@ -165,6 +171,8 @@ public class CreatePartnerCouponsReq  {
     public void setValidTime(String validTime) {
         this.validTime = validTime;
     }
+
+    
 
     public CreatePartnerCouponsReq withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -186,6 +194,8 @@ public class CreatePartnerCouponsReq  {
         this.expireTime = expireTime;
     }
 
+    
+
     public CreatePartnerCouponsReq withCloudServiceTypes(List<String> cloudServiceTypes) {
         this.cloudServiceTypes = cloudServiceTypes;
         return this;
@@ -193,9 +203,6 @@ public class CreatePartnerCouponsReq  {
 
     
     public CreatePartnerCouponsReq addCloudServiceTypesItem(String cloudServiceTypesItem) {
-        if (this.cloudServiceTypes == null) {
-            this.cloudServiceTypes = new ArrayList<>();
-        }
         this.cloudServiceTypes.add(cloudServiceTypesItem);
         return this;
     }
@@ -220,6 +227,8 @@ public class CreatePartnerCouponsReq  {
         this.cloudServiceTypes = cloudServiceTypes;
     }
 
+    
+
     public CreatePartnerCouponsReq withProductIds(List<String> productIds) {
         this.productIds = productIds;
         return this;
@@ -227,9 +236,6 @@ public class CreatePartnerCouponsReq  {
 
     
     public CreatePartnerCouponsReq addProductIdsItem(String productIdsItem) {
-        if (this.productIds == null) {
-            this.productIds = new ArrayList<>();
-        }
         this.productIds.add(productIdsItem);
         return this;
     }
@@ -254,6 +260,8 @@ public class CreatePartnerCouponsReq  {
         this.productIds = productIds;
     }
 
+    
+
     public CreatePartnerCouponsReq withMemo(String memo) {
         this.memo = memo;
         return this;
@@ -274,6 +282,8 @@ public class CreatePartnerCouponsReq  {
         this.memo = memo;
     }
 
+    
+
     public CreatePartnerCouponsReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -293,6 +303,9 @@ public class CreatePartnerCouponsReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

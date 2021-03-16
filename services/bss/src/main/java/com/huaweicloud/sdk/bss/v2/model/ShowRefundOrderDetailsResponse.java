@@ -54,6 +54,8 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ShowRefundOrderDetailsResponse withRefundInfos(List<OrderRefundInfoV2> refundInfos) {
         this.refundInfos = refundInfos;
         return this;
@@ -61,9 +63,6 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
 
     
     public ShowRefundOrderDetailsResponse addRefundInfosItem(OrderRefundInfoV2 refundInfosItem) {
-        if (this.refundInfos == null) {
-            this.refundInfos = new ArrayList<>();
-        }
         this.refundInfos.add(refundInfosItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
     public void setRefundInfos(List<OrderRefundInfoV2> refundInfos) {
         this.refundInfos = refundInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

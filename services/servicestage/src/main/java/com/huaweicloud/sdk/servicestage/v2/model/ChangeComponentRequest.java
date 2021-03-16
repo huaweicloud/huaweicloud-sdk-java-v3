@@ -34,7 +34,7 @@ public class ChangeComponentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ComponentModify body = null;
+    private ComponentModify body;
 
     public ChangeComponentRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -56,6 +56,8 @@ public class ChangeComponentRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ChangeComponentRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -75,6 +77,8 @@ public class ChangeComponentRequest  {
     public void setComponentId(String componentId) {
         this.componentId = componentId;
     }
+
+    
 
     public ChangeComponentRequest withBody(ComponentModify body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ChangeComponentRequest  {
     public void setBody(ComponentModify body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

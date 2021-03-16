@@ -52,7 +52,7 @@ public class CreateCasesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateOrderIncidentV2Req body = null;
+    private CreateOrderIncidentV2Req body;
 
     public CreateCasesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -78,6 +78,8 @@ public class CreateCasesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CreateCasesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -99,6 +101,8 @@ public class CreateCasesRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public CreateCasesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
@@ -122,6 +126,8 @@ public class CreateCasesRequest  {
         this.xTimeZone = xTimeZone;
     }
 
+    
+
     public CreateCasesRequest withXPhoneVerifiedid(String xPhoneVerifiedid) {
         this.xPhoneVerifiedid = xPhoneVerifiedid;
         return this;
@@ -144,6 +150,8 @@ public class CreateCasesRequest  {
         this.xPhoneVerifiedid = xPhoneVerifiedid;
     }
 
+    
+
     public CreateCasesRequest withXEmailVerifiedid(String xEmailVerifiedid) {
         this.xEmailVerifiedid = xEmailVerifiedid;
         return this;
@@ -165,6 +173,8 @@ public class CreateCasesRequest  {
     public void setXEmailVerifiedid(String xEmailVerifiedid) {
         this.xEmailVerifiedid = xEmailVerifiedid;
     }
+
+    
 
     public CreateCasesRequest withBody(CreateOrderIncidentV2Req body) {
         this.body = body;
@@ -192,6 +202,9 @@ public class CreateCasesRequest  {
     public void setBody(CreateOrderIncidentV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

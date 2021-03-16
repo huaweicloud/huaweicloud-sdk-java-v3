@@ -41,13 +41,13 @@ public class ServicePolicyRoleResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private ServicePolicy policy = null;
+    private ServicePolicy policy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,6 +117,8 @@ public class ServicePolicyRoleResult  {
         this.catalog = catalog;
     }
 
+    
+
     public ServicePolicyRoleResult withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -137,6 +139,8 @@ public class ServicePolicyRoleResult  {
         this.displayName = displayName;
     }
 
+    
+
     public ServicePolicyRoleResult withDescription(String description) {
         this.description = description;
         return this;
@@ -156,6 +160,8 @@ public class ServicePolicyRoleResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ServicePolicyRoleResult withLinks(LinksSelf links) {
         this.links = links;
@@ -184,6 +190,8 @@ public class ServicePolicyRoleResult  {
         this.links = links;
     }
 
+    
+
     public ServicePolicyRoleResult withPolicy(ServicePolicy policy) {
         this.policy = policy;
         return this;
@@ -211,6 +219,8 @@ public class ServicePolicyRoleResult  {
         this.policy = policy;
     }
 
+    
+
     public ServicePolicyRoleResult withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
         return this;
@@ -230,6 +240,8 @@ public class ServicePolicyRoleResult  {
     public void setDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
     }
+
+    
 
     public ServicePolicyRoleResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -251,6 +263,8 @@ public class ServicePolicyRoleResult  {
         this.domainId = domainId;
     }
 
+    
+
     public ServicePolicyRoleResult withType(String type) {
         this.type = type;
         return this;
@@ -270,6 +284,8 @@ public class ServicePolicyRoleResult  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ServicePolicyRoleResult withId(String id) {
         this.id = id;
@@ -291,6 +307,8 @@ public class ServicePolicyRoleResult  {
         this.id = id;
     }
 
+    
+
     public ServicePolicyRoleResult withName(String name) {
         this.name = name;
         return this;
@@ -310,6 +328,8 @@ public class ServicePolicyRoleResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ServicePolicyRoleResult withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
@@ -331,6 +351,8 @@ public class ServicePolicyRoleResult  {
         this.updatedTime = updatedTime;
     }
 
+    
+
     public ServicePolicyRoleResult withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -351,6 +373,8 @@ public class ServicePolicyRoleResult  {
         this.createdTime = createdTime;
     }
 
+    
+
     public ServicePolicyRoleResult withReferences(String references) {
         this.references = references;
         return this;
@@ -370,6 +394,9 @@ public class ServicePolicyRoleResult  {
     public void setReferences(String references) {
         this.references = references;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

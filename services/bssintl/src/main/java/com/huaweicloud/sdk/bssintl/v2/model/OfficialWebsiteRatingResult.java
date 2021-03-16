@@ -58,6 +58,8 @@ public class OfficialWebsiteRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
+    
+
     public OfficialWebsiteRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -78,6 +80,8 @@ public class OfficialWebsiteRatingResult  {
         this.measureId = measureId;
     }
 
+    
+
     public OfficialWebsiteRatingResult withProductRatingResults(List<PeriodProductOfficialRatingResult> productRatingResults) {
         this.productRatingResults = productRatingResults;
         return this;
@@ -85,9 +89,6 @@ public class OfficialWebsiteRatingResult  {
 
     
     public OfficialWebsiteRatingResult addProductRatingResultsItem(PeriodProductOfficialRatingResult productRatingResultsItem) {
-        if (this.productRatingResults == null) {
-            this.productRatingResults = new ArrayList<>();
-        }
         this.productRatingResults.add(productRatingResultsItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class OfficialWebsiteRatingResult  {
     public void setProductRatingResults(List<PeriodProductOfficialRatingResult> productRatingResults) {
         this.productRatingResults = productRatingResults;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

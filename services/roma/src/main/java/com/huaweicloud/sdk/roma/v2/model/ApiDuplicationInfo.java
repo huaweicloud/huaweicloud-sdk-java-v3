@@ -262,6 +262,8 @@ public class ApiDuplicationInfo  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiDuplicationInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -281,6 +283,8 @@ public class ApiDuplicationInfo  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public ApiDuplicationInfo withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -302,6 +306,8 @@ public class ApiDuplicationInfo  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiDuplicationInfo withDuplicatedApis(List<DuplicateApiInfo> duplicatedApis) {
         this.duplicatedApis = duplicatedApis;
         return this;
@@ -309,9 +315,6 @@ public class ApiDuplicationInfo  {
 
     
     public ApiDuplicationInfo addDuplicatedApisItem(DuplicateApiInfo duplicatedApisItem) {
-        if (this.duplicatedApis == null) {
-            this.duplicatedApis = new ArrayList<>();
-        }
         this.duplicatedApis.add(duplicatedApisItem);
         return this;
     }
@@ -335,6 +338,9 @@ public class ApiDuplicationInfo  {
     public void setDuplicatedApis(List<DuplicateApiInfo> duplicatedApis) {
         this.duplicatedApis = duplicatedApis;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

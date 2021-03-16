@@ -22,7 +22,7 @@ public class BatchInviteMembersToChannelRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchInviteMembersToChannelRequestBody body = null;
+    private BatchInviteMembersToChannelRequestBody body;
 
     public BatchInviteMembersToChannelRequest withBody(BatchInviteMembersToChannelRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class BatchInviteMembersToChannelRequest  {
     public void setBody(BatchInviteMembersToChannelRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

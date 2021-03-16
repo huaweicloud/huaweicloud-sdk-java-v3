@@ -125,7 +125,7 @@ public class ShowJobInfosResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    private Entities entities = null;
+    private Entities entities;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -143,13 +143,13 @@ public class ShowJobInfosResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    private OffsetDateTime beginTime = null;
+    private OffsetDateTime beginTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private OffsetDateTime endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -195,6 +195,8 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowJobInfosResponse withEntities(Entities entities) {
         this.entities = entities;
         return this;
@@ -222,6 +224,8 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.entities = entities;
     }
 
+    
+
     public ShowJobInfosResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -241,6 +245,8 @@ public class ShowJobInfosResponse extends SdkResponse {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public ShowJobInfosResponse withJobType(String jobType) {
         this.jobType = jobType;
@@ -262,6 +268,8 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
+    
+
     public ShowJobInfosResponse withBeginTime(OffsetDateTime beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -281,6 +289,8 @@ public class ShowJobInfosResponse extends SdkResponse {
     public void setBeginTime(OffsetDateTime beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public ShowJobInfosResponse withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -302,6 +312,8 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
+    
+
     public ShowJobInfosResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -321,6 +333,8 @@ public class ShowJobInfosResponse extends SdkResponse {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public ShowJobInfosResponse withFailReason(String failReason) {
         this.failReason = failReason;
@@ -342,6 +356,8 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.failReason = failReason;
     }
 
+    
+
     public ShowJobInfosResponse withMessage(String message) {
         this.message = message;
         return this;
@@ -362,6 +378,8 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.message = message;
     }
 
+    
+
     public ShowJobInfosResponse withCode(String code) {
         this.code = code;
         return this;
@@ -381,6 +399,9 @@ public class ShowJobInfosResponse extends SdkResponse {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

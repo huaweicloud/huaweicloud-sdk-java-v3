@@ -28,7 +28,7 @@ public class AttachInternalIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AttachInternalIpRequestBody body = null;
+    private AttachInternalIpRequestBody body;
 
     public AttachInternalIpRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class AttachInternalIpRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AttachInternalIpRequest withBody(AttachInternalIpRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AttachInternalIpRequest  {
     public void setBody(AttachInternalIpRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

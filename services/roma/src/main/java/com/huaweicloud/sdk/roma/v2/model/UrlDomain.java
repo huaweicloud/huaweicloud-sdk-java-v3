@@ -133,7 +133,7 @@ public class UrlDomain  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_ssl_version")
     
-    private MinSslVersionEnum minSslVersion = MinSslVersionEnum.TLSV1_1;
+    private MinSslVersionEnum minSslVersion;
 
     public UrlDomain withId(String id) {
         this.id = id;
@@ -155,6 +155,8 @@ public class UrlDomain  {
         this.id = id;
     }
 
+    
+
     public UrlDomain withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -174,6 +176,8 @@ public class UrlDomain  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public UrlDomain withCnameStatus(Integer cnameStatus) {
         this.cnameStatus = cnameStatus;
@@ -195,6 +199,8 @@ public class UrlDomain  {
         this.cnameStatus = cnameStatus;
     }
 
+    
+
     public UrlDomain withSslId(String sslId) {
         this.sslId = sslId;
         return this;
@@ -214,6 +220,8 @@ public class UrlDomain  {
     public void setSslId(String sslId) {
         this.sslId = sslId;
     }
+
+    
 
     public UrlDomain withSslName(String sslName) {
         this.sslName = sslName;
@@ -235,6 +243,8 @@ public class UrlDomain  {
         this.sslName = sslName;
     }
 
+    
+
     public UrlDomain withMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
@@ -254,6 +264,9 @@ public class UrlDomain  {
     public void setMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

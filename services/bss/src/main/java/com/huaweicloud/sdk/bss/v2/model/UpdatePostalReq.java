@@ -69,7 +69,7 @@ public class UpdatePostalReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_default")
     
-    private Integer isDefault = 0;
+    private Integer isDefault;
 
     public UpdatePostalReq withAddressId(String addressId) {
         this.addressId = addressId;
@@ -91,6 +91,8 @@ public class UpdatePostalReq  {
         this.addressId = addressId;
     }
 
+    
+
     public UpdatePostalReq withRecipient(String recipient) {
         this.recipient = recipient;
         return this;
@@ -110,6 +112,8 @@ public class UpdatePostalReq  {
     public void setRecipient(String recipient) {
         this.recipient = recipient;
     }
+
+    
 
     public UpdatePostalReq withProvince(String province) {
         this.province = province;
@@ -131,6 +135,8 @@ public class UpdatePostalReq  {
         this.province = province;
     }
 
+    
+
     public UpdatePostalReq withCity(String city) {
         this.city = city;
         return this;
@@ -150,6 +156,8 @@ public class UpdatePostalReq  {
     public void setCity(String city) {
         this.city = city;
     }
+
+    
 
     public UpdatePostalReq withDistrict(String district) {
         this.district = district;
@@ -171,6 +179,8 @@ public class UpdatePostalReq  {
         this.district = district;
     }
 
+    
+
     public UpdatePostalReq withAddress(String address) {
         this.address = address;
         return this;
@@ -190,6 +200,8 @@ public class UpdatePostalReq  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public UpdatePostalReq withZipcode(String zipcode) {
         this.zipcode = zipcode;
@@ -211,6 +223,8 @@ public class UpdatePostalReq  {
         this.zipcode = zipcode;
     }
 
+    
+
     public UpdatePostalReq withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
@@ -230,6 +244,8 @@ public class UpdatePostalReq  {
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
+
+    
 
     public UpdatePostalReq withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
@@ -252,6 +268,9 @@ public class UpdatePostalReq  {
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

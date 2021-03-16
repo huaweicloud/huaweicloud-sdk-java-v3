@@ -49,6 +49,8 @@ public class LimitValue  {
         this.value1 = value1;
     }
 
+    
+
     public LimitValue withValue2(String value2) {
         this.value2 = value2;
         return this;
@@ -68,6 +70,9 @@ public class LimitValue  {
     public void setValue2(String value2) {
         this.value2 = value2;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

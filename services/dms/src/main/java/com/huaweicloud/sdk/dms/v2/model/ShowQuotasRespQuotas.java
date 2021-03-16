@@ -33,9 +33,6 @@ public class ShowQuotasRespQuotas  {
 
     
     public ShowQuotasRespQuotas addResourcesItem(ShowQuotasRespQuotasResources resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ShowQuotasRespQuotas  {
     public void setResources(List<ShowQuotasRespQuotasResources> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

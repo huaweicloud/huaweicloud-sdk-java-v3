@@ -22,7 +22,7 @@ public class LoginTokenAuth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="securitytoken")
     
-    private LoginTokenSecurityToken securitytoken = null;
+    private LoginTokenSecurityToken securitytoken;
 
     public LoginTokenAuth withSecuritytoken(LoginTokenSecurityToken securitytoken) {
         this.securitytoken = securitytoken;
@@ -50,6 +50,9 @@ public class LoginTokenAuth  {
     public void setSecuritytoken(LoginTokenSecurityToken securitytoken) {
         this.securitytoken = securitytoken;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

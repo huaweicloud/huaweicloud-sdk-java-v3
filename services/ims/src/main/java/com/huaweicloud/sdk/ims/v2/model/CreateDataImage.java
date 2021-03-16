@@ -63,6 +63,8 @@ public class CreateDataImage  {
         this.name = name;
     }
 
+    
+
     public CreateDataImage withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -82,6 +84,8 @@ public class CreateDataImage  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
 
     public CreateDataImage withDescription(String description) {
         this.description = description;
@@ -103,6 +107,8 @@ public class CreateDataImage  {
         this.description = description;
     }
 
+    
+
     public CreateDataImage withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -110,9 +116,6 @@ public class CreateDataImage  {
 
     
     public CreateDataImage addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -136,6 +139,9 @@ public class CreateDataImage  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

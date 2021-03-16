@@ -57,6 +57,8 @@ public class ExportCertificateResponse extends SdkResponse {
         this.certificate = certificate;
     }
 
+    
+
     public ExportCertificateResponse withCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
         return this;
@@ -77,6 +79,8 @@ public class ExportCertificateResponse extends SdkResponse {
         this.certificateChain = certificateChain;
     }
 
+    
+
     public ExportCertificateResponse withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -96,6 +100,9 @@ public class ExportCertificateResponse extends SdkResponse {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

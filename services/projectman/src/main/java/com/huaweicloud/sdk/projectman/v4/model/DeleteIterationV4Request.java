@@ -49,6 +49,8 @@ public class DeleteIterationV4Request  {
         this.projectId = projectId;
     }
 
+    
+
     public DeleteIterationV4Request withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteIterationV4Request  {
     public void setIterationId(Integer iterationId) {
         this.iterationId = iterationId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

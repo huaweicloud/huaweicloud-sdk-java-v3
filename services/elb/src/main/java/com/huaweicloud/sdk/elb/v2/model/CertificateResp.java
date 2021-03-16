@@ -191,6 +191,8 @@ public class CertificateResp  {
         this.id = id;
     }
 
+    
+
     public CertificateResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -210,6 +212,8 @@ public class CertificateResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public CertificateResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -231,6 +235,8 @@ public class CertificateResp  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CertificateResp withName(String name) {
         this.name = name;
         return this;
@@ -250,6 +256,8 @@ public class CertificateResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CertificateResp withDescription(String description) {
         this.description = description;
@@ -271,6 +279,8 @@ public class CertificateResp  {
         this.description = description;
     }
 
+    
+
     public CertificateResp withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -290,6 +300,8 @@ public class CertificateResp  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public CertificateResp withDomain(String domain) {
         this.domain = domain;
@@ -311,6 +323,8 @@ public class CertificateResp  {
         this.domain = domain;
     }
 
+    
+
     public CertificateResp withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -330,6 +344,8 @@ public class CertificateResp  {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
 
     public CertificateResp withCertificate(String certificate) {
         this.certificate = certificate;
@@ -351,6 +367,8 @@ public class CertificateResp  {
         this.certificate = certificate;
     }
 
+    
+
     public CertificateResp withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -370,6 +388,8 @@ public class CertificateResp  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public CertificateResp withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -391,6 +411,8 @@ public class CertificateResp  {
         this.createTime = createTime;
     }
 
+    
+
     public CertificateResp withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -410,6 +432,9 @@ public class CertificateResp  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

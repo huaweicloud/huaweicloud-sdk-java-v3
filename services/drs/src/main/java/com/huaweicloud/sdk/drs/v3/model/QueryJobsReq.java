@@ -552,6 +552,8 @@ public class QueryJobsReq  {
         this.curPage = curPage;
     }
 
+    
+
     public QueryJobsReq withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
@@ -574,6 +576,8 @@ public class QueryJobsReq  {
         this.perPage = perPage;
     }
 
+    
+
     public QueryJobsReq withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
@@ -593,6 +597,8 @@ public class QueryJobsReq  {
     public void setDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
     }
+
+    
 
     public QueryJobsReq withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
@@ -614,6 +620,8 @@ public class QueryJobsReq  {
         this.engineType = engineType;
     }
 
+    
+
     public QueryJobsReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -633,6 +641,8 @@ public class QueryJobsReq  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public QueryJobsReq withName(String name) {
         this.name = name;
@@ -654,6 +664,8 @@ public class QueryJobsReq  {
         this.name = name;
     }
 
+    
+
     public QueryJobsReq withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
@@ -673,6 +685,8 @@ public class QueryJobsReq  {
     public void setNetType(NetTypeEnum netType) {
         this.netType = netType;
     }
+
+    
 
     public QueryJobsReq withStatus(StatusEnum status) {
         this.status = status;
@@ -694,6 +708,8 @@ public class QueryJobsReq  {
         this.status = status;
     }
 
+    
+
     public QueryJobsReq withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
@@ -702,9 +718,6 @@ public class QueryJobsReq  {
     
 
     public QueryJobsReq putTagsItem(String key, String tagsItem) {
-         if (this.tags == null) {
-            this.tags = new HashMap<>();
-         }
         this.tags.put(key, tagsItem);
         return this;
     }
@@ -727,6 +740,9 @@ public class QueryJobsReq  {
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

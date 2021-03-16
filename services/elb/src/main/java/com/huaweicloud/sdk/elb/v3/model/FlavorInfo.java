@@ -61,6 +61,8 @@ public class FlavorInfo  {
         this.connection = connection;
     }
 
+    
+
     public FlavorInfo withCps(Integer cps) {
         this.cps = cps;
         return this;
@@ -80,6 +82,8 @@ public class FlavorInfo  {
     public void setCps(Integer cps) {
         this.cps = cps;
     }
+
+    
 
     public FlavorInfo withQps(Integer qps) {
         this.qps = qps;
@@ -101,6 +105,8 @@ public class FlavorInfo  {
         this.qps = qps;
     }
 
+    
+
     public FlavorInfo withBandwidth(Integer bandwidth) {
         this.bandwidth = bandwidth;
         return this;
@@ -120,6 +126,9 @@ public class FlavorInfo  {
     public void setBandwidth(Integer bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

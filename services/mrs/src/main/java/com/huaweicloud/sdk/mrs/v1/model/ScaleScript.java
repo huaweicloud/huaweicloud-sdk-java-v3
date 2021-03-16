@@ -47,7 +47,7 @@ public class ScaleScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    private List<String> nodes = new ArrayList<>();
+    private List<String> nodes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -255,6 +255,8 @@ public class ScaleScript  {
         this.name = name;
     }
 
+    
+
     public ScaleScript withUri(String uri) {
         this.uri = uri;
         return this;
@@ -275,6 +277,8 @@ public class ScaleScript  {
         this.uri = uri;
     }
 
+    
+
     public ScaleScript withParameters(String parameters) {
         this.parameters = parameters;
         return this;
@@ -294,6 +298,8 @@ public class ScaleScript  {
     public void setParameters(String parameters) {
         this.parameters = parameters;
     }
+
+    
 
     public ScaleScript withNodes(List<String> nodes) {
         this.nodes = nodes;
@@ -326,6 +332,8 @@ public class ScaleScript  {
         this.nodes = nodes;
     }
 
+    
+
     public ScaleScript withActiveMaster(Boolean activeMaster) {
         this.activeMaster = activeMaster;
         return this;
@@ -345,6 +353,8 @@ public class ScaleScript  {
     public void setActiveMaster(Boolean activeMaster) {
         this.activeMaster = activeMaster;
     }
+
+    
 
     public ScaleScript withFailAction(FailActionEnum failAction) {
         this.failAction = failAction;
@@ -366,6 +376,8 @@ public class ScaleScript  {
         this.failAction = failAction;
     }
 
+    
+
     public ScaleScript withActionStage(ActionStageEnum actionStage) {
         this.actionStage = actionStage;
         return this;
@@ -385,6 +397,9 @@ public class ScaleScript  {
     public void setActionStage(ActionStageEnum actionStage) {
         this.actionStage = actionStage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

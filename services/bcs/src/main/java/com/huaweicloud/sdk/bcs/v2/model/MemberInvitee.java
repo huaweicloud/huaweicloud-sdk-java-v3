@@ -55,6 +55,8 @@ public class MemberInvitee  {
         this.inviteeBcsId = inviteeBcsId;
     }
 
+    
+
     public MemberInvitee withInviteeUserId(String inviteeUserId) {
         this.inviteeUserId = inviteeUserId;
         return this;
@@ -75,6 +77,8 @@ public class MemberInvitee  {
         this.inviteeUserId = inviteeUserId;
     }
 
+    
+
     public MemberInvitee withInviteeUsername(String inviteeUsername) {
         this.inviteeUsername = inviteeUsername;
         return this;
@@ -94,6 +98,9 @@ public class MemberInvitee  {
     public void setInviteeUsername(String inviteeUsername) {
         this.inviteeUsername = inviteeUsername;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

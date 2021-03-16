@@ -139,7 +139,7 @@ public class ConnectionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    private Object config = null;
+    private Object config;
 
     public ConnectionInfo withName(String name) {
         this.name = name;
@@ -161,6 +161,8 @@ public class ConnectionInfo  {
         this.name = name;
     }
 
+    
+
     public ConnectionInfo withConnectionType(ConnectionTypeEnum connectionType) {
         this.connectionType = connectionType;
         return this;
@@ -181,6 +183,8 @@ public class ConnectionInfo  {
         this.connectionType = connectionType;
     }
 
+    
+
     public ConnectionInfo withConfig(Object config) {
         this.config = config;
         return this;
@@ -200,6 +204,9 @@ public class ConnectionInfo  {
     public void setConfig(Object config) {
         this.config = config;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

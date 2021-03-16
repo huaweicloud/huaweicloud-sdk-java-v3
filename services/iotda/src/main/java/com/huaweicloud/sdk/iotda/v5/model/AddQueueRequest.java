@@ -28,7 +28,7 @@ public class AddQueueRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QueueInfo body = null;
+    private QueueInfo body;
 
     public AddQueueRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class AddQueueRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AddQueueRequest withBody(QueueInfo body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AddQueueRequest  {
     public void setBody(QueueInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

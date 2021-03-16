@@ -24,7 +24,7 @@ public class CountPreoccupyIpNumResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="preoccupy_ip")
     
-    private PreoccupyIp preoccupyIp = null;
+    private PreoccupyIp preoccupyIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class CountPreoccupyIpNumResponse extends SdkResponse {
         this.preoccupyIp = preoccupyIp;
     }
 
+    
+
     public CountPreoccupyIpNumResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -78,6 +80,9 @@ public class CountPreoccupyIpNumResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

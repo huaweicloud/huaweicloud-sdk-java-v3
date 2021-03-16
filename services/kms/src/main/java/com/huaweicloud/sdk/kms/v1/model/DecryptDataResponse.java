@@ -51,6 +51,8 @@ public class DecryptDataResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
+    
+
     public DecryptDataResponse withPlainText(String plainText) {
         this.plainText = plainText;
         return this;
@@ -70,6 +72,9 @@ public class DecryptDataResponse extends SdkResponse {
     public void setPlainText(String plainText) {
         this.plainText = plainText;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

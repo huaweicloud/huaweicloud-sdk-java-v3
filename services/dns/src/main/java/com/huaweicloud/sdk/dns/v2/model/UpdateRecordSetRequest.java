@@ -34,7 +34,7 @@ public class UpdateRecordSetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateRecordSetReq body = null;
+    private UpdateRecordSetReq body;
 
     public UpdateRecordSetRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -56,6 +56,8 @@ public class UpdateRecordSetRequest  {
         this.zoneId = zoneId;
     }
 
+    
+
     public UpdateRecordSetRequest withRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateRecordSetRequest  {
     public void setRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
     }
+
+    
 
     public UpdateRecordSetRequest withBody(UpdateRecordSetReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateRecordSetRequest  {
     public void setBody(UpdateRecordSetReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

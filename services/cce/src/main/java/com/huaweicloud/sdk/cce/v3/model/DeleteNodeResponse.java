@@ -26,31 +26,31 @@ public class DeleteNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Node";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private NodeMetadata metadata = null;
+    private NodeMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3NodeSpec spec = null;
+    private V3NodeSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private V3NodeStatus status = null;
+    private V3NodeStatus status;
 
     public DeleteNodeResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -72,6 +72,8 @@ public class DeleteNodeResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public DeleteNodeResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -91,6 +93,8 @@ public class DeleteNodeResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public DeleteNodeResponse withMetadata(NodeMetadata metadata) {
         this.metadata = metadata;
@@ -119,6 +123,8 @@ public class DeleteNodeResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public DeleteNodeResponse withSpec(V3NodeSpec spec) {
         this.spec = spec;
         return this;
@@ -146,6 +152,8 @@ public class DeleteNodeResponse extends SdkResponse {
         this.spec = spec;
     }
 
+    
+
     public DeleteNodeResponse withStatus(V3NodeStatus status) {
         this.status = status;
         return this;
@@ -172,6 +180,9 @@ public class DeleteNodeResponse extends SdkResponse {
     public void setStatus(V3NodeStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

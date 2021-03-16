@@ -33,9 +33,6 @@ public class LdApiTest  {
 
     
     public LdApiTest addParametersItem(LdApiParameterTest parametersItem) {
-        if (this.parameters == null) {
-            this.parameters = new ArrayList<>();
-        }
         this.parameters.add(parametersItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class LdApiTest  {
     public void setParameters(List<LdApiParameterTest> parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

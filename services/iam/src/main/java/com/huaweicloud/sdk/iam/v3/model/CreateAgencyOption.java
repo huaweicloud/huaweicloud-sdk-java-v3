@@ -155,6 +155,8 @@ public class CreateAgencyOption  {
         this.name = name;
     }
 
+    
+
     public CreateAgencyOption withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -174,6 +176,8 @@ public class CreateAgencyOption  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public CreateAgencyOption withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
@@ -195,6 +199,8 @@ public class CreateAgencyOption  {
         this.trustDomainId = trustDomainId;
     }
 
+    
+
     public CreateAgencyOption withTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
         return this;
@@ -214,6 +220,8 @@ public class CreateAgencyOption  {
     public void setTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
     }
+
+    
 
     public CreateAgencyOption withDescription(String description) {
         this.description = description;
@@ -235,6 +243,8 @@ public class CreateAgencyOption  {
         this.description = description;
     }
 
+    
+
     public CreateAgencyOption withDuration(DurationEnum duration) {
         this.duration = duration;
         return this;
@@ -254,6 +264,9 @@ public class CreateAgencyOption  {
     public void setDuration(DurationEnum duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,13 +57,13 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListApisNotBoundWithSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -85,6 +85,8 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListApisNotBoundWithSignatureKeyV2Request withSignId(String signId) {
         this.signId = signId;
         return this;
@@ -104,6 +106,8 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
     public void setSignId(String signId) {
         this.signId = signId;
     }
+
+    
 
     public ListApisNotBoundWithSignatureKeyV2Request withEnvId(String envId) {
         this.envId = envId;
@@ -125,6 +129,8 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
         this.envId = envId;
     }
 
+    
+
     public ListApisNotBoundWithSignatureKeyV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -144,6 +150,8 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public ListApisNotBoundWithSignatureKeyV2Request withApiName(String apiName) {
         this.apiName = apiName;
@@ -165,6 +173,8 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
         this.apiName = apiName;
     }
 
+    
+
     public ListApisNotBoundWithSignatureKeyV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -185,6 +195,8 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
         this.groupId = groupId;
     }
 
+    
+
     public ListApisNotBoundWithSignatureKeyV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -204,6 +216,8 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListApisNotBoundWithSignatureKeyV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -226,6 +240,9 @@ public class ListApisNotBoundWithSignatureKeyV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,6 +57,8 @@ public class AreaCodeSimpleInfoV2  {
         this.id = id;
     }
 
+    
+
     public AreaCodeSimpleInfoV2 withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
@@ -77,6 +79,8 @@ public class AreaCodeSimpleInfoV2  {
         this.areaCode = areaCode;
     }
 
+    
+
     public AreaCodeSimpleInfoV2 withAreaName(String areaName) {
         this.areaName = areaName;
         return this;
@@ -96,6 +100,9 @@ public class AreaCodeSimpleInfoV2  {
     public void setAreaName(String areaName) {
         this.areaName = areaName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

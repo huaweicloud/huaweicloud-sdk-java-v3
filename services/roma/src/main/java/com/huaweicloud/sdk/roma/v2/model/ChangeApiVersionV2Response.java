@@ -54,7 +54,7 @@ public class ChangeApiVersionV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_time")
     
-    private OffsetDateTime publishTime = null;
+    private OffsetDateTime publishTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,6 +82,8 @@ public class ChangeApiVersionV2Response extends SdkResponse {
         this.publishId = publishId;
     }
 
+    
+
     public ChangeApiVersionV2Response withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -101,6 +103,8 @@ public class ChangeApiVersionV2Response extends SdkResponse {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public ChangeApiVersionV2Response withApiName(String apiName) {
         this.apiName = apiName;
@@ -122,6 +126,8 @@ public class ChangeApiVersionV2Response extends SdkResponse {
         this.apiName = apiName;
     }
 
+    
+
     public ChangeApiVersionV2Response withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -141,6 +147,8 @@ public class ChangeApiVersionV2Response extends SdkResponse {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public ChangeApiVersionV2Response withRemark(String remark) {
         this.remark = remark;
@@ -162,6 +170,8 @@ public class ChangeApiVersionV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public ChangeApiVersionV2Response withPublishTime(OffsetDateTime publishTime) {
         this.publishTime = publishTime;
         return this;
@@ -182,6 +192,8 @@ public class ChangeApiVersionV2Response extends SdkResponse {
         this.publishTime = publishTime;
     }
 
+    
+
     public ChangeApiVersionV2Response withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -201,6 +213,9 @@ public class ChangeApiVersionV2Response extends SdkResponse {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

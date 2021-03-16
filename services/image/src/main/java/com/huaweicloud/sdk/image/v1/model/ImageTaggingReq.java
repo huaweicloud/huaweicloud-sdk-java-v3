@@ -39,7 +39,7 @@ public class ImageTaggingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="threshold")
     
-    private Float threshold = 0.0f;
+    private Float threshold;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,6 +67,8 @@ public class ImageTaggingReq  {
         this.image = image;
     }
 
+    
+
     public ImageTaggingReq withUrl(String url) {
         this.url = url;
         return this;
@@ -87,6 +89,8 @@ public class ImageTaggingReq  {
         this.url = url;
     }
 
+    
+
     public ImageTaggingReq withLanguage(String language) {
         this.language = language;
         return this;
@@ -106,6 +110,8 @@ public class ImageTaggingReq  {
     public void setLanguage(String language) {
         this.language = language;
     }
+
+    
 
     public ImageTaggingReq withThreshold(Float threshold) {
         this.threshold = threshold;
@@ -129,6 +135,8 @@ public class ImageTaggingReq  {
         this.threshold = threshold;
     }
 
+    
+
     public ImageTaggingReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -148,6 +156,9 @@ public class ImageTaggingReq  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

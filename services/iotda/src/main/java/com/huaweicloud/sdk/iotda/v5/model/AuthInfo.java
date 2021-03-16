@@ -39,13 +39,13 @@ public class AuthInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secure_access")
     
-    private Boolean secureAccess = true;
+    private Boolean secureAccess;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
-    private Integer timeout = 0;
+    private Integer timeout;
 
     public AuthInfo withAuthType(String authType) {
         this.authType = authType;
@@ -67,6 +67,8 @@ public class AuthInfo  {
         this.authType = authType;
     }
 
+    
+
     public AuthInfo withSecret(String secret) {
         this.secret = secret;
         return this;
@@ -86,6 +88,8 @@ public class AuthInfo  {
     public void setSecret(String secret) {
         this.secret = secret;
     }
+
+    
 
     public AuthInfo withFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
@@ -107,6 +111,8 @@ public class AuthInfo  {
         this.fingerprint = fingerprint;
     }
 
+    
+
     public AuthInfo withSecureAccess(Boolean secureAccess) {
         this.secureAccess = secureAccess;
         return this;
@@ -126,6 +132,8 @@ public class AuthInfo  {
     public void setSecureAccess(Boolean secureAccess) {
         this.secureAccess = secureAccess;
     }
+
+    
 
     public AuthInfo withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -148,6 +156,9 @@ public class AuthInfo  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

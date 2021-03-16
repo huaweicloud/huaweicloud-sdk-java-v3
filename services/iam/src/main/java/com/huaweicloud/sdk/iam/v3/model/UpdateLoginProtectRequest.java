@@ -28,7 +28,7 @@ public class UpdateLoginProtectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateLoginProjectReq body = null;
+    private UpdateLoginProjectReq body;
 
     public UpdateLoginProtectRequest withUserId(String userId) {
         this.userId = userId;
@@ -49,6 +49,8 @@ public class UpdateLoginProtectRequest  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public UpdateLoginProtectRequest withBody(UpdateLoginProjectReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateLoginProtectRequest  {
     public void setBody(UpdateLoginProjectReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

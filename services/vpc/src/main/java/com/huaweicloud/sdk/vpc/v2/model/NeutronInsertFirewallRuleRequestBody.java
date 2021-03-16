@@ -55,6 +55,8 @@ public class NeutronInsertFirewallRuleRequestBody  {
         this.firewallRuleId = firewallRuleId;
     }
 
+    
+
     public NeutronInsertFirewallRuleRequestBody withInsertAfter(String insertAfter) {
         this.insertAfter = insertAfter;
         return this;
@@ -75,6 +77,8 @@ public class NeutronInsertFirewallRuleRequestBody  {
         this.insertAfter = insertAfter;
     }
 
+    
+
     public NeutronInsertFirewallRuleRequestBody withInsertBefore(String insertBefore) {
         this.insertBefore = insertBefore;
         return this;
@@ -94,6 +98,9 @@ public class NeutronInsertFirewallRuleRequestBody  {
     public void setInsertBefore(String insertBefore) {
         this.insertBefore = insertBefore;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

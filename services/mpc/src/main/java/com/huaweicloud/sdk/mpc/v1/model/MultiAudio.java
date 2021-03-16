@@ -46,9 +46,6 @@ public class MultiAudio  {
 
     
     public MultiAudio addTracksInfoItem(TracksInfo tracksInfoItem) {
-        if (this.tracksInfo == null) {
-            this.tracksInfo = new ArrayList<>();
-        }
         this.tracksInfo.add(tracksInfoItem);
         return this;
     }
@@ -73,6 +70,8 @@ public class MultiAudio  {
         this.tracksInfo = tracksInfo;
     }
 
+    
+
     public MultiAudio withAudioFiles(List<AudioFile> audioFiles) {
         this.audioFiles = audioFiles;
         return this;
@@ -80,9 +79,6 @@ public class MultiAudio  {
 
     
     public MultiAudio addAudioFilesItem(AudioFile audioFilesItem) {
-        if (this.audioFiles == null) {
-            this.audioFiles = new ArrayList<>();
-        }
         this.audioFiles.add(audioFilesItem);
         return this;
     }
@@ -107,6 +103,8 @@ public class MultiAudio  {
         this.audioFiles = audioFiles;
     }
 
+    
+
     public MultiAudio withDefaultLanguage(String defaultLanguage) {
         this.defaultLanguage = defaultLanguage;
         return this;
@@ -126,6 +124,9 @@ public class MultiAudio  {
     public void setDefaultLanguage(String defaultLanguage) {
         this.defaultLanguage = defaultLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

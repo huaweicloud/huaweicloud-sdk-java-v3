@@ -53,9 +53,6 @@ public class ListSinkTasksResponse extends SdkResponse {
 
     
     public ListSinkTasksResponse addTasksItem(ListSinkTasksRespTasks tasksItem) {
-        if (this.tasks == null) {
-            this.tasks = new ArrayList<>();
-        }
         this.tasks.add(tasksItem);
         return this;
     }
@@ -80,6 +77,8 @@ public class ListSinkTasksResponse extends SdkResponse {
         this.tasks = tasks;
     }
 
+    
+
     public ListSinkTasksResponse withTotalNumber(Integer totalNumber) {
         this.totalNumber = totalNumber;
         return this;
@@ -99,6 +98,8 @@ public class ListSinkTasksResponse extends SdkResponse {
     public void setTotalNumber(Integer totalNumber) {
         this.totalNumber = totalNumber;
     }
+
+    
 
     public ListSinkTasksResponse withMaxTasks(Integer maxTasks) {
         this.maxTasks = maxTasks;
@@ -120,6 +121,8 @@ public class ListSinkTasksResponse extends SdkResponse {
         this.maxTasks = maxTasks;
     }
 
+    
+
     public ListSinkTasksResponse withQuotaTasks(Integer quotaTasks) {
         this.quotaTasks = quotaTasks;
         return this;
@@ -139,6 +142,9 @@ public class ListSinkTasksResponse extends SdkResponse {
     public void setQuotaTasks(Integer quotaTasks) {
         this.quotaTasks = quotaTasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

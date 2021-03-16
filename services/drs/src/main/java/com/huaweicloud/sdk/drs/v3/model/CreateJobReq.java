@@ -333,7 +333,7 @@ public class CreateJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="muti_write")
     
-    private Boolean mutiWrite = false;
+    private Boolean mutiWrite;
     /**
      * 网络类型
      */
@@ -507,19 +507,19 @@ public class CreateJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_type")
     
-    private NodeTypeEnum nodeType = NodeTypeEnum.HIGH;
+    private NodeTypeEnum nodeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_endpoint")
     
-    private Endpoint sourceEndpoint = null;
+    private Endpoint sourceEndpoint;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_endpoint")
     
-    private Endpoint targetEndpoint = null;
+    private Endpoint targetEndpoint;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -673,6 +673,8 @@ public class CreateJobReq  {
         this.bindEip = bindEip;
     }
 
+    
+
     public CreateJobReq withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
@@ -692,6 +694,8 @@ public class CreateJobReq  {
     public void setDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
     }
+
+    
 
     public CreateJobReq withName(String name) {
         this.name = name;
@@ -713,6 +717,8 @@ public class CreateJobReq  {
         this.name = name;
     }
 
+    
+
     public CreateJobReq withDescription(String description) {
         this.description = description;
         return this;
@@ -732,6 +738,8 @@ public class CreateJobReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateJobReq withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
@@ -753,6 +761,8 @@ public class CreateJobReq  {
         this.engineType = engineType;
     }
 
+    
+
     public CreateJobReq withIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
         return this;
@@ -772,6 +782,8 @@ public class CreateJobReq  {
     public void setIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
     }
+
+    
 
     public CreateJobReq withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
@@ -793,6 +805,8 @@ public class CreateJobReq  {
         this.jobDirection = jobDirection;
     }
 
+    
+
     public CreateJobReq withMutiWrite(Boolean mutiWrite) {
         this.mutiWrite = mutiWrite;
         return this;
@@ -813,6 +827,8 @@ public class CreateJobReq  {
         this.mutiWrite = mutiWrite;
     }
 
+    
+
     public CreateJobReq withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
@@ -832,6 +848,8 @@ public class CreateJobReq  {
     public void setNetType(NetTypeEnum netType) {
         this.netType = netType;
     }
+
+    
 
     public CreateJobReq withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
@@ -855,6 +873,8 @@ public class CreateJobReq  {
         this.nodeNum = nodeNum;
     }
 
+    
+
     public CreateJobReq withNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -874,6 +894,8 @@ public class CreateJobReq  {
     public void setNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public CreateJobReq withSourceEndpoint(Endpoint sourceEndpoint) {
         this.sourceEndpoint = sourceEndpoint;
@@ -902,6 +924,8 @@ public class CreateJobReq  {
         this.sourceEndpoint = sourceEndpoint;
     }
 
+    
+
     public CreateJobReq withTargetEndpoint(Endpoint targetEndpoint) {
         this.targetEndpoint = targetEndpoint;
         return this;
@@ -929,6 +953,8 @@ public class CreateJobReq  {
         this.targetEndpoint = targetEndpoint;
     }
 
+    
+
     public CreateJobReq withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -936,9 +962,6 @@ public class CreateJobReq  {
 
     
     public CreateJobReq addTagsItem(ResourceTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -963,6 +986,8 @@ public class CreateJobReq  {
         this.tags = tags;
     }
 
+    
+
     public CreateJobReq withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
@@ -982,6 +1007,8 @@ public class CreateJobReq  {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
+
+    
 
     public CreateJobReq withCustomizeSutnetId(String customizeSutnetId) {
         this.customizeSutnetId = customizeSutnetId;
@@ -1003,6 +1030,8 @@ public class CreateJobReq  {
         this.customizeSutnetId = customizeSutnetId;
     }
 
+    
+
     public CreateJobReq withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -1022,6 +1051,8 @@ public class CreateJobReq  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public CreateJobReq withMasterAz(String masterAz) {
         this.masterAz = masterAz;
@@ -1043,6 +1074,8 @@ public class CreateJobReq  {
         this.masterAz = masterAz;
     }
 
+    
+
     public CreateJobReq withSlaveAz(String slaveAz) {
         this.slaveAz = slaveAz;
         return this;
@@ -1063,6 +1096,8 @@ public class CreateJobReq  {
         this.slaveAz = slaveAz;
     }
 
+    
+
     public CreateJobReq withSysTags(List<ResourceTag> sysTags) {
         this.sysTags = sysTags;
         return this;
@@ -1070,9 +1105,6 @@ public class CreateJobReq  {
 
     
     public CreateJobReq addSysTagsItem(ResourceTag sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
@@ -1097,6 +1129,8 @@ public class CreateJobReq  {
         this.sysTags = sysTags;
     }
 
+    
+
     public CreateJobReq withExpiredDays(String expiredDays) {
         this.expiredDays = expiredDays;
         return this;
@@ -1116,6 +1150,9 @@ public class CreateJobReq  {
     public void setExpiredDays(String expiredDays) {
         this.expiredDays = expiredDays;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,7 +63,7 @@ public class CreateDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product")
     
-    private ProductReferer product = null;
+    private ProductReferer product;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -279,19 +279,19 @@ public class CreateDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authentication")
     
-    private Authentication authentication = null;
+    private Authentication authentication;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -552,9 +552,6 @@ public class CreateDeviceResponse extends SdkResponse {
 
     
     public CreateDeviceResponse addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -579,6 +576,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
+    
+
     public CreateDeviceResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -598,6 +597,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public CreateDeviceResponse withParentDeviceId(Integer parentDeviceId) {
         this.parentDeviceId = parentDeviceId;
@@ -619,6 +620,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.parentDeviceId = parentDeviceId;
     }
 
+    
+
     public CreateDeviceResponse withParentDeviceName(String parentDeviceName) {
         this.parentDeviceName = parentDeviceName;
         return this;
@@ -638,6 +641,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setParentDeviceName(String parentDeviceName) {
         this.parentDeviceName = parentDeviceName;
     }
+
+    
 
     public CreateDeviceResponse withProduct(ProductReferer product) {
         this.product = product;
@@ -666,6 +671,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.product = product;
     }
 
+    
+
     public CreateDeviceResponse withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -685,6 +692,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public CreateDeviceResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -706,6 +715,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateDeviceResponse withClientId(String clientId) {
         this.clientId = clientId;
         return this;
@@ -725,6 +736,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
+
+    
 
     public CreateDeviceResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -746,6 +759,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
+    
+
     public CreateDeviceResponse withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -765,6 +780,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public CreateDeviceResponse withStatus(StatusEnum status) {
         this.status = status;
@@ -786,6 +803,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateDeviceResponse withOnlineStatus(OnlineStatusEnum onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
@@ -806,6 +825,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.onlineStatus = onlineStatus;
     }
 
+    
+
     public CreateDeviceResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -825,6 +846,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateDeviceResponse withAuthentication(Authentication authentication) {
         this.authentication = authentication;
@@ -853,6 +876,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.authentication = authentication;
     }
 
+    
+
     public CreateDeviceResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
         return this;
@@ -879,6 +904,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
     }
+
+    
 
     public CreateDeviceResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
@@ -907,6 +934,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public CreateDeviceResponse withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -914,9 +943,6 @@ public class CreateDeviceResponse extends SdkResponse {
 
     
     public CreateDeviceResponse addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -941,6 +967,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public CreateDeviceResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -962,6 +990,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
     }
+
+    
 
     public CreateDeviceResponse withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
@@ -985,6 +1015,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
 
+    
+
     public CreateDeviceResponse withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
         return this;
@@ -1005,6 +1037,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.connectAddress = connectAddress;
     }
 
+    
+
     public CreateDeviceResponse withSslConnectAddress(String sslConnectAddress) {
         this.sslConnectAddress = sslConnectAddress;
         return this;
@@ -1024,6 +1058,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setSslConnectAddress(String sslConnectAddress) {
         this.sslConnectAddress = sslConnectAddress;
     }
+
+    
 
     public CreateDeviceResponse withLastLoginDatetime(Long lastLoginDatetime) {
         this.lastLoginDatetime = lastLoginDatetime;
@@ -1047,6 +1083,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.lastLoginDatetime = lastLoginDatetime;
     }
 
+    
+
     public CreateDeviceResponse withNodeType(Integer nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -1066,6 +1104,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setNodeType(Integer nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public CreateDeviceResponse withDeviceType(DeviceTypeEnum deviceType) {
         this.deviceType = deviceType;
@@ -1087,6 +1127,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.deviceType = deviceType;
     }
 
+    
+
     public CreateDeviceResponse withClientIp(String clientIp) {
         this.clientIp = clientIp;
         return this;
@@ -1107,6 +1149,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.clientIp = clientIp;
     }
 
+    
+
     public CreateDeviceResponse withKeepAlive(String keepAlive) {
         this.keepAlive = keepAlive;
         return this;
@@ -1126,6 +1170,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setKeepAlive(String keepAlive) {
         this.keepAlive = keepAlive;
     }
+
+    
 
     public CreateDeviceResponse withLastActiveTime(Long lastActiveTime) {
         this.lastActiveTime = lastActiveTime;
@@ -1149,6 +1195,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.lastActiveTime = lastActiveTime;
     }
 
+    
+
     public CreateDeviceResponse withVersion(String version) {
         this.version = version;
         return this;
@@ -1168,6 +1216,8 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public CreateDeviceResponse withPluginId(PluginIdEnum pluginId) {
         this.pluginId = pluginId;
@@ -1189,6 +1239,8 @@ public class CreateDeviceResponse extends SdkResponse {
         this.pluginId = pluginId;
     }
 
+    
+
     public CreateDeviceResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -1208,6 +1260,9 @@ public class CreateDeviceResponse extends SdkResponse {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class BatchCreateOrDeleteResourceTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ResourceTag> tags = new ArrayList<>();
+    private List<ResourceTag> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class BatchCreateOrDeleteResourceTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public BatchCreateOrDeleteResourceTagsRequestBody withAction(String action) {
         this.action = action;
         return this;
@@ -82,6 +84,9 @@ public class BatchCreateOrDeleteResourceTagsRequestBody  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

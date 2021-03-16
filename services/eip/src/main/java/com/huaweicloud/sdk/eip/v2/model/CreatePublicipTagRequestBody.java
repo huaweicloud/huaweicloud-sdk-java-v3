@@ -22,7 +22,7 @@ public class CreatePublicipTagRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    private ResourceTagOption tag = null;
+    private ResourceTagOption tag;
 
     public CreatePublicipTagRequestBody withTag(ResourceTagOption tag) {
         this.tag = tag;
@@ -50,6 +50,9 @@ public class CreatePublicipTagRequestBody  {
     public void setTag(ResourceTagOption tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,31 +24,31 @@ public class CCEJob  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Job";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private CCEJobMetadata metadata = null;
+    private CCEJobMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private CCEJobSpec spec = null;
+    private CCEJobSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private CCEJobStatus status = null;
+    private CCEJobStatus status;
 
     public CCEJob withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -70,6 +70,8 @@ public class CCEJob  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public CCEJob withKind(String kind) {
         this.kind = kind;
         return this;
@@ -89,6 +91,8 @@ public class CCEJob  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public CCEJob withMetadata(CCEJobMetadata metadata) {
         this.metadata = metadata;
@@ -117,6 +121,8 @@ public class CCEJob  {
         this.metadata = metadata;
     }
 
+    
+
     public CCEJob withSpec(CCEJobSpec spec) {
         this.spec = spec;
         return this;
@@ -144,6 +150,8 @@ public class CCEJob  {
         this.spec = spec;
     }
 
+    
+
     public CCEJob withStatus(CCEJobStatus status) {
         this.status = status;
         return this;
@@ -170,6 +178,9 @@ public class CCEJob  {
     public void setStatus(CCEJobStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

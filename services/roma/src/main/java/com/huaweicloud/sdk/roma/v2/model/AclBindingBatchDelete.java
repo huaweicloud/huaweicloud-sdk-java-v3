@@ -32,9 +32,6 @@ public class AclBindingBatchDelete  {
 
     
     public AclBindingBatchDelete addAclBindingsItem(String aclBindingsItem) {
-        if (this.aclBindings == null) {
-            this.aclBindings = new ArrayList<>();
-        }
         this.aclBindings.add(aclBindingsItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class AclBindingBatchDelete  {
     public void setAclBindings(List<String> aclBindings) {
         this.aclBindings = aclBindings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

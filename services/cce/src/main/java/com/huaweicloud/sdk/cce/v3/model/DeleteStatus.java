@@ -67,6 +67,8 @@ public class DeleteStatus  {
         this.added = added;
     }
 
+    
+
     public DeleteStatus withCurrentTotal(Integer currentTotal) {
         this.currentTotal = currentTotal;
         return this;
@@ -86,6 +88,8 @@ public class DeleteStatus  {
     public void setCurrentTotal(Integer currentTotal) {
         this.currentTotal = currentTotal;
     }
+
+    
 
     public DeleteStatus withDeleted(Integer deleted) {
         this.deleted = deleted;
@@ -107,6 +111,8 @@ public class DeleteStatus  {
         this.deleted = deleted;
     }
 
+    
+
     public DeleteStatus withPreviousTotal(Integer previousTotal) {
         this.previousTotal = previousTotal;
         return this;
@@ -127,6 +133,8 @@ public class DeleteStatus  {
         this.previousTotal = previousTotal;
     }
 
+    
+
     public DeleteStatus withUpdated(Integer updated) {
         this.updated = updated;
         return this;
@@ -146,6 +154,9 @@ public class DeleteStatus  {
     public void setUpdated(Integer updated) {
         this.updated = updated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -110,7 +110,7 @@ public class Video  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_policy")
     
-    private OutputPolicyEnum outputPolicy = OutputPolicyEnum.TRANSCODE;
+    private OutputPolicyEnum outputPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -134,25 +134,25 @@ public class Video  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
-    private Integer level = 15;
+    private Integer level;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="preset")
     
-    private Integer preset = 3;
+    private Integer preset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ref_frames_count")
     
-    private Integer refFramesCount = 4;
+    private Integer refFramesCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_iframes_interval")
     
-    private Integer maxIframesInterval = 5;
+    private Integer maxIframesInterval;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -170,7 +170,7 @@ public class Video  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync_timestamp")
     
-    private Boolean syncTimestamp = false;
+    private Boolean syncTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -200,7 +200,7 @@ public class Video  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="GOP_structure")
     
-    private Boolean goPStructure = false;
+    private Boolean goPStructure;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -228,6 +228,8 @@ public class Video  {
         this.outputPolicy = outputPolicy;
     }
 
+    
+
     public Video withCodec(Integer codec) {
         this.codec = codec;
         return this;
@@ -249,6 +251,8 @@ public class Video  {
     public void setCodec(Integer codec) {
         this.codec = codec;
     }
+
+    
 
     public Video withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
@@ -272,6 +276,8 @@ public class Video  {
         this.bitrate = bitrate;
     }
 
+    
+
     public Video withProfile(Integer profile) {
         this.profile = profile;
         return this;
@@ -293,6 +299,8 @@ public class Video  {
     public void setProfile(Integer profile) {
         this.profile = profile;
     }
+
+    
 
     public Video withLevel(Integer level) {
         this.level = level;
@@ -316,6 +324,8 @@ public class Video  {
         this.level = level;
     }
 
+    
+
     public Video withPreset(Integer preset) {
         this.preset = preset;
         return this;
@@ -337,6 +347,8 @@ public class Video  {
     public void setPreset(Integer preset) {
         this.preset = preset;
     }
+
+    
 
     public Video withRefFramesCount(Integer refFramesCount) {
         this.refFramesCount = refFramesCount;
@@ -360,6 +372,8 @@ public class Video  {
         this.refFramesCount = refFramesCount;
     }
 
+    
+
     public Video withMaxIframesInterval(Integer maxIframesInterval) {
         this.maxIframesInterval = maxIframesInterval;
         return this;
@@ -381,6 +395,8 @@ public class Video  {
     public void setMaxIframesInterval(Integer maxIframesInterval) {
         this.maxIframesInterval = maxIframesInterval;
     }
+
+    
 
     public Video withBframesCount(Integer bframesCount) {
         this.bframesCount = bframesCount;
@@ -404,6 +420,8 @@ public class Video  {
         this.bframesCount = bframesCount;
     }
 
+    
+
     public Video withFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
         return this;
@@ -426,6 +444,8 @@ public class Video  {
         this.frameRate = frameRate;
     }
 
+    
+
     public Video withSyncTimestamp(Boolean syncTimestamp) {
         this.syncTimestamp = syncTimestamp;
         return this;
@@ -445,6 +465,8 @@ public class Video  {
     public void setSyncTimestamp(Boolean syncTimestamp) {
         this.syncTimestamp = syncTimestamp;
     }
+
+    
 
     public Video withWidth(Integer width) {
         this.width = width;
@@ -468,6 +490,8 @@ public class Video  {
         this.width = width;
     }
 
+    
+
     public Video withHeight(Integer height) {
         this.height = height;
         return this;
@@ -489,6 +513,8 @@ public class Video  {
     public void setHeight(Integer height) {
         this.height = height;
     }
+
+    
 
     public Video withAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
@@ -512,6 +538,8 @@ public class Video  {
         this.aspectRatio = aspectRatio;
     }
 
+    
+
     public Video withBlackCut(Integer blackCut) {
         this.blackCut = blackCut;
         return this;
@@ -534,6 +562,8 @@ public class Video  {
         this.blackCut = blackCut;
     }
 
+    
+
     public Video withGoPStructure(Boolean goPStructure) {
         this.goPStructure = goPStructure;
         return this;
@@ -554,6 +584,8 @@ public class Video  {
         this.goPStructure = goPStructure;
     }
 
+    
+
     public Video withSrFactor(String srFactor) {
         this.srFactor = srFactor;
         return this;
@@ -573,6 +605,9 @@ public class Video  {
     public void setSrFactor(String srFactor) {
         this.srFactor = srFactor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

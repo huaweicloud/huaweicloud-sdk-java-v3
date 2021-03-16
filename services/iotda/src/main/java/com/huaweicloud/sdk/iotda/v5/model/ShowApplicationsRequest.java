@@ -49,6 +49,8 @@ public class ShowApplicationsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowApplicationsRequest withDefaultApp(Boolean defaultApp) {
         this.defaultApp = defaultApp;
         return this;
@@ -68,6 +70,9 @@ public class ShowApplicationsRequest  {
     public void setDefaultApp(Boolean defaultApp) {
         this.defaultApp = defaultApp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

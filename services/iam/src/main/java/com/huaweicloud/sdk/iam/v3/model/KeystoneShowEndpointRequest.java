@@ -42,6 +42,9 @@ public class KeystoneShowEndpointRequest  {
     public void setEndpointId(String endpointId) {
         this.endpointId = endpointId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

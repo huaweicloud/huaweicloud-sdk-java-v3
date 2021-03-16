@@ -30,7 +30,7 @@ public class SimpleFlavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<Link> links = new ArrayList<>();
+    private List<Link> links = null;
     
     public SimpleFlavor withId(String id) {
         this.id = id;
@@ -51,6 +51,8 @@ public class SimpleFlavor  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public SimpleFlavor withLinks(List<Link> links) {
         this.links = links;
@@ -82,6 +84,9 @@ public class SimpleFlavor  {
     public void setLinks(List<Link> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

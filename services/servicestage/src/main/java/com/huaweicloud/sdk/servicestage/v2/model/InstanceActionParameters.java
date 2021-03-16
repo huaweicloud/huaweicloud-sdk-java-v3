@@ -57,6 +57,8 @@ public class InstanceActionParameters  {
         this.replica = replica;
     }
 
+    
+
     public InstanceActionParameters withHosts(List<String> hosts) {
         this.hosts = hosts;
         return this;
@@ -64,9 +66,6 @@ public class InstanceActionParameters  {
 
     
     public InstanceActionParameters addHostsItem(String hostsItem) {
-        if (this.hosts == null) {
-            this.hosts = new ArrayList<>();
-        }
         this.hosts.add(hostsItem);
         return this;
     }
@@ -91,6 +90,8 @@ public class InstanceActionParameters  {
         this.hosts = hosts;
     }
 
+    
+
     public InstanceActionParameters withVersion(String version) {
         this.version = version;
         return this;
@@ -110,6 +111,9 @@ public class InstanceActionParameters  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

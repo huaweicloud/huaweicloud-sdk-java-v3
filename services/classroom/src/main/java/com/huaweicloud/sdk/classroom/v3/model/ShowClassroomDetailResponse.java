@@ -66,7 +66,7 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit")
     
-    private BigDecimal credit = null;
+    private BigDecimal credit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -142,6 +142,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowClassroomDetailResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -161,6 +163,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowClassroomDetailResponse withAnnouncement(String announcement) {
         this.announcement = announcement;
@@ -182,6 +186,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.announcement = announcement;
     }
 
+    
+
     public ShowClassroomDetailResponse withAnnouncementTime(String announcementTime) {
         this.announcementTime = announcementTime;
         return this;
@@ -201,6 +207,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setAnnouncementTime(String announcementTime) {
         this.announcementTime = announcementTime;
     }
+
+    
 
     public ShowClassroomDetailResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -222,6 +230,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowClassroomDetailResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -241,6 +251,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ShowClassroomDetailResponse withTeacher(String teacher) {
         this.teacher = teacher;
@@ -262,6 +274,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.teacher = teacher;
     }
 
+    
+
     public ShowClassroomDetailResponse withCredit(BigDecimal credit) {
         this.credit = credit;
         return this;
@@ -281,6 +295,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setCredit(BigDecimal credit) {
         this.credit = credit;
     }
+
+    
 
     public ShowClassroomDetailResponse withStartTime(String startTime) {
         this.startTime = startTime;
@@ -302,6 +318,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
+    
+
     public ShowClassroomDetailResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -321,6 +339,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowClassroomDetailResponse withRole(String role) {
         this.role = role;
@@ -342,6 +362,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.role = role;
     }
 
+    
+
     public ShowClassroomDetailResponse withSchool(String school) {
         this.school = school;
         return this;
@@ -361,6 +383,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setSchool(String school) {
         this.school = school;
     }
+
+    
 
     public ShowClassroomDetailResponse withContentCount(Integer contentCount) {
         this.contentCount = contentCount;
@@ -382,6 +406,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.contentCount = contentCount;
     }
 
+    
+
     public ShowClassroomDetailResponse withCoursewareCount(Integer coursewareCount) {
         this.coursewareCount = coursewareCount;
         return this;
@@ -401,6 +427,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setCoursewareCount(Integer coursewareCount) {
         this.coursewareCount = coursewareCount;
     }
+
+    
 
     public ShowClassroomDetailResponse withJobCount(Integer jobCount) {
         this.jobCount = jobCount;
@@ -422,6 +450,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.jobCount = jobCount;
     }
 
+    
+
     public ShowClassroomDetailResponse withMemberCount(Integer memberCount) {
         this.memberCount = memberCount;
         return this;
@@ -442,6 +472,8 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.memberCount = memberCount;
     }
 
+    
+
     public ShowClassroomDetailResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -461,6 +493,9 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

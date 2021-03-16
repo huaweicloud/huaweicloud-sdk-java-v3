@@ -135,6 +135,8 @@ public class ListPoolsRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListPoolsRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -142,9 +144,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -169,6 +168,8 @@ public class ListPoolsRequest  {
         this.description = description;
     }
 
+    
+
     public ListPoolsRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -176,9 +177,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
@@ -203,6 +201,8 @@ public class ListPoolsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListPoolsRequest withHealthmonitorId(List<String> healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
         return this;
@@ -210,9 +210,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addHealthmonitorIdItem(String healthmonitorIdItem) {
-        if (this.healthmonitorId == null) {
-            this.healthmonitorId = new ArrayList<>();
-        }
         this.healthmonitorId.add(healthmonitorIdItem);
         return this;
     }
@@ -237,6 +234,8 @@ public class ListPoolsRequest  {
         this.healthmonitorId = healthmonitorId;
     }
 
+    
+
     public ListPoolsRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -244,9 +243,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -271,6 +267,8 @@ public class ListPoolsRequest  {
         this.id = id;
     }
 
+    
+
     public ListPoolsRequest withIpVersion(List<String> ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -278,9 +276,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addIpVersionItem(String ipVersionItem) {
-        if (this.ipVersion == null) {
-            this.ipVersion = new ArrayList<>();
-        }
         this.ipVersion.add(ipVersionItem);
         return this;
     }
@@ -305,6 +300,8 @@ public class ListPoolsRequest  {
         this.ipVersion = ipVersion;
     }
 
+    
+
     public ListPoolsRequest withLbAlgorithm(List<String> lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
         return this;
@@ -312,9 +309,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addLbAlgorithmItem(String lbAlgorithmItem) {
-        if (this.lbAlgorithm == null) {
-            this.lbAlgorithm = new ArrayList<>();
-        }
         this.lbAlgorithm.add(lbAlgorithmItem);
         return this;
     }
@@ -339,6 +333,8 @@ public class ListPoolsRequest  {
         this.lbAlgorithm = lbAlgorithm;
     }
 
+    
+
     public ListPoolsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -361,6 +357,8 @@ public class ListPoolsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPoolsRequest withLoadbalancerId(List<String> loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
@@ -368,9 +366,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
-        if (this.loadbalancerId == null) {
-            this.loadbalancerId = new ArrayList<>();
-        }
         this.loadbalancerId.add(loadbalancerIdItem);
         return this;
     }
@@ -395,6 +390,8 @@ public class ListPoolsRequest  {
         this.loadbalancerId = loadbalancerId;
     }
 
+    
+
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -415,6 +412,8 @@ public class ListPoolsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListPoolsRequest withMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
         return this;
@@ -422,9 +421,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addMemberAddressItem(String memberAddressItem) {
-        if (this.memberAddress == null) {
-            this.memberAddress = new ArrayList<>();
-        }
         this.memberAddress.add(memberAddressItem);
         return this;
     }
@@ -449,6 +445,8 @@ public class ListPoolsRequest  {
         this.memberAddress = memberAddress;
     }
 
+    
+
     public ListPoolsRequest withMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
         return this;
@@ -469,6 +467,8 @@ public class ListPoolsRequest  {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
     }
 
+    
+
     public ListPoolsRequest withMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
         return this;
@@ -476,9 +476,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
-        if (this.memberDeviceId == null) {
-            this.memberDeviceId = new ArrayList<>();
-        }
         this.memberDeviceId.add(memberDeviceIdItem);
         return this;
     }
@@ -503,6 +500,8 @@ public class ListPoolsRequest  {
         this.memberDeviceId = memberDeviceId;
     }
 
+    
+
     public ListPoolsRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -510,9 +509,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -537,6 +533,8 @@ public class ListPoolsRequest  {
         this.name = name;
     }
 
+    
+
     public ListPoolsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
@@ -557,6 +555,8 @@ public class ListPoolsRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListPoolsRequest withProtocol(List<String> protocol) {
         this.protocol = protocol;
         return this;
@@ -564,9 +564,6 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addProtocolItem(String protocolItem) {
-        if (this.protocol == null) {
-            this.protocol = new ArrayList<>();
-        }
         this.protocol.add(protocolItem);
         return this;
     }
@@ -590,6 +587,9 @@ public class ListPoolsRequest  {
     public void setProtocol(List<String> protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

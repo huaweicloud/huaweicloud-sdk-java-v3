@@ -55,6 +55,8 @@ public class TimeRange  {
         this.startTime = startTime;
     }
 
+    
+
     public TimeRange withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -75,6 +77,8 @@ public class TimeRange  {
         this.endTime = endTime;
     }
 
+    
+
     public TimeRange withDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
         return this;
@@ -94,6 +98,9 @@ public class TimeRange  {
     public void setDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

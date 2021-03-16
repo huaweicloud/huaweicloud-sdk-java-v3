@@ -49,6 +49,8 @@ public class AuthScopeDomain  {
         this.id = id;
     }
 
+    
+
     public AuthScopeDomain withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +70,9 @@ public class AuthScopeDomain  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

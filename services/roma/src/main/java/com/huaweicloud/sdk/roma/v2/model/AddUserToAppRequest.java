@@ -34,7 +34,7 @@ public class AddUserToAppRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddUserToApp body = null;
+    private AddUserToApp body;
 
     public AddUserToAppRequest withAppId(String appId) {
         this.appId = appId;
@@ -56,6 +56,8 @@ public class AddUserToAppRequest  {
         this.appId = appId;
     }
 
+    
+
     public AddUserToAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class AddUserToAppRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AddUserToAppRequest withBody(AddUserToApp body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class AddUserToAppRequest  {
     public void setBody(AddUserToApp body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

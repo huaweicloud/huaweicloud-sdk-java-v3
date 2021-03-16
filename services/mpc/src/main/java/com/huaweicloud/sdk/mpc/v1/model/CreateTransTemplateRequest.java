@@ -22,7 +22,7 @@ public class CreateTransTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TransTemplate body = null;
+    private TransTemplate body;
 
     public CreateTransTemplateRequest withBody(TransTemplate body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateTransTemplateRequest  {
     public void setBody(TransTemplate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

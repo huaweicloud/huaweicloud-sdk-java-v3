@@ -253,7 +253,7 @@ public class OffSiteBackupForList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
     public OffSiteBackupForList withId(String id) {
         this.id = id;
@@ -275,6 +275,8 @@ public class OffSiteBackupForList  {
         this.id = id;
     }
 
+    
+
     public OffSiteBackupForList withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -294,6 +296,8 @@ public class OffSiteBackupForList  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public OffSiteBackupForList withName(String name) {
         this.name = name;
@@ -315,6 +319,8 @@ public class OffSiteBackupForList  {
         this.name = name;
     }
 
+    
+
     public OffSiteBackupForList withDatabases(List<BackupDatabase> databases) {
         this.databases = databases;
         return this;
@@ -322,9 +328,6 @@ public class OffSiteBackupForList  {
 
     
     public OffSiteBackupForList addDatabasesItem(BackupDatabase databasesItem) {
-        if (this.databases == null) {
-            this.databases = new ArrayList<>();
-        }
         this.databases.add(databasesItem);
         return this;
     }
@@ -349,6 +352,8 @@ public class OffSiteBackupForList  {
         this.databases = databases;
     }
 
+    
+
     public OffSiteBackupForList withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -368,6 +373,8 @@ public class OffSiteBackupForList  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public OffSiteBackupForList withEndTime(String endTime) {
         this.endTime = endTime;
@@ -389,6 +396,8 @@ public class OffSiteBackupForList  {
         this.endTime = endTime;
     }
 
+    
+
     public OffSiteBackupForList withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -408,6 +417,8 @@ public class OffSiteBackupForList  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public OffSiteBackupForList withType(TypeEnum type) {
         this.type = type;
@@ -429,6 +440,8 @@ public class OffSiteBackupForList  {
         this.type = type;
     }
 
+    
+
     public OffSiteBackupForList withSize(Long size) {
         this.size = size;
         return this;
@@ -448,6 +461,8 @@ public class OffSiteBackupForList  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public OffSiteBackupForList withDatastore(Datastore datastore) {
         this.datastore = datastore;
@@ -475,6 +490,9 @@ public class OffSiteBackupForList  {
     public void setDatastore(Datastore datastore) {
         this.datastore = datastore;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

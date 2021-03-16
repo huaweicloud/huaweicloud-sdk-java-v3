@@ -37,9 +37,9 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="work_date")
+    @JsonProperty(value="work_time")
     
-    private String workDate;
+    private String workTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="issue_id")
     
-    private String issueId;
+    private Integer issueId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -109,6 +109,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         this.projectName = projectName;
     }
 
+    
+
     public ShowProjectWorkHoursResponseBodyWorkHours withNickName(String nickName) {
         this.nickName = nickName;
         return this;
@@ -128,6 +130,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
+    
 
     public ShowProjectWorkHoursResponseBodyWorkHours withUserName(String userName) {
         this.userName = userName;
@@ -149,8 +153,10 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         this.userName = userName;
     }
 
-    public ShowProjectWorkHoursResponseBodyWorkHours withWorkDate(String workDate) {
-        this.workDate = workDate;
+    
+
+    public ShowProjectWorkHoursResponseBodyWorkHours withWorkTime(String workTime) {
+        this.workTime = workTime;
         return this;
     }
 
@@ -159,15 +165,17 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
 
     /**
      * 工时日期
-     * @return workDate
+     * @return workTime
      */
-    public String getWorkDate() {
-        return workDate;
+    public String getWorkTime() {
+        return workTime;
     }
 
-    public void setWorkDate(String workDate) {
-        this.workDate = workDate;
+    public void setWorkTime(String workTime) {
+        this.workTime = workTime;
     }
+
+    
 
     public ShowProjectWorkHoursResponseBodyWorkHours withWorkHoursNum(String workHoursNum) {
         this.workHoursNum = workHoursNum;
@@ -189,6 +197,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         this.workHoursNum = workHoursNum;
     }
 
+    
+
     public ShowProjectWorkHoursResponseBodyWorkHours withSummary(String summary) {
         this.summary = summary;
         return this;
@@ -208,6 +218,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
     public void setSummary(String summary) {
         this.summary = summary;
     }
+
+    
 
     public ShowProjectWorkHoursResponseBodyWorkHours withWorkHoursTypeName(String workHoursTypeName) {
         this.workHoursTypeName = workHoursTypeName;
@@ -229,7 +241,9 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         this.workHoursTypeName = workHoursTypeName;
     }
 
-    public ShowProjectWorkHoursResponseBodyWorkHours withIssueId(String issueId) {
+    
+
+    public ShowProjectWorkHoursResponseBodyWorkHours withIssueId(Integer issueId) {
         this.issueId = issueId;
         return this;
     }
@@ -238,16 +252,18 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
 
 
     /**
-     * 工作项编码
+     * 工作项id
      * @return issueId
      */
-    public String getIssueId() {
+    public Integer getIssueId() {
         return issueId;
     }
 
-    public void setIssueId(String issueId) {
+    public void setIssueId(Integer issueId) {
         this.issueId = issueId;
     }
+
+    
 
     public ShowProjectWorkHoursResponseBodyWorkHours withIssueType(String issueType) {
         this.issueType = issueType;
@@ -269,6 +285,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         this.issueType = issueType;
     }
 
+    
+
     public ShowProjectWorkHoursResponseBodyWorkHours withSubject(String subject) {
         this.subject = subject;
         return this;
@@ -288,6 +306,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+    
 
     public ShowProjectWorkHoursResponseBodyWorkHours withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
@@ -309,6 +329,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         this.createdTime = createdTime;
     }
 
+    
+
     public ShowProjectWorkHoursResponseBodyWorkHours withClosedTime(String closedTime) {
         this.closedTime = closedTime;
         return this;
@@ -328,6 +350,9 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
     public void setClosedTime(String closedTime) {
         this.closedTime = closedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -340,7 +365,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         return Objects.equals(this.projectName, showProjectWorkHoursResponseBodyWorkHours.projectName) &&
             Objects.equals(this.nickName, showProjectWorkHoursResponseBodyWorkHours.nickName) &&
             Objects.equals(this.userName, showProjectWorkHoursResponseBodyWorkHours.userName) &&
-            Objects.equals(this.workDate, showProjectWorkHoursResponseBodyWorkHours.workDate) &&
+            Objects.equals(this.workTime, showProjectWorkHoursResponseBodyWorkHours.workTime) &&
             Objects.equals(this.workHoursNum, showProjectWorkHoursResponseBodyWorkHours.workHoursNum) &&
             Objects.equals(this.summary, showProjectWorkHoursResponseBodyWorkHours.summary) &&
             Objects.equals(this.workHoursTypeName, showProjectWorkHoursResponseBodyWorkHours.workHoursTypeName) &&
@@ -352,7 +377,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(projectName, nickName, userName, workDate, workHoursNum, summary, workHoursTypeName, issueId, issueType, subject, createdTime, closedTime);
+        return Objects.hash(projectName, nickName, userName, workTime, workHoursNum, summary, workHoursTypeName, issueId, issueType, subject, createdTime, closedTime);
     }
     @Override
     public String toString() {
@@ -361,7 +386,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    workDate: ").append(toIndentedString(workDate)).append("\n");
+        sb.append("    workTime: ").append(toIndentedString(workTime)).append("\n");
         sb.append("    workHoursNum: ").append(toIndentedString(workHoursNum)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    workHoursTypeName: ").append(toIndentedString(workHoursTypeName)).append("\n");

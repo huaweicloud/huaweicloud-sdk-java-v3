@@ -22,7 +22,7 @@ public class BackupReplicateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="replicate")
     
-    private BackupReplicateReqBody replicate = null;
+    private BackupReplicateReqBody replicate;
 
     public BackupReplicateReq withReplicate(BackupReplicateReqBody replicate) {
         this.replicate = replicate;
@@ -50,6 +50,9 @@ public class BackupReplicateReq  {
     public void setReplicate(BackupReplicateReqBody replicate) {
         this.replicate = replicate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

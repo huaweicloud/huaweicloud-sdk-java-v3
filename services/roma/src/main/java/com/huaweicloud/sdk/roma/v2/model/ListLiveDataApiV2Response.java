@@ -61,6 +61,8 @@ public class ListLiveDataApiV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListLiveDataApiV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListLiveDataApiV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListLiveDataApiV2Response withApis(List<LdApiInfo> apis) {
         this.apis = apis;
         return this;
@@ -88,9 +92,6 @@ public class ListLiveDataApiV2Response extends SdkResponse {
 
     
     public ListLiveDataApiV2Response addApisItem(LdApiInfo apisItem) {
-        if (this.apis == null) {
-            this.apis = new ArrayList<>();
-        }
         this.apis.add(apisItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListLiveDataApiV2Response extends SdkResponse {
     public void setApis(List<LdApiInfo> apis) {
         this.apis = apis;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

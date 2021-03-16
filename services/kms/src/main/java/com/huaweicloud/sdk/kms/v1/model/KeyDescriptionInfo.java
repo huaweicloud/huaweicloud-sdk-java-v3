@@ -49,6 +49,8 @@ public class KeyDescriptionInfo  {
         this.keyId = keyId;
     }
 
+    
+
     public KeyDescriptionInfo withKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
         return this;
@@ -68,6 +70,9 @@ public class KeyDescriptionInfo  {
     public void setKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

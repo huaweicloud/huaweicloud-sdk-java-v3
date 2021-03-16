@@ -57,6 +57,8 @@ public class CreateApplicationResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public CreateApplicationResponse withApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
         return this;
@@ -77,6 +79,8 @@ public class CreateApplicationResponse extends SdkResponse {
         this.applicationUrn = applicationUrn;
     }
 
+    
+
     public CreateApplicationResponse withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
@@ -96,6 +100,9 @@ public class CreateApplicationResponse extends SdkResponse {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

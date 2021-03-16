@@ -58,6 +58,8 @@ public class ConfigurationForUpdate  {
         this.name = name;
     }
 
+    
+
     public ConfigurationForUpdate withDescription(String description) {
         this.description = description;
         return this;
@@ -78,6 +80,8 @@ public class ConfigurationForUpdate  {
         this.description = description;
     }
 
+    
+
     public ConfigurationForUpdate withValues(Map<String, String> values) {
         this.values = values;
         return this;
@@ -86,9 +90,6 @@ public class ConfigurationForUpdate  {
     
 
     public ConfigurationForUpdate putValuesItem(String key, String valuesItem) {
-         if (this.values == null) {
-            this.values = new HashMap<>();
-         }
         this.values.put(key, valuesItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class ConfigurationForUpdate  {
     public void setValues(Map<String, String> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

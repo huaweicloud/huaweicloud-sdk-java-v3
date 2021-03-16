@@ -28,7 +28,7 @@ public class CreateConsumerGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateConsumerGroupReq body = null;
+    private CreateConsumerGroupReq body;
 
     public CreateConsumerGroupRequest withQueueId(String queueId) {
         this.queueId = queueId;
@@ -49,6 +49,8 @@ public class CreateConsumerGroupRequest  {
     public void setQueueId(String queueId) {
         this.queueId = queueId;
     }
+
+    
 
     public CreateConsumerGroupRequest withBody(CreateConsumerGroupReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateConsumerGroupRequest  {
     public void setBody(CreateConsumerGroupReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

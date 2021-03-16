@@ -99,6 +99,8 @@ public class TokenInfo  {
         this.token = token;
     }
 
+    
+
     public TokenInfo withTmpWsToken(String tmpWsToken) {
         this.tmpWsToken = tmpWsToken;
         return this;
@@ -118,6 +120,8 @@ public class TokenInfo  {
     public void setTmpWsToken(String tmpWsToken) {
         this.tmpWsToken = tmpWsToken;
     }
+
+    
 
     public TokenInfo withWsURL(String wsURL) {
         this.wsURL = wsURL;
@@ -139,6 +143,8 @@ public class TokenInfo  {
         this.wsURL = wsURL;
     }
 
+    
+
     public TokenInfo withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -158,6 +164,8 @@ public class TokenInfo  {
     public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public TokenInfo withUserID(String userID) {
         this.userID = userID;
@@ -179,6 +187,8 @@ public class TokenInfo  {
         this.userID = userID;
     }
 
+    
+
     public TokenInfo withOrgID(String orgID) {
         this.orgID = orgID;
         return this;
@@ -198,6 +208,8 @@ public class TokenInfo  {
     public void setOrgID(String orgID) {
         this.orgID = orgID;
     }
+
+    
 
     public TokenInfo withParticipantID(String participantID) {
         this.participantID = participantID;
@@ -219,6 +231,8 @@ public class TokenInfo  {
         this.participantID = participantID;
     }
 
+    
+
     public TokenInfo withConfTokenExpireTime(Integer confTokenExpireTime) {
         this.confTokenExpireTime = confTokenExpireTime;
         return this;
@@ -238,6 +252,8 @@ public class TokenInfo  {
     public void setConfTokenExpireTime(Integer confTokenExpireTime) {
         this.confTokenExpireTime = confTokenExpireTime;
     }
+
+    
 
     public TokenInfo withVmrCurrentConfID(String vmrCurrentConfID) {
         this.vmrCurrentConfID = vmrCurrentConfID;
@@ -259,6 +275,8 @@ public class TokenInfo  {
         this.vmrCurrentConfID = vmrCurrentConfID;
     }
 
+    
+
     public TokenInfo withSupportNotifyType(List<String> supportNotifyType) {
         this.supportNotifyType = supportNotifyType;
         return this;
@@ -266,9 +284,6 @@ public class TokenInfo  {
 
     
     public TokenInfo addSupportNotifyTypeItem(String supportNotifyTypeItem) {
-        if (this.supportNotifyType == null) {
-            this.supportNotifyType = new ArrayList<>();
-        }
         this.supportNotifyType.add(supportNotifyTypeItem);
         return this;
     }
@@ -292,6 +307,9 @@ public class TokenInfo  {
     public void setSupportNotifyType(List<String> supportNotifyType) {
         this.supportNotifyType = supportNotifyType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

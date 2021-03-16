@@ -61,6 +61,8 @@ public class RunRequestV2  {
         this.username = username;
     }
 
+    
+
     public RunRequestV2 withAccessToken(String accessToken) {
         this.accessToken = accessToken;
         return this;
@@ -80,6 +82,8 @@ public class RunRequestV2  {
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
+
+    
 
     public RunRequestV2 withGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
@@ -101,6 +105,8 @@ public class RunRequestV2  {
         this.gitUrl = gitUrl;
     }
 
+    
+
     public RunRequestV2 withGitBranch(String gitBranch) {
         this.gitBranch = gitBranch;
         return this;
@@ -120,6 +126,9 @@ public class RunRequestV2  {
     public void setGitBranch(String gitBranch) {
         this.gitBranch = gitBranch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

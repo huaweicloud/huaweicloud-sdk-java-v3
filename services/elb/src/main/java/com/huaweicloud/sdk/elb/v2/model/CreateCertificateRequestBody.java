@@ -85,6 +85,8 @@ public class CreateCertificateRequestBody  {
         this.certificate = certificate;
     }
 
+    
+
     public CreateCertificateRequestBody withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -104,6 +106,8 @@ public class CreateCertificateRequestBody  {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
 
     public CreateCertificateRequestBody withDescription(String description) {
         this.description = description;
@@ -125,6 +129,8 @@ public class CreateCertificateRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateCertificateRequestBody withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -144,6 +150,8 @@ public class CreateCertificateRequestBody  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public CreateCertificateRequestBody withName(String name) {
         this.name = name;
@@ -165,6 +173,8 @@ public class CreateCertificateRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateCertificateRequestBody withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -184,6 +194,8 @@ public class CreateCertificateRequestBody  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateCertificateRequestBody withType(String type) {
         this.type = type;
@@ -205,6 +217,8 @@ public class CreateCertificateRequestBody  {
         this.type = type;
     }
 
+    
+
     public CreateCertificateRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -224,6 +238,9 @@ public class CreateCertificateRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

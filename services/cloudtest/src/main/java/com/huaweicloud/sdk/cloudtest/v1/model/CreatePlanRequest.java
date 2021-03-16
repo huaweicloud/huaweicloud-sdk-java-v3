@@ -28,7 +28,7 @@ public class CreatePlanRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePlanRequestBody body = null;
+    private CreatePlanRequestBody body;
 
     public CreatePlanRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class CreatePlanRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreatePlanRequest withBody(CreatePlanRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreatePlanRequest  {
     public void setBody(CreatePlanRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

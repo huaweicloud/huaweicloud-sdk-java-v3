@@ -61,6 +61,8 @@ public class SimplifyDevice  {
         this.deviceId = deviceId;
     }
 
+    
+
     public SimplifyDevice withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -80,6 +82,8 @@ public class SimplifyDevice  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public SimplifyDevice withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -101,6 +105,8 @@ public class SimplifyDevice  {
         this.deviceName = deviceName;
     }
 
+    
+
     public SimplifyDevice withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -120,6 +126,9 @@ public class SimplifyDevice  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

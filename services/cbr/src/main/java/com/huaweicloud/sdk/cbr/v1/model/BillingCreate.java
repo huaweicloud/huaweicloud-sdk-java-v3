@@ -382,7 +382,7 @@ public class BillingCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charging_mode")
     
-    private ChargingModeEnum chargingMode = ChargingModeEnum.POST_PAID;
+    private ChargingModeEnum chargingMode;
     /**
      * 创建类型，按年(year)或者按月(month)
      */
@@ -478,13 +478,13 @@ public class BillingCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_renew")
     
-    private Boolean isAutoRenew = false;
+    private Boolean isAutoRenew;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    private Boolean isAutoPay = false;
+    private Boolean isAutoPay;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -496,7 +496,7 @@ public class BillingCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_info")
     
-    private BillbingCreateExtraInfo extraInfo = null;
+    private BillbingCreateExtraInfo extraInfo;
 
     public BillingCreate withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
@@ -518,6 +518,8 @@ public class BillingCreate  {
         this.cloudType = cloudType;
     }
 
+    
+
     public BillingCreate withConsistentLevel(String consistentLevel) {
         this.consistentLevel = consistentLevel;
         return this;
@@ -537,6 +539,8 @@ public class BillingCreate  {
     public void setConsistentLevel(String consistentLevel) {
         this.consistentLevel = consistentLevel;
     }
+
+    
 
     public BillingCreate withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
@@ -558,6 +562,8 @@ public class BillingCreate  {
         this.objectType = objectType;
     }
 
+    
+
     public BillingCreate withProtectType(ProtectTypeEnum protectType) {
         this.protectType = protectType;
         return this;
@@ -577,6 +583,8 @@ public class BillingCreate  {
     public void setProtectType(ProtectTypeEnum protectType) {
         this.protectType = protectType;
     }
+
+    
 
     public BillingCreate withSize(Integer size) {
         this.size = size;
@@ -600,6 +608,8 @@ public class BillingCreate  {
         this.size = size;
     }
 
+    
+
     public BillingCreate withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -619,6 +629,8 @@ public class BillingCreate  {
     public void setChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
     }
+
+    
 
     public BillingCreate withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
@@ -640,6 +652,8 @@ public class BillingCreate  {
         this.periodType = periodType;
     }
 
+    
+
     public BillingCreate withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
@@ -659,6 +673,8 @@ public class BillingCreate  {
     public void setPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
     }
+
+    
 
     public BillingCreate withIsAutoRenew(Boolean isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
@@ -680,6 +696,8 @@ public class BillingCreate  {
         this.isAutoRenew = isAutoRenew;
     }
 
+    
+
     public BillingCreate withIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -700,6 +718,8 @@ public class BillingCreate  {
         this.isAutoPay = isAutoPay;
     }
 
+    
+
     public BillingCreate withConsoleUrl(String consoleUrl) {
         this.consoleUrl = consoleUrl;
         return this;
@@ -719,6 +739,8 @@ public class BillingCreate  {
     public void setConsoleUrl(String consoleUrl) {
         this.consoleUrl = consoleUrl;
     }
+
+    
 
     public BillingCreate withExtraInfo(BillbingCreateExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
@@ -746,6 +768,9 @@ public class BillingCreate  {
     public void setExtraInfo(BillbingCreateExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

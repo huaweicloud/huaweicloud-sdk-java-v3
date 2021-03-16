@@ -40,7 +40,7 @@ public class CreateHookRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private HookCreate body = null;
+    private HookCreate body;
 
     public CreateHookRequest withXRepoAuth(String xRepoAuth) {
         this.xRepoAuth = xRepoAuth;
@@ -64,6 +64,8 @@ public class CreateHookRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public CreateHookRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -84,6 +86,8 @@ public class CreateHookRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public CreateHookRequest withProject(String project) {
         this.project = project;
         return this;
@@ -103,6 +107,8 @@ public class CreateHookRequest  {
     public void setProject(String project) {
         this.project = project;
     }
+
+    
 
     public CreateHookRequest withBody(HookCreate body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class CreateHookRequest  {
     public void setBody(HookCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

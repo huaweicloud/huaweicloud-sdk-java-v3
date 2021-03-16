@@ -122,9 +122,6 @@ public class ListCasesRequest  {
 
     
     public ListCasesRequest addSearchKeyItem(String searchKeyItem) {
-        if (this.searchKey == null) {
-            this.searchKey = new ArrayList<>();
-        }
         this.searchKey.add(searchKeyItem);
         return this;
     }
@@ -149,6 +146,8 @@ public class ListCasesRequest  {
         this.searchKey = searchKey;
     }
 
+    
+
     public ListCasesRequest withLabelIdList(List<String> labelIdList) {
         this.labelIdList = labelIdList;
         return this;
@@ -156,9 +155,6 @@ public class ListCasesRequest  {
 
     
     public ListCasesRequest addLabelIdListItem(String labelIdListItem) {
-        if (this.labelIdList == null) {
-            this.labelIdList = new ArrayList<>();
-        }
         this.labelIdList.add(labelIdListItem);
         return this;
     }
@@ -183,6 +179,8 @@ public class ListCasesRequest  {
         this.labelIdList = labelIdList;
     }
 
+    
+
     public ListCasesRequest withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
@@ -202,6 +200,8 @@ public class ListCasesRequest  {
     public void setAppKey(String appKey) {
         this.appKey = appKey;
     }
+
+    
 
     public ListCasesRequest withIncidentId(String incidentId) {
         this.incidentId = incidentId;
@@ -223,6 +223,8 @@ public class ListCasesRequest  {
         this.incidentId = incidentId;
     }
 
+    
+
     public ListCasesRequest withQueryStartTime(String queryStartTime) {
         this.queryStartTime = queryStartTime;
         return this;
@@ -243,6 +245,8 @@ public class ListCasesRequest  {
         this.queryStartTime = queryStartTime;
     }
 
+    
+
     public ListCasesRequest withQueryEndTime(String queryEndTime) {
         this.queryEndTime = queryEndTime;
         return this;
@@ -262,6 +266,8 @@ public class ListCasesRequest  {
     public void setQueryEndTime(String queryEndTime) {
         this.queryEndTime = queryEndTime;
     }
+
+    
 
     public ListCasesRequest withStatus(Integer status) {
         this.status = status;
@@ -285,6 +291,8 @@ public class ListCasesRequest  {
         this.status = status;
     }
 
+    
+
     public ListCasesRequest withIncidentStatus(String incidentStatus) {
         this.incidentStatus = incidentStatus;
         return this;
@@ -304,6 +312,8 @@ public class ListCasesRequest  {
     public void setIncidentStatus(String incidentStatus) {
         this.incidentStatus = incidentStatus;
     }
+
+    
 
     public ListCasesRequest withXCustomerId(String xCustomerId) {
         this.xCustomerId = xCustomerId;
@@ -327,6 +337,8 @@ public class ListCasesRequest  {
         this.xCustomerId = xCustomerId;
     }
 
+    
+
     public ListCasesRequest withXCustomerName(String xCustomerName) {
         this.xCustomerName = xCustomerName;
         return this;
@@ -349,6 +361,8 @@ public class ListCasesRequest  {
         this.xCustomerName = xCustomerName;
     }
 
+    
+
     public ListCasesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -368,6 +382,8 @@ public class ListCasesRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListCasesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -391,6 +407,8 @@ public class ListCasesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCasesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -412,6 +430,8 @@ public class ListCasesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListCasesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -437,6 +457,8 @@ public class ListCasesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListCasesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -459,6 +481,8 @@ public class ListCasesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListCasesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -480,6 +504,9 @@ public class ListCasesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

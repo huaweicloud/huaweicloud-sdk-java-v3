@@ -28,7 +28,7 @@ public class UpdateServerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateServerRequestBody body = null;
+    private UpdateServerRequestBody body;
 
     public UpdateServerRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class UpdateServerRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public UpdateServerRequest withBody(UpdateServerRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateServerRequest  {
     public void setBody(UpdateServerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

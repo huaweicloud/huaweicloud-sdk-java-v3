@@ -49,6 +49,8 @@ public class XCodeError  {
         this.code = code;
     }
 
+    
+
     public XCodeError withMsg(String msg) {
         this.msg = msg;
         return this;
@@ -68,6 +70,9 @@ public class XCodeError  {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

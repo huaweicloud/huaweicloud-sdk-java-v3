@@ -28,7 +28,7 @@ public class UpdateSubNetworkInterfaceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_network_interface")
     
-    private UpdateSubNetworkInterfaceOption subNetworkInterface = null;
+    private UpdateSubNetworkInterfaceOption subNetworkInterface;
 
     public UpdateSubNetworkInterfaceRequestBody withDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
@@ -49,6 +49,8 @@ public class UpdateSubNetworkInterfaceRequestBody  {
     public void setDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
     }
+
+    
 
     public UpdateSubNetworkInterfaceRequestBody withSubNetworkInterface(UpdateSubNetworkInterfaceOption subNetworkInterface) {
         this.subNetworkInterface = subNetworkInterface;
@@ -76,6 +78,9 @@ public class UpdateSubNetworkInterfaceRequestBody  {
     public void setSubNetworkInterface(UpdateSubNetworkInterfaceOption subNetworkInterface) {
         this.subNetworkInterface = subNetworkInterface;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

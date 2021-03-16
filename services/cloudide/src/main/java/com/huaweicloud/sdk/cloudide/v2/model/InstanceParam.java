@@ -419,6 +419,8 @@ public class InstanceParam  {
         this.agentId = agentId;
     }
 
+    
+
     public InstanceParam withArch(ArchEnum arch) {
         this.arch = arch;
         return this;
@@ -438,6 +440,8 @@ public class InstanceParam  {
     public void setArch(ArchEnum arch) {
         this.arch = arch;
     }
+
+    
 
     public InstanceParam withCpuMemory(CpuMemoryEnum cpuMemory) {
         this.cpuMemory = cpuMemory;
@@ -459,6 +463,8 @@ public class InstanceParam  {
         this.cpuMemory = cpuMemory;
     }
 
+    
+
     public InstanceParam withDescription(String description) {
         this.description = description;
         return this;
@@ -478,6 +484,8 @@ public class InstanceParam  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public InstanceParam withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -499,6 +507,8 @@ public class InstanceParam  {
         this.displayName = displayName;
     }
 
+    
+
     public InstanceParam withIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
         return this;
@@ -518,6 +528,8 @@ public class InstanceParam  {
     public void setIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
     }
+
+    
 
     public InstanceParam withLabelTag(String labelTag) {
         this.labelTag = labelTag;
@@ -539,6 +551,8 @@ public class InstanceParam  {
         this.labelTag = labelTag;
     }
 
+    
+
     public InstanceParam withPluginEnableList(List<String> pluginEnableList) {
         this.pluginEnableList = pluginEnableList;
         return this;
@@ -546,9 +560,6 @@ public class InstanceParam  {
 
     
     public InstanceParam addPluginEnableListItem(String pluginEnableListItem) {
-        if (this.pluginEnableList == null) {
-            this.pluginEnableList = new ArrayList<>();
-        }
         this.pluginEnableList.add(pluginEnableListItem);
         return this;
     }
@@ -573,6 +584,8 @@ public class InstanceParam  {
         this.pluginEnableList = pluginEnableList;
     }
 
+    
+
     public InstanceParam withPluginVars(Map<String, String> pluginVars) {
         this.pluginVars = pluginVars;
         return this;
@@ -581,9 +594,6 @@ public class InstanceParam  {
     
 
     public InstanceParam putPluginVarsItem(String key, String pluginVarsItem) {
-         if (this.pluginVars == null) {
-            this.pluginVars = new HashMap<>();
-         }
         this.pluginVars.put(key, pluginVarsItem);
         return this;
     }
@@ -607,6 +617,8 @@ public class InstanceParam  {
         this.pluginVars = pluginVars;
     }
 
+    
+
     public InstanceParam withPortId(String portId) {
         this.portId = portId;
         return this;
@@ -626,6 +638,8 @@ public class InstanceParam  {
     public void setPortId(String portId) {
         this.portId = portId;
     }
+
+    
 
     public InstanceParam withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
@@ -647,6 +661,8 @@ public class InstanceParam  {
         this.privateIp = privateIp;
     }
 
+    
+
     public InstanceParam withPvcQuantity(PvcQuantityEnum pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
         return this;
@@ -667,6 +683,8 @@ public class InstanceParam  {
         this.pvcQuantity = pvcQuantity;
     }
 
+    
+
     public InstanceParam withRefreshInterval(String refreshInterval) {
         this.refreshInterval = refreshInterval;
         return this;
@@ -686,6 +704,8 @@ public class InstanceParam  {
     public void setRefreshInterval(String refreshInterval) {
         this.refreshInterval = refreshInterval;
     }
+
+    
 
     public InstanceParam withRepositoryId(Long repositoryId) {
         this.repositoryId = repositoryId;
@@ -709,6 +729,8 @@ public class InstanceParam  {
         this.repositoryId = repositoryId;
     }
 
+    
+
     public InstanceParam withStackId(String stackId) {
         this.stackId = stackId;
         return this;
@@ -728,6 +750,8 @@ public class InstanceParam  {
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
+
+    
 
     public InstanceParam withTaskType(String taskType) {
         this.taskType = taskType;
@@ -749,6 +773,8 @@ public class InstanceParam  {
         this.taskType = taskType;
     }
 
+    
+
     public InstanceParam withToken(String token) {
         this.token = token;
         return this;
@@ -768,6 +794,8 @@ public class InstanceParam  {
     public void setToken(String token) {
         this.token = token;
     }
+
+    
 
     public InstanceParam withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -789,6 +817,8 @@ public class InstanceParam  {
         this.vpcId = vpcId;
     }
 
+    
+
     public InstanceParam withInstanceUserDomainName(String instanceUserDomainName) {
         this.instanceUserDomainName = instanceUserDomainName;
         return this;
@@ -809,6 +839,8 @@ public class InstanceParam  {
         this.instanceUserDomainName = instanceUserDomainName;
     }
 
+    
+
     public InstanceParam withInstanceUserName(String instanceUserName) {
         this.instanceUserName = instanceUserName;
         return this;
@@ -828,6 +860,9 @@ public class InstanceParam  {
     public void setInstanceUserName(String instanceUserName) {
         this.instanceUserName = instanceUserName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

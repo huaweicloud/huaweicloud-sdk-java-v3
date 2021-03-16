@@ -22,13 +22,13 @@ public class CreateRandomRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GenRandomRequestBody body = null;
+    private GenRandomRequestBody body;
 
     public CreateRandomRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class CreateRandomRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public CreateRandomRequest withBody(GenRandomRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateRandomRequest  {
     public void setBody(GenRandomRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class CreateApiAclBindingV2Response extends SdkResponse {
 
     
     public CreateApiAclBindingV2Response addAclBindingsItem(AclApiBindingInfo aclBindingsItem) {
-        if (this.aclBindings == null) {
-            this.aclBindings = new ArrayList<>();
-        }
         this.aclBindings.add(aclBindingsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class CreateApiAclBindingV2Response extends SdkResponse {
     public void setAclBindings(List<AclApiBindingInfo> aclBindings) {
         this.aclBindings = aclBindings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

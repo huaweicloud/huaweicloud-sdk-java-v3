@@ -51,7 +51,7 @@ public class ListDependenciesResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private String size;
+    private Long size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,6 +91,8 @@ public class ListDependenciesResult  {
         this.id = id;
     }
 
+    
+
     public ListDependenciesResult withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -110,6 +112,8 @@ public class ListDependenciesResult  {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    
 
     public ListDependenciesResult withLink(String link) {
         this.link = link;
@@ -131,6 +135,8 @@ public class ListDependenciesResult  {
         this.link = link;
     }
 
+    
+
     public ListDependenciesResult withRuntime(String runtime) {
         this.runtime = runtime;
         return this;
@@ -150,6 +156,8 @@ public class ListDependenciesResult  {
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
+
+    
 
     public ListDependenciesResult withEtag(String etag) {
         this.etag = etag;
@@ -171,7 +179,9 @@ public class ListDependenciesResult  {
         this.etag = etag;
     }
 
-    public ListDependenciesResult withSize(String size) {
+    
+
+    public ListDependenciesResult withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -183,13 +193,15 @@ public class ListDependenciesResult  {
      * 依赖包大小。
      * @return size
      */
-    public String getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public ListDependenciesResult withName(String name) {
         this.name = name;
@@ -211,6 +223,8 @@ public class ListDependenciesResult  {
         this.name = name;
     }
 
+    
+
     public ListDependenciesResult withDescription(String description) {
         this.description = description;
         return this;
@@ -231,6 +245,8 @@ public class ListDependenciesResult  {
         this.description = description;
     }
 
+    
+
     public ListDependenciesResult withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -250,6 +266,9 @@ public class ListDependenciesResult  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

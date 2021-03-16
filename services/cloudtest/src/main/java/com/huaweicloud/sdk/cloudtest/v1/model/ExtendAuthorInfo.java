@@ -55,6 +55,8 @@ public class ExtendAuthorInfo  {
         this.id = id;
     }
 
+    
+
     public ExtendAuthorInfo withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class ExtendAuthorInfo  {
         this.name = name;
     }
 
+    
+
     public ExtendAuthorInfo withTime(String time) {
         this.time = time;
         return this;
@@ -94,6 +98,9 @@ public class ExtendAuthorInfo  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

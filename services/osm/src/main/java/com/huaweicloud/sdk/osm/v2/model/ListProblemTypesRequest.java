@@ -61,6 +61,8 @@ public class ListProblemTypesRequest  {
         this.productCategoryId = productCategoryId;
     }
 
+    
+
     public ListProblemTypesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
@@ -85,6 +87,8 @@ public class ListProblemTypesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListProblemTypesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -107,6 +111,8 @@ public class ListProblemTypesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListProblemTypesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -128,6 +134,9 @@ public class ListProblemTypesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

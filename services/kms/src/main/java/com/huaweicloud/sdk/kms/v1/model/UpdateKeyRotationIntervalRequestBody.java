@@ -55,6 +55,8 @@ public class UpdateKeyRotationIntervalRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public UpdateKeyRotationIntervalRequestBody withRotationInterval(Integer rotationInterval) {
         this.rotationInterval = rotationInterval;
         return this;
@@ -77,6 +79,8 @@ public class UpdateKeyRotationIntervalRequestBody  {
         this.rotationInterval = rotationInterval;
     }
 
+    
+
     public UpdateKeyRotationIntervalRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -96,6 +100,9 @@ public class UpdateKeyRotationIntervalRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

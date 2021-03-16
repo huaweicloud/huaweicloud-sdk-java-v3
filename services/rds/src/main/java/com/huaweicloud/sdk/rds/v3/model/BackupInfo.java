@@ -274,6 +274,8 @@ public class BackupInfo  {
         this.id = id;
     }
 
+    
+
     public BackupInfo withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -293,6 +295,8 @@ public class BackupInfo  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BackupInfo withName(String name) {
         this.name = name;
@@ -314,6 +318,8 @@ public class BackupInfo  {
         this.name = name;
     }
 
+    
+
     public BackupInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -334,6 +340,8 @@ public class BackupInfo  {
         this.description = description;
     }
 
+    
+
     public BackupInfo withDatabases(List<BackupDatabase> databases) {
         this.databases = databases;
         return this;
@@ -341,9 +349,6 @@ public class BackupInfo  {
 
     
     public BackupInfo addDatabasesItem(BackupDatabase databasesItem) {
-        if (this.databases == null) {
-            this.databases = new ArrayList<>();
-        }
         this.databases.add(databasesItem);
         return this;
     }
@@ -368,6 +373,8 @@ public class BackupInfo  {
         this.databases = databases;
     }
 
+    
+
     public BackupInfo withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -387,6 +394,8 @@ public class BackupInfo  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public BackupInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -408,6 +417,8 @@ public class BackupInfo  {
         this.status = status;
     }
 
+    
+
     public BackupInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -427,6 +438,9 @@ public class BackupInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

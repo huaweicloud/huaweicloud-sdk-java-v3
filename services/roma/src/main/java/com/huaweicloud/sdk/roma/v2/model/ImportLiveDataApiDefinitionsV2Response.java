@@ -46,7 +46,7 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="swagger")
     
-    private SwaggerInfoResp swagger = null;
+    private SwaggerInfoResp swagger;
 
     public ImportLiveDataApiDefinitionsV2Response withGroupId(String groupId) {
         this.groupId = groupId;
@@ -68,6 +68,8 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         this.groupId = groupId;
     }
 
+    
+
     public ImportLiveDataApiDefinitionsV2Response withFailure(List<SwaggerFailureResp> failure) {
         this.failure = failure;
         return this;
@@ -75,9 +77,6 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
 
     
     public ImportLiveDataApiDefinitionsV2Response addFailureItem(SwaggerFailureResp failureItem) {
-        if (this.failure == null) {
-            this.failure = new ArrayList<>();
-        }
         this.failure.add(failureItem);
         return this;
     }
@@ -102,6 +101,8 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         this.failure = failure;
     }
 
+    
+
     public ImportLiveDataApiDefinitionsV2Response withSuccess(List<SwaggerSuccessResp> success) {
         this.success = success;
         return this;
@@ -109,9 +110,6 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
 
     
     public ImportLiveDataApiDefinitionsV2Response addSuccessItem(SwaggerSuccessResp successItem) {
-        if (this.success == null) {
-            this.success = new ArrayList<>();
-        }
         this.success.add(successItem);
         return this;
     }
@@ -135,6 +133,8 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
     public void setSuccess(List<SwaggerSuccessResp> success) {
         this.success = success;
     }
+
+    
 
     public ImportLiveDataApiDefinitionsV2Response withSwagger(SwaggerInfoResp swagger) {
         this.swagger = swagger;
@@ -162,6 +162,9 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
     public void setSwagger(SwaggerInfoResp swagger) {
         this.swagger = swagger;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

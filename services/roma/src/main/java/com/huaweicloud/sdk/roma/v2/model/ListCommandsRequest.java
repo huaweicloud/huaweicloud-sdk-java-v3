@@ -33,7 +33,7 @@ public class ListCommandsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class ListCommandsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListCommandsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -73,6 +73,8 @@ public class ListCommandsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListCommandsRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -92,6 +94,8 @@ public class ListCommandsRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public ListCommandsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -115,6 +119,8 @@ public class ListCommandsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListCommandsRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
         return this;
@@ -137,6 +143,8 @@ public class ListCommandsRequest  {
         this.commandId = commandId;
     }
 
+    
+
     public ListCommandsRequest withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
@@ -156,6 +164,8 @@ public class ListCommandsRequest  {
     public void setCommandName(String commandName) {
         this.commandName = commandName;
     }
+
+    
 
     public ListCommandsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -178,6 +188,9 @@ public class ListCommandsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

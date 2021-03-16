@@ -70,7 +70,7 @@ public class ClassroomMember  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_finished_rate")
     
-    private BigDecimal jobFinishedRate = null;
+    private BigDecimal jobFinishedRate;
 
     public ClassroomMember withMemberId(String memberId) {
         this.memberId = memberId;
@@ -92,6 +92,8 @@ public class ClassroomMember  {
         this.memberId = memberId;
     }
 
+    
+
     public ClassroomMember withName(String name) {
         this.name = name;
         return this;
@@ -111,6 +113,8 @@ public class ClassroomMember  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ClassroomMember withNumber(String number) {
         this.number = number;
@@ -132,6 +136,8 @@ public class ClassroomMember  {
         this.number = number;
     }
 
+    
+
     public ClassroomMember withClassName(String className) {
         this.className = className;
         return this;
@@ -151,6 +157,8 @@ public class ClassroomMember  {
     public void setClassName(String className) {
         this.className = className;
     }
+
+    
 
     public ClassroomMember withUserName(String userName) {
         this.userName = userName;
@@ -172,6 +180,8 @@ public class ClassroomMember  {
         this.userName = userName;
     }
 
+    
+
     public ClassroomMember withJoinTime(String joinTime) {
         this.joinTime = joinTime;
         return this;
@@ -191,6 +201,8 @@ public class ClassroomMember  {
     public void setJoinTime(String joinTime) {
         this.joinTime = joinTime;
     }
+
+    
 
     public ClassroomMember withJobReceivedCount(Integer jobReceivedCount) {
         this.jobReceivedCount = jobReceivedCount;
@@ -212,6 +224,8 @@ public class ClassroomMember  {
         this.jobReceivedCount = jobReceivedCount;
     }
 
+    
+
     public ClassroomMember withJobFinishedCount(Integer jobFinishedCount) {
         this.jobFinishedCount = jobFinishedCount;
         return this;
@@ -232,6 +246,8 @@ public class ClassroomMember  {
         this.jobFinishedCount = jobFinishedCount;
     }
 
+    
+
     public ClassroomMember withJobFinishedRate(BigDecimal jobFinishedRate) {
         this.jobFinishedRate = jobFinishedRate;
         return this;
@@ -251,6 +267,9 @@ public class ClassroomMember  {
     public void setJobFinishedRate(BigDecimal jobFinishedRate) {
         this.jobFinishedRate = jobFinishedRate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

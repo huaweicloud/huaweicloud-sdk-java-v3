@@ -122,7 +122,7 @@ public class ModifyPwdEndPoint  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kerberos")
     
-    private KerberosVO kerberos = null;
+    private KerberosVO kerberos;
 
     public ModifyPwdEndPoint withDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
@@ -144,6 +144,8 @@ public class ModifyPwdEndPoint  {
         this.dbPassword = dbPassword;
     }
 
+    
+
     public ModifyPwdEndPoint withEndPointType(EndPointTypeEnum endPointType) {
         this.endPointType = endPointType;
         return this;
@@ -164,6 +166,8 @@ public class ModifyPwdEndPoint  {
         this.endPointType = endPointType;
     }
 
+    
+
     public ModifyPwdEndPoint withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -183,6 +187,8 @@ public class ModifyPwdEndPoint  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public ModifyPwdEndPoint withKerberos(KerberosVO kerberos) {
         this.kerberos = kerberos;
@@ -210,6 +216,9 @@ public class ModifyPwdEndPoint  {
     public void setKerberos(KerberosVO kerberos) {
         this.kerberos = kerberos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

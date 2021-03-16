@@ -22,7 +22,7 @@ public class NeutronCreateFloatingIpRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="floatingip")
     
-    private CreateFloatingIpOption floatingip = null;
+    private CreateFloatingIpOption floatingip;
 
     public NeutronCreateFloatingIpRequestBody withFloatingip(CreateFloatingIpOption floatingip) {
         this.floatingip = floatingip;
@@ -50,6 +50,9 @@ public class NeutronCreateFloatingIpRequestBody  {
     public void setFloatingip(CreateFloatingIpOption floatingip) {
         this.floatingip = floatingip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

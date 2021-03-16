@@ -79,6 +79,8 @@ public class RealTimeParticipant  {
         this.pid = pid;
     }
 
+    
+
     public RealTimeParticipant withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +100,8 @@ public class RealTimeParticipant  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public RealTimeParticipant withPhone(String phone) {
         this.phone = phone;
@@ -119,6 +123,8 @@ public class RealTimeParticipant  {
         this.phone = phone;
     }
 
+    
+
     public RealTimeParticipant withState(Integer state) {
         this.state = state;
         return this;
@@ -138,6 +144,8 @@ public class RealTimeParticipant  {
     public void setState(Integer state) {
         this.state = state;
     }
+
+    
 
     public RealTimeParticipant withVideo(Integer video) {
         this.video = video;
@@ -159,6 +167,8 @@ public class RealTimeParticipant  {
         this.video = video;
     }
 
+    
+
     public RealTimeParticipant withMute(Integer mute) {
         this.mute = mute;
         return this;
@@ -179,6 +189,8 @@ public class RealTimeParticipant  {
         this.mute = mute;
     }
 
+    
+
     public RealTimeParticipant withHand(Integer hand) {
         this.hand = hand;
         return this;
@@ -198,6 +210,9 @@ public class RealTimeParticipant  {
     public void setHand(Integer hand) {
         this.hand = hand;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -50,7 +50,7 @@ public class MigprojectsResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    private TemplateRequest template = null;
+    private TemplateRequest template;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -192,6 +192,8 @@ public class MigprojectsResponseBody  {
         this.id = id;
     }
 
+    
+
     public MigprojectsResponseBody withName(String name) {
         this.name = name;
         return this;
@@ -211,6 +213,8 @@ public class MigprojectsResponseBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public MigprojectsResponseBody withDescription(String description) {
         this.description = description;
@@ -232,6 +236,8 @@ public class MigprojectsResponseBody  {
         this.description = description;
     }
 
+    
+
     public MigprojectsResponseBody withIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
         return this;
@@ -251,6 +257,8 @@ public class MigprojectsResponseBody  {
     public void setIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
     }
+
+    
 
     public MigprojectsResponseBody withTemplate(TemplateRequest template) {
         this.template = template;
@@ -279,6 +287,8 @@ public class MigprojectsResponseBody  {
         this.template = template;
     }
 
+    
+
     public MigprojectsResponseBody withRegion(String region) {
         this.region = region;
         return this;
@@ -298,6 +308,8 @@ public class MigprojectsResponseBody  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public MigprojectsResponseBody withStartTargetServer(String startTargetServer) {
         this.startTargetServer = startTargetServer;
@@ -319,6 +331,8 @@ public class MigprojectsResponseBody  {
         this.startTargetServer = startTargetServer;
     }
 
+    
+
     public MigprojectsResponseBody withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -338,6 +352,8 @@ public class MigprojectsResponseBody  {
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
     }
+
+    
 
     public MigprojectsResponseBody withType(TypeEnum type) {
         this.type = type;
@@ -359,6 +375,8 @@ public class MigprojectsResponseBody  {
         this.type = type;
     }
 
+    
+
     public MigprojectsResponseBody withEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
         return this;
@@ -378,6 +396,8 @@ public class MigprojectsResponseBody  {
     public void setEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
     }
+
+    
 
     public MigprojectsResponseBody withSpeedLimit(Long speedLimit) {
         this.speedLimit = speedLimit;
@@ -401,6 +421,8 @@ public class MigprojectsResponseBody  {
         this.speedLimit = speedLimit;
     }
 
+    
+
     public MigprojectsResponseBody withExistServer(Boolean existServer) {
         this.existServer = existServer;
         return this;
@@ -420,6 +442,9 @@ public class MigprojectsResponseBody  {
     public void setExistServer(Boolean existServer) {
         this.existServer = existServer;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

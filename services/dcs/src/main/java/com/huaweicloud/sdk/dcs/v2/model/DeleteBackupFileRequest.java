@@ -49,6 +49,8 @@ public class DeleteBackupFileRequest  {
         this.backupId = backupId;
     }
 
+    
+
     public DeleteBackupFileRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteBackupFileRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

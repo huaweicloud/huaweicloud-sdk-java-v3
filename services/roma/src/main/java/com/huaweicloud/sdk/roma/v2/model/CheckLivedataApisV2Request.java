@@ -28,7 +28,7 @@ public class CheckLivedataApisV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LdApiCheckInfo body = null;
+    private LdApiCheckInfo body;
 
     public CheckLivedataApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CheckLivedataApisV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CheckLivedataApisV2Request withBody(LdApiCheckInfo body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CheckLivedataApisV2Request  {
     public void setBody(LdApiCheckInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

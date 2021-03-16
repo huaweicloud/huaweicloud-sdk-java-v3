@@ -30,7 +30,7 @@ public class UpdateSubNetworkInterfaceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_network_interface")
     
-    private SubNetworkInterface subNetworkInterface = null;
+    private SubNetworkInterface subNetworkInterface;
 
     public UpdateSubNetworkInterfaceResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class UpdateSubNetworkInterfaceResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public UpdateSubNetworkInterfaceResponse withSubNetworkInterface(SubNetworkInterface subNetworkInterface) {
         this.subNetworkInterface = subNetworkInterface;
@@ -78,6 +80,9 @@ public class UpdateSubNetworkInterfaceResponse extends SdkResponse {
     public void setSubNetworkInterface(SubNetworkInterface subNetworkInterface) {
         this.subNetworkInterface = subNetworkInterface;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

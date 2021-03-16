@@ -49,6 +49,8 @@ public class ListRecordDataRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListRecordDataRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -68,6 +70,9 @@ public class ListRecordDataRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

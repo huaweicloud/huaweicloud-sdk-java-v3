@@ -42,6 +42,9 @@ public class NovaSecurityGroupCommonIpRange  {
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

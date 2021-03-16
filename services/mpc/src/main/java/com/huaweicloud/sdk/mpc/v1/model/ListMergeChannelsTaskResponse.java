@@ -47,9 +47,6 @@ public class ListMergeChannelsTaskResponse extends SdkResponse {
 
     
     public ListMergeChannelsTaskResponse addTaskArrayItem(MergeChannelsTaskInfo taskArrayItem) {
-        if (this.taskArray == null) {
-            this.taskArray = new ArrayList<>();
-        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListMergeChannelsTaskResponse extends SdkResponse {
         this.taskArray = taskArray;
     }
 
+    
+
     public ListMergeChannelsTaskResponse withIsTruncated(Integer isTruncated) {
         this.isTruncated = isTruncated;
         return this;
@@ -94,6 +93,8 @@ public class ListMergeChannelsTaskResponse extends SdkResponse {
         this.isTruncated = isTruncated;
     }
 
+    
+
     public ListMergeChannelsTaskResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -113,6 +114,9 @@ public class ListMergeChannelsTaskResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -131,13 +131,13 @@ public class UpdateProductTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -171,6 +171,8 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdateProductTemplateResponse withName(String name) {
         this.name = name;
         return this;
@@ -190,6 +192,8 @@ public class UpdateProductTemplateResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateProductTemplateResponse withDescription(String description) {
         this.description = description;
@@ -211,6 +215,8 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateProductTemplateResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -230,6 +236,8 @@ public class UpdateProductTemplateResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public UpdateProductTemplateResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -258,6 +266,8 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
+    
+
     public UpdateProductTemplateResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -285,6 +295,8 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public UpdateProductTemplateResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -307,6 +319,8 @@ public class UpdateProductTemplateResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public UpdateProductTemplateResponse withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
@@ -328,6 +342,9 @@ public class UpdateProductTemplateResponse extends SdkResponse {
     public void setLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class KeyStatusInfo  {
         this.keyId = keyId;
     }
 
+    
+
     public KeyStatusInfo withKeyState(String keyState) {
         this.keyState = keyState;
         return this;
@@ -68,6 +70,9 @@ public class KeyStatusInfo  {
     public void setKeyState(String keyState) {
         this.keyState = keyState;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

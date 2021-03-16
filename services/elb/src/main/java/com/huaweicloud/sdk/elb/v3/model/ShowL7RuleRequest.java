@@ -49,6 +49,8 @@ public class ShowL7RuleRequest  {
         this.l7policyId = l7policyId;
     }
 
+    
+
     public ShowL7RuleRequest withL7ruleId(String l7ruleId) {
         this.l7ruleId = l7ruleId;
         return this;
@@ -68,6 +70,9 @@ public class ShowL7RuleRequest  {
     public void setL7ruleId(String l7ruleId) {
         this.l7ruleId = l7ruleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

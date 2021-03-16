@@ -24,31 +24,31 @@ public class PersistentVolumeClaim  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v1";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "PersistentVolumeClaim";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private PersistentVolumeClaimMetadata metadata = null;
+    private PersistentVolumeClaimMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private PersistentVolumeClaimSpec spec = null;
+    private PersistentVolumeClaimSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private PersistentVolumeClaimStatus status = null;
+    private PersistentVolumeClaimStatus status;
 
     public PersistentVolumeClaim withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -70,6 +70,8 @@ public class PersistentVolumeClaim  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public PersistentVolumeClaim withKind(String kind) {
         this.kind = kind;
         return this;
@@ -89,6 +91,8 @@ public class PersistentVolumeClaim  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public PersistentVolumeClaim withMetadata(PersistentVolumeClaimMetadata metadata) {
         this.metadata = metadata;
@@ -117,6 +121,8 @@ public class PersistentVolumeClaim  {
         this.metadata = metadata;
     }
 
+    
+
     public PersistentVolumeClaim withSpec(PersistentVolumeClaimSpec spec) {
         this.spec = spec;
         return this;
@@ -144,6 +150,8 @@ public class PersistentVolumeClaim  {
         this.spec = spec;
     }
 
+    
+
     public PersistentVolumeClaim withStatus(PersistentVolumeClaimStatus status) {
         this.status = status;
         return this;
@@ -170,6 +178,9 @@ public class PersistentVolumeClaim  {
     public void setStatus(PersistentVolumeClaimStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

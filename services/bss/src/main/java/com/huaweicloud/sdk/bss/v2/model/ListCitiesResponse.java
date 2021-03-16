@@ -56,6 +56,8 @@ public class ListCitiesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListCitiesResponse withCities(List<City> cities) {
         this.cities = cities;
         return this;
@@ -63,9 +65,6 @@ public class ListCitiesResponse extends SdkResponse {
 
     
     public ListCitiesResponse addCitiesItem(City citiesItem) {
-        if (this.cities == null) {
-            this.cities = new ArrayList<>();
-        }
         this.cities.add(citiesItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListCitiesResponse extends SdkResponse {
     public void setCities(List<City> cities) {
         this.cities = cities;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

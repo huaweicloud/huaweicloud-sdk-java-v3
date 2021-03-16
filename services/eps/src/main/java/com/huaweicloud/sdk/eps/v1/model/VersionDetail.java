@@ -35,7 +35,7 @@ public class VersionDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<Link> links = new ArrayList<>();
+    private List<Link> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -137,7 +137,7 @@ public class VersionDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    private OffsetDateTime updated = null;
+    private OffsetDateTime updated;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,6 +164,8 @@ public class VersionDetail  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public VersionDetail withLinks(List<Link> links) {
         this.links = links;
@@ -196,6 +198,8 @@ public class VersionDetail  {
         this.links = links;
     }
 
+    
+
     public VersionDetail withVersion(String version) {
         this.version = version;
         return this;
@@ -215,6 +219,8 @@ public class VersionDetail  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public VersionDetail withStatus(StatusEnum status) {
         this.status = status;
@@ -236,6 +242,8 @@ public class VersionDetail  {
         this.status = status;
     }
 
+    
+
     public VersionDetail withUpdated(OffsetDateTime updated) {
         this.updated = updated;
         return this;
@@ -256,6 +264,8 @@ public class VersionDetail  {
         this.updated = updated;
     }
 
+    
+
     public VersionDetail withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
@@ -275,6 +285,9 @@ public class VersionDetail  {
     public void setMinVersion(String minVersion) {
         this.minVersion = minVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

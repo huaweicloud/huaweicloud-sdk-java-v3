@@ -33,7 +33,7 @@ public class ListCertificatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public ListCertificatesResponse withCertificates(List<CertificatesRspDTO> certificates) {
         this.certificates = certificates;
@@ -42,9 +42,6 @@ public class ListCertificatesResponse extends SdkResponse {
 
     
     public ListCertificatesResponse addCertificatesItem(CertificatesRspDTO certificatesItem) {
-        if (this.certificates == null) {
-            this.certificates = new ArrayList<>();
-        }
         this.certificates.add(certificatesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListCertificatesResponse extends SdkResponse {
     public void setCertificates(List<CertificatesRspDTO> certificates) {
         this.certificates = certificates;
     }
+
+    
 
     public ListCertificatesResponse withPage(Page page) {
         this.page = page;
@@ -95,6 +94,9 @@ public class ListCertificatesResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

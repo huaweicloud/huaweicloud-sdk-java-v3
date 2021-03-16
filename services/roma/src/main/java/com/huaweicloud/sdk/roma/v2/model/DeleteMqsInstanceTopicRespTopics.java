@@ -49,6 +49,8 @@ public class DeleteMqsInstanceTopicRespTopics  {
         this.id = id;
     }
 
+    
+
     public DeleteMqsInstanceTopicRespTopics withSuccess(Boolean success) {
         this.success = success;
         return this;
@@ -68,6 +70,9 @@ public class DeleteMqsInstanceTopicRespTopics  {
     public void setSuccess(Boolean success) {
         this.success = success;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

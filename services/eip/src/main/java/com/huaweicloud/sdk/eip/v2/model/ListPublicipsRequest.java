@@ -169,6 +169,8 @@ public class ListPublicipsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListPublicipsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -190,6 +192,8 @@ public class ListPublicipsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPublicipsRequest withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -209,6 +213,8 @@ public class ListPublicipsRequest  {
     public void setIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
     }
+
+    
 
     public ListPublicipsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -230,6 +236,8 @@ public class ListPublicipsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListPublicipsRequest withPortId(List<String> portId) {
         this.portId = portId;
         return this;
@@ -237,9 +245,6 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addPortIdItem(String portIdItem) {
-        if (this.portId == null) {
-            this.portId = new ArrayList<>();
-        }
         this.portId.add(portIdItem);
         return this;
     }
@@ -264,6 +269,8 @@ public class ListPublicipsRequest  {
         this.portId = portId;
     }
 
+    
+
     public ListPublicipsRequest withPublicIpAddress(List<String> publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
         return this;
@@ -271,9 +278,6 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addPublicIpAddressItem(String publicIpAddressItem) {
-        if (this.publicIpAddress == null) {
-            this.publicIpAddress = new ArrayList<>();
-        }
         this.publicIpAddress.add(publicIpAddressItem);
         return this;
     }
@@ -298,6 +302,8 @@ public class ListPublicipsRequest  {
         this.publicIpAddress = publicIpAddress;
     }
 
+    
+
     public ListPublicipsRequest withPrivateIpAddress(List<String> privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
         return this;
@@ -305,9 +311,6 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addPrivateIpAddressItem(String privateIpAddressItem) {
-        if (this.privateIpAddress == null) {
-            this.privateIpAddress = new ArrayList<>();
-        }
         this.privateIpAddress.add(privateIpAddressItem);
         return this;
     }
@@ -332,6 +335,8 @@ public class ListPublicipsRequest  {
         this.privateIpAddress = privateIpAddress;
     }
 
+    
+
     public ListPublicipsRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -339,9 +344,6 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -365,6 +367,9 @@ public class ListPublicipsRequest  {
     public void setId(List<String> id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

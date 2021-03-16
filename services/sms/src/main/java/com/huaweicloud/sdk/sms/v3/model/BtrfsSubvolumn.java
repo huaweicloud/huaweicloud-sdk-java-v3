@@ -73,6 +73,8 @@ public class BtrfsSubvolumn  {
         this.uuid = uuid;
     }
 
+    
+
     public BtrfsSubvolumn withIsSnapshot(String isSnapshot) {
         this.isSnapshot = isSnapshot;
         return this;
@@ -92,6 +94,8 @@ public class BtrfsSubvolumn  {
     public void setIsSnapshot(String isSnapshot) {
         this.isSnapshot = isSnapshot;
     }
+
+    
 
     public BtrfsSubvolumn withSubvolId(String subvolId) {
         this.subvolId = subvolId;
@@ -113,6 +117,8 @@ public class BtrfsSubvolumn  {
         this.subvolId = subvolId;
     }
 
+    
+
     public BtrfsSubvolumn withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -132,6 +138,8 @@ public class BtrfsSubvolumn  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public BtrfsSubvolumn withSubvolName(String subvolName) {
         this.subvolName = subvolName;
@@ -153,6 +161,8 @@ public class BtrfsSubvolumn  {
         this.subvolName = subvolName;
     }
 
+    
+
     public BtrfsSubvolumn withSubvolMountPath(String subvolMountPath) {
         this.subvolMountPath = subvolMountPath;
         return this;
@@ -172,6 +182,9 @@ public class BtrfsSubvolumn  {
     public void setSubvolMountPath(String subvolMountPath) {
         this.subvolMountPath = subvolMountPath;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

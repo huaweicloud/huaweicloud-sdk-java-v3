@@ -21,7 +21,7 @@ public class ListServiceResourcesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +33,13 @@ public class ListServiceResourcesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListServiceResourcesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -63,6 +63,8 @@ public class ListServiceResourcesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListServiceResourcesRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -82,6 +84,8 @@ public class ListServiceResourcesRequest  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
 
     public ListServiceResourcesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -105,6 +109,8 @@ public class ListServiceResourcesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListServiceResourcesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -126,6 +132,9 @@ public class ListServiceResourcesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

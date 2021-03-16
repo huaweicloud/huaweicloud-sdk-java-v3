@@ -163,6 +163,8 @@ public class CreateGrantRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public CreateGrantRequestBody withGranteePrincipal(String granteePrincipal) {
         this.granteePrincipal = granteePrincipal;
         return this;
@@ -183,6 +185,8 @@ public class CreateGrantRequestBody  {
         this.granteePrincipal = granteePrincipal;
     }
 
+    
+
     public CreateGrantRequestBody withOperations(List<String> operations) {
         this.operations = operations;
         return this;
@@ -190,9 +194,6 @@ public class CreateGrantRequestBody  {
 
     
     public CreateGrantRequestBody addOperationsItem(String operationsItem) {
-        if (this.operations == null) {
-            this.operations = new ArrayList<>();
-        }
         this.operations.add(operationsItem);
         return this;
     }
@@ -217,6 +218,8 @@ public class CreateGrantRequestBody  {
         this.operations = operations;
     }
 
+    
+
     public CreateGrantRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -236,6 +239,8 @@ public class CreateGrantRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateGrantRequestBody withRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
@@ -257,6 +262,8 @@ public class CreateGrantRequestBody  {
         this.retiringPrincipal = retiringPrincipal;
     }
 
+    
+
     public CreateGrantRequestBody withGranteePrincipalType(GranteePrincipalTypeEnum granteePrincipalType) {
         this.granteePrincipalType = granteePrincipalType;
         return this;
@@ -277,6 +284,8 @@ public class CreateGrantRequestBody  {
         this.granteePrincipalType = granteePrincipalType;
     }
 
+    
+
     public CreateGrantRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -296,6 +305,9 @@ public class CreateGrantRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

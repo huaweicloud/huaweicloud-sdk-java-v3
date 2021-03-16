@@ -39,9 +39,6 @@ public class VaultResourceIntancesResp  {
 
     
     public VaultResourceIntancesResp addResourcesItem(TagResource resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class VaultResourceIntancesResp  {
         this.resources = resources;
     }
 
+    
+
     public VaultResourceIntancesResp withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -85,6 +84,9 @@ public class VaultResourceIntancesResp  {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

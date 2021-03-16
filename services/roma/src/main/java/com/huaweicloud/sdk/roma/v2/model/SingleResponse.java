@@ -49,6 +49,8 @@ public class SingleResponse  {
         this.id = id;
     }
 
+    
+
     public SingleResponse withRetStatus(String retStatus) {
         this.retStatus = retStatus;
         return this;
@@ -68,6 +70,9 @@ public class SingleResponse  {
     public void setRetStatus(String retStatus) {
         this.retStatus = retStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

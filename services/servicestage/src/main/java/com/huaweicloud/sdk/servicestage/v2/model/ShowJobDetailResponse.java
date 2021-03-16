@@ -33,7 +33,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job")
     
-    private JobInfo job = null;
+    private JobInfo job;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setTaskCount(Integer taskCount) {
         this.taskCount = taskCount;
     }
+
+    
 
     public ShowJobDetailResponse withJob(JobInfo job) {
         this.job = job;
@@ -88,6 +90,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.job = job;
     }
 
+    
+
     public ShowJobDetailResponse withTasks(List<TaskInfo> tasks) {
         this.tasks = tasks;
         return this;
@@ -95,9 +99,6 @@ public class ShowJobDetailResponse extends SdkResponse {
 
     
     public ShowJobDetailResponse addTasksItem(TaskInfo tasksItem) {
-        if (this.tasks == null) {
-            this.tasks = new ArrayList<>();
-        }
         this.tasks.add(tasksItem);
         return this;
     }
@@ -121,6 +122,9 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setTasks(List<TaskInfo> tasks) {
         this.tasks = tasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

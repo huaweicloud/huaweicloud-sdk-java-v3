@@ -116,7 +116,7 @@ public class ChangeFailoverModeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FailoverModeRequest body = null;
+    private FailoverModeRequest body;
 
     public ChangeFailoverModeRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class ChangeFailoverModeRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ChangeFailoverModeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class ChangeFailoverModeRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ChangeFailoverModeRequest withBody(FailoverModeRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class ChangeFailoverModeRequest  {
     public void setBody(FailoverModeRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

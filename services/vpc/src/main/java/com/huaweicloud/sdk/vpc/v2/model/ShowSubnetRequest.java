@@ -42,6 +42,9 @@ public class ShowSubnetRequest  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

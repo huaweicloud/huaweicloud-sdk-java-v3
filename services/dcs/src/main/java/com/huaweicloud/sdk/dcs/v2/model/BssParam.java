@@ -109,7 +109,7 @@ public class BssParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_renew")
     
-    private IsAutoRenewEnum isAutoRenew = IsAutoRenewEnum.FALSE;
+    private IsAutoRenewEnum isAutoRenew;
     /**
      * 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid：预付费，即包年包月； - postPaid：后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
      */
@@ -193,7 +193,7 @@ public class BssParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charging_mode")
     
-    private ChargingModeEnum chargingMode = ChargingModeEnum.POSTPAID;
+    private ChargingModeEnum chargingMode;
     /**
      * 功能说明：下单订购后，是否自动从客户的账户中支付；默认是“不自动支付” 。  取值范围： - true：是（自动支付，从账户余额自动扣费） - false：否（默认值，只提交订单不支付，需要客户手动去支付）  约束： 自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。  **如果没有设置成自动支付，即设置为false时，在创建实例之后，实例状态为“支付中”，用户必须在“费用中心 > 我的订单”，完成订单支付，否则订单一直在支付中，实例没有创建成功**。 
      */
@@ -389,6 +389,8 @@ public class BssParam  {
         this.isAutoRenew = isAutoRenew;
     }
 
+    
+
     public BssParam withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -408,6 +410,8 @@ public class BssParam  {
     public void setChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
     }
+
+    
 
     public BssParam withIsAutoPay(IsAutoPayEnum isAutoPay) {
         this.isAutoPay = isAutoPay;
@@ -429,6 +433,8 @@ public class BssParam  {
         this.isAutoPay = isAutoPay;
     }
 
+    
+
     public BssParam withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
@@ -449,6 +455,8 @@ public class BssParam  {
         this.periodType = periodType;
     }
 
+    
+
     public BssParam withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
@@ -468,6 +476,9 @@ public class BssParam  {
     public void setPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class SetCustomMultiPictureRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestCustomMultiPictureBody body = null;
+    private RestCustomMultiPictureBody body;
 
     public SetCustomMultiPictureRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -55,6 +55,8 @@ public class SetCustomMultiPictureRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public SetCustomMultiPictureRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -77,6 +79,8 @@ public class SetCustomMultiPictureRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public SetCustomMultiPictureRequest withBody(RestCustomMultiPictureBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class SetCustomMultiPictureRequest  {
     public void setBody(RestCustomMultiPictureBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

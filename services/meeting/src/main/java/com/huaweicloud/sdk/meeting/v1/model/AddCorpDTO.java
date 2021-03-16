@@ -24,19 +24,19 @@ public class AddCorpDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basicInfo")
     
-    private CorpBasicDTO basicInfo = null;
+    private CorpBasicDTO basicInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adminInfo")
     
-    private AdminDTO adminInfo = null;
+    private AdminDTO adminInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resInfo")
     
-    private AddCorpResDTO resInfo = null;
+    private AddCorpResDTO resInfo;
 
     public AddCorpDTO withBasicInfo(CorpBasicDTO basicInfo) {
         this.basicInfo = basicInfo;
@@ -65,6 +65,8 @@ public class AddCorpDTO  {
         this.basicInfo = basicInfo;
     }
 
+    
+
     public AddCorpDTO withAdminInfo(AdminDTO adminInfo) {
         this.adminInfo = adminInfo;
         return this;
@@ -92,6 +94,8 @@ public class AddCorpDTO  {
         this.adminInfo = adminInfo;
     }
 
+    
+
     public AddCorpDTO withResInfo(AddCorpResDTO resInfo) {
         this.resInfo = resInfo;
         return this;
@@ -118,6 +122,9 @@ public class AddCorpDTO  {
     public void setResInfo(AddCorpResDTO resInfo) {
         this.resInfo = resInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

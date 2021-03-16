@@ -79,6 +79,8 @@ public class Resource  {
         this.type = type;
     }
 
+    
+
     public Resource withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -98,6 +100,8 @@ public class Resource  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    
 
     public Resource withMin(Integer min) {
         this.min = min;
@@ -119,6 +123,8 @@ public class Resource  {
         this.min = min;
     }
 
+    
+
     public Resource withMax(Integer max) {
         this.max = max;
         return this;
@@ -138,6 +144,8 @@ public class Resource  {
     public void setMax(Integer max) {
         this.max = max;
     }
+
+    
 
     public Resource withQuota(Integer quota) {
         this.quota = quota;
@@ -159,6 +167,8 @@ public class Resource  {
         this.quota = quota;
     }
 
+    
+
     public Resource withUsed(Integer used) {
         this.used = used;
         return this;
@@ -179,6 +189,8 @@ public class Resource  {
         this.used = used;
     }
 
+    
+
     public Resource withFree(Integer free) {
         this.free = free;
         return this;
@@ -198,6 +210,9 @@ public class Resource  {
     public void setFree(Integer free) {
         this.free = free;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

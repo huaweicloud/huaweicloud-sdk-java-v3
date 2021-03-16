@@ -22,7 +22,7 @@ public class UpdateLoadbalancerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancer")
     
-    private UpdateLoadbalancerReq loadbalancer = null;
+    private UpdateLoadbalancerReq loadbalancer;
 
     public UpdateLoadbalancerRequestBody withLoadbalancer(UpdateLoadbalancerReq loadbalancer) {
         this.loadbalancer = loadbalancer;
@@ -50,6 +50,9 @@ public class UpdateLoadbalancerRequestBody  {
     public void setLoadbalancer(UpdateLoadbalancerReq loadbalancer) {
         this.loadbalancer = loadbalancer;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

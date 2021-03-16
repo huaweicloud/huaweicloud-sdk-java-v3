@@ -49,6 +49,8 @@ public class ListApplicationAttributesResponseBodyAttributes  {
         this.enabled = enabled;
     }
 
+    
+
     public ListApplicationAttributesResponseBodyAttributes withAppleCertificateExpirationDate(String appleCertificateExpirationDate) {
         this.appleCertificateExpirationDate = appleCertificateExpirationDate;
         return this;
@@ -68,6 +70,9 @@ public class ListApplicationAttributesResponseBodyAttributes  {
     public void setAppleCertificateExpirationDate(String appleCertificateExpirationDate) {
         this.appleCertificateExpirationDate = appleCertificateExpirationDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

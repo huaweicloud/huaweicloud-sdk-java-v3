@@ -49,6 +49,8 @@ public class CreateIpGroupIpOption  {
         this.ip = ip;
     }
 
+    
+
     public CreateIpGroupIpOption withDescription(String description) {
         this.description = description;
         return this;
@@ -68,6 +70,9 @@ public class CreateIpGroupIpOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

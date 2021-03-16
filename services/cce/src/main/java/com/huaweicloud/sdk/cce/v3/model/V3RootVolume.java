@@ -76,6 +76,8 @@ public class V3RootVolume  {
         this.clusterId = clusterId;
     }
 
+    
+
     public V3RootVolume withClusterType(String clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -96,6 +98,8 @@ public class V3RootVolume  {
         this.clusterType = clusterType;
     }
 
+    
+
     public V3RootVolume withExtendParam(Map<String, Object> extendParam) {
         this.extendParam = extendParam;
         return this;
@@ -104,9 +108,6 @@ public class V3RootVolume  {
     
 
     public V3RootVolume putExtendParamItem(String key, Object extendParamItem) {
-         if (this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-         }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
@@ -130,6 +131,8 @@ public class V3RootVolume  {
         this.extendParam = extendParam;
     }
 
+    
+
     public V3RootVolume withHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
         return this;
@@ -149,6 +152,8 @@ public class V3RootVolume  {
     public void setHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
     }
+
+    
 
     public V3RootVolume withSize(Integer size) {
         this.size = size;
@@ -170,6 +175,8 @@ public class V3RootVolume  {
         this.size = size;
     }
 
+    
+
     public V3RootVolume withVolumetype(String volumetype) {
         this.volumetype = volumetype;
         return this;
@@ -189,6 +196,9 @@ public class V3RootVolume  {
     public void setVolumetype(String volumetype) {
         this.volumetype = volumetype;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

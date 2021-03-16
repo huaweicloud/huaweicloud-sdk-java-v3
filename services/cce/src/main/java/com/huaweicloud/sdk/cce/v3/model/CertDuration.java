@@ -44,6 +44,9 @@ public class CertDuration  {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

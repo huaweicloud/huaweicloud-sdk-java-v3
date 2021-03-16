@@ -51,6 +51,8 @@ public class Audit  {
         this.position = position;
     }
 
+    
+
     public Audit withIndex(Integer index) {
         this.index = index;
         return this;
@@ -72,6 +74,9 @@ public class Audit  {
     public void setIndex(Integer index) {
         this.index = index;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

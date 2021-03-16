@@ -28,7 +28,7 @@ public class StartTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private StartTaskReq body = null;
+    private StartTaskReq body;
 
     public StartTaskRequest withTaskId(Long taskId) {
         this.taskId = taskId;
@@ -51,6 +51,8 @@ public class StartTaskRequest  {
     public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
+
+    
 
     public StartTaskRequest withBody(StartTaskReq body) {
         this.body = body;
@@ -78,6 +80,9 @@ public class StartTaskRequest  {
     public void setBody(StartTaskReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

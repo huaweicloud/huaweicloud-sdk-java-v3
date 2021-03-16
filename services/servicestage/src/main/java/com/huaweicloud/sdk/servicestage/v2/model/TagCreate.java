@@ -49,6 +49,8 @@ public class TagCreate  {
         this.name = name;
     }
 
+    
+
     public TagCreate withDescription(String description) {
         this.description = description;
         return this;
@@ -68,6 +70,9 @@ public class TagCreate  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

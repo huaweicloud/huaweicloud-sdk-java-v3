@@ -205,6 +205,8 @@ public class ShowPublicationResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowPublicationResponse withLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
         return this;
@@ -224,6 +226,8 @@ public class ShowPublicationResponse extends SdkResponse {
     public void setLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
     }
+
+    
 
     public ShowPublicationResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -245,6 +249,8 @@ public class ShowPublicationResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowPublicationResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -264,6 +270,8 @@ public class ShowPublicationResponse extends SdkResponse {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ShowPublicationResponse withPublishName(String publishName) {
         this.publishName = publishName;
@@ -285,6 +293,8 @@ public class ShowPublicationResponse extends SdkResponse {
         this.publishName = publishName;
     }
 
+    
+
     public ShowPublicationResponse withPublishScope(String publishScope) {
         this.publishScope = publishScope;
         return this;
@@ -304,6 +314,8 @@ public class ShowPublicationResponse extends SdkResponse {
     public void setPublishScope(String publishScope) {
         this.publishScope = publishScope;
     }
+
+    
 
     public ShowPublicationResponse withStartTime(Long startTime) {
         this.startTime = startTime;
@@ -325,6 +337,8 @@ public class ShowPublicationResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
+    
+
     public ShowPublicationResponse withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -344,6 +358,8 @@ public class ShowPublicationResponse extends SdkResponse {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowPublicationResponse withPublishStatus(PublishStatusEnum publishStatus) {
         this.publishStatus = publishStatus;
@@ -365,6 +381,8 @@ public class ShowPublicationResponse extends SdkResponse {
         this.publishStatus = publishStatus;
     }
 
+    
+
     public ShowPublicationResponse withProgramList(List<ProgramResponseBase> programList) {
         this.programList = programList;
         return this;
@@ -372,9 +390,6 @@ public class ShowPublicationResponse extends SdkResponse {
 
     
     public ShowPublicationResponse addProgramListItem(ProgramResponseBase programListItem) {
-        if (this.programList == null) {
-            this.programList = new ArrayList<>();
-        }
         this.programList.add(programListItem);
         return this;
     }
@@ -399,6 +414,8 @@ public class ShowPublicationResponse extends SdkResponse {
         this.programList = programList;
     }
 
+    
+
     public ShowPublicationResponse withDeptList(List<PublishDeptResponseDTO> deptList) {
         this.deptList = deptList;
         return this;
@@ -406,9 +423,6 @@ public class ShowPublicationResponse extends SdkResponse {
 
     
     public ShowPublicationResponse addDeptListItem(PublishDeptResponseDTO deptListItem) {
-        if (this.deptList == null) {
-            this.deptList = new ArrayList<>();
-        }
         this.deptList.add(deptListItem);
         return this;
     }
@@ -433,6 +447,8 @@ public class ShowPublicationResponse extends SdkResponse {
         this.deptList = deptList;
     }
 
+    
+
     public ShowPublicationResponse withDeviceList(List<PublishDeviceResponseDTO> deviceList) {
         this.deviceList = deviceList;
         return this;
@@ -440,9 +456,6 @@ public class ShowPublicationResponse extends SdkResponse {
 
     
     public ShowPublicationResponse addDeviceListItem(PublishDeviceResponseDTO deviceListItem) {
-        if (this.deviceList == null) {
-            this.deviceList = new ArrayList<>();
-        }
         this.deviceList.add(deviceListItem);
         return this;
     }
@@ -466,6 +479,9 @@ public class ShowPublicationResponse extends SdkResponse {
     public void setDeviceList(List<PublishDeviceResponseDTO> deviceList) {
         this.deviceList = deviceList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

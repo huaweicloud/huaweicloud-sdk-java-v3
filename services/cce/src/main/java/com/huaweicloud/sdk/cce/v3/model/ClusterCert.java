@@ -55,6 +55,8 @@ public class ClusterCert  {
         this.certificateAuthorityData = certificateAuthorityData;
     }
 
+    
+
     public ClusterCert withInsecureSkipTlsVerify(Boolean insecureSkipTlsVerify) {
         this.insecureSkipTlsVerify = insecureSkipTlsVerify;
         return this;
@@ -75,6 +77,8 @@ public class ClusterCert  {
         this.insecureSkipTlsVerify = insecureSkipTlsVerify;
     }
 
+    
+
     public ClusterCert withServer(String server) {
         this.server = server;
         return this;
@@ -94,6 +98,9 @@ public class ClusterCert  {
     public void setServer(String server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

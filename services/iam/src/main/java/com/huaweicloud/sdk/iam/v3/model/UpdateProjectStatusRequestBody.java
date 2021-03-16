@@ -22,7 +22,7 @@ public class UpdateProjectStatusRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private UpdateProjectOption project = null;
+    private UpdateProjectOption project;
 
     public UpdateProjectStatusRequestBody withProject(UpdateProjectOption project) {
         this.project = project;
@@ -50,6 +50,9 @@ public class UpdateProjectStatusRequestBody  {
     public void setProject(UpdateProjectOption project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -32,7 +32,7 @@ public class TargetServerByTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<TargetDisks> disks = new ArrayList<>();
+    private List<TargetDisks> disks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,9 +59,6 @@ public class TargetServerByTask  {
 
     
     public TargetServerByTask addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if (this.btrfsList == null) {
-            this.btrfsList = new ArrayList<>();
-        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
@@ -85,6 +82,8 @@ public class TargetServerByTask  {
     public void setBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
     }
+
+    
 
     public TargetServerByTask withDisks(List<TargetDisks> disks) {
         this.disks = disks;
@@ -117,6 +116,8 @@ public class TargetServerByTask  {
         this.disks = disks;
     }
 
+    
+
     public TargetServerByTask withName(String name) {
         this.name = name;
         return this;
@@ -136,6 +137,8 @@ public class TargetServerByTask  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TargetServerByTask withVmId(String vmId) {
         this.vmId = vmId;
@@ -157,6 +160,8 @@ public class TargetServerByTask  {
         this.vmId = vmId;
     }
 
+    
+
     public TargetServerByTask withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
@@ -164,9 +169,6 @@ public class TargetServerByTask  {
 
     
     public TargetServerByTask addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if (this.volumeGroups == null) {
-            this.volumeGroups = new ArrayList<>();
-        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
@@ -190,6 +192,9 @@ public class TargetServerByTask  {
     public void setVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

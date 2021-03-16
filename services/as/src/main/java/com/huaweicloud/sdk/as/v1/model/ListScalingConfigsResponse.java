@@ -66,6 +66,8 @@ public class ListScalingConfigsResponse extends SdkResponse {
         this.totalNumber = totalNumber;
     }
 
+    
+
     public ListScalingConfigsResponse withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -85,6 +87,8 @@ public class ListScalingConfigsResponse extends SdkResponse {
     public void setStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
     }
+
+    
 
     public ListScalingConfigsResponse withLimit(Integer limit) {
         this.limit = limit;
@@ -106,6 +110,8 @@ public class ListScalingConfigsResponse extends SdkResponse {
         this.limit = limit;
     }
 
+    
+
     public ListScalingConfigsResponse withScalingConfigurations(List<ScalingConfiguration> scalingConfigurations) {
         this.scalingConfigurations = scalingConfigurations;
         return this;
@@ -113,9 +119,6 @@ public class ListScalingConfigsResponse extends SdkResponse {
 
     
     public ListScalingConfigsResponse addScalingConfigurationsItem(ScalingConfiguration scalingConfigurationsItem) {
-        if (this.scalingConfigurations == null) {
-            this.scalingConfigurations = new ArrayList<>();
-        }
         this.scalingConfigurations.add(scalingConfigurationsItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class ListScalingConfigsResponse extends SdkResponse {
     public void setScalingConfigurations(List<ScalingConfiguration> scalingConfigurations) {
         this.scalingConfigurations = scalingConfigurations;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

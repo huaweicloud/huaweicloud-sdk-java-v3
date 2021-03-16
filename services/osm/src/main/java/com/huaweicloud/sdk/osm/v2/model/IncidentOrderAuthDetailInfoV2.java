@@ -81,6 +81,8 @@ public class IncidentOrderAuthDetailInfoV2  {
         this.id = id;
     }
 
+    
+
     public IncidentOrderAuthDetailInfoV2 withPort(Integer port) {
         this.port = port;
         return this;
@@ -103,6 +105,8 @@ public class IncidentOrderAuthDetailInfoV2  {
         this.port = port;
     }
 
+    
+
     public IncidentOrderAuthDetailInfoV2 withAccount(String account) {
         this.account = account;
         return this;
@@ -122,6 +126,8 @@ public class IncidentOrderAuthDetailInfoV2  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public IncidentOrderAuthDetailInfoV2 withType(Integer type) {
         this.type = type;
@@ -145,6 +151,8 @@ public class IncidentOrderAuthDetailInfoV2  {
         this.type = type;
     }
 
+    
+
     public IncidentOrderAuthDetailInfoV2 withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -164,6 +172,8 @@ public class IncidentOrderAuthDetailInfoV2  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public IncidentOrderAuthDetailInfoV2 withInstanceName(String instanceName) {
         this.instanceName = instanceName;
@@ -185,6 +195,8 @@ public class IncidentOrderAuthDetailInfoV2  {
         this.instanceName = instanceName;
     }
 
+    
+
     public IncidentOrderAuthDetailInfoV2 withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -204,6 +216,9 @@ public class IncidentOrderAuthDetailInfoV2  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

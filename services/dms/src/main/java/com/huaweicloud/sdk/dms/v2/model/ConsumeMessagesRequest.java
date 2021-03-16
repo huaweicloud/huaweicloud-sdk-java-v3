@@ -79,6 +79,8 @@ public class ConsumeMessagesRequest  {
         this.queueId = queueId;
     }
 
+    
+
     public ConsumeMessagesRequest withConsumerGroupId(String consumerGroupId) {
         this.consumerGroupId = consumerGroupId;
         return this;
@@ -98,6 +100,8 @@ public class ConsumeMessagesRequest  {
     public void setConsumerGroupId(String consumerGroupId) {
         this.consumerGroupId = consumerGroupId;
     }
+
+    
 
     public ConsumeMessagesRequest withMaxMsgs(Integer maxMsgs) {
         this.maxMsgs = maxMsgs;
@@ -119,6 +123,8 @@ public class ConsumeMessagesRequest  {
         this.maxMsgs = maxMsgs;
     }
 
+    
+
     public ConsumeMessagesRequest withTimeWait(Integer timeWait) {
         this.timeWait = timeWait;
         return this;
@@ -138,6 +144,8 @@ public class ConsumeMessagesRequest  {
     public void setTimeWait(Integer timeWait) {
         this.timeWait = timeWait;
     }
+
+    
 
     public ConsumeMessagesRequest withAckWait(Integer ackWait) {
         this.ackWait = ackWait;
@@ -159,6 +167,8 @@ public class ConsumeMessagesRequest  {
         this.ackWait = ackWait;
     }
 
+    
+
     public ConsumeMessagesRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -179,6 +189,8 @@ public class ConsumeMessagesRequest  {
         this.tag = tag;
     }
 
+    
+
     public ConsumeMessagesRequest withTagType(String tagType) {
         this.tagType = tagType;
         return this;
@@ -198,6 +210,9 @@ public class ConsumeMessagesRequest  {
     public void setTagType(String tagType) {
         this.tagType = tagType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

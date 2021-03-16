@@ -28,7 +28,7 @@ public class BatchCreatePublicipTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreatePublicipTagsRequestBody body = null;
+    private BatchCreatePublicipTagsRequestBody body;
 
     public BatchCreatePublicipTagsRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -49,6 +49,8 @@ public class BatchCreatePublicipTagsRequest  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public BatchCreatePublicipTagsRequest withBody(BatchCreatePublicipTagsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchCreatePublicipTagsRequest  {
     public void setBody(BatchCreatePublicipTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -62,6 +62,8 @@ public class ApiMock  {
         this.remark = remark;
     }
 
+    
+
     public ApiMock withResultContent(String resultContent) {
         this.resultContent = resultContent;
         return this;
@@ -81,6 +83,8 @@ public class ApiMock  {
     public void setResultContent(String resultContent) {
         this.resultContent = resultContent;
     }
+
+    
 
     public ApiMock withVersion(String version) {
         this.version = version;
@@ -102,6 +106,8 @@ public class ApiMock  {
         this.version = version;
     }
 
+    
+
     public ApiMock withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -121,6 +127,9 @@ public class ApiMock  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

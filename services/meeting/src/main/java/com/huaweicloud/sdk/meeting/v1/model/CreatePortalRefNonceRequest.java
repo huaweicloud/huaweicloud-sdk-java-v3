@@ -51,6 +51,8 @@ public class CreatePortalRefNonceRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public CreatePortalRefNonceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -70,6 +72,9 @@ public class CreatePortalRefNonceRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

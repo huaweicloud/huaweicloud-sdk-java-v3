@@ -78,7 +78,7 @@ public class ShowCorpAdminResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dept")
     
-    private DeptBasicDTO dept = null;
+    private DeptBasicDTO dept;
 
     public ShowCorpAdminResponse withId(String id) {
         this.id = id;
@@ -100,6 +100,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowCorpAdminResponse withAccount(String account) {
         this.account = account;
         return this;
@@ -119,6 +121,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public ShowCorpAdminResponse withName(String name) {
         this.name = name;
@@ -140,6 +144,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowCorpAdminResponse withAdminType(Integer adminType) {
         this.adminType = adminType;
         return this;
@@ -159,6 +165,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
     public void setAdminType(Integer adminType) {
         this.adminType = adminType;
     }
+
+    
 
     public ShowCorpAdminResponse withEmail(String email) {
         this.email = email;
@@ -180,6 +188,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
         this.email = email;
     }
 
+    
+
     public ShowCorpAdminResponse withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -199,6 +209,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public ShowCorpAdminResponse withCountry(String country) {
         this.country = country;
@@ -220,6 +232,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
         this.country = country;
     }
 
+    
+
     public ShowCorpAdminResponse withMenuTemplateId(String menuTemplateId) {
         this.menuTemplateId = menuTemplateId;
         return this;
@@ -240,6 +254,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
         this.menuTemplateId = menuTemplateId;
     }
 
+    
+
     public ShowCorpAdminResponse withMenuTemplateName(String menuTemplateName) {
         this.menuTemplateName = menuTemplateName;
         return this;
@@ -259,6 +275,8 @@ public class ShowCorpAdminResponse extends SdkResponse {
     public void setMenuTemplateName(String menuTemplateName) {
         this.menuTemplateName = menuTemplateName;
     }
+
+    
 
     public ShowCorpAdminResponse withDept(DeptBasicDTO dept) {
         this.dept = dept;
@@ -286,6 +304,9 @@ public class ShowCorpAdminResponse extends SdkResponse {
     public void setDept(DeptBasicDTO dept) {
         this.dept = dept;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

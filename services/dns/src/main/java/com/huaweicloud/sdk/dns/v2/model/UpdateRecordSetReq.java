@@ -69,6 +69,8 @@ public class UpdateRecordSetReq  {
         this.name = name;
     }
 
+    
+
     public UpdateRecordSetReq withDescription(String description) {
         this.description = description;
         return this;
@@ -88,6 +90,8 @@ public class UpdateRecordSetReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateRecordSetReq withType(String type) {
         this.type = type;
@@ -109,6 +113,8 @@ public class UpdateRecordSetReq  {
         this.type = type;
     }
 
+    
+
     public UpdateRecordSetReq withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -129,6 +135,8 @@ public class UpdateRecordSetReq  {
         this.ttl = ttl;
     }
 
+    
+
     public UpdateRecordSetReq withRecords(List<String> records) {
         this.records = records;
         return this;
@@ -136,9 +144,6 @@ public class UpdateRecordSetReq  {
 
     
     public UpdateRecordSetReq addRecordsItem(String recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -162,6 +167,9 @@ public class UpdateRecordSetReq  {
     public void setRecords(List<String> records) {
         this.records = records;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

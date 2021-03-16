@@ -85,6 +85,8 @@ public class ShowEventDataRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ShowEventDataRequest withDim0(String dim0) {
         this.dim0 = dim0;
         return this;
@@ -104,6 +106,8 @@ public class ShowEventDataRequest  {
     public void setDim0(String dim0) {
         this.dim0 = dim0;
     }
+
+    
 
     public ShowEventDataRequest withDim1(String dim1) {
         this.dim1 = dim1;
@@ -125,6 +129,8 @@ public class ShowEventDataRequest  {
         this.dim1 = dim1;
     }
 
+    
+
     public ShowEventDataRequest withDim2(String dim2) {
         this.dim2 = dim2;
         return this;
@@ -144,6 +150,8 @@ public class ShowEventDataRequest  {
     public void setDim2(String dim2) {
         this.dim2 = dim2;
     }
+
+    
 
     public ShowEventDataRequest withDim3(String dim3) {
         this.dim3 = dim3;
@@ -165,6 +173,8 @@ public class ShowEventDataRequest  {
         this.dim3 = dim3;
     }
 
+    
+
     public ShowEventDataRequest withType(String type) {
         this.type = type;
         return this;
@@ -184,6 +194,8 @@ public class ShowEventDataRequest  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ShowEventDataRequest withFrom(Long from) {
         this.from = from;
@@ -205,6 +217,8 @@ public class ShowEventDataRequest  {
         this.from = from;
     }
 
+    
+
     public ShowEventDataRequest withTo(Long to) {
         this.to = to;
         return this;
@@ -224,6 +238,9 @@ public class ShowEventDataRequest  {
     public void setTo(Long to) {
         this.to = to;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

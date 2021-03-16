@@ -49,6 +49,8 @@ public class DeleteRomaAppRequest  {
         this.appId = appId;
     }
 
+    
+
     public DeleteRomaAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteRomaAppRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

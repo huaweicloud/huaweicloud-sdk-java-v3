@@ -143,6 +143,8 @@ public class DependJob  {
         this.jobs = jobs;
     }
 
+    
+
     public DependJob withDependPeriod(String dependPeriod) {
         this.dependPeriod = dependPeriod;
         return this;
@@ -163,6 +165,8 @@ public class DependJob  {
         this.dependPeriod = dependPeriod;
     }
 
+    
+
     public DependJob withDependFailPolicy(DependFailPolicyEnum dependFailPolicy) {
         this.dependFailPolicy = dependFailPolicy;
         return this;
@@ -182,6 +186,9 @@ public class DependJob  {
     public void setDependFailPolicy(DependFailPolicyEnum dependFailPolicy) {
         this.dependFailPolicy = dependFailPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

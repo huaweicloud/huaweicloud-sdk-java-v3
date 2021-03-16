@@ -49,6 +49,8 @@ public class ShowRuleActionRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowRuleActionRequest withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -68,6 +70,9 @@ public class ShowRuleActionRequest  {
     public void setActionId(String actionId) {
         this.actionId = actionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

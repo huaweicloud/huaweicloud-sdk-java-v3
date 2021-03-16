@@ -24,7 +24,7 @@ public class KeystoneShowSecurityComplianceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    private Config config = null;
+    private Config config;
 
     public KeystoneShowSecurityComplianceResponse withConfig(Config config) {
         this.config = config;
@@ -52,6 +52,9 @@ public class KeystoneShowSecurityComplianceResponse extends SdkResponse {
     public void setConfig(Config config) {
         this.config = config;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ShowRealTimeInfoOfMeetingRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public ShowRealTimeInfoOfMeetingRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
         return this;
@@ -70,6 +72,9 @@ public class ShowRealTimeInfoOfMeetingRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

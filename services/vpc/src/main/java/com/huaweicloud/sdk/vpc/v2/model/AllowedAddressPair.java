@@ -49,6 +49,8 @@ public class AllowedAddressPair  {
         this.ipAddress = ipAddress;
     }
 
+    
+
     public AllowedAddressPair withMacAddress(String macAddress) {
         this.macAddress = macAddress;
         return this;
@@ -68,6 +70,9 @@ public class AllowedAddressPair  {
     public void setMacAddress(String macAddress) {
         this.macAddress = macAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

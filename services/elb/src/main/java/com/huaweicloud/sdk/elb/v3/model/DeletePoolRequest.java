@@ -42,6 +42,9 @@ public class DeletePoolRequest  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

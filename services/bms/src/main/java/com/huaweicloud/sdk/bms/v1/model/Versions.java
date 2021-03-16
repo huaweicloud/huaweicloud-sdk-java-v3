@@ -217,7 +217,7 @@ public class Versions  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    private OffsetDateTime updated = null;
+    private OffsetDateTime updated;
 
     public Versions withId(IdEnum id) {
         this.id = id;
@@ -239,6 +239,8 @@ public class Versions  {
         this.id = id;
     }
 
+    
+
     public Versions withLinks(List<VersionLinks> links) {
         this.links = links;
         return this;
@@ -246,9 +248,6 @@ public class Versions  {
 
     
     public Versions addLinksItem(VersionLinks linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -273,6 +272,8 @@ public class Versions  {
         this.links = links;
     }
 
+    
+
     public Versions withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
@@ -292,6 +293,8 @@ public class Versions  {
     public void setMinVersion(String minVersion) {
         this.minVersion = minVersion;
     }
+
+    
 
     public Versions withStatus(StatusEnum status) {
         this.status = status;
@@ -313,6 +316,8 @@ public class Versions  {
         this.status = status;
     }
 
+    
+
     public Versions withVersion(String version) {
         this.version = version;
         return this;
@@ -333,6 +338,8 @@ public class Versions  {
         this.version = version;
     }
 
+    
+
     public Versions withUpdated(OffsetDateTime updated) {
         this.updated = updated;
         return this;
@@ -352,6 +359,9 @@ public class Versions  {
     public void setUpdated(OffsetDateTime updated) {
         this.updated = updated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

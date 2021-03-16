@@ -49,6 +49,8 @@ public class FunctionGraphForwarding  {
         this.funcUrn = funcUrn;
     }
 
+    
+
     public FunctionGraphForwarding withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -68,6 +70,9 @@ public class FunctionGraphForwarding  {
     public void setFuncName(String funcName) {
         this.funcName = funcName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class UpdateUserNickNameRequestV4  {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

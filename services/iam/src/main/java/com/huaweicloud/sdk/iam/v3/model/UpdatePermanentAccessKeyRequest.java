@@ -28,7 +28,7 @@ public class UpdatePermanentAccessKeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePermanentAccessKeyRequestBody body = null;
+    private UpdatePermanentAccessKeyRequestBody body;
 
     public UpdatePermanentAccessKeyRequest withAccessKey(String accessKey) {
         this.accessKey = accessKey;
@@ -49,6 +49,8 @@ public class UpdatePermanentAccessKeyRequest  {
     public void setAccessKey(String accessKey) {
         this.accessKey = accessKey;
     }
+
+    
 
     public UpdatePermanentAccessKeyRequest withBody(UpdatePermanentAccessKeyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePermanentAccessKeyRequest  {
     public void setBody(UpdatePermanentAccessKeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

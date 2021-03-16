@@ -21,13 +21,13 @@ public class ListApplicationsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class ListApplicationsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListApplicationsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -80,6 +82,8 @@ public class ListApplicationsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListApplicationsRequest withName(String name) {
         this.name = name;
@@ -101,6 +105,8 @@ public class ListApplicationsRequest  {
         this.name = name;
     }
 
+    
+
     public ListApplicationsRequest withPlatform(String platform) {
         this.platform = platform;
         return this;
@@ -120,6 +126,9 @@ public class ListApplicationsRequest  {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

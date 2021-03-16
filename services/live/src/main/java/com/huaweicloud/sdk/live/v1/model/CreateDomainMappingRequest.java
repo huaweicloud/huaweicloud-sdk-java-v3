@@ -28,7 +28,7 @@ public class CreateDomainMappingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DomainMapping body = null;
+    private DomainMapping body;
 
     public CreateDomainMappingRequest withSpecifyProject(String specifyProject) {
         this.specifyProject = specifyProject;
@@ -49,6 +49,8 @@ public class CreateDomainMappingRequest  {
     public void setSpecifyProject(String specifyProject) {
         this.specifyProject = specifyProject;
     }
+
+    
 
     public CreateDomainMappingRequest withBody(DomainMapping body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateDomainMappingRequest  {
     public void setBody(DomainMapping body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

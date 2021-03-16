@@ -22,7 +22,7 @@ public class NovaAssociateSecurityGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addSecurityGroup")
     
-    private NovaAddSecurityGroupOption addSecurityGroup = null;
+    private NovaAddSecurityGroupOption addSecurityGroup;
 
     public NovaAssociateSecurityGroupRequestBody withAddSecurityGroup(NovaAddSecurityGroupOption addSecurityGroup) {
         this.addSecurityGroup = addSecurityGroup;
@@ -50,6 +50,9 @@ public class NovaAssociateSecurityGroupRequestBody  {
     public void setAddSecurityGroup(NovaAddSecurityGroupOption addSecurityGroup) {
         this.addSecurityGroup = addSecurityGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

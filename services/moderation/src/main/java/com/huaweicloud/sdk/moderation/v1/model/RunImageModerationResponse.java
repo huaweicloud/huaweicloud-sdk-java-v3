@@ -24,7 +24,7 @@ public class RunImageModerationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private ImageDetectionResultBody result = null;
+    private ImageDetectionResultBody result;
 
     public RunImageModerationResponse withResult(ImageDetectionResultBody result) {
         this.result = result;
@@ -52,6 +52,9 @@ public class RunImageModerationResponse extends SdkResponse {
     public void setResult(ImageDetectionResultBody result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ShowTestCaseDetailRequest  {
         this.projectId = projectId;
     }
 
+    
+
     public ShowTestCaseDetailRequest withTestcaseId(String testcaseId) {
         this.testcaseId = testcaseId;
         return this;
@@ -68,6 +70,9 @@ public class ShowTestCaseDetailRequest  {
     public void setTestcaseId(String testcaseId) {
         this.testcaseId = testcaseId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

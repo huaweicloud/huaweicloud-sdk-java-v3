@@ -117,7 +117,7 @@ public class ConferenceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cycleParams")
     
-    private CycleParams cycleParams = null;
+    private CycleParams cycleParams;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -189,7 +189,7 @@ public class ConferenceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confConfigInfo")
     
-    private RestConfConfigDTO confConfigInfo = null;
+    private RestConfConfigDTO confConfigInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -201,7 +201,7 @@ public class ConferenceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isHasRecordFile")
     
-    private Boolean isHasRecordFile = false;
+    private Boolean isHasRecordFile;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -271,6 +271,8 @@ public class ConferenceInfo  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public ConferenceInfo withSubject(String subject) {
         this.subject = subject;
         return this;
@@ -290,6 +292,8 @@ public class ConferenceInfo  {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+    
 
     public ConferenceInfo withSize(Integer size) {
         this.size = size;
@@ -311,6 +315,8 @@ public class ConferenceInfo  {
         this.size = size;
     }
 
+    
+
     public ConferenceInfo withTimeZoneID(String timeZoneID) {
         this.timeZoneID = timeZoneID;
         return this;
@@ -330,6 +336,8 @@ public class ConferenceInfo  {
     public void setTimeZoneID(String timeZoneID) {
         this.timeZoneID = timeZoneID;
     }
+
+    
 
     public ConferenceInfo withStartTime(String startTime) {
         this.startTime = startTime;
@@ -351,6 +359,8 @@ public class ConferenceInfo  {
         this.startTime = startTime;
     }
 
+    
+
     public ConferenceInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -370,6 +380,8 @@ public class ConferenceInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ConferenceInfo withMediaTypes(String mediaTypes) {
         this.mediaTypes = mediaTypes;
@@ -391,6 +403,8 @@ public class ConferenceInfo  {
         this.mediaTypes = mediaTypes;
     }
 
+    
+
     public ConferenceInfo withConferenceState(String conferenceState) {
         this.conferenceState = conferenceState;
         return this;
@@ -410,6 +424,8 @@ public class ConferenceInfo  {
     public void setConferenceState(String conferenceState) {
         this.conferenceState = conferenceState;
     }
+
+    
 
     public ConferenceInfo withLanguage(String language) {
         this.language = language;
@@ -431,6 +447,8 @@ public class ConferenceInfo  {
         this.language = language;
     }
 
+    
+
     public ConferenceInfo withAccessNumber(String accessNumber) {
         this.accessNumber = accessNumber;
         return this;
@@ -451,6 +469,8 @@ public class ConferenceInfo  {
         this.accessNumber = accessNumber;
     }
 
+    
+
     public ConferenceInfo withPasswordEntry(List<PasswordEntry> passwordEntry) {
         this.passwordEntry = passwordEntry;
         return this;
@@ -458,9 +478,6 @@ public class ConferenceInfo  {
 
     
     public ConferenceInfo addPasswordEntryItem(PasswordEntry passwordEntryItem) {
-        if (this.passwordEntry == null) {
-            this.passwordEntry = new ArrayList<>();
-        }
         this.passwordEntry.add(passwordEntryItem);
         return this;
     }
@@ -485,6 +502,8 @@ public class ConferenceInfo  {
         this.passwordEntry = passwordEntry;
     }
 
+    
+
     public ConferenceInfo withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -504,6 +523,8 @@ public class ConferenceInfo  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public ConferenceInfo withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
@@ -525,6 +546,8 @@ public class ConferenceInfo  {
         this.scheduserName = scheduserName;
     }
 
+    
+
     public ConferenceInfo withConferenceType(Integer conferenceType) {
         this.conferenceType = conferenceType;
         return this;
@@ -545,6 +568,8 @@ public class ConferenceInfo  {
         this.conferenceType = conferenceType;
     }
 
+    
+
     public ConferenceInfo withConfType(String confType) {
         this.confType = confType;
         return this;
@@ -564,6 +589,8 @@ public class ConferenceInfo  {
     public void setConfType(String confType) {
         this.confType = confType;
     }
+
+    
 
     public ConferenceInfo withCycleParams(CycleParams cycleParams) {
         this.cycleParams = cycleParams;
@@ -592,6 +619,8 @@ public class ConferenceInfo  {
         this.cycleParams = cycleParams;
     }
 
+    
+
     public ConferenceInfo withIsAutoMute(Integer isAutoMute) {
         this.isAutoMute = isAutoMute;
         return this;
@@ -611,6 +640,8 @@ public class ConferenceInfo  {
     public void setIsAutoMute(Integer isAutoMute) {
         this.isAutoMute = isAutoMute;
     }
+
+    
 
     public ConferenceInfo withIsAutoRecord(Integer isAutoRecord) {
         this.isAutoRecord = isAutoRecord;
@@ -632,6 +663,8 @@ public class ConferenceInfo  {
         this.isAutoRecord = isAutoRecord;
     }
 
+    
+
     public ConferenceInfo withChairJoinUri(String chairJoinUri) {
         this.chairJoinUri = chairJoinUri;
         return this;
@@ -651,6 +684,8 @@ public class ConferenceInfo  {
     public void setChairJoinUri(String chairJoinUri) {
         this.chairJoinUri = chairJoinUri;
     }
+
+    
 
     public ConferenceInfo withGuestJoinUri(String guestJoinUri) {
         this.guestJoinUri = guestJoinUri;
@@ -672,6 +707,8 @@ public class ConferenceInfo  {
         this.guestJoinUri = guestJoinUri;
     }
 
+    
+
     public ConferenceInfo withAudienceJoinUri(String audienceJoinUri) {
         this.audienceJoinUri = audienceJoinUri;
         return this;
@@ -691,6 +728,8 @@ public class ConferenceInfo  {
     public void setAudienceJoinUri(String audienceJoinUri) {
         this.audienceJoinUri = audienceJoinUri;
     }
+
+    
 
     public ConferenceInfo withRecordType(Integer recordType) {
         this.recordType = recordType;
@@ -712,6 +751,8 @@ public class ConferenceInfo  {
         this.recordType = recordType;
     }
 
+    
+
     public ConferenceInfo withAuxAddress(String auxAddress) {
         this.auxAddress = auxAddress;
         return this;
@@ -731,6 +772,8 @@ public class ConferenceInfo  {
     public void setAuxAddress(String auxAddress) {
         this.auxAddress = auxAddress;
     }
+
+    
 
     public ConferenceInfo withLiveAddress(String liveAddress) {
         this.liveAddress = liveAddress;
@@ -752,6 +795,8 @@ public class ConferenceInfo  {
         this.liveAddress = liveAddress;
     }
 
+    
+
     public ConferenceInfo withRecordAuxStream(Integer recordAuxStream) {
         this.recordAuxStream = recordAuxStream;
         return this;
@@ -771,6 +816,8 @@ public class ConferenceInfo  {
     public void setRecordAuxStream(Integer recordAuxStream) {
         this.recordAuxStream = recordAuxStream;
     }
+
+    
 
     public ConferenceInfo withRecordAuthType(Integer recordAuthType) {
         this.recordAuthType = recordAuthType;
@@ -792,6 +839,8 @@ public class ConferenceInfo  {
         this.recordAuthType = recordAuthType;
     }
 
+    
+
     public ConferenceInfo withLiveUrl(String liveUrl) {
         this.liveUrl = liveUrl;
         return this;
@@ -811,6 +860,8 @@ public class ConferenceInfo  {
     public void setLiveUrl(String liveUrl) {
         this.liveUrl = liveUrl;
     }
+
+    
 
     public ConferenceInfo withConfConfigInfo(RestConfConfigDTO confConfigInfo) {
         this.confConfigInfo = confConfigInfo;
@@ -839,6 +890,8 @@ public class ConferenceInfo  {
         this.confConfigInfo = confConfigInfo;
     }
 
+    
+
     public ConferenceInfo withVmrFlag(Integer vmrFlag) {
         this.vmrFlag = vmrFlag;
         return this;
@@ -858,6 +911,8 @@ public class ConferenceInfo  {
     public void setVmrFlag(Integer vmrFlag) {
         this.vmrFlag = vmrFlag;
     }
+
+    
 
     public ConferenceInfo withIsHasRecordFile(Boolean isHasRecordFile) {
         this.isHasRecordFile = isHasRecordFile;
@@ -879,6 +934,8 @@ public class ConferenceInfo  {
         this.isHasRecordFile = isHasRecordFile;
     }
 
+    
+
     public ConferenceInfo withVmrConferenceID(String vmrConferenceID) {
         this.vmrConferenceID = vmrConferenceID;
         return this;
@@ -898,6 +955,8 @@ public class ConferenceInfo  {
     public void setVmrConferenceID(String vmrConferenceID) {
         this.vmrConferenceID = vmrConferenceID;
     }
+
+    
 
     public ConferenceInfo withConfUUID(String confUUID) {
         this.confUUID = confUUID;
@@ -919,6 +978,8 @@ public class ConferenceInfo  {
         this.confUUID = confUUID;
     }
 
+    
+
     public ConferenceInfo withPartAttendeeInfo(List<PartAttendee> partAttendeeInfo) {
         this.partAttendeeInfo = partAttendeeInfo;
         return this;
@@ -926,9 +987,6 @@ public class ConferenceInfo  {
 
     
     public ConferenceInfo addPartAttendeeInfoItem(PartAttendee partAttendeeInfoItem) {
-        if (this.partAttendeeInfo == null) {
-            this.partAttendeeInfo = new ArrayList<>();
-        }
         this.partAttendeeInfo.add(partAttendeeInfoItem);
         return this;
     }
@@ -953,6 +1011,8 @@ public class ConferenceInfo  {
         this.partAttendeeInfo = partAttendeeInfo;
     }
 
+    
+
     public ConferenceInfo withTerminlCount(Integer terminlCount) {
         this.terminlCount = terminlCount;
         return this;
@@ -972,6 +1032,8 @@ public class ConferenceInfo  {
     public void setTerminlCount(Integer terminlCount) {
         this.terminlCount = terminlCount;
     }
+
+    
 
     public ConferenceInfo withNormalCount(Integer normalCount) {
         this.normalCount = normalCount;
@@ -993,6 +1055,8 @@ public class ConferenceInfo  {
         this.normalCount = normalCount;
     }
 
+    
+
     public ConferenceInfo withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -1012,6 +1076,8 @@ public class ConferenceInfo  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
 
     public ConferenceInfo withVmrID(String vmrID) {
         this.vmrID = vmrID;
@@ -1033,6 +1099,8 @@ public class ConferenceInfo  {
         this.vmrID = vmrID;
     }
 
+    
+
     public ConferenceInfo withConcurrentParticipants(Integer concurrentParticipants) {
         this.concurrentParticipants = concurrentParticipants;
         return this;
@@ -1052,6 +1120,9 @@ public class ConferenceInfo  {
     public void setConcurrentParticipants(Integer concurrentParticipants) {
         this.concurrentParticipants = concurrentParticipants;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

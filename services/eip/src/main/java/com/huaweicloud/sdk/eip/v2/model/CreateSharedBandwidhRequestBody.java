@@ -22,7 +22,7 @@ public class CreateSharedBandwidhRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private CreateSharedBandwidthOption bandwidth = null;
+    private CreateSharedBandwidthOption bandwidth;
 
     public CreateSharedBandwidhRequestBody withBandwidth(CreateSharedBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -50,6 +50,9 @@ public class CreateSharedBandwidhRequestBody  {
     public void setBandwidth(CreateSharedBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

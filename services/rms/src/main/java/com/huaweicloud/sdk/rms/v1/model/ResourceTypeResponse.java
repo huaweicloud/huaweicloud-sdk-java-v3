@@ -81,6 +81,8 @@ public class ResourceTypeResponse  {
         this.name = name;
     }
 
+    
+
     public ResourceTypeResponse withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -100,6 +102,8 @@ public class ResourceTypeResponse  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
 
     public ResourceTypeResponse withGlobal(Boolean global) {
         this.global = global;
@@ -121,6 +125,8 @@ public class ResourceTypeResponse  {
         this.global = global;
     }
 
+    
+
     public ResourceTypeResponse withRegions(List<String> regions) {
         this.regions = regions;
         return this;
@@ -128,9 +134,6 @@ public class ResourceTypeResponse  {
 
     
     public ResourceTypeResponse addRegionsItem(String regionsItem) {
-        if (this.regions == null) {
-            this.regions = new ArrayList<>();
-        }
         this.regions.add(regionsItem);
         return this;
     }
@@ -155,6 +158,8 @@ public class ResourceTypeResponse  {
         this.regions = regions;
     }
 
+    
+
     public ResourceTypeResponse withConsoleEndpointId(String consoleEndpointId) {
         this.consoleEndpointId = consoleEndpointId;
         return this;
@@ -174,6 +179,8 @@ public class ResourceTypeResponse  {
     public void setConsoleEndpointId(String consoleEndpointId) {
         this.consoleEndpointId = consoleEndpointId;
     }
+
+    
 
     public ResourceTypeResponse withConsoleListUrl(String consoleListUrl) {
         this.consoleListUrl = consoleListUrl;
@@ -195,6 +202,8 @@ public class ResourceTypeResponse  {
         this.consoleListUrl = consoleListUrl;
     }
 
+    
+
     public ResourceTypeResponse withConsoleDetailUrl(String consoleDetailUrl) {
         this.consoleDetailUrl = consoleDetailUrl;
         return this;
@@ -214,6 +223,9 @@ public class ResourceTypeResponse  {
     public void setConsoleDetailUrl(String consoleDetailUrl) {
         this.consoleDetailUrl = consoleDetailUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

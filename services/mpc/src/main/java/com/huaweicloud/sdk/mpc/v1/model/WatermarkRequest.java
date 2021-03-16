@@ -24,7 +24,7 @@ public class WatermarkRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,13 +42,13 @@ public class WatermarkRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image_watermark")
     
-    private ImageWatermark imageWatermark = null;
+    private ImageWatermark imageWatermark;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="text_watermark")
     
-    private TextWatermark textWatermark = null;
+    private TextWatermark textWatermark;
 
     public WatermarkRequest withInput(ObsObjInfo input) {
         this.input = input;
@@ -77,6 +77,8 @@ public class WatermarkRequest  {
         this.input = input;
     }
 
+    
+
     public WatermarkRequest withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -97,6 +99,8 @@ public class WatermarkRequest  {
         this.templateId = templateId;
     }
 
+    
+
     public WatermarkRequest withTextContext(String textContext) {
         this.textContext = textContext;
         return this;
@@ -116,6 +120,8 @@ public class WatermarkRequest  {
     public void setTextContext(String textContext) {
         this.textContext = textContext;
     }
+
+    
 
     public WatermarkRequest withImageWatermark(ImageWatermark imageWatermark) {
         this.imageWatermark = imageWatermark;
@@ -144,6 +150,8 @@ public class WatermarkRequest  {
         this.imageWatermark = imageWatermark;
     }
 
+    
+
     public WatermarkRequest withTextWatermark(TextWatermark textWatermark) {
         this.textWatermark = textWatermark;
         return this;
@@ -170,6 +178,9 @@ public class WatermarkRequest  {
     public void setTextWatermark(TextWatermark textWatermark) {
         this.textWatermark = textWatermark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

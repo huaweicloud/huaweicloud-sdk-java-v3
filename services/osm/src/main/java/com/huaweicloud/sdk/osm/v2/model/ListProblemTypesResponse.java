@@ -56,6 +56,8 @@ public class ListProblemTypesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListProblemTypesResponse withIncidentBusinessTypeList(List<SimpleIncidentBusinessTypeV2> incidentBusinessTypeList) {
         this.incidentBusinessTypeList = incidentBusinessTypeList;
         return this;
@@ -63,9 +65,6 @@ public class ListProblemTypesResponse extends SdkResponse {
 
     
     public ListProblemTypesResponse addIncidentBusinessTypeListItem(SimpleIncidentBusinessTypeV2 incidentBusinessTypeListItem) {
-        if (this.incidentBusinessTypeList == null) {
-            this.incidentBusinessTypeList = new ArrayList<>();
-        }
         this.incidentBusinessTypeList.add(incidentBusinessTypeListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListProblemTypesResponse extends SdkResponse {
     public void setIncidentBusinessTypeList(List<SimpleIncidentBusinessTypeV2> incidentBusinessTypeList) {
         this.incidentBusinessTypeList = incidentBusinessTypeList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="api_acl_policy")
     
-    private AclPolicyResult apiAclPolicy = null;
+    private AclPolicyResult apiAclPolicy;
 
     public UpdateDomainApiAclPolicyResponse withApiAclPolicy(AclPolicyResult apiAclPolicy) {
         this.apiAclPolicy = apiAclPolicy;
@@ -52,6 +52,9 @@ public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
     public void setApiAclPolicy(AclPolicyResult apiAclPolicy) {
         this.apiAclPolicy = apiAclPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

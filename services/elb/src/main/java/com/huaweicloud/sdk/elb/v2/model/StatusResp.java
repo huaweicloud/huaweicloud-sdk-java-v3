@@ -22,7 +22,7 @@ public class StatusResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancer")
     
-    private LoadbalancerInStatusResp loadbalancer = null;
+    private LoadbalancerInStatusResp loadbalancer;
 
     public StatusResp withLoadbalancer(LoadbalancerInStatusResp loadbalancer) {
         this.loadbalancer = loadbalancer;
@@ -50,6 +50,9 @@ public class StatusResp  {
     public void setLoadbalancer(LoadbalancerInStatusResp loadbalancer) {
         this.loadbalancer = loadbalancer;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

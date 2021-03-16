@@ -24,7 +24,7 @@ public class UpdateHealthmonitorResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor")
     
-    private HealthmonitorResp healthmonitor = null;
+    private HealthmonitorResp healthmonitor;
 
     public UpdateHealthmonitorResponse withHealthmonitor(HealthmonitorResp healthmonitor) {
         this.healthmonitor = healthmonitor;
@@ -52,6 +52,9 @@ public class UpdateHealthmonitorResponse extends SdkResponse {
     public void setHealthmonitor(HealthmonitorResp healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

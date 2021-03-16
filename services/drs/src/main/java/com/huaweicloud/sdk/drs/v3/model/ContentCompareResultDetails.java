@@ -30,7 +30,7 @@ public class ContentCompareResultDetails  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content_compare_detail")
     
-    private List<ContentCompareDetail> contentCompareDetail = new ArrayList<>();
+    private List<ContentCompareDetail> contentCompareDetail = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,6 +70,8 @@ public class ContentCompareResultDetails  {
         this.sourceDbName = sourceDbName;
     }
 
+    
+
     public ContentCompareResultDetails withContentCompareDetail(List<ContentCompareDetail> contentCompareDetail) {
         this.contentCompareDetail = contentCompareDetail;
         return this;
@@ -101,6 +103,8 @@ public class ContentCompareResultDetails  {
         this.contentCompareDetail = contentCompareDetail;
     }
 
+    
+
     public ContentCompareResultDetails withContentCompareDetailCount(Integer contentCompareDetailCount) {
         this.contentCompareDetailCount = contentCompareDetailCount;
         return this;
@@ -121,6 +125,8 @@ public class ContentCompareResultDetails  {
         this.contentCompareDetailCount = contentCompareDetailCount;
     }
 
+    
+
     public ContentCompareResultDetails withContentUncompareDetail(List<ContentCompareDetail> contentUncompareDetail) {
         this.contentUncompareDetail = contentUncompareDetail;
         return this;
@@ -128,9 +134,6 @@ public class ContentCompareResultDetails  {
 
     
     public ContentCompareResultDetails addContentUncompareDetailItem(ContentCompareDetail contentUncompareDetailItem) {
-        if (this.contentUncompareDetail == null) {
-            this.contentUncompareDetail = new ArrayList<>();
-        }
         this.contentUncompareDetail.add(contentUncompareDetailItem);
         return this;
     }
@@ -155,6 +158,8 @@ public class ContentCompareResultDetails  {
         this.contentUncompareDetail = contentUncompareDetail;
     }
 
+    
+
     public ContentCompareResultDetails withContentUncompareDetailCount(Integer contentUncompareDetailCount) {
         this.contentUncompareDetailCount = contentUncompareDetailCount;
         return this;
@@ -174,6 +179,9 @@ public class ContentCompareResultDetails  {
     public void setContentUncompareDetailCount(Integer contentUncompareDetailCount) {
         this.contentUncompareDetailCount = contentUncompareDetailCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

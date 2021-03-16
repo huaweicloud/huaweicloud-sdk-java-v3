@@ -141,7 +141,7 @@ public class ShowConnectionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config")
     
-    private Object config = null;
+    private Object config;
 
     public ShowConnectionResponse withName(String name) {
         this.name = name;
@@ -163,6 +163,8 @@ public class ShowConnectionResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowConnectionResponse withConnectionType(ConnectionTypeEnum connectionType) {
         this.connectionType = connectionType;
         return this;
@@ -183,6 +185,8 @@ public class ShowConnectionResponse extends SdkResponse {
         this.connectionType = connectionType;
     }
 
+    
+
     public ShowConnectionResponse withConfig(Object config) {
         this.config = config;
         return this;
@@ -202,6 +206,9 @@ public class ShowConnectionResponse extends SdkResponse {
     public void setConfig(Object config) {
         this.config = config;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

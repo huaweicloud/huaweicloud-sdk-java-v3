@@ -304,7 +304,7 @@ public class VpcCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_type")
     
-    private MemberTypeEnum memberType = MemberTypeEnum.ECS;
+    private MemberTypeEnum memberType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -316,7 +316,7 @@ public class VpcCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_health_config")
     
-    private VpcHealthConfig vpcHealthConfig = null;
+    private VpcHealthConfig vpcHealthConfig;
 
     public VpcCreate withName(String name) {
         this.name = name;
@@ -338,6 +338,8 @@ public class VpcCreate  {
         this.name = name;
     }
 
+    
+
     public VpcCreate withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -357,6 +359,8 @@ public class VpcCreate  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public VpcCreate withPort(Integer port) {
         this.port = port;
@@ -378,6 +382,8 @@ public class VpcCreate  {
         this.port = port;
     }
 
+    
+
     public VpcCreate withBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
@@ -397,6 +403,8 @@ public class VpcCreate  {
     public void setBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
     }
+
+    
 
     public VpcCreate withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
@@ -418,6 +426,8 @@ public class VpcCreate  {
         this.memberType = memberType;
     }
 
+    
+
     public VpcCreate withMembers(List<MemberInfo> members) {
         this.members = members;
         return this;
@@ -425,9 +435,6 @@ public class VpcCreate  {
 
     
     public VpcCreate addMembersItem(MemberInfo membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -451,6 +458,8 @@ public class VpcCreate  {
     public void setMembers(List<MemberInfo> members) {
         this.members = members;
     }
+
+    
 
     public VpcCreate withVpcHealthConfig(VpcHealthConfig vpcHealthConfig) {
         this.vpcHealthConfig = vpcHealthConfig;
@@ -478,6 +487,9 @@ public class VpcCreate  {
     public void setVpcHealthConfig(VpcHealthConfig vpcHealthConfig) {
         this.vpcHealthConfig = vpcHealthConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

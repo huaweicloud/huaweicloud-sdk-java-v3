@@ -104,13 +104,13 @@ public class BatchRestoreTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchRetryReq body = null;
+    private BatchRetryReq body;
 
     public BatchRestoreTaskRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchRestoreTaskRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchRestoreTaskRequest withBody(BatchRetryReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchRestoreTaskRequest  {
     public void setBody(BatchRetryReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -161,6 +161,8 @@ public class TrackerObsInfo  {
         this.bucketName = bucketName;
     }
 
+    
+
     public TrackerObsInfo withFilePrefixName(String filePrefixName) {
         this.filePrefixName = filePrefixName;
         return this;
@@ -180,6 +182,8 @@ public class TrackerObsInfo  {
     public void setFilePrefixName(String filePrefixName) {
         this.filePrefixName = filePrefixName;
     }
+
+    
 
     public TrackerObsInfo withIsObsCreated(Boolean isObsCreated) {
         this.isObsCreated = isObsCreated;
@@ -201,6 +205,8 @@ public class TrackerObsInfo  {
         this.isObsCreated = isObsCreated;
     }
 
+    
+
     public TrackerObsInfo withBucketLifecycle(BucketLifecycleEnum bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
         return this;
@@ -220,6 +226,9 @@ public class TrackerObsInfo  {
     public void setBucketLifecycle(BucketLifecycleEnum bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

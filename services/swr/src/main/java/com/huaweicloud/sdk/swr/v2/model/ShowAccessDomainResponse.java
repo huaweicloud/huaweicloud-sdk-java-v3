@@ -44,6 +44,9 @@ public class ShowAccessDomainResponse extends SdkResponse {
     public void setExist(Boolean exist) {
         this.exist = exist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

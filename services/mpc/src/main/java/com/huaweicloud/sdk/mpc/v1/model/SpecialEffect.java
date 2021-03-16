@@ -146,6 +146,8 @@ public class SpecialEffect  {
         this.type = type;
     }
 
+    
+
     public SpecialEffect withAutoDetect(String autoDetect) {
         this.autoDetect = autoDetect;
         return this;
@@ -166,6 +168,8 @@ public class SpecialEffect  {
         this.autoDetect = autoDetect;
     }
 
+    
+
     public SpecialEffect withEffectInfos(List<EffectInfo> effectInfos) {
         this.effectInfos = effectInfos;
         return this;
@@ -173,9 +177,6 @@ public class SpecialEffect  {
 
     
     public SpecialEffect addEffectInfosItem(EffectInfo effectInfosItem) {
-        if (this.effectInfos == null) {
-            this.effectInfos = new ArrayList<>();
-        }
         this.effectInfos.add(effectInfosItem);
         return this;
     }
@@ -199,6 +200,9 @@ public class SpecialEffect  {
     public void setEffectInfos(List<EffectInfo> effectInfos) {
         this.effectInfos = effectInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

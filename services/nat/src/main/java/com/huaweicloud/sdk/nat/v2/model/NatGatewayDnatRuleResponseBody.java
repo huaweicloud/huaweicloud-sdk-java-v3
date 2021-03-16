@@ -304,7 +304,7 @@ public class NatGatewayDnatRuleResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
     public NatGatewayDnatRuleResponseBody withId(String id) {
         this.id = id;
@@ -326,6 +326,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.id = id;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -345,6 +347,8 @@ public class NatGatewayDnatRuleResponseBody  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public NatGatewayDnatRuleResponseBody withDescription(String description) {
         this.description = description;
@@ -366,6 +370,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.description = description;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withPortId(String portId) {
         this.portId = portId;
         return this;
@@ -386,6 +392,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.portId = portId;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
@@ -405,6 +413,8 @@ public class NatGatewayDnatRuleResponseBody  {
     public void setPrivateIp(String privateIp) {
         this.privateIp = privateIp;
     }
+
+    
 
     public NatGatewayDnatRuleResponseBody withInternalServicePort(Integer internalServicePort) {
         this.internalServicePort = internalServicePort;
@@ -428,6 +438,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.internalServicePort = internalServicePort;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
         return this;
@@ -447,6 +459,8 @@ public class NatGatewayDnatRuleResponseBody  {
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
+
+    
 
     public NatGatewayDnatRuleResponseBody withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
@@ -468,6 +482,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.floatingIpId = floatingIpId;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
@@ -487,6 +503,8 @@ public class NatGatewayDnatRuleResponseBody  {
     public void setFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
     }
+
+    
 
     public NatGatewayDnatRuleResponseBody withExternalServicePort(Integer externalServicePort) {
         this.externalServicePort = externalServicePort;
@@ -508,6 +526,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.externalServicePort = externalServicePort;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -527,6 +547,8 @@ public class NatGatewayDnatRuleResponseBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public NatGatewayDnatRuleResponseBody withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -548,6 +570,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withInternalServicePortRange(String internalServicePortRange) {
         this.internalServicePortRange = internalServicePortRange;
         return this;
@@ -567,6 +591,8 @@ public class NatGatewayDnatRuleResponseBody  {
     public void setInternalServicePortRange(String internalServicePortRange) {
         this.internalServicePortRange = internalServicePortRange;
     }
+
+    
 
     public NatGatewayDnatRuleResponseBody withExternalServicePortRange(String externalServicePortRange) {
         this.externalServicePortRange = externalServicePortRange;
@@ -588,6 +614,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.externalServicePortRange = externalServicePortRange;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -608,6 +636,8 @@ public class NatGatewayDnatRuleResponseBody  {
         this.protocol = protocol;
     }
 
+    
+
     public NatGatewayDnatRuleResponseBody withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -627,6 +657,9 @@ public class NatGatewayDnatRuleResponseBody  {
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

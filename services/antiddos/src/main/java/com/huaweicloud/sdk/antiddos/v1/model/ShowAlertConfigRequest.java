@@ -12,6 +12,7 @@ import java.util.Objects;
  */
 public class ShowAlertConfigRequest  {
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

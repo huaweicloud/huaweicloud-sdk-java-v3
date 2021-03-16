@@ -22,13 +22,13 @@ public class UpdateKeyRotationIntervalRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateKeyRotationIntervalRequestBody body = null;
+    private UpdateKeyRotationIntervalRequestBody body;
 
     public UpdateKeyRotationIntervalRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class UpdateKeyRotationIntervalRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public UpdateKeyRotationIntervalRequest withBody(UpdateKeyRotationIntervalRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateKeyRotationIntervalRequest  {
     public void setBody(UpdateKeyRotationIntervalRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

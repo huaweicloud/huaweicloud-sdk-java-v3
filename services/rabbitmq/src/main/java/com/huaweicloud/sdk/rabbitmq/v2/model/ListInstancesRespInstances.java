@@ -373,6 +373,8 @@ public class ListInstancesRespInstances  {
         this.name = name;
     }
 
+    
+
     public ListInstancesRespInstances withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -392,6 +394,8 @@ public class ListInstancesRespInstances  {
     public void setEngine(String engine) {
         this.engine = engine;
     }
+
+    
 
     public ListInstancesRespInstances withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -413,6 +417,8 @@ public class ListInstancesRespInstances  {
         this.engineVersion = engineVersion;
     }
 
+    
+
     public ListInstancesRespInstances withSpecification(String specification) {
         this.specification = specification;
         return this;
@@ -432,6 +438,8 @@ public class ListInstancesRespInstances  {
     public void setSpecification(String specification) {
         this.specification = specification;
     }
+
+    
 
     public ListInstancesRespInstances withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
@@ -453,6 +461,8 @@ public class ListInstancesRespInstances  {
         this.storageSpace = storageSpace;
     }
 
+    
+
     public ListInstancesRespInstances withUsedStorageSpace(Integer usedStorageSpace) {
         this.usedStorageSpace = usedStorageSpace;
         return this;
@@ -472,6 +482,8 @@ public class ListInstancesRespInstances  {
     public void setUsedStorageSpace(Integer usedStorageSpace) {
         this.usedStorageSpace = usedStorageSpace;
     }
+
+    
 
     public ListInstancesRespInstances withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
@@ -493,6 +505,8 @@ public class ListInstancesRespInstances  {
         this.connectAddress = connectAddress;
     }
 
+    
+
     public ListInstancesRespInstances withPort(Integer port) {
         this.port = port;
         return this;
@@ -512,6 +526,8 @@ public class ListInstancesRespInstances  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
 
     public ListInstancesRespInstances withStatus(String status) {
         this.status = status;
@@ -533,6 +549,8 @@ public class ListInstancesRespInstances  {
         this.status = status;
     }
 
+    
+
     public ListInstancesRespInstances withDescription(String description) {
         this.description = description;
         return this;
@@ -552,6 +570,8 @@ public class ListInstancesRespInstances  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ListInstancesRespInstances withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -573,6 +593,8 @@ public class ListInstancesRespInstances  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListInstancesRespInstances withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
@@ -592,6 +614,8 @@ public class ListInstancesRespInstances  {
     public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
     }
+
+    
 
     public ListInstancesRespInstances withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -613,6 +637,8 @@ public class ListInstancesRespInstances  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ListInstancesRespInstances withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -632,6 +658,8 @@ public class ListInstancesRespInstances  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public ListInstancesRespInstances withVpcName(String vpcName) {
         this.vpcName = vpcName;
@@ -653,6 +681,8 @@ public class ListInstancesRespInstances  {
         this.vpcName = vpcName;
     }
 
+    
+
     public ListInstancesRespInstances withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -672,6 +702,8 @@ public class ListInstancesRespInstances  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public ListInstancesRespInstances withUserId(String userId) {
         this.userId = userId;
@@ -693,6 +725,8 @@ public class ListInstancesRespInstances  {
         this.userId = userId;
     }
 
+    
+
     public ListInstancesRespInstances withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -712,6 +746,8 @@ public class ListInstancesRespInstances  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public ListInstancesRespInstances withOrderId(String orderId) {
         this.orderId = orderId;
@@ -733,6 +769,8 @@ public class ListInstancesRespInstances  {
         this.orderId = orderId;
     }
 
+    
+
     public ListInstancesRespInstances withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
         return this;
@@ -752,6 +790,8 @@ public class ListInstancesRespInstances  {
     public void setMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
     }
+
+    
 
     public ListInstancesRespInstances withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
@@ -773,6 +813,8 @@ public class ListInstancesRespInstances  {
         this.maintainEnd = maintainEnd;
     }
 
+    
+
     public ListInstancesRespInstances withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
@@ -792,6 +834,8 @@ public class ListInstancesRespInstances  {
     public void setEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
     }
+
+    
 
     public ListInstancesRespInstances withPublicipAddress(String publicipAddress) {
         this.publicipAddress = publicipAddress;
@@ -813,6 +857,8 @@ public class ListInstancesRespInstances  {
         this.publicipAddress = publicipAddress;
     }
 
+    
+
     public ListInstancesRespInstances withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -832,6 +878,8 @@ public class ListInstancesRespInstances  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
 
     public ListInstancesRespInstances withManagementConnectAddress(String managementConnectAddress) {
         this.managementConnectAddress = managementConnectAddress;
@@ -853,6 +901,8 @@ public class ListInstancesRespInstances  {
         this.managementConnectAddress = managementConnectAddress;
     }
 
+    
+
     public ListInstancesRespInstances withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
         return this;
@@ -872,6 +922,8 @@ public class ListInstancesRespInstances  {
     public void setSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
     }
+
+    
 
     public ListInstancesRespInstances withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -893,6 +945,8 @@ public class ListInstancesRespInstances  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListInstancesRespInstances withIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
         return this;
@@ -912,6 +966,8 @@ public class ListInstancesRespInstances  {
     public void setIsLogicalVolume(Boolean isLogicalVolume) {
         this.isLogicalVolume = isLogicalVolume;
     }
+
+    
 
     public ListInstancesRespInstances withExtendTimes(Integer extendTimes) {
         this.extendTimes = extendTimes;
@@ -933,6 +989,8 @@ public class ListInstancesRespInstances  {
         this.extendTimes = extendTimes;
     }
 
+    
+
     public ListInstancesRespInstances withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -952,6 +1010,8 @@ public class ListInstancesRespInstances  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ListInstancesRespInstances withProductId(String productId) {
         this.productId = productId;
@@ -973,6 +1033,8 @@ public class ListInstancesRespInstances  {
         this.productId = productId;
     }
 
+    
+
     public ListInstancesRespInstances withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -992,6 +1054,8 @@ public class ListInstancesRespInstances  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public ListInstancesRespInstances withSecurityGroupName(String securityGroupName) {
         this.securityGroupName = securityGroupName;
@@ -1013,6 +1077,8 @@ public class ListInstancesRespInstances  {
         this.securityGroupName = securityGroupName;
     }
 
+    
+
     public ListInstancesRespInstances withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -1033,6 +1099,8 @@ public class ListInstancesRespInstances  {
         this.subnetId = subnetId;
     }
 
+    
+
     public ListInstancesRespInstances withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -1040,9 +1108,6 @@ public class ListInstancesRespInstances  {
 
     
     public ListInstancesRespInstances addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -1067,6 +1132,8 @@ public class ListInstancesRespInstances  {
         this.availableZones = availableZones;
     }
 
+    
+
     public ListInstancesRespInstances withTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
         return this;
@@ -1086,6 +1153,8 @@ public class ListInstancesRespInstances  {
     public void setTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
     }
+
+    
 
     public ListInstancesRespInstances withStorageResourceId(String storageResourceId) {
         this.storageResourceId = storageResourceId;
@@ -1107,6 +1176,8 @@ public class ListInstancesRespInstances  {
         this.storageResourceId = storageResourceId;
     }
 
+    
+
     public ListInstancesRespInstances withStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
         return this;
@@ -1126,6 +1197,8 @@ public class ListInstancesRespInstances  {
     public void setStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
     }
+
+    
 
     public ListInstancesRespInstances withServiceType(String serviceType) {
         this.serviceType = serviceType;
@@ -1147,6 +1220,8 @@ public class ListInstancesRespInstances  {
         this.serviceType = serviceType;
     }
 
+    
+
     public ListInstancesRespInstances withStorageType(String storageType) {
         this.storageType = storageType;
         return this;
@@ -1166,6 +1241,8 @@ public class ListInstancesRespInstances  {
     public void setStorageType(String storageType) {
         this.storageType = storageType;
     }
+
+    
 
     public ListInstancesRespInstances withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
@@ -1187,6 +1264,8 @@ public class ListInstancesRespInstances  {
         this.ipv6Enable = ipv6Enable;
     }
 
+    
+
     public ListInstancesRespInstances withIpv6ConnectAddresses(List<String> ipv6ConnectAddresses) {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
         return this;
@@ -1194,9 +1273,6 @@ public class ListInstancesRespInstances  {
 
     
     public ListInstancesRespInstances addIpv6ConnectAddressesItem(String ipv6ConnectAddressesItem) {
-        if (this.ipv6ConnectAddresses == null) {
-            this.ipv6ConnectAddresses = new ArrayList<>();
-        }
         this.ipv6ConnectAddresses.add(ipv6ConnectAddressesItem);
         return this;
     }
@@ -1220,6 +1296,9 @@ public class ListInstancesRespInstances  {
     public void setIpv6ConnectAddresses(List<String> ipv6ConnectAddresses) {
         this.ipv6ConnectAddresses = ipv6ConnectAddresses;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -189,6 +189,8 @@ public class BasicInfo  {
         this.id = id;
     }
 
+    
+
     public BasicInfo withName(String name) {
         this.name = name;
         return this;
@@ -208,6 +210,8 @@ public class BasicInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public BasicInfo withVersion(String version) {
         this.version = version;
@@ -229,6 +233,8 @@ public class BasicInfo  {
         this.version = version;
     }
 
+    
+
     public BasicInfo withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -248,6 +254,8 @@ public class BasicInfo  {
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
+
+    
 
     public BasicInfo withPurchaseType(String purchaseType) {
         this.purchaseType = purchaseType;
@@ -269,6 +277,8 @@ public class BasicInfo  {
         this.purchaseType = purchaseType;
     }
 
+    
+
     public BasicInfo withSignAlgorithm(String signAlgorithm) {
         this.signAlgorithm = signAlgorithm;
         return this;
@@ -288,6 +298,8 @@ public class BasicInfo  {
     public void setSignAlgorithm(String signAlgorithm) {
         this.signAlgorithm = signAlgorithm;
     }
+
+    
 
     public BasicInfo withConsensus(String consensus) {
         this.consensus = consensus;
@@ -309,6 +321,8 @@ public class BasicInfo  {
         this.consensus = consensus;
     }
 
+    
+
     public BasicInfo withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -328,6 +342,8 @@ public class BasicInfo  {
     public void setChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
     }
+
+    
 
     public BasicInfo withVersionType(Integer versionType) {
         this.versionType = versionType;
@@ -349,6 +365,8 @@ public class BasicInfo  {
         this.versionType = versionType;
     }
 
+    
+
     public BasicInfo withDatabaseType(String databaseType) {
         this.databaseType = databaseType;
         return this;
@@ -368,6 +386,8 @@ public class BasicInfo  {
     public void setDatabaseType(String databaseType) {
         this.databaseType = databaseType;
     }
+
+    
 
     public BasicInfo withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -389,6 +409,8 @@ public class BasicInfo  {
         this.clusterId = clusterId;
     }
 
+    
+
     public BasicInfo withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
@@ -408,6 +430,8 @@ public class BasicInfo  {
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
     }
+
+    
 
     public BasicInfo withClusterType(String clusterType) {
         this.clusterType = clusterType;
@@ -429,6 +453,8 @@ public class BasicInfo  {
         this.clusterType = clusterType;
     }
 
+    
+
     public BasicInfo withClusterAz(String clusterAz) {
         this.clusterAz = clusterAz;
         return this;
@@ -448,6 +474,8 @@ public class BasicInfo  {
     public void setClusterAz(String clusterAz) {
         this.clusterAz = clusterAz;
     }
+
+    
 
     public BasicInfo withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
@@ -469,6 +497,8 @@ public class BasicInfo  {
         this.createdTime = createdTime;
     }
 
+    
+
     public BasicInfo withDeployType(String deployType) {
         this.deployType = deployType;
         return this;
@@ -488,6 +518,8 @@ public class BasicInfo  {
     public void setDeployType(String deployType) {
         this.deployType = deployType;
     }
+
+    
 
     public BasicInfo withIsCrossRegion(Boolean isCrossRegion) {
         this.isCrossRegion = isCrossRegion;
@@ -509,6 +541,8 @@ public class BasicInfo  {
         this.isCrossRegion = isCrossRegion;
     }
 
+    
+
     public BasicInfo withIsSupportRollback(Boolean isSupportRollback) {
         this.isSupportRollback = isSupportRollback;
         return this;
@@ -528,6 +562,8 @@ public class BasicInfo  {
     public void setIsSupportRollback(Boolean isSupportRollback) {
         this.isSupportRollback = isSupportRollback;
     }
+
+    
 
     public BasicInfo withIsSupportRestful(Boolean isSupportRestful) {
         this.isSupportRestful = isSupportRestful;
@@ -549,6 +585,8 @@ public class BasicInfo  {
         this.isSupportRestful = isSupportRestful;
     }
 
+    
+
     public BasicInfo withIsOldService(Boolean isOldService) {
         this.isOldService = isOldService;
         return this;
@@ -568,6 +606,8 @@ public class BasicInfo  {
     public void setIsOldService(Boolean isOldService) {
         this.isOldService = isOldService;
     }
+
+    
 
     public BasicInfo withOldServiceVersion(String oldServiceVersion) {
         this.oldServiceVersion = oldServiceVersion;
@@ -589,6 +629,8 @@ public class BasicInfo  {
         this.oldServiceVersion = oldServiceVersion;
     }
 
+    
+
     public BasicInfo withAgentPortalAddrs(List<String> agentPortalAddrs) {
         this.agentPortalAddrs = agentPortalAddrs;
         return this;
@@ -596,9 +638,6 @@ public class BasicInfo  {
 
     
     public BasicInfo addAgentPortalAddrsItem(String agentPortalAddrsItem) {
-        if (this.agentPortalAddrs == null) {
-            this.agentPortalAddrs = new ArrayList<>();
-        }
         this.agentPortalAddrs.add(agentPortalAddrsItem);
         return this;
     }
@@ -623,6 +662,8 @@ public class BasicInfo  {
         this.agentPortalAddrs = agentPortalAddrs;
     }
 
+    
+
     public BasicInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -642,6 +683,8 @@ public class BasicInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public BasicInfo withProcessStatus(String processStatus) {
         this.processStatus = processStatus;
@@ -663,6 +706,8 @@ public class BasicInfo  {
         this.processStatus = processStatus;
     }
 
+    
+
     public BasicInfo withOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
         return this;
@@ -682,6 +727,9 @@ public class BasicInfo  {
     public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

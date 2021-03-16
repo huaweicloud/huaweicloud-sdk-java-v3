@@ -41,9 +41,6 @@ public class ListFunctionVersionsResponse extends SdkResponse {
 
     
     public ListFunctionVersionsResponse addVersionsItem(ListFunctionVersionResult versionsItem) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
-        }
         this.versions.add(versionsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListFunctionVersionsResponse extends SdkResponse {
         this.versions = versions;
     }
 
+    
+
     public ListFunctionVersionsResponse withNextMarker(Long nextMarker) {
         this.nextMarker = nextMarker;
         return this;
@@ -87,6 +86,9 @@ public class ListFunctionVersionsResponse extends SdkResponse {
     public void setNextMarker(Long nextMarker) {
         this.nextMarker = nextMarker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

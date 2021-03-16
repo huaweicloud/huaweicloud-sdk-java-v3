@@ -27,7 +27,7 @@ public class OffSiteBackupPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_type")
     
-    private Object backupType = null;
+    private Object backupType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class OffSiteBackupPolicy  {
         this.keepDays = keepDays;
     }
 
+    
+
     public OffSiteBackupPolicy withBackupType(Object backupType) {
         this.backupType = backupType;
         return this;
@@ -80,6 +82,8 @@ public class OffSiteBackupPolicy  {
     public void setBackupType(Object backupType) {
         this.backupType = backupType;
     }
+
+    
 
     public OffSiteBackupPolicy withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
@@ -101,6 +105,8 @@ public class OffSiteBackupPolicy  {
         this.destinationRegion = destinationRegion;
     }
 
+    
+
     public OffSiteBackupPolicy withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
@@ -120,6 +126,9 @@ public class OffSiteBackupPolicy  {
     public void setDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

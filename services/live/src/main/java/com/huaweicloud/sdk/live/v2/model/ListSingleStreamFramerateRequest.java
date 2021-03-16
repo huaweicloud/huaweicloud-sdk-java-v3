@@ -67,6 +67,8 @@ public class ListSingleStreamFramerateRequest  {
         this.domain = domain;
     }
 
+    
+
     public ListSingleStreamFramerateRequest withApp(String app) {
         this.app = app;
         return this;
@@ -86,6 +88,8 @@ public class ListSingleStreamFramerateRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListSingleStreamFramerateRequest withStream(String stream) {
         this.stream = stream;
@@ -107,6 +111,8 @@ public class ListSingleStreamFramerateRequest  {
         this.stream = stream;
     }
 
+    
+
     public ListSingleStreamFramerateRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -127,6 +133,8 @@ public class ListSingleStreamFramerateRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListSingleStreamFramerateRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -146,6 +154,9 @@ public class ListSingleStreamFramerateRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

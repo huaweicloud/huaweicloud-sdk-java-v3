@@ -42,9 +42,6 @@ public class ListStorageTypeResponse extends SdkResponse {
 
     
     public ListStorageTypeResponse addStorageTypeItem(Storage storageTypeItem) {
-        if (this.storageType == null) {
-            this.storageType = new ArrayList<>();
-        }
         this.storageType.add(storageTypeItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class ListStorageTypeResponse extends SdkResponse {
         this.storageType = storageType;
     }
 
+    
+
     public ListStorageTypeResponse withDssPoolInfo(List<DssPoolInfo> dssPoolInfo) {
         this.dssPoolInfo = dssPoolInfo;
         return this;
@@ -76,9 +75,6 @@ public class ListStorageTypeResponse extends SdkResponse {
 
     
     public ListStorageTypeResponse addDssPoolInfoItem(DssPoolInfo dssPoolInfoItem) {
-        if (this.dssPoolInfo == null) {
-            this.dssPoolInfo = new ArrayList<>();
-        }
         this.dssPoolInfo.add(dssPoolInfoItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class ListStorageTypeResponse extends SdkResponse {
     public void setDssPoolInfo(List<DssPoolInfo> dssPoolInfo) {
         this.dssPoolInfo = dssPoolInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

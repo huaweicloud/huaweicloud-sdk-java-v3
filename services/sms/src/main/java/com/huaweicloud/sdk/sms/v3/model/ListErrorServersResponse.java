@@ -56,6 +56,8 @@ public class ListErrorServersResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListErrorServersResponse withMigrationErrors(List<MigrationErrors> migrationErrors) {
         this.migrationErrors = migrationErrors;
         return this;
@@ -63,9 +65,6 @@ public class ListErrorServersResponse extends SdkResponse {
 
     
     public ListErrorServersResponse addMigrationErrorsItem(MigrationErrors migrationErrorsItem) {
-        if (this.migrationErrors == null) {
-            this.migrationErrors = new ArrayList<>();
-        }
         this.migrationErrors.add(migrationErrorsItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListErrorServersResponse extends SdkResponse {
     public void setMigrationErrors(List<MigrationErrors> migrationErrors) {
         this.migrationErrors = migrationErrors;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

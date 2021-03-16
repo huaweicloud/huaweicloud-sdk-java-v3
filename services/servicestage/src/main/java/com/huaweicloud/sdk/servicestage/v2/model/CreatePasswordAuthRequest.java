@@ -116,7 +116,7 @@ public class CreatePasswordAuthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AccessPassword body = null;
+    private AccessPassword body;
 
     public CreatePasswordAuthRequest withRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
@@ -137,6 +137,8 @@ public class CreatePasswordAuthRequest  {
     public void setRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
     }
+
+    
 
     public CreatePasswordAuthRequest withBody(AccessPassword body) {
         this.body = body;
@@ -164,6 +166,9 @@ public class CreatePasswordAuthRequest  {
     public void setBody(AccessPassword body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

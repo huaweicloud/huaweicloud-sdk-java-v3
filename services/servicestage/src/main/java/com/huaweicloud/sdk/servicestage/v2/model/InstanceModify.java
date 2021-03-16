@@ -34,7 +34,7 @@ public class InstanceModify  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_id")
     
-    private FlavorId flavorId = null;
+    private FlavorId flavorId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class InstanceModify  {
         this.version = version;
     }
 
+    
+
     public InstanceModify withFlavorId(FlavorId flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -106,6 +108,8 @@ public class InstanceModify  {
         this.flavorId = flavorId;
     }
 
+    
+
     public InstanceModify withArtifacts(Map<String, Object> artifacts) {
         this.artifacts = artifacts;
         return this;
@@ -114,9 +118,6 @@ public class InstanceModify  {
     
 
     public InstanceModify putArtifactsItem(String key, Object artifactsItem) {
-         if (this.artifacts == null) {
-            this.artifacts = new HashMap<>();
-         }
         this.artifacts.put(key, artifactsItem);
         return this;
     }
@@ -140,6 +141,8 @@ public class InstanceModify  {
         this.artifacts = artifacts;
     }
 
+    
+
     public InstanceModify withConfiguration(Map<String, Object> _configuration) {
         this._configuration = _configuration;
         return this;
@@ -148,9 +151,6 @@ public class InstanceModify  {
     
 
     public InstanceModify putConfigurationItem(String key, Object _configurationItem) {
-         if (this._configuration == null) {
-            this._configuration = new HashMap<>();
-         }
         this._configuration.put(key, _configurationItem);
         return this;
     }
@@ -174,6 +174,8 @@ public class InstanceModify  {
         this._configuration = _configuration;
     }
 
+    
+
     public InstanceModify withDescription(String description) {
         this.description = description;
         return this;
@@ -194,6 +196,8 @@ public class InstanceModify  {
         this.description = description;
     }
 
+    
+
     public InstanceModify withExternalAccesses(List<ExternalAccesses> externalAccesses) {
         this.externalAccesses = externalAccesses;
         return this;
@@ -201,9 +205,6 @@ public class InstanceModify  {
 
     
     public InstanceModify addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
-        if (this.externalAccesses == null) {
-            this.externalAccesses = new ArrayList<>();
-        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
@@ -228,6 +229,8 @@ public class InstanceModify  {
         this.externalAccesses = externalAccesses;
     }
 
+    
+
     public InstanceModify withReferResources(List<ReferResourceCreate> referResources) {
         this.referResources = referResources;
         return this;
@@ -235,9 +238,6 @@ public class InstanceModify  {
 
     
     public InstanceModify addReferResourcesItem(ReferResourceCreate referResourcesItem) {
-        if (this.referResources == null) {
-            this.referResources = new ArrayList<>();
-        }
         this.referResources.add(referResourcesItem);
         return this;
     }
@@ -261,6 +261,9 @@ public class InstanceModify  {
     public void setReferResources(List<ReferResourceCreate> referResources) {
         this.referResources = referResources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

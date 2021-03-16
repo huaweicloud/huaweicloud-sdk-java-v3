@@ -167,6 +167,8 @@ public class LineCompareResultOverview  {
         this.sourceDbName = sourceDbName;
     }
 
+    
+
     public LineCompareResultOverview withTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
         return this;
@@ -187,6 +189,8 @@ public class LineCompareResultOverview  {
         this.targetDbName = targetDbName;
     }
 
+    
+
     public LineCompareResultOverview withLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
         return this;
@@ -206,6 +210,9 @@ public class LineCompareResultOverview  {
     public void setLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

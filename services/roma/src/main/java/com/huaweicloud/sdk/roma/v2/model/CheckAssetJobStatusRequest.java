@@ -49,6 +49,8 @@ public class CheckAssetJobStatusRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CheckAssetJobStatusRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -68,6 +70,9 @@ public class CheckAssetJobStatusRequest  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

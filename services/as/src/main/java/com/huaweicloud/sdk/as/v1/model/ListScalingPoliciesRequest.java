@@ -161,6 +161,8 @@ public class ListScalingPoliciesRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public ListScalingPoliciesRequest withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
@@ -180,6 +182,8 @@ public class ListScalingPoliciesRequest  {
     public void setScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
     }
+
+    
 
     public ListScalingPoliciesRequest withScalingPolicyType(ScalingPolicyTypeEnum scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
@@ -201,6 +205,8 @@ public class ListScalingPoliciesRequest  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
+    
+
     public ListScalingPoliciesRequest withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
         return this;
@@ -221,6 +227,8 @@ public class ListScalingPoliciesRequest  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
+    
+
     public ListScalingPoliciesRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -240,6 +248,8 @@ public class ListScalingPoliciesRequest  {
     public void setStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
     }
+
+    
 
     public ListScalingPoliciesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -262,6 +272,9 @@ public class ListScalingPoliciesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

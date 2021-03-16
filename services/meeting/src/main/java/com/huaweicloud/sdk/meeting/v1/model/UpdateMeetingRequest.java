@@ -46,7 +46,7 @@ public class UpdateMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestScheduleConfDTO body = null;
+    private RestScheduleConfDTO body;
 
     public UpdateMeetingRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -68,6 +68,8 @@ public class UpdateMeetingRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public UpdateMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -87,6 +89,8 @@ public class UpdateMeetingRequest  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public UpdateMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -110,6 +114,8 @@ public class UpdateMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public UpdateMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -131,6 +137,8 @@ public class UpdateMeetingRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
 
     public UpdateMeetingRequest withBody(RestScheduleConfDTO body) {
         this.body = body;
@@ -158,6 +166,9 @@ public class UpdateMeetingRequest  {
     public void setBody(RestScheduleConfDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

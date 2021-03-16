@@ -55,6 +55,8 @@ public class Lts  {
         this.isLtsEnabled = isLtsEnabled;
     }
 
+    
+
     public Lts withLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
         return this;
@@ -75,6 +77,8 @@ public class Lts  {
         this.logGroupName = logGroupName;
     }
 
+    
+
     public Lts withLogTopicName(String logTopicName) {
         this.logTopicName = logTopicName;
         return this;
@@ -94,6 +98,9 @@ public class Lts  {
     public void setLogTopicName(String logTopicName) {
         this.logTopicName = logTopicName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

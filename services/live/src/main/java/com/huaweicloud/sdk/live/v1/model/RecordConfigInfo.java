@@ -132,7 +132,7 @@ public class RecordConfigInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="record_format")
     
-    private RecordFormatEnum recordFormat = RecordFormatEnum.FLV;
+    private RecordFormatEnum recordFormat;
     /**
      * 录制类型，configer_record，默认configer_record。表示录制配置好后，只要有流就录制
      */
@@ -210,7 +210,7 @@ public class RecordConfigInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="record_type")
     
-    private RecordTypeEnum recordType = RecordTypeEnum.CONFIGER_RECORD;
+    private RecordTypeEnum recordType;
     /**
      * 录制位置vod， 默认vod（目前暂只支持vod）
      */
@@ -294,19 +294,19 @@ public class RecordConfigInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="record_location")
     
-    private RecordLocationEnum recordLocation = RecordLocationEnum.VOD;
+    private RecordLocationEnum recordLocation;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="record_prefix")
     
-    private String recordPrefix = "{DomainName}/{AppName}/{StreamName}/{StartTime}-{EndTime}";
+    private String recordPrefix;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_addr")
     
-    private ObsFileAddr obsAddr = null;
+    private ObsFileAddr obsAddr;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -334,6 +334,8 @@ public class RecordConfigInfo  {
         this.domain = domain;
     }
 
+    
+
     public RecordConfigInfo withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -353,6 +355,8 @@ public class RecordConfigInfo  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public RecordConfigInfo withRecordDuration(Integer recordDuration) {
         this.recordDuration = recordDuration;
@@ -374,6 +378,8 @@ public class RecordConfigInfo  {
         this.recordDuration = recordDuration;
     }
 
+    
+
     public RecordConfigInfo withRecordFormat(RecordFormatEnum recordFormat) {
         this.recordFormat = recordFormat;
         return this;
@@ -393,6 +399,8 @@ public class RecordConfigInfo  {
     public void setRecordFormat(RecordFormatEnum recordFormat) {
         this.recordFormat = recordFormat;
     }
+
+    
 
     public RecordConfigInfo withRecordType(RecordTypeEnum recordType) {
         this.recordType = recordType;
@@ -414,6 +422,8 @@ public class RecordConfigInfo  {
         this.recordType = recordType;
     }
 
+    
+
     public RecordConfigInfo withRecordLocation(RecordLocationEnum recordLocation) {
         this.recordLocation = recordLocation;
         return this;
@@ -434,6 +444,8 @@ public class RecordConfigInfo  {
         this.recordLocation = recordLocation;
     }
 
+    
+
     public RecordConfigInfo withRecordPrefix(String recordPrefix) {
         this.recordPrefix = recordPrefix;
         return this;
@@ -453,6 +465,8 @@ public class RecordConfigInfo  {
     public void setRecordPrefix(String recordPrefix) {
         this.recordPrefix = recordPrefix;
     }
+
+    
 
     public RecordConfigInfo withObsAddr(ObsFileAddr obsAddr) {
         this.obsAddr = obsAddr;
@@ -481,6 +495,8 @@ public class RecordConfigInfo  {
         this.obsAddr = obsAddr;
     }
 
+    
+
     public RecordConfigInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -500,6 +516,9 @@ public class RecordConfigInfo  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

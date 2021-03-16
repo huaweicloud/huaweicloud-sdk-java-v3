@@ -104,13 +104,13 @@ public class BatchListJobDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchQueryJobReqPage body = null;
+    private BatchQueryJobReqPage body;
 
     public BatchListJobDetailsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchListJobDetailsRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchListJobDetailsRequest withBody(BatchQueryJobReqPage body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchListJobDetailsRequest  {
     public void setBody(BatchQueryJobReqPage body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -87,6 +87,8 @@ public class ListTopicDetailsResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public ListTopicDetailsResponse withPushPolicy(Integer pushPolicy) {
         this.pushPolicy = pushPolicy;
         return this;
@@ -106,6 +108,8 @@ public class ListTopicDetailsResponse extends SdkResponse {
     public void setPushPolicy(Integer pushPolicy) {
         this.pushPolicy = pushPolicy;
     }
+
+    
 
     public ListTopicDetailsResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -127,6 +131,8 @@ public class ListTopicDetailsResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ListTopicDetailsResponse withName(String name) {
         this.name = name;
         return this;
@@ -146,6 +152,8 @@ public class ListTopicDetailsResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListTopicDetailsResponse withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
@@ -167,6 +175,8 @@ public class ListTopicDetailsResponse extends SdkResponse {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public ListTopicDetailsResponse withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -186,6 +196,8 @@ public class ListTopicDetailsResponse extends SdkResponse {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
 
     public ListTopicDetailsResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -207,6 +219,8 @@ public class ListTopicDetailsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListTopicDetailsResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -226,6 +240,9 @@ public class ListTopicDetailsResponse extends SdkResponse {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

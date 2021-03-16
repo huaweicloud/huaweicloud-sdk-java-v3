@@ -103,6 +103,8 @@ public class CreateUserOption  {
         this.name = name;
     }
 
+    
+
     public CreateUserOption withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -122,6 +124,8 @@ public class CreateUserOption  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public CreateUserOption withPassword(String password) {
         this.password = password;
@@ -143,6 +147,8 @@ public class CreateUserOption  {
         this.password = password;
     }
 
+    
+
     public CreateUserOption withEmail(String email) {
         this.email = email;
         return this;
@@ -162,6 +168,8 @@ public class CreateUserOption  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public CreateUserOption withAreacode(String areacode) {
         this.areacode = areacode;
@@ -183,6 +191,8 @@ public class CreateUserOption  {
         this.areacode = areacode;
     }
 
+    
+
     public CreateUserOption withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -202,6 +212,8 @@ public class CreateUserOption  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public CreateUserOption withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -223,6 +235,8 @@ public class CreateUserOption  {
         this.enabled = enabled;
     }
 
+    
+
     public CreateUserOption withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
         return this;
@@ -242,6 +256,8 @@ public class CreateUserOption  {
     public void setPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
     }
+
+    
 
     public CreateUserOption withXuserType(String xuserType) {
         this.xuserType = xuserType;
@@ -263,6 +279,8 @@ public class CreateUserOption  {
         this.xuserType = xuserType;
     }
 
+    
+
     public CreateUserOption withXuserId(String xuserId) {
         this.xuserId = xuserId;
         return this;
@@ -283,6 +301,8 @@ public class CreateUserOption  {
         this.xuserId = xuserId;
     }
 
+    
+
     public CreateUserOption withDescription(String description) {
         this.description = description;
         return this;
@@ -302,6 +322,9 @@ public class CreateUserOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

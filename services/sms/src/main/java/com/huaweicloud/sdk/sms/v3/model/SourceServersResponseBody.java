@@ -304,13 +304,13 @@ public class SourceServersResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="init_target_server")
     
-    private InitTargetServer initTargetServer = null;
+    private InitTargetServer initTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="current_task")
     
-    private TaskByServerSources currentTask = null;
+    private TaskByServerSources currentTask;
     /**
      * 迁移周期
      */
@@ -488,6 +488,8 @@ public class SourceServersResponseBody  {
         this.id = id;
     }
 
+    
+
     public SourceServersResponseBody withIp(String ip) {
         this.ip = ip;
         return this;
@@ -508,6 +510,8 @@ public class SourceServersResponseBody  {
         this.ip = ip;
     }
 
+    
+
     public SourceServersResponseBody withName(String name) {
         this.name = name;
         return this;
@@ -527,6 +531,8 @@ public class SourceServersResponseBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SourceServersResponseBody withAddDate(Long addDate) {
         this.addDate = addDate;
@@ -550,6 +556,8 @@ public class SourceServersResponseBody  {
         this.addDate = addDate;
     }
 
+    
+
     public SourceServersResponseBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -569,6 +577,8 @@ public class SourceServersResponseBody  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public SourceServersResponseBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -590,6 +600,8 @@ public class SourceServersResponseBody  {
         this.osVersion = osVersion;
     }
 
+    
+
     public SourceServersResponseBody withOemSystem(Boolean oemSystem) {
         this.oemSystem = oemSystem;
         return this;
@@ -609,6 +621,8 @@ public class SourceServersResponseBody  {
     public void setOemSystem(Boolean oemSystem) {
         this.oemSystem = oemSystem;
     }
+
+    
 
     public SourceServersResponseBody withState(StateEnum state) {
         this.state = state;
@@ -630,6 +644,8 @@ public class SourceServersResponseBody  {
         this.state = state;
     }
 
+    
+
     public SourceServersResponseBody withConnected(Boolean connected) {
         this.connected = connected;
         return this;
@@ -649,6 +665,8 @@ public class SourceServersResponseBody  {
     public void setConnected(Boolean connected) {
         this.connected = connected;
     }
+
+    
 
     public SourceServersResponseBody withInitTargetServer(InitTargetServer initTargetServer) {
         this.initTargetServer = initTargetServer;
@@ -677,6 +695,8 @@ public class SourceServersResponseBody  {
         this.initTargetServer = initTargetServer;
     }
 
+    
+
     public SourceServersResponseBody withCurrentTask(TaskByServerSources currentTask) {
         this.currentTask = currentTask;
         return this;
@@ -704,6 +724,8 @@ public class SourceServersResponseBody  {
         this.currentTask = currentTask;
     }
 
+    
+
     public SourceServersResponseBody withMigrationCycle(MigrationCycleEnum migrationCycle) {
         this.migrationCycle = migrationCycle;
         return this;
@@ -723,6 +745,8 @@ public class SourceServersResponseBody  {
     public void setMigrationCycle(MigrationCycleEnum migrationCycle) {
         this.migrationCycle = migrationCycle;
     }
+
+    
 
     public SourceServersResponseBody withStateActionTime(Long stateActionTime) {
         this.stateActionTime = stateActionTime;
@@ -746,6 +770,8 @@ public class SourceServersResponseBody  {
         this.stateActionTime = stateActionTime;
     }
 
+    
+
     public SourceServersResponseBody withReplicatesize(Long replicatesize) {
         this.replicatesize = replicatesize;
         return this;
@@ -767,6 +793,8 @@ public class SourceServersResponseBody  {
     public void setReplicatesize(Long replicatesize) {
         this.replicatesize = replicatesize;
     }
+
+    
 
     public SourceServersResponseBody withLastVisitTime(Long lastVisitTime) {
         this.lastVisitTime = lastVisitTime;
@@ -790,6 +818,8 @@ public class SourceServersResponseBody  {
         this.lastVisitTime = lastVisitTime;
     }
 
+    
+
     public SourceServersResponseBody withStageActionTime(Long stageActionTime) {
         this.stageActionTime = stageActionTime;
         return this;
@@ -811,6 +841,8 @@ public class SourceServersResponseBody  {
     public void setStageActionTime(Long stageActionTime) {
         this.stageActionTime = stageActionTime;
     }
+
+    
 
     public SourceServersResponseBody withTotalsize(Long totalsize) {
         this.totalsize = totalsize;
@@ -834,6 +866,8 @@ public class SourceServersResponseBody  {
         this.totalsize = totalsize;
     }
 
+    
+
     public SourceServersResponseBody withCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
         return this;
@@ -855,6 +889,8 @@ public class SourceServersResponseBody  {
     public void setCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
     }
+
+    
 
     public SourceServersResponseBody withMemory(Long memory) {
         this.memory = memory;
@@ -878,6 +914,8 @@ public class SourceServersResponseBody  {
         this.memory = memory;
     }
 
+    
+
     public SourceServersResponseBody withChecks(List<EnvironmentCheck> checks) {
         this.checks = checks;
         return this;
@@ -885,9 +923,6 @@ public class SourceServersResponseBody  {
 
     
     public SourceServersResponseBody addChecksItem(EnvironmentCheck checksItem) {
-        if (this.checks == null) {
-            this.checks = new ArrayList<>();
-        }
         this.checks.add(checksItem);
         return this;
     }
@@ -911,6 +946,9 @@ public class SourceServersResponseBody  {
     public void setChecks(List<EnvironmentCheck> checks) {
         this.checks = checks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

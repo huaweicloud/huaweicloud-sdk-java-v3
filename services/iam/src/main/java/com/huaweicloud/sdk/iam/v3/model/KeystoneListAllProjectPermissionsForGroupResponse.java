@@ -27,7 +27,7 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         this.links = links;
     }
 
+    
+
     public KeystoneListAllProjectPermissionsForGroupResponse withRoles(List<RoleResult> roles) {
         this.roles = roles;
         return this;
@@ -75,9 +77,6 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
 
     
     public KeystoneListAllProjectPermissionsForGroupResponse addRolesItem(RoleResult rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -102,6 +101,8 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         this.roles = roles;
     }
 
+    
+
     public KeystoneListAllProjectPermissionsForGroupResponse withTotalNumber(Integer totalNumber) {
         this.totalNumber = totalNumber;
         return this;
@@ -121,6 +122,9 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
     public void setTotalNumber(Integer totalNumber) {
         this.totalNumber = totalNumber;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class ListSubCustomersRequest  {
         this.subCustomerName = subCustomerName;
     }
 
+    
+
     public ListSubCustomersRequest withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
         return this;
@@ -86,6 +88,8 @@ public class ListSubCustomersRequest  {
     public void setSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
     }
+
+    
 
     public ListSubCustomersRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -111,6 +115,8 @@ public class ListSubCustomersRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListSubCustomersRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -133,6 +139,8 @@ public class ListSubCustomersRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListSubCustomersRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -154,6 +162,9 @@ public class ListSubCustomersRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -25,7 +25,7 @@ public class ListPublicZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,7 +37,7 @@ public class ListPublicZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metedata metadata = null;
+    private Metedata metadata;
 
     public ListPublicZonesResponse withLinks(PageLink links) {
         this.links = links;
@@ -66,6 +66,8 @@ public class ListPublicZonesResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public ListPublicZonesResponse withZones(String zones) {
         this.zones = zones;
         return this;
@@ -85,6 +87,8 @@ public class ListPublicZonesResponse extends SdkResponse {
     public void setZones(String zones) {
         this.zones = zones;
     }
+
+    
 
     public ListPublicZonesResponse withMetadata(Metedata metadata) {
         this.metadata = metadata;
@@ -112,6 +116,9 @@ public class ListPublicZonesResponse extends SdkResponse {
     public void setMetadata(Metedata metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

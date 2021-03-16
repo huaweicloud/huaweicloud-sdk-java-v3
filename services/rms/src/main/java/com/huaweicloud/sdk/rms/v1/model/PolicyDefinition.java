@@ -56,7 +56,7 @@ public class PolicyDefinition  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_rule")
     
-    private Object policyRule = null;
+    private Object policyRule;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,6 +90,8 @@ public class PolicyDefinition  {
         this.id = id;
     }
 
+    
+
     public PolicyDefinition withName(String name) {
         this.name = name;
         return this;
@@ -109,6 +111,8 @@ public class PolicyDefinition  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PolicyDefinition withPolicyType(String policyType) {
         this.policyType = policyType;
@@ -130,6 +134,8 @@ public class PolicyDefinition  {
         this.policyType = policyType;
     }
 
+    
+
     public PolicyDefinition withDescription(String description) {
         this.description = description;
         return this;
@@ -149,6 +155,8 @@ public class PolicyDefinition  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public PolicyDefinition withPolicyRuleType(String policyRuleType) {
         this.policyRuleType = policyRuleType;
@@ -170,6 +178,8 @@ public class PolicyDefinition  {
         this.policyRuleType = policyRuleType;
     }
 
+    
+
     public PolicyDefinition withPolicyRule(Object policyRule) {
         this.policyRule = policyRule;
         return this;
@@ -190,6 +200,8 @@ public class PolicyDefinition  {
         this.policyRule = policyRule;
     }
 
+    
+
     public PolicyDefinition withKeywords(List<String> keywords) {
         this.keywords = keywords;
         return this;
@@ -197,9 +209,6 @@ public class PolicyDefinition  {
 
     
     public PolicyDefinition addKeywordsItem(String keywordsItem) {
-        if (this.keywords == null) {
-            this.keywords = new ArrayList<>();
-        }
         this.keywords.add(keywordsItem);
         return this;
     }
@@ -224,6 +233,8 @@ public class PolicyDefinition  {
         this.keywords = keywords;
     }
 
+    
+
     public PolicyDefinition withParameters(Map<String, PolicyParameterDefinition> parameters) {
         this.parameters = parameters;
         return this;
@@ -232,9 +243,6 @@ public class PolicyDefinition  {
     
 
     public PolicyDefinition putParametersItem(String key, PolicyParameterDefinition parametersItem) {
-         if (this.parameters == null) {
-            this.parameters = new HashMap<>();
-         }
         this.parameters.put(key, parametersItem);
         return this;
     }
@@ -257,6 +265,9 @@ public class PolicyDefinition  {
     public void setParameters(Map<String, PolicyParameterDefinition> parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -66,7 +66,7 @@ public class CreateListenerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insert_headers")
     
-    private ListenerInsertHeaders insertHeaders = null;
+    private ListenerInsertHeaders insertHeaders;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -222,7 +222,7 @@ public class CreateListenerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_member_retry")
     
-    private Boolean enableMemberRetry = true;
+    private Boolean enableMemberRetry;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -234,25 +234,25 @@ public class CreateListenerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_timeout")
     
-    private Integer clientTimeout = 60;
+    private Integer clientTimeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_timeout")
     
-    private Integer memberTimeout = 60;
+    private Integer memberTimeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipgroup")
     
-    private CreateListenerIpGroupOption ipgroup = null;
+    private CreateListenerIpGroupOption ipgroup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transparent_client_ip_enable")
     
-    private Boolean transparentClientIpEnable = false;
+    private Boolean transparentClientIpEnable;
 
     public CreateListenerOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -274,6 +274,8 @@ public class CreateListenerOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreateListenerOption withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
         return this;
@@ -293,6 +295,8 @@ public class CreateListenerOption  {
     public void setClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
+
+    
 
     public CreateListenerOption withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
@@ -314,6 +318,8 @@ public class CreateListenerOption  {
         this.defaultPoolId = defaultPoolId;
     }
 
+    
+
     public CreateListenerOption withDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
@@ -333,6 +339,8 @@ public class CreateListenerOption  {
     public void setDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
+
+    
 
     public CreateListenerOption withDescription(String description) {
         this.description = description;
@@ -354,6 +362,8 @@ public class CreateListenerOption  {
         this.description = description;
     }
 
+    
+
     public CreateListenerOption withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
@@ -373,6 +383,8 @@ public class CreateListenerOption  {
     public void setHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
     }
+
+    
 
     public CreateListenerOption withInsertHeaders(ListenerInsertHeaders insertHeaders) {
         this.insertHeaders = insertHeaders;
@@ -401,6 +413,8 @@ public class CreateListenerOption  {
         this.insertHeaders = insertHeaders;
     }
 
+    
+
     public CreateListenerOption withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
@@ -420,6 +434,8 @@ public class CreateListenerOption  {
     public void setLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
     }
+
+    
 
     public CreateListenerOption withName(String name) {
         this.name = name;
@@ -441,6 +457,8 @@ public class CreateListenerOption  {
         this.name = name;
     }
 
+    
+
     public CreateListenerOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -461,6 +479,8 @@ public class CreateListenerOption  {
         this.projectId = projectId;
     }
 
+    
+
     public CreateListenerOption withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -480,6 +500,8 @@ public class CreateListenerOption  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public CreateListenerOption withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -503,6 +525,8 @@ public class CreateListenerOption  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public CreateListenerOption withSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
         return this;
@@ -510,9 +534,6 @@ public class CreateListenerOption  {
 
     
     public CreateListenerOption addSniContainerRefsItem(String sniContainerRefsItem) {
-        if (this.sniContainerRefs == null) {
-            this.sniContainerRefs = new ArrayList<>();
-        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
@@ -537,6 +558,8 @@ public class CreateListenerOption  {
         this.sniContainerRefs = sniContainerRefs;
     }
 
+    
+
     public CreateListenerOption withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -544,9 +567,6 @@ public class CreateListenerOption  {
 
     
     public CreateListenerOption addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -571,6 +591,8 @@ public class CreateListenerOption  {
         this.tags = tags;
     }
 
+    
+
     public CreateListenerOption withTlsCiphersPolicy(TlsCiphersPolicyEnum tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
@@ -590,6 +612,8 @@ public class CreateListenerOption  {
     public void setTlsCiphersPolicy(TlsCiphersPolicyEnum tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
+
+    
 
     public CreateListenerOption withEnableMemberRetry(Boolean enableMemberRetry) {
         this.enableMemberRetry = enableMemberRetry;
@@ -611,6 +635,8 @@ public class CreateListenerOption  {
         this.enableMemberRetry = enableMemberRetry;
     }
 
+    
+
     public CreateListenerOption withKeepaliveTimeout(Integer keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
         return this;
@@ -630,6 +656,8 @@ public class CreateListenerOption  {
     public void setKeepaliveTimeout(Integer keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
     }
+
+    
 
     public CreateListenerOption withClientTimeout(Integer clientTimeout) {
         this.clientTimeout = clientTimeout;
@@ -653,6 +681,8 @@ public class CreateListenerOption  {
         this.clientTimeout = clientTimeout;
     }
 
+    
+
     public CreateListenerOption withMemberTimeout(Integer memberTimeout) {
         this.memberTimeout = memberTimeout;
         return this;
@@ -674,6 +704,8 @@ public class CreateListenerOption  {
     public void setMemberTimeout(Integer memberTimeout) {
         this.memberTimeout = memberTimeout;
     }
+
+    
 
     public CreateListenerOption withIpgroup(CreateListenerIpGroupOption ipgroup) {
         this.ipgroup = ipgroup;
@@ -702,6 +734,8 @@ public class CreateListenerOption  {
         this.ipgroup = ipgroup;
     }
 
+    
+
     public CreateListenerOption withTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
         return this;
@@ -721,6 +755,9 @@ public class CreateListenerOption  {
     public void setTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

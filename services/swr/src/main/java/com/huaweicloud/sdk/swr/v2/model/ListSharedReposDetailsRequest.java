@@ -42,6 +42,9 @@ public class ListSharedReposDetailsRequest  {
     public void setFilter(String filter) {
         this.filter = filter;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

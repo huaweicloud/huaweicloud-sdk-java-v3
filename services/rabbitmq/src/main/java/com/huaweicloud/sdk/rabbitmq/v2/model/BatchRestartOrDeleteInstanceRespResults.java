@@ -49,6 +49,8 @@ public class BatchRestartOrDeleteInstanceRespResults  {
         this.result = result;
     }
 
+    
+
     public BatchRestartOrDeleteInstanceRespResults withInstance(String instance) {
         this.instance = instance;
         return this;
@@ -68,6 +70,9 @@ public class BatchRestartOrDeleteInstanceRespResults  {
     public void setInstance(String instance) {
         this.instance = instance;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

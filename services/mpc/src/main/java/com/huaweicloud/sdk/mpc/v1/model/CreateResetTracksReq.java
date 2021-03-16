@@ -22,7 +22,7 @@ public class CreateResetTracksReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio_file")
     
-    private SubAudioFile audioFile = null;
+    private SubAudioFile audioFile;
 
     public CreateResetTracksReq withAudioFile(SubAudioFile audioFile) {
         this.audioFile = audioFile;
@@ -50,6 +50,9 @@ public class CreateResetTracksReq  {
     public void setAudioFile(SubAudioFile audioFile) {
         this.audioFile = audioFile;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

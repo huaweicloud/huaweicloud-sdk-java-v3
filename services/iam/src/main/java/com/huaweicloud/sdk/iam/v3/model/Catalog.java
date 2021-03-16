@@ -24,7 +24,7 @@ public class Catalog  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoints")
     
-    private List<CatalogEndpoints> endpoints = new ArrayList<>();
+    private List<CatalogEndpoints> endpoints = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class Catalog  {
         this.endpoints = endpoints;
     }
 
+    
+
     public Catalog withId(String id) {
         this.id = id;
         return this;
@@ -94,6 +96,8 @@ public class Catalog  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public Catalog withName(String name) {
         this.name = name;
@@ -115,6 +119,8 @@ public class Catalog  {
         this.name = name;
     }
 
+    
+
     public Catalog withType(String type) {
         this.type = type;
         return this;
@@ -134,6 +140,9 @@ public class Catalog  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

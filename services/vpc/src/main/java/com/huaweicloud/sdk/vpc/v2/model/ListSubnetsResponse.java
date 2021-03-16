@@ -35,9 +35,6 @@ public class ListSubnetsResponse extends SdkResponse {
 
     
     public ListSubnetsResponse addSubnetsItem(Subnet subnetsItem) {
-        if (this.subnets == null) {
-            this.subnets = new ArrayList<>();
-        }
         this.subnets.add(subnetsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListSubnetsResponse extends SdkResponse {
     public void setSubnets(List<Subnet> subnets) {
         this.subnets = subnets;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

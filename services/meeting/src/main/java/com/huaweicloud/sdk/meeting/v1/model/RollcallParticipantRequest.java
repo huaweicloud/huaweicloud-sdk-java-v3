@@ -55,6 +55,8 @@ public class RollcallParticipantRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public RollcallParticipantRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -74,6 +76,8 @@ public class RollcallParticipantRequest  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
 
     public RollcallParticipantRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -96,6 +100,9 @@ public class RollcallParticipantRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

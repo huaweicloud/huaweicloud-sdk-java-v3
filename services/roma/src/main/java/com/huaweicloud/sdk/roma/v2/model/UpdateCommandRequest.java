@@ -40,7 +40,7 @@ public class UpdateCommandRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateCommandRequestBody body = null;
+    private UpdateCommandRequestBody body;
 
     public UpdateCommandRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -62,6 +62,8 @@ public class UpdateCommandRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateCommandRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -81,6 +83,8 @@ public class UpdateCommandRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public UpdateCommandRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
@@ -103,6 +107,8 @@ public class UpdateCommandRequest  {
     public void setCommandId(Integer commandId) {
         this.commandId = commandId;
     }
+
+    
 
     public UpdateCommandRequest withBody(UpdateCommandRequestBody body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class UpdateCommandRequest  {
     public void setBody(UpdateCommandRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

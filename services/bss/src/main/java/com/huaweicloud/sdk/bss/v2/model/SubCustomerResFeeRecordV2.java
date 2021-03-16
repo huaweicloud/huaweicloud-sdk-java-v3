@@ -259,6 +259,8 @@ public class SubCustomerResFeeRecordV2  {
         this.effectiveTime = effectiveTime;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -278,6 +280,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withProductId(String productId) {
         this.productId = productId;
@@ -299,6 +303,8 @@ public class SubCustomerResFeeRecordV2  {
         this.productId = productId;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -318,6 +324,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withOrderId(String orderId) {
         this.orderId = orderId;
@@ -339,6 +347,8 @@ public class SubCustomerResFeeRecordV2  {
         this.orderId = orderId;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -358,6 +368,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -379,6 +391,8 @@ public class SubCustomerResFeeRecordV2  {
         this.measureId = measureId;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withUsageType(String usageType) {
         this.usageType = usageType;
         return this;
@@ -398,6 +412,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setUsageType(String usageType) {
         this.usageType = usageType;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withUsage(Double usage) {
         this.usage = usage;
@@ -419,6 +435,8 @@ public class SubCustomerResFeeRecordV2  {
         this.usage = usage;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withUsageMeasureId(Integer usageMeasureId) {
         this.usageMeasureId = usageMeasureId;
         return this;
@@ -438,6 +456,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setUsageMeasureId(Integer usageMeasureId) {
         this.usageMeasureId = usageMeasureId;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
@@ -459,6 +479,8 @@ public class SubCustomerResFeeRecordV2  {
         this.freeResourceUsage = freeResourceUsage;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withFreeResourceMeasureId(Integer freeResourceMeasureId) {
         this.freeResourceMeasureId = freeResourceMeasureId;
         return this;
@@ -478,6 +500,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setFreeResourceMeasureId(Integer freeResourceMeasureId) {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
@@ -499,6 +523,8 @@ public class SubCustomerResFeeRecordV2  {
         this.cloudServiceType = cloudServiceType;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withRegion(String region) {
         this.region = region;
         return this;
@@ -518,6 +544,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -539,6 +567,8 @@ public class SubCustomerResFeeRecordV2  {
         this.resourceType = resourceType;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -558,6 +588,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withResourceTag(String resourceTag) {
         this.resourceTag = resourceTag;
@@ -579,6 +611,8 @@ public class SubCustomerResFeeRecordV2  {
         this.resourceTag = resourceTag;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -598,6 +632,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -619,6 +655,8 @@ public class SubCustomerResFeeRecordV2  {
         this.resourceId = resourceId;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withBillType(Integer billType) {
         this.billType = billType;
         return this;
@@ -638,6 +676,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setBillType(Integer billType) {
         this.billType = billType;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withPeriodType(String periodType) {
         this.periodType = periodType;
@@ -659,6 +699,8 @@ public class SubCustomerResFeeRecordV2  {
         this.periodType = periodType;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
         return this;
@@ -678,6 +720,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withRiUsage(Double riUsage) {
         this.riUsage = riUsage;
@@ -699,6 +743,8 @@ public class SubCustomerResFeeRecordV2  {
         this.riUsage = riUsage;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withRiUsageMeasureId(Integer riUsageMeasureId) {
         this.riUsageMeasureId = riUsageMeasureId;
         return this;
@@ -718,6 +764,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setRiUsageMeasureId(Integer riUsageMeasureId) {
         this.riUsageMeasureId = riUsageMeasureId;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
@@ -739,6 +787,8 @@ public class SubCustomerResFeeRecordV2  {
         this.officialAmount = officialAmount;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
@@ -758,6 +808,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
@@ -779,6 +831,8 @@ public class SubCustomerResFeeRecordV2  {
         this.cashAmount = cashAmount;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
@@ -798,6 +852,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
@@ -819,6 +875,8 @@ public class SubCustomerResFeeRecordV2  {
         this.couponAmount = couponAmount;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
@@ -838,6 +896,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
@@ -859,6 +919,8 @@ public class SubCustomerResFeeRecordV2  {
         this.storedCardAmount = storedCardAmount;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
@@ -878,6 +940,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
@@ -899,6 +963,8 @@ public class SubCustomerResFeeRecordV2  {
         this.debtAmount = debtAmount;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
@@ -918,6 +984,8 @@ public class SubCustomerResFeeRecordV2  {
     public void setAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
     }
+
+    
 
     public SubCustomerResFeeRecordV2 withSpecSize(Double specSize) {
         this.specSize = specSize;
@@ -939,6 +1007,8 @@ public class SubCustomerResFeeRecordV2  {
         this.specSize = specSize;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withSpecSizeMeasureId(Integer specSizeMeasureId) {
         this.specSizeMeasureId = specSizeMeasureId;
         return this;
@@ -959,6 +1029,8 @@ public class SubCustomerResFeeRecordV2  {
         this.specSizeMeasureId = specSizeMeasureId;
     }
 
+    
+
     public SubCustomerResFeeRecordV2 withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
@@ -978,6 +1050,9 @@ public class SubCustomerResFeeRecordV2  {
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -124,6 +124,9 @@ public class CreateSchedulerHints  {
     public void setDecBaremetal(DecBaremetalEnum decBaremetal) {
         this.decBaremetal = decBaremetal;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

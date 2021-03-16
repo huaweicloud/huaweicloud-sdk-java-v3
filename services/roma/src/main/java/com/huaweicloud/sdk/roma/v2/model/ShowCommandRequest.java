@@ -55,6 +55,8 @@ public class ShowCommandRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowCommandRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -74,6 +76,8 @@ public class ShowCommandRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public ShowCommandRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
@@ -96,6 +100,9 @@ public class ShowCommandRequest  {
     public void setCommandId(Integer commandId) {
         this.commandId = commandId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,13 +22,13 @@ public class ListGrantsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListGrantsRequestBody body = null;
+    private ListGrantsRequestBody body;
 
     public ListGrantsRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class ListGrantsRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public ListGrantsRequest withBody(ListGrantsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ListGrantsRequest  {
     public void setBody(ListGrantsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

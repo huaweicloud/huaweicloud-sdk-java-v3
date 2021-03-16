@@ -36,7 +36,7 @@ public class MetricInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dimensions")
     
-    private List<MetricsDimension> dimensions = new ArrayList<>();
+    private List<MetricsDimension> dimensions = null;
     
     public MetricInfo withNamespace(String namespace) {
         this.namespace = namespace;
@@ -58,6 +58,8 @@ public class MetricInfo  {
         this.namespace = namespace;
     }
 
+    
+
     public MetricInfo withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -77,6 +79,8 @@ public class MetricInfo  {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
 
     public MetricInfo withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
@@ -108,6 +112,9 @@ public class MetricInfo  {
     public void setDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class PolicyTriggerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private PolicyTriggerPropertiesReq properties = null;
+    private PolicyTriggerPropertiesReq properties;
 
     public PolicyTriggerReq withProperties(PolicyTriggerPropertiesReq properties) {
         this.properties = properties;
@@ -50,6 +50,9 @@ public class PolicyTriggerReq  {
     public void setProperties(PolicyTriggerPropertiesReq properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

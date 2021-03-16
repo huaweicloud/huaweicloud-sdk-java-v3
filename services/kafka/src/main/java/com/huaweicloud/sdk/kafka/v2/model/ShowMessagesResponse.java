@@ -53,9 +53,6 @@ public class ShowMessagesResponse extends SdkResponse {
 
     
     public ShowMessagesResponse addMessagesItem(ShowMessagesRespMessages messagesItem) {
-        if (this.messages == null) {
-            this.messages = new ArrayList<>();
-        }
         this.messages.add(messagesItem);
         return this;
     }
@@ -80,6 +77,8 @@ public class ShowMessagesResponse extends SdkResponse {
         this.messages = messages;
     }
 
+    
+
     public ShowMessagesResponse withMessagesCount(Integer messagesCount) {
         this.messagesCount = messagesCount;
         return this;
@@ -99,6 +98,8 @@ public class ShowMessagesResponse extends SdkResponse {
     public void setMessagesCount(Integer messagesCount) {
         this.messagesCount = messagesCount;
     }
+
+    
 
     public ShowMessagesResponse withOffsetsCount(Integer offsetsCount) {
         this.offsetsCount = offsetsCount;
@@ -120,6 +121,8 @@ public class ShowMessagesResponse extends SdkResponse {
         this.offsetsCount = offsetsCount;
     }
 
+    
+
     public ShowMessagesResponse withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -139,6 +142,9 @@ public class ShowMessagesResponse extends SdkResponse {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

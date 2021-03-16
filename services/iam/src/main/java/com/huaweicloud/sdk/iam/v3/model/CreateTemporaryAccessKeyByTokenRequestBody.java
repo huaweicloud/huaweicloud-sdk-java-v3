@@ -22,7 +22,7 @@ public class CreateTemporaryAccessKeyByTokenRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth")
     
-    private TokenAuth auth = null;
+    private TokenAuth auth;
 
     public CreateTemporaryAccessKeyByTokenRequestBody withAuth(TokenAuth auth) {
         this.auth = auth;
@@ -50,6 +50,9 @@ public class CreateTemporaryAccessKeyByTokenRequestBody  {
     public void setAuth(TokenAuth auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

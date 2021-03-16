@@ -40,13 +40,13 @@ public class ShowOnlineUsersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime = null;
+    private OffsetDateTime startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private OffsetDateTime endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class ShowOnlineUsersRequest  {
         this.domain = domain;
     }
 
+    
+
     public ShowOnlineUsersRequest withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -93,6 +95,8 @@ public class ShowOnlineUsersRequest  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ShowOnlineUsersRequest withStreamName(String streamName) {
         this.streamName = streamName;
@@ -114,6 +118,8 @@ public class ShowOnlineUsersRequest  {
         this.streamName = streamName;
     }
 
+    
+
     public ShowOnlineUsersRequest withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
@@ -134,6 +140,8 @@ public class ShowOnlineUsersRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ShowOnlineUsersRequest withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
         return this;
@@ -153,6 +161,8 @@ public class ShowOnlineUsersRequest  {
     public void setEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowOnlineUsersRequest withStep(Integer step) {
         this.step = step;
@@ -175,6 +185,9 @@ public class ShowOnlineUsersRequest  {
     public void setStep(Integer step) {
         this.step = step;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

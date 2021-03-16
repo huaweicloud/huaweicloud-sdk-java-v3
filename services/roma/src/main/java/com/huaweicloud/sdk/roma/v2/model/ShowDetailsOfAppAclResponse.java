@@ -59,6 +59,8 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public ShowDetailsOfAppAclResponse withAppAclType(String appAclType) {
         this.appAclType = appAclType;
         return this;
@@ -79,6 +81,8 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
         this.appAclType = appAclType;
     }
 
+    
+
     public ShowDetailsOfAppAclResponse withAppAclValues(List<String> appAclValues) {
         this.appAclValues = appAclValues;
         return this;
@@ -86,9 +90,6 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
 
     
     public ShowDetailsOfAppAclResponse addAppAclValuesItem(String appAclValuesItem) {
-        if (this.appAclValues == null) {
-            this.appAclValues = new ArrayList<>();
-        }
         this.appAclValues.add(appAclValuesItem);
         return this;
     }
@@ -112,6 +113,9 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
     public void setAppAclValues(List<String> appAclValues) {
         this.appAclValues = appAclValues;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

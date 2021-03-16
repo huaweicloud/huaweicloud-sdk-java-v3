@@ -39,13 +39,13 @@ public class ListTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 50;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListTemplatesRequest withName(String name) {
         this.name = name;
@@ -67,6 +67,8 @@ public class ListTemplatesRequest  {
         this.name = name;
     }
 
+    
+
     public ListTemplatesRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -87,6 +89,8 @@ public class ListTemplatesRequest  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public ListTemplatesRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -106,6 +110,8 @@ public class ListTemplatesRequest  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public ListTemplatesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -129,6 +135,8 @@ public class ListTemplatesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListTemplatesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -150,6 +158,9 @@ public class ListTemplatesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

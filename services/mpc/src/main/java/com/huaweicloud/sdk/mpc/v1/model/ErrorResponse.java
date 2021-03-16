@@ -49,6 +49,8 @@ public class ErrorResponse  {
         this.errorCode = errorCode;
     }
 
+    
+
     public ErrorResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -68,6 +70,9 @@ public class ErrorResponse  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

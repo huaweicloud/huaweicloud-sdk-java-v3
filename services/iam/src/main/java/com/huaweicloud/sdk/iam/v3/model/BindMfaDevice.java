@@ -61,6 +61,8 @@ public class BindMfaDevice  {
         this.userId = userId;
     }
 
+    
+
     public BindMfaDevice withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
@@ -80,6 +82,8 @@ public class BindMfaDevice  {
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
+
+    
 
     public BindMfaDevice withAuthenticationCodeFirst(String authenticationCodeFirst) {
         this.authenticationCodeFirst = authenticationCodeFirst;
@@ -101,6 +105,8 @@ public class BindMfaDevice  {
         this.authenticationCodeFirst = authenticationCodeFirst;
     }
 
+    
+
     public BindMfaDevice withAuthenticationCodeSecond(String authenticationCodeSecond) {
         this.authenticationCodeSecond = authenticationCodeSecond;
         return this;
@@ -120,6 +126,9 @@ public class BindMfaDevice  {
     public void setAuthenticationCodeSecond(String authenticationCodeSecond) {
         this.authenticationCodeSecond = authenticationCodeSecond;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

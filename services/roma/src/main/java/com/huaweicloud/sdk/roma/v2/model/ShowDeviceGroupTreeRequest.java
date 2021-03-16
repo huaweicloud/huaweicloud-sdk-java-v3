@@ -49,6 +49,8 @@ public class ShowDeviceGroupTreeRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDeviceGroupTreeRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -68,6 +70,9 @@ public class ShowDeviceGroupTreeRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

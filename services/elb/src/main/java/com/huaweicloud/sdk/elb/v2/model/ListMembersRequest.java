@@ -103,6 +103,8 @@ public class ListMembersRequest  {
         this.poolId = poolId;
     }
 
+    
+
     public ListMembersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -125,6 +127,8 @@ public class ListMembersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListMembersRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -144,6 +148,8 @@ public class ListMembersRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListMembersRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
@@ -165,6 +171,8 @@ public class ListMembersRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListMembersRequest withId(String id) {
         this.id = id;
         return this;
@@ -184,6 +192,8 @@ public class ListMembersRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListMembersRequest withName(String name) {
         this.name = name;
@@ -205,6 +215,8 @@ public class ListMembersRequest  {
         this.name = name;
     }
 
+    
+
     public ListMembersRequest withAddress(String address) {
         this.address = address;
         return this;
@@ -224,6 +236,8 @@ public class ListMembersRequest  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public ListMembersRequest withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -245,6 +259,8 @@ public class ListMembersRequest  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public ListMembersRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -264,6 +280,8 @@ public class ListMembersRequest  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public ListMembersRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -285,6 +303,8 @@ public class ListMembersRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListMembersRequest withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -304,6 +324,9 @@ public class ListMembersRequest  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

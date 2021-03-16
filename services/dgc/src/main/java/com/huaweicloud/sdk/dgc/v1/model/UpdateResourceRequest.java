@@ -28,7 +28,7 @@ public class UpdateResourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResourceInfo body = null;
+    private ResourceInfo body;
 
     public UpdateResourceRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -49,6 +49,8 @@ public class UpdateResourceRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public UpdateResourceRequest withBody(ResourceInfo body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateResourceRequest  {
     public void setBody(ResourceInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

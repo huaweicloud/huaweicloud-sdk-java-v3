@@ -169,6 +169,8 @@ public class Statistics  {
         this.maxLatency = maxLatency;
     }
 
+    
+
     public Statistics withAvgLatency(Integer avgLatency) {
         this.avgLatency = avgLatency;
         return this;
@@ -188,6 +190,8 @@ public class Statistics  {
     public void setAvgLatency(Integer avgLatency) {
         this.avgLatency = avgLatency;
     }
+
+    
 
     public Statistics withMaxInnerLatency(Integer maxInnerLatency) {
         this.maxInnerLatency = maxInnerLatency;
@@ -209,6 +213,8 @@ public class Statistics  {
         this.maxInnerLatency = maxInnerLatency;
     }
 
+    
+
     public Statistics withAvgInnerLatency(Integer avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
         return this;
@@ -228,6 +234,8 @@ public class Statistics  {
     public void setAvgInnerLatency(Integer avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
     }
+
+    
 
     public Statistics withMaxBackendLatency(Integer maxBackendLatency) {
         this.maxBackendLatency = maxBackendLatency;
@@ -249,6 +257,8 @@ public class Statistics  {
         this.maxBackendLatency = maxBackendLatency;
     }
 
+    
+
     public Statistics withAvgBackendLatency(Integer avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
         return this;
@@ -268,6 +278,8 @@ public class Statistics  {
     public void setAvgBackendLatency(Integer avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
     }
+
+    
 
     public Statistics withReqCount(Integer reqCount) {
         this.reqCount = reqCount;
@@ -289,6 +301,8 @@ public class Statistics  {
         this.reqCount = reqCount;
     }
 
+    
+
     public Statistics withReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
         return this;
@@ -308,6 +322,8 @@ public class Statistics  {
     public void setReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
     }
+
+    
 
     public Statistics withReqCount4xx(Integer reqCount4xx) {
         this.reqCount4xx = reqCount4xx;
@@ -329,6 +345,8 @@ public class Statistics  {
         this.reqCount4xx = reqCount4xx;
     }
 
+    
+
     public Statistics withReqCount5xx(Integer reqCount5xx) {
         this.reqCount5xx = reqCount5xx;
         return this;
@@ -348,6 +366,8 @@ public class Statistics  {
     public void setReqCount5xx(Integer reqCount5xx) {
         this.reqCount5xx = reqCount5xx;
     }
+
+    
 
     public Statistics withReqCountError(Integer reqCountError) {
         this.reqCountError = reqCountError;
@@ -369,6 +389,8 @@ public class Statistics  {
         this.reqCountError = reqCountError;
     }
 
+    
+
     public Statistics withOutputThroughput(Integer outputThroughput) {
         this.outputThroughput = outputThroughput;
         return this;
@@ -388,6 +410,8 @@ public class Statistics  {
     public void setOutputThroughput(Integer outputThroughput) {
         this.outputThroughput = outputThroughput;
     }
+
+    
 
     public Statistics withInputThroughput(Integer inputThroughput) {
         this.inputThroughput = inputThroughput;
@@ -409,6 +433,8 @@ public class Statistics  {
         this.inputThroughput = inputThroughput;
     }
 
+    
+
     public Statistics withCurrentMinute(Long currentMinute) {
         this.currentMinute = currentMinute;
         return this;
@@ -428,6 +454,8 @@ public class Statistics  {
     public void setCurrentMinute(Long currentMinute) {
         this.currentMinute = currentMinute;
     }
+
+    
 
     public Statistics withReqTime(String reqTime) {
         this.reqTime = reqTime;
@@ -449,6 +477,8 @@ public class Statistics  {
         this.reqTime = reqTime;
     }
 
+    
+
     public Statistics withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -468,6 +498,8 @@ public class Statistics  {
     public void setCycle(String cycle) {
         this.cycle = cycle;
     }
+
+    
 
     public Statistics withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -489,6 +521,8 @@ public class Statistics  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public Statistics withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -508,6 +542,8 @@ public class Statistics  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public Statistics withGroupId(String groupId) {
         this.groupId = groupId;
@@ -529,6 +565,8 @@ public class Statistics  {
         this.groupId = groupId;
     }
 
+    
+
     public Statistics withProvider(String provider) {
         this.provider = provider;
         return this;
@@ -548,6 +586,8 @@ public class Statistics  {
     public void setProvider(String provider) {
         this.provider = provider;
     }
+
+    
 
     public Statistics withRegisterTime(String registerTime) {
         this.registerTime = registerTime;
@@ -569,6 +609,8 @@ public class Statistics  {
         this.registerTime = registerTime;
     }
 
+    
+
     public Statistics withStatus(Integer status) {
         this.status = status;
         return this;
@@ -588,6 +630,9 @@ public class Statistics  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

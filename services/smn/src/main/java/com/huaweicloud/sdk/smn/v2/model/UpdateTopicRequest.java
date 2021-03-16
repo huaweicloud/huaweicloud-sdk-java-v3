@@ -28,7 +28,7 @@ public class UpdateTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateTopicRequestBody body = null;
+    private UpdateTopicRequestBody body;
 
     public UpdateTopicRequest withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
@@ -49,6 +49,8 @@ public class UpdateTopicRequest  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
+
+    
 
     public UpdateTopicRequest withBody(UpdateTopicRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateTopicRequest  {
     public void setBody(UpdateTopicRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

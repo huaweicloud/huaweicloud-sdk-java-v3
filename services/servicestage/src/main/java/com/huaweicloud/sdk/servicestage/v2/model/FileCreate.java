@@ -49,6 +49,8 @@ public class FileCreate  {
         this.message = message;
     }
 
+    
+
     public FileCreate withContent(String content) {
         this.content = content;
         return this;
@@ -68,6 +70,9 @@ public class FileCreate  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

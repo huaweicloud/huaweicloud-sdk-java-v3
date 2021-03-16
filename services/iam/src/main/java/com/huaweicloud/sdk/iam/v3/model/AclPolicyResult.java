@@ -25,13 +25,13 @@ public class AclPolicyResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allow_address_netmasks")
     
-    private List<AllowAddressNetmasksResult> allowAddressNetmasks = new ArrayList<>();
+    private List<AllowAddressNetmasksResult> allowAddressNetmasks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allow_ip_ranges")
     
-    private List<AllowIpRangesResult> allowIpRanges = new ArrayList<>();
+    private List<AllowIpRangesResult> allowIpRanges = null;
     
     public AclPolicyResult withAllowAddressNetmasks(List<AllowAddressNetmasksResult> allowAddressNetmasks) {
         this.allowAddressNetmasks = allowAddressNetmasks;
@@ -64,6 +64,8 @@ public class AclPolicyResult  {
         this.allowAddressNetmasks = allowAddressNetmasks;
     }
 
+    
+
     public AclPolicyResult withAllowIpRanges(List<AllowIpRangesResult> allowIpRanges) {
         this.allowIpRanges = allowIpRanges;
         return this;
@@ -94,6 +96,9 @@ public class AclPolicyResult  {
     public void setAllowIpRanges(List<AllowIpRangesResult> allowIpRanges) {
         this.allowIpRanges = allowIpRanges;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

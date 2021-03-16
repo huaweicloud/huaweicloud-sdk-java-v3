@@ -40,7 +40,7 @@ public class L7policyResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<ResourceList> rules = new ArrayList<>();
+    private List<ResourceList> rules = null;
         /**
      * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
      */
@@ -206,6 +206,8 @@ public class L7policyResp  {
         this.id = id;
     }
 
+    
+
     public L7policyResp withName(String name) {
         this.name = name;
         return this;
@@ -225,6 +227,8 @@ public class L7policyResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public L7policyResp withRules(List<ResourceList> rules) {
         this.rules = rules;
@@ -257,6 +261,8 @@ public class L7policyResp  {
         this.rules = rules;
     }
 
+    
+
     public L7policyResp withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -276,6 +282,8 @@ public class L7policyResp  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public L7policyResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
@@ -297,6 +305,8 @@ public class L7policyResp  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public L7policyResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -316,6 +326,8 @@ public class L7policyResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public L7policyResp withProjectId(String projectId) {
         this.projectId = projectId;
@@ -337,6 +349,8 @@ public class L7policyResp  {
         this.projectId = projectId;
     }
 
+    
+
     public L7policyResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -356,6 +370,8 @@ public class L7policyResp  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public L7policyResp withDescription(String description) {
         this.description = description;
@@ -377,6 +393,8 @@ public class L7policyResp  {
         this.description = description;
     }
 
+    
+
     public L7policyResp withListenerId(String listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -396,6 +414,8 @@ public class L7policyResp  {
     public void setListenerId(String listenerId) {
         this.listenerId = listenerId;
     }
+
+    
 
     public L7policyResp withRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
@@ -417,6 +437,8 @@ public class L7policyResp  {
         this.redirectPoolId = redirectPoolId;
     }
 
+    
+
     public L7policyResp withRedirectListenerId(String redirectListenerId) {
         this.redirectListenerId = redirectListenerId;
         return this;
@@ -437,6 +459,8 @@ public class L7policyResp  {
         this.redirectListenerId = redirectListenerId;
     }
 
+    
+
     public L7policyResp withRedirectUrl(String redirectUrl) {
         this.redirectUrl = redirectUrl;
         return this;
@@ -456,6 +480,8 @@ public class L7policyResp  {
     public void setRedirectUrl(String redirectUrl) {
         this.redirectUrl = redirectUrl;
     }
+
+    
 
     public L7policyResp withPosition(Integer position) {
         this.position = position;
@@ -478,6 +504,9 @@ public class L7policyResp  {
     public void setPosition(Integer position) {
         this.position = position;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -66,6 +66,8 @@ public class Role  {
         this.cRole = cRole;
     }
 
+    
+
     public Role withId(String id) {
         this.id = id;
         return this;
@@ -85,6 +87,8 @@ public class Role  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public Role withRole(String role) {
         this.role = role;
@@ -106,6 +110,8 @@ public class Role  {
         this.role = role;
     }
 
+    
+
     public Role withRoleActionses(List<RoleAction> roleActionses) {
         this.roleActionses = roleActionses;
         return this;
@@ -113,9 +119,6 @@ public class Role  {
 
     
     public Role addRoleActionsesItem(RoleAction roleActionsesItem) {
-        if (this.roleActionses == null) {
-            this.roleActionses = new ArrayList<>();
-        }
         this.roleActionses.add(roleActionsesItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class Role  {
     public void setRoleActionses(List<RoleAction> roleActionses) {
         this.roleActionses = roleActionses;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

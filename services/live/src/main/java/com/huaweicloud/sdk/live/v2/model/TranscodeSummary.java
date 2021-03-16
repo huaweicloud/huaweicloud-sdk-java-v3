@@ -49,6 +49,8 @@ public class TranscodeSummary  {
         this.type = type;
     }
 
+    
+
     public TranscodeSummary withValue(Double value) {
         this.value = value;
         return this;
@@ -70,6 +72,9 @@ public class TranscodeSummary  {
     public void setValue(Double value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -45,7 +45,7 @@ public class BootstrapScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    private List<String> nodes = new ArrayList<>();
+    private List<String> nodes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -163,6 +163,8 @@ public class BootstrapScript  {
         this.name = name;
     }
 
+    
+
     public BootstrapScript withUri(String uri) {
         this.uri = uri;
         return this;
@@ -183,6 +185,8 @@ public class BootstrapScript  {
         this.uri = uri;
     }
 
+    
+
     public BootstrapScript withParameters(String parameters) {
         this.parameters = parameters;
         return this;
@@ -202,6 +206,8 @@ public class BootstrapScript  {
     public void setParameters(String parameters) {
         this.parameters = parameters;
     }
+
+    
 
     public BootstrapScript withNodes(List<String> nodes) {
         this.nodes = nodes;
@@ -234,6 +240,8 @@ public class BootstrapScript  {
         this.nodes = nodes;
     }
 
+    
+
     public BootstrapScript withActiveMaster(Boolean activeMaster) {
         this.activeMaster = activeMaster;
         return this;
@@ -253,6 +261,8 @@ public class BootstrapScript  {
     public void setActiveMaster(Boolean activeMaster) {
         this.activeMaster = activeMaster;
     }
+
+    
 
     public BootstrapScript withFailAction(FailActionEnum failAction) {
         this.failAction = failAction;
@@ -274,6 +284,8 @@ public class BootstrapScript  {
         this.failAction = failAction;
     }
 
+    
+
     public BootstrapScript withBeforeComponentStart(Boolean beforeComponentStart) {
         this.beforeComponentStart = beforeComponentStart;
         return this;
@@ -293,6 +305,9 @@ public class BootstrapScript  {
     public void setBeforeComponentStart(Boolean beforeComponentStart) {
         this.beforeComponentStart = beforeComponentStart;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

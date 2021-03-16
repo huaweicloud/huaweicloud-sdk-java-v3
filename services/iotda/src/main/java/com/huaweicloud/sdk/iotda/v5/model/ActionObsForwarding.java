@@ -61,6 +61,8 @@ public class ActionObsForwarding  {
         this.regionName = regionName;
     }
 
+    
+
     public ActionObsForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -80,6 +82,8 @@ public class ActionObsForwarding  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ActionObsForwarding withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -101,6 +105,8 @@ public class ActionObsForwarding  {
         this.bucketName = bucketName;
     }
 
+    
+
     public ActionObsForwarding withLocation(String location) {
         this.location = location;
         return this;
@@ -120,6 +126,9 @@ public class ActionObsForwarding  {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

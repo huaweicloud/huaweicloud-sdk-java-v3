@@ -24,7 +24,7 @@ public class UpdateLoginProtectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_protect")
     
-    private UpdateLoginProtectRespon loginProtect = null;
+    private UpdateLoginProtectRespon loginProtect;
 
     public UpdateLoginProtectResponse withLoginProtect(UpdateLoginProtectRespon loginProtect) {
         this.loginProtect = loginProtect;
@@ -52,6 +52,9 @@ public class UpdateLoginProtectResponse extends SdkResponse {
     public void setLoginProtect(UpdateLoginProtectRespon loginProtect) {
         this.loginProtect = loginProtect;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

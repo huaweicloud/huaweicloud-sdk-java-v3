@@ -23,13 +23,13 @@ public class CreateExtractTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,7 +41,7 @@ public class CreateExtractTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync")
     
-    private Integer sync = 0;
+    private Integer sync;
 
     public CreateExtractTaskReq withInput(ObsObjInfo input) {
         this.input = input;
@@ -70,6 +70,8 @@ public class CreateExtractTaskReq  {
         this.input = input;
     }
 
+    
+
     public CreateExtractTaskReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -97,6 +99,8 @@ public class CreateExtractTaskReq  {
         this.output = output;
     }
 
+    
+
     public CreateExtractTaskReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -116,6 +120,8 @@ public class CreateExtractTaskReq  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public CreateExtractTaskReq withSync(Integer sync) {
         this.sync = sync;
@@ -138,6 +144,9 @@ public class CreateExtractTaskReq  {
     public void setSync(Integer sync) {
         this.sync = sync;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

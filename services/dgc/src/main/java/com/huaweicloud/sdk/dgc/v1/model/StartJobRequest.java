@@ -28,7 +28,7 @@ public class StartJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private StartJobReq body = null;
+    private StartJobReq body;
 
     public StartJobRequest withJobName(String jobName) {
         this.jobName = jobName;
@@ -49,6 +49,8 @@ public class StartJobRequest  {
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
+
+    
 
     public StartJobRequest withBody(StartJobReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class StartJobRequest  {
     public void setBody(StartJobReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

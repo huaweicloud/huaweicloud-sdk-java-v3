@@ -55,6 +55,8 @@ public class ListRetirableGrantsRequestBody  {
         this.limit = limit;
     }
 
+    
+
     public ListRetirableGrantsRequestBody withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -75,6 +77,8 @@ public class ListRetirableGrantsRequestBody  {
         this.marker = marker;
     }
 
+    
+
     public ListRetirableGrantsRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -94,6 +98,9 @@ public class ListRetirableGrantsRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

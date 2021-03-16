@@ -33,7 +33,7 @@ public class ListResourcesByTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public ListResourcesByTagsResponse withResources(List<ResourceDTO> resources) {
         this.resources = resources;
@@ -42,9 +42,6 @@ public class ListResourcesByTagsResponse extends SdkResponse {
 
     
     public ListResourcesByTagsResponse addResourcesItem(ResourceDTO resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListResourcesByTagsResponse extends SdkResponse {
     public void setResources(List<ResourceDTO> resources) {
         this.resources = resources;
     }
+
+    
 
     public ListResourcesByTagsResponse withPage(Page page) {
         this.page = page;
@@ -95,6 +94,9 @@ public class ListResourcesByTagsResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

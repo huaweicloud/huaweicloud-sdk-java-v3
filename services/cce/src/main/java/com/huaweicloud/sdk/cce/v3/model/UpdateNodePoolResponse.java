@@ -26,31 +26,31 @@ public class UpdateNodePoolResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "NodePool";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private NodePoolMetadata metadata = null;
+    private NodePoolMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private NodePoolSpec spec = null;
+    private NodePoolSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private NodePoolStatus status = null;
+    private NodePoolStatus status;
 
     public UpdateNodePoolResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -72,6 +72,8 @@ public class UpdateNodePoolResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public UpdateNodePoolResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -91,6 +93,8 @@ public class UpdateNodePoolResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public UpdateNodePoolResponse withMetadata(NodePoolMetadata metadata) {
         this.metadata = metadata;
@@ -119,6 +123,8 @@ public class UpdateNodePoolResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public UpdateNodePoolResponse withSpec(NodePoolSpec spec) {
         this.spec = spec;
         return this;
@@ -146,6 +152,8 @@ public class UpdateNodePoolResponse extends SdkResponse {
         this.spec = spec;
     }
 
+    
+
     public UpdateNodePoolResponse withStatus(NodePoolStatus status) {
         this.status = status;
         return this;
@@ -172,6 +180,9 @@ public class UpdateNodePoolResponse extends SdkResponse {
     public void setStatus(NodePoolStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

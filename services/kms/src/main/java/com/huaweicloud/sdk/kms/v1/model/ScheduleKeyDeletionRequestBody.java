@@ -55,6 +55,8 @@ public class ScheduleKeyDeletionRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public ScheduleKeyDeletionRequestBody withPendingDays(String pendingDays) {
         this.pendingDays = pendingDays;
         return this;
@@ -75,6 +77,8 @@ public class ScheduleKeyDeletionRequestBody  {
         this.pendingDays = pendingDays;
     }
 
+    
+
     public ScheduleKeyDeletionRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -94,6 +98,9 @@ public class ScheduleKeyDeletionRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

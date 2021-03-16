@@ -33,13 +33,13 @@ public class ListMonitorLogRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 1;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class ListMonitorLogRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListMonitorLogRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -92,6 +94,8 @@ public class ListMonitorLogRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
 
     public ListMonitorLogRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -115,6 +119,8 @@ public class ListMonitorLogRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListMonitorLogRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -136,6 +142,8 @@ public class ListMonitorLogRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListMonitorLogRequest withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
@@ -159,6 +167,8 @@ public class ListMonitorLogRequest  {
         this.beginTime = beginTime;
     }
 
+    
+
     public ListMonitorLogRequest withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -180,6 +190,9 @@ public class ListMonitorLogRequest  {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

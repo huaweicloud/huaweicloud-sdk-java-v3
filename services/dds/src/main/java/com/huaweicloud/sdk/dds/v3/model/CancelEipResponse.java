@@ -57,6 +57,8 @@ public class CancelEipResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public CancelEipResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -77,6 +79,8 @@ public class CancelEipResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
+    
+
     public CancelEipResponse withNodeName(String nodeName) {
         this.nodeName = nodeName;
         return this;
@@ -96,6 +100,9 @@ public class CancelEipResponse extends SdkResponse {
     public void setNodeName(String nodeName) {
         this.nodeName = nodeName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

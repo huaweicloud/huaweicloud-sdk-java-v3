@@ -51,6 +51,8 @@ public class ShowGroupsRespGroupAssignment  {
         this.topic = topic;
     }
 
+    
+
     public ShowGroupsRespGroupAssignment withPartitions(List<String> partitions) {
         this.partitions = partitions;
         return this;
@@ -58,9 +60,6 @@ public class ShowGroupsRespGroupAssignment  {
 
     
     public ShowGroupsRespGroupAssignment addPartitionsItem(String partitionsItem) {
-        if (this.partitions == null) {
-            this.partitions = new ArrayList<>();
-        }
         this.partitions.add(partitionsItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class ShowGroupsRespGroupAssignment  {
     public void setPartitions(List<String> partitions) {
         this.partitions = partitions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

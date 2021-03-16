@@ -28,7 +28,7 @@ public class RollbackSnapshotRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RollbackSnapshotRequestBody body = null;
+    private RollbackSnapshotRequestBody body;
 
     public RollbackSnapshotRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -49,6 +49,8 @@ public class RollbackSnapshotRequest  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
 
     public RollbackSnapshotRequest withBody(RollbackSnapshotRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RollbackSnapshotRequest  {
     public void setBody(RollbackSnapshotRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

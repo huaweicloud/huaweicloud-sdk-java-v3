@@ -31,13 +31,13 @@ public class MappingResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<MappingRules> rules = new ArrayList<>();
+    private List<MappingRules> rules = null;
     
     public MappingResult withId(String id) {
         this.id = id;
@@ -58,6 +58,8 @@ public class MappingResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public MappingResult withLinks(LinksSelf links) {
         this.links = links;
@@ -85,6 +87,8 @@ public class MappingResult  {
     public void setLinks(LinksSelf links) {
         this.links = links;
     }
+
+    
 
     public MappingResult withRules(List<MappingRules> rules) {
         this.rules = rules;
@@ -116,6 +120,9 @@ public class MappingResult  {
     public void setRules(List<MappingRules> rules) {
         this.rules = rules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

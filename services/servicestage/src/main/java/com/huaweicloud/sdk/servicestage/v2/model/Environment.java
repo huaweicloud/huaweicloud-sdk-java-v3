@@ -118,6 +118,8 @@ public class Environment  {
         this.id = id;
     }
 
+    
+
     public Environment withName(String name) {
         this.name = name;
         return this;
@@ -137,6 +139,8 @@ public class Environment  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Environment withAlias(String alias) {
         this.alias = alias;
@@ -158,6 +162,8 @@ public class Environment  {
         this.alias = alias;
     }
 
+    
+
     public Environment withDescription(String description) {
         this.description = description;
         return this;
@@ -177,6 +183,8 @@ public class Environment  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Environment withProjectId(String projectId) {
         this.projectId = projectId;
@@ -198,6 +206,8 @@ public class Environment  {
         this.projectId = projectId;
     }
 
+    
+
     public Environment withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -217,6 +227,8 @@ public class Environment  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public Environment withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
@@ -238,6 +250,8 @@ public class Environment  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public Environment withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -258,6 +272,8 @@ public class Environment  {
         this.vpcId = vpcId;
     }
 
+    
+
     public Environment withBaseResources(List<Resource> baseResources) {
         this.baseResources = baseResources;
         return this;
@@ -265,9 +281,6 @@ public class Environment  {
 
     
     public Environment addBaseResourcesItem(Resource baseResourcesItem) {
-        if (this.baseResources == null) {
-            this.baseResources = new ArrayList<>();
-        }
         this.baseResources.add(baseResourcesItem);
         return this;
     }
@@ -292,6 +305,8 @@ public class Environment  {
         this.baseResources = baseResources;
     }
 
+    
+
     public Environment withOptionalResources(List<Resource> optionalResources) {
         this.optionalResources = optionalResources;
         return this;
@@ -299,9 +314,6 @@ public class Environment  {
 
     
     public Environment addOptionalResourcesItem(Resource optionalResourcesItem) {
-        if (this.optionalResources == null) {
-            this.optionalResources = new ArrayList<>();
-        }
         this.optionalResources.add(optionalResourcesItem);
         return this;
     }
@@ -326,6 +338,8 @@ public class Environment  {
         this.optionalResources = optionalResources;
     }
 
+    
+
     public Environment withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -345,6 +359,8 @@ public class Environment  {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    
 
     public Environment withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -366,6 +382,8 @@ public class Environment  {
         this.createTime = createTime;
     }
 
+    
+
     public Environment withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -385,6 +403,9 @@ public class Environment  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

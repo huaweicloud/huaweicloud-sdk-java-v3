@@ -103,6 +103,8 @@ public class ApplicationDTO  {
         this.appId = appId;
     }
 
+    
+
     public ApplicationDTO withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -122,6 +124,8 @@ public class ApplicationDTO  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ApplicationDTO withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -143,6 +147,8 @@ public class ApplicationDTO  {
         this.createTime = createTime;
     }
 
+    
+
     public ApplicationDTO withDefaultApp(Boolean defaultApp) {
         this.defaultApp = defaultApp;
         return this;
@@ -162,6 +168,8 @@ public class ApplicationDTO  {
     public void setDefaultApp(Boolean defaultApp) {
         this.defaultApp = defaultApp;
     }
+
+    
 
     public ApplicationDTO withAppType(String appType) {
         this.appType = appType;
@@ -183,6 +191,8 @@ public class ApplicationDTO  {
         this.appType = appType;
     }
 
+    
+
     public ApplicationDTO withUsername(String username) {
         this.username = username;
         return this;
@@ -202,6 +212,8 @@ public class ApplicationDTO  {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    
 
     public ApplicationDTO withPermission(String permission) {
         this.permission = permission;
@@ -223,6 +235,8 @@ public class ApplicationDTO  {
         this.permission = permission;
     }
 
+    
+
     public ApplicationDTO withLastInstanceId(String lastInstanceId) {
         this.lastInstanceId = lastInstanceId;
         return this;
@@ -242,6 +256,8 @@ public class ApplicationDTO  {
     public void setLastInstanceId(String lastInstanceId) {
         this.lastInstanceId = lastInstanceId;
     }
+
+    
 
     public ApplicationDTO withCurrentInstanceId(String currentInstanceId) {
         this.currentInstanceId = currentInstanceId;
@@ -263,6 +279,8 @@ public class ApplicationDTO  {
         this.currentInstanceId = currentInstanceId;
     }
 
+    
+
     public ApplicationDTO withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
@@ -283,6 +301,8 @@ public class ApplicationDTO  {
         this.serviceName = serviceName;
     }
 
+    
+
     public ApplicationDTO withFreezed(Boolean freezed) {
         this.freezed = freezed;
         return this;
@@ -302,6 +322,9 @@ public class ApplicationDTO  {
     public void setFreezed(Boolean freezed) {
         this.freezed = freezed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

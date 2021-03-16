@@ -28,7 +28,7 @@ public class SwitchSslRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SwitchSslRequestBody body = null;
+    private SwitchSslRequestBody body;
 
     public SwitchSslRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class SwitchSslRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public SwitchSslRequest withBody(SwitchSslRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class SwitchSslRequest  {
     public void setBody(SwitchSslRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

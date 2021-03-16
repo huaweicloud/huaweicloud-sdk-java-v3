@@ -22,7 +22,7 @@ public class KeystoneCreateScopedTokenRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneCreateScopedTokenRequestBody body = null;
+    private KeystoneCreateScopedTokenRequestBody body;
 
     public KeystoneCreateScopedTokenRequest withBody(KeystoneCreateScopedTokenRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class KeystoneCreateScopedTokenRequest  {
     public void setBody(KeystoneCreateScopedTokenRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

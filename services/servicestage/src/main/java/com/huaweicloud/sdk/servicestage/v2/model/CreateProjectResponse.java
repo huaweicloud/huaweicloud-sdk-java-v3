@@ -57,6 +57,8 @@ public class CreateProjectResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateProjectResponse withName(String name) {
         this.name = name;
         return this;
@@ -77,6 +79,8 @@ public class CreateProjectResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreateProjectResponse withCloneUrl(String cloneUrl) {
         this.cloneUrl = cloneUrl;
         return this;
@@ -96,6 +100,9 @@ public class CreateProjectResponse extends SdkResponse {
     public void setCloneUrl(String cloneUrl) {
         this.cloneUrl = cloneUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

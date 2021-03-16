@@ -55,6 +55,8 @@ public class Project  {
         this.id = id;
     }
 
+    
+
     public Project withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class Project  {
         this.name = name;
     }
 
+    
+
     public Project withCloneUrl(String cloneUrl) {
         this.cloneUrl = cloneUrl;
         return this;
@@ -94,6 +98,9 @@ public class Project  {
     public void setCloneUrl(String cloneUrl) {
         this.cloneUrl = cloneUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

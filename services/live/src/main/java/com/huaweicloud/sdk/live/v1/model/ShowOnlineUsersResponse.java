@@ -55,6 +55,8 @@ public class ShowOnlineUsersResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowOnlineUsersResponse withUserInfo(List<UserInfo> userInfo) {
         this.userInfo = userInfo;
         return this;
@@ -62,9 +64,6 @@ public class ShowOnlineUsersResponse extends SdkResponse {
 
     
     public ShowOnlineUsersResponse addUserInfoItem(UserInfo userInfoItem) {
-        if (this.userInfo == null) {
-            this.userInfo = new ArrayList<>();
-        }
         this.userInfo.add(userInfoItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ShowOnlineUsersResponse extends SdkResponse {
     public void setUserInfo(List<UserInfo> userInfo) {
         this.userInfo = userInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

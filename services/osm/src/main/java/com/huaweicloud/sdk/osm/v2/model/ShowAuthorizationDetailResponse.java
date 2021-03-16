@@ -75,13 +75,13 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_effective_time")
     
-    private OffsetDateTime authEffectiveTime = null;
+    private OffsetDateTime authEffectiveTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_expire_time")
     
-    private OffsetDateTime authExpireTime = null;
+    private OffsetDateTime authExpireTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,6 +153,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withStatus(Integer status) {
         this.status = status;
         return this;
@@ -175,6 +177,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
@@ -194,6 +198,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
 
     public ShowAuthorizationDetailResponse withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
@@ -215,6 +221,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.simpleDescription = simpleDescription;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withResourceTypeId(String resourceTypeId) {
         this.resourceTypeId = resourceTypeId;
         return this;
@@ -234,6 +242,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     public void setResourceTypeId(String resourceTypeId) {
         this.resourceTypeId = resourceTypeId;
     }
+
+    
 
     public ShowAuthorizationDetailResponse withResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
@@ -255,6 +265,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.resourceTypeName = resourceTypeName;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withVisitTypeId(String visitTypeId) {
         this.visitTypeId = visitTypeId;
         return this;
@@ -274,6 +286,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     public void setVisitTypeId(String visitTypeId) {
         this.visitTypeId = visitTypeId;
     }
+
+    
 
     public ShowAuthorizationDetailResponse withVisitTypeName(String visitTypeName) {
         this.visitTypeName = visitTypeName;
@@ -295,6 +309,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.visitTypeName = visitTypeName;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withAuthEffectiveTime(OffsetDateTime authEffectiveTime) {
         this.authEffectiveTime = authEffectiveTime;
         return this;
@@ -314,6 +330,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     public void setAuthEffectiveTime(OffsetDateTime authEffectiveTime) {
         this.authEffectiveTime = authEffectiveTime;
     }
+
+    
 
     public ShowAuthorizationDetailResponse withAuthExpireTime(OffsetDateTime authExpireTime) {
         this.authExpireTime = authExpireTime;
@@ -335,6 +353,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.authExpireTime = authExpireTime;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withRejectReason(String rejectReason) {
         this.rejectReason = rejectReason;
         return this;
@@ -355,6 +375,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.rejectReason = rejectReason;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withIncidentAuthDetailList(List<IncidentOrderAuthDetailInfoV2> incidentAuthDetailList) {
         this.incidentAuthDetailList = incidentAuthDetailList;
         return this;
@@ -362,9 +384,6 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
 
     
     public ShowAuthorizationDetailResponse addIncidentAuthDetailListItem(IncidentOrderAuthDetailInfoV2 incidentAuthDetailListItem) {
-        if (this.incidentAuthDetailList == null) {
-            this.incidentAuthDetailList = new ArrayList<>();
-        }
         this.incidentAuthDetailList.add(incidentAuthDetailListItem);
         return this;
     }
@@ -389,6 +408,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.incidentAuthDetailList = incidentAuthDetailList;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withXcustomerName(String xcustomerName) {
         this.xcustomerName = xcustomerName;
         return this;
@@ -408,6 +429,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     public void setXcustomerName(String xcustomerName) {
         this.xcustomerName = xcustomerName;
     }
+
+    
 
     public ShowAuthorizationDetailResponse withAuthHandlerName(String authHandlerName) {
         this.authHandlerName = authHandlerName;
@@ -429,6 +452,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.authHandlerName = authHandlerName;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -448,6 +473,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
+
+    
 
     public ShowAuthorizationDetailResponse withAuthDescribe(String authDescribe) {
         this.authDescribe = authDescribe;
@@ -469,6 +496,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.authDescribe = authDescribe;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withContentTypeId(String contentTypeId) {
         this.contentTypeId = contentTypeId;
         return this;
@@ -489,6 +518,8 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
         this.contentTypeId = contentTypeId;
     }
 
+    
+
     public ShowAuthorizationDetailResponse withContentTypeName(String contentTypeName) {
         this.contentTypeName = contentTypeName;
         return this;
@@ -508,6 +539,9 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     public void setContentTypeName(String contentTypeName) {
         this.contentTypeName = contentTypeName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

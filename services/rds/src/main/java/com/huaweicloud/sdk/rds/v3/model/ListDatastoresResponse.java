@@ -35,9 +35,6 @@ public class ListDatastoresResponse extends SdkResponse {
 
     
     public ListDatastoresResponse addDataStoresItem(LDatastore dataStoresItem) {
-        if (this.dataStores == null) {
-            this.dataStores = new ArrayList<>();
-        }
         this.dataStores.add(dataStoresItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListDatastoresResponse extends SdkResponse {
     public void setDataStores(List<LDatastore> dataStores) {
         this.dataStores = dataStores;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

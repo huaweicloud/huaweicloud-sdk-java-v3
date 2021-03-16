@@ -49,6 +49,8 @@ public class UserInfo  {
         this.userNum = userNum;
     }
 
+    
+
     public UserInfo withTimestamp(String timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -68,6 +70,9 @@ public class UserInfo  {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

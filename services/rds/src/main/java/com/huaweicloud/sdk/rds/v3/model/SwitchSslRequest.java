@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.SslOptionRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SslOptionRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -116,7 +116,7 @@ public class SwitchSslRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SslOptionRequestBody body = null;
+    private SslOptionRequest body;
 
     public SwitchSslRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class SwitchSslRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public SwitchSslRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -160,14 +162,16 @@ public class SwitchSslRequest  {
         this.instanceId = instanceId;
     }
 
-    public SwitchSslRequest withBody(SslOptionRequestBody body) {
+    
+
+    public SwitchSslRequest withBody(SslOptionRequest body) {
         this.body = body;
         return this;
     }
 
-    public SwitchSslRequest withBody(Consumer<SslOptionRequestBody> bodySetter) {
+    public SwitchSslRequest withBody(Consumer<SslOptionRequest> bodySetter) {
         if(this.body == null ){
-            this.body = new SslOptionRequestBody();
+            this.body = new SslOptionRequest();
             bodySetter.accept(this.body);
         }
         
@@ -179,13 +183,16 @@ public class SwitchSslRequest  {
      * Get body
      * @return body
      */
-    public SslOptionRequestBody getBody() {
+    public SslOptionRequest getBody() {
         return body;
     }
 
-    public void setBody(SslOptionRequestBody body) {
+    public void setBody(SslOptionRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

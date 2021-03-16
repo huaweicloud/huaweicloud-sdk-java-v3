@@ -150,6 +150,8 @@ public class RestoreToExistingInstanceRequestBodySource  {
         this.instanceId = instanceId;
     }
 
+    
+
     public RestoreToExistingInstanceRequestBodySource withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -169,6 +171,8 @@ public class RestoreToExistingInstanceRequestBodySource  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public RestoreToExistingInstanceRequestBodySource withBackupId(String backupId) {
         this.backupId = backupId;
@@ -190,6 +194,8 @@ public class RestoreToExistingInstanceRequestBodySource  {
         this.backupId = backupId;
     }
 
+    
+
     public RestoreToExistingInstanceRequestBodySource withRestoreTime(Integer restoreTime) {
         this.restoreTime = restoreTime;
         return this;
@@ -210,6 +216,8 @@ public class RestoreToExistingInstanceRequestBodySource  {
         this.restoreTime = restoreTime;
     }
 
+    
+
     public RestoreToExistingInstanceRequestBodySource withDatabaseName(Map<String, String> databaseName) {
         this.databaseName = databaseName;
         return this;
@@ -218,9 +226,6 @@ public class RestoreToExistingInstanceRequestBodySource  {
     
 
     public RestoreToExistingInstanceRequestBodySource putDatabaseNameItem(String key, String databaseNameItem) {
-         if (this.databaseName == null) {
-            this.databaseName = new HashMap<>();
-         }
         this.databaseName.put(key, databaseNameItem);
         return this;
     }
@@ -243,6 +248,9 @@ public class RestoreToExistingInstanceRequestBodySource  {
     public void setDatabaseName(Map<String, String> databaseName) {
         this.databaseName = databaseName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

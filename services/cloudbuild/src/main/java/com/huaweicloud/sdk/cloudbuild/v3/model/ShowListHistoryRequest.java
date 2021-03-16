@@ -27,19 +27,19 @@ public class ShowListHistoryRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interval")
     
-    private Integer interval = 7;
+    private Integer interval;
 
     public ShowListHistoryRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -61,6 +61,8 @@ public class ShowListHistoryRequest  {
         this.jobId = jobId;
     }
 
+    
+
     public ShowListHistoryRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -81,6 +83,8 @@ public class ShowListHistoryRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ShowListHistoryRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -104,6 +108,8 @@ public class ShowListHistoryRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowListHistoryRequest withInterval(Integer interval) {
         this.interval = interval;
         return this;
@@ -125,6 +131,9 @@ public class ShowListHistoryRequest  {
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

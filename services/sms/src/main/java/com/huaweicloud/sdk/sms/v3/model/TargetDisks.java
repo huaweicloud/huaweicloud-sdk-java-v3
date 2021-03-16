@@ -112,7 +112,7 @@ public class TargetDisks  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_use")
     
-    private DeviceUseEnum deviceUse = DeviceUseEnum.NORMAL;
+    private DeviceUseEnum deviceUse;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -130,7 +130,7 @@ public class TargetDisks  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="physical_volumes")
     
-    private List<PhysicalVolumes> physicalVolumes = new ArrayList<>();
+    private List<PhysicalVolumes> physicalVolumes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,6 +164,8 @@ public class TargetDisks  {
         this.deviceUse = deviceUse;
     }
 
+    
+
     public TargetDisks withDiskId(String diskId) {
         this.diskId = diskId;
         return this;
@@ -184,6 +186,8 @@ public class TargetDisks  {
         this.diskId = diskId;
     }
 
+    
+
     public TargetDisks withName(String name) {
         this.name = name;
         return this;
@@ -203,6 +207,8 @@ public class TargetDisks  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TargetDisks withPhysicalVolumes(List<PhysicalVolumes> physicalVolumes) {
         this.physicalVolumes = physicalVolumes;
@@ -235,6 +241,8 @@ public class TargetDisks  {
         this.physicalVolumes = physicalVolumes;
     }
 
+    
+
     public TargetDisks withSize(Long size) {
         this.size = size;
         return this;
@@ -257,6 +265,8 @@ public class TargetDisks  {
         this.size = size;
     }
 
+    
+
     public TargetDisks withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
@@ -278,6 +288,9 @@ public class TargetDisks  {
     public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

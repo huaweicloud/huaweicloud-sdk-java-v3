@@ -96,6 +96,8 @@ public class CreatePortOption  {
         this.name = name;
     }
 
+    
+
     public CreatePortOption withNetworkId(String networkId) {
         this.networkId = networkId;
         return this;
@@ -116,6 +118,8 @@ public class CreatePortOption  {
         this.networkId = networkId;
     }
 
+    
+
     public CreatePortOption withFixedIps(List<FixedIp> fixedIps) {
         this.fixedIps = fixedIps;
         return this;
@@ -123,9 +127,6 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addFixedIpsItem(FixedIp fixedIpsItem) {
-        if (this.fixedIps == null) {
-            this.fixedIps = new ArrayList<>();
-        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
@@ -150,6 +151,8 @@ public class CreatePortOption  {
         this.fixedIps = fixedIps;
     }
 
+    
+
     public CreatePortOption withDeviceOwner(String deviceOwner) {
         this.deviceOwner = deviceOwner;
         return this;
@@ -170,6 +173,8 @@ public class CreatePortOption  {
         this.deviceOwner = deviceOwner;
     }
 
+    
+
     public CreatePortOption withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -177,9 +182,6 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addSecurityGroupsItem(String securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -204,6 +206,8 @@ public class CreatePortOption  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public CreatePortOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -224,6 +228,8 @@ public class CreatePortOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreatePortOption withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
         this.allowedAddressPairs = allowedAddressPairs;
         return this;
@@ -231,9 +237,6 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
-        if (this.allowedAddressPairs == null) {
-            this.allowedAddressPairs = new ArrayList<>();
-        }
         this.allowedAddressPairs.add(allowedAddressPairsItem);
         return this;
     }
@@ -258,6 +261,8 @@ public class CreatePortOption  {
         this.allowedAddressPairs = allowedAddressPairs;
     }
 
+    
+
     public CreatePortOption withExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
@@ -265,9 +270,6 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addExtraDhcpOptsItem(ExtraDhcpOpt extraDhcpOptsItem) {
-        if (this.extraDhcpOpts == null) {
-            this.extraDhcpOpts = new ArrayList<>();
-        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
@@ -292,6 +294,8 @@ public class CreatePortOption  {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
+    
+
     public CreatePortOption withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -311,6 +315,9 @@ public class CreatePortOption  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

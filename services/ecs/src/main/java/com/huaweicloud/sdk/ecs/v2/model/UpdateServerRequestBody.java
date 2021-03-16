@@ -22,7 +22,7 @@ public class UpdateServerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private UpdateServerOption server = null;
+    private UpdateServerOption server;
 
     public UpdateServerRequestBody withServer(UpdateServerOption server) {
         this.server = server;
@@ -50,6 +50,9 @@ public class UpdateServerRequestBody  {
     public void setServer(UpdateServerOption server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

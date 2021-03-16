@@ -49,6 +49,8 @@ public class BackupStrategyForItemResponse  {
         this.startTime = startTime;
     }
 
+    
+
     public BackupStrategyForItemResponse withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
         return this;
@@ -68,6 +70,9 @@ public class BackupStrategyForItemResponse  {
     public void setKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class VpcMemberCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="members")
     
-    private List<MemberInfo> members = new ArrayList<>();
+    private List<MemberInfo> members = null;
     
     public VpcMemberCreate withMembers(List<MemberInfo> members) {
         this.members = members;
@@ -56,6 +56,9 @@ public class VpcMemberCreate  {
     public void setMembers(List<MemberInfo> members) {
         this.members = members;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

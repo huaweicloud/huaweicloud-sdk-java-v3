@@ -42,6 +42,9 @@ public class AddShardingNodeVolumeOption  {
     public void setSize(String size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

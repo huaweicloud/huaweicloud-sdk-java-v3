@@ -28,7 +28,7 @@ public class DeleteClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteClusterRequestBody body = null;
+    private DeleteClusterRequestBody body;
 
     public DeleteClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -49,6 +49,8 @@ public class DeleteClusterRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public DeleteClusterRequest withBody(DeleteClusterRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DeleteClusterRequest  {
     public void setBody(DeleteClusterRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

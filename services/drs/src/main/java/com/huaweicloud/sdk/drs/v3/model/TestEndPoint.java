@@ -399,6 +399,8 @@ public class TestEndPoint  {
         this.id = id;
     }
 
+    
+
     public TestEndPoint withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
@@ -418,6 +420,8 @@ public class TestEndPoint  {
     public void setNetType(NetTypeEnum netType) {
         this.netType = netType;
     }
+
+    
 
     public TestEndPoint withDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
@@ -439,6 +443,8 @@ public class TestEndPoint  {
         this.dbType = dbType;
     }
 
+    
+
     public TestEndPoint withIp(String ip) {
         this.ip = ip;
         return this;
@@ -458,6 +464,8 @@ public class TestEndPoint  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public TestEndPoint withDbPort(Integer dbPort) {
         this.dbPort = dbPort;
@@ -479,6 +487,8 @@ public class TestEndPoint  {
         this.dbPort = dbPort;
     }
 
+    
+
     public TestEndPoint withInstId(String instId) {
         this.instId = instId;
         return this;
@@ -498,6 +508,8 @@ public class TestEndPoint  {
     public void setInstId(String instId) {
         this.instId = instId;
     }
+
+    
 
     public TestEndPoint withDbUser(String dbUser) {
         this.dbUser = dbUser;
@@ -519,6 +531,8 @@ public class TestEndPoint  {
         this.dbUser = dbUser;
     }
 
+    
+
     public TestEndPoint withDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
         return this;
@@ -538,6 +552,8 @@ public class TestEndPoint  {
     public void setDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
     }
+
+    
 
     public TestEndPoint withSslLink(Boolean sslLink) {
         this.sslLink = sslLink;
@@ -559,6 +575,8 @@ public class TestEndPoint  {
         this.sslLink = sslLink;
     }
 
+    
+
     public TestEndPoint withSslCertKey(String sslCertKey) {
         this.sslCertKey = sslCertKey;
         return this;
@@ -578,6 +596,8 @@ public class TestEndPoint  {
     public void setSslCertKey(String sslCertKey) {
         this.sslCertKey = sslCertKey;
     }
+
+    
 
     public TestEndPoint withSslCertName(String sslCertName) {
         this.sslCertName = sslCertName;
@@ -599,6 +619,8 @@ public class TestEndPoint  {
         this.sslCertName = sslCertName;
     }
 
+    
+
     public TestEndPoint withSslCertCheckSum(String sslCertCheckSum) {
         this.sslCertCheckSum = sslCertCheckSum;
         return this;
@@ -618,6 +640,8 @@ public class TestEndPoint  {
     public void setSslCertCheckSum(String sslCertCheckSum) {
         this.sslCertCheckSum = sslCertCheckSum;
     }
+
+    
 
     public TestEndPoint withSslCertPassword(String sslCertPassword) {
         this.sslCertPassword = sslCertPassword;
@@ -639,6 +663,8 @@ public class TestEndPoint  {
         this.sslCertPassword = sslCertPassword;
     }
 
+    
+
     public TestEndPoint withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -658,6 +684,8 @@ public class TestEndPoint  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public TestEndPoint withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -679,6 +707,8 @@ public class TestEndPoint  {
         this.subnetId = subnetId;
     }
 
+    
+
     public TestEndPoint withEndPointType(EndPointTypeEnum endPointType) {
         this.endPointType = endPointType;
         return this;
@@ -698,6 +728,8 @@ public class TestEndPoint  {
     public void setEndPointType(EndPointTypeEnum endPointType) {
         this.endPointType = endPointType;
     }
+
+    
 
     public TestEndPoint withRegion(String region) {
         this.region = region;
@@ -719,6 +751,8 @@ public class TestEndPoint  {
         this.region = region;
     }
 
+    
+
     public TestEndPoint withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -739,6 +773,8 @@ public class TestEndPoint  {
         this.projectId = projectId;
     }
 
+    
+
     public TestEndPoint withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -758,6 +794,9 @@ public class TestEndPoint  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

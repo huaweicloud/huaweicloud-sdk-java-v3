@@ -24,7 +24,7 @@ public class ShowScalingConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_configuration")
     
-    private ScalingConfiguration scalingConfiguration = null;
+    private ScalingConfiguration scalingConfiguration;
 
     public ShowScalingConfigResponse withScalingConfiguration(ScalingConfiguration scalingConfiguration) {
         this.scalingConfiguration = scalingConfiguration;
@@ -52,6 +52,9 @@ public class ShowScalingConfigResponse extends SdkResponse {
     public void setScalingConfiguration(ScalingConfiguration scalingConfiguration) {
         this.scalingConfiguration = scalingConfiguration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

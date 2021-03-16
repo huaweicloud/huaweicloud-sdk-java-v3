@@ -28,7 +28,7 @@ public class UpdatePrivateZoneRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePrivateZoneInfoReq body = null;
+    private UpdatePrivateZoneInfoReq body;
 
     public UpdatePrivateZoneRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -49,6 +49,8 @@ public class UpdatePrivateZoneRequest  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public UpdatePrivateZoneRequest withBody(UpdatePrivateZoneInfoReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePrivateZoneRequest  {
     public void setBody(UpdatePrivateZoneInfoReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

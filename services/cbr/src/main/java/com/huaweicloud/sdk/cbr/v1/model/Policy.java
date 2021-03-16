@@ -48,7 +48,7 @@ public class Policy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operation_definition")
     
-    private PolicyoODCreate operationDefinition = null;
+    private PolicyoODCreate operationDefinition;
     /**
      * 策略类型,例如 ‘backup’：自动备份
      */
@@ -138,7 +138,7 @@ public class Policy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger")
     
-    private PolicyTriggerResp trigger = null;
+    private PolicyTriggerResp trigger;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -166,6 +166,8 @@ public class Policy  {
         this.enabled = enabled;
     }
 
+    
+
     public Policy withId(String id) {
         this.id = id;
         return this;
@@ -186,6 +188,8 @@ public class Policy  {
         this.id = id;
     }
 
+    
+
     public Policy withName(String name) {
         this.name = name;
         return this;
@@ -205,6 +209,8 @@ public class Policy  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Policy withOperationDefinition(PolicyoODCreate operationDefinition) {
         this.operationDefinition = operationDefinition;
@@ -233,6 +239,8 @@ public class Policy  {
         this.operationDefinition = operationDefinition;
     }
 
+    
+
     public Policy withOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
         return this;
@@ -252,6 +260,8 @@ public class Policy  {
     public void setOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
     }
+
+    
 
     public Policy withTrigger(PolicyTriggerResp trigger) {
         this.trigger = trigger;
@@ -280,6 +290,8 @@ public class Policy  {
         this.trigger = trigger;
     }
 
+    
+
     public Policy withAssociatedVaults(List<PolicyAssociateVault> associatedVaults) {
         this.associatedVaults = associatedVaults;
         return this;
@@ -287,9 +299,6 @@ public class Policy  {
 
     
     public Policy addAssociatedVaultsItem(PolicyAssociateVault associatedVaultsItem) {
-        if (this.associatedVaults == null) {
-            this.associatedVaults = new ArrayList<>();
-        }
         this.associatedVaults.add(associatedVaultsItem);
         return this;
     }
@@ -313,6 +322,9 @@ public class Policy  {
     public void setAssociatedVaults(List<PolicyAssociateVault> associatedVaults) {
         this.associatedVaults = associatedVaults;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

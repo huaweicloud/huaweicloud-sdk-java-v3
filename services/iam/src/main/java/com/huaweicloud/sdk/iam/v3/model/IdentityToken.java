@@ -27,7 +27,7 @@ public class IdentityToken  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration_seconds")
     
-    private Integer durationSeconds = 900;
+    private Integer durationSeconds;
 
     public IdentityToken withId(String id) {
         this.id = id;
@@ -48,6 +48,8 @@ public class IdentityToken  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public IdentityToken withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -70,6 +72,9 @@ public class IdentityToken  {
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

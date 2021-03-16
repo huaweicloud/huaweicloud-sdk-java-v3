@@ -67,6 +67,8 @@ public class ResourceRelation  {
         this.relationType = relationType;
     }
 
+    
+
     public ResourceRelation withFromResourceType(String fromResourceType) {
         this.fromResourceType = fromResourceType;
         return this;
@@ -86,6 +88,8 @@ public class ResourceRelation  {
     public void setFromResourceType(String fromResourceType) {
         this.fromResourceType = fromResourceType;
     }
+
+    
 
     public ResourceRelation withToResourceType(String toResourceType) {
         this.toResourceType = toResourceType;
@@ -107,6 +111,8 @@ public class ResourceRelation  {
         this.toResourceType = toResourceType;
     }
 
+    
+
     public ResourceRelation withFromResourceId(String fromResourceId) {
         this.fromResourceId = fromResourceId;
         return this;
@@ -127,6 +133,8 @@ public class ResourceRelation  {
         this.fromResourceId = fromResourceId;
     }
 
+    
+
     public ResourceRelation withToResourceId(String toResourceId) {
         this.toResourceId = toResourceId;
         return this;
@@ -146,6 +154,9 @@ public class ResourceRelation  {
     public void setToResourceId(String toResourceId) {
         this.toResourceId = toResourceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

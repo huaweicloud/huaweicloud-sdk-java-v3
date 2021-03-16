@@ -55,6 +55,8 @@ public class TriggerBpsDict  {
         this.trafficPosId = trafficPosId;
     }
 
+    
+
     public TriggerBpsDict withTrafficPerSecond(Long trafficPerSecond) {
         this.trafficPerSecond = trafficPerSecond;
         return this;
@@ -75,6 +77,8 @@ public class TriggerBpsDict  {
         this.trafficPerSecond = trafficPerSecond;
     }
 
+    
+
     public TriggerBpsDict withPacketPerSecond(Long packetPerSecond) {
         this.packetPerSecond = packetPerSecond;
         return this;
@@ -94,6 +98,9 @@ public class TriggerBpsDict  {
     public void setPacketPerSecond(Long packetPerSecond) {
         this.packetPerSecond = packetPerSecond;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

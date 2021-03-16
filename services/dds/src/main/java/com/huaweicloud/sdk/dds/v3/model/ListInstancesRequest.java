@@ -253,6 +253,8 @@ public class ListInstancesRequest  {
         this.id = id;
     }
 
+    
+
     public ListInstancesRequest withName(String name) {
         this.name = name;
         return this;
@@ -272,6 +274,8 @@ public class ListInstancesRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListInstancesRequest withMode(ModeEnum mode) {
         this.mode = mode;
@@ -293,6 +297,8 @@ public class ListInstancesRequest  {
         this.mode = mode;
     }
 
+    
+
     public ListInstancesRequest withDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
         return this;
@@ -312,6 +318,8 @@ public class ListInstancesRequest  {
     public void setDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
     }
+
+    
 
     public ListInstancesRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -333,6 +341,8 @@ public class ListInstancesRequest  {
         this.vpcId = vpcId;
     }
 
+    
+
     public ListInstancesRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -352,6 +362,8 @@ public class ListInstancesRequest  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public ListInstancesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -373,6 +385,8 @@ public class ListInstancesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListInstancesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -392,6 +406,9 @@ public class ListInstancesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

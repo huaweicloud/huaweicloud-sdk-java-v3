@@ -54,7 +54,7 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public ShowDetailsOfAclPolicyV2Response withAclName(String aclName) {
         this.aclName = aclName;
@@ -76,6 +76,8 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         this.aclName = aclName;
     }
 
+    
+
     public ShowDetailsOfAclPolicyV2Response withAclType(String aclType) {
         this.aclType = aclType;
         return this;
@@ -95,6 +97,8 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
     public void setAclType(String aclType) {
         this.aclType = aclType;
     }
+
+    
 
     public ShowDetailsOfAclPolicyV2Response withAclValue(String aclValue) {
         this.aclValue = aclValue;
@@ -116,6 +120,8 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         this.aclValue = aclValue;
     }
 
+    
+
     public ShowDetailsOfAclPolicyV2Response withEntityType(String entityType) {
         this.entityType = entityType;
         return this;
@@ -135,6 +141,8 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
     public void setEntityType(String entityType) {
         this.entityType = entityType;
     }
+
+    
 
     public ShowDetailsOfAclPolicyV2Response withId(String id) {
         this.id = id;
@@ -156,6 +164,8 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowDetailsOfAclPolicyV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -175,6 +185,9 @@ public class ShowDetailsOfAclPolicyV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

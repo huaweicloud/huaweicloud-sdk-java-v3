@@ -55,6 +55,8 @@ public class SeverityV2Do  {
         this.language = language;
     }
 
+    
+
     public SeverityV2Do withSeverityName(String severityName) {
         this.severityName = severityName;
         return this;
@@ -75,6 +77,8 @@ public class SeverityV2Do  {
         this.severityName = severityName;
     }
 
+    
+
     public SeverityV2Do withSeverityId(String severityId) {
         this.severityId = severityId;
         return this;
@@ -94,6 +98,9 @@ public class SeverityV2Do  {
     public void setSeverityId(String severityId) {
         this.severityId = severityId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

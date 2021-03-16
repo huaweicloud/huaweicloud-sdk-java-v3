@@ -28,7 +28,7 @@ public class BatchDeleteDevicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteDevicesRequestBody body = null;
+    private BatchDeleteDevicesRequestBody body;
 
     public BatchDeleteDevicesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class BatchDeleteDevicesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BatchDeleteDevicesRequest withBody(BatchDeleteDevicesRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchDeleteDevicesRequest  {
     public void setBody(BatchDeleteDevicesRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

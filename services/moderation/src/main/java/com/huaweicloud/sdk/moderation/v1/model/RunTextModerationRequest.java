@@ -22,7 +22,7 @@ public class RunTextModerationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TextDetectionReq body = null;
+    private TextDetectionReq body;
 
     public RunTextModerationRequest withBody(TextDetectionReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RunTextModerationRequest  {
     public void setBody(TextDetectionReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

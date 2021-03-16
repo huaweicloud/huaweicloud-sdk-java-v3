@@ -55,6 +55,8 @@ public class UpdatePrivateZoneInfoReq  {
         this.description = description;
     }
 
+    
+
     public UpdatePrivateZoneInfoReq withEmail(String email) {
         this.email = email;
         return this;
@@ -75,6 +77,8 @@ public class UpdatePrivateZoneInfoReq  {
         this.email = email;
     }
 
+    
+
     public UpdatePrivateZoneInfoReq withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -94,6 +98,9 @@ public class UpdatePrivateZoneInfoReq  {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

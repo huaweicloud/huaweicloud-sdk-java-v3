@@ -30,19 +30,19 @@ public class ApiAuthCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_ids")
     
-    private List<String> appIds = new ArrayList<>();
+    private List<String> appIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="api_ids")
     
-    private List<String> apiIds = new ArrayList<>();
+    private List<String> apiIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_tunnel")
     
-    private String authTunnel = "NORMAL";
+    private String authTunnel;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,6 +82,8 @@ public class ApiAuthCreate  {
         this.envId = envId;
     }
 
+    
+
     public ApiAuthCreate withAppIds(List<String> appIds) {
         this.appIds = appIds;
         return this;
@@ -112,6 +114,8 @@ public class ApiAuthCreate  {
     public void setAppIds(List<String> appIds) {
         this.appIds = appIds;
     }
+
+    
 
     public ApiAuthCreate withApiIds(List<String> apiIds) {
         this.apiIds = apiIds;
@@ -144,6 +148,8 @@ public class ApiAuthCreate  {
         this.apiIds = apiIds;
     }
 
+    
+
     public ApiAuthCreate withAuthTunnel(String authTunnel) {
         this.authTunnel = authTunnel;
         return this;
@@ -164,6 +170,8 @@ public class ApiAuthCreate  {
         this.authTunnel = authTunnel;
     }
 
+    
+
     public ApiAuthCreate withAuthWhitelist(List<String> authWhitelist) {
         this.authWhitelist = authWhitelist;
         return this;
@@ -171,9 +179,6 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addAuthWhitelistItem(String authWhitelistItem) {
-        if (this.authWhitelist == null) {
-            this.authWhitelist = new ArrayList<>();
-        }
         this.authWhitelist.add(authWhitelistItem);
         return this;
     }
@@ -198,6 +203,8 @@ public class ApiAuthCreate  {
         this.authWhitelist = authWhitelist;
     }
 
+    
+
     public ApiAuthCreate withAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
         return this;
@@ -205,9 +212,6 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addAuthBlacklistItem(String authBlacklistItem) {
-        if (this.authBlacklist == null) {
-            this.authBlacklist = new ArrayList<>();
-        }
         this.authBlacklist.add(authBlacklistItem);
         return this;
     }
@@ -232,6 +236,8 @@ public class ApiAuthCreate  {
         this.authBlacklist = authBlacklist;
     }
 
+    
+
     public ApiAuthCreate withVisitParams(List<ApiAuthVisitParam> visitParams) {
         this.visitParams = visitParams;
         return this;
@@ -239,9 +245,6 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addVisitParamsItem(ApiAuthVisitParam visitParamsItem) {
-        if (this.visitParams == null) {
-            this.visitParams = new ArrayList<>();
-        }
         this.visitParams.add(visitParamsItem);
         return this;
     }
@@ -265,6 +268,9 @@ public class ApiAuthCreate  {
     public void setVisitParams(List<ApiAuthVisitParam> visitParams) {
         this.visitParams = visitParams;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

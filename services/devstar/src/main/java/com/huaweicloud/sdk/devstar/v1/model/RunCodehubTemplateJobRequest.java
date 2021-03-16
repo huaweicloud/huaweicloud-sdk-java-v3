@@ -104,13 +104,13 @@ public class RunCodehubTemplateJobRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CodehubJobInfo body = null;
+    private CodehubJobInfo body;
 
     public RunCodehubTemplateJobRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class RunCodehubTemplateJobRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public RunCodehubTemplateJobRequest withBody(CodehubJobInfo body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class RunCodehubTemplateJobRequest  {
     public void setBody(CodehubJobInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

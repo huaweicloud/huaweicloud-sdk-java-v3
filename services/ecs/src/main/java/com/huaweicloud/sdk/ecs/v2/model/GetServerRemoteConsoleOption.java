@@ -199,6 +199,8 @@ public class GetServerRemoteConsoleOption  {
         this.protocol = protocol;
     }
 
+    
+
     public GetServerRemoteConsoleOption withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -218,6 +220,9 @@ public class GetServerRemoteConsoleOption  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

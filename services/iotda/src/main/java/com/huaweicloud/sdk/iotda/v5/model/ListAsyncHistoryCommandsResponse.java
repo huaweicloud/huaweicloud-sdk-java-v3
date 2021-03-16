@@ -33,7 +33,7 @@ public class ListAsyncHistoryCommandsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public ListAsyncHistoryCommandsResponse withCommands(List<AsyncDeviceCommand> commands) {
         this.commands = commands;
@@ -42,9 +42,6 @@ public class ListAsyncHistoryCommandsResponse extends SdkResponse {
 
     
     public ListAsyncHistoryCommandsResponse addCommandsItem(AsyncDeviceCommand commandsItem) {
-        if (this.commands == null) {
-            this.commands = new ArrayList<>();
-        }
         this.commands.add(commandsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListAsyncHistoryCommandsResponse extends SdkResponse {
     public void setCommands(List<AsyncDeviceCommand> commands) {
         this.commands = commands;
     }
+
+    
 
     public ListAsyncHistoryCommandsResponse withPage(Page page) {
         this.page = page;
@@ -95,6 +94,9 @@ public class ListAsyncHistoryCommandsResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

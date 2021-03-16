@@ -22,7 +22,7 @@ public class ConsumeDeadlettersMessage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    private ConsumeDeadlettersMessageMessage message = null;
+    private ConsumeDeadlettersMessageMessage message;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class ConsumeDeadlettersMessage  {
         this.message = message;
     }
 
+    
+
     public ConsumeDeadlettersMessage withHandler(String handler) {
         this.handler = handler;
         return this;
@@ -76,6 +78,9 @@ public class ConsumeDeadlettersMessage  {
     public void setHandler(String handler) {
         this.handler = handler;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

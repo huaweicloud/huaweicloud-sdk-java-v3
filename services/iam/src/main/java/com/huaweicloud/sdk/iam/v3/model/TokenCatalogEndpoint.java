@@ -67,6 +67,8 @@ public class TokenCatalogEndpoint  {
         this.url = url;
     }
 
+    
+
     public TokenCatalogEndpoint withRegion(String region) {
         this.region = region;
         return this;
@@ -86,6 +88,8 @@ public class TokenCatalogEndpoint  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public TokenCatalogEndpoint withRegionId(String regionId) {
         this.regionId = regionId;
@@ -107,6 +111,8 @@ public class TokenCatalogEndpoint  {
         this.regionId = regionId;
     }
 
+    
+
     public TokenCatalogEndpoint withInterface(String _interface) {
         this._interface = _interface;
         return this;
@@ -127,6 +133,8 @@ public class TokenCatalogEndpoint  {
         this._interface = _interface;
     }
 
+    
+
     public TokenCatalogEndpoint withId(String id) {
         this.id = id;
         return this;
@@ -146,6 +154,9 @@ public class TokenCatalogEndpoint  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

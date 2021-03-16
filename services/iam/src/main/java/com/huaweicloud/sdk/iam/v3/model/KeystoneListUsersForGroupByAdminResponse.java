@@ -27,7 +27,7 @@ public class KeystoneListUsersForGroupByAdminResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListUsersForGroupByAdminResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListUsersForGroupByAdminResponse withUsers(List<KeystoneUserResult> users) {
         this.users = users;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListUsersForGroupByAdminResponse extends SdkResponse {
 
     
     public KeystoneListUsersForGroupByAdminResponse addUsersItem(KeystoneUserResult usersItem) {
-        if (this.users == null) {
-            this.users = new ArrayList<>();
-        }
         this.users.add(usersItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListUsersForGroupByAdminResponse extends SdkResponse {
     public void setUsers(List<KeystoneUserResult> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

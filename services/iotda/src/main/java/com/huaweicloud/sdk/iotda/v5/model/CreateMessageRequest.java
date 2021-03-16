@@ -34,7 +34,7 @@ public class CreateMessageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeviceMessageRequest body = null;
+    private DeviceMessageRequest body;
 
     public CreateMessageRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
@@ -56,6 +56,8 @@ public class CreateMessageRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public CreateMessageRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class CreateMessageRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateMessageRequest withBody(DeviceMessageRequest body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateMessageRequest  {
     public void setBody(DeviceMessageRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

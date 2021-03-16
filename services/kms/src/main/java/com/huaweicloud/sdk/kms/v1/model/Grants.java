@@ -175,6 +175,8 @@ public class Grants  {
         this.keyId = keyId;
     }
 
+    
+
     public Grants withGrantId(String grantId) {
         this.grantId = grantId;
         return this;
@@ -194,6 +196,8 @@ public class Grants  {
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
+
+    
 
     public Grants withGranteePrincipal(String granteePrincipal) {
         this.granteePrincipal = granteePrincipal;
@@ -215,6 +219,8 @@ public class Grants  {
         this.granteePrincipal = granteePrincipal;
     }
 
+    
+
     public Grants withGranteePrincipalType(GranteePrincipalTypeEnum granteePrincipalType) {
         this.granteePrincipalType = granteePrincipalType;
         return this;
@@ -235,6 +241,8 @@ public class Grants  {
         this.granteePrincipalType = granteePrincipalType;
     }
 
+    
+
     public Grants withOperations(List<String> operations) {
         this.operations = operations;
         return this;
@@ -242,9 +250,6 @@ public class Grants  {
 
     
     public Grants addOperationsItem(String operationsItem) {
-        if (this.operations == null) {
-            this.operations = new ArrayList<>();
-        }
         this.operations.add(operationsItem);
         return this;
     }
@@ -269,6 +274,8 @@ public class Grants  {
         this.operations = operations;
     }
 
+    
+
     public Grants withIssuingPrincipal(String issuingPrincipal) {
         this.issuingPrincipal = issuingPrincipal;
         return this;
@@ -288,6 +295,8 @@ public class Grants  {
     public void setIssuingPrincipal(String issuingPrincipal) {
         this.issuingPrincipal = issuingPrincipal;
     }
+
+    
 
     public Grants withCreationDate(String creationDate) {
         this.creationDate = creationDate;
@@ -309,6 +318,8 @@ public class Grants  {
         this.creationDate = creationDate;
     }
 
+    
+
     public Grants withName(String name) {
         this.name = name;
         return this;
@@ -329,6 +340,8 @@ public class Grants  {
         this.name = name;
     }
 
+    
+
     public Grants withRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
         return this;
@@ -348,6 +361,9 @@ public class Grants  {
     public void setRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

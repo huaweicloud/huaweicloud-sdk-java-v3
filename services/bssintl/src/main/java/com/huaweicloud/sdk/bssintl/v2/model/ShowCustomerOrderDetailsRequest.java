@@ -27,13 +27,13 @@ public class ShowCustomerOrderDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class ShowCustomerOrderDetailsRequest  {
         this.orderId = orderId;
     }
 
+    
+
     public ShowCustomerOrderDetailsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -82,6 +84,8 @@ public class ShowCustomerOrderDetailsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ShowCustomerOrderDetailsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -105,6 +109,8 @@ public class ShowCustomerOrderDetailsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowCustomerOrderDetailsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -124,6 +130,9 @@ public class ShowCustomerOrderDetailsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

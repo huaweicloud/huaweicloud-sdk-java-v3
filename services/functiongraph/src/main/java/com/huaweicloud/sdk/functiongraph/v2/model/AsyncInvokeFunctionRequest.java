@@ -52,6 +52,8 @@ public class AsyncInvokeFunctionRequest  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public AsyncInvokeFunctionRequest withBody(Map<String, Object> body) {
         this.body = body;
         return this;
@@ -60,9 +62,6 @@ public class AsyncInvokeFunctionRequest  {
     
 
     public AsyncInvokeFunctionRequest putBodyItem(String key, Object bodyItem) {
-         if (this.body == null) {
-            this.body = new HashMap<>();
-         }
         this.body.put(key, bodyItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class AsyncInvokeFunctionRequest  {
     public void setBody(Map<String, Object> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

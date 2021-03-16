@@ -64,6 +64,8 @@ public class CreateVersionAliasRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateVersionAliasRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -83,6 +85,8 @@ public class CreateVersionAliasRequestBody  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public CreateVersionAliasRequestBody withDescription(String description) {
         this.description = description;
@@ -104,6 +108,8 @@ public class CreateVersionAliasRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateVersionAliasRequestBody withAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
         return this;
@@ -112,9 +118,6 @@ public class CreateVersionAliasRequestBody  {
     
 
     public CreateVersionAliasRequestBody putAdditionalVersionWeightsItem(String key, Integer additionalVersionWeightsItem) {
-         if (this.additionalVersionWeights == null) {
-            this.additionalVersionWeights = new HashMap<>();
-         }
         this.additionalVersionWeights.put(key, additionalVersionWeightsItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class CreateVersionAliasRequestBody  {
     public void setAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -173,6 +173,8 @@ public class Member  {
         this.status = status;
     }
 
+    
+
     public Member withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -192,6 +194,8 @@ public class Member  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public Member withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -213,6 +217,8 @@ public class Member  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public Member withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -232,6 +238,8 @@ public class Member  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public Member withImageId(String imageId) {
         this.imageId = imageId;
@@ -253,6 +261,8 @@ public class Member  {
         this.imageId = imageId;
     }
 
+    
+
     public Member withDestProjectId(String destProjectId) {
         this.destProjectId = destProjectId;
         return this;
@@ -272,6 +282,8 @@ public class Member  {
     public void setDestProjectId(String destProjectId) {
         this.destProjectId = destProjectId;
     }
+
+    
 
     public Member withVaultId(String vaultId) {
         this.vaultId = vaultId;
@@ -293,6 +305,8 @@ public class Member  {
         this.vaultId = vaultId;
     }
 
+    
+
     public Member withId(String id) {
         this.id = id;
         return this;
@@ -312,6 +326,9 @@ public class Member  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

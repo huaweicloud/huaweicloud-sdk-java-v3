@@ -55,6 +55,8 @@ public class Calculation  {
         this.neverConnected = neverConnected;
     }
 
+    
+
     public Calculation withOnline(Integer online) {
         this.online = online;
         return this;
@@ -75,6 +77,8 @@ public class Calculation  {
         this.online = online;
     }
 
+    
+
     public Calculation withOffline(Integer offline) {
         this.offline = offline;
         return this;
@@ -94,6 +98,9 @@ public class Calculation  {
     public void setOffline(Integer offline) {
         this.offline = offline;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

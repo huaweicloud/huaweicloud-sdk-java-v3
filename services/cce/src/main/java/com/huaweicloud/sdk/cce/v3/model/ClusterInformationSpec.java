@@ -42,6 +42,9 @@ public class ClusterInformationSpec  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

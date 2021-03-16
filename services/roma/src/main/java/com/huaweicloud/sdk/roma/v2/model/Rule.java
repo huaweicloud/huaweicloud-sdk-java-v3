@@ -253,13 +253,13 @@ public class Rule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -280,9 +280,6 @@ public class Rule  {
 
     
     public Rule addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -307,6 +304,8 @@ public class Rule  {
         this.permissions = permissions;
     }
 
+    
+
     public Rule withRuleId(Integer ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -326,6 +325,8 @@ public class Rule  {
     public void setRuleId(Integer ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public Rule withName(String name) {
         this.name = name;
@@ -347,6 +348,8 @@ public class Rule  {
         this.name = name;
     }
 
+    
+
     public Rule withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -366,6 +369,8 @@ public class Rule  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public Rule withAppName(String appName) {
         this.appName = appName;
@@ -387,6 +392,8 @@ public class Rule  {
         this.appName = appName;
     }
 
+    
+
     public Rule withDescription(String description) {
         this.description = description;
         return this;
@@ -406,6 +413,8 @@ public class Rule  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Rule withStatus(StatusEnum status) {
         this.status = status;
@@ -427,6 +436,8 @@ public class Rule  {
         this.status = status;
     }
 
+    
+
     public Rule withDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
         return this;
@@ -446,6 +457,8 @@ public class Rule  {
     public void setDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
     }
+
+    
 
     public Rule withSqlField(String sqlField) {
         this.sqlField = sqlField;
@@ -467,6 +480,8 @@ public class Rule  {
         this.sqlField = sqlField;
     }
 
+    
+
     public Rule withSqlWhere(String sqlWhere) {
         this.sqlWhere = sqlWhere;
         return this;
@@ -487,6 +502,8 @@ public class Rule  {
         this.sqlWhere = sqlWhere;
     }
 
+    
+
     public Rule withRuleExpress(String ruleExpress) {
         this.ruleExpress = ruleExpress;
         return this;
@@ -506,6 +523,8 @@ public class Rule  {
     public void setRuleExpress(String ruleExpress) {
         this.ruleExpress = ruleExpress;
     }
+
+    
 
     public Rule withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -534,6 +553,8 @@ public class Rule  {
         this.createdUser = createdUser;
     }
 
+    
+
     public Rule withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -561,6 +582,8 @@ public class Rule  {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public Rule withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -583,6 +606,8 @@ public class Rule  {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public Rule withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
@@ -604,6 +629,9 @@ public class Rule  {
     public void setLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

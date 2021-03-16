@@ -46,7 +46,7 @@ public class KeystoneCreateUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,6 +80,8 @@ public class KeystoneCreateUserResult  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneCreateUserResult withName(String name) {
         this.name = name;
         return this;
@@ -99,6 +101,8 @@ public class KeystoneCreateUserResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneCreateUserResult withDescription(String description) {
         this.description = description;
@@ -120,6 +124,8 @@ public class KeystoneCreateUserResult  {
         this.description = description;
     }
 
+    
+
     public KeystoneCreateUserResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -139,6 +145,8 @@ public class KeystoneCreateUserResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
 
     public KeystoneCreateUserResult withLinks(LinksSelf links) {
         this.links = links;
@@ -167,6 +175,8 @@ public class KeystoneCreateUserResult  {
         this.links = links;
     }
 
+    
+
     public KeystoneCreateUserResult withId(String id) {
         this.id = id;
         return this;
@@ -187,6 +197,8 @@ public class KeystoneCreateUserResult  {
         this.id = id;
     }
 
+    
+
     public KeystoneCreateUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -206,6 +218,9 @@ public class KeystoneCreateUserResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

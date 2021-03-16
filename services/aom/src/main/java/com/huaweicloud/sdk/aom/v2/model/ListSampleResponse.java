@@ -35,9 +35,6 @@ public class ListSampleResponse extends SdkResponse {
 
     
     public ListSampleResponse addSamplesItem(SampleDataValue samplesItem) {
-        if (this.samples == null) {
-            this.samples = new ArrayList<>();
-        }
         this.samples.add(samplesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListSampleResponse extends SdkResponse {
     public void setSamples(List<SampleDataValue> samples) {
         this.samples = samples;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

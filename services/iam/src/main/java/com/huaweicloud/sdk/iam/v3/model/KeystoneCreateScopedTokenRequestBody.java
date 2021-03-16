@@ -22,7 +22,7 @@ public class KeystoneCreateScopedTokenRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth")
     
-    private ScopedTokenAuth auth = null;
+    private ScopedTokenAuth auth;
 
     public KeystoneCreateScopedTokenRequestBody withAuth(ScopedTokenAuth auth) {
         this.auth = auth;
@@ -50,6 +50,9 @@ public class KeystoneCreateScopedTokenRequestBody  {
     public void setAuth(ScopedTokenAuth auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class KeystoneListDomainPermissionsForGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListDomainPermissionsForGroupResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListDomainPermissionsForGroupResponse withRoles(List<RoleResult> roles) {
         this.roles = roles;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListDomainPermissionsForGroupResponse extends SdkResponse {
 
     
     public KeystoneListDomainPermissionsForGroupResponse addRolesItem(RoleResult rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListDomainPermissionsForGroupResponse extends SdkResponse {
     public void setRoles(List<RoleResult> roles) {
         this.roles = roles;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

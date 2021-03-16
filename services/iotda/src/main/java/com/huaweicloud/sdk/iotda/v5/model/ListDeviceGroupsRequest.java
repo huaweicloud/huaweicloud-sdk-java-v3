@@ -27,19 +27,19 @@ public class ListDeviceGroupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class ListDeviceGroupsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDeviceGroupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -95,6 +97,8 @@ public class ListDeviceGroupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListDeviceGroupsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -114,6 +118,8 @@ public class ListDeviceGroupsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListDeviceGroupsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -137,6 +143,8 @@ public class ListDeviceGroupsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListDeviceGroupsRequest withLastModifiedTime(String lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
         return this;
@@ -157,6 +165,8 @@ public class ListDeviceGroupsRequest  {
         this.lastModifiedTime = lastModifiedTime;
     }
 
+    
+
     public ListDeviceGroupsRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -176,6 +186,9 @@ public class ListDeviceGroupsRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

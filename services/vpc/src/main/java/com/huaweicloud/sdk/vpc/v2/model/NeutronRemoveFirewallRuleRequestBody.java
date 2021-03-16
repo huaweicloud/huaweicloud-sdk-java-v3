@@ -42,6 +42,9 @@ public class NeutronRemoveFirewallRuleRequestBody  {
     public void setFirewallRuleId(String firewallRuleId) {
         this.firewallRuleId = firewallRuleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

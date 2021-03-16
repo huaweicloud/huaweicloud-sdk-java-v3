@@ -42,7 +42,7 @@ public class CfgRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="peer_orgs")
     
-    private Map<String, List<String>> peerOrgs = new HashMap<>();
+    private Map<String, List<String>> peerOrgs = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,6 +70,8 @@ public class CfgRequestBody  {
         this.chaincodeName = chaincodeName;
     }
 
+    
+
     public CfgRequestBody withCertPath(String certPath) {
         this.certPath = certPath;
         return this;
@@ -90,6 +92,8 @@ public class CfgRequestBody  {
         this.certPath = certPath;
     }
 
+    
+
     public CfgRequestBody withChannelName(String channelName) {
         this.channelName = channelName;
         return this;
@@ -109,6 +113,8 @@ public class CfgRequestBody  {
     public void setChannelName(String channelName) {
         this.channelName = channelName;
     }
+
+    
 
     public CfgRequestBody withPeerOrgs(Map<String, List<String>> peerOrgs) {
         this.peerOrgs = peerOrgs;
@@ -141,6 +147,8 @@ public class CfgRequestBody  {
         this.peerOrgs = peerOrgs;
     }
 
+    
+
     public CfgRequestBody withUnionInfo(Map<String, List<String>> unionInfo) {
         this.unionInfo = unionInfo;
         return this;
@@ -149,9 +157,6 @@ public class CfgRequestBody  {
     
 
     public CfgRequestBody putUnionInfoItem(String key, List<String> unionInfoItem) {
-         if (this.unionInfo == null) {
-            this.unionInfo = new HashMap<>();
-         }
         this.unionInfo.put(key, unionInfoItem);
         return this;
     }
@@ -174,6 +179,9 @@ public class CfgRequestBody  {
     public void setUnionInfo(Map<String, List<String>> unionInfo) {
         this.unionInfo = unionInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

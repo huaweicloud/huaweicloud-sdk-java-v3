@@ -28,7 +28,7 @@ public class CreateFunctionVersionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateFunctionVersionRequestBody body = null;
+    private CreateFunctionVersionRequestBody body;
 
     public CreateFunctionVersionRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -49,6 +49,8 @@ public class CreateFunctionVersionRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
 
     public CreateFunctionVersionRequest withBody(CreateFunctionVersionRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateFunctionVersionRequest  {
     public void setBody(CreateFunctionVersionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

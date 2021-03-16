@@ -28,7 +28,7 @@ public class CreateEnvironmentVariableV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnvVariableReq body = null;
+    private EnvVariableReq body;
 
     public CreateEnvironmentVariableV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateEnvironmentVariableV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateEnvironmentVariableV2Request withBody(EnvVariableReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateEnvironmentVariableV2Request  {
     public void setBody(EnvVariableReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

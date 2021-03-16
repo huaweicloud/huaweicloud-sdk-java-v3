@@ -23,13 +23,13 @@ public class PwdAuth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity")
     
-    private PwdIdentity identity = null;
+    private PwdIdentity identity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scope")
     
-    private AuthScope scope = null;
+    private AuthScope scope;
 
     public PwdAuth withIdentity(PwdIdentity identity) {
         this.identity = identity;
@@ -58,6 +58,8 @@ public class PwdAuth  {
         this.identity = identity;
     }
 
+    
+
     public PwdAuth withScope(AuthScope scope) {
         this.scope = scope;
         return this;
@@ -84,6 +86,9 @@ public class PwdAuth  {
     public void setScope(AuthScope scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class MetaData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private KeyValue metadata = null;
+    private KeyValue metadata;
 
     public MetaData withMetadata(KeyValue metadata) {
         this.metadata = metadata;
@@ -50,6 +50,9 @@ public class MetaData  {
     public void setMetadata(KeyValue metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -228,7 +228,7 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
     public UpdateLifeCycleHookResponse withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
@@ -250,6 +250,8 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
         this.lifecycleHookName = lifecycleHookName;
     }
 
+    
+
     public UpdateLifeCycleHookResponse withLifecycleHookType(LifecycleHookTypeEnum lifecycleHookType) {
         this.lifecycleHookType = lifecycleHookType;
         return this;
@@ -269,6 +271,8 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
     public void setLifecycleHookType(LifecycleHookTypeEnum lifecycleHookType) {
         this.lifecycleHookType = lifecycleHookType;
     }
+
+    
 
     public UpdateLifeCycleHookResponse withDefaultResult(DefaultResultEnum defaultResult) {
         this.defaultResult = defaultResult;
@@ -290,6 +294,8 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
         this.defaultResult = defaultResult;
     }
 
+    
+
     public UpdateLifeCycleHookResponse withDefaultTimeout(Integer defaultTimeout) {
         this.defaultTimeout = defaultTimeout;
         return this;
@@ -309,6 +315,8 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
     public void setDefaultTimeout(Integer defaultTimeout) {
         this.defaultTimeout = defaultTimeout;
     }
+
+    
 
     public UpdateLifeCycleHookResponse withNotificationTopicUrn(String notificationTopicUrn) {
         this.notificationTopicUrn = notificationTopicUrn;
@@ -330,6 +338,8 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
         this.notificationTopicUrn = notificationTopicUrn;
     }
 
+    
+
     public UpdateLifeCycleHookResponse withNotificationTopicName(String notificationTopicName) {
         this.notificationTopicName = notificationTopicName;
         return this;
@@ -349,6 +359,8 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
     public void setNotificationTopicName(String notificationTopicName) {
         this.notificationTopicName = notificationTopicName;
     }
+
+    
 
     public UpdateLifeCycleHookResponse withNotificationMetadata(String notificationMetadata) {
         this.notificationMetadata = notificationMetadata;
@@ -370,6 +382,8 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
         this.notificationMetadata = notificationMetadata;
     }
 
+    
+
     public UpdateLifeCycleHookResponse withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -389,6 +403,9 @@ public class UpdateLifeCycleHookResponse extends SdkResponse {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

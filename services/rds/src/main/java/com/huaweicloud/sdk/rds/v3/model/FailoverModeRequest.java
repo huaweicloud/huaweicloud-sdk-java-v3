@@ -42,6 +42,9 @@ public class FailoverModeRequest  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

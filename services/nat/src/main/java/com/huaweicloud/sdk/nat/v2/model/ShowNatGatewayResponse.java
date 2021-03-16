@@ -24,7 +24,7 @@ public class ShowNatGatewayResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nat_gateway")
     
-    private NatGatewayResponseBody natGateway = null;
+    private NatGatewayResponseBody natGateway;
 
     public ShowNatGatewayResponse withNatGateway(NatGatewayResponseBody natGateway) {
         this.natGateway = natGateway;
@@ -52,6 +52,9 @@ public class ShowNatGatewayResponse extends SdkResponse {
     public void setNatGateway(NatGatewayResponseBody natGateway) {
         this.natGateway = natGateway;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

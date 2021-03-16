@@ -167,6 +167,8 @@ public class ListMetricsRequest  {
         this.dim0 = dim0;
     }
 
+    
+
     public ListMetricsRequest withDim1(String dim1) {
         this.dim1 = dim1;
         return this;
@@ -187,6 +189,8 @@ public class ListMetricsRequest  {
         this.dim1 = dim1;
     }
 
+    
+
     public ListMetricsRequest withDim2(String dim2) {
         this.dim2 = dim2;
         return this;
@@ -206,6 +210,8 @@ public class ListMetricsRequest  {
     public void setDim2(String dim2) {
         this.dim2 = dim2;
     }
+
+    
 
     public ListMetricsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -229,6 +235,8 @@ public class ListMetricsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListMetricsRequest withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -248,6 +256,8 @@ public class ListMetricsRequest  {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
 
     public ListMetricsRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -269,6 +279,8 @@ public class ListMetricsRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ListMetricsRequest withOrder(OrderEnum order) {
         this.order = order;
         return this;
@@ -289,6 +301,8 @@ public class ListMetricsRequest  {
         this.order = order;
     }
 
+    
+
     public ListMetricsRequest withStart(String start) {
         this.start = start;
         return this;
@@ -308,6 +322,9 @@ public class ListMetricsRequest  {
     public void setStart(String start) {
         this.start = start;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

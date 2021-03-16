@@ -84,7 +84,7 @@ public class NovaCreateServersOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="networks")
     
-    private List<NovaServerNetwork> networks = new ArrayList<>();
+    private List<NovaServerNetwork> networks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -114,7 +114,7 @@ public class NovaCreateServersOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min_count")
     
-    private Integer minCount = 1;
+    private Integer minCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -232,6 +232,8 @@ public class NovaCreateServersOption  {
         this.autoTerminateTime = autoTerminateTime;
     }
 
+    
+
     public NovaCreateServersOption withImageRef(String imageRef) {
         this.imageRef = imageRef;
         return this;
@@ -251,6 +253,8 @@ public class NovaCreateServersOption  {
     public void setImageRef(String imageRef) {
         this.imageRef = imageRef;
     }
+
+    
 
     public NovaCreateServersOption withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
@@ -272,6 +276,8 @@ public class NovaCreateServersOption  {
         this.flavorRef = flavorRef;
     }
 
+    
+
     public NovaCreateServersOption withName(String name) {
         this.name = name;
         return this;
@@ -292,6 +298,8 @@ public class NovaCreateServersOption  {
         this.name = name;
     }
 
+    
+
     public NovaCreateServersOption withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -300,9 +308,6 @@ public class NovaCreateServersOption  {
     
 
     public NovaCreateServersOption putMetadataItem(String key, String metadataItem) {
-         if (this.metadata == null) {
-            this.metadata = new HashMap<>();
-         }
         this.metadata.put(key, metadataItem);
         return this;
     }
@@ -326,6 +331,8 @@ public class NovaCreateServersOption  {
         this.metadata = metadata;
     }
 
+    
+
     public NovaCreateServersOption withAdminPass(String adminPass) {
         this.adminPass = adminPass;
         return this;
@@ -346,6 +353,8 @@ public class NovaCreateServersOption  {
         this.adminPass = adminPass;
     }
 
+    
+
     public NovaCreateServersOption withBlockDeviceMappingV2(List<NovaServerBlockDeviceMapping> blockDeviceMappingV2) {
         this.blockDeviceMappingV2 = blockDeviceMappingV2;
         return this;
@@ -353,9 +362,6 @@ public class NovaCreateServersOption  {
 
     
     public NovaCreateServersOption addBlockDeviceMappingV2Item(NovaServerBlockDeviceMapping blockDeviceMappingV2Item) {
-        if (this.blockDeviceMappingV2 == null) {
-            this.blockDeviceMappingV2 = new ArrayList<>();
-        }
         this.blockDeviceMappingV2.add(blockDeviceMappingV2Item);
         return this;
     }
@@ -380,6 +386,8 @@ public class NovaCreateServersOption  {
         this.blockDeviceMappingV2 = blockDeviceMappingV2;
     }
 
+    
+
     public NovaCreateServersOption withConfigDrive(String configDrive) {
         this.configDrive = configDrive;
         return this;
@@ -400,6 +408,8 @@ public class NovaCreateServersOption  {
         this.configDrive = configDrive;
     }
 
+    
+
     public NovaCreateServersOption withSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -407,9 +417,6 @@ public class NovaCreateServersOption  {
 
     
     public NovaCreateServersOption addSecurityGroupsItem(NovaServerSecurityGroup securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -433,6 +440,8 @@ public class NovaCreateServersOption  {
     public void setSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
+
+    
 
     public NovaCreateServersOption withNetworks(List<NovaServerNetwork> networks) {
         this.networks = networks;
@@ -465,6 +474,8 @@ public class NovaCreateServersOption  {
         this.networks = networks;
     }
 
+    
+
     public NovaCreateServersOption withKeyName(String keyName) {
         this.keyName = keyName;
         return this;
@@ -484,6 +495,8 @@ public class NovaCreateServersOption  {
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
+
+    
 
     public NovaCreateServersOption withUserData(String userData) {
         this.userData = userData;
@@ -505,6 +518,8 @@ public class NovaCreateServersOption  {
         this.userData = userData;
     }
 
+    
+
     public NovaCreateServersOption withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -524,6 +539,8 @@ public class NovaCreateServersOption  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public NovaCreateServersOption withReturnReservationId(Boolean returnReservationId) {
         this.returnReservationId = returnReservationId;
@@ -545,6 +562,8 @@ public class NovaCreateServersOption  {
         this.returnReservationId = returnReservationId;
     }
 
+    
+
     public NovaCreateServersOption withMinCount(Integer minCount) {
         this.minCount = minCount;
         return this;
@@ -564,6 +583,8 @@ public class NovaCreateServersOption  {
     public void setMinCount(Integer minCount) {
         this.minCount = minCount;
     }
+
+    
 
     public NovaCreateServersOption withMaxCount(Integer maxCount) {
         this.maxCount = maxCount;
@@ -585,6 +606,8 @@ public class NovaCreateServersOption  {
         this.maxCount = maxCount;
     }
 
+    
+
     public NovaCreateServersOption withOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
@@ -605,6 +628,8 @@ public class NovaCreateServersOption  {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
 
+    
+
     public NovaCreateServersOption withDescription(String description) {
         this.description = description;
         return this;
@@ -624,6 +649,9 @@ public class NovaCreateServersOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

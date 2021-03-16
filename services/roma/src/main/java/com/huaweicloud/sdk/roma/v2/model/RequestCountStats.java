@@ -67,6 +67,8 @@ public class RequestCountStats  {
         this.reqCount = reqCount;
     }
 
+    
+
     public RequestCountStats withReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
         return this;
@@ -86,6 +88,8 @@ public class RequestCountStats  {
     public void setReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
     }
+
+    
 
     public RequestCountStats withReqCount4xx(Integer reqCount4xx) {
         this.reqCount4xx = reqCount4xx;
@@ -107,6 +111,8 @@ public class RequestCountStats  {
         this.reqCount4xx = reqCount4xx;
     }
 
+    
+
     public RequestCountStats withReqCount5xx(Integer reqCount5xx) {
         this.reqCount5xx = reqCount5xx;
         return this;
@@ -127,6 +133,8 @@ public class RequestCountStats  {
         this.reqCount5xx = reqCount5xx;
     }
 
+    
+
     public RequestCountStats withReqCountError(Integer reqCountError) {
         this.reqCountError = reqCountError;
         return this;
@@ -146,6 +154,9 @@ public class RequestCountStats  {
     public void setReqCountError(Integer reqCountError) {
         this.reqCountError = reqCountError;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

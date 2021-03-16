@@ -28,7 +28,7 @@ public class CreateAnAppV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppReq body = null;
+    private AppReq body;
 
     public CreateAnAppV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateAnAppV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateAnAppV2Request withBody(AppReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateAnAppV2Request  {
     public void setBody(AppReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

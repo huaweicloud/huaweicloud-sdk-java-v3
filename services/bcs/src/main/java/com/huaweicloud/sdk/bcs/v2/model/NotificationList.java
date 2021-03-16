@@ -50,13 +50,13 @@ public class NotificationList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitor_info")
     
-    private InvitorInfo invitorInfo = null;
+    private InvitorInfo invitorInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitee_info")
     
-    private InviteeInfo inviteeInfo = null;
+    private InviteeInfo inviteeInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,6 +102,8 @@ public class NotificationList  {
         this.channelName = channelName;
     }
 
+    
+
     public NotificationList withStatus(String status) {
         this.status = status;
         return this;
@@ -121,6 +123,8 @@ public class NotificationList  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public NotificationList withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
@@ -142,6 +146,8 @@ public class NotificationList  {
         this.updatedTime = updatedTime;
     }
 
+    
+
     public NotificationList withTc3Need(Boolean tc3Need) {
         this.tc3Need = tc3Need;
         return this;
@@ -161,6 +167,8 @@ public class NotificationList  {
     public void setTc3Need(Boolean tc3Need) {
         this.tc3Need = tc3Need;
     }
+
+    
 
     public NotificationList withInvitorInfo(InvitorInfo invitorInfo) {
         this.invitorInfo = invitorInfo;
@@ -189,6 +197,8 @@ public class NotificationList  {
         this.invitorInfo = invitorInfo;
     }
 
+    
+
     public NotificationList withInviteeInfo(InviteeInfo inviteeInfo) {
         this.inviteeInfo = inviteeInfo;
         return this;
@@ -216,6 +226,8 @@ public class NotificationList  {
         this.inviteeInfo = inviteeInfo;
     }
 
+    
+
     public NotificationList withHide(Integer hide) {
         this.hide = hide;
         return this;
@@ -236,6 +248,8 @@ public class NotificationList  {
         this.hide = hide;
     }
 
+    
+
     public NotificationList withInviteeOrgs(List<OrganizationV2> inviteeOrgs) {
         this.inviteeOrgs = inviteeOrgs;
         return this;
@@ -243,9 +257,6 @@ public class NotificationList  {
 
     
     public NotificationList addInviteeOrgsItem(OrganizationV2 inviteeOrgsItem) {
-        if (this.inviteeOrgs == null) {
-            this.inviteeOrgs = new ArrayList<>();
-        }
         this.inviteeOrgs.add(inviteeOrgsItem);
         return this;
     }
@@ -270,6 +281,8 @@ public class NotificationList  {
         this.inviteeOrgs = inviteeOrgs;
     }
 
+    
+
     public NotificationList withReadStatus(Integer readStatus) {
         this.readStatus = readStatus;
         return this;
@@ -290,6 +303,8 @@ public class NotificationList  {
         this.readStatus = readStatus;
     }
 
+    
+
     public NotificationList withCrossVersionUpgrade(String crossVersionUpgrade) {
         this.crossVersionUpgrade = crossVersionUpgrade;
         return this;
@@ -309,6 +324,9 @@ public class NotificationList  {
     public void setCrossVersionUpgrade(String crossVersionUpgrade) {
         this.crossVersionUpgrade = crossVersionUpgrade;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ShowAccessDomainRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ShowAccessDomainRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class ShowAccessDomainRequest  {
         this.repository = repository;
     }
 
+    
+
     public ShowAccessDomainRequest withAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
         return this;
@@ -94,6 +98,9 @@ public class ShowAccessDomainRequest  {
     public void setAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -159,13 +159,13 @@ public class ListExtractTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListExtractTaskRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -189,6 +189,8 @@ public class ListExtractTaskRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListExtractTaskRequest withTaskId(List<String> taskId) {
         this.taskId = taskId;
         return this;
@@ -196,9 +198,6 @@ public class ListExtractTaskRequest  {
 
     
     public ListExtractTaskRequest addTaskIdItem(String taskIdItem) {
-        if (this.taskId == null) {
-            this.taskId = new ArrayList<>();
-        }
         this.taskId.add(taskIdItem);
         return this;
     }
@@ -223,6 +222,8 @@ public class ListExtractTaskRequest  {
         this.taskId = taskId;
     }
 
+    
+
     public ListExtractTaskRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -242,6 +243,8 @@ public class ListExtractTaskRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListExtractTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -263,6 +266,8 @@ public class ListExtractTaskRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListExtractTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -282,6 +287,8 @@ public class ListExtractTaskRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListExtractTaskRequest withPage(Integer page) {
         this.page = page;
@@ -305,6 +312,8 @@ public class ListExtractTaskRequest  {
         this.page = page;
     }
 
+    
+
     public ListExtractTaskRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -326,6 +335,9 @@ public class ListExtractTaskRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

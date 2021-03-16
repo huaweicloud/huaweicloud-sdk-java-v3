@@ -55,6 +55,8 @@ public class KeystoneUserResultExtra  {
         this.description = description;
     }
 
+    
+
     public KeystoneUserResultExtra withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
         return this;
@@ -75,6 +77,8 @@ public class KeystoneUserResultExtra  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public KeystoneUserResultExtra withLastProjectId(String lastProjectId) {
         this.lastProjectId = lastProjectId;
         return this;
@@ -94,6 +98,9 @@ public class KeystoneUserResultExtra  {
     public void setLastProjectId(String lastProjectId) {
         this.lastProjectId = lastProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ListSnapshotDataRequest  {
         this.publishDomain = publishDomain;
     }
 
+    
+
     public ListSnapshotDataRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -75,6 +77,8 @@ public class ListSnapshotDataRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListSnapshotDataRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -94,6 +98,9 @@ public class ListSnapshotDataRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

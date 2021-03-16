@@ -28,7 +28,7 @@ public class ResetPwdOneClickRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResetPasswordBody body = null;
+    private ResetPasswordBody body;
 
     public ResetPwdOneClickRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class ResetPwdOneClickRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public ResetPwdOneClickRequest withBody(ResetPasswordBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ResetPwdOneClickRequest  {
     public void setBody(ResetPasswordBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -232,7 +232,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -460,13 +460,13 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -802,13 +802,13 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -820,7 +820,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_version")
     
-    private String groupVersion = "V1";
+    private String groupVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -856,13 +856,13 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_info")
     
-    private ApiFunc funcInfo = null;
+    private ApiFunc funcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mock_info")
     
-    private ApiMock mockInfo = null;
+    private ApiMock mockInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -892,7 +892,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backend_api")
     
-    private BackendApi backendApi = null;
+    private BackendApi backendApi;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -922,7 +922,7 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_time")
     
-    private OffsetDateTime publishTime = null;
+    private OffsetDateTime publishTime;
 
     public ListApiVersionDetailV2Response withName(String name) {
         this.name = name;
@@ -944,6 +944,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ListApiVersionDetailV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -963,6 +965,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ListApiVersionDetailV2Response withVersion(String version) {
         this.version = version;
@@ -984,6 +988,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.version = version;
     }
 
+    
+
     public ListApiVersionDetailV2Response withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -1003,6 +1009,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ListApiVersionDetailV2Response withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -1024,6 +1032,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ListApiVersionDetailV2Response withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -1044,6 +1054,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.reqUri = reqUri;
     }
 
+    
+
     public ListApiVersionDetailV2Response withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -1063,6 +1075,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ListApiVersionDetailV2Response withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -1091,6 +1105,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.authOpt = authOpt;
     }
 
+    
+
     public ListApiVersionDetailV2Response withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -1110,6 +1126,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ListApiVersionDetailV2Response withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -1131,6 +1149,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.matchMode = matchMode;
     }
 
+    
+
     public ListApiVersionDetailV2Response withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -1150,6 +1170,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ListApiVersionDetailV2Response withRemark(String remark) {
         this.remark = remark;
@@ -1171,6 +1193,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public ListApiVersionDetailV2Response withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1190,6 +1214,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListApiVersionDetailV2Response withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1211,6 +1237,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ListApiVersionDetailV2Response withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1230,6 +1258,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ListApiVersionDetailV2Response withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1251,6 +1281,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ListApiVersionDetailV2Response withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1271,6 +1303,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ListApiVersionDetailV2Response withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1278,9 +1312,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     
     public ListApiVersionDetailV2Response addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1305,6 +1336,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public ListApiVersionDetailV2Response withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1324,6 +1357,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ListApiVersionDetailV2Response withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1345,6 +1380,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ListApiVersionDetailV2Response withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1364,6 +1401,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public ListApiVersionDetailV2Response withTag(String tag) {
         this.tag = tag;
@@ -1385,6 +1424,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.tag = tag;
     }
 
+    
+
     public ListApiVersionDetailV2Response withId(String id) {
         this.id = id;
         return this;
@@ -1404,6 +1445,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListApiVersionDetailV2Response withStatus(StatusEnum status) {
         this.status = status;
@@ -1425,6 +1468,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ListApiVersionDetailV2Response withArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
         return this;
@@ -1444,6 +1489,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
     }
+
+    
 
     public ListApiVersionDetailV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -1465,6 +1512,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.registerTime = registerTime;
     }
 
+    
+
     public ListApiVersionDetailV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -1484,6 +1533,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ListApiVersionDetailV2Response withGroupName(String groupName) {
         this.groupName = groupName;
@@ -1505,6 +1556,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.groupName = groupName;
     }
 
+    
+
     public ListApiVersionDetailV2Response withGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
         return this;
@@ -1524,6 +1577,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
     }
+
+    
 
     public ListApiVersionDetailV2Response withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -1545,6 +1600,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public ListApiVersionDetailV2Response withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -1564,6 +1621,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public ListApiVersionDetailV2Response withPublishId(String publishId) {
         this.publishId = publishId;
@@ -1585,6 +1644,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.publishId = publishId;
     }
 
+    
+
     public ListApiVersionDetailV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -1605,6 +1666,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.romaAppName = romaAppName;
     }
 
+    
+
     public ListApiVersionDetailV2Response withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -1624,6 +1687,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public ListApiVersionDetailV2Response withFuncInfo(ApiFunc funcInfo) {
         this.funcInfo = funcInfo;
@@ -1652,6 +1717,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.funcInfo = funcInfo;
     }
 
+    
+
     public ListApiVersionDetailV2Response withMockInfo(ApiMock mockInfo) {
         this.mockInfo = mockInfo;
         return this;
@@ -1679,6 +1746,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.mockInfo = mockInfo;
     }
 
+    
+
     public ListApiVersionDetailV2Response withReqParams(List<ReqParam> reqParams) {
         this.reqParams = reqParams;
         return this;
@@ -1686,9 +1755,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     
     public ListApiVersionDetailV2Response addReqParamsItem(ReqParam reqParamsItem) {
-        if (this.reqParams == null) {
-            this.reqParams = new ArrayList<>();
-        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
@@ -1713,6 +1779,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.reqParams = reqParams;
     }
 
+    
+
     public ListApiVersionDetailV2Response withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -1720,9 +1788,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     
     public ListApiVersionDetailV2Response addBackendParamsItem(BackendParam backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -1747,6 +1812,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.backendParams = backendParams;
     }
 
+    
+
     public ListApiVersionDetailV2Response withPolicyFunctions(List<ApiPolicyFunctionResp> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
@@ -1754,9 +1821,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     
     public ListApiVersionDetailV2Response addPolicyFunctionsItem(ApiPolicyFunctionResp policyFunctionsItem) {
-        if (this.policyFunctions == null) {
-            this.policyFunctions = new ArrayList<>();
-        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
@@ -1781,6 +1845,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.policyFunctions = policyFunctions;
     }
 
+    
+
     public ListApiVersionDetailV2Response withPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
@@ -1788,9 +1854,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     
     public ListApiVersionDetailV2Response addPolicyMocksItem(ApiPolicyMockResp policyMocksItem) {
-        if (this.policyMocks == null) {
-            this.policyMocks = new ArrayList<>();
-        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
@@ -1814,6 +1877,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
     }
+
+    
 
     public ListApiVersionDetailV2Response withBackendApi(BackendApi backendApi) {
         this.backendApi = backendApi;
@@ -1842,6 +1907,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.backendApi = backendApi;
     }
 
+    
+
     public ListApiVersionDetailV2Response withPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
@@ -1849,9 +1916,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     
     public ListApiVersionDetailV2Response addPolicyHttpsItem(ApiPolicyHttpResp policyHttpsItem) {
-        if (this.policyHttps == null) {
-            this.policyHttps = new ArrayList<>();
-        }
         this.policyHttps.add(policyHttpsItem);
         return this;
     }
@@ -1876,6 +1940,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.policyHttps = policyHttps;
     }
 
+    
+
     public ListApiVersionDetailV2Response withSlDomain(String slDomain) {
         this.slDomain = slDomain;
         return this;
@@ -1896,6 +1962,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.slDomain = slDomain;
     }
 
+    
+
     public ListApiVersionDetailV2Response withSlDomains(List<String> slDomains) {
         this.slDomains = slDomains;
         return this;
@@ -1903,9 +1971,6 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
 
     
     public ListApiVersionDetailV2Response addSlDomainsItem(String slDomainsItem) {
-        if (this.slDomains == null) {
-            this.slDomains = new ArrayList<>();
-        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
@@ -1930,6 +1995,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.slDomains = slDomains;
     }
 
+    
+
     public ListApiVersionDetailV2Response withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -1950,6 +2017,8 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
         this.versionId = versionId;
     }
 
+    
+
     public ListApiVersionDetailV2Response withPublishTime(OffsetDateTime publishTime) {
         this.publishTime = publishTime;
         return this;
@@ -1969,6 +2038,9 @@ public class ListApiVersionDetailV2Response extends SdkResponse {
     public void setPublishTime(OffsetDateTime publishTime) {
         this.publishTime = publishTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

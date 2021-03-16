@@ -87,7 +87,7 @@ public class AddDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_info")
     
-    private AuthInfo authInfo = null;
+    private AuthInfo authInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,7 +123,7 @@ public class AddDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extension_info")
     
-    private Object extensionInfo = null;
+    private Object extensionInfo;
 
     public AddDeviceResponse withAppId(String appId) {
         this.appId = appId;
@@ -145,6 +145,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public AddDeviceResponse withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -164,6 +166,8 @@ public class AddDeviceResponse extends SdkResponse {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public AddDeviceResponse withDeviceId(String deviceId) {
         this.deviceId = deviceId;
@@ -185,6 +189,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
+    
+
     public AddDeviceResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -204,6 +210,8 @@ public class AddDeviceResponse extends SdkResponse {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public AddDeviceResponse withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -225,6 +233,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.gatewayId = gatewayId;
     }
 
+    
+
     public AddDeviceResponse withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -244,6 +254,8 @@ public class AddDeviceResponse extends SdkResponse {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public AddDeviceResponse withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -265,6 +277,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.nodeType = nodeType;
     }
 
+    
+
     public AddDeviceResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -284,6 +298,8 @@ public class AddDeviceResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public AddDeviceResponse withFwVersion(String fwVersion) {
         this.fwVersion = fwVersion;
@@ -305,6 +321,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.fwVersion = fwVersion;
     }
 
+    
+
     public AddDeviceResponse withSwVersion(String swVersion) {
         this.swVersion = swVersion;
         return this;
@@ -324,6 +342,8 @@ public class AddDeviceResponse extends SdkResponse {
     public void setSwVersion(String swVersion) {
         this.swVersion = swVersion;
     }
+
+    
 
     public AddDeviceResponse withAuthInfo(AuthInfo authInfo) {
         this.authInfo = authInfo;
@@ -352,6 +372,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.authInfo = authInfo;
     }
 
+    
+
     public AddDeviceResponse withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -371,6 +393,8 @@ public class AddDeviceResponse extends SdkResponse {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public AddDeviceResponse withProductName(String productName) {
         this.productName = productName;
@@ -392,6 +416,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.productName = productName;
     }
 
+    
+
     public AddDeviceResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -411,6 +437,8 @@ public class AddDeviceResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public AddDeviceResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -432,6 +460,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public AddDeviceResponse withTags(List<TagV5DTO> tags) {
         this.tags = tags;
         return this;
@@ -439,9 +469,6 @@ public class AddDeviceResponse extends SdkResponse {
 
     
     public AddDeviceResponse addTagsItem(TagV5DTO tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -466,6 +493,8 @@ public class AddDeviceResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public AddDeviceResponse withExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
         return this;
@@ -485,6 +514,9 @@ public class AddDeviceResponse extends SdkResponse {
     public void setExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

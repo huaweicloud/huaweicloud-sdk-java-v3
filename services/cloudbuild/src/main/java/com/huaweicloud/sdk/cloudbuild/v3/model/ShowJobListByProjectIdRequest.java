@@ -21,13 +21,13 @@ public class ShowJobListByProjectIdRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_index")
     
-    private Integer pageIndex = 0;
+    private Integer pageIndex;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_size")
     
-    private Integer pageSize = 10;
+    private Integer pageSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,6 +56,8 @@ public class ShowJobListByProjectIdRequest  {
         this.pageIndex = pageIndex;
     }
 
+    
+
     public ShowJobListByProjectIdRequest withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
@@ -78,6 +80,8 @@ public class ShowJobListByProjectIdRequest  {
         this.pageSize = pageSize;
     }
 
+    
+
     public ShowJobListByProjectIdRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -97,6 +101,9 @@ public class ShowJobListByProjectIdRequest  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

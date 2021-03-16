@@ -49,6 +49,8 @@ public class DeleteApplicationConfigurationRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public DeleteApplicationConfigurationRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteApplicationConfigurationRequest  {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

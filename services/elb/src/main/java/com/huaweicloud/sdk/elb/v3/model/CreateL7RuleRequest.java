@@ -28,7 +28,7 @@ public class CreateL7RuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateL7RuleRequestBody body = null;
+    private CreateL7RuleRequestBody body;
 
     public CreateL7RuleRequest withL7policyId(String l7policyId) {
         this.l7policyId = l7policyId;
@@ -49,6 +49,8 @@ public class CreateL7RuleRequest  {
     public void setL7policyId(String l7policyId) {
         this.l7policyId = l7policyId;
     }
+
+    
 
     public CreateL7RuleRequest withBody(CreateL7RuleRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateL7RuleRequest  {
     public void setBody(CreateL7RuleRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

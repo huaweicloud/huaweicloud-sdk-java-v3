@@ -42,6 +42,9 @@ public class ShowFlavorRequest  {
     public void setFlavorId(String flavorId) {
         this.flavorId = flavorId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

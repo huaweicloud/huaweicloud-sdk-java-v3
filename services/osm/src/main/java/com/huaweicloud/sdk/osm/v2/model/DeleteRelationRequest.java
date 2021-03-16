@@ -46,7 +46,7 @@ public class DeleteRelationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteRelationsReq body = null;
+    private DeleteRelationsReq body;
 
     public DeleteRelationRequest withCaseId(String caseId) {
         this.caseId = caseId;
@@ -67,6 +67,8 @@ public class DeleteRelationRequest  {
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
+
+    
 
     public DeleteRelationRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -92,6 +94,8 @@ public class DeleteRelationRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public DeleteRelationRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -114,6 +118,8 @@ public class DeleteRelationRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DeleteRelationRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -135,6 +141,8 @@ public class DeleteRelationRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public DeleteRelationRequest withBody(DeleteRelationsReq body) {
         this.body = body;
@@ -162,6 +170,9 @@ public class DeleteRelationRequest  {
     public void setBody(DeleteRelationsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

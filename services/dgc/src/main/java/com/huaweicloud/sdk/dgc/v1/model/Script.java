@@ -49,6 +49,8 @@ public class Script  {
         this.name = name;
     }
 
+    
+
     public Script withPath(String path) {
         this.path = path;
         return this;
@@ -68,6 +70,9 @@ public class Script  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

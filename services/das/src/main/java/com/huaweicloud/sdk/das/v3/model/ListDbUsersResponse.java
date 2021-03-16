@@ -54,6 +54,8 @@ public class ListDbUsersResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListDbUsersResponse withDbUsers(List<DbUser> dbUsers) {
         this.dbUsers = dbUsers;
         return this;
@@ -61,9 +63,6 @@ public class ListDbUsersResponse extends SdkResponse {
 
     
     public ListDbUsersResponse addDbUsersItem(DbUser dbUsersItem) {
-        if (this.dbUsers == null) {
-            this.dbUsers = new ArrayList<>();
-        }
         this.dbUsers.add(dbUsersItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListDbUsersResponse extends SdkResponse {
     public void setDbUsers(List<DbUser> dbUsers) {
         this.dbUsers = dbUsers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

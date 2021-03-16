@@ -55,6 +55,8 @@ public class RestRenamePartReqBody  {
         this.participantID = participantID;
     }
 
+    
+
     public RestRenamePartReqBody withNumber(String number) {
         this.number = number;
         return this;
@@ -75,6 +77,8 @@ public class RestRenamePartReqBody  {
         this.number = number;
     }
 
+    
+
     public RestRenamePartReqBody withNewName(String newName) {
         this.newName = newName;
         return this;
@@ -94,6 +98,9 @@ public class RestRenamePartReqBody  {
     public void setNewName(String newName) {
         this.newName = newName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

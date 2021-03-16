@@ -55,6 +55,8 @@ public class ShowAsyncDeviceCommandRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public ShowAsyncDeviceCommandRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class ShowAsyncDeviceCommandRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowAsyncDeviceCommandRequest withCommandId(String commandId) {
         this.commandId = commandId;
         return this;
@@ -94,6 +98,9 @@ public class ShowAsyncDeviceCommandRequest  {
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,25 +23,25 @@ public class AddonTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Addon";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metadata metadata = null;
+    private Metadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private Templatespec spec = null;
+    private Templatespec spec;
 
     public AddonTemplate withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -63,6 +63,8 @@ public class AddonTemplate  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public AddonTemplate withKind(String kind) {
         this.kind = kind;
         return this;
@@ -82,6 +84,8 @@ public class AddonTemplate  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public AddonTemplate withMetadata(Metadata metadata) {
         this.metadata = metadata;
@@ -110,6 +114,8 @@ public class AddonTemplate  {
         this.metadata = metadata;
     }
 
+    
+
     public AddonTemplate withSpec(Templatespec spec) {
         this.spec = spec;
         return this;
@@ -136,6 +142,9 @@ public class AddonTemplate  {
     public void setSpec(Templatespec spec) {
         this.spec = spec;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

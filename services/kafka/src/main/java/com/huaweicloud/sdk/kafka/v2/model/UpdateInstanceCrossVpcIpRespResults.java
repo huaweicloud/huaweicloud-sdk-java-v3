@@ -55,6 +55,8 @@ public class UpdateInstanceCrossVpcIpRespResults  {
         this.advertisedIp = advertisedIp;
     }
 
+    
+
     public UpdateInstanceCrossVpcIpRespResults withSuccess(String success) {
         this.success = success;
         return this;
@@ -75,6 +77,8 @@ public class UpdateInstanceCrossVpcIpRespResults  {
         this.success = success;
     }
 
+    
+
     public UpdateInstanceCrossVpcIpRespResults withIp(String ip) {
         this.ip = ip;
         return this;
@@ -94,6 +98,9 @@ public class UpdateInstanceCrossVpcIpRespResults  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

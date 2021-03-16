@@ -24,7 +24,7 @@ public class ShowWhitelistResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="whitelist")
     
-    private WhitelistResp whitelist = null;
+    private WhitelistResp whitelist;
 
     public ShowWhitelistResponse withWhitelist(WhitelistResp whitelist) {
         this.whitelist = whitelist;
@@ -52,6 +52,9 @@ public class ShowWhitelistResponse extends SdkResponse {
     public void setWhitelist(WhitelistResp whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

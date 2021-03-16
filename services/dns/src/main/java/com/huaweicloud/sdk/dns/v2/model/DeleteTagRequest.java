@@ -55,6 +55,8 @@ public class DeleteTagRequest  {
         this.resourceType = resourceType;
     }
 
+    
+
     public DeleteTagRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteTagRequest  {
         this.resourceId = resourceId;
     }
 
+    
+
     public DeleteTagRequest withKey(String key) {
         this.key = key;
         return this;
@@ -94,6 +98,9 @@ public class DeleteTagRequest  {
     public void setKey(String key) {
         this.key = key;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -93,6 +93,8 @@ public class ListSecurityGroupRulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -113,6 +115,8 @@ public class ListSecurityGroupRulesRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -120,9 +124,6 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -147,6 +148,8 @@ public class ListSecurityGroupRulesRequest  {
         this.id = id;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withSecurityGroupId(List<String> securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -154,9 +157,6 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addSecurityGroupIdItem(String securityGroupIdItem) {
-        if (this.securityGroupId == null) {
-            this.securityGroupId = new ArrayList<>();
-        }
         this.securityGroupId.add(securityGroupIdItem);
         return this;
     }
@@ -181,6 +181,8 @@ public class ListSecurityGroupRulesRequest  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withProtocol(List<String> protocol) {
         this.protocol = protocol;
         return this;
@@ -188,9 +190,6 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addProtocolItem(String protocolItem) {
-        if (this.protocol == null) {
-            this.protocol = new ArrayList<>();
-        }
         this.protocol.add(protocolItem);
         return this;
     }
@@ -215,6 +214,8 @@ public class ListSecurityGroupRulesRequest  {
         this.protocol = protocol;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -222,9 +223,6 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -249,6 +247,8 @@ public class ListSecurityGroupRulesRequest  {
         this.description = description;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withRemoteGroupId(List<String> remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
         return this;
@@ -256,9 +256,6 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addRemoteGroupIdItem(String remoteGroupIdItem) {
-        if (this.remoteGroupId == null) {
-            this.remoteGroupId = new ArrayList<>();
-        }
         this.remoteGroupId.add(remoteGroupIdItem);
         return this;
     }
@@ -283,6 +280,8 @@ public class ListSecurityGroupRulesRequest  {
         this.remoteGroupId = remoteGroupId;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withDirection(String direction) {
         this.direction = direction;
         return this;
@@ -303,6 +302,8 @@ public class ListSecurityGroupRulesRequest  {
         this.direction = direction;
     }
 
+    
+
     public ListSecurityGroupRulesRequest withAction(String action) {
         this.action = action;
         return this;
@@ -322,6 +323,9 @@ public class ListSecurityGroupRulesRequest  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

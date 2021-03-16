@@ -51,6 +51,8 @@ public class ListDatabaseRolesResponse extends SdkResponse {
         this.roles = roles;
     }
 
+    
+
     public ListDatabaseRolesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -70,6 +72,9 @@ public class ListDatabaseRolesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

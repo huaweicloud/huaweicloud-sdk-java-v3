@@ -49,6 +49,8 @@ public class ShowAddonInstanceRequest  {
         this.id = id;
     }
 
+    
+
     public ShowAddonInstanceRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -68,6 +70,9 @@ public class ShowAddonInstanceRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class BatchCreateOrDeleteQueueTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreateOrDeleteTagReq body = null;
+    private BatchCreateOrDeleteTagReq body;
 
     public BatchCreateOrDeleteQueueTagRequest withQueueId(String queueId) {
         this.queueId = queueId;
@@ -49,6 +49,8 @@ public class BatchCreateOrDeleteQueueTagRequest  {
     public void setQueueId(String queueId) {
         this.queueId = queueId;
     }
+
+    
 
     public BatchCreateOrDeleteQueueTagRequest withBody(BatchCreateOrDeleteTagReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchCreateOrDeleteQueueTagRequest  {
     public void setBody(BatchCreateOrDeleteTagReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

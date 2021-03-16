@@ -33,13 +33,13 @@ public class ListEnterpriseMultiAccountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListEnterpriseMultiAccountRequest withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
@@ -61,6 +61,8 @@ public class ListEnterpriseMultiAccountRequest  {
         this.subCustomerId = subCustomerId;
     }
 
+    
+
     public ListEnterpriseMultiAccountRequest withBalanceType(String balanceType) {
         this.balanceType = balanceType;
         return this;
@@ -80,6 +82,8 @@ public class ListEnterpriseMultiAccountRequest  {
     public void setBalanceType(String balanceType) {
         this.balanceType = balanceType;
     }
+
+    
 
     public ListEnterpriseMultiAccountRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -103,6 +107,8 @@ public class ListEnterpriseMultiAccountRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListEnterpriseMultiAccountRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -124,6 +130,9 @@ public class ListEnterpriseMultiAccountRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

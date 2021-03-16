@@ -42,6 +42,9 @@ public class DeleteHealthMonitorRequest  {
     public void setHealthmonitorId(String healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

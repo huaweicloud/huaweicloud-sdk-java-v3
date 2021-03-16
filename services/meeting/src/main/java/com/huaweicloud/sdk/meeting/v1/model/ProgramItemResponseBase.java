@@ -61,6 +61,8 @@ public class ProgramItemResponseBase  {
         this.materialId = materialId;
     }
 
+    
+
     public ProgramItemResponseBase withMaterialName(String materialName) {
         this.materialName = materialName;
         return this;
@@ -80,6 +82,8 @@ public class ProgramItemResponseBase  {
     public void setMaterialName(String materialName) {
         this.materialName = materialName;
     }
+
+    
 
     public ProgramItemResponseBase withFilePath(String filePath) {
         this.filePath = filePath;
@@ -101,6 +105,8 @@ public class ProgramItemResponseBase  {
         this.filePath = filePath;
     }
 
+    
+
     public ProgramItemResponseBase withPlayTime(Integer playTime) {
         this.playTime = playTime;
         return this;
@@ -120,6 +126,9 @@ public class ProgramItemResponseBase  {
     public void setPlayTime(Integer playTime) {
         this.playTime = playTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,13 +22,13 @@ public class EncryptDatakeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EncryptDatakeyRequestBody body = null;
+    private EncryptDatakeyRequestBody body;
 
     public EncryptDatakeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class EncryptDatakeyRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public EncryptDatakeyRequest withBody(EncryptDatakeyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class EncryptDatakeyRequest  {
     public void setBody(EncryptDatakeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

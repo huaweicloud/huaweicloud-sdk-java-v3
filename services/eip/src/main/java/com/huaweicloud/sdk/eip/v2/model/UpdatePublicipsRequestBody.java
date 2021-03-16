@@ -22,7 +22,7 @@ public class UpdatePublicipsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private UpdatePublicipOption publicip = null;
+    private UpdatePublicipOption publicip;
 
     public UpdatePublicipsRequestBody withPublicip(UpdatePublicipOption publicip) {
         this.publicip = publicip;
@@ -50,6 +50,9 @@ public class UpdatePublicipsRequestBody  {
     public void setPublicip(UpdatePublicipOption publicip) {
         this.publicip = publicip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

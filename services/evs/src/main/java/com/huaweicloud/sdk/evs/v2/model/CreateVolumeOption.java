@@ -160,7 +160,7 @@ public class CreateVolumeOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shareable")
     
-    private ShareableEnum shareable = ShareableEnum.FALSE;
+    private ShareableEnum shareable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -296,6 +296,8 @@ public class CreateVolumeOption  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public CreateVolumeOption withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -315,6 +317,8 @@ public class CreateVolumeOption  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public CreateVolumeOption withCount(Integer count) {
         this.count = count;
@@ -336,6 +340,8 @@ public class CreateVolumeOption  {
         this.count = count;
     }
 
+    
+
     public CreateVolumeOption withDescription(String description) {
         this.description = description;
         return this;
@@ -355,6 +361,8 @@ public class CreateVolumeOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateVolumeOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -376,6 +384,8 @@ public class CreateVolumeOption  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateVolumeOption withImageRef(String imageRef) {
         this.imageRef = imageRef;
         return this;
@@ -396,6 +406,8 @@ public class CreateVolumeOption  {
         this.imageRef = imageRef;
     }
 
+    
+
     public CreateVolumeOption withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -404,9 +416,6 @@ public class CreateVolumeOption  {
     
 
     public CreateVolumeOption putMetadataItem(String key, String metadataItem) {
-         if (this.metadata == null) {
-            this.metadata = new HashMap<>();
-         }
         this.metadata.put(key, metadataItem);
         return this;
     }
@@ -430,6 +439,8 @@ public class CreateVolumeOption  {
         this.metadata = metadata;
     }
 
+    
+
     public CreateVolumeOption withMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
         return this;
@@ -449,6 +460,8 @@ public class CreateVolumeOption  {
     public void setMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
     }
+
+    
 
     public CreateVolumeOption withName(String name) {
         this.name = name;
@@ -470,6 +483,8 @@ public class CreateVolumeOption  {
         this.name = name;
     }
 
+    
+
     public CreateVolumeOption withShareable(ShareableEnum shareable) {
         this.shareable = shareable;
         return this;
@@ -489,6 +504,8 @@ public class CreateVolumeOption  {
     public void setShareable(ShareableEnum shareable) {
         this.shareable = shareable;
     }
+
+    
 
     public CreateVolumeOption withSize(Integer size) {
         this.size = size;
@@ -510,6 +527,8 @@ public class CreateVolumeOption  {
         this.size = size;
     }
 
+    
+
     public CreateVolumeOption withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
@@ -529,6 +548,8 @@ public class CreateVolumeOption  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
 
     public CreateVolumeOption withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
@@ -550,6 +571,8 @@ public class CreateVolumeOption  {
         this.volumeType = volumeType;
     }
 
+    
+
     public CreateVolumeOption withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
@@ -558,9 +581,6 @@ public class CreateVolumeOption  {
     
 
     public CreateVolumeOption putTagsItem(String key, String tagsItem) {
-         if (this.tags == null) {
-            this.tags = new HashMap<>();
-         }
         this.tags.put(key, tagsItem);
         return this;
     }
@@ -583,6 +603,9 @@ public class CreateVolumeOption  {
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

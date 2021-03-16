@@ -79,6 +79,8 @@ public class ConfAttendeeRecordInfo  {
         this.displayName = displayName;
     }
 
+    
+
     public ConfAttendeeRecordInfo withCallNumber(String callNumber) {
         this.callNumber = callNumber;
         return this;
@@ -98,6 +100,8 @@ public class ConfAttendeeRecordInfo  {
     public void setCallNumber(String callNumber) {
         this.callNumber = callNumber;
     }
+
+    
 
     public ConfAttendeeRecordInfo withDeviceType(String deviceType) {
         this.deviceType = deviceType;
@@ -119,6 +123,8 @@ public class ConfAttendeeRecordInfo  {
         this.deviceType = deviceType;
     }
 
+    
+
     public ConfAttendeeRecordInfo withJoinTime(Long joinTime) {
         this.joinTime = joinTime;
         return this;
@@ -138,6 +144,8 @@ public class ConfAttendeeRecordInfo  {
     public void setJoinTime(Long joinTime) {
         this.joinTime = joinTime;
     }
+
+    
 
     public ConfAttendeeRecordInfo withLeftTime(Long leftTime) {
         this.leftTime = leftTime;
@@ -159,6 +167,8 @@ public class ConfAttendeeRecordInfo  {
         this.leftTime = leftTime;
     }
 
+    
+
     public ConfAttendeeRecordInfo withMediaType(String mediaType) {
         this.mediaType = mediaType;
         return this;
@@ -179,6 +189,8 @@ public class ConfAttendeeRecordInfo  {
         this.mediaType = mediaType;
     }
 
+    
+
     public ConfAttendeeRecordInfo withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -198,6 +210,9 @@ public class ConfAttendeeRecordInfo  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

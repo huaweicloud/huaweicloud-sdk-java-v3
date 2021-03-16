@@ -105,7 +105,7 @@ public class ListTemplateViewHistoriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
     /**
      * Gets or Sets platformSource
      */
@@ -213,6 +213,8 @@ public class ListTemplateViewHistoriesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListTemplateViewHistoriesRequest withPlatformSource(PlatformSourceEnum platformSource) {
         this.platformSource = platformSource;
         return this;
@@ -234,6 +236,9 @@ public class ListTemplateViewHistoriesRequest  {
     public void setPlatformSource(PlatformSourceEnum platformSource) {
         this.platformSource = platformSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

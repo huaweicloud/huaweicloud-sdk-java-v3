@@ -206,9 +206,6 @@ public class BatchRestartOrDeleteInstanceReq  {
 
     
     public BatchRestartOrDeleteInstanceReq addInstancesItem(String instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
         this.instances.add(instancesItem);
         return this;
     }
@@ -233,6 +230,8 @@ public class BatchRestartOrDeleteInstanceReq  {
         this.instances = instances;
     }
 
+    
+
     public BatchRestartOrDeleteInstanceReq withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -253,6 +252,8 @@ public class BatchRestartOrDeleteInstanceReq  {
         this.action = action;
     }
 
+    
+
     public BatchRestartOrDeleteInstanceReq withAllFailure(AllFailureEnum allFailure) {
         this.allFailure = allFailure;
         return this;
@@ -272,6 +273,9 @@ public class BatchRestartOrDeleteInstanceReq  {
     public void setAllFailure(AllFailureEnum allFailure) {
         this.allFailure = allFailure;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

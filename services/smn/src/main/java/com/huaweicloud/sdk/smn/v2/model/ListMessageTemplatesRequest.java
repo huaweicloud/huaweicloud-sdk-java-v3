@@ -21,13 +21,13 @@ public class ListMessageTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class ListMessageTemplatesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListMessageTemplatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -80,6 +82,8 @@ public class ListMessageTemplatesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListMessageTemplatesRequest withMessageTemplateName(String messageTemplateName) {
         this.messageTemplateName = messageTemplateName;
@@ -101,6 +105,8 @@ public class ListMessageTemplatesRequest  {
         this.messageTemplateName = messageTemplateName;
     }
 
+    
+
     public ListMessageTemplatesRequest withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -120,6 +126,9 @@ public class ListMessageTemplatesRequest  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

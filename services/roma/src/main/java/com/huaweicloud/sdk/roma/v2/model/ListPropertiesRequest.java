@@ -33,7 +33,7 @@ public class ListPropertiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class ListPropertiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListPropertiesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -73,6 +73,8 @@ public class ListPropertiesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListPropertiesRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -92,6 +94,8 @@ public class ListPropertiesRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public ListPropertiesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -115,6 +119,8 @@ public class ListPropertiesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPropertiesRequest withPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
         return this;
@@ -137,6 +143,8 @@ public class ListPropertiesRequest  {
         this.propertyId = propertyId;
     }
 
+    
+
     public ListPropertiesRequest withPropertyName(String propertyName) {
         this.propertyName = propertyName;
         return this;
@@ -156,6 +164,8 @@ public class ListPropertiesRequest  {
     public void setPropertyName(String propertyName) {
         this.propertyName = propertyName;
     }
+
+    
 
     public ListPropertiesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -178,6 +188,9 @@ public class ListPropertiesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

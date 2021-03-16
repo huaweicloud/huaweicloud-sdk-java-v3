@@ -49,6 +49,8 @@ public class DeleteLiveDataApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteLiveDataApiV2Request withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteLiveDataApiV2Request  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

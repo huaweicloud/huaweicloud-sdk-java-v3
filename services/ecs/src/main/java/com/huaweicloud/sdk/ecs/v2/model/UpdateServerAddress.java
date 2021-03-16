@@ -49,6 +49,8 @@ public class UpdateServerAddress  {
         this.version = version;
     }
 
+    
+
     public UpdateServerAddress withAddr(String addr) {
         this.addr = addr;
         return this;
@@ -68,6 +70,9 @@ public class UpdateServerAddress  {
     public void setAddr(String addr) {
         this.addr = addr;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

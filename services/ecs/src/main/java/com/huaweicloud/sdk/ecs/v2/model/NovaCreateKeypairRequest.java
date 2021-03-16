@@ -28,7 +28,7 @@ public class NovaCreateKeypairRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NovaCreateKeypairRequestBody body = null;
+    private NovaCreateKeypairRequestBody body;
 
     public NovaCreateKeypairRequest withOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
@@ -49,6 +49,8 @@ public class NovaCreateKeypairRequest  {
     public void setOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
     }
+
+    
 
     public NovaCreateKeypairRequest withBody(NovaCreateKeypairRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class NovaCreateKeypairRequest  {
     public void setBody(NovaCreateKeypairRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

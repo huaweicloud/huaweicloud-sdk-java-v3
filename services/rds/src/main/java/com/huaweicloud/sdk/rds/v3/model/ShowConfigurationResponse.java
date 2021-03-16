@@ -178,6 +178,8 @@ public class ShowConfigurationResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowConfigurationResponse withName(String name) {
         this.name = name;
         return this;
@@ -197,6 +199,8 @@ public class ShowConfigurationResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowConfigurationResponse withDescription(String description) {
         this.description = description;
@@ -218,6 +222,8 @@ public class ShowConfigurationResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowConfigurationResponse withDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
         return this;
@@ -237,6 +243,8 @@ public class ShowConfigurationResponse extends SdkResponse {
     public void setDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
     }
+
+    
 
     public ShowConfigurationResponse withDatastoreName(DatastoreNameEnum datastoreName) {
         this.datastoreName = datastoreName;
@@ -258,6 +266,8 @@ public class ShowConfigurationResponse extends SdkResponse {
         this.datastoreName = datastoreName;
     }
 
+    
+
     public ShowConfigurationResponse withCreated(String created) {
         this.created = created;
         return this;
@@ -277,6 +287,8 @@ public class ShowConfigurationResponse extends SdkResponse {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public ShowConfigurationResponse withUpdated(String updated) {
         this.updated = updated;
@@ -298,6 +310,8 @@ public class ShowConfigurationResponse extends SdkResponse {
         this.updated = updated;
     }
 
+    
+
     public ShowConfigurationResponse withConfigurationParameters(List<ConfigurationParameter> configurationParameters) {
         this.configurationParameters = configurationParameters;
         return this;
@@ -305,9 +319,6 @@ public class ShowConfigurationResponse extends SdkResponse {
 
     
     public ShowConfigurationResponse addConfigurationParametersItem(ConfigurationParameter configurationParametersItem) {
-        if (this.configurationParameters == null) {
-            this.configurationParameters = new ArrayList<>();
-        }
         this.configurationParameters.add(configurationParametersItem);
         return this;
     }
@@ -331,6 +342,9 @@ public class ShowConfigurationResponse extends SdkResponse {
     public void setConfigurationParameters(List<ConfigurationParameter> configurationParameters) {
         this.configurationParameters = configurationParameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

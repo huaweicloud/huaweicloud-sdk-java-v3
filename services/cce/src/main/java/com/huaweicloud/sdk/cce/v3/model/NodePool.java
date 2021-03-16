@@ -24,31 +24,31 @@ public class NodePool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "NodePool";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private NodePoolMetadata metadata = null;
+    private NodePoolMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private NodePoolSpec spec = null;
+    private NodePoolSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private NodePoolStatus status = null;
+    private NodePoolStatus status;
 
     public NodePool withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -70,6 +70,8 @@ public class NodePool  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public NodePool withKind(String kind) {
         this.kind = kind;
         return this;
@@ -89,6 +91,8 @@ public class NodePool  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public NodePool withMetadata(NodePoolMetadata metadata) {
         this.metadata = metadata;
@@ -117,6 +121,8 @@ public class NodePool  {
         this.metadata = metadata;
     }
 
+    
+
     public NodePool withSpec(NodePoolSpec spec) {
         this.spec = spec;
         return this;
@@ -144,6 +150,8 @@ public class NodePool  {
         this.spec = spec;
     }
 
+    
+
     public NodePool withStatus(NodePoolStatus status) {
         this.status = status;
         return this;
@@ -170,6 +178,9 @@ public class NodePool  {
     public void setStatus(NodePoolStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

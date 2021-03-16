@@ -51,6 +51,8 @@ public class V2BandwidthData  {
         this.value = value;
     }
 
+    
+
     public V2BandwidthData withTime(String time) {
         this.time = time;
         return this;
@@ -70,6 +72,9 @@ public class V2BandwidthData  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -140,6 +140,8 @@ public class ImportConnectionReq  {
         this.path = path;
     }
 
+    
+
     public ImportConnectionReq withParams(List<ConnectionParam> params) {
         this.params = params;
         return this;
@@ -147,9 +149,6 @@ public class ImportConnectionReq  {
 
     
     public ImportConnectionReq addParamsItem(ConnectionParam paramsItem) {
-        if (this.params == null) {
-            this.params = new ArrayList<>();
-        }
         this.params.add(paramsItem);
         return this;
     }
@@ -174,6 +173,8 @@ public class ImportConnectionReq  {
         this.params = params;
     }
 
+    
+
     public ImportConnectionReq withSameNamePolicy(SameNamePolicyEnum sameNamePolicy) {
         this.sameNamePolicy = sameNamePolicy;
         return this;
@@ -193,6 +194,9 @@ public class ImportConnectionReq  {
     public void setSameNamePolicy(SameNamePolicyEnum sameNamePolicy) {
         this.sameNamePolicy = sameNamePolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -60,6 +60,8 @@ public class ListSourcesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListSourcesResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListSourcesResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListSourcesResponse withItems(List<Source> items) {
         this.items = items;
         return this;
@@ -87,9 +91,6 @@ public class ListSourcesResponse extends SdkResponse {
 
     
     public ListSourcesResponse addItemsItem(Source itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListSourcesResponse extends SdkResponse {
     public void setItems(List<Source> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

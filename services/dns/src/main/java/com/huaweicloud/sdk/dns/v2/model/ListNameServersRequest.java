@@ -49,6 +49,8 @@ public class ListNameServersRequest  {
         this.type = type;
     }
 
+    
+
     public ListNameServersRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -68,6 +70,9 @@ public class ListNameServersRequest  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

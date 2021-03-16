@@ -66,6 +66,8 @@ public class ShowRetentionResponse extends SdkResponse {
         this.algorithm = algorithm;
     }
 
+    
+
     public ShowRetentionResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -86,6 +88,8 @@ public class ShowRetentionResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowRetentionResponse withRules(List<Rule> rules) {
         this.rules = rules;
         return this;
@@ -93,9 +97,6 @@ public class ShowRetentionResponse extends SdkResponse {
 
     
     public ShowRetentionResponse addRulesItem(Rule rulesItem) {
-        if (this.rules == null) {
-            this.rules = new ArrayList<>();
-        }
         this.rules.add(rulesItem);
         return this;
     }
@@ -120,6 +121,8 @@ public class ShowRetentionResponse extends SdkResponse {
         this.rules = rules;
     }
 
+    
+
     public ShowRetentionResponse withScope(String scope) {
         this.scope = scope;
         return this;
@@ -139,6 +142,9 @@ public class ShowRetentionResponse extends SdkResponse {
     public void setScope(String scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

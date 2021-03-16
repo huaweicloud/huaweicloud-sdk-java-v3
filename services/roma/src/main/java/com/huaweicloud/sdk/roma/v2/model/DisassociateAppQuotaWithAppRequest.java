@@ -55,6 +55,8 @@ public class DisassociateAppQuotaWithAppRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DisassociateAppQuotaWithAppRequest withAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
         return this;
@@ -75,6 +77,8 @@ public class DisassociateAppQuotaWithAppRequest  {
         this.appQuotaId = appQuotaId;
     }
 
+    
+
     public DisassociateAppQuotaWithAppRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -94,6 +98,9 @@ public class DisassociateAppQuotaWithAppRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

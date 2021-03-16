@@ -30,7 +30,7 @@ public class RestoreTablesRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restoreTables")
     
-    private List<RestoreDatabasesInfo> restoreTables = new ArrayList<>();
+    private List<RestoreDatabasesInfo> restoreTables = null;
     
     public RestoreTablesRequestBody withRestoreTime(Long restoreTime) {
         this.restoreTime = restoreTime;
@@ -51,6 +51,8 @@ public class RestoreTablesRequestBody  {
     public void setRestoreTime(Long restoreTime) {
         this.restoreTime = restoreTime;
     }
+
+    
 
     public RestoreTablesRequestBody withRestoreTables(List<RestoreDatabasesInfo> restoreTables) {
         this.restoreTables = restoreTables;
@@ -82,6 +84,9 @@ public class RestoreTablesRequestBody  {
     public void setRestoreTables(List<RestoreDatabasesInfo> restoreTables) {
         this.restoreTables = restoreTables;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

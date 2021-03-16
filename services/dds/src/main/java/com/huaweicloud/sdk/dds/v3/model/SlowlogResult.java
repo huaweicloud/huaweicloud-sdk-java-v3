@@ -91,6 +91,8 @@ public class SlowlogResult  {
         this.nodeName = nodeName;
     }
 
+    
+
     public SlowlogResult withQuerySample(String querySample) {
         this.querySample = querySample;
         return this;
@@ -110,6 +112,8 @@ public class SlowlogResult  {
     public void setQuerySample(String querySample) {
         this.querySample = querySample;
     }
+
+    
 
     public SlowlogResult withType(String type) {
         this.type = type;
@@ -131,6 +135,8 @@ public class SlowlogResult  {
         this.type = type;
     }
 
+    
+
     public SlowlogResult withTime(String time) {
         this.time = time;
         return this;
@@ -150,6 +156,8 @@ public class SlowlogResult  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
 
     public SlowlogResult withLockTime(String lockTime) {
         this.lockTime = lockTime;
@@ -171,6 +179,8 @@ public class SlowlogResult  {
         this.lockTime = lockTime;
     }
 
+    
+
     public SlowlogResult withRowsSent(String rowsSent) {
         this.rowsSent = rowsSent;
         return this;
@@ -190,6 +200,8 @@ public class SlowlogResult  {
     public void setRowsSent(String rowsSent) {
         this.rowsSent = rowsSent;
     }
+
+    
 
     public SlowlogResult withRowsExamined(String rowsExamined) {
         this.rowsExamined = rowsExamined;
@@ -211,6 +223,8 @@ public class SlowlogResult  {
         this.rowsExamined = rowsExamined;
     }
 
+    
+
     public SlowlogResult withDatabase(String database) {
         this.database = database;
         return this;
@@ -231,6 +245,8 @@ public class SlowlogResult  {
         this.database = database;
     }
 
+    
+
     public SlowlogResult withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -250,6 +266,9 @@ public class SlowlogResult  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

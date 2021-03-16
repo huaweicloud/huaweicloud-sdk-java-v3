@@ -41,9 +41,6 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
 
     
     public ListQueryHttpCodeResponse addDataSeriesItem(HttpCodeSummary dataSeriesItem) {
-        if (this.dataSeries == null) {
-            this.dataSeries = new ArrayList<>();
-        }
         this.dataSeries.add(dataSeriesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
         this.dataSeries = dataSeries;
     }
 
+    
+
     public ListQueryHttpCodeResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -89,6 +88,9 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

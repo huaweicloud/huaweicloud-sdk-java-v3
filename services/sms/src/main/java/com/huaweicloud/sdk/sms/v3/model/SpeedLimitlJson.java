@@ -55,6 +55,8 @@ public class SpeedLimitlJson  {
         this.start = start;
     }
 
+    
+
     public SpeedLimitlJson withEnd(String end) {
         this.end = end;
         return this;
@@ -74,6 +76,8 @@ public class SpeedLimitlJson  {
     public void setEnd(String end) {
         this.end = end;
     }
+
+    
 
     public SpeedLimitlJson withSpeed(Integer speed) {
         this.speed = speed;
@@ -96,6 +100,9 @@ public class SpeedLimitlJson  {
     public void setSpeed(Integer speed) {
         this.speed = speed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,7 +49,7 @@ public class SourceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_info")
     
-    private VideoInfo videoInfo = null;
+    private VideoInfo videoInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,6 +77,8 @@ public class SourceInfo  {
         this.duration = duration;
     }
 
+    
+
     public SourceInfo withDurationMs(Long durationMs) {
         this.durationMs = durationMs;
         return this;
@@ -99,6 +101,8 @@ public class SourceInfo  {
         this.durationMs = durationMs;
     }
 
+    
+
     public SourceInfo withFormat(String format) {
         this.format = format;
         return this;
@@ -118,6 +122,8 @@ public class SourceInfo  {
     public void setFormat(String format) {
         this.format = format;
     }
+
+    
 
     public SourceInfo withSize(Long size) {
         this.size = size;
@@ -140,6 +146,8 @@ public class SourceInfo  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public SourceInfo withVideoInfo(VideoInfo videoInfo) {
         this.videoInfo = videoInfo;
@@ -168,6 +176,8 @@ public class SourceInfo  {
         this.videoInfo = videoInfo;
     }
 
+    
+
     public SourceInfo withAudioInfo(List<AudioInfo> audioInfo) {
         this.audioInfo = audioInfo;
         return this;
@@ -175,9 +185,6 @@ public class SourceInfo  {
 
     
     public SourceInfo addAudioInfoItem(AudioInfo audioInfoItem) {
-        if (this.audioInfo == null) {
-            this.audioInfo = new ArrayList<>();
-        }
         this.audioInfo.add(audioInfoItem);
         return this;
     }
@@ -201,6 +208,9 @@ public class SourceInfo  {
     public void setAudioInfo(List<AudioInfo> audioInfo) {
         this.audioInfo = audioInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

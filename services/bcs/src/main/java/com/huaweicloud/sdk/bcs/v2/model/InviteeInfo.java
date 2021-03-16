@@ -67,6 +67,8 @@ public class InviteeInfo  {
         this.inviteeId = inviteeId;
     }
 
+    
+
     public InviteeInfo withInviteeName(Integer inviteeName) {
         this.inviteeName = inviteeName;
         return this;
@@ -86,6 +88,8 @@ public class InviteeInfo  {
     public void setInviteeName(Integer inviteeName) {
         this.inviteeName = inviteeName;
     }
+
+    
 
     public InviteeInfo withInviteeBcsName(String inviteeBcsName) {
         this.inviteeBcsName = inviteeBcsName;
@@ -107,6 +111,8 @@ public class InviteeInfo  {
         this.inviteeBcsName = inviteeBcsName;
     }
 
+    
+
     public InviteeInfo withInviteeBcsId(String inviteeBcsId) {
         this.inviteeBcsId = inviteeBcsId;
         return this;
@@ -127,6 +133,8 @@ public class InviteeInfo  {
         this.inviteeBcsId = inviteeBcsId;
     }
 
+    
+
     public InviteeInfo withInviteeProjectId(String inviteeProjectId) {
         this.inviteeProjectId = inviteeProjectId;
         return this;
@@ -146,6 +154,9 @@ public class InviteeInfo  {
     public void setInviteeProjectId(String inviteeProjectId) {
         this.inviteeProjectId = inviteeProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

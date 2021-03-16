@@ -55,6 +55,8 @@ public class ShowTrafficResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowTrafficResponse withTrafficInfo(List<TrafficInfo> trafficInfo) {
         this.trafficInfo = trafficInfo;
         return this;
@@ -62,9 +64,6 @@ public class ShowTrafficResponse extends SdkResponse {
 
     
     public ShowTrafficResponse addTrafficInfoItem(TrafficInfo trafficInfoItem) {
-        if (this.trafficInfo == null) {
-            this.trafficInfo = new ArrayList<>();
-        }
         this.trafficInfo.add(trafficInfoItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ShowTrafficResponse extends SdkResponse {
     public void setTrafficInfo(List<TrafficInfo> trafficInfo) {
         this.trafficInfo = trafficInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

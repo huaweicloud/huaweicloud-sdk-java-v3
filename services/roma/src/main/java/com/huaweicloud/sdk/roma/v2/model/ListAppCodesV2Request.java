@@ -33,13 +33,13 @@ public class ListAppCodesV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListAppCodesV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -61,6 +61,8 @@ public class ListAppCodesV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListAppCodesV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -81,6 +83,8 @@ public class ListAppCodesV2Request  {
         this.appId = appId;
     }
 
+    
+
     public ListAppCodesV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -100,6 +104,8 @@ public class ListAppCodesV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListAppCodesV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -122,6 +128,9 @@ public class ListAppCodesV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

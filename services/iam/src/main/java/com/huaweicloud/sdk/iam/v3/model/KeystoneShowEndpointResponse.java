@@ -24,7 +24,7 @@ public class KeystoneShowEndpointResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoint")
     
-    private Endpoint endpoint = null;
+    private Endpoint endpoint;
 
     public KeystoneShowEndpointResponse withEndpoint(Endpoint endpoint) {
         this.endpoint = endpoint;
@@ -52,6 +52,9 @@ public class KeystoneShowEndpointResponse extends SdkResponse {
     public void setEndpoint(Endpoint endpoint) {
         this.endpoint = endpoint;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

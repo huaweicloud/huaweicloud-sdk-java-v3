@@ -49,6 +49,8 @@ public class Scm  {
         this.buildTag = buildTag;
     }
 
+    
+
     public Scm withBuildCommitId(String buildCommitId) {
         this.buildCommitId = buildCommitId;
         return this;
@@ -68,6 +70,9 @@ public class Scm  {
     public void setBuildCommitId(String buildCommitId) {
         this.buildCommitId = buildCommitId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

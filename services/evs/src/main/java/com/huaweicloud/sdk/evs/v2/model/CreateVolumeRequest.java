@@ -22,7 +22,7 @@ public class CreateVolumeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateVolumeRequestBody body = null;
+    private CreateVolumeRequestBody body;
 
     public CreateVolumeRequest withBody(CreateVolumeRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateVolumeRequest  {
     public void setBody(CreateVolumeRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

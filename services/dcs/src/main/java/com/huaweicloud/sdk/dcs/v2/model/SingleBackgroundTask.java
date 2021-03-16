@@ -34,7 +34,7 @@ public class SingleBackgroundTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="details")
     
-    private DetailsBody details = null;
+    private DetailsBody details;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class SingleBackgroundTask  {
         this.id = id;
     }
 
+    
+
     public SingleBackgroundTask withName(String name) {
         this.name = name;
         return this;
@@ -111,6 +113,8 @@ public class SingleBackgroundTask  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SingleBackgroundTask withDetails(DetailsBody details) {
         this.details = details;
@@ -139,6 +143,8 @@ public class SingleBackgroundTask  {
         this.details = details;
     }
 
+    
+
     public SingleBackgroundTask withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -158,6 +164,8 @@ public class SingleBackgroundTask  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public SingleBackgroundTask withUserId(String userId) {
         this.userId = userId;
@@ -179,6 +187,8 @@ public class SingleBackgroundTask  {
         this.userId = userId;
     }
 
+    
+
     public SingleBackgroundTask withParams(String params) {
         this.params = params;
         return this;
@@ -198,6 +208,8 @@ public class SingleBackgroundTask  {
     public void setParams(String params) {
         this.params = params;
     }
+
+    
 
     public SingleBackgroundTask withStatus(String status) {
         this.status = status;
@@ -219,6 +231,8 @@ public class SingleBackgroundTask  {
         this.status = status;
     }
 
+    
+
     public SingleBackgroundTask withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -239,6 +253,8 @@ public class SingleBackgroundTask  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SingleBackgroundTask withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -258,6 +274,9 @@ public class SingleBackgroundTask  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

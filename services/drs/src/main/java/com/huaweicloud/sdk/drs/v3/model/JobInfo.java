@@ -756,6 +756,8 @@ public class JobInfo  {
         this.id = id;
     }
 
+    
+
     public JobInfo withName(String name) {
         this.name = name;
         return this;
@@ -775,6 +777,8 @@ public class JobInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public JobInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -796,6 +800,8 @@ public class JobInfo  {
         this.status = status;
     }
 
+    
+
     public JobInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -815,6 +821,8 @@ public class JobInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public JobInfo withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -836,6 +844,8 @@ public class JobInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public JobInfo withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
         return this;
@@ -855,6 +865,8 @@ public class JobInfo  {
     public void setEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
     }
+
+    
 
     public JobInfo withNetType(NetTypeEnum netType) {
         this.netType = netType;
@@ -876,6 +888,8 @@ public class JobInfo  {
         this.netType = netType;
     }
 
+    
+
     public JobInfo withBillingTag(String billingTag) {
         this.billingTag = billingTag;
         return this;
@@ -895,6 +909,8 @@ public class JobInfo  {
     public void setBillingTag(String billingTag) {
         this.billingTag = billingTag;
     }
+
+    
 
     public JobInfo withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
@@ -916,6 +932,8 @@ public class JobInfo  {
         this.jobDirection = jobDirection;
     }
 
+    
+
     public JobInfo withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
@@ -935,6 +953,8 @@ public class JobInfo  {
     public void setDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
     }
+
+    
 
     public JobInfo withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
@@ -956,6 +976,8 @@ public class JobInfo  {
         this.taskType = taskType;
     }
 
+    
+
     public JobInfo withChildren(List<ChildrenJobInfo> children) {
         this.children = children;
         return this;
@@ -963,9 +985,6 @@ public class JobInfo  {
 
     
     public JobInfo addChildrenItem(ChildrenJobInfo childrenItem) {
-        if (this.children == null) {
-            this.children = new ArrayList<>();
-        }
         this.children.add(childrenItem);
         return this;
     }
@@ -990,6 +1009,8 @@ public class JobInfo  {
         this.children = children;
     }
 
+    
+
     public JobInfo withNodeNewFramework(Boolean nodeNewFramework) {
         this.nodeNewFramework = nodeNewFramework;
         return this;
@@ -1009,6 +1030,9 @@ public class JobInfo  {
     public void setNodeNewFramework(Boolean nodeNewFramework) {
         this.nodeNewFramework = nodeNewFramework;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ListInstanceMetricRequestBody  {
         this.type = type;
     }
 
+    
+
     public ListInstanceMetricRequestBody withEntityName(String entityName) {
         this.entityName = entityName;
         return this;
@@ -75,6 +77,8 @@ public class ListInstanceMetricRequestBody  {
         this.entityName = entityName;
     }
 
+    
+
     public ListInstanceMetricRequestBody withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -94,6 +98,9 @@ public class ListInstanceMetricRequestBody  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

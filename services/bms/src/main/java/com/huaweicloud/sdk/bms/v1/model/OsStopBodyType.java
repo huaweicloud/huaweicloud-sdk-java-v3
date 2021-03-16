@@ -112,7 +112,7 @@ public class OsStopBodyType  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="servers")
     
-    private List<ServersList> servers = new ArrayList<>();
+    private List<ServersList> servers = null;
     
     public OsStopBodyType withType(TypeEnum type) {
         this.type = type;
@@ -133,6 +133,8 @@ public class OsStopBodyType  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public OsStopBodyType withServers(List<ServersList> servers) {
         this.servers = servers;
@@ -164,6 +166,9 @@ public class OsStopBodyType  {
     public void setServers(List<ServersList> servers) {
         this.servers = servers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -109,6 +109,8 @@ public class CertificateDetail  {
         this.id = id;
     }
 
+    
+
     public CertificateDetail withName(String name) {
         this.name = name;
         return this;
@@ -128,6 +130,8 @@ public class CertificateDetail  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CertificateDetail withDomain(String domain) {
         this.domain = domain;
@@ -149,6 +153,8 @@ public class CertificateDetail  {
         this.domain = domain;
     }
 
+    
+
     public CertificateDetail withType(String type) {
         this.type = type;
         return this;
@@ -168,6 +174,8 @@ public class CertificateDetail  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public CertificateDetail withBrand(String brand) {
         this.brand = brand;
@@ -189,6 +197,8 @@ public class CertificateDetail  {
         this.brand = brand;
     }
 
+    
+
     public CertificateDetail withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -208,6 +218,8 @@ public class CertificateDetail  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public CertificateDetail withDomainType(String domainType) {
         this.domainType = domainType;
@@ -229,6 +241,8 @@ public class CertificateDetail  {
         this.domainType = domainType;
     }
 
+    
+
     public CertificateDetail withValidityPeriod(Integer validityPeriod) {
         this.validityPeriod = validityPeriod;
         return this;
@@ -248,6 +262,8 @@ public class CertificateDetail  {
     public void setValidityPeriod(Integer validityPeriod) {
         this.validityPeriod = validityPeriod;
     }
+
+    
 
     public CertificateDetail withStatus(String status) {
         this.status = status;
@@ -269,6 +285,8 @@ public class CertificateDetail  {
         this.status = status;
     }
 
+    
+
     public CertificateDetail withDomainCount(Integer domainCount) {
         this.domainCount = domainCount;
         return this;
@@ -288,6 +306,8 @@ public class CertificateDetail  {
     public void setDomainCount(Integer domainCount) {
         this.domainCount = domainCount;
     }
+
+    
 
     public CertificateDetail withWildcardCount(Integer wildcardCount) {
         this.wildcardCount = wildcardCount;
@@ -309,6 +329,8 @@ public class CertificateDetail  {
         this.wildcardCount = wildcardCount;
     }
 
+    
+
     public CertificateDetail withDescription(String description) {
         this.description = description;
         return this;
@@ -328,6 +350,9 @@ public class CertificateDetail  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

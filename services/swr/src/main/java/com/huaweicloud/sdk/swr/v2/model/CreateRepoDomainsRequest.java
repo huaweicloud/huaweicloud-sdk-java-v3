@@ -34,7 +34,7 @@ public class CreateRepoDomainsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateRepoDomainsRequestBody body = null;
+    private CreateRepoDomainsRequestBody body;
 
     public CreateRepoDomainsRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -56,6 +56,8 @@ public class CreateRepoDomainsRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public CreateRepoDomainsRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class CreateRepoDomainsRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public CreateRepoDomainsRequest withBody(CreateRepoDomainsRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateRepoDomainsRequest  {
     public void setBody(CreateRepoDomainsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

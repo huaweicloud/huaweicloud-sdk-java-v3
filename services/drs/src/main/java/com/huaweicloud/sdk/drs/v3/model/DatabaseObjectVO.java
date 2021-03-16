@@ -49,6 +49,8 @@ public class DatabaseObjectVO  {
         this.id = id;
     }
 
+    
+
     public DatabaseObjectVO withSelect(String select) {
         this.select = select;
         return this;
@@ -68,6 +70,9 @@ public class DatabaseObjectVO  {
     public void setSelect(String select) {
         this.select = select;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

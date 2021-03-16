@@ -29,7 +29,7 @@ public class NeutronListFirewallGroupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,6 +81,8 @@ public class NeutronListFirewallGroupsRequest  {
         this.marker = marker;
     }
 
+    
+
     public NeutronListFirewallGroupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -101,6 +103,8 @@ public class NeutronListFirewallGroupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public NeutronListFirewallGroupsRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -108,9 +112,6 @@ public class NeutronListFirewallGroupsRequest  {
 
     
     public NeutronListFirewallGroupsRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -135,6 +136,8 @@ public class NeutronListFirewallGroupsRequest  {
         this.id = id;
     }
 
+    
+
     public NeutronListFirewallGroupsRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -142,9 +145,6 @@ public class NeutronListFirewallGroupsRequest  {
 
     
     public NeutronListFirewallGroupsRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -169,6 +169,8 @@ public class NeutronListFirewallGroupsRequest  {
         this.name = name;
     }
 
+    
+
     public NeutronListFirewallGroupsRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -176,9 +178,6 @@ public class NeutronListFirewallGroupsRequest  {
 
     
     public NeutronListFirewallGroupsRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -203,6 +202,8 @@ public class NeutronListFirewallGroupsRequest  {
         this.description = description;
     }
 
+    
+
     public NeutronListFirewallGroupsRequest withIngressFirewallPolicyId(String ingressFirewallPolicyId) {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
         return this;
@@ -223,6 +224,8 @@ public class NeutronListFirewallGroupsRequest  {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
     }
 
+    
+
     public NeutronListFirewallGroupsRequest withEgressFirewallPolicyId(String egressFirewallPolicyId) {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
         return this;
@@ -242,6 +245,9 @@ public class NeutronListFirewallGroupsRequest  {
     public void setEgressFirewallPolicyId(String egressFirewallPolicyId) {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class DeviceGroupResponseDTO  {
         this.groupId = groupId;
     }
 
+    
+
     public DeviceGroupResponseDTO withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class DeviceGroupResponseDTO  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public DeviceGroupResponseDTO withDescription(String description) {
         this.description = description;
@@ -101,6 +105,8 @@ public class DeviceGroupResponseDTO  {
         this.description = description;
     }
 
+    
+
     public DeviceGroupResponseDTO withSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
         return this;
@@ -120,6 +126,9 @@ public class DeviceGroupResponseDTO  {
     public void setSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

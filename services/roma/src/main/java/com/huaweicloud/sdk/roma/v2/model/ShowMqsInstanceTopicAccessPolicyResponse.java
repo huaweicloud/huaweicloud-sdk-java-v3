@@ -72,6 +72,8 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyResponse withPolicies(List<ShowMqsInstanceTopicAccessPolicyRespPolicies> policies) {
         this.policies = policies;
         return this;
@@ -79,9 +81,6 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
 
     
     public ShowMqsInstanceTopicAccessPolicyResponse addPoliciesItem(ShowMqsInstanceTopicAccessPolicyRespPolicies policiesItem) {
-        if (this.policies == null) {
-            this.policies = new ArrayList<>();
-        }
         this.policies.add(policiesItem);
         return this;
     }
@@ -106,6 +105,8 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         this.policies = policies;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -125,6 +126,8 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
 
     public ShowMqsInstanceTopicAccessPolicyResponse withSize(Integer size) {
         this.size = size;
@@ -146,6 +149,8 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyResponse withOperation(String operation) {
         this.operation = operation;
         return this;
@@ -165,6 +170,9 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
     public void setOperation(String operation) {
         this.operation = operation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

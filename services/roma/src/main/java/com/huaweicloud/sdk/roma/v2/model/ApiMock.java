@@ -57,7 +57,7 @@ public class ApiMock  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
     /**
      * 后端状态   - 1： 有效
      */
@@ -141,7 +141,7 @@ public class ApiMock  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public ApiMock withRemark(String remark) {
         this.remark = remark;
@@ -163,6 +163,8 @@ public class ApiMock  {
         this.remark = remark;
     }
 
+    
+
     public ApiMock withResultContent(String resultContent) {
         this.resultContent = resultContent;
         return this;
@@ -182,6 +184,8 @@ public class ApiMock  {
     public void setResultContent(String resultContent) {
         this.resultContent = resultContent;
     }
+
+    
 
     public ApiMock withVersion(String version) {
         this.version = version;
@@ -203,6 +207,8 @@ public class ApiMock  {
         this.version = version;
     }
 
+    
+
     public ApiMock withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -222,6 +228,8 @@ public class ApiMock  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
 
     public ApiMock withId(String id) {
         this.id = id;
@@ -243,6 +251,8 @@ public class ApiMock  {
         this.id = id;
     }
 
+    
+
     public ApiMock withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -262,6 +272,8 @@ public class ApiMock  {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public ApiMock withStatus(StatusEnum status) {
         this.status = status;
@@ -283,6 +295,8 @@ public class ApiMock  {
         this.status = status;
     }
 
+    
+
     public ApiMock withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -302,6 +316,9 @@ public class ApiMock  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

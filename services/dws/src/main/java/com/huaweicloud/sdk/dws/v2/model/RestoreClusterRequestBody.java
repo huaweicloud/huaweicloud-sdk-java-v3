@@ -22,7 +22,7 @@ public class RestoreClusterRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore")
     
-    private Restore restore = null;
+    private Restore restore;
 
     public RestoreClusterRequestBody withRestore(Restore restore) {
         this.restore = restore;
@@ -50,6 +50,9 @@ public class RestoreClusterRequestBody  {
     public void setRestore(Restore restore) {
         this.restore = restore;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

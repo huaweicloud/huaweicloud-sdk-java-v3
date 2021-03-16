@@ -110,19 +110,19 @@ public class Audio  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_policy")
     
-    private OutputPolicyEnum outputPolicy = OutputPolicyEnum.TRANSCODE;
+    private OutputPolicyEnum outputPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="codec")
     
-    private Integer codec = 1;
+    private Integer codec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sample_rate")
     
-    private Integer sampleRate = 1;
+    private Integer sampleRate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -156,6 +156,8 @@ public class Audio  {
         this.outputPolicy = outputPolicy;
     }
 
+    
+
     public Audio withCodec(Integer codec) {
         this.codec = codec;
         return this;
@@ -177,6 +179,8 @@ public class Audio  {
     public void setCodec(Integer codec) {
         this.codec = codec;
     }
+
+    
 
     public Audio withSampleRate(Integer sampleRate) {
         this.sampleRate = sampleRate;
@@ -200,6 +204,8 @@ public class Audio  {
         this.sampleRate = sampleRate;
     }
 
+    
+
     public Audio withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
@@ -222,6 +228,8 @@ public class Audio  {
         this.bitrate = bitrate;
     }
 
+    
+
     public Audio withChannels(Integer channels) {
         this.channels = channels;
         return this;
@@ -243,6 +251,9 @@ public class Audio  {
     public void setChannels(Integer channels) {
         this.channels = channels;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

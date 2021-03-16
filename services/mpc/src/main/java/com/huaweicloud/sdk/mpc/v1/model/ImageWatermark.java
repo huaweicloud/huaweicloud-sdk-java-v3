@@ -26,13 +26,13 @@ public class ImageWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dx")
     
-    private String dx = "0";
+    private String dx;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dy")
     
-    private String dy = "0";
+    private String dy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,7 +44,7 @@ public class ImageWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeline_start")
     
-    private String timelineStart = "0";
+    private String timelineStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -152,7 +152,7 @@ public class ImageWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base")
     
-    private BaseEnum base = BaseEnum.INPUT;
+    private BaseEnum base;
 
     public ImageWatermark withDx(String dx) {
         this.dx = dx;
@@ -174,6 +174,8 @@ public class ImageWatermark  {
         this.dx = dx;
     }
 
+    
+
     public ImageWatermark withDy(String dy) {
         this.dy = dy;
         return this;
@@ -193,6 +195,8 @@ public class ImageWatermark  {
     public void setDy(String dy) {
         this.dy = dy;
     }
+
+    
 
     public ImageWatermark withReferpos(String referpos) {
         this.referpos = referpos;
@@ -214,6 +218,8 @@ public class ImageWatermark  {
         this.referpos = referpos;
     }
 
+    
+
     public ImageWatermark withTimelineStart(String timelineStart) {
         this.timelineStart = timelineStart;
         return this;
@@ -233,6 +239,8 @@ public class ImageWatermark  {
     public void setTimelineStart(String timelineStart) {
         this.timelineStart = timelineStart;
     }
+
+    
 
     public ImageWatermark withTimelineDuration(String timelineDuration) {
         this.timelineDuration = timelineDuration;
@@ -254,6 +262,8 @@ public class ImageWatermark  {
         this.timelineDuration = timelineDuration;
     }
 
+    
+
     public ImageWatermark withImageProcess(String imageProcess) {
         this.imageProcess = imageProcess;
         return this;
@@ -273,6 +283,8 @@ public class ImageWatermark  {
     public void setImageProcess(String imageProcess) {
         this.imageProcess = imageProcess;
     }
+
+    
 
     public ImageWatermark withWidth(String width) {
         this.width = width;
@@ -294,6 +306,8 @@ public class ImageWatermark  {
         this.width = width;
     }
 
+    
+
     public ImageWatermark withHeight(String height) {
         this.height = height;
         return this;
@@ -314,6 +328,8 @@ public class ImageWatermark  {
         this.height = height;
     }
 
+    
+
     public ImageWatermark withBase(BaseEnum base) {
         this.base = base;
         return this;
@@ -333,6 +349,9 @@ public class ImageWatermark  {
     public void setBase(BaseEnum base) {
         this.base = base;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -143,6 +143,8 @@ public class AssetJobReason  {
         this.resourceType = resourceType;
     }
 
+    
+
     public AssetJobReason withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -162,6 +164,8 @@ public class AssetJobReason  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public AssetJobReason withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -183,6 +187,8 @@ public class AssetJobReason  {
         this.errorCode = errorCode;
     }
 
+    
+
     public AssetJobReason withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -202,6 +208,9 @@ public class AssetJobReason  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

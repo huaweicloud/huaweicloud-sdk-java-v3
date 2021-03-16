@@ -52,7 +52,7 @@ public class ModifyInstanceBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_backup_policy")
     
-    private BackupPolicy instanceBackupPolicy = null;
+    private BackupPolicy instanceBackupPolicy;
 
     public ModifyInstanceBody withName(String name) {
         this.name = name;
@@ -74,6 +74,8 @@ public class ModifyInstanceBody  {
         this.name = name;
     }
 
+    
+
     public ModifyInstanceBody withDescription(String description) {
         this.description = description;
         return this;
@@ -93,6 +95,8 @@ public class ModifyInstanceBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ModifyInstanceBody withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
@@ -114,6 +118,8 @@ public class ModifyInstanceBody  {
         this.maintainBegin = maintainBegin;
     }
 
+    
+
     public ModifyInstanceBody withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
         return this;
@@ -134,6 +140,8 @@ public class ModifyInstanceBody  {
         this.maintainEnd = maintainEnd;
     }
 
+    
+
     public ModifyInstanceBody withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -153,6 +161,8 @@ public class ModifyInstanceBody  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public ModifyInstanceBody withInstanceBackupPolicy(BackupPolicy instanceBackupPolicy) {
         this.instanceBackupPolicy = instanceBackupPolicy;
@@ -180,6 +190,9 @@ public class ModifyInstanceBody  {
     public void setInstanceBackupPolicy(BackupPolicy instanceBackupPolicy) {
         this.instanceBackupPolicy = instanceBackupPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

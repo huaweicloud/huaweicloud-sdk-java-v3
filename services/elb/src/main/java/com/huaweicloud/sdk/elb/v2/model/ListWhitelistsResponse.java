@@ -35,9 +35,6 @@ public class ListWhitelistsResponse extends SdkResponse {
 
     
     public ListWhitelistsResponse addWhitelistsItem(WhitelistResp whitelistsItem) {
-        if (this.whitelists == null) {
-            this.whitelists = new ArrayList<>();
-        }
         this.whitelists.add(whitelistsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListWhitelistsResponse extends SdkResponse {
     public void setWhitelists(List<WhitelistResp> whitelists) {
         this.whitelists = whitelists;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

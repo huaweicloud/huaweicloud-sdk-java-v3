@@ -61,6 +61,8 @@ public class Reference  {
         this.title = title;
     }
 
+    
+
     public Reference withUrl(String url) {
         this.url = url;
         return this;
@@ -80,6 +82,8 @@ public class Reference  {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
 
     public Reference withType(Integer type) {
         this.type = type;
@@ -101,6 +105,8 @@ public class Reference  {
         this.type = type;
     }
 
+    
+
     public Reference withProductshort(String productshort) {
         this.productshort = productshort;
         return this;
@@ -120,6 +126,9 @@ public class Reference  {
     public void setProductshort(String productshort) {
         this.productshort = productshort;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -235,6 +235,8 @@ public class UpdateRuleRequestBody  {
         this.name = name;
     }
 
+    
+
     public UpdateRuleRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -254,6 +256,8 @@ public class UpdateRuleRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateRuleRequestBody withStatus(StatusEnum status) {
         this.status = status;
@@ -275,6 +279,8 @@ public class UpdateRuleRequestBody  {
         this.status = status;
     }
 
+    
+
     public UpdateRuleRequestBody withDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
         return this;
@@ -294,6 +300,8 @@ public class UpdateRuleRequestBody  {
     public void setDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
     }
+
+    
 
     public UpdateRuleRequestBody withSqlField(String sqlField) {
         this.sqlField = sqlField;
@@ -315,6 +323,8 @@ public class UpdateRuleRequestBody  {
         this.sqlField = sqlField;
     }
 
+    
+
     public UpdateRuleRequestBody withSqlWhere(String sqlWhere) {
         this.sqlWhere = sqlWhere;
         return this;
@@ -334,6 +344,9 @@ public class UpdateRuleRequestBody  {
     public void setSqlWhere(String sqlWhere) {
         this.sqlWhere = sqlWhere;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

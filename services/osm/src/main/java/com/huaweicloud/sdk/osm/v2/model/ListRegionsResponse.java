@@ -56,6 +56,8 @@ public class ListRegionsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListRegionsResponse withDataCenterList(List<DataCenterV2Do> dataCenterList) {
         this.dataCenterList = dataCenterList;
         return this;
@@ -63,9 +65,6 @@ public class ListRegionsResponse extends SdkResponse {
 
     
     public ListRegionsResponse addDataCenterListItem(DataCenterV2Do dataCenterListItem) {
-        if (this.dataCenterList == null) {
-            this.dataCenterList = new ArrayList<>();
-        }
         this.dataCenterList.add(dataCenterListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListRegionsResponse extends SdkResponse {
     public void setDataCenterList(List<DataCenterV2Do> dataCenterList) {
         this.dataCenterList = dataCenterList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

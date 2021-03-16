@@ -49,6 +49,8 @@ public class DeleteApiGroupV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteApiGroupV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteApiGroupV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListConfigurationsResponse extends SdkResponse {
 
     
     public ListConfigurationsResponse addConfigurationsItem(ConfigurationSummary configurationsItem) {
-        if (this.configurations == null) {
-            this.configurations = new ArrayList<>();
-        }
         this.configurations.add(configurationsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListConfigurationsResponse extends SdkResponse {
     public void setConfigurations(List<ConfigurationSummary> configurations) {
         this.configurations = configurations;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

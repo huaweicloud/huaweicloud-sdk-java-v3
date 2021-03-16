@@ -77,6 +77,8 @@ public class UpdateUserReq  {
         this.jobId = jobId;
     }
 
+    
+
     public UpdateUserReq withPassword(String password) {
         this.password = password;
         return this;
@@ -97,6 +99,8 @@ public class UpdateUserReq  {
         this.password = password;
     }
 
+    
+
     public UpdateUserReq withList(List<UserAccountVO> list) {
         this.list = list;
         return this;
@@ -104,9 +108,6 @@ public class UpdateUserReq  {
 
     
     public UpdateUserReq addListItem(UserAccountVO listItem) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
-        }
         this.list.add(listItem);
         return this;
     }
@@ -131,6 +132,8 @@ public class UpdateUserReq  {
         this.list = list;
     }
 
+    
+
     public UpdateUserReq withUserRoles(List<UserRoleVO> userRoles) {
         this.userRoles = userRoles;
         return this;
@@ -138,9 +141,6 @@ public class UpdateUserReq  {
 
     
     public UpdateUserReq addUserRolesItem(UserRoleVO userRolesItem) {
-        if (this.userRoles == null) {
-            this.userRoles = new ArrayList<>();
-        }
         this.userRoles.add(userRolesItem);
         return this;
     }
@@ -165,6 +165,8 @@ public class UpdateUserReq  {
         this.userRoles = userRoles;
     }
 
+    
+
     public UpdateUserReq withIsSetPassword(Boolean isSetPassword) {
         this.isSetPassword = isSetPassword;
         return this;
@@ -185,6 +187,8 @@ public class UpdateUserReq  {
         this.isSetPassword = isSetPassword;
     }
 
+    
+
     public UpdateUserReq withIsMigrateUser(Boolean isMigrateUser) {
         this.isMigrateUser = isMigrateUser;
         return this;
@@ -204,6 +208,9 @@ public class UpdateUserReq  {
     public void setIsMigrateUser(Boolean isMigrateUser) {
         this.isMigrateUser = isMigrateUser;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

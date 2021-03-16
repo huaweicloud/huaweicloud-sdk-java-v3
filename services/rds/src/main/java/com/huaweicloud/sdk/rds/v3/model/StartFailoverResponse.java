@@ -57,6 +57,8 @@ public class StartFailoverResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public StartFailoverResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -77,6 +79,8 @@ public class StartFailoverResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
+    
+
     public StartFailoverResponse withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
         return this;
@@ -96,6 +100,9 @@ public class StartFailoverResponse extends SdkResponse {
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

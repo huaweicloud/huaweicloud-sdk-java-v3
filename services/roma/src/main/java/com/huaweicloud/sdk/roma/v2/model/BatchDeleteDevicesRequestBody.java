@@ -23,7 +23,7 @@ public class BatchDeleteDevicesRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private List<Integer> resources = new ArrayList<>();
+    private List<Integer> resources = null;
     
     public BatchDeleteDevicesRequestBody withResources(List<Integer> resources) {
         this.resources = resources;
@@ -55,6 +55,9 @@ public class BatchDeleteDevicesRequestBody  {
     public void setResources(List<Integer> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

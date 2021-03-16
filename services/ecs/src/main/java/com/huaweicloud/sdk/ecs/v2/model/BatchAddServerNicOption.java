@@ -49,7 +49,7 @@ public class BatchAddServerNicOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_bandwidth")
     
-    private Ipv6Bandwidth ipv6Bandwidth = null;
+    private Ipv6Bandwidth ipv6Bandwidth;
 
     public BatchAddServerNicOption withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -71,6 +71,8 @@ public class BatchAddServerNicOption  {
         this.subnetId = subnetId;
     }
 
+    
+
     public BatchAddServerNicOption withSecurityGroups(List<ServerNicSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -78,9 +80,6 @@ public class BatchAddServerNicOption  {
 
     
     public BatchAddServerNicOption addSecurityGroupsItem(ServerNicSecurityGroup securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -105,6 +104,8 @@ public class BatchAddServerNicOption  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public BatchAddServerNicOption withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -125,6 +126,8 @@ public class BatchAddServerNicOption  {
         this.ipAddress = ipAddress;
     }
 
+    
+
     public BatchAddServerNicOption withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -144,6 +147,8 @@ public class BatchAddServerNicOption  {
     public void setIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
     }
+
+    
 
     public BatchAddServerNicOption withIpv6Bandwidth(Ipv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
@@ -171,6 +176,9 @@ public class BatchAddServerNicOption  {
     public void setIpv6Bandwidth(Ipv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

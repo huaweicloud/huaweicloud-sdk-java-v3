@@ -49,6 +49,8 @@ public class TargetServerById  {
         this.name = name;
     }
 
+    
+
     public TargetServerById withVmId(String vmId) {
         this.vmId = vmId;
         return this;
@@ -68,6 +70,9 @@ public class TargetServerById  {
     public void setVmId(String vmId) {
         this.vmId = vmId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

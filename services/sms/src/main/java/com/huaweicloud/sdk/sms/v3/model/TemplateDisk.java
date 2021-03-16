@@ -63,6 +63,8 @@ public class TemplateDisk  {
         this.index = index;
     }
 
+    
+
     public TemplateDisk withName(String name) {
         this.name = name;
         return this;
@@ -83,6 +85,8 @@ public class TemplateDisk  {
         this.name = name;
     }
 
+    
+
     public TemplateDisk withDisktype(String disktype) {
         this.disktype = disktype;
         return this;
@@ -102,6 +106,8 @@ public class TemplateDisk  {
     public void setDisktype(String disktype) {
         this.disktype = disktype;
     }
+
+    
 
     public TemplateDisk withSize(Long size) {
         this.size = size;
@@ -124,6 +130,9 @@ public class TemplateDisk  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

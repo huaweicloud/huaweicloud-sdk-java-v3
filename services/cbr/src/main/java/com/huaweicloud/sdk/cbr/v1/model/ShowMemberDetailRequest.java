@@ -49,6 +49,8 @@ public class ShowMemberDetailRequest  {
         this.backupId = backupId;
     }
 
+    
+
     public ShowMemberDetailRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
@@ -68,6 +70,9 @@ public class ShowMemberDetailRequest  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

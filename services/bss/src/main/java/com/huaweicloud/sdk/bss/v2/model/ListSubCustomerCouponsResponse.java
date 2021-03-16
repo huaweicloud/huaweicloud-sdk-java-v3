@@ -54,6 +54,8 @@ public class ListSubCustomerCouponsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListSubCustomerCouponsResponse withUserCoupons(List<IQueryUserCouponsResultV2> userCoupons) {
         this.userCoupons = userCoupons;
         return this;
@@ -61,9 +63,6 @@ public class ListSubCustomerCouponsResponse extends SdkResponse {
 
     
     public ListSubCustomerCouponsResponse addUserCouponsItem(IQueryUserCouponsResultV2 userCouponsItem) {
-        if (this.userCoupons == null) {
-            this.userCoupons = new ArrayList<>();
-        }
         this.userCoupons.add(userCouponsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListSubCustomerCouponsResponse extends SdkResponse {
     public void setUserCoupons(List<IQueryUserCouponsResultV2> userCoupons) {
         this.userCoupons = userCoupons;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ShowResourceTagRequest  {
         this.resourceType = resourceType;
     }
 
+    
+
     public ShowResourceTagRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -68,6 +70,9 @@ public class ShowResourceTagRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class TokenUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private TokenUserDomainResult domain = null;
+    private TokenUserDomainResult domain;
 
     public TokenUserResult withName(String name) {
         this.name = name;
@@ -62,6 +62,8 @@ public class TokenUserResult  {
         this.name = name;
     }
 
+    
+
     public TokenUserResult withId(String id) {
         this.id = id;
         return this;
@@ -82,6 +84,8 @@ public class TokenUserResult  {
         this.id = id;
     }
 
+    
+
     public TokenUserResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -101,6 +105,8 @@ public class TokenUserResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
 
     public TokenUserResult withDomain(TokenUserDomainResult domain) {
         this.domain = domain;
@@ -128,6 +134,9 @@ public class TokenUserResult  {
     public void setDomain(TokenUserDomainResult domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

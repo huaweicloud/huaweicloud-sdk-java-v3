@@ -28,7 +28,7 @@ public class UpdateDomainApiAclPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDomainApiAclPolicyRequestBody body = null;
+    private UpdateDomainApiAclPolicyRequestBody body;
 
     public UpdateDomainApiAclPolicyRequest withDomainId(String domainId) {
         this.domainId = domainId;
@@ -49,6 +49,8 @@ public class UpdateDomainApiAclPolicyRequest  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public UpdateDomainApiAclPolicyRequest withBody(UpdateDomainApiAclPolicyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateDomainApiAclPolicyRequest  {
     public void setBody(UpdateDomainApiAclPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

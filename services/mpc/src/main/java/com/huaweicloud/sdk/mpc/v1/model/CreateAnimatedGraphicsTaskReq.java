@@ -24,13 +24,13 @@ public class CreateAnimatedGraphicsTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,15 +40,9 @@ public class CreateAnimatedGraphicsTaskReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync")
-    
-    private Integer sync = 0;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_param")
     
-    private AnimatedGraphicsOutputParam outputParam = null;
+    private AnimatedGraphicsOutputParam outputParam;
 
     public CreateAnimatedGraphicsTaskReq withInput(ObsObjInfo input) {
         this.input = input;
@@ -77,6 +71,8 @@ public class CreateAnimatedGraphicsTaskReq  {
         this.input = input;
     }
 
+    
+
     public CreateAnimatedGraphicsTaskReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -104,6 +100,8 @@ public class CreateAnimatedGraphicsTaskReq  {
         this.output = output;
     }
 
+    
+
     public CreateAnimatedGraphicsTaskReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -124,27 +122,7 @@ public class CreateAnimatedGraphicsTaskReq  {
         this.userData = userData;
     }
 
-    public CreateAnimatedGraphicsTaskReq withSync(Integer sync) {
-        this.sync = sync;
-        return this;
-    }
-
     
-
-
-    /**
-     * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
-     * minimum: 0
-     * maximum: 2
-     * @return sync
-     */
-    public Integer getSync() {
-        return sync;
-    }
-
-    public void setSync(Integer sync) {
-        this.sync = sync;
-    }
 
     public CreateAnimatedGraphicsTaskReq withOutputParam(AnimatedGraphicsOutputParam outputParam) {
         this.outputParam = outputParam;
@@ -172,6 +150,9 @@ public class CreateAnimatedGraphicsTaskReq  {
     public void setOutputParam(AnimatedGraphicsOutputParam outputParam) {
         this.outputParam = outputParam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -184,12 +165,11 @@ public class CreateAnimatedGraphicsTaskReq  {
         return Objects.equals(this.input, createAnimatedGraphicsTaskReq.input) &&
             Objects.equals(this.output, createAnimatedGraphicsTaskReq.output) &&
             Objects.equals(this.userData, createAnimatedGraphicsTaskReq.userData) &&
-            Objects.equals(this.sync, createAnimatedGraphicsTaskReq.sync) &&
             Objects.equals(this.outputParam, createAnimatedGraphicsTaskReq.outputParam);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, userData, sync, outputParam);
+        return Objects.hash(input, output, userData, outputParam);
     }
     @Override
     public String toString() {
@@ -198,7 +178,6 @@ public class CreateAnimatedGraphicsTaskReq  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-        sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -22,7 +22,7 @@ public class CreatePredefineTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ReqCreatePredefineTag body = null;
+    private ReqCreatePredefineTag body;
 
     public CreatePredefineTagsRequest withBody(ReqCreatePredefineTag body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePredefineTagsRequest  {
     public void setBody(ReqCreatePredefineTag body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

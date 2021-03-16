@@ -31,13 +31,13 @@ public class TagResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    private ResourceDetail resourceDetail = null;
+    private ResourceDetail resourceDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ResourceTag> tags = new ArrayList<>();
+    private List<ResourceTag> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,6 +65,8 @@ public class TagResource  {
         this.resourceId = resourceId;
     }
 
+    
+
     public TagResource withResourceDetail(ResourceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
@@ -91,6 +93,8 @@ public class TagResource  {
     public void setResourceDetail(ResourceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
+
+    
 
     public TagResource withTags(List<ResourceTag> tags) {
         this.tags = tags;
@@ -123,6 +127,8 @@ public class TagResource  {
         this.tags = tags;
     }
 
+    
+
     public TagResource withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -142,6 +148,9 @@ public class TagResource  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

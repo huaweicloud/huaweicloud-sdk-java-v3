@@ -230,7 +230,7 @@ public class ApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -458,13 +458,13 @@ public class ApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -800,13 +800,13 @@ public class ApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -818,7 +818,7 @@ public class ApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_version")
     
-    private String groupVersion = "V1";
+    private String groupVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -854,13 +854,13 @@ public class ApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_info")
     
-    private ApiFunc funcInfo = null;
+    private ApiFunc funcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mock_info")
     
-    private ApiMock mockInfo = null;
+    private ApiMock mockInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -890,7 +890,7 @@ public class ApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backend_api")
     
-    private BackendApi backendApi = null;
+    private BackendApi backendApi;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -918,6 +918,8 @@ public class ApiInfo  {
         this.name = name;
     }
 
+    
+
     public ApiInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -937,6 +939,8 @@ public class ApiInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ApiInfo withVersion(String version) {
         this.version = version;
@@ -958,6 +962,8 @@ public class ApiInfo  {
         this.version = version;
     }
 
+    
+
     public ApiInfo withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -977,6 +983,8 @@ public class ApiInfo  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiInfo withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -998,6 +1006,8 @@ public class ApiInfo  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -1018,6 +1028,8 @@ public class ApiInfo  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiInfo withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -1037,6 +1049,8 @@ public class ApiInfo  {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ApiInfo withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -1065,6 +1079,8 @@ public class ApiInfo  {
         this.authOpt = authOpt;
     }
 
+    
+
     public ApiInfo withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -1084,6 +1100,8 @@ public class ApiInfo  {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ApiInfo withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -1105,6 +1123,8 @@ public class ApiInfo  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiInfo withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -1124,6 +1144,8 @@ public class ApiInfo  {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ApiInfo withRemark(String remark) {
         this.remark = remark;
@@ -1145,6 +1167,8 @@ public class ApiInfo  {
         this.remark = remark;
     }
 
+    
+
     public ApiInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1164,6 +1188,8 @@ public class ApiInfo  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiInfo withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1185,6 +1211,8 @@ public class ApiInfo  {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ApiInfo withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1204,6 +1232,8 @@ public class ApiInfo  {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ApiInfo withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1225,6 +1255,8 @@ public class ApiInfo  {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ApiInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1245,6 +1277,8 @@ public class ApiInfo  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiInfo withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1252,9 +1286,6 @@ public class ApiInfo  {
 
     
     public ApiInfo addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1279,6 +1310,8 @@ public class ApiInfo  {
         this.tags = tags;
     }
 
+    
+
     public ApiInfo withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1298,6 +1331,8 @@ public class ApiInfo  {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ApiInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1319,6 +1354,8 @@ public class ApiInfo  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiInfo withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1338,6 +1375,8 @@ public class ApiInfo  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public ApiInfo withTag(String tag) {
         this.tag = tag;
@@ -1359,6 +1398,8 @@ public class ApiInfo  {
         this.tag = tag;
     }
 
+    
+
     public ApiInfo withId(String id) {
         this.id = id;
         return this;
@@ -1378,6 +1419,8 @@ public class ApiInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ApiInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -1399,6 +1442,8 @@ public class ApiInfo  {
         this.status = status;
     }
 
+    
+
     public ApiInfo withArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
         return this;
@@ -1418,6 +1463,8 @@ public class ApiInfo  {
     public void setArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
     }
+
+    
 
     public ApiInfo withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -1439,6 +1486,8 @@ public class ApiInfo  {
         this.registerTime = registerTime;
     }
 
+    
+
     public ApiInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -1458,6 +1507,8 @@ public class ApiInfo  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ApiInfo withGroupName(String groupName) {
         this.groupName = groupName;
@@ -1479,6 +1530,8 @@ public class ApiInfo  {
         this.groupName = groupName;
     }
 
+    
+
     public ApiInfo withGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
         return this;
@@ -1498,6 +1551,8 @@ public class ApiInfo  {
     public void setGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
     }
+
+    
 
     public ApiInfo withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -1519,6 +1574,8 @@ public class ApiInfo  {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public ApiInfo withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -1538,6 +1595,8 @@ public class ApiInfo  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public ApiInfo withPublishId(String publishId) {
         this.publishId = publishId;
@@ -1559,6 +1618,8 @@ public class ApiInfo  {
         this.publishId = publishId;
     }
 
+    
+
     public ApiInfo withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -1579,6 +1640,8 @@ public class ApiInfo  {
         this.romaAppName = romaAppName;
     }
 
+    
+
     public ApiInfo withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -1598,6 +1661,8 @@ public class ApiInfo  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public ApiInfo withFuncInfo(ApiFunc funcInfo) {
         this.funcInfo = funcInfo;
@@ -1626,6 +1691,8 @@ public class ApiInfo  {
         this.funcInfo = funcInfo;
     }
 
+    
+
     public ApiInfo withMockInfo(ApiMock mockInfo) {
         this.mockInfo = mockInfo;
         return this;
@@ -1653,6 +1720,8 @@ public class ApiInfo  {
         this.mockInfo = mockInfo;
     }
 
+    
+
     public ApiInfo withReqParams(List<ReqParam> reqParams) {
         this.reqParams = reqParams;
         return this;
@@ -1660,9 +1729,6 @@ public class ApiInfo  {
 
     
     public ApiInfo addReqParamsItem(ReqParam reqParamsItem) {
-        if (this.reqParams == null) {
-            this.reqParams = new ArrayList<>();
-        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
@@ -1687,6 +1753,8 @@ public class ApiInfo  {
         this.reqParams = reqParams;
     }
 
+    
+
     public ApiInfo withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -1694,9 +1762,6 @@ public class ApiInfo  {
 
     
     public ApiInfo addBackendParamsItem(BackendParam backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -1721,6 +1786,8 @@ public class ApiInfo  {
         this.backendParams = backendParams;
     }
 
+    
+
     public ApiInfo withPolicyFunctions(List<ApiPolicyFunctionResp> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
@@ -1728,9 +1795,6 @@ public class ApiInfo  {
 
     
     public ApiInfo addPolicyFunctionsItem(ApiPolicyFunctionResp policyFunctionsItem) {
-        if (this.policyFunctions == null) {
-            this.policyFunctions = new ArrayList<>();
-        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
@@ -1755,6 +1819,8 @@ public class ApiInfo  {
         this.policyFunctions = policyFunctions;
     }
 
+    
+
     public ApiInfo withPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
@@ -1762,9 +1828,6 @@ public class ApiInfo  {
 
     
     public ApiInfo addPolicyMocksItem(ApiPolicyMockResp policyMocksItem) {
-        if (this.policyMocks == null) {
-            this.policyMocks = new ArrayList<>();
-        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
@@ -1788,6 +1851,8 @@ public class ApiInfo  {
     public void setPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
     }
+
+    
 
     public ApiInfo withBackendApi(BackendApi backendApi) {
         this.backendApi = backendApi;
@@ -1816,6 +1881,8 @@ public class ApiInfo  {
         this.backendApi = backendApi;
     }
 
+    
+
     public ApiInfo withPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
@@ -1823,9 +1890,6 @@ public class ApiInfo  {
 
     
     public ApiInfo addPolicyHttpsItem(ApiPolicyHttpResp policyHttpsItem) {
-        if (this.policyHttps == null) {
-            this.policyHttps = new ArrayList<>();
-        }
         this.policyHttps.add(policyHttpsItem);
         return this;
     }
@@ -1849,6 +1913,9 @@ public class ApiInfo  {
     public void setPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

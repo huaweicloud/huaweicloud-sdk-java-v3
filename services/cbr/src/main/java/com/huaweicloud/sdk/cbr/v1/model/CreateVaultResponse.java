@@ -24,7 +24,7 @@ public class CreateVaultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vault")
     
-    private Vault vault = null;
+    private Vault vault;
 
     public CreateVaultResponse withVault(Vault vault) {
         this.vault = vault;
@@ -52,6 +52,9 @@ public class CreateVaultResponse extends SdkResponse {
     public void setVault(Vault vault) {
         this.vault = vault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

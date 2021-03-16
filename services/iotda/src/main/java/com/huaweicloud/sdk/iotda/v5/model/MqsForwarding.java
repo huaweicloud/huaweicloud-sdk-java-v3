@@ -68,6 +68,8 @@ public class MqsForwarding  {
         this.url = url;
     }
 
+    
+
     public MqsForwarding withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -87,6 +89,8 @@ public class MqsForwarding  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public MqsForwarding withPassword(String password) {
         this.password = password;
@@ -108,6 +112,8 @@ public class MqsForwarding  {
         this.password = password;
     }
 
+    
+
     public MqsForwarding withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -128,6 +134,8 @@ public class MqsForwarding  {
         this.topic = topic;
     }
 
+    
+
     public MqsForwarding withEncryptTransport(Boolean encryptTransport) {
         this.encryptTransport = encryptTransport;
         return this;
@@ -147,6 +155,9 @@ public class MqsForwarding  {
     public void setEncryptTransport(Boolean encryptTransport) {
         this.encryptTransport = encryptTransport;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class TokenRole  {
         this.name = name;
     }
 
+    
+
     public TokenRole withId(String id) {
         this.id = id;
         return this;
@@ -68,6 +70,9 @@ public class TokenRole  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,19 +27,19 @@ public class SearchRecordingsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queryAll")
     
-    private Boolean queryAll = false;
+    private Boolean queryAll;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class SearchRecordingsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sortType")
     
-    private String sortType = "DSC_StartTIME";
+    private String sortType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +97,8 @@ public class SearchRecordingsRequest  {
         this.userUUID = userUUID;
     }
 
+    
+
     public SearchRecordingsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -116,6 +118,8 @@ public class SearchRecordingsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchRecordingsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -137,6 +141,8 @@ public class SearchRecordingsRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchRecordingsRequest withQueryAll(Boolean queryAll) {
         this.queryAll = queryAll;
         return this;
@@ -156,6 +162,8 @@ public class SearchRecordingsRequest  {
     public void setQueryAll(Boolean queryAll) {
         this.queryAll = queryAll;
     }
+
+    
 
     public SearchRecordingsRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
@@ -177,6 +185,8 @@ public class SearchRecordingsRequest  {
         this.searchKey = searchKey;
     }
 
+    
+
     public SearchRecordingsRequest withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
@@ -196,6 +206,8 @@ public class SearchRecordingsRequest  {
     public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
+
+    
 
     public SearchRecordingsRequest withEndDate(Long endDate) {
         this.endDate = endDate;
@@ -217,6 +229,8 @@ public class SearchRecordingsRequest  {
         this.endDate = endDate;
     }
 
+    
+
     public SearchRecordingsRequest withSortType(String sortType) {
         this.sortType = sortType;
         return this;
@@ -236,6 +250,8 @@ public class SearchRecordingsRequest  {
     public void setSortType(String sortType) {
         this.sortType = sortType;
     }
+
+    
 
     public SearchRecordingsRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -259,6 +275,8 @@ public class SearchRecordingsRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public SearchRecordingsRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -280,6 +298,9 @@ public class SearchRecordingsRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

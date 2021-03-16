@@ -117,6 +117,8 @@ public class ListPoolsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -136,6 +138,8 @@ public class ListPoolsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListPoolsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
@@ -157,6 +161,8 @@ public class ListPoolsRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListPoolsRequest withId(String id) {
         this.id = id;
         return this;
@@ -176,6 +182,8 @@ public class ListPoolsRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListPoolsRequest withName(String name) {
         this.name = name;
@@ -197,6 +205,8 @@ public class ListPoolsRequest  {
         this.name = name;
     }
 
+    
+
     public ListPoolsRequest withDescription(String description) {
         this.description = description;
         return this;
@@ -216,6 +226,8 @@ public class ListPoolsRequest  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ListPoolsRequest withHealthmonitorId(String healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
@@ -237,6 +249,8 @@ public class ListPoolsRequest  {
         this.healthmonitorId = healthmonitorId;
     }
 
+    
+
     public ListPoolsRequest withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
@@ -256,6 +270,8 @@ public class ListPoolsRequest  {
     public void setLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
     }
+
+    
 
     public ListPoolsRequest withProtocol(String protocol) {
         this.protocol = protocol;
@@ -277,6 +293,8 @@ public class ListPoolsRequest  {
         this.protocol = protocol;
     }
 
+    
+
     public ListPoolsRequest withLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
         return this;
@@ -296,6 +314,8 @@ public class ListPoolsRequest  {
     public void setLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
     }
+
+    
 
     public ListPoolsRequest withMemberAddress(String memberAddress) {
         this.memberAddress = memberAddress;
@@ -317,6 +337,8 @@ public class ListPoolsRequest  {
         this.memberAddress = memberAddress;
     }
 
+    
+
     public ListPoolsRequest withMemberDeviceId(String memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
         return this;
@@ -337,6 +359,8 @@ public class ListPoolsRequest  {
         this.memberDeviceId = memberDeviceId;
     }
 
+    
+
     public ListPoolsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -356,6 +380,9 @@ public class ListPoolsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

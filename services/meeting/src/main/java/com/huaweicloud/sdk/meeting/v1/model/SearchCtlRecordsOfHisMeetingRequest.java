@@ -27,13 +27,13 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Accept-Language")
     
-    private String acceptLanguage = "zh-CN";
+    private String acceptLanguage;
 
     public SearchCtlRecordsOfHisMeetingRequest withConfUUID(String confUUID) {
         this.confUUID = confUUID;
@@ -79,6 +79,8 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
         this.confUUID = confUUID;
     }
 
+    
+
     public SearchCtlRecordsOfHisMeetingRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -98,6 +100,8 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchCtlRecordsOfHisMeetingRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -119,6 +123,8 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchCtlRecordsOfHisMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -138,6 +144,8 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public SearchCtlRecordsOfHisMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -161,6 +169,8 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public SearchCtlRecordsOfHisMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -183,6 +193,8 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
         this.xSiteId = xSiteId;
     }
 
+    
+
     public SearchCtlRecordsOfHisMeetingRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -202,6 +214,9 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

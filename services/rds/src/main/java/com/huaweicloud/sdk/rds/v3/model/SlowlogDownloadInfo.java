@@ -79,6 +79,8 @@ public class SlowlogDownloadInfo  {
         this.workflowId = workflowId;
     }
 
+    
+
     public SlowlogDownloadInfo withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -98,6 +100,8 @@ public class SlowlogDownloadInfo  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public SlowlogDownloadInfo withStatus(String status) {
         this.status = status;
@@ -119,6 +123,8 @@ public class SlowlogDownloadInfo  {
         this.status = status;
     }
 
+    
+
     public SlowlogDownloadInfo withFileSize(String fileSize) {
         this.fileSize = fileSize;
         return this;
@@ -138,6 +144,8 @@ public class SlowlogDownloadInfo  {
     public void setFileSize(String fileSize) {
         this.fileSize = fileSize;
     }
+
+    
 
     public SlowlogDownloadInfo withFileLink(String fileLink) {
         this.fileLink = fileLink;
@@ -159,6 +167,8 @@ public class SlowlogDownloadInfo  {
         this.fileLink = fileLink;
     }
 
+    
+
     public SlowlogDownloadInfo withCreateAt(Long createAt) {
         this.createAt = createAt;
         return this;
@@ -179,6 +189,8 @@ public class SlowlogDownloadInfo  {
         this.createAt = createAt;
     }
 
+    
+
     public SlowlogDownloadInfo withUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
         return this;
@@ -198,6 +210,9 @@ public class SlowlogDownloadInfo  {
     public void setUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

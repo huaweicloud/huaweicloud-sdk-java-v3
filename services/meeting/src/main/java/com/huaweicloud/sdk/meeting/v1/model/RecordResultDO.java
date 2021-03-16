@@ -105,6 +105,8 @@ public class RecordResultDO  {
         this.confUUID = confUUID;
     }
 
+    
+
     public RecordResultDO withConfID(String confID) {
         this.confID = confID;
         return this;
@@ -125,6 +127,8 @@ public class RecordResultDO  {
         this.confID = confID;
     }
 
+    
+
     public RecordResultDO withUrl(List<String> url) {
         this.url = url;
         return this;
@@ -132,9 +136,6 @@ public class RecordResultDO  {
 
     
     public RecordResultDO addUrlItem(String urlItem) {
-        if (this.url == null) {
-            this.url = new ArrayList<>();
-        }
         this.url.add(urlItem);
         return this;
     }
@@ -159,6 +160,8 @@ public class RecordResultDO  {
         this.url = url;
     }
 
+    
+
     public RecordResultDO withRcdTime(Integer rcdTime) {
         this.rcdTime = rcdTime;
         return this;
@@ -178,6 +181,8 @@ public class RecordResultDO  {
     public void setRcdTime(Integer rcdTime) {
         this.rcdTime = rcdTime;
     }
+
+    
 
     public RecordResultDO withRcdSize(Integer rcdSize) {
         this.rcdSize = rcdSize;
@@ -199,6 +204,8 @@ public class RecordResultDO  {
         this.rcdSize = rcdSize;
     }
 
+    
+
     public RecordResultDO withSubject(String subject) {
         this.subject = subject;
         return this;
@@ -218,6 +225,8 @@ public class RecordResultDO  {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+    
 
     public RecordResultDO withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
@@ -239,6 +248,8 @@ public class RecordResultDO  {
         this.scheduserName = scheduserName;
     }
 
+    
+
     public RecordResultDO withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -258,6 +269,8 @@ public class RecordResultDO  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public RecordResultDO withIsDecodeFinish(Boolean isDecodeFinish) {
         this.isDecodeFinish = isDecodeFinish;
@@ -279,6 +292,8 @@ public class RecordResultDO  {
         this.isDecodeFinish = isDecodeFinish;
     }
 
+    
+
     public RecordResultDO withDecodeEndTime(Long decodeEndTime) {
         this.decodeEndTime = decodeEndTime;
         return this;
@@ -299,6 +314,8 @@ public class RecordResultDO  {
         this.decodeEndTime = decodeEndTime;
     }
 
+    
+
     public RecordResultDO withAvailable(Boolean available) {
         this.available = available;
         return this;
@@ -318,6 +335,9 @@ public class RecordResultDO  {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

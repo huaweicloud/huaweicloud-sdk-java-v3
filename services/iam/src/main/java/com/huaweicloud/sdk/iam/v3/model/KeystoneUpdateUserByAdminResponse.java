@@ -24,7 +24,7 @@ public class KeystoneUpdateUserByAdminResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private KeystoneUpdateUserByAdminResult user = null;
+    private KeystoneUpdateUserByAdminResult user;
 
     public KeystoneUpdateUserByAdminResponse withUser(KeystoneUpdateUserByAdminResult user) {
         this.user = user;
@@ -52,6 +52,9 @@ public class KeystoneUpdateUserByAdminResponse extends SdkResponse {
     public void setUser(KeystoneUpdateUserByAdminResult user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

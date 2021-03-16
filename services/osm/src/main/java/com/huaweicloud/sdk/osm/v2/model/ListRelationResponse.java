@@ -35,9 +35,6 @@ public class ListRelationResponse extends SdkResponse {
 
     
     public ListRelationResponse addCaseRelationListItem(CaseRealtionInfo caseRelationListItem) {
-        if (this.caseRelationList == null) {
-            this.caseRelationList = new ArrayList<>();
-        }
         this.caseRelationList.add(caseRelationListItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListRelationResponse extends SdkResponse {
     public void setCaseRelationList(List<CaseRealtionInfo> caseRelationList) {
         this.caseRelationList = caseRelationList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

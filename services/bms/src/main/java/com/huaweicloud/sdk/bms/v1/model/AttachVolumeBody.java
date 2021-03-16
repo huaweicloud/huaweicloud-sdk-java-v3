@@ -22,7 +22,7 @@ public class AttachVolumeBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumeAttachment")
     
-    private VolumeAttachment volumeAttachment = null;
+    private VolumeAttachment volumeAttachment;
 
     public AttachVolumeBody withVolumeAttachment(VolumeAttachment volumeAttachment) {
         this.volumeAttachment = volumeAttachment;
@@ -50,6 +50,9 @@ public class AttachVolumeBody  {
     public void setVolumeAttachment(VolumeAttachment volumeAttachment) {
         this.volumeAttachment = volumeAttachment;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

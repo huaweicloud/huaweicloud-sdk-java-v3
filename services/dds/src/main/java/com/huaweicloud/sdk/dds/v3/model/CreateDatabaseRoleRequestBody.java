@@ -58,6 +58,8 @@ public class CreateDatabaseRoleRequestBody  {
         this.roleName = roleName;
     }
 
+    
+
     public CreateDatabaseRoleRequestBody withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -78,6 +80,8 @@ public class CreateDatabaseRoleRequestBody  {
         this.dbName = dbName;
     }
 
+    
+
     public CreateDatabaseRoleRequestBody withRoles(List<RolesOption> roles) {
         this.roles = roles;
         return this;
@@ -85,9 +89,6 @@ public class CreateDatabaseRoleRequestBody  {
 
     
     public CreateDatabaseRoleRequestBody addRolesItem(RolesOption rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class CreateDatabaseRoleRequestBody  {
     public void setRoles(List<RolesOption> roles) {
         this.roles = roles;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class DeleteRepoTagRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public DeleteRepoTagRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class DeleteRepoTagRequest  {
         this.repository = repository;
     }
 
+    
+
     public DeleteRepoTagRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -94,6 +98,9 @@ public class DeleteRepoTagRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

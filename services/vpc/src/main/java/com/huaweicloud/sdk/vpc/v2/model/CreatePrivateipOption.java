@@ -49,6 +49,8 @@ public class CreatePrivateipOption  {
         this.subnetId = subnetId;
     }
 
+    
+
     public CreatePrivateipOption withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
@@ -68,6 +70,9 @@ public class CreatePrivateipOption  {
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,6 +57,8 @@ public class ShowDeviceDetailRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowDeviceDetailRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class ShowDeviceDetailRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ShowDeviceDetailRequest withSn(String sn) {
         this.sn = sn;
         return this;
@@ -96,6 +100,9 @@ public class ShowDeviceDetailRequest  {
     public void setSn(String sn) {
         this.sn = sn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

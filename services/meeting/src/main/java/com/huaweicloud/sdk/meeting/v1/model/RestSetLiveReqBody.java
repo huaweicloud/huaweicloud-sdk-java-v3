@@ -21,7 +21,7 @@ public class RestSetLiveReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isLive")
     
-    private Integer isLive = 0;
+    private Integer isLive;
 
     public RestSetLiveReqBody withIsLive(Integer isLive) {
         this.isLive = isLive;
@@ -42,6 +42,9 @@ public class RestSetLiveReqBody  {
     public void setIsLive(Integer isLive) {
         this.isLive = isLive;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

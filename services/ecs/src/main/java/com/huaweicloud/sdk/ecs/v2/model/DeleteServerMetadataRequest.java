@@ -49,6 +49,8 @@ public class DeleteServerMetadataRequest  {
         this.key = key;
     }
 
+    
+
     public DeleteServerMetadataRequest withServerId(String serverId) {
         this.serverId = serverId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteServerMetadataRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

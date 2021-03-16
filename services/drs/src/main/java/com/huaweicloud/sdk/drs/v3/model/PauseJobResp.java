@@ -61,6 +61,8 @@ public class PauseJobResp  {
         this.id = id;
     }
 
+    
+
     public PauseJobResp withStatus(String status) {
         this.status = status;
         return this;
@@ -80,6 +82,8 @@ public class PauseJobResp  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public PauseJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -101,6 +105,8 @@ public class PauseJobResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public PauseJobResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -120,6 +126,9 @@ public class PauseJobResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

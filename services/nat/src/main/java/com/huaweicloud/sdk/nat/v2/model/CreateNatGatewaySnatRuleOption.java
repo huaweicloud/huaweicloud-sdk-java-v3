@@ -45,7 +45,7 @@ public class CreateNatGatewaySnatRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_type")
     
-    private Integer sourceType = 0;
+    private Integer sourceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class CreateNatGatewaySnatRuleOption  {
         this.natGatewayId = natGatewayId;
     }
 
+    
+
     public CreateNatGatewaySnatRuleOption withCidr(String cidr) {
         this.cidr = cidr;
         return this;
@@ -92,6 +94,8 @@ public class CreateNatGatewaySnatRuleOption  {
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
+
+    
 
     public CreateNatGatewaySnatRuleOption withNetworkId(String networkId) {
         this.networkId = networkId;
@@ -113,6 +117,8 @@ public class CreateNatGatewaySnatRuleOption  {
         this.networkId = networkId;
     }
 
+    
+
     public CreateNatGatewaySnatRuleOption withDescription(String description) {
         this.description = description;
         return this;
@@ -132,6 +138,8 @@ public class CreateNatGatewaySnatRuleOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateNatGatewaySnatRuleOption withSourceType(Integer sourceType) {
         this.sourceType = sourceType;
@@ -153,6 +161,8 @@ public class CreateNatGatewaySnatRuleOption  {
         this.sourceType = sourceType;
     }
 
+    
+
     public CreateNatGatewaySnatRuleOption withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
@@ -172,6 +182,9 @@ public class CreateNatGatewaySnatRuleOption  {
     public void setFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

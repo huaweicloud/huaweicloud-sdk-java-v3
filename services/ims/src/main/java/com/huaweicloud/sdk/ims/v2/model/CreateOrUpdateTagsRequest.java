@@ -22,7 +22,7 @@ public class CreateOrUpdateTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddOrUpdateTagsRequestBody body = null;
+    private AddOrUpdateTagsRequestBody body;
 
     public CreateOrUpdateTagsRequest withBody(AddOrUpdateTagsRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateOrUpdateTagsRequest  {
     public void setBody(AddOrUpdateTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

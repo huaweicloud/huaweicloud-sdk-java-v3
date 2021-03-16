@@ -22,7 +22,7 @@ public class RollbackSnapshotRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rollback")
     
-    private RollbackSnapshotOption rollback = null;
+    private RollbackSnapshotOption rollback;
 
     public RollbackSnapshotRequestBody withRollback(RollbackSnapshotOption rollback) {
         this.rollback = rollback;
@@ -50,6 +50,9 @@ public class RollbackSnapshotRequestBody  {
     public void setRollback(RollbackSnapshotOption rollback) {
         this.rollback = rollback;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

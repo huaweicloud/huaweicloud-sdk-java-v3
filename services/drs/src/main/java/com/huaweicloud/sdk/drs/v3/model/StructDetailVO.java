@@ -67,6 +67,8 @@ public class StructDetailVO  {
         this.progress = progress;
     }
 
+    
+
     public StructDetailVO withSrcDB(String srcDB) {
         this.srcDB = srcDB;
         return this;
@@ -86,6 +88,8 @@ public class StructDetailVO  {
     public void setSrcDB(String srcDB) {
         this.srcDB = srcDB;
     }
+
+    
 
     public StructDetailVO withSrcTB(String srcTB) {
         this.srcTB = srcTB;
@@ -107,6 +111,8 @@ public class StructDetailVO  {
         this.srcTB = srcTB;
     }
 
+    
+
     public StructDetailVO withDstDB(String dstDB) {
         this.dstDB = dstDB;
         return this;
@@ -127,6 +133,8 @@ public class StructDetailVO  {
         this.dstDB = dstDB;
     }
 
+    
+
     public StructDetailVO withDstTB(String dstTB) {
         this.dstTB = dstTB;
         return this;
@@ -146,6 +154,9 @@ public class StructDetailVO  {
     public void setDstTB(String dstTB) {
         this.dstTB = dstTB;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

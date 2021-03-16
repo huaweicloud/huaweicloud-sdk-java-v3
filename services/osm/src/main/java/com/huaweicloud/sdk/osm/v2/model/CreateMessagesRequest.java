@@ -46,7 +46,7 @@ public class CreateMessagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateMessageV2Req body = null;
+    private CreateMessageV2Req body;
 
     public CreateMessagesRequest withCaseId(String caseId) {
         this.caseId = caseId;
@@ -67,6 +67,8 @@ public class CreateMessagesRequest  {
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
+
+    
 
     public CreateMessagesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -92,6 +94,8 @@ public class CreateMessagesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public CreateMessagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -114,6 +118,8 @@ public class CreateMessagesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CreateMessagesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -135,6 +141,8 @@ public class CreateMessagesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public CreateMessagesRequest withBody(CreateMessageV2Req body) {
         this.body = body;
@@ -162,6 +170,9 @@ public class CreateMessagesRequest  {
     public void setBody(CreateMessageV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

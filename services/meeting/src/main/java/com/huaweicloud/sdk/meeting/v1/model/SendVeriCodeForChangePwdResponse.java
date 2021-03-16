@@ -57,6 +57,8 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
         this.expire = expire;
     }
 
+    
+
     public SendVeriCodeForChangePwdResponse withBindPhone(String bindPhone) {
         this.bindPhone = bindPhone;
         return this;
@@ -77,6 +79,8 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
         this.bindPhone = bindPhone;
     }
 
+    
+
     public SendVeriCodeForChangePwdResponse withBindEmail(String bindEmail) {
         this.bindEmail = bindEmail;
         return this;
@@ -96,6 +100,9 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
     public void setBindEmail(String bindEmail) {
         this.bindEmail = bindEmail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

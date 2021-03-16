@@ -199,7 +199,7 @@ public class DomainSourceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_type")
     
-    private SourceTypeEnum sourceType = SourceTypeEnum.HUAWEI;
+    private SourceTypeEnum sourceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -289,7 +289,7 @@ public class DomainSourceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sources_priority")
     
-    private SourcesPriorityEnum sourcesPriority = SourcesPriorityEnum.FIRST;
+    private SourcesPriorityEnum sourcesPriority;
 
     public DomainSourceInfo withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
@@ -311,6 +311,8 @@ public class DomainSourceInfo  {
         this.protocol = protocol;
     }
 
+    
+
     public DomainSourceInfo withSourceType(SourceTypeEnum sourceType) {
         this.sourceType = sourceType;
         return this;
@@ -331,6 +333,8 @@ public class DomainSourceInfo  {
         this.sourceType = sourceType;
     }
 
+    
+
     public DomainSourceInfo withSources(List<String> sources) {
         this.sources = sources;
         return this;
@@ -338,9 +342,6 @@ public class DomainSourceInfo  {
 
     
     public DomainSourceInfo addSourcesItem(String sourcesItem) {
-        if (this.sources == null) {
-            this.sources = new ArrayList<>();
-        }
         this.sources.add(sourcesItem);
         return this;
     }
@@ -365,6 +366,8 @@ public class DomainSourceInfo  {
         this.sources = sources;
     }
 
+    
+
     public DomainSourceInfo withSourcesPriority(SourcesPriorityEnum sourcesPriority) {
         this.sourcesPriority = sourcesPriority;
         return this;
@@ -384,6 +387,9 @@ public class DomainSourceInfo  {
     public void setSourcesPriority(SourcesPriorityEnum sourcesPriority) {
         this.sourcesPriority = sourcesPriority;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

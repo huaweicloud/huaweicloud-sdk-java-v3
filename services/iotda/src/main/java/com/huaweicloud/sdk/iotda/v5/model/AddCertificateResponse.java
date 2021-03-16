@@ -87,6 +87,8 @@ public class AddCertificateResponse extends SdkResponse {
         this.certificateId = certificateId;
     }
 
+    
+
     public AddCertificateResponse withCnName(String cnName) {
         this.cnName = cnName;
         return this;
@@ -106,6 +108,8 @@ public class AddCertificateResponse extends SdkResponse {
     public void setCnName(String cnName) {
         this.cnName = cnName;
     }
+
+    
 
     public AddCertificateResponse withOwner(String owner) {
         this.owner = owner;
@@ -127,6 +131,8 @@ public class AddCertificateResponse extends SdkResponse {
         this.owner = owner;
     }
 
+    
+
     public AddCertificateResponse withStatus(Boolean status) {
         this.status = status;
         return this;
@@ -146,6 +152,8 @@ public class AddCertificateResponse extends SdkResponse {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+
+    
 
     public AddCertificateResponse withVerifyCode(String verifyCode) {
         this.verifyCode = verifyCode;
@@ -167,6 +175,8 @@ public class AddCertificateResponse extends SdkResponse {
         this.verifyCode = verifyCode;
     }
 
+    
+
     public AddCertificateResponse withCreateDate(String createDate) {
         this.createDate = createDate;
         return this;
@@ -186,6 +196,8 @@ public class AddCertificateResponse extends SdkResponse {
     public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
+
+    
 
     public AddCertificateResponse withEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -207,6 +219,8 @@ public class AddCertificateResponse extends SdkResponse {
         this.effectiveDate = effectiveDate;
     }
 
+    
+
     public AddCertificateResponse withExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
         return this;
@@ -226,6 +240,9 @@ public class AddCertificateResponse extends SdkResponse {
     public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

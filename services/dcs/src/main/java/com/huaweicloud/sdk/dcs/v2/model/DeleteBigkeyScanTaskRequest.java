@@ -49,6 +49,8 @@ public class DeleteBigkeyScanTaskRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteBigkeyScanTaskRequest withBigkeyId(String bigkeyId) {
         this.bigkeyId = bigkeyId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteBigkeyScanTaskRequest  {
     public void setBigkeyId(String bigkeyId) {
         this.bigkeyId = bigkeyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

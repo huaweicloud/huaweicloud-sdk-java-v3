@@ -54,6 +54,8 @@ public class ShowDeviceShadowResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
+    
+
     public ShowDeviceShadowResponse withShadow(List<DeviceShadowData> shadow) {
         this.shadow = shadow;
         return this;
@@ -61,9 +63,6 @@ public class ShowDeviceShadowResponse extends SdkResponse {
 
     
     public ShowDeviceShadowResponse addShadowItem(DeviceShadowData shadowItem) {
-        if (this.shadow == null) {
-            this.shadow = new ArrayList<>();
-        }
         this.shadow.add(shadowItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ShowDeviceShadowResponse extends SdkResponse {
     public void setShadow(List<DeviceShadowData> shadow) {
         this.shadow = shadow;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

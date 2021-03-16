@@ -22,7 +22,7 @@ public class RemovePublicipsFromSharedBandwidthRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private RemoveFromSharedBandwidthOption bandwidth = null;
+    private RemoveFromSharedBandwidthOption bandwidth;
 
     public RemovePublicipsFromSharedBandwidthRequestBody withBandwidth(RemoveFromSharedBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -50,6 +50,9 @@ public class RemovePublicipsFromSharedBandwidthRequestBody  {
     public void setBandwidth(RemoveFromSharedBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

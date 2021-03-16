@@ -33,13 +33,13 @@ public class SearchCorpDirRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,13 +57,13 @@ public class SearchCorpDirRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="querySubDept")
     
-    private Boolean querySubDept = true;
+    private Boolean querySubDept;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="searchScope")
     
-    private String searchScope = "ALL";
+    private String searchScope;
 
     public SearchCorpDirRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -87,6 +87,8 @@ public class SearchCorpDirRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchCorpDirRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -106,6 +108,8 @@ public class SearchCorpDirRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public SearchCorpDirRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -127,6 +131,8 @@ public class SearchCorpDirRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchCorpDirRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -150,6 +156,8 @@ public class SearchCorpDirRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchCorpDirRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -169,6 +177,8 @@ public class SearchCorpDirRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public SearchCorpDirRequest withDeptCode(String deptCode) {
         this.deptCode = deptCode;
@@ -190,6 +200,8 @@ public class SearchCorpDirRequest  {
         this.deptCode = deptCode;
     }
 
+    
+
     public SearchCorpDirRequest withQuerySubDept(Boolean querySubDept) {
         this.querySubDept = querySubDept;
         return this;
@@ -210,6 +222,8 @@ public class SearchCorpDirRequest  {
         this.querySubDept = querySubDept;
     }
 
+    
+
     public SearchCorpDirRequest withSearchScope(String searchScope) {
         this.searchScope = searchScope;
         return this;
@@ -229,6 +243,9 @@ public class SearchCorpDirRequest  {
     public void setSearchScope(String searchScope) {
         this.searchScope = searchScope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

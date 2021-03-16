@@ -55,6 +55,8 @@ public class V3NodeBandwidth  {
         this.chargemode = chargemode;
     }
 
+    
+
     public V3NodeBandwidth withSharetype(String sharetype) {
         this.sharetype = sharetype;
         return this;
@@ -75,6 +77,8 @@ public class V3NodeBandwidth  {
         this.sharetype = sharetype;
     }
 
+    
+
     public V3NodeBandwidth withSize(String size) {
         this.size = size;
         return this;
@@ -94,6 +98,9 @@ public class V3NodeBandwidth  {
     public void setSize(String size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

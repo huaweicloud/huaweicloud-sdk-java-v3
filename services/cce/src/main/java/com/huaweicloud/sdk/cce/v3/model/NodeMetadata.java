@@ -64,9 +64,6 @@ public class NodeMetadata  {
     
 
     public NodeMetadata putAnnotationsItem(String key, String annotationsItem) {
-         if (this.annotations == null) {
-            this.annotations = new HashMap<>();
-         }
         this.annotations.put(key, annotationsItem);
         return this;
     }
@@ -90,6 +87,8 @@ public class NodeMetadata  {
         this.annotations = annotations;
     }
 
+    
+
     public NodeMetadata withCreationTimestamp(String creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
         return this;
@@ -110,6 +109,8 @@ public class NodeMetadata  {
         this.creationTimestamp = creationTimestamp;
     }
 
+    
+
     public NodeMetadata withLabels(Map<String, String> labels) {
         this.labels = labels;
         return this;
@@ -118,9 +119,6 @@ public class NodeMetadata  {
     
 
     public NodeMetadata putLabelsItem(String key, String labelsItem) {
-         if (this.labels == null) {
-            this.labels = new HashMap<>();
-         }
         this.labels.put(key, labelsItem);
         return this;
     }
@@ -144,6 +142,8 @@ public class NodeMetadata  {
         this.labels = labels;
     }
 
+    
+
     public NodeMetadata withName(String name) {
         this.name = name;
         return this;
@@ -163,6 +163,8 @@ public class NodeMetadata  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NodeMetadata withUid(String uid) {
         this.uid = uid;
@@ -184,6 +186,8 @@ public class NodeMetadata  {
         this.uid = uid;
     }
 
+    
+
     public NodeMetadata withUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
         return this;
@@ -203,6 +207,9 @@ public class NodeMetadata  {
     public void setUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

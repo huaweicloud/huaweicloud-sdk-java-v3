@@ -143,6 +143,8 @@ public class DownloadBlockchainCertRequest  {
         this.blockchainId = blockchainId;
     }
 
+    
+
     public DownloadBlockchainCertRequest withOrgName(String orgName) {
         this.orgName = orgName;
         return this;
@@ -163,6 +165,8 @@ public class DownloadBlockchainCertRequest  {
         this.orgName = orgName;
     }
 
+    
+
     public DownloadBlockchainCertRequest withCertType(CertTypeEnum certType) {
         this.certType = certType;
         return this;
@@ -182,6 +186,9 @@ public class DownloadBlockchainCertRequest  {
     public void setCertType(CertTypeEnum certType) {
         this.certType = certType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

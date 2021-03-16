@@ -104,13 +104,13 @@ public class BatchListRposAndRtosRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchQueryRpoAndRtoReq body = null;
+    private BatchQueryRpoAndRtoReq body;
 
     public BatchListRposAndRtosRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchListRposAndRtosRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchListRposAndRtosRequest withBody(BatchQueryRpoAndRtoReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchListRposAndRtosRequest  {
     public void setBody(BatchQueryRpoAndRtoReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

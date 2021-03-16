@@ -34,7 +34,7 @@ public class UpdatePwdRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModPwdReqDTO body = null;
+    private ModPwdReqDTO body;
 
     public UpdatePwdRequest withXRequestID(String xRequestID) {
         this.xRequestID = xRequestID;
@@ -58,6 +58,8 @@ public class UpdatePwdRequest  {
         this.xRequestID = xRequestID;
     }
 
+    
+
     public UpdatePwdRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class UpdatePwdRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public UpdatePwdRequest withBody(ModPwdReqDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class UpdatePwdRequest  {
     public void setBody(ModPwdReqDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

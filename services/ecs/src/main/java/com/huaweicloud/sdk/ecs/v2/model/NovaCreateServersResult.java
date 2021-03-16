@@ -35,13 +35,13 @@ public class NovaCreateServersResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<NovaLink> links = new ArrayList<>();
+    private List<NovaLink> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<NovaServerSecurityGroup> securityGroups = new ArrayList<>();
+    private List<NovaServerSecurityGroup> securityGroups = null;
         /**
      * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
      */
@@ -159,6 +159,8 @@ public class NovaCreateServersResult  {
         this.id = id;
     }
 
+    
+
     public NovaCreateServersResult withLinks(List<NovaLink> links) {
         this.links = links;
         return this;
@@ -189,6 +191,8 @@ public class NovaCreateServersResult  {
     public void setLinks(List<NovaLink> links) {
         this.links = links;
     }
+
+    
 
     public NovaCreateServersResult withSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
@@ -221,6 +225,8 @@ public class NovaCreateServersResult  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public NovaCreateServersResult withOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
@@ -240,6 +246,8 @@ public class NovaCreateServersResult  {
     public void setOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
+
+    
 
     public NovaCreateServersResult withReservationId(String reservationId) {
         this.reservationId = reservationId;
@@ -261,6 +269,8 @@ public class NovaCreateServersResult  {
         this.reservationId = reservationId;
     }
 
+    
+
     public NovaCreateServersResult withAdminPass(String adminPass) {
         this.adminPass = adminPass;
         return this;
@@ -280,6 +290,9 @@ public class NovaCreateServersResult  {
     public void setAdminPass(String adminPass) {
         this.adminPass = adminPass;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

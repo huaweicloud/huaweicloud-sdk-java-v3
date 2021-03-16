@@ -46,7 +46,7 @@ public class BasicTaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class BasicTaskInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public BasicTaskInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -93,6 +95,8 @@ public class BasicTaskInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public BasicTaskInfo withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -114,6 +118,8 @@ public class BasicTaskInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public BasicTaskInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -133,6 +139,8 @@ public class BasicTaskInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public BasicTaskInfo withOutput(ObsObjInfo output) {
         this.output = output;
@@ -161,6 +169,8 @@ public class BasicTaskInfo  {
         this.output = output;
     }
 
+    
+
     public BasicTaskInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -180,6 +190,9 @@ public class BasicTaskInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

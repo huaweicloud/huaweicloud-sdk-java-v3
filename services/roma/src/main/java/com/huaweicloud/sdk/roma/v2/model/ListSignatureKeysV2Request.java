@@ -39,13 +39,13 @@ public class ListSignatureKeysV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class ListSignatureKeysV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListSignatureKeysV2Request withId(String id) {
         this.id = id;
         return this;
@@ -92,6 +94,8 @@ public class ListSignatureKeysV2Request  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListSignatureKeysV2Request withName(String name) {
         this.name = name;
@@ -113,6 +117,8 @@ public class ListSignatureKeysV2Request  {
         this.name = name;
     }
 
+    
+
     public ListSignatureKeysV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -132,6 +138,8 @@ public class ListSignatureKeysV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListSignatureKeysV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -155,6 +163,8 @@ public class ListSignatureKeysV2Request  {
         this.limit = limit;
     }
 
+    
+
     public ListSignatureKeysV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -174,6 +184,9 @@ public class ListSignatureKeysV2Request  {
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

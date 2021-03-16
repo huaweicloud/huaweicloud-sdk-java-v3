@@ -36,7 +36,7 @@ public class RunTestCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_detail")
     
-    private ErrorDetailInfo errorDetail = null;
+    private ErrorDetailInfo errorDetail;
 
     public RunTestCaseResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -58,6 +58,8 @@ public class RunTestCaseResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public RunTestCaseResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -77,6 +79,8 @@ public class RunTestCaseResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
 
     public RunTestCaseResponse withErrorDetail(ErrorDetailInfo errorDetail) {
         this.errorDetail = errorDetail;
@@ -104,6 +108,9 @@ public class RunTestCaseResponse extends SdkResponse {
     public void setErrorDetail(ErrorDetailInfo errorDetail) {
         this.errorDetail = errorDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

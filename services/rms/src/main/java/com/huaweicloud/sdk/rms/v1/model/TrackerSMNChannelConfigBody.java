@@ -55,6 +55,8 @@ public class TrackerSMNChannelConfigBody  {
         this.regionId = regionId;
     }
 
+    
+
     public TrackerSMNChannelConfigBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -75,6 +77,8 @@ public class TrackerSMNChannelConfigBody  {
         this.projectId = projectId;
     }
 
+    
+
     public TrackerSMNChannelConfigBody withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -94,6 +98,9 @@ public class TrackerSMNChannelConfigBody  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

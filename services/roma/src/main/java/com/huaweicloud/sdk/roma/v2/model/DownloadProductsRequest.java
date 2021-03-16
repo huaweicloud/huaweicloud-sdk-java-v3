@@ -49,6 +49,8 @@ public class DownloadProductsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DownloadProductsRequest withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -70,6 +72,9 @@ public class DownloadProductsRequest  {
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

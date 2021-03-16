@@ -247,6 +247,8 @@ public class JobRecords  {
         this.jobName = jobName;
     }
 
+    
+
     public JobRecords withRecordType(RecordTypeEnum recordType) {
         this.recordType = recordType;
         return this;
@@ -266,6 +268,8 @@ public class JobRecords  {
     public void setRecordType(RecordTypeEnum recordType) {
         this.recordType = recordType;
     }
+
+    
 
     public JobRecords withRecordTime(String recordTime) {
         this.recordTime = recordTime;
@@ -287,6 +291,8 @@ public class JobRecords  {
         this.recordTime = recordTime;
     }
 
+    
+
     public JobRecords withRequest(String request) {
         this.request = request;
         return this;
@@ -306,6 +312,8 @@ public class JobRecords  {
     public void setRequest(String request) {
         this.request = request;
     }
+
+    
 
     public JobRecords withResponse(String response) {
         this.response = response;
@@ -327,6 +335,8 @@ public class JobRecords  {
         this.response = response;
     }
 
+    
+
     public JobRecords withCode(Integer code) {
         this.code = code;
         return this;
@@ -346,6 +356,8 @@ public class JobRecords  {
     public void setCode(Integer code) {
         this.code = code;
     }
+
+    
 
     public JobRecords withMessage(String message) {
         this.message = message;
@@ -367,6 +379,8 @@ public class JobRecords  {
         this.message = message;
     }
 
+    
+
     public JobRecords withJobStatus(JobStatusEnum jobStatus) {
         this.jobStatus = jobStatus;
         return this;
@@ -386,6 +400,9 @@ public class JobRecords  {
     public void setJobStatus(JobStatusEnum jobStatus) {
         this.jobStatus = jobStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class ClassroomCard  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit")
     
-    private BigDecimal credit = null;
+    private BigDecimal credit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class ClassroomCard  {
         this.classroomId = classroomId;
     }
 
+    
+
     public ClassroomCard withName(String name) {
         this.name = name;
         return this;
@@ -87,6 +89,8 @@ public class ClassroomCard  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ClassroomCard withDescription(String description) {
         this.description = description;
@@ -108,6 +112,8 @@ public class ClassroomCard  {
         this.description = description;
     }
 
+    
+
     public ClassroomCard withCredit(BigDecimal credit) {
         this.credit = credit;
         return this;
@@ -128,6 +134,8 @@ public class ClassroomCard  {
         this.credit = credit;
     }
 
+    
+
     public ClassroomCard withStatus(String status) {
         this.status = status;
         return this;
@@ -147,6 +155,9 @@ public class ClassroomCard  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

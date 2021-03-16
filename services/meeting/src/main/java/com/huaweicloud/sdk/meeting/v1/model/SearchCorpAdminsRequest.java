@@ -39,7 +39,7 @@ public class SearchCorpAdminsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class SearchCorpAdminsRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchCorpAdminsRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -88,6 +90,8 @@ public class SearchCorpAdminsRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public SearchCorpAdminsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -109,6 +113,8 @@ public class SearchCorpAdminsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchCorpAdminsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -132,6 +138,8 @@ public class SearchCorpAdminsRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchCorpAdminsRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -151,6 +159,9 @@ public class SearchCorpAdminsRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

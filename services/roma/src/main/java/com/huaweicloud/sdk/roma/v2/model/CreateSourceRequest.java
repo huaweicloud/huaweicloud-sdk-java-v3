@@ -34,7 +34,7 @@ public class CreateSourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateSourceRequestBody body = null;
+    private CreateSourceRequestBody body;
 
     public CreateSourceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreateSourceRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateSourceRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -75,6 +77,8 @@ public class CreateSourceRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public CreateSourceRequest withBody(CreateSourceRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateSourceRequest  {
     public void setBody(CreateSourceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

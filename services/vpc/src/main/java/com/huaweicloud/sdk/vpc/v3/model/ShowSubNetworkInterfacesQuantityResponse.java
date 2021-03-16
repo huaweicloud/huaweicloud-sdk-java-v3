@@ -51,6 +51,8 @@ public class ShowSubNetworkInterfacesQuantityResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ShowSubNetworkInterfacesQuantityResponse withSubNetworkInterfaces(Integer subNetworkInterfaces) {
         this.subNetworkInterfaces = subNetworkInterfaces;
         return this;
@@ -70,6 +72,9 @@ public class ShowSubNetworkInterfacesQuantityResponse extends SdkResponse {
     public void setSubNetworkInterfaces(Integer subNetworkInterfaces) {
         this.subNetworkInterfaces = subNetworkInterfaces;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

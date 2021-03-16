@@ -142,7 +142,7 @@ public class LdApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content_type")
     
-    private ContentTypeEnum contentType = ContentTypeEnum.JSON;
+    private ContentTypeEnum contentType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -160,7 +160,7 @@ public class LdApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="return_format")
     
-    private Boolean returnFormat = false;
+    private Boolean returnFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -188,6 +188,8 @@ public class LdApiCreate  {
         this.name = name;
     }
 
+    
+
     public LdApiCreate withPath(String path) {
         this.path = path;
         return this;
@@ -207,6 +209,8 @@ public class LdApiCreate  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public LdApiCreate withMethod(String method) {
         this.method = method;
@@ -228,6 +232,8 @@ public class LdApiCreate  {
         this.method = method;
     }
 
+    
+
     public LdApiCreate withDescription(String description) {
         this.description = description;
         return this;
@@ -247,6 +253,8 @@ public class LdApiCreate  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public LdApiCreate withVersion(String version) {
         this.version = version;
@@ -268,6 +276,8 @@ public class LdApiCreate  {
         this.version = version;
     }
 
+    
+
     public LdApiCreate withContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
         return this;
@@ -287,6 +297,8 @@ public class LdApiCreate  {
     public void setContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
     }
+
+    
 
     public LdApiCreate withApiSignatureId(String apiSignatureId) {
         this.apiSignatureId = apiSignatureId;
@@ -308,6 +320,8 @@ public class LdApiCreate  {
         this.apiSignatureId = apiSignatureId;
     }
 
+    
+
     public LdApiCreate withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -327,6 +341,8 @@ public class LdApiCreate  {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
+
+    
 
     public LdApiCreate withReturnFormat(Boolean returnFormat) {
         this.returnFormat = returnFormat;
@@ -348,6 +364,8 @@ public class LdApiCreate  {
         this.returnFormat = returnFormat;
     }
 
+    
+
     public LdApiCreate withParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
         return this;
@@ -355,9 +373,6 @@ public class LdApiCreate  {
 
     
     public LdApiCreate addParametersItem(LdApiParameter parametersItem) {
-        if (this.parameters == null) {
-            this.parameters = new ArrayList<>();
-        }
         this.parameters.add(parametersItem);
         return this;
     }
@@ -381,6 +396,9 @@ public class LdApiCreate  {
     public void setParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

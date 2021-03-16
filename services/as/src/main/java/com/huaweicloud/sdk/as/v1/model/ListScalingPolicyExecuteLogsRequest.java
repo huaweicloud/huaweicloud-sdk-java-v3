@@ -226,13 +226,13 @@ public class ListScalingPolicyExecuteLogsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime = null;
+    private OffsetDateTime startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private OffsetDateTime endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -266,6 +266,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
+    
+
     public ListScalingPolicyExecuteLogsRequest withLogId(String logId) {
         this.logId = logId;
         return this;
@@ -285,6 +287,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
     public void setLogId(String logId) {
         this.logId = logId;
     }
+
+    
 
     public ListScalingPolicyExecuteLogsRequest withScalingResourceType(ScalingResourceTypeEnum scalingResourceType) {
         this.scalingResourceType = scalingResourceType;
@@ -306,6 +310,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
         this.scalingResourceType = scalingResourceType;
     }
 
+    
+
     public ListScalingPolicyExecuteLogsRequest withScalingResourceId(String scalingResourceId) {
         this.scalingResourceId = scalingResourceId;
         return this;
@@ -325,6 +331,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
     public void setScalingResourceId(String scalingResourceId) {
         this.scalingResourceId = scalingResourceId;
     }
+
+    
 
     public ListScalingPolicyExecuteLogsRequest withExecuteType(ExecuteTypeEnum executeType) {
         this.executeType = executeType;
@@ -346,6 +354,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
         this.executeType = executeType;
     }
 
+    
+
     public ListScalingPolicyExecuteLogsRequest withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
@@ -365,6 +375,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
     public void setStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListScalingPolicyExecuteLogsRequest withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -386,6 +398,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListScalingPolicyExecuteLogsRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -405,6 +419,8 @@ public class ListScalingPolicyExecuteLogsRequest  {
     public void setStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
     }
+
+    
 
     public ListScalingPolicyExecuteLogsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -427,6 +443,9 @@ public class ListScalingPolicyExecuteLogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

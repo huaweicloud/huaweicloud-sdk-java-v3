@@ -22,7 +22,7 @@ public class PolicyUpdateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private PolicyUpdate policy = null;
+    private PolicyUpdate policy;
 
     public PolicyUpdateReq withPolicy(PolicyUpdate policy) {
         this.policy = policy;
@@ -50,6 +50,9 @@ public class PolicyUpdateReq  {
     public void setPolicy(PolicyUpdate policy) {
         this.policy = policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

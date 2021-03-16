@@ -76,6 +76,8 @@ public class ApiVersionDetail  {
         this.id = id;
     }
 
+    
+
     public ApiVersionDetail withLinks(List<ApiLink> links) {
         this.links = links;
         return this;
@@ -83,9 +85,6 @@ public class ApiVersionDetail  {
 
     
     public ApiVersionDetail addLinksItem(ApiLink linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -110,6 +109,8 @@ public class ApiVersionDetail  {
         this.links = links;
     }
 
+    
+
     public ApiVersionDetail withVersion(String version) {
         this.version = version;
         return this;
@@ -129,6 +130,8 @@ public class ApiVersionDetail  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ApiVersionDetail withStatus(String status) {
         this.status = status;
@@ -150,6 +153,8 @@ public class ApiVersionDetail  {
         this.status = status;
     }
 
+    
+
     public ApiVersionDetail withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -170,6 +175,8 @@ public class ApiVersionDetail  {
         this.updated = updated;
     }
 
+    
+
     public ApiVersionDetail withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
@@ -189,6 +196,9 @@ public class ApiVersionDetail  {
     public void setMinVersion(String minVersion) {
         this.minVersion = minVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

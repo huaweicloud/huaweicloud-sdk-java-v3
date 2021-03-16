@@ -30,7 +30,7 @@ public class ListTopicAttributesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    private TopicAttribute attributes = null;
+    private TopicAttribute attributes;
 
     public ListTopicAttributesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ListTopicAttributesResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListTopicAttributesResponse withAttributes(TopicAttribute attributes) {
         this.attributes = attributes;
@@ -78,6 +80,9 @@ public class ListTopicAttributesResponse extends SdkResponse {
     public void setAttributes(TopicAttribute attributes) {
         this.attributes = attributes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

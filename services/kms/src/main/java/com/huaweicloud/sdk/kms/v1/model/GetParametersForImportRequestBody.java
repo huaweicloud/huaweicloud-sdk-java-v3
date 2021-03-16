@@ -143,6 +143,8 @@ public class GetParametersForImportRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public GetParametersForImportRequestBody withWrappingAlgorithm(WrappingAlgorithmEnum wrappingAlgorithm) {
         this.wrappingAlgorithm = wrappingAlgorithm;
         return this;
@@ -163,6 +165,8 @@ public class GetParametersForImportRequestBody  {
         this.wrappingAlgorithm = wrappingAlgorithm;
     }
 
+    
+
     public GetParametersForImportRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -182,6 +186,9 @@ public class GetParametersForImportRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

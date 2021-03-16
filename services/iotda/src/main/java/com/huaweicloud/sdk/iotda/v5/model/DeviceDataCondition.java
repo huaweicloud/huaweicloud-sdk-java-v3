@@ -58,6 +58,8 @@ public class DeviceDataCondition  {
         this.deviceId = deviceId;
     }
 
+    
+
     public DeviceDataCondition withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -78,6 +80,8 @@ public class DeviceDataCondition  {
         this.productId = productId;
     }
 
+    
+
     public DeviceDataCondition withFilters(List<PropertyFilter> filters) {
         this.filters = filters;
         return this;
@@ -85,9 +89,6 @@ public class DeviceDataCondition  {
 
     
     public DeviceDataCondition addFiltersItem(PropertyFilter filtersItem) {
-        if (this.filters == null) {
-            this.filters = new ArrayList<>();
-        }
         this.filters.add(filtersItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class DeviceDataCondition  {
     public void setFilters(List<PropertyFilter> filters) {
         this.filters = filters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

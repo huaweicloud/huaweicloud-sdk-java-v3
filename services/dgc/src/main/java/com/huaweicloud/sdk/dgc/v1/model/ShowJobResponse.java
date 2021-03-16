@@ -45,7 +45,7 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="schedule")
     
-    private Schedule schedule = null;
+    private Schedule schedule;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -147,7 +147,7 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basicConfig")
     
-    private BasicInfo basicConfig = null;
+    private BasicInfo basicConfig;
 
     public ShowJobResponse withName(String name) {
         this.name = name;
@@ -169,6 +169,8 @@ public class ShowJobResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowJobResponse withNodes(List<Node> nodes) {
         this.nodes = nodes;
         return this;
@@ -176,9 +178,6 @@ public class ShowJobResponse extends SdkResponse {
 
     
     public ShowJobResponse addNodesItem(Node nodesItem) {
-        if (this.nodes == null) {
-            this.nodes = new ArrayList<>();
-        }
         this.nodes.add(nodesItem);
         return this;
     }
@@ -202,6 +201,8 @@ public class ShowJobResponse extends SdkResponse {
     public void setNodes(List<Node> nodes) {
         this.nodes = nodes;
     }
+
+    
 
     public ShowJobResponse withSchedule(Schedule schedule) {
         this.schedule = schedule;
@@ -230,6 +231,8 @@ public class ShowJobResponse extends SdkResponse {
         this.schedule = schedule;
     }
 
+    
+
     public ShowJobResponse withParams(List<JobParam> params) {
         this.params = params;
         return this;
@@ -237,9 +240,6 @@ public class ShowJobResponse extends SdkResponse {
 
     
     public ShowJobResponse addParamsItem(JobParam paramsItem) {
-        if (this.params == null) {
-            this.params = new ArrayList<>();
-        }
         this.params.add(paramsItem);
         return this;
     }
@@ -264,6 +264,8 @@ public class ShowJobResponse extends SdkResponse {
         this.params = params;
     }
 
+    
+
     public ShowJobResponse withDirectory(String directory) {
         this.directory = directory;
         return this;
@@ -284,6 +286,8 @@ public class ShowJobResponse extends SdkResponse {
         this.directory = directory;
     }
 
+    
+
     public ShowJobResponse withJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
         return this;
@@ -303,6 +307,8 @@ public class ShowJobResponse extends SdkResponse {
     public void setJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
     }
+
+    
 
     public ShowJobResponse withBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
@@ -330,6 +336,9 @@ public class ShowJobResponse extends SdkResponse {
     public void setBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

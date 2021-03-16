@@ -75,6 +75,8 @@ public class GroupTreeResponse  {
         this.id = id;
     }
 
+    
+
     public GroupTreeResponse withName(String name) {
         this.name = name;
         return this;
@@ -94,6 +96,8 @@ public class GroupTreeResponse  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GroupTreeResponse withParentId(Integer parentId) {
         this.parentId = parentId;
@@ -115,6 +119,8 @@ public class GroupTreeResponse  {
         this.parentId = parentId;
     }
 
+    
+
     public GroupTreeResponse withChildren(List<GroupTreeResponse> children) {
         this.children = children;
         return this;
@@ -122,9 +128,6 @@ public class GroupTreeResponse  {
 
     
     public GroupTreeResponse addChildrenItem(GroupTreeResponse childrenItem) {
-        if (this.children == null) {
-            this.children = new ArrayList<>();
-        }
         this.children.add(childrenItem);
         return this;
     }
@@ -149,6 +152,8 @@ public class GroupTreeResponse  {
         this.children = children;
     }
 
+    
+
     public GroupTreeResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -169,6 +174,8 @@ public class GroupTreeResponse  {
         this.appId = appId;
     }
 
+    
+
     public GroupTreeResponse withPermissions(List<String> permissions) {
         this.permissions = permissions;
         return this;
@@ -176,9 +183,6 @@ public class GroupTreeResponse  {
 
     
     public GroupTreeResponse addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -202,6 +206,9 @@ public class GroupTreeResponse  {
     public void setPermissions(List<String> permissions) {
         this.permissions = permissions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class UpdateResourceGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private List<CreateResourceGroup> resources = new ArrayList<>();
+    private List<CreateResourceGroup> resources = null;
     
     public UpdateResourceGroupRequestBody withGroupName(String groupName) {
         this.groupName = groupName;
@@ -51,6 +51,8 @@ public class UpdateResourceGroupRequestBody  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    
 
     public UpdateResourceGroupRequestBody withResources(List<CreateResourceGroup> resources) {
         this.resources = resources;
@@ -82,6 +84,9 @@ public class UpdateResourceGroupRequestBody  {
     public void setResources(List<CreateResourceGroup> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

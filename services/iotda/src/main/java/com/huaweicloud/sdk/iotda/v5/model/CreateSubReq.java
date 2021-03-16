@@ -22,7 +22,7 @@ public class CreateSubReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subject")
     
-    private Subject subject = null;
+    private Subject subject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class CreateSubReq  {
         this.subject = subject;
     }
 
+    
+
     public CreateSubReq withCallbackurl(String callbackurl) {
         this.callbackurl = callbackurl;
         return this;
@@ -88,6 +90,8 @@ public class CreateSubReq  {
     public void setCallbackurl(String callbackurl) {
         this.callbackurl = callbackurl;
     }
+
+    
 
     public CreateSubReq withAppId(String appId) {
         this.appId = appId;
@@ -109,6 +113,8 @@ public class CreateSubReq  {
         this.appId = appId;
     }
 
+    
+
     public CreateSubReq withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -128,6 +134,9 @@ public class CreateSubReq  {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

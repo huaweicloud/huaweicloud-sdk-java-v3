@@ -103,7 +103,7 @@ public class ListPublishedTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,13 +115,13 @@ public class ListPublishedTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListPublishedTemplatesRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -145,6 +145,8 @@ public class ListPublishedTemplatesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListPublishedTemplatesRequest withKeyword(String keyword) {
         this.keyword = keyword;
         return this;
@@ -164,6 +166,8 @@ public class ListPublishedTemplatesRequest  {
     public void setKeyword(String keyword) {
         this.keyword = keyword;
     }
+
+    
 
     public ListPublishedTemplatesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -187,6 +191,8 @@ public class ListPublishedTemplatesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListPublishedTemplatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -208,6 +214,9 @@ public class ListPublishedTemplatesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

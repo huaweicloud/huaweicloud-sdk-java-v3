@@ -21,13 +21,13 @@ public class PageReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cur_page")
     
-    private Integer curPage = 1;
+    private Integer curPage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="per_page")
     
-    private Integer perPage = 5;
+    private Integer perPage;
 
     public PageReq withCurPage(Integer curPage) {
         this.curPage = curPage;
@@ -48,6 +48,8 @@ public class PageReq  {
     public void setCurPage(Integer curPage) {
         this.curPage = curPage;
     }
+
+    
 
     public PageReq withPerPage(Integer perPage) {
         this.perPage = perPage;
@@ -70,6 +72,9 @@ public class PageReq  {
     public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

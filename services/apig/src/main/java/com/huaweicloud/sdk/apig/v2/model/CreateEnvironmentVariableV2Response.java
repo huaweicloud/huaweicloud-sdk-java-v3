@@ -69,6 +69,8 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
         this.variableValue = variableValue;
     }
 
+    
+
     public CreateEnvironmentVariableV2Response withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -88,6 +90,8 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public CreateEnvironmentVariableV2Response withGroupId(String groupId) {
         this.groupId = groupId;
@@ -109,6 +113,8 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
         this.groupId = groupId;
     }
 
+    
+
     public CreateEnvironmentVariableV2Response withId(String id) {
         this.id = id;
         return this;
@@ -129,6 +135,8 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateEnvironmentVariableV2Response withVariableName(String variableName) {
         this.variableName = variableName;
         return this;
@@ -148,6 +156,9 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
     public void setVariableName(String variableName) {
         this.variableName = variableName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

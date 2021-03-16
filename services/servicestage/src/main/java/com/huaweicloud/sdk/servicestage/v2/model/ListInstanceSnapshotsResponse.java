@@ -54,6 +54,8 @@ public class ListInstanceSnapshotsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListInstanceSnapshotsResponse withSnapshots(List<InstanceSnapshotView> snapshots) {
         this.snapshots = snapshots;
         return this;
@@ -61,9 +63,6 @@ public class ListInstanceSnapshotsResponse extends SdkResponse {
 
     
     public ListInstanceSnapshotsResponse addSnapshotsItem(InstanceSnapshotView snapshotsItem) {
-        if (this.snapshots == null) {
-            this.snapshots = new ArrayList<>();
-        }
         this.snapshots.add(snapshotsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListInstanceSnapshotsResponse extends SdkResponse {
     public void setSnapshots(List<InstanceSnapshotView> snapshots) {
         this.snapshots = snapshots;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

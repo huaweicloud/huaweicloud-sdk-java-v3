@@ -23,13 +23,13 @@ public class InstanceAction  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private InstanceActionType action = null;
+    private InstanceActionType action;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    private InstanceActionParameters parameters = null;
+    private InstanceActionParameters parameters;
 
     public InstanceAction withAction(InstanceActionType action) {
         this.action = action;
@@ -50,6 +50,8 @@ public class InstanceAction  {
     public void setAction(InstanceActionType action) {
         this.action = action;
     }
+
+    
 
     public InstanceAction withParameters(InstanceActionParameters parameters) {
         this.parameters = parameters;
@@ -77,6 +79,9 @@ public class InstanceAction  {
     public void setParameters(InstanceActionParameters parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class CheckCertificateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VerifyCertificateDTO body = null;
+    private VerifyCertificateDTO body;
 
     public CheckCertificateRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -62,6 +62,8 @@ public class CheckCertificateRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CheckCertificateRequest withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -82,6 +84,8 @@ public class CheckCertificateRequest  {
         this.certificateId = certificateId;
     }
 
+    
+
     public CheckCertificateRequest withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -101,6 +105,8 @@ public class CheckCertificateRequest  {
     public void setActionId(String actionId) {
         this.actionId = actionId;
     }
+
+    
 
     public CheckCertificateRequest withBody(VerifyCertificateDTO body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class CheckCertificateRequest  {
     public void setBody(VerifyCertificateDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

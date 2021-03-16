@@ -67,6 +67,8 @@ public class ListProjectVersionsV4ResponseBodyIterations  {
         this.description = description;
     }
 
+    
+
     public ListProjectVersionsV4ResponseBodyIterations withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -86,6 +88,8 @@ public class ListProjectVersionsV4ResponseBodyIterations  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListProjectVersionsV4ResponseBodyIterations withId(Integer id) {
         this.id = id;
@@ -107,6 +111,8 @@ public class ListProjectVersionsV4ResponseBodyIterations  {
         this.id = id;
     }
 
+    
+
     public ListProjectVersionsV4ResponseBodyIterations withName(String name) {
         this.name = name;
         return this;
@@ -127,6 +133,8 @@ public class ListProjectVersionsV4ResponseBodyIterations  {
         this.name = name;
     }
 
+    
+
     public ListProjectVersionsV4ResponseBodyIterations withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -146,6 +154,9 @@ public class ListProjectVersionsV4ResponseBodyIterations  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

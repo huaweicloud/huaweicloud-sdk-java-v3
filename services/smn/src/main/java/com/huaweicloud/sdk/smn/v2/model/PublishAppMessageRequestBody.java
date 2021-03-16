@@ -33,7 +33,7 @@ public class PublishAppMessageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_to_live")
     
-    private String timeToLive = "3600";
+    private String timeToLive;
 
     public PublishAppMessageRequestBody withMessage(String message) {
         this.message = message;
@@ -55,6 +55,8 @@ public class PublishAppMessageRequestBody  {
         this.message = message;
     }
 
+    
+
     public PublishAppMessageRequestBody withMessageStructure(String messageStructure) {
         this.messageStructure = messageStructure;
         return this;
@@ -75,6 +77,8 @@ public class PublishAppMessageRequestBody  {
         this.messageStructure = messageStructure;
     }
 
+    
+
     public PublishAppMessageRequestBody withTimeToLive(String timeToLive) {
         this.timeToLive = timeToLive;
         return this;
@@ -94,6 +98,9 @@ public class PublishAppMessageRequestBody  {
     public void setTimeToLive(String timeToLive) {
         this.timeToLive = timeToLive;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

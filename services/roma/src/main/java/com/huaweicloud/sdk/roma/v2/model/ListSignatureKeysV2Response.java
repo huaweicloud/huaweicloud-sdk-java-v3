@@ -61,6 +61,8 @@ public class ListSignatureKeysV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListSignatureKeysV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListSignatureKeysV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListSignatureKeysV2Response withSigns(List<SignatureWithBindNum> signs) {
         this.signs = signs;
         return this;
@@ -88,9 +92,6 @@ public class ListSignatureKeysV2Response extends SdkResponse {
 
     
     public ListSignatureKeysV2Response addSignsItem(SignatureWithBindNum signsItem) {
-        if (this.signs == null) {
-            this.signs = new ArrayList<>();
-        }
         this.signs.add(signsItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListSignatureKeysV2Response extends SdkResponse {
     public void setSigns(List<SignatureWithBindNum> signs) {
         this.signs = signs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

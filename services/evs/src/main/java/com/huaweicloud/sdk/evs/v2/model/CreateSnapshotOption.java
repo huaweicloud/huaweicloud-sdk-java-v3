@@ -70,6 +70,8 @@ public class CreateSnapshotOption  {
         this.volumeId = volumeId;
     }
 
+    
+
     public CreateSnapshotOption withForce(Boolean force) {
         this.force = force;
         return this;
@@ -90,6 +92,8 @@ public class CreateSnapshotOption  {
         this.force = force;
     }
 
+    
+
     public CreateSnapshotOption withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -98,9 +102,6 @@ public class CreateSnapshotOption  {
     
 
     public CreateSnapshotOption putMetadataItem(String key, String metadataItem) {
-         if (this.metadata == null) {
-            this.metadata = new HashMap<>();
-         }
         this.metadata.put(key, metadataItem);
         return this;
     }
@@ -124,6 +125,8 @@ public class CreateSnapshotOption  {
         this.metadata = metadata;
     }
 
+    
+
     public CreateSnapshotOption withDescription(String description) {
         this.description = description;
         return this;
@@ -144,6 +147,8 @@ public class CreateSnapshotOption  {
         this.description = description;
     }
 
+    
+
     public CreateSnapshotOption withName(String name) {
         this.name = name;
         return this;
@@ -163,6 +168,9 @@ public class CreateSnapshotOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

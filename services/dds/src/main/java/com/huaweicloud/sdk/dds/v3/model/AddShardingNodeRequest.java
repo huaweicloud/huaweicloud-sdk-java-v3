@@ -28,7 +28,7 @@ public class AddShardingNodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnlargeInstanceRequestBody body = null;
+    private EnlargeInstanceRequestBody body;
 
     public AddShardingNodeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class AddShardingNodeRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AddShardingNodeRequest withBody(EnlargeInstanceRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class AddShardingNodeRequest  {
     public void setBody(EnlargeInstanceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

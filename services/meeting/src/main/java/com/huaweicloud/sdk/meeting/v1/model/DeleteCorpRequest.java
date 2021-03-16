@@ -39,7 +39,7 @@ public class DeleteCorpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="forceDelete")
     
-    private Boolean forceDelete = false;
+    private Boolean forceDelete;
 
     public DeleteCorpRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -63,6 +63,8 @@ public class DeleteCorpRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public DeleteCorpRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -82,6 +84,8 @@ public class DeleteCorpRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public DeleteCorpRequest withId(String id) {
         this.id = id;
@@ -103,6 +107,8 @@ public class DeleteCorpRequest  {
         this.id = id;
     }
 
+    
+
     public DeleteCorpRequest withForceDelete(Boolean forceDelete) {
         this.forceDelete = forceDelete;
         return this;
@@ -122,6 +128,9 @@ public class DeleteCorpRequest  {
     public void setForceDelete(Boolean forceDelete) {
         this.forceDelete = forceDelete;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

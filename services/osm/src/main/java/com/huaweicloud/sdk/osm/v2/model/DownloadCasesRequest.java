@@ -135,6 +135,8 @@ public class DownloadCasesRequest  {
         this.language = language;
     }
 
+    
+
     public DownloadCasesRequest withTimezone(String timezone) {
         this.timezone = timezone;
         return this;
@@ -154,6 +156,8 @@ public class DownloadCasesRequest  {
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
+
+    
 
     public DownloadCasesRequest withIncidentId(String incidentId) {
         this.incidentId = incidentId;
@@ -175,6 +179,8 @@ public class DownloadCasesRequest  {
         this.incidentId = incidentId;
     }
 
+    
+
     public DownloadCasesRequest withQueryStartTime(String queryStartTime) {
         this.queryStartTime = queryStartTime;
         return this;
@@ -195,6 +201,8 @@ public class DownloadCasesRequest  {
         this.queryStartTime = queryStartTime;
     }
 
+    
+
     public DownloadCasesRequest withQueryEndTime(String queryEndTime) {
         this.queryEndTime = queryEndTime;
         return this;
@@ -214,6 +222,8 @@ public class DownloadCasesRequest  {
     public void setQueryEndTime(String queryEndTime) {
         this.queryEndTime = queryEndTime;
     }
+
+    
 
     public DownloadCasesRequest withXCustomerName(String xCustomerName) {
         this.xCustomerName = xCustomerName;
@@ -237,6 +247,8 @@ public class DownloadCasesRequest  {
         this.xCustomerName = xCustomerName;
     }
 
+    
+
     public DownloadCasesRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -256,6 +268,8 @@ public class DownloadCasesRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public DownloadCasesRequest withStatus(Integer status) {
         this.status = status;
@@ -279,6 +293,8 @@ public class DownloadCasesRequest  {
         this.status = status;
     }
 
+    
+
     public DownloadCasesRequest withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -299,6 +315,8 @@ public class DownloadCasesRequest  {
         this.customerId = customerId;
     }
 
+    
+
     public DownloadCasesRequest withTenantSourceIdList(List<String> tenantSourceIdList) {
         this.tenantSourceIdList = tenantSourceIdList;
         return this;
@@ -306,9 +324,6 @@ public class DownloadCasesRequest  {
 
     
     public DownloadCasesRequest addTenantSourceIdListItem(String tenantSourceIdListItem) {
-        if (this.tenantSourceIdList == null) {
-            this.tenantSourceIdList = new ArrayList<>();
-        }
         this.tenantSourceIdList.add(tenantSourceIdListItem);
         return this;
     }
@@ -333,6 +348,8 @@ public class DownloadCasesRequest  {
         this.tenantSourceIdList = tenantSourceIdList;
     }
 
+    
+
     public DownloadCasesRequest withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
         return this;
@@ -352,6 +369,8 @@ public class DownloadCasesRequest  {
     public void setSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
     }
+
+    
 
     public DownloadCasesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -375,6 +394,8 @@ public class DownloadCasesRequest  {
         this.offset = offset;
     }
 
+    
+
     public DownloadCasesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -396,6 +417,8 @@ public class DownloadCasesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public DownloadCasesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -421,6 +444,8 @@ public class DownloadCasesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public DownloadCasesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -443,6 +468,8 @@ public class DownloadCasesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DownloadCasesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -464,6 +491,9 @@ public class DownloadCasesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

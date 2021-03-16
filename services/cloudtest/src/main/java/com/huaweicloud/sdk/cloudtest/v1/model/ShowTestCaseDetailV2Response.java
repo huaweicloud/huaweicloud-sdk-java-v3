@@ -67,7 +67,7 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assigned_user")
     
-    private AssignedUserInfo assignedUser = null;
+    private AssignedUserInfo assignedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,7 +85,7 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extend_info")
     
-    private ExtendInfo extendInfo = null;
+    private ExtendInfo extendInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,6 +119,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.testcaseId = testcaseId;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -138,6 +140,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ShowTestCaseDetailV2Response withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
@@ -159,6 +163,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.serviceId = serviceId;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withName(String name) {
         this.name = name;
         return this;
@@ -178,6 +184,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowTestCaseDetailV2Response withTestcaseNumber(String testcaseNumber) {
         this.testcaseNumber = testcaseNumber;
@@ -199,6 +207,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.testcaseNumber = testcaseNumber;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withRankId(String rankId) {
         this.rankId = rankId;
         return this;
@@ -219,6 +229,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.rankId = rankId;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withStatusId(String statusId) {
         this.statusId = statusId;
         return this;
@@ -238,6 +250,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     public void setStatusId(String statusId) {
         this.statusId = statusId;
     }
+
+    
 
     public ShowTestCaseDetailV2Response withAssignedUser(AssignedUserInfo assignedUser) {
         this.assignedUser = assignedUser;
@@ -266,6 +280,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.assignedUser = assignedUser;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withExecuteCount(Integer executeCount) {
         this.executeCount = executeCount;
         return this;
@@ -286,6 +302,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.executeCount = executeCount;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withResultId(String resultId) {
         this.resultId = resultId;
         return this;
@@ -305,6 +323,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     public void setResultId(String resultId) {
         this.resultId = resultId;
     }
+
+    
 
     public ShowTestCaseDetailV2Response withExtendInfo(ExtendInfo extendInfo) {
         this.extendInfo = extendInfo;
@@ -333,6 +353,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.extendInfo = extendInfo;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -353,6 +375,8 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public ShowTestCaseDetailV2Response withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -372,6 +396,9 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

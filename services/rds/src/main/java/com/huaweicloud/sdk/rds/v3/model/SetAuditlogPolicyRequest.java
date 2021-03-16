@@ -34,7 +34,7 @@ public class SetAuditlogPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SetAuditlogPolicyRequestBody body = null;
+    private SetAuditlogPolicyRequestBody body;
 
     public SetAuditlogPolicyRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class SetAuditlogPolicyRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public SetAuditlogPolicyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class SetAuditlogPolicyRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public SetAuditlogPolicyRequest withBody(SetAuditlogPolicyRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class SetAuditlogPolicyRequest  {
     public void setBody(SetAuditlogPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

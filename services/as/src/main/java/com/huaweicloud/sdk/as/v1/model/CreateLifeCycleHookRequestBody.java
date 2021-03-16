@@ -235,6 +235,8 @@ public class CreateLifeCycleHookRequestBody  {
         this.lifecycleHookName = lifecycleHookName;
     }
 
+    
+
     public CreateLifeCycleHookRequestBody withLifecycleHookType(LifecycleHookTypeEnum lifecycleHookType) {
         this.lifecycleHookType = lifecycleHookType;
         return this;
@@ -254,6 +256,8 @@ public class CreateLifeCycleHookRequestBody  {
     public void setLifecycleHookType(LifecycleHookTypeEnum lifecycleHookType) {
         this.lifecycleHookType = lifecycleHookType;
     }
+
+    
 
     public CreateLifeCycleHookRequestBody withDefaultResult(DefaultResultEnum defaultResult) {
         this.defaultResult = defaultResult;
@@ -275,6 +279,8 @@ public class CreateLifeCycleHookRequestBody  {
         this.defaultResult = defaultResult;
     }
 
+    
+
     public CreateLifeCycleHookRequestBody withDefaultTimeout(Integer defaultTimeout) {
         this.defaultTimeout = defaultTimeout;
         return this;
@@ -294,6 +300,8 @@ public class CreateLifeCycleHookRequestBody  {
     public void setDefaultTimeout(Integer defaultTimeout) {
         this.defaultTimeout = defaultTimeout;
     }
+
+    
 
     public CreateLifeCycleHookRequestBody withNotificationTopicUrn(String notificationTopicUrn) {
         this.notificationTopicUrn = notificationTopicUrn;
@@ -315,6 +323,8 @@ public class CreateLifeCycleHookRequestBody  {
         this.notificationTopicUrn = notificationTopicUrn;
     }
 
+    
+
     public CreateLifeCycleHookRequestBody withNotificationMetadata(String notificationMetadata) {
         this.notificationMetadata = notificationMetadata;
         return this;
@@ -334,6 +344,9 @@ public class CreateLifeCycleHookRequestBody  {
     public void setNotificationMetadata(String notificationMetadata) {
         this.notificationMetadata = notificationMetadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

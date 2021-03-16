@@ -112,6 +112,8 @@ public class CouponQuotaV2  {
         this.quotaId = quotaId;
     }
 
+    
+
     public CouponQuotaV2 withQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
         return this;
@@ -131,6 +133,8 @@ public class CouponQuotaV2  {
     public void setQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
     }
+
+    
 
     public CouponQuotaV2 withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -152,6 +156,8 @@ public class CouponQuotaV2  {
         this.createTime = createTime;
     }
 
+    
+
     public CouponQuotaV2 withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
@@ -171,6 +177,8 @@ public class CouponQuotaV2  {
     public void setLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
+
+    
 
     public CouponQuotaV2 withQuotaValue(Double quotaValue) {
         this.quotaValue = quotaValue;
@@ -192,6 +200,8 @@ public class CouponQuotaV2  {
         this.quotaValue = quotaValue;
     }
 
+    
+
     public CouponQuotaV2 withQuotaStatus(Integer quotaStatus) {
         this.quotaStatus = quotaStatus;
         return this;
@@ -211,6 +221,8 @@ public class CouponQuotaV2  {
     public void setQuotaStatus(Integer quotaStatus) {
         this.quotaStatus = quotaStatus;
     }
+
+    
 
     public CouponQuotaV2 withBalance(Double balance) {
         this.balance = balance;
@@ -232,6 +244,8 @@ public class CouponQuotaV2  {
         this.balance = balance;
     }
 
+    
+
     public CouponQuotaV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -251,6 +265,8 @@ public class CouponQuotaV2  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
 
     public CouponQuotaV2 withCurrency(String currency) {
         this.currency = currency;
@@ -272,6 +288,8 @@ public class CouponQuotaV2  {
         this.currency = currency;
     }
 
+    
+
     public CouponQuotaV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
@@ -291,6 +309,8 @@ public class CouponQuotaV2  {
     public void setEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
     }
+
+    
 
     public CouponQuotaV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -312,6 +332,8 @@ public class CouponQuotaV2  {
         this.expireTime = expireTime;
     }
 
+    
+
     public CouponQuotaV2 withLimitInfos(List<QuotaLimitInfo> limitInfos) {
         this.limitInfos = limitInfos;
         return this;
@@ -319,9 +341,6 @@ public class CouponQuotaV2  {
 
     
     public CouponQuotaV2 addLimitInfosItem(QuotaLimitInfo limitInfosItem) {
-        if (this.limitInfos == null) {
-            this.limitInfos = new ArrayList<>();
-        }
         this.limitInfos.add(limitInfosItem);
         return this;
     }
@@ -345,6 +364,9 @@ public class CouponQuotaV2  {
     public void setLimitInfos(List<QuotaLimitInfo> limitInfos) {
         this.limitInfos = limitInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

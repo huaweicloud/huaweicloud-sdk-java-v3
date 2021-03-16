@@ -24,7 +24,7 @@ public class ShowVpcResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
-    private Vpc vpc = null;
+    private Vpc vpc;
 
     public ShowVpcResponse withVpc(Vpc vpc) {
         this.vpc = vpc;
@@ -52,6 +52,9 @@ public class ShowVpcResponse extends SdkResponse {
     public void setVpc(Vpc vpc) {
         this.vpc = vpc;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

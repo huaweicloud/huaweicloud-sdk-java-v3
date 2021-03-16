@@ -24,7 +24,7 @@ public class CreateConfTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data")
     
-    private TokenInfo data = null;
+    private TokenInfo data;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,6 +65,8 @@ public class CreateConfTokenResponse extends SdkResponse {
         this.data = data;
     }
 
+    
+
     public CreateConfTokenResponse withAddressToken(String addressToken) {
         this.addressToken = addressToken;
         return this;
@@ -85,6 +87,8 @@ public class CreateConfTokenResponse extends SdkResponse {
         this.addressToken = addressToken;
     }
 
+    
+
     public CreateConfTokenResponse withGloablPublicIP(String gloablPublicIP) {
         this.gloablPublicIP = gloablPublicIP;
         return this;
@@ -104,6 +108,9 @@ public class CreateConfTokenResponse extends SdkResponse {
     public void setGloablPublicIP(String gloablPublicIP) {
         this.gloablPublicIP = gloablPublicIP;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

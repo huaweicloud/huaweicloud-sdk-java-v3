@@ -34,7 +34,7 @@ public class ProtocolResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private ProtocolLinks links = null;
+    private ProtocolLinks links;
 
     public ProtocolResult withId(String id) {
         this.id = id;
@@ -56,6 +56,8 @@ public class ProtocolResult  {
         this.id = id;
     }
 
+    
+
     public ProtocolResult withMappingId(String mappingId) {
         this.mappingId = mappingId;
         return this;
@@ -75,6 +77,8 @@ public class ProtocolResult  {
     public void setMappingId(String mappingId) {
         this.mappingId = mappingId;
     }
+
+    
 
     public ProtocolResult withLinks(ProtocolLinks links) {
         this.links = links;
@@ -102,6 +106,9 @@ public class ProtocolResult  {
     public void setLinks(ProtocolLinks links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -60,6 +60,8 @@ public class ListTopicsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListTopicsResponse withTopicCount(Integer topicCount) {
         this.topicCount = topicCount;
         return this;
@@ -80,6 +82,8 @@ public class ListTopicsResponse extends SdkResponse {
         this.topicCount = topicCount;
     }
 
+    
+
     public ListTopicsResponse withTopics(List<ListTopicsItem> topics) {
         this.topics = topics;
         return this;
@@ -87,9 +91,6 @@ public class ListTopicsResponse extends SdkResponse {
 
     
     public ListTopicsResponse addTopicsItem(ListTopicsItem topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
         this.topics.add(topicsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListTopicsResponse extends SdkResponse {
     public void setTopics(List<ListTopicsItem> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

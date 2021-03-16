@@ -57,6 +57,8 @@ public class CheckAppV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CheckAppV2Response withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -77,6 +79,8 @@ public class CheckAppV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public CheckAppV2Response withId(String id) {
         this.id = id;
         return this;
@@ -96,6 +100,9 @@ public class CheckAppV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

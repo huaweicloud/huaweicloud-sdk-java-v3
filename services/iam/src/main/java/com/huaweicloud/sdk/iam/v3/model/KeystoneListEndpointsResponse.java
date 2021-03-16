@@ -27,7 +27,7 @@ public class KeystoneListEndpointsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListEndpointsResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListEndpointsResponse withEndpoints(List<Endpoint> endpoints) {
         this.endpoints = endpoints;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListEndpointsResponse extends SdkResponse {
 
     
     public KeystoneListEndpointsResponse addEndpointsItem(Endpoint endpointsItem) {
-        if (this.endpoints == null) {
-            this.endpoints = new ArrayList<>();
-        }
         this.endpoints.add(endpointsItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListEndpointsResponse extends SdkResponse {
     public void setEndpoints(List<Endpoint> endpoints) {
         this.endpoints = endpoints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

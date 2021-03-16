@@ -22,7 +22,7 @@ public class CreateTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PostTask body = null;
+    private PostTask body;
 
     public CreateTaskRequest withBody(PostTask body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateTaskRequest  {
     public void setBody(PostTask body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

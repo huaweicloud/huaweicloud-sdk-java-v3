@@ -81,6 +81,8 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         this.fullMigrationProgress = fullMigrationProgress;
     }
 
+    
+
     public ShowMigrationTaskStatsResponse withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -100,6 +102,8 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
 
     public ShowMigrationTaskStatsResponse withSourceDbsize(String sourceDbsize) {
         this.sourceDbsize = sourceDbsize;
@@ -121,6 +125,8 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         this.sourceDbsize = sourceDbsize;
     }
 
+    
+
     public ShowMigrationTaskStatsResponse withTargetDbsize(String targetDbsize) {
         this.targetDbsize = targetDbsize;
         return this;
@@ -140,6 +146,8 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
     public void setTargetDbsize(String targetDbsize) {
         this.targetDbsize = targetDbsize;
     }
+
+    
 
     public ShowMigrationTaskStatsResponse withTargetInputKbps(String targetInputKbps) {
         this.targetInputKbps = targetInputKbps;
@@ -161,6 +169,8 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         this.targetInputKbps = targetInputKbps;
     }
 
+    
+
     public ShowMigrationTaskStatsResponse withTargetOps(String targetOps) {
         this.targetOps = targetOps;
         return this;
@@ -181,6 +191,8 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
         this.targetOps = targetOps;
     }
 
+    
+
     public ShowMigrationTaskStatsResponse withIsMigrating(Boolean isMigrating) {
         this.isMigrating = isMigrating;
         return this;
@@ -200,6 +212,9 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
     public void setIsMigrating(Boolean isMigrating) {
         this.isMigrating = isMigrating;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

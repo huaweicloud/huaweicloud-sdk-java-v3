@@ -53,13 +53,13 @@ public class ShowProjectWorkHoursRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private String offset = "0";
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private String limit = "10";
+    private Integer limit;
 
     public ShowProjectWorkHoursRequestBody withUserIds(List<String> userIds) {
         this.userIds = userIds;
@@ -68,9 +68,6 @@ public class ShowProjectWorkHoursRequestBody  {
 
     
     public ShowProjectWorkHoursRequestBody addUserIdsItem(String userIdsItem) {
-        if (this.userIds == null) {
-            this.userIds = new ArrayList<>();
-        }
         this.userIds.add(userIdsItem);
         return this;
     }
@@ -95,6 +92,8 @@ public class ShowProjectWorkHoursRequestBody  {
         this.userIds = userIds;
     }
 
+    
+
     public ShowProjectWorkHoursRequestBody withWorkHoursTypes(String workHoursTypes) {
         this.workHoursTypes = workHoursTypes;
         return this;
@@ -114,6 +113,8 @@ public class ShowProjectWorkHoursRequestBody  {
     public void setWorkHoursTypes(String workHoursTypes) {
         this.workHoursTypes = workHoursTypes;
     }
+
+    
 
     public ShowProjectWorkHoursRequestBody withWorkHoursDates(String workHoursDates) {
         this.workHoursDates = workHoursDates;
@@ -135,6 +136,8 @@ public class ShowProjectWorkHoursRequestBody  {
         this.workHoursDates = workHoursDates;
     }
 
+    
+
     public ShowProjectWorkHoursRequestBody withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -154,6 +157,8 @@ public class ShowProjectWorkHoursRequestBody  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public ShowProjectWorkHoursRequestBody withEndTime(String endTime) {
         this.endTime = endTime;
@@ -175,7 +180,9 @@ public class ShowProjectWorkHoursRequestBody  {
         this.endTime = endTime;
     }
 
-    public ShowProjectWorkHoursRequestBody withOffset(String offset) {
+    
+
+    public ShowProjectWorkHoursRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -184,18 +191,20 @@ public class ShowProjectWorkHoursRequestBody  {
 
 
     /**
-     * 偏移量
+     * 偏移量,offset是limit的整数倍，limit=10,offset=0,10,20...
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ShowProjectWorkHoursRequestBody withLimit(String limit) {
+    
+
+    public ShowProjectWorkHoursRequestBody withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -207,13 +216,16 @@ public class ShowProjectWorkHoursRequestBody  {
      * 每页显示数量，每页最多显示100条
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

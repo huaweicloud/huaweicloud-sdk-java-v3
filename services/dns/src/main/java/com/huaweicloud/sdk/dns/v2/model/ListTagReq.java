@@ -76,9 +76,6 @@ public class ListTagReq  {
 
     
     public ListTagReq addTagsItem(TagValues tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -103,6 +100,8 @@ public class ListTagReq  {
         this.tags = tags;
     }
 
+    
+
     public ListTagReq withTagsAny(List<Object> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
@@ -110,9 +109,6 @@ public class ListTagReq  {
 
     
     public ListTagReq addTagsAnyItem(Object tagsAnyItem) {
-        if (this.tagsAny == null) {
-            this.tagsAny = new ArrayList<>();
-        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
@@ -137,6 +133,8 @@ public class ListTagReq  {
         this.tagsAny = tagsAny;
     }
 
+    
+
     public ListTagReq withNotTags(List<Object> notTags) {
         this.notTags = notTags;
         return this;
@@ -144,9 +142,6 @@ public class ListTagReq  {
 
     
     public ListTagReq addNotTagsItem(Object notTagsItem) {
-        if (this.notTags == null) {
-            this.notTags = new ArrayList<>();
-        }
         this.notTags.add(notTagsItem);
         return this;
     }
@@ -171,6 +166,8 @@ public class ListTagReq  {
         this.notTags = notTags;
     }
 
+    
+
     public ListTagReq withNotTagsAny(List<Object> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
@@ -178,9 +175,6 @@ public class ListTagReq  {
 
     
     public ListTagReq addNotTagsAnyItem(Object notTagsAnyItem) {
-        if (this.notTagsAny == null) {
-            this.notTagsAny = new ArrayList<>();
-        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
@@ -205,6 +199,8 @@ public class ListTagReq  {
         this.notTagsAny = notTagsAny;
     }
 
+    
+
     public ListTagReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -224,6 +220,8 @@ public class ListTagReq  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListTagReq withOffset(Integer offset) {
         this.offset = offset;
@@ -245,6 +243,8 @@ public class ListTagReq  {
         this.offset = offset;
     }
 
+    
+
     public ListTagReq withAction(String action) {
         this.action = action;
         return this;
@@ -265,6 +265,8 @@ public class ListTagReq  {
         this.action = action;
     }
 
+    
+
     public ListTagReq withMatches(List<Tag> matches) {
         this.matches = matches;
         return this;
@@ -272,9 +274,6 @@ public class ListTagReq  {
 
     
     public ListTagReq addMatchesItem(Tag matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -298,6 +297,9 @@ public class ListTagReq  {
     public void setMatches(List<Tag> matches) {
         this.matches = matches;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

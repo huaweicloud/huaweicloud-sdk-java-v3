@@ -29,7 +29,7 @@ public class AgencyTokenResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<String> methods = new ArrayList<>();
+    private List<String> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,7 +47,7 @@ public class AgencyTokenResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="assumed_by")
     
-    private AgencyAssumedby assumedBy = null;
+    private AgencyAssumedby assumedBy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,25 +59,25 @@ public class AgencyTokenResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private AgencyTokenDomain domain = null;
+    private AgencyTokenDomain domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private AgencyTokenProject project = null;
+    private AgencyTokenProject project;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roles")
     
-    private List<TokenRole> roles = new ArrayList<>();
+    private List<TokenRole> roles = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private AgencyTokenUser user = null;
+    private AgencyTokenUser user;
 
     public AgencyTokenResult withMethods(List<String> methods) {
         this.methods = methods;
@@ -110,6 +110,8 @@ public class AgencyTokenResult  {
         this.methods = methods;
     }
 
+    
+
     public AgencyTokenResult withExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
         return this;
@@ -130,6 +132,8 @@ public class AgencyTokenResult  {
         this.expiresAt = expiresAt;
     }
 
+    
+
     public AgencyTokenResult withIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
         return this;
@@ -149,6 +153,8 @@ public class AgencyTokenResult  {
     public void setIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
     }
+
+    
 
     public AgencyTokenResult withAssumedBy(AgencyAssumedby assumedBy) {
         this.assumedBy = assumedBy;
@@ -177,6 +183,8 @@ public class AgencyTokenResult  {
         this.assumedBy = assumedBy;
     }
 
+    
+
     public AgencyTokenResult withCatalog(List<TokenCatalog> catalog) {
         this.catalog = catalog;
         return this;
@@ -184,9 +192,6 @@ public class AgencyTokenResult  {
 
     
     public AgencyTokenResult addCatalogItem(TokenCatalog catalogItem) {
-        if (this.catalog == null) {
-            this.catalog = new ArrayList<>();
-        }
         this.catalog.add(catalogItem);
         return this;
     }
@@ -210,6 +215,8 @@ public class AgencyTokenResult  {
     public void setCatalog(List<TokenCatalog> catalog) {
         this.catalog = catalog;
     }
+
+    
 
     public AgencyTokenResult withDomain(AgencyTokenDomain domain) {
         this.domain = domain;
@@ -238,6 +245,8 @@ public class AgencyTokenResult  {
         this.domain = domain;
     }
 
+    
+
     public AgencyTokenResult withProject(AgencyTokenProject project) {
         this.project = project;
         return this;
@@ -264,6 +273,8 @@ public class AgencyTokenResult  {
     public void setProject(AgencyTokenProject project) {
         this.project = project;
     }
+
+    
 
     public AgencyTokenResult withRoles(List<TokenRole> roles) {
         this.roles = roles;
@@ -296,6 +307,8 @@ public class AgencyTokenResult  {
         this.roles = roles;
     }
 
+    
+
     public AgencyTokenResult withUser(AgencyTokenUser user) {
         this.user = user;
         return this;
@@ -322,6 +335,9 @@ public class AgencyTokenResult  {
     public void setUser(AgencyTokenUser user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

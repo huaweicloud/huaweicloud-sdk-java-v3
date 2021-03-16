@@ -37,13 +37,13 @@ public class LoadBalancerStatus  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<LoadBalancerStatusListener> listeners = new ArrayList<>();
+    private List<LoadBalancerStatusListener> listeners = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<LoadBalancerStatusPool> pools = new ArrayList<>();
+    private List<LoadBalancerStatusPool> pools = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,6 +77,8 @@ public class LoadBalancerStatus  {
         this.name = name;
     }
 
+    
+
     public LoadBalancerStatus withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -96,6 +98,8 @@ public class LoadBalancerStatus  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
 
     public LoadBalancerStatus withListeners(List<LoadBalancerStatusListener> listeners) {
         this.listeners = listeners;
@@ -128,6 +132,8 @@ public class LoadBalancerStatus  {
         this.listeners = listeners;
     }
 
+    
+
     public LoadBalancerStatus withPools(List<LoadBalancerStatusPool> pools) {
         this.pools = pools;
         return this;
@@ -159,6 +165,8 @@ public class LoadBalancerStatus  {
         this.pools = pools;
     }
 
+    
+
     public LoadBalancerStatus withId(String id) {
         this.id = id;
         return this;
@@ -179,6 +187,8 @@ public class LoadBalancerStatus  {
         this.id = id;
     }
 
+    
+
     public LoadBalancerStatus withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -198,6 +208,9 @@ public class LoadBalancerStatus  {
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

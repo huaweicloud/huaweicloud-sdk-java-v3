@@ -188,7 +188,7 @@ public class AddUserDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function")
     
-    private UserFunctionDTO function = null;
+    private UserFunctionDTO function;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -228,6 +228,8 @@ public class AddUserDTO  {
         this.id = id;
     }
 
+    
+
     public AddUserDTO withName(String name) {
         this.name = name;
         return this;
@@ -247,6 +249,8 @@ public class AddUserDTO  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AddUserDTO withEnglishName(String englishName) {
         this.englishName = englishName;
@@ -268,6 +272,8 @@ public class AddUserDTO  {
         this.englishName = englishName;
     }
 
+    
+
     public AddUserDTO withAccount(String account) {
         this.account = account;
         return this;
@@ -287,6 +293,8 @@ public class AddUserDTO  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public AddUserDTO withThirdAccount(String thirdAccount) {
         this.thirdAccount = thirdAccount;
@@ -308,6 +316,8 @@ public class AddUserDTO  {
         this.thirdAccount = thirdAccount;
     }
 
+    
+
     public AddUserDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -327,6 +337,8 @@ public class AddUserDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public AddUserDTO withCountry(String country) {
         this.country = country;
@@ -348,6 +360,8 @@ public class AddUserDTO  {
         this.country = country;
     }
 
+    
+
     public AddUserDTO withPwd(String pwd) {
         this.pwd = pwd;
         return this;
@@ -367,6 +381,8 @@ public class AddUserDTO  {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
+    
 
     public AddUserDTO withEmail(String email) {
         this.email = email;
@@ -388,6 +404,8 @@ public class AddUserDTO  {
         this.email = email;
     }
 
+    
+
     public AddUserDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -407,6 +425,8 @@ public class AddUserDTO  {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
 
     public AddUserDTO withSignature(String signature) {
         this.signature = signature;
@@ -428,6 +448,8 @@ public class AddUserDTO  {
         this.signature = signature;
     }
 
+    
+
     public AddUserDTO withTitle(String title) {
         this.title = title;
         return this;
@@ -447,6 +469,8 @@ public class AddUserDTO  {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    
 
     public AddUserDTO withDesc(String desc) {
         this.desc = desc;
@@ -468,6 +492,8 @@ public class AddUserDTO  {
         this.desc = desc;
     }
 
+    
+
     public AddUserDTO withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -487,6 +513,8 @@ public class AddUserDTO  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public AddUserDTO withFunction(UserFunctionDTO function) {
         this.function = function;
@@ -515,6 +543,8 @@ public class AddUserDTO  {
         this.function = function;
     }
 
+    
+
     public AddUserDTO withSendNotify(String sendNotify) {
         this.sendNotify = sendNotify;
         return this;
@@ -534,6 +564,8 @@ public class AddUserDTO  {
     public void setSendNotify(String sendNotify) {
         this.sendNotify = sendNotify;
     }
+
+    
 
     public AddUserDTO withSortLevel(Integer sortLevel) {
         this.sortLevel = sortLevel;
@@ -555,6 +587,8 @@ public class AddUserDTO  {
         this.sortLevel = sortLevel;
     }
 
+    
+
     public AddUserDTO withHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
         return this;
@@ -574,6 +608,9 @@ public class AddUserDTO  {
     public void setHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

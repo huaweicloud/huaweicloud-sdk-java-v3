@@ -108,7 +108,7 @@ public class ShowPublicZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -136,6 +136,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowPublicZoneResponse withName(String name) {
         this.name = name;
         return this;
@@ -155,6 +157,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowPublicZoneResponse withDescription(String description) {
         this.description = description;
@@ -176,6 +180,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowPublicZoneResponse withEmail(String email) {
         this.email = email;
         return this;
@@ -195,6 +201,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public ShowPublicZoneResponse withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -216,6 +224,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.zoneType = zoneType;
     }
 
+    
+
     public ShowPublicZoneResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -235,6 +245,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public ShowPublicZoneResponse withSerial(Integer serial) {
         this.serial = serial;
@@ -256,6 +268,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.serial = serial;
     }
 
+    
+
     public ShowPublicZoneResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -275,6 +289,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ShowPublicZoneResponse withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
@@ -296,6 +312,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.recordNum = recordNum;
     }
 
+    
+
     public ShowPublicZoneResponse withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -315,6 +333,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public ShowPublicZoneResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -336,6 +356,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public ShowPublicZoneResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -355,6 +377,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public ShowPublicZoneResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -376,6 +400,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ShowPublicZoneResponse withMasters(String masters) {
         this.masters = masters;
         return this;
@@ -395,6 +421,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setMasters(String masters) {
         this.masters = masters;
     }
+
+    
 
     public ShowPublicZoneResponse withLinks(PageLink links) {
         this.links = links;
@@ -423,6 +451,8 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public ShowPublicZoneResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -442,6 +472,9 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

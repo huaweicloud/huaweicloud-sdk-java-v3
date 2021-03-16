@@ -36,7 +36,7 @@ public class BindTagsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<TagV5DTO> tags = new ArrayList<>();
+    private List<TagV5DTO> tags = null;
     
     public BindTagsDTO withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -58,6 +58,8 @@ public class BindTagsDTO  {
         this.resourceType = resourceType;
     }
 
+    
+
     public BindTagsDTO withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -77,6 +79,8 @@ public class BindTagsDTO  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public BindTagsDTO withTags(List<TagV5DTO> tags) {
         this.tags = tags;
@@ -108,6 +112,9 @@ public class BindTagsDTO  {
     public void setTags(List<TagV5DTO> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ShowRetentionRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ShowRetentionRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class ShowRetentionRequest  {
         this.repository = repository;
     }
 
+    
+
     public ShowRetentionRequest withRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
         return this;
@@ -94,6 +98,9 @@ public class ShowRetentionRequest  {
     public void setRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

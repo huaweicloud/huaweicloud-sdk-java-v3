@@ -55,6 +55,8 @@ public class DeleteRetentionRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public DeleteRetentionRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class DeleteRetentionRequest  {
         this.repository = repository;
     }
 
+    
+
     public DeleteRetentionRequest withRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteRetentionRequest  {
     public void setRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

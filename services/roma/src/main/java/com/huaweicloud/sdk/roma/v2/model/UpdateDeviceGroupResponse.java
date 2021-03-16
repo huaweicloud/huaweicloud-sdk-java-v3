@@ -63,13 +63,13 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,9 +96,6 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
 
     
     public UpdateDeviceGroupResponse addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -123,6 +120,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
+    
+
     public UpdateDeviceGroupResponse withParentId(Integer parentId) {
         this.parentId = parentId;
         return this;
@@ -142,6 +141,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public UpdateDeviceGroupResponse withId(Integer id) {
         this.id = id;
@@ -163,6 +164,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdateDeviceGroupResponse withName(String name) {
         this.name = name;
         return this;
@@ -182,6 +185,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateDeviceGroupResponse withDescription(String description) {
         this.description = description;
@@ -203,6 +208,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateDeviceGroupResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -222,6 +229,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public UpdateDeviceGroupResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -250,6 +259,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
+    
+
     public UpdateDeviceGroupResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -277,6 +288,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public UpdateDeviceGroupResponse withCreatedDatetime(String createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -296,6 +309,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     public void setCreatedDatetime(String createdDatetime) {
         this.createdDatetime = createdDatetime;
     }
+
+    
 
     public UpdateDeviceGroupResponse withLastUpdatedDatetime(String lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
@@ -317,6 +332,8 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
 
+    
+
     public UpdateDeviceGroupResponse withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -336,6 +353,9 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

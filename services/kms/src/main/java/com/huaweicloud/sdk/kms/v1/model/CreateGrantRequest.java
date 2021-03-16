@@ -22,13 +22,13 @@ public class CreateGrantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateGrantRequestBody body = null;
+    private CreateGrantRequestBody body;
 
     public CreateGrantRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class CreateGrantRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public CreateGrantRequest withBody(CreateGrantRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateGrantRequest  {
     public void setBody(CreateGrantRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

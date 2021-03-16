@@ -33,25 +33,25 @@ public class ListCompareResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="object_level_compare_results")
     
-    private ObjectCompareResult objectLevelCompareResults = null;
+    private ObjectCompareResult objectLevelCompareResults;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="line_compare_results")
     
-    private LineCompareResult lineCompareResults = null;
+    private LineCompareResult lineCompareResults;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content_compare_results")
     
-    private ContentCompareResult contentCompareResults = null;
+    private ContentCompareResult contentCompareResults;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="compare_task_list_results")
     
-    private CompareTaskListResult compareTaskListResults = null;
+    private CompareTaskListResult compareTaskListResults;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class ListCompareResultResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public ListCompareResultResponse withObjectLevelCompareResults(ObjectCompareResult objectLevelCompareResults) {
         this.objectLevelCompareResults = objectLevelCompareResults;
         return this;
@@ -111,6 +113,8 @@ public class ListCompareResultResponse extends SdkResponse {
     public void setObjectLevelCompareResults(ObjectCompareResult objectLevelCompareResults) {
         this.objectLevelCompareResults = objectLevelCompareResults;
     }
+
+    
 
     public ListCompareResultResponse withLineCompareResults(LineCompareResult lineCompareResults) {
         this.lineCompareResults = lineCompareResults;
@@ -139,6 +143,8 @@ public class ListCompareResultResponse extends SdkResponse {
         this.lineCompareResults = lineCompareResults;
     }
 
+    
+
     public ListCompareResultResponse withContentCompareResults(ContentCompareResult contentCompareResults) {
         this.contentCompareResults = contentCompareResults;
         return this;
@@ -165,6 +171,8 @@ public class ListCompareResultResponse extends SdkResponse {
     public void setContentCompareResults(ContentCompareResult contentCompareResults) {
         this.contentCompareResults = contentCompareResults;
     }
+
+    
 
     public ListCompareResultResponse withCompareTaskListResults(CompareTaskListResult compareTaskListResults) {
         this.compareTaskListResults = compareTaskListResults;
@@ -193,6 +201,8 @@ public class ListCompareResultResponse extends SdkResponse {
         this.compareTaskListResults = compareTaskListResults;
     }
 
+    
+
     public ListCompareResultResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -213,6 +223,8 @@ public class ListCompareResultResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public ListCompareResultResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -232,6 +244,9 @@ public class ListCompareResultResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

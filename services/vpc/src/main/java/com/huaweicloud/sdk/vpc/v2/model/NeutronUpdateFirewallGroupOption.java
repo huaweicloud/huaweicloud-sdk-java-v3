@@ -23,7 +23,7 @@ public class NeutronUpdateFirewallGroupOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class NeutronUpdateFirewallGroupOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public NeutronUpdateFirewallGroupOption withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +96,8 @@ public class NeutronUpdateFirewallGroupOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public NeutronUpdateFirewallGroupOption withEgressFirewallPolicyId(String egressFirewallPolicyId) {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
@@ -115,6 +119,8 @@ public class NeutronUpdateFirewallGroupOption  {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
     }
 
+    
+
     public NeutronUpdateFirewallGroupOption withIngressFirewallPolicyId(String ingressFirewallPolicyId) {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
         return this;
@@ -134,6 +140,8 @@ public class NeutronUpdateFirewallGroupOption  {
     public void setIngressFirewallPolicyId(String ingressFirewallPolicyId) {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
     }
+
+    
 
     public NeutronUpdateFirewallGroupOption withName(String name) {
         this.name = name;
@@ -155,6 +163,8 @@ public class NeutronUpdateFirewallGroupOption  {
         this.name = name;
     }
 
+    
+
     public NeutronUpdateFirewallGroupOption withPorts(List<String> ports) {
         this.ports = ports;
         return this;
@@ -162,9 +172,6 @@ public class NeutronUpdateFirewallGroupOption  {
 
     
     public NeutronUpdateFirewallGroupOption addPortsItem(String portsItem) {
-        if (this.ports == null) {
-            this.ports = new ArrayList<>();
-        }
         this.ports.add(portsItem);
         return this;
     }
@@ -188,6 +195,9 @@ public class NeutronUpdateFirewallGroupOption  {
     public void setPorts(List<String> ports) {
         this.ports = ports;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

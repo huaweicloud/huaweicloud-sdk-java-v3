@@ -49,6 +49,8 @@ public class CreateCredentialOption  {
         this.userId = userId;
     }
 
+    
+
     public CreateCredentialOption withDescription(String description) {
         this.description = description;
         return this;
@@ -68,6 +70,9 @@ public class CreateCredentialOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

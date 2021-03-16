@@ -28,7 +28,7 @@ public class PublishAppMessageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PublishAppMessageRequestBody body = null;
+    private PublishAppMessageRequestBody body;
 
     public PublishAppMessageRequest withEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
@@ -49,6 +49,8 @@ public class PublishAppMessageRequest  {
     public void setEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
     }
+
+    
 
     public PublishAppMessageRequest withBody(PublishAppMessageRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class PublishAppMessageRequest  {
     public void setBody(PublishAppMessageRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

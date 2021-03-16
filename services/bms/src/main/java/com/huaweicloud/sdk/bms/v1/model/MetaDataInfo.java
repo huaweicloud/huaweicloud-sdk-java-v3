@@ -61,6 +61,8 @@ public class MetaDataInfo  {
         this.opSvcUserid = opSvcUserid;
     }
 
+    
+
     public MetaDataInfo withAdminPass(String adminPass) {
         this.adminPass = adminPass;
         return this;
@@ -80,6 +82,8 @@ public class MetaDataInfo  {
     public void setAdminPass(String adminPass) {
         this.adminPass = adminPass;
     }
+
+    
 
     public MetaDataInfo withByol(String byol) {
         this.byol = byol;
@@ -101,6 +105,8 @@ public class MetaDataInfo  {
         this.byol = byol;
     }
 
+    
+
     public MetaDataInfo withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -120,6 +126,9 @@ public class MetaDataInfo  {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

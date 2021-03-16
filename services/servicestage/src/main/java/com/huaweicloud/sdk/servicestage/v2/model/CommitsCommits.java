@@ -55,6 +55,8 @@ public class CommitsCommits  {
         this.sha = sha;
     }
 
+    
+
     public CommitsCommits withMessage(String message) {
         this.message = message;
         return this;
@@ -75,6 +77,8 @@ public class CommitsCommits  {
         this.message = message;
     }
 
+    
+
     public CommitsCommits withAuthoredDate(String authoredDate) {
         this.authoredDate = authoredDate;
         return this;
@@ -94,6 +98,9 @@ public class CommitsCommits  {
     public void setAuthoredDate(String authoredDate) {
         this.authoredDate = authoredDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

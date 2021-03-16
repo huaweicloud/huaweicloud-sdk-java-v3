@@ -21,19 +21,19 @@ public class RemuxOutputParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="format")
     
-    private String format = "MP4";
+    private String format;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="segment_duration")
     
-    private Integer segmentDuration = 5;
+    private Integer segmentDuration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remove_meta")
     
-    private Boolean removeMeta = false;
+    private Boolean removeMeta;
 
     public RemuxOutputParam withFormat(String format) {
         this.format = format;
@@ -54,6 +54,8 @@ public class RemuxOutputParam  {
     public void setFormat(String format) {
         this.format = format;
     }
+
+    
 
     public RemuxOutputParam withSegmentDuration(Integer segmentDuration) {
         this.segmentDuration = segmentDuration;
@@ -77,6 +79,8 @@ public class RemuxOutputParam  {
         this.segmentDuration = segmentDuration;
     }
 
+    
+
     public RemuxOutputParam withRemoveMeta(Boolean removeMeta) {
         this.removeMeta = removeMeta;
         return this;
@@ -96,6 +100,9 @@ public class RemuxOutputParam  {
     public void setRemoveMeta(Boolean removeMeta) {
         this.removeMeta = removeMeta;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

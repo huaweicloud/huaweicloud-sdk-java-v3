@@ -40,7 +40,7 @@ public class ProtectableResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vault")
     
-    private VaultGet vault = null;
+    private VaultGet vault;
 
     public ProtectableResult withCode(String code) {
         this.code = code;
@@ -62,6 +62,8 @@ public class ProtectableResult  {
         this.code = code;
     }
 
+    
+
     public ProtectableResult withReason(String reason) {
         this.reason = reason;
         return this;
@@ -82,6 +84,8 @@ public class ProtectableResult  {
         this.reason = reason;
     }
 
+    
+
     public ProtectableResult withResult(String result) {
         this.result = result;
         return this;
@@ -101,6 +105,8 @@ public class ProtectableResult  {
     public void setResult(String result) {
         this.result = result;
     }
+
+    
 
     public ProtectableResult withVault(VaultGet vault) {
         this.vault = vault;
@@ -128,6 +134,9 @@ public class ProtectableResult  {
     public void setVault(VaultGet vault) {
         this.vault = vault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

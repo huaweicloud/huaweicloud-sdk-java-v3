@@ -23,7 +23,7 @@ public class BatchDeleteIterationsV4RequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="iteration_ids")
     
-    private List<Integer> iterationIds = new ArrayList<>();
+    private List<Integer> iterationIds = null;
     
     public BatchDeleteIterationsV4RequestBody withIterationIds(List<Integer> iterationIds) {
         this.iterationIds = iterationIds;
@@ -55,6 +55,9 @@ public class BatchDeleteIterationsV4RequestBody  {
     public void setIterationIds(List<Integer> iterationIds) {
         this.iterationIds = iterationIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

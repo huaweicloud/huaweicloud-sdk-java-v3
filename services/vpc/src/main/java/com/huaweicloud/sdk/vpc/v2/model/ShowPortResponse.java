@@ -24,7 +24,7 @@ public class ShowPortResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    private Port port = null;
+    private Port port;
 
     public ShowPortResponse withPort(Port port) {
         this.port = port;
@@ -52,6 +52,9 @@ public class ShowPortResponse extends SdkResponse {
     public void setPort(Port port) {
         this.port = port;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

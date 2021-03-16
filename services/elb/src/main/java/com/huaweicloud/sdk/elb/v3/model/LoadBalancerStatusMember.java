@@ -67,6 +67,8 @@ public class LoadBalancerStatusMember  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public LoadBalancerStatusMember withAddress(String address) {
         this.address = address;
         return this;
@@ -86,6 +88,8 @@ public class LoadBalancerStatusMember  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public LoadBalancerStatusMember withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -107,6 +111,8 @@ public class LoadBalancerStatusMember  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public LoadBalancerStatusMember withId(String id) {
         this.id = id;
         return this;
@@ -127,6 +133,8 @@ public class LoadBalancerStatusMember  {
         this.id = id;
     }
 
+    
+
     public LoadBalancerStatusMember withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -146,6 +154,9 @@ public class LoadBalancerStatusMember  {
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

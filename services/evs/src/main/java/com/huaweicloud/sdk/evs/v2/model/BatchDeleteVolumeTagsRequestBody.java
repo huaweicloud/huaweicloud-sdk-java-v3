@@ -100,13 +100,13 @@ public class BatchDeleteVolumeTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action = ActionEnum.DELETE;
+    private ActionEnum action;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<DeleteTagsOption> tags = new ArrayList<>();
+    private List<DeleteTagsOption> tags = null;
     
     public BatchDeleteVolumeTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -127,6 +127,8 @@ public class BatchDeleteVolumeTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public BatchDeleteVolumeTagsRequestBody withTags(List<DeleteTagsOption> tags) {
         this.tags = tags;
@@ -158,6 +160,9 @@ public class BatchDeleteVolumeTagsRequestBody  {
     public void setTags(List<DeleteTagsOption> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

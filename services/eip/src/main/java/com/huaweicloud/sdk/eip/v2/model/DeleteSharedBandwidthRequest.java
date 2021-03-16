@@ -42,6 +42,9 @@ public class DeleteSharedBandwidthRequest  {
     public void setBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

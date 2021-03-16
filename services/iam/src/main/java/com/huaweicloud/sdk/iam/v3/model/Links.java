@@ -55,6 +55,8 @@ public class Links  {
         this.self = self;
     }
 
+    
+
     public Links withPrevious(String previous) {
         this.previous = previous;
         return this;
@@ -75,6 +77,8 @@ public class Links  {
         this.previous = previous;
     }
 
+    
+
     public Links withNext(String next) {
         this.next = next;
         return this;
@@ -94,6 +98,9 @@ public class Links  {
     public void setNext(String next) {
         this.next = next;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

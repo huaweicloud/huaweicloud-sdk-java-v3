@@ -122,7 +122,7 @@ public class UpdateDbUserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDbUserRequestBody body = null;
+    private UpdateDbUserRequestBody body;
 
     public UpdateDbUserRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -144,6 +144,8 @@ public class UpdateDbUserRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateDbUserRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
@@ -163,6 +165,8 @@ public class UpdateDbUserRequest  {
     public void setDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
     }
+
+    
 
     public UpdateDbUserRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -185,6 +189,8 @@ public class UpdateDbUserRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public UpdateDbUserRequest withBody(UpdateDbUserRequestBody body) {
         this.body = body;
@@ -212,6 +218,9 @@ public class UpdateDbUserRequest  {
     public void setBody(UpdateDbUserRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

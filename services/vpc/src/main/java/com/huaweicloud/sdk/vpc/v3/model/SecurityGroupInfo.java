@@ -50,13 +50,13 @@ public class SecurityGroupInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class SecurityGroupInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_rules")
     
-    private List<SecurityGroupRule> securityGroupRules = new ArrayList<>();
+    private List<SecurityGroupRule> securityGroupRules = null;
     
     public SecurityGroupInfo withId(String id) {
         this.id = id;
@@ -90,6 +90,8 @@ public class SecurityGroupInfo  {
         this.id = id;
     }
 
+    
+
     public SecurityGroupInfo withName(String name) {
         this.name = name;
         return this;
@@ -109,6 +111,8 @@ public class SecurityGroupInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SecurityGroupInfo withDescription(String description) {
         this.description = description;
@@ -130,6 +134,8 @@ public class SecurityGroupInfo  {
         this.description = description;
     }
 
+    
+
     public SecurityGroupInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -149,6 +155,8 @@ public class SecurityGroupInfo  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public SecurityGroupInfo withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
@@ -170,6 +178,8 @@ public class SecurityGroupInfo  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SecurityGroupInfo withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -190,6 +200,8 @@ public class SecurityGroupInfo  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public SecurityGroupInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -209,6 +221,8 @@ public class SecurityGroupInfo  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public SecurityGroupInfo withSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
@@ -240,6 +254,9 @@ public class SecurityGroupInfo  {
     public void setSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

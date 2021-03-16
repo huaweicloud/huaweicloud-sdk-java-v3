@@ -49,6 +49,8 @@ public class DeleteRuleActionRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteRuleActionRequest withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteRuleActionRequest  {
     public void setActionId(String actionId) {
         this.actionId = actionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

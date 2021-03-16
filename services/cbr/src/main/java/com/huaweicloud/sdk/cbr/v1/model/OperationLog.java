@@ -47,13 +47,13 @@ public class OperationLog  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_info")
     
-    private OpErrorInfo errorInfo = null;
+    private OpErrorInfo errorInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_info")
     
-    private OpExtraInfo extraInfo = null;
+    private OpExtraInfo extraInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -351,6 +351,8 @@ public class OperationLog  {
         this.checkpointId = checkpointId;
     }
 
+    
+
     public OperationLog withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -371,6 +373,8 @@ public class OperationLog  {
         this.createdAt = createdAt;
     }
 
+    
+
     public OperationLog withEndedAt(String endedAt) {
         this.endedAt = endedAt;
         return this;
@@ -390,6 +394,8 @@ public class OperationLog  {
     public void setEndedAt(String endedAt) {
         this.endedAt = endedAt;
     }
+
+    
 
     public OperationLog withErrorInfo(OpErrorInfo errorInfo) {
         this.errorInfo = errorInfo;
@@ -418,6 +424,8 @@ public class OperationLog  {
         this.errorInfo = errorInfo;
     }
 
+    
+
     public OperationLog withExtraInfo(OpExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
         return this;
@@ -445,6 +453,8 @@ public class OperationLog  {
         this.extraInfo = extraInfo;
     }
 
+    
+
     public OperationLog withId(String id) {
         this.id = id;
         return this;
@@ -464,6 +474,8 @@ public class OperationLog  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public OperationLog withOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
@@ -485,6 +497,8 @@ public class OperationLog  {
         this.operationType = operationType;
     }
 
+    
+
     public OperationLog withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -504,6 +518,8 @@ public class OperationLog  {
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
     }
+
+    
 
     public OperationLog withProjectId(String projectId) {
         this.projectId = projectId;
@@ -525,6 +541,8 @@ public class OperationLog  {
         this.projectId = projectId;
     }
 
+    
+
     public OperationLog withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
@@ -544,6 +562,8 @@ public class OperationLog  {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
+    
 
     public OperationLog withStartedAt(String startedAt) {
         this.startedAt = startedAt;
@@ -565,6 +585,8 @@ public class OperationLog  {
         this.startedAt = startedAt;
     }
 
+    
+
     public OperationLog withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -584,6 +606,8 @@ public class OperationLog  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public OperationLog withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -605,6 +629,8 @@ public class OperationLog  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public OperationLog withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -625,6 +651,8 @@ public class OperationLog  {
         this.vaultId = vaultId;
     }
 
+    
+
     public OperationLog withVaultName(String vaultName) {
         this.vaultName = vaultName;
         return this;
@@ -644,6 +672,9 @@ public class OperationLog  {
     public void setVaultName(String vaultName) {
         this.vaultName = vaultName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

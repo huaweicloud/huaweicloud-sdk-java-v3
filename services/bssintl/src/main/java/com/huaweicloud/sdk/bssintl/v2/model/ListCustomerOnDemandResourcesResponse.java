@@ -41,9 +41,6 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
 
     
     public ListCustomerOnDemandResourcesResponse addResourcesItem(CustomerOnDemandResource resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
         this.resources = resources;
     }
 
+    
+
     public ListCustomerOnDemandResourcesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

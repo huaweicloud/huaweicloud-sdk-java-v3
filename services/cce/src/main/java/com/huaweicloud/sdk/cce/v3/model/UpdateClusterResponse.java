@@ -26,31 +26,31 @@ public class UpdateClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Cluster";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private ClusterMetadata metadata = null;
+    private ClusterMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3ClusterSpec spec = null;
+    private V3ClusterSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private ClusterStatus status = null;
+    private ClusterStatus status;
 
     public UpdateClusterResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -72,6 +72,8 @@ public class UpdateClusterResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public UpdateClusterResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -91,6 +93,8 @@ public class UpdateClusterResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public UpdateClusterResponse withMetadata(ClusterMetadata metadata) {
         this.metadata = metadata;
@@ -119,6 +123,8 @@ public class UpdateClusterResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public UpdateClusterResponse withSpec(V3ClusterSpec spec) {
         this.spec = spec;
         return this;
@@ -146,6 +152,8 @@ public class UpdateClusterResponse extends SdkResponse {
         this.spec = spec;
     }
 
+    
+
     public UpdateClusterResponse withStatus(ClusterStatus status) {
         this.status = status;
         return this;
@@ -172,6 +180,9 @@ public class UpdateClusterResponse extends SdkResponse {
     public void setStatus(ClusterStatus status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

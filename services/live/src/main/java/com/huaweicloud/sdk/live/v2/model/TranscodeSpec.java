@@ -49,6 +49,8 @@ public class TranscodeSpec  {
         this.type = type;
     }
 
+    
+
     public TranscodeSpec withValue(Double value) {
         this.value = value;
         return this;
@@ -70,6 +72,9 @@ public class TranscodeSpec  {
     public void setValue(Double value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

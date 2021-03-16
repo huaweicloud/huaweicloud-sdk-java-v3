@@ -40,7 +40,7 @@ public class ImageTaggingItemBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="i18n_tag")
     
-    private ImageTaggingI18nTag i18nTag = null;
+    private ImageTaggingI18nTag i18nTag;
 
     public ImageTaggingItemBody withConfidence(String confidence) {
         this.confidence = confidence;
@@ -62,6 +62,8 @@ public class ImageTaggingItemBody  {
         this.confidence = confidence;
     }
 
+    
+
     public ImageTaggingItemBody withType(String type) {
         this.type = type;
         return this;
@@ -82,6 +84,8 @@ public class ImageTaggingItemBody  {
         this.type = type;
     }
 
+    
+
     public ImageTaggingItemBody withTag(String tag) {
         this.tag = tag;
         return this;
@@ -101,6 +105,8 @@ public class ImageTaggingItemBody  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
 
     public ImageTaggingItemBody withI18nTag(ImageTaggingI18nTag i18nTag) {
         this.i18nTag = i18nTag;
@@ -128,6 +134,9 @@ public class ImageTaggingItemBody  {
     public void setI18nTag(ImageTaggingI18nTag i18nTag) {
         this.i18nTag = i18nTag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

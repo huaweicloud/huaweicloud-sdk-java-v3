@@ -22,7 +22,7 @@ public class CreateDependencyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateDependencyRequestBody body = null;
+    private CreateDependencyRequestBody body;
 
     public CreateDependencyRequest withBody(CreateDependencyRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateDependencyRequest  {
     public void setBody(CreateDependencyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

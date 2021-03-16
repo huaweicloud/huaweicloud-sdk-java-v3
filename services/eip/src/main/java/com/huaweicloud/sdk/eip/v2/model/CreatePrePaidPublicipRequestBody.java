@@ -24,19 +24,19 @@ public class CreatePrePaidPublicipRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private CreatePrePaidPublicipOption publicip = null;
+    private CreatePrePaidPublicipOption publicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private CreatePublicipBandwidthOption bandwidth = null;
+    private CreatePublicipBandwidthOption bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendParam")
     
-    private CreatePrePaidPublicipExtendParamOption extendParam = null;
+    private CreatePrePaidPublicipExtendParamOption extendParam;
 
     public CreatePrePaidPublicipRequestBody withPublicip(CreatePrePaidPublicipOption publicip) {
         this.publicip = publicip;
@@ -65,6 +65,8 @@ public class CreatePrePaidPublicipRequestBody  {
         this.publicip = publicip;
     }
 
+    
+
     public CreatePrePaidPublicipRequestBody withBandwidth(CreatePublicipBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
         return this;
@@ -92,6 +94,8 @@ public class CreatePrePaidPublicipRequestBody  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public CreatePrePaidPublicipRequestBody withExtendParam(CreatePrePaidPublicipExtendParamOption extendParam) {
         this.extendParam = extendParam;
         return this;
@@ -118,6 +122,9 @@ public class CreatePrePaidPublicipRequestBody  {
     public void setExtendParam(CreatePrePaidPublicipExtendParamOption extendParam) {
         this.extendParam = extendParam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

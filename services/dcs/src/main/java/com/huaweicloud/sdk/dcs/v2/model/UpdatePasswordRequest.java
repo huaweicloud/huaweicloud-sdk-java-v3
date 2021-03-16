@@ -28,7 +28,7 @@ public class UpdatePasswordRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModifyInstancePasswordBody body = null;
+    private ModifyInstancePasswordBody body;
 
     public UpdatePasswordRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdatePasswordRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdatePasswordRequest withBody(ModifyInstancePasswordBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePasswordRequest  {
     public void setBody(ModifyInstancePasswordBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

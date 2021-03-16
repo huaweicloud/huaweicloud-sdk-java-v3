@@ -50,7 +50,7 @@ public class NatGatewaySnatRuleResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_type")
     
-    private Integer sourceType = 0;
+    private Integer sourceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -176,7 +176,7 @@ public class NatGatewaySnatRuleResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -222,6 +222,8 @@ public class NatGatewaySnatRuleResponseBody  {
         this.id = id;
     }
 
+    
+
     public NatGatewaySnatRuleResponseBody withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -241,6 +243,8 @@ public class NatGatewaySnatRuleResponseBody  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public NatGatewaySnatRuleResponseBody withNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
@@ -262,6 +266,8 @@ public class NatGatewaySnatRuleResponseBody  {
         this.natGatewayId = natGatewayId;
     }
 
+    
+
     public NatGatewaySnatRuleResponseBody withCidr(String cidr) {
         this.cidr = cidr;
         return this;
@@ -281,6 +287,8 @@ public class NatGatewaySnatRuleResponseBody  {
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
+
+    
 
     public NatGatewaySnatRuleResponseBody withSourceType(Integer sourceType) {
         this.sourceType = sourceType;
@@ -302,6 +310,8 @@ public class NatGatewaySnatRuleResponseBody  {
         this.sourceType = sourceType;
     }
 
+    
+
     public NatGatewaySnatRuleResponseBody withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
@@ -321,6 +331,8 @@ public class NatGatewaySnatRuleResponseBody  {
     public void setFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
     }
+
+    
 
     public NatGatewaySnatRuleResponseBody withDescription(String description) {
         this.description = description;
@@ -342,6 +354,8 @@ public class NatGatewaySnatRuleResponseBody  {
         this.description = description;
     }
 
+    
+
     public NatGatewaySnatRuleResponseBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -361,6 +375,8 @@ public class NatGatewaySnatRuleResponseBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public NatGatewaySnatRuleResponseBody withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
@@ -382,6 +398,8 @@ public class NatGatewaySnatRuleResponseBody  {
         this.createdAt = createdAt;
     }
 
+    
+
     public NatGatewaySnatRuleResponseBody withNetworkId(String networkId) {
         this.networkId = networkId;
         return this;
@@ -401,6 +419,8 @@ public class NatGatewaySnatRuleResponseBody  {
     public void setNetworkId(String networkId) {
         this.networkId = networkId;
     }
+
+    
 
     public NatGatewaySnatRuleResponseBody withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -422,6 +442,8 @@ public class NatGatewaySnatRuleResponseBody  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public NatGatewaySnatRuleResponseBody withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
@@ -442,6 +464,8 @@ public class NatGatewaySnatRuleResponseBody  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
+    
+
     public NatGatewaySnatRuleResponseBody withFreezedIpAddress(String freezedIpAddress) {
         this.freezedIpAddress = freezedIpAddress;
         return this;
@@ -461,6 +485,9 @@ public class NatGatewaySnatRuleResponseBody  {
     public void setFreezedIpAddress(String freezedIpAddress) {
         this.freezedIpAddress = freezedIpAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

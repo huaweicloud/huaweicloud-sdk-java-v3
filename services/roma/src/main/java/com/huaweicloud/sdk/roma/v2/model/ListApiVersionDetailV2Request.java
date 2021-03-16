@@ -49,6 +49,8 @@ public class ListApiVersionDetailV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListApiVersionDetailV2Request withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -68,6 +70,9 @@ public class ListApiVersionDetailV2Request  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

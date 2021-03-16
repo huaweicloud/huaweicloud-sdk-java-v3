@@ -28,7 +28,7 @@ public class RestoreToExistingInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestoreToExistingInstanceRequestBody body = null;
+    private RestoreToExistingInstanceRequestBody body;
 
     public RestoreToExistingInstanceRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -51,6 +51,8 @@ public class RestoreToExistingInstanceRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public RestoreToExistingInstanceRequest withBody(RestoreToExistingInstanceRequestBody body) {
         this.body = body;
@@ -78,6 +80,9 @@ public class RestoreToExistingInstanceRequest  {
     public void setBody(RestoreToExistingInstanceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -109,6 +109,8 @@ public class QuotaRecord  {
         this.id = id;
     }
 
+    
+
     public QuotaRecord withOperator(String operator) {
         this.operator = operator;
         return this;
@@ -128,6 +130,8 @@ public class QuotaRecord  {
     public void setOperator(String operator) {
         this.operator = operator;
     }
+
+    
 
     public QuotaRecord withOperationType(String operationType) {
         this.operationType = operationType;
@@ -149,6 +153,8 @@ public class QuotaRecord  {
         this.operationType = operationType;
     }
 
+    
+
     public QuotaRecord withQuotaId(String quotaId) {
         this.quotaId = quotaId;
         return this;
@@ -168,6 +174,8 @@ public class QuotaRecord  {
     public void setQuotaId(String quotaId) {
         this.quotaId = quotaId;
     }
+
+    
 
     public QuotaRecord withParentQuotaId(String parentQuotaId) {
         this.parentQuotaId = parentQuotaId;
@@ -189,6 +197,8 @@ public class QuotaRecord  {
         this.parentQuotaId = parentQuotaId;
     }
 
+    
+
     public QuotaRecord withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -208,6 +218,8 @@ public class QuotaRecord  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
 
     public QuotaRecord withOperationTime(String operationTime) {
         this.operationTime = operationTime;
@@ -229,6 +241,8 @@ public class QuotaRecord  {
         this.operationTime = operationTime;
     }
 
+    
+
     public QuotaRecord withResult(String result) {
         this.result = result;
         return this;
@@ -248,6 +262,8 @@ public class QuotaRecord  {
     public void setResult(String result) {
         this.result = result;
     }
+
+    
 
     public QuotaRecord withIndirectPartnerAccountName(String indirectPartnerAccountName) {
         this.indirectPartnerAccountName = indirectPartnerAccountName;
@@ -269,6 +285,8 @@ public class QuotaRecord  {
         this.indirectPartnerAccountName = indirectPartnerAccountName;
     }
 
+    
+
     public QuotaRecord withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -288,6 +306,8 @@ public class QuotaRecord  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
 
     public QuotaRecord withIndirectPartnerName(String indirectPartnerName) {
         this.indirectPartnerName = indirectPartnerName;
@@ -309,6 +329,8 @@ public class QuotaRecord  {
         this.indirectPartnerName = indirectPartnerName;
     }
 
+    
+
     public QuotaRecord withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -328,6 +350,9 @@ public class QuotaRecord  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

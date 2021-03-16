@@ -449,6 +449,8 @@ public class OsExtraSpecs  {
         this.resourceType = resourceType;
     }
 
+    
+
     public OsExtraSpecs withCapabilitiesCpuArch(CapabilitiesCpuArchEnum capabilitiesCpuArch) {
         this.capabilitiesCpuArch = capabilitiesCpuArch;
         return this;
@@ -468,6 +470,8 @@ public class OsExtraSpecs  {
     public void setCapabilitiesCpuArch(CapabilitiesCpuArchEnum capabilitiesCpuArch) {
         this.capabilitiesCpuArch = capabilitiesCpuArch;
     }
+
+    
 
     public OsExtraSpecs withBaremetalDiskDetail(String baremetalDiskDetail) {
         this.baremetalDiskDetail = baremetalDiskDetail;
@@ -489,6 +493,8 @@ public class OsExtraSpecs  {
         this.baremetalDiskDetail = baremetalDiskDetail;
     }
 
+    
+
     public OsExtraSpecs withCapabilitiesHypervisorType(String capabilitiesHypervisorType) {
         this.capabilitiesHypervisorType = capabilitiesHypervisorType;
         return this;
@@ -508,6 +514,8 @@ public class OsExtraSpecs  {
     public void setCapabilitiesHypervisorType(String capabilitiesHypervisorType) {
         this.capabilitiesHypervisorType = capabilitiesHypervisorType;
     }
+
+    
 
     public OsExtraSpecs withBaremetalSupportEvs(String baremetalSupportEvs) {
         this.baremetalSupportEvs = baremetalSupportEvs;
@@ -529,6 +537,8 @@ public class OsExtraSpecs  {
         this.baremetalSupportEvs = baremetalSupportEvs;
     }
 
+    
+
     public OsExtraSpecs withBaremetalExtBootType(BaremetalExtBootTypeEnum baremetalExtBootType) {
         this.baremetalExtBootType = baremetalExtBootType;
         return this;
@@ -548,6 +558,8 @@ public class OsExtraSpecs  {
     public void setBaremetalExtBootType(BaremetalExtBootTypeEnum baremetalExtBootType) {
         this.baremetalExtBootType = baremetalExtBootType;
     }
+
+    
 
     public OsExtraSpecs withCapabilitiesBoardType(String capabilitiesBoardType) {
         this.capabilitiesBoardType = capabilitiesBoardType;
@@ -569,6 +581,8 @@ public class OsExtraSpecs  {
         this.capabilitiesBoardType = capabilitiesBoardType;
     }
 
+    
+
     public OsExtraSpecs withBaremetalNetNum(String baremetalNetNum) {
         this.baremetalNetNum = baremetalNetNum;
         return this;
@@ -588,6 +602,8 @@ public class OsExtraSpecs  {
     public void setBaremetalNetNum(String baremetalNetNum) {
         this.baremetalNetNum = baremetalNetNum;
     }
+
+    
 
     public OsExtraSpecs withBaremetalNetcardDetail(String baremetalNetcardDetail) {
         this.baremetalNetcardDetail = baremetalNetcardDetail;
@@ -609,6 +625,8 @@ public class OsExtraSpecs  {
         this.baremetalNetcardDetail = baremetalNetcardDetail;
     }
 
+    
+
     public OsExtraSpecs withBaremetalCpuDetail(String baremetalCpuDetail) {
         this.baremetalCpuDetail = baremetalCpuDetail;
         return this;
@@ -628,6 +646,8 @@ public class OsExtraSpecs  {
     public void setBaremetalCpuDetail(String baremetalCpuDetail) {
         this.baremetalCpuDetail = baremetalCpuDetail;
     }
+
+    
 
     public OsExtraSpecs withBaremetalMemoryDetail(String baremetalMemoryDetail) {
         this.baremetalMemoryDetail = baremetalMemoryDetail;
@@ -649,6 +669,8 @@ public class OsExtraSpecs  {
         this.baremetalMemoryDetail = baremetalMemoryDetail;
     }
 
+    
+
     public OsExtraSpecs withCondOperationStatus(CondOperationStatusEnum condOperationStatus) {
         this.condOperationStatus = condOperationStatus;
         return this;
@@ -669,6 +691,8 @@ public class OsExtraSpecs  {
         this.condOperationStatus = condOperationStatus;
     }
 
+    
+
     public OsExtraSpecs withCondOperationAz(String condOperationAz) {
         this.condOperationAz = condOperationAz;
         return this;
@@ -688,6 +712,9 @@ public class OsExtraSpecs  {
     public void setCondOperationAz(String condOperationAz) {
         this.condOperationAz = condOperationAz;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

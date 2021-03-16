@@ -103,6 +103,8 @@ public class SecurityGroupRule  {
         this.id = id;
     }
 
+    
+
     public SecurityGroupRule withDescription(String description) {
         this.description = description;
         return this;
@@ -122,6 +124,8 @@ public class SecurityGroupRule  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public SecurityGroupRule withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -143,6 +147,8 @@ public class SecurityGroupRule  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public SecurityGroupRule withDirection(String direction) {
         this.direction = direction;
         return this;
@@ -162,6 +168,8 @@ public class SecurityGroupRule  {
     public void setDirection(String direction) {
         this.direction = direction;
     }
+
+    
 
     public SecurityGroupRule withEthertype(String ethertype) {
         this.ethertype = ethertype;
@@ -183,6 +191,8 @@ public class SecurityGroupRule  {
         this.ethertype = ethertype;
     }
 
+    
+
     public SecurityGroupRule withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -202,6 +212,8 @@ public class SecurityGroupRule  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public SecurityGroupRule withPortRangeMin(Integer portRangeMin) {
         this.portRangeMin = portRangeMin;
@@ -223,6 +235,8 @@ public class SecurityGroupRule  {
         this.portRangeMin = portRangeMin;
     }
 
+    
+
     public SecurityGroupRule withPortRangeMax(Integer portRangeMax) {
         this.portRangeMax = portRangeMax;
         return this;
@@ -242,6 +256,8 @@ public class SecurityGroupRule  {
     public void setPortRangeMax(Integer portRangeMax) {
         this.portRangeMax = portRangeMax;
     }
+
+    
 
     public SecurityGroupRule withRemoteIpPrefix(String remoteIpPrefix) {
         this.remoteIpPrefix = remoteIpPrefix;
@@ -263,6 +279,8 @@ public class SecurityGroupRule  {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
+    
+
     public SecurityGroupRule withRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
         return this;
@@ -283,6 +301,8 @@ public class SecurityGroupRule  {
         this.remoteGroupId = remoteGroupId;
     }
 
+    
+
     public SecurityGroupRule withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -302,6 +322,9 @@ public class SecurityGroupRule  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

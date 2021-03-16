@@ -196,7 +196,7 @@ public class HealthmonitorResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<ResourceList> pools = new ArrayList<>();
+    private List<ResourceList> pools = null;
     
     public HealthmonitorResp withId(String id) {
         this.id = id;
@@ -218,6 +218,8 @@ public class HealthmonitorResp  {
         this.id = id;
     }
 
+    
+
     public HealthmonitorResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -237,6 +239,8 @@ public class HealthmonitorResp  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public HealthmonitorResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -258,6 +262,8 @@ public class HealthmonitorResp  {
         this.tenantId = tenantId;
     }
 
+    
+
     public HealthmonitorResp withName(String name) {
         this.name = name;
         return this;
@@ -278,6 +284,8 @@ public class HealthmonitorResp  {
         this.name = name;
     }
 
+    
+
     public HealthmonitorResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -297,6 +305,8 @@ public class HealthmonitorResp  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public HealthmonitorResp withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
@@ -320,6 +330,8 @@ public class HealthmonitorResp  {
         this.monitorPort = monitorPort;
     }
 
+    
+
     public HealthmonitorResp withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -342,6 +354,8 @@ public class HealthmonitorResp  {
         this.timeout = timeout;
     }
 
+    
+
     public HealthmonitorResp withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -361,6 +375,8 @@ public class HealthmonitorResp  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public HealthmonitorResp withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
@@ -382,6 +398,8 @@ public class HealthmonitorResp  {
         this.expectedCodes = expectedCodes;
     }
 
+    
+
     public HealthmonitorResp withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -401,6 +419,8 @@ public class HealthmonitorResp  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public HealthmonitorResp withUrlPath(String urlPath) {
         this.urlPath = urlPath;
@@ -422,6 +442,8 @@ public class HealthmonitorResp  {
         this.urlPath = urlPath;
     }
 
+    
+
     public HealthmonitorResp withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
@@ -441,6 +463,8 @@ public class HealthmonitorResp  {
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
+
+    
 
     public HealthmonitorResp withDelay(Integer delay) {
         this.delay = delay;
@@ -464,6 +488,8 @@ public class HealthmonitorResp  {
         this.delay = delay;
     }
 
+    
+
     public HealthmonitorResp withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
         return this;
@@ -485,6 +511,8 @@ public class HealthmonitorResp  {
     public void setMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
     }
+
+    
 
     public HealthmonitorResp withPools(List<ResourceList> pools) {
         this.pools = pools;
@@ -516,6 +544,9 @@ public class HealthmonitorResp  {
     public void setPools(List<ResourceList> pools) {
         this.pools = pools;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

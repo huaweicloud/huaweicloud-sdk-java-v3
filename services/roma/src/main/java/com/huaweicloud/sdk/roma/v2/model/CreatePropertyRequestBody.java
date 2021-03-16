@@ -225,19 +225,19 @@ public class CreatePropertyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="min")
     
-    private String min = "0";
+    private String min;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max")
     
-    private String max = "65536";
+    private String max;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="step")
     
-    private String step = "1";
+    private String step;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -277,6 +277,8 @@ public class CreatePropertyRequestBody  {
         this.propertyName = propertyName;
     }
 
+    
+
     public CreatePropertyRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -296,6 +298,8 @@ public class CreatePropertyRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreatePropertyRequestBody withDataType(DataTypeEnum dataType) {
         this.dataType = dataType;
@@ -317,6 +321,8 @@ public class CreatePropertyRequestBody  {
         this.dataType = dataType;
     }
 
+    
+
     public CreatePropertyRequestBody withRequired(RequiredEnum required) {
         this.required = required;
         return this;
@@ -336,6 +342,8 @@ public class CreatePropertyRequestBody  {
     public void setRequired(RequiredEnum required) {
         this.required = required;
     }
+
+    
 
     public CreatePropertyRequestBody withMin(String min) {
         this.min = min;
@@ -357,6 +365,8 @@ public class CreatePropertyRequestBody  {
         this.min = min;
     }
 
+    
+
     public CreatePropertyRequestBody withMax(String max) {
         this.max = max;
         return this;
@@ -376,6 +386,8 @@ public class CreatePropertyRequestBody  {
     public void setMax(String max) {
         this.max = max;
     }
+
+    
 
     public CreatePropertyRequestBody withStep(String step) {
         this.step = step;
@@ -397,6 +409,8 @@ public class CreatePropertyRequestBody  {
         this.step = step;
     }
 
+    
+
     public CreatePropertyRequestBody withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
         return this;
@@ -416,6 +430,8 @@ public class CreatePropertyRequestBody  {
     public void setMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
     }
+
+    
 
     public CreatePropertyRequestBody withUnit(String unit) {
         this.unit = unit;
@@ -437,6 +453,8 @@ public class CreatePropertyRequestBody  {
         this.unit = unit;
     }
 
+    
+
     public CreatePropertyRequestBody withEnumList(String enumList) {
         this.enumList = enumList;
         return this;
@@ -456,6 +474,9 @@ public class CreatePropertyRequestBody  {
     public void setEnumList(String enumList) {
         this.enumList = enumList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class AllowIpRangesResult  {
         this.description = description;
     }
 
+    
+
     public AllowIpRangesResult withIpRange(String ipRange) {
         this.ipRange = ipRange;
         return this;
@@ -68,6 +70,9 @@ public class AllowIpRangesResult  {
     public void setIpRange(String ipRange) {
         this.ipRange = ipRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

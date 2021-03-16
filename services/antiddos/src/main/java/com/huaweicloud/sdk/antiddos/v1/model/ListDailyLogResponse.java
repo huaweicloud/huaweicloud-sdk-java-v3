@@ -54,6 +54,8 @@ public class ListDailyLogResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListDailyLogResponse withLogs(List<DailyLog> logs) {
         this.logs = logs;
         return this;
@@ -61,9 +63,6 @@ public class ListDailyLogResponse extends SdkResponse {
 
     
     public ListDailyLogResponse addLogsItem(DailyLog logsItem) {
-        if (this.logs == null) {
-            this.logs = new ArrayList<>();
-        }
         this.logs.add(logsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListDailyLogResponse extends SdkResponse {
     public void setLogs(List<DailyLog> logs) {
         this.logs = logs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

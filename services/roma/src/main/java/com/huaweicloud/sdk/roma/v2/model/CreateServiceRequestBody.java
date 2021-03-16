@@ -149,6 +149,8 @@ public class CreateServiceRequestBody  {
         this.productTemplateId = productTemplateId;
     }
 
+    
+
     public CreateServiceRequestBody withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -168,6 +170,8 @@ public class CreateServiceRequestBody  {
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
+
+    
 
     public CreateServiceRequestBody withServiceName(String serviceName) {
         this.serviceName = serviceName;
@@ -189,6 +193,8 @@ public class CreateServiceRequestBody  {
         this.serviceName = serviceName;
     }
 
+    
+
     public CreateServiceRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -209,6 +215,8 @@ public class CreateServiceRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateServiceRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -228,6 +236,9 @@ public class CreateServiceRequestBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

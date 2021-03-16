@@ -50,7 +50,7 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk")
     
-    private String disk = "0";
+    private String disk;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-FLV-DISABLED:disabled")
     
-    private Boolean osFLVDISABLEDDisabled = false;
+    private Boolean osFLVDISABLEDDisabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,25 +92,25 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-flavor-access:is_public")
     
-    private Boolean osFlavorAccessIsPublic = true;
+    private Boolean osFlavorAccessIsPublic;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<FlavorLink> links = new ArrayList<>();
+    private List<FlavorLink> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_extra_specs")
     
-    private FlavorExtraSpec osExtraSpecs = null;
+    private FlavorExtraSpec osExtraSpecs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attachableQuantity")
     
-    private ServerAttachableQuantity attachableQuantity = null;
+    private ServerAttachableQuantity attachableQuantity;
 
     public Flavor withId(String id) {
         this.id = id;
@@ -132,6 +132,8 @@ public class Flavor  {
         this.id = id;
     }
 
+    
+
     public Flavor withName(String name) {
         this.name = name;
         return this;
@@ -151,6 +153,8 @@ public class Flavor  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Flavor withVcpus(String vcpus) {
         this.vcpus = vcpus;
@@ -172,6 +176,8 @@ public class Flavor  {
         this.vcpus = vcpus;
     }
 
+    
+
     public Flavor withRam(Integer ram) {
         this.ram = ram;
         return this;
@@ -191,6 +197,8 @@ public class Flavor  {
     public void setRam(Integer ram) {
         this.ram = ram;
     }
+
+    
 
     public Flavor withDisk(String disk) {
         this.disk = disk;
@@ -212,6 +220,8 @@ public class Flavor  {
         this.disk = disk;
     }
 
+    
+
     public Flavor withSwap(String swap) {
         this.swap = swap;
         return this;
@@ -231,6 +241,8 @@ public class Flavor  {
     public void setSwap(String swap) {
         this.swap = swap;
     }
+
+    
 
     public Flavor withOsFLVEXTDATAEphemeral(Integer osFLVEXTDATAEphemeral) {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
@@ -252,6 +264,8 @@ public class Flavor  {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
     }
 
+    
+
     public Flavor withOsFLVDISABLEDDisabled(Boolean osFLVDISABLEDDisabled) {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
         return this;
@@ -271,6 +285,8 @@ public class Flavor  {
     public void setOsFLVDISABLEDDisabled(Boolean osFLVDISABLEDDisabled) {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
     }
+
+    
 
     public Flavor withRxtxFactor(Float rxtxFactor) {
         this.rxtxFactor = rxtxFactor;
@@ -292,6 +308,8 @@ public class Flavor  {
         this.rxtxFactor = rxtxFactor;
     }
 
+    
+
     public Flavor withRxtxQuota(String rxtxQuota) {
         this.rxtxQuota = rxtxQuota;
         return this;
@@ -311,6 +329,8 @@ public class Flavor  {
     public void setRxtxQuota(String rxtxQuota) {
         this.rxtxQuota = rxtxQuota;
     }
+
+    
 
     public Flavor withRxtxCap(String rxtxCap) {
         this.rxtxCap = rxtxCap;
@@ -332,6 +352,8 @@ public class Flavor  {
         this.rxtxCap = rxtxCap;
     }
 
+    
+
     public Flavor withOsFlavorAccessIsPublic(Boolean osFlavorAccessIsPublic) {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
         return this;
@@ -351,6 +373,8 @@ public class Flavor  {
     public void setOsFlavorAccessIsPublic(Boolean osFlavorAccessIsPublic) {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
     }
+
+    
 
     public Flavor withLinks(List<FlavorLink> links) {
         this.links = links;
@@ -383,6 +407,8 @@ public class Flavor  {
         this.links = links;
     }
 
+    
+
     public Flavor withOsExtraSpecs(FlavorExtraSpec osExtraSpecs) {
         this.osExtraSpecs = osExtraSpecs;
         return this;
@@ -410,6 +436,8 @@ public class Flavor  {
         this.osExtraSpecs = osExtraSpecs;
     }
 
+    
+
     public Flavor withAttachableQuantity(ServerAttachableQuantity attachableQuantity) {
         this.attachableQuantity = attachableQuantity;
         return this;
@@ -436,6 +464,9 @@ public class Flavor  {
     public void setAttachableQuantity(ServerAttachableQuantity attachableQuantity) {
         this.attachableQuantity = attachableQuantity;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

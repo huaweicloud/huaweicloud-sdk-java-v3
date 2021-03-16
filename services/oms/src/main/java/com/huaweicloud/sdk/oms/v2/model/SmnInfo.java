@@ -55,6 +55,8 @@ public class SmnInfo  {
         this.notifyResult = notifyResult;
     }
 
+    
+
     public SmnInfo withNotifyErrorMessage(String notifyErrorMessage) {
         this.notifyErrorMessage = notifyErrorMessage;
         return this;
@@ -75,6 +77,8 @@ public class SmnInfo  {
         this.notifyErrorMessage = notifyErrorMessage;
     }
 
+    
+
     public SmnInfo withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
@@ -94,6 +98,9 @@ public class SmnInfo  {
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

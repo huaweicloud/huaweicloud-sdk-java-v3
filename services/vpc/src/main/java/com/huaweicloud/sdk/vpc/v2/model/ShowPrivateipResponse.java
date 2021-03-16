@@ -24,7 +24,7 @@ public class ShowPrivateipResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privateip")
     
-    private Privateip privateip = null;
+    private Privateip privateip;
 
     public ShowPrivateipResponse withPrivateip(Privateip privateip) {
         this.privateip = privateip;
@@ -52,6 +52,9 @@ public class ShowPrivateipResponse extends SdkResponse {
     public void setPrivateip(Privateip privateip) {
         this.privateip = privateip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

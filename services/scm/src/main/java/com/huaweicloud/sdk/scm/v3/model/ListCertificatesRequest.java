@@ -21,31 +21,31 @@ public class ListCertificatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_dir")
     
-    private String sortDir = "DESC";
+    private String sortDir;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_key")
     
-    private String sortKey = "certUpdateTime";
+    private String sortKey;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private String status = "ALL";
+    private String status;
 
     public ListCertificatesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -69,6 +69,8 @@ public class ListCertificatesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListCertificatesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -91,6 +93,8 @@ public class ListCertificatesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCertificatesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -110,6 +114,8 @@ public class ListCertificatesRequest  {
     public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
+
+    
 
     public ListCertificatesRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
@@ -131,6 +137,8 @@ public class ListCertificatesRequest  {
         this.sortKey = sortKey;
     }
 
+    
+
     public ListCertificatesRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -150,6 +158,9 @@ public class ListCertificatesRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

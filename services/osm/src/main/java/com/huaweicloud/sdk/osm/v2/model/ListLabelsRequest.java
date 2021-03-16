@@ -81,6 +81,8 @@ public class ListLabelsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListLabelsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -103,6 +105,8 @@ public class ListLabelsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListLabelsRequest withName(String name) {
         this.name = name;
         return this;
@@ -122,6 +126,8 @@ public class ListLabelsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListLabelsRequest withLabelId(Integer labelId) {
         this.labelId = labelId;
@@ -144,6 +150,8 @@ public class ListLabelsRequest  {
     public void setLabelId(Integer labelId) {
         this.labelId = labelId;
     }
+
+    
 
     public ListLabelsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -169,6 +177,8 @@ public class ListLabelsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListLabelsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -191,6 +201,8 @@ public class ListLabelsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListLabelsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -212,6 +224,9 @@ public class ListLabelsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

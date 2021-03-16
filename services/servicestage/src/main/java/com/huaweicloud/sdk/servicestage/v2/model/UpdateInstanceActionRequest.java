@@ -40,7 +40,7 @@ public class UpdateInstanceActionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceAction body = null;
+    private InstanceAction body;
 
     public UpdateInstanceActionRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -62,6 +62,8 @@ public class UpdateInstanceActionRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public UpdateInstanceActionRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateInstanceActionRequest  {
         this.componentId = componentId;
     }
 
+    
+
     public UpdateInstanceActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -101,6 +105,8 @@ public class UpdateInstanceActionRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateInstanceActionRequest withBody(InstanceAction body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateInstanceActionRequest  {
     public void setBody(InstanceAction body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,7 +61,7 @@ public class Device  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product")
     
-    private ProductReferer product = null;
+    private ProductReferer product;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -277,19 +277,19 @@ public class Device  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authentication")
     
-    private Authentication authentication = null;
+    private Authentication authentication;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -550,9 +550,6 @@ public class Device  {
 
     
     public Device addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -577,6 +574,8 @@ public class Device  {
         this.permissions = permissions;
     }
 
+    
+
     public Device withId(Integer id) {
         this.id = id;
         return this;
@@ -596,6 +595,8 @@ public class Device  {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public Device withParentDeviceId(Integer parentDeviceId) {
         this.parentDeviceId = parentDeviceId;
@@ -617,6 +618,8 @@ public class Device  {
         this.parentDeviceId = parentDeviceId;
     }
 
+    
+
     public Device withParentDeviceName(String parentDeviceName) {
         this.parentDeviceName = parentDeviceName;
         return this;
@@ -636,6 +639,8 @@ public class Device  {
     public void setParentDeviceName(String parentDeviceName) {
         this.parentDeviceName = parentDeviceName;
     }
+
+    
 
     public Device withProduct(ProductReferer product) {
         this.product = product;
@@ -664,6 +669,8 @@ public class Device  {
         this.product = product;
     }
 
+    
+
     public Device withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -683,6 +690,8 @@ public class Device  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public Device withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -704,6 +713,8 @@ public class Device  {
         this.instanceId = instanceId;
     }
 
+    
+
     public Device withClientId(String clientId) {
         this.clientId = clientId;
         return this;
@@ -723,6 +734,8 @@ public class Device  {
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
+
+    
 
     public Device withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -744,6 +757,8 @@ public class Device  {
         this.nodeId = nodeId;
     }
 
+    
+
     public Device withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -763,6 +778,8 @@ public class Device  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public Device withStatus(StatusEnum status) {
         this.status = status;
@@ -784,6 +801,8 @@ public class Device  {
         this.status = status;
     }
 
+    
+
     public Device withOnlineStatus(OnlineStatusEnum onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
@@ -804,6 +823,8 @@ public class Device  {
         this.onlineStatus = onlineStatus;
     }
 
+    
+
     public Device withDescription(String description) {
         this.description = description;
         return this;
@@ -823,6 +844,8 @@ public class Device  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Device withAuthentication(Authentication authentication) {
         this.authentication = authentication;
@@ -851,6 +874,8 @@ public class Device  {
         this.authentication = authentication;
     }
 
+    
+
     public Device withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
         return this;
@@ -877,6 +902,8 @@ public class Device  {
     public void setCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
     }
+
+    
 
     public Device withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
@@ -905,6 +932,8 @@ public class Device  {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public Device withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -912,9 +941,6 @@ public class Device  {
 
     
     public Device addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -939,6 +965,8 @@ public class Device  {
         this.tags = tags;
     }
 
+    
+
     public Device withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -960,6 +988,8 @@ public class Device  {
     public void setCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
     }
+
+    
 
     public Device withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
@@ -983,6 +1013,8 @@ public class Device  {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
 
+    
+
     public Device withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
         return this;
@@ -1003,6 +1035,8 @@ public class Device  {
         this.connectAddress = connectAddress;
     }
 
+    
+
     public Device withSslConnectAddress(String sslConnectAddress) {
         this.sslConnectAddress = sslConnectAddress;
         return this;
@@ -1022,6 +1056,8 @@ public class Device  {
     public void setSslConnectAddress(String sslConnectAddress) {
         this.sslConnectAddress = sslConnectAddress;
     }
+
+    
 
     public Device withLastLoginDatetime(Long lastLoginDatetime) {
         this.lastLoginDatetime = lastLoginDatetime;
@@ -1045,6 +1081,8 @@ public class Device  {
         this.lastLoginDatetime = lastLoginDatetime;
     }
 
+    
+
     public Device withNodeType(Integer nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -1064,6 +1102,8 @@ public class Device  {
     public void setNodeType(Integer nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public Device withDeviceType(DeviceTypeEnum deviceType) {
         this.deviceType = deviceType;
@@ -1085,6 +1125,8 @@ public class Device  {
         this.deviceType = deviceType;
     }
 
+    
+
     public Device withClientIp(String clientIp) {
         this.clientIp = clientIp;
         return this;
@@ -1105,6 +1147,8 @@ public class Device  {
         this.clientIp = clientIp;
     }
 
+    
+
     public Device withKeepAlive(String keepAlive) {
         this.keepAlive = keepAlive;
         return this;
@@ -1124,6 +1168,8 @@ public class Device  {
     public void setKeepAlive(String keepAlive) {
         this.keepAlive = keepAlive;
     }
+
+    
 
     public Device withLastActiveTime(Long lastActiveTime) {
         this.lastActiveTime = lastActiveTime;
@@ -1147,6 +1193,8 @@ public class Device  {
         this.lastActiveTime = lastActiveTime;
     }
 
+    
+
     public Device withVersion(String version) {
         this.version = version;
         return this;
@@ -1166,6 +1214,8 @@ public class Device  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public Device withPluginId(PluginIdEnum pluginId) {
         this.pluginId = pluginId;
@@ -1187,6 +1237,8 @@ public class Device  {
         this.pluginId = pluginId;
     }
 
+    
+
     public Device withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -1206,6 +1258,9 @@ public class Device  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

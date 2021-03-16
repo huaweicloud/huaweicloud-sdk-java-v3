@@ -69,6 +69,8 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         this.shadowImage = shadowImage;
     }
 
+    
+
     public SendSlideVerifyCodeResponse withCutImage(String cutImage) {
         this.cutImage = cutImage;
         return this;
@@ -88,6 +90,8 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
     public void setCutImage(String cutImage) {
         this.cutImage = cutImage;
     }
+
+    
 
     public SendSlideVerifyCodeResponse withPointY(Integer pointY) {
         this.pointY = pointY;
@@ -109,6 +113,8 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         this.pointY = pointY;
     }
 
+    
+
     public SendSlideVerifyCodeResponse withToken(String token) {
         this.token = token;
         return this;
@@ -129,6 +135,8 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
         this.token = token;
     }
 
+    
+
     public SendSlideVerifyCodeResponse withExpire(Integer expire) {
         this.expire = expire;
         return this;
@@ -148,6 +156,9 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
     public void setExpire(Integer expire) {
         this.expire = expire;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

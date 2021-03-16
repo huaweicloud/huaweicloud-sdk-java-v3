@@ -49,6 +49,8 @@ public class ListDomainPermissionsForAgencyRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public ListDomainPermissionsForAgencyRequest withAgencyId(String agencyId) {
         this.agencyId = agencyId;
         return this;
@@ -68,6 +70,9 @@ public class ListDomainPermissionsForAgencyRequest  {
     public void setAgencyId(String agencyId) {
         this.agencyId = agencyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

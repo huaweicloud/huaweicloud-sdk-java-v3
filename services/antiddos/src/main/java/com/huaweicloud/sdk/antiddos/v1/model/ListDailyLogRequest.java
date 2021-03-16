@@ -67,6 +67,8 @@ public class ListDailyLogRequest  {
         this.floatingIpId = floatingIpId;
     }
 
+    
+
     public ListDailyLogRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -86,6 +88,8 @@ public class ListDailyLogRequest  {
     public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
+
+    
 
     public ListDailyLogRequest withLimit(String limit) {
         this.limit = limit;
@@ -107,6 +111,8 @@ public class ListDailyLogRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListDailyLogRequest withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -127,6 +133,8 @@ public class ListDailyLogRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListDailyLogRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -146,6 +154,9 @@ public class ListDailyLogRequest  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

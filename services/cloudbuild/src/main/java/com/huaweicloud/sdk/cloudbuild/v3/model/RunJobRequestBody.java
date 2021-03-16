@@ -37,7 +37,7 @@ public class RunJobRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scm")
     
-    private Scm scm = null;
+    private Scm scm;
 
     public RunJobRequestBody withJobId(String jobId) {
         this.jobId = jobId;
@@ -59,6 +59,8 @@ public class RunJobRequestBody  {
         this.jobId = jobId;
     }
 
+    
+
     public RunJobRequestBody withParameter(List<ParameterItem> parameter) {
         this.parameter = parameter;
         return this;
@@ -66,9 +68,6 @@ public class RunJobRequestBody  {
 
     
     public RunJobRequestBody addParameterItem(ParameterItem parameterItem) {
-        if (this.parameter == null) {
-            this.parameter = new ArrayList<>();
-        }
         this.parameter.add(parameterItem);
         return this;
     }
@@ -92,6 +91,8 @@ public class RunJobRequestBody  {
     public void setParameter(List<ParameterItem> parameter) {
         this.parameter = parameter;
     }
+
+    
 
     public RunJobRequestBody withScm(Scm scm) {
         this.scm = scm;
@@ -119,6 +120,9 @@ public class RunJobRequestBody  {
     public void setScm(Scm scm) {
         this.scm = scm;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

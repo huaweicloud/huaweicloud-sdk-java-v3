@@ -66,6 +66,8 @@ public class SearchRecordingsResponse extends SdkResponse {
         this.offset = offset;
     }
 
+    
+
     public SearchRecordingsResponse withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -85,6 +87,8 @@ public class SearchRecordingsResponse extends SdkResponse {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public SearchRecordingsResponse withCount(Integer count) {
         this.count = count;
@@ -106,6 +110,8 @@ public class SearchRecordingsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public SearchRecordingsResponse withData(List<RecordResultDO> data) {
         this.data = data;
         return this;
@@ -113,9 +119,6 @@ public class SearchRecordingsResponse extends SdkResponse {
 
     
     public SearchRecordingsResponse addDataItem(RecordResultDO dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
         this.data.add(dataItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class SearchRecordingsResponse extends SdkResponse {
     public void setData(List<RecordResultDO> data) {
         this.data = data;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

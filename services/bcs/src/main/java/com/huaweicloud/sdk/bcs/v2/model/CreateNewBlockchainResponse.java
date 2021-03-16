@@ -51,6 +51,8 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         this.blockchainId = blockchainId;
     }
 
+    
+
     public CreateNewBlockchainResponse withBlockchainName(String blockchainName) {
         this.blockchainName = blockchainName;
         return this;
@@ -70,6 +72,9 @@ public class CreateNewBlockchainResponse extends SdkResponse {
     public void setBlockchainName(String blockchainName) {
         this.blockchainName = blockchainName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

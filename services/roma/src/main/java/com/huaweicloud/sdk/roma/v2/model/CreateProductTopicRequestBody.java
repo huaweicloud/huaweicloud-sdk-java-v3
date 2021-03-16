@@ -143,6 +143,8 @@ public class CreateProductTopicRequestBody  {
         this.permission = permission;
     }
 
+    
+
     public CreateProductTopicRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -162,6 +164,8 @@ public class CreateProductTopicRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateProductTopicRequestBody withVersion(String version) {
         this.version = version;
@@ -183,6 +187,8 @@ public class CreateProductTopicRequestBody  {
         this.version = version;
     }
 
+    
+
     public CreateProductTopicRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -202,6 +208,9 @@ public class CreateProductTopicRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

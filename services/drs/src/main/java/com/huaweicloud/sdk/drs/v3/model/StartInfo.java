@@ -49,6 +49,8 @@ public class StartInfo  {
         this.jobId = jobId;
     }
 
+    
+
     public StartInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -68,6 +70,9 @@ public class StartInfo  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

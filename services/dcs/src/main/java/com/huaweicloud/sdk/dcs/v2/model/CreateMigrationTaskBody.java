@@ -212,7 +212,7 @@ public class CreateMigrationTaskBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_files")
     
-    private BackupFilesBody backupFiles = null;
+    private BackupFilesBody backupFiles;
     /**
      * 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 
      */
@@ -302,13 +302,13 @@ public class CreateMigrationTaskBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_instance")
     
-    private SourceInstanceBody sourceInstance = null;
+    private SourceInstanceBody sourceInstance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_instance")
     
-    private TargetInstanceBody targetInstance = null;
+    private TargetInstanceBody targetInstance;
 
     public CreateMigrationTaskBody withTaskName(String taskName) {
         this.taskName = taskName;
@@ -330,6 +330,8 @@ public class CreateMigrationTaskBody  {
         this.taskName = taskName;
     }
 
+    
+
     public CreateMigrationTaskBody withDescription(String description) {
         this.description = description;
         return this;
@@ -349,6 +351,8 @@ public class CreateMigrationTaskBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateMigrationTaskBody withMigrationType(MigrationTypeEnum migrationType) {
         this.migrationType = migrationType;
@@ -370,6 +374,8 @@ public class CreateMigrationTaskBody  {
         this.migrationType = migrationType;
     }
 
+    
+
     public CreateMigrationTaskBody withMigrationMethod(MigrationMethodEnum migrationMethod) {
         this.migrationMethod = migrationMethod;
         return this;
@@ -389,6 +395,8 @@ public class CreateMigrationTaskBody  {
     public void setMigrationMethod(MigrationMethodEnum migrationMethod) {
         this.migrationMethod = migrationMethod;
     }
+
+    
 
     public CreateMigrationTaskBody withBackupFiles(BackupFilesBody backupFiles) {
         this.backupFiles = backupFiles;
@@ -417,6 +425,8 @@ public class CreateMigrationTaskBody  {
         this.backupFiles = backupFiles;
     }
 
+    
+
     public CreateMigrationTaskBody withNetworkType(NetworkTypeEnum networkType) {
         this.networkType = networkType;
         return this;
@@ -436,6 +446,8 @@ public class CreateMigrationTaskBody  {
     public void setNetworkType(NetworkTypeEnum networkType) {
         this.networkType = networkType;
     }
+
+    
 
     public CreateMigrationTaskBody withSourceInstance(SourceInstanceBody sourceInstance) {
         this.sourceInstance = sourceInstance;
@@ -464,6 +476,8 @@ public class CreateMigrationTaskBody  {
         this.sourceInstance = sourceInstance;
     }
 
+    
+
     public CreateMigrationTaskBody withTargetInstance(TargetInstanceBody targetInstance) {
         this.targetInstance = targetInstance;
         return this;
@@ -490,6 +504,9 @@ public class CreateMigrationTaskBody  {
     public void setTargetInstance(TargetInstanceBody targetInstance) {
         this.targetInstance = targetInstance;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

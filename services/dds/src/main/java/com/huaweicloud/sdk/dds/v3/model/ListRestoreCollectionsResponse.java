@@ -53,6 +53,8 @@ public class ListRestoreCollectionsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListRestoreCollectionsResponse withCollections(List<String> collections) {
         this.collections = collections;
         return this;
@@ -60,9 +62,6 @@ public class ListRestoreCollectionsResponse extends SdkResponse {
 
     
     public ListRestoreCollectionsResponse addCollectionsItem(String collectionsItem) {
-        if (this.collections == null) {
-            this.collections = new ArrayList<>();
-        }
         this.collections.add(collectionsItem);
         return this;
     }
@@ -86,6 +85,9 @@ public class ListRestoreCollectionsResponse extends SdkResponse {
     public void setCollections(List<String> collections) {
         this.collections = collections;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

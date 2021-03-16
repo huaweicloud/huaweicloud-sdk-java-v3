@@ -39,7 +39,7 @@ public class Resources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    private Object resourceDetail = null;
+    private Object resourceDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,6 +79,8 @@ public class Resources  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public Resources withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -98,6 +100,8 @@ public class Resources  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public Resources withProjectName(String projectName) {
         this.projectName = projectName;
@@ -119,6 +123,8 @@ public class Resources  {
         this.projectName = projectName;
     }
 
+    
+
     public Resources withResourceDetail(Object resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
@@ -138,6 +144,8 @@ public class Resources  {
     public void setResourceDetail(Object resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
+
+    
 
     public Resources withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -159,6 +167,8 @@ public class Resources  {
         this.resourceId = resourceId;
     }
 
+    
+
     public Resources withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -179,6 +189,8 @@ public class Resources  {
         this.resourceName = resourceName;
     }
 
+    
+
     public Resources withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -198,6 +210,9 @@ public class Resources  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

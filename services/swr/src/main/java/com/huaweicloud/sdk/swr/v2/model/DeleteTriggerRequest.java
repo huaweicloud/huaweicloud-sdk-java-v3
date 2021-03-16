@@ -55,6 +55,8 @@ public class DeleteTriggerRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public DeleteTriggerRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class DeleteTriggerRequest  {
         this.repository = repository;
     }
 
+    
+
     public DeleteTriggerRequest withTrigger(String trigger) {
         this.trigger = trigger;
         return this;
@@ -94,6 +98,9 @@ public class DeleteTriggerRequest  {
     public void setTrigger(String trigger) {
         this.trigger = trigger;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

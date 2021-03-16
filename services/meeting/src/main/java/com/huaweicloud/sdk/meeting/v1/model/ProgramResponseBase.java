@@ -73,6 +73,8 @@ public class ProgramResponseBase  {
         this.id = id;
     }
 
+    
+
     public ProgramResponseBase withLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
         return this;
@@ -92,6 +94,8 @@ public class ProgramResponseBase  {
     public void setLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
     }
+
+    
 
     public ProgramResponseBase withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
@@ -113,6 +117,8 @@ public class ProgramResponseBase  {
         this.updateTime = updateTime;
     }
 
+    
+
     public ProgramResponseBase withProgramName(String programName) {
         this.programName = programName;
         return this;
@@ -132,6 +138,8 @@ public class ProgramResponseBase  {
     public void setProgramName(String programName) {
         this.programName = programName;
     }
+
+    
 
     public ProgramResponseBase withMaterialSizeStr(String materialSizeStr) {
         this.materialSizeStr = materialSizeStr;
@@ -153,6 +161,8 @@ public class ProgramResponseBase  {
         this.materialSizeStr = materialSizeStr;
     }
 
+    
+
     public ProgramResponseBase withPlayTime(Integer playTime) {
         this.playTime = playTime;
         return this;
@@ -172,6 +182,9 @@ public class ProgramResponseBase  {
     public void setPlayTime(Integer playTime) {
         this.playTime = playTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

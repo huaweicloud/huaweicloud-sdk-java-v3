@@ -49,6 +49,8 @@ public class BackupSyncRespBody  {
         this.backupId = backupId;
     }
 
+    
+
     public BackupSyncRespBody withOperationLogId(String operationLogId) {
         this.operationLogId = operationLogId;
         return this;
@@ -68,6 +70,9 @@ public class BackupSyncRespBody  {
     public void setOperationLogId(String operationLogId) {
         this.operationLogId = operationLogId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

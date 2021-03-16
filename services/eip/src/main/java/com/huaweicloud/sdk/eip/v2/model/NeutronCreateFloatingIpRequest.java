@@ -22,7 +22,7 @@ public class NeutronCreateFloatingIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NeutronCreateFloatingIpRequestBody body = null;
+    private NeutronCreateFloatingIpRequestBody body;
 
     public NeutronCreateFloatingIpRequest withBody(NeutronCreateFloatingIpRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class NeutronCreateFloatingIpRequest  {
     public void setBody(NeutronCreateFloatingIpRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

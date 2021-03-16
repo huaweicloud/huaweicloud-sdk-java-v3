@@ -207,7 +207,7 @@ public class Node  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="location")
     
-    private Location location = null;
+    private Location location;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -345,13 +345,13 @@ public class Node  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eventTrigger")
     
-    private Event eventTrigger = null;
+    private Event eventTrigger;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cronTrigger")
     
-    private Cron cronTrigger = null;
+    private Cron cronTrigger;
 
     public Node withName(String name) {
         this.name = name;
@@ -373,6 +373,8 @@ public class Node  {
         this.name = name;
     }
 
+    
+
     public Node withNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -392,6 +394,8 @@ public class Node  {
     public void setNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
     }
+
+    
 
     public Node withLocation(Location location) {
         this.location = location;
@@ -420,6 +424,8 @@ public class Node  {
         this.location = location;
     }
 
+    
+
     public Node withPreNodeNames(String preNodeNames) {
         this.preNodeNames = preNodeNames;
         return this;
@@ -440,6 +446,8 @@ public class Node  {
         this.preNodeNames = preNodeNames;
     }
 
+    
+
     public Node withCondition(List<Condition> condition) {
         this.condition = condition;
         return this;
@@ -447,9 +455,6 @@ public class Node  {
 
     
     public Node addConditionItem(Condition conditionItem) {
-        if (this.condition == null) {
-            this.condition = new ArrayList<>();
-        }
         this.condition.add(conditionItem);
         return this;
     }
@@ -474,6 +479,8 @@ public class Node  {
         this.condition = condition;
     }
 
+    
+
     public Node withNodeProperties(String nodeProperties) {
         this.nodeProperties = nodeProperties;
         return this;
@@ -493,6 +500,8 @@ public class Node  {
     public void setNodeProperties(String nodeProperties) {
         this.nodeProperties = nodeProperties;
     }
+
+    
 
     public Node withPollingInterval(Integer pollingInterval) {
         this.pollingInterval = pollingInterval;
@@ -514,6 +523,8 @@ public class Node  {
         this.pollingInterval = pollingInterval;
     }
 
+    
+
     public Node withMaxExecutionTime(Integer maxExecutionTime) {
         this.maxExecutionTime = maxExecutionTime;
         return this;
@@ -533,6 +544,8 @@ public class Node  {
     public void setMaxExecutionTime(Integer maxExecutionTime) {
         this.maxExecutionTime = maxExecutionTime;
     }
+
+    
 
     public Node withRetryTimes(Integer retryTimes) {
         this.retryTimes = retryTimes;
@@ -554,6 +567,8 @@ public class Node  {
         this.retryTimes = retryTimes;
     }
 
+    
+
     public Node withRetryInterval(Integer retryInterval) {
         this.retryInterval = retryInterval;
         return this;
@@ -574,6 +589,8 @@ public class Node  {
         this.retryInterval = retryInterval;
     }
 
+    
+
     public Node withFailPolicy(FailPolicyEnum failPolicy) {
         this.failPolicy = failPolicy;
         return this;
@@ -593,6 +610,8 @@ public class Node  {
     public void setFailPolicy(FailPolicyEnum failPolicy) {
         this.failPolicy = failPolicy;
     }
+
+    
 
     public Node withEventTrigger(Event eventTrigger) {
         this.eventTrigger = eventTrigger;
@@ -621,6 +640,8 @@ public class Node  {
         this.eventTrigger = eventTrigger;
     }
 
+    
+
     public Node withCronTrigger(Cron cronTrigger) {
         this.cronTrigger = cronTrigger;
         return this;
@@ -647,6 +668,9 @@ public class Node  {
     public void setCronTrigger(Cron cronTrigger) {
         this.cronTrigger = cronTrigger;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

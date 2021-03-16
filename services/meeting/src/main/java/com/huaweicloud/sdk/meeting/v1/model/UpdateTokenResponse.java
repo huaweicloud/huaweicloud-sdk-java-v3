@@ -48,7 +48,7 @@ public class UpdateTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private UserInfo user = null;
+    private UserInfo user;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,13 +66,13 @@ public class UpdateTokenResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="firstLogin")
     
-    private Boolean firstLogin = false;
+    private Boolean firstLogin;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pwdExpired")
     
-    private Boolean pwdExpired = false;
+    private Boolean pwdExpired;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,6 +100,8 @@ public class UpdateTokenResponse extends SdkResponse {
         this.accessToken = accessToken;
     }
 
+    
+
     public UpdateTokenResponse withTokenIp(String tokenIp) {
         this.tokenIp = tokenIp;
         return this;
@@ -119,6 +121,8 @@ public class UpdateTokenResponse extends SdkResponse {
     public void setTokenIp(String tokenIp) {
         this.tokenIp = tokenIp;
     }
+
+    
 
     public UpdateTokenResponse withValidPeriod(Long validPeriod) {
         this.validPeriod = validPeriod;
@@ -140,6 +144,8 @@ public class UpdateTokenResponse extends SdkResponse {
         this.validPeriod = validPeriod;
     }
 
+    
+
     public UpdateTokenResponse withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -159,6 +165,8 @@ public class UpdateTokenResponse extends SdkResponse {
     public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public UpdateTokenResponse withUser(UserInfo user) {
         this.user = user;
@@ -187,6 +195,8 @@ public class UpdateTokenResponse extends SdkResponse {
         this.user = user;
     }
 
+    
+
     public UpdateTokenResponse withClientType(Integer clientType) {
         this.clientType = clientType;
         return this;
@@ -206,6 +216,8 @@ public class UpdateTokenResponse extends SdkResponse {
     public void setClientType(Integer clientType) {
         this.clientType = clientType;
     }
+
+    
 
     public UpdateTokenResponse withForceLoginInd(Integer forceLoginInd) {
         this.forceLoginInd = forceLoginInd;
@@ -227,6 +239,8 @@ public class UpdateTokenResponse extends SdkResponse {
         this.forceLoginInd = forceLoginInd;
     }
 
+    
+
     public UpdateTokenResponse withFirstLogin(Boolean firstLogin) {
         this.firstLogin = firstLogin;
         return this;
@@ -246,6 +260,8 @@ public class UpdateTokenResponse extends SdkResponse {
     public void setFirstLogin(Boolean firstLogin) {
         this.firstLogin = firstLogin;
     }
+
+    
 
     public UpdateTokenResponse withPwdExpired(Boolean pwdExpired) {
         this.pwdExpired = pwdExpired;
@@ -267,6 +283,8 @@ public class UpdateTokenResponse extends SdkResponse {
         this.pwdExpired = pwdExpired;
     }
 
+    
+
     public UpdateTokenResponse withDaysPwdAvailable(Integer daysPwdAvailable) {
         this.daysPwdAvailable = daysPwdAvailable;
         return this;
@@ -286,6 +304,9 @@ public class UpdateTokenResponse extends SdkResponse {
     public void setDaysPwdAvailable(Integer daysPwdAvailable) {
         this.daysPwdAvailable = daysPwdAvailable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

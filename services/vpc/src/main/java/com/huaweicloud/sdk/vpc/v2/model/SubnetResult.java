@@ -137,6 +137,8 @@ public class SubnetResult  {
         this.id = id;
     }
 
+    
+
     public SubnetResult withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -156,6 +158,9 @@ public class SubnetResult  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class DeleteTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeletetemplatesReq body = null;
+    private DeletetemplatesReq body;
 
     public DeleteTemplatesRequest withBody(DeletetemplatesReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class DeleteTemplatesRequest  {
     public void setBody(DeletetemplatesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

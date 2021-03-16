@@ -30,7 +30,7 @@ public class UpdateCertificateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificate")
     
-    private CertificateInfo certificate = null;
+    private CertificateInfo certificate;
 
     public UpdateCertificateResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class UpdateCertificateResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public UpdateCertificateResponse withCertificate(CertificateInfo certificate) {
         this.certificate = certificate;
@@ -78,6 +80,9 @@ public class UpdateCertificateResponse extends SdkResponse {
     public void setCertificate(CertificateInfo certificate) {
         this.certificate = certificate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

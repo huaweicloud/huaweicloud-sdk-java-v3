@@ -67,19 +67,19 @@ public class PoolResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancers")
     
-    private List<ResourceList> loadbalancers = new ArrayList<>();
+    private List<ResourceList> loadbalancers = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<ResourceList> listeners = new ArrayList<>();
+    private List<ResourceList> listeners = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="members")
     
-    private List<ResourceList> members = new ArrayList<>();
+    private List<ResourceList> members = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,7 +91,7 @@ public class PoolResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_persistence")
     
-    private SessionPersistence sessionPersistence = null;
+    private SessionPersistence sessionPersistence;
     /**
      * 后端云服务器组的后端协议。
      */
@@ -293,6 +293,8 @@ public class PoolResp  {
         this.id = id;
     }
 
+    
+
     public PoolResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -312,6 +314,8 @@ public class PoolResp  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public PoolResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -333,6 +337,8 @@ public class PoolResp  {
         this.tenantId = tenantId;
     }
 
+    
+
     public PoolResp withName(String name) {
         this.name = name;
         return this;
@@ -352,6 +358,8 @@ public class PoolResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PoolResp withDescription(String description) {
         this.description = description;
@@ -373,6 +381,8 @@ public class PoolResp  {
         this.description = description;
     }
 
+    
+
     public PoolResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -392,6 +402,8 @@ public class PoolResp  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public PoolResp withLoadbalancers(List<ResourceList> loadbalancers) {
         this.loadbalancers = loadbalancers;
@@ -424,6 +436,8 @@ public class PoolResp  {
         this.loadbalancers = loadbalancers;
     }
 
+    
+
     public PoolResp withListeners(List<ResourceList> listeners) {
         this.listeners = listeners;
         return this;
@@ -454,6 +468,8 @@ public class PoolResp  {
     public void setListeners(List<ResourceList> listeners) {
         this.listeners = listeners;
     }
+
+    
 
     public PoolResp withMembers(List<ResourceList> members) {
         this.members = members;
@@ -486,6 +502,8 @@ public class PoolResp  {
         this.members = members;
     }
 
+    
+
     public PoolResp withHealthmonitorId(String healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
         return this;
@@ -505,6 +523,8 @@ public class PoolResp  {
     public void setHealthmonitorId(String healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
     }
+
+    
 
     public PoolResp withSessionPersistence(SessionPersistence sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
@@ -533,6 +553,8 @@ public class PoolResp  {
         this.sessionPersistence = sessionPersistence;
     }
 
+    
+
     public PoolResp withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -553,6 +575,8 @@ public class PoolResp  {
         this.protocol = protocol;
     }
 
+    
+
     public PoolResp withLbAlgorithm(LbAlgorithmEnum lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
         return this;
@@ -572,6 +596,9 @@ public class PoolResp  {
     public void setLbAlgorithm(LbAlgorithmEnum lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

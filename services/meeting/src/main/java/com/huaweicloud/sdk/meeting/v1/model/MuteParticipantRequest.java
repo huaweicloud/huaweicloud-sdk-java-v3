@@ -40,7 +40,7 @@ public class MuteParticipantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestMuteParticipantReqBody body = null;
+    private RestMuteParticipantReqBody body;
 
     public MuteParticipantRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -62,6 +62,8 @@ public class MuteParticipantRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public MuteParticipantRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -81,6 +83,8 @@ public class MuteParticipantRequest  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
 
     public MuteParticipantRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -103,6 +107,8 @@ public class MuteParticipantRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public MuteParticipantRequest withBody(RestMuteParticipantReqBody body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class MuteParticipantRequest  {
     public void setBody(RestMuteParticipantReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -58,6 +58,8 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections  {
         this.database = database;
     }
 
+    
+
     public RestoreInstanceFromCollectionRequestBodyRestoreCollections withRestoreDatabaseTime(String restoreDatabaseTime) {
         this.restoreDatabaseTime = restoreDatabaseTime;
         return this;
@@ -78,6 +80,8 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections  {
         this.restoreDatabaseTime = restoreDatabaseTime;
     }
 
+    
+
     public RestoreInstanceFromCollectionRequestBodyRestoreCollections withCollections(List<RestoreInstanceFromCollectionRequestBodyCollections> collections) {
         this.collections = collections;
         return this;
@@ -85,9 +89,6 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections  {
 
     
     public RestoreInstanceFromCollectionRequestBodyRestoreCollections addCollectionsItem(RestoreInstanceFromCollectionRequestBodyCollections collectionsItem) {
-        if (this.collections == null) {
-            this.collections = new ArrayList<>();
-        }
         this.collections.add(collectionsItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections  {
     public void setCollections(List<RestoreInstanceFromCollectionRequestBodyCollections> collections) {
         this.collections = collections;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

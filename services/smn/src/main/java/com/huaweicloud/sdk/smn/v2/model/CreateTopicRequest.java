@@ -22,7 +22,7 @@ public class CreateTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateTopicRequestBody body = null;
+    private CreateTopicRequestBody body;
 
     public CreateTopicRequest withBody(CreateTopicRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateTopicRequest  {
     public void setBody(CreateTopicRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

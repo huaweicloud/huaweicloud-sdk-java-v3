@@ -67,6 +67,8 @@ public class RetrieveEnterpriseMultiAccountReq  {
         this.customerId = customerId;
     }
 
+    
+
     public RetrieveEnterpriseMultiAccountReq withAmount(String amount) {
         this.amount = amount;
         return this;
@@ -86,6 +88,8 @@ public class RetrieveEnterpriseMultiAccountReq  {
     public void setAmount(String amount) {
         this.amount = amount;
     }
+
+    
 
     public RetrieveEnterpriseMultiAccountReq withTransId(String transId) {
         this.transId = transId;
@@ -107,6 +111,8 @@ public class RetrieveEnterpriseMultiAccountReq  {
         this.transId = transId;
     }
 
+    
+
     public RetrieveEnterpriseMultiAccountReq withBalanceType(String balanceType) {
         this.balanceType = balanceType;
         return this;
@@ -127,6 +133,8 @@ public class RetrieveEnterpriseMultiAccountReq  {
         this.balanceType = balanceType;
     }
 
+    
+
     public RetrieveEnterpriseMultiAccountReq withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -146,6 +154,9 @@ public class RetrieveEnterpriseMultiAccountReq  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

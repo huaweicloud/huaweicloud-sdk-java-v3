@@ -28,13 +28,13 @@ public class Rule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="params")
     
-    private Object params = null;
+    private Object params;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_selectors")
     
-    private List<TagSelector> tagSelectors = new ArrayList<>();
+    private List<TagSelector> tagSelectors = null;
         /**
      * 回收类型，date_rule、tag_rule
      */
@@ -140,6 +140,8 @@ public class Rule  {
         this.params = params;
     }
 
+    
+
     public Rule withTagSelectors(List<TagSelector> tagSelectors) {
         this.tagSelectors = tagSelectors;
         return this;
@@ -171,6 +173,8 @@ public class Rule  {
         this.tagSelectors = tagSelectors;
     }
 
+    
+
     public Rule withTemplate(TemplateEnum template) {
         this.template = template;
         return this;
@@ -190,6 +194,9 @@ public class Rule  {
     public void setTemplate(TemplateEnum template) {
         this.template = template;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

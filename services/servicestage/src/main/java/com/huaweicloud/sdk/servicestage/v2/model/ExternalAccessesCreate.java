@@ -137,6 +137,8 @@ public class ExternalAccessesCreate  {
         this.protocol = protocol;
     }
 
+    
+
     public ExternalAccessesCreate withAddress(String address) {
         this.address = address;
         return this;
@@ -157,6 +159,8 @@ public class ExternalAccessesCreate  {
         this.address = address;
     }
 
+    
+
     public ExternalAccessesCreate withForwardPort(Integer forwardPort) {
         this.forwardPort = forwardPort;
         return this;
@@ -176,6 +180,9 @@ public class ExternalAccessesCreate  {
     public void setForwardPort(Integer forwardPort) {
         this.forwardPort = forwardPort;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

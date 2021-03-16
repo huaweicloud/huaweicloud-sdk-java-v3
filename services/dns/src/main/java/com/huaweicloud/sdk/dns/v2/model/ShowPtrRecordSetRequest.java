@@ -49,6 +49,8 @@ public class ShowPtrRecordSetRequest  {
         this.region = region;
     }
 
+    
+
     public ShowPtrRecordSetRequest withFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
         return this;
@@ -68,6 +70,9 @@ public class ShowPtrRecordSetRequest  {
     public void setFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

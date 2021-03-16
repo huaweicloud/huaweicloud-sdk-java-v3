@@ -49,6 +49,8 @@ public class Router  {
         this.routerId = routerId;
     }
 
+    
+
     public Router withRouterRegion(String routerRegion) {
         this.routerRegion = routerRegion;
         return this;
@@ -68,6 +70,9 @@ public class Router  {
     public void setRouterRegion(String routerRegion) {
         this.routerRegion = routerRegion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

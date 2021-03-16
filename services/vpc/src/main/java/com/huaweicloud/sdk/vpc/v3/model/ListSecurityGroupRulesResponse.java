@@ -39,7 +39,7 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
     public ListSecurityGroupRulesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -61,6 +61,8 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListSecurityGroupRulesResponse withSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
         return this;
@@ -68,9 +70,6 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
 
     
     public ListSecurityGroupRulesResponse addSecurityGroupRulesItem(SecurityGroupRule securityGroupRulesItem) {
-        if (this.securityGroupRules == null) {
-            this.securityGroupRules = new ArrayList<>();
-        }
         this.securityGroupRules.add(securityGroupRulesItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
     public void setSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
     }
+
+    
 
     public ListSecurityGroupRulesResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -121,6 +122,9 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -163,6 +163,8 @@ public class ImageDetectionReq  {
         this.url = url;
     }
 
+    
+
     public ImageDetectionReq withImage(byte[] image) {
         this.image = image;
         return this;
@@ -183,6 +185,8 @@ public class ImageDetectionReq  {
         this.image = image;
     }
 
+    
+
     public ImageDetectionReq withCategories(List<CategoriesEnum> categories) {
         this.categories = categories;
         return this;
@@ -190,9 +194,6 @@ public class ImageDetectionReq  {
 
     
     public ImageDetectionReq addCategoriesItem(CategoriesEnum categoriesItem) {
-        if (this.categories == null) {
-            this.categories = new ArrayList<>();
-        }
         this.categories.add(categoriesItem);
         return this;
     }
@@ -217,6 +218,8 @@ public class ImageDetectionReq  {
         this.categories = categories;
     }
 
+    
+
     public ImageDetectionReq withThreshold(Float threshold) {
         this.threshold = threshold;
         return this;
@@ -238,6 +241,9 @@ public class ImageDetectionReq  {
     public void setThreshold(Float threshold) {
         this.threshold = threshold;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class ShowClassroomDetailRequest  {
     public void setClassroomId(String classroomId) {
         this.classroomId = classroomId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

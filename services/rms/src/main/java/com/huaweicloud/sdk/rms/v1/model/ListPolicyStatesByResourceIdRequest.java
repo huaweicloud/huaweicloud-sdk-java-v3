@@ -61,6 +61,8 @@ public class ListPolicyStatesByResourceIdRequest  {
         this.resourceId = resourceId;
     }
 
+    
+
     public ListPolicyStatesByResourceIdRequest withComplianceState(String complianceState) {
         this.complianceState = complianceState;
         return this;
@@ -80,6 +82,8 @@ public class ListPolicyStatesByResourceIdRequest  {
     public void setComplianceState(String complianceState) {
         this.complianceState = complianceState;
     }
+
+    
 
     public ListPolicyStatesByResourceIdRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -103,6 +107,8 @@ public class ListPolicyStatesByResourceIdRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPolicyStatesByResourceIdRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -122,6 +128,9 @@ public class ListPolicyStatesByResourceIdRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

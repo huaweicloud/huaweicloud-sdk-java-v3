@@ -85,6 +85,8 @@ public class BackupReplicateRespBody  {
         this.backupId = backupId;
     }
 
+    
+
     public BackupReplicateRespBody withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
@@ -104,6 +106,8 @@ public class BackupReplicateRespBody  {
     public void setDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
     }
+
+    
 
     public BackupReplicateRespBody withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
@@ -125,6 +129,8 @@ public class BackupReplicateRespBody  {
         this.destinationRegion = destinationRegion;
     }
 
+    
+
     public BackupReplicateRespBody withDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
         return this;
@@ -144,6 +150,8 @@ public class BackupReplicateRespBody  {
     public void setDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
     }
+
+    
 
     public BackupReplicateRespBody withProjectId(String projectId) {
         this.projectId = projectId;
@@ -165,6 +173,8 @@ public class BackupReplicateRespBody  {
         this.projectId = projectId;
     }
 
+    
+
     public BackupReplicateRespBody withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
@@ -184,6 +194,8 @@ public class BackupReplicateRespBody  {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
+    
 
     public BackupReplicateRespBody withReplicationRecordId(String replicationRecordId) {
         this.replicationRecordId = replicationRecordId;
@@ -205,6 +217,8 @@ public class BackupReplicateRespBody  {
         this.replicationRecordId = replicationRecordId;
     }
 
+    
+
     public BackupReplicateRespBody withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
         return this;
@@ -224,6 +238,9 @@ public class BackupReplicateRespBody  {
     public void setSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

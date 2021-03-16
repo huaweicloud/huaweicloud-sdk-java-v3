@@ -109,6 +109,8 @@ public class SignUnbindingApiResp  {
         this.authType = authType;
     }
 
+    
+
     public SignUnbindingApiResp withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -128,6 +130,8 @@ public class SignUnbindingApiResp  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public SignUnbindingApiResp withGroupName(String groupName) {
         this.groupName = groupName;
@@ -149,6 +153,8 @@ public class SignUnbindingApiResp  {
         this.groupName = groupName;
     }
 
+    
+
     public SignUnbindingApiResp withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
@@ -168,6 +174,8 @@ public class SignUnbindingApiResp  {
     public void setPublishId(String publishId) {
         this.publishId = publishId;
     }
+
+    
 
     public SignUnbindingApiResp withGroupId(String groupId) {
         this.groupId = groupId;
@@ -189,6 +197,8 @@ public class SignUnbindingApiResp  {
         this.groupId = groupId;
     }
 
+    
+
     public SignUnbindingApiResp withName(String name) {
         this.name = name;
         return this;
@@ -208,6 +218,8 @@ public class SignUnbindingApiResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SignUnbindingApiResp withSignatureName(String signatureName) {
         this.signatureName = signatureName;
@@ -229,6 +241,8 @@ public class SignUnbindingApiResp  {
         this.signatureName = signatureName;
     }
 
+    
+
     public SignUnbindingApiResp withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -248,6 +262,8 @@ public class SignUnbindingApiResp  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public SignUnbindingApiResp withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -269,6 +285,8 @@ public class SignUnbindingApiResp  {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public SignUnbindingApiResp withId(String id) {
         this.id = id;
         return this;
@@ -288,6 +306,8 @@ public class SignUnbindingApiResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public SignUnbindingApiResp withType(Integer type) {
         this.type = type;
@@ -309,6 +329,8 @@ public class SignUnbindingApiResp  {
         this.type = type;
     }
 
+    
+
     public SignUnbindingApiResp withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -328,6 +350,9 @@ public class SignUnbindingApiResp  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

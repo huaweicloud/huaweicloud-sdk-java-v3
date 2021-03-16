@@ -28,7 +28,7 @@ public class TagDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BindTagsDTO body = null;
+    private BindTagsDTO body;
 
     public TagDeviceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class TagDeviceRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public TagDeviceRequest withBody(BindTagsDTO body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class TagDeviceRequest  {
     public void setBody(BindTagsDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

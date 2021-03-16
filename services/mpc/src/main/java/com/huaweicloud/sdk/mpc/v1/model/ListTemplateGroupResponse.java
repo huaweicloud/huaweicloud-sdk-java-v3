@@ -41,9 +41,6 @@ public class ListTemplateGroupResponse extends SdkResponse {
 
     
     public ListTemplateGroupResponse addTemplateGroupListItem(TemplateGroup templateGroupListItem) {
-        if (this.templateGroupList == null) {
-            this.templateGroupList = new ArrayList<>();
-        }
         this.templateGroupList.add(templateGroupListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListTemplateGroupResponse extends SdkResponse {
         this.templateGroupList = templateGroupList;
     }
 
+    
+
     public ListTemplateGroupResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -89,6 +88,9 @@ public class ListTemplateGroupResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

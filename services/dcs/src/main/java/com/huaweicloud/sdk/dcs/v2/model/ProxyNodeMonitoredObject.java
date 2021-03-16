@@ -61,6 +61,8 @@ public class ProxyNodeMonitoredObject  {
         this.dcsInstanceId = dcsInstanceId;
     }
 
+    
+
     public ProxyNodeMonitoredObject withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class ProxyNodeMonitoredObject  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ProxyNodeMonitoredObject withDcsClusterProxyNode(String dcsClusterProxyNode) {
         this.dcsClusterProxyNode = dcsClusterProxyNode;
@@ -101,6 +105,8 @@ public class ProxyNodeMonitoredObject  {
         this.dcsClusterProxyNode = dcsClusterProxyNode;
     }
 
+    
+
     public ProxyNodeMonitoredObject withStatus(String status) {
         this.status = status;
         return this;
@@ -120,6 +126,9 @@ public class ProxyNodeMonitoredObject  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

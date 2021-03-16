@@ -50,7 +50,7 @@ public class ResetTracksTaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ResetTracksTaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
     public ResetTracksTaskInfo withTaskId(String taskId) {
         this.taskId = taskId;
@@ -96,6 +96,8 @@ public class ResetTracksTaskInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public ResetTracksTaskInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -115,6 +117,8 @@ public class ResetTracksTaskInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ResetTracksTaskInfo withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -136,6 +140,8 @@ public class ResetTracksTaskInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public ResetTracksTaskInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -155,6 +161,8 @@ public class ResetTracksTaskInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ResetTracksTaskInfo withOutput(ObsObjInfo output) {
         this.output = output;
@@ -183,6 +191,8 @@ public class ResetTracksTaskInfo  {
         this.output = output;
     }
 
+    
+
     public ResetTracksTaskInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -202,6 +212,8 @@ public class ResetTracksTaskInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ResetTracksTaskInfo withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
@@ -223,6 +235,8 @@ public class ResetTracksTaskInfo  {
         this.outputFilename = outputFilename;
     }
 
+    
+
     public ResetTracksTaskInfo withTracksInfo(List<TracksInfo> tracksInfo) {
         this.tracksInfo = tracksInfo;
         return this;
@@ -230,9 +244,6 @@ public class ResetTracksTaskInfo  {
 
     
     public ResetTracksTaskInfo addTracksInfoItem(TracksInfo tracksInfoItem) {
-        if (this.tracksInfo == null) {
-            this.tracksInfo = new ArrayList<>();
-        }
         this.tracksInfo.add(tracksInfoItem);
         return this;
     }
@@ -256,6 +267,8 @@ public class ResetTracksTaskInfo  {
     public void setTracksInfo(List<TracksInfo> tracksInfo) {
         this.tracksInfo = tracksInfo;
     }
+
+    
 
     public ResetTracksTaskInfo withInput(ObsObjInfo input) {
         this.input = input;
@@ -283,6 +296,9 @@ public class ResetTracksTaskInfo  {
     public void setInput(ObsObjInfo input) {
         this.input = input;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

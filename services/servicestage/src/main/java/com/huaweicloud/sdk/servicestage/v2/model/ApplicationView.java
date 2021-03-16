@@ -91,6 +91,8 @@ public class ApplicationView  {
         this.componentCount = componentCount;
     }
 
+    
+
     public ApplicationView withId(String id) {
         this.id = id;
         return this;
@@ -110,6 +112,8 @@ public class ApplicationView  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ApplicationView withName(String name) {
         this.name = name;
@@ -131,6 +135,8 @@ public class ApplicationView  {
         this.name = name;
     }
 
+    
+
     public ApplicationView withDescription(String description) {
         this.description = description;
         return this;
@@ -150,6 +156,8 @@ public class ApplicationView  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ApplicationView withCreator(String creator) {
         this.creator = creator;
@@ -171,6 +179,8 @@ public class ApplicationView  {
         this.creator = creator;
     }
 
+    
+
     public ApplicationView withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -190,6 +200,8 @@ public class ApplicationView  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ApplicationView withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -211,6 +223,8 @@ public class ApplicationView  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ApplicationView withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -231,6 +245,8 @@ public class ApplicationView  {
         this.createTime = createTime;
     }
 
+    
+
     public ApplicationView withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -250,6 +266,9 @@ public class ApplicationView  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

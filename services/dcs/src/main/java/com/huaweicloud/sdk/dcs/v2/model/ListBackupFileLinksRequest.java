@@ -34,7 +34,7 @@ public class ListBackupFileLinksRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DownloadBackupFilesReq body = null;
+    private DownloadBackupFilesReq body;
 
     public ListBackupFileLinksRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class ListBackupFileLinksRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListBackupFileLinksRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -75,6 +77,8 @@ public class ListBackupFileLinksRequest  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
 
     public ListBackupFileLinksRequest withBody(DownloadBackupFilesReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ListBackupFileLinksRequest  {
     public void setBody(DownloadBackupFilesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

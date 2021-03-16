@@ -22,7 +22,7 @@ public class RunImageBatchModerationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ImageBatchModerationReq body = null;
+    private ImageBatchModerationReq body;
 
     public RunImageBatchModerationRequest withBody(ImageBatchModerationReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class RunImageBatchModerationRequest  {
     public void setBody(ImageBatchModerationReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

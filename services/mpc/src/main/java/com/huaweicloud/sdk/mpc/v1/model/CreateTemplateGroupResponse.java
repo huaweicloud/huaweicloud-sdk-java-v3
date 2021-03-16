@@ -24,7 +24,7 @@ public class CreateTemplateGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_group")
     
-    private TemplateGroup templateGroup = null;
+    private TemplateGroup templateGroup;
 
     public CreateTemplateGroupResponse withTemplateGroup(TemplateGroup templateGroup) {
         this.templateGroup = templateGroup;
@@ -52,6 +52,9 @@ public class CreateTemplateGroupResponse extends SdkResponse {
     public void setTemplateGroup(TemplateGroup templateGroup) {
         this.templateGroup = templateGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

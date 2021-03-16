@@ -69,6 +69,8 @@ public class ShowAuthorizationDetailRequest  {
         this.authorizationId = authorizationId;
     }
 
+    
+
     public ShowAuthorizationDetailRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -88,6 +90,8 @@ public class ShowAuthorizationDetailRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ShowAuthorizationDetailRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -113,6 +117,8 @@ public class ShowAuthorizationDetailRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ShowAuthorizationDetailRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -135,6 +141,8 @@ public class ShowAuthorizationDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ShowAuthorizationDetailRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -156,6 +164,9 @@ public class ShowAuthorizationDetailRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

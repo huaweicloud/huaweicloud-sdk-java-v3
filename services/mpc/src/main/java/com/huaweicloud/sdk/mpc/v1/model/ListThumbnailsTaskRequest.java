@@ -153,13 +153,13 @@ public class ListThumbnailsTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListThumbnailsTaskRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -183,6 +183,8 @@ public class ListThumbnailsTaskRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListThumbnailsTaskRequest withTaskId(List<String> taskId) {
         this.taskId = taskId;
         return this;
@@ -190,9 +192,6 @@ public class ListThumbnailsTaskRequest  {
 
     
     public ListThumbnailsTaskRequest addTaskIdItem(String taskIdItem) {
-        if (this.taskId == null) {
-            this.taskId = new ArrayList<>();
-        }
         this.taskId.add(taskIdItem);
         return this;
     }
@@ -217,6 +216,8 @@ public class ListThumbnailsTaskRequest  {
         this.taskId = taskId;
     }
 
+    
+
     public ListThumbnailsTaskRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -236,6 +237,8 @@ public class ListThumbnailsTaskRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListThumbnailsTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -257,6 +260,8 @@ public class ListThumbnailsTaskRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListThumbnailsTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -276,6 +281,8 @@ public class ListThumbnailsTaskRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListThumbnailsTaskRequest withPage(Integer page) {
         this.page = page;
@@ -299,6 +306,8 @@ public class ListThumbnailsTaskRequest  {
         this.page = page;
     }
 
+    
+
     public ListThumbnailsTaskRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -320,6 +329,9 @@ public class ListThumbnailsTaskRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

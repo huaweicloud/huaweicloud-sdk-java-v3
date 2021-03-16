@@ -28,7 +28,7 @@ public class CreateVaultTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VaultTagsCreateReq body = null;
+    private VaultTagsCreateReq body;
 
     public CreateVaultTagsRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
@@ -49,6 +49,8 @@ public class CreateVaultTagsRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public CreateVaultTagsRequest withBody(VaultTagsCreateReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateVaultTagsRequest  {
     public void setBody(VaultTagsCreateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

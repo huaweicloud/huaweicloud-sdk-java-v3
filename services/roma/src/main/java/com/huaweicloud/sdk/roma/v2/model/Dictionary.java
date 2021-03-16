@@ -71,19 +71,19 @@ public class Dictionary  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private DictionaryType type = null;
+    private DictionaryType type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private BigDecimal createTime = null;
+    private BigDecimal createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private BigDecimal updateTime = null;
+    private BigDecimal updateTime;
 
     public Dictionary withId(String id) {
         this.id = id;
@@ -105,6 +105,8 @@ public class Dictionary  {
         this.id = id;
     }
 
+    
+
     public Dictionary withName(String name) {
         this.name = name;
         return this;
@@ -124,6 +126,8 @@ public class Dictionary  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Dictionary withRemark(String remark) {
         this.remark = remark;
@@ -145,6 +149,8 @@ public class Dictionary  {
         this.remark = remark;
     }
 
+    
+
     public Dictionary withCode(String code) {
         this.code = code;
         return this;
@@ -164,6 +170,8 @@ public class Dictionary  {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
 
     public Dictionary withOrder(Integer order) {
         this.order = order;
@@ -187,6 +195,8 @@ public class Dictionary  {
         this.order = order;
     }
 
+    
+
     public Dictionary withExtendOne(String extendOne) {
         this.extendOne = extendOne;
         return this;
@@ -206,6 +216,8 @@ public class Dictionary  {
     public void setExtendOne(String extendOne) {
         this.extendOne = extendOne;
     }
+
+    
 
     public Dictionary withExtendTwo(String extendTwo) {
         this.extendTwo = extendTwo;
@@ -227,6 +239,8 @@ public class Dictionary  {
         this.extendTwo = extendTwo;
     }
 
+    
+
     public Dictionary withParentCode(String parentCode) {
         this.parentCode = parentCode;
         return this;
@@ -247,6 +261,8 @@ public class Dictionary  {
         this.parentCode = parentCode;
     }
 
+    
+
     public Dictionary withType(DictionaryType type) {
         this.type = type;
         return this;
@@ -266,6 +282,8 @@ public class Dictionary  {
     public void setType(DictionaryType type) {
         this.type = type;
     }
+
+    
 
     public Dictionary withCreateTime(BigDecimal createTime) {
         this.createTime = createTime;
@@ -289,6 +307,8 @@ public class Dictionary  {
         this.createTime = createTime;
     }
 
+    
+
     public Dictionary withUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -310,6 +330,9 @@ public class Dictionary  {
     public void setUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

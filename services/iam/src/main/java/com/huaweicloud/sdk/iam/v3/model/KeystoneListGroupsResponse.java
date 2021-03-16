@@ -33,7 +33,7 @@ public class KeystoneListGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
     public KeystoneListGroupsResponse withGroups(List<KeystoneGroupResult> groups) {
         this.groups = groups;
@@ -42,9 +42,6 @@ public class KeystoneListGroupsResponse extends SdkResponse {
 
     
     public KeystoneListGroupsResponse addGroupsItem(KeystoneGroupResult groupsItem) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
         this.groups.add(groupsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class KeystoneListGroupsResponse extends SdkResponse {
     public void setGroups(List<KeystoneGroupResult> groups) {
         this.groups = groups;
     }
+
+    
 
     public KeystoneListGroupsResponse withLinks(Links links) {
         this.links = links;
@@ -95,6 +94,9 @@ public class KeystoneListGroupsResponse extends SdkResponse {
     public void setLinks(Links links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

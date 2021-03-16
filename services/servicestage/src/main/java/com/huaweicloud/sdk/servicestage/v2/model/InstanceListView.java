@@ -117,7 +117,7 @@ public class InstanceListView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status_detail")
     
-    private InstanceStatusView statusDetail = null;
+    private InstanceStatusView statusDetail;
 
     public InstanceListView withId(String id) {
         this.id = id;
@@ -139,6 +139,8 @@ public class InstanceListView  {
         this.id = id;
     }
 
+    
+
     public InstanceListView withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
@@ -158,6 +160,8 @@ public class InstanceListView  {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
 
     public InstanceListView withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -179,6 +183,8 @@ public class InstanceListView  {
         this.applicationName = applicationName;
     }
 
+    
+
     public InstanceListView withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -198,6 +204,8 @@ public class InstanceListView  {
     public void setComponentId(String componentId) {
         this.componentId = componentId;
     }
+
+    
 
     public InstanceListView withComponentName(String componentName) {
         this.componentName = componentName;
@@ -219,6 +227,8 @@ public class InstanceListView  {
         this.componentName = componentName;
     }
 
+    
+
     public InstanceListView withName(String name) {
         this.name = name;
         return this;
@@ -238,6 +248,8 @@ public class InstanceListView  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public InstanceListView withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -259,6 +271,8 @@ public class InstanceListView  {
         this.environmentId = environmentId;
     }
 
+    
+
     public InstanceListView withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
         return this;
@@ -278,6 +292,8 @@ public class InstanceListView  {
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
+
+    
 
     public InstanceListView withPlatformType(String platformType) {
         this.platformType = platformType;
@@ -299,6 +315,8 @@ public class InstanceListView  {
         this.platformType = platformType;
     }
 
+    
+
     public InstanceListView withVersion(String version) {
         this.version = version;
         return this;
@@ -319,6 +337,8 @@ public class InstanceListView  {
         this.version = version;
     }
 
+    
+
     public InstanceListView withExternalAccesses(List<ExternalAccesses> externalAccesses) {
         this.externalAccesses = externalAccesses;
         return this;
@@ -326,9 +346,6 @@ public class InstanceListView  {
 
     
     public InstanceListView addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
-        if (this.externalAccesses == null) {
-            this.externalAccesses = new ArrayList<>();
-        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
@@ -353,6 +370,8 @@ public class InstanceListView  {
         this.externalAccesses = externalAccesses;
     }
 
+    
+
     public InstanceListView withArtifacts(Map<String, Object> artifacts) {
         this.artifacts = artifacts;
         return this;
@@ -361,9 +380,6 @@ public class InstanceListView  {
     
 
     public InstanceListView putArtifactsItem(String key, Object artifactsItem) {
-         if (this.artifacts == null) {
-            this.artifacts = new HashMap<>();
-         }
         this.artifacts.put(key, artifactsItem);
         return this;
     }
@@ -387,6 +403,8 @@ public class InstanceListView  {
         this.artifacts = artifacts;
     }
 
+    
+
     public InstanceListView withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -406,6 +424,8 @@ public class InstanceListView  {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    
 
     public InstanceListView withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -427,6 +447,8 @@ public class InstanceListView  {
         this.createTime = createTime;
     }
 
+    
+
     public InstanceListView withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -446,6 +468,8 @@ public class InstanceListView  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public InstanceListView withStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
@@ -473,6 +497,9 @@ public class InstanceListView  {
     public void setStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

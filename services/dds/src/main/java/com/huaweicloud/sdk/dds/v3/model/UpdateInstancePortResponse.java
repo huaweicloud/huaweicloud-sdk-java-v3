@@ -51,6 +51,8 @@ public class UpdateInstancePortResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public UpdateInstancePortResponse withPort(Integer port) {
         this.port = port;
         return this;
@@ -70,6 +72,9 @@ public class UpdateInstancePortResponse extends SdkResponse {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

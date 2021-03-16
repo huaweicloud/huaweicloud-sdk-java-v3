@@ -60,6 +60,8 @@ public class ShowMeetingFileListRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowMeetingFileListRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -80,6 +82,8 @@ public class ShowMeetingFileListRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ShowMeetingFileListRequest withBody(Map<String, String> body) {
         this.body = body;
         return this;
@@ -88,9 +92,6 @@ public class ShowMeetingFileListRequest  {
     
 
     public ShowMeetingFileListRequest putBodyItem(String key, String bodyItem) {
-         if (this.body == null) {
-            this.body = new HashMap<>();
-         }
         this.body.put(key, bodyItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ShowMeetingFileListRequest  {
     public void setBody(Map<String, String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

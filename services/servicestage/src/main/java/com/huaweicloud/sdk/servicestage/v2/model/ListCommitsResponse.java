@@ -35,9 +35,6 @@ public class ListCommitsResponse extends SdkResponse {
 
     
     public ListCommitsResponse addCommitsItem(CommitsCommits commitsItem) {
-        if (this.commits == null) {
-            this.commits = new ArrayList<>();
-        }
         this.commits.add(commitsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListCommitsResponse extends SdkResponse {
     public void setCommits(List<CommitsCommits> commits) {
         this.commits = commits;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

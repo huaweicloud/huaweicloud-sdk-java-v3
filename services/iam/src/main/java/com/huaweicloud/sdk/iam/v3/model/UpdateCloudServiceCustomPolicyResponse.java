@@ -24,7 +24,7 @@ public class UpdateCloudServiceCustomPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private ServicePolicyRoleResult role = null;
+    private ServicePolicyRoleResult role;
 
     public UpdateCloudServiceCustomPolicyResponse withRole(ServicePolicyRoleResult role) {
         this.role = role;
@@ -52,6 +52,9 @@ public class UpdateCloudServiceCustomPolicyResponse extends SdkResponse {
     public void setRole(ServicePolicyRoleResult role) {
         this.role = role;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

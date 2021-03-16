@@ -148,6 +148,8 @@ public class CouponInfoV2  {
         this.couponId = couponId;
     }
 
+    
+
     public CouponInfoV2 withCouponCode(String couponCode) {
         this.couponCode = couponCode;
         return this;
@@ -167,6 +169,8 @@ public class CouponInfoV2  {
     public void setCouponCode(String couponCode) {
         this.couponCode = couponCode;
     }
+
+    
 
     public CouponInfoV2 withStatus(Integer status) {
         this.status = status;
@@ -188,6 +192,8 @@ public class CouponInfoV2  {
         this.status = status;
     }
 
+    
+
     public CouponInfoV2 withCouponType(Integer couponType) {
         this.couponType = couponType;
         return this;
@@ -207,6 +213,8 @@ public class CouponInfoV2  {
     public void setCouponType(Integer couponType) {
         this.couponType = couponType;
     }
+
+    
 
     public CouponInfoV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -228,6 +236,8 @@ public class CouponInfoV2  {
         this.measureId = measureId;
     }
 
+    
+
     public CouponInfoV2 withFaceValue(Double faceValue) {
         this.faceValue = faceValue;
         return this;
@@ -247,6 +257,8 @@ public class CouponInfoV2  {
     public void setFaceValue(Double faceValue) {
         this.faceValue = faceValue;
     }
+
+    
 
     public CouponInfoV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
@@ -268,6 +280,8 @@ public class CouponInfoV2  {
         this.effectiveTime = effectiveTime;
     }
 
+    
+
     public CouponInfoV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -287,6 +301,8 @@ public class CouponInfoV2  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public CouponInfoV2 withPlanName(String planName) {
         this.planName = planName;
@@ -308,6 +324,8 @@ public class CouponInfoV2  {
         this.planName = planName;
     }
 
+    
+
     public CouponInfoV2 withPlanDesc(String planDesc) {
         this.planDesc = planDesc;
         return this;
@@ -328,6 +346,8 @@ public class CouponInfoV2  {
         this.planDesc = planDesc;
     }
 
+    
+
     public CouponInfoV2 withUseLimits(List<LimitInfoV2> useLimits) {
         this.useLimits = useLimits;
         return this;
@@ -335,9 +355,6 @@ public class CouponInfoV2  {
 
     
     public CouponInfoV2 addUseLimitsItem(LimitInfoV2 useLimitsItem) {
-        if (this.useLimits == null) {
-            this.useLimits = new ArrayList<>();
-        }
         this.useLimits.add(useLimitsItem);
         return this;
     }
@@ -362,6 +379,8 @@ public class CouponInfoV2  {
         this.useLimits = useLimits;
     }
 
+    
+
     public CouponInfoV2 withActiveTime(String activeTime) {
         this.activeTime = activeTime;
         return this;
@@ -381,6 +400,8 @@ public class CouponInfoV2  {
     public void setActiveTime(String activeTime) {
         this.activeTime = activeTime;
     }
+
+    
 
     public CouponInfoV2 withLastUsedTime(String lastUsedTime) {
         this.lastUsedTime = lastUsedTime;
@@ -402,6 +423,8 @@ public class CouponInfoV2  {
         this.lastUsedTime = lastUsedTime;
     }
 
+    
+
     public CouponInfoV2 withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -421,6 +444,8 @@ public class CouponInfoV2  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public CouponInfoV2 withCouponVersion(Integer couponVersion) {
         this.couponVersion = couponVersion;
@@ -442,6 +467,8 @@ public class CouponInfoV2  {
         this.couponVersion = couponVersion;
     }
 
+    
+
     public CouponInfoV2 withBalance(Double balance) {
         this.balance = balance;
         return this;
@@ -461,6 +488,8 @@ public class CouponInfoV2  {
     public void setBalance(Double balance) {
         this.balance = balance;
     }
+
+    
 
     public CouponInfoV2 withUsedByOrderId(String usedByOrderId) {
         this.usedByOrderId = usedByOrderId;
@@ -482,6 +511,8 @@ public class CouponInfoV2  {
         this.usedByOrderId = usedByOrderId;
     }
 
+    
+
     public CouponInfoV2 withCouponUsage(String couponUsage) {
         this.couponUsage = couponUsage;
         return this;
@@ -501,6 +532,9 @@ public class CouponInfoV2  {
     public void setCouponUsage(String couponUsage) {
         this.couponUsage = couponUsage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

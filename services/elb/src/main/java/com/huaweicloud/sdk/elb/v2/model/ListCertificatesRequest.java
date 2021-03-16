@@ -99,6 +99,8 @@ public class ListCertificatesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListCertificatesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -118,6 +120,8 @@ public class ListCertificatesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListCertificatesRequest withPageReverse(String pageReverse) {
         this.pageReverse = pageReverse;
@@ -139,6 +143,8 @@ public class ListCertificatesRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListCertificatesRequest withId(String id) {
         this.id = id;
         return this;
@@ -158,6 +164,8 @@ public class ListCertificatesRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListCertificatesRequest withName(String name) {
         this.name = name;
@@ -179,6 +187,8 @@ public class ListCertificatesRequest  {
         this.name = name;
     }
 
+    
+
     public ListCertificatesRequest withDescription(String description) {
         this.description = description;
         return this;
@@ -198,6 +208,8 @@ public class ListCertificatesRequest  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ListCertificatesRequest withType(String type) {
         this.type = type;
@@ -219,6 +231,8 @@ public class ListCertificatesRequest  {
         this.type = type;
     }
 
+    
+
     public ListCertificatesRequest withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -238,6 +252,8 @@ public class ListCertificatesRequest  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public ListCertificatesRequest withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
@@ -259,6 +275,8 @@ public class ListCertificatesRequest  {
         this.privateKey = privateKey;
     }
 
+    
+
     public ListCertificatesRequest withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
@@ -278,6 +296,9 @@ public class ListCertificatesRequest  {
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

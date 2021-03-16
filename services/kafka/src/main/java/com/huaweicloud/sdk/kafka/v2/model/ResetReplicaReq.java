@@ -33,9 +33,6 @@ public class ResetReplicaReq  {
 
     
     public ResetReplicaReq addPartitionsItem(ResetReplicaReqPartitions partitionsItem) {
-        if (this.partitions == null) {
-            this.partitions = new ArrayList<>();
-        }
         this.partitions.add(partitionsItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ResetReplicaReq  {
     public void setPartitions(List<ResetReplicaReqPartitions> partitions) {
         this.partitions = partitions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

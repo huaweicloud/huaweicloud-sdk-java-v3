@@ -40,13 +40,13 @@ public class MbTasksReportReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="retry")
     
-    private Boolean retry = false;
+    private Boolean retry;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameter")
     
-    private MbTaskParameter parameter = null;
+    private MbTaskParameter parameter;
 
     public MbTasksReportReq withTaskId(String taskId) {
         this.taskId = taskId;
@@ -68,6 +68,8 @@ public class MbTasksReportReq  {
         this.taskId = taskId;
     }
 
+    
+
     public MbTasksReportReq withStatus(String status) {
         this.status = status;
         return this;
@@ -87,6 +89,8 @@ public class MbTasksReportReq  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public MbTasksReportReq withTaskName(String taskName) {
         this.taskName = taskName;
@@ -108,6 +112,8 @@ public class MbTasksReportReq  {
         this.taskName = taskName;
     }
 
+    
+
     public MbTasksReportReq withRetry(Boolean retry) {
         this.retry = retry;
         return this;
@@ -127,6 +133,8 @@ public class MbTasksReportReq  {
     public void setRetry(Boolean retry) {
         this.retry = retry;
     }
+
+    
 
     public MbTasksReportReq withParameter(MbTaskParameter parameter) {
         this.parameter = parameter;
@@ -154,6 +162,9 @@ public class MbTasksReportReq  {
     public void setParameter(MbTaskParameter parameter) {
         this.parameter = parameter;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -112,7 +112,7 @@ public class BackupFilesBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="files")
     
-    private List<Files> files = new ArrayList<>();
+    private List<Files> files = null;
     
     public BackupFilesBody withFileSource(FileSourceEnum fileSource) {
         this.fileSource = fileSource;
@@ -134,6 +134,8 @@ public class BackupFilesBody  {
         this.fileSource = fileSource;
     }
 
+    
+
     public BackupFilesBody withBucketName(String bucketName) {
         this.bucketName = bucketName;
         return this;
@@ -153,6 +155,8 @@ public class BackupFilesBody  {
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
+
+    
 
     public BackupFilesBody withFiles(List<Files> files) {
         this.files = files;
@@ -184,6 +188,9 @@ public class BackupFilesBody  {
     public void setFiles(List<Files> files) {
         this.files = files;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

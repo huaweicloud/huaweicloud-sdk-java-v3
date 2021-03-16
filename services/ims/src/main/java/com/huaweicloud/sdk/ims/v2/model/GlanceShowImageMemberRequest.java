@@ -49,6 +49,8 @@ public class GlanceShowImageMemberRequest  {
         this.imageId = imageId;
     }
 
+    
+
     public GlanceShowImageMemberRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
@@ -68,6 +70,9 @@ public class GlanceShowImageMemberRequest  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

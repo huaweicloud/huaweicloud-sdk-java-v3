@@ -28,13 +28,13 @@ public class ListPtrRecordsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metedata metadata = null;
+    private Metedata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class ListPtrRecordsResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public ListPtrRecordsResponse withMetadata(Metedata metadata) {
         this.metadata = metadata;
         return this;
@@ -96,6 +98,8 @@ public class ListPtrRecordsResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    
+
     public ListPtrRecordsResponse withFloatingips(List<ListPtrRecordsFloatingResp> floatingips) {
         this.floatingips = floatingips;
         return this;
@@ -103,9 +107,6 @@ public class ListPtrRecordsResponse extends SdkResponse {
 
     
     public ListPtrRecordsResponse addFloatingipsItem(ListPtrRecordsFloatingResp floatingipsItem) {
-        if (this.floatingips == null) {
-            this.floatingips = new ArrayList<>();
-        }
         this.floatingips.add(floatingipsItem);
         return this;
     }
@@ -129,6 +130,9 @@ public class ListPtrRecordsResponse extends SdkResponse {
     public void setFloatingips(List<ListPtrRecordsFloatingResp> floatingips) {
         this.floatingips = floatingips;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

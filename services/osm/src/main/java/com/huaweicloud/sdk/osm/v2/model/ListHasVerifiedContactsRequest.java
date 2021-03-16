@@ -63,13 +63,13 @@ public class ListHasVerifiedContactsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 1;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,6 +111,8 @@ public class ListHasVerifiedContactsRequest  {
         this.contactWay = contactWay;
     }
 
+    
+
     public ListHasVerifiedContactsRequest withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -130,6 +132,8 @@ public class ListHasVerifiedContactsRequest  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public ListHasVerifiedContactsRequest withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
@@ -151,6 +155,8 @@ public class ListHasVerifiedContactsRequest  {
         this.subCustomerId = subCustomerId;
     }
 
+    
+
     public ListHasVerifiedContactsRequest withExpiredTime(String expiredTime) {
         this.expiredTime = expiredTime;
         return this;
@@ -170,6 +176,8 @@ public class ListHasVerifiedContactsRequest  {
     public void setExpiredTime(String expiredTime) {
         this.expiredTime = expiredTime;
     }
+
+    
 
     public ListHasVerifiedContactsRequest withVerifiedId(String verifiedId) {
         this.verifiedId = verifiedId;
@@ -191,6 +199,8 @@ public class ListHasVerifiedContactsRequest  {
         this.verifiedId = verifiedId;
     }
 
+    
+
     public ListHasVerifiedContactsRequest withContactValue(String contactValue) {
         this.contactValue = contactValue;
         return this;
@@ -211,6 +221,8 @@ public class ListHasVerifiedContactsRequest  {
         this.contactValue = contactValue;
     }
 
+    
+
     public ListHasVerifiedContactsRequest withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
@@ -230,6 +242,8 @@ public class ListHasVerifiedContactsRequest  {
     public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
     }
+
+    
 
     public ListHasVerifiedContactsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -253,6 +267,8 @@ public class ListHasVerifiedContactsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListHasVerifiedContactsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -274,6 +290,8 @@ public class ListHasVerifiedContactsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListHasVerifiedContactsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -299,6 +317,8 @@ public class ListHasVerifiedContactsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListHasVerifiedContactsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -321,6 +341,8 @@ public class ListHasVerifiedContactsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListHasVerifiedContactsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -342,6 +364,9 @@ public class ListHasVerifiedContactsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

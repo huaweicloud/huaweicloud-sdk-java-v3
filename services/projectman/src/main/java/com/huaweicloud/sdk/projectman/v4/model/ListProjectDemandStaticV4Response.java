@@ -35,9 +35,6 @@ public class ListProjectDemandStaticV4Response extends SdkResponse {
 
     
     public ListProjectDemandStaticV4Response addDemandStatisticsItem(DemandStatisticResponseV4 demandStatisticsItem) {
-        if (this.demandStatistics == null) {
-            this.demandStatistics = new ArrayList<>();
-        }
         this.demandStatistics.add(demandStatisticsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListProjectDemandStaticV4Response extends SdkResponse {
     public void setDemandStatistics(List<DemandStatisticResponseV4> demandStatistics) {
         this.demandStatistics = demandStatistics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

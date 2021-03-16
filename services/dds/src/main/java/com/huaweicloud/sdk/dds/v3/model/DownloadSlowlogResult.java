@@ -73,6 +73,8 @@ public class DownloadSlowlogResult  {
         this.nodeName = nodeName;
     }
 
+    
+
     public DownloadSlowlogResult withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -92,6 +94,8 @@ public class DownloadSlowlogResult  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public DownloadSlowlogResult withStatus(String status) {
         this.status = status;
@@ -113,6 +117,8 @@ public class DownloadSlowlogResult  {
         this.status = status;
     }
 
+    
+
     public DownloadSlowlogResult withFileSize(String fileSize) {
         this.fileSize = fileSize;
         return this;
@@ -132,6 +138,8 @@ public class DownloadSlowlogResult  {
     public void setFileSize(String fileSize) {
         this.fileSize = fileSize;
     }
+
+    
 
     public DownloadSlowlogResult withFileLink(String fileLink) {
         this.fileLink = fileLink;
@@ -153,6 +161,8 @@ public class DownloadSlowlogResult  {
         this.fileLink = fileLink;
     }
 
+    
+
     public DownloadSlowlogResult withUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
         return this;
@@ -172,6 +182,9 @@ public class DownloadSlowlogResult  {
     public void setUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

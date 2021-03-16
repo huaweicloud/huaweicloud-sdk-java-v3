@@ -39,7 +39,7 @@ public class ListDevicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_cascade_query")
     
-    private Boolean isCascadeQuery = false;
+    private Boolean isCascadeQuery;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,19 +57,19 @@ public class ListDevicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -109,6 +109,8 @@ public class ListDevicesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDevicesRequest withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -128,6 +130,8 @@ public class ListDevicesRequest  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public ListDevicesRequest withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -149,6 +153,8 @@ public class ListDevicesRequest  {
         this.gatewayId = gatewayId;
     }
 
+    
+
     public ListDevicesRequest withIsCascadeQuery(Boolean isCascadeQuery) {
         this.isCascadeQuery = isCascadeQuery;
         return this;
@@ -168,6 +174,8 @@ public class ListDevicesRequest  {
     public void setIsCascadeQuery(Boolean isCascadeQuery) {
         this.isCascadeQuery = isCascadeQuery;
     }
+
+    
 
     public ListDevicesRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -189,6 +197,8 @@ public class ListDevicesRequest  {
         this.nodeId = nodeId;
     }
 
+    
+
     public ListDevicesRequest withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -208,6 +218,8 @@ public class ListDevicesRequest  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public ListDevicesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -231,6 +243,8 @@ public class ListDevicesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListDevicesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -250,6 +264,8 @@ public class ListDevicesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListDevicesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -273,6 +289,8 @@ public class ListDevicesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListDevicesRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -292,6 +310,8 @@ public class ListDevicesRequest  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListDevicesRequest withEndTime(String endTime) {
         this.endTime = endTime;
@@ -313,6 +333,8 @@ public class ListDevicesRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListDevicesRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -332,6 +354,9 @@ public class ListDevicesRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

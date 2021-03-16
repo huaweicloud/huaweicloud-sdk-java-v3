@@ -22,7 +22,7 @@ public class UpdateDomainConsoleAclPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="console_acl_policy")
     
-    private AclPolicyOption consoleAclPolicy = null;
+    private AclPolicyOption consoleAclPolicy;
 
     public UpdateDomainConsoleAclPolicyRequestBody withConsoleAclPolicy(AclPolicyOption consoleAclPolicy) {
         this.consoleAclPolicy = consoleAclPolicy;
@@ -50,6 +50,9 @@ public class UpdateDomainConsoleAclPolicyRequestBody  {
     public void setConsoleAclPolicy(AclPolicyOption consoleAclPolicy) {
         this.consoleAclPolicy = consoleAclPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

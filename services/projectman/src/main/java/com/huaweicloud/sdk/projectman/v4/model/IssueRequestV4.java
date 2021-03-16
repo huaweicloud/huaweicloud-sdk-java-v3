@@ -21,7 +21,7 @@ public class IssueRequestV4  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="actual_work_hours")
     
-    private Integer actualWorkHours;
+    private Double actualWorkHours;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,7 +119,7 @@ public class IssueRequestV4  {
     
     private Integer trackerId;
 
-    public IssueRequestV4 withActualWorkHours(Integer actualWorkHours) {
+    public IssueRequestV4 withActualWorkHours(Double actualWorkHours) {
         this.actualWorkHours = actualWorkHours;
         return this;
     }
@@ -131,13 +131,15 @@ public class IssueRequestV4  {
      * 实际工时
      * @return actualWorkHours
      */
-    public Integer getActualWorkHours() {
+    public Double getActualWorkHours() {
         return actualWorkHours;
     }
 
-    public void setActualWorkHours(Integer actualWorkHours) {
+    public void setActualWorkHours(Double actualWorkHours) {
         this.actualWorkHours = actualWorkHours;
     }
+
+    
 
     public IssueRequestV4 withAssignedId(Integer assignedId) {
         this.assignedId = assignedId;
@@ -159,6 +161,8 @@ public class IssueRequestV4  {
         this.assignedId = assignedId;
     }
 
+    
+
     public IssueRequestV4 withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -178,6 +182,8 @@ public class IssueRequestV4  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public IssueRequestV4 withDescription(String description) {
         this.description = description;
@@ -199,6 +205,8 @@ public class IssueRequestV4  {
         this.description = description;
     }
 
+    
+
     public IssueRequestV4 withDeveloperId(Integer developerId) {
         this.developerId = developerId;
         return this;
@@ -218,6 +226,8 @@ public class IssueRequestV4  {
     public void setDeveloperId(Integer developerId) {
         this.developerId = developerId;
     }
+
+    
 
     public IssueRequestV4 withDomainId(Integer domainId) {
         this.domainId = domainId;
@@ -239,6 +249,8 @@ public class IssueRequestV4  {
         this.domainId = domainId;
     }
 
+    
+
     public IssueRequestV4 withDoneRatio(Integer doneRatio) {
         this.doneRatio = doneRatio;
         return this;
@@ -258,6 +270,8 @@ public class IssueRequestV4  {
     public void setDoneRatio(Integer doneRatio) {
         this.doneRatio = doneRatio;
     }
+
+    
 
     public IssueRequestV4 withEndTime(String endTime) {
         this.endTime = endTime;
@@ -279,6 +293,8 @@ public class IssueRequestV4  {
         this.endTime = endTime;
     }
 
+    
+
     public IssueRequestV4 withExpectedWorkHours(Double expectedWorkHours) {
         this.expectedWorkHours = expectedWorkHours;
         return this;
@@ -298,6 +314,8 @@ public class IssueRequestV4  {
     public void setExpectedWorkHours(Double expectedWorkHours) {
         this.expectedWorkHours = expectedWorkHours;
     }
+
+    
 
     public IssueRequestV4 withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
@@ -319,6 +337,8 @@ public class IssueRequestV4  {
         this.iterationId = iterationId;
     }
 
+    
+
     public IssueRequestV4 withModuleId(Integer moduleId) {
         this.moduleId = moduleId;
         return this;
@@ -338,6 +358,8 @@ public class IssueRequestV4  {
     public void setModuleId(Integer moduleId) {
         this.moduleId = moduleId;
     }
+
+    
 
     public IssueRequestV4 withName(String name) {
         this.name = name;
@@ -359,6 +381,8 @@ public class IssueRequestV4  {
         this.name = name;
     }
 
+    
+
     public IssueRequestV4 withParentIssueId(Integer parentIssueId) {
         this.parentIssueId = parentIssueId;
         return this;
@@ -379,6 +403,8 @@ public class IssueRequestV4  {
         this.parentIssueId = parentIssueId;
     }
 
+    
+
     public IssueRequestV4 withPriorityId(Integer priorityId) {
         this.priorityId = priorityId;
         return this;
@@ -388,7 +414,7 @@ public class IssueRequestV4  {
 
 
     /**
-     * 优先级   1 低   2 中   3 高
+     * 优先级,   1 低,   2 中,   3 高,
      * @return priorityId
      */
     public Integer getPriorityId() {
@@ -399,6 +425,8 @@ public class IssueRequestV4  {
         this.priorityId = priorityId;
     }
 
+    
+
     public IssueRequestV4 withSeverityId(Integer severityId) {
         this.severityId = severityId;
         return this;
@@ -408,7 +436,7 @@ public class IssueRequestV4  {
 
 
     /**
-     * 重要程度   10 关键   11 重要   12 一般   13 提示
+     * 重要程度,   10 关键,   11 重要,   12 一般,   13 提示,
      * @return severityId
      */
     public Integer getSeverityId() {
@@ -419,6 +447,8 @@ public class IssueRequestV4  {
         this.severityId = severityId;
     }
 
+    
+
     public IssueRequestV4 withStatusId(Integer statusId) {
         this.statusId = statusId;
         return this;
@@ -428,7 +458,7 @@ public class IssueRequestV4  {
 
 
     /**
-     * 状态   id 开始   1 进行中 2 已解决 3 测试中 4 已关闭 5 已解决 6
+     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
      * @return statusId
      */
     public Integer getStatusId() {
@@ -438,6 +468,8 @@ public class IssueRequestV4  {
     public void setStatusId(Integer statusId) {
         this.statusId = statusId;
     }
+
+    
 
     public IssueRequestV4 withTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
@@ -458,6 +490,9 @@ public class IssueRequestV4  {
     public void setTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

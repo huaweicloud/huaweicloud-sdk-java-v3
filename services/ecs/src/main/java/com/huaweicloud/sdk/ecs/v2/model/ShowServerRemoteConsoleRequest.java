@@ -28,7 +28,7 @@ public class ShowServerRemoteConsoleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ShowServerRemoteConsoleRequestBody body = null;
+    private ShowServerRemoteConsoleRequestBody body;
 
     public ShowServerRemoteConsoleRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class ShowServerRemoteConsoleRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public ShowServerRemoteConsoleRequest withBody(ShowServerRemoteConsoleRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ShowServerRemoteConsoleRequest  {
     public void setBody(ShowServerRemoteConsoleRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

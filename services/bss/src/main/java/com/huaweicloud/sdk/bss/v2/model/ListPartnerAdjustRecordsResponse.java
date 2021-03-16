@@ -54,6 +54,8 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListPartnerAdjustRecordsResponse withRecords(List<AdjustRecordV2> records) {
         this.records = records;
         return this;
@@ -61,9 +63,6 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
 
     
     public ListPartnerAdjustRecordsResponse addRecordsItem(AdjustRecordV2 recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
     public void setRecords(List<AdjustRecordV2> records) {
         this.records = records;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

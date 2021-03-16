@@ -267,6 +267,8 @@ public class ListVaultRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListVaultRequest withName(String name) {
         this.name = name;
         return this;
@@ -286,6 +288,8 @@ public class ListVaultRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListVaultRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -307,6 +311,8 @@ public class ListVaultRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListVaultRequest withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
@@ -326,6 +332,8 @@ public class ListVaultRequest  {
     public void setCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
     }
+
+    
 
     public ListVaultRequest withProtectType(ProtectTypeEnum protectType) {
         this.protectType = protectType;
@@ -347,6 +355,8 @@ public class ListVaultRequest  {
         this.protectType = protectType;
     }
 
+    
+
     public ListVaultRequest withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
@@ -366,6 +376,8 @@ public class ListVaultRequest  {
     public void setObjectType(String objectType) {
         this.objectType = objectType;
     }
+
+    
 
     public ListVaultRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -387,6 +399,8 @@ public class ListVaultRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListVaultRequest withId(String id) {
         this.id = id;
         return this;
@@ -406,6 +420,8 @@ public class ListVaultRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListVaultRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -427,6 +443,8 @@ public class ListVaultRequest  {
         this.policyId = policyId;
     }
 
+    
+
     public ListVaultRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -447,6 +465,8 @@ public class ListVaultRequest  {
         this.status = status;
     }
 
+    
+
     public ListVaultRequest withResourceIds(String resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -466,6 +486,9 @@ public class ListVaultRequest  {
     public void setResourceIds(String resourceIds) {
         this.resourceIds = resourceIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class LinksSelf  {
     public void setSelf(String self) {
         this.self = self;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

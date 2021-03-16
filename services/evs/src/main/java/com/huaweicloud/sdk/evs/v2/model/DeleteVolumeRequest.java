@@ -42,6 +42,9 @@ public class DeleteVolumeRequest  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

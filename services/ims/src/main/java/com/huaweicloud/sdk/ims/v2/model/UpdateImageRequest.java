@@ -52,6 +52,8 @@ public class UpdateImageRequest  {
         this.imageId = imageId;
     }
 
+    
+
     public UpdateImageRequest withBody(List<UpdateImageRequestBody> body) {
         this.body = body;
         return this;
@@ -59,9 +61,6 @@ public class UpdateImageRequest  {
 
     
     public UpdateImageRequest addBodyItem(UpdateImageRequestBody bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class UpdateImageRequest  {
     public void setBody(List<UpdateImageRequestBody> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

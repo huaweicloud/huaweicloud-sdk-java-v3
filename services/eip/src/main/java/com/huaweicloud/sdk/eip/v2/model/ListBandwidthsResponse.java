@@ -35,9 +35,6 @@ public class ListBandwidthsResponse extends SdkResponse {
 
     
     public ListBandwidthsResponse addBandwidthsItem(BandwidthResp bandwidthsItem) {
-        if (this.bandwidths == null) {
-            this.bandwidths = new ArrayList<>();
-        }
         this.bandwidths.add(bandwidthsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListBandwidthsResponse extends SdkResponse {
     public void setBandwidths(List<BandwidthResp> bandwidths) {
         this.bandwidths = bandwidths;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

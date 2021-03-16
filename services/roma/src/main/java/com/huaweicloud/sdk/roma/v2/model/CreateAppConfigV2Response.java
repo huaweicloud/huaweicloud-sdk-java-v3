@@ -54,7 +54,7 @@ public class CreateAppConfigV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,6 +82,8 @@ public class CreateAppConfigV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateAppConfigV2Response withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -101,6 +103,8 @@ public class CreateAppConfigV2Response extends SdkResponse {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public CreateAppConfigV2Response withConfigType(String configType) {
         this.configType = configType;
@@ -122,6 +126,8 @@ public class CreateAppConfigV2Response extends SdkResponse {
         this.configType = configType;
     }
 
+    
+
     public CreateAppConfigV2Response withConfigName(String configName) {
         this.configName = configName;
         return this;
@@ -141,6 +147,8 @@ public class CreateAppConfigV2Response extends SdkResponse {
     public void setConfigName(String configName) {
         this.configName = configName;
     }
+
+    
 
     public CreateAppConfigV2Response withConfigValue(String configValue) {
         this.configValue = configValue;
@@ -162,6 +170,8 @@ public class CreateAppConfigV2Response extends SdkResponse {
         this.configValue = configValue;
     }
 
+    
+
     public CreateAppConfigV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -182,6 +192,8 @@ public class CreateAppConfigV2Response extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public CreateAppConfigV2Response withDescription(String description) {
         this.description = description;
         return this;
@@ -201,6 +213,9 @@ public class CreateAppConfigV2Response extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

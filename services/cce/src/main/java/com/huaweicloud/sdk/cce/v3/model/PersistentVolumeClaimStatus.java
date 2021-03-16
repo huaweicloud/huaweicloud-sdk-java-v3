@@ -44,9 +44,6 @@ public class PersistentVolumeClaimStatus  {
 
     
     public PersistentVolumeClaimStatus addAccessModesItem(String accessModesItem) {
-        if (this.accessModes == null) {
-            this.accessModes = new ArrayList<>();
-        }
         this.accessModes.add(accessModesItem);
         return this;
     }
@@ -71,6 +68,8 @@ public class PersistentVolumeClaimStatus  {
         this.accessModes = accessModes;
     }
 
+    
+
     public PersistentVolumeClaimStatus withCapacity(String capacity) {
         this.capacity = capacity;
         return this;
@@ -91,6 +90,8 @@ public class PersistentVolumeClaimStatus  {
         this.capacity = capacity;
     }
 
+    
+
     public PersistentVolumeClaimStatus withPhase(String phase) {
         this.phase = phase;
         return this;
@@ -110,6 +111,9 @@ public class PersistentVolumeClaimStatus  {
     public void setPhase(String phase) {
         this.phase = phase;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

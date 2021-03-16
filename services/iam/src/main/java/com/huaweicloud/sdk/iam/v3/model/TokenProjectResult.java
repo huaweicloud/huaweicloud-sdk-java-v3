@@ -34,7 +34,7 @@ public class TokenProjectResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private TokenProjectDomainResult domain = null;
+    private TokenProjectDomainResult domain;
 
     public TokenProjectResult withName(String name) {
         this.name = name;
@@ -56,6 +56,8 @@ public class TokenProjectResult  {
         this.name = name;
     }
 
+    
+
     public TokenProjectResult withId(String id) {
         this.id = id;
         return this;
@@ -75,6 +77,8 @@ public class TokenProjectResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public TokenProjectResult withDomain(TokenProjectDomainResult domain) {
         this.domain = domain;
@@ -102,6 +106,9 @@ public class TokenProjectResult  {
     public void setDomain(TokenProjectDomainResult domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

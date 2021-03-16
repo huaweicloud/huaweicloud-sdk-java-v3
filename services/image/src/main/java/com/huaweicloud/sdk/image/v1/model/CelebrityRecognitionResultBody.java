@@ -27,7 +27,7 @@ public class CelebrityRecognitionResultBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="face_detail")
     
-    private Object faceDetail = null;
+    private Object faceDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,6 +55,8 @@ public class CelebrityRecognitionResultBody  {
         this.confidence = confidence;
     }
 
+    
+
     public CelebrityRecognitionResultBody withFaceDetail(Object faceDetail) {
         this.faceDetail = faceDetail;
         return this;
@@ -75,6 +77,8 @@ public class CelebrityRecognitionResultBody  {
         this.faceDetail = faceDetail;
     }
 
+    
+
     public CelebrityRecognitionResultBody withLabel(String label) {
         this.label = label;
         return this;
@@ -94,6 +98,9 @@ public class CelebrityRecognitionResultBody  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

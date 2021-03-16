@@ -34,7 +34,7 @@ public class DebugApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DebugApiReq body = null;
+    private DebugApiReq body;
 
     public DebugApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class DebugApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DebugApiV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -75,6 +77,8 @@ public class DebugApiV2Request  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public DebugApiV2Request withBody(DebugApiReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class DebugApiV2Request  {
     public void setBody(DebugApiReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

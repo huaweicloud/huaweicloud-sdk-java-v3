@@ -57,13 +57,13 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -85,6 +85,8 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
@@ -104,6 +106,8 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
     public void setThrottleId(String throttleId) {
         this.throttleId = throttleId;
     }
+
+    
 
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withEnvId(String envId) {
         this.envId = envId;
@@ -125,6 +129,8 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
         this.envId = envId;
     }
 
+    
+
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -144,6 +150,8 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withApiId(String apiId) {
         this.apiId = apiId;
@@ -165,6 +173,8 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
         this.apiId = apiId;
     }
 
+    
+
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -185,6 +195,8 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
         this.apiName = apiName;
     }
 
+    
+
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -204,6 +216,8 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListApisUnbindedToRequestThrottlingPolicyV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -226,6 +240,9 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

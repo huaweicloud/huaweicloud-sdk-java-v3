@@ -28,7 +28,7 @@ public class CreateApplicationEndpointRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateApplicationEndpointRequestBody body = null;
+    private CreateApplicationEndpointRequestBody body;
 
     public CreateApplicationEndpointRequest withApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
@@ -49,6 +49,8 @@ public class CreateApplicationEndpointRequest  {
     public void setApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
     }
+
+    
 
     public CreateApplicationEndpointRequest withBody(CreateApplicationEndpointRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateApplicationEndpointRequest  {
     public void setBody(CreateApplicationEndpointRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

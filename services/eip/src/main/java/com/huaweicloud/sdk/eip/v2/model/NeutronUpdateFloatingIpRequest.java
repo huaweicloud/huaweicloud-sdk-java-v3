@@ -28,7 +28,7 @@ public class NeutronUpdateFloatingIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NeutronUpdateFloatingIpRequestBody body = null;
+    private NeutronUpdateFloatingIpRequestBody body;
 
     public NeutronUpdateFloatingIpRequest withFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
@@ -49,6 +49,8 @@ public class NeutronUpdateFloatingIpRequest  {
     public void setFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
     }
+
+    
 
     public NeutronUpdateFloatingIpRequest withBody(NeutronUpdateFloatingIpRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class NeutronUpdateFloatingIpRequest  {
     public void setBody(NeutronUpdateFloatingIpRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -109,6 +109,8 @@ public class NodeInstance  {
         this.nodeName = nodeName;
     }
 
+    
+
     public NodeInstance withStatus(String status) {
         this.status = status;
         return this;
@@ -128,6 +130,8 @@ public class NodeInstance  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public NodeInstance withPlanTime(Integer planTime) {
         this.planTime = planTime;
@@ -149,6 +153,8 @@ public class NodeInstance  {
         this.planTime = planTime;
     }
 
+    
+
     public NodeInstance withStartTime(Integer startTime) {
         this.startTime = startTime;
         return this;
@@ -168,6 +174,8 @@ public class NodeInstance  {
     public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public NodeInstance withEndTime(Integer endTime) {
         this.endTime = endTime;
@@ -189,6 +197,8 @@ public class NodeInstance  {
         this.endTime = endTime;
     }
 
+    
+
     public NodeInstance withExecuteTime(Integer executeTime) {
         this.executeTime = executeTime;
         return this;
@@ -208,6 +218,8 @@ public class NodeInstance  {
     public void setExecuteTime(Integer executeTime) {
         this.executeTime = executeTime;
     }
+
+    
 
     public NodeInstance withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -229,6 +241,8 @@ public class NodeInstance  {
         this.nodeType = nodeType;
     }
 
+    
+
     public NodeInstance withRetryTimes(Integer retryTimes) {
         this.retryTimes = retryTimes;
         return this;
@@ -248,6 +262,8 @@ public class NodeInstance  {
     public void setRetryTimes(Integer retryTimes) {
         this.retryTimes = retryTimes;
     }
+
+    
 
     public NodeInstance withInstanceId(Integer instanceId) {
         this.instanceId = instanceId;
@@ -269,6 +285,8 @@ public class NodeInstance  {
         this.instanceId = instanceId;
     }
 
+    
+
     public NodeInstance withInputRowCount(Integer inputRowCount) {
         this.inputRowCount = inputRowCount;
         return this;
@@ -288,6 +306,8 @@ public class NodeInstance  {
     public void setInputRowCount(Integer inputRowCount) {
         this.inputRowCount = inputRowCount;
     }
+
+    
 
     public NodeInstance withOutputRowCount(Integer outputRowCount) {
         this.outputRowCount = outputRowCount;
@@ -309,6 +329,8 @@ public class NodeInstance  {
         this.outputRowCount = outputRowCount;
     }
 
+    
+
     public NodeInstance withLogPath(String logPath) {
         this.logPath = logPath;
         return this;
@@ -328,6 +350,9 @@ public class NodeInstance  {
     public void setLogPath(String logPath) {
         this.logPath = logPath;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class IssueRecordV4User  {
         this.userNumId = userNumId;
     }
 
+    
+
     public IssueRecordV4User withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -80,6 +82,8 @@ public class IssueRecordV4User  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public IssueRecordV4User withNickName(String nickName) {
         this.nickName = nickName;
@@ -101,6 +105,8 @@ public class IssueRecordV4User  {
         this.nickName = nickName;
     }
 
+    
+
     public IssueRecordV4User withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -120,6 +126,9 @@ public class IssueRecordV4User  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

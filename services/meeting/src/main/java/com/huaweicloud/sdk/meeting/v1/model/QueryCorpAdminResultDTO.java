@@ -76,7 +76,7 @@ public class QueryCorpAdminResultDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dept")
     
-    private DeptBasicDTO dept = null;
+    private DeptBasicDTO dept;
 
     public QueryCorpAdminResultDTO withId(String id) {
         this.id = id;
@@ -98,6 +98,8 @@ public class QueryCorpAdminResultDTO  {
         this.id = id;
     }
 
+    
+
     public QueryCorpAdminResultDTO withAccount(String account) {
         this.account = account;
         return this;
@@ -117,6 +119,8 @@ public class QueryCorpAdminResultDTO  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public QueryCorpAdminResultDTO withName(String name) {
         this.name = name;
@@ -138,6 +142,8 @@ public class QueryCorpAdminResultDTO  {
         this.name = name;
     }
 
+    
+
     public QueryCorpAdminResultDTO withAdminType(Integer adminType) {
         this.adminType = adminType;
         return this;
@@ -157,6 +163,8 @@ public class QueryCorpAdminResultDTO  {
     public void setAdminType(Integer adminType) {
         this.adminType = adminType;
     }
+
+    
 
     public QueryCorpAdminResultDTO withEmail(String email) {
         this.email = email;
@@ -178,6 +186,8 @@ public class QueryCorpAdminResultDTO  {
         this.email = email;
     }
 
+    
+
     public QueryCorpAdminResultDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -197,6 +207,8 @@ public class QueryCorpAdminResultDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public QueryCorpAdminResultDTO withCountry(String country) {
         this.country = country;
@@ -218,6 +230,8 @@ public class QueryCorpAdminResultDTO  {
         this.country = country;
     }
 
+    
+
     public QueryCorpAdminResultDTO withMenuTemplateId(String menuTemplateId) {
         this.menuTemplateId = menuTemplateId;
         return this;
@@ -238,6 +252,8 @@ public class QueryCorpAdminResultDTO  {
         this.menuTemplateId = menuTemplateId;
     }
 
+    
+
     public QueryCorpAdminResultDTO withMenuTemplateName(String menuTemplateName) {
         this.menuTemplateName = menuTemplateName;
         return this;
@@ -257,6 +273,8 @@ public class QueryCorpAdminResultDTO  {
     public void setMenuTemplateName(String menuTemplateName) {
         this.menuTemplateName = menuTemplateName;
     }
+
+    
 
     public QueryCorpAdminResultDTO withDept(DeptBasicDTO dept) {
         this.dept = dept;
@@ -284,6 +302,9 @@ public class QueryCorpAdminResultDTO  {
     public void setDept(DeptBasicDTO dept) {
         this.dept = dept;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

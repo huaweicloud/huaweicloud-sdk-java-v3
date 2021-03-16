@@ -22,7 +22,7 @@ public class CreateSubCustomerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateCustomerV2Req body = null;
+    private CreateCustomerV2Req body;
 
     public CreateSubCustomerRequest withBody(CreateCustomerV2Req body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateSubCustomerRequest  {
     public void setBody(CreateCustomerV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

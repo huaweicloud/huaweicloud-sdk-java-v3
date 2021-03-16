@@ -33,7 +33,7 @@ public class ListResizeFlavorsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 1000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,7 +123,7 @@ public class ListResizeFlavorsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_dir")
     
-    private SortDirEnum sortDir = SortDirEnum.ASC;
+    private SortDirEnum sortDir;
     /**
      * Gets or Sets sortKey
      */
@@ -231,7 +231,7 @@ public class ListResizeFlavorsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_key")
     
-    private SortKeyEnum sortKey = SortKeyEnum.FLAVORID;
+    private SortKeyEnum sortKey;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -265,6 +265,8 @@ public class ListResizeFlavorsRequest  {
         this.instanceUuid = instanceUuid;
     }
 
+    
+
     public ListResizeFlavorsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -284,6 +286,8 @@ public class ListResizeFlavorsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListResizeFlavorsRequest withMarker(String marker) {
         this.marker = marker;
@@ -305,6 +309,8 @@ public class ListResizeFlavorsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListResizeFlavorsRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -324,6 +330,8 @@ public class ListResizeFlavorsRequest  {
     public void setSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
     }
+
+    
 
     public ListResizeFlavorsRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
@@ -345,6 +353,8 @@ public class ListResizeFlavorsRequest  {
         this.sortKey = sortKey;
     }
 
+    
+
     public ListResizeFlavorsRequest withSourceFlavorId(String sourceFlavorId) {
         this.sourceFlavorId = sourceFlavorId;
         return this;
@@ -365,6 +375,8 @@ public class ListResizeFlavorsRequest  {
         this.sourceFlavorId = sourceFlavorId;
     }
 
+    
+
     public ListResizeFlavorsRequest withSourceFlavorName(String sourceFlavorName) {
         this.sourceFlavorName = sourceFlavorName;
         return this;
@@ -384,6 +396,9 @@ public class ListResizeFlavorsRequest  {
     public void setSourceFlavorName(String sourceFlavorName) {
         this.sourceFlavorName = sourceFlavorName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

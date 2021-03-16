@@ -73,6 +73,8 @@ public class RealTimeAttendee  {
         this.accountID = accountID;
     }
 
+    
+
     public RealTimeAttendee withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -92,6 +94,8 @@ public class RealTimeAttendee  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public RealTimeAttendee withName(String name) {
         this.name = name;
@@ -113,6 +117,8 @@ public class RealTimeAttendee  {
         this.name = name;
     }
 
+    
+
     public RealTimeAttendee withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -132,6 +138,8 @@ public class RealTimeAttendee  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public RealTimeAttendee withPhoneLeft(String phoneLeft) {
         this.phoneLeft = phoneLeft;
@@ -153,6 +161,8 @@ public class RealTimeAttendee  {
         this.phoneLeft = phoneLeft;
     }
 
+    
+
     public RealTimeAttendee withPhoneRight(String phoneRight) {
         this.phoneRight = phoneRight;
         return this;
@@ -172,6 +182,9 @@ public class RealTimeAttendee  {
     public void setPhoneRight(String phoneRight) {
         this.phoneRight = phoneRight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

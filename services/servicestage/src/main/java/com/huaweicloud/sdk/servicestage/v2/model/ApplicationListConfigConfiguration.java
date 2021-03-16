@@ -33,9 +33,6 @@ public class ApplicationListConfigConfiguration  {
 
     
     public ApplicationListConfigConfiguration addEnvItem(ApplicationListConfigConfigurationEnv envItem) {
-        if (this.env == null) {
-            this.env = new ArrayList<>();
-        }
         this.env.add(envItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ApplicationListConfigConfiguration  {
     public void setEnv(List<ApplicationListConfigConfigurationEnv> env) {
         this.env = env;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

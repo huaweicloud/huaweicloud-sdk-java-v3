@@ -172,7 +172,7 @@ public class TemplateInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pipeline_template")
     
-    private PipelineTemplateInfo pipelineTemplate = null;
+    private PipelineTemplateInfo pipelineTemplate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -190,7 +190,7 @@ public class TemplateInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private Object properties = null;
+    private Object properties;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -220,7 +220,7 @@ public class TemplateInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deployment")
     
-    private Object deployment = null;
+    private Object deployment;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -232,7 +232,7 @@ public class TemplateInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_support_cloudide")
     
-    private Boolean isSupportCloudide = false;
+    private Boolean isSupportCloudide;
 
     public TemplateInfo withId(String id) {
         this.id = id;
@@ -254,6 +254,8 @@ public class TemplateInfo  {
         this.id = id;
     }
 
+    
+
     public TemplateInfo withTitle(String title) {
         this.title = title;
         return this;
@@ -273,6 +275,8 @@ public class TemplateInfo  {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    
 
     public TemplateInfo withDescription(String description) {
         this.description = description;
@@ -294,6 +298,8 @@ public class TemplateInfo  {
         this.description = description;
     }
 
+    
+
     public TemplateInfo withProductshorts(List<String> productshorts) {
         this.productshorts = productshorts;
         return this;
@@ -301,9 +307,6 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addProductshortsItem(String productshortsItem) {
-        if (this.productshorts == null) {
-            this.productshorts = new ArrayList<>();
-        }
         this.productshorts.add(productshortsItem);
         return this;
     }
@@ -328,6 +331,8 @@ public class TemplateInfo  {
         this.productshorts = productshorts;
     }
 
+    
+
     public TemplateInfo withProducts(List<TemplateProductExt> products) {
         this.products = products;
         return this;
@@ -335,9 +340,6 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addProductsItem(TemplateProductExt productsItem) {
-        if (this.products == null) {
-            this.products = new ArrayList<>();
-        }
         this.products.add(productsItem);
         return this;
     }
@@ -362,6 +364,8 @@ public class TemplateInfo  {
         this.products = products;
     }
 
+    
+
     public TemplateInfo withTopic(List<TopicCategory> topic) {
         this.topic = topic;
         return this;
@@ -369,9 +373,6 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addTopicItem(TopicCategory topicItem) {
-        if (this.topic == null) {
-            this.topic = new ArrayList<>();
-        }
         this.topic.add(topicItem);
         return this;
     }
@@ -396,6 +397,8 @@ public class TemplateInfo  {
         this.topic = topic;
     }
 
+    
+
     public TemplateInfo withCreatorId(String creatorId) {
         this.creatorId = creatorId;
         return this;
@@ -415,6 +418,8 @@ public class TemplateInfo  {
     public void setCreatorId(String creatorId) {
         this.creatorId = creatorId;
     }
+
+    
 
     public TemplateInfo withCreator(String creator) {
         this.creator = creator;
@@ -436,6 +441,8 @@ public class TemplateInfo  {
         this.creator = creator;
     }
 
+    
+
     public TemplateInfo withNickname(String nickname) {
         this.nickname = nickname;
         return this;
@@ -455,6 +462,8 @@ public class TemplateInfo  {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
+
+    
 
     public TemplateInfo withScore(Integer score) {
         this.score = score;
@@ -476,6 +485,8 @@ public class TemplateInfo  {
         this.score = score;
     }
 
+    
+
     public TemplateInfo withLabel(String label) {
         this.label = label;
         return this;
@@ -495,6 +506,8 @@ public class TemplateInfo  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
 
     public TemplateInfo withStore(Integer store) {
         this.store = store;
@@ -516,6 +529,8 @@ public class TemplateInfo  {
         this.store = store;
     }
 
+    
+
     public TemplateInfo withStoreInfo(String storeInfo) {
         this.storeInfo = storeInfo;
         return this;
@@ -535,6 +550,8 @@ public class TemplateInfo  {
     public void setStoreInfo(String storeInfo) {
         this.storeInfo = storeInfo;
     }
+
+    
 
     public TemplateInfo withStatus(Integer status) {
         this.status = status;
@@ -556,6 +573,8 @@ public class TemplateInfo  {
         this.status = status;
     }
 
+    
+
     public TemplateInfo withViewCount(Integer viewCount) {
         this.viewCount = viewCount;
         return this;
@@ -575,6 +594,8 @@ public class TemplateInfo  {
     public void setViewCount(Integer viewCount) {
         this.viewCount = viewCount;
     }
+
+    
 
     public TemplateInfo withUsageCount(Integer usageCount) {
         this.usageCount = usageCount;
@@ -596,6 +617,8 @@ public class TemplateInfo  {
         this.usageCount = usageCount;
     }
 
+    
+
     public TemplateInfo withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -615,6 +638,8 @@ public class TemplateInfo  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public TemplateInfo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -636,6 +661,8 @@ public class TemplateInfo  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public TemplateInfo withPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
         return this;
@@ -655,6 +682,8 @@ public class TemplateInfo  {
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
+
+    
 
     public TemplateInfo withFavoriteState(Integer favoriteState) {
         this.favoriteState = favoriteState;
@@ -676,6 +705,8 @@ public class TemplateInfo  {
         this.favoriteState = favoriteState;
     }
 
+    
+
     public TemplateInfo withTags(List<TagInfo> tags) {
         this.tags = tags;
         return this;
@@ -683,9 +714,6 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addTagsItem(TagInfo tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -710,6 +738,8 @@ public class TemplateInfo  {
         this.tags = tags;
     }
 
+    
+
     public TemplateInfo withType(Integer type) {
         this.type = type;
         return this;
@@ -729,6 +759,8 @@ public class TemplateInfo  {
     public void setType(Integer type) {
         this.type = type;
     }
+
+    
 
     public TemplateInfo withIsStatic(Integer isStatic) {
         this.isStatic = isStatic;
@@ -750,6 +782,8 @@ public class TemplateInfo  {
         this.isStatic = isStatic;
     }
 
+    
+
     public TemplateInfo withMaintainers(List<String> maintainers) {
         this.maintainers = maintainers;
         return this;
@@ -757,9 +791,6 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addMaintainersItem(String maintainersItem) {
-        if (this.maintainers == null) {
-            this.maintainers = new ArrayList<>();
-        }
         this.maintainers.add(maintainersItem);
         return this;
     }
@@ -783,6 +814,8 @@ public class TemplateInfo  {
     public void setMaintainers(List<String> maintainers) {
         this.maintainers = maintainers;
     }
+
+    
 
     public TemplateInfo withPipelineTemplate(PipelineTemplateInfo pipelineTemplate) {
         this.pipelineTemplate = pipelineTemplate;
@@ -811,6 +844,8 @@ public class TemplateInfo  {
         this.pipelineTemplate = pipelineTemplate;
     }
 
+    
+
     public TemplateInfo withPlatformSource(Integer platformSource) {
         this.platformSource = platformSource;
         return this;
@@ -831,6 +866,8 @@ public class TemplateInfo  {
         this.platformSource = platformSource;
     }
 
+    
+
     public TemplateInfo withReferences(List<Reference> references) {
         this.references = references;
         return this;
@@ -838,9 +875,6 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addReferencesItem(Reference referencesItem) {
-        if (this.references == null) {
-            this.references = new ArrayList<>();
-        }
         this.references.add(referencesItem);
         return this;
     }
@@ -865,6 +899,8 @@ public class TemplateInfo  {
         this.references = references;
     }
 
+    
+
     public TemplateInfo withProperties(Object properties) {
         this.properties = properties;
         return this;
@@ -885,6 +921,8 @@ public class TemplateInfo  {
         this.properties = properties;
     }
 
+    
+
     public TemplateInfo withDependencies(List<Object> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -892,9 +930,6 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addDependenciesItem(Object dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
@@ -919,6 +954,8 @@ public class TemplateInfo  {
         this.dependencies = dependencies;
     }
 
+    
+
     public TemplateInfo withDependencyType(String dependencyType) {
         this.dependencyType = dependencyType;
         return this;
@@ -938,6 +975,8 @@ public class TemplateInfo  {
     public void setDependencyType(String dependencyType) {
         this.dependencyType = dependencyType;
     }
+
+    
 
     public TemplateInfo withForumId(Integer forumId) {
         this.forumId = forumId;
@@ -959,6 +998,8 @@ public class TemplateInfo  {
         this.forumId = forumId;
     }
 
+    
+
     public TemplateInfo withFileSize(Integer fileSize) {
         this.fileSize = fileSize;
         return this;
@@ -978,6 +1019,8 @@ public class TemplateInfo  {
     public void setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
     }
+
+    
 
     public TemplateInfo withDeployment(Object deployment) {
         this.deployment = deployment;
@@ -999,6 +1042,8 @@ public class TemplateInfo  {
         this.deployment = deployment;
     }
 
+    
+
     public TemplateInfo withUpdateId(String updateId) {
         this.updateId = updateId;
         return this;
@@ -1019,6 +1064,8 @@ public class TemplateInfo  {
         this.updateId = updateId;
     }
 
+    
+
     public TemplateInfo withIsSupportCloudide(Boolean isSupportCloudide) {
         this.isSupportCloudide = isSupportCloudide;
         return this;
@@ -1038,6 +1085,9 @@ public class TemplateInfo  {
     public void setIsSupportCloudide(Boolean isSupportCloudide) {
         this.isSupportCloudide = isSupportCloudide;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -44,6 +44,9 @@ public class DeleteDbUserResponse extends SdkResponse {
     public void setResult(String result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

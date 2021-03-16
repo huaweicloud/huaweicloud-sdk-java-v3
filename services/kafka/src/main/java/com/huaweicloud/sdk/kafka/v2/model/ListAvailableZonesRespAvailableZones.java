@@ -85,6 +85,8 @@ public class ListAvailableZonesRespAvailableZones  {
         this.soldOut = soldOut;
     }
 
+    
+
     public ListAvailableZonesRespAvailableZones withId(String id) {
         this.id = id;
         return this;
@@ -104,6 +106,8 @@ public class ListAvailableZonesRespAvailableZones  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListAvailableZonesRespAvailableZones withCode(String code) {
         this.code = code;
@@ -125,6 +129,8 @@ public class ListAvailableZonesRespAvailableZones  {
         this.code = code;
     }
 
+    
+
     public ListAvailableZonesRespAvailableZones withName(String name) {
         this.name = name;
         return this;
@@ -144,6 +150,8 @@ public class ListAvailableZonesRespAvailableZones  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListAvailableZonesRespAvailableZones withPort(String port) {
         this.port = port;
@@ -165,6 +173,8 @@ public class ListAvailableZonesRespAvailableZones  {
         this.port = port;
     }
 
+    
+
     public ListAvailableZonesRespAvailableZones withResourceAvailability(String resourceAvailability) {
         this.resourceAvailability = resourceAvailability;
         return this;
@@ -184,6 +194,8 @@ public class ListAvailableZonesRespAvailableZones  {
     public void setResourceAvailability(String resourceAvailability) {
         this.resourceAvailability = resourceAvailability;
     }
+
+    
 
     public ListAvailableZonesRespAvailableZones withDefaultAz(Boolean defaultAz) {
         this.defaultAz = defaultAz;
@@ -205,6 +217,8 @@ public class ListAvailableZonesRespAvailableZones  {
         this.defaultAz = defaultAz;
     }
 
+    
+
     public ListAvailableZonesRespAvailableZones withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -224,6 +238,9 @@ public class ListAvailableZonesRespAvailableZones  {
     public void setIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

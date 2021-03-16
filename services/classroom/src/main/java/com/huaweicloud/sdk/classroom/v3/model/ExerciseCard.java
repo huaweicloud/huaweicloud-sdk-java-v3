@@ -67,6 +67,8 @@ public class ExerciseCard  {
         this.name = name;
     }
 
+    
+
     public ExerciseCard withExerciseId(String exerciseId) {
         this.exerciseId = exerciseId;
         return this;
@@ -86,6 +88,8 @@ public class ExerciseCard  {
     public void setExerciseId(String exerciseId) {
         this.exerciseId = exerciseId;
     }
+
+    
 
     public ExerciseCard withDescription(String description) {
         this.description = description;
@@ -107,6 +111,8 @@ public class ExerciseCard  {
         this.description = description;
     }
 
+    
+
     public ExerciseCard withResourceSubType(Integer resourceSubType) {
         this.resourceSubType = resourceSubType;
         return this;
@@ -127,6 +133,8 @@ public class ExerciseCard  {
         this.resourceSubType = resourceSubType;
     }
 
+    
+
     public ExerciseCard withTargetScore(Integer targetScore) {
         this.targetScore = targetScore;
         return this;
@@ -146,6 +154,9 @@ public class ExerciseCard  {
     public void setTargetScore(Integer targetScore) {
         this.targetScore = targetScore;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

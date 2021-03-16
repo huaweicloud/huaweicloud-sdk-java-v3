@@ -110,7 +110,7 @@ public class CreateScalingTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateScalingTagsRequestBody body = null;
+    private CreateScalingTagsRequestBody body;
 
     public CreateScalingTagsRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
@@ -132,6 +132,8 @@ public class CreateScalingTagsRequest  {
         this.resourceType = resourceType;
     }
 
+    
+
     public CreateScalingTagsRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -151,6 +153,8 @@ public class CreateScalingTagsRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public CreateScalingTagsRequest withBody(CreateScalingTagsRequestBody body) {
         this.body = body;
@@ -178,6 +182,9 @@ public class CreateScalingTagsRequest  {
     public void setBody(CreateScalingTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

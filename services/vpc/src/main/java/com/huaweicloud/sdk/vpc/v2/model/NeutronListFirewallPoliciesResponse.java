@@ -42,9 +42,6 @@ public class NeutronListFirewallPoliciesResponse extends SdkResponse {
 
     
     public NeutronListFirewallPoliciesResponse addFirewallPoliciesItem(NeutronFirewallPolicy firewallPoliciesItem) {
-        if (this.firewallPolicies == null) {
-            this.firewallPolicies = new ArrayList<>();
-        }
         this.firewallPolicies.add(firewallPoliciesItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class NeutronListFirewallPoliciesResponse extends SdkResponse {
         this.firewallPolicies = firewallPolicies;
     }
 
+    
+
     public NeutronListFirewallPoliciesResponse withFirewallPoliciesLinks(List<NeutronPageLink> firewallPoliciesLinks) {
         this.firewallPoliciesLinks = firewallPoliciesLinks;
         return this;
@@ -76,9 +75,6 @@ public class NeutronListFirewallPoliciesResponse extends SdkResponse {
 
     
     public NeutronListFirewallPoliciesResponse addFirewallPoliciesLinksItem(NeutronPageLink firewallPoliciesLinksItem) {
-        if (this.firewallPoliciesLinks == null) {
-            this.firewallPoliciesLinks = new ArrayList<>();
-        }
         this.firewallPoliciesLinks.add(firewallPoliciesLinksItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class NeutronListFirewallPoliciesResponse extends SdkResponse {
     public void setFirewallPoliciesLinks(List<NeutronPageLink> firewallPoliciesLinks) {
         this.firewallPoliciesLinks = firewallPoliciesLinks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

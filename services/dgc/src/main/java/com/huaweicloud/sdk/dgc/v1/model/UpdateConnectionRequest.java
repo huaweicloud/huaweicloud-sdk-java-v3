@@ -28,7 +28,7 @@ public class UpdateConnectionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ConnectionInfo body = null;
+    private ConnectionInfo body;
 
     public UpdateConnectionRequest withConnectionName(String connectionName) {
         this.connectionName = connectionName;
@@ -49,6 +49,8 @@ public class UpdateConnectionRequest  {
     public void setConnectionName(String connectionName) {
         this.connectionName = connectionName;
     }
+
+    
 
     public UpdateConnectionRequest withBody(ConnectionInfo body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateConnectionRequest  {
     public void setBody(ConnectionInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

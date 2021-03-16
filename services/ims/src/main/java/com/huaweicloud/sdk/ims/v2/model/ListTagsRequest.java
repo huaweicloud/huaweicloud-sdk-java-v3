@@ -41,7 +41,7 @@ public class ListTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 1;
+    private Integer page;
     /**
      * Gets or Sets imagetype
      */
@@ -651,6 +651,8 @@ public class ListTagsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListTagsRequest withPage(Integer page) {
         this.page = page;
         return this;
@@ -670,6 +672,8 @@ public class ListTagsRequest  {
     public void setPage(Integer page) {
         this.page = page;
     }
+
+    
 
     public ListTagsRequest withImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
@@ -693,6 +697,8 @@ public class ListTagsRequest  {
         this.imagetype = imagetype;
     }
 
+    
+
     public ListTagsRequest withId(String id) {
         this.id = id;
         return this;
@@ -712,6 +718,8 @@ public class ListTagsRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListTagsRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -733,6 +741,8 @@ public class ListTagsRequest  {
         this.status = status;
     }
 
+    
+
     public ListTagsRequest withName(String name) {
         this.name = name;
         return this;
@@ -753,6 +763,8 @@ public class ListTagsRequest  {
         this.name = name;
     }
 
+    
+
     public ListTagsRequest withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
@@ -772,6 +784,8 @@ public class ListTagsRequest  {
     public void setMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
     }
+
+    
 
     public ListTagsRequest withPlatform(String platform) {
         this.platform = platform;
@@ -795,6 +809,8 @@ public class ListTagsRequest  {
         this.platform = platform;
     }
 
+    
+
     public ListTagsRequest withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -817,6 +833,8 @@ public class ListTagsRequest  {
         this.osType = osType;
     }
 
+    
+
     public ListTagsRequest withMemberStatus(MemberStatusEnum memberStatus) {
         this.memberStatus = memberStatus;
         return this;
@@ -836,6 +854,8 @@ public class ListTagsRequest  {
     public void setMemberStatus(MemberStatusEnum memberStatus) {
         this.memberStatus = memberStatus;
     }
+
+    
 
     public ListTagsRequest withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
@@ -857,6 +877,8 @@ public class ListTagsRequest  {
         this.virtualEnvType = virtualEnvType;
     }
 
+    
+
     public ListTagsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -876,6 +898,8 @@ public class ListTagsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ListTagsRequest withArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
@@ -897,6 +921,8 @@ public class ListTagsRequest  {
         this.architecture = architecture;
     }
 
+    
+
     public ListTagsRequest withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -917,6 +943,8 @@ public class ListTagsRequest  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ListTagsRequest withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -936,6 +964,9 @@ public class ListTagsRequest  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

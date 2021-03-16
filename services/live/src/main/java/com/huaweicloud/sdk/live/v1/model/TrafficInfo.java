@@ -28,7 +28,7 @@ public class TrafficInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timestamp")
     
-    private OffsetDateTime timestamp = null;
+    private OffsetDateTime timestamp;
 
     public TrafficInfo withTraffic(Integer traffic) {
         this.traffic = traffic;
@@ -51,6 +51,8 @@ public class TrafficInfo  {
         this.traffic = traffic;
     }
 
+    
+
     public TrafficInfo withTimestamp(OffsetDateTime timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -70,6 +72,9 @@ public class TrafficInfo  {
     public void setTimestamp(OffsetDateTime timestamp) {
         this.timestamp = timestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

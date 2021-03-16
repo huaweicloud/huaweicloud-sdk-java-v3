@@ -1591,6 +1591,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.backupId = backupId;
     }
 
+    
+
     public UpdateImageResponse withDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
         return this;
@@ -1612,6 +1614,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
     }
+
+    
 
     public UpdateImageResponse withDescription(String description) {
         this.description = description;
@@ -1635,6 +1639,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateImageResponse withImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
         return this;
@@ -1656,6 +1662,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
     }
+
+    
 
     public UpdateImageResponse withImageSize(String imageSize) {
         this.imageSize = imageSize;
@@ -1679,6 +1687,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.imageSize = imageSize;
     }
 
+    
+
     public UpdateImageResponse withImageSourceType(ImageSourceTypeEnum imageSourceType) {
         this.imageSourceType = imageSourceType;
         return this;
@@ -1700,6 +1710,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setImageSourceType(ImageSourceTypeEnum imageSourceType) {
         this.imageSourceType = imageSourceType;
     }
+
+    
 
     public UpdateImageResponse withImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
@@ -1723,6 +1735,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.imagetype = imagetype;
     }
 
+    
+
     public UpdateImageResponse withIsConfigInit(IsConfigInitEnum isConfigInit) {
         this.isConfigInit = isConfigInit;
         return this;
@@ -1744,6 +1758,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setIsConfigInit(IsConfigInitEnum isConfigInit) {
         this.isConfigInit = isConfigInit;
     }
+
+    
 
     public UpdateImageResponse withIsregistered(IsregisteredEnum isregistered) {
         this.isregistered = isregistered;
@@ -1767,6 +1783,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.isregistered = isregistered;
     }
 
+    
+
     public UpdateImageResponse withOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
         return this;
@@ -1788,6 +1806,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
     }
+
+    
 
     public UpdateImageResponse withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
@@ -1811,6 +1831,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.osBit = osBit;
     }
 
+    
+
     public UpdateImageResponse withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -1832,6 +1854,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public UpdateImageResponse withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -1855,6 +1879,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.osVersion = osVersion;
     }
 
+    
+
     public UpdateImageResponse withPlatform(PlatformEnum platform) {
         this.platform = platform;
         return this;
@@ -1876,6 +1902,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setPlatform(PlatformEnum platform) {
         this.platform = platform;
     }
+
+    
 
     public UpdateImageResponse withProductcode(String productcode) {
         this.productcode = productcode;
@@ -1899,6 +1927,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.productcode = productcode;
     }
 
+    
+
     public UpdateImageResponse withSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
         return this;
@@ -1920,6 +1950,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
     }
+
+    
 
     public UpdateImageResponse withSupportHighperformance(String supportHighperformance) {
         this.supportHighperformance = supportHighperformance;
@@ -1943,6 +1975,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.supportHighperformance = supportHighperformance;
     }
 
+    
+
     public UpdateImageResponse withSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
         return this;
@@ -1964,6 +1998,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
     }
+
+    
 
     public UpdateImageResponse withSupportKvmGpuType(String supportKvmGpuType) {
         this.supportKvmGpuType = supportKvmGpuType;
@@ -1987,6 +2023,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.supportKvmGpuType = supportKvmGpuType;
     }
 
+    
+
     public UpdateImageResponse withSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
         return this;
@@ -2008,6 +2046,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
     }
+
+    
 
     public UpdateImageResponse withSupportLargememory(String supportLargememory) {
         this.supportLargememory = supportLargememory;
@@ -2031,6 +2071,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.supportLargememory = supportLargememory;
     }
 
+    
+
     public UpdateImageResponse withSupportXen(String supportXen) {
         this.supportXen = supportXen;
         return this;
@@ -2052,6 +2094,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSupportXen(String supportXen) {
         this.supportXen = supportXen;
     }
+
+    
 
     public UpdateImageResponse withSupportXenGpuType(String supportXenGpuType) {
         this.supportXenGpuType = supportXenGpuType;
@@ -2075,6 +2119,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.supportXenGpuType = supportXenGpuType;
     }
 
+    
+
     public UpdateImageResponse withSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
         return this;
@@ -2096,6 +2142,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
     }
+
+    
 
     public UpdateImageResponse withSystemSupportMarket(Boolean systemSupportMarket) {
         this.systemSupportMarket = systemSupportMarket;
@@ -2119,6 +2167,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.systemSupportMarket = systemSupportMarket;
     }
 
+    
+
     public UpdateImageResponse withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
@@ -2138,6 +2188,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
+
+    
 
     public UpdateImageResponse withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
@@ -2159,6 +2211,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.containerFormat = containerFormat;
     }
 
+    
+
     public UpdateImageResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -2178,6 +2232,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public UpdateImageResponse withDiskFormat(String diskFormat) {
         this.diskFormat = diskFormat;
@@ -2199,6 +2255,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public UpdateImageResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -2218,6 +2276,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public UpdateImageResponse withFile(String file) {
         this.file = file;
@@ -2239,6 +2299,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.file = file;
     }
 
+    
+
     public UpdateImageResponse withId(String id) {
         this.id = id;
         return this;
@@ -2258,6 +2320,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateImageResponse withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
@@ -2281,6 +2345,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.minDisk = minDisk;
     }
 
+    
+
     public UpdateImageResponse withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
@@ -2300,6 +2366,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setMinRam(Integer minRam) {
         this.minRam = minRam;
     }
+
+    
 
     public UpdateImageResponse withName(String name) {
         this.name = name;
@@ -2321,6 +2389,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public UpdateImageResponse withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -2340,6 +2410,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    
 
     public UpdateImageResponse withProtected(Boolean _protected) {
         this._protected = _protected;
@@ -2361,6 +2433,8 @@ public class UpdateImageResponse extends SdkResponse {
         this._protected = _protected;
     }
 
+    
+
     public UpdateImageResponse withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -2380,6 +2454,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    
 
     public UpdateImageResponse withSelf(String self) {
         this.self = self;
@@ -2401,6 +2477,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.self = self;
     }
 
+    
+
     public UpdateImageResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -2420,6 +2498,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
 
     public UpdateImageResponse withStatus(StatusEnum status) {
         this.status = status;
@@ -2441,6 +2521,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public UpdateImageResponse withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -2448,9 +2530,6 @@ public class UpdateImageResponse extends SdkResponse {
 
     
     public UpdateImageResponse addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -2475,6 +2554,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public UpdateImageResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -2494,6 +2575,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public UpdateImageResponse withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
@@ -2515,6 +2598,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.virtualEnvType = virtualEnvType;
     }
 
+    
+
     public UpdateImageResponse withVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
         return this;
@@ -2534,6 +2619,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
     }
+
+    
 
     public UpdateImageResponse withVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
@@ -2555,6 +2642,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.visibility = visibility;
     }
 
+    
+
     public UpdateImageResponse withArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
         return this;
@@ -2574,6 +2663,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
     }
+
+    
 
     public UpdateImageResponse withSupportFcInject(SupportFcInjectEnum supportFcInject) {
         this.supportFcInject = supportFcInject;
@@ -2597,6 +2688,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.supportFcInject = supportFcInject;
     }
 
+    
+
     public UpdateImageResponse withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
         return this;
@@ -2616,6 +2709,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
     }
+
+    
 
     public UpdateImageResponse withSupportArm(SupportArmEnum supportArm) {
         this.supportArm = supportArm;
@@ -2639,6 +2734,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.supportArm = supportArm;
     }
 
+    
+
     public UpdateImageResponse withMaxRam(String maxRam) {
         this.maxRam = maxRam;
         return this;
@@ -2658,6 +2755,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setMaxRam(String maxRam) {
         this.maxRam = maxRam;
     }
+
+    
 
     public UpdateImageResponse withSystemCmkid(String systemCmkid) {
         this.systemCmkid = systemCmkid;
@@ -2681,6 +2780,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.systemCmkid = systemCmkid;
     }
 
+    
+
     public UpdateImageResponse withOsFeatureList(String osFeatureList) {
         this.osFeatureList = osFeatureList;
         return this;
@@ -2702,6 +2803,8 @@ public class UpdateImageResponse extends SdkResponse {
     public void setOsFeatureList(String osFeatureList) {
         this.osFeatureList = osFeatureList;
     }
+
+    
 
     public UpdateImageResponse withAccountCode(String accountCode) {
         this.accountCode = accountCode;
@@ -2725,6 +2828,8 @@ public class UpdateImageResponse extends SdkResponse {
         this.accountCode = accountCode;
     }
 
+    
+
     public UpdateImageResponse withHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
         this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
         return this;
@@ -2744,6 +2849,9 @@ public class UpdateImageResponse extends SdkResponse {
     public void setHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
         this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

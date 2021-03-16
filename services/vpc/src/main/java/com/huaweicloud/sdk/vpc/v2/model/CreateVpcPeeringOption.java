@@ -28,13 +28,13 @@ public class CreateVpcPeeringOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_vpc_info")
     
-    private VpcInfo requestVpcInfo = null;
+    private VpcInfo requestVpcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="accept_vpc_info")
     
-    private VpcInfo acceptVpcInfo = null;
+    private VpcInfo acceptVpcInfo;
 
     public CreateVpcPeeringOption withName(String name) {
         this.name = name;
@@ -55,6 +55,8 @@ public class CreateVpcPeeringOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateVpcPeeringOption withRequestVpcInfo(VpcInfo requestVpcInfo) {
         this.requestVpcInfo = requestVpcInfo;
@@ -83,6 +85,8 @@ public class CreateVpcPeeringOption  {
         this.requestVpcInfo = requestVpcInfo;
     }
 
+    
+
     public CreateVpcPeeringOption withAcceptVpcInfo(VpcInfo acceptVpcInfo) {
         this.acceptVpcInfo = acceptVpcInfo;
         return this;
@@ -109,6 +113,9 @@ public class CreateVpcPeeringOption  {
     public void setAcceptVpcInfo(VpcInfo acceptVpcInfo) {
         this.acceptVpcInfo = acceptVpcInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

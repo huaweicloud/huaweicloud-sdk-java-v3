@@ -131,6 +131,8 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneShowSecurityComplianceByOptionRequest withOption(OptionEnum option) {
         this.option = option;
         return this;
@@ -150,6 +152,9 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
     public void setOption(OptionEnum option) {
         this.option = option;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

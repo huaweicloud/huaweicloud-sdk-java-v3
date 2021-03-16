@@ -51,6 +51,8 @@ public class DeleteManualBackupRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DeleteManualBackupRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -70,6 +72,9 @@ public class DeleteManualBackupRequest  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

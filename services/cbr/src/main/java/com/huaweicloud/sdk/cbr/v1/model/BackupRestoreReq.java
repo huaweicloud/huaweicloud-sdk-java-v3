@@ -22,7 +22,7 @@ public class BackupRestoreReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="restore")
     
-    private BackupRestore restore = null;
+    private BackupRestore restore;
 
     public BackupRestoreReq withRestore(BackupRestore restore) {
         this.restore = restore;
@@ -50,6 +50,9 @@ public class BackupRestoreReq  {
     public void setRestore(BackupRestore restore) {
         this.restore = restore;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

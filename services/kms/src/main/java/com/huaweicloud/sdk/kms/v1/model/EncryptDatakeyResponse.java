@@ -57,6 +57,8 @@ public class EncryptDatakeyResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
+    
+
     public EncryptDatakeyResponse withCipherText(String cipherText) {
         this.cipherText = cipherText;
         return this;
@@ -77,6 +79,8 @@ public class EncryptDatakeyResponse extends SdkResponse {
         this.cipherText = cipherText;
     }
 
+    
+
     public EncryptDatakeyResponse withDatakeyLength(String datakeyLength) {
         this.datakeyLength = datakeyLength;
         return this;
@@ -96,6 +100,9 @@ public class EncryptDatakeyResponse extends SdkResponse {
     public void setDatakeyLength(String datakeyLength) {
         this.datakeyLength = datakeyLength;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

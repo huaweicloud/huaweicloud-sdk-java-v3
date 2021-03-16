@@ -22,7 +22,7 @@ public class CreateQueueRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateQueueReq body = null;
+    private CreateQueueReq body;
 
     public CreateQueueRequest withBody(CreateQueueReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateQueueRequest  {
     public void setBody(CreateQueueReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

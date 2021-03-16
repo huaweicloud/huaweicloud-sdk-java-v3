@@ -75,6 +75,8 @@ public class ListRestoreCollectionsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListRestoreCollectionsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -94,6 +96,8 @@ public class ListRestoreCollectionsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListRestoreCollectionsRequest withDbName(String dbName) {
         this.dbName = dbName;
@@ -115,6 +119,8 @@ public class ListRestoreCollectionsRequest  {
         this.dbName = dbName;
     }
 
+    
+
     public ListRestoreCollectionsRequest withRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
         return this;
@@ -134,6 +140,8 @@ public class ListRestoreCollectionsRequest  {
     public void setRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
     }
+
+    
 
     public ListRestoreCollectionsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -155,6 +163,8 @@ public class ListRestoreCollectionsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListRestoreCollectionsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -174,6 +184,9 @@ public class ListRestoreCollectionsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

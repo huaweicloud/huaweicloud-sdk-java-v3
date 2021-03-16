@@ -61,6 +61,8 @@ public class Conversion  {
         this.measureId = measureId;
     }
 
+    
+
     public Conversion withRefMeasureId(Integer refMeasureId) {
         this.refMeasureId = refMeasureId;
         return this;
@@ -80,6 +82,8 @@ public class Conversion  {
     public void setRefMeasureId(Integer refMeasureId) {
         this.refMeasureId = refMeasureId;
     }
+
+    
 
     public Conversion withConversionRatio(Long conversionRatio) {
         this.conversionRatio = conversionRatio;
@@ -101,6 +105,8 @@ public class Conversion  {
         this.conversionRatio = conversionRatio;
     }
 
+    
+
     public Conversion withMeasureType(Integer measureType) {
         this.measureType = measureType;
         return this;
@@ -120,6 +126,9 @@ public class Conversion  {
     public void setMeasureType(Integer measureType) {
         this.measureType = measureType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

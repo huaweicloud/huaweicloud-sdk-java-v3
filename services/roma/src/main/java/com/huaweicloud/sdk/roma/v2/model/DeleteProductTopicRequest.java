@@ -55,6 +55,8 @@ public class DeleteProductTopicRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteProductTopicRequest withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -77,6 +79,8 @@ public class DeleteProductTopicRequest  {
         this.productId = productId;
     }
 
+    
+
     public DeleteProductTopicRequest withTopicId(Integer topicId) {
         this.topicId = topicId;
         return this;
@@ -98,6 +102,9 @@ public class DeleteProductTopicRequest  {
     public void setTopicId(Integer topicId) {
         this.topicId = topicId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

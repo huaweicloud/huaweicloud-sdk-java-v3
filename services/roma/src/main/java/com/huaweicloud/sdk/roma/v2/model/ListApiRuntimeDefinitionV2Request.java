@@ -55,6 +55,8 @@ public class ListApiRuntimeDefinitionV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListApiRuntimeDefinitionV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -75,6 +77,8 @@ public class ListApiRuntimeDefinitionV2Request  {
         this.apiId = apiId;
     }
 
+    
+
     public ListApiRuntimeDefinitionV2Request withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -94,6 +98,9 @@ public class ListApiRuntimeDefinitionV2Request  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

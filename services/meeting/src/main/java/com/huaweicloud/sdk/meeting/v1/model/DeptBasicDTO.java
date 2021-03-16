@@ -67,6 +67,8 @@ public class DeptBasicDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public DeptBasicDTO withCorpId(String corpId) {
         this.corpId = corpId;
         return this;
@@ -86,6 +88,8 @@ public class DeptBasicDTO  {
     public void setCorpId(String corpId) {
         this.corpId = corpId;
     }
+
+    
 
     public DeptBasicDTO withDeptName(String deptName) {
         this.deptName = deptName;
@@ -107,6 +111,8 @@ public class DeptBasicDTO  {
         this.deptName = deptName;
     }
 
+    
+
     public DeptBasicDTO withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
@@ -127,6 +133,8 @@ public class DeptBasicDTO  {
         this.deptNamePath = deptNamePath;
     }
 
+    
+
     public DeptBasicDTO withParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
         return this;
@@ -146,6 +154,9 @@ public class DeptBasicDTO  {
     public void setParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

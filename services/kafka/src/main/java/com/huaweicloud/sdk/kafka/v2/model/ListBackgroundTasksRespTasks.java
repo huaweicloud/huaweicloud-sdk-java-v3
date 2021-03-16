@@ -85,6 +85,8 @@ public class ListBackgroundTasksRespTasks  {
         this.id = id;
     }
 
+    
+
     public ListBackgroundTasksRespTasks withName(String name) {
         this.name = name;
         return this;
@@ -104,6 +106,8 @@ public class ListBackgroundTasksRespTasks  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListBackgroundTasksRespTasks withUserName(String userName) {
         this.userName = userName;
@@ -125,6 +129,8 @@ public class ListBackgroundTasksRespTasks  {
         this.userName = userName;
     }
 
+    
+
     public ListBackgroundTasksRespTasks withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -144,6 +150,8 @@ public class ListBackgroundTasksRespTasks  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public ListBackgroundTasksRespTasks withParams(String params) {
         this.params = params;
@@ -165,6 +173,8 @@ public class ListBackgroundTasksRespTasks  {
         this.params = params;
     }
 
+    
+
     public ListBackgroundTasksRespTasks withStatus(String status) {
         this.status = status;
         return this;
@@ -184,6 +194,8 @@ public class ListBackgroundTasksRespTasks  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ListBackgroundTasksRespTasks withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -205,6 +217,8 @@ public class ListBackgroundTasksRespTasks  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ListBackgroundTasksRespTasks withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -224,6 +238,9 @@ public class ListBackgroundTasksRespTasks  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

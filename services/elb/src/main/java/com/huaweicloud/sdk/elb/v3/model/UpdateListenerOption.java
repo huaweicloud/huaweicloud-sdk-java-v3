@@ -65,7 +65,7 @@ public class UpdateListenerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insert_headers")
     
-    private ListenerInsertHeaders insertHeaders = null;
+    private ListenerInsertHeaders insertHeaders;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -215,7 +215,7 @@ public class UpdateListenerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipgroup")
     
-    private UpdateListenerIpGroupOption ipgroup = null;
+    private UpdateListenerIpGroupOption ipgroup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -243,6 +243,8 @@ public class UpdateListenerOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public UpdateListenerOption withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
         return this;
@@ -262,6 +264,8 @@ public class UpdateListenerOption  {
     public void setClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
+
+    
 
     public UpdateListenerOption withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
@@ -283,6 +287,8 @@ public class UpdateListenerOption  {
         this.defaultPoolId = defaultPoolId;
     }
 
+    
+
     public UpdateListenerOption withDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
@@ -302,6 +308,8 @@ public class UpdateListenerOption  {
     public void setDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
+
+    
 
     public UpdateListenerOption withDescription(String description) {
         this.description = description;
@@ -323,6 +331,8 @@ public class UpdateListenerOption  {
         this.description = description;
     }
 
+    
+
     public UpdateListenerOption withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
@@ -342,6 +352,8 @@ public class UpdateListenerOption  {
     public void setHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
     }
+
+    
 
     public UpdateListenerOption withInsertHeaders(ListenerInsertHeaders insertHeaders) {
         this.insertHeaders = insertHeaders;
@@ -370,6 +382,8 @@ public class UpdateListenerOption  {
         this.insertHeaders = insertHeaders;
     }
 
+    
+
     public UpdateListenerOption withName(String name) {
         this.name = name;
         return this;
@@ -390,6 +404,8 @@ public class UpdateListenerOption  {
         this.name = name;
     }
 
+    
+
     public UpdateListenerOption withSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
         return this;
@@ -397,9 +413,6 @@ public class UpdateListenerOption  {
 
     
     public UpdateListenerOption addSniContainerRefsItem(String sniContainerRefsItem) {
-        if (this.sniContainerRefs == null) {
-            this.sniContainerRefs = new ArrayList<>();
-        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
@@ -424,6 +437,8 @@ public class UpdateListenerOption  {
         this.sniContainerRefs = sniContainerRefs;
     }
 
+    
+
     public UpdateListenerOption withTlsCiphersPolicy(TlsCiphersPolicyEnum tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
@@ -444,6 +459,8 @@ public class UpdateListenerOption  {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
 
+    
+
     public UpdateListenerOption withEnableMemberRetry(Boolean enableMemberRetry) {
         this.enableMemberRetry = enableMemberRetry;
         return this;
@@ -463,6 +480,8 @@ public class UpdateListenerOption  {
     public void setEnableMemberRetry(Boolean enableMemberRetry) {
         this.enableMemberRetry = enableMemberRetry;
     }
+
+    
 
     public UpdateListenerOption withMemberTimeout(Integer memberTimeout) {
         this.memberTimeout = memberTimeout;
@@ -486,6 +505,8 @@ public class UpdateListenerOption  {
         this.memberTimeout = memberTimeout;
     }
 
+    
+
     public UpdateListenerOption withClientTimeout(Integer clientTimeout) {
         this.clientTimeout = clientTimeout;
         return this;
@@ -508,6 +529,8 @@ public class UpdateListenerOption  {
         this.clientTimeout = clientTimeout;
     }
 
+    
+
     public UpdateListenerOption withKeepaliveTimeout(Integer keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
         return this;
@@ -527,6 +550,8 @@ public class UpdateListenerOption  {
     public void setKeepaliveTimeout(Integer keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
     }
+
+    
 
     public UpdateListenerOption withIpgroup(UpdateListenerIpGroupOption ipgroup) {
         this.ipgroup = ipgroup;
@@ -555,6 +580,8 @@ public class UpdateListenerOption  {
         this.ipgroup = ipgroup;
     }
 
+    
+
     public UpdateListenerOption withTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
         return this;
@@ -574,6 +601,9 @@ public class UpdateListenerOption  {
     public void setTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

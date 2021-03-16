@@ -139,7 +139,7 @@ public class ListEventDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private TotalMetaData metaData = null;
+    private TotalMetaData metaData;
 
     public ListEventDetailResponse withEventName(String eventName) {
         this.eventName = eventName;
@@ -161,6 +161,8 @@ public class ListEventDetailResponse extends SdkResponse {
         this.eventName = eventName;
     }
 
+    
+
     public ListEventDetailResponse withEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
         return this;
@@ -180,6 +182,8 @@ public class ListEventDetailResponse extends SdkResponse {
     public void setEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
     }
+
+    
 
     public ListEventDetailResponse withEventUsers(String eventUsers) {
         this.eventUsers = eventUsers;
@@ -201,6 +205,8 @@ public class ListEventDetailResponse extends SdkResponse {
         this.eventUsers = eventUsers;
     }
 
+    
+
     public ListEventDetailResponse withEventSources(String eventSources) {
         this.eventSources = eventSources;
         return this;
@@ -221,6 +227,8 @@ public class ListEventDetailResponse extends SdkResponse {
         this.eventSources = eventSources;
     }
 
+    
+
     public ListEventDetailResponse withEventInfo(List<EventInfoDetail> eventInfo) {
         this.eventInfo = eventInfo;
         return this;
@@ -228,9 +236,6 @@ public class ListEventDetailResponse extends SdkResponse {
 
     
     public ListEventDetailResponse addEventInfoItem(EventInfoDetail eventInfoItem) {
-        if (this.eventInfo == null) {
-            this.eventInfo = new ArrayList<>();
-        }
         this.eventInfo.add(eventInfoItem);
         return this;
     }
@@ -254,6 +259,8 @@ public class ListEventDetailResponse extends SdkResponse {
     public void setEventInfo(List<EventInfoDetail> eventInfo) {
         this.eventInfo = eventInfo;
     }
+
+    
 
     public ListEventDetailResponse withMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
@@ -281,6 +288,9 @@ public class ListEventDetailResponse extends SdkResponse {
     public void setMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

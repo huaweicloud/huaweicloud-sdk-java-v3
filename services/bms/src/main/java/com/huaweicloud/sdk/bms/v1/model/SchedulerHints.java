@@ -114,9 +114,6 @@ public class SchedulerHints  {
 
     
     public SchedulerHints addDecBaremetalItem(DecBaremetalEnum decBaremetalItem) {
-        if (this.decBaremetal == null) {
-            this.decBaremetal = new ArrayList<>();
-        }
         this.decBaremetal.add(decBaremetalItem);
         return this;
     }
@@ -140,6 +137,9 @@ public class SchedulerHints  {
     public void setDecBaremetal(List<DecBaremetalEnum> decBaremetal) {
         this.decBaremetal = decBaremetal;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

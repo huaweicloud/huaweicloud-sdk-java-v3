@@ -51,6 +51,8 @@ public class ConfirmConsumptionMessagesResponse extends SdkResponse {
         this.success = success;
     }
 
+    
+
     public ConfirmConsumptionMessagesResponse withFail(Integer fail) {
         this.fail = fail;
         return this;
@@ -70,6 +72,9 @@ public class ConfirmConsumptionMessagesResponse extends SdkResponse {
     public void setFail(Integer fail) {
         this.fail = fail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

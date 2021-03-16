@@ -61,6 +61,8 @@ public class TestCaseExecuteBean  {
         this.testcaseId = testcaseId;
     }
 
+    
+
     public TestCaseExecuteBean withExecuteId(String executeId) {
         this.executeId = executeId;
         return this;
@@ -80,6 +82,8 @@ public class TestCaseExecuteBean  {
     public void setExecuteId(String executeId) {
         this.executeId = executeId;
     }
+
+    
 
     public TestCaseExecuteBean withResultId(String resultId) {
         this.resultId = resultId;
@@ -101,6 +105,8 @@ public class TestCaseExecuteBean  {
         this.resultId = resultId;
     }
 
+    
+
     public TestCaseExecuteBean withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -120,6 +126,9 @@ public class TestCaseExecuteBean  {
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

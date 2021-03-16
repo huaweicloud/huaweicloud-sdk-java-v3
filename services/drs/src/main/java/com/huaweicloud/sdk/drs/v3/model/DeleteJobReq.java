@@ -137,6 +137,8 @@ public class DeleteJobReq  {
         this.deleteType = deleteType;
     }
 
+    
+
     public DeleteJobReq withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -156,6 +158,9 @@ public class DeleteJobReq  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

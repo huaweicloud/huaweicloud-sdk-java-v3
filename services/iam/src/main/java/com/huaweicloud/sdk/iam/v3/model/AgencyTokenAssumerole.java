@@ -55,6 +55,8 @@ public class AgencyTokenAssumerole  {
         this.domainId = domainId;
     }
 
+    
+
     public AgencyTokenAssumerole withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -75,6 +77,8 @@ public class AgencyTokenAssumerole  {
         this.domainName = domainName;
     }
 
+    
+
     public AgencyTokenAssumerole withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -94,6 +98,9 @@ public class AgencyTokenAssumerole  {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -32,13 +32,13 @@ public class SubAudioFile  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,9 +53,6 @@ public class SubAudioFile  {
 
     
     public SubAudioFile addTracksInfoItem(TracksInfo tracksInfoItem) {
-        if (this.tracksInfo == null) {
-            this.tracksInfo = new ArrayList<>();
-        }
         this.tracksInfo.add(tracksInfoItem);
         return this;
     }
@@ -79,6 +76,8 @@ public class SubAudioFile  {
     public void setTracksInfo(List<TracksInfo> tracksInfo) {
         this.tracksInfo = tracksInfo;
     }
+
+    
 
     public SubAudioFile withInput(ObsObjInfo input) {
         this.input = input;
@@ -107,6 +106,8 @@ public class SubAudioFile  {
         this.input = input;
     }
 
+    
+
     public SubAudioFile withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -134,6 +135,8 @@ public class SubAudioFile  {
         this.output = output;
     }
 
+    
+
     public SubAudioFile withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
@@ -153,6 +156,9 @@ public class SubAudioFile  {
     public void setOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

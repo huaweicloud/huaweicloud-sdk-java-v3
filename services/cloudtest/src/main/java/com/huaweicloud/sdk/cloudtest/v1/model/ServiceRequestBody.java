@@ -49,6 +49,8 @@ public class ServiceRequestBody  {
         this.serviceName = serviceName;
     }
 
+    
+
     public ServiceRequestBody withServerHost(String serverHost) {
         this.serverHost = serverHost;
         return this;
@@ -68,6 +70,9 @@ public class ServiceRequestBody  {
     public void setServerHost(String serverHost) {
         this.serverHost = serverHost;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

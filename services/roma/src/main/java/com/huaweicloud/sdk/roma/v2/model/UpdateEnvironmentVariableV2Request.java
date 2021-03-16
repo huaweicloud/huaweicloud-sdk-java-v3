@@ -34,7 +34,7 @@ public class UpdateEnvironmentVariableV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnvVariableBase body = null;
+    private EnvVariableBase body;
 
     public UpdateEnvironmentVariableV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateEnvironmentVariableV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateEnvironmentVariableV2Request withEnvVariableId(String envVariableId) {
         this.envVariableId = envVariableId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateEnvironmentVariableV2Request  {
     public void setEnvVariableId(String envVariableId) {
         this.envVariableId = envVariableId;
     }
+
+    
 
     public UpdateEnvironmentVariableV2Request withBody(EnvVariableBase body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateEnvironmentVariableV2Request  {
     public void setBody(EnvVariableBase body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

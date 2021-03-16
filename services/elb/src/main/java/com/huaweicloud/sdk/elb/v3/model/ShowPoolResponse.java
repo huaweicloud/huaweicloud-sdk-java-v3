@@ -30,7 +30,7 @@ public class ShowPoolResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool")
     
-    private Pool pool = null;
+    private Pool pool;
 
     public ShowPoolResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ShowPoolResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ShowPoolResponse withPool(Pool pool) {
         this.pool = pool;
@@ -78,6 +80,9 @@ public class ShowPoolResponse extends SdkResponse {
     public void setPool(Pool pool) {
         this.pool = pool;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class BackupSyncReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync")
     
-    private List<BackupSync> sync = new ArrayList<>();
+    private List<BackupSync> sync = null;
     
     public BackupSyncReq withSync(List<BackupSync> sync) {
         this.sync = sync;
@@ -56,6 +56,9 @@ public class BackupSyncReq  {
     public void setSync(List<BackupSync> sync) {
         this.sync = sync;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

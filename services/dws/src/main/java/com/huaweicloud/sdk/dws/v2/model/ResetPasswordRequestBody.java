@@ -42,6 +42,9 @@ public class ResetPasswordRequestBody  {
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ListNodePoolsRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public ListNodePoolsRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -75,6 +77,8 @@ public class ListNodePoolsRequest  {
         this.errorStatus = errorStatus;
     }
 
+    
+
     public ListNodePoolsRequest withShowDefaultNodePool(String showDefaultNodePool) {
         this.showDefaultNodePool = showDefaultNodePool;
         return this;
@@ -94,6 +98,9 @@ public class ListNodePoolsRequest  {
     public void setShowDefaultNodePool(String showDefaultNodePool) {
         this.showDefaultNodePool = showDefaultNodePool;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -79,7 +79,7 @@ public class IncidentInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -107,6 +107,8 @@ public class IncidentInfoV2  {
         this.xcustomerId = xcustomerId;
     }
 
+    
+
     public IncidentInfoV2 withXcustomerName(String xcustomerName) {
         this.xcustomerName = xcustomerName;
         return this;
@@ -126,6 +128,8 @@ public class IncidentInfoV2  {
     public void setXcustomerName(String xcustomerName) {
         this.xcustomerName = xcustomerName;
     }
+
+    
 
     public IncidentInfoV2 withStatus(Integer status) {
         this.status = status;
@@ -149,6 +153,8 @@ public class IncidentInfoV2  {
         this.status = status;
     }
 
+    
+
     public IncidentInfoV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
@@ -168,6 +174,8 @@ public class IncidentInfoV2  {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
 
     public IncidentInfoV2 withBusinessTypeName(String businessTypeName) {
         this.businessTypeName = businessTypeName;
@@ -189,6 +197,8 @@ public class IncidentInfoV2  {
         this.businessTypeName = businessTypeName;
     }
 
+    
+
     public IncidentInfoV2 withIncidentTypeName(String incidentTypeName) {
         this.incidentTypeName = incidentTypeName;
         return this;
@@ -208,6 +218,8 @@ public class IncidentInfoV2  {
     public void setIncidentTypeName(String incidentTypeName) {
         this.incidentTypeName = incidentTypeName;
     }
+
+    
 
     public IncidentInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -229,6 +241,8 @@ public class IncidentInfoV2  {
         this.customerId = customerId;
     }
 
+    
+
     public IncidentInfoV2 withDcName(String dcName) {
         this.dcName = dcName;
         return this;
@@ -248,6 +262,8 @@ public class IncidentInfoV2  {
     public void setDcName(String dcName) {
         this.dcName = dcName;
     }
+
+    
 
     public IncidentInfoV2 withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
@@ -269,6 +285,8 @@ public class IncidentInfoV2  {
         this.simpleDescription = simpleDescription;
     }
 
+    
+
     public IncidentInfoV2 withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -289,6 +307,8 @@ public class IncidentInfoV2  {
         this.createTime = createTime;
     }
 
+    
+
     public IncidentInfoV2 withLabelList(List<LabelInfo> labelList) {
         this.labelList = labelList;
         return this;
@@ -296,9 +316,6 @@ public class IncidentInfoV2  {
 
     
     public IncidentInfoV2 addLabelListItem(LabelInfo labelListItem) {
-        if (this.labelList == null) {
-            this.labelList = new ArrayList<>();
-        }
         this.labelList.add(labelListItem);
         return this;
     }
@@ -322,6 +339,9 @@ public class IncidentInfoV2  {
     public void setLabelList(List<LabelInfo> labelList) {
         this.labelList = labelList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

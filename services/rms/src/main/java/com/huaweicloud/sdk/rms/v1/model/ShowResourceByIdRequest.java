@@ -55,6 +55,8 @@ public class ShowResourceByIdRequest  {
         this.provider = provider;
     }
 
+    
+
     public ShowResourceByIdRequest withType(String type) {
         this.type = type;
         return this;
@@ -75,6 +77,8 @@ public class ShowResourceByIdRequest  {
         this.type = type;
     }
 
+    
+
     public ShowResourceByIdRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -94,6 +98,9 @@ public class ShowResourceByIdRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

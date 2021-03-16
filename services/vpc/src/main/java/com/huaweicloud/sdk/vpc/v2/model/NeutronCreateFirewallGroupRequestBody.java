@@ -22,7 +22,7 @@ public class NeutronCreateFirewallGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="firewall_group")
     
-    private NeutronCreateFirewallGroupOption firewallGroup = null;
+    private NeutronCreateFirewallGroupOption firewallGroup;
 
     public NeutronCreateFirewallGroupRequestBody withFirewallGroup(NeutronCreateFirewallGroupOption firewallGroup) {
         this.firewallGroup = firewallGroup;
@@ -50,6 +50,9 @@ public class NeutronCreateFirewallGroupRequestBody  {
     public void setFirewallGroup(NeutronCreateFirewallGroupOption firewallGroup) {
         this.firewallGroup = firewallGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,13 +22,13 @@ public class CreateParametersForImportRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GetParametersForImportRequestBody body = null;
+    private GetParametersForImportRequestBody body;
 
     public CreateParametersForImportRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class CreateParametersForImportRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public CreateParametersForImportRequest withBody(GetParametersForImportRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateParametersForImportRequest  {
     public void setBody(GetParametersForImportRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

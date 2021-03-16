@@ -30,7 +30,7 @@ public class ResqEpResouce  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_types")
     
-    private List<String> resourceTypes = new ArrayList<>();
+    private List<String> resourceTypes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +57,6 @@ public class ResqEpResouce  {
 
     
     public ResqEpResouce addProjectsItem(String projectsItem) {
-        if (this.projects == null) {
-            this.projects = new ArrayList<>();
-        }
         this.projects.add(projectsItem);
         return this;
     }
@@ -83,6 +80,8 @@ public class ResqEpResouce  {
     public void setProjects(List<String> projects) {
         this.projects = projects;
     }
+
+    
 
     public ResqEpResouce withResourceTypes(List<String> resourceTypes) {
         this.resourceTypes = resourceTypes;
@@ -115,6 +114,8 @@ public class ResqEpResouce  {
         this.resourceTypes = resourceTypes;
     }
 
+    
+
     public ResqEpResouce withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -134,6 +135,8 @@ public class ResqEpResouce  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ResqEpResouce withLimit(Integer limit) {
         this.limit = limit;
@@ -155,6 +158,8 @@ public class ResqEpResouce  {
         this.limit = limit;
     }
 
+    
+
     public ResqEpResouce withMatches(List<Match> matches) {
         this.matches = matches;
         return this;
@@ -162,9 +167,6 @@ public class ResqEpResouce  {
 
     
     public ResqEpResouce addMatchesItem(Match matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -188,6 +190,9 @@ public class ResqEpResouce  {
     public void setMatches(List<Match> matches) {
         this.matches = matches;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListTranscodeDetailResponse extends SdkResponse {
 
     
     public ListTranscodeDetailResponse addTaskArrayItem(TaskDetailInfo taskArrayItem) {
-        if (this.taskArray == null) {
-            this.taskArray = new ArrayList<>();
-        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListTranscodeDetailResponse extends SdkResponse {
     public void setTaskArray(List<TaskDetailInfo> taskArray) {
         this.taskArray = taskArray;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

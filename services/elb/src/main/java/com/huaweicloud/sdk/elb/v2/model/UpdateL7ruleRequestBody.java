@@ -22,7 +22,7 @@ public class UpdateL7ruleRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule")
     
-    private UpdateL7ruleReq rule = null;
+    private UpdateL7ruleReq rule;
 
     public UpdateL7ruleRequestBody withRule(UpdateL7ruleReq rule) {
         this.rule = rule;
@@ -50,6 +50,9 @@ public class UpdateL7ruleRequestBody  {
     public void setRule(UpdateL7ruleReq rule) {
         this.rule = rule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,6 +63,8 @@ public class ShowCorpAdminRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowCorpAdminRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -83,6 +85,8 @@ public class ShowCorpAdminRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ShowCorpAdminRequest withAccount(String account) {
         this.account = account;
         return this;
@@ -102,6 +106,8 @@ public class ShowCorpAdminRequest  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public ShowCorpAdminRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
@@ -124,6 +130,9 @@ public class ShowCorpAdminRequest  {
     public void setAccountType(Integer accountType) {
         this.accountType = accountType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

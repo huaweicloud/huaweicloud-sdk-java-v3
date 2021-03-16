@@ -33,7 +33,7 @@ public class ProductReferer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_name")
     
-    private Object productName = null;
+    private Object productName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -253,6 +253,8 @@ public class ProductReferer  {
         this.productId = productId;
     }
 
+    
+
     public ProductReferer withProductName(Object productName) {
         this.productName = productName;
         return this;
@@ -272,6 +274,8 @@ public class ProductReferer  {
     public void setProductName(Object productName) {
         this.productName = productName;
     }
+
+    
 
     public ProductReferer withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
@@ -293,6 +297,8 @@ public class ProductReferer  {
         this.manufacturerId = manufacturerId;
     }
 
+    
+
     public ProductReferer withModel(String model) {
         this.model = model;
         return this;
@@ -312,6 +318,8 @@ public class ProductReferer  {
     public void setModel(String model) {
         this.model = model;
     }
+
+    
 
     public ProductReferer withProtocolType(ProtocolTypeEnum protocolType) {
         this.protocolType = protocolType;
@@ -333,6 +341,8 @@ public class ProductReferer  {
         this.protocolType = protocolType;
     }
 
+    
+
     public ProductReferer withProductType(ProductTypeEnum productType) {
         this.productType = productType;
         return this;
@@ -352,6 +362,9 @@ public class ProductReferer  {
     public void setProductType(ProductTypeEnum productType) {
         this.productType = productType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class AccessToken  {
         this.name = name;
     }
 
+    
+
     public AccessToken withToken(String token) {
         this.token = token;
         return this;
@@ -75,6 +77,8 @@ public class AccessToken  {
         this.token = token;
     }
 
+    
+
     public AccessToken withHost(String host) {
         this.host = host;
         return this;
@@ -94,6 +98,9 @@ public class AccessToken  {
     public void setHost(String host) {
         this.host = host;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

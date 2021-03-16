@@ -142,7 +142,7 @@ public class BackupExtendInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="supported_restore_mode")
     
-    private SupportedRestoreModeEnum supportedRestoreMode = SupportedRestoreModeEnum.NA;
+    private SupportedRestoreModeEnum supportedRestoreMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -188,6 +188,8 @@ public class BackupExtendInfo  {
         this.autoTrigger = autoTrigger;
     }
 
+    
+
     public BackupExtendInfo withBootable(Boolean bootable) {
         this.bootable = bootable;
         return this;
@@ -207,6 +209,8 @@ public class BackupExtendInfo  {
     public void setBootable(Boolean bootable) {
         this.bootable = bootable;
     }
+
+    
 
     public BackupExtendInfo withIncremental(Boolean incremental) {
         this.incremental = incremental;
@@ -228,6 +232,8 @@ public class BackupExtendInfo  {
         this.incremental = incremental;
     }
 
+    
+
     public BackupExtendInfo withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
@@ -247,6 +253,8 @@ public class BackupExtendInfo  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
 
     public BackupExtendInfo withSupportLld(Boolean supportLld) {
         this.supportLld = supportLld;
@@ -268,6 +276,8 @@ public class BackupExtendInfo  {
         this.supportLld = supportLld;
     }
 
+    
+
     public BackupExtendInfo withSupportedRestoreMode(SupportedRestoreModeEnum supportedRestoreMode) {
         this.supportedRestoreMode = supportedRestoreMode;
         return this;
@@ -288,6 +298,8 @@ public class BackupExtendInfo  {
         this.supportedRestoreMode = supportedRestoreMode;
     }
 
+    
+
     public BackupExtendInfo withOsImagesData(List<ImageData> osImagesData) {
         this.osImagesData = osImagesData;
         return this;
@@ -295,9 +307,6 @@ public class BackupExtendInfo  {
 
     
     public BackupExtendInfo addOsImagesDataItem(ImageData osImagesDataItem) {
-        if (this.osImagesData == null) {
-            this.osImagesData = new ArrayList<>();
-        }
         this.osImagesData.add(osImagesDataItem);
         return this;
     }
@@ -322,6 +331,8 @@ public class BackupExtendInfo  {
         this.osImagesData = osImagesData;
     }
 
+    
+
     public BackupExtendInfo withContainSystemDisk(Boolean containSystemDisk) {
         this.containSystemDisk = containSystemDisk;
         return this;
@@ -341,6 +352,8 @@ public class BackupExtendInfo  {
     public void setContainSystemDisk(Boolean containSystemDisk) {
         this.containSystemDisk = containSystemDisk;
     }
+
+    
 
     public BackupExtendInfo withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
@@ -362,6 +375,8 @@ public class BackupExtendInfo  {
         this.encrypted = encrypted;
     }
 
+    
+
     public BackupExtendInfo withSystemDisk(Boolean systemDisk) {
         this.systemDisk = systemDisk;
         return this;
@@ -381,6 +396,9 @@ public class BackupExtendInfo  {
     public void setSystemDisk(Boolean systemDisk) {
         this.systemDisk = systemDisk;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

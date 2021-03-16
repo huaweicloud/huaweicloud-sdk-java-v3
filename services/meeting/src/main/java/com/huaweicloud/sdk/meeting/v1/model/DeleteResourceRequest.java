@@ -41,7 +41,7 @@ public class DeleteResourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="forceEditFlag")
     
-    private Boolean forceEditFlag = false;
+    private Boolean forceEditFlag;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,6 +71,8 @@ public class DeleteResourceRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public DeleteResourceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -90,6 +92,8 @@ public class DeleteResourceRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public DeleteResourceRequest withCorpId(String corpId) {
         this.corpId = corpId;
@@ -111,6 +115,8 @@ public class DeleteResourceRequest  {
         this.corpId = corpId;
     }
 
+    
+
     public DeleteResourceRequest withForceEditFlag(Boolean forceEditFlag) {
         this.forceEditFlag = forceEditFlag;
         return this;
@@ -131,6 +137,8 @@ public class DeleteResourceRequest  {
         this.forceEditFlag = forceEditFlag;
     }
 
+    
+
     public DeleteResourceRequest withBody(List<String> body) {
         this.body = body;
         return this;
@@ -138,9 +146,6 @@ public class DeleteResourceRequest  {
 
     
     public DeleteResourceRequest addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -164,6 +169,9 @@ public class DeleteResourceRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

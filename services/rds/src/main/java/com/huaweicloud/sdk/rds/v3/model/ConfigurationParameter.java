@@ -179,6 +179,8 @@ public class ConfigurationParameter  {
         this.name = name;
     }
 
+    
+
     public ConfigurationParameter withValue(String value) {
         this.value = value;
         return this;
@@ -198,6 +200,8 @@ public class ConfigurationParameter  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
 
     public ConfigurationParameter withRestartRequired(Boolean restartRequired) {
         this.restartRequired = restartRequired;
@@ -219,6 +223,8 @@ public class ConfigurationParameter  {
         this.restartRequired = restartRequired;
     }
 
+    
+
     public ConfigurationParameter withReadonly(Boolean readonly) {
         this.readonly = readonly;
         return this;
@@ -238,6 +244,8 @@ public class ConfigurationParameter  {
     public void setReadonly(Boolean readonly) {
         this.readonly = readonly;
     }
+
+    
 
     public ConfigurationParameter withValueRange(String valueRange) {
         this.valueRange = valueRange;
@@ -259,6 +267,8 @@ public class ConfigurationParameter  {
         this.valueRange = valueRange;
     }
 
+    
+
     public ConfigurationParameter withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -279,6 +289,8 @@ public class ConfigurationParameter  {
         this.type = type;
     }
 
+    
+
     public ConfigurationParameter withDescription(String description) {
         this.description = description;
         return this;
@@ -298,6 +310,9 @@ public class ConfigurationParameter  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

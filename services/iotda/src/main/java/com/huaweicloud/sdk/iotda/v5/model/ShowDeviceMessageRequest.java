@@ -55,6 +55,8 @@ public class ShowDeviceMessageRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public ShowDeviceMessageRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class ShowDeviceMessageRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDeviceMessageRequest withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
@@ -94,6 +98,9 @@ public class ShowDeviceMessageRequest  {
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

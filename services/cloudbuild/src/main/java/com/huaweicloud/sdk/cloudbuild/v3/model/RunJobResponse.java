@@ -57,6 +57,8 @@ public class RunJobResponse extends SdkResponse {
         this.octopusJobName = octopusJobName;
     }
 
+    
+
     public RunJobResponse withActualBuildNumber(String actualBuildNumber) {
         this.actualBuildNumber = actualBuildNumber;
         return this;
@@ -77,6 +79,8 @@ public class RunJobResponse extends SdkResponse {
         this.actualBuildNumber = actualBuildNumber;
     }
 
+    
+
     public RunJobResponse withDailyBuildNumber(String dailyBuildNumber) {
         this.dailyBuildNumber = dailyBuildNumber;
         return this;
@@ -96,6 +100,9 @@ public class RunJobResponse extends SdkResponse {
     public void setDailyBuildNumber(String dailyBuildNumber) {
         this.dailyBuildNumber = dailyBuildNumber;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

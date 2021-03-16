@@ -40,7 +40,7 @@ public class PropertyFilter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="strategy")
     
-    private Strategy strategy = null;
+    private Strategy strategy;
 
     public PropertyFilter withPath(String path) {
         this.path = path;
@@ -62,6 +62,8 @@ public class PropertyFilter  {
         this.path = path;
     }
 
+    
+
     public PropertyFilter withOperator(String operator) {
         this.operator = operator;
         return this;
@@ -82,6 +84,8 @@ public class PropertyFilter  {
         this.operator = operator;
     }
 
+    
+
     public PropertyFilter withValue(String value) {
         this.value = value;
         return this;
@@ -101,6 +105,8 @@ public class PropertyFilter  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
 
     public PropertyFilter withStrategy(Strategy strategy) {
         this.strategy = strategy;
@@ -128,6 +134,9 @@ public class PropertyFilter  {
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

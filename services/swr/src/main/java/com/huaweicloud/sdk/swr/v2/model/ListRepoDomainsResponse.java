@@ -35,9 +35,6 @@ public class ListRepoDomainsResponse extends SdkResponse {
 
     
     public ListRepoDomainsResponse addBodyItem(ShowRepoDomainsResponse bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListRepoDomainsResponse extends SdkResponse {
     public void setBody(List<ShowRepoDomainsResponse> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

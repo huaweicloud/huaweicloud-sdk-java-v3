@@ -106,6 +106,8 @@ public class ExternalServiceBizCase  {
         this.description = description;
     }
 
+    
+
     public ExternalServiceBizCase withPreparation(String preparation) {
         this.preparation = preparation;
         return this;
@@ -126,6 +128,8 @@ public class ExternalServiceBizCase  {
         this.preparation = preparation;
     }
 
+    
+
     public ExternalServiceBizCase withSteps(List<ExternalServiceCaseStep> steps) {
         this.steps = steps;
         return this;
@@ -133,9 +137,6 @@ public class ExternalServiceBizCase  {
 
     
     public ExternalServiceBizCase addStepsItem(ExternalServiceCaseStep stepsItem) {
-        if (this.steps == null) {
-            this.steps = new ArrayList<>();
-        }
         this.steps.add(stepsItem);
         return this;
     }
@@ -160,6 +161,8 @@ public class ExternalServiceBizCase  {
         this.steps = steps;
     }
 
+    
+
     public ExternalServiceBizCase withLabelList(List<String> labelList) {
         this.labelList = labelList;
         return this;
@@ -167,9 +170,6 @@ public class ExternalServiceBizCase  {
 
     
     public ExternalServiceBizCase addLabelListItem(String labelListItem) {
-        if (this.labelList == null) {
-            this.labelList = new ArrayList<>();
-        }
         this.labelList.add(labelListItem);
         return this;
     }
@@ -194,6 +194,8 @@ public class ExternalServiceBizCase  {
         this.labelList = labelList;
     }
 
+    
+
     public ExternalServiceBizCase withModuleId(String moduleId) {
         this.moduleId = moduleId;
         return this;
@@ -213,6 +215,8 @@ public class ExternalServiceBizCase  {
     public void setModuleId(String moduleId) {
         this.moduleId = moduleId;
     }
+
+    
 
     public ExternalServiceBizCase withTestVersionId(String testVersionId) {
         this.testVersionId = testVersionId;
@@ -234,6 +238,8 @@ public class ExternalServiceBizCase  {
         this.testVersionId = testVersionId;
     }
 
+    
+
     public ExternalServiceBizCase withFixVersionId(String fixVersionId) {
         this.fixVersionId = fixVersionId;
         return this;
@@ -253,6 +259,8 @@ public class ExternalServiceBizCase  {
     public void setFixVersionId(String fixVersionId) {
         this.fixVersionId = fixVersionId;
     }
+
+    
 
     public ExternalServiceBizCase withAssignedId(String assignedId) {
         this.assignedId = assignedId;
@@ -274,6 +282,8 @@ public class ExternalServiceBizCase  {
         this.assignedId = assignedId;
     }
 
+    
+
     public ExternalServiceBizCase withIssueId(String issueId) {
         this.issueId = issueId;
         return this;
@@ -293,6 +303,8 @@ public class ExternalServiceBizCase  {
     public void setIssueId(String issueId) {
         this.issueId = issueId;
     }
+
+    
 
     public ExternalServiceBizCase withStatusId(String statusId) {
         this.statusId = statusId;
@@ -314,6 +326,8 @@ public class ExternalServiceBizCase  {
         this.statusId = statusId;
     }
 
+    
+
     public ExternalServiceBizCase withDefectIdList(List<String> defectIdList) {
         this.defectIdList = defectIdList;
         return this;
@@ -321,9 +335,6 @@ public class ExternalServiceBizCase  {
 
     
     public ExternalServiceBizCase addDefectIdListItem(String defectIdListItem) {
-        if (this.defectIdList == null) {
-            this.defectIdList = new ArrayList<>();
-        }
         this.defectIdList.add(defectIdListItem);
         return this;
     }
@@ -347,6 +358,9 @@ public class ExternalServiceBizCase  {
     public void setDefectIdList(List<String> defectIdList) {
         this.defectIdList = defectIdList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

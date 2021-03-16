@@ -24,7 +24,7 @@ public class ShowVolumeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private VolumeDetail volume = null;
+    private VolumeDetail volume;
 
     public ShowVolumeResponse withVolume(VolumeDetail volume) {
         this.volume = volume;
@@ -52,6 +52,9 @@ public class ShowVolumeResponse extends SdkResponse {
     public void setVolume(VolumeDetail volume) {
         this.volume = volume;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

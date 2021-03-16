@@ -28,13 +28,13 @@ public class CreateRuleActionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="x-LB-Service")
     
-    private String xLBService = "L7Adapt4Out";
+    private String xLBService;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddActionReq body = null;
+    private AddActionReq body;
 
     public CreateRuleActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class CreateRuleActionRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateRuleActionRequest withXLBService(String xLBService) {
         this.xLBService = xLBService;
@@ -77,6 +79,8 @@ public class CreateRuleActionRequest  {
     public void setXLBService(String xLBService) {
         this.xLBService = xLBService;
     }
+
+    
 
     public CreateRuleActionRequest withBody(AddActionReq body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CreateRuleActionRequest  {
     public void setBody(AddActionReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

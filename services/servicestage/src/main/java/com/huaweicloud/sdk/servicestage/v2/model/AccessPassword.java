@@ -55,6 +55,8 @@ public class AccessPassword  {
         this.name = name;
     }
 
+    
+
     public AccessPassword withUser(String user) {
         this.user = user;
         return this;
@@ -75,6 +77,8 @@ public class AccessPassword  {
         this.user = user;
     }
 
+    
+
     public AccessPassword withPassword(String password) {
         this.password = password;
         return this;
@@ -94,6 +98,9 @@ public class AccessPassword  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

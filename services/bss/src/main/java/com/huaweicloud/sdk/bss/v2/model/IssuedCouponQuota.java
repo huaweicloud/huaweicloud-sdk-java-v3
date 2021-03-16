@@ -136,6 +136,8 @@ public class IssuedCouponQuota  {
         this.quotaId = quotaId;
     }
 
+    
+
     public IssuedCouponQuota withQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
         return this;
@@ -155,6 +157,8 @@ public class IssuedCouponQuota  {
     public void setQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
     }
+
+    
 
     public IssuedCouponQuota withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -176,6 +180,8 @@ public class IssuedCouponQuota  {
         this.createTime = createTime;
     }
 
+    
+
     public IssuedCouponQuota withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
@@ -195,6 +201,8 @@ public class IssuedCouponQuota  {
     public void setLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
+
+    
 
     public IssuedCouponQuota withQuotaValue(Double quotaValue) {
         this.quotaValue = quotaValue;
@@ -216,6 +224,8 @@ public class IssuedCouponQuota  {
         this.quotaValue = quotaValue;
     }
 
+    
+
     public IssuedCouponQuota withQuotaStatus(Integer quotaStatus) {
         this.quotaStatus = quotaStatus;
         return this;
@@ -235,6 +245,8 @@ public class IssuedCouponQuota  {
     public void setQuotaStatus(Integer quotaStatus) {
         this.quotaStatus = quotaStatus;
     }
+
+    
 
     public IssuedCouponQuota withBalance(Double balance) {
         this.balance = balance;
@@ -256,6 +268,8 @@ public class IssuedCouponQuota  {
         this.balance = balance;
     }
 
+    
+
     public IssuedCouponQuota withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -275,6 +289,8 @@ public class IssuedCouponQuota  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
 
     public IssuedCouponQuota withCurrency(String currency) {
         this.currency = currency;
@@ -296,6 +312,8 @@ public class IssuedCouponQuota  {
         this.currency = currency;
     }
 
+    
+
     public IssuedCouponQuota withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
@@ -315,6 +333,8 @@ public class IssuedCouponQuota  {
     public void setEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
     }
+
+    
 
     public IssuedCouponQuota withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -336,6 +356,8 @@ public class IssuedCouponQuota  {
         this.expireTime = expireTime;
     }
 
+    
+
     public IssuedCouponQuota withLimitInfos(List<QuotaLimitInfo> limitInfos) {
         this.limitInfos = limitInfos;
         return this;
@@ -343,9 +365,6 @@ public class IssuedCouponQuota  {
 
     
     public IssuedCouponQuota addLimitInfosItem(QuotaLimitInfo limitInfosItem) {
-        if (this.limitInfos == null) {
-            this.limitInfos = new ArrayList<>();
-        }
         this.limitInfos.add(limitInfosItem);
         return this;
     }
@@ -370,6 +389,8 @@ public class IssuedCouponQuota  {
         this.limitInfos = limitInfos;
     }
 
+    
+
     public IssuedCouponQuota withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -389,6 +410,8 @@ public class IssuedCouponQuota  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
 
     public IssuedCouponQuota withIndirectPartnerAccountName(String indirectPartnerAccountName) {
         this.indirectPartnerAccountName = indirectPartnerAccountName;
@@ -410,6 +433,8 @@ public class IssuedCouponQuota  {
         this.indirectPartnerAccountName = indirectPartnerAccountName;
     }
 
+    
+
     public IssuedCouponQuota withIndirectPartnerName(String indirectPartnerName) {
         this.indirectPartnerName = indirectPartnerName;
         return this;
@@ -430,6 +455,8 @@ public class IssuedCouponQuota  {
         this.indirectPartnerName = indirectPartnerName;
     }
 
+    
+
     public IssuedCouponQuota withParentQuotaId(String parentQuotaId) {
         this.parentQuotaId = parentQuotaId;
         return this;
@@ -449,6 +476,9 @@ public class IssuedCouponQuota  {
     public void setParentQuotaId(String parentQuotaId) {
         this.parentQuotaId = parentQuotaId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

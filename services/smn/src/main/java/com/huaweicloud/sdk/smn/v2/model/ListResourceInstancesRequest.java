@@ -28,7 +28,7 @@ public class ListResourceInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListInstanceRequestBody body = null;
+    private ListInstanceRequestBody body;
 
     public ListResourceInstancesRequest withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -49,6 +49,8 @@ public class ListResourceInstancesRequest  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    
 
     public ListResourceInstancesRequest withBody(ListInstanceRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ListResourceInstancesRequest  {
     public void setBody(ListInstanceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

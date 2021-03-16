@@ -1019,7 +1019,7 @@ public class GlanceShowImageResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1577,6 +1577,8 @@ public class GlanceShowImageResponseBody  {
         this.backupId = backupId;
     }
 
+    
+
     public GlanceShowImageResponseBody withDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
         return this;
@@ -1598,6 +1600,8 @@ public class GlanceShowImageResponseBody  {
     public void setDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
     }
+
+    
 
     public GlanceShowImageResponseBody withDescription(String description) {
         this.description = description;
@@ -1621,6 +1625,8 @@ public class GlanceShowImageResponseBody  {
         this.description = description;
     }
 
+    
+
     public GlanceShowImageResponseBody withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
@@ -1642,6 +1648,8 @@ public class GlanceShowImageResponseBody  {
     public void setImageSize(String imageSize) {
         this.imageSize = imageSize;
     }
+
+    
 
     public GlanceShowImageResponseBody withImageSourceType(ImageSourceTypeEnum imageSourceType) {
         this.imageSourceType = imageSourceType;
@@ -1665,6 +1673,8 @@ public class GlanceShowImageResponseBody  {
         this.imageSourceType = imageSourceType;
     }
 
+    
+
     public GlanceShowImageResponseBody withImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
         return this;
@@ -1686,6 +1696,8 @@ public class GlanceShowImageResponseBody  {
     public void setImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
     }
+
+    
 
     public GlanceShowImageResponseBody withIsregistered(IsregisteredEnum isregistered) {
         this.isregistered = isregistered;
@@ -1709,6 +1721,8 @@ public class GlanceShowImageResponseBody  {
         this.isregistered = isregistered;
     }
 
+    
+
     public GlanceShowImageResponseBody withOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
         return this;
@@ -1730,6 +1744,8 @@ public class GlanceShowImageResponseBody  {
     public void setOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
     }
+
+    
 
     public GlanceShowImageResponseBody withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
@@ -1753,6 +1769,8 @@ public class GlanceShowImageResponseBody  {
         this.osBit = osBit;
     }
 
+    
+
     public GlanceShowImageResponseBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -1774,6 +1792,8 @@ public class GlanceShowImageResponseBody  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public GlanceShowImageResponseBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
@@ -1797,6 +1817,8 @@ public class GlanceShowImageResponseBody  {
         this.osVersion = osVersion;
     }
 
+    
+
     public GlanceShowImageResponseBody withPlatform(PlatformEnum platform) {
         this.platform = platform;
         return this;
@@ -1818,6 +1840,8 @@ public class GlanceShowImageResponseBody  {
     public void setPlatform(PlatformEnum platform) {
         this.platform = platform;
     }
+
+    
 
     public GlanceShowImageResponseBody withProductcode(String productcode) {
         this.productcode = productcode;
@@ -1841,6 +1865,8 @@ public class GlanceShowImageResponseBody  {
         this.productcode = productcode;
     }
 
+    
+
     public GlanceShowImageResponseBody withSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
         return this;
@@ -1862,6 +1888,8 @@ public class GlanceShowImageResponseBody  {
     public void setSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
     }
+
+    
 
     public GlanceShowImageResponseBody withSupportHighperformance(String supportHighperformance) {
         this.supportHighperformance = supportHighperformance;
@@ -1885,6 +1913,8 @@ public class GlanceShowImageResponseBody  {
         this.supportHighperformance = supportHighperformance;
     }
 
+    
+
     public GlanceShowImageResponseBody withSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
         return this;
@@ -1906,6 +1936,8 @@ public class GlanceShowImageResponseBody  {
     public void setSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
     }
+
+    
 
     public GlanceShowImageResponseBody withSupportKvmGpuType(String supportKvmGpuType) {
         this.supportKvmGpuType = supportKvmGpuType;
@@ -1929,6 +1961,8 @@ public class GlanceShowImageResponseBody  {
         this.supportKvmGpuType = supportKvmGpuType;
     }
 
+    
+
     public GlanceShowImageResponseBody withSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
         return this;
@@ -1950,6 +1984,8 @@ public class GlanceShowImageResponseBody  {
     public void setSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
     }
+
+    
 
     public GlanceShowImageResponseBody withSupportLargememory(String supportLargememory) {
         this.supportLargememory = supportLargememory;
@@ -1973,6 +2009,8 @@ public class GlanceShowImageResponseBody  {
         this.supportLargememory = supportLargememory;
     }
 
+    
+
     public GlanceShowImageResponseBody withSupportXen(String supportXen) {
         this.supportXen = supportXen;
         return this;
@@ -1994,6 +2032,8 @@ public class GlanceShowImageResponseBody  {
     public void setSupportXen(String supportXen) {
         this.supportXen = supportXen;
     }
+
+    
 
     public GlanceShowImageResponseBody withSupportXenGpuType(String supportXenGpuType) {
         this.supportXenGpuType = supportXenGpuType;
@@ -2017,6 +2057,8 @@ public class GlanceShowImageResponseBody  {
         this.supportXenGpuType = supportXenGpuType;
     }
 
+    
+
     public GlanceShowImageResponseBody withSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
         return this;
@@ -2039,6 +2081,8 @@ public class GlanceShowImageResponseBody  {
         this.supportXenHana = supportXenHana;
     }
 
+    
+
     public GlanceShowImageResponseBody withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
@@ -2058,6 +2102,8 @@ public class GlanceShowImageResponseBody  {
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
+
+    
 
     public GlanceShowImageResponseBody withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
@@ -2079,6 +2125,8 @@ public class GlanceShowImageResponseBody  {
         this.containerFormat = containerFormat;
     }
 
+    
+
     public GlanceShowImageResponseBody withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -2098,6 +2146,8 @@ public class GlanceShowImageResponseBody  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public GlanceShowImageResponseBody withDeleted(Boolean deleted) {
         this.deleted = deleted;
@@ -2119,6 +2169,8 @@ public class GlanceShowImageResponseBody  {
         this.deleted = deleted;
     }
 
+    
+
     public GlanceShowImageResponseBody withDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
         return this;
@@ -2138,6 +2190,8 @@ public class GlanceShowImageResponseBody  {
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
+
+    
 
     public GlanceShowImageResponseBody withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
@@ -2159,6 +2213,8 @@ public class GlanceShowImageResponseBody  {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public GlanceShowImageResponseBody withFile(String file) {
         this.file = file;
         return this;
@@ -2178,6 +2234,8 @@ public class GlanceShowImageResponseBody  {
     public void setFile(String file) {
         this.file = file;
     }
+
+    
 
     public GlanceShowImageResponseBody withId(String id) {
         this.id = id;
@@ -2199,6 +2257,8 @@ public class GlanceShowImageResponseBody  {
         this.id = id;
     }
 
+    
+
     public GlanceShowImageResponseBody withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
@@ -2218,6 +2278,8 @@ public class GlanceShowImageResponseBody  {
     public void setMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
     }
+
+    
 
     public GlanceShowImageResponseBody withMinRam(Integer minRam) {
         this.minRam = minRam;
@@ -2239,6 +2301,8 @@ public class GlanceShowImageResponseBody  {
         this.minRam = minRam;
     }
 
+    
+
     public GlanceShowImageResponseBody withName(String name) {
         this.name = name;
         return this;
@@ -2258,6 +2322,8 @@ public class GlanceShowImageResponseBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GlanceShowImageResponseBody withOwner(String owner) {
         this.owner = owner;
@@ -2279,6 +2345,8 @@ public class GlanceShowImageResponseBody  {
         this.owner = owner;
     }
 
+    
+
     public GlanceShowImageResponseBody withProtected(Boolean _protected) {
         this._protected = _protected;
         return this;
@@ -2298,6 +2366,8 @@ public class GlanceShowImageResponseBody  {
     public void setProtected(Boolean _protected) {
         this._protected = _protected;
     }
+
+    
 
     public GlanceShowImageResponseBody withSchema(String schema) {
         this.schema = schema;
@@ -2319,6 +2389,8 @@ public class GlanceShowImageResponseBody  {
         this.schema = schema;
     }
 
+    
+
     public GlanceShowImageResponseBody withSelf(String self) {
         this.self = self;
         return this;
@@ -2338,6 +2410,8 @@ public class GlanceShowImageResponseBody  {
     public void setSelf(String self) {
         this.self = self;
     }
+
+    
 
     public GlanceShowImageResponseBody withSize(Long size) {
         this.size = size;
@@ -2359,6 +2433,8 @@ public class GlanceShowImageResponseBody  {
         this.size = size;
     }
 
+    
+
     public GlanceShowImageResponseBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -2378,6 +2454,8 @@ public class GlanceShowImageResponseBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public GlanceShowImageResponseBody withTags(List<String> tags) {
         this.tags = tags;
@@ -2410,6 +2488,8 @@ public class GlanceShowImageResponseBody  {
         this.tags = tags;
     }
 
+    
+
     public GlanceShowImageResponseBody withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -2429,6 +2509,8 @@ public class GlanceShowImageResponseBody  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public GlanceShowImageResponseBody withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
@@ -2450,6 +2532,8 @@ public class GlanceShowImageResponseBody  {
         this.virtualEnvType = virtualEnvType;
     }
 
+    
+
     public GlanceShowImageResponseBody withVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
         return this;
@@ -2470,6 +2554,8 @@ public class GlanceShowImageResponseBody  {
         this.virtualSize = virtualSize;
     }
 
+    
+
     public GlanceShowImageResponseBody withVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
         return this;
@@ -2489,6 +2575,8 @@ public class GlanceShowImageResponseBody  {
     public void setVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
     }
+
+    
 
     public GlanceShowImageResponseBody withSupportFcInject(SupportFcInjectEnum supportFcInject) {
         this.supportFcInject = supportFcInject;
@@ -2512,6 +2600,8 @@ public class GlanceShowImageResponseBody  {
         this.supportFcInject = supportFcInject;
     }
 
+    
+
     public GlanceShowImageResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -2532,6 +2622,8 @@ public class GlanceShowImageResponseBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public GlanceShowImageResponseBody withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
         return this;
@@ -2551,6 +2643,8 @@ public class GlanceShowImageResponseBody  {
     public void setHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
     }
+
+    
 
     public GlanceShowImageResponseBody withSupportArm(SupportArmEnum supportArm) {
         this.supportArm = supportArm;
@@ -2574,6 +2668,8 @@ public class GlanceShowImageResponseBody  {
         this.supportArm = supportArm;
     }
 
+    
+
     public GlanceShowImageResponseBody withIsOffshelved(IsOffshelvedEnum isOffshelved) {
         this.isOffshelved = isOffshelved;
         return this;
@@ -2595,6 +2691,9 @@ public class GlanceShowImageResponseBody  {
     public void setIsOffshelved(IsOffshelvedEnum isOffshelved) {
         this.isOffshelved = isOffshelved;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

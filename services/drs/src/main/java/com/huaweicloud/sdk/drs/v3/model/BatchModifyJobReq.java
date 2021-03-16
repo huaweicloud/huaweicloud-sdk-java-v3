@@ -24,7 +24,7 @@ public class BatchModifyJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<ModifyJobReq> jobs = new ArrayList<>();
+    private List<ModifyJobReq> jobs = null;
     
     public BatchModifyJobReq withJobs(List<ModifyJobReq> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchModifyJobReq  {
     public void setJobs(List<ModifyJobReq> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

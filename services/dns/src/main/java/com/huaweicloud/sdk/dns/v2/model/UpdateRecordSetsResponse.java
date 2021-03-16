@@ -105,7 +105,7 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -129,7 +129,7 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alias_target")
     
-    private AliasTarget aliasTarget = null;
+    private AliasTarget aliasTarget;
 
     public UpdateRecordSetsResponse withId(String id) {
         this.id = id;
@@ -151,6 +151,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdateRecordSetsResponse withName(String name) {
         this.name = name;
         return this;
@@ -170,6 +172,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateRecordSetsResponse withDescription(String description) {
         this.description = description;
@@ -191,6 +195,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateRecordSetsResponse withZoneId(String zoneId) {
         this.zoneId = zoneId;
         return this;
@@ -210,6 +216,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public UpdateRecordSetsResponse withZoneName(String zoneName) {
         this.zoneName = zoneName;
@@ -231,6 +239,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.zoneName = zoneName;
     }
 
+    
+
     public UpdateRecordSetsResponse withType(String type) {
         this.type = type;
         return this;
@@ -250,6 +260,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public UpdateRecordSetsResponse withTtl(Integer ttl) {
         this.ttl = ttl;
@@ -271,6 +283,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.ttl = ttl;
     }
 
+    
+
     public UpdateRecordSetsResponse withRecords(List<String> records) {
         this.records = records;
         return this;
@@ -278,9 +292,6 @@ public class UpdateRecordSetsResponse extends SdkResponse {
 
     
     public UpdateRecordSetsResponse addRecordsItem(String recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -305,6 +316,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.records = records;
     }
 
+    
+
     public UpdateRecordSetsResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -324,6 +337,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public UpdateRecordSetsResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -345,6 +360,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public UpdateRecordSetsResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -364,6 +381,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public UpdateRecordSetsResponse withDefault(Boolean _default) {
         this._default = _default;
@@ -385,6 +404,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this._default = _default;
     }
 
+    
+
     public UpdateRecordSetsResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -404,6 +425,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public UpdateRecordSetsResponse withLinks(PageLink links) {
         this.links = links;
@@ -432,6 +455,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public UpdateRecordSetsResponse withLine(String line) {
         this.line = line;
         return this;
@@ -451,6 +476,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setLine(String line) {
         this.line = line;
     }
+
+    
 
     public UpdateRecordSetsResponse withWeight(Integer weight) {
         this.weight = weight;
@@ -472,6 +499,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
         this.weight = weight;
     }
 
+    
+
     public UpdateRecordSetsResponse withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
         return this;
@@ -491,6 +520,8 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
+
+    
 
     public UpdateRecordSetsResponse withAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
@@ -518,6 +549,9 @@ public class UpdateRecordSetsResponse extends SdkResponse {
     public void setAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

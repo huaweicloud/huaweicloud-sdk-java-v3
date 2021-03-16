@@ -103,6 +103,8 @@ public class ShowRepoDomainsResponse  {
         this.namespace = namespace;
     }
 
+    
+
     public ShowRepoDomainsResponse withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -122,6 +124,8 @@ public class ShowRepoDomainsResponse  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public ShowRepoDomainsResponse withAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
@@ -143,6 +147,8 @@ public class ShowRepoDomainsResponse  {
         this.accessDomain = accessDomain;
     }
 
+    
+
     public ShowRepoDomainsResponse withPermit(String permit) {
         this.permit = permit;
         return this;
@@ -162,6 +168,8 @@ public class ShowRepoDomainsResponse  {
     public void setPermit(String permit) {
         this.permit = permit;
     }
+
+    
 
     public ShowRepoDomainsResponse withDeadline(String deadline) {
         this.deadline = deadline;
@@ -183,6 +191,8 @@ public class ShowRepoDomainsResponse  {
         this.deadline = deadline;
     }
 
+    
+
     public ShowRepoDomainsResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -202,6 +212,8 @@ public class ShowRepoDomainsResponse  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowRepoDomainsResponse withCreatorId(String creatorId) {
         this.creatorId = creatorId;
@@ -223,6 +235,8 @@ public class ShowRepoDomainsResponse  {
         this.creatorId = creatorId;
     }
 
+    
+
     public ShowRepoDomainsResponse withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
@@ -242,6 +256,8 @@ public class ShowRepoDomainsResponse  {
     public void setCreatorName(String creatorName) {
         this.creatorName = creatorName;
     }
+
+    
 
     public ShowRepoDomainsResponse withCreated(String created) {
         this.created = created;
@@ -263,6 +279,8 @@ public class ShowRepoDomainsResponse  {
         this.created = created;
     }
 
+    
+
     public ShowRepoDomainsResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -283,6 +301,8 @@ public class ShowRepoDomainsResponse  {
         this.updated = updated;
     }
 
+    
+
     public ShowRepoDomainsResponse withStatus(Boolean status) {
         this.status = status;
         return this;
@@ -302,6 +322,9 @@ public class ShowRepoDomainsResponse  {
     public void setStatus(Boolean status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

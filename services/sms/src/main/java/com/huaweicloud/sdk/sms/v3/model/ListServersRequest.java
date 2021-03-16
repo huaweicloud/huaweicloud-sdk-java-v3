@@ -193,13 +193,13 @@ public class ListServersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 200;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -212,6 +212,12 @@ public class ListServersRequest  {
     @JsonProperty(value="connected")
     
     private Boolean connected;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
     public ListServersRequest withState(StateEnum state) {
         this.state = state;
@@ -233,6 +239,8 @@ public class ListServersRequest  {
         this.state = state;
     }
 
+    
+
     public ListServersRequest withName(String name) {
         this.name = name;
         return this;
@@ -252,6 +260,8 @@ public class ListServersRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListServersRequest withId(String id) {
         this.id = id;
@@ -273,6 +283,8 @@ public class ListServersRequest  {
         this.id = id;
     }
 
+    
+
     public ListServersRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -293,6 +305,8 @@ public class ListServersRequest  {
         this.ip = ip;
     }
 
+    
+
     public ListServersRequest withMigproject(String migproject) {
         this.migproject = migproject;
         return this;
@@ -312,6 +326,8 @@ public class ListServersRequest  {
     public void setMigproject(String migproject) {
         this.migproject = migproject;
     }
+
+    
 
     public ListServersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -335,6 +351,8 @@ public class ListServersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListServersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -357,6 +375,8 @@ public class ListServersRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListServersRequest withMigrationCycle(String migrationCycle) {
         this.migrationCycle = migrationCycle;
         return this;
@@ -377,6 +397,8 @@ public class ListServersRequest  {
         this.migrationCycle = migrationCycle;
     }
 
+    
+
     public ListServersRequest withConnected(Boolean connected) {
         this.connected = connected;
         return this;
@@ -396,6 +418,31 @@ public class ListServersRequest  {
     public void setConnected(Boolean connected) {
         this.connected = connected;
     }
+
+    
+
+    public ListServersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get enterpriseProjectId
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -413,11 +460,12 @@ public class ListServersRequest  {
             Objects.equals(this.limit, listServersRequest.limit) &&
             Objects.equals(this.offset, listServersRequest.offset) &&
             Objects.equals(this.migrationCycle, listServersRequest.migrationCycle) &&
-            Objects.equals(this.connected, listServersRequest.connected);
+            Objects.equals(this.connected, listServersRequest.connected) &&
+            Objects.equals(this.enterpriseProjectId, listServersRequest.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(state, name, id, ip, migproject, limit, offset, migrationCycle, connected);
+        return Objects.hash(state, name, id, ip, migproject, limit, offset, migrationCycle, connected, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -432,6 +480,7 @@ public class ListServersRequest  {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
         sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

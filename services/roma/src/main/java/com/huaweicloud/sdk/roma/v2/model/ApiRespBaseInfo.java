@@ -222,7 +222,7 @@ public class ApiRespBaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -450,13 +450,13 @@ public class ApiRespBaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -792,13 +792,13 @@ public class ApiRespBaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -810,7 +810,7 @@ public class ApiRespBaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_version")
     
-    private String groupVersion = "V1";
+    private String groupVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -862,6 +862,8 @@ public class ApiRespBaseInfo  {
         this.name = name;
     }
 
+    
+
     public ApiRespBaseInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -881,6 +883,8 @@ public class ApiRespBaseInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ApiRespBaseInfo withVersion(String version) {
         this.version = version;
@@ -902,6 +906,8 @@ public class ApiRespBaseInfo  {
         this.version = version;
     }
 
+    
+
     public ApiRespBaseInfo withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -921,6 +927,8 @@ public class ApiRespBaseInfo  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiRespBaseInfo withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -942,6 +950,8 @@ public class ApiRespBaseInfo  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiRespBaseInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -962,6 +972,8 @@ public class ApiRespBaseInfo  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiRespBaseInfo withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -981,6 +993,8 @@ public class ApiRespBaseInfo  {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ApiRespBaseInfo withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -1009,6 +1023,8 @@ public class ApiRespBaseInfo  {
         this.authOpt = authOpt;
     }
 
+    
+
     public ApiRespBaseInfo withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -1028,6 +1044,8 @@ public class ApiRespBaseInfo  {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ApiRespBaseInfo withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -1049,6 +1067,8 @@ public class ApiRespBaseInfo  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiRespBaseInfo withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -1068,6 +1088,8 @@ public class ApiRespBaseInfo  {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ApiRespBaseInfo withRemark(String remark) {
         this.remark = remark;
@@ -1089,6 +1111,8 @@ public class ApiRespBaseInfo  {
         this.remark = remark;
     }
 
+    
+
     public ApiRespBaseInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1108,6 +1132,8 @@ public class ApiRespBaseInfo  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiRespBaseInfo withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1129,6 +1155,8 @@ public class ApiRespBaseInfo  {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ApiRespBaseInfo withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1148,6 +1176,8 @@ public class ApiRespBaseInfo  {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ApiRespBaseInfo withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1169,6 +1199,8 @@ public class ApiRespBaseInfo  {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ApiRespBaseInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1189,6 +1221,8 @@ public class ApiRespBaseInfo  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiRespBaseInfo withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1196,9 +1230,6 @@ public class ApiRespBaseInfo  {
 
     
     public ApiRespBaseInfo addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1223,6 +1254,8 @@ public class ApiRespBaseInfo  {
         this.tags = tags;
     }
 
+    
+
     public ApiRespBaseInfo withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1242,6 +1275,8 @@ public class ApiRespBaseInfo  {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ApiRespBaseInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1263,6 +1298,8 @@ public class ApiRespBaseInfo  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiRespBaseInfo withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1282,6 +1319,8 @@ public class ApiRespBaseInfo  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public ApiRespBaseInfo withTag(String tag) {
         this.tag = tag;
@@ -1303,6 +1342,8 @@ public class ApiRespBaseInfo  {
         this.tag = tag;
     }
 
+    
+
     public ApiRespBaseInfo withId(String id) {
         this.id = id;
         return this;
@@ -1322,6 +1363,8 @@ public class ApiRespBaseInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ApiRespBaseInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -1343,6 +1386,8 @@ public class ApiRespBaseInfo  {
         this.status = status;
     }
 
+    
+
     public ApiRespBaseInfo withArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
         return this;
@@ -1362,6 +1407,8 @@ public class ApiRespBaseInfo  {
     public void setArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
     }
+
+    
 
     public ApiRespBaseInfo withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -1383,6 +1430,8 @@ public class ApiRespBaseInfo  {
         this.registerTime = registerTime;
     }
 
+    
+
     public ApiRespBaseInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -1402,6 +1451,8 @@ public class ApiRespBaseInfo  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ApiRespBaseInfo withGroupName(String groupName) {
         this.groupName = groupName;
@@ -1423,6 +1474,8 @@ public class ApiRespBaseInfo  {
         this.groupName = groupName;
     }
 
+    
+
     public ApiRespBaseInfo withGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
         return this;
@@ -1442,6 +1495,8 @@ public class ApiRespBaseInfo  {
     public void setGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
     }
+
+    
 
     public ApiRespBaseInfo withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -1463,6 +1518,8 @@ public class ApiRespBaseInfo  {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public ApiRespBaseInfo withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -1482,6 +1539,8 @@ public class ApiRespBaseInfo  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public ApiRespBaseInfo withPublishId(String publishId) {
         this.publishId = publishId;
@@ -1503,6 +1562,8 @@ public class ApiRespBaseInfo  {
         this.publishId = publishId;
     }
 
+    
+
     public ApiRespBaseInfo withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -1523,6 +1584,8 @@ public class ApiRespBaseInfo  {
         this.romaAppName = romaAppName;
     }
 
+    
+
     public ApiRespBaseInfo withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -1542,6 +1605,9 @@ public class ApiRespBaseInfo  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

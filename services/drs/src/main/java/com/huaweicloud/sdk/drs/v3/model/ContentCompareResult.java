@@ -84,6 +84,8 @@ public class ContentCompareResult  {
         this.compareTaskId = compareTaskId;
     }
 
+    
+
     public ContentCompareResult withContentCompareOverview(List<ContentCompareResultOverview> contentCompareOverview) {
         this.contentCompareOverview = contentCompareOverview;
         return this;
@@ -91,9 +93,6 @@ public class ContentCompareResult  {
 
     
     public ContentCompareResult addContentCompareOverviewItem(ContentCompareResultOverview contentCompareOverviewItem) {
-        if (this.contentCompareOverview == null) {
-            this.contentCompareOverview = new ArrayList<>();
-        }
         this.contentCompareOverview.add(contentCompareOverviewItem);
         return this;
     }
@@ -118,6 +117,8 @@ public class ContentCompareResult  {
         this.contentCompareOverview = contentCompareOverview;
     }
 
+    
+
     public ContentCompareResult withContentCompareOverviewCount(Integer contentCompareOverviewCount) {
         this.contentCompareOverviewCount = contentCompareOverviewCount;
         return this;
@@ -138,6 +139,8 @@ public class ContentCompareResult  {
         this.contentCompareOverviewCount = contentCompareOverviewCount;
     }
 
+    
+
     public ContentCompareResult withContentCompareDetails(List<ContentCompareResultDetails> contentCompareDetails) {
         this.contentCompareDetails = contentCompareDetails;
         return this;
@@ -145,9 +148,6 @@ public class ContentCompareResult  {
 
     
     public ContentCompareResult addContentCompareDetailsItem(ContentCompareResultDetails contentCompareDetailsItem) {
-        if (this.contentCompareDetails == null) {
-            this.contentCompareDetails = new ArrayList<>();
-        }
         this.contentCompareDetails.add(contentCompareDetailsItem);
         return this;
     }
@@ -172,6 +172,8 @@ public class ContentCompareResult  {
         this.contentCompareDetails = contentCompareDetails;
     }
 
+    
+
     public ContentCompareResult withContentCompareDiffs(List<ContentCompareResultDiffs> contentCompareDiffs) {
         this.contentCompareDiffs = contentCompareDiffs;
         return this;
@@ -179,9 +181,6 @@ public class ContentCompareResult  {
 
     
     public ContentCompareResult addContentCompareDiffsItem(ContentCompareResultDiffs contentCompareDiffsItem) {
-        if (this.contentCompareDiffs == null) {
-            this.contentCompareDiffs = new ArrayList<>();
-        }
         this.contentCompareDiffs.add(contentCompareDiffsItem);
         return this;
     }
@@ -206,6 +205,8 @@ public class ContentCompareResult  {
         this.contentCompareDiffs = contentCompareDiffs;
     }
 
+    
+
     public ContentCompareResult withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -226,6 +227,8 @@ public class ContentCompareResult  {
         this.errorCode = errorCode;
     }
 
+    
+
     public ContentCompareResult withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -245,6 +248,9 @@ public class ContentCompareResult  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

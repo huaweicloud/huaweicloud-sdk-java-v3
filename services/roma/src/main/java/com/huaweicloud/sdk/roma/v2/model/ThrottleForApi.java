@@ -355,7 +355,7 @@ public class ThrottleForApi  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -373,7 +373,7 @@ public class ThrottleForApi  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_time")
     
-    private OffsetDateTime bindTime = null;
+    private OffsetDateTime bindTime;
 
     public ThrottleForApi withAppCallLimits(Integer appCallLimits) {
         this.appCallLimits = appCallLimits;
@@ -395,6 +395,8 @@ public class ThrottleForApi  {
         this.appCallLimits = appCallLimits;
     }
 
+    
+
     public ThrottleForApi withName(String name) {
         this.name = name;
         return this;
@@ -414,6 +416,8 @@ public class ThrottleForApi  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ThrottleForApi withTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
@@ -435,6 +439,8 @@ public class ThrottleForApi  {
         this.timeUnit = timeUnit;
     }
 
+    
+
     public ThrottleForApi withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -454,6 +460,8 @@ public class ThrottleForApi  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ThrottleForApi withApiCallLimits(Integer apiCallLimits) {
         this.apiCallLimits = apiCallLimits;
@@ -475,6 +483,8 @@ public class ThrottleForApi  {
         this.apiCallLimits = apiCallLimits;
     }
 
+    
+
     public ThrottleForApi withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -494,6 +504,8 @@ public class ThrottleForApi  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ThrottleForApi withEnableAdaptiveControl(String enableAdaptiveControl) {
         this.enableAdaptiveControl = enableAdaptiveControl;
@@ -515,6 +527,8 @@ public class ThrottleForApi  {
         this.enableAdaptiveControl = enableAdaptiveControl;
     }
 
+    
+
     public ThrottleForApi withUserCallLimits(Integer userCallLimits) {
         this.userCallLimits = userCallLimits;
         return this;
@@ -534,6 +548,8 @@ public class ThrottleForApi  {
     public void setUserCallLimits(Integer userCallLimits) {
         this.userCallLimits = userCallLimits;
     }
+
+    
 
     public ThrottleForApi withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -555,6 +571,8 @@ public class ThrottleForApi  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public ThrottleForApi withIpCallLimits(Integer ipCallLimits) {
         this.ipCallLimits = ipCallLimits;
         return this;
@@ -574,6 +592,8 @@ public class ThrottleForApi  {
     public void setIpCallLimits(Integer ipCallLimits) {
         this.ipCallLimits = ipCallLimits;
     }
+
+    
 
     public ThrottleForApi withId(String id) {
         this.id = id;
@@ -595,6 +615,8 @@ public class ThrottleForApi  {
         this.id = id;
     }
 
+    
+
     public ThrottleForApi withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
@@ -614,6 +636,8 @@ public class ThrottleForApi  {
     public void setBindNum(Integer bindNum) {
         this.bindNum = bindNum;
     }
+
+    
 
     public ThrottleForApi withIsIncluSpecialThrottle(IsIncluSpecialThrottleEnum isIncluSpecialThrottle) {
         this.isIncluSpecialThrottle = isIncluSpecialThrottle;
@@ -635,6 +659,8 @@ public class ThrottleForApi  {
         this.isIncluSpecialThrottle = isIncluSpecialThrottle;
     }
 
+    
+
     public ThrottleForApi withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -654,6 +680,8 @@ public class ThrottleForApi  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ThrottleForApi withEnvName(String envName) {
         this.envName = envName;
@@ -675,6 +703,8 @@ public class ThrottleForApi  {
         this.envName = envName;
     }
 
+    
+
     public ThrottleForApi withBindId(String bindId) {
         this.bindId = bindId;
         return this;
@@ -695,6 +725,8 @@ public class ThrottleForApi  {
         this.bindId = bindId;
     }
 
+    
+
     public ThrottleForApi withBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
         return this;
@@ -714,6 +746,9 @@ public class ThrottleForApi  {
     public void setBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

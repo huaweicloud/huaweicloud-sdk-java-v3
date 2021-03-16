@@ -24,7 +24,7 @@ public class StartServersInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="servers")
     
-    private List<ServersList> servers = new ArrayList<>();
+    private List<ServersList> servers = null;
     
     public StartServersInfo withServers(List<ServersList> servers) {
         this.servers = servers;
@@ -56,6 +56,9 @@ public class StartServersInfo  {
     public void setServers(List<ServersList> servers) {
         this.servers = servers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

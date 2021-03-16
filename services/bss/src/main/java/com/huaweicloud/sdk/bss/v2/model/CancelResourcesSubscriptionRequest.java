@@ -22,7 +22,7 @@ public class CancelResourcesSubscriptionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UnsubscribeResourcesReq body = null;
+    private UnsubscribeResourcesReq body;
 
     public CancelResourcesSubscriptionRequest withBody(UnsubscribeResourcesReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CancelResourcesSubscriptionRequest  {
     public void setBody(UnsubscribeResourcesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

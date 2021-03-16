@@ -271,6 +271,8 @@ public class ThrottleBaseInfo  {
         this.appCallLimits = appCallLimits;
     }
 
+    
+
     public ThrottleBaseInfo withName(String name) {
         this.name = name;
         return this;
@@ -290,6 +292,8 @@ public class ThrottleBaseInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ThrottleBaseInfo withTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
@@ -311,6 +315,8 @@ public class ThrottleBaseInfo  {
         this.timeUnit = timeUnit;
     }
 
+    
+
     public ThrottleBaseInfo withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -330,6 +336,8 @@ public class ThrottleBaseInfo  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ThrottleBaseInfo withApiCallLimits(Integer apiCallLimits) {
         this.apiCallLimits = apiCallLimits;
@@ -351,6 +359,8 @@ public class ThrottleBaseInfo  {
         this.apiCallLimits = apiCallLimits;
     }
 
+    
+
     public ThrottleBaseInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -370,6 +380,8 @@ public class ThrottleBaseInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ThrottleBaseInfo withEnableAdaptiveControl(String enableAdaptiveControl) {
         this.enableAdaptiveControl = enableAdaptiveControl;
@@ -391,6 +403,8 @@ public class ThrottleBaseInfo  {
         this.enableAdaptiveControl = enableAdaptiveControl;
     }
 
+    
+
     public ThrottleBaseInfo withUserCallLimits(Integer userCallLimits) {
         this.userCallLimits = userCallLimits;
         return this;
@@ -410,6 +424,8 @@ public class ThrottleBaseInfo  {
     public void setUserCallLimits(Integer userCallLimits) {
         this.userCallLimits = userCallLimits;
     }
+
+    
 
     public ThrottleBaseInfo withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -431,6 +447,8 @@ public class ThrottleBaseInfo  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public ThrottleBaseInfo withIpCallLimits(Integer ipCallLimits) {
         this.ipCallLimits = ipCallLimits;
         return this;
@@ -450,6 +468,9 @@ public class ThrottleBaseInfo  {
     public void setIpCallLimits(Integer ipCallLimits) {
         this.ipCallLimits = ipCallLimits;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class UrlDomainsResp  {
         this.id = id;
     }
 
+    
+
     public UrlDomainsResp withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -86,6 +88,8 @@ public class UrlDomainsResp  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public UrlDomainsResp withCnameStatus(Integer cnameStatus) {
         this.cnameStatus = cnameStatus;
@@ -107,6 +111,8 @@ public class UrlDomainsResp  {
         this.cnameStatus = cnameStatus;
     }
 
+    
+
     public UrlDomainsResp withSslId(String sslId) {
         this.sslId = sslId;
         return this;
@@ -127,6 +133,8 @@ public class UrlDomainsResp  {
         this.sslId = sslId;
     }
 
+    
+
     public UrlDomainsResp withSslName(String sslName) {
         this.sslName = sslName;
         return this;
@@ -146,6 +154,9 @@ public class UrlDomainsResp  {
     public void setSslName(String sslName) {
         this.sslName = sslName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

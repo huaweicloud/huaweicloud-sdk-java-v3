@@ -28,13 +28,13 @@ public class DeviceShadowData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="desired")
     
-    private DeviceShadowProperties desired = null;
+    private DeviceShadowProperties desired;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reported")
     
-    private DeviceShadowProperties reported = null;
+    private DeviceShadowProperties reported;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class DeviceShadowData  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public DeviceShadowData withDesired(DeviceShadowProperties desired) {
         this.desired = desired;
@@ -89,6 +91,8 @@ public class DeviceShadowData  {
         this.desired = desired;
     }
 
+    
+
     public DeviceShadowData withReported(DeviceShadowProperties reported) {
         this.reported = reported;
         return this;
@@ -116,6 +120,8 @@ public class DeviceShadowData  {
         this.reported = reported;
     }
 
+    
+
     public DeviceShadowData withVersion(Long version) {
         this.version = version;
         return this;
@@ -135,6 +141,9 @@ public class DeviceShadowData  {
     public void setVersion(Long version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

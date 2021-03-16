@@ -55,6 +55,8 @@ public class LbaasListeners  {
         this.poolId = poolId;
     }
 
+    
+
     public LbaasListeners withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
         return this;
@@ -77,6 +79,8 @@ public class LbaasListeners  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public LbaasListeners withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -96,6 +100,9 @@ public class LbaasListeners  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

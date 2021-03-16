@@ -311,13 +311,13 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private OffsetDateTime lastModified = null;
+    private OffsetDateTime lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_code")
     
-    private FuncCode funcCode = null;
+    private FuncCode funcCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -335,7 +335,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="strategy_config")
     
-    private StrategyConfig strategyConfig = null;
+    private StrategyConfig strategyConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -363,6 +363,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.funcUrn = funcUrn;
     }
 
+    
+
     public UpdateFunctionCodeResponse withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -382,6 +384,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public void setFuncName(String funcName) {
         this.funcName = funcName;
     }
+
+    
 
     public UpdateFunctionCodeResponse withDomainId(String domainId) {
         this.domainId = domainId;
@@ -403,6 +407,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
+    
+
     public UpdateFunctionCodeResponse withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
         return this;
@@ -422,6 +428,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public void setRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
     }
+
+    
 
     public UpdateFunctionCodeResponse withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
@@ -443,6 +451,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.codeType = codeType;
     }
 
+    
+
     public UpdateFunctionCodeResponse withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
         return this;
@@ -462,6 +472,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public void setCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
     }
+
+    
 
     public UpdateFunctionCodeResponse withCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
@@ -483,6 +495,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.codeFilename = codeFilename;
     }
 
+    
+
     public UpdateFunctionCodeResponse withCodeSize(Long codeSize) {
         this.codeSize = codeSize;
         return this;
@@ -502,6 +516,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public void setCodeSize(Long codeSize) {
         this.codeSize = codeSize;
     }
+
+    
 
     public UpdateFunctionCodeResponse withDigest(String digest) {
         this.digest = digest;
@@ -523,6 +539,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.digest = digest;
     }
 
+    
+
     public UpdateFunctionCodeResponse withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -542,6 +560,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public void setLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
     }
+
+    
 
     public UpdateFunctionCodeResponse withFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
@@ -570,6 +590,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.funcCode = funcCode;
     }
 
+    
+
     public UpdateFunctionCodeResponse withConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
         return this;
@@ -590,6 +612,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.concurrency = concurrency;
     }
 
+    
+
     public UpdateFunctionCodeResponse withDependList(List<String> dependList) {
         this.dependList = dependList;
         return this;
@@ -597,9 +621,6 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
 
     
     public UpdateFunctionCodeResponse addDependListItem(String dependListItem) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
         this.dependList.add(dependListItem);
         return this;
     }
@@ -623,6 +644,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public void setDependList(List<String> dependList) {
         this.dependList = dependList;
     }
+
+    
 
     public UpdateFunctionCodeResponse withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
@@ -651,6 +674,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.strategyConfig = strategyConfig;
     }
 
+    
+
     public UpdateFunctionCodeResponse withDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -658,9 +683,6 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
 
     
     public UpdateFunctionCodeResponse addDependenciesItem(Dependency dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
@@ -684,6 +706,9 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public void setDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

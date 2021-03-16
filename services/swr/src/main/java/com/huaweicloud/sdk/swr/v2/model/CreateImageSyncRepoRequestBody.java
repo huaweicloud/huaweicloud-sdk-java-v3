@@ -61,6 +61,8 @@ public class CreateImageSyncRepoRequestBody  {
         this.remoteRegionId = remoteRegionId;
     }
 
+    
+
     public CreateImageSyncRepoRequestBody withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
         return this;
@@ -80,6 +82,8 @@ public class CreateImageSyncRepoRequestBody  {
     public void setRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
     }
+
+    
 
     public CreateImageSyncRepoRequestBody withSyncAuto(Boolean syncAuto) {
         this.syncAuto = syncAuto;
@@ -101,6 +105,8 @@ public class CreateImageSyncRepoRequestBody  {
         this.syncAuto = syncAuto;
     }
 
+    
+
     public CreateImageSyncRepoRequestBody withOverride(Boolean override) {
         this.override = override;
         return this;
@@ -120,6 +126,9 @@ public class CreateImageSyncRepoRequestBody  {
     public void setOverride(Boolean override) {
         this.override = override;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

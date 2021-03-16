@@ -67,6 +67,8 @@ public class VolumeTypeExtraSpecs  {
         this.reSKEYAvailabilityZones = reSKEYAvailabilityZones;
     }
 
+    
+
     public VolumeTypeExtraSpecs withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -86,6 +88,8 @@ public class VolumeTypeExtraSpecs  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public VolumeTypeExtraSpecs withOsVendorExtendedSoldOutAvailabilityZones(String osVendorExtendedSoldOutAvailabilityZones) {
         this.osVendorExtendedSoldOutAvailabilityZones = osVendorExtendedSoldOutAvailabilityZones;
@@ -107,6 +111,8 @@ public class VolumeTypeExtraSpecs  {
         this.osVendorExtendedSoldOutAvailabilityZones = osVendorExtendedSoldOutAvailabilityZones;
     }
 
+    
+
     public VolumeTypeExtraSpecs withVolumeBackendName(String volumeBackendName) {
         this.volumeBackendName = volumeBackendName;
         return this;
@@ -127,6 +133,8 @@ public class VolumeTypeExtraSpecs  {
         this.volumeBackendName = volumeBackendName;
     }
 
+    
+
     public VolumeTypeExtraSpecs withHwAvailabilityZone(String hwAvailabilityZone) {
         this.hwAvailabilityZone = hwAvailabilityZone;
         return this;
@@ -146,6 +154,9 @@ public class VolumeTypeExtraSpecs  {
     public void setHwAvailabilityZone(String hwAvailabilityZone) {
         this.hwAvailabilityZone = hwAvailabilityZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

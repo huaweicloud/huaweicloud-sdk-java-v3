@@ -45,7 +45,7 @@ public class SendVerificationCodeV2Req  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scene")
     
-    private Integer scene = 29;
+    private Integer scene;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class SendVerificationCodeV2Req  {
         this.receiverType = receiverType;
     }
 
+    
+
     public SendVerificationCodeV2Req withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -97,6 +99,8 @@ public class SendVerificationCodeV2Req  {
         this.timeout = timeout;
     }
 
+    
+
     public SendVerificationCodeV2Req withEmail(String email) {
         this.email = email;
         return this;
@@ -117,6 +121,8 @@ public class SendVerificationCodeV2Req  {
         this.email = email;
     }
 
+    
+
     public SendVerificationCodeV2Req withLang(String lang) {
         this.lang = lang;
         return this;
@@ -136,6 +142,8 @@ public class SendVerificationCodeV2Req  {
     public void setLang(String lang) {
         this.lang = lang;
     }
+
+    
 
     public SendVerificationCodeV2Req withScene(Integer scene) {
         this.scene = scene;
@@ -159,6 +167,8 @@ public class SendVerificationCodeV2Req  {
         this.scene = scene;
     }
 
+    
+
     public SendVerificationCodeV2Req withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -178,6 +188,9 @@ public class SendVerificationCodeV2Req  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

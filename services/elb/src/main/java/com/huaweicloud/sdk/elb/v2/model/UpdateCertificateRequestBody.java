@@ -73,6 +73,8 @@ public class UpdateCertificateRequestBody  {
         this.certificate = certificate;
     }
 
+    
+
     public UpdateCertificateRequestBody withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -92,6 +94,8 @@ public class UpdateCertificateRequestBody  {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
+
+    
 
     public UpdateCertificateRequestBody withDescription(String description) {
         this.description = description;
@@ -113,6 +117,8 @@ public class UpdateCertificateRequestBody  {
         this.description = description;
     }
 
+    
+
     public UpdateCertificateRequestBody withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -132,6 +138,8 @@ public class UpdateCertificateRequestBody  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public UpdateCertificateRequestBody withName(String name) {
         this.name = name;
@@ -153,6 +161,8 @@ public class UpdateCertificateRequestBody  {
         this.name = name;
     }
 
+    
+
     public UpdateCertificateRequestBody withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -172,6 +182,9 @@ public class UpdateCertificateRequestBody  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

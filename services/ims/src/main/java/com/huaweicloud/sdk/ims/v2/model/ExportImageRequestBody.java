@@ -143,6 +143,8 @@ public class ExportImageRequestBody  {
         this.bucketUrl = bucketUrl;
     }
 
+    
+
     public ExportImageRequestBody withFileFormat(FileFormatEnum fileFormat) {
         this.fileFormat = fileFormat;
         return this;
@@ -162,6 +164,9 @@ public class ExportImageRequestBody  {
     public void setFileFormat(FileFormatEnum fileFormat) {
         this.fileFormat = fileFormat;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

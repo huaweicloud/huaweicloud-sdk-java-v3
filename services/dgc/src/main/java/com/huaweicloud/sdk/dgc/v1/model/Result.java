@@ -61,6 +61,8 @@ public class Result  {
         this.message = message;
     }
 
+    
+
     public Result withRowCount(Integer rowCount) {
         this.rowCount = rowCount;
         return this;
@@ -80,6 +82,8 @@ public class Result  {
     public void setRowCount(Integer rowCount) {
         this.rowCount = rowCount;
     }
+
+    
 
     public Result withRows(String rows) {
         this.rows = rows;
@@ -101,6 +105,8 @@ public class Result  {
         this.rows = rows;
     }
 
+    
+
     public Result withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -120,6 +126,9 @@ public class Result  {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

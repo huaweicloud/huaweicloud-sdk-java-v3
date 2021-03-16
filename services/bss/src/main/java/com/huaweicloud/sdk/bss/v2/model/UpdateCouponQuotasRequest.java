@@ -22,7 +22,7 @@ public class UpdateCouponQuotasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AdjustCouponQuotasReq body = null;
+    private AdjustCouponQuotasReq body;
 
     public UpdateCouponQuotasRequest withBody(AdjustCouponQuotasReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateCouponQuotasRequest  {
     public void setBody(AdjustCouponQuotasReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

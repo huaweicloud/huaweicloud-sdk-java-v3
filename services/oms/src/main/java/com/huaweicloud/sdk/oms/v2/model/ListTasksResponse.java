@@ -41,9 +41,6 @@ public class ListTasksResponse extends SdkResponse {
 
     
     public ListTasksResponse addTasksItem(TaskResp tasksItem) {
-        if (this.tasks == null) {
-            this.tasks = new ArrayList<>();
-        }
         this.tasks.add(tasksItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListTasksResponse extends SdkResponse {
         this.tasks = tasks;
     }
 
+    
+
     public ListTasksResponse withCount(Long count) {
         this.count = count;
         return this;
@@ -89,6 +88,9 @@ public class ListTasksResponse extends SdkResponse {
     public void setCount(Long count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

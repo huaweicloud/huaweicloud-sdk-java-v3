@@ -49,6 +49,8 @@ public class RestoreTableInfo  {
         this.oldName = oldName;
     }
 
+    
+
     public RestoreTableInfo withNewName(String newName) {
         this.newName = newName;
         return this;
@@ -68,6 +70,9 @@ public class RestoreTableInfo  {
     public void setNewName(String newName) {
         this.newName = newName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

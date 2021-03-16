@@ -67,6 +67,8 @@ public class ListAllResourcesRequest  {
         this.regionId = regionId;
     }
 
+    
+
     public ListAllResourcesRequest withEpId(String epId) {
         this.epId = epId;
         return this;
@@ -87,6 +89,8 @@ public class ListAllResourcesRequest  {
         this.epId = epId;
     }
 
+    
+
     public ListAllResourcesRequest withType(String type) {
         this.type = type;
         return this;
@@ -106,6 +110,8 @@ public class ListAllResourcesRequest  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ListAllResourcesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -129,6 +135,8 @@ public class ListAllResourcesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListAllResourcesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -148,6 +156,9 @@ public class ListAllResourcesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class UpdateEventRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateEventRequestBody body = null;
+    private UpdateEventRequestBody body;
 
     public UpdateEventRequest withEventId(String eventId) {
         this.eventId = eventId;
@@ -56,6 +56,8 @@ public class UpdateEventRequest  {
         this.eventId = eventId;
     }
 
+    
+
     public UpdateEventRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
         return this;
@@ -75,6 +77,8 @@ public class UpdateEventRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
 
     public UpdateEventRequest withBody(UpdateEventRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateEventRequest  {
     public void setBody(UpdateEventRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

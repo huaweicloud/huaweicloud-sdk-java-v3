@@ -61,6 +61,8 @@ public class DeleteStreamForbiddenRequest  {
         this.specifyProject = specifyProject;
     }
 
+    
+
     public DeleteStreamForbiddenRequest withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -80,6 +82,8 @@ public class DeleteStreamForbiddenRequest  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public DeleteStreamForbiddenRequest withAppName(String appName) {
         this.appName = appName;
@@ -101,6 +105,8 @@ public class DeleteStreamForbiddenRequest  {
         this.appName = appName;
     }
 
+    
+
     public DeleteStreamForbiddenRequest withStreamName(String streamName) {
         this.streamName = streamName;
         return this;
@@ -120,6 +126,9 @@ public class DeleteStreamForbiddenRequest  {
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class UpdateQualityEnhanceTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateQualityEnhanceTemplateReq body = null;
+    private UpdateQualityEnhanceTemplateReq body;
 
     public UpdateQualityEnhanceTemplateRequest withBody(UpdateQualityEnhanceTemplateReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateQualityEnhanceTemplateRequest  {
     public void setBody(UpdateQualityEnhanceTemplateReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

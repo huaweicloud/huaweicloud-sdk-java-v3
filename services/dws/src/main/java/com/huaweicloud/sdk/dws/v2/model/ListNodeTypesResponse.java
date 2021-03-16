@@ -35,9 +35,6 @@ public class ListNodeTypesResponse extends SdkResponse {
 
     
     public ListNodeTypesResponse addNodeTypesItem(NodeTypes nodeTypesItem) {
-        if (this.nodeTypes == null) {
-            this.nodeTypes = new ArrayList<>();
-        }
         this.nodeTypes.add(nodeTypesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListNodeTypesResponse extends SdkResponse {
     public void setNodeTypes(List<NodeTypes> nodeTypes) {
         this.nodeTypes = nodeTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

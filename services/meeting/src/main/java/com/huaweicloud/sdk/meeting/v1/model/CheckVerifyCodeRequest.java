@@ -34,7 +34,7 @@ public class CheckVerifyCodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VerifyCodeCheckDTO body = null;
+    private VerifyCodeCheckDTO body;
 
     public CheckVerifyCodeRequest withXRequestID(String xRequestID) {
         this.xRequestID = xRequestID;
@@ -58,6 +58,8 @@ public class CheckVerifyCodeRequest  {
         this.xRequestID = xRequestID;
     }
 
+    
+
     public CheckVerifyCodeRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class CheckVerifyCodeRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public CheckVerifyCodeRequest withBody(VerifyCodeCheckDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CheckVerifyCodeRequest  {
     public void setBody(VerifyCodeCheckDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

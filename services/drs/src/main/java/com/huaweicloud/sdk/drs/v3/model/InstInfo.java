@@ -321,6 +321,8 @@ public class InstInfo  {
         this.engineType = engineType;
     }
 
+    
+
     public InstInfo withInstType(InstTypeEnum instType) {
         this.instType = instType;
         return this;
@@ -340,6 +342,8 @@ public class InstInfo  {
     public void setInstType(InstTypeEnum instType) {
         this.instType = instType;
     }
+
+    
 
     public InstInfo withIp(String ip) {
         this.ip = ip;
@@ -361,6 +365,8 @@ public class InstInfo  {
         this.ip = ip;
     }
 
+    
+
     public InstInfo withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
@@ -380,6 +386,8 @@ public class InstInfo  {
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
+
+    
 
     public InstInfo withStartTime(Integer startTime) {
         this.startTime = startTime;
@@ -401,6 +409,8 @@ public class InstInfo  {
         this.startTime = startTime;
     }
 
+    
+
     public InstInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -421,6 +431,8 @@ public class InstInfo  {
         this.status = status;
     }
 
+    
+
     public InstInfo withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
         return this;
@@ -440,6 +452,9 @@ public class InstInfo  {
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

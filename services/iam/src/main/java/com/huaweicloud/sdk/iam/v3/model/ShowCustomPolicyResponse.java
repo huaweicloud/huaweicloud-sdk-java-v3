@@ -24,7 +24,7 @@ public class ShowCustomPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private PolicyRoleResult role = null;
+    private PolicyRoleResult role;
 
     public ShowCustomPolicyResponse withRole(PolicyRoleResult role) {
         this.role = role;
@@ -52,6 +52,9 @@ public class ShowCustomPolicyResponse extends SdkResponse {
     public void setRole(PolicyRoleResult role) {
         this.role = role;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,9 +63,6 @@ public class AmountInfomationV2  {
 
     
     public AmountInfomationV2 addDiscountsItem(DiscountItemV2 discountsItem) {
-        if (this.discounts == null) {
-            this.discounts = new ArrayList<>();
-        }
         this.discounts.add(discountsItem);
         return this;
     }
@@ -90,6 +87,8 @@ public class AmountInfomationV2  {
         this.discounts = discounts;
     }
 
+    
+
     public AmountInfomationV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
@@ -109,6 +108,8 @@ public class AmountInfomationV2  {
     public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
+
+    
 
     public AmountInfomationV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
@@ -130,6 +131,8 @@ public class AmountInfomationV2  {
         this.couponAmount = couponAmount;
     }
 
+    
+
     public AmountInfomationV2 withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
@@ -149,6 +152,8 @@ public class AmountInfomationV2  {
     public void setStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
     }
+
+    
 
     public AmountInfomationV2 withCommissionAmount(Double commissionAmount) {
         this.commissionAmount = commissionAmount;
@@ -170,6 +175,8 @@ public class AmountInfomationV2  {
         this.commissionAmount = commissionAmount;
     }
 
+    
+
     public AmountInfomationV2 withConsumedAmount(Double consumedAmount) {
         this.consumedAmount = consumedAmount;
         return this;
@@ -189,6 +196,9 @@ public class AmountInfomationV2  {
     public void setConsumedAmount(Double consumedAmount) {
         this.consumedAmount = consumedAmount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

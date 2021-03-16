@@ -23,7 +23,7 @@ public class CreateAppQuotaBindingApp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_ids")
     
-    private List<String> appIds = new ArrayList<>();
+    private List<String> appIds = null;
     
     public CreateAppQuotaBindingApp withAppIds(List<String> appIds) {
         this.appIds = appIds;
@@ -55,6 +55,9 @@ public class CreateAppQuotaBindingApp  {
     public void setAppIds(List<String> appIds) {
         this.appIds = appIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

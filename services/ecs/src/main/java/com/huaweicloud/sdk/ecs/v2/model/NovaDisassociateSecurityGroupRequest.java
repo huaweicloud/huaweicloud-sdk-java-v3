@@ -28,7 +28,7 @@ public class NovaDisassociateSecurityGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NovaDisassociateSecurityGroupRequestBody body = null;
+    private NovaDisassociateSecurityGroupRequestBody body;
 
     public NovaDisassociateSecurityGroupRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class NovaDisassociateSecurityGroupRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public NovaDisassociateSecurityGroupRequest withBody(NovaDisassociateSecurityGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class NovaDisassociateSecurityGroupRequest  {
     public void setBody(NovaDisassociateSecurityGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,13 +23,13 @@ public class PublicIp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    private Eip eip = null;
+    private Eip eip;
 
     public PublicIp withId(UUID id) {
         this.id = id;
@@ -50,6 +50,8 @@ public class PublicIp  {
     public void setId(UUID id) {
         this.id = id;
     }
+
+    
 
     public PublicIp withEip(Eip eip) {
         this.eip = eip;
@@ -77,6 +79,9 @@ public class PublicIp  {
     public void setEip(Eip eip) {
         this.eip = eip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

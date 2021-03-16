@@ -28,7 +28,7 @@ public class BatchStopServersOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="servers")
     
-    private List<ServerId> servers = new ArrayList<>();
+    private List<ServerId> servers = null;
         /**
      * 关机类型，默认为SOFT：  - SOFT：普通关机（默认）。 - HARD：强制关机。
      */
@@ -112,7 +112,7 @@ public class BatchStopServersOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.SOFT;
+    private TypeEnum type;
 
     public BatchStopServersOption withServers(List<ServerId> servers) {
         this.servers = servers;
@@ -145,6 +145,8 @@ public class BatchStopServersOption  {
         this.servers = servers;
     }
 
+    
+
     public BatchStopServersOption withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -164,6 +166,9 @@ public class BatchStopServersOption  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

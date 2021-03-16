@@ -218,7 +218,7 @@ public class ApiBaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -446,13 +446,13 @@ public class ApiBaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -714,6 +714,8 @@ public class ApiBaseInfo  {
         this.name = name;
     }
 
+    
+
     public ApiBaseInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -733,6 +735,8 @@ public class ApiBaseInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ApiBaseInfo withVersion(String version) {
         this.version = version;
@@ -754,6 +758,8 @@ public class ApiBaseInfo  {
         this.version = version;
     }
 
+    
+
     public ApiBaseInfo withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -773,6 +779,8 @@ public class ApiBaseInfo  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiBaseInfo withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -794,6 +802,8 @@ public class ApiBaseInfo  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiBaseInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -814,6 +824,8 @@ public class ApiBaseInfo  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiBaseInfo withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -833,6 +845,8 @@ public class ApiBaseInfo  {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ApiBaseInfo withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -861,6 +875,8 @@ public class ApiBaseInfo  {
         this.authOpt = authOpt;
     }
 
+    
+
     public ApiBaseInfo withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -880,6 +896,8 @@ public class ApiBaseInfo  {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ApiBaseInfo withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -901,6 +919,8 @@ public class ApiBaseInfo  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiBaseInfo withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -920,6 +940,8 @@ public class ApiBaseInfo  {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ApiBaseInfo withRemark(String remark) {
         this.remark = remark;
@@ -941,6 +963,8 @@ public class ApiBaseInfo  {
         this.remark = remark;
     }
 
+    
+
     public ApiBaseInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -960,6 +984,8 @@ public class ApiBaseInfo  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiBaseInfo withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -981,6 +1007,8 @@ public class ApiBaseInfo  {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ApiBaseInfo withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1000,6 +1028,8 @@ public class ApiBaseInfo  {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ApiBaseInfo withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1021,6 +1051,8 @@ public class ApiBaseInfo  {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ApiBaseInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1041,6 +1073,8 @@ public class ApiBaseInfo  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiBaseInfo withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1048,9 +1082,6 @@ public class ApiBaseInfo  {
 
     
     public ApiBaseInfo addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1075,6 +1106,8 @@ public class ApiBaseInfo  {
         this.tags = tags;
     }
 
+    
+
     public ApiBaseInfo withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1094,6 +1127,8 @@ public class ApiBaseInfo  {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ApiBaseInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1115,6 +1150,8 @@ public class ApiBaseInfo  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiBaseInfo withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1135,6 +1172,8 @@ public class ApiBaseInfo  {
         this.domainName = domainName;
     }
 
+    
+
     public ApiBaseInfo withTag(String tag) {
         this.tag = tag;
         return this;
@@ -1154,6 +1193,9 @@ public class ApiBaseInfo  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -193,6 +193,8 @@ public class ShowScriptResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowScriptResponse withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -212,6 +214,8 @@ public class ShowScriptResponse extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ShowScriptResponse withDirectory(String directory) {
         this.directory = directory;
@@ -233,6 +237,8 @@ public class ShowScriptResponse extends SdkResponse {
         this.directory = directory;
     }
 
+    
+
     public ShowScriptResponse withContent(String content) {
         this.content = content;
         return this;
@@ -252,6 +258,8 @@ public class ShowScriptResponse extends SdkResponse {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
 
     public ShowScriptResponse withConnectionName(String connectionName) {
         this.connectionName = connectionName;
@@ -273,6 +281,8 @@ public class ShowScriptResponse extends SdkResponse {
         this.connectionName = connectionName;
     }
 
+    
+
     public ShowScriptResponse withDatabase(String database) {
         this.database = database;
         return this;
@@ -292,6 +302,8 @@ public class ShowScriptResponse extends SdkResponse {
     public void setDatabase(String database) {
         this.database = database;
     }
+
+    
 
     public ShowScriptResponse withQueueName(String queueName) {
         this.queueName = queueName;
@@ -313,6 +325,8 @@ public class ShowScriptResponse extends SdkResponse {
         this.queueName = queueName;
     }
 
+    
+
     public ShowScriptResponse withConfiguration(String _configuration) {
         this._configuration = _configuration;
         return this;
@@ -332,6 +346,9 @@ public class ShowScriptResponse extends SdkResponse {
     public void setConfiguration(String _configuration) {
         this._configuration = _configuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

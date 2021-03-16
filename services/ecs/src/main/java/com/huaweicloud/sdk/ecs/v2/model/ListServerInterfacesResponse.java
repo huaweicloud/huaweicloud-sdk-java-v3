@@ -35,9 +35,6 @@ public class ListServerInterfacesResponse extends SdkResponse {
 
     
     public ListServerInterfacesResponse addInterfaceAttachmentsItem(InterfaceAttachment interfaceAttachmentsItem) {
-        if (this.interfaceAttachments == null) {
-            this.interfaceAttachments = new ArrayList<>();
-        }
         this.interfaceAttachments.add(interfaceAttachmentsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListServerInterfacesResponse extends SdkResponse {
     public void setInterfaceAttachments(List<InterfaceAttachment> interfaceAttachments) {
         this.interfaceAttachments = interfaceAttachments;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

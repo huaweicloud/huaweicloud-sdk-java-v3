@@ -190,7 +190,7 @@ public class CreateSinkTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_destination_descriptor")
     
-    private ObsDestinationDescriptor obsDestinationDescriptor = null;
+    private ObsDestinationDescriptor obsDestinationDescriptor;
 
     public CreateSinkTaskReq withSourceType(SourceTypeEnum sourceType) {
         this.sourceType = sourceType;
@@ -212,6 +212,8 @@ public class CreateSinkTaskReq  {
         this.sourceType = sourceType;
     }
 
+    
+
     public CreateSinkTaskReq withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -232,6 +234,8 @@ public class CreateSinkTaskReq  {
         this.taskName = taskName;
     }
 
+    
+
     public CreateSinkTaskReq withDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
         return this;
@@ -251,6 +255,8 @@ public class CreateSinkTaskReq  {
     public void setDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
     }
+
+    
 
     public CreateSinkTaskReq withObsDestinationDescriptor(ObsDestinationDescriptor obsDestinationDescriptor) {
         this.obsDestinationDescriptor = obsDestinationDescriptor;
@@ -278,6 +284,9 @@ public class CreateSinkTaskReq  {
     public void setObsDestinationDescriptor(ObsDestinationDescriptor obsDestinationDescriptor) {
         this.obsDestinationDescriptor = obsDestinationDescriptor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

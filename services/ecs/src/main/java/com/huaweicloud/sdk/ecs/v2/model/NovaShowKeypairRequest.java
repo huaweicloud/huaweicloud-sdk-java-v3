@@ -49,6 +49,8 @@ public class NovaShowKeypairRequest  {
         this.keypairName = keypairName;
     }
 
+    
+
     public NovaShowKeypairRequest withOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
         return this;
@@ -68,6 +70,9 @@ public class NovaShowKeypairRequest  {
     public void setOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

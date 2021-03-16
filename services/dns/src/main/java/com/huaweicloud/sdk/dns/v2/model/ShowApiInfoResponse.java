@@ -24,7 +24,7 @@ public class ShowApiInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    private VersionItem version = null;
+    private VersionItem version;
 
     public ShowApiInfoResponse withVersion(VersionItem version) {
         this.version = version;
@@ -52,6 +52,9 @@ public class ShowApiInfoResponse extends SdkResponse {
     public void setVersion(VersionItem version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

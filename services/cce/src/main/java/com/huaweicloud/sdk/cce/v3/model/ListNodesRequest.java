@@ -49,6 +49,8 @@ public class ListNodesRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public ListNodesRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -68,6 +70,9 @@ public class ListNodesRequest  {
     public void setErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class Files  {
         this.fileName = fileName;
     }
 
+    
+
     public Files withSize(String size) {
         this.size = size;
         return this;
@@ -75,6 +77,8 @@ public class Files  {
         this.size = size;
     }
 
+    
+
     public Files withUpdateAt(String updateAt) {
         this.updateAt = updateAt;
         return this;
@@ -94,6 +98,9 @@ public class Files  {
     public void setUpdateAt(String updateAt) {
         this.updateAt = updateAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

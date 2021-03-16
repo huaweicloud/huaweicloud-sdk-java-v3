@@ -111,6 +111,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowCorpBasicInfoResponse withName(String name) {
         this.name = name;
         return this;
@@ -130,6 +132,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowCorpBasicInfoResponse withAddress(String address) {
         this.address = address;
@@ -151,6 +155,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.address = address;
     }
 
+    
+
     public ShowCorpBasicInfoResponse withAdminName(String adminName) {
         this.adminName = adminName;
         return this;
@@ -170,6 +176,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     public void setAdminName(String adminName) {
         this.adminName = adminName;
     }
+
+    
 
     public ShowCorpBasicInfoResponse withAccount(String account) {
         this.account = account;
@@ -191,6 +199,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.account = account;
     }
 
+    
+
     public ShowCorpBasicInfoResponse withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -210,6 +220,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public ShowCorpBasicInfoResponse withCountry(String country) {
         this.country = country;
@@ -231,6 +243,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.country = country;
     }
 
+    
+
     public ShowCorpBasicInfoResponse withEmail(String email) {
         this.email = email;
         return this;
@@ -250,6 +264,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public ShowCorpBasicInfoResponse withEnableSMS(Boolean enableSMS) {
         this.enableSMS = enableSMS;
@@ -271,6 +287,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.enableSMS = enableSMS;
     }
 
+    
+
     public ShowCorpBasicInfoResponse withEnableCloudDisk(Boolean enableCloudDisk) {
         this.enableCloudDisk = enableCloudDisk;
         return this;
@@ -290,6 +308,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     public void setEnableCloudDisk(Boolean enableCloudDisk) {
         this.enableCloudDisk = enableCloudDisk;
     }
+
+    
 
     public ShowCorpBasicInfoResponse withEnablePstn(Boolean enablePstn) {
         this.enablePstn = enablePstn;
@@ -311,6 +331,8 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.enablePstn = enablePstn;
     }
 
+    
+
     public ShowCorpBasicInfoResponse withAutoUserCreate(Boolean autoUserCreate) {
         this.autoUserCreate = autoUserCreate;
         return this;
@@ -330,6 +352,9 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     public void setAutoUserCreate(Boolean autoUserCreate) {
         this.autoUserCreate = autoUserCreate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

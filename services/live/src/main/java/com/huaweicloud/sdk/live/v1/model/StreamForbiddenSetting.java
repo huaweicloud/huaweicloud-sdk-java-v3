@@ -40,7 +40,7 @@ public class StreamForbiddenSetting  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resume_time")
     
-    private OffsetDateTime resumeTime = null;
+    private OffsetDateTime resumeTime;
 
     public StreamForbiddenSetting withDomain(String domain) {
         this.domain = domain;
@@ -62,6 +62,8 @@ public class StreamForbiddenSetting  {
         this.domain = domain;
     }
 
+    
+
     public StreamForbiddenSetting withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -81,6 +83,8 @@ public class StreamForbiddenSetting  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public StreamForbiddenSetting withStreamName(String streamName) {
         this.streamName = streamName;
@@ -102,6 +106,8 @@ public class StreamForbiddenSetting  {
         this.streamName = streamName;
     }
 
+    
+
     public StreamForbiddenSetting withResumeTime(OffsetDateTime resumeTime) {
         this.resumeTime = resumeTime;
         return this;
@@ -121,6 +127,9 @@ public class StreamForbiddenSetting  {
     public void setResumeTime(OffsetDateTime resumeTime) {
         this.resumeTime = resumeTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

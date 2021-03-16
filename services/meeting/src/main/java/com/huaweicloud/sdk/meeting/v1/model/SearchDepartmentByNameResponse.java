@@ -35,9 +35,6 @@ public class SearchDepartmentByNameResponse extends SdkResponse {
 
     
     public SearchDepartmentByNameResponse addBodyItem(QueryDeptResultDTO bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class SearchDepartmentByNameResponse extends SdkResponse {
     public void setBody(List<QueryDeptResultDTO> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

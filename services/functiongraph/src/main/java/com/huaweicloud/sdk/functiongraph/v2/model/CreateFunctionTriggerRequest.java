@@ -28,7 +28,7 @@ public class CreateFunctionTriggerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateFunctionTriggerRequestBody body = null;
+    private CreateFunctionTriggerRequestBody body;
 
     public CreateFunctionTriggerRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -49,6 +49,8 @@ public class CreateFunctionTriggerRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
 
     public CreateFunctionTriggerRequest withBody(CreateFunctionTriggerRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateFunctionTriggerRequest  {
     public void setBody(CreateFunctionTriggerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -21,7 +21,7 @@ public class ListSecurityGroupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class ListSecurityGroupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSecurityGroupsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -80,6 +82,8 @@ public class ListSecurityGroupsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListSecurityGroupsRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -101,6 +105,8 @@ public class ListSecurityGroupsRequest  {
         this.vpcId = vpcId;
     }
 
+    
+
     public ListSecurityGroupsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -120,6 +126,9 @@ public class ListSecurityGroupsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

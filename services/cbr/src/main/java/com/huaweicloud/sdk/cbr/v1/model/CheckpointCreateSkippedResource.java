@@ -67,6 +67,8 @@ public class CheckpointCreateSkippedResource  {
         this.id = id;
     }
 
+    
+
     public CheckpointCreateSkippedResource withType(String type) {
         this.type = type;
         return this;
@@ -86,6 +88,8 @@ public class CheckpointCreateSkippedResource  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public CheckpointCreateSkippedResource withName(String name) {
         this.name = name;
@@ -107,6 +111,8 @@ public class CheckpointCreateSkippedResource  {
         this.name = name;
     }
 
+    
+
     public CheckpointCreateSkippedResource withCode(String code) {
         this.code = code;
         return this;
@@ -127,6 +133,8 @@ public class CheckpointCreateSkippedResource  {
         this.code = code;
     }
 
+    
+
     public CheckpointCreateSkippedResource withReason(String reason) {
         this.reason = reason;
         return this;
@@ -146,6 +154,9 @@ public class CheckpointCreateSkippedResource  {
     public void setReason(String reason) {
         this.reason = reason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

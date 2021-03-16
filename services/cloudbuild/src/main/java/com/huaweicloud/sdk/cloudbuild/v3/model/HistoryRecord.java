@@ -73,6 +73,8 @@ public class HistoryRecord  {
         this.recordId = recordId;
     }
 
+    
+
     public HistoryRecord withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -92,6 +94,8 @@ public class HistoryRecord  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public HistoryRecord withBuildNumber(String buildNumber) {
         this.buildNumber = buildNumber;
@@ -113,6 +117,8 @@ public class HistoryRecord  {
         this.buildNumber = buildNumber;
     }
 
+    
+
     public HistoryRecord withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -132,6 +138,8 @@ public class HistoryRecord  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public HistoryRecord withEndTime(String endTime) {
         this.endTime = endTime;
@@ -153,6 +161,8 @@ public class HistoryRecord  {
         this.endTime = endTime;
     }
 
+    
+
     public HistoryRecord withResult(String result) {
         this.result = result;
         return this;
@@ -172,6 +182,9 @@ public class HistoryRecord  {
     public void setResult(String result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

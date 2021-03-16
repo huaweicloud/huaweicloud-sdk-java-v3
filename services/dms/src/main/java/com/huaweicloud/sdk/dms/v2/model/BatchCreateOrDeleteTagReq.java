@@ -134,6 +134,8 @@ public class BatchCreateOrDeleteTagReq  {
         this.action = action;
     }
 
+    
+
     public BatchCreateOrDeleteTagReq withTags(List<BatchCreateOrDeleteTagReqTags> tags) {
         this.tags = tags;
         return this;
@@ -141,9 +143,6 @@ public class BatchCreateOrDeleteTagReq  {
 
     
     public BatchCreateOrDeleteTagReq addTagsItem(BatchCreateOrDeleteTagReqTags tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -167,6 +166,9 @@ public class BatchCreateOrDeleteTagReq  {
     public void setTags(List<BatchCreateOrDeleteTagReqTags> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

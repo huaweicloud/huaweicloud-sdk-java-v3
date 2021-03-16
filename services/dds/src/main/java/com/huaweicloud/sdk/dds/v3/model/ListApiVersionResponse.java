@@ -35,9 +35,6 @@ public class ListApiVersionResponse extends SdkResponse {
 
     
     public ListApiVersionResponse addVersionsItem(ApiVersion versionsItem) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
-        }
         this.versions.add(versionsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListApiVersionResponse extends SdkResponse {
     public void setVersions(List<ApiVersion> versions) {
         this.versions = versions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

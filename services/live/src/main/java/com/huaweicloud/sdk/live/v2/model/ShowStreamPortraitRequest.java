@@ -55,6 +55,8 @@ public class ShowStreamPortraitRequest  {
         this.playDomain = playDomain;
     }
 
+    
+
     public ShowStreamPortraitRequest withStream(String stream) {
         this.stream = stream;
         return this;
@@ -75,6 +77,8 @@ public class ShowStreamPortraitRequest  {
         this.stream = stream;
     }
 
+    
+
     public ShowStreamPortraitRequest withTime(String time) {
         this.time = time;
         return this;
@@ -94,6 +98,9 @@ public class ShowStreamPortraitRequest  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

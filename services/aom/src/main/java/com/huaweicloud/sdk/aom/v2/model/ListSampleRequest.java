@@ -28,7 +28,7 @@ public class ListSampleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QuerySampleParam body = null;
+    private QuerySampleParam body;
 
     public ListSampleRequest withFillValue(String fillValue) {
         this.fillValue = fillValue;
@@ -49,6 +49,8 @@ public class ListSampleRequest  {
     public void setFillValue(String fillValue) {
         this.fillValue = fillValue;
     }
+
+    
 
     public ListSampleRequest withBody(QuerySampleParam body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ListSampleRequest  {
     public void setBody(QuerySampleParam body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

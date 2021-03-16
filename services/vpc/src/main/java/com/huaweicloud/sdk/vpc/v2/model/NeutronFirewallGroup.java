@@ -60,7 +60,7 @@ public class NeutronFirewallGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ports")
     
-    private List<String> ports = new ArrayList<>();
+    private List<String> ports = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,13 +90,13 @@ public class NeutronFirewallGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
     public NeutronFirewallGroup withId(String id) {
         this.id = id;
@@ -118,6 +118,8 @@ public class NeutronFirewallGroup  {
         this.id = id;
     }
 
+    
+
     public NeutronFirewallGroup withName(String name) {
         this.name = name;
         return this;
@@ -137,6 +139,8 @@ public class NeutronFirewallGroup  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NeutronFirewallGroup withDescription(String description) {
         this.description = description;
@@ -158,6 +162,8 @@ public class NeutronFirewallGroup  {
         this.description = description;
     }
 
+    
+
     public NeutronFirewallGroup withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -177,6 +183,8 @@ public class NeutronFirewallGroup  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public NeutronFirewallGroup withEgressFirewallPolicyId(String egressFirewallPolicyId) {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
@@ -198,6 +206,8 @@ public class NeutronFirewallGroup  {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
     }
 
+    
+
     public NeutronFirewallGroup withIngressFirewallPolicyId(String ingressFirewallPolicyId) {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
         return this;
@@ -217,6 +227,8 @@ public class NeutronFirewallGroup  {
     public void setIngressFirewallPolicyId(String ingressFirewallPolicyId) {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
     }
+
+    
 
     public NeutronFirewallGroup withPorts(List<String> ports) {
         this.ports = ports;
@@ -249,6 +261,8 @@ public class NeutronFirewallGroup  {
         this.ports = ports;
     }
 
+    
+
     public NeutronFirewallGroup withPublic(Boolean _public) {
         this._public = _public;
         return this;
@@ -268,6 +282,8 @@ public class NeutronFirewallGroup  {
     public void setPublic(Boolean _public) {
         this._public = _public;
     }
+
+    
 
     public NeutronFirewallGroup withStatus(String status) {
         this.status = status;
@@ -289,6 +305,8 @@ public class NeutronFirewallGroup  {
         this.status = status;
     }
 
+    
+
     public NeutronFirewallGroup withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -308,6 +326,8 @@ public class NeutronFirewallGroup  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public NeutronFirewallGroup withProjectId(String projectId) {
         this.projectId = projectId;
@@ -329,6 +349,8 @@ public class NeutronFirewallGroup  {
         this.projectId = projectId;
     }
 
+    
+
     public NeutronFirewallGroup withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -349,6 +371,8 @@ public class NeutronFirewallGroup  {
         this.createdAt = createdAt;
     }
 
+    
+
     public NeutronFirewallGroup withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -368,6 +392,9 @@ public class NeutronFirewallGroup  {
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

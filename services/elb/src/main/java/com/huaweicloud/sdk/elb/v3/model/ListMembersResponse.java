@@ -33,7 +33,7 @@ public class ListMembersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class ListMembersResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListMembersResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -88,6 +90,8 @@ public class ListMembersResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    
+
     public ListMembersResponse withMembers(List<Member> members) {
         this.members = members;
         return this;
@@ -95,9 +99,6 @@ public class ListMembersResponse extends SdkResponse {
 
     
     public ListMembersResponse addMembersItem(Member membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -121,6 +122,9 @@ public class ListMembersResponse extends SdkResponse {
     public void setMembers(List<Member> members) {
         this.members = members;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

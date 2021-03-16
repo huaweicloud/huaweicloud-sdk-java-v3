@@ -35,9 +35,6 @@ public class SendMessagesResponse extends SdkResponse {
 
     
     public SendMessagesResponse addMessagesItem(SendMessagesRespMessages messagesItem) {
-        if (this.messages == null) {
-            this.messages = new ArrayList<>();
-        }
         this.messages.add(messagesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class SendMessagesResponse extends SdkResponse {
     public void setMessages(List<SendMessagesRespMessages> messages) {
         this.messages = messages;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

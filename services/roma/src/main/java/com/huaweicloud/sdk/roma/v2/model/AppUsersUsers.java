@@ -157,6 +157,8 @@ public class AppUsersUsers  {
         this.id = id;
     }
 
+    
+
     public AppUsersUsers withName(String name) {
         this.name = name;
         return this;
@@ -177,6 +179,8 @@ public class AppUsersUsers  {
         this.name = name;
     }
 
+    
+
     public AppUsersUsers withRoles(List<RolesEnum> roles) {
         this.roles = roles;
         return this;
@@ -184,9 +188,6 @@ public class AppUsersUsers  {
 
     
     public AppUsersUsers addRolesItem(RolesEnum rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -210,6 +211,9 @@ public class AppUsersUsers  {
     public void setRoles(List<RolesEnum> roles) {
         this.roles = roles;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

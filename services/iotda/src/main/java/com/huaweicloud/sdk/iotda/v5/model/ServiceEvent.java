@@ -52,6 +52,8 @@ public class ServiceEvent  {
         this.eventType = eventType;
     }
 
+    
+
     public ServiceEvent withParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
         return this;
@@ -59,9 +61,6 @@ public class ServiceEvent  {
 
     
     public ServiceEvent addParasItem(ServiceCommandPara parasItem) {
-        if (this.paras == null) {
-            this.paras = new ArrayList<>();
-        }
         this.paras.add(parasItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class ServiceEvent  {
     public void setParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

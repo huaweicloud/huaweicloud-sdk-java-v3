@@ -143,6 +143,8 @@ public class UserAuth  {
         this.userId = userId;
     }
 
+    
+
     public UserAuth withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -163,6 +165,8 @@ public class UserAuth  {
         this.userName = userName;
     }
 
+    
+
     public UserAuth withAuth(AuthEnum auth) {
         this.auth = auth;
         return this;
@@ -182,6 +186,9 @@ public class UserAuth  {
     public void setAuth(AuthEnum auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

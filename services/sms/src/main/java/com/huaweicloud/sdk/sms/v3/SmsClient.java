@@ -260,7 +260,7 @@ public class SmsClient {
     }
 
     /**
-     * 查询迁移错误列表
+     * 查询待迁移源端的所有错误
      * 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
      *
      * @param ListErrorServersRequest 请求对象
@@ -271,7 +271,7 @@ public class SmsClient {
     }
 
     /**
-     * 查询迁移错误列表
+     * 查询待迁移源端的所有错误
      * 主机迁移过程中可能发生错误，使用该接口可以批量查询迁移过程中出现错误的源端服务器信息，以及它们的错误信息。
      *
      * @param ListErrorServersRequest 请求对象

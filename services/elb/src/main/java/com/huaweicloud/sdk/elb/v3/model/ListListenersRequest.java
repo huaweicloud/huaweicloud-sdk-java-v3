@@ -183,6 +183,8 @@ public class ListListenersRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListListenersRequest withClientCaTlsContainerRef(List<String> clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
         return this;
@@ -190,9 +192,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addClientCaTlsContainerRefItem(String clientCaTlsContainerRefItem) {
-        if (this.clientCaTlsContainerRef == null) {
-            this.clientCaTlsContainerRef = new ArrayList<>();
-        }
         this.clientCaTlsContainerRef.add(clientCaTlsContainerRefItem);
         return this;
     }
@@ -217,6 +216,8 @@ public class ListListenersRequest  {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
 
+    
+
     public ListListenersRequest withClientTimeout(List<Integer> clientTimeout) {
         this.clientTimeout = clientTimeout;
         return this;
@@ -224,9 +225,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addClientTimeoutItem(Integer clientTimeoutItem) {
-        if (this.clientTimeout == null) {
-            this.clientTimeout = new ArrayList<>();
-        }
         this.clientTimeout.add(clientTimeoutItem);
         return this;
     }
@@ -251,6 +249,8 @@ public class ListListenersRequest  {
         this.clientTimeout = clientTimeout;
     }
 
+    
+
     public ListListenersRequest withConnectionLimit(List<Integer> connectionLimit) {
         this.connectionLimit = connectionLimit;
         return this;
@@ -258,9 +258,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addConnectionLimitItem(Integer connectionLimitItem) {
-        if (this.connectionLimit == null) {
-            this.connectionLimit = new ArrayList<>();
-        }
         this.connectionLimit.add(connectionLimitItem);
         return this;
     }
@@ -285,6 +282,8 @@ public class ListListenersRequest  {
         this.connectionLimit = connectionLimit;
     }
 
+    
+
     public ListListenersRequest withDefaultPoolId(List<String> defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
         return this;
@@ -292,9 +291,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addDefaultPoolIdItem(String defaultPoolIdItem) {
-        if (this.defaultPoolId == null) {
-            this.defaultPoolId = new ArrayList<>();
-        }
         this.defaultPoolId.add(defaultPoolIdItem);
         return this;
     }
@@ -319,6 +315,8 @@ public class ListListenersRequest  {
         this.defaultPoolId = defaultPoolId;
     }
 
+    
+
     public ListListenersRequest withDefaultTlsContainerRef(List<String> defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
@@ -326,9 +324,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addDefaultTlsContainerRefItem(String defaultTlsContainerRefItem) {
-        if (this.defaultTlsContainerRef == null) {
-            this.defaultTlsContainerRef = new ArrayList<>();
-        }
         this.defaultTlsContainerRef.add(defaultTlsContainerRefItem);
         return this;
     }
@@ -353,6 +348,8 @@ public class ListListenersRequest  {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
 
+    
+
     public ListListenersRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -360,9 +357,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -387,6 +381,8 @@ public class ListListenersRequest  {
         this.description = description;
     }
 
+    
+
     public ListListenersRequest withEnableMemberRetry(Boolean enableMemberRetry) {
         this.enableMemberRetry = enableMemberRetry;
         return this;
@@ -407,6 +403,8 @@ public class ListListenersRequest  {
         this.enableMemberRetry = enableMemberRetry;
     }
 
+    
+
     public ListListenersRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -414,9 +412,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
@@ -441,6 +436,8 @@ public class ListListenersRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListListenersRequest withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
@@ -461,6 +458,8 @@ public class ListListenersRequest  {
         this.http2Enable = http2Enable;
     }
 
+    
+
     public ListListenersRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -468,9 +467,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -495,6 +491,8 @@ public class ListListenersRequest  {
         this.id = id;
     }
 
+    
+
     public ListListenersRequest withKeepaliveTimeout(List<Integer> keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
         return this;
@@ -502,9 +500,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addKeepaliveTimeoutItem(Integer keepaliveTimeoutItem) {
-        if (this.keepaliveTimeout == null) {
-            this.keepaliveTimeout = new ArrayList<>();
-        }
         this.keepaliveTimeout.add(keepaliveTimeoutItem);
         return this;
     }
@@ -529,6 +524,8 @@ public class ListListenersRequest  {
         this.keepaliveTimeout = keepaliveTimeout;
     }
 
+    
+
     public ListListenersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -551,6 +548,8 @@ public class ListListenersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListListenersRequest withLoadbalancerId(List<String> loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
@@ -558,9 +557,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
-        if (this.loadbalancerId == null) {
-            this.loadbalancerId = new ArrayList<>();
-        }
         this.loadbalancerId.add(loadbalancerIdItem);
         return this;
     }
@@ -585,6 +581,8 @@ public class ListListenersRequest  {
         this.loadbalancerId = loadbalancerId;
     }
 
+    
+
     public ListListenersRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -605,6 +603,8 @@ public class ListListenersRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListListenersRequest withMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
         return this;
@@ -612,9 +612,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addMemberAddressItem(String memberAddressItem) {
-        if (this.memberAddress == null) {
-            this.memberAddress = new ArrayList<>();
-        }
         this.memberAddress.add(memberAddressItem);
         return this;
     }
@@ -639,6 +636,8 @@ public class ListListenersRequest  {
         this.memberAddress = memberAddress;
     }
 
+    
+
     public ListListenersRequest withMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
         return this;
@@ -646,9 +645,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
-        if (this.memberDeviceId == null) {
-            this.memberDeviceId = new ArrayList<>();
-        }
         this.memberDeviceId.add(memberDeviceIdItem);
         return this;
     }
@@ -673,6 +669,8 @@ public class ListListenersRequest  {
         this.memberDeviceId = memberDeviceId;
     }
 
+    
+
     public ListListenersRequest withMemberTimeout(List<Integer> memberTimeout) {
         this.memberTimeout = memberTimeout;
         return this;
@@ -680,9 +678,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addMemberTimeoutItem(Integer memberTimeoutItem) {
-        if (this.memberTimeout == null) {
-            this.memberTimeout = new ArrayList<>();
-        }
         this.memberTimeout.add(memberTimeoutItem);
         return this;
     }
@@ -707,6 +702,8 @@ public class ListListenersRequest  {
         this.memberTimeout = memberTimeout;
     }
 
+    
+
     public ListListenersRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -714,9 +711,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -741,6 +735,8 @@ public class ListListenersRequest  {
         this.name = name;
     }
 
+    
+
     public ListListenersRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
@@ -761,6 +757,8 @@ public class ListListenersRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListListenersRequest withProtocol(List<String> protocol) {
         this.protocol = protocol;
         return this;
@@ -768,9 +766,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addProtocolItem(String protocolItem) {
-        if (this.protocol == null) {
-            this.protocol = new ArrayList<>();
-        }
         this.protocol.add(protocolItem);
         return this;
     }
@@ -795,6 +790,8 @@ public class ListListenersRequest  {
         this.protocol = protocol;
     }
 
+    
+
     public ListListenersRequest withProtocolPort(List<String> protocolPort) {
         this.protocolPort = protocolPort;
         return this;
@@ -802,9 +799,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addProtocolPortItem(String protocolPortItem) {
-        if (this.protocolPort == null) {
-            this.protocolPort = new ArrayList<>();
-        }
         this.protocolPort.add(protocolPortItem);
         return this;
     }
@@ -829,6 +823,8 @@ public class ListListenersRequest  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public ListListenersRequest withTlsCiphersPolicy(List<String> tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
@@ -836,9 +832,6 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addTlsCiphersPolicyItem(String tlsCiphersPolicyItem) {
-        if (this.tlsCiphersPolicy == null) {
-            this.tlsCiphersPolicy = new ArrayList<>();
-        }
         this.tlsCiphersPolicy.add(tlsCiphersPolicyItem);
         return this;
     }
@@ -863,6 +856,8 @@ public class ListListenersRequest  {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
 
+    
+
     public ListListenersRequest withTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
         return this;
@@ -882,6 +877,9 @@ public class ListListenersRequest  {
     public void setTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -67,6 +67,8 @@ public class QueryVmrPkgResResultDTO  {
         this.vmrPkgId = vmrPkgId;
     }
 
+    
+
     public QueryVmrPkgResResultDTO withVmrName(String vmrName) {
         this.vmrName = vmrName;
         return this;
@@ -86,6 +88,8 @@ public class QueryVmrPkgResResultDTO  {
     public void setVmrName(String vmrName) {
         this.vmrName = vmrName;
     }
+
+    
 
     public QueryVmrPkgResResultDTO withVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
@@ -107,6 +111,8 @@ public class QueryVmrPkgResResultDTO  {
         this.vmrPkgParties = vmrPkgParties;
     }
 
+    
+
     public QueryVmrPkgResResultDTO withVmrPkgCount(Integer vmrPkgCount) {
         this.vmrPkgCount = vmrPkgCount;
         return this;
@@ -127,6 +133,8 @@ public class QueryVmrPkgResResultDTO  {
         this.vmrPkgCount = vmrPkgCount;
     }
 
+    
+
     public QueryVmrPkgResResultDTO withVmrPkgUsedCount(Integer vmrPkgUsedCount) {
         this.vmrPkgUsedCount = vmrPkgUsedCount;
         return this;
@@ -146,6 +154,9 @@ public class QueryVmrPkgResResultDTO  {
     public void setVmrPkgUsedCount(Integer vmrPkgUsedCount) {
         this.vmrPkgUsedCount = vmrPkgUsedCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

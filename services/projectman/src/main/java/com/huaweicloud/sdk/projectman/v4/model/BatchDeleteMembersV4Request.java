@@ -28,7 +28,7 @@ public class BatchDeleteMembersV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteMembersV4RequestBody body = null;
+    private BatchDeleteMembersV4RequestBody body;
 
     public BatchDeleteMembersV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class BatchDeleteMembersV4Request  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public BatchDeleteMembersV4Request withBody(BatchDeleteMembersV4RequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchDeleteMembersV4Request  {
     public void setBody(BatchDeleteMembersV4RequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

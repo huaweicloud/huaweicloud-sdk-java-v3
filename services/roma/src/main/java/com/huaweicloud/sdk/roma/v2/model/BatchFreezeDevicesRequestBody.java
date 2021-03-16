@@ -23,7 +23,7 @@ public class BatchFreezeDevicesRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="device_ids")
     
-    private List<Integer> deviceIds = new ArrayList<>();
+    private List<Integer> deviceIds = null;
     
     public BatchFreezeDevicesRequestBody withDeviceIds(List<Integer> deviceIds) {
         this.deviceIds = deviceIds;
@@ -55,6 +55,9 @@ public class BatchFreezeDevicesRequestBody  {
     public void setDeviceIds(List<Integer> deviceIds) {
         this.deviceIds = deviceIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

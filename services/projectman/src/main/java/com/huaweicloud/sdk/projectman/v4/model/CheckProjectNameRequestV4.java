@@ -42,6 +42,9 @@ public class CheckProjectNameRequestV4  {
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

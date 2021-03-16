@@ -61,6 +61,8 @@ public class ListFeaturesV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListFeaturesV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListFeaturesV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListFeaturesV2Response withFeatures(List<FeatureInfo> features) {
         this.features = features;
         return this;
@@ -88,9 +92,6 @@ public class ListFeaturesV2Response extends SdkResponse {
 
     
     public ListFeaturesV2Response addFeaturesItem(FeatureInfo featuresItem) {
-        if (this.features == null) {
-            this.features = new ArrayList<>();
-        }
         this.features.add(featuresItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListFeaturesV2Response extends SdkResponse {
     public void setFeatures(List<FeatureInfo> features) {
         this.features = features;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

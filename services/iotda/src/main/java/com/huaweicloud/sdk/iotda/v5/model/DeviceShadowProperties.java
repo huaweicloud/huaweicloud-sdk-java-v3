@@ -21,7 +21,7 @@ public class DeviceShadowProperties  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private Object properties = null;
+    private Object properties;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,6 +49,8 @@ public class DeviceShadowProperties  {
         this.properties = properties;
     }
 
+    
+
     public DeviceShadowProperties withEventTime(String eventTime) {
         this.eventTime = eventTime;
         return this;
@@ -68,6 +70,9 @@ public class DeviceShadowProperties  {
     public void setEventTime(String eventTime) {
         this.eventTime = eventTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

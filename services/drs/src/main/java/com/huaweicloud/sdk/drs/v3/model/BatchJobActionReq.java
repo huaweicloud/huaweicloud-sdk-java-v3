@@ -55,6 +55,8 @@ public class BatchJobActionReq  {
         this.action = action;
     }
 
+    
+
     public BatchJobActionReq withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -75,6 +77,8 @@ public class BatchJobActionReq  {
         this.jobId = jobId;
     }
 
+    
+
     public BatchJobActionReq withProperty(String property) {
         this.property = property;
         return this;
@@ -94,6 +98,9 @@ public class BatchJobActionReq  {
     public void setProperty(String property) {
         this.property = property;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

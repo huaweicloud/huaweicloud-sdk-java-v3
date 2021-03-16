@@ -55,6 +55,8 @@ public class ErrorLog  {
         this.time = time;
     }
 
+    
+
     public ErrorLog withLevel(String level) {
         this.level = level;
         return this;
@@ -75,6 +77,8 @@ public class ErrorLog  {
         this.level = level;
     }
 
+    
+
     public ErrorLog withContent(String content) {
         this.content = content;
         return this;
@@ -94,6 +98,9 @@ public class ErrorLog  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

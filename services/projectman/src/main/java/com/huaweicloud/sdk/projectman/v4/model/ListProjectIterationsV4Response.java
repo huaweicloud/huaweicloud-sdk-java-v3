@@ -54,6 +54,8 @@ public class ListProjectIterationsV4Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListProjectIterationsV4Response withIterations(List<ListProjectVersionsV4ResponseBodyIterations> iterations) {
         this.iterations = iterations;
         return this;
@@ -61,9 +63,6 @@ public class ListProjectIterationsV4Response extends SdkResponse {
 
     
     public ListProjectIterationsV4Response addIterationsItem(ListProjectVersionsV4ResponseBodyIterations iterationsItem) {
-        if (this.iterations == null) {
-            this.iterations = new ArrayList<>();
-        }
         this.iterations.add(iterationsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListProjectIterationsV4Response extends SdkResponse {
     public void setIterations(List<ListProjectVersionsV4ResponseBodyIterations> iterations) {
         this.iterations = iterations;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

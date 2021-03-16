@@ -61,6 +61,8 @@ public class ApplyConfigurationResponseApplyResults  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ApplyConfigurationResponseApplyResults withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -80,6 +82,8 @@ public class ApplyConfigurationResponseApplyResults  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
+
+    
 
     public ApplyConfigurationResponseApplyResults withRestartRequired(Boolean restartRequired) {
         this.restartRequired = restartRequired;
@@ -101,6 +105,8 @@ public class ApplyConfigurationResponseApplyResults  {
         this.restartRequired = restartRequired;
     }
 
+    
+
     public ApplyConfigurationResponseApplyResults withSuccess(Boolean success) {
         this.success = success;
         return this;
@@ -120,6 +126,9 @@ public class ApplyConfigurationResponseApplyResults  {
     public void setSuccess(Boolean success) {
         this.success = success;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

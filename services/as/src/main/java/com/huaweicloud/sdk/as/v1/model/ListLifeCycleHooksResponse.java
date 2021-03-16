@@ -35,9 +35,6 @@ public class ListLifeCycleHooksResponse extends SdkResponse {
 
     
     public ListLifeCycleHooksResponse addLifecycleHooksItem(LifecycleHookList lifecycleHooksItem) {
-        if (this.lifecycleHooks == null) {
-            this.lifecycleHooks = new ArrayList<>();
-        }
         this.lifecycleHooks.add(lifecycleHooksItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListLifeCycleHooksResponse extends SdkResponse {
     public void setLifecycleHooks(List<LifecycleHookList> lifecycleHooks) {
         this.lifecycleHooks = lifecycleHooks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

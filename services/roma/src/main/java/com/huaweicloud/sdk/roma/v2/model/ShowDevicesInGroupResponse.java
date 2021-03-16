@@ -60,6 +60,8 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowDevicesInGroupResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ShowDevicesInGroupResponse withItems(List<DevicesInGroup> items) {
         this.items = items;
         return this;
@@ -87,9 +91,6 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
 
     
     public ShowDevicesInGroupResponse addItemsItem(DevicesInGroup itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
     public void setItems(List<DevicesInGroup> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

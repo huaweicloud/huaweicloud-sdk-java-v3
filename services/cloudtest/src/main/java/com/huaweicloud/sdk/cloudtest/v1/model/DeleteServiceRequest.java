@@ -42,6 +42,9 @@ public class DeleteServiceRequest  {
     public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class IssueStatusResponseV4  {
         this.closedNum = closedNum;
     }
 
+    
+
     public IssueStatusResponseV4 withNewNum(Integer newNum) {
         this.newNum = newNum;
         return this;
@@ -92,6 +94,8 @@ public class IssueStatusResponseV4  {
     public void setNewNum(Integer newNum) {
         this.newNum = newNum;
     }
+
+    
 
     public IssueStatusResponseV4 withProcessNum(Integer processNum) {
         this.processNum = processNum;
@@ -113,6 +117,8 @@ public class IssueStatusResponseV4  {
         this.processNum = processNum;
     }
 
+    
+
     public IssueStatusResponseV4 withRejectedNum(Integer rejectedNum) {
         this.rejectedNum = rejectedNum;
         return this;
@@ -132,6 +138,8 @@ public class IssueStatusResponseV4  {
     public void setRejectedNum(Integer rejectedNum) {
         this.rejectedNum = rejectedNum;
     }
+
+    
 
     public IssueStatusResponseV4 withSolvedNum(Integer solvedNum) {
         this.solvedNum = solvedNum;
@@ -153,6 +161,8 @@ public class IssueStatusResponseV4  {
         this.solvedNum = solvedNum;
     }
 
+    
+
     public IssueStatusResponseV4 withTestNum(Integer testNum) {
         this.testNum = testNum;
         return this;
@@ -172,6 +182,9 @@ public class IssueStatusResponseV4  {
     public void setTestNum(Integer testNum) {
         this.testNum = testNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class ReinstallBaremetalServerOsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private OsReinstallBody body = null;
+    private OsReinstallBody body;
 
     public ReinstallBaremetalServerOsRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class ReinstallBaremetalServerOsRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public ReinstallBaremetalServerOsRequest withBody(OsReinstallBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ReinstallBaremetalServerOsRequest  {
     public void setBody(OsReinstallBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

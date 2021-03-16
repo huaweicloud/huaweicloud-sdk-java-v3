@@ -77,13 +77,13 @@ public class QueryCouponQuotasReqExt  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,9 +98,6 @@ public class QueryCouponQuotasReqExt  {
 
     
     public QueryCouponQuotasReqExt addQuotaIdsItem(String quotaIdsItem) {
-        if (this.quotaIds == null) {
-            this.quotaIds = new ArrayList<>();
-        }
         this.quotaIds.add(quotaIdsItem);
         return this;
     }
@@ -125,6 +122,8 @@ public class QueryCouponQuotasReqExt  {
         this.quotaIds = quotaIds;
     }
 
+    
+
     public QueryCouponQuotasReqExt withQuotaStatusList(List<Integer> quotaStatusList) {
         this.quotaStatusList = quotaStatusList;
         return this;
@@ -132,9 +131,6 @@ public class QueryCouponQuotasReqExt  {
 
     
     public QueryCouponQuotasReqExt addQuotaStatusListItem(Integer quotaStatusListItem) {
-        if (this.quotaStatusList == null) {
-            this.quotaStatusList = new ArrayList<>();
-        }
         this.quotaStatusList.add(quotaStatusListItem);
         return this;
     }
@@ -159,6 +155,8 @@ public class QueryCouponQuotasReqExt  {
         this.quotaStatusList = quotaStatusList;
     }
 
+    
+
     public QueryCouponQuotasReqExt withQuotaType(Integer quotaType) {
         this.quotaType = quotaType;
         return this;
@@ -181,6 +179,8 @@ public class QueryCouponQuotasReqExt  {
         this.quotaType = quotaType;
     }
 
+    
+
     public QueryCouponQuotasReqExt withCreateTimeBegin(String createTimeBegin) {
         this.createTimeBegin = createTimeBegin;
         return this;
@@ -200,6 +200,8 @@ public class QueryCouponQuotasReqExt  {
     public void setCreateTimeBegin(String createTimeBegin) {
         this.createTimeBegin = createTimeBegin;
     }
+
+    
 
     public QueryCouponQuotasReqExt withCreateTimeEnd(String createTimeEnd) {
         this.createTimeEnd = createTimeEnd;
@@ -221,6 +223,8 @@ public class QueryCouponQuotasReqExt  {
         this.createTimeEnd = createTimeEnd;
     }
 
+    
+
     public QueryCouponQuotasReqExt withEffectiveTimeBegin(String effectiveTimeBegin) {
         this.effectiveTimeBegin = effectiveTimeBegin;
         return this;
@@ -240,6 +244,8 @@ public class QueryCouponQuotasReqExt  {
     public void setEffectiveTimeBegin(String effectiveTimeBegin) {
         this.effectiveTimeBegin = effectiveTimeBegin;
     }
+
+    
 
     public QueryCouponQuotasReqExt withEffectiveTimeEnd(String effectiveTimeEnd) {
         this.effectiveTimeEnd = effectiveTimeEnd;
@@ -261,6 +267,8 @@ public class QueryCouponQuotasReqExt  {
         this.effectiveTimeEnd = effectiveTimeEnd;
     }
 
+    
+
     public QueryCouponQuotasReqExt withExpireTimeBegin(String expireTimeBegin) {
         this.expireTimeBegin = expireTimeBegin;
         return this;
@@ -281,6 +289,8 @@ public class QueryCouponQuotasReqExt  {
         this.expireTimeBegin = expireTimeBegin;
     }
 
+    
+
     public QueryCouponQuotasReqExt withExpireTimeEnd(String expireTimeEnd) {
         this.expireTimeEnd = expireTimeEnd;
         return this;
@@ -300,6 +310,8 @@ public class QueryCouponQuotasReqExt  {
     public void setExpireTimeEnd(String expireTimeEnd) {
         this.expireTimeEnd = expireTimeEnd;
     }
+
+    
 
     public QueryCouponQuotasReqExt withOffset(Integer offset) {
         this.offset = offset;
@@ -323,6 +335,8 @@ public class QueryCouponQuotasReqExt  {
         this.offset = offset;
     }
 
+    
+
     public QueryCouponQuotasReqExt withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -345,6 +359,8 @@ public class QueryCouponQuotasReqExt  {
         this.limit = limit;
     }
 
+    
+
     public QueryCouponQuotasReqExt withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -364,6 +380,9 @@ public class QueryCouponQuotasReqExt  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

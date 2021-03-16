@@ -22,7 +22,7 @@ public class CreateNatGatewaySnatRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateNatGatewaySnatRuleRequestOption body = null;
+    private CreateNatGatewaySnatRuleRequestOption body;
 
     public CreateNatGatewaySnatRuleRequest withBody(CreateNatGatewaySnatRuleRequestOption body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateNatGatewaySnatRuleRequest  {
     public void setBody(CreateNatGatewaySnatRuleRequestOption body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

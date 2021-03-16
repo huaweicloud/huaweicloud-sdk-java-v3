@@ -61,6 +61,8 @@ public class Authentification  {
         this.recordName = recordName;
     }
 
+    
+
     public Authentification withRecordType(String recordType) {
         this.recordType = recordType;
         return this;
@@ -80,6 +82,8 @@ public class Authentification  {
     public void setRecordType(String recordType) {
         this.recordType = recordType;
     }
+
+    
 
     public Authentification withRecordValue(String recordValue) {
         this.recordValue = recordValue;
@@ -101,6 +105,8 @@ public class Authentification  {
         this.recordValue = recordValue;
     }
 
+    
+
     public Authentification withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -120,6 +126,9 @@ public class Authentification  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

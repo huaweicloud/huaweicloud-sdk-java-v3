@@ -133,7 +133,7 @@ public class ApiPolicyMockCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<ApiConditionBase> conditions = new ArrayList<>();
+    private List<ApiConditionBase> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -161,6 +161,8 @@ public class ApiPolicyMockCreate  {
         this.resultContent = resultContent;
     }
 
+    
+
     public ApiPolicyMockCreate withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
@@ -180,6 +182,8 @@ public class ApiPolicyMockCreate  {
     public void setEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
     }
+
+    
 
     public ApiPolicyMockCreate withName(String name) {
         this.name = name;
@@ -201,6 +205,8 @@ public class ApiPolicyMockCreate  {
         this.name = name;
     }
 
+    
+
     public ApiPolicyMockCreate withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -208,9 +214,6 @@ public class ApiPolicyMockCreate  {
 
     
     public ApiPolicyMockCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -234,6 +237,8 @@ public class ApiPolicyMockCreate  {
     public void setBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
     }
+
+    
 
     public ApiPolicyMockCreate withConditions(List<ApiConditionBase> conditions) {
         this.conditions = conditions;
@@ -266,6 +271,8 @@ public class ApiPolicyMockCreate  {
         this.conditions = conditions;
     }
 
+    
+
     public ApiPolicyMockCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -285,6 +292,9 @@ public class ApiPolicyMockCreate  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

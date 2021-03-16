@@ -228,7 +228,7 @@ public class ScalingPolicyExecuteLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execute_time")
     
-    private OffsetDateTime executeTime = null;
+    private OffsetDateTime executeTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -456,7 +456,7 @@ public class ScalingPolicyExecuteLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaData metaData = null;
+    private MetaData metaData;
 
     public ScalingPolicyExecuteLogList withStatus(StatusEnum status) {
         this.status = status;
@@ -478,6 +478,8 @@ public class ScalingPolicyExecuteLogList  {
         this.status = status;
     }
 
+    
+
     public ScalingPolicyExecuteLogList withFailedReason(String failedReason) {
         this.failedReason = failedReason;
         return this;
@@ -497,6 +499,8 @@ public class ScalingPolicyExecuteLogList  {
     public void setFailedReason(String failedReason) {
         this.failedReason = failedReason;
     }
+
+    
 
     public ScalingPolicyExecuteLogList withExecuteType(ExecuteTypeEnum executeType) {
         this.executeType = executeType;
@@ -518,6 +522,8 @@ public class ScalingPolicyExecuteLogList  {
         this.executeType = executeType;
     }
 
+    
+
     public ScalingPolicyExecuteLogList withExecuteTime(OffsetDateTime executeTime) {
         this.executeTime = executeTime;
         return this;
@@ -537,6 +543,8 @@ public class ScalingPolicyExecuteLogList  {
     public void setExecuteTime(OffsetDateTime executeTime) {
         this.executeTime = executeTime;
     }
+
+    
 
     public ScalingPolicyExecuteLogList withId(String id) {
         this.id = id;
@@ -558,6 +566,8 @@ public class ScalingPolicyExecuteLogList  {
         this.id = id;
     }
 
+    
+
     public ScalingPolicyExecuteLogList withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -577,6 +587,8 @@ public class ScalingPolicyExecuteLogList  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ScalingPolicyExecuteLogList withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
@@ -598,6 +610,8 @@ public class ScalingPolicyExecuteLogList  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
+    
+
     public ScalingPolicyExecuteLogList withScalingResourceType(ScalingResourceTypeEnum scalingResourceType) {
         this.scalingResourceType = scalingResourceType;
         return this;
@@ -617,6 +631,8 @@ public class ScalingPolicyExecuteLogList  {
     public void setScalingResourceType(ScalingResourceTypeEnum scalingResourceType) {
         this.scalingResourceType = scalingResourceType;
     }
+
+    
 
     public ScalingPolicyExecuteLogList withScalingResourceId(String scalingResourceId) {
         this.scalingResourceId = scalingResourceId;
@@ -638,6 +654,8 @@ public class ScalingPolicyExecuteLogList  {
         this.scalingResourceId = scalingResourceId;
     }
 
+    
+
     public ScalingPolicyExecuteLogList withOldValue(String oldValue) {
         this.oldValue = oldValue;
         return this;
@@ -657,6 +675,8 @@ public class ScalingPolicyExecuteLogList  {
     public void setOldValue(String oldValue) {
         this.oldValue = oldValue;
     }
+
+    
 
     public ScalingPolicyExecuteLogList withDesireValue(String desireValue) {
         this.desireValue = desireValue;
@@ -678,6 +698,8 @@ public class ScalingPolicyExecuteLogList  {
         this.desireValue = desireValue;
     }
 
+    
+
     public ScalingPolicyExecuteLogList withLimitValue(Integer limitValue) {
         this.limitValue = limitValue;
         return this;
@@ -697,6 +719,8 @@ public class ScalingPolicyExecuteLogList  {
     public void setLimitValue(Integer limitValue) {
         this.limitValue = limitValue;
     }
+
+    
 
     public ScalingPolicyExecuteLogList withType(TypeEnum type) {
         this.type = type;
@@ -718,6 +742,8 @@ public class ScalingPolicyExecuteLogList  {
         this.type = type;
     }
 
+    
+
     public ScalingPolicyExecuteLogList withJobRecords(List<JobRecords> jobRecords) {
         this.jobRecords = jobRecords;
         return this;
@@ -725,9 +751,6 @@ public class ScalingPolicyExecuteLogList  {
 
     
     public ScalingPolicyExecuteLogList addJobRecordsItem(JobRecords jobRecordsItem) {
-        if (this.jobRecords == null) {
-            this.jobRecords = new ArrayList<>();
-        }
         this.jobRecords.add(jobRecordsItem);
         return this;
     }
@@ -751,6 +774,8 @@ public class ScalingPolicyExecuteLogList  {
     public void setJobRecords(List<JobRecords> jobRecords) {
         this.jobRecords = jobRecords;
     }
+
+    
 
     public ScalingPolicyExecuteLogList withMetaData(MetaData metaData) {
         this.metaData = metaData;
@@ -778,6 +803,9 @@ public class ScalingPolicyExecuteLogList  {
     public void setMetaData(MetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

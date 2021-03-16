@@ -36,7 +36,7 @@ public class InstanceItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<InstanceItemTagItem> tags = new ArrayList<>();
+    private List<InstanceItemTagItem> tags = null;
     
     public InstanceItem withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -58,6 +58,8 @@ public class InstanceItem  {
         this.instanceId = instanceId;
     }
 
+    
+
     public InstanceItem withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -77,6 +79,8 @@ public class InstanceItem  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
+
+    
 
     public InstanceItem withTags(List<InstanceItemTagItem> tags) {
         this.tags = tags;
@@ -108,6 +112,9 @@ public class InstanceItem  {
     public void setTags(List<InstanceItemTagItem> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -369,13 +369,13 @@ public class QueryJobResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_endpoint")
     
-    private Endpoint sourceEndpoint = null;
+    private Endpoint sourceEndpoint;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dmq_endpoint")
     
-    private Endpoint dmqEndpoint = null;
+    private Endpoint dmqEndpoint;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -387,7 +387,7 @@ public class QueryJobResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_endpoint")
     
-    private Endpoint targetEndpoint = null;
+    private Endpoint targetEndpoint;
     /**
      * 网络类型
      */
@@ -489,7 +489,7 @@ public class QueryJobResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="inst_info")
     
-    private InstInfo instInfo = null;
+    private InstInfo instInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1047,7 +1047,7 @@ public class QueryJobResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_root_db")
     
-    private DefaultRootDb targetRootDb = null;
+    private DefaultRootDb targetRootDb;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1129,6 +1129,8 @@ public class QueryJobResp  {
         this.id = id;
     }
 
+    
+
     public QueryJobResp withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -1148,6 +1150,8 @@ public class QueryJobResp  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public QueryJobResp withName(String name) {
         this.name = name;
@@ -1169,6 +1173,8 @@ public class QueryJobResp  {
         this.name = name;
     }
 
+    
+
     public QueryJobResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -1188,6 +1194,8 @@ public class QueryJobResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public QueryJobResp withDescription(String description) {
         this.description = description;
@@ -1209,6 +1217,8 @@ public class QueryJobResp  {
         this.description = description;
     }
 
+    
+
     public QueryJobResp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -1229,6 +1239,8 @@ public class QueryJobResp  {
         this.createTime = createTime;
     }
 
+    
+
     public QueryJobResp withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
@@ -1248,6 +1260,8 @@ public class QueryJobResp  {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
+
+    
 
     public QueryJobResp withSourceEndpoint(Endpoint sourceEndpoint) {
         this.sourceEndpoint = sourceEndpoint;
@@ -1276,6 +1290,8 @@ public class QueryJobResp  {
         this.sourceEndpoint = sourceEndpoint;
     }
 
+    
+
     public QueryJobResp withDmqEndpoint(Endpoint dmqEndpoint) {
         this.dmqEndpoint = dmqEndpoint;
         return this;
@@ -1303,6 +1319,8 @@ public class QueryJobResp  {
         this.dmqEndpoint = dmqEndpoint;
     }
 
+    
+
     public QueryJobResp withSourceSharding(List<Endpoint> sourceSharding) {
         this.sourceSharding = sourceSharding;
         return this;
@@ -1310,9 +1328,6 @@ public class QueryJobResp  {
 
     
     public QueryJobResp addSourceShardingItem(Endpoint sourceShardingItem) {
-        if (this.sourceSharding == null) {
-            this.sourceSharding = new ArrayList<>();
-        }
         this.sourceSharding.add(sourceShardingItem);
         return this;
     }
@@ -1336,6 +1351,8 @@ public class QueryJobResp  {
     public void setSourceSharding(List<Endpoint> sourceSharding) {
         this.sourceSharding = sourceSharding;
     }
+
+    
 
     public QueryJobResp withTargetEndpoint(Endpoint targetEndpoint) {
         this.targetEndpoint = targetEndpoint;
@@ -1364,6 +1381,8 @@ public class QueryJobResp  {
         this.targetEndpoint = targetEndpoint;
     }
 
+    
+
     public QueryJobResp withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
@@ -1384,6 +1403,8 @@ public class QueryJobResp  {
         this.netType = netType;
     }
 
+    
+
     public QueryJobResp withFailedReason(String failedReason) {
         this.failedReason = failedReason;
         return this;
@@ -1403,6 +1424,8 @@ public class QueryJobResp  {
     public void setFailedReason(String failedReason) {
         this.failedReason = failedReason;
     }
+
+    
 
     public QueryJobResp withInstInfo(InstInfo instInfo) {
         this.instInfo = instInfo;
@@ -1431,6 +1454,8 @@ public class QueryJobResp  {
         this.instInfo = instInfo;
     }
 
+    
+
     public QueryJobResp withActualStartTime(String actualStartTime) {
         this.actualStartTime = actualStartTime;
         return this;
@@ -1450,6 +1475,8 @@ public class QueryJobResp  {
     public void setActualStartTime(String actualStartTime) {
         this.actualStartTime = actualStartTime;
     }
+
+    
 
     public QueryJobResp withFullTransferCompleteTime(String fullTransferCompleteTime) {
         this.fullTransferCompleteTime = fullTransferCompleteTime;
@@ -1471,6 +1498,8 @@ public class QueryJobResp  {
         this.fullTransferCompleteTime = fullTransferCompleteTime;
     }
 
+    
+
     public QueryJobResp withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -1490,6 +1519,8 @@ public class QueryJobResp  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public QueryJobResp withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
@@ -1511,6 +1542,8 @@ public class QueryJobResp  {
         this.jobDirection = jobDirection;
     }
 
+    
+
     public QueryJobResp withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
@@ -1530,6 +1563,8 @@ public class QueryJobResp  {
     public void setDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
     }
+
+    
 
     public QueryJobResp withNeedRestart(Boolean needRestart) {
         this.needRestart = needRestart;
@@ -1551,6 +1586,8 @@ public class QueryJobResp  {
         this.needRestart = needRestart;
     }
 
+    
+
     public QueryJobResp withIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
         return this;
@@ -1570,6 +1607,8 @@ public class QueryJobResp  {
     public void setIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
     }
+
+    
 
     public QueryJobResp withConflictPolicy(ConflictPolicyEnum conflictPolicy) {
         this.conflictPolicy = conflictPolicy;
@@ -1591,6 +1630,8 @@ public class QueryJobResp  {
         this.conflictPolicy = conflictPolicy;
     }
 
+    
+
     public QueryJobResp withFilterDdlPolicy(FilterDdlPolicyEnum filterDdlPolicy) {
         this.filterDdlPolicy = filterDdlPolicy;
         return this;
@@ -1611,6 +1652,8 @@ public class QueryJobResp  {
         this.filterDdlPolicy = filterDdlPolicy;
     }
 
+    
+
     public QueryJobResp withSpeedLimit(List<SpeedLimitInfo> speedLimit) {
         this.speedLimit = speedLimit;
         return this;
@@ -1618,9 +1661,6 @@ public class QueryJobResp  {
 
     
     public QueryJobResp addSpeedLimitItem(SpeedLimitInfo speedLimitItem) {
-        if (this.speedLimit == null) {
-            this.speedLimit = new ArrayList<>();
-        }
         this.speedLimit.add(speedLimitItem);
         return this;
     }
@@ -1645,6 +1685,8 @@ public class QueryJobResp  {
         this.speedLimit = speedLimit;
     }
 
+    
+
     public QueryJobResp withSchemaType(SchemaTypeEnum schemaType) {
         this.schemaType = schemaType;
         return this;
@@ -1664,6 +1706,8 @@ public class QueryJobResp  {
     public void setSchemaType(SchemaTypeEnum schemaType) {
         this.schemaType = schemaType;
     }
+
+    
 
     public QueryJobResp withNodeNum(String nodeNum) {
         this.nodeNum = nodeNum;
@@ -1685,6 +1729,8 @@ public class QueryJobResp  {
         this.nodeNum = nodeNum;
     }
 
+    
+
     public QueryJobResp withObjectSwitch(Boolean objectSwitch) {
         this.objectSwitch = objectSwitch;
         return this;
@@ -1704,6 +1750,8 @@ public class QueryJobResp  {
     public void setObjectSwitch(Boolean objectSwitch) {
         this.objectSwitch = objectSwitch;
     }
+
+    
 
     public QueryJobResp withMasterJobId(String masterJobId) {
         this.masterJobId = masterJobId;
@@ -1725,6 +1773,8 @@ public class QueryJobResp  {
         this.masterJobId = masterJobId;
     }
 
+    
+
     public QueryJobResp withFullMode(String fullMode) {
         this.fullMode = fullMode;
         return this;
@@ -1744,6 +1794,8 @@ public class QueryJobResp  {
     public void setFullMode(String fullMode) {
         this.fullMode = fullMode;
     }
+
+    
 
     public QueryJobResp withStructTrans(Boolean structTrans) {
         this.structTrans = structTrans;
@@ -1765,6 +1817,8 @@ public class QueryJobResp  {
         this.structTrans = structTrans;
     }
 
+    
+
     public QueryJobResp withIndexTrans(Boolean indexTrans) {
         this.indexTrans = indexTrans;
         return this;
@@ -1784,6 +1838,8 @@ public class QueryJobResp  {
     public void setIndexTrans(Boolean indexTrans) {
         this.indexTrans = indexTrans;
     }
+
+    
 
     public QueryJobResp withReplaceDefiner(Boolean replaceDefiner) {
         this.replaceDefiner = replaceDefiner;
@@ -1805,6 +1861,8 @@ public class QueryJobResp  {
         this.replaceDefiner = replaceDefiner;
     }
 
+    
+
     public QueryJobResp withMigrateUser(Boolean migrateUser) {
         this.migrateUser = migrateUser;
         return this;
@@ -1824,6 +1882,8 @@ public class QueryJobResp  {
     public void setMigrateUser(Boolean migrateUser) {
         this.migrateUser = migrateUser;
     }
+
+    
 
     public QueryJobResp withSyncDatabase(Boolean syncDatabase) {
         this.syncDatabase = syncDatabase;
@@ -1845,6 +1905,8 @@ public class QueryJobResp  {
         this.syncDatabase = syncDatabase;
     }
 
+    
+
     public QueryJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -1865,6 +1927,8 @@ public class QueryJobResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public QueryJobResp withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -1884,6 +1948,8 @@ public class QueryJobResp  {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
 
     public QueryJobResp withTargetRootDb(DefaultRootDb targetRootDb) {
         this.targetRootDb = targetRootDb;
@@ -1912,6 +1978,8 @@ public class QueryJobResp  {
         this.targetRootDb = targetRootDb;
     }
 
+    
+
     public QueryJobResp withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
@@ -1931,6 +1999,8 @@ public class QueryJobResp  {
     public void setAzCode(String azCode) {
         this.azCode = azCode;
     }
+
+    
 
     public QueryJobResp withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -1952,6 +2022,8 @@ public class QueryJobResp  {
         this.vpcId = vpcId;
     }
 
+    
+
     public QueryJobResp withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -1971,6 +2043,8 @@ public class QueryJobResp  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public QueryJobResp withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -1992,6 +2066,8 @@ public class QueryJobResp  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public QueryJobResp withIssueCoupon(Boolean issueCoupon) {
         this.issueCoupon = issueCoupon;
         return this;
@@ -2011,6 +2087,8 @@ public class QueryJobResp  {
     public void setIssueCoupon(Boolean issueCoupon) {
         this.issueCoupon = issueCoupon;
     }
+
+    
 
     public QueryJobResp withMultiWrite(Boolean multiWrite) {
         this.multiWrite = multiWrite;
@@ -2032,6 +2110,8 @@ public class QueryJobResp  {
         this.multiWrite = multiWrite;
     }
 
+    
+
     public QueryJobResp withSupportIpV6(Boolean supportIpV6) {
         this.supportIpV6 = supportIpV6;
         return this;
@@ -2051,6 +2131,8 @@ public class QueryJobResp  {
     public void setSupportIpV6(Boolean supportIpV6) {
         this.supportIpV6 = supportIpV6;
     }
+
+    
 
     public QueryJobResp withInheritId(String inheritId) {
         this.inheritId = inheritId;
@@ -2072,6 +2154,8 @@ public class QueryJobResp  {
         this.inheritId = inheritId;
     }
 
+    
+
     public QueryJobResp withGtid(String gtid) {
         this.gtid = gtid;
         return this;
@@ -2092,6 +2176,8 @@ public class QueryJobResp  {
         this.gtid = gtid;
     }
 
+    
+
     public QueryJobResp withAlarmNotify(String alarmNotify) {
         this.alarmNotify = alarmNotify;
         return this;
@@ -2111,6 +2197,9 @@ public class QueryJobResp  {
     public void setAlarmNotify(String alarmNotify) {
         this.alarmNotify = alarmNotify;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

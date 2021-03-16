@@ -22,7 +22,7 @@ public class CreatePostPaidInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePostPaidInstanceReq body = null;
+    private CreatePostPaidInstanceReq body;
 
     public CreatePostPaidInstanceRequest withBody(CreatePostPaidInstanceReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePostPaidInstanceRequest  {
     public void setBody(CreatePostPaidInstanceReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

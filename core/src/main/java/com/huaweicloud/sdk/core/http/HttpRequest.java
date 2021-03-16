@@ -37,6 +37,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.TreeMap;
+
 
 public interface HttpRequest {
 
@@ -127,6 +129,16 @@ public interface HttpRequest {
             return this;
         }
 
+        public HttpRequestBuilder addFormDataPart(String name, FormDataPart formDataPart) {
+            httpRequest.formData.put(name, formDataPart);
+            return this;
+        }
+
+        public HttpRequestBuilder withFormDataPart(Map<String, FormDataPart> fromData) {
+            httpRequest.formData = fromData;
+            return this;
+        }
+
         public HttpRequest build() {
             return httpRequest.buildPathParamsString().buildQueryParamsString().buildUrl();
         }
@@ -160,6 +172,8 @@ public interface HttpRequest {
         private URL url;
 
         private InputStream body;
+
+        private Map<String, FormDataPart> formData = new TreeMap<>();
 
         @Override
         public HttpRequestBuilder builder() {
@@ -240,6 +254,11 @@ public interface HttpRequest {
         @Override
         public InputStream getBody() {
             return body;
+        }
+
+        @Override
+        public Map<String, FormDataPart> getFormData() {
+            return formData;
         }
 
         @Override
@@ -327,4 +346,6 @@ public interface HttpRequest {
     URL getUrl();
 
     InputStream getBody();
+
+    Map<String, FormDataPart> getFormData();
 }

@@ -34,7 +34,7 @@ public class UpdateDictionaryRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDictionary body = null;
+    private UpdateDictionary body;
 
     public UpdateDictionaryRequest withDictId(String dictId) {
         this.dictId = dictId;
@@ -56,6 +56,8 @@ public class UpdateDictionaryRequest  {
         this.dictId = dictId;
     }
 
+    
+
     public UpdateDictionaryRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateDictionaryRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateDictionaryRequest withBody(UpdateDictionary body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateDictionaryRequest  {
     public void setBody(UpdateDictionary body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

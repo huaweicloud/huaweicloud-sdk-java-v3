@@ -28,7 +28,7 @@ public class CreateSignatureKeyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BaseSignature body = null;
+    private BaseSignature body;
 
     public CreateSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateSignatureKeyV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateSignatureKeyV2Request withBody(BaseSignature body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateSignatureKeyV2Request  {
     public void setBody(BaseSignature body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

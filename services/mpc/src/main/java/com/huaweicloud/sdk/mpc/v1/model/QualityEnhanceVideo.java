@@ -27,37 +27,37 @@ public class QualityEnhanceVideo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_denoise")
     
-    private VideoDenoise videoDenoise = null;
+    private VideoDenoise videoDenoise;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_sharp")
     
-    private VideoSharp videoSharp = null;
+    private VideoSharp videoSharp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_contrast")
     
-    private VideoContrast videoContrast = null;
+    private VideoContrast videoContrast;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_superresolution")
     
-    private VideoSuperresolution videoSuperresolution = null;
+    private VideoSuperresolution videoSuperresolution;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_deblock")
     
-    private VideoDeblock videoDeblock = null;
+    private VideoDeblock videoDeblock;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_saturation")
     
-    private VideoSaturation videoSaturation = null;
+    private VideoSaturation videoSaturation;
 
     public QualityEnhanceVideo withVideoDenoise(VideoDenoise videoDenoise) {
         this.videoDenoise = videoDenoise;
@@ -86,6 +86,8 @@ public class QualityEnhanceVideo  {
         this.videoDenoise = videoDenoise;
     }
 
+    
+
     public QualityEnhanceVideo withVideoSharp(VideoSharp videoSharp) {
         this.videoSharp = videoSharp;
         return this;
@@ -112,6 +114,8 @@ public class QualityEnhanceVideo  {
     public void setVideoSharp(VideoSharp videoSharp) {
         this.videoSharp = videoSharp;
     }
+
+    
 
     public QualityEnhanceVideo withVideoContrast(VideoContrast videoContrast) {
         this.videoContrast = videoContrast;
@@ -140,6 +144,8 @@ public class QualityEnhanceVideo  {
         this.videoContrast = videoContrast;
     }
 
+    
+
     public QualityEnhanceVideo withVideoSuperresolution(VideoSuperresolution videoSuperresolution) {
         this.videoSuperresolution = videoSuperresolution;
         return this;
@@ -166,6 +172,8 @@ public class QualityEnhanceVideo  {
     public void setVideoSuperresolution(VideoSuperresolution videoSuperresolution) {
         this.videoSuperresolution = videoSuperresolution;
     }
+
+    
 
     public QualityEnhanceVideo withVideoDeblock(VideoDeblock videoDeblock) {
         this.videoDeblock = videoDeblock;
@@ -194,6 +202,8 @@ public class QualityEnhanceVideo  {
         this.videoDeblock = videoDeblock;
     }
 
+    
+
     public QualityEnhanceVideo withVideoSaturation(VideoSaturation videoSaturation) {
         this.videoSaturation = videoSaturation;
         return this;
@@ -220,6 +230,9 @@ public class QualityEnhanceVideo  {
     public void setVideoSaturation(VideoSaturation videoSaturation) {
         this.videoSaturation = videoSaturation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

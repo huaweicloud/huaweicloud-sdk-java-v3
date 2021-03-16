@@ -145,6 +145,8 @@ public class BillSumRecordInfoV2  {
         this.billCycle = billCycle;
     }
 
+    
+
     public BillSumRecordInfoV2 withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
@@ -164,6 +166,8 @@ public class BillSumRecordInfoV2  {
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
     }
+
+    
 
     public BillSumRecordInfoV2 withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
@@ -185,6 +189,8 @@ public class BillSumRecordInfoV2  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    
+
     public BillSumRecordInfoV2 withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -204,6 +210,8 @@ public class BillSumRecordInfoV2  {
     public void setChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
     }
+
+    
 
     public BillSumRecordInfoV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
@@ -225,6 +233,8 @@ public class BillSumRecordInfoV2  {
         this.officialAmount = officialAmount;
     }
 
+    
+
     public BillSumRecordInfoV2 withOfficialDiscountAmount(Double officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
         return this;
@@ -244,6 +254,8 @@ public class BillSumRecordInfoV2  {
     public void setOfficialDiscountAmount(Double officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
     }
+
+    
 
     public BillSumRecordInfoV2 withTruncatedAmount(Double truncatedAmount) {
         this.truncatedAmount = truncatedAmount;
@@ -265,6 +277,8 @@ public class BillSumRecordInfoV2  {
         this.truncatedAmount = truncatedAmount;
     }
 
+    
+
     public BillSumRecordInfoV2 withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
@@ -284,6 +298,8 @@ public class BillSumRecordInfoV2  {
     public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
+
+    
 
     public BillSumRecordInfoV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
@@ -305,6 +321,8 @@ public class BillSumRecordInfoV2  {
         this.couponAmount = couponAmount;
     }
 
+    
+
     public BillSumRecordInfoV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
@@ -324,6 +342,8 @@ public class BillSumRecordInfoV2  {
     public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
+
+    
 
     public BillSumRecordInfoV2 withStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
@@ -345,6 +365,8 @@ public class BillSumRecordInfoV2  {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
+    
+
     public BillSumRecordInfoV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
@@ -364,6 +386,8 @@ public class BillSumRecordInfoV2  {
     public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
+
+    
 
     public BillSumRecordInfoV2 withWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
@@ -385,6 +409,8 @@ public class BillSumRecordInfoV2  {
         this.writeoffAmount = writeoffAmount;
     }
 
+    
+
     public BillSumRecordInfoV2 withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
@@ -404,6 +430,8 @@ public class BillSumRecordInfoV2  {
     public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
+
+    
 
     public BillSumRecordInfoV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
@@ -425,6 +453,8 @@ public class BillSumRecordInfoV2  {
         this.creditAmount = creditAmount;
     }
 
+    
+
     public BillSumRecordInfoV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -444,6 +474,8 @@ public class BillSumRecordInfoV2  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
 
     public BillSumRecordInfoV2 withBillType(Integer billType) {
         this.billType = billType;
@@ -465,6 +497,8 @@ public class BillSumRecordInfoV2  {
         this.billType = billType;
     }
 
+    
+
     public BillSumRecordInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -484,6 +518,9 @@ public class BillSumRecordInfoV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

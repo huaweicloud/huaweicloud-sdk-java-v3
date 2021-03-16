@@ -97,6 +97,8 @@ public class ListAlarmHistoriesRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public ListAlarmHistoriesRequest withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -116,6 +118,8 @@ public class ListAlarmHistoriesRequest  {
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
     }
+
+    
 
     public ListAlarmHistoriesRequest withAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -137,6 +141,8 @@ public class ListAlarmHistoriesRequest  {
         this.alarmName = alarmName;
     }
 
+    
+
     public ListAlarmHistoriesRequest withAlarmStatus(String alarmStatus) {
         this.alarmStatus = alarmStatus;
         return this;
@@ -156,6 +162,8 @@ public class ListAlarmHistoriesRequest  {
     public void setAlarmStatus(String alarmStatus) {
         this.alarmStatus = alarmStatus;
     }
+
+    
 
     public ListAlarmHistoriesRequest withAlarmLevel(String alarmLevel) {
         this.alarmLevel = alarmLevel;
@@ -177,6 +185,8 @@ public class ListAlarmHistoriesRequest  {
         this.alarmLevel = alarmLevel;
     }
 
+    
+
     public ListAlarmHistoriesRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -196,6 +206,8 @@ public class ListAlarmHistoriesRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public ListAlarmHistoriesRequest withFrom(String from) {
         this.from = from;
@@ -217,6 +229,8 @@ public class ListAlarmHistoriesRequest  {
         this.from = from;
     }
 
+    
+
     public ListAlarmHistoriesRequest withTo(String to) {
         this.to = to;
         return this;
@@ -236,6 +250,8 @@ public class ListAlarmHistoriesRequest  {
     public void setTo(String to) {
         this.to = to;
     }
+
+    
 
     public ListAlarmHistoriesRequest withStart(String start) {
         this.start = start;
@@ -257,6 +273,8 @@ public class ListAlarmHistoriesRequest  {
         this.start = start;
     }
 
+    
+
     public ListAlarmHistoriesRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -276,6 +294,9 @@ public class ListAlarmHistoriesRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -60,13 +60,13 @@ public class ExtractTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,7 +78,7 @@ public class ExtractTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaData metadata = null;
+    private MetaData metadata;
 
     public ExtractTask withTaskId(String taskId) {
         this.taskId = taskId;
@@ -100,6 +100,8 @@ public class ExtractTask  {
         this.taskId = taskId;
     }
 
+    
+
     public ExtractTask withStatus(String status) {
         this.status = status;
         return this;
@@ -119,6 +121,8 @@ public class ExtractTask  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ExtractTask withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -140,6 +144,8 @@ public class ExtractTask  {
         this.createTime = createTime;
     }
 
+    
+
     public ExtractTask withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -159,6 +165,8 @@ public class ExtractTask  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ExtractTask withEndTime(String endTime) {
         this.endTime = endTime;
@@ -180,6 +188,8 @@ public class ExtractTask  {
         this.endTime = endTime;
     }
 
+    
+
     public ExtractTask withDescription(String description) {
         this.description = description;
         return this;
@@ -199,6 +209,8 @@ public class ExtractTask  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ExtractTask withInput(ObsObjInfo input) {
         this.input = input;
@@ -227,6 +239,8 @@ public class ExtractTask  {
         this.input = input;
     }
 
+    
+
     public ExtractTask withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -254,6 +268,8 @@ public class ExtractTask  {
         this.output = output;
     }
 
+    
+
     public ExtractTask withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -273,6 +289,8 @@ public class ExtractTask  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public ExtractTask withMetadata(MetaData metadata) {
         this.metadata = metadata;
@@ -300,6 +318,9 @@ public class ExtractTask  {
     public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

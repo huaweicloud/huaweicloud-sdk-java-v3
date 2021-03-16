@@ -33,7 +33,7 @@ public class ListServerGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private ListServerGroupsPageInfoResult pageInfo = null;
+    private ListServerGroupsPageInfoResult pageInfo;
 
     public ListServerGroupsResponse withServerGroups(List<ListServerGroupsResult> serverGroups) {
         this.serverGroups = serverGroups;
@@ -42,9 +42,6 @@ public class ListServerGroupsResponse extends SdkResponse {
 
     
     public ListServerGroupsResponse addServerGroupsItem(ListServerGroupsResult serverGroupsItem) {
-        if (this.serverGroups == null) {
-            this.serverGroups = new ArrayList<>();
-        }
         this.serverGroups.add(serverGroupsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListServerGroupsResponse extends SdkResponse {
     public void setServerGroups(List<ListServerGroupsResult> serverGroups) {
         this.serverGroups = serverGroups;
     }
+
+    
 
     public ListServerGroupsResponse withPageInfo(ListServerGroupsPageInfoResult pageInfo) {
         this.pageInfo = pageInfo;
@@ -95,6 +94,9 @@ public class ListServerGroupsResponse extends SdkResponse {
     public void setPageInfo(ListServerGroupsPageInfoResult pageInfo) {
         this.pageInfo = pageInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

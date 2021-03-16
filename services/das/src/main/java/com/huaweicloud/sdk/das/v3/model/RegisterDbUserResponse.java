@@ -44,6 +44,9 @@ public class RegisterDbUserResponse extends SdkResponse {
     public void setDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

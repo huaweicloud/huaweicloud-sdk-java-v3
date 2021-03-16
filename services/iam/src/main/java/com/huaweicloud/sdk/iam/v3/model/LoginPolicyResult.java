@@ -79,6 +79,8 @@ public class LoginPolicyResult  {
         this.accountValidityPeriod = accountValidityPeriod;
     }
 
+    
+
     public LoginPolicyResult withCustomInfoForLogin(String customInfoForLogin) {
         this.customInfoForLogin = customInfoForLogin;
         return this;
@@ -98,6 +100,8 @@ public class LoginPolicyResult  {
     public void setCustomInfoForLogin(String customInfoForLogin) {
         this.customInfoForLogin = customInfoForLogin;
     }
+
+    
 
     public LoginPolicyResult withLockoutDuration(Integer lockoutDuration) {
         this.lockoutDuration = lockoutDuration;
@@ -119,6 +123,8 @@ public class LoginPolicyResult  {
         this.lockoutDuration = lockoutDuration;
     }
 
+    
+
     public LoginPolicyResult withLoginFailedTimes(Integer loginFailedTimes) {
         this.loginFailedTimes = loginFailedTimes;
         return this;
@@ -138,6 +144,8 @@ public class LoginPolicyResult  {
     public void setLoginFailedTimes(Integer loginFailedTimes) {
         this.loginFailedTimes = loginFailedTimes;
     }
+
+    
 
     public LoginPolicyResult withPeriodWithLoginFailures(Integer periodWithLoginFailures) {
         this.periodWithLoginFailures = periodWithLoginFailures;
@@ -159,6 +167,8 @@ public class LoginPolicyResult  {
         this.periodWithLoginFailures = periodWithLoginFailures;
     }
 
+    
+
     public LoginPolicyResult withSessionTimeout(Integer sessionTimeout) {
         this.sessionTimeout = sessionTimeout;
         return this;
@@ -179,6 +189,8 @@ public class LoginPolicyResult  {
         this.sessionTimeout = sessionTimeout;
     }
 
+    
+
     public LoginPolicyResult withShowRecentLoginInfo(Boolean showRecentLoginInfo) {
         this.showRecentLoginInfo = showRecentLoginInfo;
         return this;
@@ -198,6 +210,9 @@ public class LoginPolicyResult  {
     public void setShowRecentLoginInfo(Boolean showRecentLoginInfo) {
         this.showRecentLoginInfo = showRecentLoginInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

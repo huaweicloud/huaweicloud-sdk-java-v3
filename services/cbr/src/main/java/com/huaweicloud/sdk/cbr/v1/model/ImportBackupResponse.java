@@ -35,9 +35,6 @@ public class ImportBackupResponse extends SdkResponse {
 
     
     public ImportBackupResponse addSyncItem(BackupSyncRespBody syncItem) {
-        if (this.sync == null) {
-            this.sync = new ArrayList<>();
-        }
         this.sync.add(syncItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ImportBackupResponse extends SdkResponse {
     public void setSync(List<BackupSyncRespBody> sync) {
         this.sync = sync;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

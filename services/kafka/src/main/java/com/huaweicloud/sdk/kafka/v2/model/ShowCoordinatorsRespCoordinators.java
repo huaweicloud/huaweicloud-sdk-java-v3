@@ -61,6 +61,8 @@ public class ShowCoordinatorsRespCoordinators  {
         this.groupId = groupId;
     }
 
+    
+
     public ShowCoordinatorsRespCoordinators withId(Integer id) {
         this.id = id;
         return this;
@@ -80,6 +82,8 @@ public class ShowCoordinatorsRespCoordinators  {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public ShowCoordinatorsRespCoordinators withHost(String host) {
         this.host = host;
@@ -101,6 +105,8 @@ public class ShowCoordinatorsRespCoordinators  {
         this.host = host;
     }
 
+    
+
     public ShowCoordinatorsRespCoordinators withPort(Integer port) {
         this.port = port;
         return this;
@@ -120,6 +126,9 @@ public class ShowCoordinatorsRespCoordinators  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

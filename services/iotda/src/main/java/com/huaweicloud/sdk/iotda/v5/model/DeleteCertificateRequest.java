@@ -49,6 +49,8 @@ public class DeleteCertificateRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteCertificateRequest withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteCertificateRequest  {
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

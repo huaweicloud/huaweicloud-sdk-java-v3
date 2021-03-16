@@ -44,6 +44,9 @@ public class ShowConfOrgResponse extends SdkResponse {
     public void setOrgID(String orgID) {
         this.orgID = orgID;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

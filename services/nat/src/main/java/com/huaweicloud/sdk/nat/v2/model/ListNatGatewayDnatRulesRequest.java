@@ -166,7 +166,7 @@ public class ListNatGatewayDnatRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -184,7 +184,7 @@ public class ListNatGatewayDnatRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -230,6 +230,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withExternalServicePort(Integer externalServicePort) {
         this.externalServicePort = externalServicePort;
         return this;
@@ -252,6 +254,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.externalServicePort = externalServicePort;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
@@ -272,6 +276,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withStatus(List<StatusEnum> status) {
         this.status = status;
         return this;
@@ -279,9 +285,6 @@ public class ListNatGatewayDnatRulesRequest  {
 
     
     public ListNatGatewayDnatRulesRequest addStatusItem(StatusEnum statusItem) {
-        if (this.status == null) {
-            this.status = new ArrayList<>();
-        }
         this.status.add(statusItem);
         return this;
     }
@@ -306,6 +309,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.status = status;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
@@ -325,6 +330,8 @@ public class ListNatGatewayDnatRulesRequest  {
     public void setFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
     }
+
+    
 
     public ListNatGatewayDnatRulesRequest withInternalServicePort(Integer internalServicePort) {
         this.internalServicePort = internalServicePort;
@@ -348,6 +355,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.internalServicePort = internalServicePort;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -370,6 +379,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withId(String id) {
         this.id = id;
         return this;
@@ -389,6 +400,8 @@ public class ListNatGatewayDnatRulesRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListNatGatewayDnatRulesRequest withDescription(String description) {
         this.description = description;
@@ -410,6 +423,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.description = description;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -430,6 +445,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withNatGatewayId(List<String> natGatewayId) {
         this.natGatewayId = natGatewayId;
         return this;
@@ -437,9 +454,6 @@ public class ListNatGatewayDnatRulesRequest  {
 
     
     public ListNatGatewayDnatRulesRequest addNatGatewayIdItem(String natGatewayIdItem) {
-        if (this.natGatewayId == null) {
-            this.natGatewayId = new ArrayList<>();
-        }
         this.natGatewayId.add(natGatewayIdItem);
         return this;
     }
@@ -464,6 +478,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.natGatewayId = natGatewayId;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withPortId(String portId) {
         this.portId = portId;
         return this;
@@ -483,6 +499,8 @@ public class ListNatGatewayDnatRulesRequest  {
     public void setPortId(String portId) {
         this.portId = portId;
     }
+
+    
 
     public ListNatGatewayDnatRulesRequest withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
@@ -504,6 +522,8 @@ public class ListNatGatewayDnatRulesRequest  {
         this.privateIp = privateIp;
     }
 
+    
+
     public ListNatGatewayDnatRulesRequest withProtocol(List<String> protocol) {
         this.protocol = protocol;
         return this;
@@ -511,9 +531,6 @@ public class ListNatGatewayDnatRulesRequest  {
 
     
     public ListNatGatewayDnatRulesRequest addProtocolItem(String protocolItem) {
-        if (this.protocol == null) {
-            this.protocol = new ArrayList<>();
-        }
         this.protocol.add(protocolItem);
         return this;
     }
@@ -537,6 +554,9 @@ public class ListNatGatewayDnatRulesRequest  {
     public void setProtocol(List<String> protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

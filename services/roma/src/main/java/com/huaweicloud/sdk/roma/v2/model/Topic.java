@@ -229,6 +229,8 @@ public class Topic  {
         this.id = id;
     }
 
+    
+
     public Topic withName(String name) {
         this.name = name;
         return this;
@@ -248,6 +250,8 @@ public class Topic  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Topic withDescription(String description) {
         this.description = description;
@@ -269,6 +273,8 @@ public class Topic  {
         this.description = description;
     }
 
+    
+
     public Topic withPermission(PermissionEnum permission) {
         this.permission = permission;
         return this;
@@ -289,6 +295,8 @@ public class Topic  {
         this.permission = permission;
     }
 
+    
+
     public Topic withIsPrivate(IsPrivateEnum isPrivate) {
         this.isPrivate = isPrivate;
         return this;
@@ -308,6 +316,9 @@ public class Topic  {
     public void setIsPrivate(IsPrivateEnum isPrivate) {
         this.isPrivate = isPrivate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

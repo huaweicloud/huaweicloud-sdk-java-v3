@@ -149,6 +149,8 @@ public class ScalingPolicyAction  {
         this.operation = operation;
     }
 
+    
+
     public ScalingPolicyAction withInstanceNumber(Integer instanceNumber) {
         this.instanceNumber = instanceNumber;
         return this;
@@ -169,6 +171,8 @@ public class ScalingPolicyAction  {
         this.instanceNumber = instanceNumber;
     }
 
+    
+
     public ScalingPolicyAction withInstancePercentage(Integer instancePercentage) {
         this.instancePercentage = instancePercentage;
         return this;
@@ -188,6 +192,9 @@ public class ScalingPolicyAction  {
     public void setInstancePercentage(Integer instancePercentage) {
         this.instancePercentage = instancePercentage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

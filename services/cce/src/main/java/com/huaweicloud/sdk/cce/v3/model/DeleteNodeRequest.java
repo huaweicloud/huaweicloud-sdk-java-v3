@@ -137,6 +137,8 @@ public class DeleteNodeRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public DeleteNodeRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -156,6 +158,8 @@ public class DeleteNodeRequest  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public DeleteNodeRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
@@ -177,6 +181,8 @@ public class DeleteNodeRequest  {
         this.errorStatus = errorStatus;
     }
 
+    
+
     public DeleteNodeRequest withNodepoolScaleDown(NodepoolScaleDownEnum nodepoolScaleDown) {
         this.nodepoolScaleDown = nodepoolScaleDown;
         return this;
@@ -196,6 +202,9 @@ public class DeleteNodeRequest  {
     public void setNodepoolScaleDown(NodepoolScaleDownEnum nodepoolScaleDown) {
         this.nodepoolScaleDown = nodepoolScaleDown;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

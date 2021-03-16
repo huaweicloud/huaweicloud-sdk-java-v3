@@ -40,7 +40,7 @@ public class UpdateNodePoolRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NodePool body = null;
+    private NodePool body;
 
     public UpdateNodePoolRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -62,6 +62,8 @@ public class UpdateNodePoolRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public UpdateNodePoolRequest withNodepoolId(String nodepoolId) {
         this.nodepoolId = nodepoolId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateNodePoolRequest  {
         this.nodepoolId = nodepoolId;
     }
 
+    
+
     public UpdateNodePoolRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -101,6 +105,8 @@ public class UpdateNodePoolRequest  {
     public void setErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
     }
+
+    
 
     public UpdateNodePoolRequest withBody(NodePool body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateNodePoolRequest  {
     public void setBody(NodePool body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

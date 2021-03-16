@@ -49,6 +49,8 @@ public class SimpleAccessoryV2  {
         this.accessoryId = accessoryId;
     }
 
+    
+
     public SimpleAccessoryV2 withFileActualName(String fileActualName) {
         this.fileActualName = fileActualName;
         return this;
@@ -68,6 +70,9 @@ public class SimpleAccessoryV2  {
     public void setFileActualName(String fileActualName) {
         this.fileActualName = fileActualName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

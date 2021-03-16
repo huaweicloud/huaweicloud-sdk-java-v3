@@ -51,6 +51,8 @@ public class CreateDomainMappingResponse extends SdkResponse {
         this.pullDomain = pullDomain;
     }
 
+    
+
     public CreateDomainMappingResponse withPushDomain(String pushDomain) {
         this.pushDomain = pushDomain;
         return this;
@@ -70,6 +72,9 @@ public class CreateDomainMappingResponse extends SdkResponse {
     public void setPushDomain(String pushDomain) {
         this.pushDomain = pushDomain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

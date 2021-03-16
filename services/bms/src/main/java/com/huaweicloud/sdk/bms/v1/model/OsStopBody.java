@@ -22,7 +22,7 @@ public class OsStopBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-stop")
     
-    private OsStopBodyType osStop = null;
+    private OsStopBodyType osStop;
 
     public OsStopBody withOsStop(OsStopBodyType osStop) {
         this.osStop = osStop;
@@ -50,6 +50,9 @@ public class OsStopBody  {
     public void setOsStop(OsStopBodyType osStop) {
         this.osStop = osStop;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

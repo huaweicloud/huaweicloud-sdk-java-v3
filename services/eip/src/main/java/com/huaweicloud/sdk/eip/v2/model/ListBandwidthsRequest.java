@@ -143,6 +143,8 @@ public class ListBandwidthsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListBandwidthsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -164,6 +166,8 @@ public class ListBandwidthsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListBandwidthsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -184,6 +188,8 @@ public class ListBandwidthsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListBandwidthsRequest withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
         return this;
@@ -203,6 +209,9 @@ public class ListBandwidthsRequest  {
     public void setShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -137,6 +137,8 @@ public class ResizeInstanceOption  {
         this.targetType = targetType;
     }
 
+    
+
     public ResizeInstanceOption withTargetId(String targetId) {
         this.targetId = targetId;
         return this;
@@ -157,6 +159,8 @@ public class ResizeInstanceOption  {
         this.targetId = targetId;
     }
 
+    
+
     public ResizeInstanceOption withTargetSpecCode(String targetSpecCode) {
         this.targetSpecCode = targetSpecCode;
         return this;
@@ -176,6 +180,9 @@ public class ResizeInstanceOption  {
     public void setTargetSpecCode(String targetSpecCode) {
         this.targetSpecCode = targetSpecCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class DownloadBlockchainSdkConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CfgRequestBody body = null;
+    private CfgRequestBody body;
 
     public DownloadBlockchainSdkConfigRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
@@ -49,6 +49,8 @@ public class DownloadBlockchainSdkConfigRequest  {
     public void setBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
     }
+
+    
 
     public DownloadBlockchainSdkConfigRequest withBody(CfgRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DownloadBlockchainSdkConfigRequest  {
     public void setBody(CfgRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

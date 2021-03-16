@@ -559,6 +559,8 @@ public class ChildrenJobInfo  {
         this.billingTag = billingTag;
     }
 
+    
+
     public ChildrenJobInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -578,6 +580,8 @@ public class ChildrenJobInfo  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ChildrenJobInfo withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
@@ -599,6 +603,8 @@ public class ChildrenJobInfo  {
         this.dbUseType = dbUseType;
     }
 
+    
+
     public ChildrenJobInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -618,6 +624,8 @@ public class ChildrenJobInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ChildrenJobInfo withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
@@ -639,6 +647,8 @@ public class ChildrenJobInfo  {
         this.engineType = engineType;
     }
 
+    
+
     public ChildrenJobInfo withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -658,6 +668,8 @@ public class ChildrenJobInfo  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
 
     public ChildrenJobInfo withId(String id) {
         this.id = id;
@@ -679,6 +691,8 @@ public class ChildrenJobInfo  {
         this.id = id;
     }
 
+    
+
     public ChildrenJobInfo withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
         return this;
@@ -698,6 +712,8 @@ public class ChildrenJobInfo  {
     public void setJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
     }
+
+    
 
     public ChildrenJobInfo withName(String name) {
         this.name = name;
@@ -719,6 +735,8 @@ public class ChildrenJobInfo  {
         this.name = name;
     }
 
+    
+
     public ChildrenJobInfo withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
@@ -738,6 +756,8 @@ public class ChildrenJobInfo  {
     public void setNetType(NetTypeEnum netType) {
         this.netType = netType;
     }
+
+    
 
     public ChildrenJobInfo withNodeNewFramework(String nodeNewFramework) {
         this.nodeNewFramework = nodeNewFramework;
@@ -759,6 +779,8 @@ public class ChildrenJobInfo  {
         this.nodeNewFramework = nodeNewFramework;
     }
 
+    
+
     public ChildrenJobInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -779,6 +801,8 @@ public class ChildrenJobInfo  {
         this.status = status;
     }
 
+    
+
     public ChildrenJobInfo withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
@@ -798,6 +822,9 @@ public class ChildrenJobInfo  {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

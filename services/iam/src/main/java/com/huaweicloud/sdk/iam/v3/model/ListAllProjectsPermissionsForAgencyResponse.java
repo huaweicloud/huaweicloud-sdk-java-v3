@@ -33,7 +33,7 @@ public class ListAllProjectsPermissionsForAgencyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
     public ListAllProjectsPermissionsForAgencyResponse withRoles(List<AgencyAllProjectRole> roles) {
         this.roles = roles;
@@ -42,9 +42,6 @@ public class ListAllProjectsPermissionsForAgencyResponse extends SdkResponse {
 
     
     public ListAllProjectsPermissionsForAgencyResponse addRolesItem(AgencyAllProjectRole rolesItem) {
-        if (this.roles == null) {
-            this.roles = new ArrayList<>();
-        }
         this.roles.add(rolesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListAllProjectsPermissionsForAgencyResponse extends SdkResponse {
     public void setRoles(List<AgencyAllProjectRole> roles) {
         this.roles = roles;
     }
+
+    
 
     public ListAllProjectsPermissionsForAgencyResponse withLinks(LinksSelf links) {
         this.links = links;
@@ -95,6 +94,9 @@ public class ListAllProjectsPermissionsForAgencyResponse extends SdkResponse {
     public void setLinks(LinksSelf links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

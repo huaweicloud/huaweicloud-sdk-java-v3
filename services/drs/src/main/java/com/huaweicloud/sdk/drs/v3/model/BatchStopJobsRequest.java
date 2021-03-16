@@ -104,13 +104,13 @@ public class BatchStopJobsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchPauseJobReq body = null;
+    private BatchPauseJobReq body;
 
     public BatchStopJobsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchStopJobsRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchStopJobsRequest withBody(BatchPauseJobReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchStopJobsRequest  {
     public void setBody(BatchPauseJobReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

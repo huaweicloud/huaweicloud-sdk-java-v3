@@ -223,6 +223,8 @@ public class ResizeInstanceReq  {
         this.newSpecCode = newSpecCode;
     }
 
+    
+
     public ResizeInstanceReq withNewStorageSpace(NewStorageSpaceEnum newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
         return this;
@@ -242,6 +244,9 @@ public class ResizeInstanceReq  {
     public void setNewStorageSpace(NewStorageSpaceEnum newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

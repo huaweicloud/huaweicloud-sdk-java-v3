@@ -66,6 +66,8 @@ public class ListScalingActivityLogsResponse extends SdkResponse {
         this.totalNumber = totalNumber;
     }
 
+    
+
     public ListScalingActivityLogsResponse withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -85,6 +87,8 @@ public class ListScalingActivityLogsResponse extends SdkResponse {
     public void setStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
     }
+
+    
 
     public ListScalingActivityLogsResponse withLimit(Integer limit) {
         this.limit = limit;
@@ -106,6 +110,8 @@ public class ListScalingActivityLogsResponse extends SdkResponse {
         this.limit = limit;
     }
 
+    
+
     public ListScalingActivityLogsResponse withScalingActivityLog(List<ScalingActivityLogList> scalingActivityLog) {
         this.scalingActivityLog = scalingActivityLog;
         return this;
@@ -113,9 +119,6 @@ public class ListScalingActivityLogsResponse extends SdkResponse {
 
     
     public ListScalingActivityLogsResponse addScalingActivityLogItem(ScalingActivityLogList scalingActivityLogItem) {
-        if (this.scalingActivityLog == null) {
-            this.scalingActivityLog = new ArrayList<>();
-        }
         this.scalingActivityLog.add(scalingActivityLogItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class ListScalingActivityLogsResponse extends SdkResponse {
     public void setScalingActivityLog(List<ScalingActivityLogList> scalingActivityLog) {
         this.scalingActivityLog = scalingActivityLog;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

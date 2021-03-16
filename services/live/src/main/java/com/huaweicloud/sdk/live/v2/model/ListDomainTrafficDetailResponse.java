@@ -41,9 +41,6 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
 
     
     public ListDomainTrafficDetailResponse addDataListItem(TrafficData dataListItem) {
-        if (this.dataList == null) {
-            this.dataList = new ArrayList<>();
-        }
         this.dataList.add(dataListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
         this.dataList = dataList;
     }
 
+    
+
     public ListDomainTrafficDetailResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -89,6 +88,9 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

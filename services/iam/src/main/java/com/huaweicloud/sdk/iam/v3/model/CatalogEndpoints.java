@@ -67,6 +67,8 @@ public class CatalogEndpoints  {
         this.id = id;
     }
 
+    
+
     public CatalogEndpoints withInterface(String _interface) {
         this._interface = _interface;
         return this;
@@ -86,6 +88,8 @@ public class CatalogEndpoints  {
     public void setInterface(String _interface) {
         this._interface = _interface;
     }
+
+    
 
     public CatalogEndpoints withRegion(String region) {
         this.region = region;
@@ -107,6 +111,8 @@ public class CatalogEndpoints  {
         this.region = region;
     }
 
+    
+
     public CatalogEndpoints withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -127,6 +133,8 @@ public class CatalogEndpoints  {
         this.regionId = regionId;
     }
 
+    
+
     public CatalogEndpoints withUrl(String url) {
         this.url = url;
         return this;
@@ -146,6 +154,9 @@ public class CatalogEndpoints  {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -21,13 +21,13 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Long limit = 30l;
+    private Long limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,13 +51,13 @@ public class ListInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_dir")
     
-    private String sortDir = "desc";
+    private String sortDir;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_key")
     
-    private String sortKey = "created_time";
+    private String sortKey;
 
     public ListInstancesRequest withLimit(Long limit) {
         this.limit = limit;
@@ -81,6 +81,8 @@ public class ListInstancesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListInstancesRequest withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -103,6 +105,8 @@ public class ListInstancesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListInstancesRequest withIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
         return this;
@@ -122,6 +126,8 @@ public class ListInstancesRequest  {
     public void setIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
     }
+
+    
 
     public ListInstancesRequest withLabel(String label) {
         this.label = label;
@@ -143,6 +149,8 @@ public class ListInstancesRequest  {
         this.label = label;
     }
 
+    
+
     public ListInstancesRequest withSearch(String search) {
         this.search = search;
         return this;
@@ -162,6 +170,8 @@ public class ListInstancesRequest  {
     public void setSearch(String search) {
         this.search = search;
     }
+
+    
 
     public ListInstancesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
@@ -183,6 +193,8 @@ public class ListInstancesRequest  {
         this.sortDir = sortDir;
     }
 
+    
+
     public ListInstancesRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -202,6 +214,9 @@ public class ListInstancesRequest  {
     public void setSortKey(String sortKey) {
         this.sortKey = sortKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

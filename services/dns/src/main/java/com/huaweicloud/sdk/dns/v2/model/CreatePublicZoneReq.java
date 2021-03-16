@@ -82,6 +82,8 @@ public class CreatePublicZoneReq  {
         this.name = name;
     }
 
+    
+
     public CreatePublicZoneReq withDescription(String description) {
         this.description = description;
         return this;
@@ -101,6 +103,8 @@ public class CreatePublicZoneReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreatePublicZoneReq withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -122,6 +126,8 @@ public class CreatePublicZoneReq  {
         this.zoneType = zoneType;
     }
 
+    
+
     public CreatePublicZoneReq withEmail(String email) {
         this.email = email;
         return this;
@@ -141,6 +147,8 @@ public class CreatePublicZoneReq  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public CreatePublicZoneReq withTtl(Integer ttl) {
         this.ttl = ttl;
@@ -162,6 +170,8 @@ public class CreatePublicZoneReq  {
         this.ttl = ttl;
     }
 
+    
+
     public CreatePublicZoneReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -182,6 +192,8 @@ public class CreatePublicZoneReq  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreatePublicZoneReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -189,9 +201,6 @@ public class CreatePublicZoneReq  {
 
     
     public CreatePublicZoneReq addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -215,6 +224,9 @@ public class CreatePublicZoneReq  {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ImageTaggingI18nTag  {
         this.zh = zh;
     }
 
+    
+
     public ImageTaggingI18nTag withEn(String en) {
         this.en = en;
         return this;
@@ -68,6 +70,9 @@ public class ImageTaggingI18nTag  {
     public void setEn(String en) {
         this.en = en;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.UploadProductRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +28,7 @@ public class UploadProductRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private Object body = null;
+    private UploadProductRequestBody body;
 
     public UploadProductRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,14 +50,16 @@ public class UploadProductRequest  {
         this.instanceId = instanceId;
     }
 
-    public UploadProductRequest withBody(Object body) {
+    
+
+    public UploadProductRequest withBody(UploadProductRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UploadProductRequest withBody(Consumer<Object> bodySetter) {
+    public UploadProductRequest withBody(Consumer<UploadProductRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new Object();
+            this.body = new UploadProductRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,13 +71,16 @@ public class UploadProductRequest  {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public UploadProductRequestBody getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(UploadProductRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

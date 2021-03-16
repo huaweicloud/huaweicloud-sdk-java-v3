@@ -42,6 +42,9 @@ public class ShowDomainRequest  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

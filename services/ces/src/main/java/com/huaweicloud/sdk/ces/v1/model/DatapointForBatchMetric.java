@@ -73,6 +73,8 @@ public class DatapointForBatchMetric  {
         this.max = max;
     }
 
+    
+
     public DatapointForBatchMetric withMin(Double min) {
         this.min = min;
         return this;
@@ -92,6 +94,8 @@ public class DatapointForBatchMetric  {
     public void setMin(Double min) {
         this.min = min;
     }
+
+    
 
     public DatapointForBatchMetric withAverage(Double average) {
         this.average = average;
@@ -113,6 +117,8 @@ public class DatapointForBatchMetric  {
         this.average = average;
     }
 
+    
+
     public DatapointForBatchMetric withSum(Double sum) {
         this.sum = sum;
         return this;
@@ -132,6 +138,8 @@ public class DatapointForBatchMetric  {
     public void setSum(Double sum) {
         this.sum = sum;
     }
+
+    
 
     public DatapointForBatchMetric withVariance(String variance) {
         this.variance = variance;
@@ -153,6 +161,8 @@ public class DatapointForBatchMetric  {
         this.variance = variance;
     }
 
+    
+
     public DatapointForBatchMetric withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -172,6 +182,9 @@ public class DatapointForBatchMetric  {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class AccountManager  {
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

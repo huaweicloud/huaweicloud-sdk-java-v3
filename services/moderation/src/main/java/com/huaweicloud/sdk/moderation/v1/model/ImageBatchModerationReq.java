@@ -27,7 +27,7 @@ public class ImageBatchModerationReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="urls")
     
-    private List<String> urls = new ArrayList<>();
+    private List<String> urls = null;
         /**
      * Gets or Sets categories
      */
@@ -168,6 +168,8 @@ public class ImageBatchModerationReq  {
         this.urls = urls;
     }
 
+    
+
     public ImageBatchModerationReq withCategories(List<CategoriesEnum> categories) {
         this.categories = categories;
         return this;
@@ -175,9 +177,6 @@ public class ImageBatchModerationReq  {
 
     
     public ImageBatchModerationReq addCategoriesItem(CategoriesEnum categoriesItem) {
-        if (this.categories == null) {
-            this.categories = new ArrayList<>();
-        }
         this.categories.add(categoriesItem);
         return this;
     }
@@ -202,6 +201,8 @@ public class ImageBatchModerationReq  {
         this.categories = categories;
     }
 
+    
+
     public ImageBatchModerationReq withThreshold(Double threshold) {
         this.threshold = threshold;
         return this;
@@ -221,6 +222,9 @@ public class ImageBatchModerationReq  {
     public void setThreshold(Double threshold) {
         this.threshold = threshold;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

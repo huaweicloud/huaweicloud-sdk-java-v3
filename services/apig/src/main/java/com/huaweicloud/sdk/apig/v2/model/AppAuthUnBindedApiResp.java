@@ -97,6 +97,8 @@ public class AppAuthUnBindedApiResp  {
         this.authType = authType;
     }
 
+    
+
     public AppAuthUnBindedApiResp withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -116,6 +118,8 @@ public class AppAuthUnBindedApiResp  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public AppAuthUnBindedApiResp withGroupName(String groupName) {
         this.groupName = groupName;
@@ -137,6 +141,8 @@ public class AppAuthUnBindedApiResp  {
         this.groupName = groupName;
     }
 
+    
+
     public AppAuthUnBindedApiResp withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
@@ -156,6 +162,8 @@ public class AppAuthUnBindedApiResp  {
     public void setPublishId(String publishId) {
         this.publishId = publishId;
     }
+
+    
 
     public AppAuthUnBindedApiResp withGroupId(String groupId) {
         this.groupId = groupId;
@@ -177,6 +185,8 @@ public class AppAuthUnBindedApiResp  {
         this.groupId = groupId;
     }
 
+    
+
     public AppAuthUnBindedApiResp withName(String name) {
         this.name = name;
         return this;
@@ -196,6 +206,8 @@ public class AppAuthUnBindedApiResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AppAuthUnBindedApiResp withRemark(String remark) {
         this.remark = remark;
@@ -217,6 +229,8 @@ public class AppAuthUnBindedApiResp  {
         this.remark = remark;
     }
 
+    
+
     public AppAuthUnBindedApiResp withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
         return this;
@@ -236,6 +250,8 @@ public class AppAuthUnBindedApiResp  {
     public void setRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
     }
+
+    
 
     public AppAuthUnBindedApiResp withId(String id) {
         this.id = id;
@@ -257,6 +273,8 @@ public class AppAuthUnBindedApiResp  {
         this.id = id;
     }
 
+    
+
     public AppAuthUnBindedApiResp withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -276,6 +294,9 @@ public class AppAuthUnBindedApiResp  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -179,6 +179,8 @@ public class ListEventDetailRequest  {
         this.eventName = eventName;
     }
 
+    
+
     public ListEventDetailRequest withEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
         return this;
@@ -198,6 +200,8 @@ public class ListEventDetailRequest  {
     public void setEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
     }
+
+    
 
     public ListEventDetailRequest withEventSource(String eventSource) {
         this.eventSource = eventSource;
@@ -219,6 +223,8 @@ public class ListEventDetailRequest  {
         this.eventSource = eventSource;
     }
 
+    
+
     public ListEventDetailRequest withEventLevel(String eventLevel) {
         this.eventLevel = eventLevel;
         return this;
@@ -238,6 +244,8 @@ public class ListEventDetailRequest  {
     public void setEventLevel(String eventLevel) {
         this.eventLevel = eventLevel;
     }
+
+    
 
     public ListEventDetailRequest withEventUser(String eventUser) {
         this.eventUser = eventUser;
@@ -259,6 +267,8 @@ public class ListEventDetailRequest  {
         this.eventUser = eventUser;
     }
 
+    
+
     public ListEventDetailRequest withEventState(String eventState) {
         this.eventState = eventState;
         return this;
@@ -278,6 +288,8 @@ public class ListEventDetailRequest  {
     public void setEventState(String eventState) {
         this.eventState = eventState;
     }
+
+    
 
     public ListEventDetailRequest withFrom(Long from) {
         this.from = from;
@@ -299,6 +311,8 @@ public class ListEventDetailRequest  {
         this.from = from;
     }
 
+    
+
     public ListEventDetailRequest withTo(Long to) {
         this.to = to;
         return this;
@@ -318,6 +332,8 @@ public class ListEventDetailRequest  {
     public void setTo(Long to) {
         this.to = to;
     }
+
+    
 
     public ListEventDetailRequest withStart(Integer start) {
         this.start = start;
@@ -339,6 +355,8 @@ public class ListEventDetailRequest  {
         this.start = start;
     }
 
+    
+
     public ListEventDetailRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -358,6 +376,9 @@ public class ListEventDetailRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

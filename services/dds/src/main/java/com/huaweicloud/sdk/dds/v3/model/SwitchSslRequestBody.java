@@ -42,6 +42,9 @@ public class SwitchSslRequestBody  {
     public void setSslOption(String sslOption) {
         this.sslOption = sslOption;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

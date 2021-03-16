@@ -51,6 +51,8 @@ public class ShowInstanceConfigurationRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ShowInstanceConfigurationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -70,6 +72,9 @@ public class ShowInstanceConfigurationRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

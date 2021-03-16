@@ -51,13 +51,13 @@ public class AdminDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="country")
     
-    private String country = "chinaPR";
+    private String country;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sendNotify")
     
-    private Boolean sendNotify = false;
+    private Boolean sendNotify;
 
     public AdminDTO withAccount(String account) {
         this.account = account;
@@ -79,6 +79,8 @@ public class AdminDTO  {
         this.account = account;
     }
 
+    
+
     public AdminDTO withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +100,8 @@ public class AdminDTO  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AdminDTO withPwd(String pwd) {
         this.pwd = pwd;
@@ -119,6 +123,8 @@ public class AdminDTO  {
         this.pwd = pwd;
     }
 
+    
+
     public AdminDTO withEmail(String email) {
         this.email = email;
         return this;
@@ -138,6 +144,8 @@ public class AdminDTO  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public AdminDTO withPhone(String phone) {
         this.phone = phone;
@@ -159,6 +167,8 @@ public class AdminDTO  {
         this.phone = phone;
     }
 
+    
+
     public AdminDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -179,6 +189,8 @@ public class AdminDTO  {
         this.country = country;
     }
 
+    
+
     public AdminDTO withSendNotify(Boolean sendNotify) {
         this.sendNotify = sendNotify;
         return this;
@@ -198,6 +210,9 @@ public class AdminDTO  {
     public void setSendNotify(Boolean sendNotify) {
         this.sendNotify = sendNotify;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

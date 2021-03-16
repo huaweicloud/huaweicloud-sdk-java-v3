@@ -130,7 +130,7 @@ public class DataVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
-    private UUID clusterId = null;
+    private UUID clusterId;
     /**
      * 裸金属服务器数据盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
      */
@@ -230,6 +230,8 @@ public class DataVolumes  {
         this.volumetype = volumetype;
     }
 
+    
+
     public DataVolumes withSize(Integer size) {
         this.size = size;
         return this;
@@ -249,6 +251,8 @@ public class DataVolumes  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
 
     public DataVolumes withShareable(Boolean shareable) {
         this.shareable = shareable;
@@ -270,6 +274,8 @@ public class DataVolumes  {
         this.shareable = shareable;
     }
 
+    
+
     public DataVolumes withClusterId(UUID clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -290,6 +296,8 @@ public class DataVolumes  {
         this.clusterId = clusterId;
     }
 
+    
+
     public DataVolumes withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -309,6 +317,9 @@ public class DataVolumes  {
     public void setClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

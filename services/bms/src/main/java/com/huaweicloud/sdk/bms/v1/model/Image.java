@@ -25,7 +25,7 @@ public class Image  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,6 +53,8 @@ public class Image  {
         this.id = id;
     }
 
+    
+
     public Image withLinks(List<Links> links) {
         this.links = links;
         return this;
@@ -60,9 +62,6 @@ public class Image  {
 
     
     public Image addLinksItem(Links linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -86,6 +85,9 @@ public class Image  {
     public void setLinks(List<Links> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

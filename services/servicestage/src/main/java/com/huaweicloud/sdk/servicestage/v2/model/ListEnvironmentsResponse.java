@@ -54,6 +54,8 @@ public class ListEnvironmentsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListEnvironmentsResponse withEnvironments(List<Environment> environments) {
         this.environments = environments;
         return this;
@@ -61,9 +63,6 @@ public class ListEnvironmentsResponse extends SdkResponse {
 
     
     public ListEnvironmentsResponse addEnvironmentsItem(Environment environmentsItem) {
-        if (this.environments == null) {
-            this.environments = new ArrayList<>();
-        }
         this.environments.add(environmentsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListEnvironmentsResponse extends SdkResponse {
     public void setEnvironments(List<Environment> environments) {
         this.environments = environments;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

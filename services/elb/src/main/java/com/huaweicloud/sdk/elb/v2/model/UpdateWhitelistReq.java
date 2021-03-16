@@ -49,6 +49,8 @@ public class UpdateWhitelistReq  {
         this.enableWhitelist = enableWhitelist;
     }
 
+    
+
     public UpdateWhitelistReq withWhitelist(String whitelist) {
         this.whitelist = whitelist;
         return this;
@@ -68,6 +70,9 @@ public class UpdateWhitelistReq  {
     public void setWhitelist(String whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateEnterpriseProjectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnterpriseProject body = null;
+    private EnterpriseProject body;
 
     public CreateEnterpriseProjectRequest withBody(EnterpriseProject body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateEnterpriseProjectRequest  {
     public void setBody(EnterpriseProject body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class RpoAndRtoInfo  {
         this.checkPoint = checkPoint;
     }
 
+    
+
     public RpoAndRtoInfo withDelay(String delay) {
         this.delay = delay;
         return this;
@@ -80,6 +82,8 @@ public class RpoAndRtoInfo  {
     public void setDelay(String delay) {
         this.delay = delay;
     }
+
+    
 
     public RpoAndRtoInfo withGtidSet(String gtidSet) {
         this.gtidSet = gtidSet;
@@ -101,6 +105,8 @@ public class RpoAndRtoInfo  {
         this.gtidSet = gtidSet;
     }
 
+    
+
     public RpoAndRtoInfo withTime(String time) {
         this.time = time;
         return this;
@@ -120,6 +126,9 @@ public class RpoAndRtoInfo  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

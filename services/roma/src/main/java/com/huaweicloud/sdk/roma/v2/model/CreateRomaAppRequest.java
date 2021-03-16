@@ -28,7 +28,7 @@ public class CreateRomaAppRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAppReq body = null;
+    private CreateAppReq body;
 
     public CreateRomaAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateRomaAppRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateRomaAppRequest withBody(CreateAppReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateRomaAppRequest  {
     public void setBody(CreateAppReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

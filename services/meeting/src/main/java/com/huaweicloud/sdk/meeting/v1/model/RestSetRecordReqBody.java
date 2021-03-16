@@ -21,7 +21,7 @@ public class RestSetRecordReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isRecord")
     
-    private Integer isRecord = 0;
+    private Integer isRecord;
 
     public RestSetRecordReqBody withIsRecord(Integer isRecord) {
         this.isRecord = isRecord;
@@ -42,6 +42,9 @@ public class RestSetRecordReqBody  {
     public void setIsRecord(Integer isRecord) {
         this.isRecord = isRecord;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

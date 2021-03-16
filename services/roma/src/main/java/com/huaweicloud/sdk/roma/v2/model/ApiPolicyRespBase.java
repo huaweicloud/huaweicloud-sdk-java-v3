@@ -131,7 +131,7 @@ public class ApiPolicyRespBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<CoditionResp> conditions = new ArrayList<>();
+    private List<CoditionResp> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -159,6 +159,8 @@ public class ApiPolicyRespBase  {
         this.id = id;
     }
 
+    
+
     public ApiPolicyRespBase withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
@@ -178,6 +180,8 @@ public class ApiPolicyRespBase  {
     public void setEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
     }
+
+    
 
     public ApiPolicyRespBase withName(String name) {
         this.name = name;
@@ -199,6 +203,8 @@ public class ApiPolicyRespBase  {
         this.name = name;
     }
 
+    
+
     public ApiPolicyRespBase withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -206,9 +212,6 @@ public class ApiPolicyRespBase  {
 
     
     public ApiPolicyRespBase addBackendParamsItem(BackendParam backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -232,6 +235,8 @@ public class ApiPolicyRespBase  {
     public void setBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
     }
+
+    
 
     public ApiPolicyRespBase withConditions(List<CoditionResp> conditions) {
         this.conditions = conditions;
@@ -264,6 +269,8 @@ public class ApiPolicyRespBase  {
         this.conditions = conditions;
     }
 
+    
+
     public ApiPolicyRespBase withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -283,6 +290,9 @@ public class ApiPolicyRespBase  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

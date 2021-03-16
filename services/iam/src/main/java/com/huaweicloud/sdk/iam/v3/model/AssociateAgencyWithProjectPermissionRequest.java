@@ -55,6 +55,8 @@ public class AssociateAgencyWithProjectPermissionRequest  {
         this.projectId = projectId;
     }
 
+    
+
     public AssociateAgencyWithProjectPermissionRequest withAgencyId(String agencyId) {
         this.agencyId = agencyId;
         return this;
@@ -75,6 +77,8 @@ public class AssociateAgencyWithProjectPermissionRequest  {
         this.agencyId = agencyId;
     }
 
+    
+
     public AssociateAgencyWithProjectPermissionRequest withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -94,6 +98,9 @@ public class AssociateAgencyWithProjectPermissionRequest  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

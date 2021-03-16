@@ -79,6 +79,8 @@ public class RetentionLog  {
         this.createdAt = createdAt;
     }
 
+    
+
     public RetentionLog withId(Integer id) {
         this.id = id;
         return this;
@@ -98,6 +100,8 @@ public class RetentionLog  {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public RetentionLog withNamespace(String namespace) {
         this.namespace = namespace;
@@ -119,6 +123,8 @@ public class RetentionLog  {
         this.namespace = namespace;
     }
 
+    
+
     public RetentionLog withRepo(String repo) {
         this.repo = repo;
         return this;
@@ -138,6 +144,8 @@ public class RetentionLog  {
     public void setRepo(String repo) {
         this.repo = repo;
     }
+
+    
 
     public RetentionLog withRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
@@ -159,6 +167,8 @@ public class RetentionLog  {
         this.retentionId = retentionId;
     }
 
+    
+
     public RetentionLog withRuleType(String ruleType) {
         this.ruleType = ruleType;
         return this;
@@ -179,6 +189,8 @@ public class RetentionLog  {
         this.ruleType = ruleType;
     }
 
+    
+
     public RetentionLog withTag(String tag) {
         this.tag = tag;
         return this;
@@ -198,6 +210,9 @@ public class RetentionLog  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -79,6 +79,8 @@ public class ListMessagesRequest  {
         this.caseId = caseId;
     }
 
+    
+
     public ListMessagesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -98,6 +100,8 @@ public class ListMessagesRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListMessagesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -121,6 +125,8 @@ public class ListMessagesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListMessagesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -142,6 +148,8 @@ public class ListMessagesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListMessagesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -167,6 +175,8 @@ public class ListMessagesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListMessagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -189,6 +199,8 @@ public class ListMessagesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListMessagesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -210,6 +222,9 @@ public class ListMessagesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

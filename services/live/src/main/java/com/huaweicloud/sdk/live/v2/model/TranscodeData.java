@@ -39,9 +39,6 @@ public class TranscodeData  {
 
     
     public TranscodeData addSpecListItem(TranscodeSpec specListItem) {
-        if (this.specList == null) {
-            this.specList = new ArrayList<>();
-        }
         this.specList.add(specListItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class TranscodeData  {
         this.specList = specList;
     }
 
+    
+
     public TranscodeData withTime(String time) {
         this.time = time;
         return this;
@@ -85,6 +84,9 @@ public class TranscodeData  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

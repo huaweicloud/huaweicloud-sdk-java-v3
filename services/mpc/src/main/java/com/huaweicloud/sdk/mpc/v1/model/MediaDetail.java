@@ -33,7 +33,7 @@ public class MediaDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="origin_para")
     
-    private OriginPara originPara = null;
+    private OriginPara originPara;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,13 +45,13 @@ public class MediaDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_thumbnail_para")
     
-    private OutputThumbnailPara outputThumbnailPara = null;
+    private OutputThumbnailPara outputThumbnailPara;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_watermark_paras")
     
-    private OutputWatermarkPara outputWatermarkParas = null;
+    private OutputWatermarkPara outputWatermarkParas;
 
     public MediaDetail withFeatures(List<String> features) {
         this.features = features;
@@ -60,9 +60,6 @@ public class MediaDetail  {
 
     
     public MediaDetail addFeaturesItem(String featuresItem) {
-        if (this.features == null) {
-            this.features = new ArrayList<>();
-        }
         this.features.add(featuresItem);
         return this;
     }
@@ -86,6 +83,8 @@ public class MediaDetail  {
     public void setFeatures(List<String> features) {
         this.features = features;
     }
+
+    
 
     public MediaDetail withOriginPara(OriginPara originPara) {
         this.originPara = originPara;
@@ -114,6 +113,8 @@ public class MediaDetail  {
         this.originPara = originPara;
     }
 
+    
+
     public MediaDetail withOutputVideoParas(List<OutputVideoPara> outputVideoParas) {
         this.outputVideoParas = outputVideoParas;
         return this;
@@ -121,9 +122,6 @@ public class MediaDetail  {
 
     
     public MediaDetail addOutputVideoParasItem(OutputVideoPara outputVideoParasItem) {
-        if (this.outputVideoParas == null) {
-            this.outputVideoParas = new ArrayList<>();
-        }
         this.outputVideoParas.add(outputVideoParasItem);
         return this;
     }
@@ -147,6 +145,8 @@ public class MediaDetail  {
     public void setOutputVideoParas(List<OutputVideoPara> outputVideoParas) {
         this.outputVideoParas = outputVideoParas;
     }
+
+    
 
     public MediaDetail withOutputThumbnailPara(OutputThumbnailPara outputThumbnailPara) {
         this.outputThumbnailPara = outputThumbnailPara;
@@ -175,6 +175,8 @@ public class MediaDetail  {
         this.outputThumbnailPara = outputThumbnailPara;
     }
 
+    
+
     public MediaDetail withOutputWatermarkParas(OutputWatermarkPara outputWatermarkParas) {
         this.outputWatermarkParas = outputWatermarkParas;
         return this;
@@ -201,6 +203,9 @@ public class MediaDetail  {
     public void setOutputWatermarkParas(OutputWatermarkPara outputWatermarkParas) {
         this.outputWatermarkParas = outputWatermarkParas;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

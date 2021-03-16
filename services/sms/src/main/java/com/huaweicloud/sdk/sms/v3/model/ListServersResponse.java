@@ -56,6 +56,8 @@ public class ListServersResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListServersResponse withSourceServers(List<SourceServersResponseBody> sourceServers) {
         this.sourceServers = sourceServers;
         return this;
@@ -63,9 +65,6 @@ public class ListServersResponse extends SdkResponse {
 
     
     public ListServersResponse addSourceServersItem(SourceServersResponseBody sourceServersItem) {
-        if (this.sourceServers == null) {
-            this.sourceServers = new ArrayList<>();
-        }
         this.sourceServers.add(sourceServersItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListServersResponse extends SdkResponse {
     public void setSourceServers(List<SourceServersResponseBody> sourceServers) {
         this.sourceServers = sourceServers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

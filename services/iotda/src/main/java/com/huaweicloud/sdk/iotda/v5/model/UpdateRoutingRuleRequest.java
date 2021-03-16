@@ -34,7 +34,7 @@ public class UpdateRoutingRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateRuleReq body = null;
+    private UpdateRuleReq body;
 
     public UpdateRoutingRuleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateRoutingRuleRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateRoutingRuleRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateRoutingRuleRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public UpdateRoutingRuleRequest withBody(UpdateRuleReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateRoutingRuleRequest  {
     public void setBody(UpdateRuleReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

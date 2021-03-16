@@ -163,6 +163,8 @@ public class UpdatePasswordResponse extends SdkResponse {
         this.lockTime = lockTime;
     }
 
+    
+
     public UpdatePasswordResponse withResult(ResultEnum result) {
         this.result = result;
         return this;
@@ -182,6 +184,8 @@ public class UpdatePasswordResponse extends SdkResponse {
     public void setResult(ResultEnum result) {
         this.result = result;
     }
+
+    
 
     public UpdatePasswordResponse withLockTimeLeft(String lockTimeLeft) {
         this.lockTimeLeft = lockTimeLeft;
@@ -203,6 +207,8 @@ public class UpdatePasswordResponse extends SdkResponse {
         this.lockTimeLeft = lockTimeLeft;
     }
 
+    
+
     public UpdatePasswordResponse withRetryTimesLeft(String retryTimesLeft) {
         this.retryTimesLeft = retryTimesLeft;
         return this;
@@ -223,6 +229,8 @@ public class UpdatePasswordResponse extends SdkResponse {
         this.retryTimesLeft = retryTimesLeft;
     }
 
+    
+
     public UpdatePasswordResponse withMessage(String message) {
         this.message = message;
         return this;
@@ -242,6 +250,9 @@ public class UpdatePasswordResponse extends SdkResponse {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

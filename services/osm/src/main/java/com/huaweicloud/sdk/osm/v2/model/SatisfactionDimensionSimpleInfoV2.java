@@ -75,6 +75,8 @@ public class SatisfactionDimensionSimpleInfoV2  {
         this.value = value;
     }
 
+    
+
     public SatisfactionDimensionSimpleInfoV2 withSatisfactionId(Integer satisfactionId) {
         this.satisfactionId = satisfactionId;
         return this;
@@ -97,6 +99,8 @@ public class SatisfactionDimensionSimpleInfoV2  {
         this.satisfactionId = satisfactionId;
     }
 
+    
+
     public SatisfactionDimensionSimpleInfoV2 withSatisfactionName(String satisfactionName) {
         this.satisfactionName = satisfactionName;
         return this;
@@ -117,6 +121,8 @@ public class SatisfactionDimensionSimpleInfoV2  {
         this.satisfactionName = satisfactionName;
     }
 
+    
+
     public SatisfactionDimensionSimpleInfoV2 withSatisfactionDesc(String satisfactionDesc) {
         this.satisfactionDesc = satisfactionDesc;
         return this;
@@ -136,6 +142,8 @@ public class SatisfactionDimensionSimpleInfoV2  {
     public void setSatisfactionDesc(String satisfactionDesc) {
         this.satisfactionDesc = satisfactionDesc;
     }
+
+    
 
     public SatisfactionDimensionSimpleInfoV2 withPerValue(Integer perValue) {
         this.perValue = perValue;
@@ -159,6 +167,8 @@ public class SatisfactionDimensionSimpleInfoV2  {
         this.perValue = perValue;
     }
 
+    
+
     public SatisfactionDimensionSimpleInfoV2 withSatCategoryId(String satCategoryId) {
         this.satCategoryId = satCategoryId;
         return this;
@@ -178,6 +188,9 @@ public class SatisfactionDimensionSimpleInfoV2  {
     public void setSatCategoryId(String satCategoryId) {
         this.satCategoryId = satCategoryId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

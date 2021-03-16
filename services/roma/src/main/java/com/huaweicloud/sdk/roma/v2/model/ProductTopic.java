@@ -155,6 +155,8 @@ public class ProductTopic  {
         this.productId = productId;
     }
 
+    
+
     public ProductTopic withTopicId(Integer topicId) {
         this.topicId = topicId;
         return this;
@@ -174,6 +176,8 @@ public class ProductTopic  {
     public void setTopicId(Integer topicId) {
         this.topicId = topicId;
     }
+
+    
 
     public ProductTopic withPermission(PermissionEnum permission) {
         this.permission = permission;
@@ -195,6 +199,8 @@ public class ProductTopic  {
         this.permission = permission;
     }
 
+    
+
     public ProductTopic withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
@@ -214,6 +220,8 @@ public class ProductTopic  {
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
+
+    
 
     public ProductTopic withVersion(String version) {
         this.version = version;
@@ -235,6 +243,8 @@ public class ProductTopic  {
         this.version = version;
     }
 
+    
+
     public ProductTopic withDescription(String description) {
         this.description = description;
         return this;
@@ -254,6 +264,9 @@ public class ProductTopic  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

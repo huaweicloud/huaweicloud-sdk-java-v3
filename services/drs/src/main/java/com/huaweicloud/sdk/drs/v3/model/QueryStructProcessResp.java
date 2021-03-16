@@ -40,7 +40,7 @@ public class QueryStructProcessResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="struct_process")
     
-    private StructProcessResp structProcess = null;
+    private StructProcessResp structProcess;
 
     public QueryStructProcessResp withJobId(String jobId) {
         this.jobId = jobId;
@@ -62,6 +62,8 @@ public class QueryStructProcessResp  {
         this.jobId = jobId;
     }
 
+    
+
     public QueryStructProcessResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -82,6 +84,8 @@ public class QueryStructProcessResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public QueryStructProcessResp withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -101,6 +105,8 @@ public class QueryStructProcessResp  {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
 
     public QueryStructProcessResp withStructProcess(StructProcessResp structProcess) {
         this.structProcess = structProcess;
@@ -128,6 +134,9 @@ public class QueryStructProcessResp  {
     public void setStructProcess(StructProcessResp structProcess) {
         this.structProcess = structProcess;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class Storage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_status")
     
-    private Map<String, String> azStatus = new HashMap<>();
+    private Map<String, String> azStatus = null;
     
     public Storage withName(String name) {
         this.name = name;
@@ -51,6 +51,8 @@ public class Storage  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Storage withAzStatus(Map<String, String> azStatus) {
         this.azStatus = azStatus;
@@ -82,6 +84,9 @@ public class Storage  {
     public void setAzStatus(Map<String, String> azStatus) {
         this.azStatus = azStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

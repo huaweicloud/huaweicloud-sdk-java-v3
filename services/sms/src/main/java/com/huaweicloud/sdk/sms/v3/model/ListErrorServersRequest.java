@@ -21,19 +21,25 @@ public class ListErrorServersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 50;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="migproject")
     
     private String migproject;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
     public ListErrorServersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -57,6 +63,8 @@ public class ListErrorServersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListErrorServersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -79,6 +87,8 @@ public class ListErrorServersRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListErrorServersRequest withMigproject(String migproject) {
         this.migproject = migproject;
         return this;
@@ -98,6 +108,31 @@ public class ListErrorServersRequest  {
     public void setMigproject(String migproject) {
         this.migproject = migproject;
     }
+
+    
+
+    public ListErrorServersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get enterpriseProjectId
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -109,11 +144,12 @@ public class ListErrorServersRequest  {
         ListErrorServersRequest listErrorServersRequest = (ListErrorServersRequest) o;
         return Objects.equals(this.limit, listErrorServersRequest.limit) &&
             Objects.equals(this.offset, listErrorServersRequest.offset) &&
-            Objects.equals(this.migproject, listErrorServersRequest.migproject);
+            Objects.equals(this.migproject, listErrorServersRequest.migproject) &&
+            Objects.equals(this.enterpriseProjectId, listErrorServersRequest.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, migproject);
+        return Objects.hash(limit, offset, migproject, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -122,6 +158,7 @@ public class ListErrorServersRequest  {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    migproject: ").append(toIndentedString(migproject)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -28,7 +28,7 @@ public class UpdatePolicyAssignmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PolicyAssignmentRequestBody body = null;
+    private PolicyAssignmentRequestBody body;
 
     public UpdatePolicyAssignmentRequest withPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
@@ -49,6 +49,8 @@ public class UpdatePolicyAssignmentRequest  {
     public void setPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
     }
+
+    
 
     public UpdatePolicyAssignmentRequest withBody(PolicyAssignmentRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdatePolicyAssignmentRequest  {
     public void setBody(PolicyAssignmentRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

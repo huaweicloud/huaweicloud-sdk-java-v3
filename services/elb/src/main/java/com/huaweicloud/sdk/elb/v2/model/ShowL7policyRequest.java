@@ -42,6 +42,9 @@ public class ShowL7policyRequest  {
     public void setL7policyId(String l7policyId) {
         this.l7policyId = l7policyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class ListInstanceTopicsRespTopics  {
         this.name = name;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withReplication(Integer replication) {
         this.replication = replication;
         return this;
@@ -92,6 +94,8 @@ public class ListInstanceTopicsRespTopics  {
     public void setReplication(Integer replication) {
         this.replication = replication;
     }
+
+    
 
     public ListInstanceTopicsRespTopics withPartition(Integer partition) {
         this.partition = partition;
@@ -113,6 +117,8 @@ public class ListInstanceTopicsRespTopics  {
         this.partition = partition;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
@@ -132,6 +138,8 @@ public class ListInstanceTopicsRespTopics  {
     public void setRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
     }
+
+    
 
     public ListInstanceTopicsRespTopics withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
@@ -153,6 +161,8 @@ public class ListInstanceTopicsRespTopics  {
         this.syncReplication = syncReplication;
     }
 
+    
+
     public ListInstanceTopicsRespTopics withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
@@ -172,6 +182,9 @@ public class ListInstanceTopicsRespTopics  {
     public void setSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

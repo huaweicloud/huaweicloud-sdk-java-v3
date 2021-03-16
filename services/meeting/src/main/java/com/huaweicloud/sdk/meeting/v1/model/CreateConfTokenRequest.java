@@ -68,6 +68,8 @@ public class CreateConfTokenRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public CreateConfTokenRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
         return this;
@@ -89,6 +91,8 @@ public class CreateConfTokenRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public CreateConfTokenRequest withXPassword(String xPassword) {
         this.xPassword = xPassword;
@@ -112,6 +116,8 @@ public class CreateConfTokenRequest  {
         this.xPassword = xPassword;
     }
 
+    
+
     public CreateConfTokenRequest withXLoginType(Integer xLoginType) {
         this.xLoginType = xLoginType;
         return this;
@@ -134,6 +140,8 @@ public class CreateConfTokenRequest  {
         this.xLoginType = xLoginType;
     }
 
+    
+
     public CreateConfTokenRequest withXNonce(String xNonce) {
         this.xNonce = xNonce;
         return this;
@@ -155,6 +163,9 @@ public class CreateConfTokenRequest  {
     public void setXNonce(String xNonce) {
         this.xNonce = xNonce;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

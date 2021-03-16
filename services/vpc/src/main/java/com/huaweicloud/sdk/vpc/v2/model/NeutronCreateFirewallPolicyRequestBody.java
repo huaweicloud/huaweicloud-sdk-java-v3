@@ -22,7 +22,7 @@ public class NeutronCreateFirewallPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="firewall_policy")
     
-    private NeutronCreateFirewallPolicyOption firewallPolicy = null;
+    private NeutronCreateFirewallPolicyOption firewallPolicy;
 
     public NeutronCreateFirewallPolicyRequestBody withFirewallPolicy(NeutronCreateFirewallPolicyOption firewallPolicy) {
         this.firewallPolicy = firewallPolicy;
@@ -50,6 +50,9 @@ public class NeutronCreateFirewallPolicyRequestBody  {
     public void setFirewallPolicy(NeutronCreateFirewallPolicyOption firewallPolicy) {
         this.firewallPolicy = firewallPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

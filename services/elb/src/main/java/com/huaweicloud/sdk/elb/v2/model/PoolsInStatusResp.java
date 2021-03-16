@@ -37,7 +37,7 @@ public class PoolsInStatusResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="members")
     
-    private List<MembersInStatusResp> members = new ArrayList<>();
+    private List<MembersInStatusResp> members = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,7 +55,7 @@ public class PoolsInStatusResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor")
     
-    private HealthmonitorsInStatusResp healthmonitor = null;
+    private HealthmonitorsInStatusResp healthmonitor;
 
     public PoolsInStatusResp withId(String id) {
         this.id = id;
@@ -77,6 +77,8 @@ public class PoolsInStatusResp  {
         this.id = id;
     }
 
+    
+
     public PoolsInStatusResp withName(String name) {
         this.name = name;
         return this;
@@ -96,6 +98,8 @@ public class PoolsInStatusResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PoolsInStatusResp withMembers(List<MembersInStatusResp> members) {
         this.members = members;
@@ -128,6 +132,8 @@ public class PoolsInStatusResp  {
         this.members = members;
     }
 
+    
+
     public PoolsInStatusResp withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -148,6 +154,8 @@ public class PoolsInStatusResp  {
         this.operatingStatus = operatingStatus;
     }
 
+    
+
     public PoolsInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -167,6 +175,8 @@ public class PoolsInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
 
     public PoolsInStatusResp withHealthmonitor(HealthmonitorsInStatusResp healthmonitor) {
         this.healthmonitor = healthmonitor;
@@ -194,6 +204,9 @@ public class PoolsInStatusResp  {
     public void setHealthmonitor(HealthmonitorsInStatusResp healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

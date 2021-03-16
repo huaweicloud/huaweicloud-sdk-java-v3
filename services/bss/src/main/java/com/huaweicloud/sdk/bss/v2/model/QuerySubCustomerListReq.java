@@ -33,13 +33,13 @@ public class QuerySubCustomerListReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +97,8 @@ public class QuerySubCustomerListReq  {
         this.accountName = accountName;
     }
 
+    
+
     public QuerySubCustomerListReq withCustomer(String customer) {
         this.customer = customer;
         return this;
@@ -116,6 +118,8 @@ public class QuerySubCustomerListReq  {
     public void setCustomer(String customer) {
         this.customer = customer;
     }
+
+    
 
     public QuerySubCustomerListReq withOffset(Integer offset) {
         this.offset = offset;
@@ -139,6 +143,8 @@ public class QuerySubCustomerListReq  {
         this.offset = offset;
     }
 
+    
+
     public QuerySubCustomerListReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -161,6 +167,8 @@ public class QuerySubCustomerListReq  {
         this.limit = limit;
     }
 
+    
+
     public QuerySubCustomerListReq withLabel(String label) {
         this.label = label;
         return this;
@@ -180,6 +188,8 @@ public class QuerySubCustomerListReq  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
 
     public QuerySubCustomerListReq withAssociationType(String associationType) {
         this.associationType = associationType;
@@ -201,6 +211,8 @@ public class QuerySubCustomerListReq  {
         this.associationType = associationType;
     }
 
+    
+
     public QuerySubCustomerListReq withAssociatedOnBegin(String associatedOnBegin) {
         this.associatedOnBegin = associatedOnBegin;
         return this;
@@ -220,6 +232,8 @@ public class QuerySubCustomerListReq  {
     public void setAssociatedOnBegin(String associatedOnBegin) {
         this.associatedOnBegin = associatedOnBegin;
     }
+
+    
 
     public QuerySubCustomerListReq withAssociatedOnEnd(String associatedOnEnd) {
         this.associatedOnEnd = associatedOnEnd;
@@ -241,6 +255,8 @@ public class QuerySubCustomerListReq  {
         this.associatedOnEnd = associatedOnEnd;
     }
 
+    
+
     public QuerySubCustomerListReq withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -261,6 +277,8 @@ public class QuerySubCustomerListReq  {
         this.customerId = customerId;
     }
 
+    
+
     public QuerySubCustomerListReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -280,6 +298,9 @@ public class QuerySubCustomerListReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

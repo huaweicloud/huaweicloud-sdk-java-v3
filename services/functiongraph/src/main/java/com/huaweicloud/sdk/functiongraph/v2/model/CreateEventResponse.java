@@ -42,7 +42,7 @@ public class CreateEventResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private BigDecimal lastModified = null;
+    private BigDecimal lastModified;
 
     public CreateEventResponse withId(String id) {
         this.id = id;
@@ -64,6 +64,8 @@ public class CreateEventResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateEventResponse withName(String name) {
         this.name = name;
         return this;
@@ -83,6 +85,8 @@ public class CreateEventResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateEventResponse withContent(String content) {
         this.content = content;
@@ -104,6 +108,8 @@ public class CreateEventResponse extends SdkResponse {
         this.content = content;
     }
 
+    
+
     public CreateEventResponse withLastModified(BigDecimal lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -123,6 +129,9 @@ public class CreateEventResponse extends SdkResponse {
     public void setLastModified(BigDecimal lastModified) {
         this.lastModified = lastModified;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

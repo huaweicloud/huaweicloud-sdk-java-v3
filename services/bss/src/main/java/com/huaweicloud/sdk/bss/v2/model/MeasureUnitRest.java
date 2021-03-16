@@ -61,6 +61,8 @@ public class MeasureUnitRest  {
         this.measureId = measureId;
     }
 
+    
+
     public MeasureUnitRest withMeasureName(String measureName) {
         this.measureName = measureName;
         return this;
@@ -80,6 +82,8 @@ public class MeasureUnitRest  {
     public void setMeasureName(String measureName) {
         this.measureName = measureName;
     }
+
+    
 
     public MeasureUnitRest withAbbreviation(String abbreviation) {
         this.abbreviation = abbreviation;
@@ -101,6 +105,8 @@ public class MeasureUnitRest  {
         this.abbreviation = abbreviation;
     }
 
+    
+
     public MeasureUnitRest withMeasureType(Integer measureType) {
         this.measureType = measureType;
         return this;
@@ -120,6 +126,9 @@ public class MeasureUnitRest  {
     public void setMeasureType(Integer measureType) {
         this.measureType = measureType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

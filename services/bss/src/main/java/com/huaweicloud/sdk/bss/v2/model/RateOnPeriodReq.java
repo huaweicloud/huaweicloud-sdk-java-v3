@@ -30,7 +30,7 @@ public class RateOnPeriodReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_infos")
     
-    private List<PeriodProductInfo> productInfos = new ArrayList<>();
+    private List<PeriodProductInfo> productInfos = null;
     
     public RateOnPeriodReq withProjectId(String projectId) {
         this.projectId = projectId;
@@ -51,6 +51,8 @@ public class RateOnPeriodReq  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public RateOnPeriodReq withProductInfos(List<PeriodProductInfo> productInfos) {
         this.productInfos = productInfos;
@@ -82,6 +84,9 @@ public class RateOnPeriodReq  {
     public void setProductInfos(List<PeriodProductInfo> productInfos) {
         this.productInfos = productInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

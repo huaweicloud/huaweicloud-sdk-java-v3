@@ -55,6 +55,8 @@ public class BlockDeviceAttachableQuantity  {
         this.freeScsi = freeScsi;
     }
 
+    
+
     public BlockDeviceAttachableQuantity withFreeBlk(Integer freeBlk) {
         this.freeBlk = freeBlk;
         return this;
@@ -75,6 +77,8 @@ public class BlockDeviceAttachableQuantity  {
         this.freeBlk = freeBlk;
     }
 
+    
+
     public BlockDeviceAttachableQuantity withFreeDisk(Integer freeDisk) {
         this.freeDisk = freeDisk;
         return this;
@@ -94,6 +98,9 @@ public class BlockDeviceAttachableQuantity  {
     public void setFreeDisk(Integer freeDisk) {
         this.freeDisk = freeDisk;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateTranscodingTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateTranscodingReq body = null;
+    private CreateTranscodingReq body;
 
     public CreateTranscodingTaskRequest withBody(CreateTranscodingReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateTranscodingTaskRequest  {
     public void setBody(CreateTranscodingReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

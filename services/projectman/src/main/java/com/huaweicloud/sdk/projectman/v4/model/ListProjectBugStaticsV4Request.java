@@ -42,6 +42,9 @@ public class ListProjectBugStaticsV4Request  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

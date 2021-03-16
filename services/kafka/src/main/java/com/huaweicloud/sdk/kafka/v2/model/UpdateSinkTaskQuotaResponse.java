@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 public class UpdateSinkTaskQuotaResponse extends SdkResponse {
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

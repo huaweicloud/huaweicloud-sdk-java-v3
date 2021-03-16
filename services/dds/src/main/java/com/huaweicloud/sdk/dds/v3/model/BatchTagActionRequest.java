@@ -28,7 +28,7 @@ public class BatchTagActionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchOperateInstanceTagRequestBody body = null;
+    private BatchOperateInstanceTagRequestBody body;
 
     public BatchTagActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class BatchTagActionRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BatchTagActionRequest withBody(BatchOperateInstanceTagRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchTagActionRequest  {
     public void setBody(BatchOperateInstanceTagRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

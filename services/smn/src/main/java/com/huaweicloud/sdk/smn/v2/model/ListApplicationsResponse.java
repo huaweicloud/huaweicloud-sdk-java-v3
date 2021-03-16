@@ -60,6 +60,8 @@ public class ListApplicationsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public ListApplicationsResponse withApplicationCount(Integer applicationCount) {
         this.applicationCount = applicationCount;
         return this;
@@ -80,6 +82,8 @@ public class ListApplicationsResponse extends SdkResponse {
         this.applicationCount = applicationCount;
     }
 
+    
+
     public ListApplicationsResponse withApplications(List<ApplicationItem> applications) {
         this.applications = applications;
         return this;
@@ -87,9 +91,6 @@ public class ListApplicationsResponse extends SdkResponse {
 
     
     public ListApplicationsResponse addApplicationsItem(ApplicationItem applicationsItem) {
-        if (this.applications == null) {
-            this.applications = new ArrayList<>();
-        }
         this.applications.add(applicationsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListApplicationsResponse extends SdkResponse {
     public void setApplications(List<ApplicationItem> applications) {
         this.applications = applications;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

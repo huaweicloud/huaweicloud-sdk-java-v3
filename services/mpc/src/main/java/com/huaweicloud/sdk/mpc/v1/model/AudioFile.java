@@ -31,7 +31,7 @@ public class AudioFile  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
     public AudioFile withTracksInfo(List<TracksInfo> tracksInfo) {
         this.tracksInfo = tracksInfo;
@@ -40,9 +40,6 @@ public class AudioFile  {
 
     
     public AudioFile addTracksInfoItem(TracksInfo tracksInfoItem) {
-        if (this.tracksInfo == null) {
-            this.tracksInfo = new ArrayList<>();
-        }
         this.tracksInfo.add(tracksInfoItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class AudioFile  {
     public void setTracksInfo(List<TracksInfo> tracksInfo) {
         this.tracksInfo = tracksInfo;
     }
+
+    
 
     public AudioFile withInput(ObsObjInfo input) {
         this.input = input;
@@ -93,6 +92,9 @@ public class AudioFile  {
     public void setInput(ObsObjInfo input) {
         this.input = input;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

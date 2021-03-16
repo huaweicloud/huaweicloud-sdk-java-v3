@@ -114,7 +114,7 @@ public class AppInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -150,7 +150,7 @@ public class AppInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
     /**
      * 状态   - 1： 有效
      */
@@ -318,7 +318,7 @@ public class AppInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_app_type")
     
-    private Object romaAppType = null;
+    private Object romaAppType;
 
     public AppInfo withCreator(CreatorEnum creator) {
         this.creator = creator;
@@ -340,6 +340,8 @@ public class AppInfo  {
         this.creator = creator;
     }
 
+    
+
     public AppInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -359,6 +361,8 @@ public class AppInfo  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public AppInfo withAppKey(String appKey) {
         this.appKey = appKey;
@@ -380,6 +384,8 @@ public class AppInfo  {
         this.appKey = appKey;
     }
 
+    
+
     public AppInfo withName(String name) {
         this.name = name;
         return this;
@@ -399,6 +405,8 @@ public class AppInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AppInfo withRemark(String remark) {
         this.remark = remark;
@@ -420,6 +428,8 @@ public class AppInfo  {
         this.remark = remark;
     }
 
+    
+
     public AppInfo withId(String id) {
         this.id = id;
         return this;
@@ -439,6 +449,8 @@ public class AppInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AppInfo withAppSecret(String appSecret) {
         this.appSecret = appSecret;
@@ -460,6 +472,8 @@ public class AppInfo  {
         this.appSecret = appSecret;
     }
 
+    
+
     public AppInfo withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -479,6 +493,8 @@ public class AppInfo  {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public AppInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -500,6 +516,8 @@ public class AppInfo  {
         this.status = status;
     }
 
+    
+
     public AppInfo withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
@@ -520,6 +538,8 @@ public class AppInfo  {
         this.appType = appType;
     }
 
+    
+
     public AppInfo withRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
         return this;
@@ -539,6 +559,9 @@ public class AppInfo  {
     public void setRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

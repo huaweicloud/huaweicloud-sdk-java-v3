@@ -27,7 +27,7 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="additionalProperties")
     
-    private AdditionalProperties additionalProperties = null;
+    private AdditionalProperties additionalProperties;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,7 +39,7 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private Object properties = null;
+    private Object properties;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
         this.additionalProperties = additionalProperties;
     }
 
+    
+
     public GlanceShowImageSchemasResponse withName(String name) {
         this.name = name;
         return this;
@@ -93,6 +95,8 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GlanceShowImageSchemasResponse withProperties(Object properties) {
         this.properties = properties;
@@ -114,6 +118,8 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
         this.properties = properties;
     }
 
+    
+
     public GlanceShowImageSchemasResponse withLinks(List<Links> links) {
         this.links = links;
         return this;
@@ -121,9 +127,6 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
 
     
     public GlanceShowImageSchemasResponse addLinksItem(Links linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -147,6 +150,9 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
     public void setLinks(List<Links> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

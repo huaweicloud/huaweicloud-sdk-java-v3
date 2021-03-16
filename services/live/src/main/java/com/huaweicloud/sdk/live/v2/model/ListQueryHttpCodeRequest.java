@@ -23,7 +23,7 @@ public class ListQueryHttpCodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="play_domains")
     
-    private List<String> playDomains = new ArrayList<>();
+    private List<String> playDomains = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class ListQueryHttpCodeRequest  {
         this.playDomains = playDomains;
     }
 
+    
+
     public ListQueryHttpCodeRequest withCode(List<String> code) {
         this.code = code;
         return this;
@@ -93,9 +95,6 @@ public class ListQueryHttpCodeRequest  {
 
     
     public ListQueryHttpCodeRequest addCodeItem(String codeItem) {
-        if (this.code == null) {
-            this.code = new ArrayList<>();
-        }
         this.code.add(codeItem);
         return this;
     }
@@ -120,6 +119,8 @@ public class ListQueryHttpCodeRequest  {
         this.code = code;
     }
 
+    
+
     public ListQueryHttpCodeRequest withRegion(List<String> region) {
         this.region = region;
         return this;
@@ -127,9 +128,6 @@ public class ListQueryHttpCodeRequest  {
 
     
     public ListQueryHttpCodeRequest addRegionItem(String regionItem) {
-        if (this.region == null) {
-            this.region = new ArrayList<>();
-        }
         this.region.add(regionItem);
         return this;
     }
@@ -154,6 +152,8 @@ public class ListQueryHttpCodeRequest  {
         this.region = region;
     }
 
+    
+
     public ListQueryHttpCodeRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
@@ -161,9 +161,6 @@ public class ListQueryHttpCodeRequest  {
 
     
     public ListQueryHttpCodeRequest addIspItem(String ispItem) {
-        if (this.isp == null) {
-            this.isp = new ArrayList<>();
-        }
         this.isp.add(ispItem);
         return this;
     }
@@ -188,6 +185,8 @@ public class ListQueryHttpCodeRequest  {
         this.isp = isp;
     }
 
+    
+
     public ListQueryHttpCodeRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -208,6 +207,8 @@ public class ListQueryHttpCodeRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListQueryHttpCodeRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -227,6 +228,9 @@ public class ListQueryHttpCodeRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -221,6 +221,8 @@ public class ReplicationRecordGet  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ReplicationRecordGet withDestinationBackupId(String destinationBackupId) {
         this.destinationBackupId = destinationBackupId;
         return this;
@@ -240,6 +242,8 @@ public class ReplicationRecordGet  {
     public void setDestinationBackupId(String destinationBackupId) {
         this.destinationBackupId = destinationBackupId;
     }
+
+    
 
     public ReplicationRecordGet withDestinationCheckpointId(String destinationCheckpointId) {
         this.destinationCheckpointId = destinationCheckpointId;
@@ -261,6 +265,8 @@ public class ReplicationRecordGet  {
         this.destinationCheckpointId = destinationCheckpointId;
     }
 
+    
+
     public ReplicationRecordGet withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
@@ -280,6 +286,8 @@ public class ReplicationRecordGet  {
     public void setDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
     }
+
+    
 
     public ReplicationRecordGet withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
@@ -301,6 +309,8 @@ public class ReplicationRecordGet  {
         this.destinationRegion = destinationRegion;
     }
 
+    
+
     public ReplicationRecordGet withDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
         return this;
@@ -320,6 +330,8 @@ public class ReplicationRecordGet  {
     public void setDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
     }
+
+    
 
     public ReplicationRecordGet withExtraInfo(String extraInfo) {
         this.extraInfo = extraInfo;
@@ -341,6 +353,8 @@ public class ReplicationRecordGet  {
         this.extraInfo = extraInfo;
     }
 
+    
+
     public ReplicationRecordGet withId(String id) {
         this.id = id;
         return this;
@@ -360,6 +374,8 @@ public class ReplicationRecordGet  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ReplicationRecordGet withSourceBackupId(String sourceBackupId) {
         this.sourceBackupId = sourceBackupId;
@@ -381,6 +397,8 @@ public class ReplicationRecordGet  {
         this.sourceBackupId = sourceBackupId;
     }
 
+    
+
     public ReplicationRecordGet withSourceCheckpointId(String sourceCheckpointId) {
         this.sourceCheckpointId = sourceCheckpointId;
         return this;
@@ -400,6 +418,8 @@ public class ReplicationRecordGet  {
     public void setSourceCheckpointId(String sourceCheckpointId) {
         this.sourceCheckpointId = sourceCheckpointId;
     }
+
+    
 
     public ReplicationRecordGet withSourceProjectId(String sourceProjectId) {
         this.sourceProjectId = sourceProjectId;
@@ -421,6 +441,8 @@ public class ReplicationRecordGet  {
         this.sourceProjectId = sourceProjectId;
     }
 
+    
+
     public ReplicationRecordGet withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
         return this;
@@ -440,6 +462,8 @@ public class ReplicationRecordGet  {
     public void setSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
     }
+
+    
 
     public ReplicationRecordGet withStatus(StatusEnum status) {
         this.status = status;
@@ -461,6 +485,8 @@ public class ReplicationRecordGet  {
         this.status = status;
     }
 
+    
+
     public ReplicationRecordGet withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -480,6 +506,9 @@ public class ReplicationRecordGet  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

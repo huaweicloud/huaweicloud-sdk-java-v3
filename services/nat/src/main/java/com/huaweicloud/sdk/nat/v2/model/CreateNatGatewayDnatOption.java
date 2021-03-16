@@ -97,6 +97,8 @@ public class CreateNatGatewayDnatOption  {
         this.description = description;
     }
 
+    
+
     public CreateNatGatewayDnatOption withPortId(String portId) {
         this.portId = portId;
         return this;
@@ -116,6 +118,8 @@ public class CreateNatGatewayDnatOption  {
     public void setPortId(String portId) {
         this.portId = portId;
     }
+
+    
 
     public CreateNatGatewayDnatOption withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
@@ -137,6 +141,8 @@ public class CreateNatGatewayDnatOption  {
         this.privateIp = privateIp;
     }
 
+    
+
     public CreateNatGatewayDnatOption withNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
         return this;
@@ -156,6 +162,8 @@ public class CreateNatGatewayDnatOption  {
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
+
+    
 
     public CreateNatGatewayDnatOption withInternalServicePort(Integer internalServicePort) {
         this.internalServicePort = internalServicePort;
@@ -179,6 +187,8 @@ public class CreateNatGatewayDnatOption  {
         this.internalServicePort = internalServicePort;
     }
 
+    
+
     public CreateNatGatewayDnatOption withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
@@ -198,6 +208,8 @@ public class CreateNatGatewayDnatOption  {
     public void setFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
     }
+
+    
 
     public CreateNatGatewayDnatOption withExternalServicePort(Integer externalServicePort) {
         this.externalServicePort = externalServicePort;
@@ -221,6 +233,8 @@ public class CreateNatGatewayDnatOption  {
         this.externalServicePort = externalServicePort;
     }
 
+    
+
     public CreateNatGatewayDnatOption withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -240,6 +254,8 @@ public class CreateNatGatewayDnatOption  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public CreateNatGatewayDnatOption withInternalServicePortRange(String internalServicePortRange) {
         this.internalServicePortRange = internalServicePortRange;
@@ -261,6 +277,8 @@ public class CreateNatGatewayDnatOption  {
         this.internalServicePortRange = internalServicePortRange;
     }
 
+    
+
     public CreateNatGatewayDnatOption withExternalServicePortRange(String externalServicePortRange) {
         this.externalServicePortRange = externalServicePortRange;
         return this;
@@ -280,6 +298,9 @@ public class CreateNatGatewayDnatOption  {
     public void setExternalServicePortRange(String externalServicePortRange) {
         this.externalServicePortRange = externalServicePortRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

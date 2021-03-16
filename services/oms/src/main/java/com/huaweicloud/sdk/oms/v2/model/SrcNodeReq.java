@@ -24,7 +24,7 @@ public class SrcNodeReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cloud_type")
     
-    private String cloudType = "Aliyun";
+    private String cloudType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,7 +66,7 @@ public class SrcNodeReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="list_file")
     
-    private ListFile listFile = null;
+    private ListFile listFile;
 
     public SrcNodeReq withCloudType(String cloudType) {
         this.cloudType = cloudType;
@@ -88,6 +88,8 @@ public class SrcNodeReq  {
         this.cloudType = cloudType;
     }
 
+    
+
     public SrcNodeReq withRegion(String region) {
         this.region = region;
         return this;
@@ -107,6 +109,8 @@ public class SrcNodeReq  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public SrcNodeReq withAk(String ak) {
         this.ak = ak;
@@ -128,6 +132,8 @@ public class SrcNodeReq  {
         this.ak = ak;
     }
 
+    
+
     public SrcNodeReq withSk(String sk) {
         this.sk = sk;
         return this;
@@ -147,6 +153,8 @@ public class SrcNodeReq  {
     public void setSk(String sk) {
         this.sk = sk;
     }
+
+    
 
     public SrcNodeReq withAppId(String appId) {
         this.appId = appId;
@@ -168,6 +176,8 @@ public class SrcNodeReq  {
         this.appId = appId;
     }
 
+    
+
     public SrcNodeReq withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -188,6 +198,8 @@ public class SrcNodeReq  {
         this.bucket = bucket;
     }
 
+    
+
     public SrcNodeReq withObjectKey(List<String> objectKey) {
         this.objectKey = objectKey;
         return this;
@@ -195,9 +207,6 @@ public class SrcNodeReq  {
 
     
     public SrcNodeReq addObjectKeyItem(String objectKeyItem) {
-        if (this.objectKey == null) {
-            this.objectKey = new ArrayList<>();
-        }
         this.objectKey.add(objectKeyItem);
         return this;
     }
@@ -221,6 +230,8 @@ public class SrcNodeReq  {
     public void setObjectKey(List<String> objectKey) {
         this.objectKey = objectKey;
     }
+
+    
 
     public SrcNodeReq withListFile(ListFile listFile) {
         this.listFile = listFile;
@@ -248,6 +259,9 @@ public class SrcNodeReq  {
     public void setListFile(ListFile listFile) {
         this.listFile = listFile;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

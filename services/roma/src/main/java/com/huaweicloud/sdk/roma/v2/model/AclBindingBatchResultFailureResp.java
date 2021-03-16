@@ -67,6 +67,8 @@ public class AclBindingBatchResultFailureResp  {
         this.bindId = bindId;
     }
 
+    
+
     public AclBindingBatchResultFailureResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -86,6 +88,8 @@ public class AclBindingBatchResultFailureResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public AclBindingBatchResultFailureResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
@@ -107,6 +111,8 @@ public class AclBindingBatchResultFailureResp  {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public AclBindingBatchResultFailureResp withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -127,6 +133,8 @@ public class AclBindingBatchResultFailureResp  {
         this.apiId = apiId;
     }
 
+    
+
     public AclBindingBatchResultFailureResp withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -146,6 +154,9 @@ public class AclBindingBatchResultFailureResp  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

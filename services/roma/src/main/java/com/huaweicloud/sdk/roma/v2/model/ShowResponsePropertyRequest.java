@@ -61,6 +61,8 @@ public class ShowResponsePropertyRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowResponsePropertyRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -80,6 +82,8 @@ public class ShowResponsePropertyRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public ShowResponsePropertyRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
@@ -103,6 +107,8 @@ public class ShowResponsePropertyRequest  {
         this.commandId = commandId;
     }
 
+    
+
     public ShowResponsePropertyRequest withPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
         return this;
@@ -124,6 +130,9 @@ public class ShowResponsePropertyRequest  {
     public void setPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

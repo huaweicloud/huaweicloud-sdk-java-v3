@@ -32,9 +32,6 @@ public class AclBatchDelete  {
 
     
     public AclBatchDelete addAclsItem(String aclsItem) {
-        if (this.acls == null) {
-            this.acls = new ArrayList<>();
-        }
         this.acls.add(aclsItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class AclBatchDelete  {
     public void setAcls(List<String> acls) {
         this.acls = acls;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

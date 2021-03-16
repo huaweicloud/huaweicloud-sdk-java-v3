@@ -42,6 +42,9 @@ public class DeletePostalRequest  {
     public void setAddressId(String addressId) {
         this.addressId = addressId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

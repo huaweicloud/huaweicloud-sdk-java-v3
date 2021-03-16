@@ -49,6 +49,8 @@ public class ProgressInfo  {
         this.completed = completed;
     }
 
+    
+
     public ProgressInfo withRemainingTime(String remainingTime) {
         this.remainingTime = remainingTime;
         return this;
@@ -68,6 +70,9 @@ public class ProgressInfo  {
     public void setRemainingTime(String remainingTime) {
         this.remainingTime = remainingTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

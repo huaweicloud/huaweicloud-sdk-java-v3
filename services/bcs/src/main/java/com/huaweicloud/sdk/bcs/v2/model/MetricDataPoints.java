@@ -58,6 +58,8 @@ public class MetricDataPoints  {
         this.timestamp = timestamp;
     }
 
+    
+
     public MetricDataPoints withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -78,6 +80,8 @@ public class MetricDataPoints  {
         this.unit = unit;
     }
 
+    
+
     public MetricDataPoints withStatistics(List<StatisticValue> statistics) {
         this.statistics = statistics;
         return this;
@@ -85,9 +89,6 @@ public class MetricDataPoints  {
 
     
     public MetricDataPoints addStatisticsItem(StatisticValue statisticsItem) {
-        if (this.statistics == null) {
-            this.statistics = new ArrayList<>();
-        }
         this.statistics.add(statisticsItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class MetricDataPoints  {
     public void setStatistics(List<StatisticValue> statistics) {
         this.statistics = statistics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

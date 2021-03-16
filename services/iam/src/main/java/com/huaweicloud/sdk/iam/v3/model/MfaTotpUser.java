@@ -49,6 +49,8 @@ public class MfaTotpUser  {
         this.id = id;
     }
 
+    
+
     public MfaTotpUser withPasscode(String passcode) {
         this.passcode = passcode;
         return this;
@@ -68,6 +70,9 @@ public class MfaTotpUser  {
     public void setPasscode(String passcode) {
         this.passcode = passcode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListRetentionsResponse extends SdkResponse {
 
     
     public ListRetentionsResponse addBodyItem(Retention bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListRetentionsResponse extends SdkResponse {
     public void setBody(List<Retention> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

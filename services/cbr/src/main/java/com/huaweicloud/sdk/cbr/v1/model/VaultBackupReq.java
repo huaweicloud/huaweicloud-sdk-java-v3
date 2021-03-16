@@ -22,7 +22,7 @@ public class VaultBackupReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="checkpoint")
     
-    private VaultBackup checkpoint = null;
+    private VaultBackup checkpoint;
 
     public VaultBackupReq withCheckpoint(VaultBackup checkpoint) {
         this.checkpoint = checkpoint;
@@ -50,6 +50,9 @@ public class VaultBackupReq  {
     public void setCheckpoint(VaultBackup checkpoint) {
         this.checkpoint = checkpoint;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -46,7 +46,7 @@ public class CreateTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TagCreate body = null;
+    private TagCreate body;
 
     public CreateTagRequest withXRepoAuth(String xRepoAuth) {
         this.xRepoAuth = xRepoAuth;
@@ -70,6 +70,8 @@ public class CreateTagRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public CreateTagRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -89,6 +91,8 @@ public class CreateTagRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public CreateTagRequest withProject(String project) {
         this.project = project;
@@ -110,6 +114,8 @@ public class CreateTagRequest  {
         this.project = project;
     }
 
+    
+
     public CreateTagRequest withRef(String ref) {
         this.ref = ref;
         return this;
@@ -129,6 +135,8 @@ public class CreateTagRequest  {
     public void setRef(String ref) {
         this.ref = ref;
     }
+
+    
 
     public CreateTagRequest withBody(TagCreate body) {
         this.body = body;
@@ -156,6 +164,9 @@ public class CreateTagRequest  {
     public void setBody(TagCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

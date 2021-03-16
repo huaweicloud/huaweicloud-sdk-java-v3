@@ -49,6 +49,8 @@ public class DeleteNatGatewaySnatRuleRequest  {
         this.natGatewayId = natGatewayId;
     }
 
+    
+
     public DeleteNatGatewaySnatRuleRequest withSnatRuleId(String snatRuleId) {
         this.snatRuleId = snatRuleId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteNatGatewaySnatRuleRequest  {
     public void setSnatRuleId(String snatRuleId) {
         this.snatRuleId = snatRuleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

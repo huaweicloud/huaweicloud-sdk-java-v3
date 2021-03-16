@@ -49,6 +49,8 @@ public class OsfederationGroups  {
         this.id = id;
     }
 
+    
+
     public OsfederationGroups withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +70,9 @@ public class OsfederationGroups  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

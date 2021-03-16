@@ -67,6 +67,8 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies  {
         this.owner = owner;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyRespPolicies withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -86,6 +88,8 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public ShowMqsInstanceTopicAccessPolicyRespPolicies withAccessPolicy(String accessPolicy) {
         this.accessPolicy = accessPolicy;
@@ -107,6 +111,8 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies  {
         this.accessPolicy = accessPolicy;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyRespPolicies withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -127,6 +133,8 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies  {
         this.appName = appName;
     }
 
+    
+
     public ShowMqsInstanceTopicAccessPolicyRespPolicies withTag(String tag) {
         this.tag = tag;
         return this;
@@ -146,6 +154,9 @@ public class ShowMqsInstanceTopicAccessPolicyRespPolicies  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

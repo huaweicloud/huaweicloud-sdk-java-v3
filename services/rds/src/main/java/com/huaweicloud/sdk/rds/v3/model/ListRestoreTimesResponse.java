@@ -35,9 +35,6 @@ public class ListRestoreTimesResponse extends SdkResponse {
 
     
     public ListRestoreTimesResponse addRestoreTimeItem(GetRestoreTimeResponseRestoreTime restoreTimeItem) {
-        if (this.restoreTime == null) {
-            this.restoreTime = new ArrayList<>();
-        }
         this.restoreTime.add(restoreTimeItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListRestoreTimesResponse extends SdkResponse {
     public void setRestoreTime(List<GetRestoreTimeResponseRestoreTime> restoreTime) {
         this.restoreTime = restoreTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

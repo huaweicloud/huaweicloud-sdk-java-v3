@@ -21,7 +21,7 @@ public class CreateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,13 +39,13 @@ public class CreateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expected_codes")
     
-    private String expectedCodes = "200";
+    private String expectedCodes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http_method")
     
-    private String httpMethod = "GET";
+    private String httpMethod;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class CreateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_retries_down")
     
-    private Integer maxRetriesDown = 3;
+    private Integer maxRetriesDown;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,7 +99,7 @@ public class CreateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="url_path")
     
-    private String urlPath = "/";
+    private String urlPath;
 
     public CreateHealthMonitorOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -120,6 +120,8 @@ public class CreateHealthMonitorOption  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateHealthMonitorOption withDelay(Integer delay) {
         this.delay = delay;
@@ -143,6 +145,8 @@ public class CreateHealthMonitorOption  {
         this.delay = delay;
     }
 
+    
+
     public CreateHealthMonitorOption withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -162,6 +166,8 @@ public class CreateHealthMonitorOption  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public CreateHealthMonitorOption withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
@@ -183,6 +189,8 @@ public class CreateHealthMonitorOption  {
         this.expectedCodes = expectedCodes;
     }
 
+    
+
     public CreateHealthMonitorOption withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
@@ -202,6 +210,8 @@ public class CreateHealthMonitorOption  {
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
+
+    
 
     public CreateHealthMonitorOption withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
@@ -225,6 +235,8 @@ public class CreateHealthMonitorOption  {
         this.maxRetries = maxRetries;
     }
 
+    
+
     public CreateHealthMonitorOption withMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
         return this;
@@ -246,6 +258,8 @@ public class CreateHealthMonitorOption  {
     public void setMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
     }
+
+    
 
     public CreateHealthMonitorOption withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
@@ -269,6 +283,8 @@ public class CreateHealthMonitorOption  {
         this.monitorPort = monitorPort;
     }
 
+    
+
     public CreateHealthMonitorOption withName(String name) {
         this.name = name;
         return this;
@@ -288,6 +304,8 @@ public class CreateHealthMonitorOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateHealthMonitorOption withPoolId(String poolId) {
         this.poolId = poolId;
@@ -309,6 +327,8 @@ public class CreateHealthMonitorOption  {
         this.poolId = poolId;
     }
 
+    
+
     public CreateHealthMonitorOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -328,6 +348,8 @@ public class CreateHealthMonitorOption  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreateHealthMonitorOption withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -351,6 +373,8 @@ public class CreateHealthMonitorOption  {
         this.timeout = timeout;
     }
 
+    
+
     public CreateHealthMonitorOption withType(String type) {
         this.type = type;
         return this;
@@ -371,6 +395,8 @@ public class CreateHealthMonitorOption  {
         this.type = type;
     }
 
+    
+
     public CreateHealthMonitorOption withUrlPath(String urlPath) {
         this.urlPath = urlPath;
         return this;
@@ -390,6 +416,9 @@ public class CreateHealthMonitorOption  {
     public void setUrlPath(String urlPath) {
         this.urlPath = urlPath;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

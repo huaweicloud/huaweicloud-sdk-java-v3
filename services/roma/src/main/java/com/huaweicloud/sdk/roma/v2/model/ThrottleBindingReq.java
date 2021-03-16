@@ -29,7 +29,7 @@ public class ThrottleBindingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publish_ids")
     
-    private List<String> publishIds = new ArrayList<>();
+    private List<String> publishIds = null;
     
     public ThrottleBindingReq withStrategyId(String strategyId) {
         this.strategyId = strategyId;
@@ -50,6 +50,8 @@ public class ThrottleBindingReq  {
     public void setStrategyId(String strategyId) {
         this.strategyId = strategyId;
     }
+
+    
 
     public ThrottleBindingReq withPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
@@ -81,6 +83,9 @@ public class ThrottleBindingReq  {
     public void setPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

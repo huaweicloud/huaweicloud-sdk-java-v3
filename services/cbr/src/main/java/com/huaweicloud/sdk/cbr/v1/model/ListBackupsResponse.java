@@ -41,9 +41,6 @@ public class ListBackupsResponse extends SdkResponse {
 
     
     public ListBackupsResponse addBackupsItem(BackupResp backupsItem) {
-        if (this.backups == null) {
-            this.backups = new ArrayList<>();
-        }
         this.backups.add(backupsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListBackupsResponse extends SdkResponse {
         this.backups = backups;
     }
 
+    
+
     public ListBackupsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class ListBackupsResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

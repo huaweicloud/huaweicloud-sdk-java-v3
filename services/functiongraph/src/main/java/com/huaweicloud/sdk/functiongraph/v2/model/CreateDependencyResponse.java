@@ -93,6 +93,8 @@ public class CreateDependencyResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateDependencyResponse withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -112,6 +114,8 @@ public class CreateDependencyResponse extends SdkResponse {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    
 
     public CreateDependencyResponse withLink(String link) {
         this.link = link;
@@ -133,6 +137,8 @@ public class CreateDependencyResponse extends SdkResponse {
         this.link = link;
     }
 
+    
+
     public CreateDependencyResponse withRuntime(String runtime) {
         this.runtime = runtime;
         return this;
@@ -152,6 +158,8 @@ public class CreateDependencyResponse extends SdkResponse {
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
+
+    
 
     public CreateDependencyResponse withEtag(String etag) {
         this.etag = etag;
@@ -173,6 +181,8 @@ public class CreateDependencyResponse extends SdkResponse {
         this.etag = etag;
     }
 
+    
+
     public CreateDependencyResponse withSize(String size) {
         this.size = size;
         return this;
@@ -192,6 +202,8 @@ public class CreateDependencyResponse extends SdkResponse {
     public void setSize(String size) {
         this.size = size;
     }
+
+    
 
     public CreateDependencyResponse withName(String name) {
         this.name = name;
@@ -213,6 +225,8 @@ public class CreateDependencyResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreateDependencyResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -233,6 +247,8 @@ public class CreateDependencyResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public CreateDependencyResponse withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -252,6 +268,9 @@ public class CreateDependencyResponse extends SdkResponse {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

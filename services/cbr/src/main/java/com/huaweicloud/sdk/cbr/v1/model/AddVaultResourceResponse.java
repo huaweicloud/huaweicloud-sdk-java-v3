@@ -34,9 +34,6 @@ public class AddVaultResourceResponse extends SdkResponse {
 
     
     public AddVaultResourceResponse addAddResourceIdsItem(String addResourceIdsItem) {
-        if (this.addResourceIds == null) {
-            this.addResourceIds = new ArrayList<>();
-        }
         this.addResourceIds.add(addResourceIdsItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class AddVaultResourceResponse extends SdkResponse {
     public void setAddResourceIds(List<String> addResourceIds) {
         this.addResourceIds = addResourceIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

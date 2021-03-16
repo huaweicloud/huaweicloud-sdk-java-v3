@@ -49,6 +49,8 @@ public class RestChairTokenReqBody  {
         this.applyChair = applyChair;
     }
 
+    
+
     public RestChairTokenReqBody withChairmanPwd(String chairmanPwd) {
         this.chairmanPwd = chairmanPwd;
         return this;
@@ -68,6 +70,9 @@ public class RestChairTokenReqBody  {
     public void setChairmanPwd(String chairmanPwd) {
         this.chairmanPwd = chairmanPwd;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

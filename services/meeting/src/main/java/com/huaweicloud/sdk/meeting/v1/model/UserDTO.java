@@ -76,7 +76,7 @@ public class UserDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateTime")
     
-    private BigDecimal updateTime = null;
+    private BigDecimal updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -140,6 +140,8 @@ public class UserDTO  {
         this.id = id;
     }
 
+    
+
     public UserDTO withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
@@ -159,6 +161,8 @@ public class UserDTO  {
     public void setStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
     }
+
+    
 
     public UserDTO withAccount(String account) {
         this.account = account;
@@ -180,6 +184,8 @@ public class UserDTO  {
         this.account = account;
     }
 
+    
+
     public UserDTO withName(String name) {
         this.name = name;
         return this;
@@ -199,6 +205,8 @@ public class UserDTO  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UserDTO withEnglishName(String englishName) {
         this.englishName = englishName;
@@ -220,6 +228,8 @@ public class UserDTO  {
         this.englishName = englishName;
     }
 
+    
+
     public UserDTO withEmail(String email) {
         this.email = email;
         return this;
@@ -239,6 +249,8 @@ public class UserDTO  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public UserDTO withPhone(String phone) {
         this.phone = phone;
@@ -260,6 +272,8 @@ public class UserDTO  {
         this.phone = phone;
     }
 
+    
+
     public UserDTO withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -279,6 +293,8 @@ public class UserDTO  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
 
     public UserDTO withNumber(String number) {
         this.number = number;
@@ -300,6 +316,8 @@ public class UserDTO  {
         this.number = number;
     }
 
+    
+
     public UserDTO withUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -319,6 +337,8 @@ public class UserDTO  {
     public void setUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public UserDTO withIsHardTerminal(Boolean isHardTerminal) {
         this.isHardTerminal = isHardTerminal;
@@ -340,6 +360,8 @@ public class UserDTO  {
         this.isHardTerminal = isHardTerminal;
     }
 
+    
+
     public UserDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
@@ -359,6 +381,8 @@ public class UserDTO  {
     public void setVmrId(String vmrId) {
         this.vmrId = vmrId;
     }
+
+    
 
     public UserDTO withSignature(String signature) {
         this.signature = signature;
@@ -380,6 +404,8 @@ public class UserDTO  {
         this.signature = signature;
     }
 
+    
+
     public UserDTO withTitle(String title) {
         this.title = title;
         return this;
@@ -399,6 +425,8 @@ public class UserDTO  {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    
 
     public UserDTO withDescription(String description) {
         this.description = description;
@@ -420,6 +448,8 @@ public class UserDTO  {
         this.description = description;
     }
 
+    
+
     public UserDTO withHidePhone(String hidePhone) {
         this.hidePhone = hidePhone;
         return this;
@@ -440,6 +470,8 @@ public class UserDTO  {
         this.hidePhone = hidePhone;
     }
 
+    
+
     public UserDTO withType(String type) {
         this.type = type;
         return this;
@@ -459,6 +491,9 @@ public class UserDTO  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

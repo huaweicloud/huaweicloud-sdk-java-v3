@@ -24,7 +24,7 @@ public class UpdateEnterpriseProjectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project")
     
-    private EpDetail enterpriseProject = null;
+    private EpDetail enterpriseProject;
 
     public UpdateEnterpriseProjectResponse withEnterpriseProject(EpDetail enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
@@ -52,6 +52,9 @@ public class UpdateEnterpriseProjectResponse extends SdkResponse {
     public void setEnterpriseProject(EpDetail enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

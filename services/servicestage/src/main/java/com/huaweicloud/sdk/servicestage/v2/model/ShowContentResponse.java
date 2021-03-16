@@ -145,6 +145,8 @@ public class ShowContentResponse extends SdkResponse {
         this.path = path;
     }
 
+    
+
     public ShowContentResponse withSha(String sha) {
         this.sha = sha;
         return this;
@@ -164,6 +166,8 @@ public class ShowContentResponse extends SdkResponse {
     public void setSha(String sha) {
         this.sha = sha;
     }
+
+    
 
     public ShowContentResponse withEncoding(EncodingEnum encoding) {
         this.encoding = encoding;
@@ -185,6 +189,8 @@ public class ShowContentResponse extends SdkResponse {
         this.encoding = encoding;
     }
 
+    
+
     public ShowContentResponse withContent(String content) {
         this.content = content;
         return this;
@@ -204,6 +210,9 @@ public class ShowContentResponse extends SdkResponse {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

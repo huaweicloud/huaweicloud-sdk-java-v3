@@ -22,13 +22,13 @@ public class CancelGrantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RevokeGrantRequestBody body = null;
+    private RevokeGrantRequestBody body;
 
     public CancelGrantRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class CancelGrantRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public CancelGrantRequest withBody(RevokeGrantRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CancelGrantRequest  {
     public void setBody(RevokeGrantRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

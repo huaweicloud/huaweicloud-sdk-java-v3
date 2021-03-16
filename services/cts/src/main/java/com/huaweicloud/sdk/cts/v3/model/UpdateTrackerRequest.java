@@ -22,7 +22,7 @@ public class UpdateTrackerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateTrackerRequestBody body = null;
+    private UpdateTrackerRequestBody body;
 
     public UpdateTrackerRequest withBody(UpdateTrackerRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateTrackerRequest  {
     public void setBody(UpdateTrackerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -103,7 +103,7 @@ public class ShowTemplateDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,6 +133,8 @@ public class ShowTemplateDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ShowTemplateDetailRequest withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -152,6 +154,9 @@ public class ShowTemplateDetailRequest  {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

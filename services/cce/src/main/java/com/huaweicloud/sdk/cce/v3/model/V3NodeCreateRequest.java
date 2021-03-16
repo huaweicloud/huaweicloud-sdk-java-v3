@@ -23,25 +23,25 @@ public class V3NodeCreateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Node";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private NodeMetadata metadata = null;
+    private NodeMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3NodeSpec spec = null;
+    private V3NodeSpec spec;
 
     public V3NodeCreateRequest withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -63,6 +63,8 @@ public class V3NodeCreateRequest  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public V3NodeCreateRequest withKind(String kind) {
         this.kind = kind;
         return this;
@@ -82,6 +84,8 @@ public class V3NodeCreateRequest  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public V3NodeCreateRequest withMetadata(NodeMetadata metadata) {
         this.metadata = metadata;
@@ -110,6 +114,8 @@ public class V3NodeCreateRequest  {
         this.metadata = metadata;
     }
 
+    
+
     public V3NodeCreateRequest withSpec(V3NodeSpec spec) {
         this.spec = spec;
         return this;
@@ -136,6 +142,9 @@ public class V3NodeCreateRequest  {
     public void setSpec(V3NodeSpec spec) {
         this.spec = spec;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

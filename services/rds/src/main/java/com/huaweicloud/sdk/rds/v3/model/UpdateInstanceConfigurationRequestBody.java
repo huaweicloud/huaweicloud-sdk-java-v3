@@ -24,7 +24,7 @@ public class UpdateInstanceConfigurationRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    private Map<String, String> values = new HashMap<>();
+    private Map<String, String> values = null;
     
     public UpdateInstanceConfigurationRequestBody withValues(Map<String, String> values) {
         this.values = values;
@@ -56,6 +56,9 @@ public class UpdateInstanceConfigurationRequestBody  {
     public void setValues(Map<String, String> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

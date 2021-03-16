@@ -33,7 +33,7 @@ public class VerificationCodeDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="country")
     
-    private String country = "chinaPR";
+    private String country;
 
     public VerificationCodeDTO withContact(String contact) {
         this.contact = contact;
@@ -55,6 +55,8 @@ public class VerificationCodeDTO  {
         this.contact = contact;
     }
 
+    
+
     public VerificationCodeDTO withVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
         return this;
@@ -75,6 +77,8 @@ public class VerificationCodeDTO  {
         this.verificationCode = verificationCode;
     }
 
+    
+
     public VerificationCodeDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -94,6 +98,9 @@ public class VerificationCodeDTO  {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

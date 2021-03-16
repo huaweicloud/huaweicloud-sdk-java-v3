@@ -40,7 +40,7 @@ public class ReinstallServerWithCloudInitOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private ReinstallSeverMetadata metadata = null;
+    private ReinstallSeverMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class ReinstallServerWithCloudInitOption  {
         this.adminpass = adminpass;
     }
 
+    
+
     public ReinstallServerWithCloudInitOption withKeyname(String keyname) {
         this.keyname = keyname;
         return this;
@@ -88,6 +90,8 @@ public class ReinstallServerWithCloudInitOption  {
         this.keyname = keyname;
     }
 
+    
+
     public ReinstallServerWithCloudInitOption withUserid(String userid) {
         this.userid = userid;
         return this;
@@ -107,6 +111,8 @@ public class ReinstallServerWithCloudInitOption  {
     public void setUserid(String userid) {
         this.userid = userid;
     }
+
+    
 
     public ReinstallServerWithCloudInitOption withMetadata(ReinstallSeverMetadata metadata) {
         this.metadata = metadata;
@@ -135,6 +141,8 @@ public class ReinstallServerWithCloudInitOption  {
         this.metadata = metadata;
     }
 
+    
+
     public ReinstallServerWithCloudInitOption withMode(String mode) {
         this.mode = mode;
         return this;
@@ -154,6 +162,9 @@ public class ReinstallServerWithCloudInitOption  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

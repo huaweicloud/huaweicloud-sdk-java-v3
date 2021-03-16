@@ -235,6 +235,8 @@ public class ExtendParam  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public ExtendParam withRegionID(String regionID) {
         this.regionID = regionID;
         return this;
@@ -254,6 +256,8 @@ public class ExtendParam  {
     public void setRegionID(String regionID) {
         this.regionID = regionID;
     }
+
+    
 
     public ExtendParam withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
@@ -275,6 +279,8 @@ public class ExtendParam  {
         this.periodType = periodType;
     }
 
+    
+
     public ExtendParam withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
@@ -294,6 +300,8 @@ public class ExtendParam  {
     public void setPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
     }
+
+    
 
     public ExtendParam withIsAutoRenew(String isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
@@ -315,6 +323,8 @@ public class ExtendParam  {
         this.isAutoRenew = isAutoRenew;
     }
 
+    
+
     public ExtendParam withIsAutoPay(String isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -335,6 +345,8 @@ public class ExtendParam  {
         this.isAutoPay = isAutoPay;
     }
 
+    
+
     public ExtendParam withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -354,6 +366,9 @@ public class ExtendParam  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

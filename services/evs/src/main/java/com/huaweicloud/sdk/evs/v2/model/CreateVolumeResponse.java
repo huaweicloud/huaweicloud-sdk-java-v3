@@ -59,6 +59,8 @@ public class CreateVolumeResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public CreateVolumeResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -79,6 +81,8 @@ public class CreateVolumeResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    
+
     public CreateVolumeResponse withVolumeIds(List<String> volumeIds) {
         this.volumeIds = volumeIds;
         return this;
@@ -86,9 +90,6 @@ public class CreateVolumeResponse extends SdkResponse {
 
     
     public CreateVolumeResponse addVolumeIdsItem(String volumeIdsItem) {
-        if (this.volumeIds == null) {
-            this.volumeIds = new ArrayList<>();
-        }
         this.volumeIds.add(volumeIdsItem);
         return this;
     }
@@ -112,6 +113,9 @@ public class CreateVolumeResponse extends SdkResponse {
     public void setVolumeIds(List<String> volumeIds) {
         this.volumeIds = volumeIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

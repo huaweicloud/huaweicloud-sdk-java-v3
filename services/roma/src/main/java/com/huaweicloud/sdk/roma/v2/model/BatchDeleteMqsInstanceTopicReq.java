@@ -23,7 +23,7 @@ public class BatchDeleteMqsInstanceTopicReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topics")
     
-    private List<String> topics = new ArrayList<>();
+    private List<String> topics = null;
     
     public BatchDeleteMqsInstanceTopicReq withTopics(List<String> topics) {
         this.topics = topics;
@@ -55,6 +55,9 @@ public class BatchDeleteMqsInstanceTopicReq  {
     public void setTopics(List<String> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

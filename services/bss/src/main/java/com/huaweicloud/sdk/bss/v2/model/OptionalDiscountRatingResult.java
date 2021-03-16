@@ -94,6 +94,8 @@ public class OptionalDiscountRatingResult  {
         this.discountId = discountId;
     }
 
+    
+
     public OptionalDiscountRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -113,6 +115,8 @@ public class OptionalDiscountRatingResult  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
 
     public OptionalDiscountRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
@@ -134,6 +138,8 @@ public class OptionalDiscountRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
+    
+
     public OptionalDiscountRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
@@ -153,6 +159,8 @@ public class OptionalDiscountRatingResult  {
     public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
+
+    
 
     public OptionalDiscountRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -174,6 +182,8 @@ public class OptionalDiscountRatingResult  {
         this.measureId = measureId;
     }
 
+    
+
     public OptionalDiscountRatingResult withDiscountType(Integer discountType) {
         this.discountType = discountType;
         return this;
@@ -193,6 +203,8 @@ public class OptionalDiscountRatingResult  {
     public void setDiscountType(Integer discountType) {
         this.discountType = discountType;
     }
+
+    
 
     public OptionalDiscountRatingResult withDiscountName(String discountName) {
         this.discountName = discountName;
@@ -214,6 +226,8 @@ public class OptionalDiscountRatingResult  {
         this.discountName = discountName;
     }
 
+    
+
     public OptionalDiscountRatingResult withBestOffer(Integer bestOffer) {
         this.bestOffer = bestOffer;
         return this;
@@ -234,6 +248,8 @@ public class OptionalDiscountRatingResult  {
         this.bestOffer = bestOffer;
     }
 
+    
+
     public OptionalDiscountRatingResult withProductRatingResults(List<PeriodProductRatingResult> productRatingResults) {
         this.productRatingResults = productRatingResults;
         return this;
@@ -241,9 +257,6 @@ public class OptionalDiscountRatingResult  {
 
     
     public OptionalDiscountRatingResult addProductRatingResultsItem(PeriodProductRatingResult productRatingResultsItem) {
-        if (this.productRatingResults == null) {
-            this.productRatingResults = new ArrayList<>();
-        }
         this.productRatingResults.add(productRatingResultsItem);
         return this;
     }
@@ -267,6 +280,9 @@ public class OptionalDiscountRatingResult  {
     public void setProductRatingResults(List<PeriodProductRatingResult> productRatingResults) {
         this.productRatingResults = productRatingResults;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

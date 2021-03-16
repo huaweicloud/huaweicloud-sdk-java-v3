@@ -143,6 +143,8 @@ public class Taint  {
         this.effect = effect;
     }
 
+    
+
     public Taint withKey(String key) {
         this.key = key;
         return this;
@@ -163,6 +165,8 @@ public class Taint  {
         this.key = key;
     }
 
+    
+
     public Taint withValue(String value) {
         this.value = value;
         return this;
@@ -182,6 +186,9 @@ public class Taint  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

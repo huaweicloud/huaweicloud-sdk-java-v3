@@ -444,6 +444,143 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAllMembersRequest, ListAllMembersResponse> listAllMembers = genForlistAllMembers();
+
+    private static HttpRequestDef<ListAllMembersRequest, ListAllMembersResponse> genForlistAllMembers() {
+        // basic
+        HttpRequestDef.Builder<ListAllMembersRequest, ListAllMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllMembersRequest.class, ListAllMembersResponse.class)
+                .withName("ListAllMembers")
+                .withUri("/v3/{project_id}/elb/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getAddress, (req, v) -> {
+                req.setAddress(v);
+            })
+        );
+        builder.withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getAdminStateUp, (req, v) -> {
+                req.setAdminStateUp(v);
+            })
+        );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("ip_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getIpVersion, (req, v) -> {
+                req.setIpVersion(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("loadbalancer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("operating_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getOperatingStatus, (req, v) -> {
+                req.setOperatingStatus(v);
+            })
+        );
+        builder.withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getPageReverse, (req, v) -> {
+                req.setPageReverse(v);
+            })
+        );
+        builder.withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getPoolId, (req, v) -> {
+                req.setPoolId(v);
+            })
+        );
+        builder.withRequestField("protocol_port",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getProtocolPort, (req, v) -> {
+                req.setProtocolPort(v);
+            })
+        );
+        builder.withRequestField("subnet_cidr_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getSubnetCidrId, (req, v) -> {
+                req.setSubnetCidrId(v);
+            })
+        );
+        builder.withRequestField("weight",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAllMembersRequest::getWeight, (req, v) -> {
+                req.setWeight(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZones = genForlistAvailabilityZones();
 
     private static HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> genForlistAvailabilityZones() {

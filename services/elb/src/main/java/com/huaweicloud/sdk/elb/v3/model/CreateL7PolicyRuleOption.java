@@ -21,7 +21,7 @@ public class CreateL7PolicyRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,7 +39,7 @@ public class CreateL7PolicyRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invert")
     
-    private Boolean invert = false;
+    private Boolean invert;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class CreateL7PolicyRuleOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreateL7PolicyRuleOption withType(String type) {
         this.type = type;
         return this;
@@ -92,6 +94,8 @@ public class CreateL7PolicyRuleOption  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public CreateL7PolicyRuleOption withCompareType(String compareType) {
         this.compareType = compareType;
@@ -113,6 +117,8 @@ public class CreateL7PolicyRuleOption  {
         this.compareType = compareType;
     }
 
+    
+
     public CreateL7PolicyRuleOption withInvert(Boolean invert) {
         this.invert = invert;
         return this;
@@ -132,6 +138,8 @@ public class CreateL7PolicyRuleOption  {
     public void setInvert(Boolean invert) {
         this.invert = invert;
     }
+
+    
 
     public CreateL7PolicyRuleOption withKey(String key) {
         this.key = key;
@@ -153,6 +161,8 @@ public class CreateL7PolicyRuleOption  {
         this.key = key;
     }
 
+    
+
     public CreateL7PolicyRuleOption withValue(String value) {
         this.value = value;
         return this;
@@ -172,6 +182,9 @@ public class CreateL7PolicyRuleOption  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

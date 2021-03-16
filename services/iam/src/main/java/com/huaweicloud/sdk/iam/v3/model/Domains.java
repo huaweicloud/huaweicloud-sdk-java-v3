@@ -40,7 +40,7 @@ public class Domains  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class Domains  {
         this.enabled = enabled;
     }
 
+    
+
     public Domains withId(String id) {
         this.id = id;
         return this;
@@ -88,6 +90,8 @@ public class Domains  {
         this.id = id;
     }
 
+    
+
     public Domains withName(String name) {
         this.name = name;
         return this;
@@ -107,6 +111,8 @@ public class Domains  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Domains withLinks(LinksSelf links) {
         this.links = links;
@@ -135,6 +141,8 @@ public class Domains  {
         this.links = links;
     }
 
+    
+
     public Domains withDescription(String description) {
         this.description = description;
         return this;
@@ -154,6 +162,9 @@ public class Domains  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

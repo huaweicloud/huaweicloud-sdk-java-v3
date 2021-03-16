@@ -49,6 +49,8 @@ public class AvailabilityZone  {
         this.code = code;
     }
 
+    
+
     public AvailabilityZone withState(String state) {
         this.state = state;
         return this;
@@ -68,6 +70,9 @@ public class AvailabilityZone  {
     public void setState(String state) {
         this.state = state;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

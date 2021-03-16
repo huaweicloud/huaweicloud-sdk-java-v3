@@ -59,7 +59,7 @@ public class KeystoneUpdateUserByAdminResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,7 +77,7 @@ public class KeystoneUpdateUserByAdminResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra")
     
-    private KeystoneUserResultExtra extra = null;
+    private KeystoneUserResultExtra extra;
 
     public KeystoneUpdateUserByAdminResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
@@ -99,6 +99,8 @@ public class KeystoneUpdateUserByAdminResult  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public KeystoneUpdateUserByAdminResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -118,6 +120,8 @@ public class KeystoneUpdateUserByAdminResult  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public KeystoneUpdateUserByAdminResult withLastProjectId(String lastProjectId) {
         this.lastProjectId = lastProjectId;
@@ -139,6 +143,8 @@ public class KeystoneUpdateUserByAdminResult  {
         this.lastProjectId = lastProjectId;
     }
 
+    
+
     public KeystoneUpdateUserByAdminResult withName(String name) {
         this.name = name;
         return this;
@@ -158,6 +164,8 @@ public class KeystoneUpdateUserByAdminResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneUpdateUserByAdminResult withDescription(String description) {
         this.description = description;
@@ -179,6 +187,8 @@ public class KeystoneUpdateUserByAdminResult  {
         this.description = description;
     }
 
+    
+
     public KeystoneUpdateUserByAdminResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -198,6 +208,8 @@ public class KeystoneUpdateUserByAdminResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
 
     public KeystoneUpdateUserByAdminResult withLinks(LinksSelf links) {
         this.links = links;
@@ -226,6 +238,8 @@ public class KeystoneUpdateUserByAdminResult  {
         this.links = links;
     }
 
+    
+
     public KeystoneUpdateUserByAdminResult withId(String id) {
         this.id = id;
         return this;
@@ -246,6 +260,8 @@ public class KeystoneUpdateUserByAdminResult  {
         this.id = id;
     }
 
+    
+
     public KeystoneUpdateUserByAdminResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -265,6 +281,8 @@ public class KeystoneUpdateUserByAdminResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public KeystoneUpdateUserByAdminResult withExtra(KeystoneUserResultExtra extra) {
         this.extra = extra;
@@ -292,6 +310,9 @@ public class KeystoneUpdateUserByAdminResult  {
     public void setExtra(KeystoneUserResultExtra extra) {
         this.extra = extra;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -167,13 +167,13 @@ public class TaskDetailInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -185,7 +185,7 @@ public class TaskDetailInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audit_report")
     
-    private AuditReport auditReport = null;
+    private AuditReport auditReport;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -203,13 +203,13 @@ public class TaskDetailInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="media_detail")
     
-    private MediaDetail mediaDetail = null;
+    private MediaDetail mediaDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="xcode_error")
     
-    private ErrorResponse xcodeError = null;
+    private ErrorResponse xcodeError;
 
     public TaskDetailInfo withTaskId(String taskId) {
         this.taskId = taskId;
@@ -231,6 +231,8 @@ public class TaskDetailInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public TaskDetailInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -250,6 +252,8 @@ public class TaskDetailInfo  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public TaskDetailInfo withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -271,6 +275,8 @@ public class TaskDetailInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public TaskDetailInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -291,6 +297,8 @@ public class TaskDetailInfo  {
         this.startTime = startTime;
     }
 
+    
+
     public TaskDetailInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -310,6 +318,8 @@ public class TaskDetailInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public TaskDetailInfo withInput(ObsObjInfo input) {
         this.input = input;
@@ -338,6 +348,8 @@ public class TaskDetailInfo  {
         this.input = input;
     }
 
+    
+
     public TaskDetailInfo withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -365,6 +377,8 @@ public class TaskDetailInfo  {
         this.output = output;
     }
 
+    
+
     public TaskDetailInfo withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -384,6 +398,8 @@ public class TaskDetailInfo  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public TaskDetailInfo withAuditReport(AuditReport auditReport) {
         this.auditReport = auditReport;
@@ -412,6 +428,8 @@ public class TaskDetailInfo  {
         this.auditReport = auditReport;
     }
 
+    
+
     public TaskDetailInfo withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -432,6 +450,8 @@ public class TaskDetailInfo  {
         this.errorCode = errorCode;
     }
 
+    
+
     public TaskDetailInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -451,6 +471,8 @@ public class TaskDetailInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public TaskDetailInfo withMediaDetail(MediaDetail mediaDetail) {
         this.mediaDetail = mediaDetail;
@@ -479,6 +501,8 @@ public class TaskDetailInfo  {
         this.mediaDetail = mediaDetail;
     }
 
+    
+
     public TaskDetailInfo withXcodeError(ErrorResponse xcodeError) {
         this.xcodeError = xcodeError;
         return this;
@@ -505,6 +529,9 @@ public class TaskDetailInfo  {
     public void setXcodeError(ErrorResponse xcodeError) {
         this.xcodeError = xcodeError;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

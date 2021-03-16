@@ -44,6 +44,9 @@ public class ShowUserInstancesResponse extends SdkResponse {
     public void setInstanceNum(String instanceNum) {
         this.instanceNum = instanceNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,7 +23,7 @@ public class ListDomainBandwidthPeakRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="play_domains")
     
-    private List<String> playDomains = new ArrayList<>();
+    private List<String> playDomains = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class ListDomainBandwidthPeakRequest  {
         this.playDomains = playDomains;
     }
 
+    
+
     public ListDomainBandwidthPeakRequest withApp(String app) {
         this.app = app;
         return this;
@@ -111,6 +113,8 @@ public class ListDomainBandwidthPeakRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListDomainBandwidthPeakRequest withStream(String stream) {
         this.stream = stream;
@@ -132,6 +136,8 @@ public class ListDomainBandwidthPeakRequest  {
         this.stream = stream;
     }
 
+    
+
     public ListDomainBandwidthPeakRequest withRegion(List<String> region) {
         this.region = region;
         return this;
@@ -139,9 +145,6 @@ public class ListDomainBandwidthPeakRequest  {
 
     
     public ListDomainBandwidthPeakRequest addRegionItem(String regionItem) {
-        if (this.region == null) {
-            this.region = new ArrayList<>();
-        }
         this.region.add(regionItem);
         return this;
     }
@@ -166,6 +169,8 @@ public class ListDomainBandwidthPeakRequest  {
         this.region = region;
     }
 
+    
+
     public ListDomainBandwidthPeakRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
@@ -173,9 +178,6 @@ public class ListDomainBandwidthPeakRequest  {
 
     
     public ListDomainBandwidthPeakRequest addIspItem(String ispItem) {
-        if (this.isp == null) {
-            this.isp = new ArrayList<>();
-        }
         this.isp.add(ispItem);
         return this;
     }
@@ -200,6 +202,8 @@ public class ListDomainBandwidthPeakRequest  {
         this.isp = isp;
     }
 
+    
+
     public ListDomainBandwidthPeakRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -220,6 +224,8 @@ public class ListDomainBandwidthPeakRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListDomainBandwidthPeakRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -239,6 +245,9 @@ public class ListDomainBandwidthPeakRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

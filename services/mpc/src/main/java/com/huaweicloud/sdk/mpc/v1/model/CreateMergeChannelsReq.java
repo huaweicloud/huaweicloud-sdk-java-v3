@@ -22,7 +22,7 @@ public class CreateMergeChannelsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="multi_audio")
     
-    private MpcMultiAudio multiAudio = null;
+    private MpcMultiAudio multiAudio;
 
     public CreateMergeChannelsReq withMultiAudio(MpcMultiAudio multiAudio) {
         this.multiAudio = multiAudio;
@@ -50,6 +50,9 @@ public class CreateMergeChannelsReq  {
     public void setMultiAudio(MpcMultiAudio multiAudio) {
         this.multiAudio = multiAudio;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -60,6 +60,8 @@ public class AddUserToAppResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public AddUserToAppResponse withId(String id) {
         this.id = id;
         return this;
@@ -80,6 +82,8 @@ public class AddUserToAppResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public AddUserToAppResponse withUsers(List<AppUsersUsers> users) {
         this.users = users;
         return this;
@@ -87,9 +91,6 @@ public class AddUserToAppResponse extends SdkResponse {
 
     
     public AddUserToAppResponse addUsersItem(AppUsersUsers usersItem) {
-        if (this.users == null) {
-            this.users = new ArrayList<>();
-        }
         this.users.add(usersItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class AddUserToAppResponse extends SdkResponse {
     public void setUsers(List<AppUsersUsers> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

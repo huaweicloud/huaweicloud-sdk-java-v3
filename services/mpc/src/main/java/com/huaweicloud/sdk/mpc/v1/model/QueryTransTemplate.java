@@ -36,19 +36,19 @@ public class QueryTransTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video")
     
-    private Video video = null;
+    private Video video;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private Audio audio = null;
+    private Audio audio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="common")
     
-    private Common common = null;
+    private Common common;
 
     public QueryTransTemplate withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -70,6 +70,8 @@ public class QueryTransTemplate  {
         this.templateName = templateName;
     }
 
+    
+
     public QueryTransTemplate withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -89,6 +91,8 @@ public class QueryTransTemplate  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public QueryTransTemplate withVideo(Video video) {
         this.video = video;
@@ -117,6 +121,8 @@ public class QueryTransTemplate  {
         this.video = video;
     }
 
+    
+
     public QueryTransTemplate withAudio(Audio audio) {
         this.audio = audio;
         return this;
@@ -144,6 +150,8 @@ public class QueryTransTemplate  {
         this.audio = audio;
     }
 
+    
+
     public QueryTransTemplate withCommon(Common common) {
         this.common = common;
         return this;
@@ -170,6 +178,9 @@ public class QueryTransTemplate  {
     public void setCommon(Common common) {
         this.common = common;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

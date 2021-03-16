@@ -60,6 +60,8 @@ public class ListHotKeyScanTasksResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListHotKeyScanTasksResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -80,6 +82,8 @@ public class ListHotKeyScanTasksResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListHotKeyScanTasksResponse withRecords(List<RecordsResponse> records) {
         this.records = records;
         return this;
@@ -87,9 +91,6 @@ public class ListHotKeyScanTasksResponse extends SdkResponse {
 
     
     public ListHotKeyScanTasksResponse addRecordsItem(RecordsResponse recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListHotKeyScanTasksResponse extends SdkResponse {
     public void setRecords(List<RecordsResponse> records) {
         this.records = records;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

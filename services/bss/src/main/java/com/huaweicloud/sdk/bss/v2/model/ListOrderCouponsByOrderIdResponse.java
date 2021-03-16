@@ -54,6 +54,8 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListOrderCouponsByOrderIdResponse withUserCoupons(List<CouponInfoV2> userCoupons) {
         this.userCoupons = userCoupons;
         return this;
@@ -61,9 +63,6 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
 
     
     public ListOrderCouponsByOrderIdResponse addUserCouponsItem(CouponInfoV2 userCouponsItem) {
-        if (this.userCoupons == null) {
-            this.userCoupons = new ArrayList<>();
-        }
         this.userCoupons.add(userCouponsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
     public void setUserCoupons(List<CouponInfoV2> userCoupons) {
         this.userCoupons = userCoupons;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

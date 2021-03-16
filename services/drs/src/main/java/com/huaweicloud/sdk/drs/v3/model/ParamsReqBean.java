@@ -49,6 +49,8 @@ public class ParamsReqBean  {
         this.key = key;
     }
 
+    
+
     public ParamsReqBean withTargetValue(String targetValue) {
         this.targetValue = targetValue;
         return this;
@@ -68,6 +70,9 @@ public class ParamsReqBean  {
     public void setTargetValue(String targetValue) {
         this.targetValue = targetValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -179,6 +179,8 @@ public class CreateDestinationRequestBody  {
         this.destinationType = destinationType;
     }
 
+    
+
     public CreateDestinationRequestBody withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -198,6 +200,8 @@ public class CreateDestinationRequestBody  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public CreateDestinationRequestBody withDestinationName(String destinationName) {
         this.destinationName = destinationName;
@@ -219,6 +223,8 @@ public class CreateDestinationRequestBody  {
         this.destinationName = destinationName;
     }
 
+    
+
     public CreateDestinationRequestBody withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -238,6 +244,8 @@ public class CreateDestinationRequestBody  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public CreateDestinationRequestBody withServer(String server) {
         this.server = server;
@@ -259,6 +267,8 @@ public class CreateDestinationRequestBody  {
         this.server = server;
     }
 
+    
+
     public CreateDestinationRequestBody withToken(String token) {
         this.token = token;
         return this;
@@ -278,6 +288,8 @@ public class CreateDestinationRequestBody  {
     public void setToken(String token) {
         this.token = token;
     }
+
+    
 
     public CreateDestinationRequestBody withTag(String tag) {
         this.tag = tag;
@@ -299,6 +311,8 @@ public class CreateDestinationRequestBody  {
         this.tag = tag;
     }
 
+    
+
     public CreateDestinationRequestBody withMqsSaslSsl(Boolean mqsSaslSsl) {
         this.mqsSaslSsl = mqsSaslSsl;
         return this;
@@ -318,6 +332,8 @@ public class CreateDestinationRequestBody  {
     public void setMqsSaslSsl(Boolean mqsSaslSsl) {
         this.mqsSaslSsl = mqsSaslSsl;
     }
+
+    
 
     public CreateDestinationRequestBody withUserName(String userName) {
         this.userName = userName;
@@ -339,6 +355,8 @@ public class CreateDestinationRequestBody  {
         this.userName = userName;
     }
 
+    
+
     public CreateDestinationRequestBody withPassword(String password) {
         this.password = password;
         return this;
@@ -358,6 +376,9 @@ public class CreateDestinationRequestBody  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class UpdateRepoRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateRepoRequestBody body = null;
+    private UpdateRepoRequestBody body;
 
     public UpdateRepoRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -56,6 +56,8 @@ public class UpdateRepoRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public UpdateRepoRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class UpdateRepoRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public UpdateRepoRequest withBody(UpdateRepoRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateRepoRequest  {
     public void setBody(UpdateRepoRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

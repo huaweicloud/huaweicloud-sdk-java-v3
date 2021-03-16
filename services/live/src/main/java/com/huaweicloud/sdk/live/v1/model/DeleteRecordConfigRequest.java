@@ -49,6 +49,8 @@ public class DeleteRecordConfigRequest  {
         this.domain = domain;
     }
 
+    
+
     public DeleteRecordConfigRequest withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -68,6 +70,9 @@ public class DeleteRecordConfigRequest  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

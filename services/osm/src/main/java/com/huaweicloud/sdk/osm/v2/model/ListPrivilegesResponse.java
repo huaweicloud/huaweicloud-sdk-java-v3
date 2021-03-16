@@ -46,6 +46,9 @@ public class ListPrivilegesResponse extends SdkResponse {
     public void setHasPrivilege(Integer hasPrivilege) {
         this.hasPrivilege = hasPrivilege;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

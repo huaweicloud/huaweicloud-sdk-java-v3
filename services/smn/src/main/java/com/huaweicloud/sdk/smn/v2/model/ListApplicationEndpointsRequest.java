@@ -27,13 +27,13 @@ public class ListApplicationEndpointsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class ListApplicationEndpointsRequest  {
         this.applicationUrn = applicationUrn;
     }
 
+    
+
     public ListApplicationEndpointsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -93,6 +95,8 @@ public class ListApplicationEndpointsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListApplicationEndpointsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -114,6 +118,8 @@ public class ListApplicationEndpointsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListApplicationEndpointsRequest withEnabled(String enabled) {
         this.enabled = enabled;
         return this;
@@ -133,6 +139,8 @@ public class ListApplicationEndpointsRequest  {
     public void setEnabled(String enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public ListApplicationEndpointsRequest withToken(String token) {
         this.token = token;
@@ -154,6 +162,8 @@ public class ListApplicationEndpointsRequest  {
         this.token = token;
     }
 
+    
+
     public ListApplicationEndpointsRequest withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -173,6 +183,9 @@ public class ListApplicationEndpointsRequest  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

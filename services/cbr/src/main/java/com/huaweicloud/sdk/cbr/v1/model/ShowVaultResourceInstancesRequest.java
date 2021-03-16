@@ -22,7 +22,7 @@ public class ShowVaultResourceInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VaultResourceInstancesReq body = null;
+    private VaultResourceInstancesReq body;
 
     public ShowVaultResourceInstancesRequest withBody(VaultResourceInstancesReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ShowVaultResourceInstancesRequest  {
     public void setBody(VaultResourceInstancesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

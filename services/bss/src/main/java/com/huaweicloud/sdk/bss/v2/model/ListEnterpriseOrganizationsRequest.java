@@ -21,7 +21,7 @@ public class ListEnterpriseOrganizationsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="recursive_query")
     
-    private Integer recursiveQuery = 0;
+    private Integer recursiveQuery;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,6 +51,8 @@ public class ListEnterpriseOrganizationsRequest  {
         this.recursiveQuery = recursiveQuery;
     }
 
+    
+
     public ListEnterpriseOrganizationsRequest withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -70,6 +72,9 @@ public class ListEnterpriseOrganizationsRequest  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

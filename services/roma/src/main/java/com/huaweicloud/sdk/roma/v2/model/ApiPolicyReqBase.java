@@ -125,7 +125,7 @@ public class ApiPolicyReqBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<ApiConditionBase> conditions = new ArrayList<>();
+    private List<ApiConditionBase> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,6 +153,8 @@ public class ApiPolicyReqBase  {
         this.effectMode = effectMode;
     }
 
+    
+
     public ApiPolicyReqBase withName(String name) {
         this.name = name;
         return this;
@@ -173,6 +175,8 @@ public class ApiPolicyReqBase  {
         this.name = name;
     }
 
+    
+
     public ApiPolicyReqBase withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -180,9 +184,6 @@ public class ApiPolicyReqBase  {
 
     
     public ApiPolicyReqBase addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -206,6 +207,8 @@ public class ApiPolicyReqBase  {
     public void setBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
     }
+
+    
 
     public ApiPolicyReqBase withConditions(List<ApiConditionBase> conditions) {
         this.conditions = conditions;
@@ -238,6 +241,8 @@ public class ApiPolicyReqBase  {
         this.conditions = conditions;
     }
 
+    
+
     public ApiPolicyReqBase withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -257,6 +262,9 @@ public class ApiPolicyReqBase  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

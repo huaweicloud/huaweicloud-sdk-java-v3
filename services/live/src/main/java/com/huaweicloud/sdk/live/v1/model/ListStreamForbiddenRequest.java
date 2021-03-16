@@ -45,13 +45,13 @@ public class ListStreamForbiddenRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ListStreamForbiddenRequest withSpecifyProject(String specifyProject) {
         this.specifyProject = specifyProject;
@@ -73,6 +73,8 @@ public class ListStreamForbiddenRequest  {
         this.specifyProject = specifyProject;
     }
 
+    
+
     public ListStreamForbiddenRequest withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -92,6 +94,8 @@ public class ListStreamForbiddenRequest  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
 
     public ListStreamForbiddenRequest withAppName(String appName) {
         this.appName = appName;
@@ -113,6 +117,8 @@ public class ListStreamForbiddenRequest  {
         this.appName = appName;
     }
 
+    
+
     public ListStreamForbiddenRequest withStreamName(String streamName) {
         this.streamName = streamName;
         return this;
@@ -132,6 +138,8 @@ public class ListStreamForbiddenRequest  {
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
+
+    
 
     public ListStreamForbiddenRequest withPage(Integer page) {
         this.page = page;
@@ -154,6 +162,8 @@ public class ListStreamForbiddenRequest  {
         this.page = page;
     }
 
+    
+
     public ListStreamForbiddenRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -175,6 +185,9 @@ public class ListStreamForbiddenRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

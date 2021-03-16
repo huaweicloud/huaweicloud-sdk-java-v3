@@ -41,9 +41,6 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
 
     
     public ListGroupReplicationInfoResponse addGroupListItem(InstanceGroupListInfo groupListItem) {
-        if (this.groupList == null) {
-            this.groupList = new ArrayList<>();
-        }
         this.groupList.add(groupListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
         this.groupList = groupList;
     }
 
+    
+
     public ListGroupReplicationInfoResponse withGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
         return this;
@@ -87,6 +86,9 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
     public void setGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

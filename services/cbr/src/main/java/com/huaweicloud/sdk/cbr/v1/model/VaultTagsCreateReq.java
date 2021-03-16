@@ -22,7 +22,7 @@ public class VaultTagsCreateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    private Tag tag = null;
+    private Tag tag;
 
     public VaultTagsCreateReq withTag(Tag tag) {
         this.tag = tag;
@@ -50,6 +50,9 @@ public class VaultTagsCreateReq  {
     public void setTag(Tag tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

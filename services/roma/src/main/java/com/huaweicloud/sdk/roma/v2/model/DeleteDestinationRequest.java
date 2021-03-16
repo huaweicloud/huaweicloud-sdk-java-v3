@@ -55,6 +55,8 @@ public class DeleteDestinationRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteDestinationRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -74,6 +76,8 @@ public class DeleteDestinationRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
 
     public DeleteDestinationRequest withDestinationId(Integer destinationId) {
         this.destinationId = destinationId;
@@ -96,6 +100,9 @@ public class DeleteDestinationRequest  {
     public void setDestinationId(Integer destinationId) {
         this.destinationId = destinationId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

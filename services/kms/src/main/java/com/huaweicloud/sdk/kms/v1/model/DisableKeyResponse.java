@@ -24,7 +24,7 @@ public class DisableKeyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_info")
     
-    private KeyStatusInfo keyInfo = null;
+    private KeyStatusInfo keyInfo;
 
     public DisableKeyResponse withKeyInfo(KeyStatusInfo keyInfo) {
         this.keyInfo = keyInfo;
@@ -52,6 +52,9 @@ public class DisableKeyResponse extends SdkResponse {
     public void setKeyInfo(KeyStatusInfo keyInfo) {
         this.keyInfo = keyInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

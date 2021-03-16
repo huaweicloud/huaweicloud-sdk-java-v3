@@ -28,7 +28,7 @@ public class UpdateSecurityGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group")
     
-    private UpdateSecurityGroupOption securityGroup = null;
+    private UpdateSecurityGroupOption securityGroup;
 
     public UpdateSecurityGroupRequestBody withDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
@@ -49,6 +49,8 @@ public class UpdateSecurityGroupRequestBody  {
     public void setDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
     }
+
+    
 
     public UpdateSecurityGroupRequestBody withSecurityGroup(UpdateSecurityGroupOption securityGroup) {
         this.securityGroup = securityGroup;
@@ -76,6 +78,9 @@ public class UpdateSecurityGroupRequestBody  {
     public void setSecurityGroup(UpdateSecurityGroupOption securityGroup) {
         this.securityGroup = securityGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

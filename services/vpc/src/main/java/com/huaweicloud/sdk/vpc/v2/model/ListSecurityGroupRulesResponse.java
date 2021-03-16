@@ -35,9 +35,6 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
 
     
     public ListSecurityGroupRulesResponse addSecurityGroupRulesItem(SecurityGroupRule securityGroupRulesItem) {
-        if (this.securityGroupRules == null) {
-            this.securityGroupRules = new ArrayList<>();
-        }
         this.securityGroupRules.add(securityGroupRulesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
     public void setSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

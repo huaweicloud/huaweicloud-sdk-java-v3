@@ -24,7 +24,7 @@ public class CinderExportToImageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-volume_upload_image")
     
-    private Image osVolumeUploadImage = null;
+    private Image osVolumeUploadImage;
 
     public CinderExportToImageResponse withOsVolumeUploadImage(Image osVolumeUploadImage) {
         this.osVolumeUploadImage = osVolumeUploadImage;
@@ -52,6 +52,9 @@ public class CinderExportToImageResponse extends SdkResponse {
     public void setOsVolumeUploadImage(Image osVolumeUploadImage) {
         this.osVolumeUploadImage = osVolumeUploadImage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

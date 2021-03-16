@@ -44,6 +44,9 @@ public class UpdateScalingGroupResponse extends SdkResponse {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

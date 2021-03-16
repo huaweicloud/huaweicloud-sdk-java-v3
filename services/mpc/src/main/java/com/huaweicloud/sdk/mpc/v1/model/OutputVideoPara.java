@@ -42,13 +42,13 @@ public class OutputVideoPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video")
     
-    private VideoInfo video = null;
+    private VideoInfo video;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private AudioInfo audio = null;
+    private AudioInfo audio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,7 +66,7 @@ public class OutputVideoPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error")
     
-    private XCodeError error = null;
+    private XCodeError error;
 
     public OutputVideoPara withTemplateId(Integer templateId) {
         this.templateId = templateId;
@@ -90,6 +90,8 @@ public class OutputVideoPara  {
         this.templateId = templateId;
     }
 
+    
+
     public OutputVideoPara withSize(Long size) {
         this.size = size;
         return this;
@@ -112,6 +114,8 @@ public class OutputVideoPara  {
         this.size = size;
     }
 
+    
+
     public OutputVideoPara withPack(String pack) {
         this.pack = pack;
         return this;
@@ -131,6 +135,8 @@ public class OutputVideoPara  {
     public void setPack(String pack) {
         this.pack = pack;
     }
+
+    
 
     public OutputVideoPara withVideo(VideoInfo video) {
         this.video = video;
@@ -159,6 +165,8 @@ public class OutputVideoPara  {
         this.video = video;
     }
 
+    
+
     public OutputVideoPara withAudio(AudioInfo audio) {
         this.audio = audio;
         return this;
@@ -186,6 +194,8 @@ public class OutputVideoPara  {
         this.audio = audio;
     }
 
+    
+
     public OutputVideoPara withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -205,6 +215,8 @@ public class OutputVideoPara  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public OutputVideoPara withConverDuration(Double converDuration) {
         this.converDuration = converDuration;
@@ -227,6 +239,8 @@ public class OutputVideoPara  {
     public void setConverDuration(Double converDuration) {
         this.converDuration = converDuration;
     }
+
+    
 
     public OutputVideoPara withError(XCodeError error) {
         this.error = error;
@@ -254,6 +268,9 @@ public class OutputVideoPara  {
     public void setError(XCodeError error) {
         this.error = error;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

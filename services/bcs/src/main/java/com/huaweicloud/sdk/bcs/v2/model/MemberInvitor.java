@@ -67,6 +67,8 @@ public class MemberInvitor  {
         this.invitorBcsId = invitorBcsId;
     }
 
+    
+
     public MemberInvitor withInvitorBcsName(String invitorBcsName) {
         this.invitorBcsName = invitorBcsName;
         return this;
@@ -86,6 +88,8 @@ public class MemberInvitor  {
     public void setInvitorBcsName(String invitorBcsName) {
         this.invitorBcsName = invitorBcsName;
     }
+
+    
 
     public MemberInvitor withInvitorProjectId(String invitorProjectId) {
         this.invitorProjectId = invitorProjectId;
@@ -107,6 +111,8 @@ public class MemberInvitor  {
         this.invitorProjectId = invitorProjectId;
     }
 
+    
+
     public MemberInvitor withInvitorUserId(String invitorUserId) {
         this.invitorUserId = invitorUserId;
         return this;
@@ -127,6 +133,8 @@ public class MemberInvitor  {
         this.invitorUserId = invitorUserId;
     }
 
+    
+
     public MemberInvitor withInvitorUsername(String invitorUsername) {
         this.invitorUsername = invitorUsername;
         return this;
@@ -146,6 +154,9 @@ public class MemberInvitor  {
     public void setInvitorUsername(String invitorUsername) {
         this.invitorUsername = invitorUsername;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

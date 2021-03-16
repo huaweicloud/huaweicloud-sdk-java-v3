@@ -43,7 +43,7 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,7 +61,7 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaData metadata = null;
+    private MetaData metadata;
 
     public CreateAnimatedGraphicsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
@@ -83,6 +83,8 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
+    
+
     public CreateAnimatedGraphicsTaskResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -103,6 +105,8 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateAnimatedGraphicsTaskResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -122,6 +126,8 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public CreateAnimatedGraphicsTaskResponse withOutput(ObsObjInfo output) {
         this.output = output;
@@ -150,6 +156,8 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
         this.output = output;
     }
 
+    
+
     public CreateAnimatedGraphicsTaskResponse withOutputFileName(String outputFileName) {
         this.outputFileName = outputFileName;
         return this;
@@ -170,6 +178,8 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
         this.outputFileName = outputFileName;
     }
 
+    
+
     public CreateAnimatedGraphicsTaskResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -189,6 +199,8 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateAnimatedGraphicsTaskResponse withMetadata(MetaData metadata) {
         this.metadata = metadata;
@@ -216,6 +228,9 @@ public class CreateAnimatedGraphicsTaskResponse extends SdkResponse {
     public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

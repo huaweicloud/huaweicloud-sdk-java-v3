@@ -66,6 +66,8 @@ public class GlanceListImagesResponse extends SdkResponse {
         this.first = first;
     }
 
+    
+
     public GlanceListImagesResponse withImages(List<GlanceShowImageResponseBody> images) {
         this.images = images;
         return this;
@@ -73,9 +75,6 @@ public class GlanceListImagesResponse extends SdkResponse {
 
     
     public GlanceListImagesResponse addImagesItem(GlanceShowImageResponseBody imagesItem) {
-        if (this.images == null) {
-            this.images = new ArrayList<>();
-        }
         this.images.add(imagesItem);
         return this;
     }
@@ -100,6 +99,8 @@ public class GlanceListImagesResponse extends SdkResponse {
         this.images = images;
     }
 
+    
+
     public GlanceListImagesResponse withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -120,6 +121,8 @@ public class GlanceListImagesResponse extends SdkResponse {
         this.schema = schema;
     }
 
+    
+
     public GlanceListImagesResponse withNext(String next) {
         this.next = next;
         return this;
@@ -139,6 +142,9 @@ public class GlanceListImagesResponse extends SdkResponse {
     public void setNext(String next) {
         this.next = next;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

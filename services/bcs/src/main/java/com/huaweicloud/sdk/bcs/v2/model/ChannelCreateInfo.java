@@ -49,6 +49,8 @@ public class ChannelCreateInfo  {
         this.channelName = channelName;
     }
 
+    
+
     public ChannelCreateInfo withChannelDescription(String channelDescription) {
         this.channelDescription = channelDescription;
         return this;
@@ -68,6 +70,9 @@ public class ChannelCreateInfo  {
     public void setChannelDescription(String channelDescription) {
         this.channelDescription = channelDescription;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

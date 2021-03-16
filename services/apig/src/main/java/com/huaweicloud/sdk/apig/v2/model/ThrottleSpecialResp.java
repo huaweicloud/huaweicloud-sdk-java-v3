@@ -52,7 +52,7 @@ public class ThrottleSpecialResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apply_time")
     
-    private OffsetDateTime applyTime = null;
+    private OffsetDateTime applyTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class ThrottleSpecialResp  {
         this.callLimits = callLimits;
     }
 
+    
+
     public ThrottleSpecialResp withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -111,6 +113,8 @@ public class ThrottleSpecialResp  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ThrottleSpecialResp withObjectName(String objectName) {
         this.objectName = objectName;
@@ -132,6 +136,8 @@ public class ThrottleSpecialResp  {
         this.objectName = objectName;
     }
 
+    
+
     public ThrottleSpecialResp withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -151,6 +157,8 @@ public class ThrottleSpecialResp  {
     public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
+
+    
 
     public ThrottleSpecialResp withThrottleId(String throttleId) {
         this.throttleId = throttleId;
@@ -172,6 +180,8 @@ public class ThrottleSpecialResp  {
         this.throttleId = throttleId;
     }
 
+    
+
     public ThrottleSpecialResp withApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
         return this;
@@ -191,6 +201,8 @@ public class ThrottleSpecialResp  {
     public void setApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
     }
+
+    
 
     public ThrottleSpecialResp withId(String id) {
         this.id = id;
@@ -212,6 +224,8 @@ public class ThrottleSpecialResp  {
         this.id = id;
     }
 
+    
+
     public ThrottleSpecialResp withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -232,6 +246,8 @@ public class ThrottleSpecialResp  {
         this.appId = appId;
     }
 
+    
+
     public ThrottleSpecialResp withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
@@ -251,6 +267,9 @@ public class ThrottleSpecialResp  {
     public void setObjectType(String objectType) {
         this.objectType = objectType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

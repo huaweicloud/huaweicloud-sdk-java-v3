@@ -67,6 +67,8 @@ public class ListResourceGroupRequest  {
         this.groupName = groupName;
     }
 
+    
+
     public ListResourceGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -86,6 +88,8 @@ public class ListResourceGroupRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListResourceGroupRequest withStatus(String status) {
         this.status = status;
@@ -107,6 +111,8 @@ public class ListResourceGroupRequest  {
         this.status = status;
     }
 
+    
+
     public ListResourceGroupRequest withStart(Integer start) {
         this.start = start;
         return this;
@@ -127,6 +133,8 @@ public class ListResourceGroupRequest  {
         this.start = start;
     }
 
+    
+
     public ListResourceGroupRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -146,6 +154,9 @@ public class ListResourceGroupRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

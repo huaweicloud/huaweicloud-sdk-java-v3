@@ -23,7 +23,7 @@ public class BatchSwitchoverReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<String> jobs = new ArrayList<>();
+    private List<String> jobs = null;
     
     public BatchSwitchoverReq withJobs(List<String> jobs) {
         this.jobs = jobs;
@@ -55,6 +55,9 @@ public class BatchSwitchoverReq  {
     public void setJobs(List<String> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class SendMessagesRespMessages  {
         this.error = error;
     }
 
+    
+
     public SendMessagesRespMessages withErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -80,6 +82,8 @@ public class SendMessagesRespMessages  {
     public void setErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public SendMessagesRespMessages withState(Integer state) {
         this.state = state;
@@ -101,6 +105,8 @@ public class SendMessagesRespMessages  {
         this.state = state;
     }
 
+    
+
     public SendMessagesRespMessages withId(String id) {
         this.id = id;
         return this;
@@ -120,6 +126,9 @@ public class SendMessagesRespMessages  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

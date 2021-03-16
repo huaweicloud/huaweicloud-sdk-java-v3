@@ -64,6 +64,8 @@ public class RestMixedPictureBody  {
         this.manualSet = manualSet;
     }
 
+    
+
     public RestMixedPictureBody withImageType(String imageType) {
         this.imageType = imageType;
         return this;
@@ -84,6 +86,8 @@ public class RestMixedPictureBody  {
         this.imageType = imageType;
     }
 
+    
+
     public RestMixedPictureBody withSubscriberInPics(List<SubscriberInPic> subscriberInPics) {
         this.subscriberInPics = subscriberInPics;
         return this;
@@ -91,9 +95,6 @@ public class RestMixedPictureBody  {
 
     
     public RestMixedPictureBody addSubscriberInPicsItem(SubscriberInPic subscriberInPicsItem) {
-        if (this.subscriberInPics == null) {
-            this.subscriberInPics = new ArrayList<>();
-        }
         this.subscriberInPics.add(subscriberInPicsItem);
         return this;
     }
@@ -118,6 +119,8 @@ public class RestMixedPictureBody  {
         this.subscriberInPics = subscriberInPics;
     }
 
+    
+
     public RestMixedPictureBody withSwitchTime(Integer switchTime) {
         this.switchTime = switchTime;
         return this;
@@ -137,6 +140,9 @@ public class RestMixedPictureBody  {
     public void setSwitchTime(Integer switchTime) {
         this.switchTime = switchTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

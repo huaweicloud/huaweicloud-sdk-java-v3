@@ -49,6 +49,8 @@ public class DeleteMfaDeviceRequest  {
         this.userId = userId;
     }
 
+    
+
     public DeleteMfaDeviceRequest withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
@@ -68,6 +70,9 @@ public class DeleteMfaDeviceRequest  {
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

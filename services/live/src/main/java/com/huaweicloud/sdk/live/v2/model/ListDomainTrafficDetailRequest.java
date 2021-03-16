@@ -23,7 +23,7 @@ public class ListDomainTrafficDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="play_domains")
     
-    private List<String> playDomains = new ArrayList<>();
+    private List<String> playDomains = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,6 +98,8 @@ public class ListDomainTrafficDetailRequest  {
         this.playDomains = playDomains;
     }
 
+    
+
     public ListDomainTrafficDetailRequest withApp(String app) {
         this.app = app;
         return this;
@@ -117,6 +119,8 @@ public class ListDomainTrafficDetailRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListDomainTrafficDetailRequest withStream(String stream) {
         this.stream = stream;
@@ -138,6 +142,8 @@ public class ListDomainTrafficDetailRequest  {
         this.stream = stream;
     }
 
+    
+
     public ListDomainTrafficDetailRequest withRegion(List<String> region) {
         this.region = region;
         return this;
@@ -145,9 +151,6 @@ public class ListDomainTrafficDetailRequest  {
 
     
     public ListDomainTrafficDetailRequest addRegionItem(String regionItem) {
-        if (this.region == null) {
-            this.region = new ArrayList<>();
-        }
         this.region.add(regionItem);
         return this;
     }
@@ -172,6 +175,8 @@ public class ListDomainTrafficDetailRequest  {
         this.region = region;
     }
 
+    
+
     public ListDomainTrafficDetailRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
@@ -179,9 +184,6 @@ public class ListDomainTrafficDetailRequest  {
 
     
     public ListDomainTrafficDetailRequest addIspItem(String ispItem) {
-        if (this.isp == null) {
-            this.isp = new ArrayList<>();
-        }
         this.isp.add(ispItem);
         return this;
     }
@@ -206,6 +208,8 @@ public class ListDomainTrafficDetailRequest  {
         this.isp = isp;
     }
 
+    
+
     public ListDomainTrafficDetailRequest withInterval(Integer interval) {
         this.interval = interval;
         return this;
@@ -228,6 +232,8 @@ public class ListDomainTrafficDetailRequest  {
         this.interval = interval;
     }
 
+    
+
     public ListDomainTrafficDetailRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -248,6 +254,8 @@ public class ListDomainTrafficDetailRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListDomainTrafficDetailRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -267,6 +275,9 @@ public class ListDomainTrafficDetailRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

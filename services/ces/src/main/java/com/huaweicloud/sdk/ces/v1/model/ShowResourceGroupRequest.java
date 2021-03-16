@@ -73,6 +73,8 @@ public class ShowResourceGroupRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public ShowResourceGroupRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -92,6 +94,8 @@ public class ShowResourceGroupRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ShowResourceGroupRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -113,6 +117,8 @@ public class ShowResourceGroupRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ShowResourceGroupRequest withDname(String dname) {
         this.dname = dname;
         return this;
@@ -132,6 +138,8 @@ public class ShowResourceGroupRequest  {
     public void setDname(String dname) {
         this.dname = dname;
     }
+
+    
 
     public ShowResourceGroupRequest withStart(String start) {
         this.start = start;
@@ -153,6 +161,8 @@ public class ShowResourceGroupRequest  {
         this.start = start;
     }
 
+    
+
     public ShowResourceGroupRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -172,6 +182,9 @@ public class ShowResourceGroupRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

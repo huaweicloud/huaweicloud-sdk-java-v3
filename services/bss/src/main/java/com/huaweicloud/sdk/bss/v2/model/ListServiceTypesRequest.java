@@ -21,7 +21,7 @@ public class ListServiceTypesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,6 +51,8 @@ public class ListServiceTypesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListServiceTypesRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -70,6 +72,9 @@ public class ListServiceTypesRequest  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

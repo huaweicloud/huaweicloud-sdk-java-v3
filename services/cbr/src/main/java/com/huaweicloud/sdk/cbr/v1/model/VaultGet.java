@@ -28,7 +28,7 @@ public class VaultGet  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing")
     
-    private Billing billing = null;
+    private Billing billing;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,7 +64,7 @@ public class VaultGet  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private List<VaultResourceIntancesResp> resources = new ArrayList<>();
+    private List<VaultResourceIntancesResp> resources = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,7 +88,7 @@ public class VaultGet  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_rules")
     
-    private VaultBindRules bindRules = null;
+    private VaultBindRules bindRules;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -147,6 +147,8 @@ public class VaultGet  {
         this.billing = billing;
     }
 
+    
+
     public VaultGet withDescription(String description) {
         this.description = description;
         return this;
@@ -166,6 +168,8 @@ public class VaultGet  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public VaultGet withId(String id) {
         this.id = id;
@@ -187,6 +191,8 @@ public class VaultGet  {
         this.id = id;
     }
 
+    
+
     public VaultGet withName(String name) {
         this.name = name;
         return this;
@@ -206,6 +212,8 @@ public class VaultGet  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public VaultGet withProjectId(String projectId) {
         this.projectId = projectId;
@@ -227,6 +235,8 @@ public class VaultGet  {
         this.projectId = projectId;
     }
 
+    
+
     public VaultGet withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
@@ -246,6 +256,8 @@ public class VaultGet  {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
+    
 
     public VaultGet withResources(List<VaultResourceIntancesResp> resources) {
         this.resources = resources;
@@ -278,6 +290,8 @@ public class VaultGet  {
         this.resources = resources;
     }
 
+    
+
     public VaultGet withTags(List<TagsResp> tags) {
         this.tags = tags;
         return this;
@@ -285,9 +299,6 @@ public class VaultGet  {
 
     
     public VaultGet addTagsItem(TagsResp tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -312,6 +323,8 @@ public class VaultGet  {
         this.tags = tags;
     }
 
+    
+
     public VaultGet withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -332,6 +345,8 @@ public class VaultGet  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public VaultGet withAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
         return this;
@@ -351,6 +366,8 @@ public class VaultGet  {
     public void setAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
     }
+
+    
 
     public VaultGet withBindRules(VaultBindRules bindRules) {
         this.bindRules = bindRules;
@@ -379,6 +396,8 @@ public class VaultGet  {
         this.bindRules = bindRules;
     }
 
+    
+
     public VaultGet withAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
         return this;
@@ -398,6 +417,8 @@ public class VaultGet  {
     public void setAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
     }
+
+    
 
     public VaultGet withUserId(String userId) {
         this.userId = userId;
@@ -419,6 +440,8 @@ public class VaultGet  {
         this.userId = userId;
     }
 
+    
+
     public VaultGet withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -438,6 +461,8 @@ public class VaultGet  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public VaultGet withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -459,6 +484,8 @@ public class VaultGet  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public VaultGet withVersion(String version) {
         this.version = version;
         return this;
@@ -478,6 +505,9 @@ public class VaultGet  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -57,6 +57,8 @@ public class AudioTrack  {
         this.type = type;
     }
 
+    
+
     public AudioTrack withLeft(Integer left) {
         this.left = left;
         return this;
@@ -79,6 +81,8 @@ public class AudioTrack  {
         this.left = left;
     }
 
+    
+
     public AudioTrack withRight(Integer right) {
         this.right = right;
         return this;
@@ -100,6 +104,9 @@ public class AudioTrack  {
     public void setRight(Integer right) {
         this.right = right;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

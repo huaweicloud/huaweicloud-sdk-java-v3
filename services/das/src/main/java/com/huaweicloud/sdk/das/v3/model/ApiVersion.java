@@ -61,6 +61,8 @@ public class ApiVersion  {
         this.id = id;
     }
 
+    
+
     public ApiVersion withStatus(String status) {
         this.status = status;
         return this;
@@ -80,6 +82,8 @@ public class ApiVersion  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ApiVersion withUpdated(String updated) {
         this.updated = updated;
@@ -101,6 +105,8 @@ public class ApiVersion  {
         this.updated = updated;
     }
 
+    
+
     public ApiVersion withVersion(String version) {
         this.version = version;
         return this;
@@ -120,6 +126,9 @@ public class ApiVersion  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

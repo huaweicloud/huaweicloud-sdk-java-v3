@@ -24,7 +24,7 @@ public class CinderListQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_set")
     
-    private QuotaList quotaSet = null;
+    private QuotaList quotaSet;
 
     public CinderListQuotasResponse withQuotaSet(QuotaList quotaSet) {
         this.quotaSet = quotaSet;
@@ -52,6 +52,9 @@ public class CinderListQuotasResponse extends SdkResponse {
     public void setQuotaSet(QuotaList quotaSet) {
         this.quotaSet = quotaSet;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

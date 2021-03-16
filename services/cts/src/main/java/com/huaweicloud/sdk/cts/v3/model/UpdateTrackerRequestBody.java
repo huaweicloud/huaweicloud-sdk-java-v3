@@ -209,7 +209,7 @@ public class UpdateTrackerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_info")
     
-    private TrackerObsInfo obsInfo = null;
+    private TrackerObsInfo obsInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -233,7 +233,7 @@ public class UpdateTrackerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_bucket")
     
-    private DataBucket dataBucket = null;
+    private DataBucket dataBucket;
 
     public UpdateTrackerRequestBody withTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
@@ -255,6 +255,8 @@ public class UpdateTrackerRequestBody  {
         this.trackerType = trackerType;
     }
 
+    
+
     public UpdateTrackerRequestBody withTrackerName(String trackerName) {
         this.trackerName = trackerName;
         return this;
@@ -274,6 +276,8 @@ public class UpdateTrackerRequestBody  {
     public void setTrackerName(String trackerName) {
         this.trackerName = trackerName;
     }
+
+    
 
     public UpdateTrackerRequestBody withStatus(StatusEnum status) {
         this.status = status;
@@ -295,6 +299,8 @@ public class UpdateTrackerRequestBody  {
         this.status = status;
     }
 
+    
+
     public UpdateTrackerRequestBody withIsLtsEnabled(Boolean isLtsEnabled) {
         this.isLtsEnabled = isLtsEnabled;
         return this;
@@ -314,6 +320,8 @@ public class UpdateTrackerRequestBody  {
     public void setIsLtsEnabled(Boolean isLtsEnabled) {
         this.isLtsEnabled = isLtsEnabled;
     }
+
+    
 
     public UpdateTrackerRequestBody withObsInfo(TrackerObsInfo obsInfo) {
         this.obsInfo = obsInfo;
@@ -342,6 +350,8 @@ public class UpdateTrackerRequestBody  {
         this.obsInfo = obsInfo;
     }
 
+    
+
     public UpdateTrackerRequestBody withIsSupportTraceFilesEncryption(Boolean isSupportTraceFilesEncryption) {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
         return this;
@@ -361,6 +371,8 @@ public class UpdateTrackerRequestBody  {
     public void setIsSupportTraceFilesEncryption(Boolean isSupportTraceFilesEncryption) {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
     }
+
+    
 
     public UpdateTrackerRequestBody withKmsId(String kmsId) {
         this.kmsId = kmsId;
@@ -382,6 +394,8 @@ public class UpdateTrackerRequestBody  {
         this.kmsId = kmsId;
     }
 
+    
+
     public UpdateTrackerRequestBody withIsSupportValidate(Boolean isSupportValidate) {
         this.isSupportValidate = isSupportValidate;
         return this;
@@ -401,6 +415,8 @@ public class UpdateTrackerRequestBody  {
     public void setIsSupportValidate(Boolean isSupportValidate) {
         this.isSupportValidate = isSupportValidate;
     }
+
+    
 
     public UpdateTrackerRequestBody withDataBucket(DataBucket dataBucket) {
         this.dataBucket = dataBucket;
@@ -428,6 +444,9 @@ public class UpdateTrackerRequestBody  {
     public void setDataBucket(DataBucket dataBucket) {
         this.dataBucket = dataBucket;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

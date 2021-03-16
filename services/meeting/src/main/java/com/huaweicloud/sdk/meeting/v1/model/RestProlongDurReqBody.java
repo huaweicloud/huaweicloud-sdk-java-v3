@@ -21,13 +21,13 @@ public class RestProlongDurReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto")
     
-    private Integer auto = 1;
+    private Integer auto;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    private Integer duration = 15;
+    private Integer duration;
 
     public RestProlongDurReqBody withAuto(Integer auto) {
         this.auto = auto;
@@ -49,6 +49,8 @@ public class RestProlongDurReqBody  {
         this.auto = auto;
     }
 
+    
+
     public RestProlongDurReqBody withDuration(Integer duration) {
         this.duration = duration;
         return this;
@@ -68,6 +70,9 @@ public class RestProlongDurReqBody  {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

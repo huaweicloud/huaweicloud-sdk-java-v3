@@ -155,6 +155,8 @@ public class Detail  {
         this.startTime = startTime;
     }
 
+    
+
     public Detail withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -174,6 +176,8 @@ public class Detail  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public Detail withStatus(StatusEnum status) {
         this.status = status;
@@ -195,6 +199,8 @@ public class Detail  {
         this.status = status;
     }
 
+    
+
     public Detail withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -214,6 +220,9 @@ public class Detail  {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

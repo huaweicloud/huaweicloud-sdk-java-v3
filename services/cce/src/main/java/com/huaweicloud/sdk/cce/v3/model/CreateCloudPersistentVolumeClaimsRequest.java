@@ -34,7 +34,7 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PersistentVolumeClaim body = null;
+    private PersistentVolumeClaim body;
 
     public CreateCloudPersistentVolumeClaimsRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -55,6 +55,8 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public CreateCloudPersistentVolumeClaimsRequest withXClusterID(String xClusterID) {
         this.xClusterID = xClusterID;
@@ -77,6 +79,8 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
     public void setXClusterID(String xClusterID) {
         this.xClusterID = xClusterID;
     }
+
+    
 
     public CreateCloudPersistentVolumeClaimsRequest withBody(PersistentVolumeClaim body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
     public void setBody(PersistentVolumeClaim body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

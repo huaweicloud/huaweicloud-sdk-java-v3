@@ -49,6 +49,8 @@ public class ShowDDosStatusRequest  {
         this.floatingIpId = floatingIpId;
     }
 
+    
+
     public ShowDDosStatusRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -68,6 +70,9 @@ public class ShowDDosStatusRequest  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

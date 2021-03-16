@@ -51,6 +51,8 @@ public class CheckRomaAppSecretResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CheckRomaAppSecretResponse withSecret(String secret) {
         this.secret = secret;
         return this;
@@ -70,6 +72,9 @@ public class CheckRomaAppSecretResponse extends SdkResponse {
     public void setSecret(String secret) {
         this.secret = secret;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

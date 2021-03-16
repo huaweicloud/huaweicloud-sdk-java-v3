@@ -33,7 +33,7 @@ public class ListDeviceGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public ListDeviceGroupsResponse withDeviceGroups(List<DeviceGroupResponseDTO> deviceGroups) {
         this.deviceGroups = deviceGroups;
@@ -42,9 +42,6 @@ public class ListDeviceGroupsResponse extends SdkResponse {
 
     
     public ListDeviceGroupsResponse addDeviceGroupsItem(DeviceGroupResponseDTO deviceGroupsItem) {
-        if (this.deviceGroups == null) {
-            this.deviceGroups = new ArrayList<>();
-        }
         this.deviceGroups.add(deviceGroupsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListDeviceGroupsResponse extends SdkResponse {
     public void setDeviceGroups(List<DeviceGroupResponseDTO> deviceGroups) {
         this.deviceGroups = deviceGroups;
     }
+
+    
 
     public ListDeviceGroupsResponse withPage(Page page) {
         this.page = page;
@@ -95,6 +94,9 @@ public class ListDeviceGroupsResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

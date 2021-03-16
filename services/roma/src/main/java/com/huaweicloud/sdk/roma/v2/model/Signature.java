@@ -135,13 +135,13 @@ public class Signature  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -169,6 +169,8 @@ public class Signature  {
         this.name = name;
     }
 
+    
+
     public Signature withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -188,6 +190,8 @@ public class Signature  {
     public void setSignType(SignTypeEnum signType) {
         this.signType = signType;
     }
+
+    
 
     public Signature withSignKey(String signKey) {
         this.signKey = signKey;
@@ -209,6 +213,8 @@ public class Signature  {
         this.signKey = signKey;
     }
 
+    
+
     public Signature withSignSecret(String signSecret) {
         this.signSecret = signSecret;
         return this;
@@ -228,6 +234,8 @@ public class Signature  {
     public void setSignSecret(String signSecret) {
         this.signSecret = signSecret;
     }
+
+    
 
     public Signature withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
@@ -249,6 +257,8 @@ public class Signature  {
         this.updateTime = updateTime;
     }
 
+    
+
     public Signature withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -269,6 +279,8 @@ public class Signature  {
         this.createTime = createTime;
     }
 
+    
+
     public Signature withId(String id) {
         this.id = id;
         return this;
@@ -288,6 +300,9 @@ public class Signature  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

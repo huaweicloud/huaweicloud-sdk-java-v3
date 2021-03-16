@@ -173,6 +173,8 @@ public class ConfigurationSummary  {
         this.id = id;
     }
 
+    
+
     public ConfigurationSummary withName(String name) {
         this.name = name;
         return this;
@@ -192,6 +194,8 @@ public class ConfigurationSummary  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ConfigurationSummary withDescription(String description) {
         this.description = description;
@@ -213,6 +217,8 @@ public class ConfigurationSummary  {
         this.description = description;
     }
 
+    
+
     public ConfigurationSummary withDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
         return this;
@@ -232,6 +238,8 @@ public class ConfigurationSummary  {
     public void setDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
     }
+
+    
 
     public ConfigurationSummary withDatastoreName(DatastoreNameEnum datastoreName) {
         this.datastoreName = datastoreName;
@@ -253,6 +261,8 @@ public class ConfigurationSummary  {
         this.datastoreName = datastoreName;
     }
 
+    
+
     public ConfigurationSummary withCreated(String created) {
         this.created = created;
         return this;
@@ -272,6 +282,8 @@ public class ConfigurationSummary  {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public ConfigurationSummary withUpdated(String updated) {
         this.updated = updated;
@@ -293,6 +305,8 @@ public class ConfigurationSummary  {
         this.updated = updated;
     }
 
+    
+
     public ConfigurationSummary withUserDefined(Boolean userDefined) {
         this.userDefined = userDefined;
         return this;
@@ -312,6 +326,9 @@ public class ConfigurationSummary  {
     public void setUserDefined(Boolean userDefined) {
         this.userDefined = userDefined;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -109,6 +109,8 @@ public class CreateTriggerRequestBody  {
         this.action = action;
     }
 
+    
+
     public CreateTriggerRequestBody withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -128,6 +130,8 @@ public class CreateTriggerRequestBody  {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public CreateTriggerRequestBody withApplication(String application) {
         this.application = application;
@@ -149,6 +153,8 @@ public class CreateTriggerRequestBody  {
         this.application = application;
     }
 
+    
+
     public CreateTriggerRequestBody withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -168,6 +174,8 @@ public class CreateTriggerRequestBody  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public CreateTriggerRequestBody withClusterName(String clusterName) {
         this.clusterName = clusterName;
@@ -189,6 +197,8 @@ public class CreateTriggerRequestBody  {
         this.clusterName = clusterName;
     }
 
+    
+
     public CreateTriggerRequestBody withClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
         return this;
@@ -208,6 +218,8 @@ public class CreateTriggerRequestBody  {
     public void setClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
     }
+
+    
 
     public CreateTriggerRequestBody withCondition(String condition) {
         this.condition = condition;
@@ -229,6 +241,8 @@ public class CreateTriggerRequestBody  {
         this.condition = condition;
     }
 
+    
+
     public CreateTriggerRequestBody withContainer(String container) {
         this.container = container;
         return this;
@@ -248,6 +262,8 @@ public class CreateTriggerRequestBody  {
     public void setContainer(String container) {
         this.container = container;
     }
+
+    
 
     public CreateTriggerRequestBody withEnable(String enable) {
         this.enable = enable;
@@ -269,6 +285,8 @@ public class CreateTriggerRequestBody  {
         this.enable = enable;
     }
 
+    
+
     public CreateTriggerRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -288,6 +306,8 @@ public class CreateTriggerRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateTriggerRequestBody withTriggerMode(String triggerMode) {
         this.triggerMode = triggerMode;
@@ -309,6 +329,8 @@ public class CreateTriggerRequestBody  {
         this.triggerMode = triggerMode;
     }
 
+    
+
     public CreateTriggerRequestBody withTriggerType(String triggerType) {
         this.triggerType = triggerType;
         return this;
@@ -328,6 +350,9 @@ public class CreateTriggerRequestBody  {
     public void setTriggerType(String triggerType) {
         this.triggerType = triggerType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

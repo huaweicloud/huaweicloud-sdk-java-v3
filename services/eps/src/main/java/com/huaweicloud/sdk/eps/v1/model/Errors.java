@@ -61,6 +61,8 @@ public class Errors  {
         this.errorCode = errorCode;
     }
 
+    
+
     public Errors withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -80,6 +82,8 @@ public class Errors  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
 
     public Errors withProjectId(String projectId) {
         this.projectId = projectId;
@@ -101,6 +105,8 @@ public class Errors  {
         this.projectId = projectId;
     }
 
+    
+
     public Errors withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -120,6 +126,9 @@ public class Errors  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

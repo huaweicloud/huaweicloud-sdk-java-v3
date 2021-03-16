@@ -26,7 +26,7 @@ public class V3NodeStatus  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deleteStatus")
     
-    private DeleteStatus deleteStatus = null;
+    private DeleteStatus deleteStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -205,6 +205,8 @@ public class V3NodeStatus  {
         this.deleteStatus = deleteStatus;
     }
 
+    
+
     public V3NodeStatus withJobID(String jobID) {
         this.jobID = jobID;
         return this;
@@ -224,6 +226,8 @@ public class V3NodeStatus  {
     public void setJobID(String jobID) {
         this.jobID = jobID;
     }
+
+    
 
     public V3NodeStatus withPhase(PhaseEnum phase) {
         this.phase = phase;
@@ -245,6 +249,8 @@ public class V3NodeStatus  {
         this.phase = phase;
     }
 
+    
+
     public V3NodeStatus withPrivateIP(String privateIP) {
         this.privateIP = privateIP;
         return this;
@@ -264,6 +270,8 @@ public class V3NodeStatus  {
     public void setPrivateIP(String privateIP) {
         this.privateIP = privateIP;
     }
+
+    
 
     public V3NodeStatus withPublicIP(String publicIP) {
         this.publicIP = publicIP;
@@ -285,6 +293,8 @@ public class V3NodeStatus  {
         this.publicIP = publicIP;
     }
 
+    
+
     public V3NodeStatus withServerId(String serverId) {
         this.serverId = serverId;
         return this;
@@ -304,6 +314,9 @@ public class V3NodeStatus  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

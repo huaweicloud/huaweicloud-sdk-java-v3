@@ -54,6 +54,8 @@ public class ListAvailableZonesResponse extends SdkResponse {
         this.regionId = regionId;
     }
 
+    
+
     public ListAvailableZonesResponse withAvailableZones(List<ListAvailableZonesRespAvailableZones> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -61,9 +63,6 @@ public class ListAvailableZonesResponse extends SdkResponse {
 
     
     public ListAvailableZonesResponse addAvailableZonesItem(ListAvailableZonesRespAvailableZones availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListAvailableZonesResponse extends SdkResponse {
     public void setAvailableZones(List<ListAvailableZonesRespAvailableZones> availableZones) {
         this.availableZones = availableZones;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

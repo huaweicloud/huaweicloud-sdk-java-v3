@@ -35,9 +35,6 @@ public class ListRuntimesResponse extends SdkResponse {
 
     
     public ListRuntimesResponse addRuntimesItem(RuntimeTypeView runtimesItem) {
-        if (this.runtimes == null) {
-            this.runtimes = new ArrayList<>();
-        }
         this.runtimes.add(runtimesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListRuntimesResponse extends SdkResponse {
     public void setRuntimes(List<RuntimeTypeView> runtimes) {
         this.runtimes = runtimes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

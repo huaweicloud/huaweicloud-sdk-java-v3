@@ -55,6 +55,8 @@ public class DisassociateDomainV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DisassociateDomainV2Request withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -75,6 +77,8 @@ public class DisassociateDomainV2Request  {
         this.domainId = domainId;
     }
 
+    
+
     public DisassociateDomainV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -94,6 +98,9 @@ public class DisassociateDomainV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

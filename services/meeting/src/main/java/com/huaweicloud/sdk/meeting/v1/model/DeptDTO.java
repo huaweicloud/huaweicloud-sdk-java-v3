@@ -267,6 +267,8 @@ public class DeptDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public DeptDTO withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
@@ -286,6 +288,8 @@ public class DeptDTO  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    
 
     public DeptDTO withParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
@@ -307,6 +311,8 @@ public class DeptDTO  {
         this.parentDeptCode = parentDeptCode;
     }
 
+    
+
     public DeptDTO withNote(String note) {
         this.note = note;
         return this;
@@ -326,6 +332,8 @@ public class DeptDTO  {
     public void setNote(String note) {
         this.note = note;
     }
+
+    
 
     public DeptDTO withInPermission(InPermissionEnum inPermission) {
         this.inPermission = inPermission;
@@ -347,6 +355,8 @@ public class DeptDTO  {
         this.inPermission = inPermission;
     }
 
+    
+
     public DeptDTO withOutPermission(OutPermissionEnum outPermission) {
         this.outPermission = outPermission;
         return this;
@@ -367,6 +377,8 @@ public class DeptDTO  {
         this.outPermission = outPermission;
     }
 
+    
+
     public DeptDTO withDesignatedOutDeptCodes(List<String> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
         return this;
@@ -374,9 +386,6 @@ public class DeptDTO  {
 
     
     public DeptDTO addDesignatedOutDeptCodesItem(String designatedOutDeptCodesItem) {
-        if (this.designatedOutDeptCodes == null) {
-            this.designatedOutDeptCodes = new ArrayList<>();
-        }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
         return this;
     }
@@ -400,6 +409,9 @@ public class DeptDTO  {
     public void setDesignatedOutDeptCodes(List<String> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class ResourceCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_info")
     
-    private ResourceExtraInfo extraInfo = null;
+    private ResourceExtraInfo extraInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,6 +69,8 @@ public class ResourceCreate  {
         this.extraInfo = extraInfo;
     }
 
+    
+
     public ResourceCreate withId(String id) {
         this.id = id;
         return this;
@@ -88,6 +90,8 @@ public class ResourceCreate  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ResourceCreate withType(String type) {
         this.type = type;
@@ -109,6 +113,8 @@ public class ResourceCreate  {
         this.type = type;
     }
 
+    
+
     public ResourceCreate withName(String name) {
         this.name = name;
         return this;
@@ -128,6 +134,9 @@ public class ResourceCreate  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

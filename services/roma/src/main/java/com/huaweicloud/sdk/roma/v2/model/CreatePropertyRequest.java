@@ -34,7 +34,7 @@ public class CreatePropertyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePropertyRequestBody body = null;
+    private CreatePropertyRequestBody body;
 
     public CreatePropertyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreatePropertyRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreatePropertyRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -75,6 +77,8 @@ public class CreatePropertyRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public CreatePropertyRequest withBody(CreatePropertyRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreatePropertyRequest  {
     public void setBody(CreatePropertyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

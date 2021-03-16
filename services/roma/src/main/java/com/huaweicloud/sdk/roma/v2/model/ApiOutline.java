@@ -97,6 +97,8 @@ public class ApiOutline  {
         this.authType = authType;
     }
 
+    
+
     public ApiOutline withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -116,6 +118,8 @@ public class ApiOutline  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public ApiOutline withGroupName(String groupName) {
         this.groupName = groupName;
@@ -137,6 +141,8 @@ public class ApiOutline  {
         this.groupName = groupName;
     }
 
+    
+
     public ApiOutline withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
@@ -156,6 +162,8 @@ public class ApiOutline  {
     public void setPublishId(String publishId) {
         this.publishId = publishId;
     }
+
+    
 
     public ApiOutline withGroupId(String groupId) {
         this.groupId = groupId;
@@ -177,6 +185,8 @@ public class ApiOutline  {
         this.groupId = groupId;
     }
 
+    
+
     public ApiOutline withName(String name) {
         this.name = name;
         return this;
@@ -196,6 +206,8 @@ public class ApiOutline  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ApiOutline withRemark(String remark) {
         this.remark = remark;
@@ -217,6 +229,8 @@ public class ApiOutline  {
         this.remark = remark;
     }
 
+    
+
     public ApiOutline withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
         return this;
@@ -236,6 +250,8 @@ public class ApiOutline  {
     public void setRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
     }
+
+    
 
     public ApiOutline withId(String id) {
         this.id = id;
@@ -257,6 +273,8 @@ public class ApiOutline  {
         this.id = id;
     }
 
+    
+
     public ApiOutline withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -276,6 +294,9 @@ public class ApiOutline  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

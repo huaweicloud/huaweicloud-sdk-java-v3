@@ -22,7 +22,7 @@ public class NeutronCreateFirewallGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NeutronCreateFirewallGroupRequestBody body = null;
+    private NeutronCreateFirewallGroupRequestBody body;
 
     public NeutronCreateFirewallGroupRequest withBody(NeutronCreateFirewallGroupRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class NeutronCreateFirewallGroupRequest  {
     public void setBody(NeutronCreateFirewallGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

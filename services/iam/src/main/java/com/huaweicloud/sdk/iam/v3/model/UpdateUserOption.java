@@ -97,6 +97,8 @@ public class UpdateUserOption  {
         this.name = name;
     }
 
+    
+
     public UpdateUserOption withPassword(String password) {
         this.password = password;
         return this;
@@ -116,6 +118,8 @@ public class UpdateUserOption  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
 
     public UpdateUserOption withEmail(String email) {
         this.email = email;
@@ -137,6 +141,8 @@ public class UpdateUserOption  {
         this.email = email;
     }
 
+    
+
     public UpdateUserOption withAreacode(String areacode) {
         this.areacode = areacode;
         return this;
@@ -156,6 +162,8 @@ public class UpdateUserOption  {
     public void setAreacode(String areacode) {
         this.areacode = areacode;
     }
+
+    
 
     public UpdateUserOption withPhone(String phone) {
         this.phone = phone;
@@ -177,6 +185,8 @@ public class UpdateUserOption  {
         this.phone = phone;
     }
 
+    
+
     public UpdateUserOption withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -196,6 +206,8 @@ public class UpdateUserOption  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public UpdateUserOption withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
@@ -217,6 +229,8 @@ public class UpdateUserOption  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public UpdateUserOption withXuserType(String xuserType) {
         this.xuserType = xuserType;
         return this;
@@ -236,6 +250,8 @@ public class UpdateUserOption  {
     public void setXuserType(String xuserType) {
         this.xuserType = xuserType;
     }
+
+    
 
     public UpdateUserOption withXuserId(String xuserId) {
         this.xuserId = xuserId;
@@ -257,6 +273,8 @@ public class UpdateUserOption  {
         this.xuserId = xuserId;
     }
 
+    
+
     public UpdateUserOption withDescription(String description) {
         this.description = description;
         return this;
@@ -276,6 +294,9 @@ public class UpdateUserOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

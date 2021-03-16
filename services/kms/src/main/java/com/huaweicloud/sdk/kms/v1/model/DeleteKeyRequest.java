@@ -22,13 +22,13 @@ public class DeleteKeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ScheduleKeyDeletionRequestBody body = null;
+    private ScheduleKeyDeletionRequestBody body;
 
     public DeleteKeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class DeleteKeyRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public DeleteKeyRequest withBody(ScheduleKeyDeletionRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DeleteKeyRequest  {
     public void setBody(ScheduleKeyDeletionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,7 +33,7 @@ public class ShowResourceRelationsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
     public ShowResourceRelationsResponse withRelations(List<ResourceRelation> relations) {
         this.relations = relations;
@@ -42,9 +42,6 @@ public class ShowResourceRelationsResponse extends SdkResponse {
 
     
     public ShowResourceRelationsResponse addRelationsItem(ResourceRelation relationsItem) {
-        if (this.relations == null) {
-            this.relations = new ArrayList<>();
-        }
         this.relations.add(relationsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowResourceRelationsResponse extends SdkResponse {
     public void setRelations(List<ResourceRelation> relations) {
         this.relations = relations;
     }
+
+    
 
     public ShowResourceRelationsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -95,6 +94,9 @@ public class ShowResourceRelationsResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

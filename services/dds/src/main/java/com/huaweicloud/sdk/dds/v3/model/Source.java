@@ -61,6 +61,8 @@ public class Source  {
         this.instanceId = instanceId;
     }
 
+    
+
     public Source withType(String type) {
         this.type = type;
         return this;
@@ -80,6 +82,8 @@ public class Source  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public Source withBackupId(String backupId) {
         this.backupId = backupId;
@@ -101,6 +105,8 @@ public class Source  {
         this.backupId = backupId;
     }
 
+    
+
     public Source withRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
         return this;
@@ -120,6 +126,9 @@ public class Source  {
     public void setRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

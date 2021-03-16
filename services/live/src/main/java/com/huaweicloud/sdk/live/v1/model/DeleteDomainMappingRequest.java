@@ -55,6 +55,8 @@ public class DeleteDomainMappingRequest  {
         this.specifyProject = specifyProject;
     }
 
+    
+
     public DeleteDomainMappingRequest withPullDomain(String pullDomain) {
         this.pullDomain = pullDomain;
         return this;
@@ -75,6 +77,8 @@ public class DeleteDomainMappingRequest  {
         this.pullDomain = pullDomain;
     }
 
+    
+
     public DeleteDomainMappingRequest withPushDomain(String pushDomain) {
         this.pushDomain = pushDomain;
         return this;
@@ -94,6 +98,9 @@ public class DeleteDomainMappingRequest  {
     public void setPushDomain(String pushDomain) {
         this.pushDomain = pushDomain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

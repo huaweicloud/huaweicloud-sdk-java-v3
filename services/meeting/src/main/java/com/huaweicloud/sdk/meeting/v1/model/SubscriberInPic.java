@@ -35,7 +35,7 @@ public class SubscriberInPic  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isAssistStream")
     
-    private Integer isAssistStream = 0;
+    private Integer isAssistStream;
 
     public SubscriberInPic withIndex(Integer index) {
         this.index = index;
@@ -57,6 +57,8 @@ public class SubscriberInPic  {
         this.index = index;
     }
 
+    
+
     public SubscriberInPic withSubscriber(List<String> subscriber) {
         this.subscriber = subscriber;
         return this;
@@ -64,9 +66,6 @@ public class SubscriberInPic  {
 
     
     public SubscriberInPic addSubscriberItem(String subscriberItem) {
-        if (this.subscriber == null) {
-            this.subscriber = new ArrayList<>();
-        }
         this.subscriber.add(subscriberItem);
         return this;
     }
@@ -91,6 +90,8 @@ public class SubscriberInPic  {
         this.subscriber = subscriber;
     }
 
+    
+
     public SubscriberInPic withIsAssistStream(Integer isAssistStream) {
         this.isAssistStream = isAssistStream;
         return this;
@@ -110,6 +111,9 @@ public class SubscriberInPic  {
     public void setIsAssistStream(Integer isAssistStream) {
         this.isAssistStream = isAssistStream;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

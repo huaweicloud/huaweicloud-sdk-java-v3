@@ -41,9 +41,6 @@ public class ListDomainNotAddedProjectsV4Response extends SdkResponse {
 
     
     public ListDomainNotAddedProjectsV4Response addProjectsItem(ListDomainNotAddedProjectsV4ResponseBodyProjects projectsItem) {
-        if (this.projects == null) {
-            this.projects = new ArrayList<>();
-        }
         this.projects.add(projectsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListDomainNotAddedProjectsV4Response extends SdkResponse {
         this.projects = projects;
     }
 
+    
+
     public ListDomainNotAddedProjectsV4Response withTotal(Integer total) {
         this.total = total;
         return this;
@@ -89,6 +88,9 @@ public class ListDomainNotAddedProjectsV4Response extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

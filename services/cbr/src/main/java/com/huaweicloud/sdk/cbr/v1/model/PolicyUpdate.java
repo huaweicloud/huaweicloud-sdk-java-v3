@@ -23,7 +23,7 @@ public class PolicyUpdate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enabled")
     
-    private Boolean enabled = true;
+    private Boolean enabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,13 +35,13 @@ public class PolicyUpdate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operation_definition")
     
-    private PolicyoODCreate operationDefinition = null;
+    private PolicyoODCreate operationDefinition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger")
     
-    private PolicyTriggerReq trigger = null;
+    private PolicyTriggerReq trigger;
 
     public PolicyUpdate withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -63,6 +63,8 @@ public class PolicyUpdate  {
         this.enabled = enabled;
     }
 
+    
+
     public PolicyUpdate withName(String name) {
         this.name = name;
         return this;
@@ -82,6 +84,8 @@ public class PolicyUpdate  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PolicyUpdate withOperationDefinition(PolicyoODCreate operationDefinition) {
         this.operationDefinition = operationDefinition;
@@ -110,6 +114,8 @@ public class PolicyUpdate  {
         this.operationDefinition = operationDefinition;
     }
 
+    
+
     public PolicyUpdate withTrigger(PolicyTriggerReq trigger) {
         this.trigger = trigger;
         return this;
@@ -136,6 +142,9 @@ public class PolicyUpdate  {
     public void setTrigger(PolicyTriggerReq trigger) {
         this.trigger = trigger;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

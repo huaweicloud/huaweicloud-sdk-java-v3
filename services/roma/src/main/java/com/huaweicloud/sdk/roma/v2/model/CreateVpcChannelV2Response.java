@@ -305,13 +305,13 @@ public class CreateVpcChannelV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_type")
     
-    private MemberTypeEnum memberType = MemberTypeEnum.ECS;
+    private MemberTypeEnum memberType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -429,6 +429,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreateVpcChannelV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -448,6 +450,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public CreateVpcChannelV2Response withPort(Integer port) {
         this.port = port;
@@ -469,6 +473,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
         this.port = port;
     }
 
+    
+
     public CreateVpcChannelV2Response withBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
@@ -488,6 +494,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
     public void setBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
     }
+
+    
 
     public CreateVpcChannelV2Response withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
@@ -509,6 +517,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
         this.memberType = memberType;
     }
 
+    
+
     public CreateVpcChannelV2Response withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -528,6 +538,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public CreateVpcChannelV2Response withId(String id) {
         this.id = id;
@@ -549,6 +561,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateVpcChannelV2Response withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -569,6 +583,8 @@ public class CreateVpcChannelV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateVpcChannelV2Response withElbId(String elbId) {
         this.elbId = elbId;
         return this;
@@ -588,6 +604,9 @@ public class CreateVpcChannelV2Response extends SdkResponse {
     public void setElbId(String elbId) {
         this.elbId = elbId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

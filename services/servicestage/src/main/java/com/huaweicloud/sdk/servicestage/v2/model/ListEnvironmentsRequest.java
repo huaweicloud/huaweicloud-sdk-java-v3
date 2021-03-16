@@ -145,6 +145,8 @@ public class ListEnvironmentsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListEnvironmentsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -164,6 +166,8 @@ public class ListEnvironmentsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListEnvironmentsRequest withOrderBy(String orderBy) {
         this.orderBy = orderBy;
@@ -185,6 +189,8 @@ public class ListEnvironmentsRequest  {
         this.orderBy = orderBy;
     }
 
+    
+
     public ListEnvironmentsRequest withOrder(OrderEnum order) {
         this.order = order;
         return this;
@@ -204,6 +210,9 @@ public class ListEnvironmentsRequest  {
     public void setOrder(OrderEnum order) {
         this.order = order;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

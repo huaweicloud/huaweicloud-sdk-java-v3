@@ -49,6 +49,8 @@ public class Instances  {
         this.instanceId = instanceId;
     }
 
+    
+
     public Instances withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -68,6 +70,9 @@ public class Instances  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

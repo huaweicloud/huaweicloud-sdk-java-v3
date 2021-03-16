@@ -51,13 +51,13 @@ public class ListApisBindedToAclPolicyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListApisBindedToAclPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -79,6 +79,8 @@ public class ListApisBindedToAclPolicyV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListApisBindedToAclPolicyV2Request withAclId(String aclId) {
         this.aclId = aclId;
         return this;
@@ -98,6 +100,8 @@ public class ListApisBindedToAclPolicyV2Request  {
     public void setAclId(String aclId) {
         this.aclId = aclId;
     }
+
+    
 
     public ListApisBindedToAclPolicyV2Request withApiName(String apiName) {
         this.apiName = apiName;
@@ -119,6 +123,8 @@ public class ListApisBindedToAclPolicyV2Request  {
         this.apiName = apiName;
     }
 
+    
+
     public ListApisBindedToAclPolicyV2Request withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -138,6 +144,8 @@ public class ListApisBindedToAclPolicyV2Request  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public ListApisBindedToAclPolicyV2Request withGroupId(String groupId) {
         this.groupId = groupId;
@@ -159,6 +167,8 @@ public class ListApisBindedToAclPolicyV2Request  {
         this.groupId = groupId;
     }
 
+    
+
     public ListApisBindedToAclPolicyV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -178,6 +188,8 @@ public class ListApisBindedToAclPolicyV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListApisBindedToAclPolicyV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -200,6 +212,9 @@ public class ListApisBindedToAclPolicyV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

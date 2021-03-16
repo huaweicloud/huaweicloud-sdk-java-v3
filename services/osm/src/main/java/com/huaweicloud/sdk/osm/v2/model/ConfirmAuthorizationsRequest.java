@@ -46,7 +46,7 @@ public class ConfirmAuthorizationsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AgreeTenantAuthorizationV2Req body = null;
+    private AgreeTenantAuthorizationV2Req body;
 
     public ConfirmAuthorizationsRequest withAuthorizationId(Long authorizationId) {
         this.authorizationId = authorizationId;
@@ -69,6 +69,8 @@ public class ConfirmAuthorizationsRequest  {
     public void setAuthorizationId(Long authorizationId) {
         this.authorizationId = authorizationId;
     }
+
+    
 
     public ConfirmAuthorizationsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -94,6 +96,8 @@ public class ConfirmAuthorizationsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ConfirmAuthorizationsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -116,6 +120,8 @@ public class ConfirmAuthorizationsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ConfirmAuthorizationsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -137,6 +143,8 @@ public class ConfirmAuthorizationsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public ConfirmAuthorizationsRequest withBody(AgreeTenantAuthorizationV2Req body) {
         this.body = body;
@@ -164,6 +172,9 @@ public class ConfirmAuthorizationsRequest  {
     public void setBody(AgreeTenantAuthorizationV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

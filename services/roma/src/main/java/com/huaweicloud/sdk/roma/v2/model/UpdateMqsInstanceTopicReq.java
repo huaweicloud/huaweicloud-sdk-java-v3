@@ -24,7 +24,7 @@ public class UpdateMqsInstanceTopicReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topics")
     
-    private List<UpdateTopicObject> topics = new ArrayList<>();
+    private List<UpdateTopicObject> topics = null;
     
     public UpdateMqsInstanceTopicReq withTopics(List<UpdateTopicObject> topics) {
         this.topics = topics;
@@ -56,6 +56,9 @@ public class UpdateMqsInstanceTopicReq  {
     public void setTopics(List<UpdateTopicObject> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

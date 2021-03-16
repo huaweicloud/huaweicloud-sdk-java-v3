@@ -103,7 +103,7 @@ public class CreateImageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_config")
     
-    private Boolean isConfig = false;
+    private Boolean isConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -205,13 +205,13 @@ public class CreateImageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type = TypeEnum.ECS;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_quick_import")
     
-    private Boolean isQuickImport = false;
+    private Boolean isQuickImport;
     /**
      * 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。 当架构类型为arm时，镜像引导方式将自动转为UEFI的引导方式。
      */
@@ -295,7 +295,7 @@ public class CreateImageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="architecture")
     
-    private ArchitectureEnum architecture = ArchitectureEnum.X86;
+    private ArchitectureEnum architecture;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -310,9 +310,6 @@ public class CreateImageRequestBody  {
 
     
     public CreateImageRequestBody addDataImagesItem(CreateDataImage dataImagesItem) {
-        if (this.dataImages == null) {
-            this.dataImages = new ArrayList<>();
-        }
         this.dataImages.add(dataImagesItem);
         return this;
     }
@@ -337,6 +334,8 @@ public class CreateImageRequestBody  {
         this.dataImages = dataImages;
     }
 
+    
+
     public CreateImageRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -356,6 +355,8 @@ public class CreateImageRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateImageRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -377,6 +378,8 @@ public class CreateImageRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateImageRequestBody withImageTags(List<TagKeyValue> imageTags) {
         this.imageTags = imageTags;
         return this;
@@ -384,9 +387,6 @@ public class CreateImageRequestBody  {
 
     
     public CreateImageRequestBody addImageTagsItem(TagKeyValue imageTagsItem) {
-        if (this.imageTags == null) {
-            this.imageTags = new ArrayList<>();
-        }
         this.imageTags.add(imageTagsItem);
         return this;
     }
@@ -411,6 +411,8 @@ public class CreateImageRequestBody  {
         this.imageTags = imageTags;
     }
 
+    
+
     public CreateImageRequestBody withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -430,6 +432,8 @@ public class CreateImageRequestBody  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateImageRequestBody withName(String name) {
         this.name = name;
@@ -451,6 +455,8 @@ public class CreateImageRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateImageRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -458,9 +464,6 @@ public class CreateImageRequestBody  {
 
     
     public CreateImageRequestBody addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -485,6 +488,8 @@ public class CreateImageRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public CreateImageRequestBody withMaxRam(Integer maxRam) {
         this.maxRam = maxRam;
         return this;
@@ -504,6 +509,8 @@ public class CreateImageRequestBody  {
     public void setMaxRam(Integer maxRam) {
         this.maxRam = maxRam;
     }
+
+    
 
     public CreateImageRequestBody withMinRam(Integer minRam) {
         this.minRam = minRam;
@@ -525,6 +532,8 @@ public class CreateImageRequestBody  {
         this.minRam = minRam;
     }
 
+    
+
     public CreateImageRequestBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
@@ -544,6 +553,8 @@ public class CreateImageRequestBody  {
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
     }
+
+    
 
     public CreateImageRequestBody withImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
@@ -565,6 +576,8 @@ public class CreateImageRequestBody  {
         this.imageUrl = imageUrl;
     }
 
+    
+
     public CreateImageRequestBody withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
@@ -584,6 +597,8 @@ public class CreateImageRequestBody  {
     public void setMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
     }
+
+    
 
     public CreateImageRequestBody withIsConfig(Boolean isConfig) {
         this.isConfig = isConfig;
@@ -605,6 +620,8 @@ public class CreateImageRequestBody  {
         this.isConfig = isConfig;
     }
 
+    
+
     public CreateImageRequestBody withCmkId(String cmkId) {
         this.cmkId = cmkId;
         return this;
@@ -624,6 +641,8 @@ public class CreateImageRequestBody  {
     public void setCmkId(String cmkId) {
         this.cmkId = cmkId;
     }
+
+    
 
     public CreateImageRequestBody withType(TypeEnum type) {
         this.type = type;
@@ -645,6 +664,8 @@ public class CreateImageRequestBody  {
         this.type = type;
     }
 
+    
+
     public CreateImageRequestBody withIsQuickImport(Boolean isQuickImport) {
         this.isQuickImport = isQuickImport;
         return this;
@@ -664,6 +685,8 @@ public class CreateImageRequestBody  {
     public void setIsQuickImport(Boolean isQuickImport) {
         this.isQuickImport = isQuickImport;
     }
+
+    
 
     public CreateImageRequestBody withArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
@@ -685,6 +708,8 @@ public class CreateImageRequestBody  {
         this.architecture = architecture;
     }
 
+    
+
     public CreateImageRequestBody withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -704,6 +729,9 @@ public class CreateImageRequestBody  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

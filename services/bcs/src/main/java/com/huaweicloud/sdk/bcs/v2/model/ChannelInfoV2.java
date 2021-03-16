@@ -57,6 +57,8 @@ public class ChannelInfoV2  {
         this.name = name;
     }
 
+    
+
     public ChannelInfoV2 withOrgNames(List<String> orgNames) {
         this.orgNames = orgNames;
         return this;
@@ -64,9 +66,6 @@ public class ChannelInfoV2  {
 
     
     public ChannelInfoV2 addOrgNamesItem(String orgNamesItem) {
-        if (this.orgNames == null) {
-            this.orgNames = new ArrayList<>();
-        }
         this.orgNames.add(orgNamesItem);
         return this;
     }
@@ -91,6 +90,8 @@ public class ChannelInfoV2  {
         this.orgNames = orgNames;
     }
 
+    
+
     public ChannelInfoV2 withDescription(String description) {
         this.description = description;
         return this;
@@ -110,6 +111,9 @@ public class ChannelInfoV2  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

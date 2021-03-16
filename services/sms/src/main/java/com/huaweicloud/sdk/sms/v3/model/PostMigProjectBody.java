@@ -37,7 +37,7 @@ public class PostMigProjectBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isdefault")
     
-    private Boolean isdefault = false;
+    private Boolean isdefault;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,7 +49,7 @@ public class PostMigProjectBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private String startTargetServer = "true";
+    private String startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,13 +61,13 @@ public class PostMigProjectBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="use_public_ip")
     
-    private Boolean usePublicIp = true;
+    private Boolean usePublicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exist_server")
     
-    private Boolean existServer = true;
+    private Boolean existServer;
     /**
      * 迁移项目类型
      */
@@ -157,13 +157,13 @@ public class PostMigProjectBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project")
     
-    private String enterpriseProject = "default";
+    private String enterpriseProject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="syncing")
     
-    private Boolean syncing = false;
+    private Boolean syncing;
 
     public PostMigProjectBody withName(String name) {
         this.name = name;
@@ -185,6 +185,8 @@ public class PostMigProjectBody  {
         this.name = name;
     }
 
+    
+
     public PostMigProjectBody withDescription(String description) {
         this.description = description;
         return this;
@@ -204,6 +206,8 @@ public class PostMigProjectBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public PostMigProjectBody withIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
@@ -225,6 +229,8 @@ public class PostMigProjectBody  {
         this.isdefault = isdefault;
     }
 
+    
+
     public PostMigProjectBody withRegion(String region) {
         this.region = region;
         return this;
@@ -245,6 +251,8 @@ public class PostMigProjectBody  {
         this.region = region;
     }
 
+    
+
     public PostMigProjectBody withStartTargetServer(String startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
@@ -264,6 +272,8 @@ public class PostMigProjectBody  {
     public void setStartTargetServer(String startTargetServer) {
         this.startTargetServer = startTargetServer;
     }
+
+    
 
     public PostMigProjectBody withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
@@ -287,6 +297,8 @@ public class PostMigProjectBody  {
         this.speedLimit = speedLimit;
     }
 
+    
+
     public PostMigProjectBody withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -306,6 +318,8 @@ public class PostMigProjectBody  {
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
     }
+
+    
 
     public PostMigProjectBody withExistServer(Boolean existServer) {
         this.existServer = existServer;
@@ -327,6 +341,8 @@ public class PostMigProjectBody  {
         this.existServer = existServer;
     }
 
+    
+
     public PostMigProjectBody withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -346,6 +362,8 @@ public class PostMigProjectBody  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public PostMigProjectBody withEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
@@ -367,6 +385,8 @@ public class PostMigProjectBody  {
         this.enterpriseProject = enterpriseProject;
     }
 
+    
+
     public PostMigProjectBody withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
@@ -386,6 +406,9 @@ public class PostMigProjectBody  {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

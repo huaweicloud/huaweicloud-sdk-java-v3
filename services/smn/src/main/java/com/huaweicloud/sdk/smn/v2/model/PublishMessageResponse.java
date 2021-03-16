@@ -51,6 +51,8 @@ public class PublishMessageResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public PublishMessageResponse withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
@@ -70,6 +72,9 @@ public class PublishMessageResponse extends SdkResponse {
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

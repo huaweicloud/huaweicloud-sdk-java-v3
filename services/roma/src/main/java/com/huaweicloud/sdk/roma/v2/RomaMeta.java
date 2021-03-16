@@ -2753,6 +2753,14 @@ public class RomaMeta {
                 req.setPrefix(v);
             })
         );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ImportMqsInstanceTopicRequestBody.class,
+            f -> f.withMarshaller(ImportMqsInstanceTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
 
         // response
 
@@ -7914,6 +7922,14 @@ public class RomaMeta {
                 req.setInstanceId(v);
             })
         );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            UploadProductRequestBody.class,
+            f -> f.withMarshaller(UploadProductRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
 
         // response
 
@@ -10949,6 +10965,14 @@ public class RomaMeta {
                 req.setInstanceId(v);
             })
         );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ImportApiDefinitionsV2RequestBody.class,
+            f -> f.withMarshaller(ImportApiDefinitionsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
 
         // response
 
@@ -10972,6 +10996,14 @@ public class RomaMeta {
             String.class,
             f -> f.withMarshaller(ImportLiveDataApiDefinitionsV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ImportLiveDataApiDefinitionsV2RequestBody.class,
+            f -> f.withMarshaller(ImportLiveDataApiDefinitionsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

@@ -54,7 +54,7 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_destination_descriptor")
     
-    private ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor = null;
+    private ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor;
 
     public ShowSinkTaskDetailResponse withTaskName(String taskName) {
         this.taskName = taskName;
@@ -76,6 +76,8 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.taskName = taskName;
     }
 
+    
+
     public ShowSinkTaskDetailResponse withDestinationType(String destinationType) {
         this.destinationType = destinationType;
         return this;
@@ -95,6 +97,8 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
     public void setDestinationType(String destinationType) {
         this.destinationType = destinationType;
     }
+
+    
 
     public ShowSinkTaskDetailResponse withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -116,6 +120,8 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowSinkTaskDetailResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -136,6 +142,8 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowSinkTaskDetailResponse withTopics(String topics) {
         this.topics = topics;
         return this;
@@ -155,6 +163,8 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
     public void setTopics(String topics) {
         this.topics = topics;
     }
+
+    
 
     public ShowSinkTaskDetailResponse withObsDestinationDescriptor(ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor) {
         this.obsDestinationDescriptor = obsDestinationDescriptor;
@@ -182,6 +192,9 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
     public void setObsDestinationDescriptor(ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor) {
         this.obsDestinationDescriptor = obsDestinationDescriptor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

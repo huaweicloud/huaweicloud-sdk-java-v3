@@ -33,9 +33,6 @@ public class SignApiBindingResult  {
 
     
     public SignApiBindingResult addBindingsItem(SignApiBindingInfo bindingsItem) {
-        if (this.bindings == null) {
-            this.bindings = new ArrayList<>();
-        }
         this.bindings.add(bindingsItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class SignApiBindingResult  {
     public void setBindings(List<SignApiBindingInfo> bindings) {
         this.bindings = bindings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

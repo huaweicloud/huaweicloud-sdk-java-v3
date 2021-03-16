@@ -49,6 +49,8 @@ public class DeviceInfoSimple  {
         this.deviceId = deviceId;
     }
 
+    
+
     public DeviceInfoSimple withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -68,6 +70,9 @@ public class DeviceInfoSimple  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

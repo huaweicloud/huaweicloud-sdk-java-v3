@@ -38,9 +38,6 @@ public class ExportJobsReq  {
 
     
     public ExportJobsReq addJobListItem(String jobListItem) {
-        if (this.jobList == null) {
-            this.jobList = new ArrayList<>();
-        }
         this.jobList.add(jobListItem);
         return this;
     }
@@ -65,6 +62,8 @@ public class ExportJobsReq  {
         this.jobList = jobList;
     }
 
+    
+
     public ExportJobsReq withExportDepend(Boolean exportDepend) {
         this.exportDepend = exportDepend;
         return this;
@@ -84,6 +83,9 @@ public class ExportJobsReq  {
     public void setExportDepend(Boolean exportDepend) {
         this.exportDepend = exportDepend;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

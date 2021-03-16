@@ -34,7 +34,7 @@ public class AgencyTokenUser  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private AgencyTokenUserDomain domain = null;
+    private AgencyTokenUserDomain domain;
 
     public AgencyTokenUser withName(String name) {
         this.name = name;
@@ -56,6 +56,8 @@ public class AgencyTokenUser  {
         this.name = name;
     }
 
+    
+
     public AgencyTokenUser withId(String id) {
         this.id = id;
         return this;
@@ -75,6 +77,8 @@ public class AgencyTokenUser  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AgencyTokenUser withDomain(AgencyTokenUserDomain domain) {
         this.domain = domain;
@@ -102,6 +106,9 @@ public class AgencyTokenUser  {
     public void setDomain(AgencyTokenUserDomain domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

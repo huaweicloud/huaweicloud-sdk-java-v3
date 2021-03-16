@@ -229,6 +229,8 @@ public class ListStatisticsRequest  {
         this.filter = filter;
     }
 
+    
+
     public ListStatisticsRequest withPeriod(String period) {
         this.period = period;
         return this;
@@ -249,6 +251,8 @@ public class ListStatisticsRequest  {
         this.period = period;
     }
 
+    
+
     public ListStatisticsRequest withMonthCode(MonthCodeEnum monthCode) {
         this.monthCode = monthCode;
         return this;
@@ -268,6 +272,9 @@ public class ListStatisticsRequest  {
     public void setMonthCode(MonthCodeEnum monthCode) {
         this.monthCode = monthCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

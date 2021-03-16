@@ -51,6 +51,8 @@ public class CreateApplicationEndpointResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public CreateApplicationEndpointResponse withEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
         return this;
@@ -70,6 +72,9 @@ public class CreateApplicationEndpointResponse extends SdkResponse {
     public void setEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

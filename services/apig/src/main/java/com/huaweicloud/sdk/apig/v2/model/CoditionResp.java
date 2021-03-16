@@ -248,6 +248,8 @@ public class CoditionResp  {
         this.reqParamName = reqParamName;
     }
 
+    
+
     public CoditionResp withConditionType(ConditionTypeEnum conditionType) {
         this.conditionType = conditionType;
         return this;
@@ -267,6 +269,8 @@ public class CoditionResp  {
     public void setConditionType(ConditionTypeEnum conditionType) {
         this.conditionType = conditionType;
     }
+
+    
 
     public CoditionResp withConditionOrigin(ConditionOriginEnum conditionOrigin) {
         this.conditionOrigin = conditionOrigin;
@@ -288,6 +292,8 @@ public class CoditionResp  {
         this.conditionOrigin = conditionOrigin;
     }
 
+    
+
     public CoditionResp withConditionValue(String conditionValue) {
         this.conditionValue = conditionValue;
         return this;
@@ -307,6 +313,8 @@ public class CoditionResp  {
     public void setConditionValue(String conditionValue) {
         this.conditionValue = conditionValue;
     }
+
+    
 
     public CoditionResp withId(String id) {
         this.id = id;
@@ -328,6 +336,8 @@ public class CoditionResp  {
         this.id = id;
     }
 
+    
+
     public CoditionResp withReqParamId(String reqParamId) {
         this.reqParamId = reqParamId;
         return this;
@@ -348,6 +358,8 @@ public class CoditionResp  {
         this.reqParamId = reqParamId;
     }
 
+    
+
     public CoditionResp withReqParamLocation(String reqParamLocation) {
         this.reqParamLocation = reqParamLocation;
         return this;
@@ -367,6 +379,9 @@ public class CoditionResp  {
     public void setReqParamLocation(String reqParamLocation) {
         this.reqParamLocation = reqParamLocation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

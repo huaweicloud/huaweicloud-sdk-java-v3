@@ -23,13 +23,13 @@ public class BatchAddMembersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="images")
     
-    private List<String> images = new ArrayList<>();
+    private List<String> images = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="projects")
     
-    private List<String> projects = new ArrayList<>();
+    private List<String> projects = null;
     
     public BatchAddMembersRequestBody withImages(List<String> images) {
         this.images = images;
@@ -62,6 +62,8 @@ public class BatchAddMembersRequestBody  {
         this.images = images;
     }
 
+    
+
     public BatchAddMembersRequestBody withProjects(List<String> projects) {
         this.projects = projects;
         return this;
@@ -92,6 +94,9 @@ public class BatchAddMembersRequestBody  {
     public void setProjects(List<String> projects) {
         this.projects = projects;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

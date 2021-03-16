@@ -49,6 +49,8 @@ public class IdentityproviderOption  {
         this.description = description;
     }
 
+    
+
     public IdentityproviderOption withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -68,6 +70,9 @@ public class IdentityproviderOption  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

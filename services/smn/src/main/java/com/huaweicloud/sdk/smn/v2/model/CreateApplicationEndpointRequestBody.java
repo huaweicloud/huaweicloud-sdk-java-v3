@@ -49,6 +49,8 @@ public class CreateApplicationEndpointRequestBody  {
         this.token = token;
     }
 
+    
+
     public CreateApplicationEndpointRequestBody withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -68,6 +70,9 @@ public class CreateApplicationEndpointRequestBody  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

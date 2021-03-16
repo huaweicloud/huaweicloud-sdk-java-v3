@@ -49,6 +49,8 @@ public class SecurityGroupsList  {
         this.name = name;
     }
 
+    
+
     public SecurityGroupsList withId(String id) {
         this.id = id;
         return this;
@@ -68,6 +70,9 @@ public class SecurityGroupsList  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

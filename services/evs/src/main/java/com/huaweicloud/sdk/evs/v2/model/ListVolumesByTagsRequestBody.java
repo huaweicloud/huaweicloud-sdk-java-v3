@@ -101,13 +101,13 @@ public class ListVolumesByTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action = ActionEnum.FILTER;
+    private ActionEnum action;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 1000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,13 +119,13 @@ public class ListVolumesByTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<TagsForListVolumes> tags = new ArrayList<>();
+    private List<TagsForListVolumes> tags = null;
     
     public ListVolumesByTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -146,6 +146,8 @@ public class ListVolumesByTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public ListVolumesByTagsRequestBody withLimit(Integer limit) {
         this.limit = limit;
@@ -169,6 +171,8 @@ public class ListVolumesByTagsRequestBody  {
         this.limit = limit;
     }
 
+    
+
     public ListVolumesByTagsRequestBody withMatches(List<Match> matches) {
         this.matches = matches;
         return this;
@@ -176,9 +180,6 @@ public class ListVolumesByTagsRequestBody  {
 
     
     public ListVolumesByTagsRequestBody addMatchesItem(Match matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -203,6 +204,8 @@ public class ListVolumesByTagsRequestBody  {
         this.matches = matches;
     }
 
+    
+
     public ListVolumesByTagsRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -222,6 +225,8 @@ public class ListVolumesByTagsRequestBody  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListVolumesByTagsRequestBody withTags(List<TagsForListVolumes> tags) {
         this.tags = tags;
@@ -253,6 +258,9 @@ public class ListVolumesByTagsRequestBody  {
     public void setTags(List<TagsForListVolumes> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

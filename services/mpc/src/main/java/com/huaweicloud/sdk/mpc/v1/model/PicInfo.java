@@ -42,6 +42,9 @@ public class PicInfo  {
     public void setPicName(String picName) {
         this.picName = picName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -21,13 +21,13 @@ public class BasicWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dx")
     
-    private String dx = "0";
+    private String dx;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dy")
     
-    private String dy = "0";
+    private String dy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,7 +39,7 @@ public class BasicWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeline_start")
     
-    private String timelineStart = "0";
+    private String timelineStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,6 +67,8 @@ public class BasicWatermark  {
         this.dx = dx;
     }
 
+    
+
     public BasicWatermark withDy(String dy) {
         this.dy = dy;
         return this;
@@ -86,6 +88,8 @@ public class BasicWatermark  {
     public void setDy(String dy) {
         this.dy = dy;
     }
+
+    
 
     public BasicWatermark withReferpos(String referpos) {
         this.referpos = referpos;
@@ -107,6 +111,8 @@ public class BasicWatermark  {
         this.referpos = referpos;
     }
 
+    
+
     public BasicWatermark withTimelineStart(String timelineStart) {
         this.timelineStart = timelineStart;
         return this;
@@ -127,6 +133,8 @@ public class BasicWatermark  {
         this.timelineStart = timelineStart;
     }
 
+    
+
     public BasicWatermark withTimelineDuration(String timelineDuration) {
         this.timelineDuration = timelineDuration;
         return this;
@@ -146,6 +154,9 @@ public class BasicWatermark  {
     public void setTimelineDuration(String timelineDuration) {
         this.timelineDuration = timelineDuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

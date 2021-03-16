@@ -55,6 +55,8 @@ public class CCEJobMetadata  {
         this.creationTimestamp = creationTimestamp;
     }
 
+    
+
     public CCEJobMetadata withUid(String uid) {
         this.uid = uid;
         return this;
@@ -75,6 +77,8 @@ public class CCEJobMetadata  {
         this.uid = uid;
     }
 
+    
+
     public CCEJobMetadata withUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
         return this;
@@ -94,6 +98,9 @@ public class CCEJobMetadata  {
     public void setUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

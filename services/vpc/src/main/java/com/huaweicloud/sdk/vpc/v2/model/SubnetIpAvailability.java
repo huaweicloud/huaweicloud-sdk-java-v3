@@ -73,6 +73,8 @@ public class SubnetIpAvailability  {
         this.usedIps = usedIps;
     }
 
+    
+
     public SubnetIpAvailability withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -92,6 +94,8 @@ public class SubnetIpAvailability  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public SubnetIpAvailability withSubnetName(String subnetName) {
         this.subnetName = subnetName;
@@ -113,6 +117,8 @@ public class SubnetIpAvailability  {
         this.subnetName = subnetName;
     }
 
+    
+
     public SubnetIpAvailability withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -132,6 +138,8 @@ public class SubnetIpAvailability  {
     public void setIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
     }
+
+    
 
     public SubnetIpAvailability withCidr(String cidr) {
         this.cidr = cidr;
@@ -153,6 +161,8 @@ public class SubnetIpAvailability  {
         this.cidr = cidr;
     }
 
+    
+
     public SubnetIpAvailability withTotalIps(Integer totalIps) {
         this.totalIps = totalIps;
         return this;
@@ -172,6 +182,9 @@ public class SubnetIpAvailability  {
     public void setTotalIps(Integer totalIps) {
         this.totalIps = totalIps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

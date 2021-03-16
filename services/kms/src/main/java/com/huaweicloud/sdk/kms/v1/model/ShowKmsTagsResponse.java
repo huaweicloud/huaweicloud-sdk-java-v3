@@ -41,9 +41,6 @@ public class ShowKmsTagsResponse extends SdkResponse {
 
     
     public ShowKmsTagsResponse addTagsItem(TagItem tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowKmsTagsResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public ShowKmsTagsResponse withExistTagsNum(Integer existTagsNum) {
         this.existTagsNum = existTagsNum;
         return this;
@@ -89,6 +88,9 @@ public class ShowKmsTagsResponse extends SdkResponse {
     public void setExistTagsNum(Integer existTagsNum) {
         this.existTagsNum = existTagsNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -130,6 +130,8 @@ public class ResourceEntity  {
         this.id = id;
     }
 
+    
+
     public ResourceEntity withName(String name) {
         this.name = name;
         return this;
@@ -149,6 +151,8 @@ public class ResourceEntity  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ResourceEntity withProvider(String provider) {
         this.provider = provider;
@@ -170,6 +174,8 @@ public class ResourceEntity  {
         this.provider = provider;
     }
 
+    
+
     public ResourceEntity withType(String type) {
         this.type = type;
         return this;
@@ -189,6 +195,8 @@ public class ResourceEntity  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ResourceEntity withRegionId(String regionId) {
         this.regionId = regionId;
@@ -210,6 +218,8 @@ public class ResourceEntity  {
         this.regionId = regionId;
     }
 
+    
+
     public ResourceEntity withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -229,6 +239,8 @@ public class ResourceEntity  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ResourceEntity withProjectName(String projectName) {
         this.projectName = projectName;
@@ -250,6 +262,8 @@ public class ResourceEntity  {
         this.projectName = projectName;
     }
 
+    
+
     public ResourceEntity withEpId(String epId) {
         this.epId = epId;
         return this;
@@ -269,6 +283,8 @@ public class ResourceEntity  {
     public void setEpId(String epId) {
         this.epId = epId;
     }
+
+    
 
     public ResourceEntity withEpName(String epName) {
         this.epName = epName;
@@ -290,6 +306,8 @@ public class ResourceEntity  {
         this.epName = epName;
     }
 
+    
+
     public ResourceEntity withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
@@ -309,6 +327,8 @@ public class ResourceEntity  {
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
+
+    
 
     public ResourceEntity withCreated(String created) {
         this.created = created;
@@ -330,6 +350,8 @@ public class ResourceEntity  {
         this.created = created;
     }
 
+    
+
     public ResourceEntity withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -349,6 +371,8 @@ public class ResourceEntity  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public ResourceEntity withProvisioningState(String provisioningState) {
         this.provisioningState = provisioningState;
@@ -370,6 +394,8 @@ public class ResourceEntity  {
         this.provisioningState = provisioningState;
     }
 
+    
+
     public ResourceEntity withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
@@ -378,9 +404,6 @@ public class ResourceEntity  {
     
 
     public ResourceEntity putTagsItem(String key, String tagsItem) {
-         if (this.tags == null) {
-            this.tags = new HashMap<>();
-         }
         this.tags.put(key, tagsItem);
         return this;
     }
@@ -404,6 +427,8 @@ public class ResourceEntity  {
         this.tags = tags;
     }
 
+    
+
     public ResourceEntity withProperties(Map<String, Object> properties) {
         this.properties = properties;
         return this;
@@ -412,9 +437,6 @@ public class ResourceEntity  {
     
 
     public ResourceEntity putPropertiesItem(String key, Object propertiesItem) {
-         if (this.properties == null) {
-            this.properties = new HashMap<>();
-         }
         this.properties.put(key, propertiesItem);
         return this;
     }
@@ -437,6 +459,9 @@ public class ResourceEntity  {
     public void setProperties(Map<String, Object> properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

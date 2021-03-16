@@ -73,6 +73,8 @@ public class ActionSmnForwarding  {
         this.regionName = regionName;
     }
 
+    
+
     public ActionSmnForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -92,6 +94,8 @@ public class ActionSmnForwarding  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ActionSmnForwarding withThemeName(String themeName) {
         this.themeName = themeName;
@@ -113,6 +117,8 @@ public class ActionSmnForwarding  {
         this.themeName = themeName;
     }
 
+    
+
     public ActionSmnForwarding withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -132,6 +138,8 @@ public class ActionSmnForwarding  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
+
+    
 
     public ActionSmnForwarding withMessageContent(String messageContent) {
         this.messageContent = messageContent;
@@ -153,6 +161,8 @@ public class ActionSmnForwarding  {
         this.messageContent = messageContent;
     }
 
+    
+
     public ActionSmnForwarding withMessageTitle(String messageTitle) {
         this.messageTitle = messageTitle;
         return this;
@@ -172,6 +182,9 @@ public class ActionSmnForwarding  {
     public void setMessageTitle(String messageTitle) {
         this.messageTitle = messageTitle;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

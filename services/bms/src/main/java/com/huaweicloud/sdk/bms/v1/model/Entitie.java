@@ -49,6 +49,8 @@ public class Entitie  {
         this.serverId = serverId;
     }
 
+    
+
     public Entitie withNicId(String nicId) {
         this.nicId = nicId;
         return this;
@@ -68,6 +70,9 @@ public class Entitie  {
     public void setNicId(String nicId) {
         this.nicId = nicId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,7 +33,7 @@ public class ApplicationCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
     public ApplicationCreate withName(String name) {
         this.name = name;
@@ -55,6 +55,8 @@ public class ApplicationCreate  {
         this.name = name;
     }
 
+    
+
     public ApplicationCreate withDescription(String description) {
         this.description = description;
         return this;
@@ -75,6 +77,8 @@ public class ApplicationCreate  {
         this.description = description;
     }
 
+    
+
     public ApplicationCreate withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -94,6 +98,9 @@ public class ApplicationCreate  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

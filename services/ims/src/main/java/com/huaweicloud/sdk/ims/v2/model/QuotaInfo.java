@@ -67,6 +67,8 @@ public class QuotaInfo  {
         this.type = type;
     }
 
+    
+
     public QuotaInfo withUsed(Integer used) {
         this.used = used;
         return this;
@@ -86,6 +88,8 @@ public class QuotaInfo  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
 
     public QuotaInfo withQuota(Integer quota) {
         this.quota = quota;
@@ -107,6 +111,8 @@ public class QuotaInfo  {
         this.quota = quota;
     }
 
+    
+
     public QuotaInfo withMin(Integer min) {
         this.min = min;
         return this;
@@ -127,6 +133,8 @@ public class QuotaInfo  {
         this.min = min;
     }
 
+    
+
     public QuotaInfo withMax(Integer max) {
         this.max = max;
         return this;
@@ -146,6 +154,9 @@ public class QuotaInfo  {
     public void setMax(Integer max) {
         this.max = max;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

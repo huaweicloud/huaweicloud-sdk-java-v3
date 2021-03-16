@@ -49,6 +49,8 @@ public class ScopeDomainOption  {
         this.id = id;
     }
 
+    
+
     public ScopeDomainOption withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +70,9 @@ public class ScopeDomainOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

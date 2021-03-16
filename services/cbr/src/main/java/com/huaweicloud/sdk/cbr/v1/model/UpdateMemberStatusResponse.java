@@ -24,7 +24,7 @@ public class UpdateMemberStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member")
     
-    private Member member = null;
+    private Member member;
 
     public UpdateMemberStatusResponse withMember(Member member) {
         this.member = member;
@@ -52,6 +52,9 @@ public class UpdateMemberStatusResponse extends SdkResponse {
     public void setMember(Member member) {
         this.member = member;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class SimpleIncidentBusinessTypeV2  {
         this.businessTypeId = businessTypeId;
     }
 
+    
+
     public SimpleIncidentBusinessTypeV2 withBusinessTypeName(String businessTypeName) {
         this.businessTypeName = businessTypeName;
         return this;
@@ -80,6 +82,8 @@ public class SimpleIncidentBusinessTypeV2  {
     public void setBusinessTypeName(String businessTypeName) {
         this.businessTypeName = businessTypeName;
     }
+
+    
 
     public SimpleIncidentBusinessTypeV2 withCaseType(String caseType) {
         this.caseType = caseType;
@@ -101,6 +105,8 @@ public class SimpleIncidentBusinessTypeV2  {
         this.caseType = caseType;
     }
 
+    
+
     public SimpleIncidentBusinessTypeV2 withCanUseSupportPlan(Boolean canUseSupportPlan) {
         this.canUseSupportPlan = canUseSupportPlan;
         return this;
@@ -120,6 +126,9 @@ public class SimpleIncidentBusinessTypeV2  {
     public void setCanUseSupportPlan(Boolean canUseSupportPlan) {
         this.canUseSupportPlan = canUseSupportPlan;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

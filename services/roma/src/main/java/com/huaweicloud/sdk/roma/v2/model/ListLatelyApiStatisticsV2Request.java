@@ -55,6 +55,8 @@ public class ListLatelyApiStatisticsV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListLatelyApiStatisticsV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -75,6 +77,8 @@ public class ListLatelyApiStatisticsV2Request  {
         this.apiId = apiId;
     }
 
+    
+
     public ListLatelyApiStatisticsV2Request withDuration(String duration) {
         this.duration = duration;
         return this;
@@ -94,6 +98,9 @@ public class ListLatelyApiStatisticsV2Request  {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class MetricDataItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    private MetricInfo metric = null;
+    private MetricInfo metric;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,6 +81,8 @@ public class MetricDataItem  {
         this.metric = metric;
     }
 
+    
+
     public MetricDataItem withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -103,6 +105,8 @@ public class MetricDataItem  {
         this.ttl = ttl;
     }
 
+    
+
     public MetricDataItem withCollectTime(Long collectTime) {
         this.collectTime = collectTime;
         return this;
@@ -122,6 +126,8 @@ public class MetricDataItem  {
     public void setCollectTime(Long collectTime) {
         this.collectTime = collectTime;
     }
+
+    
 
     public MetricDataItem withValue(Double value) {
         this.value = value;
@@ -143,6 +149,8 @@ public class MetricDataItem  {
         this.value = value;
     }
 
+    
+
     public MetricDataItem withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -163,6 +171,8 @@ public class MetricDataItem  {
         this.unit = unit;
     }
 
+    
+
     public MetricDataItem withType(String type) {
         this.type = type;
         return this;
@@ -182,6 +192,9 @@ public class MetricDataItem  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

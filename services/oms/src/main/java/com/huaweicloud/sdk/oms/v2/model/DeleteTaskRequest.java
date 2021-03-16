@@ -44,6 +44,9 @@ public class DeleteTaskRequest  {
     public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

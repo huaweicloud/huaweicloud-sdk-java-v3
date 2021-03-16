@@ -28,7 +28,7 @@ public class ShowResourceBindEnterpriseProjectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResqEpResouce body = null;
+    private ResqEpResouce body;
 
     public ShowResourceBindEnterpriseProjectRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -49,6 +49,8 @@ public class ShowResourceBindEnterpriseProjectRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ShowResourceBindEnterpriseProjectRequest withBody(ResqEpResouce body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ShowResourceBindEnterpriseProjectRequest  {
     public void setBody(ResqEpResouce body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

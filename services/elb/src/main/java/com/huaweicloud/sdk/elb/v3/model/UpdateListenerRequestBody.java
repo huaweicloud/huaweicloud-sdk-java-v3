@@ -22,7 +22,7 @@ public class UpdateListenerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listener")
     
-    private UpdateListenerOption listener = null;
+    private UpdateListenerOption listener;
 
     public UpdateListenerRequestBody withListener(UpdateListenerOption listener) {
         this.listener = listener;
@@ -50,6 +50,9 @@ public class UpdateListenerRequestBody  {
     public void setListener(UpdateListenerOption listener) {
         this.listener = listener;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

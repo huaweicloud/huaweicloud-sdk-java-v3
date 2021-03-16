@@ -22,7 +22,7 @@ public class KeystoneCreateProjectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneCreateProjectRequestBody body = null;
+    private KeystoneCreateProjectRequestBody body;
 
     public KeystoneCreateProjectRequest withBody(KeystoneCreateProjectRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class KeystoneCreateProjectRequest  {
     public void setBody(KeystoneCreateProjectRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

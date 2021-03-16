@@ -61,6 +61,8 @@ public class GetBackupDownloadLinkFiles  {
         this.name = name;
     }
 
+    
+
     public GetBackupDownloadLinkFiles withSize(Long size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class GetBackupDownloadLinkFiles  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public GetBackupDownloadLinkFiles withDownloadLink(String downloadLink) {
         this.downloadLink = downloadLink;
@@ -101,6 +105,8 @@ public class GetBackupDownloadLinkFiles  {
         this.downloadLink = downloadLink;
     }
 
+    
+
     public GetBackupDownloadLinkFiles withLinkExpiredTime(String linkExpiredTime) {
         this.linkExpiredTime = linkExpiredTime;
         return this;
@@ -120,6 +126,9 @@ public class GetBackupDownloadLinkFiles  {
     public void setLinkExpiredTime(String linkExpiredTime) {
         this.linkExpiredTime = linkExpiredTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

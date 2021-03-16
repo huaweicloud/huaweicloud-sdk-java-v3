@@ -28,7 +28,7 @@ public class RegisterImageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RegisterImageRequestBody body = null;
+    private RegisterImageRequestBody body;
 
     public RegisterImageRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -49,6 +49,8 @@ public class RegisterImageRequest  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public RegisterImageRequest withBody(RegisterImageRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RegisterImageRequest  {
     public void setBody(RegisterImageRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

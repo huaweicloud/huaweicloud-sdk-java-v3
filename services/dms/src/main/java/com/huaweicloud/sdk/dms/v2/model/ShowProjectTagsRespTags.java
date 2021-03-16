@@ -51,6 +51,8 @@ public class ShowProjectTagsRespTags  {
         this.key = key;
     }
 
+    
+
     public ShowProjectTagsRespTags withValues(List<String> values) {
         this.values = values;
         return this;
@@ -58,9 +60,6 @@ public class ShowProjectTagsRespTags  {
 
     
     public ShowProjectTagsRespTags addValuesItem(String valuesItem) {
-        if (this.values == null) {
-            this.values = new ArrayList<>();
-        }
         this.values.add(valuesItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class ShowProjectTagsRespTags  {
     public void setValues(List<String> values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

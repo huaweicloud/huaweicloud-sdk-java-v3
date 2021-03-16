@@ -35,9 +35,6 @@ public class CreateConsumerGroupResponse extends SdkResponse {
 
     
     public CreateConsumerGroupResponse addGroupsItem(CreateConsumerGroupRespGroups groupsItem) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
         this.groups.add(groupsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class CreateConsumerGroupResponse extends SdkResponse {
     public void setGroups(List<CreateConsumerGroupRespGroups> groups) {
         this.groups = groups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

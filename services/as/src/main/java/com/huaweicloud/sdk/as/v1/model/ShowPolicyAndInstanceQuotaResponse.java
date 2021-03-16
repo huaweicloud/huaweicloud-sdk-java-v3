@@ -24,7 +24,7 @@ public class ShowPolicyAndInstanceQuotaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="AllQuotas")
     
-    private PolicyInstanceQuotas allQuotas = null;
+    private PolicyInstanceQuotas allQuotas;
 
     public ShowPolicyAndInstanceQuotaResponse withAllQuotas(PolicyInstanceQuotas allQuotas) {
         this.allQuotas = allQuotas;
@@ -52,6 +52,9 @@ public class ShowPolicyAndInstanceQuotaResponse extends SdkResponse {
     public void setAllQuotas(PolicyInstanceQuotas allQuotas) {
         this.allQuotas = allQuotas;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -79,6 +79,8 @@ public class QueryAdminResultDTO  {
         this.id = id;
     }
 
+    
+
     public QueryAdminResultDTO withAccount(String account) {
         this.account = account;
         return this;
@@ -98,6 +100,8 @@ public class QueryAdminResultDTO  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public QueryAdminResultDTO withName(String name) {
         this.name = name;
@@ -119,6 +123,8 @@ public class QueryAdminResultDTO  {
         this.name = name;
     }
 
+    
+
     public QueryAdminResultDTO withAdminType(Integer adminType) {
         this.adminType = adminType;
         return this;
@@ -138,6 +144,8 @@ public class QueryAdminResultDTO  {
     public void setAdminType(Integer adminType) {
         this.adminType = adminType;
     }
+
+    
 
     public QueryAdminResultDTO withEmail(String email) {
         this.email = email;
@@ -159,6 +167,8 @@ public class QueryAdminResultDTO  {
         this.email = email;
     }
 
+    
+
     public QueryAdminResultDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -179,6 +189,8 @@ public class QueryAdminResultDTO  {
         this.phone = phone;
     }
 
+    
+
     public QueryAdminResultDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -198,6 +210,9 @@ public class QueryAdminResultDTO  {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

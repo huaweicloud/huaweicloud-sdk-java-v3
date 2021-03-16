@@ -22,13 +22,13 @@ public class CancelSelfGrantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RevokeGrantRequestBody body = null;
+    private RevokeGrantRequestBody body;
 
     public CancelSelfGrantRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class CancelSelfGrantRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public CancelSelfGrantRequest withBody(RevokeGrantRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CancelSelfGrantRequest  {
     public void setBody(RevokeGrantRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

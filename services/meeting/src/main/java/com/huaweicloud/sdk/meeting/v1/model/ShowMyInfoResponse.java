@@ -131,19 +131,19 @@ public class ShowMyInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="corp")
     
-    private CorpBasicInfoDTO corp = null;
+    private CorpBasicInfoDTO corp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="function")
     
-    private UserFunctionDTO function = null;
+    private UserFunctionDTO function;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="devType")
     
-    private QueryDeviceInfoResultDTO devType = null;
+    private QueryDeviceInfoResultDTO devType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -207,6 +207,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowMyInfoResponse withUserAccount(String userAccount) {
         this.userAccount = userAccount;
         return this;
@@ -226,6 +228,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setUserAccount(String userAccount) {
         this.userAccount = userAccount;
     }
+
+    
 
     public ShowMyInfoResponse withName(String name) {
         this.name = name;
@@ -247,6 +251,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowMyInfoResponse withEnglishName(String englishName) {
         this.englishName = englishName;
         return this;
@@ -266,6 +272,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setEnglishName(String englishName) {
         this.englishName = englishName;
     }
+
+    
 
     public ShowMyInfoResponse withPhone(String phone) {
         this.phone = phone;
@@ -287,6 +295,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.phone = phone;
     }
 
+    
+
     public ShowMyInfoResponse withCountry(String country) {
         this.country = country;
         return this;
@@ -306,6 +316,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
 
     public ShowMyInfoResponse withEmail(String email) {
         this.email = email;
@@ -327,6 +339,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.email = email;
     }
 
+    
+
     public ShowMyInfoResponse withSipNum(String sipNum) {
         this.sipNum = sipNum;
         return this;
@@ -347,6 +361,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.sipNum = sipNum;
     }
 
+    
+
     public ShowMyInfoResponse withVmrList(List<UserVmrDTO> vmrList) {
         this.vmrList = vmrList;
         return this;
@@ -354,9 +370,6 @@ public class ShowMyInfoResponse extends SdkResponse {
 
     
     public ShowMyInfoResponse addVmrListItem(UserVmrDTO vmrListItem) {
-        if (this.vmrList == null) {
-            this.vmrList = new ArrayList<>();
-        }
         this.vmrList.add(vmrListItem);
         return this;
     }
@@ -381,6 +394,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.vmrList = vmrList;
     }
 
+    
+
     public ShowMyInfoResponse withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -400,6 +415,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
 
     public ShowMyInfoResponse withDeptName(String deptName) {
         this.deptName = deptName;
@@ -421,6 +438,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.deptName = deptName;
     }
 
+    
+
     public ShowMyInfoResponse withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
@@ -440,6 +459,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
     }
+
+    
 
     public ShowMyInfoResponse withUserType(Integer userType) {
         this.userType = userType;
@@ -461,6 +482,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.userType = userType;
     }
 
+    
+
     public ShowMyInfoResponse withAdminType(Integer adminType) {
         this.adminType = adminType;
         return this;
@@ -480,6 +503,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setAdminType(Integer adminType) {
         this.adminType = adminType;
     }
+
+    
 
     public ShowMyInfoResponse withSignature(String signature) {
         this.signature = signature;
@@ -501,6 +526,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.signature = signature;
     }
 
+    
+
     public ShowMyInfoResponse withTitle(String title) {
         this.title = title;
         return this;
@@ -521,6 +548,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.title = title;
     }
 
+    
+
     public ShowMyInfoResponse withDesc(String desc) {
         this.desc = desc;
         return this;
@@ -540,6 +569,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    
 
     public ShowMyInfoResponse withCorp(CorpBasicInfoDTO corp) {
         this.corp = corp;
@@ -568,6 +599,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.corp = corp;
     }
 
+    
+
     public ShowMyInfoResponse withFunction(UserFunctionDTO function) {
         this.function = function;
         return this;
@@ -594,6 +627,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setFunction(UserFunctionDTO function) {
         this.function = function;
     }
+
+    
 
     public ShowMyInfoResponse withDevType(QueryDeviceInfoResultDTO devType) {
         this.devType = devType;
@@ -622,6 +657,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.devType = devType;
     }
 
+    
+
     public ShowMyInfoResponse withStatus(Integer status) {
         this.status = status;
         return this;
@@ -641,6 +678,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public ShowMyInfoResponse withSortLevel(Integer sortLevel) {
         this.sortLevel = sortLevel;
@@ -662,6 +701,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.sortLevel = sortLevel;
     }
 
+    
+
     public ShowMyInfoResponse withHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
         return this;
@@ -681,6 +722,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
     }
+
+    
 
     public ShowMyInfoResponse withVisionAccount(String visionAccount) {
         this.visionAccount = visionAccount;
@@ -702,6 +745,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.visionAccount = visionAccount;
     }
 
+    
+
     public ShowMyInfoResponse withThirdAccount(String thirdAccount) {
         this.thirdAccount = thirdAccount;
         return this;
@@ -721,6 +766,8 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setThirdAccount(String thirdAccount) {
         this.thirdAccount = thirdAccount;
     }
+
+    
 
     public ShowMyInfoResponse withLicense(Integer license) {
         this.license = license;
@@ -742,6 +789,8 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.license = license;
     }
 
+    
+
     public ShowMyInfoResponse withActiveTime(Long activeTime) {
         this.activeTime = activeTime;
         return this;
@@ -761,6 +810,9 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setActiveTime(Long activeTime) {
         this.activeTime = activeTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ValidateDictionaryRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ValidateDictionaryRequest withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class ValidateDictionaryRequest  {
         this.name = name;
     }
 
+    
+
     public ValidateDictionaryRequest withCode(String code) {
         this.code = code;
         return this;
@@ -94,6 +98,9 @@ public class ValidateDictionaryRequest  {
     public void setCode(String code) {
         this.code = code;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

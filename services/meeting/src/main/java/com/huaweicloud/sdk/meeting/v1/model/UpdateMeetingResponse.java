@@ -35,9 +35,6 @@ public class UpdateMeetingResponse extends SdkResponse {
 
     
     public UpdateMeetingResponse addDataItem(ConferenceInfo dataItem) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
         this.data.add(dataItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class UpdateMeetingResponse extends SdkResponse {
     public void setData(List<ConferenceInfo> data) {
         this.data = data;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

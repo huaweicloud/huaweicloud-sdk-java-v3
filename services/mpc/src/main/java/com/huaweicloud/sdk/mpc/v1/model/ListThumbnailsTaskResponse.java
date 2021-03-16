@@ -47,9 +47,6 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
 
     
     public ListThumbnailsTaskResponse addTaskArrayItem(ThumbTask taskArrayItem) {
-        if (this.taskArray == null) {
-            this.taskArray = new ArrayList<>();
-        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
         this.taskArray = taskArray;
     }
 
+    
+
     public ListThumbnailsTaskResponse withIsTruncated(Integer isTruncated) {
         this.isTruncated = isTruncated;
         return this;
@@ -94,6 +93,8 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
         this.isTruncated = isTruncated;
     }
 
+    
+
     public ListThumbnailsTaskResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -113,6 +114,9 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

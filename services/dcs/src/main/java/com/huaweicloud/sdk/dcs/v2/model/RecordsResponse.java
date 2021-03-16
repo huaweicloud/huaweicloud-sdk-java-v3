@@ -247,6 +247,8 @@ public class RecordsResponse  {
         this.id = id;
     }
 
+    
+
     public RecordsResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -266,6 +268,8 @@ public class RecordsResponse  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public RecordsResponse withScanType(ScanTypeEnum scanType) {
         this.scanType = scanType;
@@ -287,6 +291,8 @@ public class RecordsResponse  {
         this.scanType = scanType;
     }
 
+    
+
     public RecordsResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -306,6 +312,8 @@ public class RecordsResponse  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public RecordsResponse withStartedAt(String startedAt) {
         this.startedAt = startedAt;
@@ -327,6 +335,8 @@ public class RecordsResponse  {
         this.startedAt = startedAt;
     }
 
+    
+
     public RecordsResponse withFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
         return this;
@@ -346,6 +356,9 @@ public class RecordsResponse  {
     public void setFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -51,6 +51,8 @@ public class ResizeServerResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    
+
     public ResizeServerResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -70,6 +72,9 @@ public class ResizeServerResponse extends SdkResponse {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

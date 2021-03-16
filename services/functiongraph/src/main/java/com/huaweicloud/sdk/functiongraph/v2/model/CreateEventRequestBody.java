@@ -49,6 +49,8 @@ public class CreateEventRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateEventRequestBody withContent(String content) {
         this.content = content;
         return this;
@@ -68,6 +70,9 @@ public class CreateEventRequestBody  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateAddonInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceRequest body = null;
+    private InstanceRequest body;
 
     public CreateAddonInstanceRequest withBody(InstanceRequest body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateAddonInstanceRequest  {
     public void setBody(InstanceRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -21,7 +21,7 @@ import java.util.Objects;
 public class Datastore  {
 
     /**
-     * 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer
+     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
      */
     public static final class TypeEnum {
 
@@ -126,7 +126,7 @@ public class Datastore  {
 
 
     /**
-     * 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer
+     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
      * @return type
      */
     public TypeEnum getType() {
@@ -136,6 +136,8 @@ public class Datastore  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public Datastore withVersion(String version) {
         this.version = version;
@@ -156,6 +158,9 @@ public class Datastore  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

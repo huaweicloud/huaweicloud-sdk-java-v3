@@ -55,6 +55,8 @@ public class QueryDeviceInfoResultDTO  {
         this.model = model;
     }
 
+    
+
     public QueryDeviceInfoResultDTO withDeviceSize(String deviceSize) {
         this.deviceSize = deviceSize;
         return this;
@@ -75,6 +77,8 @@ public class QueryDeviceInfoResultDTO  {
         this.deviceSize = deviceSize;
     }
 
+    
+
     public QueryDeviceInfoResultDTO withPurchaseChannel(String purchaseChannel) {
         this.purchaseChannel = purchaseChannel;
         return this;
@@ -94,6 +98,9 @@ public class QueryDeviceInfoResultDTO  {
     public void setPurchaseChannel(String purchaseChannel) {
         this.purchaseChannel = purchaseChannel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

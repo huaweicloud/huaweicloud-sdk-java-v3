@@ -55,6 +55,8 @@ public class MetaData  {
         this.count = count;
     }
 
+    
+
     public MetaData withTotal(Integer total) {
         this.total = total;
         return this;
@@ -75,6 +77,8 @@ public class MetaData  {
         this.total = total;
     }
 
+    
+
     public MetaData withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -94,6 +98,9 @@ public class MetaData  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

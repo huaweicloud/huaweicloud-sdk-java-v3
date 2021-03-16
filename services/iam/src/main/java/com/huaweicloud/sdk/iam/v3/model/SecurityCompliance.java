@@ -49,6 +49,8 @@ public class SecurityCompliance  {
         this.passwordRegex = passwordRegex;
     }
 
+    
+
     public SecurityCompliance withPasswordRegexDescription(String passwordRegexDescription) {
         this.passwordRegexDescription = passwordRegexDescription;
         return this;
@@ -68,6 +70,9 @@ public class SecurityCompliance  {
     public void setPasswordRegexDescription(String passwordRegexDescription) {
         this.passwordRegexDescription = passwordRegexDescription;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

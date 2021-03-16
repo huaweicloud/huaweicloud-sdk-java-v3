@@ -24,7 +24,7 @@ public class RunTaskSumbitResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private TaskSumbitResultBody result = null;
+    private TaskSumbitResultBody result;
 
     public RunTaskSumbitResponse withResult(TaskSumbitResultBody result) {
         this.result = result;
@@ -52,6 +52,9 @@ public class RunTaskSumbitResponse extends SdkResponse {
     public void setResult(TaskSumbitResultBody result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

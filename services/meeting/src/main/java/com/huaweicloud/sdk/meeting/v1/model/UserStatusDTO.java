@@ -55,6 +55,8 @@ public class UserStatusDTO  {
         this.number = number;
     }
 
+    
+
     public UserStatusDTO withRegStatus(String regStatus) {
         this.regStatus = regStatus;
         return this;
@@ -75,6 +77,8 @@ public class UserStatusDTO  {
         this.regStatus = regStatus;
     }
 
+    
+
     public UserStatusDTO withCallStatus(String callStatus) {
         this.callStatus = callStatus;
         return this;
@@ -94,6 +98,9 @@ public class UserStatusDTO  {
     public void setCallStatus(String callStatus) {
         this.callStatus = callStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

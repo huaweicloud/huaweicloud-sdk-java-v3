@@ -32,9 +32,6 @@ public class AddUserToApp  {
 
     
     public AddUserToApp addUsersItem(Object usersItem) {
-        if (this.users == null) {
-            this.users = new ArrayList<>();
-        }
         this.users.add(usersItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class AddUserToApp  {
     public void setUsers(List<Object> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

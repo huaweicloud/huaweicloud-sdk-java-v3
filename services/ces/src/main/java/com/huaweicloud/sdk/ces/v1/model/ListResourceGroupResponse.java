@@ -33,7 +33,7 @@ public class ListResourceGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private TotalMetaData metaData = null;
+    private TotalMetaData metaData;
 
     public ListResourceGroupResponse withResourceGroups(List<ResourceGroupInfo> resourceGroups) {
         this.resourceGroups = resourceGroups;
@@ -42,9 +42,6 @@ public class ListResourceGroupResponse extends SdkResponse {
 
     
     public ListResourceGroupResponse addResourceGroupsItem(ResourceGroupInfo resourceGroupsItem) {
-        if (this.resourceGroups == null) {
-            this.resourceGroups = new ArrayList<>();
-        }
         this.resourceGroups.add(resourceGroupsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListResourceGroupResponse extends SdkResponse {
     public void setResourceGroups(List<ResourceGroupInfo> resourceGroups) {
         this.resourceGroups = resourceGroups;
     }
+
+    
 
     public ListResourceGroupResponse withMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
@@ -95,6 +94,9 @@ public class ListResourceGroupResponse extends SdkResponse {
     public void setMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -66,6 +66,8 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         this.code = code;
     }
 
+    
+
     public ListLatelyApiStatisticsV2Response withStartTime(Integer startTime) {
         this.startTime = startTime;
         return this;
@@ -85,6 +87,8 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
     public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListLatelyApiStatisticsV2Response withEndTime(Integer endTime) {
         this.endTime = endTime;
@@ -106,6 +110,8 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
         this.endTime = endTime;
     }
 
+    
+
     public ListLatelyApiStatisticsV2Response withList(List<StatisticsAPI> list) {
         this.list = list;
         return this;
@@ -113,9 +119,6 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
 
     
     public ListLatelyApiStatisticsV2Response addListItem(StatisticsAPI listItem) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
-        }
         this.list.add(listItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
     public void setList(List<StatisticsAPI> list) {
         this.list = list;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

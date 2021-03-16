@@ -129,7 +129,7 @@ public class TemplateJobInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="repo_info")
     
-    private RepositoryInfo repoInfo = null;
+    private RepositoryInfo repoInfo;
 
     public TemplateJobInfo withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -151,6 +151,8 @@ public class TemplateJobInfo  {
         this.applicationName = applicationName;
     }
 
+    
+
     public TemplateJobInfo withRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
         return this;
@@ -170,6 +172,8 @@ public class TemplateJobInfo  {
     public void setRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
     }
+
+    
 
     public TemplateJobInfo withTemplateId(String templateId) {
         this.templateId = templateId;
@@ -191,6 +195,8 @@ public class TemplateJobInfo  {
         this.templateId = templateId;
     }
 
+    
+
     public TemplateJobInfo withProperties(Map<String, String> properties) {
         this.properties = properties;
         return this;
@@ -199,9 +205,6 @@ public class TemplateJobInfo  {
     
 
     public TemplateJobInfo putPropertiesItem(String key, String propertiesItem) {
-         if (this.properties == null) {
-            this.properties = new HashMap<>();
-         }
         this.properties.put(key, propertiesItem);
         return this;
     }
@@ -224,6 +227,8 @@ public class TemplateJobInfo  {
     public void setProperties(Map<String, String> properties) {
         this.properties = properties;
     }
+
+    
 
     public TemplateJobInfo withRepoInfo(RepositoryInfo repoInfo) {
         this.repoInfo = repoInfo;
@@ -251,6 +256,9 @@ public class TemplateJobInfo  {
     public void setRepoInfo(RepositoryInfo repoInfo) {
         this.repoInfo = repoInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

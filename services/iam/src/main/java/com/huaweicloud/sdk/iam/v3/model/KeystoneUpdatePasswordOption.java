@@ -49,6 +49,8 @@ public class KeystoneUpdatePasswordOption  {
         this.password = password;
     }
 
+    
+
     public KeystoneUpdatePasswordOption withOriginalPassword(String originalPassword) {
         this.originalPassword = originalPassword;
         return this;
@@ -68,6 +70,9 @@ public class KeystoneUpdatePasswordOption  {
     public void setOriginalPassword(String originalPassword) {
         this.originalPassword = originalPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

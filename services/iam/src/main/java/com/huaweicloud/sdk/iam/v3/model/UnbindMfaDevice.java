@@ -55,6 +55,8 @@ public class UnbindMfaDevice  {
         this.userId = userId;
     }
 
+    
+
     public UnbindMfaDevice withAuthenticationCode(String authenticationCode) {
         this.authenticationCode = authenticationCode;
         return this;
@@ -75,6 +77,8 @@ public class UnbindMfaDevice  {
         this.authenticationCode = authenticationCode;
     }
 
+    
+
     public UnbindMfaDevice withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
@@ -94,6 +98,9 @@ public class UnbindMfaDevice  {
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

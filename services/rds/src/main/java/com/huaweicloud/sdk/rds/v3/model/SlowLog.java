@@ -103,6 +103,8 @@ public class SlowLog  {
         this.count = count;
     }
 
+    
+
     public SlowLog withTime(String time) {
         this.time = time;
         return this;
@@ -122,6 +124,8 @@ public class SlowLog  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
 
     public SlowLog withLockTime(String lockTime) {
         this.lockTime = lockTime;
@@ -143,6 +147,8 @@ public class SlowLog  {
         this.lockTime = lockTime;
     }
 
+    
+
     public SlowLog withRowsSent(String rowsSent) {
         this.rowsSent = rowsSent;
         return this;
@@ -162,6 +168,8 @@ public class SlowLog  {
     public void setRowsSent(String rowsSent) {
         this.rowsSent = rowsSent;
     }
+
+    
 
     public SlowLog withRowsExamined(String rowsExamined) {
         this.rowsExamined = rowsExamined;
@@ -183,6 +191,8 @@ public class SlowLog  {
         this.rowsExamined = rowsExamined;
     }
 
+    
+
     public SlowLog withDatabase(String database) {
         this.database = database;
         return this;
@@ -202,6 +212,8 @@ public class SlowLog  {
     public void setDatabase(String database) {
         this.database = database;
     }
+
+    
 
     public SlowLog withUsers(String users) {
         this.users = users;
@@ -223,6 +235,8 @@ public class SlowLog  {
         this.users = users;
     }
 
+    
+
     public SlowLog withQuerySample(String querySample) {
         this.querySample = querySample;
         return this;
@@ -242,6 +256,8 @@ public class SlowLog  {
     public void setQuerySample(String querySample) {
         this.querySample = querySample;
     }
+
+    
 
     public SlowLog withType(String type) {
         this.type = type;
@@ -263,6 +279,8 @@ public class SlowLog  {
         this.type = type;
     }
 
+    
+
     public SlowLog withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -283,6 +301,8 @@ public class SlowLog  {
         this.startTime = startTime;
     }
 
+    
+
     public SlowLog withClientIp(String clientIp) {
         this.clientIp = clientIp;
         return this;
@@ -302,6 +322,9 @@ public class SlowLog  {
     public void setClientIp(String clientIp) {
         this.clientIp = clientIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

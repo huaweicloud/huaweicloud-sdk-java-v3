@@ -191,6 +191,8 @@ public class ListSlowLogsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListSlowLogsRequest withStartDate(String startDate) {
         this.startDate = startDate;
         return this;
@@ -210,6 +212,8 @@ public class ListSlowLogsRequest  {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
+
+    
 
     public ListSlowLogsRequest withEndDate(String endDate) {
         this.endDate = endDate;
@@ -231,6 +235,8 @@ public class ListSlowLogsRequest  {
         this.endDate = endDate;
     }
 
+    
+
     public ListSlowLogsRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -251,6 +257,8 @@ public class ListSlowLogsRequest  {
         this.nodeId = nodeId;
     }
 
+    
+
     public ListSlowLogsRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -270,6 +278,8 @@ public class ListSlowLogsRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ListSlowLogsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -293,6 +303,8 @@ public class ListSlowLogsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListSlowLogsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -314,6 +326,9 @@ public class ListSlowLogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

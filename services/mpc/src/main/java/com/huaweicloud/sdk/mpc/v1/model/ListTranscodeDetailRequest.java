@@ -32,9 +32,6 @@ public class ListTranscodeDetailRequest  {
 
     
     public ListTranscodeDetailRequest addTaskIdItem(String taskIdItem) {
-        if (this.taskId == null) {
-            this.taskId = new ArrayList<>();
-        }
         this.taskId.add(taskIdItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class ListTranscodeDetailRequest  {
     public void setTaskId(List<String> taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

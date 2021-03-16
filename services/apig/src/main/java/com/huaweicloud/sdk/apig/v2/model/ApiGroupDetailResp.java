@@ -37,7 +37,7 @@ public class ApiGroupDetailResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,7 +91,7 @@ public class ApiGroupDetailResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,9 +112,6 @@ public class ApiGroupDetailResp  {
 
     
     public ApiGroupDetailResp addUrlDomainsItem(UrlDomainsResp urlDomainsItem) {
-        if (this.urlDomains == null) {
-            this.urlDomains = new ArrayList<>();
-        }
         this.urlDomains.add(urlDomainsItem);
         return this;
     }
@@ -139,6 +136,8 @@ public class ApiGroupDetailResp  {
         this.urlDomains = urlDomains;
     }
 
+    
+
     public ApiGroupDetailResp withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
         return this;
@@ -158,6 +157,8 @@ public class ApiGroupDetailResp  {
     public void setCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
     }
+
+    
 
     public ApiGroupDetailResp withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
@@ -179,6 +180,8 @@ public class ApiGroupDetailResp  {
         this.updateTime = updateTime;
     }
 
+    
+
     public ApiGroupDetailResp withName(String name) {
         this.name = name;
         return this;
@@ -198,6 +201,8 @@ public class ApiGroupDetailResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ApiGroupDetailResp withTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
@@ -219,6 +224,8 @@ public class ApiGroupDetailResp  {
         this.timeUnit = timeUnit;
     }
 
+    
+
     public ApiGroupDetailResp withOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
         return this;
@@ -238,6 +245,8 @@ public class ApiGroupDetailResp  {
     public void setOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
     }
+
+    
 
     public ApiGroupDetailResp withRemark(String remark) {
         this.remark = remark;
@@ -259,6 +268,8 @@ public class ApiGroupDetailResp  {
         this.remark = remark;
     }
 
+    
+
     public ApiGroupDetailResp withSlDomain(String slDomain) {
         this.slDomain = slDomain;
         return this;
@@ -279,6 +290,8 @@ public class ApiGroupDetailResp  {
         this.slDomain = slDomain;
     }
 
+    
+
     public ApiGroupDetailResp withSlDomains(List<String> slDomains) {
         this.slDomains = slDomains;
         return this;
@@ -286,9 +299,6 @@ public class ApiGroupDetailResp  {
 
     
     public ApiGroupDetailResp addSlDomainsItem(String slDomainsItem) {
-        if (this.slDomains == null) {
-            this.slDomains = new ArrayList<>();
-        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
@@ -313,6 +323,8 @@ public class ApiGroupDetailResp  {
         this.slDomains = slDomains;
     }
 
+    
+
     public ApiGroupDetailResp withId(String id) {
         this.id = id;
         return this;
@@ -332,6 +344,8 @@ public class ApiGroupDetailResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ApiGroupDetailResp withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -353,6 +367,8 @@ public class ApiGroupDetailResp  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public ApiGroupDetailResp withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -372,6 +388,8 @@ public class ApiGroupDetailResp  {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public ApiGroupDetailResp withStatus(Integer status) {
         this.status = status;
@@ -393,6 +411,8 @@ public class ApiGroupDetailResp  {
         this.status = status;
     }
 
+    
+
     public ApiGroupDetailResp withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
         return this;
@@ -412,6 +432,9 @@ public class ApiGroupDetailResp  {
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

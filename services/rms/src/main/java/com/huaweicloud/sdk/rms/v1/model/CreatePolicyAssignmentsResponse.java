@@ -46,7 +46,7 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_filter")
     
-    private PolicyFilterDefinition policyFilter = null;
+    private PolicyFilterDefinition policyFilter;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,6 +98,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreatePolicyAssignmentsResponse withName(String name) {
         this.name = name;
         return this;
@@ -118,6 +120,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreatePolicyAssignmentsResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -137,6 +141,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreatePolicyAssignmentsResponse withPolicyFilter(PolicyFilterDefinition policyFilter) {
         this.policyFilter = policyFilter;
@@ -165,6 +171,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         this.policyFilter = policyFilter;
     }
 
+    
+
     public CreatePolicyAssignmentsResponse withState(String state) {
         this.state = state;
         return this;
@@ -184,6 +192,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     public void setState(String state) {
         this.state = state;
     }
+
+    
 
     public CreatePolicyAssignmentsResponse withCreated(String created) {
         this.created = created;
@@ -205,6 +215,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         this.created = created;
     }
 
+    
+
     public CreatePolicyAssignmentsResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -224,6 +236,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public CreatePolicyAssignmentsResponse withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
@@ -245,6 +259,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         this.policyDefinitionId = policyDefinitionId;
     }
 
+    
+
     public CreatePolicyAssignmentsResponse withParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
         return this;
@@ -253,9 +269,6 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     
 
     public CreatePolicyAssignmentsResponse putParametersItem(String key, PolicyParameterValue parametersItem) {
-         if (this.parameters == null) {
-            this.parameters = new HashMap<>();
-         }
         this.parameters.put(key, parametersItem);
         return this;
     }
@@ -278,6 +291,9 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
     public void setParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

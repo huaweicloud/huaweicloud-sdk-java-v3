@@ -179,6 +179,8 @@ public class L7ruleResp  {
         this.id = id;
     }
 
+    
+
     public L7ruleResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -198,6 +200,8 @@ public class L7ruleResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
 
     public L7ruleResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -219,6 +223,8 @@ public class L7ruleResp  {
         this.tenantId = tenantId;
     }
 
+    
+
     public L7ruleResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -238,6 +244,8 @@ public class L7ruleResp  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public L7ruleResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -259,6 +267,8 @@ public class L7ruleResp  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public L7ruleResp withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -278,6 +288,8 @@ public class L7ruleResp  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public L7ruleResp withCompareType(String compareType) {
         this.compareType = compareType;
@@ -299,6 +311,8 @@ public class L7ruleResp  {
         this.compareType = compareType;
     }
 
+    
+
     public L7ruleResp withInvert(Boolean invert) {
         this.invert = invert;
         return this;
@@ -318,6 +332,8 @@ public class L7ruleResp  {
     public void setInvert(Boolean invert) {
         this.invert = invert;
     }
+
+    
 
     public L7ruleResp withKey(String key) {
         this.key = key;
@@ -339,6 +355,8 @@ public class L7ruleResp  {
         this.key = key;
     }
 
+    
+
     public L7ruleResp withValue(String value) {
         this.value = value;
         return this;
@@ -358,6 +376,9 @@ public class L7ruleResp  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

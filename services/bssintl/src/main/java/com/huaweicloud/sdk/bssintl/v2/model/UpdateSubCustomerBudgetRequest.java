@@ -22,7 +22,7 @@ public class UpdateSubCustomerBudgetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModSubCustomerBudgetReq body = null;
+    private ModSubCustomerBudgetReq body;
 
     public UpdateSubCustomerBudgetRequest withBody(ModSubCustomerBudgetReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdateSubCustomerBudgetRequest  {
     public void setBody(ModSubCustomerBudgetReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

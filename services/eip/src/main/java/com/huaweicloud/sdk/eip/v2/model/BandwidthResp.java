@@ -385,6 +385,8 @@ public class BandwidthResp  {
         this.bandwidthType = bandwidthType;
     }
 
+    
+
     public BandwidthResp withBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
         return this;
@@ -404,6 +406,8 @@ public class BandwidthResp  {
     public void setBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
     }
+
+    
 
     public BandwidthResp withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
@@ -425,6 +429,8 @@ public class BandwidthResp  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public BandwidthResp withId(String id) {
         this.id = id;
         return this;
@@ -444,6 +450,8 @@ public class BandwidthResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public BandwidthResp withName(String name) {
         this.name = name;
@@ -465,6 +473,8 @@ public class BandwidthResp  {
         this.name = name;
     }
 
+    
+
     public BandwidthResp withPublicipInfo(List<PublicipInfoResp> publicipInfo) {
         this.publicipInfo = publicipInfo;
         return this;
@@ -472,9 +482,6 @@ public class BandwidthResp  {
 
     
     public BandwidthResp addPublicipInfoItem(PublicipInfoResp publicipInfoItem) {
-        if (this.publicipInfo == null) {
-            this.publicipInfo = new ArrayList<>();
-        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
@@ -499,6 +506,8 @@ public class BandwidthResp  {
         this.publicipInfo = publicipInfo;
     }
 
+    
+
     public BandwidthResp withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
         return this;
@@ -518,6 +527,8 @@ public class BandwidthResp  {
     public void setShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
     }
+
+    
 
     public BandwidthResp withSize(Integer size) {
         this.size = size;
@@ -539,6 +550,8 @@ public class BandwidthResp  {
         this.size = size;
     }
 
+    
+
     public BandwidthResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -558,6 +571,8 @@ public class BandwidthResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public BandwidthResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -579,6 +594,8 @@ public class BandwidthResp  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public BandwidthResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -598,6 +615,8 @@ public class BandwidthResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public BandwidthResp withEnableBandwidthRules(Boolean enableBandwidthRules) {
         this.enableBandwidthRules = enableBandwidthRules;
@@ -619,6 +638,8 @@ public class BandwidthResp  {
         this.enableBandwidthRules = enableBandwidthRules;
     }
 
+    
+
     public BandwidthResp withRuleQuota(Integer ruleQuota) {
         this.ruleQuota = ruleQuota;
         return this;
@@ -639,6 +660,8 @@ public class BandwidthResp  {
         this.ruleQuota = ruleQuota;
     }
 
+    
+
     public BandwidthResp withBandwidthRules(List<BandWidthRules> bandwidthRules) {
         this.bandwidthRules = bandwidthRules;
         return this;
@@ -646,9 +669,6 @@ public class BandwidthResp  {
 
     
     public BandwidthResp addBandwidthRulesItem(BandWidthRules bandwidthRulesItem) {
-        if (this.bandwidthRules == null) {
-            this.bandwidthRules = new ArrayList<>();
-        }
         this.bandwidthRules.add(bandwidthRulesItem);
         return this;
     }
@@ -673,6 +693,8 @@ public class BandwidthResp  {
         this.bandwidthRules = bandwidthRules;
     }
 
+    
+
     public BandwidthResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -693,6 +715,8 @@ public class BandwidthResp  {
         this.createdAt = createdAt;
     }
 
+    
+
     public BandwidthResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -712,6 +736,9 @@ public class BandwidthResp  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

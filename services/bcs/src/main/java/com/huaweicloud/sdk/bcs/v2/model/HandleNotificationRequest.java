@@ -22,7 +22,7 @@ public class HandleNotificationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private HandleNotificationRequestBody body = null;
+    private HandleNotificationRequestBody body;
 
     public HandleNotificationRequest withBody(HandleNotificationRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class HandleNotificationRequest  {
     public void setBody(HandleNotificationRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

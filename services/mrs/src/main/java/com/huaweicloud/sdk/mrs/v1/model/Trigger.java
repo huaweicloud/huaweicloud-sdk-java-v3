@@ -61,6 +61,8 @@ public class Trigger  {
         this.metricName = metricName;
     }
 
+    
+
     public Trigger withMetricValue(String metricValue) {
         this.metricValue = metricValue;
         return this;
@@ -81,6 +83,8 @@ public class Trigger  {
         this.metricValue = metricValue;
     }
 
+    
+
     public Trigger withComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
         return this;
@@ -100,6 +104,8 @@ public class Trigger  {
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
+
+    
 
     public Trigger withEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
@@ -122,6 +128,9 @@ public class Trigger  {
     public void setEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

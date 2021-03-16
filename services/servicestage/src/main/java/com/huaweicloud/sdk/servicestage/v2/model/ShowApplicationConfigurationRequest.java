@@ -49,6 +49,8 @@ public class ShowApplicationConfigurationRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ShowApplicationConfigurationRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
         return this;
@@ -68,6 +70,9 @@ public class ShowApplicationConfigurationRequest  {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

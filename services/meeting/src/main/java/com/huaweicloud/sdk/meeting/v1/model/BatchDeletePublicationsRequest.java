@@ -59,6 +59,8 @@ public class BatchDeletePublicationsRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public BatchDeletePublicationsRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -79,6 +81,8 @@ public class BatchDeletePublicationsRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public BatchDeletePublicationsRequest withBody(List<String> body) {
         this.body = body;
         return this;
@@ -86,9 +90,6 @@ public class BatchDeletePublicationsRequest  {
 
     
     public BatchDeletePublicationsRequest addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -112,6 +113,9 @@ public class BatchDeletePublicationsRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

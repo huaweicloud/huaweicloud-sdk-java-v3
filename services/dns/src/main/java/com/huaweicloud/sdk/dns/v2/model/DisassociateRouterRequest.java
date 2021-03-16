@@ -28,7 +28,7 @@ public class DisassociateRouterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DisassociaterouterReq body = null;
+    private DisassociaterouterReq body;
 
     public DisassociateRouterRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -49,6 +49,8 @@ public class DisassociateRouterRequest  {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public DisassociateRouterRequest withBody(DisassociaterouterReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DisassociateRouterRequest  {
     public void setBody(DisassociaterouterReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

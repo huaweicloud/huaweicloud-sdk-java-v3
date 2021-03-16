@@ -45,13 +45,13 @@ public class ListAppConfigsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListAppConfigsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -73,6 +73,8 @@ public class ListAppConfigsV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListAppConfigsV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -92,6 +94,8 @@ public class ListAppConfigsV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ListAppConfigsV2Request withConfigName(String configName) {
         this.configName = configName;
@@ -113,6 +117,8 @@ public class ListAppConfigsV2Request  {
         this.configName = configName;
     }
 
+    
+
     public ListAppConfigsV2Request withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -133,6 +139,8 @@ public class ListAppConfigsV2Request  {
         this.romaAppName = romaAppName;
     }
 
+    
+
     public ListAppConfigsV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -152,6 +160,8 @@ public class ListAppConfigsV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListAppConfigsV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -174,6 +184,9 @@ public class ListAppConfigsV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

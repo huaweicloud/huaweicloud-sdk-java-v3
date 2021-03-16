@@ -41,7 +41,7 @@ public class UpdatePropertiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DevicePropertiesRequest body = null;
+    private DevicePropertiesRequest body;
 
     public UpdatePropertiesRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
@@ -63,6 +63,8 @@ public class UpdatePropertiesRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public UpdatePropertiesRequest withStageAuthToken(String stageAuthToken) {
         this.stageAuthToken = stageAuthToken;
         return this;
@@ -83,6 +85,8 @@ public class UpdatePropertiesRequest  {
         this.stageAuthToken = stageAuthToken;
     }
 
+    
+
     public UpdatePropertiesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -102,6 +106,8 @@ public class UpdatePropertiesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdatePropertiesRequest withBody(DevicePropertiesRequest body) {
         this.body = body;
@@ -129,6 +135,9 @@ public class UpdatePropertiesRequest  {
     public void setBody(DevicePropertiesRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

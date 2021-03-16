@@ -61,6 +61,8 @@ public class ListClassroomMemberJobsRequest  {
         this.classroomId = classroomId;
     }
 
+    
+
     public ListClassroomMemberJobsRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
@@ -80,6 +82,8 @@ public class ListClassroomMemberJobsRequest  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    
 
     public ListClassroomMemberJobsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -103,6 +107,8 @@ public class ListClassroomMemberJobsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListClassroomMemberJobsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -124,6 +130,9 @@ public class ListClassroomMemberJobsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

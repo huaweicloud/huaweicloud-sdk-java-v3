@@ -55,6 +55,8 @@ public class ListenerIpGroup  {
         this.ipgroupId = ipgroupId;
     }
 
+    
+
     public ListenerIpGroup withEnableIpgroup(Boolean enableIpgroup) {
         this.enableIpgroup = enableIpgroup;
         return this;
@@ -75,6 +77,8 @@ public class ListenerIpGroup  {
         this.enableIpgroup = enableIpgroup;
     }
 
+    
+
     public ListenerIpGroup withType(String type) {
         this.type = type;
         return this;
@@ -94,6 +98,9 @@ public class ListenerIpGroup  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

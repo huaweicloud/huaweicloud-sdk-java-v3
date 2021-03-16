@@ -22,13 +22,13 @@ public class DecryptDatakeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DecryptDatakeyRequestBody body = null;
+    private DecryptDatakeyRequestBody body;
 
     public DecryptDatakeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class DecryptDatakeyRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public DecryptDatakeyRequest withBody(DecryptDatakeyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DecryptDatakeyRequest  {
     public void setBody(DecryptDatakeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

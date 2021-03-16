@@ -34,7 +34,7 @@ public class BatchDisassociateThrottlingPolicyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ThrottleBindingBatchDelete body = null;
+    private ThrottleBindingBatchDelete body;
 
     public BatchDisassociateThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class BatchDisassociateThrottlingPolicyV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public BatchDisassociateThrottlingPolicyV2Request withAction(String action) {
         this.action = action;
         return this;
@@ -75,6 +77,8 @@ public class BatchDisassociateThrottlingPolicyV2Request  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
 
     public BatchDisassociateThrottlingPolicyV2Request withBody(ThrottleBindingBatchDelete body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class BatchDisassociateThrottlingPolicyV2Request  {
     public void setBody(ThrottleBindingBatchDelete body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

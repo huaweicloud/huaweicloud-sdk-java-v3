@@ -40,7 +40,7 @@ public class InstanceCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_id")
     
-    private FlavorId flavorId = null;
+    private FlavorId flavorId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,7 +52,7 @@ public class InstanceCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="artifacts")
     
-    private Map<String, Object> artifacts = new HashMap<>();
+    private Map<String, Object> artifacts = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,7 +64,7 @@ public class InstanceCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration")
     
-    private Object _configuration = null;
+    private Object _configuration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,7 +82,7 @@ public class InstanceCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="refer_resources")
     
-    private List<ReferResourceCreate> referResources = new ArrayList<>();
+    private List<ReferResourceCreate> referResources = null;
     
     public InstanceCreate withName(String name) {
         this.name = name;
@@ -104,6 +104,8 @@ public class InstanceCreate  {
         this.name = name;
     }
 
+    
+
     public InstanceCreate withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
         return this;
@@ -123,6 +125,8 @@ public class InstanceCreate  {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
 
     public InstanceCreate withFlavorId(FlavorId flavorId) {
         this.flavorId = flavorId;
@@ -144,6 +148,8 @@ public class InstanceCreate  {
         this.flavorId = flavorId;
     }
 
+    
+
     public InstanceCreate withReplica(Integer replica) {
         this.replica = replica;
         return this;
@@ -163,6 +169,8 @@ public class InstanceCreate  {
     public void setReplica(Integer replica) {
         this.replica = replica;
     }
+
+    
 
     public InstanceCreate withArtifacts(Map<String, Object> artifacts) {
         this.artifacts = artifacts;
@@ -195,6 +203,8 @@ public class InstanceCreate  {
         this.artifacts = artifacts;
     }
 
+    
+
     public InstanceCreate withVersion(String version) {
         this.version = version;
         return this;
@@ -214,6 +224,8 @@ public class InstanceCreate  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public InstanceCreate withConfiguration(Object _configuration) {
         this._configuration = _configuration;
@@ -235,6 +247,8 @@ public class InstanceCreate  {
         this._configuration = _configuration;
     }
 
+    
+
     public InstanceCreate withDescription(String description) {
         this.description = description;
         return this;
@@ -255,6 +269,8 @@ public class InstanceCreate  {
         this.description = description;
     }
 
+    
+
     public InstanceCreate withExternalAccesses(List<ExternalAccessesCreate> externalAccesses) {
         this.externalAccesses = externalAccesses;
         return this;
@@ -262,9 +278,6 @@ public class InstanceCreate  {
 
     
     public InstanceCreate addExternalAccessesItem(ExternalAccessesCreate externalAccessesItem) {
-        if (this.externalAccesses == null) {
-            this.externalAccesses = new ArrayList<>();
-        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
@@ -288,6 +301,8 @@ public class InstanceCreate  {
     public void setExternalAccesses(List<ExternalAccessesCreate> externalAccesses) {
         this.externalAccesses = externalAccesses;
     }
+
+    
 
     public InstanceCreate withReferResources(List<ReferResourceCreate> referResources) {
         this.referResources = referResources;
@@ -319,6 +334,9 @@ public class InstanceCreate  {
     public void setReferResources(List<ReferResourceCreate> referResources) {
         this.referResources = referResources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

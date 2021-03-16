@@ -35,9 +35,6 @@ public class ShowBaremetalServerVolumeInfoResponse extends SdkResponse {
 
     
     public ShowBaremetalServerVolumeInfoResponse addVolumeAttachmentsItem(VolumeAttachments volumeAttachmentsItem) {
-        if (this.volumeAttachments == null) {
-            this.volumeAttachments = new ArrayList<>();
-        }
         this.volumeAttachments.add(volumeAttachmentsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowBaremetalServerVolumeInfoResponse extends SdkResponse {
     public void setVolumeAttachments(List<VolumeAttachments> volumeAttachments) {
         this.volumeAttachments = volumeAttachments;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

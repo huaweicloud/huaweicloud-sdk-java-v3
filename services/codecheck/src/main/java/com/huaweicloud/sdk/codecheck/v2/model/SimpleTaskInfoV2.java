@@ -79,6 +79,8 @@ public class SimpleTaskInfoV2  {
         this.taskId = taskId;
     }
 
+    
+
     public SimpleTaskInfoV2 withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -98,6 +100,8 @@ public class SimpleTaskInfoV2  {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public SimpleTaskInfoV2 withCreatorId(String creatorId) {
         this.creatorId = creatorId;
@@ -119,6 +123,8 @@ public class SimpleTaskInfoV2  {
         this.creatorId = creatorId;
     }
 
+    
+
     public SimpleTaskInfoV2 withGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
         return this;
@@ -138,6 +144,8 @@ public class SimpleTaskInfoV2  {
     public void setGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
     }
+
+    
 
     public SimpleTaskInfoV2 withGitBranch(String gitBranch) {
         this.gitBranch = gitBranch;
@@ -159,6 +167,8 @@ public class SimpleTaskInfoV2  {
         this.gitBranch = gitBranch;
     }
 
+    
+
     public SimpleTaskInfoV2 withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -179,6 +189,8 @@ public class SimpleTaskInfoV2  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SimpleTaskInfoV2 withLastCheckTime(String lastCheckTime) {
         this.lastCheckTime = lastCheckTime;
         return this;
@@ -198,6 +210,9 @@ public class SimpleTaskInfoV2  {
     public void setLastCheckTime(String lastCheckTime) {
         this.lastCheckTime = lastCheckTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

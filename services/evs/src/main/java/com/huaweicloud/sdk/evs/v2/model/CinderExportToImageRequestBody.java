@@ -22,7 +22,7 @@ public class CinderExportToImageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-volume_upload_image")
     
-    private CinderExportToImageOption osVolumeUploadImage = null;
+    private CinderExportToImageOption osVolumeUploadImage;
 
     public CinderExportToImageRequestBody withOsVolumeUploadImage(CinderExportToImageOption osVolumeUploadImage) {
         this.osVolumeUploadImage = osVolumeUploadImage;
@@ -50,6 +50,9 @@ public class CinderExportToImageRequestBody  {
     public void setOsVolumeUploadImage(CinderExportToImageOption osVolumeUploadImage) {
         this.osVolumeUploadImage = osVolumeUploadImage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

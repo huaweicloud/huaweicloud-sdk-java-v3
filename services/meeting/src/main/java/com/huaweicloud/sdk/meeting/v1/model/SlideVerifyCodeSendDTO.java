@@ -55,6 +55,8 @@ public class SlideVerifyCodeSendDTO  {
         this.user = user;
     }
 
+    
+
     public SlideVerifyCodeSendDTO withClientType(Integer clientType) {
         this.clientType = clientType;
         return this;
@@ -75,6 +77,8 @@ public class SlideVerifyCodeSendDTO  {
         this.clientType = clientType;
     }
 
+    
+
     public SlideVerifyCodeSendDTO withCheckType(Integer checkType) {
         this.checkType = checkType;
         return this;
@@ -94,6 +98,9 @@ public class SlideVerifyCodeSendDTO  {
     public void setCheckType(Integer checkType) {
         this.checkType = checkType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

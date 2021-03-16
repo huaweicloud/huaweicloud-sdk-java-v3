@@ -75,6 +75,8 @@ public class GlanceUpdateImageMemberResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public GlanceUpdateImageMemberResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -94,6 +96,8 @@ public class GlanceUpdateImageMemberResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public GlanceUpdateImageMemberResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -115,6 +119,8 @@ public class GlanceUpdateImageMemberResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public GlanceUpdateImageMemberResponse withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -134,6 +140,8 @@ public class GlanceUpdateImageMemberResponse extends SdkResponse {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public GlanceUpdateImageMemberResponse withMemberId(String memberId) {
         this.memberId = memberId;
@@ -155,6 +163,8 @@ public class GlanceUpdateImageMemberResponse extends SdkResponse {
         this.memberId = memberId;
     }
 
+    
+
     public GlanceUpdateImageMemberResponse withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -174,6 +184,9 @@ public class GlanceUpdateImageMemberResponse extends SdkResponse {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

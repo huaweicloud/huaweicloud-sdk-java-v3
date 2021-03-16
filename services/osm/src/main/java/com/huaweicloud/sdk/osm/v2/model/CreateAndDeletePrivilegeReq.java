@@ -49,6 +49,8 @@ public class CreateAndDeletePrivilegeReq  {
         this.operation = operation;
     }
 
+    
+
     public CreateAndDeletePrivilegeReq withPrivilege(String privilege) {
         this.privilege = privilege;
         return this;
@@ -68,6 +70,9 @@ public class CreateAndDeletePrivilegeReq  {
     public void setPrivilege(String privilege) {
         this.privilege = privilege;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

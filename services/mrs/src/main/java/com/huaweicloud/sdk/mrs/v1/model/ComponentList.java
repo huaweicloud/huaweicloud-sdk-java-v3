@@ -42,6 +42,9 @@ public class ComponentList  {
     public void setComponentName(String componentName) {
         this.componentName = componentName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

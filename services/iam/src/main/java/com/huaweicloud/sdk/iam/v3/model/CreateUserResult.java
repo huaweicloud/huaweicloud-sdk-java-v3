@@ -139,6 +139,8 @@ public class CreateUserResult  {
         this.status = status;
     }
 
+    
+
     public CreateUserResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
         return this;
@@ -158,6 +160,8 @@ public class CreateUserResult  {
     public void setPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
     }
+
+    
 
     public CreateUserResult withXuserId(String xuserId) {
         this.xuserId = xuserId;
@@ -179,6 +183,8 @@ public class CreateUserResult  {
         this.xuserId = xuserId;
     }
 
+    
+
     public CreateUserResult withXuserType(String xuserType) {
         this.xuserType = xuserType;
         return this;
@@ -198,6 +204,8 @@ public class CreateUserResult  {
     public void setXuserType(String xuserType) {
         this.xuserType = xuserType;
     }
+
+    
 
     public CreateUserResult withDescription(String description) {
         this.description = description;
@@ -219,6 +227,8 @@ public class CreateUserResult  {
         this.description = description;
     }
 
+    
+
     public CreateUserResult withName(String name) {
         this.name = name;
         return this;
@@ -238,6 +248,8 @@ public class CreateUserResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateUserResult withPhone(String phone) {
         this.phone = phone;
@@ -259,6 +271,8 @@ public class CreateUserResult  {
         this.phone = phone;
     }
 
+    
+
     public CreateUserResult withIsDomainOwner(Boolean isDomainOwner) {
         this.isDomainOwner = isDomainOwner;
         return this;
@@ -278,6 +292,8 @@ public class CreateUserResult  {
     public void setIsDomainOwner(Boolean isDomainOwner) {
         this.isDomainOwner = isDomainOwner;
     }
+
+    
 
     public CreateUserResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -299,6 +315,8 @@ public class CreateUserResult  {
         this.domainId = domainId;
     }
 
+    
+
     public CreateUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -318,6 +336,8 @@ public class CreateUserResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public CreateUserResult withAreacode(String areacode) {
         this.areacode = areacode;
@@ -339,6 +359,8 @@ public class CreateUserResult  {
         this.areacode = areacode;
     }
 
+    
+
     public CreateUserResult withEmail(String email) {
         this.email = email;
         return this;
@@ -358,6 +380,8 @@ public class CreateUserResult  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public CreateUserResult withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -379,6 +403,8 @@ public class CreateUserResult  {
         this.createTime = createTime;
     }
 
+    
+
     public CreateUserResult withXdomainId(String xdomainId) {
         this.xdomainId = xdomainId;
         return this;
@@ -398,6 +424,8 @@ public class CreateUserResult  {
     public void setXdomainId(String xdomainId) {
         this.xdomainId = xdomainId;
     }
+
+    
 
     public CreateUserResult withXdomainType(String xdomainType) {
         this.xdomainType = xdomainType;
@@ -419,6 +447,8 @@ public class CreateUserResult  {
         this.xdomainType = xdomainType;
     }
 
+    
+
     public CreateUserResult withId(String id) {
         this.id = id;
         return this;
@@ -439,6 +469,8 @@ public class CreateUserResult  {
         this.id = id;
     }
 
+    
+
     public CreateUserResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -458,6 +490,9 @@ public class CreateUserResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

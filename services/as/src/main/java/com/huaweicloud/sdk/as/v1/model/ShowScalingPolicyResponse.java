@@ -24,7 +24,7 @@ public class ShowScalingPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_policy")
     
-    private ScalingPolicyDetail scalingPolicy = null;
+    private ScalingPolicyDetail scalingPolicy;
 
     public ShowScalingPolicyResponse withScalingPolicy(ScalingPolicyDetail scalingPolicy) {
         this.scalingPolicy = scalingPolicy;
@@ -52,6 +52,9 @@ public class ShowScalingPolicyResponse extends SdkResponse {
     public void setScalingPolicy(ScalingPolicyDetail scalingPolicy) {
         this.scalingPolicy = scalingPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

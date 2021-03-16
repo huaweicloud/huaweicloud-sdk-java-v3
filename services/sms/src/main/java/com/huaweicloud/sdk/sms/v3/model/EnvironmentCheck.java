@@ -163,6 +163,8 @@ public class EnvironmentCheck  {
         this.id = id;
     }
 
+    
+
     public EnvironmentCheck withName(String name) {
         this.name = name;
         return this;
@@ -182,6 +184,8 @@ public class EnvironmentCheck  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public EnvironmentCheck withResult(ResultEnum result) {
         this.result = result;
@@ -203,6 +207,8 @@ public class EnvironmentCheck  {
         this.result = result;
     }
 
+    
+
     public EnvironmentCheck withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -222,6 +228,8 @@ public class EnvironmentCheck  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
 
     public EnvironmentCheck withErrorParams(String errorParams) {
         this.errorParams = errorParams;
@@ -243,6 +251,8 @@ public class EnvironmentCheck  {
         this.errorParams = errorParams;
     }
 
+    
+
     public EnvironmentCheck withParams(List<String> params) {
         this.params = params;
         return this;
@@ -250,9 +260,6 @@ public class EnvironmentCheck  {
 
     
     public EnvironmentCheck addParamsItem(String paramsItem) {
-        if (this.params == null) {
-            this.params = new ArrayList<>();
-        }
         this.params.add(paramsItem);
         return this;
     }
@@ -276,6 +283,9 @@ public class EnvironmentCheck  {
     public void setParams(List<String> params) {
         this.params = params;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

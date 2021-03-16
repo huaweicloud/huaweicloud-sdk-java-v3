@@ -93,6 +93,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -113,6 +115,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -120,9 +124,6 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -147,6 +148,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.id = id;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withVirsubnetId(List<String> virsubnetId) {
         this.virsubnetId = virsubnetId;
         return this;
@@ -154,9 +157,6 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addVirsubnetIdItem(String virsubnetIdItem) {
-        if (this.virsubnetId == null) {
-            this.virsubnetId = new ArrayList<>();
-        }
         this.virsubnetId.add(virsubnetIdItem);
         return this;
     }
@@ -181,6 +181,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.virsubnetId = virsubnetId;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withPrivateIpAddress(List<String> privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
         return this;
@@ -188,9 +190,6 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addPrivateIpAddressItem(String privateIpAddressItem) {
-        if (this.privateIpAddress == null) {
-            this.privateIpAddress = new ArrayList<>();
-        }
         this.privateIpAddress.add(privateIpAddressItem);
         return this;
     }
@@ -215,6 +214,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.privateIpAddress = privateIpAddress;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withMacAddress(List<String> macAddress) {
         this.macAddress = macAddress;
         return this;
@@ -222,9 +223,6 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addMacAddressItem(String macAddressItem) {
-        if (this.macAddress == null) {
-            this.macAddress = new ArrayList<>();
-        }
         this.macAddress.add(macAddressItem);
         return this;
     }
@@ -249,6 +247,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.macAddress = macAddress;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withVpcId(List<String> vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -256,9 +256,6 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addVpcIdItem(String vpcIdItem) {
-        if (this.vpcId == null) {
-            this.vpcId = new ArrayList<>();
-        }
         this.vpcId.add(vpcIdItem);
         return this;
     }
@@ -283,6 +280,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.vpcId = vpcId;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -290,9 +289,6 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -317,6 +313,8 @@ public class ListSubNetworkInterfacesRequest  {
         this.description = description;
     }
 
+    
+
     public ListSubNetworkInterfacesRequest withParentId(List<String> parentId) {
         this.parentId = parentId;
         return this;
@@ -324,9 +322,6 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addParentIdItem(String parentIdItem) {
-        if (this.parentId == null) {
-            this.parentId = new ArrayList<>();
-        }
         this.parentId.add(parentIdItem);
         return this;
     }
@@ -350,6 +345,9 @@ public class ListSubNetworkInterfacesRequest  {
     public void setParentId(List<String> parentId) {
         this.parentId = parentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

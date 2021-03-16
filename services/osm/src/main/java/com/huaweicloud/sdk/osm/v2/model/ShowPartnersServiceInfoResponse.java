@@ -24,7 +24,7 @@ public class ShowPartnersServiceInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="partners_service_info")
     
-    private PartnersServiceInfo partnersServiceInfo = null;
+    private PartnersServiceInfo partnersServiceInfo;
 
     public ShowPartnersServiceInfoResponse withPartnersServiceInfo(PartnersServiceInfo partnersServiceInfo) {
         this.partnersServiceInfo = partnersServiceInfo;
@@ -52,6 +52,9 @@ public class ShowPartnersServiceInfoResponse extends SdkResponse {
     public void setPartnersServiceInfo(PartnersServiceInfo partnersServiceInfo) {
         this.partnersServiceInfo = partnersServiceInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

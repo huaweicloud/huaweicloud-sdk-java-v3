@@ -49,6 +49,8 @@ public class OperateKeyRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public OperateKeyRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -68,6 +70,9 @@ public class OperateKeyRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

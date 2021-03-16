@@ -21,7 +21,7 @@ public class UpdatePrePaidBandwidthExtendParamOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    private Boolean isAutoPay = false;
+    private Boolean isAutoPay;
 
     public UpdatePrePaidBandwidthExtendParamOption withIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
@@ -42,6 +42,9 @@ public class UpdatePrePaidBandwidthExtendParamOption  {
     public void setIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

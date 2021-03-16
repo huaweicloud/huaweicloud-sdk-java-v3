@@ -167,6 +167,8 @@ public class VideoInfo  {
         this.width = width;
     }
 
+    
+
     public VideoInfo withHeight(Integer height) {
         this.height = height;
         return this;
@@ -187,6 +189,8 @@ public class VideoInfo  {
         this.height = height;
     }
 
+    
+
     public VideoInfo withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
@@ -206,6 +210,8 @@ public class VideoInfo  {
     public void setBitrate(Integer bitrate) {
         this.bitrate = bitrate;
     }
+
+    
 
     public VideoInfo withBitrateBps(Long bitrateBps) {
         this.bitrateBps = bitrateBps;
@@ -229,6 +235,8 @@ public class VideoInfo  {
         this.bitrateBps = bitrateBps;
     }
 
+    
+
     public VideoInfo withFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
         return this;
@@ -248,6 +256,8 @@ public class VideoInfo  {
     public void setFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
     }
+
+    
 
     public VideoInfo withCodec(String codec) {
         this.codec = codec;
@@ -269,6 +279,8 @@ public class VideoInfo  {
         this.codec = codec;
     }
 
+    
+
     public VideoInfo withDynamicRange(DynamicRangeEnum dynamicRange) {
         this.dynamicRange = dynamicRange;
         return this;
@@ -288,6 +300,9 @@ public class VideoInfo  {
     public void setDynamicRange(DynamicRangeEnum dynamicRange) {
         this.dynamicRange = dynamicRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

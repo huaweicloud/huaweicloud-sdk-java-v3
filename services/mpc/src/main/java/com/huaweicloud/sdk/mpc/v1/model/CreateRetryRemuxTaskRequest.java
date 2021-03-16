@@ -22,7 +22,7 @@ public class CreateRetryRemuxTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RemuxRetryReq body = null;
+    private RemuxRetryReq body;
 
     public CreateRetryRemuxTaskRequest withBody(RemuxRetryReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateRetryRemuxTaskRequest  {
     public void setBody(RemuxRetryReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

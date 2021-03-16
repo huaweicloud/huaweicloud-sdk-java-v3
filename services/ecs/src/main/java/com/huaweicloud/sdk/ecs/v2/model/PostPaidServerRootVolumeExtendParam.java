@@ -55,6 +55,8 @@ public class PostPaidServerRootVolumeExtendParam  {
         this.resourceSpecCode = resourceSpecCode;
     }
 
+    
+
     public PostPaidServerRootVolumeExtendParam withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -75,6 +77,8 @@ public class PostPaidServerRootVolumeExtendParam  {
         this.resourceType = resourceType;
     }
 
+    
+
     public PostPaidServerRootVolumeExtendParam withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
@@ -94,6 +98,9 @@ public class PostPaidServerRootVolumeExtendParam  {
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

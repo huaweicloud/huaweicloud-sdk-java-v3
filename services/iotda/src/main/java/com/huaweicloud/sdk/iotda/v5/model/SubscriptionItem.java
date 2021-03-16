@@ -28,7 +28,7 @@ public class SubscriptionItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subject")
     
-    private Subject subject = null;
+    private Subject subject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class SubscriptionItem  {
         this.subscriptionId = subscriptionId;
     }
 
+    
+
     public SubscriptionItem withSubject(Subject subject) {
         this.subject = subject;
         return this;
@@ -89,6 +91,8 @@ public class SubscriptionItem  {
         this.subject = subject;
     }
 
+    
+
     public SubscriptionItem withCallbackurl(String callbackurl) {
         this.callbackurl = callbackurl;
         return this;
@@ -109,6 +113,8 @@ public class SubscriptionItem  {
         this.callbackurl = callbackurl;
     }
 
+    
+
     public SubscriptionItem withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -128,6 +134,9 @@ public class SubscriptionItem  {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

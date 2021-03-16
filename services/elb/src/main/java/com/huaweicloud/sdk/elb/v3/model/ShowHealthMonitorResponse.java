@@ -30,7 +30,7 @@ public class ShowHealthMonitorResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor")
     
-    private HealthMonitor healthmonitor = null;
+    private HealthMonitor healthmonitor;
 
     public ShowHealthMonitorResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ShowHealthMonitorResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ShowHealthMonitorResponse withHealthmonitor(HealthMonitor healthmonitor) {
         this.healthmonitor = healthmonitor;
@@ -78,6 +80,9 @@ public class ShowHealthMonitorResponse extends SdkResponse {
     public void setHealthmonitor(HealthMonitor healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

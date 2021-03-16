@@ -71,19 +71,19 @@ public class CreatePoolOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_persistence")
     
-    private CreatePoolSessionPersistenceOption sessionPersistence = null;
+    private CreatePoolSessionPersistenceOption sessionPersistence;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slow_start")
     
-    private CreatePoolSlowStartOption slowStart = null;
+    private CreatePoolSlowStartOption slowStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_deletion_protection_enable")
     
-    private Boolean memberDeletionProtectionEnable = false;
+    private Boolean memberDeletionProtectionEnable;
 
     public CreatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -105,6 +105,8 @@ public class CreatePoolOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreatePoolOption withDescription(String description) {
         this.description = description;
         return this;
@@ -124,6 +126,8 @@ public class CreatePoolOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreatePoolOption withLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
@@ -145,6 +149,8 @@ public class CreatePoolOption  {
         this.lbAlgorithm = lbAlgorithm;
     }
 
+    
+
     public CreatePoolOption withListenerId(String listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -164,6 +170,8 @@ public class CreatePoolOption  {
     public void setListenerId(String listenerId) {
         this.listenerId = listenerId;
     }
+
+    
 
     public CreatePoolOption withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
@@ -185,6 +193,8 @@ public class CreatePoolOption  {
         this.loadbalancerId = loadbalancerId;
     }
 
+    
+
     public CreatePoolOption withName(String name) {
         this.name = name;
         return this;
@@ -204,6 +214,8 @@ public class CreatePoolOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreatePoolOption withProjectId(String projectId) {
         this.projectId = projectId;
@@ -225,6 +237,8 @@ public class CreatePoolOption  {
         this.projectId = projectId;
     }
 
+    
+
     public CreatePoolOption withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -244,6 +258,8 @@ public class CreatePoolOption  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public CreatePoolOption withSessionPersistence(CreatePoolSessionPersistenceOption sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
@@ -272,6 +288,8 @@ public class CreatePoolOption  {
         this.sessionPersistence = sessionPersistence;
     }
 
+    
+
     public CreatePoolOption withSlowStart(CreatePoolSlowStartOption slowStart) {
         this.slowStart = slowStart;
         return this;
@@ -299,6 +317,8 @@ public class CreatePoolOption  {
         this.slowStart = slowStart;
     }
 
+    
+
     public CreatePoolOption withMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
         return this;
@@ -318,6 +338,9 @@ public class CreatePoolOption  {
     public void setMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

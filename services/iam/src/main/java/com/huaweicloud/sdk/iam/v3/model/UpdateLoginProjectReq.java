@@ -22,7 +22,7 @@ public class UpdateLoginProjectReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_protect")
     
-    private UpdateLoginProject loginProtect = null;
+    private UpdateLoginProject loginProtect;
 
     public UpdateLoginProjectReq withLoginProtect(UpdateLoginProject loginProtect) {
         this.loginProtect = loginProtect;
@@ -50,6 +50,9 @@ public class UpdateLoginProjectReq  {
     public void setLoginProtect(UpdateLoginProject loginProtect) {
         this.loginProtect = loginProtect;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

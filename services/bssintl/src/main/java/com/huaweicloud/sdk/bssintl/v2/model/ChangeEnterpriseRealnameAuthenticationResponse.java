@@ -44,6 +44,9 @@ public class ChangeEnterpriseRealnameAuthenticationResponse extends SdkResponse 
     public void setIsReview(Integer isReview) {
         this.isReview = isReview;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateUserRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private CreateUserOption user = null;
+    private CreateUserOption user;
 
     public CreateUserRequestBody withUser(CreateUserOption user) {
         this.user = user;
@@ -50,6 +50,9 @@ public class CreateUserRequestBody  {
     public void setUser(CreateUserOption user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

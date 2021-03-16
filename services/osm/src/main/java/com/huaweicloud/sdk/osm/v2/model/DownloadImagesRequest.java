@@ -67,6 +67,8 @@ public class DownloadImagesRequest  {
         this.accessoryId = accessoryId;
     }
 
+    
+
     public DownloadImagesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -86,6 +88,8 @@ public class DownloadImagesRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public DownloadImagesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -111,6 +115,8 @@ public class DownloadImagesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public DownloadImagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -133,6 +139,8 @@ public class DownloadImagesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DownloadImagesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -154,6 +162,9 @@ public class DownloadImagesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

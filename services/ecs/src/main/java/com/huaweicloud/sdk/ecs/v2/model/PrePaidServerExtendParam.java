@@ -381,13 +381,13 @@ public class PrePaidServerExtendParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="support_auto_recovery")
     
-    private Boolean supportAutoRecovery = false;
+    private Boolean supportAutoRecovery;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -517,6 +517,8 @@ public class PrePaidServerExtendParam  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public PrePaidServerExtendParam withRegionID(String regionID) {
         this.regionID = regionID;
         return this;
@@ -537,6 +539,8 @@ public class PrePaidServerExtendParam  {
         this.regionID = regionID;
     }
 
+    
+
     public PrePaidServerExtendParam withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
@@ -556,6 +560,8 @@ public class PrePaidServerExtendParam  {
     public void setPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
     }
+
+    
 
     public PrePaidServerExtendParam withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
@@ -579,6 +585,8 @@ public class PrePaidServerExtendParam  {
         this.periodNum = periodNum;
     }
 
+    
+
     public PrePaidServerExtendParam withIsAutoRenew(IsAutoRenewEnum isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
@@ -598,6 +606,8 @@ public class PrePaidServerExtendParam  {
     public void setIsAutoRenew(IsAutoRenewEnum isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
     }
+
+    
 
     public PrePaidServerExtendParam withIsAutoPay(IsAutoPayEnum isAutoPay) {
         this.isAutoPay = isAutoPay;
@@ -619,6 +629,8 @@ public class PrePaidServerExtendParam  {
         this.isAutoPay = isAutoPay;
     }
 
+    
+
     public PrePaidServerExtendParam withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -638,6 +650,8 @@ public class PrePaidServerExtendParam  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public PrePaidServerExtendParam withSupportAutoRecovery(Boolean supportAutoRecovery) {
         this.supportAutoRecovery = supportAutoRecovery;
@@ -659,6 +673,8 @@ public class PrePaidServerExtendParam  {
         this.supportAutoRecovery = supportAutoRecovery;
     }
 
+    
+
     public PrePaidServerExtendParam withMarketType(String marketType) {
         this.marketType = marketType;
         return this;
@@ -678,6 +694,8 @@ public class PrePaidServerExtendParam  {
     public void setMarketType(String marketType) {
         this.marketType = marketType;
     }
+
+    
 
     public PrePaidServerExtendParam withSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
@@ -699,6 +717,8 @@ public class PrePaidServerExtendParam  {
         this.spotPrice = spotPrice;
     }
 
+    
+
     public PrePaidServerExtendParam withDiskPrior(String diskPrior) {
         this.diskPrior = diskPrior;
         return this;
@@ -718,6 +738,8 @@ public class PrePaidServerExtendParam  {
     public void setDiskPrior(String diskPrior) {
         this.diskPrior = diskPrior;
     }
+
+    
 
     public PrePaidServerExtendParam withSpotDurationHours(Integer spotDurationHours) {
         this.spotDurationHours = spotDurationHours;
@@ -739,6 +761,8 @@ public class PrePaidServerExtendParam  {
         this.spotDurationHours = spotDurationHours;
     }
 
+    
+
     public PrePaidServerExtendParam withInterruptionPolicy(InterruptionPolicyEnum interruptionPolicy) {
         this.interruptionPolicy = interruptionPolicy;
         return this;
@@ -759,6 +783,8 @@ public class PrePaidServerExtendParam  {
         this.interruptionPolicy = interruptionPolicy;
     }
 
+    
+
     public PrePaidServerExtendParam withSpotDurationCount(Integer spotDurationCount) {
         this.spotDurationCount = spotDurationCount;
         return this;
@@ -778,6 +804,9 @@ public class PrePaidServerExtendParam  {
     public void setSpotDurationCount(Integer spotDurationCount) {
         this.spotDurationCount = spotDurationCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

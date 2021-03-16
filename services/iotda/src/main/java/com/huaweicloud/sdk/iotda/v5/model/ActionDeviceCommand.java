@@ -28,7 +28,7 @@ public class ActionDeviceCommand  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cmd")
     
-    private Cmd cmd = null;
+    private Cmd cmd;
 
     public ActionDeviceCommand withDeviceId(String deviceId) {
         this.deviceId = deviceId;
@@ -49,6 +49,8 @@ public class ActionDeviceCommand  {
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
+
+    
 
     public ActionDeviceCommand withCmd(Cmd cmd) {
         this.cmd = cmd;
@@ -76,6 +78,9 @@ public class ActionDeviceCommand  {
     public void setCmd(Cmd cmd) {
         this.cmd = cmd;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

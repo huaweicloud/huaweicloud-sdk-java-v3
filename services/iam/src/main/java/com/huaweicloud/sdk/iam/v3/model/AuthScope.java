@@ -23,13 +23,13 @@ public class AuthScope  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private AuthScopeDomain domain = null;
+    private AuthScopeDomain domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private AuthScopeProject project = null;
+    private AuthScopeProject project;
 
     public AuthScope withDomain(AuthScopeDomain domain) {
         this.domain = domain;
@@ -58,6 +58,8 @@ public class AuthScope  {
         this.domain = domain;
     }
 
+    
+
     public AuthScope withProject(AuthScopeProject project) {
         this.project = project;
         return this;
@@ -84,6 +86,9 @@ public class AuthScope  {
     public void setProject(AuthScopeProject project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

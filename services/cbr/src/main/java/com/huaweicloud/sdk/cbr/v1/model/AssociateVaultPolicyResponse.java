@@ -24,7 +24,7 @@ public class AssociateVaultPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="associate_policy")
     
-    private VaultPolicyResp associatePolicy = null;
+    private VaultPolicyResp associatePolicy;
 
     public AssociateVaultPolicyResponse withAssociatePolicy(VaultPolicyResp associatePolicy) {
         this.associatePolicy = associatePolicy;
@@ -52,6 +52,9 @@ public class AssociateVaultPolicyResponse extends SdkResponse {
     public void setAssociatePolicy(VaultPolicyResp associatePolicy) {
         this.associatePolicy = associatePolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

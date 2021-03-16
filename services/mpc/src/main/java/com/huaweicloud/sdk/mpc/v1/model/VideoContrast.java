@@ -61,6 +61,8 @@ public class VideoContrast  {
         this.name = name;
     }
 
+    
+
     public VideoContrast withExecutionOrder(Integer executionOrder) {
         this.executionOrder = executionOrder;
         return this;
@@ -80,6 +82,8 @@ public class VideoContrast  {
     public void setExecutionOrder(Integer executionOrder) {
         this.executionOrder = executionOrder;
     }
+
+    
 
     public VideoContrast withContrast(String contrast) {
         this.contrast = contrast;
@@ -101,6 +105,8 @@ public class VideoContrast  {
         this.contrast = contrast;
     }
 
+    
+
     public VideoContrast withBrightness(String brightness) {
         this.brightness = brightness;
         return this;
@@ -120,6 +126,9 @@ public class VideoContrast  {
     public void setBrightness(String brightness) {
         this.brightness = brightness;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

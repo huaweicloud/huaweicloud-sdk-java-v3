@@ -39,9 +39,6 @@ public class ResourceExtraInfo  {
 
     
     public ResourceExtraInfo addExcludeVolumesItem(String excludeVolumesItem) {
-        if (this.excludeVolumes == null) {
-            this.excludeVolumes = new ArrayList<>();
-        }
         this.excludeVolumes.add(excludeVolumesItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class ResourceExtraInfo  {
         this.excludeVolumes = excludeVolumes;
     }
 
+    
+
     public ResourceExtraInfo withIncludeVolumes(List<ResourceExtraInfoIncludeVolumes> includeVolumes) {
         this.includeVolumes = includeVolumes;
         return this;
@@ -73,9 +72,6 @@ public class ResourceExtraInfo  {
 
     
     public ResourceExtraInfo addIncludeVolumesItem(ResourceExtraInfoIncludeVolumes includeVolumesItem) {
-        if (this.includeVolumes == null) {
-            this.includeVolumes = new ArrayList<>();
-        }
         this.includeVolumes.add(includeVolumesItem);
         return this;
     }
@@ -99,6 +95,9 @@ public class ResourceExtraInfo  {
     public void setIncludeVolumes(List<ResourceExtraInfoIncludeVolumes> includeVolumes) {
         this.includeVolumes = includeVolumes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

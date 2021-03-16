@@ -35,9 +35,6 @@ public class RunImageBatchModerationResponse extends SdkResponse {
 
     
     public RunImageBatchModerationResponse addResultItem(ImageBatchModerationResultBody resultItem) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
         this.result.add(resultItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class RunImageBatchModerationResponse extends SdkResponse {
     public void setResult(List<ImageBatchModerationResultBody> result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

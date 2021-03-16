@@ -73,6 +73,8 @@ public class SubCutomerInfoV2  {
         this.mobile = mobile;
     }
 
+    
+
     public SubCutomerInfoV2 withEmail(String email) {
         this.email = email;
         return this;
@@ -92,6 +94,8 @@ public class SubCutomerInfoV2  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public SubCutomerInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -113,6 +117,8 @@ public class SubCutomerInfoV2  {
         this.customerId = customerId;
     }
 
+    
+
     public SubCutomerInfoV2 withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -132,6 +138,8 @@ public class SubCutomerInfoV2  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public SubCutomerInfoV2 withCustomerName(String customerName) {
         this.customerName = customerName;
@@ -153,6 +161,8 @@ public class SubCutomerInfoV2  {
         this.customerName = customerName;
     }
 
+    
+
     public SubCutomerInfoV2 withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
@@ -172,6 +182,9 @@ public class SubCutomerInfoV2  {
     public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateNatGatewayDnatRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dnat_rule")
     
-    private CreateNatGatewayDnatOption dnatRule = null;
+    private CreateNatGatewayDnatOption dnatRule;
 
     public CreateNatGatewayDnatRuleOption withDnatRule(CreateNatGatewayDnatOption dnatRule) {
         this.dnatRule = dnatRule;
@@ -50,6 +50,9 @@ public class CreateNatGatewayDnatRuleOption  {
     public void setDnatRule(CreateNatGatewayDnatOption dnatRule) {
         this.dnatRule = dnatRule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

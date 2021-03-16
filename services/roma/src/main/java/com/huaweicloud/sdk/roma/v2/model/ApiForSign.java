@@ -110,6 +110,8 @@ public class ApiForSign  {
         this.authType = authType;
     }
 
+    
+
     public ApiForSign withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -129,6 +131,8 @@ public class ApiForSign  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public ApiForSign withGroupName(String groupName) {
         this.groupName = groupName;
@@ -150,6 +154,8 @@ public class ApiForSign  {
         this.groupName = groupName;
     }
 
+    
+
     public ApiForSign withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
@@ -169,6 +175,8 @@ public class ApiForSign  {
     public void setPublishId(String publishId) {
         this.publishId = publishId;
     }
+
+    
 
     public ApiForSign withGroupId(String groupId) {
         this.groupId = groupId;
@@ -190,6 +198,8 @@ public class ApiForSign  {
         this.groupId = groupId;
     }
 
+    
+
     public ApiForSign withName(String name) {
         this.name = name;
         return this;
@@ -209,6 +219,8 @@ public class ApiForSign  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ApiForSign withRemark(String remark) {
         this.remark = remark;
@@ -230,6 +242,8 @@ public class ApiForSign  {
         this.remark = remark;
     }
 
+    
+
     public ApiForSign withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
         return this;
@@ -249,6 +263,8 @@ public class ApiForSign  {
     public void setRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
     }
+
+    
 
     public ApiForSign withId(String id) {
         this.id = id;
@@ -270,6 +286,8 @@ public class ApiForSign  {
         this.id = id;
     }
 
+    
+
     public ApiForSign withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -289,6 +307,8 @@ public class ApiForSign  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public ApiForSign withType(Integer type) {
         this.type = type;
@@ -310,6 +330,8 @@ public class ApiForSign  {
         this.type = type;
     }
 
+    
+
     public ApiForSign withSignatureName(String signatureName) {
         this.signatureName = signatureName;
         return this;
@@ -329,6 +351,9 @@ public class ApiForSign  {
     public void setSignatureName(String signatureName) {
         this.signatureName = signatureName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

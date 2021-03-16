@@ -42,7 +42,7 @@ public class ApplyIndividualRealnameAuthsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="verified_file_url")
     
-    private List<String> verifiedFileUrl = new ArrayList<>();
+    private List<String> verifiedFileUrl = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,7 +72,7 @@ public class ApplyIndividualRealnameAuthsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bank_card_info")
     
-    private BankCardInfoV2 bankCardInfo = null;
+    private BankCardInfoV2 bankCardInfo;
 
     public ApplyIndividualRealnameAuthsReq withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -93,6 +93,8 @@ public class ApplyIndividualRealnameAuthsReq  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public ApplyIndividualRealnameAuthsReq withIdentifyType(Integer identifyType) {
         this.identifyType = identifyType;
@@ -116,6 +118,8 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.identifyType = identifyType;
     }
 
+    
+
     public ApplyIndividualRealnameAuthsReq withVerifiedType(Integer verifiedType) {
         this.verifiedType = verifiedType;
         return this;
@@ -137,6 +141,8 @@ public class ApplyIndividualRealnameAuthsReq  {
     public void setVerifiedType(Integer verifiedType) {
         this.verifiedType = verifiedType;
     }
+
+    
 
     public ApplyIndividualRealnameAuthsReq withVerifiedFileUrl(List<String> verifiedFileUrl) {
         this.verifiedFileUrl = verifiedFileUrl;
@@ -169,6 +175,8 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.verifiedFileUrl = verifiedFileUrl;
     }
 
+    
+
     public ApplyIndividualRealnameAuthsReq withName(String name) {
         this.name = name;
         return this;
@@ -189,6 +197,8 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.name = name;
     }
 
+    
+
     public ApplyIndividualRealnameAuthsReq withVerifiedNumber(String verifiedNumber) {
         this.verifiedNumber = verifiedNumber;
         return this;
@@ -208,6 +218,8 @@ public class ApplyIndividualRealnameAuthsReq  {
     public void setVerifiedNumber(String verifiedNumber) {
         this.verifiedNumber = verifiedNumber;
     }
+
+    
 
     public ApplyIndividualRealnameAuthsReq withChangeType(Integer changeType) {
         this.changeType = changeType;
@@ -231,6 +243,8 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.changeType = changeType;
     }
 
+    
+
     public ApplyIndividualRealnameAuthsReq withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
         return this;
@@ -250,6 +264,8 @@ public class ApplyIndividualRealnameAuthsReq  {
     public void setXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
     }
+
+    
 
     public ApplyIndividualRealnameAuthsReq withBankCardInfo(BankCardInfoV2 bankCardInfo) {
         this.bankCardInfo = bankCardInfo;
@@ -277,6 +293,9 @@ public class ApplyIndividualRealnameAuthsReq  {
     public void setBankCardInfo(BankCardInfoV2 bankCardInfo) {
         this.bankCardInfo = bankCardInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

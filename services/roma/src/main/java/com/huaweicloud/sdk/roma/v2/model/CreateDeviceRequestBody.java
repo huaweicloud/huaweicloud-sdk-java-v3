@@ -34,7 +34,7 @@ public class CreateDeviceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product")
     
-    private ProductReferer product = null;
+    private ProductReferer product;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -176,6 +176,8 @@ public class CreateDeviceRequestBody  {
         this.parentDeviceId = parentDeviceId;
     }
 
+    
+
     public CreateDeviceRequestBody withProduct(ProductReferer product) {
         this.product = product;
         return this;
@@ -203,6 +205,8 @@ public class CreateDeviceRequestBody  {
         this.product = product;
     }
 
+    
+
     public CreateDeviceRequestBody withPassword(String password) {
         this.password = password;
         return this;
@@ -222,6 +226,8 @@ public class CreateDeviceRequestBody  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
 
     public CreateDeviceRequestBody withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -243,6 +249,8 @@ public class CreateDeviceRequestBody  {
         this.deviceName = deviceName;
     }
 
+    
+
     public CreateDeviceRequestBody withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -262,6 +270,8 @@ public class CreateDeviceRequestBody  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public CreateDeviceRequestBody withAppId(String appId) {
         this.appId = appId;
@@ -283,6 +293,8 @@ public class CreateDeviceRequestBody  {
         this.appId = appId;
     }
 
+    
+
     public CreateDeviceRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -302,6 +314,8 @@ public class CreateDeviceRequestBody  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public CreateDeviceRequestBody withDescription(String description) {
         this.description = description;
@@ -323,6 +337,8 @@ public class CreateDeviceRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateDeviceRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -330,9 +346,6 @@ public class CreateDeviceRequestBody  {
 
     
     public CreateDeviceRequestBody addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -356,6 +369,9 @@ public class CreateDeviceRequestBody  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

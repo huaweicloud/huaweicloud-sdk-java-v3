@@ -97,6 +97,8 @@ public class NeutronListFloatingIpsRequest  {
         this.limit = limit;
     }
 
+    
+
     public NeutronListFloatingIpsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -116,6 +118,8 @@ public class NeutronListFloatingIpsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public NeutronListFloatingIpsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
@@ -137,6 +141,8 @@ public class NeutronListFloatingIpsRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public NeutronListFloatingIpsRequest withId(String id) {
         this.id = id;
         return this;
@@ -156,6 +162,8 @@ public class NeutronListFloatingIpsRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public NeutronListFloatingIpsRequest withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
@@ -177,6 +185,8 @@ public class NeutronListFloatingIpsRequest  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
+    
+
     public NeutronListFloatingIpsRequest withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
@@ -196,6 +206,8 @@ public class NeutronListFloatingIpsRequest  {
     public void setRouterId(String routerId) {
         this.routerId = routerId;
     }
+
+    
 
     public NeutronListFloatingIpsRequest withPortId(String portId) {
         this.portId = portId;
@@ -217,6 +229,8 @@ public class NeutronListFloatingIpsRequest  {
         this.portId = portId;
     }
 
+    
+
     public NeutronListFloatingIpsRequest withFixedIpAddress(String fixedIpAddress) {
         this.fixedIpAddress = fixedIpAddress;
         return this;
@@ -236,6 +250,8 @@ public class NeutronListFloatingIpsRequest  {
     public void setFixedIpAddress(String fixedIpAddress) {
         this.fixedIpAddress = fixedIpAddress;
     }
+
+    
 
     public NeutronListFloatingIpsRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -257,6 +273,8 @@ public class NeutronListFloatingIpsRequest  {
         this.tenantId = tenantId;
     }
 
+    
+
     public NeutronListFloatingIpsRequest withFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
         return this;
@@ -276,6 +294,9 @@ public class NeutronListFloatingIpsRequest  {
     public void setFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -44,6 +44,9 @@ public class CreatePostPaidInstanceResponse extends SdkResponse {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

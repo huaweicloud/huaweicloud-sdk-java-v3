@@ -58,6 +58,8 @@ public class OpExtendInfoRemoveResources  {
         this.failCount = failCount;
     }
 
+    
+
     public OpExtendInfoRemoveResources withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -78,6 +80,8 @@ public class OpExtendInfoRemoveResources  {
         this.totalCount = totalCount;
     }
 
+    
+
     public OpExtendInfoRemoveResources withResources(List<Resource> resources) {
         this.resources = resources;
         return this;
@@ -85,9 +89,6 @@ public class OpExtendInfoRemoveResources  {
 
     
     public OpExtendInfoRemoveResources addResourcesItem(Resource resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
         this.resources.add(resourcesItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class OpExtendInfoRemoveResources  {
     public void setResources(List<Resource> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

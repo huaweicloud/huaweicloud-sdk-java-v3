@@ -35,9 +35,6 @@ public class ListMetadataLocksResponse extends SdkResponse {
 
     
     public ListMetadataLocksResponse addMetadataLocksItem(MetadataLock metadataLocksItem) {
-        if (this.metadataLocks == null) {
-            this.metadataLocks = new ArrayList<>();
-        }
         this.metadataLocks.add(metadataLocksItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListMetadataLocksResponse extends SdkResponse {
     public void setMetadataLocks(List<MetadataLock> metadataLocks) {
         this.metadataLocks = metadataLocks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

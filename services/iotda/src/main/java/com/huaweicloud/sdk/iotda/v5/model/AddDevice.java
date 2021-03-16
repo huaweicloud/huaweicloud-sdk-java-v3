@@ -49,7 +49,7 @@ public class AddDevice  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_info")
     
-    private AuthInfo authInfo = null;
+    private AuthInfo authInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,7 +73,7 @@ public class AddDevice  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extension_info")
     
-    private Object extensionInfo = null;
+    private Object extensionInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,6 +101,8 @@ public class AddDevice  {
         this.deviceId = deviceId;
     }
 
+    
+
     public AddDevice withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -120,6 +122,8 @@ public class AddDevice  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public AddDevice withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -141,6 +145,8 @@ public class AddDevice  {
         this.deviceName = deviceName;
     }
 
+    
+
     public AddDevice withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -160,6 +166,8 @@ public class AddDevice  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public AddDevice withAuthInfo(AuthInfo authInfo) {
         this.authInfo = authInfo;
@@ -188,6 +196,8 @@ public class AddDevice  {
         this.authInfo = authInfo;
     }
 
+    
+
     public AddDevice withDescription(String description) {
         this.description = description;
         return this;
@@ -207,6 +217,8 @@ public class AddDevice  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public AddDevice withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -228,6 +240,8 @@ public class AddDevice  {
         this.gatewayId = gatewayId;
     }
 
+    
+
     public AddDevice withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -247,6 +261,8 @@ public class AddDevice  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public AddDevice withExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
@@ -268,6 +284,8 @@ public class AddDevice  {
         this.extensionInfo = extensionInfo;
     }
 
+    
+
     public AddDevice withShadow(List<InitialDesired> shadow) {
         this.shadow = shadow;
         return this;
@@ -275,9 +293,6 @@ public class AddDevice  {
 
     
     public AddDevice addShadowItem(InitialDesired shadowItem) {
-        if (this.shadow == null) {
-            this.shadow = new ArrayList<>();
-        }
         this.shadow.add(shadowItem);
         return this;
     }
@@ -301,6 +316,9 @@ public class AddDevice  {
     public void setShadow(List<InitialDesired> shadow) {
         this.shadow = shadow;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

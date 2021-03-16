@@ -67,6 +67,8 @@ public class ListSingleStreamBitrateRequest  {
         this.domain = domain;
     }
 
+    
+
     public ListSingleStreamBitrateRequest withApp(String app) {
         this.app = app;
         return this;
@@ -86,6 +88,8 @@ public class ListSingleStreamBitrateRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListSingleStreamBitrateRequest withStream(String stream) {
         this.stream = stream;
@@ -107,6 +111,8 @@ public class ListSingleStreamBitrateRequest  {
         this.stream = stream;
     }
 
+    
+
     public ListSingleStreamBitrateRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -127,6 +133,8 @@ public class ListSingleStreamBitrateRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListSingleStreamBitrateRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -146,6 +154,9 @@ public class ListSingleStreamBitrateRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

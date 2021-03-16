@@ -151,6 +151,8 @@ public class Absolute  {
         this.maxTotalInstances = maxTotalInstances;
     }
 
+    
+
     public Absolute withMaxTotalCores(Integer maxTotalCores) {
         this.maxTotalCores = maxTotalCores;
         return this;
@@ -170,6 +172,8 @@ public class Absolute  {
     public void setMaxTotalCores(Integer maxTotalCores) {
         this.maxTotalCores = maxTotalCores;
     }
+
+    
 
     public Absolute withMaxTotalRAMSize(Integer maxTotalRAMSize) {
         this.maxTotalRAMSize = maxTotalRAMSize;
@@ -191,6 +195,8 @@ public class Absolute  {
         this.maxTotalRAMSize = maxTotalRAMSize;
     }
 
+    
+
     public Absolute withMaxTotalKeypairs(Integer maxTotalKeypairs) {
         this.maxTotalKeypairs = maxTotalKeypairs;
         return this;
@@ -210,6 +216,8 @@ public class Absolute  {
     public void setMaxTotalKeypairs(Integer maxTotalKeypairs) {
         this.maxTotalKeypairs = maxTotalKeypairs;
     }
+
+    
 
     public Absolute withMaxServerMeta(Integer maxServerMeta) {
         this.maxServerMeta = maxServerMeta;
@@ -231,6 +239,8 @@ public class Absolute  {
         this.maxServerMeta = maxServerMeta;
     }
 
+    
+
     public Absolute withMaxPersonality(Integer maxPersonality) {
         this.maxPersonality = maxPersonality;
         return this;
@@ -250,6 +260,8 @@ public class Absolute  {
     public void setMaxPersonality(Integer maxPersonality) {
         this.maxPersonality = maxPersonality;
     }
+
+    
 
     public Absolute withMaxPersonalitySize(Integer maxPersonalitySize) {
         this.maxPersonalitySize = maxPersonalitySize;
@@ -271,6 +283,8 @@ public class Absolute  {
         this.maxPersonalitySize = maxPersonalitySize;
     }
 
+    
+
     public Absolute withMaxServerGroups(Integer maxServerGroups) {
         this.maxServerGroups = maxServerGroups;
         return this;
@@ -290,6 +304,8 @@ public class Absolute  {
     public void setMaxServerGroups(Integer maxServerGroups) {
         this.maxServerGroups = maxServerGroups;
     }
+
+    
 
     public Absolute withMaxServerGroupMembers(Integer maxServerGroupMembers) {
         this.maxServerGroupMembers = maxServerGroupMembers;
@@ -311,6 +327,8 @@ public class Absolute  {
         this.maxServerGroupMembers = maxServerGroupMembers;
     }
 
+    
+
     public Absolute withTotalServerGroupsUsed(Integer totalServerGroupsUsed) {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
         return this;
@@ -330,6 +348,8 @@ public class Absolute  {
     public void setTotalServerGroupsUsed(Integer totalServerGroupsUsed) {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
     }
+
+    
 
     public Absolute withMaxSecurityGroups(Integer maxSecurityGroups) {
         this.maxSecurityGroups = maxSecurityGroups;
@@ -351,6 +371,8 @@ public class Absolute  {
         this.maxSecurityGroups = maxSecurityGroups;
     }
 
+    
+
     public Absolute withMaxSecurityGroupRules(Integer maxSecurityGroupRules) {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
         return this;
@@ -370,6 +392,8 @@ public class Absolute  {
     public void setMaxSecurityGroupRules(Integer maxSecurityGroupRules) {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
     }
+
+    
 
     public Absolute withMaxTotalFloatingIps(Integer maxTotalFloatingIps) {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
@@ -391,6 +415,8 @@ public class Absolute  {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
     }
 
+    
+
     public Absolute withMaxImageMeta(Integer maxImageMeta) {
         this.maxImageMeta = maxImageMeta;
         return this;
@@ -410,6 +436,8 @@ public class Absolute  {
     public void setMaxImageMeta(Integer maxImageMeta) {
         this.maxImageMeta = maxImageMeta;
     }
+
+    
 
     public Absolute withTotalInstancesUsed(Integer totalInstancesUsed) {
         this.totalInstancesUsed = totalInstancesUsed;
@@ -431,6 +459,8 @@ public class Absolute  {
         this.totalInstancesUsed = totalInstancesUsed;
     }
 
+    
+
     public Absolute withTotalCoresUsed(Integer totalCoresUsed) {
         this.totalCoresUsed = totalCoresUsed;
         return this;
@@ -450,6 +480,8 @@ public class Absolute  {
     public void setTotalCoresUsed(Integer totalCoresUsed) {
         this.totalCoresUsed = totalCoresUsed;
     }
+
+    
 
     public Absolute withTotalRAMUsed(Integer totalRAMUsed) {
         this.totalRAMUsed = totalRAMUsed;
@@ -471,6 +503,8 @@ public class Absolute  {
         this.totalRAMUsed = totalRAMUsed;
     }
 
+    
+
     public Absolute withTotalSecurityGroupsUsed(Integer totalSecurityGroupsUsed) {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
         return this;
@@ -491,6 +525,8 @@ public class Absolute  {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
     }
 
+    
+
     public Absolute withTotalFloatingIpsUsed(Integer totalFloatingIpsUsed) {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
         return this;
@@ -510,6 +546,9 @@ public class Absolute  {
     public void setTotalFloatingIpsUsed(Integer totalFloatingIpsUsed) {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

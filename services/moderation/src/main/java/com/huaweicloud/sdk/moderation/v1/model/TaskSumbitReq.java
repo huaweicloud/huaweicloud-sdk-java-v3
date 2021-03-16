@@ -27,7 +27,7 @@ public class TaskSumbitReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="urls")
     
-    private List<String> urls = new ArrayList<>();
+    private List<String> urls = null;
         /**
      * Gets or Sets categories
      */
@@ -150,6 +150,8 @@ public class TaskSumbitReq  {
         this.urls = urls;
     }
 
+    
+
     public TaskSumbitReq withCategories(List<CategoriesEnum> categories) {
         this.categories = categories;
         return this;
@@ -157,9 +159,6 @@ public class TaskSumbitReq  {
 
     
     public TaskSumbitReq addCategoriesItem(CategoriesEnum categoriesItem) {
-        if (this.categories == null) {
-            this.categories = new ArrayList<>();
-        }
         this.categories.add(categoriesItem);
         return this;
     }
@@ -183,6 +182,9 @@ public class TaskSumbitReq  {
     public void setCategories(List<CategoriesEnum> categories) {
         this.categories = categories;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

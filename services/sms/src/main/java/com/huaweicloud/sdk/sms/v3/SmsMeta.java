@@ -331,6 +331,14 @@ public class SmsMeta {
                 req.setMigproject(v);
             })
         );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListErrorServersRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
 
         // response
 
@@ -453,6 +461,14 @@ public class SmsMeta {
                 req.setConnected(v);
             })
         );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListServersRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
 
         // response
 
@@ -516,6 +532,14 @@ public class SmsMeta {
             Integer.class,
             f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            })
+        );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTasksRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             })
         );
 

@@ -55,6 +55,8 @@ public class VerifyCodeSendDTOV1  {
         this.user = user;
     }
 
+    
+
     public VerifyCodeSendDTOV1 withSendMethod(String sendMethod) {
         this.sendMethod = sendMethod;
         return this;
@@ -75,6 +77,8 @@ public class VerifyCodeSendDTOV1  {
         this.sendMethod = sendMethod;
     }
 
+    
+
     public VerifyCodeSendDTOV1 withToken(String token) {
         this.token = token;
         return this;
@@ -94,6 +98,9 @@ public class VerifyCodeSendDTOV1  {
     public void setToken(String token) {
         this.token = token;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

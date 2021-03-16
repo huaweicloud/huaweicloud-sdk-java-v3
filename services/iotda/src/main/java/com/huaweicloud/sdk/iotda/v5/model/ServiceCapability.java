@@ -62,7 +62,7 @@ public class ServiceCapability  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="option")
     
-    private String option = "Optional";
+    private String option;
 
     public ServiceCapability withServiceId(String serviceId) {
         this.serviceId = serviceId;
@@ -84,6 +84,8 @@ public class ServiceCapability  {
         this.serviceId = serviceId;
     }
 
+    
+
     public ServiceCapability withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -104,6 +106,8 @@ public class ServiceCapability  {
         this.serviceType = serviceType;
     }
 
+    
+
     public ServiceCapability withProperties(List<ServiceProperty> properties) {
         this.properties = properties;
         return this;
@@ -111,9 +115,6 @@ public class ServiceCapability  {
 
     
     public ServiceCapability addPropertiesItem(ServiceProperty propertiesItem) {
-        if (this.properties == null) {
-            this.properties = new ArrayList<>();
-        }
         this.properties.add(propertiesItem);
         return this;
     }
@@ -138,6 +139,8 @@ public class ServiceCapability  {
         this.properties = properties;
     }
 
+    
+
     public ServiceCapability withCommands(List<ServiceCommand> commands) {
         this.commands = commands;
         return this;
@@ -145,9 +148,6 @@ public class ServiceCapability  {
 
     
     public ServiceCapability addCommandsItem(ServiceCommand commandsItem) {
-        if (this.commands == null) {
-            this.commands = new ArrayList<>();
-        }
         this.commands.add(commandsItem);
         return this;
     }
@@ -172,6 +172,8 @@ public class ServiceCapability  {
         this.commands = commands;
     }
 
+    
+
     public ServiceCapability withEvents(List<ServiceEvent> events) {
         this.events = events;
         return this;
@@ -179,9 +181,6 @@ public class ServiceCapability  {
 
     
     public ServiceCapability addEventsItem(ServiceEvent eventsItem) {
-        if (this.events == null) {
-            this.events = new ArrayList<>();
-        }
         this.events.add(eventsItem);
         return this;
     }
@@ -206,6 +205,8 @@ public class ServiceCapability  {
         this.events = events;
     }
 
+    
+
     public ServiceCapability withDescription(String description) {
         this.description = description;
         return this;
@@ -226,6 +227,8 @@ public class ServiceCapability  {
         this.description = description;
     }
 
+    
+
     public ServiceCapability withOption(String option) {
         this.option = option;
         return this;
@@ -245,6 +248,9 @@ public class ServiceCapability  {
     public void setOption(String option) {
         this.option = option;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

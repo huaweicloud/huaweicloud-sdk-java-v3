@@ -117,13 +117,13 @@ public class Schedule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cron")
     
-    private Cron cron = null;
+    private Cron cron;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event")
     
-    private Event event = null;
+    private Event event;
 
     public Schedule withScheType(ScheTypeEnum scheType) {
         this.scheType = scheType;
@@ -144,6 +144,8 @@ public class Schedule  {
     public void setScheType(ScheTypeEnum scheType) {
         this.scheType = scheType;
     }
+
+    
 
     public Schedule withCron(Cron cron) {
         this.cron = cron;
@@ -172,6 +174,8 @@ public class Schedule  {
         this.cron = cron;
     }
 
+    
+
     public Schedule withEvent(Event event) {
         this.event = event;
         return this;
@@ -198,6 +202,9 @@ public class Schedule  {
     public void setEvent(Event event) {
         this.event = event;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

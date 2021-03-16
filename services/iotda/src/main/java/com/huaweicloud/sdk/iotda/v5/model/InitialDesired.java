@@ -27,7 +27,7 @@ public class InitialDesired  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="desired")
     
-    private Object desired = null;
+    private Object desired;
 
     public InitialDesired withServiceId(String serviceId) {
         this.serviceId = serviceId;
@@ -49,6 +49,8 @@ public class InitialDesired  {
         this.serviceId = serviceId;
     }
 
+    
+
     public InitialDesired withDesired(Object desired) {
         this.desired = desired;
         return this;
@@ -68,6 +70,9 @@ public class InitialDesired  {
     public void setDesired(Object desired) {
         this.desired = desired;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

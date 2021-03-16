@@ -41,9 +41,6 @@ public class ListClassroomMemberJobsResponse extends SdkResponse {
 
     
     public ListClassroomMemberJobsResponse addJobsItem(MemberJobCard jobsItem) {
-        if (this.jobs == null) {
-            this.jobs = new ArrayList<>();
-        }
         this.jobs.add(jobsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListClassroomMemberJobsResponse extends SdkResponse {
         this.jobs = jobs;
     }
 
+    
+
     public ListClassroomMemberJobsResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ListClassroomMemberJobsResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

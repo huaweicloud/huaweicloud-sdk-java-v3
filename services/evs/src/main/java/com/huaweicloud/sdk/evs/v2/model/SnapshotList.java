@@ -124,6 +124,8 @@ public class SnapshotList  {
         this.id = id;
     }
 
+    
+
     public SnapshotList withStatus(String status) {
         this.status = status;
         return this;
@@ -143,6 +145,8 @@ public class SnapshotList  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public SnapshotList withName(String name) {
         this.name = name;
@@ -164,6 +168,8 @@ public class SnapshotList  {
         this.name = name;
     }
 
+    
+
     public SnapshotList withDescription(String description) {
         this.description = description;
         return this;
@@ -183,6 +189,8 @@ public class SnapshotList  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public SnapshotList withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -204,6 +212,8 @@ public class SnapshotList  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SnapshotList withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -224,6 +234,8 @@ public class SnapshotList  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public SnapshotList withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -232,9 +244,6 @@ public class SnapshotList  {
     
 
     public SnapshotList putMetadataItem(String key, String metadataItem) {
-         if (this.metadata == null) {
-            this.metadata = new HashMap<>();
-         }
         this.metadata.put(key, metadataItem);
         return this;
     }
@@ -258,6 +267,8 @@ public class SnapshotList  {
         this.metadata = metadata;
     }
 
+    
+
     public SnapshotList withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -277,6 +288,8 @@ public class SnapshotList  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
 
     public SnapshotList withSize(Integer size) {
         this.size = size;
@@ -298,6 +311,8 @@ public class SnapshotList  {
         this.size = size;
     }
 
+    
+
     public SnapshotList withOsExtendedSnapshotAttributesProjectId(String osExtendedSnapshotAttributesProjectId) {
         this.osExtendedSnapshotAttributesProjectId = osExtendedSnapshotAttributesProjectId;
         return this;
@@ -317,6 +332,8 @@ public class SnapshotList  {
     public void setOsExtendedSnapshotAttributesProjectId(String osExtendedSnapshotAttributesProjectId) {
         this.osExtendedSnapshotAttributesProjectId = osExtendedSnapshotAttributesProjectId;
     }
+
+    
 
     public SnapshotList withOsExtendedSnapshotAttributesProgress(String osExtendedSnapshotAttributesProgress) {
         this.osExtendedSnapshotAttributesProgress = osExtendedSnapshotAttributesProgress;
@@ -338,6 +355,8 @@ public class SnapshotList  {
         this.osExtendedSnapshotAttributesProgress = osExtendedSnapshotAttributesProgress;
     }
 
+    
+
     public SnapshotList withDedicatedStorageId(String dedicatedStorageId) {
         this.dedicatedStorageId = dedicatedStorageId;
         return this;
@@ -357,6 +376,8 @@ public class SnapshotList  {
     public void setDedicatedStorageId(String dedicatedStorageId) {
         this.dedicatedStorageId = dedicatedStorageId;
     }
+
+    
 
     public SnapshotList withDedicatedStorageName(String dedicatedStorageName) {
         this.dedicatedStorageName = dedicatedStorageName;
@@ -378,6 +399,8 @@ public class SnapshotList  {
         this.dedicatedStorageName = dedicatedStorageName;
     }
 
+    
+
     public SnapshotList withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -397,6 +420,9 @@ public class SnapshotList  {
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

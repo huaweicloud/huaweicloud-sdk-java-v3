@@ -135,7 +135,7 @@ public class ListUsersOfStreamRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interval")
     
-    private IntervalEnum interval = IntervalEnum.NUMBER_60;
+    private IntervalEnum interval;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -169,6 +169,8 @@ public class ListUsersOfStreamRequest  {
         this.playDomain = playDomain;
     }
 
+    
+
     public ListUsersOfStreamRequest withApp(String app) {
         this.app = app;
         return this;
@@ -188,6 +190,8 @@ public class ListUsersOfStreamRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListUsersOfStreamRequest withStream(String stream) {
         this.stream = stream;
@@ -209,6 +213,8 @@ public class ListUsersOfStreamRequest  {
         this.stream = stream;
     }
 
+    
+
     public ListUsersOfStreamRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
@@ -216,9 +222,6 @@ public class ListUsersOfStreamRequest  {
 
     
     public ListUsersOfStreamRequest addIspItem(String ispItem) {
-        if (this.isp == null) {
-            this.isp = new ArrayList<>();
-        }
         this.isp.add(ispItem);
         return this;
     }
@@ -243,6 +246,8 @@ public class ListUsersOfStreamRequest  {
         this.isp = isp;
     }
 
+    
+
     public ListUsersOfStreamRequest withRegion(List<String> region) {
         this.region = region;
         return this;
@@ -250,9 +255,6 @@ public class ListUsersOfStreamRequest  {
 
     
     public ListUsersOfStreamRequest addRegionItem(String regionItem) {
-        if (this.region == null) {
-            this.region = new ArrayList<>();
-        }
         this.region.add(regionItem);
         return this;
     }
@@ -277,6 +279,8 @@ public class ListUsersOfStreamRequest  {
         this.region = region;
     }
 
+    
+
     public ListUsersOfStreamRequest withInterval(IntervalEnum interval) {
         this.interval = interval;
         return this;
@@ -299,6 +303,8 @@ public class ListUsersOfStreamRequest  {
         this.interval = interval;
     }
 
+    
+
     public ListUsersOfStreamRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -319,6 +325,8 @@ public class ListUsersOfStreamRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListUsersOfStreamRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -338,6 +346,9 @@ public class ListUsersOfStreamRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -104,7 +104,7 @@ public class UpdateRecordSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
     public UpdateRecordSetResponse withId(String id) {
         this.id = id;
@@ -126,6 +126,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdateRecordSetResponse withName(String name) {
         this.name = name;
         return this;
@@ -145,6 +147,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateRecordSetResponse withDescription(String description) {
         this.description = description;
@@ -166,6 +170,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdateRecordSetResponse withZoneId(String zoneId) {
         this.zoneId = zoneId;
         return this;
@@ -185,6 +191,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
+
+    
 
     public UpdateRecordSetResponse withZoneName(String zoneName) {
         this.zoneName = zoneName;
@@ -206,6 +214,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
         this.zoneName = zoneName;
     }
 
+    
+
     public UpdateRecordSetResponse withType(String type) {
         this.type = type;
         return this;
@@ -225,6 +235,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public UpdateRecordSetResponse withTtl(Integer ttl) {
         this.ttl = ttl;
@@ -246,6 +258,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
         this.ttl = ttl;
     }
 
+    
+
     public UpdateRecordSetResponse withRecords(List<String> records) {
         this.records = records;
         return this;
@@ -253,9 +267,6 @@ public class UpdateRecordSetResponse extends SdkResponse {
 
     
     public UpdateRecordSetResponse addRecordsItem(String recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -280,6 +291,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
         this.records = records;
     }
 
+    
+
     public UpdateRecordSetResponse withCreateAt(String createAt) {
         this.createAt = createAt;
         return this;
@@ -299,6 +312,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
     public void setCreateAt(String createAt) {
         this.createAt = createAt;
     }
+
+    
 
     public UpdateRecordSetResponse withUpdateAt(String updateAt) {
         this.updateAt = updateAt;
@@ -320,6 +335,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
         this.updateAt = updateAt;
     }
 
+    
+
     public UpdateRecordSetResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -339,6 +356,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public UpdateRecordSetResponse withDefault(Boolean _default) {
         this._default = _default;
@@ -360,6 +379,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
         this._default = _default;
     }
 
+    
+
     public UpdateRecordSetResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -379,6 +400,8 @@ public class UpdateRecordSetResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public UpdateRecordSetResponse withLinks(PageLink links) {
         this.links = links;
@@ -406,6 +429,9 @@ public class UpdateRecordSetResponse extends SdkResponse {
     public void setLinks(PageLink links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

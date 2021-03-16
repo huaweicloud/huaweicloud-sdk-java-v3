@@ -61,6 +61,8 @@ public class ListAppCodesV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListAppCodesV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListAppCodesV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListAppCodesV2Response withAppCodes(List<AppCodeBaseInfo> appCodes) {
         this.appCodes = appCodes;
         return this;
@@ -88,9 +92,6 @@ public class ListAppCodesV2Response extends SdkResponse {
 
     
     public ListAppCodesV2Response addAppCodesItem(AppCodeBaseInfo appCodesItem) {
-        if (this.appCodes == null) {
-            this.appCodes = new ArrayList<>();
-        }
         this.appCodes.add(appCodesItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListAppCodesV2Response extends SdkResponse {
     public void setAppCodes(List<AppCodeBaseInfo> appCodes) {
         this.appCodes = appCodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -256,7 +256,7 @@ public class ScalingGroupInstance  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -284,6 +284,8 @@ public class ScalingGroupInstance  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ScalingGroupInstance withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -303,6 +305,8 @@ public class ScalingGroupInstance  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
+
+    
 
     public ScalingGroupInstance withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -324,6 +328,8 @@ public class ScalingGroupInstance  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public ScalingGroupInstance withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
         return this;
@@ -343,6 +349,8 @@ public class ScalingGroupInstance  {
     public void setScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
     }
+
+    
 
     public ScalingGroupInstance withLifeCycleState(LifeCycleStateEnum lifeCycleState) {
         this.lifeCycleState = lifeCycleState;
@@ -364,6 +372,8 @@ public class ScalingGroupInstance  {
         this.lifeCycleState = lifeCycleState;
     }
 
+    
+
     public ScalingGroupInstance withHealthStatus(HealthStatusEnum healthStatus) {
         this.healthStatus = healthStatus;
         return this;
@@ -383,6 +393,8 @@ public class ScalingGroupInstance  {
     public void setHealthStatus(HealthStatusEnum healthStatus) {
         this.healthStatus = healthStatus;
     }
+
+    
 
     public ScalingGroupInstance withScalingConfigurationName(String scalingConfigurationName) {
         this.scalingConfigurationName = scalingConfigurationName;
@@ -404,6 +416,8 @@ public class ScalingGroupInstance  {
         this.scalingConfigurationName = scalingConfigurationName;
     }
 
+    
+
     public ScalingGroupInstance withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
         return this;
@@ -423,6 +437,8 @@ public class ScalingGroupInstance  {
     public void setScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
     }
+
+    
 
     public ScalingGroupInstance withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
@@ -444,6 +460,8 @@ public class ScalingGroupInstance  {
         this.createTime = createTime;
     }
 
+    
+
     public ScalingGroupInstance withProtectFromScalingDown(Boolean protectFromScalingDown) {
         this.protectFromScalingDown = protectFromScalingDown;
         return this;
@@ -463,6 +481,9 @@ public class ScalingGroupInstance  {
     public void setProtectFromScalingDown(Boolean protectFromScalingDown) {
         this.protectFromScalingDown = protectFromScalingDown;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

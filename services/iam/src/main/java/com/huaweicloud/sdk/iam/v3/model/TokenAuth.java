@@ -22,7 +22,7 @@ public class TokenAuth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity")
     
-    private TokenAuthIdentity identity = null;
+    private TokenAuthIdentity identity;
 
     public TokenAuth withIdentity(TokenAuthIdentity identity) {
         this.identity = identity;
@@ -50,6 +50,9 @@ public class TokenAuth  {
     public void setIdentity(TokenAuthIdentity identity) {
         this.identity = identity;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

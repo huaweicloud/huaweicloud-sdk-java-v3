@@ -33,7 +33,7 @@ public class EnterpriseProject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private String type = "prod";
+    private String type;
 
     public EnterpriseProject withName(String name) {
         this.name = name;
@@ -55,6 +55,8 @@ public class EnterpriseProject  {
         this.name = name;
     }
 
+    
+
     public EnterpriseProject withDescription(String description) {
         this.description = description;
         return this;
@@ -75,6 +77,8 @@ public class EnterpriseProject  {
         this.description = description;
     }
 
+    
+
     public EnterpriseProject withType(String type) {
         this.type = type;
         return this;
@@ -94,6 +98,9 @@ public class EnterpriseProject  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

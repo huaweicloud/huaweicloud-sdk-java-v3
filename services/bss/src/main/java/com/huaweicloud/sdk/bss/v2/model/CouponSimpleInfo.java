@@ -49,6 +49,8 @@ public class CouponSimpleInfo  {
         this.id = id;
     }
 
+    
+
     public CouponSimpleInfo withCouponId(String couponId) {
         this.couponId = couponId;
         return this;
@@ -68,6 +70,9 @@ public class CouponSimpleInfo  {
     public void setCouponId(String couponId) {
         this.couponId = couponId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

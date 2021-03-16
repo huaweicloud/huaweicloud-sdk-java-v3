@@ -149,6 +149,8 @@ public class CreateOrderIncidentV2Req  {
         this.incidentSubTypeId = incidentSubTypeId;
     }
 
+    
+
     public CreateOrderIncidentV2Req withProductCategoryId(String productCategoryId) {
         this.productCategoryId = productCategoryId;
         return this;
@@ -168,6 +170,8 @@ public class CreateOrderIncidentV2Req  {
     public void setProductCategoryId(String productCategoryId) {
         this.productCategoryId = productCategoryId;
     }
+
+    
 
     public CreateOrderIncidentV2Req withBusinessTypeId(String businessTypeId) {
         this.businessTypeId = businessTypeId;
@@ -189,6 +193,8 @@ public class CreateOrderIncidentV2Req  {
         this.businessTypeId = businessTypeId;
     }
 
+    
+
     public CreateOrderIncidentV2Req withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -208,6 +214,8 @@ public class CreateOrderIncidentV2Req  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public CreateOrderIncidentV2Req withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
@@ -229,6 +237,8 @@ public class CreateOrderIncidentV2Req  {
         this.simpleDescription = simpleDescription;
     }
 
+    
+
     public CreateOrderIncidentV2Req withSourceId(String sourceId) {
         this.sourceId = sourceId;
         return this;
@@ -248,6 +258,8 @@ public class CreateOrderIncidentV2Req  {
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
+
+    
 
     public CreateOrderIncidentV2Req withIsAuthorized(Integer isAuthorized) {
         this.isAuthorized = isAuthorized;
@@ -271,6 +283,8 @@ public class CreateOrderIncidentV2Req  {
         this.isAuthorized = isAuthorized;
     }
 
+    
+
     public CreateOrderIncidentV2Req withAuthorizationContent(String authorizationContent) {
         this.authorizationContent = authorizationContent;
         return this;
@@ -290,6 +304,8 @@ public class CreateOrderIncidentV2Req  {
     public void setAuthorizationContent(String authorizationContent) {
         this.authorizationContent = authorizationContent;
     }
+
+    
 
     public CreateOrderIncidentV2Req withRemindMobile(String remindMobile) {
         this.remindMobile = remindMobile;
@@ -311,6 +327,8 @@ public class CreateOrderIncidentV2Req  {
         this.remindMobile = remindMobile;
     }
 
+    
+
     public CreateOrderIncidentV2Req withRemindMail(String remindMail) {
         this.remindMail = remindMail;
         return this;
@@ -330,6 +348,8 @@ public class CreateOrderIncidentV2Req  {
     public void setRemindMail(String remindMail) {
         this.remindMail = remindMail;
     }
+
+    
 
     public CreateOrderIncidentV2Req withRemindTime(String remindTime) {
         this.remindTime = remindTime;
@@ -351,6 +371,8 @@ public class CreateOrderIncidentV2Req  {
         this.remindTime = remindTime;
     }
 
+    
+
     public CreateOrderIncidentV2Req withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -371,6 +393,8 @@ public class CreateOrderIncidentV2Req  {
         this.projectId = projectId;
     }
 
+    
+
     public CreateOrderIncidentV2Req withAccessoryIds(List<String> accessoryIds) {
         this.accessoryIds = accessoryIds;
         return this;
@@ -378,9 +402,6 @@ public class CreateOrderIncidentV2Req  {
 
     
     public CreateOrderIncidentV2Req addAccessoryIdsItem(String accessoryIdsItem) {
-        if (this.accessoryIds == null) {
-            this.accessoryIds = new ArrayList<>();
-        }
         this.accessoryIds.add(accessoryIdsItem);
         return this;
     }
@@ -405,6 +426,8 @@ public class CreateOrderIncidentV2Req  {
         this.accessoryIds = accessoryIds;
     }
 
+    
+
     public CreateOrderIncidentV2Req withExtendsMap(Map<String, Object> extendsMap) {
         this.extendsMap = extendsMap;
         return this;
@@ -413,9 +436,6 @@ public class CreateOrderIncidentV2Req  {
     
 
     public CreateOrderIncidentV2Req putExtendsMapItem(String key, Object extendsMapItem) {
-         if (this.extendsMap == null) {
-            this.extendsMap = new HashMap<>();
-         }
         this.extendsMap.put(key, extendsMapItem);
         return this;
     }
@@ -439,6 +459,8 @@ public class CreateOrderIncidentV2Req  {
         this.extendsMap = extendsMap;
     }
 
+    
+
     public CreateOrderIncidentV2Req withExtensionMap(Map<String, Object> extensionMap) {
         this.extensionMap = extensionMap;
         return this;
@@ -447,9 +469,6 @@ public class CreateOrderIncidentV2Req  {
     
 
     public CreateOrderIncidentV2Req putExtensionMapItem(String key, Object extensionMapItem) {
-         if (this.extensionMap == null) {
-            this.extensionMap = new HashMap<>();
-         }
         this.extensionMap.put(key, extensionMapItem);
         return this;
     }
@@ -473,6 +492,8 @@ public class CreateOrderIncidentV2Req  {
         this.extensionMap = extensionMap;
     }
 
+    
+
     public CreateOrderIncidentV2Req withSeverityId(String severityId) {
         this.severityId = severityId;
         return this;
@@ -492,6 +513,8 @@ public class CreateOrderIncidentV2Req  {
     public void setSeverityId(String severityId) {
         this.severityId = severityId;
     }
+
+    
 
     public CreateOrderIncidentV2Req withVerifyCode(String verifyCode) {
         this.verifyCode = verifyCode;
@@ -513,6 +536,8 @@ public class CreateOrderIncidentV2Req  {
         this.verifyCode = verifyCode;
     }
 
+    
+
     public CreateOrderIncidentV2Req withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
@@ -532,6 +557,9 @@ public class CreateOrderIncidentV2Req  {
     public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

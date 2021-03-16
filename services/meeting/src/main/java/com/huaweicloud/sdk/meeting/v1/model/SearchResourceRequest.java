@@ -33,13 +33,13 @@ public class SearchResourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,6 +105,8 @@ public class SearchResourceRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public SearchResourceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -124,6 +126,8 @@ public class SearchResourceRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public SearchResourceRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -145,6 +149,8 @@ public class SearchResourceRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public SearchResourceRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -168,6 +174,8 @@ public class SearchResourceRequest  {
         this.limit = limit;
     }
 
+    
+
     public SearchResourceRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -187,6 +195,8 @@ public class SearchResourceRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    
 
     public SearchResourceRequest withCorpId(String corpId) {
         this.corpId = corpId;
@@ -208,6 +218,8 @@ public class SearchResourceRequest  {
         this.corpId = corpId;
     }
 
+    
+
     public SearchResourceRequest withStartExpireDate(Long startExpireDate) {
         this.startExpireDate = startExpireDate;
         return this;
@@ -227,6 +239,8 @@ public class SearchResourceRequest  {
     public void setStartExpireDate(Long startExpireDate) {
         this.startExpireDate = startExpireDate;
     }
+
+    
 
     public SearchResourceRequest withEndExpireDate(Long endExpireDate) {
         this.endExpireDate = endExpireDate;
@@ -248,6 +262,8 @@ public class SearchResourceRequest  {
         this.endExpireDate = endExpireDate;
     }
 
+    
+
     public SearchResourceRequest withType(String type) {
         this.type = type;
         return this;
@@ -268,6 +284,8 @@ public class SearchResourceRequest  {
         this.type = type;
     }
 
+    
+
     public SearchResourceRequest withTypeId(String typeId) {
         this.typeId = typeId;
         return this;
@@ -287,6 +305,8 @@ public class SearchResourceRequest  {
     public void setTypeId(String typeId) {
         this.typeId = typeId;
     }
+
+    
 
     public SearchResourceRequest withStatus(Integer status) {
         this.status = status;
@@ -309,6 +329,9 @@ public class SearchResourceRequest  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class ShowServerLimitsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="absolute")
     
-    private ServerLimits absolute = null;
+    private ServerLimits absolute;
 
     public ShowServerLimitsResponse withAbsolute(ServerLimits absolute) {
         this.absolute = absolute;
@@ -52,6 +52,9 @@ public class ShowServerLimitsResponse extends SdkResponse {
     public void setAbsolute(ServerLimits absolute) {
         this.absolute = absolute;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -46,7 +46,7 @@ public class UpdatePoolReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_persistence")
     
-    private SessionPersistence sessionPersistence = null;
+    private SessionPersistence sessionPersistence;
 
     public UpdatePoolReq withLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
@@ -68,6 +68,8 @@ public class UpdatePoolReq  {
         this.lbAlgorithm = lbAlgorithm;
     }
 
+    
+
     public UpdatePoolReq withName(String name) {
         this.name = name;
         return this;
@@ -87,6 +89,8 @@ public class UpdatePoolReq  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdatePoolReq withDescription(String description) {
         this.description = description;
@@ -108,6 +112,8 @@ public class UpdatePoolReq  {
         this.description = description;
     }
 
+    
+
     public UpdatePoolReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -127,6 +133,8 @@ public class UpdatePoolReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public UpdatePoolReq withSessionPersistence(SessionPersistence sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
@@ -154,6 +162,9 @@ public class UpdatePoolReq  {
     public void setSessionPersistence(SessionPersistence sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -254,7 +254,7 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="component_list")
     
-    private List<ComponentList> componentList = new ArrayList<>();
+    private List<ComponentList> componentList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -560,7 +560,7 @@ public class CreateClusterReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_data_volume_count")
     
-    private MasterDataVolumeCountEnum masterDataVolumeCount = MasterDataVolumeCountEnum.NUMBER_1;
+    private MasterDataVolumeCountEnum masterDataVolumeCount;
     /**
      * 该参数为多磁盘参数，表示Core节点数据磁盘存储类别，目前支持SATA、SAS和SSD。
      */
@@ -1056,6 +1056,8 @@ public class CreateClusterReq  {
         this.clusterVersion = clusterVersion;
     }
 
+    
+
     public CreateClusterReq withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
@@ -1076,6 +1078,8 @@ public class CreateClusterReq  {
         this.clusterName = clusterName;
     }
 
+    
+
     public CreateClusterReq withMasterNodeNum(MasterNodeNumEnum masterNodeNum) {
         this.masterNodeNum = masterNodeNum;
         return this;
@@ -1095,6 +1099,8 @@ public class CreateClusterReq  {
     public void setMasterNodeNum(MasterNodeNumEnum masterNodeNum) {
         this.masterNodeNum = masterNodeNum;
     }
+
+    
 
     public CreateClusterReq withCoreNodeNum(Integer coreNodeNum) {
         this.coreNodeNum = coreNodeNum;
@@ -1118,6 +1124,8 @@ public class CreateClusterReq  {
         this.coreNodeNum = coreNodeNum;
     }
 
+    
+
     public CreateClusterReq withBillingType(BillingTypeEnum billingType) {
         this.billingType = billingType;
         return this;
@@ -1137,6 +1145,8 @@ public class CreateClusterReq  {
     public void setBillingType(BillingTypeEnum billingType) {
         this.billingType = billingType;
     }
+
+    
 
     public CreateClusterReq withDataCenter(String dataCenter) {
         this.dataCenter = dataCenter;
@@ -1158,6 +1168,8 @@ public class CreateClusterReq  {
         this.dataCenter = dataCenter;
     }
 
+    
+
     public CreateClusterReq withVpc(String vpc) {
         this.vpc = vpc;
         return this;
@@ -1177,6 +1189,8 @@ public class CreateClusterReq  {
     public void setVpc(String vpc) {
         this.vpc = vpc;
     }
+
+    
 
     public CreateClusterReq withMasterNodeSize(String masterNodeSize) {
         this.masterNodeSize = masterNodeSize;
@@ -1198,6 +1212,8 @@ public class CreateClusterReq  {
         this.masterNodeSize = masterNodeSize;
     }
 
+    
+
     public CreateClusterReq withCoreNodeSize(String coreNodeSize) {
         this.coreNodeSize = coreNodeSize;
         return this;
@@ -1217,6 +1233,8 @@ public class CreateClusterReq  {
     public void setCoreNodeSize(String coreNodeSize) {
         this.coreNodeSize = coreNodeSize;
     }
+
+    
 
     public CreateClusterReq withComponentList(List<ComponentList> componentList) {
         this.componentList = componentList;
@@ -1249,6 +1267,8 @@ public class CreateClusterReq  {
         this.componentList = componentList;
     }
 
+    
+
     public CreateClusterReq withAvailableZoneId(String availableZoneId) {
         this.availableZoneId = availableZoneId;
         return this;
@@ -1268,6 +1288,8 @@ public class CreateClusterReq  {
     public void setAvailableZoneId(String availableZoneId) {
         this.availableZoneId = availableZoneId;
     }
+
+    
 
     public CreateClusterReq withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -1289,6 +1311,8 @@ public class CreateClusterReq  {
         this.vpcId = vpcId;
     }
 
+    
+
     public CreateClusterReq withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -1308,6 +1332,8 @@ public class CreateClusterReq  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public CreateClusterReq withSubnetName(String subnetName) {
         this.subnetName = subnetName;
@@ -1329,6 +1355,8 @@ public class CreateClusterReq  {
         this.subnetName = subnetName;
     }
 
+    
+
     public CreateClusterReq withSecurityGroupsId(String securityGroupsId) {
         this.securityGroupsId = securityGroupsId;
         return this;
@@ -1349,6 +1377,8 @@ public class CreateClusterReq  {
         this.securityGroupsId = securityGroupsId;
     }
 
+    
+
     public CreateClusterReq withAddJobs(List<AddJobs> addJobs) {
         this.addJobs = addJobs;
         return this;
@@ -1356,9 +1386,6 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addAddJobsItem(AddJobs addJobsItem) {
-        if (this.addJobs == null) {
-            this.addJobs = new ArrayList<>();
-        }
         this.addJobs.add(addJobsItem);
         return this;
     }
@@ -1383,6 +1410,8 @@ public class CreateClusterReq  {
         this.addJobs = addJobs;
     }
 
+    
+
     public CreateClusterReq withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
         return this;
@@ -1405,6 +1434,8 @@ public class CreateClusterReq  {
         this.volumeSize = volumeSize;
     }
 
+    
+
     public CreateClusterReq withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
         return this;
@@ -1425,6 +1456,8 @@ public class CreateClusterReq  {
         this.volumeType = volumeType;
     }
 
+    
+
     public CreateClusterReq withMasterDataVolumeType(MasterDataVolumeTypeEnum masterDataVolumeType) {
         this.masterDataVolumeType = masterDataVolumeType;
         return this;
@@ -1444,6 +1477,8 @@ public class CreateClusterReq  {
     public void setMasterDataVolumeType(MasterDataVolumeTypeEnum masterDataVolumeType) {
         this.masterDataVolumeType = masterDataVolumeType;
     }
+
+    
 
     public CreateClusterReq withMasterDataVolumeSize(Integer masterDataVolumeSize) {
         this.masterDataVolumeSize = masterDataVolumeSize;
@@ -1467,6 +1502,8 @@ public class CreateClusterReq  {
         this.masterDataVolumeSize = masterDataVolumeSize;
     }
 
+    
+
     public CreateClusterReq withMasterDataVolumeCount(MasterDataVolumeCountEnum masterDataVolumeCount) {
         this.masterDataVolumeCount = masterDataVolumeCount;
         return this;
@@ -1488,6 +1525,8 @@ public class CreateClusterReq  {
         this.masterDataVolumeCount = masterDataVolumeCount;
     }
 
+    
+
     public CreateClusterReq withCoreDataVolumeType(CoreDataVolumeTypeEnum coreDataVolumeType) {
         this.coreDataVolumeType = coreDataVolumeType;
         return this;
@@ -1507,6 +1546,8 @@ public class CreateClusterReq  {
     public void setCoreDataVolumeType(CoreDataVolumeTypeEnum coreDataVolumeType) {
         this.coreDataVolumeType = coreDataVolumeType;
     }
+
+    
 
     public CreateClusterReq withCoreDataVolumeSize(Integer coreDataVolumeSize) {
         this.coreDataVolumeSize = coreDataVolumeSize;
@@ -1530,6 +1571,8 @@ public class CreateClusterReq  {
         this.coreDataVolumeSize = coreDataVolumeSize;
     }
 
+    
+
     public CreateClusterReq withCoreDataVolumeCount(Integer coreDataVolumeCount) {
         this.coreDataVolumeCount = coreDataVolumeCount;
         return this;
@@ -1552,6 +1595,8 @@ public class CreateClusterReq  {
         this.coreDataVolumeCount = coreDataVolumeCount;
     }
 
+    
+
     public CreateClusterReq withTaskNodeGroups(List<TaskNodeGroups> taskNodeGroups) {
         this.taskNodeGroups = taskNodeGroups;
         return this;
@@ -1559,9 +1604,6 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addTaskNodeGroupsItem(TaskNodeGroups taskNodeGroupsItem) {
-        if (this.taskNodeGroups == null) {
-            this.taskNodeGroups = new ArrayList<>();
-        }
         this.taskNodeGroups.add(taskNodeGroupsItem);
         return this;
     }
@@ -1586,6 +1628,8 @@ public class CreateClusterReq  {
         this.taskNodeGroups = taskNodeGroups;
     }
 
+    
+
     public CreateClusterReq withBootstrapScripts(List<BootstrapScript> bootstrapScripts) {
         this.bootstrapScripts = bootstrapScripts;
         return this;
@@ -1593,9 +1637,6 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addBootstrapScriptsItem(BootstrapScript bootstrapScriptsItem) {
-        if (this.bootstrapScripts == null) {
-            this.bootstrapScripts = new ArrayList<>();
-        }
         this.bootstrapScripts.add(bootstrapScriptsItem);
         return this;
     }
@@ -1620,6 +1661,8 @@ public class CreateClusterReq  {
         this.bootstrapScripts = bootstrapScripts;
     }
 
+    
+
     public CreateClusterReq withNodePublicCertName(String nodePublicCertName) {
         this.nodePublicCertName = nodePublicCertName;
         return this;
@@ -1639,6 +1682,8 @@ public class CreateClusterReq  {
     public void setNodePublicCertName(String nodePublicCertName) {
         this.nodePublicCertName = nodePublicCertName;
     }
+
+    
 
     public CreateClusterReq withClusterAdminSecret(String clusterAdminSecret) {
         this.clusterAdminSecret = clusterAdminSecret;
@@ -1660,6 +1705,8 @@ public class CreateClusterReq  {
         this.clusterAdminSecret = clusterAdminSecret;
     }
 
+    
+
     public CreateClusterReq withClusterMasterSecret(String clusterMasterSecret) {
         this.clusterMasterSecret = clusterMasterSecret;
         return this;
@@ -1679,6 +1726,8 @@ public class CreateClusterReq  {
     public void setClusterMasterSecret(String clusterMasterSecret) {
         this.clusterMasterSecret = clusterMasterSecret;
     }
+
+    
 
     public CreateClusterReq withSafeMode(SafeModeEnum safeMode) {
         this.safeMode = safeMode;
@@ -1700,6 +1749,8 @@ public class CreateClusterReq  {
         this.safeMode = safeMode;
     }
 
+    
+
     public CreateClusterReq withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -1719,6 +1770,8 @@ public class CreateClusterReq  {
     public void setClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
     }
+
+    
 
     public CreateClusterReq withLogCollection(LogCollectionEnum logCollection) {
         this.logCollection = logCollection;
@@ -1740,6 +1793,8 @@ public class CreateClusterReq  {
         this.logCollection = logCollection;
     }
 
+    
+
     public CreateClusterReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -1747,9 +1802,6 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1774,6 +1826,8 @@ public class CreateClusterReq  {
         this.tags = tags;
     }
 
+    
+
     public CreateClusterReq withLoginMode(LoginModeEnum loginMode) {
         this.loginMode = loginMode;
         return this;
@@ -1793,6 +1847,9 @@ public class CreateClusterReq  {
     public void setLoginMode(LoginModeEnum loginMode) {
         this.loginMode = loginMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

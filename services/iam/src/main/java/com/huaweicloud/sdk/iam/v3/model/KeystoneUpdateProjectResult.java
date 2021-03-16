@@ -34,13 +34,13 @@ public class KeystoneUpdateProjectResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra")
     
-    private Object extra = null;
+    private Object extra;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class KeystoneUpdateProjectResult  {
         this.isDomain = isDomain;
     }
 
+    
+
     public KeystoneUpdateProjectResult withDescription(String description) {
         this.description = description;
         return this;
@@ -112,6 +114,8 @@ public class KeystoneUpdateProjectResult  {
         this.description = description;
     }
 
+    
+
     public KeystoneUpdateProjectResult withExtra(Object extra) {
         this.extra = extra;
         return this;
@@ -131,6 +135,8 @@ public class KeystoneUpdateProjectResult  {
     public void setExtra(Object extra) {
         this.extra = extra;
     }
+
+    
 
     public KeystoneUpdateProjectResult withLinks(LinksSelf links) {
         this.links = links;
@@ -159,6 +165,8 @@ public class KeystoneUpdateProjectResult  {
         this.links = links;
     }
 
+    
+
     public KeystoneUpdateProjectResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -178,6 +186,8 @@ public class KeystoneUpdateProjectResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public KeystoneUpdateProjectResult withId(String id) {
         this.id = id;
@@ -199,6 +209,8 @@ public class KeystoneUpdateProjectResult  {
         this.id = id;
     }
 
+    
+
     public KeystoneUpdateProjectResult withParentId(String parentId) {
         this.parentId = parentId;
         return this;
@@ -218,6 +230,8 @@ public class KeystoneUpdateProjectResult  {
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
+
+    
 
     public KeystoneUpdateProjectResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -239,6 +253,8 @@ public class KeystoneUpdateProjectResult  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneUpdateProjectResult withName(String name) {
         this.name = name;
         return this;
@@ -258,6 +274,9 @@ public class KeystoneUpdateProjectResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

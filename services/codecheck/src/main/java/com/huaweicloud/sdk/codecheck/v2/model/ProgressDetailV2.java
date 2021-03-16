@@ -49,6 +49,8 @@ public class ProgressDetailV2  {
         this.ratio = ratio;
     }
 
+    
+
     public ProgressDetailV2 withInfo(String info) {
         this.info = info;
         return this;
@@ -68,6 +70,9 @@ public class ProgressDetailV2  {
     public void setInfo(String info) {
         this.info = info;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

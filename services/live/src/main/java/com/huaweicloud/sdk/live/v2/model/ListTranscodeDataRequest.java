@@ -55,6 +55,8 @@ public class ListTranscodeDataRequest  {
         this.publishDomain = publishDomain;
     }
 
+    
+
     public ListTranscodeDataRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -75,6 +77,8 @@ public class ListTranscodeDataRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListTranscodeDataRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -94,6 +98,9 @@ public class ListTranscodeDataRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

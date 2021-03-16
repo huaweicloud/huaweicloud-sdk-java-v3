@@ -34,7 +34,7 @@ public class ShowCurUserRoleResponse extends SdkResponse {
 
 
     /**
-     * 成员角色 -1 项目创建者 3 项目经理 4 开发人员 5 测试经理 6 测试人员 7 参与者 8 浏览
+     * 用户角色id
      * @return userRole
      */
     public Integer getUserRole() {
@@ -44,6 +44,9 @@ public class ShowCurUserRoleResponse extends SdkResponse {
     public void setUserRole(Integer userRole) {
         this.userRole = userRole;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -131,6 +131,8 @@ public class GlanceUpdateImageMemberRequestBody  {
         this.status = status;
     }
 
+    
+
     public GlanceUpdateImageMemberRequestBody withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -150,6 +152,9 @@ public class GlanceUpdateImageMemberRequestBody  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

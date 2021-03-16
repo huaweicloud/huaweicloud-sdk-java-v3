@@ -28,7 +28,7 @@ public class MulInputFileInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
     public MulInputFileInfo withLanguage(String language) {
         this.language = language;
@@ -49,6 +49,8 @@ public class MulInputFileInfo  {
     public void setLanguage(String language) {
         this.language = language;
     }
+
+    
 
     public MulInputFileInfo withInput(ObsObjInfo input) {
         this.input = input;
@@ -76,6 +78,9 @@ public class MulInputFileInfo  {
     public void setInput(ObsObjInfo input) {
         this.input = input;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

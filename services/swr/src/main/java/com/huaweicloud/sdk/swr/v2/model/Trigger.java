@@ -96,7 +96,7 @@ public class Trigger  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_history")
     
-    private List<TriggerHistories> triggerHistory = new ArrayList<>();
+    private List<TriggerHistories> triggerHistory = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -130,6 +130,8 @@ public class Trigger  {
         this.action = action;
     }
 
+    
+
     public Trigger withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -149,6 +151,8 @@ public class Trigger  {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public Trigger withApplication(String application) {
         this.application = application;
@@ -170,6 +174,8 @@ public class Trigger  {
         this.application = application;
     }
 
+    
+
     public Trigger withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -189,6 +195,8 @@ public class Trigger  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public Trigger withClusterName(String clusterName) {
         this.clusterName = clusterName;
@@ -210,6 +218,8 @@ public class Trigger  {
         this.clusterName = clusterName;
     }
 
+    
+
     public Trigger withClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
         return this;
@@ -229,6 +239,8 @@ public class Trigger  {
     public void setClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
     }
+
+    
 
     public Trigger withCondition(String condition) {
         this.condition = condition;
@@ -250,6 +262,8 @@ public class Trigger  {
         this.condition = condition;
     }
 
+    
+
     public Trigger withContainer(String container) {
         this.container = container;
         return this;
@@ -269,6 +283,8 @@ public class Trigger  {
     public void setContainer(String container) {
         this.container = container;
     }
+
+    
 
     public Trigger withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -290,6 +306,8 @@ public class Trigger  {
         this.createdAt = createdAt;
     }
 
+    
+
     public Trigger withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
@@ -309,6 +327,8 @@ public class Trigger  {
     public void setCreatorName(String creatorName) {
         this.creatorName = creatorName;
     }
+
+    
 
     public Trigger withEnable(String enable) {
         this.enable = enable;
@@ -330,6 +350,8 @@ public class Trigger  {
         this.enable = enable;
     }
 
+    
+
     public Trigger withName(String name) {
         this.name = name;
         return this;
@@ -349,6 +371,8 @@ public class Trigger  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Trigger withTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
@@ -381,6 +405,8 @@ public class Trigger  {
         this.triggerHistory = triggerHistory;
     }
 
+    
+
     public Trigger withTriggerMode(String triggerMode) {
         this.triggerMode = triggerMode;
         return this;
@@ -401,6 +427,8 @@ public class Trigger  {
         this.triggerMode = triggerMode;
     }
 
+    
+
     public Trigger withTriggerType(String triggerType) {
         this.triggerType = triggerType;
         return this;
@@ -420,6 +448,9 @@ public class Trigger  {
     public void setTriggerType(String triggerType) {
         this.triggerType = triggerType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

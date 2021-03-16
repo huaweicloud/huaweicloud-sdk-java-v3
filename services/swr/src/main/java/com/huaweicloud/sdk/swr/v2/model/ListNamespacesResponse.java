@@ -35,9 +35,6 @@ public class ListNamespacesResponse extends SdkResponse {
 
     
     public ListNamespacesResponse addNamespacesItem(ShowNamespace namespacesItem) {
-        if (this.namespaces == null) {
-            this.namespaces = new ArrayList<>();
-        }
         this.namespaces.add(namespacesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListNamespacesResponse extends SdkResponse {
     public void setNamespaces(List<ShowNamespace> namespaces) {
         this.namespaces = namespaces;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

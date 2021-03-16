@@ -42,6 +42,9 @@ public class ProtectPolicyOption  {
     public void setOperationProtection(Boolean operationProtection) {
         this.operationProtection = operationProtection;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

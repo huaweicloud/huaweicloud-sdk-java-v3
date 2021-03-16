@@ -55,6 +55,8 @@ public class ListAgenciesRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public ListAgenciesRequest withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
         return this;
@@ -75,6 +77,8 @@ public class ListAgenciesRequest  {
         this.trustDomainId = trustDomainId;
     }
 
+    
+
     public ListAgenciesRequest withName(String name) {
         this.name = name;
         return this;
@@ -94,6 +98,9 @@ public class ListAgenciesRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

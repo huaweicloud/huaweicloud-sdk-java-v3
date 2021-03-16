@@ -130,6 +130,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.fileCode = fileCode;
     }
 
+    
+
     public ShowMeetingFileResponse withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -149,6 +151,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public ShowMeetingFileResponse withFileId(String fileId) {
         this.fileId = fileId;
@@ -170,6 +174,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.fileId = fileId;
     }
 
+    
+
     public ShowMeetingFileResponse withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -189,6 +195,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
 
     public ShowMeetingFileResponse withFileSize(Long fileSize) {
         this.fileSize = fileSize;
@@ -210,6 +218,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.fileSize = fileSize;
     }
 
+    
+
     public ShowMeetingFileResponse withThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
         return this;
@@ -229,6 +239,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
     public void setThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
     }
+
+    
 
     public ShowMeetingFileResponse withThumbnailFileName(String thumbnailFileName) {
         this.thumbnailFileName = thumbnailFileName;
@@ -250,6 +262,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.thumbnailFileName = thumbnailFileName;
     }
 
+    
+
     public ShowMeetingFileResponse withThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
         return this;
@@ -269,6 +283,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
     public void setThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
     }
+
+    
 
     public ShowMeetingFileResponse withPdfFileId(String pdfFileId) {
         this.pdfFileId = pdfFileId;
@@ -290,6 +306,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.pdfFileId = pdfFileId;
     }
 
+    
+
     public ShowMeetingFileResponse withPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
         return this;
@@ -309,6 +327,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
     public void setPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
     }
+
+    
 
     public ShowMeetingFileResponse withPdfFileSize(Long pdfFileSize) {
         this.pdfFileSize = pdfFileSize;
@@ -330,6 +350,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.pdfFileSize = pdfFileSize;
     }
 
+    
+
     public ShowMeetingFileResponse withFileUrl(String fileUrl) {
         this.fileUrl = fileUrl;
         return this;
@@ -349,6 +371,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
     public void setFileUrl(String fileUrl) {
         this.fileUrl = fileUrl;
     }
+
+    
 
     public ShowMeetingFileResponse withThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
@@ -370,6 +394,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    
+
     public ShowMeetingFileResponse withPdfUrl(String pdfUrl) {
         this.pdfUrl = pdfUrl;
         return this;
@@ -390,6 +416,8 @@ public class ShowMeetingFileResponse extends SdkResponse {
         this.pdfUrl = pdfUrl;
     }
 
+    
+
     public ShowMeetingFileResponse withCreationTimestamp(Long creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
         return this;
@@ -409,6 +437,9 @@ public class ShowMeetingFileResponse extends SdkResponse {
     public void setCreationTimestamp(Long creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

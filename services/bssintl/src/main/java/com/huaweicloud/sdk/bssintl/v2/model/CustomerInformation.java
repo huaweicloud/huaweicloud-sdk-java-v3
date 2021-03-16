@@ -130,6 +130,8 @@ public class CustomerInformation  {
         this.customer = customer;
     }
 
+    
+
     public CustomerInformation withAccountName(String accountName) {
         this.accountName = accountName;
         return this;
@@ -149,6 +151,8 @@ public class CustomerInformation  {
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
+
+    
 
     public CustomerInformation withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -170,6 +174,8 @@ public class CustomerInformation  {
         this.customerId = customerId;
     }
 
+    
+
     public CustomerInformation withAssociatedOn(String associatedOn) {
         this.associatedOn = associatedOn;
         return this;
@@ -189,6 +195,8 @@ public class CustomerInformation  {
     public void setAssociatedOn(String associatedOn) {
         this.associatedOn = associatedOn;
     }
+
+    
 
     public CustomerInformation withAssociationType(String associationType) {
         this.associationType = associationType;
@@ -210,6 +218,8 @@ public class CustomerInformation  {
         this.associationType = associationType;
     }
 
+    
+
     public CustomerInformation withLabel(String label) {
         this.label = label;
         return this;
@@ -229,6 +239,8 @@ public class CustomerInformation  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
 
     public CustomerInformation withTelephone(String telephone) {
         this.telephone = telephone;
@@ -250,6 +262,8 @@ public class CustomerInformation  {
         this.telephone = telephone;
     }
 
+    
+
     public CustomerInformation withVerifiedStatus(String verifiedStatus) {
         this.verifiedStatus = verifiedStatus;
         return this;
@@ -269,6 +283,8 @@ public class CustomerInformation  {
     public void setVerifiedStatus(String verifiedStatus) {
         this.verifiedStatus = verifiedStatus;
     }
+
+    
 
     public CustomerInformation withCountryCode(String countryCode) {
         this.countryCode = countryCode;
@@ -290,6 +306,8 @@ public class CustomerInformation  {
         this.countryCode = countryCode;
     }
 
+    
+
     public CustomerInformation withCustomerType(Integer customerType) {
         this.customerType = customerType;
         return this;
@@ -309,6 +327,8 @@ public class CustomerInformation  {
     public void setCustomerType(Integer customerType) {
         this.customerType = customerType;
     }
+
+    
 
     public CustomerInformation withIsFrozen(Integer isFrozen) {
         this.isFrozen = isFrozen;
@@ -330,6 +350,8 @@ public class CustomerInformation  {
         this.isFrozen = isFrozen;
     }
 
+    
+
     public CustomerInformation withAccountManagers(List<AccountManager> accountManagers) {
         this.accountManagers = accountManagers;
         return this;
@@ -337,9 +359,6 @@ public class CustomerInformation  {
 
     
     public CustomerInformation addAccountManagersItem(AccountManager accountManagersItem) {
-        if (this.accountManagers == null) {
-            this.accountManagers = new ArrayList<>();
-        }
         this.accountManagers.add(accountManagersItem);
         return this;
     }
@@ -364,6 +383,8 @@ public class CustomerInformation  {
         this.accountManagers = accountManagers;
     }
 
+    
+
     public CustomerInformation withXaccountId(String xaccountId) {
         this.xaccountId = xaccountId;
         return this;
@@ -383,6 +404,8 @@ public class CustomerInformation  {
     public void setXaccountId(String xaccountId) {
         this.xaccountId = xaccountId;
     }
+
+    
 
     public CustomerInformation withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
@@ -404,6 +427,8 @@ public class CustomerInformation  {
         this.xaccountType = xaccountType;
     }
 
+    
+
     public CustomerInformation withCustomerLevel(String customerLevel) {
         this.customerLevel = customerLevel;
         return this;
@@ -423,6 +448,9 @@ public class CustomerInformation  {
     public void setCustomerLevel(String customerLevel) {
         this.customerLevel = customerLevel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreatePublicipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePublicipRequestBody body = null;
+    private CreatePublicipRequestBody body;
 
     public CreatePublicipRequest withBody(CreatePublicipRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePublicipRequest  {
     public void setBody(CreatePublicipRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

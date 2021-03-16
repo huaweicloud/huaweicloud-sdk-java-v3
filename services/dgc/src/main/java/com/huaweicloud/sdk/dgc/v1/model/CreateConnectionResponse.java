@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 public class CreateConnectionResponse extends SdkResponse {
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

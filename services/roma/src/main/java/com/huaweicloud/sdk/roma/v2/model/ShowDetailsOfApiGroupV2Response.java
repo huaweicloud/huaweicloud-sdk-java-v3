@@ -139,13 +139,13 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -199,7 +199,7 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_app_name")
     
-    private Object romaAppName = null;
+    private Object romaAppName;
 
     public ShowDetailsOfApiGroupV2Response withId(String id) {
         this.id = id;
@@ -221,6 +221,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withName(String name) {
         this.name = name;
         return this;
@@ -240,6 +242,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowDetailsOfApiGroupV2Response withStatus(StatusEnum status) {
         this.status = status;
@@ -261,6 +265,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withSlDomain(String slDomain) {
         this.slDomain = slDomain;
         return this;
@@ -281,6 +287,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.slDomain = slDomain;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withSlDomains(List<String> slDomains) {
         this.slDomains = slDomains;
         return this;
@@ -288,9 +296,6 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
 
     
     public ShowDetailsOfApiGroupV2Response addSlDomainsItem(String slDomainsItem) {
-        if (this.slDomains == null) {
-            this.slDomains = new ArrayList<>();
-        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
@@ -315,6 +320,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.slDomains = slDomains;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -334,6 +341,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ShowDetailsOfApiGroupV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -355,6 +364,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.registerTime = registerTime;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -374,6 +385,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ShowDetailsOfApiGroupV2Response withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
@@ -395,6 +408,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.callLimits = callLimits;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
         return this;
@@ -414,6 +429,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     public void setTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
     }
+
+    
 
     public ShowDetailsOfApiGroupV2Response withTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
@@ -435,6 +452,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.timeUnit = timeUnit;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withUrlDomains(List<UrlDomain> urlDomains) {
         this.urlDomains = urlDomains;
         return this;
@@ -442,9 +461,6 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
 
     
     public ShowDetailsOfApiGroupV2Response addUrlDomainsItem(UrlDomain urlDomainsItem) {
-        if (this.urlDomains == null) {
-            this.urlDomains = new ArrayList<>();
-        }
         this.urlDomains.add(urlDomainsItem);
         return this;
     }
@@ -469,6 +485,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.urlDomains = urlDomains;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
         return this;
@@ -488,6 +506,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     public void setOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
     }
+
+    
 
     public ShowDetailsOfApiGroupV2Response withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
@@ -509,6 +529,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.isDefault = isDefault;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withVersion(String version) {
         this.version = version;
         return this;
@@ -528,6 +550,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ShowDetailsOfApiGroupV2Response withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -549,6 +573,8 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ShowDetailsOfApiGroupV2Response withRomaAppName(Object romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -568,6 +594,9 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     public void setRomaAppName(Object romaAppName) {
         this.romaAppName = romaAppName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

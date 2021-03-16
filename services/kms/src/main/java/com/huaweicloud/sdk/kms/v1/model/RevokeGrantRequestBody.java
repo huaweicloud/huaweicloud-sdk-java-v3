@@ -55,6 +55,8 @@ public class RevokeGrantRequestBody  {
         this.keyId = keyId;
     }
 
+    
+
     public RevokeGrantRequestBody withGrantId(String grantId) {
         this.grantId = grantId;
         return this;
@@ -75,6 +77,8 @@ public class RevokeGrantRequestBody  {
         this.grantId = grantId;
     }
 
+    
+
     public RevokeGrantRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -94,6 +98,9 @@ public class RevokeGrantRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

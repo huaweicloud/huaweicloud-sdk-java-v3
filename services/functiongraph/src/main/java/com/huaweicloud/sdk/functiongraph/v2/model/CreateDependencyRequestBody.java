@@ -75,9 +75,9 @@ public class CreateDependencyRequestBody  {
         public static final RuntimeEnum PYTHON_2_7 = new RuntimeEnum("Python 2.7");
         
         /**
-         * Enum _PYTHON_3_6 for value: "  Python 3.6"
+         * Enum PYTHON_3_6 for value: "Python 3.6"
          */
-        public static final RuntimeEnum _PYTHON_3_6 = new RuntimeEnum("  Python 3.6");
+        public static final RuntimeEnum PYTHON_3_6 = new RuntimeEnum("Python 3.6");
         
         /**
          * Enum GO_1_8 for value: "Go 1.8"
@@ -115,7 +115,7 @@ public class CreateDependencyRequestBody  {
             map.put("Node.js 10.16", NODE_JS_10_16);
             map.put("Node.js 12.13", NODE_JS_12_13);
             map.put("Python 2.7", PYTHON_2_7);
-            map.put("  Python 3.6", _PYTHON_3_6);
+            map.put("Python 3.6", PYTHON_3_6);
             map.put("Go 1.8", GO_1_8);
             map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
             map.put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
@@ -215,6 +215,8 @@ public class CreateDependencyRequestBody  {
         this.dependFile = dependFile;
     }
 
+    
+
     public CreateDependencyRequestBody withDependLink(String dependLink) {
         this.dependLink = dependLink;
         return this;
@@ -234,6 +236,8 @@ public class CreateDependencyRequestBody  {
     public void setDependLink(String dependLink) {
         this.dependLink = dependLink;
     }
+
+    
 
     public CreateDependencyRequestBody withDependType(String dependType) {
         this.dependType = dependType;
@@ -255,6 +259,8 @@ public class CreateDependencyRequestBody  {
         this.dependType = dependType;
     }
 
+    
+
     public CreateDependencyRequestBody withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
         return this;
@@ -274,6 +280,8 @@ public class CreateDependencyRequestBody  {
     public void setRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
     }
+
+    
 
     public CreateDependencyRequestBody withName(String name) {
         this.name = name;
@@ -295,6 +303,8 @@ public class CreateDependencyRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateDependencyRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -314,6 +324,9 @@ public class CreateDependencyRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

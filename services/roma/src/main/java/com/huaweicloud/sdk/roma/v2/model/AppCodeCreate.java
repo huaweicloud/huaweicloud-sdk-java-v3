@@ -42,6 +42,9 @@ public class AppCodeCreate  {
     public void setAppCode(String appCode) {
         this.appCode = appCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

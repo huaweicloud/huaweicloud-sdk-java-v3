@@ -49,6 +49,8 @@ public class RestLockSiteViewReqBody  {
         this.status = status;
     }
 
+    
+
     public RestLockSiteViewReqBody withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -68,6 +70,9 @@ public class RestLockSiteViewReqBody  {
     public void setParticipantID(String participantID) {
         this.participantID = participantID;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

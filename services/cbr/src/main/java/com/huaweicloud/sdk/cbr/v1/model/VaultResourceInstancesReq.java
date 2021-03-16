@@ -257,9 +257,6 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addTagsItem(TagsReq tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -284,6 +281,8 @@ public class VaultResourceInstancesReq  {
         this.tags = tags;
     }
 
+    
+
     public VaultResourceInstancesReq withTagsAny(List<TagsReq> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
@@ -291,9 +290,6 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addTagsAnyItem(TagsReq tagsAnyItem) {
-        if (this.tagsAny == null) {
-            this.tagsAny = new ArrayList<>();
-        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
@@ -318,6 +314,8 @@ public class VaultResourceInstancesReq  {
         this.tagsAny = tagsAny;
     }
 
+    
+
     public VaultResourceInstancesReq withNotTags(List<TagsReq> notTags) {
         this.notTags = notTags;
         return this;
@@ -325,9 +323,6 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addNotTagsItem(TagsReq notTagsItem) {
-        if (this.notTags == null) {
-            this.notTags = new ArrayList<>();
-        }
         this.notTags.add(notTagsItem);
         return this;
     }
@@ -352,6 +347,8 @@ public class VaultResourceInstancesReq  {
         this.notTags = notTags;
     }
 
+    
+
     public VaultResourceInstancesReq withNotTagsAny(List<TagsReq> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
@@ -359,9 +356,6 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addNotTagsAnyItem(TagsReq notTagsAnyItem) {
-        if (this.notTagsAny == null) {
-            this.notTagsAny = new ArrayList<>();
-        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
@@ -386,6 +380,8 @@ public class VaultResourceInstancesReq  {
         this.notTagsAny = notTagsAny;
     }
 
+    
+
     public VaultResourceInstancesReq withSysTags(List<SysTags> sysTags) {
         this.sysTags = sysTags;
         return this;
@@ -393,9 +389,6 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addSysTagsItem(SysTags sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
@@ -420,6 +413,8 @@ public class VaultResourceInstancesReq  {
         this.sysTags = sysTags;
     }
 
+    
+
     public VaultResourceInstancesReq withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -439,6 +434,8 @@ public class VaultResourceInstancesReq  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
 
     public VaultResourceInstancesReq withOffset(String offset) {
         this.offset = offset;
@@ -460,6 +457,8 @@ public class VaultResourceInstancesReq  {
         this.offset = offset;
     }
 
+    
+
     public VaultResourceInstancesReq withAction(String action) {
         this.action = action;
         return this;
@@ -480,6 +479,8 @@ public class VaultResourceInstancesReq  {
         this.action = action;
     }
 
+    
+
     public VaultResourceInstancesReq withMatches(List<Match> matches) {
         this.matches = matches;
         return this;
@@ -487,9 +488,6 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addMatchesItem(Match matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -514,6 +512,8 @@ public class VaultResourceInstancesReq  {
         this.matches = matches;
     }
 
+    
+
     public VaultResourceInstancesReq withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
@@ -534,6 +534,8 @@ public class VaultResourceInstancesReq  {
         this.cloudType = cloudType;
     }
 
+    
+
     public VaultResourceInstancesReq withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
@@ -553,6 +555,9 @@ public class VaultResourceInstancesReq  {
     public void setObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

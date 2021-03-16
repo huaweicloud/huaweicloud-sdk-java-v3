@@ -33,13 +33,13 @@ public class ShowTranscodingsTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Integer page = 0;
+    private Integer page;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size = 10;
+    private Integer size;
 
     public ShowTranscodingsTemplateRequest withDomain(String domain) {
         this.domain = domain;
@@ -61,6 +61,8 @@ public class ShowTranscodingsTemplateRequest  {
         this.domain = domain;
     }
 
+    
+
     public ShowTranscodingsTemplateRequest withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -80,6 +82,8 @@ public class ShowTranscodingsTemplateRequest  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ShowTranscodingsTemplateRequest withPage(Integer page) {
         this.page = page;
@@ -102,6 +106,8 @@ public class ShowTranscodingsTemplateRequest  {
         this.page = page;
     }
 
+    
+
     public ShowTranscodingsTemplateRequest withSize(Integer size) {
         this.size = size;
         return this;
@@ -123,6 +129,9 @@ public class ShowTranscodingsTemplateRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

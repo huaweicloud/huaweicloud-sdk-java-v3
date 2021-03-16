@@ -43,13 +43,13 @@ public class IpGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_list")
     
-    private List<IpInfo> ipList = new ArrayList<>();
+    private List<IpInfo> ipList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<ListenerRef> listeners = new ArrayList<>();
+    private List<ListenerRef> listeners = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,6 +89,8 @@ public class IpGroup  {
         this.createdAt = createdAt;
     }
 
+    
+
     public IpGroup withDescription(String description) {
         this.description = description;
         return this;
@@ -109,6 +111,8 @@ public class IpGroup  {
         this.description = description;
     }
 
+    
+
     public IpGroup withId(String id) {
         this.id = id;
         return this;
@@ -128,6 +132,8 @@ public class IpGroup  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public IpGroup withIpList(List<IpInfo> ipList) {
         this.ipList = ipList;
@@ -160,6 +166,8 @@ public class IpGroup  {
         this.ipList = ipList;
     }
 
+    
+
     public IpGroup withListeners(List<ListenerRef> listeners) {
         this.listeners = listeners;
         return this;
@@ -191,6 +199,8 @@ public class IpGroup  {
         this.listeners = listeners;
     }
 
+    
+
     public IpGroup withName(String name) {
         this.name = name;
         return this;
@@ -210,6 +220,8 @@ public class IpGroup  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public IpGroup withProjectId(String projectId) {
         this.projectId = projectId;
@@ -231,6 +243,8 @@ public class IpGroup  {
         this.projectId = projectId;
     }
 
+    
+
     public IpGroup withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -250,6 +264,9 @@ public class IpGroup  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

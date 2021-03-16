@@ -60,6 +60,8 @@ public class ListEnvironmentsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListEnvironmentsV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListEnvironmentsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListEnvironmentsV2Response withEnvs(List<EnvResp> envs) {
         this.envs = envs;
         return this;
@@ -87,9 +91,6 @@ public class ListEnvironmentsV2Response extends SdkResponse {
 
     
     public ListEnvironmentsV2Response addEnvsItem(EnvResp envsItem) {
-        if (this.envs == null) {
-            this.envs = new ArrayList<>();
-        }
         this.envs.add(envsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListEnvironmentsV2Response extends SdkResponse {
     public void setEnvs(List<EnvResp> envs) {
         this.envs = envs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -64,7 +64,7 @@ public class LdApiTestHistoryInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="test_date")
     
-    private OffsetDateTime testDate = null;
+    private OffsetDateTime testDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class LdApiTestHistoryInfoV2  {
         this.testStatusCode = testStatusCode;
     }
 
+    
+
     public LdApiTestHistoryInfoV2 withTestRequest(String testRequest) {
         this.testRequest = testRequest;
         return this;
@@ -111,6 +113,8 @@ public class LdApiTestHistoryInfoV2  {
     public void setTestRequest(String testRequest) {
         this.testRequest = testRequest;
     }
+
+    
 
     public LdApiTestHistoryInfoV2 withTestUsedTime(Integer testUsedTime) {
         this.testUsedTime = testUsedTime;
@@ -132,6 +136,8 @@ public class LdApiTestHistoryInfoV2  {
         this.testUsedTime = testUsedTime;
     }
 
+    
+
     public LdApiTestHistoryInfoV2 withTestOperator(String testOperator) {
         this.testOperator = testOperator;
         return this;
@@ -151,6 +157,8 @@ public class LdApiTestHistoryInfoV2  {
     public void setTestOperator(String testOperator) {
         this.testOperator = testOperator;
     }
+
+    
 
     public LdApiTestHistoryInfoV2 withTestResponse(String testResponse) {
         this.testResponse = testResponse;
@@ -172,6 +180,8 @@ public class LdApiTestHistoryInfoV2  {
         this.testResponse = testResponse;
     }
 
+    
+
     public LdApiTestHistoryInfoV2 withTestMethod(String testMethod) {
         this.testMethod = testMethod;
         return this;
@@ -191,6 +201,8 @@ public class LdApiTestHistoryInfoV2  {
     public void setTestMethod(String testMethod) {
         this.testMethod = testMethod;
     }
+
+    
 
     public LdApiTestHistoryInfoV2 withTestId(Integer testId) {
         this.testId = testId;
@@ -212,6 +224,8 @@ public class LdApiTestHistoryInfoV2  {
         this.testId = testId;
     }
 
+    
+
     public LdApiTestHistoryInfoV2 withTestDate(OffsetDateTime testDate) {
         this.testDate = testDate;
         return this;
@@ -232,6 +246,8 @@ public class LdApiTestHistoryInfoV2  {
         this.testDate = testDate;
     }
 
+    
+
     public LdApiTestHistoryInfoV2 withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -251,6 +267,9 @@ public class LdApiTestHistoryInfoV2  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

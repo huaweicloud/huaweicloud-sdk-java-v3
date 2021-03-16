@@ -61,6 +61,8 @@ public class Nics  {
         this.id = id;
     }
 
+    
+
     public Nics withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class Nics  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Nics withCidr(String cidr) {
         this.cidr = cidr;
@@ -101,6 +105,8 @@ public class Nics  {
         this.cidr = cidr;
     }
 
+    
+
     public Nics withIp(String ip) {
         this.ip = ip;
         return this;
@@ -120,6 +126,9 @@ public class Nics  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

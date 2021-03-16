@@ -32,19 +32,19 @@ public class CheckDataTransformationReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="object_info")
     
-    private List<DatabaseObjectVO> objectInfo = new ArrayList<>();
+    private List<DatabaseObjectVO> objectInfo = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transformation_info")
     
-    private TransformationInfo transformationInfo = null;
+    private TransformationInfo transformationInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="config_transformation")
     
-    private ConfigTransformationVo configTransformation = null;
+    private ConfigTransformationVo configTransformation;
 
     public CheckDataTransformationReq withJobId(String jobId) {
         this.jobId = jobId;
@@ -65,6 +65,8 @@ public class CheckDataTransformationReq  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
+
+    
 
     public CheckDataTransformationReq withObjectInfo(List<DatabaseObjectVO> objectInfo) {
         this.objectInfo = objectInfo;
@@ -97,6 +99,8 @@ public class CheckDataTransformationReq  {
         this.objectInfo = objectInfo;
     }
 
+    
+
     public CheckDataTransformationReq withTransformationInfo(TransformationInfo transformationInfo) {
         this.transformationInfo = transformationInfo;
         return this;
@@ -124,6 +128,8 @@ public class CheckDataTransformationReq  {
         this.transformationInfo = transformationInfo;
     }
 
+    
+
     public CheckDataTransformationReq withConfigTransformation(ConfigTransformationVo configTransformation) {
         this.configTransformation = configTransformation;
         return this;
@@ -150,6 +156,9 @@ public class CheckDataTransformationReq  {
     public void setConfigTransformation(ConfigTransformationVo configTransformation) {
         this.configTransformation = configTransformation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

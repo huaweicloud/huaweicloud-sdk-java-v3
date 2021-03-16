@@ -45,13 +45,13 @@ public class ListEnvironmentVariablesV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,6 +79,8 @@ public class ListEnvironmentVariablesV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListEnvironmentVariablesV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -98,6 +100,8 @@ public class ListEnvironmentVariablesV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListEnvironmentVariablesV2Request withEnvId(String envId) {
         this.envId = envId;
@@ -119,6 +123,8 @@ public class ListEnvironmentVariablesV2Request  {
         this.envId = envId;
     }
 
+    
+
     public ListEnvironmentVariablesV2Request withVariableName(String variableName) {
         this.variableName = variableName;
         return this;
@@ -139,6 +145,8 @@ public class ListEnvironmentVariablesV2Request  {
         this.variableName = variableName;
     }
 
+    
+
     public ListEnvironmentVariablesV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -158,6 +166,8 @@ public class ListEnvironmentVariablesV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListEnvironmentVariablesV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -181,6 +191,8 @@ public class ListEnvironmentVariablesV2Request  {
         this.limit = limit;
     }
 
+    
+
     public ListEnvironmentVariablesV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -200,6 +212,9 @@ public class ListEnvironmentVariablesV2Request  {
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

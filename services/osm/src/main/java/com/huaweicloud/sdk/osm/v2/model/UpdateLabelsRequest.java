@@ -46,7 +46,7 @@ public class UpdateLabelsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateLabelsReq body = null;
+    private UpdateLabelsReq body;
 
     public UpdateLabelsRequest withLabelId(Integer labelId) {
         this.labelId = labelId;
@@ -69,6 +69,8 @@ public class UpdateLabelsRequest  {
     public void setLabelId(Integer labelId) {
         this.labelId = labelId;
     }
+
+    
 
     public UpdateLabelsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -94,6 +96,8 @@ public class UpdateLabelsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public UpdateLabelsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -116,6 +120,8 @@ public class UpdateLabelsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UpdateLabelsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -137,6 +143,8 @@ public class UpdateLabelsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public UpdateLabelsRequest withBody(UpdateLabelsReq body) {
         this.body = body;
@@ -164,6 +172,9 @@ public class UpdateLabelsRequest  {
     public void setBody(UpdateLabelsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListRegionsResponse extends SdkResponse {
 
     
     public ListRegionsResponse addValueItem(Region valueItem) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
-        }
         this.value.add(valueItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListRegionsResponse extends SdkResponse {
     public void setValue(List<Region> value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

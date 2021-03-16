@@ -61,6 +61,8 @@ public class UpdateInstanceTopicReqTopics  {
         this.id = id;
     }
 
+    
+
     public UpdateInstanceTopicReqTopics withRetentionTime(String retentionTime) {
         this.retentionTime = retentionTime;
         return this;
@@ -80,6 +82,8 @@ public class UpdateInstanceTopicReqTopics  {
     public void setRetentionTime(String retentionTime) {
         this.retentionTime = retentionTime;
     }
+
+    
 
     public UpdateInstanceTopicReqTopics withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
@@ -101,6 +105,8 @@ public class UpdateInstanceTopicReqTopics  {
         this.syncReplication = syncReplication;
     }
 
+    
+
     public UpdateInstanceTopicReqTopics withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
@@ -120,6 +126,9 @@ public class UpdateInstanceTopicReqTopics  {
     public void setSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

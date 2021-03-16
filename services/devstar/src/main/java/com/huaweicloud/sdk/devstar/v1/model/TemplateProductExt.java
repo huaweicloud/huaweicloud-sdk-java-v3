@@ -85,6 +85,8 @@ public class TemplateProductExt  {
         this.id = id;
     }
 
+    
+
     public TemplateProductExt withProductshort(String productshort) {
         this.productshort = productshort;
         return this;
@@ -104,6 +106,8 @@ public class TemplateProductExt  {
     public void setProductshort(String productshort) {
         this.productshort = productshort;
     }
+
+    
 
     public TemplateProductExt withProductName(String productName) {
         this.productName = productName;
@@ -125,6 +129,8 @@ public class TemplateProductExt  {
         this.productName = productName;
     }
 
+    
+
     public TemplateProductExt withHomeLink(String homeLink) {
         this.homeLink = homeLink;
         return this;
@@ -144,6 +150,8 @@ public class TemplateProductExt  {
     public void setHomeLink(String homeLink) {
         this.homeLink = homeLink;
     }
+
+    
 
     public TemplateProductExt withApiLink(String apiLink) {
         this.apiLink = apiLink;
@@ -165,6 +173,8 @@ public class TemplateProductExt  {
         this.apiLink = apiLink;
     }
 
+    
+
     public TemplateProductExt withSdkLink(String sdkLink) {
         this.sdkLink = sdkLink;
         return this;
@@ -184,6 +194,8 @@ public class TemplateProductExt  {
     public void setSdkLink(String sdkLink) {
         this.sdkLink = sdkLink;
     }
+
+    
 
     public TemplateProductExt withDocLink(String docLink) {
         this.docLink = docLink;
@@ -205,6 +217,8 @@ public class TemplateProductExt  {
         this.docLink = docLink;
     }
 
+    
+
     public TemplateProductExt withLogoLink(String logoLink) {
         this.logoLink = logoLink;
         return this;
@@ -224,6 +238,9 @@ public class TemplateProductExt  {
     public void setLogoLink(String logoLink) {
         this.logoLink = logoLink;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

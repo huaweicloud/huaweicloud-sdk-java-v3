@@ -54,6 +54,8 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
         this.successCount = successCount;
     }
 
+    
+
     public BatchDisassociateThrottlingPolicyV2Response withFailure(List<ThrottleBindingBatchResultFailureResp> failure) {
         this.failure = failure;
         return this;
@@ -61,9 +63,6 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
 
     
     public BatchDisassociateThrottlingPolicyV2Response addFailureItem(ThrottleBindingBatchResultFailureResp failureItem) {
-        if (this.failure == null) {
-            this.failure = new ArrayList<>();
-        }
         this.failure.add(failureItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
     public void setFailure(List<ThrottleBindingBatchResultFailureResp> failure) {
         this.failure = failure;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

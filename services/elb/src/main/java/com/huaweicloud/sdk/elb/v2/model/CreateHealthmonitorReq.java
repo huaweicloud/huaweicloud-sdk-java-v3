@@ -203,6 +203,8 @@ public class CreateHealthmonitorReq  {
         this.tenantId = tenantId;
     }
 
+    
+
     public CreateHealthmonitorReq withName(String name) {
         this.name = name;
         return this;
@@ -223,6 +225,8 @@ public class CreateHealthmonitorReq  {
         this.name = name;
     }
 
+    
+
     public CreateHealthmonitorReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -242,6 +246,8 @@ public class CreateHealthmonitorReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateHealthmonitorReq withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
@@ -265,6 +271,8 @@ public class CreateHealthmonitorReq  {
         this.monitorPort = monitorPort;
     }
 
+    
+
     public CreateHealthmonitorReq withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -287,6 +295,8 @@ public class CreateHealthmonitorReq  {
         this.timeout = timeout;
     }
 
+    
+
     public CreateHealthmonitorReq withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -306,6 +316,8 @@ public class CreateHealthmonitorReq  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public CreateHealthmonitorReq withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
@@ -327,6 +339,8 @@ public class CreateHealthmonitorReq  {
         this.expectedCodes = expectedCodes;
     }
 
+    
+
     public CreateHealthmonitorReq withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -346,6 +360,8 @@ public class CreateHealthmonitorReq  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public CreateHealthmonitorReq withUrlPath(String urlPath) {
         this.urlPath = urlPath;
@@ -367,6 +383,8 @@ public class CreateHealthmonitorReq  {
         this.urlPath = urlPath;
     }
 
+    
+
     public CreateHealthmonitorReq withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
@@ -386,6 +404,8 @@ public class CreateHealthmonitorReq  {
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
+
+    
 
     public CreateHealthmonitorReq withDelay(Integer delay) {
         this.delay = delay;
@@ -409,6 +429,8 @@ public class CreateHealthmonitorReq  {
         this.delay = delay;
     }
 
+    
+
     public CreateHealthmonitorReq withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
         return this;
@@ -431,6 +453,8 @@ public class CreateHealthmonitorReq  {
         this.maxRetries = maxRetries;
     }
 
+    
+
     public CreateHealthmonitorReq withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -450,6 +474,9 @@ public class CreateHealthmonitorReq  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

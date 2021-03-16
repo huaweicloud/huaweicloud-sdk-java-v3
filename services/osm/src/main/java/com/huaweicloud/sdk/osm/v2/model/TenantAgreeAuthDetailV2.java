@@ -63,6 +63,8 @@ public class TenantAgreeAuthDetailV2  {
         this.port = port;
     }
 
+    
+
     public TenantAgreeAuthDetailV2 withAccount(String account) {
         this.account = account;
         return this;
@@ -83,6 +85,8 @@ public class TenantAgreeAuthDetailV2  {
         this.account = account;
     }
 
+    
+
     public TenantAgreeAuthDetailV2 withPassword(String password) {
         this.password = password;
         return this;
@@ -102,6 +106,8 @@ public class TenantAgreeAuthDetailV2  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
 
     public TenantAgreeAuthDetailV2 withAuthDetailId(Long authDetailId) {
         this.authDetailId = authDetailId;
@@ -124,6 +130,9 @@ public class TenantAgreeAuthDetailV2  {
     public void setAuthDetailId(Long authDetailId) {
         this.authDetailId = authDetailId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

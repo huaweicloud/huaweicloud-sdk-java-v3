@@ -49,6 +49,8 @@ public class KeystoneRemoveUserFromGroupRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public KeystoneRemoveUserFromGroupRequest withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -68,6 +70,9 @@ public class KeystoneRemoveUserFromGroupRequest  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

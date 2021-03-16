@@ -51,6 +51,8 @@ public class IncidentStatusCount  {
         this.status = status;
     }
 
+    
+
     public IncidentStatusCount withCount(Integer count) {
         this.count = count;
         return this;
@@ -72,6 +74,9 @@ public class IncidentStatusCount  {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

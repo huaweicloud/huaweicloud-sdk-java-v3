@@ -28,7 +28,7 @@ public class ResizeServerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResizeServerRequestBody body = null;
+    private ResizeServerRequestBody body;
 
     public ResizeServerRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class ResizeServerRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public ResizeServerRequest withBody(ResizeServerRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ResizeServerRequest  {
     public void setBody(ResizeServerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

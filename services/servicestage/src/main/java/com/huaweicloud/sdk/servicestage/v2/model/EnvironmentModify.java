@@ -55,6 +55,8 @@ public class EnvironmentModify  {
         this.name = name;
     }
 
+    
+
     public EnvironmentModify withAlias(String alias) {
         this.alias = alias;
         return this;
@@ -75,6 +77,8 @@ public class EnvironmentModify  {
         this.alias = alias;
     }
 
+    
+
     public EnvironmentModify withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +98,9 @@ public class EnvironmentModify  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

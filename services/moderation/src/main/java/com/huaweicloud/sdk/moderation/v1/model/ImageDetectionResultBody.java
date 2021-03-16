@@ -22,7 +22,7 @@ public class ImageDetectionResultBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private ImageDetectionResultDetail detail = null;
+    private ImageDetectionResultDetail detail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,7 +34,7 @@ public class ImageDetectionResultBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category_suggestion")
     
-    private Object categorySuggestion = null;
+    private Object categorySuggestion;
 
     public ImageDetectionResultBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
@@ -63,6 +63,8 @@ public class ImageDetectionResultBody  {
         this.detail = detail;
     }
 
+    
+
     public ImageDetectionResultBody withSuggestion(String suggestion) {
         this.suggestion = suggestion;
         return this;
@@ -83,6 +85,8 @@ public class ImageDetectionResultBody  {
         this.suggestion = suggestion;
     }
 
+    
+
     public ImageDetectionResultBody withCategorySuggestion(Object categorySuggestion) {
         this.categorySuggestion = categorySuggestion;
         return this;
@@ -102,6 +106,9 @@ public class ImageDetectionResultBody  {
     public void setCategorySuggestion(Object categorySuggestion) {
         this.categorySuggestion = categorySuggestion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

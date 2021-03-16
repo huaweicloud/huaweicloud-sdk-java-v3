@@ -54,6 +54,8 @@ public class ListBackgroundTaskResponse extends SdkResponse {
         this.taskCount = taskCount;
     }
 
+    
+
     public ListBackgroundTaskResponse withTasks(List<SingleBackgroundTask> tasks) {
         this.tasks = tasks;
         return this;
@@ -61,9 +63,6 @@ public class ListBackgroundTaskResponse extends SdkResponse {
 
     
     public ListBackgroundTaskResponse addTasksItem(SingleBackgroundTask tasksItem) {
-        if (this.tasks == null) {
-            this.tasks = new ArrayList<>();
-        }
         this.tasks.add(tasksItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListBackgroundTaskResponse extends SdkResponse {
     public void setTasks(List<SingleBackgroundTask> tasks) {
         this.tasks = tasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

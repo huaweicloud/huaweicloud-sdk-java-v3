@@ -42,6 +42,9 @@ public class AuthenticatingProxy  {
     public void setCa(String ca) {
         this.ca = ca;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

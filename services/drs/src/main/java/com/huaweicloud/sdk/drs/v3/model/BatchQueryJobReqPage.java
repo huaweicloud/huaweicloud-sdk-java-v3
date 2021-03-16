@@ -24,13 +24,13 @@ public class BatchQueryJobReqPage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<String> jobs = new ArrayList<>();
+    private List<String> jobs = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_req")
     
-    private PageReq pageReq = null;
+    private PageReq pageReq;
 
     public BatchQueryJobReqPage withJobs(List<String> jobs) {
         this.jobs = jobs;
@@ -63,6 +63,8 @@ public class BatchQueryJobReqPage  {
         this.jobs = jobs;
     }
 
+    
+
     public BatchQueryJobReqPage withPageReq(PageReq pageReq) {
         this.pageReq = pageReq;
         return this;
@@ -89,6 +91,9 @@ public class BatchQueryJobReqPage  {
     public void setPageReq(PageReq pageReq) {
         this.pageReq = pageReq;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

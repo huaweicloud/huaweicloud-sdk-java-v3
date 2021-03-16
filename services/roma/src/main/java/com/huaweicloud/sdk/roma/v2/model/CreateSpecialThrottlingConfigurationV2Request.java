@@ -34,7 +34,7 @@ public class CreateSpecialThrottlingConfigurationV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ThrottleSpecialReq body = null;
+    private ThrottleSpecialReq body;
 
     public CreateSpecialThrottlingConfigurationV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreateSpecialThrottlingConfigurationV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateSpecialThrottlingConfigurationV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
@@ -75,6 +77,8 @@ public class CreateSpecialThrottlingConfigurationV2Request  {
     public void setThrottleId(String throttleId) {
         this.throttleId = throttleId;
     }
+
+    
 
     public CreateSpecialThrottlingConfigurationV2Request withBody(ThrottleSpecialReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateSpecialThrottlingConfigurationV2Request  {
     public void setBody(ThrottleSpecialReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

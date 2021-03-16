@@ -42,6 +42,9 @@ public class DeleteApplicationRequest  {
     public void setApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

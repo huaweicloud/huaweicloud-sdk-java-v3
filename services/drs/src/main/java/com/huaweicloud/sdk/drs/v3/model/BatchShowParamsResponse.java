@@ -41,9 +41,6 @@ public class BatchShowParamsResponse extends SdkResponse {
 
     
     public BatchShowParamsResponse addParamsListItem(QueryDbParamsResp paramsListItem) {
-        if (this.paramsList == null) {
-            this.paramsList = new ArrayList<>();
-        }
         this.paramsList.add(paramsListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class BatchShowParamsResponse extends SdkResponse {
         this.paramsList = paramsList;
     }
 
+    
+
     public BatchShowParamsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class BatchShowParamsResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

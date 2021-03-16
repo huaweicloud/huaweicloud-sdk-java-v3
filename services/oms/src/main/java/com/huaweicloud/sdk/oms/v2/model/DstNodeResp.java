@@ -49,6 +49,8 @@ public class DstNodeResp  {
         this.bucket = bucket;
     }
 
+    
+
     public DstNodeResp withRegion(String region) {
         this.region = region;
         return this;
@@ -68,6 +70,9 @@ public class DstNodeResp  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -109,6 +109,8 @@ public class DemandProductInfo  {
         this.id = id;
     }
 
+    
+
     public DemandProductInfo withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
@@ -128,6 +130,8 @@ public class DemandProductInfo  {
     public void setCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
     }
+
+    
 
     public DemandProductInfo withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -149,6 +153,8 @@ public class DemandProductInfo  {
         this.resourceType = resourceType;
     }
 
+    
+
     public DemandProductInfo withResourceSpec(String resourceSpec) {
         this.resourceSpec = resourceSpec;
         return this;
@@ -168,6 +174,8 @@ public class DemandProductInfo  {
     public void setResourceSpec(String resourceSpec) {
         this.resourceSpec = resourceSpec;
     }
+
+    
 
     public DemandProductInfo withRegion(String region) {
         this.region = region;
@@ -189,6 +197,8 @@ public class DemandProductInfo  {
         this.region = region;
     }
 
+    
+
     public DemandProductInfo withAvailableZone(String availableZone) {
         this.availableZone = availableZone;
         return this;
@@ -208,6 +218,8 @@ public class DemandProductInfo  {
     public void setAvailableZone(String availableZone) {
         this.availableZone = availableZone;
     }
+
+    
 
     public DemandProductInfo withResourceSize(Integer resourceSize) {
         this.resourceSize = resourceSize;
@@ -231,6 +243,8 @@ public class DemandProductInfo  {
         this.resourceSize = resourceSize;
     }
 
+    
+
     public DemandProductInfo withSizeMeasureId(Integer sizeMeasureId) {
         this.sizeMeasureId = sizeMeasureId;
         return this;
@@ -250,6 +264,8 @@ public class DemandProductInfo  {
     public void setSizeMeasureId(Integer sizeMeasureId) {
         this.sizeMeasureId = sizeMeasureId;
     }
+
+    
 
     public DemandProductInfo withUsageFactor(String usageFactor) {
         this.usageFactor = usageFactor;
@@ -271,6 +287,8 @@ public class DemandProductInfo  {
         this.usageFactor = usageFactor;
     }
 
+    
+
     public DemandProductInfo withUsageValue(Double usageValue) {
         this.usageValue = usageValue;
         return this;
@@ -290,6 +308,8 @@ public class DemandProductInfo  {
     public void setUsageValue(Double usageValue) {
         this.usageValue = usageValue;
     }
+
+    
 
     public DemandProductInfo withUsageMeasureId(Integer usageMeasureId) {
         this.usageMeasureId = usageMeasureId;
@@ -313,6 +333,8 @@ public class DemandProductInfo  {
         this.usageMeasureId = usageMeasureId;
     }
 
+    
+
     public DemandProductInfo withSubscriptionNum(Integer subscriptionNum) {
         this.subscriptionNum = subscriptionNum;
         return this;
@@ -334,6 +356,9 @@ public class DemandProductInfo  {
     public void setSubscriptionNum(Integer subscriptionNum) {
         this.subscriptionNum = subscriptionNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

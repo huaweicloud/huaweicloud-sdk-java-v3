@@ -24,19 +24,19 @@ public class AvParameters  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video")
     
-    private VideoParameters video = null;
+    private VideoParameters video;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private Audio audio = null;
+    private Audio audio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="common")
     
-    private Common common = null;
+    private Common common;
 
     public AvParameters withVideo(VideoParameters video) {
         this.video = video;
@@ -65,6 +65,8 @@ public class AvParameters  {
         this.video = video;
     }
 
+    
+
     public AvParameters withAudio(Audio audio) {
         this.audio = audio;
         return this;
@@ -92,6 +94,8 @@ public class AvParameters  {
         this.audio = audio;
     }
 
+    
+
     public AvParameters withCommon(Common common) {
         this.common = common;
         return this;
@@ -118,6 +122,9 @@ public class AvParameters  {
     public void setCommon(Common common) {
         this.common = common;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

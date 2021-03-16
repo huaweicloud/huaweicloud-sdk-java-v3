@@ -49,6 +49,8 @@ public class PeerAddress  {
         this.domainPort = domainPort;
     }
 
+    
+
     public PeerAddress withIpPort(String ipPort) {
         this.ipPort = ipPort;
         return this;
@@ -68,6 +70,9 @@ public class PeerAddress  {
     public void setIpPort(String ipPort) {
         this.ipPort = ipPort;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

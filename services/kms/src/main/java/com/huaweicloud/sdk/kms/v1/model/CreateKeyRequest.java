@@ -22,13 +22,13 @@ public class CreateKeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateKeyRequestBody body = null;
+    private CreateKeyRequestBody body;
 
     public CreateKeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,6 +49,8 @@ public class CreateKeyRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public CreateKeyRequest withBody(CreateKeyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateKeyRequest  {
     public void setBody(CreateKeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

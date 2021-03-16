@@ -34,7 +34,7 @@ public class CheckTokenRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ValidateTokenReqDTO body = null;
+    private ValidateTokenReqDTO body;
 
     public CheckTokenRequest withXRequestID(String xRequestID) {
         this.xRequestID = xRequestID;
@@ -58,6 +58,8 @@ public class CheckTokenRequest  {
         this.xRequestID = xRequestID;
     }
 
+    
+
     public CheckTokenRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class CheckTokenRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public CheckTokenRequest withBody(ValidateTokenReqDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CheckTokenRequest  {
     public void setBody(ValidateTokenReqDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

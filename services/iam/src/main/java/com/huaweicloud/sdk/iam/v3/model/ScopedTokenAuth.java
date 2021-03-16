@@ -23,13 +23,13 @@ public class ScopedTokenAuth  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity")
     
-    private ScopedTokenIdentity identity = null;
+    private ScopedTokenIdentity identity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scope")
     
-    private TokenSocpeOption scope = null;
+    private TokenSocpeOption scope;
 
     public ScopedTokenAuth withIdentity(ScopedTokenIdentity identity) {
         this.identity = identity;
@@ -58,6 +58,8 @@ public class ScopedTokenAuth  {
         this.identity = identity;
     }
 
+    
+
     public ScopedTokenAuth withScope(TokenSocpeOption scope) {
         this.scope = scope;
         return this;
@@ -84,6 +86,9 @@ public class ScopedTokenAuth  {
     public void setScope(TokenSocpeOption scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

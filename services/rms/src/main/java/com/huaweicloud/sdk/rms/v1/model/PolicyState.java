@@ -103,6 +103,8 @@ public class PolicyState  {
         this.domainId = domainId;
     }
 
+    
+
     public PolicyState withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -122,6 +124,8 @@ public class PolicyState  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
 
     public PolicyState withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -143,6 +147,8 @@ public class PolicyState  {
         this.resourceId = resourceId;
     }
 
+    
+
     public PolicyState withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -162,6 +168,8 @@ public class PolicyState  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
+
+    
 
     public PolicyState withResourceProvider(String resourceProvider) {
         this.resourceProvider = resourceProvider;
@@ -183,6 +191,8 @@ public class PolicyState  {
         this.resourceProvider = resourceProvider;
     }
 
+    
+
     public PolicyState withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -202,6 +212,8 @@ public class PolicyState  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    
 
     public PolicyState withComplianceState(String complianceState) {
         this.complianceState = complianceState;
@@ -223,6 +235,8 @@ public class PolicyState  {
         this.complianceState = complianceState;
     }
 
+    
+
     public PolicyState withPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
         return this;
@@ -242,6 +256,8 @@ public class PolicyState  {
     public void setPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
     }
+
+    
 
     public PolicyState withPolicyAssignmentName(String policyAssignmentName) {
         this.policyAssignmentName = policyAssignmentName;
@@ -263,6 +279,8 @@ public class PolicyState  {
         this.policyAssignmentName = policyAssignmentName;
     }
 
+    
+
     public PolicyState withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
         return this;
@@ -283,6 +301,8 @@ public class PolicyState  {
         this.policyDefinitionId = policyDefinitionId;
     }
 
+    
+
     public PolicyState withEvaluationTime(String evaluationTime) {
         this.evaluationTime = evaluationTime;
         return this;
@@ -302,6 +322,9 @@ public class PolicyState  {
     public void setEvaluationTime(String evaluationTime) {
         this.evaluationTime = evaluationTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

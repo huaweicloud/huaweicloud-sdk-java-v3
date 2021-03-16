@@ -62,6 +62,8 @@ public class ListPropertiesRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public ListPropertiesRequest withStageAuthToken(String stageAuthToken) {
         this.stageAuthToken = stageAuthToken;
         return this;
@@ -81,6 +83,8 @@ public class ListPropertiesRequest  {
     public void setStageAuthToken(String stageAuthToken) {
         this.stageAuthToken = stageAuthToken;
     }
+
+    
 
     public ListPropertiesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -102,6 +106,8 @@ public class ListPropertiesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListPropertiesRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -121,6 +127,9 @@ public class ListPropertiesRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -31,7 +31,7 @@ public class RestCustomMultiPictureBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="picLayoutInfo")
     
-    private PicLayoutInfo picLayoutInfo = null;
+    private PicLayoutInfo picLayoutInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class RestCustomMultiPictureBody  {
         this.manualSet = manualSet;
     }
 
+    
+
     public RestCustomMultiPictureBody withPicLayoutInfo(PicLayoutInfo picLayoutInfo) {
         this.picLayoutInfo = picLayoutInfo;
         return this;
@@ -100,6 +102,8 @@ public class RestCustomMultiPictureBody  {
         this.picLayoutInfo = picLayoutInfo;
     }
 
+    
+
     public RestCustomMultiPictureBody withImageType(String imageType) {
         this.imageType = imageType;
         return this;
@@ -120,6 +124,8 @@ public class RestCustomMultiPictureBody  {
         this.imageType = imageType;
     }
 
+    
+
     public RestCustomMultiPictureBody withSubscriberInPics(List<RestSubscriberInPic> subscriberInPics) {
         this.subscriberInPics = subscriberInPics;
         return this;
@@ -127,9 +133,6 @@ public class RestCustomMultiPictureBody  {
 
     
     public RestCustomMultiPictureBody addSubscriberInPicsItem(RestSubscriberInPic subscriberInPicsItem) {
-        if (this.subscriberInPics == null) {
-            this.subscriberInPics = new ArrayList<>();
-        }
         this.subscriberInPics.add(subscriberInPicsItem);
         return this;
     }
@@ -154,6 +157,8 @@ public class RestCustomMultiPictureBody  {
         this.subscriberInPics = subscriberInPics;
     }
 
+    
+
     public RestCustomMultiPictureBody withSwitchTime(Integer switchTime) {
         this.switchTime = switchTime;
         return this;
@@ -175,6 +180,9 @@ public class RestCustomMultiPictureBody  {
     public void setSwitchTime(Integer switchTime) {
         this.switchTime = switchTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

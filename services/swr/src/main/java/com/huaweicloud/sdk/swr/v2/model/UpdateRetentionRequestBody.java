@@ -30,7 +30,7 @@ public class UpdateRetentionRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<Rule> rules = new ArrayList<>();
+    private List<Rule> rules = null;
     
     public UpdateRetentionRequestBody withAlgorithm(String algorithm) {
         this.algorithm = algorithm;
@@ -51,6 +51,8 @@ public class UpdateRetentionRequestBody  {
     public void setAlgorithm(String algorithm) {
         this.algorithm = algorithm;
     }
+
+    
 
     public UpdateRetentionRequestBody withRules(List<Rule> rules) {
         this.rules = rules;
@@ -82,6 +84,9 @@ public class UpdateRetentionRequestBody  {
     public void setRules(List<Rule> rules) {
         this.rules = rules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

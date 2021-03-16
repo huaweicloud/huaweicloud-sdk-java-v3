@@ -395,7 +395,7 @@ public class ListFunctionVersionResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private OffsetDateTime lastModified = null;
+    private OffsetDateTime lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -407,19 +407,19 @@ public class ListFunctionVersionResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_code")
     
-    private FuncCode funcCode = null;
+    private FuncCode funcCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_vpc")
     
-    private FuncVpc funcVpc = null;
+    private FuncVpc funcVpc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mount_config")
     
-    private MountConfig mountConfig = null;
+    private MountConfig mountConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -437,7 +437,7 @@ public class ListFunctionVersionResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="strategy_config")
     
-    private StrategyConfig strategyConfig = null;
+    private StrategyConfig strategyConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -489,6 +489,8 @@ public class ListFunctionVersionResult  {
         this.funcUrn = funcUrn;
     }
 
+    
+
     public ListFunctionVersionResult withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -508,6 +510,8 @@ public class ListFunctionVersionResult  {
     public void setFuncName(String funcName) {
         this.funcName = funcName;
     }
+
+    
 
     public ListFunctionVersionResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -529,6 +533,8 @@ public class ListFunctionVersionResult  {
         this.domainId = domainId;
     }
 
+    
+
     public ListFunctionVersionResult withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -548,6 +554,8 @@ public class ListFunctionVersionResult  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public ListFunctionVersionResult withProjectName(String projectName) {
         this.projectName = projectName;
@@ -569,6 +577,8 @@ public class ListFunctionVersionResult  {
         this.projectName = projectName;
     }
 
+    
+
     public ListFunctionVersionResult withPackage(String _package) {
         this._package = _package;
         return this;
@@ -588,6 +598,8 @@ public class ListFunctionVersionResult  {
     public void setPackage(String _package) {
         this._package = _package;
     }
+
+    
 
     public ListFunctionVersionResult withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
@@ -609,6 +621,8 @@ public class ListFunctionVersionResult  {
         this.runtime = runtime;
     }
 
+    
+
     public ListFunctionVersionResult withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -628,6 +642,8 @@ public class ListFunctionVersionResult  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
 
     public ListFunctionVersionResult withHandler(String handler) {
         this.handler = handler;
@@ -649,6 +665,8 @@ public class ListFunctionVersionResult  {
         this.handler = handler;
     }
 
+    
+
     public ListFunctionVersionResult withMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
         return this;
@@ -668,6 +686,8 @@ public class ListFunctionVersionResult  {
     public void setMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
     }
+
+    
 
     public ListFunctionVersionResult withCpu(Integer cpu) {
         this.cpu = cpu;
@@ -689,6 +709,8 @@ public class ListFunctionVersionResult  {
         this.cpu = cpu;
     }
 
+    
+
     public ListFunctionVersionResult withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
@@ -708,6 +730,8 @@ public class ListFunctionVersionResult  {
     public void setCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
     }
+
+    
 
     public ListFunctionVersionResult withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
@@ -729,6 +753,8 @@ public class ListFunctionVersionResult  {
         this.codeUrl = codeUrl;
     }
 
+    
+
     public ListFunctionVersionResult withCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
         return this;
@@ -748,6 +774,8 @@ public class ListFunctionVersionResult  {
     public void setCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
     }
+
+    
 
     public ListFunctionVersionResult withCodeSize(Long codeSize) {
         this.codeSize = codeSize;
@@ -769,6 +797,8 @@ public class ListFunctionVersionResult  {
         this.codeSize = codeSize;
     }
 
+    
+
     public ListFunctionVersionResult withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -788,6 +818,8 @@ public class ListFunctionVersionResult  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public ListFunctionVersionResult withDigest(String digest) {
         this.digest = digest;
@@ -809,6 +841,8 @@ public class ListFunctionVersionResult  {
         this.digest = digest;
     }
 
+    
+
     public ListFunctionVersionResult withVersion(String version) {
         this.version = version;
         return this;
@@ -828,6 +862,8 @@ public class ListFunctionVersionResult  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ListFunctionVersionResult withImageName(String imageName) {
         this.imageName = imageName;
@@ -849,6 +885,8 @@ public class ListFunctionVersionResult  {
         this.imageName = imageName;
     }
 
+    
+
     public ListFunctionVersionResult withXrole(String xrole) {
         this.xrole = xrole;
         return this;
@@ -868,6 +906,8 @@ public class ListFunctionVersionResult  {
     public void setXrole(String xrole) {
         this.xrole = xrole;
     }
+
+    
 
     public ListFunctionVersionResult withAppXrole(String appXrole) {
         this.appXrole = appXrole;
@@ -889,6 +929,8 @@ public class ListFunctionVersionResult  {
         this.appXrole = appXrole;
     }
 
+    
+
     public ListFunctionVersionResult withDescription(String description) {
         this.description = description;
         return this;
@@ -908,6 +950,8 @@ public class ListFunctionVersionResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ListFunctionVersionResult withVersionDescription(String versionDescription) {
         this.versionDescription = versionDescription;
@@ -929,6 +973,8 @@ public class ListFunctionVersionResult  {
         this.versionDescription = versionDescription;
     }
 
+    
+
     public ListFunctionVersionResult withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -949,6 +995,8 @@ public class ListFunctionVersionResult  {
         this.lastModified = lastModified;
     }
 
+    
+
     public ListFunctionVersionResult withLastModifiedUtc(Long lastModifiedUtc) {
         this.lastModifiedUtc = lastModifiedUtc;
         return this;
@@ -968,6 +1016,8 @@ public class ListFunctionVersionResult  {
     public void setLastModifiedUtc(Long lastModifiedUtc) {
         this.lastModifiedUtc = lastModifiedUtc;
     }
+
+    
 
     public ListFunctionVersionResult withFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
@@ -996,6 +1046,8 @@ public class ListFunctionVersionResult  {
         this.funcCode = funcCode;
     }
 
+    
+
     public ListFunctionVersionResult withFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
         return this;
@@ -1022,6 +1074,8 @@ public class ListFunctionVersionResult  {
     public void setFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
     }
+
+    
 
     public ListFunctionVersionResult withMountConfig(MountConfig mountConfig) {
         this.mountConfig = mountConfig;
@@ -1050,6 +1104,8 @@ public class ListFunctionVersionResult  {
         this.mountConfig = mountConfig;
     }
 
+    
+
     public ListFunctionVersionResult withConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
         return this;
@@ -1070,6 +1126,8 @@ public class ListFunctionVersionResult  {
         this.concurrency = concurrency;
     }
 
+    
+
     public ListFunctionVersionResult withDependList(List<String> dependList) {
         this.dependList = dependList;
         return this;
@@ -1077,9 +1135,6 @@ public class ListFunctionVersionResult  {
 
     
     public ListFunctionVersionResult addDependListItem(String dependListItem) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
         this.dependList.add(dependListItem);
         return this;
     }
@@ -1103,6 +1158,8 @@ public class ListFunctionVersionResult  {
     public void setDependList(List<String> dependList) {
         this.dependList = dependList;
     }
+
+    
 
     public ListFunctionVersionResult withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
@@ -1131,6 +1188,8 @@ public class ListFunctionVersionResult  {
         this.strategyConfig = strategyConfig;
     }
 
+    
+
     public ListFunctionVersionResult withExtendConfig(String extendConfig) {
         this.extendConfig = extendConfig;
         return this;
@@ -1151,6 +1210,8 @@ public class ListFunctionVersionResult  {
         this.extendConfig = extendConfig;
     }
 
+    
+
     public ListFunctionVersionResult withDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -1158,9 +1219,6 @@ public class ListFunctionVersionResult  {
 
     
     public ListFunctionVersionResult addDependenciesItem(Dependency dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
@@ -1185,6 +1243,8 @@ public class ListFunctionVersionResult  {
         this.dependencies = dependencies;
     }
 
+    
+
     public ListFunctionVersionResult withInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
         return this;
@@ -1204,6 +1264,8 @@ public class ListFunctionVersionResult  {
     public void setInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
     }
+
+    
 
     public ListFunctionVersionResult withInitializerTimeout(Integer initializerTimeout) {
         this.initializerTimeout = initializerTimeout;
@@ -1225,6 +1287,8 @@ public class ListFunctionVersionResult  {
         this.initializerTimeout = initializerTimeout;
     }
 
+    
+
     public ListFunctionVersionResult withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -1244,6 +1308,9 @@ public class ListFunctionVersionResult  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

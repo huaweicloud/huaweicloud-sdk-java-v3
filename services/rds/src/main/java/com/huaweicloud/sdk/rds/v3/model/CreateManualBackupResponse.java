@@ -24,7 +24,7 @@ public class CreateManualBackupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup")
     
-    private BackupInfo backup = null;
+    private BackupInfo backup;
 
     public CreateManualBackupResponse withBackup(BackupInfo backup) {
         this.backup = backup;
@@ -52,6 +52,9 @@ public class CreateManualBackupResponse extends SdkResponse {
     public void setBackup(BackupInfo backup) {
         this.backup = backup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -25,13 +25,13 @@ public class MountConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mount_user")
     
-    private MountUser mountUser = null;
+    private MountUser mountUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_mounts")
     
-    private List<FuncMount> funcMounts = new ArrayList<>();
+    private List<FuncMount> funcMounts = null;
     
     public MountConfig withMountUser(MountUser mountUser) {
         this.mountUser = mountUser;
@@ -59,6 +59,8 @@ public class MountConfig  {
     public void setMountUser(MountUser mountUser) {
         this.mountUser = mountUser;
     }
+
+    
 
     public MountConfig withFuncMounts(List<FuncMount> funcMounts) {
         this.funcMounts = funcMounts;
@@ -90,6 +92,9 @@ public class MountConfig  {
     public void setFuncMounts(List<FuncMount> funcMounts) {
         this.funcMounts = funcMounts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

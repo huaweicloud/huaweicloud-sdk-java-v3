@@ -35,9 +35,6 @@ public class ListHookInstancesResponse extends SdkResponse {
 
     
     public ListHookInstancesResponse addInstanceHangingInfoItem(InstanceHangingInfos instanceHangingInfoItem) {
-        if (this.instanceHangingInfo == null) {
-            this.instanceHangingInfo = new ArrayList<>();
-        }
         this.instanceHangingInfo.add(instanceHangingInfoItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListHookInstancesResponse extends SdkResponse {
     public void setInstanceHangingInfo(List<InstanceHangingInfos> instanceHangingInfo) {
         this.instanceHangingInfo = instanceHangingInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

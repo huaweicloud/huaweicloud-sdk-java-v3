@@ -22,7 +22,7 @@ public class CreateMpeCallBackRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private MpeCallBackReq body = null;
+    private MpeCallBackReq body;
 
     public CreateMpeCallBackRequest withBody(MpeCallBackReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateMpeCallBackRequest  {
     public void setBody(MpeCallBackReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

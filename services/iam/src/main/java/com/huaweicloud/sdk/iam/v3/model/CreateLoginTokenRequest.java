@@ -22,7 +22,7 @@ public class CreateLoginTokenRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateLoginTokenRequestBody body = null;
+    private CreateLoginTokenRequestBody body;
 
     public CreateLoginTokenRequest withBody(CreateLoginTokenRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateLoginTokenRequest  {
     public void setBody(CreateLoginTokenRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

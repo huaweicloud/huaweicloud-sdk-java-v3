@@ -141,13 +141,13 @@ public class Service  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -181,6 +181,8 @@ public class Service  {
         this.productTemplateId = productTemplateId;
     }
 
+    
+
     public Service withProductId(Integer productId) {
         this.productId = productId;
         return this;
@@ -200,6 +202,8 @@ public class Service  {
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
+
+    
 
     public Service withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
@@ -221,6 +225,8 @@ public class Service  {
         this.serviceId = serviceId;
     }
 
+    
+
     public Service withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
@@ -240,6 +246,8 @@ public class Service  {
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
+
+    
 
     public Service withDescription(String description) {
         this.description = description;
@@ -261,6 +269,8 @@ public class Service  {
         this.description = description;
     }
 
+    
+
     public Service withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -280,6 +290,8 @@ public class Service  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public Service withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -308,6 +320,8 @@ public class Service  {
         this.createdUser = createdUser;
     }
 
+    
+
     public Service withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -335,6 +349,8 @@ public class Service  {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
+    
+
     public Service withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -357,6 +373,8 @@ public class Service  {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public Service withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
@@ -378,6 +396,9 @@ public class Service  {
     public void setLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

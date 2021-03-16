@@ -21,7 +21,7 @@ public class ShowUserInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
     public ShowUserInstancesRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -42,6 +42,9 @@ public class ShowUserInstancesRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

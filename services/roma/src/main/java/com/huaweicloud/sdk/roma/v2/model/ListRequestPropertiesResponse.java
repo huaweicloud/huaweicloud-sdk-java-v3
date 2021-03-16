@@ -60,6 +60,8 @@ public class ListRequestPropertiesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListRequestPropertiesResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListRequestPropertiesResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListRequestPropertiesResponse withItems(List<Property> items) {
         this.items = items;
         return this;
@@ -87,9 +91,6 @@ public class ListRequestPropertiesResponse extends SdkResponse {
 
     
     public ListRequestPropertiesResponse addItemsItem(Property itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListRequestPropertiesResponse extends SdkResponse {
     public void setItems(List<Property> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListResourceTypesResponse extends SdkResponse {
 
     
     public ListResourceTypesResponse addResourceTypesItem(ResourceType resourceTypesItem) {
-        if (this.resourceTypes == null) {
-            this.resourceTypes = new ArrayList<>();
-        }
         this.resourceTypes.add(resourceTypesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListResourceTypesResponse extends SdkResponse {
     public void setResourceTypes(List<ResourceType> resourceTypes) {
         this.resourceTypes = resourceTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

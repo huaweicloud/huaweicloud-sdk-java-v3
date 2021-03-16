@@ -24,7 +24,7 @@ public class KeystoneShowServiceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="service")
     
-    private Service service = null;
+    private Service service;
 
     public KeystoneShowServiceResponse withService(Service service) {
         this.service = service;
@@ -52,6 +52,9 @@ public class KeystoneShowServiceResponse extends SdkResponse {
     public void setService(Service service) {
         this.service = service;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

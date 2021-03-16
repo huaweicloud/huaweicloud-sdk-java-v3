@@ -24,7 +24,7 @@ public class ShowBackupPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    private BackupPolicy backupPolicy = null;
+    private BackupPolicy backupPolicy;
 
     public ShowBackupPolicyResponse withBackupPolicy(BackupPolicy backupPolicy) {
         this.backupPolicy = backupPolicy;
@@ -52,6 +52,9 @@ public class ShowBackupPolicyResponse extends SdkResponse {
     public void setBackupPolicy(BackupPolicy backupPolicy) {
         this.backupPolicy = backupPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class CreateAclStrategyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiAclCreate body = null;
+    private ApiAclCreate body;
 
     public CreateAclStrategyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateAclStrategyV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateAclStrategyV2Request withBody(ApiAclCreate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateAclStrategyV2Request  {
     public void setBody(ApiAclCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

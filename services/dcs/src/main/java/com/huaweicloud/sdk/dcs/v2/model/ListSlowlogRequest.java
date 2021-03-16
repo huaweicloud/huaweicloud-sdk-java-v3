@@ -241,6 +241,8 @@ public class ListSlowlogRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListSlowlogRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -260,6 +262,8 @@ public class ListSlowlogRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListSlowlogRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -281,6 +285,8 @@ public class ListSlowlogRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSlowlogRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -300,6 +306,8 @@ public class ListSlowlogRequest  {
     public void setSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
     }
+
+    
 
     public ListSlowlogRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
@@ -321,6 +329,8 @@ public class ListSlowlogRequest  {
         this.sortDir = sortDir;
     }
 
+    
+
     public ListSlowlogRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -341,6 +351,8 @@ public class ListSlowlogRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListSlowlogRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -360,6 +372,9 @@ public class ListSlowlogRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

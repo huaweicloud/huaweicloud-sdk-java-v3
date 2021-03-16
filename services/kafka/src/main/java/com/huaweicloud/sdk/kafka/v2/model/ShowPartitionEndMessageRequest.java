@@ -55,6 +55,8 @@ public class ShowPartitionEndMessageRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowPartitionEndMessageRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -75,6 +77,8 @@ public class ShowPartitionEndMessageRequest  {
         this.topic = topic;
     }
 
+    
+
     public ShowPartitionEndMessageRequest withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -94,6 +98,9 @@ public class ShowPartitionEndMessageRequest  {
     public void setPartition(Integer partition) {
         this.partition = partition;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

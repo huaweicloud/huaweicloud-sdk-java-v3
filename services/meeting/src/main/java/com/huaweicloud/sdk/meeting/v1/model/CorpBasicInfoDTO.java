@@ -109,6 +109,8 @@ public class CorpBasicInfoDTO  {
         this.id = id;
     }
 
+    
+
     public CorpBasicInfoDTO withName(String name) {
         this.name = name;
         return this;
@@ -128,6 +130,8 @@ public class CorpBasicInfoDTO  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CorpBasicInfoDTO withAddress(String address) {
         this.address = address;
@@ -149,6 +153,8 @@ public class CorpBasicInfoDTO  {
         this.address = address;
     }
 
+    
+
     public CorpBasicInfoDTO withAdminName(String adminName) {
         this.adminName = adminName;
         return this;
@@ -168,6 +174,8 @@ public class CorpBasicInfoDTO  {
     public void setAdminName(String adminName) {
         this.adminName = adminName;
     }
+
+    
 
     public CorpBasicInfoDTO withAccount(String account) {
         this.account = account;
@@ -189,6 +197,8 @@ public class CorpBasicInfoDTO  {
         this.account = account;
     }
 
+    
+
     public CorpBasicInfoDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -208,6 +218,8 @@ public class CorpBasicInfoDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public CorpBasicInfoDTO withCountry(String country) {
         this.country = country;
@@ -229,6 +241,8 @@ public class CorpBasicInfoDTO  {
         this.country = country;
     }
 
+    
+
     public CorpBasicInfoDTO withEmail(String email) {
         this.email = email;
         return this;
@@ -248,6 +262,8 @@ public class CorpBasicInfoDTO  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public CorpBasicInfoDTO withEnableSMS(Boolean enableSMS) {
         this.enableSMS = enableSMS;
@@ -269,6 +285,8 @@ public class CorpBasicInfoDTO  {
         this.enableSMS = enableSMS;
     }
 
+    
+
     public CorpBasicInfoDTO withEnableCloudDisk(Boolean enableCloudDisk) {
         this.enableCloudDisk = enableCloudDisk;
         return this;
@@ -288,6 +306,8 @@ public class CorpBasicInfoDTO  {
     public void setEnableCloudDisk(Boolean enableCloudDisk) {
         this.enableCloudDisk = enableCloudDisk;
     }
+
+    
 
     public CorpBasicInfoDTO withEnablePstn(Boolean enablePstn) {
         this.enablePstn = enablePstn;
@@ -309,6 +329,8 @@ public class CorpBasicInfoDTO  {
         this.enablePstn = enablePstn;
     }
 
+    
+
     public CorpBasicInfoDTO withAutoUserCreate(Boolean autoUserCreate) {
         this.autoUserCreate = autoUserCreate;
         return this;
@@ -328,6 +350,9 @@ public class CorpBasicInfoDTO  {
     public void setAutoUserCreate(Boolean autoUserCreate) {
         this.autoUserCreate = autoUserCreate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

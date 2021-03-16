@@ -28,7 +28,7 @@ public class UpdateFunctionConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateFunctionConfigRequestBody body = null;
+    private UpdateFunctionConfigRequestBody body;
 
     public UpdateFunctionConfigRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -49,6 +49,8 @@ public class UpdateFunctionConfigRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
 
     public UpdateFunctionConfigRequest withBody(UpdateFunctionConfigRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateFunctionConfigRequest  {
     public void setBody(UpdateFunctionConfigRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

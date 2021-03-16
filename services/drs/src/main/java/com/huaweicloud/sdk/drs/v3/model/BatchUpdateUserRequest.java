@@ -104,13 +104,13 @@ public class BatchUpdateUserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchUpdateSrcUserReq body = null;
+    private BatchUpdateSrcUserReq body;
 
     public BatchUpdateUserRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchUpdateUserRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchUpdateUserRequest withBody(BatchUpdateSrcUserReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchUpdateUserRequest  {
     public void setBody(BatchUpdateSrcUserReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

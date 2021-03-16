@@ -34,7 +34,7 @@ public class ResetRomaAppSecretRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAppSecretReq body = null;
+    private UpdateAppSecretReq body;
 
     public ResetRomaAppSecretRequest withAppId(String appId) {
         this.appId = appId;
@@ -56,6 +56,8 @@ public class ResetRomaAppSecretRequest  {
         this.appId = appId;
     }
 
+    
+
     public ResetRomaAppSecretRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class ResetRomaAppSecretRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ResetRomaAppSecretRequest withBody(UpdateAppSecretReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ResetRomaAppSecretRequest  {
     public void setBody(UpdateAppSecretReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

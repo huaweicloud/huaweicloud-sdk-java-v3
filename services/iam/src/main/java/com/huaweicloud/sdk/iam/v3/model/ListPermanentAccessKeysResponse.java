@@ -35,9 +35,6 @@ public class ListPermanentAccessKeysResponse extends SdkResponse {
 
     
     public ListPermanentAccessKeysResponse addCredentialsItem(Credentials credentialsItem) {
-        if (this.credentials == null) {
-            this.credentials = new ArrayList<>();
-        }
         this.credentials.add(credentialsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListPermanentAccessKeysResponse extends SdkResponse {
     public void setCredentials(List<Credentials> credentials) {
         this.credentials = credentials;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

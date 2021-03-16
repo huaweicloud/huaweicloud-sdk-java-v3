@@ -26,13 +26,13 @@ public class MappingRules  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="local")
     
-    private List<Map<String, RulesLocalAdditional>> local = new ArrayList<>();
+    private List<Map<String, RulesLocalAdditional>> local = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remote")
     
-    private List<RulesRemote> remote = new ArrayList<>();
+    private List<RulesRemote> remote = null;
     
     public MappingRules withLocal(List<Map<String, RulesLocalAdditional>> local) {
         this.local = local;
@@ -65,6 +65,8 @@ public class MappingRules  {
         this.local = local;
     }
 
+    
+
     public MappingRules withRemote(List<RulesRemote> remote) {
         this.remote = remote;
         return this;
@@ -95,6 +97,9 @@ public class MappingRules  {
     public void setRemote(List<RulesRemote> remote) {
         this.remote = remote;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

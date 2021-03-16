@@ -41,9 +41,6 @@ public class ShowMembersDetailResponse extends SdkResponse {
 
     
     public ShowMembersDetailResponse addMembersItem(Member membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowMembersDetailResponse extends SdkResponse {
         this.members = members;
     }
 
+    
+
     public ShowMembersDetailResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class ShowMembersDetailResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

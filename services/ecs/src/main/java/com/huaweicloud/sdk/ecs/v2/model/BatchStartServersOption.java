@@ -24,7 +24,7 @@ public class BatchStartServersOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="servers")
     
-    private List<ServerId> servers = new ArrayList<>();
+    private List<ServerId> servers = null;
     
     public BatchStartServersOption withServers(List<ServerId> servers) {
         this.servers = servers;
@@ -56,6 +56,9 @@ public class BatchStartServersOption  {
     public void setServers(List<ServerId> servers) {
         this.servers = servers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -29,13 +29,13 @@ public class TemplateInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    private QueryTransTemplate template = null;
+    private QueryTransTemplate template;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error")
     
-    private XCodeError error = null;
+    private XCodeError error;
 
     public TemplateInfo withTemplateId(Integer templateId) {
         this.templateId = templateId;
@@ -56,6 +56,8 @@ public class TemplateInfo  {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
+
+    
 
     public TemplateInfo withTemplate(QueryTransTemplate template) {
         this.template = template;
@@ -84,6 +86,8 @@ public class TemplateInfo  {
         this.template = template;
     }
 
+    
+
     public TemplateInfo withError(XCodeError error) {
         this.error = error;
         return this;
@@ -110,6 +114,9 @@ public class TemplateInfo  {
     public void setError(XCodeError error) {
         this.error = error;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

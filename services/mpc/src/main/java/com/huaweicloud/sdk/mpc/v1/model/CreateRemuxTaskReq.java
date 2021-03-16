@@ -24,13 +24,13 @@ public class CreateRemuxTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,15 +40,9 @@ public class CreateRemuxTaskReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync")
-    
-    private Integer sync = 0;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_param")
     
-    private RemuxOutputParam outputParam = null;
+    private RemuxOutputParam outputParam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,6 +77,8 @@ public class CreateRemuxTaskReq  {
         this.input = input;
     }
 
+    
+
     public CreateRemuxTaskReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -110,6 +106,8 @@ public class CreateRemuxTaskReq  {
         this.output = output;
     }
 
+    
+
     public CreateRemuxTaskReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -130,27 +128,7 @@ public class CreateRemuxTaskReq  {
         this.userData = userData;
     }
 
-    public CreateRemuxTaskReq withSync(Integer sync) {
-        this.sync = sync;
-        return this;
-    }
-
     
-
-
-    /**
-     * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
-     * minimum: 0
-     * maximum: 2
-     * @return sync
-     */
-    public Integer getSync() {
-        return sync;
-    }
-
-    public void setSync(Integer sync) {
-        this.sync = sync;
-    }
 
     public CreateRemuxTaskReq withOutputParam(RemuxOutputParam outputParam) {
         this.outputParam = outputParam;
@@ -179,6 +157,8 @@ public class CreateRemuxTaskReq  {
         this.outputParam = outputParam;
     }
 
+    
+
     public CreateRemuxTaskReq withNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
         return this;
@@ -198,6 +178,9 @@ public class CreateRemuxTaskReq  {
     public void setNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -210,13 +193,12 @@ public class CreateRemuxTaskReq  {
         return Objects.equals(this.input, createRemuxTaskReq.input) &&
             Objects.equals(this.output, createRemuxTaskReq.output) &&
             Objects.equals(this.userData, createRemuxTaskReq.userData) &&
-            Objects.equals(this.sync, createRemuxTaskReq.sync) &&
             Objects.equals(this.outputParam, createRemuxTaskReq.outputParam) &&
             Objects.equals(this.notifyUrl, createRemuxTaskReq.notifyUrl);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, userData, sync, outputParam, notifyUrl);
+        return Objects.hash(input, output, userData, outputParam, notifyUrl);
     }
     @Override
     public String toString() {
@@ -225,7 +207,6 @@ public class CreateRemuxTaskReq  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-        sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("    notifyUrl: ").append(toIndentedString(notifyUrl)).append("\n");
         sb.append("}");

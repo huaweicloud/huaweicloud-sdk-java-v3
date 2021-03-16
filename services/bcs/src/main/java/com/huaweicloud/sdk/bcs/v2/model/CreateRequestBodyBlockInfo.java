@@ -55,6 +55,8 @@ public class CreateRequestBodyBlockInfo  {
         this.batchTimeout = batchTimeout;
     }
 
+    
+
     public CreateRequestBodyBlockInfo withMaxMessageCount(Integer maxMessageCount) {
         this.maxMessageCount = maxMessageCount;
         return this;
@@ -75,6 +77,8 @@ public class CreateRequestBodyBlockInfo  {
         this.maxMessageCount = maxMessageCount;
     }
 
+    
+
     public CreateRequestBodyBlockInfo withPreferredMaxbytes(Integer preferredMaxbytes) {
         this.preferredMaxbytes = preferredMaxbytes;
         return this;
@@ -94,6 +98,9 @@ public class CreateRequestBodyBlockInfo  {
     public void setPreferredMaxbytes(Integer preferredMaxbytes) {
         this.preferredMaxbytes = preferredMaxbytes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

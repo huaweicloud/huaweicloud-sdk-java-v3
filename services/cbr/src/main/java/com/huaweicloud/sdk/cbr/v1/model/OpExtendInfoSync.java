@@ -55,6 +55,8 @@ public class OpExtendInfoSync  {
         this.syncBackupNum = syncBackupNum;
     }
 
+    
+
     public OpExtendInfoSync withDeleteBackupNum(Integer deleteBackupNum) {
         this.deleteBackupNum = deleteBackupNum;
         return this;
@@ -75,6 +77,8 @@ public class OpExtendInfoSync  {
         this.deleteBackupNum = deleteBackupNum;
     }
 
+    
+
     public OpExtendInfoSync withErrSyncBackupNum(Integer errSyncBackupNum) {
         this.errSyncBackupNum = errSyncBackupNum;
         return this;
@@ -94,6 +98,9 @@ public class OpExtendInfoSync  {
     public void setErrSyncBackupNum(Integer errSyncBackupNum) {
         this.errSyncBackupNum = errSyncBackupNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

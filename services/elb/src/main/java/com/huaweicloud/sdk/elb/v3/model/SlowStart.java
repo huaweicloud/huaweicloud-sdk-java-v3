@@ -49,6 +49,8 @@ public class SlowStart  {
         this.enable = enable;
     }
 
+    
+
     public SlowStart withDuration(Integer duration) {
         this.duration = duration;
         return this;
@@ -70,6 +72,9 @@ public class SlowStart  {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class QuotasDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private List<EpQuotas> resources = new ArrayList<>();
+    private List<EpQuotas> resources = null;
     
     public QuotasDetail withResources(List<EpQuotas> resources) {
         this.resources = resources;
@@ -56,6 +56,9 @@ public class QuotasDetail  {
     public void setResources(List<EpQuotas> resources) {
         this.resources = resources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

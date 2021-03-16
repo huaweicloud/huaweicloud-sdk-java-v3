@@ -41,9 +41,6 @@ public class ListProvidersResponse extends SdkResponse {
 
     
     public ListProvidersResponse addResourceProvidersItem(ResourceProviderResponse resourceProvidersItem) {
-        if (this.resourceProviders == null) {
-            this.resourceProviders = new ArrayList<>();
-        }
         this.resourceProviders.add(resourceProvidersItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListProvidersResponse extends SdkResponse {
         this.resourceProviders = resourceProviders;
     }
 
+    
+
     public ListProvidersResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListProvidersResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

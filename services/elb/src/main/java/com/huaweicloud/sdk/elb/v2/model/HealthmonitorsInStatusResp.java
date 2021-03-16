@@ -149,6 +149,8 @@ public class HealthmonitorsInStatusResp  {
         this.id = id;
     }
 
+    
+
     public HealthmonitorsInStatusResp withName(String name) {
         this.name = name;
         return this;
@@ -168,6 +170,8 @@ public class HealthmonitorsInStatusResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public HealthmonitorsInStatusResp withType(TypeEnum type) {
         this.type = type;
@@ -189,6 +193,8 @@ public class HealthmonitorsInStatusResp  {
         this.type = type;
     }
 
+    
+
     public HealthmonitorsInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -208,6 +214,9 @@ public class HealthmonitorsInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

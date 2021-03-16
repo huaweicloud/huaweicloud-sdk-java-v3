@@ -158,7 +158,7 @@ public class AppQuotaInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -186,6 +186,8 @@ public class AppQuotaInfo  {
         this.appQuotaId = appQuotaId;
     }
 
+    
+
     public AppQuotaInfo withName(String name) {
         this.name = name;
         return this;
@@ -205,6 +207,8 @@ public class AppQuotaInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AppQuotaInfo withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
@@ -226,6 +230,8 @@ public class AppQuotaInfo  {
         this.callLimits = callLimits;
     }
 
+    
+
     public AppQuotaInfo withTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
         return this;
@@ -245,6 +251,8 @@ public class AppQuotaInfo  {
     public void setTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
     }
+
+    
 
     public AppQuotaInfo withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -266,6 +274,8 @@ public class AppQuotaInfo  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public AppQuotaInfo withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -285,6 +295,8 @@ public class AppQuotaInfo  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public AppQuotaInfo withResetTime(String resetTime) {
         this.resetTime = resetTime;
@@ -306,6 +318,8 @@ public class AppQuotaInfo  {
         this.resetTime = resetTime;
     }
 
+    
+
     public AppQuotaInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -326,6 +340,8 @@ public class AppQuotaInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public AppQuotaInfo withBoundAppNum(Integer boundAppNum) {
         this.boundAppNum = boundAppNum;
         return this;
@@ -345,6 +361,9 @@ public class AppQuotaInfo  {
     public void setBoundAppNum(Integer boundAppNum) {
         this.boundAppNum = boundAppNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

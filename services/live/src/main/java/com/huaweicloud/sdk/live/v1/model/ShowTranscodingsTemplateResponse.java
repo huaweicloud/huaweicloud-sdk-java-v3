@@ -61,6 +61,8 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ShowTranscodingsTemplateResponse withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -81,6 +83,8 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
         this.domain = domain;
     }
 
+    
+
     public ShowTranscodingsTemplateResponse withTemplates(List<AppQualityInfo> templates) {
         this.templates = templates;
         return this;
@@ -88,9 +92,6 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
 
     
     public ShowTranscodingsTemplateResponse addTemplatesItem(AppQualityInfo templatesItem) {
-        if (this.templates == null) {
-            this.templates = new ArrayList<>();
-        }
         this.templates.add(templatesItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
     public void setTemplates(List<AppQualityInfo> templates) {
         this.templates = templates;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

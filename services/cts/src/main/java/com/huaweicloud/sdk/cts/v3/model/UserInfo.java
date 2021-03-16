@@ -34,7 +34,7 @@ public class UserInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private BaseUser domain = null;
+    private BaseUser domain;
 
     public UserInfo withId(String id) {
         this.id = id;
@@ -56,6 +56,8 @@ public class UserInfo  {
         this.id = id;
     }
 
+    
+
     public UserInfo withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class UserInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UserInfo withDomain(BaseUser domain) {
         this.domain = domain;
@@ -102,6 +106,9 @@ public class UserInfo  {
     public void setDomain(BaseUser domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

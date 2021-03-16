@@ -44,6 +44,9 @@ public class CreateTranscodingTaskResponse extends SdkResponse {
     public void setTaskId(Integer taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

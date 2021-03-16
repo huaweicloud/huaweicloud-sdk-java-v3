@@ -23,13 +23,13 @@ public class RestoreToExistingInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    private RestoreToExistingInstanceRequestBodySource source = null;
+    private RestoreToExistingInstanceRequestBodySource source;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target")
     
-    private RestoreToExistingInstanceRequestBodyTarget target = null;
+    private RestoreToExistingInstanceRequestBodyTarget target;
 
     public RestoreToExistingInstanceRequestBody withSource(RestoreToExistingInstanceRequestBodySource source) {
         this.source = source;
@@ -58,6 +58,8 @@ public class RestoreToExistingInstanceRequestBody  {
         this.source = source;
     }
 
+    
+
     public RestoreToExistingInstanceRequestBody withTarget(RestoreToExistingInstanceRequestBodyTarget target) {
         this.target = target;
         return this;
@@ -84,6 +86,9 @@ public class RestoreToExistingInstanceRequestBody  {
     public void setTarget(RestoreToExistingInstanceRequestBodyTarget target) {
         this.target = target;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

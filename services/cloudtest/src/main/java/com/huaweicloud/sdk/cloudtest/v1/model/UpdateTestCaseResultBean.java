@@ -73,6 +73,8 @@ public class UpdateTestCaseResultBean  {
         this.testcaseId = testcaseId;
     }
 
+    
+
     public UpdateTestCaseResultBean withExecuteId(String executeId) {
         this.executeId = executeId;
         return this;
@@ -92,6 +94,8 @@ public class UpdateTestCaseResultBean  {
     public void setExecuteId(String executeId) {
         this.executeId = executeId;
     }
+
+    
 
     public UpdateTestCaseResultBean withResultId(String resultId) {
         this.resultId = resultId;
@@ -113,6 +117,8 @@ public class UpdateTestCaseResultBean  {
         this.resultId = resultId;
     }
 
+    
+
     public UpdateTestCaseResultBean withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -132,6 +138,8 @@ public class UpdateTestCaseResultBean  {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public UpdateTestCaseResultBean withDuration(Long duration) {
         this.duration = duration;
@@ -153,6 +161,8 @@ public class UpdateTestCaseResultBean  {
         this.duration = duration;
     }
 
+    
+
     public UpdateTestCaseResultBean withDescription(String description) {
         this.description = description;
         return this;
@@ -172,6 +182,9 @@ public class UpdateTestCaseResultBean  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

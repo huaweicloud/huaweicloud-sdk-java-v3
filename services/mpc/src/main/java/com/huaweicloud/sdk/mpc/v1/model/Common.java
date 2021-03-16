@@ -21,19 +21,19 @@ public class Common  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="PVC")
     
-    private Boolean pvc = false;
+    private Boolean pvc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hls_interval")
     
-    private Integer hlsInterval = 5;
+    private Integer hlsInterval;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dash_interval")
     
-    private Integer dashInterval = 5;
+    private Integer dashInterval;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +61,8 @@ public class Common  {
         this.pvc = pvc;
     }
 
+    
+
     public Common withHlsInterval(Integer hlsInterval) {
         this.hlsInterval = hlsInterval;
         return this;
@@ -82,6 +84,8 @@ public class Common  {
     public void setHlsInterval(Integer hlsInterval) {
         this.hlsInterval = hlsInterval;
     }
+
+    
 
     public Common withDashInterval(Integer dashInterval) {
         this.dashInterval = dashInterval;
@@ -105,6 +109,8 @@ public class Common  {
         this.dashInterval = dashInterval;
     }
 
+    
+
     public Common withPackType(Integer packType) {
         this.packType = packType;
         return this;
@@ -126,6 +132,9 @@ public class Common  {
     public void setPackType(Integer packType) {
         this.packType = packType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

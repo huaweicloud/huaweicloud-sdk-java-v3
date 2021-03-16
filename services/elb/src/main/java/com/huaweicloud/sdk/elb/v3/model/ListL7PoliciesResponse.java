@@ -33,7 +33,7 @@ public class ListL7PoliciesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class ListL7PoliciesResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListL7PoliciesResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -88,6 +90,8 @@ public class ListL7PoliciesResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    
+
     public ListL7PoliciesResponse withL7policies(List<L7Policy> l7policies) {
         this.l7policies = l7policies;
         return this;
@@ -95,9 +99,6 @@ public class ListL7PoliciesResponse extends SdkResponse {
 
     
     public ListL7PoliciesResponse addL7policiesItem(L7Policy l7policiesItem) {
-        if (this.l7policies == null) {
-            this.l7policies = new ArrayList<>();
-        }
         this.l7policies.add(l7policiesItem);
         return this;
     }
@@ -121,6 +122,9 @@ public class ListL7PoliciesResponse extends SdkResponse {
     public void setL7policies(List<L7Policy> l7policies) {
         this.l7policies = l7policies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

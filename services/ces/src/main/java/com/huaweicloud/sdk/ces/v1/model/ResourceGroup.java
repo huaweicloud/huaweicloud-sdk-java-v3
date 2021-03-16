@@ -58,6 +58,8 @@ public class ResourceGroup  {
         this.namespace = namespace;
     }
 
+    
+
     public ResourceGroup withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
         return this;
@@ -65,9 +67,6 @@ public class ResourceGroup  {
 
     
     public ResourceGroup addDimensionsItem(MetricsDimension dimensionsItem) {
-        if (this.dimensions == null) {
-            this.dimensions = new ArrayList<>();
-        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
@@ -92,6 +91,8 @@ public class ResourceGroup  {
         this.dimensions = dimensions;
     }
 
+    
+
     public ResourceGroup withStatus(String status) {
         this.status = status;
         return this;
@@ -111,6 +112,9 @@ public class ResourceGroup  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

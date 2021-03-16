@@ -61,6 +61,8 @@ public class ResizeInfo  {
         this.resizeStatus = resizeStatus;
     }
 
+    
+
     public ResizeInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -80,6 +82,8 @@ public class ResizeInfo  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ResizeInfo withTargetNodeNum(Integer targetNodeNum) {
         this.targetNodeNum = targetNodeNum;
@@ -101,6 +105,8 @@ public class ResizeInfo  {
         this.targetNodeNum = targetNodeNum;
     }
 
+    
+
     public ResizeInfo withOriginNodeNum(Integer originNodeNum) {
         this.originNodeNum = originNodeNum;
         return this;
@@ -120,6 +126,9 @@ public class ResizeInfo  {
     public void setOriginNodeNum(Integer originNodeNum) {
         this.originNodeNum = originNodeNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

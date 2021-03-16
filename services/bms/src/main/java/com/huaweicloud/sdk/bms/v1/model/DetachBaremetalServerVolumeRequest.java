@@ -49,6 +49,8 @@ public class DetachBaremetalServerVolumeRequest  {
         this.serverId = serverId;
     }
 
+    
+
     public DetachBaremetalServerVolumeRequest withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
         return this;
@@ -68,6 +70,9 @@ public class DetachBaremetalServerVolumeRequest  {
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

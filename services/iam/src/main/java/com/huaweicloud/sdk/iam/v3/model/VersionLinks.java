@@ -49,6 +49,8 @@ public class VersionLinks  {
         this.rel = rel;
     }
 
+    
+
     public VersionLinks withHref(String href) {
         this.href = href;
         return this;
@@ -68,6 +70,9 @@ public class VersionLinks  {
     public void setHref(String href) {
         this.href = href;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

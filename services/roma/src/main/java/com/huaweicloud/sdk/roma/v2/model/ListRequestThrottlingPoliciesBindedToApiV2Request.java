@@ -51,13 +51,13 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListRequestThrottlingPoliciesBindedToApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -79,6 +79,8 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListRequestThrottlingPoliciesBindedToApiV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -98,6 +100,8 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public ListRequestThrottlingPoliciesBindedToApiV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
@@ -119,6 +123,8 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
         this.throttleId = throttleId;
     }
 
+    
+
     public ListRequestThrottlingPoliciesBindedToApiV2Request withThrottleName(String throttleName) {
         this.throttleName = throttleName;
         return this;
@@ -138,6 +144,8 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
     public void setThrottleName(String throttleName) {
         this.throttleName = throttleName;
     }
+
+    
 
     public ListRequestThrottlingPoliciesBindedToApiV2Request withEnvId(String envId) {
         this.envId = envId;
@@ -159,6 +167,8 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
         this.envId = envId;
     }
 
+    
+
     public ListRequestThrottlingPoliciesBindedToApiV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -178,6 +188,8 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListRequestThrottlingPoliciesBindedToApiV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -200,6 +212,9 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

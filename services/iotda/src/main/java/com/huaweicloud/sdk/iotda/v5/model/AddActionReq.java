@@ -34,13 +34,13 @@ public class AddActionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel_detail")
     
-    private ChannelDetail channelDetail = null;
+    private ChannelDetail channelDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="batch")
     
-    private Boolean batch = false;
+    private Boolean batch;
 
     public AddActionReq withRuleId(String ruleId) {
         this.ruleId = ruleId;
@@ -62,6 +62,8 @@ public class AddActionReq  {
         this.ruleId = ruleId;
     }
 
+    
+
     public AddActionReq withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -81,6 +83,8 @@ public class AddActionReq  {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
 
     public AddActionReq withChannelDetail(ChannelDetail channelDetail) {
         this.channelDetail = channelDetail;
@@ -109,6 +113,8 @@ public class AddActionReq  {
         this.channelDetail = channelDetail;
     }
 
+    
+
     public AddActionReq withBatch(Boolean batch) {
         this.batch = batch;
         return this;
@@ -128,6 +134,9 @@ public class AddActionReq  {
     public void setBatch(Boolean batch) {
         this.batch = batch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -65,6 +65,8 @@ public class UpdatePortOption  {
         this.name = name;
     }
 
+    
+
     public UpdatePortOption withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -72,9 +74,6 @@ public class UpdatePortOption  {
 
     
     public UpdatePortOption addSecurityGroupsItem(String securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -99,6 +98,8 @@ public class UpdatePortOption  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public UpdatePortOption withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
         this.allowedAddressPairs = allowedAddressPairs;
         return this;
@@ -106,9 +107,6 @@ public class UpdatePortOption  {
 
     
     public UpdatePortOption addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
-        if (this.allowedAddressPairs == null) {
-            this.allowedAddressPairs = new ArrayList<>();
-        }
         this.allowedAddressPairs.add(allowedAddressPairsItem);
         return this;
     }
@@ -133,6 +131,8 @@ public class UpdatePortOption  {
         this.allowedAddressPairs = allowedAddressPairs;
     }
 
+    
+
     public UpdatePortOption withExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
@@ -140,9 +140,6 @@ public class UpdatePortOption  {
 
     
     public UpdatePortOption addExtraDhcpOptsItem(ExtraDhcpOpt extraDhcpOptsItem) {
-        if (this.extraDhcpOpts == null) {
-            this.extraDhcpOpts = new ArrayList<>();
-        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
@@ -166,6 +163,9 @@ public class UpdatePortOption  {
     public void setExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

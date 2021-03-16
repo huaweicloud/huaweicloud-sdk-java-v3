@@ -125,6 +125,8 @@ public class MatchReq  {
         this.key = key;
     }
 
+    
+
     public MatchReq withValue(String value) {
         this.value = value;
         return this;
@@ -144,6 +146,9 @@ public class MatchReq  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

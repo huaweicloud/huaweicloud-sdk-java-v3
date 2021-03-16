@@ -41,9 +41,6 @@ public class ListProjectTemplatesResponse extends SdkResponse {
 
     
     public ListProjectTemplatesResponse addTemplatesItem(ProjectTemplates templatesItem) {
-        if (this.templates == null) {
-            this.templates = new ArrayList<>();
-        }
         this.templates.add(templatesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListProjectTemplatesResponse extends SdkResponse {
         this.templates = templates;
     }
 
+    
+
     public ListProjectTemplatesResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -87,6 +86,9 @@ public class ListProjectTemplatesResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

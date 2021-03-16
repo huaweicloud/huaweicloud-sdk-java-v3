@@ -49,6 +49,8 @@ public class DebugRuleRequestBody  {
         this.testData = testData;
     }
 
+    
+
     public DebugRuleRequestBody withTestRuleExpress(String testRuleExpress) {
         this.testRuleExpress = testRuleExpress;
         return this;
@@ -68,6 +70,9 @@ public class DebugRuleRequestBody  {
     public void setTestRuleExpress(String testRuleExpress) {
         this.testRuleExpress = testRuleExpress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

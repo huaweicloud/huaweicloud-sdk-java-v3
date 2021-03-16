@@ -28,7 +28,7 @@ public class CreateLifyCycleHookRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateLifeCycleHookRequestBody body = null;
+    private CreateLifeCycleHookRequestBody body;
 
     public CreateLifyCycleHookRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -49,6 +49,8 @@ public class CreateLifyCycleHookRequest  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public CreateLifyCycleHookRequest withBody(CreateLifeCycleHookRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateLifyCycleHookRequest  {
     public void setBody(CreateLifeCycleHookRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,19 +23,19 @@ public class CreatePublicipRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private CreatePublicipBandwidthOption bandwidth = null;
+    private CreatePublicipBandwidthOption bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private CreatePublicipOption publicip = null;
+    private CreatePublicipOption publicip;
 
     public CreatePublicipRequestBody withBandwidth(CreatePublicipBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -64,6 +64,8 @@ public class CreatePublicipRequestBody  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public CreatePublicipRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -83,6 +85,8 @@ public class CreatePublicipRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public CreatePublicipRequestBody withPublicip(CreatePublicipOption publicip) {
         this.publicip = publicip;
@@ -110,6 +114,9 @@ public class CreatePublicipRequestBody  {
     public void setPublicip(CreatePublicipOption publicip) {
         this.publicip = publicip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

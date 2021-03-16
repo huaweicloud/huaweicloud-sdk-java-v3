@@ -55,6 +55,8 @@ public class MaintainWindow  {
         this.startTime = startTime;
     }
 
+    
+
     public MaintainWindow withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -75,6 +77,8 @@ public class MaintainWindow  {
         this.endTime = endTime;
     }
 
+    
+
     public MaintainWindow withDay(String day) {
         this.day = day;
         return this;
@@ -94,6 +98,9 @@ public class MaintainWindow  {
     public void setDay(String day) {
         this.day = day;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

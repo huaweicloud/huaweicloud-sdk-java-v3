@@ -57,6 +57,8 @@ public class DeleteUserRepositoryAuthRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public DeleteUserRepositoryAuthRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -77,6 +79,8 @@ public class DeleteUserRepositoryAuthRequest  {
         this.repository = repository;
     }
 
+    
+
     public DeleteUserRepositoryAuthRequest withBody(List<String> body) {
         this.body = body;
         return this;
@@ -84,9 +88,6 @@ public class DeleteUserRepositoryAuthRequest  {
 
     
     public DeleteUserRepositoryAuthRequest addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -110,6 +111,9 @@ public class DeleteUserRepositoryAuthRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

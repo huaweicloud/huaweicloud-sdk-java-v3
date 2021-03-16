@@ -197,6 +197,8 @@ public class ShowMetricDataRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ShowMetricDataRequest withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -216,6 +218,8 @@ public class ShowMetricDataRequest  {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
+
+    
 
     public ShowMetricDataRequest withDim0(String dim0) {
         this.dim0 = dim0;
@@ -237,6 +241,8 @@ public class ShowMetricDataRequest  {
         this.dim0 = dim0;
     }
 
+    
+
     public ShowMetricDataRequest withDim1(String dim1) {
         this.dim1 = dim1;
         return this;
@@ -256,6 +262,8 @@ public class ShowMetricDataRequest  {
     public void setDim1(String dim1) {
         this.dim1 = dim1;
     }
+
+    
 
     public ShowMetricDataRequest withDim2(String dim2) {
         this.dim2 = dim2;
@@ -277,6 +285,8 @@ public class ShowMetricDataRequest  {
         this.dim2 = dim2;
     }
 
+    
+
     public ShowMetricDataRequest withDim3(String dim3) {
         this.dim3 = dim3;
         return this;
@@ -296,6 +306,8 @@ public class ShowMetricDataRequest  {
     public void setDim3(String dim3) {
         this.dim3 = dim3;
     }
+
+    
 
     public ShowMetricDataRequest withFilter(FilterEnum filter) {
         this.filter = filter;
@@ -317,6 +329,8 @@ public class ShowMetricDataRequest  {
         this.filter = filter;
     }
 
+    
+
     public ShowMetricDataRequest withPeriod(Integer period) {
         this.period = period;
         return this;
@@ -336,6 +350,8 @@ public class ShowMetricDataRequest  {
     public void setPeriod(Integer period) {
         this.period = period;
     }
+
+    
 
     public ShowMetricDataRequest withFrom(Long from) {
         this.from = from;
@@ -357,6 +373,8 @@ public class ShowMetricDataRequest  {
         this.from = from;
     }
 
+    
+
     public ShowMetricDataRequest withTo(Long to) {
         this.to = to;
         return this;
@@ -376,6 +394,9 @@ public class ShowMetricDataRequest  {
     public void setTo(Long to) {
         this.to = to;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

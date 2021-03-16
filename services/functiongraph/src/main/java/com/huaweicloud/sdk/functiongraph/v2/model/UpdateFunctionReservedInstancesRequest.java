@@ -28,7 +28,7 @@ public class UpdateFunctionReservedInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateFunctionReservedInstancesRequestBody body = null;
+    private UpdateFunctionReservedInstancesRequestBody body;
 
     public UpdateFunctionReservedInstancesRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -49,6 +49,8 @@ public class UpdateFunctionReservedInstancesRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
 
     public UpdateFunctionReservedInstancesRequest withBody(UpdateFunctionReservedInstancesRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateFunctionReservedInstancesRequest  {
     public void setBody(UpdateFunctionReservedInstancesRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

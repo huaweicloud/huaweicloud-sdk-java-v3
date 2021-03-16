@@ -143,6 +143,8 @@ public class ModifyJobResp  {
         this.id = id;
     }
 
+    
+
     public ModifyJobResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -162,6 +164,8 @@ public class ModifyJobResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ModifyJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -183,6 +187,8 @@ public class ModifyJobResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public ModifyJobResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -202,6 +208,9 @@ public class ModifyJobResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

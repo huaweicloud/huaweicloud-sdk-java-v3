@@ -42,6 +42,9 @@ public class GlanceAddImageMemberRequestBody  {
     public void setMember(String member) {
         this.member = member;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

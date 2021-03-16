@@ -34,7 +34,7 @@ public class AssociateDomainV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DomainReq body = null;
+    private DomainReq body;
 
     public AssociateDomainV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class AssociateDomainV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public AssociateDomainV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -75,6 +77,8 @@ public class AssociateDomainV2Request  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public AssociateDomainV2Request withBody(DomainReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class AssociateDomainV2Request  {
     public void setBody(DomainReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

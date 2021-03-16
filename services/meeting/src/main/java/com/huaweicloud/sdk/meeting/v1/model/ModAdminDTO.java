@@ -39,7 +39,7 @@ public class ModAdminDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="country")
     
-    private String country = "chinaPR";
+    private String country;
 
     public ModAdminDTO withName(String name) {
         this.name = name;
@@ -61,6 +61,8 @@ public class ModAdminDTO  {
         this.name = name;
     }
 
+    
+
     public ModAdminDTO withEmail(String email) {
         this.email = email;
         return this;
@@ -80,6 +82,8 @@ public class ModAdminDTO  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public ModAdminDTO withPhone(String phone) {
         this.phone = phone;
@@ -101,6 +105,8 @@ public class ModAdminDTO  {
         this.phone = phone;
     }
 
+    
+
     public ModAdminDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -120,6 +126,9 @@ public class ModAdminDTO  {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

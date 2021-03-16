@@ -28,7 +28,7 @@ public class CreateAccessCodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAccessCodeRequestBody body = null;
+    private CreateAccessCodeRequestBody body;
 
     public CreateAccessCodeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateAccessCodeRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateAccessCodeRequest withBody(CreateAccessCodeRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateAccessCodeRequest  {
     public void setBody(CreateAccessCodeRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

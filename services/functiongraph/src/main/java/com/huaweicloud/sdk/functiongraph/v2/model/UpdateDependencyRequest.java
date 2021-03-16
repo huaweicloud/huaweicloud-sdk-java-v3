@@ -28,7 +28,7 @@ public class UpdateDependencyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDependencyRequestBody body = null;
+    private UpdateDependencyRequestBody body;
 
     public UpdateDependencyRequest withDependId(String dependId) {
         this.dependId = dependId;
@@ -49,6 +49,8 @@ public class UpdateDependencyRequest  {
     public void setDependId(String dependId) {
         this.dependId = dependId;
     }
+
+    
 
     public UpdateDependencyRequest withBody(UpdateDependencyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateDependencyRequest  {
     public void setBody(UpdateDependencyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

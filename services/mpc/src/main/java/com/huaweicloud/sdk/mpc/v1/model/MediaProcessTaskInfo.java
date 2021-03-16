@@ -49,7 +49,7 @@ public class MediaProcessTaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,7 +67,7 @@ public class MediaProcessTaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
     public MediaProcessTaskInfo withTaskId(String taskId) {
         this.taskId = taskId;
@@ -89,6 +89,8 @@ public class MediaProcessTaskInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public MediaProcessTaskInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -108,6 +110,8 @@ public class MediaProcessTaskInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public MediaProcessTaskInfo withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -129,6 +133,8 @@ public class MediaProcessTaskInfo  {
         this.createTime = createTime;
     }
 
+    
+
     public MediaProcessTaskInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -148,6 +154,8 @@ public class MediaProcessTaskInfo  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public MediaProcessTaskInfo withOutput(ObsObjInfo output) {
         this.output = output;
@@ -176,6 +184,8 @@ public class MediaProcessTaskInfo  {
         this.output = output;
     }
 
+    
+
     public MediaProcessTaskInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -196,6 +206,8 @@ public class MediaProcessTaskInfo  {
         this.description = description;
     }
 
+    
+
     public MediaProcessTaskInfo withOutputFileName(List<String> outputFileName) {
         this.outputFileName = outputFileName;
         return this;
@@ -203,9 +215,6 @@ public class MediaProcessTaskInfo  {
 
     
     public MediaProcessTaskInfo addOutputFileNameItem(String outputFileNameItem) {
-        if (this.outputFileName == null) {
-            this.outputFileName = new ArrayList<>();
-        }
         this.outputFileName.add(outputFileNameItem);
         return this;
     }
@@ -229,6 +238,8 @@ public class MediaProcessTaskInfo  {
     public void setOutputFileName(List<String> outputFileName) {
         this.outputFileName = outputFileName;
     }
+
+    
 
     public MediaProcessTaskInfo withInput(ObsObjInfo input) {
         this.input = input;
@@ -256,6 +267,9 @@ public class MediaProcessTaskInfo  {
     public void setInput(ObsObjInfo input) {
         this.input = input;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

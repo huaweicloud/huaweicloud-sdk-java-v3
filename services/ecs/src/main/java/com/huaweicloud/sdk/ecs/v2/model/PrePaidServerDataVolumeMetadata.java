@@ -21,7 +21,7 @@ public class PrePaidServerDataVolumeMetadata  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__system__encrypted")
     
-    private String systemEncrypted = "0";
+    private String systemEncrypted;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,6 +51,8 @@ public class PrePaidServerDataVolumeMetadata  {
         this.systemEncrypted = systemEncrypted;
     }
 
+    
+
     public PrePaidServerDataVolumeMetadata withSystemCmkid(String systemCmkid) {
         this.systemCmkid = systemCmkid;
         return this;
@@ -72,6 +74,9 @@ public class PrePaidServerDataVolumeMetadata  {
     public void setSystemCmkid(String systemCmkid) {
         this.systemCmkid = systemCmkid;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -185,6 +185,8 @@ public class ShowFunctionTriggerRequest  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public ShowFunctionTriggerRequest withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
         return this;
@@ -205,6 +207,8 @@ public class ShowFunctionTriggerRequest  {
         this.triggerTypeCode = triggerTypeCode;
     }
 
+    
+
     public ShowFunctionTriggerRequest withTriggerId(String triggerId) {
         this.triggerId = triggerId;
         return this;
@@ -224,6 +228,9 @@ public class ShowFunctionTriggerRequest  {
     public void setTriggerId(String triggerId) {
         this.triggerId = triggerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

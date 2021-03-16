@@ -22,13 +22,13 @@ public class ModifyPrefineTag  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="new_tag")
     
-    private PredefineTagRequest newTag = null;
+    private PredefineTagRequest newTag;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="old_tag")
     
-    private PredefineTagRequest oldTag = null;
+    private PredefineTagRequest oldTag;
 
     public ModifyPrefineTag withNewTag(PredefineTagRequest newTag) {
         this.newTag = newTag;
@@ -57,6 +57,8 @@ public class ModifyPrefineTag  {
         this.newTag = newTag;
     }
 
+    
+
     public ModifyPrefineTag withOldTag(PredefineTagRequest oldTag) {
         this.oldTag = oldTag;
         return this;
@@ -83,6 +85,9 @@ public class ModifyPrefineTag  {
     public void setOldTag(PredefineTagRequest oldTag) {
         this.oldTag = oldTag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class UpdateNatGatewayDnatRuleRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dnat_rule")
     
-    private UpdateNatGatewayDnatRuleOption dnatRule = null;
+    private UpdateNatGatewayDnatRuleOption dnatRule;
 
     public UpdateNatGatewayDnatRuleRequestBody withDnatRule(UpdateNatGatewayDnatRuleOption dnatRule) {
         this.dnatRule = dnatRule;
@@ -50,6 +50,9 @@ public class UpdateNatGatewayDnatRuleRequestBody  {
     public void setDnatRule(UpdateNatGatewayDnatRuleOption dnatRule) {
         this.dnatRule = dnatRule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class UpdateMemberVmrRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModVmrDTO body = null;
+    private ModVmrDTO body;
 
     public UpdateMemberVmrRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class UpdateMemberVmrRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateMemberVmrRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class UpdateMemberVmrRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public UpdateMemberVmrRequest withId(String id) {
         this.id = id;
         return this;
@@ -103,6 +107,8 @@ public class UpdateMemberVmrRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateMemberVmrRequest withBody(ModVmrDTO body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class UpdateMemberVmrRequest  {
     public void setBody(ModVmrDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

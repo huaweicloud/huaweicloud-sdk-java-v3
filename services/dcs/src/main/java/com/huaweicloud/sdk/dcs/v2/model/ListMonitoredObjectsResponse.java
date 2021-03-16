@@ -54,9 +54,6 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsResponse addRouterItem(String routerItem) {
-        if (this.router == null) {
-            this.router = new ArrayList<>();
-        }
         this.router.add(routerItem);
         return this;
     }
@@ -81,6 +78,8 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         this.router = router;
     }
 
+    
+
     public ListMonitoredObjectsResponse withChildren(List<DimChild> children) {
         this.children = children;
         return this;
@@ -88,9 +87,6 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsResponse addChildrenItem(DimChild childrenItem) {
-        if (this.children == null) {
-            this.children = new ArrayList<>();
-        }
         this.children.add(childrenItem);
         return this;
     }
@@ -115,6 +111,8 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         this.children = children;
     }
 
+    
+
     public ListMonitoredObjectsResponse withInstances(List<InstancesMonitoredObject> instances) {
         this.instances = instances;
         return this;
@@ -122,9 +120,6 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsResponse addInstancesItem(InstancesMonitoredObject instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
-        }
         this.instances.add(instancesItem);
         return this;
     }
@@ -149,6 +144,8 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
         this.instances = instances;
     }
 
+    
+
     public ListMonitoredObjectsResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -168,6 +165,9 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

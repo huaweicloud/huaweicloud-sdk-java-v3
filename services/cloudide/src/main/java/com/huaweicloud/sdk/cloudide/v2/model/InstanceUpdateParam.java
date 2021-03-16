@@ -55,6 +55,8 @@ public class InstanceUpdateParam  {
         this.description = description;
     }
 
+    
+
     public InstanceUpdateParam withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -75,6 +77,8 @@ public class InstanceUpdateParam  {
         this.displayName = displayName;
     }
 
+    
+
     public InstanceUpdateParam withRefreshInterval(String refreshInterval) {
         this.refreshInterval = refreshInterval;
         return this;
@@ -94,6 +98,9 @@ public class InstanceUpdateParam  {
     public void setRefreshInterval(String refreshInterval) {
         this.refreshInterval = refreshInterval;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

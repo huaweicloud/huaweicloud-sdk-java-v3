@@ -143,6 +143,8 @@ public class UpdateProductTopicRequestBody  {
         this.permission = permission;
     }
 
+    
+
     public UpdateProductTopicRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -162,6 +164,8 @@ public class UpdateProductTopicRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateProductTopicRequestBody withVersion(String version) {
         this.version = version;
@@ -183,6 +187,8 @@ public class UpdateProductTopicRequestBody  {
         this.version = version;
     }
 
+    
+
     public UpdateProductTopicRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -202,6 +208,9 @@ public class UpdateProductTopicRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

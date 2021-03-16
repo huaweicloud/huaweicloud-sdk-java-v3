@@ -41,7 +41,7 @@ public class NeutronUpdateFirewallPolicyOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audited")
     
-    private Boolean audited = false;
+    private Boolean audited;
 
     public NeutronUpdateFirewallPolicyOption withName(String name) {
         this.name = name;
@@ -63,6 +63,8 @@ public class NeutronUpdateFirewallPolicyOption  {
         this.name = name;
     }
 
+    
+
     public NeutronUpdateFirewallPolicyOption withDescription(String description) {
         this.description = description;
         return this;
@@ -83,6 +85,8 @@ public class NeutronUpdateFirewallPolicyOption  {
         this.description = description;
     }
 
+    
+
     public NeutronUpdateFirewallPolicyOption withFirewallRules(List<String> firewallRules) {
         this.firewallRules = firewallRules;
         return this;
@@ -90,9 +94,6 @@ public class NeutronUpdateFirewallPolicyOption  {
 
     
     public NeutronUpdateFirewallPolicyOption addFirewallRulesItem(String firewallRulesItem) {
-        if (this.firewallRules == null) {
-            this.firewallRules = new ArrayList<>();
-        }
         this.firewallRules.add(firewallRulesItem);
         return this;
     }
@@ -117,6 +118,8 @@ public class NeutronUpdateFirewallPolicyOption  {
         this.firewallRules = firewallRules;
     }
 
+    
+
     public NeutronUpdateFirewallPolicyOption withAudited(Boolean audited) {
         this.audited = audited;
         return this;
@@ -136,6 +139,9 @@ public class NeutronUpdateFirewallPolicyOption  {
     public void setAudited(Boolean audited) {
         this.audited = audited;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

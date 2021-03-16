@@ -65,13 +65,13 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<PoolRef> pools = new ArrayList<>();
+    private List<PoolRef> pools = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<ListenerRef> listeners = new ArrayList<>();
+    private List<ListenerRef> listeners = null;
         /**
      * 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
      */
@@ -209,7 +209,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Tag> tags = new ArrayList<>();
+    private List<Tag> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -239,7 +239,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eips")
     
-    private List<EipInfo> eips = new ArrayList<>();
+    private List<EipInfo> eips = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -263,7 +263,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_list")
     
-    private List<String> availabilityZoneList = new ArrayList<>();
+    private List<String> availabilityZoneList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -413,7 +413,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_bandwidth")
     
-    private BandwidthRef ipv6Bandwidth = null;
+    private BandwidthRef ipv6Bandwidth;
 
     public LoadBalancer withId(String id) {
         this.id = id;
@@ -435,6 +435,8 @@ public class LoadBalancer  {
         this.id = id;
     }
 
+    
+
     public LoadBalancer withDescription(String description) {
         this.description = description;
         return this;
@@ -454,6 +456,8 @@ public class LoadBalancer  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public LoadBalancer withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
@@ -475,6 +479,8 @@ public class LoadBalancer  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public LoadBalancer withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -495,6 +501,8 @@ public class LoadBalancer  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public LoadBalancer withProvider(String provider) {
         this.provider = provider;
         return this;
@@ -514,6 +522,8 @@ public class LoadBalancer  {
     public void setProvider(String provider) {
         this.provider = provider;
     }
+
+    
 
     public LoadBalancer withPools(List<PoolRef> pools) {
         this.pools = pools;
@@ -546,6 +556,8 @@ public class LoadBalancer  {
         this.pools = pools;
     }
 
+    
+
     public LoadBalancer withListeners(List<ListenerRef> listeners) {
         this.listeners = listeners;
         return this;
@@ -577,6 +589,8 @@ public class LoadBalancer  {
         this.listeners = listeners;
     }
 
+    
+
     public LoadBalancer withOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -596,6 +610,8 @@ public class LoadBalancer  {
     public void setOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
+
+    
 
     public LoadBalancer withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
@@ -617,6 +633,8 @@ public class LoadBalancer  {
         this.vipAddress = vipAddress;
     }
 
+    
+
     public LoadBalancer withVipSubnetCidrId(String vipSubnetCidrId) {
         this.vipSubnetCidrId = vipSubnetCidrId;
         return this;
@@ -636,6 +654,8 @@ public class LoadBalancer  {
     public void setVipSubnetCidrId(String vipSubnetCidrId) {
         this.vipSubnetCidrId = vipSubnetCidrId;
     }
+
+    
 
     public LoadBalancer withName(String name) {
         this.name = name;
@@ -657,6 +677,8 @@ public class LoadBalancer  {
         this.name = name;
     }
 
+    
+
     public LoadBalancer withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -677,6 +699,8 @@ public class LoadBalancer  {
         this.projectId = projectId;
     }
 
+    
+
     public LoadBalancer withVipPortId(String vipPortId) {
         this.vipPortId = vipPortId;
         return this;
@@ -696,6 +720,8 @@ public class LoadBalancer  {
     public void setVipPortId(String vipPortId) {
         this.vipPortId = vipPortId;
     }
+
+    
 
     public LoadBalancer withTags(List<Tag> tags) {
         this.tags = tags;
@@ -728,6 +754,8 @@ public class LoadBalancer  {
         this.tags = tags;
     }
 
+    
+
     public LoadBalancer withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -747,6 +775,8 @@ public class LoadBalancer  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public LoadBalancer withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -768,6 +798,8 @@ public class LoadBalancer  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public LoadBalancer withGuaranteed(Boolean guaranteed) {
         this.guaranteed = guaranteed;
         return this;
@@ -788,6 +820,8 @@ public class LoadBalancer  {
         this.guaranteed = guaranteed;
     }
 
+    
+
     public LoadBalancer withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -807,6 +841,8 @@ public class LoadBalancer  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public LoadBalancer withEips(List<EipInfo> eips) {
         this.eips = eips;
@@ -839,6 +875,8 @@ public class LoadBalancer  {
         this.eips = eips;
     }
 
+    
+
     public LoadBalancer withIpv6VipAddress(String ipv6VipAddress) {
         this.ipv6VipAddress = ipv6VipAddress;
         return this;
@@ -858,6 +896,8 @@ public class LoadBalancer  {
     public void setIpv6VipAddress(String ipv6VipAddress) {
         this.ipv6VipAddress = ipv6VipAddress;
     }
+
+    
 
     public LoadBalancer withIpv6VipVirsubnetId(String ipv6VipVirsubnetId) {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
@@ -879,6 +919,8 @@ public class LoadBalancer  {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
     }
 
+    
+
     public LoadBalancer withIpv6VipPortId(String ipv6VipPortId) {
         this.ipv6VipPortId = ipv6VipPortId;
         return this;
@@ -898,6 +940,8 @@ public class LoadBalancer  {
     public void setIpv6VipPortId(String ipv6VipPortId) {
         this.ipv6VipPortId = ipv6VipPortId;
     }
+
+    
 
     public LoadBalancer withAvailabilityZoneList(List<String> availabilityZoneList) {
         this.availabilityZoneList = availabilityZoneList;
@@ -930,6 +974,8 @@ public class LoadBalancer  {
         this.availabilityZoneList = availabilityZoneList;
     }
 
+    
+
     public LoadBalancer withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -949,6 +995,8 @@ public class LoadBalancer  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public LoadBalancer withL4FlavorId(String l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
@@ -970,6 +1018,8 @@ public class LoadBalancer  {
         this.l4FlavorId = l4FlavorId;
     }
 
+    
+
     public LoadBalancer withL4ScaleFlavorId(String l4ScaleFlavorId) {
         this.l4ScaleFlavorId = l4ScaleFlavorId;
         return this;
@@ -989,6 +1039,8 @@ public class LoadBalancer  {
     public void setL4ScaleFlavorId(String l4ScaleFlavorId) {
         this.l4ScaleFlavorId = l4ScaleFlavorId;
     }
+
+    
 
     public LoadBalancer withL7FlavorId(String l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
@@ -1010,6 +1062,8 @@ public class LoadBalancer  {
         this.l7FlavorId = l7FlavorId;
     }
 
+    
+
     public LoadBalancer withL7ScaleFlavorId(String l7ScaleFlavorId) {
         this.l7ScaleFlavorId = l7ScaleFlavorId;
         return this;
@@ -1030,6 +1084,8 @@ public class LoadBalancer  {
         this.l7ScaleFlavorId = l7ScaleFlavorId;
     }
 
+    
+
     public LoadBalancer withPublicips(List<PublicIpInfo> publicips) {
         this.publicips = publicips;
         return this;
@@ -1037,9 +1093,6 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addPublicipsItem(PublicIpInfo publicipsItem) {
-        if (this.publicips == null) {
-            this.publicips = new ArrayList<>();
-        }
         this.publicips.add(publicipsItem);
         return this;
     }
@@ -1064,6 +1117,8 @@ public class LoadBalancer  {
         this.publicips = publicips;
     }
 
+    
+
     public LoadBalancer withElbVirsubnetIds(List<String> elbVirsubnetIds) {
         this.elbVirsubnetIds = elbVirsubnetIds;
         return this;
@@ -1071,9 +1126,6 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addElbVirsubnetIdsItem(String elbVirsubnetIdsItem) {
-        if (this.elbVirsubnetIds == null) {
-            this.elbVirsubnetIds = new ArrayList<>();
-        }
         this.elbVirsubnetIds.add(elbVirsubnetIdsItem);
         return this;
     }
@@ -1098,6 +1150,8 @@ public class LoadBalancer  {
         this.elbVirsubnetIds = elbVirsubnetIds;
     }
 
+    
+
     public LoadBalancer withElbVirsubnetType(ElbVirsubnetTypeEnum elbVirsubnetType) {
         this.elbVirsubnetType = elbVirsubnetType;
         return this;
@@ -1117,6 +1171,8 @@ public class LoadBalancer  {
     public void setElbVirsubnetType(ElbVirsubnetTypeEnum elbVirsubnetType) {
         this.elbVirsubnetType = elbVirsubnetType;
     }
+
+    
 
     public LoadBalancer withIpTargetEnable(Boolean ipTargetEnable) {
         this.ipTargetEnable = ipTargetEnable;
@@ -1138,6 +1194,8 @@ public class LoadBalancer  {
         this.ipTargetEnable = ipTargetEnable;
     }
 
+    
+
     public LoadBalancer withDeletionProtectionEnable(String deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
         return this;
@@ -1158,6 +1216,8 @@ public class LoadBalancer  {
         this.deletionProtectionEnable = deletionProtectionEnable;
     }
 
+    
+
     public LoadBalancer withFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
         return this;
@@ -1177,6 +1237,8 @@ public class LoadBalancer  {
     public void setFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
     }
+
+    
 
     public LoadBalancer withIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
@@ -1204,6 +1266,9 @@ public class LoadBalancer  {
     public void setIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

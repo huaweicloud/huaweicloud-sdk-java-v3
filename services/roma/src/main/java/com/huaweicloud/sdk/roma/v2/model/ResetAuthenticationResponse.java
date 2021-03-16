@@ -51,6 +51,8 @@ public class ResetAuthenticationResponse extends SdkResponse {
         this.userName = userName;
     }
 
+    
+
     public ResetAuthenticationResponse withPassword(String password) {
         this.password = password;
         return this;
@@ -70,6 +72,9 @@ public class ResetAuthenticationResponse extends SdkResponse {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

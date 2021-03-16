@@ -34,9 +34,6 @@ public class ListCollationsResponse extends SdkResponse {
 
     
     public ListCollationsResponse addCharSetsItem(String charSetsItem) {
-        if (this.charSets == null) {
-            this.charSets = new ArrayList<>();
-        }
         this.charSets.add(charSetsItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class ListCollationsResponse extends SdkResponse {
     public void setCharSets(List<String> charSets) {
         this.charSets = charSets;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

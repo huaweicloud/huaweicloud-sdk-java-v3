@@ -57,6 +57,8 @@ public class ListClassroomsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListClassroomsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -79,6 +81,8 @@ public class ListClassroomsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListClassroomsRequest withQueryType(String queryType) {
         this.queryType = queryType;
         return this;
@@ -98,6 +102,9 @@ public class ListClassroomsRequest  {
     public void setQueryType(String queryType) {
         this.queryType = queryType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

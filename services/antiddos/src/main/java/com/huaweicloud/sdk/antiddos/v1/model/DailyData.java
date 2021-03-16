@@ -79,6 +79,8 @@ public class DailyData  {
         this.periodStart = periodStart;
     }
 
+    
+
     public DailyData withBpsIn(Integer bpsIn) {
         this.bpsIn = bpsIn;
         return this;
@@ -98,6 +100,8 @@ public class DailyData  {
     public void setBpsIn(Integer bpsIn) {
         this.bpsIn = bpsIn;
     }
+
+    
 
     public DailyData withBpsAttack(Long bpsAttack) {
         this.bpsAttack = bpsAttack;
@@ -119,6 +123,8 @@ public class DailyData  {
         this.bpsAttack = bpsAttack;
     }
 
+    
+
     public DailyData withTotalBps(Long totalBps) {
         this.totalBps = totalBps;
         return this;
@@ -138,6 +144,8 @@ public class DailyData  {
     public void setTotalBps(Long totalBps) {
         this.totalBps = totalBps;
     }
+
+    
 
     public DailyData withPpsIn(Long ppsIn) {
         this.ppsIn = ppsIn;
@@ -159,6 +167,8 @@ public class DailyData  {
         this.ppsIn = ppsIn;
     }
 
+    
+
     public DailyData withPpsAttack(Long ppsAttack) {
         this.ppsAttack = ppsAttack;
         return this;
@@ -179,6 +189,8 @@ public class DailyData  {
         this.ppsAttack = ppsAttack;
     }
 
+    
+
     public DailyData withTotalPps(Long totalPps) {
         this.totalPps = totalPps;
         return this;
@@ -198,6 +210,9 @@ public class DailyData  {
     public void setTotalPps(Long totalPps) {
         this.totalPps = totalPps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class FilePath  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

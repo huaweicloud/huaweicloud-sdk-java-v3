@@ -55,6 +55,8 @@ public class DeleteIpFromDomainNameRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteIpFromDomainNameRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteIpFromDomainNameRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public DeleteIpFromDomainNameRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteIpFromDomainNameRequest  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

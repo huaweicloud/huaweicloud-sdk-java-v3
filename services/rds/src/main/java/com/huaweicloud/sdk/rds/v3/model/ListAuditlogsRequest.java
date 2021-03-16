@@ -75,6 +75,8 @@ public class ListAuditlogsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListAuditlogsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -94,6 +96,8 @@ public class ListAuditlogsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListAuditlogsRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -115,6 +119,8 @@ public class ListAuditlogsRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListAuditlogsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -134,6 +140,8 @@ public class ListAuditlogsRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ListAuditlogsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -155,6 +163,8 @@ public class ListAuditlogsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListAuditlogsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -174,6 +184,9 @@ public class ListAuditlogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

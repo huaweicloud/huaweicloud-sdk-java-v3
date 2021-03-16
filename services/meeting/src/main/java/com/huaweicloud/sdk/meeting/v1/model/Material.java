@@ -79,6 +79,8 @@ public class Material  {
         this.id = id;
     }
 
+    
+
     public Material withLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
         return this;
@@ -98,6 +100,8 @@ public class Material  {
     public void setLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
     }
+
+    
 
     public Material withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
@@ -119,6 +123,8 @@ public class Material  {
         this.updateTime = updateTime;
     }
 
+    
+
     public Material withMaterialName(String materialName) {
         this.materialName = materialName;
         return this;
@@ -138,6 +144,8 @@ public class Material  {
     public void setMaterialName(String materialName) {
         this.materialName = materialName;
     }
+
+    
 
     public Material withMaterialResolution(String materialResolution) {
         this.materialResolution = materialResolution;
@@ -159,6 +167,8 @@ public class Material  {
         this.materialResolution = materialResolution;
     }
 
+    
+
     public Material withMaterialSizeStr(String materialSizeStr) {
         this.materialSizeStr = materialSizeStr;
         return this;
@@ -179,6 +189,8 @@ public class Material  {
         this.materialSizeStr = materialSizeStr;
     }
 
+    
+
     public Material withFilePath(String filePath) {
         this.filePath = filePath;
         return this;
@@ -198,6 +210,9 @@ public class Material  {
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

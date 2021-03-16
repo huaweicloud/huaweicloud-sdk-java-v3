@@ -46,7 +46,7 @@ public class AclApiBindingInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
     public AclApiBindingInfo withId(String id) {
         this.id = id;
@@ -68,6 +68,8 @@ public class AclApiBindingInfo  {
         this.id = id;
     }
 
+    
+
     public AclApiBindingInfo withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -87,6 +89,8 @@ public class AclApiBindingInfo  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
 
     public AclApiBindingInfo withEnvId(String envId) {
         this.envId = envId;
@@ -108,6 +112,8 @@ public class AclApiBindingInfo  {
         this.envId = envId;
     }
 
+    
+
     public AclApiBindingInfo withAclId(String aclId) {
         this.aclId = aclId;
         return this;
@@ -128,6 +134,8 @@ public class AclApiBindingInfo  {
         this.aclId = aclId;
     }
 
+    
+
     public AclApiBindingInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -147,6 +155,9 @@ public class AclApiBindingInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

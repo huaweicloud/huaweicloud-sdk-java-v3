@@ -49,6 +49,8 @@ public class NovaShowServerRequest  {
         this.serverId = serverId;
     }
 
+    
+
     public NovaShowServerRequest withOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
         return this;
@@ -68,6 +70,9 @@ public class NovaShowServerRequest  {
     public void setOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

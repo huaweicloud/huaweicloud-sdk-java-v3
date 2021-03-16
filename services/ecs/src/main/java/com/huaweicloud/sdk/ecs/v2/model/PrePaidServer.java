@@ -81,19 +81,19 @@ public class PrePaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    private List<PrePaidServerNic> nics = new ArrayList<>();
+    private List<PrePaidServerNic> nics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private PrePaidServerPublicip publicip = null;
+    private PrePaidServerPublicip publicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    private Integer count = 1;
+    private Integer count;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -105,7 +105,7 @@ public class PrePaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="root_volume")
     
-    private PrePaidServerRootVolume rootVolume = null;
+    private PrePaidServerRootVolume rootVolume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -129,7 +129,7 @@ public class PrePaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendparam")
     
-    private PrePaidServerExtendParam extendparam = null;
+    private PrePaidServerExtendParam extendparam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -141,7 +141,7 @@ public class PrePaidServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os:scheduler_hints")
     
-    private PrePaidServerSchedulerHints osSchedulerHints = null;
+    private PrePaidServerSchedulerHints osSchedulerHints;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -181,6 +181,8 @@ public class PrePaidServer  {
         this.autoTerminateTime = autoTerminateTime;
     }
 
+    
+
     public PrePaidServer withImageRef(String imageRef) {
         this.imageRef = imageRef;
         return this;
@@ -200,6 +202,8 @@ public class PrePaidServer  {
     public void setImageRef(String imageRef) {
         this.imageRef = imageRef;
     }
+
+    
 
     public PrePaidServer withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
@@ -221,6 +225,8 @@ public class PrePaidServer  {
         this.flavorRef = flavorRef;
     }
 
+    
+
     public PrePaidServer withName(String name) {
         this.name = name;
         return this;
@@ -240,6 +246,8 @@ public class PrePaidServer  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PrePaidServer withUserData(String userData) {
         this.userData = userData;
@@ -261,6 +269,8 @@ public class PrePaidServer  {
         this.userData = userData;
     }
 
+    
+
     public PrePaidServer withAdminPass(String adminPass) {
         this.adminPass = adminPass;
         return this;
@@ -280,6 +290,8 @@ public class PrePaidServer  {
     public void setAdminPass(String adminPass) {
         this.adminPass = adminPass;
     }
+
+    
 
     public PrePaidServer withKeyName(String keyName) {
         this.keyName = keyName;
@@ -301,6 +313,8 @@ public class PrePaidServer  {
         this.keyName = keyName;
     }
 
+    
+
     public PrePaidServer withVpcid(String vpcid) {
         this.vpcid = vpcid;
         return this;
@@ -320,6 +334,8 @@ public class PrePaidServer  {
     public void setVpcid(String vpcid) {
         this.vpcid = vpcid;
     }
+
+    
 
     public PrePaidServer withNics(List<PrePaidServerNic> nics) {
         this.nics = nics;
@@ -352,6 +368,8 @@ public class PrePaidServer  {
         this.nics = nics;
     }
 
+    
+
     public PrePaidServer withPublicip(PrePaidServerPublicip publicip) {
         this.publicip = publicip;
         return this;
@@ -379,6 +397,8 @@ public class PrePaidServer  {
         this.publicip = publicip;
     }
 
+    
+
     public PrePaidServer withCount(Integer count) {
         this.count = count;
         return this;
@@ -401,6 +421,8 @@ public class PrePaidServer  {
         this.count = count;
     }
 
+    
+
     public PrePaidServer withIsAutoRename(Boolean isAutoRename) {
         this.isAutoRename = isAutoRename;
         return this;
@@ -420,6 +442,8 @@ public class PrePaidServer  {
     public void setIsAutoRename(Boolean isAutoRename) {
         this.isAutoRename = isAutoRename;
     }
+
+    
 
     public PrePaidServer withRootVolume(PrePaidServerRootVolume rootVolume) {
         this.rootVolume = rootVolume;
@@ -448,6 +472,8 @@ public class PrePaidServer  {
         this.rootVolume = rootVolume;
     }
 
+    
+
     public PrePaidServer withDataVolumes(List<PrePaidServerDataVolume> dataVolumes) {
         this.dataVolumes = dataVolumes;
         return this;
@@ -455,9 +481,6 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addDataVolumesItem(PrePaidServerDataVolume dataVolumesItem) {
-        if (this.dataVolumes == null) {
-            this.dataVolumes = new ArrayList<>();
-        }
         this.dataVolumes.add(dataVolumesItem);
         return this;
     }
@@ -482,6 +505,8 @@ public class PrePaidServer  {
         this.dataVolumes = dataVolumes;
     }
 
+    
+
     public PrePaidServer withSecurityGroups(List<PrePaidServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -489,9 +514,6 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addSecurityGroupsItem(PrePaidServerSecurityGroup securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -516,6 +538,8 @@ public class PrePaidServer  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public PrePaidServer withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -535,6 +559,8 @@ public class PrePaidServer  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public PrePaidServer withExtendparam(PrePaidServerExtendParam extendparam) {
         this.extendparam = extendparam;
@@ -563,6 +589,8 @@ public class PrePaidServer  {
         this.extendparam = extendparam;
     }
 
+    
+
     public PrePaidServer withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -571,9 +599,6 @@ public class PrePaidServer  {
     
 
     public PrePaidServer putMetadataItem(String key, String metadataItem) {
-         if (this.metadata == null) {
-            this.metadata = new HashMap<>();
-         }
         this.metadata.put(key, metadataItem);
         return this;
     }
@@ -596,6 +621,8 @@ public class PrePaidServer  {
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
+
+    
 
     public PrePaidServer withOsSchedulerHints(PrePaidServerSchedulerHints osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
@@ -624,6 +651,8 @@ public class PrePaidServer  {
         this.osSchedulerHints = osSchedulerHints;
     }
 
+    
+
     public PrePaidServer withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -631,9 +660,6 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -658,6 +684,8 @@ public class PrePaidServer  {
         this.tags = tags;
     }
 
+    
+
     public PrePaidServer withServerTags(List<PrePaidServerTag> serverTags) {
         this.serverTags = serverTags;
         return this;
@@ -665,9 +693,6 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addServerTagsItem(PrePaidServerTag serverTagsItem) {
-        if (this.serverTags == null) {
-            this.serverTags = new ArrayList<>();
-        }
         this.serverTags.add(serverTagsItem);
         return this;
     }
@@ -692,6 +717,8 @@ public class PrePaidServer  {
         this.serverTags = serverTags;
     }
 
+    
+
     public PrePaidServer withDescription(String description) {
         this.description = description;
         return this;
@@ -711,6 +738,9 @@ public class PrePaidServer  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

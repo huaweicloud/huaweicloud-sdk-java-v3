@@ -37,7 +37,7 @@ public class LoadBalancerStatusPool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor")
     
-    private LoadBalancerStatusHealthMonitor healthmonitor = null;
+    private LoadBalancerStatusHealthMonitor healthmonitor;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,6 +77,8 @@ public class LoadBalancerStatusPool  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public LoadBalancerStatusPool withName(String name) {
         this.name = name;
         return this;
@@ -96,6 +98,8 @@ public class LoadBalancerStatusPool  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public LoadBalancerStatusPool withHealthmonitor(LoadBalancerStatusHealthMonitor healthmonitor) {
         this.healthmonitor = healthmonitor;
@@ -124,6 +128,8 @@ public class LoadBalancerStatusPool  {
         this.healthmonitor = healthmonitor;
     }
 
+    
+
     public LoadBalancerStatusPool withMembers(List<LoadBalancerStatusMember> members) {
         this.members = members;
         return this;
@@ -131,9 +137,6 @@ public class LoadBalancerStatusPool  {
 
     
     public LoadBalancerStatusPool addMembersItem(LoadBalancerStatusMember membersItem) {
-        if (this.members == null) {
-            this.members = new ArrayList<>();
-        }
         this.members.add(membersItem);
         return this;
     }
@@ -158,6 +161,8 @@ public class LoadBalancerStatusPool  {
         this.members = members;
     }
 
+    
+
     public LoadBalancerStatusPool withId(String id) {
         this.id = id;
         return this;
@@ -178,6 +183,8 @@ public class LoadBalancerStatusPool  {
         this.id = id;
     }
 
+    
+
     public LoadBalancerStatusPool withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -197,6 +204,9 @@ public class LoadBalancerStatusPool  {
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

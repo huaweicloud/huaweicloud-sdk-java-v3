@@ -81,6 +81,8 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.billCycle = billCycle;
     }
 
+    
+
     public ListPostpaidBillSumResponse withInitialAmountDue(Double initialAmountDue) {
         this.initialAmountDue = initialAmountDue;
         return this;
@@ -100,6 +102,8 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     public void setInitialAmountDue(Double initialAmountDue) {
         this.initialAmountDue = initialAmountDue;
     }
+
+    
 
     public ListPostpaidBillSumResponse withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
@@ -121,6 +125,8 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.consumeAmount = consumeAmount;
     }
 
+    
+
     public ListPostpaidBillSumResponse withRefunds(Double refunds) {
         this.refunds = refunds;
         return this;
@@ -140,6 +146,8 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     public void setRefunds(Double refunds) {
         this.refunds = refunds;
     }
+
+    
 
     public ListPostpaidBillSumResponse withAdjustments(Double adjustments) {
         this.adjustments = adjustments;
@@ -161,6 +169,8 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.adjustments = adjustments;
     }
 
+    
+
     public ListPostpaidBillSumResponse withTaxAmount(Double taxAmount) {
         this.taxAmount = taxAmount;
         return this;
@@ -181,6 +191,8 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.taxAmount = taxAmount;
     }
 
+    
+
     public ListPostpaidBillSumResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -200,6 +212,9 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

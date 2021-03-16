@@ -42,7 +42,7 @@ public class BatchInviteMembersToChannelRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invited_userinfo")
     
-    private List<InvitedDomain> invitedUserinfo = new ArrayList<>();
+    private List<InvitedDomain> invitedUserinfo = null;
     
     public BatchInviteMembersToChannelRequestBody withBcsId(String bcsId) {
         this.bcsId = bcsId;
@@ -64,6 +64,8 @@ public class BatchInviteMembersToChannelRequestBody  {
         this.bcsId = bcsId;
     }
 
+    
+
     public BatchInviteMembersToChannelRequestBody withChannelName(String channelName) {
         this.channelName = channelName;
         return this;
@@ -84,6 +86,8 @@ public class BatchInviteMembersToChannelRequestBody  {
         this.channelName = channelName;
     }
 
+    
+
     public BatchInviteMembersToChannelRequestBody withInvitorUsername(String invitorUsername) {
         this.invitorUsername = invitorUsername;
         return this;
@@ -103,6 +107,8 @@ public class BatchInviteMembersToChannelRequestBody  {
     public void setInvitorUsername(String invitorUsername) {
         this.invitorUsername = invitorUsername;
     }
+
+    
 
     public BatchInviteMembersToChannelRequestBody withInvitedUserinfo(List<InvitedDomain> invitedUserinfo) {
         this.invitedUserinfo = invitedUserinfo;
@@ -134,6 +140,9 @@ public class BatchInviteMembersToChannelRequestBody  {
     public void setInvitedUserinfo(List<InvitedDomain> invitedUserinfo) {
         this.invitedUserinfo = invitedUserinfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

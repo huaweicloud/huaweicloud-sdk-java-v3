@@ -52,6 +52,8 @@ public class CreateOrDeleteInstanceTags  {
         this.action = action;
     }
 
+    
+
     public CreateOrDeleteInstanceTags withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -59,9 +61,6 @@ public class CreateOrDeleteInstanceTags  {
 
     
     public CreateOrDeleteInstanceTags addTagsItem(ResourceTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class CreateOrDeleteInstanceTags  {
     public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

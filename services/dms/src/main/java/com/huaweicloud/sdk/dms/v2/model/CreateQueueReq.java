@@ -247,6 +247,8 @@ public class CreateQueueReq  {
         this.name = name;
     }
 
+    
+
     public CreateQueueReq withQueueMode(QueueModeEnum queueMode) {
         this.queueMode = queueMode;
         return this;
@@ -266,6 +268,8 @@ public class CreateQueueReq  {
     public void setQueueMode(QueueModeEnum queueMode) {
         this.queueMode = queueMode;
     }
+
+    
 
     public CreateQueueReq withDescription(String description) {
         this.description = description;
@@ -287,6 +291,8 @@ public class CreateQueueReq  {
         this.description = description;
     }
 
+    
+
     public CreateQueueReq withRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
         return this;
@@ -306,6 +312,8 @@ public class CreateQueueReq  {
     public void setRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
     }
+
+    
 
     public CreateQueueReq withMaxConsumeCount(Integer maxConsumeCount) {
         this.maxConsumeCount = maxConsumeCount;
@@ -327,6 +335,8 @@ public class CreateQueueReq  {
         this.maxConsumeCount = maxConsumeCount;
     }
 
+    
+
     public CreateQueueReq withRetentionHours(Integer retentionHours) {
         this.retentionHours = retentionHours;
         return this;
@@ -346,6 +356,9 @@ public class CreateQueueReq  {
     public void setRetentionHours(Integer retentionHours) {
         this.retentionHours = retentionHours;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

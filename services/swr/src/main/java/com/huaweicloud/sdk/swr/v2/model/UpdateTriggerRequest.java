@@ -40,7 +40,7 @@ public class UpdateTriggerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateTriggerRequestBody body = null;
+    private UpdateTriggerRequestBody body;
 
     public UpdateTriggerRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -62,6 +62,8 @@ public class UpdateTriggerRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public UpdateTriggerRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -82,6 +84,8 @@ public class UpdateTriggerRequest  {
         this.repository = repository;
     }
 
+    
+
     public UpdateTriggerRequest withTrigger(String trigger) {
         this.trigger = trigger;
         return this;
@@ -101,6 +105,8 @@ public class UpdateTriggerRequest  {
     public void setTrigger(String trigger) {
         this.trigger = trigger;
     }
+
+    
 
     public UpdateTriggerRequest withBody(UpdateTriggerRequestBody body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateTriggerRequest  {
     public void setBody(UpdateTriggerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

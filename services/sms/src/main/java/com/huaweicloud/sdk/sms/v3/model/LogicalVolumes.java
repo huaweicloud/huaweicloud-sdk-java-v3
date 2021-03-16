@@ -21,13 +21,13 @@ public class LogicalVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_count")
     
-    private Integer blockCount = 0;
+    private Integer blockCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_size")
     
-    private Long blockSize = 0l;
+    private Long blockSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,6 +93,8 @@ public class LogicalVolumes  {
         this.blockCount = blockCount;
     }
 
+    
+
     public LogicalVolumes withBlockSize(Long blockSize) {
         this.blockSize = blockSize;
         return this;
@@ -115,6 +117,8 @@ public class LogicalVolumes  {
         this.blockSize = blockSize;
     }
 
+    
+
     public LogicalVolumes withFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
         return this;
@@ -134,6 +138,8 @@ public class LogicalVolumes  {
     public void setFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
     }
+
+    
 
     public LogicalVolumes withInodeSize(Integer inodeSize) {
         this.inodeSize = inodeSize;
@@ -157,6 +163,8 @@ public class LogicalVolumes  {
         this.inodeSize = inodeSize;
     }
 
+    
+
     public LogicalVolumes withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
         return this;
@@ -177,6 +185,8 @@ public class LogicalVolumes  {
         this.mountPoint = mountPoint;
     }
 
+    
+
     public LogicalVolumes withName(String name) {
         this.name = name;
         return this;
@@ -196,6 +206,8 @@ public class LogicalVolumes  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public LogicalVolumes withSize(Long size) {
         this.size = size;
@@ -219,6 +231,8 @@ public class LogicalVolumes  {
         this.size = size;
     }
 
+    
+
     public LogicalVolumes withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
@@ -241,6 +255,8 @@ public class LogicalVolumes  {
         this.usedSize = usedSize;
     }
 
+    
+
     public LogicalVolumes withFreeSize(Long freeSize) {
         this.freeSize = freeSize;
         return this;
@@ -262,6 +278,9 @@ public class LogicalVolumes  {
     public void setFreeSize(Long freeSize) {
         this.freeSize = freeSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

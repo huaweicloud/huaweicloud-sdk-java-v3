@@ -28,13 +28,13 @@ public class ProtectablesResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="children")
     
-    private List<Object> children = new ArrayList<>();
+    private List<Object> children = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private Object detail = null;
+    private Object detail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,7 +52,7 @@ public class ProtectablesResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protectable")
     
-    private ProtectableResult protectable = null;
+    private ProtectableResult protectable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -187,6 +187,8 @@ public class ProtectablesResp  {
         this.children = children;
     }
 
+    
+
     public ProtectablesResp withDetail(Object detail) {
         this.detail = detail;
         return this;
@@ -206,6 +208,8 @@ public class ProtectablesResp  {
     public void setDetail(Object detail) {
         this.detail = detail;
     }
+
+    
 
     public ProtectablesResp withId(String id) {
         this.id = id;
@@ -227,6 +231,8 @@ public class ProtectablesResp  {
         this.id = id;
     }
 
+    
+
     public ProtectablesResp withName(String name) {
         this.name = name;
         return this;
@@ -246,6 +252,8 @@ public class ProtectablesResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ProtectablesResp withProtectable(ProtectableResult protectable) {
         this.protectable = protectable;
@@ -274,6 +282,8 @@ public class ProtectablesResp  {
         this.protectable = protectable;
     }
 
+    
+
     public ProtectablesResp withSize(String size) {
         this.size = size;
         return this;
@@ -293,6 +303,8 @@ public class ProtectablesResp  {
     public void setSize(String size) {
         this.size = size;
     }
+
+    
 
     public ProtectablesResp withStatus(StatusEnum status) {
         this.status = status;
@@ -314,6 +326,8 @@ public class ProtectablesResp  {
         this.status = status;
     }
 
+    
+
     public ProtectablesResp withType(String type) {
         this.type = type;
         return this;
@@ -333,6 +347,9 @@ public class ProtectablesResp  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

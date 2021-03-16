@@ -25,13 +25,13 @@ public class ShowOnlineMeetingDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conferenceData")
     
-    private ConferenceInfo conferenceData = null;
+    private ConferenceInfo conferenceData;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data")
     
-    private PageParticipant data = null;
+    private PageParticipant data;
 
     public ShowOnlineMeetingDetailResponse withConferenceData(ConferenceInfo conferenceData) {
         this.conferenceData = conferenceData;
@@ -60,6 +60,8 @@ public class ShowOnlineMeetingDetailResponse extends SdkResponse {
         this.conferenceData = conferenceData;
     }
 
+    
+
     public ShowOnlineMeetingDetailResponse withData(PageParticipant data) {
         this.data = data;
         return this;
@@ -86,6 +88,9 @@ public class ShowOnlineMeetingDetailResponse extends SdkResponse {
     public void setData(PageParticipant data) {
         this.data = data;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

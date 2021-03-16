@@ -79,6 +79,8 @@ public class ModCorpBasicDTO  {
         this.name = name;
     }
 
+    
+
     public ModCorpBasicDTO withPhone(String phone) {
         this.phone = phone;
         return this;
@@ -98,6 +100,8 @@ public class ModCorpBasicDTO  {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    
 
     public ModCorpBasicDTO withCountry(String country) {
         this.country = country;
@@ -119,6 +123,8 @@ public class ModCorpBasicDTO  {
         this.country = country;
     }
 
+    
+
     public ModCorpBasicDTO withFax(String fax) {
         this.fax = fax;
         return this;
@@ -138,6 +144,8 @@ public class ModCorpBasicDTO  {
     public void setFax(String fax) {
         this.fax = fax;
     }
+
+    
 
     public ModCorpBasicDTO withEmail(String email) {
         this.email = email;
@@ -159,6 +167,8 @@ public class ModCorpBasicDTO  {
         this.email = email;
     }
 
+    
+
     public ModCorpBasicDTO withAddress(String address) {
         this.address = address;
         return this;
@@ -179,6 +189,8 @@ public class ModCorpBasicDTO  {
         this.address = address;
     }
 
+    
+
     public ModCorpBasicDTO withDescription(String description) {
         this.description = description;
         return this;
@@ -198,6 +210,9 @@ public class ModCorpBasicDTO  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

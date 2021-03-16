@@ -34,7 +34,7 @@ public class BatchDeleteApiAclBindingV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AclBindingBatchDelete body = null;
+    private AclBindingBatchDelete body;
 
     public BatchDeleteApiAclBindingV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class BatchDeleteApiAclBindingV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public BatchDeleteApiAclBindingV2Request withAction(String action) {
         this.action = action;
         return this;
@@ -75,6 +77,8 @@ public class BatchDeleteApiAclBindingV2Request  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
 
     public BatchDeleteApiAclBindingV2Request withBody(AclBindingBatchDelete body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class BatchDeleteApiAclBindingV2Request  {
     public void setBody(AclBindingBatchDelete body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class RetrieveAmountInfoV2  {
         this.availRetrieveAmount = availRetrieveAmount;
     }
 
+    
+
     public RetrieveAmountInfoV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -92,6 +94,8 @@ public class RetrieveAmountInfoV2  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
 
     public RetrieveAmountInfoV2 withCurrency(String currency) {
         this.currency = currency;
@@ -113,6 +117,8 @@ public class RetrieveAmountInfoV2  {
         this.currency = currency;
     }
 
+    
+
     public RetrieveAmountInfoV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -132,6 +138,8 @@ public class RetrieveAmountInfoV2  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
 
     public RetrieveAmountInfoV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
@@ -153,6 +161,8 @@ public class RetrieveAmountInfoV2  {
         this.creditAmount = creditAmount;
     }
 
+    
+
     public RetrieveAmountInfoV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -172,6 +182,9 @@ public class RetrieveAmountInfoV2  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

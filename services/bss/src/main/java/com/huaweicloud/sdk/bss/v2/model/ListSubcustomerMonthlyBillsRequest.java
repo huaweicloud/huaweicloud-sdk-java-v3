@@ -45,13 +45,13 @@ public class ListSubcustomerMonthlyBillsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class ListSubcustomerMonthlyBillsRequest  {
         this.customerId = customerId;
     }
 
+    
+
     public ListSubcustomerMonthlyBillsRequest withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -104,6 +106,8 @@ public class ListSubcustomerMonthlyBillsRequest  {
     public void setCycle(String cycle) {
         this.cycle = cycle;
     }
+
+    
 
     public ListSubcustomerMonthlyBillsRequest withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
@@ -125,6 +129,8 @@ public class ListSubcustomerMonthlyBillsRequest  {
         this.cloudServiceType = cloudServiceType;
     }
 
+    
+
     public ListSubcustomerMonthlyBillsRequest withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -144,6 +150,8 @@ public class ListSubcustomerMonthlyBillsRequest  {
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public ListSubcustomerMonthlyBillsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -167,6 +175,8 @@ public class ListSubcustomerMonthlyBillsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListSubcustomerMonthlyBillsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -189,6 +199,8 @@ public class ListSubcustomerMonthlyBillsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListSubcustomerMonthlyBillsRequest withBillType(String billType) {
         this.billType = billType;
         return this;
@@ -209,6 +221,8 @@ public class ListSubcustomerMonthlyBillsRequest  {
         this.billType = billType;
     }
 
+    
+
     public ListSubcustomerMonthlyBillsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -228,6 +242,9 @@ public class ListSubcustomerMonthlyBillsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

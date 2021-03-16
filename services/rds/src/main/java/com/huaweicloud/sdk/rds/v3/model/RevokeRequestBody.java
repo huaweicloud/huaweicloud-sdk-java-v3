@@ -30,7 +30,7 @@ public class RevokeRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    private List<RevokeRequestBodyUsers> users = new ArrayList<>();
+    private List<RevokeRequestBodyUsers> users = null;
     
     public RevokeRequestBody withDbName(String dbName) {
         this.dbName = dbName;
@@ -51,6 +51,8 @@ public class RevokeRequestBody  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
 
     public RevokeRequestBody withUsers(List<RevokeRequestBodyUsers> users) {
         this.users = users;
@@ -82,6 +84,9 @@ public class RevokeRequestBody  {
     public void setUsers(List<RevokeRequestBodyUsers> users) {
         this.users = users;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

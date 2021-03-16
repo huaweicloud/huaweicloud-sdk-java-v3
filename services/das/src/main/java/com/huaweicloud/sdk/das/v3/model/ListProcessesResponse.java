@@ -41,9 +41,6 @@ public class ListProcessesResponse extends SdkResponse {
 
     
     public ListProcessesResponse addProcessesItem(Process processesItem) {
-        if (this.processes == null) {
-            this.processes = new ArrayList<>();
-        }
         this.processes.add(processesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListProcessesResponse extends SdkResponse {
         this.processes = processes;
     }
 
+    
+
     public ListProcessesResponse withCount(Long count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class ListProcessesResponse extends SdkResponse {
     public void setCount(Long count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

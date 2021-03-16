@@ -49,6 +49,8 @@ public class DeleteListenerRequest  {
         this.cascade = cascade;
     }
 
+    
+
     public DeleteListenerRequest withListenerId(String listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteListenerRequest  {
     public void setListenerId(String listenerId) {
         this.listenerId = listenerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

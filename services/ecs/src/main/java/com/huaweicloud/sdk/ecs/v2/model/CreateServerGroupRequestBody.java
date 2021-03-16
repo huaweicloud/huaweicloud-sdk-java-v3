@@ -22,7 +22,7 @@ public class CreateServerGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server_group")
     
-    private CreateServerGroupOption serverGroup = null;
+    private CreateServerGroupOption serverGroup;
 
     public CreateServerGroupRequestBody withServerGroup(CreateServerGroupOption serverGroup) {
         this.serverGroup = serverGroup;
@@ -50,6 +50,9 @@ public class CreateServerGroupRequestBody  {
     public void setServerGroup(CreateServerGroupOption serverGroup) {
         this.serverGroup = serverGroup;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

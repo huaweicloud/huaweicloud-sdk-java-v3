@@ -54,6 +54,8 @@ public class ListConnectionsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListConnectionsResponse withConnections(List<ConnectionInfo> connections) {
         this.connections = connections;
         return this;
@@ -61,9 +63,6 @@ public class ListConnectionsResponse extends SdkResponse {
 
     
     public ListConnectionsResponse addConnectionsItem(ConnectionInfo connectionsItem) {
-        if (this.connections == null) {
-            this.connections = new ArrayList<>();
-        }
         this.connections.add(connectionsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListConnectionsResponse extends SdkResponse {
     public void setConnections(List<ConnectionInfo> connections) {
         this.connections = connections;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

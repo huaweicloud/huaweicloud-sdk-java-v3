@@ -55,6 +55,8 @@ public class DeleteNodePoolRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public DeleteNodePoolRequest withNodepoolId(String nodepoolId) {
         this.nodepoolId = nodepoolId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteNodePoolRequest  {
         this.nodepoolId = nodepoolId;
     }
 
+    
+
     public DeleteNodePoolRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -94,6 +98,9 @@ public class DeleteNodePoolRequest  {
     public void setErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

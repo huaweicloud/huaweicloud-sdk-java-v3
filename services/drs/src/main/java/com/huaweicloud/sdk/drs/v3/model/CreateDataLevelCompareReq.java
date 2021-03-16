@@ -273,7 +273,7 @@ public class CreateDataLevelCompareReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="compare_mode")
     
-    private CompareModeEnum compareMode = CompareModeEnum.QUICK_COMPARISON;
+    private CompareModeEnum compareMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -313,6 +313,8 @@ public class CreateDataLevelCompareReq  {
         this.conflictPolicy = conflictPolicy;
     }
 
+    
+
     public CreateDataLevelCompareReq withCompareType(CompareTypeEnum compareType) {
         this.compareType = compareType;
         return this;
@@ -332,6 +334,8 @@ public class CreateDataLevelCompareReq  {
     public void setCompareType(CompareTypeEnum compareType) {
         this.compareType = compareType;
     }
+
+    
 
     public CreateDataLevelCompareReq withCompareMode(CompareModeEnum compareMode) {
         this.compareMode = compareMode;
@@ -353,6 +357,8 @@ public class CreateDataLevelCompareReq  {
         this.compareMode = compareMode;
     }
 
+    
+
     public CreateDataLevelCompareReq withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -373,6 +379,8 @@ public class CreateDataLevelCompareReq  {
         this.startTime = startTime;
     }
 
+    
+
     public CreateDataLevelCompareReq withCompareObjectInfos(List<CompareObjectInfo> compareObjectInfos) {
         this.compareObjectInfos = compareObjectInfos;
         return this;
@@ -380,9 +388,6 @@ public class CreateDataLevelCompareReq  {
 
     
     public CreateDataLevelCompareReq addCompareObjectInfosItem(CompareObjectInfo compareObjectInfosItem) {
-        if (this.compareObjectInfos == null) {
-            this.compareObjectInfos = new ArrayList<>();
-        }
         this.compareObjectInfos.add(compareObjectInfosItem);
         return this;
     }
@@ -407,6 +412,8 @@ public class CreateDataLevelCompareReq  {
         this.compareObjectInfos = compareObjectInfos;
     }
 
+    
+
     public CreateDataLevelCompareReq withCompareObjectInfosWithToken(List<CompareObjectInfoWithToken> compareObjectInfosWithToken) {
         this.compareObjectInfosWithToken = compareObjectInfosWithToken;
         return this;
@@ -414,9 +421,6 @@ public class CreateDataLevelCompareReq  {
 
     
     public CreateDataLevelCompareReq addCompareObjectInfosWithTokenItem(CompareObjectInfoWithToken compareObjectInfosWithTokenItem) {
-        if (this.compareObjectInfosWithToken == null) {
-            this.compareObjectInfosWithToken = new ArrayList<>();
-        }
         this.compareObjectInfosWithToken.add(compareObjectInfosWithTokenItem);
         return this;
     }
@@ -440,6 +444,9 @@ public class CreateDataLevelCompareReq  {
     public void setCompareObjectInfosWithToken(List<CompareObjectInfoWithToken> compareObjectInfosWithToken) {
         this.compareObjectInfosWithToken = compareObjectInfosWithToken;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

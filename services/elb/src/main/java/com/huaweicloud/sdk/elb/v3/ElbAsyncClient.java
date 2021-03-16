@@ -372,6 +372,28 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 后端服务器全局列表
+     * 查询当前租户下的后端服务器列表。
+     *
+     * @param ListAllMembersRequest 请求对象
+     * @return CompletableFuture<ListAllMembersResponse>
+     */
+    public CompletableFuture<ListAllMembersResponse> listAllMembersAsync(ListAllMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listAllMembers);
+    }
+
+    /**
+     * 后端服务器全局列表
+     * 查询当前租户下的后端服务器列表。
+     *
+     * @param ListAllMembersRequest 请求对象
+     * @return AsyncInvoker<ListAllMembersRequest, ListAllMembersResponse>
+     */
+    public AsyncInvoker<ListAllMembersRequest, ListAllMembersResponse> listAllMembersAsyncInvoker(ListAllMembersRequest request) {
+        return new AsyncInvoker<ListAllMembersRequest, ListAllMembersResponse>(request, ElbMeta.listAllMembers, hcClient);
+    }
+
+    /**
      * 查询可用区列表
      * 返回租户创建LB时可使用的可用区列表情况。  返回的数据类型是可用区集合的列表，比如列表 [ [az1,az2],  [az2, az3] ] ，有两个可用区集合。在创建负载均衡器时，可以选择创建在多个可用区，但所选的多个可用区必须同属于其中一个可用区集合，如可以选择 az2和az3，但不能选择 az1和az3。
      *

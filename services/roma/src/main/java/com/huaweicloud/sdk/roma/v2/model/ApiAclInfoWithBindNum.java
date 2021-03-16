@@ -58,7 +58,7 @@ public class ApiAclInfoWithBindNum  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
     public ApiAclInfoWithBindNum withAclName(String aclName) {
         this.aclName = aclName;
@@ -80,6 +80,8 @@ public class ApiAclInfoWithBindNum  {
         this.aclName = aclName;
     }
 
+    
+
     public ApiAclInfoWithBindNum withAclType(String aclType) {
         this.aclType = aclType;
         return this;
@@ -99,6 +101,8 @@ public class ApiAclInfoWithBindNum  {
     public void setAclType(String aclType) {
         this.aclType = aclType;
     }
+
+    
 
     public ApiAclInfoWithBindNum withAclValue(String aclValue) {
         this.aclValue = aclValue;
@@ -120,6 +124,8 @@ public class ApiAclInfoWithBindNum  {
         this.aclValue = aclValue;
     }
 
+    
+
     public ApiAclInfoWithBindNum withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
@@ -139,6 +145,8 @@ public class ApiAclInfoWithBindNum  {
     public void setBindNum(Integer bindNum) {
         this.bindNum = bindNum;
     }
+
+    
 
     public ApiAclInfoWithBindNum withEntityType(String entityType) {
         this.entityType = entityType;
@@ -160,6 +168,8 @@ public class ApiAclInfoWithBindNum  {
         this.entityType = entityType;
     }
 
+    
+
     public ApiAclInfoWithBindNum withId(String id) {
         this.id = id;
         return this;
@@ -180,6 +190,8 @@ public class ApiAclInfoWithBindNum  {
         this.id = id;
     }
 
+    
+
     public ApiAclInfoWithBindNum withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -199,6 +211,9 @@ public class ApiAclInfoWithBindNum  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

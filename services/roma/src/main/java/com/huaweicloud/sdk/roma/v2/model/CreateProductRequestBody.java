@@ -283,6 +283,8 @@ public class CreateProductRequestBody  {
         this.appId = appId;
     }
 
+    
+
     public CreateProductRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -302,6 +304,8 @@ public class CreateProductRequestBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateProductRequestBody withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
@@ -323,6 +327,8 @@ public class CreateProductRequestBody  {
         this.manufacturerId = manufacturerId;
     }
 
+    
+
     public CreateProductRequestBody withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
@@ -342,6 +348,8 @@ public class CreateProductRequestBody  {
     public void setManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
+
+    
 
     public CreateProductRequestBody withModel(String model) {
         this.model = model;
@@ -363,6 +371,8 @@ public class CreateProductRequestBody  {
         this.model = model;
     }
 
+    
+
     public CreateProductRequestBody withProductType(ProductTypeEnum productType) {
         this.productType = productType;
         return this;
@@ -382,6 +392,8 @@ public class CreateProductRequestBody  {
     public void setProductType(ProductTypeEnum productType) {
         this.productType = productType;
     }
+
+    
 
     public CreateProductRequestBody withDescription(String description) {
         this.description = description;
@@ -403,6 +415,8 @@ public class CreateProductRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateProductRequestBody withProtocolType(ProtocolTypeEnum protocolType) {
         this.protocolType = protocolType;
         return this;
@@ -422,6 +436,8 @@ public class CreateProductRequestBody  {
     public void setProtocolType(ProtocolTypeEnum protocolType) {
         this.protocolType = protocolType;
     }
+
+    
 
     public CreateProductRequestBody withDeviceType(String deviceType) {
         this.deviceType = deviceType;
@@ -443,6 +459,8 @@ public class CreateProductRequestBody  {
         this.deviceType = deviceType;
     }
 
+    
+
     public CreateProductRequestBody withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
@@ -463,6 +481,8 @@ public class CreateProductRequestBody  {
         this.templateId = templateId;
     }
 
+    
+
     public CreateProductRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -482,6 +502,9 @@ public class CreateProductRequestBody  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

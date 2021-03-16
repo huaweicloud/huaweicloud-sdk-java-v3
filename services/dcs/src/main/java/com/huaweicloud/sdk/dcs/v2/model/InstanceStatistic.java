@@ -91,6 +91,8 @@ public class InstanceStatistic  {
         this.inputKbps = inputKbps;
     }
 
+    
+
     public InstanceStatistic withOutputKbps(String outputKbps) {
         this.outputKbps = outputKbps;
         return this;
@@ -110,6 +112,8 @@ public class InstanceStatistic  {
     public void setOutputKbps(String outputKbps) {
         this.outputKbps = outputKbps;
     }
+
+    
 
     public InstanceStatistic withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -131,6 +135,8 @@ public class InstanceStatistic  {
         this.instanceId = instanceId;
     }
 
+    
+
     public InstanceStatistic withKeys(Long keys) {
         this.keys = keys;
         return this;
@@ -150,6 +156,8 @@ public class InstanceStatistic  {
     public void setKeys(Long keys) {
         this.keys = keys;
     }
+
+    
 
     public InstanceStatistic withUsedMemory(Long usedMemory) {
         this.usedMemory = usedMemory;
@@ -171,6 +179,8 @@ public class InstanceStatistic  {
         this.usedMemory = usedMemory;
     }
 
+    
+
     public InstanceStatistic withMaxMemory(Long maxMemory) {
         this.maxMemory = maxMemory;
         return this;
@@ -190,6 +200,8 @@ public class InstanceStatistic  {
     public void setMaxMemory(Long maxMemory) {
         this.maxMemory = maxMemory;
     }
+
+    
 
     public InstanceStatistic withCmdGetCount(Long cmdGetCount) {
         this.cmdGetCount = cmdGetCount;
@@ -211,6 +223,8 @@ public class InstanceStatistic  {
         this.cmdGetCount = cmdGetCount;
     }
 
+    
+
     public InstanceStatistic withCmdSetCount(Long cmdSetCount) {
         this.cmdSetCount = cmdSetCount;
         return this;
@@ -231,6 +245,8 @@ public class InstanceStatistic  {
         this.cmdSetCount = cmdSetCount;
     }
 
+    
+
     public InstanceStatistic withUsedCpu(String usedCpu) {
         this.usedCpu = usedCpu;
         return this;
@@ -250,6 +266,9 @@ public class InstanceStatistic  {
     public void setUsedCpu(String usedCpu) {
         this.usedCpu = usedCpu;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

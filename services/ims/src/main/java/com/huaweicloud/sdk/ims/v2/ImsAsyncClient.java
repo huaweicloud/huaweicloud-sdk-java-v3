@@ -20,6 +20,28 @@ public class ImsAsyncClient {
 
 
     /**
+     * 添加镜像标签
+     * 该接口用于为指定镜像添加或更新指定的单个标签
+     *
+     * @param AddImageTagRequest 请求对象
+     * @return CompletableFuture<AddImageTagResponse>
+     */
+    public CompletableFuture<AddImageTagResponse> addImageTagAsync(AddImageTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.addImageTag);
+    }
+
+    /**
+     * 添加镜像标签
+     * 该接口用于为指定镜像添加或更新指定的单个标签
+     *
+     * @param AddImageTagRequest 请求对象
+     * @return AsyncInvoker<AddImageTagRequest, AddImageTagResponse>
+     */
+    public AsyncInvoker<AddImageTagRequest, AddImageTagResponse> addImageTagAsyncInvoker(AddImageTagRequest request) {
+        return new AsyncInvoker<AddImageTagRequest, AddImageTagResponse>(request, ImsMeta.addImageTag, hcClient);
+    }
+
+    /**
      * 批量添加镜像成员
      * 该接口为扩展接口，主要用于镜像共享时用户将多个镜像共享给多个用户。 该接口为异步接口，返回job_id说明任务下发成功，查询异步任务状态，如果是success说明任务执行成功，如果是failed说明任务执行失败。如何查询异步任务，请参见异步任务查询。
      *
@@ -39,6 +61,28 @@ public class ImsAsyncClient {
      */
     public AsyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse> batchAddMembersAsyncInvoker(BatchAddMembersRequest request) {
         return new AsyncInvoker<BatchAddMembersRequest, BatchAddMembersResponse>(request, ImsMeta.batchAddMembers, hcClient);
+    }
+
+    /**
+     * 批量添加删除镜像标签
+     * 该接口用于为指定镜像批量添加/更新、删除标签。
+     *
+     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @return CompletableFuture<BatchAddOrDeleteTagsResponse>
+     */
+    public CompletableFuture<BatchAddOrDeleteTagsResponse> batchAddOrDeleteTagsAsync(BatchAddOrDeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.batchAddOrDeleteTags);
+    }
+
+    /**
+     * 批量添加删除镜像标签
+     * 该接口用于为指定镜像批量添加/更新、删除标签。
+     *
+     * @param BatchAddOrDeleteTagsRequest 请求对象
+     * @return AsyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>
+     */
+    public AsyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse> batchAddOrDeleteTagsAsyncInvoker(BatchAddOrDeleteTagsRequest request) {
+        return new AsyncInvoker<BatchAddOrDeleteTagsRequest, BatchAddOrDeleteTagsResponse>(request, ImsMeta.batchAddOrDeleteTags, hcClient);
     }
 
     /**
@@ -218,6 +262,28 @@ public class ImsAsyncClient {
     }
 
     /**
+     * 删除镜像标签
+     * 该接口用于为镜像删除指定的标签
+     *
+     * @param DeleteImageTagRequest 请求对象
+     * @return CompletableFuture<DeleteImageTagResponse>
+     */
+    public CompletableFuture<DeleteImageTagResponse> deleteImageTagAsync(DeleteImageTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.deleteImageTag);
+    }
+
+    /**
+     * 删除镜像标签
+     * 该接口用于为镜像删除指定的标签
+     *
+     * @param DeleteImageTagRequest 请求对象
+     * @return AsyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>
+     */
+    public AsyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse> deleteImageTagAsyncInvoker(DeleteImageTagRequest request) {
+        return new AsyncInvoker<DeleteImageTagRequest, DeleteImageTagResponse>(request, ImsMeta.deleteImageTag, hcClient);
+    }
+
+    /**
      * 导出镜像
      * 该接口为扩展接口，用于用户将自己的私有镜像导出到指定的OBS桶中。
      *
@@ -262,6 +328,50 @@ public class ImsAsyncClient {
     }
 
     /**
+     * 按标签查询镜像
+     * 该接口用于按标签或其他条件对镜像进行过滤或者计数使用。
+     *
+     * @param ListImageByTagsRequest 请求对象
+     * @return CompletableFuture<ListImageByTagsResponse>
+     */
+    public CompletableFuture<ListImageByTagsResponse> listImageByTagsAsync(ListImageByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.listImageByTags);
+    }
+
+    /**
+     * 按标签查询镜像
+     * 该接口用于按标签或其他条件对镜像进行过滤或者计数使用。
+     *
+     * @param ListImageByTagsRequest 请求对象
+     * @return AsyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>
+     */
+    public AsyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse> listImageByTagsAsyncInvoker(ListImageByTagsRequest request) {
+        return new AsyncInvoker<ListImageByTagsRequest, ListImageByTagsResponse>(request, ImsMeta.listImageByTags, hcClient);
+    }
+
+    /**
+     * 查询镜像标签
+     * 该接口用于为查询指定镜像上的所有标签
+     *
+     * @param ListImageTagsRequest 请求对象
+     * @return CompletableFuture<ListImageTagsResponse>
+     */
+    public CompletableFuture<ListImageTagsResponse> listImageTagsAsync(ListImageTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.listImageTags);
+    }
+
+    /**
+     * 查询镜像标签
+     * 该接口用于为查询指定镜像上的所有标签
+     *
+     * @param ListImageTagsRequest 请求对象
+     * @return AsyncInvoker<ListImageTagsRequest, ListImageTagsResponse>
+     */
+    public AsyncInvoker<ListImageTagsRequest, ListImageTagsResponse> listImageTagsAsyncInvoker(ListImageTagsRequest request) {
+        return new AsyncInvoker<ListImageTagsRequest, ListImageTagsResponse>(request, ImsMeta.listImageTags, hcClient);
+    }
+
+    /**
      * 查询镜像列表
      * 根据不同条件查询镜像列表信息。 可以在URI后面用‘?’和‘&amp;’添加不同的查询条件组合，请参考请求样例。
      *
@@ -281,6 +391,28 @@ public class ImsAsyncClient {
      */
     public AsyncInvoker<ListImagesRequest, ListImagesResponse> listImagesAsyncInvoker(ListImagesRequest request) {
         return new AsyncInvoker<ListImagesRequest, ListImagesResponse>(request, ImsMeta.listImages, hcClient);
+    }
+
+    /**
+     * 查询租户所有镜像标签
+     * 该接口用于为查询租户的所有镜像上的标签。
+     *
+     * @param ListImagesTagsRequest 请求对象
+     * @return CompletableFuture<ListImagesTagsResponse>
+     */
+    public CompletableFuture<ListImagesTagsResponse> listImagesTagsAsync(ListImagesTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.listImagesTags);
+    }
+
+    /**
+     * 查询租户所有镜像标签
+     * 该接口用于为查询租户的所有镜像上的标签。
+     *
+     * @param ListImagesTagsRequest 请求对象
+     * @return AsyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>
+     */
+    public AsyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse> listImagesTagsAsyncInvoker(ListImagesTagsRequest request) {
+        return new AsyncInvoker<ListImagesTagsRequest, ListImagesTagsResponse>(request, ImsMeta.listImagesTags, hcClient);
     }
 
     /**

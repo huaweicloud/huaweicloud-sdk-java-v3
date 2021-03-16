@@ -49,6 +49,8 @@ public class CancelScriptRequest  {
         this.scriptName = scriptName;
     }
 
+    
+
     public CancelScriptRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -68,6 +70,9 @@ public class CancelScriptRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

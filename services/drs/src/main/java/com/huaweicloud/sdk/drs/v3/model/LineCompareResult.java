@@ -77,6 +77,8 @@ public class LineCompareResult  {
         this.compareTaskId = compareTaskId;
     }
 
+    
+
     public LineCompareResult withLineCompareOverview(List<LineCompareResultOverview> lineCompareOverview) {
         this.lineCompareOverview = lineCompareOverview;
         return this;
@@ -84,9 +86,6 @@ public class LineCompareResult  {
 
     
     public LineCompareResult addLineCompareOverviewItem(LineCompareResultOverview lineCompareOverviewItem) {
-        if (this.lineCompareOverview == null) {
-            this.lineCompareOverview = new ArrayList<>();
-        }
         this.lineCompareOverview.add(lineCompareOverviewItem);
         return this;
     }
@@ -111,6 +110,8 @@ public class LineCompareResult  {
         this.lineCompareOverview = lineCompareOverview;
     }
 
+    
+
     public LineCompareResult withLineCompareOverviewCount(Integer lineCompareOverviewCount) {
         this.lineCompareOverviewCount = lineCompareOverviewCount;
         return this;
@@ -131,6 +132,8 @@ public class LineCompareResult  {
         this.lineCompareOverviewCount = lineCompareOverviewCount;
     }
 
+    
+
     public LineCompareResult withLineCompareDetails(List<LineCompareResultDetails> lineCompareDetails) {
         this.lineCompareDetails = lineCompareDetails;
         return this;
@@ -138,9 +141,6 @@ public class LineCompareResult  {
 
     
     public LineCompareResult addLineCompareDetailsItem(LineCompareResultDetails lineCompareDetailsItem) {
-        if (this.lineCompareDetails == null) {
-            this.lineCompareDetails = new ArrayList<>();
-        }
         this.lineCompareDetails.add(lineCompareDetailsItem);
         return this;
     }
@@ -165,6 +165,8 @@ public class LineCompareResult  {
         this.lineCompareDetails = lineCompareDetails;
     }
 
+    
+
     public LineCompareResult withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -185,6 +187,8 @@ public class LineCompareResult  {
         this.errorCode = errorCode;
     }
 
+    
+
     public LineCompareResult withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -204,6 +208,9 @@ public class LineCompareResult  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

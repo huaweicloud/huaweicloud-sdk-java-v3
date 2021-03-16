@@ -22,7 +22,7 @@ public class CreatePublicZoneRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePublicZoneReq body = null;
+    private CreatePublicZoneReq body;
 
     public CreatePublicZoneRequest withBody(CreatePublicZoneReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePublicZoneRequest  {
     public void setBody(CreatePublicZoneReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ListFunctionsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListFunctionsRequest withMaxitems(String maxitems) {
         this.maxitems = maxitems;
         return this;
@@ -68,6 +70,9 @@ public class ListFunctionsRequest  {
     public void setMaxitems(String maxitems) {
         this.maxitems = maxitems;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

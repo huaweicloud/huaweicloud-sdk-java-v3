@@ -61,6 +61,8 @@ public class ServerFault  {
         this.code = code;
     }
 
+    
+
     public ServerFault withCreated(String created) {
         this.created = created;
         return this;
@@ -80,6 +82,8 @@ public class ServerFault  {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public ServerFault withMessage(String message) {
         this.message = message;
@@ -101,6 +105,8 @@ public class ServerFault  {
         this.message = message;
     }
 
+    
+
     public ServerFault withDetails(String details) {
         this.details = details;
         return this;
@@ -120,6 +126,9 @@ public class ServerFault  {
     public void setDetails(String details) {
         this.details = details;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

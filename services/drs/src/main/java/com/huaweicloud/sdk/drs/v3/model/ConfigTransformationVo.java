@@ -79,6 +79,8 @@ public class ConfigTransformationVo  {
         this.dbTableName = dbTableName;
     }
 
+    
+
     public ConfigTransformationVo withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -98,6 +100,8 @@ public class ConfigTransformationVo  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
 
     public ConfigTransformationVo withTableName(String tableName) {
         this.tableName = tableName;
@@ -119,6 +123,8 @@ public class ConfigTransformationVo  {
         this.tableName = tableName;
     }
 
+    
+
     public ConfigTransformationVo withColNames(String colNames) {
         this.colNames = colNames;
         return this;
@@ -138,6 +144,8 @@ public class ConfigTransformationVo  {
     public void setColNames(String colNames) {
         this.colNames = colNames;
     }
+
+    
 
     public ConfigTransformationVo withPrimKeyOrIndex(String primKeyOrIndex) {
         this.primKeyOrIndex = primKeyOrIndex;
@@ -159,6 +167,8 @@ public class ConfigTransformationVo  {
         this.primKeyOrIndex = primKeyOrIndex;
     }
 
+    
+
     public ConfigTransformationVo withIndexs(String indexs) {
         this.indexs = indexs;
         return this;
@@ -179,6 +189,8 @@ public class ConfigTransformationVo  {
         this.indexs = indexs;
     }
 
+    
+
     public ConfigTransformationVo withValues(String values) {
         this.values = values;
         return this;
@@ -198,6 +210,9 @@ public class ConfigTransformationVo  {
     public void setValues(String values) {
         this.values = values;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

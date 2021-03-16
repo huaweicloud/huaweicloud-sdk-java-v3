@@ -74,9 +74,6 @@ public class ListProjectWorkHoursRequestBody  {
 
     
     public ListProjectWorkHoursRequestBody addProjectIdsItem(String projectIdsItem) {
-        if (this.projectIds == null) {
-            this.projectIds = new ArrayList<>();
-        }
         this.projectIds.add(projectIdsItem);
         return this;
     }
@@ -101,6 +98,8 @@ public class ListProjectWorkHoursRequestBody  {
         this.projectIds = projectIds;
     }
 
+    
+
     public ListProjectWorkHoursRequestBody withUserIds(List<String> userIds) {
         this.userIds = userIds;
         return this;
@@ -108,9 +107,6 @@ public class ListProjectWorkHoursRequestBody  {
 
     
     public ListProjectWorkHoursRequestBody addUserIdsItem(String userIdsItem) {
-        if (this.userIds == null) {
-            this.userIds = new ArrayList<>();
-        }
         this.userIds.add(userIdsItem);
         return this;
     }
@@ -135,6 +131,8 @@ public class ListProjectWorkHoursRequestBody  {
         this.userIds = userIds;
     }
 
+    
+
     public ListProjectWorkHoursRequestBody withWorkHoursTypes(String workHoursTypes) {
         this.workHoursTypes = workHoursTypes;
         return this;
@@ -154,6 +152,8 @@ public class ListProjectWorkHoursRequestBody  {
     public void setWorkHoursTypes(String workHoursTypes) {
         this.workHoursTypes = workHoursTypes;
     }
+
+    
 
     public ListProjectWorkHoursRequestBody withWorkHoursDates(String workHoursDates) {
         this.workHoursDates = workHoursDates;
@@ -175,6 +175,8 @@ public class ListProjectWorkHoursRequestBody  {
         this.workHoursDates = workHoursDates;
     }
 
+    
+
     public ListProjectWorkHoursRequestBody withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -194,6 +196,8 @@ public class ListProjectWorkHoursRequestBody  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public ListProjectWorkHoursRequestBody withEndTime(String endTime) {
         this.endTime = endTime;
@@ -215,6 +219,8 @@ public class ListProjectWorkHoursRequestBody  {
         this.endTime = endTime;
     }
 
+    
+
     public ListProjectWorkHoursRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -224,7 +230,7 @@ public class ListProjectWorkHoursRequestBody  {
 
 
     /**
-     * 偏移量
+     * 偏移量,offset是limit的整数倍，limit=10,offset=0,10,20...
      * @return offset
      */
     public Integer getOffset() {
@@ -234,6 +240,8 @@ public class ListProjectWorkHoursRequestBody  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListProjectWorkHoursRequestBody withLimit(Integer limit) {
         this.limit = limit;
@@ -254,6 +262,9 @@ public class ListProjectWorkHoursRequestBody  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

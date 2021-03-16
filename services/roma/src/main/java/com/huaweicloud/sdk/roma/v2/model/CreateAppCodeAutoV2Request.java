@@ -49,6 +49,8 @@ public class CreateAppCodeAutoV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateAppCodeAutoV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -68,6 +70,9 @@ public class CreateAppCodeAutoV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

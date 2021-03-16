@@ -77,6 +77,8 @@ public class QueryUserResp  {
         this.jobId = jobId;
     }
 
+    
+
     public QueryUserResp withIsGlobalPassword(String isGlobalPassword) {
         this.isGlobalPassword = isGlobalPassword;
         return this;
@@ -96,6 +98,8 @@ public class QueryUserResp  {
     public void setIsGlobalPassword(String isGlobalPassword) {
         this.isGlobalPassword = isGlobalPassword;
     }
+
+    
 
     public QueryUserResp withMessage(String message) {
         this.message = message;
@@ -117,6 +121,8 @@ public class QueryUserResp  {
         this.message = message;
     }
 
+    
+
     public QueryUserResp withUserList(List<QueryUserDetailResp> userList) {
         this.userList = userList;
         return this;
@@ -124,9 +130,6 @@ public class QueryUserResp  {
 
     
     public QueryUserResp addUserListItem(QueryUserDetailResp userListItem) {
-        if (this.userList == null) {
-            this.userList = new ArrayList<>();
-        }
         this.userList.add(userListItem);
         return this;
     }
@@ -151,6 +154,8 @@ public class QueryUserResp  {
         this.userList = userList;
     }
 
+    
+
     public QueryUserResp withRolesList(List<QueryRoleDetailResp> rolesList) {
         this.rolesList = rolesList;
         return this;
@@ -158,9 +163,6 @@ public class QueryUserResp  {
 
     
     public QueryUserResp addRolesListItem(QueryRoleDetailResp rolesListItem) {
-        if (this.rolesList == null) {
-            this.rolesList = new ArrayList<>();
-        }
         this.rolesList.add(rolesListItem);
         return this;
     }
@@ -185,6 +187,8 @@ public class QueryUserResp  {
         this.rolesList = rolesList;
     }
 
+    
+
     public QueryUserResp withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
         return this;
@@ -204,6 +208,9 @@ public class QueryUserResp  {
     public void setIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

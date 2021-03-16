@@ -61,6 +61,8 @@ public class HlsEncrypt  {
         this.key = key;
     }
 
+    
+
     public HlsEncrypt withUrl(String url) {
         this.url = url;
         return this;
@@ -80,6 +82,8 @@ public class HlsEncrypt  {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
 
     public HlsEncrypt withIv(String iv) {
         this.iv = iv;
@@ -101,6 +105,8 @@ public class HlsEncrypt  {
         this.iv = iv;
     }
 
+    
+
     public HlsEncrypt withAlgorithm(String algorithm) {
         this.algorithm = algorithm;
         return this;
@@ -120,6 +126,9 @@ public class HlsEncrypt  {
     public void setAlgorithm(String algorithm) {
         this.algorithm = algorithm;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

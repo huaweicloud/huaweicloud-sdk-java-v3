@@ -60,6 +60,8 @@ public class ListDictionaryResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListDictionaryResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListDictionaryResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListDictionaryResponse withDictionaries(List<Dictionary> dictionaries) {
         this.dictionaries = dictionaries;
         return this;
@@ -87,9 +91,6 @@ public class ListDictionaryResponse extends SdkResponse {
 
     
     public ListDictionaryResponse addDictionariesItem(Dictionary dictionariesItem) {
-        if (this.dictionaries == null) {
-            this.dictionaries = new ArrayList<>();
-        }
         this.dictionaries.add(dictionariesItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListDictionaryResponse extends SdkResponse {
     public void setDictionaries(List<Dictionary> dictionaries) {
         this.dictionaries = dictionaries;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

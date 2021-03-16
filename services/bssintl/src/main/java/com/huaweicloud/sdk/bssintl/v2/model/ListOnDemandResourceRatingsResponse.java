@@ -78,6 +78,8 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         this.amount = amount;
     }
 
+    
+
     public ListOnDemandResourceRatingsResponse withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
@@ -98,6 +100,8 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         this.discountAmount = discountAmount;
     }
 
+    
+
     public ListOnDemandResourceRatingsResponse withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
@@ -117,6 +121,8 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
+
+    
 
     public ListOnDemandResourceRatingsResponse withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -140,6 +146,8 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         this.measureId = measureId;
     }
 
+    
+
     public ListOnDemandResourceRatingsResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -160,6 +168,8 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         this.currency = currency;
     }
 
+    
+
     public ListOnDemandResourceRatingsResponse withProductRatingResults(List<DemandProductRatingResult> productRatingResults) {
         this.productRatingResults = productRatingResults;
         return this;
@@ -167,9 +177,6 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
     
     public ListOnDemandResourceRatingsResponse addProductRatingResultsItem(DemandProductRatingResult productRatingResultsItem) {
-        if (this.productRatingResults == null) {
-            this.productRatingResults = new ArrayList<>();
-        }
         this.productRatingResults.add(productRatingResultsItem);
         return this;
     }
@@ -193,6 +200,9 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     public void setProductRatingResults(List<DemandProductRatingResult> productRatingResults) {
         this.productRatingResults = productRatingResults;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

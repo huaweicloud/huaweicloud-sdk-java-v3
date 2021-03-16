@@ -62,7 +62,7 @@ public class V3DataVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private DataVolumeMetadata metadata = null;
+    private DataVolumeMetadata metadata;
 
     public V3DataVolume withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -84,6 +84,8 @@ public class V3DataVolume  {
         this.clusterId = clusterId;
     }
 
+    
+
     public V3DataVolume withClusterType(String clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -104,6 +106,8 @@ public class V3DataVolume  {
         this.clusterType = clusterType;
     }
 
+    
+
     public V3DataVolume withExtendParam(Map<String, Object> extendParam) {
         this.extendParam = extendParam;
         return this;
@@ -112,9 +116,6 @@ public class V3DataVolume  {
     
 
     public V3DataVolume putExtendParamItem(String key, Object extendParamItem) {
-         if (this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-         }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
@@ -138,6 +139,8 @@ public class V3DataVolume  {
         this.extendParam = extendParam;
     }
 
+    
+
     public V3DataVolume withHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
         return this;
@@ -157,6 +160,8 @@ public class V3DataVolume  {
     public void setHwPassthrough(Boolean hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
     }
+
+    
 
     public V3DataVolume withSize(Integer size) {
         this.size = size;
@@ -178,6 +183,8 @@ public class V3DataVolume  {
         this.size = size;
     }
 
+    
+
     public V3DataVolume withVolumetype(String volumetype) {
         this.volumetype = volumetype;
         return this;
@@ -197,6 +204,8 @@ public class V3DataVolume  {
     public void setVolumetype(String volumetype) {
         this.volumetype = volumetype;
     }
+
+    
 
     public V3DataVolume withMetadata(DataVolumeMetadata metadata) {
         this.metadata = metadata;
@@ -224,6 +233,9 @@ public class V3DataVolume  {
     public void setMetadata(DataVolumeMetadata metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

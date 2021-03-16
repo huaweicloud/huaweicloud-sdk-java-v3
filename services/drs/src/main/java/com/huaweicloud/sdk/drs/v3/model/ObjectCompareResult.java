@@ -73,6 +73,8 @@ public class ObjectCompareResult  {
         this.compareTaskId = compareTaskId;
     }
 
+    
+
     public ObjectCompareResult withObjectCompareOverview(List<ObjectCompareResultOverview> objectCompareOverview) {
         this.objectCompareOverview = objectCompareOverview;
         return this;
@@ -80,9 +82,6 @@ public class ObjectCompareResult  {
 
     
     public ObjectCompareResult addObjectCompareOverviewItem(ObjectCompareResultOverview objectCompareOverviewItem) {
-        if (this.objectCompareOverview == null) {
-            this.objectCompareOverview = new ArrayList<>();
-        }
         this.objectCompareOverview.add(objectCompareOverviewItem);
         return this;
     }
@@ -107,6 +106,8 @@ public class ObjectCompareResult  {
         this.objectCompareOverview = objectCompareOverview;
     }
 
+    
+
     public ObjectCompareResult withObjectCompareDetails(Map<String, List<ObjectCompareResultDetails>> objectCompareDetails) {
         this.objectCompareDetails = objectCompareDetails;
         return this;
@@ -115,9 +116,6 @@ public class ObjectCompareResult  {
     
 
     public ObjectCompareResult putObjectCompareDetailsItem(String key, List<ObjectCompareResultDetails> objectCompareDetailsItem) {
-         if (this.objectCompareDetails == null) {
-            this.objectCompareDetails = new HashMap<>();
-         }
         this.objectCompareDetails.put(key, objectCompareDetailsItem);
         return this;
     }
@@ -141,6 +139,8 @@ public class ObjectCompareResult  {
         this.objectCompareDetails = objectCompareDetails;
     }
 
+    
+
     public ObjectCompareResult withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -161,6 +161,8 @@ public class ObjectCompareResult  {
         this.errorCode = errorCode;
     }
 
+    
+
     public ObjectCompareResult withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -180,6 +182,9 @@ public class ObjectCompareResult  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

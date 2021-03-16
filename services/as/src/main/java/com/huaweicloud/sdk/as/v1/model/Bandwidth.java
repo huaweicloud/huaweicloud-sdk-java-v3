@@ -223,6 +223,8 @@ public class Bandwidth  {
         this.size = size;
     }
 
+    
+
     public Bandwidth withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
         return this;
@@ -242,6 +244,8 @@ public class Bandwidth  {
     public void setShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
     }
+
+    
 
     public Bandwidth withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
@@ -263,6 +267,8 @@ public class Bandwidth  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public Bandwidth withId(String id) {
         this.id = id;
         return this;
@@ -282,6 +288,9 @@ public class Bandwidth  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

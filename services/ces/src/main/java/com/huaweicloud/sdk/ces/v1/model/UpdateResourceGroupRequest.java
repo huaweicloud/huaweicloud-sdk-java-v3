@@ -28,7 +28,7 @@ public class UpdateResourceGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateResourceGroupRequestBody body = null;
+    private UpdateResourceGroupRequestBody body;
 
     public UpdateResourceGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -49,6 +49,8 @@ public class UpdateResourceGroupRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public UpdateResourceGroupRequest withBody(UpdateResourceGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateResourceGroupRequest  {
     public void setBody(UpdateResourceGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class CreatePoolResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool")
     
-    private PoolResp pool = null;
+    private PoolResp pool;
 
     public CreatePoolResponse withPool(PoolResp pool) {
         this.pool = pool;
@@ -52,6 +52,9 @@ public class CreatePoolResponse extends SdkResponse {
     public void setPool(PoolResp pool) {
         this.pool = pool;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

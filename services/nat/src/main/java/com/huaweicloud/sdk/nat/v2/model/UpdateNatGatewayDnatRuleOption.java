@@ -185,6 +185,8 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.natGatewayId = natGatewayId;
     }
 
+    
+
     public UpdateNatGatewayDnatRuleOption withDescription(String description) {
         this.description = description;
         return this;
@@ -204,6 +206,8 @@ public class UpdateNatGatewayDnatRuleOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateNatGatewayDnatRuleOption withPortId(String portId) {
         this.portId = portId;
@@ -225,6 +229,8 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.portId = portId;
     }
 
+    
+
     public UpdateNatGatewayDnatRuleOption withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
@@ -244,6 +250,8 @@ public class UpdateNatGatewayDnatRuleOption  {
     public void setPrivateIp(String privateIp) {
         this.privateIp = privateIp;
     }
+
+    
 
     public UpdateNatGatewayDnatRuleOption withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
@@ -265,6 +273,8 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.protocol = protocol;
     }
 
+    
+
     public UpdateNatGatewayDnatRuleOption withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
@@ -284,6 +294,8 @@ public class UpdateNatGatewayDnatRuleOption  {
     public void setFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
     }
+
+    
 
     public UpdateNatGatewayDnatRuleOption withInternalServicePort(Integer internalServicePort) {
         this.internalServicePort = internalServicePort;
@@ -307,6 +319,8 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.internalServicePort = internalServicePort;
     }
 
+    
+
     public UpdateNatGatewayDnatRuleOption withExternalServicePort(Integer externalServicePort) {
         this.externalServicePort = externalServicePort;
         return this;
@@ -329,6 +343,8 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.externalServicePort = externalServicePort;
     }
 
+    
+
     public UpdateNatGatewayDnatRuleOption withInternalServicePortRange(String internalServicePortRange) {
         this.internalServicePortRange = internalServicePortRange;
         return this;
@@ -349,6 +365,8 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.internalServicePortRange = internalServicePortRange;
     }
 
+    
+
     public UpdateNatGatewayDnatRuleOption withExternalServicePortRange(String externalServicePortRange) {
         this.externalServicePortRange = externalServicePortRange;
         return this;
@@ -368,6 +386,9 @@ public class UpdateNatGatewayDnatRuleOption  {
     public void setExternalServicePortRange(String externalServicePortRange) {
         this.externalServicePortRange = externalServicePortRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

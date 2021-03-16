@@ -68,9 +68,6 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -95,6 +92,8 @@ public class ListIpGroupsRequest  {
         this.description = description;
     }
 
+    
+
     public ListIpGroupsRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -102,9 +101,6 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -129,6 +125,8 @@ public class ListIpGroupsRequest  {
         this.id = id;
     }
 
+    
+
     public ListIpGroupsRequest withIpList(List<String> ipList) {
         this.ipList = ipList;
         return this;
@@ -136,9 +134,6 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addIpListItem(String ipListItem) {
-        if (this.ipList == null) {
-            this.ipList = new ArrayList<>();
-        }
         this.ipList.add(ipListItem);
         return this;
     }
@@ -163,6 +158,8 @@ public class ListIpGroupsRequest  {
         this.ipList = ipList;
     }
 
+    
+
     public ListIpGroupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -185,6 +182,8 @@ public class ListIpGroupsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListIpGroupsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -205,6 +204,8 @@ public class ListIpGroupsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListIpGroupsRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -212,9 +213,6 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -239,6 +237,8 @@ public class ListIpGroupsRequest  {
         this.name = name;
     }
 
+    
+
     public ListIpGroupsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
@@ -258,6 +258,9 @@ public class ListIpGroupsRequest  {
     public void setPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

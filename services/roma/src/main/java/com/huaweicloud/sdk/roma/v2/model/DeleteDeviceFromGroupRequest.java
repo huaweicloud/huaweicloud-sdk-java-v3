@@ -55,6 +55,8 @@ public class DeleteDeviceFromGroupRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteDeviceFromGroupRequest withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -77,6 +79,8 @@ public class DeleteDeviceFromGroupRequest  {
         this.deviceId = deviceId;
     }
 
+    
+
     public DeleteDeviceFromGroupRequest withGroupId(Integer groupId) {
         this.groupId = groupId;
         return this;
@@ -98,6 +102,9 @@ public class DeleteDeviceFromGroupRequest  {
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

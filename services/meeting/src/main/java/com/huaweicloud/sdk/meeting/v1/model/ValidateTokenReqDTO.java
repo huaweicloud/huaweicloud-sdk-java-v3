@@ -27,13 +27,13 @@ public class ValidateTokenReqDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="needGenNewToken")
     
-    private Boolean needGenNewToken = false;
+    private Boolean needGenNewToken;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="needAccountInfo")
     
-    private Boolean needAccountInfo = true;
+    private Boolean needAccountInfo;
 
     public ValidateTokenReqDTO withToken(String token) {
         this.token = token;
@@ -55,6 +55,8 @@ public class ValidateTokenReqDTO  {
         this.token = token;
     }
 
+    
+
     public ValidateTokenReqDTO withNeedGenNewToken(Boolean needGenNewToken) {
         this.needGenNewToken = needGenNewToken;
         return this;
@@ -75,6 +77,8 @@ public class ValidateTokenReqDTO  {
         this.needGenNewToken = needGenNewToken;
     }
 
+    
+
     public ValidateTokenReqDTO withNeedAccountInfo(Boolean needAccountInfo) {
         this.needAccountInfo = needAccountInfo;
         return this;
@@ -94,6 +98,9 @@ public class ValidateTokenReqDTO  {
     public void setNeedAccountInfo(Boolean needAccountInfo) {
         this.needAccountInfo = needAccountInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

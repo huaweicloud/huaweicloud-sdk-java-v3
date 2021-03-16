@@ -303,13 +303,13 @@ public class VpcChannelBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_type")
     
-    private MemberTypeEnum memberType = MemberTypeEnum.ECS;
+    private MemberTypeEnum memberType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -421,6 +421,8 @@ public class VpcChannelBase  {
         this.name = name;
     }
 
+    
+
     public VpcChannelBase withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -440,6 +442,8 @@ public class VpcChannelBase  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public VpcChannelBase withPort(Integer port) {
         this.port = port;
@@ -461,6 +465,8 @@ public class VpcChannelBase  {
         this.port = port;
     }
 
+    
+
     public VpcChannelBase withBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
@@ -480,6 +486,8 @@ public class VpcChannelBase  {
     public void setBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
     }
+
+    
 
     public VpcChannelBase withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
@@ -501,6 +509,8 @@ public class VpcChannelBase  {
         this.memberType = memberType;
     }
 
+    
+
     public VpcChannelBase withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -520,6 +530,8 @@ public class VpcChannelBase  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public VpcChannelBase withId(String id) {
         this.id = id;
@@ -541,6 +553,8 @@ public class VpcChannelBase  {
         this.id = id;
     }
 
+    
+
     public VpcChannelBase withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -560,6 +574,9 @@ public class VpcChannelBase  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

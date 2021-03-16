@@ -28,7 +28,7 @@ public class BatchFreezeDevicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchFreezeDevicesRequestBody body = null;
+    private BatchFreezeDevicesRequestBody body;
 
     public BatchFreezeDevicesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class BatchFreezeDevicesRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BatchFreezeDevicesRequest withBody(BatchFreezeDevicesRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchFreezeDevicesRequest  {
     public void setBody(BatchFreezeDevicesRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

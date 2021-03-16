@@ -61,6 +61,8 @@ public class AddApplication  {
         this.appName = appName;
     }
 
+    
+
     public AddApplication withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -80,6 +82,8 @@ public class AddApplication  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public AddApplication withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -101,6 +105,8 @@ public class AddApplication  {
         this.instanceId = instanceId;
     }
 
+    
+
     public AddApplication withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
@@ -120,6 +126,9 @@ public class AddApplication  {
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

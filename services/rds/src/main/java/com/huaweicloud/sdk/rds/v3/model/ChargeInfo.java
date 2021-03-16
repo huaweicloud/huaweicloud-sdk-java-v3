@@ -229,6 +229,8 @@ public class ChargeInfo  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public ChargeInfo withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
@@ -248,6 +250,8 @@ public class ChargeInfo  {
     public void setPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
     }
+
+    
 
     public ChargeInfo withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
@@ -269,6 +273,8 @@ public class ChargeInfo  {
         this.periodNum = periodNum;
     }
 
+    
+
     public ChargeInfo withIsAutoRenew(Boolean isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
@@ -289,6 +295,8 @@ public class ChargeInfo  {
         this.isAutoRenew = isAutoRenew;
     }
 
+    
+
     public ChargeInfo withIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -308,6 +316,9 @@ public class ChargeInfo  {
     public void setIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

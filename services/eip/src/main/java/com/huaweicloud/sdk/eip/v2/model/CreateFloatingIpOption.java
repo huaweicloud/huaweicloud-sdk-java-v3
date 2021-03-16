@@ -61,6 +61,8 @@ public class CreateFloatingIpOption  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
+    
+
     public CreateFloatingIpOption withFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
         return this;
@@ -80,6 +82,8 @@ public class CreateFloatingIpOption  {
     public void setFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
     }
+
+    
 
     public CreateFloatingIpOption withPortId(String portId) {
         this.portId = portId;
@@ -101,6 +105,8 @@ public class CreateFloatingIpOption  {
         this.portId = portId;
     }
 
+    
+
     public CreateFloatingIpOption withFixedIpAddress(String fixedIpAddress) {
         this.fixedIpAddress = fixedIpAddress;
         return this;
@@ -120,6 +126,9 @@ public class CreateFloatingIpOption  {
     public void setFixedIpAddress(String fixedIpAddress) {
         this.fixedIpAddress = fixedIpAddress;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

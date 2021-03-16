@@ -36,7 +36,7 @@ public class StreamTranscodingTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quality_info")
     
-    private List<QualityInfo> qualityInfo = new ArrayList<>();
+    private List<QualityInfo> qualityInfo = null;
     
     public StreamTranscodingTemplate withDomain(String domain) {
         this.domain = domain;
@@ -58,6 +58,8 @@ public class StreamTranscodingTemplate  {
         this.domain = domain;
     }
 
+    
+
     public StreamTranscodingTemplate withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -77,6 +79,8 @@ public class StreamTranscodingTemplate  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public StreamTranscodingTemplate withQualityInfo(List<QualityInfo> qualityInfo) {
         this.qualityInfo = qualityInfo;
@@ -108,6 +112,9 @@ public class StreamTranscodingTemplate  {
     public void setQualityInfo(List<QualityInfo> qualityInfo) {
         this.qualityInfo = qualityInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

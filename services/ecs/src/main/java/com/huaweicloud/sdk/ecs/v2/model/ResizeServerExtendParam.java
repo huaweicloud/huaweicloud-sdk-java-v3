@@ -42,6 +42,9 @@ public class ResizeServerExtendParam  {
     public void setIsAutoPay(String isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

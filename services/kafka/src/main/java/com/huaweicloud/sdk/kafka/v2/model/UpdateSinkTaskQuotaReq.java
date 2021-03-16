@@ -42,6 +42,9 @@ public class UpdateSinkTaskQuotaReq  {
     public void setSinkMaxTasks(String sinkMaxTasks) {
         this.sinkMaxTasks = sinkMaxTasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

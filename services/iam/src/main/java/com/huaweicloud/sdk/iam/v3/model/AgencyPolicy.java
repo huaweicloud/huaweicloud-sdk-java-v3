@@ -24,13 +24,13 @@ public class AgencyPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Version")
     
-    private String version = "1.1";
+    private String version;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Statement")
     
-    private List<AgencyPolicyStatement> statement = new ArrayList<>();
+    private List<AgencyPolicyStatement> statement = null;
     
     public AgencyPolicy withVersion(String version) {
         this.version = version;
@@ -51,6 +51,8 @@ public class AgencyPolicy  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public AgencyPolicy withStatement(List<AgencyPolicyStatement> statement) {
         this.statement = statement;
@@ -82,6 +84,9 @@ public class AgencyPolicy  {
     public void setStatement(List<AgencyPolicyStatement> statement) {
         this.statement = statement;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class MrsKafkaForwarding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private List<NetAddress> addresses = new ArrayList<>();
+    private List<NetAddress> addresses = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class MrsKafkaForwarding  {
         this.addresses = addresses;
     }
 
+    
+
     public MrsKafkaForwarding withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -82,6 +84,9 @@ public class MrsKafkaForwarding  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

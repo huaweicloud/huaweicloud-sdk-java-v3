@@ -149,6 +149,8 @@ public class ShowNamespace  {
         this.id = id;
     }
 
+    
+
     public ShowNamespace withName(String name) {
         this.name = name;
         return this;
@@ -168,6 +170,8 @@ public class ShowNamespace  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowNamespace withCreatorName(String creatorName) {
         this.creatorName = creatorName;
@@ -189,6 +193,8 @@ public class ShowNamespace  {
         this.creatorName = creatorName;
     }
 
+    
+
     public ShowNamespace withAuth(AuthEnum auth) {
         this.auth = auth;
         return this;
@@ -208,6 +214,9 @@ public class ShowNamespace  {
     public void setAuth(AuthEnum auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -65,9 +65,6 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
 
     
     public ListFunctionStatisticsResponse addCountItem(SlaReportsValue countItem) {
-        if (this.count == null) {
-            this.count = new ArrayList<>();
-        }
         this.count.add(countItem);
         return this;
     }
@@ -92,6 +89,8 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListFunctionStatisticsResponse withDuration(List<SlaReportsValue> duration) {
         this.duration = duration;
         return this;
@@ -99,9 +98,6 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
 
     
     public ListFunctionStatisticsResponse addDurationItem(SlaReportsValue durationItem) {
-        if (this.duration == null) {
-            this.duration = new ArrayList<>();
-        }
         this.duration.add(durationItem);
         return this;
     }
@@ -126,6 +122,8 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         this.duration = duration;
     }
 
+    
+
     public ListFunctionStatisticsResponse withFailCount(List<SlaReportsValue> failCount) {
         this.failCount = failCount;
         return this;
@@ -133,9 +131,6 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
 
     
     public ListFunctionStatisticsResponse addFailCountItem(SlaReportsValue failCountItem) {
-        if (this.failCount == null) {
-            this.failCount = new ArrayList<>();
-        }
         this.failCount.add(failCountItem);
         return this;
     }
@@ -160,6 +155,8 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         this.failCount = failCount;
     }
 
+    
+
     public ListFunctionStatisticsResponse withMaxDuration(List<SlaReportsValue> maxDuration) {
         this.maxDuration = maxDuration;
         return this;
@@ -167,9 +164,6 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
 
     
     public ListFunctionStatisticsResponse addMaxDurationItem(SlaReportsValue maxDurationItem) {
-        if (this.maxDuration == null) {
-            this.maxDuration = new ArrayList<>();
-        }
         this.maxDuration.add(maxDurationItem);
         return this;
     }
@@ -194,6 +188,8 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         this.maxDuration = maxDuration;
     }
 
+    
+
     public ListFunctionStatisticsResponse withMinDuration(List<SlaReportsValue> minDuration) {
         this.minDuration = minDuration;
         return this;
@@ -201,9 +197,6 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
 
     
     public ListFunctionStatisticsResponse addMinDurationItem(SlaReportsValue minDurationItem) {
-        if (this.minDuration == null) {
-            this.minDuration = new ArrayList<>();
-        }
         this.minDuration.add(minDurationItem);
         return this;
     }
@@ -228,6 +221,8 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
         this.minDuration = minDuration;
     }
 
+    
+
     public ListFunctionStatisticsResponse withRejectCount(List<SlaReportsValue> rejectCount) {
         this.rejectCount = rejectCount;
         return this;
@@ -235,9 +230,6 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
 
     
     public ListFunctionStatisticsResponse addRejectCountItem(SlaReportsValue rejectCountItem) {
-        if (this.rejectCount == null) {
-            this.rejectCount = new ArrayList<>();
-        }
         this.rejectCount.add(rejectCountItem);
         return this;
     }
@@ -261,6 +253,9 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
     public void setRejectCount(List<SlaReportsValue> rejectCount) {
         this.rejectCount = rejectCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

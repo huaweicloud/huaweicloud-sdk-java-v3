@@ -84,13 +84,13 @@ public class SubNetworkInterface  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<String> securityGroups = new ArrayList<>();
+    private List<String> securityGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,7 +102,7 @@ public class SubNetworkInterface  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
     public SubNetworkInterface withId(String id) {
         this.id = id;
@@ -124,6 +124,8 @@ public class SubNetworkInterface  {
         this.id = id;
     }
 
+    
+
     public SubNetworkInterface withVirsubnetId(String virsubnetId) {
         this.virsubnetId = virsubnetId;
         return this;
@@ -143,6 +145,8 @@ public class SubNetworkInterface  {
     public void setVirsubnetId(String virsubnetId) {
         this.virsubnetId = virsubnetId;
     }
+
+    
 
     public SubNetworkInterface withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -164,6 +168,8 @@ public class SubNetworkInterface  {
         this.privateIpAddress = privateIpAddress;
     }
 
+    
+
     public SubNetworkInterface withIpv6IpAddress(String ipv6IpAddress) {
         this.ipv6IpAddress = ipv6IpAddress;
         return this;
@@ -183,6 +189,8 @@ public class SubNetworkInterface  {
     public void setIpv6IpAddress(String ipv6IpAddress) {
         this.ipv6IpAddress = ipv6IpAddress;
     }
+
+    
 
     public SubNetworkInterface withMacAddress(String macAddress) {
         this.macAddress = macAddress;
@@ -204,6 +212,8 @@ public class SubNetworkInterface  {
         this.macAddress = macAddress;
     }
 
+    
+
     public SubNetworkInterface withParentDeviceId(String parentDeviceId) {
         this.parentDeviceId = parentDeviceId;
         return this;
@@ -223,6 +233,8 @@ public class SubNetworkInterface  {
     public void setParentDeviceId(String parentDeviceId) {
         this.parentDeviceId = parentDeviceId;
     }
+
+    
 
     public SubNetworkInterface withParentId(String parentId) {
         this.parentId = parentId;
@@ -244,6 +256,8 @@ public class SubNetworkInterface  {
         this.parentId = parentId;
     }
 
+    
+
     public SubNetworkInterface withDescription(String description) {
         this.description = description;
         return this;
@@ -263,6 +277,8 @@ public class SubNetworkInterface  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public SubNetworkInterface withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -284,6 +300,8 @@ public class SubNetworkInterface  {
         this.vpcId = vpcId;
     }
 
+    
+
     public SubNetworkInterface withVlanId(Integer vlanId) {
         this.vlanId = vlanId;
         return this;
@@ -303,6 +321,8 @@ public class SubNetworkInterface  {
     public void setVlanId(Integer vlanId) {
         this.vlanId = vlanId;
     }
+
+    
 
     public SubNetworkInterface withSecurityGroups(List<String> securityGroups) {
         this.securityGroups = securityGroups;
@@ -335,6 +355,8 @@ public class SubNetworkInterface  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public SubNetworkInterface withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -366,6 +388,8 @@ public class SubNetworkInterface  {
         this.tags = tags;
     }
 
+    
+
     public SubNetworkInterface withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -386,6 +410,8 @@ public class SubNetworkInterface  {
         this.projectId = projectId;
     }
 
+    
+
     public SubNetworkInterface withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -405,6 +431,9 @@ public class SubNetworkInterface  {
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

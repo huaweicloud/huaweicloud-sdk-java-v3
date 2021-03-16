@@ -34,13 +34,13 @@ public class ImageBatchModerationResultBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private ImageDetectionResultDetail detail = null;
+    private ImageDetectionResultDetail detail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category_suggestion")
     
-    private Object categorySuggestion = null;
+    private Object categorySuggestion;
 
     public ImageBatchModerationResultBody withUrl(String url) {
         this.url = url;
@@ -62,6 +62,8 @@ public class ImageBatchModerationResultBody  {
         this.url = url;
     }
 
+    
+
     public ImageBatchModerationResultBody withSuggestion(String suggestion) {
         this.suggestion = suggestion;
         return this;
@@ -81,6 +83,8 @@ public class ImageBatchModerationResultBody  {
     public void setSuggestion(String suggestion) {
         this.suggestion = suggestion;
     }
+
+    
 
     public ImageBatchModerationResultBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
@@ -109,6 +113,8 @@ public class ImageBatchModerationResultBody  {
         this.detail = detail;
     }
 
+    
+
     public ImageBatchModerationResultBody withCategorySuggestion(Object categorySuggestion) {
         this.categorySuggestion = categorySuggestion;
         return this;
@@ -128,6 +134,9 @@ public class ImageBatchModerationResultBody  {
     public void setCategorySuggestion(Object categorySuggestion) {
         this.categorySuggestion = categorySuggestion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

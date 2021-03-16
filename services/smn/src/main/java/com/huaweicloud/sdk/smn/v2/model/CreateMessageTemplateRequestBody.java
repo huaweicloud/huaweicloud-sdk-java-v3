@@ -55,6 +55,8 @@ public class CreateMessageTemplateRequestBody  {
         this.messageTemplateName = messageTemplateName;
     }
 
+    
+
     public CreateMessageTemplateRequestBody withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -75,6 +77,8 @@ public class CreateMessageTemplateRequestBody  {
         this.protocol = protocol;
     }
 
+    
+
     public CreateMessageTemplateRequestBody withContent(String content) {
         this.content = content;
         return this;
@@ -94,6 +98,9 @@ public class CreateMessageTemplateRequestBody  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

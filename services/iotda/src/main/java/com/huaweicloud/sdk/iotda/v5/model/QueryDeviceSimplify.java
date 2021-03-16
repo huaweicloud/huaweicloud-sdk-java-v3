@@ -124,6 +124,8 @@ public class QueryDeviceSimplify  {
         this.appId = appId;
     }
 
+    
+
     public QueryDeviceSimplify withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -143,6 +145,8 @@ public class QueryDeviceSimplify  {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public QueryDeviceSimplify withDeviceId(String deviceId) {
         this.deviceId = deviceId;
@@ -164,6 +168,8 @@ public class QueryDeviceSimplify  {
         this.deviceId = deviceId;
     }
 
+    
+
     public QueryDeviceSimplify withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -183,6 +189,8 @@ public class QueryDeviceSimplify  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public QueryDeviceSimplify withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -204,6 +212,8 @@ public class QueryDeviceSimplify  {
         this.gatewayId = gatewayId;
     }
 
+    
+
     public QueryDeviceSimplify withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
@@ -223,6 +233,8 @@ public class QueryDeviceSimplify  {
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
+
+    
 
     public QueryDeviceSimplify withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -244,6 +256,8 @@ public class QueryDeviceSimplify  {
         this.nodeType = nodeType;
     }
 
+    
+
     public QueryDeviceSimplify withDescription(String description) {
         this.description = description;
         return this;
@@ -263,6 +277,8 @@ public class QueryDeviceSimplify  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public QueryDeviceSimplify withFwVersion(String fwVersion) {
         this.fwVersion = fwVersion;
@@ -284,6 +300,8 @@ public class QueryDeviceSimplify  {
         this.fwVersion = fwVersion;
     }
 
+    
+
     public QueryDeviceSimplify withSwVersion(String swVersion) {
         this.swVersion = swVersion;
         return this;
@@ -303,6 +321,8 @@ public class QueryDeviceSimplify  {
     public void setSwVersion(String swVersion) {
         this.swVersion = swVersion;
     }
+
+    
 
     public QueryDeviceSimplify withProductId(String productId) {
         this.productId = productId;
@@ -324,6 +344,8 @@ public class QueryDeviceSimplify  {
         this.productId = productId;
     }
 
+    
+
     public QueryDeviceSimplify withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -343,6 +365,8 @@ public class QueryDeviceSimplify  {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    
 
     public QueryDeviceSimplify withStatus(String status) {
         this.status = status;
@@ -364,6 +388,8 @@ public class QueryDeviceSimplify  {
         this.status = status;
     }
 
+    
+
     public QueryDeviceSimplify withTags(List<TagV5DTO> tags) {
         this.tags = tags;
         return this;
@@ -371,9 +397,6 @@ public class QueryDeviceSimplify  {
 
     
     public QueryDeviceSimplify addTagsItem(TagV5DTO tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -397,6 +420,9 @@ public class QueryDeviceSimplify  {
     public void setTags(List<TagV5DTO> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

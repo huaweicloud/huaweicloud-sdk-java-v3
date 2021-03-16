@@ -36,13 +36,13 @@ public class PutVolumeGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="need_migration")
     
-    private Boolean needMigration = true;
+    private Boolean needMigration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjust_size")
     
-    private Long adjustSize = 0l;
+    private Long adjustSize;
 
     public PutVolumeGroups withLogicalVolumes(List<PutLogicalVolume> logicalVolumes) {
         this.logicalVolumes = logicalVolumes;
@@ -51,9 +51,6 @@ public class PutVolumeGroups  {
 
     
     public PutVolumeGroups addLogicalVolumesItem(PutLogicalVolume logicalVolumesItem) {
-        if (this.logicalVolumes == null) {
-            this.logicalVolumes = new ArrayList<>();
-        }
         this.logicalVolumes.add(logicalVolumesItem);
         return this;
     }
@@ -78,6 +75,8 @@ public class PutVolumeGroups  {
         this.logicalVolumes = logicalVolumes;
     }
 
+    
+
     public PutVolumeGroups withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +97,8 @@ public class PutVolumeGroups  {
         this.id = id;
     }
 
+    
+
     public PutVolumeGroups withNeedMigration(Boolean needMigration) {
         this.needMigration = needMigration;
         return this;
@@ -117,6 +118,8 @@ public class PutVolumeGroups  {
     public void setNeedMigration(Boolean needMigration) {
         this.needMigration = needMigration;
     }
+
+    
 
     public PutVolumeGroups withAdjustSize(Long adjustSize) {
         this.adjustSize = adjustSize;
@@ -139,6 +142,9 @@ public class PutVolumeGroups  {
     public void setAdjustSize(Long adjustSize) {
         this.adjustSize = adjustSize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class DeleteImageSyncRepoRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DeleteImageSyncRepoRequestBody body = null;
+    private DeleteImageSyncRepoRequestBody body;
 
     public DeleteImageSyncRepoRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -56,6 +56,8 @@ public class DeleteImageSyncRepoRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public DeleteImageSyncRepoRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class DeleteImageSyncRepoRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
 
     public DeleteImageSyncRepoRequest withBody(DeleteImageSyncRepoRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class DeleteImageSyncRepoRequest  {
     public void setBody(DeleteImageSyncRepoRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

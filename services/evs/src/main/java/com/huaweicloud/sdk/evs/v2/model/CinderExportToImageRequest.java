@@ -28,7 +28,7 @@ public class CinderExportToImageRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CinderExportToImageRequestBody body = null;
+    private CinderExportToImageRequestBody body;
 
     public CinderExportToImageRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -49,6 +49,8 @@ public class CinderExportToImageRequest  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
 
     public CinderExportToImageRequest withBody(CinderExportToImageRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CinderExportToImageRequest  {
     public void setBody(CinderExportToImageRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

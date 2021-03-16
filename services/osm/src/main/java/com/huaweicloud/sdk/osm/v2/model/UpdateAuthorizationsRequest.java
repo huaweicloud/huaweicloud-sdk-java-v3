@@ -52,7 +52,7 @@ public class UpdateAuthorizationsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private OperateAuthorizationV2Req body = null;
+    private OperateAuthorizationV2Req body;
 
     public UpdateAuthorizationsRequest withAuthorizationId(Long authorizationId) {
         this.authorizationId = authorizationId;
@@ -76,6 +76,8 @@ public class UpdateAuthorizationsRequest  {
         this.authorizationId = authorizationId;
     }
 
+    
+
     public UpdateAuthorizationsRequest withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -95,6 +97,8 @@ public class UpdateAuthorizationsRequest  {
     public void setActionId(String actionId) {
         this.actionId = actionId;
     }
+
+    
 
     public UpdateAuthorizationsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -120,6 +124,8 @@ public class UpdateAuthorizationsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public UpdateAuthorizationsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -142,6 +148,8 @@ public class UpdateAuthorizationsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UpdateAuthorizationsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -163,6 +171,8 @@ public class UpdateAuthorizationsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public UpdateAuthorizationsRequest withBody(OperateAuthorizationV2Req body) {
         this.body = body;
@@ -190,6 +200,9 @@ public class UpdateAuthorizationsRequest  {
     public void setBody(OperateAuthorizationV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

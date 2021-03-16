@@ -22,7 +22,7 @@ public class CreateKmsTagRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag")
     
-    private TagItem tag = null;
+    private TagItem tag;
 
     public CreateKmsTagRequestBody withTag(TagItem tag) {
         this.tag = tag;
@@ -50,6 +50,9 @@ public class CreateKmsTagRequestBody  {
     public void setTag(TagItem tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

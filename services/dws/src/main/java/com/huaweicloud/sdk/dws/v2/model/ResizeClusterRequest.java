@@ -28,7 +28,7 @@ public class ResizeClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResizeClusterRequestBody body = null;
+    private ResizeClusterRequestBody body;
 
     public ResizeClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -49,6 +49,8 @@ public class ResizeClusterRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public ResizeClusterRequest withBody(ResizeClusterRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ResizeClusterRequest  {
     public void setBody(ResizeClusterRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

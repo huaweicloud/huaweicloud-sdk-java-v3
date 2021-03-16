@@ -85,6 +85,8 @@ public class ServerBlockDevice  {
         this.bootIndex = bootIndex;
     }
 
+    
+
     public ServerBlockDevice withPciAddress(String pciAddress) {
         this.pciAddress = pciAddress;
         return this;
@@ -104,6 +106,8 @@ public class ServerBlockDevice  {
     public void setPciAddress(String pciAddress) {
         this.pciAddress = pciAddress;
     }
+
+    
 
     public ServerBlockDevice withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -125,6 +129,8 @@ public class ServerBlockDevice  {
         this.volumeId = volumeId;
     }
 
+    
+
     public ServerBlockDevice withDevice(String device) {
         this.device = device;
         return this;
@@ -144,6 +150,8 @@ public class ServerBlockDevice  {
     public void setDevice(String device) {
         this.device = device;
     }
+
+    
 
     public ServerBlockDevice withServerId(String serverId) {
         this.serverId = serverId;
@@ -165,6 +173,8 @@ public class ServerBlockDevice  {
         this.serverId = serverId;
     }
 
+    
+
     public ServerBlockDevice withId(String id) {
         this.id = id;
         return this;
@@ -184,6 +194,8 @@ public class ServerBlockDevice  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ServerBlockDevice withSize(Integer size) {
         this.size = size;
@@ -205,6 +217,8 @@ public class ServerBlockDevice  {
         this.size = size;
     }
 
+    
+
     public ServerBlockDevice withBus(String bus) {
         this.bus = bus;
         return this;
@@ -224,6 +238,9 @@ public class ServerBlockDevice  {
     public void setBus(String bus) {
         this.bus = bus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

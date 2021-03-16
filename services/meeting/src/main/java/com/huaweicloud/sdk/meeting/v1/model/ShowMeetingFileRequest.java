@@ -57,6 +57,8 @@ public class ShowMeetingFileRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public ShowMeetingFileRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class ShowMeetingFileRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public ShowMeetingFileRequest withFileCode(String fileCode) {
         this.fileCode = fileCode;
         return this;
@@ -96,6 +100,9 @@ public class ShowMeetingFileRequest  {
     public void setFileCode(String fileCode) {
         this.fileCode = fileCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

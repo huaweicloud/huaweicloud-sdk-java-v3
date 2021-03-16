@@ -49,6 +49,8 @@ public class SlowlogDownloadRequest  {
         this.requestId = requestId;
     }
 
+    
+
     public SlowlogDownloadRequest withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -68,6 +70,9 @@ public class SlowlogDownloadRequest  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

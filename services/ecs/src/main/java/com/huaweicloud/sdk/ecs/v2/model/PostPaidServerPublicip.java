@@ -28,7 +28,7 @@ public class PostPaidServerPublicip  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    private PostPaidServerEip eip = null;
+    private PostPaidServerEip eip;
 
     public PostPaidServerPublicip withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class PostPaidServerPublicip  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public PostPaidServerPublicip withEip(PostPaidServerEip eip) {
         this.eip = eip;
@@ -76,6 +78,9 @@ public class PostPaidServerPublicip  {
     public void setEip(PostPaidServerEip eip) {
         this.eip = eip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

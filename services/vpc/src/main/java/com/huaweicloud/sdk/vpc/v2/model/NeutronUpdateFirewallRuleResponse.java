@@ -24,7 +24,7 @@ public class NeutronUpdateFirewallRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="firewall_rule")
     
-    private NeutronFirewallRule firewallRule = null;
+    private NeutronFirewallRule firewallRule;
 
     public NeutronUpdateFirewallRuleResponse withFirewallRule(NeutronFirewallRule firewallRule) {
         this.firewallRule = firewallRule;
@@ -52,6 +52,9 @@ public class NeutronUpdateFirewallRuleResponse extends SdkResponse {
     public void setFirewallRule(NeutronFirewallRule firewallRule) {
         this.firewallRule = firewallRule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

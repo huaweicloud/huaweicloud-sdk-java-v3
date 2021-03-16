@@ -31,7 +31,7 @@ public class Metadata  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creationTimestamp")
     
-    private LocalDate creationTimestamp = null;
+    private LocalDate creationTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,7 +55,7 @@ public class Metadata  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateTimestamp")
     
-    private LocalDate updateTimestamp = null;
+    private LocalDate updateTimestamp;
 
     public Metadata withAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
@@ -65,9 +65,6 @@ public class Metadata  {
     
 
     public Metadata putAnnotationsItem(String key, String annotationsItem) {
-         if (this.annotations == null) {
-            this.annotations = new HashMap<>();
-         }
         this.annotations.put(key, annotationsItem);
         return this;
     }
@@ -91,6 +88,8 @@ public class Metadata  {
         this.annotations = annotations;
     }
 
+    
+
     public Metadata withCreationTimestamp(LocalDate creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
         return this;
@@ -111,6 +110,8 @@ public class Metadata  {
         this.creationTimestamp = creationTimestamp;
     }
 
+    
+
     public Metadata withLabels(Map<String, String> labels) {
         this.labels = labels;
         return this;
@@ -119,9 +120,6 @@ public class Metadata  {
     
 
     public Metadata putLabelsItem(String key, String labelsItem) {
-         if (this.labels == null) {
-            this.labels = new HashMap<>();
-         }
         this.labels.put(key, labelsItem);
         return this;
     }
@@ -145,6 +143,8 @@ public class Metadata  {
         this.labels = labels;
     }
 
+    
+
     public Metadata withName(String name) {
         this.name = name;
         return this;
@@ -164,6 +164,8 @@ public class Metadata  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Metadata withUid(String uid) {
         this.uid = uid;
@@ -185,6 +187,8 @@ public class Metadata  {
         this.uid = uid;
     }
 
+    
+
     public Metadata withUpdateTimestamp(LocalDate updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
         return this;
@@ -204,6 +208,9 @@ public class Metadata  {
     public void setUpdateTimestamp(LocalDate updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

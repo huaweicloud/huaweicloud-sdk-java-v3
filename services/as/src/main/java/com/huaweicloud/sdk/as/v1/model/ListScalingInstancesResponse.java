@@ -66,6 +66,8 @@ public class ListScalingInstancesResponse extends SdkResponse {
         this.totalNumber = totalNumber;
     }
 
+    
+
     public ListScalingInstancesResponse withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
@@ -85,6 +87,8 @@ public class ListScalingInstancesResponse extends SdkResponse {
     public void setStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
     }
+
+    
 
     public ListScalingInstancesResponse withLimit(Integer limit) {
         this.limit = limit;
@@ -106,6 +110,8 @@ public class ListScalingInstancesResponse extends SdkResponse {
         this.limit = limit;
     }
 
+    
+
     public ListScalingInstancesResponse withScalingGroupInstances(List<ScalingGroupInstance> scalingGroupInstances) {
         this.scalingGroupInstances = scalingGroupInstances;
         return this;
@@ -113,9 +119,6 @@ public class ListScalingInstancesResponse extends SdkResponse {
 
     
     public ListScalingInstancesResponse addScalingGroupInstancesItem(ScalingGroupInstance scalingGroupInstancesItem) {
-        if (this.scalingGroupInstances == null) {
-            this.scalingGroupInstances = new ArrayList<>();
-        }
         this.scalingGroupInstances.add(scalingGroupInstancesItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class ListScalingInstancesResponse extends SdkResponse {
     public void setScalingGroupInstances(List<ScalingGroupInstance> scalingGroupInstances) {
         this.scalingGroupInstances = scalingGroupInstances;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

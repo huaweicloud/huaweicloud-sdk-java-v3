@@ -42,6 +42,9 @@ public class DeletePermanentAccessKeyRequest  {
     public void setAccessKey(String accessKey) {
         this.accessKey = accessKey;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class QueueInfo  {
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

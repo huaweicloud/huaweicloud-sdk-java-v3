@@ -135,7 +135,7 @@ public class CodehubJobInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="repo_info")
     
-    private RepositoryInfo repoInfo = null;
+    private RepositoryInfo repoInfo;
 
     public CodehubJobInfo withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -157,6 +157,8 @@ public class CodehubJobInfo  {
         this.applicationName = applicationName;
     }
 
+    
+
     public CodehubJobInfo withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
         return this;
@@ -176,6 +178,8 @@ public class CodehubJobInfo  {
     public void setCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
     }
+
+    
 
     public CodehubJobInfo withRegionId(String regionId) {
         this.regionId = regionId;
@@ -197,6 +201,8 @@ public class CodehubJobInfo  {
         this.regionId = regionId;
     }
 
+    
+
     public CodehubJobInfo withRepoType(RepoTypeEnum repoType) {
         this.repoType = repoType;
         return this;
@@ -217,6 +223,8 @@ public class CodehubJobInfo  {
         this.repoType = repoType;
     }
 
+    
+
     public CodehubJobInfo withProperties(Map<String, String> properties) {
         this.properties = properties;
         return this;
@@ -225,9 +233,6 @@ public class CodehubJobInfo  {
     
 
     public CodehubJobInfo putPropertiesItem(String key, String propertiesItem) {
-         if (this.properties == null) {
-            this.properties = new HashMap<>();
-         }
         this.properties.put(key, propertiesItem);
         return this;
     }
@@ -250,6 +255,8 @@ public class CodehubJobInfo  {
     public void setProperties(Map<String, String> properties) {
         this.properties = properties;
     }
+
+    
 
     public CodehubJobInfo withRepoInfo(RepositoryInfo repoInfo) {
         this.repoInfo = repoInfo;
@@ -277,6 +284,9 @@ public class CodehubJobInfo  {
     public void setRepoInfo(RepositoryInfo repoInfo) {
         this.repoInfo = repoInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

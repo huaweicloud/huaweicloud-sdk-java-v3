@@ -67,6 +67,8 @@ public class ListBackgroundTasksRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListBackgroundTasksRequest withStart(Integer start) {
         this.start = start;
         return this;
@@ -86,6 +88,8 @@ public class ListBackgroundTasksRequest  {
     public void setStart(Integer start) {
         this.start = start;
     }
+
+    
 
     public ListBackgroundTasksRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -107,6 +111,8 @@ public class ListBackgroundTasksRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListBackgroundTasksRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -127,6 +133,8 @@ public class ListBackgroundTasksRequest  {
         this.beginTime = beginTime;
     }
 
+    
+
     public ListBackgroundTasksRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -146,6 +154,9 @@ public class ListBackgroundTasksRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

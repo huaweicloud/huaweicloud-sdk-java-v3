@@ -28,7 +28,7 @@ public class UpdateBigkeyAutoscanConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AutoscanConfigRequest body = null;
+    private AutoscanConfigRequest body;
 
     public UpdateBigkeyAutoscanConfigRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateBigkeyAutoscanConfigRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateBigkeyAutoscanConfigRequest withBody(AutoscanConfigRequest body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateBigkeyAutoscanConfigRequest  {
     public void setBody(AutoscanConfigRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

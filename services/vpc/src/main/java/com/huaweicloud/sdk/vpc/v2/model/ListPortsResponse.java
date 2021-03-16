@@ -35,9 +35,6 @@ public class ListPortsResponse extends SdkResponse {
 
     
     public ListPortsResponse addPortsItem(Port portsItem) {
-        if (this.ports == null) {
-            this.ports = new ArrayList<>();
-        }
         this.ports.add(portsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListPortsResponse extends SdkResponse {
     public void setPorts(List<Port> ports) {
         this.ports = ports;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

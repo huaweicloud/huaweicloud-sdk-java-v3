@@ -33,9 +33,6 @@ public class ImageTaggingBody  {
 
     
     public ImageTaggingBody addTagsItem(ImageTaggingItemBody tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class ImageTaggingBody  {
     public void setTags(List<ImageTaggingItemBody> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

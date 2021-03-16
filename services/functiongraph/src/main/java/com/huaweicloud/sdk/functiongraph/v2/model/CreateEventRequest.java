@@ -28,7 +28,7 @@ public class CreateEventRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateEventRequestBody body = null;
+    private CreateEventRequestBody body;
 
     public CreateEventRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -49,6 +49,8 @@ public class CreateEventRequest  {
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
     }
+
+    
 
     public CreateEventRequest withBody(CreateEventRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateEventRequest  {
     public void setBody(CreateEventRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

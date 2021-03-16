@@ -61,6 +61,8 @@ public class ServerExtendVolumeAttachment  {
         this.id = id;
     }
 
+    
+
     public ServerExtendVolumeAttachment withDeleteOnTermination(String deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
         return this;
@@ -80,6 +82,8 @@ public class ServerExtendVolumeAttachment  {
     public void setDeleteOnTermination(String deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
+
+    
 
     public ServerExtendVolumeAttachment withBootIndex(String bootIndex) {
         this.bootIndex = bootIndex;
@@ -101,6 +105,8 @@ public class ServerExtendVolumeAttachment  {
         this.bootIndex = bootIndex;
     }
 
+    
+
     public ServerExtendVolumeAttachment withDevice(String device) {
         this.device = device;
         return this;
@@ -120,6 +126,9 @@ public class ServerExtendVolumeAttachment  {
     public void setDevice(String device) {
         this.device = device;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

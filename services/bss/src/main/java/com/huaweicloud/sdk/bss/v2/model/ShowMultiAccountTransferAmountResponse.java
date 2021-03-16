@@ -54,6 +54,8 @@ public class ShowMultiAccountTransferAmountResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ShowMultiAccountTransferAmountResponse withAmountInfos(List<TransferAmountInfoV2> amountInfos) {
         this.amountInfos = amountInfos;
         return this;
@@ -61,9 +63,6 @@ public class ShowMultiAccountTransferAmountResponse extends SdkResponse {
 
     
     public ShowMultiAccountTransferAmountResponse addAmountInfosItem(TransferAmountInfoV2 amountInfosItem) {
-        if (this.amountInfos == null) {
-            this.amountInfos = new ArrayList<>();
-        }
         this.amountInfos.add(amountInfosItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ShowMultiAccountTransferAmountResponse extends SdkResponse {
     public void setAmountInfos(List<TransferAmountInfoV2> amountInfos) {
         this.amountInfos = amountInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

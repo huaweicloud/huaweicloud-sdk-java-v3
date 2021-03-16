@@ -47,9 +47,6 @@ public class PutDiskInfoReq  {
 
     
     public PutDiskInfoReq addDisksItem(Disk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
         this.disks.add(disksItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class PutDiskInfoReq  {
         this.disks = disks;
     }
 
+    
+
     public PutDiskInfoReq withVolumegroups(List<VolumeGroups> volumegroups) {
         this.volumegroups = volumegroups;
         return this;
@@ -81,9 +80,6 @@ public class PutDiskInfoReq  {
 
     
     public PutDiskInfoReq addVolumegroupsItem(VolumeGroups volumegroupsItem) {
-        if (this.volumegroups == null) {
-            this.volumegroups = new ArrayList<>();
-        }
         this.volumegroups.add(volumegroupsItem);
         return this;
     }
@@ -108,6 +104,8 @@ public class PutDiskInfoReq  {
         this.volumegroups = volumegroups;
     }
 
+    
+
     public PutDiskInfoReq withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
@@ -115,9 +113,6 @@ public class PutDiskInfoReq  {
 
     
     public PutDiskInfoReq addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if (this.btrfsList == null) {
-            this.btrfsList = new ArrayList<>();
-        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
@@ -141,6 +136,9 @@ public class PutDiskInfoReq  {
     public void setBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

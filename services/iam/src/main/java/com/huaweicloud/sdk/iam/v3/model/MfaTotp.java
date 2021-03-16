@@ -22,7 +22,7 @@ public class MfaTotp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private MfaTotpUser user = null;
+    private MfaTotpUser user;
 
     public MfaTotp withUser(MfaTotpUser user) {
         this.user = user;
@@ -50,6 +50,9 @@ public class MfaTotp  {
     public void setUser(MfaTotpUser user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class Strategy  {
         this.trigger = trigger;
     }
 
+    
+
     public Strategy withEventValidTime(Integer eventValidTime) {
         this.eventValidTime = eventValidTime;
         return this;
@@ -69,6 +71,9 @@ public class Strategy  {
     public void setEventValidTime(Integer eventValidTime) {
         this.eventValidTime = eventValidTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

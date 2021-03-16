@@ -57,6 +57,8 @@ public class ValidateRomaAppResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ValidateRomaAppResponse withName(String name) {
         this.name = name;
         return this;
@@ -77,6 +79,8 @@ public class ValidateRomaAppResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ValidateRomaAppResponse withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -96,6 +100,9 @@ public class ValidateRomaAppResponse extends SdkResponse {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

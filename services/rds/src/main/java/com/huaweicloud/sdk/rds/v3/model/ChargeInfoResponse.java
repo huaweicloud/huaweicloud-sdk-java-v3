@@ -124,6 +124,9 @@ public class ChargeInfoResponse  {
     public void setChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

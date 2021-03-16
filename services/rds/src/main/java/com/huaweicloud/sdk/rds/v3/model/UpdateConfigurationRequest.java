@@ -34,7 +34,7 @@ public class UpdateConfigurationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ConfigurationForUpdate body = null;
+    private ConfigurationForUpdate body;
 
     public UpdateConfigurationRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class UpdateConfigurationRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UpdateConfigurationRequest withConfigId(String configId) {
         this.configId = configId;
         return this;
@@ -77,6 +79,8 @@ public class UpdateConfigurationRequest  {
     public void setConfigId(String configId) {
         this.configId = configId;
     }
+
+    
 
     public UpdateConfigurationRequest withBody(ConfigurationForUpdate body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class UpdateConfigurationRequest  {
     public void setBody(ConfigurationForUpdate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

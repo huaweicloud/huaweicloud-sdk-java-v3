@@ -106,7 +106,7 @@ public class BatchDeleteServerTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ServerTag> tags = new ArrayList<>();
+    private List<ServerTag> tags = null;
     
     public BatchDeleteServerTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -127,6 +127,8 @@ public class BatchDeleteServerTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public BatchDeleteServerTagsRequestBody withTags(List<ServerTag> tags) {
         this.tags = tags;
@@ -158,6 +160,9 @@ public class BatchDeleteServerTagsRequestBody  {
     public void setTags(List<ServerTag> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

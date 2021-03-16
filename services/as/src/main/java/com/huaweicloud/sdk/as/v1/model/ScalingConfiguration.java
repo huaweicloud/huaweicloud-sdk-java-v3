@@ -41,13 +41,13 @@ public class ScalingConfiguration  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_config")
     
-    private InstanceConfigResult instanceConfig = null;
+    private InstanceConfigResult instanceConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
     public ScalingConfiguration withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
@@ -69,6 +69,8 @@ public class ScalingConfiguration  {
         this.scalingConfigurationId = scalingConfigurationId;
     }
 
+    
+
     public ScalingConfiguration withTenant(String tenant) {
         this.tenant = tenant;
         return this;
@@ -89,6 +91,8 @@ public class ScalingConfiguration  {
         this.tenant = tenant;
     }
 
+    
+
     public ScalingConfiguration withScalingConfigurationName(String scalingConfigurationName) {
         this.scalingConfigurationName = scalingConfigurationName;
         return this;
@@ -108,6 +112,8 @@ public class ScalingConfiguration  {
     public void setScalingConfigurationName(String scalingConfigurationName) {
         this.scalingConfigurationName = scalingConfigurationName;
     }
+
+    
 
     public ScalingConfiguration withInstanceConfig(InstanceConfigResult instanceConfig) {
         this.instanceConfig = instanceConfig;
@@ -136,6 +142,8 @@ public class ScalingConfiguration  {
         this.instanceConfig = instanceConfig;
     }
 
+    
+
     public ScalingConfiguration withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -155,6 +163,9 @@ public class ScalingConfiguration  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

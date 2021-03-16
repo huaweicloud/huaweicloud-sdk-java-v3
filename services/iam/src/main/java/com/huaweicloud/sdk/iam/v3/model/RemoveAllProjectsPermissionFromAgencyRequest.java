@@ -55,6 +55,8 @@ public class RemoveAllProjectsPermissionFromAgencyRequest  {
         this.agencyId = agencyId;
     }
 
+    
+
     public RemoveAllProjectsPermissionFromAgencyRequest withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -75,6 +77,8 @@ public class RemoveAllProjectsPermissionFromAgencyRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public RemoveAllProjectsPermissionFromAgencyRequest withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -94,6 +98,9 @@ public class RemoveAllProjectsPermissionFromAgencyRequest  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

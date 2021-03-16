@@ -223,7 +223,7 @@ public class ApiInfoPerPage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -451,13 +451,13 @@ public class ApiInfoPerPage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -793,13 +793,13 @@ public class ApiInfoPerPage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -811,7 +811,7 @@ public class ApiInfoPerPage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_version")
     
-    private String groupVersion = "V1";
+    private String groupVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -869,6 +869,8 @@ public class ApiInfoPerPage  {
         this.name = name;
     }
 
+    
+
     public ApiInfoPerPage withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -888,6 +890,8 @@ public class ApiInfoPerPage  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ApiInfoPerPage withVersion(String version) {
         this.version = version;
@@ -909,6 +913,8 @@ public class ApiInfoPerPage  {
         this.version = version;
     }
 
+    
+
     public ApiInfoPerPage withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -928,6 +934,8 @@ public class ApiInfoPerPage  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiInfoPerPage withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -949,6 +957,8 @@ public class ApiInfoPerPage  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiInfoPerPage withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -969,6 +979,8 @@ public class ApiInfoPerPage  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiInfoPerPage withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -988,6 +1000,8 @@ public class ApiInfoPerPage  {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ApiInfoPerPage withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -1016,6 +1030,8 @@ public class ApiInfoPerPage  {
         this.authOpt = authOpt;
     }
 
+    
+
     public ApiInfoPerPage withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -1035,6 +1051,8 @@ public class ApiInfoPerPage  {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ApiInfoPerPage withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -1056,6 +1074,8 @@ public class ApiInfoPerPage  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiInfoPerPage withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -1075,6 +1095,8 @@ public class ApiInfoPerPage  {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ApiInfoPerPage withRemark(String remark) {
         this.remark = remark;
@@ -1096,6 +1118,8 @@ public class ApiInfoPerPage  {
         this.remark = remark;
     }
 
+    
+
     public ApiInfoPerPage withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1115,6 +1139,8 @@ public class ApiInfoPerPage  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiInfoPerPage withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1136,6 +1162,8 @@ public class ApiInfoPerPage  {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ApiInfoPerPage withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1155,6 +1183,8 @@ public class ApiInfoPerPage  {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ApiInfoPerPage withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1176,6 +1206,8 @@ public class ApiInfoPerPage  {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ApiInfoPerPage withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1196,6 +1228,8 @@ public class ApiInfoPerPage  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiInfoPerPage withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1203,9 +1237,6 @@ public class ApiInfoPerPage  {
 
     
     public ApiInfoPerPage addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1230,6 +1261,8 @@ public class ApiInfoPerPage  {
         this.tags = tags;
     }
 
+    
+
     public ApiInfoPerPage withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1249,6 +1282,8 @@ public class ApiInfoPerPage  {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ApiInfoPerPage withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1270,6 +1305,8 @@ public class ApiInfoPerPage  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiInfoPerPage withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1289,6 +1326,8 @@ public class ApiInfoPerPage  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public ApiInfoPerPage withTag(String tag) {
         this.tag = tag;
@@ -1310,6 +1349,8 @@ public class ApiInfoPerPage  {
         this.tag = tag;
     }
 
+    
+
     public ApiInfoPerPage withId(String id) {
         this.id = id;
         return this;
@@ -1329,6 +1370,8 @@ public class ApiInfoPerPage  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ApiInfoPerPage withStatus(StatusEnum status) {
         this.status = status;
@@ -1350,6 +1393,8 @@ public class ApiInfoPerPage  {
         this.status = status;
     }
 
+    
+
     public ApiInfoPerPage withArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
         return this;
@@ -1369,6 +1414,8 @@ public class ApiInfoPerPage  {
     public void setArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
     }
+
+    
 
     public ApiInfoPerPage withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
@@ -1390,6 +1437,8 @@ public class ApiInfoPerPage  {
         this.registerTime = registerTime;
     }
 
+    
+
     public ApiInfoPerPage withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -1409,6 +1458,8 @@ public class ApiInfoPerPage  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public ApiInfoPerPage withGroupName(String groupName) {
         this.groupName = groupName;
@@ -1430,6 +1481,8 @@ public class ApiInfoPerPage  {
         this.groupName = groupName;
     }
 
+    
+
     public ApiInfoPerPage withGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
         return this;
@@ -1449,6 +1502,8 @@ public class ApiInfoPerPage  {
     public void setGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
     }
+
+    
 
     public ApiInfoPerPage withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
@@ -1470,6 +1525,8 @@ public class ApiInfoPerPage  {
         this.runEnvId = runEnvId;
     }
 
+    
+
     public ApiInfoPerPage withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -1489,6 +1546,8 @@ public class ApiInfoPerPage  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public ApiInfoPerPage withPublishId(String publishId) {
         this.publishId = publishId;
@@ -1510,6 +1569,8 @@ public class ApiInfoPerPage  {
         this.publishId = publishId;
     }
 
+    
+
     public ApiInfoPerPage withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -1529,6 +1590,8 @@ public class ApiInfoPerPage  {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
+
+    
 
     public ApiInfoPerPage withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
@@ -1550,6 +1613,8 @@ public class ApiInfoPerPage  {
         this.ldApiId = ldApiId;
     }
 
+    
+
     public ApiInfoPerPage withReqParams(List<ReqParam> reqParams) {
         this.reqParams = reqParams;
         return this;
@@ -1557,9 +1622,6 @@ public class ApiInfoPerPage  {
 
     
     public ApiInfoPerPage addReqParamsItem(ReqParam reqParamsItem) {
-        if (this.reqParams == null) {
-            this.reqParams = new ArrayList<>();
-        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
@@ -1583,6 +1645,9 @@ public class ApiInfoPerPage  {
     public void setReqParams(List<ReqParam> reqParams) {
         this.reqParams = reqParams;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

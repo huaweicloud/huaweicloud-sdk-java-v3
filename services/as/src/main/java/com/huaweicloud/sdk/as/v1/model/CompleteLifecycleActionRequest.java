@@ -28,7 +28,7 @@ public class CompleteLifecycleActionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CompleteLifecycleActionRequestBody body = null;
+    private CompleteLifecycleActionRequestBody body;
 
     public CompleteLifecycleActionRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -49,6 +49,8 @@ public class CompleteLifecycleActionRequest  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public CompleteLifecycleActionRequest withBody(CompleteLifecycleActionRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CompleteLifecycleActionRequest  {
     public void setBody(CompleteLifecycleActionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -40,7 +40,7 @@ public class UpdateSlavePriorityRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PriorityBody body = null;
+    private PriorityBody body;
 
     public UpdateSlavePriorityRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -62,6 +62,8 @@ public class UpdateSlavePriorityRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateSlavePriorityRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -82,6 +84,8 @@ public class UpdateSlavePriorityRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public UpdateSlavePriorityRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -101,6 +105,8 @@ public class UpdateSlavePriorityRequest  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public UpdateSlavePriorityRequest withBody(PriorityBody body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class UpdateSlavePriorityRequest  {
     public void setBody(PriorityBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

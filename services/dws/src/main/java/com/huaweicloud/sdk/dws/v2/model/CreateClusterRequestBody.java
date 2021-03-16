@@ -22,7 +22,7 @@ public class CreateClusterRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster")
     
-    private CreateClusterInfo cluster = null;
+    private CreateClusterInfo cluster;
 
     public CreateClusterRequestBody withCluster(CreateClusterInfo cluster) {
         this.cluster = cluster;
@@ -50,6 +50,9 @@ public class CreateClusterRequestBody  {
     public void setCluster(CreateClusterInfo cluster) {
         this.cluster = cluster;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -58,7 +58,7 @@ public class KeystoneListUsersResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,6 +98,8 @@ public class KeystoneListUsersResult  {
         this.pwdStatus = pwdStatus;
     }
 
+    
+
     public KeystoneListUsersResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -117,6 +119,8 @@ public class KeystoneListUsersResult  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public KeystoneListUsersResult withLastProjectId(String lastProjectId) {
         this.lastProjectId = lastProjectId;
@@ -138,6 +142,8 @@ public class KeystoneListUsersResult  {
         this.lastProjectId = lastProjectId;
     }
 
+    
+
     public KeystoneListUsersResult withName(String name) {
         this.name = name;
         return this;
@@ -157,6 +163,8 @@ public class KeystoneListUsersResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public KeystoneListUsersResult withDescription(String description) {
         this.description = description;
@@ -178,6 +186,8 @@ public class KeystoneListUsersResult  {
         this.description = description;
     }
 
+    
+
     public KeystoneListUsersResult withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -197,6 +207,8 @@ public class KeystoneListUsersResult  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
 
     public KeystoneListUsersResult withLinks(Links links) {
         this.links = links;
@@ -225,6 +237,8 @@ public class KeystoneListUsersResult  {
         this.links = links;
     }
 
+    
+
     public KeystoneListUsersResult withId(String id) {
         this.id = id;
         return this;
@@ -244,6 +258,8 @@ public class KeystoneListUsersResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public KeystoneListUsersResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -265,6 +281,8 @@ public class KeystoneListUsersResult  {
         this.enabled = enabled;
     }
 
+    
+
     public KeystoneListUsersResult withPwdStrength(String pwdStrength) {
         this.pwdStrength = pwdStrength;
         return this;
@@ -284,6 +302,9 @@ public class KeystoneListUsersResult  {
     public void setPwdStrength(String pwdStrength) {
         this.pwdStrength = pwdStrength;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -396,19 +396,19 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private OffsetDateTime lastModified = null;
+    private OffsetDateTime lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_vpc")
     
-    private FuncVpc funcVpc = null;
+    private FuncVpc funcVpc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mount_config")
     
-    private MountConfig mountConfig = null;
+    private MountConfig mountConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -426,7 +426,7 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="strategy_config")
     
-    private StrategyConfig strategyConfig = null;
+    private StrategyConfig strategyConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -478,6 +478,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.funcUrn = funcUrn;
     }
 
+    
+
     public CreateFunctionVersionResponse withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -497,6 +499,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setFuncName(String funcName) {
         this.funcName = funcName;
     }
+
+    
 
     public CreateFunctionVersionResponse withDomainId(String domainId) {
         this.domainId = domainId;
@@ -518,6 +522,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
+    
+
     public CreateFunctionVersionResponse withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -537,6 +543,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public CreateFunctionVersionResponse withProjectName(String projectName) {
         this.projectName = projectName;
@@ -558,6 +566,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.projectName = projectName;
     }
 
+    
+
     public CreateFunctionVersionResponse withPackage(String _package) {
         this._package = _package;
         return this;
@@ -577,6 +587,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setPackage(String _package) {
         this._package = _package;
     }
+
+    
 
     public CreateFunctionVersionResponse withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
@@ -598,6 +610,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.runtime = runtime;
     }
 
+    
+
     public CreateFunctionVersionResponse withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -617,6 +631,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
 
     public CreateFunctionVersionResponse withHandler(String handler) {
         this.handler = handler;
@@ -638,6 +654,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.handler = handler;
     }
 
+    
+
     public CreateFunctionVersionResponse withMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
         return this;
@@ -657,6 +675,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
     }
+
+    
 
     public CreateFunctionVersionResponse withCpu(Integer cpu) {
         this.cpu = cpu;
@@ -678,6 +698,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.cpu = cpu;
     }
 
+    
+
     public CreateFunctionVersionResponse withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
@@ -697,6 +719,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
     }
+
+    
 
     public CreateFunctionVersionResponse withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
@@ -718,6 +742,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.codeUrl = codeUrl;
     }
 
+    
+
     public CreateFunctionVersionResponse withCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
         return this;
@@ -737,6 +763,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
     }
+
+    
 
     public CreateFunctionVersionResponse withCodeSize(Long codeSize) {
         this.codeSize = codeSize;
@@ -758,6 +786,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.codeSize = codeSize;
     }
 
+    
+
     public CreateFunctionVersionResponse withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -777,6 +807,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public CreateFunctionVersionResponse withDigest(String digest) {
         this.digest = digest;
@@ -798,6 +830,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.digest = digest;
     }
 
+    
+
     public CreateFunctionVersionResponse withVersion(String version) {
         this.version = version;
         return this;
@@ -817,6 +851,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public CreateFunctionVersionResponse withImageName(String imageName) {
         this.imageName = imageName;
@@ -838,6 +874,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.imageName = imageName;
     }
 
+    
+
     public CreateFunctionVersionResponse withXrole(String xrole) {
         this.xrole = xrole;
         return this;
@@ -857,6 +895,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setXrole(String xrole) {
         this.xrole = xrole;
     }
+
+    
 
     public CreateFunctionVersionResponse withAppXrole(String appXrole) {
         this.appXrole = appXrole;
@@ -878,6 +918,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.appXrole = appXrole;
     }
 
+    
+
     public CreateFunctionVersionResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -897,6 +939,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateFunctionVersionResponse withVersionDescription(String versionDescription) {
         this.versionDescription = versionDescription;
@@ -918,6 +962,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.versionDescription = versionDescription;
     }
 
+    
+
     public CreateFunctionVersionResponse withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -937,6 +983,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
     }
+
+    
 
     public CreateFunctionVersionResponse withFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
@@ -965,6 +1013,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.funcVpc = funcVpc;
     }
 
+    
+
     public CreateFunctionVersionResponse withMountConfig(MountConfig mountConfig) {
         this.mountConfig = mountConfig;
         return this;
@@ -992,6 +1042,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.mountConfig = mountConfig;
     }
 
+    
+
     public CreateFunctionVersionResponse withConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
         return this;
@@ -1012,6 +1064,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.concurrency = concurrency;
     }
 
+    
+
     public CreateFunctionVersionResponse withDependList(List<String> dependList) {
         this.dependList = dependList;
         return this;
@@ -1019,9 +1073,6 @@ public class CreateFunctionVersionResponse extends SdkResponse {
 
     
     public CreateFunctionVersionResponse addDependListItem(String dependListItem) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
         this.dependList.add(dependListItem);
         return this;
     }
@@ -1045,6 +1096,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setDependList(List<String> dependList) {
         this.dependList = dependList;
     }
+
+    
 
     public CreateFunctionVersionResponse withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
@@ -1073,6 +1126,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.strategyConfig = strategyConfig;
     }
 
+    
+
     public CreateFunctionVersionResponse withExtendConfig(String extendConfig) {
         this.extendConfig = extendConfig;
         return this;
@@ -1093,6 +1148,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.extendConfig = extendConfig;
     }
 
+    
+
     public CreateFunctionVersionResponse withDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -1100,9 +1157,6 @@ public class CreateFunctionVersionResponse extends SdkResponse {
 
     
     public CreateFunctionVersionResponse addDependenciesItem(Dependency dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
@@ -1127,6 +1181,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.dependencies = dependencies;
     }
 
+    
+
     public CreateFunctionVersionResponse withInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
         return this;
@@ -1146,6 +1202,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
     }
+
+    
 
     public CreateFunctionVersionResponse withInitializerTimeout(Integer initializerTimeout) {
         this.initializerTimeout = initializerTimeout;
@@ -1167,6 +1225,8 @@ public class CreateFunctionVersionResponse extends SdkResponse {
         this.initializerTimeout = initializerTimeout;
     }
 
+    
+
     public CreateFunctionVersionResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -1186,6 +1246,9 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

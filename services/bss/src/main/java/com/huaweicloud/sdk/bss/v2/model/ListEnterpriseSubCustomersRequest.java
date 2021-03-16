@@ -39,13 +39,13 @@ public class ListEnterpriseSubCustomersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class ListEnterpriseSubCustomersRequest  {
         this.subCustomerAccountName = subCustomerAccountName;
     }
 
+    
+
     public ListEnterpriseSubCustomersRequest withSubCustomerDisplayName(String subCustomerDisplayName) {
         this.subCustomerDisplayName = subCustomerDisplayName;
         return this;
@@ -92,6 +94,8 @@ public class ListEnterpriseSubCustomersRequest  {
     public void setSubCustomerDisplayName(String subCustomerDisplayName) {
         this.subCustomerDisplayName = subCustomerDisplayName;
     }
+
+    
 
     public ListEnterpriseSubCustomersRequest withFuzzyQuery(Integer fuzzyQuery) {
         this.fuzzyQuery = fuzzyQuery;
@@ -115,6 +119,8 @@ public class ListEnterpriseSubCustomersRequest  {
         this.fuzzyQuery = fuzzyQuery;
     }
 
+    
+
     public ListEnterpriseSubCustomersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -136,6 +142,8 @@ public class ListEnterpriseSubCustomersRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListEnterpriseSubCustomersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -159,6 +167,8 @@ public class ListEnterpriseSubCustomersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListEnterpriseSubCustomersRequest withOrgId(String orgId) {
         this.orgId = orgId;
         return this;
@@ -178,6 +188,9 @@ public class ListEnterpriseSubCustomersRequest  {
     public void setOrgId(String orgId) {
         this.orgId = orgId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

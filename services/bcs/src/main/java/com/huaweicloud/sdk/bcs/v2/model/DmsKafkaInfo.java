@@ -44,9 +44,6 @@ public class DmsKafkaInfo  {
 
     
     public DmsKafkaInfo addAddrItem(String addrItem) {
-        if (this.addr == null) {
-            this.addr = new ArrayList<>();
-        }
         this.addr.add(addrItem);
         return this;
     }
@@ -71,6 +68,8 @@ public class DmsKafkaInfo  {
         this.addr = addr;
     }
 
+    
+
     public DmsKafkaInfo withOrderFadeEnable(Boolean orderFadeEnable) {
         this.orderFadeEnable = orderFadeEnable;
         return this;
@@ -91,6 +90,8 @@ public class DmsKafkaInfo  {
         this.orderFadeEnable = orderFadeEnable;
     }
 
+    
+
     public DmsKafkaInfo withOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
         return this;
@@ -110,6 +111,9 @@ public class DmsKafkaInfo  {
     public void setOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

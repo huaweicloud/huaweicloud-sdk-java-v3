@@ -42,6 +42,9 @@ public class CreateSecretRequest  {
     public void setProjectname(String projectname) {
         this.projectname = projectname;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

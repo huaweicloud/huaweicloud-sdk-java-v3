@@ -55,6 +55,8 @@ public class IncidentTempV2  {
         this.incidentTemplateId = incidentTemplateId;
     }
 
+    
+
     public IncidentTempV2 withIncidentTemplateName(String incidentTemplateName) {
         this.incidentTemplateName = incidentTemplateName;
         return this;
@@ -75,6 +77,8 @@ public class IncidentTempV2  {
         this.incidentTemplateName = incidentTemplateName;
     }
 
+    
+
     public IncidentTempV2 withIncidentTemplateContent(String incidentTemplateContent) {
         this.incidentTemplateContent = incidentTemplateContent;
         return this;
@@ -94,6 +98,9 @@ public class IncidentTempV2  {
     public void setIncidentTemplateContent(String incidentTemplateContent) {
         this.incidentTemplateContent = incidentTemplateContent;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

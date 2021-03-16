@@ -34,7 +34,7 @@ public class AddUserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddUserDTO body = null;
+    private AddUserDTO body;
 
     public AddUserRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -58,6 +58,8 @@ public class AddUserRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AddUserRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class AddUserRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public AddUserRequest withBody(AddUserDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class AddUserRequest  {
     public void setBody(AddUserDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

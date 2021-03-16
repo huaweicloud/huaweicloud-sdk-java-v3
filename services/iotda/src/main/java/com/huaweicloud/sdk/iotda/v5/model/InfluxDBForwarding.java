@@ -25,7 +25,7 @@ public class InfluxDBForwarding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="address")
     
-    private NetAddress address = null;
+    private NetAddress address;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,7 +56,7 @@ public class InfluxDBForwarding  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="column_mappings")
     
-    private List<ColumnMapping> columnMappings = new ArrayList<>();
+    private List<ColumnMapping> columnMappings = null;
     
     public InfluxDBForwarding withAddress(NetAddress address) {
         this.address = address;
@@ -85,6 +85,8 @@ public class InfluxDBForwarding  {
         this.address = address;
     }
 
+    
+
     public InfluxDBForwarding withDbName(String dbName) {
         this.dbName = dbName;
         return this;
@@ -104,6 +106,8 @@ public class InfluxDBForwarding  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
+
+    
 
     public InfluxDBForwarding withUsername(String username) {
         this.username = username;
@@ -125,6 +129,8 @@ public class InfluxDBForwarding  {
         this.username = username;
     }
 
+    
+
     public InfluxDBForwarding withPassword(String password) {
         this.password = password;
         return this;
@@ -145,6 +151,8 @@ public class InfluxDBForwarding  {
         this.password = password;
     }
 
+    
+
     public InfluxDBForwarding withMeasurement(String measurement) {
         this.measurement = measurement;
         return this;
@@ -164,6 +172,8 @@ public class InfluxDBForwarding  {
     public void setMeasurement(String measurement) {
         this.measurement = measurement;
     }
+
+    
 
     public InfluxDBForwarding withColumnMappings(List<ColumnMapping> columnMappings) {
         this.columnMappings = columnMappings;
@@ -195,6 +205,9 @@ public class InfluxDBForwarding  {
     public void setColumnMappings(List<ColumnMapping> columnMappings) {
         this.columnMappings = columnMappings;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

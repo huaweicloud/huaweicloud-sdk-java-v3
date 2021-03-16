@@ -42,6 +42,9 @@ public class RestorePtrReq  {
     public void setPtrdname(String ptrdname) {
         this.ptrdname = ptrdname;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

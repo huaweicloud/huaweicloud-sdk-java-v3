@@ -30,7 +30,7 @@ public class ApiVersion  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<Links> links = new ArrayList<>();
+    private List<Links> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,6 +76,8 @@ public class ApiVersion  {
         this.id = id;
     }
 
+    
+
     public ApiVersion withLinks(List<Links> links) {
         this.links = links;
         return this;
@@ -107,6 +109,8 @@ public class ApiVersion  {
         this.links = links;
     }
 
+    
+
     public ApiVersion withStatus(String status) {
         this.status = status;
         return this;
@@ -126,6 +130,8 @@ public class ApiVersion  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ApiVersion withVersion(String version) {
         this.version = version;
@@ -147,6 +153,8 @@ public class ApiVersion  {
         this.version = version;
     }
 
+    
+
     public ApiVersion withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
@@ -167,6 +175,8 @@ public class ApiVersion  {
         this.minVersion = minVersion;
     }
 
+    
+
     public ApiVersion withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -186,6 +196,9 @@ public class ApiVersion  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

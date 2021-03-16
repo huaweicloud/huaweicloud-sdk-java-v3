@@ -22,7 +22,7 @@ public class CreateThumbnailsTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateThumbReq body = null;
+    private CreateThumbReq body;
 
     public CreateThumbnailsTaskRequest withBody(CreateThumbReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateThumbnailsTaskRequest  {
     public void setBody(CreateThumbReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

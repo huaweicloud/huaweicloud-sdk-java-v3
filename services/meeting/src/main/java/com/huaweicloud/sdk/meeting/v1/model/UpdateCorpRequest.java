@@ -40,7 +40,7 @@ public class UpdateCorpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModCorpDTO body = null;
+    private ModCorpDTO body;
 
     public UpdateCorpRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class UpdateCorpRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateCorpRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class UpdateCorpRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public UpdateCorpRequest withId(String id) {
         this.id = id;
         return this;
@@ -103,6 +107,8 @@ public class UpdateCorpRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateCorpRequest withBody(ModCorpDTO body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class UpdateCorpRequest  {
     public void setBody(ModCorpDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

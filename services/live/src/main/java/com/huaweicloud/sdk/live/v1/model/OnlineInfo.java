@@ -235,6 +235,8 @@ public class OnlineInfo  {
         this.publishDomain = publishDomain;
     }
 
+    
+
     public OnlineInfo withApp(String app) {
         this.app = app;
         return this;
@@ -254,6 +256,8 @@ public class OnlineInfo  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public OnlineInfo withStream(String stream) {
         this.stream = stream;
@@ -275,6 +279,8 @@ public class OnlineInfo  {
         this.stream = stream;
     }
 
+    
+
     public OnlineInfo withVideoCodec(VideoCodecEnum videoCodec) {
         this.videoCodec = videoCodec;
         return this;
@@ -294,6 +300,8 @@ public class OnlineInfo  {
     public void setVideoCodec(VideoCodecEnum videoCodec) {
         this.videoCodec = videoCodec;
     }
+
+    
 
     public OnlineInfo withAudioCodec(AudioCodecEnum audioCodec) {
         this.audioCodec = audioCodec;
@@ -315,6 +323,8 @@ public class OnlineInfo  {
         this.audioCodec = audioCodec;
     }
 
+    
+
     public OnlineInfo withClientIp(String clientIp) {
         this.clientIp = clientIp;
         return this;
@@ -335,6 +345,8 @@ public class OnlineInfo  {
         this.clientIp = clientIp;
     }
 
+    
+
     public OnlineInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -354,6 +366,9 @@ public class OnlineInfo  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

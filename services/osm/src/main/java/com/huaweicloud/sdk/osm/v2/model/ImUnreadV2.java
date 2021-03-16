@@ -57,6 +57,8 @@ public class ImUnreadV2  {
         this.status = status;
     }
 
+    
+
     public ImUnreadV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
@@ -76,6 +78,8 @@ public class ImUnreadV2  {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
+
+    
 
     public ImUnreadV2 withUnreadNum(Integer unreadNum) {
         this.unreadNum = unreadNum;
@@ -98,6 +102,9 @@ public class ImUnreadV2  {
     public void setUnreadNum(Integer unreadNum) {
         this.unreadNum = unreadNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

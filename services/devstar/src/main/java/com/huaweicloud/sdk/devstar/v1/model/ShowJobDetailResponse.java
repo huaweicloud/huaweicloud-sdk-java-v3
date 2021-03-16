@@ -35,7 +35,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="job_status")
     
-    private Object jobStatus = null;
+    private Object jobStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowJobDetailResponse withName(String name) {
         this.name = name;
         return this;
@@ -82,6 +84,8 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowJobDetailResponse withJobStatus(Object jobStatus) {
         this.jobStatus = jobStatus;
@@ -103,6 +107,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.jobStatus = jobStatus;
     }
 
+    
+
     public ShowJobDetailResponse withJobResult(String jobResult) {
         this.jobResult = jobResult;
         return this;
@@ -122,6 +128,9 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setJobResult(String jobResult) {
         this.jobResult = jobResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

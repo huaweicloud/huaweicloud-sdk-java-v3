@@ -155,6 +155,8 @@ public class ApiFuncCreate  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public ApiFuncCreate withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -174,6 +176,8 @@ public class ApiFuncCreate  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ApiFuncCreate withInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
@@ -195,6 +199,8 @@ public class ApiFuncCreate  {
         this.invocationType = invocationType;
     }
 
+    
+
     public ApiFuncCreate withVersion(String version) {
         this.version = version;
         return this;
@@ -214,6 +220,8 @@ public class ApiFuncCreate  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ApiFuncCreate withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -235,6 +243,8 @@ public class ApiFuncCreate  {
         this.timeout = timeout;
     }
 
+    
+
     public ApiFuncCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -254,6 +264,9 @@ public class ApiFuncCreate  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

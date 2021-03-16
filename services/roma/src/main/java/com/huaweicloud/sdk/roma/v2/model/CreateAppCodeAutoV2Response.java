@@ -64,6 +64,8 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
         this.appCode = appCode;
     }
 
+    
+
     public CreateAppCodeAutoV2Response withId(String id) {
         this.id = id;
         return this;
@@ -83,6 +85,8 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public CreateAppCodeAutoV2Response withAppId(String appId) {
         this.appId = appId;
@@ -104,6 +108,8 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public CreateAppCodeAutoV2Response withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -123,6 +129,9 @@ public class CreateAppCodeAutoV2Response extends SdkResponse {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

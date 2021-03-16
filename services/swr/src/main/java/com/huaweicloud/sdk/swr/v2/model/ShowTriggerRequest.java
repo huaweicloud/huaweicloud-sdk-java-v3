@@ -55,6 +55,8 @@ public class ShowTriggerRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ShowTriggerRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -75,6 +77,8 @@ public class ShowTriggerRequest  {
         this.repository = repository;
     }
 
+    
+
     public ShowTriggerRequest withTrigger(String trigger) {
         this.trigger = trigger;
         return this;
@@ -94,6 +98,9 @@ public class ShowTriggerRequest  {
     public void setTrigger(String trigger) {
         this.trigger = trigger;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

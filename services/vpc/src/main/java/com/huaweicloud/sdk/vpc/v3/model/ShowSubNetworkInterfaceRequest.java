@@ -42,6 +42,9 @@ public class ShowSubNetworkInterfaceRequest  {
     public void setSubNetworkInterfaceId(String subNetworkInterfaceId) {
         this.subNetworkInterfaceId = subNetworkInterfaceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

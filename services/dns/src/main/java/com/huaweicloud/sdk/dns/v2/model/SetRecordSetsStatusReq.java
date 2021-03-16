@@ -42,6 +42,9 @@ public class SetRecordSetsStatusReq  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

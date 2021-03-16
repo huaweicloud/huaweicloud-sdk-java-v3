@@ -28,7 +28,7 @@ public class ShowBatchTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="batchtask")
     
-    private Task batchtask = null;
+    private Task batchtask;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,7 +40,7 @@ public class ShowBatchTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page")
     
-    private Page page = null;
+    private Page page;
 
     public ShowBatchTaskResponse withBatchtask(Task batchtask) {
         this.batchtask = batchtask;
@@ -69,6 +69,8 @@ public class ShowBatchTaskResponse extends SdkResponse {
         this.batchtask = batchtask;
     }
 
+    
+
     public ShowBatchTaskResponse withTaskDetails(List<TaskDetail> taskDetails) {
         this.taskDetails = taskDetails;
         return this;
@@ -76,9 +78,6 @@ public class ShowBatchTaskResponse extends SdkResponse {
 
     
     public ShowBatchTaskResponse addTaskDetailsItem(TaskDetail taskDetailsItem) {
-        if (this.taskDetails == null) {
-            this.taskDetails = new ArrayList<>();
-        }
         this.taskDetails.add(taskDetailsItem);
         return this;
     }
@@ -102,6 +101,8 @@ public class ShowBatchTaskResponse extends SdkResponse {
     public void setTaskDetails(List<TaskDetail> taskDetails) {
         this.taskDetails = taskDetails;
     }
+
+    
 
     public ShowBatchTaskResponse withPage(Page page) {
         this.page = page;
@@ -129,6 +130,9 @@ public class ShowBatchTaskResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

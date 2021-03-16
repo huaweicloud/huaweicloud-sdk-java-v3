@@ -34,7 +34,7 @@ public class UpdateSubnetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateSubnetRequestBody body = null;
+    private UpdateSubnetRequestBody body;
 
     public UpdateSubnetRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -56,6 +56,8 @@ public class UpdateSubnetRequest  {
         this.vpcId = vpcId;
     }
 
+    
+
     public UpdateSubnetRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateSubnetRequest  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public UpdateSubnetRequest withBody(UpdateSubnetRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateSubnetRequest  {
     public void setBody(UpdateSubnetRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

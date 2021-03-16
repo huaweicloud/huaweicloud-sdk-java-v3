@@ -22,8 +22,8 @@
 package com.huaweicloud.sdk.core;
 
 public class Constants {
-
-
+    public static final String HTTP_SCHEME = "http";
+    public static final String HTTPS_SCHEME = "https";
     public static final String CONTENT_TYPE = "Content-Type";
     public static final String CONTENT_LENGTH = "Content-Length";
     public static final String USER_AGENT = "User-Agent";
@@ -38,6 +38,7 @@ public class Constants {
         public static final String APPLICATION_JSON = "application/json";
         public static final String APPLICATION_JSON_UTF8 = "application/json;charset=UTF-8";
         public static final String APPLICATION_OCTET_STREAM = "application/octet-stream";
+        public static final String MULTIPART_FORM_DATA = "multipart/form-data";
         public static final String TEXT = "text";
     }
 

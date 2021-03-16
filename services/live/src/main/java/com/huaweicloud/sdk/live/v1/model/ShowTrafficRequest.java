@@ -61,6 +61,8 @@ public class ShowTrafficRequest  {
         this.domain = domain;
     }
 
+    
+
     public ShowTrafficRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -81,6 +83,8 @@ public class ShowTrafficRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ShowTrafficRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -100,6 +104,8 @@ public class ShowTrafficRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowTrafficRequest withStep(Integer step) {
         this.step = step;
@@ -122,6 +128,9 @@ public class ShowTrafficRequest  {
     public void setStep(Integer step) {
         this.step = step;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

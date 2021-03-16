@@ -36,7 +36,7 @@ public class Retention  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<Rule> rules = new ArrayList<>();
+    private List<Rule> rules = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class Retention  {
         this.algorithm = algorithm;
     }
 
+    
+
     public Retention withId(Integer id) {
         this.id = id;
         return this;
@@ -83,6 +85,8 @@ public class Retention  {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public Retention withRules(List<Rule> rules) {
         this.rules = rules;
@@ -115,6 +119,8 @@ public class Retention  {
         this.rules = rules;
     }
 
+    
+
     public Retention withScope(String scope) {
         this.scope = scope;
         return this;
@@ -134,6 +140,9 @@ public class Retention  {
     public void setScope(String scope) {
         this.scope = scope;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

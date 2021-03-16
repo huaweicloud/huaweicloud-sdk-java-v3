@@ -24,19 +24,19 @@ public class QueryCorpResultDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="basicInfo")
     
-    private QueryCorpBasicResultDTO basicInfo = null;
+    private QueryCorpBasicResultDTO basicInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adminInfo")
     
-    private QueryAdminResultDTO adminInfo = null;
+    private QueryAdminResultDTO adminInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resInfo")
     
-    private QueryCorpResResultDTO resInfo = null;
+    private QueryCorpResResultDTO resInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,6 +71,8 @@ public class QueryCorpResultDTO  {
         this.basicInfo = basicInfo;
     }
 
+    
+
     public QueryCorpResultDTO withAdminInfo(QueryAdminResultDTO adminInfo) {
         this.adminInfo = adminInfo;
         return this;
@@ -97,6 +99,8 @@ public class QueryCorpResultDTO  {
     public void setAdminInfo(QueryAdminResultDTO adminInfo) {
         this.adminInfo = adminInfo;
     }
+
+    
 
     public QueryCorpResultDTO withResInfo(QueryCorpResResultDTO resInfo) {
         this.resInfo = resInfo;
@@ -125,6 +129,8 @@ public class QueryCorpResultDTO  {
         this.resInfo = resInfo;
     }
 
+    
+
     public QueryCorpResultDTO withId(String id) {
         this.id = id;
         return this;
@@ -144,6 +150,9 @@ public class QueryCorpResultDTO  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

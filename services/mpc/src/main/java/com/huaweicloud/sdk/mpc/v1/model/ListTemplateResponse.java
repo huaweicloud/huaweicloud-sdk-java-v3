@@ -41,9 +41,6 @@ public class ListTemplateResponse extends SdkResponse {
 
     
     public ListTemplateResponse addTemplateArrayItem(TemplateInfo templateArrayItem) {
-        if (this.templateArray == null) {
-            this.templateArray = new ArrayList<>();
-        }
         this.templateArray.add(templateArrayItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListTemplateResponse extends SdkResponse {
         this.templateArray = templateArray;
     }
 
+    
+
     public ListTemplateResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -89,6 +88,9 @@ public class ListTemplateResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

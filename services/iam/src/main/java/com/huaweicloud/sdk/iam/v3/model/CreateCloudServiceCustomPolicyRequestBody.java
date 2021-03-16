@@ -22,7 +22,7 @@ public class CreateCloudServiceCustomPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private ServicePolicyRoleOption role = null;
+    private ServicePolicyRoleOption role;
 
     public CreateCloudServiceCustomPolicyRequestBody withRole(ServicePolicyRoleOption role) {
         this.role = role;
@@ -50,6 +50,9 @@ public class CreateCloudServiceCustomPolicyRequestBody  {
     public void setRole(ServicePolicyRoleOption role) {
         this.role = role;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

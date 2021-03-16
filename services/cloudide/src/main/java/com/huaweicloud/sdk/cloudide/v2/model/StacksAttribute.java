@@ -50,9 +50,6 @@ public class StacksAttribute  {
 
     
     public StacksAttribute addSpecsItem(String specsItem) {
-        if (this.specs == null) {
-            this.specs = new ArrayList<>();
-        }
         this.specs.add(specsItem);
         return this;
     }
@@ -77,6 +74,8 @@ public class StacksAttribute  {
         this.specs = specs;
     }
 
+    
+
     public StacksAttribute withSuggest(String suggest) {
         this.suggest = suggest;
         return this;
@@ -96,6 +95,8 @@ public class StacksAttribute  {
     public void setSuggest(String suggest) {
         this.suggest = suggest;
     }
+
+    
 
     public StacksAttribute withSuggestTitle(String suggestTitle) {
         this.suggestTitle = suggestTitle;
@@ -117,6 +118,8 @@ public class StacksAttribute  {
         this.suggestTitle = suggestTitle;
     }
 
+    
+
     public StacksAttribute withVolumes(List<String> volumes) {
         this.volumes = volumes;
         return this;
@@ -124,9 +127,6 @@ public class StacksAttribute  {
 
     
     public StacksAttribute addVolumesItem(String volumesItem) {
-        if (this.volumes == null) {
-            this.volumes = new ArrayList<>();
-        }
         this.volumes.add(volumesItem);
         return this;
     }
@@ -150,6 +150,9 @@ public class StacksAttribute  {
     public void setVolumes(List<String> volumes) {
         this.volumes = volumes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

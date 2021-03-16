@@ -131,6 +131,8 @@ public class BillingUpdate  {
         this.consistentLevel = consistentLevel;
     }
 
+    
+
     public BillingUpdate withSize(Integer size) {
         this.size = size;
         return this;
@@ -152,6 +154,9 @@ public class BillingUpdate  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

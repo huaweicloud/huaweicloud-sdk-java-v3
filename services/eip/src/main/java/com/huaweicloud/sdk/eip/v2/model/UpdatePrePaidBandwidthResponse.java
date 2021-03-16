@@ -24,7 +24,7 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private BandwidthResp bandwidth = null;
+    private BandwidthResp bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public UpdatePrePaidBandwidthResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -78,6 +80,9 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

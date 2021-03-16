@@ -39,13 +39,13 @@ public class ListHistorySessionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,6 +87,8 @@ public class ListHistorySessionsRequest  {
         this.authorizationId = authorizationId;
     }
 
+    
+
     public ListHistorySessionsRequest withAuthorizationDetailId(Long authorizationDetailId) {
         this.authorizationDetailId = authorizationDetailId;
         return this;
@@ -109,6 +111,8 @@ public class ListHistorySessionsRequest  {
         this.authorizationDetailId = authorizationDetailId;
     }
 
+    
+
     public ListHistorySessionsRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -128,6 +132,8 @@ public class ListHistorySessionsRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ListHistorySessionsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -151,6 +157,8 @@ public class ListHistorySessionsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListHistorySessionsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -172,6 +180,8 @@ public class ListHistorySessionsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListHistorySessionsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -197,6 +207,8 @@ public class ListHistorySessionsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListHistorySessionsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -219,6 +231,8 @@ public class ListHistorySessionsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListHistorySessionsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -240,6 +254,9 @@ public class ListHistorySessionsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

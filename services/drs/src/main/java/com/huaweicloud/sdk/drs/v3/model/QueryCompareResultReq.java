@@ -73,6 +73,8 @@ public class QueryCompareResultReq  {
         this.jobId = jobId;
     }
 
+    
+
     public QueryCompareResultReq withObjectLevelCompareId(String objectLevelCompareId) {
         this.objectLevelCompareId = objectLevelCompareId;
         return this;
@@ -92,6 +94,8 @@ public class QueryCompareResultReq  {
     public void setObjectLevelCompareId(String objectLevelCompareId) {
         this.objectLevelCompareId = objectLevelCompareId;
     }
+
+    
 
     public QueryCompareResultReq withLineCompareId(String lineCompareId) {
         this.lineCompareId = lineCompareId;
@@ -113,6 +117,8 @@ public class QueryCompareResultReq  {
         this.lineCompareId = lineCompareId;
     }
 
+    
+
     public QueryCompareResultReq withContentCompareId(String contentCompareId) {
         this.contentCompareId = contentCompareId;
         return this;
@@ -132,6 +138,8 @@ public class QueryCompareResultReq  {
     public void setContentCompareId(String contentCompareId) {
         this.contentCompareId = contentCompareId;
     }
+
+    
 
     public QueryCompareResultReq withCurrentPage(Integer currentPage) {
         this.currentPage = currentPage;
@@ -153,6 +161,8 @@ public class QueryCompareResultReq  {
         this.currentPage = currentPage;
     }
 
+    
+
     public QueryCompareResultReq withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
@@ -172,6 +182,9 @@ public class QueryCompareResultReq  {
     public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

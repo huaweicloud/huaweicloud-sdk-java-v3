@@ -57,19 +57,19 @@ public class ListRoutingRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListRoutingRulesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -91,6 +91,8 @@ public class ListRoutingRulesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListRoutingRulesRequest withResource(String resource) {
         this.resource = resource;
         return this;
@@ -110,6 +112,8 @@ public class ListRoutingRulesRequest  {
     public void setResource(String resource) {
         this.resource = resource;
     }
+
+    
 
     public ListRoutingRulesRequest withEvent(String event) {
         this.event = event;
@@ -131,6 +135,8 @@ public class ListRoutingRulesRequest  {
         this.event = event;
     }
 
+    
+
     public ListRoutingRulesRequest withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -150,6 +156,8 @@ public class ListRoutingRulesRequest  {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public ListRoutingRulesRequest withAppId(String appId) {
         this.appId = appId;
@@ -171,6 +179,8 @@ public class ListRoutingRulesRequest  {
         this.appId = appId;
     }
 
+    
+
     public ListRoutingRulesRequest withRuleName(String ruleName) {
         this.ruleName = ruleName;
         return this;
@@ -190,6 +200,8 @@ public class ListRoutingRulesRequest  {
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
+
+    
 
     public ListRoutingRulesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -213,6 +225,8 @@ public class ListRoutingRulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListRoutingRulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -232,6 +246,8 @@ public class ListRoutingRulesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListRoutingRulesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -254,6 +270,9 @@ public class ListRoutingRulesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -131,6 +131,8 @@ public class ConfirmDeadLettersMessagesReqMessage  {
         this.handler = handler;
     }
 
+    
+
     public ConfirmDeadLettersMessagesReqMessage withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -150,6 +152,9 @@ public class ConfirmDeadLettersMessagesReqMessage  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -21,7 +21,7 @@ public class ImageDetectionResultDetailPorn  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    private Object confidence = null;
+    private Object confidence;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,6 +49,8 @@ public class ImageDetectionResultDetailPorn  {
         this.confidence = confidence;
     }
 
+    
+
     public ImageDetectionResultDetailPorn withLabel(String label) {
         this.label = label;
         return this;
@@ -68,6 +70,9 @@ public class ImageDetectionResultDetailPorn  {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

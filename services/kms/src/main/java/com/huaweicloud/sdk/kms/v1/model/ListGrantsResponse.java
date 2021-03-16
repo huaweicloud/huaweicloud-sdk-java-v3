@@ -135,9 +135,6 @@ public class ListGrantsResponse extends SdkResponse {
 
     
     public ListGrantsResponse addGrantsItem(Grants grantsItem) {
-        if (this.grants == null) {
-            this.grants = new ArrayList<>();
-        }
         this.grants.add(grantsItem);
         return this;
     }
@@ -162,6 +159,8 @@ public class ListGrantsResponse extends SdkResponse {
         this.grants = grants;
     }
 
+    
+
     public ListGrantsResponse withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
@@ -182,6 +181,8 @@ public class ListGrantsResponse extends SdkResponse {
         this.nextMarker = nextMarker;
     }
 
+    
+
     public ListGrantsResponse withTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
         return this;
@@ -201,6 +202,8 @@ public class ListGrantsResponse extends SdkResponse {
     public void setTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
     }
+
+    
 
     public ListGrantsResponse withTotal(Integer total) {
         this.total = total;
@@ -223,6 +226,9 @@ public class ListGrantsResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

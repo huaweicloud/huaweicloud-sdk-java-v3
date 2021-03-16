@@ -42,6 +42,9 @@ public class DeleteScalingPolicyRequest  {
     public void setScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

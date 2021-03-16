@@ -34,7 +34,7 @@ public class ShowAuditlogDownloadLinkRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GenerateAuditlogDownloadLinkRequest body = null;
+    private GenerateAuditlogDownloadLinkRequest body;
 
     public ShowAuditlogDownloadLinkRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class ShowAuditlogDownloadLinkRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ShowAuditlogDownloadLinkRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class ShowAuditlogDownloadLinkRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ShowAuditlogDownloadLinkRequest withBody(GenerateAuditlogDownloadLinkRequest body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class ShowAuditlogDownloadLinkRequest  {
     public void setBody(GenerateAuditlogDownloadLinkRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

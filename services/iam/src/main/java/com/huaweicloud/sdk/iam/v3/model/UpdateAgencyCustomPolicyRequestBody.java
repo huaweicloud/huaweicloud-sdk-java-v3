@@ -22,7 +22,7 @@ public class UpdateAgencyCustomPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private AgencyPolicyRoleOption role = null;
+    private AgencyPolicyRoleOption role;
 
     public UpdateAgencyCustomPolicyRequestBody withRole(AgencyPolicyRoleOption role) {
         this.role = role;
@@ -50,6 +50,9 @@ public class UpdateAgencyCustomPolicyRequestBody  {
     public void setRole(AgencyPolicyRoleOption role) {
         this.role = role;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

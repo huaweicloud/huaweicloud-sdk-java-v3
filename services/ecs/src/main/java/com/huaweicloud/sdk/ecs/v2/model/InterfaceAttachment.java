@@ -57,9 +57,6 @@ public class InterfaceAttachment  {
 
     
     public InterfaceAttachment addFixedIpsItem(ServerInterfaceFixedIp fixedIpsItem) {
-        if (this.fixedIps == null) {
-            this.fixedIps = new ArrayList<>();
-        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
@@ -84,6 +81,8 @@ public class InterfaceAttachment  {
         this.fixedIps = fixedIps;
     }
 
+    
+
     public InterfaceAttachment withMacAddr(String macAddr) {
         this.macAddr = macAddr;
         return this;
@@ -103,6 +102,8 @@ public class InterfaceAttachment  {
     public void setMacAddr(String macAddr) {
         this.macAddr = macAddr;
     }
+
+    
 
     public InterfaceAttachment withNetId(String netId) {
         this.netId = netId;
@@ -124,6 +125,8 @@ public class InterfaceAttachment  {
         this.netId = netId;
     }
 
+    
+
     public InterfaceAttachment withPortId(String portId) {
         this.portId = portId;
         return this;
@@ -144,6 +147,8 @@ public class InterfaceAttachment  {
         this.portId = portId;
     }
 
+    
+
     public InterfaceAttachment withPortState(String portState) {
         this.portState = portState;
         return this;
@@ -163,6 +168,9 @@ public class InterfaceAttachment  {
     public void setPortState(String portState) {
         this.portState = portState;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

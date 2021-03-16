@@ -173,6 +173,8 @@ public class UpdateRepoRequestBody  {
         this.isPublic = isPublic;
     }
 
+    
+
     public UpdateRepoRequestBody withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -193,6 +195,8 @@ public class UpdateRepoRequestBody  {
         this.category = category;
     }
 
+    
+
     public UpdateRepoRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -212,6 +216,9 @@ public class UpdateRepoRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

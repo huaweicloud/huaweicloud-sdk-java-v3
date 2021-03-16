@@ -61,6 +61,8 @@ public class ListScalingConfigsRequest  {
         this.scalingConfigurationName = scalingConfigurationName;
     }
 
+    
+
     public ListScalingConfigsRequest withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -80,6 +82,8 @@ public class ListScalingConfigsRequest  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public ListScalingConfigsRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
@@ -101,6 +105,8 @@ public class ListScalingConfigsRequest  {
         this.startNumber = startNumber;
     }
 
+    
+
     public ListScalingConfigsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -120,6 +126,9 @@ public class ListScalingConfigsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

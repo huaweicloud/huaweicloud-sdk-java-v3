@@ -24,7 +24,7 @@ public class UpdateDomainConsoleAclPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="console_acl_policy")
     
-    private AclPolicyResult consoleAclPolicy = null;
+    private AclPolicyResult consoleAclPolicy;
 
     public UpdateDomainConsoleAclPolicyResponse withConsoleAclPolicy(AclPolicyResult consoleAclPolicy) {
         this.consoleAclPolicy = consoleAclPolicy;
@@ -52,6 +52,9 @@ public class UpdateDomainConsoleAclPolicyResponse extends SdkResponse {
     public void setConsoleAclPolicy(AclPolicyResult consoleAclPolicy) {
         this.consoleAclPolicy = consoleAclPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

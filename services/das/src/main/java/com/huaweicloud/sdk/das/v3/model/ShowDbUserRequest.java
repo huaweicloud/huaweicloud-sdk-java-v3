@@ -137,6 +137,8 @@ public class ShowDbUserRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDbUserRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
@@ -156,6 +158,8 @@ public class ShowDbUserRequest  {
     public void setDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
     }
+
+    
 
     public ShowDbUserRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -178,6 +182,9 @@ public class ShowDbUserRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

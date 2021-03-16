@@ -33,7 +33,7 @@ public class ListAlarmTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaData metaData = null;
+    private MetaData metaData;
 
     public ListAlarmTemplatesResponse withAlarmTemplates(List<AlarmTemplate> alarmTemplates) {
         this.alarmTemplates = alarmTemplates;
@@ -42,9 +42,6 @@ public class ListAlarmTemplatesResponse extends SdkResponse {
 
     
     public ListAlarmTemplatesResponse addAlarmTemplatesItem(AlarmTemplate alarmTemplatesItem) {
-        if (this.alarmTemplates == null) {
-            this.alarmTemplates = new ArrayList<>();
-        }
         this.alarmTemplates.add(alarmTemplatesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListAlarmTemplatesResponse extends SdkResponse {
     public void setAlarmTemplates(List<AlarmTemplate> alarmTemplates) {
         this.alarmTemplates = alarmTemplates;
     }
+
+    
 
     public ListAlarmTemplatesResponse withMetaData(MetaData metaData) {
         this.metaData = metaData;
@@ -95,6 +94,9 @@ public class ListAlarmTemplatesResponse extends SdkResponse {
     public void setMetaData(MetaData metaData) {
         this.metaData = metaData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

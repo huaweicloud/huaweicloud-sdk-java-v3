@@ -60,6 +60,8 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
         this.rootId = rootId;
     }
 
+    
+
     public ListEnterpriseOrganizationsResponse withRootName(String rootName) {
         this.rootName = rootName;
         return this;
@@ -80,6 +82,8 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
         this.rootName = rootName;
     }
 
+    
+
     public ListEnterpriseOrganizationsResponse withChildNodes(List<EmChildNodeV2> childNodes) {
         this.childNodes = childNodes;
         return this;
@@ -87,9 +91,6 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
 
     
     public ListEnterpriseOrganizationsResponse addChildNodesItem(EmChildNodeV2 childNodesItem) {
-        if (this.childNodes == null) {
-            this.childNodes = new ArrayList<>();
-        }
         this.childNodes.add(childNodesItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
     public void setChildNodes(List<EmChildNodeV2> childNodes) {
         this.childNodes = childNodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

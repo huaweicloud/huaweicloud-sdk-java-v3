@@ -56,6 +56,8 @@ public class ListAuthorizationsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListAuthorizationsResponse withIncidentAuthList(List<IncidentOrderAuthV2> incidentAuthList) {
         this.incidentAuthList = incidentAuthList;
         return this;
@@ -63,9 +65,6 @@ public class ListAuthorizationsResponse extends SdkResponse {
 
     
     public ListAuthorizationsResponse addIncidentAuthListItem(IncidentOrderAuthV2 incidentAuthListItem) {
-        if (this.incidentAuthList == null) {
-            this.incidentAuthList = new ArrayList<>();
-        }
         this.incidentAuthList.add(incidentAuthListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListAuthorizationsResponse extends SdkResponse {
     public void setIncidentAuthList(List<IncidentOrderAuthV2> incidentAuthList) {
         this.incidentAuthList = incidentAuthList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

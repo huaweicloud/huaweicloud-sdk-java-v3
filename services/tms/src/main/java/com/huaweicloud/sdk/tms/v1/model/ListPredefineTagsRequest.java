@@ -37,7 +37,7 @@ public class ListPredefineTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,7 +49,7 @@ public class ListPredefineTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_field")
     
-    private String orderField = "update_time";
+    private String orderField;
     /**
      * Gets or Sets orderMethod
      */
@@ -133,7 +133,7 @@ public class ListPredefineTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_method")
     
-    private OrderMethodEnum orderMethod = OrderMethodEnum.DESC;
+    private OrderMethodEnum orderMethod;
 
     public ListPredefineTagsRequest withKey(String key) {
         this.key = key;
@@ -155,6 +155,8 @@ public class ListPredefineTagsRequest  {
         this.key = key;
     }
 
+    
+
     public ListPredefineTagsRequest withValue(String value) {
         this.value = value;
         return this;
@@ -174,6 +176,8 @@ public class ListPredefineTagsRequest  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
 
     public ListPredefineTagsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -197,6 +201,8 @@ public class ListPredefineTagsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListPredefineTagsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -216,6 +222,8 @@ public class ListPredefineTagsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListPredefineTagsRequest withOrderField(String orderField) {
         this.orderField = orderField;
@@ -237,6 +245,8 @@ public class ListPredefineTagsRequest  {
         this.orderField = orderField;
     }
 
+    
+
     public ListPredefineTagsRequest withOrderMethod(OrderMethodEnum orderMethod) {
         this.orderMethod = orderMethod;
         return this;
@@ -256,6 +266,9 @@ public class ListPredefineTagsRequest  {
     public void setOrderMethod(OrderMethodEnum orderMethod) {
         this.orderMethod = orderMethod;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

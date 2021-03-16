@@ -24,7 +24,7 @@ public class KeystoneUpdateMappingResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mapping")
     
-    private MappingResult mapping = null;
+    private MappingResult mapping;
 
     public KeystoneUpdateMappingResponse withMapping(MappingResult mapping) {
         this.mapping = mapping;
@@ -52,6 +52,9 @@ public class KeystoneUpdateMappingResponse extends SdkResponse {
     public void setMapping(MappingResult mapping) {
         this.mapping = mapping;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

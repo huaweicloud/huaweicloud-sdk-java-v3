@@ -61,6 +61,8 @@ public class ListApiVersionsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListApiVersionsV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListApiVersionsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListApiVersionsV2Response withApiVersions(List<ApiVersionResp> apiVersions) {
         this.apiVersions = apiVersions;
         return this;
@@ -88,9 +92,6 @@ public class ListApiVersionsV2Response extends SdkResponse {
 
     
     public ListApiVersionsV2Response addApiVersionsItem(ApiVersionResp apiVersionsItem) {
-        if (this.apiVersions == null) {
-            this.apiVersions = new ArrayList<>();
-        }
         this.apiVersions.add(apiVersionsItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListApiVersionsV2Response extends SdkResponse {
     public void setApiVersions(List<ApiVersionResp> apiVersions) {
         this.apiVersions = apiVersions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

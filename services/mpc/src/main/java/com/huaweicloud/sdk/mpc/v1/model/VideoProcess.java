@@ -32,7 +32,7 @@ public class VideoProcess  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="black_enhance")
     
-    private BlackEnhance blackEnhance = null;
+    private BlackEnhance blackEnhance;
     /**
      * 长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应 
      */
@@ -122,13 +122,13 @@ public class VideoProcess  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adaptation")
     
-    private AdaptationEnum adaptation = AdaptationEnum.SHORT;
+    private AdaptationEnum adaptation;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="upsample")
     
-    private Integer upsample = 0;
+    private Integer upsample;
 
     public VideoProcess withRotate(Integer rotate) {
         this.rotate = rotate;
@@ -151,6 +151,8 @@ public class VideoProcess  {
     public void setRotate(Integer rotate) {
         this.rotate = rotate;
     }
+
+    
 
     public VideoProcess withBlackEnhance(BlackEnhance blackEnhance) {
         this.blackEnhance = blackEnhance;
@@ -179,6 +181,8 @@ public class VideoProcess  {
         this.blackEnhance = blackEnhance;
     }
 
+    
+
     public VideoProcess withAdaptation(AdaptationEnum adaptation) {
         this.adaptation = adaptation;
         return this;
@@ -198,6 +202,8 @@ public class VideoProcess  {
     public void setAdaptation(AdaptationEnum adaptation) {
         this.adaptation = adaptation;
     }
+
+    
 
     public VideoProcess withUpsample(Integer upsample) {
         this.upsample = upsample;
@@ -220,6 +226,9 @@ public class VideoProcess  {
     public void setUpsample(Integer upsample) {
         this.upsample = upsample;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -354,6 +354,8 @@ public class BandwidthRespInsert  {
         this.bandwidthType = bandwidthType;
     }
 
+    
+
     public BandwidthRespInsert withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -373,6 +375,8 @@ public class BandwidthRespInsert  {
     public void setChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public BandwidthRespInsert withId(String id) {
         this.id = id;
@@ -394,6 +398,8 @@ public class BandwidthRespInsert  {
         this.id = id;
     }
 
+    
+
     public BandwidthRespInsert withName(String name) {
         this.name = name;
         return this;
@@ -414,6 +420,8 @@ public class BandwidthRespInsert  {
         this.name = name;
     }
 
+    
+
     public BandwidthRespInsert withPublicipInfo(List<PublicipInfoResp> publicipInfo) {
         this.publicipInfo = publicipInfo;
         return this;
@@ -421,9 +429,6 @@ public class BandwidthRespInsert  {
 
     
     public BandwidthRespInsert addPublicipInfoItem(PublicipInfoResp publicipInfoItem) {
-        if (this.publicipInfo == null) {
-            this.publicipInfo = new ArrayList<>();
-        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
@@ -448,6 +453,8 @@ public class BandwidthRespInsert  {
         this.publicipInfo = publicipInfo;
     }
 
+    
+
     public BandwidthRespInsert withBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
         return this;
@@ -467,6 +474,8 @@ public class BandwidthRespInsert  {
     public void setBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
     }
+
+    
 
     public BandwidthRespInsert withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
@@ -488,6 +497,8 @@ public class BandwidthRespInsert  {
         this.shareType = shareType;
     }
 
+    
+
     public BandwidthRespInsert withSize(Integer size) {
         this.size = size;
         return this;
@@ -507,6 +518,8 @@ public class BandwidthRespInsert  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
 
     public BandwidthRespInsert withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -528,6 +541,8 @@ public class BandwidthRespInsert  {
         this.tenantId = tenantId;
     }
 
+    
+
     public BandwidthRespInsert withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -548,6 +563,8 @@ public class BandwidthRespInsert  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public BandwidthRespInsert withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -567,6 +584,9 @@ public class BandwidthRespInsert  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -36,7 +36,7 @@ public class InstanceRequestSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    private Map<String, Object> values = new HashMap<>();
+    private Map<String, Object> values = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class InstanceRequestSpec  {
         this.addonTemplateName = addonTemplateName;
     }
 
+    
+
     public InstanceRequestSpec withClusterID(String clusterID) {
         this.clusterID = clusterID;
         return this;
@@ -83,6 +85,8 @@ public class InstanceRequestSpec  {
     public void setClusterID(String clusterID) {
         this.clusterID = clusterID;
     }
+
+    
 
     public InstanceRequestSpec withValues(Map<String, Object> values) {
         this.values = values;
@@ -115,6 +119,8 @@ public class InstanceRequestSpec  {
         this.values = values;
     }
 
+    
+
     public InstanceRequestSpec withVersion(String version) {
         this.version = version;
         return this;
@@ -134,6 +140,9 @@ public class InstanceRequestSpec  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class ResetMessagesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message_offset")
     
-    private BigDecimal messageOffset = null;
+    private BigDecimal messageOffset;
 
     public ResetMessagesReq withTopic(String topic) {
         this.topic = topic;
@@ -56,6 +56,8 @@ public class ResetMessagesReq  {
         this.topic = topic;
     }
 
+    
+
     public ResetMessagesReq withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -76,6 +78,8 @@ public class ResetMessagesReq  {
         this.partition = partition;
     }
 
+    
+
     public ResetMessagesReq withMessageOffset(BigDecimal messageOffset) {
         this.messageOffset = messageOffset;
         return this;
@@ -95,6 +99,9 @@ public class ResetMessagesReq  {
     public void setMessageOffset(BigDecimal messageOffset) {
         this.messageOffset = messageOffset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

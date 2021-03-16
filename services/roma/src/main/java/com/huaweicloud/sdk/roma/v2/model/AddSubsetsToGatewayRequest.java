@@ -34,7 +34,7 @@ public class AddSubsetsToGatewayRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddSubsetsToGatewayRequestBody body = null;
+    private AddSubsetsToGatewayRequestBody body;
 
     public AddSubsetsToGatewayRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class AddSubsetsToGatewayRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public AddSubsetsToGatewayRequest withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
@@ -77,6 +79,8 @@ public class AddSubsetsToGatewayRequest  {
     public void setDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
     }
+
+    
 
     public AddSubsetsToGatewayRequest withBody(AddSubsetsToGatewayRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class AddSubsetsToGatewayRequest  {
     public void setBody(AddSubsetsToGatewayRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

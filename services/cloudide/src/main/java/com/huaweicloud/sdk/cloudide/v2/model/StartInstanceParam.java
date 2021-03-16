@@ -40,9 +40,6 @@ public class StartInstanceParam  {
 
     
     public StartInstanceParam addPluginEnableListItem(String pluginEnableListItem) {
-        if (this.pluginEnableList == null) {
-            this.pluginEnableList = new ArrayList<>();
-        }
         this.pluginEnableList.add(pluginEnableListItem);
         return this;
     }
@@ -67,6 +64,8 @@ public class StartInstanceParam  {
         this.pluginEnableList = pluginEnableList;
     }
 
+    
+
     public StartInstanceParam withPluginVars(Map<String, String> pluginVars) {
         this.pluginVars = pluginVars;
         return this;
@@ -75,9 +74,6 @@ public class StartInstanceParam  {
     
 
     public StartInstanceParam putPluginVarsItem(String key, String pluginVarsItem) {
-         if (this.pluginVars == null) {
-            this.pluginVars = new HashMap<>();
-         }
         this.pluginVars.put(key, pluginVarsItem);
         return this;
     }
@@ -100,6 +96,9 @@ public class StartInstanceParam  {
     public void setPluginVars(Map<String, String> pluginVars) {
         this.pluginVars = pluginVars;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

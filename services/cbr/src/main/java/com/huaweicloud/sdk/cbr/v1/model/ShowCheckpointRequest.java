@@ -42,6 +42,9 @@ public class ShowCheckpointRequest  {
     public void setCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

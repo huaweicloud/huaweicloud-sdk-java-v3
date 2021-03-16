@@ -29,7 +29,7 @@ public class NovaSecurityGroupCommonRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group")
     
-    private NovaSecurityGroupCommonGroup group = null;
+    private NovaSecurityGroupCommonGroup group;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,7 +47,7 @@ public class NovaSecurityGroupCommonRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_range")
     
-    private NovaSecurityGroupCommonIpRange ipRange = null;
+    private NovaSecurityGroupCommonIpRange ipRange;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,6 +81,8 @@ public class NovaSecurityGroupCommonRule  {
         this.fromPort = fromPort;
     }
 
+    
+
     public NovaSecurityGroupCommonRule withGroup(NovaSecurityGroupCommonGroup group) {
         this.group = group;
         return this;
@@ -108,6 +110,8 @@ public class NovaSecurityGroupCommonRule  {
         this.group = group;
     }
 
+    
+
     public NovaSecurityGroupCommonRule withId(String id) {
         this.id = id;
         return this;
@@ -128,6 +132,8 @@ public class NovaSecurityGroupCommonRule  {
         this.id = id;
     }
 
+    
+
     public NovaSecurityGroupCommonRule withIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
         return this;
@@ -147,6 +153,8 @@ public class NovaSecurityGroupCommonRule  {
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
+
+    
 
     public NovaSecurityGroupCommonRule withIpRange(NovaSecurityGroupCommonIpRange ipRange) {
         this.ipRange = ipRange;
@@ -175,6 +183,8 @@ public class NovaSecurityGroupCommonRule  {
         this.ipRange = ipRange;
     }
 
+    
+
     public NovaSecurityGroupCommonRule withParentGroupId(String parentGroupId) {
         this.parentGroupId = parentGroupId;
         return this;
@@ -195,6 +205,8 @@ public class NovaSecurityGroupCommonRule  {
         this.parentGroupId = parentGroupId;
     }
 
+    
+
     public NovaSecurityGroupCommonRule withToPort(Integer toPort) {
         this.toPort = toPort;
         return this;
@@ -214,6 +226,9 @@ public class NovaSecurityGroupCommonRule  {
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

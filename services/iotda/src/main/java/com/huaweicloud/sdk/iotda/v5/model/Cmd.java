@@ -27,7 +27,7 @@ public class Cmd  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="command_body")
     
-    private Object commandBody = null;
+    private Object commandBody;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,13 +39,13 @@ public class Cmd  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="buffer_timeout")
     
-    private Integer bufferTimeout = 172800;
+    private Integer bufferTimeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="response_timeout")
     
-    private Integer responseTimeout = 1800;
+    private Integer responseTimeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class Cmd  {
         this.commandName = commandName;
     }
 
+    
+
     public Cmd withCommandBody(Object commandBody) {
         this.commandBody = commandBody;
         return this;
@@ -93,6 +95,8 @@ public class Cmd  {
         this.commandBody = commandBody;
     }
 
+    
+
     public Cmd withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
@@ -112,6 +116,8 @@ public class Cmd  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
+
+    
 
     public Cmd withBufferTimeout(Integer bufferTimeout) {
         this.bufferTimeout = bufferTimeout;
@@ -135,6 +141,8 @@ public class Cmd  {
         this.bufferTimeout = bufferTimeout;
     }
 
+    
+
     public Cmd withResponseTimeout(Integer responseTimeout) {
         this.responseTimeout = responseTimeout;
         return this;
@@ -157,6 +165,8 @@ public class Cmd  {
         this.responseTimeout = responseTimeout;
     }
 
+    
+
     public Cmd withMode(String mode) {
         this.mode = mode;
         return this;
@@ -176,6 +186,9 @@ public class Cmd  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

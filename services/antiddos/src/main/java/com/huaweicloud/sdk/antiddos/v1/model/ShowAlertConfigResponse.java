@@ -36,7 +36,7 @@ public class ShowAlertConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="warn_config")
     
-    private AlertConfigRespWarnConfig warnConfig = null;
+    private AlertConfigRespWarnConfig warnConfig;
 
     public ShowAlertConfigResponse withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
@@ -58,6 +58,8 @@ public class ShowAlertConfigResponse extends SdkResponse {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public ShowAlertConfigResponse withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -77,6 +79,8 @@ public class ShowAlertConfigResponse extends SdkResponse {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+    
 
     public ShowAlertConfigResponse withWarnConfig(AlertConfigRespWarnConfig warnConfig) {
         this.warnConfig = warnConfig;
@@ -104,6 +108,9 @@ public class ShowAlertConfigResponse extends SdkResponse {
     public void setWarnConfig(AlertConfigRespWarnConfig warnConfig) {
         this.warnConfig = warnConfig;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

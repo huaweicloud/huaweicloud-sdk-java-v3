@@ -54,7 +54,7 @@ public class ListNatGatewaysRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -282,7 +282,7 @@ public class ListNatGatewaysRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
     public ListNatGatewaysRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -304,6 +304,8 @@ public class ListNatGatewaysRequest  {
         this.tenantId = tenantId;
     }
 
+    
+
     public ListNatGatewaysRequest withId(String id) {
         this.id = id;
         return this;
@@ -323,6 +325,8 @@ public class ListNatGatewaysRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListNatGatewaysRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -344,6 +348,8 @@ public class ListNatGatewaysRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListNatGatewaysRequest withDescription(String description) {
         this.description = description;
         return this;
@@ -363,6 +369,8 @@ public class ListNatGatewaysRequest  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ListNatGatewaysRequest withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
@@ -384,6 +392,8 @@ public class ListNatGatewaysRequest  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ListNatGatewaysRequest withName(String name) {
         this.name = name;
         return this;
@@ -404,6 +414,8 @@ public class ListNatGatewaysRequest  {
         this.name = name;
     }
 
+    
+
     public ListNatGatewaysRequest withStatus(List<StatusEnum> status) {
         this.status = status;
         return this;
@@ -411,9 +423,6 @@ public class ListNatGatewaysRequest  {
 
     
     public ListNatGatewaysRequest addStatusItem(StatusEnum statusItem) {
-        if (this.status == null) {
-            this.status = new ArrayList<>();
-        }
         this.status.add(statusItem);
         return this;
     }
@@ -438,6 +447,8 @@ public class ListNatGatewaysRequest  {
         this.status = status;
     }
 
+    
+
     public ListNatGatewaysRequest withSpec(List<SpecEnum> spec) {
         this.spec = spec;
         return this;
@@ -445,9 +456,6 @@ public class ListNatGatewaysRequest  {
 
     
     public ListNatGatewaysRequest addSpecItem(SpecEnum specItem) {
-        if (this.spec == null) {
-            this.spec = new ArrayList<>();
-        }
         this.spec.add(specItem);
         return this;
     }
@@ -472,6 +480,8 @@ public class ListNatGatewaysRequest  {
         this.spec = spec;
     }
 
+    
+
     public ListNatGatewaysRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -491,6 +501,8 @@ public class ListNatGatewaysRequest  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public ListNatGatewaysRequest withInternalNetworkId(String internalNetworkId) {
         this.internalNetworkId = internalNetworkId;
@@ -512,6 +524,8 @@ public class ListNatGatewaysRequest  {
         this.internalNetworkId = internalNetworkId;
     }
 
+    
+
     public ListNatGatewaysRequest withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
@@ -531,6 +545,8 @@ public class ListNatGatewaysRequest  {
     public void setRouterId(String routerId) {
         this.routerId = routerId;
     }
+
+    
 
     public ListNatGatewaysRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -553,6 +569,9 @@ public class ListNatGatewaysRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

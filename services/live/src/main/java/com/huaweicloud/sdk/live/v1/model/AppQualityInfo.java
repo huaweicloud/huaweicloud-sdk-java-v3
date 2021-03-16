@@ -52,6 +52,8 @@ public class AppQualityInfo  {
         this.appName = appName;
     }
 
+    
+
     public AppQualityInfo withQualityInfo(List<QualityInfo> qualityInfo) {
         this.qualityInfo = qualityInfo;
         return this;
@@ -59,9 +61,6 @@ public class AppQualityInfo  {
 
     
     public AppQualityInfo addQualityInfoItem(QualityInfo qualityInfoItem) {
-        if (this.qualityInfo == null) {
-            this.qualityInfo = new ArrayList<>();
-        }
         this.qualityInfo.add(qualityInfoItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class AppQualityInfo  {
     public void setQualityInfo(List<QualityInfo> qualityInfo) {
         this.qualityInfo = qualityInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

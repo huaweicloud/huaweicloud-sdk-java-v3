@@ -42,6 +42,9 @@ public class DeleteDependencyRequest  {
     public void setDependId(String dependId) {
         this.dependId = dependId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

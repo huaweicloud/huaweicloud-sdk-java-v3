@@ -247,6 +247,8 @@ public class SourceCdnResp  {
         this.domain = domain;
     }
 
+    
+
     public SourceCdnResp withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -267,6 +269,8 @@ public class SourceCdnResp  {
         this.protocol = protocol;
     }
 
+    
+
     public SourceCdnResp withAuthenticationType(AuthenticationTypeEnum authenticationType) {
         this.authenticationType = authenticationType;
         return this;
@@ -286,6 +290,9 @@ public class SourceCdnResp  {
     public void setAuthenticationType(AuthenticationTypeEnum authenticationType) {
         this.authenticationType = authenticationType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

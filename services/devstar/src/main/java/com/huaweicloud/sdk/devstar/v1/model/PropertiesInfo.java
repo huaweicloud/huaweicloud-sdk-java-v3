@@ -103,6 +103,8 @@ public class PropertiesInfo  {
         this.key = key;
     }
 
+    
+
     public PropertiesInfo withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
@@ -122,6 +124,8 @@ public class PropertiesInfo  {
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
     }
+
+    
 
     public PropertiesInfo withLabel(String label) {
         this.label = label;
@@ -143,6 +147,8 @@ public class PropertiesInfo  {
         this.label = label;
     }
 
+    
+
     public PropertiesInfo withType(String type) {
         this.type = type;
         return this;
@@ -162,6 +168,8 @@ public class PropertiesInfo  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public PropertiesInfo withHelpText(String helpText) {
         this.helpText = helpText;
@@ -183,6 +191,8 @@ public class PropertiesInfo  {
         this.helpText = helpText;
     }
 
+    
+
     public PropertiesInfo withReadOnly(Boolean readOnly) {
         this.readOnly = readOnly;
         return this;
@@ -202,6 +212,8 @@ public class PropertiesInfo  {
     public void setReadOnly(Boolean readOnly) {
         this.readOnly = readOnly;
     }
+
+    
 
     public PropertiesInfo withRequired(Boolean required) {
         this.required = required;
@@ -223,6 +235,8 @@ public class PropertiesInfo  {
         this.required = required;
     }
 
+    
+
     public PropertiesInfo withRegType(String regType) {
         this.regType = regType;
         return this;
@@ -242,6 +256,8 @@ public class PropertiesInfo  {
     public void setRegType(String regType) {
         this.regType = regType;
     }
+
+    
 
     public PropertiesInfo withRegPattern(String regPattern) {
         this.regPattern = regPattern;
@@ -263,6 +279,8 @@ public class PropertiesInfo  {
         this.regPattern = regPattern;
     }
 
+    
+
     public PropertiesInfo withRegTip(String regTip) {
         this.regTip = regTip;
         return this;
@@ -283,6 +301,8 @@ public class PropertiesInfo  {
         this.regTip = regTip;
     }
 
+    
+
     public PropertiesInfo withIsShow(Boolean isShow) {
         this.isShow = isShow;
         return this;
@@ -302,6 +322,9 @@ public class PropertiesInfo  {
     public void setIsShow(Boolean isShow) {
         this.isShow = isShow;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

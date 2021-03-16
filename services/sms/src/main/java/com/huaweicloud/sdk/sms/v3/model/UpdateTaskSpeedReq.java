@@ -251,6 +251,8 @@ public class UpdateTaskSpeedReq  {
         this.subtaskName = subtaskName;
     }
 
+    
+
     public UpdateTaskSpeedReq withProgress(Integer progress) {
         this.progress = progress;
         return this;
@@ -272,6 +274,8 @@ public class UpdateTaskSpeedReq  {
     public void setProgress(Integer progress) {
         this.progress = progress;
     }
+
+    
 
     public UpdateTaskSpeedReq withReplicatesize(Long replicatesize) {
         this.replicatesize = replicatesize;
@@ -295,6 +299,8 @@ public class UpdateTaskSpeedReq  {
         this.replicatesize = replicatesize;
     }
 
+    
+
     public UpdateTaskSpeedReq withTotalsize(Long totalsize) {
         this.totalsize = totalsize;
         return this;
@@ -317,6 +323,8 @@ public class UpdateTaskSpeedReq  {
         this.totalsize = totalsize;
     }
 
+    
+
     public UpdateTaskSpeedReq withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
@@ -338,6 +346,9 @@ public class UpdateTaskSpeedReq  {
     public void setMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

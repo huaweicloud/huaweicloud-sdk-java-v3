@@ -55,6 +55,8 @@ public class ModPwdReqDTO  {
         this.account = account;
     }
 
+    
+
     public ModPwdReqDTO withOldPwd(String oldPwd) {
         this.oldPwd = oldPwd;
         return this;
@@ -75,6 +77,8 @@ public class ModPwdReqDTO  {
         this.oldPwd = oldPwd;
     }
 
+    
+
     public ModPwdReqDTO withNewPwd(String newPwd) {
         this.newPwd = newPwd;
         return this;
@@ -94,6 +98,9 @@ public class ModPwdReqDTO  {
     public void setNewPwd(String newPwd) {
         this.newPwd = newPwd;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

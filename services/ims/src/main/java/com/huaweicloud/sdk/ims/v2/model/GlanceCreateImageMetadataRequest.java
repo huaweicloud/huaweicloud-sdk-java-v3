@@ -22,7 +22,7 @@ public class GlanceCreateImageMetadataRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GlanceCreateImageMetadataRequestBody body = null;
+    private GlanceCreateImageMetadataRequestBody body;
 
     public GlanceCreateImageMetadataRequest withBody(GlanceCreateImageMetadataRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class GlanceCreateImageMetadataRequest  {
     public void setBody(GlanceCreateImageMetadataRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

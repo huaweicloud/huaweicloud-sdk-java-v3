@@ -35,7 +35,7 @@ public class UnbindTagsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tag_keys")
     
-    private List<String> tagKeys = new ArrayList<>();
+    private List<String> tagKeys = null;
     
     public UnbindTagsDTO withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -57,6 +57,8 @@ public class UnbindTagsDTO  {
         this.resourceType = resourceType;
     }
 
+    
+
     public UnbindTagsDTO withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -76,6 +78,8 @@ public class UnbindTagsDTO  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public UnbindTagsDTO withTagKeys(List<String> tagKeys) {
         this.tagKeys = tagKeys;
@@ -107,6 +111,9 @@ public class UnbindTagsDTO  {
     public void setTagKeys(List<String> tagKeys) {
         this.tagKeys = tagKeys;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -41,9 +41,6 @@ public class ListSingleStreamBitrateResponse extends SdkResponse {
 
     
     public ListSingleStreamBitrateResponse addBitrateInfoListItem(V2BitrateInfo bitrateInfoListItem) {
-        if (this.bitrateInfoList == null) {
-            this.bitrateInfoList = new ArrayList<>();
-        }
         this.bitrateInfoList.add(bitrateInfoListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListSingleStreamBitrateResponse extends SdkResponse {
         this.bitrateInfoList = bitrateInfoList;
     }
 
+    
+
     public ListSingleStreamBitrateResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -89,6 +88,9 @@ public class ListSingleStreamBitrateResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

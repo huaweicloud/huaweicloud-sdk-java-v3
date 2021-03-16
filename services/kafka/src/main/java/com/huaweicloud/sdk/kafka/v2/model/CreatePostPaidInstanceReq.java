@@ -434,7 +434,7 @@ public class CreatePostPaidInstanceReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="available_zones")
     
-    private List<String> availableZones = new ArrayList<>();
+    private List<String> availableZones = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -708,6 +708,8 @@ public class CreatePostPaidInstanceReq  {
         this.name = name;
     }
 
+    
+
     public CreatePostPaidInstanceReq withDescription(String description) {
         this.description = description;
         return this;
@@ -727,6 +729,8 @@ public class CreatePostPaidInstanceReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreatePostPaidInstanceReq withEngine(EngineEnum engine) {
         this.engine = engine;
@@ -748,6 +752,8 @@ public class CreatePostPaidInstanceReq  {
         this.engine = engine;
     }
 
+    
+
     public CreatePostPaidInstanceReq withEngineVersion(EngineVersionEnum engineVersion) {
         this.engineVersion = engineVersion;
         return this;
@@ -767,6 +773,8 @@ public class CreatePostPaidInstanceReq  {
     public void setEngineVersion(EngineVersionEnum engineVersion) {
         this.engineVersion = engineVersion;
     }
+
+    
 
     public CreatePostPaidInstanceReq withSpecification(SpecificationEnum specification) {
         this.specification = specification;
@@ -788,6 +796,8 @@ public class CreatePostPaidInstanceReq  {
         this.specification = specification;
     }
 
+    
+
     public CreatePostPaidInstanceReq withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
         return this;
@@ -807,6 +817,8 @@ public class CreatePostPaidInstanceReq  {
     public void setStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
     }
+
+    
 
     public CreatePostPaidInstanceReq withPartitionNum(PartitionNumEnum partitionNum) {
         this.partitionNum = partitionNum;
@@ -828,6 +840,8 @@ public class CreatePostPaidInstanceReq  {
         this.partitionNum = partitionNum;
     }
 
+    
+
     public CreatePostPaidInstanceReq withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
@@ -847,6 +861,8 @@ public class CreatePostPaidInstanceReq  {
     public void setAccessUser(String accessUser) {
         this.accessUser = accessUser;
     }
+
+    
 
     public CreatePostPaidInstanceReq withPassword(String password) {
         this.password = password;
@@ -868,6 +884,8 @@ public class CreatePostPaidInstanceReq  {
         this.password = password;
     }
 
+    
+
     public CreatePostPaidInstanceReq withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -887,6 +905,8 @@ public class CreatePostPaidInstanceReq  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public CreatePostPaidInstanceReq withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -908,6 +928,8 @@ public class CreatePostPaidInstanceReq  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public CreatePostPaidInstanceReq withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -927,6 +949,8 @@ public class CreatePostPaidInstanceReq  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public CreatePostPaidInstanceReq withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
@@ -959,6 +983,8 @@ public class CreatePostPaidInstanceReq  {
         this.availableZones = availableZones;
     }
 
+    
+
     public CreatePostPaidInstanceReq withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -978,6 +1004,8 @@ public class CreatePostPaidInstanceReq  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public CreatePostPaidInstanceReq withKafkaManagerUser(String kafkaManagerUser) {
         this.kafkaManagerUser = kafkaManagerUser;
@@ -999,6 +1027,8 @@ public class CreatePostPaidInstanceReq  {
         this.kafkaManagerUser = kafkaManagerUser;
     }
 
+    
+
     public CreatePostPaidInstanceReq withKafkaManagerPassword(String kafkaManagerPassword) {
         this.kafkaManagerPassword = kafkaManagerPassword;
         return this;
@@ -1018,6 +1048,8 @@ public class CreatePostPaidInstanceReq  {
     public void setKafkaManagerPassword(String kafkaManagerPassword) {
         this.kafkaManagerPassword = kafkaManagerPassword;
     }
+
+    
 
     public CreatePostPaidInstanceReq withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
@@ -1039,6 +1071,8 @@ public class CreatePostPaidInstanceReq  {
         this.maintainBegin = maintainBegin;
     }
 
+    
+
     public CreatePostPaidInstanceReq withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
         return this;
@@ -1058,6 +1092,8 @@ public class CreatePostPaidInstanceReq  {
     public void setMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
     }
+
+    
 
     public CreatePostPaidInstanceReq withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
@@ -1079,6 +1115,8 @@ public class CreatePostPaidInstanceReq  {
         this.enablePublicip = enablePublicip;
     }
 
+    
+
     public CreatePostPaidInstanceReq withPublicBandwidth(Integer publicBandwidth) {
         this.publicBandwidth = publicBandwidth;
         return this;
@@ -1098,6 +1136,8 @@ public class CreatePostPaidInstanceReq  {
     public void setPublicBandwidth(Integer publicBandwidth) {
         this.publicBandwidth = publicBandwidth;
     }
+
+    
 
     public CreatePostPaidInstanceReq withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -1119,6 +1159,8 @@ public class CreatePostPaidInstanceReq  {
         this.publicipId = publicipId;
     }
 
+    
+
     public CreatePostPaidInstanceReq withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
         return this;
@@ -1138,6 +1180,8 @@ public class CreatePostPaidInstanceReq  {
     public void setSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
     }
+
+    
 
     public CreatePostPaidInstanceReq withRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
@@ -1159,6 +1203,8 @@ public class CreatePostPaidInstanceReq  {
         this.retentionPolicy = retentionPolicy;
     }
 
+    
+
     public CreatePostPaidInstanceReq withConnectorEnable(Boolean connectorEnable) {
         this.connectorEnable = connectorEnable;
         return this;
@@ -1178,6 +1224,8 @@ public class CreatePostPaidInstanceReq  {
     public void setConnectorEnable(Boolean connectorEnable) {
         this.connectorEnable = connectorEnable;
     }
+
+    
 
     public CreatePostPaidInstanceReq withEnableAutoTopic(Boolean enableAutoTopic) {
         this.enableAutoTopic = enableAutoTopic;
@@ -1199,6 +1247,8 @@ public class CreatePostPaidInstanceReq  {
         this.enableAutoTopic = enableAutoTopic;
     }
 
+    
+
     public CreatePostPaidInstanceReq withStorageSpecCode(StorageSpecCodeEnum storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
         return this;
@@ -1218,6 +1268,8 @@ public class CreatePostPaidInstanceReq  {
     public void setStorageSpecCode(StorageSpecCodeEnum storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
     }
+
+    
 
     public CreatePostPaidInstanceReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -1239,6 +1291,8 @@ public class CreatePostPaidInstanceReq  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreatePostPaidInstanceReq withTags(List<CreatePostPaidInstanceReqTags> tags) {
         this.tags = tags;
         return this;
@@ -1246,9 +1300,6 @@ public class CreatePostPaidInstanceReq  {
 
     
     public CreatePostPaidInstanceReq addTagsItem(CreatePostPaidInstanceReqTags tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1272,6 +1323,9 @@ public class CreatePostPaidInstanceReq  {
     public void setTags(List<CreatePostPaidInstanceReqTags> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class KeystoneListProtocolsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class KeystoneListProtocolsResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public KeystoneListProtocolsResponse withProtocols(List<ProtocolResult> protocols) {
         this.protocols = protocols;
         return this;
@@ -69,9 +71,6 @@ public class KeystoneListProtocolsResponse extends SdkResponse {
 
     
     public KeystoneListProtocolsResponse addProtocolsItem(ProtocolResult protocolsItem) {
-        if (this.protocols == null) {
-            this.protocols = new ArrayList<>();
-        }
         this.protocols.add(protocolsItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class KeystoneListProtocolsResponse extends SdkResponse {
     public void setProtocols(List<ProtocolResult> protocols) {
         this.protocols = protocols;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

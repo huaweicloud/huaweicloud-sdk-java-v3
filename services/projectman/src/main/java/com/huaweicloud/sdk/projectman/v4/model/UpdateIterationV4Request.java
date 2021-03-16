@@ -34,7 +34,7 @@ public class UpdateIterationV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateIterationRequestV4 body = null;
+    private CreateIterationRequestV4 body;
 
     public UpdateIterationV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -56,6 +56,8 @@ public class UpdateIterationV4Request  {
         this.projectId = projectId;
     }
 
+    
+
     public UpdateIterationV4Request withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateIterationV4Request  {
     public void setIterationId(Integer iterationId) {
         this.iterationId = iterationId;
     }
+
+    
 
     public UpdateIterationV4Request withBody(CreateIterationRequestV4 body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateIterationV4Request  {
     public void setBody(CreateIterationRequestV4 body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

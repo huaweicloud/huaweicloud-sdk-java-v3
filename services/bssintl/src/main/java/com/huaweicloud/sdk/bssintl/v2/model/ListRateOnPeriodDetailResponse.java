@@ -27,7 +27,7 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_website_rating_result")
     
-    private OfficialWebsiteRatingResult officialWebsiteRatingResult = null;
+    private OfficialWebsiteRatingResult officialWebsiteRatingResult;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,6 +68,8 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         this.officialWebsiteRatingResult = officialWebsiteRatingResult;
     }
 
+    
+
     public ListRateOnPeriodDetailResponse withOptionalDiscountRatingResults(List<OptionalDiscountRatingResult> optionalDiscountRatingResults) {
         this.optionalDiscountRatingResults = optionalDiscountRatingResults;
         return this;
@@ -75,9 +77,6 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
 
     
     public ListRateOnPeriodDetailResponse addOptionalDiscountRatingResultsItem(OptionalDiscountRatingResult optionalDiscountRatingResultsItem) {
-        if (this.optionalDiscountRatingResults == null) {
-            this.optionalDiscountRatingResults = new ArrayList<>();
-        }
         this.optionalDiscountRatingResults.add(optionalDiscountRatingResultsItem);
         return this;
     }
@@ -102,6 +101,8 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
         this.optionalDiscountRatingResults = optionalDiscountRatingResults;
     }
 
+    
+
     public ListRateOnPeriodDetailResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -121,6 +122,9 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

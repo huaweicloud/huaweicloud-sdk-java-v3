@@ -30,7 +30,7 @@ public class BackupRestore  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="power_on")
     
-    private Boolean powerOn = true;
+    private Boolean powerOn;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,9 +57,6 @@ public class BackupRestore  {
 
     
     public BackupRestore addMappingsItem(BackupRestoreServerMapping mappingsItem) {
-        if (this.mappings == null) {
-            this.mappings = new ArrayList<>();
-        }
         this.mappings.add(mappingsItem);
         return this;
     }
@@ -84,6 +81,8 @@ public class BackupRestore  {
         this.mappings = mappings;
     }
 
+    
+
     public BackupRestore withPowerOn(Boolean powerOn) {
         this.powerOn = powerOn;
         return this;
@@ -103,6 +102,8 @@ public class BackupRestore  {
     public void setPowerOn(Boolean powerOn) {
         this.powerOn = powerOn;
     }
+
+    
 
     public BackupRestore withServerId(String serverId) {
         this.serverId = serverId;
@@ -124,6 +125,8 @@ public class BackupRestore  {
         this.serverId = serverId;
     }
 
+    
+
     public BackupRestore withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
@@ -144,6 +147,8 @@ public class BackupRestore  {
         this.volumeId = volumeId;
     }
 
+    
+
     public BackupRestore withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -163,6 +168,9 @@ public class BackupRestore  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

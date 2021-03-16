@@ -157,6 +157,8 @@ public class AssociateDomainV2Response extends SdkResponse {
         this.urlDomain = urlDomain;
     }
 
+    
+
     public AssociateDomainV2Response withId(String id) {
         this.id = id;
         return this;
@@ -176,6 +178,8 @@ public class AssociateDomainV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public AssociateDomainV2Response withStatus(StatusEnum status) {
         this.status = status;
@@ -197,6 +201,8 @@ public class AssociateDomainV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public AssociateDomainV2Response withMinSslVersion(String minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
@@ -216,6 +222,9 @@ public class AssociateDomainV2Response extends SdkResponse {
     public void setMinSslVersion(String minSslVersion) {
         this.minSslVersion = minSslVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

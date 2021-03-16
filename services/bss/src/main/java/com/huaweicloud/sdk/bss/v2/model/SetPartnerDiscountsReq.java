@@ -30,7 +30,7 @@ public class SetPartnerDiscountsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_customer_discounts")
     
-    private List<SetSubCustomerDiscountV2> subCustomerDiscounts = new ArrayList<>();
+    private List<SetSubCustomerDiscountV2> subCustomerDiscounts = null;
     
     public SetPartnerDiscountsReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
@@ -51,6 +51,8 @@ public class SetPartnerDiscountsReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
 
     public SetPartnerDiscountsReq withSubCustomerDiscounts(List<SetSubCustomerDiscountV2> subCustomerDiscounts) {
         this.subCustomerDiscounts = subCustomerDiscounts;
@@ -82,6 +84,9 @@ public class SetPartnerDiscountsReq  {
     public void setSubCustomerDiscounts(List<SetSubCustomerDiscountV2> subCustomerDiscounts) {
         this.subCustomerDiscounts = subCustomerDiscounts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

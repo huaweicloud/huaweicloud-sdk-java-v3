@@ -21,7 +21,7 @@ public class CreateRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class CreateRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invert")
     
-    private Boolean invert = false;
+    private Boolean invert;
 
     public CreateRuleOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -79,6 +79,8 @@ public class CreateRuleOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public CreateRuleOption withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
@@ -98,6 +100,8 @@ public class CreateRuleOption  {
     public void setCompareType(String compareType) {
         this.compareType = compareType;
     }
+
+    
 
     public CreateRuleOption withKey(String key) {
         this.key = key;
@@ -119,6 +123,8 @@ public class CreateRuleOption  {
         this.key = key;
     }
 
+    
+
     public CreateRuleOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -138,6 +144,8 @@ public class CreateRuleOption  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreateRuleOption withType(String type) {
         this.type = type;
@@ -159,6 +167,8 @@ public class CreateRuleOption  {
         this.type = type;
     }
 
+    
+
     public CreateRuleOption withValue(String value) {
         this.value = value;
         return this;
@@ -179,6 +189,8 @@ public class CreateRuleOption  {
         this.value = value;
     }
 
+    
+
     public CreateRuleOption withInvert(Boolean invert) {
         this.invert = invert;
         return this;
@@ -198,6 +210,9 @@ public class CreateRuleOption  {
     public void setInvert(Boolean invert) {
         this.invert = invert;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -155,6 +155,8 @@ public class DuplicateApiInfo  {
         this.apiId = apiId;
     }
 
+    
+
     public DuplicateApiInfo withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -174,6 +176,8 @@ public class DuplicateApiInfo  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
 
     public DuplicateApiInfo withGroupName(String groupName) {
         this.groupName = groupName;
@@ -195,6 +199,8 @@ public class DuplicateApiInfo  {
         this.groupName = groupName;
     }
 
+    
+
     public DuplicateApiInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -214,6 +220,8 @@ public class DuplicateApiInfo  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public DuplicateApiInfo withRemark(String remark) {
         this.remark = remark;
@@ -235,6 +243,8 @@ public class DuplicateApiInfo  {
         this.remark = remark;
     }
 
+    
+
     public DuplicateApiInfo withApiType(ApiTypeEnum apiType) {
         this.apiType = apiType;
         return this;
@@ -254,6 +264,9 @@ public class DuplicateApiInfo  {
     public void setApiType(ApiTypeEnum apiType) {
         this.apiType = apiType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

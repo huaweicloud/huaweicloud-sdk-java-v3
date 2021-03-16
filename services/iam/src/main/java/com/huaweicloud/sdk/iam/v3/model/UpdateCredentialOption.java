@@ -131,6 +131,8 @@ public class UpdateCredentialOption  {
         this.status = status;
     }
 
+    
+
     public UpdateCredentialOption withDescription(String description) {
         this.description = description;
         return this;
@@ -150,6 +152,9 @@ public class UpdateCredentialOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

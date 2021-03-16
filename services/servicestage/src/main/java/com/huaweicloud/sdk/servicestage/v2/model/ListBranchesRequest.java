@@ -57,6 +57,8 @@ public class ListBranchesRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public ListBranchesRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -77,6 +79,8 @@ public class ListBranchesRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ListBranchesRequest withProject(String project) {
         this.project = project;
         return this;
@@ -96,6 +100,9 @@ public class ListBranchesRequest  {
     public void setProject(String project) {
         this.project = project;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

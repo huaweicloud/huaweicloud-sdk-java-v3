@@ -23,7 +23,7 @@ public class ApplyConfigurationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_ids")
     
-    private List<String> instanceIds = new ArrayList<>();
+    private List<String> instanceIds = null;
     
     public ApplyConfigurationRequest withInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
@@ -55,6 +55,9 @@ public class ApplyConfigurationRequest  {
     public void setInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

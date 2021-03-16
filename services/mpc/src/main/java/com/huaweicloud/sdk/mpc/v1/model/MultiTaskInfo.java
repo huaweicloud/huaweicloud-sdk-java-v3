@@ -29,13 +29,13 @@ public class MultiTaskInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error")
     
-    private ErrorResponse error = null;
+    private ErrorResponse error;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_file")
     
-    private SourceInfo outputFile = null;
+    private SourceInfo outputFile;
 
     public MultiTaskInfo withTemplateId(Integer templateId) {
         this.templateId = templateId;
@@ -56,6 +56,8 @@ public class MultiTaskInfo  {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
+
+    
 
     public MultiTaskInfo withError(ErrorResponse error) {
         this.error = error;
@@ -84,6 +86,8 @@ public class MultiTaskInfo  {
         this.error = error;
     }
 
+    
+
     public MultiTaskInfo withOutputFile(SourceInfo outputFile) {
         this.outputFile = outputFile;
         return this;
@@ -110,6 +114,9 @@ public class MultiTaskInfo  {
     public void setOutputFile(SourceInfo outputFile) {
         this.outputFile = outputFile;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

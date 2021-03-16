@@ -137,6 +137,8 @@ public class BlackEnhance  {
         this.earlyReport = earlyReport;
     }
 
+    
+
     public BlackEnhance withPosition(String position) {
         this.position = position;
         return this;
@@ -157,6 +159,8 @@ public class BlackEnhance  {
         this.position = position;
     }
 
+    
+
     public BlackEnhance withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -176,6 +180,9 @@ public class BlackEnhance  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

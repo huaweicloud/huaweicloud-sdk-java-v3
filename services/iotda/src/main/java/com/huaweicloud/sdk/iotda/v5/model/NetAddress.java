@@ -55,6 +55,8 @@ public class NetAddress  {
         this.ip = ip;
     }
 
+    
+
     public NetAddress withPort(Integer port) {
         this.port = port;
         return this;
@@ -77,6 +79,8 @@ public class NetAddress  {
         this.port = port;
     }
 
+    
+
     public NetAddress withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -96,6 +100,9 @@ public class NetAddress  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

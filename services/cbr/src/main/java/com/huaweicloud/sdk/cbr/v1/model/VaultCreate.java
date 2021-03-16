@@ -33,7 +33,7 @@ public class VaultCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing")
     
-    private BillingCreate billing = null;
+    private BillingCreate billing;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +51,7 @@ public class VaultCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resources")
     
-    private List<ResourceCreate> resources = new ArrayList<>();
+    private List<ResourceCreate> resources = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +75,7 @@ public class VaultCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_rules")
     
-    private VaultBindRules bindRules = null;
+    private VaultBindRules bindRules;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,6 +102,8 @@ public class VaultCreate  {
     public void setBackupPolicyId(String backupPolicyId) {
         this.backupPolicyId = backupPolicyId;
     }
+
+    
 
     public VaultCreate withBilling(BillingCreate billing) {
         this.billing = billing;
@@ -130,6 +132,8 @@ public class VaultCreate  {
         this.billing = billing;
     }
 
+    
+
     public VaultCreate withDescription(String description) {
         this.description = description;
         return this;
@@ -150,6 +154,8 @@ public class VaultCreate  {
         this.description = description;
     }
 
+    
+
     public VaultCreate withName(String name) {
         this.name = name;
         return this;
@@ -169,6 +175,8 @@ public class VaultCreate  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public VaultCreate withResources(List<ResourceCreate> resources) {
         this.resources = resources;
@@ -201,6 +209,8 @@ public class VaultCreate  {
         this.resources = resources;
     }
 
+    
+
     public VaultCreate withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -208,9 +218,6 @@ public class VaultCreate  {
 
     
     public VaultCreate addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -235,6 +242,8 @@ public class VaultCreate  {
         this.tags = tags;
     }
 
+    
+
     public VaultCreate withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -255,6 +264,8 @@ public class VaultCreate  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public VaultCreate withAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
         return this;
@@ -274,6 +285,8 @@ public class VaultCreate  {
     public void setAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
     }
+
+    
 
     public VaultCreate withBindRules(VaultBindRules bindRules) {
         this.bindRules = bindRules;
@@ -302,6 +315,8 @@ public class VaultCreate  {
         this.bindRules = bindRules;
     }
 
+    
+
     public VaultCreate withAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
         return this;
@@ -321,6 +336,9 @@ public class VaultCreate  {
     public void setAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

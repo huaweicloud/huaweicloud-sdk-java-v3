@@ -97,7 +97,7 @@ public class EnableAction  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action = ActionEnum.ENABLE;
+    private ActionEnum action;
 
     public EnableAction withAction(ActionEnum action) {
         this.action = action;
@@ -118,6 +118,9 @@ public class EnableAction  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

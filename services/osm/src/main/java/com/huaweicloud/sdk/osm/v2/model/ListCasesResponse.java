@@ -56,6 +56,8 @@ public class ListCasesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCasesResponse withIncidentInfoList(List<IncidentInfoV2> incidentInfoList) {
         this.incidentInfoList = incidentInfoList;
         return this;
@@ -63,9 +65,6 @@ public class ListCasesResponse extends SdkResponse {
 
     
     public ListCasesResponse addIncidentInfoListItem(IncidentInfoV2 incidentInfoListItem) {
-        if (this.incidentInfoList == null) {
-            this.incidentInfoList = new ArrayList<>();
-        }
         this.incidentInfoList.add(incidentInfoListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListCasesResponse extends SdkResponse {
     public void setIncidentInfoList(List<IncidentInfoV2> incidentInfoList) {
         this.incidentInfoList = incidentInfoList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

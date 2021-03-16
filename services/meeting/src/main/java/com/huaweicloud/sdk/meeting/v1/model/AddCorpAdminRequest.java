@@ -40,7 +40,7 @@ public class AddCorpAdminRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CorpAdminDTO body = null;
+    private CorpAdminDTO body;
 
     public AddCorpAdminRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class AddCorpAdminRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AddCorpAdminRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -83,6 +85,8 @@ public class AddCorpAdminRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public AddCorpAdminRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
@@ -105,6 +109,8 @@ public class AddCorpAdminRequest  {
     public void setAccountType(Integer accountType) {
         this.accountType = accountType;
     }
+
+    
 
     public AddCorpAdminRequest withBody(CorpAdminDTO body) {
         this.body = body;
@@ -132,6 +138,9 @@ public class AddCorpAdminRequest  {
     public void setBody(CorpAdminDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

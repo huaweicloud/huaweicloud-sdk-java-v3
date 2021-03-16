@@ -21,7 +21,7 @@ public class ListUsageTypesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,13 +33,13 @@ public class ListUsageTypesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListUsageTypesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -63,6 +63,8 @@ public class ListUsageTypesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListUsageTypesRequest withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
@@ -82,6 +84,8 @@ public class ListUsageTypesRequest  {
     public void setResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
     }
+
+    
 
     public ListUsageTypesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -105,6 +109,8 @@ public class ListUsageTypesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListUsageTypesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -126,6 +132,9 @@ public class ListUsageTypesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

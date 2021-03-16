@@ -137,13 +137,13 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -171,6 +171,8 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public UpdateSignatureKeyV2Response withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
@@ -190,6 +192,8 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
     public void setSignType(SignTypeEnum signType) {
         this.signType = signType;
     }
+
+    
 
     public UpdateSignatureKeyV2Response withSignKey(String signKey) {
         this.signKey = signKey;
@@ -211,6 +215,8 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
         this.signKey = signKey;
     }
 
+    
+
     public UpdateSignatureKeyV2Response withSignSecret(String signSecret) {
         this.signSecret = signSecret;
         return this;
@@ -230,6 +236,8 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
     public void setSignSecret(String signSecret) {
         this.signSecret = signSecret;
     }
+
+    
 
     public UpdateSignatureKeyV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
@@ -251,6 +259,8 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public UpdateSignatureKeyV2Response withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -271,6 +281,8 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public UpdateSignatureKeyV2Response withId(String id) {
         this.id = id;
         return this;
@@ -290,6 +302,9 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

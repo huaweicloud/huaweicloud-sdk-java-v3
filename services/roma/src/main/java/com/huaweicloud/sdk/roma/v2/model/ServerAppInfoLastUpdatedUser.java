@@ -49,6 +49,8 @@ public class ServerAppInfoLastUpdatedUser  {
         this.userId = userId;
     }
 
+    
+
     public ServerAppInfoLastUpdatedUser withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -68,6 +70,9 @@ public class ServerAppInfoLastUpdatedUser  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

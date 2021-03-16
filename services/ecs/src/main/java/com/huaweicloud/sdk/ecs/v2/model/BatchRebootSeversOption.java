@@ -28,7 +28,7 @@ public class BatchRebootSeversOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="servers")
     
-    private List<ServerId> servers = new ArrayList<>();
+    private List<ServerId> servers = null;
         /**
      * 重启类型：  - SOFT：普通重启。 - HARD：强制重启。
      */
@@ -145,6 +145,8 @@ public class BatchRebootSeversOption  {
         this.servers = servers;
     }
 
+    
+
     public BatchRebootSeversOption withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -164,6 +166,9 @@ public class BatchRebootSeversOption  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

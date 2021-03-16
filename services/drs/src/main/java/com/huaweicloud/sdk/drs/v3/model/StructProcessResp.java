@@ -52,6 +52,8 @@ public class StructProcessResp  {
         this.createTime = createTime;
     }
 
+    
+
     public StructProcessResp withResult(List<StructProcessVO> result) {
         this.result = result;
         return this;
@@ -59,9 +61,6 @@ public class StructProcessResp  {
 
     
     public StructProcessResp addResultItem(StructProcessVO resultItem) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
         this.result.add(resultItem);
         return this;
     }
@@ -85,6 +84,9 @@ public class StructProcessResp  {
     public void setResult(List<StructProcessVO> result) {
         this.result = result;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

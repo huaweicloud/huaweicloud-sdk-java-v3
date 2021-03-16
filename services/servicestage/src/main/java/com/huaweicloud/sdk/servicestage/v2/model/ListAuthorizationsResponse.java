@@ -35,9 +35,6 @@ public class ListAuthorizationsResponse extends SdkResponse {
 
     
     public ListAuthorizationsResponse addAuthorizationsItem(AuthorizationVO authorizationsItem) {
-        if (this.authorizations == null) {
-            this.authorizations = new ArrayList<>();
-        }
         this.authorizations.add(authorizationsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListAuthorizationsResponse extends SdkResponse {
     public void setAuthorizations(List<AuthorizationVO> authorizations) {
         this.authorizations = authorizations;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

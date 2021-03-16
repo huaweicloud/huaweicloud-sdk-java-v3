@@ -39,13 +39,13 @@ public class QueryIndirectPartnersReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +73,8 @@ public class QueryIndirectPartnersReq  {
         this.accountName = accountName;
     }
 
+    
+
     public QueryIndirectPartnersReq withAssociatedOnBegin(String associatedOnBegin) {
         this.associatedOnBegin = associatedOnBegin;
         return this;
@@ -93,6 +95,8 @@ public class QueryIndirectPartnersReq  {
         this.associatedOnBegin = associatedOnBegin;
     }
 
+    
+
     public QueryIndirectPartnersReq withAssociatedOnEnd(String associatedOnEnd) {
         this.associatedOnEnd = associatedOnEnd;
         return this;
@@ -112,6 +116,8 @@ public class QueryIndirectPartnersReq  {
     public void setAssociatedOnEnd(String associatedOnEnd) {
         this.associatedOnEnd = associatedOnEnd;
     }
+
+    
 
     public QueryIndirectPartnersReq withOffset(Integer offset) {
         this.offset = offset;
@@ -135,6 +141,8 @@ public class QueryIndirectPartnersReq  {
         this.offset = offset;
     }
 
+    
+
     public QueryIndirectPartnersReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -157,6 +165,8 @@ public class QueryIndirectPartnersReq  {
         this.limit = limit;
     }
 
+    
+
     public QueryIndirectPartnersReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -176,6 +186,9 @@ public class QueryIndirectPartnersReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

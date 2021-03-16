@@ -51,6 +51,8 @@ public class CompareObjectInfo  {
         this.dbName = dbName;
     }
 
+    
+
     public CompareObjectInfo withTableName(List<String> tableName) {
         this.tableName = tableName;
         return this;
@@ -58,9 +60,6 @@ public class CompareObjectInfo  {
 
     
     public CompareObjectInfo addTableNameItem(String tableNameItem) {
-        if (this.tableName == null) {
-            this.tableName = new ArrayList<>();
-        }
         this.tableName.add(tableNameItem);
         return this;
     }
@@ -84,6 +83,9 @@ public class CompareObjectInfo  {
     public void setTableName(List<String> tableName) {
         this.tableName = tableName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

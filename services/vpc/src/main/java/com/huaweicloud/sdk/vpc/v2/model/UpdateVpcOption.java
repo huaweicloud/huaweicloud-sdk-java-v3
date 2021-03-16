@@ -64,6 +64,8 @@ public class UpdateVpcOption  {
         this.name = name;
     }
 
+    
+
     public UpdateVpcOption withDescription(String description) {
         this.description = description;
         return this;
@@ -83,6 +85,8 @@ public class UpdateVpcOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateVpcOption withCidr(String cidr) {
         this.cidr = cidr;
@@ -104,6 +108,8 @@ public class UpdateVpcOption  {
         this.cidr = cidr;
     }
 
+    
+
     public UpdateVpcOption withRoutes(List<Route> routes) {
         this.routes = routes;
         return this;
@@ -111,9 +117,6 @@ public class UpdateVpcOption  {
 
     
     public UpdateVpcOption addRoutesItem(Route routesItem) {
-        if (this.routes == null) {
-            this.routes = new ArrayList<>();
-        }
         this.routes.add(routesItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class UpdateVpcOption  {
     public void setRoutes(List<Route> routes) {
         this.routes = routes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

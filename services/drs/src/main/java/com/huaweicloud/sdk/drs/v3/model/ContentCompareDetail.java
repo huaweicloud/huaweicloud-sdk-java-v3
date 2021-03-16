@@ -319,6 +319,8 @@ public class ContentCompareDetail  {
         this.sourceDbName = sourceDbName;
     }
 
+    
+
     public ContentCompareDetail withTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
         return this;
@@ -338,6 +340,8 @@ public class ContentCompareDetail  {
     public void setTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
     }
+
+    
 
     public ContentCompareDetail withSourceTableName(String sourceTableName) {
         this.sourceTableName = sourceTableName;
@@ -359,6 +363,8 @@ public class ContentCompareDetail  {
         this.sourceTableName = sourceTableName;
     }
 
+    
+
     public ContentCompareDetail withTargetTableName(String targetTableName) {
         this.targetTableName = targetTableName;
         return this;
@@ -378,6 +384,8 @@ public class ContentCompareDetail  {
     public void setTargetTableName(String targetTableName) {
         this.targetTableName = targetTableName;
     }
+
+    
 
     public ContentCompareDetail withSourceRowNum(Integer sourceRowNum) {
         this.sourceRowNum = sourceRowNum;
@@ -399,6 +407,8 @@ public class ContentCompareDetail  {
         this.sourceRowNum = sourceRowNum;
     }
 
+    
+
     public ContentCompareDetail withTargetRowNum(Integer targetRowNum) {
         this.targetRowNum = targetRowNum;
         return this;
@@ -418,6 +428,8 @@ public class ContentCompareDetail  {
     public void setTargetRowNum(Integer targetRowNum) {
         this.targetRowNum = targetRowNum;
     }
+
+    
 
     public ContentCompareDetail withDiffRowNum(Integer diffRowNum) {
         this.diffRowNum = diffRowNum;
@@ -439,6 +451,8 @@ public class ContentCompareDetail  {
         this.diffRowNum = diffRowNum;
     }
 
+    
+
     public ContentCompareDetail withLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
         return this;
@@ -458,6 +472,8 @@ public class ContentCompareDetail  {
     public void setLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
     }
+
+    
 
     public ContentCompareDetail withContentCompareResult(ContentCompareResultEnum contentCompareResult) {
         this.contentCompareResult = contentCompareResult;
@@ -479,6 +495,8 @@ public class ContentCompareDetail  {
         this.contentCompareResult = contentCompareResult;
     }
 
+    
+
     public ContentCompareDetail withMessage(String message) {
         this.message = message;
         return this;
@@ -498,6 +516,9 @@ public class ContentCompareDetail  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

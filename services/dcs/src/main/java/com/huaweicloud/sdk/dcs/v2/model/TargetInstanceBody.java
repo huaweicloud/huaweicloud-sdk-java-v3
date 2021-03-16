@@ -55,6 +55,8 @@ public class TargetInstanceBody  {
         this.id = id;
     }
 
+    
+
     public TargetInstanceBody withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class TargetInstanceBody  {
         this.name = name;
     }
 
+    
+
     public TargetInstanceBody withPassword(String password) {
         this.password = password;
         return this;
@@ -94,6 +98,9 @@ public class TargetInstanceBody  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

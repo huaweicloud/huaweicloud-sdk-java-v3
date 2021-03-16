@@ -161,6 +161,8 @@ public class MembersInStatusResp  {
         this.id = id;
     }
 
+    
+
     public MembersInStatusResp withAddress(String address) {
         this.address = address;
         return this;
@@ -180,6 +182,8 @@ public class MembersInStatusResp  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public MembersInStatusResp withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -203,6 +207,8 @@ public class MembersInStatusResp  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public MembersInStatusResp withOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -223,6 +229,8 @@ public class MembersInStatusResp  {
         this.operatingStatus = operatingStatus;
     }
 
+    
+
     public MembersInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -242,6 +250,9 @@ public class MembersInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

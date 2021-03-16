@@ -203,7 +203,7 @@ public class VpcHealthConfigInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="method")
     
-    private MethodEnum method = MethodEnum.GET;
+    private MethodEnum method;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -239,7 +239,7 @@ public class VpcHealthConfigInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_client_ssl")
     
-    private Boolean enableClientSsl = false;
+    private Boolean enableClientSsl;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -263,7 +263,7 @@ public class VpcHealthConfigInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
     public VpcHealthConfigInfo withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
@@ -285,6 +285,8 @@ public class VpcHealthConfigInfo  {
         this.protocol = protocol;
     }
 
+    
+
     public VpcHealthConfigInfo withPath(String path) {
         this.path = path;
         return this;
@@ -304,6 +306,8 @@ public class VpcHealthConfigInfo  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public VpcHealthConfigInfo withMethod(MethodEnum method) {
         this.method = method;
@@ -325,6 +329,8 @@ public class VpcHealthConfigInfo  {
         this.method = method;
     }
 
+    
+
     public VpcHealthConfigInfo withPort(Integer port) {
         this.port = port;
         return this;
@@ -344,6 +350,8 @@ public class VpcHealthConfigInfo  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
 
     public VpcHealthConfigInfo withThresholdNormal(Integer thresholdNormal) {
         this.thresholdNormal = thresholdNormal;
@@ -365,6 +373,8 @@ public class VpcHealthConfigInfo  {
         this.thresholdNormal = thresholdNormal;
     }
 
+    
+
     public VpcHealthConfigInfo withThresholdAbnormal(Integer thresholdAbnormal) {
         this.thresholdAbnormal = thresholdAbnormal;
         return this;
@@ -384,6 +394,8 @@ public class VpcHealthConfigInfo  {
     public void setThresholdAbnormal(Integer thresholdAbnormal) {
         this.thresholdAbnormal = thresholdAbnormal;
     }
+
+    
 
     public VpcHealthConfigInfo withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -405,6 +417,8 @@ public class VpcHealthConfigInfo  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public VpcHealthConfigInfo withHttpCode(String httpCode) {
         this.httpCode = httpCode;
         return this;
@@ -424,6 +438,8 @@ public class VpcHealthConfigInfo  {
     public void setHttpCode(String httpCode) {
         this.httpCode = httpCode;
     }
+
+    
 
     public VpcHealthConfigInfo withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
@@ -445,6 +461,8 @@ public class VpcHealthConfigInfo  {
         this.enableClientSsl = enableClientSsl;
     }
 
+    
+
     public VpcHealthConfigInfo withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -464,6 +482,8 @@ public class VpcHealthConfigInfo  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
 
     public VpcHealthConfigInfo withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
@@ -485,6 +505,8 @@ public class VpcHealthConfigInfo  {
         this.vpcChannelId = vpcChannelId;
     }
 
+    
+
     public VpcHealthConfigInfo withId(String id) {
         this.id = id;
         return this;
@@ -505,6 +527,8 @@ public class VpcHealthConfigInfo  {
         this.id = id;
     }
 
+    
+
     public VpcHealthConfigInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -524,6 +548,9 @@ public class VpcHealthConfigInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

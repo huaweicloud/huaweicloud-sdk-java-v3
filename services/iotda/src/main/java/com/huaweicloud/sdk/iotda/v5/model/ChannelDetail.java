@@ -35,85 +35,85 @@ public class ChannelDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http_forwarding")
     
-    private HttpForwarding httpForwarding = null;
+    private HttpForwarding httpForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dis_forwarding")
     
-    private DisForwarding disForwarding = null;
+    private DisForwarding disForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_forwarding")
     
-    private ObsForwarding obsForwarding = null;
+    private ObsForwarding obsForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amqp_forwarding")
     
-    private AmqpForwarding amqpForwarding = null;
+    private AmqpForwarding amqpForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dms_kafka_forwarding")
     
-    private DmsKafkaForwarding dmsKafkaForwarding = null;
+    private DmsKafkaForwarding dmsKafkaForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_forwarding")
     
-    private RomaForwarding romaForwarding = null;
+    private RomaForwarding romaForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="iota_forwarding")
     
-    private IoTAForwarding iotaForwarding = null;
+    private IoTAForwarding iotaForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mqs_forwarding")
     
-    private MqsForwarding mqsForwarding = null;
+    private MqsForwarding mqsForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mysql_forwarding")
     
-    private MysqlForwarding mysqlForwarding = null;
+    private MysqlForwarding mysqlForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mqtt_forwarding")
     
-    private MqttForwarding mqttForwarding = null;
+    private MqttForwarding mqttForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="lts_forwarding")
     
-    private LtsForwarding ltsForwarding = null;
+    private LtsForwarding ltsForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="influxdb_forwarding")
     
-    private InfluxDBForwarding influxdbForwarding = null;
+    private InfluxDBForwarding influxdbForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="functiongraph_forwarding")
     
-    private FunctionGraphForwarding functiongraphForwarding = null;
+    private FunctionGraphForwarding functiongraphForwarding;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mrs_kafka_forwarding")
     
-    private MrsKafkaForwarding mrsKafkaForwarding = null;
+    private MrsKafkaForwarding mrsKafkaForwarding;
 
     public ChannelDetail withHttpForwarding(HttpForwarding httpForwarding) {
         this.httpForwarding = httpForwarding;
@@ -142,6 +142,8 @@ public class ChannelDetail  {
         this.httpForwarding = httpForwarding;
     }
 
+    
+
     public ChannelDetail withDisForwarding(DisForwarding disForwarding) {
         this.disForwarding = disForwarding;
         return this;
@@ -168,6 +170,8 @@ public class ChannelDetail  {
     public void setDisForwarding(DisForwarding disForwarding) {
         this.disForwarding = disForwarding;
     }
+
+    
 
     public ChannelDetail withObsForwarding(ObsForwarding obsForwarding) {
         this.obsForwarding = obsForwarding;
@@ -196,6 +200,8 @@ public class ChannelDetail  {
         this.obsForwarding = obsForwarding;
     }
 
+    
+
     public ChannelDetail withAmqpForwarding(AmqpForwarding amqpForwarding) {
         this.amqpForwarding = amqpForwarding;
         return this;
@@ -222,6 +228,8 @@ public class ChannelDetail  {
     public void setAmqpForwarding(AmqpForwarding amqpForwarding) {
         this.amqpForwarding = amqpForwarding;
     }
+
+    
 
     public ChannelDetail withDmsKafkaForwarding(DmsKafkaForwarding dmsKafkaForwarding) {
         this.dmsKafkaForwarding = dmsKafkaForwarding;
@@ -250,6 +258,8 @@ public class ChannelDetail  {
         this.dmsKafkaForwarding = dmsKafkaForwarding;
     }
 
+    
+
     public ChannelDetail withRomaForwarding(RomaForwarding romaForwarding) {
         this.romaForwarding = romaForwarding;
         return this;
@@ -276,6 +286,8 @@ public class ChannelDetail  {
     public void setRomaForwarding(RomaForwarding romaForwarding) {
         this.romaForwarding = romaForwarding;
     }
+
+    
 
     public ChannelDetail withIotaForwarding(IoTAForwarding iotaForwarding) {
         this.iotaForwarding = iotaForwarding;
@@ -304,6 +316,8 @@ public class ChannelDetail  {
         this.iotaForwarding = iotaForwarding;
     }
 
+    
+
     public ChannelDetail withMqsForwarding(MqsForwarding mqsForwarding) {
         this.mqsForwarding = mqsForwarding;
         return this;
@@ -330,6 +344,8 @@ public class ChannelDetail  {
     public void setMqsForwarding(MqsForwarding mqsForwarding) {
         this.mqsForwarding = mqsForwarding;
     }
+
+    
 
     public ChannelDetail withMysqlForwarding(MysqlForwarding mysqlForwarding) {
         this.mysqlForwarding = mysqlForwarding;
@@ -358,6 +374,8 @@ public class ChannelDetail  {
         this.mysqlForwarding = mysqlForwarding;
     }
 
+    
+
     public ChannelDetail withMqttForwarding(MqttForwarding mqttForwarding) {
         this.mqttForwarding = mqttForwarding;
         return this;
@@ -384,6 +402,8 @@ public class ChannelDetail  {
     public void setMqttForwarding(MqttForwarding mqttForwarding) {
         this.mqttForwarding = mqttForwarding;
     }
+
+    
 
     public ChannelDetail withLtsForwarding(LtsForwarding ltsForwarding) {
         this.ltsForwarding = ltsForwarding;
@@ -412,6 +432,8 @@ public class ChannelDetail  {
         this.ltsForwarding = ltsForwarding;
     }
 
+    
+
     public ChannelDetail withInfluxdbForwarding(InfluxDBForwarding influxdbForwarding) {
         this.influxdbForwarding = influxdbForwarding;
         return this;
@@ -438,6 +460,8 @@ public class ChannelDetail  {
     public void setInfluxdbForwarding(InfluxDBForwarding influxdbForwarding) {
         this.influxdbForwarding = influxdbForwarding;
     }
+
+    
 
     public ChannelDetail withFunctiongraphForwarding(FunctionGraphForwarding functiongraphForwarding) {
         this.functiongraphForwarding = functiongraphForwarding;
@@ -466,6 +490,8 @@ public class ChannelDetail  {
         this.functiongraphForwarding = functiongraphForwarding;
     }
 
+    
+
     public ChannelDetail withMrsKafkaForwarding(MrsKafkaForwarding mrsKafkaForwarding) {
         this.mrsKafkaForwarding = mrsKafkaForwarding;
         return this;
@@ -492,6 +518,9 @@ public class ChannelDetail  {
     public void setMrsKafkaForwarding(MrsKafkaForwarding mrsKafkaForwarding) {
         this.mrsKafkaForwarding = mrsKafkaForwarding;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

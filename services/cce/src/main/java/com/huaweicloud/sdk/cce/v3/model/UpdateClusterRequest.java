@@ -34,7 +34,7 @@ public class UpdateClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ClusterInformation body = null;
+    private ClusterInformation body;
 
     public UpdateClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -56,6 +56,8 @@ public class UpdateClusterRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public UpdateClusterRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -75,6 +77,8 @@ public class UpdateClusterRequest  {
     public void setErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
     }
+
+    
 
     public UpdateClusterRequest withBody(ClusterInformation body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateClusterRequest  {
     public void setBody(ClusterInformation body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

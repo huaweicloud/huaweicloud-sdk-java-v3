@@ -49,6 +49,8 @@ public class DeleteBatchTaskFileRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteBatchTaskFileRequest withFileId(String fileId) {
         this.fileId = fileId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteBatchTaskFileRequest  {
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListNatGatewaySnatRulesResponse extends SdkResponse {
 
     
     public ListNatGatewaySnatRulesResponse addSnatRulesItem(NatGatewaySnatRuleResponseBody snatRulesItem) {
-        if (this.snatRules == null) {
-            this.snatRules = new ArrayList<>();
-        }
         this.snatRules.add(snatRulesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListNatGatewaySnatRulesResponse extends SdkResponse {
     public void setSnatRules(List<NatGatewaySnatRuleResponseBody> snatRules) {
         this.snatRules = snatRules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

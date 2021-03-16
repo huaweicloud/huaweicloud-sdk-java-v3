@@ -22,7 +22,7 @@ public class VaultBackup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    private CheckpointParam parameters = null;
+    private CheckpointParam parameters;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class VaultBackup  {
         this.parameters = parameters;
     }
 
+    
+
     public VaultBackup withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -76,6 +78,9 @@ public class VaultBackup  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

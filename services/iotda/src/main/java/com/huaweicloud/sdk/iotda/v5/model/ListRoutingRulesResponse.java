@@ -47,9 +47,6 @@ public class ListRoutingRulesResponse extends SdkResponse {
 
     
     public ListRoutingRulesResponse addRulesItem(RoutingRule rulesItem) {
-        if (this.rules == null) {
-            this.rules = new ArrayList<>();
-        }
         this.rules.add(rulesItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListRoutingRulesResponse extends SdkResponse {
         this.rules = rules;
     }
 
+    
+
     public ListRoutingRulesResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -94,6 +93,8 @@ public class ListRoutingRulesResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListRoutingRulesResponse withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -113,6 +114,9 @@ public class ListRoutingRulesResponse extends SdkResponse {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

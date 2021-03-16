@@ -34,9 +34,6 @@ public class MigrateVaultResourceResponse extends SdkResponse {
 
     
     public MigrateVaultResourceResponse addMigratedResourcesItem(String migratedResourcesItem) {
-        if (this.migratedResources == null) {
-            this.migratedResources = new ArrayList<>();
-        }
         this.migratedResources.add(migratedResourcesItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class MigrateVaultResourceResponse extends SdkResponse {
     public void setMigratedResources(List<String> migratedResources) {
         this.migratedResources = migratedResources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

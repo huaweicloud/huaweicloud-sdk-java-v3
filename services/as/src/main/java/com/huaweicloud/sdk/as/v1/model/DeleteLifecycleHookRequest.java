@@ -49,6 +49,8 @@ public class DeleteLifecycleHookRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public DeleteLifecycleHookRequest withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
         return this;
@@ -68,6 +70,9 @@ public class DeleteLifecycleHookRequest  {
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

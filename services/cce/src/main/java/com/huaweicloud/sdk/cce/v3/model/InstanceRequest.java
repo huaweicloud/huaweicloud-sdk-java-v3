@@ -23,25 +23,25 @@ public class InstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Addon";
+    private String kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Metadata metadata = null;
+    private Metadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private InstanceRequestSpec spec = null;
+    private InstanceRequestSpec spec;
 
     public InstanceRequest withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -63,6 +63,8 @@ public class InstanceRequest  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public InstanceRequest withKind(String kind) {
         this.kind = kind;
         return this;
@@ -82,6 +84,8 @@ public class InstanceRequest  {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
 
     public InstanceRequest withMetadata(Metadata metadata) {
         this.metadata = metadata;
@@ -110,6 +114,8 @@ public class InstanceRequest  {
         this.metadata = metadata;
     }
 
+    
+
     public InstanceRequest withSpec(InstanceRequestSpec spec) {
         this.spec = spec;
         return this;
@@ -136,6 +142,9 @@ public class InstanceRequest  {
     public void setSpec(InstanceRequestSpec spec) {
         this.spec = spec;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

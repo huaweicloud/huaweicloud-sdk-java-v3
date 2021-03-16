@@ -54,6 +54,8 @@ public class ListIssueCommentsV4Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListIssueCommentsV4Response withComments(List<IssueCommentV4> comments) {
         this.comments = comments;
         return this;
@@ -61,9 +63,6 @@ public class ListIssueCommentsV4Response extends SdkResponse {
 
     
     public ListIssueCommentsV4Response addCommentsItem(IssueCommentV4 commentsItem) {
-        if (this.comments == null) {
-            this.comments = new ArrayList<>();
-        }
         this.comments.add(commentsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListIssueCommentsV4Response extends SdkResponse {
     public void setComments(List<IssueCommentV4> comments) {
         this.comments = comments;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

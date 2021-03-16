@@ -22,7 +22,7 @@ public class CreateWhitelistRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="whitelist")
     
-    private CreateWhitelistReq whitelist = null;
+    private CreateWhitelistReq whitelist;
 
     public CreateWhitelistRequestBody withWhitelist(CreateWhitelistReq whitelist) {
         this.whitelist = whitelist;
@@ -50,6 +50,9 @@ public class CreateWhitelistRequestBody  {
     public void setWhitelist(CreateWhitelistReq whitelist) {
         this.whitelist = whitelist;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

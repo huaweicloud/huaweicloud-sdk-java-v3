@@ -22,7 +22,7 @@ public class Authentication  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authenticatingProxy")
     
-    private AuthenticatingProxy authenticatingProxy = null;
+    private AuthenticatingProxy authenticatingProxy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class Authentication  {
         this.authenticatingProxy = authenticatingProxy;
     }
 
+    
+
     public Authentication withMode(String mode) {
         this.mode = mode;
         return this;
@@ -76,6 +78,9 @@ public class Authentication  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

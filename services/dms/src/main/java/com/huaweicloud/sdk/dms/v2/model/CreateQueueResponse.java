@@ -57,6 +57,8 @@ public class CreateQueueResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateQueueResponse withName(String name) {
         this.name = name;
         return this;
@@ -77,6 +79,8 @@ public class CreateQueueResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreateQueueResponse withKafkaTopic(String kafkaTopic) {
         this.kafkaTopic = kafkaTopic;
         return this;
@@ -96,6 +100,9 @@ public class CreateQueueResponse extends SdkResponse {
     public void setKafkaTopic(String kafkaTopic) {
         this.kafkaTopic = kafkaTopic;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

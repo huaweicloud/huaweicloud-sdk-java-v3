@@ -34,7 +34,7 @@ public class UpdateProductTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateProductTemplateRequestBody body = null;
+    private UpdateProductTemplateRequestBody body;
 
     public UpdateProductTemplateRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class UpdateProductTemplateRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateProductTemplateRequest withProductTemplateId(Integer productTemplateId) {
         this.productTemplateId = productTemplateId;
@@ -77,6 +79,8 @@ public class UpdateProductTemplateRequest  {
     public void setProductTemplateId(Integer productTemplateId) {
         this.productTemplateId = productTemplateId;
     }
+
+    
 
     public UpdateProductTemplateRequest withBody(UpdateProductTemplateRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class UpdateProductTemplateRequest  {
     public void setBody(UpdateProductTemplateRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

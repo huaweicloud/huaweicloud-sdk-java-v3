@@ -39,7 +39,7 @@ public class CreateVpcOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
     public CreateVpcOption withCidr(String cidr) {
         this.cidr = cidr;
@@ -61,6 +61,8 @@ public class CreateVpcOption  {
         this.cidr = cidr;
     }
 
+    
+
     public CreateVpcOption withName(String name) {
         this.name = name;
         return this;
@@ -80,6 +82,8 @@ public class CreateVpcOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateVpcOption withDescription(String description) {
         this.description = description;
@@ -101,6 +105,8 @@ public class CreateVpcOption  {
         this.description = description;
     }
 
+    
+
     public CreateVpcOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -120,6 +126,9 @@ public class CreateVpcOption  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

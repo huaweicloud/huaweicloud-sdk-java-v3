@@ -67,6 +67,8 @@ public class ListSeveritiesRequest  {
         this.productCategoryId = productCategoryId;
     }
 
+    
+
     public ListSeveritiesRequest withBusinessTypeId(String businessTypeId) {
         this.businessTypeId = businessTypeId;
         return this;
@@ -86,6 +88,8 @@ public class ListSeveritiesRequest  {
     public void setBusinessTypeId(String businessTypeId) {
         this.businessTypeId = businessTypeId;
     }
+
+    
 
     public ListSeveritiesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -111,6 +115,8 @@ public class ListSeveritiesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListSeveritiesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -133,6 +139,8 @@ public class ListSeveritiesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListSeveritiesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -154,6 +162,9 @@ public class ListSeveritiesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

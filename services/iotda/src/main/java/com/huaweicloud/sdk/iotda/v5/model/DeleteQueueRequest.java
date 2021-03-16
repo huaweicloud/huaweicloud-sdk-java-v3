@@ -49,6 +49,8 @@ public class DeleteQueueRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteQueueRequest withQueueId(String queueId) {
         this.queueId = queueId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteQueueRequest  {
     public void setQueueId(String queueId) {
         this.queueId = queueId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

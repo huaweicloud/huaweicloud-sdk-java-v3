@@ -113,7 +113,7 @@ public class ShowReposResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -147,6 +147,8 @@ public class ShowReposResp  {
         this.name = name;
     }
 
+    
+
     public ShowReposResp withCategory(String category) {
         this.category = category;
         return this;
@@ -166,6 +168,8 @@ public class ShowReposResp  {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    
 
     public ShowReposResp withDescription(String description) {
         this.description = description;
@@ -187,6 +191,8 @@ public class ShowReposResp  {
         this.description = description;
     }
 
+    
+
     public ShowReposResp withSize(Long size) {
         this.size = size;
         return this;
@@ -206,6 +212,8 @@ public class ShowReposResp  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public ShowReposResp withIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
@@ -227,6 +235,8 @@ public class ShowReposResp  {
         this.isPublic = isPublic;
     }
 
+    
+
     public ShowReposResp withNumImages(Long numImages) {
         this.numImages = numImages;
         return this;
@@ -246,6 +256,8 @@ public class ShowReposResp  {
     public void setNumImages(Long numImages) {
         this.numImages = numImages;
     }
+
+    
 
     public ShowReposResp withNumDownload(Long numDownload) {
         this.numDownload = numDownload;
@@ -267,6 +279,8 @@ public class ShowReposResp  {
         this.numDownload = numDownload;
     }
 
+    
+
     public ShowReposResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -286,6 +300,8 @@ public class ShowReposResp  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public ShowReposResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -307,6 +323,8 @@ public class ShowReposResp  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public ShowReposResp withLogo(String logo) {
         this.logo = logo;
         return this;
@@ -326,6 +344,8 @@ public class ShowReposResp  {
     public void setLogo(String logo) {
         this.logo = logo;
     }
+
+    
 
     public ShowReposResp withUrl(String url) {
         this.url = url;
@@ -347,6 +367,8 @@ public class ShowReposResp  {
         this.url = url;
     }
 
+    
+
     public ShowReposResp withPath(String path) {
         this.path = path;
         return this;
@@ -366,6 +388,8 @@ public class ShowReposResp  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public ShowReposResp withInternalPath(String internalPath) {
         this.internalPath = internalPath;
@@ -387,6 +411,8 @@ public class ShowReposResp  {
         this.internalPath = internalPath;
     }
 
+    
+
     public ShowReposResp withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -407,6 +433,8 @@ public class ShowReposResp  {
         this.domainName = domainName;
     }
 
+    
+
     public ShowReposResp withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -426,6 +454,8 @@ public class ShowReposResp  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public ShowReposResp withTags(List<String> tags) {
         this.tags = tags;
@@ -458,6 +488,8 @@ public class ShowReposResp  {
         this.tags = tags;
     }
 
+    
+
     public ShowReposResp withStatus(Boolean status) {
         this.status = status;
         return this;
@@ -478,6 +510,8 @@ public class ShowReposResp  {
         this.status = status;
     }
 
+    
+
     public ShowReposResp withTotalRange(Long totalRange) {
         this.totalRange = totalRange;
         return this;
@@ -497,6 +531,9 @@ public class ShowReposResp  {
     public void setTotalRange(Long totalRange) {
         this.totalRange = totalRange;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

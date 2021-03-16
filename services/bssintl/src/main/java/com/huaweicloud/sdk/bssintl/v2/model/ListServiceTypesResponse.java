@@ -35,9 +35,6 @@ public class ListServiceTypesResponse extends SdkResponse {
 
     
     public ListServiceTypesResponse addServiceTypesItem(ServiceType serviceTypesItem) {
-        if (this.serviceTypes == null) {
-            this.serviceTypes = new ArrayList<>();
-        }
         this.serviceTypes.add(serviceTypesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListServiceTypesResponse extends SdkResponse {
     public void setServiceTypes(List<ServiceType> serviceTypes) {
         this.serviceTypes = serviceTypes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

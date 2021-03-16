@@ -223,7 +223,7 @@ public class ScalingGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -581,6 +581,8 @@ public class ScalingGroups  {
         this.scalingGroupName = scalingGroupName;
     }
 
+    
+
     public ScalingGroups withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
         return this;
@@ -600,6 +602,8 @@ public class ScalingGroups  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public ScalingGroups withScalingGroupStatus(ScalingGroupStatusEnum scalingGroupStatus) {
         this.scalingGroupStatus = scalingGroupStatus;
@@ -621,6 +625,8 @@ public class ScalingGroups  {
         this.scalingGroupStatus = scalingGroupStatus;
     }
 
+    
+
     public ScalingGroups withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
         return this;
@@ -640,6 +646,8 @@ public class ScalingGroups  {
     public void setScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
     }
+
+    
 
     public ScalingGroups withScalingConfigurationName(String scalingConfigurationName) {
         this.scalingConfigurationName = scalingConfigurationName;
@@ -661,6 +669,8 @@ public class ScalingGroups  {
         this.scalingConfigurationName = scalingConfigurationName;
     }
 
+    
+
     public ScalingGroups withCurrentInstanceNumber(Integer currentInstanceNumber) {
         this.currentInstanceNumber = currentInstanceNumber;
         return this;
@@ -680,6 +690,8 @@ public class ScalingGroups  {
     public void setCurrentInstanceNumber(Integer currentInstanceNumber) {
         this.currentInstanceNumber = currentInstanceNumber;
     }
+
+    
 
     public ScalingGroups withDesireInstanceNumber(Integer desireInstanceNumber) {
         this.desireInstanceNumber = desireInstanceNumber;
@@ -701,6 +713,8 @@ public class ScalingGroups  {
         this.desireInstanceNumber = desireInstanceNumber;
     }
 
+    
+
     public ScalingGroups withMinInstanceNumber(Integer minInstanceNumber) {
         this.minInstanceNumber = minInstanceNumber;
         return this;
@@ -720,6 +734,8 @@ public class ScalingGroups  {
     public void setMinInstanceNumber(Integer minInstanceNumber) {
         this.minInstanceNumber = minInstanceNumber;
     }
+
+    
 
     public ScalingGroups withMaxInstanceNumber(Integer maxInstanceNumber) {
         this.maxInstanceNumber = maxInstanceNumber;
@@ -741,6 +757,8 @@ public class ScalingGroups  {
         this.maxInstanceNumber = maxInstanceNumber;
     }
 
+    
+
     public ScalingGroups withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
         return this;
@@ -760,6 +778,8 @@ public class ScalingGroups  {
     public void setCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
     }
+
+    
 
     public ScalingGroups withLbListenerId(String lbListenerId) {
         this.lbListenerId = lbListenerId;
@@ -781,6 +801,8 @@ public class ScalingGroups  {
         this.lbListenerId = lbListenerId;
     }
 
+    
+
     public ScalingGroups withLbaasListeners(List<LbaasListenersResult> lbaasListeners) {
         this.lbaasListeners = lbaasListeners;
         return this;
@@ -788,9 +810,6 @@ public class ScalingGroups  {
 
     
     public ScalingGroups addLbaasListenersItem(LbaasListenersResult lbaasListenersItem) {
-        if (this.lbaasListeners == null) {
-            this.lbaasListeners = new ArrayList<>();
-        }
         this.lbaasListeners.add(lbaasListenersItem);
         return this;
     }
@@ -815,6 +834,8 @@ public class ScalingGroups  {
         this.lbaasListeners = lbaasListeners;
     }
 
+    
+
     public ScalingGroups withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -822,9 +843,6 @@ public class ScalingGroups  {
 
     
     public ScalingGroups addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -849,6 +867,8 @@ public class ScalingGroups  {
         this.availableZones = availableZones;
     }
 
+    
+
     public ScalingGroups withNetworks(List<Networks> networks) {
         this.networks = networks;
         return this;
@@ -856,9 +876,6 @@ public class ScalingGroups  {
 
     
     public ScalingGroups addNetworksItem(Networks networksItem) {
-        if (this.networks == null) {
-            this.networks = new ArrayList<>();
-        }
         this.networks.add(networksItem);
         return this;
     }
@@ -883,6 +900,8 @@ public class ScalingGroups  {
         this.networks = networks;
     }
 
+    
+
     public ScalingGroups withSecurityGroups(List<SecurityGroupsResult> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -890,9 +909,6 @@ public class ScalingGroups  {
 
     
     public ScalingGroups addSecurityGroupsItem(SecurityGroupsResult securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -917,6 +933,8 @@ public class ScalingGroups  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public ScalingGroups withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -936,6 +954,8 @@ public class ScalingGroups  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ScalingGroups withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -957,6 +977,8 @@ public class ScalingGroups  {
         this.vpcId = vpcId;
     }
 
+    
+
     public ScalingGroups withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -976,6 +998,8 @@ public class ScalingGroups  {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    
 
     public ScalingGroups withIsScaling(Boolean isScaling) {
         this.isScaling = isScaling;
@@ -997,6 +1021,8 @@ public class ScalingGroups  {
         this.isScaling = isScaling;
     }
 
+    
+
     public ScalingGroups withHealthPeriodicAuditMethod(HealthPeriodicAuditMethodEnum healthPeriodicAuditMethod) {
         this.healthPeriodicAuditMethod = healthPeriodicAuditMethod;
         return this;
@@ -1017,6 +1043,8 @@ public class ScalingGroups  {
         this.healthPeriodicAuditMethod = healthPeriodicAuditMethod;
     }
 
+    
+
     public ScalingGroups withHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
         return this;
@@ -1036,6 +1064,8 @@ public class ScalingGroups  {
     public void setHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
     }
+
+    
 
     public ScalingGroups withHealthPeriodicAuditGracePeriod(Integer healthPeriodicAuditGracePeriod) {
         this.healthPeriodicAuditGracePeriod = healthPeriodicAuditGracePeriod;
@@ -1059,6 +1089,8 @@ public class ScalingGroups  {
         this.healthPeriodicAuditGracePeriod = healthPeriodicAuditGracePeriod;
     }
 
+    
+
     public ScalingGroups withInstanceTerminatePolicy(InstanceTerminatePolicyEnum instanceTerminatePolicy) {
         this.instanceTerminatePolicy = instanceTerminatePolicy;
         return this;
@@ -1079,6 +1111,8 @@ public class ScalingGroups  {
         this.instanceTerminatePolicy = instanceTerminatePolicy;
     }
 
+    
+
     public ScalingGroups withNotifications(List<String> notifications) {
         this.notifications = notifications;
         return this;
@@ -1086,9 +1120,6 @@ public class ScalingGroups  {
 
     
     public ScalingGroups addNotificationsItem(String notificationsItem) {
-        if (this.notifications == null) {
-            this.notifications = new ArrayList<>();
-        }
         this.notifications.add(notificationsItem);
         return this;
     }
@@ -1113,6 +1144,8 @@ public class ScalingGroups  {
         this.notifications = notifications;
     }
 
+    
+
     public ScalingGroups withDeletePublicip(Boolean deletePublicip) {
         this.deletePublicip = deletePublicip;
         return this;
@@ -1132,6 +1165,8 @@ public class ScalingGroups  {
     public void setDeletePublicip(Boolean deletePublicip) {
         this.deletePublicip = deletePublicip;
     }
+
+    
 
     public ScalingGroups withCloudLocationId(String cloudLocationId) {
         this.cloudLocationId = cloudLocationId;
@@ -1153,6 +1188,8 @@ public class ScalingGroups  {
         this.cloudLocationId = cloudLocationId;
     }
 
+    
+
     public ScalingGroups withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -1172,6 +1209,9 @@ public class ScalingGroups  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

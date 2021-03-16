@@ -27,7 +27,7 @@ public class ListBandwidthDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="play_domains")
     
-    private List<String> playDomains = new ArrayList<>();
+    private List<String> playDomains = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -186,6 +186,8 @@ public class ListBandwidthDetailRequest  {
         this.playDomains = playDomains;
     }
 
+    
+
     public ListBandwidthDetailRequest withApp(String app) {
         this.app = app;
         return this;
@@ -205,6 +207,8 @@ public class ListBandwidthDetailRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListBandwidthDetailRequest withStream(String stream) {
         this.stream = stream;
@@ -226,6 +230,8 @@ public class ListBandwidthDetailRequest  {
         this.stream = stream;
     }
 
+    
+
     public ListBandwidthDetailRequest withRegion(List<String> region) {
         this.region = region;
         return this;
@@ -233,9 +239,6 @@ public class ListBandwidthDetailRequest  {
 
     
     public ListBandwidthDetailRequest addRegionItem(String regionItem) {
-        if (this.region == null) {
-            this.region = new ArrayList<>();
-        }
         this.region.add(regionItem);
         return this;
     }
@@ -260,6 +263,8 @@ public class ListBandwidthDetailRequest  {
         this.region = region;
     }
 
+    
+
     public ListBandwidthDetailRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
@@ -267,9 +272,6 @@ public class ListBandwidthDetailRequest  {
 
     
     public ListBandwidthDetailRequest addIspItem(String ispItem) {
-        if (this.isp == null) {
-            this.isp = new ArrayList<>();
-        }
         this.isp.add(ispItem);
         return this;
     }
@@ -294,6 +296,8 @@ public class ListBandwidthDetailRequest  {
         this.isp = isp;
     }
 
+    
+
     public ListBandwidthDetailRequest withInterval(IntervalEnum interval) {
         this.interval = interval;
         return this;
@@ -316,6 +320,8 @@ public class ListBandwidthDetailRequest  {
         this.interval = interval;
     }
 
+    
+
     public ListBandwidthDetailRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -336,6 +342,8 @@ public class ListBandwidthDetailRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListBandwidthDetailRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -355,6 +363,9 @@ public class ListBandwidthDetailRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

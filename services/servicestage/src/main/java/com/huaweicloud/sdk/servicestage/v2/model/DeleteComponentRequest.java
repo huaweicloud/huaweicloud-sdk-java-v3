@@ -55,6 +55,8 @@ public class DeleteComponentRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public DeleteComponentRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteComponentRequest  {
         this.componentId = componentId;
     }
 
+    
+
     public DeleteComponentRequest withForce(Boolean force) {
         this.force = force;
         return this;
@@ -94,6 +98,9 @@ public class DeleteComponentRequest  {
     public void setForce(Boolean force) {
         this.force = force;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

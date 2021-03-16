@@ -22,19 +22,19 @@ public class ListKmsByTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_instances")
     
-    private String resourceInstances = "resource_instances";
+    private String resourceInstances;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListKmsByTagsRequestBody body = null;
+    private ListKmsByTagsRequestBody body;
 
     public ListKmsByTagsRequest withResourceInstances(String resourceInstances) {
         this.resourceInstances = resourceInstances;
@@ -56,6 +56,8 @@ public class ListKmsByTagsRequest  {
         this.resourceInstances = resourceInstances;
     }
 
+    
+
     public ListKmsByTagsRequest withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -75,6 +77,8 @@ public class ListKmsByTagsRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
 
     public ListKmsByTagsRequest withBody(ListKmsByTagsRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class ListKmsByTagsRequest  {
     public void setBody(ListKmsByTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

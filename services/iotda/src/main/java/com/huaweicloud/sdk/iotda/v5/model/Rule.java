@@ -37,13 +37,13 @@ public class Rule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition_group")
     
-    private ConditionGroup conditionGroup = null;
+    private ConditionGroup conditionGroup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="actions")
     
-    private List<RuleAction> actions = new ArrayList<>();
+    private List<RuleAction> actions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,6 +89,8 @@ public class Rule  {
         this.name = name;
     }
 
+    
+
     public Rule withDescription(String description) {
         this.description = description;
         return this;
@@ -108,6 +110,8 @@ public class Rule  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public Rule withConditionGroup(ConditionGroup conditionGroup) {
         this.conditionGroup = conditionGroup;
@@ -135,6 +139,8 @@ public class Rule  {
     public void setConditionGroup(ConditionGroup conditionGroup) {
         this.conditionGroup = conditionGroup;
     }
+
+    
 
     public Rule withActions(List<RuleAction> actions) {
         this.actions = actions;
@@ -167,6 +173,8 @@ public class Rule  {
         this.actions = actions;
     }
 
+    
+
     public Rule withRuleType(String ruleType) {
         this.ruleType = ruleType;
         return this;
@@ -186,6 +194,8 @@ public class Rule  {
     public void setRuleType(String ruleType) {
         this.ruleType = ruleType;
     }
+
+    
 
     public Rule withStatus(String status) {
         this.status = status;
@@ -207,6 +217,8 @@ public class Rule  {
         this.status = status;
     }
 
+    
+
     public Rule withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -227,6 +239,8 @@ public class Rule  {
         this.appId = appId;
     }
 
+    
+
     public Rule withEdgeNodeIds(List<String> edgeNodeIds) {
         this.edgeNodeIds = edgeNodeIds;
         return this;
@@ -234,9 +248,6 @@ public class Rule  {
 
     
     public Rule addEdgeNodeIdsItem(String edgeNodeIdsItem) {
-        if (this.edgeNodeIds == null) {
-            this.edgeNodeIds = new ArrayList<>();
-        }
         this.edgeNodeIds.add(edgeNodeIdsItem);
         return this;
     }
@@ -260,6 +271,9 @@ public class Rule  {
     public void setEdgeNodeIds(List<String> edgeNodeIds) {
         this.edgeNodeIds = edgeNodeIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class InviteWithPwdRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestInviteWithPwdReqBody body = null;
+    private RestInviteWithPwdReqBody body;
 
     public InviteWithPwdRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -49,6 +49,8 @@ public class InviteWithPwdRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public InviteWithPwdRequest withBody(RestInviteWithPwdReqBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class InviteWithPwdRequest  {
     public void setBody(RestInviteWithPwdReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

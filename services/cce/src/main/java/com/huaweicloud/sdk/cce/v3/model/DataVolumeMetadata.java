@@ -51,6 +51,8 @@ public class DataVolumeMetadata  {
         this.systemCmkid = systemCmkid;
     }
 
+    
+
     public DataVolumeMetadata withSystemEncrypted(String systemEncrypted) {
         this.systemEncrypted = systemEncrypted;
         return this;
@@ -72,6 +74,9 @@ public class DataVolumeMetadata  {
     public void setSystemEncrypted(String systemEncrypted) {
         this.systemEncrypted = systemEncrypted;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

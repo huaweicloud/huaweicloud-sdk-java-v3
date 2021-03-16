@@ -166,7 +166,7 @@ public class TemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
-    private VpcObject vpc = null;
+    private VpcObject vpc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -184,7 +184,7 @@ public class TemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private PublicIp publicip = null;
+    private PublicIp publicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -308,6 +308,8 @@ public class TemplateRequest  {
         this.name = name;
     }
 
+    
+
     public TemplateRequest withIsTemplate(Boolean isTemplate) {
         this.isTemplate = isTemplate;
         return this;
@@ -327,6 +329,8 @@ public class TemplateRequest  {
     public void setIsTemplate(Boolean isTemplate) {
         this.isTemplate = isTemplate;
     }
+
+    
 
     public TemplateRequest withRegion(String region) {
         this.region = region;
@@ -348,6 +352,8 @@ public class TemplateRequest  {
         this.region = region;
     }
 
+    
+
     public TemplateRequest withProjectid(String projectid) {
         this.projectid = projectid;
         return this;
@@ -367,6 +373,8 @@ public class TemplateRequest  {
     public void setProjectid(String projectid) {
         this.projectid = projectid;
     }
+
+    
 
     public TemplateRequest withTargetServerName(String targetServerName) {
         this.targetServerName = targetServerName;
@@ -388,6 +396,8 @@ public class TemplateRequest  {
         this.targetServerName = targetServerName;
     }
 
+    
+
     public TemplateRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -407,6 +417,8 @@ public class TemplateRequest  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
 
     public TemplateRequest withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
@@ -428,6 +440,8 @@ public class TemplateRequest  {
         this.volumetype = volumetype;
     }
 
+    
+
     public TemplateRequest withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -447,6 +461,8 @@ public class TemplateRequest  {
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }
+
+    
 
     public TemplateRequest withVpc(VpcObject vpc) {
         this.vpc = vpc;
@@ -475,6 +491,8 @@ public class TemplateRequest  {
         this.vpc = vpc;
     }
 
+    
+
     public TemplateRequest withNics(List<Nics> nics) {
         this.nics = nics;
         return this;
@@ -482,9 +500,6 @@ public class TemplateRequest  {
 
     
     public TemplateRequest addNicsItem(Nics nicsItem) {
-        if (this.nics == null) {
-            this.nics = new ArrayList<>();
-        }
         this.nics.add(nicsItem);
         return this;
     }
@@ -509,6 +524,8 @@ public class TemplateRequest  {
         this.nics = nics;
     }
 
+    
+
     public TemplateRequest withSecurityGroups(List<SgObject> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -516,9 +533,6 @@ public class TemplateRequest  {
 
     
     public TemplateRequest addSecurityGroupsItem(SgObject securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -542,6 +556,8 @@ public class TemplateRequest  {
     public void setSecurityGroups(List<SgObject> securityGroups) {
         this.securityGroups = securityGroups;
     }
+
+    
 
     public TemplateRequest withPublicip(PublicIp publicip) {
         this.publicip = publicip;
@@ -570,6 +586,8 @@ public class TemplateRequest  {
         this.publicip = publicip;
     }
 
+    
+
     public TemplateRequest withDisk(List<TemplateDisk> disk) {
         this.disk = disk;
         return this;
@@ -577,9 +595,6 @@ public class TemplateRequest  {
 
     
     public TemplateRequest addDiskItem(TemplateDisk diskItem) {
-        if (this.disk == null) {
-            this.disk = new ArrayList<>();
-        }
         this.disk.add(diskItem);
         return this;
     }
@@ -604,6 +619,8 @@ public class TemplateRequest  {
         this.disk = disk;
     }
 
+    
+
     public TemplateRequest withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
@@ -624,6 +641,8 @@ public class TemplateRequest  {
         this.dataVolumeType = dataVolumeType;
     }
 
+    
+
     public TemplateRequest withTargetPassword(String targetPassword) {
         this.targetPassword = targetPassword;
         return this;
@@ -643,6 +662,9 @@ public class TemplateRequest  {
     public void setTargetPassword(String targetPassword) {
         this.targetPassword = targetPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

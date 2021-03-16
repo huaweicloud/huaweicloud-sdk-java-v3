@@ -54,6 +54,8 @@ public class ListSeveritiesResponse extends SdkResponse {
         this.show = show;
     }
 
+    
+
     public ListSeveritiesResponse withSeverityList(List<SeverityV2Do> severityList) {
         this.severityList = severityList;
         return this;
@@ -61,9 +63,6 @@ public class ListSeveritiesResponse extends SdkResponse {
 
     
     public ListSeveritiesResponse addSeverityListItem(SeverityV2Do severityListItem) {
-        if (this.severityList == null) {
-            this.severityList = new ArrayList<>();
-        }
         this.severityList.add(severityListItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListSeveritiesResponse extends SdkResponse {
     public void setSeverityList(List<SeverityV2Do> severityList) {
         this.severityList = severityList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

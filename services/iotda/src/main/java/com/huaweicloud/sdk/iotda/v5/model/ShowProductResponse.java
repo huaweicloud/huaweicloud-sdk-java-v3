@@ -114,6 +114,8 @@ public class ShowProductResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public ShowProductResponse withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -133,6 +135,8 @@ public class ShowProductResponse extends SdkResponse {
     public void setAppName(String appName) {
         this.appName = appName;
     }
+
+    
 
     public ShowProductResponse withProductId(String productId) {
         this.productId = productId;
@@ -154,6 +158,8 @@ public class ShowProductResponse extends SdkResponse {
         this.productId = productId;
     }
 
+    
+
     public ShowProductResponse withName(String name) {
         this.name = name;
         return this;
@@ -173,6 +179,8 @@ public class ShowProductResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowProductResponse withDeviceType(String deviceType) {
         this.deviceType = deviceType;
@@ -194,6 +202,8 @@ public class ShowProductResponse extends SdkResponse {
         this.deviceType = deviceType;
     }
 
+    
+
     public ShowProductResponse withProtocolType(String protocolType) {
         this.protocolType = protocolType;
         return this;
@@ -213,6 +223,8 @@ public class ShowProductResponse extends SdkResponse {
     public void setProtocolType(String protocolType) {
         this.protocolType = protocolType;
     }
+
+    
 
     public ShowProductResponse withDataFormat(String dataFormat) {
         this.dataFormat = dataFormat;
@@ -234,6 +246,8 @@ public class ShowProductResponse extends SdkResponse {
         this.dataFormat = dataFormat;
     }
 
+    
+
     public ShowProductResponse withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
@@ -253,6 +267,8 @@ public class ShowProductResponse extends SdkResponse {
     public void setManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
+
+    
 
     public ShowProductResponse withIndustry(String industry) {
         this.industry = industry;
@@ -274,6 +290,8 @@ public class ShowProductResponse extends SdkResponse {
         this.industry = industry;
     }
 
+    
+
     public ShowProductResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -294,6 +312,8 @@ public class ShowProductResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowProductResponse withServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
         this.serviceCapabilities = serviceCapabilities;
         return this;
@@ -301,9 +321,6 @@ public class ShowProductResponse extends SdkResponse {
 
     
     public ShowProductResponse addServiceCapabilitiesItem(ServiceCapability serviceCapabilitiesItem) {
-        if (this.serviceCapabilities == null) {
-            this.serviceCapabilities = new ArrayList<>();
-        }
         this.serviceCapabilities.add(serviceCapabilitiesItem);
         return this;
     }
@@ -328,6 +345,8 @@ public class ShowProductResponse extends SdkResponse {
         this.serviceCapabilities = serviceCapabilities;
     }
 
+    
+
     public ShowProductResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -347,6 +366,9 @@ public class ShowProductResponse extends SdkResponse {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

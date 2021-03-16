@@ -131,6 +131,8 @@ public class UpdatePublicipOption  {
         this.portId = portId;
     }
 
+    
+
     public UpdatePublicipOption withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
@@ -150,6 +152,9 @@ public class UpdatePublicipOption  {
     public void setIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

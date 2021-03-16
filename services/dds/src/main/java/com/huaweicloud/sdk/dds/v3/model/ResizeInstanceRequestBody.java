@@ -22,7 +22,7 @@ public class ResizeInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resize")
     
-    private ResizeInstanceOption resize = null;
+    private ResizeInstanceOption resize;
 
     public ResizeInstanceRequestBody withResize(ResizeInstanceOption resize) {
         this.resize = resize;
@@ -50,6 +50,9 @@ public class ResizeInstanceRequestBody  {
     public void setResize(ResizeInstanceOption resize) {
         this.resize = resize;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

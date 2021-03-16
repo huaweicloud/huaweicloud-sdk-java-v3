@@ -24,7 +24,7 @@ public class BatchHandTags  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Tag> tags = new ArrayList<>();
+    private List<Tag> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,6 +63,8 @@ public class BatchHandTags  {
         this.tags = tags;
     }
 
+    
+
     public BatchHandTags withAction(String action) {
         this.action = action;
         return this;
@@ -82,6 +84,9 @@ public class BatchHandTags  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

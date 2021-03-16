@@ -34,9 +34,6 @@ public class ListAuditlogLinksResponse extends SdkResponse {
 
     
     public ListAuditlogLinksResponse addLinksItem(String linksItem) {
-        if (this.links == null) {
-            this.links = new ArrayList<>();
-        }
         this.links.add(linksItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class ListAuditlogLinksResponse extends SdkResponse {
     public void setLinks(List<String> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

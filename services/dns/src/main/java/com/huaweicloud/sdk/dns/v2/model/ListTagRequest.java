@@ -28,7 +28,7 @@ public class ListTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListTagReq body = null;
+    private ListTagReq body;
 
     public ListTagRequest withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -49,6 +49,8 @@ public class ListTagRequest  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    
 
     public ListTagRequest withBody(ListTagReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ListTagRequest  {
     public void setBody(ListTagReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

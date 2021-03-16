@@ -55,6 +55,8 @@ public class DeleteDomainGroupInheritedRoleRequest  {
         this.domainId = domainId;
     }
 
+    
+
     public DeleteDomainGroupInheritedRoleRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -75,6 +77,8 @@ public class DeleteDomainGroupInheritedRoleRequest  {
         this.groupId = groupId;
     }
 
+    
+
     public DeleteDomainGroupInheritedRoleRequest withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteDomainGroupInheritedRoleRequest  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class ResizeVolumeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResizeVolumeRequestBody body = null;
+    private ResizeVolumeRequestBody body;
 
     public ResizeVolumeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -49,6 +49,8 @@ public class ResizeVolumeRequest  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
 
     public ResizeVolumeRequest withBody(ResizeVolumeRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ResizeVolumeRequest  {
     public void setBody(ResizeVolumeRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

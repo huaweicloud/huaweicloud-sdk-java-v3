@@ -22,7 +22,7 @@ public class DeleteBindingDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UnbindMfaDevice body = null;
+    private UnbindMfaDevice body;
 
     public DeleteBindingDeviceRequest withBody(UnbindMfaDevice body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class DeleteBindingDeviceRequest  {
     public void setBody(UnbindMfaDevice body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

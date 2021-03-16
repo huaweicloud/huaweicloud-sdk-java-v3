@@ -55,6 +55,8 @@ public class EnterprisePersonNew  {
         this.legelName = legelName;
     }
 
+    
+
     public EnterprisePersonNew withLegelIdNumber(String legelIdNumber) {
         this.legelIdNumber = legelIdNumber;
         return this;
@@ -75,6 +77,8 @@ public class EnterprisePersonNew  {
         this.legelIdNumber = legelIdNumber;
     }
 
+    
+
     public EnterprisePersonNew withCertifierRole(String certifierRole) {
         this.certifierRole = certifierRole;
         return this;
@@ -94,6 +98,9 @@ public class EnterprisePersonNew  {
     public void setCertifierRole(String certifierRole) {
         this.certifierRole = certifierRole;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

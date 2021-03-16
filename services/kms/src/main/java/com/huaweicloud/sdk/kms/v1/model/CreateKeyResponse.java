@@ -24,7 +24,7 @@ public class CreateKeyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_info")
     
-    private KeKInfo keyInfo = null;
+    private KeKInfo keyInfo;
 
     public CreateKeyResponse withKeyInfo(KeKInfo keyInfo) {
         this.keyInfo = keyInfo;
@@ -52,6 +52,9 @@ public class CreateKeyResponse extends SdkResponse {
     public void setKeyInfo(KeKInfo keyInfo) {
         this.keyInfo = keyInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

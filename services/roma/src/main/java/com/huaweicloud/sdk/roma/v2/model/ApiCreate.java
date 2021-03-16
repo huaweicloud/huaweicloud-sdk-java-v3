@@ -227,7 +227,7 @@ public class ApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -455,13 +455,13 @@ public class ApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -707,13 +707,13 @@ public class ApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mock_info")
     
-    private ApiMockCreate mockInfo = null;
+    private ApiMockCreate mockInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_info")
     
-    private ApiFuncCreate funcInfo = null;
+    private ApiFuncCreate funcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -743,7 +743,7 @@ public class ApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backend_api")
     
-    private BackendApiCreate backendApi = null;
+    private BackendApiCreate backendApi;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -771,6 +771,8 @@ public class ApiCreate  {
         this.name = name;
     }
 
+    
+
     public ApiCreate withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -790,6 +792,8 @@ public class ApiCreate  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ApiCreate withVersion(String version) {
         this.version = version;
@@ -811,6 +815,8 @@ public class ApiCreate  {
         this.version = version;
     }
 
+    
+
     public ApiCreate withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -830,6 +836,8 @@ public class ApiCreate  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiCreate withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -851,6 +859,8 @@ public class ApiCreate  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiCreate withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -871,6 +881,8 @@ public class ApiCreate  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiCreate withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -890,6 +902,8 @@ public class ApiCreate  {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ApiCreate withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -918,6 +932,8 @@ public class ApiCreate  {
         this.authOpt = authOpt;
     }
 
+    
+
     public ApiCreate withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -937,6 +953,8 @@ public class ApiCreate  {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ApiCreate withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -958,6 +976,8 @@ public class ApiCreate  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiCreate withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -977,6 +997,8 @@ public class ApiCreate  {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ApiCreate withRemark(String remark) {
         this.remark = remark;
@@ -998,6 +1020,8 @@ public class ApiCreate  {
         this.remark = remark;
     }
 
+    
+
     public ApiCreate withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1017,6 +1041,8 @@ public class ApiCreate  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiCreate withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1038,6 +1064,8 @@ public class ApiCreate  {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ApiCreate withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1057,6 +1085,8 @@ public class ApiCreate  {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ApiCreate withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1078,6 +1108,8 @@ public class ApiCreate  {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ApiCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1098,6 +1130,8 @@ public class ApiCreate  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiCreate withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1105,9 +1139,6 @@ public class ApiCreate  {
 
     
     public ApiCreate addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1132,6 +1163,8 @@ public class ApiCreate  {
         this.tags = tags;
     }
 
+    
+
     public ApiCreate withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1151,6 +1184,8 @@ public class ApiCreate  {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ApiCreate withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1172,6 +1207,8 @@ public class ApiCreate  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiCreate withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1192,6 +1229,8 @@ public class ApiCreate  {
         this.domainName = domainName;
     }
 
+    
+
     public ApiCreate withTag(String tag) {
         this.tag = tag;
         return this;
@@ -1211,6 +1250,8 @@ public class ApiCreate  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
 
     public ApiCreate withMockInfo(ApiMockCreate mockInfo) {
         this.mockInfo = mockInfo;
@@ -1239,6 +1280,8 @@ public class ApiCreate  {
         this.mockInfo = mockInfo;
     }
 
+    
+
     public ApiCreate withFuncInfo(ApiFuncCreate funcInfo) {
         this.funcInfo = funcInfo;
         return this;
@@ -1266,6 +1309,8 @@ public class ApiCreate  {
         this.funcInfo = funcInfo;
     }
 
+    
+
     public ApiCreate withReqParams(List<ReqParamBase> reqParams) {
         this.reqParams = reqParams;
         return this;
@@ -1273,9 +1318,6 @@ public class ApiCreate  {
 
     
     public ApiCreate addReqParamsItem(ReqParamBase reqParamsItem) {
-        if (this.reqParams == null) {
-            this.reqParams = new ArrayList<>();
-        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
@@ -1300,6 +1342,8 @@ public class ApiCreate  {
         this.reqParams = reqParams;
     }
 
+    
+
     public ApiCreate withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -1307,9 +1351,6 @@ public class ApiCreate  {
 
     
     public ApiCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -1334,6 +1375,8 @@ public class ApiCreate  {
         this.backendParams = backendParams;
     }
 
+    
+
     public ApiCreate withPolicyMocks(List<ApiPolicyMockCreate> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
@@ -1341,9 +1384,6 @@ public class ApiCreate  {
 
     
     public ApiCreate addPolicyMocksItem(ApiPolicyMockCreate policyMocksItem) {
-        if (this.policyMocks == null) {
-            this.policyMocks = new ArrayList<>();
-        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
@@ -1368,6 +1408,8 @@ public class ApiCreate  {
         this.policyMocks = policyMocks;
     }
 
+    
+
     public ApiCreate withPolicyFunctions(List<ApiPolicyFunctionCreate> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
@@ -1375,9 +1417,6 @@ public class ApiCreate  {
 
     
     public ApiCreate addPolicyFunctionsItem(ApiPolicyFunctionCreate policyFunctionsItem) {
-        if (this.policyFunctions == null) {
-            this.policyFunctions = new ArrayList<>();
-        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
@@ -1401,6 +1440,8 @@ public class ApiCreate  {
     public void setPolicyFunctions(List<ApiPolicyFunctionCreate> policyFunctions) {
         this.policyFunctions = policyFunctions;
     }
+
+    
 
     public ApiCreate withBackendApi(BackendApiCreate backendApi) {
         this.backendApi = backendApi;
@@ -1429,6 +1470,8 @@ public class ApiCreate  {
         this.backendApi = backendApi;
     }
 
+    
+
     public ApiCreate withPolicyHttps(List<ApiPolicyHttpCreate> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
@@ -1436,9 +1479,6 @@ public class ApiCreate  {
 
     
     public ApiCreate addPolicyHttpsItem(ApiPolicyHttpCreate policyHttpsItem) {
-        if (this.policyHttps == null) {
-            this.policyHttps = new ArrayList<>();
-        }
         this.policyHttps.add(policyHttpsItem);
         return this;
     }
@@ -1462,6 +1502,9 @@ public class ApiCreate  {
     public void setPolicyHttps(List<ApiPolicyHttpCreate> policyHttps) {
         this.policyHttps = policyHttps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

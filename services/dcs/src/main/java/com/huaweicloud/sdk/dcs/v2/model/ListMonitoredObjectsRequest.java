@@ -27,13 +27,13 @@ public class ListMonitoredObjectsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListMonitoredObjectsRequest withDimName(String dimName) {
         this.dimName = dimName;
@@ -55,6 +55,8 @@ public class ListMonitoredObjectsRequest  {
         this.dimName = dimName;
     }
 
+    
+
     public ListMonitoredObjectsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -75,6 +77,8 @@ public class ListMonitoredObjectsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListMonitoredObjectsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -94,6 +98,9 @@ public class ListMonitoredObjectsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

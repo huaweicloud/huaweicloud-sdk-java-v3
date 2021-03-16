@@ -42,9 +42,6 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
 
     
     public UpdateCouponQuotasResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
-        if (this.errorDetails == null) {
-            this.errorDetails = new ArrayList<>();
-        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
         this.errorDetails = errorDetails;
     }
 
+    
+
     public UpdateCouponQuotasResponse withSimpleQuotaInfos(List<QuotaSimpleInfo> simpleQuotaInfos) {
         this.simpleQuotaInfos = simpleQuotaInfos;
         return this;
@@ -76,9 +75,6 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
 
     
     public UpdateCouponQuotasResponse addSimpleQuotaInfosItem(QuotaSimpleInfo simpleQuotaInfosItem) {
-        if (this.simpleQuotaInfos == null) {
-            this.simpleQuotaInfos = new ArrayList<>();
-        }
         this.simpleQuotaInfos.add(simpleQuotaInfosItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
     public void setSimpleQuotaInfos(List<QuotaSimpleInfo> simpleQuotaInfos) {
         this.simpleQuotaInfos = simpleQuotaInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,6 +42,9 @@ public class ShowPublicipTagsRequest  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

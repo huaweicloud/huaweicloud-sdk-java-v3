@@ -24,7 +24,7 @@ public class UpdateVpcPeeringResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="peering")
     
-    private VpcPeering peering = null;
+    private VpcPeering peering;
 
     public UpdateVpcPeeringResponse withPeering(VpcPeering peering) {
         this.peering = peering;
@@ -52,6 +52,9 @@ public class UpdateVpcPeeringResponse extends SdkResponse {
     public void setPeering(VpcPeering peering) {
         this.peering = peering;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

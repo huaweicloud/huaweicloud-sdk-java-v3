@@ -51,6 +51,8 @@ public class RecordData  {
         this.concurrentCount = concurrentCount;
     }
 
+    
+
     public RecordData withTime(String time) {
         this.time = time;
         return this;
@@ -70,6 +72,9 @@ public class RecordData  {
     public void setTime(String time) {
         this.time = time;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

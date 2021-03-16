@@ -12,6 +12,7 @@ import java.util.Objects;
  */
 public class ShowAccountStatusRequest  {
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

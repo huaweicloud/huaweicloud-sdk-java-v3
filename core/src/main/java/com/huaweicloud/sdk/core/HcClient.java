@@ -21,22 +21,7 @@
 
 package com.huaweicloud.sdk.core;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Stack;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.ICredential;
@@ -53,11 +38,28 @@ import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.core.http.SdkFormDataBody;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
-import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Stack;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class HcClient implements CustomizationConfigure {
     private static final Logger logger = LoggerFactory.getLogger(HcClient.class);
@@ -73,10 +75,31 @@ public class HcClient implements CustomizationConfigure {
     private static final int STATUS_CODE_WITH_RESPONSE_ERROR = 400;
 
     private HttpClient httpClient;
+
     private String endpoint;
+
     private ICredential credential;
+
     private HttpConfig httpConfig;
+
     private Map<String, String> extraHeader;
+
+    private HcClient(HttpConfig httpConfig, HttpClient httpClient, ICredential credential, String endpoint) {
+        this.httpConfig = httpConfig;
+        this.httpClient = httpClient;
+        this.credential = credential;
+        this.endpoint = endpoint;
+    }
+
+    HcClient(HttpConfig httpConfig, HttpClient httpClient) {
+        this.httpConfig = httpConfig;
+        this.httpClient = httpClient;
+    }
+
+    HcClient(HttpConfig httpConfig) {
+        this.httpConfig = httpConfig;
+        httpClient = new DefaultHttpClient(this.httpConfig);
+    }
 
     HcClient withEndpoint(String endpoint) {
         this.endpoint = endpoint;
@@ -90,24 +113,6 @@ public class HcClient implements CustomizationConfigure {
 
     public ICredential getCredential() {
         return this.credential;
-    }
-
-    HcClient(HttpConfig httpConfig) {
-        this.httpConfig = httpConfig;
-        httpClient = new DefaultHttpClient(this.httpConfig);
-    }
-
-    HcClient(HttpConfig httpConfig, HttpClient httpClient) {
-        this.httpConfig = httpConfig;
-        this.httpClient = httpClient;
-    }
-
-    private HcClient(HttpConfig httpConfig, HttpClient httpClient,
-                     ICredential credential, String endpoint) {
-        this.httpConfig = httpConfig;
-        this.httpClient = httpClient;
-        this.credential = credential;
-        this.endpoint = endpoint;
     }
 
     public HttpConfig getHttpConfig() {
@@ -133,23 +138,21 @@ public class HcClient implements CustomizationConfigure {
         return syncInvokeHttp(request, reqDef, new SdkExchange());
     }
 
-    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef,
-                                            SdkExchange exchange)
+    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef, SdkExchange exchange)
         throws ServiceResponseException {
 
         if (Objects.isNull(exchange)) {
             throw new IllegalArgumentException("SdkExchange is null");
         }
 
-        exchange.setApiReference(new ApiReference()
-            .withName(reqDef.getName())
+        exchange.setApiReference(new ApiReference().withName(reqDef.getName())
             .withMethod(reqDef.getMethod().toString())
             .withUri(reqDef.getUri()));
 
         HttpRequest httpRequest = buildRequest(request, reqDef);
 
-        // 鉴权，处理project_id，domain_id信息
-        if (Objects.nonNull(credential)) {
+        if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION)) && Objects.nonNull(credential)) {
+            // 鉴权，处理project_id，domain_id信息
             try {
                 httpRequest = credential.processAuthRequest(httpRequest, this.httpClient).get();
             } catch (InterruptedException | ExecutionException e) {
@@ -158,10 +161,7 @@ public class HcClient implements CustomizationConfigure {
         }
 
         String exchangeId = SdkExchangeCache.putExchange(exchange);
-        httpRequest = httpRequest
-            .builder()
-            .addHeader(SDK_EXCHANGE, exchangeId)
-            .build();
+        httpRequest = httpRequest.builder().addHeader(SDK_EXCHANGE, exchangeId).build();
 
         try {
             HttpResponse httpResponse = httpClient.syncInvokeHttp(httpRequest);
@@ -186,48 +186,42 @@ public class HcClient implements CustomizationConfigure {
     }
 
     public <ReqT, ResT> CompletableFuture<ResT> asyncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef,
-                                                                SdkExchange exchange) {
+        SdkExchange exchange) {
 
         if (Objects.isNull(exchange)) {
             return CompletableFuture.supplyAsync(() -> {
                 throw new IllegalArgumentException("SdkExchange is null");
             });
         }
-        exchange.setApiReference(new ApiReference()
-            .withName(reqDef.getName())
+        exchange.setApiReference(new ApiReference().withName(reqDef.getName())
             .withMethod(reqDef.getMethod().toString())
             .withUri(reqDef.getUri()));
         AtomicReference<String> exchangeIdRef = new AtomicReference<>();
         HttpRequest httpRequest = buildRequest(request, reqDef);
 
         CompletableFuture<HttpRequest> validHttpRequestStage = CompletableFuture.supplyAsync(() -> httpRequest);
-        if (Objects.nonNull(credential)) {
+        if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION)) && Objects.nonNull(credential)) {
             validHttpRequestStage = credential.processAuthRequest(httpRequest, this.httpClient);
         }
-        return validHttpRequestStage
-            .thenCompose(validHttpRequest -> {
-                String id = SdkExchangeCache.putExchange(exchange);
-                exchangeIdRef.set(id);
-                validHttpRequest = validHttpRequest
-                    .builder()
-                    .addHeader(SDK_EXCHANGE, id)
-                    .build();
+        return validHttpRequestStage.thenCompose(validHttpRequest -> {
+            String id = SdkExchangeCache.putExchange(exchange);
+            exchangeIdRef.set(id);
+            validHttpRequest = validHttpRequest.builder().addHeader(SDK_EXCHANGE, id).build();
 
-                HttpRequest finalValidHttpRequest = validHttpRequest;
+            HttpRequest finalValidHttpRequest = validHttpRequest;
 
-                return httpClient.asyncInvokeHttp(validHttpRequest).thenApply(httpResponse -> {
-                    printAccessLog(finalValidHttpRequest, httpResponse, exchange);
-                    if (httpResponse.getStatusCode() >= STATUS_CODE_WITH_RESPONSE_ERROR) {
-                        logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                            finalValidHttpRequest.getUrl().getHost(), finalValidHttpRequest.getUrl(),
-                            ExceptionUtils.extractErrorMessage(httpResponse));
-                        throw ServiceResponseException.mapException(httpResponse.getStatusCode(),
-                            ExceptionUtils.extractErrorMessage(httpResponse));
-                    }
-                    ResT response = extractResponse(httpResponse, reqDef);
-                    return response;
-                }).whenComplete((r, e) -> SdkExchangeCache.removeExchange(exchangeIdRef.get()));
-            });
+            return httpClient.asyncInvokeHttp(validHttpRequest).thenApply(httpResponse -> {
+                printAccessLog(finalValidHttpRequest, httpResponse, exchange);
+                if (httpResponse.getStatusCode() >= STATUS_CODE_WITH_RESPONSE_ERROR) {
+                    logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
+                        finalValidHttpRequest.getUrl().getHost(), finalValidHttpRequest.getUrl(),
+                        ExceptionUtils.extractErrorMessage(httpResponse));
+                    throw ServiceResponseException.mapException(httpResponse.getStatusCode(),
+                        ExceptionUtils.extractErrorMessage(httpResponse));
+                }
+                return extractResponse(httpResponse, reqDef);
+            }).whenComplete((r, e) -> SdkExchangeCache.removeExchange(exchangeIdRef.get()));
+        });
     }
 
     protected <ReqT, ResT> HttpRequest buildRequest(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
@@ -248,7 +242,7 @@ public class HcClient implements CustomizationConfigure {
                 } else if (field.getLocation() == LocationType.Path) {
                     httpRequestBuilder.addPathParam(field.getName(), reqValue.toString());
                 } else if (field.getLocation() == LocationType.Body) {
-                    httpRequestBuilder.withBodyAsString(JsonUtils.toJSON(reqValue));
+                    buildRequestBody(httpRequestBuilder, reqValue);
                 }
             }
         }
@@ -262,16 +256,22 @@ public class HcClient implements CustomizationConfigure {
 
         // extraHeader
         if (Objects.nonNull(extraHeader) && extraHeader.size() > 0) {
-            extraHeader.forEach((k, v) -> httpRequestBuilder.addHeader(k, v));
+            extraHeader.forEach(httpRequestBuilder::addHeader);
         }
 
-        HttpRequest httpRequest = httpRequestBuilder.build();
+        return httpRequestBuilder.build();
+    }
 
-        return httpRequest;
+    private void buildRequestBody(HttpRequest.HttpRequestBuilder httpRequestBuilder, Object reqValue) {
+        if (reqValue instanceof SdkFormDataBody) {
+            httpRequestBuilder.withFormDataPart(((SdkFormDataBody) reqValue).buildFormData());
+        } else {
+            httpRequestBuilder.withBodyAsString(JsonUtils.toJSON(reqValue));
+        }
     }
 
     private void buildQueryParams(HttpRequest.HttpRequestBuilder httpRequestBuilder, String fieldName,
-                                  Object reqValue) {
+        Object reqValue) {
         if (reqValue instanceof Collection) {
             httpRequestBuilder.addQueryParam(fieldName, buildCollectionQueryParams(reqValue));
         } else if (reqValue instanceof Map) {
@@ -285,7 +285,7 @@ public class HcClient implements CustomizationConfigure {
     }
 
     private List<String> buildStringQueryParams(Object reqValue) {
-        return Arrays.asList(reqValue.toString());
+        return Collections.singletonList(reqValue.toString());
     }
 
     private List<String> buildCollectionQueryParams(Object reqValue) {
@@ -325,8 +325,8 @@ public class HcClient implements CustomizationConfigure {
         try {
             String stringResult = httpResponse.getBodyAsString();
             ResT resT;
-            if (Objects.nonNull(httpResponse.getContentType())
-                && httpResponse.getContentType().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+            if (Objects.nonNull(httpResponse.getContentType()) && httpResponse.getContentType()
+                .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
                 resT = reqDef.getResponseType().newInstance();
                 if (resT instanceof SdkStreamResponse) {
                     ((SdkStreamResponse) resT).setBody(httpResponse.getBody());
@@ -403,17 +403,14 @@ public class HcClient implements CustomizationConfigure {
     }
 
     public void printAccessLog(HttpRequest httpRequest, HttpResponse httpResponse, SdkExchange exchange) {
-        String requestId = Objects.isNull(httpResponse.getHeader(Constants.X_REQUEST_ID)) ? "null"
+        String requestId = Objects.isNull(httpResponse.getHeader(Constants.X_REQUEST_ID))
+            ? "null"
             : httpResponse.getHeader(Constants.X_REQUEST_ID);
         AccessLog.get()
-            .info("\"{} {}\" {} {} {} {}",
-                httpRequest.getMethod(),
-                httpRequest.getUrl(),
-                httpResponse.getStatusCode(),
-                httpResponse.getContentLength(),
-                requestId,
-                Objects.nonNull(exchange) && Objects.nonNull(exchange.getApiTimer())
-                    ? exchange.getApiTimer().getDurationMs() : "");
+            .info("\"{} {}\" {} {} {} {}", httpRequest.getMethod(), httpRequest.getUrl(), httpResponse.getStatusCode(),
+                httpResponse.getContentLength(), requestId,
+                Objects.nonNull(exchange) && Objects.nonNull(exchange.getApiTimer()) ? exchange.getApiTimer()
+                    .getDurationMs() : "");
     }
 
 }

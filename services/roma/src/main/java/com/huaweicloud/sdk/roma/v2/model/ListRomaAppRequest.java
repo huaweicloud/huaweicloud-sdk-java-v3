@@ -27,13 +27,13 @@ public class ListRomaAppRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class ListRomaAppRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListRomaAppRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -106,6 +108,8 @@ public class ListRomaAppRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListRomaAppRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -129,6 +133,8 @@ public class ListRomaAppRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListRomaAppRequest withFavorite(Boolean favorite) {
         this.favorite = favorite;
         return this;
@@ -148,6 +154,8 @@ public class ListRomaAppRequest  {
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
     }
+
+    
 
     public ListRomaAppRequest withAuthRole(String authRole) {
         this.authRole = authRole;
@@ -169,6 +177,8 @@ public class ListRomaAppRequest  {
         this.authRole = authRole;
     }
 
+    
+
     public ListRomaAppRequest withName(String name) {
         this.name = name;
         return this;
@@ -188,6 +198,8 @@ public class ListRomaAppRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListRomaAppRequest withOwner(Boolean owner) {
         this.owner = owner;
@@ -209,6 +221,8 @@ public class ListRomaAppRequest  {
         this.owner = owner;
     }
 
+    
+
     public ListRomaAppRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -228,6 +242,9 @@ public class ListRomaAppRequest  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

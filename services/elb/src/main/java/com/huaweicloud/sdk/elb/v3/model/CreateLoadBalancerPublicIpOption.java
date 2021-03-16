@@ -22,7 +22,7 @@ public class CreateLoadBalancerPublicIpOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_version")
     
-    private Integer ipVersion = 4;
+    private Integer ipVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,7 +46,7 @@ public class CreateLoadBalancerPublicIpOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private CreateLoadBalancerBandwidthOption bandwidth = null;
+    private CreateLoadBalancerBandwidthOption bandwidth;
 
     public CreateLoadBalancerPublicIpOption withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
@@ -68,6 +68,8 @@ public class CreateLoadBalancerPublicIpOption  {
         this.ipVersion = ipVersion;
     }
 
+    
+
     public CreateLoadBalancerPublicIpOption withNetworkType(String networkType) {
         this.networkType = networkType;
         return this;
@@ -87,6 +89,8 @@ public class CreateLoadBalancerPublicIpOption  {
     public void setNetworkType(String networkType) {
         this.networkType = networkType;
     }
+
+    
 
     public CreateLoadBalancerPublicIpOption withBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
@@ -108,6 +112,8 @@ public class CreateLoadBalancerPublicIpOption  {
         this.billingInfo = billingInfo;
     }
 
+    
+
     public CreateLoadBalancerPublicIpOption withDescription(String description) {
         this.description = description;
         return this;
@@ -127,6 +133,8 @@ public class CreateLoadBalancerPublicIpOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateLoadBalancerPublicIpOption withBandwidth(CreateLoadBalancerBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -154,6 +162,9 @@ public class CreateLoadBalancerPublicIpOption  {
     public void setBandwidth(CreateLoadBalancerBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

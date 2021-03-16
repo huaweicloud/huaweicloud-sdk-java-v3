@@ -217,7 +217,7 @@ public class ListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__isregistered")
     
-    private IsregisteredEnum isregistered = IsregisteredEnum.TRUE;
+    private IsregisteredEnum isregistered;
     /**
      * Gets or Sets osBit
      */
@@ -703,7 +703,7 @@ public class ListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -715,7 +715,7 @@ public class ListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 500;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -925,7 +925,7 @@ public class ListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_dir")
     
-    private SortDirEnum sortDir = SortDirEnum.DESC;
+    private SortDirEnum sortDir;
     /**
      * Gets or Sets sortKey
      */
@@ -1039,7 +1039,7 @@ public class ListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sort_key")
     
-    private SortKeyEnum sortKey = SortKeyEnum.CREATED_AT;
+    private SortKeyEnum sortKey;
     /**
      * Gets or Sets status
      */
@@ -1453,6 +1453,8 @@ public class ListImagesRequest  {
         this.imagetype = imagetype;
     }
 
+    
+
     public ListImagesRequest withIsregistered(IsregisteredEnum isregistered) {
         this.isregistered = isregistered;
         return this;
@@ -1474,6 +1476,8 @@ public class ListImagesRequest  {
     public void setIsregistered(IsregisteredEnum isregistered) {
         this.isregistered = isregistered;
     }
+
+    
 
     public ListImagesRequest withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
@@ -1497,6 +1501,8 @@ public class ListImagesRequest  {
         this.osBit = osBit;
     }
 
+    
+
     public ListImagesRequest withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -1518,6 +1524,8 @@ public class ListImagesRequest  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
+
+    
 
     public ListImagesRequest withPlatform(PlatformEnum platform) {
         this.platform = platform;
@@ -1541,6 +1549,8 @@ public class ListImagesRequest  {
         this.platform = platform;
     }
 
+    
+
     public ListImagesRequest withSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
         return this;
@@ -1562,6 +1572,8 @@ public class ListImagesRequest  {
     public void setSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
     }
+
+    
 
     public ListImagesRequest withSupportHighperformance(String supportHighperformance) {
         this.supportHighperformance = supportHighperformance;
@@ -1585,6 +1597,8 @@ public class ListImagesRequest  {
         this.supportHighperformance = supportHighperformance;
     }
 
+    
+
     public ListImagesRequest withSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
         return this;
@@ -1606,6 +1620,8 @@ public class ListImagesRequest  {
     public void setSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
     }
+
+    
 
     public ListImagesRequest withSupportKvmGpuType(String supportKvmGpuType) {
         this.supportKvmGpuType = supportKvmGpuType;
@@ -1629,6 +1645,8 @@ public class ListImagesRequest  {
         this.supportKvmGpuType = supportKvmGpuType;
     }
 
+    
+
     public ListImagesRequest withSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
         return this;
@@ -1650,6 +1668,8 @@ public class ListImagesRequest  {
     public void setSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
     }
+
+    
 
     public ListImagesRequest withSupportLargememory(String supportLargememory) {
         this.supportLargememory = supportLargememory;
@@ -1673,6 +1693,8 @@ public class ListImagesRequest  {
         this.supportLargememory = supportLargememory;
     }
 
+    
+
     public ListImagesRequest withSupportXen(String supportXen) {
         this.supportXen = supportXen;
         return this;
@@ -1694,6 +1716,8 @@ public class ListImagesRequest  {
     public void setSupportXen(String supportXen) {
         this.supportXen = supportXen;
     }
+
+    
 
     public ListImagesRequest withSupportXenGpuType(String supportXenGpuType) {
         this.supportXenGpuType = supportXenGpuType;
@@ -1717,6 +1741,8 @@ public class ListImagesRequest  {
         this.supportXenGpuType = supportXenGpuType;
     }
 
+    
+
     public ListImagesRequest withSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
         return this;
@@ -1739,6 +1765,8 @@ public class ListImagesRequest  {
         this.supportXenHana = supportXenHana;
     }
 
+    
+
     public ListImagesRequest withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
         return this;
@@ -1758,6 +1786,8 @@ public class ListImagesRequest  {
     public void setContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
     }
+
+    
 
     public ListImagesRequest withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
@@ -1779,6 +1809,8 @@ public class ListImagesRequest  {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public ListImagesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -1798,6 +1830,8 @@ public class ListImagesRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ListImagesRequest withId(String id) {
         this.id = id;
@@ -1819,6 +1853,8 @@ public class ListImagesRequest  {
         this.id = id;
     }
 
+    
+
     public ListImagesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -1838,6 +1874,8 @@ public class ListImagesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListImagesRequest withMarker(String marker) {
         this.marker = marker;
@@ -1859,6 +1897,8 @@ public class ListImagesRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListImagesRequest withMemberStatus(MemberStatusEnum memberStatus) {
         this.memberStatus = memberStatus;
         return this;
@@ -1878,6 +1918,8 @@ public class ListImagesRequest  {
     public void setMemberStatus(MemberStatusEnum memberStatus) {
         this.memberStatus = memberStatus;
     }
+
+    
 
     public ListImagesRequest withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
@@ -1901,6 +1943,8 @@ public class ListImagesRequest  {
         this.minDisk = minDisk;
     }
 
+    
+
     public ListImagesRequest withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
@@ -1920,6 +1964,8 @@ public class ListImagesRequest  {
     public void setMinRam(Integer minRam) {
         this.minRam = minRam;
     }
+
+    
 
     public ListImagesRequest withName(String name) {
         this.name = name;
@@ -1941,6 +1987,8 @@ public class ListImagesRequest  {
         this.name = name;
     }
 
+    
+
     public ListImagesRequest withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -1960,6 +2008,8 @@ public class ListImagesRequest  {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    
 
     public ListImagesRequest withProtected(Boolean _protected) {
         this._protected = _protected;
@@ -1981,6 +2031,8 @@ public class ListImagesRequest  {
         this._protected = _protected;
     }
 
+    
+
     public ListImagesRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -2000,6 +2052,8 @@ public class ListImagesRequest  {
     public void setSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
     }
+
+    
 
     public ListImagesRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
@@ -2021,6 +2075,8 @@ public class ListImagesRequest  {
         this.sortKey = sortKey;
     }
 
+    
+
     public ListImagesRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -2040,6 +2096,8 @@ public class ListImagesRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ListImagesRequest withTag(String tag) {
         this.tag = tag;
@@ -2061,6 +2119,8 @@ public class ListImagesRequest  {
         this.tag = tag;
     }
 
+    
+
     public ListImagesRequest withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
         return this;
@@ -2081,6 +2141,8 @@ public class ListImagesRequest  {
         this.virtualEnvType = virtualEnvType;
     }
 
+    
+
     public ListImagesRequest withVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
         return this;
@@ -2100,6 +2162,8 @@ public class ListImagesRequest  {
     public void setVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
     }
+
+    
 
     public ListImagesRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
@@ -2123,6 +2187,8 @@ public class ListImagesRequest  {
         this.xSdkDate = xSdkDate;
     }
 
+    
+
     public ListImagesRequest withFlavorId(String flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -2142,6 +2208,8 @@ public class ListImagesRequest  {
     public void setFlavorId(String flavorId) {
         this.flavorId = flavorId;
     }
+
+    
 
     public ListImagesRequest withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -2163,6 +2231,8 @@ public class ListImagesRequest  {
         this.createdAt = createdAt;
     }
 
+    
+
     public ListImagesRequest withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -2183,6 +2253,8 @@ public class ListImagesRequest  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public ListImagesRequest withArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
         return this;
@@ -2202,6 +2274,9 @@ public class ListImagesRequest  {
     public void setArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

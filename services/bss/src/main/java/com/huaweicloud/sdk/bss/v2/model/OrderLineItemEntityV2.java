@@ -88,7 +88,7 @@ public class OrderLineItemEntityV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount_info")
     
-    private AmountInfomationV2 amountInfo = null;
+    private AmountInfomationV2 amountInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -134,6 +134,8 @@ public class OrderLineItemEntityV2  {
         this.orderLineItemId = orderLineItemId;
     }
 
+    
+
     public OrderLineItemEntityV2 withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -153,6 +155,8 @@ public class OrderLineItemEntityV2  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
 
     public OrderLineItemEntityV2 withProductId(String productId) {
         this.productId = productId;
@@ -174,6 +178,8 @@ public class OrderLineItemEntityV2  {
         this.productId = productId;
     }
 
+    
+
     public OrderLineItemEntityV2 withProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
         return this;
@@ -193,6 +199,8 @@ public class OrderLineItemEntityV2  {
     public void setProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
     }
+
+    
 
     public OrderLineItemEntityV2 withPeriodType(Integer periodType) {
         this.periodType = periodType;
@@ -214,6 +222,8 @@ public class OrderLineItemEntityV2  {
         this.periodType = periodType;
     }
 
+    
+
     public OrderLineItemEntityV2 withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
@@ -233,6 +243,8 @@ public class OrderLineItemEntityV2  {
     public void setPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
     }
+
+    
 
     public OrderLineItemEntityV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
@@ -254,6 +266,8 @@ public class OrderLineItemEntityV2  {
         this.effectiveTime = effectiveTime;
     }
 
+    
+
     public OrderLineItemEntityV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -273,6 +287,8 @@ public class OrderLineItemEntityV2  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public OrderLineItemEntityV2 withSubscriptionNum(Integer subscriptionNum) {
         this.subscriptionNum = subscriptionNum;
@@ -294,6 +310,8 @@ public class OrderLineItemEntityV2  {
         this.subscriptionNum = subscriptionNum;
     }
 
+    
+
     public OrderLineItemEntityV2 withAmountAfterDiscount(Double amountAfterDiscount) {
         this.amountAfterDiscount = amountAfterDiscount;
         return this;
@@ -314,6 +332,8 @@ public class OrderLineItemEntityV2  {
         this.amountAfterDiscount = amountAfterDiscount;
     }
 
+    
+
     public OrderLineItemEntityV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
@@ -333,6 +353,8 @@ public class OrderLineItemEntityV2  {
     public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
+
+    
 
     public OrderLineItemEntityV2 withAmountInfo(AmountInfomationV2 amountInfo) {
         this.amountInfo = amountInfo;
@@ -361,6 +383,8 @@ public class OrderLineItemEntityV2  {
         this.amountInfo = amountInfo;
     }
 
+    
+
     public OrderLineItemEntityV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -380,6 +404,8 @@ public class OrderLineItemEntityV2  {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
 
     public OrderLineItemEntityV2 withCategoryCode(String categoryCode) {
         this.categoryCode = categoryCode;
@@ -401,6 +427,8 @@ public class OrderLineItemEntityV2  {
         this.categoryCode = categoryCode;
     }
 
+    
+
     public OrderLineItemEntityV2 withProductOwnerService(String productOwnerService) {
         this.productOwnerService = productOwnerService;
         return this;
@@ -421,6 +449,8 @@ public class OrderLineItemEntityV2  {
         this.productOwnerService = productOwnerService;
     }
 
+    
+
     public OrderLineItemEntityV2 withCommercialResource(String commercialResource) {
         this.commercialResource = commercialResource;
         return this;
@@ -440,6 +470,9 @@ public class OrderLineItemEntityV2  {
     public void setCommercialResource(String commercialResource) {
         this.commercialResource = commercialResource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class PolicyCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enabled")
     
-    private Boolean enabled = true;
+    private Boolean enabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,7 +39,7 @@ public class PolicyCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operation_definition")
     
-    private PolicyoODCreate operationDefinition = null;
+    private PolicyoODCreate operationDefinition;
     /**
      * 策略类型，如备份，复制 Enum:[ backup，replication]
      */
@@ -129,7 +129,7 @@ public class PolicyCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger")
     
-    private PolicyTriggerReq trigger = null;
+    private PolicyTriggerReq trigger;
 
     public PolicyCreate withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -151,6 +151,8 @@ public class PolicyCreate  {
         this.enabled = enabled;
     }
 
+    
+
     public PolicyCreate withName(String name) {
         this.name = name;
         return this;
@@ -170,6 +172,8 @@ public class PolicyCreate  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PolicyCreate withOperationDefinition(PolicyoODCreate operationDefinition) {
         this.operationDefinition = operationDefinition;
@@ -198,6 +202,8 @@ public class PolicyCreate  {
         this.operationDefinition = operationDefinition;
     }
 
+    
+
     public PolicyCreate withOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
         return this;
@@ -217,6 +223,8 @@ public class PolicyCreate  {
     public void setOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
     }
+
+    
 
     public PolicyCreate withTrigger(PolicyTriggerReq trigger) {
         this.trigger = trigger;
@@ -244,6 +252,9 @@ public class PolicyCreate  {
     public void setTrigger(PolicyTriggerReq trigger) {
         this.trigger = trigger;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -175,13 +175,19 @@ public class ListTasksRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 100;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
     public ListTasksRequest withState(StateEnum state) {
         this.state = state;
@@ -203,6 +209,8 @@ public class ListTasksRequest  {
         this.state = state;
     }
 
+    
+
     public ListTasksRequest withName(String name) {
         this.name = name;
         return this;
@@ -222,6 +230,8 @@ public class ListTasksRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListTasksRequest withId(String id) {
         this.id = id;
@@ -243,6 +253,8 @@ public class ListTasksRequest  {
         this.id = id;
     }
 
+    
+
     public ListTasksRequest withSourceServerId(String sourceServerId) {
         this.sourceServerId = sourceServerId;
         return this;
@@ -262,6 +274,8 @@ public class ListTasksRequest  {
     public void setSourceServerId(String sourceServerId) {
         this.sourceServerId = sourceServerId;
     }
+
+    
 
     public ListTasksRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -285,6 +299,8 @@ public class ListTasksRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListTasksRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -306,6 +322,31 @@ public class ListTasksRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
+    public ListTasksRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get enterpriseProjectId
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -320,11 +361,12 @@ public class ListTasksRequest  {
             Objects.equals(this.id, listTasksRequest.id) &&
             Objects.equals(this.sourceServerId, listTasksRequest.sourceServerId) &&
             Objects.equals(this.limit, listTasksRequest.limit) &&
-            Objects.equals(this.offset, listTasksRequest.offset);
+            Objects.equals(this.offset, listTasksRequest.offset) &&
+            Objects.equals(this.enterpriseProjectId, listTasksRequest.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(state, name, id, sourceServerId, limit, offset);
+        return Objects.hash(state, name, id, sourceServerId, limit, offset, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -336,6 +378,7 @@ public class ListTasksRequest  {
         sb.append("    sourceServerId: ").append(toIndentedString(sourceServerId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

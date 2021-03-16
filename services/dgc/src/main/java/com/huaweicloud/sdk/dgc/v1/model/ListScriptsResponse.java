@@ -54,6 +54,8 @@ public class ListScriptsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListScriptsResponse withScripts(List<ScriptInfo> scripts) {
         this.scripts = scripts;
         return this;
@@ -61,9 +63,6 @@ public class ListScriptsResponse extends SdkResponse {
 
     
     public ListScriptsResponse addScriptsItem(ScriptInfo scriptsItem) {
-        if (this.scripts == null) {
-            this.scripts = new ArrayList<>();
-        }
         this.scripts.add(scriptsItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListScriptsResponse extends SdkResponse {
     public void setScripts(List<ScriptInfo> scripts) {
         this.scripts = scripts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

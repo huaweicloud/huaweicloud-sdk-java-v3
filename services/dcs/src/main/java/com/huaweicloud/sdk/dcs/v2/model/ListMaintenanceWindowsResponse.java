@@ -35,9 +35,6 @@ public class ListMaintenanceWindowsResponse extends SdkResponse {
 
     
     public ListMaintenanceWindowsResponse addMaintainWindowsItem(MaintainWindowsEntity maintainWindowsItem) {
-        if (this.maintainWindows == null) {
-            this.maintainWindows = new ArrayList<>();
-        }
         this.maintainWindows.add(maintainWindowsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListMaintenanceWindowsResponse extends SdkResponse {
     public void setMaintainWindows(List<MaintainWindowsEntity> maintainWindows) {
         this.maintainWindows = maintainWindows;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

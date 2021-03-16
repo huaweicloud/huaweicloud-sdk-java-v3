@@ -63,6 +63,8 @@ public class DebugApiV2Response extends SdkResponse {
         this.request = request;
     }
 
+    
+
     public DebugApiV2Response withResponse(String response) {
         this.response = response;
         return this;
@@ -82,6 +84,8 @@ public class DebugApiV2Response extends SdkResponse {
     public void setResponse(String response) {
         this.response = response;
     }
+
+    
 
     public DebugApiV2Response withLatency(String latency) {
         this.latency = latency;
@@ -103,6 +107,8 @@ public class DebugApiV2Response extends SdkResponse {
         this.latency = latency;
     }
 
+    
+
     public DebugApiV2Response withLog(String log) {
         this.log = log;
         return this;
@@ -122,6 +128,9 @@ public class DebugApiV2Response extends SdkResponse {
     public void setLog(String log) {
         this.log = log;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -33,13 +33,13 @@ public class ListProductTopicsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListProductTopicsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -60,6 +60,8 @@ public class ListProductTopicsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListProductTopicsRequest withProductId(Integer productId) {
         this.productId = productId;
@@ -83,6 +85,8 @@ public class ListProductTopicsRequest  {
         this.productId = productId;
     }
 
+    
+
     public ListProductTopicsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -105,6 +109,8 @@ public class ListProductTopicsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListProductTopicsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -126,6 +132,9 @@ public class ListProductTopicsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

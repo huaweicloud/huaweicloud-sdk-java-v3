@@ -22,7 +22,7 @@ public class CreatePersonalRealnameAuthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApplyIndividualRealnameAuthsReq body = null;
+    private ApplyIndividualRealnameAuthsReq body;
 
     public CreatePersonalRealnameAuthRequest withBody(ApplyIndividualRealnameAuthsReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePersonalRealnameAuthRequest  {
     public void setBody(ApplyIndividualRealnameAuthsReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

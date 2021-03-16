@@ -299,7 +299,7 @@ public class VpcBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_type")
     
-    private MemberTypeEnum memberType = MemberTypeEnum.ECS;
+    private MemberTypeEnum memberType;
 
     public VpcBase withName(String name) {
         this.name = name;
@@ -321,6 +321,8 @@ public class VpcBase  {
         this.name = name;
     }
 
+    
+
     public VpcBase withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -340,6 +342,8 @@ public class VpcBase  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public VpcBase withPort(Integer port) {
         this.port = port;
@@ -361,6 +365,8 @@ public class VpcBase  {
         this.port = port;
     }
 
+    
+
     public VpcBase withBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
@@ -381,6 +387,8 @@ public class VpcBase  {
         this.balanceStrategy = balanceStrategy;
     }
 
+    
+
     public VpcBase withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
         return this;
@@ -400,6 +408,9 @@ public class VpcBase  {
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

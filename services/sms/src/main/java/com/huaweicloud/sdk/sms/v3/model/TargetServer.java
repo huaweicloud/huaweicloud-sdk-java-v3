@@ -245,7 +245,7 @@ public class TargetServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<TargetDisk> disks = new ArrayList<>();
+    private List<TargetDisk> disks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -447,6 +447,8 @@ public class TargetServer  {
         this.id = id;
     }
 
+    
+
     public TargetServer withIp(String ip) {
         this.ip = ip;
         return this;
@@ -466,6 +468,8 @@ public class TargetServer  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public TargetServer withName(String name) {
         this.name = name;
@@ -487,6 +491,8 @@ public class TargetServer  {
         this.name = name;
     }
 
+    
+
     public TargetServer withHostname(String hostname) {
         this.hostname = hostname;
         return this;
@@ -506,6 +512,8 @@ public class TargetServer  {
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
+
+    
 
     public TargetServer withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -527,6 +535,8 @@ public class TargetServer  {
         this.osType = osType;
     }
 
+    
+
     public TargetServer withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
@@ -547,6 +557,8 @@ public class TargetServer  {
         this.osVersion = osVersion;
     }
 
+    
+
     public TargetServer withFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
         return this;
@@ -566,6 +578,8 @@ public class TargetServer  {
     public void setFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
     }
+
+    
 
     public TargetServer withCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
@@ -589,6 +603,8 @@ public class TargetServer  {
         this.cpuQuantity = cpuQuantity;
     }
 
+    
+
     public TargetServer withMemory(Long memory) {
         this.memory = memory;
         return this;
@@ -610,6 +626,8 @@ public class TargetServer  {
     public void setMemory(Long memory) {
         this.memory = memory;
     }
+
+    
 
     public TargetServer withDisks(List<TargetDisk> disks) {
         this.disks = disks;
@@ -642,6 +660,8 @@ public class TargetServer  {
         this.disks = disks;
     }
 
+    
+
     public TargetServer withBtrfsList(List<String> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
@@ -649,9 +669,6 @@ public class TargetServer  {
 
     
     public TargetServer addBtrfsListItem(String btrfsListItem) {
-        if (this.btrfsList == null) {
-            this.btrfsList = new ArrayList<>();
-        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
@@ -676,6 +693,8 @@ public class TargetServer  {
         this.btrfsList = btrfsList;
     }
 
+    
+
     public TargetServer withNetwork(List<NetWork> network) {
         this.network = network;
         return this;
@@ -683,9 +702,6 @@ public class TargetServer  {
 
     
     public TargetServer addNetworkItem(NetWork networkItem) {
-        if (this.network == null) {
-            this.network = new ArrayList<>();
-        }
         this.network.add(networkItem);
         return this;
     }
@@ -710,6 +726,8 @@ public class TargetServer  {
         this.network = network;
     }
 
+    
+
     public TargetServer withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -729,6 +747,8 @@ public class TargetServer  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public TargetServer withHasRsync(Boolean hasRsync) {
         this.hasRsync = hasRsync;
@@ -750,6 +770,8 @@ public class TargetServer  {
         this.hasRsync = hasRsync;
     }
 
+    
+
     public TargetServer withParavirtualization(Boolean paravirtualization) {
         this.paravirtualization = paravirtualization;
         return this;
@@ -769,6 +791,8 @@ public class TargetServer  {
     public void setParavirtualization(Boolean paravirtualization) {
         this.paravirtualization = paravirtualization;
     }
+
+    
 
     public TargetServer withRawDevices(Boolean rawDevices) {
         this.rawDevices = rawDevices;
@@ -790,6 +814,8 @@ public class TargetServer  {
         this.rawDevices = rawDevices;
     }
 
+    
+
     public TargetServer withDriverFiles(Boolean driverFiles) {
         this.driverFiles = driverFiles;
         return this;
@@ -809,6 +835,8 @@ public class TargetServer  {
     public void setDriverFiles(Boolean driverFiles) {
         this.driverFiles = driverFiles;
     }
+
+    
 
     public TargetServer withSystemServices(Boolean systemServices) {
         this.systemServices = systemServices;
@@ -830,6 +858,8 @@ public class TargetServer  {
         this.systemServices = systemServices;
     }
 
+    
+
     public TargetServer withAccountRights(Boolean accountRights) {
         this.accountRights = accountRights;
         return this;
@@ -849,6 +879,8 @@ public class TargetServer  {
     public void setAccountRights(Boolean accountRights) {
         this.accountRights = accountRights;
     }
+
+    
 
     public TargetServer withBootLoader(BootLoaderEnum bootLoader) {
         this.bootLoader = bootLoader;
@@ -870,6 +902,8 @@ public class TargetServer  {
         this.bootLoader = bootLoader;
     }
 
+    
+
     public TargetServer withSystemDir(String systemDir) {
         this.systemDir = systemDir;
         return this;
@@ -890,6 +924,8 @@ public class TargetServer  {
         this.systemDir = systemDir;
     }
 
+    
+
     public TargetServer withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
@@ -897,9 +933,6 @@ public class TargetServer  {
 
     
     public TargetServer addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if (this.volumeGroups == null) {
-            this.volumeGroups = new ArrayList<>();
-        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
@@ -924,6 +957,8 @@ public class TargetServer  {
         this.volumeGroups = volumeGroups;
     }
 
+    
+
     public TargetServer withVmId(String vmId) {
         this.vmId = vmId;
         return this;
@@ -943,6 +978,8 @@ public class TargetServer  {
     public void setVmId(String vmId) {
         this.vmId = vmId;
     }
+
+    
 
     public TargetServer withFlavor(String flavor) {
         this.flavor = flavor;
@@ -964,6 +1001,8 @@ public class TargetServer  {
         this.flavor = flavor;
     }
 
+    
+
     public TargetServer withImageDiskId(String imageDiskId) {
         this.imageDiskId = imageDiskId;
         return this;
@@ -983,6 +1022,8 @@ public class TargetServer  {
     public void setImageDiskId(String imageDiskId) {
         this.imageDiskId = imageDiskId;
     }
+
+    
 
     public TargetServer withSnapshotIds(String snapshotIds) {
         this.snapshotIds = snapshotIds;
@@ -1004,6 +1045,8 @@ public class TargetServer  {
         this.snapshotIds = snapshotIds;
     }
 
+    
+
     public TargetServer withRollbackSnapshotIds(String rollbackSnapshotIds) {
         this.rollbackSnapshotIds = rollbackSnapshotIds;
         return this;
@@ -1023,6 +1066,9 @@ public class TargetServer  {
     public void setRollbackSnapshotIds(String rollbackSnapshotIds) {
         this.rollbackSnapshotIds = rollbackSnapshotIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

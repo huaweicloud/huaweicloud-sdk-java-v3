@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * 工作项重要程度
  */
-public class IssueItemSFV4Severity  {
+public class IssueItemSfV4Severity  {
 
 
 
@@ -29,7 +29,7 @@ public class IssueItemSFV4Severity  {
     
     private String name;
 
-    public IssueItemSFV4Severity withId(Integer id) {
+    public IssueItemSfV4Severity withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -49,7 +49,9 @@ public class IssueItemSFV4Severity  {
         this.id = id;
     }
 
-    public IssueItemSFV4Severity withName(String name) {
+    
+
+    public IssueItemSfV4Severity withName(String name) {
         this.name = name;
         return this;
     }
@@ -68,6 +70,9 @@ public class IssueItemSFV4Severity  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -76,9 +81,9 @@ public class IssueItemSFV4Severity  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        IssueItemSFV4Severity issueItemSFV4Severity = (IssueItemSFV4Severity) o;
-        return Objects.equals(this.id, issueItemSFV4Severity.id) &&
-            Objects.equals(this.name, issueItemSFV4Severity.name);
+        IssueItemSfV4Severity issueItemSfV4Severity = (IssueItemSfV4Severity) o;
+        return Objects.equals(this.id, issueItemSfV4Severity.id) &&
+            Objects.equals(this.name, issueItemSfV4Severity.name);
     }
     @Override
     public int hashCode() {
@@ -87,7 +92,7 @@ public class IssueItemSFV4Severity  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class IssueItemSFV4Severity {\n");
+        sb.append("class IssueItemSfV4Severity {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

@@ -34,7 +34,7 @@ public class AddingBackendInstancesV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VpcMemberCreate body = null;
+    private VpcMemberCreate body;
 
     public AddingBackendInstancesV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class AddingBackendInstancesV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public AddingBackendInstancesV2Request withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
         return this;
@@ -75,6 +77,8 @@ public class AddingBackendInstancesV2Request  {
     public void setVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
     }
+
+    
 
     public AddingBackendInstancesV2Request withBody(VpcMemberCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class AddingBackendInstancesV2Request  {
     public void setBody(VpcMemberCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

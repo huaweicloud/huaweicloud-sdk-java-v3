@@ -22,7 +22,7 @@ public class SetBackupPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    private BackupPolicy backupPolicy = null;
+    private BackupPolicy backupPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class SetBackupPolicyRequestBody  {
         this.backupPolicy = backupPolicy;
     }
 
+    
+
     public SetBackupPolicyRequestBody withReserveBackups(Boolean reserveBackups) {
         this.reserveBackups = reserveBackups;
         return this;
@@ -76,6 +78,9 @@ public class SetBackupPolicyRequestBody  {
     public void setReserveBackups(Boolean reserveBackups) {
         this.reserveBackups = reserveBackups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

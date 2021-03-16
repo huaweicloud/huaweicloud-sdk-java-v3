@@ -21,7 +21,7 @@ public class Crop  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    private Integer duration = 0;
+    private Integer duration;
 
     public Crop withDuration(Integer duration) {
         this.duration = duration;
@@ -44,6 +44,9 @@ public class Crop  {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -193,6 +193,8 @@ public class MonthlyBillRes  {
         this.cycle = cycle;
     }
 
+    
+
     public MonthlyBillRes withBillType(Integer billType) {
         this.billType = billType;
         return this;
@@ -212,6 +214,8 @@ public class MonthlyBillRes  {
     public void setBillType(Integer billType) {
         this.billType = billType;
     }
+
+    
 
     public MonthlyBillRes withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -233,6 +237,8 @@ public class MonthlyBillRes  {
         this.customerId = customerId;
     }
 
+    
+
     public MonthlyBillRes withRegion(String region) {
         this.region = region;
         return this;
@@ -252,6 +258,8 @@ public class MonthlyBillRes  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public MonthlyBillRes withRegionName(String regionName) {
         this.regionName = regionName;
@@ -273,6 +281,8 @@ public class MonthlyBillRes  {
         this.regionName = regionName;
     }
 
+    
+
     public MonthlyBillRes withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
@@ -292,6 +302,8 @@ public class MonthlyBillRes  {
     public void setCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
     }
+
+    
 
     public MonthlyBillRes withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
@@ -313,6 +325,8 @@ public class MonthlyBillRes  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
+    
+
     public MonthlyBillRes withResInstanceId(String resInstanceId) {
         this.resInstanceId = resInstanceId;
         return this;
@@ -332,6 +346,8 @@ public class MonthlyBillRes  {
     public void setResInstanceId(String resInstanceId) {
         this.resInstanceId = resInstanceId;
     }
+
+    
 
     public MonthlyBillRes withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -353,6 +369,8 @@ public class MonthlyBillRes  {
         this.resourceName = resourceName;
     }
 
+    
+
     public MonthlyBillRes withResourceTag(String resourceTag) {
         this.resourceTag = resourceTag;
         return this;
@@ -372,6 +390,8 @@ public class MonthlyBillRes  {
     public void setResourceTag(String resourceTag) {
         this.resourceTag = resourceTag;
     }
+
+    
 
     public MonthlyBillRes withSkuCode(String skuCode) {
         this.skuCode = skuCode;
@@ -393,6 +413,8 @@ public class MonthlyBillRes  {
         this.skuCode = skuCode;
     }
 
+    
+
     public MonthlyBillRes withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -412,6 +434,8 @@ public class MonthlyBillRes  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public MonthlyBillRes withEnterpriseProjectName(String enterpriseProjectName) {
         this.enterpriseProjectName = enterpriseProjectName;
@@ -433,6 +457,8 @@ public class MonthlyBillRes  {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
+    
+
     public MonthlyBillRes withChargeMode(Integer chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -452,6 +478,8 @@ public class MonthlyBillRes  {
     public void setChargeMode(Integer chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public MonthlyBillRes withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
@@ -473,6 +501,8 @@ public class MonthlyBillRes  {
         this.consumeAmount = consumeAmount;
     }
 
+    
+
     public MonthlyBillRes withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
@@ -492,6 +522,8 @@ public class MonthlyBillRes  {
     public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
+
+    
 
     public MonthlyBillRes withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
@@ -513,6 +545,8 @@ public class MonthlyBillRes  {
         this.creditAmount = creditAmount;
     }
 
+    
+
     public MonthlyBillRes withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
@@ -532,6 +566,8 @@ public class MonthlyBillRes  {
     public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
+
+    
 
     public MonthlyBillRes withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
@@ -553,6 +589,8 @@ public class MonthlyBillRes  {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
+    
+
     public MonthlyBillRes withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
@@ -572,6 +610,8 @@ public class MonthlyBillRes  {
     public void setStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
     }
+
+    
 
     public MonthlyBillRes withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
@@ -593,6 +633,8 @@ public class MonthlyBillRes  {
         this.bonusAmount = bonusAmount;
     }
 
+    
+
     public MonthlyBillRes withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
@@ -612,6 +654,8 @@ public class MonthlyBillRes  {
     public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
+
+    
 
     public MonthlyBillRes withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
@@ -633,6 +677,8 @@ public class MonthlyBillRes  {
         this.adjustmentAmount = adjustmentAmount;
     }
 
+    
+
     public MonthlyBillRes withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
@@ -652,6 +698,8 @@ public class MonthlyBillRes  {
     public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
+
+    
 
     public MonthlyBillRes withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
@@ -673,6 +721,8 @@ public class MonthlyBillRes  {
         this.discountAmount = discountAmount;
     }
 
+    
+
     public MonthlyBillRes withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -692,6 +742,9 @@ public class MonthlyBillRes  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

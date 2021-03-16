@@ -36,7 +36,7 @@ public class DeleteServersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="servers")
     
-    private List<ServerId> servers = new ArrayList<>();
+    private List<ServerId> servers = null;
     
     public DeleteServersRequestBody withDeletePublicip(Boolean deletePublicip) {
         this.deletePublicip = deletePublicip;
@@ -58,6 +58,8 @@ public class DeleteServersRequestBody  {
         this.deletePublicip = deletePublicip;
     }
 
+    
+
     public DeleteServersRequestBody withDeleteVolume(Boolean deleteVolume) {
         this.deleteVolume = deleteVolume;
         return this;
@@ -77,6 +79,8 @@ public class DeleteServersRequestBody  {
     public void setDeleteVolume(Boolean deleteVolume) {
         this.deleteVolume = deleteVolume;
     }
+
+    
 
     public DeleteServersRequestBody withServers(List<ServerId> servers) {
         this.servers = servers;
@@ -108,6 +112,9 @@ public class DeleteServersRequestBody  {
     public void setServers(List<ServerId> servers) {
         this.servers = servers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

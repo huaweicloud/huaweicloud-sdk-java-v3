@@ -116,7 +116,7 @@ public class UpdateDataIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DataIpRequest body = null;
+    private DataIpRequest body;
 
     public UpdateDataIpRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class UpdateDataIpRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UpdateDataIpRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class UpdateDataIpRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateDataIpRequest withBody(DataIpRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class UpdateDataIpRequest  {
     public void setBody(DataIpRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

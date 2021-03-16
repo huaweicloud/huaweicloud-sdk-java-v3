@@ -69,6 +69,8 @@ public class ShowDDosResponse extends SdkResponse {
         this.enableL7 = enableL7;
     }
 
+    
+
     public ShowDDosResponse withTrafficPosId(Long trafficPosId) {
         this.trafficPosId = trafficPosId;
         return this;
@@ -88,6 +90,8 @@ public class ShowDDosResponse extends SdkResponse {
     public void setTrafficPosId(Long trafficPosId) {
         this.trafficPosId = trafficPosId;
     }
+
+    
 
     public ShowDDosResponse withHttpRequestPosId(Long httpRequestPosId) {
         this.httpRequestPosId = httpRequestPosId;
@@ -109,6 +113,8 @@ public class ShowDDosResponse extends SdkResponse {
         this.httpRequestPosId = httpRequestPosId;
     }
 
+    
+
     public ShowDDosResponse withCleaningAccessPosId(Long cleaningAccessPosId) {
         this.cleaningAccessPosId = cleaningAccessPosId;
         return this;
@@ -129,6 +135,8 @@ public class ShowDDosResponse extends SdkResponse {
         this.cleaningAccessPosId = cleaningAccessPosId;
     }
 
+    
+
     public ShowDDosResponse withAppTypeId(Long appTypeId) {
         this.appTypeId = appTypeId;
         return this;
@@ -148,6 +156,9 @@ public class ShowDDosResponse extends SdkResponse {
     public void setAppTypeId(Long appTypeId) {
         this.appTypeId = appTypeId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

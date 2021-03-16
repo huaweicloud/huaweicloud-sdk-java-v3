@@ -42,9 +42,6 @@ public class ListExtendsParamsResponse extends SdkResponse {
 
     
     public ListExtendsParamsResponse addExtendsParamsItem(ExtendsParamV2 extendsParamsItem) {
-        if (this.extendsParams == null) {
-            this.extendsParams = new ArrayList<>();
-        }
         this.extendsParams.add(extendsParamsItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class ListExtendsParamsResponse extends SdkResponse {
         this.extendsParams = extendsParams;
     }
 
+    
+
     public ListExtendsParamsResponse withCommonParams(List<CommonParamV2> commonParams) {
         this.commonParams = commonParams;
         return this;
@@ -76,9 +75,6 @@ public class ListExtendsParamsResponse extends SdkResponse {
 
     
     public ListExtendsParamsResponse addCommonParamsItem(CommonParamV2 commonParamsItem) {
-        if (this.commonParams == null) {
-            this.commonParams = new ArrayList<>();
-        }
         this.commonParams.add(commonParamsItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class ListExtendsParamsResponse extends SdkResponse {
     public void setCommonParams(List<CommonParamV2> commonParams) {
         this.commonParams = commonParams;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

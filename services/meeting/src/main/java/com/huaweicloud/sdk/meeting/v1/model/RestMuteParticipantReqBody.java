@@ -42,6 +42,9 @@ public class RestMuteParticipantReqBody  {
     public void setIsMute(Integer isMute) {
         this.isMute = isMute;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

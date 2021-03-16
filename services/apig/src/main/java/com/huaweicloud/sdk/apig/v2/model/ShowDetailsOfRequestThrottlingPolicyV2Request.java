@@ -49,6 +49,8 @@ public class ShowDetailsOfRequestThrottlingPolicyV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfRequestThrottlingPolicyV2Request withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
@@ -68,6 +70,9 @@ public class ShowDetailsOfRequestThrottlingPolicyV2Request  {
     public void setThrottleId(String throttleId) {
         this.throttleId = throttleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ListLiveDataDataSourcesV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListLiveDataDataSourcesV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class ListLiveDataDataSourcesV2Request  {
         this.appId = appId;
     }
 
+    
+
     public ListLiveDataDataSourcesV2Request withName(String name) {
         this.name = name;
         return this;
@@ -94,6 +98,9 @@ public class ListLiveDataDataSourcesV2Request  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

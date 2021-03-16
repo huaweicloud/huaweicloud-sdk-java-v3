@@ -51,6 +51,8 @@ public class CreateSubCustomerResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
+    
+
     public CreateSubCustomerResponse withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -70,6 +72,9 @@ public class CreateSubCustomerResponse extends SdkResponse {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

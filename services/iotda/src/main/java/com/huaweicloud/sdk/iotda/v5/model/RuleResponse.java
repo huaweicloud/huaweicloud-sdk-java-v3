@@ -43,13 +43,13 @@ public class RuleResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition_group")
     
-    private ConditionGroup conditionGroup = null;
+    private ConditionGroup conditionGroup;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="actions")
     
-    private List<RuleAction> actions = new ArrayList<>();
+    private List<RuleAction> actions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,6 +101,8 @@ public class RuleResponse  {
         this.ruleId = ruleId;
     }
 
+    
+
     public RuleResponse withName(String name) {
         this.name = name;
         return this;
@@ -121,6 +123,8 @@ public class RuleResponse  {
         this.name = name;
     }
 
+    
+
     public RuleResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -140,6 +144,8 @@ public class RuleResponse  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public RuleResponse withConditionGroup(ConditionGroup conditionGroup) {
         this.conditionGroup = conditionGroup;
@@ -167,6 +173,8 @@ public class RuleResponse  {
     public void setConditionGroup(ConditionGroup conditionGroup) {
         this.conditionGroup = conditionGroup;
     }
+
+    
 
     public RuleResponse withActions(List<RuleAction> actions) {
         this.actions = actions;
@@ -199,6 +207,8 @@ public class RuleResponse  {
         this.actions = actions;
     }
 
+    
+
     public RuleResponse withRuleType(String ruleType) {
         this.ruleType = ruleType;
         return this;
@@ -218,6 +228,8 @@ public class RuleResponse  {
     public void setRuleType(String ruleType) {
         this.ruleType = ruleType;
     }
+
+    
 
     public RuleResponse withStatus(String status) {
         this.status = status;
@@ -239,6 +251,8 @@ public class RuleResponse  {
         this.status = status;
     }
 
+    
+
     public RuleResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -259,6 +273,8 @@ public class RuleResponse  {
         this.appId = appId;
     }
 
+    
+
     public RuleResponse withEdgeNodeIds(List<String> edgeNodeIds) {
         this.edgeNodeIds = edgeNodeIds;
         return this;
@@ -266,9 +282,6 @@ public class RuleResponse  {
 
     
     public RuleResponse addEdgeNodeIdsItem(String edgeNodeIdsItem) {
-        if (this.edgeNodeIds == null) {
-            this.edgeNodeIds = new ArrayList<>();
-        }
         this.edgeNodeIds.add(edgeNodeIdsItem);
         return this;
     }
@@ -293,6 +306,8 @@ public class RuleResponse  {
         this.edgeNodeIds = edgeNodeIds;
     }
 
+    
+
     public RuleResponse withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
@@ -312,6 +327,9 @@ public class RuleResponse  {
     public void setLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

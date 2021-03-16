@@ -24,7 +24,7 @@ public class ApplicationConfigModifyConfiguration  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="env")
     
-    private List<ApplicationConfigModifyConfigurationEnv> env = new ArrayList<>();
+    private List<ApplicationConfigModifyConfigurationEnv> env = null;
     
     public ApplicationConfigModifyConfiguration withEnv(List<ApplicationConfigModifyConfigurationEnv> env) {
         this.env = env;
@@ -56,6 +56,9 @@ public class ApplicationConfigModifyConfiguration  {
     public void setEnv(List<ApplicationConfigModifyConfigurationEnv> env) {
         this.env = env;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -318,7 +318,7 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_files")
     
-    private BackupFilesBody backupFiles = null;
+    private BackupFilesBody backupFiles;
     /**
      * 网络类型，包括vpc和vpn两种类型。
      */
@@ -408,13 +408,13 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_instance")
     
-    private SourceInstanceBody sourceInstance = null;
+    private SourceInstanceBody sourceInstance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_instance")
     
-    private TargetInstanceBody targetInstance = null;
+    private TargetInstanceBody targetInstance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -448,6 +448,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
+    
+
     public ShowMigrationTaskResponse withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -467,6 +469,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public ShowMigrationTaskResponse withDescription(String description) {
         this.description = description;
@@ -488,6 +492,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowMigrationTaskResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -507,6 +513,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public ShowMigrationTaskResponse withMigrationType(MigrationTypeEnum migrationType) {
         this.migrationType = migrationType;
@@ -528,6 +536,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.migrationType = migrationType;
     }
 
+    
+
     public ShowMigrationTaskResponse withMigrationMethod(MigrationMethodEnum migrationMethod) {
         this.migrationMethod = migrationMethod;
         return this;
@@ -547,6 +557,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public void setMigrationMethod(MigrationMethodEnum migrationMethod) {
         this.migrationMethod = migrationMethod;
     }
+
+    
 
     public ShowMigrationTaskResponse withBackupFiles(BackupFilesBody backupFiles) {
         this.backupFiles = backupFiles;
@@ -575,6 +587,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.backupFiles = backupFiles;
     }
 
+    
+
     public ShowMigrationTaskResponse withNetworkType(NetworkTypeEnum networkType) {
         this.networkType = networkType;
         return this;
@@ -594,6 +608,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public void setNetworkType(NetworkTypeEnum networkType) {
         this.networkType = networkType;
     }
+
+    
 
     public ShowMigrationTaskResponse withSourceInstance(SourceInstanceBody sourceInstance) {
         this.sourceInstance = sourceInstance;
@@ -622,6 +638,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.sourceInstance = sourceInstance;
     }
 
+    
+
     public ShowMigrationTaskResponse withTargetInstance(TargetInstanceBody targetInstance) {
         this.targetInstance = targetInstance;
         return this;
@@ -649,6 +667,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.targetInstance = targetInstance;
     }
 
+    
+
     public ShowMigrationTaskResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -669,6 +689,8 @@ public class ShowMigrationTaskResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public ShowMigrationTaskResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -688,6 +710,9 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

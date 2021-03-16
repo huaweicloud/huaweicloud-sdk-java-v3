@@ -28,7 +28,7 @@ public class BatchCreateServerTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreateServerTagsRequestBody body = null;
+    private BatchCreateServerTagsRequestBody body;
 
     public BatchCreateServerTagsRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class BatchCreateServerTagsRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public BatchCreateServerTagsRequest withBody(BatchCreateServerTagsRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class BatchCreateServerTagsRequest  {
     public void setBody(BatchCreateServerTagsRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

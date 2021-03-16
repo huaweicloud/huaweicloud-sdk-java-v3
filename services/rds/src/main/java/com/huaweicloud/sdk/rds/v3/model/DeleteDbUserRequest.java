@@ -57,6 +57,8 @@ public class DeleteDbUserRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public DeleteDbUserRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class DeleteDbUserRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteDbUserRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -96,6 +100,9 @@ public class DeleteDbUserRequest  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

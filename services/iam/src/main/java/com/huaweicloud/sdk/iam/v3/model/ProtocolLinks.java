@@ -49,6 +49,8 @@ public class ProtocolLinks  {
         this.identityProvider = identityProvider;
     }
 
+    
+
     public ProtocolLinks withSelf(String self) {
         this.self = self;
         return this;
@@ -68,6 +70,9 @@ public class ProtocolLinks  {
     public void setSelf(String self) {
         this.self = self;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

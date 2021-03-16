@@ -49,6 +49,8 @@ public class DeleteDeviceRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteDeviceRequest withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -70,6 +72,9 @@ public class DeleteDeviceRequest  {
     public void setDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

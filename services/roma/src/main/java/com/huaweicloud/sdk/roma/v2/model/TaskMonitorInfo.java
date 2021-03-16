@@ -681,6 +681,8 @@ public class TaskMonitorInfo  {
         this.taskId = taskId;
     }
 
+    
+
     public TaskMonitorInfo withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -700,6 +702,8 @@ public class TaskMonitorInfo  {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public TaskMonitorInfo withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
@@ -721,6 +725,8 @@ public class TaskMonitorInfo  {
         this.taskType = taskType;
     }
 
+    
+
     public TaskMonitorInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -740,6 +746,8 @@ public class TaskMonitorInfo  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public TaskMonitorInfo withLastExecuteTime(Long lastExecuteTime) {
         this.lastExecuteTime = lastExecuteTime;
@@ -763,6 +771,8 @@ public class TaskMonitorInfo  {
         this.lastExecuteTime = lastExecuteTime;
     }
 
+    
+
     public TaskMonitorInfo withUseQuartzCron(Boolean useQuartzCron) {
         this.useQuartzCron = useQuartzCron;
         return this;
@@ -782,6 +792,8 @@ public class TaskMonitorInfo  {
     public void setUseQuartzCron(Boolean useQuartzCron) {
         this.useQuartzCron = useQuartzCron;
     }
+
+    
 
     public TaskMonitorInfo withCron(String cron) {
         this.cron = cron;
@@ -803,6 +815,8 @@ public class TaskMonitorInfo  {
         this.cron = cron;
     }
 
+    
+
     public TaskMonitorInfo withPeriod(PeriodEnum period) {
         this.period = period;
         return this;
@@ -822,6 +836,8 @@ public class TaskMonitorInfo  {
     public void setPeriod(PeriodEnum period) {
         this.period = period;
     }
+
+    
 
     public TaskMonitorInfo withDispatchInterval(Integer dispatchInterval) {
         this.dispatchInterval = dispatchInterval;
@@ -843,6 +859,8 @@ public class TaskMonitorInfo  {
         this.dispatchInterval = dispatchInterval;
     }
 
+    
+
     public TaskMonitorInfo withPosition(PositionEnum position) {
         this.position = position;
         return this;
@@ -862,6 +880,8 @@ public class TaskMonitorInfo  {
     public void setPosition(PositionEnum position) {
         this.position = position;
     }
+
+    
 
     public TaskMonitorInfo withExecuteStatus(ExecuteStatusEnum executeStatus) {
         this.executeStatus = executeStatus;
@@ -883,6 +903,8 @@ public class TaskMonitorInfo  {
         this.executeStatus = executeStatus;
     }
 
+    
+
     public TaskMonitorInfo withSourceAppId(String sourceAppId) {
         this.sourceAppId = sourceAppId;
         return this;
@@ -902,6 +924,8 @@ public class TaskMonitorInfo  {
     public void setSourceAppId(String sourceAppId) {
         this.sourceAppId = sourceAppId;
     }
+
+    
 
     public TaskMonitorInfo withSourceAppName(String sourceAppName) {
         this.sourceAppName = sourceAppName;
@@ -923,6 +947,8 @@ public class TaskMonitorInfo  {
         this.sourceAppName = sourceAppName;
     }
 
+    
+
     public TaskMonitorInfo withSourceInstanceId(String sourceInstanceId) {
         this.sourceInstanceId = sourceInstanceId;
         return this;
@@ -942,6 +968,8 @@ public class TaskMonitorInfo  {
     public void setSourceInstanceId(String sourceInstanceId) {
         this.sourceInstanceId = sourceInstanceId;
     }
+
+    
 
     public TaskMonitorInfo withTargetAppId(String targetAppId) {
         this.targetAppId = targetAppId;
@@ -963,6 +991,8 @@ public class TaskMonitorInfo  {
         this.targetAppId = targetAppId;
     }
 
+    
+
     public TaskMonitorInfo withTargetAppName(String targetAppName) {
         this.targetAppName = targetAppName;
         return this;
@@ -982,6 +1012,8 @@ public class TaskMonitorInfo  {
     public void setTargetAppName(String targetAppName) {
         this.targetAppName = targetAppName;
     }
+
+    
 
     public TaskMonitorInfo withTargetInstanceId(String targetInstanceId) {
         this.targetInstanceId = targetInstanceId;
@@ -1003,6 +1035,8 @@ public class TaskMonitorInfo  {
         this.targetInstanceId = targetInstanceId;
     }
 
+    
+
     public TaskMonitorInfo withExtType(ExtTypeEnum extType) {
         this.extType = extType;
         return this;
@@ -1022,6 +1056,8 @@ public class TaskMonitorInfo  {
     public void setExtType(ExtTypeEnum extType) {
         this.extType = extType;
     }
+
+    
 
     public TaskMonitorInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -1043,6 +1079,8 @@ public class TaskMonitorInfo  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public TaskMonitorInfo withTaskTag(String taskTag) {
         this.taskTag = taskTag;
         return this;
@@ -1062,6 +1100,9 @@ public class TaskMonitorInfo  {
     public void setTaskTag(String taskTag) {
         this.taskTag = taskTag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

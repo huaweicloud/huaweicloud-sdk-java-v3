@@ -81,6 +81,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.acceptJobNum = acceptJobNum;
     }
 
+    
+
     public ShowJobDetailResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -100,6 +102,8 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public ShowJobDetailResponse withIsAnswerVisibility(String isAnswerVisibility) {
         this.isAnswerVisibility = isAnswerVisibility;
@@ -121,6 +125,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.isAnswerVisibility = isAnswerVisibility;
     }
 
+    
+
     public ShowJobDetailResponse withIsScoreVisibility(String isScoreVisibility) {
         this.isScoreVisibility = isScoreVisibility;
         return this;
@@ -140,6 +146,8 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setIsScoreVisibility(String isScoreVisibility) {
         this.isScoreVisibility = isScoreVisibility;
     }
+
+    
 
     public ShowJobDetailResponse withAverageScore(String averageScore) {
         this.averageScore = averageScore;
@@ -161,6 +169,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.averageScore = averageScore;
     }
 
+    
+
     public ShowJobDetailResponse withScoreJobNum(Integer scoreJobNum) {
         this.scoreJobNum = scoreJobNum;
         return this;
@@ -181,6 +191,8 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.scoreJobNum = scoreJobNum;
     }
 
+    
+
     public ShowJobDetailResponse withSubmitJobNum(Integer submitJobNum) {
         this.submitJobNum = submitJobNum;
         return this;
@@ -200,6 +212,9 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setSubmitJobNum(Integer submitJobNum) {
         this.submitJobNum = submitJobNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

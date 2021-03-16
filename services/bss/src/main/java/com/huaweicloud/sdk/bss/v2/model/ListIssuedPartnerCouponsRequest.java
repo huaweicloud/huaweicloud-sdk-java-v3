@@ -87,13 +87,13 @@ public class ListIssuedPartnerCouponsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -121,6 +121,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.couponId = couponId;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -141,6 +143,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.customerId = customerId;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -160,6 +164,8 @@ public class ListIssuedPartnerCouponsRequest  {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    
 
     public ListIssuedPartnerCouponsRequest withCouponType(Integer couponType) {
         this.couponType = couponType;
@@ -183,6 +189,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.couponType = couponType;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -205,6 +213,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.status = status;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withCreateTimeBegin(String createTimeBegin) {
         this.createTimeBegin = createTimeBegin;
         return this;
@@ -224,6 +234,8 @@ public class ListIssuedPartnerCouponsRequest  {
     public void setCreateTimeBegin(String createTimeBegin) {
         this.createTimeBegin = createTimeBegin;
     }
+
+    
 
     public ListIssuedPartnerCouponsRequest withCreateTimeEnd(String createTimeEnd) {
         this.createTimeEnd = createTimeEnd;
@@ -245,6 +257,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.createTimeEnd = createTimeEnd;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withEffectiveTimeBegin(String effectiveTimeBegin) {
         this.effectiveTimeBegin = effectiveTimeBegin;
         return this;
@@ -264,6 +278,8 @@ public class ListIssuedPartnerCouponsRequest  {
     public void setEffectiveTimeBegin(String effectiveTimeBegin) {
         this.effectiveTimeBegin = effectiveTimeBegin;
     }
+
+    
 
     public ListIssuedPartnerCouponsRequest withEffectiveTimeEnd(String effectiveTimeEnd) {
         this.effectiveTimeEnd = effectiveTimeEnd;
@@ -285,6 +301,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.effectiveTimeEnd = effectiveTimeEnd;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withExpireTimeBegin(String expireTimeBegin) {
         this.expireTimeBegin = expireTimeBegin;
         return this;
@@ -305,6 +323,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.expireTimeBegin = expireTimeBegin;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withExpireTimeEnd(String expireTimeEnd) {
         this.expireTimeEnd = expireTimeEnd;
         return this;
@@ -324,6 +344,8 @@ public class ListIssuedPartnerCouponsRequest  {
     public void setExpireTimeEnd(String expireTimeEnd) {
         this.expireTimeEnd = expireTimeEnd;
     }
+
+    
 
     public ListIssuedPartnerCouponsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -347,6 +369,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -369,6 +393,8 @@ public class ListIssuedPartnerCouponsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListIssuedPartnerCouponsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -388,6 +414,9 @@ public class ListIssuedPartnerCouponsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -32,9 +32,6 @@ public class BatchDeleteScalingConfigsRequestBody  {
 
     
     public BatchDeleteScalingConfigsRequestBody addScalingConfigurationIdItem(String scalingConfigurationIdItem) {
-        if (this.scalingConfigurationId == null) {
-            this.scalingConfigurationId = new ArrayList<>();
-        }
         this.scalingConfigurationId.add(scalingConfigurationIdItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class BatchDeleteScalingConfigsRequestBody  {
     public void setScalingConfigurationId(List<String> scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

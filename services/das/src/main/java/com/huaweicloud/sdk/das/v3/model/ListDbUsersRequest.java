@@ -155,6 +155,8 @@ public class ListDbUsersRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDbUsersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -174,6 +176,8 @@ public class ListDbUsersRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListDbUsersRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -195,6 +199,8 @@ public class ListDbUsersRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListDbUsersRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
@@ -215,6 +221,8 @@ public class ListDbUsersRequest  {
         this.dbUserId = dbUserId;
     }
 
+    
+
     public ListDbUsersRequest withDbUsername(String dbUsername) {
         this.dbUsername = dbUsername;
         return this;
@@ -234,6 +242,8 @@ public class ListDbUsersRequest  {
     public void setDbUsername(String dbUsername) {
         this.dbUsername = dbUsername;
     }
+
+    
 
     public ListDbUsersRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -256,6 +266,9 @@ public class ListDbUsersRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

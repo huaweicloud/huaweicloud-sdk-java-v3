@@ -30,7 +30,7 @@ public class UpdateTopicAccessPolicyTopicsObject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policies")
     
-    private List<UpdateTopicAccessPolicyPoliciesObject> policies = new ArrayList<>();
+    private List<UpdateTopicAccessPolicyPoliciesObject> policies = null;
     
     public UpdateTopicAccessPolicyTopicsObject withName(String name) {
         this.name = name;
@@ -51,6 +51,8 @@ public class UpdateTopicAccessPolicyTopicsObject  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateTopicAccessPolicyTopicsObject withPolicies(List<UpdateTopicAccessPolicyPoliciesObject> policies) {
         this.policies = policies;
@@ -82,6 +84,9 @@ public class UpdateTopicAccessPolicyTopicsObject  {
     public void setPolicies(List<UpdateTopicAccessPolicyPoliciesObject> policies) {
         this.policies = policies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

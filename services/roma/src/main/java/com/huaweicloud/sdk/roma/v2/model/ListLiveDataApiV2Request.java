@@ -63,13 +63,13 @@ public class ListLiveDataApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListLiveDataApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -91,6 +91,8 @@ public class ListLiveDataApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListLiveDataApiV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -110,6 +112,8 @@ public class ListLiveDataApiV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ListLiveDataApiV2Request withAppName(String appName) {
         this.appName = appName;
@@ -131,6 +135,8 @@ public class ListLiveDataApiV2Request  {
         this.appName = appName;
     }
 
+    
+
     public ListLiveDataApiV2Request withName(String name) {
         this.name = name;
         return this;
@@ -150,6 +156,8 @@ public class ListLiveDataApiV2Request  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListLiveDataApiV2Request withStatus(String status) {
         this.status = status;
@@ -171,6 +179,8 @@ public class ListLiveDataApiV2Request  {
         this.status = status;
     }
 
+    
+
     public ListLiveDataApiV2Request withPath(String path) {
         this.path = path;
         return this;
@@ -190,6 +200,8 @@ public class ListLiveDataApiV2Request  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public ListLiveDataApiV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
@@ -211,6 +223,8 @@ public class ListLiveDataApiV2Request  {
         this.preciseSearch = preciseSearch;
     }
 
+    
+
     public ListLiveDataApiV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -230,6 +244,8 @@ public class ListLiveDataApiV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListLiveDataApiV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -252,6 +268,9 @@ public class ListLiveDataApiV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -61,6 +61,8 @@ public class CommonParamV2  {
         this.paramKey = paramKey;
     }
 
+    
+
     public CommonParamV2 withParamName(String paramName) {
         this.paramName = paramName;
         return this;
@@ -80,6 +82,8 @@ public class CommonParamV2  {
     public void setParamName(String paramName) {
         this.paramName = paramName;
     }
+
+    
 
     public CommonParamV2 withIsShow(Integer isShow) {
         this.isShow = isShow;
@@ -103,6 +107,8 @@ public class CommonParamV2  {
         this.isShow = isShow;
     }
 
+    
+
     public CommonParamV2 withIsRequired(Integer isRequired) {
         this.isRequired = isRequired;
         return this;
@@ -124,6 +130,9 @@ public class CommonParamV2  {
     public void setIsRequired(Integer isRequired) {
         this.isRequired = isRequired;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -21,7 +21,7 @@ public class UserFunctionDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enableRoom")
     
-    private Boolean enableRoom = false;
+    private Boolean enableRoom;
 
     public UserFunctionDTO withEnableRoom(Boolean enableRoom) {
         this.enableRoom = enableRoom;
@@ -42,6 +42,9 @@ public class UserFunctionDTO  {
     public void setEnableRoom(Boolean enableRoom) {
         this.enableRoom = enableRoom;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

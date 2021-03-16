@@ -67,6 +67,8 @@ public class EnvVariableResp  {
         this.variableValue = variableValue;
     }
 
+    
+
     public EnvVariableResp withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -86,6 +88,8 @@ public class EnvVariableResp  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public EnvVariableResp withGroupId(String groupId) {
         this.groupId = groupId;
@@ -107,6 +111,8 @@ public class EnvVariableResp  {
         this.groupId = groupId;
     }
 
+    
+
     public EnvVariableResp withId(String id) {
         this.id = id;
         return this;
@@ -127,6 +133,8 @@ public class EnvVariableResp  {
         this.id = id;
     }
 
+    
+
     public EnvVariableResp withVariableName(String variableName) {
         this.variableName = variableName;
         return this;
@@ -146,6 +154,9 @@ public class EnvVariableResp  {
     public void setVariableName(String variableName) {
         this.variableName = variableName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

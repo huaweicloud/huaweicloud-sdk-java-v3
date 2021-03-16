@@ -34,7 +34,7 @@ public class KeystoneUpdateProtocolRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private KeystoneUpdateProtocolRequestBody body = null;
+    private KeystoneUpdateProtocolRequestBody body;
 
     public KeystoneUpdateProtocolRequest withIdpId(String idpId) {
         this.idpId = idpId;
@@ -56,6 +56,8 @@ public class KeystoneUpdateProtocolRequest  {
         this.idpId = idpId;
     }
 
+    
+
     public KeystoneUpdateProtocolRequest withProtocolId(String protocolId) {
         this.protocolId = protocolId;
         return this;
@@ -75,6 +77,8 @@ public class KeystoneUpdateProtocolRequest  {
     public void setProtocolId(String protocolId) {
         this.protocolId = protocolId;
     }
+
+    
 
     public KeystoneUpdateProtocolRequest withBody(KeystoneUpdateProtocolRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class KeystoneUpdateProtocolRequest  {
     public void setBody(KeystoneUpdateProtocolRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

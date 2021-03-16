@@ -48,19 +48,19 @@ public class ChangeComponentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="runtime")
     
-    private RuntimeType runtime = null;
+    private RuntimeType runtime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="category")
     
-    private ComponentCategory category = null;
+    private ComponentCategory category;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sub_category")
     
-    private ComponentSubCategory subCategory = null;
+    private ComponentSubCategory subCategory;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,13 +84,13 @@ public class ChangeComponentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    private SourceObject source = null;
+    private SourceObject source;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="build")
     
-    private BuildInfo build = null;
+    private BuildInfo build;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -130,6 +130,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ChangeComponentResponse withName(String name) {
         this.name = name;
         return this;
@@ -149,6 +151,8 @@ public class ChangeComponentResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ChangeComponentResponse withStatus(Integer status) {
         this.status = status;
@@ -170,6 +174,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ChangeComponentResponse withRuntime(RuntimeType runtime) {
         this.runtime = runtime;
         return this;
@@ -189,6 +195,8 @@ public class ChangeComponentResponse extends SdkResponse {
     public void setRuntime(RuntimeType runtime) {
         this.runtime = runtime;
     }
+
+    
 
     public ChangeComponentResponse withCategory(ComponentCategory category) {
         this.category = category;
@@ -210,6 +218,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.category = category;
     }
 
+    
+
     public ChangeComponentResponse withSubCategory(ComponentSubCategory subCategory) {
         this.subCategory = subCategory;
         return this;
@@ -229,6 +239,8 @@ public class ChangeComponentResponse extends SdkResponse {
     public void setSubCategory(ComponentSubCategory subCategory) {
         this.subCategory = subCategory;
     }
+
+    
 
     public ChangeComponentResponse withDescription(String description) {
         this.description = description;
@@ -250,6 +262,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ChangeComponentResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -270,6 +284,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public ChangeComponentResponse withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
@@ -289,6 +305,8 @@ public class ChangeComponentResponse extends SdkResponse {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
 
     public ChangeComponentResponse withSource(SourceObject source) {
         this.source = source;
@@ -317,6 +335,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.source = source;
     }
 
+    
+
     public ChangeComponentResponse withBuild(BuildInfo build) {
         this.build = build;
         return this;
@@ -344,6 +364,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.build = build;
     }
 
+    
+
     public ChangeComponentResponse withPipelineIds(List<String> pipelineIds) {
         this.pipelineIds = pipelineIds;
         return this;
@@ -351,9 +373,6 @@ public class ChangeComponentResponse extends SdkResponse {
 
     
     public ChangeComponentResponse addPipelineIdsItem(String pipelineIdsItem) {
-        if (this.pipelineIds == null) {
-            this.pipelineIds = new ArrayList<>();
-        }
         this.pipelineIds.add(pipelineIdsItem);
         return this;
     }
@@ -378,6 +397,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.pipelineIds = pipelineIds;
     }
 
+    
+
     public ChangeComponentResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -398,6 +419,8 @@ public class ChangeComponentResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ChangeComponentResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -417,6 +440,9 @@ public class ChangeComponentResponse extends SdkResponse {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,13 +63,13 @@ public class ListApisBindedToAppV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListApisBindedToAppV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -91,6 +91,8 @@ public class ListApisBindedToAppV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListApisBindedToAppV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -110,6 +112,8 @@ public class ListApisBindedToAppV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ListApisBindedToAppV2Request withApiId(String apiId) {
         this.apiId = apiId;
@@ -131,6 +135,8 @@ public class ListApisBindedToAppV2Request  {
         this.apiId = apiId;
     }
 
+    
+
     public ListApisBindedToAppV2Request withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -150,6 +156,8 @@ public class ListApisBindedToAppV2Request  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
 
     public ListApisBindedToAppV2Request withGroupId(String groupId) {
         this.groupId = groupId;
@@ -171,6 +179,8 @@ public class ListApisBindedToAppV2Request  {
         this.groupId = groupId;
     }
 
+    
+
     public ListApisBindedToAppV2Request withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -190,6 +200,8 @@ public class ListApisBindedToAppV2Request  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    
 
     public ListApisBindedToAppV2Request withEnvId(String envId) {
         this.envId = envId;
@@ -211,6 +223,8 @@ public class ListApisBindedToAppV2Request  {
         this.envId = envId;
     }
 
+    
+
     public ListApisBindedToAppV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -230,6 +244,8 @@ public class ListApisBindedToAppV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListApisBindedToAppV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -252,6 +268,9 @@ public class ListApisBindedToAppV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

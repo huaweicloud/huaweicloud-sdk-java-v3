@@ -41,9 +41,6 @@ public class ListErrorLogsResponse extends SdkResponse {
 
     
     public ListErrorLogsResponse addErrorLogListItem(ErrorlogResult errorLogListItem) {
-        if (this.errorLogList == null) {
-            this.errorLogList = new ArrayList<>();
-        }
         this.errorLogList.add(errorLogListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListErrorLogsResponse extends SdkResponse {
         this.errorLogList = errorLogList;
     }
 
+    
+
     public ListErrorLogsResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
@@ -87,6 +86,9 @@ public class ListErrorLogsResponse extends SdkResponse {
     public void setTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

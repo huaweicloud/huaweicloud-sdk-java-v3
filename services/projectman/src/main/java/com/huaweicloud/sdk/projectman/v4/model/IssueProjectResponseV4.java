@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * IssueProjectResponseV4
+ * 项目信息
  */
 public class IssueProjectResponseV4  {
 
@@ -55,6 +55,8 @@ public class IssueProjectResponseV4  {
         this.projectId = projectId;
     }
 
+    
+
     public IssueProjectResponseV4 withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
@@ -75,6 +77,8 @@ public class IssueProjectResponseV4  {
         this.projectName = projectName;
     }
 
+    
+
     public IssueProjectResponseV4 withProjectNumId(Integer projectNumId) {
         this.projectNumId = projectNumId;
         return this;
@@ -94,6 +98,9 @@ public class IssueProjectResponseV4  {
     public void setProjectNumId(Integer projectNumId) {
         this.projectNumId = projectNumId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

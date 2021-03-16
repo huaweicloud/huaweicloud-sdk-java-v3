@@ -29,7 +29,7 @@ public class NeutronListFirewallRulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 2000;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,6 +81,8 @@ public class NeutronListFirewallRulesRequest  {
         this.marker = marker;
     }
 
+    
+
     public NeutronListFirewallRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -101,6 +103,8 @@ public class NeutronListFirewallRulesRequest  {
         this.limit = limit;
     }
 
+    
+
     public NeutronListFirewallRulesRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -108,9 +112,6 @@ public class NeutronListFirewallRulesRequest  {
 
     
     public NeutronListFirewallRulesRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -135,6 +136,8 @@ public class NeutronListFirewallRulesRequest  {
         this.id = id;
     }
 
+    
+
     public NeutronListFirewallRulesRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -142,9 +145,6 @@ public class NeutronListFirewallRulesRequest  {
 
     
     public NeutronListFirewallRulesRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -169,6 +169,8 @@ public class NeutronListFirewallRulesRequest  {
         this.name = name;
     }
 
+    
+
     public NeutronListFirewallRulesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -176,9 +178,6 @@ public class NeutronListFirewallRulesRequest  {
 
     
     public NeutronListFirewallRulesRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -203,6 +202,8 @@ public class NeutronListFirewallRulesRequest  {
         this.description = description;
     }
 
+    
+
     public NeutronListFirewallRulesRequest withAction(String action) {
         this.action = action;
         return this;
@@ -223,6 +224,8 @@ public class NeutronListFirewallRulesRequest  {
         this.action = action;
     }
 
+    
+
     public NeutronListFirewallRulesRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -242,6 +245,9 @@ public class NeutronListFirewallRulesRequest  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

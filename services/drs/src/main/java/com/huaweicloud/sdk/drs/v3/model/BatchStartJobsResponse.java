@@ -41,9 +41,6 @@ public class BatchStartJobsResponse extends SdkResponse {
 
     
     public BatchStartJobsResponse addResultsItem(StartJobResp resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class BatchStartJobsResponse extends SdkResponse {
         this.results = results;
     }
 
+    
+
     public BatchStartJobsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class BatchStartJobsResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

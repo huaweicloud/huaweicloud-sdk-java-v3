@@ -62,7 +62,7 @@ public class QueryInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private DatastoreItem datastore = null;
+    private DatastoreItem datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,7 +116,7 @@ public class QueryInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private BackupStrategyForItemResponse backupStrategy = null;
+    private BackupStrategyForItemResponse backupStrategy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -134,7 +134,7 @@ public class QueryInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="groups")
     
-    private List<GroupResponseItem> groups = new ArrayList<>();
+    private List<GroupResponseItem> groups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,7 +164,7 @@ public class QueryInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="actions")
     
-    private List<String> actions = new ArrayList<>();
+    private List<String> actions = null;
     
     public QueryInstanceResponse withId(String id) {
         this.id = id;
@@ -186,6 +186,8 @@ public class QueryInstanceResponse  {
         this.id = id;
     }
 
+    
+
     public QueryInstanceResponse withName(String name) {
         this.name = name;
         return this;
@@ -205,6 +207,8 @@ public class QueryInstanceResponse  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public QueryInstanceResponse withStatus(String status) {
         this.status = status;
@@ -226,6 +230,8 @@ public class QueryInstanceResponse  {
         this.status = status;
     }
 
+    
+
     public QueryInstanceResponse withPort(String port) {
         this.port = port;
         return this;
@@ -245,6 +251,8 @@ public class QueryInstanceResponse  {
     public void setPort(String port) {
         this.port = port;
     }
+
+    
 
     public QueryInstanceResponse withMode(String mode) {
         this.mode = mode;
@@ -266,6 +274,8 @@ public class QueryInstanceResponse  {
         this.mode = mode;
     }
 
+    
+
     public QueryInstanceResponse withRegion(String region) {
         this.region = region;
         return this;
@@ -285,6 +295,8 @@ public class QueryInstanceResponse  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public QueryInstanceResponse withDatastore(DatastoreItem datastore) {
         this.datastore = datastore;
@@ -313,6 +325,8 @@ public class QueryInstanceResponse  {
         this.datastore = datastore;
     }
 
+    
+
     public QueryInstanceResponse withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -332,6 +346,8 @@ public class QueryInstanceResponse  {
     public void setEngine(String engine) {
         this.engine = engine;
     }
+
+    
 
     public QueryInstanceResponse withCreated(String created) {
         this.created = created;
@@ -353,6 +369,8 @@ public class QueryInstanceResponse  {
         this.created = created;
     }
 
+    
+
     public QueryInstanceResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -372,6 +390,8 @@ public class QueryInstanceResponse  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
 
     public QueryInstanceResponse withDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;
@@ -393,6 +413,8 @@ public class QueryInstanceResponse  {
         this.dbUserName = dbUserName;
     }
 
+    
+
     public QueryInstanceResponse withSsl(Integer ssl) {
         this.ssl = ssl;
         return this;
@@ -412,6 +434,8 @@ public class QueryInstanceResponse  {
     public void setSsl(Integer ssl) {
         this.ssl = ssl;
     }
+
+    
 
     public QueryInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -433,6 +457,8 @@ public class QueryInstanceResponse  {
         this.vpcId = vpcId;
     }
 
+    
+
     public QueryInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -453,6 +479,8 @@ public class QueryInstanceResponse  {
         this.subnetId = subnetId;
     }
 
+    
+
     public QueryInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -472,6 +500,8 @@ public class QueryInstanceResponse  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public QueryInstanceResponse withBackupStrategy(BackupStrategyForItemResponse backupStrategy) {
         this.backupStrategy = backupStrategy;
@@ -500,6 +530,8 @@ public class QueryInstanceResponse  {
         this.backupStrategy = backupStrategy;
     }
 
+    
+
     public QueryInstanceResponse withPayMode(String payMode) {
         this.payMode = payMode;
         return this;
@@ -520,6 +552,8 @@ public class QueryInstanceResponse  {
         this.payMode = payMode;
     }
 
+    
+
     public QueryInstanceResponse withMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
         return this;
@@ -539,6 +573,8 @@ public class QueryInstanceResponse  {
     public void setMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
     }
+
+    
 
     public QueryInstanceResponse withGroups(List<GroupResponseItem> groups) {
         this.groups = groups;
@@ -571,6 +607,8 @@ public class QueryInstanceResponse  {
         this.groups = groups;
     }
 
+    
+
     public QueryInstanceResponse withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
         return this;
@@ -590,6 +628,8 @@ public class QueryInstanceResponse  {
     public void setDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
     }
+
+    
 
     public QueryInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -611,6 +651,8 @@ public class QueryInstanceResponse  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public QueryInstanceResponse withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
@@ -631,6 +673,8 @@ public class QueryInstanceResponse  {
         this.timeZone = timeZone;
     }
 
+    
+
     public QueryInstanceResponse withDssPoolId(String dssPoolId) {
         this.dssPoolId = dssPoolId;
         return this;
@@ -650,6 +694,8 @@ public class QueryInstanceResponse  {
     public void setDssPoolId(String dssPoolId) {
         this.dssPoolId = dssPoolId;
     }
+
+    
 
     public QueryInstanceResponse withActions(List<String> actions) {
         this.actions = actions;
@@ -681,6 +727,9 @@ public class QueryInstanceResponse  {
     public void setActions(List<String> actions) {
         this.actions = actions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

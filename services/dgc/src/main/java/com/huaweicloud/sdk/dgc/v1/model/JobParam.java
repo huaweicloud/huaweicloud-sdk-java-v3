@@ -137,6 +137,8 @@ public class JobParam  {
         this.name = name;
     }
 
+    
+
     public JobParam withValue(String value) {
         this.value = value;
         return this;
@@ -157,6 +159,8 @@ public class JobParam  {
         this.value = value;
     }
 
+    
+
     public JobParam withParamType(ParamTypeEnum paramType) {
         this.paramType = paramType;
         return this;
@@ -176,6 +180,9 @@ public class JobParam  {
     public void setParamType(ParamTypeEnum paramType) {
         this.paramType = paramType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

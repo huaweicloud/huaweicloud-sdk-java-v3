@@ -28,7 +28,7 @@ public class UpdateAddonInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceRequest body = null;
+    private InstanceRequest body;
 
     public UpdateAddonInstanceRequest withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class UpdateAddonInstanceRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public UpdateAddonInstanceRequest withBody(InstanceRequest body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateAddonInstanceRequest  {
     public void setBody(InstanceRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

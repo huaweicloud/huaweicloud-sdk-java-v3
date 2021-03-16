@@ -24,7 +24,7 @@ public class NovaShowKeypairResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keypair")
     
-    private NovaKeypairDetail keypair = null;
+    private NovaKeypairDetail keypair;
 
     public NovaShowKeypairResponse withKeypair(NovaKeypairDetail keypair) {
         this.keypair = keypair;
@@ -52,6 +52,9 @@ public class NovaShowKeypairResponse extends SdkResponse {
     public void setKeypair(NovaKeypairDetail keypair) {
         this.keypair = keypair;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

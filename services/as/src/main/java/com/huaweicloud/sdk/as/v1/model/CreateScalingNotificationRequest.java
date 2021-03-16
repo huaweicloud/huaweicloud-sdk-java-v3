@@ -28,7 +28,7 @@ public class CreateScalingNotificationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateNotificationRequestBody body = null;
+    private CreateNotificationRequestBody body;
 
     public CreateScalingNotificationRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -49,6 +49,8 @@ public class CreateScalingNotificationRequest  {
     public void setScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
     }
+
+    
 
     public CreateScalingNotificationRequest withBody(CreateNotificationRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateScalingNotificationRequest  {
     public void setBody(CreateNotificationRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

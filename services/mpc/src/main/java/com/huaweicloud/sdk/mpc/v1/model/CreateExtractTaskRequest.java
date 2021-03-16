@@ -22,7 +22,7 @@ public class CreateExtractTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateExtractTaskReq body = null;
+    private CreateExtractTaskReq body;
 
     public CreateExtractTaskRequest withBody(CreateExtractTaskReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateExtractTaskRequest  {
     public void setBody(CreateExtractTaskReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

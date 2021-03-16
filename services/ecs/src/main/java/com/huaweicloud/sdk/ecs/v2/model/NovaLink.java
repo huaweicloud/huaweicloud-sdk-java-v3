@@ -143,6 +143,8 @@ public class NovaLink  {
         this.href = href;
     }
 
+    
+
     public NovaLink withRel(RelEnum rel) {
         this.rel = rel;
         return this;
@@ -162,6 +164,9 @@ public class NovaLink  {
     public void setRel(RelEnum rel) {
         this.rel = rel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

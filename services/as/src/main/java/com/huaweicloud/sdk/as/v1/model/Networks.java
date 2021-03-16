@@ -34,7 +34,7 @@ public class Networks  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_bandwidth")
     
-    private Ipv6Bandwidth ipv6Bandwidth = null;
+    private Ipv6Bandwidth ipv6Bandwidth;
 
     public Networks withId(String id) {
         this.id = id;
@@ -56,6 +56,8 @@ public class Networks  {
         this.id = id;
     }
 
+    
+
     public Networks withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -75,6 +77,8 @@ public class Networks  {
     public void setIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
     }
+
+    
 
     public Networks withIpv6Bandwidth(Ipv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
@@ -102,6 +106,9 @@ public class Networks  {
     public void setIpv6Bandwidth(Ipv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

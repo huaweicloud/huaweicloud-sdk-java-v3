@@ -27,13 +27,13 @@ public class ShowHisMeetingDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,13 +51,13 @@ public class ShowHisMeetingDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Type")
     
-    private Integer xType = 0;
+    private Integer xType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Query-Type")
     
-    private Integer xQueryType = 0;
+    private Integer xQueryType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,6 +91,8 @@ public class ShowHisMeetingDetailRequest  {
         this.confUUID = confUUID;
     }
 
+    
+
     public ShowHisMeetingDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -110,6 +112,8 @@ public class ShowHisMeetingDetailRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ShowHisMeetingDetailRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -131,6 +135,8 @@ public class ShowHisMeetingDetailRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowHisMeetingDetailRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -151,6 +157,8 @@ public class ShowHisMeetingDetailRequest  {
         this.searchKey = searchKey;
     }
 
+    
+
     public ShowHisMeetingDetailRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -170,6 +178,8 @@ public class ShowHisMeetingDetailRequest  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    
 
     public ShowHisMeetingDetailRequest withXType(Integer xType) {
         this.xType = xType;
@@ -193,6 +203,8 @@ public class ShowHisMeetingDetailRequest  {
         this.xType = xType;
     }
 
+    
+
     public ShowHisMeetingDetailRequest withXQueryType(Integer xQueryType) {
         this.xQueryType = xQueryType;
         return this;
@@ -214,6 +226,8 @@ public class ShowHisMeetingDetailRequest  {
     public void setXQueryType(Integer xQueryType) {
         this.xQueryType = xQueryType;
     }
+
+    
 
     public ShowHisMeetingDetailRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
@@ -237,6 +251,8 @@ public class ShowHisMeetingDetailRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
+    
+
     public ShowHisMeetingDetailRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
@@ -258,6 +274,9 @@ public class ShowHisMeetingDetailRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

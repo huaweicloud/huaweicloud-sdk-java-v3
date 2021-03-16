@@ -35,9 +35,6 @@ public class ListAreaCodesResponse extends SdkResponse {
 
     
     public ListAreaCodesResponse addAreaCodeListItem(AreaCodeSimpleInfoV2 areaCodeListItem) {
-        if (this.areaCodeList == null) {
-            this.areaCodeList = new ArrayList<>();
-        }
         this.areaCodeList.add(areaCodeListItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListAreaCodesResponse extends SdkResponse {
     public void setAreaCodeList(List<AreaCodeSimpleInfoV2> areaCodeList) {
         this.areaCodeList = areaCodeList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

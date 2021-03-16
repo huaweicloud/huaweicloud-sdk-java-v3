@@ -22,7 +22,7 @@ public class CreatePermanentAccessKeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePermanentAccessKeyRequestBody body = null;
+    private CreatePermanentAccessKeyRequestBody body;
 
     public CreatePermanentAccessKeyRequest withBody(CreatePermanentAccessKeyRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePermanentAccessKeyRequest  {
     public void setBody(CreatePermanentAccessKeyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

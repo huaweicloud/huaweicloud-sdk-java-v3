@@ -41,9 +41,6 @@ public class ListEnterpriseProjectResponse extends SdkResponse {
 
     
     public ListEnterpriseProjectResponse addEnterpriseProjectsItem(EpDetail enterpriseProjectsItem) {
-        if (this.enterpriseProjects == null) {
-            this.enterpriseProjects = new ArrayList<>();
-        }
         this.enterpriseProjects.add(enterpriseProjectsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListEnterpriseProjectResponse extends SdkResponse {
         this.enterpriseProjects = enterpriseProjects;
     }
 
+    
+
     public ListEnterpriseProjectResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -87,6 +86,9 @@ public class ListEnterpriseProjectResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

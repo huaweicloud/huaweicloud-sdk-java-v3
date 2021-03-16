@@ -67,6 +67,8 @@ public class ListDatabaseUsersRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDatabaseUsersRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -86,6 +88,8 @@ public class ListDatabaseUsersRequest  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public ListDatabaseUsersRequest withDbName(String dbName) {
         this.dbName = dbName;
@@ -107,6 +111,8 @@ public class ListDatabaseUsersRequest  {
         this.dbName = dbName;
     }
 
+    
+
     public ListDatabaseUsersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -127,6 +133,8 @@ public class ListDatabaseUsersRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListDatabaseUsersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -146,6 +154,9 @@ public class ListDatabaseUsersRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

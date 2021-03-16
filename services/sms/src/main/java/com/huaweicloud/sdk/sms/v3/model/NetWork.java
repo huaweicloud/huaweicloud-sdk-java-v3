@@ -79,6 +79,8 @@ public class NetWork  {
         this.name = name;
     }
 
+    
+
     public NetWork withIp(String ip) {
         this.ip = ip;
         return this;
@@ -98,6 +100,8 @@ public class NetWork  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public NetWork withNetmask(String netmask) {
         this.netmask = netmask;
@@ -119,6 +123,8 @@ public class NetWork  {
         this.netmask = netmask;
     }
 
+    
+
     public NetWork withGateway(String gateway) {
         this.gateway = gateway;
         return this;
@@ -138,6 +144,8 @@ public class NetWork  {
     public void setGateway(String gateway) {
         this.gateway = gateway;
     }
+
+    
 
     public NetWork withMtu(Integer mtu) {
         this.mtu = mtu;
@@ -161,6 +169,8 @@ public class NetWork  {
         this.mtu = mtu;
     }
 
+    
+
     public NetWork withMac(String mac) {
         this.mac = mac;
         return this;
@@ -181,6 +191,8 @@ public class NetWork  {
         this.mac = mac;
     }
 
+    
+
     public NetWork withId(String id) {
         this.id = id;
         return this;
@@ -200,6 +212,9 @@ public class NetWork  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

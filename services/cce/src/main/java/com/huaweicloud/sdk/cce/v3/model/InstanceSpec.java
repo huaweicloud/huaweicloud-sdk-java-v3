@@ -61,7 +61,7 @@ public class InstanceSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="values")
     
-    private Map<String, Object> values = new HashMap<>();
+    private Map<String, Object> values = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +76,6 @@ public class InstanceSpec  {
 
     
     public InstanceSpec addAddonTemplateLabelsItem(String addonTemplateLabelsItem) {
-        if (this.addonTemplateLabels == null) {
-            this.addonTemplateLabels = new ArrayList<>();
-        }
         this.addonTemplateLabels.add(addonTemplateLabelsItem);
         return this;
     }
@@ -103,6 +100,8 @@ public class InstanceSpec  {
         this.addonTemplateLabels = addonTemplateLabels;
     }
 
+    
+
     public InstanceSpec withAddonTemplateLogo(String addonTemplateLogo) {
         this.addonTemplateLogo = addonTemplateLogo;
         return this;
@@ -122,6 +121,8 @@ public class InstanceSpec  {
     public void setAddonTemplateLogo(String addonTemplateLogo) {
         this.addonTemplateLogo = addonTemplateLogo;
     }
+
+    
 
     public InstanceSpec withAddonTemplateName(String addonTemplateName) {
         this.addonTemplateName = addonTemplateName;
@@ -143,6 +144,8 @@ public class InstanceSpec  {
         this.addonTemplateName = addonTemplateName;
     }
 
+    
+
     public InstanceSpec withAddonTemplateType(String addonTemplateType) {
         this.addonTemplateType = addonTemplateType;
         return this;
@@ -162,6 +165,8 @@ public class InstanceSpec  {
     public void setAddonTemplateType(String addonTemplateType) {
         this.addonTemplateType = addonTemplateType;
     }
+
+    
 
     public InstanceSpec withClusterID(String clusterID) {
         this.clusterID = clusterID;
@@ -183,6 +188,8 @@ public class InstanceSpec  {
         this.clusterID = clusterID;
     }
 
+    
+
     public InstanceSpec withDescription(String description) {
         this.description = description;
         return this;
@@ -202,6 +209,8 @@ public class InstanceSpec  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public InstanceSpec withValues(Map<String, Object> values) {
         this.values = values;
@@ -234,6 +243,8 @@ public class InstanceSpec  {
         this.values = values;
     }
 
+    
+
     public InstanceSpec withVersion(String version) {
         this.version = version;
         return this;
@@ -253,6 +264,9 @@ public class InstanceSpec  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

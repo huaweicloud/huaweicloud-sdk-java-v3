@@ -303,13 +303,13 @@ public class VpcChannelInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_type")
     
-    private MemberTypeEnum memberType = MemberTypeEnum.ECS;
+    private MemberTypeEnum memberType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -427,6 +427,8 @@ public class VpcChannelInfo  {
         this.name = name;
     }
 
+    
+
     public VpcChannelInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -446,6 +448,8 @@ public class VpcChannelInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public VpcChannelInfo withPort(Integer port) {
         this.port = port;
@@ -467,6 +471,8 @@ public class VpcChannelInfo  {
         this.port = port;
     }
 
+    
+
     public VpcChannelInfo withBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
@@ -486,6 +492,8 @@ public class VpcChannelInfo  {
     public void setBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
     }
+
+    
 
     public VpcChannelInfo withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
@@ -507,6 +515,8 @@ public class VpcChannelInfo  {
         this.memberType = memberType;
     }
 
+    
+
     public VpcChannelInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -526,6 +536,8 @@ public class VpcChannelInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public VpcChannelInfo withId(String id) {
         this.id = id;
@@ -547,6 +559,8 @@ public class VpcChannelInfo  {
         this.id = id;
     }
 
+    
+
     public VpcChannelInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -567,6 +581,8 @@ public class VpcChannelInfo  {
         this.status = status;
     }
 
+    
+
     public VpcChannelInfo withElbId(String elbId) {
         this.elbId = elbId;
         return this;
@@ -586,6 +602,9 @@ public class VpcChannelInfo  {
     public void setElbId(String elbId) {
         this.elbId = elbId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

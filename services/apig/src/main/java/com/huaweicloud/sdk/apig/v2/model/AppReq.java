@@ -61,6 +61,8 @@ public class AppReq  {
         this.name = name;
     }
 
+    
+
     public AppReq withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -80,6 +82,8 @@ public class AppReq  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public AppReq withAppKey(String appKey) {
         this.appKey = appKey;
@@ -101,6 +105,8 @@ public class AppReq  {
         this.appKey = appKey;
     }
 
+    
+
     public AppReq withAppSecret(String appSecret) {
         this.appSecret = appSecret;
         return this;
@@ -120,6 +126,9 @@ public class AppReq  {
     public void setAppSecret(String appSecret) {
         this.appSecret = appSecret;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

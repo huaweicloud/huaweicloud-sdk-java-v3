@@ -27,13 +27,13 @@ public class ListProductsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private String marker = "ffffffffffffffffffffffff";
+    private String marker;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,7 +45,7 @@ public class ListProductsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
     public ListProductsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -66,6 +66,8 @@ public class ListProductsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListProductsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -89,6 +91,8 @@ public class ListProductsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListProductsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -109,6 +113,8 @@ public class ListProductsRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListProductsRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -128,6 +134,8 @@ public class ListProductsRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ListProductsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -150,6 +158,9 @@ public class ListProductsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -70,6 +70,8 @@ public class VolumeGroups  {
         this.components = components;
     }
 
+    
+
     public VolumeGroups withFreeSize(Long freeSize) {
         this.freeSize = freeSize;
         return this;
@@ -92,6 +94,8 @@ public class VolumeGroups  {
         this.freeSize = freeSize;
     }
 
+    
+
     public VolumeGroups withLogicalVolumes(List<LogicalVolumes> logicalVolumes) {
         this.logicalVolumes = logicalVolumes;
         return this;
@@ -99,9 +103,6 @@ public class VolumeGroups  {
 
     
     public VolumeGroups addLogicalVolumesItem(LogicalVolumes logicalVolumesItem) {
-        if (this.logicalVolumes == null) {
-            this.logicalVolumes = new ArrayList<>();
-        }
         this.logicalVolumes.add(logicalVolumesItem);
         return this;
     }
@@ -126,6 +127,8 @@ public class VolumeGroups  {
         this.logicalVolumes = logicalVolumes;
     }
 
+    
+
     public VolumeGroups withName(String name) {
         this.name = name;
         return this;
@@ -145,6 +148,8 @@ public class VolumeGroups  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public VolumeGroups withSize(Long size) {
         this.size = size;
@@ -167,6 +172,9 @@ public class VolumeGroups  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

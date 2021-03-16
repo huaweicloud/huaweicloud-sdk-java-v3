@@ -55,6 +55,8 @@ public class FeatureToggle  {
         this.name = name;
     }
 
+    
+
     public FeatureToggle withEnable(Boolean enable) {
         this.enable = enable;
         return this;
@@ -75,6 +77,8 @@ public class FeatureToggle  {
         this.enable = enable;
     }
 
+    
+
     public FeatureToggle withConfig(String config) {
         this.config = config;
         return this;
@@ -94,6 +98,9 @@ public class FeatureToggle  {
     public void setConfig(String config) {
         this.config = config;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,7 +35,7 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    private Object message = null;
+    private Object message;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,6 +93,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         this.messageId = messageId;
     }
 
+    
+
     public ShowDeviceMessageResponse withName(String name) {
         this.name = name;
         return this;
@@ -112,6 +114,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowDeviceMessageResponse withMessage(Object message) {
         this.message = message;
@@ -133,6 +137,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         this.message = message;
     }
 
+    
+
     public ShowDeviceMessageResponse withEncoding(String encoding) {
         this.encoding = encoding;
         return this;
@@ -152,6 +158,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     public void setEncoding(String encoding) {
         this.encoding = encoding;
     }
+
+    
 
     public ShowDeviceMessageResponse withPayloadFormat(String payloadFormat) {
         this.payloadFormat = payloadFormat;
@@ -173,6 +181,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         this.payloadFormat = payloadFormat;
     }
 
+    
+
     public ShowDeviceMessageResponse withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -192,6 +202,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public ShowDeviceMessageResponse withStatus(String status) {
         this.status = status;
@@ -213,6 +225,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public ShowDeviceMessageResponse withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -233,6 +247,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         this.createdTime = createdTime;
     }
 
+    
+
     public ShowDeviceMessageResponse withFinishedTime(String finishedTime) {
         this.finishedTime = finishedTime;
         return this;
@@ -252,6 +268,9 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     public void setFinishedTime(String finishedTime) {
         this.finishedTime = finishedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -161,6 +161,8 @@ public class CreateL7ruleReq  {
         this.tenantId = tenantId;
     }
 
+    
+
     public CreateL7ruleReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -180,6 +182,8 @@ public class CreateL7ruleReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateL7ruleReq withType(TypeEnum type) {
         this.type = type;
@@ -201,6 +205,8 @@ public class CreateL7ruleReq  {
         this.type = type;
     }
 
+    
+
     public CreateL7ruleReq withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
@@ -220,6 +226,8 @@ public class CreateL7ruleReq  {
     public void setCompareType(String compareType) {
         this.compareType = compareType;
     }
+
+    
 
     public CreateL7ruleReq withKey(String key) {
         this.key = key;
@@ -241,6 +249,8 @@ public class CreateL7ruleReq  {
         this.key = key;
     }
 
+    
+
     public CreateL7ruleReq withValue(String value) {
         this.value = value;
         return this;
@@ -261,6 +271,8 @@ public class CreateL7ruleReq  {
         this.value = value;
     }
 
+    
+
     public CreateL7ruleReq withInvert(Boolean invert) {
         this.invert = invert;
         return this;
@@ -280,6 +292,9 @@ public class CreateL7ruleReq  {
     public void setInvert(Boolean invert) {
         this.invert = invert;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

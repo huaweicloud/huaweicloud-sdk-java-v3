@@ -57,6 +57,8 @@ public class UpdateCustomsLineReq  {
         this.name = name;
     }
 
+    
+
     public UpdateCustomsLineReq withIpSegments(List<String> ipSegments) {
         this.ipSegments = ipSegments;
         return this;
@@ -64,9 +66,6 @@ public class UpdateCustomsLineReq  {
 
     
     public UpdateCustomsLineReq addIpSegmentsItem(String ipSegmentsItem) {
-        if (this.ipSegments == null) {
-            this.ipSegments = new ArrayList<>();
-        }
         this.ipSegments.add(ipSegmentsItem);
         return this;
     }
@@ -91,6 +90,8 @@ public class UpdateCustomsLineReq  {
         this.ipSegments = ipSegments;
     }
 
+    
+
     public UpdateCustomsLineReq withDescription(String description) {
         this.description = description;
         return this;
@@ -110,6 +111,9 @@ public class UpdateCustomsLineReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

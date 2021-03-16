@@ -23,7 +23,7 @@ public class UpdatePropertiesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="response")
     
-    private Object response = null;
+    private Object response;
 
     public UpdatePropertiesResponse withResponse(Object response) {
         this.response = response;
@@ -44,6 +44,9 @@ public class UpdatePropertiesResponse extends SdkResponse {
     public void setResponse(Object response) {
         this.response = response;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

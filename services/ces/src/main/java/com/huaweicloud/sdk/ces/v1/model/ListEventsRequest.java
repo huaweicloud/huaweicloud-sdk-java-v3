@@ -155,6 +155,8 @@ public class ListEventsRequest  {
         this.eventType = eventType;
     }
 
+    
+
     public ListEventsRequest withEventName(String eventName) {
         this.eventName = eventName;
         return this;
@@ -174,6 +176,8 @@ public class ListEventsRequest  {
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
+
+    
 
     public ListEventsRequest withFrom(Long from) {
         this.from = from;
@@ -195,6 +199,8 @@ public class ListEventsRequest  {
         this.from = from;
     }
 
+    
+
     public ListEventsRequest withTo(Long to) {
         this.to = to;
         return this;
@@ -214,6 +220,8 @@ public class ListEventsRequest  {
     public void setTo(Long to) {
         this.to = to;
     }
+
+    
 
     public ListEventsRequest withStart(Integer start) {
         this.start = start;
@@ -235,6 +243,8 @@ public class ListEventsRequest  {
         this.start = start;
     }
 
+    
+
     public ListEventsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -254,6 +264,9 @@ public class ListEventsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

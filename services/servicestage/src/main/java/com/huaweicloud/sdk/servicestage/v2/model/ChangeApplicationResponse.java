@@ -87,6 +87,8 @@ public class ChangeApplicationResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ChangeApplicationResponse withName(String name) {
         this.name = name;
         return this;
@@ -106,6 +108,8 @@ public class ChangeApplicationResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ChangeApplicationResponse withDescription(String description) {
         this.description = description;
@@ -127,6 +131,8 @@ public class ChangeApplicationResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ChangeApplicationResponse withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -146,6 +152,8 @@ public class ChangeApplicationResponse extends SdkResponse {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    
 
     public ChangeApplicationResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -167,6 +175,8 @@ public class ChangeApplicationResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public ChangeApplicationResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -186,6 +196,8 @@ public class ChangeApplicationResponse extends SdkResponse {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ChangeApplicationResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -207,6 +219,8 @@ public class ChangeApplicationResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ChangeApplicationResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -226,6 +240,9 @@ public class ChangeApplicationResponse extends SdkResponse {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

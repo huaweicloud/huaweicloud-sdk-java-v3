@@ -33,9 +33,6 @@ public class UpdateInstanceTopicReq  {
 
     
     public UpdateInstanceTopicReq addTopicsItem(UpdateInstanceTopicReqTopics topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
         this.topics.add(topicsItem);
         return this;
     }
@@ -59,6 +56,9 @@ public class UpdateInstanceTopicReq  {
     public void setTopics(List<UpdateInstanceTopicReqTopics> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

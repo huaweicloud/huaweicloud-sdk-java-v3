@@ -49,6 +49,8 @@ public class DataPointForAlarmHistory  {
         this.time = time;
     }
 
+    
+
     public DataPointForAlarmHistory withValue(Double value) {
         this.value = value;
         return this;
@@ -68,6 +70,9 @@ public class DataPointForAlarmHistory  {
     public void setValue(Double value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

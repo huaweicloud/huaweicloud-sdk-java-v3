@@ -208,6 +208,8 @@ public class IQueryUserCouponsResultV2  {
         this.couponId = couponId;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withCouponCode(String couponCode) {
         this.couponCode = couponCode;
         return this;
@@ -227,6 +229,8 @@ public class IQueryUserCouponsResultV2  {
     public void setCouponCode(String couponCode) {
         this.couponCode = couponCode;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withStatus(Integer status) {
         this.status = status;
@@ -248,6 +252,8 @@ public class IQueryUserCouponsResultV2  {
         this.status = status;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -267,6 +273,8 @@ public class IQueryUserCouponsResultV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withCouponType(Integer couponType) {
         this.couponType = couponType;
@@ -288,6 +296,8 @@ public class IQueryUserCouponsResultV2  {
         this.couponType = couponType;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -307,6 +317,8 @@ public class IQueryUserCouponsResultV2  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withFaceValue(Double faceValue) {
         this.faceValue = faceValue;
@@ -328,6 +340,8 @@ public class IQueryUserCouponsResultV2  {
         this.faceValue = faceValue;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withValidTime(String validTime) {
         this.validTime = validTime;
         return this;
@@ -347,6 +361,8 @@ public class IQueryUserCouponsResultV2  {
     public void setValidTime(String validTime) {
         this.validTime = validTime;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withExpireTime(String expireTime) {
         this.expireTime = expireTime;
@@ -368,6 +384,8 @@ public class IQueryUserCouponsResultV2  {
         this.expireTime = expireTime;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -387,6 +405,8 @@ public class IQueryUserCouponsResultV2  {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withPromotionPlanId(String promotionPlanId) {
         this.promotionPlanId = promotionPlanId;
@@ -408,6 +428,8 @@ public class IQueryUserCouponsResultV2  {
         this.promotionPlanId = promotionPlanId;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withPlanName(String planName) {
         this.planName = planName;
         return this;
@@ -427,6 +449,8 @@ public class IQueryUserCouponsResultV2  {
     public void setPlanName(String planName) {
         this.planName = planName;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withPlanDesc(String planDesc) {
         this.planDesc = planDesc;
@@ -448,6 +472,8 @@ public class IQueryUserCouponsResultV2  {
         this.planDesc = planDesc;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withMediaType(Integer mediaType) {
         this.mediaType = mediaType;
         return this;
@@ -467,6 +493,8 @@ public class IQueryUserCouponsResultV2  {
     public void setMediaType(Integer mediaType) {
         this.mediaType = mediaType;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withFetchMethod(Integer fetchMethod) {
         this.fetchMethod = fetchMethod;
@@ -488,6 +516,8 @@ public class IQueryUserCouponsResultV2  {
         this.fetchMethod = fetchMethod;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withUseLimits(List<ICouponUseLimitInfoV2> useLimits) {
         this.useLimits = useLimits;
         return this;
@@ -495,9 +525,6 @@ public class IQueryUserCouponsResultV2  {
 
     
     public IQueryUserCouponsResultV2 addUseLimitsItem(ICouponUseLimitInfoV2 useLimitsItem) {
-        if (this.useLimits == null) {
-            this.useLimits = new ArrayList<>();
-        }
         this.useLimits.add(useLimitsItem);
         return this;
     }
@@ -522,6 +549,8 @@ public class IQueryUserCouponsResultV2  {
         this.useLimits = useLimits;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withActiveTime(String activeTime) {
         this.activeTime = activeTime;
         return this;
@@ -541,6 +570,8 @@ public class IQueryUserCouponsResultV2  {
     public void setActiveTime(String activeTime) {
         this.activeTime = activeTime;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withReserveTime(String reserveTime) {
         this.reserveTime = reserveTime;
@@ -562,6 +593,8 @@ public class IQueryUserCouponsResultV2  {
         this.reserveTime = reserveTime;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withPromotionId(String promotionId) {
         this.promotionId = promotionId;
         return this;
@@ -581,6 +614,8 @@ public class IQueryUserCouponsResultV2  {
     public void setPromotionId(String promotionId) {
         this.promotionId = promotionId;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withCreateTime(String createTime) {
         this.createTime = createTime;
@@ -602,6 +637,8 @@ public class IQueryUserCouponsResultV2  {
         this.createTime = createTime;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withCouponVersion(Integer couponVersion) {
         this.couponVersion = couponVersion;
         return this;
@@ -621,6 +658,8 @@ public class IQueryUserCouponsResultV2  {
     public void setCouponVersion(Integer couponVersion) {
         this.couponVersion = couponVersion;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withBalance(Double balance) {
         this.balance = balance;
@@ -642,6 +681,8 @@ public class IQueryUserCouponsResultV2  {
         this.balance = balance;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withLockOrderId(String lockOrderId) {
         this.lockOrderId = lockOrderId;
         return this;
@@ -661,6 +702,8 @@ public class IQueryUserCouponsResultV2  {
     public void setLockOrderId(String lockOrderId) {
         this.lockOrderId = lockOrderId;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withCouponUsage(String couponUsage) {
         this.couponUsage = couponUsage;
@@ -682,6 +725,8 @@ public class IQueryUserCouponsResultV2  {
         this.couponUsage = couponUsage;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withIsFrozen(String isFrozen) {
         this.isFrozen = isFrozen;
         return this;
@@ -701,6 +746,8 @@ public class IQueryUserCouponsResultV2  {
     public void setIsFrozen(String isFrozen) {
         this.isFrozen = isFrozen;
     }
+
+    
 
     public IQueryUserCouponsResultV2 withCurrency(String currency) {
         this.currency = currency;
@@ -722,6 +769,8 @@ public class IQueryUserCouponsResultV2  {
         this.currency = currency;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withExtendParam1(String extendParam1) {
         this.extendParam1 = extendParam1;
         return this;
@@ -742,6 +791,8 @@ public class IQueryUserCouponsResultV2  {
         this.extendParam1 = extendParam1;
     }
 
+    
+
     public IQueryUserCouponsResultV2 withSourceId(String sourceId) {
         this.sourceId = sourceId;
         return this;
@@ -761,6 +812,9 @@ public class IQueryUserCouponsResultV2  {
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

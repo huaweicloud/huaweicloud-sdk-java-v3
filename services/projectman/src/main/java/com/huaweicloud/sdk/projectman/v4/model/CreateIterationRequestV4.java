@@ -61,6 +61,8 @@ public class CreateIterationRequestV4  {
         this.beginTime = beginTime;
     }
 
+    
+
     public CreateIterationRequestV4 withDescription(String description) {
         this.description = description;
         return this;
@@ -80,6 +82,8 @@ public class CreateIterationRequestV4  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateIterationRequestV4 withEndTime(String endTime) {
         this.endTime = endTime;
@@ -101,6 +105,8 @@ public class CreateIterationRequestV4  {
         this.endTime = endTime;
     }
 
+    
+
     public CreateIterationRequestV4 withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +126,9 @@ public class CreateIterationRequestV4  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

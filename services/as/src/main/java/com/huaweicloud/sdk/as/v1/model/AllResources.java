@@ -161,6 +161,8 @@ public class AllResources  {
         this.type = type;
     }
 
+    
+
     public AllResources withUsed(Integer used) {
         this.used = used;
         return this;
@@ -180,6 +182,8 @@ public class AllResources  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
 
     public AllResources withQuota(Integer quota) {
         this.quota = quota;
@@ -201,6 +205,8 @@ public class AllResources  {
         this.quota = quota;
     }
 
+    
+
     public AllResources withMax(Integer max) {
         this.max = max;
         return this;
@@ -220,6 +226,9 @@ public class AllResources  {
     public void setMax(Integer max) {
         this.max = max;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

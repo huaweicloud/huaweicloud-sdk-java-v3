@@ -42,6 +42,9 @@ public class ShowServerRequest  {
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

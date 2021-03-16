@@ -79,6 +79,8 @@ public class ListUsersResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public ListUsersResponse withIsGlobalPassword(String isGlobalPassword) {
         this.isGlobalPassword = isGlobalPassword;
         return this;
@@ -98,6 +100,8 @@ public class ListUsersResponse extends SdkResponse {
     public void setIsGlobalPassword(String isGlobalPassword) {
         this.isGlobalPassword = isGlobalPassword;
     }
+
+    
 
     public ListUsersResponse withMessage(String message) {
         this.message = message;
@@ -119,6 +123,8 @@ public class ListUsersResponse extends SdkResponse {
         this.message = message;
     }
 
+    
+
     public ListUsersResponse withUserList(List<QueryUserDetailResp> userList) {
         this.userList = userList;
         return this;
@@ -126,9 +132,6 @@ public class ListUsersResponse extends SdkResponse {
 
     
     public ListUsersResponse addUserListItem(QueryUserDetailResp userListItem) {
-        if (this.userList == null) {
-            this.userList = new ArrayList<>();
-        }
         this.userList.add(userListItem);
         return this;
     }
@@ -153,6 +156,8 @@ public class ListUsersResponse extends SdkResponse {
         this.userList = userList;
     }
 
+    
+
     public ListUsersResponse withRolesList(List<QueryRoleDetailResp> rolesList) {
         this.rolesList = rolesList;
         return this;
@@ -160,9 +165,6 @@ public class ListUsersResponse extends SdkResponse {
 
     
     public ListUsersResponse addRolesListItem(QueryRoleDetailResp rolesListItem) {
-        if (this.rolesList == null) {
-            this.rolesList = new ArrayList<>();
-        }
         this.rolesList.add(rolesListItem);
         return this;
     }
@@ -187,6 +189,8 @@ public class ListUsersResponse extends SdkResponse {
         this.rolesList = rolesList;
     }
 
+    
+
     public ListUsersResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
         return this;
@@ -206,6 +210,9 @@ public class ListUsersResponse extends SdkResponse {
     public void setIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

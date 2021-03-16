@@ -28,13 +28,13 @@ public class SignatureCreateResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class SignatureCreateResp  {
         this.signSecret = signSecret;
     }
 
+    
+
     public SignatureCreateResp withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -111,6 +113,8 @@ public class SignatureCreateResp  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public SignatureCreateResp withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
@@ -132,6 +136,8 @@ public class SignatureCreateResp  {
         this.createTime = createTime;
     }
 
+    
+
     public SignatureCreateResp withName(String name) {
         this.name = name;
         return this;
@@ -151,6 +157,8 @@ public class SignatureCreateResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public SignatureCreateResp withId(String id) {
         this.id = id;
@@ -172,6 +180,8 @@ public class SignatureCreateResp  {
         this.id = id;
     }
 
+    
+
     public SignatureCreateResp withSignKey(String signKey) {
         this.signKey = signKey;
         return this;
@@ -191,6 +201,8 @@ public class SignatureCreateResp  {
     public void setSignKey(String signKey) {
         this.signKey = signKey;
     }
+
+    
 
     public SignatureCreateResp withSignType(String signType) {
         this.signType = signType;
@@ -212,6 +224,8 @@ public class SignatureCreateResp  {
         this.signType = signType;
     }
 
+    
+
     public SignatureCreateResp withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
@@ -232,6 +246,8 @@ public class SignatureCreateResp  {
         this.bindNum = bindNum;
     }
 
+    
+
     public SignatureCreateResp withLdapiBindNum(Integer ldapiBindNum) {
         this.ldapiBindNum = ldapiBindNum;
         return this;
@@ -251,6 +267,9 @@ public class SignatureCreateResp  {
     public void setLdapiBindNum(Integer ldapiBindNum) {
         this.ldapiBindNum = ldapiBindNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

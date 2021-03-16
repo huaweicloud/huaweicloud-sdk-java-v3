@@ -28,7 +28,7 @@ public class NovaCreateServersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NovaCreateServersRequestBody body = null;
+    private NovaCreateServersRequestBody body;
 
     public NovaCreateServersRequest withOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
@@ -49,6 +49,8 @@ public class NovaCreateServersRequest  {
     public void setOpenStackAPIVersion(String openStackAPIVersion) {
         this.openStackAPIVersion = openStackAPIVersion;
     }
+
+    
 
     public NovaCreateServersRequest withBody(NovaCreateServersRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class NovaCreateServersRequest  {
     public void setBody(NovaCreateServersRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

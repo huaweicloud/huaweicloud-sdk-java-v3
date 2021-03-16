@@ -34,7 +34,7 @@ public class PublishLiveDataApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private LdApiDeploy body = null;
+    private LdApiDeploy body;
 
     public PublishLiveDataApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class PublishLiveDataApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public PublishLiveDataApiV2Request withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
@@ -75,6 +77,8 @@ public class PublishLiveDataApiV2Request  {
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
     }
+
+    
 
     public PublishLiveDataApiV2Request withBody(LdApiDeploy body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class PublishLiveDataApiV2Request  {
     public void setBody(LdApiDeploy body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

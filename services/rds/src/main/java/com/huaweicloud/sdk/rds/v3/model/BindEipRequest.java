@@ -55,6 +55,8 @@ public class BindEipRequest  {
         this.publicIp = publicIp;
     }
 
+    
+
     public BindEipRequest withPublicIpId(String publicIpId) {
         this.publicIpId = publicIpId;
         return this;
@@ -75,6 +77,8 @@ public class BindEipRequest  {
         this.publicIpId = publicIpId;
     }
 
+    
+
     public BindEipRequest withIsBind(Boolean isBind) {
         this.isBind = isBind;
         return this;
@@ -94,6 +98,9 @@ public class BindEipRequest  {
     public void setIsBind(Boolean isBind) {
         this.isBind = isBind;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

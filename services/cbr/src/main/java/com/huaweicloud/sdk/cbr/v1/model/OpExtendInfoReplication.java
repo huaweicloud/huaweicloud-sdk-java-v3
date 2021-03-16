@@ -97,6 +97,8 @@ public class OpExtendInfoReplication  {
         this.destinationBackupId = destinationBackupId;
     }
 
+    
+
     public OpExtendInfoReplication withDestinationCheckpointId(String destinationCheckpointId) {
         this.destinationCheckpointId = destinationCheckpointId;
         return this;
@@ -116,6 +118,8 @@ public class OpExtendInfoReplication  {
     public void setDestinationCheckpointId(String destinationCheckpointId) {
         this.destinationCheckpointId = destinationCheckpointId;
     }
+
+    
 
     public OpExtendInfoReplication withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
@@ -137,6 +141,8 @@ public class OpExtendInfoReplication  {
         this.destinationProjectId = destinationProjectId;
     }
 
+    
+
     public OpExtendInfoReplication withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
         return this;
@@ -156,6 +162,8 @@ public class OpExtendInfoReplication  {
     public void setDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
     }
+
+    
 
     public OpExtendInfoReplication withSourceBackupId(String sourceBackupId) {
         this.sourceBackupId = sourceBackupId;
@@ -177,6 +185,8 @@ public class OpExtendInfoReplication  {
         this.sourceBackupId = sourceBackupId;
     }
 
+    
+
     public OpExtendInfoReplication withSourceCheckpointId(String sourceCheckpointId) {
         this.sourceCheckpointId = sourceCheckpointId;
         return this;
@@ -196,6 +206,8 @@ public class OpExtendInfoReplication  {
     public void setSourceCheckpointId(String sourceCheckpointId) {
         this.sourceCheckpointId = sourceCheckpointId;
     }
+
+    
 
     public OpExtendInfoReplication withSourceProjectId(String sourceProjectId) {
         this.sourceProjectId = sourceProjectId;
@@ -217,6 +229,8 @@ public class OpExtendInfoReplication  {
         this.sourceProjectId = sourceProjectId;
     }
 
+    
+
     public OpExtendInfoReplication withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
         return this;
@@ -236,6 +250,8 @@ public class OpExtendInfoReplication  {
     public void setSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
     }
+
+    
 
     public OpExtendInfoReplication withSourceBackupName(String sourceBackupName) {
         this.sourceBackupName = sourceBackupName;
@@ -257,6 +273,8 @@ public class OpExtendInfoReplication  {
         this.sourceBackupName = sourceBackupName;
     }
 
+    
+
     public OpExtendInfoReplication withDestinationBackupName(String destinationBackupName) {
         this.destinationBackupName = destinationBackupName;
         return this;
@@ -276,6 +294,9 @@ public class OpExtendInfoReplication  {
     public void setDestinationBackupName(String destinationBackupName) {
         this.destinationBackupName = destinationBackupName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class UpdateHotkeyAutoScanConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AutoscanConfigRequest body = null;
+    private AutoscanConfigRequest body;
 
     public UpdateHotkeyAutoScanConfigRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class UpdateHotkeyAutoScanConfigRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateHotkeyAutoScanConfigRequest withBody(AutoscanConfigRequest body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateHotkeyAutoScanConfigRequest  {
     public void setBody(AutoscanConfigRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

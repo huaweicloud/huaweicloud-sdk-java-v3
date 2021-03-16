@@ -22,7 +22,7 @@ public class ImportConnectionsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ImportConnectionReq body = null;
+    private ImportConnectionReq body;
 
     public ImportConnectionsRequest withBody(ImportConnectionReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ImportConnectionsRequest  {
     public void setBody(ImportConnectionReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

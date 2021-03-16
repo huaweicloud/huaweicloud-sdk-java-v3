@@ -28,7 +28,7 @@ public class UpdateSecurityGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateSecurityGroupRequestBody body = null;
+    private UpdateSecurityGroupRequestBody body;
 
     public UpdateSecurityGroupRequest withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -49,6 +49,8 @@ public class UpdateSecurityGroupRequest  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public UpdateSecurityGroupRequest withBody(UpdateSecurityGroupRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateSecurityGroupRequest  {
     public void setBody(UpdateSecurityGroupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

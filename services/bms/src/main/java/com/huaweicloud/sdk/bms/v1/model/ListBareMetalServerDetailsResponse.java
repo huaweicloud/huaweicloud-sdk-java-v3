@@ -24,7 +24,7 @@ public class ListBareMetalServerDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private ServerDetails server = null;
+    private ServerDetails server;
 
     public ListBareMetalServerDetailsResponse withServer(ServerDetails server) {
         this.server = server;
@@ -52,6 +52,9 @@ public class ListBareMetalServerDetailsResponse extends SdkResponse {
     public void setServer(ServerDetails server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class PageLink  {
         this.href = href;
     }
 
+    
+
     public PageLink withRel(String rel) {
         this.rel = rel;
         return this;
@@ -68,6 +70,9 @@ public class PageLink  {
     public void setRel(String rel) {
         this.rel = rel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

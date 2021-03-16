@@ -33,7 +33,7 @@ public class KeystoneListServicesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
     public KeystoneListServicesResponse withServices(List<Service> services) {
         this.services = services;
@@ -42,9 +42,6 @@ public class KeystoneListServicesResponse extends SdkResponse {
 
     
     public KeystoneListServicesResponse addServicesItem(Service servicesItem) {
-        if (this.services == null) {
-            this.services = new ArrayList<>();
-        }
         this.services.add(servicesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class KeystoneListServicesResponse extends SdkResponse {
     public void setServices(List<Service> services) {
         this.services = services;
     }
+
+    
 
     public KeystoneListServicesResponse withLinks(Links links) {
         this.links = links;
@@ -95,6 +94,9 @@ public class KeystoneListServicesResponse extends SdkResponse {
     public void setLinks(Links links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

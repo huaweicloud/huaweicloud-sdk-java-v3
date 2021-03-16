@@ -41,9 +41,6 @@ public class ShowJobExercisesResponse extends SdkResponse {
 
     
     public ShowJobExercisesResponse addGroupExercisesItem(ExerciseGroup groupExercisesItem) {
-        if (this.groupExercises == null) {
-            this.groupExercises = new ArrayList<>();
-        }
         this.groupExercises.add(groupExercisesItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowJobExercisesResponse extends SdkResponse {
         this.groupExercises = groupExercises;
     }
 
+    
+
     public ShowJobExercisesResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ShowJobExercisesResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

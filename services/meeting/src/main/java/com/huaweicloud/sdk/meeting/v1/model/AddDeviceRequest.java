@@ -34,7 +34,7 @@ public class AddDeviceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddDeviceDTO body = null;
+    private AddDeviceDTO body;
 
     public AddDeviceRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -58,6 +58,8 @@ public class AddDeviceRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public AddDeviceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class AddDeviceRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
+
+    
 
     public AddDeviceRequest withBody(AddDeviceDTO body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class AddDeviceRequest  {
     public void setBody(AddDeviceDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

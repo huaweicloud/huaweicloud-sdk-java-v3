@@ -51,13 +51,13 @@ public class ListAppsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +85,8 @@ public class ListAppsV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListAppsV2Request withId(String id) {
         this.id = id;
         return this;
@@ -104,6 +106,8 @@ public class ListAppsV2Request  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListAppsV2Request withName(String name) {
         this.name = name;
@@ -125,6 +129,8 @@ public class ListAppsV2Request  {
         this.name = name;
     }
 
+    
+
     public ListAppsV2Request withStatus(Integer status) {
         this.status = status;
         return this;
@@ -144,6 +150,8 @@ public class ListAppsV2Request  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
 
     public ListAppsV2Request withAppKey(String appKey) {
         this.appKey = appKey;
@@ -165,6 +173,8 @@ public class ListAppsV2Request  {
         this.appKey = appKey;
     }
 
+    
+
     public ListAppsV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -184,6 +194,8 @@ public class ListAppsV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListAppsV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -207,6 +219,8 @@ public class ListAppsV2Request  {
         this.limit = limit;
     }
 
+    
+
     public ListAppsV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -226,6 +240,9 @@ public class ListAppsV2Request  {
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class BatchTestConnectionReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<TestEndPoint> jobs = new ArrayList<>();
+    private List<TestEndPoint> jobs = null;
     
     public BatchTestConnectionReq withJobs(List<TestEndPoint> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchTestConnectionReq  {
     public void setJobs(List<TestEndPoint> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

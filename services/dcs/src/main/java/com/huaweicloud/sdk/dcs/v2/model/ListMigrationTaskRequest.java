@@ -55,6 +55,8 @@ public class ListMigrationTaskRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListMigrationTaskRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -75,6 +77,8 @@ public class ListMigrationTaskRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListMigrationTaskRequest withName(String name) {
         this.name = name;
         return this;
@@ -94,6 +98,9 @@ public class ListMigrationTaskRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

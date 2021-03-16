@@ -34,7 +34,7 @@ public class CreateDbUserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UserForCreation body = null;
+    private UserForCreation body;
 
     public CreateDbUserRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -58,6 +58,8 @@ public class CreateDbUserRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public CreateDbUserRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -77,6 +79,8 @@ public class CreateDbUserRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateDbUserRequest withBody(UserForCreation body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class CreateDbUserRequest  {
     public void setBody(UserForCreation body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

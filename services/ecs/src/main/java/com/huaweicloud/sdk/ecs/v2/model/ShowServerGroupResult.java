@@ -31,13 +31,13 @@ public class ShowServerGroupResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="members")
     
-    private List<String> members = new ArrayList<>();
+    private List<String> members = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Map<String, String> metadata = new HashMap<>();
+    private Map<String, String> metadata = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,7 +49,7 @@ public class ShowServerGroupResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policies")
     
-    private List<String> policies = new ArrayList<>();
+    private List<String> policies = null;
     
     public ShowServerGroupResult withId(String id) {
         this.id = id;
@@ -70,6 +70,8 @@ public class ShowServerGroupResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ShowServerGroupResult withMembers(List<String> members) {
         this.members = members;
@@ -102,6 +104,8 @@ public class ShowServerGroupResult  {
         this.members = members;
     }
 
+    
+
     public ShowServerGroupResult withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -133,6 +137,8 @@ public class ShowServerGroupResult  {
         this.metadata = metadata;
     }
 
+    
+
     public ShowServerGroupResult withName(String name) {
         this.name = name;
         return this;
@@ -152,6 +158,8 @@ public class ShowServerGroupResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowServerGroupResult withPolicies(List<String> policies) {
         this.policies = policies;
@@ -183,6 +191,9 @@ public class ShowServerGroupResult  {
     public void setPolicies(List<String> policies) {
         this.policies = policies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

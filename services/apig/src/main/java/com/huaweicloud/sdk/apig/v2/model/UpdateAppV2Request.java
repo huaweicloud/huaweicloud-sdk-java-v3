@@ -34,7 +34,7 @@ public class UpdateAppV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppReq body = null;
+    private AppReq body;
 
     public UpdateAppV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateAppV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateAppV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateAppV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public UpdateAppV2Request withBody(AppReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateAppV2Request  {
     public void setBody(AppReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

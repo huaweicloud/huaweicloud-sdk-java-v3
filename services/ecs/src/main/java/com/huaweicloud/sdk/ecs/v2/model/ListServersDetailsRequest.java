@@ -39,7 +39,7 @@ public class ListServersDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 25;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class ListServersDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 1;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +97,8 @@ public class ListServersDetailsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListServersDetailsRequest withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -117,6 +119,8 @@ public class ListServersDetailsRequest  {
         this.flavor = flavor;
     }
 
+    
+
     public ListServersDetailsRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -136,6 +140,8 @@ public class ListServersDetailsRequest  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public ListServersDetailsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -159,6 +165,8 @@ public class ListServersDetailsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListServersDetailsRequest withName(String name) {
         this.name = name;
         return this;
@@ -178,6 +186,8 @@ public class ListServersDetailsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListServersDetailsRequest withNotTags(String notTags) {
         this.notTags = notTags;
@@ -199,6 +209,8 @@ public class ListServersDetailsRequest  {
         this.notTags = notTags;
     }
 
+    
+
     public ListServersDetailsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -218,6 +230,8 @@ public class ListServersDetailsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListServersDetailsRequest withReservationId(String reservationId) {
         this.reservationId = reservationId;
@@ -239,6 +253,8 @@ public class ListServersDetailsRequest  {
         this.reservationId = reservationId;
     }
 
+    
+
     public ListServersDetailsRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -259,6 +275,8 @@ public class ListServersDetailsRequest  {
         this.status = status;
     }
 
+    
+
     public ListServersDetailsRequest withTags(String tags) {
         this.tags = tags;
         return this;
@@ -278,6 +296,9 @@ public class ListServersDetailsRequest  {
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

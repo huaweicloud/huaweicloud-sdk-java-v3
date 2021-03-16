@@ -57,13 +57,13 @@ public class Task  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="document")
     
-    private Object document = null;
+    private Object document;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_policy")
     
-    private TaskPolicy taskPolicy = null;
+    private TaskPolicy taskPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,7 +81,7 @@ public class Task  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_progress")
     
-    private TaskProgress taskProgress = null;
+    private TaskProgress taskProgress;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -109,6 +109,8 @@ public class Task  {
         this.taskId = taskId;
     }
 
+    
+
     public Task withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -128,6 +130,8 @@ public class Task  {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
 
     public Task withTaskType(String taskType) {
         this.taskType = taskType;
@@ -149,6 +153,8 @@ public class Task  {
         this.taskType = taskType;
     }
 
+    
+
     public Task withTargets(List<String> targets) {
         this.targets = targets;
         return this;
@@ -156,9 +162,6 @@ public class Task  {
 
     
     public Task addTargetsItem(String targetsItem) {
-        if (this.targets == null) {
-            this.targets = new ArrayList<>();
-        }
         this.targets.add(targetsItem);
         return this;
     }
@@ -183,6 +186,8 @@ public class Task  {
         this.targets = targets;
     }
 
+    
+
     public Task withTargetsFilter(Map<String, Object> targetsFilter) {
         this.targetsFilter = targetsFilter;
         return this;
@@ -191,9 +196,6 @@ public class Task  {
     
 
     public Task putTargetsFilterItem(String key, Object targetsFilterItem) {
-         if (this.targetsFilter == null) {
-            this.targetsFilter = new HashMap<>();
-         }
         this.targetsFilter.put(key, targetsFilterItem);
         return this;
     }
@@ -217,6 +219,8 @@ public class Task  {
         this.targetsFilter = targetsFilter;
     }
 
+    
+
     public Task withDocument(Object document) {
         this.document = document;
         return this;
@@ -236,6 +240,8 @@ public class Task  {
     public void setDocument(Object document) {
         this.document = document;
     }
+
+    
 
     public Task withTaskPolicy(TaskPolicy taskPolicy) {
         this.taskPolicy = taskPolicy;
@@ -264,6 +270,8 @@ public class Task  {
         this.taskPolicy = taskPolicy;
     }
 
+    
+
     public Task withStatus(String status) {
         this.status = status;
         return this;
@@ -284,6 +292,8 @@ public class Task  {
         this.status = status;
     }
 
+    
+
     public Task withStatusDesc(String statusDesc) {
         this.statusDesc = statusDesc;
         return this;
@@ -303,6 +313,8 @@ public class Task  {
     public void setStatusDesc(String statusDesc) {
         this.statusDesc = statusDesc;
     }
+
+    
 
     public Task withTaskProgress(TaskProgress taskProgress) {
         this.taskProgress = taskProgress;
@@ -331,6 +343,8 @@ public class Task  {
         this.taskProgress = taskProgress;
     }
 
+    
+
     public Task withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -350,6 +364,9 @@ public class Task  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

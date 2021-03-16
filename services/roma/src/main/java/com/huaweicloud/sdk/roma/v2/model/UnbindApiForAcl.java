@@ -110,6 +110,8 @@ public class UnbindApiForAcl  {
         this.authType = authType;
     }
 
+    
+
     public UnbindApiForAcl withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
@@ -129,6 +131,8 @@ public class UnbindApiForAcl  {
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
     }
+
+    
 
     public UnbindApiForAcl withGroupName(String groupName) {
         this.groupName = groupName;
@@ -150,6 +154,8 @@ public class UnbindApiForAcl  {
         this.groupName = groupName;
     }
 
+    
+
     public UnbindApiForAcl withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
@@ -169,6 +175,8 @@ public class UnbindApiForAcl  {
     public void setPublishId(String publishId) {
         this.publishId = publishId;
     }
+
+    
 
     public UnbindApiForAcl withGroupId(String groupId) {
         this.groupId = groupId;
@@ -190,6 +198,8 @@ public class UnbindApiForAcl  {
         this.groupId = groupId;
     }
 
+    
+
     public UnbindApiForAcl withName(String name) {
         this.name = name;
         return this;
@@ -209,6 +219,8 @@ public class UnbindApiForAcl  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UnbindApiForAcl withRemark(String remark) {
         this.remark = remark;
@@ -230,6 +242,8 @@ public class UnbindApiForAcl  {
         this.remark = remark;
     }
 
+    
+
     public UnbindApiForAcl withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
         return this;
@@ -249,6 +263,8 @@ public class UnbindApiForAcl  {
     public void setRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
     }
+
+    
 
     public UnbindApiForAcl withId(String id) {
         this.id = id;
@@ -270,6 +286,8 @@ public class UnbindApiForAcl  {
         this.id = id;
     }
 
+    
+
     public UnbindApiForAcl withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -289,6 +307,8 @@ public class UnbindApiForAcl  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public UnbindApiForAcl withType(Integer type) {
         this.type = type;
@@ -310,6 +330,8 @@ public class UnbindApiForAcl  {
         this.type = type;
     }
 
+    
+
     public UnbindApiForAcl withAclName(String aclName) {
         this.aclName = aclName;
         return this;
@@ -329,6 +351,9 @@ public class UnbindApiForAcl  {
     public void setAclName(String aclName) {
         this.aclName = aclName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

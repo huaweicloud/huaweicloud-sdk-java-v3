@@ -28,7 +28,7 @@ public class UpdateBandwidthPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateBandwidthPolicyReq body = null;
+    private UpdateBandwidthPolicyReq body;
 
     public UpdateBandwidthPolicyRequest withTaskId(Long taskId) {
         this.taskId = taskId;
@@ -51,6 +51,8 @@ public class UpdateBandwidthPolicyRequest  {
     public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
+
+    
 
     public UpdateBandwidthPolicyRequest withBody(UpdateBandwidthPolicyReq body) {
         this.body = body;
@@ -78,6 +80,9 @@ public class UpdateBandwidthPolicyRequest  {
     public void setBody(UpdateBandwidthPolicyReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

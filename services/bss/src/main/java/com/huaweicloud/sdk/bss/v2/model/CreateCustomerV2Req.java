@@ -57,7 +57,7 @@ public class CreateCustomerV2Req  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_close_market_ms")
     
-    private String isCloseMarketMs = "false";
+    private String isCloseMarketMs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +97,8 @@ public class CreateCustomerV2Req  {
         this.domainName = domainName;
     }
 
+    
+
     public CreateCustomerV2Req withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
@@ -116,6 +118,8 @@ public class CreateCustomerV2Req  {
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
+
+    
 
     public CreateCustomerV2Req withVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
@@ -137,6 +141,8 @@ public class CreateCustomerV2Req  {
         this.verificationCode = verificationCode;
     }
 
+    
+
     public CreateCustomerV2Req withXaccountId(String xaccountId) {
         this.xaccountId = xaccountId;
         return this;
@@ -156,6 +162,8 @@ public class CreateCustomerV2Req  {
     public void setXaccountId(String xaccountId) {
         this.xaccountId = xaccountId;
     }
+
+    
 
     public CreateCustomerV2Req withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
@@ -177,6 +185,8 @@ public class CreateCustomerV2Req  {
         this.xaccountType = xaccountType;
     }
 
+    
+
     public CreateCustomerV2Req withPassword(String password) {
         this.password = password;
         return this;
@@ -196,6 +206,8 @@ public class CreateCustomerV2Req  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
 
     public CreateCustomerV2Req withIsCloseMarketMs(String isCloseMarketMs) {
         this.isCloseMarketMs = isCloseMarketMs;
@@ -217,6 +229,8 @@ public class CreateCustomerV2Req  {
         this.isCloseMarketMs = isCloseMarketMs;
     }
 
+    
+
     public CreateCustomerV2Req withCooperationType(String cooperationType) {
         this.cooperationType = cooperationType;
         return this;
@@ -236,6 +250,8 @@ public class CreateCustomerV2Req  {
     public void setCooperationType(String cooperationType) {
         this.cooperationType = cooperationType;
     }
+
+    
 
     public CreateCustomerV2Req withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
@@ -257,6 +273,8 @@ public class CreateCustomerV2Req  {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    
+
     public CreateCustomerV2Req withIncludeAssociationResult(Boolean includeAssociationResult) {
         this.includeAssociationResult = includeAssociationResult;
         return this;
@@ -276,6 +294,9 @@ public class CreateCustomerV2Req  {
     public void setIncludeAssociationResult(Boolean includeAssociationResult) {
         this.includeAssociationResult = includeAssociationResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

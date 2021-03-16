@@ -51,9 +51,6 @@ public class ListProductsRespValues  {
 
     
     public ListProductsRespValues addDetailItem(ListProductsRespDetail detailItem) {
-        if (this.detail == null) {
-            this.detail = new ArrayList<>();
-        }
         this.detail.add(detailItem);
         return this;
     }
@@ -78,6 +75,8 @@ public class ListProductsRespValues  {
         this.detail = detail;
     }
 
+    
+
     public ListProductsRespValues withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +97,8 @@ public class ListProductsRespValues  {
         this.name = name;
     }
 
+    
+
     public ListProductsRespValues withUnavailableZones(List<String> unavailableZones) {
         this.unavailableZones = unavailableZones;
         return this;
@@ -105,9 +106,6 @@ public class ListProductsRespValues  {
 
     
     public ListProductsRespValues addUnavailableZonesItem(String unavailableZonesItem) {
-        if (this.unavailableZones == null) {
-            this.unavailableZones = new ArrayList<>();
-        }
         this.unavailableZones.add(unavailableZonesItem);
         return this;
     }
@@ -132,6 +130,8 @@ public class ListProductsRespValues  {
         this.unavailableZones = unavailableZones;
     }
 
+    
+
     public ListProductsRespValues withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -139,9 +139,6 @@ public class ListProductsRespValues  {
 
     
     public ListProductsRespValues addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -165,6 +162,9 @@ public class ListProductsRespValues  {
     public void setAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

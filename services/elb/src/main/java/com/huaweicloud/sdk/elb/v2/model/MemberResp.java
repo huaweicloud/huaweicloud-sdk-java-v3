@@ -97,6 +97,8 @@ public class MemberResp  {
         this.id = id;
     }
 
+    
+
     public MemberResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -116,6 +118,8 @@ public class MemberResp  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public MemberResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -137,6 +141,8 @@ public class MemberResp  {
         this.tenantId = tenantId;
     }
 
+    
+
     public MemberResp withName(String name) {
         this.name = name;
         return this;
@@ -157,6 +163,8 @@ public class MemberResp  {
         this.name = name;
     }
 
+    
+
     public MemberResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -176,6 +184,8 @@ public class MemberResp  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public MemberResp withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -199,6 +209,8 @@ public class MemberResp  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public MemberResp withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -219,6 +231,8 @@ public class MemberResp  {
         this.subnetId = subnetId;
     }
 
+    
+
     public MemberResp withAddress(String address) {
         this.address = address;
         return this;
@@ -238,6 +252,8 @@ public class MemberResp  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public MemberResp withWeight(Integer weight) {
         this.weight = weight;
@@ -261,6 +277,8 @@ public class MemberResp  {
         this.weight = weight;
     }
 
+    
+
     public MemberResp withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -280,6 +298,9 @@ public class MemberResp  {
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

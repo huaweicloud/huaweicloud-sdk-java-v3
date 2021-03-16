@@ -49,6 +49,8 @@ public class DeleteRoutingRuleRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public DeleteRoutingRuleRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteRoutingRuleRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

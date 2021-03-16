@@ -27,13 +27,13 @@ public class WatermarkTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dx")
     
-    private String dx = "0";
+    private String dx;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dy")
     
-    private String dy = "0";
+    private String dy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,7 +45,7 @@ public class WatermarkTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeline_start")
     
-    private String timelineStart = "0";
+    private String timelineStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,7 +153,7 @@ public class WatermarkTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="base")
     
-    private BaseEnum base = BaseEnum.INPUT;
+    private BaseEnum base;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -177,7 +177,7 @@ public class WatermarkTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error")
     
-    private XCodeError error = null;
+    private XCodeError error;
 
     public WatermarkTemplate withDx(String dx) {
         this.dx = dx;
@@ -199,6 +199,8 @@ public class WatermarkTemplate  {
         this.dx = dx;
     }
 
+    
+
     public WatermarkTemplate withDy(String dy) {
         this.dy = dy;
         return this;
@@ -218,6 +220,8 @@ public class WatermarkTemplate  {
     public void setDy(String dy) {
         this.dy = dy;
     }
+
+    
 
     public WatermarkTemplate withReferpos(String referpos) {
         this.referpos = referpos;
@@ -239,6 +243,8 @@ public class WatermarkTemplate  {
         this.referpos = referpos;
     }
 
+    
+
     public WatermarkTemplate withTimelineStart(String timelineStart) {
         this.timelineStart = timelineStart;
         return this;
@@ -258,6 +264,8 @@ public class WatermarkTemplate  {
     public void setTimelineStart(String timelineStart) {
         this.timelineStart = timelineStart;
     }
+
+    
 
     public WatermarkTemplate withTimelineDuration(String timelineDuration) {
         this.timelineDuration = timelineDuration;
@@ -279,6 +287,8 @@ public class WatermarkTemplate  {
         this.timelineDuration = timelineDuration;
     }
 
+    
+
     public WatermarkTemplate withImageProcess(String imageProcess) {
         this.imageProcess = imageProcess;
         return this;
@@ -298,6 +308,8 @@ public class WatermarkTemplate  {
     public void setImageProcess(String imageProcess) {
         this.imageProcess = imageProcess;
     }
+
+    
 
     public WatermarkTemplate withWidth(String width) {
         this.width = width;
@@ -319,6 +331,8 @@ public class WatermarkTemplate  {
         this.width = width;
     }
 
+    
+
     public WatermarkTemplate withHeight(String height) {
         this.height = height;
         return this;
@@ -338,6 +352,8 @@ public class WatermarkTemplate  {
     public void setHeight(String height) {
         this.height = height;
     }
+
+    
 
     public WatermarkTemplate withBase(BaseEnum base) {
         this.base = base;
@@ -359,6 +375,8 @@ public class WatermarkTemplate  {
         this.base = base;
     }
 
+    
+
     public WatermarkTemplate withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
@@ -378,6 +396,8 @@ public class WatermarkTemplate  {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
+
+    
 
     public WatermarkTemplate withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -399,6 +419,8 @@ public class WatermarkTemplate  {
         this.templateName = templateName;
     }
 
+    
+
     public WatermarkTemplate withType(String type) {
         this.type = type;
         return this;
@@ -418,6 +440,8 @@ public class WatermarkTemplate  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public WatermarkTemplate withError(XCodeError error) {
         this.error = error;
@@ -445,6 +469,9 @@ public class WatermarkTemplate  {
     public void setError(XCodeError error) {
         this.error = error;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

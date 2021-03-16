@@ -22,7 +22,7 @@ public class KeystoneCreateIdentityProviderRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity_provider")
     
-    private IdentityproviderOption identityProvider = null;
+    private IdentityproviderOption identityProvider;
 
     public KeystoneCreateIdentityProviderRequestBody withIdentityProvider(IdentityproviderOption identityProvider) {
         this.identityProvider = identityProvider;
@@ -50,6 +50,9 @@ public class KeystoneCreateIdentityProviderRequestBody  {
     public void setIdentityProvider(IdentityproviderOption identityProvider) {
         this.identityProvider = identityProvider;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

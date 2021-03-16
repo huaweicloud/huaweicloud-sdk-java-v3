@@ -331,6 +331,8 @@ public class ListOpLogsRequest  {
         this.endTime = endTime;
     }
 
+    
+
     public ListOpLogsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -351,6 +353,8 @@ public class ListOpLogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListOpLogsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -373,6 +377,8 @@ public class ListOpLogsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListOpLogsRequest withOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
         return this;
@@ -392,6 +398,8 @@ public class ListOpLogsRequest  {
     public void setOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
     }
+
+    
 
     public ListOpLogsRequest withProviderId(String providerId) {
         this.providerId = providerId;
@@ -413,6 +421,8 @@ public class ListOpLogsRequest  {
         this.providerId = providerId;
     }
 
+    
+
     public ListOpLogsRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -432,6 +442,8 @@ public class ListOpLogsRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public ListOpLogsRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -453,6 +465,8 @@ public class ListOpLogsRequest  {
         this.resourceName = resourceName;
     }
 
+    
+
     public ListOpLogsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -472,6 +486,8 @@ public class ListOpLogsRequest  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
+    
 
     public ListOpLogsRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -493,6 +509,8 @@ public class ListOpLogsRequest  {
         this.status = status;
     }
 
+    
+
     public ListOpLogsRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -512,6 +530,8 @@ public class ListOpLogsRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public ListOpLogsRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -533,6 +553,8 @@ public class ListOpLogsRequest  {
         this.vaultName = vaultName;
     }
 
+    
+
     public ListOpLogsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -552,6 +574,9 @@ public class ListOpLogsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

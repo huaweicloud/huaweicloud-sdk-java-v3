@@ -35,9 +35,6 @@ public class ShowEventDataResponse extends SdkResponse {
 
     
     public ShowEventDataResponse addDatapointsItem(EventDataInfo datapointsItem) {
-        if (this.datapoints == null) {
-            this.datapoints = new ArrayList<>();
-        }
         this.datapoints.add(datapointsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ShowEventDataResponse extends SdkResponse {
     public void setDatapoints(List<EventDataInfo> datapoints) {
         this.datapoints = datapoints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

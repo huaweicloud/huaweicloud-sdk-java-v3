@@ -60,6 +60,8 @@ public class ListApiGroupsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListApiGroupsV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListApiGroupsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListApiGroupsV2Response withGroups(List<ApiGroupDetailResp> groups) {
         this.groups = groups;
         return this;
@@ -87,9 +91,6 @@ public class ListApiGroupsV2Response extends SdkResponse {
 
     
     public ListApiGroupsV2Response addGroupsItem(ApiGroupDetailResp groupsItem) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
         this.groups.add(groupsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListApiGroupsV2Response extends SdkResponse {
     public void setGroups(List<ApiGroupDetailResp> groups) {
         this.groups = groups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

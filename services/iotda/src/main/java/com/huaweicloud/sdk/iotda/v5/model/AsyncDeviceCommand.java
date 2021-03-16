@@ -45,7 +45,7 @@ public class AsyncDeviceCommand  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paras")
     
-    private Object paras = null;
+    private Object paras;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class AsyncDeviceCommand  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private Object result = null;
+    private Object result;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -115,6 +115,8 @@ public class AsyncDeviceCommand  {
         this.deviceId = deviceId;
     }
 
+    
+
     public AsyncDeviceCommand withCommandId(String commandId) {
         this.commandId = commandId;
         return this;
@@ -134,6 +136,8 @@ public class AsyncDeviceCommand  {
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
+
+    
 
     public AsyncDeviceCommand withServiceId(String serviceId) {
         this.serviceId = serviceId;
@@ -155,6 +159,8 @@ public class AsyncDeviceCommand  {
         this.serviceId = serviceId;
     }
 
+    
+
     public AsyncDeviceCommand withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
@@ -174,6 +180,8 @@ public class AsyncDeviceCommand  {
     public void setCommandName(String commandName) {
         this.commandName = commandName;
     }
+
+    
 
     public AsyncDeviceCommand withParas(Object paras) {
         this.paras = paras;
@@ -195,6 +203,8 @@ public class AsyncDeviceCommand  {
         this.paras = paras;
     }
 
+    
+
     public AsyncDeviceCommand withExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -214,6 +224,8 @@ public class AsyncDeviceCommand  {
     public void setExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
     }
+
+    
 
     public AsyncDeviceCommand withStatus(String status) {
         this.status = status;
@@ -235,6 +247,8 @@ public class AsyncDeviceCommand  {
         this.status = status;
     }
 
+    
+
     public AsyncDeviceCommand withResult(Object result) {
         this.result = result;
         return this;
@@ -254,6 +268,8 @@ public class AsyncDeviceCommand  {
     public void setResult(Object result) {
         this.result = result;
     }
+
+    
 
     public AsyncDeviceCommand withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
@@ -275,6 +291,8 @@ public class AsyncDeviceCommand  {
         this.createdTime = createdTime;
     }
 
+    
+
     public AsyncDeviceCommand withSentTime(String sentTime) {
         this.sentTime = sentTime;
         return this;
@@ -294,6 +312,8 @@ public class AsyncDeviceCommand  {
     public void setSentTime(String sentTime) {
         this.sentTime = sentTime;
     }
+
+    
 
     public AsyncDeviceCommand withDeliveredTime(String deliveredTime) {
         this.deliveredTime = deliveredTime;
@@ -315,6 +335,8 @@ public class AsyncDeviceCommand  {
         this.deliveredTime = deliveredTime;
     }
 
+    
+
     public AsyncDeviceCommand withSendStrategy(String sendStrategy) {
         this.sendStrategy = sendStrategy;
         return this;
@@ -335,6 +357,8 @@ public class AsyncDeviceCommand  {
         this.sendStrategy = sendStrategy;
     }
 
+    
+
     public AsyncDeviceCommand withResponseTime(String responseTime) {
         this.responseTime = responseTime;
         return this;
@@ -354,6 +378,9 @@ public class AsyncDeviceCommand  {
     public void setResponseTime(String responseTime) {
         this.responseTime = responseTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

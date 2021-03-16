@@ -42,6 +42,9 @@ public class ApiPolicyMockBase  {
     public void setResultContent(String resultContent) {
         this.resultContent = resultContent;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

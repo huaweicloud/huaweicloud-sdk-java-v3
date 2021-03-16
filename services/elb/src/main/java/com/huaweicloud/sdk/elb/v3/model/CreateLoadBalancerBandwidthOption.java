@@ -229,6 +229,8 @@ public class CreateLoadBalancerBandwidthOption  {
         this.name = name;
     }
 
+    
+
     public CreateLoadBalancerBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
@@ -251,6 +253,8 @@ public class CreateLoadBalancerBandwidthOption  {
         this.size = size;
     }
 
+    
+
     public CreateLoadBalancerBandwidthOption withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -270,6 +274,8 @@ public class CreateLoadBalancerBandwidthOption  {
     public void setChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
     }
+
+    
 
     public CreateLoadBalancerBandwidthOption withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
@@ -291,6 +297,8 @@ public class CreateLoadBalancerBandwidthOption  {
         this.shareType = shareType;
     }
 
+    
+
     public CreateLoadBalancerBandwidthOption withBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
         return this;
@@ -310,6 +318,9 @@ public class CreateLoadBalancerBandwidthOption  {
     public void setBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

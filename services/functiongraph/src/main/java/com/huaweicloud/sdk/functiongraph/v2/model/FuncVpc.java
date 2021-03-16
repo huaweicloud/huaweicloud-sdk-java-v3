@@ -73,6 +73,8 @@ public class FuncVpc  {
         this.vpcName = vpcName;
     }
 
+    
+
     public FuncVpc withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -92,6 +94,8 @@ public class FuncVpc  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public FuncVpc withSubnetName(String subnetName) {
         this.subnetName = subnetName;
@@ -113,6 +117,8 @@ public class FuncVpc  {
         this.subnetName = subnetName;
     }
 
+    
+
     public FuncVpc withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -132,6 +138,8 @@ public class FuncVpc  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
 
     public FuncVpc withCidr(String cidr) {
         this.cidr = cidr;
@@ -153,6 +161,8 @@ public class FuncVpc  {
         this.cidr = cidr;
     }
 
+    
+
     public FuncVpc withGateway(String gateway) {
         this.gateway = gateway;
         return this;
@@ -172,6 +182,9 @@ public class FuncVpc  {
     public void setGateway(String gateway) {
         this.gateway = gateway;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

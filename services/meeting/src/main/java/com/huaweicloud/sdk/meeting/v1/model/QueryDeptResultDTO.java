@@ -112,6 +112,8 @@ public class QueryDeptResultDTO  {
         this.deptCode = deptCode;
     }
 
+    
+
     public QueryDeptResultDTO withDeptLevel(Integer deptLevel) {
         this.deptLevel = deptLevel;
         return this;
@@ -131,6 +133,8 @@ public class QueryDeptResultDTO  {
     public void setDeptLevel(Integer deptLevel) {
         this.deptLevel = deptLevel;
     }
+
+    
 
     public QueryDeptResultDTO withDeptName(String deptName) {
         this.deptName = deptName;
@@ -152,6 +156,8 @@ public class QueryDeptResultDTO  {
         this.deptName = deptName;
     }
 
+    
+
     public QueryDeptResultDTO withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
@@ -171,6 +177,8 @@ public class QueryDeptResultDTO  {
     public void setDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
     }
+
+    
 
     public QueryDeptResultDTO withIsLeafNode(Boolean isLeafNode) {
         this.isLeafNode = isLeafNode;
@@ -192,6 +200,8 @@ public class QueryDeptResultDTO  {
         this.isLeafNode = isLeafNode;
     }
 
+    
+
     public QueryDeptResultDTO withParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
         return this;
@@ -211,6 +221,8 @@ public class QueryDeptResultDTO  {
     public void setParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
     }
+
+    
 
     public QueryDeptResultDTO withDeptCodePath(String deptCodePath) {
         this.deptCodePath = deptCodePath;
@@ -232,6 +244,8 @@ public class QueryDeptResultDTO  {
         this.deptCodePath = deptCodePath;
     }
 
+    
+
     public QueryDeptResultDTO withNote(String note) {
         this.note = note;
         return this;
@@ -251,6 +265,8 @@ public class QueryDeptResultDTO  {
     public void setNote(String note) {
         this.note = note;
     }
+
+    
 
     public QueryDeptResultDTO withCorpId(String corpId) {
         this.corpId = corpId;
@@ -272,6 +288,8 @@ public class QueryDeptResultDTO  {
         this.corpId = corpId;
     }
 
+    
+
     public QueryDeptResultDTO withInPermission(String inPermission) {
         this.inPermission = inPermission;
         return this;
@@ -291,6 +309,8 @@ public class QueryDeptResultDTO  {
     public void setInPermission(String inPermission) {
         this.inPermission = inPermission;
     }
+
+    
 
     public QueryDeptResultDTO withOutPermission(String outPermission) {
         this.outPermission = outPermission;
@@ -312,6 +332,8 @@ public class QueryDeptResultDTO  {
         this.outPermission = outPermission;
     }
 
+    
+
     public QueryDeptResultDTO withDesignatedOutDeptCodes(List<IdMarkDTO> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
         return this;
@@ -319,9 +341,6 @@ public class QueryDeptResultDTO  {
 
     
     public QueryDeptResultDTO addDesignatedOutDeptCodesItem(IdMarkDTO designatedOutDeptCodesItem) {
-        if (this.designatedOutDeptCodes == null) {
-            this.designatedOutDeptCodes = new ArrayList<>();
-        }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
         return this;
     }
@@ -345,6 +364,9 @@ public class QueryDeptResultDTO  {
     public void setDesignatedOutDeptCodes(List<IdMarkDTO> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

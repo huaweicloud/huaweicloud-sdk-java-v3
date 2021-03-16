@@ -24,7 +24,7 @@ public class ShowCaseDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="incident_detail_info")
     
-    private IncidentDetailInfoV2 incidentDetailInfo = null;
+    private IncidentDetailInfoV2 incidentDetailInfo;
 
     public ShowCaseDetailResponse withIncidentDetailInfo(IncidentDetailInfoV2 incidentDetailInfo) {
         this.incidentDetailInfo = incidentDetailInfo;
@@ -52,6 +52,9 @@ public class ShowCaseDetailResponse extends SdkResponse {
     public void setIncidentDetailInfo(IncidentDetailInfoV2 incidentDetailInfo) {
         this.incidentDetailInfo = incidentDetailInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

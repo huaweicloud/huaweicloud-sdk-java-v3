@@ -187,6 +187,8 @@ public class CreateDestinationResponse extends SdkResponse {
         this.destinationId = destinationId;
     }
 
+    
+
     public CreateDestinationResponse withDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
         return this;
@@ -206,6 +208,8 @@ public class CreateDestinationResponse extends SdkResponse {
     public void setDestinationType(DestinationTypeEnum destinationType) {
         this.destinationType = destinationType;
     }
+
+    
 
     public CreateDestinationResponse withAppId(String appId) {
         this.appId = appId;
@@ -227,6 +231,8 @@ public class CreateDestinationResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public CreateDestinationResponse withDestinationName(String destinationName) {
         this.destinationName = destinationName;
         return this;
@@ -246,6 +252,8 @@ public class CreateDestinationResponse extends SdkResponse {
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
     }
+
+    
 
     public CreateDestinationResponse withTopic(String topic) {
         this.topic = topic;
@@ -267,6 +275,8 @@ public class CreateDestinationResponse extends SdkResponse {
         this.topic = topic;
     }
 
+    
+
     public CreateDestinationResponse withServer(String server) {
         this.server = server;
         return this;
@@ -286,6 +296,8 @@ public class CreateDestinationResponse extends SdkResponse {
     public void setServer(String server) {
         this.server = server;
     }
+
+    
 
     public CreateDestinationResponse withToken(String token) {
         this.token = token;
@@ -307,6 +319,8 @@ public class CreateDestinationResponse extends SdkResponse {
         this.token = token;
     }
 
+    
+
     public CreateDestinationResponse withTag(String tag) {
         this.tag = tag;
         return this;
@@ -326,6 +340,8 @@ public class CreateDestinationResponse extends SdkResponse {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
 
     public CreateDestinationResponse withMqsSaslSsl(Boolean mqsSaslSsl) {
         this.mqsSaslSsl = mqsSaslSsl;
@@ -347,6 +363,8 @@ public class CreateDestinationResponse extends SdkResponse {
         this.mqsSaslSsl = mqsSaslSsl;
     }
 
+    
+
     public CreateDestinationResponse withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -367,6 +385,8 @@ public class CreateDestinationResponse extends SdkResponse {
         this.userName = userName;
     }
 
+    
+
     public CreateDestinationResponse withPassword(String password) {
         this.password = password;
         return this;
@@ -386,6 +406,9 @@ public class CreateDestinationResponse extends SdkResponse {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

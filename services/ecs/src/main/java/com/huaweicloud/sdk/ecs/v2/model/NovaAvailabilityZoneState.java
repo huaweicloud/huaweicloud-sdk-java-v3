@@ -42,6 +42,9 @@ public class NovaAvailabilityZoneState  {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

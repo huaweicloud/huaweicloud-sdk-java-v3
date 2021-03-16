@@ -55,6 +55,8 @@ public class AdjustAccountReq  {
         this.customerId = customerId;
     }
 
+    
+
     public AdjustAccountReq withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -77,6 +79,8 @@ public class AdjustAccountReq  {
         this.amount = amount;
     }
 
+    
+
     public AdjustAccountReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -96,6 +100,9 @@ public class AdjustAccountReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

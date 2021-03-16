@@ -42,6 +42,9 @@ public class ListWeeklyReportsRequest  {
     public void setPeriodStartDate(String periodStartDate) {
         this.periodStartDate = periodStartDate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class ListServerBlockDevicesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attachableQuantity")
     
-    private BlockDeviceAttachableQuantity attachableQuantity = null;
+    private BlockDeviceAttachableQuantity attachableQuantity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class ListServerBlockDevicesResponse extends SdkResponse {
         this.attachableQuantity = attachableQuantity;
     }
 
+    
+
     public ListServerBlockDevicesResponse withVolumeAttachments(List<ServerBlockDevice> volumeAttachments) {
         this.volumeAttachments = volumeAttachments;
         return this;
@@ -69,9 +71,6 @@ public class ListServerBlockDevicesResponse extends SdkResponse {
 
     
     public ListServerBlockDevicesResponse addVolumeAttachmentsItem(ServerBlockDevice volumeAttachmentsItem) {
-        if (this.volumeAttachments == null) {
-            this.volumeAttachments = new ArrayList<>();
-        }
         this.volumeAttachments.add(volumeAttachmentsItem);
         return this;
     }
@@ -95,6 +94,9 @@ public class ListServerBlockDevicesResponse extends SdkResponse {
     public void setVolumeAttachments(List<ServerBlockDevice> volumeAttachments) {
         this.volumeAttachments = volumeAttachments;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

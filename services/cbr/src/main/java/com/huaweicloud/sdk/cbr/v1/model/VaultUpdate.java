@@ -23,7 +23,7 @@ public class VaultUpdate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing")
     
-    private BillingUpdate billing = null;
+    private BillingUpdate billing;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,7 +41,7 @@ public class VaultUpdate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_rules")
     
-    private VaultBindRules bindRules = null;
+    private VaultBindRules bindRules;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,6 +76,8 @@ public class VaultUpdate  {
         this.billing = billing;
     }
 
+    
+
     public VaultUpdate withName(String name) {
         this.name = name;
         return this;
@@ -96,6 +98,8 @@ public class VaultUpdate  {
         this.name = name;
     }
 
+    
+
     public VaultUpdate withAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
         return this;
@@ -115,6 +119,8 @@ public class VaultUpdate  {
     public void setAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
     }
+
+    
 
     public VaultUpdate withBindRules(VaultBindRules bindRules) {
         this.bindRules = bindRules;
@@ -143,6 +149,8 @@ public class VaultUpdate  {
         this.bindRules = bindRules;
     }
 
+    
+
     public VaultUpdate withAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
         return this;
@@ -162,6 +170,9 @@ public class VaultUpdate  {
     public void setAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

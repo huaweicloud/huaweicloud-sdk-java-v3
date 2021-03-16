@@ -30,7 +30,7 @@ public class LineCompareResultDetails  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="LineCompareDetail")
     
-    private List<LineCompareDetail> lineCompareDetail = new ArrayList<>();
+    private List<LineCompareDetail> lineCompareDetail = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class LineCompareResultDetails  {
     public void setSourceDbName(String sourceDbName) {
         this.sourceDbName = sourceDbName;
     }
+
+    
 
     public LineCompareResultDetails withLineCompareDetail(List<LineCompareDetail> lineCompareDetail) {
         this.lineCompareDetail = lineCompareDetail;
@@ -89,6 +91,8 @@ public class LineCompareResultDetails  {
         this.lineCompareDetail = lineCompareDetail;
     }
 
+    
+
     public LineCompareResultDetails withLineCompareDetailCount(Integer lineCompareDetailCount) {
         this.lineCompareDetailCount = lineCompareDetailCount;
         return this;
@@ -108,6 +112,9 @@ public class LineCompareResultDetails  {
     public void setLineCompareDetailCount(Integer lineCompareDetailCount) {
         this.lineCompareDetailCount = lineCompareDetailCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

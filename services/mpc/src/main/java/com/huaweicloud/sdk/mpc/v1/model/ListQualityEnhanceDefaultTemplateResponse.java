@@ -41,9 +41,6 @@ public class ListQualityEnhanceDefaultTemplateResponse extends SdkResponse {
 
     
     public ListQualityEnhanceDefaultTemplateResponse addTaskArrayItem(QualityEnhanceTemplateInfo taskArrayItem) {
-        if (this.taskArray == null) {
-            this.taskArray = new ArrayList<>();
-        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListQualityEnhanceDefaultTemplateResponse extends SdkResponse {
         this.taskArray = taskArray;
     }
 
+    
+
     public ListQualityEnhanceDefaultTemplateResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -87,6 +86,9 @@ public class ListQualityEnhanceDefaultTemplateResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

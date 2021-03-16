@@ -42,6 +42,9 @@ public class CouchDBInfo  {
     public void setUser(String user) {
         this.user = user;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

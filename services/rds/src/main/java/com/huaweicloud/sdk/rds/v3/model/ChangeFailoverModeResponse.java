@@ -57,6 +57,8 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
+    
+
     public ChangeFailoverModeResponse withReplicationMode(String replicationMode) {
         this.replicationMode = replicationMode;
         return this;
@@ -77,6 +79,8 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         this.replicationMode = replicationMode;
     }
 
+    
+
     public ChangeFailoverModeResponse withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
         return this;
@@ -96,6 +100,9 @@ public class ChangeFailoverModeResponse extends SdkResponse {
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

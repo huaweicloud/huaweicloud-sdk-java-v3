@@ -261,6 +261,8 @@ public class ListSlowlogStatisticsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListSlowlogStatisticsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -280,6 +282,8 @@ public class ListSlowlogStatisticsRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ListSlowlogStatisticsRequest withCurPage(Integer curPage) {
         this.curPage = curPage;
@@ -301,6 +305,8 @@ public class ListSlowlogStatisticsRequest  {
         this.curPage = curPage;
     }
 
+    
+
     public ListSlowlogStatisticsRequest withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
@@ -320,6 +326,8 @@ public class ListSlowlogStatisticsRequest  {
     public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
+
+    
 
     public ListSlowlogStatisticsRequest withStartDate(String startDate) {
         this.startDate = startDate;
@@ -341,6 +349,8 @@ public class ListSlowlogStatisticsRequest  {
         this.startDate = startDate;
     }
 
+    
+
     public ListSlowlogStatisticsRequest withEndDate(String endDate) {
         this.endDate = endDate;
         return this;
@@ -361,6 +371,8 @@ public class ListSlowlogStatisticsRequest  {
         this.endDate = endDate;
     }
 
+    
+
     public ListSlowlogStatisticsRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -380,6 +392,9 @@ public class ListSlowlogStatisticsRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -104,13 +104,13 @@ public class ListCompareResultRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QueryCompareResultReq body = null;
+    private QueryCompareResultReq body;
 
     public ListCompareResultRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class ListCompareResultRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public ListCompareResultRequest withBody(QueryCompareResultReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class ListCompareResultRequest  {
     public void setBody(QueryCompareResultReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class BatchRetryReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<RetryInfo> jobs = new ArrayList<>();
+    private List<RetryInfo> jobs = null;
     
     public BatchRetryReq withJobs(List<RetryInfo> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchRetryReq  {
     public void setJobs(List<RetryInfo> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

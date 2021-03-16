@@ -40,7 +40,7 @@ public class UpdateDepartmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModDeptDTO body = null;
+    private ModDeptDTO body;
 
     public UpdateDepartmentRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -64,6 +64,8 @@ public class UpdateDepartmentRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateDepartmentRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -84,6 +86,8 @@ public class UpdateDepartmentRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public UpdateDepartmentRequest withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -103,6 +107,8 @@ public class UpdateDepartmentRequest  {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
 
     public UpdateDepartmentRequest withBody(ModDeptDTO body) {
         this.body = body;
@@ -130,6 +136,9 @@ public class UpdateDepartmentRequest  {
     public void setBody(ModDeptDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

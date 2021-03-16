@@ -28,7 +28,7 @@ public class BatchCreatePublicipTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ResourceTagOption> tags = new ArrayList<>();
+    private List<ResourceTagOption> tags = null;
         /**
      * 操作标识  create：创建  action为create时，tag的value必选
      */
@@ -139,6 +139,8 @@ public class BatchCreatePublicipTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public BatchCreatePublicipTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -158,6 +160,9 @@ public class BatchCreatePublicipTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

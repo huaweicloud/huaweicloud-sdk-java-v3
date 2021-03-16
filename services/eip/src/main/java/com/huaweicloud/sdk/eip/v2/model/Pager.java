@@ -131,6 +131,8 @@ public class Pager  {
         this.href = href;
     }
 
+    
+
     public Pager withRel(RelEnum rel) {
         this.rel = rel;
         return this;
@@ -150,6 +152,9 @@ public class Pager  {
     public void setRel(RelEnum rel) {
         this.rel = rel;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

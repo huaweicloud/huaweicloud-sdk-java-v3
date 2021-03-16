@@ -28,7 +28,7 @@ public class CreateTaskV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateTaskRequestV2 body = null;
+    private CreateTaskRequestV2 body;
 
     public CreateTaskV2Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class CreateTaskV2Request  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreateTaskV2Request withBody(CreateTaskRequestV2 body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateTaskV2Request  {
     public void setBody(CreateTaskRequestV2 body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

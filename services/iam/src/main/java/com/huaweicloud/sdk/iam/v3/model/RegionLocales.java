@@ -67,6 +67,8 @@ public class RegionLocales  {
         this.zhCn = zhCn;
     }
 
+    
+
     public RegionLocales withEnUs(String enUs) {
         this.enUs = enUs;
         return this;
@@ -86,6 +88,8 @@ public class RegionLocales  {
     public void setEnUs(String enUs) {
         this.enUs = enUs;
     }
+
+    
 
     public RegionLocales withPtBr(String ptBr) {
         this.ptBr = ptBr;
@@ -107,6 +111,8 @@ public class RegionLocales  {
         this.ptBr = ptBr;
     }
 
+    
+
     public RegionLocales withEsUs(String esUs) {
         this.esUs = esUs;
         return this;
@@ -127,6 +133,8 @@ public class RegionLocales  {
         this.esUs = esUs;
     }
 
+    
+
     public RegionLocales withEsEs(String esEs) {
         this.esEs = esEs;
         return this;
@@ -146,6 +154,9 @@ public class RegionLocales  {
     public void setEsEs(String esEs) {
         this.esEs = esEs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

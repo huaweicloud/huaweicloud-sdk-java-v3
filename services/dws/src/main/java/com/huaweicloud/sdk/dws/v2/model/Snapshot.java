@@ -55,6 +55,8 @@ public class Snapshot  {
         this.clusterId = clusterId;
     }
 
+    
+
     public Snapshot withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class Snapshot  {
         this.name = name;
     }
 
+    
+
     public Snapshot withDescription(String description) {
         this.description = description;
         return this;
@@ -94,6 +98,9 @@ public class Snapshot  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

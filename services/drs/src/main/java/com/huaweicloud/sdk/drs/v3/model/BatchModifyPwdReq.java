@@ -24,7 +24,7 @@ public class BatchModifyPwdReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobs")
     
-    private List<ModifyPwdEndPoint> jobs = new ArrayList<>();
+    private List<ModifyPwdEndPoint> jobs = null;
     
     public BatchModifyPwdReq withJobs(List<ModifyPwdEndPoint> jobs) {
         this.jobs = jobs;
@@ -56,6 +56,9 @@ public class BatchModifyPwdReq  {
     public void setJobs(List<ModifyPwdEndPoint> jobs) {
         this.jobs = jobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

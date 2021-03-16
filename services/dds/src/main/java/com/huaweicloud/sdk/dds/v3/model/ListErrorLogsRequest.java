@@ -161,6 +161,8 @@ public class ListErrorLogsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListErrorLogsRequest withStartDate(String startDate) {
         this.startDate = startDate;
         return this;
@@ -180,6 +182,8 @@ public class ListErrorLogsRequest  {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
+
+    
 
     public ListErrorLogsRequest withEndDate(String endDate) {
         this.endDate = endDate;
@@ -201,6 +205,8 @@ public class ListErrorLogsRequest  {
         this.endDate = endDate;
     }
 
+    
+
     public ListErrorLogsRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -221,6 +227,8 @@ public class ListErrorLogsRequest  {
         this.nodeId = nodeId;
     }
 
+    
+
     public ListErrorLogsRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -240,6 +248,8 @@ public class ListErrorLogsRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ListErrorLogsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -263,6 +273,8 @@ public class ListErrorLogsRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListErrorLogsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -284,6 +296,9 @@ public class ListErrorLogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

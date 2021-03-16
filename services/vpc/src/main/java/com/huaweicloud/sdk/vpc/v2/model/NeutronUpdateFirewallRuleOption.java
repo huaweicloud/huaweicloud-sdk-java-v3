@@ -103,7 +103,7 @@ public class NeutronUpdateFirewallRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action = ActionEnum.DENY;
+    private ActionEnum action;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -127,13 +127,13 @@ public class NeutronUpdateFirewallRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enabled")
     
-    private Boolean enabled = true;
+    private Boolean enabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_version")
     
-    private Integer ipVersion = 4;
+    private Integer ipVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -179,6 +179,8 @@ public class NeutronUpdateFirewallRuleOption  {
         this.action = action;
     }
 
+    
+
     public NeutronUpdateFirewallRuleOption withDescription(String description) {
         this.description = description;
         return this;
@@ -198,6 +200,8 @@ public class NeutronUpdateFirewallRuleOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public NeutronUpdateFirewallRuleOption withDestinationIpAddress(String destinationIpAddress) {
         this.destinationIpAddress = destinationIpAddress;
@@ -219,6 +223,8 @@ public class NeutronUpdateFirewallRuleOption  {
         this.destinationIpAddress = destinationIpAddress;
     }
 
+    
+
     public NeutronUpdateFirewallRuleOption withDestinationPort(String destinationPort) {
         this.destinationPort = destinationPort;
         return this;
@@ -239,6 +245,8 @@ public class NeutronUpdateFirewallRuleOption  {
         this.destinationPort = destinationPort;
     }
 
+    
+
     public NeutronUpdateFirewallRuleOption withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -258,6 +266,8 @@ public class NeutronUpdateFirewallRuleOption  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public NeutronUpdateFirewallRuleOption withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
@@ -281,6 +291,8 @@ public class NeutronUpdateFirewallRuleOption  {
         this.ipVersion = ipVersion;
     }
 
+    
+
     public NeutronUpdateFirewallRuleOption withName(String name) {
         this.name = name;
         return this;
@@ -300,6 +312,8 @@ public class NeutronUpdateFirewallRuleOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NeutronUpdateFirewallRuleOption withProtocol(String protocol) {
         this.protocol = protocol;
@@ -321,6 +335,8 @@ public class NeutronUpdateFirewallRuleOption  {
         this.protocol = protocol;
     }
 
+    
+
     public NeutronUpdateFirewallRuleOption withSourceIpAddress(String sourceIpAddress) {
         this.sourceIpAddress = sourceIpAddress;
         return this;
@@ -341,6 +357,8 @@ public class NeutronUpdateFirewallRuleOption  {
         this.sourceIpAddress = sourceIpAddress;
     }
 
+    
+
     public NeutronUpdateFirewallRuleOption withSourcePort(String sourcePort) {
         this.sourcePort = sourcePort;
         return this;
@@ -360,6 +378,9 @@ public class NeutronUpdateFirewallRuleOption  {
     public void setSourcePort(String sourcePort) {
         this.sourcePort = sourcePort;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

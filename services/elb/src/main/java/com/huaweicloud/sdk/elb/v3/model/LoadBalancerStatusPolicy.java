@@ -70,6 +70,8 @@ public class LoadBalancerStatusPolicy  {
         this.action = action;
     }
 
+    
+
     public LoadBalancerStatusPolicy withId(String id) {
         this.id = id;
         return this;
@@ -89,6 +91,8 @@ public class LoadBalancerStatusPolicy  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public LoadBalancerStatusPolicy withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
@@ -110,6 +114,8 @@ public class LoadBalancerStatusPolicy  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public LoadBalancerStatusPolicy withName(String name) {
         this.name = name;
         return this;
@@ -130,6 +136,8 @@ public class LoadBalancerStatusPolicy  {
         this.name = name;
     }
 
+    
+
     public LoadBalancerStatusPolicy withRules(List<LoadBalancerStatusL7Rule> rules) {
         this.rules = rules;
         return this;
@@ -137,9 +145,6 @@ public class LoadBalancerStatusPolicy  {
 
     
     public LoadBalancerStatusPolicy addRulesItem(LoadBalancerStatusL7Rule rulesItem) {
-        if (this.rules == null) {
-            this.rules = new ArrayList<>();
-        }
         this.rules.add(rulesItem);
         return this;
     }
@@ -163,6 +168,9 @@ public class LoadBalancerStatusPolicy  {
     public void setRules(List<LoadBalancerStatusL7Rule> rules) {
         this.rules = rules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

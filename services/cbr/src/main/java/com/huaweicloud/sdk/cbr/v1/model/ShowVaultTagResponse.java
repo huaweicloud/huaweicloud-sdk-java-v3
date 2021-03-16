@@ -42,9 +42,6 @@ public class ShowVaultTagResponse extends SdkResponse {
 
     
     public ShowVaultTagResponse addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class ShowVaultTagResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public ShowVaultTagResponse withSysTags(List<SysTag> sysTags) {
         this.sysTags = sysTags;
         return this;
@@ -76,9 +75,6 @@ public class ShowVaultTagResponse extends SdkResponse {
 
     
     public ShowVaultTagResponse addSysTagsItem(SysTag sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class ShowVaultTagResponse extends SdkResponse {
     public void setSysTags(List<SysTag> sysTags) {
         this.sysTags = sysTags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

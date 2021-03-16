@@ -41,9 +41,6 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
 
     
     public ListSingleStreamFramerateResponse addFramerateInfoListItem(V2FramerateInfo framerateInfoListItem) {
-        if (this.framerateInfoList == null) {
-            this.framerateInfoList = new ArrayList<>();
-        }
         this.framerateInfoList.add(framerateInfoListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
         this.framerateInfoList = framerateInfoList;
     }
 
+    
+
     public ListSingleStreamFramerateResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -89,6 +88,9 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

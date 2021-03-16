@@ -35,9 +35,6 @@ public class NovaListKeypairsResponse extends SdkResponse {
 
     
     public NovaListKeypairsResponse addKeypairsItem(NovaListKeypairsResult keypairsItem) {
-        if (this.keypairs == null) {
-            this.keypairs = new ArrayList<>();
-        }
         this.keypairs.add(keypairsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class NovaListKeypairsResponse extends SdkResponse {
     public void setKeypairs(List<NovaListKeypairsResult> keypairs) {
         this.keypairs = keypairs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

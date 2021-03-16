@@ -49,6 +49,8 @@ public class ListCustomPoliciesRequest  {
         this.page = page;
     }
 
+    
+
     public ListCustomPoliciesRequest withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
@@ -68,6 +70,9 @@ public class ListCustomPoliciesRequest  {
     public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

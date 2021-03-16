@@ -160,7 +160,7 @@ public class ShowAppQuotaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -188,6 +188,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
         this.appQuotaId = appQuotaId;
     }
 
+    
+
     public ShowAppQuotaResponse withName(String name) {
         this.name = name;
         return this;
@@ -207,6 +209,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowAppQuotaResponse withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
@@ -228,6 +232,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
         this.callLimits = callLimits;
     }
 
+    
+
     public ShowAppQuotaResponse withTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
         return this;
@@ -247,6 +253,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
     public void setTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
     }
+
+    
 
     public ShowAppQuotaResponse withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -268,6 +276,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public ShowAppQuotaResponse withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -287,6 +297,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    
 
     public ShowAppQuotaResponse withResetTime(String resetTime) {
         this.resetTime = resetTime;
@@ -308,6 +320,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
         this.resetTime = resetTime;
     }
 
+    
+
     public ShowAppQuotaResponse withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -328,6 +342,8 @@ public class ShowAppQuotaResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowAppQuotaResponse withBoundAppNum(Integer boundAppNum) {
         this.boundAppNum = boundAppNum;
         return this;
@@ -347,6 +363,9 @@ public class ShowAppQuotaResponse extends SdkResponse {
     public void setBoundAppNum(Integer boundAppNum) {
         this.boundAppNum = boundAppNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

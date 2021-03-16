@@ -104,13 +104,13 @@ public class BatchListStructProcessRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
+    private XLanguageEnum xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchQueryJobReq body = null;
+    private BatchQueryJobReq body;
 
     public BatchListStructProcessRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -133,6 +133,8 @@ public class BatchListStructProcessRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public BatchListStructProcessRequest withBody(BatchQueryJobReq body) {
         this.body = body;
@@ -160,6 +162,9 @@ public class BatchListStructProcessRequest  {
     public void setBody(BatchQueryJobReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -179,6 +179,8 @@ public class PublicationResponseBase  {
         this.id = id;
     }
 
+    
+
     public PublicationResponseBase withLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
         return this;
@@ -198,6 +200,8 @@ public class PublicationResponseBase  {
     public void setLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
     }
+
+    
 
     public PublicationResponseBase withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -219,6 +223,8 @@ public class PublicationResponseBase  {
         this.createTime = createTime;
     }
 
+    
+
     public PublicationResponseBase withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -238,6 +244,8 @@ public class PublicationResponseBase  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 
     public PublicationResponseBase withPublishName(String publishName) {
         this.publishName = publishName;
@@ -259,6 +267,8 @@ public class PublicationResponseBase  {
         this.publishName = publishName;
     }
 
+    
+
     public PublicationResponseBase withPublishScope(String publishScope) {
         this.publishScope = publishScope;
         return this;
@@ -278,6 +288,8 @@ public class PublicationResponseBase  {
     public void setPublishScope(String publishScope) {
         this.publishScope = publishScope;
     }
+
+    
 
     public PublicationResponseBase withStartTime(Long startTime) {
         this.startTime = startTime;
@@ -299,6 +311,8 @@ public class PublicationResponseBase  {
         this.startTime = startTime;
     }
 
+    
+
     public PublicationResponseBase withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -319,6 +333,8 @@ public class PublicationResponseBase  {
         this.endTime = endTime;
     }
 
+    
+
     public PublicationResponseBase withPublishStatus(PublishStatusEnum publishStatus) {
         this.publishStatus = publishStatus;
         return this;
@@ -338,6 +354,9 @@ public class PublicationResponseBase  {
     public void setPublishStatus(PublishStatusEnum publishStatus) {
         this.publishStatus = publishStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

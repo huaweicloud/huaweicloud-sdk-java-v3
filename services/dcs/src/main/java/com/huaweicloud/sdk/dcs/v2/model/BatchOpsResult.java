@@ -49,6 +49,8 @@ public class BatchOpsResult  {
         this.result = result;
     }
 
+    
+
     public BatchOpsResult withInstance(String instance) {
         this.instance = instance;
         return this;
@@ -68,6 +70,9 @@ public class BatchOpsResult  {
     public void setInstance(String instance) {
         this.instance = instance;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -58,6 +58,8 @@ public class ShadowService  {
         this.serviceId = serviceId;
     }
 
+    
+
     public ShadowService withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
@@ -78,6 +80,8 @@ public class ShadowService  {
         this.serviceName = serviceName;
     }
 
+    
+
     public ShadowService withProperties(List<ShadowValue> properties) {
         this.properties = properties;
         return this;
@@ -85,9 +89,6 @@ public class ShadowService  {
 
     
     public ShadowService addPropertiesItem(ShadowValue propertiesItem) {
-        if (this.properties == null) {
-            this.properties = new ArrayList<>();
-        }
         this.properties.add(propertiesItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class ShadowService  {
     public void setProperties(List<ShadowValue> properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

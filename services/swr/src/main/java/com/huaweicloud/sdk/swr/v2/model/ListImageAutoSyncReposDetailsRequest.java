@@ -49,6 +49,8 @@ public class ListImageAutoSyncReposDetailsRequest  {
         this.namespace = namespace;
     }
 
+    
+
     public ListImageAutoSyncReposDetailsRequest withRepository(String repository) {
         this.repository = repository;
         return this;
@@ -68,6 +70,9 @@ public class ListImageAutoSyncReposDetailsRequest  {
     public void setRepository(String repository) {
         this.repository = repository;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

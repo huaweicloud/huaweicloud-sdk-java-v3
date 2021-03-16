@@ -61,6 +61,8 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListAclPolicyBindedToApiV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListAclPolicyBindedToApiV2Response withAcls(List<ApiBindAclPageAclsResp> acls) {
         this.acls = acls;
         return this;
@@ -88,9 +92,6 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
 
     
     public ListAclPolicyBindedToApiV2Response addAclsItem(ApiBindAclPageAclsResp aclsItem) {
-        if (this.acls == null) {
-            this.acls = new ArrayList<>();
-        }
         this.acls.add(aclsItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
     public void setAcls(List<ApiBindAclPageAclsResp> acls) {
         this.acls = acls;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

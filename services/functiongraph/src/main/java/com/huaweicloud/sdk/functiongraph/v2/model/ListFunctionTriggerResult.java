@@ -250,19 +250,19 @@ public class ListFunctionTriggerResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_data")
     
-    private Object eventData = null;
+    private Object eventData;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_time")
     
-    private OffsetDateTime lastUpdatedTime = null;
+    private OffsetDateTime lastUpdatedTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private OffsetDateTime createdTime = null;
+    private OffsetDateTime createdTime;
 
     public ListFunctionTriggerResult withTriggerId(String triggerId) {
         this.triggerId = triggerId;
@@ -284,6 +284,8 @@ public class ListFunctionTriggerResult  {
         this.triggerId = triggerId;
     }
 
+    
+
     public ListFunctionTriggerResult withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
         return this;
@@ -303,6 +305,8 @@ public class ListFunctionTriggerResult  {
     public void setTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
     }
+
+    
 
     public ListFunctionTriggerResult withTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
@@ -324,6 +328,8 @@ public class ListFunctionTriggerResult  {
         this.triggerStatus = triggerStatus;
     }
 
+    
+
     public ListFunctionTriggerResult withEventData(Object eventData) {
         this.eventData = eventData;
         return this;
@@ -343,6 +349,8 @@ public class ListFunctionTriggerResult  {
     public void setEventData(Object eventData) {
         this.eventData = eventData;
     }
+
+    
 
     public ListFunctionTriggerResult withLastUpdatedTime(OffsetDateTime lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
@@ -364,6 +372,8 @@ public class ListFunctionTriggerResult  {
         this.lastUpdatedTime = lastUpdatedTime;
     }
 
+    
+
     public ListFunctionTriggerResult withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -383,6 +393,9 @@ public class ListFunctionTriggerResult  {
     public void setCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

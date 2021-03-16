@@ -27,13 +27,13 @@ public class ListDevicesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 0;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -121,6 +121,8 @@ public class ListDevicesRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListDevicesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -142,6 +144,8 @@ public class ListDevicesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ListDevicesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -165,6 +169,8 @@ public class ListDevicesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListDevicesRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -184,6 +190,8 @@ public class ListDevicesRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ListDevicesRequest withProductId(Integer productId) {
         this.productId = productId;
@@ -207,6 +215,8 @@ public class ListDevicesRequest  {
         this.productId = productId;
     }
 
+    
+
     public ListDevicesRequest withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -226,6 +236,8 @@ public class ListDevicesRequest  {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    
 
     public ListDevicesRequest withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -247,6 +259,8 @@ public class ListDevicesRequest  {
         this.deviceName = deviceName;
     }
 
+    
+
     public ListDevicesRequest withClientId(String clientId) {
         this.clientId = clientId;
         return this;
@@ -267,6 +281,8 @@ public class ListDevicesRequest  {
         this.clientId = clientId;
     }
 
+    
+
     public ListDevicesRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
@@ -286,6 +302,8 @@ public class ListDevicesRequest  {
     public void setNodeId(String nodeId) {
         this.nodeId = nodeId;
     }
+
+    
 
     public ListDevicesRequest withNodeType(Integer nodeType) {
         this.nodeType = nodeType;
@@ -309,6 +327,8 @@ public class ListDevicesRequest  {
         this.nodeType = nodeType;
     }
 
+    
+
     public ListDevicesRequest withOnlineStatus(String onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
@@ -328,6 +348,8 @@ public class ListDevicesRequest  {
     public void setOnlineStatus(String onlineStatus) {
         this.onlineStatus = onlineStatus;
     }
+
+    
 
     public ListDevicesRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
@@ -351,6 +373,8 @@ public class ListDevicesRequest  {
         this.createdDateStart = createdDateStart;
     }
 
+    
+
     public ListDevicesRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
@@ -373,6 +397,8 @@ public class ListDevicesRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
+    
+
     public ListDevicesRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -392,6 +418,9 @@ public class ListDevicesRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateTrackerConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TrackerConfigBody body = null;
+    private TrackerConfigBody body;
 
     public CreateTrackerConfigRequest withBody(TrackerConfigBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateTrackerConfigRequest  {
     public void setBody(TrackerConfigBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

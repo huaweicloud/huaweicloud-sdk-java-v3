@@ -91,6 +91,8 @@ public class ShowMembersDetailRequest  {
         this.backupId = backupId;
     }
 
+    
+
     public ShowMembersDetailRequest withDestProjectId(String destProjectId) {
         this.destProjectId = destProjectId;
         return this;
@@ -110,6 +112,8 @@ public class ShowMembersDetailRequest  {
     public void setDestProjectId(String destProjectId) {
         this.destProjectId = destProjectId;
     }
+
+    
 
     public ShowMembersDetailRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -131,6 +135,8 @@ public class ShowMembersDetailRequest  {
         this.imageId = imageId;
     }
 
+    
+
     public ShowMembersDetailRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -150,6 +156,8 @@ public class ShowMembersDetailRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public ShowMembersDetailRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
@@ -171,6 +179,8 @@ public class ShowMembersDetailRequest  {
         this.vaultId = vaultId;
     }
 
+    
+
     public ShowMembersDetailRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -190,6 +200,8 @@ public class ShowMembersDetailRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
 
     public ShowMembersDetailRequest withMarker(String marker) {
         this.marker = marker;
@@ -211,6 +223,8 @@ public class ShowMembersDetailRequest  {
         this.marker = marker;
     }
 
+    
+
     public ShowMembersDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -231,6 +245,8 @@ public class ShowMembersDetailRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowMembersDetailRequest withSort(String sort) {
         this.sort = sort;
         return this;
@@ -250,6 +266,9 @@ public class ShowMembersDetailRequest  {
     public void setSort(String sort) {
         this.sort = sort;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

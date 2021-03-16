@@ -59,7 +59,7 @@ public class RoleResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,7 +83,7 @@ public class RoleResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private RolePolicy policy = null;
+    private RolePolicy policy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,6 +117,8 @@ public class RoleResult  {
         this.domainId = domainId;
     }
 
+    
+
     public RoleResult withFlag(String flag) {
         this.flag = flag;
         return this;
@@ -136,6 +138,8 @@ public class RoleResult  {
     public void setFlag(String flag) {
         this.flag = flag;
     }
+
+    
 
     public RoleResult withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
@@ -157,6 +161,8 @@ public class RoleResult  {
         this.descriptionCn = descriptionCn;
     }
 
+    
+
     public RoleResult withCatalog(String catalog) {
         this.catalog = catalog;
         return this;
@@ -176,6 +182,8 @@ public class RoleResult  {
     public void setCatalog(String catalog) {
         this.catalog = catalog;
     }
+
+    
 
     public RoleResult withName(String name) {
         this.name = name;
@@ -197,6 +205,8 @@ public class RoleResult  {
         this.name = name;
     }
 
+    
+
     public RoleResult withDescription(String description) {
         this.description = description;
         return this;
@@ -216,6 +226,8 @@ public class RoleResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public RoleResult withLinks(Links links) {
         this.links = links;
@@ -244,6 +256,8 @@ public class RoleResult  {
         this.links = links;
     }
 
+    
+
     public RoleResult withId(String id) {
         this.id = id;
         return this;
@@ -263,6 +277,8 @@ public class RoleResult  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public RoleResult withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -284,6 +300,8 @@ public class RoleResult  {
         this.displayName = displayName;
     }
 
+    
+
     public RoleResult withType(String type) {
         this.type = type;
         return this;
@@ -303,6 +321,8 @@ public class RoleResult  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public RoleResult withPolicy(RolePolicy policy) {
         this.policy = policy;
@@ -331,6 +351,8 @@ public class RoleResult  {
         this.policy = policy;
     }
 
+    
+
     public RoleResult withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
@@ -351,6 +373,8 @@ public class RoleResult  {
         this.updatedTime = updatedTime;
     }
 
+    
+
     public RoleResult withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -370,6 +394,9 @@ public class RoleResult  {
     public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,9 +55,6 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
 
     
     public ShowProjectSummaryV4Response addBugStatisticsItem(BugStatisticResponseV4 bugStatisticsItem) {
-        if (this.bugStatistics == null) {
-            this.bugStatistics = new ArrayList<>();
-        }
         this.bugStatistics.add(bugStatisticsItem);
         return this;
     }
@@ -82,6 +79,8 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         this.bugStatistics = bugStatistics;
     }
 
+    
+
     public ShowProjectSummaryV4Response withDemandStatistics(List<DemandStatisticResponseV4> demandStatistics) {
         this.demandStatistics = demandStatistics;
         return this;
@@ -89,9 +88,6 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
 
     
     public ShowProjectSummaryV4Response addDemandStatisticsItem(DemandStatisticResponseV4 demandStatisticsItem) {
-        if (this.demandStatistics == null) {
-            this.demandStatistics = new ArrayList<>();
-        }
         this.demandStatistics.add(demandStatisticsItem);
         return this;
     }
@@ -116,6 +112,8 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         this.demandStatistics = demandStatistics;
     }
 
+    
+
     public ShowProjectSummaryV4Response withIssueCompletionRates(List<IssueCompletionRateResponseV4> issueCompletionRates) {
         this.issueCompletionRates = issueCompletionRates;
         return this;
@@ -123,9 +121,6 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
 
     
     public ShowProjectSummaryV4Response addIssueCompletionRatesItem(IssueCompletionRateResponseV4 issueCompletionRatesItem) {
-        if (this.issueCompletionRates == null) {
-            this.issueCompletionRates = new ArrayList<>();
-        }
         this.issueCompletionRates.add(issueCompletionRatesItem);
         return this;
     }
@@ -150,6 +145,8 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
         this.issueCompletionRates = issueCompletionRates;
     }
 
+    
+
     public ShowProjectSummaryV4Response withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -169,6 +166,9 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

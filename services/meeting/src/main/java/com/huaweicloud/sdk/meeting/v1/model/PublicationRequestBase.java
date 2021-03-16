@@ -41,13 +41,13 @@ public class PublicationRequestBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deptList")
     
-    private List<String> deptList = new ArrayList<>();
+    private List<String> deptList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deviceList")
     
-    private List<String> deviceList = new ArrayList<>();
+    private List<String> deviceList = null;
     
     public PublicationRequestBase withPublishName(String publishName) {
         this.publishName = publishName;
@@ -69,6 +69,8 @@ public class PublicationRequestBase  {
         this.publishName = publishName;
     }
 
+    
+
     public PublicationRequestBase withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -89,6 +91,8 @@ public class PublicationRequestBase  {
         this.startTime = startTime;
     }
 
+    
+
     public PublicationRequestBase withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -108,6 +112,8 @@ public class PublicationRequestBase  {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public PublicationRequestBase withDeptList(List<String> deptList) {
         this.deptList = deptList;
@@ -140,6 +146,8 @@ public class PublicationRequestBase  {
         this.deptList = deptList;
     }
 
+    
+
     public PublicationRequestBase withDeviceList(List<String> deviceList) {
         this.deviceList = deviceList;
         return this;
@@ -170,6 +178,9 @@ public class PublicationRequestBase  {
     public void setDeviceList(List<String> deviceList) {
         this.deviceList = deviceList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class ServiceStatement  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Action")
     
-    private List<String> action = new ArrayList<>();
+    private List<String> action = null;
         /**
      * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
      */
@@ -156,6 +156,8 @@ public class ServiceStatement  {
         this.action = action;
     }
 
+    
+
     public ServiceStatement withEffect(EffectEnum effect) {
         this.effect = effect;
         return this;
@@ -176,6 +178,8 @@ public class ServiceStatement  {
         this.effect = effect;
     }
 
+    
+
     public ServiceStatement withCondition(Map<String, Map<String, List<String>>> condition) {
         this.condition = condition;
         return this;
@@ -184,9 +188,6 @@ public class ServiceStatement  {
     
 
     public ServiceStatement putConditionItem(String key, Map<String, List<String>> conditionItem) {
-         if (this.condition == null) {
-            this.condition = new HashMap<>();
-         }
         this.condition.put(key, conditionItem);
         return this;
     }
@@ -210,6 +211,8 @@ public class ServiceStatement  {
         this.condition = condition;
     }
 
+    
+
     public ServiceStatement withResource(List<String> resource) {
         this.resource = resource;
         return this;
@@ -217,9 +220,6 @@ public class ServiceStatement  {
 
     
     public ServiceStatement addResourceItem(String resourceItem) {
-        if (this.resource == null) {
-            this.resource = new ArrayList<>();
-        }
         this.resource.add(resourceItem);
         return this;
     }
@@ -243,6 +243,9 @@ public class ServiceStatement  {
     public void setResource(List<String> resource) {
         this.resource = resource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class ShowSpecifiedVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    private Versions version = null;
+    private Versions version;
 
     public ShowSpecifiedVersionResponse withVersion(Versions version) {
         this.version = version;
@@ -52,6 +52,9 @@ public class ShowSpecifiedVersionResponse extends SdkResponse {
     public void setVersion(Versions version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

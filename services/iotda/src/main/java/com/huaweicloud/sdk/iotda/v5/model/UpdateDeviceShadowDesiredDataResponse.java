@@ -54,6 +54,8 @@ public class UpdateDeviceShadowDesiredDataResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
+    
+
     public UpdateDeviceShadowDesiredDataResponse withShadow(List<DeviceShadowData> shadow) {
         this.shadow = shadow;
         return this;
@@ -61,9 +63,6 @@ public class UpdateDeviceShadowDesiredDataResponse extends SdkResponse {
 
     
     public UpdateDeviceShadowDesiredDataResponse addShadowItem(DeviceShadowData shadowItem) {
-        if (this.shadow == null) {
-            this.shadow = new ArrayList<>();
-        }
         this.shadow.add(shadowItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class UpdateDeviceShadowDesiredDataResponse extends SdkResponse {
     public void setShadow(List<DeviceShadowData> shadow) {
         this.shadow = shadow;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

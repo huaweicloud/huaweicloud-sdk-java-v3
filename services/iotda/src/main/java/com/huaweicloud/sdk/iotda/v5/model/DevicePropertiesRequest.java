@@ -21,7 +21,7 @@ public class DevicePropertiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="services")
     
-    private Object services = null;
+    private Object services;
 
     public DevicePropertiesRequest withServices(Object services) {
         this.services = services;
@@ -42,6 +42,9 @@ public class DevicePropertiesRequest  {
     public void setServices(Object services) {
         this.services = services;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

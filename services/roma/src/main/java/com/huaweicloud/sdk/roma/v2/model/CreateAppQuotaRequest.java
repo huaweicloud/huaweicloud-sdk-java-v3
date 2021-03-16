@@ -28,7 +28,7 @@ public class CreateAppQuotaRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppQuotaCreate body = null;
+    private AppQuotaCreate body;
 
     public CreateAppQuotaRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateAppQuotaRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateAppQuotaRequest withBody(AppQuotaCreate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateAppQuotaRequest  {
     public void setBody(AppQuotaCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

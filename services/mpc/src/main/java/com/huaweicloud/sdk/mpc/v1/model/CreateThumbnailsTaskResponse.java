@@ -42,7 +42,7 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,6 +82,8 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
+    
+
     public CreateThumbnailsTaskResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -102,6 +104,8 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateThumbnailsTaskResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -121,6 +125,8 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public CreateThumbnailsTaskResponse withOutput(ObsObjInfo output) {
         this.output = output;
@@ -149,6 +155,8 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         this.output = output;
     }
 
+    
+
     public CreateThumbnailsTaskResponse withOutputFileName(String outputFileName) {
         this.outputFileName = outputFileName;
         return this;
@@ -168,6 +176,8 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
     public void setOutputFileName(String outputFileName) {
         this.outputFileName = outputFileName;
     }
+
+    
 
     public CreateThumbnailsTaskResponse withThumbnailTime(String thumbnailTime) {
         this.thumbnailTime = thumbnailTime;
@@ -189,6 +199,8 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
         this.thumbnailTime = thumbnailTime;
     }
 
+    
+
     public CreateThumbnailsTaskResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -208,6 +220,9 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

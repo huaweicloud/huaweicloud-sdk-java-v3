@@ -49,6 +49,8 @@ public class ShowDetailsOfApiV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfApiV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -68,6 +70,9 @@ public class ShowDetailsOfApiV2Request  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -170,7 +170,7 @@ public class UpdateTriggerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateTriggerRequestBody body = null;
+    private UpdateTriggerRequestBody body;
 
     public UpdateTriggerRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -192,6 +192,8 @@ public class UpdateTriggerRequest  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public UpdateTriggerRequest withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
         return this;
@@ -212,6 +214,8 @@ public class UpdateTriggerRequest  {
         this.triggerTypeCode = triggerTypeCode;
     }
 
+    
+
     public UpdateTriggerRequest withTriggerId(String triggerId) {
         this.triggerId = triggerId;
         return this;
@@ -231,6 +235,8 @@ public class UpdateTriggerRequest  {
     public void setTriggerId(String triggerId) {
         this.triggerId = triggerId;
     }
+
+    
 
     public UpdateTriggerRequest withBody(UpdateTriggerRequestBody body) {
         this.body = body;
@@ -258,6 +264,9 @@ public class UpdateTriggerRequest  {
     public void setBody(UpdateTriggerRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

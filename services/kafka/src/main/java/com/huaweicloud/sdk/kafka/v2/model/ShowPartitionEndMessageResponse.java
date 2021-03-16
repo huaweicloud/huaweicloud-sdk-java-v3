@@ -57,6 +57,8 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
         this.topic = topic;
     }
 
+    
+
     public ShowPartitionEndMessageResponse withPartition(Integer partition) {
         this.partition = partition;
         return this;
@@ -77,6 +79,8 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
         this.partition = partition;
     }
 
+    
+
     public ShowPartitionEndMessageResponse withMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
         return this;
@@ -96,6 +100,9 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
     public void setMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

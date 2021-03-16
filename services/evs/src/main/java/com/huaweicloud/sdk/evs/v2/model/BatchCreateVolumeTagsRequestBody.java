@@ -100,13 +100,13 @@ public class BatchCreateVolumeTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action = ActionEnum.CREATE;
+    private ActionEnum action;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Tag> tags = new ArrayList<>();
+    private List<Tag> tags = null;
     
     public BatchCreateVolumeTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -127,6 +127,8 @@ public class BatchCreateVolumeTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
+
+    
 
     public BatchCreateVolumeTagsRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
@@ -158,6 +160,9 @@ public class BatchCreateVolumeTagsRequestBody  {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

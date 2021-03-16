@@ -49,6 +49,8 @@ public class BillbingCreateExtraInfo  {
         this.combinedOrderId = combinedOrderId;
     }
 
+    
+
     public BillbingCreateExtraInfo withCombinedOrderEcsNum(Integer combinedOrderEcsNum) {
         this.combinedOrderEcsNum = combinedOrderEcsNum;
         return this;
@@ -68,6 +70,9 @@ public class BillbingCreateExtraInfo  {
     public void setCombinedOrderEcsNum(Integer combinedOrderEcsNum) {
         this.combinedOrderEcsNum = combinedOrderEcsNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

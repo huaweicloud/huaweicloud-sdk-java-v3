@@ -63,6 +63,8 @@ public class VideoAndTemplate  {
         this.templateId = templateId;
     }
 
+    
+
     public VideoAndTemplate withWidth(Integer width) {
         this.width = width;
         return this;
@@ -84,6 +86,8 @@ public class VideoAndTemplate  {
     public void setWidth(Integer width) {
         this.width = width;
     }
+
+    
 
     public VideoAndTemplate withHeight(Integer height) {
         this.height = height;
@@ -107,6 +111,8 @@ public class VideoAndTemplate  {
         this.height = height;
     }
 
+    
+
     public VideoAndTemplate withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
@@ -128,6 +134,9 @@ public class VideoAndTemplate  {
     public void setBitrate(Integer bitrate) {
         this.bitrate = bitrate;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

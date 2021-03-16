@@ -47,9 +47,6 @@ public class ListSnapshotDataResponse extends SdkResponse {
 
     
     public ListSnapshotDataResponse addSnapshotListItem(SnapshotData snapshotListItem) {
-        if (this.snapshotList == null) {
-            this.snapshotList = new ArrayList<>();
-        }
         this.snapshotList.add(snapshotListItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListSnapshotDataResponse extends SdkResponse {
         this.snapshotList = snapshotList;
     }
 
+    
+
     public ListSnapshotDataResponse withTotal(Long total) {
         this.total = total;
         return this;
@@ -96,6 +95,8 @@ public class ListSnapshotDataResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListSnapshotDataResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -117,6 +118,9 @@ public class ListSnapshotDataResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

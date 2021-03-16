@@ -79,6 +79,8 @@ public class ConfCtlRecordInfo  {
         this.operateTime = operateTime;
     }
 
+    
+
     public ConfCtlRecordInfo withOperateSource(String operateSource) {
         this.operateSource = operateSource;
         return this;
@@ -98,6 +100,8 @@ public class ConfCtlRecordInfo  {
     public void setOperateSource(String operateSource) {
         this.operateSource = operateSource;
     }
+
+    
 
     public ConfCtlRecordInfo withOperator(String operator) {
         this.operator = operator;
@@ -119,6 +123,8 @@ public class ConfCtlRecordInfo  {
         this.operator = operator;
     }
 
+    
+
     public ConfCtlRecordInfo withOperateCode(String operateCode) {
         this.operateCode = operateCode;
         return this;
@@ -138,6 +144,8 @@ public class ConfCtlRecordInfo  {
     public void setOperateCode(String operateCode) {
         this.operateCode = operateCode;
     }
+
+    
 
     public ConfCtlRecordInfo withOperationObject(String operationObject) {
         this.operationObject = operationObject;
@@ -159,6 +167,8 @@ public class ConfCtlRecordInfo  {
         this.operationObject = operationObject;
     }
 
+    
+
     public ConfCtlRecordInfo withOperateResult(String operateResult) {
         this.operateResult = operateResult;
         return this;
@@ -179,6 +189,8 @@ public class ConfCtlRecordInfo  {
         this.operateResult = operateResult;
     }
 
+    
+
     public ConfCtlRecordInfo withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -198,6 +210,9 @@ public class ConfCtlRecordInfo  {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

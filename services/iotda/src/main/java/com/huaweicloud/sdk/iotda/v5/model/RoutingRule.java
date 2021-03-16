@@ -40,7 +40,7 @@ public class RoutingRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subject")
     
-    private RoutingRuleSubject subject = null;
+    private RoutingRuleSubject subject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class RoutingRule  {
         this.ruleId = ruleId;
     }
 
+    
+
     public RoutingRule withRuleName(String ruleName) {
         this.ruleName = ruleName;
         return this;
@@ -112,6 +114,8 @@ public class RoutingRule  {
         this.ruleName = ruleName;
     }
 
+    
+
     public RoutingRule withDescription(String description) {
         this.description = description;
         return this;
@@ -131,6 +135,8 @@ public class RoutingRule  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public RoutingRule withSubject(RoutingRuleSubject subject) {
         this.subject = subject;
@@ -159,6 +165,8 @@ public class RoutingRule  {
         this.subject = subject;
     }
 
+    
+
     public RoutingRule withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -178,6 +186,8 @@ public class RoutingRule  {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public RoutingRule withAppId(String appId) {
         this.appId = appId;
@@ -199,6 +209,8 @@ public class RoutingRule  {
         this.appId = appId;
     }
 
+    
+
     public RoutingRule withSelect(String select) {
         this.select = select;
         return this;
@@ -218,6 +230,8 @@ public class RoutingRule  {
     public void setSelect(String select) {
         this.select = select;
     }
+
+    
 
     public RoutingRule withWhere(String where) {
         this.where = where;
@@ -239,6 +253,8 @@ public class RoutingRule  {
         this.where = where;
     }
 
+    
+
     public RoutingRule withActive(Boolean active) {
         this.active = active;
         return this;
@@ -258,6 +274,9 @@ public class RoutingRule  {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

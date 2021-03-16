@@ -28,7 +28,7 @@ public class ScopeTokenResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<String> methods = new ArrayList<>();
+    private List<String> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,25 +46,25 @@ public class ScopeTokenResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private TokenDomainResult domain = null;
+    private TokenDomainResult domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private TokenProjectResult project = null;
+    private TokenProjectResult project;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roles")
     
-    private List<TokenRole> roles = new ArrayList<>();
+    private List<TokenRole> roles = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private ScopedTokenUser user = null;
+    private ScopedTokenUser user;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,6 +103,8 @@ public class ScopeTokenResult  {
         this.methods = methods;
     }
 
+    
+
     public ScopeTokenResult withExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
         return this;
@@ -123,6 +125,8 @@ public class ScopeTokenResult  {
         this.expiresAt = expiresAt;
     }
 
+    
+
     public ScopeTokenResult withCatalog(List<TokenCatalog> catalog) {
         this.catalog = catalog;
         return this;
@@ -130,9 +134,6 @@ public class ScopeTokenResult  {
 
     
     public ScopeTokenResult addCatalogItem(TokenCatalog catalogItem) {
-        if (this.catalog == null) {
-            this.catalog = new ArrayList<>();
-        }
         this.catalog.add(catalogItem);
         return this;
     }
@@ -156,6 +157,8 @@ public class ScopeTokenResult  {
     public void setCatalog(List<TokenCatalog> catalog) {
         this.catalog = catalog;
     }
+
+    
 
     public ScopeTokenResult withDomain(TokenDomainResult domain) {
         this.domain = domain;
@@ -184,6 +187,8 @@ public class ScopeTokenResult  {
         this.domain = domain;
     }
 
+    
+
     public ScopeTokenResult withProject(TokenProjectResult project) {
         this.project = project;
         return this;
@@ -210,6 +215,8 @@ public class ScopeTokenResult  {
     public void setProject(TokenProjectResult project) {
         this.project = project;
     }
+
+    
 
     public ScopeTokenResult withRoles(List<TokenRole> roles) {
         this.roles = roles;
@@ -242,6 +249,8 @@ public class ScopeTokenResult  {
         this.roles = roles;
     }
 
+    
+
     public ScopeTokenResult withUser(ScopedTokenUser user) {
         this.user = user;
         return this;
@@ -269,6 +278,8 @@ public class ScopeTokenResult  {
         this.user = user;
     }
 
+    
+
     public ScopeTokenResult withIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
         return this;
@@ -288,6 +299,9 @@ public class ScopeTokenResult  {
     public void setIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

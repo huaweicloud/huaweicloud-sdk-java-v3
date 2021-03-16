@@ -34,7 +34,7 @@ public class UpdateSignatureKeyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BaseSignature body = null;
+    private BaseSignature body;
 
     public UpdateSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateSignatureKeyV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateSignatureKeyV2Request withSignId(String signId) {
         this.signId = signId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateSignatureKeyV2Request  {
     public void setSignId(String signId) {
         this.signId = signId;
     }
+
+    
 
     public UpdateSignatureKeyV2Request withBody(BaseSignature body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateSignatureKeyV2Request  {
     public void setBody(BaseSignature body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

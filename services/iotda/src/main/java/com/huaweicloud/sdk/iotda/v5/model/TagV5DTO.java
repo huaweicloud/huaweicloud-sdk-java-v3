@@ -49,6 +49,8 @@ public class TagV5DTO  {
         this.tagKey = tagKey;
     }
 
+    
+
     public TagV5DTO withTagValue(String tagValue) {
         this.tagValue = tagValue;
         return this;
@@ -68,6 +70,9 @@ public class TagV5DTO  {
     public void setTagValue(String tagValue) {
         this.tagValue = tagValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

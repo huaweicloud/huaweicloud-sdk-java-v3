@@ -28,7 +28,7 @@ public class CreateProductTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateProductTemplateRequestBody body = null;
+    private CreateProductTemplateRequestBody body;
 
     public CreateProductTemplateRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateProductTemplateRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateProductTemplateRequest withBody(CreateProductTemplateRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateProductTemplateRequest  {
     public void setBody(CreateProductTemplateRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

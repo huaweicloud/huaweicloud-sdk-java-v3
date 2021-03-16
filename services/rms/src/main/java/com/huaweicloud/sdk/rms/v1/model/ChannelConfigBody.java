@@ -23,13 +23,13 @@ public class ChannelConfigBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn")
     
-    private TrackerSMNChannelConfigBody smn = null;
+    private TrackerSMNChannelConfigBody smn;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs")
     
-    private TrackerOBSChannelConfigBody obs = null;
+    private TrackerOBSChannelConfigBody obs;
 
     public ChannelConfigBody withSmn(TrackerSMNChannelConfigBody smn) {
         this.smn = smn;
@@ -58,6 +58,8 @@ public class ChannelConfigBody  {
         this.smn = smn;
     }
 
+    
+
     public ChannelConfigBody withObs(TrackerOBSChannelConfigBody obs) {
         this.obs = obs;
         return this;
@@ -84,6 +86,9 @@ public class ChannelConfigBody  {
     public void setObs(TrackerOBSChannelConfigBody obs) {
         this.obs = obs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -101,19 +101,19 @@ public class TokenAuthIdentity  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<MethodsEnum> methods = new ArrayList<>();
+    private List<MethodsEnum> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="token")
     
-    private IdentityToken token = null;
+    private IdentityToken token;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private ServicePolicy policy = null;
+    private ServicePolicy policy;
 
     public TokenAuthIdentity withMethods(List<MethodsEnum> methods) {
         this.methods = methods;
@@ -146,6 +146,8 @@ public class TokenAuthIdentity  {
         this.methods = methods;
     }
 
+    
+
     public TokenAuthIdentity withToken(IdentityToken token) {
         this.token = token;
         return this;
@@ -173,6 +175,8 @@ public class TokenAuthIdentity  {
         this.token = token;
     }
 
+    
+
     public TokenAuthIdentity withPolicy(ServicePolicy policy) {
         this.policy = policy;
         return this;
@@ -199,6 +203,9 @@ public class TokenAuthIdentity  {
     public void setPolicy(ServicePolicy policy) {
         this.policy = policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

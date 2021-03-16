@@ -30,7 +30,7 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="info")
     
-    private FlavorInfo info = null;
+    private FlavorInfo info;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,6 +82,8 @@ public class Flavor  {
         this.id = id;
     }
 
+    
+
     public Flavor withInfo(FlavorInfo info) {
         this.info = info;
         return this;
@@ -109,6 +111,8 @@ public class Flavor  {
         this.info = info;
     }
 
+    
+
     public Flavor withName(String name) {
         this.name = name;
         return this;
@@ -128,6 +132,8 @@ public class Flavor  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public Flavor withShared(Boolean shared) {
         this.shared = shared;
@@ -149,6 +155,8 @@ public class Flavor  {
         this.shared = shared;
     }
 
+    
+
     public Flavor withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -168,6 +176,8 @@ public class Flavor  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public Flavor withType(String type) {
         this.type = type;
@@ -189,6 +199,8 @@ public class Flavor  {
         this.type = type;
     }
 
+    
+
     public Flavor withAvailabilityZoneIds(List<String> availabilityZoneIds) {
         this.availabilityZoneIds = availabilityZoneIds;
         return this;
@@ -196,9 +208,6 @@ public class Flavor  {
 
     
     public Flavor addAvailabilityZoneIdsItem(String availabilityZoneIdsItem) {
-        if (this.availabilityZoneIds == null) {
-            this.availabilityZoneIds = new ArrayList<>();
-        }
         this.availabilityZoneIds.add(availabilityZoneIdsItem);
         return this;
     }
@@ -222,6 +231,9 @@ public class Flavor  {
     public void setAvailabilityZoneIds(List<String> availabilityZoneIds) {
         this.availabilityZoneIds = availabilityZoneIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

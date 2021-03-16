@@ -55,6 +55,8 @@ public class VaultPolicyResp  {
         this.destinationVaultId = destinationVaultId;
     }
 
+    
+
     public VaultPolicyResp withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -75,6 +77,8 @@ public class VaultPolicyResp  {
         this.policyId = policyId;
     }
 
+    
+
     public VaultPolicyResp withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -94,6 +98,9 @@ public class VaultPolicyResp  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

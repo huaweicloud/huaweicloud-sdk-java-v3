@@ -22,7 +22,7 @@ public class ResizeInstanceVolumeRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private ResizeInstanceVolumeOption volume = null;
+    private ResizeInstanceVolumeOption volume;
 
     public ResizeInstanceVolumeRequestBody withVolume(ResizeInstanceVolumeOption volume) {
         this.volume = volume;
@@ -50,6 +50,9 @@ public class ResizeInstanceVolumeRequestBody  {
     public void setVolume(ResizeInstanceVolumeOption volume) {
         this.volume = volume;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

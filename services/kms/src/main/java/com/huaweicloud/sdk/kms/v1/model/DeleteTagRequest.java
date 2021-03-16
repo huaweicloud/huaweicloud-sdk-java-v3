@@ -33,7 +33,7 @@ public class DeleteTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version_id")
     
-    private String versionId = "v1.0";
+    private String versionId;
 
     public DeleteTagRequest withKeyId(String keyId) {
         this.keyId = keyId;
@@ -55,6 +55,8 @@ public class DeleteTagRequest  {
         this.keyId = keyId;
     }
 
+    
+
     public DeleteTagRequest withKey(String key) {
         this.key = key;
         return this;
@@ -75,6 +77,8 @@ public class DeleteTagRequest  {
         this.key = key;
     }
 
+    
+
     public DeleteTagRequest withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -94,6 +98,9 @@ public class DeleteTagRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ShowApplicationRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowApplicationRequest withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -68,6 +70,9 @@ public class ShowApplicationRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

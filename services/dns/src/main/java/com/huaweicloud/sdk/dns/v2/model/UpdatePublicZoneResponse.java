@@ -102,7 +102,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -130,6 +130,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public UpdatePublicZoneResponse withName(String name) {
         this.name = name;
         return this;
@@ -149,6 +151,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdatePublicZoneResponse withDescription(String description) {
         this.description = description;
@@ -170,6 +174,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public UpdatePublicZoneResponse withEmail(String email) {
         this.email = email;
         return this;
@@ -189,6 +195,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public UpdatePublicZoneResponse withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -210,6 +218,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.zoneType = zoneType;
     }
 
+    
+
     public UpdatePublicZoneResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -229,6 +239,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public UpdatePublicZoneResponse withSerial(Integer serial) {
         this.serial = serial;
@@ -250,6 +262,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.serial = serial;
     }
 
+    
+
     public UpdatePublicZoneResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -269,6 +283,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public UpdatePublicZoneResponse withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
@@ -290,6 +306,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.recordNum = recordNum;
     }
 
+    
+
     public UpdatePublicZoneResponse withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -309,6 +327,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public UpdatePublicZoneResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -330,6 +350,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public UpdatePublicZoneResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -350,6 +372,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public UpdatePublicZoneResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -369,6 +393,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public UpdatePublicZoneResponse withLinks(PageLink links) {
         this.links = links;
@@ -397,6 +423,8 @@ public class UpdatePublicZoneResponse extends SdkResponse {
         this.links = links;
     }
 
+    
+
     public UpdatePublicZoneResponse withMasters(String masters) {
         this.masters = masters;
         return this;
@@ -416,6 +444,9 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     public void setMasters(String masters) {
         this.masters = masters;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

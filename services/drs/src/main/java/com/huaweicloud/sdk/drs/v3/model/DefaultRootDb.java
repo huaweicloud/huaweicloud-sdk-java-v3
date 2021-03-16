@@ -49,6 +49,8 @@ public class DefaultRootDb  {
         this.dbName = dbName;
     }
 
+    
+
     public DefaultRootDb withDbEncoding(String dbEncoding) {
         this.dbEncoding = dbEncoding;
         return this;
@@ -68,6 +70,9 @@ public class DefaultRootDb  {
     public void setDbEncoding(String dbEncoding) {
         this.dbEncoding = dbEncoding;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class IssueUser  {
         this.id = id;
     }
 
+    
+
     public IssueUser withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class IssueUser  {
         this.name = name;
     }
 
+    
+
     public IssueUser withNickName(String nickName) {
         this.nickName = nickName;
         return this;
@@ -94,6 +98,9 @@ public class IssueUser  {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

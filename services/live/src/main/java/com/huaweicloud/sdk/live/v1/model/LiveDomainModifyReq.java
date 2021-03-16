@@ -116,7 +116,7 @@ public class LiveDomainModifyReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain_source")
     
-    private DomainSourceInfo domainSource = null;
+    private DomainSourceInfo domainSource;
 
     public LiveDomainModifyReq withDomain(String domain) {
         this.domain = domain;
@@ -138,6 +138,8 @@ public class LiveDomainModifyReq  {
         this.domain = domain;
     }
 
+    
+
     public LiveDomainModifyReq withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -157,6 +159,8 @@ public class LiveDomainModifyReq  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public LiveDomainModifyReq withDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
@@ -184,6 +188,9 @@ public class LiveDomainModifyReq  {
     public void setDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

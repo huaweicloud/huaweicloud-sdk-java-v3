@@ -110,7 +110,7 @@ public class VideoCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_policy")
     
-    private OutputPolicyEnum outputPolicy = OutputPolicyEnum.TRANSCODE;
+    private OutputPolicyEnum outputPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -128,7 +128,7 @@ public class VideoCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="level")
     
-    private Integer level = 15;
+    private Integer level;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -140,13 +140,13 @@ public class VideoCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ref_frames_count")
     
-    private Integer refFramesCount = 4;
+    private Integer refFramesCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_iframes_interval")
     
-    private Integer maxIframesInterval = 5;
+    private Integer maxIframesInterval;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,7 +164,7 @@ public class VideoCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync_timestamp")
     
-    private Boolean syncTimestamp = false;
+    private Boolean syncTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -182,7 +182,7 @@ public class VideoCommon  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="GOP_structure")
     
-    private Boolean goPStructure = false;
+    private Boolean goPStructure;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -210,6 +210,8 @@ public class VideoCommon  {
         this.outputPolicy = outputPolicy;
     }
 
+    
+
     public VideoCommon withCodec(Integer codec) {
         this.codec = codec;
         return this;
@@ -231,6 +233,8 @@ public class VideoCommon  {
     public void setCodec(Integer codec) {
         this.codec = codec;
     }
+
+    
 
     public VideoCommon withProfile(Integer profile) {
         this.profile = profile;
@@ -254,6 +258,8 @@ public class VideoCommon  {
         this.profile = profile;
     }
 
+    
+
     public VideoCommon withLevel(Integer level) {
         this.level = level;
         return this;
@@ -275,6 +281,8 @@ public class VideoCommon  {
     public void setLevel(Integer level) {
         this.level = level;
     }
+
+    
 
     public VideoCommon withPreset(Integer preset) {
         this.preset = preset;
@@ -298,6 +306,8 @@ public class VideoCommon  {
         this.preset = preset;
     }
 
+    
+
     public VideoCommon withRefFramesCount(Integer refFramesCount) {
         this.refFramesCount = refFramesCount;
         return this;
@@ -319,6 +329,8 @@ public class VideoCommon  {
     public void setRefFramesCount(Integer refFramesCount) {
         this.refFramesCount = refFramesCount;
     }
+
+    
 
     public VideoCommon withMaxIframesInterval(Integer maxIframesInterval) {
         this.maxIframesInterval = maxIframesInterval;
@@ -342,6 +354,8 @@ public class VideoCommon  {
         this.maxIframesInterval = maxIframesInterval;
     }
 
+    
+
     public VideoCommon withBframesCount(Integer bframesCount) {
         this.bframesCount = bframesCount;
         return this;
@@ -363,6 +377,8 @@ public class VideoCommon  {
     public void setBframesCount(Integer bframesCount) {
         this.bframesCount = bframesCount;
     }
+
+    
 
     public VideoCommon withFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
@@ -386,6 +402,8 @@ public class VideoCommon  {
         this.frameRate = frameRate;
     }
 
+    
+
     public VideoCommon withSyncTimestamp(Boolean syncTimestamp) {
         this.syncTimestamp = syncTimestamp;
         return this;
@@ -405,6 +423,8 @@ public class VideoCommon  {
     public void setSyncTimestamp(Boolean syncTimestamp) {
         this.syncTimestamp = syncTimestamp;
     }
+
+    
 
     public VideoCommon withAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
@@ -428,6 +448,8 @@ public class VideoCommon  {
         this.aspectRatio = aspectRatio;
     }
 
+    
+
     public VideoCommon withBlackCut(Integer blackCut) {
         this.blackCut = blackCut;
         return this;
@@ -450,6 +472,8 @@ public class VideoCommon  {
         this.blackCut = blackCut;
     }
 
+    
+
     public VideoCommon withGoPStructure(Boolean goPStructure) {
         this.goPStructure = goPStructure;
         return this;
@@ -470,6 +494,8 @@ public class VideoCommon  {
         this.goPStructure = goPStructure;
     }
 
+    
+
     public VideoCommon withSrFactor(String srFactor) {
         this.srFactor = srFactor;
         return this;
@@ -489,6 +515,9 @@ public class VideoCommon  {
     public void setSrFactor(String srFactor) {
         this.srFactor = srFactor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

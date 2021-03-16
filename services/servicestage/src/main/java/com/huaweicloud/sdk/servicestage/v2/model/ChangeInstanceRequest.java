@@ -40,7 +40,7 @@ public class ChangeInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InstanceModify body = null;
+    private InstanceModify body;
 
     public ChangeInstanceRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -62,6 +62,8 @@ public class ChangeInstanceRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ChangeInstanceRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -82,6 +84,8 @@ public class ChangeInstanceRequest  {
         this.componentId = componentId;
     }
 
+    
+
     public ChangeInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -101,6 +105,8 @@ public class ChangeInstanceRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ChangeInstanceRequest withBody(InstanceModify body) {
         this.body = body;
@@ -128,6 +134,9 @@ public class ChangeInstanceRequest  {
     public void setBody(InstanceModify body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

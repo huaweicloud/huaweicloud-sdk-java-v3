@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * 工作项状态
  */
-public class IssueItemSFV4Status  {
+public class IssueItemSfV4Status  {
 
 
 
@@ -29,7 +29,7 @@ public class IssueItemSFV4Status  {
     
     private String name;
 
-    public IssueItemSFV4Status withId(Integer id) {
+    public IssueItemSfV4Status withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -49,7 +49,9 @@ public class IssueItemSFV4Status  {
         this.id = id;
     }
 
-    public IssueItemSFV4Status withName(String name) {
+    
+
+    public IssueItemSfV4Status withName(String name) {
         this.name = name;
         return this;
     }
@@ -68,6 +70,9 @@ public class IssueItemSFV4Status  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -76,9 +81,9 @@ public class IssueItemSFV4Status  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        IssueItemSFV4Status issueItemSFV4Status = (IssueItemSFV4Status) o;
-        return Objects.equals(this.id, issueItemSFV4Status.id) &&
-            Objects.equals(this.name, issueItemSFV4Status.name);
+        IssueItemSfV4Status issueItemSfV4Status = (IssueItemSfV4Status) o;
+        return Objects.equals(this.id, issueItemSfV4Status.id) &&
+            Objects.equals(this.name, issueItemSfV4Status.name);
     }
     @Override
     public int hashCode() {
@@ -87,7 +92,7 @@ public class IssueItemSFV4Status  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class IssueItemSFV4Status {\n");
+        sb.append("class IssueItemSfV4Status {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

@@ -40,9 +40,6 @@ public class ResourceRequirements  {
     
 
     public ResourceRequirements putLimitsItem(String key, String limitsItem) {
-         if (this.limits == null) {
-            this.limits = new HashMap<>();
-         }
         this.limits.put(key, limitsItem);
         return this;
     }
@@ -66,6 +63,8 @@ public class ResourceRequirements  {
         this.limits = limits;
     }
 
+    
+
     public ResourceRequirements withRequests(Map<String, String> requests) {
         this.requests = requests;
         return this;
@@ -74,9 +73,6 @@ public class ResourceRequirements  {
     
 
     public ResourceRequirements putRequestsItem(String key, String requestsItem) {
-         if (this.requests == null) {
-            this.requests = new HashMap<>();
-         }
         this.requests.put(key, requestsItem);
         return this;
     }
@@ -99,6 +95,9 @@ public class ResourceRequirements  {
     public void setRequests(Map<String, String> requests) {
         this.requests = requests;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

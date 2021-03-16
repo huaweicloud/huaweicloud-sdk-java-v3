@@ -22,7 +22,7 @@ public class CreateServiceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ServiceRequestBody body = null;
+    private ServiceRequestBody body;
 
     public CreateServiceRequest withBody(ServiceRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateServiceRequest  {
     public void setBody(ServiceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

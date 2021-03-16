@@ -56,6 +56,8 @@ public class ListCaseOperateLogsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCaseOperateLogsResponse withIncidentOperateLogList(List<IncidentOperateLogV2> incidentOperateLogList) {
         this.incidentOperateLogList = incidentOperateLogList;
         return this;
@@ -63,9 +65,6 @@ public class ListCaseOperateLogsResponse extends SdkResponse {
 
     
     public ListCaseOperateLogsResponse addIncidentOperateLogListItem(IncidentOperateLogV2 incidentOperateLogListItem) {
-        if (this.incidentOperateLogList == null) {
-            this.incidentOperateLogList = new ArrayList<>();
-        }
         this.incidentOperateLogList.add(incidentOperateLogListItem);
         return this;
     }
@@ -89,6 +88,9 @@ public class ListCaseOperateLogsResponse extends SdkResponse {
     public void setIncidentOperateLogList(List<IncidentOperateLogV2> incidentOperateLogList) {
         this.incidentOperateLogList = incidentOperateLogList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

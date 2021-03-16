@@ -155,6 +155,8 @@ public class NodePoolStatus  {
         this.currentNode = currentNode;
     }
 
+    
+
     public NodePoolStatus withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -175,6 +177,8 @@ public class NodePoolStatus  {
         this.jobId = jobId;
     }
 
+    
+
     public NodePoolStatus withPhase(PhaseEnum phase) {
         this.phase = phase;
         return this;
@@ -194,6 +198,9 @@ public class NodePoolStatus  {
     public void setPhase(PhaseEnum phase) {
         this.phase = phase;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

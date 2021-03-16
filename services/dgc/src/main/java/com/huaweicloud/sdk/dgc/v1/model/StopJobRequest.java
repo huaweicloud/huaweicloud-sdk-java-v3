@@ -42,6 +42,9 @@ public class StopJobRequest  {
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

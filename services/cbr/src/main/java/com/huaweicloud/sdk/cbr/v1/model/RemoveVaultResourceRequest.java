@@ -28,7 +28,7 @@ public class RemoveVaultResourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VaultRemoveResourceReq body = null;
+    private VaultRemoveResourceReq body;
 
     public RemoveVaultResourceRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
@@ -49,6 +49,8 @@ public class RemoveVaultResourceRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public RemoveVaultResourceRequest withBody(VaultRemoveResourceReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class RemoveVaultResourceRequest  {
     public void setBody(VaultRemoveResourceReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

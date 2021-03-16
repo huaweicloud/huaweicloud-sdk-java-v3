@@ -42,6 +42,9 @@ public class NodeManagement  {
     public void setServerGroupReference(String serverGroupReference) {
         this.serverGroupReference = serverGroupReference;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

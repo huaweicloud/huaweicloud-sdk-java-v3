@@ -22,7 +22,7 @@ public class CreatePrivateipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePrivateipRequestBody body = null;
+    private CreatePrivateipRequestBody body;
 
     public CreatePrivateipRequest withBody(CreatePrivateipRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreatePrivateipRequest  {
     public void setBody(CreatePrivateipRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

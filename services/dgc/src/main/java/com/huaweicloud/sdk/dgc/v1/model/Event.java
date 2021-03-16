@@ -67,6 +67,8 @@ public class Event  {
         this.eventType = eventType;
     }
 
+    
+
     public Event withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -86,6 +88,8 @@ public class Event  {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+    
 
     public Event withFailPolicy(String failPolicy) {
         this.failPolicy = failPolicy;
@@ -107,6 +111,8 @@ public class Event  {
         this.failPolicy = failPolicy;
     }
 
+    
+
     public Event withConcurrent(Integer concurrent) {
         this.concurrent = concurrent;
         return this;
@@ -127,6 +133,8 @@ public class Event  {
         this.concurrent = concurrent;
     }
 
+    
+
     public Event withReadPolicy(String readPolicy) {
         this.readPolicy = readPolicy;
         return this;
@@ -146,6 +154,9 @@ public class Event  {
     public void setReadPolicy(String readPolicy) {
         this.readPolicy = readPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

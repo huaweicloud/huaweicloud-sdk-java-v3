@@ -145,6 +145,8 @@ public class UpdateParamsResponse extends SdkResponse {
         this.success = success;
     }
 
+    
+
     public UpdateParamsResponse withShouldRestart(ShouldRestartEnum shouldRestart) {
         this.shouldRestart = shouldRestart;
         return this;
@@ -164,6 +166,8 @@ public class UpdateParamsResponse extends SdkResponse {
     public void setShouldRestart(ShouldRestartEnum shouldRestart) {
         this.shouldRestart = shouldRestart;
     }
+
+    
 
     public UpdateParamsResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -185,6 +189,8 @@ public class UpdateParamsResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public UpdateParamsResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -204,6 +210,9 @@ public class UpdateParamsResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

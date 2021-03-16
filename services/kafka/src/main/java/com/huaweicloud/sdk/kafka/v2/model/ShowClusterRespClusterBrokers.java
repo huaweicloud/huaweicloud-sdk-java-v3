@@ -79,6 +79,8 @@ public class ShowClusterRespClusterBrokers  {
         this.host = host;
     }
 
+    
+
     public ShowClusterRespClusterBrokers withPort(Integer port) {
         this.port = port;
         return this;
@@ -98,6 +100,8 @@ public class ShowClusterRespClusterBrokers  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
 
     public ShowClusterRespClusterBrokers withBrokerId(String brokerId) {
         this.brokerId = brokerId;
@@ -119,6 +123,8 @@ public class ShowClusterRespClusterBrokers  {
         this.brokerId = brokerId;
     }
 
+    
+
     public ShowClusterRespClusterBrokers withIsController(Boolean isController) {
         this.isController = isController;
         return this;
@@ -138,6 +144,8 @@ public class ShowClusterRespClusterBrokers  {
     public void setIsController(Boolean isController) {
         this.isController = isController;
     }
+
+    
 
     public ShowClusterRespClusterBrokers withVersion(String version) {
         this.version = version;
@@ -159,6 +167,8 @@ public class ShowClusterRespClusterBrokers  {
         this.version = version;
     }
 
+    
+
     public ShowClusterRespClusterBrokers withRegisterTime(String registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -179,6 +189,8 @@ public class ShowClusterRespClusterBrokers  {
         this.registerTime = registerTime;
     }
 
+    
+
     public ShowClusterRespClusterBrokers withIsHealth(Boolean isHealth) {
         this.isHealth = isHealth;
         return this;
@@ -198,6 +210,9 @@ public class ShowClusterRespClusterBrokers  {
     public void setIsHealth(Boolean isHealth) {
         this.isHealth = isHealth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

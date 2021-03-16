@@ -58,6 +58,8 @@ public class MetricDemision  {
         this.namespace = namespace;
     }
 
+    
+
     public MetricDemision withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -78,6 +80,8 @@ public class MetricDemision  {
         this.metricName = metricName;
     }
 
+    
+
     public MetricDemision withDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
         return this;
@@ -85,9 +89,6 @@ public class MetricDemision  {
 
     
     public MetricDemision addDimensionsItem(Dimension dimensionsItem) {
-        if (this.dimensions == null) {
-            this.dimensions = new ArrayList<>();
-        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class MetricDemision  {
     public void setDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.DatabaseForList;
+import com.huaweicloud.sdk.rds.v3.model.DatabaseForCreation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ListDatabasesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
     
-    private List<DatabaseForList> databases = null;
+    private List<DatabaseForCreation> databases = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,21 +34,18 @@ public class ListDatabasesResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListDatabasesResponse withDatabases(List<DatabaseForList> databases) {
+    public ListDatabasesResponse withDatabases(List<DatabaseForCreation> databases) {
         this.databases = databases;
         return this;
     }
 
     
-    public ListDatabasesResponse addDatabasesItem(DatabaseForList databasesItem) {
-        if (this.databases == null) {
-            this.databases = new ArrayList<>();
-        }
+    public ListDatabasesResponse addDatabasesItem(DatabaseForCreation databasesItem) {
         this.databases.add(databasesItem);
         return this;
     }
 
-    public ListDatabasesResponse withDatabases(Consumer<List<DatabaseForList>> databasesSetter) {
+    public ListDatabasesResponse withDatabases(Consumer<List<DatabaseForCreation>> databasesSetter) {
         if(this.databases == null ){
             this.databases = new ArrayList<>();
         }
@@ -60,13 +57,15 @@ public class ListDatabasesResponse extends SdkResponse {
      * 数据库信息。
      * @return databases
      */
-    public List<DatabaseForList> getDatabases() {
+    public List<DatabaseForCreation> getDatabases() {
         return databases;
     }
 
-    public void setDatabases(List<DatabaseForList> databases) {
+    public void setDatabases(List<DatabaseForCreation> databases) {
         this.databases = databases;
     }
+
+    
 
     public ListDatabasesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
@@ -87,6 +86,9 @@ public class ListDatabasesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

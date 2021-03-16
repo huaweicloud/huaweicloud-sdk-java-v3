@@ -49,6 +49,8 @@ public class MonthUsed  {
         this.date = date;
     }
 
+    
+
     public MonthUsed withValue(Integer value) {
         this.value = value;
         return this;
@@ -68,6 +70,9 @@ public class MonthUsed  {
     public void setValue(Integer value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

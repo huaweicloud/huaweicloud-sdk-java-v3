@@ -191,6 +191,8 @@ public class CreateMqsInstanceTopicReq  {
         this.name = name;
     }
 
+    
+
     public CreateMqsInstanceTopicReq withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -210,6 +212,8 @@ public class CreateMqsInstanceTopicReq  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public CreateMqsInstanceTopicReq withPartition(Integer partition) {
         this.partition = partition;
@@ -231,6 +235,8 @@ public class CreateMqsInstanceTopicReq  {
         this.partition = partition;
     }
 
+    
+
     public CreateMqsInstanceTopicReq withReplication(Integer replication) {
         this.replication = replication;
         return this;
@@ -250,6 +256,8 @@ public class CreateMqsInstanceTopicReq  {
     public void setReplication(Integer replication) {
         this.replication = replication;
     }
+
+    
 
     public CreateMqsInstanceTopicReq withAccessPolicy(AccessPolicyEnum accessPolicy) {
         this.accessPolicy = accessPolicy;
@@ -271,6 +279,8 @@ public class CreateMqsInstanceTopicReq  {
         this.accessPolicy = accessPolicy;
     }
 
+    
+
     public CreateMqsInstanceTopicReq withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
@@ -290,6 +300,8 @@ public class CreateMqsInstanceTopicReq  {
     public void setSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
     }
+
+    
 
     public CreateMqsInstanceTopicReq withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
@@ -311,6 +323,8 @@ public class CreateMqsInstanceTopicReq  {
         this.syncReplication = syncReplication;
     }
 
+    
+
     public CreateMqsInstanceTopicReq withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
@@ -330,6 +344,8 @@ public class CreateMqsInstanceTopicReq  {
     public void setRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
     }
+
+    
 
     public CreateMqsInstanceTopicReq withTag(String tag) {
         this.tag = tag;
@@ -351,6 +367,8 @@ public class CreateMqsInstanceTopicReq  {
         this.tag = tag;
     }
 
+    
+
     public CreateMqsInstanceTopicReq withDescription(String description) {
         this.description = description;
         return this;
@@ -371,6 +389,8 @@ public class CreateMqsInstanceTopicReq  {
         this.description = description;
     }
 
+    
+
     public CreateMqsInstanceTopicReq withSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
         return this;
@@ -390,6 +410,9 @@ public class CreateMqsInstanceTopicReq  {
     public void setSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

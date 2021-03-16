@@ -216,7 +216,7 @@ public class Disk  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="physical_volumes")
     
-    private List<PhysicalVolumes> physicalVolumes = new ArrayList<>();
+    private List<PhysicalVolumes> physicalVolumes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -256,6 +256,8 @@ public class Disk  {
         this.name = name;
     }
 
+    
+
     public Disk withPartitionStyle(PartitionStyleEnum partitionStyle) {
         this.partitionStyle = partitionStyle;
         return this;
@@ -276,6 +278,8 @@ public class Disk  {
         this.partitionStyle = partitionStyle;
     }
 
+    
+
     public Disk withDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
         return this;
@@ -295,6 +299,8 @@ public class Disk  {
     public void setDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
     }
+
+    
 
     public Disk withSize(Long size) {
         this.size = size;
@@ -318,6 +324,8 @@ public class Disk  {
         this.size = size;
     }
 
+    
+
     public Disk withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
@@ -339,6 +347,8 @@ public class Disk  {
     public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
     }
+
+    
 
     public Disk withPhysicalVolumes(List<PhysicalVolumes> physicalVolumes) {
         this.physicalVolumes = physicalVolumes;
@@ -371,6 +381,8 @@ public class Disk  {
         this.physicalVolumes = physicalVolumes;
     }
 
+    
+
     public Disk withDiskId(String diskId) {
         this.diskId = diskId;
         return this;
@@ -390,6 +402,8 @@ public class Disk  {
     public void setDiskId(String diskId) {
         this.diskId = diskId;
     }
+
+    
 
     public Disk withOsDisk(Boolean osDisk) {
         this.osDisk = osDisk;
@@ -411,6 +425,8 @@ public class Disk  {
         this.osDisk = osDisk;
     }
 
+    
+
     public Disk withRelationName(String relationName) {
         this.relationName = relationName;
         return this;
@@ -430,6 +446,9 @@ public class Disk  {
     public void setRelationName(String relationName) {
         this.relationName = relationName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

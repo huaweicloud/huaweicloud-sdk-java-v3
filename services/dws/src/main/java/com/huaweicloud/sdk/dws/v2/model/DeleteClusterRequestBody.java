@@ -42,6 +42,9 @@ public class DeleteClusterRequestBody  {
     public void setKeepLastManualSnapshot(Integer keepLastManualSnapshot) {
         this.keepLastManualSnapshot = keepLastManualSnapshot;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

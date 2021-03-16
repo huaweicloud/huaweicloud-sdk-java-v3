@@ -146,13 +146,13 @@ public class GetJobInfoResponseBodyJob  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    private GetTaskDetailListRspInstance instance = null;
+    private GetTaskDetailListRspInstance instance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="entities")
     
-    private Object entities = null;
+    private Object entities;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -180,6 +180,8 @@ public class GetJobInfoResponseBodyJob  {
         this.id = id;
     }
 
+    
+
     public GetJobInfoResponseBodyJob withName(String name) {
         this.name = name;
         return this;
@@ -199,6 +201,8 @@ public class GetJobInfoResponseBodyJob  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GetJobInfoResponseBodyJob withStatus(StatusEnum status) {
         this.status = status;
@@ -220,6 +224,8 @@ public class GetJobInfoResponseBodyJob  {
         this.status = status;
     }
 
+    
+
     public GetJobInfoResponseBodyJob withCreated(String created) {
         this.created = created;
         return this;
@@ -239,6 +245,8 @@ public class GetJobInfoResponseBodyJob  {
     public void setCreated(String created) {
         this.created = created;
     }
+
+    
 
     public GetJobInfoResponseBodyJob withEnded(String ended) {
         this.ended = ended;
@@ -260,6 +268,8 @@ public class GetJobInfoResponseBodyJob  {
         this.ended = ended;
     }
 
+    
+
     public GetJobInfoResponseBodyJob withProcess(String process) {
         this.process = process;
         return this;
@@ -279,6 +289,8 @@ public class GetJobInfoResponseBodyJob  {
     public void setProcess(String process) {
         this.process = process;
     }
+
+    
 
     public GetJobInfoResponseBodyJob withInstance(GetTaskDetailListRspInstance instance) {
         this.instance = instance;
@@ -307,6 +319,8 @@ public class GetJobInfoResponseBodyJob  {
         this.instance = instance;
     }
 
+    
+
     public GetJobInfoResponseBodyJob withEntities(Object entities) {
         this.entities = entities;
         return this;
@@ -327,6 +341,8 @@ public class GetJobInfoResponseBodyJob  {
         this.entities = entities;
     }
 
+    
+
     public GetJobInfoResponseBodyJob withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
@@ -346,6 +362,9 @@ public class GetJobInfoResponseBodyJob  {
     public void setFailReason(String failReason) {
         this.failReason = failReason;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

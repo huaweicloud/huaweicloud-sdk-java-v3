@@ -24,7 +24,7 @@ public class BatchListMetricDataRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metrics")
     
-    private List<MetricInfo> metrics = new ArrayList<>();
+    private List<MetricInfo> metrics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,6 +81,8 @@ public class BatchListMetricDataRequestBody  {
         this.metrics = metrics;
     }
 
+    
+
     public BatchListMetricDataRequestBody withPeriod(String period) {
         this.period = period;
         return this;
@@ -100,6 +102,8 @@ public class BatchListMetricDataRequestBody  {
     public void setPeriod(String period) {
         this.period = period;
     }
+
+    
 
     public BatchListMetricDataRequestBody withFilter(String filter) {
         this.filter = filter;
@@ -121,6 +125,8 @@ public class BatchListMetricDataRequestBody  {
         this.filter = filter;
     }
 
+    
+
     public BatchListMetricDataRequestBody withFrom(Long from) {
         this.from = from;
         return this;
@@ -141,6 +147,8 @@ public class BatchListMetricDataRequestBody  {
         this.from = from;
     }
 
+    
+
     public BatchListMetricDataRequestBody withTo(Long to) {
         this.to = to;
         return this;
@@ -160,6 +168,9 @@ public class BatchListMetricDataRequestBody  {
     public void setTo(Long to) {
         this.to = to;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

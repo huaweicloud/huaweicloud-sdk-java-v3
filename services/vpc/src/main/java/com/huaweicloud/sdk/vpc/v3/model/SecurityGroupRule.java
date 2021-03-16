@@ -52,7 +52,7 @@ public class SecurityGroupRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ethertype")
     
-    private String ethertype = "IPv4";
+    private String ethertype;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,13 +94,13 @@ public class SecurityGroupRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -128,6 +128,8 @@ public class SecurityGroupRule  {
         this.id = id;
     }
 
+    
+
     public SecurityGroupRule withDescription(String description) {
         this.description = description;
         return this;
@@ -147,6 +149,8 @@ public class SecurityGroupRule  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public SecurityGroupRule withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -168,6 +172,8 @@ public class SecurityGroupRule  {
         this.securityGroupId = securityGroupId;
     }
 
+    
+
     public SecurityGroupRule withDirection(String direction) {
         this.direction = direction;
         return this;
@@ -187,6 +193,8 @@ public class SecurityGroupRule  {
     public void setDirection(String direction) {
         this.direction = direction;
     }
+
+    
 
     public SecurityGroupRule withProtocol(String protocol) {
         this.protocol = protocol;
@@ -208,6 +216,8 @@ public class SecurityGroupRule  {
         this.protocol = protocol;
     }
 
+    
+
     public SecurityGroupRule withEthertype(String ethertype) {
         this.ethertype = ethertype;
         return this;
@@ -227,6 +237,8 @@ public class SecurityGroupRule  {
     public void setEthertype(String ethertype) {
         this.ethertype = ethertype;
     }
+
+    
 
     public SecurityGroupRule withMultiport(String multiport) {
         this.multiport = multiport;
@@ -248,6 +260,8 @@ public class SecurityGroupRule  {
         this.multiport = multiport;
     }
 
+    
+
     public SecurityGroupRule withAction(String action) {
         this.action = action;
         return this;
@@ -267,6 +281,8 @@ public class SecurityGroupRule  {
     public void setAction(String action) {
         this.action = action;
     }
+
+    
 
     public SecurityGroupRule withPriority(Integer priority) {
         this.priority = priority;
@@ -288,6 +304,8 @@ public class SecurityGroupRule  {
         this.priority = priority;
     }
 
+    
+
     public SecurityGroupRule withRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
         return this;
@@ -307,6 +325,8 @@ public class SecurityGroupRule  {
     public void setRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
     }
+
+    
 
     public SecurityGroupRule withRemoteIpPrefix(String remoteIpPrefix) {
         this.remoteIpPrefix = remoteIpPrefix;
@@ -328,6 +348,8 @@ public class SecurityGroupRule  {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
+    
+
     public SecurityGroupRule withRemoteAddressGroupId(String remoteAddressGroupId) {
         this.remoteAddressGroupId = remoteAddressGroupId;
         return this;
@@ -347,6 +369,8 @@ public class SecurityGroupRule  {
     public void setRemoteAddressGroupId(String remoteAddressGroupId) {
         this.remoteAddressGroupId = remoteAddressGroupId;
     }
+
+    
 
     public SecurityGroupRule withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
@@ -368,6 +392,8 @@ public class SecurityGroupRule  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SecurityGroupRule withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -388,6 +414,8 @@ public class SecurityGroupRule  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public SecurityGroupRule withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -407,6 +435,9 @@ public class SecurityGroupRule  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -70,6 +70,8 @@ public class ShowCeshierarchyRespDimensions  {
         this.name = name;
     }
 
+    
+
     public ShowCeshierarchyRespDimensions withMetrics(List<String> metrics) {
         this.metrics = metrics;
         return this;
@@ -77,9 +79,6 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addMetricsItem(String metricsItem) {
-        if (this.metrics == null) {
-            this.metrics = new ArrayList<>();
-        }
         this.metrics.add(metricsItem);
         return this;
     }
@@ -104,6 +103,8 @@ public class ShowCeshierarchyRespDimensions  {
         this.metrics = metrics;
     }
 
+    
+
     public ShowCeshierarchyRespDimensions withKeyName(List<String> keyName) {
         this.keyName = keyName;
         return this;
@@ -111,9 +112,6 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addKeyNameItem(String keyNameItem) {
-        if (this.keyName == null) {
-            this.keyName = new ArrayList<>();
-        }
         this.keyName.add(keyNameItem);
         return this;
     }
@@ -138,6 +136,8 @@ public class ShowCeshierarchyRespDimensions  {
         this.keyName = keyName;
     }
 
+    
+
     public ShowCeshierarchyRespDimensions withDimRouter(List<String> dimRouter) {
         this.dimRouter = dimRouter;
         return this;
@@ -145,9 +145,6 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addDimRouterItem(String dimRouterItem) {
-        if (this.dimRouter == null) {
-            this.dimRouter = new ArrayList<>();
-        }
         this.dimRouter.add(dimRouterItem);
         return this;
     }
@@ -172,6 +169,8 @@ public class ShowCeshierarchyRespDimensions  {
         this.dimRouter = dimRouter;
     }
 
+    
+
     public ShowCeshierarchyRespDimensions withChildren(List<ShowCeshierarchyRespChildren> children) {
         this.children = children;
         return this;
@@ -179,9 +178,6 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addChildrenItem(ShowCeshierarchyRespChildren childrenItem) {
-        if (this.children == null) {
-            this.children = new ArrayList<>();
-        }
         this.children.add(childrenItem);
         return this;
     }
@@ -205,6 +201,9 @@ public class ShowCeshierarchyRespDimensions  {
     public void setChildren(List<ShowCeshierarchyRespChildren> children) {
         this.children = children;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

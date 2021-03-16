@@ -93,6 +93,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         this.componentCount = componentCount;
     }
 
+    
+
     public ShowApplicationDetailResponse withId(String id) {
         this.id = id;
         return this;
@@ -112,6 +114,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ShowApplicationDetailResponse withName(String name) {
         this.name = name;
@@ -133,6 +137,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowApplicationDetailResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -152,6 +158,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowApplicationDetailResponse withCreator(String creator) {
         this.creator = creator;
@@ -173,6 +181,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         this.creator = creator;
     }
 
+    
+
     public ShowApplicationDetailResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -192,6 +202,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ShowApplicationDetailResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -213,6 +225,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ShowApplicationDetailResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -233,6 +247,8 @@ public class ShowApplicationDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowApplicationDetailResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -252,6 +268,9 @@ public class ShowApplicationDetailResponse extends SdkResponse {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class SubscriptionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endpoints")
     
-    private List<String> endpoints = new ArrayList<>();
+    private List<String> endpoints = null;
         /**
      * 收件方式，sms：短信,email：邮件
      */
@@ -144,6 +144,8 @@ public class SubscriptionInfo  {
         this.endpoints = endpoints;
     }
 
+    
+
     public SubscriptionInfo withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -163,6 +165,9 @@ public class SubscriptionInfo  {
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

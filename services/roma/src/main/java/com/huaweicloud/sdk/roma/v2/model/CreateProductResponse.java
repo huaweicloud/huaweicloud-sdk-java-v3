@@ -286,19 +286,19 @@ public class CreateProductResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_user")
     
-    private CreatedUser createdUser = null;
+    private CreatedUser createdUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_user")
     
-    private LastUpdatedUser lastUpdatedUser = null;
+    private LastUpdatedUser lastUpdatedUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authentication")
     
-    private Authentication authentication = null;
+    private Authentication authentication;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -325,9 +325,6 @@ public class CreateProductResponse extends SdkResponse {
 
     
     public CreateProductResponse addPermissionsItem(String permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
         this.permissions.add(permissionsItem);
         return this;
     }
@@ -352,6 +349,8 @@ public class CreateProductResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
+    
+
     public CreateProductResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -371,6 +370,8 @@ public class CreateProductResponse extends SdkResponse {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public CreateProductResponse withProductSerial(String productSerial) {
         this.productSerial = productSerial;
@@ -392,6 +393,8 @@ public class CreateProductResponse extends SdkResponse {
         this.productSerial = productSerial;
     }
 
+    
+
     public CreateProductResponse withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -411,6 +414,8 @@ public class CreateProductResponse extends SdkResponse {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public CreateProductResponse withName(String name) {
         this.name = name;
@@ -432,6 +437,8 @@ public class CreateProductResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreateProductResponse withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
         return this;
@@ -451,6 +458,8 @@ public class CreateProductResponse extends SdkResponse {
     public void setManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
     }
+
+    
 
     public CreateProductResponse withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
@@ -472,6 +481,8 @@ public class CreateProductResponse extends SdkResponse {
         this.manufacturerName = manufacturerName;
     }
 
+    
+
     public CreateProductResponse withModel(String model) {
         this.model = model;
         return this;
@@ -491,6 +502,8 @@ public class CreateProductResponse extends SdkResponse {
     public void setModel(String model) {
         this.model = model;
     }
+
+    
 
     public CreateProductResponse withProductType(ProductTypeEnum productType) {
         this.productType = productType;
@@ -512,6 +525,8 @@ public class CreateProductResponse extends SdkResponse {
         this.productType = productType;
     }
 
+    
+
     public CreateProductResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -531,6 +546,8 @@ public class CreateProductResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateProductResponse withProtocolType(ProtocolTypeEnum protocolType) {
         this.protocolType = protocolType;
@@ -552,6 +569,8 @@ public class CreateProductResponse extends SdkResponse {
         this.protocolType = protocolType;
     }
 
+    
+
     public CreateProductResponse withDeviceType(String deviceType) {
         this.deviceType = deviceType;
         return this;
@@ -572,6 +591,8 @@ public class CreateProductResponse extends SdkResponse {
         this.deviceType = deviceType;
     }
 
+    
+
     public CreateProductResponse withVersion(String version) {
         this.version = version;
         return this;
@@ -591,6 +612,8 @@ public class CreateProductResponse extends SdkResponse {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public CreateProductResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
@@ -619,6 +642,8 @@ public class CreateProductResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
+    
+
     public CreateProductResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
@@ -645,6 +670,8 @@ public class CreateProductResponse extends SdkResponse {
     public void setLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
     }
+
+    
 
     public CreateProductResponse withAuthentication(Authentication authentication) {
         this.authentication = authentication;
@@ -673,6 +700,8 @@ public class CreateProductResponse extends SdkResponse {
         this.authentication = authentication;
     }
 
+    
+
     public CreateProductResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
@@ -695,6 +724,8 @@ public class CreateProductResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
+    
+
     public CreateProductResponse withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -715,6 +746,8 @@ public class CreateProductResponse extends SdkResponse {
         this.appName = appName;
     }
 
+    
+
     public CreateProductResponse withDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
         return this;
@@ -734,6 +767,9 @@ public class CreateProductResponse extends SdkResponse {
     public void setDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

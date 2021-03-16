@@ -34,7 +34,7 @@ public class BackupPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="periodical_backup_plan")
     
-    private BackupPlan periodicalBackupPlan = null;
+    private BackupPlan periodicalBackupPlan;
 
     public BackupPolicy withBackupType(String backupType) {
         this.backupType = backupType;
@@ -56,6 +56,8 @@ public class BackupPolicy  {
         this.backupType = backupType;
     }
 
+    
+
     public BackupPolicy withSaveDays(Integer saveDays) {
         this.saveDays = saveDays;
         return this;
@@ -75,6 +77,8 @@ public class BackupPolicy  {
     public void setSaveDays(Integer saveDays) {
         this.saveDays = saveDays;
     }
+
+    
 
     public BackupPolicy withPeriodicalBackupPlan(BackupPlan periodicalBackupPlan) {
         this.periodicalBackupPlan = periodicalBackupPlan;
@@ -102,6 +106,9 @@ public class BackupPolicy  {
     public void setPeriodicalBackupPlan(BackupPlan periodicalBackupPlan) {
         this.periodicalBackupPlan = periodicalBackupPlan;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -79,6 +79,8 @@ public class ListSubscriptionsItem  {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public ListSubscriptionsItem withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -98,6 +100,8 @@ public class ListSubscriptionsItem  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public ListSubscriptionsItem withSubscriptionUrn(String subscriptionUrn) {
         this.subscriptionUrn = subscriptionUrn;
@@ -119,6 +123,8 @@ public class ListSubscriptionsItem  {
         this.subscriptionUrn = subscriptionUrn;
     }
 
+    
+
     public ListSubscriptionsItem withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -138,6 +144,8 @@ public class ListSubscriptionsItem  {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+
+    
 
     public ListSubscriptionsItem withEndpoint(String endpoint) {
         this.endpoint = endpoint;
@@ -159,6 +167,8 @@ public class ListSubscriptionsItem  {
         this.endpoint = endpoint;
     }
 
+    
+
     public ListSubscriptionsItem withRemark(String remark) {
         this.remark = remark;
         return this;
@@ -179,6 +189,8 @@ public class ListSubscriptionsItem  {
         this.remark = remark;
     }
 
+    
+
     public ListSubscriptionsItem withStatus(Integer status) {
         this.status = status;
         return this;
@@ -198,6 +210,9 @@ public class ListSubscriptionsItem  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

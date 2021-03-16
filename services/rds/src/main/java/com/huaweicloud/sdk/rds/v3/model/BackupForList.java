@@ -265,7 +265,7 @@ public class BackupForList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore = null;
+    private Datastore datastore;
 
     public BackupForList withId(String id) {
         this.id = id;
@@ -287,6 +287,8 @@ public class BackupForList  {
         this.id = id;
     }
 
+    
+
     public BackupForList withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -306,6 +308,8 @@ public class BackupForList  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public BackupForList withName(String name) {
         this.name = name;
@@ -327,6 +331,8 @@ public class BackupForList  {
         this.name = name;
     }
 
+    
+
     public BackupForList withDatabases(List<BackupDatabase> databases) {
         this.databases = databases;
         return this;
@@ -334,9 +340,6 @@ public class BackupForList  {
 
     
     public BackupForList addDatabasesItem(BackupDatabase databasesItem) {
-        if (this.databases == null) {
-            this.databases = new ArrayList<>();
-        }
         this.databases.add(databasesItem);
         return this;
     }
@@ -361,6 +364,8 @@ public class BackupForList  {
         this.databases = databases;
     }
 
+    
+
     public BackupForList withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -380,6 +385,8 @@ public class BackupForList  {
     public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
+
+    
 
     public BackupForList withEndTime(String endTime) {
         this.endTime = endTime;
@@ -401,6 +408,8 @@ public class BackupForList  {
         this.endTime = endTime;
     }
 
+    
+
     public BackupForList withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -420,6 +429,8 @@ public class BackupForList  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public BackupForList withType(TypeEnum type) {
         this.type = type;
@@ -441,6 +452,8 @@ public class BackupForList  {
         this.type = type;
     }
 
+    
+
     public BackupForList withSize(Long size) {
         this.size = size;
         return this;
@@ -460,6 +473,8 @@ public class BackupForList  {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public BackupForList withDatastore(Datastore datastore) {
         this.datastore = datastore;
@@ -487,6 +502,9 @@ public class BackupForList  {
     public void setDatastore(Datastore datastore) {
         this.datastore = datastore;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

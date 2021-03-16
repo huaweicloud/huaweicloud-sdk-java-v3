@@ -49,6 +49,8 @@ public class ReclaimIndirectPartnerAccountReq  {
         this.indirectPartnerId = indirectPartnerId;
     }
 
+    
+
     public ReclaimIndirectPartnerAccountReq withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -70,6 +72,9 @@ public class ReclaimIndirectPartnerAccountReq  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

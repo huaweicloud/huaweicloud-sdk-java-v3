@@ -149,6 +149,8 @@ public class CompleteLifecycleActionRequestBody  {
         this.lifecycleActionKey = lifecycleActionKey;
     }
 
+    
+
     public CompleteLifecycleActionRequestBody withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -168,6 +170,8 @@ public class CompleteLifecycleActionRequestBody  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CompleteLifecycleActionRequestBody withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
@@ -189,6 +193,8 @@ public class CompleteLifecycleActionRequestBody  {
         this.lifecycleHookName = lifecycleHookName;
     }
 
+    
+
     public CompleteLifecycleActionRequestBody withLifecycleActionResult(LifecycleActionResultEnum lifecycleActionResult) {
         this.lifecycleActionResult = lifecycleActionResult;
         return this;
@@ -208,6 +214,9 @@ public class CompleteLifecycleActionRequestBody  {
     public void setLifecycleActionResult(LifecycleActionResultEnum lifecycleActionResult) {
         this.lifecycleActionResult = lifecycleActionResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

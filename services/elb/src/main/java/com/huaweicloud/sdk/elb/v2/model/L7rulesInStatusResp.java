@@ -137,6 +137,8 @@ public class L7rulesInStatusResp  {
         this.type = type;
     }
 
+    
+
     public L7rulesInStatusResp withId(String id) {
         this.id = id;
         return this;
@@ -157,6 +159,8 @@ public class L7rulesInStatusResp  {
         this.id = id;
     }
 
+    
+
     public L7rulesInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -176,6 +180,9 @@ public class L7rulesInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

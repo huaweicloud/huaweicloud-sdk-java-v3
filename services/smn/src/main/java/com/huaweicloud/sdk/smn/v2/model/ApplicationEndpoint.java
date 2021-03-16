@@ -67,6 +67,8 @@ public class ApplicationEndpoint  {
         this.createTime = createTime;
     }
 
+    
+
     public ApplicationEndpoint withEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
         return this;
@@ -86,6 +88,8 @@ public class ApplicationEndpoint  {
     public void setEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
     }
+
+    
 
     public ApplicationEndpoint withUserData(String userData) {
         this.userData = userData;
@@ -107,6 +111,8 @@ public class ApplicationEndpoint  {
         this.userData = userData;
     }
 
+    
+
     public ApplicationEndpoint withEnabled(String enabled) {
         this.enabled = enabled;
         return this;
@@ -127,6 +133,8 @@ public class ApplicationEndpoint  {
         this.enabled = enabled;
     }
 
+    
+
     public ApplicationEndpoint withToken(String token) {
         this.token = token;
         return this;
@@ -146,6 +154,9 @@ public class ApplicationEndpoint  {
     public void setToken(String token) {
         this.token = token;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

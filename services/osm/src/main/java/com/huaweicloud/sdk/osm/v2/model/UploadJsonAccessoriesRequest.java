@@ -40,7 +40,7 @@ public class UploadJsonAccessoriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AccessoryJsonFormatReq body = null;
+    private AccessoryJsonFormatReq body;
 
     public UploadJsonAccessoriesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -66,6 +66,8 @@ public class UploadJsonAccessoriesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public UploadJsonAccessoriesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -88,6 +90,8 @@ public class UploadJsonAccessoriesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UploadJsonAccessoriesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -109,6 +113,8 @@ public class UploadJsonAccessoriesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public UploadJsonAccessoriesRequest withBody(AccessoryJsonFormatReq body) {
         this.body = body;
@@ -136,6 +142,9 @@ public class UploadJsonAccessoriesRequest  {
     public void setBody(AccessoryJsonFormatReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

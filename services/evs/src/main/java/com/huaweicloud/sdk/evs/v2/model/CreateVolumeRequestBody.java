@@ -24,13 +24,13 @@ public class CreateVolumeRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bssParam")
     
-    private BssParamForCreateVolume bssParam = null;
+    private BssParamForCreateVolume bssParam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume")
     
-    private CreateVolumeOption volume = null;
+    private CreateVolumeOption volume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,7 +42,7 @@ public class CreateVolumeRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-SCH-HNT:scheduler_hints")
     
-    private CreateVolumeSchedulerHints osSCHHNTSchedulerHints = null;
+    private CreateVolumeSchedulerHints osSCHHNTSchedulerHints;
 
     public CreateVolumeRequestBody withBssParam(BssParamForCreateVolume bssParam) {
         this.bssParam = bssParam;
@@ -71,6 +71,8 @@ public class CreateVolumeRequestBody  {
         this.bssParam = bssParam;
     }
 
+    
+
     public CreateVolumeRequestBody withVolume(CreateVolumeOption volume) {
         this.volume = volume;
         return this;
@@ -98,6 +100,8 @@ public class CreateVolumeRequestBody  {
         this.volume = volume;
     }
 
+    
+
     public CreateVolumeRequestBody withServerId(String serverId) {
         this.serverId = serverId;
         return this;
@@ -117,6 +121,8 @@ public class CreateVolumeRequestBody  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public CreateVolumeRequestBody withOsSCHHNTSchedulerHints(CreateVolumeSchedulerHints osSCHHNTSchedulerHints) {
         this.osSCHHNTSchedulerHints = osSCHHNTSchedulerHints;
@@ -144,6 +150,9 @@ public class CreateVolumeRequestBody  {
     public void setOsSCHHNTSchedulerHints(CreateVolumeSchedulerHints osSCHHNTSchedulerHints) {
         this.osSCHHNTSchedulerHints = osSCHHNTSchedulerHints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

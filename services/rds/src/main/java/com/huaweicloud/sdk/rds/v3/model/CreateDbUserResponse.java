@@ -44,6 +44,9 @@ public class CreateDbUserResponse extends SdkResponse {
     public void setResp(String resp) {
         this.resp = resp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

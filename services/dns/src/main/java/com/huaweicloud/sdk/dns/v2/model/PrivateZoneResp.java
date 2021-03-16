@@ -103,7 +103,7 @@ public class PrivateZoneResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private PageLink links = null;
+    private PageLink links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -143,6 +143,8 @@ public class PrivateZoneResp  {
         this.id = id;
     }
 
+    
+
     public PrivateZoneResp withName(String name) {
         this.name = name;
         return this;
@@ -162,6 +164,8 @@ public class PrivateZoneResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public PrivateZoneResp withDescription(String description) {
         this.description = description;
@@ -183,6 +187,8 @@ public class PrivateZoneResp  {
         this.description = description;
     }
 
+    
+
     public PrivateZoneResp withEmail(String email) {
         this.email = email;
         return this;
@@ -202,6 +208,8 @@ public class PrivateZoneResp  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
 
     public PrivateZoneResp withZoneType(String zoneType) {
         this.zoneType = zoneType;
@@ -223,6 +231,8 @@ public class PrivateZoneResp  {
         this.zoneType = zoneType;
     }
 
+    
+
     public PrivateZoneResp withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
@@ -242,6 +252,8 @@ public class PrivateZoneResp  {
     public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
+
+    
 
     public PrivateZoneResp withSerial(Integer serial) {
         this.serial = serial;
@@ -263,6 +275,8 @@ public class PrivateZoneResp  {
         this.serial = serial;
     }
 
+    
+
     public PrivateZoneResp withStatus(String status) {
         this.status = status;
         return this;
@@ -282,6 +296,8 @@ public class PrivateZoneResp  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public PrivateZoneResp withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
@@ -303,6 +319,8 @@ public class PrivateZoneResp  {
         this.recordNum = recordNum;
     }
 
+    
+
     public PrivateZoneResp withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -322,6 +340,8 @@ public class PrivateZoneResp  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public PrivateZoneResp withProjectId(String projectId) {
         this.projectId = projectId;
@@ -343,6 +363,8 @@ public class PrivateZoneResp  {
         this.projectId = projectId;
     }
 
+    
+
     public PrivateZoneResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -363,6 +385,8 @@ public class PrivateZoneResp  {
         this.createdAt = createdAt;
     }
 
+    
+
     public PrivateZoneResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -382,6 +406,8 @@ public class PrivateZoneResp  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public PrivateZoneResp withLinks(PageLink links) {
         this.links = links;
@@ -410,6 +436,8 @@ public class PrivateZoneResp  {
         this.links = links;
     }
 
+    
+
     public PrivateZoneResp withMasters(List<String> masters) {
         this.masters = masters;
         return this;
@@ -417,9 +445,6 @@ public class PrivateZoneResp  {
 
     
     public PrivateZoneResp addMastersItem(String mastersItem) {
-        if (this.masters == null) {
-            this.masters = new ArrayList<>();
-        }
         this.masters.add(mastersItem);
         return this;
     }
@@ -444,6 +469,8 @@ public class PrivateZoneResp  {
         this.masters = masters;
     }
 
+    
+
     public PrivateZoneResp withRouters(List<RouterWithStatus> routers) {
         this.routers = routers;
         return this;
@@ -451,9 +478,6 @@ public class PrivateZoneResp  {
 
     
     public PrivateZoneResp addRoutersItem(RouterWithStatus routersItem) {
-        if (this.routers == null) {
-            this.routers = new ArrayList<>();
-        }
         this.routers.add(routersItem);
         return this;
     }
@@ -478,6 +502,8 @@ public class PrivateZoneResp  {
         this.routers = routers;
     }
 
+    
+
     public PrivateZoneResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -497,6 +523,9 @@ public class PrivateZoneResp  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

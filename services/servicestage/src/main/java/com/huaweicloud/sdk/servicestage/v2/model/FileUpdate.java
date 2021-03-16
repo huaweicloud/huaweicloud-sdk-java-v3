@@ -55,6 +55,8 @@ public class FileUpdate  {
         this.message = message;
     }
 
+    
+
     public FileUpdate withContent(String content) {
         this.content = content;
         return this;
@@ -75,6 +77,8 @@ public class FileUpdate  {
         this.content = content;
     }
 
+    
+
     public FileUpdate withSha(String sha) {
         this.sha = sha;
         return this;
@@ -94,6 +98,9 @@ public class FileUpdate  {
     public void setSha(String sha) {
         this.sha = sha;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

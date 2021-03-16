@@ -24,7 +24,7 @@ public class UpdateSubnetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet")
     
-    private SubnetResult subnet = null;
+    private SubnetResult subnet;
 
     public UpdateSubnetResponse withSubnet(SubnetResult subnet) {
         this.subnet = subnet;
@@ -52,6 +52,9 @@ public class UpdateSubnetResponse extends SdkResponse {
     public void setSubnet(SubnetResult subnet) {
         this.subnet = subnet;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -54,6 +54,8 @@ public class ListEnterpriseSubCustomersResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListEnterpriseSubCustomersResponse withSubCustomerInfos(List<SubCustomerInfoV2> subCustomerInfos) {
         this.subCustomerInfos = subCustomerInfos;
         return this;
@@ -61,9 +63,6 @@ public class ListEnterpriseSubCustomersResponse extends SdkResponse {
 
     
     public ListEnterpriseSubCustomersResponse addSubCustomerInfosItem(SubCustomerInfoV2 subCustomerInfosItem) {
-        if (this.subCustomerInfos == null) {
-            this.subCustomerInfos = new ArrayList<>();
-        }
         this.subCustomerInfos.add(subCustomerInfosItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListEnterpriseSubCustomersResponse extends SdkResponse {
     public void setSubCustomerInfos(List<SubCustomerInfoV2> subCustomerInfos) {
         this.subCustomerInfos = subCustomerInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

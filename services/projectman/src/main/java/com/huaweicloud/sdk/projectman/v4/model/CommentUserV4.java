@@ -55,6 +55,8 @@ public class CommentUserV4  {
         this.userNumId = userNumId;
     }
 
+    
+
     public CommentUserV4 withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -75,6 +77,8 @@ public class CommentUserV4  {
         this.userName = userName;
     }
 
+    
+
     public CommentUserV4 withNickName(String nickName) {
         this.nickName = nickName;
         return this;
@@ -94,6 +98,9 @@ public class CommentUserV4  {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

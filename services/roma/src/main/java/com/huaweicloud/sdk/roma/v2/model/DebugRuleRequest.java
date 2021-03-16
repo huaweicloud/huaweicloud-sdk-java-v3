@@ -28,7 +28,7 @@ public class DebugRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DebugRuleRequestBody body = null;
+    private DebugRuleRequestBody body;
 
     public DebugRuleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class DebugRuleRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public DebugRuleRequest withBody(DebugRuleRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DebugRuleRequest  {
     public void setBody(DebugRuleRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

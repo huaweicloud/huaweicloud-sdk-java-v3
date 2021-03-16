@@ -42,7 +42,7 @@ public class ShowRoutingRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subject")
     
-    private RoutingRuleSubject subject = null;
+    private RoutingRuleSubject subject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -94,6 +94,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.ruleId = ruleId;
     }
 
+    
+
     public ShowRoutingRuleResponse withRuleName(String ruleName) {
         this.ruleName = ruleName;
         return this;
@@ -114,6 +116,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.ruleName = ruleName;
     }
 
+    
+
     public ShowRoutingRuleResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -133,6 +137,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowRoutingRuleResponse withSubject(RoutingRuleSubject subject) {
         this.subject = subject;
@@ -161,6 +167,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.subject = subject;
     }
 
+    
+
     public ShowRoutingRuleResponse withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -180,6 +188,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public ShowRoutingRuleResponse withAppId(String appId) {
         this.appId = appId;
@@ -201,6 +211,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.appId = appId;
     }
 
+    
+
     public ShowRoutingRuleResponse withSelect(String select) {
         this.select = select;
         return this;
@@ -220,6 +232,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
     public void setSelect(String select) {
         this.select = select;
     }
+
+    
 
     public ShowRoutingRuleResponse withWhere(String where) {
         this.where = where;
@@ -241,6 +255,8 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.where = where;
     }
 
+    
+
     public ShowRoutingRuleResponse withActive(Boolean active) {
         this.active = active;
         return this;
@@ -260,6 +276,9 @@ public class ShowRoutingRuleResponse extends SdkResponse {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

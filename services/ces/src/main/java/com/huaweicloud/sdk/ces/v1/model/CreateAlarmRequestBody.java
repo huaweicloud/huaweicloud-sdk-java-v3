@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ces.v1.model.AlarmActions;
 import com.huaweicloud.sdk.ces.v1.model.Condition;
-import com.huaweicloud.sdk.ces.v1.model.MetricInfoForAlarm;
+import com.huaweicloud.sdk.ces.v1.model.MetricForAlarm;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,25 +42,25 @@ public class CreateAlarmRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    private MetricInfoForAlarm metric = null;
+    private MetricForAlarm metric;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition")
     
-    private Condition condition = null;
+    private Condition condition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_enabled")
     
-    private Boolean alarmEnabled = true;
+    private Boolean alarmEnabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_action_enabled")
     
-    private Boolean alarmActionEnabled = true;
+    private Boolean alarmActionEnabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -202,6 +202,8 @@ public class CreateAlarmRequestBody  {
         this.alarmName = alarmName;
     }
 
+    
+
     public CreateAlarmRequestBody withAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
         return this;
@@ -222,14 +224,16 @@ public class CreateAlarmRequestBody  {
         this.alarmDescription = alarmDescription;
     }
 
-    public CreateAlarmRequestBody withMetric(MetricInfoForAlarm metric) {
+    
+
+    public CreateAlarmRequestBody withMetric(MetricForAlarm metric) {
         this.metric = metric;
         return this;
     }
 
-    public CreateAlarmRequestBody withMetric(Consumer<MetricInfoForAlarm> metricSetter) {
+    public CreateAlarmRequestBody withMetric(Consumer<MetricForAlarm> metricSetter) {
         if(this.metric == null ){
-            this.metric = new MetricInfoForAlarm();
+            this.metric = new MetricForAlarm();
             metricSetter.accept(this.metric);
         }
         
@@ -241,13 +245,15 @@ public class CreateAlarmRequestBody  {
      * Get metric
      * @return metric
      */
-    public MetricInfoForAlarm getMetric() {
+    public MetricForAlarm getMetric() {
         return metric;
     }
 
-    public void setMetric(MetricInfoForAlarm metric) {
+    public void setMetric(MetricForAlarm metric) {
         this.metric = metric;
     }
+
+    
 
     public CreateAlarmRequestBody withCondition(Condition condition) {
         this.condition = condition;
@@ -276,6 +282,8 @@ public class CreateAlarmRequestBody  {
         this.condition = condition;
     }
 
+    
+
     public CreateAlarmRequestBody withAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
         return this;
@@ -295,6 +303,8 @@ public class CreateAlarmRequestBody  {
     public void setAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
     }
+
+    
 
     public CreateAlarmRequestBody withAlarmActionEnabled(Boolean alarmActionEnabled) {
         this.alarmActionEnabled = alarmActionEnabled;
@@ -316,6 +326,8 @@ public class CreateAlarmRequestBody  {
         this.alarmActionEnabled = alarmActionEnabled;
     }
 
+    
+
     public CreateAlarmRequestBody withAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
@@ -335,6 +347,8 @@ public class CreateAlarmRequestBody  {
     public void setAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
     }
+
+    
 
     public CreateAlarmRequestBody withAlarmType(AlarmTypeEnum alarmType) {
         this.alarmType = alarmType;
@@ -356,6 +370,8 @@ public class CreateAlarmRequestBody  {
         this.alarmType = alarmType;
     }
 
+    
+
     public CreateAlarmRequestBody withAlarmActions(List<AlarmActions> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
@@ -363,9 +379,6 @@ public class CreateAlarmRequestBody  {
 
     
     public CreateAlarmRequestBody addAlarmActionsItem(AlarmActions alarmActionsItem) {
-        if (this.alarmActions == null) {
-            this.alarmActions = new ArrayList<>();
-        }
         this.alarmActions.add(alarmActionsItem);
         return this;
     }
@@ -390,6 +403,8 @@ public class CreateAlarmRequestBody  {
         this.alarmActions = alarmActions;
     }
 
+    
+
     public CreateAlarmRequestBody withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
         return this;
@@ -397,9 +412,6 @@ public class CreateAlarmRequestBody  {
 
     
     public CreateAlarmRequestBody addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
-        if (this.insufficientdataActions == null) {
-            this.insufficientdataActions = new ArrayList<>();
-        }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
@@ -424,6 +436,8 @@ public class CreateAlarmRequestBody  {
         this.insufficientdataActions = insufficientdataActions;
     }
 
+    
+
     public CreateAlarmRequestBody withOkActions(List<AlarmActions> okActions) {
         this.okActions = okActions;
         return this;
@@ -431,9 +445,6 @@ public class CreateAlarmRequestBody  {
 
     
     public CreateAlarmRequestBody addOkActionsItem(AlarmActions okActionsItem) {
-        if (this.okActions == null) {
-            this.okActions = new ArrayList<>();
-        }
         this.okActions.add(okActionsItem);
         return this;
     }
@@ -458,6 +469,8 @@ public class CreateAlarmRequestBody  {
         this.okActions = okActions;
     }
 
+    
+
     public CreateAlarmRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -477,6 +490,9 @@ public class CreateAlarmRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

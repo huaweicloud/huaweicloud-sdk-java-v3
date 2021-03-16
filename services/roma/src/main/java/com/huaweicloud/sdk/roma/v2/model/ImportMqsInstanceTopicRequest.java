@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.ImportMqsInstanceTopicRequestBody;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -121,7 +122,7 @@ public class ImportMqsInstanceTopicRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private Object body = null;
+    private ImportMqsInstanceTopicRequestBody body;
 
     public ImportMqsInstanceTopicRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -143,6 +144,8 @@ public class ImportMqsInstanceTopicRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ImportMqsInstanceTopicRequest withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -162,6 +165,8 @@ public class ImportMqsInstanceTopicRequest  {
     public void setMode(ModeEnum mode) {
         this.mode = mode;
     }
+
+    
 
     public ImportMqsInstanceTopicRequest withPrefix(String prefix) {
         this.prefix = prefix;
@@ -183,14 +188,16 @@ public class ImportMqsInstanceTopicRequest  {
         this.prefix = prefix;
     }
 
-    public ImportMqsInstanceTopicRequest withBody(Object body) {
+    
+
+    public ImportMqsInstanceTopicRequest withBody(ImportMqsInstanceTopicRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ImportMqsInstanceTopicRequest withBody(Consumer<Object> bodySetter) {
+    public ImportMqsInstanceTopicRequest withBody(Consumer<ImportMqsInstanceTopicRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new Object();
+            this.body = new ImportMqsInstanceTopicRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -202,13 +209,16 @@ public class ImportMqsInstanceTopicRequest  {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public ImportMqsInstanceTopicRequestBody getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(ImportMqsInstanceTopicRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListTriggersDetailsResponse extends SdkResponse {
 
     
     public ListTriggersDetailsResponse addBodyItem(Trigger bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
         this.body.add(bodyItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListTriggersDetailsResponse extends SdkResponse {
     public void setBody(List<Trigger> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

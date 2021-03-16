@@ -22,7 +22,7 @@ public class CreateRecordConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RecordConfigInfo body = null;
+    private RecordConfigInfo body;
 
     public CreateRecordConfigRequest withBody(RecordConfigInfo body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateRecordConfigRequest  {
     public void setBody(RecordConfigInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

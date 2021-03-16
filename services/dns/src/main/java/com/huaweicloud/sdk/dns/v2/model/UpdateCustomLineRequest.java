@@ -28,7 +28,7 @@ public class UpdateCustomLineRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateCustomsLineReq body = null;
+    private UpdateCustomsLineReq body;
 
     public UpdateCustomLineRequest withLineId(String lineId) {
         this.lineId = lineId;
@@ -49,6 +49,8 @@ public class UpdateCustomLineRequest  {
     public void setLineId(String lineId) {
         this.lineId = lineId;
     }
+
+    
 
     public UpdateCustomLineRequest withBody(UpdateCustomsLineReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateCustomLineRequest  {
     public void setBody(UpdateCustomsLineReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class TracksInfo  {
         this.channelLayout = channelLayout;
     }
 
+    
+
     public TracksInfo withLanguage(String language) {
         this.language = language;
         return this;
@@ -68,6 +70,9 @@ public class TracksInfo  {
     public void setLanguage(String language) {
         this.language = language;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

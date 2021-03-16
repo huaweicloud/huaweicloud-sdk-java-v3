@@ -42,6 +42,9 @@ public class ShowPrivateipRequest  {
     public void setPrivateipId(String privateipId) {
         this.privateipId = privateipId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -110,7 +110,7 @@ public class CreateCompareTaskReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_level_compare_info")
     
-    private CreateDataLevelCompareReq dataLevelCompareInfo = null;
+    private CreateDataLevelCompareReq dataLevelCompareInfo;
 
     public CreateCompareTaskReq withJobId(String jobId) {
         this.jobId = jobId;
@@ -132,6 +132,8 @@ public class CreateCompareTaskReq  {
         this.jobId = jobId;
     }
 
+    
+
     public CreateCompareTaskReq withObjectLevelCompareType(ObjectLevelCompareTypeEnum objectLevelCompareType) {
         this.objectLevelCompareType = objectLevelCompareType;
         return this;
@@ -151,6 +153,8 @@ public class CreateCompareTaskReq  {
     public void setObjectLevelCompareType(ObjectLevelCompareTypeEnum objectLevelCompareType) {
         this.objectLevelCompareType = objectLevelCompareType;
     }
+
+    
 
     public CreateCompareTaskReq withDataLevelCompareInfo(CreateDataLevelCompareReq dataLevelCompareInfo) {
         this.dataLevelCompareInfo = dataLevelCompareInfo;
@@ -178,6 +182,9 @@ public class CreateCompareTaskReq  {
     public void setDataLevelCompareInfo(CreateDataLevelCompareReq dataLevelCompareInfo) {
         this.dataLevelCompareInfo = dataLevelCompareInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

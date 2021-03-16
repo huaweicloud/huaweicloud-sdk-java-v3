@@ -61,6 +61,8 @@ public class Resource  {
         this.type = type;
     }
 
+    
+
     public Resource withUsed(Integer used) {
         this.used = used;
         return this;
@@ -80,6 +82,8 @@ public class Resource  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
 
     public Resource withUnit(String unit) {
         this.unit = unit;
@@ -101,6 +105,8 @@ public class Resource  {
         this.unit = unit;
     }
 
+    
+
     public Resource withQuota(Integer quota) {
         this.quota = quota;
         return this;
@@ -120,6 +126,9 @@ public class Resource  {
     public void setQuota(Integer quota) {
         this.quota = quota;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

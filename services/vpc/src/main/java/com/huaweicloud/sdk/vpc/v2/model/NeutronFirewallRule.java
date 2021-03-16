@@ -197,6 +197,8 @@ public class NeutronFirewallRule  {
         this.id = id;
     }
 
+    
+
     public NeutronFirewallRule withName(String name) {
         this.name = name;
         return this;
@@ -216,6 +218,8 @@ public class NeutronFirewallRule  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NeutronFirewallRule withDescription(String description) {
         this.description = description;
@@ -237,6 +241,8 @@ public class NeutronFirewallRule  {
         this.description = description;
     }
 
+    
+
     public NeutronFirewallRule withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -257,6 +263,8 @@ public class NeutronFirewallRule  {
         this.action = action;
     }
 
+    
+
     public NeutronFirewallRule withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -276,6 +284,8 @@ public class NeutronFirewallRule  {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public NeutronFirewallRule withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
@@ -299,6 +309,8 @@ public class NeutronFirewallRule  {
         this.ipVersion = ipVersion;
     }
 
+    
+
     public NeutronFirewallRule withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -318,6 +330,8 @@ public class NeutronFirewallRule  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public NeutronFirewallRule withDestinationIpAddress(String destinationIpAddress) {
         this.destinationIpAddress = destinationIpAddress;
@@ -339,6 +353,8 @@ public class NeutronFirewallRule  {
         this.destinationIpAddress = destinationIpAddress;
     }
 
+    
+
     public NeutronFirewallRule withDestinationPort(String destinationPort) {
         this.destinationPort = destinationPort;
         return this;
@@ -358,6 +374,8 @@ public class NeutronFirewallRule  {
     public void setDestinationPort(String destinationPort) {
         this.destinationPort = destinationPort;
     }
+
+    
 
     public NeutronFirewallRule withSourceIpAddress(String sourceIpAddress) {
         this.sourceIpAddress = sourceIpAddress;
@@ -379,6 +397,8 @@ public class NeutronFirewallRule  {
         this.sourceIpAddress = sourceIpAddress;
     }
 
+    
+
     public NeutronFirewallRule withSourcePort(String sourcePort) {
         this.sourcePort = sourcePort;
         return this;
@@ -398,6 +418,8 @@ public class NeutronFirewallRule  {
     public void setSourcePort(String sourcePort) {
         this.sourcePort = sourcePort;
     }
+
+    
 
     public NeutronFirewallRule withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -419,6 +441,8 @@ public class NeutronFirewallRule  {
         this.tenantId = tenantId;
     }
 
+    
+
     public NeutronFirewallRule withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -438,6 +462,9 @@ public class NeutronFirewallRule  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -158,25 +158,25 @@ public class LdApiScript  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_result_paging")
     
-    private Boolean enableResultPaging = false;
+    private Boolean enableResultPaging;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_preparestatement")
     
-    private Boolean enablePreparestatement = false;
+    private Boolean enablePreparestatement;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private OffsetDateTime createdTime = null;
+    private OffsetDateTime createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modified_time")
     
-    private OffsetDateTime modifiedTime = null;
+    private OffsetDateTime modifiedTime;
 
     public LdApiScript withDsId(String dsId) {
         this.dsId = dsId;
@@ -198,6 +198,8 @@ public class LdApiScript  {
         this.dsId = dsId;
     }
 
+    
+
     public LdApiScript withDsName(String dsName) {
         this.dsName = dsName;
         return this;
@@ -217,6 +219,8 @@ public class LdApiScript  {
     public void setDsName(String dsName) {
         this.dsName = dsName;
     }
+
+    
 
     public LdApiScript withDsType(DsTypeEnum dsType) {
         this.dsType = dsType;
@@ -238,6 +242,8 @@ public class LdApiScript  {
         this.dsType = dsType;
     }
 
+    
+
     public LdApiScript withType(String type) {
         this.type = type;
         return this;
@@ -257,6 +263,8 @@ public class LdApiScript  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public LdApiScript withObjectName(String objectName) {
         this.objectName = objectName;
@@ -278,6 +286,8 @@ public class LdApiScript  {
         this.objectName = objectName;
     }
 
+    
+
     public LdApiScript withContent(String content) {
         this.content = content;
         return this;
@@ -297,6 +307,8 @@ public class LdApiScript  {
     public void setContent(String content) {
         this.content = content;
     }
+
+    
 
     public LdApiScript withEnableResultPaging(Boolean enableResultPaging) {
         this.enableResultPaging = enableResultPaging;
@@ -318,6 +330,8 @@ public class LdApiScript  {
         this.enableResultPaging = enableResultPaging;
     }
 
+    
+
     public LdApiScript withEnablePreparestatement(Boolean enablePreparestatement) {
         this.enablePreparestatement = enablePreparestatement;
         return this;
@@ -337,6 +351,8 @@ public class LdApiScript  {
     public void setEnablePreparestatement(Boolean enablePreparestatement) {
         this.enablePreparestatement = enablePreparestatement;
     }
+
+    
 
     public LdApiScript withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
@@ -358,6 +374,8 @@ public class LdApiScript  {
         this.createdTime = createdTime;
     }
 
+    
+
     public LdApiScript withModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
         return this;
@@ -377,6 +395,9 @@ public class LdApiScript  {
     public void setModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

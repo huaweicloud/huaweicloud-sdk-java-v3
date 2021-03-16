@@ -121,6 +121,8 @@ public class SyncJob  {
         this.createdAt = createdAt;
     }
 
+    
+
     public SyncJob withDomainID(String domainID) {
         this.domainID = domainID;
         return this;
@@ -140,6 +142,8 @@ public class SyncJob  {
     public void setDomainID(String domainID) {
         this.domainID = domainID;
     }
+
+    
 
     public SyncJob withDomainName(String domainName) {
         this.domainName = domainName;
@@ -161,6 +165,8 @@ public class SyncJob  {
         this.domainName = domainName;
     }
 
+    
+
     public SyncJob withId(Integer id) {
         this.id = id;
         return this;
@@ -180,6 +186,8 @@ public class SyncJob  {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public SyncJob withNamespace(String namespace) {
         this.namespace = namespace;
@@ -201,6 +209,8 @@ public class SyncJob  {
         this.namespace = namespace;
     }
 
+    
+
     public SyncJob withOverride(Boolean override) {
         this.override = override;
         return this;
@@ -220,6 +230,8 @@ public class SyncJob  {
     public void setOverride(Boolean override) {
         this.override = override;
     }
+
+    
 
     public SyncJob withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
@@ -241,6 +253,8 @@ public class SyncJob  {
         this.remoteNamespace = remoteNamespace;
     }
 
+    
+
     public SyncJob withRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
         return this;
@@ -260,6 +274,8 @@ public class SyncJob  {
     public void setRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
     }
+
+    
 
     public SyncJob withRepoName(String repoName) {
         this.repoName = repoName;
@@ -281,6 +297,8 @@ public class SyncJob  {
         this.repoName = repoName;
     }
 
+    
+
     public SyncJob withStatus(String status) {
         this.status = status;
         return this;
@@ -300,6 +318,8 @@ public class SyncJob  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public SyncJob withSyncOperatorId(String syncOperatorId) {
         this.syncOperatorId = syncOperatorId;
@@ -321,6 +341,8 @@ public class SyncJob  {
         this.syncOperatorId = syncOperatorId;
     }
 
+    
+
     public SyncJob withSyncOperatorName(String syncOperatorName) {
         this.syncOperatorName = syncOperatorName;
         return this;
@@ -340,6 +362,8 @@ public class SyncJob  {
     public void setSyncOperatorName(String syncOperatorName) {
         this.syncOperatorName = syncOperatorName;
     }
+
+    
 
     public SyncJob withTag(String tag) {
         this.tag = tag;
@@ -361,6 +385,8 @@ public class SyncJob  {
         this.tag = tag;
     }
 
+    
+
     public SyncJob withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -380,6 +406,9 @@ public class SyncJob  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

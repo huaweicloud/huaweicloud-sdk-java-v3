@@ -53,6 +53,8 @@ public class CreateTaskResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public CreateTaskResponse withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -72,6 +74,9 @@ public class CreateTaskResponse extends SdkResponse {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

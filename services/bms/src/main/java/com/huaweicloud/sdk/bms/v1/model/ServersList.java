@@ -22,7 +22,7 @@ public class ServersList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private UUID id = null;
+    private UUID id;
 
     public ServersList withId(UUID id) {
         this.id = id;
@@ -43,6 +43,9 @@ public class ServersList  {
     public void setId(UUID id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

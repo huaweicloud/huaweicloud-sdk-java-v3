@@ -139,6 +139,8 @@ public class ParticipantInfo  {
         this.participantID = participantID;
     }
 
+    
+
     public ParticipantInfo withName(String name) {
         this.name = name;
         return this;
@@ -158,6 +160,8 @@ public class ParticipantInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ParticipantInfo withSubscriberID(String subscriberID) {
         this.subscriberID = subscriberID;
@@ -179,6 +183,8 @@ public class ParticipantInfo  {
         this.subscriberID = subscriberID;
     }
 
+    
+
     public ParticipantInfo withRole(Integer role) {
         this.role = role;
         return this;
@@ -198,6 +204,8 @@ public class ParticipantInfo  {
     public void setRole(Integer role) {
         this.role = role;
     }
+
+    
 
     public ParticipantInfo withState(String state) {
         this.state = state;
@@ -219,6 +227,8 @@ public class ParticipantInfo  {
         this.state = state;
     }
 
+    
+
     public ParticipantInfo withAddress(String address) {
         this.address = address;
         return this;
@@ -238,6 +248,8 @@ public class ParticipantInfo  {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    
 
     public ParticipantInfo withAttendeeType(String attendeeType) {
         this.attendeeType = attendeeType;
@@ -259,6 +271,8 @@ public class ParticipantInfo  {
         this.attendeeType = attendeeType;
     }
 
+    
+
     public ParticipantInfo withAccountId(String accountId) {
         this.accountId = accountId;
         return this;
@@ -278,6 +292,8 @@ public class ParticipantInfo  {
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
+
+    
 
     public ParticipantInfo withPhone2(String phone2) {
         this.phone2 = phone2;
@@ -299,6 +315,8 @@ public class ParticipantInfo  {
         this.phone2 = phone2;
     }
 
+    
+
     public ParticipantInfo withPhone3(String phone3) {
         this.phone3 = phone3;
         return this;
@@ -318,6 +336,8 @@ public class ParticipantInfo  {
     public void setPhone3(String phone3) {
         this.phone3 = phone3;
     }
+
+    
 
     public ParticipantInfo withEmail(String email) {
         this.email = email;
@@ -339,6 +359,8 @@ public class ParticipantInfo  {
         this.email = email;
     }
 
+    
+
     public ParticipantInfo withSms(String sms) {
         this.sms = sms;
         return this;
@@ -358,6 +380,8 @@ public class ParticipantInfo  {
     public void setSms(String sms) {
         this.sms = sms;
     }
+
+    
 
     public ParticipantInfo withDeptName(String deptName) {
         this.deptName = deptName;
@@ -379,6 +403,8 @@ public class ParticipantInfo  {
         this.deptName = deptName;
     }
 
+    
+
     public ParticipantInfo withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -399,6 +425,8 @@ public class ParticipantInfo  {
         this.userUUID = userUUID;
     }
 
+    
+
     public ParticipantInfo withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -418,6 +446,8 @@ public class ParticipantInfo  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public ParticipantInfo withIsAutoInvite(Integer isAutoInvite) {
         this.isAutoInvite = isAutoInvite;
@@ -441,6 +471,8 @@ public class ParticipantInfo  {
         this.isAutoInvite = isAutoInvite;
     }
 
+    
+
     public ParticipantInfo withIsNotOverlayPidName(Boolean isNotOverlayPidName) {
         this.isNotOverlayPidName = isNotOverlayPidName;
         return this;
@@ -460,6 +492,9 @@ public class ParticipantInfo  {
     public void setIsNotOverlayPidName(Boolean isNotOverlayPidName) {
         this.isNotOverlayPidName = isNotOverlayPidName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

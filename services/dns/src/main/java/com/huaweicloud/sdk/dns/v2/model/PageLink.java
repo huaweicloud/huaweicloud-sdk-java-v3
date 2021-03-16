@@ -49,6 +49,8 @@ public class PageLink  {
         this.self = self;
     }
 
+    
+
     public PageLink withNext(String next) {
         this.next = next;
         return this;
@@ -68,6 +70,9 @@ public class PageLink  {
     public void setNext(String next) {
         this.next = next;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

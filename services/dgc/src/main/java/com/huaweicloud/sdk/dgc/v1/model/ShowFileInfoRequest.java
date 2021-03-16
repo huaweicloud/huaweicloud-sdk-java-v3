@@ -22,7 +22,7 @@ public class ShowFileInfoRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FilePath body = null;
+    private FilePath body;
 
     public ShowFileInfoRequest withBody(FilePath body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ShowFileInfoRequest  {
     public void setBody(FilePath body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

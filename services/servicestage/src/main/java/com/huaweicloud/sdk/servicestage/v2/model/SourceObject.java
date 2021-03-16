@@ -23,13 +23,13 @@ public class SourceObject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private SourceKind kind = null;
+    private SourceKind kind;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private SourceOrArtifact spec = null;
+    private SourceOrArtifact spec;
 
     public SourceObject withKind(SourceKind kind) {
         this.kind = kind;
@@ -50,6 +50,8 @@ public class SourceObject  {
     public void setKind(SourceKind kind) {
         this.kind = kind;
     }
+
+    
 
     public SourceObject withSpec(SourceOrArtifact spec) {
         this.spec = spec;
@@ -77,6 +79,9 @@ public class SourceObject  {
     public void setSpec(SourceOrArtifact spec) {
         this.spec = spec;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

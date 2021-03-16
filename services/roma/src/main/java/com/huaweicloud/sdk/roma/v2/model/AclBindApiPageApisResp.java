@@ -70,7 +70,7 @@ public class AclBindApiPageApisResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_time")
     
-    private OffsetDateTime bindTime = null;
+    private OffsetDateTime bindTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,6 +98,8 @@ public class AclBindApiPageApisResp  {
         this.apiId = apiId;
     }
 
+    
+
     public AclBindApiPageApisResp withApiName(String apiName) {
         this.apiName = apiName;
         return this;
@@ -117,6 +119,8 @@ public class AclBindApiPageApisResp  {
     public void setApiName(String apiName) {
         this.apiName = apiName;
     }
+
+    
 
     public AclBindApiPageApisResp withApiType(String apiType) {
         this.apiType = apiType;
@@ -138,6 +142,8 @@ public class AclBindApiPageApisResp  {
         this.apiType = apiType;
     }
 
+    
+
     public AclBindApiPageApisResp withApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
         return this;
@@ -157,6 +163,8 @@ public class AclBindApiPageApisResp  {
     public void setApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
     }
+
+    
 
     public AclBindApiPageApisResp withEnvId(String envId) {
         this.envId = envId;
@@ -178,6 +186,8 @@ public class AclBindApiPageApisResp  {
         this.envId = envId;
     }
 
+    
+
     public AclBindApiPageApisResp withEnvName(String envName) {
         this.envName = envName;
         return this;
@@ -197,6 +207,8 @@ public class AclBindApiPageApisResp  {
     public void setEnvName(String envName) {
         this.envName = envName;
     }
+
+    
 
     public AclBindApiPageApisResp withBindId(String bindId) {
         this.bindId = bindId;
@@ -218,6 +230,8 @@ public class AclBindApiPageApisResp  {
         this.bindId = bindId;
     }
 
+    
+
     public AclBindApiPageApisResp withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -237,6 +251,8 @@ public class AclBindApiPageApisResp  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
+    
 
     public AclBindApiPageApisResp withBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
@@ -258,6 +274,8 @@ public class AclBindApiPageApisResp  {
         this.bindTime = bindTime;
     }
 
+    
+
     public AclBindApiPageApisResp withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
@@ -277,6 +295,9 @@ public class AclBindApiPageApisResp  {
     public void setPublishId(String publishId) {
         this.publishId = publishId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

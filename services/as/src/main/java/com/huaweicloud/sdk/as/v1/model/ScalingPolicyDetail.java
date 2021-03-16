@@ -142,13 +142,13 @@ public class ScalingPolicyDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scheduled_policy")
     
-    private ScheduledPolicy scheduledPolicy = null;
+    private ScheduledPolicy scheduledPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_policy_action")
     
-    private ScalingPolicyAction scalingPolicyAction = null;
+    private ScalingPolicyAction scalingPolicyAction;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -160,7 +160,7 @@ public class ScalingPolicyDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
     public ScalingPolicyDetail withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -182,6 +182,8 @@ public class ScalingPolicyDetail  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public ScalingPolicyDetail withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
@@ -201,6 +203,8 @@ public class ScalingPolicyDetail  {
     public void setScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
     }
+
+    
 
     public ScalingPolicyDetail withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
@@ -222,6 +226,8 @@ public class ScalingPolicyDetail  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
+    
+
     public ScalingPolicyDetail withScalingPolicyType(ScalingPolicyTypeEnum scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
         return this;
@@ -242,6 +248,8 @@ public class ScalingPolicyDetail  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
+    
+
     public ScalingPolicyDetail withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -261,6 +269,8 @@ public class ScalingPolicyDetail  {
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
     }
+
+    
 
     public ScalingPolicyDetail withScheduledPolicy(ScheduledPolicy scheduledPolicy) {
         this.scheduledPolicy = scheduledPolicy;
@@ -289,6 +299,8 @@ public class ScalingPolicyDetail  {
         this.scheduledPolicy = scheduledPolicy;
     }
 
+    
+
     public ScalingPolicyDetail withScalingPolicyAction(ScalingPolicyAction scalingPolicyAction) {
         this.scalingPolicyAction = scalingPolicyAction;
         return this;
@@ -316,6 +328,8 @@ public class ScalingPolicyDetail  {
         this.scalingPolicyAction = scalingPolicyAction;
     }
 
+    
+
     public ScalingPolicyDetail withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
         return this;
@@ -336,6 +350,8 @@ public class ScalingPolicyDetail  {
         this.coolDownTime = coolDownTime;
     }
 
+    
+
     public ScalingPolicyDetail withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -355,6 +371,9 @@ public class ScalingPolicyDetail  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

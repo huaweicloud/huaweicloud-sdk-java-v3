@@ -49,6 +49,8 @@ public class WeeklyTop10  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
+    
+
     public WeeklyTop10 withTimes(Integer times) {
         this.times = times;
         return this;
@@ -68,6 +70,9 @@ public class WeeklyTop10  {
     public void setTimes(Integer times) {
         this.times = times;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -46,7 +46,7 @@ public class UpdateUserRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ModUserDTO body = null;
+    private ModUserDTO body;
 
     public UpdateUserRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
@@ -70,6 +70,8 @@ public class UpdateUserRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public UpdateUserRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -90,6 +92,8 @@ public class UpdateUserRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public UpdateUserRequest withAccount(String account) {
         this.account = account;
         return this;
@@ -109,6 +113,8 @@ public class UpdateUserRequest  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
 
     public UpdateUserRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
@@ -131,6 +137,8 @@ public class UpdateUserRequest  {
     public void setAccountType(Integer accountType) {
         this.accountType = accountType;
     }
+
+    
 
     public UpdateUserRequest withBody(ModUserDTO body) {
         this.body = body;
@@ -158,6 +166,9 @@ public class UpdateUserRequest  {
     public void setBody(ModUserDTO body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

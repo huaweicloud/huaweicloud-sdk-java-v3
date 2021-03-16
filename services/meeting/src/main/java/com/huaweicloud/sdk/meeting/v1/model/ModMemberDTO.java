@@ -67,6 +67,8 @@ public class ModMemberDTO  {
         this.name = name;
     }
 
+    
+
     public ModMemberDTO withEnglishName(String englishName) {
         this.englishName = englishName;
         return this;
@@ -86,6 +88,8 @@ public class ModMemberDTO  {
     public void setEnglishName(String englishName) {
         this.englishName = englishName;
     }
+
+    
 
     public ModMemberDTO withSignature(String signature) {
         this.signature = signature;
@@ -107,6 +111,8 @@ public class ModMemberDTO  {
         this.signature = signature;
     }
 
+    
+
     public ModMemberDTO withTitle(String title) {
         this.title = title;
         return this;
@@ -127,6 +133,8 @@ public class ModMemberDTO  {
         this.title = title;
     }
 
+    
+
     public ModMemberDTO withDesc(String desc) {
         this.desc = desc;
         return this;
@@ -146,6 +154,9 @@ public class ModMemberDTO  {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

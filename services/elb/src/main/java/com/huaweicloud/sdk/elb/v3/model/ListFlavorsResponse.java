@@ -33,7 +33,7 @@ public class ListFlavorsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="page_info")
     
-    private PageInfo pageInfo = null;
+    private PageInfo pageInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +48,6 @@ public class ListFlavorsResponse extends SdkResponse {
 
     
     public ListFlavorsResponse addFlavorsItem(Flavor flavorsItem) {
-        if (this.flavors == null) {
-            this.flavors = new ArrayList<>();
-        }
         this.flavors.add(flavorsItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListFlavorsResponse extends SdkResponse {
     public void setFlavors(List<Flavor> flavors) {
         this.flavors = flavors;
     }
+
+    
 
     public ListFlavorsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
@@ -102,6 +101,8 @@ public class ListFlavorsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    
+
     public ListFlavorsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -121,6 +122,9 @@ public class ListFlavorsResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

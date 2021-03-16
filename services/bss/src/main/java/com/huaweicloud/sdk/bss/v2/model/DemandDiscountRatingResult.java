@@ -67,6 +67,8 @@ public class DemandDiscountRatingResult  {
         this.discountId = discountId;
     }
 
+    
+
     public DemandDiscountRatingResult withDiscountType(Integer discountType) {
         this.discountType = discountType;
         return this;
@@ -86,6 +88,8 @@ public class DemandDiscountRatingResult  {
     public void setDiscountType(Integer discountType) {
         this.discountType = discountType;
     }
+
+    
 
     public DemandDiscountRatingResult withAmount(Double amount) {
         this.amount = amount;
@@ -107,6 +111,8 @@ public class DemandDiscountRatingResult  {
         this.amount = amount;
     }
 
+    
+
     public DemandDiscountRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -127,6 +133,8 @@ public class DemandDiscountRatingResult  {
         this.measureId = measureId;
     }
 
+    
+
     public DemandDiscountRatingResult withDiscountName(String discountName) {
         this.discountName = discountName;
         return this;
@@ -146,6 +154,9 @@ public class DemandDiscountRatingResult  {
     public void setDiscountName(String discountName) {
         this.discountName = discountName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

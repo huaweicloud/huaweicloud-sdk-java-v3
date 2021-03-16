@@ -30,7 +30,7 @@ public class SendSmVerificationCodeReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
-    private Integer timeout = 10;
+    private Integer timeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class SendSmVerificationCodeReq  {
         this.mobilePhone = mobilePhone;
     }
 
+    
+
     public SendSmVerificationCodeReq withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -86,6 +88,8 @@ public class SendSmVerificationCodeReq  {
         this.timeout = timeout;
     }
 
+    
+
     public SendSmVerificationCodeReq withLanguage(String language) {
         this.language = language;
         return this;
@@ -106,6 +110,8 @@ public class SendSmVerificationCodeReq  {
         this.language = language;
     }
 
+    
+
     public SendSmVerificationCodeReq withSmTemplateArgs(List<TemplateArgs> smTemplateArgs) {
         this.smTemplateArgs = smTemplateArgs;
         return this;
@@ -113,9 +119,6 @@ public class SendSmVerificationCodeReq  {
 
     
     public SendSmVerificationCodeReq addSmTemplateArgsItem(TemplateArgs smTemplateArgsItem) {
-        if (this.smTemplateArgs == null) {
-            this.smTemplateArgs = new ArrayList<>();
-        }
         this.smTemplateArgs.add(smTemplateArgsItem);
         return this;
     }
@@ -139,6 +142,9 @@ public class SendSmVerificationCodeReq  {
     public void setSmTemplateArgs(List<TemplateArgs> smTemplateArgs) {
         this.smTemplateArgs = smTemplateArgs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class NovaServerImage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<NovaLink> links = new ArrayList<>();
+    private List<NovaLink> links = null;
     
     public NovaServerImage withId(String id) {
         this.id = id;
@@ -51,6 +51,8 @@ public class NovaServerImage  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public NovaServerImage withLinks(List<NovaLink> links) {
         this.links = links;
@@ -82,6 +84,9 @@ public class NovaServerImage  {
     public void setLinks(List<NovaLink> links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

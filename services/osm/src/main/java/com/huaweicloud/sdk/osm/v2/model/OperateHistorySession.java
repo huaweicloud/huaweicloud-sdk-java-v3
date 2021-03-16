@@ -61,6 +61,8 @@ public class OperateHistorySession  {
         this.duration = duration;
     }
 
+    
+
     public OperateHistorySession withSessionId(Long sessionId) {
         this.sessionId = sessionId;
         return this;
@@ -83,6 +85,8 @@ public class OperateHistorySession  {
         this.sessionId = sessionId;
     }
 
+    
+
     public OperateHistorySession withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -103,6 +107,8 @@ public class OperateHistorySession  {
         this.startTime = startTime;
     }
 
+    
+
     public OperateHistorySession withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -122,6 +128,9 @@ public class OperateHistorySession  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

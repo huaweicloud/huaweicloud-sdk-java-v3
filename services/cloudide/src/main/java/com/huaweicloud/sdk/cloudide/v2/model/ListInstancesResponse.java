@@ -24,7 +24,7 @@ public class ListInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
     
-    private PageInstancesVO instances = null;
+    private PageInstancesVO instances;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +59,8 @@ public class ListInstancesResponse extends SdkResponse {
         this.instances = instances;
     }
 
+    
+
     public ListInstancesResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -78,6 +80,9 @@ public class ListInstancesResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

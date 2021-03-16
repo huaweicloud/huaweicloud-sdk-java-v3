@@ -22,7 +22,7 @@ public class ReclaimToPartnerAccountRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ReclaimToPartnerAccountBalancesReq body = null;
+    private ReclaimToPartnerAccountBalancesReq body;
 
     public ReclaimToPartnerAccountRequest withBody(ReclaimToPartnerAccountBalancesReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ReclaimToPartnerAccountRequest  {
     public void setBody(ReclaimToPartnerAccountBalancesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

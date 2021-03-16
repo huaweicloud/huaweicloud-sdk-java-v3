@@ -32,9 +32,6 @@ public class DeviceStatusCondition  {
 
     
     public DeviceStatusCondition addStatusListItem(String statusListItem) {
-        if (this.statusList == null) {
-            this.statusList = new ArrayList<>();
-        }
         this.statusList.add(statusListItem);
         return this;
     }
@@ -58,6 +55,9 @@ public class DeviceStatusCondition  {
     public void setStatusList(List<String> statusList) {
         this.statusList = statusList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

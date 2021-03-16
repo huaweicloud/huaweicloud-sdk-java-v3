@@ -91,7 +91,7 @@ public class ClientBuilder<T> {
 
         if (Objects.isNull(this.credential)) {
             throw new SdkException("credential can not be null, " + credentialType.toString()
-                + "credential objects are required");
+                    + "credential objects are required");
         }
 
         if (!credentialType.contains(credential.getClass().getSimpleName())) {
@@ -106,6 +106,10 @@ public class ClientBuilder<T> {
             } catch (InterruptedException | ExecutionException e) {
                 throw new SdkException(e);
             }
+        }
+
+        if (!endpoint.startsWith(Constants.HTTP_SCHEME)) {
+            this.endpoint = Constants.HTTPS_SCHEME + "://" + endpoint;
         }
 
         hcClient.withEndpoint(this.endpoint).withCredential(this.credential);

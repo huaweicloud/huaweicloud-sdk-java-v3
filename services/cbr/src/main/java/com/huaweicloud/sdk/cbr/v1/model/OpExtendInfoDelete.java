@@ -49,6 +49,8 @@ public class OpExtendInfoDelete  {
         this.backupId = backupId;
     }
 
+    
+
     public OpExtendInfoDelete withBackupName(String backupName) {
         this.backupName = backupName;
         return this;
@@ -68,6 +70,9 @@ public class OpExtendInfoDelete  {
     public void setBackupName(String backupName) {
         this.backupName = backupName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

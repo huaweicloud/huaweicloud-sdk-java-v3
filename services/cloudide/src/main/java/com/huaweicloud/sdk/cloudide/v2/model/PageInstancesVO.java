@@ -70,6 +70,8 @@ public class PageInstancesVO  {
         this.empty = empty;
     }
 
+    
+
     public PageInstancesVO withItems(List<InstancesVO> items) {
         this.items = items;
         return this;
@@ -77,9 +79,6 @@ public class PageInstancesVO  {
 
     
     public PageInstancesVO addItemsItem(InstancesVO itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -104,6 +103,8 @@ public class PageInstancesVO  {
         this.items = items;
     }
 
+    
+
     public PageInstancesVO withItemsBefore(Long itemsBefore) {
         this.itemsBefore = itemsBefore;
         return this;
@@ -125,6 +126,8 @@ public class PageInstancesVO  {
     public void setItemsBefore(Long itemsBefore) {
         this.itemsBefore = itemsBefore;
     }
+
+    
 
     public PageInstancesVO withSize(Long size) {
         this.size = size;
@@ -148,6 +151,8 @@ public class PageInstancesVO  {
         this.size = size;
     }
 
+    
+
     public PageInstancesVO withTotalItemsCount(Long totalItemsCount) {
         this.totalItemsCount = totalItemsCount;
         return this;
@@ -169,6 +174,9 @@ public class PageInstancesVO  {
     public void setTotalItemsCount(Long totalItemsCount) {
         this.totalItemsCount = totalItemsCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

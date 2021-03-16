@@ -23,13 +23,13 @@ public class ScopedTokenUser  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private TokenDomainResult domain = null;
+    private TokenDomainResult domain;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-FEDERATION")
     
-    private TokenUserOsfederation osFederation = null;
+    private TokenUserOsfederation osFederation;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,6 +76,8 @@ public class ScopedTokenUser  {
         this.domain = domain;
     }
 
+    
+
     public ScopedTokenUser withOsFederation(TokenUserOsfederation osFederation) {
         this.osFederation = osFederation;
         return this;
@@ -103,6 +105,8 @@ public class ScopedTokenUser  {
         this.osFederation = osFederation;
     }
 
+    
+
     public ScopedTokenUser withId(String id) {
         this.id = id;
         return this;
@@ -122,6 +126,8 @@ public class ScopedTokenUser  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ScopedTokenUser withName(String name) {
         this.name = name;
@@ -143,6 +149,8 @@ public class ScopedTokenUser  {
         this.name = name;
     }
 
+    
+
     public ScopedTokenUser withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
@@ -162,6 +170,9 @@ public class ScopedTokenUser  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

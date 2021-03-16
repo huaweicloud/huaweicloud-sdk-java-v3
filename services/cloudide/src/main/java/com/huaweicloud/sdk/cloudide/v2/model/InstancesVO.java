@@ -126,7 +126,7 @@ public class InstancesVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    private Attributes attributes = null;
+    private Attributes attributes;
     /**
      * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
      */
@@ -414,7 +414,7 @@ public class InstancesVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="role")
     
-    private Role role = null;
+    private Role role;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -579,9 +579,6 @@ public class InstancesVO  {
 
     
     public InstancesVO addActionListItem(RoleAction actionListItem) {
-        if (this.actionList == null) {
-            this.actionList = new ArrayList<>();
-        }
         this.actionList.add(actionListItem);
         return this;
     }
@@ -606,6 +603,8 @@ public class InstancesVO  {
         this.actionList = actionList;
     }
 
+    
+
     public InstancesVO withArch(ArchEnum arch) {
         this.arch = arch;
         return this;
@@ -625,6 +624,8 @@ public class InstancesVO  {
     public void setArch(ArchEnum arch) {
         this.arch = arch;
     }
+
+    
 
     public InstancesVO withAttributes(Attributes attributes) {
         this.attributes = attributes;
@@ -653,6 +654,8 @@ public class InstancesVO  {
         this.attributes = attributes;
     }
 
+    
+
     public InstancesVO withCpuMemory(CpuMemoryEnum cpuMemory) {
         this.cpuMemory = cpuMemory;
         return this;
@@ -672,6 +675,8 @@ public class InstancesVO  {
     public void setCpuMemory(CpuMemoryEnum cpuMemory) {
         this.cpuMemory = cpuMemory;
     }
+
+    
 
     public InstancesVO withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
@@ -693,6 +698,8 @@ public class InstancesVO  {
         this.createdTime = createdTime;
     }
 
+    
+
     public InstancesVO withDescription(String description) {
         this.description = description;
         return this;
@@ -712,6 +719,8 @@ public class InstancesVO  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public InstancesVO withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -733,6 +742,8 @@ public class InstancesVO  {
         this.displayName = displayName;
     }
 
+    
+
     public InstancesVO withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -752,6 +763,8 @@ public class InstancesVO  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public InstancesVO withId(String id) {
         this.id = id;
@@ -773,6 +786,8 @@ public class InstancesVO  {
         this.id = id;
     }
 
+    
+
     public InstancesVO withIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
         return this;
@@ -792,6 +807,8 @@ public class InstancesVO  {
     public void setIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
     }
+
+    
 
     public InstancesVO withLabel(String label) {
         this.label = label;
@@ -813,6 +830,8 @@ public class InstancesVO  {
         this.label = label;
     }
 
+    
+
     public InstancesVO withLink(String link) {
         this.link = link;
         return this;
@@ -832,6 +851,8 @@ public class InstancesVO  {
     public void setLink(String link) {
         this.link = link;
     }
+
+    
 
     public InstancesVO withName(String name) {
         this.name = name;
@@ -853,6 +874,8 @@ public class InstancesVO  {
         this.name = name;
     }
 
+    
+
     public InstancesVO withOrganizationId(String organizationId) {
         this.organizationId = organizationId;
         return this;
@@ -872,6 +895,8 @@ public class InstancesVO  {
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
+
+    
 
     public InstancesVO withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -893,6 +918,8 @@ public class InstancesVO  {
         this.ownerId = ownerId;
     }
 
+    
+
     public InstancesVO withOwnerName(String ownerName) {
         this.ownerName = ownerName;
         return this;
@@ -912,6 +939,8 @@ public class InstancesVO  {
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
+
+    
 
     public InstancesVO withPlatformId(Long platformId) {
         this.platformId = platformId;
@@ -935,6 +964,8 @@ public class InstancesVO  {
         this.platformId = platformId;
     }
 
+    
+
     public InstancesVO withPrivate(Boolean _private) {
         this._private = _private;
         return this;
@@ -955,6 +986,8 @@ public class InstancesVO  {
         this._private = _private;
     }
 
+    
+
     public InstancesVO withPvcQuantity(PvcQuantityEnum pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
         return this;
@@ -974,6 +1007,8 @@ public class InstancesVO  {
     public void setPvcQuantity(PvcQuantityEnum pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
     }
+
+    
 
     public InstancesVO withRefreshInterval(Long refreshInterval) {
         this.refreshInterval = refreshInterval;
@@ -997,6 +1032,8 @@ public class InstancesVO  {
         this.refreshInterval = refreshInterval;
     }
 
+    
+
     public InstancesVO withRegion(String region) {
         this.region = region;
         return this;
@@ -1016,6 +1053,8 @@ public class InstancesVO  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public InstancesVO withRole(Role role) {
         this.role = role;
@@ -1044,6 +1083,8 @@ public class InstancesVO  {
         this.role = role;
     }
 
+    
+
     public InstancesVO withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
@@ -1064,6 +1105,8 @@ public class InstancesVO  {
         this.roleId = roleId;
     }
 
+    
+
     public InstancesVO withServerMap(Map<String, String> serverMap) {
         this.serverMap = serverMap;
         return this;
@@ -1072,9 +1115,6 @@ public class InstancesVO  {
     
 
     public InstancesVO putServerMapItem(String key, String serverMapItem) {
-         if (this.serverMap == null) {
-            this.serverMap = new HashMap<>();
-         }
         this.serverMap.put(key, serverMapItem);
         return this;
     }
@@ -1098,6 +1138,8 @@ public class InstancesVO  {
         this.serverMap = serverMap;
     }
 
+    
+
     public InstancesVO withServerUrl(String serverUrl) {
         this.serverUrl = serverUrl;
         return this;
@@ -1117,6 +1159,8 @@ public class InstancesVO  {
     public void setServerUrl(String serverUrl) {
         this.serverUrl = serverUrl;
     }
+
+    
 
     public InstancesVO withStackId(String stackId) {
         this.stackId = stackId;
@@ -1138,6 +1182,8 @@ public class InstancesVO  {
         this.stackId = stackId;
     }
 
+    
+
     public InstancesVO withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -1157,6 +1203,8 @@ public class InstancesVO  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public InstancesVO withSubOrg(String subOrg) {
         this.subOrg = subOrg;
@@ -1178,6 +1226,8 @@ public class InstancesVO  {
         this.subOrg = subOrg;
     }
 
+    
+
     public InstancesVO withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
@@ -1197,6 +1247,9 @@ public class InstancesVO  {
     public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

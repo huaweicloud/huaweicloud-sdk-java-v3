@@ -42,6 +42,9 @@ public class ListTagsRequest  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -64,6 +64,8 @@ public class InvokeFunctionRequest  {
         this.functionUrn = functionUrn;
     }
 
+    
+
     public InvokeFunctionRequest withXCffLogType(String xCffLogType) {
         this.xCffLogType = xCffLogType;
         return this;
@@ -85,6 +87,8 @@ public class InvokeFunctionRequest  {
     public void setXCffLogType(String xCffLogType) {
         this.xCffLogType = xCffLogType;
     }
+
+    
 
     public InvokeFunctionRequest withXCFFRequestVersion(String xCFFRequestVersion) {
         this.xCFFRequestVersion = xCFFRequestVersion;
@@ -108,6 +112,8 @@ public class InvokeFunctionRequest  {
         this.xCFFRequestVersion = xCFFRequestVersion;
     }
 
+    
+
     public InvokeFunctionRequest withBody(Map<String, Object> body) {
         this.body = body;
         return this;
@@ -116,9 +122,6 @@ public class InvokeFunctionRequest  {
     
 
     public InvokeFunctionRequest putBodyItem(String key, Object bodyItem) {
-         if (this.body == null) {
-            this.body = new HashMap<>();
-         }
         this.body.put(key, bodyItem);
         return this;
     }
@@ -141,6 +144,9 @@ public class InvokeFunctionRequest  {
     public void setBody(Map<String, Object> body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

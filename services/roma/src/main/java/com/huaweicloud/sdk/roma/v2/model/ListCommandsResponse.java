@@ -60,6 +60,8 @@ public class ListCommandsResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListCommandsResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListCommandsResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListCommandsResponse withItems(List<Command> items) {
         this.items = items;
         return this;
@@ -87,9 +91,6 @@ public class ListCommandsResponse extends SdkResponse {
 
     
     public ListCommandsResponse addItemsItem(Command itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListCommandsResponse extends SdkResponse {
     public void setItems(List<Command> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

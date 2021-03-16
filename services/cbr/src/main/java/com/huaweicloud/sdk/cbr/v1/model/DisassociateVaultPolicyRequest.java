@@ -28,7 +28,7 @@ public class DisassociateVaultPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private VaultDissociate body = null;
+    private VaultDissociate body;
 
     public DisassociateVaultPolicyRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
@@ -49,6 +49,8 @@ public class DisassociateVaultPolicyRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
 
     public DisassociateVaultPolicyRequest withBody(VaultDissociate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DisassociateVaultPolicyRequest  {
     public void setBody(VaultDissociate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

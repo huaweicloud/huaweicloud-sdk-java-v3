@@ -34,7 +34,7 @@ public class QualityEnhanceTemplate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video")
     
-    private QualityEnhanceVideo video = null;
+    private QualityEnhanceVideo video;
 
     public QualityEnhanceTemplate withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -56,6 +56,8 @@ public class QualityEnhanceTemplate  {
         this.templateName = templateName;
     }
 
+    
+
     public QualityEnhanceTemplate withTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
         return this;
@@ -75,6 +77,8 @@ public class QualityEnhanceTemplate  {
     public void setTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
     }
+
+    
 
     public QualityEnhanceTemplate withVideo(QualityEnhanceVideo video) {
         this.video = video;
@@ -102,6 +106,9 @@ public class QualityEnhanceTemplate  {
     public void setVideo(QualityEnhanceVideo video) {
         this.video = video;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -137,6 +137,8 @@ public class UpdateMember  {
         this.status = status;
     }
 
+    
+
     public UpdateMember withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -156,6 +158,9 @@ public class UpdateMember  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

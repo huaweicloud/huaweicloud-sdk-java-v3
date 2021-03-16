@@ -28,7 +28,7 @@ public class UpdateSpeedRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SpeedLimit body = null;
+    private SpeedLimit body;
 
     public UpdateSpeedRequest withTaskId(String taskId) {
         this.taskId = taskId;
@@ -49,6 +49,8 @@ public class UpdateSpeedRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
 
     public UpdateSpeedRequest withBody(SpeedLimit body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateSpeedRequest  {
     public void setBody(SpeedLimit body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

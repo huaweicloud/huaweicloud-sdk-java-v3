@@ -22,7 +22,7 @@ public class UpdatePeriodToOnDemandRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PeriodToOnDemandReq body = null;
+    private PeriodToOnDemandReq body;
 
     public UpdatePeriodToOnDemandRequest withBody(PeriodToOnDemandReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UpdatePeriodToOnDemandRequest  {
     public void setBody(PeriodToOnDemandReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

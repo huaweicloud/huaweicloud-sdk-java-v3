@@ -49,6 +49,8 @@ public class ApiGroupCheck  {
         this.groupName = groupName;
     }
 
+    
+
     public ApiGroupCheck withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -68,6 +70,9 @@ public class ApiGroupCheck  {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

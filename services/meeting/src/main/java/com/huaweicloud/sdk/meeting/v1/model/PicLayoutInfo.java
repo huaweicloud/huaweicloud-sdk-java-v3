@@ -59,6 +59,8 @@ public class PicLayoutInfo  {
         this.x = x;
     }
 
+    
+
     public PicLayoutInfo withY(Integer y) {
         this.y = y;
         return this;
@@ -80,6 +82,8 @@ public class PicLayoutInfo  {
         this.y = y;
     }
 
+    
+
     public PicLayoutInfo withSubPicLayoutInfoList(List<SubPicLayoutInfo> subPicLayoutInfoList) {
         this.subPicLayoutInfoList = subPicLayoutInfoList;
         return this;
@@ -87,9 +91,6 @@ public class PicLayoutInfo  {
 
     
     public PicLayoutInfo addSubPicLayoutInfoListItem(SubPicLayoutInfo subPicLayoutInfoListItem) {
-        if (this.subPicLayoutInfoList == null) {
-            this.subPicLayoutInfoList = new ArrayList<>();
-        }
         this.subPicLayoutInfoList.add(subPicLayoutInfoListItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class PicLayoutInfo  {
     public void setSubPicLayoutInfoList(List<SubPicLayoutInfo> subPicLayoutInfoList) {
         this.subPicLayoutInfoList = subPicLayoutInfoList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

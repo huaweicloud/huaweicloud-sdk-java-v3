@@ -28,7 +28,7 @@ public class CopyImageCrossRegionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CopyImageCrossRegionRequestBody body = null;
+    private CopyImageCrossRegionRequestBody body;
 
     public CopyImageCrossRegionRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -49,6 +49,8 @@ public class CopyImageCrossRegionRequest  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
+    
 
     public CopyImageCrossRegionRequest withBody(CopyImageCrossRegionRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CopyImageCrossRegionRequest  {
     public void setBody(CopyImageCrossRegionRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

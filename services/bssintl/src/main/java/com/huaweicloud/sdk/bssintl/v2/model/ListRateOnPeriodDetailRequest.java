@@ -22,7 +22,7 @@ public class ListRateOnPeriodDetailRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RateOnPeriodReq body = null;
+    private RateOnPeriodReq body;
 
     public ListRateOnPeriodDetailRequest withBody(RateOnPeriodReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ListRateOnPeriodDetailRequest  {
     public void setBody(RateOnPeriodReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class FlavorLink  {
         this.href = href;
     }
 
+    
+
     public FlavorLink withRel(String rel) {
         this.rel = rel;
         return this;
@@ -75,6 +77,8 @@ public class FlavorLink  {
         this.rel = rel;
     }
 
+    
+
     public FlavorLink withType(String type) {
         this.type = type;
         return this;
@@ -94,6 +98,9 @@ public class FlavorLink  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

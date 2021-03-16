@@ -34,7 +34,7 @@ public class UpdateRomaAppRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAppReq body = null;
+    private UpdateAppReq body;
 
     public UpdateRomaAppRequest withAppId(String appId) {
         this.appId = appId;
@@ -56,6 +56,8 @@ public class UpdateRomaAppRequest  {
         this.appId = appId;
     }
 
+    
+
     public UpdateRomaAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateRomaAppRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public UpdateRomaAppRequest withBody(UpdateAppReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateRomaAppRequest  {
     public void setBody(UpdateAppReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class ResetPasswordRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResetPasswordRequestBody body = null;
+    private ResetPasswordRequestBody body;
 
     public ResetPasswordRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -49,6 +49,8 @@ public class ResetPasswordRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public ResetPasswordRequest withBody(ResetPasswordRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ResetPasswordRequest  {
     public void setBody(ResetPasswordRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

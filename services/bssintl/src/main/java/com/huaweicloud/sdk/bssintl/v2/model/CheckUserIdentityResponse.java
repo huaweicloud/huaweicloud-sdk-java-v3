@@ -23,13 +23,13 @@ public class CheckUserIdentityResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
-    private String errorCode = "CBC.0000";
+    private String errorCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_msg")
     
-    private String errorMsg = "success";
+    private String errorMsg;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,6 +57,8 @@ public class CheckUserIdentityResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
+    
+
     public CheckUserIdentityResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -77,6 +79,8 @@ public class CheckUserIdentityResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
+    
+
     public CheckUserIdentityResponse withCheckResult(String checkResult) {
         this.checkResult = checkResult;
         return this;
@@ -96,6 +100,9 @@ public class CheckUserIdentityResponse extends SdkResponse {
     public void setCheckResult(String checkResult) {
         this.checkResult = checkResult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

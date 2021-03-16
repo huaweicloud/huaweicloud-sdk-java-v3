@@ -77,6 +77,8 @@ public class ListKmsByTagsRequestBody  {
         this.limit = limit;
     }
 
+    
+
     public ListKmsByTagsRequestBody withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -96,6 +98,8 @@ public class ListKmsByTagsRequestBody  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
 
     public ListKmsByTagsRequestBody withAction(String action) {
         this.action = action;
@@ -117,6 +121,8 @@ public class ListKmsByTagsRequestBody  {
         this.action = action;
     }
 
+    
+
     public ListKmsByTagsRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -124,9 +130,6 @@ public class ListKmsByTagsRequestBody  {
 
     
     public ListKmsByTagsRequestBody addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -151,6 +154,8 @@ public class ListKmsByTagsRequestBody  {
         this.tags = tags;
     }
 
+    
+
     public ListKmsByTagsRequestBody withMatches(List<TagItem> matches) {
         this.matches = matches;
         return this;
@@ -158,9 +163,6 @@ public class ListKmsByTagsRequestBody  {
 
     
     public ListKmsByTagsRequestBody addMatchesItem(TagItem matchesItem) {
-        if (this.matches == null) {
-            this.matches = new ArrayList<>();
-        }
         this.matches.add(matchesItem);
         return this;
     }
@@ -185,6 +187,8 @@ public class ListKmsByTagsRequestBody  {
         this.matches = matches;
     }
 
+    
+
     public ListKmsByTagsRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -204,6 +208,9 @@ public class ListKmsByTagsRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

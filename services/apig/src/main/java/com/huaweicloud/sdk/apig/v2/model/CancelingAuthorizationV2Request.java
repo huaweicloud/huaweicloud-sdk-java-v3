@@ -49,6 +49,8 @@ public class CancelingAuthorizationV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CancelingAuthorizationV2Request withAppAuthId(String appAuthId) {
         this.appAuthId = appAuthId;
         return this;
@@ -68,6 +70,9 @@ public class CancelingAuthorizationV2Request  {
     public void setAppAuthId(String appAuthId) {
         this.appAuthId = appAuthId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

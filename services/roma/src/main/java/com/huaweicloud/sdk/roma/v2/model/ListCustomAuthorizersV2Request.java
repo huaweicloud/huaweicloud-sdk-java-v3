@@ -45,13 +45,13 @@ public class ListCustomAuthorizersV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Long offset = 0l;
+    private Long offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 20;
+    private Integer limit;
 
     public ListCustomAuthorizersV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -73,6 +73,8 @@ public class ListCustomAuthorizersV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListCustomAuthorizersV2Request withId(String id) {
         this.id = id;
         return this;
@@ -92,6 +94,8 @@ public class ListCustomAuthorizersV2Request  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListCustomAuthorizersV2Request withName(String name) {
         this.name = name;
@@ -113,6 +117,8 @@ public class ListCustomAuthorizersV2Request  {
         this.name = name;
     }
 
+    
+
     public ListCustomAuthorizersV2Request withType(String type) {
         this.type = type;
         return this;
@@ -133,6 +139,8 @@ public class ListCustomAuthorizersV2Request  {
         this.type = type;
     }
 
+    
+
     public ListCustomAuthorizersV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -152,6 +160,8 @@ public class ListCustomAuthorizersV2Request  {
     public void setOffset(Long offset) {
         this.offset = offset;
     }
+
+    
 
     public ListCustomAuthorizersV2Request withLimit(Integer limit) {
         this.limit = limit;
@@ -174,6 +184,9 @@ public class ListCustomAuthorizersV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

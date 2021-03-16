@@ -42,6 +42,9 @@ public class DeletePolicyAssignmentRequest  {
     public void setPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

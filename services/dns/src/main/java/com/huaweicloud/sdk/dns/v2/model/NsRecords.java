@@ -55,6 +55,8 @@ public class NsRecords  {
         this.hostname = hostname;
     }
 
+    
+
     public NsRecords withAddress(String address) {
         this.address = address;
         return this;
@@ -75,6 +77,8 @@ public class NsRecords  {
         this.address = address;
     }
 
+    
+
     public NsRecords withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -94,6 +98,9 @@ public class NsRecords  {
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

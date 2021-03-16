@@ -49,6 +49,8 @@ public class ListProjectTemplatesRequest  {
         this.arch = arch;
     }
 
+    
+
     public ListProjectTemplatesRequest withStackId(String stackId) {
         this.stackId = stackId;
         return this;
@@ -68,6 +70,9 @@ public class ListProjectTemplatesRequest  {
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

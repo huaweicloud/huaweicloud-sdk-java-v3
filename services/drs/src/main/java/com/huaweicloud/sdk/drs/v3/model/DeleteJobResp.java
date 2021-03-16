@@ -143,6 +143,8 @@ public class DeleteJobResp  {
         this.id = id;
     }
 
+    
+
     public DeleteJobResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -162,6 +164,8 @@ public class DeleteJobResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public DeleteJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -183,6 +187,8 @@ public class DeleteJobResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public DeleteJobResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -202,6 +208,9 @@ public class DeleteJobResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -35,9 +35,6 @@ public class ListBlockchainsResponse extends SdkResponse {
 
     
     public ListBlockchainsResponse addBlockchainsItem(BlockchainInfo blockchainsItem) {
-        if (this.blockchains == null) {
-            this.blockchains = new ArrayList<>();
-        }
         this.blockchains.add(blockchainsItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListBlockchainsResponse extends SdkResponse {
     public void setBlockchains(List<BlockchainInfo> blockchains) {
         this.blockchains = blockchains;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

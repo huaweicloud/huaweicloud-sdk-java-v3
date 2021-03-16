@@ -54,7 +54,7 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="streams")
     
-    private OnlineInfo streams = null;
+    private OnlineInfo streams;
 
     public ListLiveStreamsOnlineResponse withTotalPage(Long totalPage) {
         this.totalPage = totalPage;
@@ -76,6 +76,8 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         this.totalPage = totalPage;
     }
 
+    
+
     public ListLiveStreamsOnlineResponse withTotalNum(Long totalNum) {
         this.totalNum = totalNum;
         return this;
@@ -95,6 +97,8 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
     public void setTotalNum(Long totalNum) {
         this.totalNum = totalNum;
     }
+
+    
 
     public ListLiveStreamsOnlineResponse withOffset(Long offset) {
         this.offset = offset;
@@ -116,6 +120,8 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         this.offset = offset;
     }
 
+    
+
     public ListLiveStreamsOnlineResponse withLimit(Long limit) {
         this.limit = limit;
         return this;
@@ -136,6 +142,8 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
         this.limit = limit;
     }
 
+    
+
     public ListLiveStreamsOnlineResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -155,6 +163,8 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ListLiveStreamsOnlineResponse withStreams(OnlineInfo streams) {
         this.streams = streams;
@@ -182,6 +192,9 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
     public void setStreams(OnlineInfo streams) {
         this.streams = streams;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

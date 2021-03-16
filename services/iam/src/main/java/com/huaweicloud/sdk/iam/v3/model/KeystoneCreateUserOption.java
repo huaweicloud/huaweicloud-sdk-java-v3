@@ -67,6 +67,8 @@ public class KeystoneCreateUserOption  {
         this.name = name;
     }
 
+    
+
     public KeystoneCreateUserOption withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -86,6 +88,8 @@ public class KeystoneCreateUserOption  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public KeystoneCreateUserOption withPassword(String password) {
         this.password = password;
@@ -107,6 +111,8 @@ public class KeystoneCreateUserOption  {
         this.password = password;
     }
 
+    
+
     public KeystoneCreateUserOption withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -127,6 +133,8 @@ public class KeystoneCreateUserOption  {
         this.enabled = enabled;
     }
 
+    
+
     public KeystoneCreateUserOption withDescription(String description) {
         this.description = description;
         return this;
@@ -146,6 +154,9 @@ public class KeystoneCreateUserOption  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

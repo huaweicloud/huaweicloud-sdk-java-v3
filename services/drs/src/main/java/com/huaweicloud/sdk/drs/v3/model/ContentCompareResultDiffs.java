@@ -36,7 +36,7 @@ public class ContentCompareResultDiffs  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ContentCompareDiff")
     
-    private List<ContentCompareDiff> contentCompareDiff = new ArrayList<>();
+    private List<ContentCompareDiff> contentCompareDiff = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +64,8 @@ public class ContentCompareResultDiffs  {
         this.sourceDbName = sourceDbName;
     }
 
+    
+
     public ContentCompareResultDiffs withSourceTableName(String sourceTableName) {
         this.sourceTableName = sourceTableName;
         return this;
@@ -83,6 +85,8 @@ public class ContentCompareResultDiffs  {
     public void setSourceTableName(String sourceTableName) {
         this.sourceTableName = sourceTableName;
     }
+
+    
 
     public ContentCompareResultDiffs withContentCompareDiff(List<ContentCompareDiff> contentCompareDiff) {
         this.contentCompareDiff = contentCompareDiff;
@@ -115,6 +119,8 @@ public class ContentCompareResultDiffs  {
         this.contentCompareDiff = contentCompareDiff;
     }
 
+    
+
     public ContentCompareResultDiffs withContentCompareDiffCount(Integer contentCompareDiffCount) {
         this.contentCompareDiffCount = contentCompareDiffCount;
         return this;
@@ -134,6 +140,9 @@ public class ContentCompareResultDiffs  {
     public void setContentCompareDiffCount(Integer contentCompareDiffCount) {
         this.contentCompareDiffCount = contentCompareDiffCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

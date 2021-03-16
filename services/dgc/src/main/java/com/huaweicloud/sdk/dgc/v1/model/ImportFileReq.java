@@ -31,7 +31,7 @@ public class ImportFileReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="params")
     
-    private Object params = null;
+    private Object params;
     /**
      * Gets or Sets sameNamePolicy
      */
@@ -121,7 +121,7 @@ public class ImportFileReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="jobsParam")
     
-    private Object jobsParam = null;
+    private Object jobsParam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -149,6 +149,8 @@ public class ImportFileReq  {
         this.path = path;
     }
 
+    
+
     public ImportFileReq withParams(Object params) {
         this.params = params;
         return this;
@@ -168,6 +170,8 @@ public class ImportFileReq  {
     public void setParams(Object params) {
         this.params = params;
     }
+
+    
 
     public ImportFileReq withSameNamePolicy(SameNamePolicyEnum sameNamePolicy) {
         this.sameNamePolicy = sameNamePolicy;
@@ -189,6 +193,8 @@ public class ImportFileReq  {
         this.sameNamePolicy = sameNamePolicy;
     }
 
+    
+
     public ImportFileReq withJobsParam(Object jobsParam) {
         this.jobsParam = jobsParam;
         return this;
@@ -209,6 +215,8 @@ public class ImportFileReq  {
         this.jobsParam = jobsParam;
     }
 
+    
+
     public ImportFileReq withExecuteUser(String executeUser) {
         this.executeUser = executeUser;
         return this;
@@ -228,6 +236,9 @@ public class ImportFileReq  {
     public void setExecuteUser(String executeUser) {
         this.executeUser = executeUser;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

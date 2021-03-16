@@ -22,7 +22,7 @@ public class CreateAgencyCustomPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAgencyCustomPolicyRequestBody body = null;
+    private CreateAgencyCustomPolicyRequestBody body;
 
     public CreateAgencyCustomPolicyRequest withBody(CreateAgencyCustomPolicyRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateAgencyCustomPolicyRequest  {
     public void setBody(CreateAgencyCustomPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

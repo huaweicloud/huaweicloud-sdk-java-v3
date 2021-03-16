@@ -28,7 +28,7 @@ public class ListEventsResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private BigDecimal lastModified = null;
+    private BigDecimal lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,6 +56,8 @@ public class ListEventsResult  {
         this.id = id;
     }
 
+    
+
     public ListEventsResult withLastModified(BigDecimal lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -76,6 +78,8 @@ public class ListEventsResult  {
         this.lastModified = lastModified;
     }
 
+    
+
     public ListEventsResult withName(String name) {
         this.name = name;
         return this;
@@ -95,6 +99,9 @@ public class ListEventsResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

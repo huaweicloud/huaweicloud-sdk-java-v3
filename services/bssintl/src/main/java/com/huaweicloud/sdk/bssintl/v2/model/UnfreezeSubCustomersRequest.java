@@ -22,7 +22,7 @@ public class UnfreezeSubCustomersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UnfreezeSubCustomersReq body = null;
+    private UnfreezeSubCustomersReq body;
 
     public UnfreezeSubCustomersRequest withBody(UnfreezeSubCustomersReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class UnfreezeSubCustomersRequest  {
     public void setBody(UnfreezeSubCustomersReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

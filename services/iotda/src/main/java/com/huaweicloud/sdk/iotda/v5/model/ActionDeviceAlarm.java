@@ -61,6 +61,8 @@ public class ActionDeviceAlarm  {
         this.name = name;
     }
 
+    
+
     public ActionDeviceAlarm withAlarmStatus(String alarmStatus) {
         this.alarmStatus = alarmStatus;
         return this;
@@ -80,6 +82,8 @@ public class ActionDeviceAlarm  {
     public void setAlarmStatus(String alarmStatus) {
         this.alarmStatus = alarmStatus;
     }
+
+    
 
     public ActionDeviceAlarm withSeverity(String severity) {
         this.severity = severity;
@@ -101,6 +105,8 @@ public class ActionDeviceAlarm  {
         this.severity = severity;
     }
 
+    
+
     public ActionDeviceAlarm withDescription(String description) {
         this.description = description;
         return this;
@@ -120,6 +126,9 @@ public class ActionDeviceAlarm  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

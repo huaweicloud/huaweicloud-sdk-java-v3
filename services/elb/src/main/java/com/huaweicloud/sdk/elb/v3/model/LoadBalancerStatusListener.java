@@ -77,6 +77,8 @@ public class LoadBalancerStatusListener  {
         this.name = name;
     }
 
+    
+
     public LoadBalancerStatusListener withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -97,6 +99,8 @@ public class LoadBalancerStatusListener  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public LoadBalancerStatusListener withPools(List<LoadBalancerStatusPool> pools) {
         this.pools = pools;
         return this;
@@ -104,9 +108,6 @@ public class LoadBalancerStatusListener  {
 
     
     public LoadBalancerStatusListener addPoolsItem(LoadBalancerStatusPool poolsItem) {
-        if (this.pools == null) {
-            this.pools = new ArrayList<>();
-        }
         this.pools.add(poolsItem);
         return this;
     }
@@ -131,6 +132,8 @@ public class LoadBalancerStatusListener  {
         this.pools = pools;
     }
 
+    
+
     public LoadBalancerStatusListener withL7policies(List<LoadBalancerStatusPolicy> l7policies) {
         this.l7policies = l7policies;
         return this;
@@ -138,9 +141,6 @@ public class LoadBalancerStatusListener  {
 
     
     public LoadBalancerStatusListener addL7policiesItem(LoadBalancerStatusPolicy l7policiesItem) {
-        if (this.l7policies == null) {
-            this.l7policies = new ArrayList<>();
-        }
         this.l7policies.add(l7policiesItem);
         return this;
     }
@@ -165,6 +165,8 @@ public class LoadBalancerStatusListener  {
         this.l7policies = l7policies;
     }
 
+    
+
     public LoadBalancerStatusListener withId(String id) {
         this.id = id;
         return this;
@@ -185,6 +187,8 @@ public class LoadBalancerStatusListener  {
         this.id = id;
     }
 
+    
+
     public LoadBalancerStatusListener withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
@@ -204,6 +208,9 @@ public class LoadBalancerStatusListener  {
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class VpcInfo  {
         this.vpcId = vpcId;
     }
 
+    
+
     public VpcInfo withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -68,6 +70,9 @@ public class VpcInfo  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

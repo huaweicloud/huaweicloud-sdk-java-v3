@@ -149,6 +149,8 @@ public class ShowSqlExecutionPlanRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowSqlExecutionPlanRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
@@ -168,6 +170,8 @@ public class ShowSqlExecutionPlanRequest  {
     public void setDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
     }
+
+    
 
     public ShowSqlExecutionPlanRequest withDatabase(String database) {
         this.database = database;
@@ -189,6 +193,8 @@ public class ShowSqlExecutionPlanRequest  {
         this.database = database;
     }
 
+    
+
     public ShowSqlExecutionPlanRequest withSql(String sql) {
         this.sql = sql;
         return this;
@@ -208,6 +214,8 @@ public class ShowSqlExecutionPlanRequest  {
     public void setSql(String sql) {
         this.sql = sql;
     }
+
+    
 
     public ShowSqlExecutionPlanRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -230,6 +238,9 @@ public class ShowSqlExecutionPlanRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

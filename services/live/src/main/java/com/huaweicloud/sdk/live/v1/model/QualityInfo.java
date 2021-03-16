@@ -121,7 +121,7 @@ public class QualityInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="PVC")
     
-    private PvcEnum pvc = PvcEnum.ON;
+    private PvcEnum pvc;
     /**
      * 是否启用高清低码，较PVC相比画质增强。 - on：启用。 - off：不启用。 默认为off。 
      */
@@ -205,7 +205,7 @@ public class QualityInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hdlb")
     
-    private HdlbEnum hdlb = HdlbEnum.OFF;
+    private HdlbEnum hdlb;
     /**
      * 视频编码格式，模板组里不同模板的编码格式必须相同。 - H264：使用H.264。 - H265：使用H.265。 默认为H264。 
      */
@@ -289,7 +289,7 @@ public class QualityInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="codec")
     
-    private CodecEnum codec = CodecEnum.H264;
+    private CodecEnum codec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -313,7 +313,7 @@ public class QualityInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_frame_rate")
     
-    private Integer videoFrameRate = 0;
+    private Integer videoFrameRate;
     /**
      * 转码输出支持的协议类型。当前只支持RTMP和HLS，且模板组里不同模板的输出协议类型必须相同。 - RTMP - HLS - DASH  默认为RTMP。 
      */
@@ -403,19 +403,19 @@ public class QualityInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    private ProtocolEnum protocol = ProtocolEnum.RTMP;
+    private ProtocolEnum protocol;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="iFrameInterval")
     
-    private Integer iFrameInterval = 0;
+    private Integer iFrameInterval;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gop")
     
-    private Integer gop = 0;
+    private Integer gop;
 
     public QualityInfo withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -437,6 +437,8 @@ public class QualityInfo  {
         this.templateName = templateName;
     }
 
+    
+
     public QualityInfo withQuality(String quality) {
         this.quality = quality;
         return this;
@@ -456,6 +458,8 @@ public class QualityInfo  {
     public void setQuality(String quality) {
         this.quality = quality;
     }
+
+    
 
     public QualityInfo withPvc(PvcEnum pvc) {
         this.pvc = pvc;
@@ -477,6 +481,8 @@ public class QualityInfo  {
         this.pvc = pvc;
     }
 
+    
+
     public QualityInfo withHdlb(HdlbEnum hdlb) {
         this.hdlb = hdlb;
         return this;
@@ -497,6 +503,8 @@ public class QualityInfo  {
         this.hdlb = hdlb;
     }
 
+    
+
     public QualityInfo withCodec(CodecEnum codec) {
         this.codec = codec;
         return this;
@@ -516,6 +524,8 @@ public class QualityInfo  {
     public void setCodec(CodecEnum codec) {
         this.codec = codec;
     }
+
+    
 
     public QualityInfo withWidth(Integer width) {
         this.width = width;
@@ -539,6 +549,8 @@ public class QualityInfo  {
         this.width = width;
     }
 
+    
+
     public QualityInfo withHeight(Integer height) {
         this.height = height;
         return this;
@@ -560,6 +572,8 @@ public class QualityInfo  {
     public void setHeight(Integer height) {
         this.height = height;
     }
+
+    
 
     public QualityInfo withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
@@ -583,6 +597,8 @@ public class QualityInfo  {
         this.bitrate = bitrate;
     }
 
+    
+
     public QualityInfo withVideoFrameRate(Integer videoFrameRate) {
         this.videoFrameRate = videoFrameRate;
         return this;
@@ -605,6 +621,8 @@ public class QualityInfo  {
         this.videoFrameRate = videoFrameRate;
     }
 
+    
+
     public QualityInfo withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -624,6 +642,8 @@ public class QualityInfo  {
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public QualityInfo withIFrameInterval(Integer iFrameInterval) {
         this.iFrameInterval = iFrameInterval;
@@ -647,6 +667,8 @@ public class QualityInfo  {
         this.iFrameInterval = iFrameInterval;
     }
 
+    
+
     public QualityInfo withGop(Integer gop) {
         this.gop = gop;
         return this;
@@ -668,6 +690,9 @@ public class QualityInfo  {
     public void setGop(Integer gop) {
         this.gop = gop;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

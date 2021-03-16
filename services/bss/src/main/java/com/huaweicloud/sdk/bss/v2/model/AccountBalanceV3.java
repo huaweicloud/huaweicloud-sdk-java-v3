@@ -39,7 +39,7 @@ public class AccountBalanceV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currency")
     
-    private String currency = "CNY";
+    private String currency;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,6 +79,8 @@ public class AccountBalanceV3  {
         this.accountId = accountId;
     }
 
+    
+
     public AccountBalanceV3 withAccountType(Integer accountType) {
         this.accountType = accountType;
         return this;
@@ -98,6 +100,8 @@ public class AccountBalanceV3  {
     public void setAccountType(Integer accountType) {
         this.accountType = accountType;
     }
+
+    
 
     public AccountBalanceV3 withAmount(Double amount) {
         this.amount = amount;
@@ -119,6 +123,8 @@ public class AccountBalanceV3  {
         this.amount = amount;
     }
 
+    
+
     public AccountBalanceV3 withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -138,6 +144,8 @@ public class AccountBalanceV3  {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
 
     public AccountBalanceV3 withDesignatedAmount(Double designatedAmount) {
         this.designatedAmount = designatedAmount;
@@ -159,6 +167,8 @@ public class AccountBalanceV3  {
         this.designatedAmount = designatedAmount;
     }
 
+    
+
     public AccountBalanceV3 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
@@ -179,6 +189,8 @@ public class AccountBalanceV3  {
         this.creditAmount = creditAmount;
     }
 
+    
+
     public AccountBalanceV3 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -198,6 +210,9 @@ public class AccountBalanceV3  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

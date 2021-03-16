@@ -44,6 +44,9 @@ public class ShowResetPwdResponse extends SdkResponse {
     public void setResetpwdFlag(String resetpwdFlag) {
         this.resetpwdFlag = resetpwdFlag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

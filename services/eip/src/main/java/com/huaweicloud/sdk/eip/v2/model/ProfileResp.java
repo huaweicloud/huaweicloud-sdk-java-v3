@@ -61,6 +61,8 @@ public class ProfileResp  {
         this.orderId = orderId;
     }
 
+    
+
     public ProfileResp withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -80,6 +82,8 @@ public class ProfileResp  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    
 
     public ProfileResp withRegionId(String regionId) {
         this.regionId = regionId;
@@ -101,6 +105,8 @@ public class ProfileResp  {
         this.regionId = regionId;
     }
 
+    
+
     public ProfileResp withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -120,6 +126,9 @@ public class ProfileResp  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

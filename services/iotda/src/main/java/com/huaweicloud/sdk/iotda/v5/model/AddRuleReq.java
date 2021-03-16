@@ -34,7 +34,7 @@ public class AddRuleReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subject")
     
-    private RoutingRuleSubject subject = null;
+    private RoutingRuleSubject subject;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,6 +86,8 @@ public class AddRuleReq  {
         this.ruleName = ruleName;
     }
 
+    
+
     public AddRuleReq withDescription(String description) {
         this.description = description;
         return this;
@@ -105,6 +107,8 @@ public class AddRuleReq  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public AddRuleReq withSubject(RoutingRuleSubject subject) {
         this.subject = subject;
@@ -133,6 +137,8 @@ public class AddRuleReq  {
         this.subject = subject;
     }
 
+    
+
     public AddRuleReq withAppType(String appType) {
         this.appType = appType;
         return this;
@@ -152,6 +158,8 @@ public class AddRuleReq  {
     public void setAppType(String appType) {
         this.appType = appType;
     }
+
+    
 
     public AddRuleReq withAppId(String appId) {
         this.appId = appId;
@@ -173,6 +181,8 @@ public class AddRuleReq  {
         this.appId = appId;
     }
 
+    
+
     public AddRuleReq withSelect(String select) {
         this.select = select;
         return this;
@@ -192,6 +202,8 @@ public class AddRuleReq  {
     public void setSelect(String select) {
         this.select = select;
     }
+
+    
 
     public AddRuleReq withWhere(String where) {
         this.where = where;
@@ -213,6 +225,8 @@ public class AddRuleReq  {
         this.where = where;
     }
 
+    
+
     public AddRuleReq withDataVersion(String dataVersion) {
         this.dataVersion = dataVersion;
         return this;
@@ -232,6 +246,9 @@ public class AddRuleReq  {
     public void setDataVersion(String dataVersion) {
         this.dataVersion = dataVersion;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

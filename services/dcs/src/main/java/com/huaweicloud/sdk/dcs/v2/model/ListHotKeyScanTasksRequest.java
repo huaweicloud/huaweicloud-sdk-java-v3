@@ -155,6 +155,8 @@ public class ListHotKeyScanTasksRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ListHotKeyScanTasksRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -174,6 +176,8 @@ public class ListHotKeyScanTasksRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListHotKeyScanTasksRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -195,6 +199,8 @@ public class ListHotKeyScanTasksRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListHotKeyScanTasksRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -214,6 +220,9 @@ public class ListHotKeyScanTasksRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

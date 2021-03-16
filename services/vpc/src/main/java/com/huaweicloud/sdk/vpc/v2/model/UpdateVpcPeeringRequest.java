@@ -28,7 +28,7 @@ public class UpdateVpcPeeringRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateVpcPeeringRequestBody body = null;
+    private UpdateVpcPeeringRequestBody body;
 
     public UpdateVpcPeeringRequest withPeeringId(String peeringId) {
         this.peeringId = peeringId;
@@ -49,6 +49,8 @@ public class UpdateVpcPeeringRequest  {
     public void setPeeringId(String peeringId) {
         this.peeringId = peeringId;
     }
+
+    
 
     public UpdateVpcPeeringRequest withBody(UpdateVpcPeeringRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateVpcPeeringRequest  {
     public void setBody(UpdateVpcPeeringRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

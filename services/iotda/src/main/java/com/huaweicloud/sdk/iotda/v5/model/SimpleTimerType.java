@@ -55,6 +55,8 @@ public class SimpleTimerType  {
         this.startTime = startTime;
     }
 
+    
+
     public SimpleTimerType withRepeatInterval(Integer repeatInterval) {
         this.repeatInterval = repeatInterval;
         return this;
@@ -77,6 +79,8 @@ public class SimpleTimerType  {
         this.repeatInterval = repeatInterval;
     }
 
+    
+
     public SimpleTimerType withRepeatCount(Integer repeatCount) {
         this.repeatCount = repeatCount;
         return this;
@@ -98,6 +102,9 @@ public class SimpleTimerType  {
     public void setRepeatCount(Integer repeatCount) {
         this.repeatCount = repeatCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

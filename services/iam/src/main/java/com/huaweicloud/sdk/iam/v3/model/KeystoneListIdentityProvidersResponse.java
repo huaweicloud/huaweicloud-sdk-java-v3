@@ -33,7 +33,7 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private Links links = null;
+    private Links links;
 
     public KeystoneListIdentityProvidersResponse withIdentityProviders(List<IdentityprovidersResult> identityProviders) {
         this.identityProviders = identityProviders;
@@ -42,9 +42,6 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
 
     
     public KeystoneListIdentityProvidersResponse addIdentityProvidersItem(IdentityprovidersResult identityProvidersItem) {
-        if (this.identityProviders == null) {
-            this.identityProviders = new ArrayList<>();
-        }
         this.identityProviders.add(identityProvidersItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
     public void setIdentityProviders(List<IdentityprovidersResult> identityProviders) {
         this.identityProviders = identityProviders;
     }
+
+    
 
     public KeystoneListIdentityProvidersResponse withLinks(Links links) {
         this.links = links;
@@ -95,6 +94,9 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
     public void setLinks(Links links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

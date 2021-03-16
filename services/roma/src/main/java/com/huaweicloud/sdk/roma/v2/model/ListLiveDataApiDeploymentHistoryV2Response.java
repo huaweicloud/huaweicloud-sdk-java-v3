@@ -61,6 +61,8 @@ public class ListLiveDataApiDeploymentHistoryV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListLiveDataApiDeploymentHistoryV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListLiveDataApiDeploymentHistoryV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListLiveDataApiDeploymentHistoryV2Response withHistories(List<LdApiDeployHistoryInfo> histories) {
         this.histories = histories;
         return this;
@@ -88,9 +92,6 @@ public class ListLiveDataApiDeploymentHistoryV2Response extends SdkResponse {
 
     
     public ListLiveDataApiDeploymentHistoryV2Response addHistoriesItem(LdApiDeployHistoryInfo historiesItem) {
-        if (this.histories == null) {
-            this.histories = new ArrayList<>();
-        }
         this.histories.add(historiesItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListLiveDataApiDeploymentHistoryV2Response extends SdkResponse {
     public void setHistories(List<LdApiDeployHistoryInfo> histories) {
         this.histories = histories;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

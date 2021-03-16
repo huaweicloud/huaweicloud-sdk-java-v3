@@ -87,6 +87,8 @@ public class ShowMetadataResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowMetadataResponse withIdpId(String idpId) {
         this.idpId = idpId;
         return this;
@@ -106,6 +108,8 @@ public class ShowMetadataResponse extends SdkResponse {
     public void setIdpId(String idpId) {
         this.idpId = idpId;
     }
+
+    
 
     public ShowMetadataResponse withEntityId(String entityId) {
         this.entityId = entityId;
@@ -127,6 +131,8 @@ public class ShowMetadataResponse extends SdkResponse {
         this.entityId = entityId;
     }
 
+    
+
     public ShowMetadataResponse withProtocolId(String protocolId) {
         this.protocolId = protocolId;
         return this;
@@ -146,6 +152,8 @@ public class ShowMetadataResponse extends SdkResponse {
     public void setProtocolId(String protocolId) {
         this.protocolId = protocolId;
     }
+
+    
 
     public ShowMetadataResponse withDomainId(String domainId) {
         this.domainId = domainId;
@@ -167,6 +175,8 @@ public class ShowMetadataResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
+    
+
     public ShowMetadataResponse withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
         return this;
@@ -186,6 +196,8 @@ public class ShowMetadataResponse extends SdkResponse {
     public void setXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
     }
+
+    
 
     public ShowMetadataResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
@@ -207,6 +219,8 @@ public class ShowMetadataResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public ShowMetadataResponse withData(String data) {
         this.data = data;
         return this;
@@ -226,6 +240,9 @@ public class ShowMetadataResponse extends SdkResponse {
     public void setData(String data) {
         this.data = data;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

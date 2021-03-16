@@ -26,7 +26,7 @@ public class ListClustersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
-    private String apiVersion = "v3";
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,7 +38,7 @@ public class ListClustersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
-    private String kind = "Cluster";
+    private String kind;
 
     public ListClustersResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -60,6 +60,8 @@ public class ListClustersResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public ListClustersResponse withItems(List<V3Cluster> items) {
         this.items = items;
         return this;
@@ -67,9 +69,6 @@ public class ListClustersResponse extends SdkResponse {
 
     
     public ListClustersResponse addItemsItem(V3Cluster itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListClustersResponse extends SdkResponse {
         this.items = items;
     }
 
+    
+
     public ListClustersResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -113,6 +114,9 @@ public class ListClustersResponse extends SdkResponse {
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

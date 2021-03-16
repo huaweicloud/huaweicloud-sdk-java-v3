@@ -42,6 +42,9 @@ public class NeutronShowFirewallGroupRequest  {
     public void setFirewallGroupId(String firewallGroupId) {
         this.firewallGroupId = firewallGroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

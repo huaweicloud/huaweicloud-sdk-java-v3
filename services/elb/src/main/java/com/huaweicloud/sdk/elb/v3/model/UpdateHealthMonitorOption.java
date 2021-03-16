@@ -109,6 +109,8 @@ public class UpdateHealthMonitorOption  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public UpdateHealthMonitorOption withDelay(Integer delay) {
         this.delay = delay;
         return this;
@@ -131,6 +133,8 @@ public class UpdateHealthMonitorOption  {
         this.delay = delay;
     }
 
+    
+
     public UpdateHealthMonitorOption withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -150,6 +154,8 @@ public class UpdateHealthMonitorOption  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public UpdateHealthMonitorOption withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
@@ -171,6 +177,8 @@ public class UpdateHealthMonitorOption  {
         this.expectedCodes = expectedCodes;
     }
 
+    
+
     public UpdateHealthMonitorOption withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
@@ -190,6 +198,8 @@ public class UpdateHealthMonitorOption  {
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
+
+    
 
     public UpdateHealthMonitorOption withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
@@ -213,6 +223,8 @@ public class UpdateHealthMonitorOption  {
         this.maxRetries = maxRetries;
     }
 
+    
+
     public UpdateHealthMonitorOption withMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
         return this;
@@ -234,6 +246,8 @@ public class UpdateHealthMonitorOption  {
     public void setMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
     }
+
+    
 
     public UpdateHealthMonitorOption withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
@@ -257,6 +271,8 @@ public class UpdateHealthMonitorOption  {
         this.monitorPort = monitorPort;
     }
 
+    
+
     public UpdateHealthMonitorOption withName(String name) {
         this.name = name;
         return this;
@@ -276,6 +292,8 @@ public class UpdateHealthMonitorOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public UpdateHealthMonitorOption withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -299,6 +317,8 @@ public class UpdateHealthMonitorOption  {
         this.timeout = timeout;
     }
 
+    
+
     public UpdateHealthMonitorOption withUrlPath(String urlPath) {
         this.urlPath = urlPath;
         return this;
@@ -319,6 +339,8 @@ public class UpdateHealthMonitorOption  {
         this.urlPath = urlPath;
     }
 
+    
+
     public UpdateHealthMonitorOption withType(String type) {
         this.type = type;
         return this;
@@ -338,6 +360,9 @@ public class UpdateHealthMonitorOption  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

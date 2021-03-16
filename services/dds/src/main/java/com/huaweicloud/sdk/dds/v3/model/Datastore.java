@@ -211,6 +211,8 @@ public class Datastore  {
         this.type = type;
     }
 
+    
+
     public Datastore withVersion(String version) {
         this.version = version;
         return this;
@@ -231,6 +233,8 @@ public class Datastore  {
         this.version = version;
     }
 
+    
+
     public Datastore withStorageEngine(StorageEngineEnum storageEngine) {
         this.storageEngine = storageEngine;
         return this;
@@ -250,6 +254,9 @@ public class Datastore  {
     public void setStorageEngine(StorageEngineEnum storageEngine) {
         this.storageEngine = storageEngine;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

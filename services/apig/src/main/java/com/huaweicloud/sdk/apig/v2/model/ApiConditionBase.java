@@ -229,6 +229,8 @@ public class ApiConditionBase  {
         this.reqParamName = reqParamName;
     }
 
+    
+
     public ApiConditionBase withConditionType(ConditionTypeEnum conditionType) {
         this.conditionType = conditionType;
         return this;
@@ -248,6 +250,8 @@ public class ApiConditionBase  {
     public void setConditionType(ConditionTypeEnum conditionType) {
         this.conditionType = conditionType;
     }
+
+    
 
     public ApiConditionBase withConditionOrigin(ConditionOriginEnum conditionOrigin) {
         this.conditionOrigin = conditionOrigin;
@@ -269,6 +273,8 @@ public class ApiConditionBase  {
         this.conditionOrigin = conditionOrigin;
     }
 
+    
+
     public ApiConditionBase withConditionValue(String conditionValue) {
         this.conditionValue = conditionValue;
         return this;
@@ -288,6 +294,9 @@ public class ApiConditionBase  {
     public void setConditionValue(String conditionValue) {
         this.conditionValue = conditionValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,7 +23,7 @@ public class CreateRelationsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="related_id_list")
     
-    private List<String> relatedIdList = new ArrayList<>();
+    private List<String> relatedIdList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class CreateRelationsReq  {
         this.relatedIdList = relatedIdList;
     }
 
+    
+
     public CreateRelationsReq withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -81,6 +83,9 @@ public class CreateRelationsReq  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

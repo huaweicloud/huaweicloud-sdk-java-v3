@@ -39,19 +39,19 @@ public class QuotaList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_gigabytes")
     
-    private QuotaDetailBackupGigabytes backupGigabytes = null;
+    private QuotaDetailBackupGigabytes backupGigabytes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backups")
     
-    private QuotaDetailBackups backups = null;
+    private QuotaDetailBackups backups;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gigabytes")
     
-    private QuotaDetailGigabytes gigabytes = null;
+    private QuotaDetailGigabytes gigabytes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,91 +63,91 @@ public class QuotaList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snapshots")
     
-    private QuotaDetailSnapshots snapshots = null;
+    private QuotaDetailSnapshots snapshots;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumes")
     
-    private QuotaDetailVolumes volumes = null;
+    private QuotaDetailVolumes volumes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gigabytes_SATA")
     
-    private QuotaDetailGigabytesSATA gigabytesSATA = null;
+    private QuotaDetailGigabytesSATA gigabytesSATA;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snapshots_SATA")
     
-    private QuotaDetailSnapshotsSATA snapshotsSATA = null;
+    private QuotaDetailSnapshotsSATA snapshotsSATA;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumes_SATA")
     
-    private QuotaDetailVolumesSATA volumesSATA = null;
+    private QuotaDetailVolumesSATA volumesSATA;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gigabytes_SAS")
     
-    private QuotaDetailGigabytesSAS gigabytesSAS = null;
+    private QuotaDetailGigabytesSAS gigabytesSAS;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snapshots_SAS")
     
-    private QuotaDetailSnapshotsSAS snapshotsSAS = null;
+    private QuotaDetailSnapshotsSAS snapshotsSAS;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumes_SAS")
     
-    private QuotaDetailVolumesSAS volumesSAS = null;
+    private QuotaDetailVolumesSAS volumesSAS;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gigabytes_SSD")
     
-    private QuotaDetailGigabytesSSD gigabytesSSD = null;
+    private QuotaDetailGigabytesSSD gigabytesSSD;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snapshots_SSD")
     
-    private QuotaDetailSnapshotsSSD snapshotsSSD = null;
+    private QuotaDetailSnapshotsSSD snapshotsSSD;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumes_SSD")
     
-    private QuotaDetailVolumesSSD volumesSSD = null;
+    private QuotaDetailVolumesSSD volumesSSD;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gigabytes_GPSSD")
     
-    private QuotaDetailGigabytesGPSSD gigabytesGPSSD = null;
+    private QuotaDetailGigabytesGPSSD gigabytesGPSSD;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="snapshots_GPSSD")
     
-    private QuotaDetailSnapshotsGPSSD snapshotsGPSSD = null;
+    private QuotaDetailSnapshotsGPSSD snapshotsGPSSD;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volumes_GPSSD")
     
-    private QuotaDetailVolumesGPSSD volumesGPSSD = null;
+    private QuotaDetailVolumesGPSSD volumesGPSSD;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="per_volume_gigabytes")
     
-    private QuotaDetailPerVolumeGigabytes perVolumeGigabytes = null;
+    private QuotaDetailPerVolumeGigabytes perVolumeGigabytes;
 
     public QuotaList withBackupGigabytes(QuotaDetailBackupGigabytes backupGigabytes) {
         this.backupGigabytes = backupGigabytes;
@@ -176,6 +176,8 @@ public class QuotaList  {
         this.backupGigabytes = backupGigabytes;
     }
 
+    
+
     public QuotaList withBackups(QuotaDetailBackups backups) {
         this.backups = backups;
         return this;
@@ -202,6 +204,8 @@ public class QuotaList  {
     public void setBackups(QuotaDetailBackups backups) {
         this.backups = backups;
     }
+
+    
 
     public QuotaList withGigabytes(QuotaDetailGigabytes gigabytes) {
         this.gigabytes = gigabytes;
@@ -230,6 +234,8 @@ public class QuotaList  {
         this.gigabytes = gigabytes;
     }
 
+    
+
     public QuotaList withId(String id) {
         this.id = id;
         return this;
@@ -249,6 +255,8 @@ public class QuotaList  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public QuotaList withSnapshots(QuotaDetailSnapshots snapshots) {
         this.snapshots = snapshots;
@@ -277,6 +285,8 @@ public class QuotaList  {
         this.snapshots = snapshots;
     }
 
+    
+
     public QuotaList withVolumes(QuotaDetailVolumes volumes) {
         this.volumes = volumes;
         return this;
@@ -303,6 +313,8 @@ public class QuotaList  {
     public void setVolumes(QuotaDetailVolumes volumes) {
         this.volumes = volumes;
     }
+
+    
 
     public QuotaList withGigabytesSATA(QuotaDetailGigabytesSATA gigabytesSATA) {
         this.gigabytesSATA = gigabytesSATA;
@@ -331,6 +343,8 @@ public class QuotaList  {
         this.gigabytesSATA = gigabytesSATA;
     }
 
+    
+
     public QuotaList withSnapshotsSATA(QuotaDetailSnapshotsSATA snapshotsSATA) {
         this.snapshotsSATA = snapshotsSATA;
         return this;
@@ -357,6 +371,8 @@ public class QuotaList  {
     public void setSnapshotsSATA(QuotaDetailSnapshotsSATA snapshotsSATA) {
         this.snapshotsSATA = snapshotsSATA;
     }
+
+    
 
     public QuotaList withVolumesSATA(QuotaDetailVolumesSATA volumesSATA) {
         this.volumesSATA = volumesSATA;
@@ -385,6 +401,8 @@ public class QuotaList  {
         this.volumesSATA = volumesSATA;
     }
 
+    
+
     public QuotaList withGigabytesSAS(QuotaDetailGigabytesSAS gigabytesSAS) {
         this.gigabytesSAS = gigabytesSAS;
         return this;
@@ -411,6 +429,8 @@ public class QuotaList  {
     public void setGigabytesSAS(QuotaDetailGigabytesSAS gigabytesSAS) {
         this.gigabytesSAS = gigabytesSAS;
     }
+
+    
 
     public QuotaList withSnapshotsSAS(QuotaDetailSnapshotsSAS snapshotsSAS) {
         this.snapshotsSAS = snapshotsSAS;
@@ -439,6 +459,8 @@ public class QuotaList  {
         this.snapshotsSAS = snapshotsSAS;
     }
 
+    
+
     public QuotaList withVolumesSAS(QuotaDetailVolumesSAS volumesSAS) {
         this.volumesSAS = volumesSAS;
         return this;
@@ -465,6 +487,8 @@ public class QuotaList  {
     public void setVolumesSAS(QuotaDetailVolumesSAS volumesSAS) {
         this.volumesSAS = volumesSAS;
     }
+
+    
 
     public QuotaList withGigabytesSSD(QuotaDetailGigabytesSSD gigabytesSSD) {
         this.gigabytesSSD = gigabytesSSD;
@@ -493,6 +517,8 @@ public class QuotaList  {
         this.gigabytesSSD = gigabytesSSD;
     }
 
+    
+
     public QuotaList withSnapshotsSSD(QuotaDetailSnapshotsSSD snapshotsSSD) {
         this.snapshotsSSD = snapshotsSSD;
         return this;
@@ -519,6 +545,8 @@ public class QuotaList  {
     public void setSnapshotsSSD(QuotaDetailSnapshotsSSD snapshotsSSD) {
         this.snapshotsSSD = snapshotsSSD;
     }
+
+    
 
     public QuotaList withVolumesSSD(QuotaDetailVolumesSSD volumesSSD) {
         this.volumesSSD = volumesSSD;
@@ -547,6 +575,8 @@ public class QuotaList  {
         this.volumesSSD = volumesSSD;
     }
 
+    
+
     public QuotaList withGigabytesGPSSD(QuotaDetailGigabytesGPSSD gigabytesGPSSD) {
         this.gigabytesGPSSD = gigabytesGPSSD;
         return this;
@@ -573,6 +603,8 @@ public class QuotaList  {
     public void setGigabytesGPSSD(QuotaDetailGigabytesGPSSD gigabytesGPSSD) {
         this.gigabytesGPSSD = gigabytesGPSSD;
     }
+
+    
 
     public QuotaList withSnapshotsGPSSD(QuotaDetailSnapshotsGPSSD snapshotsGPSSD) {
         this.snapshotsGPSSD = snapshotsGPSSD;
@@ -601,6 +633,8 @@ public class QuotaList  {
         this.snapshotsGPSSD = snapshotsGPSSD;
     }
 
+    
+
     public QuotaList withVolumesGPSSD(QuotaDetailVolumesGPSSD volumesGPSSD) {
         this.volumesGPSSD = volumesGPSSD;
         return this;
@@ -628,6 +662,8 @@ public class QuotaList  {
         this.volumesGPSSD = volumesGPSSD;
     }
 
+    
+
     public QuotaList withPerVolumeGigabytes(QuotaDetailPerVolumeGigabytes perVolumeGigabytes) {
         this.perVolumeGigabytes = perVolumeGigabytes;
         return this;
@@ -654,6 +690,9 @@ public class QuotaList  {
     public void setPerVolumeGigabytes(QuotaDetailPerVolumeGigabytes perVolumeGigabytes) {
         this.perVolumeGigabytes = perVolumeGigabytes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

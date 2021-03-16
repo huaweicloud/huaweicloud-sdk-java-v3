@@ -35,9 +35,6 @@ public class ListLoadbalancersResponse extends SdkResponse {
 
     
     public ListLoadbalancersResponse addLoadbalancersItem(LoadbalancerResp loadbalancersItem) {
-        if (this.loadbalancers == null) {
-            this.loadbalancers = new ArrayList<>();
-        }
         this.loadbalancers.add(loadbalancersItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListLoadbalancersResponse extends SdkResponse {
     public void setLoadbalancers(List<LoadbalancerResp> loadbalancers) {
         this.loadbalancers = loadbalancers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ShowGroupsRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowGroupsRequest withGroup(String group) {
         this.group = group;
         return this;
@@ -68,6 +70,9 @@ public class ShowGroupsRequest  {
     public void setGroup(String group) {
         this.group = group;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

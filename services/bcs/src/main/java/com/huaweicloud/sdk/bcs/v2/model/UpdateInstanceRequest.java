@@ -28,7 +28,7 @@ public class UpdateInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateInstanceRequestBody body = null;
+    private UpdateInstanceRequestBody body;
 
     public UpdateInstanceRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
@@ -49,6 +49,8 @@ public class UpdateInstanceRequest  {
     public void setBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
     }
+
+    
 
     public UpdateInstanceRequest withBody(UpdateInstanceRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateInstanceRequest  {
     public void setBody(UpdateInstanceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

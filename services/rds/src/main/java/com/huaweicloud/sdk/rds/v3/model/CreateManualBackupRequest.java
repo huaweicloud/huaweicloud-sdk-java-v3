@@ -28,7 +28,7 @@ public class CreateManualBackupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateManualBackupRequestBody body = null;
+    private CreateManualBackupRequestBody body;
 
     public CreateManualBackupRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -51,6 +51,8 @@ public class CreateManualBackupRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public CreateManualBackupRequest withBody(CreateManualBackupRequestBody body) {
         this.body = body;
@@ -78,6 +80,9 @@ public class CreateManualBackupRequest  {
     public void setBody(CreateManualBackupRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

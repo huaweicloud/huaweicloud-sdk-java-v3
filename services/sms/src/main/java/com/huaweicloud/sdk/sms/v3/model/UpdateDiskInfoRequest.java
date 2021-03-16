@@ -28,7 +28,7 @@ public class UpdateDiskInfoRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PutDiskInfoReq body = null;
+    private PutDiskInfoReq body;
 
     public UpdateDiskInfoRequest withSourceId(String sourceId) {
         this.sourceId = sourceId;
@@ -49,6 +49,8 @@ public class UpdateDiskInfoRequest  {
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
+
+    
 
     public UpdateDiskInfoRequest withBody(PutDiskInfoReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class UpdateDiskInfoRequest  {
     public void setBody(PutDiskInfoReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

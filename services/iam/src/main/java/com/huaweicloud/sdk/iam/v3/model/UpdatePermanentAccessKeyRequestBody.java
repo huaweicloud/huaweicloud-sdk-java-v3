@@ -22,7 +22,7 @@ public class UpdatePermanentAccessKeyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credential")
     
-    private UpdateCredentialOption credential = null;
+    private UpdateCredentialOption credential;
 
     public UpdatePermanentAccessKeyRequestBody withCredential(UpdateCredentialOption credential) {
         this.credential = credential;
@@ -50,6 +50,9 @@ public class UpdatePermanentAccessKeyRequestBody  {
     public void setCredential(UpdateCredentialOption credential) {
         this.credential = credential;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class KeystoneShowGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group")
     
-    private KeystoneGroupResult group = null;
+    private KeystoneGroupResult group;
 
     public KeystoneShowGroupResponse withGroup(KeystoneGroupResult group) {
         this.group = group;
@@ -52,6 +52,9 @@ public class KeystoneShowGroupResponse extends SdkResponse {
     public void setGroup(KeystoneGroupResult group) {
         this.group = group;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

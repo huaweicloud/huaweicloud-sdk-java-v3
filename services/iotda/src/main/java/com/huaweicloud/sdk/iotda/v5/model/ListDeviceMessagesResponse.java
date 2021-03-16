@@ -54,6 +54,8 @@ public class ListDeviceMessagesResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
+    
+
     public ListDeviceMessagesResponse withMessages(List<DeviceMessage> messages) {
         this.messages = messages;
         return this;
@@ -61,9 +63,6 @@ public class ListDeviceMessagesResponse extends SdkResponse {
 
     
     public ListDeviceMessagesResponse addMessagesItem(DeviceMessage messagesItem) {
-        if (this.messages == null) {
-            this.messages = new ArrayList<>();
-        }
         this.messages.add(messagesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListDeviceMessagesResponse extends SdkResponse {
     public void setMessages(List<DeviceMessage> messages) {
         this.messages = messages;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

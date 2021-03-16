@@ -69,6 +69,8 @@ public class ShowTemplateFileResponse extends SdkResponse {
         this.content = content;
     }
 
+    
+
     public ShowTemplateFileResponse withEncoding(String encoding) {
         this.encoding = encoding;
         return this;
@@ -88,6 +90,8 @@ public class ShowTemplateFileResponse extends SdkResponse {
     public void setEncoding(String encoding) {
         this.encoding = encoding;
     }
+
+    
 
     public ShowTemplateFileResponse withFileName(String fileName) {
         this.fileName = fileName;
@@ -109,6 +113,8 @@ public class ShowTemplateFileResponse extends SdkResponse {
         this.fileName = fileName;
     }
 
+    
+
     public ShowTemplateFileResponse withFilePath(String filePath) {
         this.filePath = filePath;
         return this;
@@ -129,6 +135,8 @@ public class ShowTemplateFileResponse extends SdkResponse {
         this.filePath = filePath;
     }
 
+    
+
     public ShowTemplateFileResponse withFileType(String fileType) {
         this.fileType = fileType;
         return this;
@@ -148,6 +156,9 @@ public class ShowTemplateFileResponse extends SdkResponse {
     public void setFileType(String fileType) {
         this.fileType = fileType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

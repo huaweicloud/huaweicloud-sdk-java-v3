@@ -93,6 +93,8 @@ public class ListCertificatesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListCertificatesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -100,9 +102,6 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -127,6 +126,8 @@ public class ListCertificatesRequest  {
         this.description = description;
     }
 
+    
+
     public ListCertificatesRequest withDomain(List<String> domain) {
         this.domain = domain;
         return this;
@@ -134,9 +135,6 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addDomainItem(String domainItem) {
-        if (this.domain == null) {
-            this.domain = new ArrayList<>();
-        }
         this.domain.add(domainItem);
         return this;
     }
@@ -161,6 +159,8 @@ public class ListCertificatesRequest  {
         this.domain = domain;
     }
 
+    
+
     public ListCertificatesRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -168,9 +168,6 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -195,6 +192,8 @@ public class ListCertificatesRequest  {
         this.id = id;
     }
 
+    
+
     public ListCertificatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -217,6 +216,8 @@ public class ListCertificatesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListCertificatesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -237,6 +238,8 @@ public class ListCertificatesRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListCertificatesRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -244,9 +247,6 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -271,6 +271,8 @@ public class ListCertificatesRequest  {
         this.name = name;
     }
 
+    
+
     public ListCertificatesRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
@@ -291,6 +293,8 @@ public class ListCertificatesRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListCertificatesRequest withType(List<String> type) {
         this.type = type;
         return this;
@@ -298,9 +302,6 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addTypeItem(String typeItem) {
-        if (this.type == null) {
-            this.type = new ArrayList<>();
-        }
         this.type.add(typeItem);
         return this;
     }
@@ -324,6 +325,9 @@ public class ListCertificatesRequest  {
     public void setType(List<String> type) {
         this.type = type;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

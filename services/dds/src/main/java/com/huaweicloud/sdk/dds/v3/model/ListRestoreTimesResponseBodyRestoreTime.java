@@ -49,6 +49,8 @@ public class ListRestoreTimesResponseBodyRestoreTime  {
         this.startTime = startTime;
     }
 
+    
+
     public ListRestoreTimesResponseBodyRestoreTime withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -68,6 +70,9 @@ public class ListRestoreTimesResponseBodyRestoreTime  {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

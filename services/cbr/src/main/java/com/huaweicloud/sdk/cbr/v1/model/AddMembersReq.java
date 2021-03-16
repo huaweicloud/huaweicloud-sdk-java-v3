@@ -23,7 +23,7 @@ public class AddMembersReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="members")
     
-    private List<String> members = new ArrayList<>();
+    private List<String> members = null;
     
     public AddMembersReq withMembers(List<String> members) {
         this.members = members;
@@ -55,6 +55,9 @@ public class AddMembersReq  {
     public void setMembers(List<String> members) {
         this.members = members;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

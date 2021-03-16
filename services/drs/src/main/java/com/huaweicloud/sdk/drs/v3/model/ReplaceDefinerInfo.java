@@ -49,6 +49,8 @@ public class ReplaceDefinerInfo  {
         this.jobId = jobId;
     }
 
+    
+
     public ReplaceDefinerInfo withReplaceDefiner(Boolean replaceDefiner) {
         this.replaceDefiner = replaceDefiner;
         return this;
@@ -68,6 +70,9 @@ public class ReplaceDefinerInfo  {
     public void setReplaceDefiner(Boolean replaceDefiner) {
         this.replaceDefiner = replaceDefiner;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

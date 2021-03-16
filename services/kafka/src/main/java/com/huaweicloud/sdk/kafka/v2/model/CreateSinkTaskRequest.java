@@ -28,7 +28,7 @@ public class CreateSinkTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateSinkTaskReq body = null;
+    private CreateSinkTaskReq body;
 
     public CreateSinkTaskRequest withConnectorId(String connectorId) {
         this.connectorId = connectorId;
@@ -49,6 +49,8 @@ public class CreateSinkTaskRequest  {
     public void setConnectorId(String connectorId) {
         this.connectorId = connectorId;
     }
+
+    
 
     public CreateSinkTaskRequest withBody(CreateSinkTaskReq body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateSinkTaskRequest  {
     public void setBody(CreateSinkTaskReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

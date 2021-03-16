@@ -22,7 +22,7 @@ public class UpdateHealthmonitorRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor")
     
-    private UpdateHealthmonitorReq healthmonitor = null;
+    private UpdateHealthmonitorReq healthmonitor;
 
     public UpdateHealthmonitorRequestBody withHealthmonitor(UpdateHealthmonitorReq healthmonitor) {
         this.healthmonitor = healthmonitor;
@@ -50,6 +50,9 @@ public class UpdateHealthmonitorRequestBody  {
     public void setHealthmonitor(UpdateHealthmonitorReq healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

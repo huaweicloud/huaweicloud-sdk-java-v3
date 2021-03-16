@@ -55,6 +55,8 @@ public class FailedObjectRecordDto  {
         this.result = result;
     }
 
+    
+
     public FailedObjectRecordDto withListFileKey(String listFileKey) {
         this.listFileKey = listFileKey;
         return this;
@@ -75,6 +77,8 @@ public class FailedObjectRecordDto  {
         this.listFileKey = listFileKey;
     }
 
+    
+
     public FailedObjectRecordDto withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -94,6 +98,9 @@ public class FailedObjectRecordDto  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

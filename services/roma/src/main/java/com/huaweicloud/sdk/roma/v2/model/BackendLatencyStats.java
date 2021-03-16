@@ -28,7 +28,7 @@ public class BackendLatencyStats  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="avg_backend_latency")
     
-    private BigDecimal avgBackendLatency = null;
+    private BigDecimal avgBackendLatency;
 
     public BackendLatencyStats withMaxBackendLatency(Integer maxBackendLatency) {
         this.maxBackendLatency = maxBackendLatency;
@@ -50,6 +50,8 @@ public class BackendLatencyStats  {
         this.maxBackendLatency = maxBackendLatency;
     }
 
+    
+
     public BackendLatencyStats withAvgBackendLatency(BigDecimal avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
         return this;
@@ -69,6 +71,9 @@ public class BackendLatencyStats  {
     public void setAvgBackendLatency(BigDecimal avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

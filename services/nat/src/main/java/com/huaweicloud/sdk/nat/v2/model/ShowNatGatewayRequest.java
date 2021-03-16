@@ -42,6 +42,9 @@ public class ShowNatGatewayRequest  {
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

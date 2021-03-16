@@ -49,6 +49,8 @@ public class ShowDetailsOfVpcChannelV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDetailsOfVpcChannelV2Request withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
         return this;
@@ -68,6 +70,9 @@ public class ShowDetailsOfVpcChannelV2Request  {
     public void setVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class User  {
         this.clientCertificateData = clientCertificateData;
     }
 
+    
+
     public User withClientKeyData(String clientKeyData) {
         this.clientKeyData = clientKeyData;
         return this;
@@ -68,6 +70,9 @@ public class User  {
     public void setClientKeyData(String clientKeyData) {
         this.clientKeyData = clientKeyData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

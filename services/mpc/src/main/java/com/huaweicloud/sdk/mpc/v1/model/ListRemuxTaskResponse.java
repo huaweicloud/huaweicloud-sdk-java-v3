@@ -55,6 +55,8 @@ public class ListRemuxTaskResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListRemuxTaskResponse withTasks(List<RemuxTask> tasks) {
         this.tasks = tasks;
         return this;
@@ -62,9 +64,6 @@ public class ListRemuxTaskResponse extends SdkResponse {
 
     
     public ListRemuxTaskResponse addTasksItem(RemuxTask tasksItem) {
-        if (this.tasks == null) {
-            this.tasks = new ArrayList<>();
-        }
         this.tasks.add(tasksItem);
         return this;
     }
@@ -88,6 +87,9 @@ public class ListRemuxTaskResponse extends SdkResponse {
     public void setTasks(List<RemuxTask> tasks) {
         this.tasks = tasks;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

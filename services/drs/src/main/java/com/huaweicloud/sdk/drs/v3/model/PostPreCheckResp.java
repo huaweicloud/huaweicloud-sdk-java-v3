@@ -149,6 +149,8 @@ public class PostPreCheckResp  {
         this.id = id;
     }
 
+    
+
     public PostPreCheckResp withPrecheckId(String precheckId) {
         this.precheckId = precheckId;
         return this;
@@ -168,6 +170,8 @@ public class PostPreCheckResp  {
     public void setPrecheckId(String precheckId) {
         this.precheckId = precheckId;
     }
+
+    
 
     public PostPreCheckResp withStatus(StatusEnum status) {
         this.status = status;
@@ -189,6 +193,8 @@ public class PostPreCheckResp  {
         this.status = status;
     }
 
+    
+
     public PostPreCheckResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -209,6 +215,8 @@ public class PostPreCheckResp  {
         this.errorCode = errorCode;
     }
 
+    
+
     public PostPreCheckResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -228,6 +236,9 @@ public class PostPreCheckResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

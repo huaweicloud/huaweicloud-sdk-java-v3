@@ -238,6 +238,8 @@ public class InstanceListInfo  {
         this.publicipId = publicipId;
     }
 
+    
+
     public InstanceListInfo withVpcName(String vpcName) {
         this.vpcName = vpcName;
         return this;
@@ -257,6 +259,8 @@ public class InstanceListInfo  {
     public void setVpcName(String vpcName) {
         this.vpcName = vpcName;
     }
+
+    
 
     public InstanceListInfo withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
@@ -278,6 +282,8 @@ public class InstanceListInfo  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public InstanceListInfo withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -297,6 +303,8 @@ public class InstanceListInfo  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public InstanceListInfo withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -318,6 +326,8 @@ public class InstanceListInfo  {
         this.subnetId = subnetId;
     }
 
+    
+
     public InstanceListInfo withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -337,6 +347,8 @@ public class InstanceListInfo  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public InstanceListInfo withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -358,6 +370,8 @@ public class InstanceListInfo  {
         this.createdAt = createdAt;
     }
 
+    
+
     public InstanceListInfo withEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
         return this;
@@ -377,6 +391,8 @@ public class InstanceListInfo  {
     public void setEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
     }
+
+    
 
     public InstanceListInfo withMaxMemory(Integer maxMemory) {
         this.maxMemory = maxMemory;
@@ -398,6 +414,8 @@ public class InstanceListInfo  {
         this.maxMemory = maxMemory;
     }
 
+    
+
     public InstanceListInfo withUsedMemory(Integer usedMemory) {
         this.usedMemory = usedMemory;
         return this;
@@ -417,6 +435,8 @@ public class InstanceListInfo  {
     public void setUsedMemory(Integer usedMemory) {
         this.usedMemory = usedMemory;
     }
+
+    
 
     public InstanceListInfo withPublicipAddress(String publicipAddress) {
         this.publicipAddress = publicipAddress;
@@ -438,6 +458,8 @@ public class InstanceListInfo  {
         this.publicipAddress = publicipAddress;
     }
 
+    
+
     public InstanceListInfo withCapacity(Integer capacity) {
         this.capacity = capacity;
         return this;
@@ -457,6 +479,8 @@ public class InstanceListInfo  {
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
+
+    
 
     public InstanceListInfo withCapacityMinor(String capacityMinor) {
         this.capacityMinor = capacityMinor;
@@ -478,6 +502,8 @@ public class InstanceListInfo  {
         this.capacityMinor = capacityMinor;
     }
 
+    
+
     public InstanceListInfo withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
         return this;
@@ -497,6 +523,8 @@ public class InstanceListInfo  {
     public void setMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
     }
+
+    
 
     public InstanceListInfo withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
@@ -518,6 +546,8 @@ public class InstanceListInfo  {
         this.maintainEnd = maintainEnd;
     }
 
+    
+
     public InstanceListInfo withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -537,6 +567,8 @@ public class InstanceListInfo  {
     public void setEngine(String engine) {
         this.engine = engine;
     }
+
+    
 
     public InstanceListInfo withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -558,6 +590,8 @@ public class InstanceListInfo  {
         this.engineVersion = engineVersion;
     }
 
+    
+
     public InstanceListInfo withServiceUpgrade(Boolean serviceUpgrade) {
         this.serviceUpgrade = serviceUpgrade;
         return this;
@@ -577,6 +611,8 @@ public class InstanceListInfo  {
     public void setServiceUpgrade(Boolean serviceUpgrade) {
         this.serviceUpgrade = serviceUpgrade;
     }
+
+    
 
     public InstanceListInfo withNoPasswordAccess(String noPasswordAccess) {
         this.noPasswordAccess = noPasswordAccess;
@@ -598,6 +634,8 @@ public class InstanceListInfo  {
         this.noPasswordAccess = noPasswordAccess;
     }
 
+    
+
     public InstanceListInfo withServiceTaskId(String serviceTaskId) {
         this.serviceTaskId = serviceTaskId;
         return this;
@@ -617,6 +655,8 @@ public class InstanceListInfo  {
     public void setServiceTaskId(String serviceTaskId) {
         this.serviceTaskId = serviceTaskId;
     }
+
+    
 
     public InstanceListInfo withIp(String ip) {
         this.ip = ip;
@@ -638,6 +678,8 @@ public class InstanceListInfo  {
         this.ip = ip;
     }
 
+    
+
     public InstanceListInfo withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
@@ -657,6 +699,8 @@ public class InstanceListInfo  {
     public void setAccessUser(String accessUser) {
         this.accessUser = accessUser;
     }
+
+    
 
     public InstanceListInfo withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -678,6 +722,8 @@ public class InstanceListInfo  {
         this.instanceId = instanceId;
     }
 
+    
+
     public InstanceListInfo withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
@@ -697,6 +743,8 @@ public class InstanceListInfo  {
     public void setEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
     }
+
+    
 
     public InstanceListInfo withPort(Integer port) {
         this.port = port;
@@ -718,6 +766,8 @@ public class InstanceListInfo  {
         this.port = port;
     }
 
+    
+
     public InstanceListInfo withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -737,6 +787,8 @@ public class InstanceListInfo  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    
 
     public InstanceListInfo withUserName(String userName) {
         this.userName = userName;
@@ -758,6 +810,8 @@ public class InstanceListInfo  {
         this.userName = userName;
     }
 
+    
+
     public InstanceListInfo withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -777,6 +831,8 @@ public class InstanceListInfo  {
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
+
+    
 
     public InstanceListInfo withName(String name) {
         this.name = name;
@@ -798,6 +854,8 @@ public class InstanceListInfo  {
         this.name = name;
     }
 
+    
+
     public InstanceListInfo withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -817,6 +875,8 @@ public class InstanceListInfo  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
+
+    
 
     public InstanceListInfo withStatus(String status) {
         this.status = status;
@@ -838,6 +898,8 @@ public class InstanceListInfo  {
         this.status = status;
     }
 
+    
+
     public InstanceListInfo withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -845,9 +907,6 @@ public class InstanceListInfo  {
 
     
     public InstanceListInfo addTagsItem(ResourceTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -872,6 +931,8 @@ public class InstanceListInfo  {
         this.tags = tags;
     }
 
+    
+
     public InstanceListInfo withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -891,6 +952,9 @@ public class InstanceListInfo  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

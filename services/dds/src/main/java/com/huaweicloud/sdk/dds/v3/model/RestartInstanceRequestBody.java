@@ -137,6 +137,8 @@ public class RestartInstanceRequestBody  {
         this.targetType = targetType;
     }
 
+    
+
     public RestartInstanceRequestBody withTargetId(String targetId) {
         this.targetId = targetId;
         return this;
@@ -156,6 +158,9 @@ public class RestartInstanceRequestBody  {
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

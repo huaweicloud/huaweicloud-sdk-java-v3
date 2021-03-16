@@ -34,7 +34,7 @@ public class SwitchModeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RestSwitchModeReqBody body = null;
+    private RestSwitchModeReqBody body;
 
     public SwitchModeRequest withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -55,6 +55,8 @@ public class SwitchModeRequest  {
     public void setConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
     }
+
+    
 
     public SwitchModeRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
@@ -77,6 +79,8 @@ public class SwitchModeRequest  {
     public void setXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
+
+    
 
     public SwitchModeRequest withBody(RestSwitchModeReqBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class SwitchModeRequest  {
     public void setBody(RestSwitchModeReqBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

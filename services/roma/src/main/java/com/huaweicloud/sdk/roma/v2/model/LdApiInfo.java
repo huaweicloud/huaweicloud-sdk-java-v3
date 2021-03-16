@@ -149,7 +149,7 @@ public class LdApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content_type")
     
-    private ContentTypeEnum contentType = ContentTypeEnum.JSON;
+    private ContentTypeEnum contentType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -167,7 +167,7 @@ public class LdApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="return_format")
     
-    private Boolean returnFormat = false;
+    private Boolean returnFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -365,13 +365,13 @@ public class LdApiInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private OffsetDateTime createdTime = null;
+    private OffsetDateTime createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modified_time")
     
-    private OffsetDateTime modifiedTime = null;
+    private OffsetDateTime modifiedTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -405,6 +405,8 @@ public class LdApiInfo  {
         this.name = name;
     }
 
+    
+
     public LdApiInfo withPath(String path) {
         this.path = path;
         return this;
@@ -424,6 +426,8 @@ public class LdApiInfo  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public LdApiInfo withMethod(String method) {
         this.method = method;
@@ -445,6 +449,8 @@ public class LdApiInfo  {
         this.method = method;
     }
 
+    
+
     public LdApiInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -464,6 +470,8 @@ public class LdApiInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public LdApiInfo withVersion(String version) {
         this.version = version;
@@ -485,6 +493,8 @@ public class LdApiInfo  {
         this.version = version;
     }
 
+    
+
     public LdApiInfo withContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
         return this;
@@ -504,6 +514,8 @@ public class LdApiInfo  {
     public void setContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
     }
+
+    
 
     public LdApiInfo withApiSignatureId(String apiSignatureId) {
         this.apiSignatureId = apiSignatureId;
@@ -525,6 +537,8 @@ public class LdApiInfo  {
         this.apiSignatureId = apiSignatureId;
     }
 
+    
+
     public LdApiInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -544,6 +558,8 @@ public class LdApiInfo  {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
+
+    
 
     public LdApiInfo withReturnFormat(Boolean returnFormat) {
         this.returnFormat = returnFormat;
@@ -565,6 +581,8 @@ public class LdApiInfo  {
         this.returnFormat = returnFormat;
     }
 
+    
+
     public LdApiInfo withParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
         return this;
@@ -572,9 +590,6 @@ public class LdApiInfo  {
 
     
     public LdApiInfo addParametersItem(LdApiParameter parametersItem) {
-        if (this.parameters == null) {
-            this.parameters = new ArrayList<>();
-        }
         this.parameters.add(parametersItem);
         return this;
     }
@@ -599,6 +614,8 @@ public class LdApiInfo  {
         this.parameters = parameters;
     }
 
+    
+
     public LdApiInfo withId(String id) {
         this.id = id;
         return this;
@@ -618,6 +635,8 @@ public class LdApiInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public LdApiInfo withInstance(String instance) {
         this.instance = instance;
@@ -639,6 +658,8 @@ public class LdApiInfo  {
         this.instance = instance;
     }
 
+    
+
     public LdApiInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -658,6 +679,8 @@ public class LdApiInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public LdApiInfo withStatus(StatusEnum status) {
         this.status = status;
@@ -679,6 +702,8 @@ public class LdApiInfo  {
         this.status = status;
     }
 
+    
+
     public LdApiInfo withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -698,6 +723,8 @@ public class LdApiInfo  {
     public void setCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
     }
+
+    
 
     public LdApiInfo withModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
@@ -719,6 +746,8 @@ public class LdApiInfo  {
         this.modifiedTime = modifiedTime;
     }
 
+    
+
     public LdApiInfo withScripts(List<LdApiScript> scripts) {
         this.scripts = scripts;
         return this;
@@ -726,9 +755,6 @@ public class LdApiInfo  {
 
     
     public LdApiInfo addScriptsItem(LdApiScript scriptsItem) {
-        if (this.scripts == null) {
-            this.scripts = new ArrayList<>();
-        }
         this.scripts.add(scriptsItem);
         return this;
     }
@@ -753,6 +779,8 @@ public class LdApiInfo  {
         this.scripts = scripts;
     }
 
+    
+
     public LdApiInfo withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
@@ -772,6 +800,9 @@ public class LdApiInfo  {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

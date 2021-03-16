@@ -63,6 +63,8 @@ public class DeleteHookRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
+    
+
     public DeleteHookRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -82,6 +84,8 @@ public class DeleteHookRequest  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public DeleteHookRequest withProject(String project) {
         this.project = project;
@@ -103,6 +107,8 @@ public class DeleteHookRequest  {
         this.project = project;
     }
 
+    
+
     public DeleteHookRequest withHookId(String hookId) {
         this.hookId = hookId;
         return this;
@@ -122,6 +128,9 @@ public class DeleteHookRequest  {
     public void setHookId(String hookId) {
         this.hookId = hookId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

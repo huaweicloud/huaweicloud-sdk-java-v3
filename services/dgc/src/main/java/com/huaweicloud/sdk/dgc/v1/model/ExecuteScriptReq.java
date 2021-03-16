@@ -42,6 +42,9 @@ public class ExecuteScriptReq  {
     public void setParams(String params) {
         this.params = params;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

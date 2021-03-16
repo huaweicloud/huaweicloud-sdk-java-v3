@@ -30,7 +30,7 @@ public class CreateL7PolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7policy")
     
-    private L7Policy l7policy = null;
+    private L7Policy l7policy;
 
     public CreateL7PolicyResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class CreateL7PolicyResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public CreateL7PolicyResponse withL7policy(L7Policy l7policy) {
         this.l7policy = l7policy;
@@ -78,6 +80,9 @@ public class CreateL7PolicyResponse extends SdkResponse {
     public void setL7policy(L7Policy l7policy) {
         this.l7policy = l7policy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

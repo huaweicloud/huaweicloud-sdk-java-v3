@@ -62,8 +62,52 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 删除注册的数据用户
+     * 开启/关闭DAS收集全量SQL、慢SQL开关
+     * 打开或者关闭DAS收集全量SQL开关，开启后，实例的性能损耗在5%以内。开启全量SQL后，本服务会对SQL的文本内容进行存储，以便进行分析。用户可自行设置全量SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。 打开或者关闭DAS收集慢SQL开关。开启慢SQL后，本服务会对慢SQL的文本内容进行存储，以便进行分析。用户可自行设置慢SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。 该功能仅支持付费实例。
+     *
+     * @param ChangeSqlSwitchRequest 请求对象
+     * @return ChangeSqlSwitchResponse
+     */
+    public ChangeSqlSwitchResponse changeSqlSwitch(ChangeSqlSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.changeSqlSwitch);
+    }
+
+    /**
+     * 开启/关闭DAS收集全量SQL、慢SQL开关
+     * 打开或者关闭DAS收集全量SQL开关，开启后，实例的性能损耗在5%以内。开启全量SQL后，本服务会对SQL的文本内容进行存储，以便进行分析。用户可自行设置全量SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。 打开或者关闭DAS收集慢SQL开关。开启慢SQL后，本服务会对慢SQL的文本内容进行存储，以便进行分析。用户可自行设置慢SQL的保存时间范围，到期后会自动删除；如果未设置，数据默认保留7天。 该功能仅支持付费实例。
+     *
+     * @param ChangeSqlSwitchRequest 请求对象
+     * @return SyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse>
+     */
+    public SyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> changeSqlSwitchInvoker(ChangeSqlSwitchRequest request) {
+        return new SyncInvoker<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse>(request, DasMeta.changeSqlSwitch, hcClient);
+    }
+
+    /**
+     * 创建空间分析任务
+     * 创建空间分析任务，如触发重新分析，支持MySQL和GaussDB(for MySQL)引擎
+     *
+     * @param CreateSpaceAnalysisTaskRequest 请求对象
+     * @return CreateSpaceAnalysisTaskResponse
+     */
+    public CreateSpaceAnalysisTaskResponse createSpaceAnalysisTask(CreateSpaceAnalysisTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createSpaceAnalysisTask);
+    }
+
+    /**
+     * 创建空间分析任务
+     * 创建空间分析任务，如触发重新分析，支持MySQL和GaussDB(for MySQL)引擎
+     *
+     * @param CreateSpaceAnalysisTaskRequest 请求对象
+     * @return SyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse>
+     */
+    public SyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> createSpaceAnalysisTaskInvoker(CreateSpaceAnalysisTaskRequest request) {
+        return new SyncInvoker<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse>(request, DasMeta.createSpaceAnalysisTask, hcClient);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除注册的数据库用户。此接口只是将注册的数据库用户在DAS系统里删除，不会真正删除数据库用户对象。 目前仅支持MySQL实例。
      *
      * @param DeleteDbUserRequest 请求对象
      * @return DeleteDbUserResponse
@@ -73,8 +117,8 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 删除注册的数据用户
+     * 删除数据库用户
+     * 删除注册的数据库用户。此接口只是将注册的数据库用户在DAS系统里删除，不会真正删除数据库用户对象。 目前仅支持MySQL实例。
      *
      * @param DeleteDbUserRequest 请求对象
      * @return SyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse>
@@ -85,7 +129,7 @@ public class DasClient {
 
     /**
      * 查杀会话
-     * 支持根据会话ID、用户和数据库查杀会话。
+     * 查杀会话。支持按照用户、数据库、会话列表查杀会话，三个条件至少指定一个。 目前仅支持MySQL实例。
      *
      * @param DeleteProcessRequest 请求对象
      * @return DeleteProcessResponse
@@ -96,7 +140,7 @@ public class DasClient {
 
     /**
      * 查杀会话
-     * 支持根据会话ID、用户和数据库查杀会话。
+     * 查杀会话。支持按照用户、数据库、会话列表查杀会话，三个条件至少指定一个。 目前仅支持MySQL实例。
      *
      * @param DeleteProcessRequest 请求对象
      * @return SyncInvoker<DeleteProcessRequest, DeleteProcessResponse>
@@ -106,8 +150,52 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 查询注册的数据库用户列表
+     * 导出慢SQL数据
+     * DAS收集慢SQL开关打开后，一次性导出指定时间范围内的慢SQL数据，支持分页滚动获取。 该功能仅支持付费实例。
+     *
+     * @param ExportSlowQueryLogsRequest 请求对象
+     * @return ExportSlowQueryLogsResponse
+     */
+    public ExportSlowQueryLogsResponse exportSlowQueryLogs(ExportSlowQueryLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportSlowQueryLogs);
+    }
+
+    /**
+     * 导出慢SQL数据
+     * DAS收集慢SQL开关打开后，一次性导出指定时间范围内的慢SQL数据，支持分页滚动获取。 该功能仅支持付费实例。
+     *
+     * @param ExportSlowQueryLogsRequest 请求对象
+     * @return SyncInvoker<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse>
+     */
+    public SyncInvoker<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> exportSlowQueryLogsInvoker(ExportSlowQueryLogsRequest request) {
+        return new SyncInvoker<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse>(request, DasMeta.exportSlowQueryLogs, hcClient);
+    }
+
+    /**
+     * 全量SQL开关打开后，导出指定时间范围内的全量SQL数据，支持分页滚动获取。
+     * 全量SQL开关打开后，一次性导出指定时间范围内的全量SQL数据，支持分页滚动获取。 该功能仅支持付费实例。
+     *
+     * @param ExportSqlStatementsRequest 请求对象
+     * @return ExportSqlStatementsResponse
+     */
+    public ExportSqlStatementsResponse exportSqlStatements(ExportSqlStatementsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportSqlStatements);
+    }
+
+    /**
+     * 全量SQL开关打开后，导出指定时间范围内的全量SQL数据，支持分页滚动获取。
+     * 全量SQL开关打开后，一次性导出指定时间范围内的全量SQL数据，支持分页滚动获取。 该功能仅支持付费实例。
+     *
+     * @param ExportSqlStatementsRequest 请求对象
+     * @return SyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse>
+     */
+    public SyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse> exportSqlStatementsInvoker(ExportSqlStatementsRequest request) {
+        return new SyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse>(request, DasMeta.exportSqlStatements, hcClient);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询注册的数据库用户列表。 目前仅支持MySQL实例。
      *
      * @param ListDbUsersRequest 请求对象
      * @return ListDbUsersResponse
@@ -117,8 +205,8 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 查询注册的数据库用户列表
+     * 查询数据库用户列表
+     * 查询注册的数据库用户列表。 目前仅支持MySQL实例。
      *
      * @param ListDbUsersRequest 请求对象
      * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
@@ -129,7 +217,7 @@ public class DasClient {
 
     /**
      * 查询InnoDB锁等待列表
-     * 查询InnoDB锁等待列表
+     * 查询InnoDB锁等待列表。 目前仅支持MySQL实例。
      *
      * @param ListInnodbLocksRequest 请求对象
      * @return ListInnodbLocksResponse
@@ -140,7 +228,7 @@ public class DasClient {
 
     /**
      * 查询InnoDB锁等待列表
-     * 查询InnoDB锁等待列表
+     * 查询InnoDB锁等待列表。 目前仅支持MySQL实例。
      *
      * @param ListInnodbLocksRequest 请求对象
      * @return SyncInvoker<ListInnodbLocksRequest, ListInnodbLocksResponse>
@@ -151,7 +239,7 @@ public class DasClient {
 
     /**
      * 查询元数据锁列表
-     * 查询元数据锁列表
+     * 查询元数据锁列表。 目前仅支持MySQL实例。
      *
      * @param ListMetadataLocksRequest 请求对象
      * @return ListMetadataLocksResponse
@@ -162,7 +250,7 @@ public class DasClient {
 
     /**
      * 查询元数据锁列表
-     * 查询元数据锁列表
+     * 查询元数据锁列表。 目前仅支持MySQL实例。
      *
      * @param ListMetadataLocksRequest 请求对象
      * @return SyncInvoker<ListMetadataLocksRequest, ListMetadataLocksResponse>
@@ -173,7 +261,7 @@ public class DasClient {
 
     /**
      * 查询实例会话列表
-     * 查询实例会话列表
+     * 支持根据数据库、用户查询实例会话列表。 目前仅支持MySQL实例。
      *
      * @param ListProcessesRequest 请求对象
      * @return ListProcessesResponse
@@ -184,7 +272,7 @@ public class DasClient {
 
     /**
      * 查询实例会话列表
-     * 查询实例会话列表
+     * 支持根据数据库、用户查询实例会话列表。 目前仅支持MySQL实例。
      *
      * @param ListProcessesRequest 请求对象
      * @return SyncInvoker<ListProcessesRequest, ListProcessesResponse>
@@ -194,8 +282,30 @@ public class DasClient {
     }
 
     /**
-     * 
+     * 获取空间分析数据列表
+     * 获取空间分析数据列表。实例级别数据来源于文件系统，库级别和表级别数据来源于information_schema.tables表。空间&amp;元数据分析最多分析10000张表，若缺少库表空间数据，可能是因为数据库实例表个数过多或者账号未保存密码。如果为保存密码，请使用用户管理接口或页面录入数据库账号。支持MySQL和GaussDB(for MySQL)引擎
+     *
+     * @param ListSpaceAnalysisRequest 请求对象
+     * @return ListSpaceAnalysisResponse
+     */
+    public ListSpaceAnalysisResponse listSpaceAnalysis(ListSpaceAnalysisRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listSpaceAnalysis);
+    }
+
+    /**
+     * 获取空间分析数据列表
+     * 获取空间分析数据列表。实例级别数据来源于文件系统，库级别和表级别数据来源于information_schema.tables表。空间&amp;元数据分析最多分析10000张表，若缺少库表空间数据，可能是因为数据库实例表个数过多或者账号未保存密码。如果为保存密码，请使用用户管理接口或页面录入数据库账号。支持MySQL和GaussDB(for MySQL)引擎
+     *
+     * @param ListSpaceAnalysisRequest 请求对象
+     * @return SyncInvoker<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse>
+     */
+    public SyncInvoker<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> listSpaceAnalysisInvoker(ListSpaceAnalysisRequest request) {
+        return new SyncInvoker<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse>(request, DasMeta.listSpaceAnalysis, hcClient);
+    }
+
+    /**
      * 注册数据库用户
+     * 此接口是将数据库用户和密码注册进DAS系统，同时会返回一个数据库用户ID ，后续调用其他接口时（如查询实例会话列表接口）需要用到此数据库用户ID。密码为加密存储，且仅用于DAS API相关功能。此接口不会在数据库上创建数据库用户对象。 目前仅支持MySQL实例。
      *
      * @param RegisterDbUserRequest 请求对象
      * @return RegisterDbUserResponse
@@ -205,8 +315,8 @@ public class DasClient {
     }
 
     /**
-     * 
      * 注册数据库用户
+     * 此接口是将数据库用户和密码注册进DAS系统，同时会返回一个数据库用户ID ，后续调用其他接口时（如查询实例会话列表接口）需要用到此数据库用户ID。密码为加密存储，且仅用于DAS API相关功能。此接口不会在数据库上创建数据库用户对象。 目前仅支持MySQL实例。
      *
      * @param RegisterDbUserRequest 请求对象
      * @return SyncInvoker<RegisterDbUserRequest, RegisterDbUserResponse>
@@ -216,8 +326,8 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 查询注册的数据库账号信息
+     * 查询数据库用户信息
+     * 查询注册的数据库用户信息。 目前仅支持MySQL实例。
      *
      * @param ShowDbUserRequest 请求对象
      * @return ShowDbUserResponse
@@ -227,8 +337,8 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 查询注册的数据库账号信息
+     * 查询数据库用户信息
+     * 查询注册的数据库用户信息。 目前仅支持MySQL实例。
      *
      * @param ShowDbUserRequest 请求对象
      * @return SyncInvoker<ShowDbUserRequest, ShowDbUserResponse>
@@ -239,7 +349,7 @@ public class DasClient {
 
     /**
      * 查询SQL执行计划
-     * 查询SQL执行计划
+     * 查询SQL执行计划。 目前仅支持MySQL实例。
      *
      * @param ShowSqlExecutionPlanRequest 请求对象
      * @return ShowSqlExecutionPlanResponse
@@ -250,7 +360,7 @@ public class DasClient {
 
     /**
      * 查询SQL执行计划
-     * 查询SQL执行计划
+     * 查询SQL执行计划。 目前仅支持MySQL实例。
      *
      * @param ShowSqlExecutionPlanRequest 请求对象
      * @return SyncInvoker<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse>
@@ -260,8 +370,30 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 修改注册的数据库用户
+     * 查询DAS收集全量SQL和慢SQL的开关状态。
+     * 查询DAS收集全量SQL和慢SQL的开关状态。该功能仅支持付费实例。
+     *
+     * @param ShowSqlSwitchStatusRequest 请求对象
+     * @return ShowSqlSwitchStatusResponse
+     */
+    public ShowSqlSwitchStatusResponse showSqlSwitchStatus(ShowSqlSwitchStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showSqlSwitchStatus);
+    }
+
+    /**
+     * 查询DAS收集全量SQL和慢SQL的开关状态。
+     * 查询DAS收集全量SQL和慢SQL的开关状态。该功能仅支持付费实例。
+     *
+     * @param ShowSqlSwitchStatusRequest 请求对象
+     * @return SyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse>
+     */
+    public SyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatusInvoker(ShowSqlSwitchStatusRequest request) {
+        return new SyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse>(request, DasMeta.showSqlSwitchStatus, hcClient);
+    }
+
+    /**
+     * 修改数据库用户
+     * 修改注册的数据库用户名和密码。 目前仅支持MySQL实例。
      *
      * @param UpdateDbUserRequest 请求对象
      * @return UpdateDbUserResponse
@@ -271,8 +403,8 @@ public class DasClient {
     }
 
     /**
-     * 
-     * 修改注册的数据库用户
+     * 修改数据库用户
+     * 修改注册的数据库用户名和密码。 目前仅支持MySQL实例。
      *
      * @param UpdateDbUserRequest 请求对象
      * @return SyncInvoker<UpdateDbUserRequest, UpdateDbUserResponse>

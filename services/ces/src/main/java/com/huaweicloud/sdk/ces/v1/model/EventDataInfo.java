@@ -55,6 +55,8 @@ public class EventDataInfo  {
         this.type = type;
     }
 
+    
+
     public EventDataInfo withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -75,6 +77,8 @@ public class EventDataInfo  {
         this.timestamp = timestamp;
     }
 
+    
+
     public EventDataInfo withValue(String value) {
         this.value = value;
         return this;
@@ -94,6 +98,9 @@ public class EventDataInfo  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

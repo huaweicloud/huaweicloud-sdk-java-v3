@@ -41,9 +41,6 @@ public class BatchSwitchoverResponse extends SdkResponse {
 
     
     public BatchSwitchoverResponse addResultsItem(SwitchoverResp resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class BatchSwitchoverResponse extends SdkResponse {
         this.results = results;
     }
 
+    
+
     public BatchSwitchoverResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class BatchSwitchoverResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

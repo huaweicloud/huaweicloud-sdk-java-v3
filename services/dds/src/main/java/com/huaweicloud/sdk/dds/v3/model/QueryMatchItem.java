@@ -131,6 +131,8 @@ public class QueryMatchItem  {
         this.key = key;
     }
 
+    
+
     public QueryMatchItem withValue(String value) {
         this.value = value;
         return this;
@@ -150,6 +152,9 @@ public class QueryMatchItem  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

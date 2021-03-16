@@ -28,7 +28,7 @@ public class CreateDatabaseRoleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateDatabaseRoleRequestBody body = null;
+    private CreateDatabaseRoleRequestBody body;
 
     public CreateDatabaseRoleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CreateDatabaseRoleRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CreateDatabaseRoleRequest withBody(CreateDatabaseRoleRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateDatabaseRoleRequest  {
     public void setBody(CreateDatabaseRoleRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

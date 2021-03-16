@@ -49,6 +49,8 @@ public class UpdateUserInformationOption  {
         this.email = email;
     }
 
+    
+
     public UpdateUserInformationOption withMobile(String mobile) {
         this.mobile = mobile;
         return this;
@@ -68,6 +70,9 @@ public class UpdateUserInformationOption  {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

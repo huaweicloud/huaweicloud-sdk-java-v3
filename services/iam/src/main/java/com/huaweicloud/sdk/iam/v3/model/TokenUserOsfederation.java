@@ -26,19 +26,19 @@ public class TokenUserOsfederation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="groups")
     
-    private List<OsfederationGroups> groups = new ArrayList<>();
+    private List<OsfederationGroups> groups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="identity_provider")
     
-    private OsfederationIdentityprovider identityProvider = null;
+    private OsfederationIdentityprovider identityProvider;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    private OsfederationProtocol protocol = null;
+    private OsfederationProtocol protocol;
 
     public TokenUserOsfederation withGroups(List<OsfederationGroups> groups) {
         this.groups = groups;
@@ -71,6 +71,8 @@ public class TokenUserOsfederation  {
         this.groups = groups;
     }
 
+    
+
     public TokenUserOsfederation withIdentityProvider(OsfederationIdentityprovider identityProvider) {
         this.identityProvider = identityProvider;
         return this;
@@ -98,6 +100,8 @@ public class TokenUserOsfederation  {
         this.identityProvider = identityProvider;
     }
 
+    
+
     public TokenUserOsfederation withProtocol(OsfederationProtocol protocol) {
         this.protocol = protocol;
         return this;
@@ -124,6 +128,9 @@ public class TokenUserOsfederation  {
     public void setProtocol(OsfederationProtocol protocol) {
         this.protocol = protocol;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

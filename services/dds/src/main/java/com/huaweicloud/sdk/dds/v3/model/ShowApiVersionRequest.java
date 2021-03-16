@@ -42,6 +42,9 @@ public class ShowApiVersionRequest  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

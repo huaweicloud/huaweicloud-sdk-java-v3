@@ -34,7 +34,7 @@ public class UpdateTopicReplicaRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResetReplicaReq body = null;
+    private ResetReplicaReq body;
 
     public UpdateTopicReplicaRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateTopicReplicaRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateTopicReplicaRequest withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -75,6 +77,8 @@ public class UpdateTopicReplicaRequest  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    
 
     public UpdateTopicReplicaRequest withBody(ResetReplicaReq body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateTopicReplicaRequest  {
     public void setBody(ResetReplicaReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

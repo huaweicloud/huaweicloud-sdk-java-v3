@@ -56,7 +56,7 @@ public class CreateInstanceBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_codes")
     
-    private List<String> azCodes = new ArrayList<>();
+    private List<String> azCodes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,7 +80,7 @@ public class CreateInstanceBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip_id")
     
-    private String publicipId = "false";
+    private String publicipId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,7 +116,7 @@ public class CreateInstanceBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_num")
     
-    private Integer instanceNum = 1;
+    private Integer instanceNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -140,19 +140,19 @@ public class CreateInstanceBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="no_password_access")
     
-    private Boolean noPasswordAccess = false;
+    private Boolean noPasswordAccess;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bss_param")
     
-    private BssParam bssParam = null;
+    private BssParam bssParam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_backup_policy")
     
-    private BackupPolicy instanceBackupPolicy = null;
+    private BackupPolicy instanceBackupPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -170,7 +170,7 @@ public class CreateInstanceBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_publicip")
     
-    private Boolean enablePublicip = false;
+    private Boolean enablePublicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -182,7 +182,7 @@ public class CreateInstanceBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rename_commands")
     
-    private Object renameCommands = null;
+    private Object renameCommands;
 
     public CreateInstanceBody withName(String name) {
         this.name = name;
@@ -204,6 +204,8 @@ public class CreateInstanceBody  {
         this.name = name;
     }
 
+    
+
     public CreateInstanceBody withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -223,6 +225,8 @@ public class CreateInstanceBody  {
     public void setEngine(String engine) {
         this.engine = engine;
     }
+
+    
 
     public CreateInstanceBody withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -244,6 +248,8 @@ public class CreateInstanceBody  {
         this.engineVersion = engineVersion;
     }
 
+    
+
     public CreateInstanceBody withCapacity(Float capacity) {
         this.capacity = capacity;
         return this;
@@ -264,6 +270,8 @@ public class CreateInstanceBody  {
         this.capacity = capacity;
     }
 
+    
+
     public CreateInstanceBody withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -283,6 +291,8 @@ public class CreateInstanceBody  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
+
+    
 
     public CreateInstanceBody withAzCodes(List<String> azCodes) {
         this.azCodes = azCodes;
@@ -315,6 +325,8 @@ public class CreateInstanceBody  {
         this.azCodes = azCodes;
     }
 
+    
+
     public CreateInstanceBody withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -334,6 +346,8 @@ public class CreateInstanceBody  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public CreateInstanceBody withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -355,6 +369,8 @@ public class CreateInstanceBody  {
         this.subnetId = subnetId;
     }
 
+    
+
     public CreateInstanceBody withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -374,6 +390,8 @@ public class CreateInstanceBody  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
+
+    
 
     public CreateInstanceBody withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -395,6 +413,8 @@ public class CreateInstanceBody  {
         this.publicipId = publicipId;
     }
 
+    
+
     public CreateInstanceBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -414,6 +434,8 @@ public class CreateInstanceBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public CreateInstanceBody withEnterpriseProjectName(String enterpriseProjectName) {
         this.enterpriseProjectName = enterpriseProjectName;
@@ -435,6 +457,8 @@ public class CreateInstanceBody  {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
+    
+
     public CreateInstanceBody withDescription(String description) {
         this.description = description;
         return this;
@@ -454,6 +478,8 @@ public class CreateInstanceBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateInstanceBody withEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
@@ -475,6 +501,8 @@ public class CreateInstanceBody  {
         this.enableSsl = enableSsl;
     }
 
+    
+
     public CreateInstanceBody withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
@@ -494,6 +522,8 @@ public class CreateInstanceBody  {
     public void setPrivateIp(String privateIp) {
         this.privateIp = privateIp;
     }
+
+    
 
     public CreateInstanceBody withInstanceNum(Integer instanceNum) {
         this.instanceNum = instanceNum;
@@ -515,6 +545,8 @@ public class CreateInstanceBody  {
         this.instanceNum = instanceNum;
     }
 
+    
+
     public CreateInstanceBody withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
         return this;
@@ -534,6 +566,8 @@ public class CreateInstanceBody  {
     public void setMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
     }
+
+    
 
     public CreateInstanceBody withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
@@ -555,6 +589,8 @@ public class CreateInstanceBody  {
         this.maintainEnd = maintainEnd;
     }
 
+    
+
     public CreateInstanceBody withPassword(String password) {
         this.password = password;
         return this;
@@ -575,6 +611,8 @@ public class CreateInstanceBody  {
         this.password = password;
     }
 
+    
+
     public CreateInstanceBody withNoPasswordAccess(Boolean noPasswordAccess) {
         this.noPasswordAccess = noPasswordAccess;
         return this;
@@ -594,6 +632,8 @@ public class CreateInstanceBody  {
     public void setNoPasswordAccess(Boolean noPasswordAccess) {
         this.noPasswordAccess = noPasswordAccess;
     }
+
+    
 
     public CreateInstanceBody withBssParam(BssParam bssParam) {
         this.bssParam = bssParam;
@@ -622,6 +662,8 @@ public class CreateInstanceBody  {
         this.bssParam = bssParam;
     }
 
+    
+
     public CreateInstanceBody withInstanceBackupPolicy(BackupPolicy instanceBackupPolicy) {
         this.instanceBackupPolicy = instanceBackupPolicy;
         return this;
@@ -649,6 +691,8 @@ public class CreateInstanceBody  {
         this.instanceBackupPolicy = instanceBackupPolicy;
     }
 
+    
+
     public CreateInstanceBody withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -656,9 +700,6 @@ public class CreateInstanceBody  {
 
     
     public CreateInstanceBody addTagsItem(ResourceTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -683,6 +724,8 @@ public class CreateInstanceBody  {
         this.tags = tags;
     }
 
+    
+
     public CreateInstanceBody withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
@@ -702,6 +745,8 @@ public class CreateInstanceBody  {
     public void setAccessUser(String accessUser) {
         this.accessUser = accessUser;
     }
+
+    
 
     public CreateInstanceBody withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
@@ -723,6 +768,8 @@ public class CreateInstanceBody  {
         this.enablePublicip = enablePublicip;
     }
 
+    
+
     public CreateInstanceBody withPort(Integer port) {
         this.port = port;
         return this;
@@ -743,6 +790,8 @@ public class CreateInstanceBody  {
         this.port = port;
     }
 
+    
+
     public CreateInstanceBody withRenameCommands(Object renameCommands) {
         this.renameCommands = renameCommands;
         return this;
@@ -762,6 +811,9 @@ public class CreateInstanceBody  {
     public void setRenameCommands(Object renameCommands) {
         this.renameCommands = renameCommands;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

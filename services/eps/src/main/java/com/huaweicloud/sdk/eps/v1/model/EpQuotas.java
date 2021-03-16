@@ -55,6 +55,8 @@ public class EpQuotas  {
         this.quota = quota;
     }
 
+    
+
     public EpQuotas withType(String type) {
         this.type = type;
         return this;
@@ -75,6 +77,8 @@ public class EpQuotas  {
         this.type = type;
     }
 
+    
+
     public EpQuotas withUsed(Integer used) {
         this.used = used;
         return this;
@@ -94,6 +98,9 @@ public class EpQuotas  {
     public void setUsed(Integer used) {
         this.used = used;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

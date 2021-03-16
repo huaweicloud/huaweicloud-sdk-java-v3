@@ -21,13 +21,13 @@ public class ConsumeDeadlettersMessageMessage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private Object body = null;
+    private Object body;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attributes")
     
-    private Object attributes = null;
+    private Object attributes;
 
     public ConsumeDeadlettersMessageMessage withBody(Object body) {
         this.body = body;
@@ -49,6 +49,8 @@ public class ConsumeDeadlettersMessageMessage  {
         this.body = body;
     }
 
+    
+
     public ConsumeDeadlettersMessageMessage withAttributes(Object attributes) {
         this.attributes = attributes;
         return this;
@@ -68,6 +70,9 @@ public class ConsumeDeadlettersMessageMessage  {
     public void setAttributes(Object attributes) {
         this.attributes = attributes;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

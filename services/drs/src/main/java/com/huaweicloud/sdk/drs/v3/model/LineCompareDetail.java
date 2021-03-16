@@ -191,6 +191,8 @@ public class LineCompareDetail  {
         this.sourceTableName = sourceTableName;
     }
 
+    
+
     public LineCompareDetail withTargetTableName(String targetTableName) {
         this.targetTableName = targetTableName;
         return this;
@@ -210,6 +212,8 @@ public class LineCompareDetail  {
     public void setTargetTableName(String targetTableName) {
         this.targetTableName = targetTableName;
     }
+
+    
 
     public LineCompareDetail withSourceRowNum(Integer sourceRowNum) {
         this.sourceRowNum = sourceRowNum;
@@ -231,6 +235,8 @@ public class LineCompareDetail  {
         this.sourceRowNum = sourceRowNum;
     }
 
+    
+
     public LineCompareDetail withTargetRowNum(Integer targetRowNum) {
         this.targetRowNum = targetRowNum;
         return this;
@@ -250,6 +256,8 @@ public class LineCompareDetail  {
     public void setTargetRowNum(Integer targetRowNum) {
         this.targetRowNum = targetRowNum;
     }
+
+    
 
     public LineCompareDetail withDiffRowNum(Integer diffRowNum) {
         this.diffRowNum = diffRowNum;
@@ -271,6 +279,8 @@ public class LineCompareDetail  {
         this.diffRowNum = diffRowNum;
     }
 
+    
+
     public LineCompareDetail withLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
         return this;
@@ -291,6 +301,8 @@ public class LineCompareDetail  {
         this.lineCompareResult = lineCompareResult;
     }
 
+    
+
     public LineCompareDetail withMessage(String message) {
         this.message = message;
         return this;
@@ -310,6 +322,9 @@ public class LineCompareDetail  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

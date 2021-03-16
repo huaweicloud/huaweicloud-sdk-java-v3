@@ -41,9 +41,6 @@ public class ListRecordDataResponse extends SdkResponse {
 
     
     public ListRecordDataResponse addRecordDataListItem(RecordData recordDataListItem) {
-        if (this.recordDataList == null) {
-            this.recordDataList = new ArrayList<>();
-        }
         this.recordDataList.add(recordDataListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListRecordDataResponse extends SdkResponse {
         this.recordDataList = recordDataList;
     }
 
+    
+
     public ListRecordDataResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -89,6 +88,9 @@ public class ListRecordDataResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

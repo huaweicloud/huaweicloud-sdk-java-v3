@@ -23,7 +23,7 @@ public class ListDomainTrafficSummaryRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="play_domains")
     
-    private List<String> playDomains = new ArrayList<>();
+    private List<String> playDomains = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,6 +92,8 @@ public class ListDomainTrafficSummaryRequest  {
         this.playDomains = playDomains;
     }
 
+    
+
     public ListDomainTrafficSummaryRequest withApp(String app) {
         this.app = app;
         return this;
@@ -111,6 +113,8 @@ public class ListDomainTrafficSummaryRequest  {
     public void setApp(String app) {
         this.app = app;
     }
+
+    
 
     public ListDomainTrafficSummaryRequest withStream(String stream) {
         this.stream = stream;
@@ -132,6 +136,8 @@ public class ListDomainTrafficSummaryRequest  {
         this.stream = stream;
     }
 
+    
+
     public ListDomainTrafficSummaryRequest withRegion(List<String> region) {
         this.region = region;
         return this;
@@ -139,9 +145,6 @@ public class ListDomainTrafficSummaryRequest  {
 
     
     public ListDomainTrafficSummaryRequest addRegionItem(String regionItem) {
-        if (this.region == null) {
-            this.region = new ArrayList<>();
-        }
         this.region.add(regionItem);
         return this;
     }
@@ -166,6 +169,8 @@ public class ListDomainTrafficSummaryRequest  {
         this.region = region;
     }
 
+    
+
     public ListDomainTrafficSummaryRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
@@ -173,9 +178,6 @@ public class ListDomainTrafficSummaryRequest  {
 
     
     public ListDomainTrafficSummaryRequest addIspItem(String ispItem) {
-        if (this.isp == null) {
-            this.isp = new ArrayList<>();
-        }
         this.isp.add(ispItem);
         return this;
     }
@@ -200,6 +202,8 @@ public class ListDomainTrafficSummaryRequest  {
         this.isp = isp;
     }
 
+    
+
     public ListDomainTrafficSummaryRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -220,6 +224,8 @@ public class ListDomainTrafficSummaryRequest  {
         this.startTime = startTime;
     }
 
+    
+
     public ListDomainTrafficSummaryRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
@@ -239,6 +245,9 @@ public class ListDomainTrafficSummaryRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

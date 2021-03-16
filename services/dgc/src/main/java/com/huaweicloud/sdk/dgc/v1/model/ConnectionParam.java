@@ -139,7 +139,7 @@ public class ConnectionParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="params")
     
-    private Object params = null;
+    private Object params;
 
     public ConnectionParam withName(String name) {
         this.name = name;
@@ -161,6 +161,8 @@ public class ConnectionParam  {
         this.name = name;
     }
 
+    
+
     public ConnectionParam withConnectionType(ConnectionTypeEnum connectionType) {
         this.connectionType = connectionType;
         return this;
@@ -181,6 +183,8 @@ public class ConnectionParam  {
         this.connectionType = connectionType;
     }
 
+    
+
     public ConnectionParam withParams(Object params) {
         this.params = params;
         return this;
@@ -200,6 +204,9 @@ public class ConnectionParam  {
     public void setParams(Object params) {
         this.params = params;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

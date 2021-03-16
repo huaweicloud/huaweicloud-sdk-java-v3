@@ -55,6 +55,8 @@ public class VideoSuperresolution  {
         this.name = name;
     }
 
+    
+
     public VideoSuperresolution withExecutionOrder(Integer executionOrder) {
         this.executionOrder = executionOrder;
         return this;
@@ -75,6 +77,8 @@ public class VideoSuperresolution  {
         this.executionOrder = executionOrder;
     }
 
+    
+
     public VideoSuperresolution withScale(String scale) {
         this.scale = scale;
         return this;
@@ -94,6 +98,9 @@ public class VideoSuperresolution  {
     public void setScale(String scale) {
         this.scale = scale;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

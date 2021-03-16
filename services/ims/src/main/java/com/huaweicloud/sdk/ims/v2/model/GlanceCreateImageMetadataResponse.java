@@ -625,7 +625,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private Object properties = null;
+    private Object properties;
 
     public GlanceCreateImageMetadataResponse withVisibility(String visibility) {
         this.visibility = visibility;
@@ -647,6 +647,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.visibility = visibility;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withName(String name) {
         this.name = name;
         return this;
@@ -666,6 +668,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withProtected(Boolean _protected) {
         this._protected = _protected;
@@ -687,6 +691,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this._protected = _protected;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
         return this;
@@ -706,6 +712,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
@@ -727,6 +735,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.diskFormat = diskFormat;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -734,9 +744,6 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     
     public GlanceCreateImageMetadataResponse addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -761,6 +768,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
@@ -780,6 +789,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setMinRam(Integer minRam) {
         this.minRam = minRam;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
@@ -803,6 +814,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.minDisk = minDisk;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -822,6 +835,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -843,6 +858,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -862,6 +879,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withSelf(String self) {
         this.self = self;
@@ -883,6 +902,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.self = self;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withId(String id) {
         this.id = id;
         return this;
@@ -902,6 +923,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withFile(String file) {
         this.file = file;
@@ -923,6 +946,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.file = file;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withSchema(String schema) {
         this.schema = schema;
         return this;
@@ -942,6 +967,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withImageSourceType(String imageSourceType) {
         this.imageSourceType = imageSourceType;
@@ -965,6 +992,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.imageSourceType = imageSourceType;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
@@ -986,6 +1015,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setImageSize(String imageSize) {
         this.imageSize = imageSize;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withIsregistered(String isregistered) {
         this.isregistered = isregistered;
@@ -1009,6 +1040,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.isregistered = isregistered;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
@@ -1030,6 +1063,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withOsType(OsTypeEnum osType) {
         this.osType = osType;
@@ -1053,6 +1088,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.osType = osType;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withPlatform(String platform) {
         this.platform = platform;
         return this;
@@ -1074,6 +1111,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
@@ -1097,6 +1136,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.osBit = osBit;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withImagetype(String imagetype) {
         this.imagetype = imagetype;
         return this;
@@ -1119,6 +1160,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.imagetype = imagetype;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
         return this;
@@ -1138,6 +1181,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
     }
+
+    
 
     public GlanceCreateImageMetadataResponse withOwner(String owner) {
         this.owner = owner;
@@ -1159,6 +1204,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.owner = owner;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
         return this;
@@ -1179,6 +1226,8 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.virtualSize = virtualSize;
     }
 
+    
+
     public GlanceCreateImageMetadataResponse withProperties(Object properties) {
         this.properties = properties;
         return this;
@@ -1198,6 +1247,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setProperties(Object properties) {
         this.properties = properties;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

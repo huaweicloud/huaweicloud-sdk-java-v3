@@ -31,7 +31,7 @@ public class RolePolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Statement")
     
-    private List<PolicyStatement> statement = new ArrayList<>();
+    private List<PolicyStatement> statement = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +46,6 @@ public class RolePolicy  {
 
     
     public RolePolicy addDependsItem(PolicyDepends dependsItem) {
-        if (this.depends == null) {
-            this.depends = new ArrayList<>();
-        }
         this.depends.add(dependsItem);
         return this;
     }
@@ -72,6 +69,8 @@ public class RolePolicy  {
     public void setDepends(List<PolicyDepends> depends) {
         this.depends = depends;
     }
+
+    
 
     public RolePolicy withStatement(List<PolicyStatement> statement) {
         this.statement = statement;
@@ -104,6 +103,8 @@ public class RolePolicy  {
         this.statement = statement;
     }
 
+    
+
     public RolePolicy withVersion(String version) {
         this.version = version;
         return this;
@@ -123,6 +124,9 @@ public class RolePolicy  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -75,6 +75,8 @@ public class CreateProjectV4Response extends SdkResponse {
         this.projectNumId = projectNumId;
     }
 
+    
+
     public CreateProjectV4Response withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -94,6 +96,8 @@ public class CreateProjectV4Response extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public CreateProjectV4Response withProjectName(String projectName) {
         this.projectName = projectName;
@@ -115,6 +119,8 @@ public class CreateProjectV4Response extends SdkResponse {
         this.projectName = projectName;
     }
 
+    
+
     public CreateProjectV4Response withDescription(String description) {
         this.description = description;
         return this;
@@ -134,6 +140,8 @@ public class CreateProjectV4Response extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public CreateProjectV4Response withProjectType(String projectType) {
         this.projectType = projectType;
@@ -155,6 +163,8 @@ public class CreateProjectV4Response extends SdkResponse {
         this.projectType = projectType;
     }
 
+    
+
     public CreateProjectV4Response withUserNumId(Integer userNumId) {
         this.userNumId = userNumId;
         return this;
@@ -174,6 +184,9 @@ public class CreateProjectV4Response extends SdkResponse {
     public void setUserNumId(Integer userNumId) {
         this.userNumId = userNumId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

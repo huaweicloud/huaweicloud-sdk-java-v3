@@ -46,7 +46,7 @@ public class Job  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_build_time")
     
-    private BigDecimal lastBuildTime = null;
+    private BigDecimal lastBuildTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -140,6 +140,8 @@ public class Job  {
         this.id = id;
     }
 
+    
+
     public Job withJobName(String jobName) {
         this.jobName = jobName;
         return this;
@@ -159,6 +161,8 @@ public class Job  {
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
+
+    
 
     public Job withJobCreator(String jobCreator) {
         this.jobCreator = jobCreator;
@@ -180,6 +184,8 @@ public class Job  {
         this.jobCreator = jobCreator;
     }
 
+    
+
     public Job withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -199,6 +205,8 @@ public class Job  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    
 
     public Job withLastBuildTime(BigDecimal lastBuildTime) {
         this.lastBuildTime = lastBuildTime;
@@ -220,6 +228,8 @@ public class Job  {
         this.lastBuildTime = lastBuildTime;
     }
 
+    
+
     public Job withHealthScore(Integer healthScore) {
         this.healthScore = healthScore;
         return this;
@@ -239,6 +249,8 @@ public class Job  {
     public void setHealthScore(Integer healthScore) {
         this.healthScore = healthScore;
     }
+
+    
 
     public Job withSourceCode(String sourceCode) {
         this.sourceCode = sourceCode;
@@ -260,6 +272,8 @@ public class Job  {
         this.sourceCode = sourceCode;
     }
 
+    
+
     public Job withLastBuildStatus(String lastBuildStatus) {
         this.lastBuildStatus = lastBuildStatus;
         return this;
@@ -279,6 +293,8 @@ public class Job  {
     public void setLastBuildStatus(String lastBuildStatus) {
         this.lastBuildStatus = lastBuildStatus;
     }
+
+    
 
     public Job withIsFinished(Boolean isFinished) {
         this.isFinished = isFinished;
@@ -300,6 +316,8 @@ public class Job  {
         this.isFinished = isFinished;
     }
 
+    
+
     public Job withDisabled(Boolean disabled) {
         this.disabled = disabled;
         return this;
@@ -319,6 +337,8 @@ public class Job  {
     public void setDisabled(Boolean disabled) {
         this.disabled = disabled;
     }
+
+    
 
     public Job withFavorite(Boolean favorite) {
         this.favorite = favorite;
@@ -340,6 +360,8 @@ public class Job  {
         this.favorite = favorite;
     }
 
+    
+
     public Job withIsModify(Boolean isModify) {
         this.isModify = isModify;
         return this;
@@ -359,6 +381,8 @@ public class Job  {
     public void setIsModify(Boolean isModify) {
         this.isModify = isModify;
     }
+
+    
 
     public Job withIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
@@ -380,6 +404,8 @@ public class Job  {
         this.isDelete = isDelete;
     }
 
+    
+
     public Job withIsExecute(Boolean isExecute) {
         this.isExecute = isExecute;
         return this;
@@ -399,6 +425,8 @@ public class Job  {
     public void setIsExecute(Boolean isExecute) {
         this.isExecute = isExecute;
     }
+
+    
 
     public Job withIsCopy(Boolean isCopy) {
         this.isCopy = isCopy;
@@ -420,6 +448,8 @@ public class Job  {
         this.isCopy = isCopy;
     }
 
+    
+
     public Job withIsForbidden(Boolean isForbidden) {
         this.isForbidden = isForbidden;
         return this;
@@ -440,6 +470,8 @@ public class Job  {
         this.isForbidden = isForbidden;
     }
 
+    
+
     public Job withIsView(Boolean isView) {
         this.isView = isView;
         return this;
@@ -459,6 +491,9 @@ public class Job  {
     public void setIsView(Boolean isView) {
         this.isView = isView;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

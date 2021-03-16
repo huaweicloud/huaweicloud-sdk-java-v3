@@ -24,7 +24,7 @@ public class RestBulkDelAttendReqBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bulkDelAttendInfo")
     
-    private List<DelAttendInfo> bulkDelAttendInfo = new ArrayList<>();
+    private List<DelAttendInfo> bulkDelAttendInfo = null;
     
     public RestBulkDelAttendReqBody withBulkDelAttendInfo(List<DelAttendInfo> bulkDelAttendInfo) {
         this.bulkDelAttendInfo = bulkDelAttendInfo;
@@ -56,6 +56,9 @@ public class RestBulkDelAttendReqBody  {
     public void setBulkDelAttendInfo(List<DelAttendInfo> bulkDelAttendInfo) {
         this.bulkDelAttendInfo = bulkDelAttendInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

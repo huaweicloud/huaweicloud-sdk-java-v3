@@ -24,7 +24,7 @@ public class CreateSecurityGroupRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_rule")
     
-    private SecurityGroupRule securityGroupRule = null;
+    private SecurityGroupRule securityGroupRule;
 
     public CreateSecurityGroupRuleResponse withSecurityGroupRule(SecurityGroupRule securityGroupRule) {
         this.securityGroupRule = securityGroupRule;
@@ -52,6 +52,9 @@ public class CreateSecurityGroupRuleResponse extends SdkResponse {
     public void setSecurityGroupRule(SecurityGroupRule securityGroupRule) {
         this.securityGroupRule = securityGroupRule;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

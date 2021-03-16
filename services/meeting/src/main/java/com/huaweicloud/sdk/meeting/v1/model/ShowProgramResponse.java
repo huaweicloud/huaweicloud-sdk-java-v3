@@ -85,6 +85,8 @@ public class ShowProgramResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowProgramResponse withLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
         return this;
@@ -104,6 +106,8 @@ public class ShowProgramResponse extends SdkResponse {
     public void setLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
     }
+
+    
 
     public ShowProgramResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
@@ -125,6 +129,8 @@ public class ShowProgramResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public ShowProgramResponse withProgramName(String programName) {
         this.programName = programName;
         return this;
@@ -144,6 +150,8 @@ public class ShowProgramResponse extends SdkResponse {
     public void setProgramName(String programName) {
         this.programName = programName;
     }
+
+    
 
     public ShowProgramResponse withMaterialSizeStr(String materialSizeStr) {
         this.materialSizeStr = materialSizeStr;
@@ -165,6 +173,8 @@ public class ShowProgramResponse extends SdkResponse {
         this.materialSizeStr = materialSizeStr;
     }
 
+    
+
     public ShowProgramResponse withPlayTime(Integer playTime) {
         this.playTime = playTime;
         return this;
@@ -185,6 +195,8 @@ public class ShowProgramResponse extends SdkResponse {
         this.playTime = playTime;
     }
 
+    
+
     public ShowProgramResponse withProgramItemList(List<ProgramItemResponseBase> programItemList) {
         this.programItemList = programItemList;
         return this;
@@ -192,9 +204,6 @@ public class ShowProgramResponse extends SdkResponse {
 
     
     public ShowProgramResponse addProgramItemListItem(ProgramItemResponseBase programItemListItem) {
-        if (this.programItemList == null) {
-            this.programItemList = new ArrayList<>();
-        }
         this.programItemList.add(programItemListItem);
         return this;
     }
@@ -218,6 +227,9 @@ public class ShowProgramResponse extends SdkResponse {
     public void setProgramItemList(List<ProgramItemResponseBase> programItemList) {
         this.programItemList = programItemList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

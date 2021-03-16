@@ -133,7 +133,7 @@ public class ApiPolicyMockResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<CoditionResp> conditions = new ArrayList<>();
+    private List<CoditionResp> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -167,6 +167,8 @@ public class ApiPolicyMockResp  {
         this.id = id;
     }
 
+    
+
     public ApiPolicyMockResp withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
@@ -186,6 +188,8 @@ public class ApiPolicyMockResp  {
     public void setEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
     }
+
+    
 
     public ApiPolicyMockResp withName(String name) {
         this.name = name;
@@ -207,6 +211,8 @@ public class ApiPolicyMockResp  {
         this.name = name;
     }
 
+    
+
     public ApiPolicyMockResp withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -214,9 +220,6 @@ public class ApiPolicyMockResp  {
 
     
     public ApiPolicyMockResp addBackendParamsItem(BackendParam backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -240,6 +243,8 @@ public class ApiPolicyMockResp  {
     public void setBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
     }
+
+    
 
     public ApiPolicyMockResp withConditions(List<CoditionResp> conditions) {
         this.conditions = conditions;
@@ -272,6 +277,8 @@ public class ApiPolicyMockResp  {
         this.conditions = conditions;
     }
 
+    
+
     public ApiPolicyMockResp withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -292,6 +299,8 @@ public class ApiPolicyMockResp  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiPolicyMockResp withResultContent(String resultContent) {
         this.resultContent = resultContent;
         return this;
@@ -311,6 +320,9 @@ public class ApiPolicyMockResp  {
     public void setResultContent(String resultContent) {
         this.resultContent = resultContent;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -34,7 +34,7 @@ public class GlanceUpdateImageMemberRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GlanceUpdateImageMemberRequestBody body = null;
+    private GlanceUpdateImageMemberRequestBody body;
 
     public GlanceUpdateImageMemberRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -56,6 +56,8 @@ public class GlanceUpdateImageMemberRequest  {
         this.imageId = imageId;
     }
 
+    
+
     public GlanceUpdateImageMemberRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
@@ -75,6 +77,8 @@ public class GlanceUpdateImageMemberRequest  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    
 
     public GlanceUpdateImageMemberRequest withBody(GlanceUpdateImageMemberRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class GlanceUpdateImageMemberRequest  {
     public void setBody(GlanceUpdateImageMemberRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -27,7 +27,7 @@ public class ShowBuiltInPolicyDefinitionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh-cn";
+    private String xLanguage;
 
     public ShowBuiltInPolicyDefinitionRequest withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
@@ -48,6 +48,8 @@ public class ShowBuiltInPolicyDefinitionRequest  {
     public void setPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
     }
+
+    
 
     public ShowBuiltInPolicyDefinitionRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -70,6 +72,9 @@ public class ShowBuiltInPolicyDefinitionRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

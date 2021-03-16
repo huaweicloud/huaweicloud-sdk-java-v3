@@ -28,7 +28,7 @@ public class CheckApiGroupsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiGroupCheck body = null;
+    private ApiGroupCheck body;
 
     public CheckApiGroupsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CheckApiGroupsV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CheckApiGroupsV2Request withBody(ApiGroupCheck body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CheckApiGroupsV2Request  {
     public void setBody(ApiGroupCheck body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class ShowDeviceGroupRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public ShowDeviceGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -68,6 +70,9 @@ public class ShowDeviceGroupRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

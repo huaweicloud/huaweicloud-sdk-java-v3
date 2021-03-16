@@ -229,6 +229,8 @@ public class CreateRuleRequestBody  {
         this.name = name;
     }
 
+    
+
     public CreateRuleRequestBody withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -248,6 +250,8 @@ public class CreateRuleRequestBody  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public CreateRuleRequestBody withDescription(String description) {
         this.description = description;
@@ -269,6 +273,8 @@ public class CreateRuleRequestBody  {
         this.description = description;
     }
 
+    
+
     public CreateRuleRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -289,6 +295,8 @@ public class CreateRuleRequestBody  {
         this.status = status;
     }
 
+    
+
     public CreateRuleRequestBody withDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
         return this;
@@ -308,6 +316,9 @@ public class CreateRuleRequestBody  {
     public void setDataParsingStatus(DataParsingStatusEnum dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

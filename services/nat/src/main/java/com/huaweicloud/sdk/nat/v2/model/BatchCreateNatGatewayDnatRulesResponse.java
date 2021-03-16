@@ -35,9 +35,6 @@ public class BatchCreateNatGatewayDnatRulesResponse extends SdkResponse {
 
     
     public BatchCreateNatGatewayDnatRulesResponse addDnatRulesItem(NatGatewayDnatRuleResponseBody dnatRulesItem) {
-        if (this.dnatRules == null) {
-            this.dnatRules = new ArrayList<>();
-        }
         this.dnatRules.add(dnatRulesItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class BatchCreateNatGatewayDnatRulesResponse extends SdkResponse {
     public void setDnatRules(List<NatGatewayDnatRuleResponseBody> dnatRules) {
         this.dnatRules = dnatRules;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

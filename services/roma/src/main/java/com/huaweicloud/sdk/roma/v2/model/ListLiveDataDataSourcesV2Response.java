@@ -61,6 +61,8 @@ public class ListLiveDataDataSourcesV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListLiveDataDataSourcesV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListLiveDataDataSourcesV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListLiveDataDataSourcesV2Response withDataSources(List<LdDatasourceInfo> dataSources) {
         this.dataSources = dataSources;
         return this;
@@ -88,9 +92,6 @@ public class ListLiveDataDataSourcesV2Response extends SdkResponse {
 
     
     public ListLiveDataDataSourcesV2Response addDataSourcesItem(LdDatasourceInfo dataSourcesItem) {
-        if (this.dataSources == null) {
-            this.dataSources = new ArrayList<>();
-        }
         this.dataSources.add(dataSourcesItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListLiveDataDataSourcesV2Response extends SdkResponse {
     public void setDataSources(List<LdDatasourceInfo> dataSources) {
         this.dataSources = dataSources;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

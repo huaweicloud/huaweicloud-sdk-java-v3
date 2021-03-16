@@ -21,7 +21,7 @@ public class ListCountiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_cn";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,7 +39,7 @@ public class ListCountiesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit;
 
     public ListCountiesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -63,6 +63,8 @@ public class ListCountiesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListCountiesRequest withCityCode(String cityCode) {
         this.cityCode = cityCode;
         return this;
@@ -82,6 +84,8 @@ public class ListCountiesRequest  {
     public void setCityCode(String cityCode) {
         this.cityCode = cityCode;
     }
+
+    
 
     public ListCountiesRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -105,6 +109,8 @@ public class ListCountiesRequest  {
         this.offset = offset;
     }
 
+    
+
     public ListCountiesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -126,6 +132,9 @@ public class ListCountiesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

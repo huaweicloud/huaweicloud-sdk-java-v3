@@ -55,6 +55,8 @@ public class RepositoryInfo  {
         this.name = name;
     }
 
+    
+
     public RepositoryInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -75,6 +77,8 @@ public class RepositoryInfo  {
         this.projectId = projectId;
     }
 
+    
+
     public RepositoryInfo withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -94,6 +98,9 @@ public class RepositoryInfo  {
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

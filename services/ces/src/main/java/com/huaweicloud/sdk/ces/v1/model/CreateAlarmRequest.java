@@ -22,7 +22,7 @@ public class CreateAlarmRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAlarmRequestBody body = null;
+    private CreateAlarmRequestBody body;
 
     public CreateAlarmRequest withBody(CreateAlarmRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateAlarmRequest  {
     public void setBody(CreateAlarmRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

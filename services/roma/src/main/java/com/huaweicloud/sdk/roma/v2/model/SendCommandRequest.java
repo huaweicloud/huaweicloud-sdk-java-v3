@@ -34,7 +34,7 @@ public class SendCommandRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SendCommandRequestBody body = null;
+    private SendCommandRequestBody body;
 
     public SendCommandRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -55,6 +55,8 @@ public class SendCommandRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public SendCommandRequest withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
@@ -77,6 +79,8 @@ public class SendCommandRequest  {
     public void setDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
     }
+
+    
 
     public SendCommandRequest withBody(SendCommandRequestBody body) {
         this.body = body;
@@ -104,6 +108,9 @@ public class SendCommandRequest  {
     public void setBody(SendCommandRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

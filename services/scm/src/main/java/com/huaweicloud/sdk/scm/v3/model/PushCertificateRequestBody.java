@@ -49,6 +49,8 @@ public class PushCertificateRequestBody  {
         this.targetProject = targetProject;
     }
 
+    
+
     public PushCertificateRequestBody withTargetService(String targetService) {
         this.targetService = targetService;
         return this;
@@ -68,6 +70,9 @@ public class PushCertificateRequestBody  {
     public void setTargetService(String targetService) {
         this.targetService = targetService;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

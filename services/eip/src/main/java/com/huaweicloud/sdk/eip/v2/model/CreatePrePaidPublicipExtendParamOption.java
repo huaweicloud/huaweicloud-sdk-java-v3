@@ -105,7 +105,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charge_mode")
     
-    private ChargeModeEnum chargeMode = ChargeModeEnum.POSTPAID;
+    private ChargeModeEnum chargeMode;
     /**
      * 功能说明：订购资源的周期类型（包年、包月等）  取值范围：  month-月  year-年  约束：如果用包周期共享带宽创建时（即携带共享带宽id创建弹性公网IP）此字段可不填。付费方式是预付费且不是使用共享带宽创建IP时，该字段必选；  使用共享带宽创建IP时，带宽资源到期时间与IP的到期时间相同。
      */
@@ -201,13 +201,13 @@ public class CreatePrePaidPublicipExtendParamOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_renew")
     
-    private Boolean isAutoRenew = false;
+    private Boolean isAutoRenew;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_auto_pay")
     
-    private Boolean isAutoPay = false;
+    private Boolean isAutoPay;
 
     public CreatePrePaidPublicipExtendParamOption withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
@@ -229,6 +229,8 @@ public class CreatePrePaidPublicipExtendParamOption  {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public CreatePrePaidPublicipExtendParamOption withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
@@ -248,6 +250,8 @@ public class CreatePrePaidPublicipExtendParamOption  {
     public void setPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
     }
+
+    
 
     public CreatePrePaidPublicipExtendParamOption withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
@@ -271,6 +275,8 @@ public class CreatePrePaidPublicipExtendParamOption  {
         this.periodNum = periodNum;
     }
 
+    
+
     public CreatePrePaidPublicipExtendParamOption withIsAutoRenew(Boolean isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
@@ -291,6 +297,8 @@ public class CreatePrePaidPublicipExtendParamOption  {
         this.isAutoRenew = isAutoRenew;
     }
 
+    
+
     public CreatePrePaidPublicipExtendParamOption withIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -310,6 +318,9 @@ public class CreatePrePaidPublicipExtendParamOption  {
     public void setIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

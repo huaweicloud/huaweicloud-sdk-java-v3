@@ -67,6 +67,8 @@ public class ShowQuotasRespQuotasResources  {
         this.type = type;
     }
 
+    
+
     public ShowQuotasRespQuotasResources withQuota(Integer quota) {
         this.quota = quota;
         return this;
@@ -86,6 +88,8 @@ public class ShowQuotasRespQuotasResources  {
     public void setQuota(Integer quota) {
         this.quota = quota;
     }
+
+    
 
     public ShowQuotasRespQuotasResources withUsed(Integer used) {
         this.used = used;
@@ -107,6 +111,8 @@ public class ShowQuotasRespQuotasResources  {
         this.used = used;
     }
 
+    
+
     public ShowQuotasRespQuotasResources withMin(Integer min) {
         this.min = min;
         return this;
@@ -127,6 +133,8 @@ public class ShowQuotasRespQuotasResources  {
         this.min = min;
     }
 
+    
+
     public ShowQuotasRespQuotasResources withMax(Integer max) {
         this.max = max;
         return this;
@@ -146,6 +154,9 @@ public class ShowQuotasRespQuotasResources  {
     public void setMax(Integer max) {
         this.max = max;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

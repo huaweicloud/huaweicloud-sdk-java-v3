@@ -60,6 +60,8 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsResponse withRecords(List<MonthlyBillRecord> records) {
         this.records = records;
         return this;
@@ -67,9 +69,6 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
 
     
     public ListCustomerBillsFeeRecordsResponse addRecordsItem(MonthlyBillRecord recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
         this.records.add(recordsItem);
         return this;
     }
@@ -94,6 +93,8 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
         this.records = records;
     }
 
+    
+
     public ListCustomerBillsFeeRecordsResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -113,6 +114,9 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

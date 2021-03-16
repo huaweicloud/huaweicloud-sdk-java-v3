@@ -42,6 +42,9 @@ public class CancelSubscriptionRequest  {
     public void setSubscriptionUrn(String subscriptionUrn) {
         this.subscriptionUrn = subscriptionUrn;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

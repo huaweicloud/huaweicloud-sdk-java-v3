@@ -41,9 +41,6 @@ public class ShowSqlExecutionPlanResponse extends SdkResponse {
 
     
     public ShowSqlExecutionPlanResponse addExecutionPlansItem(ExecutionPlan executionPlansItem) {
-        if (this.executionPlans == null) {
-            this.executionPlans = new ArrayList<>();
-        }
         this.executionPlans.add(executionPlansItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ShowSqlExecutionPlanResponse extends SdkResponse {
         this.executionPlans = executionPlans;
     }
 
+    
+
     public ShowSqlExecutionPlanResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
@@ -87,6 +86,9 @@ public class ShowSqlExecutionPlanResponse extends SdkResponse {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

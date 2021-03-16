@@ -28,7 +28,7 @@ public class ListIssuesV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListIssueRequestV4 body = null;
+    private ListIssueRequestV4 body;
 
     public ListIssuesV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -49,6 +49,8 @@ public class ListIssuesV4Request  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public ListIssuesV4Request withBody(ListIssueRequestV4 body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ListIssuesV4Request  {
     public void setBody(ListIssueRequestV4 body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class CreateEnvironmentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EnvironmentCreate body = null;
+    private EnvironmentCreate body;
 
     public CreateEnvironmentRequest withBody(EnvironmentCreate body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateEnvironmentRequest  {
     public void setBody(EnvironmentCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

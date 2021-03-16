@@ -49,6 +49,8 @@ public class DiscountItemV2  {
         this.discountType = discountType;
     }
 
+    
+
     public DiscountItemV2 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
@@ -68,6 +70,9 @@ public class DiscountItemV2  {
     public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

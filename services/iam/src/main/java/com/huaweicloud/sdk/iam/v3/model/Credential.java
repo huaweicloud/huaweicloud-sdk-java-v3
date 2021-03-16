@@ -61,6 +61,8 @@ public class Credential  {
         this.expiresAt = expiresAt;
     }
 
+    
+
     public Credential withAccess(String access) {
         this.access = access;
         return this;
@@ -80,6 +82,8 @@ public class Credential  {
     public void setAccess(String access) {
         this.access = access;
     }
+
+    
 
     public Credential withSecret(String secret) {
         this.secret = secret;
@@ -101,6 +105,8 @@ public class Credential  {
         this.secret = secret;
     }
 
+    
+
     public Credential withSecuritytoken(String securitytoken) {
         this.securitytoken = securitytoken;
         return this;
@@ -120,6 +126,9 @@ public class Credential  {
     public void setSecuritytoken(String securitytoken) {
         this.securitytoken = securitytoken;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

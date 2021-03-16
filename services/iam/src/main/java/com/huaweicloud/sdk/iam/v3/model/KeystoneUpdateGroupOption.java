@@ -55,6 +55,8 @@ public class KeystoneUpdateGroupOption  {
         this.description = description;
     }
 
+    
+
     public KeystoneUpdateGroupOption withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -75,6 +77,8 @@ public class KeystoneUpdateGroupOption  {
         this.domainId = domainId;
     }
 
+    
+
     public KeystoneUpdateGroupOption withName(String name) {
         this.name = name;
         return this;
@@ -94,6 +98,9 @@ public class KeystoneUpdateGroupOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

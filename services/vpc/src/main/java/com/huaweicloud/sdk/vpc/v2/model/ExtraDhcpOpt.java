@@ -49,6 +49,8 @@ public class ExtraDhcpOpt  {
         this.optName = optName;
     }
 
+    
+
     public ExtraDhcpOpt withOptValue(String optValue) {
         this.optValue = optValue;
         return this;
@@ -68,6 +70,9 @@ public class ExtraDhcpOpt  {
     public void setOptValue(String optValue) {
         this.optValue = optValue;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

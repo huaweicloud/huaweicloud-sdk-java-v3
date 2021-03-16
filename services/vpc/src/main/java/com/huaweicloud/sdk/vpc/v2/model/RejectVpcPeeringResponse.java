@@ -143,25 +143,25 @@ public class RejectVpcPeeringResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="request_vpc_info")
     
-    private VpcInfo requestVpcInfo = null;
+    private VpcInfo requestVpcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="accept_vpc_info")
     
-    private VpcInfo acceptVpcInfo = null;
+    private VpcInfo acceptVpcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -189,6 +189,8 @@ public class RejectVpcPeeringResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public RejectVpcPeeringResponse withName(String name) {
         this.name = name;
         return this;
@@ -209,6 +211,8 @@ public class RejectVpcPeeringResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public RejectVpcPeeringResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -228,6 +232,8 @@ public class RejectVpcPeeringResponse extends SdkResponse {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public RejectVpcPeeringResponse withRequestVpcInfo(VpcInfo requestVpcInfo) {
         this.requestVpcInfo = requestVpcInfo;
@@ -256,6 +262,8 @@ public class RejectVpcPeeringResponse extends SdkResponse {
         this.requestVpcInfo = requestVpcInfo;
     }
 
+    
+
     public RejectVpcPeeringResponse withAcceptVpcInfo(VpcInfo acceptVpcInfo) {
         this.acceptVpcInfo = acceptVpcInfo;
         return this;
@@ -283,6 +291,8 @@ public class RejectVpcPeeringResponse extends SdkResponse {
         this.acceptVpcInfo = acceptVpcInfo;
     }
 
+    
+
     public RejectVpcPeeringResponse withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -302,6 +312,8 @@ public class RejectVpcPeeringResponse extends SdkResponse {
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public RejectVpcPeeringResponse withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
@@ -323,6 +335,8 @@ public class RejectVpcPeeringResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public RejectVpcPeeringResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -342,6 +356,9 @@ public class RejectVpcPeeringResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

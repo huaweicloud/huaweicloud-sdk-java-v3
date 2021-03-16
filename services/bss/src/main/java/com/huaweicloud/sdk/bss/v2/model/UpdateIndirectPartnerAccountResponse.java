@@ -44,6 +44,9 @@ public class UpdateIndirectPartnerAccountResponse extends SdkResponse {
     public void setTransferId(String transferId) {
         this.transferId = transferId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

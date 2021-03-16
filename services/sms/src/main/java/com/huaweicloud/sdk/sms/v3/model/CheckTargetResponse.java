@@ -44,6 +44,9 @@ public class CheckTargetResponse extends SdkResponse {
     public void setCheckresult(Boolean checkresult) {
         this.checkresult = checkresult;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class AddPublicipsIntoSharedBandwidthResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private BandwidthRespInsert bandwidth = null;
+    private BandwidthRespInsert bandwidth;
 
     public AddPublicipsIntoSharedBandwidthResponse withBandwidth(BandwidthRespInsert bandwidth) {
         this.bandwidth = bandwidth;
@@ -52,6 +52,9 @@ public class AddPublicipsIntoSharedBandwidthResponse extends SdkResponse {
     public void setBandwidth(BandwidthRespInsert bandwidth) {
         this.bandwidth = bandwidth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

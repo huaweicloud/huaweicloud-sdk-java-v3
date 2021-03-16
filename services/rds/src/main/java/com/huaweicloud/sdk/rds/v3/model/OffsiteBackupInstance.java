@@ -49,6 +49,8 @@ public class OffsiteBackupInstance  {
         this.offset = offset;
     }
 
+    
+
     public OffsiteBackupInstance withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -68,6 +70,9 @@ public class OffsiteBackupInstance  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

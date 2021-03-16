@@ -23,7 +23,7 @@ public class DeleteIds  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ids")
     
-    private List<String> ids = new ArrayList<>();
+    private List<String> ids = null;
     
     public DeleteIds withIds(List<String> ids) {
         this.ids = ids;
@@ -55,6 +55,9 @@ public class DeleteIds  {
     public void setIds(List<String> ids) {
         this.ids = ids;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

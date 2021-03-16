@@ -90,7 +90,7 @@ public class CreateScalingGroupRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="networks")
     
-    private List<Networks> networks = new ArrayList<>();
+    private List<Networks> networks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -520,6 +520,8 @@ public class CreateScalingGroupRequestBody  {
         this.scalingGroupName = scalingGroupName;
     }
 
+    
+
     public CreateScalingGroupRequestBody withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
         return this;
@@ -539,6 +541,8 @@ public class CreateScalingGroupRequestBody  {
     public void setScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
     }
+
+    
 
     public CreateScalingGroupRequestBody withDesireInstanceNumber(Integer desireInstanceNumber) {
         this.desireInstanceNumber = desireInstanceNumber;
@@ -561,6 +565,8 @@ public class CreateScalingGroupRequestBody  {
         this.desireInstanceNumber = desireInstanceNumber;
     }
 
+    
+
     public CreateScalingGroupRequestBody withMinInstanceNumber(Integer minInstanceNumber) {
         this.minInstanceNumber = minInstanceNumber;
         return this;
@@ -582,6 +588,8 @@ public class CreateScalingGroupRequestBody  {
         this.minInstanceNumber = minInstanceNumber;
     }
 
+    
+
     public CreateScalingGroupRequestBody withMaxInstanceNumber(Integer maxInstanceNumber) {
         this.maxInstanceNumber = maxInstanceNumber;
         return this;
@@ -602,6 +610,8 @@ public class CreateScalingGroupRequestBody  {
     public void setMaxInstanceNumber(Integer maxInstanceNumber) {
         this.maxInstanceNumber = maxInstanceNumber;
     }
+
+    
 
     public CreateScalingGroupRequestBody withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
@@ -625,6 +635,8 @@ public class CreateScalingGroupRequestBody  {
         this.coolDownTime = coolDownTime;
     }
 
+    
+
     public CreateScalingGroupRequestBody withLbListenerId(String lbListenerId) {
         this.lbListenerId = lbListenerId;
         return this;
@@ -645,6 +657,8 @@ public class CreateScalingGroupRequestBody  {
         this.lbListenerId = lbListenerId;
     }
 
+    
+
     public CreateScalingGroupRequestBody withLbaasListeners(List<LbaasListeners> lbaasListeners) {
         this.lbaasListeners = lbaasListeners;
         return this;
@@ -652,9 +666,6 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addLbaasListenersItem(LbaasListeners lbaasListenersItem) {
-        if (this.lbaasListeners == null) {
-            this.lbaasListeners = new ArrayList<>();
-        }
         this.lbaasListeners.add(lbaasListenersItem);
         return this;
     }
@@ -679,6 +690,8 @@ public class CreateScalingGroupRequestBody  {
         this.lbaasListeners = lbaasListeners;
     }
 
+    
+
     public CreateScalingGroupRequestBody withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
@@ -686,9 +699,6 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addAvailableZonesItem(String availableZonesItem) {
-        if (this.availableZones == null) {
-            this.availableZones = new ArrayList<>();
-        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
@@ -712,6 +722,8 @@ public class CreateScalingGroupRequestBody  {
     public void setAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
     }
+
+    
 
     public CreateScalingGroupRequestBody withNetworks(List<Networks> networks) {
         this.networks = networks;
@@ -744,6 +756,8 @@ public class CreateScalingGroupRequestBody  {
         this.networks = networks;
     }
 
+    
+
     public CreateScalingGroupRequestBody withSecurityGroups(List<SecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -751,9 +765,6 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
-        if (this.securityGroups == null) {
-            this.securityGroups = new ArrayList<>();
-        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -778,6 +789,8 @@ public class CreateScalingGroupRequestBody  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public CreateScalingGroupRequestBody withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -797,6 +810,8 @@ public class CreateScalingGroupRequestBody  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
 
     public CreateScalingGroupRequestBody withHealthPeriodicAuditMethod(HealthPeriodicAuditMethodEnum healthPeriodicAuditMethod) {
         this.healthPeriodicAuditMethod = healthPeriodicAuditMethod;
@@ -818,6 +833,8 @@ public class CreateScalingGroupRequestBody  {
         this.healthPeriodicAuditMethod = healthPeriodicAuditMethod;
     }
 
+    
+
     public CreateScalingGroupRequestBody withHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
         return this;
@@ -837,6 +854,8 @@ public class CreateScalingGroupRequestBody  {
     public void setHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
     }
+
+    
 
     public CreateScalingGroupRequestBody withHealthPeriodicAuditGracePeriod(Integer healthPeriodicAuditGracePeriod) {
         this.healthPeriodicAuditGracePeriod = healthPeriodicAuditGracePeriod;
@@ -860,6 +879,8 @@ public class CreateScalingGroupRequestBody  {
         this.healthPeriodicAuditGracePeriod = healthPeriodicAuditGracePeriod;
     }
 
+    
+
     public CreateScalingGroupRequestBody withInstanceTerminatePolicy(InstanceTerminatePolicyEnum instanceTerminatePolicy) {
         this.instanceTerminatePolicy = instanceTerminatePolicy;
         return this;
@@ -880,6 +901,8 @@ public class CreateScalingGroupRequestBody  {
         this.instanceTerminatePolicy = instanceTerminatePolicy;
     }
 
+    
+
     public CreateScalingGroupRequestBody withNotifications(List<String> notifications) {
         this.notifications = notifications;
         return this;
@@ -887,9 +910,6 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addNotificationsItem(String notificationsItem) {
-        if (this.notifications == null) {
-            this.notifications = new ArrayList<>();
-        }
         this.notifications.add(notificationsItem);
         return this;
     }
@@ -914,6 +934,8 @@ public class CreateScalingGroupRequestBody  {
         this.notifications = notifications;
     }
 
+    
+
     public CreateScalingGroupRequestBody withDeletePublicip(Boolean deletePublicip) {
         this.deletePublicip = deletePublicip;
         return this;
@@ -933,6 +955,8 @@ public class CreateScalingGroupRequestBody  {
     public void setDeletePublicip(Boolean deletePublicip) {
         this.deletePublicip = deletePublicip;
     }
+
+    
 
     public CreateScalingGroupRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -954,6 +978,8 @@ public class CreateScalingGroupRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public CreateScalingGroupRequestBody withMultiAzPriorityPolicy(MultiAzPriorityPolicyEnum multiAzPriorityPolicy) {
         this.multiAzPriorityPolicy = multiAzPriorityPolicy;
         return this;
@@ -973,6 +999,9 @@ public class CreateScalingGroupRequestBody  {
     public void setMultiAzPriorityPolicy(MultiAzPriorityPolicyEnum multiAzPriorityPolicy) {
         this.multiAzPriorityPolicy = multiAzPriorityPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

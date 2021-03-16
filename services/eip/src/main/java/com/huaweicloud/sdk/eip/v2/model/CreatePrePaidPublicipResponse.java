@@ -24,7 +24,7 @@ public class CreatePrePaidPublicipResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private PublicipCreateResp publicip = null;
+    private PublicipCreateResp publicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -65,6 +65,8 @@ public class CreatePrePaidPublicipResponse extends SdkResponse {
         this.publicip = publicip;
     }
 
+    
+
     public CreatePrePaidPublicipResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -85,6 +87,8 @@ public class CreatePrePaidPublicipResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    
+
     public CreatePrePaidPublicipResponse withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -104,6 +108,9 @@ public class CreatePrePaidPublicipResponse extends SdkResponse {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

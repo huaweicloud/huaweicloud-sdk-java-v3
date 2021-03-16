@@ -54,6 +54,8 @@ public class ListQueuesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListQueuesResponse withQueues(List<ListQueuesRespQueues> queues) {
         this.queues = queues;
         return this;
@@ -61,9 +63,6 @@ public class ListQueuesResponse extends SdkResponse {
 
     
     public ListQueuesResponse addQueuesItem(ListQueuesRespQueues queuesItem) {
-        if (this.queues == null) {
-            this.queues = new ArrayList<>();
-        }
         this.queues.add(queuesItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListQueuesResponse extends SdkResponse {
     public void setQueues(List<ListQueuesRespQueues> queues) {
         this.queues = queues;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

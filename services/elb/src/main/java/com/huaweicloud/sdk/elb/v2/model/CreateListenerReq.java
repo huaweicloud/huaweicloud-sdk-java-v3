@@ -198,7 +198,7 @@ public class CreateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="insert_headers")
     
-    private InsertHeader insertHeaders = null;
+    private InsertHeader insertHeaders;
     /**
      * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。  取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略。
      */
@@ -316,6 +316,8 @@ public class CreateListenerReq  {
         this.loadbalancerId = loadbalancerId;
     }
 
+    
+
     public CreateListenerReq withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -335,6 +337,8 @@ public class CreateListenerReq  {
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
     }
+
+    
 
     public CreateListenerReq withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
@@ -358,6 +362,8 @@ public class CreateListenerReq  {
         this.protocolPort = protocolPort;
     }
 
+    
+
     public CreateListenerReq withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -377,6 +383,8 @@ public class CreateListenerReq  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public CreateListenerReq withName(String name) {
         this.name = name;
@@ -398,6 +406,8 @@ public class CreateListenerReq  {
         this.name = name;
     }
 
+    
+
     public CreateListenerReq withDescription(String description) {
         this.description = description;
         return this;
@@ -418,6 +428,8 @@ public class CreateListenerReq  {
         this.description = description;
     }
 
+    
+
     public CreateListenerReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -437,6 +449,8 @@ public class CreateListenerReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreateListenerReq withConnectionLimit(Integer connectionLimit) {
         this.connectionLimit = connectionLimit;
@@ -459,6 +473,8 @@ public class CreateListenerReq  {
         this.connectionLimit = connectionLimit;
     }
 
+    
+
     public CreateListenerReq withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
@@ -478,6 +494,8 @@ public class CreateListenerReq  {
     public void setHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
     }
+
+    
 
     public CreateListenerReq withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
@@ -499,6 +517,8 @@ public class CreateListenerReq  {
         this.defaultPoolId = defaultPoolId;
     }
 
+    
+
     public CreateListenerReq withDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
@@ -518,6 +538,8 @@ public class CreateListenerReq  {
     public void setDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
+
+    
 
     public CreateListenerReq withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
@@ -539,6 +561,8 @@ public class CreateListenerReq  {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
 
+    
+
     public CreateListenerReq withSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
         return this;
@@ -546,9 +570,6 @@ public class CreateListenerReq  {
 
     
     public CreateListenerReq addSniContainerRefsItem(String sniContainerRefsItem) {
-        if (this.sniContainerRefs == null) {
-            this.sniContainerRefs = new ArrayList<>();
-        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
@@ -572,6 +593,8 @@ public class CreateListenerReq  {
     public void setSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
     }
+
+    
 
     public CreateListenerReq withInsertHeaders(InsertHeader insertHeaders) {
         this.insertHeaders = insertHeaders;
@@ -600,6 +623,8 @@ public class CreateListenerReq  {
         this.insertHeaders = insertHeaders;
     }
 
+    
+
     public CreateListenerReq withTlsCiphersPolicy(TlsCiphersPolicyEnum tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
@@ -619,6 +644,9 @@ public class CreateListenerReq  {
     public void setTlsCiphersPolicy(TlsCiphersPolicyEnum tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -62,6 +62,8 @@ public class MemberInfo  {
         this.host = host;
     }
 
+    
+
     public MemberInfo withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -81,6 +83,8 @@ public class MemberInfo  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    
 
     public MemberInfo withEcsId(String ecsId) {
         this.ecsId = ecsId;
@@ -102,6 +106,8 @@ public class MemberInfo  {
         this.ecsId = ecsId;
     }
 
+    
+
     public MemberInfo withEcsName(String ecsName) {
         this.ecsName = ecsName;
         return this;
@@ -121,6 +127,9 @@ public class MemberInfo  {
     public void setEcsName(String ecsName) {
         this.ecsName = ecsName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

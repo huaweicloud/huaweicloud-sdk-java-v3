@@ -21,7 +21,7 @@ public class PolicyParameterValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    private Object value = null;
+    private Object value;
 
     public PolicyParameterValue withValue(Object value) {
         this.value = value;
@@ -42,6 +42,9 @@ public class PolicyParameterValue  {
     public void setValue(Object value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

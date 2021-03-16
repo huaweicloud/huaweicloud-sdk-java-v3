@@ -22,7 +22,7 @@ public class UpdatePortRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    private UpdatePortOption port = null;
+    private UpdatePortOption port;
 
     public UpdatePortRequestBody withPort(UpdatePortOption port) {
         this.port = port;
@@ -50,6 +50,9 @@ public class UpdatePortRequestBody  {
     public void setPort(UpdatePortOption port) {
         this.port = port;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

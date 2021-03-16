@@ -121,7 +121,7 @@ public class DigitalWatermark  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="profile")
     
-    private ProfileEnum profile = ProfileEnum.MEDIUM;
+    private ProfileEnum profile;
 
     public DigitalWatermark withProfile(ProfileEnum profile) {
         this.profile = profile;
@@ -142,6 +142,9 @@ public class DigitalWatermark  {
     public void setProfile(ProfileEnum profile) {
         this.profile = profile;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

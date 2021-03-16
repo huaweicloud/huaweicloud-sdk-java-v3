@@ -49,6 +49,8 @@ public class ServicesInfo  {
         this.id = id;
     }
 
+    
+
     public ServicesInfo withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +70,9 @@ public class ServicesInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class CreateCompareTaskResult  {
         this.compareTaskId = compareTaskId;
     }
 
+    
+
     public CreateCompareTaskResult withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -75,6 +77,8 @@ public class CreateCompareTaskResult  {
         this.errorCode = errorCode;
     }
 
+    
+
     public CreateCompareTaskResult withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -94,6 +98,9 @@ public class CreateCompareTaskResult  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

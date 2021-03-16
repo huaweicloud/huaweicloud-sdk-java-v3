@@ -28,7 +28,7 @@ public class AddonInstanceStatus  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currentVersion")
     
-    private Versions currentVersion = null;
+    private Versions currentVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -171,6 +171,8 @@ public class AddonInstanceStatus  {
         this.currentVersion = currentVersion;
     }
 
+    
+
     public AddonInstanceStatus withMessage(String message) {
         this.message = message;
         return this;
@@ -190,6 +192,8 @@ public class AddonInstanceStatus  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
 
     public AddonInstanceStatus withReason(String reason) {
         this.reason = reason;
@@ -211,6 +215,8 @@ public class AddonInstanceStatus  {
         this.reason = reason;
     }
 
+    
+
     public AddonInstanceStatus withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -231,6 +237,8 @@ public class AddonInstanceStatus  {
         this.status = status;
     }
 
+    
+
     public AddonInstanceStatus withTargetVersions(List<String> targetVersions) {
         this.targetVersions = targetVersions;
         return this;
@@ -238,9 +246,6 @@ public class AddonInstanceStatus  {
 
     
     public AddonInstanceStatus addTargetVersionsItem(String targetVersionsItem) {
-        if (this.targetVersions == null) {
-            this.targetVersions = new ArrayList<>();
-        }
         this.targetVersions.add(targetVersionsItem);
         return this;
     }
@@ -264,6 +269,9 @@ public class AddonInstanceStatus  {
     public void setTargetVersions(List<String> targetVersions) {
         this.targetVersions = targetVersions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

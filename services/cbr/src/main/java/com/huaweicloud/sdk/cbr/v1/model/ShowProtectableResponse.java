@@ -24,7 +24,7 @@ public class ShowProtectableResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    private ProtectablesResp instance = null;
+    private ProtectablesResp instance;
 
     public ShowProtectableResponse withInstance(ProtectablesResp instance) {
         this.instance = instance;
@@ -52,6 +52,9 @@ public class ShowProtectableResponse extends SdkResponse {
     public void setInstance(ProtectablesResp instance) {
         this.instance = instance;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

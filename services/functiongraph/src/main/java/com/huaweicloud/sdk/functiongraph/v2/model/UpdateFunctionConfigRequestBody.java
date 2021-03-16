@@ -395,7 +395,7 @@ public class UpdateFunctionConfigRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
-    private OffsetDateTime lastModified = null;
+    private OffsetDateTime lastModified;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -407,19 +407,19 @@ public class UpdateFunctionConfigRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_code")
     
-    private FuncCode funcCode = null;
+    private FuncCode funcCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_vpc")
     
-    private FuncVpc funcVpc = null;
+    private FuncVpc funcVpc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mount_config")
     
-    private MountConfig mountConfig = null;
+    private MountConfig mountConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -437,7 +437,7 @@ public class UpdateFunctionConfigRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="strategy_config")
     
-    private StrategyConfig strategyConfig = null;
+    private StrategyConfig strategyConfig;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -489,6 +489,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.funcUrn = funcUrn;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -508,6 +510,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setFuncName(String funcName) {
         this.funcName = funcName;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withDomainId(String domainId) {
         this.domainId = domainId;
@@ -529,6 +533,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.domainId = domainId;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -548,6 +554,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withProjectName(String projectName) {
         this.projectName = projectName;
@@ -569,6 +577,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.projectName = projectName;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withPackage(String _package) {
         this._package = _package;
         return this;
@@ -588,6 +598,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setPackage(String _package) {
         this._package = _package;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
@@ -609,6 +621,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.runtime = runtime;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -628,6 +642,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withHandler(String handler) {
         this.handler = handler;
@@ -649,6 +665,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.handler = handler;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
         return this;
@@ -668,6 +686,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withCpu(Integer cpu) {
         this.cpu = cpu;
@@ -689,6 +709,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.cpu = cpu;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
@@ -708,6 +730,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
@@ -729,6 +753,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.codeUrl = codeUrl;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
         return this;
@@ -748,6 +774,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withCodeSize(Long codeSize) {
         this.codeSize = codeSize;
@@ -769,6 +797,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.codeSize = codeSize;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -788,6 +818,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withDigest(String digest) {
         this.digest = digest;
@@ -809,6 +841,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.digest = digest;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -828,6 +862,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withImageName(String imageName) {
         this.imageName = imageName;
@@ -849,6 +885,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.imageName = imageName;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withXrole(String xrole) {
         this.xrole = xrole;
         return this;
@@ -868,6 +906,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setXrole(String xrole) {
         this.xrole = xrole;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withAppXrole(String appXrole) {
         this.appXrole = appXrole;
@@ -889,6 +929,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.appXrole = appXrole;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -908,6 +950,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withVersionDescription(String versionDescription) {
         this.versionDescription = versionDescription;
@@ -929,6 +973,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.versionDescription = versionDescription;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -949,6 +995,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.lastModified = lastModified;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withLastModifiedUtc(Long lastModifiedUtc) {
         this.lastModifiedUtc = lastModifiedUtc;
         return this;
@@ -968,6 +1016,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setLastModifiedUtc(Long lastModifiedUtc) {
         this.lastModifiedUtc = lastModifiedUtc;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
@@ -996,6 +1046,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.funcCode = funcCode;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
         return this;
@@ -1022,6 +1074,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withMountConfig(MountConfig mountConfig) {
         this.mountConfig = mountConfig;
@@ -1050,6 +1104,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.mountConfig = mountConfig;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
         return this;
@@ -1070,6 +1126,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.concurrency = concurrency;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withDependList(List<String> dependList) {
         this.dependList = dependList;
         return this;
@@ -1077,9 +1135,6 @@ public class UpdateFunctionConfigRequestBody  {
 
     
     public UpdateFunctionConfigRequestBody addDependListItem(String dependListItem) {
-        if (this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
         this.dependList.add(dependListItem);
         return this;
     }
@@ -1103,6 +1158,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setDependList(List<String> dependList) {
         this.dependList = dependList;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withStrategyConfig(StrategyConfig strategyConfig) {
         this.strategyConfig = strategyConfig;
@@ -1131,6 +1188,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.strategyConfig = strategyConfig;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withExtendConfig(String extendConfig) {
         this.extendConfig = extendConfig;
         return this;
@@ -1151,6 +1210,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.extendConfig = extendConfig;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
         return this;
@@ -1158,9 +1219,6 @@ public class UpdateFunctionConfigRequestBody  {
 
     
     public UpdateFunctionConfigRequestBody addDependenciesItem(Dependency dependenciesItem) {
-        if (this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
@@ -1185,6 +1243,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.dependencies = dependencies;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
         return this;
@@ -1204,6 +1264,8 @@ public class UpdateFunctionConfigRequestBody  {
     public void setInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
     }
+
+    
 
     public UpdateFunctionConfigRequestBody withInitializerTimeout(Integer initializerTimeout) {
         this.initializerTimeout = initializerTimeout;
@@ -1225,6 +1287,8 @@ public class UpdateFunctionConfigRequestBody  {
         this.initializerTimeout = initializerTimeout;
     }
 
+    
+
     public UpdateFunctionConfigRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -1244,6 +1308,9 @@ public class UpdateFunctionConfigRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

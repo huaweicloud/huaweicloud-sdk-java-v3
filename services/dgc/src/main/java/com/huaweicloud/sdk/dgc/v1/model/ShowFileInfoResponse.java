@@ -42,9 +42,6 @@ public class ShowFileInfoResponse extends SdkResponse {
 
     
     public ShowFileInfoResponse addJobsItem(Job jobsItem) {
-        if (this.jobs == null) {
-            this.jobs = new ArrayList<>();
-        }
         this.jobs.add(jobsItem);
         return this;
     }
@@ -69,6 +66,8 @@ public class ShowFileInfoResponse extends SdkResponse {
         this.jobs = jobs;
     }
 
+    
+
     public ShowFileInfoResponse withScripts(List<Script> scripts) {
         this.scripts = scripts;
         return this;
@@ -76,9 +75,6 @@ public class ShowFileInfoResponse extends SdkResponse {
 
     
     public ShowFileInfoResponse addScriptsItem(Script scriptsItem) {
-        if (this.scripts == null) {
-            this.scripts = new ArrayList<>();
-        }
         this.scripts.add(scriptsItem);
         return this;
     }
@@ -102,6 +98,9 @@ public class ShowFileInfoResponse extends SdkResponse {
     public void setScripts(List<Script> scripts) {
         this.scripts = scripts;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

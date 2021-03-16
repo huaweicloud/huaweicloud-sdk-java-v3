@@ -363,6 +363,8 @@ public class ApiCheckInfo  {
         this.type = type;
     }
 
+    
+
     public ApiCheckInfo withName(String name) {
         this.name = name;
         return this;
@@ -382,6 +384,8 @@ public class ApiCheckInfo  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ApiCheckInfo withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -403,6 +407,8 @@ public class ApiCheckInfo  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiCheckInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -422,6 +428,8 @@ public class ApiCheckInfo  {
     public void setReqUri(String reqUri) {
         this.reqUri = reqUri;
     }
+
+    
 
     public ApiCheckInfo withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -443,6 +451,8 @@ public class ApiCheckInfo  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiCheckInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -462,6 +472,8 @@ public class ApiCheckInfo  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiCheckInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -483,6 +495,8 @@ public class ApiCheckInfo  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiCheckInfo withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -502,6 +516,9 @@ public class ApiCheckInfo  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

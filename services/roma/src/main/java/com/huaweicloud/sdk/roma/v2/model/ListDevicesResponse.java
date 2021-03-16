@@ -72,6 +72,8 @@ public class ListDevicesResponse extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListDevicesResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -91,6 +93,8 @@ public class ListDevicesResponse extends SdkResponse {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
 
     public ListDevicesResponse withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
@@ -112,6 +116,8 @@ public class ListDevicesResponse extends SdkResponse {
         this.connectAddress = connectAddress;
     }
 
+    
+
     public ListDevicesResponse withSslConnectAddress(String sslConnectAddress) {
         this.sslConnectAddress = sslConnectAddress;
         return this;
@@ -132,6 +138,8 @@ public class ListDevicesResponse extends SdkResponse {
         this.sslConnectAddress = sslConnectAddress;
     }
 
+    
+
     public ListDevicesResponse withItems(List<Device> items) {
         this.items = items;
         return this;
@@ -139,9 +147,6 @@ public class ListDevicesResponse extends SdkResponse {
 
     
     public ListDevicesResponse addItemsItem(Device itemsItem) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
         this.items.add(itemsItem);
         return this;
     }
@@ -165,6 +170,9 @@ public class ListDevicesResponse extends SdkResponse {
     public void setItems(List<Device> items) {
         this.items = items;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

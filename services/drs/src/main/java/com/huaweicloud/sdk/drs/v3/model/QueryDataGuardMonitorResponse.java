@@ -151,6 +151,8 @@ public class QueryDataGuardMonitorResponse  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withCpuUsedPercent(String cpuUsedPercent) {
         this.cpuUsedPercent = cpuUsedPercent;
         return this;
@@ -170,6 +172,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setCpuUsedPercent(String cpuUsedPercent) {
         this.cpuUsedPercent = cpuUsedPercent;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withDstDelay(Long dstDelay) {
         this.dstDelay = dstDelay;
@@ -191,6 +195,8 @@ public class QueryDataGuardMonitorResponse  {
         this.dstDelay = dstDelay;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withDstIo(String dstIo) {
         this.dstIo = dstIo;
         return this;
@@ -210,6 +216,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setDstIo(String dstIo) {
         this.dstIo = dstIo;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withDstNormal(Boolean dstNormal) {
         this.dstNormal = dstNormal;
@@ -231,6 +239,8 @@ public class QueryDataGuardMonitorResponse  {
         this.dstNormal = dstNormal;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withDstOffset(String dstOffset) {
         this.dstOffset = dstOffset;
         return this;
@@ -250,6 +260,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setDstOffset(String dstOffset) {
         this.dstOffset = dstOffset;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withDstRps(String dstRps) {
         this.dstRps = dstRps;
@@ -271,6 +283,8 @@ public class QueryDataGuardMonitorResponse  {
         this.dstRps = dstRps;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withMemUsedInMB(String memUsedInMB) {
         this.memUsedInMB = memUsedInMB;
         return this;
@@ -290,6 +304,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setMemUsedInMB(String memUsedInMB) {
         this.memUsedInMB = memUsedInMB;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withNodeMemInMB(Long nodeMemInMB) {
         this.nodeMemInMB = nodeMemInMB;
@@ -311,6 +327,8 @@ public class QueryDataGuardMonitorResponse  {
         this.nodeMemInMB = nodeMemInMB;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withNodeOffset(String nodeOffset) {
         this.nodeOffset = nodeOffset;
         return this;
@@ -330,6 +348,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setNodeOffset(String nodeOffset) {
         this.nodeOffset = nodeOffset;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withNodeVolumeInGB(Long nodeVolumeInGB) {
         this.nodeVolumeInGB = nodeVolumeInGB;
@@ -351,6 +371,8 @@ public class QueryDataGuardMonitorResponse  {
         this.nodeVolumeInGB = nodeVolumeInGB;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withSrDelay(Long srDelay) {
         this.srDelay = srDelay;
         return this;
@@ -370,6 +392,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setSrDelay(Long srDelay) {
         this.srDelay = srDelay;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withSrOffset(String srOffset) {
         this.srOffset = srOffset;
@@ -391,6 +415,8 @@ public class QueryDataGuardMonitorResponse  {
         this.srOffset = srOffset;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withSrcIo(String srcIo) {
         this.srcIo = srcIo;
         return this;
@@ -410,6 +436,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setSrcIo(String srcIo) {
         this.srcIo = srcIo;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withSrcNormal(Boolean srcNormal) {
         this.srcNormal = srcNormal;
@@ -431,6 +459,8 @@ public class QueryDataGuardMonitorResponse  {
         this.srcNormal = srcNormal;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withSrcRps(String srcRps) {
         this.srcRps = srcRps;
         return this;
@@ -450,6 +480,8 @@ public class QueryDataGuardMonitorResponse  {
     public void setSrcRps(String srcRps) {
         this.srcRps = srcRps;
     }
+
+    
 
     public QueryDataGuardMonitorResponse withTransInMB(String transInMB) {
         this.transInMB = transInMB;
@@ -471,6 +503,8 @@ public class QueryDataGuardMonitorResponse  {
         this.transInMB = transInMB;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withTransLines(String transLines) {
         this.transLines = transLines;
         return this;
@@ -491,6 +525,8 @@ public class QueryDataGuardMonitorResponse  {
         this.transLines = transLines;
     }
 
+    
+
     public QueryDataGuardMonitorResponse withVolumeUsedInGB(String volumeUsedInGB) {
         this.volumeUsedInGB = volumeUsedInGB;
         return this;
@@ -510,6 +546,9 @@ public class QueryDataGuardMonitorResponse  {
     public void setVolumeUsedInGB(String volumeUsedInGB) {
         this.volumeUsedInGB = volumeUsedInGB;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

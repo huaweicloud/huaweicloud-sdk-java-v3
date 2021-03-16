@@ -42,6 +42,9 @@ public class DeleteIpGroupRequest  {
     public void setIpgroupId(String ipgroupId) {
         this.ipgroupId = ipgroupId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

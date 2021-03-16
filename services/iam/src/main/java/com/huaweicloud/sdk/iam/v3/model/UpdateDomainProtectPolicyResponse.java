@@ -24,7 +24,7 @@ public class UpdateDomainProtectPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protect_policy")
     
-    private ProtectPolicyResult protectPolicy = null;
+    private ProtectPolicyResult protectPolicy;
 
     public UpdateDomainProtectPolicyResponse withProtectPolicy(ProtectPolicyResult protectPolicy) {
         this.protectPolicy = protectPolicy;
@@ -52,6 +52,9 @@ public class UpdateDomainProtectPolicyResponse extends SdkResponse {
     public void setProtectPolicy(ProtectPolicyResult protectPolicy) {
         this.protectPolicy = protectPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

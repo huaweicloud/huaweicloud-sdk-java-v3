@@ -67,6 +67,8 @@ public class IncidentProductCategoryV2  {
         this.incidentProductCategoryId = incidentProductCategoryId;
     }
 
+    
+
     public IncidentProductCategoryV2 withIncidentProductCategoryName(String incidentProductCategoryName) {
         this.incidentProductCategoryName = incidentProductCategoryName;
         return this;
@@ -86,6 +88,8 @@ public class IncidentProductCategoryV2  {
     public void setIncidentProductCategoryName(String incidentProductCategoryName) {
         this.incidentProductCategoryName = incidentProductCategoryName;
     }
+
+    
 
     public IncidentProductCategoryV2 withIncidentProductCategoryDesc(String incidentProductCategoryDesc) {
         this.incidentProductCategoryDesc = incidentProductCategoryDesc;
@@ -107,6 +111,8 @@ public class IncidentProductCategoryV2  {
         this.incidentProductCategoryDesc = incidentProductCategoryDesc;
     }
 
+    
+
     public IncidentProductCategoryV2 withIncidentProductCategoryAcronym(String incidentProductCategoryAcronym) {
         this.incidentProductCategoryAcronym = incidentProductCategoryAcronym;
         return this;
@@ -127,6 +133,8 @@ public class IncidentProductCategoryV2  {
         this.incidentProductCategoryAcronym = incidentProductCategoryAcronym;
     }
 
+    
+
     public IncidentProductCategoryV2 withCanUseSupportPlan(Boolean canUseSupportPlan) {
         this.canUseSupportPlan = canUseSupportPlan;
         return this;
@@ -146,6 +154,9 @@ public class IncidentProductCategoryV2  {
     public void setCanUseSupportPlan(Boolean canUseSupportPlan) {
         this.canUseSupportPlan = canUseSupportPlan;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

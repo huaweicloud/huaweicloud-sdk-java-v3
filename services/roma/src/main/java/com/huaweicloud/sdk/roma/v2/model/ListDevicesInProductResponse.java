@@ -44,6 +44,9 @@ public class ListDevicesInProductResponse extends SdkResponse {
     public void setSummary(Integer summary) {
         this.summary = summary;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

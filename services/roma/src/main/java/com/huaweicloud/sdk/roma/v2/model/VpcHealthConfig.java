@@ -202,7 +202,7 @@ public class VpcHealthConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="method")
     
-    private MethodEnum method = MethodEnum.GET;
+    private MethodEnum method;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -238,7 +238,7 @@ public class VpcHealthConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_client_ssl")
     
-    private Boolean enableClientSsl = false;
+    private Boolean enableClientSsl;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -266,6 +266,8 @@ public class VpcHealthConfig  {
         this.protocol = protocol;
     }
 
+    
+
     public VpcHealthConfig withPath(String path) {
         this.path = path;
         return this;
@@ -285,6 +287,8 @@ public class VpcHealthConfig  {
     public void setPath(String path) {
         this.path = path;
     }
+
+    
 
     public VpcHealthConfig withMethod(MethodEnum method) {
         this.method = method;
@@ -306,6 +310,8 @@ public class VpcHealthConfig  {
         this.method = method;
     }
 
+    
+
     public VpcHealthConfig withPort(Integer port) {
         this.port = port;
         return this;
@@ -325,6 +331,8 @@ public class VpcHealthConfig  {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+    
 
     public VpcHealthConfig withThresholdNormal(Integer thresholdNormal) {
         this.thresholdNormal = thresholdNormal;
@@ -346,6 +354,8 @@ public class VpcHealthConfig  {
         this.thresholdNormal = thresholdNormal;
     }
 
+    
+
     public VpcHealthConfig withThresholdAbnormal(Integer thresholdAbnormal) {
         this.thresholdAbnormal = thresholdAbnormal;
         return this;
@@ -365,6 +375,8 @@ public class VpcHealthConfig  {
     public void setThresholdAbnormal(Integer thresholdAbnormal) {
         this.thresholdAbnormal = thresholdAbnormal;
     }
+
+    
 
     public VpcHealthConfig withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -386,6 +398,8 @@ public class VpcHealthConfig  {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public VpcHealthConfig withHttpCode(String httpCode) {
         this.httpCode = httpCode;
         return this;
@@ -405,6 +419,8 @@ public class VpcHealthConfig  {
     public void setHttpCode(String httpCode) {
         this.httpCode = httpCode;
     }
+
+    
 
     public VpcHealthConfig withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
@@ -426,6 +442,8 @@ public class VpcHealthConfig  {
         this.enableClientSsl = enableClientSsl;
     }
 
+    
+
     public VpcHealthConfig withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -445,6 +463,9 @@ public class VpcHealthConfig  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

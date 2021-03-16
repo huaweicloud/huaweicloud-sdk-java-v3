@@ -61,6 +61,8 @@ public class ListVpcChannelsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListVpcChannelsV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListVpcChannelsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListVpcChannelsV2Response withVpcChannels(List<VpcChannelInfo> vpcChannels) {
         this.vpcChannels = vpcChannels;
         return this;
@@ -88,9 +92,6 @@ public class ListVpcChannelsV2Response extends SdkResponse {
 
     
     public ListVpcChannelsV2Response addVpcChannelsItem(VpcChannelInfo vpcChannelsItem) {
-        if (this.vpcChannels == null) {
-            this.vpcChannels = new ArrayList<>();
-        }
         this.vpcChannels.add(vpcChannelsItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListVpcChannelsV2Response extends SdkResponse {
     public void setVpcChannels(List<VpcChannelInfo> vpcChannels) {
         this.vpcChannels = vpcChannels;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,7 +22,7 @@ public class ListSkuInventoriesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private QuerySkuInventoriesReq body = null;
+    private QuerySkuInventoriesReq body;
 
     public ListSkuInventoriesRequest withBody(QuerySkuInventoriesReq body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class ListSkuInventoriesRequest  {
     public void setBody(QuerySkuInventoriesReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

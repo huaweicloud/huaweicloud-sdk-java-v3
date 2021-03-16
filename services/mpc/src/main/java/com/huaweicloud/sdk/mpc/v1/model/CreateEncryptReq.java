@@ -23,19 +23,19 @@ public class CreateEncryptReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="input")
     
-    private ObsObjInfo input = null;
+    private ObsObjInfo input;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output")
     
-    private ObsObjInfo output = null;
+    private ObsObjInfo output;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encryption")
     
-    private Encryption encryption = null;
+    private Encryption encryption;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,6 +70,8 @@ public class CreateEncryptReq  {
         this.input = input;
     }
 
+    
+
     public CreateEncryptReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
@@ -96,6 +98,8 @@ public class CreateEncryptReq  {
     public void setOutput(ObsObjInfo output) {
         this.output = output;
     }
+
+    
 
     public CreateEncryptReq withEncryption(Encryption encryption) {
         this.encryption = encryption;
@@ -124,6 +128,8 @@ public class CreateEncryptReq  {
         this.encryption = encryption;
     }
 
+    
+
     public CreateEncryptReq withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -143,6 +149,9 @@ public class CreateEncryptReq  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

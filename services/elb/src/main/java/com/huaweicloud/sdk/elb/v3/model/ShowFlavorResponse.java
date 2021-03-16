@@ -30,7 +30,7 @@ public class ShowFlavorResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    private Flavor flavor = null;
+    private Flavor flavor;
 
     public ShowFlavorResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -51,6 +51,8 @@ public class ShowFlavorResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public ShowFlavorResponse withFlavor(Flavor flavor) {
         this.flavor = flavor;
@@ -78,6 +80,9 @@ public class ShowFlavorResponse extends SdkResponse {
     public void setFlavor(Flavor flavor) {
         this.flavor = flavor;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

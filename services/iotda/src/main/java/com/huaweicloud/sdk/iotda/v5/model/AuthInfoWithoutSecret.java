@@ -21,13 +21,13 @@ public class AuthInfoWithoutSecret  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secure_access")
     
-    private Boolean secureAccess = true;
+    private Boolean secureAccess;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
-    private Integer timeout = 0;
+    private Integer timeout;
 
     public AuthInfoWithoutSecret withSecureAccess(Boolean secureAccess) {
         this.secureAccess = secureAccess;
@@ -48,6 +48,8 @@ public class AuthInfoWithoutSecret  {
     public void setSecureAccess(Boolean secureAccess) {
         this.secureAccess = secureAccess;
     }
+
+    
 
     public AuthInfoWithoutSecret withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -70,6 +72,9 @@ public class AuthInfoWithoutSecret  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

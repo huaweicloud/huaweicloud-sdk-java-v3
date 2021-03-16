@@ -182,7 +182,7 @@ public class Traces  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private UserInfo user = null;
+    private UserInfo user;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -252,6 +252,8 @@ public class Traces  {
         this.resourceId = resourceId;
     }
 
+    
+
     public Traces withTraceName(String traceName) {
         this.traceName = traceName;
         return this;
@@ -271,6 +273,8 @@ public class Traces  {
     public void setTraceName(String traceName) {
         this.traceName = traceName;
     }
+
+    
 
     public Traces withTraceRating(TraceRatingEnum traceRating) {
         this.traceRating = traceRating;
@@ -292,6 +296,8 @@ public class Traces  {
         this.traceRating = traceRating;
     }
 
+    
+
     public Traces withTraceType(String traceType) {
         this.traceType = traceType;
         return this;
@@ -311,6 +317,8 @@ public class Traces  {
     public void setTraceType(String traceType) {
         this.traceType = traceType;
     }
+
+    
 
     public Traces withRequest(String request) {
         this.request = request;
@@ -332,6 +340,8 @@ public class Traces  {
         this.request = request;
     }
 
+    
+
     public Traces withResponse(String response) {
         this.response = response;
         return this;
@@ -351,6 +361,8 @@ public class Traces  {
     public void setResponse(String response) {
         this.response = response;
     }
+
+    
 
     public Traces withCode(String code) {
         this.code = code;
@@ -372,6 +384,8 @@ public class Traces  {
         this.code = code;
     }
 
+    
+
     public Traces withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
@@ -392,6 +406,8 @@ public class Traces  {
         this.apiVersion = apiVersion;
     }
 
+    
+
     public Traces withMessage(String message) {
         this.message = message;
         return this;
@@ -411,6 +427,8 @@ public class Traces  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    
 
     public Traces withRecordTime(Long recordTime) {
         this.recordTime = recordTime;
@@ -434,6 +452,8 @@ public class Traces  {
         this.recordTime = recordTime;
     }
 
+    
+
     public Traces withTraceId(String traceId) {
         this.traceId = traceId;
         return this;
@@ -453,6 +473,8 @@ public class Traces  {
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
+
+    
 
     public Traces withTime(Long time) {
         this.time = time;
@@ -475,6 +497,8 @@ public class Traces  {
     public void setTime(Long time) {
         this.time = time;
     }
+
+    
 
     public Traces withUser(UserInfo user) {
         this.user = user;
@@ -503,6 +527,8 @@ public class Traces  {
         this.user = user;
     }
 
+    
+
     public Traces withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
@@ -522,6 +548,8 @@ public class Traces  {
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
     }
+
+    
 
     public Traces withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -543,6 +571,8 @@ public class Traces  {
         this.resourceType = resourceType;
     }
 
+    
+
     public Traces withSourceIp(String sourceIp) {
         this.sourceIp = sourceIp;
         return this;
@@ -562,6 +592,8 @@ public class Traces  {
     public void setSourceIp(String sourceIp) {
         this.sourceIp = sourceIp;
     }
+
+    
 
     public Traces withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -583,6 +615,8 @@ public class Traces  {
         this.resourceName = resourceName;
     }
 
+    
+
     public Traces withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -602,6 +636,8 @@ public class Traces  {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
 
     public Traces withLocationInfo(String locationInfo) {
         this.locationInfo = locationInfo;
@@ -623,6 +659,8 @@ public class Traces  {
         this.locationInfo = locationInfo;
     }
 
+    
+
     public Traces withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
@@ -643,6 +681,8 @@ public class Traces  {
         this.endpoint = endpoint;
     }
 
+    
+
     public Traces withResourceUrl(String resourceUrl) {
         this.resourceUrl = resourceUrl;
         return this;
@@ -662,6 +702,9 @@ public class Traces  {
     public void setResourceUrl(String resourceUrl) {
         this.resourceUrl = resourceUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -47,9 +47,6 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
 
     
     public ListCustomerselfResourceRecordsResponse addFeeRecordsItem(ResFeeRecordV2 feeRecordsItem) {
-        if (this.feeRecords == null) {
-            this.feeRecords = new ArrayList<>();
-        }
         this.feeRecords.add(feeRecordsItem);
         return this;
     }
@@ -74,6 +71,8 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
         this.feeRecords = feeRecords;
     }
 
+    
+
     public ListCustomerselfResourceRecordsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -94,6 +93,8 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    
+
     public ListCustomerselfResourceRecordsResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -113,6 +114,9 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

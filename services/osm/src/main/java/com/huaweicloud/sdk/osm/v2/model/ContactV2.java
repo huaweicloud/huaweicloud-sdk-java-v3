@@ -63,6 +63,8 @@ public class ContactV2  {
         this.contactWay = contactWay;
     }
 
+    
+
     public ContactV2 withContactValue(String contactValue) {
         this.contactValue = contactValue;
         return this;
@@ -82,6 +84,8 @@ public class ContactV2  {
     public void setContactValue(String contactValue) {
         this.contactValue = contactValue;
     }
+
+    
 
     public ContactV2 withAreaCode(String areaCode) {
         this.areaCode = areaCode;
@@ -103,6 +107,8 @@ public class ContactV2  {
         this.areaCode = areaCode;
     }
 
+    
+
     public ContactV2 withVerifiedId(String verifiedId) {
         this.verifiedId = verifiedId;
         return this;
@@ -122,6 +128,9 @@ public class ContactV2  {
     public void setVerifiedId(String verifiedId) {
         this.verifiedId = verifiedId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

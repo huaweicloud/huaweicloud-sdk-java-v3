@@ -56,6 +56,8 @@ public class BatchCreateBandwidthOption  {
         this.count = count;
     }
 
+    
+
     public BatchCreateBandwidthOption withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +78,8 @@ public class BatchCreateBandwidthOption  {
         this.name = name;
     }
 
+    
+
     public BatchCreateBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
@@ -95,6 +99,9 @@ public class BatchCreateBandwidthOption  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

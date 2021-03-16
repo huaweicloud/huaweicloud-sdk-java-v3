@@ -41,9 +41,6 @@ public class BatchChangeDataResponse extends SdkResponse {
 
     
     public BatchChangeDataResponse addResultsItem(DataTransformationResp resultsItem) {
-        if (this.results == null) {
-            this.results = new ArrayList<>();
-        }
         this.results.add(resultsItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class BatchChangeDataResponse extends SdkResponse {
         this.results = results;
     }
 
+    
+
     public BatchChangeDataResponse withCount(String count) {
         this.count = count;
         return this;
@@ -87,6 +86,9 @@ public class BatchChangeDataResponse extends SdkResponse {
     public void setCount(String count) {
         this.count = count;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

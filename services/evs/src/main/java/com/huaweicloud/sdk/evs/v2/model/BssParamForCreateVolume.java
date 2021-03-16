@@ -109,7 +109,7 @@ public class BssParamForCreateVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="chargingMode")
     
-    private ChargingModeEnum chargingMode = ChargingModeEnum.POSTPAID;
+    private ChargingModeEnum chargingMode;
     /**
      * 功能说明：是否立即支付。chargingMode为PrePaid时该参数会生效。默认值为false。 取值范围： * true：立即支付，从帐户余额中自动扣费 * false：不立即支付，创建订单暂不支付 
      */
@@ -193,7 +193,7 @@ public class BssParamForCreateVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isAutoPay")
     
-    private IsAutoPayEnum isAutoPay = IsAutoPayEnum.FALSE;
+    private IsAutoPayEnum isAutoPay;
     /**
      * 功能说明：是否自动续订。chargingMode为prePaid时该参数会生效。默认值为false。 取值范围： * true：自动续订，自动续订周期与订购周期相同 * false：不自动续订 
      */
@@ -277,7 +277,7 @@ public class BssParamForCreateVolume  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isAutoRenew")
     
-    private IsAutoRenewEnum isAutoRenew = IsAutoRenewEnum.FALSE;
+    private IsAutoRenewEnum isAutoRenew;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -389,6 +389,8 @@ public class BssParamForCreateVolume  {
         this.chargingMode = chargingMode;
     }
 
+    
+
     public BssParamForCreateVolume withIsAutoPay(IsAutoPayEnum isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -408,6 +410,8 @@ public class BssParamForCreateVolume  {
     public void setIsAutoPay(IsAutoPayEnum isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
+
+    
 
     public BssParamForCreateVolume withIsAutoRenew(IsAutoRenewEnum isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
@@ -429,6 +433,8 @@ public class BssParamForCreateVolume  {
         this.isAutoRenew = isAutoRenew;
     }
 
+    
+
     public BssParamForCreateVolume withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
@@ -449,6 +455,8 @@ public class BssParamForCreateVolume  {
         this.periodNum = periodNum;
     }
 
+    
+
     public BssParamForCreateVolume withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
@@ -468,6 +476,9 @@ public class BssParamForCreateVolume  {
     public void setPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

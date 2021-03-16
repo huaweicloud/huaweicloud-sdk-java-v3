@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * 工作项类型
  */
-public class IssueItemSFV4Tracker  {
+public class IssueItemSfV4Tracker  {
 
 
 
@@ -29,7 +29,7 @@ public class IssueItemSFV4Tracker  {
     
     private String name;
 
-    public IssueItemSFV4Tracker withId(Integer id) {
+    public IssueItemSfV4Tracker withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -49,7 +49,9 @@ public class IssueItemSFV4Tracker  {
         this.id = id;
     }
 
-    public IssueItemSFV4Tracker withName(String name) {
+    
+
+    public IssueItemSfV4Tracker withName(String name) {
         this.name = name;
         return this;
     }
@@ -68,6 +70,9 @@ public class IssueItemSFV4Tracker  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -76,9 +81,9 @@ public class IssueItemSFV4Tracker  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        IssueItemSFV4Tracker issueItemSFV4Tracker = (IssueItemSFV4Tracker) o;
-        return Objects.equals(this.id, issueItemSFV4Tracker.id) &&
-            Objects.equals(this.name, issueItemSFV4Tracker.name);
+        IssueItemSfV4Tracker issueItemSfV4Tracker = (IssueItemSfV4Tracker) o;
+        return Objects.equals(this.id, issueItemSfV4Tracker.id) &&
+            Objects.equals(this.name, issueItemSfV4Tracker.name);
     }
     @Override
     public int hashCode() {
@@ -87,7 +92,7 @@ public class IssueItemSFV4Tracker  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class IssueItemSFV4Tracker {\n");
+        sb.append("class IssueItemSfV4Tracker {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

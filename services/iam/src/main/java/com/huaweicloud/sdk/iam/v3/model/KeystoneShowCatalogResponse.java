@@ -33,7 +33,7 @@ public class KeystoneShowCatalogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
     public KeystoneShowCatalogResponse withCatalog(List<Catalog> catalog) {
         this.catalog = catalog;
@@ -42,9 +42,6 @@ public class KeystoneShowCatalogResponse extends SdkResponse {
 
     
     public KeystoneShowCatalogResponse addCatalogItem(Catalog catalogItem) {
-        if (this.catalog == null) {
-            this.catalog = new ArrayList<>();
-        }
         this.catalog.add(catalogItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class KeystoneShowCatalogResponse extends SdkResponse {
     public void setCatalog(List<Catalog> catalog) {
         this.catalog = catalog;
     }
+
+    
 
     public KeystoneShowCatalogResponse withLinks(LinksSelf links) {
         this.links = links;
@@ -95,6 +94,9 @@ public class KeystoneShowCatalogResponse extends SdkResponse {
     public void setLinks(LinksSelf links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

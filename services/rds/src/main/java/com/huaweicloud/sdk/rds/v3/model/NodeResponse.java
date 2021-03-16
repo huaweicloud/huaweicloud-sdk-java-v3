@@ -67,6 +67,8 @@ public class NodeResponse  {
         this.id = id;
     }
 
+    
+
     public NodeResponse withName(String name) {
         this.name = name;
         return this;
@@ -86,6 +88,8 @@ public class NodeResponse  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public NodeResponse withRole(String role) {
         this.role = role;
@@ -107,6 +111,8 @@ public class NodeResponse  {
         this.role = role;
     }
 
+    
+
     public NodeResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -127,6 +133,8 @@ public class NodeResponse  {
         this.status = status;
     }
 
+    
+
     public NodeResponse withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -146,6 +154,9 @@ public class NodeResponse  {
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

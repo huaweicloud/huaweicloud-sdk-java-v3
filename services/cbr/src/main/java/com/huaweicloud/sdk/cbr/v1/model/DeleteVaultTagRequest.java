@@ -49,6 +49,8 @@ public class DeleteVaultTagRequest  {
         this.key = key;
     }
 
+    
+
     public DeleteVaultTagRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteVaultTagRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

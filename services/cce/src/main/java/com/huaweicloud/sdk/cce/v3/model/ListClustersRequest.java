@@ -277,6 +277,8 @@ public class ListClustersRequest  {
         this.errorStatus = errorStatus;
     }
 
+    
+
     public ListClustersRequest withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -296,6 +298,8 @@ public class ListClustersRequest  {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    
 
     public ListClustersRequest withStatus(StatusEnum status) {
         this.status = status;
@@ -317,6 +321,8 @@ public class ListClustersRequest  {
         this.status = status;
     }
 
+    
+
     public ListClustersRequest withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -337,6 +343,8 @@ public class ListClustersRequest  {
         this.type = type;
     }
 
+    
+
     public ListClustersRequest withVersion(String version) {
         this.version = version;
         return this;
@@ -356,6 +364,9 @@ public class ListClustersRequest  {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

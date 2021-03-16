@@ -28,7 +28,7 @@ public class PrePaidServerPublicip  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    private PrePaidServerEip eip = null;
+    private PrePaidServerEip eip;
 
     public PrePaidServerPublicip withId(String id) {
         this.id = id;
@@ -49,6 +49,8 @@ public class PrePaidServerPublicip  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public PrePaidServerPublicip withEip(PrePaidServerEip eip) {
         this.eip = eip;
@@ -76,6 +78,9 @@ public class PrePaidServerPublicip  {
     public void setEip(PrePaidServerEip eip) {
         this.eip = eip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

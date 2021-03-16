@@ -52,9 +52,6 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addPoliticsItem(ImageDetectionResultDetailPolitics politicsItem) {
-        if (this.politics == null) {
-            this.politics = new ArrayList<>();
-        }
         this.politics.add(politicsItem);
         return this;
     }
@@ -79,6 +76,8 @@ public class ImageDetectionResultDetail  {
         this.politics = politics;
     }
 
+    
+
     public ImageDetectionResultDetail withPorn(List<ImageDetectionResultDetailPorn> porn) {
         this.porn = porn;
         return this;
@@ -86,9 +85,6 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addPornItem(ImageDetectionResultDetailPorn pornItem) {
-        if (this.porn == null) {
-            this.porn = new ArrayList<>();
-        }
         this.porn.add(pornItem);
         return this;
     }
@@ -113,6 +109,8 @@ public class ImageDetectionResultDetail  {
         this.porn = porn;
     }
 
+    
+
     public ImageDetectionResultDetail withTerrorism(List<ImageDetectionResultDetailPorn> terrorism) {
         this.terrorism = terrorism;
         return this;
@@ -120,9 +118,6 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addTerrorismItem(ImageDetectionResultDetailPorn terrorismItem) {
-        if (this.terrorism == null) {
-            this.terrorism = new ArrayList<>();
-        }
         this.terrorism.add(terrorismItem);
         return this;
     }
@@ -147,6 +142,8 @@ public class ImageDetectionResultDetail  {
         this.terrorism = terrorism;
     }
 
+    
+
     public ImageDetectionResultDetail withAd(List<ImageDetectionResultDetailPorn> ad) {
         this.ad = ad;
         return this;
@@ -154,9 +151,6 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addAdItem(ImageDetectionResultDetailPorn adItem) {
-        if (this.ad == null) {
-            this.ad = new ArrayList<>();
-        }
         this.ad.add(adItem);
         return this;
     }
@@ -180,6 +174,9 @@ public class ImageDetectionResultDetail  {
     public void setAd(List<ImageDetectionResultDetailPorn> ad) {
         this.ad = ad;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

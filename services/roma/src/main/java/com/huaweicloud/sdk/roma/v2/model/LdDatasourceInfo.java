@@ -176,13 +176,13 @@ public class LdDatasourceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private OffsetDateTime createdTime = null;
+    private OffsetDateTime createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="modified_time")
     
-    private OffsetDateTime modifiedTime = null;
+    private OffsetDateTime modifiedTime;
 
     public LdDatasourceInfo withName(String name) {
         this.name = name;
@@ -204,6 +204,8 @@ public class LdDatasourceInfo  {
         this.name = name;
     }
 
+    
+
     public LdDatasourceInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -223,6 +225,8 @@ public class LdDatasourceInfo  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public LdDatasourceInfo withDescription(String description) {
         this.description = description;
@@ -244,6 +248,8 @@ public class LdDatasourceInfo  {
         this.description = description;
     }
 
+    
+
     public LdDatasourceInfo withUrl(String url) {
         this.url = url;
         return this;
@@ -263,6 +269,8 @@ public class LdDatasourceInfo  {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
 
     public LdDatasourceInfo withId(String id) {
         this.id = id;
@@ -284,6 +292,8 @@ public class LdDatasourceInfo  {
         this.id = id;
     }
 
+    
+
     public LdDatasourceInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -303,6 +313,8 @@ public class LdDatasourceInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
 
     public LdDatasourceInfo withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
@@ -324,6 +336,8 @@ public class LdDatasourceInfo  {
         this.createdTime = createdTime;
     }
 
+    
+
     public LdDatasourceInfo withModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
         return this;
@@ -343,6 +357,9 @@ public class LdDatasourceInfo  {
     public void setModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

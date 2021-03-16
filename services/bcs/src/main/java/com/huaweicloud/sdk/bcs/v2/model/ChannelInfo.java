@@ -65,6 +65,8 @@ public class ChannelInfo  {
         this.name = name;
     }
 
+    
+
     public ChannelInfo withOrgNames(List<String> orgNames) {
         this.orgNames = orgNames;
         return this;
@@ -72,9 +74,6 @@ public class ChannelInfo  {
 
     
     public ChannelInfo addOrgNamesItem(String orgNamesItem) {
-        if (this.orgNames == null) {
-            this.orgNames = new ArrayList<>();
-        }
         this.orgNames.add(orgNamesItem);
         return this;
     }
@@ -99,6 +98,8 @@ public class ChannelInfo  {
         this.orgNames = orgNames;
     }
 
+    
+
     public ChannelInfo withOrgNameHash(List<String> orgNameHash) {
         this.orgNameHash = orgNameHash;
         return this;
@@ -106,9 +107,6 @@ public class ChannelInfo  {
 
     
     public ChannelInfo addOrgNameHashItem(String orgNameHashItem) {
-        if (this.orgNameHash == null) {
-            this.orgNameHash = new ArrayList<>();
-        }
         this.orgNameHash.add(orgNameHashItem);
         return this;
     }
@@ -133,6 +131,8 @@ public class ChannelInfo  {
         this.orgNameHash = orgNameHash;
     }
 
+    
+
     public ChannelInfo withPeers(Map<String, List<String>> peers) {
         this.peers = peers;
         return this;
@@ -141,9 +141,6 @@ public class ChannelInfo  {
     
 
     public ChannelInfo putPeersItem(String key, List<String> peersItem) {
-         if (this.peers == null) {
-            this.peers = new HashMap<>();
-         }
         this.peers.put(key, peersItem);
         return this;
     }
@@ -166,6 +163,9 @@ public class ChannelInfo  {
     public void setPeers(Map<String, List<String>> peers) {
         this.peers = peers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -325,6 +325,8 @@ public class RealTimeNodeStatus  {
         this.name = name;
     }
 
+    
+
     public RealTimeNodeStatus withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -344,6 +346,8 @@ public class RealTimeNodeStatus  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
+    
 
     public RealTimeNodeStatus withLogPath(String logPath) {
         this.logPath = logPath;
@@ -365,6 +369,8 @@ public class RealTimeNodeStatus  {
         this.logPath = logPath;
     }
 
+    
+
     public RealTimeNodeStatus withNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
         return this;
@@ -384,6 +390,9 @@ public class RealTimeNodeStatus  {
     public void setNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

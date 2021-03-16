@@ -34,9 +34,6 @@ public class RemoveVaultResourceResponse extends SdkResponse {
 
     
     public RemoveVaultResourceResponse addRemoveResourceIdsItem(String removeResourceIdsItem) {
-        if (this.removeResourceIds == null) {
-            this.removeResourceIds = new ArrayList<>();
-        }
         this.removeResourceIds.add(removeResourceIdsItem);
         return this;
     }
@@ -60,6 +57,9 @@ public class RemoveVaultResourceResponse extends SdkResponse {
     public void setRemoveResourceIds(List<String> removeResourceIds) {
         this.removeResourceIds = removeResourceIds;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

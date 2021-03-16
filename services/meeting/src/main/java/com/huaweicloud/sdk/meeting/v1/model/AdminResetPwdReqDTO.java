@@ -42,6 +42,9 @@ public class AdminResetPwdReqDTO  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

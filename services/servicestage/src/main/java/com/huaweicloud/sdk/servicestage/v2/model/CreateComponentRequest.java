@@ -28,7 +28,7 @@ public class CreateComponentRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ComponentCreate body = null;
+    private ComponentCreate body;
 
     public CreateComponentRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -49,6 +49,8 @@ public class CreateComponentRequest  {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
+
+    
 
     public CreateComponentRequest withBody(ComponentCreate body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateComponentRequest  {
     public void setBody(ComponentCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

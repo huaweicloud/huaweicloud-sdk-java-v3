@@ -55,6 +55,8 @@ public class ServerRemoteConsole  {
         this.protocol = protocol;
     }
 
+    
+
     public ServerRemoteConsole withType(String type) {
         this.type = type;
         return this;
@@ -75,6 +77,8 @@ public class ServerRemoteConsole  {
         this.type = type;
     }
 
+    
+
     public ServerRemoteConsole withUrl(String url) {
         this.url = url;
         return this;
@@ -94,6 +98,9 @@ public class ServerRemoteConsole  {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

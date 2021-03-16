@@ -30,13 +30,13 @@ public class RateOnDemandReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="inquiry_precision")
     
-    private Integer inquiryPrecision = 0;
+    private Integer inquiryPrecision;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_infos")
     
-    private List<DemandProductInfo> productInfos = new ArrayList<>();
+    private List<DemandProductInfo> productInfos = null;
     
     public RateOnDemandReq withProjectId(String projectId) {
         this.projectId = projectId;
@@ -57,6 +57,8 @@ public class RateOnDemandReq  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public RateOnDemandReq withInquiryPrecision(Integer inquiryPrecision) {
         this.inquiryPrecision = inquiryPrecision;
@@ -79,6 +81,8 @@ public class RateOnDemandReq  {
     public void setInquiryPrecision(Integer inquiryPrecision) {
         this.inquiryPrecision = inquiryPrecision;
     }
+
+    
 
     public RateOnDemandReq withProductInfos(List<DemandProductInfo> productInfos) {
         this.productInfos = productInfos;
@@ -110,6 +114,9 @@ public class RateOnDemandReq  {
     public void setProductInfos(List<DemandProductInfo> productInfos) {
         this.productInfos = productInfos;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

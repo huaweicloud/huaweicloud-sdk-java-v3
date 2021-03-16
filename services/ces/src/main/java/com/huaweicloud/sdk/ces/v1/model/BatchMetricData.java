@@ -31,7 +31,7 @@ public class BatchMetricData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datapoints")
     
-    private List<DatapointForBatchMetric> datapoints = new ArrayList<>();
+    private List<DatapointForBatchMetric> datapoints = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,6 +71,8 @@ public class BatchMetricData  {
         this.unit = unit;
     }
 
+    
+
     public BatchMetricData withDatapoints(List<DatapointForBatchMetric> datapoints) {
         this.datapoints = datapoints;
         return this;
@@ -102,6 +104,8 @@ public class BatchMetricData  {
         this.datapoints = datapoints;
     }
 
+    
+
     public BatchMetricData withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -121,6 +125,8 @@ public class BatchMetricData  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
+
+    
 
     public BatchMetricData withMetricName(String metricName) {
         this.metricName = metricName;
@@ -142,6 +148,8 @@ public class BatchMetricData  {
         this.metricName = metricName;
     }
 
+    
+
     public BatchMetricData withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
         return this;
@@ -149,9 +157,6 @@ public class BatchMetricData  {
 
     
     public BatchMetricData addDimensionsItem(MetricsDimension dimensionsItem) {
-        if (this.dimensions == null) {
-            this.dimensions = new ArrayList<>();
-        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
@@ -175,6 +180,9 @@ public class BatchMetricData  {
     public void setDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

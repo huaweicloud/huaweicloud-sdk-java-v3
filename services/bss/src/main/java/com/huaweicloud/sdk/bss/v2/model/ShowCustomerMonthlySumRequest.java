@@ -79,6 +79,8 @@ public class ShowCustomerMonthlySumRequest  {
         this.billCycle = billCycle;
     }
 
+    
+
     public ShowCustomerMonthlySumRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -99,6 +101,8 @@ public class ShowCustomerMonthlySumRequest  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    
+
     public ShowCustomerMonthlySumRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -118,6 +122,8 @@ public class ShowCustomerMonthlySumRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ShowCustomerMonthlySumRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -141,6 +147,8 @@ public class ShowCustomerMonthlySumRequest  {
         this.offset = offset;
     }
 
+    
+
     public ShowCustomerMonthlySumRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -163,6 +171,8 @@ public class ShowCustomerMonthlySumRequest  {
         this.limit = limit;
     }
 
+    
+
     public ShowCustomerMonthlySumRequest withMethod(String method) {
         this.method = method;
         return this;
@@ -183,6 +193,8 @@ public class ShowCustomerMonthlySumRequest  {
         this.method = method;
     }
 
+    
+
     public ShowCustomerMonthlySumRequest withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
         return this;
@@ -202,6 +214,9 @@ public class ShowCustomerMonthlySumRequest  {
     public void setSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

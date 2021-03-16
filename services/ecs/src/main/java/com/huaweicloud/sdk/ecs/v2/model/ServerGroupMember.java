@@ -42,6 +42,9 @@ public class ServerGroupMember  {
     public void setInstanceUuid(String instanceUuid) {
         this.instanceUuid = instanceUuid;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

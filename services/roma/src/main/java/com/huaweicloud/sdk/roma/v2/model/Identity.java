@@ -137,6 +137,8 @@ public class Identity  {
         this.name = name;
     }
 
+    
+
     public Identity withLocation(LocationEnum location) {
         this.location = location;
         return this;
@@ -157,6 +159,8 @@ public class Identity  {
         this.location = location;
     }
 
+    
+
     public Identity withValidation(String validation) {
         this.validation = validation;
         return this;
@@ -176,6 +180,9 @@ public class Identity  {
     public void setValidation(String validation) {
         this.validation = validation;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

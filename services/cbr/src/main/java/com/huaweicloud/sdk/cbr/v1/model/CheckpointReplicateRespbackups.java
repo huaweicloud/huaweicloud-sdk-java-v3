@@ -49,6 +49,8 @@ public class CheckpointReplicateRespbackups  {
         this.backupId = backupId;
     }
 
+    
+
     public CheckpointReplicateRespbackups withReplicationRecordId(String replicationRecordId) {
         this.replicationRecordId = replicationRecordId;
         return this;
@@ -68,6 +70,9 @@ public class CheckpointReplicateRespbackups  {
     public void setReplicationRecordId(String replicationRecordId) {
         this.replicationRecordId = replicationRecordId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

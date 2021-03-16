@@ -55,6 +55,8 @@ public class ShowInstanceDetailRequest  {
         this.applicationId = applicationId;
     }
 
+    
+
     public ShowInstanceDetailRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
@@ -75,6 +77,8 @@ public class ShowInstanceDetailRequest  {
         this.componentId = componentId;
     }
 
+    
+
     public ShowInstanceDetailRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -94,6 +98,9 @@ public class ShowInstanceDetailRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

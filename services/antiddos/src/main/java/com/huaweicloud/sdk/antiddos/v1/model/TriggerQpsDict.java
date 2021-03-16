@@ -49,6 +49,8 @@ public class TriggerQpsDict  {
         this.httpRequestPosId = httpRequestPosId;
     }
 
+    
+
     public TriggerQpsDict withHttpPacketPerSecond(Long httpPacketPerSecond) {
         this.httpPacketPerSecond = httpPacketPerSecond;
         return this;
@@ -68,6 +70,9 @@ public class TriggerQpsDict  {
     public void setHttpPacketPerSecond(Long httpPacketPerSecond) {
         this.httpPacketPerSecond = httpPacketPerSecond;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -73,6 +73,8 @@ public class ListExtendsParamsRequest  {
         this.businessTypeId = businessTypeId;
     }
 
+    
+
     public ListExtendsParamsRequest withIncidentSubTypeId(String incidentSubTypeId) {
         this.incidentSubTypeId = incidentSubTypeId;
         return this;
@@ -93,6 +95,8 @@ public class ListExtendsParamsRequest  {
         this.incidentSubTypeId = incidentSubTypeId;
     }
 
+    
+
     public ListExtendsParamsRequest withProductCategoryId(String productCategoryId) {
         this.productCategoryId = productCategoryId;
         return this;
@@ -112,6 +116,8 @@ public class ListExtendsParamsRequest  {
     public void setProductCategoryId(String productCategoryId) {
         this.productCategoryId = productCategoryId;
     }
+
+    
 
     public ListExtendsParamsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -137,6 +143,8 @@ public class ListExtendsParamsRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public ListExtendsParamsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -159,6 +167,8 @@ public class ListExtendsParamsRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ListExtendsParamsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -180,6 +190,9 @@ public class ListExtendsParamsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

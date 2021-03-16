@@ -72,13 +72,13 @@ public class LoadbalancerResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<ResourceList> listeners = new ArrayList<>();
+    private List<ResourceList> listeners = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<ResourceList> pools = new ArrayList<>();
+    private List<ResourceList> pools = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -312,7 +312,7 @@ public class LoadbalancerResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<String> tags = new ArrayList<>();
+    private List<String> tags = null;
     
     public LoadbalancerResp withId(String id) {
         this.id = id;
@@ -334,6 +334,8 @@ public class LoadbalancerResp  {
         this.id = id;
     }
 
+    
+
     public LoadbalancerResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -353,6 +355,8 @@ public class LoadbalancerResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public LoadbalancerResp withName(String name) {
         this.name = name;
@@ -374,6 +378,8 @@ public class LoadbalancerResp  {
         this.name = name;
     }
 
+    
+
     public LoadbalancerResp withDescription(String description) {
         this.description = description;
         return this;
@@ -393,6 +399,8 @@ public class LoadbalancerResp  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public LoadbalancerResp withVipSubnetId(String vipSubnetId) {
         this.vipSubnetId = vipSubnetId;
@@ -414,6 +422,8 @@ public class LoadbalancerResp  {
         this.vipSubnetId = vipSubnetId;
     }
 
+    
+
     public LoadbalancerResp withVipPortId(String vipPortId) {
         this.vipPortId = vipPortId;
         return this;
@@ -434,6 +444,8 @@ public class LoadbalancerResp  {
         this.vipPortId = vipPortId;
     }
 
+    
+
     public LoadbalancerResp withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
         return this;
@@ -453,6 +465,8 @@ public class LoadbalancerResp  {
     public void setVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
     }
+
+    
 
     public LoadbalancerResp withListeners(List<ResourceList> listeners) {
         this.listeners = listeners;
@@ -485,6 +499,8 @@ public class LoadbalancerResp  {
         this.listeners = listeners;
     }
 
+    
+
     public LoadbalancerResp withPools(List<ResourceList> pools) {
         this.pools = pools;
         return this;
@@ -516,6 +532,8 @@ public class LoadbalancerResp  {
         this.pools = pools;
     }
 
+    
+
     public LoadbalancerResp withProvider(String provider) {
         this.provider = provider;
         return this;
@@ -535,6 +553,8 @@ public class LoadbalancerResp  {
     public void setProvider(String provider) {
         this.provider = provider;
     }
+
+    
 
     public LoadbalancerResp withOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
@@ -556,6 +576,8 @@ public class LoadbalancerResp  {
         this.operatingStatus = operatingStatus;
     }
 
+    
+
     public LoadbalancerResp withProvisioningStatus(ProvisioningStatusEnum provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -575,6 +597,8 @@ public class LoadbalancerResp  {
     public void setProvisioningStatus(ProvisioningStatusEnum provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
+
+    
 
     public LoadbalancerResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -596,6 +620,8 @@ public class LoadbalancerResp  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public LoadbalancerResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -615,6 +641,8 @@ public class LoadbalancerResp  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public LoadbalancerResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -636,6 +664,8 @@ public class LoadbalancerResp  {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public LoadbalancerResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -656,6 +686,8 @@ public class LoadbalancerResp  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public LoadbalancerResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -675,6 +707,8 @@ public class LoadbalancerResp  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    
 
     public LoadbalancerResp withTags(List<String> tags) {
         this.tags = tags;
@@ -706,6 +740,9 @@ public class LoadbalancerResp  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -28,7 +28,7 @@ public class SetBackupPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SetBackupPolicyRequestBody body = null;
+    private SetBackupPolicyRequestBody body;
 
     public SetBackupPolicyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class SetBackupPolicyRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public SetBackupPolicyRequest withBody(SetBackupPolicyRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class SetBackupPolicyRequest  {
     public void setBody(SetBackupPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

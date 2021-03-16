@@ -34,7 +34,7 @@ public class UpdateDDosRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAntiDDosServiceRequestBody body = null;
+    private UpdateAntiDDosServiceRequestBody body;
 
     public UpdateDDosRequest withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
@@ -56,6 +56,8 @@ public class UpdateDDosRequest  {
         this.floatingIpId = floatingIpId;
     }
 
+    
+
     public UpdateDDosRequest withIp(String ip) {
         this.ip = ip;
         return this;
@@ -75,6 +77,8 @@ public class UpdateDDosRequest  {
     public void setIp(String ip) {
         this.ip = ip;
     }
+
+    
 
     public UpdateDDosRequest withBody(UpdateAntiDDosServiceRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateDDosRequest  {
     public void setBody(UpdateAntiDDosServiceRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

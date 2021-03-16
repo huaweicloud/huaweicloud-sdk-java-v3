@@ -60,6 +60,8 @@ public class ListTagsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListTagsV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -80,6 +82,8 @@ public class ListTagsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListTagsV2Response withResponses(List<String> responses) {
         this.responses = responses;
         return this;
@@ -87,9 +91,6 @@ public class ListTagsV2Response extends SdkResponse {
 
     
     public ListTagsV2Response addResponsesItem(String responsesItem) {
-        if (this.responses == null) {
-            this.responses = new ArrayList<>();
-        }
         this.responses.add(responsesItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListTagsV2Response extends SdkResponse {
     public void setResponses(List<String> responses) {
         this.responses = responses;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

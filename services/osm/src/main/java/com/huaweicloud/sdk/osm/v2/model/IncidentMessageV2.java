@@ -55,7 +55,7 @@ public class IncidentMessageV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,6 +91,8 @@ public class IncidentMessageV2  {
         this.type = type;
     }
 
+    
+
     public IncidentMessageV2 withReplier(String replier) {
         this.replier = replier;
         return this;
@@ -110,6 +112,8 @@ public class IncidentMessageV2  {
     public void setReplier(String replier) {
         this.replier = replier;
     }
+
+    
 
     public IncidentMessageV2 withContent(String content) {
         this.content = content;
@@ -131,6 +135,8 @@ public class IncidentMessageV2  {
         this.content = content;
     }
 
+    
+
     public IncidentMessageV2 withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
@@ -150,6 +156,8 @@ public class IncidentMessageV2  {
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
+
+    
 
     public IncidentMessageV2 withReplierName(String replierName) {
         this.replierName = replierName;
@@ -171,6 +179,8 @@ public class IncidentMessageV2  {
         this.replierName = replierName;
     }
 
+    
+
     public IncidentMessageV2 withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -190,6 +200,8 @@ public class IncidentMessageV2  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public IncidentMessageV2 withIsFirstMessage(Integer isFirstMessage) {
         this.isFirstMessage = isFirstMessage;
@@ -213,6 +225,8 @@ public class IncidentMessageV2  {
         this.isFirstMessage = isFirstMessage;
     }
 
+    
+
     public IncidentMessageV2 withAccessoryList(List<SimpleAccessoryV2> accessoryList) {
         this.accessoryList = accessoryList;
         return this;
@@ -220,9 +234,6 @@ public class IncidentMessageV2  {
 
     
     public IncidentMessageV2 addAccessoryListItem(SimpleAccessoryV2 accessoryListItem) {
-        if (this.accessoryList == null) {
-            this.accessoryList = new ArrayList<>();
-        }
         this.accessoryList.add(accessoryListItem);
         return this;
     }
@@ -246,6 +257,9 @@ public class IncidentMessageV2  {
     public void setAccessoryList(List<SimpleAccessoryV2> accessoryList) {
         this.accessoryList = accessoryList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

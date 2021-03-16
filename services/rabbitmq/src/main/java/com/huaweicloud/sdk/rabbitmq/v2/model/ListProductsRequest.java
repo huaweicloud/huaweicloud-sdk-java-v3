@@ -118,6 +118,9 @@ public class ListProductsRequest  {
     public void setEngine(EngineEnum engine) {
         this.engine = engine;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -63,6 +63,8 @@ public class InvokeFunctionResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    
+
     public InvokeFunctionResponse withResult(String result) {
         this.result = result;
         return this;
@@ -82,6 +84,8 @@ public class InvokeFunctionResponse extends SdkResponse {
     public void setResult(String result) {
         this.result = result;
     }
+
+    
 
     public InvokeFunctionResponse withLog(String log) {
         this.log = log;
@@ -103,6 +107,8 @@ public class InvokeFunctionResponse extends SdkResponse {
         this.log = log;
     }
 
+    
+
     public InvokeFunctionResponse withStatus(Integer status) {
         this.status = status;
         return this;
@@ -122,6 +128,9 @@ public class InvokeFunctionResponse extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

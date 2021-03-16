@@ -140,7 +140,7 @@ public class TaskNodeGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_scaling_policy")
     
-    private AutoScalingPolicy autoScalingPolicy = null;
+    private AutoScalingPolicy autoScalingPolicy;
 
     public TaskNodeGroups withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
@@ -164,6 +164,8 @@ public class TaskNodeGroups  {
         this.nodeNum = nodeNum;
     }
 
+    
+
     public TaskNodeGroups withNodeSize(String nodeSize) {
         this.nodeSize = nodeSize;
         return this;
@@ -184,6 +186,8 @@ public class TaskNodeGroups  {
         this.nodeSize = nodeSize;
     }
 
+    
+
     public TaskNodeGroups withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
@@ -203,6 +207,8 @@ public class TaskNodeGroups  {
     public void setDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
     }
+
+    
 
     public TaskNodeGroups withDataVolumeCount(Integer dataVolumeCount) {
         this.dataVolumeCount = dataVolumeCount;
@@ -226,6 +232,8 @@ public class TaskNodeGroups  {
         this.dataVolumeCount = dataVolumeCount;
     }
 
+    
+
     public TaskNodeGroups withDataVolumeSize(Integer dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
         return this;
@@ -247,6 +255,8 @@ public class TaskNodeGroups  {
     public void setDataVolumeSize(Integer dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
     }
+
+    
 
     public TaskNodeGroups withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
@@ -274,6 +284,9 @@ public class TaskNodeGroups  {
     public void setAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

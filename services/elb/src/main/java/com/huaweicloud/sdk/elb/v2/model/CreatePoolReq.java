@@ -158,7 +158,7 @@ public class CreatePoolReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="session_persistence")
     
-    private SessionPersistence sessionPersistence = null;
+    private SessionPersistence sessionPersistence;
 
     public CreatePoolReq withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
@@ -180,6 +180,8 @@ public class CreatePoolReq  {
         this.protocol = protocol;
     }
 
+    
+
     public CreatePoolReq withLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
         return this;
@@ -199,6 +201,8 @@ public class CreatePoolReq  {
     public void setLbAlgorithm(String lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
     }
+
+    
 
     public CreatePoolReq withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
@@ -220,6 +224,8 @@ public class CreatePoolReq  {
         this.loadbalancerId = loadbalancerId;
     }
 
+    
+
     public CreatePoolReq withListenerId(String listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -239,6 +245,8 @@ public class CreatePoolReq  {
     public void setListenerId(String listenerId) {
         this.listenerId = listenerId;
     }
+
+    
 
     public CreatePoolReq withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -260,6 +268,8 @@ public class CreatePoolReq  {
         this.tenantId = tenantId;
     }
 
+    
+
     public CreatePoolReq withName(String name) {
         this.name = name;
         return this;
@@ -279,6 +289,8 @@ public class CreatePoolReq  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreatePoolReq withDescription(String description) {
         this.description = description;
@@ -300,6 +312,8 @@ public class CreatePoolReq  {
         this.description = description;
     }
 
+    
+
     public CreatePoolReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -319,6 +333,8 @@ public class CreatePoolReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public CreatePoolReq withSessionPersistence(SessionPersistence sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
@@ -346,6 +362,9 @@ public class CreatePoolReq  {
     public void setSessionPersistence(SessionPersistence sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

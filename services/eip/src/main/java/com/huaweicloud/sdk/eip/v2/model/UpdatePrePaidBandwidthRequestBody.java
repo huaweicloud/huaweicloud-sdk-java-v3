@@ -23,13 +23,13 @@ public class UpdatePrePaidBandwidthRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bandwidth")
     
-    private UpdatePrePaidBandwidthOption bandwidth = null;
+    private UpdatePrePaidBandwidthOption bandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendParam")
     
-    private UpdatePrePaidBandwidthExtendParamOption extendParam = null;
+    private UpdatePrePaidBandwidthExtendParamOption extendParam;
 
     public UpdatePrePaidBandwidthRequestBody withBandwidth(UpdatePrePaidBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
@@ -58,6 +58,8 @@ public class UpdatePrePaidBandwidthRequestBody  {
         this.bandwidth = bandwidth;
     }
 
+    
+
     public UpdatePrePaidBandwidthRequestBody withExtendParam(UpdatePrePaidBandwidthExtendParamOption extendParam) {
         this.extendParam = extendParam;
         return this;
@@ -84,6 +86,9 @@ public class UpdatePrePaidBandwidthRequestBody  {
     public void setExtendParam(UpdatePrePaidBandwidthExtendParamOption extendParam) {
         this.extendParam = extendParam;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,19 +23,19 @@ public class Encryption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hls_encrypt")
     
-    private HlsEncrypt hlsEncrypt = null;
+    private HlsEncrypt hlsEncrypt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="multidrm")
     
-    private Multidrm multidrm = null;
+    private Multidrm multidrm;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="preview_duration")
     
-    private Integer previewDuration = 0;
+    private Integer previewDuration;
 
     public Encryption withHlsEncrypt(HlsEncrypt hlsEncrypt) {
         this.hlsEncrypt = hlsEncrypt;
@@ -64,6 +64,8 @@ public class Encryption  {
         this.hlsEncrypt = hlsEncrypt;
     }
 
+    
+
     public Encryption withMultidrm(Multidrm multidrm) {
         this.multidrm = multidrm;
         return this;
@@ -91,6 +93,8 @@ public class Encryption  {
         this.multidrm = multidrm;
     }
 
+    
+
     public Encryption withPreviewDuration(Integer previewDuration) {
         this.previewDuration = previewDuration;
         return this;
@@ -112,6 +116,9 @@ public class Encryption  {
     public void setPreviewDuration(Integer previewDuration) {
         this.previewDuration = previewDuration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

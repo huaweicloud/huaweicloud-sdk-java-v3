@@ -127,6 +127,8 @@ public class ListRecordSetsWithLineRequest  {
         this.zoneType = zoneType;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -146,6 +148,8 @@ public class ListRecordSetsWithLineRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
+
+    
 
     public ListRecordSetsWithLineRequest withLimit(String limit) {
         this.limit = limit;
@@ -167,6 +171,8 @@ public class ListRecordSetsWithLineRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withOffset(String offset) {
         this.offset = offset;
         return this;
@@ -186,6 +192,8 @@ public class ListRecordSetsWithLineRequest  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
+
+    
 
     public ListRecordSetsWithLineRequest withLineId(String lineId) {
         this.lineId = lineId;
@@ -207,6 +215,8 @@ public class ListRecordSetsWithLineRequest  {
         this.lineId = lineId;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withTags(String tags) {
         this.tags = tags;
         return this;
@@ -226,6 +236,8 @@ public class ListRecordSetsWithLineRequest  {
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+    
 
     public ListRecordSetsWithLineRequest withStatus(String status) {
         this.status = status;
@@ -247,6 +259,8 @@ public class ListRecordSetsWithLineRequest  {
         this.status = status;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withType(String type) {
         this.type = type;
         return this;
@@ -266,6 +280,8 @@ public class ListRecordSetsWithLineRequest  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public ListRecordSetsWithLineRequest withName(String name) {
         this.name = name;
@@ -287,6 +303,8 @@ public class ListRecordSetsWithLineRequest  {
         this.name = name;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withId(String id) {
         this.id = id;
         return this;
@@ -306,6 +324,8 @@ public class ListRecordSetsWithLineRequest  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public ListRecordSetsWithLineRequest withRecords(String records) {
         this.records = records;
@@ -327,6 +347,8 @@ public class ListRecordSetsWithLineRequest  {
         this.records = records;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -346,6 +368,8 @@ public class ListRecordSetsWithLineRequest  {
     public void setSortKey(String sortKey) {
         this.sortKey = sortKey;
     }
+
+    
 
     public ListRecordSetsWithLineRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
@@ -367,6 +391,8 @@ public class ListRecordSetsWithLineRequest  {
         this.sortDir = sortDir;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
         return this;
@@ -387,6 +413,8 @@ public class ListRecordSetsWithLineRequest  {
         this.healthCheckId = healthCheckId;
     }
 
+    
+
     public ListRecordSetsWithLineRequest withSearchMode(String searchMode) {
         this.searchMode = searchMode;
         return this;
@@ -406,6 +434,9 @@ public class ListRecordSetsWithLineRequest  {
     public void setSearchMode(String searchMode) {
         this.searchMode = searchMode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

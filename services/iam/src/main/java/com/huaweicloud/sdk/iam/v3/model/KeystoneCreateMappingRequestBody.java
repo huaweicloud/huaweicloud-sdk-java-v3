@@ -22,7 +22,7 @@ public class KeystoneCreateMappingRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mapping")
     
-    private MappingOption mapping = null;
+    private MappingOption mapping;
 
     public KeystoneCreateMappingRequestBody withMapping(MappingOption mapping) {
         this.mapping = mapping;
@@ -50,6 +50,9 @@ public class KeystoneCreateMappingRequestBody  {
     public void setMapping(MappingOption mapping) {
         this.mapping = mapping;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

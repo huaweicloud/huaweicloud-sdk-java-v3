@@ -25,37 +25,37 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bcs")
     
-    private Detail bcs = null;
+    private Detail bcs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    private Detail eip = null;
+    private Detail eip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sfs")
     
-    private Detail sfs = null;
+    private Detail sfs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs")
     
-    private Detail obs = null;
+    private Detail obs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kafka")
     
-    private Detail kafka = null;
+    private Detail kafka;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cce")
     
-    private ComCCE cce = null;
+    private ComCCE cce;
 
     public ShowBlockchainStatusResponse withBcs(Detail bcs) {
         this.bcs = bcs;
@@ -84,6 +84,8 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         this.bcs = bcs;
     }
 
+    
+
     public ShowBlockchainStatusResponse withEip(Detail eip) {
         this.eip = eip;
         return this;
@@ -110,6 +112,8 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
     public void setEip(Detail eip) {
         this.eip = eip;
     }
+
+    
 
     public ShowBlockchainStatusResponse withSfs(Detail sfs) {
         this.sfs = sfs;
@@ -138,6 +142,8 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         this.sfs = sfs;
     }
 
+    
+
     public ShowBlockchainStatusResponse withObs(Detail obs) {
         this.obs = obs;
         return this;
@@ -164,6 +170,8 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
     public void setObs(Detail obs) {
         this.obs = obs;
     }
+
+    
 
     public ShowBlockchainStatusResponse withKafka(Detail kafka) {
         this.kafka = kafka;
@@ -192,6 +200,8 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
         this.kafka = kafka;
     }
 
+    
+
     public ShowBlockchainStatusResponse withCce(ComCCE cce) {
         this.cce = cce;
         return this;
@@ -218,6 +228,9 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
     public void setCce(ComCCE cce) {
         this.cce = cce;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

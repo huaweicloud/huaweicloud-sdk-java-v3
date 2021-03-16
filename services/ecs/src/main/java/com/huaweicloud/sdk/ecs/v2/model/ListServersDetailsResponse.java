@@ -54,6 +54,8 @@ public class ListServersDetailsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListServersDetailsResponse withServers(List<ServerDetail> servers) {
         this.servers = servers;
         return this;
@@ -61,9 +63,6 @@ public class ListServersDetailsResponse extends SdkResponse {
 
     
     public ListServersDetailsResponse addServersItem(ServerDetail serversItem) {
-        if (this.servers == null) {
-            this.servers = new ArrayList<>();
-        }
         this.servers.add(serversItem);
         return this;
     }
@@ -87,6 +86,9 @@ public class ListServersDetailsResponse extends SdkResponse {
     public void setServers(List<ServerDetail> servers) {
         this.servers = servers;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

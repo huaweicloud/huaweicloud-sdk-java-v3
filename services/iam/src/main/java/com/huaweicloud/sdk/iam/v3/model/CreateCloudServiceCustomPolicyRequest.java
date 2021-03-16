@@ -22,7 +22,7 @@ public class CreateCloudServiceCustomPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateCloudServiceCustomPolicyRequestBody body = null;
+    private CreateCloudServiceCustomPolicyRequestBody body;
 
     public CreateCloudServiceCustomPolicyRequest withBody(CreateCloudServiceCustomPolicyRequestBody body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateCloudServiceCustomPolicyRequest  {
     public void setBody(CreateCloudServiceCustomPolicyRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

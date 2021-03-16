@@ -22,7 +22,7 @@ public class EnvResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime = null;
+    private OffsetDateTime createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,6 +62,8 @@ public class EnvResp  {
         this.createTime = createTime;
     }
 
+    
+
     public EnvResp withName(String name) {
         this.name = name;
         return this;
@@ -81,6 +83,8 @@ public class EnvResp  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public EnvResp withRemark(String remark) {
         this.remark = remark;
@@ -102,6 +106,8 @@ public class EnvResp  {
         this.remark = remark;
     }
 
+    
+
     public EnvResp withId(String id) {
         this.id = id;
         return this;
@@ -121,6 +127,9 @@ public class EnvResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

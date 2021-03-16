@@ -25,7 +25,7 @@ public class SampleDataValue  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sample")
     
-    private QuerySample sample = null;
+    private QuerySample sample;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,6 +60,8 @@ public class SampleDataValue  {
         this.sample = sample;
     }
 
+    
+
     public SampleDataValue withDataPoints(List<MetricDataPoints> dataPoints) {
         this.dataPoints = dataPoints;
         return this;
@@ -67,9 +69,6 @@ public class SampleDataValue  {
 
     
     public SampleDataValue addDataPointsItem(MetricDataPoints dataPointsItem) {
-        if (this.dataPoints == null) {
-            this.dataPoints = new ArrayList<>();
-        }
         this.dataPoints.add(dataPointsItem);
         return this;
     }
@@ -93,6 +92,9 @@ public class SampleDataValue  {
     public void setDataPoints(List<MetricDataPoints> dataPoints) {
         this.dataPoints = dataPoints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

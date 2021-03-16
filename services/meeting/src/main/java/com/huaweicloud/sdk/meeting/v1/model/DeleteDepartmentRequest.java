@@ -57,6 +57,8 @@ public class DeleteDepartmentRequest  {
         this.xRequestId = xRequestId;
     }
 
+    
+
     public DeleteDepartmentRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
@@ -77,6 +79,8 @@ public class DeleteDepartmentRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    
+
     public DeleteDepartmentRequest withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -96,6 +100,9 @@ public class DeleteDepartmentRequest  {
     public void setDeptCode(String deptCode) {
         this.deptCode = deptCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

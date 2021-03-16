@@ -41,9 +41,6 @@ public class ListRestoreRecordsResponse extends SdkResponse {
 
     
     public ListRestoreRecordsResponse addRestoreRecordResponseItem(InstanceRestoreInfo restoreRecordResponseItem) {
-        if (this.restoreRecordResponse == null) {
-            this.restoreRecordResponse = new ArrayList<>();
-        }
         this.restoreRecordResponse.add(restoreRecordResponseItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListRestoreRecordsResponse extends SdkResponse {
         this.restoreRecordResponse = restoreRecordResponse;
     }
 
+    
+
     public ListRestoreRecordsResponse withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
@@ -87,6 +86,9 @@ public class ListRestoreRecordsResponse extends SdkResponse {
     public void setTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

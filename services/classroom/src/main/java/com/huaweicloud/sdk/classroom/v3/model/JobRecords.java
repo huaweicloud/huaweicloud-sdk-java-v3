@@ -85,6 +85,8 @@ public class JobRecords  {
         this.name = name;
     }
 
+    
+
     public JobRecords withAutoScore(Integer autoScore) {
         this.autoScore = autoScore;
         return this;
@@ -104,6 +106,8 @@ public class JobRecords  {
     public void setAutoScore(Integer autoScore) {
         this.autoScore = autoScore;
     }
+
+    
 
     public JobRecords withCasePassCount(Integer casePassCount) {
         this.casePassCount = casePassCount;
@@ -125,6 +129,8 @@ public class JobRecords  {
         this.casePassCount = casePassCount;
     }
 
+    
+
     public JobRecords withExeCaseCount(Integer exeCaseCount) {
         this.exeCaseCount = exeCaseCount;
         return this;
@@ -144,6 +150,8 @@ public class JobRecords  {
     public void setExeCaseCount(Integer exeCaseCount) {
         this.exeCaseCount = exeCaseCount;
     }
+
+    
 
     public JobRecords withCodeLine(Integer codeLine) {
         this.codeLine = codeLine;
@@ -165,6 +173,8 @@ public class JobRecords  {
         this.codeLine = codeLine;
     }
 
+    
+
     public JobRecords withCommitTime(String commitTime) {
         this.commitTime = commitTime;
         return this;
@@ -184,6 +194,8 @@ public class JobRecords  {
     public void setCommitTime(String commitTime) {
         this.commitTime = commitTime;
     }
+
+    
 
     public JobRecords withComplexityFileAvg(String complexityFileAvg) {
         this.complexityFileAvg = complexityFileAvg;
@@ -205,6 +217,8 @@ public class JobRecords  {
         this.complexityFileAvg = complexityFileAvg;
     }
 
+    
+
     public JobRecords withAutoScoreUsingTime(Integer autoScoreUsingTime) {
         this.autoScoreUsingTime = autoScoreUsingTime;
         return this;
@@ -224,6 +238,9 @@ public class JobRecords  {
     public void setAutoScoreUsingTime(Integer autoScoreUsingTime) {
         this.autoScoreUsingTime = autoScoreUsingTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

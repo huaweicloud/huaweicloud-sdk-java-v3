@@ -42,6 +42,9 @@ public class PriorityBody  {
     public void setSlavePriorityWeight(Integer slavePriorityWeight) {
         this.slavePriorityWeight = slavePriorityWeight;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

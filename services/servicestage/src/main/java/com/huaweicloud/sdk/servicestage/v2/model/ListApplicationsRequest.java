@@ -145,6 +145,8 @@ public class ListApplicationsRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListApplicationsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -164,6 +166,8 @@ public class ListApplicationsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
+
+    
 
     public ListApplicationsRequest withOrderBy(String orderBy) {
         this.orderBy = orderBy;
@@ -185,6 +189,8 @@ public class ListApplicationsRequest  {
         this.orderBy = orderBy;
     }
 
+    
+
     public ListApplicationsRequest withOrder(OrderEnum order) {
         this.order = order;
         return this;
@@ -204,6 +210,9 @@ public class ListApplicationsRequest  {
     public void setOrder(OrderEnum order) {
         this.order = order;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

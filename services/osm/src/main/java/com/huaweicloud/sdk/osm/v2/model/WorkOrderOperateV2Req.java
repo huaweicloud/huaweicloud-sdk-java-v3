@@ -64,6 +64,8 @@ public class WorkOrderOperateV2Req  {
         this.judgement = judgement;
     }
 
+    
+
     public WorkOrderOperateV2Req withOperateDesc(String operateDesc) {
         this.operateDesc = operateDesc;
         return this;
@@ -83,6 +85,8 @@ public class WorkOrderOperateV2Req  {
     public void setOperateDesc(String operateDesc) {
         this.operateDesc = operateDesc;
     }
+
+    
 
     public WorkOrderOperateV2Req withGroupId(String groupId) {
         this.groupId = groupId;
@@ -104,6 +108,8 @@ public class WorkOrderOperateV2Req  {
         this.groupId = groupId;
     }
 
+    
+
     public WorkOrderOperateV2Req withIncidentSatisfactionList(List<IncidentSatisfactionV2Do> incidentSatisfactionList) {
         this.incidentSatisfactionList = incidentSatisfactionList;
         return this;
@@ -111,9 +117,6 @@ public class WorkOrderOperateV2Req  {
 
     
     public WorkOrderOperateV2Req addIncidentSatisfactionListItem(IncidentSatisfactionV2Do incidentSatisfactionListItem) {
-        if (this.incidentSatisfactionList == null) {
-            this.incidentSatisfactionList = new ArrayList<>();
-        }
         this.incidentSatisfactionList.add(incidentSatisfactionListItem);
         return this;
     }
@@ -137,6 +140,9 @@ public class WorkOrderOperateV2Req  {
     public void setIncidentSatisfactionList(List<IncidentSatisfactionV2Do> incidentSatisfactionList) {
         this.incidentSatisfactionList = incidentSatisfactionList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

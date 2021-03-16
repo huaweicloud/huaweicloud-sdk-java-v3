@@ -24,7 +24,7 @@ public class ListApiVersionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="versions")
     
-    private ValuesItem versions = null;
+    private ValuesItem versions;
 
     public ListApiVersionsResponse withVersions(ValuesItem versions) {
         this.versions = versions;
@@ -52,6 +52,9 @@ public class ListApiVersionsResponse extends SdkResponse {
     public void setVersions(ValuesItem versions) {
         this.versions = versions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -22,13 +22,13 @@ public class CreatePostalRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage = "zh_CN";
+    private String xLanguage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddPostalReq body = null;
+    private AddPostalReq body;
 
     public CreatePostalRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -51,6 +51,8 @@ public class CreatePostalRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
+
+    
 
     public CreatePostalRequest withBody(AddPostalReq body) {
         this.body = body;
@@ -78,6 +80,9 @@ public class CreatePostalRequest  {
     public void setBody(AddPostalReq body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

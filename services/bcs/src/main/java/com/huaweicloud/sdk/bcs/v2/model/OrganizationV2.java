@@ -67,6 +67,8 @@ public class OrganizationV2  {
         this.name = name;
     }
 
+    
+
     public OrganizationV2 withNameHash(String nameHash) {
         this.nameHash = nameHash;
         return this;
@@ -86,6 +88,8 @@ public class OrganizationV2  {
     public void setNameHash(String nameHash) {
         this.nameHash = nameHash;
     }
+
+    
 
     public OrganizationV2 withNodeCount(String nodeCount) {
         this.nodeCount = nodeCount;
@@ -107,6 +111,8 @@ public class OrganizationV2  {
         this.nodeCount = nodeCount;
     }
 
+    
+
     public OrganizationV2 withStatus(String status) {
         this.status = status;
         return this;
@@ -127,6 +133,8 @@ public class OrganizationV2  {
         this.status = status;
     }
 
+    
+
     public OrganizationV2 withStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
         return this;
@@ -146,6 +154,9 @@ public class OrganizationV2  {
     public void setStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,7 +49,7 @@ public class ListResizeFlavorsResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk")
     
-    private String disk = "0";
+    private String disk;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,7 +67,7 @@ public class ListResizeFlavorsResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-FLV-DISABLED:disabled")
     
-    private Boolean osFLVDISABLEDDisabled = false;
+    private Boolean osFLVDISABLEDDisabled;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,19 +91,19 @@ public class ListResizeFlavorsResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-flavor-access:is_public")
     
-    private Boolean osFlavorAccessIsPublic = true;
+    private Boolean osFlavorAccessIsPublic;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private List<FlavorLink> links = new ArrayList<>();
+    private List<FlavorLink> links = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_specs")
     
-    private FlavorExtraSpec extraSpecs = null;
+    private FlavorExtraSpec extraSpecs;
 
     public ListResizeFlavorsResult withId(String id) {
         this.id = id;
@@ -125,6 +125,8 @@ public class ListResizeFlavorsResult  {
         this.id = id;
     }
 
+    
+
     public ListResizeFlavorsResult withName(String name) {
         this.name = name;
         return this;
@@ -144,6 +146,8 @@ public class ListResizeFlavorsResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ListResizeFlavorsResult withVcpus(String vcpus) {
         this.vcpus = vcpus;
@@ -165,6 +169,8 @@ public class ListResizeFlavorsResult  {
         this.vcpus = vcpus;
     }
 
+    
+
     public ListResizeFlavorsResult withRam(Integer ram) {
         this.ram = ram;
         return this;
@@ -184,6 +190,8 @@ public class ListResizeFlavorsResult  {
     public void setRam(Integer ram) {
         this.ram = ram;
     }
+
+    
 
     public ListResizeFlavorsResult withDisk(String disk) {
         this.disk = disk;
@@ -205,6 +213,8 @@ public class ListResizeFlavorsResult  {
         this.disk = disk;
     }
 
+    
+
     public ListResizeFlavorsResult withSwap(String swap) {
         this.swap = swap;
         return this;
@@ -224,6 +234,8 @@ public class ListResizeFlavorsResult  {
     public void setSwap(String swap) {
         this.swap = swap;
     }
+
+    
 
     public ListResizeFlavorsResult withOsFLVEXTDATAEphemeral(Integer osFLVEXTDATAEphemeral) {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
@@ -245,6 +257,8 @@ public class ListResizeFlavorsResult  {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
     }
 
+    
+
     public ListResizeFlavorsResult withOsFLVDISABLEDDisabled(Boolean osFLVDISABLEDDisabled) {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
         return this;
@@ -264,6 +278,8 @@ public class ListResizeFlavorsResult  {
     public void setOsFLVDISABLEDDisabled(Boolean osFLVDISABLEDDisabled) {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
     }
+
+    
 
     public ListResizeFlavorsResult withRxtxFactor(Float rxtxFactor) {
         this.rxtxFactor = rxtxFactor;
@@ -285,6 +301,8 @@ public class ListResizeFlavorsResult  {
         this.rxtxFactor = rxtxFactor;
     }
 
+    
+
     public ListResizeFlavorsResult withRxtxQuota(String rxtxQuota) {
         this.rxtxQuota = rxtxQuota;
         return this;
@@ -304,6 +322,8 @@ public class ListResizeFlavorsResult  {
     public void setRxtxQuota(String rxtxQuota) {
         this.rxtxQuota = rxtxQuota;
     }
+
+    
 
     public ListResizeFlavorsResult withRxtxCap(String rxtxCap) {
         this.rxtxCap = rxtxCap;
@@ -325,6 +345,8 @@ public class ListResizeFlavorsResult  {
         this.rxtxCap = rxtxCap;
     }
 
+    
+
     public ListResizeFlavorsResult withOsFlavorAccessIsPublic(Boolean osFlavorAccessIsPublic) {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
         return this;
@@ -344,6 +366,8 @@ public class ListResizeFlavorsResult  {
     public void setOsFlavorAccessIsPublic(Boolean osFlavorAccessIsPublic) {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
     }
+
+    
 
     public ListResizeFlavorsResult withLinks(List<FlavorLink> links) {
         this.links = links;
@@ -376,6 +400,8 @@ public class ListResizeFlavorsResult  {
         this.links = links;
     }
 
+    
+
     public ListResizeFlavorsResult withExtraSpecs(FlavorExtraSpec extraSpecs) {
         this.extraSpecs = extraSpecs;
         return this;
@@ -402,6 +428,9 @@ public class ListResizeFlavorsResult  {
     public void setExtraSpecs(FlavorExtraSpec extraSpecs) {
         this.extraSpecs = extraSpecs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

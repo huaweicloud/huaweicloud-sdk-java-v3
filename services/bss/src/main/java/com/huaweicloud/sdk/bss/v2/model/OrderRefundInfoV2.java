@@ -85,6 +85,8 @@ public class OrderRefundInfoV2  {
         this.id = id;
     }
 
+    
+
     public OrderRefundInfoV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
@@ -104,6 +106,8 @@ public class OrderRefundInfoV2  {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    
 
     public OrderRefundInfoV2 withMeasureId(String measureId) {
         this.measureId = measureId;
@@ -125,6 +129,8 @@ public class OrderRefundInfoV2  {
         this.measureId = measureId;
     }
 
+    
+
     public OrderRefundInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -144,6 +150,8 @@ public class OrderRefundInfoV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    
 
     public OrderRefundInfoV2 withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
@@ -165,6 +173,8 @@ public class OrderRefundInfoV2  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
+    
+
     public OrderRefundInfoV2 withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
@@ -184,6 +194,8 @@ public class OrderRefundInfoV2  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
+
+    
 
     public OrderRefundInfoV2 withRegionCode(String regionCode) {
         this.regionCode = regionCode;
@@ -205,6 +217,8 @@ public class OrderRefundInfoV2  {
         this.regionCode = regionCode;
     }
 
+    
+
     public OrderRefundInfoV2 withBaseOrderId(String baseOrderId) {
         this.baseOrderId = baseOrderId;
         return this;
@@ -224,6 +238,9 @@ public class OrderRefundInfoV2  {
     public void setBaseOrderId(String baseOrderId) {
         this.baseOrderId = baseOrderId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

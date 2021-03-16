@@ -63,6 +63,8 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         this.budgetAmount = budgetAmount;
     }
 
+    
+
     public ShowSubCustomerBudgetResponse withUsedAmount(Double usedAmount) {
         this.usedAmount = usedAmount;
         return this;
@@ -82,6 +84,8 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     public void setUsedAmount(Double usedAmount) {
         this.usedAmount = usedAmount;
     }
+
+    
 
     public ShowSubCustomerBudgetResponse withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -103,6 +107,8 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
         this.measureId = measureId;
     }
 
+    
+
     public ShowSubCustomerBudgetResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -122,6 +128,9 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -351,6 +351,8 @@ public class ListScalingInstancesRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public ListScalingInstancesRequest withLifeCycleState(LifeCycleStateEnum lifeCycleState) {
         this.lifeCycleState = lifeCycleState;
         return this;
@@ -370,6 +372,8 @@ public class ListScalingInstancesRequest  {
     public void setLifeCycleState(LifeCycleStateEnum lifeCycleState) {
         this.lifeCycleState = lifeCycleState;
     }
+
+    
 
     public ListScalingInstancesRequest withHealthStatus(HealthStatusEnum healthStatus) {
         this.healthStatus = healthStatus;
@@ -391,6 +395,8 @@ public class ListScalingInstancesRequest  {
         this.healthStatus = healthStatus;
     }
 
+    
+
     public ListScalingInstancesRequest withProtectFromScalingDown(ProtectFromScalingDownEnum protectFromScalingDown) {
         this.protectFromScalingDown = protectFromScalingDown;
         return this;
@@ -410,6 +416,8 @@ public class ListScalingInstancesRequest  {
     public void setProtectFromScalingDown(ProtectFromScalingDownEnum protectFromScalingDown) {
         this.protectFromScalingDown = protectFromScalingDown;
     }
+
+    
 
     public ListScalingInstancesRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
@@ -431,6 +439,8 @@ public class ListScalingInstancesRequest  {
         this.startNumber = startNumber;
     }
 
+    
+
     public ListScalingInstancesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -450,6 +460,9 @@ public class ListScalingInstancesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

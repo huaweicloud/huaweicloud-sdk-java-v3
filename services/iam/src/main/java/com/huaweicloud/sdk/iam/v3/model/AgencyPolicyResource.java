@@ -23,7 +23,7 @@ public class AgencyPolicyResource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="uri")
     
-    private List<String> uri = new ArrayList<>();
+    private List<String> uri = null;
     
     public AgencyPolicyResource withUri(List<String> uri) {
         this.uri = uri;
@@ -55,6 +55,9 @@ public class AgencyPolicyResource  {
     public void setUri(List<String> uri) {
         this.uri = uri;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

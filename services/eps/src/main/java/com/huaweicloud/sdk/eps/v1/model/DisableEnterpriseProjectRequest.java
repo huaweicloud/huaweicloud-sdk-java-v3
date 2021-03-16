@@ -28,7 +28,7 @@ public class DisableEnterpriseProjectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DisableAction body = null;
+    private DisableAction body;
 
     public DisableEnterpriseProjectRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -49,6 +49,8 @@ public class DisableEnterpriseProjectRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public DisableEnterpriseProjectRequest withBody(DisableAction body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class DisableEnterpriseProjectRequest  {
     public void setBody(DisableAction body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

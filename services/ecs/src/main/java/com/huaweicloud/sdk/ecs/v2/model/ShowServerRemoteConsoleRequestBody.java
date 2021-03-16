@@ -22,7 +22,7 @@ public class ShowServerRemoteConsoleRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remote_console")
     
-    private GetServerRemoteConsoleOption remoteConsole = null;
+    private GetServerRemoteConsoleOption remoteConsole;
 
     public ShowServerRemoteConsoleRequestBody withRemoteConsole(GetServerRemoteConsoleOption remoteConsole) {
         this.remoteConsole = remoteConsole;
@@ -50,6 +50,9 @@ public class ShowServerRemoteConsoleRequestBody  {
     public void setRemoteConsole(GetServerRemoteConsoleOption remoteConsole) {
         this.remoteConsole = remoteConsole;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

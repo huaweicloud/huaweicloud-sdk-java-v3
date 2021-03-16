@@ -41,13 +41,13 @@ public class AgencyPolicyRoleResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private LinksSelf links;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy")
     
-    private AgencyPolicy policy = null;
+    private AgencyPolicy policy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,6 +117,8 @@ public class AgencyPolicyRoleResult  {
         this.catalog = catalog;
     }
 
+    
+
     public AgencyPolicyRoleResult withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -137,6 +139,8 @@ public class AgencyPolicyRoleResult  {
         this.displayName = displayName;
     }
 
+    
+
     public AgencyPolicyRoleResult withDescription(String description) {
         this.description = description;
         return this;
@@ -156,6 +160,8 @@ public class AgencyPolicyRoleResult  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public AgencyPolicyRoleResult withLinks(LinksSelf links) {
         this.links = links;
@@ -184,6 +190,8 @@ public class AgencyPolicyRoleResult  {
         this.links = links;
     }
 
+    
+
     public AgencyPolicyRoleResult withPolicy(AgencyPolicy policy) {
         this.policy = policy;
         return this;
@@ -211,6 +219,8 @@ public class AgencyPolicyRoleResult  {
         this.policy = policy;
     }
 
+    
+
     public AgencyPolicyRoleResult withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
         return this;
@@ -230,6 +240,8 @@ public class AgencyPolicyRoleResult  {
     public void setDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
     }
+
+    
 
     public AgencyPolicyRoleResult withDomainId(String domainId) {
         this.domainId = domainId;
@@ -251,6 +263,8 @@ public class AgencyPolicyRoleResult  {
         this.domainId = domainId;
     }
 
+    
+
     public AgencyPolicyRoleResult withType(String type) {
         this.type = type;
         return this;
@@ -270,6 +284,8 @@ public class AgencyPolicyRoleResult  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public AgencyPolicyRoleResult withId(String id) {
         this.id = id;
@@ -291,6 +307,8 @@ public class AgencyPolicyRoleResult  {
         this.id = id;
     }
 
+    
+
     public AgencyPolicyRoleResult withName(String name) {
         this.name = name;
         return this;
@@ -310,6 +328,8 @@ public class AgencyPolicyRoleResult  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public AgencyPolicyRoleResult withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
@@ -331,6 +351,8 @@ public class AgencyPolicyRoleResult  {
         this.updatedTime = updatedTime;
     }
 
+    
+
     public AgencyPolicyRoleResult withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -351,6 +373,8 @@ public class AgencyPolicyRoleResult  {
         this.createdTime = createdTime;
     }
 
+    
+
     public AgencyPolicyRoleResult withReferences(String references) {
         this.references = references;
         return this;
@@ -370,6 +394,9 @@ public class AgencyPolicyRoleResult  {
     public void setReferences(String references) {
         this.references = references;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

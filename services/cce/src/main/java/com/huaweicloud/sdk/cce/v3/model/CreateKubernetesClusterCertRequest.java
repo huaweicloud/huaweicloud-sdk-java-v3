@@ -28,7 +28,7 @@ public class CreateKubernetesClusterCertRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CertDuration body = null;
+    private CertDuration body;
 
     public CreateKubernetesClusterCertRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -49,6 +49,8 @@ public class CreateKubernetesClusterCertRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
+
+    
 
     public CreateKubernetesClusterCertRequest withBody(CertDuration body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CreateKubernetesClusterCertRequest  {
     public void setBody(CertDuration body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

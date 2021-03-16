@@ -23,7 +23,7 @@ public class InstanceStatusView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private InstanceStatusType status = null;
+    private InstanceStatusType status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,7 +41,7 @@ public class InstanceStatusView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fail_detail")
     
-    private InstanceFailDetail failDetail = null;
+    private InstanceFailDetail failDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,6 +75,8 @@ public class InstanceStatusView  {
         this.status = status;
     }
 
+    
+
     public InstanceStatusView withAvailableReplica(Integer availableReplica) {
         this.availableReplica = availableReplica;
         return this;
@@ -94,6 +96,8 @@ public class InstanceStatusView  {
     public void setAvailableReplica(Integer availableReplica) {
         this.availableReplica = availableReplica;
     }
+
+    
 
     public InstanceStatusView withReplica(Integer replica) {
         this.replica = replica;
@@ -115,6 +119,8 @@ public class InstanceStatusView  {
         this.replica = replica;
     }
 
+    
+
     public InstanceStatusView withFailDetail(InstanceFailDetail failDetail) {
         this.failDetail = failDetail;
         return this;
@@ -134,6 +140,8 @@ public class InstanceStatusView  {
     public void setFailDetail(InstanceFailDetail failDetail) {
         this.failDetail = failDetail;
     }
+
+    
 
     public InstanceStatusView withLastJobId(String lastJobId) {
         this.lastJobId = lastJobId;
@@ -155,6 +163,8 @@ public class InstanceStatusView  {
         this.lastJobId = lastJobId;
     }
 
+    
+
     public InstanceStatusView withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -174,6 +184,9 @@ public class InstanceStatusView  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

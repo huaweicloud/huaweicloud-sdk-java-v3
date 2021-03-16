@@ -117,7 +117,7 @@ public class LiveDataExportReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="format")
     
-    private FormatEnum format = FormatEnum.JSON;
+    private FormatEnum format;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -145,6 +145,8 @@ public class LiveDataExportReq  {
         this.appId = appId;
     }
 
+    
+
     public LiveDataExportReq withFormat(FormatEnum format) {
         this.format = format;
         return this;
@@ -165,6 +167,8 @@ public class LiveDataExportReq  {
         this.format = format;
     }
 
+    
+
     public LiveDataExportReq withApis(List<String> apis) {
         this.apis = apis;
         return this;
@@ -172,9 +176,6 @@ public class LiveDataExportReq  {
 
     
     public LiveDataExportReq addApisItem(String apisItem) {
-        if (this.apis == null) {
-            this.apis = new ArrayList<>();
-        }
         this.apis.add(apisItem);
         return this;
     }
@@ -198,6 +199,9 @@ public class LiveDataExportReq  {
     public void setApis(List<String> apis) {
         this.apis = apis;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

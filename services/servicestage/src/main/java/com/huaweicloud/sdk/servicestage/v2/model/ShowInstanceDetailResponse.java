@@ -56,13 +56,13 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="platform_type")
     
-    private InstancePlatformType platformType = null;
+    private InstancePlatformType platformType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor_id")
     
-    private FlavorId flavorId = null;
+    private FlavorId flavorId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,7 +80,7 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configuration")
     
-    private Object _configuration = null;
+    private Object _configuration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,7 +116,7 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status_detail")
     
-    private InstanceStatusView statusDetail = null;
+    private InstanceStatusView statusDetail;
 
     public ShowInstanceDetailResponse withId(String id) {
         this.id = id;
@@ -138,6 +138,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowInstanceDetailResponse withName(String name) {
         this.name = name;
         return this;
@@ -157,6 +159,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowInstanceDetailResponse withDescription(String description) {
         this.description = description;
@@ -178,6 +182,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowInstanceDetailResponse withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
         return this;
@@ -197,6 +203,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
+
+    
 
     public ShowInstanceDetailResponse withPlatformType(InstancePlatformType platformType) {
         this.platformType = platformType;
@@ -218,6 +226,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.platformType = platformType;
     }
 
+    
+
     public ShowInstanceDetailResponse withFlavorId(FlavorId flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -238,6 +248,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.flavorId = flavorId;
     }
 
+    
+
     public ShowInstanceDetailResponse withArtifacts(Map<String, Object> artifacts) {
         this.artifacts = artifacts;
         return this;
@@ -246,9 +258,6 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     
 
     public ShowInstanceDetailResponse putArtifactsItem(String key, Object artifactsItem) {
-         if (this.artifacts == null) {
-            this.artifacts = new HashMap<>();
-         }
         this.artifacts.put(key, artifactsItem);
         return this;
     }
@@ -272,6 +281,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.artifacts = artifacts;
     }
 
+    
+
     public ShowInstanceDetailResponse withVersion(String version) {
         this.version = version;
         return this;
@@ -291,6 +302,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    
 
     public ShowInstanceDetailResponse withConfiguration(Object _configuration) {
         this._configuration = _configuration;
@@ -312,6 +325,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this._configuration = _configuration;
     }
 
+    
+
     public ShowInstanceDetailResponse withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -331,6 +346,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    
 
     public ShowInstanceDetailResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -352,6 +369,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowInstanceDetailResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -372,6 +391,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public ShowInstanceDetailResponse withExternalAccesses(List<ExternalAccesses> externalAccesses) {
         this.externalAccesses = externalAccesses;
         return this;
@@ -379,9 +400,6 @@ public class ShowInstanceDetailResponse extends SdkResponse {
 
     
     public ShowInstanceDetailResponse addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
-        if (this.externalAccesses == null) {
-            this.externalAccesses = new ArrayList<>();
-        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
@@ -406,6 +424,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.externalAccesses = externalAccesses;
     }
 
+    
+
     public ShowInstanceDetailResponse withReferResources(List<ReferResources> referResources) {
         this.referResources = referResources;
         return this;
@@ -413,9 +433,6 @@ public class ShowInstanceDetailResponse extends SdkResponse {
 
     
     public ShowInstanceDetailResponse addReferResourcesItem(ReferResources referResourcesItem) {
-        if (this.referResources == null) {
-            this.referResources = new ArrayList<>();
-        }
         this.referResources.add(referResourcesItem);
         return this;
     }
@@ -439,6 +456,8 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     public void setReferResources(List<ReferResources> referResources) {
         this.referResources = referResources;
     }
+
+    
 
     public ShowInstanceDetailResponse withStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
@@ -466,6 +485,9 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     public void setStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

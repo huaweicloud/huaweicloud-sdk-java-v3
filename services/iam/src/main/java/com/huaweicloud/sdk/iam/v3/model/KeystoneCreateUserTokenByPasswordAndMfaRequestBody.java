@@ -22,7 +22,7 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth")
     
-    private MfaAuth auth = null;
+    private MfaAuth auth;
 
     public KeystoneCreateUserTokenByPasswordAndMfaRequestBody withAuth(MfaAuth auth) {
         this.auth = auth;
@@ -50,6 +50,9 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequestBody  {
     public void setAuth(MfaAuth auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

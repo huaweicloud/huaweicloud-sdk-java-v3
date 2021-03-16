@@ -34,7 +34,7 @@ public class UpdateMemberRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateMemberRequestBody body = null;
+    private UpdateMemberRequestBody body;
 
     public UpdateMemberRequest withMemberId(String memberId) {
         this.memberId = memberId;
@@ -56,6 +56,8 @@ public class UpdateMemberRequest  {
         this.memberId = memberId;
     }
 
+    
+
     public UpdateMemberRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateMemberRequest  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
+
+    
 
     public UpdateMemberRequest withBody(UpdateMemberRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateMemberRequest  {
     public void setBody(UpdateMemberRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

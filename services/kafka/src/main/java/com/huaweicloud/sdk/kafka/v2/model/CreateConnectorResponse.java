@@ -51,6 +51,8 @@ public class CreateConnectorResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    
+
     public CreateConnectorResponse withConnectorId(String connectorId) {
         this.connectorId = connectorId;
         return this;
@@ -70,6 +72,9 @@ public class CreateConnectorResponse extends SdkResponse {
     public void setConnectorId(String connectorId) {
         this.connectorId = connectorId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

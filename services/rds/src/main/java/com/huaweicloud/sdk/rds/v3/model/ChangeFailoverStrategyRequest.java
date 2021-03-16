@@ -116,7 +116,7 @@ public class ChangeFailoverStrategyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FailoverStrategyRequest body = null;
+    private FailoverStrategyRequest body;
 
     public ChangeFailoverStrategyRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -140,6 +140,8 @@ public class ChangeFailoverStrategyRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public ChangeFailoverStrategyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -159,6 +161,8 @@ public class ChangeFailoverStrategyRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public ChangeFailoverStrategyRequest withBody(FailoverStrategyRequest body) {
         this.body = body;
@@ -186,6 +190,9 @@ public class ChangeFailoverStrategyRequest  {
     public void setBody(FailoverStrategyRequest body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

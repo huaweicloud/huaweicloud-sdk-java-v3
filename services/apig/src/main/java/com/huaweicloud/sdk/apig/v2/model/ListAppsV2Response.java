@@ -60,6 +60,8 @@ public class ListAppsV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListAppsV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListAppsV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListAppsV2Response withApps(List<AppInfoWithBindNumResp> apps) {
         this.apps = apps;
         return this;
@@ -87,9 +91,6 @@ public class ListAppsV2Response extends SdkResponse {
 
     
     public ListAppsV2Response addAppsItem(AppInfoWithBindNumResp appsItem) {
-        if (this.apps == null) {
-            this.apps = new ArrayList<>();
-        }
         this.apps.add(appsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListAppsV2Response extends SdkResponse {
     public void setApps(List<AppInfoWithBindNumResp> apps) {
         this.apps = apps;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

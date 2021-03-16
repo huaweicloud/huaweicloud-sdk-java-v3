@@ -25,7 +25,7 @@ public class LdApiDeploy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
-    private String authType = "APP";
+    private String authType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,7 +133,7 @@ public class LdApiDeploy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    private ProtocolEnum protocol = ProtocolEnum.HTTPS;
+    private ProtocolEnum protocol;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -157,7 +157,7 @@ public class LdApiDeploy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -169,7 +169,7 @@ public class LdApiDeploy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deploy_front_api")
     
-    private Boolean deployFrontApi = false;
+    private Boolean deployFrontApi;
 
     public LdApiDeploy withAuthType(String authType) {
         this.authType = authType;
@@ -191,6 +191,8 @@ public class LdApiDeploy  {
         this.authType = authType;
     }
 
+    
+
     public LdApiDeploy withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -210,6 +212,8 @@ public class LdApiDeploy  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
+
+    
 
     public LdApiDeploy withGroupId(String groupId) {
         this.groupId = groupId;
@@ -231,6 +235,8 @@ public class LdApiDeploy  {
         this.groupId = groupId;
     }
 
+    
+
     public LdApiDeploy withEnvId(String envId) {
         this.envId = envId;
         return this;
@@ -250,6 +256,8 @@ public class LdApiDeploy  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
+
+    
 
     public LdApiDeploy withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
@@ -271,6 +279,8 @@ public class LdApiDeploy  {
         this.protocol = protocol;
     }
 
+    
+
     public LdApiDeploy withBackendTimeout(Integer backendTimeout) {
         this.backendTimeout = backendTimeout;
         return this;
@@ -290,6 +300,8 @@ public class LdApiDeploy  {
     public void setBackendTimeout(Integer backendTimeout) {
         this.backendTimeout = backendTimeout;
     }
+
+    
 
     public LdApiDeploy withPath(String path) {
         this.path = path;
@@ -311,6 +323,8 @@ public class LdApiDeploy  {
         this.path = path;
     }
 
+    
+
     public LdApiDeploy withMethod(String method) {
         this.method = method;
         return this;
@@ -330,6 +344,8 @@ public class LdApiDeploy  {
     public void setMethod(String method) {
         this.method = method;
     }
+
+    
 
     public LdApiDeploy withCors(Boolean cors) {
         this.cors = cors;
@@ -351,6 +367,8 @@ public class LdApiDeploy  {
         this.cors = cors;
     }
 
+    
+
     public LdApiDeploy withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
@@ -371,6 +389,8 @@ public class LdApiDeploy  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public LdApiDeploy withDeployFrontApi(Boolean deployFrontApi) {
         this.deployFrontApi = deployFrontApi;
         return this;
@@ -390,6 +410,9 @@ public class LdApiDeploy  {
     public void setDeployFrontApi(Boolean deployFrontApi) {
         this.deployFrontApi = deployFrontApi;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

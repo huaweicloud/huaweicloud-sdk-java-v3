@@ -60,6 +60,8 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         this.count = count;
     }
 
+    
+
     public ListInstanceTopicsResponse withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListInstanceTopicsResponse withTopics(List<ListInstanceTopicsRespTopics> topics) {
         this.topics = topics;
         return this;
@@ -87,9 +91,6 @@ public class ListInstanceTopicsResponse extends SdkResponse {
 
     
     public ListInstanceTopicsResponse addTopicsItem(ListInstanceTopicsRespTopics topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
         this.topics.add(topicsItem);
         return this;
     }
@@ -113,6 +114,9 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     public void setTopics(List<ListInstanceTopicsRespTopics> topics) {
         this.topics = topics;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

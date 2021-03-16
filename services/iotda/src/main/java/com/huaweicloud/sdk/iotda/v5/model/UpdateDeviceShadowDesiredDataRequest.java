@@ -34,7 +34,7 @@ public class UpdateDeviceShadowDesiredDataRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateDesireds body = null;
+    private UpdateDesireds body;
 
     public UpdateDeviceShadowDesiredDataRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class UpdateDeviceShadowDesiredDataRequest  {
         this.instanceId = instanceId;
     }
 
+    
+
     public UpdateDeviceShadowDesiredDataRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -75,6 +77,8 @@ public class UpdateDeviceShadowDesiredDataRequest  {
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
+
+    
 
     public UpdateDeviceShadowDesiredDataRequest withBody(UpdateDesireds body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateDeviceShadowDesiredDataRequest  {
     public void setBody(UpdateDesireds body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

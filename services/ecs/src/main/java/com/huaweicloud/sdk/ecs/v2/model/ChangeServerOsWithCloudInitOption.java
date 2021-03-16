@@ -46,7 +46,7 @@ public class ChangeServerOsWithCloudInitOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private ChangeSeversOsMetadata metadata = null;
+    private ChangeSeversOsMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,6 +74,8 @@ public class ChangeServerOsWithCloudInitOption  {
         this.adminpass = adminpass;
     }
 
+    
+
     public ChangeServerOsWithCloudInitOption withKeyname(String keyname) {
         this.keyname = keyname;
         return this;
@@ -93,6 +95,8 @@ public class ChangeServerOsWithCloudInitOption  {
     public void setKeyname(String keyname) {
         this.keyname = keyname;
     }
+
+    
 
     public ChangeServerOsWithCloudInitOption withUserid(String userid) {
         this.userid = userid;
@@ -114,6 +118,8 @@ public class ChangeServerOsWithCloudInitOption  {
         this.userid = userid;
     }
 
+    
+
     public ChangeServerOsWithCloudInitOption withImageid(String imageid) {
         this.imageid = imageid;
         return this;
@@ -133,6 +139,8 @@ public class ChangeServerOsWithCloudInitOption  {
     public void setImageid(String imageid) {
         this.imageid = imageid;
     }
+
+    
 
     public ChangeServerOsWithCloudInitOption withMetadata(ChangeSeversOsMetadata metadata) {
         this.metadata = metadata;
@@ -161,6 +169,8 @@ public class ChangeServerOsWithCloudInitOption  {
         this.metadata = metadata;
     }
 
+    
+
     public ChangeServerOsWithCloudInitOption withMode(String mode) {
         this.mode = mode;
         return this;
@@ -180,6 +190,9 @@ public class ChangeServerOsWithCloudInitOption  {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

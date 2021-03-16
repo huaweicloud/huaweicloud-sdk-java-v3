@@ -28,7 +28,7 @@ public class CheckApisV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiCheckInfo body = null;
+    private ApiCheckInfo body;
 
     public CheckApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,6 +49,8 @@ public class CheckApisV2Request  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
 
     public CheckApisV2Request withBody(ApiCheckInfo body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class CheckApisV2Request  {
     public void setBody(ApiCheckInfo body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

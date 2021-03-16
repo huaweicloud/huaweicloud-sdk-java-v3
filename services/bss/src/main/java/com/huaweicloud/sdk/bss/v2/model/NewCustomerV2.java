@@ -67,6 +67,8 @@ public class NewCustomerV2  {
         this.customerName = customerName;
     }
 
+    
+
     public NewCustomerV2 withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
@@ -86,6 +88,8 @@ public class NewCustomerV2  {
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
+
+    
 
     public NewCustomerV2 withUsePriMobilePhone(String usePriMobilePhone) {
         this.usePriMobilePhone = usePriMobilePhone;
@@ -107,6 +111,8 @@ public class NewCustomerV2  {
         this.usePriMobilePhone = usePriMobilePhone;
     }
 
+    
+
     public NewCustomerV2 withPassword(String password) {
         this.password = password;
         return this;
@@ -127,6 +133,8 @@ public class NewCustomerV2  {
         this.password = password;
     }
 
+    
+
     public NewCustomerV2 withVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
         return this;
@@ -146,6 +154,9 @@ public class NewCustomerV2  {
     public void setVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

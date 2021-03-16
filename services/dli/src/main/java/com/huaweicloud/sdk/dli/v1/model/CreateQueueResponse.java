@@ -57,6 +57,8 @@ public class CreateQueueResponse extends SdkResponse {
         this.isSuccess = isSuccess;
     }
 
+    
+
     public CreateQueueResponse withMessage(String message) {
         this.message = message;
         return this;
@@ -77,6 +79,8 @@ public class CreateQueueResponse extends SdkResponse {
         this.message = message;
     }
 
+    
+
     public CreateQueueResponse withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -96,6 +100,9 @@ public class CreateQueueResponse extends SdkResponse {
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

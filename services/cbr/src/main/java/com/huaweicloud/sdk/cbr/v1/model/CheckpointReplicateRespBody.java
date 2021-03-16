@@ -24,7 +24,7 @@ public class CheckpointReplicateRespBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backups")
     
-    private List<CheckpointReplicateRespbackups> backups = new ArrayList<>();
+    private List<CheckpointReplicateRespbackups> backups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,6 +99,8 @@ public class CheckpointReplicateRespBody  {
         this.backups = backups;
     }
 
+    
+
     public CheckpointReplicateRespBody withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
@@ -118,6 +120,8 @@ public class CheckpointReplicateRespBody  {
     public void setDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
     }
+
+    
 
     public CheckpointReplicateRespBody withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
@@ -139,6 +143,8 @@ public class CheckpointReplicateRespBody  {
         this.destinationRegion = destinationRegion;
     }
 
+    
+
     public CheckpointReplicateRespBody withDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
         return this;
@@ -158,6 +164,8 @@ public class CheckpointReplicateRespBody  {
     public void setDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
     }
+
+    
 
     public CheckpointReplicateRespBody withProjectId(String projectId) {
         this.projectId = projectId;
@@ -179,6 +187,8 @@ public class CheckpointReplicateRespBody  {
         this.projectId = projectId;
     }
 
+    
+
     public CheckpointReplicateRespBody withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
@@ -198,6 +208,8 @@ public class CheckpointReplicateRespBody  {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
+    
 
     public CheckpointReplicateRespBody withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
@@ -219,6 +231,8 @@ public class CheckpointReplicateRespBody  {
         this.sourceRegion = sourceRegion;
     }
 
+    
+
     public CheckpointReplicateRespBody withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -238,6 +252,9 @@ public class CheckpointReplicateRespBody  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

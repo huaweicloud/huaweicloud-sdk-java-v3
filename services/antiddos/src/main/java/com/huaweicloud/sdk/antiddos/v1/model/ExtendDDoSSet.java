@@ -73,6 +73,8 @@ public class ExtendDDoSSet  {
         this.setID = setID;
     }
 
+    
+
     public ExtendDDoSSet withNewConnectionLimited(Long newConnectionLimited) {
         this.newConnectionLimited = newConnectionLimited;
         return this;
@@ -92,6 +94,8 @@ public class ExtendDDoSSet  {
     public void setNewConnectionLimited(Long newConnectionLimited) {
         this.newConnectionLimited = newConnectionLimited;
     }
+
+    
 
     public ExtendDDoSSet withTotalConnectionLimited(Long totalConnectionLimited) {
         this.totalConnectionLimited = totalConnectionLimited;
@@ -113,6 +117,8 @@ public class ExtendDDoSSet  {
         this.totalConnectionLimited = totalConnectionLimited;
     }
 
+    
+
     public ExtendDDoSSet withHttpPacketPerSecond(Long httpPacketPerSecond) {
         this.httpPacketPerSecond = httpPacketPerSecond;
         return this;
@@ -132,6 +138,8 @@ public class ExtendDDoSSet  {
     public void setHttpPacketPerSecond(Long httpPacketPerSecond) {
         this.httpPacketPerSecond = httpPacketPerSecond;
     }
+
+    
 
     public ExtendDDoSSet withTrafficPerSecond(Long trafficPerSecond) {
         this.trafficPerSecond = trafficPerSecond;
@@ -153,6 +161,8 @@ public class ExtendDDoSSet  {
         this.trafficPerSecond = trafficPerSecond;
     }
 
+    
+
     public ExtendDDoSSet withPacketPerSecond(Long packetPerSecond) {
         this.packetPerSecond = packetPerSecond;
         return this;
@@ -172,6 +182,9 @@ public class ExtendDDoSSet  {
     public void setPacketPerSecond(Long packetPerSecond) {
         this.packetPerSecond = packetPerSecond;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -125,6 +125,8 @@ public class DeleteTrackerRequest  {
         this.trackerName = trackerName;
     }
 
+    
+
     public DeleteTrackerRequest withTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
         return this;
@@ -144,6 +146,9 @@ public class DeleteTrackerRequest  {
     public void setTrackerType(TrackerTypeEnum trackerType) {
         this.trackerType = trackerType;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

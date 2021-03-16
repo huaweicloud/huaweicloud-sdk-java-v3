@@ -50,6 +50,8 @@ public class CreateAnonymousAuthRandomRequest  {
         this.conferenceID = conferenceID;
     }
 
+    
+
     public CreateAnonymousAuthRandomRequest withXPassword(String xPassword) {
         this.xPassword = xPassword;
         return this;
@@ -71,6 +73,9 @@ public class CreateAnonymousAuthRandomRequest  {
     public void setXPassword(String xPassword) {
         this.xPassword = xPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -55,6 +55,8 @@ public class ActiveDTO  {
         this.smsNumber = smsNumber;
     }
 
+    
+
     public ActiveDTO withCountry(String country) {
         this.country = country;
         return this;
@@ -75,6 +77,8 @@ public class ActiveDTO  {
         this.country = country;
     }
 
+    
+
     public ActiveDTO withEmailAddr(String emailAddr) {
         this.emailAddr = emailAddr;
         return this;
@@ -94,6 +98,9 @@ public class ActiveDTO  {
     public void setEmailAddr(String emailAddr) {
         this.emailAddr = emailAddr;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

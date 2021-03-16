@@ -24,7 +24,7 @@ public class NeutronCreateFloatingIpResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="floatingip")
     
-    private PostAndPutFloatingIpResp floatingip = null;
+    private PostAndPutFloatingIpResp floatingip;
 
     public NeutronCreateFloatingIpResponse withFloatingip(PostAndPutFloatingIpResp floatingip) {
         this.floatingip = floatingip;
@@ -52,6 +52,9 @@ public class NeutronCreateFloatingIpResponse extends SdkResponse {
     public void setFloatingip(PostAndPutFloatingIpResp floatingip) {
         this.floatingip = floatingip;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

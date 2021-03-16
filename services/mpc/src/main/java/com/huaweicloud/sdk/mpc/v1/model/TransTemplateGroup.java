@@ -39,19 +39,19 @@ public class TransTemplateGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private Audio audio = null;
+    private Audio audio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_common")
     
-    private VideoCommon videoCommon = null;
+    private VideoCommon videoCommon;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="common")
     
-    private Common common = null;
+    private Common common;
 
     public TransTemplateGroup withName(String name) {
         this.name = name;
@@ -73,6 +73,8 @@ public class TransTemplateGroup  {
         this.name = name;
     }
 
+    
+
     public TransTemplateGroup withVideos(List<VideoObj> videos) {
         this.videos = videos;
         return this;
@@ -80,9 +82,6 @@ public class TransTemplateGroup  {
 
     
     public TransTemplateGroup addVideosItem(VideoObj videosItem) {
-        if (this.videos == null) {
-            this.videos = new ArrayList<>();
-        }
         this.videos.add(videosItem);
         return this;
     }
@@ -106,6 +105,8 @@ public class TransTemplateGroup  {
     public void setVideos(List<VideoObj> videos) {
         this.videos = videos;
     }
+
+    
 
     public TransTemplateGroup withAudio(Audio audio) {
         this.audio = audio;
@@ -134,6 +135,8 @@ public class TransTemplateGroup  {
         this.audio = audio;
     }
 
+    
+
     public TransTemplateGroup withVideoCommon(VideoCommon videoCommon) {
         this.videoCommon = videoCommon;
         return this;
@@ -161,6 +164,8 @@ public class TransTemplateGroup  {
         this.videoCommon = videoCommon;
     }
 
+    
+
     public TransTemplateGroup withCommon(Common common) {
         this.common = common;
         return this;
@@ -187,6 +192,9 @@ public class TransTemplateGroup  {
     public void setCommon(Common common) {
         this.common = common;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

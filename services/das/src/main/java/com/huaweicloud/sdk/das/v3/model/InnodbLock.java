@@ -97,6 +97,8 @@ public class InnodbLock  {
         this.lockId = lockId;
     }
 
+    
+
     public InnodbLock withLockTrxId(String lockTrxId) {
         this.lockTrxId = lockTrxId;
         return this;
@@ -116,6 +118,8 @@ public class InnodbLock  {
     public void setLockTrxId(String lockTrxId) {
         this.lockTrxId = lockTrxId;
     }
+
+    
 
     public InnodbLock withLockMode(String lockMode) {
         this.lockMode = lockMode;
@@ -137,6 +141,8 @@ public class InnodbLock  {
         this.lockMode = lockMode;
     }
 
+    
+
     public InnodbLock withLockType(String lockType) {
         this.lockType = lockType;
         return this;
@@ -156,6 +162,8 @@ public class InnodbLock  {
     public void setLockType(String lockType) {
         this.lockType = lockType;
     }
+
+    
 
     public InnodbLock withLockTable(String lockTable) {
         this.lockTable = lockTable;
@@ -177,6 +185,8 @@ public class InnodbLock  {
         this.lockTable = lockTable;
     }
 
+    
+
     public InnodbLock withLockIndex(String lockIndex) {
         this.lockIndex = lockIndex;
         return this;
@@ -196,6 +206,8 @@ public class InnodbLock  {
     public void setLockIndex(String lockIndex) {
         this.lockIndex = lockIndex;
     }
+
+    
 
     public InnodbLock withLockSpace(String lockSpace) {
         this.lockSpace = lockSpace;
@@ -217,6 +229,8 @@ public class InnodbLock  {
         this.lockSpace = lockSpace;
     }
 
+    
+
     public InnodbLock withLockPage(String lockPage) {
         this.lockPage = lockPage;
         return this;
@@ -236,6 +250,8 @@ public class InnodbLock  {
     public void setLockPage(String lockPage) {
         this.lockPage = lockPage;
     }
+
+    
 
     public InnodbLock withLockRec(String lockRec) {
         this.lockRec = lockRec;
@@ -257,6 +273,8 @@ public class InnodbLock  {
         this.lockRec = lockRec;
     }
 
+    
+
     public InnodbLock withLockData(String lockData) {
         this.lockData = lockData;
         return this;
@@ -276,6 +294,9 @@ public class InnodbLock  {
     public void setLockData(String lockData) {
         this.lockData = lockData;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

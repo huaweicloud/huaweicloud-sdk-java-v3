@@ -42,6 +42,9 @@ public class AuthInfo  {
     public void setAuth(String auth) {
         this.auth = auth;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

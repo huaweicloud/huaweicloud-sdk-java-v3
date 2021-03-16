@@ -34,7 +34,7 @@ public class UpdateLifeCycleHookRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateLifeCycleHookRequestBody body = null;
+    private UpdateLifeCycleHookRequestBody body;
 
     public UpdateLifeCycleHookRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -56,6 +56,8 @@ public class UpdateLifeCycleHookRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
+    
+
     public UpdateLifeCycleHookRequest withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
         return this;
@@ -75,6 +77,8 @@ public class UpdateLifeCycleHookRequest  {
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
+
+    
 
     public UpdateLifeCycleHookRequest withBody(UpdateLifeCycleHookRequestBody body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class UpdateLifeCycleHookRequest  {
     public void setBody(UpdateLifeCycleHookRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -24,7 +24,7 @@ public class UpdateKeyAliasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_info")
     
-    private KeyAliasInfo keyInfo = null;
+    private KeyAliasInfo keyInfo;
 
     public UpdateKeyAliasResponse withKeyInfo(KeyAliasInfo keyInfo) {
         this.keyInfo = keyInfo;
@@ -52,6 +52,9 @@ public class UpdateKeyAliasResponse extends SdkResponse {
     public void setKeyInfo(KeyAliasInfo keyInfo) {
         this.keyInfo = keyInfo;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

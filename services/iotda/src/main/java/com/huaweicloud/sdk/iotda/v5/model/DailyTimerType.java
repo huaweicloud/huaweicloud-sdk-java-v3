@@ -49,6 +49,8 @@ public class DailyTimerType  {
         this.time = time;
     }
 
+    
+
     public DailyTimerType withDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
         return this;
@@ -68,6 +70,9 @@ public class DailyTimerType  {
     public void setDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

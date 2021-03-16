@@ -55,6 +55,8 @@ public class AttrsObject  {
         this.capacity = capacity;
     }
 
+    
+
     public AttrsObject withName(String name) {
         this.name = name;
         return this;
@@ -75,6 +77,8 @@ public class AttrsObject  {
         this.name = name;
     }
 
+    
+
     public AttrsObject withValue(String value) {
         this.value = value;
         return this;
@@ -94,6 +98,9 @@ public class AttrsObject  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

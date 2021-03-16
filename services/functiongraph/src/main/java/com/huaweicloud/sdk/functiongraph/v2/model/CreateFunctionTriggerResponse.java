@@ -252,19 +252,19 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_data")
     
-    private Object eventData = null;
+    private Object eventData;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_updated_time")
     
-    private OffsetDateTime lastUpdatedTime = null;
+    private OffsetDateTime lastUpdatedTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private OffsetDateTime createdTime = null;
+    private OffsetDateTime createdTime;
 
     public CreateFunctionTriggerResponse withTriggerId(String triggerId) {
         this.triggerId = triggerId;
@@ -286,6 +286,8 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
         this.triggerId = triggerId;
     }
 
+    
+
     public CreateFunctionTriggerResponse withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
         return this;
@@ -305,6 +307,8 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     public void setTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
     }
+
+    
 
     public CreateFunctionTriggerResponse withTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
@@ -326,6 +330,8 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
         this.triggerStatus = triggerStatus;
     }
 
+    
+
     public CreateFunctionTriggerResponse withEventData(Object eventData) {
         this.eventData = eventData;
         return this;
@@ -345,6 +351,8 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     public void setEventData(Object eventData) {
         this.eventData = eventData;
     }
+
+    
 
     public CreateFunctionTriggerResponse withLastUpdatedTime(OffsetDateTime lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
@@ -366,6 +374,8 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
         this.lastUpdatedTime = lastUpdatedTime;
     }
 
+    
+
     public CreateFunctionTriggerResponse withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -385,6 +395,9 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     public void setCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

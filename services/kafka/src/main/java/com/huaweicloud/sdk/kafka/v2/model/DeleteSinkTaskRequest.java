@@ -49,6 +49,8 @@ public class DeleteSinkTaskRequest  {
         this.connectorId = connectorId;
     }
 
+    
+
     public DeleteSinkTaskRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -68,6 +70,9 @@ public class DeleteSinkTaskRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

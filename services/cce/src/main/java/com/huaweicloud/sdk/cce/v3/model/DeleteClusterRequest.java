@@ -143,7 +143,7 @@ public class DeleteClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_efs")
     
-    private DeleteEfsEnum deleteEfs = DeleteEfsEnum.FALSE;
+    private DeleteEfsEnum deleteEfs;
     /**
      * Gets or Sets deleteEni
      */
@@ -245,7 +245,7 @@ public class DeleteClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_eni")
     
-    private DeleteEniEnum deleteEni = DeleteEniEnum.FALSE;
+    private DeleteEniEnum deleteEni;
     /**
      * Gets or Sets deleteEvs
      */
@@ -347,7 +347,7 @@ public class DeleteClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_evs")
     
-    private DeleteEvsEnum deleteEvs = DeleteEvsEnum.FALSE;
+    private DeleteEvsEnum deleteEvs;
     /**
      * Gets or Sets deleteNet
      */
@@ -449,7 +449,7 @@ public class DeleteClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_net")
     
-    private DeleteNetEnum deleteNet = DeleteNetEnum.FALSE;
+    private DeleteNetEnum deleteNet;
     /**
      * Gets or Sets deleteObs
      */
@@ -551,7 +551,7 @@ public class DeleteClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_obs")
     
-    private DeleteObsEnum deleteObs = DeleteObsEnum.FALSE;
+    private DeleteObsEnum deleteObs;
     /**
      * Gets or Sets deleteSfs
      */
@@ -653,7 +653,7 @@ public class DeleteClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="delete_sfs")
     
-    private DeleteSfsEnum deleteSfs = DeleteSfsEnum.FALSE;
+    private DeleteSfsEnum deleteSfs;
 
     public DeleteClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -675,6 +675,8 @@ public class DeleteClusterRequest  {
         this.clusterId = clusterId;
     }
 
+    
+
     public DeleteClusterRequest withErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
         return this;
@@ -694,6 +696,8 @@ public class DeleteClusterRequest  {
     public void setErrorStatus(String errorStatus) {
         this.errorStatus = errorStatus;
     }
+
+    
 
     public DeleteClusterRequest withDeleteEfs(DeleteEfsEnum deleteEfs) {
         this.deleteEfs = deleteEfs;
@@ -715,6 +719,8 @@ public class DeleteClusterRequest  {
         this.deleteEfs = deleteEfs;
     }
 
+    
+
     public DeleteClusterRequest withDeleteEni(DeleteEniEnum deleteEni) {
         this.deleteEni = deleteEni;
         return this;
@@ -734,6 +740,8 @@ public class DeleteClusterRequest  {
     public void setDeleteEni(DeleteEniEnum deleteEni) {
         this.deleteEni = deleteEni;
     }
+
+    
 
     public DeleteClusterRequest withDeleteEvs(DeleteEvsEnum deleteEvs) {
         this.deleteEvs = deleteEvs;
@@ -755,6 +763,8 @@ public class DeleteClusterRequest  {
         this.deleteEvs = deleteEvs;
     }
 
+    
+
     public DeleteClusterRequest withDeleteNet(DeleteNetEnum deleteNet) {
         this.deleteNet = deleteNet;
         return this;
@@ -774,6 +784,8 @@ public class DeleteClusterRequest  {
     public void setDeleteNet(DeleteNetEnum deleteNet) {
         this.deleteNet = deleteNet;
     }
+
+    
 
     public DeleteClusterRequest withDeleteObs(DeleteObsEnum deleteObs) {
         this.deleteObs = deleteObs;
@@ -795,6 +807,8 @@ public class DeleteClusterRequest  {
         this.deleteObs = deleteObs;
     }
 
+    
+
     public DeleteClusterRequest withDeleteSfs(DeleteSfsEnum deleteSfs) {
         this.deleteSfs = deleteSfs;
         return this;
@@ -814,6 +828,9 @@ public class DeleteClusterRequest  {
     public void setDeleteSfs(DeleteSfsEnum deleteSfs) {
         this.deleteSfs = deleteSfs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

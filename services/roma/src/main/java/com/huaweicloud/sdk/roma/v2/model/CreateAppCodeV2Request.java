@@ -34,7 +34,7 @@ public class CreateAppCodeV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppCodeCreate body = null;
+    private AppCodeCreate body;
 
     public CreateAppCodeV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -56,6 +56,8 @@ public class CreateAppCodeV2Request  {
         this.instanceId = instanceId;
     }
 
+    
+
     public CreateAppCodeV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -75,6 +77,8 @@ public class CreateAppCodeV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
+
+    
 
     public CreateAppCodeV2Request withBody(AppCodeCreate body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class CreateAppCodeV2Request  {
     public void setBody(AppCodeCreate body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

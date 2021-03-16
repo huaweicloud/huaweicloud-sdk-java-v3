@@ -52,7 +52,7 @@ public class UpdateCasesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private WorkOrderOperateV2Req body = null;
+    private WorkOrderOperateV2Req body;
 
     public UpdateCasesRequest withCaseId(String caseId) {
         this.caseId = caseId;
@@ -74,6 +74,8 @@ public class UpdateCasesRequest  {
         this.caseId = caseId;
     }
 
+    
+
     public UpdateCasesRequest withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -93,6 +95,8 @@ public class UpdateCasesRequest  {
     public void setActionId(String actionId) {
         this.actionId = actionId;
     }
+
+    
 
     public UpdateCasesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
@@ -118,6 +122,8 @@ public class UpdateCasesRequest  {
         this.xSite = xSite;
     }
 
+    
+
     public UpdateCasesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -140,6 +146,8 @@ public class UpdateCasesRequest  {
         this.xLanguage = xLanguage;
     }
 
+    
+
     public UpdateCasesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
@@ -161,6 +169,8 @@ public class UpdateCasesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
+
+    
 
     public UpdateCasesRequest withBody(WorkOrderOperateV2Req body) {
         this.body = body;
@@ -188,6 +198,9 @@ public class UpdateCasesRequest  {
     public void setBody(WorkOrderOperateV2Req body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -49,6 +49,8 @@ public class DeleteLoadbalancerRequest  {
         this.loadbalancerId = loadbalancerId;
     }
 
+    
+
     public DeleteLoadbalancerRequest withCascade(Boolean cascade) {
         this.cascade = cascade;
         return this;
@@ -68,6 +70,9 @@ public class DeleteLoadbalancerRequest  {
     public void setCascade(Boolean cascade) {
         this.cascade = cascade;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

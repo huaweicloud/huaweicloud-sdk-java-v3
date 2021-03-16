@@ -35,9 +35,6 @@ public class ListListenersResponse extends SdkResponse {
 
     
     public ListListenersResponse addListenersItem(ListenerResp listenersItem) {
-        if (this.listeners == null) {
-            this.listeners = new ArrayList<>();
-        }
         this.listeners.add(listenersItem);
         return this;
     }
@@ -61,6 +58,9 @@ public class ListListenersResponse extends SdkResponse {
     public void setListeners(List<ListenerResp> listeners) {
         this.listeners = listeners;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

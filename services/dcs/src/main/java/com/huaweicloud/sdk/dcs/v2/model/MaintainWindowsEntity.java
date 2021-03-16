@@ -61,6 +61,8 @@ public class MaintainWindowsEntity  {
         this.seq = seq;
     }
 
+    
+
     public MaintainWindowsEntity withDefault(Boolean _default) {
         this._default = _default;
         return this;
@@ -80,6 +82,8 @@ public class MaintainWindowsEntity  {
     public void setDefault(Boolean _default) {
         this._default = _default;
     }
+
+    
 
     public MaintainWindowsEntity withBegin(String begin) {
         this.begin = begin;
@@ -101,6 +105,8 @@ public class MaintainWindowsEntity  {
         this.begin = begin;
     }
 
+    
+
     public MaintainWindowsEntity withEnd(String end) {
         this.end = end;
         return this;
@@ -120,6 +126,9 @@ public class MaintainWindowsEntity  {
     public void setEnd(String end) {
         this.end = end;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

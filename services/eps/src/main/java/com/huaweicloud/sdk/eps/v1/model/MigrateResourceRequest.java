@@ -28,7 +28,7 @@ public class MigrateResourceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private MigrateResource body = null;
+    private MigrateResource body;
 
     public MigrateResourceRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -49,6 +49,8 @@ public class MigrateResourceRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public MigrateResourceRequest withBody(MigrateResource body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class MigrateResourceRequest  {
     public void setBody(MigrateResource body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

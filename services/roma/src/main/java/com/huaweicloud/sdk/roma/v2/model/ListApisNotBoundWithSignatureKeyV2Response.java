@@ -61,6 +61,8 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
         this.size = size;
     }
 
+    
+
     public ListApisNotBoundWithSignatureKeyV2Response withTotal(Long total) {
         this.total = total;
         return this;
@@ -81,6 +83,8 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
         this.total = total;
     }
 
+    
+
     public ListApisNotBoundWithSignatureKeyV2Response withApis(List<ApiForSign> apis) {
         this.apis = apis;
         return this;
@@ -88,9 +92,6 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
 
     
     public ListApisNotBoundWithSignatureKeyV2Response addApisItem(ApiForSign apisItem) {
-        if (this.apis == null) {
-            this.apis = new ArrayList<>();
-        }
         this.apis.add(apisItem);
         return this;
     }
@@ -114,6 +115,9 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
     public void setApis(List<ApiForSign> apis) {
         this.apis = apis;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

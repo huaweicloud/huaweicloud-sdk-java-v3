@@ -83,6 +83,8 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.lineId = lineId;
     }
 
+    
+
     public CreateCustomLineResponse withName(String name) {
         this.name = name;
         return this;
@@ -103,6 +105,8 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public CreateCustomLineResponse withIpSegments(List<String> ipSegments) {
         this.ipSegments = ipSegments;
         return this;
@@ -110,9 +114,6 @@ public class CreateCustomLineResponse extends SdkResponse {
 
     
     public CreateCustomLineResponse addIpSegmentsItem(String ipSegmentsItem) {
-        if (this.ipSegments == null) {
-            this.ipSegments = new ArrayList<>();
-        }
         this.ipSegments.add(ipSegmentsItem);
         return this;
     }
@@ -137,6 +138,8 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.ipSegments = ipSegments;
     }
 
+    
+
     public CreateCustomLineResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -156,6 +159,8 @@ public class CreateCustomLineResponse extends SdkResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    
 
     public CreateCustomLineResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
@@ -177,6 +182,8 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    
+
     public CreateCustomLineResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -197,6 +204,8 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateCustomLineResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -216,6 +225,9 @@ public class CreateCustomLineResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

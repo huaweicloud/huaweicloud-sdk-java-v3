@@ -57,6 +57,8 @@ public class Topics  {
         this.topicUrn = topicUrn;
     }
 
+    
+
     public Topics withTopicScene(List<String> topicScene) {
         this.topicScene = topicScene;
         return this;
@@ -64,9 +66,6 @@ public class Topics  {
 
     
     public Topics addTopicSceneItem(String topicSceneItem) {
-        if (this.topicScene == null) {
-            this.topicScene = new ArrayList<>();
-        }
         this.topicScene.add(topicSceneItem);
         return this;
     }
@@ -91,6 +90,8 @@ public class Topics  {
         this.topicScene = topicScene;
     }
 
+    
+
     public Topics withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
@@ -110,6 +111,9 @@ public class Topics  {
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

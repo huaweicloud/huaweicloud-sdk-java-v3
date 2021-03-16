@@ -225,7 +225,7 @@ public class ApiCreateBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="req_protocol")
     
-    private ReqProtocolEnum reqProtocol = ReqProtocolEnum.HTTPS;
+    private ReqProtocolEnum reqProtocol;
     /**
      * API的请求方式
      */
@@ -453,13 +453,13 @@ public class ApiCreateBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_opt")
     
-    private AuthOpt authOpt = null;
+    private AuthOpt authOpt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cors")
     
-    private Boolean cors = false;
+    private Boolean cors;
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -705,13 +705,13 @@ public class ApiCreateBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mock_info")
     
-    private ApiMockCreate mockInfo = null;
+    private ApiMockCreate mockInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_info")
     
-    private ApiFuncCreate funcInfo = null;
+    private ApiFuncCreate funcInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -757,6 +757,8 @@ public class ApiCreateBase  {
         this.name = name;
     }
 
+    
+
     public ApiCreateBase withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -776,6 +778,8 @@ public class ApiCreateBase  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    
 
     public ApiCreateBase withVersion(String version) {
         this.version = version;
@@ -797,6 +801,8 @@ public class ApiCreateBase  {
         this.version = version;
     }
 
+    
+
     public ApiCreateBase withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
@@ -816,6 +822,8 @@ public class ApiCreateBase  {
     public void setReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
     }
+
+    
 
     public ApiCreateBase withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
@@ -837,6 +845,8 @@ public class ApiCreateBase  {
         this.reqMethod = reqMethod;
     }
 
+    
+
     public ApiCreateBase withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
@@ -857,6 +867,8 @@ public class ApiCreateBase  {
         this.reqUri = reqUri;
     }
 
+    
+
     public ApiCreateBase withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
@@ -876,6 +888,8 @@ public class ApiCreateBase  {
     public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
+
+    
 
     public ApiCreateBase withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
@@ -904,6 +918,8 @@ public class ApiCreateBase  {
         this.authOpt = authOpt;
     }
 
+    
+
     public ApiCreateBase withCors(Boolean cors) {
         this.cors = cors;
         return this;
@@ -923,6 +939,8 @@ public class ApiCreateBase  {
     public void setCors(Boolean cors) {
         this.cors = cors;
     }
+
+    
 
     public ApiCreateBase withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
@@ -944,6 +962,8 @@ public class ApiCreateBase  {
         this.matchMode = matchMode;
     }
 
+    
+
     public ApiCreateBase withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
@@ -963,6 +983,8 @@ public class ApiCreateBase  {
     public void setBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
     }
+
+    
 
     public ApiCreateBase withRemark(String remark) {
         this.remark = remark;
@@ -984,6 +1006,8 @@ public class ApiCreateBase  {
         this.remark = remark;
     }
 
+    
+
     public ApiCreateBase withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -1003,6 +1027,8 @@ public class ApiCreateBase  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
+
+    
 
     public ApiCreateBase withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
@@ -1024,6 +1050,8 @@ public class ApiCreateBase  {
         this.bodyRemark = bodyRemark;
     }
 
+    
+
     public ApiCreateBase withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
@@ -1043,6 +1071,8 @@ public class ApiCreateBase  {
     public void setResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
     }
+
+    
 
     public ApiCreateBase withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
@@ -1064,6 +1094,8 @@ public class ApiCreateBase  {
         this.resultFailureSample = resultFailureSample;
     }
 
+    
+
     public ApiCreateBase withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -1084,6 +1116,8 @@ public class ApiCreateBase  {
         this.authorizerId = authorizerId;
     }
 
+    
+
     public ApiCreateBase withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -1091,9 +1125,6 @@ public class ApiCreateBase  {
 
     
     public ApiCreateBase addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
         this.tags.add(tagsItem);
         return this;
     }
@@ -1118,6 +1149,8 @@ public class ApiCreateBase  {
         this.tags = tags;
     }
 
+    
+
     public ApiCreateBase withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
@@ -1137,6 +1170,8 @@ public class ApiCreateBase  {
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
+
+    
 
     public ApiCreateBase withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
@@ -1158,6 +1193,8 @@ public class ApiCreateBase  {
         this.romaAppId = romaAppId;
     }
 
+    
+
     public ApiCreateBase withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -1178,6 +1215,8 @@ public class ApiCreateBase  {
         this.domainName = domainName;
     }
 
+    
+
     public ApiCreateBase withTag(String tag) {
         this.tag = tag;
         return this;
@@ -1197,6 +1236,8 @@ public class ApiCreateBase  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
 
     public ApiCreateBase withMockInfo(ApiMockCreate mockInfo) {
         this.mockInfo = mockInfo;
@@ -1225,6 +1266,8 @@ public class ApiCreateBase  {
         this.mockInfo = mockInfo;
     }
 
+    
+
     public ApiCreateBase withFuncInfo(ApiFuncCreate funcInfo) {
         this.funcInfo = funcInfo;
         return this;
@@ -1252,6 +1295,8 @@ public class ApiCreateBase  {
         this.funcInfo = funcInfo;
     }
 
+    
+
     public ApiCreateBase withReqParams(List<ReqParamBase> reqParams) {
         this.reqParams = reqParams;
         return this;
@@ -1259,9 +1304,6 @@ public class ApiCreateBase  {
 
     
     public ApiCreateBase addReqParamsItem(ReqParamBase reqParamsItem) {
-        if (this.reqParams == null) {
-            this.reqParams = new ArrayList<>();
-        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
@@ -1286,6 +1328,8 @@ public class ApiCreateBase  {
         this.reqParams = reqParams;
     }
 
+    
+
     public ApiCreateBase withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
@@ -1293,9 +1337,6 @@ public class ApiCreateBase  {
 
     
     public ApiCreateBase addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if (this.backendParams == null) {
-            this.backendParams = new ArrayList<>();
-        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
@@ -1320,6 +1361,8 @@ public class ApiCreateBase  {
         this.backendParams = backendParams;
     }
 
+    
+
     public ApiCreateBase withPolicyMocks(List<ApiPolicyMockCreate> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
@@ -1327,9 +1370,6 @@ public class ApiCreateBase  {
 
     
     public ApiCreateBase addPolicyMocksItem(ApiPolicyMockCreate policyMocksItem) {
-        if (this.policyMocks == null) {
-            this.policyMocks = new ArrayList<>();
-        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
@@ -1354,6 +1394,8 @@ public class ApiCreateBase  {
         this.policyMocks = policyMocks;
     }
 
+    
+
     public ApiCreateBase withPolicyFunctions(List<ApiPolicyFunctionCreate> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
@@ -1361,9 +1403,6 @@ public class ApiCreateBase  {
 
     
     public ApiCreateBase addPolicyFunctionsItem(ApiPolicyFunctionCreate policyFunctionsItem) {
-        if (this.policyFunctions == null) {
-            this.policyFunctions = new ArrayList<>();
-        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
@@ -1387,6 +1426,9 @@ public class ApiCreateBase  {
     public void setPolicyFunctions(List<ApiPolicyFunctionCreate> policyFunctions) {
         this.policyFunctions = policyFunctions;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

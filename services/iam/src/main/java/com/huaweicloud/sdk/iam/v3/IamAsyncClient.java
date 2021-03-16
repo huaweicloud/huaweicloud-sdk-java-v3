@@ -262,25 +262,47 @@ public class IamAsyncClient {
     }
 
     /**
-     * 获取联邦认证unscoped token(IdP initiated)
-     * 该接口可以用于通过IdP initiated的联邦认证方式获取unscoped token。    Unscoped token不能用来鉴权，若联邦用户需要使用token进行鉴权，请参考[获取联邦认证scoped token](https://support.huaweicloud.com/api-iam/iam_13_0604.html)获取scoped token。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。     &gt; - 该接口支持在命令行侧调用，需要客户端使用IdP initiated的联邦认证方式获取SAMLResponse，并采用浏览器提交表单数据的方式，获取unscoped token。
+     * 创建OpenId Connect身份提供商配置
+     * 创建OpenId Connect身份提供商配置
      *
-     * @param CreateUnscopeTokenByIdpInitiatedRequest 请求对象
-     * @return CompletableFuture<CreateUnscopeTokenByIdpInitiatedResponse>
+     * @param CreateOpenIdConnectConfigRequest 请求对象
+     * @return CompletableFuture<CreateOpenIdConnectConfigResponse>
      */
-    public CompletableFuture<CreateUnscopeTokenByIdpInitiatedResponse> createUnscopeTokenByIdpInitiatedAsync(CreateUnscopeTokenByIdpInitiatedRequest request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.createUnscopeTokenByIdpInitiated);
+    public CompletableFuture<CreateOpenIdConnectConfigResponse> createOpenIdConnectConfigAsync(CreateOpenIdConnectConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createOpenIdConnectConfig);
     }
 
     /**
-     * 获取联邦认证unscoped token(IdP initiated)
-     * 该接口可以用于通过IdP initiated的联邦认证方式获取unscoped token。    Unscoped token不能用来鉴权，若联邦用户需要使用token进行鉴权，请参考[获取联邦认证scoped token](https://support.huaweicloud.com/api-iam/iam_13_0604.html)获取scoped token。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。     &gt; - 该接口支持在命令行侧调用，需要客户端使用IdP initiated的联邦认证方式获取SAMLResponse，并采用浏览器提交表单数据的方式，获取unscoped token。
+     * 创建OpenId Connect身份提供商配置
+     * 创建OpenId Connect身份提供商配置
      *
-     * @param CreateUnscopeTokenByIdpInitiatedRequest 请求对象
-     * @return AsyncInvoker<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse>
+     * @param CreateOpenIdConnectConfigRequest 请求对象
+     * @return AsyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse>
      */
-    public AsyncInvoker<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> createUnscopeTokenByIdpInitiatedAsyncInvoker(CreateUnscopeTokenByIdpInitiatedRequest request) {
-        return new AsyncInvoker<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse>(request, IamMeta.createUnscopeTokenByIdpInitiated, hcClient);
+    public AsyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse> createOpenIdConnectConfigAsyncInvoker(CreateOpenIdConnectConfigRequest request) {
+        return new AsyncInvoker<CreateOpenIdConnectConfigRequest, CreateOpenIdConnectConfigResponse>(request, IamMeta.createOpenIdConnectConfig, hcClient);
+    }
+
+    /**
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     *
+     * @param CreateTokenWithIdTokenRequest 请求对象
+     * @return CompletableFuture<CreateTokenWithIdTokenResponse>
+     */
+    public CompletableFuture<CreateTokenWithIdTokenResponse> createTokenWithIdTokenAsync(CreateTokenWithIdTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createTokenWithIdToken);
+    }
+
+    /**
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     * 获取联邦认证token(OpenId Connect Id token方式)
+     *
+     * @param CreateTokenWithIdTokenRequest 请求对象
+     * @return AsyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>
+     */
+    public AsyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> createTokenWithIdTokenAsyncInvoker(CreateTokenWithIdTokenRequest request) {
+        return new AsyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse>(request, IamMeta.createTokenWithIdToken, hcClient);
     }
 
     /**
@@ -1934,6 +1956,28 @@ public class IamAsyncClient {
     }
 
     /**
+     * 查询OpenId Connect身份提供商配置
+     * 查询OpenId Connect身份提供商配置
+     *
+     * @param ShowOpenIdConnectConfigRequest 请求对象
+     * @return CompletableFuture<ShowOpenIdConnectConfigResponse>
+     */
+    public CompletableFuture<ShowOpenIdConnectConfigResponse> showOpenIdConnectConfigAsync(ShowOpenIdConnectConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showOpenIdConnectConfig);
+    }
+
+    /**
+     * 查询OpenId Connect身份提供商配置
+     * 查询OpenId Connect身份提供商配置
+     *
+     * @param ShowOpenIdConnectConfigRequest 请求对象
+     * @return AsyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse>
+     */
+    public AsyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse> showOpenIdConnectConfigAsyncInvoker(ShowOpenIdConnectConfigRequest request) {
+        return new AsyncInvoker<ShowOpenIdConnectConfigRequest, ShowOpenIdConnectConfigResponse>(request, IamMeta.showOpenIdConnectConfig, hcClient);
+    }
+
+    /**
      * 查询项目详情与状态
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询项目详情与状态。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -2173,6 +2217,28 @@ public class IamAsyncClient {
      */
     public AsyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> updateDomainProtectPolicyAsyncInvoker(UpdateDomainProtectPolicyRequest request) {
         return new AsyncInvoker<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse>(request, IamMeta.updateDomainProtectPolicy, hcClient);
+    }
+
+    /**
+     * 修改OpenId Connect身份提供商配置
+     * 修改OpenId Connect身份提供商配置
+     *
+     * @param UpdateOpenIdConnectConfigRequest 请求对象
+     * @return CompletableFuture<UpdateOpenIdConnectConfigResponse>
+     */
+    public CompletableFuture<UpdateOpenIdConnectConfigResponse> updateOpenIdConnectConfigAsync(UpdateOpenIdConnectConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateOpenIdConnectConfig);
+    }
+
+    /**
+     * 修改OpenId Connect身份提供商配置
+     * 修改OpenId Connect身份提供商配置
+     *
+     * @param UpdateOpenIdConnectConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse>
+     */
+    public AsyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse> updateOpenIdConnectConfigAsyncInvoker(UpdateOpenIdConnectConfigRequest request) {
+        return new AsyncInvoker<UpdateOpenIdConnectConfigRequest, UpdateOpenIdConnectConfigResponse>(request, IamMeta.updateOpenIdConnectConfig, hcClient);
     }
 
     /**

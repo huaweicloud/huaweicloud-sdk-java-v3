@@ -30,7 +30,7 @@ public class RestoreDatabasesInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tables")
     
-    private List<RestoreTableInfo> tables = new ArrayList<>();
+    private List<RestoreTableInfo> tables = null;
     
     public RestoreDatabasesInfo withDatabase(String database) {
         this.database = database;
@@ -51,6 +51,8 @@ public class RestoreDatabasesInfo  {
     public void setDatabase(String database) {
         this.database = database;
     }
+
+    
 
     public RestoreDatabasesInfo withTables(List<RestoreTableInfo> tables) {
         this.tables = tables;
@@ -82,6 +84,9 @@ public class RestoreDatabasesInfo  {
     public void setTables(List<RestoreTableInfo> tables) {
         this.tables = tables;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

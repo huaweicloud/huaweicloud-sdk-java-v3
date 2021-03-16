@@ -23,13 +23,13 @@ public class ResizeVolumeRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bssParam")
     
-    private BssParamForResizeVolume bssParam = null;
+    private BssParamForResizeVolume bssParam;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-extend")
     
-    private OsExtend osExtend = null;
+    private OsExtend osExtend;
 
     public ResizeVolumeRequestBody withBssParam(BssParamForResizeVolume bssParam) {
         this.bssParam = bssParam;
@@ -58,6 +58,8 @@ public class ResizeVolumeRequestBody  {
         this.bssParam = bssParam;
     }
 
+    
+
     public ResizeVolumeRequestBody withOsExtend(OsExtend osExtend) {
         this.osExtend = osExtend;
         return this;
@@ -84,6 +86,9 @@ public class ResizeVolumeRequestBody  {
     public void setOsExtend(OsExtend osExtend) {
         this.osExtend = osExtend;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class SendMessagesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="messages")
     
-    private List<SendMessageEntity> messages = new ArrayList<>();
+    private List<SendMessageEntity> messages = null;
     
     public SendMessagesReq withReturnId(Boolean returnId) {
         this.returnId = returnId;
@@ -51,6 +51,8 @@ public class SendMessagesReq  {
     public void setReturnId(Boolean returnId) {
         this.returnId = returnId;
     }
+
+    
 
     public SendMessagesReq withMessages(List<SendMessageEntity> messages) {
         this.messages = messages;
@@ -82,6 +84,9 @@ public class SendMessagesReq  {
     public void setMessages(List<SendMessageEntity> messages) {
         this.messages = messages;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

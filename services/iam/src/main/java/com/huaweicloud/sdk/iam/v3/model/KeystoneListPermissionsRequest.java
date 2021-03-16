@@ -61,6 +61,8 @@ public class KeystoneListPermissionsRequest  {
         this.name = name;
     }
 
+    
+
     public KeystoneListPermissionsRequest withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -80,6 +82,8 @@ public class KeystoneListPermissionsRequest  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+
+    
 
     public KeystoneListPermissionsRequest withPage(Integer page) {
         this.page = page;
@@ -101,6 +105,8 @@ public class KeystoneListPermissionsRequest  {
         this.page = page;
     }
 
+    
+
     public KeystoneListPermissionsRequest withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
@@ -120,6 +126,9 @@ public class KeystoneListPermissionsRequest  {
     public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

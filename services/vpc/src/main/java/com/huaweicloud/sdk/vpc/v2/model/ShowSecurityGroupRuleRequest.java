@@ -42,6 +42,9 @@ public class ShowSecurityGroupRuleRequest  {
     public void setSecurityGroupRuleId(String securityGroupRuleId) {
         this.securityGroupRuleId = securityGroupRuleId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -30,7 +30,7 @@ public class QueryResourceByTagsDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<TagV5DTO> tags = new ArrayList<>();
+    private List<TagV5DTO> tags = null;
     
     public QueryResourceByTagsDTO withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -51,6 +51,8 @@ public class QueryResourceByTagsDTO  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    
 
     public QueryResourceByTagsDTO withTags(List<TagV5DTO> tags) {
         this.tags = tags;
@@ -82,6 +84,9 @@ public class QueryResourceByTagsDTO  {
     public void setTags(List<TagV5DTO> tags) {
         this.tags = tags;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

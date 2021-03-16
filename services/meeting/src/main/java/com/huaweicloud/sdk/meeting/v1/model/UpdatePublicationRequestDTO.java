@@ -42,13 +42,13 @@ public class UpdatePublicationRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deptList")
     
-    private List<String> deptList = new ArrayList<>();
+    private List<String> deptList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deviceList")
     
-    private List<String> deviceList = new ArrayList<>();
+    private List<String> deviceList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,6 +76,8 @@ public class UpdatePublicationRequestDTO  {
         this.publishName = publishName;
     }
 
+    
+
     public UpdatePublicationRequestDTO withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -96,6 +98,8 @@ public class UpdatePublicationRequestDTO  {
         this.startTime = startTime;
     }
 
+    
+
     public UpdatePublicationRequestDTO withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
@@ -115,6 +119,8 @@ public class UpdatePublicationRequestDTO  {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
+
+    
 
     public UpdatePublicationRequestDTO withDeptList(List<String> deptList) {
         this.deptList = deptList;
@@ -147,6 +153,8 @@ public class UpdatePublicationRequestDTO  {
         this.deptList = deptList;
     }
 
+    
+
     public UpdatePublicationRequestDTO withDeviceList(List<String> deviceList) {
         this.deviceList = deviceList;
         return this;
@@ -178,6 +186,8 @@ public class UpdatePublicationRequestDTO  {
         this.deviceList = deviceList;
     }
 
+    
+
     public UpdatePublicationRequestDTO withProgramList(List<String> programList) {
         this.programList = programList;
         return this;
@@ -185,9 +195,6 @@ public class UpdatePublicationRequestDTO  {
 
     
     public UpdatePublicationRequestDTO addProgramListItem(String programListItem) {
-        if (this.programList == null) {
-            this.programList = new ArrayList<>();
-        }
         this.programList.add(programListItem);
         return this;
     }
@@ -211,6 +218,9 @@ public class UpdatePublicationRequestDTO  {
     public void setProgramList(List<String> programList) {
         this.programList = programList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

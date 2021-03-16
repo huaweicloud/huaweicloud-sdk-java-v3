@@ -120,6 +120,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withName(String name) {
         this.name = name;
         return this;
@@ -139,6 +141,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public ShowEnvironmentDetailResponse withAlias(String alias) {
         this.alias = alias;
@@ -160,6 +164,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.alias = alias;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -179,6 +185,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public ShowEnvironmentDetailResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -200,6 +208,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -219,6 +229,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
 
     public ShowEnvironmentDetailResponse withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
@@ -240,6 +252,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.chargeMode = chargeMode;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -260,6 +274,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withBaseResources(List<Resource> baseResources) {
         this.baseResources = baseResources;
         return this;
@@ -267,9 +283,6 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
 
     
     public ShowEnvironmentDetailResponse addBaseResourcesItem(Resource baseResourcesItem) {
-        if (this.baseResources == null) {
-            this.baseResources = new ArrayList<>();
-        }
         this.baseResources.add(baseResourcesItem);
         return this;
     }
@@ -294,6 +307,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.baseResources = baseResources;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withOptionalResources(List<Resource> optionalResources) {
         this.optionalResources = optionalResources;
         return this;
@@ -301,9 +316,6 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
 
     
     public ShowEnvironmentDetailResponse addOptionalResourcesItem(Resource optionalResourcesItem) {
-        if (this.optionalResources == null) {
-            this.optionalResources = new ArrayList<>();
-        }
         this.optionalResources.add(optionalResourcesItem);
         return this;
     }
@@ -328,6 +340,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.optionalResources = optionalResources;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withCreator(String creator) {
         this.creator = creator;
         return this;
@@ -347,6 +361,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    
 
     public ShowEnvironmentDetailResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
@@ -368,6 +384,8 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    
+
     public ShowEnvironmentDetailResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -387,6 +405,9 @@ public class ShowEnvironmentDetailResponse extends SdkResponse {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -143,6 +143,8 @@ public class ShowRedirectUrlRequest  {
         this.repoType = repoType;
     }
 
+    
+
     public ShowRedirectUrlRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -162,6 +164,9 @@ public class ShowRedirectUrlRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -39,7 +39,7 @@ public class CreateApiGroupV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="update_time")
     
-    private OffsetDateTime updateTime = null;
+    private OffsetDateTime updateTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,7 +93,7 @@ public class CreateApiGroupV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private OffsetDateTime registerTime = null;
+    private OffsetDateTime registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -114,9 +114,6 @@ public class CreateApiGroupV2Response extends SdkResponse {
 
     
     public CreateApiGroupV2Response addUrlDomainsItem(UrlDomainsResp urlDomainsItem) {
-        if (this.urlDomains == null) {
-            this.urlDomains = new ArrayList<>();
-        }
         this.urlDomains.add(urlDomainsItem);
         return this;
     }
@@ -141,6 +138,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.urlDomains = urlDomains;
     }
 
+    
+
     public CreateApiGroupV2Response withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
         return this;
@@ -160,6 +159,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
     public void setCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
     }
+
+    
 
     public CreateApiGroupV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
@@ -181,6 +182,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public CreateApiGroupV2Response withName(String name) {
         this.name = name;
         return this;
@@ -200,6 +203,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateApiGroupV2Response withTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
@@ -221,6 +226,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.timeUnit = timeUnit;
     }
 
+    
+
     public CreateApiGroupV2Response withOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
         return this;
@@ -240,6 +247,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
     public void setOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
     }
+
+    
 
     public CreateApiGroupV2Response withRemark(String remark) {
         this.remark = remark;
@@ -261,6 +270,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.remark = remark;
     }
 
+    
+
     public CreateApiGroupV2Response withSlDomain(String slDomain) {
         this.slDomain = slDomain;
         return this;
@@ -281,6 +292,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.slDomain = slDomain;
     }
 
+    
+
     public CreateApiGroupV2Response withSlDomains(List<String> slDomains) {
         this.slDomains = slDomains;
         return this;
@@ -288,9 +301,6 @@ public class CreateApiGroupV2Response extends SdkResponse {
 
     
     public CreateApiGroupV2Response addSlDomainsItem(String slDomainsItem) {
-        if (this.slDomains == null) {
-            this.slDomains = new ArrayList<>();
-        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
@@ -315,6 +325,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.slDomains = slDomains;
     }
 
+    
+
     public CreateApiGroupV2Response withId(String id) {
         this.id = id;
         return this;
@@ -334,6 +346,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public CreateApiGroupV2Response withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
@@ -355,6 +369,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.timeInterval = timeInterval;
     }
 
+    
+
     public CreateApiGroupV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
@@ -374,6 +390,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
     public void setRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
     }
+
+    
 
     public CreateApiGroupV2Response withStatus(Integer status) {
         this.status = status;
@@ -395,6 +413,8 @@ public class CreateApiGroupV2Response extends SdkResponse {
         this.status = status;
     }
 
+    
+
     public CreateApiGroupV2Response withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
         return this;
@@ -414,6 +434,9 @@ public class CreateApiGroupV2Response extends SdkResponse {
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

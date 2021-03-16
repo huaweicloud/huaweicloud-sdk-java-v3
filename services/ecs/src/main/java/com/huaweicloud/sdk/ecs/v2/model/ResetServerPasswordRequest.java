@@ -28,7 +28,7 @@ public class ResetServerPasswordRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResetServerPasswordRequestBody body = null;
+    private ResetServerPasswordRequestBody body;
 
     public ResetServerPasswordRequest withServerId(String serverId) {
         this.serverId = serverId;
@@ -49,6 +49,8 @@ public class ResetServerPasswordRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    
 
     public ResetServerPasswordRequest withBody(ResetServerPasswordRequestBody body) {
         this.body = body;
@@ -76,6 +78,9 @@ public class ResetServerPasswordRequest  {
     public void setBody(ResetServerPasswordRequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -23,7 +23,7 @@ public class ProduceAuditlogLinksRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ids")
     
-    private List<String> ids = new ArrayList<>();
+    private List<String> ids = null;
     
     public ProduceAuditlogLinksRequestBody withIds(List<String> ids) {
         this.ids = ids;
@@ -55,6 +55,9 @@ public class ProduceAuditlogLinksRequestBody  {
     public void setIds(List<String> ids) {
         this.ids = ids;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

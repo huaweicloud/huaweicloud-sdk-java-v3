@@ -49,6 +49,8 @@ public class DbUser  {
         this.dbUserId = dbUserId;
     }
 
+    
+
     public DbUser withDbUsername(String dbUsername) {
         this.dbUsername = dbUsername;
         return this;
@@ -68,6 +70,9 @@ public class DbUser  {
     public void setDbUsername(String dbUsername) {
         this.dbUsername = dbUsername;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

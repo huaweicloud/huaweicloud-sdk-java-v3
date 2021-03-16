@@ -22,7 +22,7 @@ public class ChangeBaremetalNameBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private ChangeBaremetalNameServer server = null;
+    private ChangeBaremetalNameServer server;
 
     public ChangeBaremetalNameBody withServer(ChangeBaremetalNameServer server) {
         this.server = server;
@@ -50,6 +50,9 @@ public class ChangeBaremetalNameBody  {
     public void setServer(ChangeBaremetalNameServer server) {
         this.server = server;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

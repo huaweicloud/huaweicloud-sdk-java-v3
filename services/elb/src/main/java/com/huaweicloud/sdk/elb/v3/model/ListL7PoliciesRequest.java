@@ -122,9 +122,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addActionItem(String actionItem) {
-        if (this.action == null) {
-            this.action = new ArrayList<>();
-        }
         this.action.add(actionItem);
         return this;
     }
@@ -149,6 +146,8 @@ public class ListL7PoliciesRequest  {
         this.action = action;
     }
 
+    
+
     public ListL7PoliciesRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -169,6 +168,8 @@ public class ListL7PoliciesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
+    
+
     public ListL7PoliciesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
@@ -176,9 +177,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addDescriptionItem(String descriptionItem) {
-        if (this.description == null) {
-            this.description = new ArrayList<>();
-        }
         this.description.add(descriptionItem);
         return this;
     }
@@ -203,6 +201,8 @@ public class ListL7PoliciesRequest  {
         this.description = description;
     }
 
+    
+
     public ListL7PoliciesRequest withDisplayAllRules(Boolean displayAllRules) {
         this.displayAllRules = displayAllRules;
         return this;
@@ -223,6 +223,8 @@ public class ListL7PoliciesRequest  {
         this.displayAllRules = displayAllRules;
     }
 
+    
+
     public ListL7PoliciesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -230,9 +232,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
@@ -257,6 +256,8 @@ public class ListL7PoliciesRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    
+
     public ListL7PoliciesRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -264,9 +265,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
         this.id.add(idItem);
         return this;
     }
@@ -291,6 +289,8 @@ public class ListL7PoliciesRequest  {
         this.id = id;
     }
 
+    
+
     public ListL7PoliciesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -313,6 +313,8 @@ public class ListL7PoliciesRequest  {
         this.limit = limit;
     }
 
+    
+
     public ListL7PoliciesRequest withListenerId(List<String> listenerId) {
         this.listenerId = listenerId;
         return this;
@@ -320,9 +322,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addListenerIdItem(String listenerIdItem) {
-        if (this.listenerId == null) {
-            this.listenerId = new ArrayList<>();
-        }
         this.listenerId.add(listenerIdItem);
         return this;
     }
@@ -347,6 +346,8 @@ public class ListL7PoliciesRequest  {
         this.listenerId = listenerId;
     }
 
+    
+
     public ListL7PoliciesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -367,6 +368,8 @@ public class ListL7PoliciesRequest  {
         this.marker = marker;
     }
 
+    
+
     public ListL7PoliciesRequest withName(List<String> name) {
         this.name = name;
         return this;
@@ -374,9 +377,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
         this.name.add(nameItem);
         return this;
     }
@@ -401,6 +401,8 @@ public class ListL7PoliciesRequest  {
         this.name = name;
     }
 
+    
+
     public ListL7PoliciesRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
@@ -421,6 +423,8 @@ public class ListL7PoliciesRequest  {
         this.pageReverse = pageReverse;
     }
 
+    
+
     public ListL7PoliciesRequest withPosition(List<Integer> position) {
         this.position = position;
         return this;
@@ -428,9 +432,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addPositionItem(Integer positionItem) {
-        if (this.position == null) {
-            this.position = new ArrayList<>();
-        }
         this.position.add(positionItem);
         return this;
     }
@@ -455,6 +456,8 @@ public class ListL7PoliciesRequest  {
         this.position = position;
     }
 
+    
+
     public ListL7PoliciesRequest withProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
@@ -462,9 +465,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addProvisioningStatusItem(String provisioningStatusItem) {
-        if (this.provisioningStatus == null) {
-            this.provisioningStatus = new ArrayList<>();
-        }
         this.provisioningStatus.add(provisioningStatusItem);
         return this;
     }
@@ -489,6 +489,8 @@ public class ListL7PoliciesRequest  {
         this.provisioningStatus = provisioningStatus;
     }
 
+    
+
     public ListL7PoliciesRequest withRedirectListenerId(List<String> redirectListenerId) {
         this.redirectListenerId = redirectListenerId;
         return this;
@@ -496,9 +498,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addRedirectListenerIdItem(String redirectListenerIdItem) {
-        if (this.redirectListenerId == null) {
-            this.redirectListenerId = new ArrayList<>();
-        }
         this.redirectListenerId.add(redirectListenerIdItem);
         return this;
     }
@@ -523,6 +522,8 @@ public class ListL7PoliciesRequest  {
         this.redirectListenerId = redirectListenerId;
     }
 
+    
+
     public ListL7PoliciesRequest withRedirectPoolId(List<String> redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
         return this;
@@ -530,9 +531,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addRedirectPoolIdItem(String redirectPoolIdItem) {
-        if (this.redirectPoolId == null) {
-            this.redirectPoolId = new ArrayList<>();
-        }
         this.redirectPoolId.add(redirectPoolIdItem);
         return this;
     }
@@ -557,6 +555,8 @@ public class ListL7PoliciesRequest  {
         this.redirectPoolId = redirectPoolId;
     }
 
+    
+
     public ListL7PoliciesRequest withRedirectUrl(List<String> redirectUrl) {
         this.redirectUrl = redirectUrl;
         return this;
@@ -564,9 +564,6 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addRedirectUrlItem(String redirectUrlItem) {
-        if (this.redirectUrl == null) {
-            this.redirectUrl = new ArrayList<>();
-        }
         this.redirectUrl.add(redirectUrlItem);
         return this;
     }
@@ -590,6 +587,9 @@ public class ListL7PoliciesRequest  {
     public void setRedirectUrl(List<String> redirectUrl) {
         this.redirectUrl = redirectUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -131,6 +131,8 @@ public class ListPoliciesRequest  {
         this.operationType = operationType;
     }
 
+    
+
     public ListPoliciesRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -150,6 +152,9 @@ public class ListPoliciesRequest  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

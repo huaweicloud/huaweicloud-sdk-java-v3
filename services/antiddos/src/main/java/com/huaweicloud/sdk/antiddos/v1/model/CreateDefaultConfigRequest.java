@@ -22,7 +22,7 @@ public class CreateDefaultConfigRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DdosConfig body = null;
+    private DdosConfig body;
 
     public CreateDefaultConfigRequest withBody(DdosConfig body) {
         this.body = body;
@@ -50,6 +50,9 @@ public class CreateDefaultConfigRequest  {
     public void setBody(DdosConfig body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

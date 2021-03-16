@@ -58,6 +58,8 @@ public class IncidentSubTypeV2Do  {
         this.incidentSubTypeId = incidentSubTypeId;
     }
 
+    
+
     public IncidentSubTypeV2Do withIncidentSubTypeName(String incidentSubTypeName) {
         this.incidentSubTypeName = incidentSubTypeName;
         return this;
@@ -78,6 +80,8 @@ public class IncidentSubTypeV2Do  {
         this.incidentSubTypeName = incidentSubTypeName;
     }
 
+    
+
     public IncidentSubTypeV2Do withIncidentProductCategoryList(List<IncidentProductCategoryV2> incidentProductCategoryList) {
         this.incidentProductCategoryList = incidentProductCategoryList;
         return this;
@@ -85,9 +89,6 @@ public class IncidentSubTypeV2Do  {
 
     
     public IncidentSubTypeV2Do addIncidentProductCategoryListItem(IncidentProductCategoryV2 incidentProductCategoryListItem) {
-        if (this.incidentProductCategoryList == null) {
-            this.incidentProductCategoryList = new ArrayList<>();
-        }
         this.incidentProductCategoryList.add(incidentProductCategoryListItem);
         return this;
     }
@@ -111,6 +112,9 @@ public class IncidentSubTypeV2Do  {
     public void setIncidentProductCategoryList(List<IncidentProductCategoryV2> incidentProductCategoryList) {
         this.incidentProductCategoryList = incidentProductCategoryList;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

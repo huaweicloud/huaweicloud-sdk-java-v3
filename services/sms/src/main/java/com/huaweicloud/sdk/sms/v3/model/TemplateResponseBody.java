@@ -172,31 +172,31 @@ public class TemplateResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc")
     
-    private VpcObject vpc = null;
+    private VpcObject vpc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    private List<Nics> nics = new ArrayList<>();
+    private List<Nics> nics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<SgObject> securityGroups = new ArrayList<>();
+    private List<SgObject> securityGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip")
     
-    private PublicIp publicip = null;
+    private PublicIp publicip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk")
     
-    private List<TemplateDisk> disk = new ArrayList<>();
+    private List<TemplateDisk> disk = null;
         /**
      * 数据盘磁盘类型
      */
@@ -314,6 +314,8 @@ public class TemplateResponseBody  {
         this.id = id;
     }
 
+    
+
     public TemplateResponseBody withName(String name) {
         this.name = name;
         return this;
@@ -333,6 +335,8 @@ public class TemplateResponseBody  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public TemplateResponseBody withIsTemplate(String isTemplate) {
         this.isTemplate = isTemplate;
@@ -354,6 +358,8 @@ public class TemplateResponseBody  {
         this.isTemplate = isTemplate;
     }
 
+    
+
     public TemplateResponseBody withRegion(String region) {
         this.region = region;
         return this;
@@ -373,6 +379,8 @@ public class TemplateResponseBody  {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    
 
     public TemplateResponseBody withProjectid(String projectid) {
         this.projectid = projectid;
@@ -394,6 +402,8 @@ public class TemplateResponseBody  {
         this.projectid = projectid;
     }
 
+    
+
     public TemplateResponseBody withTargetServerName(String targetServerName) {
         this.targetServerName = targetServerName;
         return this;
@@ -413,6 +423,8 @@ public class TemplateResponseBody  {
     public void setTargetServerName(String targetServerName) {
         this.targetServerName = targetServerName;
     }
+
+    
 
     public TemplateResponseBody withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -434,6 +446,8 @@ public class TemplateResponseBody  {
         this.availabilityZone = availabilityZone;
     }
 
+    
+
     public TemplateResponseBody withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
         return this;
@@ -454,6 +468,8 @@ public class TemplateResponseBody  {
         this.volumetype = volumetype;
     }
 
+    
+
     public TemplateResponseBody withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -473,6 +489,8 @@ public class TemplateResponseBody  {
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }
+
+    
 
     public TemplateResponseBody withVpc(VpcObject vpc) {
         this.vpc = vpc;
@@ -500,6 +518,8 @@ public class TemplateResponseBody  {
     public void setVpc(VpcObject vpc) {
         this.vpc = vpc;
     }
+
+    
 
     public TemplateResponseBody withNics(List<Nics> nics) {
         this.nics = nics;
@@ -532,6 +552,8 @@ public class TemplateResponseBody  {
         this.nics = nics;
     }
 
+    
+
     public TemplateResponseBody withSecurityGroups(List<SgObject> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
@@ -563,6 +585,8 @@ public class TemplateResponseBody  {
         this.securityGroups = securityGroups;
     }
 
+    
+
     public TemplateResponseBody withPublicip(PublicIp publicip) {
         this.publicip = publicip;
         return this;
@@ -589,6 +613,8 @@ public class TemplateResponseBody  {
     public void setPublicip(PublicIp publicip) {
         this.publicip = publicip;
     }
+
+    
 
     public TemplateResponseBody withDisk(List<TemplateDisk> disk) {
         this.disk = disk;
@@ -621,6 +647,8 @@ public class TemplateResponseBody  {
         this.disk = disk;
     }
 
+    
+
     public TemplateResponseBody withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
@@ -641,6 +669,8 @@ public class TemplateResponseBody  {
         this.dataVolumeType = dataVolumeType;
     }
 
+    
+
     public TemplateResponseBody withTargetPassword(String targetPassword) {
         this.targetPassword = targetPassword;
         return this;
@@ -660,6 +690,9 @@ public class TemplateResponseBody  {
     public void setTargetPassword(String targetPassword) {
         this.targetPassword = targetPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

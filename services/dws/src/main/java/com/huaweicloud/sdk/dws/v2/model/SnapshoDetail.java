@@ -91,6 +91,8 @@ public class SnapshoDetail  {
         this.clusterId = clusterId;
     }
 
+    
+
     public SnapshoDetail withSize(Double size) {
         this.size = size;
         return this;
@@ -110,6 +112,8 @@ public class SnapshoDetail  {
     public void setSize(Double size) {
         this.size = size;
     }
+
+    
 
     public SnapshoDetail withName(String name) {
         this.name = name;
@@ -131,6 +135,8 @@ public class SnapshoDetail  {
         this.name = name;
     }
 
+    
+
     public SnapshoDetail withDescription(String description) {
         this.description = description;
         return this;
@@ -150,6 +156,8 @@ public class SnapshoDetail  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
     public SnapshoDetail withFinished(String finished) {
         this.finished = finished;
@@ -171,6 +179,8 @@ public class SnapshoDetail  {
         this.finished = finished;
     }
 
+    
+
     public SnapshoDetail withStarted(String started) {
         this.started = started;
         return this;
@@ -190,6 +200,8 @@ public class SnapshoDetail  {
     public void setStarted(String started) {
         this.started = started;
     }
+
+    
 
     public SnapshoDetail withId(String id) {
         this.id = id;
@@ -211,6 +223,8 @@ public class SnapshoDetail  {
         this.id = id;
     }
 
+    
+
     public SnapshoDetail withType(String type) {
         this.type = type;
         return this;
@@ -231,6 +245,8 @@ public class SnapshoDetail  {
         this.type = type;
     }
 
+    
+
     public SnapshoDetail withStatus(String status) {
         this.status = status;
         return this;
@@ -250,6 +266,9 @@ public class SnapshoDetail  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

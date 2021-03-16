@@ -73,6 +73,8 @@ public class MigrationErrors  {
         this.errorJson = errorJson;
     }
 
+    
+
     public MigrationErrors withHostName(String hostName) {
         this.hostName = hostName;
         return this;
@@ -92,6 +94,8 @@ public class MigrationErrors  {
     public void setHostName(String hostName) {
         this.hostName = hostName;
     }
+
+    
 
     public MigrationErrors withName(String name) {
         this.name = name;
@@ -113,6 +117,8 @@ public class MigrationErrors  {
         this.name = name;
     }
 
+    
+
     public MigrationErrors withSourceId(String sourceId) {
         this.sourceId = sourceId;
         return this;
@@ -132,6 +138,8 @@ public class MigrationErrors  {
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
+
+    
 
     public MigrationErrors withSourceIp(String sourceIp) {
         this.sourceIp = sourceIp;
@@ -153,6 +161,8 @@ public class MigrationErrors  {
         this.sourceIp = sourceIp;
     }
 
+    
+
     public MigrationErrors withTargetIp(String targetIp) {
         this.targetIp = targetIp;
         return this;
@@ -172,6 +182,9 @@ public class MigrationErrors  {
     public void setTargetIp(String targetIp) {
         this.targetIp = targetIp;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

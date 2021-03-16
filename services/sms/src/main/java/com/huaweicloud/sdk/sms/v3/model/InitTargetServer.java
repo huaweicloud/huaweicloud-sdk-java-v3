@@ -25,13 +25,13 @@ public class InitTargetServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<DiskIntargetServer> disks = new ArrayList<>();
+    private List<DiskIntargetServer> disks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_groups")
     
-    private VolumeGroups volumeGroups = null;
+    private VolumeGroups volumeGroups;
 
     public InitTargetServer withDisks(List<DiskIntargetServer> disks) {
         this.disks = disks;
@@ -64,6 +64,8 @@ public class InitTargetServer  {
         this.disks = disks;
     }
 
+    
+
     public InitTargetServer withVolumeGroups(VolumeGroups volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
@@ -90,6 +92,9 @@ public class InitTargetServer  {
     public void setVolumeGroups(VolumeGroups volumeGroups) {
         this.volumeGroups = volumeGroups;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

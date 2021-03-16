@@ -34,7 +34,7 @@ public class MbTaskParameter  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaData metadata = null;
+    private MetaData metadata;
 
     public MbTaskParameter withStatusDescription(String statusDescription) {
         this.statusDescription = statusDescription;
@@ -56,6 +56,8 @@ public class MbTaskParameter  {
         this.statusDescription = statusDescription;
     }
 
+    
+
     public MbTaskParameter withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
@@ -75,6 +77,8 @@ public class MbTaskParameter  {
     public void setOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
     }
+
+    
 
     public MbTaskParameter withMetadata(MetaData metadata) {
         this.metadata = metadata;
@@ -102,6 +106,9 @@ public class MbTaskParameter  {
     public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

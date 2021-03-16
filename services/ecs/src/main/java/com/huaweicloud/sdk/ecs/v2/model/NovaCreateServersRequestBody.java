@@ -23,13 +23,13 @@ public class NovaCreateServersRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private NovaCreateServersOption server = null;
+    private NovaCreateServersOption server;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os:scheduler_hints")
     
-    private NovaCreateServersSchedulerHint osSchedulerHints = null;
+    private NovaCreateServersSchedulerHint osSchedulerHints;
 
     public NovaCreateServersRequestBody withServer(NovaCreateServersOption server) {
         this.server = server;
@@ -58,6 +58,8 @@ public class NovaCreateServersRequestBody  {
         this.server = server;
     }
 
+    
+
     public NovaCreateServersRequestBody withOsSchedulerHints(NovaCreateServersSchedulerHint osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
         return this;
@@ -84,6 +86,9 @@ public class NovaCreateServersRequestBody  {
     public void setOsSchedulerHints(NovaCreateServersSchedulerHint osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

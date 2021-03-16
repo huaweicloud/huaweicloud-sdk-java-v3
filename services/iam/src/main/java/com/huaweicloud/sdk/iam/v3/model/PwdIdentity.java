@@ -100,13 +100,13 @@ public class PwdIdentity  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="methods")
     
-    private List<MethodsEnum> methods = new ArrayList<>();
+    private List<MethodsEnum> methods = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
-    private PwdPassword password = null;
+    private PwdPassword password;
 
     public PwdIdentity withMethods(List<MethodsEnum> methods) {
         this.methods = methods;
@@ -139,6 +139,8 @@ public class PwdIdentity  {
         this.methods = methods;
     }
 
+    
+
     public PwdIdentity withPassword(PwdPassword password) {
         this.password = password;
         return this;
@@ -165,6 +167,9 @@ public class PwdIdentity  {
     public void setPassword(PwdPassword password) {
         this.password = password;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,13 +42,13 @@ public class IdentityprovidersResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remote_ids")
     
-    private List<String> remoteIds = new ArrayList<>();
+    private List<String> remoteIds = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private IdentityprovidersLinks links = null;
+    private IdentityprovidersLinks links;
 
     public IdentityprovidersResult withId(String id) {
         this.id = id;
@@ -70,6 +70,8 @@ public class IdentityprovidersResult  {
         this.id = id;
     }
 
+    
+
     public IdentityprovidersResult withDescription(String description) {
         this.description = description;
         return this;
@@ -90,6 +92,8 @@ public class IdentityprovidersResult  {
         this.description = description;
     }
 
+    
+
     public IdentityprovidersResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -109,6 +113,8 @@ public class IdentityprovidersResult  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
+    
 
     public IdentityprovidersResult withRemoteIds(List<String> remoteIds) {
         this.remoteIds = remoteIds;
@@ -141,6 +147,8 @@ public class IdentityprovidersResult  {
         this.remoteIds = remoteIds;
     }
 
+    
+
     public IdentityprovidersResult withLinks(IdentityprovidersLinks links) {
         this.links = links;
         return this;
@@ -167,6 +175,9 @@ public class IdentityprovidersResult  {
     public void setLinks(IdentityprovidersLinks links) {
         this.links = links;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

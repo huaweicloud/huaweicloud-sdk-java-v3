@@ -21,13 +21,13 @@ public class CreatePoolSlowStartOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
-    private Boolean enable = false;
+    private Boolean enable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    private Integer duration = 30;
+    private Integer duration;
 
     public CreatePoolSlowStartOption withEnable(Boolean enable) {
         this.enable = enable;
@@ -48,6 +48,8 @@ public class CreatePoolSlowStartOption  {
     public void setEnable(Boolean enable) {
         this.enable = enable;
     }
+
+    
 
     public CreatePoolSlowStartOption withDuration(Integer duration) {
         this.duration = duration;
@@ -70,6 +72,9 @@ public class CreatePoolSlowStartOption  {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

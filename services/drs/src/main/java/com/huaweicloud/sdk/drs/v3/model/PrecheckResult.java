@@ -170,6 +170,8 @@ public class PrecheckResult  {
         this.item = item;
     }
 
+    
+
     public PrecheckResult withResult(ResultEnum result) {
         this.result = result;
         return this;
@@ -189,6 +191,8 @@ public class PrecheckResult  {
     public void setResult(ResultEnum result) {
         this.result = result;
     }
+
+    
 
     public PrecheckResult withFailedReason(String failedReason) {
         this.failedReason = failedReason;
@@ -210,6 +214,8 @@ public class PrecheckResult  {
         this.failedReason = failedReason;
     }
 
+    
+
     public PrecheckResult withData(String data) {
         this.data = data;
         return this;
@@ -229,6 +235,8 @@ public class PrecheckResult  {
     public void setData(String data) {
         this.data = data;
     }
+
+    
 
     public PrecheckResult withRawErrorMsg(String rawErrorMsg) {
         this.rawErrorMsg = rawErrorMsg;
@@ -250,6 +258,8 @@ public class PrecheckResult  {
         this.rawErrorMsg = rawErrorMsg;
     }
 
+    
+
     public PrecheckResult withGroup(String group) {
         this.group = group;
         return this;
@@ -270,6 +280,8 @@ public class PrecheckResult  {
         this.group = group;
     }
 
+    
+
     public PrecheckResult withFailedSubJobs(List<PrecheckFailSubJobVO> failedSubJobs) {
         this.failedSubJobs = failedSubJobs;
         return this;
@@ -277,9 +289,6 @@ public class PrecheckResult  {
 
     
     public PrecheckResult addFailedSubJobsItem(PrecheckFailSubJobVO failedSubJobsItem) {
-        if (this.failedSubJobs == null) {
-            this.failedSubJobs = new ArrayList<>();
-        }
         this.failedSubJobs.add(failedSubJobsItem);
         return this;
     }
@@ -303,6 +312,9 @@ public class PrecheckResult  {
     public void setFailedSubJobs(List<PrecheckFailSubJobVO> failedSubJobs) {
         this.failedSubJobs = failedSubJobs;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

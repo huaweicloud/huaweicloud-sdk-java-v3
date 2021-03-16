@@ -89,6 +89,8 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
         this.messageTemplateId = messageTemplateId;
     }
 
+    
+
     public ListMessageTemplateDetailsResponse withMessageTemplateName(String messageTemplateName) {
         this.messageTemplateName = messageTemplateName;
         return this;
@@ -108,6 +110,8 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
     public void setMessageTemplateName(String messageTemplateName) {
         this.messageTemplateName = messageTemplateName;
     }
+
+    
 
     public ListMessageTemplateDetailsResponse withProtocol(String protocol) {
         this.protocol = protocol;
@@ -129,6 +133,8 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
         this.protocol = protocol;
     }
 
+    
+
     public ListMessageTemplateDetailsResponse withTagNames(List<String> tagNames) {
         this.tagNames = tagNames;
         return this;
@@ -136,9 +142,6 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
 
     
     public ListMessageTemplateDetailsResponse addTagNamesItem(String tagNamesItem) {
-        if (this.tagNames == null) {
-            this.tagNames = new ArrayList<>();
-        }
         this.tagNames.add(tagNamesItem);
         return this;
     }
@@ -163,6 +166,8 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
         this.tagNames = tagNames;
     }
 
+    
+
     public ListMessageTemplateDetailsResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -182,6 +187,8 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    
 
     public ListMessageTemplateDetailsResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
@@ -203,6 +210,8 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
+    
+
     public ListMessageTemplateDetailsResponse withContent(String content) {
         this.content = content;
         return this;
@@ -223,6 +232,8 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
         this.content = content;
     }
 
+    
+
     public ListMessageTemplateDetailsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -242,6 +253,9 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

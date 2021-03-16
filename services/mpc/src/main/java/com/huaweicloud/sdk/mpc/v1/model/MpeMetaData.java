@@ -93,7 +93,7 @@ public class MpeMetaData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_audio")
     
-    private Boolean isAudio = false;
+    private Boolean isAudio;
 
     public MpeMetaData withPackType(String packType) {
         this.packType = packType;
@@ -114,6 +114,8 @@ public class MpeMetaData  {
     public void setPackType(String packType) {
         this.packType = packType;
     }
+
+    
 
     public MpeMetaData withDuration(Double duration) {
         this.duration = duration;
@@ -137,6 +139,8 @@ public class MpeMetaData  {
         this.duration = duration;
     }
 
+    
+
     public MpeMetaData withVideoSize(Long videoSize) {
         this.videoSize = videoSize;
         return this;
@@ -158,6 +162,8 @@ public class MpeMetaData  {
     public void setVideoSize(Long videoSize) {
         this.videoSize = videoSize;
     }
+
+    
 
     public MpeMetaData withWidth(Integer width) {
         this.width = width;
@@ -181,6 +187,8 @@ public class MpeMetaData  {
         this.width = width;
     }
 
+    
+
     public MpeMetaData withHeight(Integer height) {
         this.height = height;
         return this;
@@ -202,6 +210,8 @@ public class MpeMetaData  {
     public void setHeight(Integer height) {
         this.height = height;
     }
+
+    
 
     public MpeMetaData withBitRate(Integer bitRate) {
         this.bitRate = bitRate;
@@ -225,6 +235,8 @@ public class MpeMetaData  {
         this.bitRate = bitRate;
     }
 
+    
+
     public MpeMetaData withAudioBitRate(Integer audioBitRate) {
         this.audioBitRate = audioBitRate;
         return this;
@@ -246,6 +258,8 @@ public class MpeMetaData  {
     public void setAudioBitRate(Integer audioBitRate) {
         this.audioBitRate = audioBitRate;
     }
+
+    
 
     public MpeMetaData withFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
@@ -269,6 +283,8 @@ public class MpeMetaData  {
         this.frameRate = frameRate;
     }
 
+    
+
     public MpeMetaData withCodecName(String codecName) {
         this.codecName = codecName;
         return this;
@@ -289,6 +305,8 @@ public class MpeMetaData  {
         this.codecName = codecName;
     }
 
+    
+
     public MpeMetaData withAudioCodecName(String audioCodecName) {
         this.audioCodecName = audioCodecName;
         return this;
@@ -308,6 +326,8 @@ public class MpeMetaData  {
     public void setAudioCodecName(String audioCodecName) {
         this.audioCodecName = audioCodecName;
     }
+
+    
 
     public MpeMetaData withChannels(Integer channels) {
         this.channels = channels;
@@ -331,6 +351,8 @@ public class MpeMetaData  {
         this.channels = channels;
     }
 
+    
+
     public MpeMetaData withSample(Integer sample) {
         this.sample = sample;
         return this;
@@ -353,6 +375,8 @@ public class MpeMetaData  {
         this.sample = sample;
     }
 
+    
+
     public MpeMetaData withIsAudio(Boolean isAudio) {
         this.isAudio = isAudio;
         return this;
@@ -372,6 +396,9 @@ public class MpeMetaData  {
     public void setIsAudio(Boolean isAudio) {
         this.isAudio = isAudio;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

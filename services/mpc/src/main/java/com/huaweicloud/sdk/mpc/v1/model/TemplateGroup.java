@@ -51,19 +51,19 @@ public class TemplateGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="audio")
     
-    private Audio audio = null;
+    private Audio audio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_common")
     
-    private VideoCommon videoCommon = null;
+    private VideoCommon videoCommon;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="common")
     
-    private Common common = null;
+    private Common common;
 
     public TemplateGroup withGroupId(String groupId) {
         this.groupId = groupId;
@@ -85,6 +85,8 @@ public class TemplateGroup  {
         this.groupId = groupId;
     }
 
+    
+
     public TemplateGroup withName(String name) {
         this.name = name;
         return this;
@@ -105,6 +107,8 @@ public class TemplateGroup  {
         this.name = name;
     }
 
+    
+
     public TemplateGroup withTemplateIds(List<Integer> templateIds) {
         this.templateIds = templateIds;
         return this;
@@ -112,9 +116,6 @@ public class TemplateGroup  {
 
     
     public TemplateGroup addTemplateIdsItem(Integer templateIdsItem) {
-        if (this.templateIds == null) {
-            this.templateIds = new ArrayList<>();
-        }
         this.templateIds.add(templateIdsItem);
         return this;
     }
@@ -139,6 +140,8 @@ public class TemplateGroup  {
         this.templateIds = templateIds;
     }
 
+    
+
     public TemplateGroup withVideos(List<VideoAndTemplate> videos) {
         this.videos = videos;
         return this;
@@ -146,9 +149,6 @@ public class TemplateGroup  {
 
     
     public TemplateGroup addVideosItem(VideoAndTemplate videosItem) {
-        if (this.videos == null) {
-            this.videos = new ArrayList<>();
-        }
         this.videos.add(videosItem);
         return this;
     }
@@ -172,6 +172,8 @@ public class TemplateGroup  {
     public void setVideos(List<VideoAndTemplate> videos) {
         this.videos = videos;
     }
+
+    
 
     public TemplateGroup withAudio(Audio audio) {
         this.audio = audio;
@@ -200,6 +202,8 @@ public class TemplateGroup  {
         this.audio = audio;
     }
 
+    
+
     public TemplateGroup withVideoCommon(VideoCommon videoCommon) {
         this.videoCommon = videoCommon;
         return this;
@@ -227,6 +231,8 @@ public class TemplateGroup  {
         this.videoCommon = videoCommon;
     }
 
+    
+
     public TemplateGroup withCommon(Common common) {
         this.common = common;
         return this;
@@ -253,6 +259,9 @@ public class TemplateGroup  {
     public void setCommon(Common common) {
         this.common = common;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -42,13 +42,13 @@ public class MetricAlarms  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    private MetricInfoForAlarm metric = null;
+    private MetricInfoForAlarm metric;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="condition")
     
-    private Condition condition = null;
+    private Condition condition;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -226,6 +226,8 @@ public class MetricAlarms  {
         this.alarmName = alarmName;
     }
 
+    
+
     public MetricAlarms withAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
         return this;
@@ -245,6 +247,8 @@ public class MetricAlarms  {
     public void setAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
     }
+
+    
 
     public MetricAlarms withMetric(MetricInfoForAlarm metric) {
         this.metric = metric;
@@ -273,6 +277,8 @@ public class MetricAlarms  {
         this.metric = metric;
     }
 
+    
+
     public MetricAlarms withCondition(Condition condition) {
         this.condition = condition;
         return this;
@@ -300,6 +306,8 @@ public class MetricAlarms  {
         this.condition = condition;
     }
 
+    
+
     public MetricAlarms withAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
         return this;
@@ -319,6 +327,8 @@ public class MetricAlarms  {
     public void setAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
     }
+
+    
 
     public MetricAlarms withAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
@@ -340,6 +350,8 @@ public class MetricAlarms  {
         this.alarmLevel = alarmLevel;
     }
 
+    
+
     public MetricAlarms withAlarmType(AlarmTypeEnum alarmType) {
         this.alarmType = alarmType;
         return this;
@@ -359,6 +371,8 @@ public class MetricAlarms  {
     public void setAlarmType(AlarmTypeEnum alarmType) {
         this.alarmType = alarmType;
     }
+
+    
 
     public MetricAlarms withAlarmActionEnabled(Boolean alarmActionEnabled) {
         this.alarmActionEnabled = alarmActionEnabled;
@@ -380,6 +394,8 @@ public class MetricAlarms  {
         this.alarmActionEnabled = alarmActionEnabled;
     }
 
+    
+
     public MetricAlarms withAlarmActions(List<AlarmActions> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
@@ -387,9 +403,6 @@ public class MetricAlarms  {
 
     
     public MetricAlarms addAlarmActionsItem(AlarmActions alarmActionsItem) {
-        if (this.alarmActions == null) {
-            this.alarmActions = new ArrayList<>();
-        }
         this.alarmActions.add(alarmActionsItem);
         return this;
     }
@@ -414,6 +427,8 @@ public class MetricAlarms  {
         this.alarmActions = alarmActions;
     }
 
+    
+
     public MetricAlarms withOkActions(List<AlarmActions> okActions) {
         this.okActions = okActions;
         return this;
@@ -421,9 +436,6 @@ public class MetricAlarms  {
 
     
     public MetricAlarms addOkActionsItem(AlarmActions okActionsItem) {
-        if (this.okActions == null) {
-            this.okActions = new ArrayList<>();
-        }
         this.okActions.add(okActionsItem);
         return this;
     }
@@ -448,6 +460,8 @@ public class MetricAlarms  {
         this.okActions = okActions;
     }
 
+    
+
     public MetricAlarms withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
         return this;
@@ -455,9 +469,6 @@ public class MetricAlarms  {
 
     
     public MetricAlarms addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
-        if (this.insufficientdataActions == null) {
-            this.insufficientdataActions = new ArrayList<>();
-        }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
@@ -482,6 +493,8 @@ public class MetricAlarms  {
         this.insufficientdataActions = insufficientdataActions;
     }
 
+    
+
     public MetricAlarms withAlarmActionBeginTime(String alarmActionBeginTime) {
         this.alarmActionBeginTime = alarmActionBeginTime;
         return this;
@@ -501,6 +514,8 @@ public class MetricAlarms  {
     public void setAlarmActionBeginTime(String alarmActionBeginTime) {
         this.alarmActionBeginTime = alarmActionBeginTime;
     }
+
+    
 
     public MetricAlarms withAlarmActionEndTime(String alarmActionEndTime) {
         this.alarmActionEndTime = alarmActionEndTime;
@@ -522,6 +537,8 @@ public class MetricAlarms  {
         this.alarmActionEndTime = alarmActionEndTime;
     }
 
+    
+
     public MetricAlarms withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -541,6 +558,8 @@ public class MetricAlarms  {
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
     }
+
+    
 
     public MetricAlarms withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
@@ -562,6 +581,8 @@ public class MetricAlarms  {
         this.updateTime = updateTime;
     }
 
+    
+
     public MetricAlarms withAlarmState(String alarmState) {
         this.alarmState = alarmState;
         return this;
@@ -582,6 +603,8 @@ public class MetricAlarms  {
         this.alarmState = alarmState;
     }
 
+    
+
     public MetricAlarms withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -601,6 +624,9 @@ public class MetricAlarms  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

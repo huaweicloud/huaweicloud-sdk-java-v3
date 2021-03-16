@@ -185,6 +185,8 @@ public class CheckpointResourceResp  {
         this.extraInfo = extraInfo;
     }
 
+    
+
     public CheckpointResourceResp withId(String id) {
         this.id = id;
         return this;
@@ -204,6 +206,8 @@ public class CheckpointResourceResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public CheckpointResourceResp withName(String name) {
         this.name = name;
@@ -225,6 +229,8 @@ public class CheckpointResourceResp  {
         this.name = name;
     }
 
+    
+
     public CheckpointResourceResp withProtectStatus(ProtectStatusEnum protectStatus) {
         this.protectStatus = protectStatus;
         return this;
@@ -244,6 +250,8 @@ public class CheckpointResourceResp  {
     public void setProtectStatus(ProtectStatusEnum protectStatus) {
         this.protectStatus = protectStatus;
     }
+
+    
 
     public CheckpointResourceResp withResourceSize(String resourceSize) {
         this.resourceSize = resourceSize;
@@ -265,6 +273,8 @@ public class CheckpointResourceResp  {
         this.resourceSize = resourceSize;
     }
 
+    
+
     public CheckpointResourceResp withType(String type) {
         this.type = type;
         return this;
@@ -284,6 +294,8 @@ public class CheckpointResourceResp  {
     public void setType(String type) {
         this.type = type;
     }
+
+    
 
     public CheckpointResourceResp withBackupSize(String backupSize) {
         this.backupSize = backupSize;
@@ -305,6 +317,8 @@ public class CheckpointResourceResp  {
         this.backupSize = backupSize;
     }
 
+    
+
     public CheckpointResourceResp withBackupCount(String backupCount) {
         this.backupCount = backupCount;
         return this;
@@ -324,6 +338,9 @@ public class CheckpointResourceResp  {
     public void setBackupCount(String backupCount) {
         this.backupCount = backupCount;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

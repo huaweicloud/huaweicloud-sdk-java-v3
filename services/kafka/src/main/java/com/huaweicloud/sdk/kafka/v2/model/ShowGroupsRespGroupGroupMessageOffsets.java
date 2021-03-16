@@ -67,6 +67,8 @@ public class ShowGroupsRespGroupGroupMessageOffsets  {
         this.partition = partition;
     }
 
+    
+
     public ShowGroupsRespGroupGroupMessageOffsets withLag(Integer lag) {
         this.lag = lag;
         return this;
@@ -86,6 +88,8 @@ public class ShowGroupsRespGroupGroupMessageOffsets  {
     public void setLag(Integer lag) {
         this.lag = lag;
     }
+
+    
 
     public ShowGroupsRespGroupGroupMessageOffsets withTopic(String topic) {
         this.topic = topic;
@@ -107,6 +111,8 @@ public class ShowGroupsRespGroupGroupMessageOffsets  {
         this.topic = topic;
     }
 
+    
+
     public ShowGroupsRespGroupGroupMessageOffsets withMessageCurrentOffset(Integer messageCurrentOffset) {
         this.messageCurrentOffset = messageCurrentOffset;
         return this;
@@ -127,6 +133,8 @@ public class ShowGroupsRespGroupGroupMessageOffsets  {
         this.messageCurrentOffset = messageCurrentOffset;
     }
 
+    
+
     public ShowGroupsRespGroupGroupMessageOffsets withMessageLogEndOffset(Integer messageLogEndOffset) {
         this.messageLogEndOffset = messageLogEndOffset;
         return this;
@@ -146,6 +154,9 @@ public class ShowGroupsRespGroupGroupMessageOffsets  {
     public void setMessageLogEndOffset(Integer messageLogEndOffset) {
         this.messageLogEndOffset = messageLogEndOffset;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

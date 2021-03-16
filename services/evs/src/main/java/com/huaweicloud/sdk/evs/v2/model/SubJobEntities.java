@@ -61,6 +61,8 @@ public class SubJobEntities  {
         this.volumeType = volumeType;
     }
 
+    
+
     public SubJobEntities withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +82,8 @@ public class SubJobEntities  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    
 
     public SubJobEntities withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -101,6 +105,8 @@ public class SubJobEntities  {
         this.volumeId = volumeId;
     }
 
+    
+
     public SubJobEntities withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +126,9 @@ public class SubJobEntities  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -41,9 +41,6 @@ public class ListSlowLogsResponse extends SdkResponse {
 
     
     public ListSlowLogsResponse addSlowLogListItem(SlowlogResult slowLogListItem) {
-        if (this.slowLogList == null) {
-            this.slowLogList = new ArrayList<>();
-        }
         this.slowLogList.add(slowLogListItem);
         return this;
     }
@@ -68,6 +65,8 @@ public class ListSlowLogsResponse extends SdkResponse {
         this.slowLogList = slowLogList;
     }
 
+    
+
     public ListSlowLogsResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
@@ -87,6 +86,9 @@ public class ListSlowLogsResponse extends SdkResponse {
     public void setTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

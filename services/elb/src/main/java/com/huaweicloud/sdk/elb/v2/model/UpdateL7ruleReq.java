@@ -67,6 +67,8 @@ public class UpdateL7ruleReq  {
         this.compareType = compareType;
     }
 
+    
+
     public UpdateL7ruleReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -86,6 +88,8 @@ public class UpdateL7ruleReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
+
+    
 
     public UpdateL7ruleReq withInvert(Boolean invert) {
         this.invert = invert;
@@ -107,6 +111,8 @@ public class UpdateL7ruleReq  {
         this.invert = invert;
     }
 
+    
+
     public UpdateL7ruleReq withKey(String key) {
         this.key = key;
         return this;
@@ -127,6 +133,8 @@ public class UpdateL7ruleReq  {
         this.key = key;
     }
 
+    
+
     public UpdateL7ruleReq withValue(String value) {
         this.value = value;
         return this;
@@ -146,6 +154,9 @@ public class UpdateL7ruleReq  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

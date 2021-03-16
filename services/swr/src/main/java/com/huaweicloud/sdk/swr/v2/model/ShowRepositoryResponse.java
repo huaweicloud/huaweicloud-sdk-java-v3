@@ -135,6 +135,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.id = id;
     }
 
+    
+
     public ShowRepositoryResponse withNsId(Long nsId) {
         this.nsId = nsId;
         return this;
@@ -154,6 +156,8 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setNsId(Long nsId) {
         this.nsId = nsId;
     }
+
+    
 
     public ShowRepositoryResponse withName(String name) {
         this.name = name;
@@ -175,6 +179,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.name = name;
     }
 
+    
+
     public ShowRepositoryResponse withCategory(String category) {
         this.category = category;
         return this;
@@ -194,6 +200,8 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    
 
     public ShowRepositoryResponse withDescription(String description) {
         this.description = description;
@@ -215,6 +223,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.description = description;
     }
 
+    
+
     public ShowRepositoryResponse withCreatorId(String creatorId) {
         this.creatorId = creatorId;
         return this;
@@ -234,6 +244,8 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setCreatorId(String creatorId) {
         this.creatorId = creatorId;
     }
+
+    
 
     public ShowRepositoryResponse withCreatorName(String creatorName) {
         this.creatorName = creatorName;
@@ -255,6 +267,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.creatorName = creatorName;
     }
 
+    
+
     public ShowRepositoryResponse withSize(Long size) {
         this.size = size;
         return this;
@@ -274,6 +288,8 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setSize(Long size) {
         this.size = size;
     }
+
+    
 
     public ShowRepositoryResponse withIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
@@ -295,6 +311,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.isPublic = isPublic;
     }
 
+    
+
     public ShowRepositoryResponse withNumImages(Long numImages) {
         this.numImages = numImages;
         return this;
@@ -314,6 +332,8 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setNumImages(Long numImages) {
         this.numImages = numImages;
     }
+
+    
 
     public ShowRepositoryResponse withNumDownload(Long numDownload) {
         this.numDownload = numDownload;
@@ -335,6 +355,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.numDownload = numDownload;
     }
 
+    
+
     public ShowRepositoryResponse withUrl(String url) {
         this.url = url;
         return this;
@@ -354,6 +376,8 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    
 
     public ShowRepositoryResponse withPath(String path) {
         this.path = path;
@@ -375,6 +399,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.path = path;
     }
 
+    
+
     public ShowRepositoryResponse withInternalPath(String internalPath) {
         this.internalPath = internalPath;
         return this;
@@ -394,6 +420,8 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setInternalPath(String internalPath) {
         this.internalPath = internalPath;
     }
+
+    
 
     public ShowRepositoryResponse withCreated(String created) {
         this.created = created;
@@ -415,6 +443,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.created = created;
     }
 
+    
+
     public ShowRepositoryResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
@@ -434,6 +464,9 @@ public class ShowRepositoryResponse extends SdkResponse {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

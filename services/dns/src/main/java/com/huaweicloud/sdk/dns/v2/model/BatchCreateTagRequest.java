@@ -34,7 +34,7 @@ public class BatchCreateTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchHandTags body = null;
+    private BatchHandTags body;
 
     public BatchCreateTagRequest withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -56,6 +56,8 @@ public class BatchCreateTagRequest  {
         this.resourceType = resourceType;
     }
 
+    
+
     public BatchCreateTagRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -75,6 +77,8 @@ public class BatchCreateTagRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
+    
 
     public BatchCreateTagRequest withBody(BatchHandTags body) {
         this.body = body;
@@ -102,6 +106,9 @@ public class BatchCreateTagRequest  {
     public void setBody(BatchHandTags body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

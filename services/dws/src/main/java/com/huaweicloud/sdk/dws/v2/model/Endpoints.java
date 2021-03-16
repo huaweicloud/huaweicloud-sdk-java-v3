@@ -49,6 +49,8 @@ public class Endpoints  {
         this.connectInfo = connectInfo;
     }
 
+    
+
     public Endpoints withJdbcUrl(String jdbcUrl) {
         this.jdbcUrl = jdbcUrl;
         return this;
@@ -68,6 +70,9 @@ public class Endpoints  {
     public void setJdbcUrl(String jdbcUrl) {
         this.jdbcUrl = jdbcUrl;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

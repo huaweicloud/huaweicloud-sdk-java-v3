@@ -24,7 +24,7 @@ public class BatchCreateChannelsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channels")
     
-    private List<ChannelCreateInfo> channels = new ArrayList<>();
+    private List<ChannelCreateInfo> channels = null;
     
     public BatchCreateChannelsRequestBody withChannels(List<ChannelCreateInfo> channels) {
         this.channels = channels;
@@ -56,6 +56,9 @@ public class BatchCreateChannelsRequestBody  {
     public void setChannels(List<ChannelCreateInfo> channels) {
         this.channels = channels;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

@@ -176,13 +176,13 @@ public class FloatingIpResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private OffsetDateTime createdAt = null;
+    private OffsetDateTime createdAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private OffsetDateTime updatedAt = null;
+    private OffsetDateTime updatedAt;
 
     public FloatingIpResp withFixedIpAddress(String fixedIpAddress) {
         this.fixedIpAddress = fixedIpAddress;
@@ -204,6 +204,8 @@ public class FloatingIpResp  {
         this.fixedIpAddress = fixedIpAddress;
     }
 
+    
+
     public FloatingIpResp withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
@@ -223,6 +225,8 @@ public class FloatingIpResp  {
     public void setFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
     }
+
+    
 
     public FloatingIpResp withFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
@@ -244,6 +248,8 @@ public class FloatingIpResp  {
         this.floatingNetworkId = floatingNetworkId;
     }
 
+    
+
     public FloatingIpResp withId(String id) {
         this.id = id;
         return this;
@@ -263,6 +269,8 @@ public class FloatingIpResp  {
     public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public FloatingIpResp withPortId(String portId) {
         this.portId = portId;
@@ -284,6 +292,8 @@ public class FloatingIpResp  {
         this.portId = portId;
     }
 
+    
+
     public FloatingIpResp withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
@@ -303,6 +313,8 @@ public class FloatingIpResp  {
     public void setRouterId(String routerId) {
         this.routerId = routerId;
     }
+
+    
 
     public FloatingIpResp withStatus(StatusEnum status) {
         this.status = status;
@@ -324,6 +336,8 @@ public class FloatingIpResp  {
         this.status = status;
     }
 
+    
+
     public FloatingIpResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -343,6 +357,8 @@ public class FloatingIpResp  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
+
+    
 
     public FloatingIpResp withProjectId(String projectId) {
         this.projectId = projectId;
@@ -364,6 +380,8 @@ public class FloatingIpResp  {
         this.projectId = projectId;
     }
 
+    
+
     public FloatingIpResp withDnsName(String dnsName) {
         this.dnsName = dnsName;
         return this;
@@ -383,6 +401,8 @@ public class FloatingIpResp  {
     public void setDnsName(String dnsName) {
         this.dnsName = dnsName;
     }
+
+    
 
     public FloatingIpResp withDnsDomain(String dnsDomain) {
         this.dnsDomain = dnsDomain;
@@ -404,6 +424,8 @@ public class FloatingIpResp  {
         this.dnsDomain = dnsDomain;
     }
 
+    
+
     public FloatingIpResp withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -424,6 +446,8 @@ public class FloatingIpResp  {
         this.createdAt = createdAt;
     }
 
+    
+
     public FloatingIpResp withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -443,6 +467,9 @@ public class FloatingIpResp  {
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

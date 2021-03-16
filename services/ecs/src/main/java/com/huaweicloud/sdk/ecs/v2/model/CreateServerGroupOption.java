@@ -105,7 +105,7 @@ public class CreateServerGroupOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policies")
     
-    private List<PoliciesEnum> policies = new ArrayList<>();
+    private List<PoliciesEnum> policies = null;
     
     public CreateServerGroupOption withName(String name) {
         this.name = name;
@@ -126,6 +126,8 @@ public class CreateServerGroupOption  {
     public void setName(String name) {
         this.name = name;
     }
+
+    
 
     public CreateServerGroupOption withPolicies(List<PoliciesEnum> policies) {
         this.policies = policies;
@@ -157,6 +159,9 @@ public class CreateServerGroupOption  {
     public void setPolicies(List<PoliciesEnum> policies) {
         this.policies = policies;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

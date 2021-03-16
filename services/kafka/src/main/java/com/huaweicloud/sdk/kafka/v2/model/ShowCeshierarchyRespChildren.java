@@ -63,6 +63,8 @@ public class ShowCeshierarchyRespChildren  {
         this.name = name;
     }
 
+    
+
     public ShowCeshierarchyRespChildren withMetrics(List<String> metrics) {
         this.metrics = metrics;
         return this;
@@ -70,9 +72,6 @@ public class ShowCeshierarchyRespChildren  {
 
     
     public ShowCeshierarchyRespChildren addMetricsItem(String metricsItem) {
-        if (this.metrics == null) {
-            this.metrics = new ArrayList<>();
-        }
         this.metrics.add(metricsItem);
         return this;
     }
@@ -97,6 +96,8 @@ public class ShowCeshierarchyRespChildren  {
         this.metrics = metrics;
     }
 
+    
+
     public ShowCeshierarchyRespChildren withKeyName(List<String> keyName) {
         this.keyName = keyName;
         return this;
@@ -104,9 +105,6 @@ public class ShowCeshierarchyRespChildren  {
 
     
     public ShowCeshierarchyRespChildren addKeyNameItem(String keyNameItem) {
-        if (this.keyName == null) {
-            this.keyName = new ArrayList<>();
-        }
         this.keyName.add(keyNameItem);
         return this;
     }
@@ -131,6 +129,8 @@ public class ShowCeshierarchyRespChildren  {
         this.keyName = keyName;
     }
 
+    
+
     public ShowCeshierarchyRespChildren withDimRouter(List<String> dimRouter) {
         this.dimRouter = dimRouter;
         return this;
@@ -138,9 +138,6 @@ public class ShowCeshierarchyRespChildren  {
 
     
     public ShowCeshierarchyRespChildren addDimRouterItem(String dimRouterItem) {
-        if (this.dimRouter == null) {
-            this.dimRouter = new ArrayList<>();
-        }
         this.dimRouter.add(dimRouterItem);
         return this;
     }
@@ -164,6 +161,9 @@ public class ShowCeshierarchyRespChildren  {
     public void setDimRouter(List<String> dimRouter) {
         this.dimRouter = dimRouter;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

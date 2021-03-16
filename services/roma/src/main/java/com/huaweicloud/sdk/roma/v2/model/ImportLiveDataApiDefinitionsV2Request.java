@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.ImportLiveDataApiDefinitionsV2RequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +28,7 @@ public class ImportLiveDataApiDefinitionsV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private Object body = null;
+    private ImportLiveDataApiDefinitionsV2RequestBody body;
 
     public ImportLiveDataApiDefinitionsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -49,14 +50,16 @@ public class ImportLiveDataApiDefinitionsV2Request  {
         this.instanceId = instanceId;
     }
 
-    public ImportLiveDataApiDefinitionsV2Request withBody(Object body) {
+    
+
+    public ImportLiveDataApiDefinitionsV2Request withBody(ImportLiveDataApiDefinitionsV2RequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ImportLiveDataApiDefinitionsV2Request withBody(Consumer<Object> bodySetter) {
+    public ImportLiveDataApiDefinitionsV2Request withBody(Consumer<ImportLiveDataApiDefinitionsV2RequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new Object();
+            this.body = new ImportLiveDataApiDefinitionsV2RequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,13 +71,16 @@ public class ImportLiveDataApiDefinitionsV2Request  {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public ImportLiveDataApiDefinitionsV2RequestBody getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(ImportLiveDataApiDefinitionsV2RequestBody body) {
         this.body = body;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

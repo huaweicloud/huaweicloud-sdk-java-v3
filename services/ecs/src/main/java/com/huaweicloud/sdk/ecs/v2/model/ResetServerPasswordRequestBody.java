@@ -22,7 +22,7 @@ public class ResetServerPasswordRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="reset-password")
     
-    private ResetServerPasswordOption resetPassword = null;
+    private ResetServerPasswordOption resetPassword;
 
     public ResetServerPasswordRequestBody withResetPassword(ResetServerPasswordOption resetPassword) {
         this.resetPassword = resetPassword;
@@ -50,6 +50,9 @@ public class ResetServerPasswordRequestBody  {
     public void setResetPassword(ResetServerPasswordOption resetPassword) {
         this.resetPassword = resetPassword;
     }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
