@@ -32,7 +32,7 @@ public class ListIssueRecordsV4Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private String createdTime;
+    private Long createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class ListIssueRecordsV4Response extends SdkResponse {
 
     
 
-    public ListIssueRecordsV4Response withCreatedTime(String createdTime) {
+    public ListIssueRecordsV4Response withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
@@ -80,11 +80,11 @@ public class ListIssueRecordsV4Response extends SdkResponse {
      * 创建时间
      * @return createdTime
      */
-    public String getCreatedTime() {
+    public Long getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(String createdTime) {
+    public void setCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
     }
 

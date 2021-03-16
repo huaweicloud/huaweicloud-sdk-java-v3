@@ -46,13 +46,13 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_time")
     
-    private String createdTime;
+    private Long createdTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_time")
     
-    private String updatedTime;
+    private Long updatedTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -154,7 +154,7 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
 
     
 
-    public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreatedTime(String createdTime) {
+    public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
@@ -166,17 +166,17 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
      * 项目创建时间
      * @return createdTime
      */
-    public String getCreatedTime() {
+    public Long getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(String createdTime) {
+    public void setCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
     }
 
     
 
-    public ListDomainNotAddedProjectsV4ResponseBodyProjects withUpdatedTime(String updatedTime) {
+    public ListDomainNotAddedProjectsV4ResponseBodyProjects withUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
@@ -188,11 +188,11 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
      * 项目更新时间
      * @return updatedTime
      */
-    public String getUpdatedTime() {
+    public Long getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(String updatedTime) {
+    public void setUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
     }
 

@@ -172,8 +172,8 @@ There are two types of Huawei Cloud services, `regional` services and `global` s
 
 Global services contain BSS, DevStar, EPS, IAM, OSM, RMS, TMS.
 
-For `regional` services' authentication, projectId is required. For `global` services' authentication, domainId is
-required.
+For `regional` services' authentication, projectId is required to initialize BasicCredentials. For `global` services'
+authentication, domainId is required to initialize GlobalCredentials.
 
 **Parameter description**:
 
@@ -202,10 +202,13 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
     .withDomainId(domainId);
 ```
 
-**Notice**: projectId/domainId supports **automatic acquisition** in version `3.0.26-beta` or later, if you want to use
-this feature, it's required to build your client instance with method `withRegion()`, detailed example could refer
-to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
-.
+**Notice**:
+
+- projectId/domainId supports **automatic acquisition** in version `3.0.26-beta` or later, if you want to use this
+  feature, you need to provide the ak and sk of your account and the id of the region, and then build your client
+  instance with method `withRegion()`, detailed example could refer
+  to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
+  .
 
 #### 2.2 Use Temporary AK&SK [:top:](#user-manual-top)
 
@@ -221,14 +224,14 @@ document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0101.html . The A
 corresponds to the method of `CreateTemporaryAccessKeyByAgency` in IAM SDK.
 
 ``` java
-// Region级服务
+// Regional services
 BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
     .withSecurityToken(securityToken)
     .withProjectId(projectId)
 
-// Global级服务
+// Global services
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withAk(ak)
     .withSk(sk)
@@ -243,7 +246,16 @@ There are two ways to initialize the {Service}Client, you could choose one you p
 #### 3.1 Initialize the {Service}Client with specified Endpoint [:top:](#user-manual-top)
 
 ``` java
-// Initialize specified service client instance, take VpcClient for example
+// Specify the endpoint, take the endpoint of VPC service in region of cn-north-4 for example
+String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
+
+// Initialize the credentials, you should provide projectId or domainId in this way, take initializing BasicCredentials for example
+BasicCredentials basicCredentials = new BasicCredentials()
+    .withAk(ak)
+    .withSk(sk)
+    .withProjectId(projectId);
+
+// Initialize specified service client instance, take initializing the regional service VPC's VpcClient for example
 VpcClient vpcClient = VpcClient.newBuilder()
     .withHttpConfig(config)
     .withCredential(basicCredentials)
@@ -256,18 +268,20 @@ VpcClient vpcClient = VpcClient.newBuilder()
 - `endpoint` varies by services and regions,
   see [Regions and Endpoints](https://developer.huaweicloud.com/intl/en-us/endpoint) to obtain correct endpoint.
 
+- When you meet some trouble in getting projectId using the specified region way, you could use this way instead.
+
 #### 3.2 Initialize the {Service}Client with specified Region **(Recommended)** [:top:](#user-manual-top)
 
 ``` java
 // dependency for region module
 import com.huaweicloud.sdk.iam.v3.region.IamRegion;
 
-// DomainId could be unassigned in this situation
+// Initialize the credentials, projectId or domainId could be unassigned in this situation, take initializing GlobalCredentials for example
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withAk(ak)
     .withSk(sk);
 
-// Initialize specified service client instance, take IamClient for example
+// Initialize specified service client instance, take initializing the global service IAM's IamClient for example
 IamClient iamClient = IamClient.newBuilder()
     .withHttpConfig(config)
     .withCredential(globalCredentials)
@@ -279,7 +293,18 @@ IamClient iamClient = IamClient.newBuilder()
 
 - If you use `region` to initialize {Service}Client, projectId/domainId supports automatic acquisition, you don't need
   to configure it when initializing Credentials.
-- Multiple ProjectId situation is not supported.
+  
+- Multiple ProjectId situation is **not supported**.
+
+- Supported region list: af-south-1, ap-southeast-1, ap-southeast-2, ap-southeast-3, cn-east-2, cn-east-3,
+  cn-north-1, cn-north-4, cn-south-1, cn-southwest-2, ru-northwest-2. You may get exception such as `Unsupported regionId` if your region don't in the list above.
+
+**Comparison of the two ways:**
+
+| Initialization | Advantages | Disadvantage |
+| :---- | :---- | :---- |
+| Specified Endpoint | The API can be invoked successfully once it has been published in the environment. | You need to prepare projectId and endpoint yourself.
+| Specified Region | No need for projectId and endpoint, it supports automatic acquisition if you configure it in the right way. | The supported services and regions are limited.
 
 ### 4. Send Requests and Handle Responses [:top:](#user-manual-top)
 
