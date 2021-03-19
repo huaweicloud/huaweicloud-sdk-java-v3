@@ -179,6 +179,12 @@ public class SearchUsersRequest  {
     
     private Integer status;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="containsUnActive")
+    
+    private Boolean containsUnActive;
+
     public SearchUsersRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -480,6 +486,28 @@ public class SearchUsersRequest  {
 
     
 
+    public SearchUsersRequest withContainsUnActive(Boolean containsUnActive) {
+        this.containsUnActive = containsUnActive;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get containsUnActive
+     * @return containsUnActive
+     */
+    public Boolean getContainsUnActive() {
+        return containsUnActive;
+    }
+
+    public void setContainsUnActive(Boolean containsUnActive) {
+        this.containsUnActive = containsUnActive;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -501,11 +529,12 @@ public class SearchUsersRequest  {
             Objects.equals(this.adminType, searchUsersRequest.adminType) &&
             Objects.equals(this.enableRoom, searchUsersRequest.enableRoom) &&
             Objects.equals(this.userType, searchUsersRequest.userType) &&
-            Objects.equals(this.status, searchUsersRequest.status);
+            Objects.equals(this.status, searchUsersRequest.status) &&
+            Objects.equals(this.containsUnActive, searchUsersRequest.containsUnActive);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, sortField, isAsc, deptCode, enableSubDept, adminType, enableRoom, userType, status);
+        return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, sortField, isAsc, deptCode, enableSubDept, adminType, enableRoom, userType, status, containsUnActive);
     }
     @Override
     public String toString() {
@@ -524,6 +553,7 @@ public class SearchUsersRequest  {
         sb.append("    enableRoom: ").append(toIndentedString(enableRoom)).append("\n");
         sb.append("    userType: ").append(toIndentedString(userType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    containsUnActive: ").append(toIndentedString(containsUnActive)).append("\n");
         sb.append("}");
         return sb.toString();
     }

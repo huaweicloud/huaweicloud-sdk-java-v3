@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -28,16 +28,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class DefaultHttpUtils {
+/**
+ * @author HuaweiCloud_SDK
+ */
+public final class DefaultHttpUtils {
+    /**
+     * The utility class should hide the public constructor
+     */
+    private DefaultHttpUtils() {
 
+    }
+
+    /**
+     * Convert headers to map.
+     *
+     * @param headers Headers
+     * @return Map
+     */
     public static Map<String, List<String>> headersToMap(Headers headers) {
         if (Objects.isNull(headers)) {
             return null;
         }
         Map<String, List<String>> result = new LinkedHashMap<>();
-        headers.names().forEach(name -> {
-            result.put(name, headers.values(name));
-        });
+        headers.names().forEach(name -> result.put(name, headers.values(name)));
         return result;
     }
 }

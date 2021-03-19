@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,16 +21,31 @@
 
 package com.huaweicloud.sdk.core.utils;
 
-import java.util.Map;
-import java.util.Objects;
-
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 
-public class ExceptionUtils {
+import java.util.Map;
+import java.util.Objects;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
+public final class ExceptionUtils {
+    /**
+     * The utility class should hide the public constructor
+     */
+    private ExceptionUtils() {
+
+    }
+
+    /**
+     * resolve the exception message from http response
+     *
+     * @param httpResponse HttpResponse
+     * @return the SdkErrorMessage
+     */
     public static SdkErrorMessage extractErrorMessage(HttpResponse httpResponse) {
         String strBody = httpResponse.getBodyAsString();
         SdkErrorMessage sdkErrorMessage = new SdkErrorMessage(httpResponse.getStatusCode());
@@ -49,8 +64,8 @@ public class ExceptionUtils {
                 sdkErrorMessage.setErrorMsg(strBody);
             }
 
-            if (Objects.isNull(sdkErrorMessage.getRequestId())
-                && Objects.nonNull(httpResponse.getHeader(Constants.X_REQUEST_ID))) {
+            if (Objects.isNull(sdkErrorMessage.getRequestId()) && Objects.nonNull(
+                httpResponse.getHeader(Constants.X_REQUEST_ID))) {
                 sdkErrorMessage.setRequestId(httpResponse.getHeader(Constants.X_REQUEST_ID));
             }
         } catch (SdkException e) {
@@ -61,17 +76,14 @@ public class ExceptionUtils {
     }
 
     private static void processErrorMessageFromMap(SdkErrorMessage sdkErrorMessage, Map errResult) {
-        sdkErrorMessage
-            .withErrorCode(
-                errResult.containsKey(Constants.ERROR_CODE) ? errResult.get(Constants.ERROR_CODE).toString()
-                    : errResult.containsKey(Constants.CODE) ? errResult.get(Constants.CODE).toString() : null)
-            .withErrorMsg(
-                errResult.containsKey(Constants.ERROR_MSG) ? errResult.get(Constants.ERROR_MSG).toString()
-                    : errResult.containsKey(Constants.MESSAGE) ? errResult.get(Constants.MESSAGE).toString()
-                    : null)
+        sdkErrorMessage.withErrorCode(errResult.containsKey(Constants.ERROR_CODE)
+            ? errResult.get(Constants.ERROR_CODE).toString()
+            : errResult.containsKey(Constants.CODE) ? errResult.get(Constants.CODE).toString() : null)
+            .withErrorMsg(errResult.containsKey(Constants.ERROR_MSG)
+                ? errResult.get(Constants.ERROR_MSG).toString()
+                : errResult.containsKey(Constants.MESSAGE) ? errResult.get(Constants.MESSAGE).toString() : null)
             .withRequestId(
-                errResult.containsKey(Constants.REQUEST_ID) ? errResult.get(Constants.REQUEST_ID).toString()
-                    : null);
+                errResult.containsKey(Constants.REQUEST_ID) ? errResult.get(Constants.REQUEST_ID).toString() : null);
     }
 
     private static void processErrorMessageFromNestedMap(SdkErrorMessage sdkErrorMessage, Map errResult) {
@@ -81,17 +93,14 @@ public class ExceptionUtils {
 
         errResult.forEach((key, value) -> {
             if (value instanceof Map) {
-                Map valueMap = ((Map) value);
-                if (Objects.isNull(sdkErrorMessage.getErrorCode())
-                    && valueMap.containsKey(Constants.CODE)) {
+                Map valueMap = (Map) value;
+                if (Objects.isNull(sdkErrorMessage.getErrorCode()) && valueMap.containsKey(Constants.CODE)) {
                     sdkErrorMessage.setErrorCode(valueMap.get(Constants.CODE).toString());
                 }
-                if (Objects.isNull(sdkErrorMessage.getErrorMsg())
-                    && valueMap.containsKey(Constants.MESSAGE)) {
+                if (Objects.isNull(sdkErrorMessage.getErrorMsg()) && valueMap.containsKey(Constants.MESSAGE)) {
                     sdkErrorMessage.setErrorMsg(valueMap.get(Constants.MESSAGE).toString());
                 }
             }
         });
     }
-
 }

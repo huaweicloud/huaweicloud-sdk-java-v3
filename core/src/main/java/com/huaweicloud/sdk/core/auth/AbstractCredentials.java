@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,6 +21,10 @@
 
 package com.huaweicloud.sdk.core.auth;
 
+/**
+ * @param <DerivedT> derived class such as BasicCredentials and GlobalCredentials
+ * @author HuaweiCloud_SDK
+ */
 public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<DerivedT>> implements ICredential {
 
     private String ak;
@@ -63,21 +67,37 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
         this.iamEndpoint = iamEndpoint;
     }
 
+    /**
+     * @param ak access key
+     * @return DerivedT with ak set
+     */
     public DerivedT withAk(String ak) {
         this.ak = ak;
         return (DerivedT) this;
     }
 
+    /**
+     * @param sk access secret key
+     * @return DerivedT with sk set
+     */
     public DerivedT withSk(String sk) {
         this.sk = sk;
         return (DerivedT) this;
     }
 
+    /**
+     * @param securityToken temporary token from temporary ak and sk
+     * @return DerivedT with securityToken set
+     */
     public DerivedT withSecurityToken(String securityToken) {
         this.securityToken = securityToken;
         return (DerivedT) this;
     }
 
+    /**
+     * @param iamEndpoint optional property
+     * @return DerivedT with iamEndpoint set
+     */
     public DerivedT withIamEndpoint(String iamEndpoint) {
         this.iamEndpoint = iamEndpoint;
         return (DerivedT) this;

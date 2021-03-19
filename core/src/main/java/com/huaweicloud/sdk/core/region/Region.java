@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,9 +21,18 @@
 
 package com.huaweicloud.sdk.core.region;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class Region {
     private String id;
+
     private String endpoint;
+
+    public Region(String id, String endpoint) {
+        this.setId(id);
+        this.setEndpoint(endpoint);
+    }
 
     public String getId() {
         return id;
@@ -41,13 +50,8 @@ public class Region {
         this.endpoint = endpoint;
     }
 
-    public Region(String id, String endpoint) {
-        this.setId(id);
-        this.setEndpoint(endpoint);
-    }
-
-    public Region withEndpointOverride(String endpoint) {
-        this.setEndpoint(endpoint);
+    public Region withEndpointOverride(String iamEndpoint) {
+        this.setEndpoint(iamEndpoint);
         return this;
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,11 +21,15 @@
 
 package com.huaweicloud.sdk.core.impl;
 
+import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
+
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.exchange.ApiTimer;
 import com.huaweicloud.sdk.core.exchange.SdkExchange;
 import com.huaweicloud.sdk.core.exchange.SdkExchangeCache;
 import com.huaweicloud.sdk.core.http.HttpConfig;
+
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -38,8 +42,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
-import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
-
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class DefaultHttpListener implements Interceptor {
     private List<HttpListener> httpListeners;
 
@@ -55,16 +60,14 @@ public class DefaultHttpListener implements Interceptor {
         exchange = Objects.isNull(exchange) ? new SdkExchange() : exchange;
         request = request.newBuilder().removeHeader(SDK_EXCHANGE).build();
 
-        exchange.withApiTimer(apiMeasurement -> apiMeasurement.start());
+        exchange.withApiTimer(ApiTimer::start);
 
         if (Objects.nonNull(httpListeners)) {
             preRequest(request, exchange);
         }
         Response response = chain.proceed(request.newBuilder().removeHeader(SDK_EXCHANGE).build());
 
-        exchange.withApiTimer(apiMeasurement -> {
-            apiMeasurement.end();
-        });
+        exchange.withApiTimer(ApiTimer::end);
 
         if (Objects.nonNull(httpListeners)) {
             return postResponse(response, exchange);
@@ -75,15 +78,19 @@ public class DefaultHttpListener implements Interceptor {
 
     public void preRequest(Request request, SdkExchange sdkExchange) throws IOException {
 
-        String reqBody = null;
-        if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())
-                && (request.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
-                || request.body().contentType().toString().startsWith(Constants.MEDIATYPE.TEXT))) {
+        String reqBody;
+        if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType()) && (
+            request.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON) || request.body()
+                .contentType()
+                .toString()
+                .startsWith(Constants.MEDIATYPE.TEXT))) {
             Buffer buffer = new Buffer();
             request.body().writeTo(buffer);
             reqBody = buffer.readUtf8();
-        } else if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())
-                && request.body().contentType().toString().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+        } else if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType()) && request.body()
+            .contentType()
+            .toString()
+            .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
             reqBody = request.body().contentLength() > 0 || request.body().contentLength() == -1 ? "******" : null;
         } else {
             reqBody = null;
@@ -125,16 +132,19 @@ public class DefaultHttpListener implements Interceptor {
 
         Request request = response.request();
         Response.Builder responseBuilder = response.newBuilder();
-        String respBody = null;
-        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
-                && (response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
-                || response.body().contentType().toString().startsWith(Constants.MEDIATYPE.TEXT))) {
+        String respBody;
+        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && (
+            response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON) || response.body()
+                .contentType()
+                .toString()
+                .startsWith(Constants.MEDIATYPE.TEXT))) {
             respBody = response.body().string();
             responseBuilder.body(ResponseBody.create(response.body().contentType(), respBody));
-        } else if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
-                && response.body().contentType().toString().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
-            respBody = response.body().contentLength() > 0 || response.body().contentLength() == -1
-                    ? "******" : null;
+        } else if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType()) && response.body()
+            .contentType()
+            .toString()
+            .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+            respBody = response.body().contentLength() > 0 || response.body().contentLength() == -1 ? "******" : null;
         } else {
             respBody = null;
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,18 +21,22 @@
 
 package com.huaweicloud.sdk.core.http;
 
+/**
+ * @param <T>
+ * @author HuaweiCloud_SDK
+ */
 public class FormDataPart<T> {
     private T value;
-
-    public T getValue() {
-        return value;
-    }
 
     public FormDataPart(T value) {
         this.value = value;
     }
 
-    public FormDataPart withVaule(T value) {
+    public T getValue() {
+        return value;
+    }
+
+    public FormDataPart withValue(T value) {
         this.value = value;
         return this;
     }

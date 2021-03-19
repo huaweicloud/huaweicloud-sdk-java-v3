@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -26,6 +26,8 @@ package com.huaweicloud.sdk.core.exception;
  * 1. CallTimeoutException -- Client sends a single request,
  * and the server processes time out and doesn't return valid responses
  * 2. RetryOutageException -- After several retries without any expected responses
+ *
+ * @author HuaweiCloud_SDK
  */
 public class RequestTimeoutException extends SdkException {
 

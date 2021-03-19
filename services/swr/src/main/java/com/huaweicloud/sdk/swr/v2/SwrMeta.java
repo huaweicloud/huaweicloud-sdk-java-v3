@@ -49,6 +49,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -90,6 +93,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -99,6 +104,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(String.class)
         );
+
 
         return builder.build();
     }
@@ -124,6 +130,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -157,6 +166,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -190,6 +202,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -231,6 +246,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -272,6 +290,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -297,6 +318,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -338,6 +362,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -379,6 +406,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -420,6 +450,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -453,6 +486,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -478,6 +514,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -511,6 +550,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -552,6 +594,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -593,6 +638,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -634,6 +682,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -675,6 +726,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -716,6 +770,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -749,6 +806,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -758,6 +817,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(SyncRepo.class)
         );
+
 
         return builder.build();
     }
@@ -783,6 +843,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -816,6 +879,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -825,6 +890,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(ShowRepoDomainsResponse.class)
         );
+
 
         return builder.build();
     }
@@ -874,6 +940,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -883,6 +951,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(ShowReposResp.class)
         );
+
 
         builder.withResponseField(
             "Content-Range",
@@ -965,6 +1034,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -974,6 +1045,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(ShowReposTagResp.class)
         );
+
 
         return builder.build();
     }
@@ -1023,6 +1095,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         builder.withResponseField(
             "Content-Range",
@@ -1065,6 +1140,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1074,6 +1151,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(Retention.class)
         );
+
 
         return builder.build();
     }
@@ -1099,6 +1177,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1108,6 +1188,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(ShowReposResp.class)
         );
+
 
         builder.withResponseField(
             "Content-Range",
@@ -1150,6 +1231,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1159,6 +1242,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(Trigger.class)
         );
+
 
         return builder.build();
     }
@@ -1200,6 +1284,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1225,6 +1312,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1250,6 +1340,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1283,6 +1376,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1324,6 +1420,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1365,6 +1464,8 @@ public class SwrMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1374,6 +1475,7 @@ public class SwrMeta {
                 response.setBody(data);
             }).withInnerContainerType(SyncJob.class)
         );
+
 
         return builder.build();
     }
@@ -1415,6 +1517,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1448,6 +1553,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1481,6 +1589,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1522,6 +1633,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1571,6 +1685,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1620,6 +1737,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1669,6 +1789,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1710,6 +1833,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1727,6 +1853,9 @@ public class SwrMeta {
         // requests
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1752,6 +1881,9 @@ public class SwrMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }

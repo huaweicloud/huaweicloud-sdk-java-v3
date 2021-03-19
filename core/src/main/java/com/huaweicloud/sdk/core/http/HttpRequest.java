@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -39,7 +39,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
 
-
+/**
+ * @author HuaweiCloud_SDK
+ */
 public interface HttpRequest {
 
     static HttpRequestBuilder newBuilder() {
@@ -94,13 +96,13 @@ public interface HttpRequest {
             if (httpRequest.headers.containsKey(key) && Objects.nonNull(httpRequest.headers.get(key))) {
                 httpRequest.headers.get(key).add(value);
             } else {
-                httpRequest.headers.put(key, Arrays.asList(value));
+                httpRequest.headers.put(key, Collections.singletonList(value));
             }
             return this;
         }
 
         public HttpRequestBuilder addHeaders(Map<String, String> headers) {
-            headers.entrySet().forEach(entry -> this.addHeader(entry.getKey(), entry.getValue()));
+            headers.forEach(this::addHeader);
             return this;
         }
 

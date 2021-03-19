@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -33,18 +33,24 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * @param <ReqT>
+ * @param <ResT>
+ * @author HuaweiCloud_SDK
+ */
 public interface HttpRequestDef<ReqT, ResT> {
     /**
-     * @param method
-     * @param r
-     * @param t
-     * @param <BuilderReqT>
-     * @param <BuilderRespT>
-     * @return
+     * Builder of HttpRequestDef
+     *
+     * @param method http request method
+     * @param r request type
+     * @param t response type
+     * @param <BuilderReqT> BuilderReqT
+     * @param <BuilderRespT> BuilderRespT
+     * @return .
      */
     static <BuilderReqT, BuilderRespT> Builder<BuilderReqT, BuilderRespT> builder(HttpMethod method,
-                                                                                  Class<BuilderReqT> r,
-                                                                                  Class<BuilderRespT> t) {
+        Class<BuilderReqT> r, Class<BuilderRespT> t) {
         Builder<BuilderReqT, BuilderRespT> builder = new Builder<>(method, r, t);
         builder.impl.requestClass = r;
         builder.impl.responseClass = t;
@@ -52,13 +58,17 @@ public interface HttpRequestDef<ReqT, ResT> {
         return builder;
     }
 
+    Builder<ReqT, ResT> builder();
+
     @JsonIgnore
     Class<ResT> getResponseType();
 
     @JsonIgnore
     HttpMethod getMethod();
 
-    //can be null
+    /**
+     * Content type could be null
+     */
     @JsonIgnore
     String getContentType();
 
@@ -84,8 +94,6 @@ public interface HttpRequestDef<ReqT, ResT> {
 
     boolean hasResponseField(String name);
 
-    Builder<ReqT, ResT> builder();
-
     class Builder<R, T> {
         Impl<R, T> impl;
 
@@ -101,7 +109,7 @@ public interface HttpRequestDef<ReqT, ResT> {
         }
 
         public HttpRequestDef<R, T> build() {
-            //verify path.
+            // verify path
             impl.requestFields = Collections.unmodifiableList(impl.requestFields);
             impl.requestFieldsMap = impl.requestFields.stream()
                 .collect(Collectors.toMap(Field::getName, Function.identity()));
@@ -131,8 +139,7 @@ public interface HttpRequestDef<ReqT, ResT> {
             return this;
         }
 
-        public <FieldT> Builder<R, T> withRequestField(
-            String name,
+        public <FieldT> Builder<R, T> withRequestField(String name,
             LocationType locationType,
             FieldExistence existence,
             Class<FieldT> fieldType,
@@ -148,12 +155,8 @@ public interface HttpRequestDef<ReqT, ResT> {
             return this;
         }
 
-        public <FieldT> Builder<R, T> withResponseField(
-            String name,
-            LocationType locationType,
-            FieldExistence existence,
-            Class<FieldT> fieldType,
-            Consumer<FieldImpl<T, FieldT>> setter) {
+        public <FieldT> Builder<R, T> withResponseField(String name, LocationType locationType,
+            FieldExistence existence, Class<FieldT> fieldType, Consumer<FieldImpl<T, FieldT>> setter) {
             FieldImpl<T, FieldT> field = new FieldImpl<T, FieldT>(name, locationType, existence, fieldType);
             setter.accept(field);
             impl.responseFields.add(field);
@@ -163,30 +166,36 @@ public interface HttpRequestDef<ReqT, ResT> {
         /**
          * 场景：
          * 定义了返回值，但是body是空的，例如返回202的场景。 代码生成工具只生成占位函数，实现在这里定义，减少工具和版本的耦合。
-         * @param nameOfCode
-         * @return
+         *
+         * @param nameOfCode code name
+         * @return .
          */
         public Builder<R, T> withResponseVoidBody(String nameOfCode, BiConsumer<T, VoidBody> writer) {
             return withResponseField(nameOfCode, LocationType.Body, FieldExistence.NULL_IGNORE, VoidBody.class,
                 field -> field.withMarshaller(response -> new VoidBody(), writer));
         }
-
     }
 
     class Impl<R, T> implements HttpRequestDef<R, T> {
         Class<R> requestClass;
+
         Class<T> responseClass;
 
         String name;
+
         String uri;
+
         HttpMethod method;
+
         String contentType;
+
         List<Field<R, ?>> requestFields = new ArrayList<>();
+
         Map<String, Field<R, ?>> requestFieldsMap;
 
         List<Field<T, ?>> responseFields = new ArrayList<>();
-        Map<String, Field<T, ?>> responseFieldsMap;
 
+        Map<String, Field<T, ?>> responseFieldsMap;
 
         @Override
         public Class<T> getResponseType() {
@@ -224,8 +233,8 @@ public interface HttpRequestDef<ReqT, ResT> {
                 throw new IllegalAccessError("design issue. never happy");
             }
             Field<R, T> f = (Field<R, T>) requestFieldsMap.get(name);
-            Objects.requireNonNull(f, "getRequestField name not exist. "
-                + "this function is used for machine usage. so in strict mode");
+            Objects.requireNonNull(f,
+                "getRequestField name not exist. " + "this function is used for machine usage. so in strict mode");
             return f;
         }
 
@@ -240,8 +249,8 @@ public interface HttpRequestDef<ReqT, ResT> {
                 throw new IllegalAccessError("design issue. never happy");
             }
             Field<T, ?> f = responseFieldsMap.get(name);
-            Objects.requireNonNull(f, "getResponseField " + name
-                + " not exist. this function is used for machine usage. so in strict mode");
+            Objects.requireNonNull(f,
+                "getResponseField " + name + " not exist. this function is used for machine usage. so in strict mode");
             return f;
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,7 +58,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.SocketTimeoutException;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
@@ -68,17 +68,22 @@ import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLHandshakeException;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class DefaultHttpClient implements HttpClient {
-
-    private OkHttpClient client;
-
-    private HttpConfig httpConfig;
 
     private static final String OKHTTP_PREEMPTIVE = "OkHttp-Preemptive";
 
     private static final String PROXY_AUTHENTICATE = "Proxy-Authenticate";
 
     private static final String PROXY_AUTHORIZATION = "Proxy-Authorization";
+
+    private static final int PROXY_AUTHENTICATION_REQUIRED = 407;
+
+    private static final int MAXIMUM_POOL_SIZE = 16;
+
+    private static final long KEEP_ALIVE_TIME = 60L;
 
     private static final int DEFAULT_READ_TIMEOUT = 120;
 
@@ -91,10 +96,14 @@ public class DefaultHttpClient implements HttpClient {
      * Set number of maximum threads for asynchronous requests.
      * If threads number hasn't been limited, each client will occupy one thread which may leads to out of memory.
      */
-    private static ExecutorService executorService = new ThreadPoolExecutor(0, 16, 60L, TimeUnit.SECONDS,
-        new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
+    private static ExecutorService executorService = new ThreadPoolExecutor(0, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME,
+        TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
 
     private static final Dispatcher DISPATCHER = new Dispatcher(executorService);
+
+    private OkHttpClient client;
+
+    private HttpConfig httpConfig;
 
     public DefaultHttpClient(HttpConfig httpConfig) {
         withHttpConfig(httpConfig);
@@ -117,7 +126,7 @@ public class DefaultHttpClient implements HttpClient {
                     IgnoreSSLVerificationFactory.getTrustAllManager());
         }
 
-        clientBuilder.protocols(Arrays.asList(Protocol.HTTP_1_1));
+        clientBuilder.protocols(Collections.singletonList(Protocol.HTTP_1_1));
         // set proxy
         if (!StringUtils.isEmpty(httpConfig.getProxyHost())) {
             Proxy proxy = new Proxy(Proxy.Type.HTTP,
@@ -126,7 +135,8 @@ public class DefaultHttpClient implements HttpClient {
         }
         if (!StringUtils.isEmpty(httpConfig.getProxyUsername())) {
             Authenticator proxyAuthenticator = (route, response) -> {
-                if (!OKHTTP_PREEMPTIVE.equals(response.header(PROXY_AUTHENTICATE)) && response.code() == 407) {
+                if (!OKHTTP_PREEMPTIVE.equals(response.header(PROXY_AUTHENTICATE))
+                    && response.code() == PROXY_AUTHENTICATION_REQUIRED) {
                     return null;
                 }
 
@@ -177,7 +187,7 @@ public class DefaultHttpClient implements HttpClient {
         bodyBuilder.setType(MediaType.parse(httpRequest.getContentType()));
         httpRequest.getFormData().forEach((name, part) -> {
             if (part instanceof FormDataFilePart) {
-                FormDataFilePart filePart = ((FormDataFilePart) part);
+                FormDataFilePart filePart = (FormDataFilePart) part;
                 bodyBuilder.addFormDataPart(name, filePart.getFilename(), new RequestBody() {
 
                     @Override

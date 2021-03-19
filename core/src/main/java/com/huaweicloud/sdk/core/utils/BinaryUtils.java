@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -25,8 +25,16 @@ import java.util.Locale;
 
 /**
  * Utilities for encoding and decoding binary data to and from different forms.
+ *
+ * @author HuaweiCloud_SDK
  */
-public class BinaryUtils {
+public final class BinaryUtils {
+    /**
+     * The utility class should hide the public constructor
+     */
+    private BinaryUtils() {
+
+    }
 
     /**
      * Converts byte data to a Hex-encoded string.
@@ -35,20 +43,22 @@ public class BinaryUtils {
      * @return hex-encoded string.
      */
     public static String toHex(byte[] data) {
-        StringBuilder sb = new StringBuilder(data.length * 2);
-        for (int i = 0; i < data.length; i++) {
-            String hex = Integer.toHexString(data[i]);
+        final int capacityTimes = 2;
+        final int hexLength = 8;
+        final int subLength = 6;
+        StringBuilder sb = new StringBuilder(data.length * capacityTimes);
+        for (byte datum : data) {
+            String hex = Integer.toHexString(datum);
             if (hex.length() == 1) {
                 // Append leading zero.
                 sb.append("0");
-            } else if (hex.length() == 8) {
+            } else if (hex.length() == hexLength) {
                 // Remove ff prefix from negative numbers.
-                hex = hex.substring(6);
+                hex = hex.substring(subLength);
             }
             sb.append(hex);
         }
         return sb.toString().toLowerCase(Locale.getDefault());
     }
-
 
 }

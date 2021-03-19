@@ -656,6 +656,28 @@ public class MeetingClient {
     }
 
     /**
+     * 企业管理员生成激活码
+     * 企业管理员生成智慧屏、电子白板、Ideahub的激活码
+     *
+     * @param CreateVisionActiveCodeRequest 请求对象
+     * @return CreateVisionActiveCodeResponse
+     */
+    public CreateVisionActiveCodeResponse createVisionActiveCode(CreateVisionActiveCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员生成激活码
+     * 企业管理员生成智慧屏、电子白板、Ideahub的激活码
+     *
+     * @param CreateVisionActiveCodeRequest 请求对象
+     * @return SyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>
+     */
+    public SyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> createVisionActiveCodeInvoker(CreateVisionActiveCodeRequest request) {
+        return new SyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>(request, MeetingMeta.createVisionActiveCode, hcClient);
+    }
+
+    /**
      * 删除与会者
      * 删除与会者。
      *
@@ -785,6 +807,28 @@ public class MeetingClient {
      */
     public SyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceInvoker(DeleteResourceRequest request) {
         return new SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, MeetingMeta.deleteResource, hcClient);
+    }
+
+    /**
+     * 企业管理员删除激活码
+     * 企业管理员批量删除激活码
+     *
+     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @return DeleteVisionActiveCodeResponse
+     */
+    public DeleteVisionActiveCodeResponse deleteVisionActiveCode(DeleteVisionActiveCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.deleteVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员删除激活码
+     * 企业管理员批量删除激活码
+     *
+     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @return SyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>
+     */
+    public SyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> deleteVisionActiveCodeInvoker(DeleteVisionActiveCodeRequest request) {
+        return new SyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>(request, MeetingMeta.deleteVisionActiveCode, hcClient);
     }
 
     /**
@@ -1137,6 +1181,28 @@ public class MeetingClient {
      */
     public SyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse> resetPwdByAdminInvoker(ResetPwdByAdminRequest request) {
         return new SyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse>(request, MeetingMeta.resetPwdByAdmin, hcClient);
+    }
+
+    /**
+     * 企业管理员重置账号的激活码
+     * 企业管理员重置账号的激活码，重置后，原设备直接解绑，必须重新激活使用,若手机邮箱不填，则不会发送新的激活码
+     *
+     * @param ResetVisionActiveCodeRequest 请求对象
+     * @return ResetVisionActiveCodeResponse
+     */
+    public ResetVisionActiveCodeResponse resetVisionActiveCode(ResetVisionActiveCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.resetVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员重置账号的激活码
+     * 企业管理员重置账号的激活码，重置后，原设备直接解绑，必须重新激活使用,若手机邮箱不填，则不会发送新的激活码
+     *
+     * @param ResetVisionActiveCodeRequest 请求对象
+     * @return SyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>
+     */
+    public SyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> resetVisionActiveCodeInvoker(ResetVisionActiveCodeRequest request) {
+        return new SyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>(request, MeetingMeta.resetVisionActiveCode, hcClient);
     }
 
     /**
@@ -1599,6 +1665,28 @@ public class MeetingClient {
      */
     public SyncInvoker<SearchUsersRequest, SearchUsersResponse> searchUsersInvoker(SearchUsersRequest request) {
         return new SyncInvoker<SearchUsersRequest, SearchUsersResponse>(request, MeetingMeta.searchUsers, hcClient);
+    }
+
+    /**
+     * 企业管理员分页查询激活码
+     * 企业管理员分页查询激活码，支持激活码、终端名称模糊查询。
+     *
+     * @param SearchVisionActiveCodeRequest 请求对象
+     * @return SearchVisionActiveCodeResponse
+     */
+    public SearchVisionActiveCodeResponse searchVisionActiveCode(SearchVisionActiveCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员分页查询激活码
+     * 企业管理员分页查询激活码，支持激活码、终端名称模糊查询。
+     *
+     * @param SearchVisionActiveCodeRequest 请求对象
+     * @return SyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>
+     */
+    public SyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> searchVisionActiveCodeInvoker(SearchVisionActiveCodeRequest request) {
+        return new SyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>(request, MeetingMeta.searchVisionActiveCode, hcClient);
     }
 
     /**
@@ -2259,6 +2347,28 @@ public class MeetingClient {
      */
     public SyncInvoker<ShowSpResRequest, ShowSpResResponse> showSpResInvoker(ShowSpResRequest request) {
         return new SyncInvoker<ShowSpResRequest, ShowSpResResponse>(request, MeetingMeta.showSpRes, hcClient);
+    }
+
+    /**
+     * SP管理员查询资源信息
+     * sp管理员查询sp的所有资源，包括已使用的资源
+     *
+     * @param ShowSpResourceRequest 请求对象
+     * @return ShowSpResourceResponse
+     */
+    public ShowSpResourceResponse showSpResource(ShowSpResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showSpResource);
+    }
+
+    /**
+     * SP管理员查询资源信息
+     * sp管理员查询sp的所有资源，包括已使用的资源
+     *
+     * @param ShowSpResourceRequest 请求对象
+     * @return SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>
+     */
+    public SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse> showSpResourceInvoker(ShowSpResourceRequest request) {
+        return new SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>(request, MeetingMeta.showSpResource, hcClient);
     }
 
     /**

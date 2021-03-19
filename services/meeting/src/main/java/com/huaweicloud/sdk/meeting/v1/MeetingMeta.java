@@ -49,6 +49,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -98,6 +101,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -139,6 +145,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -180,6 +189,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -221,6 +233,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -262,6 +277,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -319,6 +337,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -360,6 +381,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -401,6 +425,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -442,6 +469,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -499,6 +529,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -548,6 +581,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -589,6 +625,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -630,6 +669,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -671,6 +713,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -712,6 +757,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -761,6 +809,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -810,6 +861,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -867,6 +921,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -908,6 +965,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -965,6 +1025,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1006,6 +1069,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1047,6 +1113,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1088,6 +1157,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1129,6 +1201,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1162,6 +1237,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1219,6 +1297,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1268,6 +1349,8 @@ public class MeetingMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1277,6 +1360,7 @@ public class MeetingMeta {
                 response.setBody(data);
             }).withInnerContainerType(ConferenceInfo.class)
         );
+
 
         return builder.build();
     }
@@ -1310,6 +1394,53 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> createVisionActiveCode = genForcreateVisionActiveCode();
+
+    private static HttpRequestDef<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> genForcreateVisionActiveCode() {
+        // basic
+        HttpRequestDef.Builder<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVisionActiveCodeRequest.class, CreateVisionActiveCodeResponse.class)
+                .withName("CreateVisionActiveCode")
+                .withUri("/v1/usg/dcs/corp/vision/activecode")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            VisionActiveCodeDTO.class,
+            f -> f.withMarshaller(CreateVisionActiveCodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
 
         return builder.build();
     }
@@ -1351,6 +1482,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1400,6 +1534,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1441,6 +1578,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1482,6 +1622,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1531,6 +1674,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1588,6 +1734,53 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> deleteVisionActiveCode = genFordeleteVisionActiveCode();
+
+    private static HttpRequestDef<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> genFordeleteVisionActiveCode() {
+        // basic
+        HttpRequestDef.Builder<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVisionActiveCodeRequest.class, DeleteVisionActiveCodeResponse.class)
+                .withName("DeleteVisionActiveCode")
+                .withUri("/v1/usg/dcs/corp/vision/activecode")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            List.class,
+            f -> f.withMarshaller(DeleteVisionActiveCodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
+        );
+
+        // response
+        
+
+
 
         return builder.build();
     }
@@ -1645,6 +1838,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1694,6 +1890,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1735,6 +1934,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1776,6 +1978,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1809,6 +2014,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1850,6 +2058,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1891,6 +2102,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1940,6 +2154,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1981,6 +2198,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2030,6 +2250,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2071,6 +2294,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2112,6 +2338,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2153,6 +2382,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2202,6 +2434,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2243,6 +2478,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2284,6 +2522,61 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> resetVisionActiveCode = genForresetVisionActiveCode();
+
+    private static HttpRequestDef<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> genForresetVisionActiveCode() {
+        // basic
+        HttpRequestDef.Builder<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetVisionActiveCodeRequest.class, ResetVisionActiveCodeResponse.class)
+                .withName("ResetVisionActiveCode")
+                .withUri("/v1/usg/dcs/corp/vision/activecode/{account}/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("account",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getAccount, (req, v) -> {
+                req.setAccount(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ActiveDTO.class,
+            f -> f.withMarshaller(ResetVisionActiveCodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
 
         return builder.build();
     }
@@ -2325,6 +2618,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2406,6 +2702,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2463,6 +2762,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2520,6 +2822,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2601,6 +2906,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2666,6 +2974,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2739,6 +3050,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2780,6 +3094,8 @@ public class MeetingMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -2789,6 +3105,7 @@ public class MeetingMeta {
                 response.setBody(data);
             }).withInnerContainerType(QueryDeptResultDTO.class)
         );
+
 
         return builder.build();
     }
@@ -2870,6 +3187,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2967,6 +3287,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3024,6 +3347,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3081,6 +3407,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3170,6 +3499,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3235,6 +3567,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3308,6 +3643,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3365,6 +3703,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3422,6 +3763,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3519,6 +3863,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3624,6 +3971,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3745,6 +4095,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3848,6 +4201,14 @@ public class MeetingMeta {
                 req.setStatus(v);
             })
         );
+        builder.withRequestField("containsUnActive",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(SearchUsersRequest::getContainsUnActive, (req, v) -> {
+                req.setContainsUnActive(v);
+            })
+        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3866,6 +4227,77 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> searchVisionActiveCode = genForsearchVisionActiveCode();
+
+    private static HttpRequestDef<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> genForsearchVisionActiveCode() {
+        // basic
+        HttpRequestDef.Builder<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchVisionActiveCodeRequest.class, SearchVisionActiveCodeResponse.class)
+                .withName("SearchVisionActiveCode")
+                .withUri("/v1/usg/dcs/corp/vision/activecode")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("devType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getDevType, (req, v) -> {
+                req.setDevType(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchVisionActiveCodeRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
 
         return builder.build();
     }
@@ -3907,6 +4339,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3948,6 +4383,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3989,6 +4427,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4030,6 +4471,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4071,6 +4515,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4112,6 +4559,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4161,6 +4611,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4210,6 +4663,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4235,6 +4691,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4276,6 +4735,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4325,6 +4787,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4358,6 +4823,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4391,6 +4859,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4432,6 +4903,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4473,6 +4947,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4514,6 +4991,8 @@ public class MeetingMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -4523,6 +5002,7 @@ public class MeetingMeta {
                 response.setBody(data);
             }).withInnerContainerType(UserStatusDTO.class)
         );
+
 
         return builder.build();
     }
@@ -4556,6 +5036,8 @@ public class MeetingMeta {
         );
 
         // response
+        
+
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -4565,6 +5047,7 @@ public class MeetingMeta {
                 response.setBody(data);
             }).withInnerContainerType(QueryDeviceTypeResultDTO.class)
         );
+
 
         return builder.build();
     }
@@ -4654,6 +5137,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4743,6 +5229,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4784,6 +5273,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4825,6 +5317,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4858,6 +5353,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4947,6 +5445,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -4964,6 +5465,9 @@ public class MeetingMeta {
         // requests
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5005,6 +5509,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5046,6 +5553,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5079,6 +5589,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5128,6 +5641,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5153,6 +5669,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5170,6 +5689,53 @@ public class MeetingMeta {
         // requests
 
         // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSpResourceRequest, ShowSpResourceResponse> showSpResource = genForshowSpResource();
+
+    private static HttpRequestDef<ShowSpResourceRequest, ShowSpResourceResponse> genForshowSpResource() {
+        // basic
+        HttpRequestDef.Builder<ShowSpResourceRequest, ShowSpResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSpResourceRequest.class, ShowSpResourceResponse.class)
+                .withName("ShowSpResource")
+                .withUri("/v1/usg/dcs/sp/resource")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("queryGroup",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ShowSpResourceRequest::getQueryGroup, (req, v) -> {
+                req.setQueryGroup(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSpResourceRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSpResourceRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
 
         return builder.build();
     }
@@ -5219,6 +5785,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5252,6 +5821,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5293,6 +5865,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5334,6 +5909,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5383,6 +5961,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5424,6 +6005,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5473,6 +6057,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5522,6 +6109,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5571,6 +6161,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5628,6 +6221,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5677,6 +6273,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5718,6 +6317,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5767,6 +6369,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5816,6 +6421,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5857,6 +6465,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5914,6 +6525,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -5947,6 +6561,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -6004,6 +6621,9 @@ public class MeetingMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -22,25 +22,26 @@
 package com.huaweicloud.sdk.core.ssl;
 
 import com.huaweicloud.sdk.core.exception.SdkException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.X509Certificate;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class IgnoreSSLVerificationFactory {
     private static final Logger logger = LoggerFactory.getLogger(IgnoreSSLVerificationFactory.class);
 
     private static HostnameVerifier hostnameVerifier = (hostname, sslSession) -> true;
-
-    public static HostnameVerifier getHostnameVerifier() {
-        return hostnameVerifier;
-    }
 
     private static X509TrustManager trustAllManager = new X509TrustManager() {
         @Override
@@ -57,9 +58,19 @@ public class IgnoreSSLVerificationFactory {
         }
     };
 
+    /**
+     * The utility class should hide the public constructor
+     */
+    private IgnoreSSLVerificationFactory() {
+
+    }
 
     public static X509TrustManager getTrustAllManager() {
         return trustAllManager;
+    }
+
+    public static HostnameVerifier getHostnameVerifier() {
+        return hostnameVerifier;
     }
 
     public static SSLContext getSSLContext() {

@@ -51,13 +51,13 @@ public class FlavorExtraSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_vnic:instance_bandwidth")
     
-    private Integer instanceVnicInstanceBandwidth;
+    private String instanceVnicInstanceBandwidth;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_vnic:max_count")
     
-    private Integer instanceVnicMaxCount;
+    private String instanceVnicMaxCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +75,7 @@ public class FlavorExtraSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extra_spec:io:persistent_grant")
     
-    private Boolean extraSpecIoPersistentGrant;
+    private String extraSpecIoPersistentGrant;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -319,7 +319,7 @@ public class FlavorExtraSpec  {
 
     
 
-    public FlavorExtraSpec withInstanceVnicInstanceBandwidth(Integer instanceVnicInstanceBandwidth) {
+    public FlavorExtraSpec withInstanceVnicInstanceBandwidth(String instanceVnicInstanceBandwidth) {
         this.instanceVnicInstanceBandwidth = instanceVnicInstanceBandwidth;
         return this;
     }
@@ -331,17 +331,17 @@ public class FlavorExtraSpec  {
      * 最大带宽，单位Mbps，最大值为10000。
      * @return instanceVnicInstanceBandwidth
      */
-    public Integer getInstanceVnicInstanceBandwidth() {
+    public String getInstanceVnicInstanceBandwidth() {
         return instanceVnicInstanceBandwidth;
     }
 
-    public void setInstanceVnicInstanceBandwidth(Integer instanceVnicInstanceBandwidth) {
+    public void setInstanceVnicInstanceBandwidth(String instanceVnicInstanceBandwidth) {
         this.instanceVnicInstanceBandwidth = instanceVnicInstanceBandwidth;
     }
 
     
 
-    public FlavorExtraSpec withInstanceVnicMaxCount(Integer instanceVnicMaxCount) {
+    public FlavorExtraSpec withInstanceVnicMaxCount(String instanceVnicMaxCount) {
         this.instanceVnicMaxCount = instanceVnicMaxCount;
         return this;
     }
@@ -353,11 +353,11 @@ public class FlavorExtraSpec  {
      * 最大网卡个数，最大为4。
      * @return instanceVnicMaxCount
      */
-    public Integer getInstanceVnicMaxCount() {
+    public String getInstanceVnicMaxCount() {
         return instanceVnicMaxCount;
     }
 
-    public void setInstanceVnicMaxCount(Integer instanceVnicMaxCount) {
+    public void setInstanceVnicMaxCount(String instanceVnicMaxCount) {
         this.instanceVnicMaxCount = instanceVnicMaxCount;
     }
 
@@ -407,7 +407,7 @@ public class FlavorExtraSpec  {
 
     
 
-    public FlavorExtraSpec withExtraSpecIoPersistentGrant(Boolean extraSpecIoPersistentGrant) {
+    public FlavorExtraSpec withExtraSpecIoPersistentGrant(String extraSpecIoPersistentGrant) {
         this.extraSpecIoPersistentGrant = extraSpecIoPersistentGrant;
         return this;
     }
@@ -419,11 +419,11 @@ public class FlavorExtraSpec  {
      * 是否支持持久化，值为true。  代表云服务器访问存储的方式为持久化授权。   > 说明：  - 密集存储D1型特有字段。
      * @return extraSpecIoPersistentGrant
      */
-    public Boolean getExtraSpecIoPersistentGrant() {
+    public String getExtraSpecIoPersistentGrant() {
         return extraSpecIoPersistentGrant;
     }
 
-    public void setExtraSpecIoPersistentGrant(Boolean extraSpecIoPersistentGrant) {
+    public void setExtraSpecIoPersistentGrant(String extraSpecIoPersistentGrant) {
         this.extraSpecIoPersistentGrant = extraSpecIoPersistentGrant;
     }
 

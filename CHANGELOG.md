@@ -1,3 +1,23 @@
+# 3.0.37-rc 2021-03-19
+
+### HuaweiCloud SDK ECS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - Fix the problem of deserialization failure of response body of interface `ListFlavors`.
+- _Change_
+    - None
+
+### HuaweiCloud SDK Meeting
+
+- _Features_
+    - Support more interfaces related to active code management.
+- _Bug Fix_
+    - None
+- _Change_
+    - None
+
 # 3.0.36-rc 2021-03-16
 
 ### HuaweiCloud SDK EIP

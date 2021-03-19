@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -23,12 +23,14 @@ package com.huaweicloud.sdk.core.http;
 
 /**
  * 并没有组合所有场景，是按照现在的web场景处理的
+ *
+ * @author HuaweiCloud_SDK
  */
 public enum FieldExistence {
-    //必须存在，取值有效，不能为空。path变量归为此类
+    // 必须存在，取值有效，不能为空。path变量归为此类
     NON_NULL_NON_EMPTY,
-    //必须存在，可以为空。query变量归为此类
+    // 必须存在，可以为空。query变量归为此类
     NON_NULL_ALLOW_EMPTY,
-    //允许不存在，例如query可选变量，NULL取值场景下忽略
+    // 允许不存在，例如query可选变量，NULL取值场景下忽略
     NULL_IGNORE
 }

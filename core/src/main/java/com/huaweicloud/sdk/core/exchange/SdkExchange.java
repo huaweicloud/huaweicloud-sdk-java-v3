@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -26,9 +26,14 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class SdkExchange {
     private ApiReference apiReference;
+
     private ApiTimer apiTimer;
+
     private Map<String, Object> attributes;
 
     public ApiReference getApiReference() {
@@ -51,7 +56,6 @@ public class SdkExchange {
     public void setApiReference(ApiReference apiReference) {
         this.apiReference = apiReference;
     }
-
 
     public ApiTimer getApiTimer() {
         return apiTimer;

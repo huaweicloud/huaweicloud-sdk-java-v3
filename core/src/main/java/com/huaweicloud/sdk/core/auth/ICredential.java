@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,12 +21,15 @@
 
 package com.huaweicloud.sdk.core.auth;
 
-import java.util.concurrent.CompletableFuture;
-
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 
+import java.util.concurrent.CompletableFuture;
+
+/**
+ * @author HuaweiCloud_SDK
+ */
 public interface ICredential {
     /**
      * Handle endpoint resolver and fill projectId/domainId automatically.

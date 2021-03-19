@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -22,12 +22,29 @@
 package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.exception.ConnectionException;
+
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public interface HttpClient {
 
+    /**
+     * Send synchronous request
+     *
+     * @param request HttpRequest
+     * @return HttpResponse
+     * @throws ConnectionException e
+     */
     HttpResponse syncInvokeHttp(HttpRequest request) throws ConnectionException;
 
+    /**
+     * Send asynchronous request
+     *
+     * @param request HttpRequest
+     * @return HttpResponse
+     */
     CompletableFuture<HttpResponse> asyncInvokeHttp(HttpRequest request);
 }
 

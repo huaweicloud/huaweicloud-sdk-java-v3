@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,6 +21,12 @@
 
 package com.huaweicloud.sdk.core.exception;
 
+/**
+ * If the host can't be reached, this exception will be thrown.
+ * In some cases, if the request returns status code 429, this exception can also be thrown.
+ *
+ * @author HuaweiCloud_SDK
+ */
 public class HostUnreachableException extends ConnectionException {
 
     public HostUnreachableException(String message) {

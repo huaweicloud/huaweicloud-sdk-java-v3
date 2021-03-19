@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -25,10 +25,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.function.Consumer;
 
-
+/**
+ * @author HuaweiCloud_SDK
+ */
 public interface CustomizationConfigure {
 
-    // 自定义Json工具
+    /**
+     * 自定义Json工具
+     * @param func ObjectMapper
+     */
     void configJson(Consumer<ObjectMapper> func);
 
 }

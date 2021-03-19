@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -26,8 +26,18 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class SdkExchangeCache {
+
     private static Map<String, SdkExchange> exchangeMap = new ConcurrentHashMap<>();
+
+    /**
+     * The utility class should hide the public constructor
+     */
+    private SdkExchangeCache() {
+    }
 
     public static SdkExchange getExchange(String id) {
         return StringUtils.isEmpty(id) ? null : exchangeMap.get(id);

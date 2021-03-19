@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -61,6 +61,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class HcClient implements CustomizationConfigure {
     private static final Logger logger = LoggerFactory.getLogger(HcClient.class);
 
@@ -169,7 +172,8 @@ public class HcClient implements CustomizationConfigure {
 
             if (httpResponse.getStatusCode() >= STATUS_CODE_WITH_RESPONSE_ERROR) {
                 logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                    httpRequest.getUrl().getHost(), httpRequest.getUrl(),
+                    httpRequest.getUrl().getHost(),
+                    httpRequest.getUrl(),
                     ExceptionUtils.extractErrorMessage(httpResponse));
 
                 throw ServiceResponseException.mapException(httpResponse.getStatusCode(),
@@ -214,7 +218,8 @@ public class HcClient implements CustomizationConfigure {
                 printAccessLog(finalValidHttpRequest, httpResponse, exchange);
                 if (httpResponse.getStatusCode() >= STATUS_CODE_WITH_RESPONSE_ERROR) {
                     logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                        finalValidHttpRequest.getUrl().getHost(), finalValidHttpRequest.getUrl(),
+                        finalValidHttpRequest.getUrl().getHost(),
+                        finalValidHttpRequest.getUrl(),
                         ExceptionUtils.extractErrorMessage(httpResponse));
                     throw ServiceResponseException.mapException(httpResponse.getStatusCode(),
                         ExceptionUtils.extractErrorMessage(httpResponse));
@@ -309,9 +314,8 @@ public class HcClient implements CustomizationConfigure {
     private Map<String, List<String>> buildMapQueryParams(String key, String entryKey, Object entryValue) {
         Map<String, List<String>> res = new HashMap<>();
         if (entryValue instanceof Map) {
-            ((Map<?, ?>) entryValue).forEach((k, v) -> {
-                res.putAll(buildMapQueryParams(key + "[" + entryKey + "]", k.toString(), v));
-            });
+            ((Map<?, ?>) entryValue).forEach(
+                (k, v) -> res.putAll(buildMapQueryParams(key + "[" + entryKey + "]", k.toString(), v)));
         } else if (entryValue instanceof Collection) {
             res.put(key + "[" + entryKey + "]", buildCollectionQueryParams(entryValue));
         } else {
@@ -321,6 +325,7 @@ public class HcClient implements CustomizationConfigure {
     }
 
     private <ReqT, ResT> ResT extractResponse(HttpResponse httpResponse, HttpRequestDef<ReqT, ResT> reqDef) {
+        int code = httpResponse.getStatusCode();
 
         try {
             String stringResult = httpResponse.getBodyAsString();
@@ -334,13 +339,27 @@ public class HcClient implements CustomizationConfigure {
             } else {
                 if (!reqDef.hasResponseField(Constants.BODY)) {
                     resT = JsonUtils.toObjectIgnoreUnknown(stringResult, reqDef.getResponseType());
+
+                    if (reqDef.hasResponseField(String.valueOf(code))) {
+                        Field<ResT, ?> resTField = reqDef.getResponseField(String.valueOf(code));
+                        resTField.writeValueSafe(resT,
+                            JsonUtils.toObjectIgnoreUnknown(stringResult, resTField.getFieldType()),
+                            resTField.getFieldType());
+                    }
+
                 } else {
                     resT = reqDef.getResponseType().newInstance();
                     Field<ResT, ?> responseField = reqDef.getResponseField(Constants.BODY);
                     Object obj = responseToObject(stringResult, responseField);
                     responseField.writeValueSafe(resT, obj, responseField.getFieldType());
+
+                    if (reqDef.hasResponseField(String.valueOf(code))) {
+                        Field<ResT, ?> resTField = reqDef.getResponseField(String.valueOf(code));
+                        resTField.writeValueSafe(resT, obj, resTField.getFieldType());
+                    }
                 }
             }
+
             if (Objects.isNull(resT)) {
                 resT = reqDef.getResponseType().newInstance();
             }
@@ -388,8 +407,9 @@ public class HcClient implements CustomizationConfigure {
             } else {
                 field.writeValueSafe(wrapperResponse, infos.get(0), String.class);
                 if (infos.size() > 1) {
-                    logger.error("field {} passed list {}, but configured as single value", field.getName(),
-                        infos.stream().collect(Collectors.joining(",")));
+                    logger.error("field {} passed list {}, but configured as single value",
+                        field.getName(),
+                        String.join(",", infos));
                 }
             }
         } else {
@@ -402,15 +422,24 @@ public class HcClient implements CustomizationConfigure {
         func.accept(JsonUtils.getDefaultMapper());
     }
 
+    /**
+     * print access log
+     * @param httpRequest original http request
+     * @param httpResponse original http response
+     * @param exchange sdk exchange
+     */
     public void printAccessLog(HttpRequest httpRequest, HttpResponse httpResponse, SdkExchange exchange) {
         String requestId = Objects.isNull(httpResponse.getHeader(Constants.X_REQUEST_ID))
             ? "null"
             : httpResponse.getHeader(Constants.X_REQUEST_ID);
         AccessLog.get()
-            .info("\"{} {}\" {} {} {} {}", httpRequest.getMethod(), httpRequest.getUrl(), httpResponse.getStatusCode(),
-                httpResponse.getContentLength(), requestId,
+            .info("\"{} {}\" {} {} {} {}",
+                httpRequest.getMethod(),
+                httpRequest.getUrl(),
+                httpResponse.getStatusCode(),
+                httpResponse.getContentLength(),
+                requestId,
                 Objects.nonNull(exchange) && Objects.nonNull(exchange.getApiTimer()) ? exchange.getApiTimer()
                     .getDurationMs() : "");
     }
-
 }

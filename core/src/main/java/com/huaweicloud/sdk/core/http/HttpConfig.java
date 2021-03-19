@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,16 +21,19 @@
 
 package com.huaweicloud.sdk.core.http;
 
+import com.huaweicloud.sdk.core.HttpListener;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.huaweicloud.sdk.core.HttpListener;
-
-
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class HttpConfig {
+    private static final int DEFAULT_CONNECTION_TIMEOUT = 60;
 
-    private int timeout = 60;
+    private int timeout = DEFAULT_CONNECTION_TIMEOUT;
 
     private boolean ignoreSSLVerification = false;
 

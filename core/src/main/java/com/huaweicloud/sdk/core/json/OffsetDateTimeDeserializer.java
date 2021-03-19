@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,10 +21,13 @@
 
 package com.huaweicloud.sdk.core.json;
 
+import static java.time.format.DateTimeFormatter.ISO_LOCAL_DATE;
+import static java.time.format.DateTimeFormatter.ISO_LOCAL_TIME;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
+
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
@@ -36,36 +39,34 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.TemporalAccessor;
 
-
-import static java.time.format.DateTimeFormatter.ISO_LOCAL_DATE;
-import static java.time.format.DateTimeFormatter.ISO_LOCAL_TIME;
-
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class OffsetDateTimeDeserializer extends JsonDeserializer<OffsetDateTime> {
 
-    private static final DateTimeFormatter ISO_8601_FORMATTER = new DateTimeFormatterBuilder()
-            .parseCaseInsensitive()
-            .append(ISO_LOCAL_DATE)
-            .optionalStart()
-            .appendLiteral('T')
-            .optionalEnd()
-            .optionalStart()
-            .appendLiteral(' ')
-            .optionalEnd()
-            .append(ISO_LOCAL_TIME)
-            .optionalStart()
-            .appendOffsetId()
-            .optionalEnd()
-            .toFormatter();
+    private static final DateTimeFormatter ISO_8601_FORMATTER = new DateTimeFormatterBuilder().parseCaseInsensitive()
+        .append(ISO_LOCAL_DATE)
+        .optionalStart()
+        .appendLiteral('T')
+        .optionalEnd()
+        .optionalStart()
+        .appendLiteral(' ')
+        .optionalEnd()
+        .append(ISO_LOCAL_TIME)
+        .optionalStart()
+        .appendOffsetId()
+        .optionalEnd()
+        .toFormatter();
 
     @Override
     public OffsetDateTime deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-            throws IOException {
+        throws IOException {
 
         if (StringUtils.isEmpty(jsonParser.getText())) {
             return null;
         }
-        TemporalAccessor temporalAccessor
-                = ISO_8601_FORMATTER.parseBest(jsonParser.getText(), ZonedDateTime::from, LocalDateTime::from);
+        TemporalAccessor temporalAccessor = ISO_8601_FORMATTER.parseBest(jsonParser.getText(), ZonedDateTime::from,
+            LocalDateTime::from);
         if (temporalAccessor instanceof ZonedDateTime) {
             return ((ZonedDateTime) temporalAccessor).toOffsetDateTime();
         } else if (temporalAccessor instanceof LocalDateTime) {

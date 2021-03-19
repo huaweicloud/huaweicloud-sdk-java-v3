@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,11 +21,17 @@
 
 package com.huaweicloud.sdk.core.http;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public enum LocationType {
+    /**
+     * Actual location of current parameter in request.
+     */
     Header,
     Path,
     Query,
     Body,
-    //内部临时字段
+    // 内部临时字段
     TransientInternal
 }

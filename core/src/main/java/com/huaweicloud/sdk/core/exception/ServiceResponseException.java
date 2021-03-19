@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -25,11 +25,16 @@ import java.util.Objects;
 
 /**
  * Base Exception for HTTP Errors during Rest Operations
+ *
+ * @author HuaweiCloud_SDK
  */
 public class ServiceResponseException extends SdkException {
-    private int httpStatusCode;
+    private final int httpStatusCode;
+
     private String errorMsg;
+
     private String errorCode;
+
     private String requestId;
 
     public ServiceResponseException(int httpStatusCode, SdkErrorMessage sdkErrorMessage) {
@@ -53,7 +58,7 @@ public class ServiceResponseException extends SdkException {
     /**
      * Maps an Exception based on the underlying status code
      *
-     * @param httpStatusCode  the Http Status Code
+     * @param httpStatusCode the Http Status Code
      * @param sdkErrorMessage the SdkErrorMessage
      * @return the response exception
      */
@@ -61,8 +66,8 @@ public class ServiceResponseException extends SdkException {
         if (Objects.isNull(sdkErrorMessage)) {
             return mapException(httpStatusCode, null, null, null);
         }
-        return mapException(httpStatusCode, sdkErrorMessage.getErrorCode(),
-            sdkErrorMessage.getErrorMsg(), sdkErrorMessage.getRequestId());
+        return mapException(httpStatusCode, sdkErrorMessage.getErrorCode(), sdkErrorMessage.getErrorMsg(),
+            sdkErrorMessage.getRequestId());
     }
 
     /**
@@ -70,8 +75,8 @@ public class ServiceResponseException extends SdkException {
      *
      * @return the response exception
      */
-    public static ServiceResponseException mapException(int httpStatusCode, String errorCode,
-                                                        String errorMsg, String requestId) {
+    public static ServiceResponseException mapException(int httpStatusCode, String errorCode, String errorMsg,
+        String requestId) {
         if (httpStatusCode >= 400 && httpStatusCode < 499) {
             return new ClientRequestException(httpStatusCode, errorCode, errorMsg, requestId);
         }

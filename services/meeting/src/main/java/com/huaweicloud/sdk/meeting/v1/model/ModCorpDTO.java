@@ -31,6 +31,12 @@ public class ModCorpDTO  {
     
     private ModAdminDTO adminInfo;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="groupId")
+    
+    private String groupId;
+
     public ModCorpDTO withBasicInfo(ModCorpBasicDTO basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -89,6 +95,28 @@ public class ModCorpDTO  {
 
     
 
+    public ModCorpDTO withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 媒体接入（包括SBC和MCU）分组id, 可通过企业资源管理下的SP管理员查询资源信息接口获取。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -99,11 +127,12 @@ public class ModCorpDTO  {
         }
         ModCorpDTO modCorpDTO = (ModCorpDTO) o;
         return Objects.equals(this.basicInfo, modCorpDTO.basicInfo) &&
-            Objects.equals(this.adminInfo, modCorpDTO.adminInfo);
+            Objects.equals(this.adminInfo, modCorpDTO.adminInfo) &&
+            Objects.equals(this.groupId, modCorpDTO.groupId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, adminInfo);
+        return Objects.hash(basicInfo, adminInfo, groupId);
     }
     @Override
     public String toString() {
@@ -111,6 +140,7 @@ public class ModCorpDTO  {
         sb.append("class ModCorpDTO {\n");
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    adminInfo: ").append(toIndentedString(adminInfo)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

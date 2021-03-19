@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,13 +21,6 @@
 
 package com.huaweicloud.sdk.core;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.ExecutionException;
-import java.util.function.Function;
-
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.EnvCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
@@ -37,15 +30,30 @@ import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 import com.huaweicloud.sdk.core.region.Region;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.ExecutionException;
+import java.util.function.Function;
+
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class ClientBuilder<T> {
     private Function<HcClient, T> creator;
-    private ICredential credential;
-    private HttpConfig httpConfig;
-    private Region region;
-    private String endpoint;
-    private List<String> credentialType = new ArrayList<>(Arrays.asList(BasicCredentials.class.getSimpleName()));
 
-    private static final String CUSTOMIZATION = "Customization";
+    private ICredential credential;
+
+    private HttpConfig httpConfig;
+
+    private Region region;
+
+    private String endpoint;
+
+    private List<String> credentialType = new ArrayList<>(
+        Collections.singletonList(BasicCredentials.class.getSimpleName()));
 
     public ClientBuilder(Function<HcClient, T> creator) {
         this.creator = creator;
@@ -90,8 +98,8 @@ public class ClientBuilder<T> {
         }
 
         if (Objects.isNull(this.credential)) {
-            throw new SdkException("credential can not be null, " + credentialType.toString()
-                    + "credential objects are required");
+            throw new SdkException(
+                "credential can not be null, " + credentialType.toString() + "credential objects are required");
         }
 
         if (!credentialType.contains(credential.getClass().getSimpleName())) {
@@ -124,11 +132,10 @@ public class ClientBuilder<T> {
     }
 
     private ClientCustomization loadClientCustomization(T t) {
-        String strClientCustomizationClassName = t.getClass().getName() + CUSTOMIZATION;
+        String strClientCustomizationClassName = t.getClass().getName() + Constants.CUSTOMIZATION;
         try {
             Class customizationClass = Class.forName(strClientCustomizationClassName);
-            ClientCustomization clientCustomization = (ClientCustomization) customizationClass.newInstance();
-            return clientCustomization;
+            return (ClientCustomization) customizationClass.newInstance();
         } catch (ClassNotFoundException e) {
             return null;
         } catch (InstantiationException | IllegalAccessException e) {

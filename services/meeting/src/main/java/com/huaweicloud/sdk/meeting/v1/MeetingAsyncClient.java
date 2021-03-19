@@ -658,6 +658,28 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 企业管理员生成激活码
+     * 企业管理员生成智慧屏、电子白板、Ideahub的激活码
+     *
+     * @param CreateVisionActiveCodeRequest 请求对象
+     * @return CompletableFuture<CreateVisionActiveCodeResponse>
+     */
+    public CompletableFuture<CreateVisionActiveCodeResponse> createVisionActiveCodeAsync(CreateVisionActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.createVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员生成激活码
+     * 企业管理员生成智慧屏、电子白板、Ideahub的激活码
+     *
+     * @param CreateVisionActiveCodeRequest 请求对象
+     * @return AsyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>
+     */
+    public AsyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse> createVisionActiveCodeAsyncInvoker(CreateVisionActiveCodeRequest request) {
+        return new AsyncInvoker<CreateVisionActiveCodeRequest, CreateVisionActiveCodeResponse>(request, MeetingMeta.createVisionActiveCode, hcClient);
+    }
+
+    /**
      * 删除与会者
      * 删除与会者。
      *
@@ -787,6 +809,28 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceAsyncInvoker(DeleteResourceRequest request) {
         return new AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, MeetingMeta.deleteResource, hcClient);
+    }
+
+    /**
+     * 企业管理员删除激活码
+     * 企业管理员批量删除激活码
+     *
+     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @return CompletableFuture<DeleteVisionActiveCodeResponse>
+     */
+    public CompletableFuture<DeleteVisionActiveCodeResponse> deleteVisionActiveCodeAsync(DeleteVisionActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员删除激活码
+     * 企业管理员批量删除激活码
+     *
+     * @param DeleteVisionActiveCodeRequest 请求对象
+     * @return AsyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>
+     */
+    public AsyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse> deleteVisionActiveCodeAsyncInvoker(DeleteVisionActiveCodeRequest request) {
+        return new AsyncInvoker<DeleteVisionActiveCodeRequest, DeleteVisionActiveCodeResponse>(request, MeetingMeta.deleteVisionActiveCode, hcClient);
     }
 
     /**
@@ -1139,6 +1183,28 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse> resetPwdByAdminAsyncInvoker(ResetPwdByAdminRequest request) {
         return new AsyncInvoker<ResetPwdByAdminRequest, ResetPwdByAdminResponse>(request, MeetingMeta.resetPwdByAdmin, hcClient);
+    }
+
+    /**
+     * 企业管理员重置账号的激活码
+     * 企业管理员重置账号的激活码，重置后，原设备直接解绑，必须重新激活使用,若手机邮箱不填，则不会发送新的激活码
+     *
+     * @param ResetVisionActiveCodeRequest 请求对象
+     * @return CompletableFuture<ResetVisionActiveCodeResponse>
+     */
+    public CompletableFuture<ResetVisionActiveCodeResponse> resetVisionActiveCodeAsync(ResetVisionActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.resetVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员重置账号的激活码
+     * 企业管理员重置账号的激活码，重置后，原设备直接解绑，必须重新激活使用,若手机邮箱不填，则不会发送新的激活码
+     *
+     * @param ResetVisionActiveCodeRequest 请求对象
+     * @return AsyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>
+     */
+    public AsyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse> resetVisionActiveCodeAsyncInvoker(ResetVisionActiveCodeRequest request) {
+        return new AsyncInvoker<ResetVisionActiveCodeRequest, ResetVisionActiveCodeResponse>(request, MeetingMeta.resetVisionActiveCode, hcClient);
     }
 
     /**
@@ -1601,6 +1667,28 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<SearchUsersRequest, SearchUsersResponse> searchUsersAsyncInvoker(SearchUsersRequest request) {
         return new AsyncInvoker<SearchUsersRequest, SearchUsersResponse>(request, MeetingMeta.searchUsers, hcClient);
+    }
+
+    /**
+     * 企业管理员分页查询激活码
+     * 企业管理员分页查询激活码，支持激活码、终端名称模糊查询。
+     *
+     * @param SearchVisionActiveCodeRequest 请求对象
+     * @return CompletableFuture<SearchVisionActiveCodeResponse>
+     */
+    public CompletableFuture<SearchVisionActiveCodeResponse> searchVisionActiveCodeAsync(SearchVisionActiveCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchVisionActiveCode);
+    }
+
+    /**
+     * 企业管理员分页查询激活码
+     * 企业管理员分页查询激活码，支持激活码、终端名称模糊查询。
+     *
+     * @param SearchVisionActiveCodeRequest 请求对象
+     * @return AsyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>
+     */
+    public AsyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse> searchVisionActiveCodeAsyncInvoker(SearchVisionActiveCodeRequest request) {
+        return new AsyncInvoker<SearchVisionActiveCodeRequest, SearchVisionActiveCodeResponse>(request, MeetingMeta.searchVisionActiveCode, hcClient);
     }
 
     /**
@@ -2261,6 +2349,28 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<ShowSpResRequest, ShowSpResResponse> showSpResAsyncInvoker(ShowSpResRequest request) {
         return new AsyncInvoker<ShowSpResRequest, ShowSpResResponse>(request, MeetingMeta.showSpRes, hcClient);
+    }
+
+    /**
+     * SP管理员查询资源信息
+     * sp管理员查询sp的所有资源，包括已使用的资源
+     *
+     * @param ShowSpResourceRequest 请求对象
+     * @return CompletableFuture<ShowSpResourceResponse>
+     */
+    public CompletableFuture<ShowSpResourceResponse> showSpResourceAsync(ShowSpResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showSpResource);
+    }
+
+    /**
+     * SP管理员查询资源信息
+     * sp管理员查询sp的所有资源，包括已使用的资源
+     *
+     * @param ShowSpResourceRequest 请求对象
+     * @return AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>
+     */
+    public AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse> showSpResourceAsyncInvoker(ShowSpResourceRequest request) {
+        return new AsyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>(request, MeetingMeta.showSpResource, hcClient);
     }
 
     /**

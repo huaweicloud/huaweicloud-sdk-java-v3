@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,11 +21,6 @@
 
 package com.huaweicloud.sdk.core.auth;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
-
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
@@ -36,6 +31,14 @@ import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
+
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     private String domainId;
@@ -48,6 +51,10 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         this.domainId = domainId;
     }
 
+    /**
+     * @param domainId id of the account
+     * @return GlobalCredentials
+     */
     public GlobalCredentials withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -78,8 +85,8 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
 
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
-        KeystoneListAuthDomainsResponse response =
-            inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+        KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
+            InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response) || Objects.isNull(response.getDomains()) || response.getDomains().size() == 0) {
             throw new SdkException("Failed to get domain id automatically, "
                 + "please input domain id when initializing GlobalCredentials");
@@ -116,8 +123,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     @Override
     public GlobalCredentials deepClone() {
-        return new GlobalCredentials()
-            .withDomainId(this.domainId)
+        return new GlobalCredentials().withDomainId(this.domainId)
             .withAk(this.getAk())
             .withSk(this.getSk())
             .withIamEndpoint(this.getIamEndpoint())

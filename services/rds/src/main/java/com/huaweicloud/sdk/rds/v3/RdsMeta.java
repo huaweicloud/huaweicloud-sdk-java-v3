@@ -49,6 +49,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -90,6 +93,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -131,6 +137,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -172,6 +181,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -213,6 +225,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -254,6 +269,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -287,6 +305,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -328,6 +349,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -361,6 +385,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -394,6 +421,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -427,6 +457,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -460,6 +493,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -493,6 +529,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -526,6 +565,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -567,6 +609,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -608,6 +653,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -673,6 +721,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -754,6 +805,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -779,6 +833,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -804,6 +861,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -837,6 +897,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -910,6 +973,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -959,6 +1025,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1056,6 +1125,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1089,6 +1161,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1138,6 +1213,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1219,6 +1297,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1244,6 +1325,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1285,6 +1369,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1310,6 +1397,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1351,6 +1441,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1424,6 +1517,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1497,6 +1593,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1546,6 +1645,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1587,6 +1689,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1628,6 +1733,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1669,6 +1777,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1702,6 +1813,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1743,6 +1857,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1784,6 +1901,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1825,6 +1945,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1866,6 +1989,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1907,6 +2033,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1940,6 +2069,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -1973,6 +2105,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2006,6 +2141,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2039,39 +2177,9 @@ public class RdsMeta {
         );
 
         // response
+        
 
-        return builder.build();
-    }
 
-    public static final HttpRequestDef<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatus = genForshowDrReplicaStatus();
-
-    private static HttpRequestDef<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> genForshowDrReplicaStatus() {
-        // basic
-        HttpRequestDef.Builder<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDrReplicaStatusRequest.class, ShowDrReplicaStatusResponse.class)
-                .withName("ShowDrReplicaStatus")
-                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowDrReplicaStatusRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowDrReplicaStatusRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-
-        // response
 
         return builder.build();
     }
@@ -2105,6 +2213,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2138,6 +2249,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2171,47 +2285,9 @@ public class RdsMeta {
         );
 
         // response
+        
 
-        return builder.build();
-    }
 
-    public static final HttpRequestDef<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse> startInstanceDrToMasterAction = genForstartInstanceDrToMasterAction();
-
-    private static HttpRequestDef<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse> genForstartInstanceDrToMasterAction() {
-        // basic
-        HttpRequestDef.Builder<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StartInstanceDrToMasterActionRequest.class, StartInstanceDrToMasterActionResponse.class)
-                .withName("StartInstanceDrToMasterAction")
-                .withUri("/v3/{project_id}/instances/{instance_id}/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(StartInstanceDrToMasterActionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            StartInstanceDrToMasterActionRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(StartInstanceDrToMasterActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            DrReplicaToMaster.class,
-            f -> f.withMarshaller(StartInstanceDrToMasterActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
 
         return builder.build();
     }
@@ -2253,47 +2329,9 @@ public class RdsMeta {
         );
 
         // response
+        
 
-        return builder.build();
-    }
 
-    public static final HttpRequestDef<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse> startInstanceMasterDrAction = genForstartInstanceMasterDrAction();
-
-    private static HttpRequestDef<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse> genForstartInstanceMasterDrAction() {
-        // basic
-        HttpRequestDef.Builder<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StartInstanceMasterDrActionRequest.class, StartInstanceMasterDrActionResponse.class)
-                .withName("StartInstanceMasterDrAction")
-                .withUri("/v3/{project_id}/instances/{instance_id}/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(StartInstanceMasterDrActionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            StartInstanceMasterDrActionRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(StartInstanceMasterDrActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            BuildMasterDrRelation.class,
-            f -> f.withMarshaller(StartInstanceMasterDrActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
 
         return builder.build();
     }
@@ -2335,6 +2373,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2376,47 +2417,9 @@ public class RdsMeta {
         );
 
         // response
+        
 
-        return builder.build();
-    }
 
-    public static final HttpRequestDef<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse> startInstanceSlaveDrAction = genForstartInstanceSlaveDrAction();
-
-    private static HttpRequestDef<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse> genForstartInstanceSlaveDrAction() {
-        // basic
-        HttpRequestDef.Builder<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StartInstanceSlaveDrActionRequest.class, StartInstanceSlaveDrActionResponse.class)
-                .withName("StartInstanceSlaveDrAction")
-                .withUri("/v3/{project_id}/instances/{instance_id}/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(StartInstanceSlaveDrActionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            StartInstanceSlaveDrActionRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(StartInstanceSlaveDrActionRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            BuildSlaveDrRelation.class,
-            f -> f.withMarshaller(StartInstanceSlaveDrActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
 
         return builder.build();
     }
@@ -2450,6 +2453,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2491,6 +2497,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2532,6 +2541,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2573,6 +2585,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2614,6 +2629,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2655,6 +2673,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2696,6 +2717,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2737,6 +2761,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2778,6 +2805,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2819,6 +2849,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2860,6 +2893,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2901,6 +2937,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2942,6 +2981,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -2983,6 +3025,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3040,6 +3085,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3097,6 +3145,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3146,6 +3197,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3195,6 +3249,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3236,6 +3293,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3277,6 +3337,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3318,47 +3381,9 @@ public class RdsMeta {
         );
 
         // response
+        
 
-        return builder.build();
-    }
 
-    public static final HttpRequestDef<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> changeTheDelayThreshold = genForchangeTheDelayThreshold();
-
-    private static HttpRequestDef<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> genForchangeTheDelayThreshold() {
-        // basic
-        HttpRequestDef.Builder<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ChangeTheDelayThresholdRequest.class, ChangeTheDelayThresholdResponse.class)
-                .withName("ChangeTheDelayThreshold")
-                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/delay-threshold")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ChangeTheDelayThresholdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            ChangeTheDelayThresholdRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(ChangeTheDelayThresholdRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ChangingTheDelayThresholdRequestBody.class,
-            f -> f.withMarshaller(ChangeTheDelayThresholdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
 
         return builder.build();
     }
@@ -3400,6 +3425,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3441,6 +3469,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3482,6 +3513,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3539,6 +3573,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3588,6 +3625,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3637,6 +3677,9 @@ public class RdsMeta {
         );
 
         // response
+        
+
+
 
         return builder.build();
     }
@@ -3678,105 +3721,9 @@ public class RdsMeta {
         );
 
         // response
+        
 
-        return builder.build();
-    }
 
-    public static final HttpRequestDef<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxy = genForshowInformationAboutDatabaseProxy();
-
-    private static HttpRequestDef<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> genForshowInformationAboutDatabaseProxy() {
-        // basic
-        HttpRequestDef.Builder<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowInformationAboutDatabaseProxyRequest.class, ShowInformationAboutDatabaseProxyResponse.class)
-                .withName("ShowInformationAboutDatabaseProxy")
-                .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowInformationAboutDatabaseProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            ShowInformationAboutDatabaseProxyRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(ShowInformationAboutDatabaseProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxy = genForstartDatabaseProxy();
-
-    private static HttpRequestDef<StartDatabaseProxyRequest, StartDatabaseProxyResponse> genForstartDatabaseProxy() {
-        // basic
-        HttpRequestDef.Builder<StartDatabaseProxyRequest, StartDatabaseProxyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StartDatabaseProxyRequest.class, StartDatabaseProxyResponse.class)
-                .withName("StartDatabaseProxy")
-                .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(StartDatabaseProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            StartDatabaseProxyRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(StartDatabaseProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxy = genForstopDatabaseProxy();
-
-    private static HttpRequestDef<StopDatabaseProxyRequest, StopDatabaseProxyResponse> genForstopDatabaseProxy() {
-        // basic
-        HttpRequestDef.Builder<StopDatabaseProxyRequest, StopDatabaseProxyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, StopDatabaseProxyRequest.class, StopDatabaseProxyResponse.class)
-                .withName("StopDatabaseProxy")
-                .withUri("/v3/{project_id}/instances/{instance_id}/proxy")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(StopDatabaseProxyRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            StopDatabaseProxyRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(StopDatabaseProxyRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-
-        // response
 
         return builder.build();
     }
@@ -3818,47 +3765,9 @@ public class RdsMeta {
         );
 
         // response
+        
 
-        return builder.build();
-    }
 
-    public static final HttpRequestDef<UpdateReadWeightRequest, UpdateReadWeightResponse> updateReadWeight = genForupdateReadWeight();
-
-    private static HttpRequestDef<UpdateReadWeightRequest, UpdateReadWeightResponse> genForupdateReadWeight() {
-        // basic
-        HttpRequestDef.Builder<UpdateReadWeightRequest, UpdateReadWeightResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateReadWeightRequest.class, UpdateReadWeightResponse.class)
-                .withName("UpdateReadWeight")
-                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/weight")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateReadWeightRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            UpdateReadWeightRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(UpdateReadWeightRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ModifyProxyWeightRequest.class,
-            f -> f.withMarshaller(UpdateReadWeightRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
 
         return builder.build();
     }

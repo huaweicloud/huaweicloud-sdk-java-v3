@@ -1054,28 +1054,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 查询跨云容灾复制状态
-     * 查询跨云容灾复制状态。
-     *
-     * @param ShowDrReplicaStatusRequest 请求对象
-     * @return CompletableFuture<ShowDrReplicaStatusResponse>
-     */
-    public CompletableFuture<ShowDrReplicaStatusResponse> showDrReplicaStatusAsync(ShowDrReplicaStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.showDrReplicaStatus);
-    }
-
-    /**
-     * 查询跨云容灾复制状态
-     * 查询跨云容灾复制状态。
-     *
-     * @param ShowDrReplicaStatusRequest 请求对象
-     * @return AsyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>
-     */
-    public AsyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatusAsyncInvoker(ShowDrReplicaStatusRequest request) {
-        return new AsyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse>(request, RdsMeta.showDrReplicaStatus, hcClient);
-    }
-
-    /**
      * 获取指定实例的参数模板
      * 获取指定实例的参数模板。
      *
@@ -1142,28 +1120,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 灾备实例升主
-     * 灾备实例升主。
-     *
-     * @param StartInstanceDrToMasterActionRequest 请求对象
-     * @return CompletableFuture<StartInstanceDrToMasterActionResponse>
-     */
-    public CompletableFuture<StartInstanceDrToMasterActionResponse> startInstanceDrToMasterActionAsync(StartInstanceDrToMasterActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.startInstanceDrToMasterAction);
-    }
-
-    /**
-     * 灾备实例升主
-     * 灾备实例升主。
-     *
-     * @param StartInstanceDrToMasterActionRequest 请求对象
-     * @return AsyncInvoker<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse>
-     */
-    public AsyncInvoker<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse> startInstanceDrToMasterActionAsyncInvoker(StartInstanceDrToMasterActionRequest request) {
-        return new AsyncInvoker<StartInstanceDrToMasterActionRequest, StartInstanceDrToMasterActionResponse>(request, RdsMeta.startInstanceDrToMasterAction, hcClient);
-    }
-
-    /**
      * 扩容数据库实例的磁盘空间
      * 扩容数据库实例的磁盘空间。
      *
@@ -1183,28 +1139,6 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse> startInstanceEnlargeVolumeActionAsyncInvoker(StartInstanceEnlargeVolumeActionRequest request) {
         return new AsyncInvoker<StartInstanceEnlargeVolumeActionRequest, StartInstanceEnlargeVolumeActionResponse>(request, RdsMeta.startInstanceEnlargeVolumeAction, hcClient);
-    }
-
-    /**
-     * 配置主实例容灾能力
-     * 配置主实例容灾能力。
-     *
-     * @param StartInstanceMasterDrActionRequest 请求对象
-     * @return CompletableFuture<StartInstanceMasterDrActionResponse>
-     */
-    public CompletableFuture<StartInstanceMasterDrActionResponse> startInstanceMasterDrActionAsync(StartInstanceMasterDrActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.startInstanceMasterDrAction);
-    }
-
-    /**
-     * 配置主实例容灾能力
-     * 配置主实例容灾能力。
-     *
-     * @param StartInstanceMasterDrActionRequest 请求对象
-     * @return AsyncInvoker<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse>
-     */
-    public AsyncInvoker<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse> startInstanceMasterDrActionAsyncInvoker(StartInstanceMasterDrActionRequest request) {
-        return new AsyncInvoker<StartInstanceMasterDrActionRequest, StartInstanceMasterDrActionResponse>(request, RdsMeta.startInstanceMasterDrAction, hcClient);
     }
 
     /**
@@ -1249,28 +1183,6 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse> startInstanceSingleToHaActionAsyncInvoker(StartInstanceSingleToHaActionRequest request) {
         return new AsyncInvoker<StartInstanceSingleToHaActionRequest, StartInstanceSingleToHaActionResponse>(request, RdsMeta.startInstanceSingleToHaAction, hcClient);
-    }
-
-    /**
-     * 配置灾备实例容灾能力
-     * 配置灾备实例容灾能力。
-     *
-     * @param StartInstanceSlaveDrActionRequest 请求对象
-     * @return CompletableFuture<StartInstanceSlaveDrActionResponse>
-     */
-    public CompletableFuture<StartInstanceSlaveDrActionResponse> startInstanceSlaveDrActionAsync(StartInstanceSlaveDrActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.startInstanceSlaveDrAction);
-    }
-
-    /**
-     * 配置灾备实例容灾能力
-     * 配置灾备实例容灾能力。
-     *
-     * @param StartInstanceSlaveDrActionRequest 请求对象
-     * @return AsyncInvoker<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse>
-     */
-    public AsyncInvoker<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse> startInstanceSlaveDrActionAsyncInvoker(StartInstanceSlaveDrActionRequest request) {
-        return new AsyncInvoker<StartInstanceSlaveDrActionRequest, StartInstanceSlaveDrActionResponse>(request, RdsMeta.startInstanceSlaveDrAction, hcClient);
     }
 
     /**
@@ -1736,28 +1648,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 修改读写分离阈值
-     * 修改读写分离阈值
-     *
-     * @param ChangeTheDelayThresholdRequest 请求对象
-     * @return CompletableFuture<ChangeTheDelayThresholdResponse>
-     */
-    public CompletableFuture<ChangeTheDelayThresholdResponse> changeTheDelayThresholdAsync(ChangeTheDelayThresholdRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.changeTheDelayThreshold);
-    }
-
-    /**
-     * 修改读写分离阈值
-     * 修改读写分离阈值
-     *
-     * @param ChangeTheDelayThresholdRequest 请求对象
-     * @return AsyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>
-     */
-    public AsyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse> changeTheDelayThresholdAsyncInvoker(ChangeTheDelayThresholdRequest request) {
-        return new AsyncInvoker<ChangeTheDelayThresholdRequest, ChangeTheDelayThresholdResponse>(request, RdsMeta.changeTheDelayThreshold, hcClient);
-    }
-
-    /**
      * 创建数据库
      * 创建数据库。
      *
@@ -1912,72 +1802,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 查询数据库代理信息
-     * 查询数据库代理信息
-     *
-     * @param ShowInformationAboutDatabaseProxyRequest 请求对象
-     * @return CompletableFuture<ShowInformationAboutDatabaseProxyResponse>
-     */
-    public CompletableFuture<ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxyAsync(ShowInformationAboutDatabaseProxyRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.showInformationAboutDatabaseProxy);
-    }
-
-    /**
-     * 查询数据库代理信息
-     * 查询数据库代理信息
-     *
-     * @param ShowInformationAboutDatabaseProxyRequest 请求对象
-     * @return AsyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>
-     */
-    public AsyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse> showInformationAboutDatabaseProxyAsyncInvoker(ShowInformationAboutDatabaseProxyRequest request) {
-        return new AsyncInvoker<ShowInformationAboutDatabaseProxyRequest, ShowInformationAboutDatabaseProxyResponse>(request, RdsMeta.showInformationAboutDatabaseProxy, hcClient);
-    }
-
-    /**
-     * 开启数据库代理
-     * 开启数据库代理
-     *
-     * @param StartDatabaseProxyRequest 请求对象
-     * @return CompletableFuture<StartDatabaseProxyResponse>
-     */
-    public CompletableFuture<StartDatabaseProxyResponse> startDatabaseProxyAsync(StartDatabaseProxyRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.startDatabaseProxy);
-    }
-
-    /**
-     * 开启数据库代理
-     * 开启数据库代理
-     *
-     * @param StartDatabaseProxyRequest 请求对象
-     * @return AsyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>
-     */
-    public AsyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse> startDatabaseProxyAsyncInvoker(StartDatabaseProxyRequest request) {
-        return new AsyncInvoker<StartDatabaseProxyRequest, StartDatabaseProxyResponse>(request, RdsMeta.startDatabaseProxy, hcClient);
-    }
-
-    /**
-     * 关闭数据库代理
-     * 关闭数据库代理
-     *
-     * @param StopDatabaseProxyRequest 请求对象
-     * @return CompletableFuture<StopDatabaseProxyResponse>
-     */
-    public CompletableFuture<StopDatabaseProxyResponse> stopDatabaseProxyAsync(StopDatabaseProxyRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.stopDatabaseProxy);
-    }
-
-    /**
-     * 关闭数据库代理
-     * 关闭数据库代理
-     *
-     * @param StopDatabaseProxyRequest 请求对象
-     * @return AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>
-     */
-    public AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse> stopDatabaseProxyAsyncInvoker(StopDatabaseProxyRequest request) {
-        return new AsyncInvoker<StopDatabaseProxyRequest, StopDatabaseProxyResponse>(request, RdsMeta.stopDatabaseProxy, hcClient);
-    }
-
-    /**
      * 修改实例备注信息
      * 修改实例备注信息。
      *
@@ -1997,28 +1821,6 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasAsyncInvoker(UpdatePostgresqlInstanceAliasRequest request) {
         return new AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
-    }
-
-    /**
-     * 修改读写分离权重
-     * 修改读写分离权重
-     *
-     * @param UpdateReadWeightRequest 请求对象
-     * @return CompletableFuture<UpdateReadWeightResponse>
-     */
-    public CompletableFuture<UpdateReadWeightResponse> updateReadWeightAsync(UpdateReadWeightRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.updateReadWeight);
-    }
-
-    /**
-     * 修改读写分离权重
-     * 修改读写分离权重
-     *
-     * @param UpdateReadWeightRequest 请求对象
-     * @return AsyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>
-     */
-    public AsyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse> updateReadWeightAsyncInvoker(UpdateReadWeightRequest request) {
-        return new AsyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse>(request, RdsMeta.updateReadWeight, hcClient);
     }
 
 }

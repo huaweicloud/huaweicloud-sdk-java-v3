@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,13 +21,6 @@
 
 package com.huaweicloud.sdk.core.auth;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
-
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
@@ -44,6 +37,16 @@ import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
+
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     private String projectId;
@@ -56,6 +59,10 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         this.projectId = projectId;
     }
 
+    /**
+     * @param projectId id of project showed in console
+     * @return BasicCredentials
+     */
     public BasicCredentials withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -88,8 +95,8 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
         KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
         if (Objects.isNull(response)) {
-            throw new SdkException("Failed to get project id, "
-                + "please input project id when initializing BasicCredentials");
+            throw new SdkException(
+                "Failed to get project id, " + "please input project id when initializing BasicCredentials");
         }
         if (response.getProjects().size() == 1) {
             this.projectId = response.getProjects().get(0).getId();
@@ -118,6 +125,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     }
 
     private List<String> getSupportedRegions(HcClient hcClient) {
+        final String publicRegionType = "public";
         KeystoneListRegionsRequest request = new KeystoneListRegionsRequest();
         KeystoneListRegionsResponse response = hcClient.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_REGIONS);
         if (Objects.isNull(response)) {
@@ -125,7 +133,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         }
 
         return response.getRegions().stream().map(region -> {
-            if ("public".equals(region.getType())) {
+            if (publicRegionType.equals(region.getType())) {
                 return region.getId();
             }
             return null;
@@ -134,8 +142,8 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     private String getDomainId(HcClient hcClient) {
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
-        KeystoneListAuthDomainsResponse response =
-            hcClient.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+        KeystoneListAuthDomainsResponse response = hcClient.syncInvokeHttp(request,
+            InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
         if (Objects.isNull(response)) {
             throw new SdkException("failed to get domain id");
         }
@@ -143,17 +151,17 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     }
 
     private String getCreateProjectId(HcClient hcClient, String regionId, String domainId) {
-        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk()).withSk(getSk())
+        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk())
+            .withSk(getSk())
             .withDomainId(domainId);
         HcClient innerGlobal = hcClient.overrideCredential(globalCredentials);
-        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest().withBody(body -> {
-            body.withProject(project -> {
+        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest().withBody(
+            body -> body.withProject(project -> {
                 project.withName(regionId);
                 project.withDomainId(domainId);
-            });
-        });
-        KeystoneCreateProjectResponse response =
-            innerGlobal.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_CREATE_PROJECT);
+            }));
+        KeystoneCreateProjectResponse response = innerGlobal.syncInvokeHttp(request,
+            InnerIamMeta.KEYSTONE_CREATE_PROJECT);
 
         if (Objects.isNull(response.getProject())) {
             throw new SdkException("failed to create project");
@@ -188,8 +196,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     @Override
     public BasicCredentials deepClone() {
-        return new BasicCredentials()
-            .withProjectId(this.projectId)
+        return new BasicCredentials().withProjectId(this.projectId)
             .withAk(this.getAk())
             .withSk(this.getSk())
             .withIamEndpoint(this.getIamEndpoint())

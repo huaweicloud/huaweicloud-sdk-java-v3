@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -45,6 +45,7 @@ import com.huaweicloud.sdk.core.json.StrictFloatDeserializer;
 import com.huaweicloud.sdk.core.json.StrictIntegerDeserializer;
 import com.huaweicloud.sdk.core.json.StrictLongDeserializer;
 import com.huaweicloud.sdk.core.json.StrictStringDeserializer;
+
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,12 +60,10 @@ import java.util.Set;
 
 /**
  * The type Json utils.
+ *
+ * @author HuaweiCloud_SDK
  */
-public class JsonUtils {
-
-    /**
-     *
-     */
+public final class JsonUtils {
     private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);
 
     /**
@@ -76,16 +75,22 @@ public class JsonUtils {
      */
     private static ObjectMapper objectMapperIgnoreUnknown = initializeBaseMapper();
 
-    private static ObjectMapper objectMapperHideSensitive =
-        objectMapperIgnoreUnknown.copy().setConfig(
-            objectMapperIgnoreUnknown.getSerializationConfig()
-                .with(objectMapperIgnoreUnknown.getSerializationConfig().getAttributes()
-                    .withSharedAttribute(SensitiveStringSerializer.SENSITIVE_SWITCH, true))
-        );
+    private static ObjectMapper objectMapperHideSensitive = objectMapperIgnoreUnknown.copy()
+        .setConfig(objectMapperIgnoreUnknown.getSerializationConfig()
+            .with(objectMapperIgnoreUnknown.getSerializationConfig()
+                .getAttributes()
+                .withSharedAttribute(SensitiveStringSerializer.SENSITIVE_SWITCH, true)));
+
+    /**
+     * The utility class should hide the public constructor
+     */
+    private JsonUtils() {
+
+    }
 
     private static ObjectMapper initializeBaseMapper() {
         ObjectMapper mapper = new ObjectMapper()
-            //反序列化时未知字段忽略
+            // 反序列化时未知字段忽略
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
             .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
             .configure(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE, false)
@@ -102,11 +107,11 @@ public class JsonUtils {
             .setFilterProvider(new SimpleFilterProvider().setFailOnUnknownId(false));
 
         DeserializationConfig readConfig = mapper.getDeserializationConfig()
-            //是否允许JSON字符串包含非引号控制字符
+            // 是否允许JSON字符串包含非引号控制字符
             .with(JsonReadFeature.ALLOW_UNESCAPED_CONTROL_CHARS);
 
         SerializationConfig writeConfig = mapper.getSerializationConfig()
-            //中文统一转换为采用/uxxx的形式
+            // 中文统一转换为采用/uxxx的形式
             .with(JsonWriteFeature.ESCAPE_NON_ASCII);
         return mapper.setConfig(readConfig).setConfig(writeConfig);
     }
@@ -129,7 +134,49 @@ public class JsonUtils {
         try {
             return objectMapperIgnoreUnknown.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toJSON] Occur Internal Error {}", e);
+            logger.error("[Method toJSON] Internal Error occurs: ", e);
+            throw new SdkException(e);
+        }
+    }
+
+    /**
+     * To json string
+     *
+     * @param mapper the mapper
+     * @param object the object
+     * @return the string
+     */
+    public static String toJSON(ObjectMapper mapper, Object object) {
+        try {
+            return mapper.writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            logger.error("[Method toJSON] Internal Error occurs: ", e);
+            throw new SdkException(e);
+        }
+    }
+
+    /**
+     * To json string.
+     *
+     * @param mapperFilterName the mapper filter name
+     * @param resultMapper the result mapper
+     * @param exceptProperties the except properties
+     * @return the string
+     */
+    public static String toJSON(String mapperFilterName, Object resultMapper, Set<String> exceptProperties) {
+        try {
+            if (exceptProperties == null) {
+                return objectMapperIgnoreUnknown.writeValueAsString(resultMapper);
+            } else {
+                SimpleBeanPropertyFilter simpleBeanPropertyFilter = SimpleBeanPropertyFilter.serializeAllExcept(
+                    // NOPMD
+                    exceptProperties.toArray(new String[exceptProperties.size()]));
+                FilterProvider filterProvider = new SimpleFilterProvider().addFilter(mapperFilterName,
+                    simpleBeanPropertyFilter);
+                return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsString(resultMapper);
+            }
+        } catch (JsonProcessingException e) {
+            logger.error("[Method toJSON] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -144,16 +191,7 @@ public class JsonUtils {
         try {
             return objectMapperHideSensitive.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toJSON] Occur Internal Error {}", e);
-            throw new SdkException(e);
-        }
-    }
-
-    public static String toJSON(ObjectMapper mapper, Object object) {
-        try {
-            return mapper.writeValueAsString(object);
-        } catch (JsonProcessingException e) {
-            logger.error("[Method toJSON] Occur Internal Error {}", e);
+            logger.error("[Method toJSON] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -161,8 +199,8 @@ public class JsonUtils {
     /**
      * To object t.
      *
-     * @param <T>   the type parameter
-     * @param json  the json
+     * @param <T> the type parameter
+     * @param json the json
      * @param clazz the clazz
      * @return the t
      */
@@ -170,7 +208,7 @@ public class JsonUtils {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -178,7 +216,7 @@ public class JsonUtils {
     /**
      * To object t.
      *
-     * @param <T>  the type parameter
+     * @param <T> the type parameter
      * @param json the json
      * @param type the clazz
      * @return the t
@@ -187,24 +225,25 @@ public class JsonUtils {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
 
     /**
-     * @param json  the json string
+     * @param json the json string
      * @param clazz the clazz
-     * @param <T>   the type t
+     * @param <T> the type t
      * @return the t
      */
     public static <T> Map<String, T> toMapObject(String json, Class<T> clazz) {
         try {
             return StringUtils.isEmpty(json)
-                ? null : objectMapperIgnoreUnknown.readValue(json,
-                objectMapperIgnoreUnknown.getTypeFactory().constructMapType(Map.class, String.class, clazz));
+                ? null
+                : objectMapperIgnoreUnknown.readValue(json,
+                    objectMapperIgnoreUnknown.getTypeFactory().constructMapType(Map.class, String.class, clazz));
         } catch (JsonProcessingException e) {
-            logger.error("[Method toListObject] Occur Internal Error {}", e);
+            logger.error("[Method toListObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -213,7 +252,7 @@ public class JsonUtils {
      * 将一个对象转换成为一个通用的map对象结构
      *
      * @param o the object
-     * @return the map<String, Object>
+     * @return the map
      */
     public static Map<String, Object> objectToMap(Object o) {
         return objectToMap(objectMapperIgnoreUnknown, o);
@@ -222,35 +261,36 @@ public class JsonUtils {
     /**
      * 将一个对象转换成为一个通用的map对象结构
      *
+     * @param mapper the mapper
      * @param o the object
-     * @return the map<String, Object>
+     * @return the map
      */
     public static Map<String, Object> objectToMap(ObjectMapper mapper, Object o) {
         Objects.requireNonNull(o, "input of objectToMap cannot be null");
         try {
-            return mapper.readValue(
-                mapper.writeValueAsString(o),
+            return mapper.readValue(mapper.writeValueAsString(o),
                 mapper.getTypeFactory().constructMapType(Map.class, String.class, Object.class));
         } catch (JsonProcessingException e) {
-            logger.error("[Method objectToMap] Occur Internal Error", e);
+            logger.error("[Method objectToMap] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
 
     /**
-     * @param json  the json string
+     * @param json the json string
      * @param clazz the clazz
-     * @param <T>   the type t
+     * @param <T> the type t
      * @return the t
-     * @throws SdkException
+     * @throws SdkException JsonProcessingException
      */
     public static <T> List<T> toListObject(String json, Class<T> clazz) {
         try {
             return StringUtils.isEmpty(json)
-                ? null : objectMapperIgnoreUnknown.readValue(json,
-                objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
+                ? null
+                : objectMapperIgnoreUnknown.readValue(json,
+                    objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
         } catch (JsonProcessingException e) {
-            logger.error("[Method toListObject] Occur Internal Error {}", e);
+            logger.error("[Method toListObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -258,8 +298,8 @@ public class JsonUtils {
     /**
      * To object t.
      *
-     * @param <T>   the type parameter
-     * @param json  the json
+     * @param <T> the type parameter
+     * @param json the json
      * @param clazz the clazz
      * @return the t
      */
@@ -267,7 +307,7 @@ public class JsonUtils {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -276,7 +316,7 @@ public class JsonUtils {
      * To object t.
      * toListObjectIgnoreUnknownByStrict
      *
-     * @param <T>  the type parameter
+     * @param <T> the type parameter
      * @param json the json
      * @param type the clazz
      * @return the t
@@ -285,16 +325,16 @@ public class JsonUtils {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
 
-    //------------------below method is strict mode ------------------------
+    // ------------------below method is strict mode ------------------------
 
     /**
-     * @param <T>   the type parameter
-     * @param json  the json
+     * @param <T> the type parameter
+     * @param json the json
      * @param clazz the clazz
      * @return the t
      */
@@ -302,7 +342,7 @@ public class JsonUtils {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -310,14 +350,14 @@ public class JsonUtils {
     /**
      * @param json the json
      * @param type the type
-     * @param <T>  the type parameter
+     * @param <T> the type parameter
      * @return the t
      */
     public static <T> T toObjectByStrict(String json, TypeReference<T> type) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -325,8 +365,8 @@ public class JsonUtils {
     /**
      * To object t.
      *
-     * @param <T>   the type parameter
-     * @param json  the json
+     * @param <T> the type parameter
+     * @param json the json
      * @param clazz the clazz
      * @return the t
      */
@@ -334,7 +374,7 @@ public class JsonUtils {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, clazz);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -342,7 +382,7 @@ public class JsonUtils {
     /**
      * To object t.
      *
-     * @param <T>  the type parameter
+     * @param <T> the type parameter
      * @param json the json
      * @param type the clazz
      * @return the t
@@ -351,7 +391,7 @@ public class JsonUtils {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json, type);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toObject] Occur Internal Error {}", e);
+            logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -359,56 +399,31 @@ public class JsonUtils {
     /**
      * To list object list.
      *
-     * @param <T>   the type parameter
-     * @param json  the json
+     * @param <T> the type parameter
+     * @param json the json
      * @param clazz the clazz
      * @return the list
      */
     public static <T> List<T> toListObjectIgnoreUnknownByStrict(String json, Class<T> clazz) {
         try {
-            return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json,
-                objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
+            return StringUtils.isEmpty(json)
+                ? null
+                : objectMapperIgnoreUnknown.readValue(json,
+                    objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
         } catch (JsonProcessingException e) {
-            logger.error("[Method toListObjectIgnoreUnknownByStrict] Occur Internal Error {}", e);
+            logger.error("[Method toListObjectIgnoreUnknownByStrict] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
 
     /**
-     * To object Map<String, Map<String, Object>>.
+     * To the specified format map
      *
      * @param json the json
-     * @return the Map<String, Map<String, Object>>
+     * @return the map
      */
     public static Map<String, Map<String, Object>> toStrMapToStrObjMap(String json) {
-        return JsonUtils.toObjectIgnoreUnknown(json, new TypeReference<Map<String, Map<String, Object>>>() {
-        });
-    }
-
-    /**
-     * To json string.
-     *
-     * @param mapperFilterName the mapper filter name
-     * @param resultMapper     the result mapper
-     * @param exceptProperties the except properties
-     * @return the string
-     */
-    public static String toJSON(String mapperFilterName, Object resultMapper, Set<String> exceptProperties) {
-        try {
-            if (exceptProperties == null) {
-                return objectMapperIgnoreUnknown.writeValueAsString(resultMapper);
-            } else {
-                SimpleBeanPropertyFilter simpleBeanPropertyFilter
-                    = SimpleBeanPropertyFilter
-                    .serializeAllExcept(exceptProperties.toArray(new String[exceptProperties.size()]));//NOPMD
-                FilterProvider filterProvider
-                    = new SimpleFilterProvider().addFilter(mapperFilterName, simpleBeanPropertyFilter);
-                return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsString(resultMapper);
-            }
-        } catch (JsonProcessingException e) {
-            logger.error("[Method toJSON] Occur Internal Error {}", e);
-            throw new SdkException(e);
-        }
+        return JsonUtils.toObjectIgnoreUnknown(json, new TypeReference<Map<String, Map<String, Object>>>() { });
     }
 
     /**
@@ -419,7 +434,7 @@ public class JsonUtils {
         try {
             return objectMapperIgnoreUnknown.writeValueAsBytes(resultMapper);
         } catch (JsonProcessingException e) {
-            logger.error("[Method toJSONAsBytes] Occur Internal Error {}", e);
+            logger.error("[Method toJSONAsBytes] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
@@ -428,7 +443,7 @@ public class JsonUtils {
      * To json as bytes byte [ ]. only used by the framework return http-response without Exception
      *
      * @param mapperFilterName the mapper filter name
-     * @param resultMapper     the result mapper
+     * @param resultMapper the result mapper
      * @param exceptProperties the except properties
      * @return the byte [ ]
      */
@@ -437,24 +452,30 @@ public class JsonUtils {
             if (exceptProperties == null) {
                 return objectMapperIgnoreUnknown.writeValueAsBytes(resultMapper);
             } else {
-                SimpleBeanPropertyFilter simpleBeanPropertyFilter
-                    = SimpleBeanPropertyFilter
-                    .serializeAllExcept(exceptProperties.toArray(new String[exceptProperties.size()]));//NOPMD
-                FilterProvider filterProvider
-                    = new SimpleFilterProvider().addFilter(mapperFilterName, simpleBeanPropertyFilter);
+                SimpleBeanPropertyFilter simpleBeanPropertyFilter = SimpleBeanPropertyFilter.serializeAllExcept(
+                    // NOPMD
+                    exceptProperties.toArray(new String[exceptProperties.size()]));
+                FilterProvider filterProvider = new SimpleFilterProvider().addFilter(mapperFilterName,
+                    simpleBeanPropertyFilter);
                 return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsBytes(resultMapper);
             }
         } catch (JsonProcessingException e) {
-            logger.error("[Method toJSONAsBytes] Occur Internal Error {}", e);
+            logger.error("[Method toJSONAsBytes] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }
 
+    /**
+     * @param is input stream
+     * @param clazz class
+     * @param <T> type
+     * @return the type
+     */
     public static <T> T fromStream(InputStream is, Class<T> clazz) {
         try {
             return objectMapperIgnoreUnknown.readValue(is, clazz);
         } catch (IOException e) {
-            logger.error("[Method fromStream] Occur Internal Error {}", e);
+            logger.error("[Method fromStream] Internal Error occurs: ", e);
             throw new SdkException(e);
         }
     }

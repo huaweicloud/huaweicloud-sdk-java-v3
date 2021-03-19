@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,9 +30,12 @@ import java.lang.annotation.RetentionPolicy;
 /**
  * 对字符串类型生效，能够隐藏字符串
  * 需要调用JsonUtils.getSecureMapperWithoutSensitive() 然后执行操作
+ *
+ * @author HuaweiCloud_SDK
  */
 @Retention(RetentionPolicy.RUNTIME)
 @JacksonAnnotationsInside
 @JsonSerialize(using = SensitiveStringSerializer.class)
 public @interface JsonSensitive {
+
 }

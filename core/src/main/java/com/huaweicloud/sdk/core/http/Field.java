@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -25,15 +25,18 @@ import java.util.Optional;
 
 /**
  * @param <ReqT> 字段类型
+ * @author HuaweiCloud_SDK
  */
 public interface Field<ReqT, FieldT> {
-    LocationType getLocation();
-
     String getName();
 
-    FieldExistence getExistence();
+    LocationType getLocation();
 
-    Optional<FieldT> readValue(ReqT request);
+    Class<FieldT> getFieldType();
+
+    Class<?> getInnerContainerType();
+
+    FieldExistence getExistence();
 
     /**
      * 参数是否出现过，对于http query参数，返回内容可能是null值，但是客户确实设置过，
@@ -44,10 +47,7 @@ public interface Field<ReqT, FieldT> {
      */
     boolean isValueProvided(ReqT request);
 
-    Class<FieldT> getFieldType();
-
-    Class<?> getInnerContainerType();
-
+    Optional<FieldT> readValue(ReqT request);
 
     void writeValue(ReqT request, FieldT value, Class<FieldT> clazz);
 

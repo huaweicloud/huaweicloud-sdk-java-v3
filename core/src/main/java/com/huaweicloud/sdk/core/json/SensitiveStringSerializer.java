@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Huawei Technologies Co.,Ltd.
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -24,10 +24,14 @@ package com.huaweicloud.sdk.core.json;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
+
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 
+/**
+ * @author HuaweiCloud_SDK
+ */
 public class SensitiveStringSerializer extends JsonSerializer<String> {
     public static final String SENSITIVE_SWITCH = "JSON_SENSITIVE_SWITCH";
 
