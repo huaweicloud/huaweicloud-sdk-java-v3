@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.live.v1.model.OnlineInfo;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -54,8 +56,8 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="streams")
     
-    private OnlineInfo streams;
-
+    private List<OnlineInfo> streams = null;
+    
     public ListLiveStreamsOnlineResponse withTotalPage(Long totalPage) {
         this.totalPage = totalPage;
         return this;
@@ -166,30 +168,34 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
 
     
 
-    public ListLiveStreamsOnlineResponse withStreams(OnlineInfo streams) {
+    public ListLiveStreamsOnlineResponse withStreams(List<OnlineInfo> streams) {
         this.streams = streams;
         return this;
     }
 
-    public ListLiveStreamsOnlineResponse withStreams(Consumer<OnlineInfo> streamsSetter) {
-        if(this.streams == null ){
-            this.streams = new OnlineInfo();
-            streamsSetter.accept(this.streams);
-        }
-        
+    
+    public ListLiveStreamsOnlineResponse addStreamsItem(OnlineInfo streamsItem) {
+        this.streams.add(streamsItem);
         return this;
     }
 
+    public ListLiveStreamsOnlineResponse withStreams(Consumer<List<OnlineInfo>> streamsSetter) {
+        if(this.streams == null ){
+            this.streams = new ArrayList<>();
+        }
+        streamsSetter.accept(this.streams);
+        return this;
+    }
 
     /**
-     * Get streams
+     * 推流统计
      * @return streams
      */
-    public OnlineInfo getStreams() {
+    public List<OnlineInfo> getStreams() {
         return streams;
     }
 
-    public void setStreams(OnlineInfo streams) {
+    public void setStreams(List<OnlineInfo> streams) {
         this.streams = streams;
     }
 

@@ -556,6 +556,34 @@ public class AsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> executeScalingPolicies = genForexecuteScalingPolicies();
+
+    private static HttpRequestDef<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> genForexecuteScalingPolicies() {
+        // basic
+        HttpRequestDef.Builder<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteScalingPoliciesRequest.class, ExecuteScalingPoliciesResponse.class)
+                .withName("ExecuteScalingPolicies")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_policies/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ExecuteScalingPoliciesRequestBody.class,
+            f -> f.withMarshaller(ExecuteScalingPoliciesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> executeScalingPolicy = genForexecuteScalingPolicy();
 
     private static HttpRequestDef<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> genForexecuteScalingPolicy() {
@@ -741,6 +769,82 @@ public class AsMeta {
             Integer.class,
             f -> f.withMarshaller(ListScalingActivityLogsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> listScalingActivityV2Logs = genForlistScalingActivityV2Logs();
+
+    private static HttpRequestDef<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> genForlistScalingActivityV2Logs() {
+        // basic
+        HttpRequestDef.Builder<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScalingActivityV2LogsRequest.class, ListScalingActivityV2LogsResponse.class)
+                .withName("ListScalingActivityV2Logs")
+                .withUri("/autoscaling-api/v2/{project_id}/scaling_activity_log/{scaling_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            OffsetDateTime.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            OffsetDateTime.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("start_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStartNumber, (req, v) -> {
+                req.setStartNumber(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListScalingActivityV2LogsRequest.TypeEnum.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListScalingActivityV2LogsRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
             })
         );
 
@@ -1492,6 +1596,266 @@ public class AsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateScalingPolicyRequestBody.class,
             f -> f.withMarshaller(UpdateScalingPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> createScalingV2Policy = genForcreateScalingV2Policy();
+
+    private static HttpRequestDef<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> genForcreateScalingV2Policy() {
+        // basic
+        HttpRequestDef.Builder<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateScalingV2PolicyRequest.class, CreateScalingV2PolicyResponse.class)
+                .withName("CreateScalingV2Policy")
+                .withUri("/autoscaling-api/v2/{project_id}/scaling_policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateScalingPolicyV2RequestBody.class,
+            f -> f.withMarshaller(CreateScalingV2PolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> listAllScalingV2Policies = genForlistAllScalingV2Policies();
+
+    private static HttpRequestDef<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> genForlistAllScalingV2Policies() {
+        // basic
+        HttpRequestDef.Builder<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllScalingV2PoliciesRequest.class, ListAllScalingV2PoliciesResponse.class)
+                .withName("ListAllScalingV2Policies")
+                .withUri("/autoscaling-api/v2/{project_id}/scaling_policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("scaling_resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingResourceId, (req, v) -> {
+                req.setScalingResourceId(v);
+            })
+        );
+        builder.withRequestField("scaling_resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListAllScalingV2PoliciesRequest.ScalingResourceTypeEnum.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingResourceType, (req, v) -> {
+                req.setScalingResourceType(v);
+            })
+        );
+        builder.withRequestField("scaling_policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyName, (req, v) -> {
+                req.setScalingPolicyName(v);
+            })
+        );
+        builder.withRequestField("scaling_policy_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListAllScalingV2PoliciesRequest.ScalingPolicyTypeEnum.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyType, (req, v) -> {
+                req.setScalingPolicyType(v);
+            })
+        );
+        builder.withRequestField("scaling_policy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getScalingPolicyId, (req, v) -> {
+                req.setScalingPolicyId(v);
+            })
+        );
+        builder.withRequestField("start_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getStartNumber, (req, v) -> {
+                req.setStartNumber(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListAllScalingV2PoliciesRequest.SortByEnum.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getSortBy, (req, v) -> {
+                req.setSortBy(v);
+            })
+        );
+        builder.withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListAllScalingV2PoliciesRequest.OrderEnum.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            })
+        );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllScalingV2PoliciesRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> listScalingV2Policies = genForlistScalingV2Policies();
+
+    private static HttpRequestDef<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> genForlistScalingV2Policies() {
+        // basic
+        HttpRequestDef.Builder<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScalingV2PoliciesRequest.class, ListScalingV2PoliciesResponse.class)
+                .withName("ListScalingV2Policies")
+                .withUri("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_resource_id}/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("scaling_resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingResourceId, (req, v) -> {
+                req.setScalingResourceId(v);
+            })
+        );
+        builder.withRequestField("scaling_policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyName, (req, v) -> {
+                req.setScalingPolicyName(v);
+            })
+        );
+        builder.withRequestField("scaling_policy_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyType, (req, v) -> {
+                req.setScalingPolicyType(v);
+            })
+        );
+        builder.withRequestField("scaling_policy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getScalingPolicyId, (req, v) -> {
+                req.setScalingPolicyId(v);
+            })
+        );
+        builder.withRequestField("start_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getStartNumber, (req, v) -> {
+                req.setStartNumber(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListScalingV2PoliciesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> showScalingV2Policy = genForshowScalingV2Policy();
+
+    private static HttpRequestDef<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> genForshowScalingV2Policy() {
+        // basic
+        HttpRequestDef.Builder<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScalingV2PolicyRequest.class, ShowScalingV2PolicyResponse.class)
+                .withName("ShowScalingV2Policy")
+                .withUri("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("scaling_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowScalingV2PolicyRequest::getScalingPolicyId, (req, v) -> {
+                req.setScalingPolicyId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> updateScalingV2Policy = genForupdateScalingV2Policy();
+
+    private static HttpRequestDef<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> genForupdateScalingV2Policy() {
+        // basic
+        HttpRequestDef.Builder<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScalingV2PolicyRequest.class, UpdateScalingV2PolicyResponse.class)
+                .withName("UpdateScalingV2Policy")
+                .withUri("/autoscaling-api/v2/{project_id}/scaling_policy/{scaling_policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateScalingV2PolicyRequest::getScalingPolicyId, (req, v) -> {
+                req.setScalingPolicyId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateScalingV2PolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateScalingV2PolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

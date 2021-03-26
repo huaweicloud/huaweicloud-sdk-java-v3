@@ -372,6 +372,28 @@ public class AsAsyncClient {
     }
 
     /**
+     * 批量操作弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
+     *
+     * @param ExecuteScalingPoliciesRequest 请求对象
+     * @return CompletableFuture<ExecuteScalingPoliciesResponse>
+     */
+    public CompletableFuture<ExecuteScalingPoliciesResponse> executeScalingPoliciesAsync(ExecuteScalingPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.executeScalingPolicies);
+    }
+
+    /**
+     * 批量操作弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
+     *
+     * @param ExecuteScalingPoliciesRequest 请求对象
+     * @return AsyncInvoker<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse>
+     */
+    public AsyncInvoker<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> executeScalingPoliciesAsyncInvoker(ExecuteScalingPoliciesRequest request) {
+        return new AsyncInvoker<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse>(request, AsMeta.executeScalingPolicies, hcClient);
+    }
+
+    /**
      * 执行或启用或停止弹性伸缩策略。
      * 立即执行或启用或停止一个指定弹性伸缩策略。当伸缩组、伸缩策略状态处于INSERVICE时，伸缩策略才能被正确执行，否则会执行失败。
      *
@@ -479,6 +501,28 @@ public class AsAsyncClient {
      */
     public AsyncInvoker<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse> listScalingActivityLogsAsyncInvoker(ListScalingActivityLogsRequest request) {
         return new AsyncInvoker<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse>(request, AsMeta.listScalingActivityLogs, hcClient);
+    }
+
+    /**
+     * 查询伸缩活动日志v2版本
+     * 根据输入条件过滤查询伸缩活动日志，支持查询实例伸缩、ELB迁移、实例备用等类型活动。查询结果分页显示。查询伸缩活动日志V2版本与V1版本区别在于，V2版本展示了更详细的实例伸缩日志，如ELB迁移日志，实例备用日志信息。可根据起始时间，截止时间，起始行号，记录数，伸缩活动类型等作为条件过滤查询。若不加过滤条件默认查询最多20条伸缩活动日志信息。
+     *
+     * @param ListScalingActivityV2LogsRequest 请求对象
+     * @return CompletableFuture<ListScalingActivityV2LogsResponse>
+     */
+    public CompletableFuture<ListScalingActivityV2LogsResponse> listScalingActivityV2LogsAsync(ListScalingActivityV2LogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.listScalingActivityV2Logs);
+    }
+
+    /**
+     * 查询伸缩活动日志v2版本
+     * 根据输入条件过滤查询伸缩活动日志，支持查询实例伸缩、ELB迁移、实例备用等类型活动。查询结果分页显示。查询伸缩活动日志V2版本与V1版本区别在于，V2版本展示了更详细的实例伸缩日志，如ELB迁移日志，实例备用日志信息。可根据起始时间，截止时间，起始行号，记录数，伸缩活动类型等作为条件过滤查询。若不加过滤条件默认查询最多20条伸缩活动日志信息。
+     *
+     * @param ListScalingActivityV2LogsRequest 请求对象
+     * @return AsyncInvoker<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse>
+     */
+    public AsyncInvoker<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse> listScalingActivityV2LogsAsyncInvoker(ListScalingActivityV2LogsRequest request) {
+        return new AsyncInvoker<ListScalingActivityV2LogsRequest, ListScalingActivityV2LogsResponse>(request, AsMeta.listScalingActivityV2Logs, hcClient);
     }
 
     /**
@@ -875,6 +919,116 @@ public class AsAsyncClient {
      */
     public AsyncInvoker<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> updateScalingPolicyAsyncInvoker(UpdateScalingPolicyRequest request) {
         return new AsyncInvoker<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse>(request, AsMeta.updateScalingPolicy, hcClient);
+    }
+
+    /**
+     * 创建弹性伸缩策略（V2版本）
+     * 可针对不同类型资源如伸缩组或带宽，创建弹性伸缩策略。创建弹性伸缩策略V2版本与V1版本的区别在于，V2版本支持创建对带宽资源进行调整的策略，通过伸缩资源类型区分伸缩资源。
+     *
+     * @param CreateScalingV2PolicyRequest 请求对象
+     * @return CompletableFuture<CreateScalingV2PolicyResponse>
+     */
+    public CompletableFuture<CreateScalingV2PolicyResponse> createScalingV2PolicyAsync(CreateScalingV2PolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.createScalingV2Policy);
+    }
+
+    /**
+     * 创建弹性伸缩策略（V2版本）
+     * 可针对不同类型资源如伸缩组或带宽，创建弹性伸缩策略。创建弹性伸缩策略V2版本与V1版本的区别在于，V2版本支持创建对带宽资源进行调整的策略，通过伸缩资源类型区分伸缩资源。
+     *
+     * @param CreateScalingV2PolicyRequest 请求对象
+     * @return AsyncInvoker<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse>
+     */
+    public AsyncInvoker<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse> createScalingV2PolicyAsyncInvoker(CreateScalingV2PolicyRequest request) {
+        return new AsyncInvoker<CreateScalingV2PolicyRequest, CreateScalingV2PolicyResponse>(request, AsMeta.createScalingV2Policy, hcClient);
+    }
+
+    /**
+     * 查询弹性伸缩策略全量列表（V2版本）
+     * 根据输入条件过滤查询弹性伸缩策略，支持查询当前租户下全量伸缩策略。查询结果分页显示。可根据伸缩资源ID，伸缩资源类型，伸缩策略名称，伸缩策略ID，告警ID，企业项目ID，起始行号，记录数，排序方式等条件进行过滤查询。若不加过滤添加默认查询该租户下最多20条伸缩策略信息。
+     *
+     * @param ListAllScalingV2PoliciesRequest 请求对象
+     * @return CompletableFuture<ListAllScalingV2PoliciesResponse>
+     */
+    public CompletableFuture<ListAllScalingV2PoliciesResponse> listAllScalingV2PoliciesAsync(ListAllScalingV2PoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.listAllScalingV2Policies);
+    }
+
+    /**
+     * 查询弹性伸缩策略全量列表（V2版本）
+     * 根据输入条件过滤查询弹性伸缩策略，支持查询当前租户下全量伸缩策略。查询结果分页显示。可根据伸缩资源ID，伸缩资源类型，伸缩策略名称，伸缩策略ID，告警ID，企业项目ID，起始行号，记录数，排序方式等条件进行过滤查询。若不加过滤添加默认查询该租户下最多20条伸缩策略信息。
+     *
+     * @param ListAllScalingV2PoliciesRequest 请求对象
+     * @return AsyncInvoker<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse>
+     */
+    public AsyncInvoker<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse> listAllScalingV2PoliciesAsyncInvoker(ListAllScalingV2PoliciesRequest request) {
+        return new AsyncInvoker<ListAllScalingV2PoliciesRequest, ListAllScalingV2PoliciesResponse>(request, AsMeta.listAllScalingV2Policies, hcClient);
+    }
+
+    /**
+     * 查询弹性伸缩策略列表（V2版本）
+     * 根据输入条件过滤查询弹性伸缩策略。查询结果分页显示。查询弹性伸缩策略V2版本与V1版本的区别在于，V2版本响应含伸缩资源类型。可根据伸缩策略名称，策略类型，伸缩策略ID，起始行号，记录数进行条件过滤查询。若不加过滤条件默认查询该租户下指定资源下最多20条伸缩策略信息。
+     *
+     * @param ListScalingV2PoliciesRequest 请求对象
+     * @return CompletableFuture<ListScalingV2PoliciesResponse>
+     */
+    public CompletableFuture<ListScalingV2PoliciesResponse> listScalingV2PoliciesAsync(ListScalingV2PoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.listScalingV2Policies);
+    }
+
+    /**
+     * 查询弹性伸缩策略列表（V2版本）
+     * 根据输入条件过滤查询弹性伸缩策略。查询结果分页显示。查询弹性伸缩策略V2版本与V1版本的区别在于，V2版本响应含伸缩资源类型。可根据伸缩策略名称，策略类型，伸缩策略ID，起始行号，记录数进行条件过滤查询。若不加过滤条件默认查询该租户下指定资源下最多20条伸缩策略信息。
+     *
+     * @param ListScalingV2PoliciesRequest 请求对象
+     * @return AsyncInvoker<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse>
+     */
+    public AsyncInvoker<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse> listScalingV2PoliciesAsyncInvoker(ListScalingV2PoliciesRequest request) {
+        return new AsyncInvoker<ListScalingV2PoliciesRequest, ListScalingV2PoliciesResponse>(request, AsMeta.listScalingV2Policies, hcClient);
+    }
+
+    /**
+     * 查询指定弹性伸缩策略详情（V2版本）
+     * 查询指定弹性伸缩策略信息。
+     *
+     * @param ShowScalingV2PolicyRequest 请求对象
+     * @return CompletableFuture<ShowScalingV2PolicyResponse>
+     */
+    public CompletableFuture<ShowScalingV2PolicyResponse> showScalingV2PolicyAsync(ShowScalingV2PolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.showScalingV2Policy);
+    }
+
+    /**
+     * 查询指定弹性伸缩策略详情（V2版本）
+     * 查询指定弹性伸缩策略信息。
+     *
+     * @param ShowScalingV2PolicyRequest 请求对象
+     * @return AsyncInvoker<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse>
+     */
+    public AsyncInvoker<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse> showScalingV2PolicyAsyncInvoker(ShowScalingV2PolicyRequest request) {
+        return new AsyncInvoker<ShowScalingV2PolicyRequest, ShowScalingV2PolicyResponse>(request, AsMeta.showScalingV2Policy, hcClient);
+    }
+
+    /**
+     * 修改弹性伸缩策略（V2版本）
+     * 修改指定弹性伸缩策略。修改弹性伸缩策略V2版本与V1版本的区别在于，V2版本支持修改伸缩资源类型。
+     *
+     * @param UpdateScalingV2PolicyRequest 请求对象
+     * @return CompletableFuture<UpdateScalingV2PolicyResponse>
+     */
+    public CompletableFuture<UpdateScalingV2PolicyResponse> updateScalingV2PolicyAsync(UpdateScalingV2PolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.updateScalingV2Policy);
+    }
+
+    /**
+     * 修改弹性伸缩策略（V2版本）
+     * 修改指定弹性伸缩策略。修改弹性伸缩策略V2版本与V1版本的区别在于，V2版本支持修改伸缩资源类型。
+     *
+     * @param UpdateScalingV2PolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse>
+     */
+    public AsyncInvoker<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse> updateScalingV2PolicyAsyncInvoker(UpdateScalingV2PolicyRequest request) {
+        return new AsyncInvoker<UpdateScalingV2PolicyRequest, UpdateScalingV2PolicyResponse>(request, AsMeta.updateScalingV2Policy, hcClient);
     }
 
 }

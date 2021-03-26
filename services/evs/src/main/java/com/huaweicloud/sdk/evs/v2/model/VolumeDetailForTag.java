@@ -550,7 +550,7 @@ public class VolumeDetailForTag  {
 
 
     /**
-     * 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
+     * 云硬盘类型。 目前支持“SSD”，“GPSSD”，“SAS”和“SATA”四种。 “SSD”为超高IO云硬盘 “GPSSD”为通用型云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
      * @return volumeType
      */
     public String getVolumeType() {

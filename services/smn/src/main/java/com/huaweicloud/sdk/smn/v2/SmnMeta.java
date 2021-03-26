@@ -449,7 +449,7 @@ public class SmnMeta {
         );
         builder.withRequestField("protocol",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListMessageTemplatesRequest::getProtocol, (req, v) -> {
                 req.setProtocol(v);

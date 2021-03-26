@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.SlowLog;
+import com.huaweicloud.sdk.rds.v3.model.SlowLogStatistics;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -38,7 +38,7 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="slowLogList")
     
-    private List<SlowLog> slowLogList = null;
+    private List<SlowLogStatistics> slowLogList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,18 +102,18 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
 
     
 
-    public ListSlowlogStatisticsResponse withSlowLogList(List<SlowLog> slowLogList) {
+    public ListSlowlogStatisticsResponse withSlowLogList(List<SlowLogStatistics> slowLogList) {
         this.slowLogList = slowLogList;
         return this;
     }
 
     
-    public ListSlowlogStatisticsResponse addSlowLogListItem(SlowLog slowLogListItem) {
+    public ListSlowlogStatisticsResponse addSlowLogListItem(SlowLogStatistics slowLogListItem) {
         this.slowLogList.add(slowLogListItem);
         return this;
     }
 
-    public ListSlowlogStatisticsResponse withSlowLogList(Consumer<List<SlowLog>> slowLogListSetter) {
+    public ListSlowlogStatisticsResponse withSlowLogList(Consumer<List<SlowLogStatistics>> slowLogListSetter) {
         if(this.slowLogList == null ){
             this.slowLogList = new ArrayList<>();
         }
@@ -125,11 +125,11 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
      * 慢日志列表
      * @return slowLogList
      */
-    public List<SlowLog> getSlowLogList() {
+    public List<SlowLogStatistics> getSlowLogList() {
         return slowLogList;
     }
 
-    public void setSlowLogList(List<SlowLog> slowLogList) {
+    public void setSlowLogList(List<SlowLogStatistics> slowLogList) {
         this.slowLogList = slowLogList;
     }
 
