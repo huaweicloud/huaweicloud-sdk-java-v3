@@ -34,6 +34,12 @@ public class ImageDetectionReq  {
     @JsonProperty(value="image")
     
     private byte[] image;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="moderation_rule")
+    
+    private String moderationRule;
     /**
      * Gets or Sets categories
      */
@@ -139,6 +145,12 @@ public class ImageDetectionReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ad_glossaries")
+    
+    private List<String> adGlossaries = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="threshold")
     
     private Float threshold;
@@ -187,6 +199,28 @@ public class ImageDetectionReq  {
 
     
 
+    public ImageDetectionReq withModerationRule(String moderationRule) {
+        this.moderationRule = moderationRule;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 图像审核规则名称，默认使用default规则。  > 说明：  - 审核规则的创建和使用请参见配置审核规则(https://support.huaweicloud.com/api-moderation/moderation_03_0063.html) 
+     * @return moderationRule
+     */
+    public String getModerationRule() {
+        return moderationRule;
+    }
+
+    public void setModerationRule(String moderationRule) {
+        this.moderationRule = moderationRule;
+    }
+
+    
+
     public ImageDetectionReq withCategories(List<CategoriesEnum> categories) {
         this.categories = categories;
         return this;
@@ -216,6 +250,39 @@ public class ImageDetectionReq  {
 
     public void setCategories(List<CategoriesEnum> categories) {
         this.categories = categories;
+    }
+
+    
+
+    public ImageDetectionReq withAdGlossaries(List<String> adGlossaries) {
+        this.adGlossaries = adGlossaries;
+        return this;
+    }
+
+    
+    public ImageDetectionReq addAdGlossariesItem(String adGlossariesItem) {
+        this.adGlossaries.add(adGlossariesItem);
+        return this;
+    }
+
+    public ImageDetectionReq withAdGlossaries(Consumer<List<String>> adGlossariesSetter) {
+        if(this.adGlossaries == null ){
+            this.adGlossaries = new ArrayList<>();
+        }
+        adGlossariesSetter.accept(this.adGlossaries);
+        return this;
+    }
+
+    /**
+     * 检测场景: ad场景自定义词库，配置方式同文本审核自定义词库配置方式 
+     * @return adGlossaries
+     */
+    public List<String> getAdGlossaries() {
+        return adGlossaries;
+    }
+
+    public void setAdGlossaries(List<String> adGlossaries) {
+        this.adGlossaries = adGlossaries;
     }
 
     
@@ -255,12 +322,14 @@ public class ImageDetectionReq  {
         ImageDetectionReq imageDetectionReq = (ImageDetectionReq) o;
         return Objects.equals(this.url, imageDetectionReq.url) &&
             Objects.equals(this.image, imageDetectionReq.image) &&
+            Objects.equals(this.moderationRule, imageDetectionReq.moderationRule) &&
             Objects.equals(this.categories, imageDetectionReq.categories) &&
+            Objects.equals(this.adGlossaries, imageDetectionReq.adGlossaries) &&
             Objects.equals(this.threshold, imageDetectionReq.threshold);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(url, image, categories, threshold);
+        return Objects.hash(url, image, moderationRule, categories, adGlossaries, threshold);
     }
     @Override
     public String toString() {
@@ -268,7 +337,9 @@ public class ImageDetectionReq  {
         sb.append("class ImageDetectionReq {\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    moderationRule: ").append(toIndentedString(moderationRule)).append("\n");
         sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+        sb.append("    adGlossaries: ").append(toIndentedString(adGlossaries)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -37,6 +37,12 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
     
     private Integer messageOffset;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="timestamp")
+    
+    private Long timestamp;
+
     public ShowPartitionBeginningMessageResponse withTopic(String topic) {
         this.topic = topic;
         return this;
@@ -103,6 +109,28 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
 
     
 
+    public ShowPartitionBeginningMessageResponse withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 最新消息时间戳。
+     * @return timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -114,11 +142,12 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         ShowPartitionBeginningMessageResponse showPartitionBeginningMessageResponse = (ShowPartitionBeginningMessageResponse) o;
         return Objects.equals(this.topic, showPartitionBeginningMessageResponse.topic) &&
             Objects.equals(this.partition, showPartitionBeginningMessageResponse.partition) &&
-            Objects.equals(this.messageOffset, showPartitionBeginningMessageResponse.messageOffset);
+            Objects.equals(this.messageOffset, showPartitionBeginningMessageResponse.messageOffset) &&
+            Objects.equals(this.timestamp, showPartitionBeginningMessageResponse.timestamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, messageOffset);
+        return Objects.hash(topic, partition, messageOffset, timestamp);
     }
     @Override
     public String toString() {
@@ -127,6 +156,7 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

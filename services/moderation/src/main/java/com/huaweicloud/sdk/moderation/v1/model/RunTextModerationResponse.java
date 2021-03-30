@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.moderation.v1.model.TextDetectionBody;
+import com.huaweicloud.sdk.moderation.v1.model.TextDetectionResponseResult;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class RunTextModerationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private TextDetectionBody result;
+    private TextDetectionResponseResult result;
 
-    public RunTextModerationResponse withResult(TextDetectionBody result) {
+    public RunTextModerationResponse withResult(TextDetectionResponseResult result) {
         this.result = result;
         return this;
     }
 
-    public RunTextModerationResponse withResult(Consumer<TextDetectionBody> resultSetter) {
+    public RunTextModerationResponse withResult(Consumer<TextDetectionResponseResult> resultSetter) {
         if(this.result == null ){
-            this.result = new TextDetectionBody();
+            this.result = new TextDetectionResponseResult();
             resultSetter.accept(this.result);
         }
         
@@ -45,11 +45,11 @@ public class RunTextModerationResponse extends SdkResponse {
      * Get result
      * @return result
      */
-    public TextDetectionBody getResult() {
+    public TextDetectionResponseResult getResult() {
         return result;
     }
 
-    public void setResult(TextDetectionBody result) {
+    public void setResult(TextDetectionResponseResult result) {
         this.result = result;
     }
 

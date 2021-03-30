@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * ImageBatchModerationResultBody
  */
 public class ImageBatchModerationResultBody  {
 
@@ -38,9 +38,9 @@ public class ImageBatchModerationResultBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category_suggestion")
+    @JsonProperty(value="category_suggestions")
     
-    private Object categorySuggestion;
+    private Object categorySuggestions;
 
     public ImageBatchModerationResultBody withUrl(String url) {
         this.url = url;
@@ -115,8 +115,8 @@ public class ImageBatchModerationResultBody  {
 
     
 
-    public ImageBatchModerationResultBody withCategorySuggestion(Object categorySuggestion) {
-        this.categorySuggestion = categorySuggestion;
+    public ImageBatchModerationResultBody withCategorySuggestions(Object categorySuggestions) {
+        this.categorySuggestions = categorySuggestions;
         return this;
     }
 
@@ -125,14 +125,14 @@ public class ImageBatchModerationResultBody  {
 
     /**
      * 具体每个场景的检测结果。  block：包含敏感信息，不通过  pass：不包含敏感信息，通过  review：需要人工复检 
-     * @return categorySuggestion
+     * @return categorySuggestions
      */
-    public Object getCategorySuggestion() {
-        return categorySuggestion;
+    public Object getCategorySuggestions() {
+        return categorySuggestions;
     }
 
-    public void setCategorySuggestion(Object categorySuggestion) {
-        this.categorySuggestion = categorySuggestion;
+    public void setCategorySuggestions(Object categorySuggestions) {
+        this.categorySuggestions = categorySuggestions;
     }
 
     
@@ -149,11 +149,11 @@ public class ImageBatchModerationResultBody  {
         return Objects.equals(this.url, imageBatchModerationResultBody.url) &&
             Objects.equals(this.suggestion, imageBatchModerationResultBody.suggestion) &&
             Objects.equals(this.detail, imageBatchModerationResultBody.detail) &&
-            Objects.equals(this.categorySuggestion, imageBatchModerationResultBody.categorySuggestion);
+            Objects.equals(this.categorySuggestions, imageBatchModerationResultBody.categorySuggestions);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(url, suggestion, detail, categorySuggestion);
+        return Objects.hash(url, suggestion, detail, categorySuggestions);
     }
     @Override
     public String toString() {
@@ -162,7 +162,7 @@ public class ImageBatchModerationResultBody  {
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-        sb.append("    categorySuggestion: ").append(toIndentedString(categorySuggestion)).append("\n");
+        sb.append("    categorySuggestions: ").append(toIndentedString(categorySuggestions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

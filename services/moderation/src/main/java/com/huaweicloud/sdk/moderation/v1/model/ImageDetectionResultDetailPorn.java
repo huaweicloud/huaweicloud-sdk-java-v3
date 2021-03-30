@@ -21,7 +21,7 @@ public class ImageDetectionResultDetailPorn  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    private Object confidence;
+    private Float confidence;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,7 +29,7 @@ public class ImageDetectionResultDetailPorn  {
     
     private String label;
 
-    public ImageDetectionResultDetailPorn withConfidence(Object confidence) {
+    public ImageDetectionResultDetailPorn withConfidence(Float confidence) {
         this.confidence = confidence;
         return this;
     }
@@ -41,11 +41,11 @@ public class ImageDetectionResultDetailPorn  {
      * Get confidence
      * @return confidence
      */
-    public Object getConfidence() {
+    public Float getConfidence() {
         return confidence;
     }
 
-    public void setConfidence(Object confidence) {
+    public void setConfidence(Float confidence) {
         this.confidence = confidence;
     }
 

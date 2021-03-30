@@ -23,9 +23,9 @@ public class ShowUserInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_num")
     
-    private String instanceNum;
+    private Integer instanceNum;
 
-    public ShowUserInstancesResponse withInstanceNum(String instanceNum) {
+    public ShowUserInstancesResponse withInstanceNum(Integer instanceNum) {
         this.instanceNum = instanceNum;
         return this;
     }
@@ -37,11 +37,11 @@ public class ShowUserInstancesResponse extends SdkResponse {
      * 非默认用户主密钥个数。
      * @return instanceNum
      */
-    public String getInstanceNum() {
+    public Integer getInstanceNum() {
         return instanceNum;
     }
 
-    public void setInstanceNum(String instanceNum) {
+    public void setInstanceNum(Integer instanceNum) {
         this.instanceNum = instanceNum;
     }
 

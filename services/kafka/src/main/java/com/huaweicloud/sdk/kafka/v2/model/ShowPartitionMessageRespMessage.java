@@ -53,6 +53,12 @@ public class ShowPartitionMessageRespMessage  {
     
     private Integer size;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="timestamp")
+    
+    private Long timestamp;
+
     public ShowPartitionMessageRespMessage withKey(String key) {
         this.key = key;
         return this;
@@ -185,6 +191,28 @@ public class ShowPartitionMessageRespMessage  {
 
     
 
+    public ShowPartitionMessageRespMessage withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 消息时间戳。
+     * @return timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -199,11 +227,12 @@ public class ShowPartitionMessageRespMessage  {
             Objects.equals(this.topic, showPartitionMessageRespMessage.topic) &&
             Objects.equals(this.partition, showPartitionMessageRespMessage.partition) &&
             Objects.equals(this.messageOffset, showPartitionMessageRespMessage.messageOffset) &&
-            Objects.equals(this.size, showPartitionMessageRespMessage.size);
+            Objects.equals(this.size, showPartitionMessageRespMessage.size) &&
+            Objects.equals(this.timestamp, showPartitionMessageRespMessage.timestamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(key, value, topic, partition, messageOffset, size);
+        return Objects.hash(key, value, topic, partition, messageOffset, size, timestamp);
     }
     @Override
     public String toString() {
@@ -215,6 +244,7 @@ public class ShowPartitionMessageRespMessage  {
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,6 +12,150 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class ElbMeta {
 
+    public static final HttpRequestDef<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> batchCreateListenerTags = genForbatchCreateListenerTags();
+
+    private static HttpRequestDef<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> genForbatchCreateListenerTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateListenerTagsRequest.class, BatchCreateListenerTagsResponse.class)
+                .withName("BatchCreateListenerTags")
+                .withUri("/v2.0/{project_id}/listeners/{listener_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("listener_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateListenerTagsRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchCreateListenerTagsRequestBody.class,
+            f -> f.withMarshaller(BatchCreateListenerTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> batchCreateLoadbalancerTags = genForbatchCreateLoadbalancerTags();
+
+    private static HttpRequestDef<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> genForbatchCreateLoadbalancerTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateLoadbalancerTagsRequest.class, BatchCreateLoadbalancerTagsResponse.class)
+                .withName("BatchCreateLoadbalancerTags")
+                .withUri("/v2.0/{project_id}/loadbalancers/{loadbalancer_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchCreateLoadbalancerTagsRequestBody.class,
+            f -> f.withMarshaller(BatchCreateLoadbalancerTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> batchDeleteListenerTags = genForbatchDeleteListenerTags();
+
+    private static HttpRequestDef<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> genForbatchDeleteListenerTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteListenerTagsRequest.class, BatchDeleteListenerTagsResponse.class)
+                .withName("BatchDeleteListenerTags")
+                .withUri("/v2.0/{project_id}/listeners/{listener_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("listener_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteListenerTagsRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteListenerTagsRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteListenerTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> batchDeleteLoadbalancerTags = genForbatchDeleteLoadbalancerTags();
+
+    private static HttpRequestDef<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> genForbatchDeleteLoadbalancerTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteLoadbalancerTagsRequest.class, BatchDeleteLoadbalancerTagsResponse.class)
+                .withName("BatchDeleteLoadbalancerTags")
+                .withUri("/v2.0/{project_id}/loadbalancers/{loadbalancer_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteLoadbalancerTagsRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteLoadbalancerTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateHealthmonitorRequest, CreateHealthmonitorResponse> createHealthmonitor = genForcreateHealthmonitor();
 
     private static HttpRequestDef<CreateHealthmonitorRequest, CreateHealthmonitorResponse> genForcreateHealthmonitor() {
@@ -20,7 +164,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateHealthmonitorRequest.class, CreateHealthmonitorResponse.class)
                 .withName("CreateHealthmonitor")
                 .withUri("/v2/{project_id}/elb/healthmonitors")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -48,7 +192,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateL7policyRequest.class, CreateL7policyResponse.class)
                 .withName("CreateL7policy")
                 .withUri("/v2/{project_id}/elb/l7policies")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -76,7 +220,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateL7ruleRequest.class, CreateL7ruleResponse.class)
                 .withName("CreateL7rule")
                 .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -112,7 +256,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateListenerRequest.class, CreateListenerResponse.class)
                 .withName("CreateListener")
                 .withUri("/v2/{project_id}/elb/listeners")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -120,6 +264,42 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             CreateListenerRequestBody.class,
             f -> f.withMarshaller(CreateListenerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateListenerTagsRequest, CreateListenerTagsResponse> createListenerTags = genForcreateListenerTags();
+
+    private static HttpRequestDef<CreateListenerTagsRequest, CreateListenerTagsResponse> genForcreateListenerTags() {
+        // basic
+        HttpRequestDef.Builder<CreateListenerTagsRequest, CreateListenerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateListenerTagsRequest.class, CreateListenerTagsResponse.class)
+                .withName("CreateListenerTags")
+                .withUri("/v2.0/{project_id}/listeners/{listener_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("listener_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateListenerTagsRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            CreateListenerTagsRequestBody.class,
+            f -> f.withMarshaller(CreateListenerTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -140,7 +320,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateLoadbalancerRequest.class, CreateLoadbalancerResponse.class)
                 .withName("CreateLoadbalancer")
                 .withUri("/v2/{project_id}/elb/loadbalancers")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -148,6 +328,42 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             CreateLoadbalancerRequestBody.class,
             f -> f.withMarshaller(CreateLoadbalancerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> createLoadbalancerTags = genForcreateLoadbalancerTags();
+
+    private static HttpRequestDef<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> genForcreateLoadbalancerTags() {
+        // basic
+        HttpRequestDef.Builder<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLoadbalancerTagsRequest.class, CreateLoadbalancerTagsResponse.class)
+                .withName("CreateLoadbalancerTags")
+                .withUri("/v2.0/{project_id}/loadbalancers/{loadbalancer_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            CreateLoadbalancerTagsRequestBody.class,
+            f -> f.withMarshaller(CreateLoadbalancerTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -168,7 +384,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateMemberRequest.class, CreateMemberResponse.class)
                 .withName("CreateMember")
                 .withUri("/v2/{project_id}/elb/pools/{pool_id}/members")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pool_id",
@@ -204,7 +420,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreatePoolRequest.class, CreatePoolResponse.class)
                 .withName("CreatePool")
                 .withUri("/v2/{project_id}/elb/pools")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -232,7 +448,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateWhitelistRequest.class, CreateWhitelistResponse.class)
                 .withName("CreateWhitelist")
                 .withUri("/v2/{project_id}/elb/whitelists")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -380,6 +596,42 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteListenerTagsRequest, DeleteListenerTagsResponse> deleteListenerTags = genFordeleteListenerTags();
+
+    private static HttpRequestDef<DeleteListenerTagsRequest, DeleteListenerTagsResponse> genFordeleteListenerTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteListenerTagsRequest, DeleteListenerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteListenerTagsRequest.class, DeleteListenerTagsResponse.class)
+                .withName("DeleteListenerTags")
+                .withUri("/v2.0/{project_id}/listeners/{listener_id}/tags/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("listener_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteListenerTagsRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            })
+        );
+        builder.withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteListenerTagsRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> deleteLoadbalancer = genFordeleteLoadbalancer();
 
     private static HttpRequestDef<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> genFordeleteLoadbalancer() {
@@ -405,6 +657,42 @@ public class ElbMeta {
             Boolean.class,
             f -> f.withMarshaller(DeleteLoadbalancerRequest::getCascade, (req, v) -> {
                 req.setCascade(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> deleteLoadbalancerTags = genFordeleteLoadbalancerTags();
+
+    private static HttpRequestDef<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> genFordeleteLoadbalancerTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLoadbalancerTagsRequest.class, DeleteLoadbalancerTagsResponse.class)
+                .withName("DeleteLoadbalancerTags")
+                .withUri("/v2.0/{project_id}/loadbalancers/{loadbalancer_id}/tags/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            })
+        );
+        builder.withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteLoadbalancerTagsRequest::getKey, (req, v) -> {
+                req.setKey(v);
             })
         );
 
@@ -912,6 +1200,26 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListListenerTagsRequest, ListListenerTagsResponse> listListenerTags = genForlistListenerTags();
+
+    private static HttpRequestDef<ListListenerTagsRequest, ListListenerTagsResponse> genForlistListenerTags() {
+        // basic
+        HttpRequestDef.Builder<ListListenerTagsRequest, ListListenerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListListenerTagsRequest.class, ListListenerTagsResponse.class)
+                .withName("ListListenerTags")
+                .withUri("/v2.0/{project_id}/listeners/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListListenersRequest, ListListenersResponse> listListeners = genForlistListeners();
 
     private static HttpRequestDef<ListListenersRequest, ListListenersResponse> genForlistListeners() {
@@ -1060,6 +1368,54 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListListenersByTagsRequest, ListListenersByTagsResponse> listListenersByTags = genForlistListenersByTags();
+
+    private static HttpRequestDef<ListListenersByTagsRequest, ListListenersByTagsResponse> genForlistListenersByTags() {
+        // basic
+        HttpRequestDef.Builder<ListListenersByTagsRequest, ListListenersByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListListenersByTagsRequest.class, ListListenersByTagsResponse.class)
+                .withName("ListListenersByTags")
+                .withUri("/v2.0/{project_id}/listeners/resource_instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListListenersByTagsRequestBody.class,
+            f -> f.withMarshaller(ListListenersByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> listLoadbalancerTags = genForlistLoadbalancerTags();
+
+    private static HttpRequestDef<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> genForlistLoadbalancerTags() {
+        // basic
+        HttpRequestDef.Builder<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLoadbalancerTagsRequest.class, ListLoadbalancerTagsResponse.class)
+                .withName("ListLoadbalancerTags")
+                .withUri("/v2.0/{project_id}/loadbalancers/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListLoadbalancersRequest, ListLoadbalancersResponse> listLoadbalancers = genForlistLoadbalancers();
 
     private static HttpRequestDef<ListLoadbalancersRequest, ListLoadbalancersResponse> genForlistLoadbalancers() {
@@ -1197,6 +1553,34 @@ public class ElbMeta {
             String.class,
             f -> f.withMarshaller(ListLoadbalancersRequest::getMemberDeviceId, (req, v) -> {
                 req.setMemberDeviceId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> listLoadbalancersByTags = genForlistLoadbalancersByTags();
+
+    private static HttpRequestDef<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> genForlistLoadbalancersByTags() {
+        // basic
+        HttpRequestDef.Builder<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListLoadbalancersByTagsRequest.class, ListLoadbalancersByTagsResponse.class)
+                .withName("ListLoadbalancersByTags")
+                .withUri("/v2.0/{project_id}/loadbalancers/resource_instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListLoadbalancersByTagsRequestBody.class,
+            f -> f.withMarshaller(ListLoadbalancersByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -1636,6 +2020,34 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowListenerTagsRequest, ShowListenerTagsResponse> showListenerTags = genForshowListenerTags();
+
+    private static HttpRequestDef<ShowListenerTagsRequest, ShowListenerTagsResponse> genForshowListenerTags() {
+        // basic
+        HttpRequestDef.Builder<ShowListenerTagsRequest, ShowListenerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowListenerTagsRequest.class, ShowListenerTagsResponse.class)
+                .withName("ShowListenerTags")
+                .withUri("/v2.0/{project_id}/listeners/{listener_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("listener_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowListenerTagsRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowLoadbalancerRequest, ShowLoadbalancerResponse> showLoadbalancer = genForshowLoadbalancer();
 
     private static HttpRequestDef<ShowLoadbalancerRequest, ShowLoadbalancerResponse> genForshowLoadbalancer() {
@@ -1652,6 +2064,34 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowLoadbalancerRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> showLoadbalancerTags = genForshowLoadbalancerTags();
+
+    private static HttpRequestDef<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> genForshowLoadbalancerTags() {
+        // basic
+        HttpRequestDef.Builder<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLoadbalancerTagsRequest.class, ShowLoadbalancerTagsResponse.class)
+                .withName("ShowLoadbalancerTags")
+                .withUri("/v2.0/{project_id}/loadbalancers/{loadbalancer_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowLoadbalancerTagsRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
             })
         );
@@ -1792,7 +2232,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHealthmonitorRequest.class, UpdateHealthmonitorResponse.class)
                 .withName("UpdateHealthmonitor")
                 .withUri("/v2/{project_id}/elb/healthmonitors/{healthmonitor_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("healthmonitor_id",
@@ -1828,7 +2268,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateL7policiesRequest.class, UpdateL7policiesResponse.class)
                 .withName("UpdateL7policies")
                 .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -1864,7 +2304,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateL7ruleRequest.class, UpdateL7ruleResponse.class)
                 .withName("UpdateL7rule")
                 .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -1908,7 +2348,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateListenerRequest.class, UpdateListenerResponse.class)
                 .withName("UpdateListener")
                 .withUri("/v2/{project_id}/elb/listeners/{listener_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("listener_id",
@@ -1944,7 +2384,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLoadbalancerRequest.class, UpdateLoadbalancerResponse.class)
                 .withName("UpdateLoadbalancer")
                 .withUri("/v2/{project_id}/elb/loadbalancers/{loadbalancer_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("loadbalancer_id",
@@ -1980,7 +2420,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMemberRequest.class, UpdateMemberResponse.class)
                 .withName("UpdateMember")
                 .withUri("/v2/{project_id}/elb/pools/{pool_id}/members/{member_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("member_id",
@@ -2024,7 +2464,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePoolRequest.class, UpdatePoolResponse.class)
                 .withName("UpdatePool")
                 .withUri("/v2/{project_id}/elb/pools/{pool_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pool_id",
@@ -2060,7 +2500,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateWhitelistRequest.class, UpdateWhitelistResponse.class)
                 .withName("UpdateWhitelist")
                 .withUri("/v2/{project_id}/elb/whitelists/{whitelist_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("whitelist_id",
@@ -2096,7 +2536,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
                 .withName("CreateCertificate")
                 .withUri("/v2/{project_id}/elb/certificates")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -2280,7 +2720,7 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateRequest.class, UpdateCertificateResponse.class)
                 .withName("UpdateCertificate")
                 .withUri("/v2/{project_id}/elb/certificates/{certificate_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("certificate_id",

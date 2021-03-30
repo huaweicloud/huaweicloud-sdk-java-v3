@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ImageDetectionResultDetail
+ * 
  */
 public class ImageDetectionResultDetail  {
 
@@ -65,7 +65,7 @@ public class ImageDetectionResultDetail  {
     }
 
     /**
-     * Get politics
+     * 涉政敏感人物检测结果。
      * @return politics
      */
     public List<ImageDetectionResultDetailPolitics> getPolitics() {
@@ -98,7 +98,7 @@ public class ImageDetectionResultDetail  {
     }
 
     /**
-     * Get porn
+     * 涉黄检测结果。
      * @return porn
      */
     public List<ImageDetectionResultDetailPorn> getPorn() {
@@ -131,7 +131,7 @@ public class ImageDetectionResultDetail  {
     }
 
     /**
-     * Get terrorism
+     * 涉政、暴恐检测结果。
      * @return terrorism
      */
     public List<ImageDetectionResultDetailPorn> getTerrorism() {
@@ -164,7 +164,7 @@ public class ImageDetectionResultDetail  {
     }
 
     /**
-     * Get ad
+     * 广告检测结果。
      * @return ad
      */
     public List<ImageDetectionResultDetailPorn> getAd() {

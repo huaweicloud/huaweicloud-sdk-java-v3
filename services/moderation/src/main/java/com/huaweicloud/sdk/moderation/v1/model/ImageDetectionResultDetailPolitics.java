@@ -22,7 +22,7 @@ public class ImageDetectionResultDetailPolitics  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    private Object confidence;
+    private Float confidence;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,7 +36,7 @@ public class ImageDetectionResultDetailPolitics  {
     
     private ImageDetectionResultDetailFaceDetail faceDetail;
 
-    public ImageDetectionResultDetailPolitics withConfidence(Object confidence) {
+    public ImageDetectionResultDetailPolitics withConfidence(Float confidence) {
         this.confidence = confidence;
         return this;
     }
@@ -48,11 +48,11 @@ public class ImageDetectionResultDetailPolitics  {
      * Get confidence
      * @return confidence
      */
-    public Object getConfidence() {
+    public Float getConfidence() {
         return confidence;
     }
 
-    public void setConfidence(Object confidence) {
+    public void setConfidence(Float confidence) {
         this.confidence = confidence;
     }
 

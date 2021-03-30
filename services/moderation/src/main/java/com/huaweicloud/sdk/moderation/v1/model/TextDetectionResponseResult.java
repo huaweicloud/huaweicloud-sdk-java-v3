@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * This is a auto create Response Object
+ * 调用成功时表示调用结果。  调用失败时无此字段。
  */
-public class TextDetectionBody  {
+public class TextDetectionResponseResult  {
 
 
 
@@ -29,7 +29,7 @@ public class TextDetectionBody  {
     
     private Object detail;
 
-    public TextDetectionBody withSuggestion(String suggestion) {
+    public TextDetectionResponseResult withSuggestion(String suggestion) {
         this.suggestion = suggestion;
         return this;
     }
@@ -51,7 +51,7 @@ public class TextDetectionBody  {
 
     
 
-    public TextDetectionBody withDetail(Object detail) {
+    public TextDetectionResponseResult withDetail(Object detail) {
         this.detail = detail;
         return this;
     }
@@ -81,9 +81,9 @@ public class TextDetectionBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        TextDetectionBody textDetectionBody = (TextDetectionBody) o;
-        return Objects.equals(this.suggestion, textDetectionBody.suggestion) &&
-            Objects.equals(this.detail, textDetectionBody.detail);
+        TextDetectionResponseResult textDetectionResponseResult = (TextDetectionResponseResult) o;
+        return Objects.equals(this.suggestion, textDetectionResponseResult.suggestion) &&
+            Objects.equals(this.detail, textDetectionResponseResult.detail);
     }
     @Override
     public int hashCode() {
@@ -92,7 +92,7 @@ public class TextDetectionBody  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TextDetectionBody {\n");
+        sb.append("class TextDetectionResponseResult {\n");
         sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("}");

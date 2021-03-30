@@ -9,6 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetail;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -32,10 +35,10 @@ public class ImageDetectionResultBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category_suggestion")
+    @JsonProperty(value="category_suggestions")
     
-    private Object categorySuggestion;
-
+    private Map<String, String> categorySuggestions = null;
+    
     public ImageDetectionResultBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
         return this;
@@ -87,24 +90,35 @@ public class ImageDetectionResultBody  {
 
     
 
-    public ImageDetectionResultBody withCategorySuggestion(Object categorySuggestion) {
-        this.categorySuggestion = categorySuggestion;
+    public ImageDetectionResultBody withCategorySuggestions(Map<String, String> categorySuggestions) {
+        this.categorySuggestions = categorySuggestions;
         return this;
     }
 
     
 
-
-    /**
-     * 具体每个场景的检测结果。  block：包含敏感信息，不通过  pass：不包含敏感信息，通过  review：需要人工复检 
-     * @return categorySuggestion
-     */
-    public Object getCategorySuggestion() {
-        return categorySuggestion;
+    public ImageDetectionResultBody putCategorySuggestionsItem(String key, String categorySuggestionsItem) {
+        this.categorySuggestions.put(key, categorySuggestionsItem);
+        return this;
     }
 
-    public void setCategorySuggestion(Object categorySuggestion) {
-        this.categorySuggestion = categorySuggestion;
+    public ImageDetectionResultBody withCategorySuggestions(Consumer<Map<String, String>> categorySuggestionsSetter) {
+        if(this.categorySuggestions == null ){
+            this.categorySuggestions = new HashMap<>();
+        }
+        categorySuggestionsSetter.accept(this.categorySuggestions);
+        return this;
+    }
+    /**
+     * 具体每个场景的检测结果。  block：包含敏感信息，不通过  pass：不包含敏感信息，通过  review：需要人工复检 
+     * @return categorySuggestions
+     */
+    public Map<String, String> getCategorySuggestions() {
+        return categorySuggestions;
+    }
+
+    public void setCategorySuggestions(Map<String, String> categorySuggestions) {
+        this.categorySuggestions = categorySuggestions;
     }
 
     
@@ -120,11 +134,11 @@ public class ImageDetectionResultBody  {
         ImageDetectionResultBody imageDetectionResultBody = (ImageDetectionResultBody) o;
         return Objects.equals(this.detail, imageDetectionResultBody.detail) &&
             Objects.equals(this.suggestion, imageDetectionResultBody.suggestion) &&
-            Objects.equals(this.categorySuggestion, imageDetectionResultBody.categorySuggestion);
+            Objects.equals(this.categorySuggestions, imageDetectionResultBody.categorySuggestions);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(detail, suggestion, categorySuggestion);
+        return Objects.hash(detail, suggestion, categorySuggestions);
     }
     @Override
     public String toString() {
@@ -132,7 +146,7 @@ public class ImageDetectionResultBody  {
         sb.append("class ImageDetectionResultBody {\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
-        sb.append("    categorySuggestion: ").append(toIndentedString(categorySuggestion)).append("\n");
+        sb.append("    categorySuggestions: ").append(toIndentedString(categorySuggestions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

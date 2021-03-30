@@ -37,9 +37,9 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="work_time")
+    @JsonProperty(value="work_date")
     
-    private String workTime;
+    private String workDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -155,8 +155,8 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
 
     
 
-    public ShowProjectWorkHoursResponseBodyWorkHours withWorkTime(String workTime) {
-        this.workTime = workTime;
+    public ShowProjectWorkHoursResponseBodyWorkHours withWorkDate(String workDate) {
+        this.workDate = workDate;
         return this;
     }
 
@@ -165,14 +165,14 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
 
     /**
      * 工时日期
-     * @return workTime
+     * @return workDate
      */
-    public String getWorkTime() {
-        return workTime;
+    public String getWorkDate() {
+        return workDate;
     }
 
-    public void setWorkTime(String workTime) {
-        this.workTime = workTime;
+    public void setWorkDate(String workDate) {
+        this.workDate = workDate;
     }
 
     
@@ -365,7 +365,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         return Objects.equals(this.projectName, showProjectWorkHoursResponseBodyWorkHours.projectName) &&
             Objects.equals(this.nickName, showProjectWorkHoursResponseBodyWorkHours.nickName) &&
             Objects.equals(this.userName, showProjectWorkHoursResponseBodyWorkHours.userName) &&
-            Objects.equals(this.workTime, showProjectWorkHoursResponseBodyWorkHours.workTime) &&
+            Objects.equals(this.workDate, showProjectWorkHoursResponseBodyWorkHours.workDate) &&
             Objects.equals(this.workHoursNum, showProjectWorkHoursResponseBodyWorkHours.workHoursNum) &&
             Objects.equals(this.summary, showProjectWorkHoursResponseBodyWorkHours.summary) &&
             Objects.equals(this.workHoursTypeName, showProjectWorkHoursResponseBodyWorkHours.workHoursTypeName) &&
@@ -377,7 +377,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(projectName, nickName, userName, workTime, workHoursNum, summary, workHoursTypeName, issueId, issueType, subject, createdTime, closedTime);
+        return Objects.hash(projectName, nickName, userName, workDate, workHoursNum, summary, workHoursTypeName, issueId, issueType, subject, createdTime, closedTime);
     }
     @Override
     public String toString() {
@@ -386,7 +386,7 @@ public class ShowProjectWorkHoursResponseBodyWorkHours  {
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    workTime: ").append(toIndentedString(workTime)).append("\n");
+        sb.append("    workDate: ").append(toIndentedString(workDate)).append("\n");
         sb.append("    workHoursNum: ").append(toIndentedString(workHoursNum)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    workHoursTypeName: ").append(toIndentedString(workHoursTypeName)).append("\n");

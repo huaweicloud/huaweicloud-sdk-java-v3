@@ -233,7 +233,7 @@ public class Vault  {
 
 
     /**
-     * 保管库类型
+     * 保管库资源类型id
      * @return providerId
      */
     public String getProviderId() {

@@ -20,6 +20,94 @@ public class ElbAsyncClient {
 
 
     /**
+     * 批量添加监听器标签
+     * 批量添加监听器标签。
+     *
+     * @param BatchCreateListenerTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateListenerTagsResponse>
+     */
+    public CompletableFuture<BatchCreateListenerTagsResponse> batchCreateListenerTagsAsync(BatchCreateListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchCreateListenerTags);
+    }
+
+    /**
+     * 批量添加监听器标签
+     * 批量添加监听器标签。
+     *
+     * @param BatchCreateListenerTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse> batchCreateListenerTagsAsyncInvoker(BatchCreateListenerTagsRequest request) {
+        return new AsyncInvoker<BatchCreateListenerTagsRequest, BatchCreateListenerTagsResponse>(request, ElbMeta.batchCreateListenerTags, hcClient);
+    }
+
+    /**
+     * 批量添加负载均衡器标签
+     * 批量添加负载均衡器标签。
+     *
+     * @param BatchCreateLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<BatchCreateLoadbalancerTagsResponse> batchCreateLoadbalancerTagsAsync(BatchCreateLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchCreateLoadbalancerTags);
+    }
+
+    /**
+     * 批量添加负载均衡器标签
+     * 批量添加负载均衡器标签。
+     *
+     * @param BatchCreateLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse> batchCreateLoadbalancerTagsAsyncInvoker(BatchCreateLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<BatchCreateLoadbalancerTagsRequest, BatchCreateLoadbalancerTagsResponse>(request, ElbMeta.batchCreateLoadbalancerTags, hcClient);
+    }
+
+    /**
+     * 批量删除监听器标签
+     * 批量删除监听器标签。
+     *
+     * @param BatchDeleteListenerTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteListenerTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteListenerTagsResponse> batchDeleteListenerTagsAsync(BatchDeleteListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDeleteListenerTags);
+    }
+
+    /**
+     * 批量删除监听器标签
+     * 批量删除监听器标签。
+     *
+     * @param BatchDeleteListenerTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse> batchDeleteListenerTagsAsyncInvoker(BatchDeleteListenerTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteListenerTagsRequest, BatchDeleteListenerTagsResponse>(request, ElbMeta.batchDeleteListenerTags, hcClient);
+    }
+
+    /**
+     * 批量删除负载均衡器标签
+     * 批量删除负载均衡器标签。
+     *
+     * @param BatchDeleteLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteLoadbalancerTagsResponse> batchDeleteLoadbalancerTagsAsync(BatchDeleteLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDeleteLoadbalancerTags);
+    }
+
+    /**
+     * 批量删除负载均衡器标签
+     * 批量删除负载均衡器标签。
+     *
+     * @param BatchDeleteLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse> batchDeleteLoadbalancerTagsAsyncInvoker(BatchDeleteLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteLoadbalancerTagsRequest, BatchDeleteLoadbalancerTagsResponse>(request, ElbMeta.batchDeleteLoadbalancerTags, hcClient);
+    }
+
+    /**
      * 创建健康检查
      * 给后端云服务器组添加健康检查
      *
@@ -108,6 +196,28 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 添加监听器标签
+     * 给指定负载均衡器添加标签。
+     *
+     * @param CreateListenerTagsRequest 请求对象
+     * @return CompletableFuture<CreateListenerTagsResponse>
+     */
+    public CompletableFuture<CreateListenerTagsResponse> createListenerTagsAsync(CreateListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.createListenerTags);
+    }
+
+    /**
+     * 添加监听器标签
+     * 给指定负载均衡器添加标签。
+     *
+     * @param CreateListenerTagsRequest 请求对象
+     * @return AsyncInvoker<CreateListenerTagsRequest, CreateListenerTagsResponse>
+     */
+    public AsyncInvoker<CreateListenerTagsRequest, CreateListenerTagsResponse> createListenerTagsAsyncInvoker(CreateListenerTagsRequest request) {
+        return new AsyncInvoker<CreateListenerTagsRequest, CreateListenerTagsResponse>(request, ElbMeta.createListenerTags, hcClient);
+    }
+
+    /**
      * 创建负载均衡器
      * 创建私网类型的增强型负载均衡器。创建成功后，该接口会返回创建的增强型负载均衡器的ID、所属子网ID、负载均衡器IP等详细信息。若要创建公网类型的增强型负载均衡器，还需调用创建浮动IP的接口，将浮动IP与私网负载均衡器的vip_port_id绑定。
      *
@@ -127,6 +237,28 @@ public class ElbAsyncClient {
      */
     public AsyncInvoker<CreateLoadbalancerRequest, CreateLoadbalancerResponse> createLoadbalancerAsyncInvoker(CreateLoadbalancerRequest request) {
         return new AsyncInvoker<CreateLoadbalancerRequest, CreateLoadbalancerResponse>(request, ElbMeta.createLoadbalancer, hcClient);
+    }
+
+    /**
+     * 添加负载均衡器标签
+     * 给指定负载均衡器添加标签。
+     *
+     * @param CreateLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<CreateLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<CreateLoadbalancerTagsResponse> createLoadbalancerTagsAsync(CreateLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.createLoadbalancerTags);
+    }
+
+    /**
+     * 添加负载均衡器标签
+     * 给指定负载均衡器添加标签。
+     *
+     * @param CreateLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse> createLoadbalancerTagsAsyncInvoker(CreateLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<CreateLoadbalancerTagsRequest, CreateLoadbalancerTagsResponse>(request, ElbMeta.createLoadbalancerTags, hcClient);
     }
 
     /**
@@ -284,6 +416,28 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 删除监听器标签
+     * 删除监听器的某个key对应的标签。
+     *
+     * @param DeleteListenerTagsRequest 请求对象
+     * @return CompletableFuture<DeleteListenerTagsResponse>
+     */
+    public CompletableFuture<DeleteListenerTagsResponse> deleteListenerTagsAsync(DeleteListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.deleteListenerTags);
+    }
+
+    /**
+     * 删除监听器标签
+     * 删除监听器的某个key对应的标签。
+     *
+     * @param DeleteListenerTagsRequest 请求对象
+     * @return AsyncInvoker<DeleteListenerTagsRequest, DeleteListenerTagsResponse>
+     */
+    public AsyncInvoker<DeleteListenerTagsRequest, DeleteListenerTagsResponse> deleteListenerTagsAsyncInvoker(DeleteListenerTagsRequest request) {
+        return new AsyncInvoker<DeleteListenerTagsRequest, DeleteListenerTagsResponse>(request, ElbMeta.deleteListenerTags, hcClient);
+    }
+
+    /**
      * 删除负载均衡
      * 根据指定ID删除负载均衡器。提供级联删除选项，当选择级联删除时，删除和负载均衡器关联的监听器、后端云服务器组、后端云服务器、健康检查、转发策略、转发规则、白名单、标签等
      *
@@ -303,6 +457,28 @@ public class ElbAsyncClient {
      */
     public AsyncInvoker<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> deleteLoadbalancerAsyncInvoker(DeleteLoadbalancerRequest request) {
         return new AsyncInvoker<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse>(request, ElbMeta.deleteLoadbalancer, hcClient);
+    }
+
+    /**
+     * 删除负载均衡标签
+     * 删除负载均衡器的某个key对应的标签。
+     *
+     * @param DeleteLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<DeleteLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<DeleteLoadbalancerTagsResponse> deleteLoadbalancerTagsAsync(DeleteLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.deleteLoadbalancerTags);
+    }
+
+    /**
+     * 删除负载均衡标签
+     * 删除负载均衡器的某个key对应的标签。
+     *
+     * @param DeleteLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse> deleteLoadbalancerTagsAsyncInvoker(DeleteLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<DeleteLoadbalancerTagsRequest, DeleteLoadbalancerTagsResponse>(request, ElbMeta.deleteLoadbalancerTags, hcClient);
     }
 
     /**
@@ -438,6 +614,28 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 查询所有监听器的标签列表
+     * 查询指定项目下所有监听器的标签列表
+     *
+     * @param ListListenerTagsRequest 请求对象
+     * @return CompletableFuture<ListListenerTagsResponse>
+     */
+    public CompletableFuture<ListListenerTagsResponse> listListenerTagsAsync(ListListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listListenerTags);
+    }
+
+    /**
+     * 查询所有监听器的标签列表
+     * 查询指定项目下所有监听器的标签列表
+     *
+     * @param ListListenerTagsRequest 请求对象
+     * @return AsyncInvoker<ListListenerTagsRequest, ListListenerTagsResponse>
+     */
+    public AsyncInvoker<ListListenerTagsRequest, ListListenerTagsResponse> listListenerTagsAsyncInvoker(ListListenerTagsRequest request) {
+        return new AsyncInvoker<ListListenerTagsRequest, ListListenerTagsResponse>(request, ElbMeta.listListenerTags, hcClient);
+    }
+
+    /**
      * 查询监听器列表
      * 查询监听器列表。支持过滤查询和分页查询。可以通过监听器ID、协议类型、监听端口号、关联的后端云服务器的IP等查询监听器。
      *
@@ -460,6 +658,50 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 根据标签查询监听器
+     * 根据标签过滤查询监听器实例。
+     *
+     * @param ListListenersByTagsRequest 请求对象
+     * @return CompletableFuture<ListListenersByTagsResponse>
+     */
+    public CompletableFuture<ListListenersByTagsResponse> listListenersByTagsAsync(ListListenersByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listListenersByTags);
+    }
+
+    /**
+     * 根据标签查询监听器
+     * 根据标签过滤查询监听器实例。
+     *
+     * @param ListListenersByTagsRequest 请求对象
+     * @return AsyncInvoker<ListListenersByTagsRequest, ListListenersByTagsResponse>
+     */
+    public AsyncInvoker<ListListenersByTagsRequest, ListListenersByTagsResponse> listListenersByTagsAsyncInvoker(ListListenersByTagsRequest request) {
+        return new AsyncInvoker<ListListenersByTagsRequest, ListListenersByTagsResponse>(request, ElbMeta.listListenersByTags, hcClient);
+    }
+
+    /**
+     * 查询所有负载均衡器的标签列表
+     * 查询指定项目下所有负载均衡器的标签列表
+     *
+     * @param ListLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<ListLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<ListLoadbalancerTagsResponse> listLoadbalancerTagsAsync(ListLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listLoadbalancerTags);
+    }
+
+    /**
+     * 查询所有负载均衡器的标签列表
+     * 查询指定项目下所有负载均衡器的标签列表
+     *
+     * @param ListLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> listLoadbalancerTagsAsyncInvoker(ListLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse>(request, ElbMeta.listLoadbalancerTags, hcClient);
+    }
+
+    /**
      * 查询负载均衡列表
      * 查询负载均衡器列表。
      *
@@ -479,6 +721,28 @@ public class ElbAsyncClient {
      */
     public AsyncInvoker<ListLoadbalancersRequest, ListLoadbalancersResponse> listLoadbalancersAsyncInvoker(ListLoadbalancersRequest request) {
         return new AsyncInvoker<ListLoadbalancersRequest, ListLoadbalancersResponse>(request, ElbMeta.listLoadbalancers, hcClient);
+    }
+
+    /**
+     * 根据标签查询负载均衡器
+     * 根据标签过滤查询负载均衡实例。
+     *
+     * @param ListLoadbalancersByTagsRequest 请求对象
+     * @return CompletableFuture<ListLoadbalancersByTagsResponse>
+     */
+    public CompletableFuture<ListLoadbalancersByTagsResponse> listLoadbalancersByTagsAsync(ListLoadbalancersByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listLoadbalancersByTags);
+    }
+
+    /**
+     * 根据标签查询负载均衡器
+     * 根据标签过滤查询负载均衡实例。
+     *
+     * @param ListLoadbalancersByTagsRequest 请求对象
+     * @return AsyncInvoker<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse>
+     */
+    public AsyncInvoker<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse> listLoadbalancersByTagsAsyncInvoker(ListLoadbalancersByTagsRequest request) {
+        return new AsyncInvoker<ListLoadbalancersByTagsRequest, ListLoadbalancersByTagsResponse>(request, ElbMeta.listLoadbalancersByTags, hcClient);
     }
 
     /**
@@ -636,6 +900,28 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 查询监听器的标签详情
+     * 查询指定监听器的所有标签信息。
+     *
+     * @param ShowListenerTagsRequest 请求对象
+     * @return CompletableFuture<ShowListenerTagsResponse>
+     */
+    public CompletableFuture<ShowListenerTagsResponse> showListenerTagsAsync(ShowListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showListenerTags);
+    }
+
+    /**
+     * 查询监听器的标签详情
+     * 查询指定监听器的所有标签信息。
+     *
+     * @param ShowListenerTagsRequest 请求对象
+     * @return AsyncInvoker<ShowListenerTagsRequest, ShowListenerTagsResponse>
+     */
+    public AsyncInvoker<ShowListenerTagsRequest, ShowListenerTagsResponse> showListenerTagsAsyncInvoker(ShowListenerTagsRequest request) {
+        return new AsyncInvoker<ShowListenerTagsRequest, ShowListenerTagsResponse>(request, ElbMeta.showListenerTags, hcClient);
+    }
+
+    /**
      * 查询负载均衡详情
      * 根据指定负载均衡器ID查询负载均衡器详情
      *
@@ -655,6 +941,28 @@ public class ElbAsyncClient {
      */
     public AsyncInvoker<ShowLoadbalancerRequest, ShowLoadbalancerResponse> showLoadbalancerAsyncInvoker(ShowLoadbalancerRequest request) {
         return new AsyncInvoker<ShowLoadbalancerRequest, ShowLoadbalancerResponse>(request, ElbMeta.showLoadbalancer, hcClient);
+    }
+
+    /**
+     * 查询负载均衡器的标签详情
+     * 查询指定负载均衡器的所有标签信息
+     *
+     * @param ShowLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<ShowLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<ShowLoadbalancerTagsResponse> showLoadbalancerTagsAsync(ShowLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showLoadbalancerTags);
+    }
+
+    /**
+     * 查询负载均衡器的标签详情
+     * 查询指定负载均衡器的所有标签信息
+     *
+     * @param ShowLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> showLoadbalancerTagsAsyncInvoker(ShowLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse>(request, ElbMeta.showLoadbalancerTags, hcClient);
     }
 
     /**

@@ -424,6 +424,70 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForcreateSecret();
+
+    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForcreateSecret() {
+        // basic
+        HttpRequestDef.Builder<CreateSecretRequest, CreateSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSecretRequest.class, CreateSecretResponse.class)
+                .withName("CreateSecret")
+                .withUri("/v1/{project_id}/secrets")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSecretRequestBody.class,
+            f -> f.withMarshaller(CreateSecretRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecretVersionRequest, CreateSecretVersionResponse> createSecretVersion = genForcreateSecretVersion();
+
+    private static HttpRequestDef<CreateSecretVersionRequest, CreateSecretVersionResponse> genForcreateSecretVersion() {
+        // basic
+        HttpRequestDef.Builder<CreateSecretVersionRequest, CreateSecretVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSecretVersionRequest.class, CreateSecretVersionResponse.class)
+                .withName("CreateSecretVersion")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/versions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateSecretVersionRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSecretVersionRequestBody.class,
+            f -> f.withMarshaller(CreateSecretVersionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DecryptDataRequest, DecryptDataResponse> decryptData = genFordecryptData();
 
     private static HttpRequestDef<DecryptDataRequest, DecryptDataResponse> genFordecryptData() {
@@ -557,6 +621,106 @@ public class KmsMeta {
             ScheduleKeyDeletionRequestBody.class,
             f -> f.withMarshaller(DeleteKeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genFordeleteSecret();
+
+    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genFordeleteSecret() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecretRequest, DeleteSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretRequest.class, DeleteSecretResponse.class)
+                .withName("DeleteSecret")
+                .withUri("/v1/{project_id}/secrets/{secret_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSecretRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> deleteSecretForSchedule = genFordeleteSecretForSchedule();
+
+    private static HttpRequestDef<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> genFordeleteSecretForSchedule() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecretForScheduleRequest, DeleteSecretForScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteSecretForScheduleRequest.class, DeleteSecretForScheduleResponse.class)
+                .withName("DeleteSecretForSchedule")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/scheduled-deleted-tasks/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSecretForScheduleRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DeleteSecretForScheduleRequestBody.class,
+            f -> f.withMarshaller(DeleteSecretForScheduleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecretStageRequest, DeleteSecretStageResponse> deleteSecretStage = genFordeleteSecretStage();
+
+    private static HttpRequestDef<DeleteSecretStageRequest, DeleteSecretStageResponse> genFordeleteSecretStage() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecretStageRequest, DeleteSecretStageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretStageRequest.class, DeleteSecretStageResponse.class)
+                .withName("DeleteSecretStage")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/stages/{stage_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSecretStageRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+        builder.withRequestField("stage_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSecretStageRequest::getStageName, (req, v) -> {
+                req.setStageName(v);
             })
         );
 
@@ -1080,6 +1244,134 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecretStageRequest, ListSecretStageResponse> listSecretStage = genForlistSecretStage();
+
+    private static HttpRequestDef<ListSecretStageRequest, ListSecretStageResponse> genForlistSecretStage() {
+        // basic
+        HttpRequestDef.Builder<ListSecretStageRequest, ListSecretStageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSecretStageRequest.class, ListSecretStageResponse.class)
+                .withName("ListSecretStage")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/stages/{stage_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSecretStageRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+        builder.withRequestField("stage_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSecretStageRequest::getStageName, (req, v) -> {
+                req.setStageName(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecretVersionsRequest, ListSecretVersionsResponse> listSecretVersions = genForlistSecretVersions();
+
+    private static HttpRequestDef<ListSecretVersionsRequest, ListSecretVersionsResponse> genForlistSecretVersions() {
+        // basic
+        HttpRequestDef.Builder<ListSecretVersionsRequest, ListSecretVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSecretVersionsRequest.class, ListSecretVersionsResponse.class)
+                .withName("ListSecretVersions")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSecretVersionsRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForlistSecrets();
+
+    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForlistSecrets() {
+        // basic
+        HttpRequestDef.Builder<ListSecretsRequest, ListSecretsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSecretsRequest.class, ListSecretsResponse.class)
+                .withName("ListSecrets")
+                .withUri("/v1/{project_id}/secrets")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecretsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecretsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreSecretRequest, RestoreSecretResponse> restoreSecret = genForrestoreSecret();
+
+    private static HttpRequestDef<RestoreSecretRequest, RestoreSecretResponse> genForrestoreSecret() {
+        // basic
+        HttpRequestDef.Builder<RestoreSecretRequest, RestoreSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreSecretRequest.class, RestoreSecretResponse.class)
+                .withName("RestoreSecret")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/scheduled-deleted-tasks/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RestoreSecretRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> showKeyRotationStatus = genForshowKeyRotationStatus();
 
     private static HttpRequestDef<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> genForshowKeyRotationStatus() {
@@ -1141,6 +1433,70 @@ public class KmsMeta {
             String.class,
             f -> f.withMarshaller(ShowKmsTagsRequest::getKeyId, (req, v) -> {
                 req.setKeyId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForshowSecret();
+
+    private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForshowSecret() {
+        // basic
+        HttpRequestDef.Builder<ShowSecretRequest, ShowSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSecretRequest.class, ShowSecretResponse.class)
+                .withName("ShowSecret")
+                .withUri("/v1/{project_id}/secrets/{secret_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSecretRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecretVersionRequest, ShowSecretVersionResponse> showSecretVersion = genForshowSecretVersion();
+
+    private static HttpRequestDef<ShowSecretVersionRequest, ShowSecretVersionResponse> genForshowSecretVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowSecretVersionRequest, ShowSecretVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSecretVersionRequest.class, ShowSecretVersionResponse.class)
+                .withName("ShowSecretVersion")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/versions/{version_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSecretVersionRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+        builder.withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSecretVersionRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
             })
         );
 
@@ -1304,6 +1660,86 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateKeyRotationIntervalRequestBody.class,
             f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForupdateSecret();
+
+    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForupdateSecret() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecretRequest, UpdateSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretRequest.class, UpdateSecretResponse.class)
+                .withName("UpdateSecret")
+                .withUri("/v1/{project_id}/secrets/{secret_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSecretRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateSecretRequestBody.class,
+            f -> f.withMarshaller(UpdateSecretRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecretStageRequest, UpdateSecretStageResponse> updateSecretStage = genForupdateSecretStage();
+
+    private static HttpRequestDef<UpdateSecretStageRequest, UpdateSecretStageResponse> genForupdateSecretStage() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecretStageRequest, UpdateSecretStageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretStageRequest.class, UpdateSecretStageResponse.class)
+                .withName("UpdateSecretStage")
+                .withUri("/v1/{project_id}/secrets/{secret_id}/stages/{stage_name}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSecretStageRequest::getSecretId, (req, v) -> {
+                req.setSecretId(v);
+            })
+        );
+        builder.withRequestField("stage_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSecretStageRequest::getStageName, (req, v) -> {
+                req.setStageName(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateSecretStageRequestBody.class,
+            f -> f.withMarshaller(UpdateSecretStageRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

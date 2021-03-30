@@ -228,7 +228,7 @@ public class CreateCertificateRequestBody  {
 
 
     /**
-     * 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。默认值：\"0\"
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

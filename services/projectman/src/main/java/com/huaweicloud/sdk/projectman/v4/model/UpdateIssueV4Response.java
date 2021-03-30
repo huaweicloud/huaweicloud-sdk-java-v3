@@ -130,6 +130,12 @@ public class UpdateIssueV4Response extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parent_issue")
     
     private CreateIssueResponseV4ParentIssue parentIssue;
@@ -587,6 +593,28 @@ public class UpdateIssueV4Response extends SdkResponse {
 
     
 
+    public UpdateIssueV4Response withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 标题
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
     public UpdateIssueV4Response withParentIssue(CreateIssueResponseV4ParentIssue parentIssue) {
         this.parentIssue = parentIssue;
         return this;
@@ -779,6 +807,7 @@ public class UpdateIssueV4Response extends SdkResponse {
             Objects.equals(this.project, updateIssueV4Response.project) &&
             Objects.equals(this.iteration, updateIssueV4Response.iteration) &&
             Objects.equals(this.module, updateIssueV4Response.module) &&
+            Objects.equals(this.name, updateIssueV4Response.name) &&
             Objects.equals(this.parentIssue, updateIssueV4Response.parentIssue) &&
             Objects.equals(this.priority, updateIssueV4Response.priority) &&
             Objects.equals(this.severity, updateIssueV4Response.severity) &&
@@ -788,7 +817,7 @@ public class UpdateIssueV4Response extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, parentIssue, priority, severity, status, tracker, updatedTime);
+        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, name, parentIssue, priority, severity, status, tracker, updatedTime);
     }
     @Override
     public String toString() {
@@ -810,6 +839,7 @@ public class UpdateIssueV4Response extends SdkResponse {
         sb.append("    project: ").append(toIndentedString(project)).append("\n");
         sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("    module: ").append(toIndentedString(module)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parentIssue: ").append(toIndentedString(parentIssue)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");

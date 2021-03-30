@@ -41,7 +41,7 @@ public class SdkResponse {
         return httpStatusCode;
     }
 
-    void setHttpStatusCode(int httpStatusCode) {
+    public void setHttpStatusCode(int httpStatusCode) {
         this.httpStatusCode = httpStatusCode;
     }
 

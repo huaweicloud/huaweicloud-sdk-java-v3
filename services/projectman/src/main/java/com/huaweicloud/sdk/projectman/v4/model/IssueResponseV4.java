@@ -128,6 +128,12 @@ public class IssueResponseV4  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parent_issue")
     
     private CreateIssueResponseV4ParentIssue parentIssue;
@@ -585,6 +591,28 @@ public class IssueResponseV4  {
 
     
 
+    public IssueResponseV4 withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 标题
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
     public IssueResponseV4 withParentIssue(CreateIssueResponseV4ParentIssue parentIssue) {
         this.parentIssue = parentIssue;
         return this;
@@ -777,6 +805,7 @@ public class IssueResponseV4  {
             Objects.equals(this.project, issueResponseV4.project) &&
             Objects.equals(this.iteration, issueResponseV4.iteration) &&
             Objects.equals(this.module, issueResponseV4.module) &&
+            Objects.equals(this.name, issueResponseV4.name) &&
             Objects.equals(this.parentIssue, issueResponseV4.parentIssue) &&
             Objects.equals(this.priority, issueResponseV4.priority) &&
             Objects.equals(this.severity, issueResponseV4.severity) &&
@@ -786,7 +815,7 @@ public class IssueResponseV4  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, parentIssue, priority, severity, status, tracker, updatedTime);
+        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, name, parentIssue, priority, severity, status, tracker, updatedTime);
     }
     @Override
     public String toString() {
@@ -808,6 +837,7 @@ public class IssueResponseV4  {
         sb.append("    project: ").append(toIndentedString(project)).append("\n");
         sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("    module: ").append(toIndentedString(module)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parentIssue: ").append(toIndentedString(parentIssue)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");

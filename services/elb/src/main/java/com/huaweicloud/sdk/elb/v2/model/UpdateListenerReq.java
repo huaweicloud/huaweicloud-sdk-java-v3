@@ -162,7 +162,7 @@ public class UpdateListenerReq  {
 
 
     /**
-     * HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
+     * HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时才有意义。
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
