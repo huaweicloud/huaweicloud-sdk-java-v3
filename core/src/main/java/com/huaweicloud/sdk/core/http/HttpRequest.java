@@ -23,8 +23,8 @@ package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

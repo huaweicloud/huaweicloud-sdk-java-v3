@@ -47,6 +47,8 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -241,11 +243,11 @@ public class HcClient implements CustomizationConfigure {
             if (reqValueOption.isPresent()) {
                 Object reqValue = reqValueOption.get();
                 if (field.getLocation() == LocationType.Header) {
-                    httpRequestBuilder.addHeader(field.getName(), reqValue.toString());
+                    httpRequestBuilder.addHeader(field.getName(), convertToStringParams(reqValue));
                 } else if (field.getLocation() == LocationType.Query) {
                     buildQueryParams(httpRequestBuilder, field.getName(), reqValue);
                 } else if (field.getLocation() == LocationType.Path) {
-                    httpRequestBuilder.addPathParam(field.getName(), reqValue.toString());
+                    httpRequestBuilder.addPathParam(field.getName(), convertToStringParams(reqValue));
                 } else if (field.getLocation() == LocationType.Body) {
                     buildRequestBody(httpRequestBuilder, reqValue);
                 }
@@ -285,16 +287,22 @@ public class HcClient implements CustomizationConfigure {
                 httpRequestBuilder.addQueryParam((String) entry.getKey(), (List<String>) entry.getValue());
             }
         } else {
-            httpRequestBuilder.addQueryParam(fieldName, buildStringQueryParams(reqValue));
+            httpRequestBuilder.addQueryParam(fieldName, Collections.singletonList(convertToStringParams(reqValue)));
         }
     }
 
-    private List<String> buildStringQueryParams(Object reqValue) {
-        return Collections.singletonList(reqValue.toString());
+    private String convertToStringParams(Object reqValue) {
+        String value;
+        if (reqValue instanceof OffsetDateTime) {
+            value = ((OffsetDateTime) reqValue).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        } else {
+            value = reqValue.toString();
+        }
+        return value;
     }
 
     private List<String> buildCollectionQueryParams(Object reqValue) {
-        return ((List<Object>) reqValue).stream().map(Object::toString).collect(Collectors.toList());
+        return ((List<Object>) reqValue).stream().map(v -> convertToStringParams(v)).collect(Collectors.toList());
     }
 
     private Map<String, List<String>> buildMapQueryParamsLoop(String key, Map reqValue) {
@@ -319,7 +327,7 @@ public class HcClient implements CustomizationConfigure {
         } else if (entryValue instanceof Collection) {
             res.put(key + "[" + entryKey + "]", buildCollectionQueryParams(entryValue));
         } else {
-            res.put(key + "[" + entryKey + "]", buildStringQueryParams(entryValue));
+            res.put(key + "[" + entryKey + "]", Collections.singletonList(convertToStringParams(entryValue)));
         }
         return res;
     }

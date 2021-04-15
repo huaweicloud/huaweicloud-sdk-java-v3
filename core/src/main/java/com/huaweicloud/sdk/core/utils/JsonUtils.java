@@ -46,7 +46,6 @@ import com.huaweicloud.sdk.core.json.StrictIntegerDeserializer;
 import com.huaweicloud.sdk.core.json.StrictLongDeserializer;
 import com.huaweicloud.sdk.core.json.StrictStringDeserializer;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

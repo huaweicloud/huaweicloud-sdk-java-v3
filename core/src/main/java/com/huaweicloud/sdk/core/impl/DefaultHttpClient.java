@@ -31,6 +31,7 @@ import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import okhttp3.Authenticator;
 import okhttp3.Call;
@@ -51,8 +52,6 @@ import okhttp3.internal.http.HttpMethod;
 import okio.BufferedSink;
 import okio.Okio;
 import okio.Source;
-
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

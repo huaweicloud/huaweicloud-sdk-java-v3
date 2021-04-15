@@ -27,8 +27,7 @@ import static java.time.format.DateTimeFormatter.ISO_LOCAL_TIME;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
-
-import org.apache.commons.lang3.StringUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

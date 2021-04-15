@@ -1,3 +1,70 @@
+# 3.0.40-rc 2021-04-15
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 支持仅引入 `huaweicloud-sdk-all` 依赖包，即可使用所有服务
+  - 支持独立引入 `huaweicloud-sdk-bundle` 依赖包以解决三方库依赖冲突的问题
+- _解决问题_
+  - 修复使用数组类型属性的add{Property}Item方法报错空指针的问题
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _新增特性_
+  - 新增支持管理数据库的接口
+    - `CreateSqlserverDatabase`
+    - `DeleteSqlserverDatabase`
+    - `ListSqlserverDatabases`
+  - 新增支持管理用户的接口
+    - `CreateSqlserverDbUser`
+    - `ListSqlserverDbUsers`
+    - `ListAuthorizedSqlserverDbUsers`
+    - `DeleteSqlserverDbUser`
+    - `AllowSqlserverDbUserPrivilege`
+    - `RevokeSqlserverDbUserPrivilege`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DDS
+
+- _新增特性_
+  - 新增支持接口`DeleteDatabaseUser`、`DeleteDatabaseRole`、`ShowConnectionStatistics`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ProjectMan
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 接口`ListIssuesV4`, `ListChildIssuesV4`响应体新增字段`closed_time` 、`id` 、`created_time`
+
+### HuaweiCloud SDK AOM
+
+- _新增特性_
+  - 服务新增接口`ListSeries`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPC
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 修复问题，开放vpc和子网的标签
+- _特性变更_
+  - 无
+
 # 3.0.39-rc 2021-03-30
 
 ### HuaweiCloud SDK Kafka

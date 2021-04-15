@@ -29,21 +29,50 @@
 首先您需要在您的操作系统中 [下载](https://maven.apache.org/download.cgi) 并 [安装](https://maven.apache.org/install.html) Maven ，安装完成后您只需在
 Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 
-无论您要使用哪个产品/服务的开发工具包，都必须安装 `huaweicloud-sdk-core` 。以使用虚拟私有云 VPC SDK 为例，您需要安装 `huaweicloud-sdk-core`
-和 `huaweicloud-sdk-vpc` ：
+### 独立服务包：
+
+根据需要独立引入SDK依赖包 。以使用云服务器ECS和虚拟私有云 VPC SDK 为例，您需要安装 `huaweicloud-sdk-ecs`和 `huaweicloud-sdk-vpc` ：
 
 ``` xml
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
-    <artifactId>huaweicloud-sdk-core</artifactId>
-    <version>[3.0.1-beta, 3.1.0-rc)</version>
+    <artifactId>huaweicloud-sdk-ecs</artifactId>
+    <version>[3.0.40-rc, 3.1.0-rc)</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.1-beta, 3.1.0-rc)</version>
+    <version>[3.0.40-rc, 3.1.0-rc)</version>
 </dependency>
 ```
+
+### 整个SDK包：
+
+可以只添加一个依赖包导入所有支持的服务(3.0.40-rc版本后)：
+
+```xml
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-all</artifactId>
+    <version>3.0.40-rc</version>
+</dependency>
+```
+
+### 整个SDK Bundle包：
+
+当出现第三方库冲突的时候，可以引入如下bundle包(3.0.40-rc版本后)，该包包含所有支持的服务和重定向了SDK依赖的第三方软件，避免和业务自身依赖的库产生冲突：
+
+```xml
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-bundle</artifactId>
+    <version>3.0.40-rc</version>
+</dependency>
+```
+
+常见冲突例如Jackson，okhttp3版本冲突等。
+
+
 
 ## 代码示例
 

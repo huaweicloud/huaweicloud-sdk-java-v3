@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.huaweicloud.sdk</groupId>
+        <version>3.0.40-rc</version>
+        <artifactId>huaweicloud-sdk</artifactId>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>huaweicloud-sdk-bundle</artifactId>
+    <version>3.0.40-rc</version>
+    <packaging>jar</packaging>
+    <name>Huawei Cloud SDK for Java Bundle</name>
+    <description>A single bundled dependency that includes all service and dependent JARs for Huawei Cloud Java SDK</description>
+    <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.huaweicloud.sdk</groupId>
+            <artifactId>huaweicloud-sdk-all</artifactId>
+            <version>3.0.40-rc</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <configuration>
+                    <artifactSet>
+                        <includes>
+                            <include>com.huaweicloud.sdk:*</include>
+                            <include>com.fasterxml.jackson.core:*</include>
+                            <include>com.fasterxml.jackson.datatype:*</include>
+                            <include>com.squareup.okhttp3:*</include>
+                            <include>com.squareup.okio:*</include>
+                            <include>org.slf4j:*</include>
+                        </includes>
+                    </artifactSet>
+                    <relocations>
+                        <relocation>
+                            <pattern>com.fasterxml.jackson</pattern>
+                            <shadedPattern>com.huaweicloud.sdk.thirdparty.com.fasterxml.jackson</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>okhttp3</pattern>
+                            <shadedPattern>com.huaweicloud.sdk.thirdparty.okhttp3</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>okio</pattern>
+                            <shadedPattern>com.huaweicloud.sdk.thirdparty.okio</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.slf4j</pattern>
+                            <shadedPattern>com.huaweicloud.sdk.thirdparty.org.slf4j</shadedPattern>
+                        </relocation>
+                    </relocations>
+                    <shadedArtifactAttached>false</shadedArtifactAttached>
+                    <createDependencyReducedPom>true</createDependencyReducedPom>
+                    <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

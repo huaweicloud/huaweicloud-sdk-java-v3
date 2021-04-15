@@ -21,7 +21,7 @@
 
 package com.huaweicloud.sdk.core.exchange;
 
-import org.apache.commons.lang3.StringUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

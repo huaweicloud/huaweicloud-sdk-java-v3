@@ -30,21 +30,50 @@ At first, you need to [download](https://maven.apache.org/download.cgi)
 and [install](https://maven.apache.org/install.html) Maven, and then declare dependencies in the `pom.xml` file in your
 Java project.
 
-You must install `huaweicloud-sdk-core` library no matter which product/service development kit you need to use. Take
-using VPC SDK for example, you need to install `huaweicloud-sdk-core` library and `huaweicloud-sdk-vpc` library:
+### Individual Services
+
+You can add depenencies for the specific services only. Take using ECS and VPC SDK for example, you need to import `huaweicloud-sdk-ecs` and `huaweicloud-sdk-vpc` libraries:
 
 ``` xml
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
-    <artifactId>huaweicloud-sdk-core</artifactId>
-    <version>[3.0.1-beta, 3.1.0-rc)</version>
+    <artifactId>huaweicloud-sdk-ecs</artifactId>
+    <version>[3.0.40-rc, 3.1.0-rc)</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.1-beta, 3.1.0-rc)</version>
+    <version>[3.0.40-rc, 3.1.0-rc)</version>
 </dependency>
 ```
+
+### Whole SDK
+
+You can add only one dependency library to import all supported services.(3.0.40-rc or later)：
+
+```xml
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-all</artifactId>
+    <version>3.0.40-rc</version>
+</dependency>
+```
+
+### Bundle SDK
+
+If a third-party library conflict occurs, you can import a single bundle library(3.0.40-rc or later). The bundle library contains all supported services and dependent JARs with third-party libraries  relocated to different namespaces：
+
+```xml
+<dependency>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-bundle</artifactId>
+    <version>3.0.40-rc</version>
+</dependency>
+```
+
+Common conflicts, such as Jackson and okhttp3 version conflicts.
+
+
 
 ## Code Example
 

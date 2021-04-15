@@ -24,8 +24,7 @@ package com.huaweicloud.sdk.core.json;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-
-import org.apache.commons.lang3.StringUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.io.IOException;
 
