@@ -42,12 +42,15 @@ public class NeutronListFirewallGroupsResponse extends SdkResponse {
 
     
     public NeutronListFirewallGroupsResponse addFirewallGroupsItem(NeutronFirewallGroup firewallGroupsItem) {
+        if(this.firewallGroups == null) {
+            this.firewallGroups = new ArrayList<>();
+        }
         this.firewallGroups.add(firewallGroupsItem);
         return this;
     }
 
     public NeutronListFirewallGroupsResponse withFirewallGroups(Consumer<List<NeutronFirewallGroup>> firewallGroupsSetter) {
-        if(this.firewallGroups == null ){
+        if(this.firewallGroups == null) {
             this.firewallGroups = new ArrayList<>();
         }
         firewallGroupsSetter.accept(this.firewallGroups);
@@ -75,12 +78,15 @@ public class NeutronListFirewallGroupsResponse extends SdkResponse {
 
     
     public NeutronListFirewallGroupsResponse addFirewallGroupsLinksItem(NeutronPageLink firewallGroupsLinksItem) {
+        if(this.firewallGroupsLinks == null) {
+            this.firewallGroupsLinks = new ArrayList<>();
+        }
         this.firewallGroupsLinks.add(firewallGroupsLinksItem);
         return this;
     }
 
     public NeutronListFirewallGroupsResponse withFirewallGroupsLinks(Consumer<List<NeutronPageLink>> firewallGroupsLinksSetter) {
-        if(this.firewallGroupsLinks == null ){
+        if(this.firewallGroupsLinks == null) {
             this.firewallGroupsLinks = new ArrayList<>();
         }
         firewallGroupsLinksSetter.accept(this.firewallGroupsLinks);

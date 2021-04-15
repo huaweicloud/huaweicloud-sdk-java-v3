@@ -70,12 +70,15 @@ public class ListSubNetworkInterfacesResponse extends SdkResponse {
 
     
     public ListSubNetworkInterfacesResponse addSubNetworkInterfacesItem(SubNetworkInterface subNetworkInterfacesItem) {
+        if(this.subNetworkInterfaces == null) {
+            this.subNetworkInterfaces = new ArrayList<>();
+        }
         this.subNetworkInterfaces.add(subNetworkInterfacesItem);
         return this;
     }
 
     public ListSubNetworkInterfacesResponse withSubNetworkInterfaces(Consumer<List<SubNetworkInterface>> subNetworkInterfacesSetter) {
-        if(this.subNetworkInterfaces == null ){
+        if(this.subNetworkInterfaces == null) {
             this.subNetworkInterfaces = new ArrayList<>();
         }
         subNetworkInterfacesSetter.accept(this.subNetworkInterfaces);

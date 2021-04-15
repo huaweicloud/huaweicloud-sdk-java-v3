@@ -452,12 +452,15 @@ public class Port  {
 
     
     public Port addFixedIpsItem(FixedIp fixedIpsItem) {
+        if(this.fixedIps == null) {
+            this.fixedIps = new ArrayList<>();
+        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
 
     public Port withFixedIps(Consumer<List<FixedIp>> fixedIpsSetter) {
-        if(this.fixedIps == null ){
+        if(this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);
@@ -573,12 +576,15 @@ public class Port  {
 
     
     public Port addSecurityGroupsItem(String securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public Port withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -606,12 +612,15 @@ public class Port  {
 
     
     public Port addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
+        if(this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
         this.allowedAddressPairs.add(allowedAddressPairsItem);
         return this;
     }
 
     public Port withAllowedAddressPairs(Consumer<List<AllowedAddressPair>> allowedAddressPairsSetter) {
-        if(this.allowedAddressPairs == null ){
+        if(this.allowedAddressPairs == null) {
             this.allowedAddressPairs = new ArrayList<>();
         }
         allowedAddressPairsSetter.accept(this.allowedAddressPairs);
@@ -639,12 +648,15 @@ public class Port  {
 
     
     public Port addExtraDhcpOptsItem(ExtraDhcpOpt extraDhcpOptsItem) {
+        if(this.extraDhcpOpts == null) {
+            this.extraDhcpOpts = new ArrayList<>();
+        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
 
     public Port withExtraDhcpOpts(Consumer<List<ExtraDhcpOpt>> extraDhcpOptsSetter) {
-        if(this.extraDhcpOpts == null ){
+        if(this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         extraDhcpOptsSetter.accept(this.extraDhcpOpts);
@@ -694,12 +706,15 @@ public class Port  {
 
     
     public Port addDnsAssignmentItem(DnsAssignMent dnsAssignmentItem) {
+        if(this.dnsAssignment == null) {
+            this.dnsAssignment = new ArrayList<>();
+        }
         this.dnsAssignment.add(dnsAssignmentItem);
         return this;
     }
 
     public Port withDnsAssignment(Consumer<List<DnsAssignMent>> dnsAssignmentSetter) {
-        if(this.dnsAssignment == null ){
+        if(this.dnsAssignment == null) {
             this.dnsAssignment = new ArrayList<>();
         }
         dnsAssignmentSetter.accept(this.dnsAssignment);

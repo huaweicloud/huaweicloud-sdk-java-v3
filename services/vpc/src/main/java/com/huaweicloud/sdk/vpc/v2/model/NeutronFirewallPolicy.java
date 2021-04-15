@@ -118,12 +118,15 @@ public class NeutronFirewallPolicy  {
 
     
     public NeutronFirewallPolicy addFirewallRulesItem(String firewallRulesItem) {
+        if(this.firewallRules == null) {
+            this.firewallRules = new ArrayList<>();
+        }
         this.firewallRules.add(firewallRulesItem);
         return this;
     }
 
     public NeutronFirewallPolicy withFirewallRules(Consumer<List<String>> firewallRulesSetter) {
-        if(this.firewallRules == null ){
+        if(this.firewallRules == null) {
             this.firewallRules = new ArrayList<>();
         }
         firewallRulesSetter.accept(this.firewallRules);

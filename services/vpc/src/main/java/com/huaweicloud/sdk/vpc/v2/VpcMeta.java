@@ -36,6 +36,75 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> batchCreateSubnetTags = genForbatchCreateSubnetTags();
+
+    private static HttpRequestDef<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> genForbatchCreateSubnetTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateSubnetTagsRequest.class, BatchCreateSubnetTagsResponse.class)
+                .withName("BatchCreateSubnetTags")
+                .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateSubnetTagsRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchCreateSubnetTagsRequestBody.class,
+            f -> f.withMarshaller(BatchCreateSubnetTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> batchDeleteSubnetTags = genForbatchDeleteSubnetTags();
+
+    private static HttpRequestDef<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> genForbatchDeleteSubnetTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteSubnetTagsRequest.class, BatchDeleteSubnetTagsResponse.class)
+                .withName("BatchDeleteSubnetTags")
+                .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteSubnetTagsRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteSubnetTagsRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteSubnetTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -62,7 +131,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -92,7 +160,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -118,7 +185,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -148,6 +214,40 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSubnetTagRequest, CreateSubnetTagResponse> createSubnetTag = genForcreateSubnetTag();
+
+    private static HttpRequestDef<CreateSubnetTagRequest, CreateSubnetTagResponse> genForcreateSubnetTag() {
+        // basic
+        HttpRequestDef.Builder<CreateSubnetTagRequest, CreateSubnetTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSubnetTagRequest.class, CreateSubnetTagResponse.class)
+                .withName("CreateSubnetTag")
+                .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateSubnetTagRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSubnetTagRequestBody.class,
+            f -> f.withMarshaller(CreateSubnetTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -174,7 +274,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -204,7 +303,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -232,7 +330,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -258,7 +355,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -296,6 +392,40 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSubnetTagRequest, DeleteSubnetTagResponse> deleteSubnetTag = genFordeleteSubnetTag();
+
+    private static HttpRequestDef<DeleteSubnetTagRequest, DeleteSubnetTagResponse> genFordeleteSubnetTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteSubnetTagRequest, DeleteSubnetTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubnetTagRequest.class, DeleteSubnetTagResponse.class)
+                .withName("DeleteSubnetTag")
+                .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSubnetTagRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
+        );
+        builder.withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSubnetTagRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            })
+        );
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -322,7 +452,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -448,7 +577,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -490,7 +618,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -544,6 +671,24 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubnetTagsRequest, ListSubnetTagsResponse> listSubnetTags = genForlistSubnetTags();
+
+    private static HttpRequestDef<ListSubnetTagsRequest, ListSubnetTagsResponse> genForlistSubnetTags() {
+        // basic
+        HttpRequestDef.Builder<ListSubnetTagsRequest, ListSubnetTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSubnetTagsRequest.class, ListSubnetTagsResponse.class)
+                .withName("ListSubnetTags")
+                .withUri("/v2.0/{project_id}/subnets/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -595,6 +740,32 @@ public class VpcMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> listSubnetsByTags = genForlistSubnetsByTags();
+
+    private static HttpRequestDef<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> genForlistSubnetsByTags() {
+        // basic
+        HttpRequestDef.Builder<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListSubnetsByTagsRequest.class, ListSubnetsByTagsResponse.class)
+                .withName("ListSubnetsByTags")
+                .withUri("/v2.0/{project_id}/subnets/resource_instances/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListSubnetsByTagsRequestBody.class,
+            f -> f.withMarshaller(ListSubnetsByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();
@@ -672,7 +843,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -698,7 +868,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -728,7 +897,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -754,7 +922,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -784,7 +951,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -810,7 +976,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -840,6 +1005,32 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubnetTagsRequest, ShowSubnetTagsResponse> showSubnetTags = genForshowSubnetTags();
+
+    private static HttpRequestDef<ShowSubnetTagsRequest, ShowSubnetTagsResponse> genForshowSubnetTags() {
+        // basic
+        HttpRequestDef.Builder<ShowSubnetTagsRequest, ShowSubnetTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSubnetTagsRequest.class, ShowSubnetTagsResponse.class)
+                .withName("ShowSubnetTags")
+                .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSubnetTagsRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
+        );
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -866,7 +1057,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -902,7 +1092,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -948,7 +1137,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -984,7 +1172,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1012,7 +1199,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1038,7 +1224,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1084,7 +1269,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1110,7 +1294,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1139,6 +1322,392 @@ public class VpcMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroup = genForneutronCreateSecurityGroup();
+
+    private static HttpRequestDef<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> genForneutronCreateSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateSecurityGroupRequest.class, NeutronCreateSecurityGroupResponse.class)
+                .withName("NeutronCreateSecurityGroup")
+                .withUri("/v2.0/security-groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronCreateSecurityGroupRequestBody.class,
+            f -> f.withMarshaller(NeutronCreateSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRule = genForneutronCreateSecurityGroupRule();
+
+    private static HttpRequestDef<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> genForneutronCreateSecurityGroupRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateSecurityGroupRuleRequest.class, NeutronCreateSecurityGroupRuleResponse.class)
+                .withName("NeutronCreateSecurityGroupRule")
+                .withUri("/v2.0/security-group-rules")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronCreateSecurityGroupRuleRequestBody.class,
+            f -> f.withMarshaller(NeutronCreateSecurityGroupRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroup = genForneutronDeleteSecurityGroup();
+
+    private static HttpRequestDef<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> genForneutronDeleteSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteSecurityGroupRequest.class, NeutronDeleteSecurityGroupResponse.class)
+                .withName("NeutronDeleteSecurityGroup")
+                .withUri("/v2.0/security-groups/{security_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronDeleteSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRule = genForneutronDeleteSecurityGroupRule();
+
+    private static HttpRequestDef<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> genForneutronDeleteSecurityGroupRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteSecurityGroupRuleRequest.class, NeutronDeleteSecurityGroupRuleResponse.class)
+                .withName("NeutronDeleteSecurityGroupRule")
+                .withUri("/v2.0/security-group-rules/{security_group_rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("security_group_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronDeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
+                req.setSecurityGroupRuleId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRules = genForneutronListSecurityGroupRules();
+
+    private static HttpRequestDef<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> genForneutronListSecurityGroupRules() {
+        // basic
+        HttpRequestDef.Builder<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListSecurityGroupRulesRequest.class, NeutronListSecurityGroupRulesResponse.class)
+                .withName("NeutronListSecurityGroupRules")
+                .withUri("/v2.0/security-group-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getDirection, (req, v) -> {
+                req.setDirection(v);
+            })
+        );
+        builder.withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
+            })
+        );
+        builder.withRequestField("ethertype",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getEthertype, (req, v) -> {
+                req.setEthertype(v);
+            })
+        );
+        builder.withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            })
+        );
+        builder.withRequestField("remote_ip_prefix",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getRemoteIpPrefix, (req, v) -> {
+                req.setRemoteIpPrefix(v);
+            })
+        );
+        builder.withRequestField("remote_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getRemoteGroupId, (req, v) -> {
+                req.setRemoteGroupId(v);
+            })
+        );
+        builder.withRequestField("security_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            })
+        );
+        builder.withRequestField("port_range_max",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getPortRangeMax, (req, v) -> {
+                req.setPortRangeMax(v);
+            })
+        );
+        builder.withRequestField("port_range_min",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getPortRangeMin, (req, v) -> {
+                req.setPortRangeMin(v);
+            })
+        );
+        builder.withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> neutronListSecurityGroups = genForneutronListSecurityGroups();
+
+    private static HttpRequestDef<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> genForneutronListSecurityGroups() {
+        // basic
+        HttpRequestDef.Builder<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListSecurityGroupsRequest.class, NeutronListSecurityGroupsResponse.class)
+                .withName("NeutronListSecurityGroups")
+                .withUri("/v2.0/security-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            })
+        );
+        builder.withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> neutronShowSecurityGroup = genForneutronShowSecurityGroup();
+
+    private static HttpRequestDef<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> genForneutronShowSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowSecurityGroupRequest.class, NeutronShowSecurityGroupResponse.class)
+                .withName("NeutronShowSecurityGroup")
+                .withUri("/v2.0/security-groups/{security_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronShowSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRule = genForneutronShowSecurityGroupRule();
+
+    private static HttpRequestDef<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> genForneutronShowSecurityGroupRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowSecurityGroupRuleRequest.class, NeutronShowSecurityGroupRuleResponse.class)
+                .withName("NeutronShowSecurityGroupRule")
+                .withUri("/v2.0/security-group-rules/{security_group_rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("security_group_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronShowSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
+                req.setSecurityGroupRuleId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroup = genForneutronUpdateSecurityGroup();
+
+    private static HttpRequestDef<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> genForneutronUpdateSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateSecurityGroupRequest.class, NeutronUpdateSecurityGroupResponse.class)
+                .withName("NeutronUpdateSecurityGroup")
+                .withUri("/v2.0/security-groups/{security_group_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronUpdateSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronUpdateSecurityGroupRequestBody.class,
+            f -> f.withMarshaller(NeutronUpdateSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();
@@ -1176,7 +1745,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1202,7 +1770,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1232,7 +1799,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1258,7 +1824,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1288,7 +1853,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1316,7 +1880,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1342,7 +1905,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1420,7 +1982,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1486,7 +2047,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1564,7 +2124,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1600,7 +2159,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1626,7 +2184,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1656,7 +2213,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1682,7 +2238,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1720,7 +2275,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1754,7 +2308,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1792,6 +2345,75 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> batchCreateVpcTags = genForbatchCreateVpcTags();
+
+    private static HttpRequestDef<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> genForbatchCreateVpcTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateVpcTagsRequest.class, BatchCreateVpcTagsResponse.class)
+                .withName("BatchCreateVpcTags")
+                .withUri("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateVpcTagsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchCreateVpcTagsRequestBody.class,
+            f -> f.withMarshaller(BatchCreateVpcTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> batchDeleteVpcTags = genForbatchDeleteVpcTags();
+
+    private static HttpRequestDef<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> genForbatchDeleteVpcTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteVpcTagsRequest.class, BatchDeleteVpcTagsResponse.class)
+                .withName("BatchDeleteVpcTags")
+                .withUri("/v2.0/{project_id}/vpcs/{vpc_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteVpcTagsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteVpcTagsRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteVpcTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -1819,6 +2441,40 @@ public class VpcMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> createVpcResourceTag = genForcreateVpcResourceTag();
+
+    private static HttpRequestDef<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> genForcreateVpcResourceTag() {
+        // basic
+        HttpRequestDef.Builder<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVpcResourceTagRequest.class, CreateVpcResourceTagResponse.class)
+                .withName("CreateVpcResourceTag")
+                .withUri("/v2.0/{project_id}/vpcs/{vpc_id}/tags")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateVpcResourceTagRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateVpcResourceTagRequestBody.class,
+            f -> f.withMarshaller(CreateVpcResourceTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();
@@ -1848,7 +2504,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1874,7 +2529,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1903,6 +2557,40 @@ public class VpcMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpcTagRequest, DeleteVpcTagResponse> deleteVpcTag = genFordeleteVpcTag();
+
+    private static HttpRequestDef<DeleteVpcTagRequest, DeleteVpcTagResponse> genFordeleteVpcTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpcTagRequest, DeleteVpcTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcTagRequest.class, DeleteVpcTagResponse.class)
+                .withName("DeleteVpcTag")
+                .withUri("/v2.0/{project_id}/vpcs/{vpc_id}/tags/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVpcTagRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
+        );
+        builder.withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVpcTagRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();
@@ -1980,6 +2668,24 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpcTagsRequest, ListVpcTagsResponse> listVpcTags = genForlistVpcTags();
+
+    private static HttpRequestDef<ListVpcTagsRequest, ListVpcTagsResponse> genForlistVpcTags() {
+        // basic
+        HttpRequestDef.Builder<ListVpcTagsRequest, ListVpcTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpcTagsRequest.class, ListVpcTagsResponse.class)
+                .withName("ListVpcTags")
+                .withUri("/v2.0/{project_id}/vpcs/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -2032,6 +2738,32 @@ public class VpcMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpcsByTagsRequest, ListVpcsByTagsResponse> listVpcsByTags = genForlistVpcsByTags();
+
+    private static HttpRequestDef<ListVpcsByTagsRequest, ListVpcsByTagsResponse> genForlistVpcsByTags() {
+        // basic
+        HttpRequestDef.Builder<ListVpcsByTagsRequest, ListVpcsByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListVpcsByTagsRequest.class, ListVpcsByTagsResponse.class)
+                .withName("ListVpcsByTags")
+                .withUri("/v2.0/{project_id}/vpcs/resource_instances/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListVpcsByTagsRequestBody.class,
+            f -> f.withMarshaller(ListVpcsByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
 
         return builder.build();
     }
@@ -2060,7 +2792,6 @@ public class VpcMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2087,6 +2818,32 @@ public class VpcMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVpcTagsRequest, ShowVpcTagsResponse> showVpcTags = genForshowVpcTags();
+
+    private static HttpRequestDef<ShowVpcTagsRequest, ShowVpcTagsResponse> genForshowVpcTags() {
+        // basic
+        HttpRequestDef.Builder<ShowVpcTagsRequest, ShowVpcTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVpcTagsRequest.class, ShowVpcTagsResponse.class)
+                .withName("ShowVpcTags")
+                .withUri("/v2.0/{project_id}/vpcs/{vpc_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("vpc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVpcTagsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();
@@ -2122,7 +2879,6 @@ public class VpcMeta {
 
         // response
         
-
 
 
         return builder.build();

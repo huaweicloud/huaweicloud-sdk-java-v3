@@ -35,12 +35,15 @@ public class ListPortsResponse extends SdkResponse {
 
     
     public ListPortsResponse addPortsItem(Port portsItem) {
+        if(this.ports == null) {
+            this.ports = new ArrayList<>();
+        }
         this.ports.add(portsItem);
         return this;
     }
 
     public ListPortsResponse withPorts(Consumer<List<Port>> portsSetter) {
-        if(this.ports == null ){
+        if(this.ports == null) {
             this.ports = new ArrayList<>();
         }
         portsSetter.accept(this.ports);

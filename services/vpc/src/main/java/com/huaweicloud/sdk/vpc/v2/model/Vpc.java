@@ -245,12 +245,15 @@ public class Vpc  {
 
     
     public Vpc addRoutesItem(Route routesItem) {
+        if(this.routes == null) {
+            this.routes = new ArrayList<>();
+        }
         this.routes.add(routesItem);
         return this;
     }
 
     public Vpc withRoutes(Consumer<List<Route>> routesSetter) {
-        if(this.routes == null ){
+        if(this.routes == null) {
             this.routes = new ArrayList<>();
         }
         routesSetter.accept(this.routes);

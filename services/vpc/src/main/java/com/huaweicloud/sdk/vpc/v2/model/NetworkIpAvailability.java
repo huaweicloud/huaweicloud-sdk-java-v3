@@ -173,12 +173,15 @@ public class NetworkIpAvailability  {
 
     
     public NetworkIpAvailability addSubnetIpAvailabilityItem(SubnetIpAvailability subnetIpAvailabilityItem) {
+        if(this.subnetIpAvailability == null) {
+            this.subnetIpAvailability = new ArrayList<>();
+        }
         this.subnetIpAvailability.add(subnetIpAvailabilityItem);
         return this;
     }
 
     public NetworkIpAvailability withSubnetIpAvailability(Consumer<List<SubnetIpAvailability>> subnetIpAvailabilitySetter) {
-        if(this.subnetIpAvailability == null ){
+        if(this.subnetIpAvailability == null) {
             this.subnetIpAvailability = new ArrayList<>();
         }
         subnetIpAvailabilitySetter.accept(this.subnetIpAvailability);

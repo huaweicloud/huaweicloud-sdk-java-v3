@@ -35,12 +35,15 @@ public class ListVpcsResponse extends SdkResponse {
 
     
     public ListVpcsResponse addVpcsItem(Vpc vpcsItem) {
+        if(this.vpcs == null) {
+            this.vpcs = new ArrayList<>();
+        }
         this.vpcs.add(vpcsItem);
         return this;
     }
 
     public ListVpcsResponse withVpcs(Consumer<List<Vpc>> vpcsSetter) {
-        if(this.vpcs == null ){
+        if(this.vpcs == null) {
             this.vpcs = new ArrayList<>();
         }
         vpcsSetter.accept(this.vpcs);

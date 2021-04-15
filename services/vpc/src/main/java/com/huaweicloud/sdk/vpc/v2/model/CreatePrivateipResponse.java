@@ -35,12 +35,15 @@ public class CreatePrivateipResponse extends SdkResponse {
 
     
     public CreatePrivateipResponse addPrivateipsItem(Privateip privateipsItem) {
+        if(this.privateips == null) {
+            this.privateips = new ArrayList<>();
+        }
         this.privateips.add(privateipsItem);
         return this;
     }
 
     public CreatePrivateipResponse withPrivateips(Consumer<List<Privateip>> privateipsSetter) {
-        if(this.privateips == null ){
+        if(this.privateips == null) {
             this.privateips = new ArrayList<>();
         }
         privateipsSetter.accept(this.privateips);

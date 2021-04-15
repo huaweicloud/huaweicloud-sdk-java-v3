@@ -106,12 +106,15 @@ public class BatchCreateSubNetworkInterfaceOption  {
 
     
     public BatchCreateSubNetworkInterfaceOption addSecurityGroupsItem(String securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public BatchCreateSubNetworkInterfaceOption withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);

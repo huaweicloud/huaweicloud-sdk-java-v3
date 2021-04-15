@@ -231,12 +231,15 @@ public class SecurityGroupInfo  {
 
     
     public SecurityGroupInfo addSecurityGroupRulesItem(SecurityGroupRule securityGroupRulesItem) {
+        if(this.securityGroupRules == null) {
+            this.securityGroupRules = new ArrayList<>();
+        }
         this.securityGroupRules.add(securityGroupRulesItem);
         return this;
     }
 
     public SecurityGroupInfo withSecurityGroupRules(Consumer<List<SecurityGroupRule>> securityGroupRulesSetter) {
-        if(this.securityGroupRules == null ){
+        if(this.securityGroupRules == null) {
             this.securityGroupRules = new ArrayList<>();
         }
         securityGroupRulesSetter.accept(this.securityGroupRules);

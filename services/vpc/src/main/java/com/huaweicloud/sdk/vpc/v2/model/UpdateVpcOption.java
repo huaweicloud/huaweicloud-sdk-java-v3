@@ -117,12 +117,15 @@ public class UpdateVpcOption  {
 
     
     public UpdateVpcOption addRoutesItem(Route routesItem) {
+        if(this.routes == null) {
+            this.routes = new ArrayList<>();
+        }
         this.routes.add(routesItem);
         return this;
     }
 
     public UpdateVpcOption withRoutes(Consumer<List<Route>> routesSetter) {
-        if(this.routes == null ){
+        if(this.routes == null) {
             this.routes = new ArrayList<>();
         }
         routesSetter.accept(this.routes);

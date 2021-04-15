@@ -40,6 +40,50 @@ public class VpcClient {
     }
 
     /**
+     * 批量创建子网资源标签
+     * 为指定的子网资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateSubnetTagsRequest 请求对象
+     * @return BatchCreateSubnetTagsResponse
+     */
+    public BatchCreateSubnetTagsResponse batchCreateSubnetTags(BatchCreateSubnetTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateSubnetTags);
+    }
+
+    /**
+     * 批量创建子网资源标签
+     * 为指定的子网资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateSubnetTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse>
+     */
+    public SyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> batchCreateSubnetTagsInvoker(BatchCreateSubnetTagsRequest request) {
+        return new SyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse>(request, VpcMeta.batchCreateSubnetTags, hcClient);
+    }
+
+    /**
+     * 批量删除子网资源标签
+     * 为指定的子网资源实例批量删除标签 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteSubnetTagsRequest 请求对象
+     * @return BatchDeleteSubnetTagsResponse
+     */
+    public BatchDeleteSubnetTagsResponse batchDeleteSubnetTags(BatchDeleteSubnetTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchDeleteSubnetTags);
+    }
+
+    /**
+     * 批量删除子网资源标签
+     * 为指定的子网资源实例批量删除标签 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteSubnetTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> batchDeleteSubnetTagsInvoker(BatchDeleteSubnetTagsRequest request) {
+        return new SyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse>(request, VpcMeta.batchDeleteSubnetTags, hcClient);
+    }
+
+    /**
      * 创建端口
      * 创建端口。
      *
@@ -125,6 +169,28 @@ public class VpcClient {
      */
     public SyncInvoker<CreateSubnetRequest, CreateSubnetResponse> createSubnetInvoker(CreateSubnetRequest request) {
         return new SyncInvoker<CreateSubnetRequest, CreateSubnetResponse>(request, VpcMeta.createSubnet, hcClient);
+    }
+
+    /**
+     * 创建子网资源标签
+     * 给指定子网资源实例增加标签信息。 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateSubnetTagRequest 请求对象
+     * @return CreateSubnetTagResponse
+     */
+    public CreateSubnetTagResponse createSubnetTag(CreateSubnetTagRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createSubnetTag);
+    }
+
+    /**
+     * 创建子网资源标签
+     * 给指定子网资源实例增加标签信息。 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateSubnetTagRequest 请求对象
+     * @return SyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse>
+     */
+    public SyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse> createSubnetTagInvoker(CreateSubnetTagRequest request) {
+        return new SyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse>(request, VpcMeta.createSubnetTag, hcClient);
     }
 
     /**
@@ -238,6 +304,28 @@ public class VpcClient {
     }
 
     /**
+     * 删除子网资源标签
+     * 删除指定子网资源实例的标签信息。 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteSubnetTagRequest 请求对象
+     * @return DeleteSubnetTagResponse
+     */
+    public DeleteSubnetTagResponse deleteSubnetTag(DeleteSubnetTagRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteSubnetTag);
+    }
+
+    /**
+     * 删除子网资源标签
+     * 删除指定子网资源实例的标签信息。 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteSubnetTagRequest 请求对象
+     * @return SyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse>
+     */
+    public SyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse> deleteSubnetTagInvoker(DeleteSubnetTagRequest request) {
+        return new SyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse>(request, VpcMeta.deleteSubnetTag, hcClient);
+    }
+
+    /**
      * 删除对等连接
      * 删除对等连接。 可以在在本端或对端任何一端删除对等连接。
      *
@@ -326,6 +414,28 @@ public class VpcClient {
     }
 
     /**
+     * 查询子网项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListSubnetTagsRequest 请求对象
+     * @return ListSubnetTagsResponse
+     */
+    public ListSubnetTagsResponse listSubnetTags(ListSubnetTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listSubnetTags);
+    }
+
+    /**
+     * 查询子网项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListSubnetTagsRequest 请求对象
+     * @return SyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse>
+     */
+    public SyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse> listSubnetTagsInvoker(ListSubnetTagsRequest request) {
+        return new SyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse>(request, VpcMeta.listSubnetTags, hcClient);
+    }
+
+    /**
      * 查询子网列表
      * 查询子网列表
      *
@@ -345,6 +455,28 @@ public class VpcClient {
      */
     public SyncInvoker<ListSubnetsRequest, ListSubnetsResponse> listSubnetsInvoker(ListSubnetsRequest request) {
         return new SyncInvoker<ListSubnetsRequest, ListSubnetsResponse>(request, VpcMeta.listSubnets, hcClient);
+    }
+
+    /**
+     * 查询子网资源实例
+     * 使用标签过滤实例
+     *
+     * @param ListSubnetsByTagsRequest 请求对象
+     * @return ListSubnetsByTagsResponse
+     */
+    public ListSubnetsByTagsResponse listSubnetsByTags(ListSubnetsByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listSubnetsByTags);
+    }
+
+    /**
+     * 查询子网资源实例
+     * 使用标签过滤实例
+     *
+     * @param ListSubnetsByTagsRequest 请求对象
+     * @return SyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse>
+     */
+    public SyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> listSubnetsByTagsInvoker(ListSubnetsByTagsRequest request) {
+        return new SyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse>(request, VpcMeta.listSubnetsByTags, hcClient);
     }
 
     /**
@@ -499,6 +631,28 @@ public class VpcClient {
      */
     public SyncInvoker<ShowSubnetRequest, ShowSubnetResponse> showSubnetInvoker(ShowSubnetRequest request) {
         return new SyncInvoker<ShowSubnetRequest, ShowSubnetResponse>(request, VpcMeta.showSubnet, hcClient);
+    }
+
+    /**
+     * 查询子网资源标签
+     * 查询指定子网实例的标签信息。
+     *
+     * @param ShowSubnetTagsRequest 请求对象
+     * @return ShowSubnetTagsResponse
+     */
+    public ShowSubnetTagsResponse showSubnetTags(ShowSubnetTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showSubnetTags);
+    }
+
+    /**
+     * 查询子网资源标签
+     * 查询指定子网实例的标签信息。
+     *
+     * @param ShowSubnetTagsRequest 请求对象
+     * @return SyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse>
+     */
+    public SyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse> showSubnetTagsInvoker(ShowSubnetTagsRequest request) {
+        return new SyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse>(request, VpcMeta.showSubnetTags, hcClient);
     }
 
     /**
@@ -697,6 +851,204 @@ public class VpcClient {
      */
     public SyncInvoker<ShowPrivateipRequest, ShowPrivateipResponse> showPrivateipInvoker(ShowPrivateipRequest request) {
         return new SyncInvoker<ShowPrivateipRequest, ShowPrivateipResponse>(request, VpcMeta.showPrivateip, hcClient);
+    }
+
+    /**
+     * 创建安全组
+     * 创建安全组
+     *
+     * @param NeutronCreateSecurityGroupRequest 请求对象
+     * @return NeutronCreateSecurityGroupResponse
+     */
+    public NeutronCreateSecurityGroupResponse neutronCreateSecurityGroup(NeutronCreateSecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateSecurityGroup);
+    }
+
+    /**
+     * 创建安全组
+     * 创建安全组
+     *
+     * @param NeutronCreateSecurityGroupRequest 请求对象
+     * @return SyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse>
+     */
+    public SyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroupInvoker(NeutronCreateSecurityGroupRequest request) {
+        return new SyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse>(request, VpcMeta.neutronCreateSecurityGroup, hcClient);
+    }
+
+    /**
+     * 创建安全组规则
+     * 创建安全组规则
+     *
+     * @param NeutronCreateSecurityGroupRuleRequest 请求对象
+     * @return NeutronCreateSecurityGroupRuleResponse
+     */
+    public NeutronCreateSecurityGroupRuleResponse neutronCreateSecurityGroupRule(NeutronCreateSecurityGroupRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateSecurityGroupRule);
+    }
+
+    /**
+     * 创建安全组规则
+     * 创建安全组规则
+     *
+     * @param NeutronCreateSecurityGroupRuleRequest 请求对象
+     * @return SyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse>
+     */
+    public SyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRuleInvoker(NeutronCreateSecurityGroupRuleRequest request) {
+        return new SyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse>(request, VpcMeta.neutronCreateSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 删除安全组
+     * 删除安全组
+     *
+     * @param NeutronDeleteSecurityGroupRequest 请求对象
+     * @return NeutronDeleteSecurityGroupResponse
+     */
+    public NeutronDeleteSecurityGroupResponse neutronDeleteSecurityGroup(NeutronDeleteSecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteSecurityGroup);
+    }
+
+    /**
+     * 删除安全组
+     * 删除安全组
+     *
+     * @param NeutronDeleteSecurityGroupRequest 请求对象
+     * @return SyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse>
+     */
+    public SyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroupInvoker(NeutronDeleteSecurityGroupRequest request) {
+        return new SyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse>(request, VpcMeta.neutronDeleteSecurityGroup, hcClient);
+    }
+
+    /**
+     * 删除安全组规则
+     * 删除安全组规则
+     *
+     * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
+     * @return NeutronDeleteSecurityGroupRuleResponse
+     */
+    public NeutronDeleteSecurityGroupRuleResponse neutronDeleteSecurityGroupRule(NeutronDeleteSecurityGroupRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteSecurityGroupRule);
+    }
+
+    /**
+     * 删除安全组规则
+     * 删除安全组规则
+     *
+     * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
+     * @return SyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse>
+     */
+    public SyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRuleInvoker(NeutronDeleteSecurityGroupRuleRequest request) {
+        return new SyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse>(request, VpcMeta.neutronDeleteSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 查询安全组规则列表
+     * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
+     *
+     * @param NeutronListSecurityGroupRulesRequest 请求对象
+     * @return NeutronListSecurityGroupRulesResponse
+     */
+    public NeutronListSecurityGroupRulesResponse neutronListSecurityGroupRules(NeutronListSecurityGroupRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListSecurityGroupRules);
+    }
+
+    /**
+     * 查询安全组规则列表
+     * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
+     *
+     * @param NeutronListSecurityGroupRulesRequest 请求对象
+     * @return SyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse>
+     */
+    public SyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRulesInvoker(NeutronListSecurityGroupRulesRequest request) {
+        return new SyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse>(request, VpcMeta.neutronListSecurityGroupRules, hcClient);
+    }
+
+    /**
+     * 查询安全组列表
+     * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+     *
+     * @param NeutronListSecurityGroupsRequest 请求对象
+     * @return NeutronListSecurityGroupsResponse
+     */
+    public NeutronListSecurityGroupsResponse neutronListSecurityGroups(NeutronListSecurityGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListSecurityGroups);
+    }
+
+    /**
+     * 查询安全组列表
+     * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+     *
+     * @param NeutronListSecurityGroupsRequest 请求对象
+     * @return SyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse>
+     */
+    public SyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> neutronListSecurityGroupsInvoker(NeutronListSecurityGroupsRequest request) {
+        return new SyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse>(request, VpcMeta.neutronListSecurityGroups, hcClient);
+    }
+
+    /**
+     * 查询安全组
+     * 查询安全组详情
+     *
+     * @param NeutronShowSecurityGroupRequest 请求对象
+     * @return NeutronShowSecurityGroupResponse
+     */
+    public NeutronShowSecurityGroupResponse neutronShowSecurityGroup(NeutronShowSecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowSecurityGroup);
+    }
+
+    /**
+     * 查询安全组
+     * 查询安全组详情
+     *
+     * @param NeutronShowSecurityGroupRequest 请求对象
+     * @return SyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse>
+     */
+    public SyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> neutronShowSecurityGroupInvoker(NeutronShowSecurityGroupRequest request) {
+        return new SyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse>(request, VpcMeta.neutronShowSecurityGroup, hcClient);
+    }
+
+    /**
+     * 查询安全组规则
+     * 查询安全组规则详情。
+     *
+     * @param NeutronShowSecurityGroupRuleRequest 请求对象
+     * @return NeutronShowSecurityGroupRuleResponse
+     */
+    public NeutronShowSecurityGroupRuleResponse neutronShowSecurityGroupRule(NeutronShowSecurityGroupRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowSecurityGroupRule);
+    }
+
+    /**
+     * 查询安全组规则
+     * 查询安全组规则详情。
+     *
+     * @param NeutronShowSecurityGroupRuleRequest 请求对象
+     * @return SyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse>
+     */
+    public SyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRuleInvoker(NeutronShowSecurityGroupRuleRequest request) {
+        return new SyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse>(request, VpcMeta.neutronShowSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 更新安全组
+     * 更新安全组
+     *
+     * @param NeutronUpdateSecurityGroupRequest 请求对象
+     * @return NeutronUpdateSecurityGroupResponse
+     */
+    public NeutronUpdateSecurityGroupResponse neutronUpdateSecurityGroup(NeutronUpdateSecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdateSecurityGroup);
+    }
+
+    /**
+     * 更新安全组
+     * 更新安全组
+     *
+     * @param NeutronUpdateSecurityGroupRequest 请求对象
+     * @return SyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse>
+     */
+    public SyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroupInvoker(NeutronUpdateSecurityGroupRequest request) {
+        return new SyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse>(request, VpcMeta.neutronUpdateSecurityGroup, hcClient);
     }
 
     /**
@@ -1074,6 +1426,50 @@ public class VpcClient {
     }
 
     /**
+     * 批量创建VPC资源标签
+     * 为指定的VPC资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateVpcTagsRequest 请求对象
+     * @return BatchCreateVpcTagsResponse
+     */
+    public BatchCreateVpcTagsResponse batchCreateVpcTags(BatchCreateVpcTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateVpcTags);
+    }
+
+    /**
+     * 批量创建VPC资源标签
+     * 为指定的VPC资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateVpcTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse>
+     */
+    public SyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> batchCreateVpcTagsInvoker(BatchCreateVpcTagsRequest request) {
+        return new SyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse>(request, VpcMeta.batchCreateVpcTags, hcClient);
+    }
+
+    /**
+     * 批量删除VPC资源标签
+     * 为指定的VPC资源实例批量删除标签。 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteVpcTagsRequest 请求对象
+     * @return BatchDeleteVpcTagsResponse
+     */
+    public BatchDeleteVpcTagsResponse batchDeleteVpcTags(BatchDeleteVpcTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchDeleteVpcTags);
+    }
+
+    /**
+     * 批量删除VPC资源标签
+     * 为指定的VPC资源实例批量删除标签。 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteVpcTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> batchDeleteVpcTagsInvoker(BatchDeleteVpcTagsRequest request) {
+        return new SyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse>(request, VpcMeta.batchDeleteVpcTags, hcClient);
+    }
+
+    /**
      * 创建VPC
      * 创建虚拟私有云。
      *
@@ -1093,6 +1489,28 @@ public class VpcClient {
      */
     public SyncInvoker<CreateVpcRequest, CreateVpcResponse> createVpcInvoker(CreateVpcRequest request) {
         return new SyncInvoker<CreateVpcRequest, CreateVpcResponse>(request, VpcMeta.createVpc, hcClient);
+    }
+
+    /**
+     * 创建VPC资源标签
+     * 给指定VPC资源实例增加标签信息 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateVpcResourceTagRequest 请求对象
+     * @return CreateVpcResourceTagResponse
+     */
+    public CreateVpcResourceTagResponse createVpcResourceTag(CreateVpcResourceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createVpcResourceTag);
+    }
+
+    /**
+     * 创建VPC资源标签
+     * 给指定VPC资源实例增加标签信息 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateVpcResourceTagRequest 请求对象
+     * @return SyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse>
+     */
+    public SyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> createVpcResourceTagInvoker(CreateVpcResourceTagRequest request) {
+        return new SyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse>(request, VpcMeta.createVpcResourceTag, hcClient);
     }
 
     /**
@@ -1162,6 +1580,28 @@ public class VpcClient {
     }
 
     /**
+     * 删除VPC资源标签
+     * 删除指定VPC资源实例的标签信息 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteVpcTagRequest 请求对象
+     * @return DeleteVpcTagResponse
+     */
+    public DeleteVpcTagResponse deleteVpcTag(DeleteVpcTagRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteVpcTag);
+    }
+
+    /**
+     * 删除VPC资源标签
+     * 删除指定VPC资源实例的标签信息 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteVpcTagRequest 请求对象
+     * @return SyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse>
+     */
+    public SyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse> deleteVpcTagInvoker(DeleteVpcTagRequest request) {
+        return new SyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse>(request, VpcMeta.deleteVpcTag, hcClient);
+    }
+
+    /**
      * 查询VPC路由列表
      * 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
      *
@@ -1184,6 +1624,28 @@ public class VpcClient {
     }
 
     /**
+     * 查询VPC项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListVpcTagsRequest 请求对象
+     * @return ListVpcTagsResponse
+     */
+    public ListVpcTagsResponse listVpcTags(ListVpcTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listVpcTags);
+    }
+
+    /**
+     * 查询VPC项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListVpcTagsRequest 请求对象
+     * @return SyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse>
+     */
+    public SyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse> listVpcTagsInvoker(ListVpcTagsRequest request) {
+        return new SyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse>(request, VpcMeta.listVpcTags, hcClient);
+    }
+
+    /**
      * 查询VPC列表
      * 查询虚拟私有云列表。
      *
@@ -1203,6 +1665,28 @@ public class VpcClient {
      */
     public SyncInvoker<ListVpcsRequest, ListVpcsResponse> listVpcsInvoker(ListVpcsRequest request) {
         return new SyncInvoker<ListVpcsRequest, ListVpcsResponse>(request, VpcMeta.listVpcs, hcClient);
+    }
+
+    /**
+     * 查询VPC资源实例
+     * 使用标签过滤实例。
+     *
+     * @param ListVpcsByTagsRequest 请求对象
+     * @return ListVpcsByTagsResponse
+     */
+    public ListVpcsByTagsResponse listVpcsByTags(ListVpcsByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listVpcsByTags);
+    }
+
+    /**
+     * 查询VPC资源实例
+     * 使用标签过滤实例。
+     *
+     * @param ListVpcsByTagsRequest 请求对象
+     * @return SyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse>
+     */
+    public SyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse> listVpcsByTagsInvoker(ListVpcsByTagsRequest request) {
+        return new SyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse>(request, VpcMeta.listVpcsByTags, hcClient);
     }
 
     /**
@@ -1247,6 +1731,28 @@ public class VpcClient {
      */
     public SyncInvoker<ShowVpcRouteRequest, ShowVpcRouteResponse> showVpcRouteInvoker(ShowVpcRouteRequest request) {
         return new SyncInvoker<ShowVpcRouteRequest, ShowVpcRouteResponse>(request, VpcMeta.showVpcRoute, hcClient);
+    }
+
+    /**
+     * 查询VPC资源标签
+     * 查询指定VPC实例的标签信息
+     *
+     * @param ShowVpcTagsRequest 请求对象
+     * @return ShowVpcTagsResponse
+     */
+    public ShowVpcTagsResponse showVpcTags(ShowVpcTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showVpcTags);
+    }
+
+    /**
+     * 查询VPC资源标签
+     * 查询指定VPC实例的标签信息
+     *
+     * @param ShowVpcTagsRequest 请求对象
+     * @return SyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse>
+     */
+    public SyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse> showVpcTagsInvoker(ShowVpcTagsRequest request) {
+        return new SyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse>(request, VpcMeta.showVpcTags, hcClient);
     }
 
     /**

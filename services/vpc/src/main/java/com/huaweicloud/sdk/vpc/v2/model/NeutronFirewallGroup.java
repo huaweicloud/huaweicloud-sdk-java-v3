@@ -237,12 +237,15 @@ public class NeutronFirewallGroup  {
 
     
     public NeutronFirewallGroup addPortsItem(String portsItem) {
+        if(this.ports == null) {
+            this.ports = new ArrayList<>();
+        }
         this.ports.add(portsItem);
         return this;
     }
 
     public NeutronFirewallGroup withPorts(Consumer<List<String>> portsSetter) {
-        if(this.ports == null ){
+        if(this.ports == null) {
             this.ports = new ArrayList<>();
         }
         portsSetter.accept(this.ports);

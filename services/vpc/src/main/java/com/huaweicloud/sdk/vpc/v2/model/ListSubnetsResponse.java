@@ -35,12 +35,15 @@ public class ListSubnetsResponse extends SdkResponse {
 
     
     public ListSubnetsResponse addSubnetsItem(Subnet subnetsItem) {
+        if(this.subnets == null) {
+            this.subnets = new ArrayList<>();
+        }
         this.subnets.add(subnetsItem);
         return this;
     }
 
     public ListSubnetsResponse withSubnets(Consumer<List<Subnet>> subnetsSetter) {
-        if(this.subnets == null ){
+        if(this.subnets == null) {
             this.subnets = new ArrayList<>();
         }
         subnetsSetter.accept(this.subnets);

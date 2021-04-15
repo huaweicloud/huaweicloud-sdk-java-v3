@@ -74,12 +74,15 @@ public class UpdatePortOption  {
 
     
     public UpdatePortOption addSecurityGroupsItem(String securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public UpdatePortOption withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -107,12 +110,15 @@ public class UpdatePortOption  {
 
     
     public UpdatePortOption addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
+        if(this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
         this.allowedAddressPairs.add(allowedAddressPairsItem);
         return this;
     }
 
     public UpdatePortOption withAllowedAddressPairs(Consumer<List<AllowedAddressPair>> allowedAddressPairsSetter) {
-        if(this.allowedAddressPairs == null ){
+        if(this.allowedAddressPairs == null) {
             this.allowedAddressPairs = new ArrayList<>();
         }
         allowedAddressPairsSetter.accept(this.allowedAddressPairs);
@@ -140,12 +146,15 @@ public class UpdatePortOption  {
 
     
     public UpdatePortOption addExtraDhcpOptsItem(ExtraDhcpOpt extraDhcpOptsItem) {
+        if(this.extraDhcpOpts == null) {
+            this.extraDhcpOpts = new ArrayList<>();
+        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
 
     public UpdatePortOption withExtraDhcpOpts(Consumer<List<ExtraDhcpOpt>> extraDhcpOptsSetter) {
-        if(this.extraDhcpOpts == null ){
+        if(this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         extraDhcpOptsSetter.accept(this.extraDhcpOpts);

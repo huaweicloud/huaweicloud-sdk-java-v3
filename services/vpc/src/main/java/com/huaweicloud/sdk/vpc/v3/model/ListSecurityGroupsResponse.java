@@ -48,12 +48,15 @@ public class ListSecurityGroupsResponse extends SdkResponse {
 
     
     public ListSecurityGroupsResponse addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public ListSecurityGroupsResponse withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);

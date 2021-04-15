@@ -124,12 +124,15 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListSubNetworkInterfacesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -157,12 +160,15 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addVirsubnetIdItem(String virsubnetIdItem) {
+        if(this.virsubnetId == null) {
+            this.virsubnetId = new ArrayList<>();
+        }
         this.virsubnetId.add(virsubnetIdItem);
         return this;
     }
 
     public ListSubNetworkInterfacesRequest withVirsubnetId(Consumer<List<String>> virsubnetIdSetter) {
-        if(this.virsubnetId == null ){
+        if(this.virsubnetId == null) {
             this.virsubnetId = new ArrayList<>();
         }
         virsubnetIdSetter.accept(this.virsubnetId);
@@ -190,12 +196,15 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addPrivateIpAddressItem(String privateIpAddressItem) {
+        if(this.privateIpAddress == null) {
+            this.privateIpAddress = new ArrayList<>();
+        }
         this.privateIpAddress.add(privateIpAddressItem);
         return this;
     }
 
     public ListSubNetworkInterfacesRequest withPrivateIpAddress(Consumer<List<String>> privateIpAddressSetter) {
-        if(this.privateIpAddress == null ){
+        if(this.privateIpAddress == null) {
             this.privateIpAddress = new ArrayList<>();
         }
         privateIpAddressSetter.accept(this.privateIpAddress);
@@ -223,12 +232,15 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addMacAddressItem(String macAddressItem) {
+        if(this.macAddress == null) {
+            this.macAddress = new ArrayList<>();
+        }
         this.macAddress.add(macAddressItem);
         return this;
     }
 
     public ListSubNetworkInterfacesRequest withMacAddress(Consumer<List<String>> macAddressSetter) {
-        if(this.macAddress == null ){
+        if(this.macAddress == null) {
             this.macAddress = new ArrayList<>();
         }
         macAddressSetter.accept(this.macAddress);
@@ -256,12 +268,15 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addVpcIdItem(String vpcIdItem) {
+        if(this.vpcId == null) {
+            this.vpcId = new ArrayList<>();
+        }
         this.vpcId.add(vpcIdItem);
         return this;
     }
 
     public ListSubNetworkInterfacesRequest withVpcId(Consumer<List<String>> vpcIdSetter) {
-        if(this.vpcId == null ){
+        if(this.vpcId == null) {
             this.vpcId = new ArrayList<>();
         }
         vpcIdSetter.accept(this.vpcId);
@@ -289,12 +304,15 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListSubNetworkInterfacesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -322,12 +340,15 @@ public class ListSubNetworkInterfacesRequest  {
 
     
     public ListSubNetworkInterfacesRequest addParentIdItem(String parentIdItem) {
+        if(this.parentId == null) {
+            this.parentId = new ArrayList<>();
+        }
         this.parentId.add(parentIdItem);
         return this;
     }
 
     public ListSubNetworkInterfacesRequest withParentId(Consumer<List<String>> parentIdSetter) {
-        if(this.parentId == null ){
+        if(this.parentId == null) {
             this.parentId = new ArrayList<>();
         }
         parentIdSetter.accept(this.parentId);

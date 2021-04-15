@@ -477,12 +477,15 @@ public class Subnet  {
 
     
     public Subnet addDnsListItem(String dnsListItem) {
+        if(this.dnsList == null) {
+            this.dnsList = new ArrayList<>();
+        }
         this.dnsList.add(dnsListItem);
         return this;
     }
 
     public Subnet withDnsList(Consumer<List<String>> dnsListSetter) {
-        if(this.dnsList == null ){
+        if(this.dnsList == null) {
             this.dnsList = new ArrayList<>();
         }
         dnsListSetter.accept(this.dnsList);
@@ -642,12 +645,15 @@ public class Subnet  {
 
     
     public Subnet addExtraDhcpOptsItem(ExtraDhcpOption extraDhcpOptsItem) {
+        if(this.extraDhcpOpts == null) {
+            this.extraDhcpOpts = new ArrayList<>();
+        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
 
     public Subnet withExtraDhcpOpts(Consumer<List<ExtraDhcpOption>> extraDhcpOptsSetter) {
-        if(this.extraDhcpOpts == null ){
+        if(this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         extraDhcpOptsSetter.accept(this.extraDhcpOpts);

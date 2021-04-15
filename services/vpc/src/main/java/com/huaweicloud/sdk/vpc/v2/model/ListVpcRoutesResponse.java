@@ -42,12 +42,15 @@ public class ListVpcRoutesResponse extends SdkResponse {
 
     
     public ListVpcRoutesResponse addRoutesItem(VpcRoute routesItem) {
+        if(this.routes == null) {
+            this.routes = new ArrayList<>();
+        }
         this.routes.add(routesItem);
         return this;
     }
 
     public ListVpcRoutesResponse withRoutes(Consumer<List<VpcRoute>> routesSetter) {
-        if(this.routes == null ){
+        if(this.routes == null) {
             this.routes = new ArrayList<>();
         }
         routesSetter.accept(this.routes);
@@ -75,12 +78,15 @@ public class ListVpcRoutesResponse extends SdkResponse {
 
     
     public ListVpcRoutesResponse addRoutesLinksItem(NeutronPageLink routesLinksItem) {
+        if(this.routesLinks == null) {
+            this.routesLinks = new ArrayList<>();
+        }
         this.routesLinks.add(routesLinksItem);
         return this;
     }
 
     public ListVpcRoutesResponse withRoutesLinks(Consumer<List<NeutronPageLink>> routesLinksSetter) {
-        if(this.routesLinks == null ){
+        if(this.routesLinks == null) {
             this.routesLinks = new ArrayList<>();
         }
         routesLinksSetter.accept(this.routesLinks);

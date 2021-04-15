@@ -63,12 +63,15 @@ public class BatchCreateSubNetworkInterfaceResponse extends SdkResponse {
 
     
     public BatchCreateSubNetworkInterfaceResponse addSubNetworkInterfacesItem(SubNetworkInterface subNetworkInterfacesItem) {
+        if(this.subNetworkInterfaces == null) {
+            this.subNetworkInterfaces = new ArrayList<>();
+        }
         this.subNetworkInterfaces.add(subNetworkInterfacesItem);
         return this;
     }
 
     public BatchCreateSubNetworkInterfaceResponse withSubNetworkInterfaces(Consumer<List<SubNetworkInterface>> subNetworkInterfacesSetter) {
-        if(this.subNetworkInterfaces == null ){
+        if(this.subNetworkInterfaces == null) {
             this.subNetworkInterfaces = new ArrayList<>();
         }
         subNetworkInterfacesSetter.accept(this.subNetworkInterfaces);

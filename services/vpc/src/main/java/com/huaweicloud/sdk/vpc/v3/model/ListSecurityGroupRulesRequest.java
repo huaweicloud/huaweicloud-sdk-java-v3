@@ -124,12 +124,15 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListSecurityGroupRulesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -157,12 +160,15 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addSecurityGroupIdItem(String securityGroupIdItem) {
+        if(this.securityGroupId == null) {
+            this.securityGroupId = new ArrayList<>();
+        }
         this.securityGroupId.add(securityGroupIdItem);
         return this;
     }
 
     public ListSecurityGroupRulesRequest withSecurityGroupId(Consumer<List<String>> securityGroupIdSetter) {
-        if(this.securityGroupId == null ){
+        if(this.securityGroupId == null) {
             this.securityGroupId = new ArrayList<>();
         }
         securityGroupIdSetter.accept(this.securityGroupId);
@@ -190,12 +196,15 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addProtocolItem(String protocolItem) {
+        if(this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
         this.protocol.add(protocolItem);
         return this;
     }
 
     public ListSecurityGroupRulesRequest withProtocol(Consumer<List<String>> protocolSetter) {
-        if(this.protocol == null ){
+        if(this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         protocolSetter.accept(this.protocol);
@@ -223,12 +232,15 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListSecurityGroupRulesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -256,12 +268,15 @@ public class ListSecurityGroupRulesRequest  {
 
     
     public ListSecurityGroupRulesRequest addRemoteGroupIdItem(String remoteGroupIdItem) {
+        if(this.remoteGroupId == null) {
+            this.remoteGroupId = new ArrayList<>();
+        }
         this.remoteGroupId.add(remoteGroupIdItem);
         return this;
     }
 
     public ListSecurityGroupRulesRequest withRemoteGroupId(Consumer<List<String>> remoteGroupIdSetter) {
-        if(this.remoteGroupId == null ){
+        if(this.remoteGroupId == null) {
             this.remoteGroupId = new ArrayList<>();
         }
         remoteGroupIdSetter.accept(this.remoteGroupId);

@@ -42,6 +42,50 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 批量创建子网资源标签
+     * 为指定的子网资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateSubnetTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateSubnetTagsResponse>
+     */
+    public CompletableFuture<BatchCreateSubnetTagsResponse> batchCreateSubnetTagsAsync(BatchCreateSubnetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateSubnetTags);
+    }
+
+    /**
+     * 批量创建子网资源标签
+     * 为指定的子网资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateSubnetTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> batchCreateSubnetTagsAsyncInvoker(BatchCreateSubnetTagsRequest request) {
+        return new AsyncInvoker<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse>(request, VpcMeta.batchCreateSubnetTags, hcClient);
+    }
+
+    /**
+     * 批量删除子网资源标签
+     * 为指定的子网资源实例批量删除标签 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteSubnetTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSubnetTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteSubnetTagsResponse> batchDeleteSubnetTagsAsync(BatchDeleteSubnetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchDeleteSubnetTags);
+    }
+
+    /**
+     * 批量删除子网资源标签
+     * 为指定的子网资源实例批量删除标签 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteSubnetTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> batchDeleteSubnetTagsAsyncInvoker(BatchDeleteSubnetTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse>(request, VpcMeta.batchDeleteSubnetTags, hcClient);
+    }
+
+    /**
      * 创建端口
      * 创建端口。
      *
@@ -127,6 +171,28 @@ public class VpcAsyncClient {
      */
     public AsyncInvoker<CreateSubnetRequest, CreateSubnetResponse> createSubnetAsyncInvoker(CreateSubnetRequest request) {
         return new AsyncInvoker<CreateSubnetRequest, CreateSubnetResponse>(request, VpcMeta.createSubnet, hcClient);
+    }
+
+    /**
+     * 创建子网资源标签
+     * 给指定子网资源实例增加标签信息。 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateSubnetTagRequest 请求对象
+     * @return CompletableFuture<CreateSubnetTagResponse>
+     */
+    public CompletableFuture<CreateSubnetTagResponse> createSubnetTagAsync(CreateSubnetTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createSubnetTag);
+    }
+
+    /**
+     * 创建子网资源标签
+     * 给指定子网资源实例增加标签信息。 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateSubnetTagRequest 请求对象
+     * @return AsyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse>
+     */
+    public AsyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse> createSubnetTagAsyncInvoker(CreateSubnetTagRequest request) {
+        return new AsyncInvoker<CreateSubnetTagRequest, CreateSubnetTagResponse>(request, VpcMeta.createSubnetTag, hcClient);
     }
 
     /**
@@ -240,6 +306,28 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 删除子网资源标签
+     * 删除指定子网资源实例的标签信息。 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteSubnetTagRequest 请求对象
+     * @return CompletableFuture<DeleteSubnetTagResponse>
+     */
+    public CompletableFuture<DeleteSubnetTagResponse> deleteSubnetTagAsync(DeleteSubnetTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteSubnetTag);
+    }
+
+    /**
+     * 删除子网资源标签
+     * 删除指定子网资源实例的标签信息。 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteSubnetTagRequest 请求对象
+     * @return AsyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse>
+     */
+    public AsyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse> deleteSubnetTagAsyncInvoker(DeleteSubnetTagRequest request) {
+        return new AsyncInvoker<DeleteSubnetTagRequest, DeleteSubnetTagResponse>(request, VpcMeta.deleteSubnetTag, hcClient);
+    }
+
+    /**
      * 删除对等连接
      * 删除对等连接。 可以在在本端或对端任何一端删除对等连接。
      *
@@ -328,6 +416,28 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 查询子网项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListSubnetTagsRequest 请求对象
+     * @return CompletableFuture<ListSubnetTagsResponse>
+     */
+    public CompletableFuture<ListSubnetTagsResponse> listSubnetTagsAsync(ListSubnetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listSubnetTags);
+    }
+
+    /**
+     * 查询子网项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListSubnetTagsRequest 请求对象
+     * @return AsyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse>
+     */
+    public AsyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse> listSubnetTagsAsyncInvoker(ListSubnetTagsRequest request) {
+        return new AsyncInvoker<ListSubnetTagsRequest, ListSubnetTagsResponse>(request, VpcMeta.listSubnetTags, hcClient);
+    }
+
+    /**
      * 查询子网列表
      * 查询子网列表
      *
@@ -347,6 +457,28 @@ public class VpcAsyncClient {
      */
     public AsyncInvoker<ListSubnetsRequest, ListSubnetsResponse> listSubnetsAsyncInvoker(ListSubnetsRequest request) {
         return new AsyncInvoker<ListSubnetsRequest, ListSubnetsResponse>(request, VpcMeta.listSubnets, hcClient);
+    }
+
+    /**
+     * 查询子网资源实例
+     * 使用标签过滤实例
+     *
+     * @param ListSubnetsByTagsRequest 请求对象
+     * @return CompletableFuture<ListSubnetsByTagsResponse>
+     */
+    public CompletableFuture<ListSubnetsByTagsResponse> listSubnetsByTagsAsync(ListSubnetsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listSubnetsByTags);
+    }
+
+    /**
+     * 查询子网资源实例
+     * 使用标签过滤实例
+     *
+     * @param ListSubnetsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse>
+     */
+    public AsyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> listSubnetsByTagsAsyncInvoker(ListSubnetsByTagsRequest request) {
+        return new AsyncInvoker<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse>(request, VpcMeta.listSubnetsByTags, hcClient);
     }
 
     /**
@@ -501,6 +633,28 @@ public class VpcAsyncClient {
      */
     public AsyncInvoker<ShowSubnetRequest, ShowSubnetResponse> showSubnetAsyncInvoker(ShowSubnetRequest request) {
         return new AsyncInvoker<ShowSubnetRequest, ShowSubnetResponse>(request, VpcMeta.showSubnet, hcClient);
+    }
+
+    /**
+     * 查询子网资源标签
+     * 查询指定子网实例的标签信息。
+     *
+     * @param ShowSubnetTagsRequest 请求对象
+     * @return CompletableFuture<ShowSubnetTagsResponse>
+     */
+    public CompletableFuture<ShowSubnetTagsResponse> showSubnetTagsAsync(ShowSubnetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showSubnetTags);
+    }
+
+    /**
+     * 查询子网资源标签
+     * 查询指定子网实例的标签信息。
+     *
+     * @param ShowSubnetTagsRequest 请求对象
+     * @return AsyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse>
+     */
+    public AsyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse> showSubnetTagsAsyncInvoker(ShowSubnetTagsRequest request) {
+        return new AsyncInvoker<ShowSubnetTagsRequest, ShowSubnetTagsResponse>(request, VpcMeta.showSubnetTags, hcClient);
     }
 
     /**
@@ -699,6 +853,204 @@ public class VpcAsyncClient {
      */
     public AsyncInvoker<ShowPrivateipRequest, ShowPrivateipResponse> showPrivateipAsyncInvoker(ShowPrivateipRequest request) {
         return new AsyncInvoker<ShowPrivateipRequest, ShowPrivateipResponse>(request, VpcMeta.showPrivateip, hcClient);
+    }
+
+    /**
+     * 创建安全组
+     * 创建安全组
+     *
+     * @param NeutronCreateSecurityGroupRequest 请求对象
+     * @return CompletableFuture<NeutronCreateSecurityGroupResponse>
+     */
+    public CompletableFuture<NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroupAsync(NeutronCreateSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronCreateSecurityGroup);
+    }
+
+    /**
+     * 创建安全组
+     * 创建安全组
+     *
+     * @param NeutronCreateSecurityGroupRequest 请求对象
+     * @return AsyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse>
+     */
+    public AsyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroupAsyncInvoker(NeutronCreateSecurityGroupRequest request) {
+        return new AsyncInvoker<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse>(request, VpcMeta.neutronCreateSecurityGroup, hcClient);
+    }
+
+    /**
+     * 创建安全组规则
+     * 创建安全组规则
+     *
+     * @param NeutronCreateSecurityGroupRuleRequest 请求对象
+     * @return CompletableFuture<NeutronCreateSecurityGroupRuleResponse>
+     */
+    public CompletableFuture<NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRuleAsync(NeutronCreateSecurityGroupRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronCreateSecurityGroupRule);
+    }
+
+    /**
+     * 创建安全组规则
+     * 创建安全组规则
+     *
+     * @param NeutronCreateSecurityGroupRuleRequest 请求对象
+     * @return AsyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse>
+     */
+    public AsyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRuleAsyncInvoker(NeutronCreateSecurityGroupRuleRequest request) {
+        return new AsyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse>(request, VpcMeta.neutronCreateSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 删除安全组
+     * 删除安全组
+     *
+     * @param NeutronDeleteSecurityGroupRequest 请求对象
+     * @return CompletableFuture<NeutronDeleteSecurityGroupResponse>
+     */
+    public CompletableFuture<NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroupAsync(NeutronDeleteSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronDeleteSecurityGroup);
+    }
+
+    /**
+     * 删除安全组
+     * 删除安全组
+     *
+     * @param NeutronDeleteSecurityGroupRequest 请求对象
+     * @return AsyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse>
+     */
+    public AsyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroupAsyncInvoker(NeutronDeleteSecurityGroupRequest request) {
+        return new AsyncInvoker<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse>(request, VpcMeta.neutronDeleteSecurityGroup, hcClient);
+    }
+
+    /**
+     * 删除安全组规则
+     * 删除安全组规则
+     *
+     * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
+     * @return CompletableFuture<NeutronDeleteSecurityGroupRuleResponse>
+     */
+    public CompletableFuture<NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRuleAsync(NeutronDeleteSecurityGroupRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronDeleteSecurityGroupRule);
+    }
+
+    /**
+     * 删除安全组规则
+     * 删除安全组规则
+     *
+     * @param NeutronDeleteSecurityGroupRuleRequest 请求对象
+     * @return AsyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse>
+     */
+    public AsyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRuleAsyncInvoker(NeutronDeleteSecurityGroupRuleRequest request) {
+        return new AsyncInvoker<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse>(request, VpcMeta.neutronDeleteSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 查询安全组规则列表
+     * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
+     *
+     * @param NeutronListSecurityGroupRulesRequest 请求对象
+     * @return CompletableFuture<NeutronListSecurityGroupRulesResponse>
+     */
+    public CompletableFuture<NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRulesAsync(NeutronListSecurityGroupRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronListSecurityGroupRules);
+    }
+
+    /**
+     * 查询安全组规则列表
+     * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
+     *
+     * @param NeutronListSecurityGroupRulesRequest 请求对象
+     * @return AsyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse>
+     */
+    public AsyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRulesAsyncInvoker(NeutronListSecurityGroupRulesRequest request) {
+        return new AsyncInvoker<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse>(request, VpcMeta.neutronListSecurityGroupRules, hcClient);
+    }
+
+    /**
+     * 查询安全组列表
+     * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+     *
+     * @param NeutronListSecurityGroupsRequest 请求对象
+     * @return CompletableFuture<NeutronListSecurityGroupsResponse>
+     */
+    public CompletableFuture<NeutronListSecurityGroupsResponse> neutronListSecurityGroupsAsync(NeutronListSecurityGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronListSecurityGroups);
+    }
+
+    /**
+     * 查询安全组列表
+     * 查询提交请求租户的所有安全组，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+     *
+     * @param NeutronListSecurityGroupsRequest 请求对象
+     * @return AsyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse>
+     */
+    public AsyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> neutronListSecurityGroupsAsyncInvoker(NeutronListSecurityGroupsRequest request) {
+        return new AsyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse>(request, VpcMeta.neutronListSecurityGroups, hcClient);
+    }
+
+    /**
+     * 查询安全组
+     * 查询安全组详情
+     *
+     * @param NeutronShowSecurityGroupRequest 请求对象
+     * @return CompletableFuture<NeutronShowSecurityGroupResponse>
+     */
+    public CompletableFuture<NeutronShowSecurityGroupResponse> neutronShowSecurityGroupAsync(NeutronShowSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronShowSecurityGroup);
+    }
+
+    /**
+     * 查询安全组
+     * 查询安全组详情
+     *
+     * @param NeutronShowSecurityGroupRequest 请求对象
+     * @return AsyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse>
+     */
+    public AsyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> neutronShowSecurityGroupAsyncInvoker(NeutronShowSecurityGroupRequest request) {
+        return new AsyncInvoker<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse>(request, VpcMeta.neutronShowSecurityGroup, hcClient);
+    }
+
+    /**
+     * 查询安全组规则
+     * 查询安全组规则详情。
+     *
+     * @param NeutronShowSecurityGroupRuleRequest 请求对象
+     * @return CompletableFuture<NeutronShowSecurityGroupRuleResponse>
+     */
+    public CompletableFuture<NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRuleAsync(NeutronShowSecurityGroupRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronShowSecurityGroupRule);
+    }
+
+    /**
+     * 查询安全组规则
+     * 查询安全组规则详情。
+     *
+     * @param NeutronShowSecurityGroupRuleRequest 请求对象
+     * @return AsyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse>
+     */
+    public AsyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRuleAsyncInvoker(NeutronShowSecurityGroupRuleRequest request) {
+        return new AsyncInvoker<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse>(request, VpcMeta.neutronShowSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 更新安全组
+     * 更新安全组
+     *
+     * @param NeutronUpdateSecurityGroupRequest 请求对象
+     * @return CompletableFuture<NeutronUpdateSecurityGroupResponse>
+     */
+    public CompletableFuture<NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroupAsync(NeutronUpdateSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.neutronUpdateSecurityGroup);
+    }
+
+    /**
+     * 更新安全组
+     * 更新安全组
+     *
+     * @param NeutronUpdateSecurityGroupRequest 请求对象
+     * @return AsyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse>
+     */
+    public AsyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroupAsyncInvoker(NeutronUpdateSecurityGroupRequest request) {
+        return new AsyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse>(request, VpcMeta.neutronUpdateSecurityGroup, hcClient);
     }
 
     /**
@@ -1076,6 +1428,50 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 批量创建VPC资源标签
+     * 为指定的VPC资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateVpcTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateVpcTagsResponse>
+     */
+    public CompletableFuture<BatchCreateVpcTagsResponse> batchCreateVpcTagsAsync(BatchCreateVpcTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateVpcTags);
+    }
+
+    /**
+     * 批量创建VPC资源标签
+     * 为指定的VPC资源实例批量添加标签。 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+     *
+     * @param BatchCreateVpcTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> batchCreateVpcTagsAsyncInvoker(BatchCreateVpcTagsRequest request) {
+        return new AsyncInvoker<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse>(request, VpcMeta.batchCreateVpcTags, hcClient);
+    }
+
+    /**
+     * 批量删除VPC资源标签
+     * 为指定的VPC资源实例批量删除标签。 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteVpcTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteVpcTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteVpcTagsResponse> batchDeleteVpcTagsAsync(BatchDeleteVpcTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchDeleteVpcTags);
+    }
+
+    /**
+     * 批量删除VPC资源标签
+     * 为指定的VPC资源实例批量删除标签。 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchDeleteVpcTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> batchDeleteVpcTagsAsyncInvoker(BatchDeleteVpcTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse>(request, VpcMeta.batchDeleteVpcTags, hcClient);
+    }
+
+    /**
      * 创建VPC
      * 创建虚拟私有云。
      *
@@ -1095,6 +1491,28 @@ public class VpcAsyncClient {
      */
     public AsyncInvoker<CreateVpcRequest, CreateVpcResponse> createVpcAsyncInvoker(CreateVpcRequest request) {
         return new AsyncInvoker<CreateVpcRequest, CreateVpcResponse>(request, VpcMeta.createVpc, hcClient);
+    }
+
+    /**
+     * 创建VPC资源标签
+     * 给指定VPC资源实例增加标签信息 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateVpcResourceTagRequest 请求对象
+     * @return CompletableFuture<CreateVpcResourceTagResponse>
+     */
+    public CompletableFuture<CreateVpcResourceTagResponse> createVpcResourceTagAsync(CreateVpcResourceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createVpcResourceTag);
+    }
+
+    /**
+     * 创建VPC资源标签
+     * 给指定VPC资源实例增加标签信息 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateVpcResourceTagRequest 请求对象
+     * @return AsyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse>
+     */
+    public AsyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> createVpcResourceTagAsyncInvoker(CreateVpcResourceTagRequest request) {
+        return new AsyncInvoker<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse>(request, VpcMeta.createVpcResourceTag, hcClient);
     }
 
     /**
@@ -1164,6 +1582,28 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 删除VPC资源标签
+     * 删除指定VPC资源实例的标签信息 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteVpcTagRequest 请求对象
+     * @return CompletableFuture<DeleteVpcTagResponse>
+     */
+    public CompletableFuture<DeleteVpcTagResponse> deleteVpcTagAsync(DeleteVpcTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteVpcTag);
+    }
+
+    /**
+     * 删除VPC资源标签
+     * 删除指定VPC资源实例的标签信息 该接口为幂等接口：删除的key不存在报404，Key不能为空或者空字符串
+     *
+     * @param DeleteVpcTagRequest 请求对象
+     * @return AsyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse>
+     */
+    public AsyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse> deleteVpcTagAsyncInvoker(DeleteVpcTagRequest request) {
+        return new AsyncInvoker<DeleteVpcTagRequest, DeleteVpcTagResponse>(request, VpcMeta.deleteVpcTag, hcClient);
+    }
+
+    /**
      * 查询VPC路由列表
      * 查询提交请求的租户的所有路由列表，并根据过滤条件进行过滤。
      *
@@ -1186,6 +1626,28 @@ public class VpcAsyncClient {
     }
 
     /**
+     * 查询VPC项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListVpcTagsRequest 请求对象
+     * @return CompletableFuture<ListVpcTagsResponse>
+     */
+    public CompletableFuture<ListVpcTagsResponse> listVpcTagsAsync(ListVpcTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listVpcTags);
+    }
+
+    /**
+     * 查询VPC项目标签
+     * 查询租户在指定区域和实例类型的所有标签集合
+     *
+     * @param ListVpcTagsRequest 请求对象
+     * @return AsyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse>
+     */
+    public AsyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse> listVpcTagsAsyncInvoker(ListVpcTagsRequest request) {
+        return new AsyncInvoker<ListVpcTagsRequest, ListVpcTagsResponse>(request, VpcMeta.listVpcTags, hcClient);
+    }
+
+    /**
      * 查询VPC列表
      * 查询虚拟私有云列表。
      *
@@ -1205,6 +1667,28 @@ public class VpcAsyncClient {
      */
     public AsyncInvoker<ListVpcsRequest, ListVpcsResponse> listVpcsAsyncInvoker(ListVpcsRequest request) {
         return new AsyncInvoker<ListVpcsRequest, ListVpcsResponse>(request, VpcMeta.listVpcs, hcClient);
+    }
+
+    /**
+     * 查询VPC资源实例
+     * 使用标签过滤实例。
+     *
+     * @param ListVpcsByTagsRequest 请求对象
+     * @return CompletableFuture<ListVpcsByTagsResponse>
+     */
+    public CompletableFuture<ListVpcsByTagsResponse> listVpcsByTagsAsync(ListVpcsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listVpcsByTags);
+    }
+
+    /**
+     * 查询VPC资源实例
+     * 使用标签过滤实例。
+     *
+     * @param ListVpcsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse>
+     */
+    public AsyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse> listVpcsByTagsAsyncInvoker(ListVpcsByTagsRequest request) {
+        return new AsyncInvoker<ListVpcsByTagsRequest, ListVpcsByTagsResponse>(request, VpcMeta.listVpcsByTags, hcClient);
     }
 
     /**
@@ -1249,6 +1733,28 @@ public class VpcAsyncClient {
      */
     public AsyncInvoker<ShowVpcRouteRequest, ShowVpcRouteResponse> showVpcRouteAsyncInvoker(ShowVpcRouteRequest request) {
         return new AsyncInvoker<ShowVpcRouteRequest, ShowVpcRouteResponse>(request, VpcMeta.showVpcRoute, hcClient);
+    }
+
+    /**
+     * 查询VPC资源标签
+     * 查询指定VPC实例的标签信息
+     *
+     * @param ShowVpcTagsRequest 请求对象
+     * @return CompletableFuture<ShowVpcTagsResponse>
+     */
+    public CompletableFuture<ShowVpcTagsResponse> showVpcTagsAsync(ShowVpcTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showVpcTags);
+    }
+
+    /**
+     * 查询VPC资源标签
+     * 查询指定VPC实例的标签信息
+     *
+     * @param ShowVpcTagsRequest 请求对象
+     * @return AsyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse>
+     */
+    public AsyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse> showVpcTagsAsyncInvoker(ShowVpcTagsRequest request) {
+        return new AsyncInvoker<ShowVpcTagsRequest, ShowVpcTagsResponse>(request, VpcMeta.showVpcTags, hcClient);
     }
 
     /**

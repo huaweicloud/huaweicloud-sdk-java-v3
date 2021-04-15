@@ -33,12 +33,15 @@ public class CreatePrivateipRequestBody  {
 
     
     public CreatePrivateipRequestBody addPrivateipsItem(CreatePrivateipOption privateipsItem) {
+        if(this.privateips == null) {
+            this.privateips = new ArrayList<>();
+        }
         this.privateips.add(privateipsItem);
         return this;
     }
 
     public CreatePrivateipRequestBody withPrivateips(Consumer<List<CreatePrivateipOption>> privateipsSetter) {
-        if(this.privateips == null ){
+        if(this.privateips == null) {
             this.privateips = new ArrayList<>();
         }
         privateipsSetter.accept(this.privateips);

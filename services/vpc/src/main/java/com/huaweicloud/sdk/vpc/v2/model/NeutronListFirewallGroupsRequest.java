@@ -112,12 +112,15 @@ public class NeutronListFirewallGroupsRequest  {
 
     
     public NeutronListFirewallGroupsRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public NeutronListFirewallGroupsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -145,12 +148,15 @@ public class NeutronListFirewallGroupsRequest  {
 
     
     public NeutronListFirewallGroupsRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public NeutronListFirewallGroupsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -178,12 +184,15 @@ public class NeutronListFirewallGroupsRequest  {
 
     
     public NeutronListFirewallGroupsRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public NeutronListFirewallGroupsRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);

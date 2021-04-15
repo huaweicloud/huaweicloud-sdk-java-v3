@@ -331,12 +331,15 @@ public class SubNetworkInterface  {
 
     
     public SubNetworkInterface addSecurityGroupsItem(String securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public SubNetworkInterface withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -364,12 +367,15 @@ public class SubNetworkInterface  {
 
     
     public SubNetworkInterface addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public SubNetworkInterface withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

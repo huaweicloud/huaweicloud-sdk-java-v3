@@ -42,12 +42,15 @@ public class NeutronListFirewallRulesResponse extends SdkResponse {
 
     
     public NeutronListFirewallRulesResponse addFirewallRulesItem(NeutronFirewallRule firewallRulesItem) {
+        if(this.firewallRules == null) {
+            this.firewallRules = new ArrayList<>();
+        }
         this.firewallRules.add(firewallRulesItem);
         return this;
     }
 
     public NeutronListFirewallRulesResponse withFirewallRules(Consumer<List<NeutronFirewallRule>> firewallRulesSetter) {
-        if(this.firewallRules == null ){
+        if(this.firewallRules == null) {
             this.firewallRules = new ArrayList<>();
         }
         firewallRulesSetter.accept(this.firewallRules);
@@ -75,12 +78,15 @@ public class NeutronListFirewallRulesResponse extends SdkResponse {
 
     
     public NeutronListFirewallRulesResponse addFirewallRulesLinksItem(NeutronPageLink firewallRulesLinksItem) {
+        if(this.firewallRulesLinks == null) {
+            this.firewallRulesLinks = new ArrayList<>();
+        }
         this.firewallRulesLinks.add(firewallRulesLinksItem);
         return this;
     }
 
     public NeutronListFirewallRulesResponse withFirewallRulesLinks(Consumer<List<NeutronPageLink>> firewallRulesLinksSetter) {
-        if(this.firewallRulesLinks == null ){
+        if(this.firewallRulesLinks == null) {
             this.firewallRulesLinks = new ArrayList<>();
         }
         firewallRulesLinksSetter.accept(this.firewallRulesLinks);

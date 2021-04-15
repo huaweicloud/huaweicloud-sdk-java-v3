@@ -127,12 +127,15 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addFixedIpsItem(FixedIp fixedIpsItem) {
+        if(this.fixedIps == null) {
+            this.fixedIps = new ArrayList<>();
+        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
 
     public CreatePortOption withFixedIps(Consumer<List<FixedIp>> fixedIpsSetter) {
-        if(this.fixedIps == null ){
+        if(this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);
@@ -182,12 +185,15 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addSecurityGroupsItem(String securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public CreatePortOption withSecurityGroups(Consumer<List<String>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -237,12 +243,15 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
+        if(this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
         this.allowedAddressPairs.add(allowedAddressPairsItem);
         return this;
     }
 
     public CreatePortOption withAllowedAddressPairs(Consumer<List<AllowedAddressPair>> allowedAddressPairsSetter) {
-        if(this.allowedAddressPairs == null ){
+        if(this.allowedAddressPairs == null) {
             this.allowedAddressPairs = new ArrayList<>();
         }
         allowedAddressPairsSetter.accept(this.allowedAddressPairs);
@@ -270,12 +279,15 @@ public class CreatePortOption  {
 
     
     public CreatePortOption addExtraDhcpOptsItem(ExtraDhcpOpt extraDhcpOptsItem) {
+        if(this.extraDhcpOpts == null) {
+            this.extraDhcpOpts = new ArrayList<>();
+        }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
         return this;
     }
 
     public CreatePortOption withExtraDhcpOpts(Consumer<List<ExtraDhcpOpt>> extraDhcpOptsSetter) {
-        if(this.extraDhcpOpts == null ){
+        if(this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         extraDhcpOptsSetter.accept(this.extraDhcpOpts);

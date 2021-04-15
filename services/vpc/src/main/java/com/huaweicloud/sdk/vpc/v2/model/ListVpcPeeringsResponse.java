@@ -42,12 +42,15 @@ public class ListVpcPeeringsResponse extends SdkResponse {
 
     
     public ListVpcPeeringsResponse addPeeringsItem(VpcPeering peeringsItem) {
+        if(this.peerings == null) {
+            this.peerings = new ArrayList<>();
+        }
         this.peerings.add(peeringsItem);
         return this;
     }
 
     public ListVpcPeeringsResponse withPeerings(Consumer<List<VpcPeering>> peeringsSetter) {
-        if(this.peerings == null ){
+        if(this.peerings == null) {
             this.peerings = new ArrayList<>();
         }
         peeringsSetter.accept(this.peerings);
@@ -75,12 +78,15 @@ public class ListVpcPeeringsResponse extends SdkResponse {
 
     
     public ListVpcPeeringsResponse addPeeringsLinksItem(NeutronPageLink peeringsLinksItem) {
+        if(this.peeringsLinks == null) {
+            this.peeringsLinks = new ArrayList<>();
+        }
         this.peeringsLinks.add(peeringsLinksItem);
         return this;
     }
 
     public ListVpcPeeringsResponse withPeeringsLinks(Consumer<List<NeutronPageLink>> peeringsLinksSetter) {
-        if(this.peeringsLinks == null ){
+        if(this.peeringsLinks == null) {
             this.peeringsLinks = new ArrayList<>();
         }
         peeringsLinksSetter.accept(this.peeringsLinks);
