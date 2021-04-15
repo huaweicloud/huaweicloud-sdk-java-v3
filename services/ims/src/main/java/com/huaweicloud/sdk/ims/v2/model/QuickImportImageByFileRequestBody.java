@@ -453,12 +453,15 @@ public class QuickImportImageByFileRequestBody  {
 
     
     public QuickImportImageByFileRequestBody addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public QuickImportImageByFileRequestBody withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -574,12 +577,15 @@ public class QuickImportImageByFileRequestBody  {
 
     
     public QuickImportImageByFileRequestBody addImageTagsItem(ResourceTag imageTagsItem) {
+        if(this.imageTags == null) {
+            this.imageTags = new ArrayList<>();
+        }
         this.imageTags.add(imageTagsItem);
         return this;
     }
 
     public QuickImportImageByFileRequestBody withImageTags(Consumer<List<ResourceTag>> imageTagsSetter) {
-        if(this.imageTags == null ){
+        if(this.imageTags == null) {
             this.imageTags = new ArrayList<>();
         }
         imageTagsSetter.accept(this.imageTags);

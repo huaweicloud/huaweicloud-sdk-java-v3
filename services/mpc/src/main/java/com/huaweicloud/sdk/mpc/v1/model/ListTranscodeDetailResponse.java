@@ -35,12 +35,15 @@ public class ListTranscodeDetailResponse extends SdkResponse {
 
     
     public ListTranscodeDetailResponse addTaskArrayItem(TaskDetailInfo taskArrayItem) {
+        if(this.taskArray == null) {
+            this.taskArray = new ArrayList<>();
+        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
 
     public ListTranscodeDetailResponse withTaskArray(Consumer<List<TaskDetailInfo>> taskArraySetter) {
-        if(this.taskArray == null ){
+        if(this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);

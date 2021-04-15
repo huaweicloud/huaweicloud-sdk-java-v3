@@ -215,12 +215,15 @@ public class TaskInfo  {
 
     
     public TaskInfo addOutputFileNameItem(String outputFileNameItem) {
+        if(this.outputFileName == null) {
+            this.outputFileName = new ArrayList<>();
+        }
         this.outputFileName.add(outputFileNameItem);
         return this;
     }
 
     public TaskInfo withOutputFileName(Consumer<List<String>> outputFileNameSetter) {
-        if(this.outputFileName == null ){
+        if(this.outputFileName == null) {
             this.outputFileName = new ArrayList<>();
         }
         outputFileNameSetter.accept(this.outputFileName);

@@ -122,12 +122,15 @@ public class PublicationRequestBase  {
 
     
     public PublicationRequestBase addDeptListItem(String deptListItem) {
+        if(this.deptList == null) {
+            this.deptList = new ArrayList<>();
+        }
         this.deptList.add(deptListItem);
         return this;
     }
 
     public PublicationRequestBase withDeptList(Consumer<List<String>> deptListSetter) {
-        if(this.deptList == null ){
+        if(this.deptList == null) {
             this.deptList = new ArrayList<>();
         }
         deptListSetter.accept(this.deptList);
@@ -155,12 +158,15 @@ public class PublicationRequestBase  {
 
     
     public PublicationRequestBase addDeviceListItem(String deviceListItem) {
+        if(this.deviceList == null) {
+            this.deviceList = new ArrayList<>();
+        }
         this.deviceList.add(deviceListItem);
         return this;
     }
 
     public PublicationRequestBase withDeviceList(Consumer<List<String>> deviceListSetter) {
-        if(this.deviceList == null ){
+        if(this.deviceList == null) {
             this.deviceList = new ArrayList<>();
         }
         deviceListSetter.accept(this.deviceList);

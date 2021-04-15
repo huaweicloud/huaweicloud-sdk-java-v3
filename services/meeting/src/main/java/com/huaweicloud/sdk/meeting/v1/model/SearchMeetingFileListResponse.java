@@ -120,12 +120,15 @@ public class SearchMeetingFileListResponse extends SdkResponse {
 
     
     public SearchMeetingFileListResponse addDataItem(ListMeetingFileResponseDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchMeetingFileListResponse withData(Consumer<List<ListMeetingFileResponseDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

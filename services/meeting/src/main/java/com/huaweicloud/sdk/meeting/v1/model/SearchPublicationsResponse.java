@@ -120,12 +120,15 @@ public class SearchPublicationsResponse extends SdkResponse {
 
     
     public SearchPublicationsResponse addDataItem(PublicationResponseBase dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchPublicationsResponse withData(Consumer<List<PublicationResponseBase>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

@@ -62,12 +62,15 @@ public class UpdateProgramRequestDTO  {
 
     
     public UpdateProgramRequestDTO addProgramItemListItem(ProgramItemRequestBase programItemListItem) {
+        if(this.programItemList == null) {
+            this.programItemList = new ArrayList<>();
+        }
         this.programItemList.add(programItemListItem);
         return this;
     }
 
     public UpdateProgramRequestDTO withProgramItemList(Consumer<List<ProgramItemRequestBase>> programItemListSetter) {
-        if(this.programItemList == null ){
+        if(this.programItemList == null) {
             this.programItemList = new ArrayList<>();
         }
         programItemListSetter.accept(this.programItemList);

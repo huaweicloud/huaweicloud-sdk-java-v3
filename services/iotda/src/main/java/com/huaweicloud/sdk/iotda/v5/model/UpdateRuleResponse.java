@@ -185,12 +185,15 @@ public class UpdateRuleResponse extends SdkResponse {
 
     
     public UpdateRuleResponse addActionsItem(RuleAction actionsItem) {
+        if(this.actions == null) {
+            this.actions = new ArrayList<>();
+        }
         this.actions.add(actionsItem);
         return this;
     }
 
     public UpdateRuleResponse withActions(Consumer<List<RuleAction>> actionsSetter) {
-        if(this.actions == null ){
+        if(this.actions == null) {
             this.actions = new ArrayList<>();
         }
         actionsSetter.accept(this.actions);
@@ -284,12 +287,15 @@ public class UpdateRuleResponse extends SdkResponse {
 
     
     public UpdateRuleResponse addEdgeNodeIdsItem(String edgeNodeIdsItem) {
+        if(this.edgeNodeIds == null) {
+            this.edgeNodeIds = new ArrayList<>();
+        }
         this.edgeNodeIds.add(edgeNodeIdsItem);
         return this;
     }
 
     public UpdateRuleResponse withEdgeNodeIds(Consumer<List<String>> edgeNodeIdsSetter) {
-        if(this.edgeNodeIds == null ){
+        if(this.edgeNodeIds == null) {
             this.edgeNodeIds = new ArrayList<>();
         }
         edgeNodeIdsSetter.accept(this.edgeNodeIds);

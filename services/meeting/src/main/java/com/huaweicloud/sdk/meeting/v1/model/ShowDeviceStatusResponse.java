@@ -35,12 +35,15 @@ public class ShowDeviceStatusResponse extends SdkResponse {
 
     
     public ShowDeviceStatusResponse addBodyItem(UserStatusDTO bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ShowDeviceStatusResponse withBody(Consumer<List<UserStatusDTO>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

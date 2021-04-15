@@ -222,12 +222,15 @@ public class ListUsersOfStreamRequest  {
 
     
     public ListUsersOfStreamRequest addIspItem(String ispItem) {
+        if(this.isp == null) {
+            this.isp = new ArrayList<>();
+        }
         this.isp.add(ispItem);
         return this;
     }
 
     public ListUsersOfStreamRequest withIsp(Consumer<List<String>> ispSetter) {
-        if(this.isp == null ){
+        if(this.isp == null) {
             this.isp = new ArrayList<>();
         }
         ispSetter.accept(this.isp);
@@ -255,12 +258,15 @@ public class ListUsersOfStreamRequest  {
 
     
     public ListUsersOfStreamRequest addRegionItem(String regionItem) {
+        if(this.region == null) {
+            this.region = new ArrayList<>();
+        }
         this.region.add(regionItem);
         return this;
     }
 
     public ListUsersOfStreamRequest withRegion(Consumer<List<String>> regionSetter) {
-        if(this.region == null ){
+        if(this.region == null) {
             this.region = new ArrayList<>();
         }
         regionSetter.accept(this.region);

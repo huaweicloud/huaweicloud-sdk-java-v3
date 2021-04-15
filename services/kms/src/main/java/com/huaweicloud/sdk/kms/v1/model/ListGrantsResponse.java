@@ -135,12 +135,15 @@ public class ListGrantsResponse extends SdkResponse {
 
     
     public ListGrantsResponse addGrantsItem(Grants grantsItem) {
+        if(this.grants == null) {
+            this.grants = new ArrayList<>();
+        }
         this.grants.add(grantsItem);
         return this;
     }
 
     public ListGrantsResponse withGrants(Consumer<List<Grants>> grantsSetter) {
-        if(this.grants == null ){
+        if(this.grants == null) {
             this.grants = new ArrayList<>();
         }
         grantsSetter.accept(this.grants);

@@ -250,12 +250,15 @@ public class Grants  {
 
     
     public Grants addOperationsItem(String operationsItem) {
+        if(this.operations == null) {
+            this.operations = new ArrayList<>();
+        }
         this.operations.add(operationsItem);
         return this;
     }
 
     public Grants withOperations(Consumer<List<String>> operationsSetter) {
-        if(this.operations == null ){
+        if(this.operations == null) {
             this.operations = new ArrayList<>();
         }
         operationsSetter.accept(this.operations);

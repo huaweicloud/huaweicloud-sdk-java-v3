@@ -35,12 +35,15 @@ public class CreateMeetingResponse extends SdkResponse {
 
     
     public CreateMeetingResponse addBodyItem(ConferenceInfo bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public CreateMeetingResponse withBody(Consumer<List<ConferenceInfo>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

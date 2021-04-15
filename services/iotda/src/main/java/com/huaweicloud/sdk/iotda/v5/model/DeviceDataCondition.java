@@ -89,12 +89,15 @@ public class DeviceDataCondition  {
 
     
     public DeviceDataCondition addFiltersItem(PropertyFilter filtersItem) {
+        if(this.filters == null) {
+            this.filters = new ArrayList<>();
+        }
         this.filters.add(filtersItem);
         return this;
     }
 
     public DeviceDataCondition withFilters(Consumer<List<PropertyFilter>> filtersSetter) {
-        if(this.filters == null ){
+        if(this.filters == null) {
             this.filters = new ArrayList<>();
         }
         filtersSetter.accept(this.filters);

@@ -41,12 +41,15 @@ public class ListSingleStreamBitrateResponse extends SdkResponse {
 
     
     public ListSingleStreamBitrateResponse addBitrateInfoListItem(V2BitrateInfo bitrateInfoListItem) {
+        if(this.bitrateInfoList == null) {
+            this.bitrateInfoList = new ArrayList<>();
+        }
         this.bitrateInfoList.add(bitrateInfoListItem);
         return this;
     }
 
     public ListSingleStreamBitrateResponse withBitrateInfoList(Consumer<List<V2BitrateInfo>> bitrateInfoListSetter) {
-        if(this.bitrateInfoList == null ){
+        if(this.bitrateInfoList == null) {
             this.bitrateInfoList = new ArrayList<>();
         }
         bitrateInfoListSetter.accept(this.bitrateInfoList);

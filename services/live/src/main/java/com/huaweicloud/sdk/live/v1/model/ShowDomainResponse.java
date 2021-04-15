@@ -64,12 +64,15 @@ public class ShowDomainResponse extends SdkResponse {
 
     
     public ShowDomainResponse addDomainInfoItem(DecoupledLiveDomainInfo domainInfoItem) {
+        if(this.domainInfo == null) {
+            this.domainInfo = new ArrayList<>();
+        }
         this.domainInfo.add(domainInfoItem);
         return this;
     }
 
     public ShowDomainResponse withDomainInfo(Consumer<List<DecoupledLiveDomainInfo>> domainInfoSetter) {
-        if(this.domainInfo == null ){
+        if(this.domainInfo == null) {
             this.domainInfo = new ArrayList<>();
         }
         domainInfoSetter.accept(this.domainInfo);

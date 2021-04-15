@@ -47,12 +47,15 @@ public class ListRuleActionsResponse extends SdkResponse {
 
     
     public ListRuleActionsResponse addActionsItem(RoutingRuleAction actionsItem) {
+        if(this.actions == null) {
+            this.actions = new ArrayList<>();
+        }
         this.actions.add(actionsItem);
         return this;
     }
 
     public ListRuleActionsResponse withActions(Consumer<List<RoutingRuleAction>> actionsSetter) {
-        if(this.actions == null ){
+        if(this.actions == null) {
             this.actions = new ArrayList<>();
         }
         actionsSetter.accept(this.actions);

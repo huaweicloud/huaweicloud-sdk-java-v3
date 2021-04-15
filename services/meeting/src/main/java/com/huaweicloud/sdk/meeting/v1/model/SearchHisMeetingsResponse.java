@@ -119,12 +119,15 @@ public class SearchHisMeetingsResponse extends SdkResponse {
 
     
     public SearchHisMeetingsResponse addDataItem(ConferenceInfo dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchHisMeetingsResponse withData(Consumer<List<ConferenceInfo>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

@@ -434,12 +434,15 @@ public class ShowCorpResourceResponse extends SdkResponse {
 
     
     public ShowCorpResourceResponse addVmrItem(QueryVmrPkgResResultDTO vmrItem) {
+        if(this.vmr == null) {
+            this.vmr = new ArrayList<>();
+        }
         this.vmr.add(vmrItem);
         return this;
     }
 
     public ShowCorpResourceResponse withVmr(Consumer<List<QueryVmrPkgResResultDTO>> vmrSetter) {
-        if(this.vmr == null ){
+        if(this.vmr == null) {
             this.vmr = new ArrayList<>();
         }
         vmrSetter.accept(this.vmr);

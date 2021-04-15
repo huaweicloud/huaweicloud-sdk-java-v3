@@ -138,12 +138,15 @@ public class ShowRecordingDetailResponse extends SdkResponse {
 
     
     public ShowRecordingDetailResponse addUrlItem(String urlItem) {
+        if(this.url == null) {
+            this.url = new ArrayList<>();
+        }
         this.url.add(urlItem);
         return this;
     }
 
     public ShowRecordingDetailResponse withUrl(Consumer<List<String>> urlSetter) {
-        if(this.url == null ){
+        if(this.url == null) {
             this.url = new ArrayList<>();
         }
         urlSetter.accept(this.url);

@@ -126,12 +126,15 @@ public class CheckResultItemsBody  {
     
 
     public CheckResultItemsBody putCategorySuggestionsItem(String key, String categorySuggestionsItem) {
+        if(this.categorySuggestions == null) {
+            this.categorySuggestions = new HashMap<>();
+        }
         this.categorySuggestions.put(key, categorySuggestionsItem);
         return this;
     }
 
     public CheckResultItemsBody withCategorySuggestions(Consumer<Map<String, String>> categorySuggestionsSetter) {
-        if(this.categorySuggestions == null ){
+        if(this.categorySuggestions == null) {
             this.categorySuggestions = new HashMap<>();
         }
         categorySuggestionsSetter.accept(this.categorySuggestions);

@@ -52,12 +52,15 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addPoliticsItem(ImageDetectionResultDetailPolitics politicsItem) {
+        if(this.politics == null) {
+            this.politics = new ArrayList<>();
+        }
         this.politics.add(politicsItem);
         return this;
     }
 
     public ImageDetectionResultDetail withPolitics(Consumer<List<ImageDetectionResultDetailPolitics>> politicsSetter) {
-        if(this.politics == null ){
+        if(this.politics == null) {
             this.politics = new ArrayList<>();
         }
         politicsSetter.accept(this.politics);
@@ -85,12 +88,15 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addPornItem(ImageDetectionResultDetailPorn pornItem) {
+        if(this.porn == null) {
+            this.porn = new ArrayList<>();
+        }
         this.porn.add(pornItem);
         return this;
     }
 
     public ImageDetectionResultDetail withPorn(Consumer<List<ImageDetectionResultDetailPorn>> pornSetter) {
-        if(this.porn == null ){
+        if(this.porn == null) {
             this.porn = new ArrayList<>();
         }
         pornSetter.accept(this.porn);
@@ -118,12 +124,15 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addTerrorismItem(ImageDetectionResultDetailPorn terrorismItem) {
+        if(this.terrorism == null) {
+            this.terrorism = new ArrayList<>();
+        }
         this.terrorism.add(terrorismItem);
         return this;
     }
 
     public ImageDetectionResultDetail withTerrorism(Consumer<List<ImageDetectionResultDetailPorn>> terrorismSetter) {
-        if(this.terrorism == null ){
+        if(this.terrorism == null) {
             this.terrorism = new ArrayList<>();
         }
         terrorismSetter.accept(this.terrorism);
@@ -151,12 +160,15 @@ public class ImageDetectionResultDetail  {
 
     
     public ImageDetectionResultDetail addAdItem(ImageDetectionResultDetailPorn adItem) {
+        if(this.ad == null) {
+            this.ad = new ArrayList<>();
+        }
         this.ad.add(adItem);
         return this;
     }
 
     public ImageDetectionResultDetail withAd(Consumer<List<ImageDetectionResultDetailPorn>> adSetter) {
-        if(this.ad == null ){
+        if(this.ad == null) {
             this.ad = new ArrayList<>();
         }
         adSetter.accept(this.ad);

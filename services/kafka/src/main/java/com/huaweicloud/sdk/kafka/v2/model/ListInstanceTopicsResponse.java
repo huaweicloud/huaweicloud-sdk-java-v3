@@ -91,12 +91,15 @@ public class ListInstanceTopicsResponse extends SdkResponse {
 
     
     public ListInstanceTopicsResponse addTopicsItem(ListInstanceTopicsRespTopics topicsItem) {
+        if(this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
         this.topics.add(topicsItem);
         return this;
     }
 
     public ListInstanceTopicsResponse withTopics(Consumer<List<ListInstanceTopicsRespTopics>> topicsSetter) {
-        if(this.topics == null ){
+        if(this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);

@@ -384,12 +384,15 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
 
     
     public ShowAuthorizationDetailResponse addIncidentAuthDetailListItem(IncidentOrderAuthDetailInfoV2 incidentAuthDetailListItem) {
+        if(this.incidentAuthDetailList == null) {
+            this.incidentAuthDetailList = new ArrayList<>();
+        }
         this.incidentAuthDetailList.add(incidentAuthDetailListItem);
         return this;
     }
 
     public ShowAuthorizationDetailResponse withIncidentAuthDetailList(Consumer<List<IncidentOrderAuthDetailInfoV2>> incidentAuthDetailListSetter) {
-        if(this.incidentAuthDetailList == null ){
+        if(this.incidentAuthDetailList == null) {
             this.incidentAuthDetailList = new ArrayList<>();
         }
         incidentAuthDetailListSetter.accept(this.incidentAuthDetailList);

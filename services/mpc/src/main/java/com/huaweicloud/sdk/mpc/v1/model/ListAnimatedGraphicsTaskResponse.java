@@ -64,12 +64,15 @@ public class ListAnimatedGraphicsTaskResponse extends SdkResponse {
 
     
     public ListAnimatedGraphicsTaskResponse addTasksItem(AnimatedGraphicsTask tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ListAnimatedGraphicsTaskResponse withTasks(Consumer<List<AnimatedGraphicsTask>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

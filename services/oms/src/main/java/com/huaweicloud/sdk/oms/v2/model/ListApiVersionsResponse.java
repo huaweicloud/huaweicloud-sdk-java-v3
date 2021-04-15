@@ -35,12 +35,15 @@ public class ListApiVersionsResponse extends SdkResponse {
 
     
     public ListApiVersionsResponse addVersionsItem(Version versionsItem) {
+        if(this.versions == null) {
+            this.versions = new ArrayList<>();
+        }
         this.versions.add(versionsItem);
         return this;
     }
 
     public ListApiVersionsResponse withVersions(Consumer<List<Version>> versionsSetter) {
-        if(this.versions == null ){
+        if(this.versions == null) {
             this.versions = new ArrayList<>();
         }
         versionsSetter.accept(this.versions);

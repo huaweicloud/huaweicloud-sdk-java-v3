@@ -97,12 +97,15 @@ public class ShowClusterRespCluster  {
 
     
     public ShowClusterRespCluster addBrokersItem(ShowClusterRespClusterBrokers brokersItem) {
+        if(this.brokers == null) {
+            this.brokers = new ArrayList<>();
+        }
         this.brokers.add(brokersItem);
         return this;
     }
 
     public ShowClusterRespCluster withBrokers(Consumer<List<ShowClusterRespClusterBrokers>> brokersSetter) {
-        if(this.brokers == null ){
+        if(this.brokers == null) {
             this.brokers = new ArrayList<>();
         }
         brokersSetter.accept(this.brokers);

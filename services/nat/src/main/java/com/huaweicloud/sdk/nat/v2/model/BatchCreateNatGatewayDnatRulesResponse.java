@@ -35,12 +35,15 @@ public class BatchCreateNatGatewayDnatRulesResponse extends SdkResponse {
 
     
     public BatchCreateNatGatewayDnatRulesResponse addDnatRulesItem(NatGatewayDnatRuleResponseBody dnatRulesItem) {
+        if(this.dnatRules == null) {
+            this.dnatRules = new ArrayList<>();
+        }
         this.dnatRules.add(dnatRulesItem);
         return this;
     }
 
     public BatchCreateNatGatewayDnatRulesResponse withDnatRules(Consumer<List<NatGatewayDnatRuleResponseBody>> dnatRulesSetter) {
-        if(this.dnatRules == null ){
+        if(this.dnatRules == null) {
             this.dnatRules = new ArrayList<>();
         }
         dnatRulesSetter.accept(this.dnatRules);

@@ -64,12 +64,15 @@ public class ListExtractTaskResponse extends SdkResponse {
 
     
     public ListExtractTaskResponse addTasksItem(ExtractTask tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ListExtractTaskResponse withTasks(Consumer<List<ExtractTask>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

@@ -75,12 +75,15 @@ public class GlanceListImagesResponse extends SdkResponse {
 
     
     public GlanceListImagesResponse addImagesItem(GlanceShowImageResponseBody imagesItem) {
+        if(this.images == null) {
+            this.images = new ArrayList<>();
+        }
         this.images.add(imagesItem);
         return this;
     }
 
     public GlanceListImagesResponse withImages(Consumer<List<GlanceShowImageResponseBody>> imagesSetter) {
-        if(this.images == null ){
+        if(this.images == null) {
             this.images = new ArrayList<>();
         }
         imagesSetter.accept(this.images);

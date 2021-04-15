@@ -78,12 +78,15 @@ public class ShowBatchTaskResponse extends SdkResponse {
 
     
     public ShowBatchTaskResponse addTaskDetailsItem(TaskDetail taskDetailsItem) {
+        if(this.taskDetails == null) {
+            this.taskDetails = new ArrayList<>();
+        }
         this.taskDetails.add(taskDetailsItem);
         return this;
     }
 
     public ShowBatchTaskResponse withTaskDetails(Consumer<List<TaskDetail>> taskDetailsSetter) {
-        if(this.taskDetails == null ){
+        if(this.taskDetails == null) {
             this.taskDetails = new ArrayList<>();
         }
         taskDetailsSetter.accept(this.taskDetails);

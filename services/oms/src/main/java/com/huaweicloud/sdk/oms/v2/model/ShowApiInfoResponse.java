@@ -163,12 +163,15 @@ public class ShowApiInfoResponse extends SdkResponse {
 
     
     public ShowApiInfoResponse addLinksItem(Link linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public ShowApiInfoResponse withLinks(Consumer<List<Link>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

@@ -57,12 +57,15 @@ public class AgreeTenantAuthorizationV2Req  {
 
     
     public AgreeTenantAuthorizationV2Req addAuthDetailListItem(TenantAgreeAuthDetailV2 authDetailListItem) {
+        if(this.authDetailList == null) {
+            this.authDetailList = new ArrayList<>();
+        }
         this.authDetailList.add(authDetailListItem);
         return this;
     }
 
     public AgreeTenantAuthorizationV2Req withAuthDetailList(Consumer<List<TenantAgreeAuthDetailV2>> authDetailListSetter) {
-        if(this.authDetailList == null ){
+        if(this.authDetailList == null) {
             this.authDetailList = new ArrayList<>();
         }
         authDetailListSetter.accept(this.authDetailList);

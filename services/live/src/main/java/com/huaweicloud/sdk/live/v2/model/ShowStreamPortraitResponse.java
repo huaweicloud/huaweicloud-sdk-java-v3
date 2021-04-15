@@ -41,12 +41,15 @@ public class ShowStreamPortraitResponse extends SdkResponse {
 
     
     public ShowStreamPortraitResponse addStreamPortraitsItem(StreamPortrait streamPortraitsItem) {
+        if(this.streamPortraits == null) {
+            this.streamPortraits = new ArrayList<>();
+        }
         this.streamPortraits.add(streamPortraitsItem);
         return this;
     }
 
     public ShowStreamPortraitResponse withStreamPortraits(Consumer<List<StreamPortrait>> streamPortraitsSetter) {
-        if(this.streamPortraits == null ){
+        if(this.streamPortraits == null) {
             this.streamPortraits = new ArrayList<>();
         }
         streamPortraitsSetter.accept(this.streamPortraits);

@@ -293,12 +293,15 @@ public class AddDevice  {
 
     
     public AddDevice addShadowItem(InitialDesired shadowItem) {
+        if(this.shadow == null) {
+            this.shadow = new ArrayList<>();
+        }
         this.shadow.add(shadowItem);
         return this;
     }
 
     public AddDevice withShadow(Consumer<List<InitialDesired>> shadowSetter) {
-        if(this.shadow == null ){
+        if(this.shadow == null) {
             this.shadow = new ArrayList<>();
         }
         shadowSetter.accept(this.shadow);

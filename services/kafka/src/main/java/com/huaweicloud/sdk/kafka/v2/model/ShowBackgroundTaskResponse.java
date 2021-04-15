@@ -63,12 +63,15 @@ public class ShowBackgroundTaskResponse extends SdkResponse {
 
     
     public ShowBackgroundTaskResponse addTasksItem(ListBackgroundTasksRespTasks tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ShowBackgroundTaskResponse withTasks(Consumer<List<ListBackgroundTasksRespTasks>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

@@ -116,12 +116,15 @@ public class RuleAction  {
 
     
     public RuleAction addAdditionItem(String additionItem) {
+        if(this.addition == null) {
+            this.addition = new ArrayList<>();
+        }
         this.addition.add(additionItem);
         return this;
     }
 
     public RuleAction withAddition(Consumer<List<String>> additionSetter) {
-        if(this.addition == null ){
+        if(this.addition == null) {
             this.addition = new ArrayList<>();
         }
         additionSetter.accept(this.addition);

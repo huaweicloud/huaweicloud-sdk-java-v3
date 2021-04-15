@@ -41,12 +41,15 @@ public class ShowUpBandwidthResponse extends SdkResponse {
 
     
     public ShowUpBandwidthResponse addDataListItem(V2BandwidthData dataListItem) {
+        if(this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
         this.dataList.add(dataListItem);
         return this;
     }
 
     public ShowUpBandwidthResponse withDataList(Consumer<List<V2BandwidthData>> dataListSetter) {
-        if(this.dataList == null ){
+        if(this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);

@@ -72,12 +72,15 @@ public class ShowCeshierarchyRespChildren  {
 
     
     public ShowCeshierarchyRespChildren addMetricsItem(String metricsItem) {
+        if(this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
         this.metrics.add(metricsItem);
         return this;
     }
 
     public ShowCeshierarchyRespChildren withMetrics(Consumer<List<String>> metricsSetter) {
-        if(this.metrics == null ){
+        if(this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);
@@ -105,12 +108,15 @@ public class ShowCeshierarchyRespChildren  {
 
     
     public ShowCeshierarchyRespChildren addKeyNameItem(String keyNameItem) {
+        if(this.keyName == null) {
+            this.keyName = new ArrayList<>();
+        }
         this.keyName.add(keyNameItem);
         return this;
     }
 
     public ShowCeshierarchyRespChildren withKeyName(Consumer<List<String>> keyNameSetter) {
-        if(this.keyName == null ){
+        if(this.keyName == null) {
             this.keyName = new ArrayList<>();
         }
         keyNameSetter.accept(this.keyName);
@@ -138,12 +144,15 @@ public class ShowCeshierarchyRespChildren  {
 
     
     public ShowCeshierarchyRespChildren addDimRouterItem(String dimRouterItem) {
+        if(this.dimRouter == null) {
+            this.dimRouter = new ArrayList<>();
+        }
         this.dimRouter.add(dimRouterItem);
         return this;
     }
 
     public ShowCeshierarchyRespChildren withDimRouter(Consumer<List<String>> dimRouterSetter) {
-        if(this.dimRouter == null ){
+        if(this.dimRouter == null) {
             this.dimRouter = new ArrayList<>();
         }
         dimRouterSetter.accept(this.dimRouter);

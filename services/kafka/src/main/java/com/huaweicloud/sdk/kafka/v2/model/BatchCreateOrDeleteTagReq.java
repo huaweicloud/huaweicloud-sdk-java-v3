@@ -143,12 +143,15 @@ public class BatchCreateOrDeleteTagReq  {
 
     
     public BatchCreateOrDeleteTagReq addTagsItem(CreatePostPaidInstanceReqTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public BatchCreateOrDeleteTagReq withTags(Consumer<List<CreatePostPaidInstanceReqTags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

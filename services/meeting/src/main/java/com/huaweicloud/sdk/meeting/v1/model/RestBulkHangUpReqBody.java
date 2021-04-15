@@ -32,12 +32,15 @@ public class RestBulkHangUpReqBody  {
 
     
     public RestBulkHangUpReqBody addBulkHangUpParticipantsItem(String bulkHangUpParticipantsItem) {
+        if(this.bulkHangUpParticipants == null) {
+            this.bulkHangUpParticipants = new ArrayList<>();
+        }
         this.bulkHangUpParticipants.add(bulkHangUpParticipantsItem);
         return this;
     }
 
     public RestBulkHangUpReqBody withBulkHangUpParticipants(Consumer<List<String>> bulkHangUpParticipantsSetter) {
-        if(this.bulkHangUpParticipants == null ){
+        if(this.bulkHangUpParticipants == null) {
             this.bulkHangUpParticipants = new ArrayList<>();
         }
         bulkHangUpParticipantsSetter.accept(this.bulkHangUpParticipants);

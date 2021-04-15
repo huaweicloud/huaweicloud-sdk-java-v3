@@ -65,12 +65,15 @@ public class ListTransportHistoriesResponse extends SdkResponse {
 
     
     public ListTransportHistoriesResponse addFileOpsListItem(FileOperateLog fileOpsListItem) {
+        if(this.fileOpsList == null) {
+            this.fileOpsList = new ArrayList<>();
+        }
         this.fileOpsList.add(fileOpsListItem);
         return this;
     }
 
     public ListTransportHistoriesResponse withFileOpsList(Consumer<List<FileOperateLog>> fileOpsListSetter) {
-        if(this.fileOpsList == null ){
+        if(this.fileOpsList == null) {
             this.fileOpsList = new ArrayList<>();
         }
         fileOpsListSetter.accept(this.fileOpsList);

@@ -42,12 +42,15 @@ public class ListBatchTasksResponse extends SdkResponse {
 
     
     public ListBatchTasksResponse addBatchtasksItem(Task batchtasksItem) {
+        if(this.batchtasks == null) {
+            this.batchtasks = new ArrayList<>();
+        }
         this.batchtasks.add(batchtasksItem);
         return this;
     }
 
     public ListBatchTasksResponse withBatchtasks(Consumer<List<Task>> batchtasksSetter) {
-        if(this.batchtasks == null ){
+        if(this.batchtasks == null) {
             this.batchtasks = new ArrayList<>();
         }
         batchtasksSetter.accept(this.batchtasks);

@@ -39,12 +39,15 @@ public class HttpCodeSummary  {
 
     
     public HttpCodeSummary addHttpCodesItem(HttpCode httpCodesItem) {
+        if(this.httpCodes == null) {
+            this.httpCodes = new ArrayList<>();
+        }
         this.httpCodes.add(httpCodesItem);
         return this;
     }
 
     public HttpCodeSummary withHttpCodes(Consumer<List<HttpCode>> httpCodesSetter) {
-        if(this.httpCodes == null ){
+        if(this.httpCodes == null) {
             this.httpCodes = new ArrayList<>();
         }
         httpCodesSetter.accept(this.httpCodes);

@@ -130,12 +130,15 @@ public class ListKmsByTagsRequestBody  {
 
     
     public ListKmsByTagsRequestBody addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListKmsByTagsRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -163,12 +166,15 @@ public class ListKmsByTagsRequestBody  {
 
     
     public ListKmsByTagsRequestBody addMatchesItem(TagItem matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListKmsByTagsRequestBody withMatches(Consumer<List<TagItem>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);

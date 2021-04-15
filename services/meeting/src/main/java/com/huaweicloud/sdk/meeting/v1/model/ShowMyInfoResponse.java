@@ -370,12 +370,15 @@ public class ShowMyInfoResponse extends SdkResponse {
 
     
     public ShowMyInfoResponse addVmrListItem(UserVmrDTO vmrListItem) {
+        if(this.vmrList == null) {
+            this.vmrList = new ArrayList<>();
+        }
         this.vmrList.add(vmrListItem);
         return this;
     }
 
     public ShowMyInfoResponse withVmrList(Consumer<List<UserVmrDTO>> vmrListSetter) {
-        if(this.vmrList == null ){
+        if(this.vmrList == null) {
             this.vmrList = new ArrayList<>();
         }
         vmrListSetter.accept(this.vmrList);

@@ -91,12 +91,15 @@ public class PicLayoutInfo  {
 
     
     public PicLayoutInfo addSubPicLayoutInfoListItem(SubPicLayoutInfo subPicLayoutInfoListItem) {
+        if(this.subPicLayoutInfoList == null) {
+            this.subPicLayoutInfoList = new ArrayList<>();
+        }
         this.subPicLayoutInfoList.add(subPicLayoutInfoListItem);
         return this;
     }
 
     public PicLayoutInfo withSubPicLayoutInfoList(Consumer<List<SubPicLayoutInfo>> subPicLayoutInfoListSetter) {
-        if(this.subPicLayoutInfoList == null ){
+        if(this.subPicLayoutInfoList == null) {
             this.subPicLayoutInfoList = new ArrayList<>();
         }
         subPicLayoutInfoListSetter.accept(this.subPicLayoutInfoList);

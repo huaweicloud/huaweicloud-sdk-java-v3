@@ -52,12 +52,15 @@ public class RomaForwarding  {
 
     
     public RomaForwarding addAddressesItem(NetAddress addressesItem) {
+        if(this.addresses == null) {
+            this.addresses = new ArrayList<>();
+        }
         this.addresses.add(addressesItem);
         return this;
     }
 
     public RomaForwarding withAddresses(Consumer<List<NetAddress>> addressesSetter) {
-        if(this.addresses == null ){
+        if(this.addresses == null) {
             this.addresses = new ArrayList<>();
         }
         addressesSetter.accept(this.addresses);

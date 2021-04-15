@@ -41,12 +41,15 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
 
     
     public ListSingleStreamFramerateResponse addFramerateInfoListItem(V2FramerateInfo framerateInfoListItem) {
+        if(this.framerateInfoList == null) {
+            this.framerateInfoList = new ArrayList<>();
+        }
         this.framerateInfoList.add(framerateInfoListItem);
         return this;
     }
 
     public ListSingleStreamFramerateResponse withFramerateInfoList(Consumer<List<V2FramerateInfo>> framerateInfoListSetter) {
-        if(this.framerateInfoList == null ){
+        if(this.framerateInfoList == null) {
             this.framerateInfoList = new ArrayList<>();
         }
         framerateInfoListSetter.accept(this.framerateInfoList);

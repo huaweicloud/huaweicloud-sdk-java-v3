@@ -35,12 +35,15 @@ public class ListAreaCodesResponse extends SdkResponse {
 
     
     public ListAreaCodesResponse addAreaCodeListItem(AreaCodeSimpleInfoV2 areaCodeListItem) {
+        if(this.areaCodeList == null) {
+            this.areaCodeList = new ArrayList<>();
+        }
         this.areaCodeList.add(areaCodeListItem);
         return this;
     }
 
     public ListAreaCodesResponse withAreaCodeList(Consumer<List<AreaCodeSimpleInfoV2>> areaCodeListSetter) {
-        if(this.areaCodeList == null ){
+        if(this.areaCodeList == null) {
             this.areaCodeList = new ArrayList<>();
         }
         areaCodeListSetter.accept(this.areaCodeList);

@@ -65,12 +65,15 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
 
     
     public ListMoreInstantMessagesResponse addMessageListItem(QueryMessageInfoV2 messageListItem) {
+        if(this.messageList == null) {
+            this.messageList = new ArrayList<>();
+        }
         this.messageList.add(messageListItem);
         return this;
     }
 
     public ListMoreInstantMessagesResponse withMessageList(Consumer<List<QueryMessageInfoV2>> messageListSetter) {
-        if(this.messageList == null ){
+        if(this.messageList == null) {
             this.messageList = new ArrayList<>();
         }
         messageListSetter.accept(this.messageList);

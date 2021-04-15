@@ -308,12 +308,15 @@ public class ScaleScript  {
 
     
     public ScaleScript addNodesItem(String nodesItem) {
+        if(this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
         this.nodes.add(nodesItem);
         return this;
     }
 
     public ScaleScript withNodes(Consumer<List<String>> nodesSetter) {
-        if(this.nodes == null ){
+        if(this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);

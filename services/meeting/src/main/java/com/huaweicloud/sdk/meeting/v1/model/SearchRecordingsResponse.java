@@ -119,12 +119,15 @@ public class SearchRecordingsResponse extends SdkResponse {
 
     
     public SearchRecordingsResponse addDataItem(RecordResultDO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchRecordingsResponse withData(Consumer<List<RecordResultDO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

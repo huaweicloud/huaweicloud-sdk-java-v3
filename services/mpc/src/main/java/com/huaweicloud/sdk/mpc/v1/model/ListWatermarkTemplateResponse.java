@@ -70,12 +70,15 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
 
     
     public ListWatermarkTemplateResponse addTemplatesItem(WatermarkTemplate templatesItem) {
+        if(this.templates == null) {
+            this.templates = new ArrayList<>();
+        }
         this.templates.add(templatesItem);
         return this;
     }
 
     public ListWatermarkTemplateResponse withTemplates(Consumer<List<WatermarkTemplate>> templatesSetter) {
-        if(this.templates == null ){
+        if(this.templates == null) {
             this.templates = new ArrayList<>();
         }
         templatesSetter.accept(this.templates);

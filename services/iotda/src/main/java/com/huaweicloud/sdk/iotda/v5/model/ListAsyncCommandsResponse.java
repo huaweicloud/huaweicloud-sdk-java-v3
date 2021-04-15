@@ -42,12 +42,15 @@ public class ListAsyncCommandsResponse extends SdkResponse {
 
     
     public ListAsyncCommandsResponse addCommandsItem(AsyncDeviceCommand commandsItem) {
+        if(this.commands == null) {
+            this.commands = new ArrayList<>();
+        }
         this.commands.add(commandsItem);
         return this;
     }
 
     public ListAsyncCommandsResponse withCommands(Consumer<List<AsyncDeviceCommand>> commandsSetter) {
-        if(this.commands == null ){
+        if(this.commands == null) {
             this.commands = new ArrayList<>();
         }
         commandsSetter.accept(this.commands);

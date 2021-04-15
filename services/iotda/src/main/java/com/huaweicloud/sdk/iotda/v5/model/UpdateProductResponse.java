@@ -321,12 +321,15 @@ public class UpdateProductResponse extends SdkResponse {
 
     
     public UpdateProductResponse addServiceCapabilitiesItem(ServiceCapability serviceCapabilitiesItem) {
+        if(this.serviceCapabilities == null) {
+            this.serviceCapabilities = new ArrayList<>();
+        }
         this.serviceCapabilities.add(serviceCapabilitiesItem);
         return this;
     }
 
     public UpdateProductResponse withServiceCapabilities(Consumer<List<ServiceCapability>> serviceCapabilitiesSetter) {
-        if(this.serviceCapabilities == null ){
+        if(this.serviceCapabilities == null) {
             this.serviceCapabilities = new ArrayList<>();
         }
         serviceCapabilitiesSetter.accept(this.serviceCapabilities);

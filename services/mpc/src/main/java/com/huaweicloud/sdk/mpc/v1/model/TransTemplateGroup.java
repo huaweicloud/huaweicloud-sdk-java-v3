@@ -82,12 +82,15 @@ public class TransTemplateGroup  {
 
     
     public TransTemplateGroup addVideosItem(VideoObj videosItem) {
+        if(this.videos == null) {
+            this.videos = new ArrayList<>();
+        }
         this.videos.add(videosItem);
         return this;
     }
 
     public TransTemplateGroup withVideos(Consumer<List<VideoObj>> videosSetter) {
-        if(this.videos == null ){
+        if(this.videos == null) {
             this.videos = new ArrayList<>();
         }
         videosSetter.accept(this.videos);

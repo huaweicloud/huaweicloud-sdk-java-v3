@@ -35,12 +35,15 @@ public class RunCelebrityRecognitionResponse extends SdkResponse {
 
     
     public RunCelebrityRecognitionResponse addResultItem(CelebrityRecognitionResultBody resultItem) {
+        if(this.result == null) {
+            this.result = new ArrayList<>();
+        }
         this.result.add(resultItem);
         return this;
     }
 
     public RunCelebrityRecognitionResponse withResult(Consumer<List<CelebrityRecognitionResultBody>> resultSetter) {
-        if(this.result == null ){
+        if(this.result == null) {
             this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);

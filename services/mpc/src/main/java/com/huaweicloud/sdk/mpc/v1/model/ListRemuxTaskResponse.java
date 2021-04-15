@@ -64,12 +64,15 @@ public class ListRemuxTaskResponse extends SdkResponse {
 
     
     public ListRemuxTaskResponse addTasksItem(RemuxTask tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ListRemuxTaskResponse withTasks(Consumer<List<RemuxTask>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

@@ -47,12 +47,15 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
 
     
     public ListMediaProcessTaskResponse addTaskArrayItem(MediaProcessTaskInfo taskArrayItem) {
+        if(this.taskArray == null) {
+            this.taskArray = new ArrayList<>();
+        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
 
     public ListMediaProcessTaskResponse withTaskArray(Consumer<List<MediaProcessTaskInfo>> taskArraySetter) {
-        if(this.taskArray == null ){
+        if(this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);

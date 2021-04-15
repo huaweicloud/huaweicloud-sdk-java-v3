@@ -41,12 +41,15 @@ public class ListRecordDataResponse extends SdkResponse {
 
     
     public ListRecordDataResponse addRecordDataListItem(RecordData recordDataListItem) {
+        if(this.recordDataList == null) {
+            this.recordDataList = new ArrayList<>();
+        }
         this.recordDataList.add(recordDataListItem);
         return this;
     }
 
     public ListRecordDataResponse withRecordDataList(Consumer<List<RecordData>> recordDataListSetter) {
-        if(this.recordDataList == null ){
+        if(this.recordDataList == null) {
             this.recordDataList = new ArrayList<>();
         }
         recordDataListSetter.accept(this.recordDataList);

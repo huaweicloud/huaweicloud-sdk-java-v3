@@ -56,12 +56,15 @@ public class ListUnreadNewInstantMessagesRequest  {
 
     
     public ListUnreadNewInstantMessagesRequest addCaseIdsItem(String caseIdsItem) {
+        if(this.caseIds == null) {
+            this.caseIds = new ArrayList<>();
+        }
         this.caseIds.add(caseIdsItem);
         return this;
     }
 
     public ListUnreadNewInstantMessagesRequest withCaseIds(Consumer<List<String>> caseIdsSetter) {
-        if(this.caseIds == null ){
+        if(this.caseIds == null) {
             this.caseIds = new ArrayList<>();
         }
         caseIdsSetter.accept(this.caseIds);

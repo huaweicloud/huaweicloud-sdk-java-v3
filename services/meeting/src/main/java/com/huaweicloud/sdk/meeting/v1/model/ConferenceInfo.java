@@ -478,12 +478,15 @@ public class ConferenceInfo  {
 
     
     public ConferenceInfo addPasswordEntryItem(PasswordEntry passwordEntryItem) {
+        if(this.passwordEntry == null) {
+            this.passwordEntry = new ArrayList<>();
+        }
         this.passwordEntry.add(passwordEntryItem);
         return this;
     }
 
     public ConferenceInfo withPasswordEntry(Consumer<List<PasswordEntry>> passwordEntrySetter) {
-        if(this.passwordEntry == null ){
+        if(this.passwordEntry == null) {
             this.passwordEntry = new ArrayList<>();
         }
         passwordEntrySetter.accept(this.passwordEntry);
@@ -987,12 +990,15 @@ public class ConferenceInfo  {
 
     
     public ConferenceInfo addPartAttendeeInfoItem(PartAttendee partAttendeeInfoItem) {
+        if(this.partAttendeeInfo == null) {
+            this.partAttendeeInfo = new ArrayList<>();
+        }
         this.partAttendeeInfo.add(partAttendeeInfoItem);
         return this;
     }
 
     public ConferenceInfo withPartAttendeeInfo(Consumer<List<PartAttendee>> partAttendeeInfoSetter) {
-        if(this.partAttendeeInfo == null ){
+        if(this.partAttendeeInfo == null) {
             this.partAttendeeInfo = new ArrayList<>();
         }
         partAttendeeInfoSetter.accept(this.partAttendeeInfo);

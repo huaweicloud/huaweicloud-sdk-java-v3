@@ -65,12 +65,15 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
 
     
     public ListSatisfactionDimensionsResponse addSatisfactionDimensionListItem(SatisfactionDimensionSimpleInfoV2 satisfactionDimensionListItem) {
+        if(this.satisfactionDimensionList == null) {
+            this.satisfactionDimensionList = new ArrayList<>();
+        }
         this.satisfactionDimensionList.add(satisfactionDimensionListItem);
         return this;
     }
 
     public ListSatisfactionDimensionsResponse withSatisfactionDimensionList(Consumer<List<SatisfactionDimensionSimpleInfoV2>> satisfactionDimensionListSetter) {
-        if(this.satisfactionDimensionList == null ){
+        if(this.satisfactionDimensionList == null) {
             this.satisfactionDimensionList = new ArrayList<>();
         }
         satisfactionDimensionListSetter.accept(this.satisfactionDimensionList);

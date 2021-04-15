@@ -78,12 +78,15 @@ public class DeleteCaseLabelsRequest  {
 
     
     public DeleteCaseLabelsRequest addLabelIdsItem(Integer labelIdsItem) {
+        if(this.labelIds == null) {
+            this.labelIds = new ArrayList<>();
+        }
         this.labelIds.add(labelIdsItem);
         return this;
     }
 
     public DeleteCaseLabelsRequest withLabelIds(Consumer<List<Integer>> labelIdsSetter) {
-        if(this.labelIds == null ){
+        if(this.labelIds == null) {
             this.labelIds = new ArrayList<>();
         }
         labelIdsSetter.accept(this.labelIds);

@@ -41,12 +41,15 @@ public class ListKmsByTagsResponse extends SdkResponse {
 
     
     public ListKmsByTagsResponse addResourcesItem(ActionResources resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListKmsByTagsResponse withResources(Consumer<List<ActionResources>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

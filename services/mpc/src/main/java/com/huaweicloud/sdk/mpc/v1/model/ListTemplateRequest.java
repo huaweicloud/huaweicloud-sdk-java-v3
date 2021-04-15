@@ -44,12 +44,15 @@ public class ListTemplateRequest  {
 
     
     public ListTemplateRequest addTemplateIdItem(Integer templateIdItem) {
+        if(this.templateId == null) {
+            this.templateId = new ArrayList<>();
+        }
         this.templateId.add(templateIdItem);
         return this;
     }
 
     public ListTemplateRequest withTemplateId(Consumer<List<Integer>> templateIdSetter) {
-        if(this.templateId == null ){
+        if(this.templateId == null) {
             this.templateId = new ArrayList<>();
         }
         templateIdSetter.accept(this.templateId);

@@ -65,12 +65,15 @@ public class ListHasVerifiedContactsResponse extends SdkResponse {
 
     
     public ListHasVerifiedContactsResponse addContactListItem(ContactV2 contactListItem) {
+        if(this.contactList == null) {
+            this.contactList = new ArrayList<>();
+        }
         this.contactList.add(contactListItem);
         return this;
     }
 
     public ListHasVerifiedContactsResponse withContactList(Consumer<List<ContactV2>> contactListSetter) {
-        if(this.contactList == null ){
+        if(this.contactList == null) {
             this.contactList = new ArrayList<>();
         }
         contactListSetter.accept(this.contactList);

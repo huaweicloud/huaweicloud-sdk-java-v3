@@ -35,12 +35,15 @@ public class RunCheckTaskJobsResponse extends SdkResponse {
 
     
     public RunCheckTaskJobsResponse addResultItem(CheckTaskJobsItemsBody resultItem) {
+        if(this.result == null) {
+            this.result = new ArrayList<>();
+        }
         this.result.add(resultItem);
         return this;
     }
 
     public RunCheckTaskJobsResponse withResult(Consumer<List<CheckTaskJobsItemsBody>> resultSetter) {
-        if(this.result == null ){
+        if(this.result == null) {
             this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);

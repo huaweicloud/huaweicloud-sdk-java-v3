@@ -38,12 +38,15 @@ public class BatchAddMembersRequestBody  {
 
     
     public BatchAddMembersRequestBody addImagesItem(String imagesItem) {
+        if(this.images == null) {
+            this.images = new ArrayList<>();
+        }
         this.images.add(imagesItem);
         return this;
     }
 
     public BatchAddMembersRequestBody withImages(Consumer<List<String>> imagesSetter) {
-        if(this.images == null ){
+        if(this.images == null) {
             this.images = new ArrayList<>();
         }
         imagesSetter.accept(this.images);
@@ -71,12 +74,15 @@ public class BatchAddMembersRequestBody  {
 
     
     public BatchAddMembersRequestBody addProjectsItem(String projectsItem) {
+        if(this.projects == null) {
+            this.projects = new ArrayList<>();
+        }
         this.projects.add(projectsItem);
         return this;
     }
 
     public BatchAddMembersRequestBody withProjects(Consumer<List<String>> projectsSetter) {
-        if(this.projects == null ){
+        if(this.projects == null) {
             this.projects = new ArrayList<>();
         }
         projectsSetter.accept(this.projects);

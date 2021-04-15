@@ -40,12 +40,15 @@ public class TranscodeDetail  {
 
     
     public TranscodeDetail addMultitaskInfoItem(MultiTaskInfo multitaskInfoItem) {
+        if(this.multitaskInfo == null) {
+            this.multitaskInfo = new ArrayList<>();
+        }
         this.multitaskInfo.add(multitaskInfoItem);
         return this;
     }
 
     public TranscodeDetail withMultitaskInfo(Consumer<List<MultiTaskInfo>> multitaskInfoSetter) {
-        if(this.multitaskInfo == null ){
+        if(this.multitaskInfo == null) {
             this.multitaskInfo = new ArrayList<>();
         }
         multitaskInfoSetter.accept(this.multitaskInfo);

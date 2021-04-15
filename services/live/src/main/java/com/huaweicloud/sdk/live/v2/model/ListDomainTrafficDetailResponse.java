@@ -41,12 +41,15 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
 
     
     public ListDomainTrafficDetailResponse addDataListItem(TrafficData dataListItem) {
+        if(this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
         this.dataList.add(dataListItem);
         return this;
     }
 
     public ListDomainTrafficDetailResponse withDataList(Consumer<List<TrafficData>> dataListSetter) {
-        if(this.dataList == null ){
+        if(this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);

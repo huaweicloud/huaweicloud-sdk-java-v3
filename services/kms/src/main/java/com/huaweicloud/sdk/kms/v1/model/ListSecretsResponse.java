@@ -42,12 +42,15 @@ public class ListSecretsResponse extends SdkResponse {
 
     
     public ListSecretsResponse addSecretsItem(Secret secretsItem) {
+        if(this.secrets == null) {
+            this.secrets = new ArrayList<>();
+        }
         this.secrets.add(secretsItem);
         return this;
     }
 
     public ListSecretsResponse withSecrets(Consumer<List<Secret>> secretsSetter) {
-        if(this.secrets == null ){
+        if(this.secrets == null) {
             this.secrets = new ArrayList<>();
         }
         secretsSetter.accept(this.secrets);

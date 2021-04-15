@@ -42,12 +42,15 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
 
     
     public ShowDevicesInGroupResponse addDevicesItem(SimplifyDevice devicesItem) {
+        if(this.devices == null) {
+            this.devices = new ArrayList<>();
+        }
         this.devices.add(devicesItem);
         return this;
     }
 
     public ShowDevicesInGroupResponse withDevices(Consumer<List<SimplifyDevice>> devicesSetter) {
-        if(this.devices == null ){
+        if(this.devices == null) {
             this.devices = new ArrayList<>();
         }
         devicesSetter.accept(this.devices);

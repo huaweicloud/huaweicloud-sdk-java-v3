@@ -98,12 +98,15 @@ public class ImageDetectionResultBody  {
     
 
     public ImageDetectionResultBody putCategorySuggestionsItem(String key, String categorySuggestionsItem) {
+        if(this.categorySuggestions == null) {
+            this.categorySuggestions = new HashMap<>();
+        }
         this.categorySuggestions.put(key, categorySuggestionsItem);
         return this;
     }
 
     public ImageDetectionResultBody withCategorySuggestions(Consumer<Map<String, String>> categorySuggestionsSetter) {
-        if(this.categorySuggestions == null ){
+        if(this.categorySuggestions == null) {
             this.categorySuggestions = new HashMap<>();
         }
         categorySuggestionsSetter.accept(this.categorySuggestions);

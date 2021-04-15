@@ -125,12 +125,15 @@ public class ActionResources  {
 
     
     public ActionResources addTagsItem(TagItem tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ActionResources withTags(Consumer<List<TagItem>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

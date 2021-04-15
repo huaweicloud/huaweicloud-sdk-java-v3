@@ -35,12 +35,15 @@ public class ListNatGatewaysResponse extends SdkResponse {
 
     
     public ListNatGatewaysResponse addNatGatewaysItem(NatGatewayResponseBody natGatewaysItem) {
+        if(this.natGateways == null) {
+            this.natGateways = new ArrayList<>();
+        }
         this.natGateways.add(natGatewaysItem);
         return this;
     }
 
     public ListNatGatewaysResponse withNatGateways(Consumer<List<NatGatewayResponseBody>> natGatewaysSetter) {
-        if(this.natGateways == null ){
+        if(this.natGateways == null) {
             this.natGateways = new ArrayList<>();
         }
         natGatewaysSetter.accept(this.natGateways);

@@ -120,12 +120,15 @@ public class SearchVisionActiveCodeResponse extends SdkResponse {
 
     
     public SearchVisionActiveCodeResponse addDataItem(QueryVisionActiveCodeResultDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchVisionActiveCodeResponse withData(Consumer<List<QueryVisionActiveCodeResultDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

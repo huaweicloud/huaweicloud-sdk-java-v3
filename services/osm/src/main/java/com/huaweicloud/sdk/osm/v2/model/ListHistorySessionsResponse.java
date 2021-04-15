@@ -65,12 +65,15 @@ public class ListHistorySessionsResponse extends SdkResponse {
 
     
     public ListHistorySessionsResponse addSessionListItem(OperateHistorySession sessionListItem) {
+        if(this.sessionList == null) {
+            this.sessionList = new ArrayList<>();
+        }
         this.sessionList.add(sessionListItem);
         return this;
     }
 
     public ListHistorySessionsResponse withSessionList(Consumer<List<OperateHistorySession>> sessionListSetter) {
-        if(this.sessionList == null ){
+        if(this.sessionList == null) {
             this.sessionList = new ArrayList<>();
         }
         sessionListSetter.accept(this.sessionList);

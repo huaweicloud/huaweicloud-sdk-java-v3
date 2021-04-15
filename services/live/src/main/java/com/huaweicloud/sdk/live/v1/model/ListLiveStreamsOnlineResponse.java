@@ -175,12 +175,15 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
 
     
     public ListLiveStreamsOnlineResponse addStreamsItem(OnlineInfo streamsItem) {
+        if(this.streams == null) {
+            this.streams = new ArrayList<>();
+        }
         this.streams.add(streamsItem);
         return this;
     }
 
     public ListLiveStreamsOnlineResponse withStreams(Consumer<List<OnlineInfo>> streamsSetter) {
-        if(this.streams == null ){
+        if(this.streams == null) {
             this.streams = new ArrayList<>();
         }
         streamsSetter.accept(this.streams);

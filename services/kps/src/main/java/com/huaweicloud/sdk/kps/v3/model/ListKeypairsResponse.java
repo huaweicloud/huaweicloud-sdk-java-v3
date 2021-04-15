@@ -34,12 +34,15 @@ public class ListKeypairsResponse extends SdkResponse {
 
     
     public ListKeypairsResponse addKeypairsItem(Object keypairsItem) {
+        if(this.keypairs == null) {
+            this.keypairs = new ArrayList<>();
+        }
         this.keypairs.add(keypairsItem);
         return this;
     }
 
     public ListKeypairsResponse withKeypairs(Consumer<List<Object>> keypairsSetter) {
-        if(this.keypairs == null ){
+        if(this.keypairs == null) {
             this.keypairs = new ArrayList<>();
         }
         keypairsSetter.accept(this.keypairs);

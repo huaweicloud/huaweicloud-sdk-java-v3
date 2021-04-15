@@ -194,12 +194,15 @@ public class CreateGrantRequestBody  {
 
     
     public CreateGrantRequestBody addOperationsItem(String operationsItem) {
+        if(this.operations == null) {
+            this.operations = new ArrayList<>();
+        }
         this.operations.add(operationsItem);
         return this;
     }
 
     public CreateGrantRequestBody withOperations(Consumer<List<String>> operationsSetter) {
-        if(this.operations == null ){
+        if(this.operations == null) {
             this.operations = new ArrayList<>();
         }
         operationsSetter.accept(this.operations);

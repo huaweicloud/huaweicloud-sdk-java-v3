@@ -64,12 +64,15 @@ public class ShowBandwidthResponse extends SdkResponse {
 
     
     public ShowBandwidthResponse addBandwidthInfoItem(BandwidthInfo bandwidthInfoItem) {
+        if(this.bandwidthInfo == null) {
+            this.bandwidthInfo = new ArrayList<>();
+        }
         this.bandwidthInfo.add(bandwidthInfoItem);
         return this;
     }
 
     public ShowBandwidthResponse withBandwidthInfo(Consumer<List<BandwidthInfo>> bandwidthInfoSetter) {
-        if(this.bandwidthInfo == null ){
+        if(this.bandwidthInfo == null) {
             this.bandwidthInfo = new ArrayList<>();
         }
         bandwidthInfoSetter.accept(this.bandwidthInfo);

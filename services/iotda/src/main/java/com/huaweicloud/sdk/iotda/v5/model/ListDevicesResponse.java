@@ -42,12 +42,15 @@ public class ListDevicesResponse extends SdkResponse {
 
     
     public ListDevicesResponse addDevicesItem(QueryDeviceSimplify devicesItem) {
+        if(this.devices == null) {
+            this.devices = new ArrayList<>();
+        }
         this.devices.add(devicesItem);
         return this;
     }
 
     public ListDevicesResponse withDevices(Consumer<List<QueryDeviceSimplify>> devicesSetter) {
-        if(this.devices == null ){
+        if(this.devices == null) {
             this.devices = new ArrayList<>();
         }
         devicesSetter.accept(this.devices);

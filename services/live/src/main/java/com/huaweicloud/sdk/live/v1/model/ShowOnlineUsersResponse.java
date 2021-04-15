@@ -64,12 +64,15 @@ public class ShowOnlineUsersResponse extends SdkResponse {
 
     
     public ShowOnlineUsersResponse addUserInfoItem(UserInfo userInfoItem) {
+        if(this.userInfo == null) {
+            this.userInfo = new ArrayList<>();
+        }
         this.userInfo.add(userInfoItem);
         return this;
     }
 
     public ShowOnlineUsersResponse withUserInfo(Consumer<List<UserInfo>> userInfoSetter) {
-        if(this.userInfo == null ){
+        if(this.userInfo == null) {
             this.userInfo = new ArrayList<>();
         }
         userInfoSetter.accept(this.userInfo);

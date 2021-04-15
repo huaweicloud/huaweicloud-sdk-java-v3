@@ -88,12 +88,15 @@ public class UnbindTagsDTO  {
 
     
     public UnbindTagsDTO addTagKeysItem(String tagKeysItem) {
+        if(this.tagKeys == null) {
+            this.tagKeys = new ArrayList<>();
+        }
         this.tagKeys.add(tagKeysItem);
         return this;
     }
 
     public UnbindTagsDTO withTagKeys(Consumer<List<String>> tagKeysSetter) {
-        if(this.tagKeys == null ){
+        if(this.tagKeys == null) {
             this.tagKeys = new ArrayList<>();
         }
         tagKeysSetter.accept(this.tagKeys);

@@ -113,12 +113,15 @@ public class ActionKafkaForwarding  {
 
     
     public ActionKafkaForwarding addKafkaAddressesItem(NetAddress kafkaAddressesItem) {
+        if(this.kafkaAddresses == null) {
+            this.kafkaAddresses = new ArrayList<>();
+        }
         this.kafkaAddresses.add(kafkaAddressesItem);
         return this;
     }
 
     public ActionKafkaForwarding withKafkaAddresses(Consumer<List<NetAddress>> kafkaAddressesSetter) {
-        if(this.kafkaAddresses == null ){
+        if(this.kafkaAddresses == null) {
             this.kafkaAddresses = new ArrayList<>();
         }
         kafkaAddressesSetter.accept(this.kafkaAddresses);

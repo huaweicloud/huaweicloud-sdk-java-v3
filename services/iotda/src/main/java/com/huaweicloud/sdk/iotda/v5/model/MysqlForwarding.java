@@ -182,12 +182,15 @@ public class MysqlForwarding  {
 
     
     public MysqlForwarding addColumnMappingsItem(ColumnMapping columnMappingsItem) {
+        if(this.columnMappings == null) {
+            this.columnMappings = new ArrayList<>();
+        }
         this.columnMappings.add(columnMappingsItem);
         return this;
     }
 
     public MysqlForwarding withColumnMappings(Consumer<List<ColumnMapping>> columnMappingsSetter) {
-        if(this.columnMappings == null ){
+        if(this.columnMappings == null) {
             this.columnMappings = new ArrayList<>();
         }
         columnMappingsSetter.accept(this.columnMappings);

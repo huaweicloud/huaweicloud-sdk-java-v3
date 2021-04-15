@@ -42,12 +42,15 @@ public class ListDeviceGroupsResponse extends SdkResponse {
 
     
     public ListDeviceGroupsResponse addDeviceGroupsItem(DeviceGroupResponseDTO deviceGroupsItem) {
+        if(this.deviceGroups == null) {
+            this.deviceGroups = new ArrayList<>();
+        }
         this.deviceGroups.add(deviceGroupsItem);
         return this;
     }
 
     public ListDeviceGroupsResponse withDeviceGroups(Consumer<List<DeviceGroupResponseDTO>> deviceGroupsSetter) {
-        if(this.deviceGroups == null ){
+        if(this.deviceGroups == null) {
             this.deviceGroups = new ArrayList<>();
         }
         deviceGroupsSetter.accept(this.deviceGroups);

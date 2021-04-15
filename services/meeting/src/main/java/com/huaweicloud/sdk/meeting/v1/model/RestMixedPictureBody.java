@@ -95,12 +95,15 @@ public class RestMixedPictureBody  {
 
     
     public RestMixedPictureBody addSubscriberInPicsItem(SubscriberInPic subscriberInPicsItem) {
+        if(this.subscriberInPics == null) {
+            this.subscriberInPics = new ArrayList<>();
+        }
         this.subscriberInPics.add(subscriberInPicsItem);
         return this;
     }
 
     public RestMixedPictureBody withSubscriberInPics(Consumer<List<SubscriberInPic>> subscriberInPicsSetter) {
-        if(this.subscriberInPics == null ){
+        if(this.subscriberInPics == null) {
             this.subscriberInPics = new ArrayList<>();
         }
         subscriberInPicsSetter.accept(this.subscriberInPics);

@@ -65,12 +65,15 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
 
     
     public ListHistoryOperateLogsResponse addOpsListItem(OperateLog opsListItem) {
+        if(this.opsList == null) {
+            this.opsList = new ArrayList<>();
+        }
         this.opsList.add(opsListItem);
         return this;
     }
 
     public ListHistoryOperateLogsResponse withOpsList(Consumer<List<OperateLog>> opsListSetter) {
-        if(this.opsList == null ){
+        if(this.opsList == null) {
             this.opsList = new ArrayList<>();
         }
         opsListSetter.accept(this.opsList);

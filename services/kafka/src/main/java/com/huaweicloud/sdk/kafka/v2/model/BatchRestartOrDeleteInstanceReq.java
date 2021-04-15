@@ -212,12 +212,15 @@ public class BatchRestartOrDeleteInstanceReq  {
 
     
     public BatchRestartOrDeleteInstanceReq addInstancesItem(String instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public BatchRestartOrDeleteInstanceReq withInstances(Consumer<List<String>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

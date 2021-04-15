@@ -42,12 +42,15 @@ public class ListExtendsParamsResponse extends SdkResponse {
 
     
     public ListExtendsParamsResponse addExtendsParamsItem(ExtendsParamV2 extendsParamsItem) {
+        if(this.extendsParams == null) {
+            this.extendsParams = new ArrayList<>();
+        }
         this.extendsParams.add(extendsParamsItem);
         return this;
     }
 
     public ListExtendsParamsResponse withExtendsParams(Consumer<List<ExtendsParamV2>> extendsParamsSetter) {
-        if(this.extendsParams == null ){
+        if(this.extendsParams == null) {
             this.extendsParams = new ArrayList<>();
         }
         extendsParamsSetter.accept(this.extendsParams);
@@ -75,12 +78,15 @@ public class ListExtendsParamsResponse extends SdkResponse {
 
     
     public ListExtendsParamsResponse addCommonParamsItem(CommonParamV2 commonParamsItem) {
+        if(this.commonParams == null) {
+            this.commonParams = new ArrayList<>();
+        }
         this.commonParams.add(commonParamsItem);
         return this;
     }
 
     public ListExtendsParamsResponse withCommonParams(Consumer<List<CommonParamV2>> commonParamsSetter) {
-        if(this.commonParams == null ){
+        if(this.commonParams == null) {
             this.commonParams = new ArrayList<>();
         }
         commonParamsSetter.accept(this.commonParams);

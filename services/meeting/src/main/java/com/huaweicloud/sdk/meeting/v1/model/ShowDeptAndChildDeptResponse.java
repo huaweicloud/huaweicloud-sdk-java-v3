@@ -350,12 +350,15 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
 
     
     public ShowDeptAndChildDeptResponse addDesignatedOutDeptCodesItem(IdMarkDTO designatedOutDeptCodesItem) {
+        if(this.designatedOutDeptCodes == null) {
+            this.designatedOutDeptCodes = new ArrayList<>();
+        }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
         return this;
     }
 
     public ShowDeptAndChildDeptResponse withDesignatedOutDeptCodes(Consumer<List<IdMarkDTO>> designatedOutDeptCodesSetter) {
-        if(this.designatedOutDeptCodes == null ){
+        if(this.designatedOutDeptCodes == null) {
             this.designatedOutDeptCodes = new ArrayList<>();
         }
         designatedOutDeptCodesSetter.accept(this.designatedOutDeptCodes);
@@ -383,12 +386,15 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
 
     
     public ShowDeptAndChildDeptResponse addChildDeptsItem(QueryDeptResultDTO childDeptsItem) {
+        if(this.childDepts == null) {
+            this.childDepts = new ArrayList<>();
+        }
         this.childDepts.add(childDeptsItem);
         return this;
     }
 
     public ShowDeptAndChildDeptResponse withChildDepts(Consumer<List<QueryDeptResultDTO>> childDeptsSetter) {
-        if(this.childDepts == null ){
+        if(this.childDepts == null) {
             this.childDepts = new ArrayList<>();
         }
         childDeptsSetter.accept(this.childDepts);

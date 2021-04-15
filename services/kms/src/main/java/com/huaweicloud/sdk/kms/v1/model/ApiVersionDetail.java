@@ -85,12 +85,15 @@ public class ApiVersionDetail  {
 
     
     public ApiVersionDetail addLinksItem(ApiLink linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public ApiVersionDetail withLinks(Consumer<List<ApiLink>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

@@ -65,12 +65,15 @@ public class ListRegionsResponse extends SdkResponse {
 
     
     public ListRegionsResponse addDataCenterListItem(DataCenterV2Do dataCenterListItem) {
+        if(this.dataCenterList == null) {
+            this.dataCenterList = new ArrayList<>();
+        }
         this.dataCenterList.add(dataCenterListItem);
         return this;
     }
 
     public ListRegionsResponse withDataCenterList(Consumer<List<DataCenterV2Do>> dataCenterListSetter) {
-        if(this.dataCenterList == null ){
+        if(this.dataCenterList == null) {
             this.dataCenterList = new ArrayList<>();
         }
         dataCenterListSetter.accept(this.dataCenterList);

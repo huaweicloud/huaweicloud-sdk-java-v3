@@ -141,12 +141,15 @@ public class ListKeysResponse extends SdkResponse {
 
     
     public ListKeysResponse addKeysItem(String keysItem) {
+        if(this.keys == null) {
+            this.keys = new ArrayList<>();
+        }
         this.keys.add(keysItem);
         return this;
     }
 
     public ListKeysResponse withKeys(Consumer<List<String>> keysSetter) {
-        if(this.keys == null ){
+        if(this.keys == null) {
             this.keys = new ArrayList<>();
         }
         keysSetter.accept(this.keys);
@@ -174,12 +177,15 @@ public class ListKeysResponse extends SdkResponse {
 
     
     public ListKeysResponse addKeyDetailsItem(KeyDetails keyDetailsItem) {
+        if(this.keyDetails == null) {
+            this.keyDetails = new ArrayList<>();
+        }
         this.keyDetails.add(keyDetailsItem);
         return this;
     }
 
     public ListKeysResponse withKeyDetails(Consumer<List<KeyDetails>> keyDetailsSetter) {
-        if(this.keyDetails == null ){
+        if(this.keyDetails == null) {
             this.keyDetails = new ArrayList<>();
         }
         keyDetailsSetter.accept(this.keyDetails);

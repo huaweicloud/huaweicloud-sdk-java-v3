@@ -48,12 +48,15 @@ public class ListTranscodeDataResponse extends SdkResponse {
 
     
     public ListTranscodeDataResponse addTranscodeDataListItem(TranscodeData transcodeDataListItem) {
+        if(this.transcodeDataList == null) {
+            this.transcodeDataList = new ArrayList<>();
+        }
         this.transcodeDataList.add(transcodeDataListItem);
         return this;
     }
 
     public ListTranscodeDataResponse withTranscodeDataList(Consumer<List<TranscodeData>> transcodeDataListSetter) {
-        if(this.transcodeDataList == null ){
+        if(this.transcodeDataList == null) {
             this.transcodeDataList = new ArrayList<>();
         }
         transcodeDataListSetter.accept(this.transcodeDataList);
@@ -81,12 +84,15 @@ public class ListTranscodeDataResponse extends SdkResponse {
 
     
     public ListTranscodeDataResponse addSummaryListItem(TranscodeSummary summaryListItem) {
+        if(this.summaryList == null) {
+            this.summaryList = new ArrayList<>();
+        }
         this.summaryList.add(summaryListItem);
         return this;
     }
 
     public ListTranscodeDataResponse withSummaryList(Consumer<List<TranscodeSummary>> summaryListSetter) {
-        if(this.summaryList == null ){
+        if(this.summaryList == null) {
             this.summaryList = new ArrayList<>();
         }
         summaryListSetter.accept(this.summaryList);

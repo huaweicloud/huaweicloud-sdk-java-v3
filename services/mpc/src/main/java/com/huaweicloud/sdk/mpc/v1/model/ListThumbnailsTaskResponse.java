@@ -47,12 +47,15 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
 
     
     public ListThumbnailsTaskResponse addTaskArrayItem(ThumbTask taskArrayItem) {
+        if(this.taskArray == null) {
+            this.taskArray = new ArrayList<>();
+        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
 
     public ListThumbnailsTaskResponse withTaskArray(Consumer<List<ThumbTask>> taskArraySetter) {
-        if(this.taskArray == null ){
+        if(this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);

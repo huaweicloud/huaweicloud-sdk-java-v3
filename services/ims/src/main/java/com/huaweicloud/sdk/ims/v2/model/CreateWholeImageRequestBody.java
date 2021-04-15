@@ -137,12 +137,15 @@ public class CreateWholeImageRequestBody  {
 
     
     public CreateWholeImageRequestBody addImageTagsItem(TagKeyValue imageTagsItem) {
+        if(this.imageTags == null) {
+            this.imageTags = new ArrayList<>();
+        }
         this.imageTags.add(imageTagsItem);
         return this;
     }
 
     public CreateWholeImageRequestBody withImageTags(Consumer<List<TagKeyValue>> imageTagsSetter) {
-        if(this.imageTags == null ){
+        if(this.imageTags == null) {
             this.imageTags = new ArrayList<>();
         }
         imageTagsSetter.accept(this.imageTags);
@@ -214,12 +217,15 @@ public class CreateWholeImageRequestBody  {
 
     
     public CreateWholeImageRequestBody addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateWholeImageRequestBody withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

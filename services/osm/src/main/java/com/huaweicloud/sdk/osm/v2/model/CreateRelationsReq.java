@@ -38,12 +38,15 @@ public class CreateRelationsReq  {
 
     
     public CreateRelationsReq addRelatedIdListItem(String relatedIdListItem) {
+        if(this.relatedIdList == null) {
+            this.relatedIdList = new ArrayList<>();
+        }
         this.relatedIdList.add(relatedIdListItem);
         return this;
     }
 
     public CreateRelationsReq withRelatedIdList(Consumer<List<String>> relatedIdListSetter) {
-        if(this.relatedIdList == null ){
+        if(this.relatedIdList == null) {
             this.relatedIdList = new ArrayList<>();
         }
         relatedIdListSetter.accept(this.relatedIdList);

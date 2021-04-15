@@ -148,12 +148,15 @@ public class AssociateVmrRequest  {
 
     
     public AssociateVmrRequest addBodyItem(String bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public AssociateVmrRequest withBody(Consumer<List<String>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

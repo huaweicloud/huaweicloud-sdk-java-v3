@@ -133,12 +133,15 @@ public class RestCustomMultiPictureBody  {
 
     
     public RestCustomMultiPictureBody addSubscriberInPicsItem(RestSubscriberInPic subscriberInPicsItem) {
+        if(this.subscriberInPics == null) {
+            this.subscriberInPics = new ArrayList<>();
+        }
         this.subscriberInPics.add(subscriberInPicsItem);
         return this;
     }
 
     public RestCustomMultiPictureBody withSubscriberInPics(Consumer<List<RestSubscriberInPic>> subscriberInPicsSetter) {
-        if(this.subscriberInPics == null ){
+        if(this.subscriberInPics == null) {
             this.subscriberInPics = new ArrayList<>();
         }
         subscriberInPicsSetter.accept(this.subscriberInPics);

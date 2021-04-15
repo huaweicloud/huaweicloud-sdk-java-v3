@@ -35,12 +35,15 @@ public class RunImageBatchModerationResponse extends SdkResponse {
 
     
     public RunImageBatchModerationResponse addResultItem(ImageBatchModerationResultBody resultItem) {
+        if(this.result == null) {
+            this.result = new ArrayList<>();
+        }
         this.result.add(resultItem);
         return this;
     }
 
     public RunImageBatchModerationResponse withResult(Consumer<List<ImageBatchModerationResultBody>> resultSetter) {
-        if(this.result == null ){
+        if(this.result == null) {
             this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);

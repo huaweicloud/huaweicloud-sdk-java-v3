@@ -89,12 +89,15 @@ public class StreamTranscodingTemplate  {
 
     
     public StreamTranscodingTemplate addQualityInfoItem(QualityInfo qualityInfoItem) {
+        if(this.qualityInfo == null) {
+            this.qualityInfo = new ArrayList<>();
+        }
         this.qualityInfo.add(qualityInfoItem);
         return this;
     }
 
     public StreamTranscodingTemplate withQualityInfo(Consumer<List<QualityInfo>> qualityInfoSetter) {
-        if(this.qualityInfo == null ){
+        if(this.qualityInfo == null) {
             this.qualityInfo = new ArrayList<>();
         }
         qualityInfoSetter.accept(this.qualityInfo);

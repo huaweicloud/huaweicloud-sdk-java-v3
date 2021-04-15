@@ -60,12 +60,15 @@ public class ResetReplicaReqPartitions  {
 
     
     public ResetReplicaReqPartitions addReplicasItem(Integer replicasItem) {
+        if(this.replicas == null) {
+            this.replicas = new ArrayList<>();
+        }
         this.replicas.add(replicasItem);
         return this;
     }
 
     public ResetReplicaReqPartitions withReplicas(Consumer<List<Integer>> replicasSetter) {
-        if(this.replicas == null ){
+        if(this.replicas == null) {
             this.replicas = new ArrayList<>();
         }
         replicasSetter.accept(this.replicas);

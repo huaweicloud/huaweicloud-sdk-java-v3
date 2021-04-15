@@ -91,12 +91,15 @@ public class ListLiveSampleLogsResponse extends SdkResponse {
 
     
     public ListLiveSampleLogsResponse addLogsItem(LogInfo logsItem) {
+        if(this.logs == null) {
+            this.logs = new ArrayList<>();
+        }
         this.logs.add(logsItem);
         return this;
     }
 
     public ListLiveSampleLogsResponse withLogs(Consumer<List<LogInfo>> logsSetter) {
-        if(this.logs == null ){
+        if(this.logs == null) {
             this.logs = new ArrayList<>();
         }
         logsSetter.accept(this.logs);

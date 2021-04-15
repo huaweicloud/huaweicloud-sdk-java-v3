@@ -397,12 +397,15 @@ public class QueryDeviceSimplify  {
 
     
     public QueryDeviceSimplify addTagsItem(TagV5DTO tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public QueryDeviceSimplify withTags(Consumer<List<TagV5DTO>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

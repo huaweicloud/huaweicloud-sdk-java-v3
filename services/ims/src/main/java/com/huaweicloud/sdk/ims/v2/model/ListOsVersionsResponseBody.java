@@ -61,12 +61,15 @@ public class ListOsVersionsResponseBody  {
 
     
     public ListOsVersionsResponseBody addVersionListItem(OsVersionInfo versionListItem) {
+        if(this.versionList == null) {
+            this.versionList = new ArrayList<>();
+        }
         this.versionList.add(versionListItem);
         return this;
     }
 
     public ListOsVersionsResponseBody withVersionList(Consumer<List<OsVersionInfo>> versionListSetter) {
-        if(this.versionList == null ){
+        if(this.versionList == null) {
             this.versionList = new ArrayList<>();
         }
         versionListSetter.accept(this.versionList);

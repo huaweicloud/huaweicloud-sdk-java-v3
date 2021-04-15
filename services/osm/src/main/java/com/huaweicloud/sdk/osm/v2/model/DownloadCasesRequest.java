@@ -324,12 +324,15 @@ public class DownloadCasesRequest  {
 
     
     public DownloadCasesRequest addTenantSourceIdListItem(String tenantSourceIdListItem) {
+        if(this.tenantSourceIdList == null) {
+            this.tenantSourceIdList = new ArrayList<>();
+        }
         this.tenantSourceIdList.add(tenantSourceIdListItem);
         return this;
     }
 
     public DownloadCasesRequest withTenantSourceIdList(Consumer<List<String>> tenantSourceIdListSetter) {
-        if(this.tenantSourceIdList == null ){
+        if(this.tenantSourceIdList == null) {
             this.tenantSourceIdList = new ArrayList<>();
         }
         tenantSourceIdListSetter.accept(this.tenantSourceIdList);

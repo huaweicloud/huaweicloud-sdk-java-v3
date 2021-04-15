@@ -110,12 +110,15 @@ public class ModifyTransTemplateGroup  {
 
     
     public ModifyTransTemplateGroup addVideosItem(VideoObj videosItem) {
+        if(this.videos == null) {
+            this.videos = new ArrayList<>();
+        }
         this.videos.add(videosItem);
         return this;
     }
 
     public ModifyTransTemplateGroup withVideos(Consumer<List<VideoObj>> videosSetter) {
-        if(this.videos == null ){
+        if(this.videos == null) {
             this.videos = new ArrayList<>();
         }
         videosSetter.accept(this.videos);

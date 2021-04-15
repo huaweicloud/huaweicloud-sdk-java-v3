@@ -63,12 +63,15 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
 
     
     public UpdateInstanceCrossVpcIpResponse addResultsItem(UpdateInstanceCrossVpcIpRespResults resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public UpdateInstanceCrossVpcIpResponse withResults(Consumer<List<UpdateInstanceCrossVpcIpRespResults>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

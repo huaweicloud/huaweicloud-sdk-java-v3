@@ -234,12 +234,15 @@ public class IncidentMessageV2  {
 
     
     public IncidentMessageV2 addAccessoryListItem(SimpleAccessoryV2 accessoryListItem) {
+        if(this.accessoryList == null) {
+            this.accessoryList = new ArrayList<>();
+        }
         this.accessoryList.add(accessoryListItem);
         return this;
     }
 
     public IncidentMessageV2 withAccessoryList(Consumer<List<SimpleAccessoryV2>> accessoryListSetter) {
-        if(this.accessoryList == null ){
+        if(this.accessoryList == null) {
             this.accessoryList = new ArrayList<>();
         }
         accessoryListSetter.accept(this.accessoryList);

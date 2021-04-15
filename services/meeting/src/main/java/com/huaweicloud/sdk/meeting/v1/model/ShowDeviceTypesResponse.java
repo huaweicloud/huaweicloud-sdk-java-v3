@@ -35,12 +35,15 @@ public class ShowDeviceTypesResponse extends SdkResponse {
 
     
     public ShowDeviceTypesResponse addBodyItem(QueryDeviceTypeResultDTO bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ShowDeviceTypesResponse withBody(Consumer<List<QueryDeviceTypeResultDTO>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

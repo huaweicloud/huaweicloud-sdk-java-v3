@@ -33,12 +33,15 @@ public class ResetReplicaReq  {
 
     
     public ResetReplicaReq addPartitionsItem(ResetReplicaReqPartitions partitionsItem) {
+        if(this.partitions == null) {
+            this.partitions = new ArrayList<>();
+        }
         this.partitions.add(partitionsItem);
         return this;
     }
 
     public ResetReplicaReq withPartitions(Consumer<List<ResetReplicaReqPartitions>> partitionsSetter) {
-        if(this.partitions == null ){
+        if(this.partitions == null) {
             this.partitions = new ArrayList<>();
         }
         partitionsSetter.accept(this.partitions);

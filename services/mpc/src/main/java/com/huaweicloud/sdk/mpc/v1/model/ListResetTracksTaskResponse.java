@@ -47,12 +47,15 @@ public class ListResetTracksTaskResponse extends SdkResponse {
 
     
     public ListResetTracksTaskResponse addTaskArrayItem(ResetTracksTaskInfo taskArrayItem) {
+        if(this.taskArray == null) {
+            this.taskArray = new ArrayList<>();
+        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
 
     public ListResetTracksTaskResponse withTaskArray(Consumer<List<ResetTracksTaskInfo>> taskArraySetter) {
-        if(this.taskArray == null ){
+        if(this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);

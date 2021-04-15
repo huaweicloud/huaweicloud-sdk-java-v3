@@ -103,12 +103,15 @@ public class ShowImageByTagsResource  {
 
     
     public ShowImageByTagsResource addTagsItem(TagKeyValue tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ShowImageByTagsResource withTags(Consumer<List<TagKeyValue>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

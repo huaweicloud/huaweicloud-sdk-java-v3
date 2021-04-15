@@ -33,12 +33,15 @@ public class RestInviteReqBody  {
 
     
     public RestInviteReqBody addAttendeesItem(Attendee attendeesItem) {
+        if(this.attendees == null) {
+            this.attendees = new ArrayList<>();
+        }
         this.attendees.add(attendeesItem);
         return this;
     }
 
     public RestInviteReqBody withAttendees(Consumer<List<Attendee>> attendeesSetter) {
-        if(this.attendees == null ){
+        if(this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         attendeesSetter.accept(this.attendees);

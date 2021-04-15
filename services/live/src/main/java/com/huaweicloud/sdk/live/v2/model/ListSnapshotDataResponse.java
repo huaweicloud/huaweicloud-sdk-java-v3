@@ -47,12 +47,15 @@ public class ListSnapshotDataResponse extends SdkResponse {
 
     
     public ListSnapshotDataResponse addSnapshotListItem(SnapshotData snapshotListItem) {
+        if(this.snapshotList == null) {
+            this.snapshotList = new ArrayList<>();
+        }
         this.snapshotList.add(snapshotListItem);
         return this;
     }
 
     public ListSnapshotDataResponse withSnapshotList(Consumer<List<SnapshotData>> snapshotListSetter) {
-        if(this.snapshotList == null ){
+        if(this.snapshotList == null) {
             this.snapshotList = new ArrayList<>();
         }
         snapshotListSetter.accept(this.snapshotList);

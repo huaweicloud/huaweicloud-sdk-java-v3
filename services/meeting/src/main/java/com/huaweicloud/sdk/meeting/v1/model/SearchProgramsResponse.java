@@ -120,12 +120,15 @@ public class SearchProgramsResponse extends SdkResponse {
 
     
     public SearchProgramsResponse addDataItem(ProgramResponseBase dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchProgramsResponse withData(Consumer<List<ProgramResponseBase>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

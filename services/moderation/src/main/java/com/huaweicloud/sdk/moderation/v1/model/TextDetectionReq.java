@@ -39,12 +39,15 @@ public class TextDetectionReq  {
 
     
     public TextDetectionReq addCategoriesItem(String categoriesItem) {
+        if(this.categories == null) {
+            this.categories = new ArrayList<>();
+        }
         this.categories.add(categoriesItem);
         return this;
     }
 
     public TextDetectionReq withCategories(Consumer<List<String>> categoriesSetter) {
-        if(this.categories == null ){
+        if(this.categories == null) {
             this.categories = new ArrayList<>();
         }
         categoriesSetter.accept(this.categories);
@@ -72,12 +75,15 @@ public class TextDetectionReq  {
 
     
     public TextDetectionReq addItemsItem(TextDetectionItemsReq itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public TextDetectionReq withItems(Consumer<List<TextDetectionItemsReq>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

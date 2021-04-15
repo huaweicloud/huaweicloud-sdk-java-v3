@@ -162,12 +162,15 @@ public class ListEncryptTaskRequest  {
 
     
     public ListEncryptTaskRequest addTaskIdItem(String taskIdItem) {
+        if(this.taskId == null) {
+            this.taskId = new ArrayList<>();
+        }
         this.taskId.add(taskIdItem);
         return this;
     }
 
     public ListEncryptTaskRequest withTaskId(Consumer<List<String>> taskIdSetter) {
-        if(this.taskId == null ){
+        if(this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         taskIdSetter.accept(this.taskId);

@@ -53,12 +53,15 @@ public class ShowMessagesResponse extends SdkResponse {
 
     
     public ShowMessagesResponse addMessagesItem(ShowMessagesRespMessages messagesItem) {
+        if(this.messages == null) {
+            this.messages = new ArrayList<>();
+        }
         this.messages.add(messagesItem);
         return this;
     }
 
     public ShowMessagesResponse withMessages(Consumer<List<ShowMessagesRespMessages>> messagesSetter) {
-        if(this.messages == null ){
+        if(this.messages == null) {
             this.messages = new ArrayList<>();
         }
         messagesSetter.accept(this.messages);

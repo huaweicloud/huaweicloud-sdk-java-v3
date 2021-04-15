@@ -164,12 +164,15 @@ public class ServiceProperty  {
 
     
     public ServiceProperty addEnumListItem(String enumListItem) {
+        if(this.enumList == null) {
+            this.enumList = new ArrayList<>();
+        }
         this.enumList.add(enumListItem);
         return this;
     }
 
     public ServiceProperty withEnumList(Consumer<List<String>> enumListSetter) {
-        if(this.enumList == null ){
+        if(this.enumList == null) {
             this.enumList = new ArrayList<>();
         }
         enumListSetter.accept(this.enumList);

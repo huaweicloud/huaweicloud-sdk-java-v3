@@ -230,12 +230,15 @@ public class Multidrm  {
 
     
     public Multidrm addDrmListItem(String drmListItem) {
+        if(this.drmList == null) {
+            this.drmList = new ArrayList<>();
+        }
         this.drmList.add(drmListItem);
         return this;
     }
 
     public Multidrm withDrmList(Consumer<List<String>> drmListSetter) {
-        if(this.drmList == null ){
+        if(this.drmList == null) {
             this.drmList = new ArrayList<>();
         }
         drmListSetter.accept(this.drmList);

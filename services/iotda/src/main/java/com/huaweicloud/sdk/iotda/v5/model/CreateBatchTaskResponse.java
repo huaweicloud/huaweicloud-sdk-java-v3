@@ -164,12 +164,15 @@ public class CreateBatchTaskResponse extends SdkResponse {
 
     
     public CreateBatchTaskResponse addTargetsItem(String targetsItem) {
+        if(this.targets == null) {
+            this.targets = new ArrayList<>();
+        }
         this.targets.add(targetsItem);
         return this;
     }
 
     public CreateBatchTaskResponse withTargets(Consumer<List<String>> targetsSetter) {
-        if(this.targets == null ){
+        if(this.targets == null) {
             this.targets = new ArrayList<>();
         }
         targetsSetter.accept(this.targets);
@@ -198,12 +201,15 @@ public class CreateBatchTaskResponse extends SdkResponse {
     
 
     public CreateBatchTaskResponse putTargetsFilterItem(String key, Object targetsFilterItem) {
+        if(this.targetsFilter == null) {
+            this.targetsFilter = new HashMap<>();
+        }
         this.targetsFilter.put(key, targetsFilterItem);
         return this;
     }
 
     public CreateBatchTaskResponse withTargetsFilter(Consumer<Map<String, Object>> targetsFilterSetter) {
-        if(this.targetsFilter == null ){
+        if(this.targetsFilter == null) {
             this.targetsFilter = new HashMap<>();
         }
         targetsFilterSetter.accept(this.targetsFilter);

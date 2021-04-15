@@ -63,12 +63,15 @@ public class ListDeviceMessagesResponse extends SdkResponse {
 
     
     public ListDeviceMessagesResponse addMessagesItem(DeviceMessage messagesItem) {
+        if(this.messages == null) {
+            this.messages = new ArrayList<>();
+        }
         this.messages.add(messagesItem);
         return this;
     }
 
     public ListDeviceMessagesResponse withMessages(Consumer<List<DeviceMessage>> messagesSetter) {
-        if(this.messages == null ){
+        if(this.messages == null) {
             this.messages = new ArrayList<>();
         }
         messagesSetter.accept(this.messages);

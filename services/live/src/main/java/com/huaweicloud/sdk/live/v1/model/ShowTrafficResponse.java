@@ -64,12 +64,15 @@ public class ShowTrafficResponse extends SdkResponse {
 
     
     public ShowTrafficResponse addTrafficInfoItem(TrafficInfo trafficInfoItem) {
+        if(this.trafficInfo == null) {
+            this.trafficInfo = new ArrayList<>();
+        }
         this.trafficInfo.add(trafficInfoItem);
         return this;
     }
 
     public ShowTrafficResponse withTrafficInfo(Consumer<List<TrafficInfo>> trafficInfoSetter) {
-        if(this.trafficInfo == null ){
+        if(this.trafficInfo == null) {
             this.trafficInfo = new ArrayList<>();
         }
         trafficInfoSetter.accept(this.trafficInfo);

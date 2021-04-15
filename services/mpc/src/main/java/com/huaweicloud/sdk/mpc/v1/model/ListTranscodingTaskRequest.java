@@ -92,12 +92,15 @@ public class ListTranscodingTaskRequest  {
 
     
     public ListTranscodingTaskRequest addTaskIdItem(Long taskIdItem) {
+        if(this.taskId == null) {
+            this.taskId = new ArrayList<>();
+        }
         this.taskId.add(taskIdItem);
         return this;
     }
 
     public ListTranscodingTaskRequest withTaskId(Consumer<List<Long>> taskIdSetter) {
-        if(this.taskId == null ){
+        if(this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         taskIdSetter.accept(this.taskId);

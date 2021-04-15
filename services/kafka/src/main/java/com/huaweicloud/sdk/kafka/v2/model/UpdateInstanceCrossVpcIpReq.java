@@ -34,12 +34,15 @@ public class UpdateInstanceCrossVpcIpReq  {
     
 
     public UpdateInstanceCrossVpcIpReq putAdvertisedIpContentsItem(String key, String advertisedIpContentsItem) {
+        if(this.advertisedIpContents == null) {
+            this.advertisedIpContents = new HashMap<>();
+        }
         this.advertisedIpContents.put(key, advertisedIpContentsItem);
         return this;
     }
 
     public UpdateInstanceCrossVpcIpReq withAdvertisedIpContents(Consumer<Map<String, String>> advertisedIpContentsSetter) {
-        if(this.advertisedIpContents == null ){
+        if(this.advertisedIpContents == null) {
             this.advertisedIpContents = new HashMap<>();
         }
         advertisedIpContentsSetter.accept(this.advertisedIpContents);

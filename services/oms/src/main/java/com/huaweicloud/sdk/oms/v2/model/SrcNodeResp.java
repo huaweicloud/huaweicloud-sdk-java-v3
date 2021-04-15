@@ -287,12 +287,15 @@ public class SrcNodeResp  {
 
     
     public SrcNodeResp addObjectKeyItem(String objectKeyItem) {
+        if(this.objectKey == null) {
+            this.objectKey = new ArrayList<>();
+        }
         this.objectKey.add(objectKeyItem);
         return this;
     }
 
     public SrcNodeResp withObjectKey(Consumer<List<String>> objectKeySetter) {
-        if(this.objectKey == null ){
+        if(this.objectKey == null) {
             this.objectKey = new ArrayList<>();
         }
         objectKeySetter.accept(this.objectKey);

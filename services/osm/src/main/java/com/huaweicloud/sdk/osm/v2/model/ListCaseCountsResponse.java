@@ -35,12 +35,15 @@ public class ListCaseCountsResponse extends SdkResponse {
 
     
     public ListCaseCountsResponse addIncidentStatusCountsItem(IncidentStatusCount incidentStatusCountsItem) {
+        if(this.incidentStatusCounts == null) {
+            this.incidentStatusCounts = new ArrayList<>();
+        }
         this.incidentStatusCounts.add(incidentStatusCountsItem);
         return this;
     }
 
     public ListCaseCountsResponse withIncidentStatusCounts(Consumer<List<IncidentStatusCount>> incidentStatusCountsSetter) {
-        if(this.incidentStatusCounts == null ){
+        if(this.incidentStatusCounts == null) {
             this.incidentStatusCounts = new ArrayList<>();
         }
         incidentStatusCountsSetter.accept(this.incidentStatusCounts);

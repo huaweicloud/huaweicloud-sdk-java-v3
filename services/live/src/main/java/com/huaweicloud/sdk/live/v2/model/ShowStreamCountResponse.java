@@ -41,12 +41,15 @@ public class ShowStreamCountResponse extends SdkResponse {
 
     
     public ShowStreamCountResponse addDataListItem(StreamCountData dataListItem) {
+        if(this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
         this.dataList.add(dataListItem);
         return this;
     }
 
     public ShowStreamCountResponse withDataList(Consumer<List<StreamCountData>> dataListSetter) {
-        if(this.dataList == null ){
+        if(this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);

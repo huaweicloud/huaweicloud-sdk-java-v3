@@ -35,12 +35,15 @@ public class ListBatchTaskFilesResponse extends SdkResponse {
 
     
     public ListBatchTaskFilesResponse addFilesItem(BatchTaskFile filesItem) {
+        if(this.files == null) {
+            this.files = new ArrayList<>();
+        }
         this.files.add(filesItem);
         return this;
     }
 
     public ListBatchTaskFilesResponse withFiles(Consumer<List<BatchTaskFile>> filesSetter) {
-        if(this.files == null ){
+        if(this.files == null) {
             this.files = new ArrayList<>();
         }
         filesSetter.accept(this.files);

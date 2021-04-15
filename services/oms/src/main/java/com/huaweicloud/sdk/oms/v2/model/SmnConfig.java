@@ -170,12 +170,15 @@ public class SmnConfig  {
 
     
     public SmnConfig addTriggerConditionsItem(String triggerConditionsItem) {
+        if(this.triggerConditions == null) {
+            this.triggerConditions = new ArrayList<>();
+        }
         this.triggerConditions.add(triggerConditionsItem);
         return this;
     }
 
     public SmnConfig withTriggerConditions(Consumer<List<String>> triggerConditionsSetter) {
-        if(this.triggerConditions == null ){
+        if(this.triggerConditions == null) {
             this.triggerConditions = new ArrayList<>();
         }
         triggerConditionsSetter.accept(this.triggerConditions);

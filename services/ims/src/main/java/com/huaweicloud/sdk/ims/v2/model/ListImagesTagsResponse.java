@@ -35,12 +35,15 @@ public class ListImagesTagsResponse extends SdkResponse {
 
     
     public ListImagesTagsResponse addTagsItem(Tags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListImagesTagsResponse withTags(Consumer<List<Tags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

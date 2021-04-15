@@ -135,12 +135,15 @@ public class AutoScalingPolicy  {
 
     
     public AutoScalingPolicy addResourcesPlansItem(ResourcesPlan resourcesPlansItem) {
+        if(this.resourcesPlans == null) {
+            this.resourcesPlans = new ArrayList<>();
+        }
         this.resourcesPlans.add(resourcesPlansItem);
         return this;
     }
 
     public AutoScalingPolicy withResourcesPlans(Consumer<List<ResourcesPlan>> resourcesPlansSetter) {
-        if(this.resourcesPlans == null ){
+        if(this.resourcesPlans == null) {
             this.resourcesPlans = new ArrayList<>();
         }
         resourcesPlansSetter.accept(this.resourcesPlans);
@@ -168,12 +171,15 @@ public class AutoScalingPolicy  {
 
     
     public AutoScalingPolicy addRulesItem(Rules rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public AutoScalingPolicy withRules(Consumer<List<Rules>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);
@@ -201,12 +207,15 @@ public class AutoScalingPolicy  {
 
     
     public AutoScalingPolicy addExecScriptsItem(ScaleScript execScriptsItem) {
+        if(this.execScripts == null) {
+            this.execScripts = new ArrayList<>();
+        }
         this.execScripts.add(execScriptsItem);
         return this;
     }
 
     public AutoScalingPolicy withExecScripts(Consumer<List<ScaleScript>> execScriptsSetter) {
-        if(this.execScripts == null ){
+        if(this.execScripts == null) {
             this.execScripts = new ArrayList<>();
         }
         execScriptsSetter.accept(this.execScripts);

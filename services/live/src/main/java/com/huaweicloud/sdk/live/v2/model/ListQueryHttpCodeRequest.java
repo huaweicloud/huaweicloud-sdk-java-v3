@@ -62,12 +62,15 @@ public class ListQueryHttpCodeRequest  {
 
     
     public ListQueryHttpCodeRequest addPlayDomainsItem(String playDomainsItem) {
+        if(this.playDomains == null) {
+            this.playDomains = new ArrayList<>();
+        }
         this.playDomains.add(playDomainsItem);
         return this;
     }
 
     public ListQueryHttpCodeRequest withPlayDomains(Consumer<List<String>> playDomainsSetter) {
-        if(this.playDomains == null ){
+        if(this.playDomains == null) {
             this.playDomains = new ArrayList<>();
         }
         playDomainsSetter.accept(this.playDomains);
@@ -95,12 +98,15 @@ public class ListQueryHttpCodeRequest  {
 
     
     public ListQueryHttpCodeRequest addCodeItem(String codeItem) {
+        if(this.code == null) {
+            this.code = new ArrayList<>();
+        }
         this.code.add(codeItem);
         return this;
     }
 
     public ListQueryHttpCodeRequest withCode(Consumer<List<String>> codeSetter) {
-        if(this.code == null ){
+        if(this.code == null) {
             this.code = new ArrayList<>();
         }
         codeSetter.accept(this.code);
@@ -128,12 +134,15 @@ public class ListQueryHttpCodeRequest  {
 
     
     public ListQueryHttpCodeRequest addRegionItem(String regionItem) {
+        if(this.region == null) {
+            this.region = new ArrayList<>();
+        }
         this.region.add(regionItem);
         return this;
     }
 
     public ListQueryHttpCodeRequest withRegion(Consumer<List<String>> regionSetter) {
-        if(this.region == null ){
+        if(this.region == null) {
             this.region = new ArrayList<>();
         }
         regionSetter.accept(this.region);
@@ -161,12 +170,15 @@ public class ListQueryHttpCodeRequest  {
 
     
     public ListQueryHttpCodeRequest addIspItem(String ispItem) {
+        if(this.isp == null) {
+            this.isp = new ArrayList<>();
+        }
         this.isp.add(ispItem);
         return this;
     }
 
     public ListQueryHttpCodeRequest withIsp(Consumer<List<String>> ispSetter) {
-        if(this.isp == null ){
+        if(this.isp == null) {
             this.isp = new ArrayList<>();
         }
         ispSetter.accept(this.isp);

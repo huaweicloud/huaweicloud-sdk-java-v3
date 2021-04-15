@@ -48,12 +48,15 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
 
     
     public ListNewInstantMessagesResponse addImstatusItem(ImStatusV2 imstatusItem) {
+        if(this.imstatus == null) {
+            this.imstatus = new ArrayList<>();
+        }
         this.imstatus.add(imstatusItem);
         return this;
     }
 
     public ListNewInstantMessagesResponse withImstatus(Consumer<List<ImStatusV2>> imstatusSetter) {
-        if(this.imstatus == null ){
+        if(this.imstatus == null) {
             this.imstatus = new ArrayList<>();
         }
         imstatusSetter.accept(this.imstatus);
@@ -81,12 +84,15 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
 
     
     public ListNewInstantMessagesResponse addImmsgItem(UserInstantIncidentMsgV2 immsgItem) {
+        if(this.immsg == null) {
+            this.immsg = new ArrayList<>();
+        }
         this.immsg.add(immsgItem);
         return this;
     }
 
     public ListNewInstantMessagesResponse withImmsg(Consumer<List<UserInstantIncidentMsgV2>> immsgSetter) {
-        if(this.immsg == null ){
+        if(this.immsg == null) {
             this.immsg = new ArrayList<>();
         }
         immsgSetter.accept(this.immsg);

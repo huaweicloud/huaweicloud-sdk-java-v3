@@ -60,12 +60,15 @@ public class MediaDetail  {
 
     
     public MediaDetail addFeaturesItem(String featuresItem) {
+        if(this.features == null) {
+            this.features = new ArrayList<>();
+        }
         this.features.add(featuresItem);
         return this;
     }
 
     public MediaDetail withFeatures(Consumer<List<String>> featuresSetter) {
-        if(this.features == null ){
+        if(this.features == null) {
             this.features = new ArrayList<>();
         }
         featuresSetter.accept(this.features);
@@ -122,12 +125,15 @@ public class MediaDetail  {
 
     
     public MediaDetail addOutputVideoParasItem(OutputVideoPara outputVideoParasItem) {
+        if(this.outputVideoParas == null) {
+            this.outputVideoParas = new ArrayList<>();
+        }
         this.outputVideoParas.add(outputVideoParasItem);
         return this;
     }
 
     public MediaDetail withOutputVideoParas(Consumer<List<OutputVideoPara>> outputVideoParasSetter) {
-        if(this.outputVideoParas == null ){
+        if(this.outputVideoParas == null) {
             this.outputVideoParas = new ArrayList<>();
         }
         outputVideoParasSetter.accept(this.outputVideoParas);

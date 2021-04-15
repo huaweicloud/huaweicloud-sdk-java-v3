@@ -35,12 +35,15 @@ public class ListNatGatewaySnatRulesResponse extends SdkResponse {
 
     
     public ListNatGatewaySnatRulesResponse addSnatRulesItem(NatGatewaySnatRuleResponseBody snatRulesItem) {
+        if(this.snatRules == null) {
+            this.snatRules = new ArrayList<>();
+        }
         this.snatRules.add(snatRulesItem);
         return this;
     }
 
     public ListNatGatewaySnatRulesResponse withSnatRules(Consumer<List<NatGatewaySnatRuleResponseBody>> snatRulesSetter) {
-        if(this.snatRules == null ){
+        if(this.snatRules == null) {
             this.snatRules = new ArrayList<>();
         }
         snatRulesSetter.accept(this.snatRules);

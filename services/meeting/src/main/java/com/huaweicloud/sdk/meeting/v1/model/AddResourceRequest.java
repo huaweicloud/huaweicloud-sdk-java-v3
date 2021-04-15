@@ -147,12 +147,15 @@ public class AddResourceRequest  {
 
     
     public AddResourceRequest addBodyItem(ResourceDTO bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public AddResourceRequest withBody(Consumer<List<ResourceDTO>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

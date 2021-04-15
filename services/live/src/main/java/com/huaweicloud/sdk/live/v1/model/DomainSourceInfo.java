@@ -342,12 +342,15 @@ public class DomainSourceInfo  {
 
     
     public DomainSourceInfo addSourcesItem(String sourcesItem) {
+        if(this.sources == null) {
+            this.sources = new ArrayList<>();
+        }
         this.sources.add(sourcesItem);
         return this;
     }
 
     public DomainSourceInfo withSources(Consumer<List<String>> sourcesSetter) {
-        if(this.sources == null ){
+        if(this.sources == null) {
             this.sources = new ArrayList<>();
         }
         sourcesSetter.accept(this.sources);

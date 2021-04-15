@@ -68,12 +68,15 @@ public class ServiceCommand  {
 
     
     public ServiceCommand addParasItem(ServiceCommandPara parasItem) {
+        if(this.paras == null) {
+            this.paras = new ArrayList<>();
+        }
         this.paras.add(parasItem);
         return this;
     }
 
     public ServiceCommand withParas(Consumer<List<ServiceCommandPara>> parasSetter) {
-        if(this.paras == null ){
+        if(this.paras == null) {
             this.paras = new ArrayList<>();
         }
         parasSetter.accept(this.paras);
@@ -101,12 +104,15 @@ public class ServiceCommand  {
 
     
     public ServiceCommand addResponsesItem(ServiceCommandResponse responsesItem) {
+        if(this.responses == null) {
+            this.responses = new ArrayList<>();
+        }
         this.responses.add(responsesItem);
         return this;
     }
 
     public ServiceCommand withResponses(Consumer<List<ServiceCommandResponse>> responsesSetter) {
-        if(this.responses == null ){
+        if(this.responses == null) {
             this.responses = new ArrayList<>();
         }
         responsesSetter.accept(this.responses);

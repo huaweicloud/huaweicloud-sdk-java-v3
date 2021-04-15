@@ -120,12 +120,15 @@ public class SearchMemberVmrResponse extends SdkResponse {
 
     
     public SearchMemberVmrResponse addDataItem(QueryVmrResultDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchMemberVmrResponse withData(Consumer<List<QueryVmrResultDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

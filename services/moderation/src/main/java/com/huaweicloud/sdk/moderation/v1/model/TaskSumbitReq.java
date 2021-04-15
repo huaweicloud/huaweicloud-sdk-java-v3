@@ -126,12 +126,15 @@ public class TaskSumbitReq  {
 
     
     public TaskSumbitReq addUrlsItem(String urlsItem) {
+        if(this.urls == null) {
+            this.urls = new ArrayList<>();
+        }
         this.urls.add(urlsItem);
         return this;
     }
 
     public TaskSumbitReq withUrls(Consumer<List<String>> urlsSetter) {
-        if(this.urls == null ){
+        if(this.urls == null) {
             this.urls = new ArrayList<>();
         }
         urlsSetter.accept(this.urls);
@@ -159,12 +162,15 @@ public class TaskSumbitReq  {
 
     
     public TaskSumbitReq addCategoriesItem(CategoriesEnum categoriesItem) {
+        if(this.categories == null) {
+            this.categories = new ArrayList<>();
+        }
         this.categories.add(categoriesItem);
         return this;
     }
 
     public TaskSumbitReq withCategories(Consumer<List<CategoriesEnum>> categoriesSetter) {
-        if(this.categories == null ){
+        if(this.categories == null) {
             this.categories = new ArrayList<>();
         }
         categoriesSetter.accept(this.categories);

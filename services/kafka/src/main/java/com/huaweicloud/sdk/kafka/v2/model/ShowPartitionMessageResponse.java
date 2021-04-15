@@ -35,12 +35,15 @@ public class ShowPartitionMessageResponse extends SdkResponse {
 
     
     public ShowPartitionMessageResponse addMessageItem(ShowPartitionMessageRespMessage messageItem) {
+        if(this.message == null) {
+            this.message = new ArrayList<>();
+        }
         this.message.add(messageItem);
         return this;
     }
 
     public ShowPartitionMessageResponse withMessage(Consumer<List<ShowPartitionMessageRespMessage>> messageSetter) {
-        if(this.message == null ){
+        if(this.message == null) {
             this.message = new ArrayList<>();
         }
         messageSetter.accept(this.message);

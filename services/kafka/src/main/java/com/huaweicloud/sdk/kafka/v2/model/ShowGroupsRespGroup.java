@@ -130,12 +130,15 @@ public class ShowGroupsRespGroup  {
 
     
     public ShowGroupsRespGroup addMembersItem(ShowGroupsRespGroupMembers membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public ShowGroupsRespGroup withMembers(Consumer<List<ShowGroupsRespGroupMembers>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);
@@ -163,12 +166,15 @@ public class ShowGroupsRespGroup  {
 
     
     public ShowGroupsRespGroup addGroupMessageOffsetsItem(ShowGroupsRespGroupGroupMessageOffsets groupMessageOffsetsItem) {
+        if(this.groupMessageOffsets == null) {
+            this.groupMessageOffsets = new ArrayList<>();
+        }
         this.groupMessageOffsets.add(groupMessageOffsetsItem);
         return this;
     }
 
     public ShowGroupsRespGroup withGroupMessageOffsets(Consumer<List<ShowGroupsRespGroupGroupMessageOffsets>> groupMessageOffsetsSetter) {
-        if(this.groupMessageOffsets == null ){
+        if(this.groupMessageOffsets == null) {
             this.groupMessageOffsets = new ArrayList<>();
         }
         groupMessageOffsetsSetter.accept(this.groupMessageOffsets);

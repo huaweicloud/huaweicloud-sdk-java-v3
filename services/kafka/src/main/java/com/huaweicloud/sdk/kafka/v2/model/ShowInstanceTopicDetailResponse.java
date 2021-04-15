@@ -69,12 +69,15 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
 
     
     public ShowInstanceTopicDetailResponse addPartitionsItem(ShowInstanceTopicDetailRespPartitions partitionsItem) {
+        if(this.partitions == null) {
+            this.partitions = new ArrayList<>();
+        }
         this.partitions.add(partitionsItem);
         return this;
     }
 
     public ShowInstanceTopicDetailResponse withPartitions(Consumer<List<ShowInstanceTopicDetailRespPartitions>> partitionsSetter) {
-        if(this.partitions == null ){
+        if(this.partitions == null) {
             this.partitions = new ArrayList<>();
         }
         partitionsSetter.accept(this.partitions);
@@ -102,12 +105,15 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
 
     
     public ShowInstanceTopicDetailResponse addGroupSubscribedItem(String groupSubscribedItem) {
+        if(this.groupSubscribed == null) {
+            this.groupSubscribed = new ArrayList<>();
+        }
         this.groupSubscribed.add(groupSubscribedItem);
         return this;
     }
 
     public ShowInstanceTopicDetailResponse withGroupSubscribed(Consumer<List<String>> groupSubscribedSetter) {
-        if(this.groupSubscribed == null ){
+        if(this.groupSubscribed == null) {
             this.groupSubscribed = new ArrayList<>();
         }
         groupSubscribedSetter.accept(this.groupSubscribed);

@@ -53,12 +53,15 @@ public class ListSinkTasksResponse extends SdkResponse {
 
     
     public ListSinkTasksResponse addTasksItem(ListSinkTasksRespTasks tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ListSinkTasksResponse withTasks(Consumer<List<ListSinkTasksRespTasks>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

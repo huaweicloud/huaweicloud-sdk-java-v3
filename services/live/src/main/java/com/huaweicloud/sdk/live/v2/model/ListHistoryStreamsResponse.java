@@ -47,12 +47,15 @@ public class ListHistoryStreamsResponse extends SdkResponse {
 
     
     public ListHistoryStreamsResponse addHistoryStreamListItem(HistoryStreamInfo historyStreamListItem) {
+        if(this.historyStreamList == null) {
+            this.historyStreamList = new ArrayList<>();
+        }
         this.historyStreamList.add(historyStreamListItem);
         return this;
     }
 
     public ListHistoryStreamsResponse withHistoryStreamList(Consumer<List<HistoryStreamInfo>> historyStreamListSetter) {
-        if(this.historyStreamList == null ){
+        if(this.historyStreamList == null) {
             this.historyStreamList = new ArrayList<>();
         }
         historyStreamListSetter.accept(this.historyStreamList);

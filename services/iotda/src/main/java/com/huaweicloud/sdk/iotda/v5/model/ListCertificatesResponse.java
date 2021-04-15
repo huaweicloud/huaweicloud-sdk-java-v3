@@ -42,12 +42,15 @@ public class ListCertificatesResponse extends SdkResponse {
 
     
     public ListCertificatesResponse addCertificatesItem(CertificatesRspDTO certificatesItem) {
+        if(this.certificates == null) {
+            this.certificates = new ArrayList<>();
+        }
         this.certificates.add(certificatesItem);
         return this;
     }
 
     public ListCertificatesResponse withCertificates(Consumer<List<CertificatesRspDTO>> certificatesSetter) {
-        if(this.certificates == null ){
+        if(this.certificates == null) {
             this.certificates = new ArrayList<>();
         }
         certificatesSetter.accept(this.certificates);

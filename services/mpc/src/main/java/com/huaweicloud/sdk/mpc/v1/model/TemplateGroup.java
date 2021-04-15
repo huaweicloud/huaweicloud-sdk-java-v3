@@ -116,12 +116,15 @@ public class TemplateGroup  {
 
     
     public TemplateGroup addTemplateIdsItem(Integer templateIdsItem) {
+        if(this.templateIds == null) {
+            this.templateIds = new ArrayList<>();
+        }
         this.templateIds.add(templateIdsItem);
         return this;
     }
 
     public TemplateGroup withTemplateIds(Consumer<List<Integer>> templateIdsSetter) {
-        if(this.templateIds == null ){
+        if(this.templateIds == null) {
             this.templateIds = new ArrayList<>();
         }
         templateIdsSetter.accept(this.templateIds);
@@ -149,12 +152,15 @@ public class TemplateGroup  {
 
     
     public TemplateGroup addVideosItem(VideoAndTemplate videosItem) {
+        if(this.videos == null) {
+            this.videos = new ArrayList<>();
+        }
         this.videos.add(videosItem);
         return this;
     }
 
     public TemplateGroup withVideos(Consumer<List<VideoAndTemplate>> videosSetter) {
-        if(this.videos == null ){
+        if(this.videos == null) {
             this.videos = new ArrayList<>();
         }
         videosSetter.accept(this.videos);

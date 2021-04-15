@@ -358,12 +358,15 @@ public class ModDeptDTO  {
 
     
     public ModDeptDTO addDesignatedOutDeptCodesItem(String designatedOutDeptCodesItem) {
+        if(this.designatedOutDeptCodes == null) {
+            this.designatedOutDeptCodes = new ArrayList<>();
+        }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
         return this;
     }
 
     public ModDeptDTO withDesignatedOutDeptCodes(Consumer<List<String>> designatedOutDeptCodesSetter) {
-        if(this.designatedOutDeptCodes == null ){
+        if(this.designatedOutDeptCodes == null) {
             this.designatedOutDeptCodes = new ArrayList<>();
         }
         designatedOutDeptCodesSetter.accept(this.designatedOutDeptCodes);

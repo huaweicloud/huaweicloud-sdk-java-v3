@@ -120,12 +120,15 @@ public class SearchUsersResponse extends SdkResponse {
 
     
     public SearchUsersResponse addDataItem(SearchUserResultDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchUsersResponse withData(Consumer<List<SearchUserResultDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

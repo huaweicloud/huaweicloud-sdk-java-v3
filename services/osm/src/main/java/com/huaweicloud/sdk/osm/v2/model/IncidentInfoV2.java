@@ -316,12 +316,15 @@ public class IncidentInfoV2  {
 
     
     public IncidentInfoV2 addLabelListItem(LabelInfo labelListItem) {
+        if(this.labelList == null) {
+            this.labelList = new ArrayList<>();
+        }
         this.labelList.add(labelListItem);
         return this;
     }
 
     public IncidentInfoV2 withLabelList(Consumer<List<LabelInfo>> labelListSetter) {
-        if(this.labelList == null ){
+        if(this.labelList == null) {
             this.labelList = new ArrayList<>();
         }
         labelListSetter.accept(this.labelList);

@@ -1243,12 +1243,15 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addComponentListItem(ComponentList componentListItem) {
+        if(this.componentList == null) {
+            this.componentList = new ArrayList<>();
+        }
         this.componentList.add(componentListItem);
         return this;
     }
 
     public CreateClusterReq withComponentList(Consumer<List<ComponentList>> componentListSetter) {
-        if(this.componentList == null ){
+        if(this.componentList == null) {
             this.componentList = new ArrayList<>();
         }
         componentListSetter.accept(this.componentList);
@@ -1386,12 +1389,15 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addAddJobsItem(AddJobs addJobsItem) {
+        if(this.addJobs == null) {
+            this.addJobs = new ArrayList<>();
+        }
         this.addJobs.add(addJobsItem);
         return this;
     }
 
     public CreateClusterReq withAddJobs(Consumer<List<AddJobs>> addJobsSetter) {
-        if(this.addJobs == null ){
+        if(this.addJobs == null) {
             this.addJobs = new ArrayList<>();
         }
         addJobsSetter.accept(this.addJobs);
@@ -1604,12 +1610,15 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addTaskNodeGroupsItem(TaskNodeGroups taskNodeGroupsItem) {
+        if(this.taskNodeGroups == null) {
+            this.taskNodeGroups = new ArrayList<>();
+        }
         this.taskNodeGroups.add(taskNodeGroupsItem);
         return this;
     }
 
     public CreateClusterReq withTaskNodeGroups(Consumer<List<TaskNodeGroups>> taskNodeGroupsSetter) {
-        if(this.taskNodeGroups == null ){
+        if(this.taskNodeGroups == null) {
             this.taskNodeGroups = new ArrayList<>();
         }
         taskNodeGroupsSetter.accept(this.taskNodeGroups);
@@ -1637,12 +1646,15 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addBootstrapScriptsItem(BootstrapScript bootstrapScriptsItem) {
+        if(this.bootstrapScripts == null) {
+            this.bootstrapScripts = new ArrayList<>();
+        }
         this.bootstrapScripts.add(bootstrapScriptsItem);
         return this;
     }
 
     public CreateClusterReq withBootstrapScripts(Consumer<List<BootstrapScript>> bootstrapScriptsSetter) {
-        if(this.bootstrapScripts == null ){
+        if(this.bootstrapScripts == null) {
             this.bootstrapScripts = new ArrayList<>();
         }
         bootstrapScriptsSetter.accept(this.bootstrapScripts);
@@ -1802,12 +1814,15 @@ public class CreateClusterReq  {
 
     
     public CreateClusterReq addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateClusterReq withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

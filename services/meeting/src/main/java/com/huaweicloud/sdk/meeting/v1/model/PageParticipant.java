@@ -51,12 +51,15 @@ public class PageParticipant  {
 
     
     public PageParticipant addDataItem(ParticipantInfo dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public PageParticipant withData(Consumer<List<ParticipantInfo>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

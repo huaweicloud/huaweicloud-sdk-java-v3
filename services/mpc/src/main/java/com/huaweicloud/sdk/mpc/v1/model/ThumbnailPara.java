@@ -25,7 +25,7 @@ import java.util.Objects;
 public class ThumbnailPara  {
 
     /**
-     * 采样类型。  取值如下： - \"PERCENT\"：根据视频时长的百分比间隔采样。 - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" 
+     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" 
      */
     public static final class TypeEnum {
 
@@ -274,7 +274,7 @@ public class ThumbnailPara  {
 
 
     /**
-     * 采样类型。  取值如下： - \"PERCENT\"：根据视频时长的百分比间隔采样。 - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" 
+     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" 
      * @return type
      */
     public TypeEnum getType() {
@@ -388,12 +388,15 @@ public class ThumbnailPara  {
 
     
     public ThumbnailPara addDotsItem(Integer dotsItem) {
+        if(this.dots == null) {
+            this.dots = new ArrayList<>();
+        }
         this.dots.add(dotsItem);
         return this;
     }
 
     public ThumbnailPara withDots(Consumer<List<Integer>> dotsSetter) {
-        if(this.dots == null ){
+        if(this.dots == null) {
             this.dots = new ArrayList<>();
         }
         dotsSetter.accept(this.dots);

@@ -41,12 +41,15 @@ public class ListTemplateGroupResponse extends SdkResponse {
 
     
     public ListTemplateGroupResponse addTemplateGroupListItem(TemplateGroup templateGroupListItem) {
+        if(this.templateGroupList == null) {
+            this.templateGroupList = new ArrayList<>();
+        }
         this.templateGroupList.add(templateGroupListItem);
         return this;
     }
 
     public ListTemplateGroupResponse withTemplateGroupList(Consumer<List<TemplateGroup>> templateGroupListSetter) {
-        if(this.templateGroupList == null ){
+        if(this.templateGroupList == null) {
             this.templateGroupList = new ArrayList<>();
         }
         templateGroupListSetter.accept(this.templateGroupList);

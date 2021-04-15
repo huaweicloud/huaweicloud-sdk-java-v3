@@ -32,12 +32,15 @@ public class DeviceStatusCondition  {
 
     
     public DeviceStatusCondition addStatusListItem(String statusListItem) {
+        if(this.statusList == null) {
+            this.statusList = new ArrayList<>();
+        }
         this.statusList.add(statusListItem);
         return this;
     }
 
     public DeviceStatusCondition withStatusList(Consumer<List<String>> statusListSetter) {
-        if(this.statusList == null ){
+        if(this.statusList == null) {
             this.statusList = new ArrayList<>();
         }
         statusListSetter.accept(this.statusList);

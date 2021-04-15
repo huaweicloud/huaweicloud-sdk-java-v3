@@ -70,12 +70,15 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
 
     
     public ListCaseCcEmailsResponse addMcEmailInfosItem(String mcEmailInfosItem) {
+        if(this.mcEmailInfos == null) {
+            this.mcEmailInfos = new ArrayList<>();
+        }
         this.mcEmailInfos.add(mcEmailInfosItem);
         return this;
     }
 
     public ListCaseCcEmailsResponse withMcEmailInfos(Consumer<List<String>> mcEmailInfosSetter) {
-        if(this.mcEmailInfos == null ){
+        if(this.mcEmailInfos == null) {
             this.mcEmailInfos = new ArrayList<>();
         }
         mcEmailInfosSetter.accept(this.mcEmailInfos);

@@ -36,7 +36,6 @@ public class MrsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -62,7 +61,6 @@ public class MrsMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,

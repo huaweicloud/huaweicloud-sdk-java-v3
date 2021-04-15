@@ -33,12 +33,15 @@ public class ImageTaggingBody  {
 
     
     public ImageTaggingBody addTagsItem(ImageTaggingItemBody tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ImageTaggingBody withTags(Consumer<List<ImageTaggingItemBody>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

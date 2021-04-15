@@ -162,12 +162,15 @@ public class Task  {
 
     
     public Task addTargetsItem(String targetsItem) {
+        if(this.targets == null) {
+            this.targets = new ArrayList<>();
+        }
         this.targets.add(targetsItem);
         return this;
     }
 
     public Task withTargets(Consumer<List<String>> targetsSetter) {
-        if(this.targets == null ){
+        if(this.targets == null) {
             this.targets = new ArrayList<>();
         }
         targetsSetter.accept(this.targets);
@@ -196,12 +199,15 @@ public class Task  {
     
 
     public Task putTargetsFilterItem(String key, Object targetsFilterItem) {
+        if(this.targetsFilter == null) {
+            this.targetsFilter = new HashMap<>();
+        }
         this.targetsFilter.put(key, targetsFilterItem);
         return this;
     }
 
     public Task withTargetsFilter(Consumer<Map<String, Object>> targetsFilterSetter) {
-        if(this.targetsFilter == null ){
+        if(this.targetsFilter == null) {
             this.targetsFilter = new HashMap<>();
         }
         targetsFilterSetter.accept(this.targetsFilter);

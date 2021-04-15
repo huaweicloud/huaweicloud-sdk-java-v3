@@ -35,12 +35,15 @@ public class BatchRestartOrDeleteInstancesResponse extends SdkResponse {
 
     
     public BatchRestartOrDeleteInstancesResponse addResultsItem(BatchRestartOrDeleteInstanceRespResults resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchRestartOrDeleteInstancesResponse withResults(Consumer<List<BatchRestartOrDeleteInstanceRespResults>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

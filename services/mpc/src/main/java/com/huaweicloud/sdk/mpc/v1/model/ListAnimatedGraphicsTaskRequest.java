@@ -198,12 +198,15 @@ public class ListAnimatedGraphicsTaskRequest  {
 
     
     public ListAnimatedGraphicsTaskRequest addTaskIdItem(String taskIdItem) {
+        if(this.taskId == null) {
+            this.taskId = new ArrayList<>();
+        }
         this.taskId.add(taskIdItem);
         return this;
     }
 
     public ListAnimatedGraphicsTaskRequest withTaskId(Consumer<List<String>> taskIdSetter) {
-        if(this.taskId == null ){
+        if(this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         taskIdSetter.accept(this.taskId);

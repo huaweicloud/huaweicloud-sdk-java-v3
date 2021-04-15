@@ -47,12 +47,15 @@ public class ListEncryptTaskResponse extends SdkResponse {
 
     
     public ListEncryptTaskResponse addTaskArrayItem(EachEncryptRsp taskArrayItem) {
+        if(this.taskArray == null) {
+            this.taskArray = new ArrayList<>();
+        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
 
     public ListEncryptTaskResponse withTaskArray(Consumer<List<EachEncryptRsp>> taskArraySetter) {
-        if(this.taskArray == null ){
+        if(this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);

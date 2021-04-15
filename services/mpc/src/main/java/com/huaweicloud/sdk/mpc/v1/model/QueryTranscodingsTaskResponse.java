@@ -338,12 +338,15 @@ public class QueryTranscodingsTaskResponse  {
 
     
     public QueryTranscodingsTaskResponse addTransTemplateIdItem(Integer transTemplateIdItem) {
+        if(this.transTemplateId == null) {
+            this.transTemplateId = new ArrayList<>();
+        }
         this.transTemplateId.add(transTemplateIdItem);
         return this;
     }
 
     public QueryTranscodingsTaskResponse withTransTemplateId(Consumer<List<Integer>> transTemplateIdSetter) {
-        if(this.transTemplateId == null ){
+        if(this.transTemplateId == null) {
             this.transTemplateId = new ArrayList<>();
         }
         transTemplateIdSetter.accept(this.transTemplateId);
@@ -429,12 +432,15 @@ public class QueryTranscodingsTaskResponse  {
 
     
     public QueryTranscodingsTaskResponse addOutputFileNameItem(String outputFileNameItem) {
+        if(this.outputFileName == null) {
+            this.outputFileName = new ArrayList<>();
+        }
         this.outputFileName.add(outputFileNameItem);
         return this;
     }
 
     public QueryTranscodingsTaskResponse withOutputFileName(Consumer<List<String>> outputFileNameSetter) {
-        if(this.outputFileName == null ){
+        if(this.outputFileName == null) {
             this.outputFileName = new ArrayList<>();
         }
         outputFileNameSetter.accept(this.outputFileName);
@@ -652,12 +658,15 @@ public class QueryTranscodingsTaskResponse  {
 
     
     public QueryTranscodingsTaskResponse addPicInfoItem(PicInfo picInfoItem) {
+        if(this.picInfo == null) {
+            this.picInfo = new ArrayList<>();
+        }
         this.picInfo.add(picInfoItem);
         return this;
     }
 
     public QueryTranscodingsTaskResponse withPicInfo(Consumer<List<PicInfo>> picInfoSetter) {
-        if(this.picInfo == null ){
+        if(this.picInfo == null) {
             this.picInfo = new ArrayList<>();
         }
         picInfoSetter.accept(this.picInfo);

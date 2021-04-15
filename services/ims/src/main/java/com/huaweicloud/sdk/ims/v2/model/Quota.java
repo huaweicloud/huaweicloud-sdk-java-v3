@@ -33,12 +33,15 @@ public class Quota  {
 
     
     public Quota addResourcesItem(QuotaInfo resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public Quota withResources(Consumer<List<QuotaInfo>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

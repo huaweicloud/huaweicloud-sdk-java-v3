@@ -35,12 +35,15 @@ public class ListCaseLabelsResponse extends SdkResponse {
 
     
     public ListCaseLabelsResponse addCaseLabelListItem(CaseLabelInfo caseLabelListItem) {
+        if(this.caseLabelList == null) {
+            this.caseLabelList = new ArrayList<>();
+        }
         this.caseLabelList.add(caseLabelListItem);
         return this;
     }
 
     public ListCaseLabelsResponse withCaseLabelList(Consumer<List<CaseLabelInfo>> caseLabelListSetter) {
-        if(this.caseLabelList == null ){
+        if(this.caseLabelList == null) {
             this.caseLabelList = new ArrayList<>();
         }
         caseLabelListSetter.accept(this.caseLabelList);

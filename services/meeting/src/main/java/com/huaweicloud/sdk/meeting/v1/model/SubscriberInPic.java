@@ -66,12 +66,15 @@ public class SubscriberInPic  {
 
     
     public SubscriberInPic addSubscriberItem(String subscriberItem) {
+        if(this.subscriber == null) {
+            this.subscriber = new ArrayList<>();
+        }
         this.subscriber.add(subscriberItem);
         return this;
     }
 
     public SubscriberInPic withSubscriber(Consumer<List<String>> subscriberSetter) {
-        if(this.subscriber == null ){
+        if(this.subscriber == null) {
             this.subscriber = new ArrayList<>();
         }
         subscriberSetter.accept(this.subscriber);

@@ -67,12 +67,15 @@ public class CreateScoreV2Req  {
 
     
     public CreateScoreV2Req addIncidentSatisfactionListItem(IncidentSatisfactionV2Do incidentSatisfactionListItem) {
+        if(this.incidentSatisfactionList == null) {
+            this.incidentSatisfactionList = new ArrayList<>();
+        }
         this.incidentSatisfactionList.add(incidentSatisfactionListItem);
         return this;
     }
 
     public CreateScoreV2Req withIncidentSatisfactionList(Consumer<List<IncidentSatisfactionV2Do>> incidentSatisfactionListSetter) {
-        if(this.incidentSatisfactionList == null ){
+        if(this.incidentSatisfactionList == null) {
             this.incidentSatisfactionList = new ArrayList<>();
         }
         incidentSatisfactionListSetter.accept(this.incidentSatisfactionList);

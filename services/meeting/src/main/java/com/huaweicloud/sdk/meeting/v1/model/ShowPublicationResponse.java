@@ -390,12 +390,15 @@ public class ShowPublicationResponse extends SdkResponse {
 
     
     public ShowPublicationResponse addProgramListItem(ProgramResponseBase programListItem) {
+        if(this.programList == null) {
+            this.programList = new ArrayList<>();
+        }
         this.programList.add(programListItem);
         return this;
     }
 
     public ShowPublicationResponse withProgramList(Consumer<List<ProgramResponseBase>> programListSetter) {
-        if(this.programList == null ){
+        if(this.programList == null) {
             this.programList = new ArrayList<>();
         }
         programListSetter.accept(this.programList);
@@ -423,12 +426,15 @@ public class ShowPublicationResponse extends SdkResponse {
 
     
     public ShowPublicationResponse addDeptListItem(PublishDeptResponseDTO deptListItem) {
+        if(this.deptList == null) {
+            this.deptList = new ArrayList<>();
+        }
         this.deptList.add(deptListItem);
         return this;
     }
 
     public ShowPublicationResponse withDeptList(Consumer<List<PublishDeptResponseDTO>> deptListSetter) {
-        if(this.deptList == null ){
+        if(this.deptList == null) {
             this.deptList = new ArrayList<>();
         }
         deptListSetter.accept(this.deptList);
@@ -456,12 +462,15 @@ public class ShowPublicationResponse extends SdkResponse {
 
     
     public ShowPublicationResponse addDeviceListItem(PublishDeviceResponseDTO deviceListItem) {
+        if(this.deviceList == null) {
+            this.deviceList = new ArrayList<>();
+        }
         this.deviceList.add(deviceListItem);
         return this;
     }
 
     public ShowPublicationResponse withDeviceList(Consumer<List<PublishDeviceResponseDTO>> deviceListSetter) {
-        if(this.deviceList == null ){
+        if(this.deviceList == null) {
             this.deviceList = new ArrayList<>();
         }
         deviceListSetter.accept(this.deviceList);

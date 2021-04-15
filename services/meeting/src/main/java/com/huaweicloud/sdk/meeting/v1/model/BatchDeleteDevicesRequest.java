@@ -90,12 +90,15 @@ public class BatchDeleteDevicesRequest  {
 
     
     public BatchDeleteDevicesRequest addBodyItem(String bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public BatchDeleteDevicesRequest withBody(Consumer<List<String>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

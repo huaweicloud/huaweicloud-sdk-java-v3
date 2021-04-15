@@ -228,12 +228,15 @@ public class ImageDetectionReq  {
 
     
     public ImageDetectionReq addCategoriesItem(CategoriesEnum categoriesItem) {
+        if(this.categories == null) {
+            this.categories = new ArrayList<>();
+        }
         this.categories.add(categoriesItem);
         return this;
     }
 
     public ImageDetectionReq withCategories(Consumer<List<CategoriesEnum>> categoriesSetter) {
-        if(this.categories == null ){
+        if(this.categories == null) {
             this.categories = new ArrayList<>();
         }
         categoriesSetter.accept(this.categories);
@@ -261,12 +264,15 @@ public class ImageDetectionReq  {
 
     
     public ImageDetectionReq addAdGlossariesItem(String adGlossariesItem) {
+        if(this.adGlossaries == null) {
+            this.adGlossaries = new ArrayList<>();
+        }
         this.adGlossaries.add(adGlossariesItem);
         return this;
     }
 
     public ImageDetectionReq withAdGlossaries(Consumer<List<String>> adGlossariesSetter) {
-        if(this.adGlossaries == null ){
+        if(this.adGlossaries == null) {
             this.adGlossaries = new ArrayList<>();
         }
         adGlossariesSetter.accept(this.adGlossaries);

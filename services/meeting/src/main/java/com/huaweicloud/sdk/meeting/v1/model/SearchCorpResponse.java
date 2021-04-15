@@ -120,12 +120,15 @@ public class SearchCorpResponse extends SdkResponse {
 
     
     public SearchCorpResponse addDataItem(QueryCorpResultDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchCorpResponse withData(Consumer<List<QueryCorpResultDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

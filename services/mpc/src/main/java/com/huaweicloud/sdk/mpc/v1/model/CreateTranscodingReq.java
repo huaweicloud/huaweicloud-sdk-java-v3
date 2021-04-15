@@ -92,6 +92,36 @@ public class CreateTranscodingReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="project_id")
+    
+    private String projectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vip_user")
+    
+    private Boolean vipUser;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="task_id")
+    
+    private String taskId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_name")
+    
+    private String domainName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tenant_project_id")
+    
+    private String tenantProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
     private Integer priority;
@@ -233,12 +263,15 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addTransTemplateIdItem(Integer transTemplateIdItem) {
+        if(this.transTemplateId == null) {
+            this.transTemplateId = new ArrayList<>();
+        }
         this.transTemplateId.add(transTemplateIdItem);
         return this;
     }
 
     public CreateTranscodingReq withTransTemplateId(Consumer<List<Integer>> transTemplateIdSetter) {
-        if(this.transTemplateId == null ){
+        if(this.transTemplateId == null) {
             this.transTemplateId = new ArrayList<>();
         }
         transTemplateIdSetter.accept(this.transTemplateId);
@@ -266,12 +299,15 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addAvParametersItem(AvParameters avParametersItem) {
+        if(this.avParameters == null) {
+            this.avParameters = new ArrayList<>();
+        }
         this.avParameters.add(avParametersItem);
         return this;
     }
 
     public CreateTranscodingReq withAvParameters(Consumer<List<AvParameters>> avParametersSetter) {
-        if(this.avParameters == null ){
+        if(this.avParameters == null) {
             this.avParameters = new ArrayList<>();
         }
         avParametersSetter.accept(this.avParameters);
@@ -299,12 +335,15 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addOutputFilenamesItem(String outputFilenamesItem) {
+        if(this.outputFilenames == null) {
+            this.outputFilenames = new ArrayList<>();
+        }
         this.outputFilenames.add(outputFilenamesItem);
         return this;
     }
 
     public CreateTranscodingReq withOutputFilenames(Consumer<List<String>> outputFilenamesSetter) {
-        if(this.outputFilenames == null ){
+        if(this.outputFilenames == null) {
             this.outputFilenames = new ArrayList<>();
         }
         outputFilenamesSetter.accept(this.outputFilenames);
@@ -354,12 +393,15 @@ public class CreateTranscodingReq  {
 
     
     public CreateTranscodingReq addWatermarksItem(WatermarkRequest watermarksItem) {
+        if(this.watermarks == null) {
+            this.watermarks = new ArrayList<>();
+        }
         this.watermarks.add(watermarksItem);
         return this;
     }
 
     public CreateTranscodingReq withWatermarks(Consumer<List<WatermarkRequest>> watermarksSetter) {
-        if(this.watermarks == null ){
+        if(this.watermarks == null) {
             this.watermarks = new ArrayList<>();
         }
         watermarksSetter.accept(this.watermarks);
@@ -434,6 +476,116 @@ public class CreateTranscodingReq  {
 
     public void setDigitalWatermark(DigitalWatermark digitalWatermark) {
         this.digitalWatermark = digitalWatermark;
+    }
+
+    
+
+    public CreateTranscodingReq withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 项目ID
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    
+
+    public CreateTranscodingReq withVipUser(Boolean vipUser) {
+        this.vipUser = vipUser;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否vip用户
+     * @return vipUser
+     */
+    public Boolean getVipUser() {
+        return vipUser;
+    }
+
+    public void setVipUser(Boolean vipUser) {
+        this.vipUser = vipUser;
+    }
+
+    
+
+    public CreateTranscodingReq withTaskId(String taskId) {
+        this.taskId = taskId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 任务Id
+     * @return taskId
+     */
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    
+
+    public CreateTranscodingReq withDomainName(String domainName) {
+        this.domainName = domainName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 租户域名
+     * @return domainName
+     */
+    public String getDomainName() {
+        return domainName;
+    }
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
+
+    
+
+    public CreateTranscodingReq withTenantProjectId(String tenantProjectId) {
+        this.tenantProjectId = tenantProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 租户Id
+     * @return tenantProjectId
+     */
+    public String getTenantProjectId() {
+        return tenantProjectId;
+    }
+
+    public void setTenantProjectId(String tenantProjectId) {
+        this.tenantProjectId = tenantProjectId;
     }
 
     
@@ -828,6 +980,11 @@ public class CreateTranscodingReq  {
             Objects.equals(this.watermarks, createTranscodingReq.watermarks) &&
             Objects.equals(this.thumbnail, createTranscodingReq.thumbnail) &&
             Objects.equals(this.digitalWatermark, createTranscodingReq.digitalWatermark) &&
+            Objects.equals(this.projectId, createTranscodingReq.projectId) &&
+            Objects.equals(this.vipUser, createTranscodingReq.vipUser) &&
+            Objects.equals(this.taskId, createTranscodingReq.taskId) &&
+            Objects.equals(this.domainName, createTranscodingReq.domainName) &&
+            Objects.equals(this.tenantProjectId, createTranscodingReq.tenantProjectId) &&
             Objects.equals(this.priority, createTranscodingReq.priority) &&
             Objects.equals(this.audit, createTranscodingReq.audit) &&
             Objects.equals(this.subtitle, createTranscodingReq.subtitle) &&
@@ -844,7 +1001,7 @@ public class CreateTranscodingReq  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, priority, audit, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, templateExtend);
+        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, projectId, vipUser, taskId, domainName, tenantProjectId, priority, audit, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, templateExtend);
     }
     @Override
     public String toString() {
@@ -859,6 +1016,11 @@ public class CreateTranscodingReq  {
         sb.append("    watermarks: ").append(toIndentedString(watermarks)).append("\n");
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    digitalWatermark: ").append(toIndentedString(digitalWatermark)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    vipUser: ").append(toIndentedString(vipUser)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+        sb.append("    tenantProjectId: ").append(toIndentedString(tenantProjectId)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    audit: ").append(toIndentedString(audit)).append("\n");
         sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");

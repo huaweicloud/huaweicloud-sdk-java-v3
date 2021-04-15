@@ -172,12 +172,15 @@ public class V2BitrateInfo  {
 
     
     public V2BitrateInfo addDataListItem(Long dataListItem) {
+        if(this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
         this.dataList.add(dataListItem);
         return this;
     }
 
     public V2BitrateInfo withDataList(Consumer<List<Long>> dataListSetter) {
-        if(this.dataList == null ){
+        if(this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);

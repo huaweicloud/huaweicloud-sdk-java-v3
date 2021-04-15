@@ -185,12 +185,15 @@ public class SourceInfo  {
 
     
     public SourceInfo addAudioInfoItem(AudioInfo audioInfoItem) {
+        if(this.audioInfo == null) {
+            this.audioInfo = new ArrayList<>();
+        }
         this.audioInfo.add(audioInfoItem);
         return this;
     }
 
     public SourceInfo withAudioInfo(Consumer<List<AudioInfo>> audioInfoSetter) {
-        if(this.audioInfo == null ){
+        if(this.audioInfo == null) {
             this.audioInfo = new ArrayList<>();
         }
         audioInfoSetter.accept(this.audioInfo);

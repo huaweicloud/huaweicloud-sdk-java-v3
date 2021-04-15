@@ -423,12 +423,15 @@ public class ListNatGatewaysRequest  {
 
     
     public ListNatGatewaysRequest addStatusItem(StatusEnum statusItem) {
+        if(this.status == null) {
+            this.status = new ArrayList<>();
+        }
         this.status.add(statusItem);
         return this;
     }
 
     public ListNatGatewaysRequest withStatus(Consumer<List<StatusEnum>> statusSetter) {
-        if(this.status == null ){
+        if(this.status == null) {
             this.status = new ArrayList<>();
         }
         statusSetter.accept(this.status);
@@ -456,12 +459,15 @@ public class ListNatGatewaysRequest  {
 
     
     public ListNatGatewaysRequest addSpecItem(SpecEnum specItem) {
+        if(this.spec == null) {
+            this.spec = new ArrayList<>();
+        }
         this.spec.add(specItem);
         return this;
     }
 
     public ListNatGatewaysRequest withSpec(Consumer<List<SpecEnum>> specSetter) {
-        if(this.spec == null ){
+        if(this.spec == null) {
             this.spec = new ArrayList<>();
         }
         specSetter.accept(this.spec);

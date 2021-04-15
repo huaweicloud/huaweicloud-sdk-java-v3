@@ -410,12 +410,15 @@ public class IncidentDetailInfoV2  {
 
     
     public IncidentDetailInfoV2 addMessageListItem(IncidentMessageV2 messageListItem) {
+        if(this.messageList == null) {
+            this.messageList = new ArrayList<>();
+        }
         this.messageList.add(messageListItem);
         return this;
     }
 
     public IncidentDetailInfoV2 withMessageList(Consumer<List<IncidentMessageV2>> messageListSetter) {
-        if(this.messageList == null ){
+        if(this.messageList == null) {
             this.messageList = new ArrayList<>();
         }
         messageListSetter.accept(this.messageList);
@@ -443,12 +446,15 @@ public class IncidentDetailInfoV2  {
 
     
     public IncidentDetailInfoV2 addIncidentSatisfactionItem(IncidentSatisfactionV2Do incidentSatisfactionItem) {
+        if(this.incidentSatisfaction == null) {
+            this.incidentSatisfaction = new ArrayList<>();
+        }
         this.incidentSatisfaction.add(incidentSatisfactionItem);
         return this;
     }
 
     public IncidentDetailInfoV2 withIncidentSatisfaction(Consumer<List<IncidentSatisfactionV2Do>> incidentSatisfactionSetter) {
-        if(this.incidentSatisfaction == null ){
+        if(this.incidentSatisfaction == null) {
             this.incidentSatisfaction = new ArrayList<>();
         }
         incidentSatisfactionSetter.accept(this.incidentSatisfaction);

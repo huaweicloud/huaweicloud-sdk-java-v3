@@ -79,12 +79,15 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addMetricsItem(String metricsItem) {
+        if(this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
         this.metrics.add(metricsItem);
         return this;
     }
 
     public ShowCeshierarchyRespDimensions withMetrics(Consumer<List<String>> metricsSetter) {
-        if(this.metrics == null ){
+        if(this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);
@@ -112,12 +115,15 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addKeyNameItem(String keyNameItem) {
+        if(this.keyName == null) {
+            this.keyName = new ArrayList<>();
+        }
         this.keyName.add(keyNameItem);
         return this;
     }
 
     public ShowCeshierarchyRespDimensions withKeyName(Consumer<List<String>> keyNameSetter) {
-        if(this.keyName == null ){
+        if(this.keyName == null) {
             this.keyName = new ArrayList<>();
         }
         keyNameSetter.accept(this.keyName);
@@ -145,12 +151,15 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addDimRouterItem(String dimRouterItem) {
+        if(this.dimRouter == null) {
+            this.dimRouter = new ArrayList<>();
+        }
         this.dimRouter.add(dimRouterItem);
         return this;
     }
 
     public ShowCeshierarchyRespDimensions withDimRouter(Consumer<List<String>> dimRouterSetter) {
-        if(this.dimRouter == null ){
+        if(this.dimRouter == null) {
             this.dimRouter = new ArrayList<>();
         }
         dimRouterSetter.accept(this.dimRouter);
@@ -178,12 +187,15 @@ public class ShowCeshierarchyRespDimensions  {
 
     
     public ShowCeshierarchyRespDimensions addChildrenItem(ShowCeshierarchyRespChildren childrenItem) {
+        if(this.children == null) {
+            this.children = new ArrayList<>();
+        }
         this.children.add(childrenItem);
         return this;
     }
 
     public ShowCeshierarchyRespDimensions withChildren(Consumer<List<ShowCeshierarchyRespChildren>> childrenSetter) {
-        if(this.children == null ){
+        if(this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);

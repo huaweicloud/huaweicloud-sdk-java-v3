@@ -35,12 +35,15 @@ public class SearchDepartmentByNameResponse extends SdkResponse {
 
     
     public SearchDepartmentByNameResponse addBodyItem(QueryDeptResultDTO bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public SearchDepartmentByNameResponse withBody(Consumer<List<QueryDeptResultDTO>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

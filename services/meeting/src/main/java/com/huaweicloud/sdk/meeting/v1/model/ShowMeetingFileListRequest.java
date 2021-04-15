@@ -92,12 +92,15 @@ public class ShowMeetingFileListRequest  {
     
 
     public ShowMeetingFileListRequest putBodyItem(String key, String bodyItem) {
+        if(this.body == null) {
+            this.body = new HashMap<>();
+        }
         this.body.put(key, bodyItem);
         return this;
     }
 
     public ShowMeetingFileListRequest withBody(Consumer<Map<String, String>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new HashMap<>();
         }
         bodySetter.accept(this.body);

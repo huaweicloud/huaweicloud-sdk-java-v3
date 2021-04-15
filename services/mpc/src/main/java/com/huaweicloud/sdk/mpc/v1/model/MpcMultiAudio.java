@@ -75,12 +75,15 @@ public class MpcMultiAudio  {
 
     
     public MpcMultiAudio addAudioFilesItem(AudioFile audioFilesItem) {
+        if(this.audioFiles == null) {
+            this.audioFiles = new ArrayList<>();
+        }
         this.audioFiles.add(audioFilesItem);
         return this;
     }
 
     public MpcMultiAudio withAudioFiles(Consumer<List<AudioFile>> audioFilesSetter) {
-        if(this.audioFiles == null ){
+        if(this.audioFiles == null) {
             this.audioFiles = new ArrayList<>();
         }
         audioFilesSetter.accept(this.audioFiles);

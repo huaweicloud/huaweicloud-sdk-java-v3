@@ -65,12 +65,15 @@ public class ListCaseTemplatesResponse extends SdkResponse {
 
     
     public ListCaseTemplatesResponse addIncidentTemplateListItem(IncidentTempV2 incidentTemplateListItem) {
+        if(this.incidentTemplateList == null) {
+            this.incidentTemplateList = new ArrayList<>();
+        }
         this.incidentTemplateList.add(incidentTemplateListItem);
         return this;
     }
 
     public ListCaseTemplatesResponse withIncidentTemplateList(Consumer<List<IncidentTempV2>> incidentTemplateListSetter) {
-        if(this.incidentTemplateList == null ){
+        if(this.incidentTemplateList == null) {
             this.incidentTemplateList = new ArrayList<>();
         }
         incidentTemplateListSetter.accept(this.incidentTemplateList);

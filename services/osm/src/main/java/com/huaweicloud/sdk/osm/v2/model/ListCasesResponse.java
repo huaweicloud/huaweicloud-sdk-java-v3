@@ -65,12 +65,15 @@ public class ListCasesResponse extends SdkResponse {
 
     
     public ListCasesResponse addIncidentInfoListItem(IncidentInfoV2 incidentInfoListItem) {
+        if(this.incidentInfoList == null) {
+            this.incidentInfoList = new ArrayList<>();
+        }
         this.incidentInfoList.add(incidentInfoListItem);
         return this;
     }
 
     public ListCasesResponse withIncidentInfoList(Consumer<List<IncidentInfoV2>> incidentInfoListSetter) {
-        if(this.incidentInfoList == null ){
+        if(this.incidentInfoList == null) {
             this.incidentInfoList = new ArrayList<>();
         }
         incidentInfoListSetter.accept(this.incidentInfoList);

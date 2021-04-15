@@ -119,12 +119,15 @@ public class SearchCtlRecordsOfHisMeetingResponse extends SdkResponse {
 
     
     public SearchCtlRecordsOfHisMeetingResponse addDataItem(ConfCtlRecordInfo dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchCtlRecordsOfHisMeetingResponse withData(Consumer<List<ConfCtlRecordInfo>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

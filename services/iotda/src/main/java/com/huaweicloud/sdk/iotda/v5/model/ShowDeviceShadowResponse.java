@@ -63,12 +63,15 @@ public class ShowDeviceShadowResponse extends SdkResponse {
 
     
     public ShowDeviceShadowResponse addShadowItem(DeviceShadowData shadowItem) {
+        if(this.shadow == null) {
+            this.shadow = new ArrayList<>();
+        }
         this.shadow.add(shadowItem);
         return this;
     }
 
     public ShowDeviceShadowResponse withShadow(Consumer<List<DeviceShadowData>> shadowSetter) {
-        if(this.shadow == null ){
+        if(this.shadow == null) {
             this.shadow = new ArrayList<>();
         }
         shadowSetter.accept(this.shadow);

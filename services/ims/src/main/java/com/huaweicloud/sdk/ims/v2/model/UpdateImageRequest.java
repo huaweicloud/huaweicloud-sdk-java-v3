@@ -61,12 +61,15 @@ public class UpdateImageRequest  {
 
     
     public UpdateImageRequest addBodyItem(UpdateImageRequestBody bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public UpdateImageRequest withBody(Consumer<List<UpdateImageRequestBody>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

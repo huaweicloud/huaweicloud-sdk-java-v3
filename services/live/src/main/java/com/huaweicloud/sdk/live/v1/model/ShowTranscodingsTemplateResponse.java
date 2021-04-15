@@ -92,12 +92,15 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
 
     
     public ShowTranscodingsTemplateResponse addTemplatesItem(AppQualityInfo templatesItem) {
+        if(this.templates == null) {
+            this.templates = new ArrayList<>();
+        }
         this.templates.add(templatesItem);
         return this;
     }
 
     public ShowTranscodingsTemplateResponse withTemplates(Consumer<List<AppQualityInfo>> templatesSetter) {
-        if(this.templates == null ){
+        if(this.templates == null) {
             this.templates = new ArrayList<>();
         }
         templatesSetter.accept(this.templates);

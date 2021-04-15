@@ -127,12 +127,15 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
 
     
     public GlanceShowImageSchemasResponse addLinksItem(Links linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public GlanceShowImageSchemasResponse withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

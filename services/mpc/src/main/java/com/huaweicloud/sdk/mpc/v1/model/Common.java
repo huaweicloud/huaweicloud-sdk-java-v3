@@ -19,9 +19,27 @@ public class Common  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="QDS")
+    
+    private Boolean qds;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="PVC")
     
     private Boolean pvc;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="PVC_version")
+    
+    private String pvCVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="PVC_strength")
+    
+    private String pvCStrength;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,6 +59,28 @@ public class Common  {
     
     private Integer packType;
 
+    public Common withQds(Boolean qds) {
+        this.qds = qds;
+        return this;
+    }
+
+    
+
+
+    /**
+     * QDS开关 0：关闭（当前默认关闭） 1：开启 
+     * @return qds
+     */
+    public Boolean getQds() {
+        return qds;
+    }
+
+    public void setQds(Boolean qds) {
+        this.qds = qds;
+    }
+
+    
+
     public Common withPvc(Boolean pvc) {
         this.pvc = pvc;
         return this;
@@ -59,6 +99,50 @@ public class Common  {
 
     public void setPvc(Boolean pvc) {
         this.pvc = pvc;
+    }
+
+    
+
+    public Common withPvCVersion(String pvCVersion) {
+        this.pvCVersion = pvCVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * PVC版本（PVC开启时，此字段才生效） “2.0_normal”：感知编码2.0（降码率30%~40%） “2.0_high”：感知编码2.0+画质增强 
+     * @return pvCVersion
+     */
+    public String getPvCVersion() {
+        return pvCVersion;
+    }
+
+    public void setPvCVersion(String pvCVersion) {
+        this.pvCVersion = pvCVersion;
+    }
+
+    
+
+    public Common withPvCStrength(String pvCStrength) {
+        this.pvCStrength = pvCStrength;
+        return this;
+    }
+
+    
+
+
+    /**
+     * PVC感知编码强度（PVC开启时，此字段才生效），默认取值 “100” “100”：主观质量不变 “70”：主观质量适当下降 
+     * @return pvCStrength
+     */
+    public String getPvCStrength() {
+        return pvCStrength;
+    }
+
+    public void setPvCStrength(String pvCStrength) {
+        this.pvCStrength = pvCStrength;
     }
 
     
@@ -144,20 +228,26 @@ public class Common  {
             return false;
         }
         Common common = (Common) o;
-        return Objects.equals(this.pvc, common.pvc) &&
+        return Objects.equals(this.qds, common.qds) &&
+            Objects.equals(this.pvc, common.pvc) &&
+            Objects.equals(this.pvCVersion, common.pvCVersion) &&
+            Objects.equals(this.pvCStrength, common.pvCStrength) &&
             Objects.equals(this.hlsInterval, common.hlsInterval) &&
             Objects.equals(this.dashInterval, common.dashInterval) &&
             Objects.equals(this.packType, common.packType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(pvc, hlsInterval, dashInterval, packType);
+        return Objects.hash(qds, pvc, pvCVersion, pvCStrength, hlsInterval, dashInterval, packType);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Common {\n");
+        sb.append("    qds: ").append(toIndentedString(qds)).append("\n");
         sb.append("    pvc: ").append(toIndentedString(pvc)).append("\n");
+        sb.append("    pvCVersion: ").append(toIndentedString(pvCVersion)).append("\n");
+        sb.append("    pvCStrength: ").append(toIndentedString(pvCStrength)).append("\n");
         sb.append("    hlsInterval: ").append(toIndentedString(hlsInterval)).append("\n");
         sb.append("    dashInterval: ").append(toIndentedString(dashInterval)).append("\n");
         sb.append("    packType: ").append(toIndentedString(packType)).append("\n");

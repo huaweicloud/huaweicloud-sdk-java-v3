@@ -75,12 +75,15 @@ public class Subtitle  {
 
     
     public Subtitle addInputsItem(MulInputFileInfo inputsItem) {
+        if(this.inputs == null) {
+            this.inputs = new ArrayList<>();
+        }
         this.inputs.add(inputsItem);
         return this;
     }
 
     public Subtitle withInputs(Consumer<List<MulInputFileInfo>> inputsSetter) {
-        if(this.inputs == null ){
+        if(this.inputs == null) {
             this.inputs = new ArrayList<>();
         }
         inputsSetter.accept(this.inputs);

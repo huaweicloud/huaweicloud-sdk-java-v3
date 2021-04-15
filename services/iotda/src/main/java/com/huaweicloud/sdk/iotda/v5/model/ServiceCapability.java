@@ -115,12 +115,15 @@ public class ServiceCapability  {
 
     
     public ServiceCapability addPropertiesItem(ServiceProperty propertiesItem) {
+        if(this.properties == null) {
+            this.properties = new ArrayList<>();
+        }
         this.properties.add(propertiesItem);
         return this;
     }
 
     public ServiceCapability withProperties(Consumer<List<ServiceProperty>> propertiesSetter) {
-        if(this.properties == null ){
+        if(this.properties == null) {
             this.properties = new ArrayList<>();
         }
         propertiesSetter.accept(this.properties);
@@ -148,12 +151,15 @@ public class ServiceCapability  {
 
     
     public ServiceCapability addCommandsItem(ServiceCommand commandsItem) {
+        if(this.commands == null) {
+            this.commands = new ArrayList<>();
+        }
         this.commands.add(commandsItem);
         return this;
     }
 
     public ServiceCapability withCommands(Consumer<List<ServiceCommand>> commandsSetter) {
-        if(this.commands == null ){
+        if(this.commands == null) {
             this.commands = new ArrayList<>();
         }
         commandsSetter.accept(this.commands);
@@ -181,12 +187,15 @@ public class ServiceCapability  {
 
     
     public ServiceCapability addEventsItem(ServiceEvent eventsItem) {
+        if(this.events == null) {
+            this.events = new ArrayList<>();
+        }
         this.events.add(eventsItem);
         return this;
     }
 
     public ServiceCapability withEvents(Consumer<List<ServiceEvent>> eventsSetter) {
-        if(this.events == null ){
+        if(this.events == null) {
             this.events = new ArrayList<>();
         }
         eventsSetter.accept(this.events);

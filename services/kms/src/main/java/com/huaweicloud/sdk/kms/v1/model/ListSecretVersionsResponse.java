@@ -35,12 +35,15 @@ public class ListSecretVersionsResponse extends SdkResponse {
 
     
     public ListSecretVersionsResponse addVersionMetadatasItem(VersionMetadata versionMetadatasItem) {
+        if(this.versionMetadatas == null) {
+            this.versionMetadatas = new ArrayList<>();
+        }
         this.versionMetadatas.add(versionMetadatasItem);
         return this;
     }
 
     public ListSecretVersionsResponse withVersionMetadatas(Consumer<List<VersionMetadata>> versionMetadatasSetter) {
-        if(this.versionMetadatas == null ){
+        if(this.versionMetadatas == null) {
             this.versionMetadatas = new ArrayList<>();
         }
         versionMetadatasSetter.accept(this.versionMetadatas);

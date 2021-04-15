@@ -63,12 +63,15 @@ public class ListSeveritiesResponse extends SdkResponse {
 
     
     public ListSeveritiesResponse addSeverityListItem(SeverityV2Do severityListItem) {
+        if(this.severityList == null) {
+            this.severityList = new ArrayList<>();
+        }
         this.severityList.add(severityListItem);
         return this;
     }
 
     public ListSeveritiesResponse withSeverityList(Consumer<List<SeverityV2Do>> severityListSetter) {
-        if(this.severityList == null ){
+        if(this.severityList == null) {
             this.severityList = new ArrayList<>();
         }
         severityListSetter.accept(this.severityList);

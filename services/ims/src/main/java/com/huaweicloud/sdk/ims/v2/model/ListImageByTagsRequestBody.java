@@ -180,12 +180,15 @@ public class ListImageByTagsRequestBody  {
 
     
     public ListImageByTagsRequestBody addTagsItem(Tags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListImageByTagsRequestBody withTags(Consumer<List<Tags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -213,12 +216,15 @@ public class ListImageByTagsRequestBody  {
 
     
     public ListImageByTagsRequestBody addTagsAnyItem(Tags tagsAnyItem) {
+        if(this.tagsAny == null) {
+            this.tagsAny = new ArrayList<>();
+        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
 
     public ListImageByTagsRequestBody withTagsAny(Consumer<List<Tags>> tagsAnySetter) {
-        if(this.tagsAny == null ){
+        if(this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
@@ -246,12 +252,15 @@ public class ListImageByTagsRequestBody  {
 
     
     public ListImageByTagsRequestBody addNotTagsItem(Tags notTagsItem) {
+        if(this.notTags == null) {
+            this.notTags = new ArrayList<>();
+        }
         this.notTags.add(notTagsItem);
         return this;
     }
 
     public ListImageByTagsRequestBody withNotTags(Consumer<List<Tags>> notTagsSetter) {
-        if(this.notTags == null ){
+        if(this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
@@ -279,12 +288,15 @@ public class ListImageByTagsRequestBody  {
 
     
     public ListImageByTagsRequestBody addNotTagsAnyItem(Tags notTagsAnyItem) {
+        if(this.notTagsAny == null) {
+            this.notTagsAny = new ArrayList<>();
+        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
 
     public ListImageByTagsRequestBody withNotTagsAny(Consumer<List<Tags>> notTagsAnySetter) {
-        if(this.notTagsAny == null ){
+        if(this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
@@ -356,12 +368,15 @@ public class ListImageByTagsRequestBody  {
 
     
     public ListImageByTagsRequestBody addMatchesItem(TagKeyValue matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListImageByTagsRequestBody withMatches(Consumer<List<TagKeyValue>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);

@@ -61,12 +61,15 @@ public class GlanceUpdateImageRequest  {
 
     
     public GlanceUpdateImageRequest addBodyItem(GlanceUpdateImageRequestBody bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public GlanceUpdateImageRequest withBody(Consumer<List<GlanceUpdateImageRequestBody>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

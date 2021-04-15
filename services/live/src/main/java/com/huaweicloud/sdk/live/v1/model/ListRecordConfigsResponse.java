@@ -64,12 +64,15 @@ public class ListRecordConfigsResponse extends SdkResponse {
 
     
     public ListRecordConfigsResponse addRecordConfigItem(RecordConfigInfo recordConfigItem) {
+        if(this.recordConfig == null) {
+            this.recordConfig = new ArrayList<>();
+        }
         this.recordConfig.add(recordConfigItem);
         return this;
     }
 
     public ListRecordConfigsResponse withRecordConfig(Consumer<List<RecordConfigInfo>> recordConfigSetter) {
-        if(this.recordConfig == null ){
+        if(this.recordConfig == null) {
             this.recordConfig = new ArrayList<>();
         }
         recordConfigSetter.accept(this.recordConfig);

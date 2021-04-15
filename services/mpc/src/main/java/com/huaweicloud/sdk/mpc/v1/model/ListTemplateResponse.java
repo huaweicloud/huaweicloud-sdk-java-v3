@@ -41,12 +41,15 @@ public class ListTemplateResponse extends SdkResponse {
 
     
     public ListTemplateResponse addTemplateArrayItem(TemplateInfo templateArrayItem) {
+        if(this.templateArray == null) {
+            this.templateArray = new ArrayList<>();
+        }
         this.templateArray.add(templateArrayItem);
         return this;
     }
 
     public ListTemplateResponse withTemplateArray(Consumer<List<TemplateInfo>> templateArraySetter) {
-        if(this.templateArray == null ){
+        if(this.templateArray == null) {
             this.templateArray = new ArrayList<>();
         }
         templateArraySetter.accept(this.templateArray);

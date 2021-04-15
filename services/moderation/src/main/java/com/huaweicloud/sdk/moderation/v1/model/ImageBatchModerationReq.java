@@ -144,12 +144,15 @@ public class ImageBatchModerationReq  {
 
     
     public ImageBatchModerationReq addUrlsItem(String urlsItem) {
+        if(this.urls == null) {
+            this.urls = new ArrayList<>();
+        }
         this.urls.add(urlsItem);
         return this;
     }
 
     public ImageBatchModerationReq withUrls(Consumer<List<String>> urlsSetter) {
-        if(this.urls == null ){
+        if(this.urls == null) {
             this.urls = new ArrayList<>();
         }
         urlsSetter.accept(this.urls);
@@ -177,12 +180,15 @@ public class ImageBatchModerationReq  {
 
     
     public ImageBatchModerationReq addCategoriesItem(CategoriesEnum categoriesItem) {
+        if(this.categories == null) {
+            this.categories = new ArrayList<>();
+        }
         this.categories.add(categoriesItem);
         return this;
     }
 
     public ImageBatchModerationReq withCategories(Consumer<List<CategoriesEnum>> categoriesSetter) {
-        if(this.categories == null ){
+        if(this.categories == null) {
             this.categories = new ArrayList<>();
         }
         categoriesSetter.accept(this.categories);

@@ -33,12 +33,15 @@ public class BatchCreateNatGatewayDnatRulesRequestBody  {
 
     
     public BatchCreateNatGatewayDnatRulesRequestBody addDnatRulesItem(CreateNatGatewayDnatOption dnatRulesItem) {
+        if(this.dnatRules == null) {
+            this.dnatRules = new ArrayList<>();
+        }
         this.dnatRules.add(dnatRulesItem);
         return this;
     }
 
     public BatchCreateNatGatewayDnatRulesRequestBody withDnatRules(Consumer<List<CreateNatGatewayDnatOption>> dnatRulesSetter) {
-        if(this.dnatRules == null ){
+        if(this.dnatRules == null) {
             this.dnatRules = new ArrayList<>();
         }
         dnatRulesSetter.accept(this.dnatRules);

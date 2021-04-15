@@ -39,12 +39,15 @@ public class TranscodeData  {
 
     
     public TranscodeData addSpecListItem(TranscodeSpec specListItem) {
+        if(this.specList == null) {
+            this.specList = new ArrayList<>();
+        }
         this.specList.add(specListItem);
         return this;
     }
 
     public TranscodeData withSpecList(Consumer<List<TranscodeSpec>> specListSetter) {
-        if(this.specList == null ){
+        if(this.specList == null) {
             this.specList = new ArrayList<>();
         }
         specListSetter.accept(this.specList);

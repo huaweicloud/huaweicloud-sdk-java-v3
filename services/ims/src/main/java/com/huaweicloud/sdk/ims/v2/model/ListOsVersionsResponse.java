@@ -35,12 +35,15 @@ public class ListOsVersionsResponse extends SdkResponse {
 
     
     public ListOsVersionsResponse addBodyItem(ListOsVersionsResponseBody bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ListOsVersionsResponse withBody(Consumer<List<ListOsVersionsResponseBody>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

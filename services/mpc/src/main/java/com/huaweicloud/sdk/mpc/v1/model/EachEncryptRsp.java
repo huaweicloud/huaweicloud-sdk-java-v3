@@ -227,12 +227,15 @@ public class EachEncryptRsp  {
 
     
     public EachEncryptRsp addOutputFileNameItem(String outputFileNameItem) {
+        if(this.outputFileName == null) {
+            this.outputFileName = new ArrayList<>();
+        }
         this.outputFileName.add(outputFileNameItem);
         return this;
     }
 
     public EachEncryptRsp withOutputFileName(Consumer<List<String>> outputFileNameSetter) {
-        if(this.outputFileName == null ){
+        if(this.outputFileName == null) {
             this.outputFileName = new ArrayList<>();
         }
         outputFileNameSetter.accept(this.outputFileName);

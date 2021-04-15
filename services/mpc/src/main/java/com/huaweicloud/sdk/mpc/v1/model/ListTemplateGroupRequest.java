@@ -50,12 +50,15 @@ public class ListTemplateGroupRequest  {
 
     
     public ListTemplateGroupRequest addGroupIdItem(String groupIdItem) {
+        if(this.groupId == null) {
+            this.groupId = new ArrayList<>();
+        }
         this.groupId.add(groupIdItem);
         return this;
     }
 
     public ListTemplateGroupRequest withGroupId(Consumer<List<String>> groupIdSetter) {
-        if(this.groupId == null ){
+        if(this.groupId == null) {
             this.groupId = new ArrayList<>();
         }
         groupIdSetter.accept(this.groupId);
@@ -83,12 +86,15 @@ public class ListTemplateGroupRequest  {
 
     
     public ListTemplateGroupRequest addGroupNameItem(String groupNameItem) {
+        if(this.groupName == null) {
+            this.groupName = new ArrayList<>();
+        }
         this.groupName.add(groupNameItem);
         return this;
     }
 
     public ListTemplateGroupRequest withGroupName(Consumer<List<String>> groupNameSetter) {
-        if(this.groupName == null ){
+        if(this.groupName == null) {
             this.groupName = new ArrayList<>();
         }
         groupNameSetter.accept(this.groupName);

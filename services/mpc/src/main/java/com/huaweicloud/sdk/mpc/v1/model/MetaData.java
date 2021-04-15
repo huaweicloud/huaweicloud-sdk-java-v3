@@ -188,12 +188,15 @@ public class MetaData  {
 
     
     public MetaData addVideoItem(VideoInfo videoItem) {
+        if(this.video == null) {
+            this.video = new ArrayList<>();
+        }
         this.video.add(videoItem);
         return this;
     }
 
     public MetaData withVideo(Consumer<List<VideoInfo>> videoSetter) {
-        if(this.video == null ){
+        if(this.video == null) {
             this.video = new ArrayList<>();
         }
         videoSetter.accept(this.video);
@@ -221,12 +224,15 @@ public class MetaData  {
 
     
     public MetaData addAudioItem(AudioInfo audioItem) {
+        if(this.audio == null) {
+            this.audio = new ArrayList<>();
+        }
         this.audio.add(audioItem);
         return this;
     }
 
     public MetaData withAudio(Consumer<List<AudioInfo>> audioSetter) {
-        if(this.audio == null ){
+        if(this.audio == null) {
             this.audio = new ArrayList<>();
         }
         audioSetter.accept(this.audio);

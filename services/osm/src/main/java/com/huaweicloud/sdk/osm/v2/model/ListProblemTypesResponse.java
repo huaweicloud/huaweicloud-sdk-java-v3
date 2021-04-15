@@ -65,12 +65,15 @@ public class ListProblemTypesResponse extends SdkResponse {
 
     
     public ListProblemTypesResponse addIncidentBusinessTypeListItem(SimpleIncidentBusinessTypeV2 incidentBusinessTypeListItem) {
+        if(this.incidentBusinessTypeList == null) {
+            this.incidentBusinessTypeList = new ArrayList<>();
+        }
         this.incidentBusinessTypeList.add(incidentBusinessTypeListItem);
         return this;
     }
 
     public ListProblemTypesResponse withIncidentBusinessTypeList(Consumer<List<SimpleIncidentBusinessTypeV2>> incidentBusinessTypeListSetter) {
-        if(this.incidentBusinessTypeList == null ){
+        if(this.incidentBusinessTypeList == null) {
             this.incidentBusinessTypeList = new ArrayList<>();
         }
         incidentBusinessTypeListSetter.accept(this.incidentBusinessTypeList);

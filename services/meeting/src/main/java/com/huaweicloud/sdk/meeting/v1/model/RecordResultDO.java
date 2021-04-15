@@ -136,12 +136,15 @@ public class RecordResultDO  {
 
     
     public RecordResultDO addUrlItem(String urlItem) {
+        if(this.url == null) {
+            this.url = new ArrayList<>();
+        }
         this.url.add(urlItem);
         return this;
     }
 
     public RecordResultDO withUrl(Consumer<List<String>> urlSetter) {
-        if(this.url == null ){
+        if(this.url == null) {
             this.url = new ArrayList<>();
         }
         urlSetter.accept(this.url);

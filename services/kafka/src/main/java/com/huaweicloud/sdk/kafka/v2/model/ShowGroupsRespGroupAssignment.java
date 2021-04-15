@@ -60,12 +60,15 @@ public class ShowGroupsRespGroupAssignment  {
 
     
     public ShowGroupsRespGroupAssignment addPartitionsItem(String partitionsItem) {
+        if(this.partitions == null) {
+            this.partitions = new ArrayList<>();
+        }
         this.partitions.add(partitionsItem);
         return this;
     }
 
     public ShowGroupsRespGroupAssignment withPartitions(Consumer<List<String>> partitionsSetter) {
-        if(this.partitions == null ){
+        if(this.partitions == null) {
             this.partitions = new ArrayList<>();
         }
         partitionsSetter.accept(this.partitions);

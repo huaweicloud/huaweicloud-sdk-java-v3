@@ -383,12 +383,15 @@ public class ListNatGatewaySnatRulesRequest  {
 
     
     public ListNatGatewaySnatRulesRequest addNatGatewayIdItem(String natGatewayIdItem) {
+        if(this.natGatewayId == null) {
+            this.natGatewayId = new ArrayList<>();
+        }
         this.natGatewayId.add(natGatewayIdItem);
         return this;
     }
 
     public ListNatGatewaySnatRulesRequest withNatGatewayId(Consumer<List<String>> natGatewayIdSetter) {
-        if(this.natGatewayId == null ){
+        if(this.natGatewayId == null) {
             this.natGatewayId = new ArrayList<>();
         }
         natGatewayIdSetter.accept(this.natGatewayId);

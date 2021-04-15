@@ -120,12 +120,15 @@ public class SearchDevicesResponse extends SdkResponse {
 
     
     public SearchDevicesResponse addDataItem(QueryDeviceResultDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchDevicesResponse withData(Consumer<List<QueryDeviceResultDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

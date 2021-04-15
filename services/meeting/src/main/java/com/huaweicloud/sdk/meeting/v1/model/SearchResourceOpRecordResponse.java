@@ -120,12 +120,15 @@ public class SearchResourceOpRecordResponse extends SdkResponse {
 
     
     public SearchResourceOpRecordResponse addDataItem(QueryResourceResultDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchResourceOpRecordResponse withData(Consumer<List<QueryResourceResultDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

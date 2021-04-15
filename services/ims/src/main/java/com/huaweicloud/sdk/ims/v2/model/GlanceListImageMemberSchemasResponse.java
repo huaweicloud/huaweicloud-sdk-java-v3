@@ -47,12 +47,15 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
 
     
     public GlanceListImageMemberSchemasResponse addLinksItem(Links linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public GlanceListImageMemberSchemasResponse withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

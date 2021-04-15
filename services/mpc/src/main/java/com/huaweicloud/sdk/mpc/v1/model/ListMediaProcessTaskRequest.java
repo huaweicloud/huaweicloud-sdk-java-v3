@@ -162,12 +162,15 @@ public class ListMediaProcessTaskRequest  {
 
     
     public ListMediaProcessTaskRequest addTaskIdItem(String taskIdItem) {
+        if(this.taskId == null) {
+            this.taskId = new ArrayList<>();
+        }
         this.taskId.add(taskIdItem);
         return this;
     }
 
     public ListMediaProcessTaskRequest withTaskId(Consumer<List<String>> taskIdSetter) {
-        if(this.taskId == null ){
+        if(this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         taskIdSetter.accept(this.taskId);

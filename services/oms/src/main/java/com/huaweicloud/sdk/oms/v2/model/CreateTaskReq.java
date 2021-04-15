@@ -339,12 +339,15 @@ public class CreateTaskReq  {
 
     
     public CreateTaskReq addBandwidthPolicyItem(BandwidthPolicyDto bandwidthPolicyItem) {
+        if(this.bandwidthPolicy == null) {
+            this.bandwidthPolicy = new ArrayList<>();
+        }
         this.bandwidthPolicy.add(bandwidthPolicyItem);
         return this;
     }
 
     public CreateTaskReq withBandwidthPolicy(Consumer<List<BandwidthPolicyDto>> bandwidthPolicySetter) {
-        if(this.bandwidthPolicy == null ){
+        if(this.bandwidthPolicy == null) {
             this.bandwidthPolicy = new ArrayList<>();
         }
         bandwidthPolicySetter.accept(this.bandwidthPolicy);

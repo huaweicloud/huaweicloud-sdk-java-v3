@@ -33,12 +33,15 @@ public class RestBulkDelAttendReqBody  {
 
     
     public RestBulkDelAttendReqBody addBulkDelAttendInfoItem(DelAttendInfo bulkDelAttendInfoItem) {
+        if(this.bulkDelAttendInfo == null) {
+            this.bulkDelAttendInfo = new ArrayList<>();
+        }
         this.bulkDelAttendInfo.add(bulkDelAttendInfoItem);
         return this;
     }
 
     public RestBulkDelAttendReqBody withBulkDelAttendInfo(Consumer<List<DelAttendInfo>> bulkDelAttendInfoSetter) {
-        if(this.bulkDelAttendInfo == null ){
+        if(this.bulkDelAttendInfo == null) {
             this.bulkDelAttendInfo = new ArrayList<>();
         }
         bulkDelAttendInfoSetter.accept(this.bulkDelAttendInfo);

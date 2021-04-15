@@ -341,12 +341,15 @@ public class QueryDeptResultDTO  {
 
     
     public QueryDeptResultDTO addDesignatedOutDeptCodesItem(IdMarkDTO designatedOutDeptCodesItem) {
+        if(this.designatedOutDeptCodes == null) {
+            this.designatedOutDeptCodes = new ArrayList<>();
+        }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
         return this;
     }
 
     public QueryDeptResultDTO withDesignatedOutDeptCodes(Consumer<List<IdMarkDTO>> designatedOutDeptCodesSetter) {
-        if(this.designatedOutDeptCodes == null ){
+        if(this.designatedOutDeptCodes == null) {
             this.designatedOutDeptCodes = new ArrayList<>();
         }
         designatedOutDeptCodesSetter.accept(this.designatedOutDeptCodes);

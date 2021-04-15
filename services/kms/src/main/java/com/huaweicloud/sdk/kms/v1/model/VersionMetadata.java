@@ -146,12 +146,15 @@ public class VersionMetadata  {
 
     
     public VersionMetadata addVersionStagesItem(String versionStagesItem) {
+        if(this.versionStages == null) {
+            this.versionStages = new ArrayList<>();
+        }
         this.versionStages.add(versionStagesItem);
         return this;
     }
 
     public VersionMetadata withVersionStages(Consumer<List<String>> versionStagesSetter) {
-        if(this.versionStages == null ){
+        if(this.versionStages == null) {
             this.versionStages = new ArrayList<>();
         }
         versionStagesSetter.accept(this.versionStages);

@@ -402,12 +402,15 @@ public class CreateOrderIncidentV2Req  {
 
     
     public CreateOrderIncidentV2Req addAccessoryIdsItem(String accessoryIdsItem) {
+        if(this.accessoryIds == null) {
+            this.accessoryIds = new ArrayList<>();
+        }
         this.accessoryIds.add(accessoryIdsItem);
         return this;
     }
 
     public CreateOrderIncidentV2Req withAccessoryIds(Consumer<List<String>> accessoryIdsSetter) {
-        if(this.accessoryIds == null ){
+        if(this.accessoryIds == null) {
             this.accessoryIds = new ArrayList<>();
         }
         accessoryIdsSetter.accept(this.accessoryIds);
@@ -436,12 +439,15 @@ public class CreateOrderIncidentV2Req  {
     
 
     public CreateOrderIncidentV2Req putExtendsMapItem(String key, Object extendsMapItem) {
+        if(this.extendsMap == null) {
+            this.extendsMap = new HashMap<>();
+        }
         this.extendsMap.put(key, extendsMapItem);
         return this;
     }
 
     public CreateOrderIncidentV2Req withExtendsMap(Consumer<Map<String, Object>> extendsMapSetter) {
-        if(this.extendsMap == null ){
+        if(this.extendsMap == null) {
             this.extendsMap = new HashMap<>();
         }
         extendsMapSetter.accept(this.extendsMap);
@@ -469,12 +475,15 @@ public class CreateOrderIncidentV2Req  {
     
 
     public CreateOrderIncidentV2Req putExtensionMapItem(String key, Object extensionMapItem) {
+        if(this.extensionMap == null) {
+            this.extensionMap = new HashMap<>();
+        }
         this.extensionMap.put(key, extensionMapItem);
         return this;
     }
 
     public CreateOrderIncidentV2Req withExtensionMap(Consumer<Map<String, Object>> extensionMapSetter) {
-        if(this.extensionMap == null ){
+        if(this.extensionMap == null) {
             this.extensionMap = new HashMap<>();
         }
         extensionMapSetter.accept(this.extensionMap);

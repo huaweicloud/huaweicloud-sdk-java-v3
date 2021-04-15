@@ -46,12 +46,15 @@ public class ConditionGroup  {
 
     
     public ConditionGroup addConditionsItem(RuleCondition conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
         this.conditions.add(conditionsItem);
         return this;
     }
 
     public ConditionGroup withConditions(Consumer<List<RuleCondition>> conditionsSetter) {
-        if(this.conditions == null ){
+        if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         conditionsSetter.accept(this.conditions);

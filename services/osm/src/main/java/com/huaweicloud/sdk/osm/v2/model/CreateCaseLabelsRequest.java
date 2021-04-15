@@ -78,12 +78,15 @@ public class CreateCaseLabelsRequest  {
 
     
     public CreateCaseLabelsRequest addLabelIdsItem(Integer labelIdsItem) {
+        if(this.labelIds == null) {
+            this.labelIds = new ArrayList<>();
+        }
         this.labelIds.add(labelIdsItem);
         return this;
     }
 
     public CreateCaseLabelsRequest withLabelIds(Consumer<List<Integer>> labelIdsSetter) {
-        if(this.labelIds == null ){
+        if(this.labelIds == null) {
             this.labelIds = new ArrayList<>();
         }
         labelIdsSetter.accept(this.labelIds);

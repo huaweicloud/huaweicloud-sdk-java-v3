@@ -65,12 +65,15 @@ public class ListCaseCategoriesResponse extends SdkResponse {
 
     
     public ListCaseCategoriesResponse addIncidentSubTypeListItem(IncidentSubTypeV2Do incidentSubTypeListItem) {
+        if(this.incidentSubTypeList == null) {
+            this.incidentSubTypeList = new ArrayList<>();
+        }
         this.incidentSubTypeList.add(incidentSubTypeListItem);
         return this;
     }
 
     public ListCaseCategoriesResponse withIncidentSubTypeList(Consumer<List<IncidentSubTypeV2Do>> incidentSubTypeListSetter) {
-        if(this.incidentSubTypeList == null ){
+        if(this.incidentSubTypeList == null) {
             this.incidentSubTypeList = new ArrayList<>();
         }
         incidentSubTypeListSetter.accept(this.incidentSubTypeList);

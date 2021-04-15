@@ -32,12 +32,15 @@ public class ListTranscodeDetailRequest  {
 
     
     public ListTranscodeDetailRequest addTaskIdItem(String taskIdItem) {
+        if(this.taskId == null) {
+            this.taskId = new ArrayList<>();
+        }
         this.taskId.add(taskIdItem);
         return this;
     }
 
     public ListTranscodeDetailRequest withTaskId(Consumer<List<String>> taskIdSetter) {
-        if(this.taskId == null ){
+        if(this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         taskIdSetter.accept(this.taskId);

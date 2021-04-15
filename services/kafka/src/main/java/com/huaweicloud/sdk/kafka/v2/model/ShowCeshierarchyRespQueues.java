@@ -61,12 +61,15 @@ public class ShowCeshierarchyRespQueues  {
 
     
     public ShowCeshierarchyRespQueues addPartitionsItem(ShowCeshierarchyRespPartitions partitionsItem) {
+        if(this.partitions == null) {
+            this.partitions = new ArrayList<>();
+        }
         this.partitions.add(partitionsItem);
         return this;
     }
 
     public ShowCeshierarchyRespQueues withPartitions(Consumer<List<ShowCeshierarchyRespPartitions>> partitionsSetter) {
-        if(this.partitions == null ){
+        if(this.partitions == null) {
             this.partitions = new ArrayList<>();
         }
         partitionsSetter.accept(this.partitions);

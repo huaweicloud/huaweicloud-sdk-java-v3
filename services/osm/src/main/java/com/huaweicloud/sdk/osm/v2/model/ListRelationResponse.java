@@ -35,12 +35,15 @@ public class ListRelationResponse extends SdkResponse {
 
     
     public ListRelationResponse addCaseRelationListItem(CaseRealtionInfo caseRelationListItem) {
+        if(this.caseRelationList == null) {
+            this.caseRelationList = new ArrayList<>();
+        }
         this.caseRelationList.add(caseRelationListItem);
         return this;
     }
 
     public ListRelationResponse withCaseRelationList(Consumer<List<CaseRealtionInfo>> caseRelationListSetter) {
-        if(this.caseRelationList == null ){
+        if(this.caseRelationList == null) {
             this.caseRelationList = new ArrayList<>();
         }
         caseRelationListSetter.accept(this.caseRelationList);

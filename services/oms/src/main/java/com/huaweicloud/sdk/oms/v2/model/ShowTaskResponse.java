@@ -309,12 +309,15 @@ public class ShowTaskResponse extends SdkResponse {
 
     
     public ShowTaskResponse addBandwidthPolicyItem(BandwidthPolicyDto bandwidthPolicyItem) {
+        if(this.bandwidthPolicy == null) {
+            this.bandwidthPolicy = new ArrayList<>();
+        }
         this.bandwidthPolicy.add(bandwidthPolicyItem);
         return this;
     }
 
     public ShowTaskResponse withBandwidthPolicy(Consumer<List<BandwidthPolicyDto>> bandwidthPolicySetter) {
-        if(this.bandwidthPolicy == null ){
+        if(this.bandwidthPolicy == null) {
             this.bandwidthPolicy = new ArrayList<>();
         }
         bandwidthPolicySetter.accept(this.bandwidthPolicy);

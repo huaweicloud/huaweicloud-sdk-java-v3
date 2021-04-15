@@ -47,12 +47,15 @@ public class ListTranscodingTaskResponse extends SdkResponse {
 
     
     public ListTranscodingTaskResponse addTaskArrayItem(QueryTranscodingsTaskResponse taskArrayItem) {
+        if(this.taskArray == null) {
+            this.taskArray = new ArrayList<>();
+        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
 
     public ListTranscodingTaskResponse withTaskArray(Consumer<List<QueryTranscodingsTaskResponse>> taskArraySetter) {
-        if(this.taskArray == null ){
+        if(this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);

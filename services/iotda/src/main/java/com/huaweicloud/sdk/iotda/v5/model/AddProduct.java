@@ -197,12 +197,15 @@ public class AddProduct  {
 
     
     public AddProduct addServiceCapabilitiesItem(ServiceCapability serviceCapabilitiesItem) {
+        if(this.serviceCapabilities == null) {
+            this.serviceCapabilities = new ArrayList<>();
+        }
         this.serviceCapabilities.add(serviceCapabilitiesItem);
         return this;
     }
 
     public AddProduct withServiceCapabilities(Consumer<List<ServiceCapability>> serviceCapabilitiesSetter) {
-        if(this.serviceCapabilities == null ){
+        if(this.serviceCapabilities == null) {
             this.serviceCapabilities = new ArrayList<>();
         }
         serviceCapabilitiesSetter.accept(this.serviceCapabilities);

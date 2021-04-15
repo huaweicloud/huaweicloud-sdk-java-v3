@@ -93,12 +93,15 @@ public class QueryCorpVcResResultDTO  {
 
     
     public QueryCorpVcResResultDTO addVmrPkgListItem(QueryVmrPkgResResultDTO vmrPkgListItem) {
+        if(this.vmrPkgList == null) {
+            this.vmrPkgList = new ArrayList<>();
+        }
         this.vmrPkgList.add(vmrPkgListItem);
         return this;
     }
 
     public QueryCorpVcResResultDTO withVmrPkgList(Consumer<List<QueryVmrPkgResResultDTO>> vmrPkgListSetter) {
-        if(this.vmrPkgList == null ){
+        if(this.vmrPkgList == null) {
             this.vmrPkgList = new ArrayList<>();
         }
         vmrPkgListSetter.accept(this.vmrPkgList);

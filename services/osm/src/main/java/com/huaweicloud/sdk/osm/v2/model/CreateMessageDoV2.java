@@ -118,12 +118,15 @@ public class CreateMessageDoV2  {
 
     
     public CreateMessageDoV2 addAccessoryIdsItem(String accessoryIdsItem) {
+        if(this.accessoryIds == null) {
+            this.accessoryIds = new ArrayList<>();
+        }
         this.accessoryIds.add(accessoryIdsItem);
         return this;
     }
 
     public CreateMessageDoV2 withAccessoryIds(Consumer<List<String>> accessoryIdsSetter) {
-        if(this.accessoryIds == null ){
+        if(this.accessoryIds == null) {
             this.accessoryIds = new ArrayList<>();
         }
         accessoryIdsSetter.accept(this.accessoryIds);

@@ -42,12 +42,15 @@ public class ListResourcesByTagsResponse extends SdkResponse {
 
     
     public ListResourcesByTagsResponse addResourcesItem(ResourceDTO resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListResourcesByTagsResponse withResources(Consumer<List<ResourceDTO>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

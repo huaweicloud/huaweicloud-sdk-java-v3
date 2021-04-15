@@ -132,12 +132,15 @@ public class BatchUpdateMembersRequestBody  {
 
     
     public BatchUpdateMembersRequestBody addImagesItem(String imagesItem) {
+        if(this.images == null) {
+            this.images = new ArrayList<>();
+        }
         this.images.add(imagesItem);
         return this;
     }
 
     public BatchUpdateMembersRequestBody withImages(Consumer<List<String>> imagesSetter) {
-        if(this.images == null ){
+        if(this.images == null) {
             this.images = new ArrayList<>();
         }
         imagesSetter.accept(this.images);

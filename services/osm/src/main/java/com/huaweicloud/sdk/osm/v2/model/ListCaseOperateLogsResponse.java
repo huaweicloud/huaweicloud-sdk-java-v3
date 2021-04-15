@@ -65,12 +65,15 @@ public class ListCaseOperateLogsResponse extends SdkResponse {
 
     
     public ListCaseOperateLogsResponse addIncidentOperateLogListItem(IncidentOperateLogV2 incidentOperateLogListItem) {
+        if(this.incidentOperateLogList == null) {
+            this.incidentOperateLogList = new ArrayList<>();
+        }
         this.incidentOperateLogList.add(incidentOperateLogListItem);
         return this;
     }
 
     public ListCaseOperateLogsResponse withIncidentOperateLogList(Consumer<List<IncidentOperateLogV2>> incidentOperateLogListSetter) {
-        if(this.incidentOperateLogList == null ){
+        if(this.incidentOperateLogList == null) {
             this.incidentOperateLogList = new ArrayList<>();
         }
         incidentOperateLogListSetter.accept(this.incidentOperateLogList);

@@ -44,12 +44,15 @@ public class ShowStreamCountRequest  {
 
     
     public ShowStreamCountRequest addPublishDomainsItem(String publishDomainsItem) {
+        if(this.publishDomains == null) {
+            this.publishDomains = new ArrayList<>();
+        }
         this.publishDomains.add(publishDomainsItem);
         return this;
     }
 
     public ShowStreamCountRequest withPublishDomains(Consumer<List<String>> publishDomainsSetter) {
-        if(this.publishDomains == null ){
+        if(this.publishDomains == null) {
             this.publishDomains = new ArrayList<>();
         }
         publishDomainsSetter.accept(this.publishDomains);

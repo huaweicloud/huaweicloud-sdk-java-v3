@@ -291,12 +291,15 @@ public class RestScheduleConfDTO  {
 
     
     public RestScheduleConfDTO addAttendeesItem(RestAttendeeDTO attendeesItem) {
+        if(this.attendees == null) {
+            this.attendees = new ArrayList<>();
+        }
         this.attendees.add(attendeesItem);
         return this;
     }
 
     public RestScheduleConfDTO withAttendees(Consumer<List<RestAttendeeDTO>> attendeesSetter) {
-        if(this.attendees == null ){
+        if(this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         attendeesSetter.accept(this.attendees);

@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.mpc.v1.model.VideoSettings;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -357,6 +358,12 @@ public class QualityEnhance  {
     
     private VideoEnhanceEnum videoEnhance;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="video_settings")
+    
+    private VideoSettings videoSettings;
+
     public QualityEnhance withNormalEnhance(NormalEnhanceEnum normalEnhance) {
         this.normalEnhance = normalEnhance;
         return this;
@@ -445,6 +452,35 @@ public class QualityEnhance  {
 
     
 
+    public QualityEnhance withVideoSettings(VideoSettings videoSettings) {
+        this.videoSettings = videoSettings;
+        return this;
+    }
+
+    public QualityEnhance withVideoSettings(Consumer<VideoSettings> videoSettingsSetter) {
+        if(this.videoSettings == null ){
+            this.videoSettings = new VideoSettings();
+            videoSettingsSetter.accept(this.videoSettings);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get videoSettings
+     * @return videoSettings
+     */
+    public VideoSettings getVideoSettings() {
+        return videoSettings;
+    }
+
+    public void setVideoSettings(VideoSettings videoSettings) {
+        this.videoSettings = videoSettings;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -457,11 +493,12 @@ public class QualityEnhance  {
         return Objects.equals(this.normalEnhance, qualityEnhance.normalEnhance) &&
             Objects.equals(this.revive, qualityEnhance.revive) &&
             Objects.equals(this.sdrToHdr, qualityEnhance.sdrToHdr) &&
-            Objects.equals(this.videoEnhance, qualityEnhance.videoEnhance);
+            Objects.equals(this.videoEnhance, qualityEnhance.videoEnhance) &&
+            Objects.equals(this.videoSettings, qualityEnhance.videoSettings);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(normalEnhance, revive, sdrToHdr, videoEnhance);
+        return Objects.hash(normalEnhance, revive, sdrToHdr, videoEnhance, videoSettings);
     }
     @Override
     public String toString() {
@@ -471,6 +508,7 @@ public class QualityEnhance  {
         sb.append("    revive: ").append(toIndentedString(revive)).append("\n");
         sb.append("    sdrToHdr: ").append(toIndentedString(sdrToHdr)).append("\n");
         sb.append("    videoEnhance: ").append(toIndentedString(videoEnhance)).append("\n");
+        sb.append("    videoSettings: ").append(toIndentedString(videoSettings)).append("\n");
         sb.append("}");
         return sb.toString();
     }

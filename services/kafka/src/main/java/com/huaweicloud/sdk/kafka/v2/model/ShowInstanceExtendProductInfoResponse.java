@@ -41,12 +41,15 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
 
     
     public ShowInstanceExtendProductInfoResponse addHourlyItem(ListProductsRespHourly hourlyItem) {
+        if(this.hourly == null) {
+            this.hourly = new ArrayList<>();
+        }
         this.hourly.add(hourlyItem);
         return this;
     }
 
     public ShowInstanceExtendProductInfoResponse withHourly(Consumer<List<ListProductsRespHourly>> hourlySetter) {
-        if(this.hourly == null ){
+        if(this.hourly == null) {
             this.hourly = new ArrayList<>();
         }
         hourlySetter.accept(this.hourly);
@@ -74,12 +77,15 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
 
     
     public ShowInstanceExtendProductInfoResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
+        if(this.monthly == null) {
+            this.monthly = new ArrayList<>();
+        }
         this.monthly.add(monthlyItem);
         return this;
     }
 
     public ShowInstanceExtendProductInfoResponse withMonthly(Consumer<List<ListProductsRespHourly>> monthlySetter) {
-        if(this.monthly == null ){
+        if(this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
         monthlySetter.accept(this.monthly);

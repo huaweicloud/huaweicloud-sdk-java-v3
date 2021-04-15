@@ -310,12 +310,15 @@ public class CreateImageRequestBody  {
 
     
     public CreateImageRequestBody addDataImagesItem(CreateDataImage dataImagesItem) {
+        if(this.dataImages == null) {
+            this.dataImages = new ArrayList<>();
+        }
         this.dataImages.add(dataImagesItem);
         return this;
     }
 
     public CreateImageRequestBody withDataImages(Consumer<List<CreateDataImage>> dataImagesSetter) {
-        if(this.dataImages == null ){
+        if(this.dataImages == null) {
             this.dataImages = new ArrayList<>();
         }
         dataImagesSetter.accept(this.dataImages);
@@ -387,12 +390,15 @@ public class CreateImageRequestBody  {
 
     
     public CreateImageRequestBody addImageTagsItem(TagKeyValue imageTagsItem) {
+        if(this.imageTags == null) {
+            this.imageTags = new ArrayList<>();
+        }
         this.imageTags.add(imageTagsItem);
         return this;
     }
 
     public CreateImageRequestBody withImageTags(Consumer<List<TagKeyValue>> imageTagsSetter) {
-        if(this.imageTags == null ){
+        if(this.imageTags == null) {
             this.imageTags = new ArrayList<>();
         }
         imageTagsSetter.accept(this.imageTags);
@@ -464,12 +470,15 @@ public class CreateImageRequestBody  {
 
     
     public CreateImageRequestBody addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateImageRequestBody withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

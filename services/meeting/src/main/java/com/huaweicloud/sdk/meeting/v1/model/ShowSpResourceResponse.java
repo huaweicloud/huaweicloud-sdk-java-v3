@@ -477,12 +477,15 @@ public class ShowSpResourceResponse extends SdkResponse {
 
     
     public ShowSpResourceResponse addGroupListItem(QueryCorpGroupDTO groupListItem) {
+        if(this.groupList == null) {
+            this.groupList = new ArrayList<>();
+        }
         this.groupList.add(groupListItem);
         return this;
     }
 
     public ShowSpResourceResponse withGroupList(Consumer<List<QueryCorpGroupDTO>> groupListSetter) {
-        if(this.groupList == null ){
+        if(this.groupList == null) {
             this.groupList = new ArrayList<>();
         }
         groupListSetter.accept(this.groupList);

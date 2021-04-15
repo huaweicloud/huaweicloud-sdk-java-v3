@@ -150,12 +150,15 @@ public class CycleParams  {
 
     
     public CycleParams addPointItem(Integer pointItem) {
+        if(this.point == null) {
+            this.point = new ArrayList<>();
+        }
         this.point.add(pointItem);
         return this;
     }
 
     public CycleParams withPoint(Consumer<List<Integer>> pointSetter) {
-        if(this.point == null ){
+        if(this.point == null) {
             this.point = new ArrayList<>();
         }
         pointSetter.accept(this.point);

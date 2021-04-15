@@ -120,12 +120,15 @@ public class SearchCorpDirResponse extends SdkResponse {
 
     
     public SearchCorpDirResponse addDataItem(UserDTO dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchCorpDirResponse withData(Consumer<List<UserDTO>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

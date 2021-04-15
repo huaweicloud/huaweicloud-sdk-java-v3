@@ -46,12 +46,15 @@ public class MultiAudio  {
 
     
     public MultiAudio addTracksInfoItem(TracksInfo tracksInfoItem) {
+        if(this.tracksInfo == null) {
+            this.tracksInfo = new ArrayList<>();
+        }
         this.tracksInfo.add(tracksInfoItem);
         return this;
     }
 
     public MultiAudio withTracksInfo(Consumer<List<TracksInfo>> tracksInfoSetter) {
-        if(this.tracksInfo == null ){
+        if(this.tracksInfo == null) {
             this.tracksInfo = new ArrayList<>();
         }
         tracksInfoSetter.accept(this.tracksInfo);
@@ -79,12 +82,15 @@ public class MultiAudio  {
 
     
     public MultiAudio addAudioFilesItem(AudioFile audioFilesItem) {
+        if(this.audioFiles == null) {
+            this.audioFiles = new ArrayList<>();
+        }
         this.audioFiles.add(audioFilesItem);
         return this;
     }
 
     public MultiAudio withAudioFiles(Consumer<List<AudioFile>> audioFilesSetter) {
-        if(this.audioFiles == null ){
+        if(this.audioFiles == null) {
             this.audioFiles = new ArrayList<>();
         }
         audioFilesSetter.accept(this.audioFiles);

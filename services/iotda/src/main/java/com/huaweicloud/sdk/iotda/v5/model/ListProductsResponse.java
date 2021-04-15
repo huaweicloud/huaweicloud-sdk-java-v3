@@ -42,12 +42,15 @@ public class ListProductsResponse extends SdkResponse {
 
     
     public ListProductsResponse addProductsItem(ProductSummary productsItem) {
+        if(this.products == null) {
+            this.products = new ArrayList<>();
+        }
         this.products.add(productsItem);
         return this;
     }
 
     public ListProductsResponse withProducts(Consumer<List<ProductSummary>> productsSetter) {
-        if(this.products == null ){
+        if(this.products == null) {
             this.products = new ArrayList<>();
         }
         productsSetter.accept(this.products);

@@ -41,12 +41,15 @@ public class ListUsersOfStreamResponse extends SdkResponse {
 
     
     public ListUsersOfStreamResponse addDataListItem(V2UserData dataListItem) {
+        if(this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
         this.dataList.add(dataListItem);
         return this;
     }
 
     public ListUsersOfStreamResponse withDataList(Consumer<List<V2UserData>> dataListSetter) {
-        if(this.dataList == null ){
+        if(this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);

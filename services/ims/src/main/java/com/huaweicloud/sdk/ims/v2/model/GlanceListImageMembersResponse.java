@@ -41,12 +41,15 @@ public class GlanceListImageMembersResponse extends SdkResponse {
 
     
     public GlanceListImageMembersResponse addMembersItem(GlanceImageMembers membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public GlanceListImageMembersResponse withMembers(Consumer<List<GlanceImageMembers>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

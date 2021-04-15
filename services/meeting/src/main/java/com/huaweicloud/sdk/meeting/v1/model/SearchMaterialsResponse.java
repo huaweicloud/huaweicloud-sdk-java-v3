@@ -120,12 +120,15 @@ public class SearchMaterialsResponse extends SdkResponse {
 
     
     public SearchMaterialsResponse addDataItem(Material dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public SearchMaterialsResponse withData(Consumer<List<Material>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

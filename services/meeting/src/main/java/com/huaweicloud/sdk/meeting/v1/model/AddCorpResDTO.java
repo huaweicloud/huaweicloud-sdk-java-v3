@@ -33,12 +33,15 @@ public class AddCorpResDTO  {
 
     
     public AddCorpResDTO addResourceItem(ResourceDTO resourceItem) {
+        if(this.resource == null) {
+            this.resource = new ArrayList<>();
+        }
         this.resource.add(resourceItem);
         return this;
     }
 
     public AddCorpResDTO withResource(Consumer<List<ResourceDTO>> resourceSetter) {
-        if(this.resource == null ){
+        if(this.resource == null) {
             this.resource = new ArrayList<>();
         }
         resourceSetter.accept(this.resource);

@@ -204,12 +204,15 @@ public class ShowProgramResponse extends SdkResponse {
 
     
     public ShowProgramResponse addProgramItemListItem(ProgramItemResponseBase programItemListItem) {
+        if(this.programItemList == null) {
+            this.programItemList = new ArrayList<>();
+        }
         this.programItemList.add(programItemListItem);
         return this;
     }
 
     public ShowProgramResponse withProgramItemList(Consumer<List<ProgramItemResponseBase>> programItemListSetter) {
-        if(this.programItemList == null ){
+        if(this.programItemList == null) {
             this.programItemList = new ArrayList<>();
         }
         programItemListSetter.accept(this.programItemList);

@@ -266,12 +266,15 @@ public class QueryMessageInfoV2  {
 
     
     public QueryMessageInfoV2 addAccessoryListItem(SimpleAccessoryV2 accessoryListItem) {
+        if(this.accessoryList == null) {
+            this.accessoryList = new ArrayList<>();
+        }
         this.accessoryList.add(accessoryListItem);
         return this;
     }
 
     public QueryMessageInfoV2 withAccessoryList(Consumer<List<SimpleAccessoryV2>> accessoryListSetter) {
-        if(this.accessoryList == null ){
+        if(this.accessoryList == null) {
             this.accessoryList = new ArrayList<>();
         }
         accessoryListSetter.accept(this.accessoryList);

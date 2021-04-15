@@ -1,14 +1,5 @@
 package com.huaweicloud.sdk.meeting.v1;
 
-import java.nio.charset.StandardCharsets;
-import java.time.Instant;
-import java.util.Base64;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
-
-import org.apache.commons.lang3.StringUtils;
-
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
@@ -20,9 +11,17 @@ import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpRequest.HttpRequestBuilder;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 import com.huaweicloud.sdk.meeting.v1.model.AuthReqDTOV1;
 import com.huaweicloud.sdk.meeting.v1.model.CreatTokenMeta;
 import com.huaweicloud.sdk.meeting.v1.model.CreateTokenResponse;
+
+import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.util.Base64;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
 public class MeetingCredentials implements ICredential {
     private String token;
@@ -58,7 +57,7 @@ public class MeetingCredentials implements ICredential {
 
         // 新增获取页面免登陆跳转nonce信息接口也需上送X-Access-Token头域，但不是用户登陆的token，需用户自己上送
         // 如果用户自己上送了，则设置用户自带的token， 否则则设置通过用户名密码获取的token
-        if (httpRequest.getPath().startsWith("/v1/usg/acs/auth/portal-ref-nonce") && StringUtils.isNotBlank(token)) {
+        if (httpRequest.getPath().startsWith("/v1/usg/acs/auth/portal-ref-nonce") && !StringUtils.isEmpty(token)) {
             return CompletableFuture.supplyAsync(
                 () -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
         }

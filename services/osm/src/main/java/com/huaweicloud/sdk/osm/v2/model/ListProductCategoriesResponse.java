@@ -65,12 +65,15 @@ public class ListProductCategoriesResponse extends SdkResponse {
 
     
     public ListProductCategoriesResponse addIncidentProductCategoryListItem(IncidentProductCategoryV2 incidentProductCategoryListItem) {
+        if(this.incidentProductCategoryList == null) {
+            this.incidentProductCategoryList = new ArrayList<>();
+        }
         this.incidentProductCategoryList.add(incidentProductCategoryListItem);
         return this;
     }
 
     public ListProductCategoriesResponse withIncidentProductCategoryList(Consumer<List<IncidentProductCategoryV2>> incidentProductCategoryListSetter) {
-        if(this.incidentProductCategoryList == null ){
+        if(this.incidentProductCategoryList == null) {
             this.incidentProductCategoryList = new ArrayList<>();
         }
         incidentProductCategoryListSetter.accept(this.incidentProductCategoryList);

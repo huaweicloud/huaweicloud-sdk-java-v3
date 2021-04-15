@@ -285,12 +285,15 @@ public class ListNatGatewayDnatRulesRequest  {
 
     
     public ListNatGatewayDnatRulesRequest addStatusItem(StatusEnum statusItem) {
+        if(this.status == null) {
+            this.status = new ArrayList<>();
+        }
         this.status.add(statusItem);
         return this;
     }
 
     public ListNatGatewayDnatRulesRequest withStatus(Consumer<List<StatusEnum>> statusSetter) {
-        if(this.status == null ){
+        if(this.status == null) {
             this.status = new ArrayList<>();
         }
         statusSetter.accept(this.status);
@@ -454,12 +457,15 @@ public class ListNatGatewayDnatRulesRequest  {
 
     
     public ListNatGatewayDnatRulesRequest addNatGatewayIdItem(String natGatewayIdItem) {
+        if(this.natGatewayId == null) {
+            this.natGatewayId = new ArrayList<>();
+        }
         this.natGatewayId.add(natGatewayIdItem);
         return this;
     }
 
     public ListNatGatewayDnatRulesRequest withNatGatewayId(Consumer<List<String>> natGatewayIdSetter) {
-        if(this.natGatewayId == null ){
+        if(this.natGatewayId == null) {
             this.natGatewayId = new ArrayList<>();
         }
         natGatewayIdSetter.accept(this.natGatewayId);
@@ -531,12 +537,15 @@ public class ListNatGatewayDnatRulesRequest  {
 
     
     public ListNatGatewayDnatRulesRequest addProtocolItem(String protocolItem) {
+        if(this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
         this.protocol.add(protocolItem);
         return this;
     }
 
     public ListNatGatewayDnatRulesRequest withProtocol(Consumer<List<String>> protocolSetter) {
-        if(this.protocol == null ){
+        if(this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         protocolSetter.accept(this.protocol);

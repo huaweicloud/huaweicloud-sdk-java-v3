@@ -49,12 +49,15 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
 
     
     public ShowRealTimeInfoOfMeetingResponse addAttendeesItem(RealTimeAttendee attendeesItem) {
+        if(this.attendees == null) {
+            this.attendees = new ArrayList<>();
+        }
         this.attendees.add(attendeesItem);
         return this;
     }
 
     public ShowRealTimeInfoOfMeetingResponse withAttendees(Consumer<List<RealTimeAttendee>> attendeesSetter) {
-        if(this.attendees == null ){
+        if(this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         attendeesSetter.accept(this.attendees);
@@ -82,12 +85,15 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
 
     
     public ShowRealTimeInfoOfMeetingResponse addParticipantsItem(RealTimeParticipant participantsItem) {
+        if(this.participants == null) {
+            this.participants = new ArrayList<>();
+        }
         this.participants.add(participantsItem);
         return this;
     }
 
     public ShowRealTimeInfoOfMeetingResponse withParticipants(Consumer<List<RealTimeParticipant>> participantsSetter) {
-        if(this.participants == null ){
+        if(this.participants == null) {
             this.participants = new ArrayList<>();
         }
         participantsSetter.accept(this.participants);

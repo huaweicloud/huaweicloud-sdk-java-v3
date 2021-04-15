@@ -36,7 +36,6 @@ public class ImageMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -62,7 +61,6 @@ public class ImageMeta {
 
         // response
         
-
 
 
         return builder.build();

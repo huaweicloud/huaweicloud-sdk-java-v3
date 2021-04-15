@@ -47,12 +47,15 @@ public class ListMergeChannelsTaskResponse extends SdkResponse {
 
     
     public ListMergeChannelsTaskResponse addTaskArrayItem(MergeChannelsTaskInfo taskArrayItem) {
+        if(this.taskArray == null) {
+            this.taskArray = new ArrayList<>();
+        }
         this.taskArray.add(taskArrayItem);
         return this;
     }
 
     public ListMergeChannelsTaskResponse withTaskArray(Consumer<List<MergeChannelsTaskInfo>> taskArraySetter) {
-        if(this.taskArray == null ){
+        if(this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);

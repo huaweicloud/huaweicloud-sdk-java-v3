@@ -35,12 +35,15 @@ public class ListUnreadNewInstantMessagesResponse extends SdkResponse {
 
     
     public ListUnreadNewInstantMessagesResponse addImunreadItem(ImUnreadV2 imunreadItem) {
+        if(this.imunread == null) {
+            this.imunread = new ArrayList<>();
+        }
         this.imunread.add(imunreadItem);
         return this;
     }
 
     public ListUnreadNewInstantMessagesResponse withImunread(Consumer<List<ImUnreadV2>> imunreadSetter) {
-        if(this.imunread == null ){
+        if(this.imunread == null) {
             this.imunread = new ArrayList<>();
         }
         imunreadSetter.accept(this.imunread);

@@ -41,12 +41,15 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
 
     
     public ListQueryHttpCodeResponse addDataSeriesItem(HttpCodeSummary dataSeriesItem) {
+        if(this.dataSeries == null) {
+            this.dataSeries = new ArrayList<>();
+        }
         this.dataSeries.add(dataSeriesItem);
         return this;
     }
 
     public ListQueryHttpCodeResponse withDataSeries(Consumer<List<HttpCodeSummary>> dataSeriesSetter) {
-        if(this.dataSeries == null ){
+        if(this.dataSeries == null) {
             this.dataSeries = new ArrayList<>();
         }
         dataSeriesSetter.accept(this.dataSeries);

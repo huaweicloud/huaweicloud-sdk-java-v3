@@ -33,12 +33,15 @@ public class UpdateBandwidthPolicyReq  {
 
     
     public UpdateBandwidthPolicyReq addBandwidthPolicyItem(BandwidthPolicyDto bandwidthPolicyItem) {
+        if(this.bandwidthPolicy == null) {
+            this.bandwidthPolicy = new ArrayList<>();
+        }
         this.bandwidthPolicy.add(bandwidthPolicyItem);
         return this;
     }
 
     public UpdateBandwidthPolicyReq withBandwidthPolicy(Consumer<List<BandwidthPolicyDto>> bandwidthPolicySetter) {
-        if(this.bandwidthPolicy == null ){
+        if(this.bandwidthPolicy == null) {
             this.bandwidthPolicy = new ArrayList<>();
         }
         bandwidthPolicySetter.accept(this.bandwidthPolicy);

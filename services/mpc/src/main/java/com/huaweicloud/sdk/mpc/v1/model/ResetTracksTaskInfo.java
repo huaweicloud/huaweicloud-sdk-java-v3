@@ -244,12 +244,15 @@ public class ResetTracksTaskInfo  {
 
     
     public ResetTracksTaskInfo addTracksInfoItem(TracksInfo tracksInfoItem) {
+        if(this.tracksInfo == null) {
+            this.tracksInfo = new ArrayList<>();
+        }
         this.tracksInfo.add(tracksInfoItem);
         return this;
     }
 
     public ResetTracksTaskInfo withTracksInfo(Consumer<List<TracksInfo>> tracksInfoSetter) {
-        if(this.tracksInfo == null ){
+        if(this.tracksInfo == null) {
             this.tracksInfo = new ArrayList<>();
         }
         tracksInfoSetter.accept(this.tracksInfo);

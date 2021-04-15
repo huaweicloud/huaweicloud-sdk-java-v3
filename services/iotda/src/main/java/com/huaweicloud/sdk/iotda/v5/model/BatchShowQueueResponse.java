@@ -42,12 +42,15 @@ public class BatchShowQueueResponse extends SdkResponse {
 
     
     public BatchShowQueueResponse addQueuesItem(QueryQueueBase queuesItem) {
+        if(this.queues == null) {
+            this.queues = new ArrayList<>();
+        }
         this.queues.add(queuesItem);
         return this;
     }
 
     public BatchShowQueueResponse withQueues(Consumer<List<QueryQueueBase>> queuesSetter) {
-        if(this.queues == null ){
+        if(this.queues == null) {
             this.queues = new ArrayList<>();
         }
         queuesSetter.accept(this.queues);

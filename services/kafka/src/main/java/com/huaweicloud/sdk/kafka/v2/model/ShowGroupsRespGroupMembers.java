@@ -73,12 +73,15 @@ public class ShowGroupsRespGroupMembers  {
 
     
     public ShowGroupsRespGroupMembers addAssignmentItem(ShowGroupsRespGroupAssignment assignmentItem) {
+        if(this.assignment == null) {
+            this.assignment = new ArrayList<>();
+        }
         this.assignment.add(assignmentItem);
         return this;
     }
 
     public ShowGroupsRespGroupMembers withAssignment(Consumer<List<ShowGroupsRespGroupAssignment>> assignmentSetter) {
-        if(this.assignment == null ){
+        if(this.assignment == null) {
             this.assignment = new ArrayList<>();
         }
         assignmentSetter.accept(this.assignment);

@@ -284,12 +284,15 @@ public class TokenInfo  {
 
     
     public TokenInfo addSupportNotifyTypeItem(String supportNotifyTypeItem) {
+        if(this.supportNotifyType == null) {
+            this.supportNotifyType = new ArrayList<>();
+        }
         this.supportNotifyType.add(supportNotifyTypeItem);
         return this;
     }
 
     public TokenInfo withSupportNotifyType(Consumer<List<String>> supportNotifyTypeSetter) {
-        if(this.supportNotifyType == null ){
+        if(this.supportNotifyType == null) {
             this.supportNotifyType = new ArrayList<>();
         }
         supportNotifyTypeSetter.accept(this.supportNotifyType);

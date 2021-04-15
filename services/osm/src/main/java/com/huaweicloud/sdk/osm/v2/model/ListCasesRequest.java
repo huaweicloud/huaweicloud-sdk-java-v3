@@ -122,12 +122,15 @@ public class ListCasesRequest  {
 
     
     public ListCasesRequest addSearchKeyItem(String searchKeyItem) {
+        if(this.searchKey == null) {
+            this.searchKey = new ArrayList<>();
+        }
         this.searchKey.add(searchKeyItem);
         return this;
     }
 
     public ListCasesRequest withSearchKey(Consumer<List<String>> searchKeySetter) {
-        if(this.searchKey == null ){
+        if(this.searchKey == null) {
             this.searchKey = new ArrayList<>();
         }
         searchKeySetter.accept(this.searchKey);
@@ -155,12 +158,15 @@ public class ListCasesRequest  {
 
     
     public ListCasesRequest addLabelIdListItem(String labelIdListItem) {
+        if(this.labelIdList == null) {
+            this.labelIdList = new ArrayList<>();
+        }
         this.labelIdList.add(labelIdListItem);
         return this;
     }
 
     public ListCasesRequest withLabelIdList(Consumer<List<String>> labelIdListSetter) {
-        if(this.labelIdList == null ){
+        if(this.labelIdList == null) {
             this.labelIdList = new ArrayList<>();
         }
         labelIdListSetter.accept(this.labelIdList);

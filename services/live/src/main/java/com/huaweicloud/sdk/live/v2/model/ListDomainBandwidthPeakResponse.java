@@ -41,12 +41,15 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
 
     
     public ListDomainBandwidthPeakResponse addBandwidthListItem(PeakBandwidthData bandwidthListItem) {
+        if(this.bandwidthList == null) {
+            this.bandwidthList = new ArrayList<>();
+        }
         this.bandwidthList.add(bandwidthListItem);
         return this;
     }
 
     public ListDomainBandwidthPeakResponse withBandwidthList(Consumer<List<PeakBandwidthData>> bandwidthListSetter) {
-        if(this.bandwidthList == null ){
+        if(this.bandwidthList == null) {
             this.bandwidthList = new ArrayList<>();
         }
         bandwidthListSetter.accept(this.bandwidthList);

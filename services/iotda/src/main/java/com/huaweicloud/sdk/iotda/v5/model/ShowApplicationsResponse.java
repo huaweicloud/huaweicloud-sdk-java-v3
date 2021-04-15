@@ -35,12 +35,15 @@ public class ShowApplicationsResponse extends SdkResponse {
 
     
     public ShowApplicationsResponse addApplicationsItem(ApplicationDTO applicationsItem) {
+        if(this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
         this.applications.add(applicationsItem);
         return this;
     }
 
     public ShowApplicationsResponse withApplications(Consumer<List<ApplicationDTO>> applicationsSetter) {
-        if(this.applications == null ){
+        if(this.applications == null) {
             this.applications = new ArrayList<>();
         }
         applicationsSetter.accept(this.applications);

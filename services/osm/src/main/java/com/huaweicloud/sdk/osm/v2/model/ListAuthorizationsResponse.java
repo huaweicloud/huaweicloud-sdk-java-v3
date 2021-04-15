@@ -65,12 +65,15 @@ public class ListAuthorizationsResponse extends SdkResponse {
 
     
     public ListAuthorizationsResponse addIncidentAuthListItem(IncidentOrderAuthV2 incidentAuthListItem) {
+        if(this.incidentAuthList == null) {
+            this.incidentAuthList = new ArrayList<>();
+        }
         this.incidentAuthList.add(incidentAuthListItem);
         return this;
     }
 
     public ListAuthorizationsResponse withIncidentAuthList(Consumer<List<IncidentOrderAuthV2>> incidentAuthListSetter) {
-        if(this.incidentAuthList == null ){
+        if(this.incidentAuthList == null) {
             this.incidentAuthList = new ArrayList<>();
         }
         incidentAuthListSetter.accept(this.incidentAuthList);

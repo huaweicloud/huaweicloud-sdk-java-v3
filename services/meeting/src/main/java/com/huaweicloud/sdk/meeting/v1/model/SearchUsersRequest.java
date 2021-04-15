@@ -438,12 +438,15 @@ public class SearchUsersRequest  {
 
     
     public SearchUsersRequest addUserTypeItem(Integer userTypeItem) {
+        if(this.userType == null) {
+            this.userType = new ArrayList<>();
+        }
         this.userType.add(userTypeItem);
         return this;
     }
 
     public SearchUsersRequest withUserType(Consumer<List<Integer>> userTypeSetter) {
-        if(this.userType == null ){
+        if(this.userType == null) {
             this.userType = new ArrayList<>();
         }
         userTypeSetter.accept(this.userType);

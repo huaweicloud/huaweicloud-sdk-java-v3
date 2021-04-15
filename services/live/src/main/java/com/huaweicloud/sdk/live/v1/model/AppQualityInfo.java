@@ -61,12 +61,15 @@ public class AppQualityInfo  {
 
     
     public AppQualityInfo addQualityInfoItem(QualityInfo qualityInfoItem) {
+        if(this.qualityInfo == null) {
+            this.qualityInfo = new ArrayList<>();
+        }
         this.qualityInfo.add(qualityInfoItem);
         return this;
     }
 
     public AppQualityInfo withQualityInfo(Consumer<List<QualityInfo>> qualityInfoSetter) {
-        if(this.qualityInfo == null ){
+        if(this.qualityInfo == null) {
             this.qualityInfo = new ArrayList<>();
         }
         qualityInfoSetter.accept(this.qualityInfo);

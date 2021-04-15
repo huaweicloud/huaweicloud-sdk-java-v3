@@ -64,12 +64,15 @@ public class ListStreamForbiddenResponse extends SdkResponse {
 
     
     public ListStreamForbiddenResponse addBlocksItem(StreamForbiddenList blocksItem) {
+        if(this.blocks == null) {
+            this.blocks = new ArrayList<>();
+        }
         this.blocks.add(blocksItem);
         return this;
     }
 
     public ListStreamForbiddenResponse withBlocks(Consumer<List<StreamForbiddenList>> blocksSetter) {
-        if(this.blocks == null ){
+        if(this.blocks == null) {
             this.blocks = new ArrayList<>();
         }
         blocksSetter.accept(this.blocks);

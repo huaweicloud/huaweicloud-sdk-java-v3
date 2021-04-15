@@ -201,12 +201,15 @@ public class ShowInstanceTopicDetailRespPartitions  {
 
     
     public ShowInstanceTopicDetailRespPartitions addReplicasItem(ShowInstanceTopicDetailRespReplicas replicasItem) {
+        if(this.replicas == null) {
+            this.replicas = new ArrayList<>();
+        }
         this.replicas.add(replicasItem);
         return this;
     }
 
     public ShowInstanceTopicDetailRespPartitions withReplicas(Consumer<List<ShowInstanceTopicDetailRespReplicas>> replicasSetter) {
-        if(this.replicas == null ){
+        if(this.replicas == null) {
             this.replicas = new ArrayList<>();
         }
         replicasSetter.accept(this.replicas);

@@ -172,12 +172,15 @@ public class V2FramerateInfo  {
 
     
     public V2FramerateInfo addDataListItem(Long dataListItem) {
+        if(this.dataList == null) {
+            this.dataList = new ArrayList<>();
+        }
         this.dataList.add(dataListItem);
         return this;
     }
 
     public V2FramerateInfo withDataList(Consumer<List<Long>> dataListSetter) {
-        if(this.dataList == null ){
+        if(this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);

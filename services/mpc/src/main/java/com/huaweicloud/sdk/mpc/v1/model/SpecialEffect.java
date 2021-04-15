@@ -177,12 +177,15 @@ public class SpecialEffect  {
 
     
     public SpecialEffect addEffectInfosItem(EffectInfo effectInfosItem) {
+        if(this.effectInfos == null) {
+            this.effectInfos = new ArrayList<>();
+        }
         this.effectInfos.add(effectInfosItem);
         return this;
     }
 
     public SpecialEffect withEffectInfos(Consumer<List<EffectInfo>> effectInfosSetter) {
-        if(this.effectInfos == null ){
+        if(this.effectInfos == null) {
             this.effectInfos = new ArrayList<>();
         }
         effectInfosSetter.accept(this.effectInfos);

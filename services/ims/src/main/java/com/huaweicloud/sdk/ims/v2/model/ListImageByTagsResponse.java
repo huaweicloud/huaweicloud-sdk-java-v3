@@ -41,12 +41,15 @@ public class ListImageByTagsResponse extends SdkResponse {
 
     
     public ListImageByTagsResponse addResourcesItem(ShowImageByTagsResource resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListImageByTagsResponse withResources(Consumer<List<ShowImageByTagsResource>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

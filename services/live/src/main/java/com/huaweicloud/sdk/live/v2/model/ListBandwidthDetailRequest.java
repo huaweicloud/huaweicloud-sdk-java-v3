@@ -162,12 +162,15 @@ public class ListBandwidthDetailRequest  {
 
     
     public ListBandwidthDetailRequest addPlayDomainsItem(String playDomainsItem) {
+        if(this.playDomains == null) {
+            this.playDomains = new ArrayList<>();
+        }
         this.playDomains.add(playDomainsItem);
         return this;
     }
 
     public ListBandwidthDetailRequest withPlayDomains(Consumer<List<String>> playDomainsSetter) {
-        if(this.playDomains == null ){
+        if(this.playDomains == null) {
             this.playDomains = new ArrayList<>();
         }
         playDomainsSetter.accept(this.playDomains);
@@ -239,12 +242,15 @@ public class ListBandwidthDetailRequest  {
 
     
     public ListBandwidthDetailRequest addRegionItem(String regionItem) {
+        if(this.region == null) {
+            this.region = new ArrayList<>();
+        }
         this.region.add(regionItem);
         return this;
     }
 
     public ListBandwidthDetailRequest withRegion(Consumer<List<String>> regionSetter) {
-        if(this.region == null ){
+        if(this.region == null) {
             this.region = new ArrayList<>();
         }
         regionSetter.accept(this.region);
@@ -272,12 +278,15 @@ public class ListBandwidthDetailRequest  {
 
     
     public ListBandwidthDetailRequest addIspItem(String ispItem) {
+        if(this.isp == null) {
+            this.isp = new ArrayList<>();
+        }
         this.isp.add(ispItem);
         return this;
     }
 
     public ListBandwidthDetailRequest withIsp(Consumer<List<String>> ispSetter) {
-        if(this.isp == null ){
+        if(this.isp == null) {
             this.isp = new ArrayList<>();
         }
         ispSetter.accept(this.isp);

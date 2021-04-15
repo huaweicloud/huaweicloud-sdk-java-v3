@@ -41,12 +41,15 @@ public class ListTasksResponse extends SdkResponse {
 
     
     public ListTasksResponse addTasksItem(TaskResp tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ListTasksResponse withTasks(Consumer<List<TaskResp>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

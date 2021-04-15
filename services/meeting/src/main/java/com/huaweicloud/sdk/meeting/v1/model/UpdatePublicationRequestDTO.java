@@ -129,12 +129,15 @@ public class UpdatePublicationRequestDTO  {
 
     
     public UpdatePublicationRequestDTO addDeptListItem(String deptListItem) {
+        if(this.deptList == null) {
+            this.deptList = new ArrayList<>();
+        }
         this.deptList.add(deptListItem);
         return this;
     }
 
     public UpdatePublicationRequestDTO withDeptList(Consumer<List<String>> deptListSetter) {
-        if(this.deptList == null ){
+        if(this.deptList == null) {
             this.deptList = new ArrayList<>();
         }
         deptListSetter.accept(this.deptList);
@@ -162,12 +165,15 @@ public class UpdatePublicationRequestDTO  {
 
     
     public UpdatePublicationRequestDTO addDeviceListItem(String deviceListItem) {
+        if(this.deviceList == null) {
+            this.deviceList = new ArrayList<>();
+        }
         this.deviceList.add(deviceListItem);
         return this;
     }
 
     public UpdatePublicationRequestDTO withDeviceList(Consumer<List<String>> deviceListSetter) {
-        if(this.deviceList == null ){
+        if(this.deviceList == null) {
             this.deviceList = new ArrayList<>();
         }
         deviceListSetter.accept(this.deviceList);
@@ -195,12 +201,15 @@ public class UpdatePublicationRequestDTO  {
 
     
     public UpdatePublicationRequestDTO addProgramListItem(String programListItem) {
+        if(this.programList == null) {
+            this.programList = new ArrayList<>();
+        }
         this.programList.add(programListItem);
         return this;
     }
 
     public UpdatePublicationRequestDTO withProgramList(Consumer<List<String>> programListSetter) {
-        if(this.programList == null ){
+        if(this.programList == null) {
             this.programList = new ArrayList<>();
         }
         programListSetter.accept(this.programList);

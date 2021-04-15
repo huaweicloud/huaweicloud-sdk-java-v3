@@ -35,12 +35,15 @@ public class ShowCoordinatorsResponse extends SdkResponse {
 
     
     public ShowCoordinatorsResponse addCoordinatorsItem(ShowCoordinatorsRespCoordinators coordinatorsItem) {
+        if(this.coordinators == null) {
+            this.coordinators = new ArrayList<>();
+        }
         this.coordinators.add(coordinatorsItem);
         return this;
     }
 
     public ShowCoordinatorsResponse withCoordinators(Consumer<List<ShowCoordinatorsRespCoordinators>> coordinatorsSetter) {
-        if(this.coordinators == null ){
+        if(this.coordinators == null) {
             this.coordinators = new ArrayList<>();
         }
         coordinatorsSetter.accept(this.coordinators);

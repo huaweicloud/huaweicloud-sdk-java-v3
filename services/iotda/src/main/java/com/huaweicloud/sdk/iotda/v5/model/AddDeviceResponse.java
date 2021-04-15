@@ -469,12 +469,15 @@ public class AddDeviceResponse extends SdkResponse {
 
     
     public AddDeviceResponse addTagsItem(TagV5DTO tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public AddDeviceResponse withTags(Consumer<List<TagV5DTO>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

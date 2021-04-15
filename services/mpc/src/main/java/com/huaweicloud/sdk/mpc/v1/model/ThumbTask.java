@@ -406,12 +406,15 @@ public class ThumbTask  {
 
     
     public ThumbTask addThumbnailInfoItem(PicInfo thumbnailInfoItem) {
+        if(this.thumbnailInfo == null) {
+            this.thumbnailInfo = new ArrayList<>();
+        }
         this.thumbnailInfo.add(thumbnailInfoItem);
         return this;
     }
 
     public ThumbTask withThumbnailInfo(Consumer<List<PicInfo>> thumbnailInfoSetter) {
-        if(this.thumbnailInfo == null ){
+        if(this.thumbnailInfo == null) {
             this.thumbnailInfo = new ArrayList<>();
         }
         thumbnailInfoSetter.accept(this.thumbnailInfo);

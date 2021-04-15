@@ -61,12 +61,15 @@ public class ServiceEvent  {
 
     
     public ServiceEvent addParasItem(ServiceCommandPara parasItem) {
+        if(this.paras == null) {
+            this.paras = new ArrayList<>();
+        }
         this.paras.add(parasItem);
         return this;
     }
 
     public ServiceEvent withParas(Consumer<List<ServiceCommandPara>> parasSetter) {
-        if(this.paras == null ){
+        if(this.paras == null) {
             this.paras = new ArrayList<>();
         }
         parasSetter.accept(this.paras);

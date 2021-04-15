@@ -33,12 +33,15 @@ public class UpdateDesireds  {
 
     
     public UpdateDesireds addShadowItem(UpdateDesired shadowItem) {
+        if(this.shadow == null) {
+            this.shadow = new ArrayList<>();
+        }
         this.shadow.add(shadowItem);
         return this;
     }
 
     public UpdateDesireds withShadow(Consumer<List<UpdateDesired>> shadowSetter) {
-        if(this.shadow == null ){
+        if(this.shadow == null) {
             this.shadow = new ArrayList<>();
         }
         shadowSetter.accept(this.shadow);
