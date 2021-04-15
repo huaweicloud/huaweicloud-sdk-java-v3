@@ -92,12 +92,15 @@ public class ListLiveDataDataSourcesV2Response extends SdkResponse {
 
     
     public ListLiveDataDataSourcesV2Response addDataSourcesItem(LdDatasourceInfo dataSourcesItem) {
+        if(this.dataSources == null) {
+            this.dataSources = new ArrayList<>();
+        }
         this.dataSources.add(dataSourcesItem);
         return this;
     }
 
     public ListLiveDataDataSourcesV2Response withDataSources(Consumer<List<LdDatasourceInfo>> dataSourcesSetter) {
-        if(this.dataSources == null ){
+        if(this.dataSources == null) {
             this.dataSources = new ArrayList<>();
         }
         dataSourcesSetter.accept(this.dataSources);

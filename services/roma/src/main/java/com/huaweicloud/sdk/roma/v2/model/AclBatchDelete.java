@@ -32,12 +32,15 @@ public class AclBatchDelete  {
 
     
     public AclBatchDelete addAclsItem(String aclsItem) {
+        if(this.acls == null) {
+            this.acls = new ArrayList<>();
+        }
         this.acls.add(aclsItem);
         return this;
     }
 
     public AclBatchDelete withAcls(Consumer<List<String>> aclsSetter) {
-        if(this.acls == null ){
+        if(this.acls == null) {
             this.acls = new ArrayList<>();
         }
         aclsSetter.accept(this.acls);

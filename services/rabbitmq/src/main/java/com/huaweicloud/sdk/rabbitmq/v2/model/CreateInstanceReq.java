@@ -603,12 +603,15 @@ public class CreateInstanceReq  {
 
     
     public CreateInstanceReq addAvailableZonesItem(String availableZonesItem) {
+        if(this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
 
     public CreateInstanceReq withAvailableZones(Consumer<List<String>> availableZonesSetter) {
-        if(this.availableZones == null ){
+        if(this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         availableZonesSetter.accept(this.availableZones);
@@ -812,12 +815,15 @@ public class CreateInstanceReq  {
 
     
     public CreateInstanceReq addTagsItem(CreateInstanceReqTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateInstanceReq withTags(Consumer<List<CreateInstanceReqTags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

@@ -608,12 +608,15 @@ public class Event  {
 
     
     public Event addTypesItem(Type typesItem) {
+        if(this.types == null) {
+            this.types = new ArrayList<>();
+        }
         this.types.add(typesItem);
         return this;
     }
 
     public Event withTypes(Consumer<List<Type>> typesSetter) {
-        if(this.types == null ){
+        if(this.types == null) {
             this.types = new ArrayList<>();
         }
         typesSetter.accept(this.types);
@@ -757,12 +760,15 @@ public class Event  {
 
     
     public Event addMalwareItem(Malware malwareItem) {
+        if(this.malware == null) {
+            this.malware = new ArrayList<>();
+        }
         this.malware.add(malwareItem);
         return this;
     }
 
     public Event withMalware(Consumer<List<Malware>> malwareSetter) {
-        if(this.malware == null ){
+        if(this.malware == null) {
             this.malware = new ArrayList<>();
         }
         malwareSetter.accept(this.malware);
@@ -790,12 +796,15 @@ public class Event  {
 
     
     public Event addThreatIntelItem(ThreatIntel threatIntelItem) {
+        if(this.threatIntel == null) {
+            this.threatIntel = new ArrayList<>();
+        }
         this.threatIntel.add(threatIntelItem);
         return this;
     }
 
     public Event withThreatIntel(Consumer<List<ThreatIntel>> threatIntelSetter) {
-        if(this.threatIntel == null ){
+        if(this.threatIntel == null) {
             this.threatIntel = new ArrayList<>();
         }
         threatIntelSetter.accept(this.threatIntel);
@@ -823,12 +832,15 @@ public class Event  {
 
     
     public Event addResourcesItem(Resource resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public Event withResources(Consumer<List<Resource>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
@@ -885,12 +897,15 @@ public class Event  {
 
     
     public Event addRelatedEventsItem(RelatedEvent relatedEventsItem) {
+        if(this.relatedEvents == null) {
+            this.relatedEvents = new ArrayList<>();
+        }
         this.relatedEvents.add(relatedEventsItem);
         return this;
     }
 
     public Event withRelatedEvents(Consumer<List<RelatedEvent>> relatedEventsSetter) {
-        if(this.relatedEvents == null ){
+        if(this.relatedEvents == null) {
             this.relatedEvents = new ArrayList<>();
         }
         relatedEventsSetter.accept(this.relatedEvents);

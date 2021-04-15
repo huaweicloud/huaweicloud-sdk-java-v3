@@ -32,12 +32,15 @@ public class GenerateAuditlogDownloadLinkRequest  {
 
     
     public GenerateAuditlogDownloadLinkRequest addIdsItem(String idsItem) {
+        if(this.ids == null) {
+            this.ids = new ArrayList<>();
+        }
         this.ids.add(idsItem);
         return this;
     }
 
     public GenerateAuditlogDownloadLinkRequest withIds(Consumer<List<String>> idsSetter) {
-        if(this.ids == null ){
+        if(this.ids == null) {
             this.ids = new ArrayList<>();
         }
         idsSetter.accept(this.ids);

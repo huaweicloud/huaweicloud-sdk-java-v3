@@ -528,12 +528,15 @@ public class TemplateResponseBody  {
 
     
     public TemplateResponseBody addNicsItem(Nics nicsItem) {
+        if(this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
         this.nics.add(nicsItem);
         return this;
     }
 
     public TemplateResponseBody withNics(Consumer<List<Nics>> nicsSetter) {
-        if(this.nics == null ){
+        if(this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
@@ -561,12 +564,15 @@ public class TemplateResponseBody  {
 
     
     public TemplateResponseBody addSecurityGroupsItem(SgObject securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public TemplateResponseBody withSecurityGroups(Consumer<List<SgObject>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -623,12 +629,15 @@ public class TemplateResponseBody  {
 
     
     public TemplateResponseBody addDiskItem(TemplateDisk diskItem) {
+        if(this.disk == null) {
+            this.disk = new ArrayList<>();
+        }
         this.disk.add(diskItem);
         return this;
     }
 
     public TemplateResponseBody withDisk(Consumer<List<TemplateDisk>> diskSetter) {
-        if(this.disk == null ){
+        if(this.disk == null) {
             this.disk = new ArrayList<>();
         }
         diskSetter.accept(this.disk);

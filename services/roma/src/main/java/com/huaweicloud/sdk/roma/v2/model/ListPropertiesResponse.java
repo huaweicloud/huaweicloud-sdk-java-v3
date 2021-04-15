@@ -91,12 +91,15 @@ public class ListPropertiesResponse extends SdkResponse {
 
     
     public ListPropertiesResponse addItemsItem(Property itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListPropertiesResponse withItems(Consumer<List<Property>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

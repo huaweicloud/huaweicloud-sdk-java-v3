@@ -91,12 +91,15 @@ public class ListApplicationsResponse extends SdkResponse {
 
     
     public ListApplicationsResponse addApplicationsItem(ApplicationItem applicationsItem) {
+        if(this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
         this.applications.add(applicationsItem);
         return this;
     }
 
     public ListApplicationsResponse withApplications(Consumer<List<ApplicationItem>> applicationsSetter) {
-        if(this.applications == null ){
+        if(this.applications == null) {
             this.applications = new ArrayList<>();
         }
         applicationsSetter.accept(this.applications);

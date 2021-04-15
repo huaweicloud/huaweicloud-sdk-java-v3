@@ -35,12 +35,15 @@ public class CreateApiAclBindingV2Response extends SdkResponse {
 
     
     public CreateApiAclBindingV2Response addAclBindingsItem(AclApiBindingInfo aclBindingsItem) {
+        if(this.aclBindings == null) {
+            this.aclBindings = new ArrayList<>();
+        }
         this.aclBindings.add(aclBindingsItem);
         return this;
     }
 
     public CreateApiAclBindingV2Response withAclBindings(Consumer<List<AclApiBindingInfo>> aclBindingsSetter) {
-        if(this.aclBindings == null ){
+        if(this.aclBindings == null) {
             this.aclBindings = new ArrayList<>();
         }
         aclBindingsSetter.accept(this.aclBindings);

@@ -1589,12 +1589,15 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
 
     
     public ShowDetailsOfInstanceV2Response addSupportedFeaturesItem(String supportedFeaturesItem) {
+        if(this.supportedFeatures == null) {
+            this.supportedFeatures = new ArrayList<>();
+        }
         this.supportedFeatures.add(supportedFeaturesItem);
         return this;
     }
 
     public ShowDetailsOfInstanceV2Response withSupportedFeatures(Consumer<List<String>> supportedFeaturesSetter) {
-        if(this.supportedFeatures == null ){
+        if(this.supportedFeatures == null) {
             this.supportedFeatures = new ArrayList<>();
         }
         supportedFeaturesSetter.accept(this.supportedFeatures);

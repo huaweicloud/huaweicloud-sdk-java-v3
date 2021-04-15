@@ -63,12 +63,15 @@ public class ListEnvironmentsResponse extends SdkResponse {
 
     
     public ListEnvironmentsResponse addEnvironmentsItem(Environment environmentsItem) {
+        if(this.environments == null) {
+            this.environments = new ArrayList<>();
+        }
         this.environments.add(environmentsItem);
         return this;
     }
 
     public ListEnvironmentsResponse withEnvironments(Consumer<List<Environment>> environmentsSetter) {
-        if(this.environments == null ){
+        if(this.environments == null) {
             this.environments = new ArrayList<>();
         }
         environmentsSetter.accept(this.environments);

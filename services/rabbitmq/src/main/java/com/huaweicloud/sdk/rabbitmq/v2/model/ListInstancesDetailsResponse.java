@@ -41,12 +41,15 @@ public class ListInstancesDetailsResponse extends SdkResponse {
 
     
     public ListInstancesDetailsResponse addInstancesItem(ListInstancesRespInstances instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ListInstancesDetailsResponse withInstances(Consumer<List<ListInstancesRespInstances>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

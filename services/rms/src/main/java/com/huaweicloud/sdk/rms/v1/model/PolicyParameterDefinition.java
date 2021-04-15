@@ -206,12 +206,15 @@ public class PolicyParameterDefinition  {
 
     
     public PolicyParameterDefinition addAllowedValuesItem(Object allowedValuesItem) {
+        if(this.allowedValues == null) {
+            this.allowedValues = new ArrayList<>();
+        }
         this.allowedValues.add(allowedValuesItem);
         return this;
     }
 
     public PolicyParameterDefinition withAllowedValues(Consumer<List<Object>> allowedValuesSetter) {
-        if(this.allowedValues == null ){
+        if(this.allowedValues == null) {
             this.allowedValues = new ArrayList<>();
         }
         allowedValuesSetter.accept(this.allowedValues);

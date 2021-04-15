@@ -91,12 +91,15 @@ public class ShowDeviceGroupTreeResponse extends SdkResponse {
 
     
     public ShowDeviceGroupTreeResponse addItemsItem(GroupTreeResponse itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ShowDeviceGroupTreeResponse withItems(Consumer<List<GroupTreeResponse>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

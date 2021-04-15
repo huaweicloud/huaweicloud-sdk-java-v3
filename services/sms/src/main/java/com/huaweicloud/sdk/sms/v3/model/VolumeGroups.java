@@ -103,12 +103,15 @@ public class VolumeGroups  {
 
     
     public VolumeGroups addLogicalVolumesItem(LogicalVolumes logicalVolumesItem) {
+        if(this.logicalVolumes == null) {
+            this.logicalVolumes = new ArrayList<>();
+        }
         this.logicalVolumes.add(logicalVolumesItem);
         return this;
     }
 
     public VolumeGroups withLogicalVolumes(Consumer<List<LogicalVolumes>> logicalVolumesSetter) {
-        if(this.logicalVolumes == null ){
+        if(this.logicalVolumes == null) {
             this.logicalVolumes = new ArrayList<>();
         }
         logicalVolumesSetter.accept(this.logicalVolumes);

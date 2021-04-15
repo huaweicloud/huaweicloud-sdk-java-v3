@@ -35,12 +35,15 @@ public class ListProjectBugStaticsV4Response extends SdkResponse {
 
     
     public ListProjectBugStaticsV4Response addBugStatisticsItem(BugStatisticResponseV4 bugStatisticsItem) {
+        if(this.bugStatistics == null) {
+            this.bugStatistics = new ArrayList<>();
+        }
         this.bugStatistics.add(bugStatisticsItem);
         return this;
     }
 
     public ListProjectBugStaticsV4Response withBugStatistics(Consumer<List<BugStatisticResponseV4>> bugStatisticsSetter) {
-        if(this.bugStatistics == null ){
+        if(this.bugStatistics == null) {
             this.bugStatistics = new ArrayList<>();
         }
         bugStatisticsSetter.accept(this.bugStatistics);

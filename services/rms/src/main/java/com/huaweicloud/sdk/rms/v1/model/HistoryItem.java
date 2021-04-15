@@ -180,12 +180,15 @@ public class HistoryItem  {
 
     
     public HistoryItem addRelationsItem(ResourceRelation relationsItem) {
+        if(this.relations == null) {
+            this.relations = new ArrayList<>();
+        }
         this.relations.add(relationsItem);
         return this;
     }
 
     public HistoryItem withRelations(Consumer<List<ResourceRelation>> relationsSetter) {
-        if(this.relations == null ){
+        if(this.relations == null) {
             this.relations = new ArrayList<>();
         }
         relationsSetter.accept(this.relations);

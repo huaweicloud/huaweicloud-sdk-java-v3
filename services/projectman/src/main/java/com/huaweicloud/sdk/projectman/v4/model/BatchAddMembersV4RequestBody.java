@@ -33,12 +33,15 @@ public class BatchAddMembersV4RequestBody  {
 
     
     public BatchAddMembersV4RequestBody addUsersItem(BatchAddMemberRequestV4 usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public BatchAddMembersV4RequestBody withUsers(Consumer<List<BatchAddMemberRequestV4>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

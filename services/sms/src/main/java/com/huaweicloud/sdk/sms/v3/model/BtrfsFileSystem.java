@@ -463,12 +463,15 @@ public class BtrfsFileSystem  {
 
     
     public BtrfsFileSystem addSubvolumnItem(BtrfsSubvolumn subvolumnItem) {
+        if(this.subvolumn == null) {
+            this.subvolumn = new ArrayList<>();
+        }
         this.subvolumn.add(subvolumnItem);
         return this;
     }
 
     public BtrfsFileSystem withSubvolumn(Consumer<List<BtrfsSubvolumn>> subvolumnSetter) {
-        if(this.subvolumn == null ){
+        if(this.subvolumn == null) {
             this.subvolumn = new ArrayList<>();
         }
         subvolumnSetter.accept(this.subvolumn);

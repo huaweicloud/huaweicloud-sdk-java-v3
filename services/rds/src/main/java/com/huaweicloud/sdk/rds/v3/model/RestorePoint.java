@@ -146,12 +146,15 @@ public class RestorePoint  {
     
 
     public RestorePoint putDatabaseNameItem(String key, String databaseNameItem) {
+        if(this.databaseName == null) {
+            this.databaseName = new HashMap<>();
+        }
         this.databaseName.put(key, databaseNameItem);
         return this;
     }
 
     public RestorePoint withDatabaseName(Consumer<Map<String, String>> databaseNameSetter) {
-        if(this.databaseName == null ){
+        if(this.databaseName == null) {
             this.databaseName = new HashMap<>();
         }
         databaseNameSetter.accept(this.databaseName);

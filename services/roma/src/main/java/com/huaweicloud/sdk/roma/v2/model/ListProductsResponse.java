@@ -91,12 +91,15 @@ public class ListProductsResponse extends SdkResponse {
 
     
     public ListProductsResponse addItemsItem(Product itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListProductsResponse withItems(Consumer<List<Product>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

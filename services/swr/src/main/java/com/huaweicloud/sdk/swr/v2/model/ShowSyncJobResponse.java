@@ -35,12 +35,15 @@ public class ShowSyncJobResponse extends SdkResponse {
 
     
     public ShowSyncJobResponse addBodyItem(SyncJob bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ShowSyncJobResponse withBody(Consumer<List<SyncJob>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

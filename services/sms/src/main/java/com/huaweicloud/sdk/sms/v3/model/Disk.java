@@ -357,12 +357,15 @@ public class Disk  {
 
     
     public Disk addPhysicalVolumesItem(PhysicalVolumes physicalVolumesItem) {
+        if(this.physicalVolumes == null) {
+            this.physicalVolumes = new ArrayList<>();
+        }
         this.physicalVolumes.add(physicalVolumesItem);
         return this;
     }
 
     public Disk withPhysicalVolumes(Consumer<List<PhysicalVolumes>> physicalVolumesSetter) {
-        if(this.physicalVolumes == null ){
+        if(this.physicalVolumes == null) {
             this.physicalVolumes = new ArrayList<>();
         }
         physicalVolumesSetter.accept(this.physicalVolumes);

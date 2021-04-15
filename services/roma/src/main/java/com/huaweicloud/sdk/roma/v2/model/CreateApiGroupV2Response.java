@@ -296,12 +296,15 @@ public class CreateApiGroupV2Response extends SdkResponse {
 
     
     public CreateApiGroupV2Response addSlDomainsItem(String slDomainsItem) {
+        if(this.slDomains == null) {
+            this.slDomains = new ArrayList<>();
+        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
 
     public CreateApiGroupV2Response withSlDomains(Consumer<List<String>> slDomainsSetter) {
-        if(this.slDomains == null ){
+        if(this.slDomains == null) {
             this.slDomains = new ArrayList<>();
         }
         slDomainsSetter.accept(this.slDomains);
@@ -461,12 +464,15 @@ public class CreateApiGroupV2Response extends SdkResponse {
 
     
     public CreateApiGroupV2Response addUrlDomainsItem(UrlDomain urlDomainsItem) {
+        if(this.urlDomains == null) {
+            this.urlDomains = new ArrayList<>();
+        }
         this.urlDomains.add(urlDomainsItem);
         return this;
     }
 
     public CreateApiGroupV2Response withUrlDomains(Consumer<List<UrlDomain>> urlDomainsSetter) {
-        if(this.urlDomains == null ){
+        if(this.urlDomains == null) {
             this.urlDomains = new ArrayList<>();
         }
         urlDomainsSetter.accept(this.urlDomains);

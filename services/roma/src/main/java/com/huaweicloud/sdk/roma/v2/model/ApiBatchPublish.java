@@ -44,12 +44,15 @@ public class ApiBatchPublish  {
 
     
     public ApiBatchPublish addApisItem(String apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ApiBatchPublish withApis(Consumer<List<String>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

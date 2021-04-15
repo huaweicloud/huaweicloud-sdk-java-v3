@@ -91,12 +91,15 @@ public class ListPredefineTagsResponse extends SdkResponse {
 
     
     public ListPredefineTagsResponse addTagsItem(PredefineTag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListPredefineTagsResponse withTags(Consumer<List<PredefineTag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

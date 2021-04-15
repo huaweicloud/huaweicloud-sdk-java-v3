@@ -35,12 +35,15 @@ public class ListConfigurationsResponse extends SdkResponse {
 
     
     public ListConfigurationsResponse addConfigurationsItem(ConfigurationSummary configurationsItem) {
+        if(this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
         this.configurations.add(configurationsItem);
         return this;
     }
 
     public ListConfigurationsResponse withConfigurations(Consumer<List<ConfigurationSummary>> configurationsSetter) {
-        if(this.configurations == null ){
+        if(this.configurations == null) {
             this.configurations = new ArrayList<>();
         }
         configurationsSetter.accept(this.configurations);

@@ -32,12 +32,15 @@ public class DeleteIds  {
 
     
     public DeleteIds addIdsItem(String idsItem) {
+        if(this.ids == null) {
+            this.ids = new ArrayList<>();
+        }
         this.ids.add(idsItem);
         return this;
     }
 
     public DeleteIds withIds(Consumer<List<String>> idsSetter) {
-        if(this.ids == null ){
+        if(this.ids == null) {
             this.ids = new ArrayList<>();
         }
         idsSetter.accept(this.ids);

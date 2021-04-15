@@ -91,12 +91,15 @@ public class ListRomaAppResponse extends SdkResponse {
 
     
     public ListRomaAppResponse addAppsItem(AppInfo appsItem) {
+        if(this.apps == null) {
+            this.apps = new ArrayList<>();
+        }
         this.apps.add(appsItem);
         return this;
     }
 
     public ListRomaAppResponse withApps(Consumer<List<AppInfo>> appsSetter) {
-        if(this.apps == null ){
+        if(this.apps == null) {
             this.apps = new ArrayList<>();
         }
         appsSetter.accept(this.apps);

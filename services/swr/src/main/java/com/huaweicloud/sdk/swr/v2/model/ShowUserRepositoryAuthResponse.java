@@ -126,12 +126,15 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
 
     
     public ShowUserRepositoryAuthResponse addOthersAuthsItem(UserAuth othersAuthsItem) {
+        if(this.othersAuths == null) {
+            this.othersAuths = new ArrayList<>();
+        }
         this.othersAuths.add(othersAuthsItem);
         return this;
     }
 
     public ShowUserRepositoryAuthResponse withOthersAuths(Consumer<List<UserAuth>> othersAuthsSetter) {
-        if(this.othersAuths == null ){
+        if(this.othersAuths == null) {
             this.othersAuths = new ArrayList<>();
         }
         othersAuthsSetter.accept(this.othersAuths);

@@ -41,12 +41,15 @@ public class ListPostgresqlDatabasesResponse extends SdkResponse {
 
     
     public ListPostgresqlDatabasesResponse addDatabasesItem(PgListDatabase databasesItem) {
+        if(this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
         this.databases.add(databasesItem);
         return this;
     }
 
     public ListPostgresqlDatabasesResponse withDatabases(Consumer<List<PgListDatabase>> databasesSetter) {
-        if(this.databases == null ){
+        if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);

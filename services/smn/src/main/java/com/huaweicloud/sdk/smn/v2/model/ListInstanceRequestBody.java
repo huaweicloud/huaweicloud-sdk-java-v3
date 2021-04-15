@@ -76,12 +76,15 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addTagsItem(ResourceTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListInstanceRequestBody withTags(Consumer<List<ResourceTags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -109,12 +112,15 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addTagsAnyItem(ResourceTags tagsAnyItem) {
+        if(this.tagsAny == null) {
+            this.tagsAny = new ArrayList<>();
+        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
 
     public ListInstanceRequestBody withTagsAny(Consumer<List<ResourceTags>> tagsAnySetter) {
-        if(this.tagsAny == null ){
+        if(this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
@@ -142,12 +148,15 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addNotTagsItem(ResourceTags notTagsItem) {
+        if(this.notTags == null) {
+            this.notTags = new ArrayList<>();
+        }
         this.notTags.add(notTagsItem);
         return this;
     }
 
     public ListInstanceRequestBody withNotTags(Consumer<List<ResourceTags>> notTagsSetter) {
-        if(this.notTags == null ){
+        if(this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
@@ -175,12 +184,15 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addNotTagsAnyItem(ResourceTags notTagsAnyItem) {
+        if(this.notTagsAny == null) {
+            this.notTagsAny = new ArrayList<>();
+        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
 
     public ListInstanceRequestBody withNotTagsAny(Consumer<List<ResourceTags>> notTagsAnySetter) {
-        if(this.notTagsAny == null ){
+        if(this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
@@ -274,12 +286,15 @@ public class ListInstanceRequestBody  {
 
     
     public ListInstanceRequestBody addMatchesItem(TagMatch matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListInstanceRequestBody withMatches(Consumer<List<TagMatch>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);

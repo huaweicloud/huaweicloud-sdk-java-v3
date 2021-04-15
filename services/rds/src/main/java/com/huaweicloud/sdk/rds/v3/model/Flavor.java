@@ -181,12 +181,15 @@ public class Flavor  {
     
 
     public Flavor putAzStatusItem(String key, String azStatusItem) {
+        if(this.azStatus == null) {
+            this.azStatus = new HashMap<>();
+        }
         this.azStatus.put(key, azStatusItem);
         return this;
     }
 
     public Flavor withAzStatus(Consumer<Map<String, String>> azStatusSetter) {
-        if(this.azStatus == null ){
+        if(this.azStatus == null) {
             this.azStatus = new HashMap<>();
         }
         azStatusSetter.accept(this.azStatus);
@@ -213,12 +216,15 @@ public class Flavor  {
 
     
     public Flavor addVersionNameItem(String versionNameItem) {
+        if(this.versionName == null) {
+            this.versionName = new ArrayList<>();
+        }
         this.versionName.add(versionNameItem);
         return this;
     }
 
     public Flavor withVersionName(Consumer<List<String>> versionNameSetter) {
-        if(this.versionName == null ){
+        if(this.versionName == null) {
             this.versionName = new ArrayList<>();
         }
         versionNameSetter.accept(this.versionName);

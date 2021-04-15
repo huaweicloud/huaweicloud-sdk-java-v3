@@ -35,12 +35,15 @@ public class ListNamespacesResponse extends SdkResponse {
 
     
     public ListNamespacesResponse addNamespacesItem(ShowNamespace namespacesItem) {
+        if(this.namespaces == null) {
+            this.namespaces = new ArrayList<>();
+        }
         this.namespaces.add(namespacesItem);
         return this;
     }
 
     public ListNamespacesResponse withNamespaces(Consumer<List<ShowNamespace>> namespacesSetter) {
-        if(this.namespaces == null ){
+        if(this.namespaces == null) {
             this.namespaces = new ArrayList<>();
         }
         namespacesSetter.accept(this.namespaces);

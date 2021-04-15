@@ -40,12 +40,15 @@ public class InitTargetServer  {
 
     
     public InitTargetServer addDisksItem(DiskIntargetServer disksItem) {
+        if(this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }
 
     public InitTargetServer withDisks(Consumer<List<DiskIntargetServer>> disksSetter) {
-        if(this.disks == null ){
+        if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);

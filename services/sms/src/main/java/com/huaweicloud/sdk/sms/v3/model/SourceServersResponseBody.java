@@ -923,12 +923,15 @@ public class SourceServersResponseBody  {
 
     
     public SourceServersResponseBody addChecksItem(EnvironmentCheck checksItem) {
+        if(this.checks == null) {
+            this.checks = new ArrayList<>();
+        }
         this.checks.add(checksItem);
         return this;
     }
 
     public SourceServersResponseBody withChecks(Consumer<List<EnvironmentCheck>> checksSetter) {
-        if(this.checks == null ){
+        if(this.checks == null) {
             this.checks = new ArrayList<>();
         }
         checksSetter.accept(this.checks);

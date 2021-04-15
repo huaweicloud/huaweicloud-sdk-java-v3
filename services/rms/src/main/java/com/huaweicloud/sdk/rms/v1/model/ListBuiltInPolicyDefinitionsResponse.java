@@ -42,12 +42,15 @@ public class ListBuiltInPolicyDefinitionsResponse extends SdkResponse {
 
     
     public ListBuiltInPolicyDefinitionsResponse addValueItem(PolicyDefinition valueItem) {
+        if(this.value == null) {
+            this.value = new ArrayList<>();
+        }
         this.value.add(valueItem);
         return this;
     }
 
     public ListBuiltInPolicyDefinitionsResponse withValue(Consumer<List<PolicyDefinition>> valueSetter) {
-        if(this.value == null ){
+        if(this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);

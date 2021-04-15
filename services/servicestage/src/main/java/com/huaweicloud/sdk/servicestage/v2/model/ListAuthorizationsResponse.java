@@ -35,12 +35,15 @@ public class ListAuthorizationsResponse extends SdkResponse {
 
     
     public ListAuthorizationsResponse addAuthorizationsItem(AuthorizationVO authorizationsItem) {
+        if(this.authorizations == null) {
+            this.authorizations = new ArrayList<>();
+        }
         this.authorizations.add(authorizationsItem);
         return this;
     }
 
     public ListAuthorizationsResponse withAuthorizations(Consumer<List<AuthorizationVO>> authorizationsSetter) {
-        if(this.authorizations == null ){
+        if(this.authorizations == null) {
             this.authorizations = new ArrayList<>();
         }
         authorizationsSetter.accept(this.authorizations);

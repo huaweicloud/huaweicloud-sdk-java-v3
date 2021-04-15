@@ -62,12 +62,15 @@ public class Storage  {
     
 
     public Storage putAzStatusItem(String key, String azStatusItem) {
+        if(this.azStatus == null) {
+            this.azStatus = new HashMap<>();
+        }
         this.azStatus.put(key, azStatusItem);
         return this;
     }
 
     public Storage withAzStatus(Consumer<Map<String, String>> azStatusSetter) {
-        if(this.azStatus == null ){
+        if(this.azStatus == null) {
             this.azStatus = new HashMap<>();
         }
         azStatusSetter.accept(this.azStatus);

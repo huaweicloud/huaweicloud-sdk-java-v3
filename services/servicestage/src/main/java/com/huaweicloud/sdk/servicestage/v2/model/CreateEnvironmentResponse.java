@@ -283,12 +283,15 @@ public class CreateEnvironmentResponse extends SdkResponse {
 
     
     public CreateEnvironmentResponse addBaseResourcesItem(Resource baseResourcesItem) {
+        if(this.baseResources == null) {
+            this.baseResources = new ArrayList<>();
+        }
         this.baseResources.add(baseResourcesItem);
         return this;
     }
 
     public CreateEnvironmentResponse withBaseResources(Consumer<List<Resource>> baseResourcesSetter) {
-        if(this.baseResources == null ){
+        if(this.baseResources == null) {
             this.baseResources = new ArrayList<>();
         }
         baseResourcesSetter.accept(this.baseResources);
@@ -316,12 +319,15 @@ public class CreateEnvironmentResponse extends SdkResponse {
 
     
     public CreateEnvironmentResponse addOptionalResourcesItem(Resource optionalResourcesItem) {
+        if(this.optionalResources == null) {
+            this.optionalResources = new ArrayList<>();
+        }
         this.optionalResources.add(optionalResourcesItem);
         return this;
     }
 
     public CreateEnvironmentResponse withOptionalResources(Consumer<List<Resource>> optionalResourcesSetter) {
-        if(this.optionalResources == null ){
+        if(this.optionalResources == null) {
             this.optionalResources = new ArrayList<>();
         }
         optionalResourcesSetter.accept(this.optionalResources);

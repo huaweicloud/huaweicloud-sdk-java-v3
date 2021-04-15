@@ -65,12 +65,15 @@ public class ListMigprojectsResponse extends SdkResponse {
 
     
     public ListMigprojectsResponse addMigprojectsItem(MigprojectsResponseBody migprojectsItem) {
+        if(this.migprojects == null) {
+            this.migprojects = new ArrayList<>();
+        }
         this.migprojects.add(migprojectsItem);
         return this;
     }
 
     public ListMigprojectsResponse withMigprojects(Consumer<List<MigprojectsResponseBody>> migprojectsSetter) {
-        if(this.migprojects == null ){
+        if(this.migprojects == null) {
             this.migprojects = new ArrayList<>();
         }
         migprojectsSetter.accept(this.migprojects);

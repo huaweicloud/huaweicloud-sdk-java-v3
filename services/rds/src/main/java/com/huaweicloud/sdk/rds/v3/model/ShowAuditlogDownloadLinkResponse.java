@@ -34,12 +34,15 @@ public class ShowAuditlogDownloadLinkResponse extends SdkResponse {
 
     
     public ShowAuditlogDownloadLinkResponse addLinksItem(String linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public ShowAuditlogDownloadLinkResponse withLinks(Consumer<List<String>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

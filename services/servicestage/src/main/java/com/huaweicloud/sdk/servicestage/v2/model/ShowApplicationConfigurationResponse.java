@@ -35,12 +35,15 @@ public class ShowApplicationConfigurationResponse extends SdkResponse {
 
     
     public ShowApplicationConfigurationResponse addConfigurationItem(ApplicationListConfigConfiguration1 _configurationItem) {
+        if(this._configuration == null) {
+            this._configuration = new ArrayList<>();
+        }
         this._configuration.add(_configurationItem);
         return this;
     }
 
     public ShowApplicationConfigurationResponse withConfiguration(Consumer<List<ApplicationListConfigConfiguration1>> _configurationSetter) {
-        if(this._configuration == null ){
+        if(this._configuration == null) {
             this._configuration = new ArrayList<>();
         }
         _configurationSetter.accept(this._configuration);

@@ -35,12 +35,15 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
 
     
     public AssociateRequestThrottlingPolicyV2Response addThrottleApplysItem(ThrottleBindingResp throttleApplysItem) {
+        if(this.throttleApplys == null) {
+            this.throttleApplys = new ArrayList<>();
+        }
         this.throttleApplys.add(throttleApplysItem);
         return this;
     }
 
     public AssociateRequestThrottlingPolicyV2Response withThrottleApplys(Consumer<List<ThrottleBindingResp>> throttleApplysSetter) {
-        if(this.throttleApplys == null ){
+        if(this.throttleApplys == null) {
             this.throttleApplys = new ArrayList<>();
         }
         throttleApplysSetter.accept(this.throttleApplys);

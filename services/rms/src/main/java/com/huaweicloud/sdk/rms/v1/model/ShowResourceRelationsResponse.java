@@ -42,12 +42,15 @@ public class ShowResourceRelationsResponse extends SdkResponse {
 
     
     public ShowResourceRelationsResponse addRelationsItem(ResourceRelation relationsItem) {
+        if(this.relations == null) {
+            this.relations = new ArrayList<>();
+        }
         this.relations.add(relationsItem);
         return this;
     }
 
     public ShowResourceRelationsResponse withRelations(Consumer<List<ResourceRelation>> relationsSetter) {
-        if(this.relations == null ){
+        if(this.relations == null) {
             this.relations = new ArrayList<>();
         }
         relationsSetter.accept(this.relations);

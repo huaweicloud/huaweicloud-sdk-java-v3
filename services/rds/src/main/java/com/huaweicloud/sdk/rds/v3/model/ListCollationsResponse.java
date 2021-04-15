@@ -34,12 +34,15 @@ public class ListCollationsResponse extends SdkResponse {
 
     
     public ListCollationsResponse addCharSetsItem(String charSetsItem) {
+        if(this.charSets == null) {
+            this.charSets = new ArrayList<>();
+        }
         this.charSets.add(charSetsItem);
         return this;
     }
 
     public ListCollationsResponse withCharSets(Consumer<List<String>> charSetsSetter) {
-        if(this.charSets == null ){
+        if(this.charSets == null) {
             this.charSets = new ArrayList<>();
         }
         charSetsSetter.accept(this.charSets);

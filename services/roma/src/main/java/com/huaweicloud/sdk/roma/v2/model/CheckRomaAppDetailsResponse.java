@@ -263,12 +263,15 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
 
     
     public CheckRomaAppDetailsResponse addRolesItem(RolesEnum rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public CheckRomaAppDetailsResponse withRoles(Consumer<List<RolesEnum>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

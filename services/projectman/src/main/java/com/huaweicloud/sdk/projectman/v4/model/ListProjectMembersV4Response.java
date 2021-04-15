@@ -41,12 +41,15 @@ public class ListProjectMembersV4Response extends SdkResponse {
 
     
     public ListProjectMembersV4Response addMembersItem(MemberListV4Members membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public ListProjectMembersV4Response withMembers(Consumer<List<MemberListV4Members>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

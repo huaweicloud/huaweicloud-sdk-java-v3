@@ -89,12 +89,15 @@ public class ShadowService  {
 
     
     public ShadowService addPropertiesItem(ShadowValue propertiesItem) {
+        if(this.properties == null) {
+            this.properties = new ArrayList<>();
+        }
         this.properties.add(propertiesItem);
         return this;
     }
 
     public ShadowService withProperties(Consumer<List<ShadowValue>> propertiesSetter) {
-        if(this.properties == null ){
+        if(this.properties == null) {
             this.properties = new ArrayList<>();
         }
         propertiesSetter.accept(this.properties);

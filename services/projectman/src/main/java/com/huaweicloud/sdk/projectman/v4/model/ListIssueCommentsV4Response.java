@@ -63,12 +63,15 @@ public class ListIssueCommentsV4Response extends SdkResponse {
 
     
     public ListIssueCommentsV4Response addCommentsItem(IssueCommentV4 commentsItem) {
+        if(this.comments == null) {
+            this.comments = new ArrayList<>();
+        }
         this.comments.add(commentsItem);
         return this;
     }
 
     public ListIssueCommentsV4Response withComments(Consumer<List<IssueCommentV4>> commentsSetter) {
-        if(this.comments == null ){
+        if(this.comments == null) {
             this.comments = new ArrayList<>();
         }
         commentsSetter.accept(this.comments);

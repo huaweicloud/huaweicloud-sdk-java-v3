@@ -41,12 +41,15 @@ public class ListErrorLogsResponse extends SdkResponse {
 
     
     public ListErrorLogsResponse addErrorLogListItem(ErrorLog errorLogListItem) {
+        if(this.errorLogList == null) {
+            this.errorLogList = new ArrayList<>();
+        }
         this.errorLogList.add(errorLogListItem);
         return this;
     }
 
     public ListErrorLogsResponse withErrorLogList(Consumer<List<ErrorLog>> errorLogListSetter) {
-        if(this.errorLogList == null ){
+        if(this.errorLogList == null) {
             this.errorLogList = new ArrayList<>();
         }
         errorLogListSetter.accept(this.errorLogList);

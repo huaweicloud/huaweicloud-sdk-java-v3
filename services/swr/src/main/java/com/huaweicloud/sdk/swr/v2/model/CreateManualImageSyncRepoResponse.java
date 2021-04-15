@@ -34,12 +34,15 @@ public class CreateManualImageSyncRepoResponse extends SdkResponse {
 
     
     public CreateManualImageSyncRepoResponse addBodyItem(String bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public CreateManualImageSyncRepoResponse withBody(Consumer<List<String>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

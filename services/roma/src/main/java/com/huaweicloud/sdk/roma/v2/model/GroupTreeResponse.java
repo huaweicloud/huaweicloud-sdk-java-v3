@@ -128,12 +128,15 @@ public class GroupTreeResponse  {
 
     
     public GroupTreeResponse addChildrenItem(GroupTreeResponse childrenItem) {
+        if(this.children == null) {
+            this.children = new ArrayList<>();
+        }
         this.children.add(childrenItem);
         return this;
     }
 
     public GroupTreeResponse withChildren(Consumer<List<GroupTreeResponse>> childrenSetter) {
-        if(this.children == null ){
+        if(this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);
@@ -183,12 +186,15 @@ public class GroupTreeResponse  {
 
     
     public GroupTreeResponse addPermissionsItem(String permissionsItem) {
+        if(this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
         this.permissions.add(permissionsItem);
         return this;
     }
 
     public GroupTreeResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null ){
+        if(this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);

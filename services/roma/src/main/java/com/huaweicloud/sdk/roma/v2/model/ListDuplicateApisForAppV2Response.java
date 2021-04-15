@@ -92,12 +92,15 @@ public class ListDuplicateApisForAppV2Response extends SdkResponse {
 
     
     public ListDuplicateApisForAppV2Response addApisItem(ApiDuplicationInfo apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ListDuplicateApisForAppV2Response withApis(Consumer<List<ApiDuplicationInfo>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

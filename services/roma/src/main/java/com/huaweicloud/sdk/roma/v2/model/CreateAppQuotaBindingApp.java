@@ -32,12 +32,15 @@ public class CreateAppQuotaBindingApp  {
 
     
     public CreateAppQuotaBindingApp addAppIdsItem(String appIdsItem) {
+        if(this.appIds == null) {
+            this.appIds = new ArrayList<>();
+        }
         this.appIds.add(appIdsItem);
         return this;
     }
 
     public CreateAppQuotaBindingApp withAppIds(Consumer<List<String>> appIdsSetter) {
-        if(this.appIds == null ){
+        if(this.appIds == null) {
             this.appIds = new ArrayList<>();
         }
         appIdsSetter.accept(this.appIds);

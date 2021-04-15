@@ -41,12 +41,15 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
 
     
     public ShowBackupDownloadLinkResponse addFilesItem(GetBackupDownloadLinkFiles filesItem) {
+        if(this.files == null) {
+            this.files = new ArrayList<>();
+        }
         this.files.add(filesItem);
         return this;
     }
 
     public ShowBackupDownloadLinkResponse withFiles(Consumer<List<GetBackupDownloadLinkFiles>> filesSetter) {
-        if(this.files == null ){
+        if(this.files == null) {
             this.files = new ArrayList<>();
         }
         filesSetter.accept(this.files);

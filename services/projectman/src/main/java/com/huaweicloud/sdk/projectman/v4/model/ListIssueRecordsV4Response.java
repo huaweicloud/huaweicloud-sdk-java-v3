@@ -55,7 +55,7 @@ public class ListIssueRecordsV4Response extends SdkResponse {
 
 
     /**
-     * 操作记录id
+     * 操作记录id (已废弃)
      * @return id
      */
     public Integer getId() {
@@ -77,7 +77,7 @@ public class ListIssueRecordsV4Response extends SdkResponse {
 
 
     /**
-     * 创建时间
+     * 创建时间 (已废弃)
      * @return createdTime
      */
     public Long getCreatedTime() {
@@ -97,12 +97,15 @@ public class ListIssueRecordsV4Response extends SdkResponse {
 
     
     public ListIssueRecordsV4Response addRecordsItem(IssueRecordV4 recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public ListIssueRecordsV4Response withRecords(Consumer<List<IssueRecordV4>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

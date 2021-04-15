@@ -35,12 +35,15 @@ public class ListProjectsResponse extends SdkResponse {
 
     
     public ListProjectsResponse addProjectsItem(Project projectsItem) {
+        if(this.projects == null) {
+            this.projects = new ArrayList<>();
+        }
         this.projects.add(projectsItem);
         return this;
     }
 
     public ListProjectsResponse withProjects(Consumer<List<Project>> projectsSetter) {
-        if(this.projects == null ){
+        if(this.projects == null) {
             this.projects = new ArrayList<>();
         }
         projectsSetter.accept(this.projects);

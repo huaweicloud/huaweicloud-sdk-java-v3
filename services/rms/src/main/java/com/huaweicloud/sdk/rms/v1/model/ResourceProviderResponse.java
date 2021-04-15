@@ -117,12 +117,15 @@ public class ResourceProviderResponse  {
 
     
     public ResourceProviderResponse addResourceTypesItem(ResourceTypeResponse resourceTypesItem) {
+        if(this.resourceTypes == null) {
+            this.resourceTypes = new ArrayList<>();
+        }
         this.resourceTypes.add(resourceTypesItem);
         return this;
     }
 
     public ResourceProviderResponse withResourceTypes(Consumer<List<ResourceTypeResponse>> resourceTypesSetter) {
-        if(this.resourceTypes == null ){
+        if(this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
         resourceTypesSetter.accept(this.resourceTypes);

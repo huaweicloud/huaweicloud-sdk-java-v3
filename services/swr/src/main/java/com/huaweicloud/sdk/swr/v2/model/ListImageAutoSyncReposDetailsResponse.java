@@ -35,12 +35,15 @@ public class ListImageAutoSyncReposDetailsResponse extends SdkResponse {
 
     
     public ListImageAutoSyncReposDetailsResponse addBodyItem(SyncRepo bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ListImageAutoSyncReposDetailsResponse withBody(Consumer<List<SyncRepo>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

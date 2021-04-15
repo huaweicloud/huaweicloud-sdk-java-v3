@@ -41,12 +41,15 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
 
     
     public ListPostgresqlDbUserPaginatedResponse addUsersItem(PgUserForList usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public ListPostgresqlDbUserPaginatedResponse withUsers(Consumer<List<PgUserForList>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

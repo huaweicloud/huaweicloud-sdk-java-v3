@@ -35,12 +35,15 @@ public class ListPluginsResponse extends SdkResponse {
 
     
     public ListPluginsResponse addPluginsItem(ListPluginsRespPlugins pluginsItem) {
+        if(this.plugins == null) {
+            this.plugins = new ArrayList<>();
+        }
         this.plugins.add(pluginsItem);
         return this;
     }
 
     public ListPluginsResponse withPlugins(Consumer<List<ListPluginsRespPlugins>> pluginsSetter) {
-        if(this.plugins == null ){
+        if(this.plugins == null) {
             this.plugins = new ArrayList<>();
         }
         pluginsSetter.accept(this.plugins);

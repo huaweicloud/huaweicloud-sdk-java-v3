@@ -91,12 +91,15 @@ public class ListSubscriptionsByTopicResponse extends SdkResponse {
 
     
     public ListSubscriptionsByTopicResponse addSubscriptionsItem(ListSubscriptionsItem subscriptionsItem) {
+        if(this.subscriptions == null) {
+            this.subscriptions = new ArrayList<>();
+        }
         this.subscriptions.add(subscriptionsItem);
         return this;
     }
 
     public ListSubscriptionsByTopicResponse withSubscriptions(Consumer<List<ListSubscriptionsItem>> subscriptionsSetter) {
-        if(this.subscriptions == null ){
+        if(this.subscriptions == null) {
             this.subscriptions = new ArrayList<>();
         }
         subscriptionsSetter.accept(this.subscriptions);

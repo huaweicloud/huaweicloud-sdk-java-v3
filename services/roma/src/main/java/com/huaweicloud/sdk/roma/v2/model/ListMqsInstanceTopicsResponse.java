@@ -109,12 +109,15 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
 
     
     public ListMqsInstanceTopicsResponse addPermissionsItem(String permissionsItem) {
+        if(this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
         this.permissions.add(permissionsItem);
         return this;
     }
 
     public ListMqsInstanceTopicsResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null ){
+        if(this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);
@@ -142,12 +145,15 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
 
     
     public ListMqsInstanceTopicsResponse addTopicsItem(ListInstanceTopicsRespTopics topicsItem) {
+        if(this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
         this.topics.add(topicsItem);
         return this;
     }
 
     public ListMqsInstanceTopicsResponse withTopics(Consumer<List<ListInstanceTopicsRespTopics>> topicsSetter) {
-        if(this.topics == null ){
+        if(this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);

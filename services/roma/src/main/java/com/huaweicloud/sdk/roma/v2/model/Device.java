@@ -550,12 +550,15 @@ public class Device  {
 
     
     public Device addPermissionsItem(String permissionsItem) {
+        if(this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
         this.permissions.add(permissionsItem);
         return this;
     }
 
     public Device withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null ){
+        if(this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);
@@ -941,12 +944,15 @@ public class Device  {
 
     
     public Device addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public Device withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

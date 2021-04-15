@@ -63,12 +63,15 @@ public class ListAvailableZonesResponse extends SdkResponse {
 
     
     public ListAvailableZonesResponse addAvailableZonesItem(ListAvailableZonesRespAvailableZones availableZonesItem) {
+        if(this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
 
     public ListAvailableZonesResponse withAvailableZones(Consumer<List<ListAvailableZonesRespAvailableZones>> availableZonesSetter) {
-        if(this.availableZones == null ){
+        if(this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         availableZonesSetter.accept(this.availableZones);

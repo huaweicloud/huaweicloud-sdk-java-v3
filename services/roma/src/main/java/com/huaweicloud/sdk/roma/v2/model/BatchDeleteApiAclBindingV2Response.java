@@ -63,12 +63,15 @@ public class BatchDeleteApiAclBindingV2Response extends SdkResponse {
 
     
     public BatchDeleteApiAclBindingV2Response addFailureItem(AclBindingBatchResultFailureResp failureItem) {
+        if(this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
         this.failure.add(failureItem);
         return this;
     }
 
     public BatchDeleteApiAclBindingV2Response withFailure(Consumer<List<AclBindingBatchResultFailureResp>> failureSetter) {
-        if(this.failure == null ){
+        if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);

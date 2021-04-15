@@ -41,12 +41,15 @@ public class ListMqsInstanceResponse extends SdkResponse {
 
     
     public ListMqsInstanceResponse addInstancesItem(ListInstancesRespInstances instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ListMqsInstanceResponse withInstances(Consumer<List<ListInstancesRespInstances>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

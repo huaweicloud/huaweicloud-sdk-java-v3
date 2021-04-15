@@ -101,12 +101,15 @@ public class CloudServers  {
 
     
     public CloudServers addAddressesItem(Addresses addressesItem) {
+        if(this.addresses == null) {
+            this.addresses = new ArrayList<>();
+        }
         this.addresses.add(addressesItem);
         return this;
     }
 
     public CloudServers withAddresses(Consumer<List<Addresses>> addressesSetter) {
-        if(this.addresses == null ){
+        if(this.addresses == null) {
             this.addresses = new ArrayList<>();
         }
         addressesSetter.accept(this.addresses);
@@ -163,12 +166,15 @@ public class CloudServers  {
 
     
     public CloudServers addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public CloudServers withSecurityGroups(Consumer<List<SecurityGroups>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -269,12 +275,15 @@ public class CloudServers  {
 
     
     public CloudServers addVolumesAttachedItem(VolumesAttached volumesAttachedItem) {
+        if(this.volumesAttached == null) {
+            this.volumesAttached = new ArrayList<>();
+        }
         this.volumesAttached.add(volumesAttachedItem);
         return this;
     }
 
     public CloudServers withVolumesAttached(Consumer<List<VolumesAttached>> volumesAttachedSetter) {
-        if(this.volumesAttached == null ){
+        if(this.volumesAttached == null) {
             this.volumesAttached = new ArrayList<>();
         }
         volumesAttachedSetter.accept(this.volumesAttached);

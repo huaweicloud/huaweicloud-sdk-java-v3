@@ -41,12 +41,15 @@ public class ListProjectWorkHoursResponse extends SdkResponse {
 
     
     public ListProjectWorkHoursResponse addWorkHoursItem(ShowProjectWorkHoursResponseBodyWorkHours workHoursItem) {
+        if(this.workHours == null) {
+            this.workHours = new ArrayList<>();
+        }
         this.workHours.add(workHoursItem);
         return this;
     }
 
     public ListProjectWorkHoursResponse withWorkHours(Consumer<List<ShowProjectWorkHoursResponseBodyWorkHours>> workHoursSetter) {
-        if(this.workHours == null ){
+        if(this.workHours == null) {
             this.workHours = new ArrayList<>();
         }
         workHoursSetter.accept(this.workHours);

@@ -340,12 +340,15 @@ public class BackupForList  {
 
     
     public BackupForList addDatabasesItem(BackupDatabase databasesItem) {
+        if(this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
         this.databases.add(databasesItem);
         return this;
     }
 
     public BackupForList withDatabases(Consumer<List<BackupDatabase>> databasesSetter) {
-        if(this.databases == null ){
+        if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);

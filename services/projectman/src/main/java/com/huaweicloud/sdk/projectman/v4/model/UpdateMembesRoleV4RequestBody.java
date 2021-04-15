@@ -60,12 +60,15 @@ public class UpdateMembesRoleV4RequestBody  {
 
     
     public UpdateMembesRoleV4RequestBody addUserIdsItem(String userIdsItem) {
+        if(this.userIds == null) {
+            this.userIds = new ArrayList<>();
+        }
         this.userIds.add(userIdsItem);
         return this;
     }
 
     public UpdateMembesRoleV4RequestBody withUserIds(Consumer<List<String>> userIdsSetter) {
-        if(this.userIds == null ){
+        if(this.userIds == null) {
             this.userIds = new ArrayList<>();
         }
         userIdsSetter.accept(this.userIds);

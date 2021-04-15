@@ -92,12 +92,15 @@ public class ListLiveDataApiTestHistoryV2Response extends SdkResponse {
 
     
     public ListLiveDataApiTestHistoryV2Response addHistoriesItem(LdApiTestHistoryInfoV2 historiesItem) {
+        if(this.histories == null) {
+            this.histories = new ArrayList<>();
+        }
         this.histories.add(historiesItem);
         return this;
     }
 
     public ListLiveDataApiTestHistoryV2Response withHistories(Consumer<List<LdApiTestHistoryInfoV2>> historiesSetter) {
-        if(this.histories == null ){
+        if(this.histories == null) {
             this.histories = new ArrayList<>();
         }
         historiesSetter.accept(this.histories);

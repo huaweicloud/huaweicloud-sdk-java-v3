@@ -41,12 +41,15 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
 
     
     public ListSharedReposDetailsResponse addBodyItem(ShowReposResp bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ListSharedReposDetailsResponse withBody(Consumer<List<ShowReposResp>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

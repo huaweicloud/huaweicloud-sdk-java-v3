@@ -41,12 +41,15 @@ public class ListProvidersResponse extends SdkResponse {
 
     
     public ListProvidersResponse addResourceProvidersItem(ResourceProviderResponse resourceProvidersItem) {
+        if(this.resourceProviders == null) {
+            this.resourceProviders = new ArrayList<>();
+        }
         this.resourceProviders.add(resourceProvidersItem);
         return this;
     }
 
     public ListProvidersResponse withResourceProviders(Consumer<List<ResourceProviderResponse>> resourceProvidersSetter) {
-        if(this.resourceProviders == null ){
+        if(this.resourceProviders == null) {
             this.resourceProviders = new ArrayList<>();
         }
         resourceProvidersSetter.accept(this.resourceProviders);

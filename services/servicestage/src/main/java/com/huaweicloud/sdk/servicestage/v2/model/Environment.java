@@ -281,12 +281,15 @@ public class Environment  {
 
     
     public Environment addBaseResourcesItem(Resource baseResourcesItem) {
+        if(this.baseResources == null) {
+            this.baseResources = new ArrayList<>();
+        }
         this.baseResources.add(baseResourcesItem);
         return this;
     }
 
     public Environment withBaseResources(Consumer<List<Resource>> baseResourcesSetter) {
-        if(this.baseResources == null ){
+        if(this.baseResources == null) {
             this.baseResources = new ArrayList<>();
         }
         baseResourcesSetter.accept(this.baseResources);
@@ -314,12 +317,15 @@ public class Environment  {
 
     
     public Environment addOptionalResourcesItem(Resource optionalResourcesItem) {
+        if(this.optionalResources == null) {
+            this.optionalResources = new ArrayList<>();
+        }
         this.optionalResources.add(optionalResourcesItem);
         return this;
     }
 
     public Environment withOptionalResources(Consumer<List<Resource>> optionalResourcesSetter) {
-        if(this.optionalResources == null ){
+        if(this.optionalResources == null) {
             this.optionalResources = new ArrayList<>();
         }
         optionalResourcesSetter.accept(this.optionalResources);

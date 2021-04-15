@@ -96,12 +96,15 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
 
     
     public UpdateDeviceGroupResponse addPermissionsItem(String permissionsItem) {
+        if(this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
         this.permissions.add(permissionsItem);
         return this;
     }
 
     public UpdateDeviceGroupResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null ){
+        if(this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);

@@ -42,12 +42,15 @@ public class ListAllResourcesResponse extends SdkResponse {
 
     
     public ListAllResourcesResponse addResourcesItem(ResourceEntity resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListAllResourcesResponse withResources(Consumer<List<ResourceEntity>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

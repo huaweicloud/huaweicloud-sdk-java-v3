@@ -41,12 +41,15 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
 
     
     public ListPostgresqlDatabaseSchemasResponse addDatabaseSchemasItem(DatabaseForListSchema databaseSchemasItem) {
+        if(this.databaseSchemas == null) {
+            this.databaseSchemas = new ArrayList<>();
+        }
         this.databaseSchemas.add(databaseSchemasItem);
         return this;
     }
 
     public ListPostgresqlDatabaseSchemasResponse withDatabaseSchemas(Consumer<List<DatabaseForListSchema>> databaseSchemasSetter) {
-        if(this.databaseSchemas == null ){
+        if(this.databaseSchemas == null) {
             this.databaseSchemas = new ArrayList<>();
         }
         databaseSchemasSetter.accept(this.databaseSchemas);

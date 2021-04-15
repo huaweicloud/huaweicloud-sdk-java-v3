@@ -35,12 +35,15 @@ public class ListProjectDemandStaticV4Response extends SdkResponse {
 
     
     public ListProjectDemandStaticV4Response addDemandStatisticsItem(DemandStatisticResponseV4 demandStatisticsItem) {
+        if(this.demandStatistics == null) {
+            this.demandStatistics = new ArrayList<>();
+        }
         this.demandStatistics.add(demandStatisticsItem);
         return this;
     }
 
     public ListProjectDemandStaticV4Response withDemandStatistics(Consumer<List<DemandStatisticResponseV4>> demandStatisticsSetter) {
-        if(this.demandStatistics == null ){
+        if(this.demandStatistics == null) {
             this.demandStatistics = new ArrayList<>();
         }
         demandStatisticsSetter.accept(this.demandStatistics);

@@ -1823,4 +1823,202 @@ public class RdsAsyncClient {
         return new AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
     }
 
+    /**
+     * 授权数据库帐号
+     * 授权数据库帐号。
+     *
+     * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
+     * @return CompletableFuture<AllowSqlserverDbUserPrivilegeResponse>
+     */
+    public CompletableFuture<AllowSqlserverDbUserPrivilegeResponse> allowSqlserverDbUserPrivilegeAsync(AllowSqlserverDbUserPrivilegeRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.allowSqlserverDbUserPrivilege);
+    }
+
+    /**
+     * 授权数据库帐号
+     * 授权数据库帐号。
+     *
+     * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
+     * @return AsyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse>
+     */
+    public AsyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse> allowSqlserverDbUserPrivilegeAsyncInvoker(AllowSqlserverDbUserPrivilegeRequest request) {
+        return new AsyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse>(request, RdsMeta.allowSqlserverDbUserPrivilege, hcClient);
+    }
+
+    /**
+     * 创建数据库
+     * 创建数据库。
+     *
+     * @param CreateSqlserverDatabaseRequest 请求对象
+     * @return CompletableFuture<CreateSqlserverDatabaseResponse>
+     */
+    public CompletableFuture<CreateSqlserverDatabaseResponse> createSqlserverDatabaseAsync(CreateSqlserverDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createSqlserverDatabase);
+    }
+
+    /**
+     * 创建数据库
+     * 创建数据库。
+     *
+     * @param CreateSqlserverDatabaseRequest 请求对象
+     * @return AsyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse>
+     */
+    public AsyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> createSqlserverDatabaseAsyncInvoker(CreateSqlserverDatabaseRequest request) {
+        return new AsyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse>(request, RdsMeta.createSqlserverDatabase, hcClient);
+    }
+
+    /**
+     * 创建数据库用户
+     * 创建数据库用户。
+     *
+     * @param CreateSqlserverDbUserRequest 请求对象
+     * @return CompletableFuture<CreateSqlserverDbUserResponse>
+     */
+    public CompletableFuture<CreateSqlserverDbUserResponse> createSqlserverDbUserAsync(CreateSqlserverDbUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createSqlserverDbUser);
+    }
+
+    /**
+     * 创建数据库用户
+     * 创建数据库用户。
+     *
+     * @param CreateSqlserverDbUserRequest 请求对象
+     * @return AsyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse>
+     */
+    public AsyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> createSqlserverDbUserAsyncInvoker(CreateSqlserverDbUserRequest request) {
+        return new AsyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse>(request, RdsMeta.createSqlserverDbUser, hcClient);
+    }
+
+    /**
+     * 删除数据库
+     * 删除数据库。
+     *
+     * @param DeleteSqlserverDatabaseRequest 请求对象
+     * @return CompletableFuture<DeleteSqlserverDatabaseResponse>
+     */
+    public CompletableFuture<DeleteSqlserverDatabaseResponse> deleteSqlserverDatabaseAsync(DeleteSqlserverDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteSqlserverDatabase);
+    }
+
+    /**
+     * 删除数据库
+     * 删除数据库。
+     *
+     * @param DeleteSqlserverDatabaseRequest 请求对象
+     * @return AsyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>
+     */
+    public AsyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse> deleteSqlserverDatabaseAsyncInvoker(DeleteSqlserverDatabaseRequest request) {
+        return new AsyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>(request, RdsMeta.deleteSqlserverDatabase, hcClient);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteSqlserverDbUserRequest 请求对象
+     * @return CompletableFuture<DeleteSqlserverDbUserResponse>
+     */
+    public CompletableFuture<DeleteSqlserverDbUserResponse> deleteSqlserverDbUserAsync(DeleteSqlserverDbUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteSqlserverDbUser);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteSqlserverDbUserRequest 请求对象
+     * @return AsyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse>
+     */
+    public AsyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse> deleteSqlserverDbUserAsyncInvoker(DeleteSqlserverDbUserRequest request) {
+        return new AsyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse>(request, RdsMeta.deleteSqlserverDbUser, hcClient);
+    }
+
+    /**
+     * 查询指定数据库的已授权用户
+     * 查询指定数据库的已授权用户。
+     *
+     * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
+     * @return CompletableFuture<ListAuthorizedSqlserverDbUsersResponse>
+     */
+    public CompletableFuture<ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsersAsync(ListAuthorizedSqlserverDbUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listAuthorizedSqlserverDbUsers);
+    }
+
+    /**
+     * 查询指定数据库的已授权用户
+     * 查询指定数据库的已授权用户。
+     *
+     * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
+     * @return AsyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>
+     */
+    public AsyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsersAsyncInvoker(ListAuthorizedSqlserverDbUsersRequest request) {
+        return new AsyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>(request, RdsMeta.listAuthorizedSqlserverDbUsers, hcClient);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListSqlserverDatabasesRequest 请求对象
+     * @return CompletableFuture<ListSqlserverDatabasesResponse>
+     */
+    public CompletableFuture<ListSqlserverDatabasesResponse> listSqlserverDatabasesAsync(ListSqlserverDatabasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSqlserverDatabases);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListSqlserverDatabasesRequest 请求对象
+     * @return AsyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse>
+     */
+    public AsyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> listSqlserverDatabasesAsyncInvoker(ListSqlserverDatabasesRequest request) {
+        return new AsyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse>(request, RdsMeta.listSqlserverDatabases, hcClient);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListSqlserverDbUsersRequest 请求对象
+     * @return CompletableFuture<ListSqlserverDbUsersResponse>
+     */
+    public CompletableFuture<ListSqlserverDbUsersResponse> listSqlserverDbUsersAsync(ListSqlserverDbUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSqlserverDbUsers);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListSqlserverDbUsersRequest 请求对象
+     * @return AsyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse>
+     */
+    public AsyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse> listSqlserverDbUsersAsyncInvoker(ListSqlserverDbUsersRequest request) {
+        return new AsyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse>(request, RdsMeta.listSqlserverDbUsers, hcClient);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     * 解除数据库帐号权限。
+     *
+     * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
+     * @return CompletableFuture<RevokeSqlserverDbUserPrivilegeResponse>
+     */
+    public CompletableFuture<RevokeSqlserverDbUserPrivilegeResponse> revokeSqlserverDbUserPrivilegeAsync(RevokeSqlserverDbUserPrivilegeRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.revokeSqlserverDbUserPrivilege);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     * 解除数据库帐号权限。
+     *
+     * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
+     * @return AsyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>
+     */
+    public AsyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> revokeSqlserverDbUserPrivilegeAsyncInvoker(RevokeSqlserverDbUserPrivilegeRequest request) {
+        return new AsyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>(request, RdsMeta.revokeSqlserverDbUserPrivilege, hcClient);
+    }
+
 }

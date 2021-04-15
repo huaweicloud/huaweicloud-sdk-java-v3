@@ -32,12 +32,15 @@ public class BatchDeleteRulesRequestBody  {
 
     
     public BatchDeleteRulesRequestBody addResourcesItem(Integer resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public BatchDeleteRulesRequestBody withResources(Consumer<List<Integer>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

@@ -117,12 +117,15 @@ public class SendCommandRequestBody  {
 
     
     public SendCommandRequestBody addRequestsItem(RequestParameter requestsItem) {
+        if(this.requests == null) {
+            this.requests = new ArrayList<>();
+        }
         this.requests.add(requestsItem);
         return this;
     }
 
     public SendCommandRequestBody withRequests(Consumer<List<RequestParameter>> requestsSetter) {
-        if(this.requests == null ){
+        if(this.requests == null) {
             this.requests = new ArrayList<>();
         }
         requestsSetter.accept(this.requests);

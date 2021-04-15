@@ -61,12 +61,15 @@ public class PgGrantRequest  {
 
     
     public PgGrantRequest addUsersItem(PgUserWithPrivilege usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public PgGrantRequest withUsers(Consumer<List<PgUserWithPrivilege>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

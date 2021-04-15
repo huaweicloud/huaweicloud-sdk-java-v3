@@ -32,12 +32,15 @@ public class AddUserToApp  {
 
     
     public AddUserToApp addUsersItem(Object usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public AddUserToApp withUsers(Consumer<List<Object>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

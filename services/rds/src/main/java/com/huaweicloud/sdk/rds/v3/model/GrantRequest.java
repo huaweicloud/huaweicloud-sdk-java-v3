@@ -61,12 +61,15 @@ public class GrantRequest  {
 
     
     public GrantRequest addUsersItem(UserWithPrivilege usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public GrantRequest withUsers(Consumer<List<UserWithPrivilege>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

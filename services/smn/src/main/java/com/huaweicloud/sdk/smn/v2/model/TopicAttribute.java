@@ -89,12 +89,15 @@ public class TopicAttribute  {
 
     
     public TopicAttribute addStatementItem(Statement statementItem) {
+        if(this.statement == null) {
+            this.statement = new ArrayList<>();
+        }
         this.statement.add(statementItem);
         return this;
     }
 
     public TopicAttribute withStatement(Consumer<List<Statement>> statementSetter) {
-        if(this.statement == null ){
+        if(this.statement == null) {
             this.statement = new ArrayList<>();
         }
         statementSetter.accept(this.statement);

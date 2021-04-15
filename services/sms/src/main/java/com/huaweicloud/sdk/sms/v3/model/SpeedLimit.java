@@ -33,12 +33,15 @@ public class SpeedLimit  {
 
     
     public SpeedLimit addSpeedLimitItem(SpeedLimitlJson speedLimitItem) {
+        if(this.speedLimit == null) {
+            this.speedLimit = new ArrayList<>();
+        }
         this.speedLimit.add(speedLimitItem);
         return this;
     }
 
     public SpeedLimit withSpeedLimit(Consumer<List<SpeedLimitlJson>> speedLimitSetter) {
-        if(this.speedLimit == null ){
+        if(this.speedLimit == null) {
             this.speedLimit = new ArrayList<>();
         }
         speedLimitSetter.accept(this.speedLimit);

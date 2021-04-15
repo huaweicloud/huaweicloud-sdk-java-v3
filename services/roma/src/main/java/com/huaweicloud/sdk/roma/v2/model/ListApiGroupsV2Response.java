@@ -92,12 +92,15 @@ public class ListApiGroupsV2Response extends SdkResponse {
 
     
     public ListApiGroupsV2Response addGroupsItem(ApiGroupInfo groupsItem) {
+        if(this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
         this.groups.add(groupsItem);
         return this;
     }
 
     public ListApiGroupsV2Response withGroups(Consumer<List<ApiGroupInfo>> groupsSetter) {
-        if(this.groups == null ){
+        if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);

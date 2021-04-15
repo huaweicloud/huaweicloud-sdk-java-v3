@@ -92,12 +92,15 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
 
     
     public ListApisNotBoundWithSignatureKeyV2Response addApisItem(ApiForSign apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ListApisNotBoundWithSignatureKeyV2Response withApis(Consumer<List<ApiForSign>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

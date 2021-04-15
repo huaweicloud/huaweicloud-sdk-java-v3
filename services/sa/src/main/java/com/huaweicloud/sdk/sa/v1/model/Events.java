@@ -33,12 +33,15 @@ public class Events  {
 
     
     public Events addEventsItem(Event eventsItem) {
+        if(this.events == null) {
+            this.events = new ArrayList<>();
+        }
         this.events.add(eventsItem);
         return this;
     }
 
     public Events withEvents(Consumer<List<Event>> eventsSetter) {
-        if(this.events == null ){
+        if(this.events == null) {
             this.events = new ArrayList<>();
         }
         eventsSetter.accept(this.events);

@@ -349,12 +349,15 @@ public class BackupInfo  {
 
     
     public BackupInfo addDatabasesItem(BackupDatabase databasesItem) {
+        if(this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
         this.databases.add(databasesItem);
         return this;
     }
 
     public BackupInfo withDatabases(Consumer<List<BackupDatabase>> databasesSetter) {
-        if(this.databases == null ){
+        if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);

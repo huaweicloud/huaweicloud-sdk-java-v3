@@ -41,12 +41,15 @@ public class ShowIssueCompletionRateResponse extends SdkResponse {
 
     
     public ShowIssueCompletionRateResponse addIssueCompletionRatesItem(IssueCompletionRateV4IssueCompletionRates issueCompletionRatesItem) {
+        if(this.issueCompletionRates == null) {
+            this.issueCompletionRates = new ArrayList<>();
+        }
         this.issueCompletionRates.add(issueCompletionRatesItem);
         return this;
     }
 
     public ShowIssueCompletionRateResponse withIssueCompletionRates(Consumer<List<IssueCompletionRateV4IssueCompletionRates>> issueCompletionRatesSetter) {
-        if(this.issueCompletionRates == null ){
+        if(this.issueCompletionRates == null) {
             this.issueCompletionRates = new ArrayList<>();
         }
         issueCompletionRatesSetter.accept(this.issueCompletionRates);

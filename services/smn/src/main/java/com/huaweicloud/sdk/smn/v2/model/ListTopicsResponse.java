@@ -91,12 +91,15 @@ public class ListTopicsResponse extends SdkResponse {
 
     
     public ListTopicsResponse addTopicsItem(ListTopicsItem topicsItem) {
+        if(this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
         this.topics.add(topicsItem);
         return this;
     }
 
     public ListTopicsResponse withTopics(Consumer<List<ListTopicsItem>> topicsSetter) {
-        if(this.topics == null ){
+        if(this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);

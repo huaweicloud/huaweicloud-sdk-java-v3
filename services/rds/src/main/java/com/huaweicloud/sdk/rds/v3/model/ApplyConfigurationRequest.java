@@ -32,12 +32,15 @@ public class ApplyConfigurationRequest  {
 
     
     public ApplyConfigurationRequest addInstanceIdsItem(String instanceIdsItem) {
+        if(this.instanceIds == null) {
+            this.instanceIds = new ArrayList<>();
+        }
         this.instanceIds.add(instanceIdsItem);
         return this;
     }
 
     public ApplyConfigurationRequest withInstanceIds(Consumer<List<String>> instanceIdsSetter) {
-        if(this.instanceIds == null ){
+        if(this.instanceIds == null) {
             this.instanceIds = new ArrayList<>();
         }
         instanceIdsSetter.accept(this.instanceIds);

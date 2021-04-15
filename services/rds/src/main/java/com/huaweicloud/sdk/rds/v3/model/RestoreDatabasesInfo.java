@@ -61,12 +61,15 @@ public class RestoreDatabasesInfo  {
 
     
     public RestoreDatabasesInfo addTablesItem(RestoreTableInfo tablesItem) {
+        if(this.tables == null) {
+            this.tables = new ArrayList<>();
+        }
         this.tables.add(tablesItem);
         return this;
     }
 
     public RestoreDatabasesInfo withTables(Consumer<List<RestoreTableInfo>> tablesSetter) {
-        if(this.tables == null ){
+        if(this.tables == null) {
             this.tables = new ArrayList<>();
         }
         tablesSetter.accept(this.tables);

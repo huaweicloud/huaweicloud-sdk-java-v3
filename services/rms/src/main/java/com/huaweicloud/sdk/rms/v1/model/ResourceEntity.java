@@ -404,12 +404,15 @@ public class ResourceEntity  {
     
 
     public ResourceEntity putTagsItem(String key, String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new HashMap<>();
+        }
         this.tags.put(key, tagsItem);
         return this;
     }
 
     public ResourceEntity withTags(Consumer<Map<String, String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);
@@ -437,12 +440,15 @@ public class ResourceEntity  {
     
 
     public ResourceEntity putPropertiesItem(String key, Object propertiesItem) {
+        if(this.properties == null) {
+            this.properties = new HashMap<>();
+        }
         this.properties.put(key, propertiesItem);
         return this;
     }
 
     public ResourceEntity withProperties(Consumer<Map<String, Object>> propertiesSetter) {
-        if(this.properties == null ){
+        if(this.properties == null) {
             this.properties = new HashMap<>();
         }
         propertiesSetter.accept(this.properties);

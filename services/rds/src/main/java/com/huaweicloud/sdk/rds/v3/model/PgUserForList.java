@@ -88,12 +88,15 @@ public class PgUserForList  {
 
     
     public PgUserForList addMemberofItem(String memberofItem) {
+        if(this.memberof == null) {
+            this.memberof = new ArrayList<>();
+        }
         this.memberof.add(memberofItem);
         return this;
     }
 
     public PgUserForList withMemberof(Consumer<List<String>> memberofSetter) {
-        if(this.memberof == null ){
+        if(this.memberof == null) {
             this.memberof = new ArrayList<>();
         }
         memberofSetter.accept(this.memberof);

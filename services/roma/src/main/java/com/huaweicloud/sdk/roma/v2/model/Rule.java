@@ -280,12 +280,15 @@ public class Rule  {
 
     
     public Rule addPermissionsItem(String permissionsItem) {
+        if(this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
         this.permissions.add(permissionsItem);
         return this;
     }
 
     public Rule withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null ){
+        if(this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);

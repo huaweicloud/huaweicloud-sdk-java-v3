@@ -41,12 +41,15 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
 
     
     public BatchFreezeDevicesResponse addSuccessItem(DeviceInfoSimple successItem) {
+        if(this.success == null) {
+            this.success = new ArrayList<>();
+        }
         this.success.add(successItem);
         return this;
     }
 
     public BatchFreezeDevicesResponse withSuccess(Consumer<List<DeviceInfoSimple>> successSetter) {
-        if(this.success == null ){
+        if(this.success == null) {
             this.success = new ArrayList<>();
         }
         successSetter.accept(this.success);
@@ -74,12 +77,15 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
 
     
     public BatchFreezeDevicesResponse addFailedItem(DeviceInfoSimple failedItem) {
+        if(this.failed == null) {
+            this.failed = new ArrayList<>();
+        }
         this.failed.add(failedItem);
         return this;
     }
 
     public BatchFreezeDevicesResponse withFailed(Consumer<List<DeviceInfoSimple>> failedSetter) {
-        if(this.failed == null ){
+        if(this.failed == null) {
             this.failed = new ArrayList<>();
         }
         failedSetter.accept(this.failed);

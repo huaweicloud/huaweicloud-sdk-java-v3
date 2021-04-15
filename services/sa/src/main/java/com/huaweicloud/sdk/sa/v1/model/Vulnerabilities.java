@@ -64,12 +64,15 @@ public class Vulnerabilities  {
 
     
     public Vulnerabilities addVulnerabilityListItem(Vulnerability vulnerabilityListItem) {
+        if(this.vulnerabilityList == null) {
+            this.vulnerabilityList = new ArrayList<>();
+        }
         this.vulnerabilityList.add(vulnerabilityListItem);
         return this;
     }
 
     public Vulnerabilities withVulnerabilityList(Consumer<List<Vulnerability>> vulnerabilityListSetter) {
-        if(this.vulnerabilityList == null ){
+        if(this.vulnerabilityList == null) {
             this.vulnerabilityList = new ArrayList<>();
         }
         vulnerabilityListSetter.accept(this.vulnerabilityList);
@@ -97,12 +100,15 @@ public class Vulnerabilities  {
 
     
     public Vulnerabilities addPatchListItem(Patch patchListItem) {
+        if(this.patchList == null) {
+            this.patchList = new ArrayList<>();
+        }
         this.patchList.add(patchListItem);
         return this;
     }
 
     public Vulnerabilities withPatchList(Consumer<List<Patch>> patchListSetter) {
-        if(this.patchList == null ){
+        if(this.patchList == null) {
             this.patchList = new ArrayList<>();
         }
         patchListSetter.accept(this.patchList);
@@ -130,12 +136,15 @@ public class Vulnerabilities  {
 
     
     public Vulnerabilities addReferenceUrlsItem(String referenceUrlsItem) {
+        if(this.referenceUrls == null) {
+            this.referenceUrls = new ArrayList<>();
+        }
         this.referenceUrls.add(referenceUrlsItem);
         return this;
     }
 
     public Vulnerabilities withReferenceUrls(Consumer<List<String>> referenceUrlsSetter) {
-        if(this.referenceUrls == null ){
+        if(this.referenceUrls == null) {
             this.referenceUrls = new ArrayList<>();
         }
         referenceUrlsSetter.accept(this.referenceUrls);
@@ -163,12 +172,15 @@ public class Vulnerabilities  {
 
     
     public Vulnerabilities addRelatedVulnerabilitiesItem(String relatedVulnerabilitiesItem) {
+        if(this.relatedVulnerabilities == null) {
+            this.relatedVulnerabilities = new ArrayList<>();
+        }
         this.relatedVulnerabilities.add(relatedVulnerabilitiesItem);
         return this;
     }
 
     public Vulnerabilities withRelatedVulnerabilities(Consumer<List<String>> relatedVulnerabilitiesSetter) {
-        if(this.relatedVulnerabilities == null ){
+        if(this.relatedVulnerabilities == null) {
             this.relatedVulnerabilities = new ArrayList<>();
         }
         relatedVulnerabilitiesSetter.accept(this.relatedVulnerabilities);
@@ -218,12 +230,15 @@ public class Vulnerabilities  {
 
     
     public Vulnerabilities addVulnerablePackagesItem(String vulnerablePackagesItem) {
+        if(this.vulnerablePackages == null) {
+            this.vulnerablePackages = new ArrayList<>();
+        }
         this.vulnerablePackages.add(vulnerablePackagesItem);
         return this;
     }
 
     public Vulnerabilities withVulnerablePackages(Consumer<List<String>> vulnerablePackagesSetter) {
-        if(this.vulnerablePackages == null ){
+        if(this.vulnerablePackages == null) {
             this.vulnerablePackages = new ArrayList<>();
         }
         vulnerablePackagesSetter.accept(this.vulnerablePackages);

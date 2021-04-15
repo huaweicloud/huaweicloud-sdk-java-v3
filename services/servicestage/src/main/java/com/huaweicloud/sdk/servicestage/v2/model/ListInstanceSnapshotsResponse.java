@@ -63,12 +63,15 @@ public class ListInstanceSnapshotsResponse extends SdkResponse {
 
     
     public ListInstanceSnapshotsResponse addSnapshotsItem(InstanceSnapshotView snapshotsItem) {
+        if(this.snapshots == null) {
+            this.snapshots = new ArrayList<>();
+        }
         this.snapshots.add(snapshotsItem);
         return this;
     }
 
     public ListInstanceSnapshotsResponse withSnapshots(Consumer<List<InstanceSnapshotView>> snapshotsSetter) {
-        if(this.snapshots == null ){
+        if(this.snapshots == null) {
             this.snapshots = new ArrayList<>();
         }
         snapshotsSetter.accept(this.snapshots);

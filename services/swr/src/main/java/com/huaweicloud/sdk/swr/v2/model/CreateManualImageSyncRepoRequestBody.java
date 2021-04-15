@@ -50,12 +50,15 @@ public class CreateManualImageSyncRepoRequestBody  {
 
     
     public CreateManualImageSyncRepoRequestBody addImageTagItem(String imageTagItem) {
+        if(this.imageTag == null) {
+            this.imageTag = new ArrayList<>();
+        }
         this.imageTag.add(imageTagItem);
         return this;
     }
 
     public CreateManualImageSyncRepoRequestBody withImageTag(Consumer<List<String>> imageTagSetter) {
-        if(this.imageTag == null ){
+        if(this.imageTag == null) {
             this.imageTag = new ArrayList<>();
         }
         imageTagSetter.accept(this.imageTag);

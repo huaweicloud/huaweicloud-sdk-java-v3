@@ -34,12 +34,15 @@ public class ListTreesResponse extends SdkResponse {
 
     
     public ListTreesResponse addPathsItem(String pathsItem) {
+        if(this.paths == null) {
+            this.paths = new ArrayList<>();
+        }
         this.paths.add(pathsItem);
         return this;
     }
 
     public ListTreesResponse withPaths(Consumer<List<String>> pathsSetter) {
-        if(this.paths == null ){
+        if(this.paths == null) {
             this.paths = new ArrayList<>();
         }
         pathsSetter.accept(this.paths);

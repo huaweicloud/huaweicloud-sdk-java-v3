@@ -92,12 +92,15 @@ public class ListVpcChannelsV2Response extends SdkResponse {
 
     
     public ListVpcChannelsV2Response addVpcChannelsItem(VpcChannelInfo vpcChannelsItem) {
+        if(this.vpcChannels == null) {
+            this.vpcChannels = new ArrayList<>();
+        }
         this.vpcChannels.add(vpcChannelsItem);
         return this;
     }
 
     public ListVpcChannelsV2Response withVpcChannels(Consumer<List<VpcChannelInfo>> vpcChannelsSetter) {
-        if(this.vpcChannels == null ){
+        if(this.vpcChannels == null) {
             this.vpcChannels = new ArrayList<>();
         }
         vpcChannelsSetter.accept(this.vpcChannels);

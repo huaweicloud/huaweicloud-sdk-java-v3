@@ -59,12 +59,15 @@ public class TargetServerByTask  {
 
     
     public TargetServerByTask addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
+        if(this.btrfsList == null) {
+            this.btrfsList = new ArrayList<>();
+        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
 
     public TargetServerByTask withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null ){
+        if(this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);
@@ -92,12 +95,15 @@ public class TargetServerByTask  {
 
     
     public TargetServerByTask addDisksItem(TargetDisks disksItem) {
+        if(this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }
 
     public TargetServerByTask withDisks(Consumer<List<TargetDisks>> disksSetter) {
-        if(this.disks == null ){
+        if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
@@ -169,12 +175,15 @@ public class TargetServerByTask  {
 
     
     public TargetServerByTask addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
+        if(this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
 
     public TargetServerByTask withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null ){
+        if(this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);

@@ -35,12 +35,15 @@ public class CreateAuthorizingAppsV2Response extends SdkResponse {
 
     
     public CreateAuthorizingAppsV2Response addAuthsItem(ApiAuthRelations authsItem) {
+        if(this.auths == null) {
+            this.auths = new ArrayList<>();
+        }
         this.auths.add(authsItem);
         return this;
     }
 
     public CreateAuthorizingAppsV2Response withAuths(Consumer<List<ApiAuthRelations>> authsSetter) {
-        if(this.auths == null ){
+        if(this.auths == null) {
             this.auths = new ArrayList<>();
         }
         authsSetter.accept(this.auths);

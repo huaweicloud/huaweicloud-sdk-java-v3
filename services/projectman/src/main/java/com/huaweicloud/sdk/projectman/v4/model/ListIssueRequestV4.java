@@ -116,12 +116,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addAssignedIdsItem(Integer assignedIdsItem) {
+        if(this.assignedIds == null) {
+            this.assignedIds = new ArrayList<>();
+        }
         this.assignedIds.add(assignedIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withAssignedIds(Consumer<List<Integer>> assignedIdsSetter) {
-        if(this.assignedIds == null ){
+        if(this.assignedIds == null) {
             this.assignedIds = new ArrayList<>();
         }
         assignedIdsSetter.accept(this.assignedIds);
@@ -149,12 +152,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addCreatorIdsItem(Integer creatorIdsItem) {
+        if(this.creatorIds == null) {
+            this.creatorIds = new ArrayList<>();
+        }
         this.creatorIds.add(creatorIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withCreatorIds(Consumer<List<Integer>> creatorIdsSetter) {
-        if(this.creatorIds == null ){
+        if(this.creatorIds == null) {
             this.creatorIds = new ArrayList<>();
         }
         creatorIdsSetter.accept(this.creatorIds);
@@ -182,12 +188,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addDeveloperIdsItem(Integer developerIdsItem) {
+        if(this.developerIds == null) {
+            this.developerIds = new ArrayList<>();
+        }
         this.developerIds.add(developerIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withDeveloperIds(Consumer<List<Integer>> developerIdsSetter) {
-        if(this.developerIds == null ){
+        if(this.developerIds == null) {
             this.developerIds = new ArrayList<>();
         }
         developerIdsSetter.accept(this.developerIds);
@@ -215,12 +224,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addDomainIdsItem(Integer domainIdsItem) {
+        if(this.domainIds == null) {
+            this.domainIds = new ArrayList<>();
+        }
         this.domainIds.add(domainIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withDomainIds(Consumer<List<Integer>> domainIdsSetter) {
-        if(this.domainIds == null ){
+        if(this.domainIds == null) {
             this.domainIds = new ArrayList<>();
         }
         domainIdsSetter.accept(this.domainIds);
@@ -248,12 +260,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addDoneRatiosItem(Integer doneRatiosItem) {
+        if(this.doneRatios == null) {
+            this.doneRatios = new ArrayList<>();
+        }
         this.doneRatios.add(doneRatiosItem);
         return this;
     }
 
     public ListIssueRequestV4 withDoneRatios(Consumer<List<Integer>> doneRatiosSetter) {
-        if(this.doneRatios == null ){
+        if(this.doneRatios == null) {
             this.doneRatios = new ArrayList<>();
         }
         doneRatiosSetter.accept(this.doneRatios);
@@ -281,12 +296,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addIterationIdsItem(Integer iterationIdsItem) {
+        if(this.iterationIds == null) {
+            this.iterationIds = new ArrayList<>();
+        }
         this.iterationIds.add(iterationIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withIterationIds(Consumer<List<Integer>> iterationIdsSetter) {
-        if(this.iterationIds == null ){
+        if(this.iterationIds == null) {
             this.iterationIds = new ArrayList<>();
         }
         iterationIdsSetter.accept(this.iterationIds);
@@ -361,12 +379,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addModuleIdsItem(Integer moduleIdsItem) {
+        if(this.moduleIds == null) {
+            this.moduleIds = new ArrayList<>();
+        }
         this.moduleIds.add(moduleIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withModuleIds(Consumer<List<Integer>> moduleIdsSetter) {
-        if(this.moduleIds == null ){
+        if(this.moduleIds == null) {
             this.moduleIds = new ArrayList<>();
         }
         moduleIdsSetter.accept(this.moduleIds);
@@ -394,12 +415,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addPriorityIdsItem(Integer priorityIdsItem) {
+        if(this.priorityIds == null) {
+            this.priorityIds = new ArrayList<>();
+        }
         this.priorityIds.add(priorityIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withPriorityIds(Consumer<List<Integer>> priorityIdsSetter) {
-        if(this.priorityIds == null ){
+        if(this.priorityIds == null) {
             this.priorityIds = new ArrayList<>();
         }
         priorityIdsSetter.accept(this.priorityIds);
@@ -449,12 +473,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addSeverityIdsItem(Integer severityIdsItem) {
+        if(this.severityIds == null) {
+            this.severityIds = new ArrayList<>();
+        }
         this.severityIds.add(severityIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withSeverityIds(Consumer<List<Integer>> severityIdsSetter) {
-        if(this.severityIds == null ){
+        if(this.severityIds == null) {
             this.severityIds = new ArrayList<>();
         }
         severityIdsSetter.accept(this.severityIds);
@@ -482,12 +509,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addStatusIdsItem(Integer statusIdsItem) {
+        if(this.statusIds == null) {
+            this.statusIds = new ArrayList<>();
+        }
         this.statusIds.add(statusIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withStatusIds(Consumer<List<Integer>> statusIdsSetter) {
-        if(this.statusIds == null ){
+        if(this.statusIds == null) {
             this.statusIds = new ArrayList<>();
         }
         statusIdsSetter.accept(this.statusIds);
@@ -515,12 +545,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addStoryPointIdsItem(Integer storyPointIdsItem) {
+        if(this.storyPointIds == null) {
+            this.storyPointIds = new ArrayList<>();
+        }
         this.storyPointIds.add(storyPointIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withStoryPointIds(Consumer<List<Integer>> storyPointIdsSetter) {
-        if(this.storyPointIds == null ){
+        if(this.storyPointIds == null) {
             this.storyPointIds = new ArrayList<>();
         }
         storyPointIdsSetter.accept(this.storyPointIds);
@@ -548,12 +581,15 @@ public class ListIssueRequestV4  {
 
     
     public ListIssueRequestV4 addTrackerIdsItem(Integer trackerIdsItem) {
+        if(this.trackerIds == null) {
+            this.trackerIds = new ArrayList<>();
+        }
         this.trackerIds.add(trackerIdsItem);
         return this;
     }
 
     public ListIssueRequestV4 withTrackerIds(Consumer<List<Integer>> trackerIdsSetter) {
-        if(this.trackerIds == null ){
+        if(this.trackerIds == null) {
             this.trackerIds = new ArrayList<>();
         }
         trackerIdsSetter.accept(this.trackerIds);

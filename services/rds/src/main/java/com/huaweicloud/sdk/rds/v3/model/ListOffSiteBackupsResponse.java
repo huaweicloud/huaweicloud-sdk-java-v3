@@ -41,12 +41,15 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
 
     
     public ListOffSiteBackupsResponse addOffsiteBackupsItem(OffSiteBackupForList offsiteBackupsItem) {
+        if(this.offsiteBackups == null) {
+            this.offsiteBackups = new ArrayList<>();
+        }
         this.offsiteBackups.add(offsiteBackupsItem);
         return this;
     }
 
     public ListOffSiteBackupsResponse withOffsiteBackups(Consumer<List<OffSiteBackupForList>> offsiteBackupsSetter) {
-        if(this.offsiteBackups == null ){
+        if(this.offsiteBackups == null) {
             this.offsiteBackups = new ArrayList<>();
         }
         offsiteBackupsSetter.accept(this.offsiteBackups);

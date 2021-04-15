@@ -346,12 +346,15 @@ public class InstanceListView  {
 
     
     public InstanceListView addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
+        if(this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
 
     public InstanceListView withExternalAccesses(Consumer<List<ExternalAccesses>> externalAccessesSetter) {
-        if(this.externalAccesses == null ){
+        if(this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         externalAccessesSetter.accept(this.externalAccesses);
@@ -380,12 +383,15 @@ public class InstanceListView  {
     
 
     public InstanceListView putArtifactsItem(String key, Object artifactsItem) {
+        if(this.artifacts == null) {
+            this.artifacts = new HashMap<>();
+        }
         this.artifacts.put(key, artifactsItem);
         return this;
     }
 
     public InstanceListView withArtifacts(Consumer<Map<String, Object>> artifactsSetter) {
-        if(this.artifacts == null ){
+        if(this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         artifactsSetter.accept(this.artifacts);

@@ -33,12 +33,15 @@ public class UpdateMqsInstanceTopicReq  {
 
     
     public UpdateMqsInstanceTopicReq addTopicsItem(UpdateTopicObject topicsItem) {
+        if(this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
         this.topics.add(topicsItem);
         return this;
     }
 
     public UpdateMqsInstanceTopicReq withTopics(Consumer<List<UpdateTopicObject>> topicsSetter) {
-        if(this.topics == null ){
+        if(this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);

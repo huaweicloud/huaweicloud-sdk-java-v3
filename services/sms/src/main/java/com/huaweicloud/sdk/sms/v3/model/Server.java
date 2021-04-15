@@ -606,12 +606,15 @@ public class Server  {
 
     
     public Server addDisksItem(Disk disksItem) {
+        if(this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }
 
     public Server withDisks(Consumer<List<Disk>> disksSetter) {
-        if(this.disks == null ){
+        if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
@@ -639,12 +642,15 @@ public class Server  {
 
     
     public Server addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
+        if(this.btrfsList == null) {
+            this.btrfsList = new ArrayList<>();
+        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
 
     public Server withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null ){
+        if(this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);
@@ -672,12 +678,15 @@ public class Server  {
 
     
     public Server addNetworkItem(NetWork networkItem) {
+        if(this.network == null) {
+            this.network = new ArrayList<>();
+        }
         this.network.add(networkItem);
         return this;
     }
 
     public Server withNetwork(Consumer<List<NetWork>> networkSetter) {
-        if(this.network == null ){
+        if(this.network == null) {
             this.network = new ArrayList<>();
         }
         networkSetter.accept(this.network);
@@ -903,12 +912,15 @@ public class Server  {
 
     
     public Server addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
+        if(this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
 
     public Server withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null ){
+        if(this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);

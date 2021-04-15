@@ -318,12 +318,15 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
 
     
     public CheckAssetJobStatusResponse addReasonsItem(AssetJobReason reasonsItem) {
+        if(this.reasons == null) {
+            this.reasons = new ArrayList<>();
+        }
         this.reasons.add(reasonsItem);
         return this;
     }
 
     public CheckAssetJobStatusResponse withReasons(Consumer<List<AssetJobReason>> reasonsSetter) {
-        if(this.reasons == null ){
+        if(this.reasons == null) {
             this.reasons = new ArrayList<>();
         }
         reasonsSetter.accept(this.reasons);

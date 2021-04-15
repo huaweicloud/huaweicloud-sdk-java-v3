@@ -92,12 +92,15 @@ public class ListLiveDataApiV2Response extends SdkResponse {
 
     
     public ListLiveDataApiV2Response addApisItem(LdApiInfo apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ListLiveDataApiV2Response withApis(Consumer<List<LdApiInfo>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

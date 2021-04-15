@@ -406,12 +406,15 @@ public class ApiPolicyFunctionResp  {
 
     
     public ApiPolicyFunctionResp addBackendParamsItem(BackendParam backendParamsItem) {
+        if(this.backendParams == null) {
+            this.backendParams = new ArrayList<>();
+        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
 
     public ApiPolicyFunctionResp withBackendParams(Consumer<List<BackendParam>> backendParamsSetter) {
-        if(this.backendParams == null ){
+        if(this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
@@ -439,12 +442,15 @@ public class ApiPolicyFunctionResp  {
 
     
     public ApiPolicyFunctionResp addConditionsItem(CoditionResp conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
         this.conditions.add(conditionsItem);
         return this;
     }
 
     public ApiPolicyFunctionResp withConditions(Consumer<List<CoditionResp>> conditionsSetter) {
-        if(this.conditions == null ){
+        if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         conditionsSetter.accept(this.conditions);

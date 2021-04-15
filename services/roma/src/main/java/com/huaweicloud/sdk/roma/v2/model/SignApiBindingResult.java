@@ -33,12 +33,15 @@ public class SignApiBindingResult  {
 
     
     public SignApiBindingResult addBindingsItem(SignApiBindingInfo bindingsItem) {
+        if(this.bindings == null) {
+            this.bindings = new ArrayList<>();
+        }
         this.bindings.add(bindingsItem);
         return this;
     }
 
     public SignApiBindingResult withBindings(Consumer<List<SignApiBindingInfo>> bindingsSetter) {
-        if(this.bindings == null ){
+        if(this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
         bindingsSetter.accept(this.bindings);

@@ -92,12 +92,15 @@ public class AddingBackendInstancesV2Response extends SdkResponse {
 
     
     public AddingBackendInstancesV2Response addMembersItem(VpcMemberInfo membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public AddingBackendInstancesV2Response withMembers(Consumer<List<VpcMemberInfo>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

@@ -32,12 +32,15 @@ public class ThrottleBindingBatchDelete  {
 
     
     public ThrottleBindingBatchDelete addThrottleBindingsItem(String throttleBindingsItem) {
+        if(this.throttleBindings == null) {
+            this.throttleBindings = new ArrayList<>();
+        }
         this.throttleBindings.add(throttleBindingsItem);
         return this;
     }
 
     public ThrottleBindingBatchDelete withThrottleBindings(Consumer<List<String>> throttleBindingsSetter) {
-        if(this.throttleBindings == null ){
+        if(this.throttleBindings == null) {
             this.throttleBindings = new ArrayList<>();
         }
         throttleBindingsSetter.accept(this.throttleBindings);

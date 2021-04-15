@@ -65,12 +65,15 @@ public class ListErrorServersResponse extends SdkResponse {
 
     
     public ListErrorServersResponse addMigrationErrorsItem(MigrationErrors migrationErrorsItem) {
+        if(this.migrationErrors == null) {
+            this.migrationErrors = new ArrayList<>();
+        }
         this.migrationErrors.add(migrationErrorsItem);
         return this;
     }
 
     public ListErrorServersResponse withMigrationErrors(Consumer<List<MigrationErrors>> migrationErrorsSetter) {
-        if(this.migrationErrors == null ){
+        if(this.migrationErrors == null) {
             this.migrationErrors = new ArrayList<>();
         }
         migrationErrorsSetter.accept(this.migrationErrors);

@@ -41,12 +41,15 @@ public class ListDatabasesResponse extends SdkResponse {
 
     
     public ListDatabasesResponse addDatabasesItem(DatabaseForCreation databasesItem) {
+        if(this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
         this.databases.add(databasesItem);
         return this;
     }
 
     public ListDatabasesResponse withDatabases(Consumer<List<DatabaseForCreation>> databasesSetter) {
-        if(this.databases == null ){
+        if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);

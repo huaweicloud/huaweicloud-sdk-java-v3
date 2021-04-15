@@ -66,12 +66,15 @@ public class InstanceActionParameters  {
 
     
     public InstanceActionParameters addHostsItem(String hostsItem) {
+        if(this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
         this.hosts.add(hostsItem);
         return this;
     }
 
     public InstanceActionParameters withHosts(Consumer<List<String>> hostsSetter) {
-        if(this.hosts == null ){
+        if(this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         hostsSetter.accept(this.hosts);

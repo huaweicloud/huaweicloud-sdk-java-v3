@@ -42,12 +42,15 @@ public class ListPolicyAssignmentsResponse extends SdkResponse {
 
     
     public ListPolicyAssignmentsResponse addValueItem(PolicyAssignment valueItem) {
+        if(this.value == null) {
+            this.value = new ArrayList<>();
+        }
         this.value.add(valueItem);
         return this;
     }
 
     public ListPolicyAssignmentsResponse withValue(Consumer<List<PolicyAssignment>> valueSetter) {
-        if(this.value == null ){
+        if(this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);

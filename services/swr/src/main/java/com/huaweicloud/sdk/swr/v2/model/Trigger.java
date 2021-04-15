@@ -381,12 +381,15 @@ public class Trigger  {
 
     
     public Trigger addTriggerHistoryItem(TriggerHistories triggerHistoryItem) {
+        if(this.triggerHistory == null) {
+            this.triggerHistory = new ArrayList<>();
+        }
         this.triggerHistory.add(triggerHistoryItem);
         return this;
     }
 
     public Trigger withTriggerHistory(Consumer<List<TriggerHistories>> triggerHistorySetter) {
-        if(this.triggerHistory == null ){
+        if(this.triggerHistory == null) {
             this.triggerHistory = new ArrayList<>();
         }
         triggerHistorySetter.accept(this.triggerHistory);

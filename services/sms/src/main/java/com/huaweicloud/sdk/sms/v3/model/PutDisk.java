@@ -119,12 +119,15 @@ public class PutDisk  {
 
     
     public PutDisk addPhysicalVolumesItem(PutVolume physicalVolumesItem) {
+        if(this.physicalVolumes == null) {
+            this.physicalVolumes = new ArrayList<>();
+        }
         this.physicalVolumes.add(physicalVolumesItem);
         return this;
     }
 
     public PutDisk withPhysicalVolumes(Consumer<List<PutVolume>> physicalVolumesSetter) {
-        if(this.physicalVolumes == null ){
+        if(this.physicalVolumes == null) {
             this.physicalVolumes = new ArrayList<>();
         }
         physicalVolumesSetter.accept(this.physicalVolumes);

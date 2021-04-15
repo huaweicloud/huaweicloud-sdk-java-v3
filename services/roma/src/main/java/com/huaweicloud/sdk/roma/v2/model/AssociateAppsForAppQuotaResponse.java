@@ -35,12 +35,15 @@ public class AssociateAppsForAppQuotaResponse extends SdkResponse {
 
     
     public AssociateAppsForAppQuotaResponse addAppliesItem(AppQuotaAppBinding appliesItem) {
+        if(this.applies == null) {
+            this.applies = new ArrayList<>();
+        }
         this.applies.add(appliesItem);
         return this;
     }
 
     public AssociateAppsForAppQuotaResponse withApplies(Consumer<List<AppQuotaAppBinding>> appliesSetter) {
-        if(this.applies == null ){
+        if(this.applies == null) {
             this.applies = new ArrayList<>();
         }
         appliesSetter.accept(this.applies);

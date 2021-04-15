@@ -35,12 +35,15 @@ public class ListCommitsResponse extends SdkResponse {
 
     
     public ListCommitsResponse addCommitsItem(CommitsCommits commitsItem) {
+        if(this.commits == null) {
+            this.commits = new ArrayList<>();
+        }
         this.commits.add(commitsItem);
         return this;
     }
 
     public ListCommitsResponse withCommits(Consumer<List<CommitsCommits>> commitsSetter) {
-        if(this.commits == null ){
+        if(this.commits == null) {
             this.commits = new ArrayList<>();
         }
         commitsSetter.accept(this.commits);

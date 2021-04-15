@@ -118,12 +118,15 @@ public class InstanceModify  {
     
 
     public InstanceModify putArtifactsItem(String key, Object artifactsItem) {
+        if(this.artifacts == null) {
+            this.artifacts = new HashMap<>();
+        }
         this.artifacts.put(key, artifactsItem);
         return this;
     }
 
     public InstanceModify withArtifacts(Consumer<Map<String, Object>> artifactsSetter) {
-        if(this.artifacts == null ){
+        if(this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         artifactsSetter.accept(this.artifacts);
@@ -151,12 +154,15 @@ public class InstanceModify  {
     
 
     public InstanceModify putConfigurationItem(String key, Object _configurationItem) {
+        if(this._configuration == null) {
+            this._configuration = new HashMap<>();
+        }
         this._configuration.put(key, _configurationItem);
         return this;
     }
 
     public InstanceModify withConfiguration(Consumer<Map<String, Object>> _configurationSetter) {
-        if(this._configuration == null ){
+        if(this._configuration == null) {
             this._configuration = new HashMap<>();
         }
         _configurationSetter.accept(this._configuration);
@@ -205,12 +211,15 @@ public class InstanceModify  {
 
     
     public InstanceModify addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
+        if(this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
 
     public InstanceModify withExternalAccesses(Consumer<List<ExternalAccesses>> externalAccessesSetter) {
-        if(this.externalAccesses == null ){
+        if(this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         externalAccessesSetter.accept(this.externalAccesses);
@@ -238,12 +247,15 @@ public class InstanceModify  {
 
     
     public InstanceModify addReferResourcesItem(ReferResourceCreate referResourcesItem) {
+        if(this.referResources == null) {
+            this.referResources = new ArrayList<>();
+        }
         this.referResources.add(referResourcesItem);
         return this;
     }
 
     public InstanceModify withReferResources(Consumer<List<ReferResourceCreate>> referResourcesSetter) {
-        if(this.referResources == null ){
+        if(this.referResources == null) {
             this.referResources = new ArrayList<>();
         }
         referResourcesSetter.accept(this.referResources);

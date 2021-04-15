@@ -35,12 +35,15 @@ public class ListRuntimesResponse extends SdkResponse {
 
     
     public ListRuntimesResponse addRuntimesItem(RuntimeTypeView runtimesItem) {
+        if(this.runtimes == null) {
+            this.runtimes = new ArrayList<>();
+        }
         this.runtimes.add(runtimesItem);
         return this;
     }
 
     public ListRuntimesResponse withRuntimes(Consumer<List<RuntimeTypeView>> runtimesSetter) {
-        if(this.runtimes == null ){
+        if(this.runtimes == null) {
             this.runtimes = new ArrayList<>();
         }
         runtimesSetter.accept(this.runtimes);

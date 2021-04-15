@@ -35,12 +35,15 @@ public class AssociateSignatureKeyV2Response extends SdkResponse {
 
     
     public AssociateSignatureKeyV2Response addBindingsItem(SignApiBindingInfo bindingsItem) {
+        if(this.bindings == null) {
+            this.bindings = new ArrayList<>();
+        }
         this.bindings.add(bindingsItem);
         return this;
     }
 
     public AssociateSignatureKeyV2Response withBindings(Consumer<List<SignApiBindingInfo>> bindingsSetter) {
-        if(this.bindings == null ){
+        if(this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
         bindingsSetter.accept(this.bindings);

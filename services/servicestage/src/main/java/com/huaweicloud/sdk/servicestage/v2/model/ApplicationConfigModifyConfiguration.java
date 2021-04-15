@@ -33,12 +33,15 @@ public class ApplicationConfigModifyConfiguration  {
 
     
     public ApplicationConfigModifyConfiguration addEnvItem(ApplicationConfigModifyConfigurationEnv envItem) {
+        if(this.env == null) {
+            this.env = new ArrayList<>();
+        }
         this.env.add(envItem);
         return this;
     }
 
     public ApplicationConfigModifyConfiguration withEnv(Consumer<List<ApplicationConfigModifyConfigurationEnv>> envSetter) {
-        if(this.env == null ){
+        if(this.env == null) {
             this.env = new ArrayList<>();
         }
         envSetter.accept(this.env);

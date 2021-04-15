@@ -459,12 +459,15 @@ public class ApiPolicyHttpResp  {
 
     
     public ApiPolicyHttpResp addBackendParamsItem(BackendParam backendParamsItem) {
+        if(this.backendParams == null) {
+            this.backendParams = new ArrayList<>();
+        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
 
     public ApiPolicyHttpResp withBackendParams(Consumer<List<BackendParam>> backendParamsSetter) {
-        if(this.backendParams == null ){
+        if(this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
@@ -492,12 +495,15 @@ public class ApiPolicyHttpResp  {
 
     
     public ApiPolicyHttpResp addConditionsItem(CoditionResp conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
         this.conditions.add(conditionsItem);
         return this;
     }
 
     public ApiPolicyHttpResp withConditions(Consumer<List<CoditionResp>> conditionsSetter) {
-        if(this.conditions == null ){
+        if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         conditionsSetter.accept(this.conditions);

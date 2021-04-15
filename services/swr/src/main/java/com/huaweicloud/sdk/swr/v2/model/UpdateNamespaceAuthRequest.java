@@ -61,12 +61,15 @@ public class UpdateNamespaceAuthRequest  {
 
     
     public UpdateNamespaceAuthRequest addBodyItem(UserAuth bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public UpdateNamespaceAuthRequest withBody(Consumer<List<UserAuth>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

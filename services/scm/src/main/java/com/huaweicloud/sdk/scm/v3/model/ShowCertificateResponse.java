@@ -567,12 +567,15 @@ public class ShowCertificateResponse extends SdkResponse {
 
     
     public ShowCertificateResponse addAuthentificationItem(Authentification authentificationItem) {
+        if(this.authentification == null) {
+            this.authentification = new ArrayList<>();
+        }
         this.authentification.add(authentificationItem);
         return this;
     }
 
     public ShowCertificateResponse withAuthentification(Consumer<List<Authentification>> authentificationSetter) {
-        if(this.authentification == null ){
+        if(this.authentification == null) {
             this.authentification = new ArrayList<>();
         }
         authentificationSetter.accept(this.authentification);

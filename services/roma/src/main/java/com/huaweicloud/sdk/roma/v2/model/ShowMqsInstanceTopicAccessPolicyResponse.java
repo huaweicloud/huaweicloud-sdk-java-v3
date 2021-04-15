@@ -81,12 +81,15 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
 
     
     public ShowMqsInstanceTopicAccessPolicyResponse addPoliciesItem(ShowMqsInstanceTopicAccessPolicyRespPolicies policiesItem) {
+        if(this.policies == null) {
+            this.policies = new ArrayList<>();
+        }
         this.policies.add(policiesItem);
         return this;
     }
 
     public ShowMqsInstanceTopicAccessPolicyResponse withPolicies(Consumer<List<ShowMqsInstanceTopicAccessPolicyRespPolicies>> policiesSetter) {
-        if(this.policies == null ){
+        if(this.policies == null) {
             this.policies = new ArrayList<>();
         }
         policiesSetter.accept(this.policies);

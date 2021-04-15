@@ -60,12 +60,15 @@ public class SelectorConfigBody  {
 
     
     public SelectorConfigBody addResourceTypesItem(String resourceTypesItem) {
+        if(this.resourceTypes == null) {
+            this.resourceTypes = new ArrayList<>();
+        }
         this.resourceTypes.add(resourceTypesItem);
         return this;
     }
 
     public SelectorConfigBody withResourceTypes(Consumer<List<String>> resourceTypesSetter) {
-        if(this.resourceTypes == null ){
+        if(this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
         resourceTypesSetter.accept(this.resourceTypes);

@@ -47,12 +47,15 @@ public class PutDiskInfoReq  {
 
     
     public PutDiskInfoReq addDisksItem(Disk disksItem) {
+        if(this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }
 
     public PutDiskInfoReq withDisks(Consumer<List<Disk>> disksSetter) {
-        if(this.disks == null ){
+        if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
@@ -80,12 +83,15 @@ public class PutDiskInfoReq  {
 
     
     public PutDiskInfoReq addVolumegroupsItem(VolumeGroups volumegroupsItem) {
+        if(this.volumegroups == null) {
+            this.volumegroups = new ArrayList<>();
+        }
         this.volumegroups.add(volumegroupsItem);
         return this;
     }
 
     public PutDiskInfoReq withVolumegroups(Consumer<List<VolumeGroups>> volumegroupsSetter) {
-        if(this.volumegroups == null ){
+        if(this.volumegroups == null) {
             this.volumegroups = new ArrayList<>();
         }
         volumegroupsSetter.accept(this.volumegroups);
@@ -113,12 +119,15 @@ public class PutDiskInfoReq  {
 
     
     public PutDiskInfoReq addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
+        if(this.btrfsList == null) {
+            this.btrfsList = new ArrayList<>();
+        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
 
     public PutDiskInfoReq withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null ){
+        if(this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);

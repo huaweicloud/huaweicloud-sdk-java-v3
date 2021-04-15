@@ -42,12 +42,15 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
 
     
     public BatchPublishOrOfflineApiV2Response addSuccessItem(BatchSuccess successItem) {
+        if(this.success == null) {
+            this.success = new ArrayList<>();
+        }
         this.success.add(successItem);
         return this;
     }
 
     public BatchPublishOrOfflineApiV2Response withSuccess(Consumer<List<BatchSuccess>> successSetter) {
-        if(this.success == null ){
+        if(this.success == null) {
             this.success = new ArrayList<>();
         }
         successSetter.accept(this.success);
@@ -75,12 +78,15 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
 
     
     public BatchPublishOrOfflineApiV2Response addFailureItem(BatchFailure failureItem) {
+        if(this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
         this.failure.add(failureItem);
         return this;
     }
 
     public BatchPublishOrOfflineApiV2Response withFailure(Consumer<List<BatchFailure>> failureSetter) {
-        if(this.failure == null ){
+        if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);

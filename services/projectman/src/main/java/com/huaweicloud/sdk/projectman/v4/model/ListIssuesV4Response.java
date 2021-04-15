@@ -41,12 +41,15 @@ public class ListIssuesV4Response extends SdkResponse {
 
     
     public ListIssuesV4Response addIssuesItem(IssueResponseV4 issuesItem) {
+        if(this.issues == null) {
+            this.issues = new ArrayList<>();
+        }
         this.issues.add(issuesItem);
         return this;
     }
 
     public ListIssuesV4Response withIssues(Consumer<List<IssueResponseV4>> issuesSetter) {
-        if(this.issues == null ){
+        if(this.issues == null) {
             this.issues = new ArrayList<>();
         }
         issuesSetter.accept(this.issues);

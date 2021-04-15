@@ -33,12 +33,15 @@ public class MetricRequestV2Dividend  {
 
     
     public MetricRequestV2Dividend addCustomFieldsItem(MetricRequestV2DividendCustomFields customFieldsItem) {
+        if(this.customFields == null) {
+            this.customFields = new ArrayList<>();
+        }
         this.customFields.add(customFieldsItem);
         return this;
     }
 
     public MetricRequestV2Dividend withCustomFields(Consumer<List<MetricRequestV2DividendCustomFields>> customFieldsSetter) {
-        if(this.customFields == null ){
+        if(this.customFields == null) {
             this.customFields = new ArrayList<>();
         }
         customFieldsSetter.accept(this.customFields);

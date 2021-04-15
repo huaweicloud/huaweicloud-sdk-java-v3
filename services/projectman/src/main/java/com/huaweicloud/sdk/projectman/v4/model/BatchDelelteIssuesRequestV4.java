@@ -32,12 +32,15 @@ public class BatchDelelteIssuesRequestV4  {
 
     
     public BatchDelelteIssuesRequestV4 addIssueIdsItem(Integer issueIdsItem) {
+        if(this.issueIds == null) {
+            this.issueIds = new ArrayList<>();
+        }
         this.issueIds.add(issueIdsItem);
         return this;
     }
 
     public BatchDelelteIssuesRequestV4 withIssueIds(Consumer<List<Integer>> issueIdsSetter) {
-        if(this.issueIds == null ){
+        if(this.issueIds == null) {
             this.issueIds = new ArrayList<>();
         }
         issueIdsSetter.accept(this.issueIds);

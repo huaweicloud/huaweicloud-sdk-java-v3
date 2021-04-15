@@ -91,12 +91,15 @@ public class ListMonitorLogResponse extends SdkResponse {
 
     
     public ListMonitorLogResponse addEntitiesItem(TaskMonitorLog entitiesItem) {
+        if(this.entities == null) {
+            this.entities = new ArrayList<>();
+        }
         this.entities.add(entitiesItem);
         return this;
     }
 
     public ListMonitorLogResponse withEntities(Consumer<List<TaskMonitorLog>> entitiesSetter) {
-        if(this.entities == null ){
+        if(this.entities == null) {
             this.entities = new ArrayList<>();
         }
         entitiesSetter.accept(this.entities);

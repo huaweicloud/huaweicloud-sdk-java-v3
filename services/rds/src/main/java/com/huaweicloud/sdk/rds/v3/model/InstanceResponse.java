@@ -288,12 +288,15 @@ public class InstanceResponse  {
 
     
     public InstanceResponse addPrivateIpsItem(String privateIpsItem) {
+        if(this.privateIps == null) {
+            this.privateIps = new ArrayList<>();
+        }
         this.privateIps.add(privateIpsItem);
         return this;
     }
 
     public InstanceResponse withPrivateIps(Consumer<List<String>> privateIpsSetter) {
-        if(this.privateIps == null ){
+        if(this.privateIps == null) {
             this.privateIps = new ArrayList<>();
         }
         privateIpsSetter.accept(this.privateIps);
@@ -321,12 +324,15 @@ public class InstanceResponse  {
 
     
     public InstanceResponse addPrivateDnsNamesItem(String privateDnsNamesItem) {
+        if(this.privateDnsNames == null) {
+            this.privateDnsNames = new ArrayList<>();
+        }
         this.privateDnsNames.add(privateDnsNamesItem);
         return this;
     }
 
     public InstanceResponse withPrivateDnsNames(Consumer<List<String>> privateDnsNamesSetter) {
-        if(this.privateDnsNames == null ){
+        if(this.privateDnsNames == null) {
             this.privateDnsNames = new ArrayList<>();
         }
         privateDnsNamesSetter.accept(this.privateDnsNames);
@@ -354,12 +360,15 @@ public class InstanceResponse  {
 
     
     public InstanceResponse addPublicIpsItem(String publicIpsItem) {
+        if(this.publicIps == null) {
+            this.publicIps = new ArrayList<>();
+        }
         this.publicIps.add(publicIpsItem);
         return this;
     }
 
     public InstanceResponse withPublicIps(Consumer<List<String>> publicIpsSetter) {
-        if(this.publicIps == null ){
+        if(this.publicIps == null) {
             this.publicIps = new ArrayList<>();
         }
         publicIpsSetter.accept(this.publicIps);
@@ -519,12 +528,15 @@ public class InstanceResponse  {
 
     
     public InstanceResponse addNodesItem(NodeResponse nodesItem) {
+        if(this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
         this.nodes.add(nodesItem);
         return this;
     }
 
     public InstanceResponse withNodes(Consumer<List<NodeResponse>> nodesSetter) {
-        if(this.nodes == null ){
+        if(this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -552,12 +564,15 @@ public class InstanceResponse  {
 
     
     public InstanceResponse addRelatedInstanceItem(RelatedInstance relatedInstanceItem) {
+        if(this.relatedInstance == null) {
+            this.relatedInstance = new ArrayList<>();
+        }
         this.relatedInstance.add(relatedInstanceItem);
         return this;
     }
 
     public InstanceResponse withRelatedInstance(Consumer<List<RelatedInstance>> relatedInstanceSetter) {
-        if(this.relatedInstance == null ){
+        if(this.relatedInstance == null) {
             this.relatedInstance = new ArrayList<>();
         }
         relatedInstanceSetter.accept(this.relatedInstance);
@@ -994,12 +1009,15 @@ public class InstanceResponse  {
 
     
     public InstanceResponse addTagsItem(TagResponse tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public InstanceResponse withTags(Consumer<List<TagResponse>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

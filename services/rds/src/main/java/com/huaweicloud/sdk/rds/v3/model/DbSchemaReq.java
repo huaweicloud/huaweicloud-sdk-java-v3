@@ -61,12 +61,15 @@ public class DbSchemaReq  {
 
     
     public DbSchemaReq addSchemasItem(SchemaReq schemasItem) {
+        if(this.schemas == null) {
+            this.schemas = new ArrayList<>();
+        }
         this.schemas.add(schemasItem);
         return this;
     }
 
     public DbSchemaReq withSchemas(Consumer<List<SchemaReq>> schemasSetter) {
-        if(this.schemas == null ){
+        if(this.schemas == null) {
             this.schemas = new ArrayList<>();
         }
         schemasSetter.accept(this.schemas);

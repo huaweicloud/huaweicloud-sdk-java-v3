@@ -34,12 +34,15 @@ public class ListBranchesResponse extends SdkResponse {
 
     
     public ListBranchesResponse addBranchesItem(String branchesItem) {
+        if(this.branches == null) {
+            this.branches = new ArrayList<>();
+        }
         this.branches.add(branchesItem);
         return this;
     }
 
     public ListBranchesResponse withBranches(Consumer<List<String>> branchesSetter) {
-        if(this.branches == null ){
+        if(this.branches == null) {
             this.branches = new ArrayList<>();
         }
         branchesSetter.accept(this.branches);

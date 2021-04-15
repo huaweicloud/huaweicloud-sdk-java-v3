@@ -91,12 +91,15 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
 
     
     public ListApplicationEndpointsResponse addEndpointsItem(ApplicationEndpoint endpointsItem) {
+        if(this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
         this.endpoints.add(endpointsItem);
         return this;
     }
 
     public ListApplicationEndpointsResponse withEndpoints(Consumer<List<ApplicationEndpoint>> endpointsSetter) {
-        if(this.endpoints == null ){
+        if(this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);

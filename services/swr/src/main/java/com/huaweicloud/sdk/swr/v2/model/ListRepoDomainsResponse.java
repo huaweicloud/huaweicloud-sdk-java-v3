@@ -35,12 +35,15 @@ public class ListRepoDomainsResponse extends SdkResponse {
 
     
     public ListRepoDomainsResponse addBodyItem(ShowRepoDomainsResponse bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ListRepoDomainsResponse withBody(Consumer<List<ShowRepoDomainsResponse>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

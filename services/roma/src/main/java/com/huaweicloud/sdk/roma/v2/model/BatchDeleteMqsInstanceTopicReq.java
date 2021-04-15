@@ -32,12 +32,15 @@ public class BatchDeleteMqsInstanceTopicReq  {
 
     
     public BatchDeleteMqsInstanceTopicReq addTopicsItem(String topicsItem) {
+        if(this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
         this.topics.add(topicsItem);
         return this;
     }
 
     public BatchDeleteMqsInstanceTopicReq withTopics(Consumer<List<String>> topicsSetter) {
-        if(this.topics == null ){
+        if(this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);

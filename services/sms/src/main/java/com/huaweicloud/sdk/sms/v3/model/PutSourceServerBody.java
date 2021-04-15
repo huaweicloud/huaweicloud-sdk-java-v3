@@ -96,12 +96,15 @@ public class PutSourceServerBody  {
 
     
     public PutSourceServerBody addDisksItem(PutDisk disksItem) {
+        if(this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }
 
     public PutSourceServerBody withDisks(Consumer<List<PutDisk>> disksSetter) {
-        if(this.disks == null ){
+        if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
@@ -129,12 +132,15 @@ public class PutSourceServerBody  {
 
     
     public PutSourceServerBody addVolumeGroupsItem(PutVolumeGroups volumeGroupsItem) {
+        if(this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
 
     public PutSourceServerBody withVolumeGroups(Consumer<List<PutVolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null ){
+        if(this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);

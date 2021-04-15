@@ -35,12 +35,15 @@ public class BatchDeleteMqsInstanceTopicResponse extends SdkResponse {
 
     
     public BatchDeleteMqsInstanceTopicResponse addTopicsItem(BatchDeleteMqsInstanceTopicRespTopics topicsItem) {
+        if(this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
         this.topics.add(topicsItem);
         return this;
     }
 
     public BatchDeleteMqsInstanceTopicResponse withTopics(Consumer<List<BatchDeleteMqsInstanceTopicRespTopics>> topicsSetter) {
-        if(this.topics == null ){
+        if(this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);

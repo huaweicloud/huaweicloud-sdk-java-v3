@@ -92,12 +92,15 @@ public class ListAppQuotasResponse extends SdkResponse {
 
     
     public ListAppQuotasResponse addQuotasItem(AppQuotaInfo quotasItem) {
+        if(this.quotas == null) {
+            this.quotas = new ArrayList<>();
+        }
         this.quotas.add(quotasItem);
         return this;
     }
 
     public ListAppQuotasResponse withQuotas(Consumer<List<AppQuotaInfo>> quotasSetter) {
-        if(this.quotas == null ){
+        if(this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
         quotasSetter.accept(this.quotas);

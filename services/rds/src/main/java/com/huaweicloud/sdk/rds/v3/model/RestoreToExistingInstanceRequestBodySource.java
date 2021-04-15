@@ -226,12 +226,15 @@ public class RestoreToExistingInstanceRequestBodySource  {
     
 
     public RestoreToExistingInstanceRequestBodySource putDatabaseNameItem(String key, String databaseNameItem) {
+        if(this.databaseName == null) {
+            this.databaseName = new HashMap<>();
+        }
         this.databaseName.put(key, databaseNameItem);
         return this;
     }
 
     public RestoreToExistingInstanceRequestBodySource withDatabaseName(Consumer<Map<String, String>> databaseNameSetter) {
-        if(this.databaseName == null ){
+        if(this.databaseName == null) {
             this.databaseName = new HashMap<>();
         }
         databaseNameSetter.accept(this.databaseName);

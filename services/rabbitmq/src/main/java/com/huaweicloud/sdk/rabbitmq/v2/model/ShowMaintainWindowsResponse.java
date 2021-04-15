@@ -35,12 +35,15 @@ public class ShowMaintainWindowsResponse extends SdkResponse {
 
     
     public ShowMaintainWindowsResponse addMaintainWindowsItem(MaintainWindowsEntity maintainWindowsItem) {
+        if(this.maintainWindows == null) {
+            this.maintainWindows = new ArrayList<>();
+        }
         this.maintainWindows.add(maintainWindowsItem);
         return this;
     }
 
     public ShowMaintainWindowsResponse withMaintainWindows(Consumer<List<MaintainWindowsEntity>> maintainWindowsSetter) {
-        if(this.maintainWindows == null ){
+        if(this.maintainWindows == null) {
             this.maintainWindows = new ArrayList<>();
         }
         maintainWindowsSetter.accept(this.maintainWindows);

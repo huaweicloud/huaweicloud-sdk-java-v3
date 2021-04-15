@@ -32,12 +32,15 @@ public class BatchDeleteMembersV4RequestBody  {
 
     
     public BatchDeleteMembersV4RequestBody addUserIdsItem(String userIdsItem) {
+        if(this.userIds == null) {
+            this.userIds = new ArrayList<>();
+        }
         this.userIds.add(userIdsItem);
         return this;
     }
 
     public BatchDeleteMembersV4RequestBody withUserIds(Consumer<List<String>> userIdsSetter) {
-        if(this.userIds == null ){
+        if(this.userIds == null) {
             this.userIds = new ArrayList<>();
         }
         userIdsSetter.accept(this.userIds);

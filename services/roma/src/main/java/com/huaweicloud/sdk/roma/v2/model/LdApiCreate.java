@@ -373,12 +373,15 @@ public class LdApiCreate  {
 
     
     public LdApiCreate addParametersItem(LdApiParameter parametersItem) {
+        if(this.parameters == null) {
+            this.parameters = new ArrayList<>();
+        }
         this.parameters.add(parametersItem);
         return this;
     }
 
     public LdApiCreate withParameters(Consumer<List<LdApiParameter>> parametersSetter) {
-        if(this.parameters == null ){
+        if(this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         parametersSetter.accept(this.parameters);

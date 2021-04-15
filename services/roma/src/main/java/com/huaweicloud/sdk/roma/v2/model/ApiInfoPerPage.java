@@ -1237,12 +1237,15 @@ public class ApiInfoPerPage  {
 
     
     public ApiInfoPerPage addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ApiInfoPerPage withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1622,12 +1625,15 @@ public class ApiInfoPerPage  {
 
     
     public ApiInfoPerPage addReqParamsItem(ReqParam reqParamsItem) {
+        if(this.reqParams == null) {
+            this.reqParams = new ArrayList<>();
+        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
 
     public ApiInfoPerPage withReqParams(Consumer<List<ReqParam>> reqParamsSetter) {
-        if(this.reqParams == null ){
+        if(this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         reqParamsSetter.accept(this.reqParams);

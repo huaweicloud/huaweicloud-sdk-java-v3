@@ -173,12 +173,15 @@ public class VersionItem  {
 
     
     public VersionItem addLinksItem(LinksItem linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public VersionItem withLinks(Consumer<List<LinksItem>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

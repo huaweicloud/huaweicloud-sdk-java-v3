@@ -52,7 +52,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -94,7 +93,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -133,7 +131,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -169,7 +166,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -203,7 +199,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -249,7 +244,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -293,7 +287,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -319,7 +312,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -365,7 +357,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -407,7 +398,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -453,7 +443,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -489,7 +478,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -515,7 +503,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -551,7 +538,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -597,7 +583,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -639,7 +624,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -685,7 +669,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -727,7 +710,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -773,7 +755,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -807,7 +788,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -846,7 +826,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -880,7 +859,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -941,7 +919,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1035,7 +1012,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1098,7 +1074,6 @@ public class SwrMeta {
         
 
 
-
         builder.withResponseField(
             "Content-Range",
             LocationType.Header,
@@ -1141,7 +1116,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1178,7 +1152,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1232,7 +1205,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1287,7 +1259,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1315,7 +1286,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1341,7 +1311,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1377,7 +1346,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1423,7 +1391,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1465,7 +1432,6 @@ public class SwrMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -1520,7 +1486,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1556,7 +1521,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1590,7 +1554,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1634,7 +1597,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1688,7 +1650,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1738,7 +1699,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1792,7 +1752,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1836,7 +1795,6 @@ public class SwrMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1854,7 +1812,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1882,7 +1839,6 @@ public class SwrMeta {
 
         // response
         
-
 
 
         return builder.build();

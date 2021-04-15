@@ -630,12 +630,15 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     
     public ShowDetailsOfVpcChannelV2Response addMembersItem(VpcMemberInfo membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public ShowDetailsOfVpcChannelV2Response withMembers(Consumer<List<VpcMemberInfo>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

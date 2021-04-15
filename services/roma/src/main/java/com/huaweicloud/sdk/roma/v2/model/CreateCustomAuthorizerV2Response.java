@@ -359,12 +359,15 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
     
     public CreateCustomAuthorizerV2Response addIdentitiesItem(Identity identitiesItem) {
+        if(this.identities == null) {
+            this.identities = new ArrayList<>();
+        }
         this.identities.add(identitiesItem);
         return this;
     }
 
     public CreateCustomAuthorizerV2Response withIdentities(Consumer<List<Identity>> identitiesSetter) {
-        if(this.identities == null ){
+        if(this.identities == null) {
             this.identities = new ArrayList<>();
         }
         identitiesSetter.accept(this.identities);

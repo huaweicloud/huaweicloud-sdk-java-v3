@@ -92,12 +92,15 @@ public class ListProjectCofigsV2Response extends SdkResponse {
 
     
     public ListProjectCofigsV2Response addConfigsItem(Config configsItem) {
+        if(this.configs == null) {
+            this.configs = new ArrayList<>();
+        }
         this.configs.add(configsItem);
         return this;
     }
 
     public ListProjectCofigsV2Response withConfigs(Consumer<List<Config>> configsSetter) {
-        if(this.configs == null ){
+        if(this.configs == null) {
             this.configs = new ArrayList<>();
         }
         configsSetter.accept(this.configs);

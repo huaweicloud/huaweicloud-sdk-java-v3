@@ -91,12 +91,15 @@ public class ListTagsV2Response extends SdkResponse {
 
     
     public ListTagsV2Response addResponsesItem(String responsesItem) {
+        if(this.responses == null) {
+            this.responses = new ArrayList<>();
+        }
         this.responses.add(responsesItem);
         return this;
     }
 
     public ListTagsV2Response withResponses(Consumer<List<String>> responsesSetter) {
-        if(this.responses == null ){
+        if(this.responses == null) {
             this.responses = new ArrayList<>();
         }
         responsesSetter.accept(this.responses);

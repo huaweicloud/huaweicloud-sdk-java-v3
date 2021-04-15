@@ -92,12 +92,15 @@ public class ListAppQuotaBindableAppsResponse extends SdkResponse {
 
     
     public ListAppQuotaBindableAppsResponse addAppsItem(AppQuotaAppInfo appsItem) {
+        if(this.apps == null) {
+            this.apps = new ArrayList<>();
+        }
         this.apps.add(appsItem);
         return this;
     }
 
     public ListAppQuotaBindableAppsResponse withApps(Consumer<List<AppQuotaAppInfo>> appsSetter) {
-        if(this.apps == null ){
+        if(this.apps == null) {
             this.apps = new ArrayList<>();
         }
         appsSetter.accept(this.apps);

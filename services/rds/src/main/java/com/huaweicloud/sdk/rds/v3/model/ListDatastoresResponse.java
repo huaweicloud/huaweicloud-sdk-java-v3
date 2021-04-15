@@ -35,12 +35,15 @@ public class ListDatastoresResponse extends SdkResponse {
 
     
     public ListDatastoresResponse addDataStoresItem(LDatastore dataStoresItem) {
+        if(this.dataStores == null) {
+            this.dataStores = new ArrayList<>();
+        }
         this.dataStores.add(dataStoresItem);
         return this;
     }
 
     public ListDatastoresResponse withDataStores(Consumer<List<LDatastore>> dataStoresSetter) {
-        if(this.dataStores == null ){
+        if(this.dataStores == null) {
             this.dataStores = new ArrayList<>();
         }
         dataStoresSetter.accept(this.dataStores);

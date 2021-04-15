@@ -235,12 +235,15 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
 
     
     public ShowInstanceConfigurationResponse addConfigurationParametersItem(ConfigurationParameter configurationParametersItem) {
+        if(this.configurationParameters == null) {
+            this.configurationParameters = new ArrayList<>();
+        }
         this.configurationParameters.add(configurationParametersItem);
         return this;
     }
 
     public ShowInstanceConfigurationResponse withConfigurationParameters(Consumer<List<ConfigurationParameter>> configurationParametersSetter) {
-        if(this.configurationParameters == null ){
+        if(this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
         configurationParametersSetter.accept(this.configurationParameters);

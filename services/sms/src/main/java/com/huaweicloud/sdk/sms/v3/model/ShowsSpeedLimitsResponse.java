@@ -35,12 +35,15 @@ public class ShowsSpeedLimitsResponse extends SdkResponse {
 
     
     public ShowsSpeedLimitsResponse addBodyItem(SpeedLimit bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ShowsSpeedLimitsResponse withBody(Consumer<List<SpeedLimit>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

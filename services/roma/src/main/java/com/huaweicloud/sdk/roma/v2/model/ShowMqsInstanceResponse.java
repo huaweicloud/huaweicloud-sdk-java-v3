@@ -1276,12 +1276,15 @@ public class ShowMqsInstanceResponse extends SdkResponse {
 
     
     public ShowMqsInstanceResponse addAvailableZonesItem(String availableZonesItem) {
+        if(this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
 
     public ShowMqsInstanceResponse withAvailableZones(Consumer<List<String>> availableZonesSetter) {
-        if(this.availableZones == null ){
+        if(this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         availableZonesSetter.accept(this.availableZones);
@@ -1595,12 +1598,15 @@ public class ShowMqsInstanceResponse extends SdkResponse {
 
     
     public ShowMqsInstanceResponse addIpv6ConnectAddressesItem(String ipv6ConnectAddressesItem) {
+        if(this.ipv6ConnectAddresses == null) {
+            this.ipv6ConnectAddresses = new ArrayList<>();
+        }
         this.ipv6ConnectAddresses.add(ipv6ConnectAddressesItem);
         return this;
     }
 
     public ShowMqsInstanceResponse withIpv6ConnectAddresses(Consumer<List<String>> ipv6ConnectAddressesSetter) {
-        if(this.ipv6ConnectAddresses == null ){
+        if(this.ipv6ConnectAddresses == null) {
             this.ipv6ConnectAddresses = new ArrayList<>();
         }
         ipv6ConnectAddressesSetter.accept(this.ipv6ConnectAddresses);

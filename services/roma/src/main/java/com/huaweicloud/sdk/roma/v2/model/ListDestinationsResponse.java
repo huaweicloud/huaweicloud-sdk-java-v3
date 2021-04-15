@@ -91,12 +91,15 @@ public class ListDestinationsResponse extends SdkResponse {
 
     
     public ListDestinationsResponse addItemsItem(Destination itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListDestinationsResponse withItems(Consumer<List<Destination>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

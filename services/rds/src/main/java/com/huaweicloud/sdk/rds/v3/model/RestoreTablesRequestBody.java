@@ -61,12 +61,15 @@ public class RestoreTablesRequestBody  {
 
     
     public RestoreTablesRequestBody addRestoreTablesItem(RestoreDatabasesInfo restoreTablesItem) {
+        if(this.restoreTables == null) {
+            this.restoreTables = new ArrayList<>();
+        }
         this.restoreTables.add(restoreTablesItem);
         return this;
     }
 
     public RestoreTablesRequestBody withRestoreTables(Consumer<List<RestoreDatabasesInfo>> restoreTablesSetter) {
-        if(this.restoreTables == null ){
+        if(this.restoreTables == null) {
             this.restoreTables = new ArrayList<>();
         }
         restoreTablesSetter.accept(this.restoreTables);

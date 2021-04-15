@@ -211,12 +211,15 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
 
     
     public ShowBuiltInPolicyDefinitionResponse addKeywordsItem(String keywordsItem) {
+        if(this.keywords == null) {
+            this.keywords = new ArrayList<>();
+        }
         this.keywords.add(keywordsItem);
         return this;
     }
 
     public ShowBuiltInPolicyDefinitionResponse withKeywords(Consumer<List<String>> keywordsSetter) {
-        if(this.keywords == null ){
+        if(this.keywords == null) {
             this.keywords = new ArrayList<>();
         }
         keywordsSetter.accept(this.keywords);
@@ -245,12 +248,15 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     
 
     public ShowBuiltInPolicyDefinitionResponse putParametersItem(String key, PolicyParameterDefinition parametersItem) {
+        if(this.parameters == null) {
+            this.parameters = new HashMap<>();
+        }
         this.parameters.put(key, parametersItem);
         return this;
     }
 
     public ShowBuiltInPolicyDefinitionResponse withParameters(Consumer<Map<String, PolicyParameterDefinition>> parametersSetter) {
-        if(this.parameters == null ){
+        if(this.parameters == null) {
             this.parameters = new HashMap<>();
         }
         parametersSetter.accept(this.parameters);

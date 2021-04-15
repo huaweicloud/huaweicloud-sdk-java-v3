@@ -170,6 +170,12 @@ public class ShowIssueV4Response extends SdkResponse {
     
     private String updatedTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="closed_time")
+    
+    private String closedTime;
+
     public ShowIssueV4Response withActualWorkHours(Double actualWorkHours) {
         this.actualWorkHours = actualWorkHours;
         return this;
@@ -199,12 +205,15 @@ public class ShowIssueV4Response extends SdkResponse {
 
     
     public ShowIssueV4Response addAssignedCcUserItem(IssueUser assignedCcUserItem) {
+        if(this.assignedCcUser == null) {
+            this.assignedCcUser = new ArrayList<>();
+        }
         this.assignedCcUser.add(assignedCcUserItem);
         return this;
     }
 
     public ShowIssueV4Response withAssignedCcUser(Consumer<List<IssueUser>> assignedCcUserSetter) {
-        if(this.assignedCcUser == null ){
+        if(this.assignedCcUser == null) {
             this.assignedCcUser = new ArrayList<>();
         }
         assignedCcUserSetter.accept(this.assignedCcUser);
@@ -334,12 +343,15 @@ public class ShowIssueV4Response extends SdkResponse {
 
     
     public ShowIssueV4Response addCustomFieldsItem(CustomField customFieldsItem) {
+        if(this.customFields == null) {
+            this.customFields = new ArrayList<>();
+        }
         this.customFields.add(customFieldsItem);
         return this;
     }
 
     public ShowIssueV4Response withCustomFields(Consumer<List<CustomField>> customFieldsSetter) {
-        if(this.customFields == null ){
+        if(this.customFields == null) {
             this.customFields = new ArrayList<>();
         }
         customFieldsSetter.accept(this.customFields);
@@ -782,6 +794,28 @@ public class ShowIssueV4Response extends SdkResponse {
 
     
 
+    public ShowIssueV4Response withClosedTime(String closedTime) {
+        this.closedTime = closedTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 关闭时间 年-月-日 时:分:秒
+     * @return closedTime
+     */
+    public String getClosedTime() {
+        return closedTime;
+    }
+
+    public void setClosedTime(String closedTime) {
+        this.closedTime = closedTime;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -813,11 +847,12 @@ public class ShowIssueV4Response extends SdkResponse {
             Objects.equals(this.severity, showIssueV4Response.severity) &&
             Objects.equals(this.status, showIssueV4Response.status) &&
             Objects.equals(this.tracker, showIssueV4Response.tracker) &&
-            Objects.equals(this.updatedTime, showIssueV4Response.updatedTime);
+            Objects.equals(this.updatedTime, showIssueV4Response.updatedTime) &&
+            Objects.equals(this.closedTime, showIssueV4Response.closedTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, name, parentIssue, priority, severity, status, tracker, updatedTime);
+        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, name, parentIssue, priority, severity, status, tracker, updatedTime, closedTime);
     }
     @Override
     public String toString() {
@@ -846,6 +881,7 @@ public class ShowIssueV4Response extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tracker: ").append(toIndentedString(tracker)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    closedTime: ").append(toIndentedString(closedTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

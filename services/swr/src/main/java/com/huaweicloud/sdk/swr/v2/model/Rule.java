@@ -149,12 +149,15 @@ public class Rule  {
 
     
     public Rule addTagSelectorsItem(TagSelector tagSelectorsItem) {
+        if(this.tagSelectors == null) {
+            this.tagSelectors = new ArrayList<>();
+        }
         this.tagSelectors.add(tagSelectorsItem);
         return this;
     }
 
     public Rule withTagSelectors(Consumer<List<TagSelector>> tagSelectorsSetter) {
-        if(this.tagSelectors == null ){
+        if(this.tagSelectors == null) {
             this.tagSelectors = new ArrayList<>();
         }
         tagSelectorsSetter.accept(this.tagSelectors);

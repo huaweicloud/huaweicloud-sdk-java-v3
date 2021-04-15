@@ -92,12 +92,15 @@ public class ListFeaturesV2Response extends SdkResponse {
 
     
     public ListFeaturesV2Response addFeaturesItem(FeatureInfo featuresItem) {
+        if(this.features == null) {
+            this.features = new ArrayList<>();
+        }
         this.features.add(featuresItem);
         return this;
     }
 
     public ListFeaturesV2Response withFeatures(Consumer<List<FeatureInfo>> featuresSetter) {
-        if(this.features == null ){
+        if(this.features == null) {
             this.features = new ArrayList<>();
         }
         featuresSetter.accept(this.features);

@@ -92,12 +92,15 @@ public class ListApiVersionsV2Response extends SdkResponse {
 
     
     public ListApiVersionsV2Response addApiVersionsItem(ApiVersionResp apiVersionsItem) {
+        if(this.apiVersions == null) {
+            this.apiVersions = new ArrayList<>();
+        }
         this.apiVersions.add(apiVersionsItem);
         return this;
     }
 
     public ListApiVersionsV2Response withApiVersions(Consumer<List<ApiVersionResp>> apiVersionsSetter) {
-        if(this.apiVersions == null ){
+        if(this.apiVersions == null) {
             this.apiVersions = new ArrayList<>();
         }
         apiVersionsSetter.accept(this.apiVersions);

@@ -137,12 +137,15 @@ public class ReqCreatePredefineTag  {
 
     
     public ReqCreatePredefineTag addTagsItem(PredefineTagRequest tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ReqCreatePredefineTag withTags(Consumer<List<PredefineTagRequest>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

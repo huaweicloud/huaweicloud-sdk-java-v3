@@ -92,12 +92,15 @@ public class ListAppCodesV2Response extends SdkResponse {
 
     
     public ListAppCodesV2Response addAppCodesItem(AppCodeBaseInfo appCodesItem) {
+        if(this.appCodes == null) {
+            this.appCodes = new ArrayList<>();
+        }
         this.appCodes.add(appCodesItem);
         return this;
     }
 
     public ListAppCodesV2Response withAppCodes(Consumer<List<AppCodeBaseInfo>> appCodesSetter) {
-        if(this.appCodes == null ){
+        if(this.appCodes == null) {
             this.appCodes = new ArrayList<>();
         }
         appCodesSetter.accept(this.appCodes);

@@ -35,12 +35,15 @@ public class CheckCanAuthUsersOfAppResponse extends SdkResponse {
 
     
     public CheckCanAuthUsersOfAppResponse addUsersItem(CandidatesUser usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public CheckCanAuthUsersOfAppResponse withUsers(Consumer<List<CandidatesUser>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

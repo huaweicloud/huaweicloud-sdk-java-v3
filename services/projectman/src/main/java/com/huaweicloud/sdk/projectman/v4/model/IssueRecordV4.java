@@ -23,6 +23,18 @@ public class IssueRecordV4  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private Integer id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="created_time")
+    
+    private Long createdTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
     private IssueRecordV4User user;
@@ -33,6 +45,50 @@ public class IssueRecordV4  {
     
     private List<IssueRecordV4Details> details = null;
     
+    public IssueRecordV4 withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 操作记录id
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    
+
+    public IssueRecordV4 withCreatedTime(Long createdTime) {
+        this.createdTime = createdTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 操作记录创建时间
+     * @return createdTime
+     */
+    public Long getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Long createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    
+
     public IssueRecordV4 withUser(IssueRecordV4User user) {
         this.user = user;
         return this;
@@ -69,12 +125,15 @@ public class IssueRecordV4  {
 
     
     public IssueRecordV4 addDetailsItem(IssueRecordV4Details detailsItem) {
+        if(this.details == null) {
+            this.details = new ArrayList<>();
+        }
         this.details.add(detailsItem);
         return this;
     }
 
     public IssueRecordV4 withDetails(Consumer<List<IssueRecordV4Details>> detailsSetter) {
-        if(this.details == null ){
+        if(this.details == null) {
             this.details = new ArrayList<>();
         }
         detailsSetter.accept(this.details);
@@ -104,17 +163,21 @@ public class IssueRecordV4  {
             return false;
         }
         IssueRecordV4 issueRecordV4 = (IssueRecordV4) o;
-        return Objects.equals(this.user, issueRecordV4.user) &&
+        return Objects.equals(this.id, issueRecordV4.id) &&
+            Objects.equals(this.createdTime, issueRecordV4.createdTime) &&
+            Objects.equals(this.user, issueRecordV4.user) &&
             Objects.equals(this.details, issueRecordV4.details);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(user, details);
+        return Objects.hash(id, createdTime, user, details);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class IssueRecordV4 {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    details: ").append(toIndentedString(details)).append("\n");
         sb.append("}");

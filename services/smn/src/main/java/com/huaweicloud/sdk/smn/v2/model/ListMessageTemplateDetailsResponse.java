@@ -142,12 +142,15 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
 
     
     public ListMessageTemplateDetailsResponse addTagNamesItem(String tagNamesItem) {
+        if(this.tagNames == null) {
+            this.tagNames = new ArrayList<>();
+        }
         this.tagNames.add(tagNamesItem);
         return this;
     }
 
     public ListMessageTemplateDetailsResponse withTagNames(Consumer<List<String>> tagNamesSetter) {
-        if(this.tagNames == null ){
+        if(this.tagNames == null) {
             this.tagNames = new ArrayList<>();
         }
         tagNamesSetter.accept(this.tagNames);

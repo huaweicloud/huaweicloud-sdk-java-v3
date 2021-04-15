@@ -32,12 +32,15 @@ public class AclBindingBatchDelete  {
 
     
     public AclBindingBatchDelete addAclBindingsItem(String aclBindingsItem) {
+        if(this.aclBindings == null) {
+            this.aclBindings = new ArrayList<>();
+        }
         this.aclBindings.add(aclBindingsItem);
         return this;
     }
 
     public AclBindingBatchDelete withAclBindings(Consumer<List<String>> aclBindingsSetter) {
-        if(this.aclBindings == null ){
+        if(this.aclBindings == null) {
             this.aclBindings = new ArrayList<>();
         }
         aclBindingsSetter.accept(this.aclBindings);

@@ -90,12 +90,15 @@ public class ConfigurationForUpdate  {
     
 
     public ConfigurationForUpdate putValuesItem(String key, String valuesItem) {
+        if(this.values == null) {
+            this.values = new HashMap<>();
+        }
         this.values.put(key, valuesItem);
         return this;
     }
 
     public ConfigurationForUpdate withValues(Consumer<Map<String, String>> valuesSetter) {
-        if(this.values == null ){
+        if(this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);

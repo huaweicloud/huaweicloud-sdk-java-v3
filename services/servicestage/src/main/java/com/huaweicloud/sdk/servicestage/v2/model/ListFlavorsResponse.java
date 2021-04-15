@@ -35,12 +35,15 @@ public class ListFlavorsResponse extends SdkResponse {
 
     
     public ListFlavorsResponse addFlavorsItem(FlavorView flavorsItem) {
+        if(this.flavors == null) {
+            this.flavors = new ArrayList<>();
+        }
         this.flavors.add(flavorsItem);
         return this;
     }
 
     public ListFlavorsResponse withFlavors(Consumer<List<FlavorView>> flavorsSetter) {
-        if(this.flavors == null ){
+        if(this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
         flavorsSetter.accept(this.flavors);

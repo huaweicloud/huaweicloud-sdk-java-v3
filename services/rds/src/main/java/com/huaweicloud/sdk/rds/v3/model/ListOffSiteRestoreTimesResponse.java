@@ -35,12 +35,15 @@ public class ListOffSiteRestoreTimesResponse extends SdkResponse {
 
     
     public ListOffSiteRestoreTimesResponse addRestoreTimeItem(GetRestoreTimeResponseRestoreTime restoreTimeItem) {
+        if(this.restoreTime == null) {
+            this.restoreTime = new ArrayList<>();
+        }
         this.restoreTime.add(restoreTimeItem);
         return this;
     }
 
     public ListOffSiteRestoreTimesResponse withRestoreTime(Consumer<List<GetRestoreTimeResponseRestoreTime>> restoreTimeSetter) {
-        if(this.restoreTime == null ){
+        if(this.restoreTime == null) {
             this.restoreTime = new ArrayList<>();
         }
         restoreTimeSetter.accept(this.restoreTime);

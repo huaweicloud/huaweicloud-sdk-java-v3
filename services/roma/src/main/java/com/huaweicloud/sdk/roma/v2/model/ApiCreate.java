@@ -1139,12 +1139,15 @@ public class ApiCreate  {
 
     
     public ApiCreate addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ApiCreate withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1318,12 +1321,15 @@ public class ApiCreate  {
 
     
     public ApiCreate addReqParamsItem(ReqParamBase reqParamsItem) {
+        if(this.reqParams == null) {
+            this.reqParams = new ArrayList<>();
+        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
 
     public ApiCreate withReqParams(Consumer<List<ReqParamBase>> reqParamsSetter) {
-        if(this.reqParams == null ){
+        if(this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         reqParamsSetter.accept(this.reqParams);
@@ -1351,12 +1357,15 @@ public class ApiCreate  {
 
     
     public ApiCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
+        if(this.backendParams == null) {
+            this.backendParams = new ArrayList<>();
+        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
 
     public ApiCreate withBackendParams(Consumer<List<BackendParamBase>> backendParamsSetter) {
-        if(this.backendParams == null ){
+        if(this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
@@ -1384,12 +1393,15 @@ public class ApiCreate  {
 
     
     public ApiCreate addPolicyMocksItem(ApiPolicyMockCreate policyMocksItem) {
+        if(this.policyMocks == null) {
+            this.policyMocks = new ArrayList<>();
+        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
 
     public ApiCreate withPolicyMocks(Consumer<List<ApiPolicyMockCreate>> policyMocksSetter) {
-        if(this.policyMocks == null ){
+        if(this.policyMocks == null) {
             this.policyMocks = new ArrayList<>();
         }
         policyMocksSetter.accept(this.policyMocks);
@@ -1417,12 +1429,15 @@ public class ApiCreate  {
 
     
     public ApiCreate addPolicyFunctionsItem(ApiPolicyFunctionCreate policyFunctionsItem) {
+        if(this.policyFunctions == null) {
+            this.policyFunctions = new ArrayList<>();
+        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
 
     public ApiCreate withPolicyFunctions(Consumer<List<ApiPolicyFunctionCreate>> policyFunctionsSetter) {
-        if(this.policyFunctions == null ){
+        if(this.policyFunctions == null) {
             this.policyFunctions = new ArrayList<>();
         }
         policyFunctionsSetter.accept(this.policyFunctions);
@@ -1479,12 +1494,15 @@ public class ApiCreate  {
 
     
     public ApiCreate addPolicyHttpsItem(ApiPolicyHttpCreate policyHttpsItem) {
+        if(this.policyHttps == null) {
+            this.policyHttps = new ArrayList<>();
+        }
         this.policyHttps.add(policyHttpsItem);
         return this;
     }
 
     public ApiCreate withPolicyHttps(Consumer<List<ApiPolicyHttpCreate>> policyHttpsSetter) {
-        if(this.policyHttps == null ){
+        if(this.policyHttps == null) {
             this.policyHttps = new ArrayList<>();
         }
         policyHttpsSetter.accept(this.policyHttps);

@@ -315,12 +315,15 @@ public class ApiDuplicationInfo  {
 
     
     public ApiDuplicationInfo addDuplicatedApisItem(DuplicateApiInfo duplicatedApisItem) {
+        if(this.duplicatedApis == null) {
+            this.duplicatedApis = new ArrayList<>();
+        }
         this.duplicatedApis.add(duplicatedApisItem);
         return this;
     }
 
     public ApiDuplicationInfo withDuplicatedApis(Consumer<List<DuplicateApiInfo>> duplicatedApisSetter) {
-        if(this.duplicatedApis == null ){
+        if(this.duplicatedApis == null) {
             this.duplicatedApis = new ArrayList<>();
         }
         duplicatedApisSetter.accept(this.duplicatedApis);

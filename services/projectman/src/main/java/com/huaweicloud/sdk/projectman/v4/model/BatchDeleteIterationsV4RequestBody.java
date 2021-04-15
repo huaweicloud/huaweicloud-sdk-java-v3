@@ -32,12 +32,15 @@ public class BatchDeleteIterationsV4RequestBody  {
 
     
     public BatchDeleteIterationsV4RequestBody addIterationIdsItem(Integer iterationIdsItem) {
+        if(this.iterationIds == null) {
+            this.iterationIds = new ArrayList<>();
+        }
         this.iterationIds.add(iterationIdsItem);
         return this;
     }
 
     public BatchDeleteIterationsV4RequestBody withIterationIds(Consumer<List<Integer>> iterationIdsSetter) {
-        if(this.iterationIds == null ){
+        if(this.iterationIds == null) {
             this.iterationIds = new ArrayList<>();
         }
         iterationIdsSetter.accept(this.iterationIds);

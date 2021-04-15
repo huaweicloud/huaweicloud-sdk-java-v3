@@ -32,12 +32,15 @@ public class BatchFreezeDevicesRequestBody  {
 
     
     public BatchFreezeDevicesRequestBody addDeviceIdsItem(Integer deviceIdsItem) {
+        if(this.deviceIds == null) {
+            this.deviceIds = new ArrayList<>();
+        }
         this.deviceIds.add(deviceIdsItem);
         return this;
     }
 
     public BatchFreezeDevicesRequestBody withDeviceIds(Consumer<List<Integer>> deviceIdsSetter) {
-        if(this.deviceIds == null ){
+        if(this.deviceIds == null) {
             this.deviceIds = new ArrayList<>();
         }
         deviceIdsSetter.accept(this.deviceIds);

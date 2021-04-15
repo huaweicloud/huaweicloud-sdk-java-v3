@@ -119,12 +119,15 @@ public class EnableConfigurationResponse extends SdkResponse {
 
     
     public EnableConfigurationResponse addApplyResultsItem(ApplyConfigurationResponseApplyResults applyResultsItem) {
+        if(this.applyResults == null) {
+            this.applyResults = new ArrayList<>();
+        }
         this.applyResults.add(applyResultsItem);
         return this;
     }
 
     public EnableConfigurationResponse withApplyResults(Consumer<List<ApplyConfigurationResponseApplyResults>> applyResultsSetter) {
-        if(this.applyResults == null ){
+        if(this.applyResults == null) {
             this.applyResults = new ArrayList<>();
         }
         applyResultsSetter.accept(this.applyResults);

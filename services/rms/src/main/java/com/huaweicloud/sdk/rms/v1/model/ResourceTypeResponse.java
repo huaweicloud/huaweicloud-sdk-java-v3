@@ -134,12 +134,15 @@ public class ResourceTypeResponse  {
 
     
     public ResourceTypeResponse addRegionsItem(String regionsItem) {
+        if(this.regions == null) {
+            this.regions = new ArrayList<>();
+        }
         this.regions.add(regionsItem);
         return this;
     }
 
     public ResourceTypeResponse withRegions(Consumer<List<String>> regionsSetter) {
-        if(this.regions == null ){
+        if(this.regions == null) {
             this.regions = new ArrayList<>();
         }
         regionsSetter.accept(this.regions);

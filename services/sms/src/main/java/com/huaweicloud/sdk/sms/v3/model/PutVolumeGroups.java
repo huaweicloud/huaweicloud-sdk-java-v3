@@ -51,12 +51,15 @@ public class PutVolumeGroups  {
 
     
     public PutVolumeGroups addLogicalVolumesItem(PutLogicalVolume logicalVolumesItem) {
+        if(this.logicalVolumes == null) {
+            this.logicalVolumes = new ArrayList<>();
+        }
         this.logicalVolumes.add(logicalVolumesItem);
         return this;
     }
 
     public PutVolumeGroups withLogicalVolumes(Consumer<List<PutLogicalVolume>> logicalVolumesSetter) {
-        if(this.logicalVolumes == null ){
+        if(this.logicalVolumes == null) {
             this.logicalVolumes = new ArrayList<>();
         }
         logicalVolumesSetter.accept(this.logicalVolumes);

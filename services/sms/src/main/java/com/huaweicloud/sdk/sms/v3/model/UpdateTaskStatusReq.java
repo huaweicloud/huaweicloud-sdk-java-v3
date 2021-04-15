@@ -172,12 +172,15 @@ public class UpdateTaskStatusReq  {
     
 
     public UpdateTaskStatusReq putParamItem(String key, String paramItem) {
+        if(this.param == null) {
+            this.param = new HashMap<>();
+        }
         this.param.put(key, paramItem);
         return this;
     }
 
     public UpdateTaskStatusReq withParam(Consumer<Map<String, String>> paramSetter) {
-        if(this.param == null ){
+        if(this.param == null) {
             this.param = new HashMap<>();
         }
         paramSetter.accept(this.param);

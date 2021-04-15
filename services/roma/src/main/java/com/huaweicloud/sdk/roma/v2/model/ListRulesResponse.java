@@ -91,12 +91,15 @@ public class ListRulesResponse extends SdkResponse {
 
     
     public ListRulesResponse addItemsItem(Rule itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListRulesResponse withItems(Consumer<List<Rule>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

@@ -35,12 +35,15 @@ public class ListRepositoryTagsResponse extends SdkResponse {
 
     
     public ListRepositoryTagsResponse addBodyItem(ShowReposTagResp bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ListRepositoryTagsResponse withBody(Consumer<List<ShowReposTagResp>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

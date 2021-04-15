@@ -97,12 +97,15 @@ public class ShowRetentionResponse extends SdkResponse {
 
     
     public ShowRetentionResponse addRulesItem(Rule rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public ShowRetentionResponse withRules(Consumer<List<Rule>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

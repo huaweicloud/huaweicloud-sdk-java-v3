@@ -260,12 +260,15 @@ public class EnvironmentCheck  {
 
     
     public EnvironmentCheck addParamsItem(String paramsItem) {
+        if(this.params == null) {
+            this.params = new ArrayList<>();
+        }
         this.params.add(paramsItem);
         return this;
     }
 
     public EnvironmentCheck withParams(Consumer<List<String>> paramsSetter) {
-        if(this.params == null ){
+        if(this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);

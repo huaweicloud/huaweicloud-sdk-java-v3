@@ -91,12 +91,15 @@ public class ListDictionaryResponse extends SdkResponse {
 
     
     public ListDictionaryResponse addDictionariesItem(Dictionary dictionariesItem) {
+        if(this.dictionaries == null) {
+            this.dictionaries = new ArrayList<>();
+        }
         this.dictionaries.add(dictionariesItem);
         return this;
     }
 
     public ListDictionaryResponse withDictionaries(Consumer<List<Dictionary>> dictionariesSetter) {
-        if(this.dictionaries == null ){
+        if(this.dictionaries == null) {
             this.dictionaries = new ArrayList<>();
         }
         dictionariesSetter.accept(this.dictionaries);

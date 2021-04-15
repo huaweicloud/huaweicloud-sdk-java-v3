@@ -113,12 +113,15 @@ public class Volumes  {
 
     
     public Volumes addAttachmentsItem(Attachment attachmentsItem) {
+        if(this.attachments == null) {
+            this.attachments = new ArrayList<>();
+        }
         this.attachments.add(attachmentsItem);
         return this;
     }
 
     public Volumes withAttachments(Consumer<List<Attachment>> attachmentsSetter) {
-        if(this.attachments == null ){
+        if(this.attachments == null) {
             this.attachments = new ArrayList<>();
         }
         attachmentsSetter.accept(this.attachments);

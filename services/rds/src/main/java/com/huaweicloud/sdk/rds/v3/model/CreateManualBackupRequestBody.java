@@ -117,12 +117,15 @@ public class CreateManualBackupRequestBody  {
 
     
     public CreateManualBackupRequestBody addDatabasesItem(BackupDatabase databasesItem) {
+        if(this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
         this.databases.add(databasesItem);
         return this;
     }
 
     public CreateManualBackupRequestBody withDatabases(Consumer<List<BackupDatabase>> databasesSetter) {
-        if(this.databases == null ){
+        if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);

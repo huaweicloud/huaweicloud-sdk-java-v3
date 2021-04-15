@@ -1821,4 +1821,202 @@ public class RdsClient {
         return new SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
     }
 
+    /**
+     * 授权数据库帐号
+     * 授权数据库帐号。
+     *
+     * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
+     * @return AllowSqlserverDbUserPrivilegeResponse
+     */
+    public AllowSqlserverDbUserPrivilegeResponse allowSqlserverDbUserPrivilege(AllowSqlserverDbUserPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.allowSqlserverDbUserPrivilege);
+    }
+
+    /**
+     * 授权数据库帐号
+     * 授权数据库帐号。
+     *
+     * @param AllowSqlserverDbUserPrivilegeRequest 请求对象
+     * @return SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse>
+     */
+    public SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse> allowSqlserverDbUserPrivilegeInvoker(AllowSqlserverDbUserPrivilegeRequest request) {
+        return new SyncInvoker<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse>(request, RdsMeta.allowSqlserverDbUserPrivilege, hcClient);
+    }
+
+    /**
+     * 创建数据库
+     * 创建数据库。
+     *
+     * @param CreateSqlserverDatabaseRequest 请求对象
+     * @return CreateSqlserverDatabaseResponse
+     */
+    public CreateSqlserverDatabaseResponse createSqlserverDatabase(CreateSqlserverDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createSqlserverDatabase);
+    }
+
+    /**
+     * 创建数据库
+     * 创建数据库。
+     *
+     * @param CreateSqlserverDatabaseRequest 请求对象
+     * @return SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse>
+     */
+    public SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> createSqlserverDatabaseInvoker(CreateSqlserverDatabaseRequest request) {
+        return new SyncInvoker<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse>(request, RdsMeta.createSqlserverDatabase, hcClient);
+    }
+
+    /**
+     * 创建数据库用户
+     * 创建数据库用户。
+     *
+     * @param CreateSqlserverDbUserRequest 请求对象
+     * @return CreateSqlserverDbUserResponse
+     */
+    public CreateSqlserverDbUserResponse createSqlserverDbUser(CreateSqlserverDbUserRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createSqlserverDbUser);
+    }
+
+    /**
+     * 创建数据库用户
+     * 创建数据库用户。
+     *
+     * @param CreateSqlserverDbUserRequest 请求对象
+     * @return SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse>
+     */
+    public SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> createSqlserverDbUserInvoker(CreateSqlserverDbUserRequest request) {
+        return new SyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse>(request, RdsMeta.createSqlserverDbUser, hcClient);
+    }
+
+    /**
+     * 删除数据库
+     * 删除数据库。
+     *
+     * @param DeleteSqlserverDatabaseRequest 请求对象
+     * @return DeleteSqlserverDatabaseResponse
+     */
+    public DeleteSqlserverDatabaseResponse deleteSqlserverDatabase(DeleteSqlserverDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteSqlserverDatabase);
+    }
+
+    /**
+     * 删除数据库
+     * 删除数据库。
+     *
+     * @param DeleteSqlserverDatabaseRequest 请求对象
+     * @return SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>
+     */
+    public SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse> deleteSqlserverDatabaseInvoker(DeleteSqlserverDatabaseRequest request) {
+        return new SyncInvoker<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse>(request, RdsMeta.deleteSqlserverDatabase, hcClient);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteSqlserverDbUserRequest 请求对象
+     * @return DeleteSqlserverDbUserResponse
+     */
+    public DeleteSqlserverDbUserResponse deleteSqlserverDbUser(DeleteSqlserverDbUserRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteSqlserverDbUser);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteSqlserverDbUserRequest 请求对象
+     * @return SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse>
+     */
+    public SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse> deleteSqlserverDbUserInvoker(DeleteSqlserverDbUserRequest request) {
+        return new SyncInvoker<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse>(request, RdsMeta.deleteSqlserverDbUser, hcClient);
+    }
+
+    /**
+     * 查询指定数据库的已授权用户
+     * 查询指定数据库的已授权用户。
+     *
+     * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
+     * @return ListAuthorizedSqlserverDbUsersResponse
+     */
+    public ListAuthorizedSqlserverDbUsersResponse listAuthorizedSqlserverDbUsers(ListAuthorizedSqlserverDbUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listAuthorizedSqlserverDbUsers);
+    }
+
+    /**
+     * 查询指定数据库的已授权用户
+     * 查询指定数据库的已授权用户。
+     *
+     * @param ListAuthorizedSqlserverDbUsersRequest 请求对象
+     * @return SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>
+     */
+    public SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsersInvoker(ListAuthorizedSqlserverDbUsersRequest request) {
+        return new SyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse>(request, RdsMeta.listAuthorizedSqlserverDbUsers, hcClient);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListSqlserverDatabasesRequest 请求对象
+     * @return ListSqlserverDatabasesResponse
+     */
+    public ListSqlserverDatabasesResponse listSqlserverDatabases(ListSqlserverDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSqlserverDatabases);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListSqlserverDatabasesRequest 请求对象
+     * @return SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse>
+     */
+    public SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> listSqlserverDatabasesInvoker(ListSqlserverDatabasesRequest request) {
+        return new SyncInvoker<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse>(request, RdsMeta.listSqlserverDatabases, hcClient);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListSqlserverDbUsersRequest 请求对象
+     * @return ListSqlserverDbUsersResponse
+     */
+    public ListSqlserverDbUsersResponse listSqlserverDbUsers(ListSqlserverDbUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSqlserverDbUsers);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListSqlserverDbUsersRequest 请求对象
+     * @return SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse>
+     */
+    public SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse> listSqlserverDbUsersInvoker(ListSqlserverDbUsersRequest request) {
+        return new SyncInvoker<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse>(request, RdsMeta.listSqlserverDbUsers, hcClient);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     * 解除数据库帐号权限。
+     *
+     * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
+     * @return RevokeSqlserverDbUserPrivilegeResponse
+     */
+    public RevokeSqlserverDbUserPrivilegeResponse revokeSqlserverDbUserPrivilege(RevokeSqlserverDbUserPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.revokeSqlserverDbUserPrivilege);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     * 解除数据库帐号权限。
+     *
+     * @param RevokeSqlserverDbUserPrivilegeRequest 请求对象
+     * @return SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>
+     */
+    public SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> revokeSqlserverDbUserPrivilegeInvoker(RevokeSqlserverDbUserPrivilegeRequest request) {
+        return new SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>(request, RdsMeta.revokeSqlserverDbUserPrivilege, hcClient);
+    }
+
 }

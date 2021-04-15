@@ -1021,12 +1021,15 @@ public class ShowTaskResponse extends SdkResponse {
 
     
     public ShowTaskResponse addSubTasksItem(SubTask subTasksItem) {
+        if(this.subTasks == null) {
+            this.subTasks = new ArrayList<>();
+        }
         this.subTasks.add(subTasksItem);
         return this;
     }
 
     public ShowTaskResponse withSubTasks(Consumer<List<SubTask>> subTasksSetter) {
-        if(this.subTasks == null ){
+        if(this.subTasks == null) {
             this.subTasks = new ArrayList<>();
         }
         subTasksSetter.accept(this.subTasks);

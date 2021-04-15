@@ -41,12 +41,15 @@ public class ListResourceInstancesResponse extends SdkResponse {
 
     
     public ListResourceInstancesResponse addResourcesItem(TagResource resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListResourceInstancesResponse withResources(Consumer<List<TagResource>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

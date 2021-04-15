@@ -226,12 +226,15 @@ public class DebugApiReq  {
     
 
     public DebugApiReq putHeaderItem(String key, List<String> headerItem) {
+        if(this.header == null) {
+            this.header = new HashMap<>();
+        }
         this.header.put(key, headerItem);
         return this;
     }
 
     public DebugApiReq withHeader(Consumer<Map<String, List<String>>> headerSetter) {
-        if(this.header == null ){
+        if(this.header == null) {
             this.header = new HashMap<>();
         }
         headerSetter.accept(this.header);
@@ -325,12 +328,15 @@ public class DebugApiReq  {
     
 
     public DebugApiReq putQueryItem(String key, List<String> queryItem) {
+        if(this.query == null) {
+            this.query = new HashMap<>();
+        }
         this.query.put(key, queryItem);
         return this;
     }
 
     public DebugApiReq withQuery(Consumer<Map<String, List<String>>> querySetter) {
-        if(this.query == null ){
+        if(this.query == null) {
             this.query = new HashMap<>();
         }
         querySetter.accept(this.query);

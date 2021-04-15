@@ -35,12 +35,15 @@ public class ListHooksResponse extends SdkResponse {
 
     
     public ListHooksResponse addHooksItem(Hook hooksItem) {
+        if(this.hooks == null) {
+            this.hooks = new ArrayList<>();
+        }
         this.hooks.add(hooksItem);
         return this;
     }
 
     public ListHooksResponse withHooks(Consumer<List<Hook>> hooksSetter) {
-        if(this.hooks == null ){
+        if(this.hooks == null) {
             this.hooks = new ArrayList<>();
         }
         hooksSetter.accept(this.hooks);

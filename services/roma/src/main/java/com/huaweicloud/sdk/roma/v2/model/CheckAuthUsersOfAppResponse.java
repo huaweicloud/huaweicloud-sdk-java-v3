@@ -91,12 +91,15 @@ public class CheckAuthUsersOfAppResponse extends SdkResponse {
 
     
     public CheckAuthUsersOfAppResponse addUsersItem(AppUsersUsers usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public CheckAuthUsersOfAppResponse withUsers(Consumer<List<AppUsersUsers>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

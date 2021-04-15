@@ -61,12 +61,15 @@ public class LdApiScriptCreate  {
 
     
     public LdApiScriptCreate addScriptsItem(LdApiScript scriptsItem) {
+        if(this.scripts == null) {
+            this.scripts = new ArrayList<>();
+        }
         this.scripts.add(scriptsItem);
         return this;
     }
 
     public LdApiScriptCreate withScripts(Consumer<List<LdApiScript>> scriptsSetter) {
-        if(this.scripts == null ){
+        if(this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);

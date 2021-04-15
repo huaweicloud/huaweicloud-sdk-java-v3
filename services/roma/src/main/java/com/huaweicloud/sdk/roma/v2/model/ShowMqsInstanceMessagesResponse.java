@@ -35,12 +35,15 @@ public class ShowMqsInstanceMessagesResponse extends SdkResponse {
 
     
     public ShowMqsInstanceMessagesResponse addMessagesItem(ShowMqsInstanceMessagesRespMessages messagesItem) {
+        if(this.messages == null) {
+            this.messages = new ArrayList<>();
+        }
         this.messages.add(messagesItem);
         return this;
     }
 
     public ShowMqsInstanceMessagesResponse withMessages(Consumer<List<ShowMqsInstanceMessagesRespMessages>> messagesSetter) {
-        if(this.messages == null ){
+        if(this.messages == null) {
             this.messages = new ArrayList<>();
         }
         messagesSetter.accept(this.messages);

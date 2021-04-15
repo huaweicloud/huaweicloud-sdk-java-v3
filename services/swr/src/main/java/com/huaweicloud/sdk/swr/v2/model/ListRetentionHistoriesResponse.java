@@ -47,12 +47,15 @@ public class ListRetentionHistoriesResponse extends SdkResponse {
 
     
     public ListRetentionHistoriesResponse addRetentionLogItem(RetentionLog retentionLogItem) {
+        if(this.retentionLog == null) {
+            this.retentionLog = new ArrayList<>();
+        }
         this.retentionLog.add(retentionLogItem);
         return this;
     }
 
     public ListRetentionHistoriesResponse withRetentionLog(Consumer<List<RetentionLog>> retentionLogSetter) {
-        if(this.retentionLog == null ){
+        if(this.retentionLog == null) {
             this.retentionLog = new ArrayList<>();
         }
         retentionLogSetter.accept(this.retentionLog);

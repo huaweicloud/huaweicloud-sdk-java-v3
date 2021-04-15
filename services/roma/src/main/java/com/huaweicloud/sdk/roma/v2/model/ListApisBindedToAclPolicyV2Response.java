@@ -92,12 +92,15 @@ public class ListApisBindedToAclPolicyV2Response extends SdkResponse {
 
     
     public ListApisBindedToAclPolicyV2Response addApisItem(AclBindApiPageApisResp apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ListApisBindedToAclPolicyV2Response withApis(Consumer<List<AclBindApiPageApisResp>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

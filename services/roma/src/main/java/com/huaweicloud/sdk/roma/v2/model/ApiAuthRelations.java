@@ -331,12 +331,15 @@ public class ApiAuthRelations  {
 
     
     public ApiAuthRelations addAuthWhitelistItem(String authWhitelistItem) {
+        if(this.authWhitelist == null) {
+            this.authWhitelist = new ArrayList<>();
+        }
         this.authWhitelist.add(authWhitelistItem);
         return this;
     }
 
     public ApiAuthRelations withAuthWhitelist(Consumer<List<String>> authWhitelistSetter) {
-        if(this.authWhitelist == null ){
+        if(this.authWhitelist == null) {
             this.authWhitelist = new ArrayList<>();
         }
         authWhitelistSetter.accept(this.authWhitelist);
@@ -364,12 +367,15 @@ public class ApiAuthRelations  {
 
     
     public ApiAuthRelations addAuthBlacklistItem(String authBlacklistItem) {
+        if(this.authBlacklist == null) {
+            this.authBlacklist = new ArrayList<>();
+        }
         this.authBlacklist.add(authBlacklistItem);
         return this;
     }
 
     public ApiAuthRelations withAuthBlacklist(Consumer<List<String>> authBlacklistSetter) {
-        if(this.authBlacklist == null ){
+        if(this.authBlacklist == null) {
             this.authBlacklist = new ArrayList<>();
         }
         authBlacklistSetter.accept(this.authBlacklist);

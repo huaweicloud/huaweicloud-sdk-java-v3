@@ -55,12 +55,15 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
 
     
     public ShowProjectSummaryV4Response addBugStatisticsItem(BugStatisticResponseV4 bugStatisticsItem) {
+        if(this.bugStatistics == null) {
+            this.bugStatistics = new ArrayList<>();
+        }
         this.bugStatistics.add(bugStatisticsItem);
         return this;
     }
 
     public ShowProjectSummaryV4Response withBugStatistics(Consumer<List<BugStatisticResponseV4>> bugStatisticsSetter) {
-        if(this.bugStatistics == null ){
+        if(this.bugStatistics == null) {
             this.bugStatistics = new ArrayList<>();
         }
         bugStatisticsSetter.accept(this.bugStatistics);
@@ -88,12 +91,15 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
 
     
     public ShowProjectSummaryV4Response addDemandStatisticsItem(DemandStatisticResponseV4 demandStatisticsItem) {
+        if(this.demandStatistics == null) {
+            this.demandStatistics = new ArrayList<>();
+        }
         this.demandStatistics.add(demandStatisticsItem);
         return this;
     }
 
     public ShowProjectSummaryV4Response withDemandStatistics(Consumer<List<DemandStatisticResponseV4>> demandStatisticsSetter) {
-        if(this.demandStatistics == null ){
+        if(this.demandStatistics == null) {
             this.demandStatistics = new ArrayList<>();
         }
         demandStatisticsSetter.accept(this.demandStatistics);
@@ -121,12 +127,15 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
 
     
     public ShowProjectSummaryV4Response addIssueCompletionRatesItem(IssueCompletionRateResponseV4 issueCompletionRatesItem) {
+        if(this.issueCompletionRates == null) {
+            this.issueCompletionRates = new ArrayList<>();
+        }
         this.issueCompletionRates.add(issueCompletionRatesItem);
         return this;
     }
 
     public ShowProjectSummaryV4Response withIssueCompletionRates(Consumer<List<IssueCompletionRateResponseV4>> issueCompletionRatesSetter) {
-        if(this.issueCompletionRates == null ){
+        if(this.issueCompletionRates == null) {
             this.issueCompletionRates = new ArrayList<>();
         }
         issueCompletionRatesSetter.accept(this.issueCompletionRates);

@@ -90,12 +90,15 @@ public class UpdateAppAclResponse extends SdkResponse {
 
     
     public UpdateAppAclResponse addAppAclValuesItem(String appAclValuesItem) {
+        if(this.appAclValues == null) {
+            this.appAclValues = new ArrayList<>();
+        }
         this.appAclValues.add(appAclValuesItem);
         return this;
     }
 
     public UpdateAppAclResponse withAppAclValues(Consumer<List<String>> appAclValuesSetter) {
-        if(this.appAclValues == null ){
+        if(this.appAclValues == null) {
             this.appAclValues = new ArrayList<>();
         }
         appAclValuesSetter.accept(this.appAclValues);

@@ -35,12 +35,15 @@ public class ListTemplatesResponse extends SdkResponse {
 
     
     public ListTemplatesResponse addTemplatesItem(TemplateView templatesItem) {
+        if(this.templates == null) {
+            this.templates = new ArrayList<>();
+        }
         this.templates.add(templatesItem);
         return this;
     }
 
     public ListTemplatesResponse withTemplates(Consumer<List<TemplateView>> templatesSetter) {
-        if(this.templates == null ){
+        if(this.templates == null) {
             this.templates = new ArrayList<>();
         }
         templatesSetter.accept(this.templates);

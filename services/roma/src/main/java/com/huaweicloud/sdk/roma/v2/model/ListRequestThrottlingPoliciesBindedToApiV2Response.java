@@ -92,12 +92,15 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
 
     
     public ListRequestThrottlingPoliciesBindedToApiV2Response addThrottlesItem(ThrottleForApi throttlesItem) {
+        if(this.throttles == null) {
+            this.throttles = new ArrayList<>();
+        }
         this.throttles.add(throttlesItem);
         return this;
     }
 
     public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(Consumer<List<ThrottleForApi>> throttlesSetter) {
-        if(this.throttles == null ){
+        if(this.throttles == null) {
             this.throttles = new ArrayList<>();
         }
         throttlesSetter.accept(this.throttles);

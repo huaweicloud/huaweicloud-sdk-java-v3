@@ -92,12 +92,15 @@ public class ListSignatureKeysV2Response extends SdkResponse {
 
     
     public ListSignatureKeysV2Response addSignsItem(SignatureWithBindNum signsItem) {
+        if(this.signs == null) {
+            this.signs = new ArrayList<>();
+        }
         this.signs.add(signsItem);
         return this;
     }
 
     public ListSignatureKeysV2Response withSigns(Consumer<List<SignatureWithBindNum>> signsSetter) {
-        if(this.signs == null ){
+        if(this.signs == null) {
             this.signs = new ArrayList<>();
         }
         signsSetter.accept(this.signs);

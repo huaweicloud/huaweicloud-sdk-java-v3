@@ -41,12 +41,15 @@ public class ListDomainNotAddedProjectsV4Response extends SdkResponse {
 
     
     public ListDomainNotAddedProjectsV4Response addProjectsItem(ListDomainNotAddedProjectsV4ResponseBodyProjects projectsItem) {
+        if(this.projects == null) {
+            this.projects = new ArrayList<>();
+        }
         this.projects.add(projectsItem);
         return this;
     }
 
     public ListDomainNotAddedProjectsV4Response withProjects(Consumer<List<ListDomainNotAddedProjectsV4ResponseBodyProjects>> projectsSetter) {
-        if(this.projects == null ){
+        if(this.projects == null) {
             this.projects = new ArrayList<>();
         }
         projectsSetter.accept(this.projects);

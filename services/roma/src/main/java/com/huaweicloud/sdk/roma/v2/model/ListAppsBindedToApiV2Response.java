@@ -92,12 +92,15 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
 
     
     public ListAppsBindedToApiV2Response addAuthsItem(AppAuthBindedApiResp authsItem) {
+        if(this.auths == null) {
+            this.auths = new ArrayList<>();
+        }
         this.auths.add(authsItem);
         return this;
     }
 
     public ListAppsBindedToApiV2Response withAuths(Consumer<List<AppAuthBindedApiResp>> authsSetter) {
-        if(this.auths == null ){
+        if(this.auths == null) {
             this.auths = new ArrayList<>();
         }
         authsSetter.accept(this.auths);

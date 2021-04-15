@@ -119,12 +119,15 @@ public class ListStatisticsApiResponse extends SdkResponse {
 
     
     public ListStatisticsApiResponse addListItem(Statistics listItem) {
+        if(this.list == null) {
+            this.list = new ArrayList<>();
+        }
         this.list.add(listItem);
         return this;
     }
 
     public ListStatisticsApiResponse withList(Consumer<List<Statistics>> listSetter) {
-        if(this.list == null ){
+        if(this.list == null) {
             this.list = new ArrayList<>();
         }
         listSetter.accept(this.list);

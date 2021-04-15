@@ -435,12 +435,15 @@ public class VpcCreate  {
 
     
     public VpcCreate addMembersItem(MemberInfo membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public VpcCreate withMembers(Consumer<List<MemberInfo>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

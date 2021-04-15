@@ -373,12 +373,15 @@ public class ChangeComponentResponse extends SdkResponse {
 
     
     public ChangeComponentResponse addPipelineIdsItem(String pipelineIdsItem) {
+        if(this.pipelineIds == null) {
+            this.pipelineIds = new ArrayList<>();
+        }
         this.pipelineIds.add(pipelineIdsItem);
         return this;
     }
 
     public ChangeComponentResponse withPipelineIds(Consumer<List<String>> pipelineIdsSetter) {
-        if(this.pipelineIds == null ){
+        if(this.pipelineIds == null) {
             this.pipelineIds = new ArrayList<>();
         }
         pipelineIdsSetter.accept(this.pipelineIds);

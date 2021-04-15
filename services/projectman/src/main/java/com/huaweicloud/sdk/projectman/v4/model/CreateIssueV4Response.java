@@ -181,12 +181,15 @@ public class CreateIssueV4Response extends SdkResponse {
 
     
     public CreateIssueV4Response addAssignedCcUserItem(IssueUser assignedCcUserItem) {
+        if(this.assignedCcUser == null) {
+            this.assignedCcUser = new ArrayList<>();
+        }
         this.assignedCcUser.add(assignedCcUserItem);
         return this;
     }
 
     public CreateIssueV4Response withAssignedCcUser(Consumer<List<IssueUser>> assignedCcUserSetter) {
-        if(this.assignedCcUser == null ){
+        if(this.assignedCcUser == null) {
             this.assignedCcUser = new ArrayList<>();
         }
         assignedCcUserSetter.accept(this.assignedCcUser);
@@ -294,12 +297,15 @@ public class CreateIssueV4Response extends SdkResponse {
 
     
     public CreateIssueV4Response addCustomFieldsItem(CustomField customFieldsItem) {
+        if(this.customFields == null) {
+            this.customFields = new ArrayList<>();
+        }
         this.customFields.add(customFieldsItem);
         return this;
     }
 
     public CreateIssueV4Response withCustomFields(Consumer<List<CustomField>> customFieldsSetter) {
-        if(this.customFields == null ){
+        if(this.customFields == null) {
             this.customFields = new ArrayList<>();
         }
         customFieldsSetter.accept(this.customFields);

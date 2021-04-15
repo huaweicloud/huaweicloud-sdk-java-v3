@@ -92,12 +92,15 @@ public class ListAclStrategiesV2Response extends SdkResponse {
 
     
     public ListAclStrategiesV2Response addAclsItem(ApiAclInfoWithBindNum aclsItem) {
+        if(this.acls == null) {
+            this.acls = new ArrayList<>();
+        }
         this.acls.add(aclsItem);
         return this;
     }
 
     public ListAclStrategiesV2Response withAcls(Consumer<List<ApiAclInfoWithBindNum>> aclsSetter) {
-        if(this.acls == null ){
+        if(this.acls == null) {
             this.acls = new ArrayList<>();
         }
         aclsSetter.accept(this.acls);

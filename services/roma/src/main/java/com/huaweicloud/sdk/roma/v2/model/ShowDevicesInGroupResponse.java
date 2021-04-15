@@ -91,12 +91,15 @@ public class ShowDevicesInGroupResponse extends SdkResponse {
 
     
     public ShowDevicesInGroupResponse addItemsItem(DevicesInGroup itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ShowDevicesInGroupResponse withItems(Consumer<List<DevicesInGroup>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

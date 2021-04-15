@@ -61,12 +61,15 @@ public class BatchTagActionAddRequestBody  {
 
     
     public BatchTagActionAddRequestBody addTagsItem(TagWithKeyValue tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public BatchTagActionAddRequestBody withTags(Consumer<List<TagWithKeyValue>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

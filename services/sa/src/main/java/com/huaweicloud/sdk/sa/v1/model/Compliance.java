@@ -66,12 +66,15 @@ public class Compliance  {
 
     
     public Compliance addRelatedRequirementsItem(String relatedRequirementsItem) {
+        if(this.relatedRequirements == null) {
+            this.relatedRequirements = new ArrayList<>();
+        }
         this.relatedRequirements.add(relatedRequirementsItem);
         return this;
     }
 
     public Compliance withRelatedRequirements(Consumer<List<String>> relatedRequirementsSetter) {
-        if(this.relatedRequirements == null ){
+        if(this.relatedRequirements == null) {
             this.relatedRequirements = new ArrayList<>();
         }
         relatedRequirementsSetter.accept(this.relatedRequirements);
@@ -99,12 +102,15 @@ public class Compliance  {
 
     
     public Compliance addStatusReasonsItem(String statusReasonsItem) {
+        if(this.statusReasons == null) {
+            this.statusReasons = new ArrayList<>();
+        }
         this.statusReasons.add(statusReasonsItem);
         return this;
     }
 
     public Compliance withStatusReasons(Consumer<List<String>> statusReasonsSetter) {
-        if(this.statusReasons == null ){
+        if(this.statusReasons == null) {
             this.statusReasons = new ArrayList<>();
         }
         statusReasonsSetter.accept(this.statusReasons);

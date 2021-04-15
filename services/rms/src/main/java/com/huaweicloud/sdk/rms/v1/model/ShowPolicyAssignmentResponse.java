@@ -269,12 +269,15 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
     
 
     public ShowPolicyAssignmentResponse putParametersItem(String key, PolicyParameterValue parametersItem) {
+        if(this.parameters == null) {
+            this.parameters = new HashMap<>();
+        }
         this.parameters.put(key, parametersItem);
         return this;
     }
 
     public ShowPolicyAssignmentResponse withParameters(Consumer<Map<String, PolicyParameterValue>> parametersSetter) {
-        if(this.parameters == null ){
+        if(this.parameters == null) {
             this.parameters = new HashMap<>();
         }
         parametersSetter.accept(this.parameters);

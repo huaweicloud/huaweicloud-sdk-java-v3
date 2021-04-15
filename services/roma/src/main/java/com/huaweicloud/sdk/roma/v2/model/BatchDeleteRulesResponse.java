@@ -35,12 +35,15 @@ public class BatchDeleteRulesResponse extends SdkResponse {
 
     
     public BatchDeleteRulesResponse addResourcesItem(SingleResponse resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public BatchDeleteRulesResponse withResources(Consumer<List<SingleResponse>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

@@ -35,12 +35,15 @@ public class ListRegionsResponse extends SdkResponse {
 
     
     public ListRegionsResponse addValueItem(Region valueItem) {
+        if(this.value == null) {
+            this.value = new ArrayList<>();
+        }
         this.value.add(valueItem);
         return this;
     }
 
     public ListRegionsResponse withValue(Consumer<List<Region>> valueSetter) {
-        if(this.value == null ){
+        if(this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);

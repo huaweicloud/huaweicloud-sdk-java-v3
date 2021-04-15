@@ -590,12 +590,15 @@ public class LdApiInfo  {
 
     
     public LdApiInfo addParametersItem(LdApiParameter parametersItem) {
+        if(this.parameters == null) {
+            this.parameters = new ArrayList<>();
+        }
         this.parameters.add(parametersItem);
         return this;
     }
 
     public LdApiInfo withParameters(Consumer<List<LdApiParameter>> parametersSetter) {
-        if(this.parameters == null ){
+        if(this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         parametersSetter.accept(this.parameters);
@@ -755,12 +758,15 @@ public class LdApiInfo  {
 
     
     public LdApiInfo addScriptsItem(LdApiScript scriptsItem) {
+        if(this.scripts == null) {
+            this.scripts = new ArrayList<>();
+        }
         this.scripts.add(scriptsItem);
         return this;
     }
 
     public LdApiInfo withScripts(Consumer<List<LdApiScript>> scriptsSetter) {
-        if(this.scripts == null ){
+        if(this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);

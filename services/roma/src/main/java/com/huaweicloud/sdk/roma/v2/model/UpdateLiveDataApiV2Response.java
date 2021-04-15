@@ -592,12 +592,15 @@ public class UpdateLiveDataApiV2Response extends SdkResponse {
 
     
     public UpdateLiveDataApiV2Response addParametersItem(LdApiParameter parametersItem) {
+        if(this.parameters == null) {
+            this.parameters = new ArrayList<>();
+        }
         this.parameters.add(parametersItem);
         return this;
     }
 
     public UpdateLiveDataApiV2Response withParameters(Consumer<List<LdApiParameter>> parametersSetter) {
-        if(this.parameters == null ){
+        if(this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         parametersSetter.accept(this.parameters);
@@ -757,12 +760,15 @@ public class UpdateLiveDataApiV2Response extends SdkResponse {
 
     
     public UpdateLiveDataApiV2Response addScriptsItem(LdApiScript scriptsItem) {
+        if(this.scripts == null) {
+            this.scripts = new ArrayList<>();
+        }
         this.scripts.add(scriptsItem);
         return this;
     }
 
     public UpdateLiveDataApiV2Response withScripts(Consumer<List<LdApiScript>> scriptsSetter) {
-        if(this.scripts == null ){
+        if(this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);

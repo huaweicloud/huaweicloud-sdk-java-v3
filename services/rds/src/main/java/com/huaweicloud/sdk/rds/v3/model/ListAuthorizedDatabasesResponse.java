@@ -41,12 +41,15 @@ public class ListAuthorizedDatabasesResponse extends SdkResponse {
 
     
     public ListAuthorizedDatabasesResponse addDatabasesItem(DatabaseWithPrivilege databasesItem) {
+        if(this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
         this.databases.add(databasesItem);
         return this;
     }
 
     public ListAuthorizedDatabasesResponse withDatabases(Consumer<List<DatabaseWithPrivilege>> databasesSetter) {
-        if(this.databases == null ){
+        if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);

@@ -100,12 +100,15 @@ public class ListProductsRespIo  {
 
     
     public ListProductsRespIo addAvailableZonesItem(String availableZonesItem) {
+        if(this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
 
     public ListProductsRespIo withAvailableZones(Consumer<List<String>> availableZonesSetter) {
-        if(this.availableZones == null ){
+        if(this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         availableZonesSetter.accept(this.availableZones);
@@ -133,12 +136,15 @@ public class ListProductsRespIo  {
 
     
     public ListProductsRespIo addUnavailableZonesItem(String unavailableZonesItem) {
+        if(this.unavailableZones == null) {
+            this.unavailableZones = new ArrayList<>();
+        }
         this.unavailableZones.add(unavailableZonesItem);
         return this;
     }
 
     public ListProductsRespIo withUnavailableZones(Consumer<List<String>> unavailableZonesSetter) {
-        if(this.unavailableZones == null ){
+        if(this.unavailableZones == null) {
             this.unavailableZones = new ArrayList<>();
         }
         unavailableZonesSetter.accept(this.unavailableZones);

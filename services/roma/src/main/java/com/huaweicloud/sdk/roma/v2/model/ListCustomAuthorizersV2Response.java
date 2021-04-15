@@ -92,12 +92,15 @@ public class ListCustomAuthorizersV2Response extends SdkResponse {
 
     
     public ListCustomAuthorizersV2Response addAuthorizerListItem(AuthorizerResp authorizerListItem) {
+        if(this.authorizerList == null) {
+            this.authorizerList = new ArrayList<>();
+        }
         this.authorizerList.add(authorizerListItem);
         return this;
     }
 
     public ListCustomAuthorizersV2Response withAuthorizerList(Consumer<List<AuthorizerResp>> authorizerListSetter) {
-        if(this.authorizerList == null ){
+        if(this.authorizerList == null) {
             this.authorizerList = new ArrayList<>();
         }
         authorizerListSetter.accept(this.authorizerList);

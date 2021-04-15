@@ -319,12 +319,15 @@ public class ShowConfigurationResponse extends SdkResponse {
 
     
     public ShowConfigurationResponse addConfigurationParametersItem(ConfigurationParameter configurationParametersItem) {
+        if(this.configurationParameters == null) {
+            this.configurationParameters = new ArrayList<>();
+        }
         this.configurationParameters.add(configurationParametersItem);
         return this;
     }
 
     public ShowConfigurationResponse withConfigurationParameters(Consumer<List<ConfigurationParameter>> configurationParametersSetter) {
-        if(this.configurationParameters == null ){
+        if(this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
         configurationParametersSetter.accept(this.configurationParameters);

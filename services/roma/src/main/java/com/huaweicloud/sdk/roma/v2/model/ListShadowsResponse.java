@@ -35,12 +35,15 @@ public class ListShadowsResponse extends SdkResponse {
 
     
     public ListShadowsResponse addBodyItem(ShadowService bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ListShadowsResponse withBody(Consumer<List<ShadowService>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

@@ -63,12 +63,15 @@ public class ListProjectIterationsV4Response extends SdkResponse {
 
     
     public ListProjectIterationsV4Response addIterationsItem(ListProjectVersionsV4ResponseBodyIterations iterationsItem) {
+        if(this.iterations == null) {
+            this.iterations = new ArrayList<>();
+        }
         this.iterations.add(iterationsItem);
         return this;
     }
 
     public ListProjectIterationsV4Response withIterations(Consumer<List<ListProjectVersionsV4ResponseBodyIterations>> iterationsSetter) {
-        if(this.iterations == null ){
+        if(this.iterations == null) {
             this.iterations = new ArrayList<>();
         }
         iterationsSetter.accept(this.iterations);

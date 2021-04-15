@@ -91,12 +91,15 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addAppIdsItem(String appIdsItem) {
+        if(this.appIds == null) {
+            this.appIds = new ArrayList<>();
+        }
         this.appIds.add(appIdsItem);
         return this;
     }
 
     public ApiAuthCreate withAppIds(Consumer<List<String>> appIdsSetter) {
-        if(this.appIds == null ){
+        if(this.appIds == null) {
             this.appIds = new ArrayList<>();
         }
         appIdsSetter.accept(this.appIds);
@@ -124,12 +127,15 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addApiIdsItem(String apiIdsItem) {
+        if(this.apiIds == null) {
+            this.apiIds = new ArrayList<>();
+        }
         this.apiIds.add(apiIdsItem);
         return this;
     }
 
     public ApiAuthCreate withApiIds(Consumer<List<String>> apiIdsSetter) {
-        if(this.apiIds == null ){
+        if(this.apiIds == null) {
             this.apiIds = new ArrayList<>();
         }
         apiIdsSetter.accept(this.apiIds);
@@ -179,12 +185,15 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addAuthWhitelistItem(String authWhitelistItem) {
+        if(this.authWhitelist == null) {
+            this.authWhitelist = new ArrayList<>();
+        }
         this.authWhitelist.add(authWhitelistItem);
         return this;
     }
 
     public ApiAuthCreate withAuthWhitelist(Consumer<List<String>> authWhitelistSetter) {
-        if(this.authWhitelist == null ){
+        if(this.authWhitelist == null) {
             this.authWhitelist = new ArrayList<>();
         }
         authWhitelistSetter.accept(this.authWhitelist);
@@ -212,12 +221,15 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addAuthBlacklistItem(String authBlacklistItem) {
+        if(this.authBlacklist == null) {
+            this.authBlacklist = new ArrayList<>();
+        }
         this.authBlacklist.add(authBlacklistItem);
         return this;
     }
 
     public ApiAuthCreate withAuthBlacklist(Consumer<List<String>> authBlacklistSetter) {
-        if(this.authBlacklist == null ){
+        if(this.authBlacklist == null) {
             this.authBlacklist = new ArrayList<>();
         }
         authBlacklistSetter.accept(this.authBlacklist);
@@ -245,12 +257,15 @@ public class ApiAuthCreate  {
 
     
     public ApiAuthCreate addVisitParamsItem(ApiAuthVisitParam visitParamsItem) {
+        if(this.visitParams == null) {
+            this.visitParams = new ArrayList<>();
+        }
         this.visitParams.add(visitParamsItem);
         return this;
     }
 
     public ApiAuthCreate withVisitParams(Consumer<List<ApiAuthVisitParam>> visitParamsSetter) {
-        if(this.visitParams == null ){
+        if(this.visitParams == null) {
             this.visitParams = new ArrayList<>();
         }
         visitParamsSetter.accept(this.visitParams);

@@ -901,12 +901,15 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addDisksItem(Disk disksItem) {
+        if(this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }
 
     public ShowServerResponse withDisks(Consumer<List<Disk>> disksSetter) {
-        if(this.disks == null ){
+        if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
@@ -934,12 +937,15 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
+        if(this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
         this.volumeGroups.add(volumeGroupsItem);
         return this;
     }
 
     public ShowServerResponse withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null ){
+        if(this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);
@@ -967,12 +973,15 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
+        if(this.btrfsList == null) {
+            this.btrfsList = new ArrayList<>();
+        }
         this.btrfsList.add(btrfsListItem);
         return this;
     }
 
     public ShowServerResponse withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null ){
+        if(this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);
@@ -1000,12 +1009,15 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addNetworksItem(NetWork networksItem) {
+        if(this.networks == null) {
+            this.networks = new ArrayList<>();
+        }
         this.networks.add(networksItem);
         return this;
     }
 
     public ShowServerResponse withNetworks(Consumer<List<NetWork>> networksSetter) {
-        if(this.networks == null ){
+        if(this.networks == null) {
             this.networks = new ArrayList<>();
         }
         networksSetter.accept(this.networks);
@@ -1033,12 +1045,15 @@ public class ShowServerResponse extends SdkResponse {
 
     
     public ShowServerResponse addChecksItem(EnvironmentCheck checksItem) {
+        if(this.checks == null) {
+            this.checks = new ArrayList<>();
+        }
         this.checks.add(checksItem);
         return this;
     }
 
     public ShowServerResponse withChecks(Consumer<List<EnvironmentCheck>> checksSetter) {
-        if(this.checks == null ){
+        if(this.checks == null) {
             this.checks = new ArrayList<>();
         }
         checksSetter.accept(this.checks);

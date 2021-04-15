@@ -45,12 +45,15 @@ public class EnvironmentResourceModify  {
 
     
     public EnvironmentResourceModify addAddBaseResourcesItem(Resource addBaseResourcesItem) {
+        if(this.addBaseResources == null) {
+            this.addBaseResources = new ArrayList<>();
+        }
         this.addBaseResources.add(addBaseResourcesItem);
         return this;
     }
 
     public EnvironmentResourceModify withAddBaseResources(Consumer<List<Resource>> addBaseResourcesSetter) {
-        if(this.addBaseResources == null ){
+        if(this.addBaseResources == null) {
             this.addBaseResources = new ArrayList<>();
         }
         addBaseResourcesSetter.accept(this.addBaseResources);
@@ -78,12 +81,15 @@ public class EnvironmentResourceModify  {
 
     
     public EnvironmentResourceModify addAddOptionalResourcesItem(Resource addOptionalResourcesItem) {
+        if(this.addOptionalResources == null) {
+            this.addOptionalResources = new ArrayList<>();
+        }
         this.addOptionalResources.add(addOptionalResourcesItem);
         return this;
     }
 
     public EnvironmentResourceModify withAddOptionalResources(Consumer<List<Resource>> addOptionalResourcesSetter) {
-        if(this.addOptionalResources == null ){
+        if(this.addOptionalResources == null) {
             this.addOptionalResources = new ArrayList<>();
         }
         addOptionalResourcesSetter.accept(this.addOptionalResources);
@@ -111,12 +117,15 @@ public class EnvironmentResourceModify  {
 
     
     public EnvironmentResourceModify addRemoveResourcesItem(Resource removeResourcesItem) {
+        if(this.removeResources == null) {
+            this.removeResources = new ArrayList<>();
+        }
         this.removeResources.add(removeResourcesItem);
         return this;
     }
 
     public EnvironmentResourceModify withRemoveResources(Consumer<List<Resource>> removeResourcesSetter) {
-        if(this.removeResources == null ){
+        if(this.removeResources == null) {
             this.removeResources = new ArrayList<>();
         }
         removeResourcesSetter.accept(this.removeResources);

@@ -61,12 +61,15 @@ public class CreateRetentionRequestBody  {
 
     
     public CreateRetentionRequestBody addRulesItem(Rule rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public CreateRetentionRequestBody withRules(Consumer<List<Rule>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

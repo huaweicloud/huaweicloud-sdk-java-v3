@@ -168,6 +168,12 @@ public class IssueResponseV4  {
     
     private String updatedTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="closed_time")
+    
+    private String closedTime;
+
     public IssueResponseV4 withActualWorkHours(Double actualWorkHours) {
         this.actualWorkHours = actualWorkHours;
         return this;
@@ -197,12 +203,15 @@ public class IssueResponseV4  {
 
     
     public IssueResponseV4 addAssignedCcUserItem(IssueUser assignedCcUserItem) {
+        if(this.assignedCcUser == null) {
+            this.assignedCcUser = new ArrayList<>();
+        }
         this.assignedCcUser.add(assignedCcUserItem);
         return this;
     }
 
     public IssueResponseV4 withAssignedCcUser(Consumer<List<IssueUser>> assignedCcUserSetter) {
-        if(this.assignedCcUser == null ){
+        if(this.assignedCcUser == null) {
             this.assignedCcUser = new ArrayList<>();
         }
         assignedCcUserSetter.accept(this.assignedCcUser);
@@ -332,12 +341,15 @@ public class IssueResponseV4  {
 
     
     public IssueResponseV4 addCustomFieldsItem(CustomField customFieldsItem) {
+        if(this.customFields == null) {
+            this.customFields = new ArrayList<>();
+        }
         this.customFields.add(customFieldsItem);
         return this;
     }
 
     public IssueResponseV4 withCustomFields(Consumer<List<CustomField>> customFieldsSetter) {
-        if(this.customFields == null ){
+        if(this.customFields == null) {
             this.customFields = new ArrayList<>();
         }
         customFieldsSetter.accept(this.customFields);
@@ -780,6 +792,28 @@ public class IssueResponseV4  {
 
     
 
+    public IssueResponseV4 withClosedTime(String closedTime) {
+        this.closedTime = closedTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 关闭时间 年-月-日 时:分:秒
+     * @return closedTime
+     */
+    public String getClosedTime() {
+        return closedTime;
+    }
+
+    public void setClosedTime(String closedTime) {
+        this.closedTime = closedTime;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -811,11 +845,12 @@ public class IssueResponseV4  {
             Objects.equals(this.severity, issueResponseV4.severity) &&
             Objects.equals(this.status, issueResponseV4.status) &&
             Objects.equals(this.tracker, issueResponseV4.tracker) &&
-            Objects.equals(this.updatedTime, issueResponseV4.updatedTime);
+            Objects.equals(this.updatedTime, issueResponseV4.updatedTime) &&
+            Objects.equals(this.closedTime, issueResponseV4.closedTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, name, parentIssue, priority, severity, status, tracker, updatedTime);
+        return Objects.hash(actualWorkHours, assignedCcUser, assignedUser, beginTime, createdTime, creator, customFields, developer, domain, doneRatio, endTime, expectedWorkHours, id, project, iteration, module, name, parentIssue, priority, severity, status, tracker, updatedTime, closedTime);
     }
     @Override
     public String toString() {
@@ -844,6 +879,7 @@ public class IssueResponseV4  {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tracker: ").append(toIndentedString(tracker)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    closedTime: ").append(toIndentedString(closedTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

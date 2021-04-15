@@ -123,12 +123,15 @@ public class ShowIterationV4Response extends SdkResponse {
 
     
     public ShowIterationV4Response addChartsItem(Chart chartsItem) {
+        if(this.charts == null) {
+            this.charts = new ArrayList<>();
+        }
         this.charts.add(chartsItem);
         return this;
     }
 
     public ShowIterationV4Response withCharts(Consumer<List<Chart>> chartsSetter) {
-        if(this.charts == null ){
+        if(this.charts == null) {
             this.charts = new ArrayList<>();
         }
         chartsSetter.accept(this.charts);

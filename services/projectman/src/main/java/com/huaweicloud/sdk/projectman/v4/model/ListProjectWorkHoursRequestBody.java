@@ -74,12 +74,15 @@ public class ListProjectWorkHoursRequestBody  {
 
     
     public ListProjectWorkHoursRequestBody addProjectIdsItem(String projectIdsItem) {
+        if(this.projectIds == null) {
+            this.projectIds = new ArrayList<>();
+        }
         this.projectIds.add(projectIdsItem);
         return this;
     }
 
     public ListProjectWorkHoursRequestBody withProjectIds(Consumer<List<String>> projectIdsSetter) {
-        if(this.projectIds == null ){
+        if(this.projectIds == null) {
             this.projectIds = new ArrayList<>();
         }
         projectIdsSetter.accept(this.projectIds);
@@ -107,12 +110,15 @@ public class ListProjectWorkHoursRequestBody  {
 
     
     public ListProjectWorkHoursRequestBody addUserIdsItem(String userIdsItem) {
+        if(this.userIds == null) {
+            this.userIds = new ArrayList<>();
+        }
         this.userIds.add(userIdsItem);
         return this;
     }
 
     public ListProjectWorkHoursRequestBody withUserIds(Consumer<List<String>> userIdsSetter) {
-        if(this.userIds == null ){
+        if(this.userIds == null) {
             this.userIds = new ArrayList<>();
         }
         userIdsSetter.accept(this.userIds);

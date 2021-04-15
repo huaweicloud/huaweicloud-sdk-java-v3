@@ -42,12 +42,15 @@ public class ListStorageTypesResponse extends SdkResponse {
 
     
     public ListStorageTypesResponse addStorageTypeItem(Storage storageTypeItem) {
+        if(this.storageType == null) {
+            this.storageType = new ArrayList<>();
+        }
         this.storageType.add(storageTypeItem);
         return this;
     }
 
     public ListStorageTypesResponse withStorageType(Consumer<List<Storage>> storageTypeSetter) {
-        if(this.storageType == null ){
+        if(this.storageType == null) {
             this.storageType = new ArrayList<>();
         }
         storageTypeSetter.accept(this.storageType);
@@ -75,12 +78,15 @@ public class ListStorageTypesResponse extends SdkResponse {
 
     
     public ListStorageTypesResponse addDsspoolInfoItem(DssPoolInfo dsspoolInfoItem) {
+        if(this.dsspoolInfo == null) {
+            this.dsspoolInfo = new ArrayList<>();
+        }
         this.dsspoolInfo.add(dsspoolInfoItem);
         return this;
     }
 
     public ListStorageTypesResponse withDsspoolInfo(Consumer<List<DssPoolInfo>> dsspoolInfoSetter) {
-        if(this.dsspoolInfo == null ){
+        if(this.dsspoolInfo == null) {
             this.dsspoolInfo = new ArrayList<>();
         }
         dsspoolInfoSetter.accept(this.dsspoolInfo);

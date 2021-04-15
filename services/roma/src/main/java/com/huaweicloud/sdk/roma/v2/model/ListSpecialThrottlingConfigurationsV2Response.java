@@ -92,12 +92,15 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
 
     
     public ListSpecialThrottlingConfigurationsV2Response addThrottleSpecialsItem(ThrottleSpecialResp throttleSpecialsItem) {
+        if(this.throttleSpecials == null) {
+            this.throttleSpecials = new ArrayList<>();
+        }
         this.throttleSpecials.add(throttleSpecialsItem);
         return this;
     }
 
     public ListSpecialThrottlingConfigurationsV2Response withThrottleSpecials(Consumer<List<ThrottleSpecialResp>> throttleSpecialsSetter) {
-        if(this.throttleSpecials == null ){
+        if(this.throttleSpecials == null) {
             this.throttleSpecials = new ArrayList<>();
         }
         throttleSpecialsSetter.accept(this.throttleSpecials);

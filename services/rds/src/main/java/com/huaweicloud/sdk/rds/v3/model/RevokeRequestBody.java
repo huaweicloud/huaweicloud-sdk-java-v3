@@ -61,12 +61,15 @@ public class RevokeRequestBody  {
 
     
     public RevokeRequestBody addUsersItem(RevokeRequestBodyUsers usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public RevokeRequestBody withUsers(Consumer<List<RevokeRequestBodyUsers>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

@@ -41,12 +41,15 @@ public class ListProjectsV4Response extends SdkResponse {
 
     
     public ListProjectsV4Response addProjectsItem(ListProjectsV4ResponseBodyProjects projectsItem) {
+        if(this.projects == null) {
+            this.projects = new ArrayList<>();
+        }
         this.projects.add(projectsItem);
         return this;
     }
 
     public ListProjectsV4Response withProjects(Consumer<List<ListProjectsV4ResponseBodyProjects>> projectsSetter) {
-        if(this.projects == null ){
+        if(this.projects == null) {
             this.projects = new ArrayList<>();
         }
         projectsSetter.accept(this.projects);

@@ -740,12 +740,15 @@ public class TaskMonitorLog  {
 
     
     public TaskMonitorLog addDetailLogsItem(TaskMonitorDetailLog detailLogsItem) {
+        if(this.detailLogs == null) {
+            this.detailLogs = new ArrayList<>();
+        }
         this.detailLogs.add(detailLogsItem);
         return this;
     }
 
     public TaskMonitorLog withDetailLogs(Consumer<List<TaskMonitorDetailLog>> detailLogsSetter) {
-        if(this.detailLogs == null ){
+        if(this.detailLogs == null) {
             this.detailLogs = new ArrayList<>();
         }
         detailLogsSetter.accept(this.detailLogs);

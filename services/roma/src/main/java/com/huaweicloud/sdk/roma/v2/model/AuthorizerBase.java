@@ -331,12 +331,15 @@ public class AuthorizerBase  {
 
     
     public AuthorizerBase addIdentitiesItem(Identity identitiesItem) {
+        if(this.identities == null) {
+            this.identities = new ArrayList<>();
+        }
         this.identities.add(identitiesItem);
         return this;
     }
 
     public AuthorizerBase withIdentities(Consumer<List<Identity>> identitiesSetter) {
-        if(this.identities == null ){
+        if(this.identities == null) {
             this.identities = new ArrayList<>();
         }
         identitiesSetter.accept(this.identities);

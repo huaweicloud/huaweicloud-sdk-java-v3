@@ -61,12 +61,15 @@ public class UpdateTopicAccessPolicyTopicsObject  {
 
     
     public UpdateTopicAccessPolicyTopicsObject addPoliciesItem(UpdateTopicAccessPolicyPoliciesObject policiesItem) {
+        if(this.policies == null) {
+            this.policies = new ArrayList<>();
+        }
         this.policies.add(policiesItem);
         return this;
     }
 
     public UpdateTopicAccessPolicyTopicsObject withPolicies(Consumer<List<UpdateTopicAccessPolicyPoliciesObject>> policiesSetter) {
-        if(this.policies == null ){
+        if(this.policies == null) {
             this.policies = new ArrayList<>();
         }
         policiesSetter.accept(this.policies);

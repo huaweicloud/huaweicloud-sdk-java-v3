@@ -99,12 +99,15 @@ public class ShowJobDetailResponse extends SdkResponse {
 
     
     public ShowJobDetailResponse addTasksItem(TaskInfo tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ShowJobDetailResponse withTasks(Consumer<List<TaskInfo>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

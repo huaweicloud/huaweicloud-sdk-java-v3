@@ -77,12 +77,15 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
 
     
     public ImportApiDefinitionsV2Response addFailureItem(SwaggerFailureResp failureItem) {
+        if(this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
         this.failure.add(failureItem);
         return this;
     }
 
     public ImportApiDefinitionsV2Response withFailure(Consumer<List<SwaggerFailureResp>> failureSetter) {
-        if(this.failure == null ){
+        if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);
@@ -110,12 +113,15 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
 
     
     public ImportApiDefinitionsV2Response addSuccessItem(SwaggerSuccessResp successItem) {
+        if(this.success == null) {
+            this.success = new ArrayList<>();
+        }
         this.success.add(successItem);
         return this;
     }
 
     public ImportApiDefinitionsV2Response withSuccess(Consumer<List<SwaggerSuccessResp>> successSetter) {
-        if(this.success == null ){
+        if(this.success == null) {
             this.success = new ArrayList<>();
         }
         successSetter.accept(this.success);

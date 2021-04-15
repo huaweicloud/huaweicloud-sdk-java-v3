@@ -180,12 +180,15 @@ public class InstanceCreate  {
     
 
     public InstanceCreate putArtifactsItem(String key, Object artifactsItem) {
+        if(this.artifacts == null) {
+            this.artifacts = new HashMap<>();
+        }
         this.artifacts.put(key, artifactsItem);
         return this;
     }
 
     public InstanceCreate withArtifacts(Consumer<Map<String, Object>> artifactsSetter) {
-        if(this.artifacts == null ){
+        if(this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         artifactsSetter.accept(this.artifacts);
@@ -278,12 +281,15 @@ public class InstanceCreate  {
 
     
     public InstanceCreate addExternalAccessesItem(ExternalAccessesCreate externalAccessesItem) {
+        if(this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
 
     public InstanceCreate withExternalAccesses(Consumer<List<ExternalAccessesCreate>> externalAccessesSetter) {
-        if(this.externalAccesses == null ){
+        if(this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         externalAccessesSetter.accept(this.externalAccesses);
@@ -311,12 +317,15 @@ public class InstanceCreate  {
 
     
     public InstanceCreate addReferResourcesItem(ReferResourceCreate referResourcesItem) {
+        if(this.referResources == null) {
+            this.referResources = new ArrayList<>();
+        }
         this.referResources.add(referResourcesItem);
         return this;
     }
 
     public InstanceCreate withReferResources(Consumer<List<ReferResourceCreate>> referResourcesSetter) {
-        if(this.referResources == null ){
+        if(this.referResources == null) {
             this.referResources = new ArrayList<>();
         }
         referResourcesSetter.accept(this.referResources);

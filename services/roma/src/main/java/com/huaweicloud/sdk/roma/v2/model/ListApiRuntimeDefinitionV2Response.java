@@ -1134,12 +1134,15 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     
     public ListApiRuntimeDefinitionV2Response addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListApiRuntimeDefinitionV2Response withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1387,12 +1390,15 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     
     public ListApiRuntimeDefinitionV2Response addSlDomainsItem(String slDomainsItem) {
+        if(this.slDomains == null) {
+            this.slDomains = new ArrayList<>();
+        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
 
     public ListApiRuntimeDefinitionV2Response withSlDomains(Consumer<List<String>> slDomainsSetter) {
-        if(this.slDomains == null ){
+        if(this.slDomains == null) {
             this.slDomains = new ArrayList<>();
         }
         slDomainsSetter.accept(this.slDomains);
@@ -1420,12 +1426,15 @@ public class ListApiRuntimeDefinitionV2Response extends SdkResponse {
 
     
     public ListApiRuntimeDefinitionV2Response addReqParamsItem(ReqParam reqParamsItem) {
+        if(this.reqParams == null) {
+            this.reqParams = new ArrayList<>();
+        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
 
     public ListApiRuntimeDefinitionV2Response withReqParams(Consumer<List<ReqParam>> reqParamsSetter) {
-        if(this.reqParams == null ){
+        if(this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         reqParamsSetter.accept(this.reqParams);

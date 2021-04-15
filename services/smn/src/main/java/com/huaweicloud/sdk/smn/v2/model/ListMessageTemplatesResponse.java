@@ -91,12 +91,15 @@ public class ListMessageTemplatesResponse extends SdkResponse {
 
     
     public ListMessageTemplatesResponse addMessageTemplatesItem(MessageTemplate messageTemplatesItem) {
+        if(this.messageTemplates == null) {
+            this.messageTemplates = new ArrayList<>();
+        }
         this.messageTemplates.add(messageTemplatesItem);
         return this;
     }
 
     public ListMessageTemplatesResponse withMessageTemplates(Consumer<List<MessageTemplate>> messageTemplatesSetter) {
-        if(this.messageTemplates == null ){
+        if(this.messageTemplates == null) {
             this.messageTemplates = new ArrayList<>();
         }
         messageTemplatesSetter.accept(this.messageTemplates);

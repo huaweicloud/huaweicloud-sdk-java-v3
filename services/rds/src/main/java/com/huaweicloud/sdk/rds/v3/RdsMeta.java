@@ -52,7 +52,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -94,7 +93,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -140,7 +138,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -182,7 +179,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -228,7 +224,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -272,7 +267,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -306,7 +300,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -352,7 +345,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -386,7 +378,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -424,7 +415,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -458,7 +448,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -496,7 +485,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -532,7 +520,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -566,7 +553,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -612,7 +598,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -654,7 +639,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -722,7 +706,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -808,7 +791,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -836,7 +818,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -862,7 +843,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -898,7 +878,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -976,7 +955,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1026,7 +1004,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1128,7 +1105,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1162,7 +1138,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1214,7 +1189,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1300,7 +1274,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1326,7 +1299,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1372,7 +1344,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1398,7 +1369,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1442,7 +1412,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1520,7 +1489,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1596,7 +1564,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1648,7 +1615,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1690,7 +1656,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1736,7 +1701,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1780,7 +1744,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1814,7 +1777,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1860,7 +1822,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1902,7 +1863,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1948,7 +1908,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1990,7 +1949,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2036,7 +1994,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2070,7 +2027,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2108,7 +2064,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2142,7 +2097,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2180,7 +2134,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2214,7 +2167,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2252,7 +2204,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2286,7 +2237,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2332,7 +2282,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2374,7 +2323,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2420,7 +2368,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2454,7 +2401,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2500,7 +2446,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2542,7 +2487,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2588,7 +2532,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2630,7 +2573,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2676,7 +2618,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2718,7 +2659,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2764,7 +2704,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2806,7 +2745,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2852,7 +2790,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2894,7 +2831,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2940,7 +2876,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2984,7 +2919,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3026,7 +2960,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -3088,7 +3021,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3148,7 +3080,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3198,7 +3129,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -3252,7 +3182,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3294,7 +3223,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -3340,7 +3268,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3382,7 +3309,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -3428,7 +3354,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3472,7 +3397,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3514,7 +3438,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -3576,7 +3499,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3626,7 +3548,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -3680,7 +3601,6 @@ public class RdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -3722,7 +3642,6 @@ public class RdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -3767,6 +3686,424 @@ public class RdsMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse> allowSqlserverDbUserPrivilege = genForallowSqlserverDbUserPrivilege();
+
+    private static HttpRequestDef<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse> genForallowSqlserverDbUserPrivilege() {
+        // basic
+        HttpRequestDef.Builder<AllowSqlserverDbUserPrivilegeRequest, AllowSqlserverDbUserPrivilegeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AllowSqlserverDbUserPrivilegeRequest.class, AllowSqlserverDbUserPrivilegeResponse.class)
+                .withName("AllowSqlserverDbUserPrivilege")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_privilege")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AllowSqlserverDbUserPrivilegeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AllowSqlserverDbUserPrivilegeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SqlserverGrantRequest.class,
+            f -> f.withMarshaller(AllowSqlserverDbUserPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> createSqlserverDatabase = genForcreateSqlserverDatabase();
+
+    private static HttpRequestDef<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> genForcreateSqlserverDatabase() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSqlserverDatabaseRequest.class, CreateSqlserverDatabaseResponse.class)
+                .withName("CreateSqlserverDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateSqlserverDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSqlserverDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SqlserverDatabaseForCreation.class,
+            f -> f.withMarshaller(CreateSqlserverDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> createSqlserverDbUser = genForcreateSqlserverDbUser();
+
+    private static HttpRequestDef<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> genForcreateSqlserverDbUser() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSqlserverDbUserRequest.class, CreateSqlserverDbUserResponse.class)
+                .withName("CreateSqlserverDbUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_user")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateSqlserverDbUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSqlserverDbUserRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SqlserverUserForCreation.class,
+            f -> f.withMarshaller(CreateSqlserverDbUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse> deleteSqlserverDatabase = genFordeleteSqlserverDatabase();
+
+    private static HttpRequestDef<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse> genFordeleteSqlserverDatabase() {
+        // basic
+        HttpRequestDef.Builder<DeleteSqlserverDatabaseRequest, DeleteSqlserverDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSqlserverDatabaseRequest.class, DeleteSqlserverDatabaseResponse.class)
+                .withName("DeleteSqlserverDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/{db_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSqlserverDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSqlserverDatabaseRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSqlserverDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse> deleteSqlserverDbUser = genFordeleteSqlserverDbUser();
+
+    private static HttpRequestDef<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse> genFordeleteSqlserverDbUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteSqlserverDbUserRequest, DeleteSqlserverDbUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSqlserverDbUserRequest.class, DeleteSqlserverDbUserResponse.class)
+                .withName("DeleteSqlserverDbUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSqlserverDbUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSqlserverDbUserRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSqlserverDbUserRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsers = genForlistAuthorizedSqlserverDbUsers();
+
+    private static HttpRequestDef<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> genForlistAuthorizedSqlserverDbUsers() {
+        // basic
+        HttpRequestDef.Builder<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAuthorizedSqlserverDbUsersRequest.class, ListAuthorizedSqlserverDbUsersResponse.class)
+                .withName("ListAuthorizedSqlserverDbUsers")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/db_user")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedSqlserverDbUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("db-name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedSqlserverDbUsersRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListAuthorizedSqlserverDbUsersRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListAuthorizedSqlserverDbUsersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedSqlserverDbUsersRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> listSqlserverDatabases = genForlistSqlserverDatabases();
+
+    private static HttpRequestDef<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> genForlistSqlserverDatabases() {
+        // basic
+        HttpRequestDef.Builder<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSqlserverDatabasesRequest.class, ListSqlserverDatabasesResponse.class)
+                .withName("ListSqlserverDatabases")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSqlserverDatabasesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListSqlserverDatabasesRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListSqlserverDatabasesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSqlserverDatabasesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse> listSqlserverDbUsers = genForlistSqlserverDbUsers();
+
+    private static HttpRequestDef<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse> genForlistSqlserverDbUsers() {
+        // basic
+        HttpRequestDef.Builder<ListSqlserverDbUsersRequest, ListSqlserverDbUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSqlserverDbUsersRequest.class, ListSqlserverDbUsersResponse.class)
+                .withName("ListSqlserverDbUsers")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_user/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSqlserverDbUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListSqlserverDbUsersRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListSqlserverDbUsersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSqlserverDbUsersRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> revokeSqlserverDbUserPrivilege = genForrevokeSqlserverDbUserPrivilege();
+
+    private static HttpRequestDef<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> genForrevokeSqlserverDbUserPrivilege() {
+        // basic
+        HttpRequestDef.Builder<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RevokeSqlserverDbUserPrivilegeRequest.class, RevokeSqlserverDbUserPrivilegeResponse.class)
+                .withName("RevokeSqlserverDbUserPrivilege")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_privilege")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RevokeSqlserverDbUserPrivilegeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RevokeSqlserverDbUserPrivilegeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SqlserverRevokeRequest.class,
+            f -> f.withMarshaller(RevokeSqlserverDbUserPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();

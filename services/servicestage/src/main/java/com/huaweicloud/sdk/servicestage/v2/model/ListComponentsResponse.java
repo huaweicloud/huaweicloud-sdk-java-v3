@@ -63,12 +63,15 @@ public class ListComponentsResponse extends SdkResponse {
 
     
     public ListComponentsResponse addComponentsItem(ComponentView componentsItem) {
+        if(this.components == null) {
+            this.components = new ArrayList<>();
+        }
         this.components.add(componentsItem);
         return this;
     }
 
     public ListComponentsResponse withComponents(Consumer<List<ComponentView>> componentsSetter) {
-        if(this.components == null ){
+        if(this.components == null) {
             this.components = new ArrayList<>();
         }
         componentsSetter.accept(this.components);

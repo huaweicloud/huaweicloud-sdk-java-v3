@@ -258,12 +258,15 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     
 
     public ShowInstanceDetailResponse putArtifactsItem(String key, Object artifactsItem) {
+        if(this.artifacts == null) {
+            this.artifacts = new HashMap<>();
+        }
         this.artifacts.put(key, artifactsItem);
         return this;
     }
 
     public ShowInstanceDetailResponse withArtifacts(Consumer<Map<String, Object>> artifactsSetter) {
-        if(this.artifacts == null ){
+        if(this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         artifactsSetter.accept(this.artifacts);
@@ -400,12 +403,15 @@ public class ShowInstanceDetailResponse extends SdkResponse {
 
     
     public ShowInstanceDetailResponse addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
+        if(this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
         this.externalAccesses.add(externalAccessesItem);
         return this;
     }
 
     public ShowInstanceDetailResponse withExternalAccesses(Consumer<List<ExternalAccesses>> externalAccessesSetter) {
-        if(this.externalAccesses == null ){
+        if(this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         externalAccessesSetter.accept(this.externalAccesses);
@@ -433,12 +439,15 @@ public class ShowInstanceDetailResponse extends SdkResponse {
 
     
     public ShowInstanceDetailResponse addReferResourcesItem(ReferResources referResourcesItem) {
+        if(this.referResources == null) {
+            this.referResources = new ArrayList<>();
+        }
         this.referResources.add(referResourcesItem);
         return this;
     }
 
     public ShowInstanceDetailResponse withReferResources(Consumer<List<ReferResources>> referResourcesSetter) {
-        if(this.referResources == null ){
+        if(this.referResources == null) {
             this.referResources = new ArrayList<>();
         }
         referResourcesSetter.accept(this.referResources);
