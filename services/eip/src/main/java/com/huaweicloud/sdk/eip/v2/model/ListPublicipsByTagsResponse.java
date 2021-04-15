@@ -41,12 +41,15 @@ public class ListPublicipsByTagsResponse extends SdkResponse {
 
     
     public ListPublicipsByTagsResponse addResourcesItem(ListResourceResp resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListPublicipsByTagsResponse withResources(Consumer<List<ListResourceResp>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

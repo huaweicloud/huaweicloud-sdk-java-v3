@@ -521,12 +521,15 @@ public class HealthmonitorResp  {
 
     
     public HealthmonitorResp addPoolsItem(ResourceList poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public HealthmonitorResp withPools(Consumer<List<ResourceList>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);

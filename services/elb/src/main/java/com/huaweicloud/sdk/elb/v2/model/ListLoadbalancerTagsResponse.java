@@ -35,12 +35,15 @@ public class ListLoadbalancerTagsResponse extends SdkResponse {
 
     
     public ListLoadbalancerTagsResponse addTagsItem(ListTag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListLoadbalancerTagsResponse withTags(Consumer<List<ListTag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

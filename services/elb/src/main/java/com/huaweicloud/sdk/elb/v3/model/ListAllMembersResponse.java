@@ -99,12 +99,15 @@ public class ListAllMembersResponse extends SdkResponse {
 
     
     public ListAllMembersResponse addMembersItem(Member membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public ListAllMembersResponse withMembers(Consumer<List<Member>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

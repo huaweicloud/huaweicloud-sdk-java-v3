@@ -44,12 +44,15 @@ public class ServerSchedulerHints  {
 
     
     public ServerSchedulerHints addGroupItem(String groupItem) {
+        if(this.group == null) {
+            this.group = new ArrayList<>();
+        }
         this.group.add(groupItem);
         return this;
     }
 
     public ServerSchedulerHints withGroup(Consumer<List<String>> groupSetter) {
-        if(this.group == null ){
+        if(this.group == null) {
             this.group = new ArrayList<>();
         }
         groupSetter.accept(this.group);
@@ -77,12 +80,15 @@ public class ServerSchedulerHints  {
 
     
     public ServerSchedulerHints addTenancyItem(String tenancyItem) {
+        if(this.tenancy == null) {
+            this.tenancy = new ArrayList<>();
+        }
         this.tenancy.add(tenancyItem);
         return this;
     }
 
     public ServerSchedulerHints withTenancy(Consumer<List<String>> tenancySetter) {
-        if(this.tenancy == null ){
+        if(this.tenancy == null) {
             this.tenancy = new ArrayList<>();
         }
         tenancySetter.accept(this.tenancy);
@@ -110,12 +116,15 @@ public class ServerSchedulerHints  {
 
     
     public ServerSchedulerHints addDedicatedHostIdItem(String dedicatedHostIdItem) {
+        if(this.dedicatedHostId == null) {
+            this.dedicatedHostId = new ArrayList<>();
+        }
         this.dedicatedHostId.add(dedicatedHostIdItem);
         return this;
     }
 
     public ServerSchedulerHints withDedicatedHostId(Consumer<List<String>> dedicatedHostIdSetter) {
-        if(this.dedicatedHostId == null ){
+        if(this.dedicatedHostId == null) {
             this.dedicatedHostId = new ArrayList<>();
         }
         dedicatedHostIdSetter.accept(this.dedicatedHostId);

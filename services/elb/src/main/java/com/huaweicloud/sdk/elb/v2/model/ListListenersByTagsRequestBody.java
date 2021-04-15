@@ -130,12 +130,15 @@ public class ListListenersByTagsRequestBody  {
 
     
     public ListListenersByTagsRequestBody addMatchesItem(ActionMatch matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListListenersByTagsRequestBody withMatches(Consumer<List<ActionMatch>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
@@ -163,12 +166,15 @@ public class ListListenersByTagsRequestBody  {
 
     
     public ListListenersByTagsRequestBody addTagsItem(ActionTag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListListenersByTagsRequestBody withTags(Consumer<List<ActionTag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

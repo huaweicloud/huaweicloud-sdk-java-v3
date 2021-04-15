@@ -63,12 +63,15 @@ public class BatchResetPasswordResponse extends SdkResponse {
 
     
     public BatchResetPasswordResponse addResultsItem(ModifyJobResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchResetPasswordResponse withResults(Consumer<List<ModifyJobResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

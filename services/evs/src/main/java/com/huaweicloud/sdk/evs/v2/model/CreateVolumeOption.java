@@ -416,12 +416,15 @@ public class CreateVolumeOption  {
     
 
     public CreateVolumeOption putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public CreateVolumeOption withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -581,12 +584,15 @@ public class CreateVolumeOption  {
     
 
     public CreateVolumeOption putTagsItem(String key, String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new HashMap<>();
+        }
         this.tags.put(key, tagsItem);
         return this;
     }
 
     public CreateVolumeOption withTags(Consumer<Map<String, String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);

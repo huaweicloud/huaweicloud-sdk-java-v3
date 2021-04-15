@@ -90,12 +90,15 @@ public class CreateServersResponse extends SdkResponse {
 
     
     public CreateServersResponse addServerIdsItem(String serverIdsItem) {
+        if(this.serverIds == null) {
+            this.serverIds = new ArrayList<>();
+        }
         this.serverIds.add(serverIdsItem);
         return this;
     }
 
     public CreateServersResponse withServerIds(Consumer<List<String>> serverIdsSetter) {
-        if(this.serverIds == null ){
+        if(this.serverIds == null) {
             this.serverIds = new ArrayList<>();
         }
         serverIdsSetter.accept(this.serverIds);

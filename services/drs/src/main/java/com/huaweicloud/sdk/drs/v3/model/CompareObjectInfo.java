@@ -60,12 +60,15 @@ public class CompareObjectInfo  {
 
     
     public CompareObjectInfo addTableNameItem(String tableNameItem) {
+        if(this.tableName == null) {
+            this.tableName = new ArrayList<>();
+        }
         this.tableName.add(tableNameItem);
         return this;
     }
 
     public CompareObjectInfo withTableName(Consumer<List<String>> tableNameSetter) {
-        if(this.tableName == null ){
+        if(this.tableName == null) {
             this.tableName = new ArrayList<>();
         }
         tableNameSetter.accept(this.tableName);

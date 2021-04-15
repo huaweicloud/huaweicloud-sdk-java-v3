@@ -294,12 +294,15 @@ public class LoadbalancerInStatusResp  {
 
     
     public LoadbalancerInStatusResp addListenersItem(ListenersInStatusResp listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public LoadbalancerInStatusResp withListeners(Consumer<List<ListenersInStatusResp>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
@@ -327,12 +330,15 @@ public class LoadbalancerInStatusResp  {
 
     
     public LoadbalancerInStatusResp addPoolsItem(PoolsInStatusResp poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public LoadbalancerInStatusResp withPools(Consumer<List<PoolsInStatusResp>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);

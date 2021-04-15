@@ -35,12 +35,15 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
 
     
     public CinderListAvailabilityZonesResponse addAvailabilityZoneInfoItem(AzInfo availabilityZoneInfoItem) {
+        if(this.availabilityZoneInfo == null) {
+            this.availabilityZoneInfo = new ArrayList<>();
+        }
         this.availabilityZoneInfo.add(availabilityZoneInfoItem);
         return this;
     }
 
     public CinderListAvailabilityZonesResponse withAvailabilityZoneInfo(Consumer<List<AzInfo>> availabilityZoneInfoSetter) {
-        if(this.availabilityZoneInfo == null ){
+        if(this.availabilityZoneInfo == null) {
             this.availabilityZoneInfo = new ArrayList<>();
         }
         availabilityZoneInfoSetter.accept(this.availabilityZoneInfo);

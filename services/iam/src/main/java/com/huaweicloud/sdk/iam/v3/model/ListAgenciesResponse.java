@@ -35,12 +35,15 @@ public class ListAgenciesResponse extends SdkResponse {
 
     
     public ListAgenciesResponse addAgenciesItem(AgencyResult agenciesItem) {
+        if(this.agencies == null) {
+            this.agencies = new ArrayList<>();
+        }
         this.agencies.add(agenciesItem);
         return this;
     }
 
     public ListAgenciesResponse withAgencies(Consumer<List<AgencyResult>> agenciesSetter) {
-        if(this.agencies == null ){
+        if(this.agencies == null) {
             this.agencies = new ArrayList<>();
         }
         agenciesSetter.accept(this.agencies);

@@ -621,12 +621,15 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
 
     
     public UpdateFunctionCodeResponse addDependListItem(String dependListItem) {
+        if(this.dependList == null) {
+            this.dependList = new ArrayList<>();
+        }
         this.dependList.add(dependListItem);
         return this;
     }
 
     public UpdateFunctionCodeResponse withDependList(Consumer<List<String>> dependListSetter) {
-        if(this.dependList == null ){
+        if(this.dependList == null) {
             this.dependList = new ArrayList<>();
         }
         dependListSetter.accept(this.dependList);
@@ -683,12 +686,15 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
 
     
     public UpdateFunctionCodeResponse addDependenciesItem(Dependency dependenciesItem) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
 
     public UpdateFunctionCodeResponse withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if(this.dependencies == null ){
+        if(this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);

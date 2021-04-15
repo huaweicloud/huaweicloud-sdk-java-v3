@@ -151,12 +151,15 @@ public class UpdateVolumeResponse extends SdkResponse {
 
     
     public UpdateVolumeResponse addAttachmentsItem(Attachment attachmentsItem) {
+        if(this.attachments == null) {
+            this.attachments = new ArrayList<>();
+        }
         this.attachments.add(attachmentsItem);
         return this;
     }
 
     public UpdateVolumeResponse withAttachments(Consumer<List<Attachment>> attachmentsSetter) {
-        if(this.attachments == null ){
+        if(this.attachments == null) {
             this.attachments = new ArrayList<>();
         }
         attachmentsSetter.accept(this.attachments);
@@ -272,12 +275,15 @@ public class UpdateVolumeResponse extends SdkResponse {
 
     
     public UpdateVolumeResponse addLinksItem(Link linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public UpdateVolumeResponse withLinks(Consumer<List<Link>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

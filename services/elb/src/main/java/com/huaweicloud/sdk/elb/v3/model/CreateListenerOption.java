@@ -534,12 +534,15 @@ public class CreateListenerOption  {
 
     
     public CreateListenerOption addSniContainerRefsItem(String sniContainerRefsItem) {
+        if(this.sniContainerRefs == null) {
+            this.sniContainerRefs = new ArrayList<>();
+        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
 
     public CreateListenerOption withSniContainerRefs(Consumer<List<String>> sniContainerRefsSetter) {
-        if(this.sniContainerRefs == null ){
+        if(this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         sniContainerRefsSetter.accept(this.sniContainerRefs);
@@ -567,12 +570,15 @@ public class CreateListenerOption  {
 
     
     public CreateListenerOption addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateListenerOption withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

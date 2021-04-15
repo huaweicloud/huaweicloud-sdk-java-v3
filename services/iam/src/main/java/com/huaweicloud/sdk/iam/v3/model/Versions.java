@@ -33,12 +33,15 @@ public class Versions  {
 
     
     public Versions addValuesItem(Version valuesItem) {
+        if(this.values == null) {
+            this.values = new ArrayList<>();
+        }
         this.values.add(valuesItem);
         return this;
     }
 
     public Versions withValues(Consumer<List<Version>> valuesSetter) {
-        if(this.values == null ){
+        if(this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);

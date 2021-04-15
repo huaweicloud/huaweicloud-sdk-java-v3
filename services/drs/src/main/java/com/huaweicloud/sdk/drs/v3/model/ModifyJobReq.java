@@ -994,12 +994,15 @@ public class ModifyJobReq  {
 
     
     public ModifyJobReq addTagsItem(ResourceTag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ModifyJobReq withTags(Consumer<List<ResourceTag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

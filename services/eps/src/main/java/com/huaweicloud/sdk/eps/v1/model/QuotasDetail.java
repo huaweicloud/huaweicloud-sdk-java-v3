@@ -33,12 +33,15 @@ public class QuotasDetail  {
 
     
     public QuotasDetail addResourcesItem(EpQuotas resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public QuotasDetail withResources(Consumer<List<EpQuotas>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

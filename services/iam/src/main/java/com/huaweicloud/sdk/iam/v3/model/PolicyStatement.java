@@ -132,12 +132,15 @@ public class PolicyStatement  {
 
     
     public PolicyStatement addActionItem(String actionItem) {
+        if(this.action == null) {
+            this.action = new ArrayList<>();
+        }
         this.action.add(actionItem);
         return this;
     }
 
     public PolicyStatement withAction(Consumer<List<String>> actionSetter) {
-        if(this.action == null ){
+        if(this.action == null) {
             this.action = new ArrayList<>();
         }
         actionSetter.accept(this.action);
@@ -209,12 +212,15 @@ public class PolicyStatement  {
 
     
     public PolicyStatement addResourceItem(String resourceItem) {
+        if(this.resource == null) {
+            this.resource = new ArrayList<>();
+        }
         this.resource.add(resourceItem);
         return this;
     }
 
     public PolicyStatement withResource(Consumer<List<String>> resourceSetter) {
-        if(this.resource == null ){
+        if(this.resource == null) {
             this.resource = new ArrayList<>();
         }
         resourceSetter.accept(this.resource);

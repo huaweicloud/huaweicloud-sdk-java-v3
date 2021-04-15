@@ -123,12 +123,15 @@ public class IdentityprovidersResult  {
 
     
     public IdentityprovidersResult addRemoteIdsItem(String remoteIdsItem) {
+        if(this.remoteIds == null) {
+            this.remoteIds = new ArrayList<>();
+        }
         this.remoteIds.add(remoteIdsItem);
         return this;
     }
 
     public IdentityprovidersResult withRemoteIds(Consumer<List<String>> remoteIdsSetter) {
-        if(this.remoteIds == null ){
+        if(this.remoteIds == null) {
             this.remoteIds = new ArrayList<>();
         }
         remoteIdsSetter.accept(this.remoteIds);

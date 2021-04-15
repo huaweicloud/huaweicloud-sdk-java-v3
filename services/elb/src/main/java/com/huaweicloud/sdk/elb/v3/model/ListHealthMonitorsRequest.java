@@ -150,12 +150,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addDelayItem(Integer delayItem) {
+        if(this.delay == null) {
+            this.delay = new ArrayList<>();
+        }
         this.delay.add(delayItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withDelay(Consumer<List<Integer>> delaySetter) {
-        if(this.delay == null ){
+        if(this.delay == null) {
             this.delay = new ArrayList<>();
         }
         delaySetter.accept(this.delay);
@@ -183,12 +186,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addDomainNameItem(String domainNameItem) {
+        if(this.domainName == null) {
+            this.domainName = new ArrayList<>();
+        }
         this.domainName.add(domainNameItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withDomainName(Consumer<List<String>> domainNameSetter) {
-        if(this.domainName == null ){
+        if(this.domainName == null) {
             this.domainName = new ArrayList<>();
         }
         domainNameSetter.accept(this.domainName);
@@ -216,12 +222,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if(this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
+        if(this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
@@ -249,12 +258,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addExpectedCodesItem(String expectedCodesItem) {
+        if(this.expectedCodes == null) {
+            this.expectedCodes = new ArrayList<>();
+        }
         this.expectedCodes.add(expectedCodesItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withExpectedCodes(Consumer<List<String>> expectedCodesSetter) {
-        if(this.expectedCodes == null ){
+        if(this.expectedCodes == null) {
             this.expectedCodes = new ArrayList<>();
         }
         expectedCodesSetter.accept(this.expectedCodes);
@@ -282,12 +294,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addHttpMethodItem(String httpMethodItem) {
+        if(this.httpMethod == null) {
+            this.httpMethod = new ArrayList<>();
+        }
         this.httpMethod.add(httpMethodItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withHttpMethod(Consumer<List<String>> httpMethodSetter) {
-        if(this.httpMethod == null ){
+        if(this.httpMethod == null) {
             this.httpMethod = new ArrayList<>();
         }
         httpMethodSetter.accept(this.httpMethod);
@@ -315,12 +330,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -394,12 +412,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addMaxRetriesItem(Integer maxRetriesItem) {
+        if(this.maxRetries == null) {
+            this.maxRetries = new ArrayList<>();
+        }
         this.maxRetries.add(maxRetriesItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withMaxRetries(Consumer<List<Integer>> maxRetriesSetter) {
-        if(this.maxRetries == null ){
+        if(this.maxRetries == null) {
             this.maxRetries = new ArrayList<>();
         }
         maxRetriesSetter.accept(this.maxRetries);
@@ -427,12 +448,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addMaxRetriesDownItem(Integer maxRetriesDownItem) {
+        if(this.maxRetriesDown == null) {
+            this.maxRetriesDown = new ArrayList<>();
+        }
         this.maxRetriesDown.add(maxRetriesDownItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withMaxRetriesDown(Consumer<List<Integer>> maxRetriesDownSetter) {
-        if(this.maxRetriesDown == null ){
+        if(this.maxRetriesDown == null) {
             this.maxRetriesDown = new ArrayList<>();
         }
         maxRetriesDownSetter.accept(this.maxRetriesDown);
@@ -460,12 +484,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addMonitorPortItem(Integer monitorPortItem) {
+        if(this.monitorPort == null) {
+            this.monitorPort = new ArrayList<>();
+        }
         this.monitorPort.add(monitorPortItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withMonitorPort(Consumer<List<Integer>> monitorPortSetter) {
-        if(this.monitorPort == null ){
+        if(this.monitorPort == null) {
             this.monitorPort = new ArrayList<>();
         }
         monitorPortSetter.accept(this.monitorPort);
@@ -493,12 +520,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -570,12 +600,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addTypeItem(String typeItem) {
+        if(this.type == null) {
+            this.type = new ArrayList<>();
+        }
         this.type.add(typeItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withType(Consumer<List<String>> typeSetter) {
-        if(this.type == null ){
+        if(this.type == null) {
             this.type = new ArrayList<>();
         }
         typeSetter.accept(this.type);
@@ -603,12 +636,15 @@ public class ListHealthMonitorsRequest  {
 
     
     public ListHealthMonitorsRequest addUrlPathItem(String urlPathItem) {
+        if(this.urlPath == null) {
+            this.urlPath = new ArrayList<>();
+        }
         this.urlPath.add(urlPathItem);
         return this;
     }
 
     public ListHealthMonitorsRequest withUrlPath(Consumer<List<String>> urlPathSetter) {
-        if(this.urlPath == null ){
+        if(this.urlPath == null) {
             this.urlPath = new ArrayList<>();
         }
         urlPathSetter.accept(this.urlPath);

@@ -41,12 +41,15 @@ public class MappingRules  {
 
     
     public MappingRules addLocalItem(Map<String, RulesLocalAdditional> localItem) {
+        if(this.local == null) {
+            this.local = new ArrayList<>();
+        }
         this.local.add(localItem);
         return this;
     }
 
     public MappingRules withLocal(Consumer<List<Map<String, RulesLocalAdditional>>> localSetter) {
-        if(this.local == null ){
+        if(this.local == null) {
             this.local = new ArrayList<>();
         }
         localSetter.accept(this.local);
@@ -74,12 +77,15 @@ public class MappingRules  {
 
     
     public MappingRules addRemoteItem(RulesRemote remoteItem) {
+        if(this.remote == null) {
+            this.remote = new ArrayList<>();
+        }
         this.remote.add(remoteItem);
         return this;
     }
 
     public MappingRules withRemote(Consumer<List<RulesRemote>> remoteSetter) {
-        if(this.remote == null ){
+        if(this.remote == null) {
             this.remote = new ArrayList<>();
         }
         remoteSetter.accept(this.remote);

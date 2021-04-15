@@ -78,12 +78,15 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
 
     
     public ListRecordSetsByZoneResponse addRecordsetsItem(ListRecordSets recordsetsItem) {
+        if(this.recordsets == null) {
+            this.recordsets = new ArrayList<>();
+        }
         this.recordsets.add(recordsetsItem);
         return this;
     }
 
     public ListRecordSetsByZoneResponse withRecordsets(Consumer<List<ListRecordSets>> recordsetsSetter) {
-        if(this.recordsets == null ){
+        if(this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
         recordsetsSetter.accept(this.recordsets);

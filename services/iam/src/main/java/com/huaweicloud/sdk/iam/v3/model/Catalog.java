@@ -51,12 +51,15 @@ public class Catalog  {
 
     
     public Catalog addEndpointsItem(CatalogEndpoints endpointsItem) {
+        if(this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
         this.endpoints.add(endpointsItem);
         return this;
     }
 
     public Catalog withEndpoints(Consumer<List<CatalogEndpoints>> endpointsSetter) {
-        if(this.endpoints == null ){
+        if(this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);

@@ -60,12 +60,15 @@ public class ActionTag  {
 
     
     public ActionTag addValuesItem(String valuesItem) {
+        if(this.values == null) {
+            this.values = new ArrayList<>();
+        }
         this.values.add(valuesItem);
         return this;
     }
 
     public ActionTag withValues(Consumer<List<String>> valuesSetter) {
-        if(this.values == null ){
+        if(this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);

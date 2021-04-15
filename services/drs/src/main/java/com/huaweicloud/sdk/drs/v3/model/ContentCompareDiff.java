@@ -94,12 +94,15 @@ public class ContentCompareDiff  {
 
     
     public ContentCompareDiff addSourceKeyValueItem(String sourceKeyValueItem) {
+        if(this.sourceKeyValue == null) {
+            this.sourceKeyValue = new ArrayList<>();
+        }
         this.sourceKeyValue.add(sourceKeyValueItem);
         return this;
     }
 
     public ContentCompareDiff withSourceKeyValue(Consumer<List<String>> sourceKeyValueSetter) {
-        if(this.sourceKeyValue == null ){
+        if(this.sourceKeyValue == null) {
             this.sourceKeyValue = new ArrayList<>();
         }
         sourceKeyValueSetter.accept(this.sourceKeyValue);
@@ -127,12 +130,15 @@ public class ContentCompareDiff  {
 
     
     public ContentCompareDiff addTargetKeyValueItem(String targetKeyValueItem) {
+        if(this.targetKeyValue == null) {
+            this.targetKeyValue = new ArrayList<>();
+        }
         this.targetKeyValue.add(targetKeyValueItem);
         return this;
     }
 
     public ContentCompareDiff withTargetKeyValue(Consumer<List<String>> targetKeyValueSetter) {
-        if(this.targetKeyValue == null ){
+        if(this.targetKeyValue == null) {
             this.targetKeyValue = new ArrayList<>();
         }
         targetKeyValueSetter.accept(this.targetKeyValue);

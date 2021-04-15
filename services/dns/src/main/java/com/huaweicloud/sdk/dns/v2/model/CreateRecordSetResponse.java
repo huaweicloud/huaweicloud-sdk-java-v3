@@ -267,12 +267,15 @@ public class CreateRecordSetResponse extends SdkResponse {
 
     
     public CreateRecordSetResponse addRecordsItem(String recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public CreateRecordSetResponse withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

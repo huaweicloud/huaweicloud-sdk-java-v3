@@ -70,12 +70,15 @@ public class ListVolumesResponse extends SdkResponse {
 
     
     public ListVolumesResponse addVolumesLinksItem(Link volumesLinksItem) {
+        if(this.volumesLinks == null) {
+            this.volumesLinks = new ArrayList<>();
+        }
         this.volumesLinks.add(volumesLinksItem);
         return this;
     }
 
     public ListVolumesResponse withVolumesLinks(Consumer<List<Link>> volumesLinksSetter) {
-        if(this.volumesLinks == null ){
+        if(this.volumesLinks == null) {
             this.volumesLinks = new ArrayList<>();
         }
         volumesLinksSetter.accept(this.volumesLinks);
@@ -103,12 +106,15 @@ public class ListVolumesResponse extends SdkResponse {
 
     
     public ListVolumesResponse addVolumesItem(VolumeDetail volumesItem) {
+        if(this.volumes == null) {
+            this.volumes = new ArrayList<>();
+        }
         this.volumes.add(volumesItem);
         return this;
     }
 
     public ListVolumesResponse withVolumes(Consumer<List<VolumeDetail>> volumesSetter) {
-        if(this.volumes == null ){
+        if(this.volumes == null) {
             this.volumes = new ArrayList<>();
         }
         volumesSetter.accept(this.volumes);

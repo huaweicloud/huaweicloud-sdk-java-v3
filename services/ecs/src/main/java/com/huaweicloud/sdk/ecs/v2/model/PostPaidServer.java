@@ -257,12 +257,15 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addDataVolumesItem(PostPaidServerDataVolume dataVolumesItem) {
+        if(this.dataVolumes == null) {
+            this.dataVolumes = new ArrayList<>();
+        }
         this.dataVolumes.add(dataVolumesItem);
         return this;
     }
 
     public PostPaidServer withDataVolumes(Consumer<List<PostPaidServerDataVolume>> dataVolumesSetter) {
-        if(this.dataVolumes == null ){
+        if(this.dataVolumes == null) {
             this.dataVolumes = new ArrayList<>();
         }
         dataVolumesSetter.accept(this.dataVolumes);
@@ -408,12 +411,15 @@ public class PostPaidServer  {
     
 
     public PostPaidServer putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public PostPaidServer withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -462,12 +468,15 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addNicsItem(PostPaidServerNic nicsItem) {
+        if(this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
         this.nics.add(nicsItem);
         return this;
     }
 
     public PostPaidServer withNics(Consumer<List<PostPaidServerNic>> nicsSetter) {
-        if(this.nics == null ){
+        if(this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
@@ -582,12 +591,15 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addSecurityGroupsItem(PostPaidServerSecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public PostPaidServer withSecurityGroups(Consumer<List<PostPaidServerSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -615,12 +627,15 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addServerTagsItem(PostPaidServerTag serverTagsItem) {
+        if(this.serverTags == null) {
+            this.serverTags = new ArrayList<>();
+        }
         this.serverTags.add(serverTagsItem);
         return this;
     }
 
     public PostPaidServer withServerTags(Consumer<List<PostPaidServerTag>> serverTagsSetter) {
-        if(this.serverTags == null ){
+        if(this.serverTags == null) {
             this.serverTags = new ArrayList<>();
         }
         serverTagsSetter.accept(this.serverTags);
@@ -648,12 +663,15 @@ public class PostPaidServer  {
 
     
     public PostPaidServer addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public PostPaidServer withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

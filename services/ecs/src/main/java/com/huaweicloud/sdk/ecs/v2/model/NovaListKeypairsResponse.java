@@ -35,12 +35,15 @@ public class NovaListKeypairsResponse extends SdkResponse {
 
     
     public NovaListKeypairsResponse addKeypairsItem(NovaListKeypairsResult keypairsItem) {
+        if(this.keypairs == null) {
+            this.keypairs = new ArrayList<>();
+        }
         this.keypairs.add(keypairsItem);
         return this;
     }
 
     public NovaListKeypairsResponse withKeypairs(Consumer<List<NovaListKeypairsResult>> keypairsSetter) {
-        if(this.keypairs == null ){
+        if(this.keypairs == null) {
             this.keypairs = new ArrayList<>();
         }
         keypairsSetter.accept(this.keypairs);

@@ -35,12 +35,15 @@ public class BatchCreateSharedBandwidthsResponse extends SdkResponse {
 
     
     public BatchCreateSharedBandwidthsResponse addBandwidthsItem(BatchBandwidthResp bandwidthsItem) {
+        if(this.bandwidths == null) {
+            this.bandwidths = new ArrayList<>();
+        }
         this.bandwidths.add(bandwidthsItem);
         return this;
     }
 
     public BatchCreateSharedBandwidthsResponse withBandwidths(Consumer<List<BatchBandwidthResp>> bandwidthsSetter) {
-        if(this.bandwidths == null ){
+        if(this.bandwidths == null) {
             this.bandwidths = new ArrayList<>();
         }
         bandwidthsSetter.accept(this.bandwidths);

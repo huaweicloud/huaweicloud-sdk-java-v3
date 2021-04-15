@@ -413,12 +413,15 @@ public class UpdateListenerOption  {
 
     
     public UpdateListenerOption addSniContainerRefsItem(String sniContainerRefsItem) {
+        if(this.sniContainerRefs == null) {
+            this.sniContainerRefs = new ArrayList<>();
+        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
 
     public UpdateListenerOption withSniContainerRefs(Consumer<List<String>> sniContainerRefsSetter) {
-        if(this.sniContainerRefs == null ){
+        if(this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         sniContainerRefsSetter.accept(this.sniContainerRefs);

@@ -32,12 +32,15 @@ public class BatchQueryProgressReq  {
 
     
     public BatchQueryProgressReq addJobsItem(String jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchQueryProgressReq withJobs(Consumer<List<String>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

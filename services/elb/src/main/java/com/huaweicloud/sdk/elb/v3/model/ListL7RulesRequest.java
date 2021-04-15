@@ -148,12 +148,15 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addCompareTypeItem(String compareTypeItem) {
+        if(this.compareType == null) {
+            this.compareType = new ArrayList<>();
+        }
         this.compareType.add(compareTypeItem);
         return this;
     }
 
     public ListL7RulesRequest withCompareType(Consumer<List<String>> compareTypeSetter) {
-        if(this.compareType == null ){
+        if(this.compareType == null) {
             this.compareType = new ArrayList<>();
         }
         compareTypeSetter.accept(this.compareType);
@@ -181,12 +184,15 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if(this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
 
     public ListL7RulesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
+        if(this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
@@ -214,12 +220,15 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListL7RulesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -269,12 +278,15 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addKeyItem(String keyItem) {
+        if(this.key == null) {
+            this.key = new ArrayList<>();
+        }
         this.key.add(keyItem);
         return this;
     }
 
     public ListL7RulesRequest withKey(Consumer<List<String>> keySetter) {
-        if(this.key == null ){
+        if(this.key == null) {
             this.key = new ArrayList<>();
         }
         keySetter.accept(this.key);
@@ -370,12 +382,15 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addProvisioningStatusItem(String provisioningStatusItem) {
+        if(this.provisioningStatus == null) {
+            this.provisioningStatus = new ArrayList<>();
+        }
         this.provisioningStatus.add(provisioningStatusItem);
         return this;
     }
 
     public ListL7RulesRequest withProvisioningStatus(Consumer<List<String>> provisioningStatusSetter) {
-        if(this.provisioningStatus == null ){
+        if(this.provisioningStatus == null) {
             this.provisioningStatus = new ArrayList<>();
         }
         provisioningStatusSetter.accept(this.provisioningStatus);
@@ -403,12 +418,15 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addTypeItem(String typeItem) {
+        if(this.type == null) {
+            this.type = new ArrayList<>();
+        }
         this.type.add(typeItem);
         return this;
     }
 
     public ListL7RulesRequest withType(Consumer<List<String>> typeSetter) {
-        if(this.type == null ){
+        if(this.type == null) {
             this.type = new ArrayList<>();
         }
         typeSetter.accept(this.type);
@@ -436,12 +454,15 @@ public class ListL7RulesRequest  {
 
     
     public ListL7RulesRequest addValueItem(String valueItem) {
+        if(this.value == null) {
+            this.value = new ArrayList<>();
+        }
         this.value.add(valueItem);
         return this;
     }
 
     public ListL7RulesRequest withValue(Consumer<List<String>> valueSetter) {
-        if(this.value == null ){
+        if(this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);

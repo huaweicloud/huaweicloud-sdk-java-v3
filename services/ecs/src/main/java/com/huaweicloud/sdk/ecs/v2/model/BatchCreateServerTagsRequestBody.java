@@ -137,12 +137,15 @@ public class BatchCreateServerTagsRequestBody  {
 
     
     public BatchCreateServerTagsRequestBody addTagsItem(ServerTag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public BatchCreateServerTagsRequestBody withTags(Consumer<List<ServerTag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

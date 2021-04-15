@@ -33,12 +33,15 @@ public class BatchTestConnectionReq  {
 
     
     public BatchTestConnectionReq addJobsItem(TestEndPoint jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchTestConnectionReq withJobs(Consumer<List<TestEndPoint>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

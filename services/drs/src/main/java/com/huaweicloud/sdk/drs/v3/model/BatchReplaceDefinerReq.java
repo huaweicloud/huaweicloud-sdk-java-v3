@@ -33,12 +33,15 @@ public class BatchReplaceDefinerReq  {
 
     
     public BatchReplaceDefinerReq addJobsItem(ReplaceDefinerInfo jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchReplaceDefinerReq withJobs(Consumer<List<ReplaceDefinerInfo>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

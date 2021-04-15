@@ -71,12 +71,15 @@ public class KeystoneListUsersResponse extends SdkResponse {
 
     
     public KeystoneListUsersResponse addUsersItem(KeystoneListUsersResult usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public KeystoneListUsersResponse withUsers(Consumer<List<KeystoneListUsersResult>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

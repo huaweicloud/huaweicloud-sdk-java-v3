@@ -35,12 +35,15 @@ public class CinderListVolumeTypesResponse extends SdkResponse {
 
     
     public CinderListVolumeTypesResponse addVolumeTypesItem(VolumeType volumeTypesItem) {
+        if(this.volumeTypes == null) {
+            this.volumeTypes = new ArrayList<>();
+        }
         this.volumeTypes.add(volumeTypesItem);
         return this;
     }
 
     public CinderListVolumeTypesResponse withVolumeTypes(Consumer<List<VolumeType>> volumeTypesSetter) {
-        if(this.volumeTypes == null ){
+        if(this.volumeTypes == null) {
             this.volumeTypes = new ArrayList<>();
         }
         volumeTypesSetter.accept(this.volumeTypes);

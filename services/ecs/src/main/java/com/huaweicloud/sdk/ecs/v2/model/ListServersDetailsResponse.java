@@ -63,12 +63,15 @@ public class ListServersDetailsResponse extends SdkResponse {
 
     
     public ListServersDetailsResponse addServersItem(ServerDetail serversItem) {
+        if(this.servers == null) {
+            this.servers = new ArrayList<>();
+        }
         this.servers.add(serversItem);
         return this;
     }
 
     public ListServersDetailsResponse withServers(Consumer<List<ServerDetail>> serversSetter) {
-        if(this.servers == null ){
+        if(this.servers == null) {
             this.servers = new ArrayList<>();
         }
         serversSetter.accept(this.servers);

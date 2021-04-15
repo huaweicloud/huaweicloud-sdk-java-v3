@@ -33,12 +33,15 @@ public class ValuesItem  {
 
     
     public ValuesItem addValuesItem(ListApiVersionsItem valuesItem) {
+        if(this.values == null) {
+            this.values = new ArrayList<>();
+        }
         this.values.add(valuesItem);
         return this;
     }
 
     public ValuesItem withValues(Consumer<List<ListApiVersionsItem>> valuesSetter) {
-        if(this.values == null ){
+        if(this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);

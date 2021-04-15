@@ -35,12 +35,15 @@ public class ListHealthmonitorsResponse extends SdkResponse {
 
     
     public ListHealthmonitorsResponse addHealthmonitorsItem(HealthmonitorResp healthmonitorsItem) {
+        if(this.healthmonitors == null) {
+            this.healthmonitors = new ArrayList<>();
+        }
         this.healthmonitors.add(healthmonitorsItem);
         return this;
     }
 
     public ListHealthmonitorsResponse withHealthmonitors(Consumer<List<HealthmonitorResp>> healthmonitorsSetter) {
-        if(this.healthmonitors == null ){
+        if(this.healthmonitors == null) {
             this.healthmonitors = new ArrayList<>();
         }
         healthmonitorsSetter.accept(this.healthmonitors);

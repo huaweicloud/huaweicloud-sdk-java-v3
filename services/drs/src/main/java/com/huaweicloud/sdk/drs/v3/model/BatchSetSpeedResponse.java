@@ -63,12 +63,15 @@ public class BatchSetSpeedResponse extends SdkResponse {
 
     
     public BatchSetSpeedResponse addResultsItem(ModifyJobResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchSetSpeedResponse withResults(Consumer<List<ModifyJobResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

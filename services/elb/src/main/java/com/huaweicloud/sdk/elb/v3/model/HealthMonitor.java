@@ -345,12 +345,15 @@ public class HealthMonitor  {
 
     
     public HealthMonitor addPoolsItem(PoolRef poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public HealthMonitor withPools(Consumer<List<PoolRef>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);

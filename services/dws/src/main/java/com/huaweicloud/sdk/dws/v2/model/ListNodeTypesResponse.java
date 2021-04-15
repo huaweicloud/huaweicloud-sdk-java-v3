@@ -35,12 +35,15 @@ public class ListNodeTypesResponse extends SdkResponse {
 
     
     public ListNodeTypesResponse addNodeTypesItem(NodeTypes nodeTypesItem) {
+        if(this.nodeTypes == null) {
+            this.nodeTypes = new ArrayList<>();
+        }
         this.nodeTypes.add(nodeTypesItem);
         return this;
     }
 
     public ListNodeTypesResponse withNodeTypes(Consumer<List<NodeTypes>> nodeTypesSetter) {
-        if(this.nodeTypes == null ){
+        if(this.nodeTypes == null) {
             this.nodeTypes = new ArrayList<>();
         }
         nodeTypesSetter.accept(this.nodeTypes);

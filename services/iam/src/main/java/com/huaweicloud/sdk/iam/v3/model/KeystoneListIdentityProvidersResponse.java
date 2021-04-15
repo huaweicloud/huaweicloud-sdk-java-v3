@@ -42,12 +42,15 @@ public class KeystoneListIdentityProvidersResponse extends SdkResponse {
 
     
     public KeystoneListIdentityProvidersResponse addIdentityProvidersItem(IdentityprovidersResult identityProvidersItem) {
+        if(this.identityProviders == null) {
+            this.identityProviders = new ArrayList<>();
+        }
         this.identityProviders.add(identityProvidersItem);
         return this;
     }
 
     public KeystoneListIdentityProvidersResponse withIdentityProviders(Consumer<List<IdentityprovidersResult>> identityProvidersSetter) {
-        if(this.identityProviders == null ){
+        if(this.identityProviders == null) {
             this.identityProviders = new ArrayList<>();
         }
         identityProvidersSetter.accept(this.identityProviders);

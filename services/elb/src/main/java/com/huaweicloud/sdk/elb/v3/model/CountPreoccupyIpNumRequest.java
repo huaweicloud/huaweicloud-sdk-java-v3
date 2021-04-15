@@ -56,12 +56,15 @@ public class CountPreoccupyIpNumRequest  {
 
     
     public CountPreoccupyIpNumRequest addAvailabilityZoneIdItem(String availabilityZoneIdItem) {
+        if(this.availabilityZoneId == null) {
+            this.availabilityZoneId = new ArrayList<>();
+        }
         this.availabilityZoneId.add(availabilityZoneIdItem);
         return this;
     }
 
     public CountPreoccupyIpNumRequest withAvailabilityZoneId(Consumer<List<String>> availabilityZoneIdSetter) {
-        if(this.availabilityZoneId == null ){
+        if(this.availabilityZoneId == null) {
             this.availabilityZoneId = new ArrayList<>();
         }
         availabilityZoneIdSetter.accept(this.availabilityZoneId);

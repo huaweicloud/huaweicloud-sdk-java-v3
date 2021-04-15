@@ -381,12 +381,15 @@ public class CreateLoadBalancerOption  {
 
     
     public CreateLoadBalancerOption addAvailabilityZoneListItem(String availabilityZoneListItem) {
+        if(this.availabilityZoneList == null) {
+            this.availabilityZoneList = new ArrayList<>();
+        }
         this.availabilityZoneList.add(availabilityZoneListItem);
         return this;
     }
 
     public CreateLoadBalancerOption withAvailabilityZoneList(Consumer<List<String>> availabilityZoneListSetter) {
-        if(this.availabilityZoneList == null ){
+        if(this.availabilityZoneList == null) {
             this.availabilityZoneList = new ArrayList<>();
         }
         availabilityZoneListSetter.accept(this.availabilityZoneList);
@@ -436,12 +439,15 @@ public class CreateLoadBalancerOption  {
 
     
     public CreateLoadBalancerOption addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateLoadBalancerOption withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -564,12 +570,15 @@ public class CreateLoadBalancerOption  {
 
     
     public CreateLoadBalancerOption addPublicipIdsItem(String publicipIdsItem) {
+        if(this.publicipIds == null) {
+            this.publicipIds = new ArrayList<>();
+        }
         this.publicipIds.add(publicipIdsItem);
         return this;
     }
 
     public CreateLoadBalancerOption withPublicipIds(Consumer<List<String>> publicipIdsSetter) {
-        if(this.publicipIds == null ){
+        if(this.publicipIds == null) {
             this.publicipIds = new ArrayList<>();
         }
         publicipIdsSetter.accept(this.publicipIds);
@@ -626,12 +635,15 @@ public class CreateLoadBalancerOption  {
 
     
     public CreateLoadBalancerOption addElbVirsubnetIdsItem(String elbVirsubnetIdsItem) {
+        if(this.elbVirsubnetIds == null) {
+            this.elbVirsubnetIds = new ArrayList<>();
+        }
         this.elbVirsubnetIds.add(elbVirsubnetIdsItem);
         return this;
     }
 
     public CreateLoadBalancerOption withElbVirsubnetIds(Consumer<List<String>> elbVirsubnetIdsSetter) {
-        if(this.elbVirsubnetIds == null ){
+        if(this.elbVirsubnetIds == null) {
             this.elbVirsubnetIds = new ArrayList<>();
         }
         elbVirsubnetIdsSetter.accept(this.elbVirsubnetIds);

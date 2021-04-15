@@ -41,12 +41,15 @@ public class ShowMonitoringDataResponse extends SdkResponse {
 
     
     public ShowMonitoringDataResponse addResultsItem(QueryDataGuardMonitorAndChartResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public ShowMonitoringDataResponse withResults(Consumer<List<QueryDataGuardMonitorAndChartResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

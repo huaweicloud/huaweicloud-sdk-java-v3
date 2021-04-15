@@ -33,12 +33,15 @@ public class BatchCreateJobReq  {
 
     
     public BatchCreateJobReq addJobsItem(CreateJobReq jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchCreateJobReq withJobs(Consumer<List<CreateJobReq>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

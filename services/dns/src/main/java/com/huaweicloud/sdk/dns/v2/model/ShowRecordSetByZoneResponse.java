@@ -78,12 +78,15 @@ public class ShowRecordSetByZoneResponse extends SdkResponse {
 
     
     public ShowRecordSetByZoneResponse addRecordsetsItem(ShowRecordSetByZoneResp recordsetsItem) {
+        if(this.recordsets == null) {
+            this.recordsets = new ArrayList<>();
+        }
         this.recordsets.add(recordsetsItem);
         return this;
     }
 
     public ShowRecordSetByZoneResponse withRecordsets(Consumer<List<ShowRecordSetByZoneResp>> recordsetsSetter) {
-        if(this.recordsets == null ){
+        if(this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
         recordsetsSetter.accept(this.recordsets);

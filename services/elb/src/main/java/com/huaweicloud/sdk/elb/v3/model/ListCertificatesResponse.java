@@ -99,12 +99,15 @@ public class ListCertificatesResponse extends SdkResponse {
 
     
     public ListCertificatesResponse addCertificatesItem(CertificateInfo certificatesItem) {
+        if(this.certificates == null) {
+            this.certificates = new ArrayList<>();
+        }
         this.certificates.add(certificatesItem);
         return this;
     }
 
     public ListCertificatesResponse withCertificates(Consumer<List<CertificateInfo>> certificatesSetter) {
-        if(this.certificates == null ){
+        if(this.certificates == null) {
             this.certificates = new ArrayList<>();
         }
         certificatesSetter.accept(this.certificates);

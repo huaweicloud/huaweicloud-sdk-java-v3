@@ -417,12 +417,15 @@ public class ServerDetail  {
     
 
     public ServerDetail putAddressesItem(String key, List<ServerAddress> addressesItem) {
+        if(this.addresses == null) {
+            this.addresses = new HashMap<>();
+        }
         this.addresses.put(key, addressesItem);
         return this;
     }
 
     public ServerDetail withAddresses(Consumer<Map<String, List<ServerAddress>>> addressesSetter) {
-        if(this.addresses == null ){
+        if(this.addresses == null) {
             this.addresses = new HashMap<>();
         }
         addressesSetter.accept(this.addresses);
@@ -639,12 +642,15 @@ public class ServerDetail  {
 
     
     public ServerDetail addSecurityGroupsItem(ServerSecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public ServerDetail withSecurityGroups(Consumer<List<ServerSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -944,12 +950,15 @@ public class ServerDetail  {
     
 
     public ServerDetail putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public ServerDetail withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -1020,12 +1029,15 @@ public class ServerDetail  {
 
     
     public ServerDetail addOsExtendedVolumesVolumesAttachedItem(ServerExtendVolumeAttachment osExtendedVolumesVolumesAttachedItem) {
+        if(this.osExtendedVolumesVolumesAttached == null) {
+            this.osExtendedVolumesVolumesAttached = new ArrayList<>();
+        }
         this.osExtendedVolumesVolumesAttached.add(osExtendedVolumesVolumesAttachedItem);
         return this;
     }
 
     public ServerDetail withOsExtendedVolumesVolumesAttached(Consumer<List<ServerExtendVolumeAttachment>> osExtendedVolumesVolumesAttachedSetter) {
-        if(this.osExtendedVolumesVolumesAttached == null ){
+        if(this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         osExtendedVolumesVolumesAttachedSetter.accept(this.osExtendedVolumesVolumesAttached);
@@ -1273,12 +1285,15 @@ public class ServerDetail  {
 
     
     public ServerDetail addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ServerDetail withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1357,12 +1372,15 @@ public class ServerDetail  {
 
     
     public ServerDetail addSysTagsItem(ServerSystemTag sysTagsItem) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
 
     public ServerDetail withSysTags(Consumer<List<ServerSystemTag>> sysTagsSetter) {
-        if(this.sysTags == null ){
+        if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);

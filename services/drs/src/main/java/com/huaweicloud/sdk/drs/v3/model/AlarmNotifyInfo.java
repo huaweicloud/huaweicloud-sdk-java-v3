@@ -151,12 +151,15 @@ public class AlarmNotifyInfo  {
 
     
     public AlarmNotifyInfo addSubscriptionsItem(SubscriptionInfo subscriptionsItem) {
+        if(this.subscriptions == null) {
+            this.subscriptions = new ArrayList<>();
+        }
         this.subscriptions.add(subscriptionsItem);
         return this;
     }
 
     public AlarmNotifyInfo withSubscriptions(Consumer<List<SubscriptionInfo>> subscriptionsSetter) {
-        if(this.subscriptions == null ){
+        if(this.subscriptions == null) {
             this.subscriptions = new ArrayList<>();
         }
         subscriptionsSetter.accept(this.subscriptions);

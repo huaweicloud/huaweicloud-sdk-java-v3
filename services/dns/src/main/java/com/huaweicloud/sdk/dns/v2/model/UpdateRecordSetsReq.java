@@ -150,12 +150,15 @@ public class UpdateRecordSetsReq  {
 
     
     public UpdateRecordSetsReq addRecordsItem(String recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public UpdateRecordSetsReq withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

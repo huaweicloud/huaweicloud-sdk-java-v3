@@ -66,12 +66,15 @@ public class RulesRemote  {
 
     
     public RulesRemote addAnyOneOfItem(String anyOneOfItem) {
+        if(this.anyOneOf == null) {
+            this.anyOneOf = new ArrayList<>();
+        }
         this.anyOneOf.add(anyOneOfItem);
         return this;
     }
 
     public RulesRemote withAnyOneOf(Consumer<List<String>> anyOneOfSetter) {
-        if(this.anyOneOf == null ){
+        if(this.anyOneOf == null) {
             this.anyOneOf = new ArrayList<>();
         }
         anyOneOfSetter.accept(this.anyOneOf);
@@ -99,12 +102,15 @@ public class RulesRemote  {
 
     
     public RulesRemote addNotAnyOfItem(String notAnyOfItem) {
+        if(this.notAnyOf == null) {
+            this.notAnyOf = new ArrayList<>();
+        }
         this.notAnyOf.add(notAnyOfItem);
         return this;
     }
 
     public RulesRemote withNotAnyOf(Consumer<List<String>> notAnyOfSetter) {
-        if(this.notAnyOf == null ){
+        if(this.notAnyOf == null) {
             this.notAnyOf = new ArrayList<>();
         }
         notAnyOfSetter.accept(this.notAnyOf);

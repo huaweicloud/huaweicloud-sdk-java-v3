@@ -93,12 +93,15 @@ public class ContentCompareResult  {
 
     
     public ContentCompareResult addContentCompareOverviewItem(ContentCompareResultOverview contentCompareOverviewItem) {
+        if(this.contentCompareOverview == null) {
+            this.contentCompareOverview = new ArrayList<>();
+        }
         this.contentCompareOverview.add(contentCompareOverviewItem);
         return this;
     }
 
     public ContentCompareResult withContentCompareOverview(Consumer<List<ContentCompareResultOverview>> contentCompareOverviewSetter) {
-        if(this.contentCompareOverview == null ){
+        if(this.contentCompareOverview == null) {
             this.contentCompareOverview = new ArrayList<>();
         }
         contentCompareOverviewSetter.accept(this.contentCompareOverview);
@@ -148,12 +151,15 @@ public class ContentCompareResult  {
 
     
     public ContentCompareResult addContentCompareDetailsItem(ContentCompareResultDetails contentCompareDetailsItem) {
+        if(this.contentCompareDetails == null) {
+            this.contentCompareDetails = new ArrayList<>();
+        }
         this.contentCompareDetails.add(contentCompareDetailsItem);
         return this;
     }
 
     public ContentCompareResult withContentCompareDetails(Consumer<List<ContentCompareResultDetails>> contentCompareDetailsSetter) {
-        if(this.contentCompareDetails == null ){
+        if(this.contentCompareDetails == null) {
             this.contentCompareDetails = new ArrayList<>();
         }
         contentCompareDetailsSetter.accept(this.contentCompareDetails);
@@ -181,12 +187,15 @@ public class ContentCompareResult  {
 
     
     public ContentCompareResult addContentCompareDiffsItem(ContentCompareResultDiffs contentCompareDiffsItem) {
+        if(this.contentCompareDiffs == null) {
+            this.contentCompareDiffs = new ArrayList<>();
+        }
         this.contentCompareDiffs.add(contentCompareDiffsItem);
         return this;
     }
 
     public ContentCompareResult withContentCompareDiffs(Consumer<List<ContentCompareResultDiffs>> contentCompareDiffsSetter) {
-        if(this.contentCompareDiffs == null ){
+        if(this.contentCompareDiffs == null) {
             this.contentCompareDiffs = new ArrayList<>();
         }
         contentCompareDiffsSetter.accept(this.contentCompareDiffs);

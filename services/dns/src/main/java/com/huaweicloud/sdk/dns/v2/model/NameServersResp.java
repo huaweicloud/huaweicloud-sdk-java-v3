@@ -89,12 +89,15 @@ public class NameServersResp  {
 
     
     public NameServersResp addNsRecordsItem(NsRecords nsRecordsItem) {
+        if(this.nsRecords == null) {
+            this.nsRecords = new ArrayList<>();
+        }
         this.nsRecords.add(nsRecordsItem);
         return this;
     }
 
     public NameServersResp withNsRecords(Consumer<List<NsRecords>> nsRecordsSetter) {
-        if(this.nsRecords == null ){
+        if(this.nsRecords == null) {
             this.nsRecords = new ArrayList<>();
         }
         nsRecordsSetter.accept(this.nsRecords);

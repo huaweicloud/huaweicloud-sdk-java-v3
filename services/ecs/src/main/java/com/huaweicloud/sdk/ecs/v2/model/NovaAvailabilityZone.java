@@ -45,12 +45,15 @@ public class NovaAvailabilityZone  {
 
     
     public NovaAvailabilityZone addHostsItem(String hostsItem) {
+        if(this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
         this.hosts.add(hostsItem);
         return this;
     }
 
     public NovaAvailabilityZone withHosts(Consumer<List<String>> hostsSetter) {
-        if(this.hosts == null ){
+        if(this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         hostsSetter.accept(this.hosts);

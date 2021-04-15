@@ -246,12 +246,15 @@ public class UpdateServerResult  {
     
 
     public UpdateServerResult putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public UpdateServerResult withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -279,12 +282,15 @@ public class UpdateServerResult  {
     
 
     public UpdateServerResult putAddressesItem(String key, List<UpdateServerAddress> addressesItem) {
+        if(this.addresses == null) {
+            this.addresses = new HashMap<>();
+        }
         this.addresses.put(key, addressesItem);
         return this;
     }
 
     public UpdateServerResult withAddresses(Consumer<Map<String, List<UpdateServerAddress>>> addressesSetter) {
-        if(this.addresses == null ){
+        if(this.addresses == null) {
             this.addresses = new HashMap<>();
         }
         addressesSetter.accept(this.addresses);
@@ -472,12 +478,15 @@ public class UpdateServerResult  {
 
     
     public UpdateServerResult addLinksItem(Link linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public UpdateServerResult withLinks(Consumer<List<Link>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
@@ -593,12 +602,15 @@ public class UpdateServerResult  {
 
     
     public UpdateServerResult addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public UpdateServerResult withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

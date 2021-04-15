@@ -108,12 +108,15 @@ public class LoadBalancerStatusListener  {
 
     
     public LoadBalancerStatusListener addPoolsItem(LoadBalancerStatusPool poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public LoadBalancerStatusListener withPools(Consumer<List<LoadBalancerStatusPool>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
@@ -141,12 +144,15 @@ public class LoadBalancerStatusListener  {
 
     
     public LoadBalancerStatusListener addL7policiesItem(LoadBalancerStatusPolicy l7policiesItem) {
+        if(this.l7policies == null) {
+            this.l7policies = new ArrayList<>();
+        }
         this.l7policies.add(l7policiesItem);
         return this;
     }
 
     public LoadBalancerStatusListener withL7policies(Consumer<List<LoadBalancerStatusPolicy>> l7policiesSetter) {
-        if(this.l7policies == null ){
+        if(this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         l7policiesSetter.accept(this.l7policies);

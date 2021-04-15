@@ -36,12 +36,15 @@ public class UpdateServerMetadataResponse extends SdkResponse {
     
 
     public UpdateServerMetadataResponse putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public UpdateServerMetadataResponse withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);

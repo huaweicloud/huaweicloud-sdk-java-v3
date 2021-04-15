@@ -1138,12 +1138,15 @@ public class NovaServer  {
     
 
     public NovaServer putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public NovaServer withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -1193,12 +1196,15 @@ public class NovaServer  {
     
 
     public NovaServer putAddressesItem(String key, List<NovaNetwork> addressesItem) {
+        if(this.addresses == null) {
+            this.addresses = new HashMap<>();
+        }
         this.addresses.put(key, addressesItem);
         return this;
     }
 
     public NovaServer withAddresses(Consumer<Map<String, List<NovaNetwork>>> addressesSetter) {
-        if(this.addresses == null ){
+        if(this.addresses == null) {
             this.addresses = new HashMap<>();
         }
         addressesSetter.accept(this.addresses);
@@ -1225,12 +1231,15 @@ public class NovaServer  {
 
     
     public NovaServer addSecurityGroupsItem(NovaServerSecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public NovaServer withSecurityGroups(Consumer<List<NovaServerSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -1258,12 +1267,15 @@ public class NovaServer  {
 
     
     public NovaServer addLinksItem(NovaLink linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public NovaServer withLinks(Consumer<List<NovaLink>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
@@ -1513,12 +1525,15 @@ public class NovaServer  {
 
     
     public NovaServer addOsExtendedVolumesVolumesAttachedItem(NovaServerVolume osExtendedVolumesVolumesAttachedItem) {
+        if(this.osExtendedVolumesVolumesAttached == null) {
+            this.osExtendedVolumesVolumesAttached = new ArrayList<>();
+        }
         this.osExtendedVolumesVolumesAttached.add(osExtendedVolumesVolumesAttachedItem);
         return this;
     }
 
     public NovaServer withOsExtendedVolumesVolumesAttached(Consumer<List<NovaServerVolume>> osExtendedVolumesVolumesAttachedSetter) {
-        if(this.osExtendedVolumesVolumesAttached == null ){
+        if(this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         osExtendedVolumesVolumesAttachedSetter.accept(this.osExtendedVolumesVolumesAttached);
@@ -1773,12 +1788,15 @@ public class NovaServer  {
 
     
     public NovaServer addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public NovaServer withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

@@ -175,12 +175,15 @@ public class UpdateVersionAliasRequestBody  {
     
 
     public UpdateVersionAliasRequestBody putAdditionalVersionWeightsItem(String key, Integer additionalVersionWeightsItem) {
+        if(this.additionalVersionWeights == null) {
+            this.additionalVersionWeights = new HashMap<>();
+        }
         this.additionalVersionWeights.put(key, additionalVersionWeightsItem);
         return this;
     }
 
     public UpdateVersionAliasRequestBody withAdditionalVersionWeights(Consumer<Map<String, Integer>> additionalVersionWeightsSetter) {
-        if(this.additionalVersionWeights == null ){
+        if(this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
         additionalVersionWeightsSetter.accept(this.additionalVersionWeights);

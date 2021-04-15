@@ -47,12 +47,15 @@ public class TokenUserOsfederation  {
 
     
     public TokenUserOsfederation addGroupsItem(OsfederationGroups groupsItem) {
+        if(this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
         this.groups.add(groupsItem);
         return this;
     }
 
     public TokenUserOsfederation withGroups(Consumer<List<OsfederationGroups>> groupsSetter) {
-        if(this.groups == null ){
+        if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);

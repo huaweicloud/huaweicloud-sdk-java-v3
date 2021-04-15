@@ -51,12 +51,15 @@ public class CompareTaskListResult  {
 
     
     public CompareTaskListResult addCompareTaskListItem(CompareTaskList compareTaskListItem) {
+        if(this.compareTaskList == null) {
+            this.compareTaskList = new ArrayList<>();
+        }
         this.compareTaskList.add(compareTaskListItem);
         return this;
     }
 
     public CompareTaskListResult withCompareTaskList(Consumer<List<CompareTaskList>> compareTaskListSetter) {
-        if(this.compareTaskList == null ){
+        if(this.compareTaskList == null) {
             this.compareTaskList = new ArrayList<>();
         }
         compareTaskListSetter.accept(this.compareTaskList);

@@ -35,12 +35,15 @@ public class ListPoolsResponse extends SdkResponse {
 
     
     public ListPoolsResponse addPoolsItem(PoolResp poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public ListPoolsResponse withPools(Consumer<List<PoolResp>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);

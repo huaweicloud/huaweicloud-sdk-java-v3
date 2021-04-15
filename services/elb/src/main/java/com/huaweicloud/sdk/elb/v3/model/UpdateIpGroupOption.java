@@ -89,12 +89,15 @@ public class UpdateIpGroupOption  {
 
     
     public UpdateIpGroupOption addIpListItem(UpadateIpGroupIpOption ipListItem) {
+        if(this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
         this.ipList.add(ipListItem);
         return this;
     }
 
     public UpdateIpGroupOption withIpList(Consumer<List<UpadateIpGroupIpOption>> ipListSetter) {
-        if(this.ipList == null ){
+        if(this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         ipListSetter.accept(this.ipList);

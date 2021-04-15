@@ -78,12 +78,15 @@ public class NovaCreateServersSchedulerHint  {
 
     
     public NovaCreateServersSchedulerHint addDifferentHostItem(String differentHostItem) {
+        if(this.differentHost == null) {
+            this.differentHost = new ArrayList<>();
+        }
         this.differentHost.add(differentHostItem);
         return this;
     }
 
     public NovaCreateServersSchedulerHint withDifferentHost(Consumer<List<String>> differentHostSetter) {
-        if(this.differentHost == null ){
+        if(this.differentHost == null) {
             this.differentHost = new ArrayList<>();
         }
         differentHostSetter.accept(this.differentHost);
@@ -111,12 +114,15 @@ public class NovaCreateServersSchedulerHint  {
 
     
     public NovaCreateServersSchedulerHint addSameHostItem(String sameHostItem) {
+        if(this.sameHost == null) {
+            this.sameHost = new ArrayList<>();
+        }
         this.sameHost.add(sameHostItem);
         return this;
     }
 
     public NovaCreateServersSchedulerHint withSameHost(Consumer<List<String>> sameHostSetter) {
-        if(this.sameHost == null ){
+        if(this.sameHost == null) {
             this.sameHost = new ArrayList<>();
         }
         sameHostSetter.accept(this.sameHost);

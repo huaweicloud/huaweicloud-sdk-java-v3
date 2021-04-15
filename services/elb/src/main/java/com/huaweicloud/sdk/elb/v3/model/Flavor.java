@@ -208,12 +208,15 @@ public class Flavor  {
 
     
     public Flavor addAvailabilityZoneIdsItem(String availabilityZoneIdsItem) {
+        if(this.availabilityZoneIds == null) {
+            this.availabilityZoneIds = new ArrayList<>();
+        }
         this.availabilityZoneIds.add(availabilityZoneIdsItem);
         return this;
     }
 
     public Flavor withAvailabilityZoneIds(Consumer<List<String>> availabilityZoneIdsSetter) {
-        if(this.availabilityZoneIds == null ){
+        if(this.availabilityZoneIds == null) {
             this.availabilityZoneIds = new ArrayList<>();
         }
         availabilityZoneIdsSetter.accept(this.availabilityZoneIds);

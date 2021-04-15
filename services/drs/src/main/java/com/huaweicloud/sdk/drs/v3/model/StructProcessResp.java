@@ -61,12 +61,15 @@ public class StructProcessResp  {
 
     
     public StructProcessResp addResultItem(StructProcessVO resultItem) {
+        if(this.result == null) {
+            this.result = new ArrayList<>();
+        }
         this.result.add(resultItem);
         return this;
     }
 
     public StructProcessResp withResult(Consumer<List<StructProcessVO>> resultSetter) {
-        if(this.result == null ){
+        if(this.result == null) {
             this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);

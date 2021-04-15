@@ -150,12 +150,15 @@ public class QueryRoleDetailResp  {
 
     
     public QueryRoleDetailResp addInheritsRolesItem(String inheritsRolesItem) {
+        if(this.inheritsRoles == null) {
+            this.inheritsRoles = new ArrayList<>();
+        }
         this.inheritsRoles.add(inheritsRolesItem);
         return this;
     }
 
     public QueryRoleDetailResp withInheritsRoles(Consumer<List<String>> inheritsRolesSetter) {
-        if(this.inheritsRoles == null ){
+        if(this.inheritsRoles == null) {
             this.inheritsRoles = new ArrayList<>();
         }
         inheritsRolesSetter.accept(this.inheritsRoles);

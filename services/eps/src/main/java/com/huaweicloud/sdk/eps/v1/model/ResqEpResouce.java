@@ -57,12 +57,15 @@ public class ResqEpResouce  {
 
     
     public ResqEpResouce addProjectsItem(String projectsItem) {
+        if(this.projects == null) {
+            this.projects = new ArrayList<>();
+        }
         this.projects.add(projectsItem);
         return this;
     }
 
     public ResqEpResouce withProjects(Consumer<List<String>> projectsSetter) {
-        if(this.projects == null ){
+        if(this.projects == null) {
             this.projects = new ArrayList<>();
         }
         projectsSetter.accept(this.projects);
@@ -90,12 +93,15 @@ public class ResqEpResouce  {
 
     
     public ResqEpResouce addResourceTypesItem(String resourceTypesItem) {
+        if(this.resourceTypes == null) {
+            this.resourceTypes = new ArrayList<>();
+        }
         this.resourceTypes.add(resourceTypesItem);
         return this;
     }
 
     public ResqEpResouce withResourceTypes(Consumer<List<String>> resourceTypesSetter) {
-        if(this.resourceTypes == null ){
+        if(this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
         resourceTypesSetter.accept(this.resourceTypes);
@@ -167,12 +173,15 @@ public class ResqEpResouce  {
 
     
     public ResqEpResouce addMatchesItem(Match matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ResqEpResouce withMatches(Consumer<List<Match>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);

@@ -1328,12 +1328,15 @@ public class QueryJobResp  {
 
     
     public QueryJobResp addSourceShardingItem(Endpoint sourceShardingItem) {
+        if(this.sourceSharding == null) {
+            this.sourceSharding = new ArrayList<>();
+        }
         this.sourceSharding.add(sourceShardingItem);
         return this;
     }
 
     public QueryJobResp withSourceSharding(Consumer<List<Endpoint>> sourceShardingSetter) {
-        if(this.sourceSharding == null ){
+        if(this.sourceSharding == null) {
             this.sourceSharding = new ArrayList<>();
         }
         sourceShardingSetter.accept(this.sourceSharding);
@@ -1661,12 +1664,15 @@ public class QueryJobResp  {
 
     
     public QueryJobResp addSpeedLimitItem(SpeedLimitInfo speedLimitItem) {
+        if(this.speedLimit == null) {
+            this.speedLimit = new ArrayList<>();
+        }
         this.speedLimit.add(speedLimitItem);
         return this;
     }
 
     public QueryJobResp withSpeedLimit(Consumer<List<SpeedLimitInfo>> speedLimitSetter) {
-        if(this.speedLimit == null ){
+        if(this.speedLimit == null) {
             this.speedLimit = new ArrayList<>();
         }
         speedLimitSetter.accept(this.speedLimit);

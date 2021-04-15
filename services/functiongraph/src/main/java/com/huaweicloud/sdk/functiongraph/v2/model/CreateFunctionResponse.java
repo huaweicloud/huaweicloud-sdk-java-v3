@@ -1073,12 +1073,15 @@ public class CreateFunctionResponse extends SdkResponse {
 
     
     public CreateFunctionResponse addDependListItem(String dependListItem) {
+        if(this.dependList == null) {
+            this.dependList = new ArrayList<>();
+        }
         this.dependList.add(dependListItem);
         return this;
     }
 
     public CreateFunctionResponse withDependList(Consumer<List<String>> dependListSetter) {
-        if(this.dependList == null ){
+        if(this.dependList == null) {
             this.dependList = new ArrayList<>();
         }
         dependListSetter.accept(this.dependList);
@@ -1157,12 +1160,15 @@ public class CreateFunctionResponse extends SdkResponse {
 
     
     public CreateFunctionResponse addDependenciesItem(Dependency dependenciesItem) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
 
     public CreateFunctionResponse withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if(this.dependencies == null ){
+        if(this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);

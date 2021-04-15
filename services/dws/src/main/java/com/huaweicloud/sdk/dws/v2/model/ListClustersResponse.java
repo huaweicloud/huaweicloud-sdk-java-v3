@@ -35,12 +35,15 @@ public class ListClustersResponse extends SdkResponse {
 
     
     public ListClustersResponse addClustersItem(ClusterInfo clustersItem) {
+        if(this.clusters == null) {
+            this.clusters = new ArrayList<>();
+        }
         this.clusters.add(clustersItem);
         return this;
     }
 
     public ListClustersResponse withClusters(Consumer<List<ClusterInfo>> clustersSetter) {
-        if(this.clusters == null ){
+        if(this.clusters == null) {
             this.clusters = new ArrayList<>();
         }
         clustersSetter.accept(this.clusters);

@@ -371,12 +371,15 @@ public class L7Policy  {
 
     
     public L7Policy addRulesItem(RuleRef rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public L7Policy withRules(Consumer<List<RuleRef>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

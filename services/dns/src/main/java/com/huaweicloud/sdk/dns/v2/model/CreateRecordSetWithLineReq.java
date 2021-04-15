@@ -198,12 +198,15 @@ public class CreateRecordSetWithLineReq  {
 
     
     public CreateRecordSetWithLineReq addRecordsItem(String recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public CreateRecordSetWithLineReq withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);
@@ -253,12 +256,15 @@ public class CreateRecordSetWithLineReq  {
 
     
     public CreateRecordSetWithLineReq addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateRecordSetWithLineReq withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

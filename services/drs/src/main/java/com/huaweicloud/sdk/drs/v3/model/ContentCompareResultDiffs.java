@@ -95,12 +95,15 @@ public class ContentCompareResultDiffs  {
 
     
     public ContentCompareResultDiffs addContentCompareDiffItem(ContentCompareDiff contentCompareDiffItem) {
+        if(this.contentCompareDiff == null) {
+            this.contentCompareDiff = new ArrayList<>();
+        }
         this.contentCompareDiff.add(contentCompareDiffItem);
         return this;
     }
 
     public ContentCompareResultDiffs withContentCompareDiff(Consumer<List<ContentCompareDiff>> contentCompareDiffSetter) {
-        if(this.contentCompareDiff == null ){
+        if(this.contentCompareDiff == null) {
             this.contentCompareDiff = new ArrayList<>();
         }
         contentCompareDiffSetter.accept(this.contentCompareDiff);

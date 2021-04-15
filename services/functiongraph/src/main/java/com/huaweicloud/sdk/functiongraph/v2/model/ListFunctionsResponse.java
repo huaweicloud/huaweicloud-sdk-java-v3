@@ -41,12 +41,15 @@ public class ListFunctionsResponse extends SdkResponse {
 
     
     public ListFunctionsResponse addFunctionsItem(ListFunctionResult functionsItem) {
+        if(this.functions == null) {
+            this.functions = new ArrayList<>();
+        }
         this.functions.add(functionsItem);
         return this;
     }
 
     public ListFunctionsResponse withFunctions(Consumer<List<ListFunctionResult>> functionsSetter) {
-        if(this.functions == null ){
+        if(this.functions == null) {
             this.functions = new ArrayList<>();
         }
         functionsSetter.accept(this.functions);

@@ -292,12 +292,15 @@ public class ShowRecordSetWithLineResponse extends SdkResponse {
 
     
     public ShowRecordSetWithLineResponse addRecordsItem(String recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public ShowRecordSetWithLineResponse withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

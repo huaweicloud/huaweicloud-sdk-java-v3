@@ -33,12 +33,15 @@ public class BatchDeleteJobReq  {
 
     
     public BatchDeleteJobReq addJobsItem(DeleteJobReq jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchDeleteJobReq withJobs(Consumer<List<DeleteJobReq>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

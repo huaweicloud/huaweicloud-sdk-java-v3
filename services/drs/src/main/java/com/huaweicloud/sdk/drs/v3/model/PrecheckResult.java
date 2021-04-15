@@ -289,12 +289,15 @@ public class PrecheckResult  {
 
     
     public PrecheckResult addFailedSubJobsItem(PrecheckFailSubJobVO failedSubJobsItem) {
+        if(this.failedSubJobs == null) {
+            this.failedSubJobs = new ArrayList<>();
+        }
         this.failedSubJobs.add(failedSubJobsItem);
         return this;
     }
 
     public PrecheckResult withFailedSubJobs(Consumer<List<PrecheckFailSubJobVO>> failedSubJobsSetter) {
-        if(this.failedSubJobs == null ){
+        if(this.failedSubJobs == null) {
             this.failedSubJobs = new ArrayList<>();
         }
         failedSubJobsSetter.accept(this.failedSubJobs);

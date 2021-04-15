@@ -42,12 +42,15 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
 
     
     public KeystoneListAuthDomainsResponse addDomainsItem(Domains domainsItem) {
+        if(this.domains == null) {
+            this.domains = new ArrayList<>();
+        }
         this.domains.add(domainsItem);
         return this;
     }
 
     public KeystoneListAuthDomainsResponse withDomains(Consumer<List<Domains>> domainsSetter) {
-        if(this.domains == null ){
+        if(this.domains == null) {
             this.domains = new ArrayList<>();
         }
         domainsSetter.accept(this.domains);

@@ -145,12 +145,15 @@ public class LoadBalancerStatusPolicy  {
 
     
     public LoadBalancerStatusPolicy addRulesItem(LoadBalancerStatusL7Rule rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public LoadBalancerStatusPolicy withRules(Consumer<List<LoadBalancerStatusL7Rule>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

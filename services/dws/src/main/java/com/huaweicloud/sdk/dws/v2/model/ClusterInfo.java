@@ -176,12 +176,15 @@ public class ClusterInfo  {
     
 
     public ClusterInfo putActionProgressItem(String key, String actionProgressItem) {
+        if(this.actionProgress == null) {
+            this.actionProgress = new HashMap<>();
+        }
         this.actionProgress.put(key, actionProgressItem);
         return this;
     }
 
     public ClusterInfo withActionProgress(Consumer<Map<String, String>> actionProgressSetter) {
-        if(this.actionProgress == null ){
+        if(this.actionProgress == null) {
             this.actionProgress = new HashMap<>();
         }
         actionProgressSetter.accept(this.actionProgress);

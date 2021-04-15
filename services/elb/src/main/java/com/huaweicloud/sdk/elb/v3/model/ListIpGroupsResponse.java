@@ -48,12 +48,15 @@ public class ListIpGroupsResponse extends SdkResponse {
 
     
     public ListIpGroupsResponse addIpgroupsItem(IpGroup ipgroupsItem) {
+        if(this.ipgroups == null) {
+            this.ipgroups = new ArrayList<>();
+        }
         this.ipgroups.add(ipgroupsItem);
         return this;
     }
 
     public ListIpGroupsResponse withIpgroups(Consumer<List<IpGroup>> ipgroupsSetter) {
-        if(this.ipgroups == null ){
+        if(this.ipgroups == null) {
             this.ipgroups = new ArrayList<>();
         }
         ipgroupsSetter.accept(this.ipgroups);

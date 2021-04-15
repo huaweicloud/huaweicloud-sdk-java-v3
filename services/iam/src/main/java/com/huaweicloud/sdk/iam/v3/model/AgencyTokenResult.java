@@ -86,12 +86,15 @@ public class AgencyTokenResult  {
 
     
     public AgencyTokenResult addMethodsItem(String methodsItem) {
+        if(this.methods == null) {
+            this.methods = new ArrayList<>();
+        }
         this.methods.add(methodsItem);
         return this;
     }
 
     public AgencyTokenResult withMethods(Consumer<List<String>> methodsSetter) {
-        if(this.methods == null ){
+        if(this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);
@@ -192,12 +195,15 @@ public class AgencyTokenResult  {
 
     
     public AgencyTokenResult addCatalogItem(TokenCatalog catalogItem) {
+        if(this.catalog == null) {
+            this.catalog = new ArrayList<>();
+        }
         this.catalog.add(catalogItem);
         return this;
     }
 
     public AgencyTokenResult withCatalog(Consumer<List<TokenCatalog>> catalogSetter) {
-        if(this.catalog == null ){
+        if(this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
         catalogSetter.accept(this.catalog);
@@ -283,12 +289,15 @@ public class AgencyTokenResult  {
 
     
     public AgencyTokenResult addRolesItem(TokenRole rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public AgencyTokenResult withRoles(Consumer<List<TokenRole>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

@@ -177,12 +177,15 @@ public class CreateVersionAliasResponse extends SdkResponse {
     
 
     public CreateVersionAliasResponse putAdditionalVersionWeightsItem(String key, Integer additionalVersionWeightsItem) {
+        if(this.additionalVersionWeights == null) {
+            this.additionalVersionWeights = new HashMap<>();
+        }
         this.additionalVersionWeights.put(key, additionalVersionWeightsItem);
         return this;
     }
 
     public CreateVersionAliasResponse withAdditionalVersionWeights(Consumer<Map<String, Integer>> additionalVersionWeightsSetter) {
-        if(this.additionalVersionWeights == null ){
+        if(this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
         additionalVersionWeightsSetter.accept(this.additionalVersionWeights);

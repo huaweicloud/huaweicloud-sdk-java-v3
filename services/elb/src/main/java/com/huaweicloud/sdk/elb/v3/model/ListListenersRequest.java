@@ -192,12 +192,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addClientCaTlsContainerRefItem(String clientCaTlsContainerRefItem) {
+        if(this.clientCaTlsContainerRef == null) {
+            this.clientCaTlsContainerRef = new ArrayList<>();
+        }
         this.clientCaTlsContainerRef.add(clientCaTlsContainerRefItem);
         return this;
     }
 
     public ListListenersRequest withClientCaTlsContainerRef(Consumer<List<String>> clientCaTlsContainerRefSetter) {
-        if(this.clientCaTlsContainerRef == null ){
+        if(this.clientCaTlsContainerRef == null) {
             this.clientCaTlsContainerRef = new ArrayList<>();
         }
         clientCaTlsContainerRefSetter.accept(this.clientCaTlsContainerRef);
@@ -225,12 +228,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addClientTimeoutItem(Integer clientTimeoutItem) {
+        if(this.clientTimeout == null) {
+            this.clientTimeout = new ArrayList<>();
+        }
         this.clientTimeout.add(clientTimeoutItem);
         return this;
     }
 
     public ListListenersRequest withClientTimeout(Consumer<List<Integer>> clientTimeoutSetter) {
-        if(this.clientTimeout == null ){
+        if(this.clientTimeout == null) {
             this.clientTimeout = new ArrayList<>();
         }
         clientTimeoutSetter.accept(this.clientTimeout);
@@ -258,12 +264,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addConnectionLimitItem(Integer connectionLimitItem) {
+        if(this.connectionLimit == null) {
+            this.connectionLimit = new ArrayList<>();
+        }
         this.connectionLimit.add(connectionLimitItem);
         return this;
     }
 
     public ListListenersRequest withConnectionLimit(Consumer<List<Integer>> connectionLimitSetter) {
-        if(this.connectionLimit == null ){
+        if(this.connectionLimit == null) {
             this.connectionLimit = new ArrayList<>();
         }
         connectionLimitSetter.accept(this.connectionLimit);
@@ -291,12 +300,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addDefaultPoolIdItem(String defaultPoolIdItem) {
+        if(this.defaultPoolId == null) {
+            this.defaultPoolId = new ArrayList<>();
+        }
         this.defaultPoolId.add(defaultPoolIdItem);
         return this;
     }
 
     public ListListenersRequest withDefaultPoolId(Consumer<List<String>> defaultPoolIdSetter) {
-        if(this.defaultPoolId == null ){
+        if(this.defaultPoolId == null) {
             this.defaultPoolId = new ArrayList<>();
         }
         defaultPoolIdSetter.accept(this.defaultPoolId);
@@ -324,12 +336,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addDefaultTlsContainerRefItem(String defaultTlsContainerRefItem) {
+        if(this.defaultTlsContainerRef == null) {
+            this.defaultTlsContainerRef = new ArrayList<>();
+        }
         this.defaultTlsContainerRef.add(defaultTlsContainerRefItem);
         return this;
     }
 
     public ListListenersRequest withDefaultTlsContainerRef(Consumer<List<String>> defaultTlsContainerRefSetter) {
-        if(this.defaultTlsContainerRef == null ){
+        if(this.defaultTlsContainerRef == null) {
             this.defaultTlsContainerRef = new ArrayList<>();
         }
         defaultTlsContainerRefSetter.accept(this.defaultTlsContainerRef);
@@ -357,12 +372,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListListenersRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -412,12 +430,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if(this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
 
     public ListListenersRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
+        if(this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
@@ -467,12 +488,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListListenersRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -500,12 +524,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addKeepaliveTimeoutItem(Integer keepaliveTimeoutItem) {
+        if(this.keepaliveTimeout == null) {
+            this.keepaliveTimeout = new ArrayList<>();
+        }
         this.keepaliveTimeout.add(keepaliveTimeoutItem);
         return this;
     }
 
     public ListListenersRequest withKeepaliveTimeout(Consumer<List<Integer>> keepaliveTimeoutSetter) {
-        if(this.keepaliveTimeout == null ){
+        if(this.keepaliveTimeout == null) {
             this.keepaliveTimeout = new ArrayList<>();
         }
         keepaliveTimeoutSetter.accept(this.keepaliveTimeout);
@@ -557,12 +584,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
+        if(this.loadbalancerId == null) {
+            this.loadbalancerId = new ArrayList<>();
+        }
         this.loadbalancerId.add(loadbalancerIdItem);
         return this;
     }
 
     public ListListenersRequest withLoadbalancerId(Consumer<List<String>> loadbalancerIdSetter) {
-        if(this.loadbalancerId == null ){
+        if(this.loadbalancerId == null) {
             this.loadbalancerId = new ArrayList<>();
         }
         loadbalancerIdSetter.accept(this.loadbalancerId);
@@ -612,12 +642,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addMemberAddressItem(String memberAddressItem) {
+        if(this.memberAddress == null) {
+            this.memberAddress = new ArrayList<>();
+        }
         this.memberAddress.add(memberAddressItem);
         return this;
     }
 
     public ListListenersRequest withMemberAddress(Consumer<List<String>> memberAddressSetter) {
-        if(this.memberAddress == null ){
+        if(this.memberAddress == null) {
             this.memberAddress = new ArrayList<>();
         }
         memberAddressSetter.accept(this.memberAddress);
@@ -645,12 +678,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
+        if(this.memberDeviceId == null) {
+            this.memberDeviceId = new ArrayList<>();
+        }
         this.memberDeviceId.add(memberDeviceIdItem);
         return this;
     }
 
     public ListListenersRequest withMemberDeviceId(Consumer<List<String>> memberDeviceIdSetter) {
-        if(this.memberDeviceId == null ){
+        if(this.memberDeviceId == null) {
             this.memberDeviceId = new ArrayList<>();
         }
         memberDeviceIdSetter.accept(this.memberDeviceId);
@@ -678,12 +714,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addMemberTimeoutItem(Integer memberTimeoutItem) {
+        if(this.memberTimeout == null) {
+            this.memberTimeout = new ArrayList<>();
+        }
         this.memberTimeout.add(memberTimeoutItem);
         return this;
     }
 
     public ListListenersRequest withMemberTimeout(Consumer<List<Integer>> memberTimeoutSetter) {
-        if(this.memberTimeout == null ){
+        if(this.memberTimeout == null) {
             this.memberTimeout = new ArrayList<>();
         }
         memberTimeoutSetter.accept(this.memberTimeout);
@@ -711,12 +750,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListListenersRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -766,12 +808,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addProtocolItem(String protocolItem) {
+        if(this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
         this.protocol.add(protocolItem);
         return this;
     }
 
     public ListListenersRequest withProtocol(Consumer<List<String>> protocolSetter) {
-        if(this.protocol == null ){
+        if(this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         protocolSetter.accept(this.protocol);
@@ -799,12 +844,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addProtocolPortItem(String protocolPortItem) {
+        if(this.protocolPort == null) {
+            this.protocolPort = new ArrayList<>();
+        }
         this.protocolPort.add(protocolPortItem);
         return this;
     }
 
     public ListListenersRequest withProtocolPort(Consumer<List<String>> protocolPortSetter) {
-        if(this.protocolPort == null ){
+        if(this.protocolPort == null) {
             this.protocolPort = new ArrayList<>();
         }
         protocolPortSetter.accept(this.protocolPort);
@@ -832,12 +880,15 @@ public class ListListenersRequest  {
 
     
     public ListListenersRequest addTlsCiphersPolicyItem(String tlsCiphersPolicyItem) {
+        if(this.tlsCiphersPolicy == null) {
+            this.tlsCiphersPolicy = new ArrayList<>();
+        }
         this.tlsCiphersPolicy.add(tlsCiphersPolicyItem);
         return this;
     }
 
     public ListListenersRequest withTlsCiphersPolicy(Consumer<List<String>> tlsCiphersPolicySetter) {
-        if(this.tlsCiphersPolicy == null ){
+        if(this.tlsCiphersPolicy == null) {
             this.tlsCiphersPolicy = new ArrayList<>();
         }
         tlsCiphersPolicySetter.accept(this.tlsCiphersPolicy);

@@ -1135,12 +1135,15 @@ public class ListFunctionResult  {
 
     
     public ListFunctionResult addDependListItem(String dependListItem) {
+        if(this.dependList == null) {
+            this.dependList = new ArrayList<>();
+        }
         this.dependList.add(dependListItem);
         return this;
     }
 
     public ListFunctionResult withDependList(Consumer<List<String>> dependListSetter) {
-        if(this.dependList == null ){
+        if(this.dependList == null) {
             this.dependList = new ArrayList<>();
         }
         dependListSetter.accept(this.dependList);
@@ -1219,12 +1222,15 @@ public class ListFunctionResult  {
 
     
     public ListFunctionResult addDependenciesItem(Dependency dependenciesItem) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
 
     public ListFunctionResult withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if(this.dependencies == null ){
+        if(this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);

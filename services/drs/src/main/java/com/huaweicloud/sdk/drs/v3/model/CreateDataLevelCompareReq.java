@@ -388,12 +388,15 @@ public class CreateDataLevelCompareReq  {
 
     
     public CreateDataLevelCompareReq addCompareObjectInfosItem(CompareObjectInfo compareObjectInfosItem) {
+        if(this.compareObjectInfos == null) {
+            this.compareObjectInfos = new ArrayList<>();
+        }
         this.compareObjectInfos.add(compareObjectInfosItem);
         return this;
     }
 
     public CreateDataLevelCompareReq withCompareObjectInfos(Consumer<List<CompareObjectInfo>> compareObjectInfosSetter) {
-        if(this.compareObjectInfos == null ){
+        if(this.compareObjectInfos == null) {
             this.compareObjectInfos = new ArrayList<>();
         }
         compareObjectInfosSetter.accept(this.compareObjectInfos);
@@ -421,12 +424,15 @@ public class CreateDataLevelCompareReq  {
 
     
     public CreateDataLevelCompareReq addCompareObjectInfosWithTokenItem(CompareObjectInfoWithToken compareObjectInfosWithTokenItem) {
+        if(this.compareObjectInfosWithToken == null) {
+            this.compareObjectInfosWithToken = new ArrayList<>();
+        }
         this.compareObjectInfosWithToken.add(compareObjectInfosWithTokenItem);
         return this;
     }
 
     public CreateDataLevelCompareReq withCompareObjectInfosWithToken(Consumer<List<CompareObjectInfoWithToken>> compareObjectInfosWithTokenSetter) {
-        if(this.compareObjectInfosWithToken == null ){
+        if(this.compareObjectInfosWithToken == null) {
             this.compareObjectInfosWithToken = new ArrayList<>();
         }
         compareObjectInfosWithTokenSetter.accept(this.compareObjectInfosWithToken);

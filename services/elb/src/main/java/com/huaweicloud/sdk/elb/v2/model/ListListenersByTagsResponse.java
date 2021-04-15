@@ -63,12 +63,15 @@ public class ListListenersByTagsResponse extends SdkResponse {
 
     
     public ListListenersByTagsResponse addResourcesItem(ResourcesByTag resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListListenersByTagsResponse withResources(Consumer<List<ResourcesByTag>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

@@ -35,12 +35,15 @@ public class ListPermanentAccessKeysResponse extends SdkResponse {
 
     
     public ListPermanentAccessKeysResponse addCredentialsItem(Credentials credentialsItem) {
+        if(this.credentials == null) {
+            this.credentials = new ArrayList<>();
+        }
         this.credentials.add(credentialsItem);
         return this;
     }
 
     public ListPermanentAccessKeysResponse withCredentials(Consumer<List<Credentials>> credentialsSetter) {
-        if(this.credentials == null ){
+        if(this.credentials == null) {
             this.credentials = new ArrayList<>();
         }
         credentialsSetter.accept(this.credentials);

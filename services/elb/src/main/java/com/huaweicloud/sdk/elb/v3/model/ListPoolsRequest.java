@@ -144,12 +144,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListPoolsRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -177,12 +180,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if(this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
 
     public ListPoolsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
+        if(this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
@@ -210,12 +216,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addHealthmonitorIdItem(String healthmonitorIdItem) {
+        if(this.healthmonitorId == null) {
+            this.healthmonitorId = new ArrayList<>();
+        }
         this.healthmonitorId.add(healthmonitorIdItem);
         return this;
     }
 
     public ListPoolsRequest withHealthmonitorId(Consumer<List<String>> healthmonitorIdSetter) {
-        if(this.healthmonitorId == null ){
+        if(this.healthmonitorId == null) {
             this.healthmonitorId = new ArrayList<>();
         }
         healthmonitorIdSetter.accept(this.healthmonitorId);
@@ -243,12 +252,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListPoolsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -276,12 +288,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addIpVersionItem(String ipVersionItem) {
+        if(this.ipVersion == null) {
+            this.ipVersion = new ArrayList<>();
+        }
         this.ipVersion.add(ipVersionItem);
         return this;
     }
 
     public ListPoolsRequest withIpVersion(Consumer<List<String>> ipVersionSetter) {
-        if(this.ipVersion == null ){
+        if(this.ipVersion == null) {
             this.ipVersion = new ArrayList<>();
         }
         ipVersionSetter.accept(this.ipVersion);
@@ -309,12 +324,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addLbAlgorithmItem(String lbAlgorithmItem) {
+        if(this.lbAlgorithm == null) {
+            this.lbAlgorithm = new ArrayList<>();
+        }
         this.lbAlgorithm.add(lbAlgorithmItem);
         return this;
     }
 
     public ListPoolsRequest withLbAlgorithm(Consumer<List<String>> lbAlgorithmSetter) {
-        if(this.lbAlgorithm == null ){
+        if(this.lbAlgorithm == null) {
             this.lbAlgorithm = new ArrayList<>();
         }
         lbAlgorithmSetter.accept(this.lbAlgorithm);
@@ -366,12 +384,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
+        if(this.loadbalancerId == null) {
+            this.loadbalancerId = new ArrayList<>();
+        }
         this.loadbalancerId.add(loadbalancerIdItem);
         return this;
     }
 
     public ListPoolsRequest withLoadbalancerId(Consumer<List<String>> loadbalancerIdSetter) {
-        if(this.loadbalancerId == null ){
+        if(this.loadbalancerId == null) {
             this.loadbalancerId = new ArrayList<>();
         }
         loadbalancerIdSetter.accept(this.loadbalancerId);
@@ -421,12 +442,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addMemberAddressItem(String memberAddressItem) {
+        if(this.memberAddress == null) {
+            this.memberAddress = new ArrayList<>();
+        }
         this.memberAddress.add(memberAddressItem);
         return this;
     }
 
     public ListPoolsRequest withMemberAddress(Consumer<List<String>> memberAddressSetter) {
-        if(this.memberAddress == null ){
+        if(this.memberAddress == null) {
             this.memberAddress = new ArrayList<>();
         }
         memberAddressSetter.accept(this.memberAddress);
@@ -476,12 +500,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
+        if(this.memberDeviceId == null) {
+            this.memberDeviceId = new ArrayList<>();
+        }
         this.memberDeviceId.add(memberDeviceIdItem);
         return this;
     }
 
     public ListPoolsRequest withMemberDeviceId(Consumer<List<String>> memberDeviceIdSetter) {
-        if(this.memberDeviceId == null ){
+        if(this.memberDeviceId == null) {
             this.memberDeviceId = new ArrayList<>();
         }
         memberDeviceIdSetter.accept(this.memberDeviceId);
@@ -509,12 +536,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListPoolsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -564,12 +594,15 @@ public class ListPoolsRequest  {
 
     
     public ListPoolsRequest addProtocolItem(String protocolItem) {
+        if(this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
         this.protocol.add(protocolItem);
         return this;
     }
 
     public ListPoolsRequest withProtocol(Consumer<List<String>> protocolSetter) {
-        if(this.protocol == null ){
+        if(this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         protocolSetter.accept(this.protocol);

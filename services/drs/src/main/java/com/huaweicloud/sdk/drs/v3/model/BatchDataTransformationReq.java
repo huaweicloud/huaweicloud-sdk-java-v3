@@ -33,12 +33,15 @@ public class BatchDataTransformationReq  {
 
     
     public BatchDataTransformationReq addJobsItem(CheckDataTransformationReq jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchDataTransformationReq withJobs(Consumer<List<CheckDataTransformationReq>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

@@ -71,12 +71,15 @@ public class KeystoneListRegionsResponse extends SdkResponse {
 
     
     public KeystoneListRegionsResponse addRegionsItem(Region regionsItem) {
+        if(this.regions == null) {
+            this.regions = new ArrayList<>();
+        }
         this.regions.add(regionsItem);
         return this;
     }
 
     public KeystoneListRegionsResponse withRegions(Consumer<List<Region>> regionsSetter) {
-        if(this.regions == null ){
+        if(this.regions == null) {
             this.regions = new ArrayList<>();
         }
         regionsSetter.accept(this.regions);

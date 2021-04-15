@@ -63,12 +63,15 @@ public class BatchSetDefinerResponse extends SdkResponse {
 
     
     public BatchSetDefinerResponse addResultsItem(ModifyJobResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchSetDefinerResponse withResults(Consumer<List<ModifyJobResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

@@ -136,12 +136,15 @@ public class CreateServerGroupOption  {
 
     
     public CreateServerGroupOption addPoliciesItem(PoliciesEnum policiesItem) {
+        if(this.policies == null) {
+            this.policies = new ArrayList<>();
+        }
         this.policies.add(policiesItem);
         return this;
     }
 
     public CreateServerGroupOption withPolicies(Consumer<List<PoliciesEnum>> policiesSetter) {
-        if(this.policies == null ){
+        if(this.policies == null) {
             this.policies = new ArrayList<>();
         }
         policiesSetter.accept(this.policies);

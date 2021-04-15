@@ -125,12 +125,15 @@ public class Resource  {
 
     
     public Resource addTagsItem(Map<String, String> tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public Resource withTags(Consumer<List<Map<String, String>>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

@@ -35,12 +35,15 @@ public class ShowPublicZoneNameServerResponse extends SdkResponse {
 
     
     public ShowPublicZoneNameServerResponse addNameserversItem(Nameserver nameserversItem) {
+        if(this.nameservers == null) {
+            this.nameservers = new ArrayList<>();
+        }
         this.nameservers.add(nameserversItem);
         return this;
     }
 
     public ShowPublicZoneNameServerResponse withNameservers(Consumer<List<Nameserver>> nameserversSetter) {
-        if(this.nameservers == null ){
+        if(this.nameservers == null) {
             this.nameservers = new ArrayList<>();
         }
         nameserversSetter.accept(this.nameservers);

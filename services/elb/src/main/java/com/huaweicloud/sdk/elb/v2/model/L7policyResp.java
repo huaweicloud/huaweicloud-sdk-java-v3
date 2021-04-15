@@ -237,12 +237,15 @@ public class L7policyResp  {
 
     
     public L7policyResp addRulesItem(ResourceList rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public L7policyResp withRules(Consumer<List<ResourceList>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

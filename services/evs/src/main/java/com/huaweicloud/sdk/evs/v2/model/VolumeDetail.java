@@ -251,12 +251,15 @@ public class VolumeDetail  {
 
     
     public VolumeDetail addLinksItem(Link linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public VolumeDetail withLinks(Consumer<List<Link>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
@@ -328,12 +331,15 @@ public class VolumeDetail  {
 
     
     public VolumeDetail addAttachmentsItem(Attachment attachmentsItem) {
+        if(this.attachments == null) {
+            this.attachments = new ArrayList<>();
+        }
         this.attachments.add(attachmentsItem);
         return this;
     }
 
     public VolumeDetail withAttachments(Consumer<List<Attachment>> attachmentsSetter) {
-        if(this.attachments == null ){
+        if(this.attachments == null) {
             this.attachments = new ArrayList<>();
         }
         attachmentsSetter.accept(this.attachments);
@@ -516,12 +522,15 @@ public class VolumeDetail  {
     
 
     public VolumeDetail putVolumeImageMetadataItem(String key, Object volumeImageMetadataItem) {
+        if(this.volumeImageMetadata == null) {
+            this.volumeImageMetadata = new HashMap<>();
+        }
         this.volumeImageMetadata.put(key, volumeImageMetadataItem);
         return this;
     }
 
     public VolumeDetail withVolumeImageMetadata(Consumer<Map<String, Object>> volumeImageMetadataSetter) {
-        if(this.volumeImageMetadata == null ){
+        if(this.volumeImageMetadata == null) {
             this.volumeImageMetadata = new HashMap<>();
         }
         volumeImageMetadataSetter.accept(this.volumeImageMetadata);
@@ -930,12 +939,15 @@ public class VolumeDetail  {
     
 
     public VolumeDetail putTagsItem(String key, String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new HashMap<>();
+        }
         this.tags.put(key, tagsItem);
         return this;
     }
 
     public VolumeDetail withTags(Consumer<Map<String, String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);

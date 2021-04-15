@@ -445,12 +445,15 @@ public class PrivateZoneResp  {
 
     
     public PrivateZoneResp addMastersItem(String mastersItem) {
+        if(this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
         this.masters.add(mastersItem);
         return this;
     }
 
     public PrivateZoneResp withMasters(Consumer<List<String>> mastersSetter) {
-        if(this.masters == null ){
+        if(this.masters == null) {
             this.masters = new ArrayList<>();
         }
         mastersSetter.accept(this.masters);
@@ -478,12 +481,15 @@ public class PrivateZoneResp  {
 
     
     public PrivateZoneResp addRoutersItem(RouterWithStatus routersItem) {
+        if(this.routers == null) {
+            this.routers = new ArrayList<>();
+        }
         this.routers.add(routersItem);
         return this;
     }
 
     public PrivateZoneResp withRouters(Consumer<List<RouterWithStatus>> routersSetter) {
-        if(this.routers == null ){
+        if(this.routers == null) {
             this.routers = new ArrayList<>();
         }
         routersSetter.accept(this.routers);

@@ -33,12 +33,15 @@ public class ResourceResp  {
 
     
     public ResourceResp addResourcesItem(QuotaShowResp resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ResourceResp withResources(Consumer<List<QuotaShowResp>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

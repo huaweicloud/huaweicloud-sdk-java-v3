@@ -48,12 +48,15 @@ public class ListStatisticsResponse extends SdkResponse {
 
     
     public ListStatisticsResponse addCountItem(MonthUsed countItem) {
+        if(this.count == null) {
+            this.count = new ArrayList<>();
+        }
         this.count.add(countItem);
         return this;
     }
 
     public ListStatisticsResponse withCount(Consumer<List<MonthUsed>> countSetter) {
-        if(this.count == null ){
+        if(this.count == null) {
             this.count = new ArrayList<>();
         }
         countSetter.accept(this.count);
@@ -81,12 +84,15 @@ public class ListStatisticsResponse extends SdkResponse {
 
     
     public ListStatisticsResponse addGbsItem(MonthUsed gbsItem) {
+        if(this.gbs == null) {
+            this.gbs = new ArrayList<>();
+        }
         this.gbs.add(gbsItem);
         return this;
     }
 
     public ListStatisticsResponse withGbs(Consumer<List<MonthUsed>> gbsSetter) {
-        if(this.gbs == null ){
+        if(this.gbs == null) {
             this.gbs = new ArrayList<>();
         }
         gbsSetter.accept(this.gbs);

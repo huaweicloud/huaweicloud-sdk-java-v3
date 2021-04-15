@@ -61,12 +61,15 @@ public class ServicePolicy  {
 
     
     public ServicePolicy addStatementItem(ServiceStatement statementItem) {
+        if(this.statement == null) {
+            this.statement = new ArrayList<>();
+        }
         this.statement.add(statementItem);
         return this;
     }
 
     public ServicePolicy withStatement(Consumer<List<ServiceStatement>> statementSetter) {
-        if(this.statement == null ){
+        if(this.statement == null) {
             this.statement = new ArrayList<>();
         }
         statementSetter.accept(this.statement);

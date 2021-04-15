@@ -142,12 +142,15 @@ public class IpGroup  {
 
     
     public IpGroup addIpListItem(IpInfo ipListItem) {
+        if(this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
         this.ipList.add(ipListItem);
         return this;
     }
 
     public IpGroup withIpList(Consumer<List<IpInfo>> ipListSetter) {
-        if(this.ipList == null ){
+        if(this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         ipListSetter.accept(this.ipList);
@@ -175,12 +178,15 @@ public class IpGroup  {
 
     
     public IpGroup addListenersItem(ListenerRef listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public IpGroup withListeners(Consumer<List<ListenerRef>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);

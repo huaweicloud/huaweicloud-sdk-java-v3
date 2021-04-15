@@ -61,12 +61,15 @@ public class CompareObjectInfoWithToken  {
 
     
     public CompareObjectInfoWithToken addTableNameWithTokenItem(CompareTableInfoWithToken tableNameWithTokenItem) {
+        if(this.tableNameWithToken == null) {
+            this.tableNameWithToken = new ArrayList<>();
+        }
         this.tableNameWithToken.add(tableNameWithTokenItem);
         return this;
     }
 
     public CompareObjectInfoWithToken withTableNameWithToken(Consumer<List<CompareTableInfoWithToken>> tableNameWithTokenSetter) {
-        if(this.tableNameWithToken == null ){
+        if(this.tableNameWithToken == null) {
             this.tableNameWithToken = new ArrayList<>();
         }
         tableNameWithTokenSetter.accept(this.tableNameWithToken);

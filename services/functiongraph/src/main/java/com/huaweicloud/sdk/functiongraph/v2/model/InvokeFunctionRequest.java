@@ -122,12 +122,15 @@ public class InvokeFunctionRequest  {
     
 
     public InvokeFunctionRequest putBodyItem(String key, Object bodyItem) {
+        if(this.body == null) {
+            this.body = new HashMap<>();
+        }
         this.body.put(key, bodyItem);
         return this;
     }
 
     public InvokeFunctionRequest withBody(Consumer<Map<String, Object>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new HashMap<>();
         }
         bodySetter.accept(this.body);

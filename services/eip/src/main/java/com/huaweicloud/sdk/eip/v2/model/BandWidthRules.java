@@ -173,12 +173,15 @@ public class BandWidthRules  {
 
     
     public BandWidthRules addPublicipInfoItem(PublicipInfoResp publicipInfoItem) {
+        if(this.publicipInfo == null) {
+            this.publicipInfo = new ArrayList<>();
+        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
 
     public BandWidthRules withPublicipInfo(Consumer<List<PublicipInfoResp>> publicipInfoSetter) {
-        if(this.publicipInfo == null ){
+        if(this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         publicipInfoSetter.accept(this.publicipInfo);

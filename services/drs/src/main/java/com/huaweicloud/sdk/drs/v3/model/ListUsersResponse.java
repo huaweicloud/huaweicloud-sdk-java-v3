@@ -132,12 +132,15 @@ public class ListUsersResponse extends SdkResponse {
 
     
     public ListUsersResponse addUserListItem(QueryUserDetailResp userListItem) {
+        if(this.userList == null) {
+            this.userList = new ArrayList<>();
+        }
         this.userList.add(userListItem);
         return this;
     }
 
     public ListUsersResponse withUserList(Consumer<List<QueryUserDetailResp>> userListSetter) {
-        if(this.userList == null ){
+        if(this.userList == null) {
             this.userList = new ArrayList<>();
         }
         userListSetter.accept(this.userList);
@@ -165,12 +168,15 @@ public class ListUsersResponse extends SdkResponse {
 
     
     public ListUsersResponse addRolesListItem(QueryRoleDetailResp rolesListItem) {
+        if(this.rolesList == null) {
+            this.rolesList = new ArrayList<>();
+        }
         this.rolesList.add(rolesListItem);
         return this;
     }
 
     public ListUsersResponse withRolesList(Consumer<List<QueryRoleDetailResp>> rolesListSetter) {
-        if(this.rolesList == null ){
+        if(this.rolesList == null) {
             this.rolesList = new ArrayList<>();
         }
         rolesListSetter.accept(this.rolesList);

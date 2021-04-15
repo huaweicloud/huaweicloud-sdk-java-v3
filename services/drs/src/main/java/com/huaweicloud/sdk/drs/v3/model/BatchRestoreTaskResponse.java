@@ -41,12 +41,15 @@ public class BatchRestoreTaskResponse extends SdkResponse {
 
     
     public BatchRestoreTaskResponse addResultsItem(RetryTaskResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchRestoreTaskResponse withResults(Consumer<List<RetryTaskResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

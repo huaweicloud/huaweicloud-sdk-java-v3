@@ -352,12 +352,15 @@ public class ListenerResp  {
 
     
     public ListenerResp addLoadbalancersItem(ResourceList loadbalancersItem) {
+        if(this.loadbalancers == null) {
+            this.loadbalancers = new ArrayList<>();
+        }
         this.loadbalancers.add(loadbalancersItem);
         return this;
     }
 
     public ListenerResp withLoadbalancers(Consumer<List<ResourceList>> loadbalancersSetter) {
-        if(this.loadbalancers == null ){
+        if(this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         loadbalancersSetter.accept(this.loadbalancers);
@@ -543,12 +546,15 @@ public class ListenerResp  {
 
     
     public ListenerResp addSniContainerRefsItem(String sniContainerRefsItem) {
+        if(this.sniContainerRefs == null) {
+            this.sniContainerRefs = new ArrayList<>();
+        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
 
     public ListenerResp withSniContainerRefs(Consumer<List<String>> sniContainerRefsSetter) {
-        if(this.sniContainerRefs == null ){
+        if(this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         sniContainerRefsSetter.accept(this.sniContainerRefs);
@@ -576,12 +582,15 @@ public class ListenerResp  {
 
     
     public ListenerResp addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListenerResp withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

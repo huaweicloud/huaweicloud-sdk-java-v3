@@ -82,12 +82,15 @@ public class ObjectCompareResult  {
 
     
     public ObjectCompareResult addObjectCompareOverviewItem(ObjectCompareResultOverview objectCompareOverviewItem) {
+        if(this.objectCompareOverview == null) {
+            this.objectCompareOverview = new ArrayList<>();
+        }
         this.objectCompareOverview.add(objectCompareOverviewItem);
         return this;
     }
 
     public ObjectCompareResult withObjectCompareOverview(Consumer<List<ObjectCompareResultOverview>> objectCompareOverviewSetter) {
-        if(this.objectCompareOverview == null ){
+        if(this.objectCompareOverview == null) {
             this.objectCompareOverview = new ArrayList<>();
         }
         objectCompareOverviewSetter.accept(this.objectCompareOverview);
@@ -116,12 +119,15 @@ public class ObjectCompareResult  {
     
 
     public ObjectCompareResult putObjectCompareDetailsItem(String key, List<ObjectCompareResultDetails> objectCompareDetailsItem) {
+        if(this.objectCompareDetails == null) {
+            this.objectCompareDetails = new HashMap<>();
+        }
         this.objectCompareDetails.put(key, objectCompareDetailsItem);
         return this;
     }
 
     public ObjectCompareResult withObjectCompareDetails(Consumer<Map<String, List<ObjectCompareResultDetails>>> objectCompareDetailsSetter) {
-        if(this.objectCompareDetails == null ){
+        if(this.objectCompareDetails == null) {
             this.objectCompareDetails = new HashMap<>();
         }
         objectCompareDetailsSetter.accept(this.objectCompareDetails);

@@ -33,12 +33,15 @@ public class BatchLimitSpeedReq  {
 
     
     public BatchLimitSpeedReq addSpeedLimitsItem(LimitSpeedReq speedLimitsItem) {
+        if(this.speedLimits == null) {
+            this.speedLimits = new ArrayList<>();
+        }
         this.speedLimits.add(speedLimitsItem);
         return this;
     }
 
     public BatchLimitSpeedReq withSpeedLimits(Consumer<List<LimitSpeedReq>> speedLimitsSetter) {
-        if(this.speedLimits == null ){
+        if(this.speedLimits == null) {
             this.speedLimits = new ArrayList<>();
         }
         speedLimitsSetter.accept(this.speedLimits);

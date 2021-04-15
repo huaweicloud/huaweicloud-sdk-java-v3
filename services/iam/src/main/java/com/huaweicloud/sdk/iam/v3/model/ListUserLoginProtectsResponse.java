@@ -35,12 +35,15 @@ public class ListUserLoginProtectsResponse extends SdkResponse {
 
     
     public ListUserLoginProtectsResponse addLoginProtectsItem(LoginProtectResult loginProtectsItem) {
+        if(this.loginProtects == null) {
+            this.loginProtects = new ArrayList<>();
+        }
         this.loginProtects.add(loginProtectsItem);
         return this;
     }
 
     public ListUserLoginProtectsResponse withLoginProtects(Consumer<List<LoginProtectResult>> loginProtectsSetter) {
-        if(this.loginProtects == null ){
+        if(this.loginProtects == null) {
             this.loginProtects = new ArrayList<>();
         }
         loginProtectsSetter.accept(this.loginProtects);

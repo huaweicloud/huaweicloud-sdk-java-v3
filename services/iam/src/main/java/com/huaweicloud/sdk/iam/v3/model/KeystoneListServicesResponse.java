@@ -42,12 +42,15 @@ public class KeystoneListServicesResponse extends SdkResponse {
 
     
     public KeystoneListServicesResponse addServicesItem(Service servicesItem) {
+        if(this.services == null) {
+            this.services = new ArrayList<>();
+        }
         this.services.add(servicesItem);
         return this;
     }
 
     public KeystoneListServicesResponse withServices(Consumer<List<Service>> servicesSetter) {
-        if(this.services == null ){
+        if(this.services == null) {
             this.services = new ArrayList<>();
         }
         servicesSetter.accept(this.services);

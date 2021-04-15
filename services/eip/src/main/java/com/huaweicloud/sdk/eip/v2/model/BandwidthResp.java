@@ -482,12 +482,15 @@ public class BandwidthResp  {
 
     
     public BandwidthResp addPublicipInfoItem(PublicipInfoResp publicipInfoItem) {
+        if(this.publicipInfo == null) {
+            this.publicipInfo = new ArrayList<>();
+        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
 
     public BandwidthResp withPublicipInfo(Consumer<List<PublicipInfoResp>> publicipInfoSetter) {
-        if(this.publicipInfo == null ){
+        if(this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         publicipInfoSetter.accept(this.publicipInfo);
@@ -669,12 +672,15 @@ public class BandwidthResp  {
 
     
     public BandwidthResp addBandwidthRulesItem(BandWidthRules bandwidthRulesItem) {
+        if(this.bandwidthRules == null) {
+            this.bandwidthRules = new ArrayList<>();
+        }
         this.bandwidthRules.add(bandwidthRulesItem);
         return this;
     }
 
     public BandwidthResp withBandwidthRules(Consumer<List<BandWidthRules>> bandwidthRulesSetter) {
-        if(this.bandwidthRules == null ){
+        if(this.bandwidthRules == null) {
             this.bandwidthRules = new ArrayList<>();
         }
         bandwidthRulesSetter.accept(this.bandwidthRules);

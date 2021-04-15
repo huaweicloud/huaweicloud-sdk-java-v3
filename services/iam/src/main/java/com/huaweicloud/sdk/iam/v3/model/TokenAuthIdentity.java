@@ -122,12 +122,15 @@ public class TokenAuthIdentity  {
 
     
     public TokenAuthIdentity addMethodsItem(MethodsEnum methodsItem) {
+        if(this.methods == null) {
+            this.methods = new ArrayList<>();
+        }
         this.methods.add(methodsItem);
         return this;
     }
 
     public TokenAuthIdentity withMethods(Consumer<List<MethodsEnum>> methodsSetter) {
-        if(this.methods == null ){
+        if(this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);

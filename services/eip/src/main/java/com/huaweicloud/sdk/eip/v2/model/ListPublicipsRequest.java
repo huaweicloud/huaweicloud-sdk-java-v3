@@ -245,12 +245,15 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addPortIdItem(String portIdItem) {
+        if(this.portId == null) {
+            this.portId = new ArrayList<>();
+        }
         this.portId.add(portIdItem);
         return this;
     }
 
     public ListPublicipsRequest withPortId(Consumer<List<String>> portIdSetter) {
-        if(this.portId == null ){
+        if(this.portId == null) {
             this.portId = new ArrayList<>();
         }
         portIdSetter.accept(this.portId);
@@ -278,12 +281,15 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addPublicIpAddressItem(String publicIpAddressItem) {
+        if(this.publicIpAddress == null) {
+            this.publicIpAddress = new ArrayList<>();
+        }
         this.publicIpAddress.add(publicIpAddressItem);
         return this;
     }
 
     public ListPublicipsRequest withPublicIpAddress(Consumer<List<String>> publicIpAddressSetter) {
-        if(this.publicIpAddress == null ){
+        if(this.publicIpAddress == null) {
             this.publicIpAddress = new ArrayList<>();
         }
         publicIpAddressSetter.accept(this.publicIpAddress);
@@ -311,12 +317,15 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addPrivateIpAddressItem(String privateIpAddressItem) {
+        if(this.privateIpAddress == null) {
+            this.privateIpAddress = new ArrayList<>();
+        }
         this.privateIpAddress.add(privateIpAddressItem);
         return this;
     }
 
     public ListPublicipsRequest withPrivateIpAddress(Consumer<List<String>> privateIpAddressSetter) {
-        if(this.privateIpAddress == null ){
+        if(this.privateIpAddress == null) {
             this.privateIpAddress = new ArrayList<>();
         }
         privateIpAddressSetter.accept(this.privateIpAddress);
@@ -344,12 +353,15 @@ public class ListPublicipsRequest  {
 
     
     public ListPublicipsRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListPublicipsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);

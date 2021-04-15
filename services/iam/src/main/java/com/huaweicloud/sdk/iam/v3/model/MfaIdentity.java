@@ -128,12 +128,15 @@ public class MfaIdentity  {
 
     
     public MfaIdentity addMethodsItem(MethodsEnum methodsItem) {
+        if(this.methods == null) {
+            this.methods = new ArrayList<>();
+        }
         this.methods.add(methodsItem);
         return this;
     }
 
     public MfaIdentity withMethods(Consumer<List<MethodsEnum>> methodsSetter) {
-        if(this.methods == null ){
+        if(this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);

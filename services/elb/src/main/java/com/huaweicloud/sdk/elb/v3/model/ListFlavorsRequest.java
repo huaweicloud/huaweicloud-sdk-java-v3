@@ -68,12 +68,15 @@ public class ListFlavorsRequest  {
 
     
     public ListFlavorsRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListFlavorsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -147,12 +150,15 @@ public class ListFlavorsRequest  {
 
     
     public ListFlavorsRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListFlavorsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -224,12 +230,15 @@ public class ListFlavorsRequest  {
 
     
     public ListFlavorsRequest addTypeItem(String typeItem) {
+        if(this.type == null) {
+            this.type = new ArrayList<>();
+        }
         this.type.add(typeItem);
         return this;
     }
 
     public ListFlavorsRequest withType(Consumer<List<String>> typeSetter) {
-        if(this.type == null ){
+        if(this.type == null) {
             this.type = new ArrayList<>();
         }
         typeSetter.accept(this.type);

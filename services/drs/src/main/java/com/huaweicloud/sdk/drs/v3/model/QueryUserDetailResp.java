@@ -162,12 +162,15 @@ public class QueryUserDetailResp  {
 
     
     public QueryUserDetailResp addPrivilegesItem(String privilegesItem) {
+        if(this.privileges == null) {
+            this.privileges = new ArrayList<>();
+        }
         this.privileges.add(privilegesItem);
         return this;
     }
 
     public QueryUserDetailResp withPrivileges(Consumer<List<String>> privilegesSetter) {
-        if(this.privileges == null ){
+        if(this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
         privilegesSetter.accept(this.privileges);
@@ -217,12 +220,15 @@ public class QueryUserDetailResp  {
 
     
     public QueryUserDetailResp addRolesItem(String rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public QueryUserDetailResp withRoles(Consumer<List<String>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

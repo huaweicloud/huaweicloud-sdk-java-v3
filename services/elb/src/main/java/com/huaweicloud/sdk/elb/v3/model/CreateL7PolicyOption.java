@@ -315,12 +315,15 @@ public class CreateL7PolicyOption  {
 
     
     public CreateL7PolicyOption addRulesItem(CreateL7PolicyRuleOption rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public CreateL7PolicyOption withRules(Consumer<List<CreateL7PolicyRuleOption>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

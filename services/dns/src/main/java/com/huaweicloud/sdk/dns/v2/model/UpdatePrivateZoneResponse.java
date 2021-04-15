@@ -441,12 +441,15 @@ public class UpdatePrivateZoneResponse extends SdkResponse {
 
     
     public UpdatePrivateZoneResponse addMastersItem(String mastersItem) {
+        if(this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
         this.masters.add(mastersItem);
         return this;
     }
 
     public UpdatePrivateZoneResponse withMasters(Consumer<List<String>> mastersSetter) {
-        if(this.masters == null ){
+        if(this.masters == null) {
             this.masters = new ArrayList<>();
         }
         mastersSetter.accept(this.masters);
@@ -474,12 +477,15 @@ public class UpdatePrivateZoneResponse extends SdkResponse {
 
     
     public UpdatePrivateZoneResponse addRoutersItem(RouterWithStatus routersItem) {
+        if(this.routers == null) {
+            this.routers = new ArrayList<>();
+        }
         this.routers.add(routersItem);
         return this;
     }
 
     public UpdatePrivateZoneResponse withRouters(Consumer<List<RouterWithStatus>> routersSetter) {
-        if(this.routers == null ){
+        if(this.routers == null) {
             this.routers = new ArrayList<>();
         }
         routersSetter.accept(this.routers);

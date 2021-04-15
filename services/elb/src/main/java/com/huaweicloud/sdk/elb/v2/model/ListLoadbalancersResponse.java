@@ -35,12 +35,15 @@ public class ListLoadbalancersResponse extends SdkResponse {
 
     
     public ListLoadbalancersResponse addLoadbalancersItem(LoadbalancerResp loadbalancersItem) {
+        if(this.loadbalancers == null) {
+            this.loadbalancers = new ArrayList<>();
+        }
         this.loadbalancers.add(loadbalancersItem);
         return this;
     }
 
     public ListLoadbalancersResponse withLoadbalancers(Consumer<List<LoadbalancerResp>> loadbalancersSetter) {
-        if(this.loadbalancers == null ){
+        if(this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         loadbalancersSetter.accept(this.loadbalancers);

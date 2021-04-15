@@ -290,12 +290,15 @@ public class QueryRecordSetWithLineResp  {
 
     
     public QueryRecordSetWithLineResp addRecordsItem(String recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public QueryRecordSetWithLineResp withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

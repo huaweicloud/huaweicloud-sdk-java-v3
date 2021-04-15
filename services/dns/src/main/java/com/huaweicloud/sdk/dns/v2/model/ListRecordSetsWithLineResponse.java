@@ -78,12 +78,15 @@ public class ListRecordSetsWithLineResponse extends SdkResponse {
 
     
     public ListRecordSetsWithLineResponse addRecordsetsItem(QueryRecordSetWithLineResp recordsetsItem) {
+        if(this.recordsets == null) {
+            this.recordsets = new ArrayList<>();
+        }
         this.recordsets.add(recordsetsItem);
         return this;
     }
 
     public ListRecordSetsWithLineResponse withRecordsets(Consumer<List<QueryRecordSetWithLineResp>> recordsetsSetter) {
-        if(this.recordsets == null ){
+        if(this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
         recordsetsSetter.accept(this.recordsets);

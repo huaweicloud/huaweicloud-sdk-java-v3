@@ -120,12 +120,15 @@ public class SubscriptionInfo  {
 
     
     public SubscriptionInfo addEndpointsItem(String endpointsItem) {
+        if(this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
         this.endpoints.add(endpointsItem);
         return this;
     }
 
     public SubscriptionInfo withEndpoints(Consumer<List<String>> endpointsSetter) {
-        if(this.endpoints == null ){
+        if(this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);

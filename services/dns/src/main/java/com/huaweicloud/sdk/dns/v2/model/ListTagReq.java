@@ -76,12 +76,15 @@ public class ListTagReq  {
 
     
     public ListTagReq addTagsItem(TagValues tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListTagReq withTags(Consumer<List<TagValues>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -109,12 +112,15 @@ public class ListTagReq  {
 
     
     public ListTagReq addTagsAnyItem(Object tagsAnyItem) {
+        if(this.tagsAny == null) {
+            this.tagsAny = new ArrayList<>();
+        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
 
     public ListTagReq withTagsAny(Consumer<List<Object>> tagsAnySetter) {
-        if(this.tagsAny == null ){
+        if(this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
@@ -142,12 +148,15 @@ public class ListTagReq  {
 
     
     public ListTagReq addNotTagsItem(Object notTagsItem) {
+        if(this.notTags == null) {
+            this.notTags = new ArrayList<>();
+        }
         this.notTags.add(notTagsItem);
         return this;
     }
 
     public ListTagReq withNotTags(Consumer<List<Object>> notTagsSetter) {
-        if(this.notTags == null ){
+        if(this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
@@ -175,12 +184,15 @@ public class ListTagReq  {
 
     
     public ListTagReq addNotTagsAnyItem(Object notTagsAnyItem) {
+        if(this.notTagsAny == null) {
+            this.notTagsAny = new ArrayList<>();
+        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
 
     public ListTagReq withNotTagsAny(Consumer<List<Object>> notTagsAnySetter) {
-        if(this.notTagsAny == null ){
+        if(this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
@@ -274,12 +286,15 @@ public class ListTagReq  {
 
     
     public ListTagReq addMatchesItem(Tag matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListTagReq withMatches(Consumer<List<Tag>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);

@@ -35,12 +35,15 @@ public class ListVersionAliasesResponse extends SdkResponse {
 
     
     public ListVersionAliasesResponse addBodyItem(ListVersionAliasResult bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ListVersionAliasesResponse withBody(Consumer<List<ListVersionAliasResult>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

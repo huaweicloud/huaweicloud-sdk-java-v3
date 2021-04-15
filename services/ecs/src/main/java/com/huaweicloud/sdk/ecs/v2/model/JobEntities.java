@@ -39,12 +39,15 @@ public class JobEntities  {
 
     
     public JobEntities addSubJobsItem(SubJob subJobsItem) {
+        if(this.subJobs == null) {
+            this.subJobs = new ArrayList<>();
+        }
         this.subJobs.add(subJobsItem);
         return this;
     }
 
     public JobEntities withSubJobs(Consumer<List<SubJob>> subJobsSetter) {
-        if(this.subJobs == null ){
+        if(this.subJobs == null) {
             this.subJobs = new ArrayList<>();
         }
         subJobsSetter.accept(this.subJobs);

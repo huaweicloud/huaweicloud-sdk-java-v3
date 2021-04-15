@@ -35,12 +35,15 @@ public class ListNameServersResponse extends SdkResponse {
 
     
     public ListNameServersResponse addNameserversItem(NameServersResp nameserversItem) {
+        if(this.nameservers == null) {
+            this.nameservers = new ArrayList<>();
+        }
         this.nameservers.add(nameserversItem);
         return this;
     }
 
     public ListNameServersResponse withNameservers(Consumer<List<NameServersResp>> nameserversSetter) {
-        if(this.nameservers == null ){
+        if(this.nameservers == null) {
             this.nameservers = new ArrayList<>();
         }
         nameserversSetter.accept(this.nameservers);

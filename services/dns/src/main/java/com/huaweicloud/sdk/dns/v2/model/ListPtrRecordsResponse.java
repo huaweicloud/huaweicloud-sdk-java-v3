@@ -107,12 +107,15 @@ public class ListPtrRecordsResponse extends SdkResponse {
 
     
     public ListPtrRecordsResponse addFloatingipsItem(ListPtrRecordsFloatingResp floatingipsItem) {
+        if(this.floatingips == null) {
+            this.floatingips = new ArrayList<>();
+        }
         this.floatingips.add(floatingipsItem);
         return this;
     }
 
     public ListPtrRecordsResponse withFloatingips(Consumer<List<ListPtrRecordsFloatingResp>> floatingipsSetter) {
-        if(this.floatingips == null ){
+        if(this.floatingips == null) {
             this.floatingips = new ArrayList<>();
         }
         floatingipsSetter.accept(this.floatingips);

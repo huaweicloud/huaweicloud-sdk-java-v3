@@ -42,12 +42,15 @@ public class KeystoneListGroupsForUserResponse extends SdkResponse {
 
     
     public KeystoneListGroupsForUserResponse addGroupsItem(KeystoneGroupResult groupsItem) {
+        if(this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
         this.groups.add(groupsItem);
         return this;
     }
 
     public KeystoneListGroupsForUserResponse withGroups(Consumer<List<KeystoneGroupResult>> groupsSetter) {
-        if(this.groups == null ){
+        if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);

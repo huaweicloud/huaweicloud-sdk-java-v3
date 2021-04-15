@@ -99,12 +99,15 @@ public class ListL7RulesResponse extends SdkResponse {
 
     
     public ListL7RulesResponse addRulesItem(L7Rule rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public ListL7RulesResponse withRules(Consumer<List<L7Rule>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

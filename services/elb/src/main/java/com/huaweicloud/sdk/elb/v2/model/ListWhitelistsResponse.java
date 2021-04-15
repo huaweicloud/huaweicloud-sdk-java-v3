@@ -35,12 +35,15 @@ public class ListWhitelistsResponse extends SdkResponse {
 
     
     public ListWhitelistsResponse addWhitelistsItem(WhitelistResp whitelistsItem) {
+        if(this.whitelists == null) {
+            this.whitelists = new ArrayList<>();
+        }
         this.whitelists.add(whitelistsItem);
         return this;
     }
 
     public ListWhitelistsResponse withWhitelists(Consumer<List<WhitelistResp>> whitelistsSetter) {
-        if(this.whitelists == null ){
+        if(this.whitelists == null) {
             this.whitelists = new ArrayList<>();
         }
         whitelistsSetter.accept(this.whitelists);

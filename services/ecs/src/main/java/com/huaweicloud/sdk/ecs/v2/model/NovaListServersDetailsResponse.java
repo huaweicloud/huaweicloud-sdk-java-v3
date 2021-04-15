@@ -42,12 +42,15 @@ public class NovaListServersDetailsResponse extends SdkResponse {
 
     
     public NovaListServersDetailsResponse addServersItem(NovaServer serversItem) {
+        if(this.servers == null) {
+            this.servers = new ArrayList<>();
+        }
         this.servers.add(serversItem);
         return this;
     }
 
     public NovaListServersDetailsResponse withServers(Consumer<List<NovaServer>> serversSetter) {
-        if(this.servers == null ){
+        if(this.servers == null) {
             this.servers = new ArrayList<>();
         }
         serversSetter.accept(this.servers);
@@ -75,12 +78,15 @@ public class NovaListServersDetailsResponse extends SdkResponse {
 
     
     public NovaListServersDetailsResponse addServersLinksItem(PageLink serversLinksItem) {
+        if(this.serversLinks == null) {
+            this.serversLinks = new ArrayList<>();
+        }
         this.serversLinks.add(serversLinksItem);
         return this;
     }
 
     public NovaListServersDetailsResponse withServersLinks(Consumer<List<PageLink>> serversLinksSetter) {
-        if(this.serversLinks == null ){
+        if(this.serversLinks == null) {
             this.serversLinks = new ArrayList<>();
         }
         serversLinksSetter.accept(this.serversLinks);

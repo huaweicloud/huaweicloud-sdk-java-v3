@@ -475,12 +475,15 @@ public class LoadbalancerResp  {
 
     
     public LoadbalancerResp addListenersItem(ResourceList listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public LoadbalancerResp withListeners(Consumer<List<ResourceList>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
@@ -508,12 +511,15 @@ public class LoadbalancerResp  {
 
     
     public LoadbalancerResp addPoolsItem(ResourceList poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public LoadbalancerResp withPools(Consumer<List<ResourceList>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
@@ -717,12 +723,15 @@ public class LoadbalancerResp  {
 
     
     public LoadbalancerResp addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public LoadbalancerResp withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

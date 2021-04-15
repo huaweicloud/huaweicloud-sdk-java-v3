@@ -35,12 +35,15 @@ public class ListBandwidthsResponse extends SdkResponse {
 
     
     public ListBandwidthsResponse addBandwidthsItem(BandwidthResp bandwidthsItem) {
+        if(this.bandwidths == null) {
+            this.bandwidths = new ArrayList<>();
+        }
         this.bandwidths.add(bandwidthsItem);
         return this;
     }
 
     public ListBandwidthsResponse withBandwidths(Consumer<List<BandwidthResp>> bandwidthsSetter) {
-        if(this.bandwidths == null ){
+        if(this.bandwidths == null) {
             this.bandwidths = new ArrayList<>();
         }
         bandwidthsSetter.accept(this.bandwidths);

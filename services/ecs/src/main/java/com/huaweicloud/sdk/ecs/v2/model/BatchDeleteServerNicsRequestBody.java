@@ -33,12 +33,15 @@ public class BatchDeleteServerNicsRequestBody  {
 
     
     public BatchDeleteServerNicsRequestBody addNicsItem(BatchDeleteServerNicOption nicsItem) {
+        if(this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
         this.nics.add(nicsItem);
         return this;
     }
 
     public BatchDeleteServerNicsRequestBody withNics(Consumer<List<BatchDeleteServerNicOption>> nicsSetter) {
-        if(this.nics == null ){
+        if(this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);

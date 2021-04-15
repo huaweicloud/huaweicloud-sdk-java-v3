@@ -42,12 +42,15 @@ public class ListAllProjectsPermissionsForAgencyResponse extends SdkResponse {
 
     
     public ListAllProjectsPermissionsForAgencyResponse addRolesItem(AgencyAllProjectRole rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public ListAllProjectsPermissionsForAgencyResponse withRoles(Consumer<List<AgencyAllProjectRole>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

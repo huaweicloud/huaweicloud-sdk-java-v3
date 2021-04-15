@@ -231,12 +231,15 @@ public class Pool  {
 
     
     public Pool addListenersItem(ListenerRef listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public Pool withListeners(Consumer<List<ListenerRef>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
@@ -264,12 +267,15 @@ public class Pool  {
 
     
     public Pool addLoadbalancersItem(LoadBalancerRef loadbalancersItem) {
+        if(this.loadbalancers == null) {
+            this.loadbalancers = new ArrayList<>();
+        }
         this.loadbalancers.add(loadbalancersItem);
         return this;
     }
 
     public Pool withLoadbalancers(Consumer<List<LoadBalancerRef>> loadbalancersSetter) {
-        if(this.loadbalancers == null ){
+        if(this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         loadbalancersSetter.accept(this.loadbalancers);
@@ -297,12 +303,15 @@ public class Pool  {
 
     
     public Pool addMembersItem(MemberRef membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public Pool withMembers(Consumer<List<MemberRef>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

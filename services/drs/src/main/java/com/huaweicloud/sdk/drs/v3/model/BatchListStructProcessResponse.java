@@ -41,12 +41,15 @@ public class BatchListStructProcessResponse extends SdkResponse {
 
     
     public BatchListStructProcessResponse addResultsItem(QueryStructProcessResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchListStructProcessResponse withResults(Consumer<List<QueryStructProcessResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

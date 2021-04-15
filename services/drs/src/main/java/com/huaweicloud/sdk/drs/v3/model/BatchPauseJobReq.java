@@ -33,12 +33,15 @@ public class BatchPauseJobReq  {
 
     
     public BatchPauseJobReq addJobsItem(PauseInfo jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchPauseJobReq withJobs(Consumer<List<PauseInfo>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

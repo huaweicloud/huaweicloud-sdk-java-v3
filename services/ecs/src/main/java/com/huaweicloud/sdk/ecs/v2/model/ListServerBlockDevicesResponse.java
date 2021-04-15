@@ -71,12 +71,15 @@ public class ListServerBlockDevicesResponse extends SdkResponse {
 
     
     public ListServerBlockDevicesResponse addVolumeAttachmentsItem(ServerBlockDevice volumeAttachmentsItem) {
+        if(this.volumeAttachments == null) {
+            this.volumeAttachments = new ArrayList<>();
+        }
         this.volumeAttachments.add(volumeAttachmentsItem);
         return this;
     }
 
     public ListServerBlockDevicesResponse withVolumeAttachments(Consumer<List<ServerBlockDevice>> volumeAttachmentsSetter) {
-        if(this.volumeAttachments == null ){
+        if(this.volumeAttachments == null) {
             this.volumeAttachments = new ArrayList<>();
         }
         volumeAttachmentsSetter.accept(this.volumeAttachments);

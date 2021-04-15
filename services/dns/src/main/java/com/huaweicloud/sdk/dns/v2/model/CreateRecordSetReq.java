@@ -179,12 +179,15 @@ public class CreateRecordSetReq  {
 
     
     public CreateRecordSetReq addRecordsItem(String recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public CreateRecordSetReq withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);
@@ -212,12 +215,15 @@ public class CreateRecordSetReq  {
 
     
     public CreateRecordSetReq addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateRecordSetReq withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

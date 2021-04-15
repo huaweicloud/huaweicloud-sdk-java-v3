@@ -267,12 +267,15 @@ public class DeleteRecordSetResponse extends SdkResponse {
 
     
     public DeleteRecordSetResponse addRecordsItem(String recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public DeleteRecordSetResponse withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

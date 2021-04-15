@@ -35,12 +35,15 @@ public class NovaListServerSecurityGroupsResponse extends SdkResponse {
 
     
     public NovaListServerSecurityGroupsResponse addSecurityGroupsItem(NovaSecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public NovaListServerSecurityGroupsResponse withSecurityGroups(Consumer<List<NovaSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);

@@ -117,12 +117,15 @@ public class UpdatePtrReq  {
 
     
     public UpdatePtrReq addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public UpdatePtrReq withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

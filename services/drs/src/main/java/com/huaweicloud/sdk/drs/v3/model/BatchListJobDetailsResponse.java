@@ -63,12 +63,15 @@ public class BatchListJobDetailsResponse extends SdkResponse {
 
     
     public BatchListJobDetailsResponse addResultsItem(QueryJobResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchListJobDetailsResponse withResults(Consumer<List<QueryJobResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

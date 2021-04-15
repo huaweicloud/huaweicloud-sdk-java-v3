@@ -102,12 +102,15 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListCertificatesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -135,12 +138,15 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addDomainItem(String domainItem) {
+        if(this.domain == null) {
+            this.domain = new ArrayList<>();
+        }
         this.domain.add(domainItem);
         return this;
     }
 
     public ListCertificatesRequest withDomain(Consumer<List<String>> domainSetter) {
-        if(this.domain == null ){
+        if(this.domain == null) {
             this.domain = new ArrayList<>();
         }
         domainSetter.accept(this.domain);
@@ -168,12 +174,15 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListCertificatesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -247,12 +256,15 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListCertificatesRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -302,12 +314,15 @@ public class ListCertificatesRequest  {
 
     
     public ListCertificatesRequest addTypeItem(String typeItem) {
+        if(this.type == null) {
+            this.type = new ArrayList<>();
+        }
         this.type.add(typeItem);
         return this;
     }
 
     public ListCertificatesRequest withType(Consumer<List<String>> typeSetter) {
-        if(this.type == null ){
+        if(this.type == null) {
             this.type = new ArrayList<>();
         }
         typeSetter.accept(this.type);

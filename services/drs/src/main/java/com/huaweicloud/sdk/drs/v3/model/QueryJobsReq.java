@@ -718,12 +718,15 @@ public class QueryJobsReq  {
     
 
     public QueryJobsReq putTagsItem(String key, String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new HashMap<>();
+        }
         this.tags.put(key, tagsItem);
         return this;
     }
 
     public QueryJobsReq withTags(Consumer<Map<String, String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);

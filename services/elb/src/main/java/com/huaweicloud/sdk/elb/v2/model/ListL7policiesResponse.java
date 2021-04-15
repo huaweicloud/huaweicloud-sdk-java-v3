@@ -35,12 +35,15 @@ public class ListL7policiesResponse extends SdkResponse {
 
     
     public ListL7policiesResponse addL7policiesItem(L7policyResp l7policiesItem) {
+        if(this.l7policies == null) {
+            this.l7policies = new ArrayList<>();
+        }
         this.l7policies.add(l7policiesItem);
         return this;
     }
 
     public ListL7policiesResponse withL7policies(Consumer<List<L7policyResp>> l7policiesSetter) {
-        if(this.l7policies == null ){
+        if(this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         l7policiesSetter.accept(this.l7policies);

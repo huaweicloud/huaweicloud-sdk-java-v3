@@ -344,12 +344,15 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addNicsItem(PrePaidServerNic nicsItem) {
+        if(this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
         this.nics.add(nicsItem);
         return this;
     }
 
     public PrePaidServer withNics(Consumer<List<PrePaidServerNic>> nicsSetter) {
-        if(this.nics == null ){
+        if(this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
@@ -481,12 +484,15 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addDataVolumesItem(PrePaidServerDataVolume dataVolumesItem) {
+        if(this.dataVolumes == null) {
+            this.dataVolumes = new ArrayList<>();
+        }
         this.dataVolumes.add(dataVolumesItem);
         return this;
     }
 
     public PrePaidServer withDataVolumes(Consumer<List<PrePaidServerDataVolume>> dataVolumesSetter) {
-        if(this.dataVolumes == null ){
+        if(this.dataVolumes == null) {
             this.dataVolumes = new ArrayList<>();
         }
         dataVolumesSetter.accept(this.dataVolumes);
@@ -514,12 +520,15 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addSecurityGroupsItem(PrePaidServerSecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public PrePaidServer withSecurityGroups(Consumer<List<PrePaidServerSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -599,12 +608,15 @@ public class PrePaidServer  {
     
 
     public PrePaidServer putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public PrePaidServer withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -660,12 +672,15 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public PrePaidServer withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -693,12 +708,15 @@ public class PrePaidServer  {
 
     
     public PrePaidServer addServerTagsItem(PrePaidServerTag serverTagsItem) {
+        if(this.serverTags == null) {
+            this.serverTags = new ArrayList<>();
+        }
         this.serverTags.add(serverTagsItem);
         return this;
     }
 
     public PrePaidServer withServerTags(Consumer<List<PrePaidServerTag>> serverTagsSetter) {
-        if(this.serverTags == null ){
+        if(this.serverTags == null) {
             this.serverTags = new ArrayList<>();
         }
         serverTagsSetter.accept(this.serverTags);

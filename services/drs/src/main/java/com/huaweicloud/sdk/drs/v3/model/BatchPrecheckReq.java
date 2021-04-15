@@ -33,12 +33,15 @@ public class BatchPrecheckReq  {
 
     
     public BatchPrecheckReq addJobsItem(PreCheckInfo jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchPrecheckReq withJobs(Consumer<List<PreCheckInfo>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

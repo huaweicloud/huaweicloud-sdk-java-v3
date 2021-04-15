@@ -102,12 +102,15 @@ public class Version  {
 
     
     public Version addLinksItem(VersionLinks linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public Version withLinks(Consumer<List<VersionLinks>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
@@ -157,12 +160,15 @@ public class Version  {
 
     
     public Version addMediaTypesItem(VersionMediatypes mediaTypesItem) {
+        if(this.mediaTypes == null) {
+            this.mediaTypes = new ArrayList<>();
+        }
         this.mediaTypes.add(mediaTypesItem);
         return this;
     }
 
     public Version withMediaTypes(Consumer<List<VersionMediatypes>> mediaTypesSetter) {
-        if(this.mediaTypes == null ){
+        if(this.mediaTypes == null) {
             this.mediaTypes = new ArrayList<>();
         }
         mediaTypesSetter.accept(this.mediaTypes);

@@ -35,12 +35,15 @@ public class ListUserMfaDevicesResponse extends SdkResponse {
 
     
     public ListUserMfaDevicesResponse addVirtualMfaDevicesItem(MfaDeviceResult virtualMfaDevicesItem) {
+        if(this.virtualMfaDevices == null) {
+            this.virtualMfaDevices = new ArrayList<>();
+        }
         this.virtualMfaDevices.add(virtualMfaDevicesItem);
         return this;
     }
 
     public ListUserMfaDevicesResponse withVirtualMfaDevices(Consumer<List<MfaDeviceResult>> virtualMfaDevicesSetter) {
-        if(this.virtualMfaDevices == null ){
+        if(this.virtualMfaDevices == null) {
             this.virtualMfaDevices = new ArrayList<>();
         }
         virtualMfaDevicesSetter.accept(this.virtualMfaDevices);

@@ -42,12 +42,15 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
 
     
     public NeutronListFloatingIpsResponse addFloatingipsItem(FloatingIpResp floatingipsItem) {
+        if(this.floatingips == null) {
+            this.floatingips = new ArrayList<>();
+        }
         this.floatingips.add(floatingipsItem);
         return this;
     }
 
     public NeutronListFloatingIpsResponse withFloatingips(Consumer<List<FloatingIpResp>> floatingipsSetter) {
-        if(this.floatingips == null ){
+        if(this.floatingips == null) {
             this.floatingips = new ArrayList<>();
         }
         floatingipsSetter.accept(this.floatingips);
@@ -75,12 +78,15 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
 
     
     public NeutronListFloatingIpsResponse addFloatingipsLinksItem(Pager floatingipsLinksItem) {
+        if(this.floatingipsLinks == null) {
+            this.floatingipsLinks = new ArrayList<>();
+        }
         this.floatingipsLinks.add(floatingipsLinksItem);
         return this;
     }
 
     public NeutronListFloatingIpsResponse withFloatingipsLinks(Consumer<List<Pager>> floatingipsLinksSetter) {
-        if(this.floatingipsLinks == null ){
+        if(this.floatingipsLinks == null) {
             this.floatingipsLinks = new ArrayList<>();
         }
         floatingipsLinksSetter.accept(this.floatingipsLinks);

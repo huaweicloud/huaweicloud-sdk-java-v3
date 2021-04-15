@@ -35,12 +35,15 @@ public class ListPublicipsResponse extends SdkResponse {
 
     
     public ListPublicipsResponse addPublicipsItem(PublicipShowResp publicipsItem) {
+        if(this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
         this.publicips.add(publicipsItem);
         return this;
     }
 
     public ListPublicipsResponse withPublicips(Consumer<List<PublicipShowResp>> publicipsSetter) {
-        if(this.publicips == null ){
+        if(this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
         publicipsSetter.accept(this.publicips);

@@ -62,12 +62,15 @@ public class AsyncInvokeFunctionRequest  {
     
 
     public AsyncInvokeFunctionRequest putBodyItem(String key, Object bodyItem) {
+        if(this.body == null) {
+            this.body = new HashMap<>();
+        }
         this.body.put(key, bodyItem);
         return this;
     }
 
     public AsyncInvokeFunctionRequest withBody(Consumer<Map<String, Object>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new HashMap<>();
         }
         bodySetter.accept(this.body);

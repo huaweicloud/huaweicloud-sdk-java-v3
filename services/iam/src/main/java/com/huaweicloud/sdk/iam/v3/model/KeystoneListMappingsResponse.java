@@ -71,12 +71,15 @@ public class KeystoneListMappingsResponse extends SdkResponse {
 
     
     public KeystoneListMappingsResponse addMappingsItem(MappingResult mappingsItem) {
+        if(this.mappings == null) {
+            this.mappings = new ArrayList<>();
+        }
         this.mappings.add(mappingsItem);
         return this;
     }
 
     public KeystoneListMappingsResponse withMappings(Consumer<List<MappingResult>> mappingsSetter) {
-        if(this.mappings == null ){
+        if(this.mappings == null) {
             this.mappings = new ArrayList<>();
         }
         mappingsSetter.accept(this.mappings);

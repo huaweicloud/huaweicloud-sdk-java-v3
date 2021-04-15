@@ -35,12 +35,15 @@ public class ListResizeFlavorsResponse extends SdkResponse {
 
     
     public ListResizeFlavorsResponse addFlavorsItem(ListResizeFlavorsResult flavorsItem) {
+        if(this.flavors == null) {
+            this.flavors = new ArrayList<>();
+        }
         this.flavors.add(flavorsItem);
         return this;
     }
 
     public ListResizeFlavorsResponse withFlavors(Consumer<List<ListResizeFlavorsResult>> flavorsSetter) {
-        if(this.flavors == null ){
+        if(this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
         flavorsSetter.accept(this.flavors);

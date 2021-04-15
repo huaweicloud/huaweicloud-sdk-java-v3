@@ -41,12 +41,15 @@ public class BatchValidateConnectionsResponse extends SdkResponse {
 
     
     public BatchValidateConnectionsResponse addResultsItem(CheckJobResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchValidateConnectionsResponse withResults(Consumer<List<CheckJobResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

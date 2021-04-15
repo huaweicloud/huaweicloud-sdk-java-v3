@@ -70,12 +70,15 @@ public class ListSnapshotsResponse extends SdkResponse {
 
     
     public ListSnapshotsResponse addSnapshotsItem(SnapshotList snapshotsItem) {
+        if(this.snapshots == null) {
+            this.snapshots = new ArrayList<>();
+        }
         this.snapshots.add(snapshotsItem);
         return this;
     }
 
     public ListSnapshotsResponse withSnapshots(Consumer<List<SnapshotList>> snapshotsSetter) {
-        if(this.snapshots == null ){
+        if(this.snapshots == null) {
             this.snapshots = new ArrayList<>();
         }
         snapshotsSetter.accept(this.snapshots);
@@ -103,12 +106,15 @@ public class ListSnapshotsResponse extends SdkResponse {
 
     
     public ListSnapshotsResponse addSnapshotsLinksItem(Link snapshotsLinksItem) {
+        if(this.snapshotsLinks == null) {
+            this.snapshotsLinks = new ArrayList<>();
+        }
         this.snapshotsLinks.add(snapshotsLinksItem);
         return this;
     }
 
     public ListSnapshotsResponse withSnapshotsLinks(Consumer<List<Link>> snapshotsLinksSetter) {
-        if(this.snapshotsLinks == null ){
+        if(this.snapshotsLinks == null) {
             this.snapshotsLinks = new ArrayList<>();
         }
         snapshotsLinksSetter.accept(this.snapshotsLinks);

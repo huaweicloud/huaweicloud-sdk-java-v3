@@ -117,12 +117,15 @@ public class ListResourceResp  {
 
     
     public ListResourceResp addTagsItem(ResourceTagResp tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListResourceResp withTags(Consumer<List<ResourceTagResp>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

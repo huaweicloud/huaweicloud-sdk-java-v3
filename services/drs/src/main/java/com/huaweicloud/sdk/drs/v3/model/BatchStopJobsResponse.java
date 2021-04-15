@@ -41,12 +41,15 @@ public class BatchStopJobsResponse extends SdkResponse {
 
     
     public BatchStopJobsResponse addResultsItem(PauseJobResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchStopJobsResponse withResults(Consumer<List<PauseJobResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

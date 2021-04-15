@@ -32,12 +32,15 @@ public class AgencyPolicyResource  {
 
     
     public AgencyPolicyResource addUriItem(String uriItem) {
+        if(this.uri == null) {
+            this.uri = new ArrayList<>();
+        }
         this.uri.add(uriItem);
         return this;
     }
 
     public AgencyPolicyResource withUri(Consumer<List<String>> uriSetter) {
-        if(this.uri == null ){
+        if(this.uri == null) {
             this.uri = new ArrayList<>();
         }
         uriSetter.accept(this.uri);

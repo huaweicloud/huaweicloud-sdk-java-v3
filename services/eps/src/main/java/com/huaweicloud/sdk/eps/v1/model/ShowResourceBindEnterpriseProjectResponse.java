@@ -48,12 +48,15 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
 
     
     public ShowResourceBindEnterpriseProjectResponse addResourcesItem(Resources resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ShowResourceBindEnterpriseProjectResponse withResources(Consumer<List<Resources>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
@@ -81,12 +84,15 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
 
     
     public ShowResourceBindEnterpriseProjectResponse addErrorsItem(Errors errorsItem) {
+        if(this.errors == null) {
+            this.errors = new ArrayList<>();
+        }
         this.errors.add(errorsItem);
         return this;
     }
 
     public ShowResourceBindEnterpriseProjectResponse withErrors(Consumer<List<Errors>> errorsSetter) {
-        if(this.errors == null ){
+        if(this.errors == null) {
             this.errors = new ArrayList<>();
         }
         errorsSetter.accept(this.errors);

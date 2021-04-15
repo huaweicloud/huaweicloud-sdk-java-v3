@@ -35,12 +35,15 @@ public class ListPublicipTagsResponse extends SdkResponse {
 
     
     public ListPublicipTagsResponse addTagsItem(TagResp tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListPublicipTagsResponse withTags(Consumer<List<TagResp>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

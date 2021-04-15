@@ -61,12 +61,15 @@ public class LimitSpeedReq  {
 
     
     public LimitSpeedReq addSpeedLimitItem(SpeedLimitInfo speedLimitItem) {
+        if(this.speedLimit == null) {
+            this.speedLimit = new ArrayList<>();
+        }
         this.speedLimit.add(speedLimitItem);
         return this;
     }
 
     public LimitSpeedReq withSpeedLimit(Consumer<List<SpeedLimitInfo>> speedLimitSetter) {
-        if(this.speedLimit == null ){
+        if(this.speedLimit == null) {
             this.speedLimit = new ArrayList<>();
         }
         speedLimitSetter.accept(this.speedLimit);

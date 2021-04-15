@@ -108,12 +108,15 @@ public class ListenersInStatusResp  {
 
     
     public ListenersInStatusResp addPoolsItem(PoolsInStatusResp poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public ListenersInStatusResp withPools(Consumer<List<PoolsInStatusResp>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
@@ -141,12 +144,15 @@ public class ListenersInStatusResp  {
 
     
     public ListenersInStatusResp addL7policiesItem(L7policiesInStatusResp l7policiesItem) {
+        if(this.l7policies == null) {
+            this.l7policies = new ArrayList<>();
+        }
         this.l7policies.add(l7policiesItem);
         return this;
     }
 
     public ListenersInStatusResp withL7policies(Consumer<List<L7policiesInStatusResp>> l7policiesSetter) {
-        if(this.l7policies == null ){
+        if(this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         l7policiesSetter.accept(this.l7policies);

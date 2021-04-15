@@ -36,12 +36,15 @@ public class ListVolumeTagsResponse extends SdkResponse {
     
 
     public ListVolumeTagsResponse putTagsItem(String key, List<String> tagsItem) {
+        if(this.tags == null) {
+            this.tags = new HashMap<>();
+        }
         this.tags.put(key, tagsItem);
         return this;
     }
 
     public ListVolumeTagsResponse withTags(Consumer<Map<String, List<String>>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);

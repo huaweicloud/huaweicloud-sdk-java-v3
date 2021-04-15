@@ -99,12 +99,15 @@ public class ListListenersResponse extends SdkResponse {
 
     
     public ListListenersResponse addListenersItem(Listener listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public ListListenersResponse withListeners(Consumer<List<Listener>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);

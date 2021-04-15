@@ -348,12 +348,15 @@ public class UpdateLoadBalancerOption  {
 
     
     public UpdateLoadBalancerOption addElbVirsubnetIdsItem(String elbVirsubnetIdsItem) {
+        if(this.elbVirsubnetIds == null) {
+            this.elbVirsubnetIds = new ArrayList<>();
+        }
         this.elbVirsubnetIds.add(elbVirsubnetIdsItem);
         return this;
     }
 
     public UpdateLoadBalancerOption withElbVirsubnetIds(Consumer<List<String>> elbVirsubnetIdsSetter) {
-        if(this.elbVirsubnetIds == null ){
+        if(this.elbVirsubnetIds == null) {
             this.elbVirsubnetIds = new ArrayList<>();
         }
         elbVirsubnetIdsSetter.accept(this.elbVirsubnetIds);

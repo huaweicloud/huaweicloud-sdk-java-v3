@@ -67,12 +67,15 @@ public class LineCompareResultDetails  {
 
     
     public LineCompareResultDetails addLineCompareDetailItem(LineCompareDetail lineCompareDetailItem) {
+        if(this.lineCompareDetail == null) {
+            this.lineCompareDetail = new ArrayList<>();
+        }
         this.lineCompareDetail.add(lineCompareDetailItem);
         return this;
     }
 
     public LineCompareResultDetails withLineCompareDetail(Consumer<List<LineCompareDetail>> lineCompareDetailSetter) {
-        if(this.lineCompareDetail == null ){
+        if(this.lineCompareDetail == null) {
             this.lineCompareDetail = new ArrayList<>();
         }
         lineCompareDetailSetter.accept(this.lineCompareDetail);

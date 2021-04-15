@@ -412,12 +412,15 @@ public class PoolResp  {
 
     
     public PoolResp addLoadbalancersItem(ResourceList loadbalancersItem) {
+        if(this.loadbalancers == null) {
+            this.loadbalancers = new ArrayList<>();
+        }
         this.loadbalancers.add(loadbalancersItem);
         return this;
     }
 
     public PoolResp withLoadbalancers(Consumer<List<ResourceList>> loadbalancersSetter) {
-        if(this.loadbalancers == null ){
+        if(this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         loadbalancersSetter.accept(this.loadbalancers);
@@ -445,12 +448,15 @@ public class PoolResp  {
 
     
     public PoolResp addListenersItem(ResourceList listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public PoolResp withListeners(Consumer<List<ResourceList>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
@@ -478,12 +484,15 @@ public class PoolResp  {
 
     
     public PoolResp addMembersItem(ResourceList membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public PoolResp withMembers(Consumer<List<ResourceList>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

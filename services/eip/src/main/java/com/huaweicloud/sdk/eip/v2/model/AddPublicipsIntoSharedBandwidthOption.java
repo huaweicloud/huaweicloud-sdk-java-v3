@@ -33,12 +33,15 @@ public class AddPublicipsIntoSharedBandwidthOption  {
 
     
     public AddPublicipsIntoSharedBandwidthOption addPublicipInfoItem(InsertPublicipInfo publicipInfoItem) {
+        if(this.publicipInfo == null) {
+            this.publicipInfo = new ArrayList<>();
+        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
 
     public AddPublicipsIntoSharedBandwidthOption withPublicipInfo(Consumer<List<InsertPublicipInfo>> publicipInfoSetter) {
-        if(this.publicipInfo == null ){
+        if(this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         publicipInfoSetter.accept(this.publicipInfo);

@@ -33,12 +33,15 @@ public class BatchStartServersOption  {
 
     
     public BatchStartServersOption addServersItem(ServerId serversItem) {
+        if(this.servers == null) {
+            this.servers = new ArrayList<>();
+        }
         this.servers.add(serversItem);
         return this;
     }
 
     public BatchStartServersOption withServers(Consumer<List<ServerId>> serversSetter) {
-        if(this.servers == null ){
+        if(this.servers == null) {
             this.servers = new ArrayList<>();
         }
         serversSetter.accept(this.servers);

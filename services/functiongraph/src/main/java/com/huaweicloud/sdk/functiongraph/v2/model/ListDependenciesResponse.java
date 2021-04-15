@@ -69,12 +69,15 @@ public class ListDependenciesResponse extends SdkResponse {
 
     
     public ListDependenciesResponse addDependenciesItem(ListDependenciesResult dependenciesItem) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
 
     public ListDependenciesResponse withDependencies(Consumer<List<ListDependenciesResult>> dependenciesSetter) {
-        if(this.dependencies == null ){
+        if(this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);

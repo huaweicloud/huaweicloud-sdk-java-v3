@@ -69,12 +69,15 @@ public class MountConfig  {
 
     
     public MountConfig addFuncMountsItem(FuncMount funcMountsItem) {
+        if(this.funcMounts == null) {
+            this.funcMounts = new ArrayList<>();
+        }
         this.funcMounts.add(funcMountsItem);
         return this;
     }
 
     public MountConfig withFuncMounts(Consumer<List<FuncMount>> funcMountsSetter) {
-        if(this.funcMounts == null ){
+        if(this.funcMounts == null) {
             this.funcMounts = new ArrayList<>();
         }
         funcMountsSetter.accept(this.funcMounts);

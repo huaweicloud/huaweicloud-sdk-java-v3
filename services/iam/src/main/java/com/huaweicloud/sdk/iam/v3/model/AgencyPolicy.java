@@ -61,12 +61,15 @@ public class AgencyPolicy  {
 
     
     public AgencyPolicy addStatementItem(AgencyPolicyStatement statementItem) {
+        if(this.statement == null) {
+            this.statement = new ArrayList<>();
+        }
         this.statement.add(statementItem);
         return this;
     }
 
     public AgencyPolicy withStatement(Consumer<List<AgencyPolicyStatement>> statementSetter) {
-        if(this.statement == null ){
+        if(this.statement == null) {
             this.statement = new ArrayList<>();
         }
         statementSetter.accept(this.statement);

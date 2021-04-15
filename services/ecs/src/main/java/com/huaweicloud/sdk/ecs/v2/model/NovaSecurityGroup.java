@@ -145,12 +145,15 @@ public class NovaSecurityGroup  {
 
     
     public NovaSecurityGroup addRulesItem(NovaSecurityGroupCommonRule rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public NovaSecurityGroup withRules(Consumer<List<NovaSecurityGroupCommonRule>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

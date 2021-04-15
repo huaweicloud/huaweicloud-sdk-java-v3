@@ -395,12 +395,15 @@ public class CreateL7policyReq  {
 
     
     public CreateL7policyReq addRulesItem(CreateL7ruleReqInPolicy rulesItem) {
+        if(this.rules == null) {
+            this.rules = new ArrayList<>();
+        }
         this.rules.add(rulesItem);
         return this;
     }
 
     public CreateL7policyReq withRules(Consumer<List<CreateL7ruleReqInPolicy>> rulesSetter) {
-        if(this.rules == null ){
+        if(this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);

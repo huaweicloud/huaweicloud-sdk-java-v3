@@ -68,12 +68,15 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListIpGroupsRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -101,12 +104,15 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListIpGroupsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -134,12 +140,15 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addIpListItem(String ipListItem) {
+        if(this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
         this.ipList.add(ipListItem);
         return this;
     }
 
     public ListIpGroupsRequest withIpList(Consumer<List<String>> ipListSetter) {
-        if(this.ipList == null ){
+        if(this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         ipListSetter.accept(this.ipList);
@@ -213,12 +222,15 @@ public class ListIpGroupsRequest  {
 
     
     public ListIpGroupsRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListIpGroupsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);

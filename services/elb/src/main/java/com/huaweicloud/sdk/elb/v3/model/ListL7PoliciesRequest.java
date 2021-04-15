@@ -122,12 +122,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addActionItem(String actionItem) {
+        if(this.action == null) {
+            this.action = new ArrayList<>();
+        }
         this.action.add(actionItem);
         return this;
     }
 
     public ListL7PoliciesRequest withAction(Consumer<List<String>> actionSetter) {
-        if(this.action == null ){
+        if(this.action == null) {
             this.action = new ArrayList<>();
         }
         actionSetter.accept(this.action);
@@ -177,12 +180,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListL7PoliciesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -232,12 +238,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if(this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
 
     public ListL7PoliciesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
+        if(this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
@@ -265,12 +274,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListL7PoliciesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -322,12 +334,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addListenerIdItem(String listenerIdItem) {
+        if(this.listenerId == null) {
+            this.listenerId = new ArrayList<>();
+        }
         this.listenerId.add(listenerIdItem);
         return this;
     }
 
     public ListL7PoliciesRequest withListenerId(Consumer<List<String>> listenerIdSetter) {
-        if(this.listenerId == null ){
+        if(this.listenerId == null) {
             this.listenerId = new ArrayList<>();
         }
         listenerIdSetter.accept(this.listenerId);
@@ -377,12 +392,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListL7PoliciesRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -432,12 +450,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addPositionItem(Integer positionItem) {
+        if(this.position == null) {
+            this.position = new ArrayList<>();
+        }
         this.position.add(positionItem);
         return this;
     }
 
     public ListL7PoliciesRequest withPosition(Consumer<List<Integer>> positionSetter) {
-        if(this.position == null ){
+        if(this.position == null) {
             this.position = new ArrayList<>();
         }
         positionSetter.accept(this.position);
@@ -465,12 +486,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addProvisioningStatusItem(String provisioningStatusItem) {
+        if(this.provisioningStatus == null) {
+            this.provisioningStatus = new ArrayList<>();
+        }
         this.provisioningStatus.add(provisioningStatusItem);
         return this;
     }
 
     public ListL7PoliciesRequest withProvisioningStatus(Consumer<List<String>> provisioningStatusSetter) {
-        if(this.provisioningStatus == null ){
+        if(this.provisioningStatus == null) {
             this.provisioningStatus = new ArrayList<>();
         }
         provisioningStatusSetter.accept(this.provisioningStatus);
@@ -498,12 +522,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addRedirectListenerIdItem(String redirectListenerIdItem) {
+        if(this.redirectListenerId == null) {
+            this.redirectListenerId = new ArrayList<>();
+        }
         this.redirectListenerId.add(redirectListenerIdItem);
         return this;
     }
 
     public ListL7PoliciesRequest withRedirectListenerId(Consumer<List<String>> redirectListenerIdSetter) {
-        if(this.redirectListenerId == null ){
+        if(this.redirectListenerId == null) {
             this.redirectListenerId = new ArrayList<>();
         }
         redirectListenerIdSetter.accept(this.redirectListenerId);
@@ -531,12 +558,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addRedirectPoolIdItem(String redirectPoolIdItem) {
+        if(this.redirectPoolId == null) {
+            this.redirectPoolId = new ArrayList<>();
+        }
         this.redirectPoolId.add(redirectPoolIdItem);
         return this;
     }
 
     public ListL7PoliciesRequest withRedirectPoolId(Consumer<List<String>> redirectPoolIdSetter) {
-        if(this.redirectPoolId == null ){
+        if(this.redirectPoolId == null) {
             this.redirectPoolId = new ArrayList<>();
         }
         redirectPoolIdSetter.accept(this.redirectPoolId);
@@ -564,12 +594,15 @@ public class ListL7PoliciesRequest  {
 
     
     public ListL7PoliciesRequest addRedirectUrlItem(String redirectUrlItem) {
+        if(this.redirectUrl == null) {
+            this.redirectUrl = new ArrayList<>();
+        }
         this.redirectUrl.add(redirectUrlItem);
         return this;
     }
 
     public ListL7PoliciesRequest withRedirectUrl(Consumer<List<String>> redirectUrlSetter) {
-        if(this.redirectUrl == null ){
+        if(this.redirectUrl == null) {
             this.redirectUrl = new ArrayList<>();
         }
         redirectUrlSetter.accept(this.redirectUrl);

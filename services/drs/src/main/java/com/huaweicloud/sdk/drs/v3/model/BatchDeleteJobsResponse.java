@@ -41,12 +41,15 @@ public class BatchDeleteJobsResponse extends SdkResponse {
 
     
     public BatchDeleteJobsResponse addResultsItem(DeleteJobResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchDeleteJobsResponse withResults(Consumer<List<DeleteJobResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

@@ -33,12 +33,15 @@ public class BatchRetryReq  {
 
     
     public BatchRetryReq addJobsItem(RetryInfo jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchRetryReq withJobs(Consumer<List<RetryInfo>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

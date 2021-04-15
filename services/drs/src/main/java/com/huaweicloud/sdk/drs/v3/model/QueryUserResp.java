@@ -130,12 +130,15 @@ public class QueryUserResp  {
 
     
     public QueryUserResp addUserListItem(QueryUserDetailResp userListItem) {
+        if(this.userList == null) {
+            this.userList = new ArrayList<>();
+        }
         this.userList.add(userListItem);
         return this;
     }
 
     public QueryUserResp withUserList(Consumer<List<QueryUserDetailResp>> userListSetter) {
-        if(this.userList == null ){
+        if(this.userList == null) {
             this.userList = new ArrayList<>();
         }
         userListSetter.accept(this.userList);
@@ -163,12 +166,15 @@ public class QueryUserResp  {
 
     
     public QueryUserResp addRolesListItem(QueryRoleDetailResp rolesListItem) {
+        if(this.rolesList == null) {
+            this.rolesList = new ArrayList<>();
+        }
         this.rolesList.add(rolesListItem);
         return this;
     }
 
     public QueryUserResp withRolesList(Consumer<List<QueryRoleDetailResp>> rolesListSetter) {
-        if(this.rolesList == null ){
+        if(this.rolesList == null) {
             this.rolesList = new ArrayList<>();
         }
         rolesListSetter.accept(this.rolesList);

@@ -35,12 +35,15 @@ public class ListDomainPermissionsForAgencyResponse extends SdkResponse {
 
     
     public ListDomainPermissionsForAgencyResponse addRolesItem(RoleResult rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public ListDomainPermissionsForAgencyResponse withRoles(Consumer<List<RoleResult>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

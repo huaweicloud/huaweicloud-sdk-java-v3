@@ -90,12 +90,15 @@ public class CreateVolumeResponse extends SdkResponse {
 
     
     public CreateVolumeResponse addVolumeIdsItem(String volumeIdsItem) {
+        if(this.volumeIds == null) {
+            this.volumeIds = new ArrayList<>();
+        }
         this.volumeIds.add(volumeIdsItem);
         return this;
     }
 
     public CreateVolumeResponse withVolumeIds(Consumer<List<String>> volumeIdsSetter) {
-        if(this.volumeIds == null ){
+        if(this.volumeIds == null) {
             this.volumeIds = new ArrayList<>();
         }
         volumeIdsSetter.accept(this.volumeIds);

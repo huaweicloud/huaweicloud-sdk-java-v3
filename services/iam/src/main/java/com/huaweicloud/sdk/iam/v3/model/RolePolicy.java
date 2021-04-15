@@ -46,12 +46,15 @@ public class RolePolicy  {
 
     
     public RolePolicy addDependsItem(PolicyDepends dependsItem) {
+        if(this.depends == null) {
+            this.depends = new ArrayList<>();
+        }
         this.depends.add(dependsItem);
         return this;
     }
 
     public RolePolicy withDepends(Consumer<List<PolicyDepends>> dependsSetter) {
-        if(this.depends == null ){
+        if(this.depends == null) {
             this.depends = new ArrayList<>();
         }
         dependsSetter.accept(this.depends);
@@ -79,12 +82,15 @@ public class RolePolicy  {
 
     
     public RolePolicy addStatementItem(PolicyStatement statementItem) {
+        if(this.statement == null) {
+            this.statement = new ArrayList<>();
+        }
         this.statement.add(statementItem);
         return this;
     }
 
     public RolePolicy withStatement(Consumer<List<PolicyStatement>> statementSetter) {
-        if(this.statement == null ){
+        if(this.statement == null) {
             this.statement = new ArrayList<>();
         }
         statementSetter.accept(this.statement);

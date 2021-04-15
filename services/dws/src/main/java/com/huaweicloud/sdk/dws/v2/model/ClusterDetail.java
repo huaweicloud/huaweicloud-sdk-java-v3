@@ -217,12 +217,15 @@ public class ClusterDetail  {
     
 
     public ClusterDetail putActionProgressItem(String key, String actionProgressItem) {
+        if(this.actionProgress == null) {
+            this.actionProgress = new HashMap<>();
+        }
         this.actionProgress.put(key, actionProgressItem);
         return this;
     }
 
     public ClusterDetail withActionProgress(Consumer<Map<String, String>> actionProgressSetter) {
-        if(this.actionProgress == null ){
+        if(this.actionProgress == null) {
             this.actionProgress = new HashMap<>();
         }
         actionProgressSetter.accept(this.actionProgress);
@@ -388,12 +391,15 @@ public class ClusterDetail  {
 
     
     public ClusterDetail addPrivateIpItem(String privateIpItem) {
+        if(this.privateIp == null) {
+            this.privateIp = new ArrayList<>();
+        }
         this.privateIp.add(privateIpItem);
         return this;
     }
 
     public ClusterDetail withPrivateIp(Consumer<List<String>> privateIpSetter) {
-        if(this.privateIp == null ){
+        if(this.privateIp == null) {
             this.privateIp = new ArrayList<>();
         }
         privateIpSetter.accept(this.privateIp);
@@ -472,12 +478,15 @@ public class ClusterDetail  {
 
     
     public ClusterDetail addPublicEndpointsItem(PublicEndpoints publicEndpointsItem) {
+        if(this.publicEndpoints == null) {
+            this.publicEndpoints = new ArrayList<>();
+        }
         this.publicEndpoints.add(publicEndpointsItem);
         return this;
     }
 
     public ClusterDetail withPublicEndpoints(Consumer<List<PublicEndpoints>> publicEndpointsSetter) {
-        if(this.publicEndpoints == null ){
+        if(this.publicEndpoints == null) {
             this.publicEndpoints = new ArrayList<>();
         }
         publicEndpointsSetter.accept(this.publicEndpoints);
@@ -571,12 +580,15 @@ public class ClusterDetail  {
 
     
     public ClusterDetail addEndpointsItem(Endpoints endpointsItem) {
+        if(this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
         this.endpoints.add(endpointsItem);
         return this;
     }
 
     public ClusterDetail withEndpoints(Consumer<List<Endpoints>> endpointsSetter) {
-        if(this.endpoints == null ){
+        if(this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);
@@ -772,12 +784,15 @@ public class ClusterDetail  {
 
     
     public ClusterDetail addTagsItem(Tags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ClusterDetail withTags(Consumer<List<Tags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

@@ -71,12 +71,15 @@ public class KeystoneListAuthProjectsResponse extends SdkResponse {
 
     
     public KeystoneListAuthProjectsResponse addProjectsItem(AuthProjectResult projectsItem) {
+        if(this.projects == null) {
+            this.projects = new ArrayList<>();
+        }
         this.projects.add(projectsItem);
         return this;
     }
 
     public KeystoneListAuthProjectsResponse withProjects(Consumer<List<AuthProjectResult>> projectsSetter) {
-        if(this.projects == null ){
+        if(this.projects == null) {
             this.projects = new ArrayList<>();
         }
         projectsSetter.accept(this.projects);

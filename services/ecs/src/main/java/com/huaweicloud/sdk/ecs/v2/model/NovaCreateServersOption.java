@@ -308,12 +308,15 @@ public class NovaCreateServersOption  {
     
 
     public NovaCreateServersOption putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public NovaCreateServersOption withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -362,12 +365,15 @@ public class NovaCreateServersOption  {
 
     
     public NovaCreateServersOption addBlockDeviceMappingV2Item(NovaServerBlockDeviceMapping blockDeviceMappingV2Item) {
+        if(this.blockDeviceMappingV2 == null) {
+            this.blockDeviceMappingV2 = new ArrayList<>();
+        }
         this.blockDeviceMappingV2.add(blockDeviceMappingV2Item);
         return this;
     }
 
     public NovaCreateServersOption withBlockDeviceMappingV2(Consumer<List<NovaServerBlockDeviceMapping>> blockDeviceMappingV2Setter) {
-        if(this.blockDeviceMappingV2 == null ){
+        if(this.blockDeviceMappingV2 == null) {
             this.blockDeviceMappingV2 = new ArrayList<>();
         }
         blockDeviceMappingV2Setter.accept(this.blockDeviceMappingV2);
@@ -417,12 +423,15 @@ public class NovaCreateServersOption  {
 
     
     public NovaCreateServersOption addSecurityGroupsItem(NovaServerSecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public NovaCreateServersOption withSecurityGroups(Consumer<List<NovaServerSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -450,12 +459,15 @@ public class NovaCreateServersOption  {
 
     
     public NovaCreateServersOption addNetworksItem(NovaServerNetwork networksItem) {
+        if(this.networks == null) {
+            this.networks = new ArrayList<>();
+        }
         this.networks.add(networksItem);
         return this;
     }
 
     public NovaCreateServersOption withNetworks(Consumer<List<NovaServerNetwork>> networksSetter) {
-        if(this.networks == null ){
+        if(this.networks == null) {
             this.networks = new ArrayList<>();
         }
         networksSetter.accept(this.networks);

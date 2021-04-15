@@ -63,12 +63,15 @@ public class ListFunctionStatisticsResponseBody  {
 
     
     public ListFunctionStatisticsResponseBody addCountItem(SlaReportsValue countItem) {
+        if(this.count == null) {
+            this.count = new ArrayList<>();
+        }
         this.count.add(countItem);
         return this;
     }
 
     public ListFunctionStatisticsResponseBody withCount(Consumer<List<SlaReportsValue>> countSetter) {
-        if(this.count == null ){
+        if(this.count == null) {
             this.count = new ArrayList<>();
         }
         countSetter.accept(this.count);
@@ -96,12 +99,15 @@ public class ListFunctionStatisticsResponseBody  {
 
     
     public ListFunctionStatisticsResponseBody addDurationItem(SlaReportsValue durationItem) {
+        if(this.duration == null) {
+            this.duration = new ArrayList<>();
+        }
         this.duration.add(durationItem);
         return this;
     }
 
     public ListFunctionStatisticsResponseBody withDuration(Consumer<List<SlaReportsValue>> durationSetter) {
-        if(this.duration == null ){
+        if(this.duration == null) {
             this.duration = new ArrayList<>();
         }
         durationSetter.accept(this.duration);
@@ -129,12 +135,15 @@ public class ListFunctionStatisticsResponseBody  {
 
     
     public ListFunctionStatisticsResponseBody addFailCountItem(SlaReportsValue failCountItem) {
+        if(this.failCount == null) {
+            this.failCount = new ArrayList<>();
+        }
         this.failCount.add(failCountItem);
         return this;
     }
 
     public ListFunctionStatisticsResponseBody withFailCount(Consumer<List<SlaReportsValue>> failCountSetter) {
-        if(this.failCount == null ){
+        if(this.failCount == null) {
             this.failCount = new ArrayList<>();
         }
         failCountSetter.accept(this.failCount);
@@ -162,12 +171,15 @@ public class ListFunctionStatisticsResponseBody  {
 
     
     public ListFunctionStatisticsResponseBody addMaxDurationItem(SlaReportsValue maxDurationItem) {
+        if(this.maxDuration == null) {
+            this.maxDuration = new ArrayList<>();
+        }
         this.maxDuration.add(maxDurationItem);
         return this;
     }
 
     public ListFunctionStatisticsResponseBody withMaxDuration(Consumer<List<SlaReportsValue>> maxDurationSetter) {
-        if(this.maxDuration == null ){
+        if(this.maxDuration == null) {
             this.maxDuration = new ArrayList<>();
         }
         maxDurationSetter.accept(this.maxDuration);
@@ -195,12 +207,15 @@ public class ListFunctionStatisticsResponseBody  {
 
     
     public ListFunctionStatisticsResponseBody addMinDurationItem(SlaReportsValue minDurationItem) {
+        if(this.minDuration == null) {
+            this.minDuration = new ArrayList<>();
+        }
         this.minDuration.add(minDurationItem);
         return this;
     }
 
     public ListFunctionStatisticsResponseBody withMinDuration(Consumer<List<SlaReportsValue>> minDurationSetter) {
-        if(this.minDuration == null ){
+        if(this.minDuration == null) {
             this.minDuration = new ArrayList<>();
         }
         minDurationSetter.accept(this.minDuration);
@@ -228,12 +243,15 @@ public class ListFunctionStatisticsResponseBody  {
 
     
     public ListFunctionStatisticsResponseBody addRejectCountItem(SlaReportsValue rejectCountItem) {
+        if(this.rejectCount == null) {
+            this.rejectCount = new ArrayList<>();
+        }
         this.rejectCount.add(rejectCountItem);
         return this;
     }
 
     public ListFunctionStatisticsResponseBody withRejectCount(Consumer<List<SlaReportsValue>> rejectCountSetter) {
-        if(this.rejectCount == null ){
+        if(this.rejectCount == null) {
             this.rejectCount = new ArrayList<>();
         }
         rejectCountSetter.accept(this.rejectCount);

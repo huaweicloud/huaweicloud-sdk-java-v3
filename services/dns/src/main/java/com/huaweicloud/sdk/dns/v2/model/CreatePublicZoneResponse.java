@@ -462,12 +462,15 @@ public class CreatePublicZoneResponse extends SdkResponse {
 
     
     public CreatePublicZoneResponse addMastersItem(String mastersItem) {
+        if(this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
         this.masters.add(mastersItem);
         return this;
     }
 
     public CreatePublicZoneResponse withMasters(Consumer<List<String>> mastersSetter) {
-        if(this.masters == null ){
+        if(this.masters == null) {
             this.masters = new ArrayList<>();
         }
         mastersSetter.accept(this.masters);

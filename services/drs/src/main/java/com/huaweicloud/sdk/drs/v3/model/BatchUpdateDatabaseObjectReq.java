@@ -33,12 +33,15 @@ public class BatchUpdateDatabaseObjectReq  {
 
     
     public BatchUpdateDatabaseObjectReq addJobsItem(UpdateDatabaseObjectReq jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public BatchUpdateDatabaseObjectReq withJobs(Consumer<List<UpdateDatabaseObjectReq>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

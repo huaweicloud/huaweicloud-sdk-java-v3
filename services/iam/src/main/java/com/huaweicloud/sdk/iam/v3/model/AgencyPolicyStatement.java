@@ -201,12 +201,15 @@ public class AgencyPolicyStatement  {
 
     
     public AgencyPolicyStatement addActionItem(ActionEnum actionItem) {
+        if(this.action == null) {
+            this.action = new ArrayList<>();
+        }
         this.action.add(actionItem);
         return this;
     }
 
     public AgencyPolicyStatement withAction(Consumer<List<ActionEnum>> actionSetter) {
-        if(this.action == null ){
+        if(this.action == null) {
             this.action = new ArrayList<>();
         }
         actionSetter.accept(this.action);

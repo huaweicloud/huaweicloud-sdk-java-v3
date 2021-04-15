@@ -99,12 +99,15 @@ public class ListL7PoliciesResponse extends SdkResponse {
 
     
     public ListL7PoliciesResponse addL7policiesItem(L7Policy l7policiesItem) {
+        if(this.l7policies == null) {
+            this.l7policies = new ArrayList<>();
+        }
         this.l7policies.add(l7policiesItem);
         return this;
     }
 
     public ListL7PoliciesResponse withL7policies(Consumer<List<L7Policy>> l7policiesSetter) {
-        if(this.l7policies == null ){
+        if(this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         l7policiesSetter.accept(this.l7policies);

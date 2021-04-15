@@ -57,12 +57,15 @@ public class InterfaceAttachment  {
 
     
     public InterfaceAttachment addFixedIpsItem(ServerInterfaceFixedIp fixedIpsItem) {
+        if(this.fixedIps == null) {
+            this.fixedIps = new ArrayList<>();
+        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
 
     public InterfaceAttachment withFixedIps(Consumer<List<ServerInterfaceFixedIp>> fixedIpsSetter) {
-        if(this.fixedIps == null ){
+        if(this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);

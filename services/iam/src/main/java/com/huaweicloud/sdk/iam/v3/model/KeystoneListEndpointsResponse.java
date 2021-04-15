@@ -71,12 +71,15 @@ public class KeystoneListEndpointsResponse extends SdkResponse {
 
     
     public KeystoneListEndpointsResponse addEndpointsItem(Endpoint endpointsItem) {
+        if(this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
         this.endpoints.add(endpointsItem);
         return this;
     }
 
     public KeystoneListEndpointsResponse withEndpoints(Consumer<List<Endpoint>> endpointsSetter) {
-        if(this.endpoints == null ){
+        if(this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);

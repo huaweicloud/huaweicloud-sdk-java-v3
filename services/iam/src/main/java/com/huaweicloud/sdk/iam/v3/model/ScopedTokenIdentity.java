@@ -39,12 +39,15 @@ public class ScopedTokenIdentity  {
 
     
     public ScopedTokenIdentity addMethodsItem(String methodsItem) {
+        if(this.methods == null) {
+            this.methods = new ArrayList<>();
+        }
         this.methods.add(methodsItem);
         return this;
     }
 
     public ScopedTokenIdentity withMethods(Consumer<List<String>> methodsSetter) {
-        if(this.methods == null ){
+        if(this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);

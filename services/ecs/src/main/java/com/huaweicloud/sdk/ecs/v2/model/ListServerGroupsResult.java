@@ -80,12 +80,15 @@ public class ListServerGroupsResult  {
 
     
     public ListServerGroupsResult addMembersItem(String membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public ListServerGroupsResult withMembers(Consumer<List<String>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);
@@ -114,12 +117,15 @@ public class ListServerGroupsResult  {
     
 
     public ListServerGroupsResult putMetadataItem(String key, String metadataItem) {
+        if(this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
         this.metadata.put(key, metadataItem);
         return this;
     }
 
     public ListServerGroupsResult withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null ){
+        if(this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
@@ -168,12 +174,15 @@ public class ListServerGroupsResult  {
 
     
     public ListServerGroupsResult addPoliciesItem(String policiesItem) {
+        if(this.policies == null) {
+            this.policies = new ArrayList<>();
+        }
         this.policies.add(policiesItem);
         return this;
     }
 
     public ListServerGroupsResult withPolicies(Consumer<List<String>> policiesSetter) {
-        if(this.policies == null ){
+        if(this.policies == null) {
             this.policies = new ArrayList<>();
         }
         policiesSetter.accept(this.policies);

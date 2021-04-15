@@ -89,12 +89,15 @@ public class QueryFlowCompareDataResp  {
 
     
     public QueryFlowCompareDataResp addListItem(StructDetailVO listItem) {
+        if(this.list == null) {
+            this.list = new ArrayList<>();
+        }
         this.list.add(listItem);
         return this;
     }
 
     public QueryFlowCompareDataResp withList(Consumer<List<StructDetailVO>> listSetter) {
-        if(this.list == null ){
+        if(this.list == null) {
             this.list = new ArrayList<>();
         }
         listSetter.accept(this.list);

@@ -77,12 +77,15 @@ public class ListCustomPoliciesResponse extends SdkResponse {
 
     
     public ListCustomPoliciesResponse addRolesItem(PolicyRoleResult rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public ListCustomPoliciesResponse withRoles(Consumer<List<PolicyRoleResult>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

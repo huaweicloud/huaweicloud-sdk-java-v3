@@ -143,12 +143,15 @@ public class ModifyTargetParamsReq  {
 
     
     public ModifyTargetParamsReq addParamsItem(ParamsReqBean paramsItem) {
+        if(this.params == null) {
+            this.params = new ArrayList<>();
+        }
         this.params.add(paramsItem);
         return this;
     }
 
     public ModifyTargetParamsReq withParams(Consumer<List<ParamsReqBean>> paramsSetter) {
-        if(this.params == null ){
+        if(this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);

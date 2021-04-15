@@ -41,12 +41,15 @@ public class BatchCheckJobsResponse extends SdkResponse {
 
     
     public BatchCheckJobsResponse addResultsItem(PostPreCheckResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchCheckJobsResponse withResults(Consumer<List<PostPreCheckResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

@@ -105,12 +105,15 @@ public class NovaServerFlavor  {
 
     
     public NovaServerFlavor addLinksItem(NovaLink linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public NovaServerFlavor withLinks(Consumer<List<NovaLink>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
@@ -271,12 +274,15 @@ public class NovaServerFlavor  {
     
 
     public NovaServerFlavor putExtraSpecsItem(String key, String extraSpecsItem) {
+        if(this.extraSpecs == null) {
+            this.extraSpecs = new HashMap<>();
+        }
         this.extraSpecs.put(key, extraSpecsItem);
         return this;
     }
 
     public NovaServerFlavor withExtraSpecs(Consumer<Map<String, String>> extraSpecsSetter) {
-        if(this.extraSpecs == null ){
+        if(this.extraSpecs == null) {
             this.extraSpecs = new HashMap<>();
         }
         extraSpecsSetter.accept(this.extraSpecs);

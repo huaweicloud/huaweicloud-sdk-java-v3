@@ -301,12 +301,15 @@ public class QueryPreCheckResp  {
 
     
     public QueryPreCheckResp addPrecheckResultItem(PrecheckResult precheckResultItem) {
+        if(this.precheckResult == null) {
+            this.precheckResult = new ArrayList<>();
+        }
         this.precheckResult.add(precheckResultItem);
         return this;
     }
 
     public QueryPreCheckResp withPrecheckResult(Consumer<List<PrecheckResult>> precheckResultSetter) {
-        if(this.precheckResult == null ){
+        if(this.precheckResult == null) {
             this.precheckResult = new ArrayList<>();
         }
         precheckResultSetter.accept(this.precheckResult);

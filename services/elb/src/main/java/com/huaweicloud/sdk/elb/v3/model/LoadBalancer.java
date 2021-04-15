@@ -532,12 +532,15 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addPoolsItem(PoolRef poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public LoadBalancer withPools(Consumer<List<PoolRef>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
@@ -565,12 +568,15 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addListenersItem(ListenerRef listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public LoadBalancer withListeners(Consumer<List<ListenerRef>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
@@ -730,12 +736,15 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public LoadBalancer withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -851,12 +860,15 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addEipsItem(EipInfo eipsItem) {
+        if(this.eips == null) {
+            this.eips = new ArrayList<>();
+        }
         this.eips.add(eipsItem);
         return this;
     }
 
     public LoadBalancer withEips(Consumer<List<EipInfo>> eipsSetter) {
-        if(this.eips == null ){
+        if(this.eips == null) {
             this.eips = new ArrayList<>();
         }
         eipsSetter.accept(this.eips);
@@ -950,12 +962,15 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addAvailabilityZoneListItem(String availabilityZoneListItem) {
+        if(this.availabilityZoneList == null) {
+            this.availabilityZoneList = new ArrayList<>();
+        }
         this.availabilityZoneList.add(availabilityZoneListItem);
         return this;
     }
 
     public LoadBalancer withAvailabilityZoneList(Consumer<List<String>> availabilityZoneListSetter) {
-        if(this.availabilityZoneList == null ){
+        if(this.availabilityZoneList == null) {
             this.availabilityZoneList = new ArrayList<>();
         }
         availabilityZoneListSetter.accept(this.availabilityZoneList);
@@ -1093,12 +1108,15 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addPublicipsItem(PublicIpInfo publicipsItem) {
+        if(this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
         this.publicips.add(publicipsItem);
         return this;
     }
 
     public LoadBalancer withPublicips(Consumer<List<PublicIpInfo>> publicipsSetter) {
-        if(this.publicips == null ){
+        if(this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
         publicipsSetter.accept(this.publicips);
@@ -1126,12 +1144,15 @@ public class LoadBalancer  {
 
     
     public LoadBalancer addElbVirsubnetIdsItem(String elbVirsubnetIdsItem) {
+        if(this.elbVirsubnetIds == null) {
+            this.elbVirsubnetIds = new ArrayList<>();
+        }
         this.elbVirsubnetIds.add(elbVirsubnetIdsItem);
         return this;
     }
 
     public LoadBalancer withElbVirsubnetIds(Consumer<List<String>> elbVirsubnetIdsSetter) {
-        if(this.elbVirsubnetIds == null ){
+        if(this.elbVirsubnetIds == null) {
             this.elbVirsubnetIds = new ArrayList<>();
         }
         elbVirsubnetIdsSetter.accept(this.elbVirsubnetIds);

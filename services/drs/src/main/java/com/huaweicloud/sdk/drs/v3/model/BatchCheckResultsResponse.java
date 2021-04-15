@@ -41,12 +41,15 @@ public class BatchCheckResultsResponse extends SdkResponse {
 
     
     public BatchCheckResultsResponse addResultsItem(QueryPreCheckResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchCheckResultsResponse withResults(Consumer<List<QueryPreCheckResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

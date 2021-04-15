@@ -137,12 +137,15 @@ public class LoadBalancerStatusPool  {
 
     
     public LoadBalancerStatusPool addMembersItem(LoadBalancerStatusMember membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public LoadBalancerStatusPool withMembers(Consumer<List<LoadBalancerStatusMember>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

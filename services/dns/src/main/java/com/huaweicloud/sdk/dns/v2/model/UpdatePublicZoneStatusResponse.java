@@ -434,12 +434,15 @@ public class UpdatePublicZoneStatusResponse extends SdkResponse {
 
     
     public UpdatePublicZoneStatusResponse addMastersItem(String mastersItem) {
+        if(this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
         this.masters.add(mastersItem);
         return this;
     }
 
     public UpdatePublicZoneStatusResponse withMasters(Consumer<List<String>> mastersSetter) {
-        if(this.masters == null ){
+        if(this.masters == null) {
             this.masters = new ArrayList<>();
         }
         mastersSetter.accept(this.masters);

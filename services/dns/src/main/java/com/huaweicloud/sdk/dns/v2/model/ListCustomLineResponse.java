@@ -42,12 +42,15 @@ public class ListCustomLineResponse extends SdkResponse {
 
     
     public ListCustomLineResponse addLinesItem(Line linesItem) {
+        if(this.lines == null) {
+            this.lines = new ArrayList<>();
+        }
         this.lines.add(linesItem);
         return this;
     }
 
     public ListCustomLineResponse withLines(Consumer<List<Line>> linesSetter) {
-        if(this.lines == null ){
+        if(this.lines == null) {
             this.lines = new ArrayList<>();
         }
         linesSetter.accept(this.lines);

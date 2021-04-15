@@ -35,12 +35,15 @@ public class ListServerInterfacesResponse extends SdkResponse {
 
     
     public ListServerInterfacesResponse addInterfaceAttachmentsItem(InterfaceAttachment interfaceAttachmentsItem) {
+        if(this.interfaceAttachments == null) {
+            this.interfaceAttachments = new ArrayList<>();
+        }
         this.interfaceAttachments.add(interfaceAttachmentsItem);
         return this;
     }
 
     public ListServerInterfacesResponse withInterfaceAttachments(Consumer<List<InterfaceAttachment>> interfaceAttachmentsSetter) {
-        if(this.interfaceAttachments == null ){
+        if(this.interfaceAttachments == null) {
             this.interfaceAttachments = new ArrayList<>();
         }
         interfaceAttachmentsSetter.accept(this.interfaceAttachments);

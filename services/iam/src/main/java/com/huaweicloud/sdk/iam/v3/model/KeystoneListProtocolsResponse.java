@@ -71,12 +71,15 @@ public class KeystoneListProtocolsResponse extends SdkResponse {
 
     
     public KeystoneListProtocolsResponse addProtocolsItem(ProtocolResult protocolsItem) {
+        if(this.protocols == null) {
+            this.protocols = new ArrayList<>();
+        }
         this.protocols.add(protocolsItem);
         return this;
     }
 
     public KeystoneListProtocolsResponse withProtocols(Consumer<List<ProtocolResult>> protocolsSetter) {
-        if(this.protocols == null ){
+        if(this.protocols == null) {
             this.protocols = new ArrayList<>();
         }
         protocolsSetter.accept(this.protocols);

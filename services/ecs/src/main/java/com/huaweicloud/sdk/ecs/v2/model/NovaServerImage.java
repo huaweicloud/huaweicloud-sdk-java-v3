@@ -61,12 +61,15 @@ public class NovaServerImage  {
 
     
     public NovaServerImage addLinksItem(NovaLink linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public NovaServerImage withLinks(Consumer<List<NovaLink>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

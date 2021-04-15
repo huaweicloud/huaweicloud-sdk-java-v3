@@ -35,12 +35,15 @@ public class NovaListAvailabilityZonesResponse extends SdkResponse {
 
     
     public NovaListAvailabilityZonesResponse addAvailabilityZoneInfoItem(NovaAvailabilityZone availabilityZoneInfoItem) {
+        if(this.availabilityZoneInfo == null) {
+            this.availabilityZoneInfo = new ArrayList<>();
+        }
         this.availabilityZoneInfo.add(availabilityZoneInfoItem);
         return this;
     }
 
     public NovaListAvailabilityZonesResponse withAvailabilityZoneInfo(Consumer<List<NovaAvailabilityZone>> availabilityZoneInfoSetter) {
-        if(this.availabilityZoneInfo == null ){
+        if(this.availabilityZoneInfo == null) {
             this.availabilityZoneInfo = new ArrayList<>();
         }
         availabilityZoneInfoSetter.accept(this.availabilityZoneInfo);

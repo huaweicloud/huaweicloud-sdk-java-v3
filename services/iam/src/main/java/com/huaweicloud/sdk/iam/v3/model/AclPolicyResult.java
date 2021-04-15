@@ -40,12 +40,15 @@ public class AclPolicyResult  {
 
     
     public AclPolicyResult addAllowAddressNetmasksItem(AllowAddressNetmasksResult allowAddressNetmasksItem) {
+        if(this.allowAddressNetmasks == null) {
+            this.allowAddressNetmasks = new ArrayList<>();
+        }
         this.allowAddressNetmasks.add(allowAddressNetmasksItem);
         return this;
     }
 
     public AclPolicyResult withAllowAddressNetmasks(Consumer<List<AllowAddressNetmasksResult>> allowAddressNetmasksSetter) {
-        if(this.allowAddressNetmasks == null ){
+        if(this.allowAddressNetmasks == null) {
             this.allowAddressNetmasks = new ArrayList<>();
         }
         allowAddressNetmasksSetter.accept(this.allowAddressNetmasks);
@@ -73,12 +76,15 @@ public class AclPolicyResult  {
 
     
     public AclPolicyResult addAllowIpRangesItem(AllowIpRangesResult allowIpRangesItem) {
+        if(this.allowIpRanges == null) {
+            this.allowIpRanges = new ArrayList<>();
+        }
         this.allowIpRanges.add(allowIpRangesItem);
         return this;
     }
 
     public AclPolicyResult withAllowIpRanges(Consumer<List<AllowIpRangesResult>> allowIpRangesSetter) {
-        if(this.allowIpRanges == null ){
+        if(this.allowIpRanges == null) {
             this.allowIpRanges = new ArrayList<>();
         }
         allowIpRangesSetter.accept(this.allowIpRanges);

@@ -86,12 +86,15 @@ public class LineCompareResult  {
 
     
     public LineCompareResult addLineCompareOverviewItem(LineCompareResultOverview lineCompareOverviewItem) {
+        if(this.lineCompareOverview == null) {
+            this.lineCompareOverview = new ArrayList<>();
+        }
         this.lineCompareOverview.add(lineCompareOverviewItem);
         return this;
     }
 
     public LineCompareResult withLineCompareOverview(Consumer<List<LineCompareResultOverview>> lineCompareOverviewSetter) {
-        if(this.lineCompareOverview == null ){
+        if(this.lineCompareOverview == null) {
             this.lineCompareOverview = new ArrayList<>();
         }
         lineCompareOverviewSetter.accept(this.lineCompareOverview);
@@ -141,12 +144,15 @@ public class LineCompareResult  {
 
     
     public LineCompareResult addLineCompareDetailsItem(LineCompareResultDetails lineCompareDetailsItem) {
+        if(this.lineCompareDetails == null) {
+            this.lineCompareDetails = new ArrayList<>();
+        }
         this.lineCompareDetails.add(lineCompareDetailsItem);
         return this;
     }
 
     public LineCompareResult withLineCompareDetails(Consumer<List<LineCompareResultDetails>> lineCompareDetailsSetter) {
-        if(this.lineCompareDetails == null ){
+        if(this.lineCompareDetails == null) {
             this.lineCompareDetails = new ArrayList<>();
         }
         lineCompareDetailsSetter.accept(this.lineCompareDetails);

@@ -228,12 +228,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addAvailabilityZoneListItem(String availabilityZoneListItem) {
+        if(this.availabilityZoneList == null) {
+            this.availabilityZoneList = new ArrayList<>();
+        }
         this.availabilityZoneList.add(availabilityZoneListItem);
         return this;
     }
 
     public ListLoadBalancersRequest withAvailabilityZoneList(Consumer<List<String>> availabilityZoneListSetter) {
-        if(this.availabilityZoneList == null ){
+        if(this.availabilityZoneList == null) {
             this.availabilityZoneList = new ArrayList<>();
         }
         availabilityZoneListSetter.accept(this.availabilityZoneList);
@@ -261,12 +264,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addBillingInfoItem(String billingInfoItem) {
+        if(this.billingInfo == null) {
+            this.billingInfo = new ArrayList<>();
+        }
         this.billingInfo.add(billingInfoItem);
         return this;
     }
 
     public ListLoadBalancersRequest withBillingInfo(Consumer<List<String>> billingInfoSetter) {
-        if(this.billingInfo == null ){
+        if(this.billingInfo == null) {
             this.billingInfo = new ArrayList<>();
         }
         billingInfoSetter.accept(this.billingInfo);
@@ -316,12 +322,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addDescriptionItem(String descriptionItem) {
+        if(this.description == null) {
+            this.description = new ArrayList<>();
+        }
         this.description.add(descriptionItem);
         return this;
     }
 
     public ListLoadBalancersRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null ){
+        if(this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
@@ -349,12 +358,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addEipsItem(String eipsItem) {
+        if(this.eips == null) {
+            this.eips = new ArrayList<>();
+        }
         this.eips.add(eipsItem);
         return this;
     }
 
     public ListLoadBalancersRequest withEips(Consumer<List<String>> eipsSetter) {
-        if(this.eips == null ){
+        if(this.eips == null) {
             this.eips = new ArrayList<>();
         }
         eipsSetter.accept(this.eips);
@@ -382,12 +394,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if(this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
+        if(this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
@@ -437,12 +452,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListLoadBalancersRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -470,12 +488,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addIpVersionItem(Integer ipVersionItem) {
+        if(this.ipVersion == null) {
+            this.ipVersion = new ArrayList<>();
+        }
         this.ipVersion.add(ipVersionItem);
         return this;
     }
 
     public ListLoadBalancersRequest withIpVersion(Consumer<List<Integer>> ipVersionSetter) {
-        if(this.ipVersion == null ){
+        if(this.ipVersion == null) {
             this.ipVersion = new ArrayList<>();
         }
         ipVersionSetter.accept(this.ipVersion);
@@ -503,12 +524,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addIpv6VipAddressItem(String ipv6VipAddressItem) {
+        if(this.ipv6VipAddress == null) {
+            this.ipv6VipAddress = new ArrayList<>();
+        }
         this.ipv6VipAddress.add(ipv6VipAddressItem);
         return this;
     }
 
     public ListLoadBalancersRequest withIpv6VipAddress(Consumer<List<String>> ipv6VipAddressSetter) {
-        if(this.ipv6VipAddress == null ){
+        if(this.ipv6VipAddress == null) {
             this.ipv6VipAddress = new ArrayList<>();
         }
         ipv6VipAddressSetter.accept(this.ipv6VipAddress);
@@ -536,12 +560,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addIpv6VipPortIdItem(String ipv6VipPortIdItem) {
+        if(this.ipv6VipPortId == null) {
+            this.ipv6VipPortId = new ArrayList<>();
+        }
         this.ipv6VipPortId.add(ipv6VipPortIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withIpv6VipPortId(Consumer<List<String>> ipv6VipPortIdSetter) {
-        if(this.ipv6VipPortId == null ){
+        if(this.ipv6VipPortId == null) {
             this.ipv6VipPortId = new ArrayList<>();
         }
         ipv6VipPortIdSetter.accept(this.ipv6VipPortId);
@@ -569,12 +596,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addIpv6VipVirsubnetIdItem(String ipv6VipVirsubnetIdItem) {
+        if(this.ipv6VipVirsubnetId == null) {
+            this.ipv6VipVirsubnetId = new ArrayList<>();
+        }
         this.ipv6VipVirsubnetId.add(ipv6VipVirsubnetIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withIpv6VipVirsubnetId(Consumer<List<String>> ipv6VipVirsubnetIdSetter) {
-        if(this.ipv6VipVirsubnetId == null ){
+        if(this.ipv6VipVirsubnetId == null) {
             this.ipv6VipVirsubnetId = new ArrayList<>();
         }
         ipv6VipVirsubnetIdSetter.accept(this.ipv6VipVirsubnetId);
@@ -602,12 +632,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addL4FlavorIdItem(String l4FlavorIdItem) {
+        if(this.l4FlavorId == null) {
+            this.l4FlavorId = new ArrayList<>();
+        }
         this.l4FlavorId.add(l4FlavorIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withL4FlavorId(Consumer<List<String>> l4FlavorIdSetter) {
-        if(this.l4FlavorId == null ){
+        if(this.l4FlavorId == null) {
             this.l4FlavorId = new ArrayList<>();
         }
         l4FlavorIdSetter.accept(this.l4FlavorId);
@@ -635,12 +668,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addL4ScaleFlavorIdItem(String l4ScaleFlavorIdItem) {
+        if(this.l4ScaleFlavorId == null) {
+            this.l4ScaleFlavorId = new ArrayList<>();
+        }
         this.l4ScaleFlavorId.add(l4ScaleFlavorIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withL4ScaleFlavorId(Consumer<List<String>> l4ScaleFlavorIdSetter) {
-        if(this.l4ScaleFlavorId == null ){
+        if(this.l4ScaleFlavorId == null) {
             this.l4ScaleFlavorId = new ArrayList<>();
         }
         l4ScaleFlavorIdSetter.accept(this.l4ScaleFlavorId);
@@ -668,12 +704,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addL7FlavorIdItem(String l7FlavorIdItem) {
+        if(this.l7FlavorId == null) {
+            this.l7FlavorId = new ArrayList<>();
+        }
         this.l7FlavorId.add(l7FlavorIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withL7FlavorId(Consumer<List<String>> l7FlavorIdSetter) {
-        if(this.l7FlavorId == null ){
+        if(this.l7FlavorId == null) {
             this.l7FlavorId = new ArrayList<>();
         }
         l7FlavorIdSetter.accept(this.l7FlavorId);
@@ -701,12 +740,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addL7ScaleFlavorIdItem(String l7ScaleFlavorIdItem) {
+        if(this.l7ScaleFlavorId == null) {
+            this.l7ScaleFlavorId = new ArrayList<>();
+        }
         this.l7ScaleFlavorId.add(l7ScaleFlavorIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withL7ScaleFlavorId(Consumer<List<String>> l7ScaleFlavorIdSetter) {
-        if(this.l7ScaleFlavorId == null ){
+        if(this.l7ScaleFlavorId == null) {
             this.l7ScaleFlavorId = new ArrayList<>();
         }
         l7ScaleFlavorIdSetter.accept(this.l7ScaleFlavorId);
@@ -780,12 +822,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addMemberAddressItem(String memberAddressItem) {
+        if(this.memberAddress == null) {
+            this.memberAddress = new ArrayList<>();
+        }
         this.memberAddress.add(memberAddressItem);
         return this;
     }
 
     public ListLoadBalancersRequest withMemberAddress(Consumer<List<String>> memberAddressSetter) {
-        if(this.memberAddress == null ){
+        if(this.memberAddress == null) {
             this.memberAddress = new ArrayList<>();
         }
         memberAddressSetter.accept(this.memberAddress);
@@ -813,12 +858,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
+        if(this.memberDeviceId == null) {
+            this.memberDeviceId = new ArrayList<>();
+        }
         this.memberDeviceId.add(memberDeviceIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withMemberDeviceId(Consumer<List<String>> memberDeviceIdSetter) {
-        if(this.memberDeviceId == null ){
+        if(this.memberDeviceId == null) {
             this.memberDeviceId = new ArrayList<>();
         }
         memberDeviceIdSetter.accept(this.memberDeviceId);
@@ -846,12 +894,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListLoadBalancersRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -879,12 +930,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addOperatingStatusItem(String operatingStatusItem) {
+        if(this.operatingStatus == null) {
+            this.operatingStatus = new ArrayList<>();
+        }
         this.operatingStatus.add(operatingStatusItem);
         return this;
     }
 
     public ListLoadBalancersRequest withOperatingStatus(Consumer<List<String>> operatingStatusSetter) {
-        if(this.operatingStatus == null ){
+        if(this.operatingStatus == null) {
             this.operatingStatus = new ArrayList<>();
         }
         operatingStatusSetter.accept(this.operatingStatus);
@@ -934,12 +988,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addProvisioningStatusItem(String provisioningStatusItem) {
+        if(this.provisioningStatus == null) {
+            this.provisioningStatus = new ArrayList<>();
+        }
         this.provisioningStatus.add(provisioningStatusItem);
         return this;
     }
 
     public ListLoadBalancersRequest withProvisioningStatus(Consumer<List<String>> provisioningStatusSetter) {
-        if(this.provisioningStatus == null ){
+        if(this.provisioningStatus == null) {
             this.provisioningStatus = new ArrayList<>();
         }
         provisioningStatusSetter.accept(this.provisioningStatus);
@@ -967,12 +1024,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addPublicipsItem(String publicipsItem) {
+        if(this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
         this.publicips.add(publicipsItem);
         return this;
     }
 
     public ListLoadBalancersRequest withPublicips(Consumer<List<String>> publicipsSetter) {
-        if(this.publicips == null ){
+        if(this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
         publicipsSetter.accept(this.publicips);
@@ -1000,12 +1060,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addVipAddressItem(String vipAddressItem) {
+        if(this.vipAddress == null) {
+            this.vipAddress = new ArrayList<>();
+        }
         this.vipAddress.add(vipAddressItem);
         return this;
     }
 
     public ListLoadBalancersRequest withVipAddress(Consumer<List<String>> vipAddressSetter) {
-        if(this.vipAddress == null ){
+        if(this.vipAddress == null) {
             this.vipAddress = new ArrayList<>();
         }
         vipAddressSetter.accept(this.vipAddress);
@@ -1033,12 +1096,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addVipPortIdItem(String vipPortIdItem) {
+        if(this.vipPortId == null) {
+            this.vipPortId = new ArrayList<>();
+        }
         this.vipPortId.add(vipPortIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withVipPortId(Consumer<List<String>> vipPortIdSetter) {
-        if(this.vipPortId == null ){
+        if(this.vipPortId == null) {
             this.vipPortId = new ArrayList<>();
         }
         vipPortIdSetter.accept(this.vipPortId);
@@ -1066,12 +1132,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addVipSubnetCidrIdItem(String vipSubnetCidrIdItem) {
+        if(this.vipSubnetCidrId == null) {
+            this.vipSubnetCidrId = new ArrayList<>();
+        }
         this.vipSubnetCidrId.add(vipSubnetCidrIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withVipSubnetCidrId(Consumer<List<String>> vipSubnetCidrIdSetter) {
-        if(this.vipSubnetCidrId == null ){
+        if(this.vipSubnetCidrId == null) {
             this.vipSubnetCidrId = new ArrayList<>();
         }
         vipSubnetCidrIdSetter.accept(this.vipSubnetCidrId);
@@ -1099,12 +1168,15 @@ public class ListLoadBalancersRequest  {
 
     
     public ListLoadBalancersRequest addVpcIdItem(String vpcIdItem) {
+        if(this.vpcId == null) {
+            this.vpcId = new ArrayList<>();
+        }
         this.vpcId.add(vpcIdItem);
         return this;
     }
 
     public ListLoadBalancersRequest withVpcId(Consumer<List<String>> vpcIdSetter) {
-        if(this.vpcId == null ){
+        if(this.vpcId == null) {
             this.vpcId = new ArrayList<>();
         }
         vpcIdSetter.accept(this.vpcId);

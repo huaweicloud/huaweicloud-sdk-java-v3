@@ -149,12 +149,15 @@ public class RemoveFromSharedBandwidthOption  {
 
     
     public RemoveFromSharedBandwidthOption addPublicipInfoItem(RemovePublicipInfo publicipInfoItem) {
+        if(this.publicipInfo == null) {
+            this.publicipInfo = new ArrayList<>();
+        }
         this.publicipInfo.add(publicipInfoItem);
         return this;
     }
 
     public RemoveFromSharedBandwidthOption withPublicipInfo(Consumer<List<RemovePublicipInfo>> publicipInfoSetter) {
-        if(this.publicipInfo == null ){
+        if(this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         publicipInfoSetter.accept(this.publicipInfo);

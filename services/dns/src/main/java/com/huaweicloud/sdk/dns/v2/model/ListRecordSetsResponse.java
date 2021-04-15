@@ -78,12 +78,15 @@ public class ListRecordSetsResponse extends SdkResponse {
 
     
     public ListRecordSetsResponse addRecordsetsItem(ListRecordSets recordsetsItem) {
+        if(this.recordsets == null) {
+            this.recordsets = new ArrayList<>();
+        }
         this.recordsets.add(recordsetsItem);
         return this;
     }
 
     public ListRecordSetsResponse withRecordsets(Consumer<List<ListRecordSets>> recordsetsSetter) {
-        if(this.recordsets == null ){
+        if(this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
         recordsetsSetter.accept(this.recordsets);

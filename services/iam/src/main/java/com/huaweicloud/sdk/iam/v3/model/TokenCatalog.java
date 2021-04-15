@@ -117,12 +117,15 @@ public class TokenCatalog  {
 
     
     public TokenCatalog addEndpointsItem(TokenCatalogEndpoint endpointsItem) {
+        if(this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
         this.endpoints.add(endpointsItem);
         return this;
     }
 
     public TokenCatalog withEndpoints(Consumer<List<TokenCatalogEndpoint>> endpointsSetter) {
-        if(this.endpoints == null ){
+        if(this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);

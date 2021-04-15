@@ -108,12 +108,15 @@ public class UpdateUserReq  {
 
     
     public UpdateUserReq addListItem(UserAccountVO listItem) {
+        if(this.list == null) {
+            this.list = new ArrayList<>();
+        }
         this.list.add(listItem);
         return this;
     }
 
     public UpdateUserReq withList(Consumer<List<UserAccountVO>> listSetter) {
-        if(this.list == null ){
+        if(this.list == null) {
             this.list = new ArrayList<>();
         }
         listSetter.accept(this.list);
@@ -141,12 +144,15 @@ public class UpdateUserReq  {
 
     
     public UpdateUserReq addUserRolesItem(UserRoleVO userRolesItem) {
+        if(this.userRoles == null) {
+            this.userRoles = new ArrayList<>();
+        }
         this.userRoles.add(userRolesItem);
         return this;
     }
 
     public UpdateUserReq withUserRoles(Consumer<List<UserRoleVO>> userRolesSetter) {
-        if(this.userRoles == null ){
+        if(this.userRoles == null) {
             this.userRoles = new ArrayList<>();
         }
         userRolesSetter.accept(this.userRoles);

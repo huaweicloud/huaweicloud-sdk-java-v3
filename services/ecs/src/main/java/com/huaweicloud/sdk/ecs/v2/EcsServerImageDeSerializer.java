@@ -4,8 +4,8 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 import com.huaweicloud.sdk.ecs.v2.model.ServerImage;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.util.Objects;

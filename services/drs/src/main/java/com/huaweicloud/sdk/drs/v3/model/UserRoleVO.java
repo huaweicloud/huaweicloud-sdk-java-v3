@@ -150,12 +150,15 @@ public class UserRoleVO  {
 
     
     public UserRoleVO addInheritsRolesItem(String inheritsRolesItem) {
+        if(this.inheritsRoles == null) {
+            this.inheritsRoles = new ArrayList<>();
+        }
         this.inheritsRoles.add(inheritsRolesItem);
         return this;
     }
 
     public UserRoleVO withInheritsRoles(Consumer<List<String>> inheritsRolesSetter) {
-        if(this.inheritsRoles == null ){
+        if(this.inheritsRoles == null) {
             this.inheritsRoles = new ArrayList<>();
         }
         inheritsRolesSetter.accept(this.inheritsRoles);

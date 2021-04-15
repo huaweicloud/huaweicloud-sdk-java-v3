@@ -42,12 +42,15 @@ public class ListServerGroupsResponse extends SdkResponse {
 
     
     public ListServerGroupsResponse addServerGroupsItem(ListServerGroupsResult serverGroupsItem) {
+        if(this.serverGroups == null) {
+            this.serverGroups = new ArrayList<>();
+        }
         this.serverGroups.add(serverGroupsItem);
         return this;
     }
 
     public ListServerGroupsResponse withServerGroups(Consumer<List<ListServerGroupsResult>> serverGroupsSetter) {
-        if(this.serverGroups == null ){
+        if(this.serverGroups == null) {
             this.serverGroups = new ArrayList<>();
         }
         serverGroupsSetter.accept(this.serverGroups);

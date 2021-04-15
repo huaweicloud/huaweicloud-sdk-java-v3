@@ -63,12 +63,15 @@ public class BatchListRposAndRtosResponse extends SdkResponse {
 
     
     public BatchListRposAndRtosResponse addResultsItem(QueryRpoAndRtoResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchListRposAndRtosResponse withResults(Consumer<List<QueryRpoAndRtoResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

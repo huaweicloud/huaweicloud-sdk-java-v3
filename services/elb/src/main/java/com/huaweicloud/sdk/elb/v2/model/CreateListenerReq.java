@@ -570,12 +570,15 @@ public class CreateListenerReq  {
 
     
     public CreateListenerReq addSniContainerRefsItem(String sniContainerRefsItem) {
+        if(this.sniContainerRefs == null) {
+            this.sniContainerRefs = new ArrayList<>();
+        }
         this.sniContainerRefs.add(sniContainerRefsItem);
         return this;
     }
 
     public CreateListenerReq withSniContainerRefs(Consumer<List<String>> sniContainerRefsSetter) {
-        if(this.sniContainerRefs == null ){
+        if(this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         sniContainerRefsSetter.accept(this.sniContainerRefs);

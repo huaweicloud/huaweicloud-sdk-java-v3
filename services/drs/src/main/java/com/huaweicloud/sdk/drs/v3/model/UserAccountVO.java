@@ -168,12 +168,15 @@ public class UserAccountVO  {
 
     
     public UserAccountVO addPrivilegesItem(String privilegesItem) {
+        if(this.privileges == null) {
+            this.privileges = new ArrayList<>();
+        }
         this.privileges.add(privilegesItem);
         return this;
     }
 
     public UserAccountVO withPrivileges(Consumer<List<String>> privilegesSetter) {
-        if(this.privileges == null ){
+        if(this.privileges == null) {
             this.privileges = new ArrayList<>();
         }
         privilegesSetter.accept(this.privileges);
@@ -245,12 +248,15 @@ public class UserAccountVO  {
 
     
     public UserAccountVO addRolesItem(String rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public UserAccountVO withRoles(Consumer<List<String>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

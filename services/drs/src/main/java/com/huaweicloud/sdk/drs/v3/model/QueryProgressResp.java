@@ -329,12 +329,15 @@ public class QueryProgressResp  {
     
 
     public QueryProgressResp putProgressMapItem(String key, ProgressInfo progressMapItem) {
+        if(this.progressMap == null) {
+            this.progressMap = new HashMap<>();
+        }
         this.progressMap.put(key, progressMapItem);
         return this;
     }
 
     public QueryProgressResp withProgressMap(Consumer<Map<String, ProgressInfo>> progressMapSetter) {
-        if(this.progressMap == null ){
+        if(this.progressMap == null) {
             this.progressMap = new HashMap<>();
         }
         progressMapSetter.accept(this.progressMap);

@@ -33,12 +33,15 @@ public class QueryDbParamsResp  {
 
     
     public QueryDbParamsResp addParamsItem(Params paramsItem) {
+        if(this.params == null) {
+            this.params = new ArrayList<>();
+        }
         this.params.add(paramsItem);
         return this;
     }
 
     public QueryDbParamsResp withParams(Consumer<List<Params>> paramsSetter) {
-        if(this.params == null ){
+        if(this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);

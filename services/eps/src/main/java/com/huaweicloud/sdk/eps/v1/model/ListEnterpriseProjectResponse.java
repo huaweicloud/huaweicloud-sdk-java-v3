@@ -41,12 +41,15 @@ public class ListEnterpriseProjectResponse extends SdkResponse {
 
     
     public ListEnterpriseProjectResponse addEnterpriseProjectsItem(EpDetail enterpriseProjectsItem) {
+        if(this.enterpriseProjects == null) {
+            this.enterpriseProjects = new ArrayList<>();
+        }
         this.enterpriseProjects.add(enterpriseProjectsItem);
         return this;
     }
 
     public ListEnterpriseProjectResponse withEnterpriseProjects(Consumer<List<EpDetail>> enterpriseProjectsSetter) {
-        if(this.enterpriseProjects == null ){
+        if(this.enterpriseProjects == null) {
             this.enterpriseProjects = new ArrayList<>();
         }
         enterpriseProjectsSetter.accept(this.enterpriseProjects);

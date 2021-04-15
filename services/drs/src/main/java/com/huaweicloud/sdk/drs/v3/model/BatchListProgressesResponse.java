@@ -63,12 +63,15 @@ public class BatchListProgressesResponse extends SdkResponse {
 
     
     public BatchListProgressesResponse addResultsItem(QueryProgressResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchListProgressesResponse withResults(Consumer<List<QueryProgressResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

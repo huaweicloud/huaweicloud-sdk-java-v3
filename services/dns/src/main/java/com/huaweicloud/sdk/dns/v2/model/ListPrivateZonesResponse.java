@@ -107,12 +107,15 @@ public class ListPrivateZonesResponse extends SdkResponse {
 
     
     public ListPrivateZonesResponse addZonesItem(PrivateZoneResp zonesItem) {
+        if(this.zones == null) {
+            this.zones = new ArrayList<>();
+        }
         this.zones.add(zonesItem);
         return this;
     }
 
     public ListPrivateZonesResponse withZones(Consumer<List<PrivateZoneResp>> zonesSetter) {
-        if(this.zones == null ){
+        if(this.zones == null) {
             this.zones = new ArrayList<>();
         }
         zonesSetter.accept(this.zones);

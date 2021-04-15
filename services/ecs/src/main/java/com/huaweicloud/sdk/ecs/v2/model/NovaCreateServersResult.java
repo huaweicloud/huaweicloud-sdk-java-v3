@@ -168,12 +168,15 @@ public class NovaCreateServersResult  {
 
     
     public NovaCreateServersResult addLinksItem(NovaLink linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public NovaCreateServersResult withLinks(Consumer<List<NovaLink>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
@@ -201,12 +204,15 @@ public class NovaCreateServersResult  {
 
     
     public NovaCreateServersResult addSecurityGroupsItem(NovaServerSecurityGroup securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public NovaCreateServersResult withSecurityGroups(Consumer<List<NovaServerSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);

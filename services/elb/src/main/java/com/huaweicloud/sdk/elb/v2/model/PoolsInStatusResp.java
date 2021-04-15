@@ -108,12 +108,15 @@ public class PoolsInStatusResp  {
 
     
     public PoolsInStatusResp addMembersItem(MembersInStatusResp membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public PoolsInStatusResp withMembers(Consumer<List<MembersInStatusResp>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

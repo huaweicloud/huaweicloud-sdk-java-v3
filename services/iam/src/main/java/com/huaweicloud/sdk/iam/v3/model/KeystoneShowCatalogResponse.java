@@ -42,12 +42,15 @@ public class KeystoneShowCatalogResponse extends SdkResponse {
 
     
     public KeystoneShowCatalogResponse addCatalogItem(Catalog catalogItem) {
+        if(this.catalog == null) {
+            this.catalog = new ArrayList<>();
+        }
         this.catalog.add(catalogItem);
         return this;
     }
 
     public KeystoneShowCatalogResponse withCatalog(Consumer<List<Catalog>> catalogSetter) {
-        if(this.catalog == null ){
+        if(this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
         catalogSetter.accept(this.catalog);

@@ -41,12 +41,15 @@ public class BatchShowParamsResponse extends SdkResponse {
 
     
     public BatchShowParamsResponse addParamsListItem(QueryDbParamsResp paramsListItem) {
+        if(this.paramsList == null) {
+            this.paramsList = new ArrayList<>();
+        }
         this.paramsList.add(paramsListItem);
         return this;
     }
 
     public BatchShowParamsResponse withParamsList(Consumer<List<QueryDbParamsResp>> paramsListSetter) {
-        if(this.paramsList == null ){
+        if(this.paramsList == null) {
             this.paramsList = new ArrayList<>();
         }
         paramsListSetter.accept(this.paramsList);

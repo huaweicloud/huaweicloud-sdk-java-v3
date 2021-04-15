@@ -79,12 +79,15 @@ public class ContentCompareResultDetails  {
 
     
     public ContentCompareResultDetails addContentCompareDetailItem(ContentCompareDetail contentCompareDetailItem) {
+        if(this.contentCompareDetail == null) {
+            this.contentCompareDetail = new ArrayList<>();
+        }
         this.contentCompareDetail.add(contentCompareDetailItem);
         return this;
     }
 
     public ContentCompareResultDetails withContentCompareDetail(Consumer<List<ContentCompareDetail>> contentCompareDetailSetter) {
-        if(this.contentCompareDetail == null ){
+        if(this.contentCompareDetail == null) {
             this.contentCompareDetail = new ArrayList<>();
         }
         contentCompareDetailSetter.accept(this.contentCompareDetail);
@@ -134,12 +137,15 @@ public class ContentCompareResultDetails  {
 
     
     public ContentCompareResultDetails addContentUncompareDetailItem(ContentCompareDetail contentUncompareDetailItem) {
+        if(this.contentUncompareDetail == null) {
+            this.contentUncompareDetail = new ArrayList<>();
+        }
         this.contentUncompareDetail.add(contentUncompareDetailItem);
         return this;
     }
 
     public ContentCompareResultDetails withContentUncompareDetail(Consumer<List<ContentCompareDetail>> contentUncompareDetailSetter) {
-        if(this.contentUncompareDetail == null ){
+        if(this.contentUncompareDetail == null) {
             this.contentUncompareDetail = new ArrayList<>();
         }
         contentUncompareDetailSetter.accept(this.contentUncompareDetail);

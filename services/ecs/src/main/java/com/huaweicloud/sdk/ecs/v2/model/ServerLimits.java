@@ -733,12 +733,15 @@ public class ServerLimits  {
 
     
     public ServerLimits addLimitByFlavorItem(ProjectFlavorLimit limitByFlavorItem) {
+        if(this.limitByFlavor == null) {
+            this.limitByFlavor = new ArrayList<>();
+        }
         this.limitByFlavor.add(limitByFlavorItem);
         return this;
     }
 
     public ServerLimits withLimitByFlavor(Consumer<List<ProjectFlavorLimit>> limitByFlavorSetter) {
-        if(this.limitByFlavor == null ){
+        if(this.limitByFlavor == null) {
             this.limitByFlavor = new ArrayList<>();
         }
         limitByFlavorSetter.accept(this.limitByFlavor);

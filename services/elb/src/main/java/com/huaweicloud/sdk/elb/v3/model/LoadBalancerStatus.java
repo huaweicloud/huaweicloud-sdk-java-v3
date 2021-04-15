@@ -108,12 +108,15 @@ public class LoadBalancerStatus  {
 
     
     public LoadBalancerStatus addListenersItem(LoadBalancerStatusListener listenersItem) {
+        if(this.listeners == null) {
+            this.listeners = new ArrayList<>();
+        }
         this.listeners.add(listenersItem);
         return this;
     }
 
     public LoadBalancerStatus withListeners(Consumer<List<LoadBalancerStatusListener>> listenersSetter) {
-        if(this.listeners == null ){
+        if(this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
@@ -141,12 +144,15 @@ public class LoadBalancerStatus  {
 
     
     public LoadBalancerStatus addPoolsItem(LoadBalancerStatusPool poolsItem) {
+        if(this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
         this.pools.add(poolsItem);
         return this;
     }
 
     public LoadBalancerStatus withPools(Consumer<List<LoadBalancerStatusPool>> poolsSetter) {
-        if(this.pools == null ){
+        if(this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);

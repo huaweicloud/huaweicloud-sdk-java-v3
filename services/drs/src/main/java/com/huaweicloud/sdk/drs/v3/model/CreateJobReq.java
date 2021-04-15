@@ -962,12 +962,15 @@ public class CreateJobReq  {
 
     
     public CreateJobReq addTagsItem(ResourceTag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateJobReq withTags(Consumer<List<ResourceTag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1105,12 +1108,15 @@ public class CreateJobReq  {
 
     
     public CreateJobReq addSysTagsItem(ResourceTag sysTagsItem) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
 
     public CreateJobReq withSysTags(Consumer<List<ResourceTag>> sysTagsSetter) {
-        if(this.sysTags == null ){
+        if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);

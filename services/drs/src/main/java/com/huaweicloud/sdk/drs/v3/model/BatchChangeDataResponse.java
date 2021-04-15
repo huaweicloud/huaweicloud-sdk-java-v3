@@ -41,12 +41,15 @@ public class BatchChangeDataResponse extends SdkResponse {
 
     
     public BatchChangeDataResponse addResultsItem(DataTransformationResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchChangeDataResponse withResults(Consumer<List<DataTransformationResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

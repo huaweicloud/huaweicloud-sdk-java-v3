@@ -71,12 +71,15 @@ public class KeystoneListUsersForGroupByAdminResponse extends SdkResponse {
 
     
     public KeystoneListUsersForGroupByAdminResponse addUsersItem(KeystoneUserResult usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public KeystoneListUsersForGroupByAdminResponse withUsers(Consumer<List<KeystoneUserResult>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

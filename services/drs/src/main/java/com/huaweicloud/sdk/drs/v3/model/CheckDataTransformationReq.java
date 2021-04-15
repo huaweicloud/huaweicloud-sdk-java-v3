@@ -75,12 +75,15 @@ public class CheckDataTransformationReq  {
 
     
     public CheckDataTransformationReq addObjectInfoItem(DatabaseObjectVO objectInfoItem) {
+        if(this.objectInfo == null) {
+            this.objectInfo = new ArrayList<>();
+        }
         this.objectInfo.add(objectInfoItem);
         return this;
     }
 
     public CheckDataTransformationReq withObjectInfo(Consumer<List<DatabaseObjectVO>> objectInfoSetter) {
-        if(this.objectInfo == null ){
+        if(this.objectInfo == null) {
             this.objectInfo = new ArrayList<>();
         }
         objectInfoSetter.accept(this.objectInfo);

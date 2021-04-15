@@ -140,12 +140,15 @@ public class ListPublicipsByTagsRequestBody  {
 
     
     public ListPublicipsByTagsRequestBody addTagsItem(TagReq tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListPublicipsByTagsRequestBody withTags(Consumer<List<TagReq>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -241,12 +244,15 @@ public class ListPublicipsByTagsRequestBody  {
 
     
     public ListPublicipsByTagsRequestBody addMatchesItem(MatchReq matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListPublicipsByTagsRequestBody withMatches(Consumer<List<MatchReq>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);

@@ -104,12 +104,15 @@ public class OsFederationInfo  {
 
     
     public OsFederationInfo addGroupsItem(Object groupsItem) {
+        if(this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
         this.groups.add(groupsItem);
         return this;
     }
 
     public OsFederationInfo withGroups(Consumer<List<Object>> groupsSetter) {
-        if(this.groups == null ){
+        if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);

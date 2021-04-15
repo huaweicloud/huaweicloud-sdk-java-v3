@@ -116,12 +116,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addAddressItem(String addressItem) {
+        if(this.address == null) {
+            this.address = new ArrayList<>();
+        }
         this.address.add(addressItem);
         return this;
     }
 
     public ListAllMembersRequest withAddress(Consumer<List<String>> addressSetter) {
-        if(this.address == null ){
+        if(this.address == null) {
             this.address = new ArrayList<>();
         }
         addressSetter.accept(this.address);
@@ -171,12 +174,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if(this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
         return this;
     }
 
     public ListAllMembersRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
+        if(this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
@@ -204,12 +210,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addIdItem(String idItem) {
+        if(this.id == null) {
+            this.id = new ArrayList<>();
+        }
         this.id.add(idItem);
         return this;
     }
 
     public ListAllMembersRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
+        if(this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
@@ -327,12 +336,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addNameItem(String nameItem) {
+        if(this.name == null) {
+            this.name = new ArrayList<>();
+        }
         this.name.add(nameItem);
         return this;
     }
 
     public ListAllMembersRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
+        if(this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
@@ -360,12 +372,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addOperatingStatusItem(String operatingStatusItem) {
+        if(this.operatingStatus == null) {
+            this.operatingStatus = new ArrayList<>();
+        }
         this.operatingStatus.add(operatingStatusItem);
         return this;
     }
 
     public ListAllMembersRequest withOperatingStatus(Consumer<List<String>> operatingStatusSetter) {
-        if(this.operatingStatus == null ){
+        if(this.operatingStatus == null) {
             this.operatingStatus = new ArrayList<>();
         }
         operatingStatusSetter.accept(this.operatingStatus);
@@ -437,12 +452,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addProtocolPortItem(Integer protocolPortItem) {
+        if(this.protocolPort == null) {
+            this.protocolPort = new ArrayList<>();
+        }
         this.protocolPort.add(protocolPortItem);
         return this;
     }
 
     public ListAllMembersRequest withProtocolPort(Consumer<List<Integer>> protocolPortSetter) {
-        if(this.protocolPort == null ){
+        if(this.protocolPort == null) {
             this.protocolPort = new ArrayList<>();
         }
         protocolPortSetter.accept(this.protocolPort);
@@ -470,12 +488,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addSubnetCidrIdItem(String subnetCidrIdItem) {
+        if(this.subnetCidrId == null) {
+            this.subnetCidrId = new ArrayList<>();
+        }
         this.subnetCidrId.add(subnetCidrIdItem);
         return this;
     }
 
     public ListAllMembersRequest withSubnetCidrId(Consumer<List<String>> subnetCidrIdSetter) {
-        if(this.subnetCidrId == null ){
+        if(this.subnetCidrId == null) {
             this.subnetCidrId = new ArrayList<>();
         }
         subnetCidrIdSetter.accept(this.subnetCidrId);
@@ -503,12 +524,15 @@ public class ListAllMembersRequest  {
 
     
     public ListAllMembersRequest addWeightItem(Integer weightItem) {
+        if(this.weight == null) {
+            this.weight = new ArrayList<>();
+        }
         this.weight.add(weightItem);
         return this;
     }
 
     public ListAllMembersRequest withWeight(Consumer<List<Integer>> weightSetter) {
-        if(this.weight == null ){
+        if(this.weight == null) {
             this.weight = new ArrayList<>();
         }
         weightSetter.accept(this.weight);

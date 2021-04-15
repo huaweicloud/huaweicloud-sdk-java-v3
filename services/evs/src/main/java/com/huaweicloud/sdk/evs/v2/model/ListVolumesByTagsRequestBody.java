@@ -180,12 +180,15 @@ public class ListVolumesByTagsRequestBody  {
 
     
     public ListVolumesByTagsRequestBody addMatchesItem(Match matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListVolumesByTagsRequestBody withMatches(Consumer<List<Match>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
@@ -235,12 +238,15 @@ public class ListVolumesByTagsRequestBody  {
 
     
     public ListVolumesByTagsRequestBody addTagsItem(TagsForListVolumes tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListVolumesByTagsRequestBody withTags(Consumer<List<TagsForListVolumes>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

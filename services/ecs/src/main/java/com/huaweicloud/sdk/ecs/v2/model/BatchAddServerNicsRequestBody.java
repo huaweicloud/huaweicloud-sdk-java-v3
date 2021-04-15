@@ -33,12 +33,15 @@ public class BatchAddServerNicsRequestBody  {
 
     
     public BatchAddServerNicsRequestBody addNicsItem(BatchAddServerNicOption nicsItem) {
+        if(this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
         this.nics.add(nicsItem);
         return this;
     }
 
     public BatchAddServerNicsRequestBody withNics(Consumer<List<BatchAddServerNicOption>> nicsSetter) {
-        if(this.nics == null ){
+        if(this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);

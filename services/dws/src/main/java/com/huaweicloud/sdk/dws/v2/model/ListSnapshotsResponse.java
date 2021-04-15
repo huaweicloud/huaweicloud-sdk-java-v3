@@ -35,12 +35,15 @@ public class ListSnapshotsResponse extends SdkResponse {
 
     
     public ListSnapshotsResponse addSnapshotsItem(Snapshots snapshotsItem) {
+        if(this.snapshots == null) {
+            this.snapshots = new ArrayList<>();
+        }
         this.snapshots.add(snapshotsItem);
         return this;
     }
 
     public ListSnapshotsResponse withSnapshots(Consumer<List<Snapshots>> snapshotsSetter) {
-        if(this.snapshots == null ){
+        if(this.snapshots == null) {
             this.snapshots = new ArrayList<>();
         }
         snapshotsSetter.accept(this.snapshots);

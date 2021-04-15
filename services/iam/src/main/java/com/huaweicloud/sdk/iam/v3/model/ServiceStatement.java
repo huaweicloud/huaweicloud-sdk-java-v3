@@ -132,12 +132,15 @@ public class ServiceStatement  {
 
     
     public ServiceStatement addActionItem(String actionItem) {
+        if(this.action == null) {
+            this.action = new ArrayList<>();
+        }
         this.action.add(actionItem);
         return this;
     }
 
     public ServiceStatement withAction(Consumer<List<String>> actionSetter) {
-        if(this.action == null ){
+        if(this.action == null) {
             this.action = new ArrayList<>();
         }
         actionSetter.accept(this.action);
@@ -188,12 +191,15 @@ public class ServiceStatement  {
     
 
     public ServiceStatement putConditionItem(String key, Map<String, List<String>> conditionItem) {
+        if(this.condition == null) {
+            this.condition = new HashMap<>();
+        }
         this.condition.put(key, conditionItem);
         return this;
     }
 
     public ServiceStatement withCondition(Consumer<Map<String, Map<String, List<String>>>> conditionSetter) {
-        if(this.condition == null ){
+        if(this.condition == null) {
             this.condition = new HashMap<>();
         }
         conditionSetter.accept(this.condition);
@@ -220,12 +226,15 @@ public class ServiceStatement  {
 
     
     public ServiceStatement addResourceItem(String resourceItem) {
+        if(this.resource == null) {
+            this.resource = new ArrayList<>();
+        }
         this.resource.add(resourceItem);
         return this;
     }
 
     public ServiceStatement withResource(Consumer<List<String>> resourceSetter) {
-        if(this.resource == null ){
+        if(this.resource == null) {
             this.resource = new ArrayList<>();
         }
         resourceSetter.accept(this.resource);

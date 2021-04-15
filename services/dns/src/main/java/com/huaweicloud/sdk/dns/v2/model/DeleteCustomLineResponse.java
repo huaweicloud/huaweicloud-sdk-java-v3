@@ -114,12 +114,15 @@ public class DeleteCustomLineResponse extends SdkResponse {
 
     
     public DeleteCustomLineResponse addIpSegmentsItem(String ipSegmentsItem) {
+        if(this.ipSegments == null) {
+            this.ipSegments = new ArrayList<>();
+        }
         this.ipSegments.add(ipSegmentsItem);
         return this;
     }
 
     public DeleteCustomLineResponse withIpSegments(Consumer<List<String>> ipSegmentsSetter) {
-        if(this.ipSegments == null ){
+        if(this.ipSegments == null) {
             this.ipSegments = new ArrayList<>();
         }
         ipSegmentsSetter.accept(this.ipSegments);

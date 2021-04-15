@@ -63,12 +63,15 @@ public class BatchUpdateUserResponse extends SdkResponse {
 
     
     public BatchUpdateUserResponse addResultsItem(QueryUserResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchUpdateUserResponse withResults(Consumer<List<QueryUserResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

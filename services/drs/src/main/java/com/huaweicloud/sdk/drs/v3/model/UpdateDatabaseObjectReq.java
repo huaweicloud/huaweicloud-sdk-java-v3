@@ -117,12 +117,15 @@ public class UpdateDatabaseObjectReq  {
 
     
     public UpdateDatabaseObjectReq addJobItem(DatabaseInfo jobItem) {
+        if(this.job == null) {
+            this.job = new ArrayList<>();
+        }
         this.job.add(jobItem);
         return this;
     }
 
     public UpdateDatabaseObjectReq withJob(Consumer<List<DatabaseInfo>> jobSetter) {
-        if(this.job == null ){
+        if(this.job == null) {
             this.job = new ArrayList<>();
         }
         jobSetter.accept(this.job);

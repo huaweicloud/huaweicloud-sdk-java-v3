@@ -63,12 +63,15 @@ public class BatchSetObjectsResponse extends SdkResponse {
 
     
     public BatchSetObjectsResponse addResultsItem(DatabaseObjectResp resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public BatchSetObjectsResponse withResults(Consumer<List<DatabaseObjectResp>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);
