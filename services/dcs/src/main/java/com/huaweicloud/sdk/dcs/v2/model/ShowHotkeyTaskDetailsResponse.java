@@ -433,12 +433,15 @@ public class ShowHotkeyTaskDetailsResponse extends SdkResponse {
 
     
     public ShowHotkeyTaskDetailsResponse addKeysItem(HotkeysBody keysItem) {
+        if(this.keys == null) {
+            this.keys = new ArrayList<>();
+        }
         this.keys.add(keysItem);
         return this;
     }
 
     public ShowHotkeyTaskDetailsResponse withKeys(Consumer<List<HotkeysBody>> keysSetter) {
-        if(this.keys == null ){
+        if(this.keys == null) {
             this.keys = new ArrayList<>();
         }
         keysSetter.accept(this.keys);

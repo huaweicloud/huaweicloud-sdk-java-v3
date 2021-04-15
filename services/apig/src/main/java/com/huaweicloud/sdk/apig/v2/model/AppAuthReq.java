@@ -66,12 +66,15 @@ public class AppAuthReq  {
 
     
     public AppAuthReq addAppIdsItem(String appIdsItem) {
+        if(this.appIds == null) {
+            this.appIds = new ArrayList<>();
+        }
         this.appIds.add(appIdsItem);
         return this;
     }
 
     public AppAuthReq withAppIds(Consumer<List<String>> appIdsSetter) {
-        if(this.appIds == null ){
+        if(this.appIds == null) {
             this.appIds = new ArrayList<>();
         }
         appIdsSetter.accept(this.appIds);
@@ -99,12 +102,15 @@ public class AppAuthReq  {
 
     
     public AppAuthReq addApiIdsItem(String apiIdsItem) {
+        if(this.apiIds == null) {
+            this.apiIds = new ArrayList<>();
+        }
         this.apiIds.add(apiIdsItem);
         return this;
     }
 
     public AppAuthReq withApiIds(Consumer<List<String>> apiIdsSetter) {
-        if(this.apiIds == null ){
+        if(this.apiIds == null) {
             this.apiIds = new ArrayList<>();
         }
         apiIdsSetter.accept(this.apiIds);

@@ -35,12 +35,15 @@ public class ListEntityMetricResponse extends SdkResponse {
 
     
     public ListEntityMetricResponse addMetricsItem(EntityMetricList metricsItem) {
+        if(this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
         this.metrics.add(metricsItem);
         return this;
     }
 
     public ListEntityMetricResponse withMetrics(Consumer<List<EntityMetricList>> metricsSetter) {
-        if(this.metrics == null ){
+        if(this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);

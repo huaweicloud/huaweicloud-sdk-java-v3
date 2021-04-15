@@ -257,12 +257,15 @@ public class OptionalDiscountRatingResult  {
 
     
     public OptionalDiscountRatingResult addProductRatingResultsItem(PeriodProductRatingResult productRatingResultsItem) {
+        if(this.productRatingResults == null) {
+            this.productRatingResults = new ArrayList<>();
+        }
         this.productRatingResults.add(productRatingResultsItem);
         return this;
     }
 
     public OptionalDiscountRatingResult withProductRatingResults(Consumer<List<PeriodProductRatingResult>> productRatingResultsSetter) {
-        if(this.productRatingResults == null ){
+        if(this.productRatingResults == null) {
             this.productRatingResults = new ArrayList<>();
         }
         productRatingResultsSetter.accept(this.productRatingResults);

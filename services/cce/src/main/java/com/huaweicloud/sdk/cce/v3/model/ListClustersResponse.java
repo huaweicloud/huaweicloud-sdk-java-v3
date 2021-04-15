@@ -69,12 +69,15 @@ public class ListClustersResponse extends SdkResponse {
 
     
     public ListClustersResponse addItemsItem(V3Cluster itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListClustersResponse withItems(Consumer<List<V3Cluster>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

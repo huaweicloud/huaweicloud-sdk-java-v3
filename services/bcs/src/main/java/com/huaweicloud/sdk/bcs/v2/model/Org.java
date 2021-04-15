@@ -91,12 +91,15 @@ public class Org  {
     
 
     public Org putPeersItem(String key, Node peersItem) {
+        if(this.peers == null) {
+            this.peers = new HashMap<>();
+        }
         this.peers.put(key, peersItem);
         return this;
     }
 
     public Org withPeers(Consumer<Map<String, Node>> peersSetter) {
-        if(this.peers == null ){
+        if(this.peers == null) {
             this.peers = new HashMap<>();
         }
         peersSetter.accept(this.peers);

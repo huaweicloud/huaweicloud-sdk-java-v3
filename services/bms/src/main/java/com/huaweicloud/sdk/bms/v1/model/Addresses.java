@@ -33,12 +33,15 @@ public class Addresses  {
 
     
     public Addresses addVpcIdItem(Address vpcIdItem) {
+        if(this.vpcId == null) {
+            this.vpcId = new ArrayList<>();
+        }
         this.vpcId.add(vpcIdItem);
         return this;
     }
 
     public Addresses withVpcId(Consumer<List<Address>> vpcIdSetter) {
-        if(this.vpcId == null ){
+        if(this.vpcId == null) {
             this.vpcId = new ArrayList<>();
         }
         vpcIdSetter.accept(this.vpcId);

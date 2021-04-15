@@ -42,12 +42,15 @@ public class ReclaimCouponQuotasResponse extends SdkResponse {
 
     
     public ReclaimCouponQuotasResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
+        if(this.errorDetails == null) {
+            this.errorDetails = new ArrayList<>();
+        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
 
     public ReclaimCouponQuotasResponse withErrorDetails(Consumer<List<ErrorDetail>> errorDetailsSetter) {
-        if(this.errorDetails == null ){
+        if(this.errorDetails == null) {
             this.errorDetails = new ArrayList<>();
         }
         errorDetailsSetter.accept(this.errorDetails);
@@ -75,12 +78,15 @@ public class ReclaimCouponQuotasResponse extends SdkResponse {
 
     
     public ReclaimCouponQuotasResponse addSimpleQuotaInfosItem(QuotaReclaim simpleQuotaInfosItem) {
+        if(this.simpleQuotaInfos == null) {
+            this.simpleQuotaInfos = new ArrayList<>();
+        }
         this.simpleQuotaInfos.add(simpleQuotaInfosItem);
         return this;
     }
 
     public ReclaimCouponQuotasResponse withSimpleQuotaInfos(Consumer<List<QuotaReclaim>> simpleQuotaInfosSetter) {
-        if(this.simpleQuotaInfos == null ){
+        if(this.simpleQuotaInfos == null) {
             this.simpleQuotaInfos = new ArrayList<>();
         }
         simpleQuotaInfosSetter.accept(this.simpleQuotaInfos);

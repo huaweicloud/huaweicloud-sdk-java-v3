@@ -70,12 +70,15 @@ public class ListWeeklyReportsResponse extends SdkResponse {
 
     
     public ListWeeklyReportsResponse addWeekdataItem(WeeklyCount weekdataItem) {
+        if(this.weekdata == null) {
+            this.weekdata = new ArrayList<>();
+        }
         this.weekdata.add(weekdataItem);
         return this;
     }
 
     public ListWeeklyReportsResponse withWeekdata(Consumer<List<WeeklyCount>> weekdataSetter) {
-        if(this.weekdata == null ){
+        if(this.weekdata == null) {
             this.weekdata = new ArrayList<>();
         }
         weekdataSetter.accept(this.weekdata);
@@ -103,12 +106,15 @@ public class ListWeeklyReportsResponse extends SdkResponse {
 
     
     public ListWeeklyReportsResponse addTop10Item(WeeklyTop10 top10Item) {
+        if(this.top10 == null) {
+            this.top10 = new ArrayList<>();
+        }
         this.top10.add(top10Item);
         return this;
     }
 
     public ListWeeklyReportsResponse withTop10(Consumer<List<WeeklyTop10>> top10Setter) {
-        if(this.top10 == null ){
+        if(this.top10 == null) {
             this.top10 = new ArrayList<>();
         }
         top10Setter.accept(this.top10);

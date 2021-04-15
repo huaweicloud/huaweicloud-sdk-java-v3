@@ -257,12 +257,15 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addTagsItem(TagsReq tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public VaultResourceInstancesReq withTags(Consumer<List<TagsReq>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -290,12 +293,15 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addTagsAnyItem(TagsReq tagsAnyItem) {
+        if(this.tagsAny == null) {
+            this.tagsAny = new ArrayList<>();
+        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
 
     public VaultResourceInstancesReq withTagsAny(Consumer<List<TagsReq>> tagsAnySetter) {
-        if(this.tagsAny == null ){
+        if(this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
@@ -323,12 +329,15 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addNotTagsItem(TagsReq notTagsItem) {
+        if(this.notTags == null) {
+            this.notTags = new ArrayList<>();
+        }
         this.notTags.add(notTagsItem);
         return this;
     }
 
     public VaultResourceInstancesReq withNotTags(Consumer<List<TagsReq>> notTagsSetter) {
-        if(this.notTags == null ){
+        if(this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
@@ -356,12 +365,15 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addNotTagsAnyItem(TagsReq notTagsAnyItem) {
+        if(this.notTagsAny == null) {
+            this.notTagsAny = new ArrayList<>();
+        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
 
     public VaultResourceInstancesReq withNotTagsAny(Consumer<List<TagsReq>> notTagsAnySetter) {
-        if(this.notTagsAny == null ){
+        if(this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
@@ -389,12 +401,15 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addSysTagsItem(SysTags sysTagsItem) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
 
     public VaultResourceInstancesReq withSysTags(Consumer<List<SysTags>> sysTagsSetter) {
-        if(this.sysTags == null ){
+        if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
@@ -488,12 +503,15 @@ public class VaultResourceInstancesReq  {
 
     
     public VaultResourceInstancesReq addMatchesItem(Match matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public VaultResourceInstancesReq withMatches(Consumer<List<Match>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);

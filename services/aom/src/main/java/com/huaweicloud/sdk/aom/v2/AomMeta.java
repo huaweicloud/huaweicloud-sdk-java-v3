@@ -44,6 +44,48 @@ public class AomMeta {
         
 
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSeriesRequest, ListSeriesResponse> listSeries = genForlistSeries();
+
+    private static HttpRequestDef<ListSeriesRequest, ListSeriesResponse> genForlistSeries() {
+        // basic
+        HttpRequestDef.Builder<ListSeriesRequest, ListSeriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListSeriesRequest.class, ListSeriesResponse.class)
+                .withName("ListSeries")
+                .withUri("/v2/{project_id}/series")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSeriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSeriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SeriesAPIQueryItemParam.class,
+            f -> f.withMarshaller(ListSeriesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
 
         return builder.build();
     }

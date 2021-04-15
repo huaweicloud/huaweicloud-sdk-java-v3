@@ -80,12 +80,15 @@ public class BatchMetricData  {
 
     
     public BatchMetricData addDatapointsItem(DatapointForBatchMetric datapointsItem) {
+        if(this.datapoints == null) {
+            this.datapoints = new ArrayList<>();
+        }
         this.datapoints.add(datapointsItem);
         return this;
     }
 
     public BatchMetricData withDatapoints(Consumer<List<DatapointForBatchMetric>> datapointsSetter) {
-        if(this.datapoints == null ){
+        if(this.datapoints == null) {
             this.datapoints = new ArrayList<>();
         }
         datapointsSetter.accept(this.datapoints);
@@ -157,12 +160,15 @@ public class BatchMetricData  {
 
     
     public BatchMetricData addDimensionsItem(MetricsDimension dimensionsItem) {
+        if(this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
 
     public BatchMetricData withDimensions(Consumer<List<MetricsDimension>> dimensionsSetter) {
-        if(this.dimensions == null ){
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);

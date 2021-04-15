@@ -89,12 +89,15 @@ public class RestoreInstanceFromCollectionRequestBodyRestoreCollections  {
 
     
     public RestoreInstanceFromCollectionRequestBodyRestoreCollections addCollectionsItem(RestoreInstanceFromCollectionRequestBodyCollections collectionsItem) {
+        if(this.collections == null) {
+            this.collections = new ArrayList<>();
+        }
         this.collections.add(collectionsItem);
         return this;
     }
 
     public RestoreInstanceFromCollectionRequestBodyRestoreCollections withCollections(Consumer<List<RestoreInstanceFromCollectionRequestBodyCollections>> collectionsSetter) {
-        if(this.collections == null ){
+        if(this.collections == null) {
             this.collections = new ArrayList<>();
         }
         collectionsSetter.accept(this.collections);

@@ -214,12 +214,15 @@ public class ApiPolicyMockCreate  {
 
     
     public ApiPolicyMockCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
+        if(this.backendParams == null) {
+            this.backendParams = new ArrayList<>();
+        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
 
     public ApiPolicyMockCreate withBackendParams(Consumer<List<BackendParamBase>> backendParamsSetter) {
-        if(this.backendParams == null ){
+        if(this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
@@ -247,12 +250,15 @@ public class ApiPolicyMockCreate  {
 
     
     public ApiPolicyMockCreate addConditionsItem(ApiConditionBase conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
         this.conditions.add(conditionsItem);
         return this;
     }
 
     public ApiPolicyMockCreate withConditions(Consumer<List<ApiConditionBase>> conditionsSetter) {
-        if(this.conditions == null ){
+        if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         conditionsSetter.accept(this.conditions);

@@ -35,12 +35,15 @@ public class ListBlockchainChannelsResponse extends SdkResponse {
 
     
     public ListBlockchainChannelsResponse addChannelsItem(Channel channelsItem) {
+        if(this.channels == null) {
+            this.channels = new ArrayList<>();
+        }
         this.channels.add(channelsItem);
         return this;
     }
 
     public ListBlockchainChannelsResponse withChannels(Consumer<List<Channel>> channelsSetter) {
-        if(this.channels == null ){
+        if(this.channels == null) {
             this.channels = new ArrayList<>();
         }
         channelsSetter.accept(this.channels);

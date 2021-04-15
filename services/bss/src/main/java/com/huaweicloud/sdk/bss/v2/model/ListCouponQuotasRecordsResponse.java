@@ -63,12 +63,15 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
 
     
     public ListCouponQuotasRecordsResponse addRecordsItem(QuotaRecord recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public ListCouponQuotasRecordsResponse withRecords(Consumer<List<QuotaRecord>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

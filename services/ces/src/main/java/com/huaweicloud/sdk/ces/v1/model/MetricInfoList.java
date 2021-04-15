@@ -51,12 +51,15 @@ public class MetricInfoList  {
 
     
     public MetricInfoList addDimensionsItem(MetricsDimension dimensionsItem) {
+        if(this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
 
     public MetricInfoList withDimensions(Consumer<List<MetricsDimension>> dimensionsSetter) {
-        if(this.dimensions == null ){
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);

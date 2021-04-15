@@ -173,12 +173,15 @@ public class PeerInfo  {
 
     
     public PeerInfo addAddressItem(PeerAddress addressItem) {
+        if(this.address == null) {
+            this.address = new ArrayList<>();
+        }
         this.address.add(addressItem);
         return this;
     }
 
     public PeerInfo withAddress(Consumer<List<PeerAddress>> addressSetter) {
-        if(this.address == null ){
+        if(this.address == null) {
             this.address = new ArrayList<>();
         }
         addressSetter.accept(this.address);

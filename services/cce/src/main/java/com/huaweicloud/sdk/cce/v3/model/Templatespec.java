@@ -91,12 +91,15 @@ public class Templatespec  {
 
     
     public Templatespec addLabelsItem(String labelsItem) {
+        if(this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
         this.labels.add(labelsItem);
         return this;
     }
 
     public Templatespec withLabels(Consumer<List<String>> labelsSetter) {
-        if(this.labels == null ){
+        if(this.labels == null) {
             this.labels = new ArrayList<>();
         }
         labelsSetter.accept(this.labels);
@@ -212,12 +215,15 @@ public class Templatespec  {
 
     
     public Templatespec addVersionsItem(Versions versionsItem) {
+        if(this.versions == null) {
+            this.versions = new ArrayList<>();
+        }
         this.versions.add(versionsItem);
         return this;
     }
 
     public Templatespec withVersions(Consumer<List<Versions>> versionsSetter) {
-        if(this.versions == null ){
+        if(this.versions == null) {
             this.versions = new ArrayList<>();
         }
         versionsSetter.accept(this.versions);

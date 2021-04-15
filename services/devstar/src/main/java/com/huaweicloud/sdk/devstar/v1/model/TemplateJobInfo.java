@@ -205,12 +205,15 @@ public class TemplateJobInfo  {
     
 
     public TemplateJobInfo putPropertiesItem(String key, String propertiesItem) {
+        if(this.properties == null) {
+            this.properties = new HashMap<>();
+        }
         this.properties.put(key, propertiesItem);
         return this;
     }
 
     public TemplateJobInfo withProperties(Consumer<Map<String, String>> propertiesSetter) {
-        if(this.properties == null ){
+        if(this.properties == null) {
             this.properties = new HashMap<>();
         }
         propertiesSetter.accept(this.properties);

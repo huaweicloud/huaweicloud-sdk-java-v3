@@ -96,12 +96,15 @@ public class CheckpointPlanCreate  {
 
     
     public CheckpointPlanCreate addResourcesItem(CheckpointResourceResp resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public CheckpointPlanCreate withResources(Consumer<List<CheckpointResourceResp>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
@@ -129,12 +132,15 @@ public class CheckpointPlanCreate  {
 
     
     public CheckpointPlanCreate addSkippedResourcesItem(CheckpointCreateSkippedResource skippedResourcesItem) {
+        if(this.skippedResources == null) {
+            this.skippedResources = new ArrayList<>();
+        }
         this.skippedResources.add(skippedResourcesItem);
         return this;
     }
 
     public CheckpointPlanCreate withSkippedResources(Consumer<List<CheckpointCreateSkippedResource>> skippedResourcesSetter) {
-        if(this.skippedResources == null ){
+        if(this.skippedResources == null) {
             this.skippedResources = new ArrayList<>();
         }
         skippedResourcesSetter.accept(this.skippedResources);

@@ -35,12 +35,15 @@ public class ListBlockchainsResponse extends SdkResponse {
 
     
     public ListBlockchainsResponse addBlockchainsItem(BlockchainInfo blockchainsItem) {
+        if(this.blockchains == null) {
+            this.blockchains = new ArrayList<>();
+        }
         this.blockchains.add(blockchainsItem);
         return this;
     }
 
     public ListBlockchainsResponse withBlockchains(Consumer<List<BlockchainInfo>> blockchainsSetter) {
-        if(this.blockchains == null ){
+        if(this.blockchains == null) {
             this.blockchains = new ArrayList<>();
         }
         blockchainsSetter.accept(this.blockchains);

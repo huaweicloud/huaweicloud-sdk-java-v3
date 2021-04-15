@@ -35,12 +35,15 @@ public class ListStatisticsOfRunningInstancesResponse extends SdkResponse {
 
     
     public ListStatisticsOfRunningInstancesResponse addStatisticsItem(InstanceStatistic statisticsItem) {
+        if(this.statistics == null) {
+            this.statistics = new ArrayList<>();
+        }
         this.statistics.add(statisticsItem);
         return this;
     }
 
     public ListStatisticsOfRunningInstancesResponse withStatistics(Consumer<List<InstanceStatistic>> statisticsSetter) {
-        if(this.statistics == null ){
+        if(this.statistics == null) {
             this.statistics = new ArrayList<>();
         }
         statisticsSetter.accept(this.statistics);

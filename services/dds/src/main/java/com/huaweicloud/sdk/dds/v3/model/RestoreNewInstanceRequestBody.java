@@ -267,12 +267,15 @@ public class RestoreNewInstanceRequestBody  {
 
     
     public RestoreNewInstanceRequestBody addFlavorItem(RestoreNewInstanceFlavorOption flavorItem) {
+        if(this.flavor == null) {
+            this.flavor = new ArrayList<>();
+        }
         this.flavor.add(flavorItem);
         return this;
     }
 
     public RestoreNewInstanceRequestBody withFlavor(Consumer<List<RestoreNewInstanceFlavorOption>> flavorSetter) {
-        if(this.flavor == null ){
+        if(this.flavor == null) {
             this.flavor = new ArrayList<>();
         }
         flavorSetter.accept(this.flavor);
@@ -395,12 +398,15 @@ public class RestoreNewInstanceRequestBody  {
 
     
     public RestoreNewInstanceRequestBody addServerGroupPoliciesItem(String serverGroupPoliciesItem) {
+        if(this.serverGroupPolicies == null) {
+            this.serverGroupPolicies = new ArrayList<>();
+        }
         this.serverGroupPolicies.add(serverGroupPoliciesItem);
         return this;
     }
 
     public RestoreNewInstanceRequestBody withServerGroupPolicies(Consumer<List<String>> serverGroupPoliciesSetter) {
-        if(this.serverGroupPolicies == null ){
+        if(this.serverGroupPolicies == null) {
             this.serverGroupPolicies = new ArrayList<>();
         }
         serverGroupPoliciesSetter.accept(this.serverGroupPolicies);

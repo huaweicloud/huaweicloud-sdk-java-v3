@@ -63,12 +63,15 @@ public class ListJobInstancesResponse extends SdkResponse {
 
     
     public ListJobInstancesResponse addInstancesItem(JobInstance instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ListJobInstancesResponse withInstances(Consumer<List<JobInstance>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

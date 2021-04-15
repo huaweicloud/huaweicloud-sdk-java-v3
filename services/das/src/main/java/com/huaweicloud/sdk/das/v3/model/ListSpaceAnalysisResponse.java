@@ -70,12 +70,15 @@ public class ListSpaceAnalysisResponse extends SdkResponse {
 
     
     public ListSpaceAnalysisResponse addDbObjectsItem(DbObjectSpaceInfo dbObjectsItem) {
+        if(this.dbObjects == null) {
+            this.dbObjects = new ArrayList<>();
+        }
         this.dbObjects.add(dbObjectsItem);
         return this;
     }
 
     public ListSpaceAnalysisResponse withDbObjects(Consumer<List<DbObjectSpaceInfo>> dbObjectsSetter) {
-        if(this.dbObjects == null ){
+        if(this.dbObjects == null) {
             this.dbObjects = new ArrayList<>();
         }
         dbObjectsSetter.accept(this.dbObjects);

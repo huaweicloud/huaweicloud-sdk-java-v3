@@ -114,12 +114,15 @@ public class Source  {
 
     
     public Source addBranchesItem(String branchesItem) {
+        if(this.branches == null) {
+            this.branches = new ArrayList<>();
+        }
         this.branches.add(branchesItem);
         return this;
     }
 
     public Source withBranches(Consumer<List<String>> branchesSetter) {
-        if(this.branches == null ){
+        if(this.branches == null) {
             this.branches = new ArrayList<>();
         }
         branchesSetter.accept(this.branches);
@@ -279,12 +282,15 @@ public class Source  {
 
     
     public Source addBranchListItem(String branchListItem) {
+        if(this.branchList == null) {
+            this.branchList = new ArrayList<>();
+        }
         this.branchList.add(branchListItem);
         return this;
     }
 
     public Source withBranchList(Consumer<List<String>> branchListSetter) {
-        if(this.branchList == null ){
+        if(this.branchList == null) {
             this.branchList = new ArrayList<>();
         }
         branchListSetter.accept(this.branchList);

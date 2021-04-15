@@ -42,12 +42,15 @@ public class ListEventsResponse extends SdkResponse {
 
     
     public ListEventsResponse addEventsItem(EventInfo eventsItem) {
+        if(this.events == null) {
+            this.events = new ArrayList<>();
+        }
         this.events.add(eventsItem);
         return this;
     }
 
     public ListEventsResponse withEvents(Consumer<List<EventInfo>> eventsSetter) {
-        if(this.events == null ){
+        if(this.events == null) {
             this.events = new ArrayList<>();
         }
         eventsSetter.accept(this.events);

@@ -63,12 +63,15 @@ public class ListScriptsResponse extends SdkResponse {
 
     
     public ListScriptsResponse addScriptsItem(ScriptInfo scriptsItem) {
+        if(this.scripts == null) {
+            this.scripts = new ArrayList<>();
+        }
         this.scripts.add(scriptsItem);
         return this;
     }
 
     public ListScriptsResponse withScripts(Consumer<List<ScriptInfo>> scriptsSetter) {
-        if(this.scripts == null ){
+        if(this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);

@@ -142,12 +142,15 @@ public class DataBucket  {
 
     
     public DataBucket addDataEventItem(DataEventEnum dataEventItem) {
+        if(this.dataEvent == null) {
+            this.dataEvent = new ArrayList<>();
+        }
         this.dataEvent.add(dataEventItem);
         return this;
     }
 
     public DataBucket withDataEvent(Consumer<List<DataEventEnum>> dataEventSetter) {
-        if(this.dataEvent == null ){
+        if(this.dataEvent == null) {
             this.dataEvent = new ArrayList<>();
         }
         dataEventSetter.accept(this.dataEvent);

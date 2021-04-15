@@ -95,12 +95,15 @@ public class MetricForAlarm  {
 
     
     public MetricForAlarm addDimensionsItem(MetricsDimension dimensionsItem) {
+        if(this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
 
     public MetricForAlarm withDimensions(Consumer<List<MetricsDimension>> dimensionsSetter) {
-        if(this.dimensions == null ){
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);

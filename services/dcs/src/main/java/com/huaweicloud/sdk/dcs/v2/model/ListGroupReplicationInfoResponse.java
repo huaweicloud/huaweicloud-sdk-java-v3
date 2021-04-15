@@ -41,12 +41,15 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
 
     
     public ListGroupReplicationInfoResponse addGroupListItem(InstanceGroupListInfo groupListItem) {
+        if(this.groupList == null) {
+            this.groupList = new ArrayList<>();
+        }
         this.groupList.add(groupListItem);
         return this;
     }
 
     public ListGroupReplicationInfoResponse withGroupList(Consumer<List<InstanceGroupListInfo>> groupListSetter) {
-        if(this.groupList == null ){
+        if(this.groupList == null) {
             this.groupList = new ArrayList<>();
         }
         groupListSetter.accept(this.groupList);

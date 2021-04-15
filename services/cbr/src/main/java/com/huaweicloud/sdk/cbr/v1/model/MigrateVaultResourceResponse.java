@@ -34,12 +34,15 @@ public class MigrateVaultResourceResponse extends SdkResponse {
 
     
     public MigrateVaultResourceResponse addMigratedResourcesItem(String migratedResourcesItem) {
+        if(this.migratedResources == null) {
+            this.migratedResources = new ArrayList<>();
+        }
         this.migratedResources.add(migratedResourcesItem);
         return this;
     }
 
     public MigrateVaultResourceResponse withMigratedResources(Consumer<List<String>> migratedResourcesSetter) {
-        if(this.migratedResources == null ){
+        if(this.migratedResources == null) {
             this.migratedResources = new ArrayList<>();
         }
         migratedResourcesSetter.accept(this.migratedResources);

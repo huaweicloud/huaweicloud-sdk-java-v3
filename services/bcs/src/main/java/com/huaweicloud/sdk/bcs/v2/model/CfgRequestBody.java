@@ -124,12 +124,15 @@ public class CfgRequestBody  {
     
 
     public CfgRequestBody putPeerOrgsItem(String key, List<String> peerOrgsItem) {
+        if(this.peerOrgs == null) {
+            this.peerOrgs = new HashMap<>();
+        }
         this.peerOrgs.put(key, peerOrgsItem);
         return this;
     }
 
     public CfgRequestBody withPeerOrgs(Consumer<Map<String, List<String>>> peerOrgsSetter) {
-        if(this.peerOrgs == null ){
+        if(this.peerOrgs == null) {
             this.peerOrgs = new HashMap<>();
         }
         peerOrgsSetter.accept(this.peerOrgs);
@@ -157,12 +160,15 @@ public class CfgRequestBody  {
     
 
     public CfgRequestBody putUnionInfoItem(String key, List<String> unionInfoItem) {
+        if(this.unionInfo == null) {
+            this.unionInfo = new HashMap<>();
+        }
         this.unionInfo.put(key, unionInfoItem);
         return this;
     }
 
     public CfgRequestBody withUnionInfo(Consumer<Map<String, List<String>>> unionInfoSetter) {
-        if(this.unionInfo == null ){
+        if(this.unionInfo == null) {
             this.unionInfo = new HashMap<>();
         }
         unionInfoSetter.accept(this.unionInfo);

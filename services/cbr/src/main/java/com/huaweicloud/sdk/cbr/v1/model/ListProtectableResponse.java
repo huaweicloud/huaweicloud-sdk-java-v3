@@ -35,12 +35,15 @@ public class ListProtectableResponse extends SdkResponse {
 
     
     public ListProtectableResponse addInstancesItem(ProtectablesResp instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ListProtectableResponse withInstances(Consumer<List<ProtectablesResp>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

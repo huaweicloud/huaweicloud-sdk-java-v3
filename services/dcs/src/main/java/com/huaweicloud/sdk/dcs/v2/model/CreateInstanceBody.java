@@ -301,12 +301,15 @@ public class CreateInstanceBody  {
 
     
     public CreateInstanceBody addAzCodesItem(String azCodesItem) {
+        if(this.azCodes == null) {
+            this.azCodes = new ArrayList<>();
+        }
         this.azCodes.add(azCodesItem);
         return this;
     }
 
     public CreateInstanceBody withAzCodes(Consumer<List<String>> azCodesSetter) {
-        if(this.azCodes == null ){
+        if(this.azCodes == null) {
             this.azCodes = new ArrayList<>();
         }
         azCodesSetter.accept(this.azCodes);
@@ -700,12 +703,15 @@ public class CreateInstanceBody  {
 
     
     public CreateInstanceBody addTagsItem(ResourceTag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateInstanceBody withTags(Consumer<List<ResourceTag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

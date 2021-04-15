@@ -75,12 +75,15 @@ public class CheckpointReplicateRespBody  {
 
     
     public CheckpointReplicateRespBody addBackupsItem(CheckpointReplicateRespbackups backupsItem) {
+        if(this.backups == null) {
+            this.backups = new ArrayList<>();
+        }
         this.backups.add(backupsItem);
         return this;
     }
 
     public CheckpointReplicateRespBody withBackups(Consumer<List<CheckpointReplicateRespbackups>> backupsSetter) {
-        if(this.backups == null ){
+        if(this.backups == null) {
             this.backups = new ArrayList<>();
         }
         backupsSetter.accept(this.backups);

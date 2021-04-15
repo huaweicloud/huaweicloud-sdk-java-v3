@@ -91,12 +91,15 @@ public class ListApisV2Response extends SdkResponse {
 
     
     public ListApisV2Response addApisItem(ApiInfoPerPage apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ListApisV2Response withApis(Consumer<List<ApiInfoPerPage>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

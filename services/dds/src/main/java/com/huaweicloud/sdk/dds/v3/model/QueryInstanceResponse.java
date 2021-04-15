@@ -583,12 +583,15 @@ public class QueryInstanceResponse  {
 
     
     public QueryInstanceResponse addGroupsItem(GroupResponseItem groupsItem) {
+        if(this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
         this.groups.add(groupsItem);
         return this;
     }
 
     public QueryInstanceResponse withGroups(Consumer<List<GroupResponseItem>> groupsSetter) {
-        if(this.groups == null ){
+        if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);
@@ -704,12 +707,15 @@ public class QueryInstanceResponse  {
 
     
     public QueryInstanceResponse addActionsItem(String actionsItem) {
+        if(this.actions == null) {
+            this.actions = new ArrayList<>();
+        }
         this.actions.add(actionsItem);
         return this;
     }
 
     public QueryInstanceResponse withActions(Consumer<List<String>> actionsSetter) {
-        if(this.actions == null ){
+        if(this.actions == null) {
             this.actions = new ArrayList<>();
         }
         actionsSetter.accept(this.actions);

@@ -1022,12 +1022,15 @@ public class ServerDetails  {
     
 
     public ServerDetails putAddressesItem(String key, List<AddressInfo> addressesItem) {
+        if(this.addresses == null) {
+            this.addresses = new HashMap<>();
+        }
         this.addresses.put(key, addressesItem);
         return this;
     }
 
     public ServerDetails withAddresses(Consumer<Map<String, List<AddressInfo>>> addressesSetter) {
-        if(this.addresses == null ){
+        if(this.addresses == null) {
             this.addresses = new HashMap<>();
         }
         addressesSetter.accept(this.addresses);
@@ -1134,12 +1137,15 @@ public class ServerDetails  {
 
     
     public ServerDetails addSecurityGroupsItem(SecurityGroupsList securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public ServerDetails withSecurityGroups(Consumer<List<SecurityGroupsList>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -1555,12 +1561,15 @@ public class ServerDetails  {
 
     
     public ServerDetails addOsExtendedVolumesVolumesAttachedItem(OsExtendedVolumesInfo osExtendedVolumesVolumesAttachedItem) {
+        if(this.osExtendedVolumesVolumesAttached == null) {
+            this.osExtendedVolumesVolumesAttached = new ArrayList<>();
+        }
         this.osExtendedVolumesVolumesAttached.add(osExtendedVolumesVolumesAttachedItem);
         return this;
     }
 
     public ServerDetails withOsExtendedVolumesVolumesAttached(Consumer<List<OsExtendedVolumesInfo>> osExtendedVolumesVolumesAttachedSetter) {
-        if(this.osExtendedVolumesVolumesAttached == null ){
+        if(this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         osExtendedVolumesVolumesAttachedSetter.accept(this.osExtendedVolumesVolumesAttached);
@@ -1808,12 +1817,15 @@ public class ServerDetails  {
 
     
     public ServerDetails addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ServerDetails withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1892,12 +1904,15 @@ public class ServerDetails  {
 
     
     public ServerDetails addSysTagsItem(SystemTags sysTagsItem) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
 
     public ServerDetails withSysTags(Consumer<List<SystemTags>> sysTagsSetter) {
-        if(this.sysTags == null ){
+        if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);

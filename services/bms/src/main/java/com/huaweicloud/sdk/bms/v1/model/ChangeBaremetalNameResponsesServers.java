@@ -1186,12 +1186,15 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withSecurityGroups(Consumer<List<SecurityGroups>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -1219,12 +1222,15 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addLinksItem(Links linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
@@ -1472,12 +1478,15 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addOsExtendedVolumesVolumesAttachedItem(OsExtendedVolumes osExtendedVolumesVolumesAttachedItem) {
+        if(this.osExtendedVolumesVolumesAttached == null) {
+            this.osExtendedVolumesVolumesAttached = new ArrayList<>();
+        }
         this.osExtendedVolumesVolumesAttached.add(osExtendedVolumesVolumesAttachedItem);
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withOsExtendedVolumesVolumesAttached(Consumer<List<OsExtendedVolumes>> osExtendedVolumesVolumesAttachedSetter) {
-        if(this.osExtendedVolumesVolumesAttached == null ){
+        if(this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         osExtendedVolumesVolumesAttachedSetter.accept(this.osExtendedVolumesVolumesAttached);
@@ -1842,12 +1851,15 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
     public ChangeBaremetalNameResponsesServers addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

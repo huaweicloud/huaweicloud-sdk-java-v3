@@ -91,12 +91,15 @@ public class ListEnvironmentsV2Response extends SdkResponse {
 
     
     public ListEnvironmentsV2Response addEnvsItem(EnvResp envsItem) {
+        if(this.envs == null) {
+            this.envs = new ArrayList<>();
+        }
         this.envs.add(envsItem);
         return this;
     }
 
     public ListEnvironmentsV2Response withEnvs(Consumer<List<EnvResp>> envsSetter) {
-        if(this.envs == null ){
+        if(this.envs == null) {
             this.envs = new ArrayList<>();
         }
         envsSetter.accept(this.envs);

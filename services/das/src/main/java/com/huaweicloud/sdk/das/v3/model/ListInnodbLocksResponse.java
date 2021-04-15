@@ -42,12 +42,15 @@ public class ListInnodbLocksResponse extends SdkResponse {
 
     
     public ListInnodbLocksResponse addInnodbTrxItem(InnodbTrx innodbTrxItem) {
+        if(this.innodbTrx == null) {
+            this.innodbTrx = new ArrayList<>();
+        }
         this.innodbTrx.add(innodbTrxItem);
         return this;
     }
 
     public ListInnodbLocksResponse withInnodbTrx(Consumer<List<InnodbTrx>> innodbTrxSetter) {
-        if(this.innodbTrx == null ){
+        if(this.innodbTrx == null) {
             this.innodbTrx = new ArrayList<>();
         }
         innodbTrxSetter.accept(this.innodbTrx);
@@ -75,12 +78,15 @@ public class ListInnodbLocksResponse extends SdkResponse {
 
     
     public ListInnodbLocksResponse addInnodbLockWaitsItem(InnodbLockWaits innodbLockWaitsItem) {
+        if(this.innodbLockWaits == null) {
+            this.innodbLockWaits = new ArrayList<>();
+        }
         this.innodbLockWaits.add(innodbLockWaitsItem);
         return this;
     }
 
     public ListInnodbLocksResponse withInnodbLockWaits(Consumer<List<InnodbLockWaits>> innodbLockWaitsSetter) {
-        if(this.innodbLockWaits == null ){
+        if(this.innodbLockWaits == null) {
             this.innodbLockWaits = new ArrayList<>();
         }
         innodbLockWaitsSetter.accept(this.innodbLockWaits);

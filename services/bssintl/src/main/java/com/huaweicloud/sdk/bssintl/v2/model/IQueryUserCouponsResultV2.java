@@ -525,12 +525,15 @@ public class IQueryUserCouponsResultV2  {
 
     
     public IQueryUserCouponsResultV2 addUseLimitsItem(ICouponUseLimitInfoV2 useLimitsItem) {
+        if(this.useLimits == null) {
+            this.useLimits = new ArrayList<>();
+        }
         this.useLimits.add(useLimitsItem);
         return this;
     }
 
     public IQueryUserCouponsResultV2 withUseLimits(Consumer<List<ICouponUseLimitInfoV2>> useLimitsSetter) {
-        if(this.useLimits == null ){
+        if(this.useLimits == null) {
             this.useLimits = new ArrayList<>();
         }
         useLimitsSetter.accept(this.useLimits);

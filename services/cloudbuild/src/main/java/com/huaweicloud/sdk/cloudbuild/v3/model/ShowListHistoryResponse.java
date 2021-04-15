@@ -41,12 +41,15 @@ public class ShowListHistoryResponse extends SdkResponse {
 
     
     public ShowListHistoryResponse addHistoryRecordsItem(HistoryRecord historyRecordsItem) {
+        if(this.historyRecords == null) {
+            this.historyRecords = new ArrayList<>();
+        }
         this.historyRecords.add(historyRecordsItem);
         return this;
     }
 
     public ShowListHistoryResponse withHistoryRecords(Consumer<List<HistoryRecord>> historyRecordsSetter) {
-        if(this.historyRecords == null ){
+        if(this.historyRecords == null) {
             this.historyRecords = new ArrayList<>();
         }
         historyRecordsSetter.accept(this.historyRecords);

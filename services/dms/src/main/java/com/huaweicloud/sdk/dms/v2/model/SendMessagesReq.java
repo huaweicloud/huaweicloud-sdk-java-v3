@@ -61,12 +61,15 @@ public class SendMessagesReq  {
 
     
     public SendMessagesReq addMessagesItem(SendMessageEntity messagesItem) {
+        if(this.messages == null) {
+            this.messages = new ArrayList<>();
+        }
         this.messages.add(messagesItem);
         return this;
     }
 
     public SendMessagesReq withMessages(Consumer<List<SendMessageEntity>> messagesSetter) {
-        if(this.messages == null ){
+        if(this.messages == null) {
             this.messages = new ArrayList<>();
         }
         messagesSetter.accept(this.messages);

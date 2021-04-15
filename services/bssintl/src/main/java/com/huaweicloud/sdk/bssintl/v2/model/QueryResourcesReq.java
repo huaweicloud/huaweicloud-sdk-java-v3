@@ -62,12 +62,15 @@ public class QueryResourcesReq  {
 
     
     public QueryResourcesReq addResourceIdsItem(String resourceIdsItem) {
+        if(this.resourceIds == null) {
+            this.resourceIds = new ArrayList<>();
+        }
         this.resourceIds.add(resourceIdsItem);
         return this;
     }
 
     public QueryResourcesReq withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null ){
+        if(this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);
@@ -141,12 +144,15 @@ public class QueryResourcesReq  {
 
     
     public QueryResourcesReq addStatusListItem(Integer statusListItem) {
+        if(this.statusList == null) {
+            this.statusList = new ArrayList<>();
+        }
         this.statusList.add(statusListItem);
         return this;
     }
 
     public QueryResourcesReq withStatusList(Consumer<List<Integer>> statusListSetter) {
-        if(this.statusList == null ){
+        if(this.statusList == null) {
             this.statusList = new ArrayList<>();
         }
         statusListSetter.accept(this.statusList);

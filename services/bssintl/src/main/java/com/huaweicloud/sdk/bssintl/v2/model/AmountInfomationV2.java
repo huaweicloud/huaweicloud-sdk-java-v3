@@ -63,12 +63,15 @@ public class AmountInfomationV2  {
 
     
     public AmountInfomationV2 addDiscountsItem(DiscountItemV2 discountsItem) {
+        if(this.discounts == null) {
+            this.discounts = new ArrayList<>();
+        }
         this.discounts.add(discountsItem);
         return this;
     }
 
     public AmountInfomationV2 withDiscounts(Consumer<List<DiscountItemV2>> discountsSetter) {
-        if(this.discounts == null ){
+        if(this.discounts == null) {
             this.discounts = new ArrayList<>();
         }
         discountsSetter.accept(this.discounts);

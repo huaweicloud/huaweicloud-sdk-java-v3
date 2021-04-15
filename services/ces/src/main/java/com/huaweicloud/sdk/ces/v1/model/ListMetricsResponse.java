@@ -42,12 +42,15 @@ public class ListMetricsResponse extends SdkResponse {
 
     
     public ListMetricsResponse addMetricsItem(MetricInfoList metricsItem) {
+        if(this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
         this.metrics.add(metricsItem);
         return this;
     }
 
     public ListMetricsResponse withMetrics(Consumer<List<MetricInfoList>> metricsSetter) {
-        if(this.metrics == null ){
+        if(this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);

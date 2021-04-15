@@ -72,12 +72,15 @@ public class DeleteProcessReqBody  {
 
     
     public DeleteProcessReqBody addProcessIdsItem(String processIdsItem) {
+        if(this.processIds == null) {
+            this.processIds = new ArrayList<>();
+        }
         this.processIds.add(processIdsItem);
         return this;
     }
 
     public DeleteProcessReqBody withProcessIds(Consumer<List<String>> processIdsSetter) {
-        if(this.processIds == null ){
+        if(this.processIds == null) {
             this.processIds = new ArrayList<>();
         }
         processIdsSetter.accept(this.processIds);

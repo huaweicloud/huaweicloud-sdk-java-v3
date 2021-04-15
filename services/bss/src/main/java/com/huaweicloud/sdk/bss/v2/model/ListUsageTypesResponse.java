@@ -63,12 +63,15 @@ public class ListUsageTypesResponse extends SdkResponse {
 
     
     public ListUsageTypesResponse addUsageTypesItem(UsageType usageTypesItem) {
+        if(this.usageTypes == null) {
+            this.usageTypes = new ArrayList<>();
+        }
         this.usageTypes.add(usageTypesItem);
         return this;
     }
 
     public ListUsageTypesResponse withUsageTypes(Consumer<List<UsageType>> usageTypesSetter) {
-        if(this.usageTypes == null ){
+        if(this.usageTypes == null) {
             this.usageTypes = new ArrayList<>();
         }
         usageTypesSetter.accept(this.usageTypes);

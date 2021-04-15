@@ -116,12 +116,15 @@ public class V3DataVolume  {
     
 
     public V3DataVolume putExtendParamItem(String key, Object extendParamItem) {
+        if(this.extendParam == null) {
+            this.extendParam = new HashMap<>();
+        }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
 
     public V3DataVolume withExtendParam(Consumer<Map<String, Object>> extendParamSetter) {
-        if(this.extendParam == null ){
+        if(this.extendParam == null) {
             this.extendParam = new HashMap<>();
         }
         extendParamSetter.accept(this.extendParam);

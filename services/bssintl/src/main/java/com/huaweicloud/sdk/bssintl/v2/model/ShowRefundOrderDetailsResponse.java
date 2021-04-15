@@ -63,12 +63,15 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
 
     
     public ShowRefundOrderDetailsResponse addRefundInfosItem(OrderRefundInfoV2 refundInfosItem) {
+        if(this.refundInfos == null) {
+            this.refundInfos = new ArrayList<>();
+        }
         this.refundInfos.add(refundInfosItem);
         return this;
     }
 
     public ShowRefundOrderDetailsResponse withRefundInfos(Consumer<List<OrderRefundInfoV2>> refundInfosSetter) {
-        if(this.refundInfos == null ){
+        if(this.refundInfos == null) {
             this.refundInfos = new ArrayList<>();
         }
         refundInfosSetter.accept(this.refundInfos);

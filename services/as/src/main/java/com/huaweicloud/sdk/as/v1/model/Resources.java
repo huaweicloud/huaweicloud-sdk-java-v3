@@ -95,12 +95,15 @@ public class Resources  {
 
     
     public Resources addTagsItem(ResourceTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public Resources withTags(Consumer<List<ResourceTags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

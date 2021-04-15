@@ -151,12 +151,15 @@ public class PersistentVolumeClaimSpec  {
 
     
     public PersistentVolumeClaimSpec addAccessModesItem(AccessModesEnum accessModesItem) {
+        if(this.accessModes == null) {
+            this.accessModes = new ArrayList<>();
+        }
         this.accessModes.add(accessModesItem);
         return this;
     }
 
     public PersistentVolumeClaimSpec withAccessModes(Consumer<List<AccessModesEnum>> accessModesSetter) {
-        if(this.accessModes == null ){
+        if(this.accessModes == null) {
             this.accessModes = new ArrayList<>();
         }
         accessModesSetter.accept(this.accessModes);

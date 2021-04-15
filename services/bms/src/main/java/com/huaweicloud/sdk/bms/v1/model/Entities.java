@@ -61,12 +61,15 @@ public class Entities  {
 
     
     public Entities addSubJobsItem(SubJobs subJobsItem) {
+        if(this.subJobs == null) {
+            this.subJobs = new ArrayList<>();
+        }
         this.subJobs.add(subJobsItem);
         return this;
     }
 
     public Entities withSubJobs(Consumer<List<SubJobs>> subJobsSetter) {
-        if(this.subJobs == null ){
+        if(this.subJobs == null) {
             this.subJobs = new ArrayList<>();
         }
         subJobsSetter.accept(this.subJobs);

@@ -41,12 +41,15 @@ public class ShowPriceResponse extends SdkResponse {
 
     
     public ShowPriceResponse addPricesItem(ResourcePrice pricesItem) {
+        if(this.prices == null) {
+            this.prices = new ArrayList<>();
+        }
         this.prices.add(pricesItem);
         return this;
     }
 
     public ShowPriceResponse withPrices(Consumer<List<ResourcePrice>> pricesSetter) {
-        if(this.prices == null ){
+        if(this.prices == null) {
             this.prices = new ArrayList<>();
         }
         pricesSetter.accept(this.prices);

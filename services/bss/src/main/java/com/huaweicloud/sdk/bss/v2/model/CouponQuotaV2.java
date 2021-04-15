@@ -341,12 +341,15 @@ public class CouponQuotaV2  {
 
     
     public CouponQuotaV2 addLimitInfosItem(QuotaLimitInfo limitInfosItem) {
+        if(this.limitInfos == null) {
+            this.limitInfos = new ArrayList<>();
+        }
         this.limitInfos.add(limitInfosItem);
         return this;
     }
 
     public CouponQuotaV2 withLimitInfos(Consumer<List<QuotaLimitInfo>> limitInfosSetter) {
-        if(this.limitInfos == null ){
+        if(this.limitInfos == null) {
             this.limitInfos = new ArrayList<>();
         }
         limitInfosSetter.accept(this.limitInfos);

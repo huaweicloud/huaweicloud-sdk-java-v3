@@ -56,12 +56,15 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addTrafficLimitedListItem(TriggerBpsDict trafficLimitedListItem) {
+        if(this.trafficLimitedList == null) {
+            this.trafficLimitedList = new ArrayList<>();
+        }
         this.trafficLimitedList.add(trafficLimitedListItem);
         return this;
     }
 
     public ListNewConfigsResponse withTrafficLimitedList(Consumer<List<TriggerBpsDict>> trafficLimitedListSetter) {
-        if(this.trafficLimitedList == null ){
+        if(this.trafficLimitedList == null) {
             this.trafficLimitedList = new ArrayList<>();
         }
         trafficLimitedListSetter.accept(this.trafficLimitedList);
@@ -89,12 +92,15 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addHttpLimitedListItem(TriggerQpsDict httpLimitedListItem) {
+        if(this.httpLimitedList == null) {
+            this.httpLimitedList = new ArrayList<>();
+        }
         this.httpLimitedList.add(httpLimitedListItem);
         return this;
     }
 
     public ListNewConfigsResponse withHttpLimitedList(Consumer<List<TriggerQpsDict>> httpLimitedListSetter) {
-        if(this.httpLimitedList == null ){
+        if(this.httpLimitedList == null) {
             this.httpLimitedList = new ArrayList<>();
         }
         httpLimitedListSetter.accept(this.httpLimitedList);
@@ -122,12 +128,15 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addConnectionLimitedListItem(CleanLimitDict connectionLimitedListItem) {
+        if(this.connectionLimitedList == null) {
+            this.connectionLimitedList = new ArrayList<>();
+        }
         this.connectionLimitedList.add(connectionLimitedListItem);
         return this;
     }
 
     public ListNewConfigsResponse withConnectionLimitedList(Consumer<List<CleanLimitDict>> connectionLimitedListSetter) {
-        if(this.connectionLimitedList == null ){
+        if(this.connectionLimitedList == null) {
             this.connectionLimitedList = new ArrayList<>();
         }
         connectionLimitedListSetter.accept(this.connectionLimitedList);
@@ -155,12 +164,15 @@ public class ListNewConfigsResponse extends SdkResponse {
 
     
     public ListNewConfigsResponse addExtendDdosConfigItem(ExtendDDoSSet extendDdosConfigItem) {
+        if(this.extendDdosConfig == null) {
+            this.extendDdosConfig = new ArrayList<>();
+        }
         this.extendDdosConfig.add(extendDdosConfigItem);
         return this;
     }
 
     public ListNewConfigsResponse withExtendDdosConfig(Consumer<List<ExtendDDoSSet>> extendDdosConfigSetter) {
-        if(this.extendDdosConfig == null ){
+        if(this.extendDdosConfig == null) {
             this.extendDdosConfig = new ArrayList<>();
         }
         extendDdosConfigSetter.accept(this.extendDdosConfig);

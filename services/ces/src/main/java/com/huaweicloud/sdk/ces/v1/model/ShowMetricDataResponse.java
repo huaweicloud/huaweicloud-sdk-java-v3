@@ -41,12 +41,15 @@ public class ShowMetricDataResponse extends SdkResponse {
 
     
     public ShowMetricDataResponse addDatapointsItem(Datapoint datapointsItem) {
+        if(this.datapoints == null) {
+            this.datapoints = new ArrayList<>();
+        }
         this.datapoints.add(datapointsItem);
         return this;
     }
 
     public ShowMetricDataResponse withDatapoints(Consumer<List<Datapoint>> datapointsSetter) {
-        if(this.datapoints == null ){
+        if(this.datapoints == null) {
             this.datapoints = new ArrayList<>();
         }
         datapointsSetter.accept(this.datapoints);

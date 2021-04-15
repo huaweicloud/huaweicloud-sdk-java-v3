@@ -63,12 +63,15 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
 
     
     public ListPartnerCouponsRecordResponse addRecordsItem(CouponRecordV2 recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public ListPartnerCouponsRecordResponse withRecords(Consumer<List<CouponRecordV2>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

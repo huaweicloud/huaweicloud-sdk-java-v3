@@ -76,12 +76,15 @@ public class InstanceSpec  {
 
     
     public InstanceSpec addAddonTemplateLabelsItem(String addonTemplateLabelsItem) {
+        if(this.addonTemplateLabels == null) {
+            this.addonTemplateLabels = new ArrayList<>();
+        }
         this.addonTemplateLabels.add(addonTemplateLabelsItem);
         return this;
     }
 
     public InstanceSpec withAddonTemplateLabels(Consumer<List<String>> addonTemplateLabelsSetter) {
-        if(this.addonTemplateLabels == null ){
+        if(this.addonTemplateLabels == null) {
             this.addonTemplateLabels = new ArrayList<>();
         }
         addonTemplateLabelsSetter.accept(this.addonTemplateLabels);
@@ -220,12 +223,15 @@ public class InstanceSpec  {
     
 
     public InstanceSpec putValuesItem(String key, Object valuesItem) {
+        if(this.values == null) {
+            this.values = new HashMap<>();
+        }
         this.values.put(key, valuesItem);
         return this;
     }
 
     public InstanceSpec withValues(Consumer<Map<String, Object>> valuesSetter) {
-        if(this.values == null ){
+        if(this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);

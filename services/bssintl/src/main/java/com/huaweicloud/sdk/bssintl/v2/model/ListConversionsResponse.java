@@ -35,12 +35,15 @@ public class ListConversionsResponse extends SdkResponse {
 
     
     public ListConversionsResponse addConversionsItem(Conversion conversionsItem) {
+        if(this.conversions == null) {
+            this.conversions = new ArrayList<>();
+        }
         this.conversions.add(conversionsItem);
         return this;
     }
 
     public ListConversionsResponse withConversions(Consumer<List<Conversion>> conversionsSetter) {
-        if(this.conversions == null ){
+        if(this.conversions == null) {
             this.conversions = new ArrayList<>();
         }
         conversionsSetter.accept(this.conversions);

@@ -35,12 +35,15 @@ public class ListDailyReportResponse extends SdkResponse {
 
     
     public ListDailyReportResponse addDataItem(DailyData dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public ListDailyReportResponse withData(Consumer<List<DailyData>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

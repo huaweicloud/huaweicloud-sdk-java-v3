@@ -33,12 +33,15 @@ public class ShowQuotasRespQuotas  {
 
     
     public ShowQuotasRespQuotas addResourcesItem(ShowQuotasRespQuotasResources resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ShowQuotasRespQuotas withResources(Consumer<List<ShowQuotasRespQuotasResources>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

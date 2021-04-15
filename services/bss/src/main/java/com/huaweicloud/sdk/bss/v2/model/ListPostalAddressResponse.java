@@ -63,12 +63,15 @@ public class ListPostalAddressResponse extends SdkResponse {
 
     
     public ListPostalAddressResponse addPostalAddressItem(CustomerPostalAddressV2 postalAddressItem) {
+        if(this.postalAddress == null) {
+            this.postalAddress = new ArrayList<>();
+        }
         this.postalAddress.add(postalAddressItem);
         return this;
     }
 
     public ListPostalAddressResponse withPostalAddress(Consumer<List<CustomerPostalAddressV2>> postalAddressSetter) {
-        if(this.postalAddress == null ){
+        if(this.postalAddress == null) {
             this.postalAddress = new ArrayList<>();
         }
         postalAddressSetter.accept(this.postalAddress);

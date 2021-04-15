@@ -35,12 +35,15 @@ public class ListCustomersBalancesDetailResponse extends SdkResponse {
 
     
     public ListCustomersBalancesDetailResponse addCustomerBalancesItem(CustomerBalancesV2 customerBalancesItem) {
+        if(this.customerBalances == null) {
+            this.customerBalances = new ArrayList<>();
+        }
         this.customerBalances.add(customerBalancesItem);
         return this;
     }
 
     public ListCustomersBalancesDetailResponse withCustomerBalances(Consumer<List<CustomerBalancesV2>> customerBalancesSetter) {
-        if(this.customerBalances == null ){
+        if(this.customerBalances == null) {
             this.customerBalances = new ArrayList<>();
         }
         customerBalancesSetter.accept(this.customerBalances);

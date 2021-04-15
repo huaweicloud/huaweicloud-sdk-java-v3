@@ -61,12 +61,15 @@ public class SetPartnerDiscountsReq  {
 
     
     public SetPartnerDiscountsReq addSubCustomerDiscountsItem(SetSubCustomerDiscountV2 subCustomerDiscountsItem) {
+        if(this.subCustomerDiscounts == null) {
+            this.subCustomerDiscounts = new ArrayList<>();
+        }
         this.subCustomerDiscounts.add(subCustomerDiscountsItem);
         return this;
     }
 
     public SetPartnerDiscountsReq withSubCustomerDiscounts(Consumer<List<SetSubCustomerDiscountV2>> subCustomerDiscountsSetter) {
-        if(this.subCustomerDiscounts == null ){
+        if(this.subCustomerDiscounts == null) {
             this.subCustomerDiscounts = new ArrayList<>();
         }
         subCustomerDiscountsSetter.accept(this.subCustomerDiscounts);

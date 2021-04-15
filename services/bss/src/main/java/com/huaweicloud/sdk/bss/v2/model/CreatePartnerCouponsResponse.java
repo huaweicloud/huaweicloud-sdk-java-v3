@@ -42,12 +42,15 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
 
     
     public CreatePartnerCouponsResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
+        if(this.errorDetails == null) {
+            this.errorDetails = new ArrayList<>();
+        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
 
     public CreatePartnerCouponsResponse withErrorDetails(Consumer<List<ErrorDetail>> errorDetailsSetter) {
-        if(this.errorDetails == null ){
+        if(this.errorDetails == null) {
             this.errorDetails = new ArrayList<>();
         }
         errorDetailsSetter.accept(this.errorDetails);
@@ -75,12 +78,15 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
 
     
     public CreatePartnerCouponsResponse addCouponInfosItem(CouponSimpleInfo couponInfosItem) {
+        if(this.couponInfos == null) {
+            this.couponInfos = new ArrayList<>();
+        }
         this.couponInfos.add(couponInfosItem);
         return this;
     }
 
     public CreatePartnerCouponsResponse withCouponInfos(Consumer<List<CouponSimpleInfo>> couponInfosSetter) {
-        if(this.couponInfos == null ){
+        if(this.couponInfos == null) {
             this.couponInfos = new ArrayList<>();
         }
         couponInfosSetter.accept(this.couponInfos);

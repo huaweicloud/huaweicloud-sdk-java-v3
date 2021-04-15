@@ -38,12 +38,15 @@ public class ChangeInstanceStatusBody  {
 
     
     public ChangeInstanceStatusBody addInstancesItem(String instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ChangeInstanceStatusBody withInstances(Consumer<List<String>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

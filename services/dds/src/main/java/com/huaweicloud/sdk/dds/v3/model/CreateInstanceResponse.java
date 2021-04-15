@@ -410,12 +410,15 @@ public class CreateInstanceResponse extends SdkResponse {
 
     
     public CreateInstanceResponse addFlavorItem(CreateInstanceFlavorOption flavorItem) {
+        if(this.flavor == null) {
+            this.flavor = new ArrayList<>();
+        }
         this.flavor.add(flavorItem);
         return this;
     }
 
     public CreateInstanceResponse withFlavor(Consumer<List<CreateInstanceFlavorOption>> flavorSetter) {
-        if(this.flavor == null ){
+        if(this.flavor == null) {
             this.flavor = new ArrayList<>();
         }
         flavorSetter.accept(this.flavor);

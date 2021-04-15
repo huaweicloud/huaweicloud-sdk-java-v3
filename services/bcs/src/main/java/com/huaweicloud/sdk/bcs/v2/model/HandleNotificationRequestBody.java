@@ -243,12 +243,15 @@ public class HandleNotificationRequestBody  {
 
     
     public HandleNotificationRequestBody addInvitedOrgsItem(HandleNotificationOrg invitedOrgsItem) {
+        if(this.invitedOrgs == null) {
+            this.invitedOrgs = new ArrayList<>();
+        }
         this.invitedOrgs.add(invitedOrgsItem);
         return this;
     }
 
     public HandleNotificationRequestBody withInvitedOrgs(Consumer<List<HandleNotificationOrg>> invitedOrgsSetter) {
-        if(this.invitedOrgs == null ){
+        if(this.invitedOrgs == null) {
             this.invitedOrgs = new ArrayList<>();
         }
         invitedOrgsSetter.accept(this.invitedOrgs);

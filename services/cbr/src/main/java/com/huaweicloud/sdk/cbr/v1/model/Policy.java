@@ -299,12 +299,15 @@ public class Policy  {
 
     
     public Policy addAssociatedVaultsItem(PolicyAssociateVault associatedVaultsItem) {
+        if(this.associatedVaults == null) {
+            this.associatedVaults = new ArrayList<>();
+        }
         this.associatedVaults.add(associatedVaultsItem);
         return this;
     }
 
     public Policy withAssociatedVaults(Consumer<List<PolicyAssociateVault>> associatedVaultsSetter) {
-        if(this.associatedVaults == null ){
+        if(this.associatedVaults == null) {
             this.associatedVaults = new ArrayList<>();
         }
         associatedVaultsSetter.accept(this.associatedVaults);

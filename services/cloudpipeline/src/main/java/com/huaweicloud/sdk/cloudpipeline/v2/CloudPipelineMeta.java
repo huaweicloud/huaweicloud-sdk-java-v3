@@ -42,7 +42,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
         builder.withResponseField(
             "body",
             LocationType.Body,
@@ -87,7 +86,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -155,7 +153,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -241,7 +238,6 @@ public class CloudPipelineMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -267,7 +263,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -305,7 +300,6 @@ public class CloudPipelineMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -341,7 +335,6 @@ public class CloudPipelineMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -375,7 +368,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -419,7 +411,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -473,7 +464,6 @@ public class CloudPipelineMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -515,7 +505,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -561,7 +550,6 @@ public class CloudPipelineMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -603,7 +591,6 @@ public class CloudPipelineMeta {
 
         // response
         
-
 
 
         return builder.build();

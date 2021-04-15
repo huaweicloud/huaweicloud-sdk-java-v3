@@ -91,12 +91,15 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
 
     
     public ListApisBindedToSignatureKeyV2Response addBindingsItem(SignBindingApiResp bindingsItem) {
+        if(this.bindings == null) {
+            this.bindings = new ArrayList<>();
+        }
         this.bindings.add(bindingsItem);
         return this;
     }
 
     public ListApisBindedToSignatureKeyV2Response withBindings(Consumer<List<SignBindingApiResp>> bindingsSetter) {
-        if(this.bindings == null ){
+        if(this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
         bindingsSetter.accept(this.bindings);

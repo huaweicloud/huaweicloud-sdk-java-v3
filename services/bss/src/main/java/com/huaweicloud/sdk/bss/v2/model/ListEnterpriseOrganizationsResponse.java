@@ -91,12 +91,15 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
 
     
     public ListEnterpriseOrganizationsResponse addChildNodesItem(EmChildNodeV2 childNodesItem) {
+        if(this.childNodes == null) {
+            this.childNodes = new ArrayList<>();
+        }
         this.childNodes.add(childNodesItem);
         return this;
     }
 
     public ListEnterpriseOrganizationsResponse withChildNodes(Consumer<List<EmChildNodeV2>> childNodesSetter) {
-        if(this.childNodes == null ){
+        if(this.childNodes == null) {
             this.childNodes = new ArrayList<>();
         }
         childNodesSetter.accept(this.childNodes);

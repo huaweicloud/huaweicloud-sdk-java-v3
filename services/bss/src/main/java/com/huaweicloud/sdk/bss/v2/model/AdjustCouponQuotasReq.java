@@ -66,12 +66,15 @@ public class AdjustCouponQuotasReq  {
 
     
     public AdjustCouponQuotasReq addIndirectPartnerIdsItem(String indirectPartnerIdsItem) {
+        if(this.indirectPartnerIds == null) {
+            this.indirectPartnerIds = new ArrayList<>();
+        }
         this.indirectPartnerIds.add(indirectPartnerIdsItem);
         return this;
     }
 
     public AdjustCouponQuotasReq withIndirectPartnerIds(Consumer<List<String>> indirectPartnerIdsSetter) {
-        if(this.indirectPartnerIds == null ){
+        if(this.indirectPartnerIds == null) {
             this.indirectPartnerIds = new ArrayList<>();
         }
         indirectPartnerIdsSetter.accept(this.indirectPartnerIds);

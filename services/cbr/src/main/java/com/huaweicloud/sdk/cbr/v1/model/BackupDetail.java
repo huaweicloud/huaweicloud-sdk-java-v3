@@ -866,12 +866,15 @@ public class BackupDetail  {
 
     
     public BackupDetail addReplicationRecordsItem(ReplicationRecordGet replicationRecordsItem) {
+        if(this.replicationRecords == null) {
+            this.replicationRecords = new ArrayList<>();
+        }
         this.replicationRecords.add(replicationRecordsItem);
         return this;
     }
 
     public BackupDetail withReplicationRecords(Consumer<List<ReplicationRecordGet>> replicationRecordsSetter) {
-        if(this.replicationRecords == null ){
+        if(this.replicationRecords == null) {
             this.replicationRecords = new ArrayList<>();
         }
         replicationRecordsSetter.accept(this.replicationRecords);
@@ -921,12 +924,15 @@ public class BackupDetail  {
 
     
     public BackupDetail addChildrenItem(BackupResp childrenItem) {
+        if(this.children == null) {
+            this.children = new ArrayList<>();
+        }
         this.children.add(childrenItem);
         return this;
     }
 
     public BackupDetail withChildren(Consumer<List<BackupResp>> childrenSetter) {
-        if(this.children == null ){
+        if(this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);

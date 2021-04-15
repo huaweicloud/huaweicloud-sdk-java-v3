@@ -63,12 +63,15 @@ public class ListDDosStatusResponse extends SdkResponse {
 
     
     public ListDDosStatusResponse addDdosStatusItem(DDosStatus ddosStatusItem) {
+        if(this.ddosStatus == null) {
+            this.ddosStatus = new ArrayList<>();
+        }
         this.ddosStatus.add(ddosStatusItem);
         return this;
     }
 
     public ListDDosStatusResponse withDdosStatus(Consumer<List<DDosStatus>> ddosStatusSetter) {
-        if(this.ddosStatus == null ){
+        if(this.ddosStatus == null) {
             this.ddosStatus = new ArrayList<>();
         }
         ddosStatusSetter.accept(this.ddosStatus);

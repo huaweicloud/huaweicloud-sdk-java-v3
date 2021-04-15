@@ -318,12 +318,15 @@ public class PipelineStateStatus  {
 
     
     public PipelineStateStatus addChildrenItem(PipelineStateStatus childrenItem) {
+        if(this.children == null) {
+            this.children = new ArrayList<>();
+        }
         this.children.add(childrenItem);
         return this;
     }
 
     public PipelineStateStatus withChildren(Consumer<List<PipelineStateStatus>> childrenSetter) {
-        if(this.children == null ){
+        if(this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);

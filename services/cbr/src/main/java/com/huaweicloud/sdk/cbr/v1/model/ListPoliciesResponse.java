@@ -41,12 +41,15 @@ public class ListPoliciesResponse extends SdkResponse {
 
     
     public ListPoliciesResponse addPoliciesItem(Policy policiesItem) {
+        if(this.policies == null) {
+            this.policies = new ArrayList<>();
+        }
         this.policies.add(policiesItem);
         return this;
     }
 
     public ListPoliciesResponse withPolicies(Consumer<List<Policy>> policiesSetter) {
-        if(this.policies == null ){
+        if(this.policies == null) {
             this.policies = new ArrayList<>();
         }
         policiesSetter.accept(this.policies);

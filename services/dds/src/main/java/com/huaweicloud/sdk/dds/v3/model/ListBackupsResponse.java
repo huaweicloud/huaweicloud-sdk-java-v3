@@ -41,12 +41,15 @@ public class ListBackupsResponse extends SdkResponse {
 
     
     public ListBackupsResponse addBackupsItem(BackupForList backupsItem) {
+        if(this.backups == null) {
+            this.backups = new ArrayList<>();
+        }
         this.backups.add(backupsItem);
         return this;
     }
 
     public ListBackupsResponse withBackups(Consumer<List<BackupForList>> backupsSetter) {
-        if(this.backups == null ){
+        if(this.backups == null) {
             this.backups = new ArrayList<>();
         }
         backupsSetter.accept(this.backups);

@@ -35,12 +35,15 @@ public class ShowQueueTagsResponse extends SdkResponse {
 
     
     public ShowQueueTagsResponse addTagsItem(BatchCreateOrDeleteTagReqTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ShowQueueTagsResponse withTags(Consumer<List<BatchCreateOrDeleteTagReqTags>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

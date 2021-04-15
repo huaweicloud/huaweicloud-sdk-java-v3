@@ -119,12 +119,15 @@ public class ListScalingActivityLogsResponse extends SdkResponse {
 
     
     public ListScalingActivityLogsResponse addScalingActivityLogItem(ScalingActivityLogList scalingActivityLogItem) {
+        if(this.scalingActivityLog == null) {
+            this.scalingActivityLog = new ArrayList<>();
+        }
         this.scalingActivityLog.add(scalingActivityLogItem);
         return this;
     }
 
     public ListScalingActivityLogsResponse withScalingActivityLog(Consumer<List<ScalingActivityLogList>> scalingActivityLogSetter) {
-        if(this.scalingActivityLog == null ){
+        if(this.scalingActivityLog == null) {
             this.scalingActivityLog = new ArrayList<>();
         }
         scalingActivityLogSetter.accept(this.scalingActivityLog);

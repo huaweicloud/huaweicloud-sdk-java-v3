@@ -69,12 +69,15 @@ public class ListSignatureKeysV2Response extends SdkResponse {
 
     
     public ListSignatureKeysV2Response addSignsItem(SignatureCreateResp signsItem) {
+        if(this.signs == null) {
+            this.signs = new ArrayList<>();
+        }
         this.signs.add(signsItem);
         return this;
     }
 
     public ListSignatureKeysV2Response withSigns(Consumer<List<SignatureCreateResp>> signsSetter) {
-        if(this.signs == null ){
+        if(this.signs == null) {
             this.signs = new ArrayList<>();
         }
         signsSetter.accept(this.signs);

@@ -35,12 +35,15 @@ public class ListResourceTypesResponse extends SdkResponse {
 
     
     public ListResourceTypesResponse addResourceTypesItem(ResourceType resourceTypesItem) {
+        if(this.resourceTypes == null) {
+            this.resourceTypes = new ArrayList<>();
+        }
         this.resourceTypes.add(resourceTypesItem);
         return this;
     }
 
     public ListResourceTypesResponse withResourceTypes(Consumer<List<ResourceType>> resourceTypesSetter) {
-        if(this.resourceTypes == null ){
+        if(this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
         resourceTypesSetter.accept(this.resourceTypes);

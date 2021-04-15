@@ -41,12 +41,15 @@ public class ListPayPerUseCustomerResourcesResponse extends SdkResponse {
 
     
     public ListPayPerUseCustomerResourcesResponse addDataItem(OrderInstanceV2 dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
         this.data.add(dataItem);
         return this;
     }
 
     public ListPayPerUseCustomerResourcesResponse withData(Consumer<List<OrderInstanceV2>> dataSetter) {
-        if(this.data == null ){
+        if(this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);

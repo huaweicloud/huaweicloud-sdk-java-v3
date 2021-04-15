@@ -68,12 +68,15 @@ public class RunJobRequestBody  {
 
     
     public RunJobRequestBody addParameterItem(ParameterItem parameterItem) {
+        if(this.parameter == null) {
+            this.parameter = new ArrayList<>();
+        }
         this.parameter.add(parameterItem);
         return this;
     }
 
     public RunJobRequestBody withParameter(Consumer<List<ParameterItem>> parameterSetter) {
-        if(this.parameter == null ){
+        if(this.parameter == null) {
             this.parameter = new ArrayList<>();
         }
         parameterSetter.accept(this.parameter);

@@ -69,12 +69,15 @@ public class MetricItemResultAPI  {
 
     
     public MetricItemResultAPI addDataPointsItem(MetricDataPoints dataPointsItem) {
+        if(this.dataPoints == null) {
+            this.dataPoints = new ArrayList<>();
+        }
         this.dataPoints.add(dataPointsItem);
         return this;
     }
 
     public MetricItemResultAPI withDataPoints(Consumer<List<MetricDataPoints>> dataPointsSetter) {
-        if(this.dataPoints == null ){
+        if(this.dataPoints == null) {
             this.dataPoints = new ArrayList<>();
         }
         dataPointsSetter.accept(this.dataPoints);

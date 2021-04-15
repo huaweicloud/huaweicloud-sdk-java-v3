@@ -32,12 +32,15 @@ public class ListBcsMetricRequestBody  {
 
     
     public ListBcsMetricRequestBody addMetricNamesItem(String metricNamesItem) {
+        if(this.metricNames == null) {
+            this.metricNames = new ArrayList<>();
+        }
         this.metricNames.add(metricNamesItem);
         return this;
     }
 
     public ListBcsMetricRequestBody withMetricNames(Consumer<List<String>> metricNamesSetter) {
-        if(this.metricNames == null ){
+        if(this.metricNames == null) {
             this.metricNames = new ArrayList<>();
         }
         metricNamesSetter.accept(this.metricNames);

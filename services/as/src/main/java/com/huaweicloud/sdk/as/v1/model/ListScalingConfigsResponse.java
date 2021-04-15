@@ -119,12 +119,15 @@ public class ListScalingConfigsResponse extends SdkResponse {
 
     
     public ListScalingConfigsResponse addScalingConfigurationsItem(ScalingConfiguration scalingConfigurationsItem) {
+        if(this.scalingConfigurations == null) {
+            this.scalingConfigurations = new ArrayList<>();
+        }
         this.scalingConfigurations.add(scalingConfigurationsItem);
         return this;
     }
 
     public ListScalingConfigsResponse withScalingConfigurations(Consumer<List<ScalingConfiguration>> scalingConfigurationsSetter) {
-        if(this.scalingConfigurations == null ){
+        if(this.scalingConfigurations == null) {
             this.scalingConfigurations = new ArrayList<>();
         }
         scalingConfigurationsSetter.accept(this.scalingConfigurations);

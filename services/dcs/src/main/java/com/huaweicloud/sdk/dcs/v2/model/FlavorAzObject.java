@@ -60,12 +60,15 @@ public class FlavorAzObject  {
 
     
     public FlavorAzObject addAzCodesItem(String azCodesItem) {
+        if(this.azCodes == null) {
+            this.azCodes = new ArrayList<>();
+        }
         this.azCodes.add(azCodesItem);
         return this;
     }
 
     public FlavorAzObject withAzCodes(Consumer<List<String>> azCodesSetter) {
-        if(this.azCodes == null ){
+        if(this.azCodes == null) {
             this.azCodes = new ArrayList<>();
         }
         azCodesSetter.accept(this.azCodes);

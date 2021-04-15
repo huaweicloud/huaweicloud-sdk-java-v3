@@ -63,12 +63,15 @@ public class ListSessionsResponse extends SdkResponse {
 
     
     public ListSessionsResponse addSessionsItem(QuerySessionResponse sessionsItem) {
+        if(this.sessions == null) {
+            this.sessions = new ArrayList<>();
+        }
         this.sessions.add(sessionsItem);
         return this;
     }
 
     public ListSessionsResponse withSessions(Consumer<List<QuerySessionResponse>> sessionsSetter) {
-        if(this.sessions == null ){
+        if(this.sessions == null) {
             this.sessions = new ArrayList<>();
         }
         sessionsSetter.accept(this.sessions);

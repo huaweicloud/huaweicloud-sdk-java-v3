@@ -35,12 +35,15 @@ public class ImportBackupResponse extends SdkResponse {
 
     
     public ImportBackupResponse addSyncItem(BackupSyncRespBody syncItem) {
+        if(this.sync == null) {
+            this.sync = new ArrayList<>();
+        }
         this.sync.add(syncItem);
         return this;
     }
 
     public ImportBackupResponse withSync(Consumer<List<BackupSyncRespBody>> syncSetter) {
-        if(this.sync == null ){
+        if(this.sync == null) {
             this.sync = new ArrayList<>();
         }
         syncSetter.accept(this.sync);

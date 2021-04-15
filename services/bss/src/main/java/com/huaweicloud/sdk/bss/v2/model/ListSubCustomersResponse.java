@@ -41,12 +41,15 @@ public class ListSubCustomersResponse extends SdkResponse {
 
     
     public ListSubCustomersResponse addCustomerInfosItem(CustomerInformation customerInfosItem) {
+        if(this.customerInfos == null) {
+            this.customerInfos = new ArrayList<>();
+        }
         this.customerInfos.add(customerInfosItem);
         return this;
     }
 
     public ListSubCustomersResponse withCustomerInfos(Consumer<List<CustomerInformation>> customerInfosSetter) {
-        if(this.customerInfos == null ){
+        if(this.customerInfos == null) {
             this.customerInfos = new ArrayList<>();
         }
         customerInfosSetter.accept(this.customerInfos);

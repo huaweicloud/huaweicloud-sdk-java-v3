@@ -92,12 +92,15 @@ public class ListPartnerCouponsRecordRequest  {
 
     
     public ListPartnerCouponsRecordRequest addOperationTypesItem(String operationTypesItem) {
+        if(this.operationTypes == null) {
+            this.operationTypes = new ArrayList<>();
+        }
         this.operationTypes.add(operationTypesItem);
         return this;
     }
 
     public ListPartnerCouponsRecordRequest withOperationTypes(Consumer<List<String>> operationTypesSetter) {
-        if(this.operationTypes == null ){
+        if(this.operationTypes == null) {
             this.operationTypes = new ArrayList<>();
         }
         operationTypesSetter.accept(this.operationTypes);
@@ -171,12 +174,15 @@ public class ListPartnerCouponsRecordRequest  {
 
     
     public ListPartnerCouponsRecordRequest addCouponIdsItem(String couponIdsItem) {
+        if(this.couponIds == null) {
+            this.couponIds = new ArrayList<>();
+        }
         this.couponIds.add(couponIdsItem);
         return this;
     }
 
     public ListPartnerCouponsRecordRequest withCouponIds(Consumer<List<String>> couponIdsSetter) {
-        if(this.couponIds == null ){
+        if(this.couponIds == null) {
             this.couponIds = new ArrayList<>();
         }
         couponIdsSetter.accept(this.couponIds);

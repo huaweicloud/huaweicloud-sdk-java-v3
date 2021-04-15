@@ -201,12 +201,15 @@ public class DemandProductRatingResult  {
 
     
     public DemandProductRatingResult addDiscountRatingResultsItem(DemandDiscountRatingResult discountRatingResultsItem) {
+        if(this.discountRatingResults == null) {
+            this.discountRatingResults = new ArrayList<>();
+        }
         this.discountRatingResults.add(discountRatingResultsItem);
         return this;
     }
 
     public DemandProductRatingResult withDiscountRatingResults(Consumer<List<DemandDiscountRatingResult>> discountRatingResultsSetter) {
-        if(this.discountRatingResults == null ){
+        if(this.discountRatingResults == null) {
             this.discountRatingResults = new ArrayList<>();
         }
         discountRatingResultsSetter.accept(this.discountRatingResults);

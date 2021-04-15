@@ -72,12 +72,15 @@ public class BackupPlan  {
 
     
     public BackupPlan addBackupAtItem(Integer backupAtItem) {
+        if(this.backupAt == null) {
+            this.backupAt = new ArrayList<>();
+        }
         this.backupAt.add(backupAtItem);
         return this;
     }
 
     public BackupPlan withBackupAt(Consumer<List<Integer>> backupAtSetter) {
-        if(this.backupAt == null ){
+        if(this.backupAt == null) {
             this.backupAt = new ArrayList<>();
         }
         backupAtSetter.accept(this.backupAt);

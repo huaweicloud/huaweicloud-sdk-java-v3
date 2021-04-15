@@ -32,12 +32,15 @@ public class DeleteSessionRequestBody  {
 
     
     public DeleteSessionRequestBody addSessionsItem(String sessionsItem) {
+        if(this.sessions == null) {
+            this.sessions = new ArrayList<>();
+        }
         this.sessions.add(sessionsItem);
         return this;
     }
 
     public DeleteSessionRequestBody withSessions(Consumer<List<String>> sessionsSetter) {
-        if(this.sessions == null ){
+        if(this.sessions == null) {
             this.sessions = new ArrayList<>();
         }
         sessionsSetter.accept(this.sessions);

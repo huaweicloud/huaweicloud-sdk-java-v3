@@ -90,12 +90,15 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
 
     
     public ShowAuditlogPolicyResponse addAuditTypesItem(String auditTypesItem) {
+        if(this.auditTypes == null) {
+            this.auditTypes = new ArrayList<>();
+        }
         this.auditTypes.add(auditTypesItem);
         return this;
     }
 
     public ShowAuditlogPolicyResponse withAuditTypes(Consumer<List<String>> auditTypesSetter) {
-        if(this.auditTypes == null ){
+        if(this.auditTypes == null) {
             this.auditTypes = new ArrayList<>();
         }
         auditTypesSetter.accept(this.auditTypes);

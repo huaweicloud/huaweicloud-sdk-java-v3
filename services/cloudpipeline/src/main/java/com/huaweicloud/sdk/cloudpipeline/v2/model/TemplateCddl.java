@@ -78,12 +78,15 @@ public class TemplateCddl  {
     
 
     public TemplateCddl putStatesItem(String key, TemplateState statesItem) {
+        if(this.states == null) {
+            this.states = new HashMap<>();
+        }
         this.states.put(key, statesItem);
         return this;
     }
 
     public TemplateCddl withStates(Consumer<Map<String, TemplateState>> statesSetter) {
-        if(this.states == null ){
+        if(this.states == null) {
             this.states = new HashMap<>();
         }
         statesSetter.accept(this.states);

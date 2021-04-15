@@ -119,12 +119,15 @@ public class ListScalingV2PoliciesResponse extends SdkResponse {
 
     
     public ListScalingV2PoliciesResponse addScalingPoliciesItem(ScalingPoliciesV2 scalingPoliciesItem) {
+        if(this.scalingPolicies == null) {
+            this.scalingPolicies = new ArrayList<>();
+        }
         this.scalingPolicies.add(scalingPoliciesItem);
         return this;
     }
 
     public ListScalingV2PoliciesResponse withScalingPolicies(Consumer<List<ScalingPoliciesV2>> scalingPoliciesSetter) {
-        if(this.scalingPolicies == null ){
+        if(this.scalingPolicies == null) {
             this.scalingPolicies = new ArrayList<>();
         }
         scalingPoliciesSetter.accept(this.scalingPolicies);

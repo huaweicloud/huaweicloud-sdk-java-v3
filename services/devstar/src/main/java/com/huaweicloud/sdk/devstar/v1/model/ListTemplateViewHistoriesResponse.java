@@ -41,12 +41,15 @@ public class ListTemplateViewHistoriesResponse extends SdkResponse {
 
     
     public ListTemplateViewHistoriesResponse addTemplatesItem(TemplateViewHistory templatesItem) {
+        if(this.templates == null) {
+            this.templates = new ArrayList<>();
+        }
         this.templates.add(templatesItem);
         return this;
     }
 
     public ListTemplateViewHistoriesResponse withTemplates(Consumer<List<TemplateViewHistory>> templatesSetter) {
-        if(this.templates == null ){
+        if(this.templates == null) {
             this.templates = new ArrayList<>();
         }
         templatesSetter.accept(this.templates);

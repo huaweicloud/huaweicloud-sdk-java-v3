@@ -38,12 +38,15 @@ public class TemplatesInfo  {
 
     
     public TemplatesInfo addTemplateIdsItem(String templateIdsItem) {
+        if(this.templateIds == null) {
+            this.templateIds = new ArrayList<>();
+        }
         this.templateIds.add(templateIdsItem);
         return this;
     }
 
     public TemplatesInfo withTemplateIds(Consumer<List<String>> templateIdsSetter) {
-        if(this.templateIds == null ){
+        if(this.templateIds == null) {
             this.templateIds = new ArrayList<>();
         }
         templateIdsSetter.accept(this.templateIds);

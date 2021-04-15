@@ -68,12 +68,15 @@ public class SourceStorage  {
     
 
     public SourceStorage putParametersItem(String key, String parametersItem) {
+        if(this.parameters == null) {
+            this.parameters = new HashMap<>();
+        }
         this.parameters.put(key, parametersItem);
         return this;
     }
 
     public SourceStorage withParameters(Consumer<Map<String, String>> parametersSetter) {
-        if(this.parameters == null ){
+        if(this.parameters == null) {
             this.parameters = new HashMap<>();
         }
         parametersSetter.accept(this.parameters);

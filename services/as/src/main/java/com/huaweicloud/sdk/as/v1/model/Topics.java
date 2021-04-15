@@ -66,12 +66,15 @@ public class Topics  {
 
     
     public Topics addTopicSceneItem(String topicSceneItem) {
+        if(this.topicScene == null) {
+            this.topicScene = new ArrayList<>();
+        }
         this.topicScene.add(topicSceneItem);
         return this;
     }
 
     public Topics withTopicScene(Consumer<List<String>> topicSceneSetter) {
-        if(this.topicScene == null ){
+        if(this.topicScene == null) {
             this.topicScene = new ArrayList<>();
         }
         topicSceneSetter.accept(this.topicScene);

@@ -319,12 +319,15 @@ public class InnodbTrx  {
 
     
     public InnodbTrx addInnodbWaitLocksItem(InnodbLock innodbWaitLocksItem) {
+        if(this.innodbWaitLocks == null) {
+            this.innodbWaitLocks = new ArrayList<>();
+        }
         this.innodbWaitLocks.add(innodbWaitLocksItem);
         return this;
     }
 
     public InnodbTrx withInnodbWaitLocks(Consumer<List<InnodbLock>> innodbWaitLocksSetter) {
-        if(this.innodbWaitLocks == null ){
+        if(this.innodbWaitLocks == null) {
             this.innodbWaitLocks = new ArrayList<>();
         }
         innodbWaitLocksSetter.accept(this.innodbWaitLocks);
@@ -352,12 +355,15 @@ public class InnodbTrx  {
 
     
     public InnodbTrx addInnodbHoldLocksItem(InnodbLock innodbHoldLocksItem) {
+        if(this.innodbHoldLocks == null) {
+            this.innodbHoldLocks = new ArrayList<>();
+        }
         this.innodbHoldLocks.add(innodbHoldLocksItem);
         return this;
     }
 
     public InnodbTrx withInnodbHoldLocks(Consumer<List<InnodbLock>> innodbHoldLocksSetter) {
-        if(this.innodbHoldLocks == null ){
+        if(this.innodbHoldLocks == null) {
             this.innodbHoldLocks = new ArrayList<>();
         }
         innodbHoldLocksSetter.accept(this.innodbHoldLocks);

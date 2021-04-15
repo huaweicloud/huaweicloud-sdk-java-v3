@@ -91,12 +91,15 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
 
     
     public ListRequestThrottlingPolicyV2Response addThrottlesItem(ThrottleResp throttlesItem) {
+        if(this.throttles == null) {
+            this.throttles = new ArrayList<>();
+        }
         this.throttles.add(throttlesItem);
         return this;
     }
 
     public ListRequestThrottlingPolicyV2Response withThrottles(Consumer<List<ThrottleResp>> throttlesSetter) {
-        if(this.throttles == null ){
+        if(this.throttles == null) {
             this.throttles = new ArrayList<>();
         }
         throttlesSetter.accept(this.throttles);

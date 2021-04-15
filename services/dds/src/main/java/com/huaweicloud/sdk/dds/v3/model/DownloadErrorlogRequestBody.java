@@ -38,12 +38,15 @@ public class DownloadErrorlogRequestBody  {
 
     
     public DownloadErrorlogRequestBody addFileNameListItem(String fileNameListItem) {
+        if(this.fileNameList == null) {
+            this.fileNameList = new ArrayList<>();
+        }
         this.fileNameList.add(fileNameListItem);
         return this;
     }
 
     public DownloadErrorlogRequestBody withFileNameList(Consumer<List<String>> fileNameListSetter) {
-        if(this.fileNameList == null ){
+        if(this.fileNameList == null) {
             this.fileNameList = new ArrayList<>();
         }
         fileNameListSetter.accept(this.fileNameList);
@@ -71,12 +74,15 @@ public class DownloadErrorlogRequestBody  {
 
     
     public DownloadErrorlogRequestBody addNodeIdListItem(String nodeIdListItem) {
+        if(this.nodeIdList == null) {
+            this.nodeIdList = new ArrayList<>();
+        }
         this.nodeIdList.add(nodeIdListItem);
         return this;
     }
 
     public DownloadErrorlogRequestBody withNodeIdList(Consumer<List<String>> nodeIdListSetter) {
-        if(this.nodeIdList == null ){
+        if(this.nodeIdList == null) {
             this.nodeIdList = new ArrayList<>();
         }
         nodeIdListSetter.accept(this.nodeIdList);

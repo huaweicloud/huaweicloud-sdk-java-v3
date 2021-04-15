@@ -579,12 +579,15 @@ public class InstancesVO  {
 
     
     public InstancesVO addActionListItem(RoleAction actionListItem) {
+        if(this.actionList == null) {
+            this.actionList = new ArrayList<>();
+        }
         this.actionList.add(actionListItem);
         return this;
     }
 
     public InstancesVO withActionList(Consumer<List<RoleAction>> actionListSetter) {
-        if(this.actionList == null ){
+        if(this.actionList == null) {
             this.actionList = new ArrayList<>();
         }
         actionListSetter.accept(this.actionList);
@@ -1115,12 +1118,15 @@ public class InstancesVO  {
     
 
     public InstancesVO putServerMapItem(String key, String serverMapItem) {
+        if(this.serverMap == null) {
+            this.serverMap = new HashMap<>();
+        }
         this.serverMap.put(key, serverMapItem);
         return this;
     }
 
     public InstancesVO withServerMap(Consumer<Map<String, String>> serverMapSetter) {
-        if(this.serverMap == null ){
+        if(this.serverMap == null) {
             this.serverMap = new HashMap<>();
         }
         serverMapSetter.accept(this.serverMap);

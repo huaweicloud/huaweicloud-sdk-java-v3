@@ -35,12 +35,15 @@ public class ListBcsMetricResponse extends SdkResponse {
 
     
     public ListBcsMetricResponse addMetricsItem(MetricItemResultAPI metricsItem) {
+        if(this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
         this.metrics.add(metricsItem);
         return this;
     }
 
     public ListBcsMetricResponse withMetrics(Consumer<List<MetricItemResultAPI>> metricsSetter) {
-        if(this.metrics == null ){
+        if(this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);

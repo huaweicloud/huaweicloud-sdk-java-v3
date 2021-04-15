@@ -89,12 +89,15 @@ public class InstanceGroupListInfo  {
 
     
     public InstanceGroupListInfo addReplicationListItem(InstanceReplicationListInfo replicationListItem) {
+        if(this.replicationList == null) {
+            this.replicationList = new ArrayList<>();
+        }
         this.replicationList.add(replicationListItem);
         return this;
     }
 
     public InstanceGroupListInfo withReplicationList(Consumer<List<InstanceReplicationListInfo>> replicationListSetter) {
-        if(this.replicationList == null ){
+        if(this.replicationList == null) {
             this.replicationList = new ArrayList<>();
         }
         replicationListSetter.accept(this.replicationList);

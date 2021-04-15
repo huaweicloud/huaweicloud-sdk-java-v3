@@ -275,12 +275,15 @@ public class ShowJobStatusResponse extends SdkResponse {
 
     
     public ShowJobStatusResponse addNodesItem(RealTimeNodeStatus nodesItem) {
+        if(this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
         this.nodes.add(nodesItem);
         return this;
     }
 
     public ShowJobStatusResponse withNodes(Consumer<List<RealTimeNodeStatus>> nodesSetter) {
-        if(this.nodes == null ){
+        if(this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);

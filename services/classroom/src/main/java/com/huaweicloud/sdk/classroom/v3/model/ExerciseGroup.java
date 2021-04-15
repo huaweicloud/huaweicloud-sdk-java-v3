@@ -39,12 +39,15 @@ public class ExerciseGroup  {
 
     
     public ExerciseGroup addExercisesItem(ExerciseCard exercisesItem) {
+        if(this.exercises == null) {
+            this.exercises = new ArrayList<>();
+        }
         this.exercises.add(exercisesItem);
         return this;
     }
 
     public ExerciseGroup withExercises(Consumer<List<ExerciseCard>> exercisesSetter) {
-        if(this.exercises == null ){
+        if(this.exercises == null) {
             this.exercises = new ArrayList<>();
         }
         exercisesSetter.accept(this.exercises);

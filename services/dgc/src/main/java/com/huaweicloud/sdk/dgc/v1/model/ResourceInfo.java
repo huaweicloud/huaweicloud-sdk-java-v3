@@ -216,12 +216,15 @@ public class ResourceInfo  {
 
     
     public ResourceInfo addDependFilesItem(String dependFilesItem) {
+        if(this.dependFiles == null) {
+            this.dependFiles = new ArrayList<>();
+        }
         this.dependFiles.add(dependFilesItem);
         return this;
     }
 
     public ResourceInfo withDependFiles(Consumer<List<String>> dependFilesSetter) {
-        if(this.dependFiles == null ){
+        if(this.dependFiles == null) {
             this.dependFiles = new ArrayList<>();
         }
         dependFilesSetter.accept(this.dependFiles);

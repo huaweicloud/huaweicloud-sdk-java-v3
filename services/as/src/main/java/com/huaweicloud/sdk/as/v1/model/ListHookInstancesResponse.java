@@ -35,12 +35,15 @@ public class ListHookInstancesResponse extends SdkResponse {
 
     
     public ListHookInstancesResponse addInstanceHangingInfoItem(InstanceHangingInfos instanceHangingInfoItem) {
+        if(this.instanceHangingInfo == null) {
+            this.instanceHangingInfo = new ArrayList<>();
+        }
         this.instanceHangingInfo.add(instanceHangingInfoItem);
         return this;
     }
 
     public ListHookInstancesResponse withInstanceHangingInfo(Consumer<List<InstanceHangingInfos>> instanceHangingInfoSetter) {
-        if(this.instanceHangingInfo == null ){
+        if(this.instanceHangingInfo == null) {
             this.instanceHangingInfo = new ArrayList<>();
         }
         instanceHangingInfoSetter.accept(this.instanceHangingInfo);

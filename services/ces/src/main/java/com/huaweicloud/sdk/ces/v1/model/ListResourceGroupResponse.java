@@ -42,12 +42,15 @@ public class ListResourceGroupResponse extends SdkResponse {
 
     
     public ListResourceGroupResponse addResourceGroupsItem(ResourceGroupInfo resourceGroupsItem) {
+        if(this.resourceGroups == null) {
+            this.resourceGroups = new ArrayList<>();
+        }
         this.resourceGroups.add(resourceGroupsItem);
         return this;
     }
 
     public ListResourceGroupResponse withResourceGroups(Consumer<List<ResourceGroupInfo>> resourceGroupsSetter) {
-        if(this.resourceGroups == null ){
+        if(this.resourceGroups == null) {
             this.resourceGroups = new ArrayList<>();
         }
         resourceGroupsSetter.accept(this.resourceGroups);

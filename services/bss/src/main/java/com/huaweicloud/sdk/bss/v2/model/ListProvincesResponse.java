@@ -65,12 +65,15 @@ public class ListProvincesResponse extends SdkResponse {
 
     
     public ListProvincesResponse addProvincesItem(Province provincesItem) {
+        if(this.provinces == null) {
+            this.provinces = new ArrayList<>();
+        }
         this.provinces.add(provincesItem);
         return this;
     }
 
     public ListProvincesResponse withProvinces(Consumer<List<Province>> provincesSetter) {
-        if(this.provinces == null ){
+        if(this.provinces == null) {
             this.provinces = new ArrayList<>();
         }
         provincesSetter.accept(this.provinces);

@@ -39,12 +39,15 @@ public class QueryCustomersBalancesReq  {
 
     
     public QueryCustomersBalancesReq addCustomerInfosItem(CustomerInfoV2 customerInfosItem) {
+        if(this.customerInfos == null) {
+            this.customerInfos = new ArrayList<>();
+        }
         this.customerInfos.add(customerInfosItem);
         return this;
     }
 
     public QueryCustomersBalancesReq withCustomerInfos(Consumer<List<CustomerInfoV2>> customerInfosSetter) {
-        if(this.customerInfos == null ){
+        if(this.customerInfos == null) {
             this.customerInfos = new ArrayList<>();
         }
         customerInfosSetter.accept(this.customerInfos);

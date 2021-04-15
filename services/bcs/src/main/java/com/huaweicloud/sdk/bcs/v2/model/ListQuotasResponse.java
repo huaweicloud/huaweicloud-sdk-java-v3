@@ -35,12 +35,15 @@ public class ListQuotasResponse extends SdkResponse {
 
     
     public ListQuotasResponse addResourcesItem(Resource resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListQuotasResponse withResources(Consumer<List<Resource>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

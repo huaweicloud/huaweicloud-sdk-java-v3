@@ -114,12 +114,15 @@ public class SchedulerHints  {
 
     
     public SchedulerHints addDecBaremetalItem(DecBaremetalEnum decBaremetalItem) {
+        if(this.decBaremetal == null) {
+            this.decBaremetal = new ArrayList<>();
+        }
         this.decBaremetal.add(decBaremetalItem);
         return this;
     }
 
     public SchedulerHints withDecBaremetal(Consumer<List<DecBaremetalEnum>> decBaremetalSetter) {
-        if(this.decBaremetal == null ){
+        if(this.decBaremetal == null) {
             this.decBaremetal = new ArrayList<>();
         }
         decBaremetalSetter.accept(this.decBaremetal);

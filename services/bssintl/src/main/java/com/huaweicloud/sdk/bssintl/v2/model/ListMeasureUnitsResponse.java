@@ -35,12 +35,15 @@ public class ListMeasureUnitsResponse extends SdkResponse {
 
     
     public ListMeasureUnitsResponse addMeasureUnitsItem(MeasureUnitRest measureUnitsItem) {
+        if(this.measureUnits == null) {
+            this.measureUnits = new ArrayList<>();
+        }
         this.measureUnits.add(measureUnitsItem);
         return this;
     }
 
     public ListMeasureUnitsResponse withMeasureUnits(Consumer<List<MeasureUnitRest>> measureUnitsSetter) {
-        if(this.measureUnits == null ){
+        if(this.measureUnits == null) {
             this.measureUnits = new ArrayList<>();
         }
         measureUnitsSetter.accept(this.measureUnits);

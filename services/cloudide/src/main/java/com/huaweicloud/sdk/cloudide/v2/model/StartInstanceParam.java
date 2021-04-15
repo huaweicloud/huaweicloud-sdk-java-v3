@@ -40,12 +40,15 @@ public class StartInstanceParam  {
 
     
     public StartInstanceParam addPluginEnableListItem(String pluginEnableListItem) {
+        if(this.pluginEnableList == null) {
+            this.pluginEnableList = new ArrayList<>();
+        }
         this.pluginEnableList.add(pluginEnableListItem);
         return this;
     }
 
     public StartInstanceParam withPluginEnableList(Consumer<List<String>> pluginEnableListSetter) {
-        if(this.pluginEnableList == null ){
+        if(this.pluginEnableList == null) {
             this.pluginEnableList = new ArrayList<>();
         }
         pluginEnableListSetter.accept(this.pluginEnableList);
@@ -74,12 +77,15 @@ public class StartInstanceParam  {
     
 
     public StartInstanceParam putPluginVarsItem(String key, String pluginVarsItem) {
+        if(this.pluginVars == null) {
+            this.pluginVars = new HashMap<>();
+        }
         this.pluginVars.put(key, pluginVarsItem);
         return this;
     }
 
     public StartInstanceParam withPluginVars(Consumer<Map<String, String>> pluginVarsSetter) {
-        if(this.pluginVars == null ){
+        if(this.pluginVars == null) {
             this.pluginVars = new HashMap<>();
         }
         pluginVarsSetter.accept(this.pluginVars);

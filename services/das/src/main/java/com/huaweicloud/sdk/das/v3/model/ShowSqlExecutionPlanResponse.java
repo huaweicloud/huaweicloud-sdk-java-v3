@@ -41,12 +41,15 @@ public class ShowSqlExecutionPlanResponse extends SdkResponse {
 
     
     public ShowSqlExecutionPlanResponse addExecutionPlansItem(ExecutionPlan executionPlansItem) {
+        if(this.executionPlans == null) {
+            this.executionPlans = new ArrayList<>();
+        }
         this.executionPlans.add(executionPlansItem);
         return this;
     }
 
     public ShowSqlExecutionPlanResponse withExecutionPlans(Consumer<List<ExecutionPlan>> executionPlansSetter) {
-        if(this.executionPlans == null ){
+        if(this.executionPlans == null) {
             this.executionPlans = new ArrayList<>();
         }
         executionPlansSetter.accept(this.executionPlans);

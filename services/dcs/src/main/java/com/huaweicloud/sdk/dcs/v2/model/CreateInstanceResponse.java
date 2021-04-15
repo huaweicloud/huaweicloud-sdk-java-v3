@@ -63,12 +63,15 @@ public class CreateInstanceResponse extends SdkResponse {
 
     
     public CreateInstanceResponse addInstancesItem(Instances instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public CreateInstanceResponse withInstances(Consumer<List<Instances>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

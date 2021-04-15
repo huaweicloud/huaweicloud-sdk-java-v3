@@ -41,12 +41,15 @@ public class ListInstancesByTagsResponse extends SdkResponse {
 
     
     public ListInstancesByTagsResponse addInstancesItem(InstanceItem instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ListInstancesByTagsResponse withInstances(Consumer<List<InstanceItem>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

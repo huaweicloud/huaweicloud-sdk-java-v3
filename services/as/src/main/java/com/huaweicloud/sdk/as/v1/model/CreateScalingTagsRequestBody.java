@@ -115,12 +115,15 @@ public class CreateScalingTagsRequestBody  {
 
     
     public CreateScalingTagsRequestBody addTagsItem(TagsSingleValue tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public CreateScalingTagsRequestBody withTags(Consumer<List<TagsSingleValue>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

@@ -89,12 +89,15 @@ public class MetricDemision  {
 
     
     public MetricDemision addDimensionsItem(Dimension dimensionsItem) {
+        if(this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
 
     public MetricDemision withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
-        if(this.dimensions == null ){
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);

@@ -118,12 +118,15 @@ public class Channel  {
     
 
     public Channel putPeersItem(String key, List<String> peersItem) {
+        if(this.peers == null) {
+            this.peers = new HashMap<>();
+        }
         this.peers.put(key, peersItem);
         return this;
     }
 
     public Channel withPeers(Consumer<Map<String, List<String>>> peersSetter) {
-        if(this.peers == null ){
+        if(this.peers == null) {
             this.peers = new HashMap<>();
         }
         peersSetter.accept(this.peers);

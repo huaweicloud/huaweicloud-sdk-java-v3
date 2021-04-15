@@ -63,12 +63,15 @@ public class ListTemplatesV2Response extends SdkResponse {
 
     
     public ListTemplatesV2Response addTemplatesItem(TemplateInfo templatesItem) {
+        if(this.templates == null) {
+            this.templates = new ArrayList<>();
+        }
         this.templates.add(templatesItem);
         return this;
     }
 
     public ListTemplatesV2Response withTemplates(Consumer<List<TemplateInfo>> templatesSetter) {
-        if(this.templates == null ){
+        if(this.templates == null) {
             this.templates = new ArrayList<>();
         }
         templatesSetter.accept(this.templates);

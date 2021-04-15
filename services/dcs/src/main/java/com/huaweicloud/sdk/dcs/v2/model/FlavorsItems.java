@@ -322,12 +322,15 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addCapacityItem(String capacityItem) {
+        if(this.capacity == null) {
+            this.capacity = new ArrayList<>();
+        }
         this.capacity.add(capacityItem);
         return this;
     }
 
     public FlavorsItems withCapacity(Consumer<List<String>> capacitySetter) {
-        if(this.capacity == null ){
+        if(this.capacity == null) {
             this.capacity = new ArrayList<>();
         }
         capacitySetter.accept(this.capacity);
@@ -355,12 +358,15 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addBillingModeItem(String billingModeItem) {
+        if(this.billingMode == null) {
+            this.billingMode = new ArrayList<>();
+        }
         this.billingMode.add(billingModeItem);
         return this;
     }
 
     public FlavorsItems withBillingMode(Consumer<List<String>> billingModeSetter) {
-        if(this.billingMode == null ){
+        if(this.billingMode == null) {
             this.billingMode = new ArrayList<>();
         }
         billingModeSetter.accept(this.billingMode);
@@ -454,12 +460,15 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addAttrsItem(AttrsObject attrsItem) {
+        if(this.attrs == null) {
+            this.attrs = new ArrayList<>();
+        }
         this.attrs.add(attrsItem);
         return this;
     }
 
     public FlavorsItems withAttrs(Consumer<List<AttrsObject>> attrsSetter) {
-        if(this.attrs == null ){
+        if(this.attrs == null) {
             this.attrs = new ArrayList<>();
         }
         attrsSetter.accept(this.attrs);
@@ -487,12 +496,15 @@ public class FlavorsItems  {
 
     
     public FlavorsItems addFlavorsAvailableZonesItem(FlavorAzObject flavorsAvailableZonesItem) {
+        if(this.flavorsAvailableZones == null) {
+            this.flavorsAvailableZones = new ArrayList<>();
+        }
         this.flavorsAvailableZones.add(flavorsAvailableZonesItem);
         return this;
     }
 
     public FlavorsItems withFlavorsAvailableZones(Consumer<List<FlavorAzObject>> flavorsAvailableZonesSetter) {
-        if(this.flavorsAvailableZones == null ){
+        if(this.flavorsAvailableZones == null) {
             this.flavorsAvailableZones = new ArrayList<>();
         }
         flavorsAvailableZonesSetter.accept(this.flavorsAvailableZones);

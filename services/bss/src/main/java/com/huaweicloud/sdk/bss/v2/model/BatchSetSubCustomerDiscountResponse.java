@@ -35,12 +35,15 @@ public class BatchSetSubCustomerDiscountResponse extends SdkResponse {
 
     
     public BatchSetSubCustomerDiscountResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
+        if(this.errorDetails == null) {
+            this.errorDetails = new ArrayList<>();
+        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
 
     public BatchSetSubCustomerDiscountResponse withErrorDetails(Consumer<List<ErrorDetail>> errorDetailsSetter) {
-        if(this.errorDetails == null ){
+        if(this.errorDetails == null) {
             this.errorDetails = new ArrayList<>();
         }
         errorDetailsSetter.accept(this.errorDetails);

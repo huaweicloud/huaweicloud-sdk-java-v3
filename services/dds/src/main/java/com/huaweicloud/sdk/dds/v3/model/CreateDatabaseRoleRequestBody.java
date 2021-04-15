@@ -89,12 +89,15 @@ public class CreateDatabaseRoleRequestBody  {
 
     
     public CreateDatabaseRoleRequestBody addRolesItem(RolesOption rolesItem) {
+        if(this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
         this.roles.add(rolesItem);
         return this;
     }
 
     public CreateDatabaseRoleRequestBody withRoles(Consumer<List<RolesOption>> rolesSetter) {
-        if(this.roles == null ){
+        if(this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);

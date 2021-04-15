@@ -33,12 +33,15 @@ public class ConfirmDeadLettersMessagesReq  {
 
     
     public ConfirmDeadLettersMessagesReq addMessageItem(ConfirmDeadLettersMessagesReqMessage messageItem) {
+        if(this.message == null) {
+            this.message = new ArrayList<>();
+        }
         this.message.add(messageItem);
         return this;
     }
 
     public ConfirmDeadLettersMessagesReq withMessage(Consumer<List<ConfirmDeadLettersMessagesReqMessage>> messageSetter) {
-        if(this.message == null ){
+        if(this.message == null) {
             this.message = new ArrayList<>();
         }
         messageSetter.accept(this.message);

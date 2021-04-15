@@ -33,12 +33,15 @@ public class UpdateInstanceRequestBody  {
 
     
     public UpdateInstanceRequestBody addNodeOrgsItem(NodeOrgs nodeOrgsItem) {
+        if(this.nodeOrgs == null) {
+            this.nodeOrgs = new ArrayList<>();
+        }
         this.nodeOrgs.add(nodeOrgsItem);
         return this;
     }
 
     public UpdateInstanceRequestBody withNodeOrgs(Consumer<List<NodeOrgs>> nodeOrgsSetter) {
-        if(this.nodeOrgs == null ){
+        if(this.nodeOrgs == null) {
             this.nodeOrgs = new ArrayList<>();
         }
         nodeOrgsSetter.accept(this.nodeOrgs);

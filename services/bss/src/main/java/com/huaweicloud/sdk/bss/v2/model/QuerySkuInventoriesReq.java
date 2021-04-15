@@ -33,12 +33,15 @@ public class QuerySkuInventoriesReq  {
 
     
     public QuerySkuInventoriesReq addSkuItemsItem(SkuItem skuItemsItem) {
+        if(this.skuItems == null) {
+            this.skuItems = new ArrayList<>();
+        }
         this.skuItems.add(skuItemsItem);
         return this;
     }
 
     public QuerySkuInventoriesReq withSkuItems(Consumer<List<SkuItem>> skuItemsSetter) {
-        if(this.skuItems == null ){
+        if(this.skuItems == null) {
             this.skuItems = new ArrayList<>();
         }
         skuItemsSetter.accept(this.skuItems);

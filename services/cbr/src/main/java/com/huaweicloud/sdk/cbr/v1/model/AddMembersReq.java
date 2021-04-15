@@ -32,12 +32,15 @@ public class AddMembersReq  {
 
     
     public AddMembersReq addMembersItem(String membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public AddMembersReq withMembers(Consumer<List<String>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

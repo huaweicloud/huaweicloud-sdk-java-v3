@@ -257,12 +257,15 @@ public class NotificationList  {
 
     
     public NotificationList addInviteeOrgsItem(OrganizationV2 inviteeOrgsItem) {
+        if(this.inviteeOrgs == null) {
+            this.inviteeOrgs = new ArrayList<>();
+        }
         this.inviteeOrgs.add(inviteeOrgsItem);
         return this;
     }
 
     public NotificationList withInviteeOrgs(Consumer<List<OrganizationV2>> inviteeOrgsSetter) {
-        if(this.inviteeOrgs == null ){
+        if(this.inviteeOrgs == null) {
             this.inviteeOrgs = new ArrayList<>();
         }
         inviteeOrgsSetter.accept(this.inviteeOrgs);

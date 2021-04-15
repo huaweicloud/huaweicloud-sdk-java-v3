@@ -41,12 +41,15 @@ public class ExportSlowQueryLogsResponse extends SdkResponse {
 
     
     public ExportSlowQueryLogsResponse addSlowLogsItem(SlowLog slowLogsItem) {
+        if(this.slowLogs == null) {
+            this.slowLogs = new ArrayList<>();
+        }
         this.slowLogs.add(slowLogsItem);
         return this;
     }
 
     public ExportSlowQueryLogsResponse withSlowLogs(Consumer<List<SlowLog>> slowLogsSetter) {
-        if(this.slowLogs == null ){
+        if(this.slowLogs == null) {
             this.slowLogs = new ArrayList<>();
         }
         slowLogsSetter.accept(this.slowLogs);

@@ -119,12 +119,15 @@ public class Role  {
 
     
     public Role addRoleActionsesItem(RoleAction roleActionsesItem) {
+        if(this.roleActionses == null) {
+            this.roleActionses = new ArrayList<>();
+        }
         this.roleActionses.add(roleActionsesItem);
         return this;
     }
 
     public Role withRoleActionses(Consumer<List<RoleAction>> roleActionsesSetter) {
-        if(this.roleActionses == null ){
+        if(this.roleActionses == null) {
             this.roleActionses = new ArrayList<>();
         }
         roleActionsesSetter.accept(this.roleActionses);

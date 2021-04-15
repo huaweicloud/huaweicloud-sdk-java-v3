@@ -63,12 +63,15 @@ public class ListEnterpriseSubCustomersResponse extends SdkResponse {
 
     
     public ListEnterpriseSubCustomersResponse addSubCustomerInfosItem(SubCustomerInfoV2 subCustomerInfosItem) {
+        if(this.subCustomerInfos == null) {
+            this.subCustomerInfos = new ArrayList<>();
+        }
         this.subCustomerInfos.add(subCustomerInfosItem);
         return this;
     }
 
     public ListEnterpriseSubCustomersResponse withSubCustomerInfos(Consumer<List<SubCustomerInfoV2>> subCustomerInfosSetter) {
-        if(this.subCustomerInfos == null ){
+        if(this.subCustomerInfos == null) {
             this.subCustomerInfos = new ArrayList<>();
         }
         subCustomerInfosSetter.accept(this.subCustomerInfos);

@@ -128,12 +128,15 @@ public class BulkCreateAndDeleteVaultTagsReq  {
 
     
     public BulkCreateAndDeleteVaultTagsReq addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public BulkCreateAndDeleteVaultTagsReq withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -161,12 +164,15 @@ public class BulkCreateAndDeleteVaultTagsReq  {
 
     
     public BulkCreateAndDeleteVaultTagsReq addSysTagsItem(SysTag sysTagsItem) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
 
     public BulkCreateAndDeleteVaultTagsReq withSysTags(Consumer<List<SysTag>> sysTagsSetter) {
-        if(this.sysTags == null ){
+        if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);

@@ -33,12 +33,15 @@ public class ErrorDetailInfo  {
 
     
     public ErrorDetailInfo addFailedItem(ErrorCaseInfoBean failedItem) {
+        if(this.failed == null) {
+            this.failed = new ArrayList<>();
+        }
         this.failed.add(failedItem);
         return this;
     }
 
     public ErrorDetailInfo withFailed(Consumer<List<ErrorCaseInfoBean>> failedSetter) {
-        if(this.failed == null ){
+        if(this.failed == null) {
             this.failed = new ArrayList<>();
         }
         failedSetter.accept(this.failed);

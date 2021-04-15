@@ -307,12 +307,15 @@ public class BackupExtendInfo  {
 
     
     public BackupExtendInfo addOsImagesDataItem(ImageData osImagesDataItem) {
+        if(this.osImagesData == null) {
+            this.osImagesData = new ArrayList<>();
+        }
         this.osImagesData.add(osImagesDataItem);
         return this;
     }
 
     public BackupExtendInfo withOsImagesData(Consumer<List<ImageData>> osImagesDataSetter) {
-        if(this.osImagesData == null ){
+        if(this.osImagesData == null) {
             this.osImagesData = new ArrayList<>();
         }
         osImagesDataSetter.accept(this.osImagesData);

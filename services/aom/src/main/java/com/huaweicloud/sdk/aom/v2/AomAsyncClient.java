@@ -41,4 +41,26 @@ public class AomAsyncClient {
         return new AsyncInvoker<ListSampleRequest, ListSampleResponse>(request, AomMeta.listSample, hcClient);
     }
 
+    /**
+     * 查询时间序列
+     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     *
+     * @param ListSeriesRequest 请求对象
+     * @return CompletableFuture<ListSeriesResponse>
+     */
+    public CompletableFuture<ListSeriesResponse> listSeriesAsync(ListSeriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listSeries);
+    }
+
+    /**
+     * 查询时间序列
+     * 该接口用于查询系统当前可监控的时间序列列表，可以指定时间序列命名空间、名称、维度、所属资源的编号（格式为：resType_resId），分页查询的起始位置和返回的最大记录条数。
+     *
+     * @param ListSeriesRequest 请求对象
+     * @return AsyncInvoker<ListSeriesRequest, ListSeriesResponse>
+     */
+    public AsyncInvoker<ListSeriesRequest, ListSeriesResponse> listSeriesAsyncInvoker(ListSeriesRequest request) {
+        return new AsyncInvoker<ListSeriesRequest, ListSeriesResponse>(request, AomMeta.listSeries, hcClient);
+    }
+
 }

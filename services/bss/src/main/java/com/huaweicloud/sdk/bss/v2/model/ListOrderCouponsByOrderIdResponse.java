@@ -63,12 +63,15 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
 
     
     public ListOrderCouponsByOrderIdResponse addUserCouponsItem(CouponInfoV2 userCouponsItem) {
+        if(this.userCoupons == null) {
+            this.userCoupons = new ArrayList<>();
+        }
         this.userCoupons.add(userCouponsItem);
         return this;
     }
 
     public ListOrderCouponsByOrderIdResponse withUserCoupons(Consumer<List<CouponInfoV2>> userCouponsSetter) {
-        if(this.userCoupons == null ){
+        if(this.userCoupons == null) {
             this.userCoupons = new ArrayList<>();
         }
         userCouponsSetter.accept(this.userCoupons);

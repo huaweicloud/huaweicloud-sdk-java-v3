@@ -34,12 +34,15 @@ public class AddVaultResourceResponse extends SdkResponse {
 
     
     public AddVaultResourceResponse addAddResourceIdsItem(String addResourceIdsItem) {
+        if(this.addResourceIds == null) {
+            this.addResourceIds = new ArrayList<>();
+        }
         this.addResourceIds.add(addResourceIdsItem);
         return this;
     }
 
     public AddVaultResourceResponse withAddResourceIds(Consumer<List<String>> addResourceIdsSetter) {
-        if(this.addResourceIds == null ){
+        if(this.addResourceIds == null) {
             this.addResourceIds = new ArrayList<>();
         }
         addResourceIdsSetter.accept(this.addResourceIds);

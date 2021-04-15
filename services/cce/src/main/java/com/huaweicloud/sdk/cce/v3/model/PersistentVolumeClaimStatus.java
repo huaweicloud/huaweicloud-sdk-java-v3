@@ -44,12 +44,15 @@ public class PersistentVolumeClaimStatus  {
 
     
     public PersistentVolumeClaimStatus addAccessModesItem(String accessModesItem) {
+        if(this.accessModes == null) {
+            this.accessModes = new ArrayList<>();
+        }
         this.accessModes.add(accessModesItem);
         return this;
     }
 
     public PersistentVolumeClaimStatus withAccessModes(Consumer<List<String>> accessModesSetter) {
-        if(this.accessModes == null ){
+        if(this.accessModes == null) {
             this.accessModes = new ArrayList<>();
         }
         accessModesSetter.accept(this.accessModes);

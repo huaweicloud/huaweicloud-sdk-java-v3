@@ -69,12 +69,15 @@ public class ListNodePoolsResponse extends SdkResponse {
 
     
     public ListNodePoolsResponse addItemsItem(NodePool itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListNodePoolsResponse withItems(Consumer<List<NodePool>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

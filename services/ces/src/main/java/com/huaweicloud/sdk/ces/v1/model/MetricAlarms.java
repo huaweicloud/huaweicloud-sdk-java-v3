@@ -403,12 +403,15 @@ public class MetricAlarms  {
 
     
     public MetricAlarms addAlarmActionsItem(AlarmActions alarmActionsItem) {
+        if(this.alarmActions == null) {
+            this.alarmActions = new ArrayList<>();
+        }
         this.alarmActions.add(alarmActionsItem);
         return this;
     }
 
     public MetricAlarms withAlarmActions(Consumer<List<AlarmActions>> alarmActionsSetter) {
-        if(this.alarmActions == null ){
+        if(this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
         alarmActionsSetter.accept(this.alarmActions);
@@ -436,12 +439,15 @@ public class MetricAlarms  {
 
     
     public MetricAlarms addOkActionsItem(AlarmActions okActionsItem) {
+        if(this.okActions == null) {
+            this.okActions = new ArrayList<>();
+        }
         this.okActions.add(okActionsItem);
         return this;
     }
 
     public MetricAlarms withOkActions(Consumer<List<AlarmActions>> okActionsSetter) {
-        if(this.okActions == null ){
+        if(this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
         okActionsSetter.accept(this.okActions);
@@ -469,12 +475,15 @@ public class MetricAlarms  {
 
     
     public MetricAlarms addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
+        if(this.insufficientdataActions == null) {
+            this.insufficientdataActions = new ArrayList<>();
+        }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
 
     public MetricAlarms withInsufficientdataActions(Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
-        if(this.insufficientdataActions == null ){
+        if(this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
         insufficientdataActionsSetter.accept(this.insufficientdataActions);

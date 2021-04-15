@@ -35,12 +35,15 @@ public class BatchListMetricDataResponse extends SdkResponse {
 
     
     public BatchListMetricDataResponse addMetricsItem(BatchMetricData metricsItem) {
+        if(this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
         this.metrics.add(metricsItem);
         return this;
     }
 
     public BatchListMetricDataResponse withMetrics(Consumer<List<BatchMetricData>> metricsSetter) {
-        if(this.metrics == null ){
+        if(this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);

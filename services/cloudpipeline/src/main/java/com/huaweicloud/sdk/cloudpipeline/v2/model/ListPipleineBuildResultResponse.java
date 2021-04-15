@@ -119,12 +119,15 @@ public class ListPipleineBuildResultResponse extends SdkResponse {
 
     
     public ListPipleineBuildResultResponse addBuildResultsItem(PipelineBuildResult buildResultsItem) {
+        if(this.buildResults == null) {
+            this.buildResults = new ArrayList<>();
+        }
         this.buildResults.add(buildResultsItem);
         return this;
     }
 
     public ListPipleineBuildResultResponse withBuildResults(Consumer<List<PipelineBuildResult>> buildResultsSetter) {
-        if(this.buildResults == null ){
+        if(this.buildResults == null) {
             this.buildResults = new ArrayList<>();
         }
         buildResultsSetter.accept(this.buildResults);

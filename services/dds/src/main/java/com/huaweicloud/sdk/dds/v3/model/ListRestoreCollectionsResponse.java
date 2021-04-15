@@ -62,12 +62,15 @@ public class ListRestoreCollectionsResponse extends SdkResponse {
 
     
     public ListRestoreCollectionsResponse addCollectionsItem(String collectionsItem) {
+        if(this.collections == null) {
+            this.collections = new ArrayList<>();
+        }
         this.collections.add(collectionsItem);
         return this;
     }
 
     public ListRestoreCollectionsResponse withCollections(Consumer<List<String>> collectionsSetter) {
-        if(this.collections == null ){
+        if(this.collections == null) {
             this.collections = new ArrayList<>();
         }
         collectionsSetter.accept(this.collections);

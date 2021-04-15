@@ -234,12 +234,15 @@ public class ShowPipleineStatusResponse extends SdkResponse {
 
     
     public ShowPipleineStatusResponse addParametersItem(PipelineParameter parametersItem) {
+        if(this.parameters == null) {
+            this.parameters = new ArrayList<>();
+        }
         this.parameters.add(parametersItem);
         return this;
     }
 
     public ShowPipleineStatusResponse withParameters(Consumer<List<PipelineParameter>> parametersSetter) {
-        if(this.parameters == null ){
+        if(this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         parametersSetter.accept(this.parameters);
@@ -267,12 +270,15 @@ public class ShowPipleineStatusResponse extends SdkResponse {
 
     
     public ShowPipleineStatusResponse addStatesItem(PipelineStateStatus statesItem) {
+        if(this.states == null) {
+            this.states = new ArrayList<>();
+        }
         this.states.add(statesItem);
         return this;
     }
 
     public ShowPipleineStatusResponse withStates(Consumer<List<PipelineStateStatus>> statesSetter) {
-        if(this.states == null ){
+        if(this.states == null) {
             this.states = new ArrayList<>();
         }
         statesSetter.accept(this.states);

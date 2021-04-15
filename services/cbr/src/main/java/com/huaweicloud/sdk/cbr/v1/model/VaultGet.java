@@ -266,12 +266,15 @@ public class VaultGet  {
 
     
     public VaultGet addResourcesItem(VaultResourceIntancesResp resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public VaultGet withResources(Consumer<List<VaultResourceIntancesResp>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
@@ -299,12 +302,15 @@ public class VaultGet  {
 
     
     public VaultGet addTagsItem(TagsResp tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public VaultGet withTags(Consumer<List<TagsResp>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

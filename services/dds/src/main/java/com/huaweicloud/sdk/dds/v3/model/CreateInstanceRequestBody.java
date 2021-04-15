@@ -352,12 +352,15 @@ public class CreateInstanceRequestBody  {
 
     
     public CreateInstanceRequestBody addFlavorItem(CreateInstanceFlavorOption flavorItem) {
+        if(this.flavor == null) {
+            this.flavor = new ArrayList<>();
+        }
         this.flavor.add(flavorItem);
         return this;
     }
 
     public CreateInstanceRequestBody withFlavor(Consumer<List<CreateInstanceFlavorOption>> flavorSetter) {
-        if(this.flavor == null ){
+        if(this.flavor == null) {
             this.flavor = new ArrayList<>();
         }
         flavorSetter.accept(this.flavor);
@@ -480,12 +483,15 @@ public class CreateInstanceRequestBody  {
 
     
     public CreateInstanceRequestBody addServerGroupPoliciesItem(String serverGroupPoliciesItem) {
+        if(this.serverGroupPolicies == null) {
+            this.serverGroupPolicies = new ArrayList<>();
+        }
         this.serverGroupPolicies.add(serverGroupPoliciesItem);
         return this;
     }
 
     public CreateInstanceRequestBody withServerGroupPolicies(Consumer<List<String>> serverGroupPoliciesSetter) {
-        if(this.serverGroupPolicies == null ){
+        if(this.serverGroupPolicies == null) {
             this.serverGroupPolicies = new ArrayList<>();
         }
         serverGroupPoliciesSetter.accept(this.serverGroupPolicies);

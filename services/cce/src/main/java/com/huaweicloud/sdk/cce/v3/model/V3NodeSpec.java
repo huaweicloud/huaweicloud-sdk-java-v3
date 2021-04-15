@@ -203,12 +203,15 @@ public class V3NodeSpec  {
 
     
     public V3NodeSpec addDataVolumesItem(V3DataVolume dataVolumesItem) {
+        if(this.dataVolumes == null) {
+            this.dataVolumes = new ArrayList<>();
+        }
         this.dataVolumes.add(dataVolumesItem);
         return this;
     }
 
     public V3NodeSpec withDataVolumes(Consumer<List<V3DataVolume>> dataVolumesSetter) {
-        if(this.dataVolumes == null ){
+        if(this.dataVolumes == null) {
             this.dataVolumes = new ArrayList<>();
         }
         dataVolumesSetter.accept(this.dataVolumes);
@@ -281,12 +284,15 @@ public class V3NodeSpec  {
     
 
     public V3NodeSpec putExtendParamItem(String key, Object extendParamItem) {
+        if(this.extendParam == null) {
+            this.extendParam = new HashMap<>();
+        }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
 
     public V3NodeSpec withExtendParam(Consumer<Map<String, Object>> extendParamSetter) {
-        if(this.extendParam == null ){
+        if(this.extendParam == null) {
             this.extendParam = new HashMap<>();
         }
         extendParamSetter.accept(this.extendParam);
@@ -336,12 +342,15 @@ public class V3NodeSpec  {
     
 
     public V3NodeSpec putK8sTagsItem(String key, String k8sTagsItem) {
+        if(this.k8sTags == null) {
+            this.k8sTags = new HashMap<>();
+        }
         this.k8sTags.put(key, k8sTagsItem);
         return this;
     }
 
     public V3NodeSpec withK8sTags(Consumer<Map<String, String>> k8sTagsSetter) {
-        if(this.k8sTags == null ){
+        if(this.k8sTags == null) {
             this.k8sTags = new HashMap<>();
         }
         k8sTagsSetter.accept(this.k8sTags);
@@ -528,12 +537,15 @@ public class V3NodeSpec  {
 
     
     public V3NodeSpec addTaintsItem(Taint taintsItem) {
+        if(this.taints == null) {
+            this.taints = new ArrayList<>();
+        }
         this.taints.add(taintsItem);
         return this;
     }
 
     public V3NodeSpec withTaints(Consumer<List<Taint>> taintsSetter) {
-        if(this.taints == null ){
+        if(this.taints == null) {
             this.taints = new ArrayList<>();
         }
         taintsSetter.accept(this.taints);
@@ -561,12 +573,15 @@ public class V3NodeSpec  {
 
     
     public V3NodeSpec addUserTagsItem(UserTag userTagsItem) {
+        if(this.userTags == null) {
+            this.userTags = new ArrayList<>();
+        }
         this.userTags.add(userTagsItem);
         return this;
     }
 
     public V3NodeSpec withUserTags(Consumer<List<UserTag>> userTagsSetter) {
-        if(this.userTags == null ){
+        if(this.userTags == null) {
             this.userTags = new ArrayList<>();
         }
         userTagsSetter.accept(this.userTags);

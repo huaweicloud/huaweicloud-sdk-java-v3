@@ -89,12 +89,15 @@ public class OfficialWebsiteRatingResult  {
 
     
     public OfficialWebsiteRatingResult addProductRatingResultsItem(PeriodProductOfficialRatingResult productRatingResultsItem) {
+        if(this.productRatingResults == null) {
+            this.productRatingResults = new ArrayList<>();
+        }
         this.productRatingResults.add(productRatingResultsItem);
         return this;
     }
 
     public OfficialWebsiteRatingResult withProductRatingResults(Consumer<List<PeriodProductOfficialRatingResult>> productRatingResultsSetter) {
-        if(this.productRatingResults == null ){
+        if(this.productRatingResults == null) {
             this.productRatingResults = new ArrayList<>();
         }
         productRatingResultsSetter.accept(this.productRatingResults);

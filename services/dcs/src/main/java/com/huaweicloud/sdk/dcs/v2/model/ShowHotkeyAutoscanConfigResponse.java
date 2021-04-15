@@ -96,12 +96,15 @@ public class ShowHotkeyAutoscanConfigResponse extends SdkResponse {
 
     
     public ShowHotkeyAutoscanConfigResponse addScheduleAtItem(String scheduleAtItem) {
+        if(this.scheduleAt == null) {
+            this.scheduleAt = new ArrayList<>();
+        }
         this.scheduleAt.add(scheduleAtItem);
         return this;
     }
 
     public ShowHotkeyAutoscanConfigResponse withScheduleAt(Consumer<List<String>> scheduleAtSetter) {
-        if(this.scheduleAt == null ){
+        if(this.scheduleAt == null) {
             this.scheduleAt = new ArrayList<>();
         }
         scheduleAtSetter.accept(this.scheduleAt);

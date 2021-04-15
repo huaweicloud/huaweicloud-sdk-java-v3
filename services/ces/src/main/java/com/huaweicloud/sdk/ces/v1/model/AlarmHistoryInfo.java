@@ -351,12 +351,15 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addAlarmActionsItem(AlarmActions alarmActionsItem) {
+        if(this.alarmActions == null) {
+            this.alarmActions = new ArrayList<>();
+        }
         this.alarmActions.add(alarmActionsItem);
         return this;
     }
 
     public AlarmHistoryInfo withAlarmActions(Consumer<List<AlarmActions>> alarmActionsSetter) {
-        if(this.alarmActions == null ){
+        if(this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
         alarmActionsSetter.accept(this.alarmActions);
@@ -384,12 +387,15 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addOkActionsItem(AlarmActions okActionsItem) {
+        if(this.okActions == null) {
+            this.okActions = new ArrayList<>();
+        }
         this.okActions.add(okActionsItem);
         return this;
     }
 
     public AlarmHistoryInfo withOkActions(Consumer<List<AlarmActions>> okActionsSetter) {
-        if(this.okActions == null ){
+        if(this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
         okActionsSetter.accept(this.okActions);
@@ -417,12 +423,15 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
+        if(this.insufficientdataActions == null) {
+            this.insufficientdataActions = new ArrayList<>();
+        }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
 
     public AlarmHistoryInfo withInsufficientdataActions(Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
-        if(this.insufficientdataActions == null ){
+        if(this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
         insufficientdataActionsSetter.accept(this.insufficientdataActions);
@@ -538,12 +547,15 @@ public class AlarmHistoryInfo  {
 
     
     public AlarmHistoryInfo addDatapointsItem(DataPointForAlarmHistory datapointsItem) {
+        if(this.datapoints == null) {
+            this.datapoints = new ArrayList<>();
+        }
         this.datapoints.add(datapointsItem);
         return this;
     }
 
     public AlarmHistoryInfo withDatapoints(Consumer<List<DataPointForAlarmHistory>> datapointsSetter) {
-        if(this.datapoints == null ){
+        if(this.datapoints == null) {
             this.datapoints = new ArrayList<>();
         }
         datapointsSetter.accept(this.datapoints);

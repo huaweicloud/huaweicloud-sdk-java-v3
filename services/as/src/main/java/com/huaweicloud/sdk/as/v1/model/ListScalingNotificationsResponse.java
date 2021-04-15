@@ -35,12 +35,15 @@ public class ListScalingNotificationsResponse extends SdkResponse {
 
     
     public ListScalingNotificationsResponse addTopicsItem(Topics topicsItem) {
+        if(this.topics == null) {
+            this.topics = new ArrayList<>();
+        }
         this.topics.add(topicsItem);
         return this;
     }
 
     public ListScalingNotificationsResponse withTopics(Consumer<List<Topics>> topicsSetter) {
-        if(this.topics == null ){
+        if(this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);

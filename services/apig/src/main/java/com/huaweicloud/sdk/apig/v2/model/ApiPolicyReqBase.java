@@ -184,12 +184,15 @@ public class ApiPolicyReqBase  {
 
     
     public ApiPolicyReqBase addBackendParamsItem(BackendParamBase backendParamsItem) {
+        if(this.backendParams == null) {
+            this.backendParams = new ArrayList<>();
+        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
 
     public ApiPolicyReqBase withBackendParams(Consumer<List<BackendParamBase>> backendParamsSetter) {
-        if(this.backendParams == null ){
+        if(this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
@@ -217,12 +220,15 @@ public class ApiPolicyReqBase  {
 
     
     public ApiPolicyReqBase addConditionsItem(ApiConditionBase conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
         this.conditions.add(conditionsItem);
         return this;
     }
 
     public ApiPolicyReqBase withConditions(Consumer<List<ApiConditionBase>> conditionsSetter) {
-        if(this.conditions == null ){
+        if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         conditionsSetter.accept(this.conditions);

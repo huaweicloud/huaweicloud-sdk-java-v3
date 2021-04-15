@@ -50,12 +50,15 @@ public class CreateTaskRequestV2  {
 
     
     public CreateTaskRequestV2 addCheckTypeItem(String checkTypeItem) {
+        if(this.checkType == null) {
+            this.checkType = new ArrayList<>();
+        }
         this.checkType.add(checkTypeItem);
         return this;
     }
 
     public CreateTaskRequestV2 withCheckType(Consumer<List<String>> checkTypeSetter) {
-        if(this.checkType == null ){
+        if(this.checkType == null) {
             this.checkType = new ArrayList<>();
         }
         checkTypeSetter.accept(this.checkType);
@@ -127,12 +130,15 @@ public class CreateTaskRequestV2  {
 
     
     public CreateTaskRequestV2 addLanguageItem(String languageItem) {
+        if(this.language == null) {
+            this.language = new ArrayList<>();
+        }
         this.language.add(languageItem);
         return this;
     }
 
     public CreateTaskRequestV2 withLanguage(Consumer<List<String>> languageSetter) {
-        if(this.language == null ){
+        if(this.language == null) {
             this.language = new ArrayList<>();
         }
         languageSetter.accept(this.language);

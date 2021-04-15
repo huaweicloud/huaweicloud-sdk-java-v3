@@ -35,12 +35,15 @@ public class ShowBaremetalServerVolumeInfoResponse extends SdkResponse {
 
     
     public ShowBaremetalServerVolumeInfoResponse addVolumeAttachmentsItem(VolumeAttachments volumeAttachmentsItem) {
+        if(this.volumeAttachments == null) {
+            this.volumeAttachments = new ArrayList<>();
+        }
         this.volumeAttachments.add(volumeAttachmentsItem);
         return this;
     }
 
     public ShowBaremetalServerVolumeInfoResponse withVolumeAttachments(Consumer<List<VolumeAttachments>> volumeAttachmentsSetter) {
-        if(this.volumeAttachments == null ){
+        if(this.volumeAttachments == null) {
             this.volumeAttachments = new ArrayList<>();
         }
         volumeAttachmentsSetter.accept(this.volumeAttachments);

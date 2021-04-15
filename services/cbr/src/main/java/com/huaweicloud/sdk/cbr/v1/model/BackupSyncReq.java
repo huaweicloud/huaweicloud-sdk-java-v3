@@ -33,12 +33,15 @@ public class BackupSyncReq  {
 
     
     public BackupSyncReq addSyncItem(BackupSync syncItem) {
+        if(this.sync == null) {
+            this.sync = new ArrayList<>();
+        }
         this.sync.add(syncItem);
         return this;
     }
 
     public BackupSyncReq withSync(Consumer<List<BackupSync>> syncSetter) {
-        if(this.sync == null ){
+        if(this.sync == null) {
             this.sync = new ArrayList<>();
         }
         syncSetter.accept(this.sync);

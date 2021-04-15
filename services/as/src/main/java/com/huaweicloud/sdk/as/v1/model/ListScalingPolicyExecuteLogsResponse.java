@@ -119,12 +119,15 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
 
     
     public ListScalingPolicyExecuteLogsResponse addScalingPolicyExecuteLogItem(ScalingPolicyExecuteLogList scalingPolicyExecuteLogItem) {
+        if(this.scalingPolicyExecuteLog == null) {
+            this.scalingPolicyExecuteLog = new ArrayList<>();
+        }
         this.scalingPolicyExecuteLog.add(scalingPolicyExecuteLogItem);
         return this;
     }
 
     public ListScalingPolicyExecuteLogsResponse withScalingPolicyExecuteLog(Consumer<List<ScalingPolicyExecuteLogList>> scalingPolicyExecuteLogSetter) {
-        if(this.scalingPolicyExecuteLog == null ){
+        if(this.scalingPolicyExecuteLog == null) {
             this.scalingPolicyExecuteLog = new ArrayList<>();
         }
         scalingPolicyExecuteLogSetter.accept(this.scalingPolicyExecuteLog);

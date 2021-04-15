@@ -439,12 +439,15 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     
     public ShowTemplateDetailResponse addParameterItem(TemplateParam parameterItem) {
+        if(this.parameter == null) {
+            this.parameter = new ArrayList<>();
+        }
         this.parameter.add(parameterItem);
         return this;
     }
 
     public ShowTemplateDetailResponse withParameter(Consumer<List<TemplateParam>> parameterSetter) {
-        if(this.parameter == null ){
+        if(this.parameter == null) {
             this.parameter = new ArrayList<>();
         }
         parameterSetter.accept(this.parameter);

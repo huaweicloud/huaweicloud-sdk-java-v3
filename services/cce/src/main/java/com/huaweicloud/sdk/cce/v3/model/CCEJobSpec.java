@@ -88,12 +88,15 @@ public class CCEJobSpec  {
     
 
     public CCEJobSpec putExtendParamItem(String key, String extendParamItem) {
+        if(this.extendParam == null) {
+            this.extendParam = new HashMap<>();
+        }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
 
     public CCEJobSpec withExtendParam(Consumer<Map<String, String>> extendParamSetter) {
-        if(this.extendParam == null ){
+        if(this.extendParam == null) {
             this.extendParam = new HashMap<>();
         }
         extendParamSetter.accept(this.extendParam);
@@ -164,12 +167,15 @@ public class CCEJobSpec  {
 
     
     public CCEJobSpec addSubJobsItem(CCEJob subJobsItem) {
+        if(this.subJobs == null) {
+            this.subJobs = new ArrayList<>();
+        }
         this.subJobs.add(subJobsItem);
         return this;
     }
 
     public CCEJobSpec withSubJobs(Consumer<List<CCEJob>> subJobsSetter) {
-        if(this.subJobs == null ){
+        if(this.subJobs == null) {
             this.subJobs = new ArrayList<>();
         }
         subJobsSetter.accept(this.subJobs);

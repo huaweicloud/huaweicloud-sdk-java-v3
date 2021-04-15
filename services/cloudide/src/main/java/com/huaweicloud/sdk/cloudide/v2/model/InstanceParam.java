@@ -560,12 +560,15 @@ public class InstanceParam  {
 
     
     public InstanceParam addPluginEnableListItem(String pluginEnableListItem) {
+        if(this.pluginEnableList == null) {
+            this.pluginEnableList = new ArrayList<>();
+        }
         this.pluginEnableList.add(pluginEnableListItem);
         return this;
     }
 
     public InstanceParam withPluginEnableList(Consumer<List<String>> pluginEnableListSetter) {
-        if(this.pluginEnableList == null ){
+        if(this.pluginEnableList == null) {
             this.pluginEnableList = new ArrayList<>();
         }
         pluginEnableListSetter.accept(this.pluginEnableList);
@@ -594,12 +597,15 @@ public class InstanceParam  {
     
 
     public InstanceParam putPluginVarsItem(String key, String pluginVarsItem) {
+        if(this.pluginVars == null) {
+            this.pluginVars = new HashMap<>();
+        }
         this.pluginVars.put(key, pluginVarsItem);
         return this;
     }
 
     public InstanceParam withPluginVars(Consumer<Map<String, String>> pluginVarsSetter) {
-        if(this.pluginVars == null ){
+        if(this.pluginVars == null) {
             this.pluginVars = new HashMap<>();
         }
         pluginVarsSetter.accept(this.pluginVars);

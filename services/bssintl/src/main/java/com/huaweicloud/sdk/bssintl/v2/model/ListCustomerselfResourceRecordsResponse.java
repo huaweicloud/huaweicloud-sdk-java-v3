@@ -47,12 +47,15 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
 
     
     public ListCustomerselfResourceRecordsResponse addFeeRecordsItem(ResFeeRecordV2 feeRecordsItem) {
+        if(this.feeRecords == null) {
+            this.feeRecords = new ArrayList<>();
+        }
         this.feeRecords.add(feeRecordsItem);
         return this;
     }
 
     public ListCustomerselfResourceRecordsResponse withFeeRecords(Consumer<List<ResFeeRecordV2>> feeRecordsSetter) {
-        if(this.feeRecords == null ){
+        if(this.feeRecords == null) {
             this.feeRecords = new ArrayList<>();
         }
         feeRecordsSetter.accept(this.feeRecords);

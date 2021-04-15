@@ -37,12 +37,15 @@ public class ShowBlockchainNodesResponse extends SdkResponse {
     
 
     public ShowBlockchainNodesResponse putNodeOrgsItem(String key, Org nodeOrgsItem) {
+        if(this.nodeOrgs == null) {
+            this.nodeOrgs = new HashMap<>();
+        }
         this.nodeOrgs.put(key, nodeOrgsItem);
         return this;
     }
 
     public ShowBlockchainNodesResponse withNodeOrgs(Consumer<Map<String, Org>> nodeOrgsSetter) {
-        if(this.nodeOrgs == null ){
+        if(this.nodeOrgs == null) {
             this.nodeOrgs = new HashMap<>();
         }
         nodeOrgsSetter.accept(this.nodeOrgs);

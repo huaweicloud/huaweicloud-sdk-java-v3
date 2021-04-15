@@ -54,12 +54,15 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsResponse addRouterItem(String routerItem) {
+        if(this.router == null) {
+            this.router = new ArrayList<>();
+        }
         this.router.add(routerItem);
         return this;
     }
 
     public ListMonitoredObjectsResponse withRouter(Consumer<List<String>> routerSetter) {
-        if(this.router == null ){
+        if(this.router == null) {
             this.router = new ArrayList<>();
         }
         routerSetter.accept(this.router);
@@ -87,12 +90,15 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsResponse addChildrenItem(DimChild childrenItem) {
+        if(this.children == null) {
+            this.children = new ArrayList<>();
+        }
         this.children.add(childrenItem);
         return this;
     }
 
     public ListMonitoredObjectsResponse withChildren(Consumer<List<DimChild>> childrenSetter) {
-        if(this.children == null ){
+        if(this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);
@@ -120,12 +126,15 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsResponse addInstancesItem(InstancesMonitoredObject instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ListMonitoredObjectsResponse withInstances(Consumer<List<InstancesMonitoredObject>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);

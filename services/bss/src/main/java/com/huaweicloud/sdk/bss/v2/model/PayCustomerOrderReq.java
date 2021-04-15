@@ -68,12 +68,15 @@ public class PayCustomerOrderReq  {
 
     
     public PayCustomerOrderReq addCouponInfosItem(CouponSimpleInfoOrderPay couponInfosItem) {
+        if(this.couponInfos == null) {
+            this.couponInfos = new ArrayList<>();
+        }
         this.couponInfos.add(couponInfosItem);
         return this;
     }
 
     public PayCustomerOrderReq withCouponInfos(Consumer<List<CouponSimpleInfoOrderPay>> couponInfosSetter) {
-        if(this.couponInfos == null ){
+        if(this.couponInfos == null) {
             this.couponInfos = new ArrayList<>();
         }
         couponInfosSetter.accept(this.couponInfos);
@@ -101,12 +104,15 @@ public class PayCustomerOrderReq  {
 
     
     public PayCustomerOrderReq addDiscountInfosItem(DiscountSimpleInfo discountInfosItem) {
+        if(this.discountInfos == null) {
+            this.discountInfos = new ArrayList<>();
+        }
         this.discountInfos.add(discountInfosItem);
         return this;
     }
 
     public PayCustomerOrderReq withDiscountInfos(Consumer<List<DiscountSimpleInfo>> discountInfosSetter) {
-        if(this.discountInfos == null ){
+        if(this.discountInfos == null) {
             this.discountInfos = new ArrayList<>();
         }
         discountInfosSetter.accept(this.discountInfos);

@@ -125,12 +125,15 @@ public class CreateSubCustomerReqV2  {
 
     
     public CreateSubCustomerReqV2 addPermissionIdsItem(String permissionIdsItem) {
+        if(this.permissionIds == null) {
+            this.permissionIds = new ArrayList<>();
+        }
         this.permissionIds.add(permissionIdsItem);
         return this;
     }
 
     public CreateSubCustomerReqV2 withPermissionIds(Consumer<List<String>> permissionIdsSetter) {
-        if(this.permissionIds == null ){
+        if(this.permissionIds == null) {
             this.permissionIds = new ArrayList<>();
         }
         permissionIdsSetter.accept(this.permissionIds);

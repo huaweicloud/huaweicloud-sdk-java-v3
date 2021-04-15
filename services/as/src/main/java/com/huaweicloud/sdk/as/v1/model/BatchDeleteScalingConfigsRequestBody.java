@@ -32,12 +32,15 @@ public class BatchDeleteScalingConfigsRequestBody  {
 
     
     public BatchDeleteScalingConfigsRequestBody addScalingConfigurationIdItem(String scalingConfigurationIdItem) {
+        if(this.scalingConfigurationId == null) {
+            this.scalingConfigurationId = new ArrayList<>();
+        }
         this.scalingConfigurationId.add(scalingConfigurationIdItem);
         return this;
     }
 
     public BatchDeleteScalingConfigsRequestBody withScalingConfigurationId(Consumer<List<String>> scalingConfigurationIdSetter) {
-        if(this.scalingConfigurationId == null ){
+        if(this.scalingConfigurationId == null) {
             this.scalingConfigurationId = new ArrayList<>();
         }
         scalingConfigurationIdSetter.accept(this.scalingConfigurationId);

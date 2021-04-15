@@ -232,12 +232,15 @@ public class ExtendInfo  {
 
     
     public ExtendInfo addStepsItem(ExternalServiceCaseStep stepsItem) {
+        if(this.steps == null) {
+            this.steps = new ArrayList<>();
+        }
         this.steps.add(stepsItem);
         return this;
     }
 
     public ExtendInfo withSteps(Consumer<List<ExternalServiceCaseStep>> stepsSetter) {
-        if(this.steps == null ){
+        if(this.steps == null) {
             this.steps = new ArrayList<>();
         }
         stepsSetter.accept(this.steps);
@@ -265,12 +268,15 @@ public class ExtendInfo  {
 
     
     public ExtendInfo addLabelListItem(AssignedUserInfo labelListItem) {
+        if(this.labelList == null) {
+            this.labelList = new ArrayList<>();
+        }
         this.labelList.add(labelListItem);
         return this;
     }
 
     public ExtendInfo withLabelList(Consumer<List<AssignedUserInfo>> labelListSetter) {
-        if(this.labelList == null ){
+        if(this.labelList == null) {
             this.labelList = new ArrayList<>();
         }
         labelListSetter.accept(this.labelList);
@@ -298,12 +304,15 @@ public class ExtendInfo  {
 
     
     public ExtendInfo addDefectListItem(AssignedUserInfo defectListItem) {
+        if(this.defectList == null) {
+            this.defectList = new ArrayList<>();
+        }
         this.defectList.add(defectListItem);
         return this;
     }
 
     public ExtendInfo withDefectList(Consumer<List<AssignedUserInfo>> defectListSetter) {
-        if(this.defectList == null ){
+        if(this.defectList == null) {
             this.defectList = new ArrayList<>();
         }
         defectListSetter.accept(this.defectList);

@@ -57,12 +57,15 @@ public class BackupRestore  {
 
     
     public BackupRestore addMappingsItem(BackupRestoreServerMapping mappingsItem) {
+        if(this.mappings == null) {
+            this.mappings = new ArrayList<>();
+        }
         this.mappings.add(mappingsItem);
         return this;
     }
 
     public BackupRestore withMappings(Consumer<List<BackupRestoreServerMapping>> mappingsSetter) {
-        if(this.mappings == null ){
+        if(this.mappings == null) {
             this.mappings = new ArrayList<>();
         }
         mappingsSetter.accept(this.mappings);

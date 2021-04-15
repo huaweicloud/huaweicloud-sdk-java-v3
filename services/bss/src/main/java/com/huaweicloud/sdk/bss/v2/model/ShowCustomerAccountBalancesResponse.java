@@ -53,12 +53,15 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
 
     
     public ShowCustomerAccountBalancesResponse addAccountBalancesItem(AccountBalanceV3 accountBalancesItem) {
+        if(this.accountBalances == null) {
+            this.accountBalances = new ArrayList<>();
+        }
         this.accountBalances.add(accountBalancesItem);
         return this;
     }
 
     public ShowCustomerAccountBalancesResponse withAccountBalances(Consumer<List<AccountBalanceV3>> accountBalancesSetter) {
-        if(this.accountBalances == null ){
+        if(this.accountBalances == null) {
             this.accountBalances = new ArrayList<>();
         }
         accountBalancesSetter.accept(this.accountBalances);

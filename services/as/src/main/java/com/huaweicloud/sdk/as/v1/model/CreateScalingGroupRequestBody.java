@@ -666,12 +666,15 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addLbaasListenersItem(LbaasListeners lbaasListenersItem) {
+        if(this.lbaasListeners == null) {
+            this.lbaasListeners = new ArrayList<>();
+        }
         this.lbaasListeners.add(lbaasListenersItem);
         return this;
     }
 
     public CreateScalingGroupRequestBody withLbaasListeners(Consumer<List<LbaasListeners>> lbaasListenersSetter) {
-        if(this.lbaasListeners == null ){
+        if(this.lbaasListeners == null) {
             this.lbaasListeners = new ArrayList<>();
         }
         lbaasListenersSetter.accept(this.lbaasListeners);
@@ -699,12 +702,15 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addAvailableZonesItem(String availableZonesItem) {
+        if(this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
         this.availableZones.add(availableZonesItem);
         return this;
     }
 
     public CreateScalingGroupRequestBody withAvailableZones(Consumer<List<String>> availableZonesSetter) {
-        if(this.availableZones == null ){
+        if(this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         availableZonesSetter.accept(this.availableZones);
@@ -732,12 +738,15 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addNetworksItem(Networks networksItem) {
+        if(this.networks == null) {
+            this.networks = new ArrayList<>();
+        }
         this.networks.add(networksItem);
         return this;
     }
 
     public CreateScalingGroupRequestBody withNetworks(Consumer<List<Networks>> networksSetter) {
-        if(this.networks == null ){
+        if(this.networks == null) {
             this.networks = new ArrayList<>();
         }
         networksSetter.accept(this.networks);
@@ -765,12 +774,15 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public CreateScalingGroupRequestBody withSecurityGroups(Consumer<List<SecurityGroups>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -910,12 +922,15 @@ public class CreateScalingGroupRequestBody  {
 
     
     public CreateScalingGroupRequestBody addNotificationsItem(String notificationsItem) {
+        if(this.notifications == null) {
+            this.notifications = new ArrayList<>();
+        }
         this.notifications.add(notificationsItem);
         return this;
     }
 
     public CreateScalingGroupRequestBody withNotifications(Consumer<List<String>> notificationsSetter) {
-        if(this.notifications == null ){
+        if(this.notifications == null) {
             this.notifications = new ArrayList<>();
         }
         notificationsSetter.accept(this.notifications);

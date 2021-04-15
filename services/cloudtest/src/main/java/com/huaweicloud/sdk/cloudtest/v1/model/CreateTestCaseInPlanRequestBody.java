@@ -60,12 +60,15 @@ public class CreateTestCaseInPlanRequestBody  {
 
     
     public CreateTestCaseInPlanRequestBody addTestcaseIdListItem(String testcaseIdListItem) {
+        if(this.testcaseIdList == null) {
+            this.testcaseIdList = new ArrayList<>();
+        }
         this.testcaseIdList.add(testcaseIdListItem);
         return this;
     }
 
     public CreateTestCaseInPlanRequestBody withTestcaseIdList(Consumer<List<String>> testcaseIdListSetter) {
-        if(this.testcaseIdList == null ){
+        if(this.testcaseIdList == null) {
             this.testcaseIdList = new ArrayList<>();
         }
         testcaseIdListSetter.accept(this.testcaseIdList);

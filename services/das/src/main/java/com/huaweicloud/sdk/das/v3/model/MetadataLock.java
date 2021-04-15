@@ -459,12 +459,15 @@ public class MetadataLock  {
 
     
     public MetadataLock addBlockProcessItem(Process blockProcessItem) {
+        if(this.blockProcess == null) {
+            this.blockProcess = new ArrayList<>();
+        }
         this.blockProcess.add(blockProcessItem);
         return this;
     }
 
     public MetadataLock withBlockProcess(Consumer<List<Process>> blockProcessSetter) {
-        if(this.blockProcess == null ){
+        if(this.blockProcess == null) {
             this.blockProcess = new ArrayList<>();
         }
         blockProcessSetter.accept(this.blockProcess);
@@ -492,12 +495,15 @@ public class MetadataLock  {
 
     
     public MetadataLock addWaitProcessItem(Process waitProcessItem) {
+        if(this.waitProcess == null) {
+            this.waitProcess = new ArrayList<>();
+        }
         this.waitProcess.add(waitProcessItem);
         return this;
     }
 
     public MetadataLock withWaitProcess(Consumer<List<Process>> waitProcessSetter) {
-        if(this.waitProcess == null ){
+        if(this.waitProcess == null) {
             this.waitProcess = new ArrayList<>();
         }
         waitProcessSetter.accept(this.waitProcess);

@@ -95,12 +95,15 @@ public class CreatePlanRequestBody  {
 
     
     public CreatePlanRequestBody addServiceIdListItem(Integer serviceIdListItem) {
+        if(this.serviceIdList == null) {
+            this.serviceIdList = new ArrayList<>();
+        }
         this.serviceIdList.add(serviceIdListItem);
         return this;
     }
 
     public CreatePlanRequestBody withServiceIdList(Consumer<List<Integer>> serviceIdListSetter) {
-        if(this.serviceIdList == null ){
+        if(this.serviceIdList == null) {
             this.serviceIdList = new ArrayList<>();
         }
         serviceIdListSetter.accept(this.serviceIdList);

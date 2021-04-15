@@ -433,12 +433,15 @@ public class ShowBigkeyScanTaskDetailsResponse extends SdkResponse {
 
     
     public ShowBigkeyScanTaskDetailsResponse addKeysItem(BigkeysBody keysItem) {
+        if(this.keys == null) {
+            this.keys = new ArrayList<>();
+        }
         this.keys.add(keysItem);
         return this;
     }
 
     public ShowBigkeyScanTaskDetailsResponse withKeys(Consumer<List<BigkeysBody>> keysSetter) {
-        if(this.keys == null ){
+        if(this.keys == null) {
             this.keys = new ArrayList<>();
         }
         keysSetter.accept(this.keys);

@@ -33,12 +33,15 @@ public class BatchCreateChannelsRequestBody  {
 
     
     public BatchCreateChannelsRequestBody addChannelsItem(ChannelCreateInfo channelsItem) {
+        if(this.channels == null) {
+            this.channels = new ArrayList<>();
+        }
         this.channels.add(channelsItem);
         return this;
     }
 
     public BatchCreateChannelsRequestBody withChannels(Consumer<List<ChannelCreateInfo>> channelsSetter) {
-        if(this.channels == null ){
+        if(this.channels == null) {
             this.channels = new ArrayList<>();
         }
         channelsSetter.accept(this.channels);

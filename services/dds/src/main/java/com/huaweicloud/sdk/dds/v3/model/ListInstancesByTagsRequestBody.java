@@ -206,12 +206,15 @@ public class ListInstancesByTagsRequestBody  {
 
     
     public ListInstancesByTagsRequestBody addMatchesItem(QueryMatchItem matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
+        }
         this.matches.add(matchesItem);
         return this;
     }
 
     public ListInstancesByTagsRequestBody withMatches(Consumer<List<QueryMatchItem>> matchesSetter) {
-        if(this.matches == null ){
+        if(this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
@@ -239,12 +242,15 @@ public class ListInstancesByTagsRequestBody  {
 
     
     public ListInstancesByTagsRequestBody addTagsItem(QueryTagItem tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListInstancesByTagsRequestBody withTags(Consumer<List<QueryTagItem>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

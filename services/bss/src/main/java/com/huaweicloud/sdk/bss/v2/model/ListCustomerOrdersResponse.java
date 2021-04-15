@@ -63,12 +63,15 @@ public class ListCustomerOrdersResponse extends SdkResponse {
 
     
     public ListCustomerOrdersResponse addOrderInfosItem(CustomerOrderV2 orderInfosItem) {
+        if(this.orderInfos == null) {
+            this.orderInfos = new ArrayList<>();
+        }
         this.orderInfos.add(orderInfosItem);
         return this;
     }
 
     public ListCustomerOrdersResponse withOrderInfos(Consumer<List<CustomerOrderV2>> orderInfosSetter) {
-        if(this.orderInfos == null ){
+        if(this.orderInfos == null) {
             this.orderInfos = new ArrayList<>();
         }
         orderInfosSetter.accept(this.orderInfos);

@@ -62,12 +62,15 @@ public class ListRestoreDatabasesResponse extends SdkResponse {
 
     
     public ListRestoreDatabasesResponse addDatabasesItem(String databasesItem) {
+        if(this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
         this.databases.add(databasesItem);
         return this;
     }
 
     public ListRestoreDatabasesResponse withDatabases(Consumer<List<String>> databasesSetter) {
-        if(this.databases == null ){
+        if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);

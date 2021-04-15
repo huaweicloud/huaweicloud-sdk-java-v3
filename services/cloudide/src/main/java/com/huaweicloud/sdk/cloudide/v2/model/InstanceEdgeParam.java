@@ -563,12 +563,15 @@ public class InstanceEdgeParam  {
 
     
     public InstanceEdgeParam addPluginsItem(Plugin pluginsItem) {
+        if(this.plugins == null) {
+            this.plugins = new ArrayList<>();
+        }
         this.plugins.add(pluginsItem);
         return this;
     }
 
     public InstanceEdgeParam withPlugins(Consumer<List<Plugin>> pluginsSetter) {
-        if(this.plugins == null ){
+        if(this.plugins == null) {
             this.plugins = new ArrayList<>();
         }
         pluginsSetter.accept(this.plugins);

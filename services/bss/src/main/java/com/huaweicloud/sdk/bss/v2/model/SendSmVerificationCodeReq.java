@@ -119,12 +119,15 @@ public class SendSmVerificationCodeReq  {
 
     
     public SendSmVerificationCodeReq addSmTemplateArgsItem(TemplateArgs smTemplateArgsItem) {
+        if(this.smTemplateArgs == null) {
+            this.smTemplateArgs = new ArrayList<>();
+        }
         this.smTemplateArgs.add(smTemplateArgsItem);
         return this;
     }
 
     public SendSmVerificationCodeReq withSmTemplateArgs(Consumer<List<TemplateArgs>> smTemplateArgsSetter) {
-        if(this.smTemplateArgs == null ){
+        if(this.smTemplateArgs == null) {
             this.smTemplateArgs = new ArrayList<>();
         }
         smTemplateArgsSetter.accept(this.smTemplateArgs);

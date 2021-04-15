@@ -63,12 +63,15 @@ public class ListIssuedPartnerCouponsResponse extends SdkResponse {
 
     
     public ListIssuedPartnerCouponsResponse addUserCouponsItem(IQueryUserPartnerCouponsResultV2 userCouponsItem) {
+        if(this.userCoupons == null) {
+            this.userCoupons = new ArrayList<>();
+        }
         this.userCoupons.add(userCouponsItem);
         return this;
     }
 
     public ListIssuedPartnerCouponsResponse withUserCoupons(Consumer<List<IQueryUserPartnerCouponsResultV2>> userCouponsSetter) {
-        if(this.userCoupons == null ){
+        if(this.userCoupons == null) {
             this.userCoupons = new ArrayList<>();
         }
         userCouponsSetter.accept(this.userCoupons);

@@ -68,12 +68,15 @@ public class CreateScalingNotificationResponse extends SdkResponse {
 
     
     public CreateScalingNotificationResponse addTopicSceneItem(String topicSceneItem) {
+        if(this.topicScene == null) {
+            this.topicScene = new ArrayList<>();
+        }
         this.topicScene.add(topicSceneItem);
         return this;
     }
 
     public CreateScalingNotificationResponse withTopicScene(Consumer<List<String>> topicSceneSetter) {
-        if(this.topicScene == null ){
+        if(this.topicScene == null) {
             this.topicScene = new ArrayList<>();
         }
         topicSceneSetter.accept(this.topicScene);

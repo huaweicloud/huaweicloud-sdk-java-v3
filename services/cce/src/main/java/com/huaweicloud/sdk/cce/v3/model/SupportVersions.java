@@ -60,12 +60,15 @@ public class SupportVersions  {
 
     
     public SupportVersions addClusterVersionItem(String clusterVersionItem) {
+        if(this.clusterVersion == null) {
+            this.clusterVersion = new ArrayList<>();
+        }
         this.clusterVersion.add(clusterVersionItem);
         return this;
     }
 
     public SupportVersions withClusterVersion(Consumer<List<String>> clusterVersionSetter) {
-        if(this.clusterVersion == null ){
+        if(this.clusterVersion == null) {
             this.clusterVersion = new ArrayList<>();
         }
         clusterVersionSetter.accept(this.clusterVersion);

@@ -63,12 +63,15 @@ public class ShowMultiAccountTransferAmountResponse extends SdkResponse {
 
     
     public ShowMultiAccountTransferAmountResponse addAmountInfosItem(TransferAmountInfoV2 amountInfosItem) {
+        if(this.amountInfos == null) {
+            this.amountInfos = new ArrayList<>();
+        }
         this.amountInfos.add(amountInfosItem);
         return this;
     }
 
     public ShowMultiAccountTransferAmountResponse withAmountInfos(Consumer<List<TransferAmountInfoV2>> amountInfosSetter) {
-        if(this.amountInfos == null ){
+        if(this.amountInfos == null) {
             this.amountInfos = new ArrayList<>();
         }
         amountInfosSetter.accept(this.amountInfos);

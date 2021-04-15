@@ -51,12 +51,15 @@ public class QuerySampleParam  {
 
     
     public QuerySampleParam addSamplesItem(QuerySample samplesItem) {
+        if(this.samples == null) {
+            this.samples = new ArrayList<>();
+        }
         this.samples.add(samplesItem);
         return this;
     }
 
     public QuerySampleParam withSamples(Consumer<List<QuerySample>> samplesSetter) {
-        if(this.samples == null ){
+        if(this.samples == null) {
             this.samples = new ArrayList<>();
         }
         samplesSetter.accept(this.samples);
@@ -84,12 +87,15 @@ public class QuerySampleParam  {
 
     
     public QuerySampleParam addStatisticsItem(String statisticsItem) {
+        if(this.statistics == null) {
+            this.statistics = new ArrayList<>();
+        }
         this.statistics.add(statisticsItem);
         return this;
     }
 
     public QuerySampleParam withStatistics(Consumer<List<String>> statisticsSetter) {
-        if(this.statistics == null ){
+        if(this.statistics == null) {
             this.statistics = new ArrayList<>();
         }
         statisticsSetter.accept(this.statistics);

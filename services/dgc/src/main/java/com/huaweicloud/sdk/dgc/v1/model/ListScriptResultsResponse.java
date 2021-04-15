@@ -63,12 +63,15 @@ public class ListScriptResultsResponse extends SdkResponse {
 
     
     public ListScriptResultsResponse addResultItem(Result resultItem) {
+        if(this.result == null) {
+            this.result = new ArrayList<>();
+        }
         this.result.add(resultItem);
         return this;
     }
 
     public ListScriptResultsResponse withResult(Consumer<List<Result>> resultSetter) {
-        if(this.result == null ){
+        if(this.result == null) {
             this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);

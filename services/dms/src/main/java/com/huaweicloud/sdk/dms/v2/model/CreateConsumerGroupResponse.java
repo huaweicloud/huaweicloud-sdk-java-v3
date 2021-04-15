@@ -35,12 +35,15 @@ public class CreateConsumerGroupResponse extends SdkResponse {
 
     
     public CreateConsumerGroupResponse addGroupsItem(CreateConsumerGroupRespGroups groupsItem) {
+        if(this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
         this.groups.add(groupsItem);
         return this;
     }
 
     public CreateConsumerGroupResponse withGroups(Consumer<List<CreateConsumerGroupRespGroups>> groupsSetter) {
-        if(this.groups == null ){
+        if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);

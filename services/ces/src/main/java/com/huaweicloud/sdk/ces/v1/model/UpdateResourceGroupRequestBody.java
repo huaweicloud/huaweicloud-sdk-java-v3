@@ -61,12 +61,15 @@ public class UpdateResourceGroupRequestBody  {
 
     
     public UpdateResourceGroupRequestBody addResourcesItem(CreateResourceGroup resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public UpdateResourceGroupRequestBody withResources(Consumer<List<CreateResourceGroup>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

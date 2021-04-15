@@ -63,12 +63,15 @@ public class ListResourcesResponse extends SdkResponse {
 
     
     public ListResourcesResponse addResourcesItem(ResourceInfo resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ListResourcesResponse withResources(Consumer<List<ResourceInfo>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

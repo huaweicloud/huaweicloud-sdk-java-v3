@@ -417,12 +417,15 @@ public class InstanceConfig  {
 
     
     public InstanceConfig addDiskItem(Disk diskItem) {
+        if(this.disk == null) {
+            this.disk = new ArrayList<>();
+        }
         this.disk.add(diskItem);
         return this;
     }
 
     public InstanceConfig withDisk(Consumer<List<Disk>> diskSetter) {
-        if(this.disk == null ){
+        if(this.disk == null) {
             this.disk = new ArrayList<>();
         }
         diskSetter.accept(this.disk);
@@ -472,12 +475,15 @@ public class InstanceConfig  {
 
     
     public InstanceConfig addPersonalityItem(Personality personalityItem) {
+        if(this.personality == null) {
+            this.personality = new ArrayList<>();
+        }
         this.personality.add(personalityItem);
         return this;
     }
 
     public InstanceConfig withPersonality(Consumer<List<Personality>> personalitySetter) {
-        if(this.personality == null ){
+        if(this.personality == null) {
             this.personality = new ArrayList<>();
         }
         personalitySetter.accept(this.personality);
@@ -585,12 +591,15 @@ public class InstanceConfig  {
 
     
     public InstanceConfig addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public InstanceConfig withSecurityGroups(Consumer<List<SecurityGroups>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);

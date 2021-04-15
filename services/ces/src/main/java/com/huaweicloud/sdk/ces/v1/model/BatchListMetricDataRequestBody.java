@@ -57,12 +57,15 @@ public class BatchListMetricDataRequestBody  {
 
     
     public BatchListMetricDataRequestBody addMetricsItem(MetricInfo metricsItem) {
+        if(this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
         this.metrics.add(metricsItem);
         return this;
     }
 
     public BatchListMetricDataRequestBody withMetrics(Consumer<List<MetricInfo>> metricsSetter) {
-        if(this.metrics == null ){
+        if(this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);

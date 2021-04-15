@@ -65,12 +65,15 @@ public class ListCountiesResponse extends SdkResponse {
 
     
     public ListCountiesResponse addCountiesItem(County countiesItem) {
+        if(this.counties == null) {
+            this.counties = new ArrayList<>();
+        }
         this.counties.add(countiesItem);
         return this;
     }
 
     public ListCountiesResponse withCounties(Consumer<List<County>> countiesSetter) {
-        if(this.counties == null ){
+        if(this.counties == null) {
             this.counties = new ArrayList<>();
         }
         countiesSetter.accept(this.counties);

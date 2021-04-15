@@ -128,12 +128,15 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addSanItem(String sanItem) {
+        if(this.san == null) {
+            this.san = new ArrayList<>();
+        }
         this.san.add(sanItem);
         return this;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withSan(Consumer<List<String>> sanSetter) {
-        if(this.san == null ){
+        if(this.san == null) {
             this.san = new ArrayList<>();
         }
         sanSetter.accept(this.san);
@@ -183,12 +186,15 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addOrganizationItem(String organizationItem) {
+        if(this.organization == null) {
+            this.organization = new ArrayList<>();
+        }
         this.organization.add(organizationItem);
         return this;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withOrganization(Consumer<List<String>> organizationSetter) {
-        if(this.organization == null ){
+        if(this.organization == null) {
             this.organization = new ArrayList<>();
         }
         organizationSetter.accept(this.organization);
@@ -216,12 +222,15 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addOrganizationalUnitItem(String organizationalUnitItem) {
+        if(this.organizationalUnit == null) {
+            this.organizationalUnit = new ArrayList<>();
+        }
         this.organizationalUnit.add(organizationalUnitItem);
         return this;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withOrganizationalUnit(Consumer<List<String>> organizationalUnitSetter) {
-        if(this.organizationalUnit == null ){
+        if(this.organizationalUnit == null) {
             this.organizationalUnit = new ArrayList<>();
         }
         organizationalUnitSetter.accept(this.organizationalUnit);
@@ -249,12 +258,15 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addLocalityItem(String localityItem) {
+        if(this.locality == null) {
+            this.locality = new ArrayList<>();
+        }
         this.locality.add(localityItem);
         return this;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withLocality(Consumer<List<String>> localitySetter) {
-        if(this.locality == null ){
+        if(this.locality == null) {
             this.locality = new ArrayList<>();
         }
         localitySetter.accept(this.locality);
@@ -282,12 +294,15 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addStateItem(String stateItem) {
+        if(this.state == null) {
+            this.state = new ArrayList<>();
+        }
         this.state.add(stateItem);
         return this;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withState(Consumer<List<String>> stateSetter) {
-        if(this.state == null ){
+        if(this.state == null) {
             this.state = new ArrayList<>();
         }
         stateSetter.accept(this.state);
@@ -315,12 +330,15 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addCountryItem(String countryItem) {
+        if(this.country == null) {
+            this.country = new ArrayList<>();
+        }
         this.country.add(countryItem);
         return this;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withCountry(Consumer<List<String>> countrySetter) {
-        if(this.country == null ){
+        if(this.country == null) {
             this.country = new ArrayList<>();
         }
         countrySetter.accept(this.country);
@@ -414,12 +432,15 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
     public ShowDetailsOfDomainNameCertificateV2Response addIssuerItem(String issuerItem) {
+        if(this.issuer == null) {
+            this.issuer = new ArrayList<>();
+        }
         this.issuer.add(issuerItem);
         return this;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withIssuer(Consumer<List<String>> issuerSetter) {
-        if(this.issuer == null ){
+        if(this.issuer == null) {
             this.issuer = new ArrayList<>();
         }
         issuerSetter.accept(this.issuer);

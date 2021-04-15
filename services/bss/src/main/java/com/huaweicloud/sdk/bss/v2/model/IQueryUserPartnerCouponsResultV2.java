@@ -467,12 +467,15 @@ public class IQueryUserPartnerCouponsResultV2  {
 
     
     public IQueryUserPartnerCouponsResultV2 addUseLimitsItem(ICouponUseLimitInfoV2 useLimitsItem) {
+        if(this.useLimits == null) {
+            this.useLimits = new ArrayList<>();
+        }
         this.useLimits.add(useLimitsItem);
         return this;
     }
 
     public IQueryUserPartnerCouponsResultV2 withUseLimits(Consumer<List<ICouponUseLimitInfoV2>> useLimitsSetter) {
-        if(this.useLimits == null ){
+        if(this.useLimits == null) {
             this.useLimits = new ArrayList<>();
         }
         useLimitsSetter.accept(this.useLimits);

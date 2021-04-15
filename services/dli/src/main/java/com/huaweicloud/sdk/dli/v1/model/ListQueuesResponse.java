@@ -91,12 +91,15 @@ public class ListQueuesResponse extends SdkResponse {
 
     
     public ListQueuesResponse addQueuesItem(ListQueuesRespQueues queuesItem) {
+        if(this.queues == null) {
+            this.queues = new ArrayList<>();
+        }
         this.queues.add(queuesItem);
         return this;
     }
 
     public ListQueuesResponse withQueues(Consumer<List<ListQueuesRespQueues>> queuesSetter) {
-        if(this.queues == null ){
+        if(this.queues == null) {
             this.queues = new ArrayList<>();
         }
         queuesSetter.accept(this.queues);

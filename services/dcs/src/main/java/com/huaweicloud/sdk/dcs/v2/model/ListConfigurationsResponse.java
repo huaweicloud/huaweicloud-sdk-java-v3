@@ -191,12 +191,15 @@ public class ListConfigurationsResponse extends SdkResponse {
 
     
     public ListConfigurationsResponse addRedisConfigItem(QueryRedisConfig redisConfigItem) {
+        if(this.redisConfig == null) {
+            this.redisConfig = new ArrayList<>();
+        }
         this.redisConfig.add(redisConfigItem);
         return this;
     }
 
     public ListConfigurationsResponse withRedisConfig(Consumer<List<QueryRedisConfig>> redisConfigSetter) {
-        if(this.redisConfig == null ){
+        if(this.redisConfig == null) {
             this.redisConfig = new ArrayList<>();
         }
         redisConfigSetter.accept(this.redisConfig);

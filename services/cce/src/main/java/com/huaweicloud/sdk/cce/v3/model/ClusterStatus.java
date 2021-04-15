@@ -137,12 +137,15 @@ public class ClusterStatus  {
 
     
     public ClusterStatus addEndpointsItem(ClusterEndpoints endpointsItem) {
+        if(this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
         this.endpoints.add(endpointsItem);
         return this;
     }
 
     public ClusterStatus withEndpoints(Consumer<List<ClusterEndpoints>> endpointsSetter) {
-        if(this.endpoints == null ){
+        if(this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);

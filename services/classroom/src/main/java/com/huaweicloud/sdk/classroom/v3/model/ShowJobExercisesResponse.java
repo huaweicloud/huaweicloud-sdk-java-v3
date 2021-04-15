@@ -41,12 +41,15 @@ public class ShowJobExercisesResponse extends SdkResponse {
 
     
     public ShowJobExercisesResponse addGroupExercisesItem(ExerciseGroup groupExercisesItem) {
+        if(this.groupExercises == null) {
+            this.groupExercises = new ArrayList<>();
+        }
         this.groupExercises.add(groupExercisesItem);
         return this;
     }
 
     public ShowJobExercisesResponse withGroupExercises(Consumer<List<ExerciseGroup>> groupExercisesSetter) {
-        if(this.groupExercises == null ){
+        if(this.groupExercises == null) {
             this.groupExercises = new ArrayList<>();
         }
         groupExercisesSetter.accept(this.groupExercises);

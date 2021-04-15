@@ -50,12 +50,15 @@ public class StacksAttribute  {
 
     
     public StacksAttribute addSpecsItem(String specsItem) {
+        if(this.specs == null) {
+            this.specs = new ArrayList<>();
+        }
         this.specs.add(specsItem);
         return this;
     }
 
     public StacksAttribute withSpecs(Consumer<List<String>> specsSetter) {
-        if(this.specs == null ){
+        if(this.specs == null) {
             this.specs = new ArrayList<>();
         }
         specsSetter.accept(this.specs);
@@ -127,12 +130,15 @@ public class StacksAttribute  {
 
     
     public StacksAttribute addVolumesItem(String volumesItem) {
+        if(this.volumes == null) {
+            this.volumes = new ArrayList<>();
+        }
         this.volumes.add(volumesItem);
         return this;
     }
 
     public StacksAttribute withVolumes(Consumer<List<String>> volumesSetter) {
-        if(this.volumes == null ){
+        if(this.volumes == null) {
             this.volumes = new ArrayList<>();
         }
         volumesSetter.accept(this.volumes);

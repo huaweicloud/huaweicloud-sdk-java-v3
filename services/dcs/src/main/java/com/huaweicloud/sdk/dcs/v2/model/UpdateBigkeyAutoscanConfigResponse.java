@@ -96,12 +96,15 @@ public class UpdateBigkeyAutoscanConfigResponse extends SdkResponse {
 
     
     public UpdateBigkeyAutoscanConfigResponse addScheduleAtItem(String scheduleAtItem) {
+        if(this.scheduleAt == null) {
+            this.scheduleAt = new ArrayList<>();
+        }
         this.scheduleAt.add(scheduleAtItem);
         return this;
     }
 
     public UpdateBigkeyAutoscanConfigResponse withScheduleAt(Consumer<List<String>> scheduleAtSetter) {
-        if(this.scheduleAt == null ){
+        if(this.scheduleAt == null) {
             this.scheduleAt = new ArrayList<>();
         }
         scheduleAtSetter.accept(this.scheduleAt);

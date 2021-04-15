@@ -35,12 +35,15 @@ public class ListResourceUsagesResponse extends SdkResponse {
 
     
     public ListResourceUsagesResponse addPackageUsageInfosItem(PackageUsageInfo packageUsageInfosItem) {
+        if(this.packageUsageInfos == null) {
+            this.packageUsageInfos = new ArrayList<>();
+        }
         this.packageUsageInfos.add(packageUsageInfosItem);
         return this;
     }
 
     public ListResourceUsagesResponse withPackageUsageInfos(Consumer<List<PackageUsageInfo>> packageUsageInfosSetter) {
-        if(this.packageUsageInfos == null ){
+        if(this.packageUsageInfos == null) {
             this.packageUsageInfos = new ArrayList<>();
         }
         packageUsageInfosSetter.accept(this.packageUsageInfos);

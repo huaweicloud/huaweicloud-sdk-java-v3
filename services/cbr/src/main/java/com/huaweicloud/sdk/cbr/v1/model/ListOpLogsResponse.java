@@ -41,12 +41,15 @@ public class ListOpLogsResponse extends SdkResponse {
 
     
     public ListOpLogsResponse addOperationLogsItem(OperationLog operationLogsItem) {
+        if(this.operationLogs == null) {
+            this.operationLogs = new ArrayList<>();
+        }
         this.operationLogs.add(operationLogsItem);
         return this;
     }
 
     public ListOpLogsResponse withOperationLogs(Consumer<List<OperationLog>> operationLogsSetter) {
-        if(this.operationLogs == null ){
+        if(this.operationLogs == null) {
             this.operationLogs = new ArrayList<>();
         }
         operationLogsSetter.accept(this.operationLogs);

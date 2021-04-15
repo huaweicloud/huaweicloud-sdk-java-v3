@@ -41,12 +41,15 @@ public class ListClassroomMembersResponse extends SdkResponse {
 
     
     public ListClassroomMembersResponse addMembersItem(ClassroomMember membersItem) {
+        if(this.members == null) {
+            this.members = new ArrayList<>();
+        }
         this.members.add(membersItem);
         return this;
     }
 
     public ListClassroomMembersResponse withMembers(Consumer<List<ClassroomMember>> membersSetter) {
-        if(this.members == null ){
+        if(this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);

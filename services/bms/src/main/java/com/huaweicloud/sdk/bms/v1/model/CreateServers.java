@@ -305,12 +305,15 @@ public class CreateServers  {
 
     
     public CreateServers addSecurityGroupsItem(SecurityGroupsInfo securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public CreateServers withSecurityGroups(Consumer<List<SecurityGroupsInfo>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -338,12 +341,15 @@ public class CreateServers  {
 
     
     public CreateServers addNicsItem(Nics nicsItem) {
+        if(this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
         this.nics.add(nicsItem);
         return this;
     }
 
     public CreateServers withNics(Consumer<List<Nics>> nicsSetter) {
-        if(this.nics == null ){
+        if(this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
@@ -495,12 +501,15 @@ public class CreateServers  {
 
     
     public CreateServers addDataVolumesItem(DataVolumes dataVolumesItem) {
+        if(this.dataVolumes == null) {
+            this.dataVolumes = new ArrayList<>();
+        }
         this.dataVolumes.add(dataVolumesItem);
         return this;
     }
 
     public CreateServers withDataVolumes(Consumer<List<DataVolumes>> dataVolumesSetter) {
-        if(this.dataVolumes == null ){
+        if(this.dataVolumes == null) {
             this.dataVolumes = new ArrayList<>();
         }
         dataVolumesSetter.accept(this.dataVolumes);
@@ -586,12 +595,15 @@ public class CreateServers  {
 
     
     public CreateServers addServerTagsItem(SystemTags serverTagsItem) {
+        if(this.serverTags == null) {
+            this.serverTags = new ArrayList<>();
+        }
         this.serverTags.add(serverTagsItem);
         return this;
     }
 
     public CreateServers withServerTags(Consumer<List<SystemTags>> serverTagsSetter) {
-        if(this.serverTags == null ){
+        if(this.serverTags == null) {
             this.serverTags = new ArrayList<>();
         }
         serverTagsSetter.accept(this.serverTags);

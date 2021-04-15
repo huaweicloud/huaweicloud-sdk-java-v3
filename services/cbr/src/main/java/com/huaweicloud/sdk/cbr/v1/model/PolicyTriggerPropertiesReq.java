@@ -32,12 +32,15 @@ public class PolicyTriggerPropertiesReq  {
 
     
     public PolicyTriggerPropertiesReq addPatternItem(String patternItem) {
+        if(this.pattern == null) {
+            this.pattern = new ArrayList<>();
+        }
         this.pattern.add(patternItem);
         return this;
     }
 
     public PolicyTriggerPropertiesReq withPattern(Consumer<List<String>> patternSetter) {
-        if(this.pattern == null ){
+        if(this.pattern == null) {
             this.pattern = new ArrayList<>();
         }
         patternSetter.accept(this.pattern);

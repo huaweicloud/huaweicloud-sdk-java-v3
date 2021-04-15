@@ -69,12 +69,15 @@ public class ListNodesResponse extends SdkResponse {
 
     
     public ListNodesResponse addItemsItem(V3Node itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListNodesResponse withItems(Consumer<List<V3Node>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

@@ -500,12 +500,15 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addMaintainersItem(String maintainersItem) {
+        if(this.maintainers == null) {
+            this.maintainers = new ArrayList<>();
+        }
         this.maintainers.add(maintainersItem);
         return this;
     }
 
     public ShowTemplateV3Response withMaintainers(Consumer<List<String>> maintainersSetter) {
-        if(this.maintainers == null ){
+        if(this.maintainers == null) {
             this.maintainers = new ArrayList<>();
         }
         maintainersSetter.accept(this.maintainers);
@@ -577,12 +580,15 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addDependenciesItem(Object dependenciesItem) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
 
     public ShowTemplateV3Response withDependencies(Consumer<List<Object>> dependenciesSetter) {
-        if(this.dependencies == null ){
+        if(this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);
@@ -764,12 +770,15 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addTopicItem(TopicCategory topicItem) {
+        if(this.topic == null) {
+            this.topic = new ArrayList<>();
+        }
         this.topic.add(topicItem);
         return this;
     }
 
     public ShowTemplateV3Response withTopic(Consumer<List<TopicCategory>> topicSetter) {
-        if(this.topic == null ){
+        if(this.topic == null) {
             this.topic = new ArrayList<>();
         }
         topicSetter.accept(this.topic);
@@ -797,12 +806,15 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     
     public ShowTemplateV3Response addTagsItem(TagInfo tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ShowTemplateV3Response withTags(Consumer<List<TagInfo>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

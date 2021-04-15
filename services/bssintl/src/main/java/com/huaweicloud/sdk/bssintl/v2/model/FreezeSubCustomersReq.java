@@ -38,12 +38,15 @@ public class FreezeSubCustomersReq  {
 
     
     public FreezeSubCustomersReq addCustomerIdsItem(String customerIdsItem) {
+        if(this.customerIds == null) {
+            this.customerIds = new ArrayList<>();
+        }
         this.customerIds.add(customerIdsItem);
         return this;
     }
 
     public FreezeSubCustomersReq withCustomerIds(Consumer<List<String>> customerIdsSetter) {
-        if(this.customerIds == null ){
+        if(this.customerIds == null) {
             this.customerIds = new ArrayList<>();
         }
         customerIdsSetter.accept(this.customerIds);

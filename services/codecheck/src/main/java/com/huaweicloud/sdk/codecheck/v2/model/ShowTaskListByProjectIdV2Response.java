@@ -41,12 +41,15 @@ public class ShowTaskListByProjectIdV2Response extends SdkResponse {
 
     
     public ShowTaskListByProjectIdV2Response addTasksItem(SimpleTaskInfoV2 tasksItem) {
+        if(this.tasks == null) {
+            this.tasks = new ArrayList<>();
+        }
         this.tasks.add(tasksItem);
         return this;
     }
 
     public ShowTaskListByProjectIdV2Response withTasks(Consumer<List<SimpleTaskInfoV2>> tasksSetter) {
-        if(this.tasks == null ){
+        if(this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);

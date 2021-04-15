@@ -34,12 +34,15 @@ public class RenewalResourcesResponse extends SdkResponse {
 
     
     public RenewalResourcesResponse addOrderIdsItem(String orderIdsItem) {
+        if(this.orderIds == null) {
+            this.orderIds = new ArrayList<>();
+        }
         this.orderIds.add(orderIdsItem);
         return this;
     }
 
     public RenewalResourcesResponse withOrderIds(Consumer<List<String>> orderIdsSetter) {
-        if(this.orderIds == null ){
+        if(this.orderIds == null) {
             this.orderIds = new ArrayList<>();
         }
         orderIdsSetter.accept(this.orderIds);

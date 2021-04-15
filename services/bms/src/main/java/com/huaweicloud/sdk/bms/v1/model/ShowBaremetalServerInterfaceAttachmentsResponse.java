@@ -35,12 +35,15 @@ public class ShowBaremetalServerInterfaceAttachmentsResponse extends SdkResponse
 
     
     public ShowBaremetalServerInterfaceAttachmentsResponse addInterfaceAttachmentsItem(InterfaceAttachments interfaceAttachmentsItem) {
+        if(this.interfaceAttachments == null) {
+            this.interfaceAttachments = new ArrayList<>();
+        }
         this.interfaceAttachments.add(interfaceAttachmentsItem);
         return this;
     }
 
     public ShowBaremetalServerInterfaceAttachmentsResponse withInterfaceAttachments(Consumer<List<InterfaceAttachments>> interfaceAttachmentsSetter) {
-        if(this.interfaceAttachments == null ){
+        if(this.interfaceAttachments == null) {
             this.interfaceAttachments = new ArrayList<>();
         }
         interfaceAttachmentsSetter.accept(this.interfaceAttachments);

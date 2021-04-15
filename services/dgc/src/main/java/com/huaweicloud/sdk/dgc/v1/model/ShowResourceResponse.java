@@ -218,12 +218,15 @@ public class ShowResourceResponse extends SdkResponse {
 
     
     public ShowResourceResponse addDependFilesItem(String dependFilesItem) {
+        if(this.dependFiles == null) {
+            this.dependFiles = new ArrayList<>();
+        }
         this.dependFiles.add(dependFilesItem);
         return this;
     }
 
     public ShowResourceResponse withDependFiles(Consumer<List<String>> dependFilesSetter) {
-        if(this.dependFiles == null ){
+        if(this.dependFiles == null) {
             this.dependFiles = new ArrayList<>();
         }
         dependFilesSetter.accept(this.dependFiles);

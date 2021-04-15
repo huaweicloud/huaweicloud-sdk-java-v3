@@ -33,12 +33,15 @@ public class PolicyInstanceQuotas  {
 
     
     public PolicyInstanceQuotas addResourcesItem(PolicyInstanceResources resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public PolicyInstanceQuotas withResources(Consumer<List<PolicyInstanceResources>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

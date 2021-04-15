@@ -260,6 +260,50 @@ public class DdsClient {
     }
 
     /**
+     * 删除数据库角色
+     * 删除数据库角色。
+     *
+     * @param DeleteDatabaseRoleRequest 请求对象
+     * @return DeleteDatabaseRoleResponse
+     */
+    public DeleteDatabaseRoleResponse deleteDatabaseRole(DeleteDatabaseRoleRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteDatabaseRole);
+    }
+
+    /**
+     * 删除数据库角色
+     * 删除数据库角色。
+     *
+     * @param DeleteDatabaseRoleRequest 请求对象
+     * @return SyncInvoker<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse>
+     */
+    public SyncInvoker<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> deleteDatabaseRoleInvoker(DeleteDatabaseRoleRequest request) {
+        return new SyncInvoker<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse>(request, DdsMeta.deleteDatabaseRole, hcClient);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteDatabaseUserRequest 请求对象
+     * @return DeleteDatabaseUserResponse
+     */
+    public DeleteDatabaseUserResponse deleteDatabaseUser(DeleteDatabaseUserRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteDatabaseUser);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteDatabaseUserRequest 请求对象
+     * @return SyncInvoker<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse>
+     */
+    public SyncInvoker<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> deleteDatabaseUserInvoker(DeleteDatabaseUserRequest request) {
+        return new SyncInvoker<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse>(request, DdsMeta.deleteDatabaseUser, hcClient);
+    }
+
+    /**
      * 删除实例
      * 删除数据库实例。
      *
@@ -1027,6 +1071,28 @@ public class DdsClient {
      */
     public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(ShowBackupPolicyRequest request) {
         return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, DdsMeta.showBackupPolicy, hcClient);
+    }
+
+    /**
+     * 查询实例连接数统计信息
+     * 查询客户端IP访问至DDS数据库实例的连接数统计信息。
+     *
+     * @param ShowConnectionStatisticsRequest 请求对象
+     * @return ShowConnectionStatisticsResponse
+     */
+    public ShowConnectionStatisticsResponse showConnectionStatistics(ShowConnectionStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showConnectionStatistics);
+    }
+
+    /**
+     * 查询实例连接数统计信息
+     * 查询客户端IP访问至DDS数据库实例的连接数统计信息。
+     *
+     * @param ShowConnectionStatisticsRequest 请求对象
+     * @return SyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse>
+     */
+    public SyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatisticsInvoker(ShowConnectionStatisticsRequest request) {
+        return new SyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse>(request, DdsMeta.showConnectionStatistics, hcClient);
     }
 
     /**

@@ -63,12 +63,15 @@ public class ListIssuedCouponQuotasResponse extends SdkResponse {
 
     
     public ListIssuedCouponQuotasResponse addQuotasItem(IssuedCouponQuota quotasItem) {
+        if(this.quotas == null) {
+            this.quotas = new ArrayList<>();
+        }
         this.quotas.add(quotasItem);
         return this;
     }
 
     public ListIssuedCouponQuotasResponse withQuotas(Consumer<List<IssuedCouponQuota>> quotasSetter) {
-        if(this.quotas == null ){
+        if(this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
         quotasSetter.accept(this.quotas);

@@ -60,12 +60,15 @@ public class Whitelist  {
 
     
     public Whitelist addIpListItem(String ipListItem) {
+        if(this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
         this.ipList.add(ipListItem);
         return this;
     }
 
     public Whitelist withIpList(Consumer<List<String>> ipListSetter) {
-        if(this.ipList == null ){
+        if(this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         ipListSetter.accept(this.ipList);

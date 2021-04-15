@@ -65,12 +65,15 @@ public class ListCitiesResponse extends SdkResponse {
 
     
     public ListCitiesResponse addCitiesItem(City citiesItem) {
+        if(this.cities == null) {
+            this.cities = new ArrayList<>();
+        }
         this.cities.add(citiesItem);
         return this;
     }
 
     public ListCitiesResponse withCities(Consumer<List<City>> citiesSetter) {
-        if(this.cities == null ){
+        if(this.cities == null) {
             this.cities = new ArrayList<>();
         }
         citiesSetter.accept(this.cities);

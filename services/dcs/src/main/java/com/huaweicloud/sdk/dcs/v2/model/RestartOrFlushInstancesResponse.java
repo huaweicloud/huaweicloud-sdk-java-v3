@@ -35,12 +35,15 @@ public class RestartOrFlushInstancesResponse extends SdkResponse {
 
     
     public RestartOrFlushInstancesResponse addResultsItem(BatchOpsResult resultsItem) {
+        if(this.results == null) {
+            this.results = new ArrayList<>();
+        }
         this.results.add(resultsItem);
         return this;
     }
 
     public RestartOrFlushInstancesResponse withResults(Consumer<List<BatchOpsResult>> resultsSetter) {
-        if(this.results == null ){
+        if(this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);

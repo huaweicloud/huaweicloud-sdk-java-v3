@@ -165,12 +165,15 @@ public class BackupFilesBody  {
 
     
     public BackupFilesBody addFilesItem(Files filesItem) {
+        if(this.files == null) {
+            this.files = new ArrayList<>();
+        }
         this.files.add(filesItem);
         return this;
     }
 
     public BackupFilesBody withFiles(Consumer<List<Files>> filesSetter) {
-        if(this.files == null ){
+        if(this.files == null) {
             this.files = new ArrayList<>();
         }
         filesSetter.accept(this.files);

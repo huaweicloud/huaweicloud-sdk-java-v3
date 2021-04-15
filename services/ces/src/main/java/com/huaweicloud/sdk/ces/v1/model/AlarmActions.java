@@ -60,12 +60,15 @@ public class AlarmActions  {
 
     
     public AlarmActions addNotificationListItem(String notificationListItem) {
+        if(this.notificationList == null) {
+            this.notificationList = new ArrayList<>();
+        }
         this.notificationList.add(notificationListItem);
         return this;
     }
 
     public AlarmActions withNotificationList(Consumer<List<String>> notificationListSetter) {
-        if(this.notificationList == null ){
+        if(this.notificationList == null) {
             this.notificationList = new ArrayList<>();
         }
         notificationListSetter.accept(this.notificationList);

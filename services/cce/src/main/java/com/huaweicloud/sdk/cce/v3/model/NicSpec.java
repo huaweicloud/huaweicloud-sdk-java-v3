@@ -44,12 +44,15 @@ public class NicSpec  {
 
     
     public NicSpec addFixedIpsItem(String fixedIpsItem) {
+        if(this.fixedIps == null) {
+            this.fixedIps = new ArrayList<>();
+        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
 
     public NicSpec withFixedIps(Consumer<List<String>> fixedIpsSetter) {
-        if(this.fixedIps == null ){
+        if(this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);

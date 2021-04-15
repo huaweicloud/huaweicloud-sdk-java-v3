@@ -164,12 +164,15 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addTagsItem(TagsMultiValue tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ShowTagsRequestBody withTags(Consumer<List<TagsMultiValue>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -197,12 +200,15 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addTagsAnyItem(TagsMultiValue tagsAnyItem) {
+        if(this.tagsAny == null) {
+            this.tagsAny = new ArrayList<>();
+        }
         this.tagsAny.add(tagsAnyItem);
         return this;
     }
 
     public ShowTagsRequestBody withTagsAny(Consumer<List<TagsMultiValue>> tagsAnySetter) {
-        if(this.tagsAny == null ){
+        if(this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
@@ -230,12 +236,15 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addNotTagsItem(TagsMultiValue notTagsItem) {
+        if(this.notTags == null) {
+            this.notTags = new ArrayList<>();
+        }
         this.notTags.add(notTagsItem);
         return this;
     }
 
     public ShowTagsRequestBody withNotTags(Consumer<List<TagsMultiValue>> notTagsSetter) {
-        if(this.notTags == null ){
+        if(this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
@@ -263,12 +272,15 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addNotTagsAnyItem(TagsMultiValue notTagsAnyItem) {
+        if(this.notTagsAny == null) {
+            this.notTagsAny = new ArrayList<>();
+        }
         this.notTagsAny.add(notTagsAnyItem);
         return this;
     }
 
     public ShowTagsRequestBody withNotTagsAny(Consumer<List<TagsMultiValue>> notTagsAnySetter) {
-        if(this.notTagsAny == null ){
+        if(this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
@@ -384,12 +396,15 @@ public class ShowTagsRequestBody  {
 
     
     public ShowTagsRequestBody addMatchsItem(Matches matchsItem) {
+        if(this.matchs == null) {
+            this.matchs = new ArrayList<>();
+        }
         this.matchs.add(matchsItem);
         return this;
     }
 
     public ShowTagsRequestBody withMatchs(Consumer<List<Matches>> matchsSetter) {
-        if(this.matchs == null ){
+        if(this.matchs == null) {
             this.matchs = new ArrayList<>();
         }
         matchsSetter.accept(this.matchs);

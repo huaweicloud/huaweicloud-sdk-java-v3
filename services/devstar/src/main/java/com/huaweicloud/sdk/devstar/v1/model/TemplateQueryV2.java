@@ -116,12 +116,15 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addCategoryItem(String categoryItem) {
+        if(this.category == null) {
+            this.category = new ArrayList<>();
+        }
         this.category.add(categoryItem);
         return this;
     }
 
     public TemplateQueryV2 withCategory(Consumer<List<String>> categorySetter) {
-        if(this.category == null ){
+        if(this.category == null) {
             this.category = new ArrayList<>();
         }
         categorySetter.accept(this.category);
@@ -259,12 +262,15 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addStatusArrayItem(Integer statusArrayItem) {
+        if(this.statusArray == null) {
+            this.statusArray = new ArrayList<>();
+        }
         this.statusArray.add(statusArrayItem);
         return this;
     }
 
     public TemplateQueryV2 withStatusArray(Consumer<List<Integer>> statusArraySetter) {
-        if(this.statusArray == null ){
+        if(this.statusArray == null) {
             this.statusArray = new ArrayList<>();
         }
         statusArraySetter.accept(this.statusArray);
@@ -292,12 +298,15 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addProductshortsItem(String productshortsItem) {
+        if(this.productshorts == null) {
+            this.productshorts = new ArrayList<>();
+        }
         this.productshorts.add(productshortsItem);
         return this;
     }
 
     public TemplateQueryV2 withProductshorts(Consumer<List<String>> productshortsSetter) {
-        if(this.productshorts == null ){
+        if(this.productshorts == null) {
             this.productshorts = new ArrayList<>();
         }
         productshortsSetter.accept(this.productshorts);
@@ -369,12 +378,15 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addTagIdsItem(String tagIdsItem) {
+        if(this.tagIds == null) {
+            this.tagIds = new ArrayList<>();
+        }
         this.tagIds.add(tagIdsItem);
         return this;
     }
 
     public TemplateQueryV2 withTagIds(Consumer<List<String>> tagIdsSetter) {
-        if(this.tagIds == null ){
+        if(this.tagIds == null) {
             this.tagIds = new ArrayList<>();
         }
         tagIdsSetter.accept(this.tagIds);
@@ -402,12 +414,15 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addTypesItem(Integer typesItem) {
+        if(this.types == null) {
+            this.types = new ArrayList<>();
+        }
         this.types.add(typesItem);
         return this;
     }
 
     public TemplateQueryV2 withTypes(Consumer<List<Integer>> typesSetter) {
-        if(this.types == null ){
+        if(this.types == null) {
             this.types = new ArrayList<>();
         }
         typesSetter.accept(this.types);
@@ -457,12 +472,15 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addPlatformSourceItem(Integer platformSourceItem) {
+        if(this.platformSource == null) {
+            this.platformSource = new ArrayList<>();
+        }
         this.platformSource.add(platformSourceItem);
         return this;
     }
 
     public TemplateQueryV2 withPlatformSource(Consumer<List<Integer>> platformSourceSetter) {
-        if(this.platformSource == null ){
+        if(this.platformSource == null) {
             this.platformSource = new ArrayList<>();
         }
         platformSourceSetter.accept(this.platformSource);
@@ -490,12 +508,15 @@ public class TemplateQueryV2  {
 
     
     public TemplateQueryV2 addTagNamesItem(String tagNamesItem) {
+        if(this.tagNames == null) {
+            this.tagNames = new ArrayList<>();
+        }
         this.tagNames.add(tagNamesItem);
         return this;
     }
 
     public TemplateQueryV2 withTagNames(Consumer<List<String>> tagNamesSetter) {
-        if(this.tagNames == null ){
+        if(this.tagNames == null) {
             this.tagNames = new ArrayList<>();
         }
         tagNamesSetter.accept(this.tagNames);

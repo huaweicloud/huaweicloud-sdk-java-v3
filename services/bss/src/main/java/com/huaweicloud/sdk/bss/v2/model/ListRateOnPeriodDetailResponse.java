@@ -77,12 +77,15 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
 
     
     public ListRateOnPeriodDetailResponse addOptionalDiscountRatingResultsItem(OptionalDiscountRatingResult optionalDiscountRatingResultsItem) {
+        if(this.optionalDiscountRatingResults == null) {
+            this.optionalDiscountRatingResults = new ArrayList<>();
+        }
         this.optionalDiscountRatingResults.add(optionalDiscountRatingResultsItem);
         return this;
     }
 
     public ListRateOnPeriodDetailResponse withOptionalDiscountRatingResults(Consumer<List<OptionalDiscountRatingResult>> optionalDiscountRatingResultsSetter) {
-        if(this.optionalDiscountRatingResults == null ){
+        if(this.optionalDiscountRatingResults == null) {
             this.optionalDiscountRatingResults = new ArrayList<>();
         }
         optionalDiscountRatingResultsSetter.accept(this.optionalDiscountRatingResults);

@@ -41,12 +41,15 @@ public class ShowJobListByProjectIdResponse extends SdkResponse {
 
     
     public ShowJobListByProjectIdResponse addJobsItem(Job jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public ShowJobListByProjectIdResponse withJobs(Consumer<List<Job>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

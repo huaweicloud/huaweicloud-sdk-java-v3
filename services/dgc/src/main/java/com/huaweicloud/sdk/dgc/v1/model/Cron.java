@@ -145,12 +145,15 @@ public class Cron  {
 
     
     public Cron addDependJobsItem(DependJob dependJobsItem) {
+        if(this.dependJobs == null) {
+            this.dependJobs = new ArrayList<>();
+        }
         this.dependJobs.add(dependJobsItem);
         return this;
     }
 
     public Cron withDependJobs(Consumer<List<DependJob>> dependJobsSetter) {
-        if(this.dependJobs == null ){
+        if(this.dependJobs == null) {
             this.dependJobs = new ArrayList<>();
         }
         dependJobsSetter.accept(this.dependJobs);

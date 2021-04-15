@@ -69,12 +69,15 @@ public class ListAddonInstancesResponse extends SdkResponse {
 
     
     public ListAddonInstancesResponse addItemsItem(AddonInstance itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListAddonInstancesResponse withItems(Consumer<List<AddonInstance>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

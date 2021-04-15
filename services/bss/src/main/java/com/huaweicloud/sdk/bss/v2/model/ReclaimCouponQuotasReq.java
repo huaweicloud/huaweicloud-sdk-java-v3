@@ -38,12 +38,15 @@ public class ReclaimCouponQuotasReq  {
 
     
     public ReclaimCouponQuotasReq addQuotaIdsItem(String quotaIdsItem) {
+        if(this.quotaIds == null) {
+            this.quotaIds = new ArrayList<>();
+        }
         this.quotaIds.add(quotaIdsItem);
         return this;
     }
 
     public ReclaimCouponQuotasReq withQuotaIds(Consumer<List<String>> quotaIdsSetter) {
-        if(this.quotaIds == null ){
+        if(this.quotaIds == null) {
             this.quotaIds = new ArrayList<>();
         }
         quotaIdsSetter.accept(this.quotaIds);

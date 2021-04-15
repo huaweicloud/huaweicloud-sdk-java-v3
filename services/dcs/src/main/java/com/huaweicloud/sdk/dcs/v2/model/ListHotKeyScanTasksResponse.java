@@ -91,12 +91,15 @@ public class ListHotKeyScanTasksResponse extends SdkResponse {
 
     
     public ListHotKeyScanTasksResponse addRecordsItem(RecordsResponse recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public ListHotKeyScanTasksResponse withRecords(Consumer<List<RecordsResponse>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

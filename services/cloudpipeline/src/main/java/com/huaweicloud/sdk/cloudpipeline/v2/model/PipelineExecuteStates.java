@@ -131,12 +131,15 @@ public class PipelineExecuteStates  {
 
     
     public PipelineExecuteStates addStagesItem(Stages stagesItem) {
+        if(this.stages == null) {
+            this.stages = new ArrayList<>();
+        }
         this.stages.add(stagesItem);
         return this;
     }
 
     public PipelineExecuteStates withStages(Consumer<List<Stages>> stagesSetter) {
-        if(this.stages == null ){
+        if(this.stages == null) {
             this.stages = new ArrayList<>();
         }
         stagesSetter.accept(this.stages);

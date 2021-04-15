@@ -89,12 +89,15 @@ public class OpExtendInfoRemoveResources  {
 
     
     public OpExtendInfoRemoveResources addResourcesItem(Resource resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public OpExtendInfoRemoveResources withResources(Consumer<List<Resource>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

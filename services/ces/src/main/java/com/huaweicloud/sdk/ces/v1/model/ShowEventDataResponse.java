@@ -35,12 +35,15 @@ public class ShowEventDataResponse extends SdkResponse {
 
     
     public ShowEventDataResponse addDatapointsItem(EventDataInfo datapointsItem) {
+        if(this.datapoints == null) {
+            this.datapoints = new ArrayList<>();
+        }
         this.datapoints.add(datapointsItem);
         return this;
     }
 
     public ShowEventDataResponse withDatapoints(Consumer<List<EventDataInfo>> datapointsSetter) {
-        if(this.datapoints == null ){
+        if(this.datapoints == null) {
             this.datapoints = new ArrayList<>();
         }
         datapointsSetter.accept(this.datapoints);

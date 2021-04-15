@@ -39,12 +39,15 @@ public class StacksTag  {
 
     
     public StacksTag addStackListItem(Stacks stackListItem) {
+        if(this.stackList == null) {
+            this.stackList = new ArrayList<>();
+        }
         this.stackList.add(stackListItem);
         return this;
     }
 
     public StacksTag withStackList(Consumer<List<Stacks>> stackListSetter) {
-        if(this.stackList == null ){
+        if(this.stackList == null) {
             this.stackList = new ArrayList<>();
         }
         stackListSetter.accept(this.stackList);
@@ -72,12 +75,15 @@ public class StacksTag  {
 
     
     public StacksTag addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public StacksTag withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

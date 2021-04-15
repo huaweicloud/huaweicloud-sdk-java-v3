@@ -41,12 +41,15 @@ public class ListClassroomsResponse extends SdkResponse {
 
     
     public ListClassroomsResponse addClassroomsItem(ClassroomCard classroomsItem) {
+        if(this.classrooms == null) {
+            this.classrooms = new ArrayList<>();
+        }
         this.classrooms.add(classroomsItem);
         return this;
     }
 
     public ListClassroomsResponse withClassrooms(Consumer<List<ClassroomCard>> classroomsSetter) {
-        if(this.classrooms == null ){
+        if(this.classrooms == null) {
             this.classrooms = new ArrayList<>();
         }
         classroomsSetter.accept(this.classrooms);

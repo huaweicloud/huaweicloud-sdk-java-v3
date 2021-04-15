@@ -433,12 +433,15 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
 
     
     public CreateHotkeyScanTaskResponse addKeysItem(HotkeysBody keysItem) {
+        if(this.keys == null) {
+            this.keys = new ArrayList<>();
+        }
         this.keys.add(keysItem);
         return this;
     }
 
     public CreateHotkeyScanTaskResponse withKeys(Consumer<List<HotkeysBody>> keysSetter) {
-        if(this.keys == null ){
+        if(this.keys == null) {
             this.keys = new ArrayList<>();
         }
         keysSetter.accept(this.keys);

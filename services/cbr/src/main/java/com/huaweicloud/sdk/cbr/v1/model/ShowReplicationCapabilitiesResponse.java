@@ -35,12 +35,15 @@ public class ShowReplicationCapabilitiesResponse extends SdkResponse {
 
     
     public ShowReplicationCapabilitiesResponse addRegionsItem(ProtectableReplicationCapabilitiesRespRegion regionsItem) {
+        if(this.regions == null) {
+            this.regions = new ArrayList<>();
+        }
         this.regions.add(regionsItem);
         return this;
     }
 
     public ShowReplicationCapabilitiesResponse withRegions(Consumer<List<ProtectableReplicationCapabilitiesRespRegion>> regionsSetter) {
-        if(this.regions == null ){
+        if(this.regions == null) {
             this.regions = new ArrayList<>();
         }
         regionsSetter.accept(this.regions);

@@ -60,12 +60,15 @@ public class PeriodToOnDemandReq  {
 
     
     public PeriodToOnDemandReq addResourceIdsItem(String resourceIdsItem) {
+        if(this.resourceIds == null) {
+            this.resourceIds = new ArrayList<>();
+        }
         this.resourceIds.add(resourceIdsItem);
         return this;
     }
 
     public PeriodToOnDemandReq withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null ){
+        if(this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);

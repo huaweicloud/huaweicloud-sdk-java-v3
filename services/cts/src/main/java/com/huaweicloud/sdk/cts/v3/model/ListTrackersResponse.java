@@ -35,12 +35,15 @@ public class ListTrackersResponse extends SdkResponse {
 
     
     public ListTrackersResponse addTrackersItem(TrackerResponseBody trackersItem) {
+        if(this.trackers == null) {
+            this.trackers = new ArrayList<>();
+        }
         this.trackers.add(trackersItem);
         return this;
     }
 
     public ListTrackersResponse withTrackers(Consumer<List<TrackerResponseBody>> trackersSetter) {
-        if(this.trackers == null ){
+        if(this.trackers == null) {
             this.trackers = new ArrayList<>();
         }
         trackersSetter.accept(this.trackers);

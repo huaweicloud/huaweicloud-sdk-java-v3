@@ -359,12 +359,15 @@ public class CustomerInformation  {
 
     
     public CustomerInformation addAccountManagersItem(AccountManager accountManagersItem) {
+        if(this.accountManagers == null) {
+            this.accountManagers = new ArrayList<>();
+        }
         this.accountManagers.add(accountManagersItem);
         return this;
     }
 
     public CustomerInformation withAccountManagers(Consumer<List<AccountManager>> accountManagersSetter) {
-        if(this.accountManagers == null ){
+        if(this.accountManagers == null) {
             this.accountManagers = new ArrayList<>();
         }
         accountManagersSetter.accept(this.accountManagers);

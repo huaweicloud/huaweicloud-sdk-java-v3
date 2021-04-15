@@ -69,12 +69,15 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
 
     
     public ListCustomerBillsFeeRecordsResponse addRecordsItem(MonthlyBillRecord recordsItem) {
+        if(this.records == null) {
+            this.records = new ArrayList<>();
+        }
         this.records.add(recordsItem);
         return this;
     }
 
     public ListCustomerBillsFeeRecordsResponse withRecords(Consumer<List<MonthlyBillRecord>> recordsSetter) {
-        if(this.records == null ){
+        if(this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);

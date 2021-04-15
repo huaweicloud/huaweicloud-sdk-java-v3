@@ -91,12 +91,15 @@ public class ListAppsV2Response extends SdkResponse {
 
     
     public ListAppsV2Response addAppsItem(AppInfoWithBindNumResp appsItem) {
+        if(this.apps == null) {
+            this.apps = new ArrayList<>();
+        }
         this.apps.add(appsItem);
         return this;
     }
 
     public ListAppsV2Response withApps(Consumer<List<AppInfoWithBindNumResp>> appsSetter) {
-        if(this.apps == null ){
+        if(this.apps == null) {
             this.apps = new ArrayList<>();
         }
         appsSetter.accept(this.apps);

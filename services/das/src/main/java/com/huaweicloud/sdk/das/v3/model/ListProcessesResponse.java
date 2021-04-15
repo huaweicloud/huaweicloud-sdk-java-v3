@@ -41,12 +41,15 @@ public class ListProcessesResponse extends SdkResponse {
 
     
     public ListProcessesResponse addProcessesItem(Process processesItem) {
+        if(this.processes == null) {
+            this.processes = new ArrayList<>();
+        }
         this.processes.add(processesItem);
         return this;
     }
 
     public ListProcessesResponse withProcesses(Consumer<List<Process>> processesSetter) {
-        if(this.processes == null ){
+        if(this.processes == null) {
             this.processes = new ArrayList<>();
         }
         processesSetter.accept(this.processes);

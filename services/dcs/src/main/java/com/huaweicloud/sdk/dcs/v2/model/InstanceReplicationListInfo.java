@@ -311,12 +311,15 @@ public class InstanceReplicationListInfo  {
 
     
     public InstanceReplicationListInfo addDimensionsItem(InstanceReplicationDimensionsInfo dimensionsItem) {
+        if(this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
 
     public InstanceReplicationListInfo withDimensions(Consumer<List<InstanceReplicationDimensionsInfo>> dimensionsSetter) {
-        if(this.dimensions == null ){
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);

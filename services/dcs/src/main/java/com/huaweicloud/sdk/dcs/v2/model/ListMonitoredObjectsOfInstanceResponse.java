@@ -68,12 +68,15 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addRouterItem(String routerItem) {
+        if(this.router == null) {
+            this.router = new ArrayList<>();
+        }
         this.router.add(routerItem);
         return this;
     }
 
     public ListMonitoredObjectsOfInstanceResponse withRouter(Consumer<List<String>> routerSetter) {
-        if(this.router == null ){
+        if(this.router == null) {
             this.router = new ArrayList<>();
         }
         routerSetter.accept(this.router);
@@ -101,12 +104,15 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addChildrenItem(DimChild childrenItem) {
+        if(this.children == null) {
+            this.children = new ArrayList<>();
+        }
         this.children.add(childrenItem);
         return this;
     }
 
     public ListMonitoredObjectsOfInstanceResponse withChildren(Consumer<List<DimChild>> childrenSetter) {
-        if(this.children == null ){
+        if(this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);
@@ -134,12 +140,15 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addInstancesItem(InstancesMonitoredObject instancesItem) {
+        if(this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
         this.instances.add(instancesItem);
         return this;
     }
 
     public ListMonitoredObjectsOfInstanceResponse withInstances(Consumer<List<InstancesMonitoredObject>> instancesSetter) {
-        if(this.instances == null ){
+        if(this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);
@@ -167,12 +176,15 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addDcsClusterRedisNodeItem(ClusterRedisNodeMonitoredObject dcsClusterRedisNodeItem) {
+        if(this.dcsClusterRedisNode == null) {
+            this.dcsClusterRedisNode = new ArrayList<>();
+        }
         this.dcsClusterRedisNode.add(dcsClusterRedisNodeItem);
         return this;
     }
 
     public ListMonitoredObjectsOfInstanceResponse withDcsClusterRedisNode(Consumer<List<ClusterRedisNodeMonitoredObject>> dcsClusterRedisNodeSetter) {
-        if(this.dcsClusterRedisNode == null ){
+        if(this.dcsClusterRedisNode == null) {
             this.dcsClusterRedisNode = new ArrayList<>();
         }
         dcsClusterRedisNodeSetter.accept(this.dcsClusterRedisNode);
@@ -200,12 +212,15 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
     public ListMonitoredObjectsOfInstanceResponse addDcsClusterProxyNodeItem(ProxyNodeMonitoredObject dcsClusterProxyNodeItem) {
+        if(this.dcsClusterProxyNode == null) {
+            this.dcsClusterProxyNode = new ArrayList<>();
+        }
         this.dcsClusterProxyNode.add(dcsClusterProxyNodeItem);
         return this;
     }
 
     public ListMonitoredObjectsOfInstanceResponse withDcsClusterProxyNode(Consumer<List<ProxyNodeMonitoredObject>> dcsClusterProxyNodeSetter) {
-        if(this.dcsClusterProxyNode == null ){
+        if(this.dcsClusterProxyNode == null) {
             this.dcsClusterProxyNode = new ArrayList<>();
         }
         dcsClusterProxyNodeSetter.accept(this.dcsClusterProxyNode);

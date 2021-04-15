@@ -91,12 +91,15 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Response extends SdkResp
 
     
     public ListApisUnbindedToRequestThrottlingPolicyV2Response addApisItem(ThrottleBindingApiResp apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ListApisUnbindedToRequestThrottlingPolicyV2Response withApis(Consumer<List<ThrottleBindingApiResp>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

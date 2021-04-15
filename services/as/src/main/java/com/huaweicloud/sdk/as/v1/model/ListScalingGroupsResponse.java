@@ -119,12 +119,15 @@ public class ListScalingGroupsResponse extends SdkResponse {
 
     
     public ListScalingGroupsResponse addScalingGroupsItem(ScalingGroups scalingGroupsItem) {
+        if(this.scalingGroups == null) {
+            this.scalingGroups = new ArrayList<>();
+        }
         this.scalingGroups.add(scalingGroupsItem);
         return this;
     }
 
     public ListScalingGroupsResponse withScalingGroups(Consumer<List<ScalingGroups>> scalingGroupsSetter) {
-        if(this.scalingGroups == null ){
+        if(this.scalingGroups == null) {
             this.scalingGroups = new ArrayList<>();
         }
         scalingGroupsSetter.accept(this.scalingGroups);

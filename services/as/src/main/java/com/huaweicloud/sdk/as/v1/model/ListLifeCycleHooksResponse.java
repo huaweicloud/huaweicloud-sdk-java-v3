@@ -35,12 +35,15 @@ public class ListLifeCycleHooksResponse extends SdkResponse {
 
     
     public ListLifeCycleHooksResponse addLifecycleHooksItem(LifecycleHookList lifecycleHooksItem) {
+        if(this.lifecycleHooks == null) {
+            this.lifecycleHooks = new ArrayList<>();
+        }
         this.lifecycleHooks.add(lifecycleHooksItem);
         return this;
     }
 
     public ListLifeCycleHooksResponse withLifecycleHooks(Consumer<List<LifecycleHookList>> lifecycleHooksSetter) {
-        if(this.lifecycleHooks == null ){
+        if(this.lifecycleHooks == null) {
             this.lifecycleHooks = new ArrayList<>();
         }
         lifecycleHooksSetter.accept(this.lifecycleHooks);

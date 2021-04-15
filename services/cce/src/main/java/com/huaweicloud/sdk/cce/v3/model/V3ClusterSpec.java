@@ -375,12 +375,15 @@ public class V3ClusterSpec  {
 
     
     public V3ClusterSpec addClusterTagsItem(ResourceTag clusterTagsItem) {
+        if(this.clusterTags == null) {
+            this.clusterTags = new ArrayList<>();
+        }
         this.clusterTags.add(clusterTagsItem);
         return this;
     }
 
     public V3ClusterSpec withClusterTags(Consumer<List<ResourceTag>> clusterTagsSetter) {
-        if(this.clusterTags == null ){
+        if(this.clusterTags == null) {
             this.clusterTags = new ArrayList<>();
         }
         clusterTagsSetter.accept(this.clusterTags);
@@ -489,12 +492,15 @@ public class V3ClusterSpec  {
     
 
     public V3ClusterSpec putExtendParamItem(String key, String extendParamItem) {
+        if(this.extendParam == null) {
+            this.extendParam = new HashMap<>();
+        }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
 
     public V3ClusterSpec withExtendParam(Consumer<Map<String, String>> extendParamSetter) {
-        if(this.extendParam == null ){
+        if(this.extendParam == null) {
             this.extendParam = new HashMap<>();
         }
         extendParamSetter.accept(this.extendParam);
@@ -638,12 +644,15 @@ public class V3ClusterSpec  {
 
     
     public V3ClusterSpec addMastersItem(MasterSpec mastersItem) {
+        if(this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
         this.masters.add(mastersItem);
         return this;
     }
 
     public V3ClusterSpec withMasters(Consumer<List<MasterSpec>> mastersSetter) {
-        if(this.masters == null ){
+        if(this.masters == null) {
             this.masters = new ArrayList<>();
         }
         mastersSetter.accept(this.masters);

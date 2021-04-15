@@ -63,12 +63,15 @@ public class ListDailyLogResponse extends SdkResponse {
 
     
     public ListDailyLogResponse addLogsItem(DailyLog logsItem) {
+        if(this.logs == null) {
+            this.logs = new ArrayList<>();
+        }
         this.logs.add(logsItem);
         return this;
     }
 
     public ListDailyLogResponse withLogs(Consumer<List<DailyLog>> logsSetter) {
-        if(this.logs == null ){
+        if(this.logs == null) {
             this.logs = new ArrayList<>();
         }
         logsSetter.accept(this.logs);

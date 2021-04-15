@@ -42,12 +42,15 @@ public class ListAlarmTemplatesResponse extends SdkResponse {
 
     
     public ListAlarmTemplatesResponse addAlarmTemplatesItem(AlarmTemplate alarmTemplatesItem) {
+        if(this.alarmTemplates == null) {
+            this.alarmTemplates = new ArrayList<>();
+        }
         this.alarmTemplates.add(alarmTemplatesItem);
         return this;
     }
 
     public ListAlarmTemplatesResponse withAlarmTemplates(Consumer<List<AlarmTemplate>> alarmTemplatesSetter) {
-        if(this.alarmTemplates == null ){
+        if(this.alarmTemplates == null) {
             this.alarmTemplates = new ArrayList<>();
         }
         alarmTemplatesSetter.accept(this.alarmTemplates);

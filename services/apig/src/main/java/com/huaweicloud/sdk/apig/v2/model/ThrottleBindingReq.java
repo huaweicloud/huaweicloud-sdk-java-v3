@@ -60,12 +60,15 @@ public class ThrottleBindingReq  {
 
     
     public ThrottleBindingReq addPublishIdsItem(String publishIdsItem) {
+        if(this.publishIds == null) {
+            this.publishIds = new ArrayList<>();
+        }
         this.publishIds.add(publishIdsItem);
         return this;
     }
 
     public ThrottleBindingReq withPublishIds(Consumer<List<String>> publishIdsSetter) {
-        if(this.publishIds == null ){
+        if(this.publishIds == null) {
             this.publishIds = new ArrayList<>();
         }
         publishIdsSetter.accept(this.publishIds);

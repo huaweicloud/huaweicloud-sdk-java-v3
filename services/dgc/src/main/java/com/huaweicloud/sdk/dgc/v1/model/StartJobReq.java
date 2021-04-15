@@ -33,12 +33,15 @@ public class StartJobReq  {
 
     
     public StartJobReq addJobParamsItem(JobParam jobParamsItem) {
+        if(this.jobParams == null) {
+            this.jobParams = new ArrayList<>();
+        }
         this.jobParams.add(jobParamsItem);
         return this;
     }
 
     public StartJobReq withJobParams(Consumer<List<JobParam>> jobParamsSetter) {
-        if(this.jobParams == null ){
+        if(this.jobParams == null) {
             this.jobParams = new ArrayList<>();
         }
         jobParamsSetter.accept(this.jobParams);

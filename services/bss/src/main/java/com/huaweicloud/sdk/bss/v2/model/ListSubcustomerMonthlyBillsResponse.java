@@ -47,12 +47,15 @@ public class ListSubcustomerMonthlyBillsResponse extends SdkResponse {
 
     
     public ListSubcustomerMonthlyBillsResponse addBillSumsItem(BillSumInfoV2 billSumsItem) {
+        if(this.billSums == null) {
+            this.billSums = new ArrayList<>();
+        }
         this.billSums.add(billSumsItem);
         return this;
     }
 
     public ListSubcustomerMonthlyBillsResponse withBillSums(Consumer<List<BillSumInfoV2>> billSumsSetter) {
-        if(this.billSums == null ){
+        if(this.billSums == null) {
             this.billSums = new ArrayList<>();
         }
         billSumsSetter.accept(this.billSums);

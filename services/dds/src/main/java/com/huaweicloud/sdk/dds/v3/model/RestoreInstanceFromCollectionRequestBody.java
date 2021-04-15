@@ -33,12 +33,15 @@ public class RestoreInstanceFromCollectionRequestBody  {
 
     
     public RestoreInstanceFromCollectionRequestBody addRestoreCollectionsItem(RestoreInstanceFromCollectionRequestBodyRestoreCollections restoreCollectionsItem) {
+        if(this.restoreCollections == null) {
+            this.restoreCollections = new ArrayList<>();
+        }
         this.restoreCollections.add(restoreCollectionsItem);
         return this;
     }
 
     public RestoreInstanceFromCollectionRequestBody withRestoreCollections(Consumer<List<RestoreInstanceFromCollectionRequestBodyRestoreCollections>> restoreCollectionsSetter) {
-        if(this.restoreCollections == null ){
+        if(this.restoreCollections == null) {
             this.restoreCollections = new ArrayList<>();
         }
         restoreCollectionsSetter.accept(this.restoreCollections);

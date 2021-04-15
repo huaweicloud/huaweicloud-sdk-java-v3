@@ -35,12 +35,15 @@ public class ListPartnerBalancesResponse extends SdkResponse {
 
     
     public ListPartnerBalancesResponse addAccountBalancesItem(AccountBalanceV2 accountBalancesItem) {
+        if(this.accountBalances == null) {
+            this.accountBalances = new ArrayList<>();
+        }
         this.accountBalances.add(accountBalancesItem);
         return this;
     }
 
     public ListPartnerBalancesResponse withAccountBalances(Consumer<List<AccountBalanceV2>> accountBalancesSetter) {
-        if(this.accountBalances == null ){
+        if(this.accountBalances == null) {
             this.accountBalances = new ArrayList<>();
         }
         accountBalancesSetter.accept(this.accountBalances);

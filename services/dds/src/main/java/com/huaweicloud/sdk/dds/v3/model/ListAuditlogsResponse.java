@@ -63,12 +63,15 @@ public class ListAuditlogsResponse extends SdkResponse {
 
     
     public ListAuditlogsResponse addAuditLogsItem(ListAuditlogsResult auditLogsItem) {
+        if(this.auditLogs == null) {
+            this.auditLogs = new ArrayList<>();
+        }
         this.auditLogs.add(auditLogsItem);
         return this;
     }
 
     public ListAuditlogsResponse withAuditLogs(Consumer<List<ListAuditlogsResult>> auditLogsSetter) {
-        if(this.auditLogs == null ){
+        if(this.auditLogs == null) {
             this.auditLogs = new ArrayList<>();
         }
         auditLogsSetter.accept(this.auditLogs);

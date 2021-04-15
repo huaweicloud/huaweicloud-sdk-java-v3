@@ -95,12 +95,15 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
     public CreateKubernetesClusterCertResponse addClustersItem(Clusters clustersItem) {
+        if(this.clusters == null) {
+            this.clusters = new ArrayList<>();
+        }
         this.clusters.add(clustersItem);
         return this;
     }
 
     public CreateKubernetesClusterCertResponse withClusters(Consumer<List<Clusters>> clustersSetter) {
-        if(this.clusters == null ){
+        if(this.clusters == null) {
             this.clusters = new ArrayList<>();
         }
         clustersSetter.accept(this.clusters);
@@ -128,12 +131,15 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
     public CreateKubernetesClusterCertResponse addContextsItem(Contexts contextsItem) {
+        if(this.contexts == null) {
+            this.contexts = new ArrayList<>();
+        }
         this.contexts.add(contextsItem);
         return this;
     }
 
     public CreateKubernetesClusterCertResponse withContexts(Consumer<List<Contexts>> contextsSetter) {
-        if(this.contexts == null ){
+        if(this.contexts == null) {
             this.contexts = new ArrayList<>();
         }
         contextsSetter.accept(this.contexts);
@@ -227,12 +233,15 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
     public CreateKubernetesClusterCertResponse addUsersItem(Users usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
         this.users.add(usersItem);
         return this;
     }
 
     public CreateKubernetesClusterCertResponse withUsers(Consumer<List<Users>> usersSetter) {
-        if(this.users == null ){
+        if(this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);

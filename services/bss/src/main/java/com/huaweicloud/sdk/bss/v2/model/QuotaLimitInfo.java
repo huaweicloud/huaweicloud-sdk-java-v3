@@ -61,12 +61,15 @@ public class QuotaLimitInfo  {
 
     
     public QuotaLimitInfo addLimitValuesItem(LimitValue limitValuesItem) {
+        if(this.limitValues == null) {
+            this.limitValues = new ArrayList<>();
+        }
         this.limitValues.add(limitValuesItem);
         return this;
     }
 
     public QuotaLimitInfo withLimitValues(Consumer<List<LimitValue>> limitValuesSetter) {
-        if(this.limitValues == null ){
+        if(this.limitValues == null) {
             this.limitValues = new ArrayList<>();
         }
         limitValuesSetter.accept(this.limitValues);

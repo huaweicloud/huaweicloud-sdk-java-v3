@@ -751,12 +751,15 @@ public class ScalingPolicyExecuteLogList  {
 
     
     public ScalingPolicyExecuteLogList addJobRecordsItem(JobRecords jobRecordsItem) {
+        if(this.jobRecords == null) {
+            this.jobRecords = new ArrayList<>();
+        }
         this.jobRecords.add(jobRecordsItem);
         return this;
     }
 
     public ScalingPolicyExecuteLogList withJobRecords(Consumer<List<JobRecords>> jobRecordsSetter) {
-        if(this.jobRecords == null ){
+        if(this.jobRecords == null) {
             this.jobRecords = new ArrayList<>();
         }
         jobRecordsSetter.accept(this.jobRecords);

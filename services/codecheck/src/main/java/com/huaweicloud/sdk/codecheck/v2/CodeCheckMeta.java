@@ -44,7 +44,6 @@ public class CodeCheckMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -80,7 +79,6 @@ public class CodeCheckMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -108,7 +106,6 @@ public class CodeCheckMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -134,7 +131,6 @@ public class CodeCheckMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -180,7 +176,6 @@ public class CodeCheckMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -206,7 +201,6 @@ public class CodeCheckMeta {
 
         // response
         
-
 
 
         return builder.build();

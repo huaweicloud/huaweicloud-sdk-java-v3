@@ -35,12 +35,15 @@ public class UpdatePeriodToOnDemandResponse extends SdkResponse {
 
     
     public UpdatePeriodToOnDemandResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
+        if(this.errorDetails == null) {
+            this.errorDetails = new ArrayList<>();
+        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
 
     public UpdatePeriodToOnDemandResponse withErrorDetails(Consumer<List<ErrorDetail>> errorDetailsSetter) {
-        if(this.errorDetails == null ){
+        if(this.errorDetails == null) {
             this.errorDetails = new ArrayList<>();
         }
         errorDetailsSetter.accept(this.errorDetails);

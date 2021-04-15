@@ -63,12 +63,15 @@ public class ListBackupRecordsResponse extends SdkResponse {
 
     
     public ListBackupRecordsResponse addBackupRecordResponseItem(BackupRecordResponse backupRecordResponseItem) {
+        if(this.backupRecordResponse == null) {
+            this.backupRecordResponse = new ArrayList<>();
+        }
         this.backupRecordResponse.add(backupRecordResponseItem);
         return this;
     }
 
     public ListBackupRecordsResponse withBackupRecordResponse(Consumer<List<BackupRecordResponse>> backupRecordResponseSetter) {
-        if(this.backupRecordResponse == null ){
+        if(this.backupRecordResponse == null) {
             this.backupRecordResponse = new ArrayList<>();
         }
         backupRecordResponseSetter.accept(this.backupRecordResponse);

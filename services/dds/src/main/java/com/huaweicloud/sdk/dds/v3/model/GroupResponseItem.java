@@ -181,12 +181,15 @@ public class GroupResponseItem  {
 
     
     public GroupResponseItem addNodesItem(NodeItem nodesItem) {
+        if(this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
         this.nodes.add(nodesItem);
         return this;
     }
 
     public GroupResponseItem withNodes(Consumer<List<NodeItem>> nodesSetter) {
-        if(this.nodes == null ){
+        if(this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);

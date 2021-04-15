@@ -136,12 +136,15 @@ public class Versions  {
 
     
     public Versions addSupportVersionsItem(SupportVersions supportVersionsItem) {
+        if(this.supportVersions == null) {
+            this.supportVersions = new ArrayList<>();
+        }
         this.supportVersions.add(supportVersionsItem);
         return this;
     }
 
     public Versions withSupportVersions(Consumer<List<SupportVersions>> supportVersionsSetter) {
-        if(this.supportVersions == null ){
+        if(this.supportVersions == null) {
             this.supportVersions = new ArrayList<>();
         }
         supportVersionsSetter.accept(this.supportVersions);

@@ -98,12 +98,15 @@ public class QueryCouponQuotasReqExt  {
 
     
     public QueryCouponQuotasReqExt addQuotaIdsItem(String quotaIdsItem) {
+        if(this.quotaIds == null) {
+            this.quotaIds = new ArrayList<>();
+        }
         this.quotaIds.add(quotaIdsItem);
         return this;
     }
 
     public QueryCouponQuotasReqExt withQuotaIds(Consumer<List<String>> quotaIdsSetter) {
-        if(this.quotaIds == null ){
+        if(this.quotaIds == null) {
             this.quotaIds = new ArrayList<>();
         }
         quotaIdsSetter.accept(this.quotaIds);
@@ -131,12 +134,15 @@ public class QueryCouponQuotasReqExt  {
 
     
     public QueryCouponQuotasReqExt addQuotaStatusListItem(Integer quotaStatusListItem) {
+        if(this.quotaStatusList == null) {
+            this.quotaStatusList = new ArrayList<>();
+        }
         this.quotaStatusList.add(quotaStatusListItem);
         return this;
     }
 
     public QueryCouponQuotasReqExt withQuotaStatusList(Consumer<List<Integer>> quotaStatusListSetter) {
-        if(this.quotaStatusList == null ){
+        if(this.quotaStatusList == null) {
             this.quotaStatusList = new ArrayList<>();
         }
         quotaStatusListSetter.accept(this.quotaStatusList);

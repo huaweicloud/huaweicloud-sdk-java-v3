@@ -35,12 +35,15 @@ public class ListMetadataLocksResponse extends SdkResponse {
 
     
     public ListMetadataLocksResponse addMetadataLocksItem(MetadataLock metadataLocksItem) {
+        if(this.metadataLocks == null) {
+            this.metadataLocks = new ArrayList<>();
+        }
         this.metadataLocks.add(metadataLocksItem);
         return this;
     }
 
     public ListMetadataLocksResponse withMetadataLocks(Consumer<List<MetadataLock>> metadataLocksSetter) {
-        if(this.metadataLocks == null ){
+        if(this.metadataLocks == null) {
             this.metadataLocks = new ArrayList<>();
         }
         metadataLocksSetter.accept(this.metadataLocks);

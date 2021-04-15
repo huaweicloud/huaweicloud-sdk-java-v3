@@ -116,12 +116,15 @@ public class EmChildNodeV2  {
 
     
     public EmChildNodeV2 addChildNodesItem(EmChildNodeV2 childNodesItem) {
+        if(this.childNodes == null) {
+            this.childNodes = new ArrayList<>();
+        }
         this.childNodes.add(childNodesItem);
         return this;
     }
 
     public EmChildNodeV2 withChildNodes(Consumer<List<EmChildNodeV2>> childNodesSetter) {
-        if(this.childNodes == null ){
+        if(this.childNodes == null) {
             this.childNodes = new ArrayList<>();
         }
         childNodesSetter.accept(this.childNodes);

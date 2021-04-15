@@ -35,12 +35,15 @@ public class ListServiceTypesResponse extends SdkResponse {
 
     
     public ListServiceTypesResponse addServiceTypesItem(ServiceType serviceTypesItem) {
+        if(this.serviceTypes == null) {
+            this.serviceTypes = new ArrayList<>();
+        }
         this.serviceTypes.add(serviceTypesItem);
         return this;
     }
 
     public ListServiceTypesResponse withServiceTypes(Consumer<List<ServiceType>> serviceTypesSetter) {
-        if(this.serviceTypes == null ){
+        if(this.serviceTypes == null) {
             this.serviceTypes = new ArrayList<>();
         }
         serviceTypesSetter.accept(this.serviceTypes);

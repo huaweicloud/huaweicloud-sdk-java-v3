@@ -63,12 +63,15 @@ public class ListEnterpriseMultiAccountResponse extends SdkResponse {
 
     
     public ListEnterpriseMultiAccountResponse addAmountInfosItem(RetrieveAmountInfoV2 amountInfosItem) {
+        if(this.amountInfos == null) {
+            this.amountInfos = new ArrayList<>();
+        }
         this.amountInfos.add(amountInfosItem);
         return this;
     }
 
     public ListEnterpriseMultiAccountResponse withAmountInfos(Consumer<List<RetrieveAmountInfoV2>> amountInfosSetter) {
-        if(this.amountInfos == null ){
+        if(this.amountInfos == null) {
             this.amountInfos = new ArrayList<>();
         }
         amountInfosSetter.accept(this.amountInfos);

@@ -165,12 +165,15 @@ public class InstanceConfigResult  {
 
     
     public InstanceConfigResult addDiskItem(Disk diskItem) {
+        if(this.disk == null) {
+            this.disk = new ArrayList<>();
+        }
         this.disk.add(diskItem);
         return this;
     }
 
     public InstanceConfigResult withDisk(Consumer<List<Disk>> diskSetter) {
-        if(this.disk == null ){
+        if(this.disk == null) {
             this.disk = new ArrayList<>();
         }
         diskSetter.accept(this.disk);
@@ -395,12 +398,15 @@ public class InstanceConfigResult  {
 
     
     public InstanceConfigResult addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
+        if(this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
     public InstanceConfigResult withSecurityGroups(Consumer<List<SecurityGroups>> securityGroupsSetter) {
-        if(this.securityGroups == null ){
+        if(this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);

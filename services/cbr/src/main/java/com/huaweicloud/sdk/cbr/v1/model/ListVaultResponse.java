@@ -41,12 +41,15 @@ public class ListVaultResponse extends SdkResponse {
 
     
     public ListVaultResponse addVaultsItem(Vault vaultsItem) {
+        if(this.vaults == null) {
+            this.vaults = new ArrayList<>();
+        }
         this.vaults.add(vaultsItem);
         return this;
     }
 
     public ListVaultResponse withVaults(Consumer<List<Vault>> vaultsSetter) {
-        if(this.vaults == null ){
+        if(this.vaults == null) {
             this.vaults = new ArrayList<>();
         }
         vaultsSetter.accept(this.vaults);

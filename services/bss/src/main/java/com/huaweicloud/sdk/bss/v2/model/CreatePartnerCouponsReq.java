@@ -102,12 +102,15 @@ public class CreatePartnerCouponsReq  {
 
     
     public CreatePartnerCouponsReq addCustomerIdsItem(String customerIdsItem) {
+        if(this.customerIds == null) {
+            this.customerIds = new ArrayList<>();
+        }
         this.customerIds.add(customerIdsItem);
         return this;
     }
 
     public CreatePartnerCouponsReq withCustomerIds(Consumer<List<String>> customerIdsSetter) {
-        if(this.customerIds == null ){
+        if(this.customerIds == null) {
             this.customerIds = new ArrayList<>();
         }
         customerIdsSetter.accept(this.customerIds);
@@ -203,12 +206,15 @@ public class CreatePartnerCouponsReq  {
 
     
     public CreatePartnerCouponsReq addCloudServiceTypesItem(String cloudServiceTypesItem) {
+        if(this.cloudServiceTypes == null) {
+            this.cloudServiceTypes = new ArrayList<>();
+        }
         this.cloudServiceTypes.add(cloudServiceTypesItem);
         return this;
     }
 
     public CreatePartnerCouponsReq withCloudServiceTypes(Consumer<List<String>> cloudServiceTypesSetter) {
-        if(this.cloudServiceTypes == null ){
+        if(this.cloudServiceTypes == null) {
             this.cloudServiceTypes = new ArrayList<>();
         }
         cloudServiceTypesSetter.accept(this.cloudServiceTypes);
@@ -236,12 +242,15 @@ public class CreatePartnerCouponsReq  {
 
     
     public CreatePartnerCouponsReq addProductIdsItem(String productIdsItem) {
+        if(this.productIds == null) {
+            this.productIds = new ArrayList<>();
+        }
         this.productIds.add(productIdsItem);
         return this;
     }
 
     public CreatePartnerCouponsReq withProductIds(Consumer<List<String>> productIdsSetter) {
-        if(this.productIds == null ){
+        if(this.productIds == null) {
             this.productIds = new ArrayList<>();
         }
         productIdsSetter.accept(this.productIds);

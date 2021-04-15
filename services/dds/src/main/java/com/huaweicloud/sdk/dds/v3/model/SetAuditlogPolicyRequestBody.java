@@ -116,12 +116,15 @@ public class SetAuditlogPolicyRequestBody  {
 
     
     public SetAuditlogPolicyRequestBody addAuditTypesItem(String auditTypesItem) {
+        if(this.auditTypes == null) {
+            this.auditTypes = new ArrayList<>();
+        }
         this.auditTypes.add(auditTypesItem);
         return this;
     }
 
     public SetAuditlogPolicyRequestBody withAuditTypes(Consumer<List<String>> auditTypesSetter) {
-        if(this.auditTypes == null ){
+        if(this.auditTypes == null) {
             this.auditTypes = new ArrayList<>();
         }
         auditTypesSetter.accept(this.auditTypes);

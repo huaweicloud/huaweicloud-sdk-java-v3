@@ -123,12 +123,15 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
 
     
     public ShowCustomerMonthlySumResponse addBillSumsItem(BillSumRecordInfoV2 billSumsItem) {
+        if(this.billSums == null) {
+            this.billSums = new ArrayList<>();
+        }
         this.billSums.add(billSumsItem);
         return this;
     }
 
     public ShowCustomerMonthlySumResponse withBillSums(Consumer<List<BillSumRecordInfoV2>> billSumsSetter) {
-        if(this.billSums == null ){
+        if(this.billSums == null) {
             this.billSums = new ArrayList<>();
         }
         billSumsSetter.accept(this.billSums);

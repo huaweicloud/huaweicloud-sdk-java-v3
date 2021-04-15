@@ -41,12 +41,15 @@ public class ListClassroomMemberJobsResponse extends SdkResponse {
 
     
     public ListClassroomMemberJobsResponse addJobsItem(MemberJobCard jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public ListClassroomMemberJobsResponse withJobs(Consumer<List<MemberJobCard>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);

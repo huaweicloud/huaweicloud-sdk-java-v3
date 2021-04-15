@@ -47,12 +47,15 @@ public class DownloadSlowlogResponse extends SdkResponse {
 
     
     public DownloadSlowlogResponse addListItem(DownloadSlowlogResult listItem) {
+        if(this.list == null) {
+            this.list = new ArrayList<>();
+        }
         this.list.add(listItem);
         return this;
     }
 
     public DownloadSlowlogResponse withList(Consumer<List<DownloadSlowlogResult>> listSetter) {
-        if(this.list == null ){
+        if(this.list == null) {
             this.list = new ArrayList<>();
         }
         listSetter.accept(this.list);

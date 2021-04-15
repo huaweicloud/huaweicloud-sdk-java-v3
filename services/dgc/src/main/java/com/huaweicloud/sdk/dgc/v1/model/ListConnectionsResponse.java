@@ -63,12 +63,15 @@ public class ListConnectionsResponse extends SdkResponse {
 
     
     public ListConnectionsResponse addConnectionsItem(ConnectionInfo connectionsItem) {
+        if(this.connections == null) {
+            this.connections = new ArrayList<>();
+        }
         this.connections.add(connectionsItem);
         return this;
     }
 
     public ListConnectionsResponse withConnections(Consumer<List<ConnectionInfo>> connectionsSetter) {
-        if(this.connections == null ){
+        if(this.connections == null) {
             this.connections = new ArrayList<>();
         }
         connectionsSetter.accept(this.connections);

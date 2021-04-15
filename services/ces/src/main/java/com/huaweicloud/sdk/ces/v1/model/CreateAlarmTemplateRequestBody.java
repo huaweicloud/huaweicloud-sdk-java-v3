@@ -145,12 +145,15 @@ public class CreateAlarmTemplateRequestBody  {
 
     
     public CreateAlarmTemplateRequestBody addTemplateItemsItem(TemplateItem templateItemsItem) {
+        if(this.templateItems == null) {
+            this.templateItems = new ArrayList<>();
+        }
         this.templateItems.add(templateItemsItem);
         return this;
     }
 
     public CreateAlarmTemplateRequestBody withTemplateItems(Consumer<List<TemplateItem>> templateItemsSetter) {
-        if(this.templateItems == null ){
+        if(this.templateItems == null) {
             this.templateItems = new ArrayList<>();
         }
         templateItemsSetter.accept(this.templateItems);

@@ -859,12 +859,15 @@ public class BackupResp  {
 
     
     public BackupResp addReplicationRecordsItem(ReplicationRecordGet replicationRecordsItem) {
+        if(this.replicationRecords == null) {
+            this.replicationRecords = new ArrayList<>();
+        }
         this.replicationRecords.add(replicationRecordsItem);
         return this;
     }
 
     public BackupResp withReplicationRecords(Consumer<List<ReplicationRecordGet>> replicationRecordsSetter) {
-        if(this.replicationRecords == null ){
+        if(this.replicationRecords == null) {
             this.replicationRecords = new ArrayList<>();
         }
         replicationRecordsSetter.accept(this.replicationRecords);

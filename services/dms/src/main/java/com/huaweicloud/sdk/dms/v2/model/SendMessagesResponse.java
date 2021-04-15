@@ -35,12 +35,15 @@ public class SendMessagesResponse extends SdkResponse {
 
     
     public SendMessagesResponse addMessagesItem(SendMessagesRespMessages messagesItem) {
+        if(this.messages == null) {
+            this.messages = new ArrayList<>();
+        }
         this.messages.add(messagesItem);
         return this;
     }
 
     public SendMessagesResponse withMessages(Consumer<List<SendMessagesRespMessages>> messagesSetter) {
-        if(this.messages == null ){
+        if(this.messages == null) {
             this.messages = new ArrayList<>();
         }
         messagesSetter.accept(this.messages);

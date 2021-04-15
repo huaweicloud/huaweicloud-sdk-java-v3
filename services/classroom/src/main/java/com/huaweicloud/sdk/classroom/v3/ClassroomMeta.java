@@ -60,7 +60,6 @@ public class ClassroomMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -104,7 +103,6 @@ public class ClassroomMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -130,7 +128,6 @@ public class ClassroomMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -184,7 +181,6 @@ public class ClassroomMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -234,7 +230,6 @@ public class ClassroomMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -296,7 +291,6 @@ public class ClassroomMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -322,7 +316,6 @@ public class ClassroomMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -382,7 +375,6 @@ public class ClassroomMeta {
 
         // response
         
-
 
 
         return builder.build();

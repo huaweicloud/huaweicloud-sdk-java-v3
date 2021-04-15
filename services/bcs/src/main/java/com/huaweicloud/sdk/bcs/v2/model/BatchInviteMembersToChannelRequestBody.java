@@ -117,12 +117,15 @@ public class BatchInviteMembersToChannelRequestBody  {
 
     
     public BatchInviteMembersToChannelRequestBody addInvitedUserinfoItem(InvitedDomain invitedUserinfoItem) {
+        if(this.invitedUserinfo == null) {
+            this.invitedUserinfo = new ArrayList<>();
+        }
         this.invitedUserinfo.add(invitedUserinfoItem);
         return this;
     }
 
     public BatchInviteMembersToChannelRequestBody withInvitedUserinfo(Consumer<List<InvitedDomain>> invitedUserinfoSetter) {
-        if(this.invitedUserinfo == null ){
+        if(this.invitedUserinfo == null) {
             this.invitedUserinfo = new ArrayList<>();
         }
         invitedUserinfoSetter.accept(this.invitedUserinfo);

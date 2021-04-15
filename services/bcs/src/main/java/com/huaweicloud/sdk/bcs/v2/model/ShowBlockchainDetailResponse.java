@@ -151,12 +151,15 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
 
     
     public ShowBlockchainDetailResponse addChannelsItem(ChannelInfo channelsItem) {
+        if(this.channels == null) {
+            this.channels = new ArrayList<>();
+        }
         this.channels.add(channelsItem);
         return this;
     }
 
     public ShowBlockchainDetailResponse withChannels(Consumer<List<ChannelInfo>> channelsSetter) {
-        if(this.channels == null ){
+        if(this.channels == null) {
             this.channels = new ArrayList<>();
         }
         channelsSetter.accept(this.channels);
@@ -184,12 +187,15 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
 
     
     public ShowBlockchainDetailResponse addPeerInfoItem(PeerInfo peerInfoItem) {
+        if(this.peerInfo == null) {
+            this.peerInfo = new ArrayList<>();
+        }
         this.peerInfo.add(peerInfoItem);
         return this;
     }
 
     public ShowBlockchainDetailResponse withPeerInfo(Consumer<List<PeerInfo>> peerInfoSetter) {
-        if(this.peerInfo == null ){
+        if(this.peerInfo == null) {
             this.peerInfo = new ArrayList<>();
         }
         peerInfoSetter.accept(this.peerInfo);
@@ -217,12 +223,15 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
 
     
     public ShowBlockchainDetailResponse addLightPeerInfoItem(PeerInfo lightPeerInfoItem) {
+        if(this.lightPeerInfo == null) {
+            this.lightPeerInfo = new ArrayList<>();
+        }
         this.lightPeerInfo.add(lightPeerInfoItem);
         return this;
     }
 
     public ShowBlockchainDetailResponse withLightPeerInfo(Consumer<List<PeerInfo>> lightPeerInfoSetter) {
-        if(this.lightPeerInfo == null ){
+        if(this.lightPeerInfo == null) {
             this.lightPeerInfo = new ArrayList<>();
         }
         lightPeerInfoSetter.accept(this.lightPeerInfo);
@@ -454,12 +463,15 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     
 
     public ShowBlockchainDetailResponse putEvsPvcInfoItem(String key, Map<String, String> evsPvcInfoItem) {
+        if(this.evsPvcInfo == null) {
+            this.evsPvcInfo = new HashMap<>();
+        }
         this.evsPvcInfo.put(key, evsPvcInfoItem);
         return this;
     }
 
     public ShowBlockchainDetailResponse withEvsPvcInfo(Consumer<Map<String, Map<String, String>>> evsPvcInfoSetter) {
-        if(this.evsPvcInfo == null ){
+        if(this.evsPvcInfo == null) {
             this.evsPvcInfo = new HashMap<>();
         }
         evsPvcInfoSetter.accept(this.evsPvcInfo);

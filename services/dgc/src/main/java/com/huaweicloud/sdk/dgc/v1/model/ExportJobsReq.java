@@ -38,12 +38,15 @@ public class ExportJobsReq  {
 
     
     public ExportJobsReq addJobListItem(String jobListItem) {
+        if(this.jobList == null) {
+            this.jobList = new ArrayList<>();
+        }
         this.jobList.add(jobListItem);
         return this;
     }
 
     public ExportJobsReq withJobList(Consumer<List<String>> jobListSetter) {
-        if(this.jobList == null ){
+        if(this.jobList == null) {
             this.jobList = new ArrayList<>();
         }
         jobListSetter.accept(this.jobList);

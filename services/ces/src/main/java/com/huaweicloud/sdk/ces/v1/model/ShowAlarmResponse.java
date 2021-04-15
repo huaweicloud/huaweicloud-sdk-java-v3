@@ -35,12 +35,15 @@ public class ShowAlarmResponse extends SdkResponse {
 
     
     public ShowAlarmResponse addMetricAlarmsItem(MetricAlarms metricAlarmsItem) {
+        if(this.metricAlarms == null) {
+            this.metricAlarms = new ArrayList<>();
+        }
         this.metricAlarms.add(metricAlarmsItem);
         return this;
     }
 
     public ShowAlarmResponse withMetricAlarms(Consumer<List<MetricAlarms>> metricAlarmsSetter) {
-        if(this.metricAlarms == null ){
+        if(this.metricAlarms == null) {
             this.metricAlarms = new ArrayList<>();
         }
         metricAlarmsSetter.accept(this.metricAlarms);

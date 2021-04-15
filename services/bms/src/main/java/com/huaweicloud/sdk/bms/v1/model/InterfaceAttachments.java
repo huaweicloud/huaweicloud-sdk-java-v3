@@ -180,12 +180,15 @@ public class InterfaceAttachments  {
 
     
     public InterfaceAttachments addFixedIpsItem(FixedIps fixedIpsItem) {
+        if(this.fixedIps == null) {
+            this.fixedIps = new ArrayList<>();
+        }
         this.fixedIps.add(fixedIpsItem);
         return this;
     }
 
     public InterfaceAttachments withFixedIps(Consumer<List<FixedIps>> fixedIpsSetter) {
-        if(this.fixedIps == null ){
+        if(this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);

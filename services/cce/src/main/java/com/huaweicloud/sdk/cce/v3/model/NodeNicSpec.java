@@ -39,12 +39,15 @@ public class NodeNicSpec  {
 
     
     public NodeNicSpec addExtNicsItem(NicSpec extNicsItem) {
+        if(this.extNics == null) {
+            this.extNics = new ArrayList<>();
+        }
         this.extNics.add(extNicsItem);
         return this;
     }
 
     public NodeNicSpec withExtNics(Consumer<List<NicSpec>> extNicsSetter) {
-        if(this.extNics == null ){
+        if(this.extNics == null) {
             this.extNics = new ArrayList<>();
         }
         extNicsSetter.accept(this.extNics);

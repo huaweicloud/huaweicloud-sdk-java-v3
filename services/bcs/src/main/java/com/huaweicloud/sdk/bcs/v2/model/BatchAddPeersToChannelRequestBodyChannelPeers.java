@@ -62,12 +62,15 @@ public class BatchAddPeersToChannelRequestBodyChannelPeers  {
     
 
     public BatchAddPeersToChannelRequestBodyChannelPeers putPeersItem(String key, Integer peersItem) {
+        if(this.peers == null) {
+            this.peers = new HashMap<>();
+        }
         this.peers.put(key, peersItem);
         return this;
     }
 
     public BatchAddPeersToChannelRequestBodyChannelPeers withPeers(Consumer<Map<String, Integer>> peersSetter) {
-        if(this.peers == null ){
+        if(this.peers == null) {
             this.peers = new HashMap<>();
         }
         peersSetter.accept(this.peers);

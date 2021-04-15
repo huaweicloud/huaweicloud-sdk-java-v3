@@ -63,12 +63,15 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
 
     
     public BatchDisassociateThrottlingPolicyV2Response addFailureItem(ThrottleBindingBatchResultFailureResp failureItem) {
+        if(this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
         this.failure.add(failureItem);
         return this;
     }
 
     public BatchDisassociateThrottlingPolicyV2Response withFailure(Consumer<List<ThrottleBindingBatchResultFailureResp>> failureSetter) {
-        if(this.failure == null ){
+        if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);

@@ -66,12 +66,15 @@ public class ChannelInfoV2  {
 
     
     public ChannelInfoV2 addOrgNamesItem(String orgNamesItem) {
+        if(this.orgNames == null) {
+            this.orgNames = new ArrayList<>();
+        }
         this.orgNames.add(orgNamesItem);
         return this;
     }
 
     public ChannelInfoV2 withOrgNames(Consumer<List<String>> orgNamesSetter) {
-        if(this.orgNames == null ){
+        if(this.orgNames == null) {
             this.orgNames = new ArrayList<>();
         }
         orgNamesSetter.accept(this.orgNames);

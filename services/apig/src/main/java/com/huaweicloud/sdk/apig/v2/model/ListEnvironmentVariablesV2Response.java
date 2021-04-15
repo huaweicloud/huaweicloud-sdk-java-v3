@@ -91,12 +91,15 @@ public class ListEnvironmentVariablesV2Response extends SdkResponse {
 
     
     public ListEnvironmentVariablesV2Response addVariablesItem(EnvVariableResp variablesItem) {
+        if(this.variables == null) {
+            this.variables = new ArrayList<>();
+        }
         this.variables.add(variablesItem);
         return this;
     }
 
     public ListEnvironmentVariablesV2Response withVariables(Consumer<List<EnvVariableResp>> variablesSetter) {
-        if(this.variables == null ){
+        if(this.variables == null) {
             this.variables = new ArrayList<>();
         }
         variablesSetter.accept(this.variables);

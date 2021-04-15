@@ -42,12 +42,15 @@ public class ListTracesResponse extends SdkResponse {
 
     
     public ListTracesResponse addTracesItem(Traces tracesItem) {
+        if(this.traces == null) {
+            this.traces = new ArrayList<>();
+        }
         this.traces.add(tracesItem);
         return this;
     }
 
     public ListTracesResponse withTraces(Consumer<List<Traces>> tracesSetter) {
-        if(this.traces == null ){
+        if(this.traces == null) {
             this.traces = new ArrayList<>();
         }
         tracesSetter.accept(this.traces);

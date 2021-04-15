@@ -33,12 +33,15 @@ public class BatchAddPeersToChannelRequestBody  {
 
     
     public BatchAddPeersToChannelRequestBody addChannelPeersItem(BatchAddPeersToChannelRequestBodyChannelPeers channelPeersItem) {
+        if(this.channelPeers == null) {
+            this.channelPeers = new ArrayList<>();
+        }
         this.channelPeers.add(channelPeersItem);
         return this;
     }
 
     public BatchAddPeersToChannelRequestBody withChannelPeers(Consumer<List<BatchAddPeersToChannelRequestBodyChannelPeers>> channelPeersSetter) {
-        if(this.channelPeers == null ){
+        if(this.channelPeers == null) {
             this.channelPeers = new ArrayList<>();
         }
         channelPeersSetter.accept(this.channelPeers);

@@ -176,12 +176,15 @@ public class JobInfo  {
 
     
     public JobInfo addNodesItem(Node nodesItem) {
+        if(this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
         this.nodes.add(nodesItem);
         return this;
     }
 
     public JobInfo withNodes(Consumer<List<Node>> nodesSetter) {
-        if(this.nodes == null ){
+        if(this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -238,12 +241,15 @@ public class JobInfo  {
 
     
     public JobInfo addParamsItem(JobParam paramsItem) {
+        if(this.params == null) {
+            this.params = new ArrayList<>();
+        }
         this.params.add(paramsItem);
         return this;
     }
 
     public JobInfo withParams(Consumer<List<JobParam>> paramsSetter) {
-        if(this.params == null ){
+        if(this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);

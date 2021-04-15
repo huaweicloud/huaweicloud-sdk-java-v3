@@ -287,12 +287,15 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     
     public ShowTemplateDetailResponse addPropertiesItem(PropertiesInfo propertiesItem) {
+        if(this.properties == null) {
+            this.properties = new ArrayList<>();
+        }
         this.properties.add(propertiesItem);
         return this;
     }
 
     public ShowTemplateDetailResponse withProperties(Consumer<List<PropertiesInfo>> propertiesSetter) {
-        if(this.properties == null ){
+        if(this.properties == null) {
             this.properties = new ArrayList<>();
         }
         propertiesSetter.accept(this.properties);

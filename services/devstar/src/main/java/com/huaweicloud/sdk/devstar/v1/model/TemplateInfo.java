@@ -307,12 +307,15 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addProductshortsItem(String productshortsItem) {
+        if(this.productshorts == null) {
+            this.productshorts = new ArrayList<>();
+        }
         this.productshorts.add(productshortsItem);
         return this;
     }
 
     public TemplateInfo withProductshorts(Consumer<List<String>> productshortsSetter) {
-        if(this.productshorts == null ){
+        if(this.productshorts == null) {
             this.productshorts = new ArrayList<>();
         }
         productshortsSetter.accept(this.productshorts);
@@ -340,12 +343,15 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addProductsItem(TemplateProductExt productsItem) {
+        if(this.products == null) {
+            this.products = new ArrayList<>();
+        }
         this.products.add(productsItem);
         return this;
     }
 
     public TemplateInfo withProducts(Consumer<List<TemplateProductExt>> productsSetter) {
-        if(this.products == null ){
+        if(this.products == null) {
             this.products = new ArrayList<>();
         }
         productsSetter.accept(this.products);
@@ -373,12 +379,15 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addTopicItem(TopicCategory topicItem) {
+        if(this.topic == null) {
+            this.topic = new ArrayList<>();
+        }
         this.topic.add(topicItem);
         return this;
     }
 
     public TemplateInfo withTopic(Consumer<List<TopicCategory>> topicSetter) {
-        if(this.topic == null ){
+        if(this.topic == null) {
             this.topic = new ArrayList<>();
         }
         topicSetter.accept(this.topic);
@@ -714,12 +723,15 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addTagsItem(TagInfo tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public TemplateInfo withTags(Consumer<List<TagInfo>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -791,12 +803,15 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addMaintainersItem(String maintainersItem) {
+        if(this.maintainers == null) {
+            this.maintainers = new ArrayList<>();
+        }
         this.maintainers.add(maintainersItem);
         return this;
     }
 
     public TemplateInfo withMaintainers(Consumer<List<String>> maintainersSetter) {
-        if(this.maintainers == null ){
+        if(this.maintainers == null) {
             this.maintainers = new ArrayList<>();
         }
         maintainersSetter.accept(this.maintainers);
@@ -875,12 +890,15 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addReferencesItem(Reference referencesItem) {
+        if(this.references == null) {
+            this.references = new ArrayList<>();
+        }
         this.references.add(referencesItem);
         return this;
     }
 
     public TemplateInfo withReferences(Consumer<List<Reference>> referencesSetter) {
-        if(this.references == null ){
+        if(this.references == null) {
             this.references = new ArrayList<>();
         }
         referencesSetter.accept(this.references);
@@ -930,12 +948,15 @@ public class TemplateInfo  {
 
     
     public TemplateInfo addDependenciesItem(Object dependenciesItem) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
         this.dependencies.add(dependenciesItem);
         return this;
     }
 
     public TemplateInfo withDependencies(Consumer<List<Object>> dependenciesSetter) {
-        if(this.dependencies == null ){
+        if(this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);

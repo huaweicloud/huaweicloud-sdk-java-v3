@@ -96,12 +96,15 @@ public class InstanceRequestSpec  {
     
 
     public InstanceRequestSpec putValuesItem(String key, Object valuesItem) {
+        if(this.values == null) {
+            this.values = new HashMap<>();
+        }
         this.values.put(key, valuesItem);
         return this;
     }
 
     public InstanceRequestSpec withValues(Consumer<Map<String, Object>> valuesSetter) {
-        if(this.values == null ){
+        if(this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);

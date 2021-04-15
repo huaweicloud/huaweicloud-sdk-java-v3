@@ -38,12 +38,15 @@ public class PolicyTriggerPropertiesResp  {
 
     
     public PolicyTriggerPropertiesResp addPatternItem(String patternItem) {
+        if(this.pattern == null) {
+            this.pattern = new ArrayList<>();
+        }
         this.pattern.add(patternItem);
         return this;
     }
 
     public PolicyTriggerPropertiesResp withPattern(Consumer<List<String>> patternSetter) {
-        if(this.pattern == null ){
+        if(this.pattern == null) {
             this.pattern = new ArrayList<>();
         }
         patternSetter.accept(this.pattern);

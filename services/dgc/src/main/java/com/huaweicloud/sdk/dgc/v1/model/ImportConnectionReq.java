@@ -149,12 +149,15 @@ public class ImportConnectionReq  {
 
     
     public ImportConnectionReq addParamsItem(ConnectionParam paramsItem) {
+        if(this.params == null) {
+            this.params = new ArrayList<>();
+        }
         this.params.add(paramsItem);
         return this;
     }
 
     public ImportConnectionReq withParams(Consumer<List<ConnectionParam>> paramsSetter) {
-        if(this.params == null ){
+        if(this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);

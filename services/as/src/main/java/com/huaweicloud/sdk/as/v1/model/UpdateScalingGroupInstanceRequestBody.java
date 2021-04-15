@@ -156,12 +156,15 @@ public class UpdateScalingGroupInstanceRequestBody  {
 
     
     public UpdateScalingGroupInstanceRequestBody addInstancesIdItem(String instancesIdItem) {
+        if(this.instancesId == null) {
+            this.instancesId = new ArrayList<>();
+        }
         this.instancesId.add(instancesIdItem);
         return this;
     }
 
     public UpdateScalingGroupInstanceRequestBody withInstancesId(Consumer<List<String>> instancesIdSetter) {
-        if(this.instancesId == null ){
+        if(this.instancesId == null) {
             this.instancesId = new ArrayList<>();
         }
         instancesIdSetter.accept(this.instancesId);

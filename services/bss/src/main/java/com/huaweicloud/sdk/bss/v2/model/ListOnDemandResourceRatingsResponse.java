@@ -177,12 +177,15 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
     
     public ListOnDemandResourceRatingsResponse addProductRatingResultsItem(DemandProductRatingResult productRatingResultsItem) {
+        if(this.productRatingResults == null) {
+            this.productRatingResults = new ArrayList<>();
+        }
         this.productRatingResults.add(productRatingResultsItem);
         return this;
     }
 
     public ListOnDemandResourceRatingsResponse withProductRatingResults(Consumer<List<DemandProductRatingResult>> productRatingResultsSetter) {
-        if(this.productRatingResults == null ){
+        if(this.productRatingResults == null) {
             this.productRatingResults = new ArrayList<>();
         }
         productRatingResultsSetter.accept(this.productRatingResults);

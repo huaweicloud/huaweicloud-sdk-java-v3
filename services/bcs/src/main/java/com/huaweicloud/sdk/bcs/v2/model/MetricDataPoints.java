@@ -89,12 +89,15 @@ public class MetricDataPoints  {
 
     
     public MetricDataPoints addStatisticsItem(StatisticValue statisticsItem) {
+        if(this.statistics == null) {
+            this.statistics = new ArrayList<>();
+        }
         this.statistics.add(statisticsItem);
         return this;
     }
 
     public MetricDataPoints withStatistics(Consumer<List<StatisticValue>> statisticsSetter) {
-        if(this.statistics == null ){
+        if(this.statistics == null) {
             this.statistics = new ArrayList<>();
         }
         statisticsSetter.accept(this.statistics);

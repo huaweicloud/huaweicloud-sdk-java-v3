@@ -35,12 +35,15 @@ public class ListScalingTagInfosByTenantIdResponse extends SdkResponse {
 
     
     public ListScalingTagInfosByTenantIdResponse addTagsItem(TagsMultiValue tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ListScalingTagInfosByTenantIdResponse withTags(Consumer<List<TagsMultiValue>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

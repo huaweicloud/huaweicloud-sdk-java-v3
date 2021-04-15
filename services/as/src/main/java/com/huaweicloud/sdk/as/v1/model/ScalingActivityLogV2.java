@@ -307,12 +307,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addInstanceRemovedListItem(ScalingInstance instanceRemovedListItem) {
+        if(this.instanceRemovedList == null) {
+            this.instanceRemovedList = new ArrayList<>();
+        }
         this.instanceRemovedList.add(instanceRemovedListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withInstanceRemovedList(Consumer<List<ScalingInstance>> instanceRemovedListSetter) {
-        if(this.instanceRemovedList == null ){
+        if(this.instanceRemovedList == null) {
             this.instanceRemovedList = new ArrayList<>();
         }
         instanceRemovedListSetter.accept(this.instanceRemovedList);
@@ -340,12 +343,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addInstanceDeletedListItem(ScalingInstance instanceDeletedListItem) {
+        if(this.instanceDeletedList == null) {
+            this.instanceDeletedList = new ArrayList<>();
+        }
         this.instanceDeletedList.add(instanceDeletedListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withInstanceDeletedList(Consumer<List<ScalingInstance>> instanceDeletedListSetter) {
-        if(this.instanceDeletedList == null ){
+        if(this.instanceDeletedList == null) {
             this.instanceDeletedList = new ArrayList<>();
         }
         instanceDeletedListSetter.accept(this.instanceDeletedList);
@@ -373,12 +379,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addInstanceAddedListItem(ScalingInstance instanceAddedListItem) {
+        if(this.instanceAddedList == null) {
+            this.instanceAddedList = new ArrayList<>();
+        }
         this.instanceAddedList.add(instanceAddedListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withInstanceAddedList(Consumer<List<ScalingInstance>> instanceAddedListSetter) {
-        if(this.instanceAddedList == null ){
+        if(this.instanceAddedList == null) {
             this.instanceAddedList = new ArrayList<>();
         }
         instanceAddedListSetter.accept(this.instanceAddedList);
@@ -406,12 +415,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addInstanceFailedListItem(ScalingInstance instanceFailedListItem) {
+        if(this.instanceFailedList == null) {
+            this.instanceFailedList = new ArrayList<>();
+        }
         this.instanceFailedList.add(instanceFailedListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withInstanceFailedList(Consumer<List<ScalingInstance>> instanceFailedListSetter) {
-        if(this.instanceFailedList == null ){
+        if(this.instanceFailedList == null) {
             this.instanceFailedList = new ArrayList<>();
         }
         instanceFailedListSetter.accept(this.instanceFailedList);
@@ -439,12 +451,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addInstanceStandbyListItem(ScalingInstance instanceStandbyListItem) {
+        if(this.instanceStandbyList == null) {
+            this.instanceStandbyList = new ArrayList<>();
+        }
         this.instanceStandbyList.add(instanceStandbyListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withInstanceStandbyList(Consumer<List<ScalingInstance>> instanceStandbyListSetter) {
-        if(this.instanceStandbyList == null ){
+        if(this.instanceStandbyList == null) {
             this.instanceStandbyList = new ArrayList<>();
         }
         instanceStandbyListSetter.accept(this.instanceStandbyList);
@@ -560,12 +575,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addLbBindSuccessListItem(ModifyLb lbBindSuccessListItem) {
+        if(this.lbBindSuccessList == null) {
+            this.lbBindSuccessList = new ArrayList<>();
+        }
         this.lbBindSuccessList.add(lbBindSuccessListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withLbBindSuccessList(Consumer<List<ModifyLb>> lbBindSuccessListSetter) {
-        if(this.lbBindSuccessList == null ){
+        if(this.lbBindSuccessList == null) {
             this.lbBindSuccessList = new ArrayList<>();
         }
         lbBindSuccessListSetter.accept(this.lbBindSuccessList);
@@ -593,12 +611,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addLbBindFailedListItem(ModifyLb lbBindFailedListItem) {
+        if(this.lbBindFailedList == null) {
+            this.lbBindFailedList = new ArrayList<>();
+        }
         this.lbBindFailedList.add(lbBindFailedListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withLbBindFailedList(Consumer<List<ModifyLb>> lbBindFailedListSetter) {
-        if(this.lbBindFailedList == null ){
+        if(this.lbBindFailedList == null) {
             this.lbBindFailedList = new ArrayList<>();
         }
         lbBindFailedListSetter.accept(this.lbBindFailedList);
@@ -626,12 +647,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addLbUnbindSuccessListItem(ModifyLb lbUnbindSuccessListItem) {
+        if(this.lbUnbindSuccessList == null) {
+            this.lbUnbindSuccessList = new ArrayList<>();
+        }
         this.lbUnbindSuccessList.add(lbUnbindSuccessListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withLbUnbindSuccessList(Consumer<List<ModifyLb>> lbUnbindSuccessListSetter) {
-        if(this.lbUnbindSuccessList == null ){
+        if(this.lbUnbindSuccessList == null) {
             this.lbUnbindSuccessList = new ArrayList<>();
         }
         lbUnbindSuccessListSetter.accept(this.lbUnbindSuccessList);
@@ -659,12 +683,15 @@ public class ScalingActivityLogV2  {
 
     
     public ScalingActivityLogV2 addLbUnbindFailedListItem(ModifyLb lbUnbindFailedListItem) {
+        if(this.lbUnbindFailedList == null) {
+            this.lbUnbindFailedList = new ArrayList<>();
+        }
         this.lbUnbindFailedList.add(lbUnbindFailedListItem);
         return this;
     }
 
     public ScalingActivityLogV2 withLbUnbindFailedList(Consumer<List<ModifyLb>> lbUnbindFailedListSetter) {
-        if(this.lbUnbindFailedList == null ){
+        if(this.lbUnbindFailedList == null) {
             this.lbUnbindFailedList = new ArrayList<>();
         }
         lbUnbindFailedListSetter.accept(this.lbUnbindFailedList);

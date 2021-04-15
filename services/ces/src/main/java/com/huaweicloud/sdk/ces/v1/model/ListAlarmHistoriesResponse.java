@@ -42,12 +42,15 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
 
     
     public ListAlarmHistoriesResponse addAlarmHistoriesItem(AlarmHistoryInfo alarmHistoriesItem) {
+        if(this.alarmHistories == null) {
+            this.alarmHistories = new ArrayList<>();
+        }
         this.alarmHistories.add(alarmHistoriesItem);
         return this;
     }
 
     public ListAlarmHistoriesResponse withAlarmHistories(Consumer<List<AlarmHistoryInfo>> alarmHistoriesSetter) {
-        if(this.alarmHistories == null ){
+        if(this.alarmHistories == null) {
             this.alarmHistories = new ArrayList<>();
         }
         alarmHistoriesSetter.accept(this.alarmHistories);

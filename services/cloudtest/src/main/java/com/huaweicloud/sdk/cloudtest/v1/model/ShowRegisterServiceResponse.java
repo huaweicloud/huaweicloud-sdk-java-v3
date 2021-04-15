@@ -35,12 +35,15 @@ public class ShowRegisterServiceResponse extends SdkResponse {
 
     
     public ShowRegisterServiceResponse addServicesItem(ServicesInfo servicesItem) {
+        if(this.services == null) {
+            this.services = new ArrayList<>();
+        }
         this.services.add(servicesItem);
         return this;
     }
 
     public ShowRegisterServiceResponse withServices(Consumer<List<ServicesInfo>> servicesSetter) {
-        if(this.services == null ){
+        if(this.services == null) {
             this.services = new ArrayList<>();
         }
         servicesSetter.accept(this.services);

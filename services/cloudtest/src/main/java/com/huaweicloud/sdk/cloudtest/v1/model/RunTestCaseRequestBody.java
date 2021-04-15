@@ -89,12 +89,15 @@ public class RunTestCaseRequestBody  {
 
     
     public RunTestCaseRequestBody addExecuteListItem(TestCaseExecuteBean executeListItem) {
+        if(this.executeList == null) {
+            this.executeList = new ArrayList<>();
+        }
         this.executeList.add(executeListItem);
         return this;
     }
 
     public RunTestCaseRequestBody withExecuteList(Consumer<List<TestCaseExecuteBean>> executeListSetter) {
-        if(this.executeList == null ){
+        if(this.executeList == null) {
             this.executeList = new ArrayList<>();
         }
         executeListSetter.accept(this.executeList);

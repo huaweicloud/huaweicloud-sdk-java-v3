@@ -34,12 +34,15 @@ public class RemoveVaultResourceResponse extends SdkResponse {
 
     
     public RemoveVaultResourceResponse addRemoveResourceIdsItem(String removeResourceIdsItem) {
+        if(this.removeResourceIds == null) {
+            this.removeResourceIds = new ArrayList<>();
+        }
         this.removeResourceIds.add(removeResourceIdsItem);
         return this;
     }
 
     public RemoveVaultResourceResponse withRemoveResourceIds(Consumer<List<String>> removeResourceIdsSetter) {
-        if(this.removeResourceIds == null ){
+        if(this.removeResourceIds == null) {
             this.removeResourceIds = new ArrayList<>();
         }
         removeResourceIdsSetter.accept(this.removeResourceIds);

@@ -34,12 +34,15 @@ public class DeleteMigrationTaskResponse extends SdkResponse {
 
     
     public DeleteMigrationTaskResponse addTaskIdListItem(String taskIdListItem) {
+        if(this.taskIdList == null) {
+            this.taskIdList = new ArrayList<>();
+        }
         this.taskIdList.add(taskIdListItem);
         return this;
     }
 
     public DeleteMigrationTaskResponse withTaskIdList(Consumer<List<String>> taskIdListSetter) {
-        if(this.taskIdList == null ){
+        if(this.taskIdList == null) {
             this.taskIdList = new ArrayList<>();
         }
         taskIdListSetter.accept(this.taskIdList);

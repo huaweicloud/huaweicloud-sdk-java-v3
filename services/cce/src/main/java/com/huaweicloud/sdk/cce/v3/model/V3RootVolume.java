@@ -108,12 +108,15 @@ public class V3RootVolume  {
     
 
     public V3RootVolume putExtendParamItem(String key, Object extendParamItem) {
+        if(this.extendParam == null) {
+            this.extendParam = new HashMap<>();
+        }
         this.extendParam.put(key, extendParamItem);
         return this;
     }
 
     public V3RootVolume withExtendParam(Consumer<Map<String, Object>> extendParamSetter) {
-        if(this.extendParam == null ){
+        if(this.extendParam == null) {
             this.extendParam = new HashMap<>();
         }
         extendParamSetter.accept(this.extendParam);

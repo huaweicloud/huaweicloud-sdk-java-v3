@@ -455,12 +455,15 @@ public class Node  {
 
     
     public Node addConditionItem(Condition conditionItem) {
+        if(this.condition == null) {
+            this.condition = new ArrayList<>();
+        }
         this.condition.add(conditionItem);
         return this;
     }
 
     public Node withCondition(Consumer<List<Condition>> conditionSetter) {
-        if(this.condition == null ){
+        if(this.condition == null) {
             this.condition = new ArrayList<>();
         }
         conditionSetter.accept(this.condition);

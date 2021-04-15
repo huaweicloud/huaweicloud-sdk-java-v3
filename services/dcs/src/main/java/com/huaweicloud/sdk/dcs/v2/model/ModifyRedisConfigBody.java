@@ -33,12 +33,15 @@ public class ModifyRedisConfigBody  {
 
     
     public ModifyRedisConfigBody addRedisConfigItem(RedisConfig redisConfigItem) {
+        if(this.redisConfig == null) {
+            this.redisConfig = new ArrayList<>();
+        }
         this.redisConfig.add(redisConfigItem);
         return this;
     }
 
     public ModifyRedisConfigBody withRedisConfig(Consumer<List<RedisConfig>> redisConfigSetter) {
-        if(this.redisConfig == null ){
+        if(this.redisConfig == null) {
             this.redisConfig = new ArrayList<>();
         }
         redisConfigSetter.accept(this.redisConfig);

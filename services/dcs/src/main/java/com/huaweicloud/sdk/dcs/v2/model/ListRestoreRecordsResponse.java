@@ -41,12 +41,15 @@ public class ListRestoreRecordsResponse extends SdkResponse {
 
     
     public ListRestoreRecordsResponse addRestoreRecordResponseItem(InstanceRestoreInfo restoreRecordResponseItem) {
+        if(this.restoreRecordResponse == null) {
+            this.restoreRecordResponse = new ArrayList<>();
+        }
         this.restoreRecordResponse.add(restoreRecordResponseItem);
         return this;
     }
 
     public ListRestoreRecordsResponse withRestoreRecordResponse(Consumer<List<InstanceRestoreInfo>> restoreRecordResponseSetter) {
-        if(this.restoreRecordResponse == null ){
+        if(this.restoreRecordResponse == null) {
             this.restoreRecordResponse = new ArrayList<>();
         }
         restoreRecordResponseSetter.accept(this.restoreRecordResponse);

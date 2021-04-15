@@ -44,7 +44,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -78,7 +77,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -116,7 +114,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -152,7 +149,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -178,7 +174,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -216,7 +211,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -250,7 +244,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -288,7 +281,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -314,7 +306,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -352,7 +343,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -379,6 +369,75 @@ public class DdsMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> deleteDatabaseRole = genFordeleteDatabaseRole();
+
+    private static HttpRequestDef<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> genFordeleteDatabaseRole() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRoleRequest.class, DeleteDatabaseRoleResponse.class)
+                .withName("DeleteDatabaseRole")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-role")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDatabaseRoleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DeleteDatabaseRoleRequestBody.class,
+            f -> f.withMarshaller(DeleteDatabaseRoleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> deleteDatabaseUser = genFordeleteDatabaseUser();
+
+    private static HttpRequestDef<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> genFordeleteDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseUserRequest.class, DeleteDatabaseUserResponse.class)
+                .withName("DeleteDatabaseUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-user")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDatabaseUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DeleteDatabaseUserRequestBody.class,
+            f -> f.withMarshaller(DeleteDatabaseUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();
@@ -408,7 +467,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -434,7 +492,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -472,7 +529,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -506,7 +562,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -544,7 +599,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -578,7 +632,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -654,7 +707,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -740,7 +792,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -798,7 +849,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -860,7 +910,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -886,7 +935,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -964,7 +1012,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1000,7 +1047,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1026,7 +1072,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1112,7 +1157,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1140,7 +1184,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1158,7 +1201,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1228,7 +1270,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1288,7 +1329,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1330,7 +1370,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1408,7 +1447,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1484,7 +1522,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1510,7 +1547,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1548,7 +1584,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1582,7 +1617,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1620,7 +1654,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1656,7 +1689,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1690,7 +1722,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1736,7 +1767,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1762,7 +1792,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1800,7 +1829,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1836,7 +1864,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1870,7 +1897,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -1916,7 +1942,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -1943,6 +1968,40 @@ public class DdsMeta {
         // response
         
 
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatistics = genForshowConnectionStatistics();
+
+    private static HttpRequestDef<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> genForshowConnectionStatistics() {
+        // basic
+        HttpRequestDef.Builder<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConnectionStatisticsRequest.class, ShowConnectionStatisticsResponse.class)
+                .withName("ShowConnectionStatistics")
+                .withUri("/v3/{project_id}/instances/{instance_id}/conn-statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowConnectionStatisticsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowConnectionStatisticsRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            })
+        );
+
+        // response
+        
 
 
         return builder.build();
@@ -1980,7 +2039,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2006,7 +2064,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2044,7 +2101,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2078,7 +2134,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2116,7 +2171,6 @@ public class DdsMeta {
         
 
 
-
         return builder.build();
     }
 
@@ -2134,7 +2188,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();
@@ -2162,7 +2215,6 @@ public class DdsMeta {
 
         // response
         
-
 
 
         return builder.build();

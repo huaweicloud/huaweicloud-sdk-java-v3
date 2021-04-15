@@ -379,12 +379,15 @@ public class CreateAlarmRequestBody  {
 
     
     public CreateAlarmRequestBody addAlarmActionsItem(AlarmActions alarmActionsItem) {
+        if(this.alarmActions == null) {
+            this.alarmActions = new ArrayList<>();
+        }
         this.alarmActions.add(alarmActionsItem);
         return this;
     }
 
     public CreateAlarmRequestBody withAlarmActions(Consumer<List<AlarmActions>> alarmActionsSetter) {
-        if(this.alarmActions == null ){
+        if(this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
         alarmActionsSetter.accept(this.alarmActions);
@@ -412,12 +415,15 @@ public class CreateAlarmRequestBody  {
 
     
     public CreateAlarmRequestBody addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
+        if(this.insufficientdataActions == null) {
+            this.insufficientdataActions = new ArrayList<>();
+        }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
 
     public CreateAlarmRequestBody withInsufficientdataActions(Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
-        if(this.insufficientdataActions == null ){
+        if(this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
         insufficientdataActionsSetter.accept(this.insufficientdataActions);
@@ -445,12 +451,15 @@ public class CreateAlarmRequestBody  {
 
     
     public CreateAlarmRequestBody addOkActionsItem(AlarmActions okActionsItem) {
+        if(this.okActions == null) {
+            this.okActions = new ArrayList<>();
+        }
         this.okActions.add(okActionsItem);
         return this;
     }
 
     public CreateAlarmRequestBody withOkActions(Consumer<List<AlarmActions>> okActionsSetter) {
-        if(this.okActions == null ){
+        if(this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
         okActionsSetter.accept(this.okActions);

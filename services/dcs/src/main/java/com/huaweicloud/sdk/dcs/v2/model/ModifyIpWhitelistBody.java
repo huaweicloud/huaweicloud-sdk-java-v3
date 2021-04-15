@@ -61,12 +61,15 @@ public class ModifyIpWhitelistBody  {
 
     
     public ModifyIpWhitelistBody addWhitelistItem(Whitelist whitelistItem) {
+        if(this.whitelist == null) {
+            this.whitelist = new ArrayList<>();
+        }
         this.whitelist.add(whitelistItem);
         return this;
     }
 
     public ModifyIpWhitelistBody withWhitelist(Consumer<List<Whitelist>> whitelistSetter) {
-        if(this.whitelist == null ){
+        if(this.whitelist == null) {
             this.whitelist = new ArrayList<>();
         }
         whitelistSetter.accept(this.whitelist);

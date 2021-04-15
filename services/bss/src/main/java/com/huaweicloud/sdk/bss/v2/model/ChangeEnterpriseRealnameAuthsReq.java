@@ -163,12 +163,15 @@ public class ChangeEnterpriseRealnameAuthsReq  {
 
     
     public ChangeEnterpriseRealnameAuthsReq addVerifiedFileUrlItem(String verifiedFileUrlItem) {
+        if(this.verifiedFileUrl == null) {
+            this.verifiedFileUrl = new ArrayList<>();
+        }
         this.verifiedFileUrl.add(verifiedFileUrlItem);
         return this;
     }
 
     public ChangeEnterpriseRealnameAuthsReq withVerifiedFileUrl(Consumer<List<String>> verifiedFileUrlSetter) {
-        if(this.verifiedFileUrl == null ){
+        if(this.verifiedFileUrl == null) {
             this.verifiedFileUrl = new ArrayList<>();
         }
         verifiedFileUrlSetter.accept(this.verifiedFileUrl);

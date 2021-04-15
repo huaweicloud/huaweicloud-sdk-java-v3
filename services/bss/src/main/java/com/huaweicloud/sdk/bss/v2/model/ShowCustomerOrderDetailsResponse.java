@@ -99,12 +99,15 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
 
     
     public ShowCustomerOrderDetailsResponse addOrderLineItemsItem(OrderLineItemEntityV2 orderLineItemsItem) {
+        if(this.orderLineItems == null) {
+            this.orderLineItems = new ArrayList<>();
+        }
         this.orderLineItems.add(orderLineItemsItem);
         return this;
     }
 
     public ShowCustomerOrderDetailsResponse withOrderLineItems(Consumer<List<OrderLineItemEntityV2>> orderLineItemsSetter) {
-        if(this.orderLineItems == null ){
+        if(this.orderLineItems == null) {
             this.orderLineItems = new ArrayList<>();
         }
         orderLineItemsSetter.accept(this.orderLineItems);

@@ -638,12 +638,15 @@ public class BasicInfo  {
 
     
     public BasicInfo addAgentPortalAddrsItem(String agentPortalAddrsItem) {
+        if(this.agentPortalAddrs == null) {
+            this.agentPortalAddrs = new ArrayList<>();
+        }
         this.agentPortalAddrs.add(agentPortalAddrsItem);
         return this;
     }
 
     public BasicInfo withAgentPortalAddrs(Consumer<List<String>> agentPortalAddrsSetter) {
-        if(this.agentPortalAddrs == null ){
+        if(this.agentPortalAddrs == null) {
             this.agentPortalAddrs = new ArrayList<>();
         }
         agentPortalAddrsSetter.accept(this.agentPortalAddrs);

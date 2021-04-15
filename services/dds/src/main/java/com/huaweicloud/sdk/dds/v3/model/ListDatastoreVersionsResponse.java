@@ -34,12 +34,15 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
 
     
     public ListDatastoreVersionsResponse addVersionsItem(String versionsItem) {
+        if(this.versions == null) {
+            this.versions = new ArrayList<>();
+        }
         this.versions.add(versionsItem);
         return this;
     }
 
     public ListDatastoreVersionsResponse withVersions(Consumer<List<String>> versionsSetter) {
-        if(this.versions == null ){
+        if(this.versions == null) {
             this.versions = new ArrayList<>();
         }
         versionsSetter.accept(this.versions);

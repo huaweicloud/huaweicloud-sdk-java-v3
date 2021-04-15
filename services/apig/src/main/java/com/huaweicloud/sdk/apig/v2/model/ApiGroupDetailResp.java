@@ -112,12 +112,15 @@ public class ApiGroupDetailResp  {
 
     
     public ApiGroupDetailResp addUrlDomainsItem(UrlDomainsResp urlDomainsItem) {
+        if(this.urlDomains == null) {
+            this.urlDomains = new ArrayList<>();
+        }
         this.urlDomains.add(urlDomainsItem);
         return this;
     }
 
     public ApiGroupDetailResp withUrlDomains(Consumer<List<UrlDomainsResp>> urlDomainsSetter) {
-        if(this.urlDomains == null ){
+        if(this.urlDomains == null) {
             this.urlDomains = new ArrayList<>();
         }
         urlDomainsSetter.accept(this.urlDomains);
@@ -299,12 +302,15 @@ public class ApiGroupDetailResp  {
 
     
     public ApiGroupDetailResp addSlDomainsItem(String slDomainsItem) {
+        if(this.slDomains == null) {
+            this.slDomains = new ArrayList<>();
+        }
         this.slDomains.add(slDomainsItem);
         return this;
     }
 
     public ApiGroupDetailResp withSlDomains(Consumer<List<String>> slDomainsSetter) {
-        if(this.slDomains == null ){
+        if(this.slDomains == null) {
             this.slDomains = new ArrayList<>();
         }
         slDomainsSetter.accept(this.slDomains);

@@ -132,12 +132,15 @@ public class ExecuteScalingPoliciesRequestBody  {
 
     
     public ExecuteScalingPoliciesRequestBody addScalingPolicyIdItem(String scalingPolicyIdItem) {
+        if(this.scalingPolicyId == null) {
+            this.scalingPolicyId = new ArrayList<>();
+        }
         this.scalingPolicyId.add(scalingPolicyIdItem);
         return this;
     }
 
     public ExecuteScalingPoliciesRequestBody withScalingPolicyId(Consumer<List<String>> scalingPolicyIdSetter) {
-        if(this.scalingPolicyId == null ){
+        if(this.scalingPolicyId == null) {
             this.scalingPolicyId = new ArrayList<>();
         }
         scalingPolicyIdSetter.accept(this.scalingPolicyId);

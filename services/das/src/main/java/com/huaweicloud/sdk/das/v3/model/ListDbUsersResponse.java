@@ -63,12 +63,15 @@ public class ListDbUsersResponse extends SdkResponse {
 
     
     public ListDbUsersResponse addDbUsersItem(DbUser dbUsersItem) {
+        if(this.dbUsers == null) {
+            this.dbUsers = new ArrayList<>();
+        }
         this.dbUsers.add(dbUsersItem);
         return this;
     }
 
     public ListDbUsersResponse withDbUsers(Consumer<List<DbUser>> dbUsersSetter) {
-        if(this.dbUsers == null ){
+        if(this.dbUsers == null) {
             this.dbUsers = new ArrayList<>();
         }
         dbUsersSetter.accept(this.dbUsers);

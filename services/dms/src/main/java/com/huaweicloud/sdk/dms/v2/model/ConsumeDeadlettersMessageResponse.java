@@ -35,12 +35,15 @@ public class ConsumeDeadlettersMessageResponse extends SdkResponse {
 
     
     public ConsumeDeadlettersMessageResponse addBodyItem(ConsumeDeadlettersMessage bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public ConsumeDeadlettersMessageResponse withBody(Consumer<List<ConsumeDeadlettersMessage>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

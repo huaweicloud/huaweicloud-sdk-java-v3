@@ -33,12 +33,15 @@ public class VaultAddResourceReq  {
 
     
     public VaultAddResourceReq addResourcesItem(ResourceCreate resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public VaultAddResourceReq withResources(Consumer<List<ResourceCreate>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

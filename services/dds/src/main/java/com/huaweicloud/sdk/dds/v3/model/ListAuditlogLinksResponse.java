@@ -34,12 +34,15 @@ public class ListAuditlogLinksResponse extends SdkResponse {
 
     
     public ListAuditlogLinksResponse addLinksItem(String linksItem) {
+        if(this.links == null) {
+            this.links = new ArrayList<>();
+        }
         this.links.add(linksItem);
         return this;
     }
 
     public ListAuditlogLinksResponse withLinks(Consumer<List<String>> linksSetter) {
-        if(this.links == null ){
+        if(this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);

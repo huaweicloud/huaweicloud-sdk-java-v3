@@ -236,12 +236,15 @@ public class ListEventDetailResponse extends SdkResponse {
 
     
     public ListEventDetailResponse addEventInfoItem(EventInfoDetail eventInfoItem) {
+        if(this.eventInfo == null) {
+            this.eventInfo = new ArrayList<>();
+        }
         this.eventInfo.add(eventInfoItem);
         return this;
     }
 
     public ListEventDetailResponse withEventInfo(Consumer<List<EventInfoDetail>> eventInfoSetter) {
-        if(this.eventInfo == null ){
+        if(this.eventInfo == null) {
             this.eventInfo = new ArrayList<>();
         }
         eventInfoSetter.accept(this.eventInfo);

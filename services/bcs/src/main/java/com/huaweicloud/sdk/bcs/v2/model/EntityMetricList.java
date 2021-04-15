@@ -39,12 +39,15 @@ public class EntityMetricList  {
 
     
     public EntityMetricList addDimensionsItem(Dimension dimensionsItem) {
+        if(this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
         this.dimensions.add(dimensionsItem);
         return this;
     }
 
     public EntityMetricList withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
-        if(this.dimensions == null ){
+        if(this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);

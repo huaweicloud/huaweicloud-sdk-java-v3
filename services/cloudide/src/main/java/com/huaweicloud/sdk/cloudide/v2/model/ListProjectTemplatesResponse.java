@@ -41,12 +41,15 @@ public class ListProjectTemplatesResponse extends SdkResponse {
 
     
     public ListProjectTemplatesResponse addTemplatesItem(ProjectTemplates templatesItem) {
+        if(this.templates == null) {
+            this.templates = new ArrayList<>();
+        }
         this.templates.add(templatesItem);
         return this;
     }
 
     public ListProjectTemplatesResponse withTemplates(Consumer<List<ProjectTemplates>> templatesSetter) {
-        if(this.templates == null ){
+        if(this.templates == null) {
             this.templates = new ArrayList<>();
         }
         templatesSetter.accept(this.templates);

@@ -44,12 +44,15 @@ public class DmsKafkaInfo  {
 
     
     public DmsKafkaInfo addAddrItem(String addrItem) {
+        if(this.addr == null) {
+            this.addr = new ArrayList<>();
+        }
         this.addr.add(addrItem);
         return this;
     }
 
     public DmsKafkaInfo withAddr(Consumer<List<String>> addrSetter) {
-        if(this.addr == null ){
+        if(this.addr == null) {
             this.addr = new ArrayList<>();
         }
         addrSetter.accept(this.addr);

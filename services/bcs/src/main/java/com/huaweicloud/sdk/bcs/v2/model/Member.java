@@ -103,12 +103,15 @@ public class Member  {
 
     
     public Member addInvitedOrgsItem(OrganizationV2 invitedOrgsItem) {
+        if(this.invitedOrgs == null) {
+            this.invitedOrgs = new ArrayList<>();
+        }
         this.invitedOrgs.add(invitedOrgsItem);
         return this;
     }
 
     public Member withInvitedOrgs(Consumer<List<OrganizationV2>> invitedOrgsSetter) {
-        if(this.invitedOrgs == null ){
+        if(this.invitedOrgs == null) {
             this.invitedOrgs = new ArrayList<>();
         }
         invitedOrgsSetter.accept(this.invitedOrgs);

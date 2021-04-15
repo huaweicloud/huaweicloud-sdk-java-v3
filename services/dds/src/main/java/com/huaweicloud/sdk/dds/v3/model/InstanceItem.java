@@ -89,12 +89,15 @@ public class InstanceItem  {
 
     
     public InstanceItem addTagsItem(InstanceItemTagItem tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public InstanceItem withTags(Consumer<List<InstanceItemTagItem>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

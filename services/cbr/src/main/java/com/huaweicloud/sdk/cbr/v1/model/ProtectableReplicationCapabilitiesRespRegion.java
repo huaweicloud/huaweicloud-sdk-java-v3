@@ -60,12 +60,15 @@ public class ProtectableReplicationCapabilitiesRespRegion  {
 
     
     public ProtectableReplicationCapabilitiesRespRegion addReplicationDestinationsItem(String replicationDestinationsItem) {
+        if(this.replicationDestinations == null) {
+            this.replicationDestinations = new ArrayList<>();
+        }
         this.replicationDestinations.add(replicationDestinationsItem);
         return this;
     }
 
     public ProtectableReplicationCapabilitiesRespRegion withReplicationDestinations(Consumer<List<String>> replicationDestinationsSetter) {
-        if(this.replicationDestinations == null ){
+        if(this.replicationDestinations == null) {
             this.replicationDestinations = new ArrayList<>();
         }
         replicationDestinationsSetter.accept(this.replicationDestinations);

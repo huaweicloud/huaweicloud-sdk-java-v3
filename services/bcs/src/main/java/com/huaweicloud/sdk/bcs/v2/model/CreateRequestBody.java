@@ -676,12 +676,15 @@ public class CreateRequestBody  {
 
     
     public CreateRequestBody addIefNodesInfoItem(IEFNode iefNodesInfoItem) {
+        if(this.iefNodesInfo == null) {
+            this.iefNodesInfo = new ArrayList<>();
+        }
         this.iefNodesInfo.add(iefNodesInfoItem);
         return this;
     }
 
     public CreateRequestBody withIefNodesInfo(Consumer<List<IEFNode>> iefNodesInfoSetter) {
-        if(this.iefNodesInfo == null ){
+        if(this.iefNodesInfo == null) {
             this.iefNodesInfo = new ArrayList<>();
         }
         iefNodesInfoSetter.accept(this.iefNodesInfo);
@@ -709,12 +712,15 @@ public class CreateRequestBody  {
 
     
     public CreateRequestBody addPeerOrgsItem(OrgPeer peerOrgsItem) {
+        if(this.peerOrgs == null) {
+            this.peerOrgs = new ArrayList<>();
+        }
         this.peerOrgs.add(peerOrgsItem);
         return this;
     }
 
     public CreateRequestBody withPeerOrgs(Consumer<List<OrgPeer>> peerOrgsSetter) {
-        if(this.peerOrgs == null ){
+        if(this.peerOrgs == null) {
             this.peerOrgs = new ArrayList<>();
         }
         peerOrgsSetter.accept(this.peerOrgs);
@@ -742,12 +748,15 @@ public class CreateRequestBody  {
 
     
     public CreateRequestBody addChannelsItem(ChannelInfoV2 channelsItem) {
+        if(this.channels == null) {
+            this.channels = new ArrayList<>();
+        }
         this.channels.add(channelsItem);
         return this;
     }
 
     public CreateRequestBody withChannels(Consumer<List<ChannelInfoV2>> channelsSetter) {
-        if(this.channels == null ){
+        if(this.channels == null) {
             this.channels = new ArrayList<>();
         }
         channelsSetter.accept(this.channels);

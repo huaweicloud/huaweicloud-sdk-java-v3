@@ -246,12 +246,15 @@ public class AddonInstanceStatus  {
 
     
     public AddonInstanceStatus addTargetVersionsItem(String targetVersionsItem) {
+        if(this.targetVersions == null) {
+            this.targetVersions = new ArrayList<>();
+        }
         this.targetVersions.add(targetVersionsItem);
         return this;
     }
 
     public AddonInstanceStatus withTargetVersions(Consumer<List<String>> targetVersionsSetter) {
-        if(this.targetVersions == null ){
+        if(this.targetVersions == null) {
             this.targetVersions = new ArrayList<>();
         }
         targetVersionsSetter.accept(this.targetVersions);

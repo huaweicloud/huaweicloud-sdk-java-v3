@@ -35,12 +35,15 @@ public class ShowVaultProjectTagResponse extends SdkResponse {
 
     
     public ShowVaultProjectTagResponse addTagsItem(TagsResp tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ShowVaultProjectTagResponse withTags(Consumer<List<TagsResp>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);

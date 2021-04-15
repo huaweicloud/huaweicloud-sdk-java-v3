@@ -41,12 +41,15 @@ public class ListBareMetalServersResponse extends SdkResponse {
 
     
     public ListBareMetalServersResponse addServersItem(ServerDetails serversItem) {
+        if(this.servers == null) {
+            this.servers = new ArrayList<>();
+        }
         this.servers.add(serversItem);
         return this;
     }
 
     public ListBareMetalServersResponse withServers(Consumer<List<ServerDetails>> serversSetter) {
-        if(this.servers == null ){
+        if(this.servers == null) {
             this.servers = new ArrayList<>();
         }
         serversSetter.accept(this.servers);

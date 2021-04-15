@@ -60,12 +60,15 @@ public class QueryTagItem  {
 
     
     public QueryTagItem addValuesItem(String valuesItem) {
+        if(this.values == null) {
+            this.values = new ArrayList<>();
+        }
         this.values.add(valuesItem);
         return this;
     }
 
     public QueryTagItem withValues(Consumer<List<String>> valuesSetter) {
-        if(this.values == null ){
+        if(this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);

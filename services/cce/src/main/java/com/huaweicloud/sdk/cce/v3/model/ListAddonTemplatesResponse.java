@@ -69,12 +69,15 @@ public class ListAddonTemplatesResponse extends SdkResponse {
 
     
     public ListAddonTemplatesResponse addItemsItem(AddonTemplate itemsItem) {
+        if(this.items == null) {
+            this.items = new ArrayList<>();
+        }
         this.items.add(itemsItem);
         return this;
     }
 
     public ListAddonTemplatesResponse withItems(Consumer<List<AddonTemplate>> itemsSetter) {
-        if(this.items == null ){
+        if(this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);

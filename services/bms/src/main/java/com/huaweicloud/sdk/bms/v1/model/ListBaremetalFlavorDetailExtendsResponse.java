@@ -35,12 +35,15 @@ public class ListBaremetalFlavorDetailExtendsResponse extends SdkResponse {
 
     
     public ListBaremetalFlavorDetailExtendsResponse addFlavorsItem(FlavorsResp flavorsItem) {
+        if(this.flavors == null) {
+            this.flavors = new ArrayList<>();
+        }
         this.flavors.add(flavorsItem);
         return this;
     }
 
     public ListBaremetalFlavorDetailExtendsResponse withFlavors(Consumer<List<FlavorsResp>> flavorsSetter) {
-        if(this.flavors == null ){
+        if(this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
         flavorsSetter.accept(this.flavors);

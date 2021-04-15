@@ -119,12 +119,15 @@ public class ListTemplatesResponse extends SdkResponse {
 
     
     public ListTemplatesResponse addContentItem(TemplateView contentItem) {
+        if(this.content == null) {
+            this.content = new ArrayList<>();
+        }
         this.content.add(contentItem);
         return this;
     }
 
     public ListTemplatesResponse withContent(Consumer<List<TemplateView>> contentSetter) {
-        if(this.content == null ){
+        if(this.content == null) {
             this.content = new ArrayList<>();
         }
         contentSetter.accept(this.content);

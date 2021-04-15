@@ -231,12 +231,15 @@ public class ShowJobInstanceResponse extends SdkResponse {
 
     
     public ShowJobInstanceResponse addNodesItem(NodeInstance nodesItem) {
+        if(this.nodes == null) {
+            this.nodes = new ArrayList<>();
+        }
         this.nodes.add(nodesItem);
         return this;
     }
 
     public ShowJobInstanceResponse withNodes(Consumer<List<NodeInstance>> nodesSetter) {
-        if(this.nodes == null ){
+        if(this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);

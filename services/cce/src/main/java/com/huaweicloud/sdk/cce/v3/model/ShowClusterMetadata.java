@@ -64,12 +64,15 @@ public class ShowClusterMetadata  {
     
 
     public ShowClusterMetadata putAnnotationsItem(String key, String annotationsItem) {
+        if(this.annotations == null) {
+            this.annotations = new HashMap<>();
+        }
         this.annotations.put(key, annotationsItem);
         return this;
     }
 
     public ShowClusterMetadata withAnnotations(Consumer<Map<String, String>> annotationsSetter) {
-        if(this.annotations == null ){
+        if(this.annotations == null) {
             this.annotations = new HashMap<>();
         }
         annotationsSetter.accept(this.annotations);

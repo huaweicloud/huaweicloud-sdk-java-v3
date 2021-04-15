@@ -63,12 +63,15 @@ public class ListIndirectPartnersResponse extends SdkResponse {
 
     
     public ListIndirectPartnersResponse addIndirectPartnersItem(IndirectPartnerInfo indirectPartnersItem) {
+        if(this.indirectPartners == null) {
+            this.indirectPartners = new ArrayList<>();
+        }
         this.indirectPartners.add(indirectPartnersItem);
         return this;
     }
 
     public ListIndirectPartnersResponse withIndirectPartners(Consumer<List<IndirectPartnerInfo>> indirectPartnersSetter) {
-        if(this.indirectPartners == null ){
+        if(this.indirectPartners == null) {
             this.indirectPartners = new ArrayList<>();
         }
         indirectPartnersSetter.accept(this.indirectPartners);

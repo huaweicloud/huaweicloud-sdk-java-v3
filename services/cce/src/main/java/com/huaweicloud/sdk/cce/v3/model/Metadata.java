@@ -65,12 +65,15 @@ public class Metadata  {
     
 
     public Metadata putAnnotationsItem(String key, String annotationsItem) {
+        if(this.annotations == null) {
+            this.annotations = new HashMap<>();
+        }
         this.annotations.put(key, annotationsItem);
         return this;
     }
 
     public Metadata withAnnotations(Consumer<Map<String, String>> annotationsSetter) {
-        if(this.annotations == null ){
+        if(this.annotations == null) {
             this.annotations = new HashMap<>();
         }
         annotationsSetter.accept(this.annotations);
@@ -120,12 +123,15 @@ public class Metadata  {
     
 
     public Metadata putLabelsItem(String key, String labelsItem) {
+        if(this.labels == null) {
+            this.labels = new HashMap<>();
+        }
         this.labels.put(key, labelsItem);
         return this;
     }
 
     public Metadata withLabels(Consumer<Map<String, String>> labelsSetter) {
-        if(this.labels == null ){
+        if(this.labels == null) {
             this.labels = new HashMap<>();
         }
         labelsSetter.accept(this.labels);

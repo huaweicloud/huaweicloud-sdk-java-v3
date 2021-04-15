@@ -74,12 +74,15 @@ public class ChannelInfo  {
 
     
     public ChannelInfo addOrgNamesItem(String orgNamesItem) {
+        if(this.orgNames == null) {
+            this.orgNames = new ArrayList<>();
+        }
         this.orgNames.add(orgNamesItem);
         return this;
     }
 
     public ChannelInfo withOrgNames(Consumer<List<String>> orgNamesSetter) {
-        if(this.orgNames == null ){
+        if(this.orgNames == null) {
             this.orgNames = new ArrayList<>();
         }
         orgNamesSetter.accept(this.orgNames);
@@ -107,12 +110,15 @@ public class ChannelInfo  {
 
     
     public ChannelInfo addOrgNameHashItem(String orgNameHashItem) {
+        if(this.orgNameHash == null) {
+            this.orgNameHash = new ArrayList<>();
+        }
         this.orgNameHash.add(orgNameHashItem);
         return this;
     }
 
     public ChannelInfo withOrgNameHash(Consumer<List<String>> orgNameHashSetter) {
-        if(this.orgNameHash == null ){
+        if(this.orgNameHash == null) {
             this.orgNameHash = new ArrayList<>();
         }
         orgNameHashSetter.accept(this.orgNameHash);
@@ -141,12 +147,15 @@ public class ChannelInfo  {
     
 
     public ChannelInfo putPeersItem(String key, List<String> peersItem) {
+        if(this.peers == null) {
+            this.peers = new HashMap<>();
+        }
         this.peers.put(key, peersItem);
         return this;
     }
 
     public ChannelInfo withPeers(Consumer<Map<String, List<String>>> peersSetter) {
-        if(this.peers == null ){
+        if(this.peers == null) {
             this.peers = new HashMap<>();
         }
         peersSetter.accept(this.peers);

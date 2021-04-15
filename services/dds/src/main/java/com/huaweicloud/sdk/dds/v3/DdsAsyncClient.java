@@ -262,6 +262,50 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 删除数据库角色
+     * 删除数据库角色。
+     *
+     * @param DeleteDatabaseRoleRequest 请求对象
+     * @return CompletableFuture<DeleteDatabaseRoleResponse>
+     */
+    public CompletableFuture<DeleteDatabaseRoleResponse> deleteDatabaseRoleAsync(DeleteDatabaseRoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.deleteDatabaseRole);
+    }
+
+    /**
+     * 删除数据库角色
+     * 删除数据库角色。
+     *
+     * @param DeleteDatabaseRoleRequest 请求对象
+     * @return AsyncInvoker<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse>
+     */
+    public AsyncInvoker<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> deleteDatabaseRoleAsyncInvoker(DeleteDatabaseRoleRequest request) {
+        return new AsyncInvoker<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse>(request, DdsMeta.deleteDatabaseRole, hcClient);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteDatabaseUserRequest 请求对象
+     * @return CompletableFuture<DeleteDatabaseUserResponse>
+     */
+    public CompletableFuture<DeleteDatabaseUserResponse> deleteDatabaseUserAsync(DeleteDatabaseUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.deleteDatabaseUser);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteDatabaseUserRequest 请求对象
+     * @return AsyncInvoker<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse>
+     */
+    public AsyncInvoker<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> deleteDatabaseUserAsyncInvoker(DeleteDatabaseUserRequest request) {
+        return new AsyncInvoker<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse>(request, DdsMeta.deleteDatabaseUser, hcClient);
+    }
+
+    /**
      * 删除实例
      * 删除数据库实例。
      *
@@ -1029,6 +1073,28 @@ public class DdsAsyncClient {
      */
     public AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyAsyncInvoker(ShowBackupPolicyRequest request) {
         return new AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, DdsMeta.showBackupPolicy, hcClient);
+    }
+
+    /**
+     * 查询实例连接数统计信息
+     * 查询客户端IP访问至DDS数据库实例的连接数统计信息。
+     *
+     * @param ShowConnectionStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowConnectionStatisticsResponse>
+     */
+    public CompletableFuture<ShowConnectionStatisticsResponse> showConnectionStatisticsAsync(ShowConnectionStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showConnectionStatistics);
+    }
+
+    /**
+     * 查询实例连接数统计信息
+     * 查询客户端IP访问至DDS数据库实例的连接数统计信息。
+     *
+     * @param ShowConnectionStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse>
+     */
+    public AsyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatisticsAsyncInvoker(ShowConnectionStatisticsRequest request) {
+        return new AsyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse>(request, DdsMeta.showConnectionStatistics, hcClient);
     }
 
     /**

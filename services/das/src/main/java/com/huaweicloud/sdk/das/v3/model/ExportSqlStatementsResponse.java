@@ -41,12 +41,15 @@ public class ExportSqlStatementsResponse extends SdkResponse {
 
     
     public ExportSqlStatementsResponse addStatementsItem(FullSql statementsItem) {
+        if(this.statements == null) {
+            this.statements = new ArrayList<>();
+        }
         this.statements.add(statementsItem);
         return this;
     }
 
     public ExportSqlStatementsResponse withStatements(Consumer<List<FullSql>> statementsSetter) {
-        if(this.statements == null ){
+        if(this.statements == null) {
             this.statements = new ArrayList<>();
         }
         statementsSetter.accept(this.statements);

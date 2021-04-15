@@ -410,12 +410,15 @@ public class RestoreNewInstanceResponse extends SdkResponse {
 
     
     public RestoreNewInstanceResponse addFlavorItem(RestoreNewInstanceFlavorOption flavorItem) {
+        if(this.flavor == null) {
+            this.flavor = new ArrayList<>();
+        }
         this.flavor.add(flavorItem);
         return this;
     }
 
     public RestoreNewInstanceResponse withFlavor(Consumer<List<RestoreNewInstanceFlavorOption>> flavorSetter) {
-        if(this.flavor == null ){
+        if(this.flavor == null) {
             this.flavor = new ArrayList<>();
         }
         flavorSetter.accept(this.flavor);

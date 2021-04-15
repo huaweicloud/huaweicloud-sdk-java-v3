@@ -33,12 +33,15 @@ public class StartPipelineParameters  {
 
     
     public StartPipelineParameters addBuildParamsItem(StartPipelineBuildParams buildParamsItem) {
+        if(this.buildParams == null) {
+            this.buildParams = new ArrayList<>();
+        }
         this.buildParams.add(buildParamsItem);
         return this;
     }
 
     public StartPipelineParameters withBuildParams(Consumer<List<StartPipelineBuildParams>> buildParamsSetter) {
-        if(this.buildParams == null ){
+        if(this.buildParams == null) {
             this.buildParams = new ArrayList<>();
         }
         buildParamsSetter.accept(this.buildParams);

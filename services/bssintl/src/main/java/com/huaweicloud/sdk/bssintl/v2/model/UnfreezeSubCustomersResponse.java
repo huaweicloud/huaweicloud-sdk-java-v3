@@ -35,12 +35,15 @@ public class UnfreezeSubCustomersResponse extends SdkResponse {
 
     
     public UnfreezeSubCustomersResponse addErrorDetailsItem(CustomerErrorDetail errorDetailsItem) {
+        if(this.errorDetails == null) {
+            this.errorDetails = new ArrayList<>();
+        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
 
     public UnfreezeSubCustomersResponse withErrorDetails(Consumer<List<CustomerErrorDetail>> errorDetailsSetter) {
-        if(this.errorDetails == null ){
+        if(this.errorDetails == null) {
             this.errorDetails = new ArrayList<>();
         }
         errorDetailsSetter.accept(this.errorDetails);

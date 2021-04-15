@@ -35,12 +35,15 @@ public class ListSkuInventoriesResponse extends SdkResponse {
 
     
     public ListSkuInventoriesResponse addSkuInventoriesItem(SkuInventory skuInventoriesItem) {
+        if(this.skuInventories == null) {
+            this.skuInventories = new ArrayList<>();
+        }
         this.skuInventories.add(skuInventoriesItem);
         return this;
     }
 
     public ListSkuInventoriesResponse withSkuInventories(Consumer<List<SkuInventory>> skuInventoriesSetter) {
-        if(this.skuInventories == null ){
+        if(this.skuInventories == null) {
             this.skuInventories = new ArrayList<>();
         }
         skuInventoriesSetter.accept(this.skuInventories);

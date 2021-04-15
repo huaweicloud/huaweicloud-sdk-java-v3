@@ -143,12 +143,15 @@ public class ServersInfoType  {
 
     
     public ServersInfoType addServersItem(ServersList serversItem) {
+        if(this.servers == null) {
+            this.servers = new ArrayList<>();
+        }
         this.servers.add(serversItem);
         return this;
     }
 
     public ServersInfoType withServers(Consumer<List<ServersList>> serversSetter) {
-        if(this.servers == null ){
+        if(this.servers == null) {
             this.servers = new ArrayList<>();
         }
         serversSetter.accept(this.servers);

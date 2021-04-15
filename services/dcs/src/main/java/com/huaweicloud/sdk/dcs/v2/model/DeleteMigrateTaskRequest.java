@@ -32,12 +32,15 @@ public class DeleteMigrateTaskRequest  {
 
     
     public DeleteMigrateTaskRequest addTaskIdListItem(String taskIdListItem) {
+        if(this.taskIdList == null) {
+            this.taskIdList = new ArrayList<>();
+        }
         this.taskIdList.add(taskIdListItem);
         return this;
     }
 
     public DeleteMigrateTaskRequest withTaskIdList(Consumer<List<String>> taskIdListSetter) {
-        if(this.taskIdList == null ){
+        if(this.taskIdList == null) {
             this.taskIdList = new ArrayList<>();
         }
         taskIdListSetter.accept(this.taskIdList);

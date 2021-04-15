@@ -151,12 +151,15 @@ public class CheckpointParam  {
 
     
     public CheckpointParam addResourcesItem(String resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public CheckpointParam withResources(Consumer<List<String>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
@@ -184,12 +187,15 @@ public class CheckpointParam  {
 
     
     public CheckpointParam addResourceDetailsItem(Resource resourceDetailsItem) {
+        if(this.resourceDetails == null) {
+            this.resourceDetails = new ArrayList<>();
+        }
         this.resourceDetails.add(resourceDetailsItem);
         return this;
     }
 
     public CheckpointParam withResourceDetails(Consumer<List<Resource>> resourceDetailsSetter) {
-        if(this.resourceDetails == null ){
+        if(this.resourceDetails == null) {
             this.resourceDetails = new ArrayList<>();
         }
         resourceDetailsSetter.accept(this.resourceDetails);

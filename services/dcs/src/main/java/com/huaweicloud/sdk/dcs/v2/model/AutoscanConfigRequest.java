@@ -60,12 +60,15 @@ public class AutoscanConfigRequest  {
 
     
     public AutoscanConfigRequest addScheduleAtItem(String scheduleAtItem) {
+        if(this.scheduleAt == null) {
+            this.scheduleAt = new ArrayList<>();
+        }
         this.scheduleAt.add(scheduleAtItem);
         return this;
     }
 
     public AutoscanConfigRequest withScheduleAt(Consumer<List<String>> scheduleAtSetter) {
-        if(this.scheduleAt == null ){
+        if(this.scheduleAt == null) {
             this.scheduleAt = new ArrayList<>();
         }
         scheduleAtSetter.accept(this.scheduleAt);

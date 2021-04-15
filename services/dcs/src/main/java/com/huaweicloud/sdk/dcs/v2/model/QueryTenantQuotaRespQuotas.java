@@ -33,12 +33,15 @@ public class QueryTenantQuotaRespQuotas  {
 
     
     public QueryTenantQuotaRespQuotas addResourcesItem(Resources resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public QueryTenantQuotaRespQuotas withResources(Consumer<List<Resources>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

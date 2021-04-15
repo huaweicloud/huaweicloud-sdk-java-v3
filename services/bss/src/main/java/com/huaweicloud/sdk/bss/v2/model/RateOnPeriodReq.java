@@ -61,12 +61,15 @@ public class RateOnPeriodReq  {
 
     
     public RateOnPeriodReq addProductInfosItem(PeriodProductInfo productInfosItem) {
+        if(this.productInfos == null) {
+            this.productInfos = new ArrayList<>();
+        }
         this.productInfos.add(productInfosItem);
         return this;
     }
 
     public RateOnPeriodReq withProductInfos(Consumer<List<PeriodProductInfo>> productInfosSetter) {
-        if(this.productInfos == null ){
+        if(this.productInfos == null) {
             this.productInfos = new ArrayList<>();
         }
         productInfosSetter.accept(this.productInfos);

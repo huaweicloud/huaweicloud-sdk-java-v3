@@ -40,12 +40,15 @@ public class ResourceRequirements  {
     
 
     public ResourceRequirements putLimitsItem(String key, String limitsItem) {
+        if(this.limits == null) {
+            this.limits = new HashMap<>();
+        }
         this.limits.put(key, limitsItem);
         return this;
     }
 
     public ResourceRequirements withLimits(Consumer<Map<String, String>> limitsSetter) {
-        if(this.limits == null ){
+        if(this.limits == null) {
             this.limits = new HashMap<>();
         }
         limitsSetter.accept(this.limits);
@@ -73,12 +76,15 @@ public class ResourceRequirements  {
     
 
     public ResourceRequirements putRequestsItem(String key, String requestsItem) {
+        if(this.requests == null) {
+            this.requests = new HashMap<>();
+        }
         this.requests.put(key, requestsItem);
         return this;
     }
 
     public ResourceRequirements withRequests(Consumer<Map<String, String>> requestsSetter) {
-        if(this.requests == null ){
+        if(this.requests == null) {
             this.requests = new HashMap<>();
         }
         requestsSetter.accept(this.requests);

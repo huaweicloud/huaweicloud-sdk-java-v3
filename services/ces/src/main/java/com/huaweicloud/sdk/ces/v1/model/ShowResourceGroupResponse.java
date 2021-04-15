@@ -116,12 +116,15 @@ public class ShowResourceGroupResponse extends SdkResponse {
 
     
     public ShowResourceGroupResponse addResourcesItem(ResourceGroup resourcesItem) {
+        if(this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
         this.resources.add(resourcesItem);
         return this;
     }
 
     public ShowResourceGroupResponse withResources(Consumer<List<ResourceGroup>> resourcesSetter) {
-        if(this.resources == null ){
+        if(this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);

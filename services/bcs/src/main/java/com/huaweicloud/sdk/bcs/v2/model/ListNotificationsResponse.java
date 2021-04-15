@@ -35,12 +35,15 @@ public class ListNotificationsResponse extends SdkResponse {
 
     
     public ListNotificationsResponse addNotificationsItem(NotificationList notificationsItem) {
+        if(this.notifications == null) {
+            this.notifications = new ArrayList<>();
+        }
         this.notifications.add(notificationsItem);
         return this;
     }
 
     public ListNotificationsResponse withNotifications(Consumer<List<NotificationList>> notificationsSetter) {
-        if(this.notifications == null ){
+        if(this.notifications == null) {
             this.notifications = new ArrayList<>();
         }
         notificationsSetter.accept(this.notifications);

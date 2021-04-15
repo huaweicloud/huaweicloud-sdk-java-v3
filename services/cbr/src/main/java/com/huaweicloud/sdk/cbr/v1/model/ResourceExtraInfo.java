@@ -39,12 +39,15 @@ public class ResourceExtraInfo  {
 
     
     public ResourceExtraInfo addExcludeVolumesItem(String excludeVolumesItem) {
+        if(this.excludeVolumes == null) {
+            this.excludeVolumes = new ArrayList<>();
+        }
         this.excludeVolumes.add(excludeVolumesItem);
         return this;
     }
 
     public ResourceExtraInfo withExcludeVolumes(Consumer<List<String>> excludeVolumesSetter) {
-        if(this.excludeVolumes == null ){
+        if(this.excludeVolumes == null) {
             this.excludeVolumes = new ArrayList<>();
         }
         excludeVolumesSetter.accept(this.excludeVolumes);
@@ -72,12 +75,15 @@ public class ResourceExtraInfo  {
 
     
     public ResourceExtraInfo addIncludeVolumesItem(ResourceExtraInfoIncludeVolumes includeVolumesItem) {
+        if(this.includeVolumes == null) {
+            this.includeVolumes = new ArrayList<>();
+        }
         this.includeVolumes.add(includeVolumesItem);
         return this;
     }
 
     public ResourceExtraInfo withIncludeVolumes(Consumer<List<ResourceExtraInfoIncludeVolumes>> includeVolumesSetter) {
-        if(this.includeVolumes == null ){
+        if(this.includeVolumes == null) {
             this.includeVolumes = new ArrayList<>();
         }
         includeVolumesSetter.accept(this.includeVolumes);

@@ -60,12 +60,15 @@ public class SignBindingReq  {
 
     
     public SignBindingReq addPublishIdsItem(String publishIdsItem) {
+        if(this.publishIds == null) {
+            this.publishIds = new ArrayList<>();
+        }
         this.publishIds.add(publishIdsItem);
         return this;
     }
 
     public SignBindingReq withPublishIds(Consumer<List<String>> publishIdsSetter) {
-        if(this.publishIds == null ){
+        if(this.publishIds == null) {
             this.publishIds = new ArrayList<>();
         }
         publishIdsSetter.accept(this.publishIds);

@@ -319,12 +319,15 @@ public class ListSystemTasksResponse extends SdkResponse {
 
     
     public ListSystemTasksResponse addSubTasksItem(SubTaskStatus subTasksItem) {
+        if(this.subTasks == null) {
+            this.subTasks = new ArrayList<>();
+        }
         this.subTasks.add(subTasksItem);
         return this;
     }
 
     public ListSystemTasksResponse withSubTasks(Consumer<List<SubTaskStatus>> subTasksSetter) {
-        if(this.subTasks == null ){
+        if(this.subTasks == null) {
             this.subTasks = new ArrayList<>();
         }
         subTasksSetter.accept(this.subTasks);

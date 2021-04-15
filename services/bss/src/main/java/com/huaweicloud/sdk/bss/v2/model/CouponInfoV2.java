@@ -355,12 +355,15 @@ public class CouponInfoV2  {
 
     
     public CouponInfoV2 addUseLimitsItem(LimitInfoV2 useLimitsItem) {
+        if(this.useLimits == null) {
+            this.useLimits = new ArrayList<>();
+        }
         this.useLimits.add(useLimitsItem);
         return this;
     }
 
     public CouponInfoV2 withUseLimits(Consumer<List<LimitInfoV2>> useLimitsSetter) {
-        if(this.useLimits == null ){
+        if(this.useLimits == null) {
             this.useLimits = new ArrayList<>();
         }
         useLimitsSetter.accept(this.useLimits);

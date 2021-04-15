@@ -320,12 +320,15 @@ public class TemplateParam  {
 
     
     public TemplateParam addLimitsItem(ParamTypeLimits limitsItem) {
+        if(this.limits == null) {
+            this.limits = new ArrayList<>();
+        }
         this.limits.add(limitsItem);
         return this;
     }
 
     public TemplateParam withLimits(Consumer<List<ParamTypeLimits>> limitsSetter) {
-        if(this.limits == null ){
+        if(this.limits == null) {
             this.limits = new ArrayList<>();
         }
         limitsSetter.accept(this.limits);
@@ -353,12 +356,15 @@ public class TemplateParam  {
 
     
     public TemplateParam addConstraintsItem(Constraint constraintsItem) {
+        if(this.constraints == null) {
+            this.constraints = new ArrayList<>();
+        }
         this.constraints.add(constraintsItem);
         return this;
     }
 
     public TemplateParam withConstraints(Consumer<List<Constraint>> constraintsSetter) {
-        if(this.constraints == null ){
+        if(this.constraints == null) {
             this.constraints = new ArrayList<>();
         }
         constraintsSetter.accept(this.constraints);

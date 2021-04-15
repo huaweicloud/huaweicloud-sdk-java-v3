@@ -61,12 +61,15 @@ public class UpdateTestCaseResultRequestBody  {
 
     
     public UpdateTestCaseResultRequestBody addExecuteListItem(UpdateTestCaseResultBean executeListItem) {
+        if(this.executeList == null) {
+            this.executeList = new ArrayList<>();
+        }
         this.executeList.add(executeListItem);
         return this;
     }
 
     public UpdateTestCaseResultRequestBody withExecuteList(Consumer<List<UpdateTestCaseResultBean>> executeListSetter) {
-        if(this.executeList == null ){
+        if(this.executeList == null) {
             this.executeList = new ArrayList<>();
         }
         executeListSetter.accept(this.executeList);

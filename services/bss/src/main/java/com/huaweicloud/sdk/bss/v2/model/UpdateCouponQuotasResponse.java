@@ -42,12 +42,15 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
 
     
     public UpdateCouponQuotasResponse addErrorDetailsItem(ErrorDetail errorDetailsItem) {
+        if(this.errorDetails == null) {
+            this.errorDetails = new ArrayList<>();
+        }
         this.errorDetails.add(errorDetailsItem);
         return this;
     }
 
     public UpdateCouponQuotasResponse withErrorDetails(Consumer<List<ErrorDetail>> errorDetailsSetter) {
-        if(this.errorDetails == null ){
+        if(this.errorDetails == null) {
             this.errorDetails = new ArrayList<>();
         }
         errorDetailsSetter.accept(this.errorDetails);
@@ -75,12 +78,15 @@ public class UpdateCouponQuotasResponse extends SdkResponse {
 
     
     public UpdateCouponQuotasResponse addSimpleQuotaInfosItem(QuotaSimpleInfo simpleQuotaInfosItem) {
+        if(this.simpleQuotaInfos == null) {
+            this.simpleQuotaInfos = new ArrayList<>();
+        }
         this.simpleQuotaInfos.add(simpleQuotaInfosItem);
         return this;
     }
 
     public UpdateCouponQuotasResponse withSimpleQuotaInfos(Consumer<List<QuotaSimpleInfo>> simpleQuotaInfosSetter) {
-        if(this.simpleQuotaInfos == null ){
+        if(this.simpleQuotaInfos == null) {
             this.simpleQuotaInfos = new ArrayList<>();
         }
         simpleQuotaInfosSetter.accept(this.simpleQuotaInfos);

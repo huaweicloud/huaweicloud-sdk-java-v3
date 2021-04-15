@@ -60,12 +60,15 @@ public class Node  {
 
     
     public Node addChannelsItem(String channelsItem) {
+        if(this.channels == null) {
+            this.channels = new ArrayList<>();
+        }
         this.channels.add(channelsItem);
         return this;
     }
 
     public Node withChannels(Consumer<List<String>> channelsSetter) {
-        if(this.channels == null ){
+        if(this.channels == null) {
             this.channels = new ArrayList<>();
         }
         channelsSetter.accept(this.channels);

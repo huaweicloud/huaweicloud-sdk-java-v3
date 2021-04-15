@@ -291,12 +291,15 @@ public class BillSumInfoV2  {
 
     
     public BillSumInfoV2 addAccountDetailsItem(BalanceTypeDeductSumV2 accountDetailsItem) {
+        if(this.accountDetails == null) {
+            this.accountDetails = new ArrayList<>();
+        }
         this.accountDetails.add(accountDetailsItem);
         return this;
     }
 
     public BillSumInfoV2 withAccountDetails(Consumer<List<BalanceTypeDeductSumV2>> accountDetailsSetter) {
-        if(this.accountDetails == null ){
+        if(this.accountDetails == null) {
             this.accountDetails = new ArrayList<>();
         }
         accountDetailsSetter.accept(this.accountDetails);

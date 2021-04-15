@@ -35,12 +35,15 @@ public class CreateEventsResponse extends SdkResponse {
 
     
     public CreateEventsResponse addBodyItem(CreateEventsResponseBody bodyItem) {
+        if(this.body == null) {
+            this.body = new ArrayList<>();
+        }
         this.body.add(bodyItem);
         return this;
     }
 
     public CreateEventsResponse withBody(Consumer<List<CreateEventsResponseBody>> bodySetter) {
-        if(this.body == null ){
+        if(this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);

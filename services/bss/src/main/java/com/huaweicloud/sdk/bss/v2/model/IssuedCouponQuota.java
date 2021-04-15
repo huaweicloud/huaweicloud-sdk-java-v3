@@ -365,12 +365,15 @@ public class IssuedCouponQuota  {
 
     
     public IssuedCouponQuota addLimitInfosItem(QuotaLimitInfo limitInfosItem) {
+        if(this.limitInfos == null) {
+            this.limitInfos = new ArrayList<>();
+        }
         this.limitInfos.add(limitInfosItem);
         return this;
     }
 
     public IssuedCouponQuota withLimitInfos(Consumer<List<QuotaLimitInfo>> limitInfosSetter) {
-        if(this.limitInfos == null ){
+        if(this.limitInfos == null) {
             this.limitInfos = new ArrayList<>();
         }
         limitInfosSetter.accept(this.limitInfos);

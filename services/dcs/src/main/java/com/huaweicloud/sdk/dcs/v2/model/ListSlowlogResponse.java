@@ -63,12 +63,15 @@ public class ListSlowlogResponse extends SdkResponse {
 
     
     public ListSlowlogResponse addSlowlogsItem(SlowlogItem slowlogsItem) {
+        if(this.slowlogs == null) {
+            this.slowlogs = new ArrayList<>();
+        }
         this.slowlogs.add(slowlogsItem);
         return this;
     }
 
     public ListSlowlogResponse withSlowlogs(Consumer<List<SlowlogItem>> slowlogsSetter) {
-        if(this.slowlogs == null ){
+        if(this.slowlogs == null) {
             this.slowlogs = new ArrayList<>();
         }
         slowlogsSetter.accept(this.slowlogs);

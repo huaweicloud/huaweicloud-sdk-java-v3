@@ -137,12 +137,15 @@ public class ExternalServiceBizCase  {
 
     
     public ExternalServiceBizCase addStepsItem(ExternalServiceCaseStep stepsItem) {
+        if(this.steps == null) {
+            this.steps = new ArrayList<>();
+        }
         this.steps.add(stepsItem);
         return this;
     }
 
     public ExternalServiceBizCase withSteps(Consumer<List<ExternalServiceCaseStep>> stepsSetter) {
-        if(this.steps == null ){
+        if(this.steps == null) {
             this.steps = new ArrayList<>();
         }
         stepsSetter.accept(this.steps);
@@ -170,12 +173,15 @@ public class ExternalServiceBizCase  {
 
     
     public ExternalServiceBizCase addLabelListItem(String labelListItem) {
+        if(this.labelList == null) {
+            this.labelList = new ArrayList<>();
+        }
         this.labelList.add(labelListItem);
         return this;
     }
 
     public ExternalServiceBizCase withLabelList(Consumer<List<String>> labelListSetter) {
-        if(this.labelList == null ){
+        if(this.labelList == null) {
             this.labelList = new ArrayList<>();
         }
         labelListSetter.accept(this.labelList);
@@ -335,12 +341,15 @@ public class ExternalServiceBizCase  {
 
     
     public ExternalServiceBizCase addDefectIdListItem(String defectIdListItem) {
+        if(this.defectIdList == null) {
+            this.defectIdList = new ArrayList<>();
+        }
         this.defectIdList.add(defectIdListItem);
         return this;
     }
 
     public ExternalServiceBizCase withDefectIdList(Consumer<List<String>> defectIdListSetter) {
-        if(this.defectIdList == null ){
+        if(this.defectIdList == null) {
             this.defectIdList = new ArrayList<>();
         }
         defectIdListSetter.accept(this.defectIdList);

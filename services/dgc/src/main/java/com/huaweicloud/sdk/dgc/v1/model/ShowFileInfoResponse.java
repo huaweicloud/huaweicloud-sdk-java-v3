@@ -42,12 +42,15 @@ public class ShowFileInfoResponse extends SdkResponse {
 
     
     public ShowFileInfoResponse addJobsItem(Job jobsItem) {
+        if(this.jobs == null) {
+            this.jobs = new ArrayList<>();
+        }
         this.jobs.add(jobsItem);
         return this;
     }
 
     public ShowFileInfoResponse withJobs(Consumer<List<Job>> jobsSetter) {
-        if(this.jobs == null ){
+        if(this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);
@@ -75,12 +78,15 @@ public class ShowFileInfoResponse extends SdkResponse {
 
     
     public ShowFileInfoResponse addScriptsItem(Script scriptsItem) {
+        if(this.scripts == null) {
+            this.scripts = new ArrayList<>();
+        }
         this.scripts.add(scriptsItem);
         return this;
     }
 
     public ShowFileInfoResponse withScripts(Consumer<List<Script>> scriptsSetter) {
-        if(this.scripts == null ){
+        if(this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);

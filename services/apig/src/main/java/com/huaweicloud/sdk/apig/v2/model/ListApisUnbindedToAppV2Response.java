@@ -91,12 +91,15 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
 
     
     public ListApisUnbindedToAppV2Response addApisItem(AppAuthUnBindedApiResp apisItem) {
+        if(this.apis == null) {
+            this.apis = new ArrayList<>();
+        }
         this.apis.add(apisItem);
         return this;
     }
 
     public ListApisUnbindedToAppV2Response withApis(Consumer<List<AppAuthUnBindedApiResp>> apisSetter) {
-        if(this.apis == null ){
+        if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);

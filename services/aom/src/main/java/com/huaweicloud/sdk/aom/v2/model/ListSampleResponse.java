@@ -35,12 +35,15 @@ public class ListSampleResponse extends SdkResponse {
 
     
     public ListSampleResponse addSamplesItem(SampleDataValue samplesItem) {
+        if(this.samples == null) {
+            this.samples = new ArrayList<>();
+        }
         this.samples.add(samplesItem);
         return this;
     }
 
     public ListSampleResponse withSamples(Consumer<List<SampleDataValue>> samplesSetter) {
-        if(this.samples == null ){
+        if(this.samples == null) {
             this.samples = new ArrayList<>();
         }
         samplesSetter.accept(this.samples);

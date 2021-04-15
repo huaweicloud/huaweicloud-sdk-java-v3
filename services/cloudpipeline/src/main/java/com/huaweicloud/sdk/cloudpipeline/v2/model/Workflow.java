@@ -58,12 +58,15 @@ public class Workflow  {
 
     
     public Workflow addParameterItem(PipelineParam parameterItem) {
+        if(this.parameter == null) {
+            this.parameter = new ArrayList<>();
+        }
         this.parameter.add(parameterItem);
         return this;
     }
 
     public Workflow withParameter(Consumer<List<PipelineParam>> parameterSetter) {
-        if(this.parameter == null ){
+        if(this.parameter == null) {
             this.parameter = new ArrayList<>();
         }
         parameterSetter.accept(this.parameter);
@@ -91,12 +94,15 @@ public class Workflow  {
 
     
     public Workflow addSourceItem(Source sourceItem) {
+        if(this.source == null) {
+            this.source = new ArrayList<>();
+        }
         this.source.add(sourceItem);
         return this;
     }
 
     public Workflow withSource(Consumer<List<Source>> sourceSetter) {
-        if(this.source == null ){
+        if(this.source == null) {
             this.source = new ArrayList<>();
         }
         sourceSetter.accept(this.source);

@@ -1186,12 +1186,15 @@ public class ApiCommon  {
 
     
     public ApiCommon addTagsItem(String tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public ApiCommon withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1585,12 +1588,15 @@ public class ApiCommon  {
 
     
     public ApiCommon addReqParamsItem(ReqParam reqParamsItem) {
+        if(this.reqParams == null) {
+            this.reqParams = new ArrayList<>();
+        }
         this.reqParams.add(reqParamsItem);
         return this;
     }
 
     public ApiCommon withReqParams(Consumer<List<ReqParam>> reqParamsSetter) {
-        if(this.reqParams == null ){
+        if(this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         reqParamsSetter.accept(this.reqParams);
@@ -1618,12 +1624,15 @@ public class ApiCommon  {
 
     
     public ApiCommon addBackendParamsItem(BackendParam backendParamsItem) {
+        if(this.backendParams == null) {
+            this.backendParams = new ArrayList<>();
+        }
         this.backendParams.add(backendParamsItem);
         return this;
     }
 
     public ApiCommon withBackendParams(Consumer<List<BackendParam>> backendParamsSetter) {
-        if(this.backendParams == null ){
+        if(this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
@@ -1651,12 +1660,15 @@ public class ApiCommon  {
 
     
     public ApiCommon addPolicyFunctionsItem(ApiPolicyFunctionResp policyFunctionsItem) {
+        if(this.policyFunctions == null) {
+            this.policyFunctions = new ArrayList<>();
+        }
         this.policyFunctions.add(policyFunctionsItem);
         return this;
     }
 
     public ApiCommon withPolicyFunctions(Consumer<List<ApiPolicyFunctionResp>> policyFunctionsSetter) {
-        if(this.policyFunctions == null ){
+        if(this.policyFunctions == null) {
             this.policyFunctions = new ArrayList<>();
         }
         policyFunctionsSetter.accept(this.policyFunctions);
@@ -1684,12 +1696,15 @@ public class ApiCommon  {
 
     
     public ApiCommon addPolicyMocksItem(ApiPolicyMockResp policyMocksItem) {
+        if(this.policyMocks == null) {
+            this.policyMocks = new ArrayList<>();
+        }
         this.policyMocks.add(policyMocksItem);
         return this;
     }
 
     public ApiCommon withPolicyMocks(Consumer<List<ApiPolicyMockResp>> policyMocksSetter) {
-        if(this.policyMocks == null ){
+        if(this.policyMocks == null) {
             this.policyMocks = new ArrayList<>();
         }
         policyMocksSetter.accept(this.policyMocks);

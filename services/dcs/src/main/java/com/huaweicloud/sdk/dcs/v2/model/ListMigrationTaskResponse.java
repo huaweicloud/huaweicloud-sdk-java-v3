@@ -63,12 +63,15 @@ public class ListMigrationTaskResponse extends SdkResponse {
 
     
     public ListMigrationTaskResponse addMigrationTasksItem(MigrationTaskList migrationTasksItem) {
+        if(this.migrationTasks == null) {
+            this.migrationTasks = new ArrayList<>();
+        }
         this.migrationTasks.add(migrationTasksItem);
         return this;
     }
 
     public ListMigrationTaskResponse withMigrationTasks(Consumer<List<MigrationTaskList>> migrationTasksSetter) {
-        if(this.migrationTasks == null ){
+        if(this.migrationTasks == null) {
             this.migrationTasks = new ArrayList<>();
         }
         migrationTasksSetter.accept(this.migrationTasks);

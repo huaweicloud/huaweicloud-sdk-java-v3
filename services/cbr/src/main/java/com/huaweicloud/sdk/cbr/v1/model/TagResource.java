@@ -81,12 +81,15 @@ public class TagResource  {
 
     
     public TagResource addResourceDetailItem(Vault resourceDetailItem) {
+        if(this.resourceDetail == null) {
+            this.resourceDetail = new ArrayList<>();
+        }
         this.resourceDetail.add(resourceDetailItem);
         return this;
     }
 
     public TagResource withResourceDetail(Consumer<List<Vault>> resourceDetailSetter) {
-        if(this.resourceDetail == null ){
+        if(this.resourceDetail == null) {
             this.resourceDetail = new ArrayList<>();
         }
         resourceDetailSetter.accept(this.resourceDetail);
@@ -114,12 +117,15 @@ public class TagResource  {
 
     
     public TagResource addTagsItem(Tag tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
         this.tags.add(tagsItem);
         return this;
     }
 
     public TagResource withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null ){
+        if(this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -169,12 +175,15 @@ public class TagResource  {
 
     
     public TagResource addSysTagsItem(SysTag sysTagsItem) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
         this.sysTags.add(sysTagsItem);
         return this;
     }
 
     public TagResource withSysTags(Consumer<List<SysTag>> sysTagsSetter) {
-        if(this.sysTags == null ){
+        if(this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
