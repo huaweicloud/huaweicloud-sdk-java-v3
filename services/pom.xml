@@ -6,15 +6,15 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.39-rc</version>
+        <version>3.0.40-rc</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.39-rc</version>
+    <version>3.0.40-rc</version>
     <packaging>pom</packaging>
-    <name>Huaweicloud SDK for Java Services</name>
-    <description>Services code for Huaweicloud SDK for Java</description>
+    <name>Huawei Cloud SDK for Java Services</name>
+    <description>Services code for Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
 
     <modules>
