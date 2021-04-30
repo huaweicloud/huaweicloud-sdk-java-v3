@@ -46,6 +46,12 @@ public class SrcNodeReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="security_token")
+    
+    private String securityToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
     private String appId;
@@ -152,6 +158,28 @@ public class SrcNodeReq  {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    
+
+    public SrcNodeReq withSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 源端桶的临时Token（最大长度16384个字符）
+     * @return securityToken
+     */
+    public String getSecurityToken() {
+        return securityToken;
+    }
+
+    public void setSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
     }
 
     
@@ -278,6 +306,7 @@ public class SrcNodeReq  {
             Objects.equals(this.region, srcNodeReq.region) &&
             Objects.equals(this.ak, srcNodeReq.ak) &&
             Objects.equals(this.sk, srcNodeReq.sk) &&
+            Objects.equals(this.securityToken, srcNodeReq.securityToken) &&
             Objects.equals(this.appId, srcNodeReq.appId) &&
             Objects.equals(this.bucket, srcNodeReq.bucket) &&
             Objects.equals(this.objectKey, srcNodeReq.objectKey) &&
@@ -285,7 +314,7 @@ public class SrcNodeReq  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, region, ak, sk, appId, bucket, objectKey, listFile);
+        return Objects.hash(cloudType, region, ak, sk, securityToken, appId, bucket, objectKey, listFile);
     }
     @Override
     public String toString() {
@@ -295,6 +324,7 @@ public class SrcNodeReq  {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    securityToken: ").append(toIndentedString(securityToken)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");

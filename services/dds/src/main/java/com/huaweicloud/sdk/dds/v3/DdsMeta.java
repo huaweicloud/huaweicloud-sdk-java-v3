@@ -1867,6 +1867,76 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetBalancerSwitchRequest, SetBalancerSwitchResponse> setBalancerSwitch = genForsetBalancerSwitch();
+
+    private static HttpRequestDef<SetBalancerSwitchRequest, SetBalancerSwitchResponse> genForsetBalancerSwitch() {
+        // basic
+        HttpRequestDef.Builder<SetBalancerSwitchRequest, SetBalancerSwitchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetBalancerSwitchRequest.class, SetBalancerSwitchResponse.class)
+                .withName("SetBalancerSwitch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/balancer/{action}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetBalancerSwitchRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SetBalancerSwitchRequest.ActionEnum.class,
+            f -> f.withMarshaller(SetBalancerSwitchRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetBalancerWindowRequest, SetBalancerWindowResponse> setBalancerWindow = genForsetBalancerWindow();
+
+    private static HttpRequestDef<SetBalancerWindowRequest, SetBalancerWindowResponse> genForsetBalancerWindow() {
+        // basic
+        HttpRequestDef.Builder<SetBalancerWindowRequest, SetBalancerWindowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetBalancerWindowRequest.class, SetBalancerWindowResponse.class)
+                .withName("SetBalancerWindow")
+                .withUri("/v3/{project_id}/instances/{instance_id}/balancer/active-window")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetBalancerWindowRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BalancerActiveWindow.class,
+            f -> f.withMarshaller(SetBalancerWindowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicy = genForshowAuditlogPolicy();
 
     private static HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> genForshowAuditlogPolicy() {
@@ -1997,6 +2067,33 @@ public class DdsMeta {
             String.class,
             f -> f.withMarshaller(ShowConnectionStatisticsRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> showShardingBalancer = genForshowShardingBalancer();
+
+    private static HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> genForshowShardingBalancer() {
+        // basic
+        HttpRequestDef.Builder<ShowShardingBalancerRequest, ShowShardingBalancerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowShardingBalancerRequest.class, ShowShardingBalancerResponse.class)
+                .withName("ShowShardingBalancer")
+                .withUri("/v3/{project_id}/instances/{instance_id}/balancer")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowShardingBalancerRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             })
         );
 

@@ -1010,6 +1010,50 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 设置集群均衡开关
+     * 设置集群均衡开关。
+     *
+     * @param SetBalancerSwitchRequest 请求对象
+     * @return CompletableFuture<SetBalancerSwitchResponse>
+     */
+    public CompletableFuture<SetBalancerSwitchResponse> setBalancerSwitchAsync(SetBalancerSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.setBalancerSwitch);
+    }
+
+    /**
+     * 设置集群均衡开关
+     * 设置集群均衡开关。
+     *
+     * @param SetBalancerSwitchRequest 请求对象
+     * @return AsyncInvoker<SetBalancerSwitchRequest, SetBalancerSwitchResponse>
+     */
+    public AsyncInvoker<SetBalancerSwitchRequest, SetBalancerSwitchResponse> setBalancerSwitchAsyncInvoker(SetBalancerSwitchRequest request) {
+        return new AsyncInvoker<SetBalancerSwitchRequest, SetBalancerSwitchResponse>(request, DdsMeta.setBalancerSwitch, hcClient);
+    }
+
+    /**
+     * 设置集群均衡活动时间窗
+     * 设置集群均衡活动时间窗。
+     *
+     * @param SetBalancerWindowRequest 请求对象
+     * @return CompletableFuture<SetBalancerWindowResponse>
+     */
+    public CompletableFuture<SetBalancerWindowResponse> setBalancerWindowAsync(SetBalancerWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.setBalancerWindow);
+    }
+
+    /**
+     * 设置集群均衡活动时间窗
+     * 设置集群均衡活动时间窗。
+     *
+     * @param SetBalancerWindowRequest 请求对象
+     * @return AsyncInvoker<SetBalancerWindowRequest, SetBalancerWindowResponse>
+     */
+    public AsyncInvoker<SetBalancerWindowRequest, SetBalancerWindowResponse> setBalancerWindowAsyncInvoker(SetBalancerWindowRequest request) {
+        return new AsyncInvoker<SetBalancerWindowRequest, SetBalancerWindowResponse>(request, DdsMeta.setBalancerWindow, hcClient);
+    }
+
+    /**
      * 查询审计日志策略
      * 查询审计日志策略。
      *
@@ -1095,6 +1139,28 @@ public class DdsAsyncClient {
      */
     public AsyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatisticsAsyncInvoker(ShowConnectionStatisticsRequest request) {
         return new AsyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse>(request, DdsMeta.showConnectionStatistics, hcClient);
+    }
+
+    /**
+     * 查询集群均衡设置
+     * 查询集群均衡设置。
+     *
+     * @param ShowShardingBalancerRequest 请求对象
+     * @return CompletableFuture<ShowShardingBalancerResponse>
+     */
+    public CompletableFuture<ShowShardingBalancerResponse> showShardingBalancerAsync(ShowShardingBalancerRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showShardingBalancer);
+    }
+
+    /**
+     * 查询集群均衡设置
+     * 查询集群均衡设置。
+     *
+     * @param ShowShardingBalancerRequest 请求对象
+     * @return AsyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse>
+     */
+    public AsyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse> showShardingBalancerAsyncInvoker(ShowShardingBalancerRequest request) {
+        return new AsyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse>(request, DdsMeta.showShardingBalancer, hcClient);
     }
 
     /**

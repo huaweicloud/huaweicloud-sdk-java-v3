@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.OffSiteBackupPolicy;
+import com.huaweicloud.sdk.rds.v3.model.GetOffSiteBackupPolicy;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowOffSiteBackupPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_para")
     
-    private OffSiteBackupPolicy policyPara;
+    private GetOffSiteBackupPolicy policyPara;
 
-    public ShowOffSiteBackupPolicyResponse withPolicyPara(OffSiteBackupPolicy policyPara) {
+    public ShowOffSiteBackupPolicyResponse withPolicyPara(GetOffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
         return this;
     }
 
-    public ShowOffSiteBackupPolicyResponse withPolicyPara(Consumer<OffSiteBackupPolicy> policyParaSetter) {
+    public ShowOffSiteBackupPolicyResponse withPolicyPara(Consumer<GetOffSiteBackupPolicy> policyParaSetter) {
         if(this.policyPara == null ){
-            this.policyPara = new OffSiteBackupPolicy();
+            this.policyPara = new GetOffSiteBackupPolicy();
             policyParaSetter.accept(this.policyPara);
         }
         
@@ -45,11 +45,11 @@ public class ShowOffSiteBackupPolicyResponse extends SdkResponse {
      * Get policyPara
      * @return policyPara
      */
-    public OffSiteBackupPolicy getPolicyPara() {
+    public GetOffSiteBackupPolicy getPolicyPara() {
         return policyPara;
     }
 
-    public void setPolicyPara(OffSiteBackupPolicy policyPara) {
+    public void setPolicyPara(GetOffSiteBackupPolicy policyPara) {
         this.policyPara = policyPara;
     }
 

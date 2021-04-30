@@ -790,28 +790,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 重置数据库密码
-     * 重置数据库密码.
-     *
-     * @param ResetPwdRequest 请求对象
-     * @return CompletableFuture<ResetPwdResponse>
-     */
-    public CompletableFuture<ResetPwdResponse> resetPwdAsync(ResetPwdRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.resetPwd);
-    }
-
-    /**
-     * 重置数据库密码
-     * 重置数据库密码.
-     *
-     * @param ResetPwdRequest 请求对象
-     * @return AsyncInvoker<ResetPwdRequest, ResetPwdResponse>
-     */
-    public AsyncInvoker<ResetPwdRequest, ResetPwdResponse> resetPwdAsyncInvoker(ResetPwdRequest request) {
-        return new AsyncInvoker<ResetPwdRequest, ResetPwdResponse>(request, RdsMeta.resetPwd, hcClient);
-    }
-
-    /**
      * 表级时间点恢复
      * 表级时间点恢复。
      *
@@ -1384,6 +1362,28 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改实例备注信息
+     * 修改指定数据库实例的备注信息。
+     *
+     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
+     * @return CompletableFuture<UpdatePostgresqlInstanceAliasResponse>
+     */
+    public CompletableFuture<UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasAsync(UpdatePostgresqlInstanceAliasRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updatePostgresqlInstanceAlias);
+    }
+
+    /**
+     * 修改实例备注信息
+     * 修改指定数据库实例的备注信息。
+     *
+     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
+     * @return AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
+     */
+    public AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasAsyncInvoker(UpdatePostgresqlInstanceAliasRequest request) {
+        return new AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
+    }
+
+    /**
      * 授权数据库帐号
      * 授权数据库帐号。
      *
@@ -1582,6 +1582,28 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 重置数据库密码
+     * 重置数据库密码.
+     *
+     * @param ResetPwdRequest 请求对象
+     * @return CompletableFuture<ResetPwdResponse>
+     */
+    public CompletableFuture<ResetPwdResponse> resetPwdAsync(ResetPwdRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.resetPwd);
+    }
+
+    /**
+     * 重置数据库密码
+     * 重置数据库密码.
+     *
+     * @param ResetPwdRequest 请求对象
+     * @return AsyncInvoker<ResetPwdRequest, ResetPwdResponse>
+     */
+    public AsyncInvoker<ResetPwdRequest, ResetPwdResponse> resetPwdAsyncInvoker(ResetPwdRequest request) {
+        return new AsyncInvoker<ResetPwdRequest, ResetPwdResponse>(request, RdsMeta.resetPwd, hcClient);
+    }
+
+    /**
      * 解除数据库帐号权限
      * 解除数据库帐号权限。
      *
@@ -1627,7 +1649,7 @@ public class RdsAsyncClient {
 
     /**
      * 授权数据库帐号
-     * 授权数据库帐号。
+     * 在指定实例的数据库中, 设置帐号的权限。
      *
      * @param AllowDbPrivilegeRequest 请求对象
      * @return CompletableFuture<AllowDbPrivilegeResponse>
@@ -1638,7 +1660,7 @@ public class RdsAsyncClient {
 
     /**
      * 授权数据库帐号
-     * 授权数据库帐号。
+     * 在指定实例的数据库中, 设置帐号的权限。
      *
      * @param AllowDbPrivilegeRequest 请求对象
      * @return AsyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse>
@@ -1649,7 +1671,7 @@ public class RdsAsyncClient {
 
     /**
      * 创建数据库
-     * 创建数据库。
+     * 在指定实例中创建数据库。
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
      * @return CompletableFuture<CreatePostgresqlDatabaseResponse>
@@ -1660,7 +1682,7 @@ public class RdsAsyncClient {
 
     /**
      * 创建数据库
-     * 创建数据库。
+     * 在指定实例中创建数据库。
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
      * @return AsyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse>
@@ -1671,7 +1693,7 @@ public class RdsAsyncClient {
 
     /**
      * 创建数据库SCHEMA
-     * 创建数据库SCHEMA。
+     * 在指定实例的数据库中, 创建数据库schema。
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
      * @return CompletableFuture<CreatePostgresqlDatabaseSchemaResponse>
@@ -1682,7 +1704,7 @@ public class RdsAsyncClient {
 
     /**
      * 创建数据库SCHEMA
-     * 创建数据库SCHEMA。
+     * 在指定实例的数据库中, 创建数据库schema。
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
      * @return AsyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse>
@@ -1693,7 +1715,7 @@ public class RdsAsyncClient {
 
     /**
      * 创建数据库用户
-     * 创建数据库用户。
+     * 在指定实例中创建数据库用户。
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
      * @return CompletableFuture<CreatePostgresqlDbUserResponse>
@@ -1704,7 +1726,7 @@ public class RdsAsyncClient {
 
     /**
      * 创建数据库用户
-     * 创建数据库用户。
+     * 在指定实例中创建数据库用户。
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
      * @return AsyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse>
@@ -1715,7 +1737,7 @@ public class RdsAsyncClient {
 
     /**
      * 查询数据库SCHEMA列表
-     * 查询数据库SCHEMA列表。
+     * 查询指定实例的数据库SCHEMA列表。
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
      * @return CompletableFuture<ListPostgresqlDatabaseSchemasResponse>
@@ -1726,7 +1748,7 @@ public class RdsAsyncClient {
 
     /**
      * 查询数据库SCHEMA列表
-     * 查询数据库SCHEMA列表。
+     * 查询指定实例的数据库SCHEMA列表。
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
      * @return AsyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse>
@@ -1737,7 +1759,7 @@ public class RdsAsyncClient {
 
     /**
      * 查询数据库列表
-     * 查询数据库列表。
+     * 查询指定实例中的数据库列表。
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
      * @return CompletableFuture<ListPostgresqlDatabasesResponse>
@@ -1748,7 +1770,7 @@ public class RdsAsyncClient {
 
     /**
      * 查询数据库列表
-     * 查询数据库列表。
+     * 查询指定实例中的数据库列表。
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
      * @return AsyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse>
@@ -1759,7 +1781,7 @@ public class RdsAsyncClient {
 
     /**
      * 查询数据库用户列表
-     * 查询数据库用户列表。
+     * 在指定实例中查询数据库用户列表。
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
      * @return CompletableFuture<ListPostgresqlDbUserPaginatedResponse>
@@ -1770,7 +1792,7 @@ public class RdsAsyncClient {
 
     /**
      * 查询数据库用户列表
-     * 查询数据库用户列表。
+     * 在指定实例中查询数据库用户列表。
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
      * @return AsyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>
@@ -1781,7 +1803,7 @@ public class RdsAsyncClient {
 
     /**
      * 重置数据库帐号密码
-     * 重置数据库帐号密码。
+     * 重置指定数据库帐号的密码。
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
      * @return CompletableFuture<SetPostgresqlDbUserPwdResponse>
@@ -1792,35 +1814,13 @@ public class RdsAsyncClient {
 
     /**
      * 重置数据库帐号密码
-     * 重置数据库帐号密码。
+     * 重置指定数据库帐号的密码。
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
      * @return AsyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>
      */
     public AsyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse> setPostgresqlDbUserPwdAsyncInvoker(SetPostgresqlDbUserPwdRequest request) {
         return new AsyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>(request, RdsMeta.setPostgresqlDbUserPwd, hcClient);
-    }
-
-    /**
-     * 修改实例备注信息
-     * 修改实例备注信息。
-     *
-     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return CompletableFuture<UpdatePostgresqlInstanceAliasResponse>
-     */
-    public CompletableFuture<UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasAsync(UpdatePostgresqlInstanceAliasRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.updatePostgresqlInstanceAlias);
-    }
-
-    /**
-     * 修改实例备注信息
-     * 修改实例备注信息。
-     *
-     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
-     */
-    public AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasAsyncInvoker(UpdatePostgresqlInstanceAliasRequest request) {
-        return new AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
     }
 
     /**

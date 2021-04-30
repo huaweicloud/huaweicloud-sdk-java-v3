@@ -12,22 +12,22 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 跨区域备份策略信息。
+ * 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
  */
 public class OffSiteBackupPolicy  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keep_days")
+    @JsonProperty(value="backup_type")
     
-    private Integer keepDays;
+    private String backupType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_type")
+    @JsonProperty(value="keep_days")
     
-    private Object backupType;
+    private Integer keepDays;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,6 +41,28 @@ public class OffSiteBackupPolicy  {
     
     private String destinationProjectId;
 
+    public OffSiteBackupPolicy withBackupType(String backupType) {
+        this.backupType = backupType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指定备份的类型。  SQL Server仅支持设置为“all”。  取值如下：  - auto：自动全量备份。 - incremental：自动增量备份。 - all：同时设置所有备份类型。   - MySQL：同时设置自动全量和自动增量备份。   - SQL Server：同时设置自动全量、自动增量备份和手动备份。
+     * @return backupType
+     */
+    public String getBackupType() {
+        return backupType;
+    }
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
+    
+
     public OffSiteBackupPolicy withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
         return this;
@@ -50,7 +72,7 @@ public class OffSiteBackupPolicy  {
 
 
     /**
-     * 指定已生成的备份文件可以保存的天数。  取值范围：0～1825。保存天数设置为0时，表示关闭跨区域备份策略。  注意： 关闭备份策略后，备份任务将立即停止，如果有增量备份，所有增量备份任务将立即删除，使用增量备份的相关操作可能失败，相关操作不限于下载、复制、恢复、重建等，请谨慎操作。
+     * 备份文件可以保存的天数。
      * @return keepDays
      */
     public Integer getKeepDays() {
@@ -59,28 +81,6 @@ public class OffSiteBackupPolicy  {
 
     public void setKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
-    }
-
-    
-
-    public OffSiteBackupPolicy withBackupType(Object backupType) {
-        this.backupType = backupType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 备份类型，取值： - SQL Server仅支持设置为“all” - “auto”: 自动全量备份 - “incremental”: 自动增量备份 - “manual“: 手动备份，仅SQL Server返回该备份类型 - “all”: 同时设置自动全量和自动增量备份。MySQL: 同时设置自动全量和自动增量备份。SQL Server: 同时设置自动全量、自动增量备份和手动备份。
-     * @return backupType
-     */
-    public Object getBackupType() {
-        return backupType;
-    }
-
-    public void setBackupType(Object backupType) {
-        this.backupType = backupType;
     }
 
     
@@ -94,7 +94,7 @@ public class OffSiteBackupPolicy  {
 
 
     /**
-     * 目标区域ID。
+     * 设置跨区域备份策略的目标区域ID。
      * @return destinationRegion
      */
     public String getDestinationRegion() {
@@ -116,7 +116,7 @@ public class OffSiteBackupPolicy  {
 
 
     /**
-     * 项目ID。
+     * 设置跨区域备份策略的目标project ID。
      * @return destinationProjectId
      */
     public String getDestinationProjectId() {
@@ -138,21 +138,21 @@ public class OffSiteBackupPolicy  {
             return false;
         }
         OffSiteBackupPolicy offSiteBackupPolicy = (OffSiteBackupPolicy) o;
-        return Objects.equals(this.keepDays, offSiteBackupPolicy.keepDays) &&
-            Objects.equals(this.backupType, offSiteBackupPolicy.backupType) &&
+        return Objects.equals(this.backupType, offSiteBackupPolicy.backupType) &&
+            Objects.equals(this.keepDays, offSiteBackupPolicy.keepDays) &&
             Objects.equals(this.destinationRegion, offSiteBackupPolicy.destinationRegion) &&
             Objects.equals(this.destinationProjectId, offSiteBackupPolicy.destinationProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, backupType, destinationRegion, destinationProjectId);
+        return Objects.hash(backupType, keepDays, destinationRegion, destinationProjectId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OffSiteBackupPolicy {\n");
-        sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
+        sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("    destinationRegion: ").append(toIndentedString(destinationRegion)).append("\n");
         sb.append("    destinationProjectId: ").append(toIndentedString(destinationProjectId)).append("\n");
         sb.append("}");

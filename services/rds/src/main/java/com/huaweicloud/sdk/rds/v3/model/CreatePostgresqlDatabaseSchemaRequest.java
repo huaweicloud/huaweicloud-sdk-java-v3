@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.DbSchemaReq;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseSchemaReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DbSchemaReq body;
+    private PostgresqlDatabaseSchemaReq body;
 
     public CreatePostgresqlDatabaseSchemaRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -82,14 +82,14 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
 
     
 
-    public CreatePostgresqlDatabaseSchemaRequest withBody(DbSchemaReq body) {
+    public CreatePostgresqlDatabaseSchemaRequest withBody(PostgresqlDatabaseSchemaReq body) {
         this.body = body;
         return this;
     }
 
-    public CreatePostgresqlDatabaseSchemaRequest withBody(Consumer<DbSchemaReq> bodySetter) {
+    public CreatePostgresqlDatabaseSchemaRequest withBody(Consumer<PostgresqlDatabaseSchemaReq> bodySetter) {
         if(this.body == null ){
-            this.body = new DbSchemaReq();
+            this.body = new PostgresqlDatabaseSchemaReq();
             bodySetter.accept(this.body);
         }
         
@@ -101,11 +101,11 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
      * Get body
      * @return body
      */
-    public DbSchemaReq getBody() {
+    public PostgresqlDatabaseSchemaReq getBody() {
         return body;
     }
 
-    public void setBody(DbSchemaReq body) {
+    public void setBody(PostgresqlDatabaseSchemaReq body) {
         this.body = body;
     }
 

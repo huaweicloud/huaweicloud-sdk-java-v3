@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.DatabaseForListSchema;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseForListSchema;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="database_schemas")
     
-    private List<DatabaseForListSchema> databaseSchemas = null;
+    private List<PostgresqlDatabaseForListSchema> databaseSchemas = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,13 +34,13 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListPostgresqlDatabaseSchemasResponse withDatabaseSchemas(List<DatabaseForListSchema> databaseSchemas) {
+    public ListPostgresqlDatabaseSchemasResponse withDatabaseSchemas(List<PostgresqlDatabaseForListSchema> databaseSchemas) {
         this.databaseSchemas = databaseSchemas;
         return this;
     }
 
     
-    public ListPostgresqlDatabaseSchemasResponse addDatabaseSchemasItem(DatabaseForListSchema databaseSchemasItem) {
+    public ListPostgresqlDatabaseSchemasResponse addDatabaseSchemasItem(PostgresqlDatabaseForListSchema databaseSchemasItem) {
         if(this.databaseSchemas == null) {
             this.databaseSchemas = new ArrayList<>();
         }
@@ -48,7 +48,7 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
         return this;
     }
 
-    public ListPostgresqlDatabaseSchemasResponse withDatabaseSchemas(Consumer<List<DatabaseForListSchema>> databaseSchemasSetter) {
+    public ListPostgresqlDatabaseSchemasResponse withDatabaseSchemas(Consumer<List<PostgresqlDatabaseForListSchema>> databaseSchemasSetter) {
         if(this.databaseSchemas == null) {
             this.databaseSchemas = new ArrayList<>();
         }
@@ -60,11 +60,11 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
      * 列表中每个元素表示一个数据库schema。
      * @return databaseSchemas
      */
-    public List<DatabaseForListSchema> getDatabaseSchemas() {
+    public List<PostgresqlDatabaseForListSchema> getDatabaseSchemas() {
         return databaseSchemas;
     }
 
-    public void setDatabaseSchemas(List<DatabaseForListSchema> databaseSchemas) {
+    public void setDatabaseSchemas(List<PostgresqlDatabaseForListSchema> databaseSchemas) {
         this.databaseSchemas = databaseSchemas;
     }
 
@@ -79,7 +79,7 @@ public class ListPostgresqlDatabaseSchemasResponse extends SdkResponse {
 
 
     /**
-     * 总数。
+     * 数据库schema总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

@@ -481,6 +481,65 @@ public class BcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOpRecordRequest, ListOpRecordResponse> listOpRecord = genForlistOpRecord();
+
+    private static HttpRequestDef<ListOpRecordRequest, ListOpRecordResponse> genForlistOpRecord() {
+        // basic
+        HttpRequestDef.Builder<ListOpRecordRequest, ListOpRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOpRecordRequest.class, ListOpRecordResponse.class)
+                .withName("ListOpRecord")
+                .withUri("/v2/{project_id}/operation/record")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("blockchain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOpRecordRequest::getBlockchainId, (req, v) -> {
+                req.setBlockchainId(v);
+            })
+        );
+        builder.withRequestField("operation_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListOpRecordRequest.OperationStatusEnum.class,
+            f -> f.withMarshaller(ListOpRecordRequest::getOperationStatus, (req, v) -> {
+                req.setOperationStatus(v);
+            })
+        );
+        builder.withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListOpRecordRequest.ResourceTypeEnum.class,
+            f -> f.withMarshaller(ListOpRecordRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            })
+        );
+        builder.withRequestField("operation_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListOpRecordRequest.OperationTypeEnum.class,
+            f -> f.withMarshaller(ListOpRecordRequest::getOperationType, (req, v) -> {
+                req.setOperationType(v);
+            })
+        );
+        builder.withRequestField("operation_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOpRecordRequest::getOperationId, (req, v) -> {
+                req.setOperationId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
 
     private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
@@ -603,7 +662,7 @@ public class BcsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceRequestBody.class,
+            OpIdRes.class,
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

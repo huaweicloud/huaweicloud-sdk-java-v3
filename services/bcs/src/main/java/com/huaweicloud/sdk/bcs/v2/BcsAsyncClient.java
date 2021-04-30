@@ -350,6 +350,28 @@ public class BcsAsyncClient {
     }
 
     /**
+     * 查询异步操作结果
+     * 查询异步操作结果
+     *
+     * @param ListOpRecordRequest 请求对象
+     * @return CompletableFuture<ListOpRecordResponse>
+     */
+    public CompletableFuture<ListOpRecordResponse> listOpRecordAsync(ListOpRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, BcsMeta.listOpRecord);
+    }
+
+    /**
+     * 查询异步操作结果
+     * 查询异步操作结果
+     *
+     * @param ListOpRecordRequest 请求对象
+     * @return AsyncInvoker<ListOpRecordRequest, ListOpRecordResponse>
+     */
+    public AsyncInvoker<ListOpRecordRequest, ListOpRecordResponse> listOpRecordAsyncInvoker(ListOpRecordRequest request) {
+        return new AsyncInvoker<ListOpRecordRequest, ListOpRecordResponse>(request, BcsMeta.listOpRecord, hcClient);
+    }
+
+    /**
      * 查询配额
      * 查询当前项目下BCS服务所有资源的配额信息
      *

@@ -40,6 +40,28 @@ public class DliClient {
     }
 
     /**
+     * 删除队列
+     * 该API用于删除指定队列。 说明：  若指定队列正在执行任务，则不允许删除。
+     *
+     * @param DeleteQueueRequest 请求对象
+     * @return DeleteQueueResponse
+     */
+    public DeleteQueueResponse deleteQueue(DeleteQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.deleteQueue);
+    }
+
+    /**
+     * 删除队列
+     * 该API用于删除指定队列。 说明：  若指定队列正在执行任务，则不允许删除。
+     *
+     * @param DeleteQueueRequest 请求对象
+     * @return SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>
+     */
+    public SyncInvoker<DeleteQueueRequest, DeleteQueueResponse> deleteQueueInvoker(DeleteQueueRequest request) {
+        return new SyncInvoker<DeleteQueueRequest, DeleteQueueResponse>(request, DliMeta.deleteQueue, hcClient);
+    }
+
+    /**
      * 查询所有队列
      * 该API用于列出该project下所有的队列。
      *

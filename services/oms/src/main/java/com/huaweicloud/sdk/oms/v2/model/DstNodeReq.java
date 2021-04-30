@@ -31,9 +31,21 @@ public class DstNodeReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="security_token")
+    
+    private String securityToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bucket")
     
     private String bucket;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="save_prefix")
+    
+    private String savePrefix;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,6 +97,28 @@ public class DstNodeReq  {
 
     
 
+    public DstNodeReq withSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 目的端的临时Token（最大长度16384个字符）。
+     * @return securityToken
+     */
+    public String getSecurityToken() {
+        return securityToken;
+    }
+
+    public void setSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
+    }
+
+    
+
     public DstNodeReq withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -103,6 +137,28 @@ public class DstNodeReq  {
 
     public void setBucket(String bucket) {
         this.bucket = bucket;
+    }
+
+    
+
+    public DstNodeReq withSavePrefix(String savePrefix) {
+        this.savePrefix = savePrefix;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 目的端桶内路径前缀（拼接在对象key前面,组成新的key,拼接后不能超过1024个字符）。
+     * @return savePrefix
+     */
+    public String getSavePrefix() {
+        return savePrefix;
+    }
+
+    public void setSavePrefix(String savePrefix) {
+        this.savePrefix = savePrefix;
     }
 
     
@@ -140,12 +196,14 @@ public class DstNodeReq  {
         DstNodeReq dstNodeReq = (DstNodeReq) o;
         return Objects.equals(this.ak, dstNodeReq.ak) &&
             Objects.equals(this.sk, dstNodeReq.sk) &&
+            Objects.equals(this.securityToken, dstNodeReq.securityToken) &&
             Objects.equals(this.bucket, dstNodeReq.bucket) &&
+            Objects.equals(this.savePrefix, dstNodeReq.savePrefix) &&
             Objects.equals(this.region, dstNodeReq.region);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ak, sk, bucket, region);
+        return Objects.hash(ak, sk, securityToken, bucket, savePrefix, region);
     }
     @Override
     public String toString() {
@@ -153,7 +211,9 @@ public class DstNodeReq  {
         sb.append("class DstNodeReq {\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    securityToken: ").append(toIndentedString(securityToken)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
+        sb.append("    savePrefix: ").append(toIndentedString(savePrefix)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();

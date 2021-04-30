@@ -31,6 +31,12 @@ public class CreateNewBlockchainResponse extends SdkResponse {
     
     private String blockchainName;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="operation_id")
+    
+    private String operationId;
+
     public CreateNewBlockchainResponse withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
         return this;
@@ -75,6 +81,28 @@ public class CreateNewBlockchainResponse extends SdkResponse {
 
     
 
+    public CreateNewBlockchainResponse withOperationId(String operationId) {
+        this.operationId = operationId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 操作ID
+     * @return operationId
+     */
+    public String getOperationId() {
+        return operationId;
+    }
+
+    public void setOperationId(String operationId) {
+        this.operationId = operationId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -85,11 +113,12 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         }
         CreateNewBlockchainResponse createNewBlockchainResponse = (CreateNewBlockchainResponse) o;
         return Objects.equals(this.blockchainId, createNewBlockchainResponse.blockchainId) &&
-            Objects.equals(this.blockchainName, createNewBlockchainResponse.blockchainName);
+            Objects.equals(this.blockchainName, createNewBlockchainResponse.blockchainName) &&
+            Objects.equals(this.operationId, createNewBlockchainResponse.operationId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(blockchainId, blockchainName);
+        return Objects.hash(blockchainId, blockchainName, operationId);
     }
     @Override
     public String toString() {
@@ -97,6 +126,7 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         sb.append("class CreateNewBlockchainResponse {\n");
         sb.append("    blockchainId: ").append(toIndentedString(blockchainId)).append("\n");
         sb.append("    blockchainName: ").append(toIndentedString(blockchainName)).append("\n");
+        sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

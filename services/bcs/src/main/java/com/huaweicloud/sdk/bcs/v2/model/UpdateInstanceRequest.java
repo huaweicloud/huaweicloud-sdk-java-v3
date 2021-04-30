@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.UpdateInstanceRequestBody;
+import com.huaweicloud.sdk.bcs.v2.model.OpIdRes;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class UpdateInstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateInstanceRequestBody body;
+    private OpIdRes body;
 
     public UpdateInstanceRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
@@ -52,14 +52,14 @@ public class UpdateInstanceRequest  {
 
     
 
-    public UpdateInstanceRequest withBody(UpdateInstanceRequestBody body) {
+    public UpdateInstanceRequest withBody(OpIdRes body) {
         this.body = body;
         return this;
     }
 
-    public UpdateInstanceRequest withBody(Consumer<UpdateInstanceRequestBody> bodySetter) {
+    public UpdateInstanceRequest withBody(Consumer<OpIdRes> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateInstanceRequestBody();
+            this.body = new OpIdRes();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class UpdateInstanceRequest  {
      * Get body
      * @return body
      */
-    public UpdateInstanceRequestBody getBody() {
+    public OpIdRes getBody() {
         return body;
     }
 
-    public void setBody(UpdateInstanceRequestBody body) {
+    public void setBody(OpIdRes body) {
         this.body = body;
     }
 

@@ -1008,6 +1008,50 @@ public class DdsClient {
     }
 
     /**
+     * 设置集群均衡开关
+     * 设置集群均衡开关。
+     *
+     * @param SetBalancerSwitchRequest 请求对象
+     * @return SetBalancerSwitchResponse
+     */
+    public SetBalancerSwitchResponse setBalancerSwitch(SetBalancerSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.setBalancerSwitch);
+    }
+
+    /**
+     * 设置集群均衡开关
+     * 设置集群均衡开关。
+     *
+     * @param SetBalancerSwitchRequest 请求对象
+     * @return SyncInvoker<SetBalancerSwitchRequest, SetBalancerSwitchResponse>
+     */
+    public SyncInvoker<SetBalancerSwitchRequest, SetBalancerSwitchResponse> setBalancerSwitchInvoker(SetBalancerSwitchRequest request) {
+        return new SyncInvoker<SetBalancerSwitchRequest, SetBalancerSwitchResponse>(request, DdsMeta.setBalancerSwitch, hcClient);
+    }
+
+    /**
+     * 设置集群均衡活动时间窗
+     * 设置集群均衡活动时间窗。
+     *
+     * @param SetBalancerWindowRequest 请求对象
+     * @return SetBalancerWindowResponse
+     */
+    public SetBalancerWindowResponse setBalancerWindow(SetBalancerWindowRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.setBalancerWindow);
+    }
+
+    /**
+     * 设置集群均衡活动时间窗
+     * 设置集群均衡活动时间窗。
+     *
+     * @param SetBalancerWindowRequest 请求对象
+     * @return SyncInvoker<SetBalancerWindowRequest, SetBalancerWindowResponse>
+     */
+    public SyncInvoker<SetBalancerWindowRequest, SetBalancerWindowResponse> setBalancerWindowInvoker(SetBalancerWindowRequest request) {
+        return new SyncInvoker<SetBalancerWindowRequest, SetBalancerWindowResponse>(request, DdsMeta.setBalancerWindow, hcClient);
+    }
+
+    /**
      * 查询审计日志策略
      * 查询审计日志策略。
      *
@@ -1093,6 +1137,28 @@ public class DdsClient {
      */
     public SyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatisticsInvoker(ShowConnectionStatisticsRequest request) {
         return new SyncInvoker<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse>(request, DdsMeta.showConnectionStatistics, hcClient);
+    }
+
+    /**
+     * 查询集群均衡设置
+     * 查询集群均衡设置。
+     *
+     * @param ShowShardingBalancerRequest 请求对象
+     * @return ShowShardingBalancerResponse
+     */
+    public ShowShardingBalancerResponse showShardingBalancer(ShowShardingBalancerRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showShardingBalancer);
+    }
+
+    /**
+     * 查询集群均衡设置
+     * 查询集群均衡设置。
+     *
+     * @param ShowShardingBalancerRequest 请求对象
+     * @return SyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse>
+     */
+    public SyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse> showShardingBalancerInvoker(ShowShardingBalancerRequest request) {
+        return new SyncInvoker<ShowShardingBalancerRequest, ShowShardingBalancerResponse>(request, DdsMeta.showShardingBalancer, hcClient);
     }
 
     /**

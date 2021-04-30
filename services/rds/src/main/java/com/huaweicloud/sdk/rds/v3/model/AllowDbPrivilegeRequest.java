@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.PgGrantRequest;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlGrantRequest;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class AllowDbPrivilegeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private PgGrantRequest body;
+    private PostgresqlGrantRequest body;
 
     public AllowDbPrivilegeRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -82,14 +82,14 @@ public class AllowDbPrivilegeRequest  {
 
     
 
-    public AllowDbPrivilegeRequest withBody(PgGrantRequest body) {
+    public AllowDbPrivilegeRequest withBody(PostgresqlGrantRequest body) {
         this.body = body;
         return this;
     }
 
-    public AllowDbPrivilegeRequest withBody(Consumer<PgGrantRequest> bodySetter) {
+    public AllowDbPrivilegeRequest withBody(Consumer<PostgresqlGrantRequest> bodySetter) {
         if(this.body == null ){
-            this.body = new PgGrantRequest();
+            this.body = new PostgresqlGrantRequest();
             bodySetter.accept(this.body);
         }
         
@@ -101,11 +101,11 @@ public class AllowDbPrivilegeRequest  {
      * Get body
      * @return body
      */
-    public PgGrantRequest getBody() {
+    public PostgresqlGrantRequest getBody() {
         return body;
     }
 
-    public void setBody(PgGrantRequest body) {
+    public void setBody(PostgresqlGrantRequest body) {
         this.body = body;
     }
 

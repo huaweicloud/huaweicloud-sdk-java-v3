@@ -41,6 +41,12 @@ public class ListSqlserverDatabasesRequest  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="db-name")
+    
+    private String dbName;
+
     public ListSqlserverDatabasesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -131,6 +137,28 @@ public class ListSqlserverDatabasesRequest  {
 
     
 
+    public ListSqlserverDatabasesRequest withDbName(String dbName) {
+        this.dbName = dbName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get dbName
+     * @return dbName
+     */
+    public String getDbName() {
+        return dbName;
+    }
+
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -143,11 +171,12 @@ public class ListSqlserverDatabasesRequest  {
         return Objects.equals(this.xLanguage, listSqlserverDatabasesRequest.xLanguage) &&
             Objects.equals(this.instanceId, listSqlserverDatabasesRequest.instanceId) &&
             Objects.equals(this.page, listSqlserverDatabasesRequest.page) &&
-            Objects.equals(this.limit, listSqlserverDatabasesRequest.limit);
+            Objects.equals(this.limit, listSqlserverDatabasesRequest.limit) &&
+            Objects.equals(this.dbName, listSqlserverDatabasesRequest.dbName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, page, limit);
+        return Objects.hash(xLanguage, instanceId, page, limit, dbName);
     }
     @Override
     public String toString() {
@@ -157,6 +186,7 @@ public class ListSqlserverDatabasesRequest  {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

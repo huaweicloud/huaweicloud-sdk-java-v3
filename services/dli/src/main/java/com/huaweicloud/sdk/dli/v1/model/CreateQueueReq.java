@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -52,6 +54,30 @@ public class CreateQueueReq  {
     @JsonProperty(value="enterprise_project_id")
     
     private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="platform")
+    
+    private String platform;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_mode")
+    
+    private Integer resourceMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="labels")
+    
+    private List<Object> labels = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="feature")
+    
+    private String feature;
 
     public CreateQueueReq withQueueName(String queueName) {
         this.queueName = queueName;
@@ -185,6 +211,108 @@ public class CreateQueueReq  {
 
     
 
+    public CreateQueueReq withPlatform(String platform) {
+        this.platform = platform;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 队列计算资源的cpu架构。
+     * @return platform
+     */
+    public String getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    
+
+    public CreateQueueReq withResourceMode(Integer resourceMode) {
+        this.resourceMode = resourceMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 队列资源模式。支持以下两种类型：0：共享资源模式1：专属资源模式
+     * @return resourceMode
+     */
+    public Integer getResourceMode() {
+        return resourceMode;
+    }
+
+    public void setResourceMode(Integer resourceMode) {
+        this.resourceMode = resourceMode;
+    }
+
+    
+
+    public CreateQueueReq withLabels(List<Object> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    
+    public CreateQueueReq addLabelsItem(Object labelsItem) {
+        if(this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public CreateQueueReq withLabels(Consumer<List<Object>> labelsSetter) {
+        if(this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
+    /**
+     * 创建队列的标签信息，目前包括队列是否跨AZ的标签信息（Json字符串），且只支持值为“2”，即创建一个计算资源分布在2个可用区的双AZ队列
+     * @return labels
+     */
+    public List<Object> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<Object> labels) {
+        this.labels = labels;
+    }
+
+    
+
+    public CreateQueueReq withFeature(String feature) {
+        this.feature = feature;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 队列特性。支持以下两种类型：basic：基础型ai：AI增强型（仅SQL的x86_64专属队列支持选择）默认值为“basic”。
+     * @return feature
+     */
+    public String getFeature() {
+        return feature;
+    }
+
+    public void setFeature(String feature) {
+        this.feature = feature;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -199,11 +327,15 @@ public class CreateQueueReq  {
             Objects.equals(this.description, createQueueReq.description) &&
             Objects.equals(this.cuCount, createQueueReq.cuCount) &&
             Objects.equals(this.chargingMode, createQueueReq.chargingMode) &&
-            Objects.equals(this.enterpriseProjectId, createQueueReq.enterpriseProjectId);
+            Objects.equals(this.enterpriseProjectId, createQueueReq.enterpriseProjectId) &&
+            Objects.equals(this.platform, createQueueReq.platform) &&
+            Objects.equals(this.resourceMode, createQueueReq.resourceMode) &&
+            Objects.equals(this.labels, createQueueReq.labels) &&
+            Objects.equals(this.feature, createQueueReq.feature);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(queueName, queueType, description, cuCount, chargingMode, enterpriseProjectId);
+        return Objects.hash(queueName, queueType, description, cuCount, chargingMode, enterpriseProjectId, platform, resourceMode, labels, feature);
     }
     @Override
     public String toString() {
@@ -215,6 +347,10 @@ public class CreateQueueReq  {
         sb.append("    cuCount: ").append(toIndentedString(cuCount)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+        sb.append("    resourceMode: ").append(toIndentedString(resourceMode)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
         sb.append("}");
         return sb.toString();
     }

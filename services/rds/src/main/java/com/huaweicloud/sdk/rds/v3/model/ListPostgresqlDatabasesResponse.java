@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.PgListDatabase;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlListDatabase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ListPostgresqlDatabasesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="databases")
     
-    private List<PgListDatabase> databases = null;
+    private List<PostgresqlListDatabase> databases = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,13 +34,13 @@ public class ListPostgresqlDatabasesResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListPostgresqlDatabasesResponse withDatabases(List<PgListDatabase> databases) {
+    public ListPostgresqlDatabasesResponse withDatabases(List<PostgresqlListDatabase> databases) {
         this.databases = databases;
         return this;
     }
 
     
-    public ListPostgresqlDatabasesResponse addDatabasesItem(PgListDatabase databasesItem) {
+    public ListPostgresqlDatabasesResponse addDatabasesItem(PostgresqlListDatabase databasesItem) {
         if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
@@ -48,7 +48,7 @@ public class ListPostgresqlDatabasesResponse extends SdkResponse {
         return this;
     }
 
-    public ListPostgresqlDatabasesResponse withDatabases(Consumer<List<PgListDatabase>> databasesSetter) {
+    public ListPostgresqlDatabasesResponse withDatabases(Consumer<List<PostgresqlListDatabase>> databasesSetter) {
         if(this.databases == null) {
             this.databases = new ArrayList<>();
         }
@@ -57,14 +57,14 @@ public class ListPostgresqlDatabasesResponse extends SdkResponse {
     }
 
     /**
-     * 数据库信息。
+     * 列表中每个元素表示一个数据库。
      * @return databases
      */
-    public List<PgListDatabase> getDatabases() {
+    public List<PostgresqlListDatabase> getDatabases() {
         return databases;
     }
 
-    public void setDatabases(List<PgListDatabase> databases) {
+    public void setDatabases(List<PostgresqlListDatabase> databases) {
         this.databases = databases;
     }
 
@@ -79,7 +79,7 @@ public class ListPostgresqlDatabasesResponse extends SdkResponse {
 
 
     /**
-     * 总数。
+     * 数据库总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

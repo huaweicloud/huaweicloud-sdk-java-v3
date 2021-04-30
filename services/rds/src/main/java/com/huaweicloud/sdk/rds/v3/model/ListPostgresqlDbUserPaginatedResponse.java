@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.PgUserForList;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    private List<PgUserForList> users = null;
+    private List<PostgresqlUserForList> users = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,13 +34,13 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListPostgresqlDbUserPaginatedResponse withUsers(List<PgUserForList> users) {
+    public ListPostgresqlDbUserPaginatedResponse withUsers(List<PostgresqlUserForList> users) {
         this.users = users;
         return this;
     }
 
     
-    public ListPostgresqlDbUserPaginatedResponse addUsersItem(PgUserForList usersItem) {
+    public ListPostgresqlDbUserPaginatedResponse addUsersItem(PostgresqlUserForList usersItem) {
         if(this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -48,7 +48,7 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
         return this;
     }
 
-    public ListPostgresqlDbUserPaginatedResponse withUsers(Consumer<List<PgUserForList>> usersSetter) {
+    public ListPostgresqlDbUserPaginatedResponse withUsers(Consumer<List<PostgresqlUserForList>> usersSetter) {
         if(this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -57,14 +57,14 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
     }
 
     /**
-     * 用户信息。
+     * 列表中每个元素表示一个数据库用户。
      * @return users
      */
-    public List<PgUserForList> getUsers() {
+    public List<PostgresqlUserForList> getUsers() {
         return users;
     }
 
-    public void setUsers(List<PgUserForList> users) {
+    public void setUsers(List<PostgresqlUserForList> users) {
         this.users = users;
     }
 
@@ -79,7 +79,7 @@ public class ListPostgresqlDbUserPaginatedResponse extends SdkResponse {
 
 
     /**
-     * 总条数。
+     * 数据库用户总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

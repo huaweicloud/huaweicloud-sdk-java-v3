@@ -414,6 +414,28 @@ public class IoTDAClient {
     }
 
     /**
+     * 上传批量任务文件
+     * 应用服务器可调用此接口上传批量任务文件，用于创建批量任务。当前支持批量创建设备任务、批量删除设备任务、批量冻结设备任务、批量解冻设备任务的文件上传。 - [批量注册设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchCreateDevices_Template.xlsx)   - [批量删除设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchDeleteDevices_Template.xlsx)   - [批量冻结设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchFreezeDevices_Template.xlsx)   - [批量解冻设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchUnfreezeDevices_Template.xlsx) 
+     *
+     * @param UploadBatchTaskFileRequest 请求对象
+     * @return UploadBatchTaskFileResponse
+     */
+    public UploadBatchTaskFileResponse uploadBatchTaskFile(UploadBatchTaskFileRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.uploadBatchTaskFile);
+    }
+
+    /**
+     * 上传批量任务文件
+     * 应用服务器可调用此接口上传批量任务文件，用于创建批量任务。当前支持批量创建设备任务、批量删除设备任务、批量冻结设备任务、批量解冻设备任务的文件上传。 - [批量注册设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchCreateDevices_Template.xlsx)   - [批量删除设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchDeleteDevices_Template.xlsx)   - [批量冻结设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchFreezeDevices_Template.xlsx)   - [批量解冻设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchUnfreezeDevices_Template.xlsx) 
+     *
+     * @param UploadBatchTaskFileRequest 请求对象
+     * @return SyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse>
+     */
+    public SyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> uploadBatchTaskFileInvoker(UploadBatchTaskFileRequest request) {
+        return new SyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse>(request, IoTDAMeta.uploadBatchTaskFile, hcClient);
+    }
+
+    /**
      * 上传设备CA证书
      * 应用服务器可调用此接口在物联网平台上传设备的CA证书
      *
@@ -1467,116 +1489,6 @@ public class IoTDAClient {
      */
     public SyncInvoker<UpdateRuleRequest, UpdateRuleResponse> updateRuleInvoker(UpdateRuleRequest request) {
         return new SyncInvoker<UpdateRuleRequest, UpdateRuleResponse>(request, IoTDAMeta.updateRule, hcClient);
-    }
-
-    /**
-     * 创建订阅
-     * 应用服务器可调用此接口订阅物联网平台资源的变化事件，当资源发生变化时（如设备激活，设备数据更新等），平台会向应用服务器发送通知消息。
-     *
-     * @param CreateSubscriptionRequest 请求对象
-     * @return CreateSubscriptionResponse
-     */
-    public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest request) {
-        return hcClient.syncInvokeHttp(request, IoTDAMeta.createSubscription);
-    }
-
-    /**
-     * 创建订阅
-     * 应用服务器可调用此接口订阅物联网平台资源的变化事件，当资源发生变化时（如设备激活，设备数据更新等），平台会向应用服务器发送通知消息。
-     *
-     * @param CreateSubscriptionRequest 请求对象
-     * @return SyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>
-     */
-    public SyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscriptionInvoker(CreateSubscriptionRequest request) {
-        return new SyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>(request, IoTDAMeta.createSubscription, hcClient);
-    }
-
-    /**
-     * 删除订阅
-     * 应用服务器可调用此接口删除物联网平台中的指定订阅配置。
-     *
-     * @param DeleteSubscriptionRequest 请求对象
-     * @return DeleteSubscriptionResponse
-     */
-    public DeleteSubscriptionResponse deleteSubscription(DeleteSubscriptionRequest request) {
-        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteSubscription);
-    }
-
-    /**
-     * 删除订阅
-     * 应用服务器可调用此接口删除物联网平台中的指定订阅配置。
-     *
-     * @param DeleteSubscriptionRequest 请求对象
-     * @return SyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>
-     */
-    public SyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscriptionInvoker(DeleteSubscriptionRequest request) {
-        return new SyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>(request, IoTDAMeta.deleteSubscription, hcClient);
-    }
-
-    /**
-     * 查询订阅列表
-     * 应用服务器可调用此接口查询物联网平台中的订阅配置信息列表。
-     *
-     * @param ListSubscriptionsRequest 请求对象
-     * @return ListSubscriptionsResponse
-     */
-    public ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request) {
-        return hcClient.syncInvokeHttp(request, IoTDAMeta.listSubscriptions);
-    }
-
-    /**
-     * 查询订阅列表
-     * 应用服务器可调用此接口查询物联网平台中的订阅配置信息列表。
-     *
-     * @param ListSubscriptionsRequest 请求对象
-     * @return SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
-     */
-    public SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptionsInvoker(ListSubscriptionsRequest request) {
-        return new SyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>(request, IoTDAMeta.listSubscriptions, hcClient);
-    }
-
-    /**
-     * 查询订阅
-     * 应用服务器可调用此接口查询物联网平台中指定订阅的配置信息。
-     *
-     * @param ShowSubscriptionRequest 请求对象
-     * @return ShowSubscriptionResponse
-     */
-    public ShowSubscriptionResponse showSubscription(ShowSubscriptionRequest request) {
-        return hcClient.syncInvokeHttp(request, IoTDAMeta.showSubscription);
-    }
-
-    /**
-     * 查询订阅
-     * 应用服务器可调用此接口查询物联网平台中指定订阅的配置信息。
-     *
-     * @param ShowSubscriptionRequest 请求对象
-     * @return SyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse>
-     */
-    public SyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse> showSubscriptionInvoker(ShowSubscriptionRequest request) {
-        return new SyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse>(request, IoTDAMeta.showSubscription, hcClient);
-    }
-
-    /**
-     * 修改订阅
-     * 应用服务器可调用此接口修改物联网平台中的指定订阅配置，当前仅支持修改订阅回调地址（callbackurl）。
-     *
-     * @param UpdateSubscriptionRequest 请求对象
-     * @return UpdateSubscriptionResponse
-     */
-    public UpdateSubscriptionResponse updateSubscription(UpdateSubscriptionRequest request) {
-        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateSubscription);
-    }
-
-    /**
-     * 修改订阅
-     * 应用服务器可调用此接口修改物联网平台中的指定订阅配置，当前仅支持修改订阅回调地址（callbackurl）。
-     *
-     * @param UpdateSubscriptionRequest 请求对象
-     * @return SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
-     */
-    public SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscriptionInvoker(UpdateSubscriptionRequest request) {
-        return new SyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>(request, IoTDAMeta.updateSubscription, hcClient);
     }
 
     /**

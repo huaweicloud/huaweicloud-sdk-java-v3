@@ -19,9 +19,71 @@ public class ListQueuesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="with-priv")
+    
+    private Boolean withPriv;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="with-charge-info")
+    
+    private Boolean withChargeInfo;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="queue_type")
     
     private String queueType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private String tags;
+
+    public ListQueuesRequest withWithPriv(Boolean withPriv) {
+        this.withPriv = withPriv;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get withPriv
+     * @return withPriv
+     */
+    public Boolean getWithPriv() {
+        return withPriv;
+    }
+
+    public void setWithPriv(Boolean withPriv) {
+        this.withPriv = withPriv;
+    }
+
+    
+
+    public ListQueuesRequest withWithChargeInfo(Boolean withChargeInfo) {
+        this.withChargeInfo = withChargeInfo;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get withChargeInfo
+     * @return withChargeInfo
+     */
+    public Boolean getWithChargeInfo() {
+        return withChargeInfo;
+    }
+
+    public void setWithChargeInfo(Boolean withChargeInfo) {
+        this.withChargeInfo = withChargeInfo;
+    }
+
+    
 
     public ListQueuesRequest withQueueType(String queueType) {
         this.queueType = queueType;
@@ -45,6 +107,28 @@ public class ListQueuesRequest  {
 
     
 
+    public ListQueuesRequest withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get tags
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -54,17 +138,23 @@ public class ListQueuesRequest  {
             return false;
         }
         ListQueuesRequest listQueuesRequest = (ListQueuesRequest) o;
-        return Objects.equals(this.queueType, listQueuesRequest.queueType);
+        return Objects.equals(this.withPriv, listQueuesRequest.withPriv) &&
+            Objects.equals(this.withChargeInfo, listQueuesRequest.withChargeInfo) &&
+            Objects.equals(this.queueType, listQueuesRequest.queueType) &&
+            Objects.equals(this.tags, listQueuesRequest.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(queueType);
+        return Objects.hash(withPriv, withChargeInfo, queueType, tags);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListQueuesRequest {\n");
+        sb.append("    withPriv: ").append(toIndentedString(withPriv)).append("\n");
+        sb.append("    withChargeInfo: ").append(toIndentedString(withChargeInfo)).append("\n");
         sb.append("    queueType: ").append(toIndentedString(queueType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

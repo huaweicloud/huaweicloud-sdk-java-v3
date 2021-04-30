@@ -348,6 +348,28 @@ public class BcsClient {
     }
 
     /**
+     * 查询异步操作结果
+     * 查询异步操作结果
+     *
+     * @param ListOpRecordRequest 请求对象
+     * @return ListOpRecordResponse
+     */
+    public ListOpRecordResponse listOpRecord(ListOpRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, BcsMeta.listOpRecord);
+    }
+
+    /**
+     * 查询异步操作结果
+     * 查询异步操作结果
+     *
+     * @param ListOpRecordRequest 请求对象
+     * @return SyncInvoker<ListOpRecordRequest, ListOpRecordResponse>
+     */
+    public SyncInvoker<ListOpRecordRequest, ListOpRecordResponse> listOpRecordInvoker(ListOpRecordRequest request) {
+        return new SyncInvoker<ListOpRecordRequest, ListOpRecordResponse>(request, BcsMeta.listOpRecord, hcClient);
+    }
+
+    /**
      * 查询配额
      * 查询当前项目下BCS服务所有资源的配额信息
      *

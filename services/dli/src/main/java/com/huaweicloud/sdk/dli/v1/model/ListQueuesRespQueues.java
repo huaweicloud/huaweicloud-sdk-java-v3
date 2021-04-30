@@ -39,7 +39,7 @@ public class ListQueuesRespQueues  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private String createTime;
+    private Long createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -93,7 +93,37 @@ public class ListQueuesRespQueues  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_mode")
     
-    private String resourceMode;
+    private Integer resourceMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="platform")
+    
+    private String platform;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_restarting")
+    
+    private Boolean isRestarting;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="labels")
+    
+    private String labels;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="feature")
+    
+    private String feature;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="queue_resource_type")
+    
+    private String queueResourceType;
 
     public ListQueuesRespQueues withQueueName(String queueName) {
         this.queueName = queueName;
@@ -161,7 +191,7 @@ public class ListQueuesRespQueues  {
 
     
 
-    public ListQueuesRespQueues withCreateTime(String createTime) {
+    public ListQueuesRespQueues withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -173,11 +203,11 @@ public class ListQueuesRespQueues  {
      * 创建队列的时间。是单位为“毫秒”的时间戳。
      * @return createTime
      */
-    public String getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
@@ -359,7 +389,7 @@ public class ListQueuesRespQueues  {
 
     
 
-    public ListQueuesRespQueues withResourceMode(String resourceMode) {
+    public ListQueuesRespQueues withResourceMode(Integer resourceMode) {
         this.resourceMode = resourceMode;
         return this;
     }
@@ -371,12 +401,122 @@ public class ListQueuesRespQueues  {
      * 队列类型。 0：共享队列 1：专属队列
      * @return resourceMode
      */
-    public String getResourceMode() {
+    public Integer getResourceMode() {
         return resourceMode;
     }
 
-    public void setResourceMode(String resourceMode) {
+    public void setResourceMode(Integer resourceMode) {
         this.resourceMode = resourceMode;
+    }
+
+    
+
+    public ListQueuesRespQueues withPlatform(String platform) {
+        this.platform = platform;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 队列计算资源的cpu架构。
+     * @return platform
+     */
+    public String getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    
+
+    public ListQueuesRespQueues withIsRestarting(Boolean isRestarting) {
+        this.isRestarting = isRestarting;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否重启队列。默认值为“false”。
+     * @return isRestarting
+     */
+    public Boolean getIsRestarting() {
+        return isRestarting;
+    }
+
+    public void setIsRestarting(Boolean isRestarting) {
+        this.isRestarting = isRestarting;
+    }
+
+    
+
+    public ListQueuesRespQueues withLabels(String labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建队列的标签信息，目前包括队列是否跨AZ的标签信息的Json字符串。目前只支持值为“2”，即创建两个队列
+     * @return labels
+     */
+    public String getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String labels) {
+        this.labels = labels;
+    }
+
+    
+
+    public ListQueuesRespQueues withFeature(String feature) {
+        this.feature = feature;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 队列特性。支持以下两种类型：basic：基础型ai：AI增强型（仅SQL的x86_64专属队列支持选择）默认值为“basic”。
+     * @return feature
+     */
+    public String getFeature() {
+        return feature;
+    }
+
+    public void setFeature(String feature) {
+        this.feature = feature;
+    }
+
+    
+
+    public ListQueuesRespQueues withQueueResourceType(String queueResourceType) {
+        this.queueResourceType = queueResourceType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 队列所属资源类型。
+     * @return queueResourceType
+     */
+    public String getQueueResourceType() {
+        return queueResourceType;
+    }
+
+    public void setQueueResourceType(String queueResourceType) {
+        this.queueResourceType = queueResourceType;
     }
 
     
@@ -402,11 +542,16 @@ public class ListQueuesRespQueues  {
             Objects.equals(this.cidrInVpc, listQueuesRespQueues.cidrInVpc) &&
             Objects.equals(this.cidrInMgntsubnet, listQueuesRespQueues.cidrInMgntsubnet) &&
             Objects.equals(this.cidrInSubnet, listQueuesRespQueues.cidrInSubnet) &&
-            Objects.equals(this.resourceMode, listQueuesRespQueues.resourceMode);
+            Objects.equals(this.resourceMode, listQueuesRespQueues.resourceMode) &&
+            Objects.equals(this.platform, listQueuesRespQueues.platform) &&
+            Objects.equals(this.isRestarting, listQueuesRespQueues.isRestarting) &&
+            Objects.equals(this.labels, listQueuesRespQueues.labels) &&
+            Objects.equals(this.feature, listQueuesRespQueues.feature) &&
+            Objects.equals(this.queueResourceType, listQueuesRespQueues.queueResourceType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(queueName, description, owner, createTime, queueType, cuCount, chargingMode, resourceId, enterpriseProjectId, cidrInVpc, cidrInMgntsubnet, cidrInSubnet, resourceMode);
+        return Objects.hash(queueName, description, owner, createTime, queueType, cuCount, chargingMode, resourceId, enterpriseProjectId, cidrInVpc, cidrInMgntsubnet, cidrInSubnet, resourceMode, platform, isRestarting, labels, feature, queueResourceType);
     }
     @Override
     public String toString() {
@@ -425,6 +570,11 @@ public class ListQueuesRespQueues  {
         sb.append("    cidrInMgntsubnet: ").append(toIndentedString(cidrInMgntsubnet)).append("\n");
         sb.append("    cidrInSubnet: ").append(toIndentedString(cidrInSubnet)).append("\n");
         sb.append("    resourceMode: ").append(toIndentedString(resourceMode)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+        sb.append("    isRestarting: ").append(toIndentedString(isRestarting)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
+        sb.append("    queueResourceType: ").append(toIndentedString(queueResourceType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

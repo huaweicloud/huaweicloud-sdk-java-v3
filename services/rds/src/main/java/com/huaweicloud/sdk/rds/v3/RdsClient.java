@@ -788,28 +788,6 @@ public class RdsClient {
     }
 
     /**
-     * 重置数据库密码
-     * 重置数据库密码.
-     *
-     * @param ResetPwdRequest 请求对象
-     * @return ResetPwdResponse
-     */
-    public ResetPwdResponse resetPwd(ResetPwdRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.resetPwd);
-    }
-
-    /**
-     * 重置数据库密码
-     * 重置数据库密码.
-     *
-     * @param ResetPwdRequest 请求对象
-     * @return SyncInvoker<ResetPwdRequest, ResetPwdResponse>
-     */
-    public SyncInvoker<ResetPwdRequest, ResetPwdResponse> resetPwdInvoker(ResetPwdRequest request) {
-        return new SyncInvoker<ResetPwdRequest, ResetPwdResponse>(request, RdsMeta.resetPwd, hcClient);
-    }
-
-    /**
      * 表级时间点恢复
      * 表级时间点恢复。
      *
@@ -1382,6 +1360,28 @@ public class RdsClient {
     }
 
     /**
+     * 修改实例备注信息
+     * 修改指定数据库实例的备注信息。
+     *
+     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
+     * @return UpdatePostgresqlInstanceAliasResponse
+     */
+    public UpdatePostgresqlInstanceAliasResponse updatePostgresqlInstanceAlias(UpdatePostgresqlInstanceAliasRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updatePostgresqlInstanceAlias);
+    }
+
+    /**
+     * 修改实例备注信息
+     * 修改指定数据库实例的备注信息。
+     *
+     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
+     * @return SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
+     */
+    public SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasInvoker(UpdatePostgresqlInstanceAliasRequest request) {
+        return new SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
+    }
+
+    /**
      * 授权数据库帐号
      * 授权数据库帐号。
      *
@@ -1580,6 +1580,28 @@ public class RdsClient {
     }
 
     /**
+     * 重置数据库密码
+     * 重置数据库密码.
+     *
+     * @param ResetPwdRequest 请求对象
+     * @return ResetPwdResponse
+     */
+    public ResetPwdResponse resetPwd(ResetPwdRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.resetPwd);
+    }
+
+    /**
+     * 重置数据库密码
+     * 重置数据库密码.
+     *
+     * @param ResetPwdRequest 请求对象
+     * @return SyncInvoker<ResetPwdRequest, ResetPwdResponse>
+     */
+    public SyncInvoker<ResetPwdRequest, ResetPwdResponse> resetPwdInvoker(ResetPwdRequest request) {
+        return new SyncInvoker<ResetPwdRequest, ResetPwdResponse>(request, RdsMeta.resetPwd, hcClient);
+    }
+
+    /**
      * 解除数据库帐号权限
      * 解除数据库帐号权限。
      *
@@ -1625,7 +1647,7 @@ public class RdsClient {
 
     /**
      * 授权数据库帐号
-     * 授权数据库帐号。
+     * 在指定实例的数据库中, 设置帐号的权限。
      *
      * @param AllowDbPrivilegeRequest 请求对象
      * @return AllowDbPrivilegeResponse
@@ -1636,7 +1658,7 @@ public class RdsClient {
 
     /**
      * 授权数据库帐号
-     * 授权数据库帐号。
+     * 在指定实例的数据库中, 设置帐号的权限。
      *
      * @param AllowDbPrivilegeRequest 请求对象
      * @return SyncInvoker<AllowDbPrivilegeRequest, AllowDbPrivilegeResponse>
@@ -1647,7 +1669,7 @@ public class RdsClient {
 
     /**
      * 创建数据库
-     * 创建数据库。
+     * 在指定实例中创建数据库。
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
      * @return CreatePostgresqlDatabaseResponse
@@ -1658,7 +1680,7 @@ public class RdsClient {
 
     /**
      * 创建数据库
-     * 创建数据库。
+     * 在指定实例中创建数据库。
      *
      * @param CreatePostgresqlDatabaseRequest 请求对象
      * @return SyncInvoker<CreatePostgresqlDatabaseRequest, CreatePostgresqlDatabaseResponse>
@@ -1669,7 +1691,7 @@ public class RdsClient {
 
     /**
      * 创建数据库SCHEMA
-     * 创建数据库SCHEMA。
+     * 在指定实例的数据库中, 创建数据库schema。
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
      * @return CreatePostgresqlDatabaseSchemaResponse
@@ -1680,7 +1702,7 @@ public class RdsClient {
 
     /**
      * 创建数据库SCHEMA
-     * 创建数据库SCHEMA。
+     * 在指定实例的数据库中, 创建数据库schema。
      *
      * @param CreatePostgresqlDatabaseSchemaRequest 请求对象
      * @return SyncInvoker<CreatePostgresqlDatabaseSchemaRequest, CreatePostgresqlDatabaseSchemaResponse>
@@ -1691,7 +1713,7 @@ public class RdsClient {
 
     /**
      * 创建数据库用户
-     * 创建数据库用户。
+     * 在指定实例中创建数据库用户。
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
      * @return CreatePostgresqlDbUserResponse
@@ -1702,7 +1724,7 @@ public class RdsClient {
 
     /**
      * 创建数据库用户
-     * 创建数据库用户。
+     * 在指定实例中创建数据库用户。
      *
      * @param CreatePostgresqlDbUserRequest 请求对象
      * @return SyncInvoker<CreatePostgresqlDbUserRequest, CreatePostgresqlDbUserResponse>
@@ -1713,7 +1735,7 @@ public class RdsClient {
 
     /**
      * 查询数据库SCHEMA列表
-     * 查询数据库SCHEMA列表。
+     * 查询指定实例的数据库SCHEMA列表。
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
      * @return ListPostgresqlDatabaseSchemasResponse
@@ -1724,7 +1746,7 @@ public class RdsClient {
 
     /**
      * 查询数据库SCHEMA列表
-     * 查询数据库SCHEMA列表。
+     * 查询指定实例的数据库SCHEMA列表。
      *
      * @param ListPostgresqlDatabaseSchemasRequest 请求对象
      * @return SyncInvoker<ListPostgresqlDatabaseSchemasRequest, ListPostgresqlDatabaseSchemasResponse>
@@ -1735,7 +1757,7 @@ public class RdsClient {
 
     /**
      * 查询数据库列表
-     * 查询数据库列表。
+     * 查询指定实例中的数据库列表。
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
      * @return ListPostgresqlDatabasesResponse
@@ -1746,7 +1768,7 @@ public class RdsClient {
 
     /**
      * 查询数据库列表
-     * 查询数据库列表。
+     * 查询指定实例中的数据库列表。
      *
      * @param ListPostgresqlDatabasesRequest 请求对象
      * @return SyncInvoker<ListPostgresqlDatabasesRequest, ListPostgresqlDatabasesResponse>
@@ -1757,7 +1779,7 @@ public class RdsClient {
 
     /**
      * 查询数据库用户列表
-     * 查询数据库用户列表。
+     * 在指定实例中查询数据库用户列表。
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
      * @return ListPostgresqlDbUserPaginatedResponse
@@ -1768,7 +1790,7 @@ public class RdsClient {
 
     /**
      * 查询数据库用户列表
-     * 查询数据库用户列表。
+     * 在指定实例中查询数据库用户列表。
      *
      * @param ListPostgresqlDbUserPaginatedRequest 请求对象
      * @return SyncInvoker<ListPostgresqlDbUserPaginatedRequest, ListPostgresqlDbUserPaginatedResponse>
@@ -1779,7 +1801,7 @@ public class RdsClient {
 
     /**
      * 重置数据库帐号密码
-     * 重置数据库帐号密码。
+     * 重置指定数据库帐号的密码。
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
      * @return SetPostgresqlDbUserPwdResponse
@@ -1790,35 +1812,13 @@ public class RdsClient {
 
     /**
      * 重置数据库帐号密码
-     * 重置数据库帐号密码。
+     * 重置指定数据库帐号的密码。
      *
      * @param SetPostgresqlDbUserPwdRequest 请求对象
      * @return SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>
      */
     public SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse> setPostgresqlDbUserPwdInvoker(SetPostgresqlDbUserPwdRequest request) {
         return new SyncInvoker<SetPostgresqlDbUserPwdRequest, SetPostgresqlDbUserPwdResponse>(request, RdsMeta.setPostgresqlDbUserPwd, hcClient);
-    }
-
-    /**
-     * 修改实例备注信息
-     * 修改实例备注信息。
-     *
-     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return UpdatePostgresqlInstanceAliasResponse
-     */
-    public UpdatePostgresqlInstanceAliasResponse updatePostgresqlInstanceAlias(UpdatePostgresqlInstanceAliasRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.updatePostgresqlInstanceAlias);
-    }
-
-    /**
-     * 修改实例备注信息
-     * 修改实例备注信息。
-     *
-     * @param UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
-     */
-    public SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasInvoker(UpdatePostgresqlInstanceAliasRequest request) {
-        return new SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
     }
 
     /**

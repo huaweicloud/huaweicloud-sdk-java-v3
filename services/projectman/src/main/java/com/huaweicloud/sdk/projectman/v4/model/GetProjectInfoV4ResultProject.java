@@ -69,6 +69,12 @@ public class GetProjectInfoV4ResultProject  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="project_code")
+    
+    private String projectCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creator")
     
     private GetProjectInfoV4ResultProjectCreator creator;
@@ -249,6 +255,28 @@ public class GetProjectInfoV4ResultProject  {
 
     
 
+    public GetProjectInfoV4ResultProject withProjectCode(String projectCode) {
+        this.projectCode = projectCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 项目代号
+     * @return projectCode
+     */
+    public String getProjectCode() {
+        return projectCode;
+    }
+
+    public void setProjectCode(String projectCode) {
+        this.projectCode = projectCode;
+    }
+
+    
+
     public GetProjectInfoV4ResultProject withCreator(GetProjectInfoV4ResultProjectCreator creator) {
         this.creator = creator;
         return this;
@@ -295,11 +323,12 @@ public class GetProjectInfoV4ResultProject  {
             Objects.equals(this.projectType, getProjectInfoV4ResultProject.projectType) &&
             Objects.equals(this.archive, getProjectInfoV4ResultProject.archive) &&
             Objects.equals(this.enterpriseId, getProjectInfoV4ResultProject.enterpriseId) &&
+            Objects.equals(this.projectCode, getProjectInfoV4ResultProject.projectCode) &&
             Objects.equals(this.creator, getProjectInfoV4ResultProject.creator);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(projectNumId, projectId, name, createdOn, updatedOn, projectType, archive, enterpriseId, creator);
+        return Objects.hash(projectNumId, projectId, name, createdOn, updatedOn, projectType, archive, enterpriseId, projectCode, creator);
     }
     @Override
     public String toString() {
@@ -313,6 +342,7 @@ public class GetProjectInfoV4ResultProject  {
         sb.append("    projectType: ").append(toIndentedString(projectType)).append("\n");
         sb.append("    archive: ").append(toIndentedString(archive)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
+        sb.append("    projectCode: ").append(toIndentedString(projectCode)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("}");
         return sb.toString();

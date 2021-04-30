@@ -25,9 +25,17 @@ package com.huaweicloud.sdk.core;
  * @author HuaweiCloud_SDK
  */
 public final class Constants {
+    public static final String LINE_SEPARATOR = "\n";
+
+    public static final String SDK_SIGNING_ALGORITHM = "SDK-HMAC-SHA256";
+
+    public static final String X_SDK_DATE = "X-Sdk-Date";
+
     public static final String HTTP_SCHEME = "http";
 
     public static final String HTTPS_SCHEME = "https";
+
+    public static final String HOST = "Host";
 
     public static final String CONTENT_TYPE = "Content-Type";
 

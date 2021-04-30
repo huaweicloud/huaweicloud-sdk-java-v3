@@ -8,13 +8,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.40-rc</version>
+        <version>3.0.41-rc</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>3.0.40-rc</version>
+    <version>3.0.41-rc</version>
     <packaging>jar</packaging>
     <name>Huawei Cloud SDK for Java Bundle</name>
     <description>A single bundled dependency that includes all service and dependent JARs for Huawei Cloud Java SDK</description>
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-all</artifactId>
-            <version>3.0.40-rc</version>
+            <version>3.0.41-rc</version>
         </dependency>
     </dependencies>
 
@@ -73,6 +73,38 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--
+                There must be a -javadoc.jar and a -sources.jar when release the package to the sonatype,
+                make fake -sources.jar and -javadoc.jar here to pass the checking.
+                <@Link> https://central.sonatype.org/publish/requirements/#supply-javadoc-and-sources
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>empty-javadoc-jar</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>javadoc</classifier>
+                            <classDirectory>${basedir}/javadoc</classDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>empty-sources-jar</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>sources</classifier>
+                            <classDirectory>${basedir}/sources</classDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

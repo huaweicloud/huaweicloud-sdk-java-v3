@@ -416,6 +416,28 @@ public class IoTDAAsyncClient {
     }
 
     /**
+     * 上传批量任务文件
+     * 应用服务器可调用此接口上传批量任务文件，用于创建批量任务。当前支持批量创建设备任务、批量删除设备任务、批量冻结设备任务、批量解冻设备任务的文件上传。 - [批量注册设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchCreateDevices_Template.xlsx)   - [批量删除设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchDeleteDevices_Template.xlsx)   - [批量冻结设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchFreezeDevices_Template.xlsx)   - [批量解冻设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchUnfreezeDevices_Template.xlsx) 
+     *
+     * @param UploadBatchTaskFileRequest 请求对象
+     * @return CompletableFuture<UploadBatchTaskFileResponse>
+     */
+    public CompletableFuture<UploadBatchTaskFileResponse> uploadBatchTaskFileAsync(UploadBatchTaskFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.uploadBatchTaskFile);
+    }
+
+    /**
+     * 上传批量任务文件
+     * 应用服务器可调用此接口上传批量任务文件，用于创建批量任务。当前支持批量创建设备任务、批量删除设备任务、批量冻结设备任务、批量解冻设备任务的文件上传。 - [批量注册设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchCreateDevices_Template.xlsx)   - [批量删除设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchDeleteDevices_Template.xlsx)   - [批量冻结设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchFreezeDevices_Template.xlsx)   - [批量解冻设备模板](https://developer.obs.cn-north-4.myhuaweicloud.com/template/BatchUnfreezeDevices_Template.xlsx) 
+     *
+     * @param UploadBatchTaskFileRequest 请求对象
+     * @return AsyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse>
+     */
+    public AsyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> uploadBatchTaskFileAsyncInvoker(UploadBatchTaskFileRequest request) {
+        return new AsyncInvoker<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse>(request, IoTDAMeta.uploadBatchTaskFile, hcClient);
+    }
+
+    /**
      * 上传设备CA证书
      * 应用服务器可调用此接口在物联网平台上传设备的CA证书
      *
@@ -1469,116 +1491,6 @@ public class IoTDAAsyncClient {
      */
     public AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse> updateRuleAsyncInvoker(UpdateRuleRequest request) {
         return new AsyncInvoker<UpdateRuleRequest, UpdateRuleResponse>(request, IoTDAMeta.updateRule, hcClient);
-    }
-
-    /**
-     * 创建订阅
-     * 应用服务器可调用此接口订阅物联网平台资源的变化事件，当资源发生变化时（如设备激活，设备数据更新等），平台会向应用服务器发送通知消息。
-     *
-     * @param CreateSubscriptionRequest 请求对象
-     * @return CompletableFuture<CreateSubscriptionResponse>
-     */
-    public CompletableFuture<CreateSubscriptionResponse> createSubscriptionAsync(CreateSubscriptionRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createSubscription);
-    }
-
-    /**
-     * 创建订阅
-     * 应用服务器可调用此接口订阅物联网平台资源的变化事件，当资源发生变化时（如设备激活，设备数据更新等），平台会向应用服务器发送通知消息。
-     *
-     * @param CreateSubscriptionRequest 请求对象
-     * @return AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>
-     */
-    public AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscriptionAsyncInvoker(CreateSubscriptionRequest request) {
-        return new AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>(request, IoTDAMeta.createSubscription, hcClient);
-    }
-
-    /**
-     * 删除订阅
-     * 应用服务器可调用此接口删除物联网平台中的指定订阅配置。
-     *
-     * @param DeleteSubscriptionRequest 请求对象
-     * @return CompletableFuture<DeleteSubscriptionResponse>
-     */
-    public CompletableFuture<DeleteSubscriptionResponse> deleteSubscriptionAsync(DeleteSubscriptionRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteSubscription);
-    }
-
-    /**
-     * 删除订阅
-     * 应用服务器可调用此接口删除物联网平台中的指定订阅配置。
-     *
-     * @param DeleteSubscriptionRequest 请求对象
-     * @return AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>
-     */
-    public AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscriptionAsyncInvoker(DeleteSubscriptionRequest request) {
-        return new AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>(request, IoTDAMeta.deleteSubscription, hcClient);
-    }
-
-    /**
-     * 查询订阅列表
-     * 应用服务器可调用此接口查询物联网平台中的订阅配置信息列表。
-     *
-     * @param ListSubscriptionsRequest 请求对象
-     * @return CompletableFuture<ListSubscriptionsResponse>
-     */
-    public CompletableFuture<ListSubscriptionsResponse> listSubscriptionsAsync(ListSubscriptionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listSubscriptions);
-    }
-
-    /**
-     * 查询订阅列表
-     * 应用服务器可调用此接口查询物联网平台中的订阅配置信息列表。
-     *
-     * @param ListSubscriptionsRequest 请求对象
-     * @return AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
-     */
-    public AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptionsAsyncInvoker(ListSubscriptionsRequest request) {
-        return new AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>(request, IoTDAMeta.listSubscriptions, hcClient);
-    }
-
-    /**
-     * 查询订阅
-     * 应用服务器可调用此接口查询物联网平台中指定订阅的配置信息。
-     *
-     * @param ShowSubscriptionRequest 请求对象
-     * @return CompletableFuture<ShowSubscriptionResponse>
-     */
-    public CompletableFuture<ShowSubscriptionResponse> showSubscriptionAsync(ShowSubscriptionRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showSubscription);
-    }
-
-    /**
-     * 查询订阅
-     * 应用服务器可调用此接口查询物联网平台中指定订阅的配置信息。
-     *
-     * @param ShowSubscriptionRequest 请求对象
-     * @return AsyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse>
-     */
-    public AsyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse> showSubscriptionAsyncInvoker(ShowSubscriptionRequest request) {
-        return new AsyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse>(request, IoTDAMeta.showSubscription, hcClient);
-    }
-
-    /**
-     * 修改订阅
-     * 应用服务器可调用此接口修改物联网平台中的指定订阅配置，当前仅支持修改订阅回调地址（callbackurl）。
-     *
-     * @param UpdateSubscriptionRequest 请求对象
-     * @return CompletableFuture<UpdateSubscriptionResponse>
-     */
-    public CompletableFuture<UpdateSubscriptionResponse> updateSubscriptionAsync(UpdateSubscriptionRequest request) {
-        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateSubscription);
-    }
-
-    /**
-     * 修改订阅
-     * 应用服务器可调用此接口修改物联网平台中的指定订阅配置，当前仅支持修改订阅回调地址（callbackurl）。
-     *
-     * @param UpdateSubscriptionRequest 请求对象
-     * @return AsyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
-     */
-    public AsyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscriptionAsyncInvoker(UpdateSubscriptionRequest request) {
-        return new AsyncInvoker<UpdateSubscriptionRequest, UpdateSubscriptionResponse>(request, IoTDAMeta.updateSubscription, hcClient);
     }
 
     /**

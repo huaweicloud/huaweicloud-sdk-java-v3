@@ -31,6 +31,12 @@ public class StartTaskReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="src_security_token")
+    
+    private String srcSecurityToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dst_ak")
     
     private String dstAk;
@@ -40,6 +46,12 @@ public class StartTaskReq  {
     @JsonProperty(value="dst_sk")
     
     private String dstSk;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dst_security_token")
+    
+    private String dstSecurityToken;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,6 +109,28 @@ public class StartTaskReq  {
 
     
 
+    public StartTaskReq withSrcSecurityToken(String srcSecurityToken) {
+        this.srcSecurityToken = srcSecurityToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 源端节点临时Token
+     * @return srcSecurityToken
+     */
+    public String getSrcSecurityToken() {
+        return srcSecurityToken;
+    }
+
+    public void setSrcSecurityToken(String srcSecurityToken) {
+        this.srcSecurityToken = srcSecurityToken;
+    }
+
+    
+
     public StartTaskReq withDstAk(String dstAk) {
         this.dstAk = dstAk;
         return this;
@@ -137,6 +171,28 @@ public class StartTaskReq  {
 
     public void setDstSk(String dstSk) {
         this.dstSk = dstSk;
+    }
+
+    
+
+    public StartTaskReq withDstSecurityToken(String dstSecurityToken) {
+        this.dstSecurityToken = dstSecurityToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 目标端节点临时Token
+     * @return dstSecurityToken
+     */
+    public String getDstSecurityToken() {
+        return dstSecurityToken;
+    }
+
+    public void setDstSecurityToken(String dstSecurityToken) {
+        this.dstSecurityToken = dstSecurityToken;
     }
 
     
@@ -196,14 +252,16 @@ public class StartTaskReq  {
         StartTaskReq startTaskReq = (StartTaskReq) o;
         return Objects.equals(this.srcAk, startTaskReq.srcAk) &&
             Objects.equals(this.srcSk, startTaskReq.srcSk) &&
+            Objects.equals(this.srcSecurityToken, startTaskReq.srcSecurityToken) &&
             Objects.equals(this.dstAk, startTaskReq.dstAk) &&
             Objects.equals(this.dstSk, startTaskReq.dstSk) &&
+            Objects.equals(this.dstSecurityToken, startTaskReq.dstSecurityToken) &&
             Objects.equals(this.sourceCdnAuthenticationKey, startTaskReq.sourceCdnAuthenticationKey) &&
             Objects.equals(this.migrateFailedObject, startTaskReq.migrateFailedObject);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(srcAk, srcSk, dstAk, dstSk, sourceCdnAuthenticationKey, migrateFailedObject);
+        return Objects.hash(srcAk, srcSk, srcSecurityToken, dstAk, dstSk, dstSecurityToken, sourceCdnAuthenticationKey, migrateFailedObject);
     }
     @Override
     public String toString() {
@@ -211,8 +269,10 @@ public class StartTaskReq  {
         sb.append("class StartTaskReq {\n");
         sb.append("    srcAk: ").append(toIndentedString(srcAk)).append("\n");
         sb.append("    srcSk: ").append(toIndentedString(srcSk)).append("\n");
+        sb.append("    srcSecurityToken: ").append(toIndentedString(srcSecurityToken)).append("\n");
         sb.append("    dstAk: ").append(toIndentedString(dstAk)).append("\n");
         sb.append("    dstSk: ").append(toIndentedString(dstSk)).append("\n");
+        sb.append("    dstSecurityToken: ").append(toIndentedString(dstSecurityToken)).append("\n");
         sb.append("    sourceCdnAuthenticationKey: ").append(toIndentedString(sourceCdnAuthenticationKey)).append("\n");
         sb.append("    migrateFailedObject: ").append(toIndentedString(migrateFailedObject)).append("\n");
         sb.append("}");

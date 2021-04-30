@@ -57,6 +57,26 @@ public class ShowDomainQuotaRequest  {
          */
         public static final TypeEnum POLICY = new TypeEnum("policy");
         
+        /**
+         * Enum ASSIGMENT_GROUP_MP for value: "assigment_group_mp"
+         */
+        public static final TypeEnum ASSIGMENT_GROUP_MP = new TypeEnum("assigment_group_mp");
+        
+        /**
+         * Enum ASSIGMENT_AGENCY_MP for value: "assigment_agency_mp"
+         */
+        public static final TypeEnum ASSIGMENT_AGENCY_MP = new TypeEnum("assigment_agency_mp");
+        
+        /**
+         * Enum ASSIGMENT_GROUP_EP for value: "assigment_group_ep"
+         */
+        public static final TypeEnum ASSIGMENT_GROUP_EP = new TypeEnum("assigment_group_ep");
+        
+        /**
+         * Enum ASSIGMENT_USER_EP for value: "assigment_user_ep"
+         */
+        public static final TypeEnum ASSIGMENT_USER_EP = new TypeEnum("assigment_user_ep");
+        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,6 +87,10 @@ public class ShowDomainQuotaRequest  {
             map.put("idp", IDP);
             map.put("agency", AGENCY);
             map.put("policy", POLICY);
+            map.put("assigment_group_mp", ASSIGMENT_GROUP_MP);
+            map.put("assigment_agency_mp", ASSIGMENT_AGENCY_MP);
+            map.put("assigment_group_ep", ASSIGMENT_GROUP_EP);
+            map.put("assigment_user_ep", ASSIGMENT_USER_EP);
             return Collections.unmodifiableMap(map);
         }
 

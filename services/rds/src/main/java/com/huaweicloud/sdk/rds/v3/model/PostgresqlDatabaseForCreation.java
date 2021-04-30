@@ -62,7 +62,7 @@ public class PostgresqlDatabaseForCreation  {
 
 
     /**
-     * 数据库名称。 数据库名称长度可在1～63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，且不能和RDS for PostgreSQL模板库重名。 RDS for PostgreSQL模板库包括postgres， template0 ，template1。
+     * 数据库名称。  数据库名称长度可在1～63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，且不能和RDS for PostgreSQL模板库重名。  RDS for PostgreSQL模板库包括postgres， template0 ，template1。
      * @return name
      */
     public String getName() {
@@ -150,7 +150,7 @@ public class PostgresqlDatabaseForCreation  {
 
 
     /**
-     * 数据库排序集。默认en_US.UTF-8。注意，不同的排序规则下，相同的比较其结果可能是不同的。例如，在en_US.utf8下， select 'a'>'A';为false，但在'C'下，select 'a'>'A';为true; 如果从oracle迁移到PostgreSQL，使用'C'才能得到一致的预期。支持的排序规则，可以查询系统表 pg_collation。
+     * 数据库排序集。默认en_US.UTF-8。  - 须知： 不同的排序规则下，相同字符串的比较其结果可能是不同的。 例如，在en_US.utf8下， select 'a'>'A';执行结果为false，但在'C'下，select 'a'>'A';结果为true。如果数据库从“O”迁移到PostgreSQL，数据库排序集需使用'C'才能得到一致的预期。支持的排序规则可以查询系统表 pg_collation。
      * @return lcCollate
      */
     public String getLcCollate() {

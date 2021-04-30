@@ -24,9 +24,9 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offsite_backups")
+    @JsonProperty(value="backups")
     
-    private List<OffSiteBackupForList> offsiteBackups = null;
+    private List<OffSiteBackupForList> backups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,38 +34,38 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListOffSiteBackupsResponse withOffsiteBackups(List<OffSiteBackupForList> offsiteBackups) {
-        this.offsiteBackups = offsiteBackups;
+    public ListOffSiteBackupsResponse withBackups(List<OffSiteBackupForList> backups) {
+        this.backups = backups;
         return this;
     }
 
     
-    public ListOffSiteBackupsResponse addOffsiteBackupsItem(OffSiteBackupForList offsiteBackupsItem) {
-        if(this.offsiteBackups == null) {
-            this.offsiteBackups = new ArrayList<>();
+    public ListOffSiteBackupsResponse addBackupsItem(OffSiteBackupForList backupsItem) {
+        if(this.backups == null) {
+            this.backups = new ArrayList<>();
         }
-        this.offsiteBackups.add(offsiteBackupsItem);
+        this.backups.add(backupsItem);
         return this;
     }
 
-    public ListOffSiteBackupsResponse withOffsiteBackups(Consumer<List<OffSiteBackupForList>> offsiteBackupsSetter) {
-        if(this.offsiteBackups == null) {
-            this.offsiteBackups = new ArrayList<>();
+    public ListOffSiteBackupsResponse withBackups(Consumer<List<OffSiteBackupForList>> backupsSetter) {
+        if(this.backups == null) {
+            this.backups = new ArrayList<>();
         }
-        offsiteBackupsSetter.accept(this.offsiteBackups);
+        backupsSetter.accept(this.backups);
         return this;
     }
 
     /**
      * 跨区域备份信息。
-     * @return offsiteBackups
+     * @return backups
      */
-    public List<OffSiteBackupForList> getOffsiteBackups() {
-        return offsiteBackups;
+    public List<OffSiteBackupForList> getBackups() {
+        return backups;
     }
 
-    public void setOffsiteBackups(List<OffSiteBackupForList> offsiteBackups) {
-        this.offsiteBackups = offsiteBackups;
+    public void setBackups(List<OffSiteBackupForList> backups) {
+        this.backups = backups;
     }
 
     
@@ -101,18 +101,18 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
             return false;
         }
         ListOffSiteBackupsResponse listOffSiteBackupsResponse = (ListOffSiteBackupsResponse) o;
-        return Objects.equals(this.offsiteBackups, listOffSiteBackupsResponse.offsiteBackups) &&
+        return Objects.equals(this.backups, listOffSiteBackupsResponse.backups) &&
             Objects.equals(this.totalCount, listOffSiteBackupsResponse.totalCount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(offsiteBackups, totalCount);
+        return Objects.hash(backups, totalCount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOffSiteBackupsResponse {\n");
-        sb.append("    offsiteBackups: ").append(toIndentedString(offsiteBackups)).append("\n");
+        sb.append("    backups: ").append(toIndentedString(backups)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -5,8 +5,6 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -77,90 +75,6 @@ public class CreateVolumeOption  {
     @JsonProperty(value="name")
     
     private String name;
-    /**
-     * 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
-     */
-    public static final class ShareableEnum {
-
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
-        public static final ShareableEnum TRUE = new ShareableEnum("true");
-        
-        /**
-         * Enum FALSE for value: "false"
-         */
-        public static final ShareableEnum FALSE = new ShareableEnum("false");
-        
-
-        private static final Map<String, ShareableEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ShareableEnum> createStaticFields() {
-            Map<String, ShareableEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ShareableEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ShareableEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            ShareableEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShareableEnum(value);
-            }
-            return result;
-        }
-
-        public static ShareableEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            ShareableEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ShareableEnum) {
-                return this.value.equals(((ShareableEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shareable")
-    
-    private ShareableEnum shareable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -488,28 +402,6 @@ public class CreateVolumeOption  {
 
     
 
-    public CreateVolumeOption withShareable(ShareableEnum shareable) {
-        this.shareable = shareable;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
-     * @return shareable
-     */
-    public ShareableEnum getShareable() {
-        return shareable;
-    }
-
-    public void setShareable(ShareableEnum shareable) {
-        this.shareable = shareable;
-    }
-
-    
-
     public CreateVolumeOption withSize(Integer size) {
         this.size = size;
         return this;
@@ -630,7 +522,6 @@ public class CreateVolumeOption  {
             Objects.equals(this.metadata, createVolumeOption.metadata) &&
             Objects.equals(this.multiattach, createVolumeOption.multiattach) &&
             Objects.equals(this.name, createVolumeOption.name) &&
-            Objects.equals(this.shareable, createVolumeOption.shareable) &&
             Objects.equals(this.size, createVolumeOption.size) &&
             Objects.equals(this.snapshotId, createVolumeOption.snapshotId) &&
             Objects.equals(this.volumeType, createVolumeOption.volumeType) &&
@@ -638,7 +529,7 @@ public class CreateVolumeOption  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZone, backupId, count, description, enterpriseProjectId, imageRef, metadata, multiattach, name, shareable, size, snapshotId, volumeType, tags);
+        return Objects.hash(availabilityZone, backupId, count, description, enterpriseProjectId, imageRef, metadata, multiattach, name, size, snapshotId, volumeType, tags);
     }
     @Override
     public String toString() {
@@ -653,7 +544,6 @@ public class CreateVolumeOption  {
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");

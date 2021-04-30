@@ -19,6 +19,12 @@ public class AudioInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="language")
+    
+    private String language;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="codec")
     
     private String codec;
@@ -37,6 +43,12 @@ public class AudioInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sky_switch")
+    
+    private Integer skySwitch;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bitrate")
     
     private Integer bitrate;
@@ -46,6 +58,28 @@ public class AudioInfo  {
     @JsonProperty(value="bitrate_bps")
     
     private Long bitrateBps;
+
+    public AudioInfo withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 声轨语言。
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    
 
     public AudioInfo withCodec(String codec) {
         this.codec = codec;
@@ -113,6 +147,28 @@ public class AudioInfo  {
 
     
 
+    public AudioInfo withSkySwitch(Integer skySwitch) {
+        this.skySwitch = skySwitch;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启了天空音。
+     * @return skySwitch
+     */
+    public Integer getSkySwitch() {
+        return skySwitch;
+    }
+
+    public void setSkySwitch(Integer skySwitch) {
+        this.skySwitch = skySwitch;
+    }
+
+    
+
     public AudioInfo withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
@@ -168,23 +224,27 @@ public class AudioInfo  {
             return false;
         }
         AudioInfo audioInfo = (AudioInfo) o;
-        return Objects.equals(this.codec, audioInfo.codec) &&
+        return Objects.equals(this.language, audioInfo.language) &&
+            Objects.equals(this.codec, audioInfo.codec) &&
             Objects.equals(this.sample, audioInfo.sample) &&
             Objects.equals(this.channels, audioInfo.channels) &&
+            Objects.equals(this.skySwitch, audioInfo.skySwitch) &&
             Objects.equals(this.bitrate, audioInfo.bitrate) &&
             Objects.equals(this.bitrateBps, audioInfo.bitrateBps);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(codec, sample, channels, bitrate, bitrateBps);
+        return Objects.hash(language, codec, sample, channels, skySwitch, bitrate, bitrateBps);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AudioInfo {\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
         sb.append("    sample: ").append(toIndentedString(sample)).append("\n");
         sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
+        sb.append("    skySwitch: ").append(toIndentedString(skySwitch)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");
         sb.append("    bitrateBps: ").append(toIndentedString(bitrateBps)).append("\n");
         sb.append("}");

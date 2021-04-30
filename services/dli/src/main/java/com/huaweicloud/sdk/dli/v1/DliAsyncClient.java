@@ -42,6 +42,28 @@ public class DliAsyncClient {
     }
 
     /**
+     * 删除队列
+     * 该API用于删除指定队列。 说明：  若指定队列正在执行任务，则不允许删除。
+     *
+     * @param DeleteQueueRequest 请求对象
+     * @return CompletableFuture<DeleteQueueResponse>
+     */
+    public CompletableFuture<DeleteQueueResponse> deleteQueueAsync(DeleteQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.deleteQueue);
+    }
+
+    /**
+     * 删除队列
+     * 该API用于删除指定队列。 说明：  若指定队列正在执行任务，则不允许删除。
+     *
+     * @param DeleteQueueRequest 请求对象
+     * @return AsyncInvoker<DeleteQueueRequest, DeleteQueueResponse>
+     */
+    public AsyncInvoker<DeleteQueueRequest, DeleteQueueResponse> deleteQueueAsyncInvoker(DeleteQueueRequest request) {
+        return new AsyncInvoker<DeleteQueueRequest, DeleteQueueResponse>(request, DliMeta.deleteQueue, hcClient);
+    }
+
+    /**
      * 查询所有队列
      * 该API用于列出该project下所有的队列。
      *

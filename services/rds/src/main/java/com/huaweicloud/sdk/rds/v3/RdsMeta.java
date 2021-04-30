@@ -1661,49 +1661,6 @@ public class RdsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForresetPwd();
-
-    private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForresetPwd() {
-        // basic
-        HttpRequestDef.Builder<ResetPwdRequest, ResetPwdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ResetPwdRequest.class, ResetPwdResponse.class)
-                .withName("ResetPwd")
-                .withUri("/v3/{project_id}/instances/{instance_id}/password")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ResetPwdRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            ResetPwdRequest.XLanguageEnum.class,
-            f -> f.withMarshaller(ResetPwdRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            PwdResetRequest.class,
-            f -> f.withMarshaller(ResetPwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RestoreTablesRequest, RestoreTablesResponse> restoreTables = genForrestoreTables();
 
     private static HttpRequestDef<RestoreTablesRequest, RestoreTablesResponse> genForrestoreTables() {
@@ -2750,6 +2707,49 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAlias = genForupdatePostgresqlInstanceAlias();
+
+    private static HttpRequestDef<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> genForupdatePostgresqlInstanceAlias() {
+        // basic
+        HttpRequestDef.Builder<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePostgresqlInstanceAliasRequest.class, UpdatePostgresqlInstanceAliasResponse.class)
+                .withName("UpdatePostgresqlInstanceAlias")
+                .withUri("/v3/{project_id}/instances/{instance_id}/alias")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateRdsInstanceAliasRequest.class,
+            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse> allowDbUserPrivilege = genForallowDbUserPrivilege();
 
     private static HttpRequestDef<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse> genForallowDbUserPrivilege() {
@@ -3185,6 +3185,49 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForresetPwd();
+
+    private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForresetPwd() {
+        // basic
+        HttpRequestDef.Builder<ResetPwdRequest, ResetPwdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetPwdRequest.class, ResetPwdResponse.class)
+                .withName("ResetPwd")
+                .withUri("/v3/{project_id}/instances/{instance_id}/password")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResetPwdRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ResetPwdRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ResetPwdRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            PwdResetRequest.class,
+            f -> f.withMarshaller(ResetPwdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RevokeRequest, RevokeResponse> revoke = genForrevoke();
 
     private static HttpRequestDef<RevokeRequest, RevokeResponse> genForrevoke() {
@@ -3301,7 +3344,7 @@ public class RdsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PgGrantRequest.class,
+            PostgresqlGrantRequest.class,
             f -> f.withMarshaller(AllowDbPrivilegeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -3387,7 +3430,7 @@ public class RdsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DbSchemaReq.class,
+            PostgresqlDatabaseSchemaReq.class,
             f -> f.withMarshaller(CreatePostgresqlDatabaseSchemaRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -3636,49 +3679,6 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             DbUserPwdRequest.class,
             f -> f.withMarshaller(SetPostgresqlDbUserPwdRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAlias = genForupdatePostgresqlInstanceAlias();
-
-    private static HttpRequestDef<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> genForupdatePostgresqlInstanceAlias() {
-        // basic
-        HttpRequestDef.Builder<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdatePostgresqlInstanceAliasRequest.class, UpdatePostgresqlInstanceAliasResponse.class)
-                .withName("UpdatePostgresqlInstanceAlias")
-                .withUri("/v3/{project_id}/instances/{instance_id}/alias")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateRdsInstanceAliasRequest.class,
-            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -3997,6 +3997,14 @@ public class RdsMeta {
             Integer.class,
             f -> f.withMarshaller(ListSqlserverDatabasesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            })
+        );
+        builder.withRequestField("db-name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSqlserverDatabasesRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
             })
         );
         builder.withRequestField("X-Language",

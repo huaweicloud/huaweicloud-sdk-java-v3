@@ -21,6 +21,7 @@
 
 package com.huaweicloud.sdk.core.auth;
 
+import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
@@ -51,10 +52,13 @@ import javax.crypto.spec.SecretKeySpec;
 
 /**
  * signature certification with AK/SK
+ *
  * @author HuaweiCloud_SDK
  */
 public class AKSKSigner {
-    /** SHA256 hash of an empty request body **/
+    /**
+     * SHA256 hash of an empty request body
+     **/
     public static final String EMPTY_BODY_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
     /**
@@ -90,9 +94,12 @@ public class AKSKSigner {
 
         // Step 1.3 combine all headers
         Map<String, String> allHeaders = new TreeMap<>();
+
         allHeaders.putAll(request.getHeaders()
             .entrySet()
             .stream()
+            .filter(entry -> (!entry.getKey().startsWith(Constants.CONTENT_TYPE)
+                || !entry.getValue().get(0).startsWith(Constants.MEDIATYPE.MULTIPART_FORM_DATA)))
             .collect(
                 Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), entry -> entry.getValue().get(0))));
         allHeaders.putAll(authenticationHeaders.entrySet()
@@ -162,7 +169,7 @@ public class AKSKSigner {
         StringBuilder builder = new StringBuilder();
 
         if (parameters == null || parameters.isEmpty()) {
-            builder.toString();
+            return builder.toString();
         }
 
         Iterator<Map.Entry<String, List<String>>> iterator = parameters.entrySet().iterator();
@@ -256,8 +263,7 @@ public class AKSKSigner {
     }
 
     /**
-     * @param segments
-     * param1 method
+     * @param segments param1 method
      * param2 canonicalURI
      * param3 canonicalQueryString
      * param4 canonicalHeaders
@@ -270,8 +276,7 @@ public class AKSKSigner {
     }
 
     /**
-     * @param segments
-     * param1 sdkSigningAlgorithm
+     * @param segments param1 sdkSigningAlgorithm
      * param2 dateTimeStamp
      * param3 credentialScope
      * param4 canonicalRequestHash
@@ -303,6 +308,7 @@ public class AKSKSigner {
     /**
      * Hashes the string contents (assumed to be UTF-8) using the SHA-256
      * algorithm.
+     *
      * @param text string contents
      * @return byte[]
      */
@@ -327,27 +333,4 @@ public class AKSKSigner {
         }
     }
 
-    public static class Constants {
-        public static final String LINE_SEPARATOR = "\n";
-
-        public static final String SDK_NAME = "SDK";
-
-        public static final String SDK_TERMINATOR = "sdk_request";
-
-        public static final String SDK_SIGNING_ALGORITHM = "SDK-HMAC-SHA256";
-
-        public static final String X_SDK_DATE = "X-Sdk-Date";
-
-        public static final String X_SDK_CONTENT_SHA256 = "X-Sdk-Content-Sha256";
-
-        public static final String AUTHORIZATION = "Authorization";
-
-        public static final String HOST = "Host";
-
-        public static final String CONTENT_TYPE = "Content-Type";
-
-        public static final String CONTENT_LENGTH = "Content-Length";
-
-        public static final String UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
-    }
 }

@@ -893,6 +893,41 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> uploadBatchTaskFile = genForuploadBatchTaskFile();
+
+    private static HttpRequestDef<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> genForuploadBatchTaskFile() {
+        // basic
+        HttpRequestDef.Builder<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadBatchTaskFileRequest.class, UploadBatchTaskFileResponse.class)
+                .withName("UploadBatchTaskFile")
+                .withUri("/v5/iot/{project_id}/batchtask-files")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UploadBatchTaskFileRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UploadBatchTaskFileRequestBody.class,
+            f -> f.withMarshaller(UploadBatchTaskFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddCertificateRequest, AddCertificateResponse> addCertificate = genForaddCertificate();
 
     private static HttpRequestDef<AddCertificateRequest, AddCertificateResponse> genForaddCertificate() {
@@ -3173,254 +3208,6 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             Rule.class,
             f -> f.withMarshaller(UpdateRuleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscription = genForcreateSubscription();
-
-    private static HttpRequestDef<CreateSubscriptionRequest, CreateSubscriptionResponse> genForcreateSubscription() {
-        // basic
-        HttpRequestDef.Builder<CreateSubscriptionRequest, CreateSubscriptionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSubscriptionRequest.class, CreateSubscriptionResponse.class)
-                .withName("CreateSubscription")
-                .withUri("/v5/iot/{project_id}/subscriptions")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateSubscriptionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            CreateSubReq.class,
-            f -> f.withMarshaller(CreateSubscriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscription = genFordeleteSubscription();
-
-    private static HttpRequestDef<DeleteSubscriptionRequest, DeleteSubscriptionResponse> genFordeleteSubscription() {
-        // basic
-        HttpRequestDef.Builder<DeleteSubscriptionRequest, DeleteSubscriptionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubscriptionRequest.class, DeleteSubscriptionResponse.class)
-                .withName("DeleteSubscription")
-                .withUri("/v5/iot/{project_id}/subscriptions/{subscription_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("subscription_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(DeleteSubscriptionRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteSubscriptionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-        
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteSubscriptionResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
-        
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptions = genForlistSubscriptions();
-
-    private static HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> genForlistSubscriptions() {
-        // basic
-        HttpRequestDef.Builder<ListSubscriptionsRequest, ListSubscriptionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSubscriptionsRequest.class, ListSubscriptionsResponse.class)
-                .withName("ListSubscriptions")
-                .withUri("/v5/iot/{project_id}/subscriptions")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("resource",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getResource, (req, v) -> {
-                req.setResource(v);
-            })
-        );
-        builder.withRequestField("event",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getEvent, (req, v) -> {
-                req.setEvent(v);
-            })
-        );
-        builder.withRequestField("callbackurl",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getCallbackurl, (req, v) -> {
-                req.setCallbackurl(v);
-            })
-        );
-        builder.withRequestField("app_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getAppId, (req, v) -> {
-                req.setAppId(v);
-            })
-        );
-        builder.withRequestField("channel",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getChannel, (req, v) -> {
-                req.setChannel(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubscriptionsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSubscriptionRequest, ShowSubscriptionResponse> showSubscription = genForshowSubscription();
-
-    private static HttpRequestDef<ShowSubscriptionRequest, ShowSubscriptionResponse> genForshowSubscription() {
-        // basic
-        HttpRequestDef.Builder<ShowSubscriptionRequest, ShowSubscriptionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSubscriptionRequest.class, ShowSubscriptionResponse.class)
-                .withName("ShowSubscription")
-                .withUri("/v5/iot/{project_id}/subscriptions/{subscription_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("subscription_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowSubscriptionRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowSubscriptionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateSubscriptionRequest, UpdateSubscriptionResponse> updateSubscription = genForupdateSubscription();
-
-    private static HttpRequestDef<UpdateSubscriptionRequest, UpdateSubscriptionResponse> genForupdateSubscription() {
-        // basic
-        HttpRequestDef.Builder<UpdateSubscriptionRequest, UpdateSubscriptionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateSubscriptionRequest.class, UpdateSubscriptionResponse.class)
-                .withName("UpdateSubscription")
-                .withUri("/v5/iot/{project_id}/subscriptions/{subscription_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("subscription_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateSubscriptionRequest::getSubscriptionId, (req, v) -> {
-                req.setSubscriptionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateSubscriptionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            UpdateSubReq.class,
-            f -> f.withMarshaller(UpdateSubscriptionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
