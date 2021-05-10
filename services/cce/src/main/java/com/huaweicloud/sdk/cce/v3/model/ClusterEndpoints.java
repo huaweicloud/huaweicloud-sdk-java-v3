@@ -19,37 +19,15 @@ public class ClusterEndpoints  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
-    private String type;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="url")
     
     private String url;
 
-    public ClusterEndpoints withType(String type) {
-        this.type = type;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
     
-
-
-    /**
-     * 集群访问地址的类型 - Internal：用户子网内访问的地址 - External：公网访问的地址
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    
+    private String type;
 
     public ClusterEndpoints withUrl(String url) {
         this.url = url;
@@ -73,6 +51,28 @@ public class ClusterEndpoints  {
 
     
 
+    public ClusterEndpoints withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群访问地址的类型 - Internal：用户子网内访问的地址 - External：公网访问的地址
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,19 +82,19 @@ public class ClusterEndpoints  {
             return false;
         }
         ClusterEndpoints clusterEndpoints = (ClusterEndpoints) o;
-        return Objects.equals(this.type, clusterEndpoints.type) &&
-            Objects.equals(this.url, clusterEndpoints.url);
+        return Objects.equals(this.url, clusterEndpoints.url) &&
+            Objects.equals(this.type, clusterEndpoints.type);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, url);
+        return Objects.hash(url, type);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterEndpoints {\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

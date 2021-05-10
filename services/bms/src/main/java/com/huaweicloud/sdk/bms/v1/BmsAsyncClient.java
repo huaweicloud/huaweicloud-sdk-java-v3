@@ -42,6 +42,50 @@ public class BmsAsyncClient {
     }
 
     /**
+     * 批量添加裸金属服务器标签
+     * - 为指定裸金属服务器批量添加标签。
+     *
+     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateBaremetalServerTagsResponse>
+     */
+    public CompletableFuture<BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTagsAsync(BatchCreateBaremetalServerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BmsMeta.batchCreateBaremetalServerTags);
+    }
+
+    /**
+     * 批量添加裸金属服务器标签
+     * - 为指定裸金属服务器批量添加标签。
+     *
+     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTagsAsyncInvoker(BatchCreateBaremetalServerTagsRequest request) {
+        return new AsyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>(request, BmsMeta.batchCreateBaremetalServerTags, hcClient);
+    }
+
+    /**
+     * 批量删除l裸金属服务器标签
+     * - 为指定云服务器批量删除标签。
+     *
+     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteBaremetalServerTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTagsAsync(BatchDeleteBaremetalServerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BmsMeta.batchDeleteBaremetalServerTags);
+    }
+
+    /**
+     * 批量删除l裸金属服务器标签
+     * - 为指定云服务器批量删除标签。
+     *
+     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTagsAsyncInvoker(BatchDeleteBaremetalServerTagsRequest request) {
+        return new AsyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>(request, BmsMeta.batchDeleteBaremetalServerTags, hcClient);
+    }
+
+    /**
      * 重启裸金属服务器
      * 根据给定的裸金属服务器ID列表，批量重启裸金属服务器
      *
@@ -325,6 +369,28 @@ public class BmsAsyncClient {
      */
     public AsyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> showBaremetalServerInterfaceAttachmentsAsyncInvoker(ShowBaremetalServerInterfaceAttachmentsRequest request) {
         return new AsyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse>(request, BmsMeta.showBaremetalServerInterfaceAttachments, hcClient);
+    }
+
+    /**
+     * 查询裸金属服务器标签
+     * - 查询指定云服务器的标签信息。
+     *
+     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @return CompletableFuture<ShowBaremetalServerTagsResponse>
+     */
+    public CompletableFuture<ShowBaremetalServerTagsResponse> showBaremetalServerTagsAsync(ShowBaremetalServerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BmsMeta.showBaremetalServerTags);
+    }
+
+    /**
+     * 查询裸金属服务器标签
+     * - 查询指定云服务器的标签信息。
+     *
+     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @return AsyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>
+     */
+    public AsyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> showBaremetalServerTagsAsyncInvoker(ShowBaremetalServerTagsRequest request) {
+        return new AsyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>(request, BmsMeta.showBaremetalServerTags, hcClient);
     }
 
     /**

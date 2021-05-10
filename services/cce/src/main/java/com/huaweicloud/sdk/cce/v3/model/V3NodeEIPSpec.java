@@ -13,10 +13,16 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * V3NodeEIPSpec
+ * 
  */
 public class V3NodeEIPSpec  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="iptype")
+    
+    private String iptype;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,11 +30,27 @@ public class V3NodeEIPSpec  {
     
     private V3NodeBandwidth bandwidth;
 
+    public V3NodeEIPSpec withIptype(String iptype) {
+        this.iptype = iptype;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="iptype")
     
-    private String iptype;
+
+
+    /**
+     * 弹性IP类型，取值请参见“[[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0167957246.html)](tag:hws)[[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0167957246.html)](tag:hws_hk) > eip字段数据结构说明”表中“iptype”参数的描述。
+     * @return iptype
+     */
+    public String getIptype() {
+        return iptype;
+    }
+
+    public void setIptype(String iptype) {
+        this.iptype = iptype;
+    }
+
+    
 
     public V3NodeEIPSpec withBandwidth(V3NodeBandwidth bandwidth) {
         this.bandwidth = bandwidth;
@@ -59,28 +81,6 @@ public class V3NodeEIPSpec  {
 
     
 
-    public V3NodeEIPSpec withIptype(String iptype) {
-        this.iptype = iptype;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 弹性IP类型，取值请参见“[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0167957246.html) > eip字段数据结构说明”表中“iptype”参数的描述。
-     * @return iptype
-     */
-    public String getIptype() {
-        return iptype;
-    }
-
-    public void setIptype(String iptype) {
-        this.iptype = iptype;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -90,19 +90,19 @@ public class V3NodeEIPSpec  {
             return false;
         }
         V3NodeEIPSpec v3NodeEIPSpec = (V3NodeEIPSpec) o;
-        return Objects.equals(this.bandwidth, v3NodeEIPSpec.bandwidth) &&
-            Objects.equals(this.iptype, v3NodeEIPSpec.iptype);
+        return Objects.equals(this.iptype, v3NodeEIPSpec.iptype) &&
+            Objects.equals(this.bandwidth, v3NodeEIPSpec.bandwidth);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidth, iptype);
+        return Objects.hash(iptype, bandwidth);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class V3NodeEIPSpec {\n");
-        sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    iptype: ").append(toIndentedString(iptype)).append("\n");
+        sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

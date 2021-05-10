@@ -20,6 +20,18 @@ import java.util.Objects;
  */
 public class Taint  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="key")
+    
+    private String key;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="value")
+    
+    private String value;
     /**
      * 作用效果
      */
@@ -111,40 +123,6 @@ public class Taint  {
     
     private EffectEnum effect;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
-    private String key;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
-    private String value;
-
-    public Taint withEffect(EffectEnum effect) {
-        this.effect = effect;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 作用效果
-     * @return effect
-     */
-    public EffectEnum getEffect() {
-        return effect;
-    }
-
-    public void setEffect(EffectEnum effect) {
-        this.effect = effect;
-    }
-
-    
-
     public Taint withKey(String key) {
         this.key = key;
         return this;
@@ -189,6 +167,28 @@ public class Taint  {
 
     
 
+    public Taint withEffect(EffectEnum effect) {
+        this.effect = effect;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 作用效果
+     * @return effect
+     */
+    public EffectEnum getEffect() {
+        return effect;
+    }
+
+    public void setEffect(EffectEnum effect) {
+        this.effect = effect;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -198,21 +198,21 @@ public class Taint  {
             return false;
         }
         Taint taint = (Taint) o;
-        return Objects.equals(this.effect, taint.effect) &&
-            Objects.equals(this.key, taint.key) &&
-            Objects.equals(this.value, taint.value);
+        return Objects.equals(this.key, taint.key) &&
+            Objects.equals(this.value, taint.value) &&
+            Objects.equals(this.effect, taint.effect);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(effect, key, value);
+        return Objects.hash(key, value, effect);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Taint {\n");
-        sb.append("    effect: ").append(toIndentedString(effect)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    effect: ").append(toIndentedString(effect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

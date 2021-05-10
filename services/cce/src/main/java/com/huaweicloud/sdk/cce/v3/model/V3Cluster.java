@@ -15,22 +15,22 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * V3Cluster
+ * 
  */
 public class V3Cluster  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
-    private String apiVersion;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
     private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="apiVersion")
+    
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,28 +50,6 @@ public class V3Cluster  {
     
     private ClusterStatus status;
 
-    public V3Cluster withApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API版本，固定值“v3”，该值不可修改。  
-     * @return apiVersion
-     */
-    public String getApiVersion() {
-        return apiVersion;
-    }
-
-    public void setApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-    }
-
-    
-
     public V3Cluster withKind(String kind) {
         this.kind = kind;
         return this;
@@ -90,6 +68,28 @@ public class V3Cluster  {
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    
+
+    public V3Cluster withApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API版本，固定值“v3”，该值不可修改。  
+     * @return apiVersion
+     */
+    public String getApiVersion() {
+        return apiVersion;
+    }
+
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
     }
 
     
@@ -190,22 +190,22 @@ public class V3Cluster  {
             return false;
         }
         V3Cluster v3Cluster = (V3Cluster) o;
-        return Objects.equals(this.apiVersion, v3Cluster.apiVersion) &&
-            Objects.equals(this.kind, v3Cluster.kind) &&
+        return Objects.equals(this.kind, v3Cluster.kind) &&
+            Objects.equals(this.apiVersion, v3Cluster.apiVersion) &&
             Objects.equals(this.metadata, v3Cluster.metadata) &&
             Objects.equals(this.spec, v3Cluster.spec) &&
             Objects.equals(this.status, v3Cluster.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, kind, metadata, spec, status);
+        return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class V3Cluster {\n");
-        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

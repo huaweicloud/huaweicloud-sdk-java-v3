@@ -24,9 +24,9 @@ public class ListOffSiteInstancesResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offsite_backup_instances")
+    @JsonProperty(value="offsite_backup_instance")
     
-    private List<OffsiteBackupInstance> offsiteBackupInstances = null;
+    private List<OffsiteBackupInstance> offsiteBackupInstance = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,38 +34,38 @@ public class ListOffSiteInstancesResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListOffSiteInstancesResponse withOffsiteBackupInstances(List<OffsiteBackupInstance> offsiteBackupInstances) {
-        this.offsiteBackupInstances = offsiteBackupInstances;
+    public ListOffSiteInstancesResponse withOffsiteBackupInstance(List<OffsiteBackupInstance> offsiteBackupInstance) {
+        this.offsiteBackupInstance = offsiteBackupInstance;
         return this;
     }
 
     
-    public ListOffSiteInstancesResponse addOffsiteBackupInstancesItem(OffsiteBackupInstance offsiteBackupInstancesItem) {
-        if(this.offsiteBackupInstances == null) {
-            this.offsiteBackupInstances = new ArrayList<>();
+    public ListOffSiteInstancesResponse addOffsiteBackupInstanceItem(OffsiteBackupInstance offsiteBackupInstanceItem) {
+        if(this.offsiteBackupInstance == null) {
+            this.offsiteBackupInstance = new ArrayList<>();
         }
-        this.offsiteBackupInstances.add(offsiteBackupInstancesItem);
+        this.offsiteBackupInstance.add(offsiteBackupInstanceItem);
         return this;
     }
 
-    public ListOffSiteInstancesResponse withOffsiteBackupInstances(Consumer<List<OffsiteBackupInstance>> offsiteBackupInstancesSetter) {
-        if(this.offsiteBackupInstances == null) {
-            this.offsiteBackupInstances = new ArrayList<>();
+    public ListOffSiteInstancesResponse withOffsiteBackupInstance(Consumer<List<OffsiteBackupInstance>> offsiteBackupInstanceSetter) {
+        if(this.offsiteBackupInstance == null) {
+            this.offsiteBackupInstance = new ArrayList<>();
         }
-        offsiteBackupInstancesSetter.accept(this.offsiteBackupInstances);
+        offsiteBackupInstanceSetter.accept(this.offsiteBackupInstance);
         return this;
     }
 
     /**
      * 跨区域备份实例信息。
-     * @return offsiteBackupInstances
+     * @return offsiteBackupInstance
      */
-    public List<OffsiteBackupInstance> getOffsiteBackupInstances() {
-        return offsiteBackupInstances;
+    public List<OffsiteBackupInstance> getOffsiteBackupInstance() {
+        return offsiteBackupInstance;
     }
 
-    public void setOffsiteBackupInstances(List<OffsiteBackupInstance> offsiteBackupInstances) {
-        this.offsiteBackupInstances = offsiteBackupInstances;
+    public void setOffsiteBackupInstance(List<OffsiteBackupInstance> offsiteBackupInstance) {
+        this.offsiteBackupInstance = offsiteBackupInstance;
     }
 
     
@@ -101,18 +101,18 @@ public class ListOffSiteInstancesResponse extends SdkResponse {
             return false;
         }
         ListOffSiteInstancesResponse listOffSiteInstancesResponse = (ListOffSiteInstancesResponse) o;
-        return Objects.equals(this.offsiteBackupInstances, listOffSiteInstancesResponse.offsiteBackupInstances) &&
+        return Objects.equals(this.offsiteBackupInstance, listOffSiteInstancesResponse.offsiteBackupInstance) &&
             Objects.equals(this.totalCount, listOffSiteInstancesResponse.totalCount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(offsiteBackupInstances, totalCount);
+        return Objects.hash(offsiteBackupInstance, totalCount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOffSiteInstancesResponse {\n");
-        sb.append("    offsiteBackupInstances: ").append(toIndentedString(offsiteBackupInstances)).append("\n");
+        sb.append("    offsiteBackupInstance: ").append(toIndentedString(offsiteBackupInstance)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -24,6 +24,12 @@ public class ListAddonTemplatesResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="kind")
+    
+    private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
     private String apiVersion;
@@ -34,11 +40,27 @@ public class ListAddonTemplatesResponse extends SdkResponse {
     
     private List<AddonTemplate> items = null;
     
+    public ListAddonTemplatesResponse withKind(String kind) {
+        this.kind = kind;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
     
-    private String kind;
+
+
+    /**
+     * API类型，固定值“Addon”，该值不可修改。
+     * @return kind
+     */
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    
 
     public ListAddonTemplatesResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -98,28 +120,6 @@ public class ListAddonTemplatesResponse extends SdkResponse {
 
     
 
-    public ListAddonTemplatesResponse withKind(String kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API类型，固定值“Addon”，该值不可修改。
-     * @return kind
-     */
-    public String getKind() {
-        return kind;
-    }
-
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -129,21 +129,21 @@ public class ListAddonTemplatesResponse extends SdkResponse {
             return false;
         }
         ListAddonTemplatesResponse listAddonTemplatesResponse = (ListAddonTemplatesResponse) o;
-        return Objects.equals(this.apiVersion, listAddonTemplatesResponse.apiVersion) &&
-            Objects.equals(this.items, listAddonTemplatesResponse.items) &&
-            Objects.equals(this.kind, listAddonTemplatesResponse.kind);
+        return Objects.equals(this.kind, listAddonTemplatesResponse.kind) &&
+            Objects.equals(this.apiVersion, listAddonTemplatesResponse.apiVersion) &&
+            Objects.equals(this.items, listAddonTemplatesResponse.items);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, items, kind);
+        return Objects.hash(kind, apiVersion, items);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAddonTemplatesResponse {\n");
+        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
-        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("}");
         return sb.toString();
     }

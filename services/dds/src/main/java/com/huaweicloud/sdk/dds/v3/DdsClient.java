@@ -458,6 +458,28 @@ public class DdsClient {
     }
 
     /**
+     * 查询实例可迁移到的可用区
+     * 查询实例可迁移到的可用区。
+     *
+     * @param ListAz2MigrateRequest 请求对象
+     * @return ListAz2MigrateResponse
+     */
+    public ListAz2MigrateResponse listAz2Migrate(ListAz2MigrateRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listAz2Migrate);
+    }
+
+    /**
+     * 查询实例可迁移到的可用区
+     * 查询实例可迁移到的可用区。
+     *
+     * @param ListAz2MigrateRequest 请求对象
+     * @return SyncInvoker<ListAz2MigrateRequest, ListAz2MigrateResponse>
+     */
+    public SyncInvoker<ListAz2MigrateRequest, ListAz2MigrateResponse> listAz2MigrateInvoker(ListAz2MigrateRequest request) {
+        return new SyncInvoker<ListAz2MigrateRequest, ListAz2MigrateResponse>(request, DdsMeta.listAz2Migrate, hcClient);
+    }
+
+    /**
      * 查询备份列表
      * 根据指定条件查询备份列表。
      *
@@ -807,6 +829,28 @@ public class DdsClient {
      */
     public SyncInvoker<ListStorageTypeRequest, ListStorageTypeResponse> listStorageTypeInvoker(ListStorageTypeRequest request) {
         return new SyncInvoker<ListStorageTypeRequest, ListStorageTypeResponse>(request, DdsMeta.listStorageType, hcClient);
+    }
+
+    /**
+     * 实例可用区迁移
+     * 实例可用区迁移。
+     *
+     * @param MigrateAzRequest 请求对象
+     * @return MigrateAzResponse
+     */
+    public MigrateAzResponse migrateAz(MigrateAzRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.migrateAz);
+    }
+
+    /**
+     * 实例可用区迁移
+     * 实例可用区迁移。
+     *
+     * @param MigrateAzRequest 请求对象
+     * @return SyncInvoker<MigrateAzRequest, MigrateAzResponse>
+     */
+    public SyncInvoker<MigrateAzRequest, MigrateAzResponse> migrateAzInvoker(MigrateAzRequest request) {
+        return new SyncInvoker<MigrateAzRequest, MigrateAzResponse>(request, DdsMeta.migrateAz, hcClient);
     }
 
     /**

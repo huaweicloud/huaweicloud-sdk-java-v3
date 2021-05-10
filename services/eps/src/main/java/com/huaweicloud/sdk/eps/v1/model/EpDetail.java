@@ -58,22 +58,28 @@ public class EpDetail  {
     
     private OffsetDateTime updatedAt;
     /**
-     * 项目类型。prod-商用项目；poc-测试项目
+     * 项目类型： - prod：商用项目 - poc：测试项目
      */
     public static final class TypeEnum {
 
         
         /**
-         * Enum PROD_PROC for value: "prod; proc"
+         * Enum PROD for value: "prod"
          */
-        public static final TypeEnum PROD_PROC = new TypeEnum("prod; proc");
+        public static final TypeEnum PROD = new TypeEnum("prod");
+        
+        /**
+         * Enum POC for value: "poc"
+         */
+        public static final TypeEnum POC = new TypeEnum("poc");
         
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("prod; proc", PROD_PROC);
+            map.put("prod", PROD);
+            map.put("poc", POC);
             return Collections.unmodifiableMap(map);
         }
 
@@ -277,7 +283,7 @@ public class EpDetail  {
 
 
     /**
-     * 项目类型。prod-商用项目；poc-测试项目
+     * 项目类型： - prod：商用项目 - poc：测试项目
      * @return type
      */
     public TypeEnum getType() {

@@ -460,6 +460,28 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 查询实例可迁移到的可用区
+     * 查询实例可迁移到的可用区。
+     *
+     * @param ListAz2MigrateRequest 请求对象
+     * @return CompletableFuture<ListAz2MigrateResponse>
+     */
+    public CompletableFuture<ListAz2MigrateResponse> listAz2MigrateAsync(ListAz2MigrateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.listAz2Migrate);
+    }
+
+    /**
+     * 查询实例可迁移到的可用区
+     * 查询实例可迁移到的可用区。
+     *
+     * @param ListAz2MigrateRequest 请求对象
+     * @return AsyncInvoker<ListAz2MigrateRequest, ListAz2MigrateResponse>
+     */
+    public AsyncInvoker<ListAz2MigrateRequest, ListAz2MigrateResponse> listAz2MigrateAsyncInvoker(ListAz2MigrateRequest request) {
+        return new AsyncInvoker<ListAz2MigrateRequest, ListAz2MigrateResponse>(request, DdsMeta.listAz2Migrate, hcClient);
+    }
+
+    /**
      * 查询备份列表
      * 根据指定条件查询备份列表。
      *
@@ -809,6 +831,28 @@ public class DdsAsyncClient {
      */
     public AsyncInvoker<ListStorageTypeRequest, ListStorageTypeResponse> listStorageTypeAsyncInvoker(ListStorageTypeRequest request) {
         return new AsyncInvoker<ListStorageTypeRequest, ListStorageTypeResponse>(request, DdsMeta.listStorageType, hcClient);
+    }
+
+    /**
+     * 实例可用区迁移
+     * 实例可用区迁移。
+     *
+     * @param MigrateAzRequest 请求对象
+     * @return CompletableFuture<MigrateAzResponse>
+     */
+    public CompletableFuture<MigrateAzResponse> migrateAzAsync(MigrateAzRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.migrateAz);
+    }
+
+    /**
+     * 实例可用区迁移
+     * 实例可用区迁移。
+     *
+     * @param MigrateAzRequest 请求对象
+     * @return AsyncInvoker<MigrateAzRequest, MigrateAzResponse>
+     */
+    public AsyncInvoker<MigrateAzRequest, MigrateAzResponse> migrateAzAsyncInvoker(MigrateAzRequest request) {
+        return new AsyncInvoker<MigrateAzRequest, MigrateAzResponse>(request, DdsMeta.migrateAz, hcClient);
     }
 
     /**

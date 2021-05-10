@@ -320,6 +320,22 @@ public class CceMeta {
                 req.setNamespace(v);
             })
         );
+        builder.withRequestField("deleteVolume",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getDeleteVolume, (req, v) -> {
+                req.setDeleteVolume(v);
+            })
+        );
+        builder.withRequestField("storageType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteCloudPersistentVolumeClaimsRequest::getStorageType, (req, v) -> {
+                req.setStorageType(v);
+            })
+        );
         builder.withRequestField("X-Cluster-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -551,6 +567,14 @@ public class CceMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("addon_template_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAddonInstancesRequest::getAddonTemplateName, (req, v) -> {
+                req.setAddonTemplateName(v);
+            })
+        );
         builder.withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -584,6 +608,38 @@ public class CceMeta {
             String.class,
             f -> f.withMarshaller(ListAddonTemplatesRequest::getAddonTemplateName, (req, v) -> {
                 req.setAddonTemplateName(v);
+            })
+        );
+        builder.withRequestField("base_update_addon_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAddonTemplatesRequest::getBaseUpdateAddonVersion, (req, v) -> {
+                req.setBaseUpdateAddonVersion(v);
+            })
+        );
+        builder.withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAddonTemplatesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            })
+        );
+        builder.withRequestField("newest",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAddonTemplatesRequest::getNewest, (req, v) -> {
+                req.setNewest(v);
+            })
+        );
+        builder.withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAddonTemplatesRequest::getVersion, (req, v) -> {
+                req.setVersion(v);
             })
         );
 

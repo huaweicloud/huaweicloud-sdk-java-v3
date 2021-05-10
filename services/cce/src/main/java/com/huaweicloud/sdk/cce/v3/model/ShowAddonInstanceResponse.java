@@ -24,15 +24,15 @@ public class ShowAddonInstanceResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
-    private String apiVersion;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
     private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="apiVersion")
+    
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,28 +52,6 @@ public class ShowAddonInstanceResponse extends SdkResponse {
     
     private AddonInstanceStatus status;
 
-    public ShowAddonInstanceResponse withApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API版本，固定值“v3”，该值不可修改。
-     * @return apiVersion
-     */
-    public String getApiVersion() {
-        return apiVersion;
-    }
-
-    public void setApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-    }
-
-    
-
     public ShowAddonInstanceResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -92,6 +70,28 @@ public class ShowAddonInstanceResponse extends SdkResponse {
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    
+
+    public ShowAddonInstanceResponse withApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API版本，固定值“v3”，该值不可修改。
+     * @return apiVersion
+     */
+    public String getApiVersion() {
+        return apiVersion;
+    }
+
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
     }
 
     
@@ -192,22 +192,22 @@ public class ShowAddonInstanceResponse extends SdkResponse {
             return false;
         }
         ShowAddonInstanceResponse showAddonInstanceResponse = (ShowAddonInstanceResponse) o;
-        return Objects.equals(this.apiVersion, showAddonInstanceResponse.apiVersion) &&
-            Objects.equals(this.kind, showAddonInstanceResponse.kind) &&
+        return Objects.equals(this.kind, showAddonInstanceResponse.kind) &&
+            Objects.equals(this.apiVersion, showAddonInstanceResponse.apiVersion) &&
             Objects.equals(this.metadata, showAddonInstanceResponse.metadata) &&
             Objects.equals(this.spec, showAddonInstanceResponse.spec) &&
             Objects.equals(this.status, showAddonInstanceResponse.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, kind, metadata, spec, status);
+        return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAddonInstanceResponse {\n");
-        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

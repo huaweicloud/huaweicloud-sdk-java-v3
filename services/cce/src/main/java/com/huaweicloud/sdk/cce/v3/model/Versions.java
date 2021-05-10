@@ -23,9 +23,9 @@ public class Versions  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creationTimestamp")
+    @JsonProperty(value="version")
     
-    private LocalDate creationTimestamp;
+    private String version;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,15 +41,21 @@ public class Versions  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="translate")
+    
+    private Object translate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="supportVersions")
     
     private List<SupportVersions> supportVersions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="translate")
+    @JsonProperty(value="creationTimestamp")
     
-    private Object translate;
+    private LocalDate creationTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,14 +63,8 @@ public class Versions  {
     
     private LocalDate updateTimestamp;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
-    private String version;
-
-    public Versions withCreationTimestamp(LocalDate creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
+    public Versions withVersion(String version) {
+        this.version = version;
         return this;
     }
 
@@ -72,15 +72,15 @@ public class Versions  {
 
 
     /**
-     * 创建时间
-     * @return creationTimestamp
+     * 插件版本号
+     * @return version
      */
-    public LocalDate getCreationTimestamp() {
-        return creationTimestamp;
+    public String getVersion() {
+        return version;
     }
 
-    public void setCreationTimestamp(LocalDate creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     
@@ -129,6 +129,28 @@ public class Versions  {
 
     
 
+    public Versions withTranslate(Object translate) {
+        this.translate = translate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 供界面使用的翻译信息
+     * @return translate
+     */
+    public Object getTranslate() {
+        return translate;
+    }
+
+    public void setTranslate(Object translate) {
+        this.translate = translate;
+    }
+
+    
+
     public Versions withSupportVersions(List<SupportVersions> supportVersions) {
         this.supportVersions = supportVersions;
         return this;
@@ -165,8 +187,8 @@ public class Versions  {
 
     
 
-    public Versions withTranslate(Object translate) {
-        this.translate = translate;
+    public Versions withCreationTimestamp(LocalDate creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
         return this;
     }
 
@@ -174,15 +196,15 @@ public class Versions  {
 
 
     /**
-     * 供界面使用的翻译信息
-     * @return translate
+     * 创建时间
+     * @return creationTimestamp
      */
-    public Object getTranslate() {
-        return translate;
+    public LocalDate getCreationTimestamp() {
+        return creationTimestamp;
     }
 
-    public void setTranslate(Object translate) {
-        this.translate = translate;
+    public void setCreationTimestamp(LocalDate creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
     }
 
     
@@ -209,28 +231,6 @@ public class Versions  {
 
     
 
-    public Versions withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 插件版本号
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -240,29 +240,29 @@ public class Versions  {
             return false;
         }
         Versions versions = (Versions) o;
-        return Objects.equals(this.creationTimestamp, versions.creationTimestamp) &&
+        return Objects.equals(this.version, versions.version) &&
             Objects.equals(this.input, versions.input) &&
             Objects.equals(this.stable, versions.stable) &&
-            Objects.equals(this.supportVersions, versions.supportVersions) &&
             Objects.equals(this.translate, versions.translate) &&
-            Objects.equals(this.updateTimestamp, versions.updateTimestamp) &&
-            Objects.equals(this.version, versions.version);
+            Objects.equals(this.supportVersions, versions.supportVersions) &&
+            Objects.equals(this.creationTimestamp, versions.creationTimestamp) &&
+            Objects.equals(this.updateTimestamp, versions.updateTimestamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creationTimestamp, input, stable, supportVersions, translate, updateTimestamp, version);
+        return Objects.hash(version, input, stable, translate, supportVersions, creationTimestamp, updateTimestamp);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Versions {\n");
-        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    stable: ").append(toIndentedString(stable)).append("\n");
-        sb.append("    supportVersions: ").append(toIndentedString(supportVersions)).append("\n");
         sb.append("    translate: ").append(toIndentedString(translate)).append("\n");
+        sb.append("    supportVersions: ").append(toIndentedString(supportVersions)).append("\n");
+        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

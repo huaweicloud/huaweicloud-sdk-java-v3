@@ -38,7 +38,7 @@ public class ResourceTag  {
 
 
     /**
-     * Key值。 - 支持最大长度未36个UTF-8字符。 - 不支持特殊字符[\\=\\*\\<\\>\\\\\\,\\|/]+ - 不支持ASCII控制字符(0-31)
+     * Key值。 - 支持最大长度为36个UTF-8字符。 - 不支持特殊字符[\\=\\*\\<\\>\\\\\\,\\|/]+ - 不支持ASCII控制字符(0-31)
      * @return key
      */
     public String getKey() {
@@ -60,7 +60,7 @@ public class ResourceTag  {
 
 
     /**
-     * Value值。 - 支持最大长度未43个UTF-8字符。 - 不支持特殊字符[\\=\\*\\<\\>\\\\\\,\\|/]+ - 不支持ASCII控制字符(0-31)
+     * Value值。 - 支持最大长度为43个UTF-8字符。 - 不支持特殊字符[\\=\\*\\<\\>\\\\\\,\\|/]+ - 不支持ASCII控制字符(0-31)
      * @return value
      */
     public String getValue() {

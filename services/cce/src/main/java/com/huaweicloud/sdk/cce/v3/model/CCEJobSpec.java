@@ -17,10 +17,16 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CCEJobSpec
+ * 
  */
 public class CCEJobSpec  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
+    
+    private String type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,12 +34,6 @@ public class CCEJobSpec  {
     
     private String clusterUID;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extendParam")
-    
-    private Map<String, String> extendParam = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resourceID")
@@ -48,15 +48,37 @@ public class CCEJobSpec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="extendParam")
+    
+    private Map<String, String> extendParam = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subJobs")
     
     private List<CCEJob> subJobs = null;
     
+    public CCEJobSpec withType(String type) {
+        this.type = type;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
     
-    private String type;
+
+
+    /**
+     * 作业的类型，例：“CreateCluster”- 创建集群。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    
 
     public CCEJobSpec withClusterUID(String clusterUID) {
         this.clusterUID = clusterUID;
@@ -76,42 +98,6 @@ public class CCEJobSpec  {
 
     public void setClusterUID(String clusterUID) {
         this.clusterUID = clusterUID;
-    }
-
-    
-
-    public CCEJobSpec withExtendParam(Map<String, String> extendParam) {
-        this.extendParam = extendParam;
-        return this;
-    }
-
-    
-
-    public CCEJobSpec putExtendParamItem(String key, String extendParamItem) {
-        if(this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-        }
-        this.extendParam.put(key, extendParamItem);
-        return this;
-    }
-
-    public CCEJobSpec withExtendParam(Consumer<Map<String, String>> extendParamSetter) {
-        if(this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-        }
-        extendParamSetter.accept(this.extendParam);
-        return this;
-    }
-    /**
-     * 扩展参数。
-     * @return extendParam
-     */
-    public Map<String, String> getExtendParam() {
-        return extendParam;
-    }
-
-    public void setExtendParam(Map<String, String> extendParam) {
-        this.extendParam = extendParam;
     }
 
     
@@ -160,6 +146,42 @@ public class CCEJobSpec  {
 
     
 
+    public CCEJobSpec withExtendParam(Map<String, String> extendParam) {
+        this.extendParam = extendParam;
+        return this;
+    }
+
+    
+
+    public CCEJobSpec putExtendParamItem(String key, String extendParamItem) {
+        if(this.extendParam == null) {
+            this.extendParam = new HashMap<>();
+        }
+        this.extendParam.put(key, extendParamItem);
+        return this;
+    }
+
+    public CCEJobSpec withExtendParam(Consumer<Map<String, String>> extendParamSetter) {
+        if(this.extendParam == null) {
+            this.extendParam = new HashMap<>();
+        }
+        extendParamSetter.accept(this.extendParam);
+        return this;
+    }
+    /**
+     * 扩展参数。
+     * @return extendParam
+     */
+    public Map<String, String> getExtendParam() {
+        return extendParam;
+    }
+
+    public void setExtendParam(Map<String, String> extendParam) {
+        this.extendParam = extendParam;
+    }
+
+    
+
     public CCEJobSpec withSubJobs(List<CCEJob> subJobs) {
         this.subJobs = subJobs;
         return this;
@@ -196,28 +218,6 @@ public class CCEJobSpec  {
 
     
 
-    public CCEJobSpec withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 作业的类型，例：“CreateCluster”- 创建集群。
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -227,27 +227,27 @@ public class CCEJobSpec  {
             return false;
         }
         CCEJobSpec ccEJobSpec = (CCEJobSpec) o;
-        return Objects.equals(this.clusterUID, ccEJobSpec.clusterUID) &&
-            Objects.equals(this.extendParam, ccEJobSpec.extendParam) &&
+        return Objects.equals(this.type, ccEJobSpec.type) &&
+            Objects.equals(this.clusterUID, ccEJobSpec.clusterUID) &&
             Objects.equals(this.resourceID, ccEJobSpec.resourceID) &&
             Objects.equals(this.resourceName, ccEJobSpec.resourceName) &&
-            Objects.equals(this.subJobs, ccEJobSpec.subJobs) &&
-            Objects.equals(this.type, ccEJobSpec.type);
+            Objects.equals(this.extendParam, ccEJobSpec.extendParam) &&
+            Objects.equals(this.subJobs, ccEJobSpec.subJobs);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterUID, extendParam, resourceID, resourceName, subJobs, type);
+        return Objects.hash(type, clusterUID, resourceID, resourceName, extendParam, subJobs);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CCEJobSpec {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    clusterUID: ").append(toIndentedString(clusterUID)).append("\n");
-        sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    resourceID: ").append(toIndentedString(resourceID)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    subJobs: ").append(toIndentedString(subJobs)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

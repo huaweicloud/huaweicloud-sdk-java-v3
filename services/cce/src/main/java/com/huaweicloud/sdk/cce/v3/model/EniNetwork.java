@@ -12,10 +12,16 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ENI网络配置，创建集群指定使用Yangtse网络模式时必填。
+ * ENI网络配置，创建集群指定使用云原生网络2.0网络模式时必填。
  */
 public class EniNetwork  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="eniSubnetId")
+    
+    private String eniSubnetId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,11 +29,27 @@ public class EniNetwork  {
     
     private String eniSubnetCIDR;
 
+    public EniNetwork withEniSubnetId(String eniSubnetId) {
+        this.eniSubnetId = eniSubnetId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eniSubnetId")
     
-    private String eniSubnetId;
+
+
+    /**
+     * 用于创建控制节点的subnet的IPv4网络ID(暂不支持IPv6)。获取方法如下：- 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找IPv4网络ID。- 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)](tag:hws)[[查询子网列表](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_subnet01_0003.html)](tag:hws_hk)
+     * @return eniSubnetId
+     */
+    public String getEniSubnetId() {
+        return eniSubnetId;
+    }
+
+    public void setEniSubnetId(String eniSubnetId) {
+        this.eniSubnetId = eniSubnetId;
+    }
+
+    
 
     public EniNetwork withEniSubnetCIDR(String eniSubnetCIDR) {
         this.eniSubnetCIDR = eniSubnetCIDR;
@@ -51,28 +73,6 @@ public class EniNetwork  {
 
     
 
-    public EniNetwork withEniSubnetId(String eniSubnetId) {
-        this.eniSubnetId = eniSubnetId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * eni子网ID
-     * @return eniSubnetId
-     */
-    public String getEniSubnetId() {
-        return eniSubnetId;
-    }
-
-    public void setEniSubnetId(String eniSubnetId) {
-        this.eniSubnetId = eniSubnetId;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,19 +82,19 @@ public class EniNetwork  {
             return false;
         }
         EniNetwork eniNetwork = (EniNetwork) o;
-        return Objects.equals(this.eniSubnetCIDR, eniNetwork.eniSubnetCIDR) &&
-            Objects.equals(this.eniSubnetId, eniNetwork.eniSubnetId);
+        return Objects.equals(this.eniSubnetId, eniNetwork.eniSubnetId) &&
+            Objects.equals(this.eniSubnetCIDR, eniNetwork.eniSubnetCIDR);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(eniSubnetCIDR, eniSubnetId);
+        return Objects.hash(eniSubnetId, eniSubnetCIDR);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EniNetwork {\n");
-        sb.append("    eniSubnetCIDR: ").append(toIndentedString(eniSubnetCIDR)).append("\n");
         sb.append("    eniSubnetId: ").append(toIndentedString(eniSubnetId)).append("\n");
+        sb.append("    eniSubnetCIDR: ").append(toIndentedString(eniSubnetCIDR)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -590,8 +590,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取跨区域备份列表
-     * 获取跨区域备份列表。
+     * 查询跨区域备份列表
+     * 查询跨区域备份列表。
      *
      * @param ListOffSiteBackupsRequest 请求对象
      * @return ListOffSiteBackupsResponse
@@ -601,8 +601,8 @@ public class RdsClient {
     }
 
     /**
-     * 获取跨区域备份列表
-     * 获取跨区域备份列表。
+     * 查询跨区域备份列表
+     * 查询跨区域备份列表。
      *
      * @param ListOffSiteBackupsRequest 请求对象
      * @return SyncInvoker<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse>
@@ -634,8 +634,8 @@ public class RdsClient {
     }
 
     /**
-     * 查询跨区域可恢复时间段
-     * 查询跨区域可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 查询跨区域备份可恢复时间段
+     * 查询跨区域备份可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
      *
      * @param ListOffSiteRestoreTimesRequest 请求对象
      * @return ListOffSiteRestoreTimesResponse
@@ -645,8 +645,8 @@ public class RdsClient {
     }
 
     /**
-     * 查询跨区域可恢复时间段
-     * 查询跨区域可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     * 查询跨区域备份可恢复时间段
+     * 查询跨区域备份可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
      *
      * @param ListOffSiteRestoreTimesRequest 请求对象
      * @return SyncInvoker<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse>
@@ -788,8 +788,8 @@ public class RdsClient {
     }
 
     /**
-     * 表级时间点恢复
-     * 表级时间点恢复。
+     * 表级时间点恢复(MySQL)
+     * 表级时间点恢复(MySQL)。
      *
      * @param RestoreTablesRequest 请求对象
      * @return RestoreTablesResponse
@@ -799,8 +799,8 @@ public class RdsClient {
     }
 
     /**
-     * 表级时间点恢复
-     * 表级时间点恢复。
+     * 表级时间点恢复(MySQL)
+     * 表级时间点恢复(MySQL)。
      *
      * @param RestoreTablesRequest 请求对象
      * @return SyncInvoker<RestoreTablesRequest, RestoreTablesResponse>

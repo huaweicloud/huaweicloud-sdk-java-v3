@@ -20,15 +20,37 @@ public class Contexts  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="context")
     
     private Context context;
 
+    public Contexts withName(String name) {
+        this.name = name;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
     
-    private String name;
+
+
+    /**
+     * 上下文的名称。 - 若不存在publicIp（虚拟机弹性IP），则集群列表的集群数量为1，该字段值为“internal”。 - 若存在publicIp，则集群列表的集群数量大于1，所有扩展的context的name的值为“external”。 
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
 
     public Contexts withContext(Context context) {
         this.context = context;
@@ -59,28 +81,6 @@ public class Contexts  {
 
     
 
-    public Contexts withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 上下文的名称。 - 若不存在publicIp（虚拟机弹性IP），则集群列表的集群数量为1，该字段值为“internal”。 - 若存在publicIp，则集群列表的集群数量大于1，所有扩展的context的name的值为“external”。 
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -90,19 +90,19 @@ public class Contexts  {
             return false;
         }
         Contexts contexts = (Contexts) o;
-        return Objects.equals(this.context, contexts.context) &&
-            Objects.equals(this.name, contexts.name);
+        return Objects.equals(this.name, contexts.name) &&
+            Objects.equals(this.context, contexts.context);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(context, name);
+        return Objects.hash(name, context);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Contexts {\n");
-        sb.append("    context: ").append(toIndentedString(context)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    context: ").append(toIndentedString(context)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -47,6 +47,76 @@ public class BmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTags = genForbatchCreateBaremetalServerTags();
+
+    private static HttpRequestDef<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> genForbatchCreateBaremetalServerTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateBaremetalServerTagsRequest.class, BatchCreateBaremetalServerTagsResponse.class)
+                .withName("BatchCreateBaremetalServerTags")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateBaremetalServerTagsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchCreateBaremetalServerTagsRequestBody.class,
+            f -> f.withMarshaller(BatchCreateBaremetalServerTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTags = genForbatchDeleteBaremetalServerTags();
+
+    private static HttpRequestDef<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> genForbatchDeleteBaremetalServerTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteBaremetalServerTagsRequest.class, BatchDeleteBaremetalServerTagsResponse.class)
+                .withName("BatchDeleteBaremetalServerTags")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteBaremetalServerTagsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteBaremetalServerTagsRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteBaremetalServerTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> batchRebootBaremetalServers = genForbatchRebootBaremetalServers();
 
     private static HttpRequestDef<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> genForbatchRebootBaremetalServers() {
@@ -483,6 +553,33 @@ public class BmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowBaremetalServerInterfaceAttachmentsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> showBaremetalServerTags = genForshowBaremetalServerTags();
+
+    private static HttpRequestDef<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> genForshowBaremetalServerTags() {
+        // basic
+        HttpRequestDef.Builder<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBaremetalServerTagsRequest.class, ShowBaremetalServerTagsResponse.class)
+                .withName("ShowBaremetalServerTags")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBaremetalServerTagsRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
             })
         );

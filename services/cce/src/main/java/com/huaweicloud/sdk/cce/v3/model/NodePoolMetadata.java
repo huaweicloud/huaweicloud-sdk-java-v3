@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * NodePoolMetadata
+ * 
  */
 public class NodePoolMetadata  {
 
@@ -38,7 +38,7 @@ public class NodePoolMetadata  {
 
 
     /**
-     * 节点名池名称。  > 命名规则： >  >  - 以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-50位，且不能以中划线(-)结尾。 >  >  - 不允许创建名为 DefaultPool 的节点池。
+     * 节点名池名称。  > 命名规则： > >  - 以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-50位，且不能以中划线(-)结尾。 > >  - 不允许创建名为 DefaultPool 的节点池。
      * @return name
      */
     public String getName() {

@@ -24,6 +24,12 @@ public class ListNodePoolsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="kind")
+    
+    private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
     private String apiVersion;
@@ -34,11 +40,27 @@ public class ListNodePoolsResponse extends SdkResponse {
     
     private List<NodePool> items = null;
     
+    public ListNodePoolsResponse withKind(String kind) {
+        this.kind = kind;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
     
-    private String kind;
+
+
+    /**
+     * API type. The value is fixed to List.
+     * @return kind
+     */
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    
 
     public ListNodePoolsResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -98,28 +120,6 @@ public class ListNodePoolsResponse extends SdkResponse {
 
     
 
-    public ListNodePoolsResponse withKind(String kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API type. The value is fixed to List.
-     * @return kind
-     */
-    public String getKind() {
-        return kind;
-    }
-
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -129,21 +129,21 @@ public class ListNodePoolsResponse extends SdkResponse {
             return false;
         }
         ListNodePoolsResponse listNodePoolsResponse = (ListNodePoolsResponse) o;
-        return Objects.equals(this.apiVersion, listNodePoolsResponse.apiVersion) &&
-            Objects.equals(this.items, listNodePoolsResponse.items) &&
-            Objects.equals(this.kind, listNodePoolsResponse.kind);
+        return Objects.equals(this.kind, listNodePoolsResponse.kind) &&
+            Objects.equals(this.apiVersion, listNodePoolsResponse.apiVersion) &&
+            Objects.equals(this.items, listNodePoolsResponse.items);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, items, kind);
+        return Objects.hash(kind, apiVersion, items);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNodePoolsResponse {\n");
+        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
-        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("}");
         return sb.toString();
     }

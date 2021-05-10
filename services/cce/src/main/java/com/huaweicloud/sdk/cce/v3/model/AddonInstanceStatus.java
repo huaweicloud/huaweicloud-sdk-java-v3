@@ -23,24 +23,6 @@ import java.util.Objects;
  */
 public class AddonInstanceStatus  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currentVersion")
-    
-    private Versions currentVersion;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
-    private String message;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reason")
-    
-    private String reason;
     /**
      * 插件实例状态
      */
@@ -140,41 +122,30 @@ public class AddonInstanceStatus  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Reason")
+    
+    private String reason;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="message")
+    
+    private String message;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="targetVersions")
     
     private List<String> targetVersions = null;
     
-    public AddonInstanceStatus withCurrentVersion(Versions currentVersion) {
-        this.currentVersion = currentVersion;
-        return this;
-    }
 
-    public AddonInstanceStatus withCurrentVersion(Consumer<Versions> currentVersionSetter) {
-        if(this.currentVersion == null ){
-            this.currentVersion = new Versions();
-            currentVersionSetter.accept(this.currentVersion);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get currentVersion
-     * @return currentVersion
-     */
-    public Versions getCurrentVersion() {
-        return currentVersion;
-    }
-
-    public void setCurrentVersion(Versions currentVersion) {
-        this.currentVersion = currentVersion;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currentVersion")
     
+    private Versions currentVersion;
 
-    public AddonInstanceStatus withMessage(String message) {
-        this.message = message;
+    public AddonInstanceStatus withStatus(StatusEnum status) {
+        this.status = status;
         return this;
     }
 
@@ -182,15 +153,15 @@ public class AddonInstanceStatus  {
 
 
     /**
-     * 安装错误详情
-     * @return message
+     * 插件实例状态
+     * @return status
      */
-    public String getMessage() {
-        return message;
+    public StatusEnum getStatus() {
+        return status;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setStatus(StatusEnum status) {
+        this.status = status;
     }
 
     
@@ -217,8 +188,8 @@ public class AddonInstanceStatus  {
 
     
 
-    public AddonInstanceStatus withStatus(StatusEnum status) {
-        this.status = status;
+    public AddonInstanceStatus withMessage(String message) {
+        this.message = message;
         return this;
     }
 
@@ -226,15 +197,15 @@ public class AddonInstanceStatus  {
 
 
     /**
-     * 插件实例状态
-     * @return status
+     * 安装错误详情
+     * @return message
      */
-    public StatusEnum getStatus() {
-        return status;
+    public String getMessage() {
+        return message;
     }
 
-    public void setStatus(StatusEnum status) {
-        this.status = status;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     
@@ -275,6 +246,35 @@ public class AddonInstanceStatus  {
 
     
 
+    public AddonInstanceStatus withCurrentVersion(Versions currentVersion) {
+        this.currentVersion = currentVersion;
+        return this;
+    }
+
+    public AddonInstanceStatus withCurrentVersion(Consumer<Versions> currentVersionSetter) {
+        if(this.currentVersion == null ){
+            this.currentVersion = new Versions();
+            currentVersionSetter.accept(this.currentVersion);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get currentVersion
+     * @return currentVersion
+     */
+    public Versions getCurrentVersion() {
+        return currentVersion;
+    }
+
+    public void setCurrentVersion(Versions currentVersion) {
+        this.currentVersion = currentVersion;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -284,25 +284,25 @@ public class AddonInstanceStatus  {
             return false;
         }
         AddonInstanceStatus addonInstanceStatus = (AddonInstanceStatus) o;
-        return Objects.equals(this.currentVersion, addonInstanceStatus.currentVersion) &&
-            Objects.equals(this.message, addonInstanceStatus.message) &&
+        return Objects.equals(this.status, addonInstanceStatus.status) &&
             Objects.equals(this.reason, addonInstanceStatus.reason) &&
-            Objects.equals(this.status, addonInstanceStatus.status) &&
-            Objects.equals(this.targetVersions, addonInstanceStatus.targetVersions);
+            Objects.equals(this.message, addonInstanceStatus.message) &&
+            Objects.equals(this.targetVersions, addonInstanceStatus.targetVersions) &&
+            Objects.equals(this.currentVersion, addonInstanceStatus.currentVersion);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(currentVersion, message, reason, status, targetVersions);
+        return Objects.hash(status, reason, message, targetVersions, currentVersion);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddonInstanceStatus {\n");
-        sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
-        sb.append("    message: ").append(toIndentedString(message)).append("\n");
-        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    targetVersions: ").append(toIndentedString(targetVersions)).append("\n");
+        sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.kps.v3.model.Keypairs;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -25,15 +26,15 @@ public class ListKeypairsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keypairs")
     
-    private List<Object> keypairs = null;
+    private List<Keypairs> keypairs = null;
     
-    public ListKeypairsResponse withKeypairs(List<Object> keypairs) {
+    public ListKeypairsResponse withKeypairs(List<Keypairs> keypairs) {
         this.keypairs = keypairs;
         return this;
     }
 
     
-    public ListKeypairsResponse addKeypairsItem(Object keypairsItem) {
+    public ListKeypairsResponse addKeypairsItem(Keypairs keypairsItem) {
         if(this.keypairs == null) {
             this.keypairs = new ArrayList<>();
         }
@@ -41,7 +42,7 @@ public class ListKeypairsResponse extends SdkResponse {
         return this;
     }
 
-    public ListKeypairsResponse withKeypairs(Consumer<List<Object>> keypairsSetter) {
+    public ListKeypairsResponse withKeypairs(Consumer<List<Keypairs>> keypairsSetter) {
         if(this.keypairs == null) {
             this.keypairs = new ArrayList<>();
         }
@@ -53,11 +54,11 @@ public class ListKeypairsResponse extends SdkResponse {
      * SSH密钥对信息详情
      * @return keypairs
      */
-    public List<Object> getKeypairs() {
+    public List<Keypairs> getKeypairs() {
         return keypairs;
     }
 
-    public void setKeypairs(List<Object> keypairs) {
+    public void setKeypairs(List<Keypairs> keypairs) {
         this.keypairs = keypairs;
     }
 

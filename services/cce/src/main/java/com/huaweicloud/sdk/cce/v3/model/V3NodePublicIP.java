@@ -15,11 +15,17 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * V3NodePublicIP
+ * 
  */
 public class V3NodePublicIP  {
 
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ids")
+    
+    private List<String> ids = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
@@ -32,12 +38,42 @@ public class V3NodePublicIP  {
     
     private V3NodeEIPSpec eip;
 
+    public V3NodePublicIP withIds(List<String> ids) {
+        this.ids = ids;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ids")
     
-    private List<String> ids = null;
+    public V3NodePublicIP addIdsItem(String idsItem) {
+        if(this.ids == null) {
+            this.ids = new ArrayList<>();
+        }
+        this.ids.add(idsItem);
+        return this;
+    }
+
+    public V3NodePublicIP withIds(Consumer<List<String>> idsSetter) {
+        if(this.ids == null) {
+            this.ids = new ArrayList<>();
+        }
+        idsSetter.accept(this.ids);
+        return this;
+    }
+
+    /**
+     * 已有的弹性IP的ID列表。数量不得大于待创建节点数 > 若已配置ids参数，则无需配置count和eip参数
+     * @return ids
+     */
+    public List<String> getIds() {
+        return ids;
+    }
+
+    public void setIds(List<String> ids) {
+        this.ids = ids;
+    }
+
     
+
     public V3NodePublicIP withCount(Integer count) {
         this.count = count;
         return this;
@@ -89,42 +125,6 @@ public class V3NodePublicIP  {
 
     
 
-    public V3NodePublicIP withIds(List<String> ids) {
-        this.ids = ids;
-        return this;
-    }
-
-    
-    public V3NodePublicIP addIdsItem(String idsItem) {
-        if(this.ids == null) {
-            this.ids = new ArrayList<>();
-        }
-        this.ids.add(idsItem);
-        return this;
-    }
-
-    public V3NodePublicIP withIds(Consumer<List<String>> idsSetter) {
-        if(this.ids == null) {
-            this.ids = new ArrayList<>();
-        }
-        idsSetter.accept(this.ids);
-        return this;
-    }
-
-    /**
-     * 已有的弹性IP的ID列表。数量不得大于待创建节点数 > 若已配置ids参数，则无需配置count和eip参数
-     * @return ids
-     */
-    public List<String> getIds() {
-        return ids;
-    }
-
-    public void setIds(List<String> ids) {
-        this.ids = ids;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -134,21 +134,21 @@ public class V3NodePublicIP  {
             return false;
         }
         V3NodePublicIP v3NodePublicIP = (V3NodePublicIP) o;
-        return Objects.equals(this.count, v3NodePublicIP.count) &&
-            Objects.equals(this.eip, v3NodePublicIP.eip) &&
-            Objects.equals(this.ids, v3NodePublicIP.ids);
+        return Objects.equals(this.ids, v3NodePublicIP.ids) &&
+            Objects.equals(this.count, v3NodePublicIP.count) &&
+            Objects.equals(this.eip, v3NodePublicIP.eip);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, eip, ids);
+        return Objects.hash(ids, count, eip);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class V3NodePublicIP {\n");
+        sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
-        sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -269,12 +269,6 @@ public class ListPortsRequest  {
     
     private String enterpriseProjectId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_id")
-    
-    private String zoneId;
-
     public ListPortsRequest withName(String name) {
         this.name = name;
         return this;
@@ -539,28 +533,6 @@ public class ListPortsRequest  {
 
     
 
-    public ListPortsRequest withZoneId(String zoneId) {
-        this.zoneId = zoneId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get zoneId
-     * @return zoneId
-     */
-    public String getZoneId() {
-        return zoneId;
-    }
-
-    public void setZoneId(String zoneId) {
-        this.zoneId = zoneId;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -581,12 +553,11 @@ public class ListPortsRequest  {
             Objects.equals(this.status, listPortsRequest.status) &&
             Objects.equals(this.marker, listPortsRequest.marker) &&
             Objects.equals(this.fixedIps, listPortsRequest.fixedIps) &&
-            Objects.equals(this.enterpriseProjectId, listPortsRequest.enterpriseProjectId) &&
-            Objects.equals(this.zoneId, listPortsRequest.zoneId);
+            Objects.equals(this.enterpriseProjectId, listPortsRequest.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, limit, adminStateUp, networkId, macAddress, deviceId, deviceOwner, status, marker, fixedIps, enterpriseProjectId, zoneId);
+        return Objects.hash(name, id, limit, adminStateUp, networkId, macAddress, deviceId, deviceOwner, status, marker, fixedIps, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -604,7 +575,6 @@ public class ListPortsRequest  {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

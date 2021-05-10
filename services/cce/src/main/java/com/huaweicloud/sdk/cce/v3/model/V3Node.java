@@ -15,22 +15,22 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * V3Node
+ * 
  */
 public class V3Node  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
-    private String apiVersion;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
     private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="apiVersion")
+    
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,28 +50,6 @@ public class V3Node  {
     
     private V3NodeStatus status;
 
-    public V3Node withApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API版本，固定值“v3”，该值不可修改。  
-     * @return apiVersion
-     */
-    public String getApiVersion() {
-        return apiVersion;
-    }
-
-    public void setApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-    }
-
-    
-
     public V3Node withKind(String kind) {
         this.kind = kind;
         return this;
@@ -90,6 +68,28 @@ public class V3Node  {
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    
+
+    public V3Node withApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API版本，固定值“v3”，该值不可修改。  
+     * @return apiVersion
+     */
+    public String getApiVersion() {
+        return apiVersion;
+    }
+
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
     }
 
     
@@ -190,22 +190,22 @@ public class V3Node  {
             return false;
         }
         V3Node v3Node = (V3Node) o;
-        return Objects.equals(this.apiVersion, v3Node.apiVersion) &&
-            Objects.equals(this.kind, v3Node.kind) &&
+        return Objects.equals(this.kind, v3Node.kind) &&
+            Objects.equals(this.apiVersion, v3Node.apiVersion) &&
             Objects.equals(this.metadata, v3Node.metadata) &&
             Objects.equals(this.spec, v3Node.spec) &&
             Objects.equals(this.status, v3Node.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, kind, metadata, spec, status);
+        return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class V3Node {\n");
-        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

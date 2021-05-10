@@ -31,6 +31,18 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="deleteVolume")
+    
+    private String deleteVolume;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="storageType")
+    
+    private String storageType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Cluster-ID")
     
     private String xClusterID;
@@ -79,6 +91,50 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
 
     
 
+    public DeleteCloudPersistentVolumeClaimsRequest withDeleteVolume(String deleteVolume) {
+        this.deleteVolume = deleteVolume;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get deleteVolume
+     * @return deleteVolume
+     */
+    public String getDeleteVolume() {
+        return deleteVolume;
+    }
+
+    public void setDeleteVolume(String deleteVolume) {
+        this.deleteVolume = deleteVolume;
+    }
+
+    
+
+    public DeleteCloudPersistentVolumeClaimsRequest withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get storageType
+     * @return storageType
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    
+
     public DeleteCloudPersistentVolumeClaimsRequest withXClusterID(String xClusterID) {
         this.xClusterID = xClusterID;
         return this;
@@ -114,11 +170,13 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
         DeleteCloudPersistentVolumeClaimsRequest deleteCloudPersistentVolumeClaimsRequest = (DeleteCloudPersistentVolumeClaimsRequest) o;
         return Objects.equals(this.name, deleteCloudPersistentVolumeClaimsRequest.name) &&
             Objects.equals(this.namespace, deleteCloudPersistentVolumeClaimsRequest.namespace) &&
+            Objects.equals(this.deleteVolume, deleteCloudPersistentVolumeClaimsRequest.deleteVolume) &&
+            Objects.equals(this.storageType, deleteCloudPersistentVolumeClaimsRequest.storageType) &&
             Objects.equals(this.xClusterID, deleteCloudPersistentVolumeClaimsRequest.xClusterID);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, namespace, xClusterID);
+        return Objects.hash(name, namespace, deleteVolume, storageType, xClusterID);
     }
     @Override
     public String toString() {
@@ -126,6 +184,8 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
         sb.append("class DeleteCloudPersistentVolumeClaimsRequest {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    deleteVolume: ").append(toIndentedString(deleteVolume)).append("\n");
+        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
         sb.append("    xClusterID: ").append(toIndentedString(xClusterID)).append("\n");
         sb.append("}");
         return sb.toString();

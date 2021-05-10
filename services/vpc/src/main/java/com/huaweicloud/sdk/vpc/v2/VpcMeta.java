@@ -564,14 +564,6 @@ public class VpcMeta {
                 req.setEnterpriseProjectId(v);
             })
         );
-        builder.withRequestField("zone_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPortsRequest::getZoneId, (req, v) -> {
-                req.setZoneId(v);
-            })
-        );
 
         // response
         
@@ -726,14 +718,6 @@ public class VpcMeta {
             String.class,
             f -> f.withMarshaller(ListSubnetsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("scope",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubnetsRequest::getScope, (req, v) -> {
-                req.setScope(v);
             })
         );
 

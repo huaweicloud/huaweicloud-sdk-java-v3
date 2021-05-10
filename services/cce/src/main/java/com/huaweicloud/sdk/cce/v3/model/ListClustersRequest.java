@@ -172,11 +172,6 @@ public class ListClustersRequest  {
         public static final TypeEnum VIRTUALMACHINE = new TypeEnum("VirtualMachine");
         
         /**
-         * Enum BAREMETAL for value: "BareMetal"
-         */
-        public static final TypeEnum BAREMETAL = new TypeEnum("BareMetal");
-        
-        /**
          * Enum ARM64 for value: "ARM64"
          */
         public static final TypeEnum ARM64 = new TypeEnum("ARM64");
@@ -187,7 +182,6 @@ public class ListClustersRequest  {
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("VirtualMachine", VIRTUALMACHINE);
-            map.put("BareMetal", BAREMETAL);
             map.put("ARM64", ARM64);
             return Collections.unmodifiableMap(map);
         }

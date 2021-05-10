@@ -23,15 +23,15 @@ public class Metadata  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="annotations")
+    @JsonProperty(value="uid")
     
-    private Map<String, String> annotations = null;
-    
+    private String uid;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creationTimestamp")
+    @JsonProperty(value="name")
     
-    private LocalDate creationTimestamp;
+    private String name;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,21 +41,101 @@ public class Metadata  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="annotations")
     
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="uid")
+    private Map<String, String> annotations = null;
     
-    private String uid;
-
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateTimestamp")
     
     private LocalDate updateTimestamp;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="creationTimestamp")
+    
+    private LocalDate creationTimestamp;
+
+    public Metadata withUid(String uid) {
+        this.uid = uid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 唯一id标识
+     * @return uid
+     */
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    
+
+    public Metadata withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 插件名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
+    public Metadata withLabels(Map<String, String> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    
+
+    public Metadata putLabelsItem(String key, String labelsItem) {
+        if(this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        this.labels.put(key, labelsItem);
+        return this;
+    }
+
+    public Metadata withLabels(Consumer<Map<String, String>> labelsSetter) {
+        if(this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+    /**
+     * 插件标签，key/value对格式，接口保留字段，填写不会生效
+     * @return labels
+     */
+    public Map<String, String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(Map<String, String> labels) {
+        this.labels = labels;
+    }
+
+    
 
     public Metadata withAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
@@ -93,108 +173,6 @@ public class Metadata  {
 
     
 
-    public Metadata withCreationTimestamp(LocalDate creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 创建时间
-     * @return creationTimestamp
-     */
-    public LocalDate getCreationTimestamp() {
-        return creationTimestamp;
-    }
-
-    public void setCreationTimestamp(LocalDate creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
-    }
-
-    
-
-    public Metadata withLabels(Map<String, String> labels) {
-        this.labels = labels;
-        return this;
-    }
-
-    
-
-    public Metadata putLabelsItem(String key, String labelsItem) {
-        if(this.labels == null) {
-            this.labels = new HashMap<>();
-        }
-        this.labels.put(key, labelsItem);
-        return this;
-    }
-
-    public Metadata withLabels(Consumer<Map<String, String>> labelsSetter) {
-        if(this.labels == null) {
-            this.labels = new HashMap<>();
-        }
-        labelsSetter.accept(this.labels);
-        return this;
-    }
-    /**
-     * 插件标签，key/value对格式
-     * @return labels
-     */
-    public Map<String, String> getLabels() {
-        return labels;
-    }
-
-    public void setLabels(Map<String, String> labels) {
-        this.labels = labels;
-    }
-
-    
-
-    public Metadata withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 插件名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-
-    public Metadata withUid(String uid) {
-        this.uid = uid;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 唯一id标识
-     * @return uid
-     */
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    
-
     public Metadata withUpdateTimestamp(LocalDate updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
         return this;
@@ -217,6 +195,28 @@ public class Metadata  {
 
     
 
+    public Metadata withCreationTimestamp(LocalDate creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建时间
+     * @return creationTimestamp
+     */
+    public LocalDate getCreationTimestamp() {
+        return creationTimestamp;
+    }
+
+    public void setCreationTimestamp(LocalDate creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -226,27 +226,27 @@ public class Metadata  {
             return false;
         }
         Metadata metadata = (Metadata) o;
-        return Objects.equals(this.annotations, metadata.annotations) &&
-            Objects.equals(this.creationTimestamp, metadata.creationTimestamp) &&
-            Objects.equals(this.labels, metadata.labels) &&
+        return Objects.equals(this.uid, metadata.uid) &&
             Objects.equals(this.name, metadata.name) &&
-            Objects.equals(this.uid, metadata.uid) &&
-            Objects.equals(this.updateTimestamp, metadata.updateTimestamp);
+            Objects.equals(this.labels, metadata.labels) &&
+            Objects.equals(this.annotations, metadata.annotations) &&
+            Objects.equals(this.updateTimestamp, metadata.updateTimestamp) &&
+            Objects.equals(this.creationTimestamp, metadata.creationTimestamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(annotations, creationTimestamp, labels, name, uid, updateTimestamp);
+        return Objects.hash(uid, name, labels, annotations, updateTimestamp, creationTimestamp);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Metadata {\n");
-        sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
-        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
+        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

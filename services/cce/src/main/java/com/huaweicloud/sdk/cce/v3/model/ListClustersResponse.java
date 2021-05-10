@@ -24,6 +24,12 @@ public class ListClustersResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="kind")
+    
+    private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
     private String apiVersion;
@@ -34,11 +40,27 @@ public class ListClustersResponse extends SdkResponse {
     
     private List<V3Cluster> items = null;
     
+    public ListClustersResponse withKind(String kind) {
+        this.kind = kind;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
     
-    private String kind;
+
+
+    /**
+     * Api type
+     * @return kind
+     */
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    
 
     public ListClustersResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -98,28 +120,6 @@ public class ListClustersResponse extends SdkResponse {
 
     
 
-    public ListClustersResponse withKind(String kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Api type
-     * @return kind
-     */
-    public String getKind() {
-        return kind;
-    }
-
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -129,21 +129,21 @@ public class ListClustersResponse extends SdkResponse {
             return false;
         }
         ListClustersResponse listClustersResponse = (ListClustersResponse) o;
-        return Objects.equals(this.apiVersion, listClustersResponse.apiVersion) &&
-            Objects.equals(this.items, listClustersResponse.items) &&
-            Objects.equals(this.kind, listClustersResponse.kind);
+        return Objects.equals(this.kind, listClustersResponse.kind) &&
+            Objects.equals(this.apiVersion, listClustersResponse.apiVersion) &&
+            Objects.equals(this.items, listClustersResponse.items);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, items, kind);
+        return Objects.hash(kind, apiVersion, items);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListClustersResponse {\n");
+        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
-        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("}");
         return sb.toString();
     }

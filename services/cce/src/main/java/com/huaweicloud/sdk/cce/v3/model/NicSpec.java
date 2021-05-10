@@ -21,6 +21,12 @@ public class NicSpec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="subnetId")
+    
+    private String subnetId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fixedIps")
     
     private List<String> fixedIps = null;
@@ -31,11 +37,27 @@ public class NicSpec  {
     
     private String ipBlock;
 
+    public NicSpec withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnetId")
     
-    private String subnetId;
+
+
+    /**
+     * 网卡所在子网的ID。  
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    
 
     public NicSpec withFixedIps(List<String> fixedIps) {
         this.fixedIps = fixedIps;
@@ -95,28 +117,6 @@ public class NicSpec  {
 
     
 
-    public NicSpec withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 网卡所在子网的ID。  
-     * @return subnetId
-     */
-    public String getSubnetId() {
-        return subnetId;
-    }
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -126,21 +126,21 @@ public class NicSpec  {
             return false;
         }
         NicSpec nicSpec = (NicSpec) o;
-        return Objects.equals(this.fixedIps, nicSpec.fixedIps) &&
-            Objects.equals(this.ipBlock, nicSpec.ipBlock) &&
-            Objects.equals(this.subnetId, nicSpec.subnetId);
+        return Objects.equals(this.subnetId, nicSpec.subnetId) &&
+            Objects.equals(this.fixedIps, nicSpec.fixedIps) &&
+            Objects.equals(this.ipBlock, nicSpec.ipBlock);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(fixedIps, ipBlock, subnetId);
+        return Objects.hash(subnetId, fixedIps, ipBlock);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NicSpec {\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
         sb.append("    ipBlock: ").append(toIndentedString(ipBlock)).append("\n");
-        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

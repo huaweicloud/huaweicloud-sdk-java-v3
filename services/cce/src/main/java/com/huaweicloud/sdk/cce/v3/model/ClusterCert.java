@@ -19,6 +19,12 @@ public class ClusterCert  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="server")
+    
+    private String server;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificate-authority-data")
     
     private String certificateAuthorityData;
@@ -29,11 +35,27 @@ public class ClusterCert  {
     
     private Boolean insecureSkipTlsVerify;
 
+    public ClusterCert withServer(String server) {
+        this.server = server;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
     
-    private String server;
+
+
+    /**
+     * 服务器地址。
+     * @return server
+     */
+    public String getServer() {
+        return server;
+    }
+
+    public void setServer(String server) {
+        this.server = server;
+    }
+
+    
 
     public ClusterCert withCertificateAuthorityData(String certificateAuthorityData) {
         this.certificateAuthorityData = certificateAuthorityData;
@@ -79,28 +101,6 @@ public class ClusterCert  {
 
     
 
-    public ClusterCert withServer(String server) {
-        this.server = server;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 服务器地址。
-     * @return server
-     */
-    public String getServer() {
-        return server;
-    }
-
-    public void setServer(String server) {
-        this.server = server;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,21 +110,21 @@ public class ClusterCert  {
             return false;
         }
         ClusterCert clusterCert = (ClusterCert) o;
-        return Objects.equals(this.certificateAuthorityData, clusterCert.certificateAuthorityData) &&
-            Objects.equals(this.insecureSkipTlsVerify, clusterCert.insecureSkipTlsVerify) &&
-            Objects.equals(this.server, clusterCert.server);
+        return Objects.equals(this.server, clusterCert.server) &&
+            Objects.equals(this.certificateAuthorityData, clusterCert.certificateAuthorityData) &&
+            Objects.equals(this.insecureSkipTlsVerify, clusterCert.insecureSkipTlsVerify);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(certificateAuthorityData, insecureSkipTlsVerify, server);
+        return Objects.hash(server, certificateAuthorityData, insecureSkipTlsVerify);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterCert {\n");
+        sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    certificateAuthorityData: ").append(toIndentedString(certificateAuthorityData)).append("\n");
         sb.append("    insecureSkipTlsVerify: ").append(toIndentedString(insecureSkipTlsVerify)).append("\n");
-        sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("}");
         return sb.toString();
     }

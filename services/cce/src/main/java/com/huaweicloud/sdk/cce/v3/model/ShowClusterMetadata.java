@@ -15,28 +15,10 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ShowClusterMetadata
+ * 
  */
 public class ShowClusterMetadata  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="annotations")
-    
-    private Map<String, String> annotations = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creationTimestamp")
-    
-    private String creationTimestamp;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="labels")
-    
-    private String labels;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,9 +34,71 @@ public class ShowClusterMetadata  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="annotations")
+    
+    private Map<String, String> annotations = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="creationTimestamp")
+    
+    private String creationTimestamp;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateTimestamp")
     
     private String updateTimestamp;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="labels")
+    
+    private String labels;
+
+    public ShowClusterMetadata withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群名称。  命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-128位，且不能以中划线(-)结尾。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
+    public ShowClusterMetadata withUid(String uid) {
+        this.uid = uid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源唯一标识，创建成功后自动生成，填写无效
+     * @return uid
+     */
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    
 
     public ShowClusterMetadata withAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
@@ -114,72 +158,6 @@ public class ShowClusterMetadata  {
 
     
 
-    public ShowClusterMetadata withLabels(String labels) {
-        this.labels = labels;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群标签，key/value对格式。  该字段值由系统自动生成，用于升级时前端识别集群支持的特性开关，用户指定无效，与创建时的labels无必然关系。
-     * @return labels
-     */
-    public String getLabels() {
-        return labels;
-    }
-
-    public void setLabels(String labels) {
-        this.labels = labels;
-    }
-
-    
-
-    public ShowClusterMetadata withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群名称。  命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-128位，且不能以中划线(-)结尾。
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-
-    public ShowClusterMetadata withUid(String uid) {
-        this.uid = uid;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 资源唯一标识，创建成功后自动生成，填写无效
-     * @return uid
-     */
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    
-
     public ShowClusterMetadata withUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
         return this;
@@ -202,6 +180,28 @@ public class ShowClusterMetadata  {
 
     
 
+    public ShowClusterMetadata withLabels(String labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群标签，key/value对格式。  该字段值由系统自动生成，用于升级时前端识别集群支持的特性开关，用户指定无效，与创建时的labels无必然关系。
+     * @return labels
+     */
+    public String getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String labels) {
+        this.labels = labels;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -211,27 +211,27 @@ public class ShowClusterMetadata  {
             return false;
         }
         ShowClusterMetadata showClusterMetadata = (ShowClusterMetadata) o;
-        return Objects.equals(this.annotations, showClusterMetadata.annotations) &&
-            Objects.equals(this.creationTimestamp, showClusterMetadata.creationTimestamp) &&
-            Objects.equals(this.labels, showClusterMetadata.labels) &&
-            Objects.equals(this.name, showClusterMetadata.name) &&
+        return Objects.equals(this.name, showClusterMetadata.name) &&
             Objects.equals(this.uid, showClusterMetadata.uid) &&
-            Objects.equals(this.updateTimestamp, showClusterMetadata.updateTimestamp);
+            Objects.equals(this.annotations, showClusterMetadata.annotations) &&
+            Objects.equals(this.creationTimestamp, showClusterMetadata.creationTimestamp) &&
+            Objects.equals(this.updateTimestamp, showClusterMetadata.updateTimestamp) &&
+            Objects.equals(this.labels, showClusterMetadata.labels);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(annotations, creationTimestamp, labels, name, uid, updateTimestamp);
+        return Objects.hash(name, uid, annotations, creationTimestamp, updateTimestamp, labels);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClusterMetadata {\n");
-        sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
-        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
+        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

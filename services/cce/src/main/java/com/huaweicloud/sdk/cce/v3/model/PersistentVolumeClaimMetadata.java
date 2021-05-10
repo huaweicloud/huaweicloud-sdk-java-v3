@@ -19,37 +19,15 @@ public class PersistentVolumeClaimMetadata  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="labels")
-    
-    private String labels;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     private String name;
 
-    public PersistentVolumeClaimMetadata withLabels(String labels) {
-        this.labels = labels;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="labels")
     
-
-
-    /**
-     * PersistentVolumeClaim标签，key/value对格式。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key， DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。
-     * @return labels
-     */
-    public String getLabels() {
-        return labels;
-    }
-
-    public void setLabels(String labels) {
-        this.labels = labels;
-    }
-
-    
+    private String labels;
 
     public PersistentVolumeClaimMetadata withName(String name) {
         this.name = name;
@@ -73,6 +51,28 @@ public class PersistentVolumeClaimMetadata  {
 
     
 
+    public PersistentVolumeClaimMetadata withLabels(String labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    
+
+
+    /**
+     * PersistentVolumeClaim标签，key/value对格式。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key， DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。
+     * @return labels
+     */
+    public String getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String labels) {
+        this.labels = labels;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,19 +82,19 @@ public class PersistentVolumeClaimMetadata  {
             return false;
         }
         PersistentVolumeClaimMetadata persistentVolumeClaimMetadata = (PersistentVolumeClaimMetadata) o;
-        return Objects.equals(this.labels, persistentVolumeClaimMetadata.labels) &&
-            Objects.equals(this.name, persistentVolumeClaimMetadata.name);
+        return Objects.equals(this.name, persistentVolumeClaimMetadata.name) &&
+            Objects.equals(this.labels, persistentVolumeClaimMetadata.labels);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(labels, name);
+        return Objects.hash(name, labels);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PersistentVolumeClaimMetadata {\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

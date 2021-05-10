@@ -87,7 +87,7 @@ public class CceAsyncClient {
 
     /**
      * 创建集群
-     * 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[创建节点](https://support.huaweicloud.com/api-cce/cce_02_0242.html)添加节点。   &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt;   - 调用该接口创建集群时，默认不安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。若需安装ICAgent，请参照[安装ICAgent](https://support.huaweicloud.com/usermanual-apm/apm_02_0013.html)。 &gt;   - 默认情况下，一个账户只能创建 5 个集群（每个Region下），如果您需要创建更多的集群，请[提交工单](https://console.huaweicloud.com/console/#/quota)申请增加配额。
+     * 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[[创建节点](https://support.huaweicloud.com/api-cce/cce_02_0242.html)](tag:hws)[[创建节点](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0242.html)](tag:hws_hk)添加节点。 &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt;   - 调用该接口创建集群时，默认不安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。若需安装ICAgent，请参照[[安装ICAgent](https://support.huaweicloud.com/usermanual-apm/apm_02_0013.html)](tag:hws)[[安装ICAgent](https://support.huaweicloud.com/intl/zh-cn/usermanual-apm/apm_02_0013.html)](tag:hws_hk)。 &gt;   - 默认情况下，一个帐户只能创建 5 个集群（每个Region下），如果您需要创建更多的集群，请[[提交工单](https://console.huaweicloud.com/console/#/quota)](tag:hws)[[提交工单](https://console-intl.huaweicloud.com/console/?locale&#x3D;zh-cn#/quota)](tag:hws_hk)申请增加配额。
      *
      * @param CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
@@ -98,7 +98,7 @@ public class CceAsyncClient {
 
     /**
      * 创建集群
-     * 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[创建节点](https://support.huaweicloud.com/api-cce/cce_02_0242.html)添加节点。   &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt;   - 调用该接口创建集群时，默认不安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。若需安装ICAgent，请参照[安装ICAgent](https://support.huaweicloud.com/usermanual-apm/apm_02_0013.html)。 &gt;   - 默认情况下，一个账户只能创建 5 个集群（每个Region下），如果您需要创建更多的集群，请[提交工单](https://console.huaweicloud.com/console/#/quota)申请增加配额。
+     * 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[[创建节点](https://support.huaweicloud.com/api-cce/cce_02_0242.html)](tag:hws)[[创建节点](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0242.html)](tag:hws_hk)添加节点。 &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。 &gt;   - 调用该接口创建集群时，默认不安装ICAgent。ICAgent是应用性能管理APM的采集代理，运行在应用所在的服务器上，用于实时采集探针所获取的数据，安装ICAgent是使用应用性能管理APM的前提。若需安装ICAgent，请参照[[安装ICAgent](https://support.huaweicloud.com/usermanual-apm/apm_02_0013.html)](tag:hws)[[安装ICAgent](https://support.huaweicloud.com/intl/zh-cn/usermanual-apm/apm_02_0013.html)](tag:hws_hk)。 &gt;   - 默认情况下，一个帐户只能创建 5 个集群（每个Region下），如果您需要创建更多的集群，请[[提交工单](https://console.huaweicloud.com/console/#/quota)](tag:hws)[[提交工单](https://console-intl.huaweicloud.com/console/?locale&#x3D;zh-cn#/quota)](tag:hws_hk)申请增加配额。
      *
      * @param CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
@@ -131,7 +131,7 @@ public class CceAsyncClient {
 
     /**
      * 创建节点
-     * 该API用于在指定集群下创建节点。 &gt; 若无集群，请先[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 该API用于在指定集群下创建节点。 &gt; 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param CreateNodeRequest 请求对象
      * @return CompletableFuture<CreateNodeResponse>
@@ -142,7 +142,7 @@ public class CceAsyncClient {
 
     /**
      * 创建节点
-     * 该API用于在指定集群下创建节点。 &gt; 若无集群，请先[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 该API用于在指定集群下创建节点。 &gt; 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      *
      * @param CreateNodeRequest 请求对象
      * @return AsyncInvoker<CreateNodeRequest, CreateNodeResponse>
@@ -153,7 +153,7 @@ public class CceAsyncClient {
 
     /**
      * 创建节点池
-     * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt; 若无集群，请先[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径 
+     * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt; 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径 
      *
      * @param CreateNodePoolRequest 请求对象
      * @return CompletableFuture<CreateNodePoolResponse>
@@ -164,7 +164,7 @@ public class CceAsyncClient {
 
     /**
      * 创建节点池
-     * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt; 若无集群，请先[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径 
+     * 该API用于在指定集群下创建节点池。仅支持集群在处于可用、扩容、缩容状态时调用。 &gt; 若无集群，请先[[创建集群](https://support.huaweicloud.com/api-cce/cce_02_0236.html)](tag:hws)[[创建集群](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0236.html)](tag:hws_hk)。 &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径 
      *
      * @param CreateNodePoolRequest 请求对象
      * @return AsyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse>
@@ -285,7 +285,7 @@ public class CceAsyncClient {
 
     /**
      * 集群休眠
-     * 1、集群休眠后，将无法在此集群上创建和管理工作负载等资源。  2、按需付费集群休眠后，将暂停收取控制节点资源费用，集群所属的节点、绑定的弹性IP、带宽等资源按各自的计费方式（“包年/包月”或“按需付费”）进行收费。
+     * 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
      *
      * @param HibernateClusterRequest 请求对象
      * @return CompletableFuture<HibernateClusterResponse>
@@ -296,7 +296,7 @@ public class CceAsyncClient {
 
     /**
      * 集群休眠
-     * 1、集群休眠后，将无法在此集群上创建和管理工作负载等资源。  2、按需付费集群休眠后，将暂停收取控制节点资源费用，集群所属的节点、绑定的弹性IP、带宽等资源按各自的计费方式（“包年/包月”或“按需付费”）进行收费。
+     * 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
      *
      * @param HibernateClusterRequest 请求对象
      * @return AsyncInvoker<HibernateClusterRequest, HibernateClusterResponse>

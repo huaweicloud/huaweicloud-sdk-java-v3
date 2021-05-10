@@ -28,6 +28,12 @@ public class ListSnapshotsResponse extends SdkResponse {
     
     private List<Snapshots> snapshots = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    private Integer count;
+
     public ListSnapshotsResponse withSnapshots(List<Snapshots> snapshots) {
         this.snapshots = snapshots;
         return this;
@@ -64,6 +70,28 @@ public class ListSnapshotsResponse extends SdkResponse {
 
     
 
+    public ListSnapshotsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 快照对象列表总数
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -73,17 +101,19 @@ public class ListSnapshotsResponse extends SdkResponse {
             return false;
         }
         ListSnapshotsResponse listSnapshotsResponse = (ListSnapshotsResponse) o;
-        return Objects.equals(this.snapshots, listSnapshotsResponse.snapshots);
+        return Objects.equals(this.snapshots, listSnapshotsResponse.snapshots) &&
+            Objects.equals(this.count, listSnapshotsResponse.count);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(snapshots);
+        return Objects.hash(snapshots, count);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSnapshotsResponse {\n");
         sb.append("    snapshots: ").append(toIndentedString(snapshots)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

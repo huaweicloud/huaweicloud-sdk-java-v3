@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CCEClusterNodeInformation
+ * 
  */
 public class CCEClusterNodeInformation  {
 

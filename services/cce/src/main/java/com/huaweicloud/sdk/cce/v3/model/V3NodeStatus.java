@@ -17,22 +17,10 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * V3NodeStatus
+ * 
  */
 public class V3NodeStatus  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleteStatus")
-    
-    private DeleteStatus deleteStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobID")
-    
-    private String jobID;
     /**
      * 节点状态。
      */
@@ -162,6 +150,18 @@ public class V3NodeStatus  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="jobID")
+    
+    private String jobID;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="serverId")
+    
+    private String serverId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="privateIP")
     
     private String privateIP;
@@ -174,35 +174,28 @@ public class V3NodeStatus  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="serverId")
+    @JsonProperty(value="deleteStatus")
     
-    private String serverId;
+    private DeleteStatus deleteStatus;
 
-    public V3NodeStatus withDeleteStatus(DeleteStatus deleteStatus) {
-        this.deleteStatus = deleteStatus;
+    public V3NodeStatus withPhase(PhaseEnum phase) {
+        this.phase = phase;
         return this;
     }
 
-    public V3NodeStatus withDeleteStatus(Consumer<DeleteStatus> deleteStatusSetter) {
-        if(this.deleteStatus == null ){
-            this.deleteStatus = new DeleteStatus();
-            deleteStatusSetter.accept(this.deleteStatus);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get deleteStatus
-     * @return deleteStatus
+     * 节点状态。
+     * @return phase
      */
-    public DeleteStatus getDeleteStatus() {
-        return deleteStatus;
+    public PhaseEnum getPhase() {
+        return phase;
     }
 
-    public void setDeleteStatus(DeleteStatus deleteStatus) {
-        this.deleteStatus = deleteStatus;
+    public void setPhase(PhaseEnum phase) {
+        this.phase = phase;
     }
 
     
@@ -229,8 +222,8 @@ public class V3NodeStatus  {
 
     
 
-    public V3NodeStatus withPhase(PhaseEnum phase) {
-        this.phase = phase;
+    public V3NodeStatus withServerId(String serverId) {
+        this.serverId = serverId;
         return this;
     }
 
@@ -238,15 +231,15 @@ public class V3NodeStatus  {
 
 
     /**
-     * 节点状态。
-     * @return phase
+     * 底层云服务器或裸金属节点ID。
+     * @return serverId
      */
-    public PhaseEnum getPhase() {
-        return phase;
+    public String getServerId() {
+        return serverId;
     }
 
-    public void setPhase(PhaseEnum phase) {
-        this.phase = phase;
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
     }
 
     
@@ -282,7 +275,7 @@ public class V3NodeStatus  {
 
 
     /**
-     * 节点弹性公网IP地址。
+     * 节点弹性公网IP地址。如果ECS的数据没有实时同步，可在界面上通过“同步节点信息”手动进行更新。
      * @return publicIP
      */
     public String getPublicIP() {
@@ -295,24 +288,31 @@ public class V3NodeStatus  {
 
     
 
-    public V3NodeStatus withServerId(String serverId) {
-        this.serverId = serverId;
+    public V3NodeStatus withDeleteStatus(DeleteStatus deleteStatus) {
+        this.deleteStatus = deleteStatus;
         return this;
     }
 
-    
+    public V3NodeStatus withDeleteStatus(Consumer<DeleteStatus> deleteStatusSetter) {
+        if(this.deleteStatus == null ){
+            this.deleteStatus = new DeleteStatus();
+            deleteStatusSetter.accept(this.deleteStatus);
+        }
+        
+        return this;
+    }
 
 
     /**
-     * 底层云服务器或裸金属节点ID。
-     * @return serverId
+     * Get deleteStatus
+     * @return deleteStatus
      */
-    public String getServerId() {
-        return serverId;
+    public DeleteStatus getDeleteStatus() {
+        return deleteStatus;
     }
 
-    public void setServerId(String serverId) {
-        this.serverId = serverId;
+    public void setDeleteStatus(DeleteStatus deleteStatus) {
+        this.deleteStatus = deleteStatus;
     }
 
     
@@ -326,27 +326,27 @@ public class V3NodeStatus  {
             return false;
         }
         V3NodeStatus v3NodeStatus = (V3NodeStatus) o;
-        return Objects.equals(this.deleteStatus, v3NodeStatus.deleteStatus) &&
+        return Objects.equals(this.phase, v3NodeStatus.phase) &&
             Objects.equals(this.jobID, v3NodeStatus.jobID) &&
-            Objects.equals(this.phase, v3NodeStatus.phase) &&
+            Objects.equals(this.serverId, v3NodeStatus.serverId) &&
             Objects.equals(this.privateIP, v3NodeStatus.privateIP) &&
             Objects.equals(this.publicIP, v3NodeStatus.publicIP) &&
-            Objects.equals(this.serverId, v3NodeStatus.serverId);
+            Objects.equals(this.deleteStatus, v3NodeStatus.deleteStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deleteStatus, jobID, phase, privateIP, publicIP, serverId);
+        return Objects.hash(phase, jobID, serverId, privateIP, publicIP, deleteStatus);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class V3NodeStatus {\n");
-        sb.append("    deleteStatus: ").append(toIndentedString(deleteStatus)).append("\n");
-        sb.append("    jobID: ").append(toIndentedString(jobID)).append("\n");
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
+        sb.append("    jobID: ").append(toIndentedString(jobID)).append("\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    privateIP: ").append(toIndentedString(privateIP)).append("\n");
         sb.append("    publicIP: ").append(toIndentedString(publicIP)).append("\n");
-        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    deleteStatus: ").append(toIndentedString(deleteStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

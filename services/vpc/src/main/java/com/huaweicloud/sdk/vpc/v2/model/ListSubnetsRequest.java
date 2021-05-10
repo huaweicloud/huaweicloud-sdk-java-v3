@@ -35,12 +35,6 @@ public class ListSubnetsRequest  {
     
     private String vpcId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
-    private String scope;
-
     public ListSubnetsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -107,28 +101,6 @@ public class ListSubnetsRequest  {
 
     
 
-    public ListSubnetsRequest withScope(String scope) {
-        this.scope = scope;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get scope
-     * @return scope
-     */
-    public String getScope() {
-        return scope;
-    }
-
-    public void setScope(String scope) {
-        this.scope = scope;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -140,12 +112,11 @@ public class ListSubnetsRequest  {
         ListSubnetsRequest listSubnetsRequest = (ListSubnetsRequest) o;
         return Objects.equals(this.limit, listSubnetsRequest.limit) &&
             Objects.equals(this.marker, listSubnetsRequest.marker) &&
-            Objects.equals(this.vpcId, listSubnetsRequest.vpcId) &&
-            Objects.equals(this.scope, listSubnetsRequest.scope);
+            Objects.equals(this.vpcId, listSubnetsRequest.vpcId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, vpcId, scope);
+        return Objects.hash(limit, marker, vpcId);
     }
     @Override
     public String toString() {
@@ -154,7 +125,6 @@ public class ListSubnetsRequest  {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("}");
         return sb.toString();
     }

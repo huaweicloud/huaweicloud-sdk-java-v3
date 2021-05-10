@@ -22,9 +22,9 @@ public class InstanceRequestSpec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addonTemplateName")
+    @JsonProperty(value="version")
     
-    private String addonTemplateName;
+    private String version;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,12 +40,12 @@ public class InstanceRequestSpec  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
+    @JsonProperty(value="addonTemplateName")
     
-    private String version;
+    private String addonTemplateName;
 
-    public InstanceRequestSpec withAddonTemplateName(String addonTemplateName) {
-        this.addonTemplateName = addonTemplateName;
+    public InstanceRequestSpec withVersion(String version) {
+        this.version = version;
         return this;
     }
 
@@ -53,15 +53,15 @@ public class InstanceRequestSpec  {
 
 
     /**
-     * 待安装插件模板名称，如coredns
-     * @return addonTemplateName
+     * 待安装、升级插件的具体版本版本号，例如1.0.0
+     * @return version
      */
-    public String getAddonTemplateName() {
-        return addonTemplateName;
+    public String getVersion() {
+        return version;
     }
 
-    public void setAddonTemplateName(String addonTemplateName) {
-        this.addonTemplateName = addonTemplateName;
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     
@@ -111,7 +111,7 @@ public class InstanceRequestSpec  {
         return this;
     }
     /**
-     * 插件模板安装参数（各插件不同）
+     * 插件模板安装参数（各插件不同），升级插件时需要填写全量安装参数，未填写参数将使用插件模板中的默认值，当前插件安装参数可通过查询插件实例接口获取。
      * @return values
      */
     public Map<String, Object> getValues() {
@@ -124,8 +124,8 @@ public class InstanceRequestSpec  {
 
     
 
-    public InstanceRequestSpec withVersion(String version) {
-        this.version = version;
+    public InstanceRequestSpec withAddonTemplateName(String addonTemplateName) {
+        this.addonTemplateName = addonTemplateName;
         return this;
     }
 
@@ -133,15 +133,15 @@ public class InstanceRequestSpec  {
 
 
     /**
-     * 待安装、升级插件的具体版本版本号，例如1.0.0
-     * @return version
+     * 待安装插件模板名称，如coredns
+     * @return addonTemplateName
      */
-    public String getVersion() {
-        return version;
+    public String getAddonTemplateName() {
+        return addonTemplateName;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setAddonTemplateName(String addonTemplateName) {
+        this.addonTemplateName = addonTemplateName;
     }
 
     
@@ -155,23 +155,23 @@ public class InstanceRequestSpec  {
             return false;
         }
         InstanceRequestSpec instanceRequestSpec = (InstanceRequestSpec) o;
-        return Objects.equals(this.addonTemplateName, instanceRequestSpec.addonTemplateName) &&
+        return Objects.equals(this.version, instanceRequestSpec.version) &&
             Objects.equals(this.clusterID, instanceRequestSpec.clusterID) &&
             Objects.equals(this.values, instanceRequestSpec.values) &&
-            Objects.equals(this.version, instanceRequestSpec.version);
+            Objects.equals(this.addonTemplateName, instanceRequestSpec.addonTemplateName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(addonTemplateName, clusterID, values, version);
+        return Objects.hash(version, clusterID, values, addonTemplateName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceRequestSpec {\n");
-        sb.append("    addonTemplateName: ").append(toIndentedString(addonTemplateName)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    clusterID: ").append(toIndentedString(clusterID)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    addonTemplateName: ").append(toIndentedString(addonTemplateName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

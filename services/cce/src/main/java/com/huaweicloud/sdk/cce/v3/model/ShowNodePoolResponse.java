@@ -24,15 +24,15 @@ public class ShowNodePoolResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
-    private String apiVersion;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kind")
     
     private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="apiVersion")
+    
+    private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,28 +52,6 @@ public class ShowNodePoolResponse extends SdkResponse {
     
     private NodePoolStatus status;
 
-    public ShowNodePoolResponse withApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API版本，固定值“v3”。
-     * @return apiVersion
-     */
-    public String getApiVersion() {
-        return apiVersion;
-    }
-
-    public void setApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-    }
-
-    
-
     public ShowNodePoolResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -92,6 +70,28 @@ public class ShowNodePoolResponse extends SdkResponse {
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    
+
+    public ShowNodePoolResponse withApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API版本，固定值“v3”。
+     * @return apiVersion
+     */
+    public String getApiVersion() {
+        return apiVersion;
+    }
+
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
     }
 
     
@@ -192,22 +192,22 @@ public class ShowNodePoolResponse extends SdkResponse {
             return false;
         }
         ShowNodePoolResponse showNodePoolResponse = (ShowNodePoolResponse) o;
-        return Objects.equals(this.apiVersion, showNodePoolResponse.apiVersion) &&
-            Objects.equals(this.kind, showNodePoolResponse.kind) &&
+        return Objects.equals(this.kind, showNodePoolResponse.kind) &&
+            Objects.equals(this.apiVersion, showNodePoolResponse.apiVersion) &&
             Objects.equals(this.metadata, showNodePoolResponse.metadata) &&
             Objects.equals(this.spec, showNodePoolResponse.spec) &&
             Objects.equals(this.status, showNodePoolResponse.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, kind, metadata, spec, status);
+        return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowNodePoolResponse {\n");
-        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

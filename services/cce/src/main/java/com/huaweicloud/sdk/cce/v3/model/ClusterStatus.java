@@ -15,22 +15,34 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ClusterStatus
+ * 
  */
 public class ClusterStatus  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleteOption")
+    @JsonProperty(value="phase")
     
-    private Object deleteOption;
+    private String phase;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleteStatus")
+    @JsonProperty(value="jobID")
     
-    private Object deleteStatus;
+    private String jobID;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="reason")
+    
+    private String reason;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="message")
+    
+    private String message;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,12 +55,6 @@ public class ClusterStatus  {
     @JsonProperty(value="isLocked")
     
     private Boolean isLocked;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobID")
-    
-    private String jobID;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,24 +76,18 @@ public class ClusterStatus  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
+    @JsonProperty(value="deleteOption")
     
-    private String message;
+    private Object deleteOption;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phase")
+    @JsonProperty(value="deleteStatus")
     
-    private String phase;
+    private Object deleteStatus;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reason")
-    
-    private String reason;
-
-    public ClusterStatus withDeleteOption(Object deleteOption) {
-        this.deleteOption = deleteOption;
+    public ClusterStatus withPhase(String phase) {
+        this.phase = phase;
         return this;
     }
 
@@ -95,21 +95,21 @@ public class ClusterStatus  {
 
 
     /**
-     * 删除配置状态（仅删除请求响应包含）
-     * @return deleteOption
+     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - Empty：集群无任何资源
+     * @return phase
      */
-    public Object getDeleteOption() {
-        return deleteOption;
+    public String getPhase() {
+        return phase;
     }
 
-    public void setDeleteOption(Object deleteOption) {
-        this.deleteOption = deleteOption;
+    public void setPhase(String phase) {
+        this.phase = phase;
     }
 
     
 
-    public ClusterStatus withDeleteStatus(Object deleteStatus) {
-        this.deleteStatus = deleteStatus;
+    public ClusterStatus withJobID(String jobID) {
+        this.jobID = jobID;
         return this;
     }
 
@@ -117,15 +117,59 @@ public class ClusterStatus  {
 
 
     /**
-     * 删除状态信息（仅删除请求响应包含）
-     * @return deleteStatus
+     * 作业ID
+     * @return jobID
      */
-    public Object getDeleteStatus() {
-        return deleteStatus;
+    public String getJobID() {
+        return jobID;
     }
 
-    public void setDeleteStatus(Object deleteStatus) {
-        this.deleteStatus = deleteStatus;
+    public void setJobID(String jobID) {
+        this.jobID = jobID;
+    }
+
+    
+
+    public ClusterStatus withReason(String reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群变为当前状态的原因，在集群在非“Available”状态下时，会返回此参数。
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    
+
+    public ClusterStatus withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群变为当前状态的原因的详细信息，在集群在非“Available”状态下时，会返回此参数。
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     
@@ -184,28 +228,6 @@ public class ClusterStatus  {
 
     public void setIsLocked(Boolean isLocked) {
         this.isLocked = isLocked;
-    }
-
-    
-
-    public ClusterStatus withJobID(String jobID) {
-        this.jobID = jobID;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 作业ID
-     * @return jobID
-     */
-    public String getJobID() {
-        return jobID;
-    }
-
-    public void setJobID(String jobID) {
-        this.jobID = jobID;
     }
 
     
@@ -276,8 +298,8 @@ public class ClusterStatus  {
 
     
 
-    public ClusterStatus withMessage(String message) {
-        this.message = message;
+    public ClusterStatus withDeleteOption(Object deleteOption) {
+        this.deleteOption = deleteOption;
         return this;
     }
 
@@ -285,21 +307,21 @@ public class ClusterStatus  {
 
 
     /**
-     * 集群变为当前状态的原因的详细信息，在集群在非“Available”状态下时，会返回此参数。
-     * @return message
+     * 删除配置状态（仅删除请求响应包含）
+     * @return deleteOption
      */
-    public String getMessage() {
-        return message;
+    public Object getDeleteOption() {
+        return deleteOption;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setDeleteOption(Object deleteOption) {
+        this.deleteOption = deleteOption;
     }
 
     
 
-    public ClusterStatus withPhase(String phase) {
-        this.phase = phase;
+    public ClusterStatus withDeleteStatus(Object deleteStatus) {
+        this.deleteStatus = deleteStatus;
         return this;
     }
 
@@ -307,37 +329,15 @@ public class ClusterStatus  {
 
 
     /**
-     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - Empty：集群无任何资源
-     * @return phase
+     * 删除状态信息（仅删除请求响应包含）
+     * @return deleteStatus
      */
-    public String getPhase() {
-        return phase;
+    public Object getDeleteStatus() {
+        return deleteStatus;
     }
 
-    public void setPhase(String phase) {
-        this.phase = phase;
-    }
-
-    
-
-    public ClusterStatus withReason(String reason) {
-        this.reason = reason;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群变为当前状态的原因，在集群在非“Available”状态下时，会返回此参数。
-     * @return reason
-     */
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setDeleteStatus(Object deleteStatus) {
+        this.deleteStatus = deleteStatus;
     }
 
     
@@ -351,37 +351,37 @@ public class ClusterStatus  {
             return false;
         }
         ClusterStatus clusterStatus = (ClusterStatus) o;
-        return Objects.equals(this.deleteOption, clusterStatus.deleteOption) &&
-            Objects.equals(this.deleteStatus, clusterStatus.deleteStatus) &&
+        return Objects.equals(this.phase, clusterStatus.phase) &&
+            Objects.equals(this.jobID, clusterStatus.jobID) &&
+            Objects.equals(this.reason, clusterStatus.reason) &&
+            Objects.equals(this.message, clusterStatus.message) &&
             Objects.equals(this.endpoints, clusterStatus.endpoints) &&
             Objects.equals(this.isLocked, clusterStatus.isLocked) &&
-            Objects.equals(this.jobID, clusterStatus.jobID) &&
             Objects.equals(this.lockScene, clusterStatus.lockScene) &&
             Objects.equals(this.lockSource, clusterStatus.lockSource) &&
             Objects.equals(this.lockSourceId, clusterStatus.lockSourceId) &&
-            Objects.equals(this.message, clusterStatus.message) &&
-            Objects.equals(this.phase, clusterStatus.phase) &&
-            Objects.equals(this.reason, clusterStatus.reason);
+            Objects.equals(this.deleteOption, clusterStatus.deleteOption) &&
+            Objects.equals(this.deleteStatus, clusterStatus.deleteStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deleteOption, deleteStatus, endpoints, isLocked, jobID, lockScene, lockSource, lockSourceId, message, phase, reason);
+        return Objects.hash(phase, jobID, reason, message, endpoints, isLocked, lockScene, lockSource, lockSourceId, deleteOption, deleteStatus);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterStatus {\n");
-        sb.append("    deleteOption: ").append(toIndentedString(deleteOption)).append("\n");
-        sb.append("    deleteStatus: ").append(toIndentedString(deleteStatus)).append("\n");
+        sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
+        sb.append("    jobID: ").append(toIndentedString(jobID)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    endpoints: ").append(toIndentedString(endpoints)).append("\n");
         sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
-        sb.append("    jobID: ").append(toIndentedString(jobID)).append("\n");
         sb.append("    lockScene: ").append(toIndentedString(lockScene)).append("\n");
         sb.append("    lockSource: ").append(toIndentedString(lockSource)).append("\n");
         sb.append("    lockSourceId: ").append(toIndentedString(lockSourceId)).append("\n");
-        sb.append("    message: ").append(toIndentedString(message)).append("\n");
-        sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
-        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    deleteOption: ").append(toIndentedString(deleteOption)).append("\n");
+        sb.append("    deleteStatus: ").append(toIndentedString(deleteStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

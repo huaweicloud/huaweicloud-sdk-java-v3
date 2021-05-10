@@ -6,80 +6,81 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.41-rc</version>
+        <version>3.0.42-rc</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.41-rc</version>
+    <version>3.0.42-rc</version>
     <packaging>pom</packaging>
     <name>Huawei Cloud SDK for Java Services</name>
     <description>Services code for Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
 
     <modules>
-        <module>cce</module>
-        <module>rms</module>
-        <module>drs</module>
+        <module>osm</module>
+        <module>ims</module>
+        <module>iotda</module>
+        <module>functiongraph</module>
+        <module>dns</module>
+        <module>projectman</module>
+        <module>sms</module>
+        <module>scm</module>
+        <module>moderation</module>
+        <module>rds</module>
+        <module>oms</module>
+        <module>mpc</module>
+        <module>apig</module>
+        <module>sa</module>
+        <module>dcs</module>
+        <module>aom</module>
         <module>iam</module>
+        <module>cloudide</module>
+        <module>cloudbuild</module>
+        <module>cce</module>
+        <module>devstar</module>
+        <module>iec</module>
+        <module>codecheck</module>
         <module>evs</module>
         <module>cloudtest</module>
-        <module>mrs</module>
-        <module>osm</module>
-        <module>rds</module>
-        <module>live</module>
-        <module>moderation</module>
-        <module>dgc</module>
-        <module>scm</module>
-        <module>eip</module>
-        <module>dms</module>
-        <module>rabbitmq</module>
-        <module>antiddos</module>
-        <module>sms</module>
-        <module>mpc</module>
-        <module>functiongraph</module>
-        <module>tms</module>
-        <module>bcs</module>
-        <module>image</module>
-        <module>bms</module>
-        <module>cloudide</module>
-        <module>iotda</module>
+        <module>rms</module>
+        <module>bss</module>
         <module>hss</module>
-        <module>ims</module>
-        <module>dws</module>
+        <module>mrs</module>
+        <module>kafka</module>
+        <module>bms</module>
+        <module>dgc</module>
+        <module>elb</module>
+        <module>bssintl</module>
+        <module>eps</module>
+        <module>live</module>
+        <module>kms</module>
+        <module>dds</module>
+        <module>as</module>
         <module>cts</module>
         <module>cbr</module>
-        <module>sa</module>
-        <module>devstar</module>
-        <module>cloudpipeline</module>
-        <module>projectman</module>
-        <module>kafka</module>
-        <module>cloudbuild</module>
-        <module>dds</module>
-        <module>oms</module>
-        <module>roma</module>
-        <module>ces</module>
-        <module>apig</module>
-        <module>eps</module>
-        <module>smn</module>
-        <module>elb</module>
-        <module>bss</module>
-        <module>nat</module>
-        <module>kps</module>
-        <module>dns</module>
-        <module>vpc</module>
-        <module>das</module>
-        <module>kms</module>
-        <module>bssintl</module>
-        <module>codecheck</module>
-        <module>as</module>
+        <module>rabbitmq</module>
         <module>servicestage</module>
-        <module>meeting</module>
-        <module>classroom</module>
-        <module>dcs</module>
-        <module>dli</module>
-        <module>swr</module>
-        <module>aom</module>
+        <module>cloudpipeline</module>
+        <module>drs</module>
         <module>ecs</module>
+        <module>antiddos</module>
+        <module>classroom</module>
+        <module>meeting</module>
+        <module>dms</module>
+        <module>eip</module>
+        <module>dws</module>
+        <module>tms</module>
+        <module>kps</module>
+        <module>roma</module>
+        <module>smn</module>
+        <module>vpc</module>
+        <module>dli</module>
+        <module>das</module>
+        <module>nat</module>
+        <module>bcs</module>
+        <module>image</module>
+        <module>swr</module>
+        <module>ces</module>
     </modules>
 </project>

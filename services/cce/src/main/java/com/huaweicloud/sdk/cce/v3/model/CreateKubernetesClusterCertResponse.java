@@ -26,15 +26,33 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="kind")
+    
+    private String kind;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apiVersion")
     
     private String apiVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="preferences")
+    
+    private Object preferences;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusters")
     
     private List<Clusters> clusters = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="users")
+    
+    private List<Users> users = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,24 +66,28 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
     
     private String currentContext;
 
+    public CreateKubernetesClusterCertResponse withKind(String kind) {
+        this.kind = kind;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
     
-    private String kind;
 
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="preferences")
+    /**
+     * API类型，固定值“Config”，该值不可修改。 
+     * @return kind
+     */
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
     
-    private Object preferences;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
-    private List<Users> users = null;
-    
     public CreateKubernetesClusterCertResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
@@ -84,6 +106,28 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     public void setApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
+    }
+
+    
+
+    public CreateKubernetesClusterCertResponse withPreferences(Object preferences) {
+        this.preferences = preferences;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当前未使用该字段，当前默认为空。
+     * @return preferences
+     */
+    public Object getPreferences() {
+        return preferences;
+    }
+
+    public void setPreferences(Object preferences) {
+        this.preferences = preferences;
     }
 
     
@@ -120,6 +164,42 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     public void setClusters(List<Clusters> clusters) {
         this.clusters = clusters;
+    }
+
+    
+
+    public CreateKubernetesClusterCertResponse withUsers(List<Users> users) {
+        this.users = users;
+        return this;
+    }
+
+    
+    public CreateKubernetesClusterCertResponse addUsersItem(Users usersItem) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
+        this.users.add(usersItem);
+        return this;
+    }
+
+    public CreateKubernetesClusterCertResponse withUsers(Consumer<List<Users>> usersSetter) {
+        if(this.users == null) {
+            this.users = new ArrayList<>();
+        }
+        usersSetter.accept(this.users);
+        return this;
+    }
+
+    /**
+     * 存放了指定用户的一些证书信息和ClientKey信息。
+     * @return users
+     */
+    public List<Users> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<Users> users) {
+        this.users = users;
     }
 
     
@@ -182,86 +262,6 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
 
-    public CreateKubernetesClusterCertResponse withKind(String kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API类型，固定值“Config”，该值不可修改。 
-     * @return kind
-     */
-    public String getKind() {
-        return kind;
-    }
-
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
-
-    
-
-    public CreateKubernetesClusterCertResponse withPreferences(Object preferences) {
-        this.preferences = preferences;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 当前未使用该字段，当前默认为空。
-     * @return preferences
-     */
-    public Object getPreferences() {
-        return preferences;
-    }
-
-    public void setPreferences(Object preferences) {
-        this.preferences = preferences;
-    }
-
-    
-
-    public CreateKubernetesClusterCertResponse withUsers(List<Users> users) {
-        this.users = users;
-        return this;
-    }
-
-    
-    public CreateKubernetesClusterCertResponse addUsersItem(Users usersItem) {
-        if(this.users == null) {
-            this.users = new ArrayList<>();
-        }
-        this.users.add(usersItem);
-        return this;
-    }
-
-    public CreateKubernetesClusterCertResponse withUsers(Consumer<List<Users>> usersSetter) {
-        if(this.users == null) {
-            this.users = new ArrayList<>();
-        }
-        usersSetter.accept(this.users);
-        return this;
-    }
-
-    /**
-     * 存放了指定用户的一些证书信息和ClientKey信息。
-     * @return users
-     */
-    public List<Users> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<Users> users) {
-        this.users = users;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -271,29 +271,29 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
             return false;
         }
         CreateKubernetesClusterCertResponse createKubernetesClusterCertResponse = (CreateKubernetesClusterCertResponse) o;
-        return Objects.equals(this.apiVersion, createKubernetesClusterCertResponse.apiVersion) &&
-            Objects.equals(this.clusters, createKubernetesClusterCertResponse.clusters) &&
-            Objects.equals(this.contexts, createKubernetesClusterCertResponse.contexts) &&
-            Objects.equals(this.currentContext, createKubernetesClusterCertResponse.currentContext) &&
-            Objects.equals(this.kind, createKubernetesClusterCertResponse.kind) &&
+        return Objects.equals(this.kind, createKubernetesClusterCertResponse.kind) &&
+            Objects.equals(this.apiVersion, createKubernetesClusterCertResponse.apiVersion) &&
             Objects.equals(this.preferences, createKubernetesClusterCertResponse.preferences) &&
-            Objects.equals(this.users, createKubernetesClusterCertResponse.users);
+            Objects.equals(this.clusters, createKubernetesClusterCertResponse.clusters) &&
+            Objects.equals(this.users, createKubernetesClusterCertResponse.users) &&
+            Objects.equals(this.contexts, createKubernetesClusterCertResponse.contexts) &&
+            Objects.equals(this.currentContext, createKubernetesClusterCertResponse.currentContext);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, clusters, contexts, currentContext, kind, preferences, users);
+        return Objects.hash(kind, apiVersion, preferences, clusters, users, contexts, currentContext);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateKubernetesClusterCertResponse {\n");
+        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
+        sb.append("    preferences: ").append(toIndentedString(preferences)).append("\n");
         sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
+        sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("    contexts: ").append(toIndentedString(contexts)).append("\n");
         sb.append("    currentContext: ").append(toIndentedString(currentContext)).append("\n");
-        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
-        sb.append("    preferences: ").append(toIndentedString(preferences)).append("\n");
-        sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("}");
         return sb.toString();
     }

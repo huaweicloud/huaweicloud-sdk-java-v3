@@ -40,6 +40,50 @@ public class BmsClient {
     }
 
     /**
+     * 批量添加裸金属服务器标签
+     * - 为指定裸金属服务器批量添加标签。
+     *
+     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @return BatchCreateBaremetalServerTagsResponse
+     */
+    public BatchCreateBaremetalServerTagsResponse batchCreateBaremetalServerTags(BatchCreateBaremetalServerTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.batchCreateBaremetalServerTags);
+    }
+
+    /**
+     * 批量添加裸金属服务器标签
+     * - 为指定裸金属服务器批量添加标签。
+     *
+     * @param BatchCreateBaremetalServerTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>
+     */
+    public SyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse> batchCreateBaremetalServerTagsInvoker(BatchCreateBaremetalServerTagsRequest request) {
+        return new SyncInvoker<BatchCreateBaremetalServerTagsRequest, BatchCreateBaremetalServerTagsResponse>(request, BmsMeta.batchCreateBaremetalServerTags, hcClient);
+    }
+
+    /**
+     * 批量删除l裸金属服务器标签
+     * - 为指定云服务器批量删除标签。
+     *
+     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @return BatchDeleteBaremetalServerTagsResponse
+     */
+    public BatchDeleteBaremetalServerTagsResponse batchDeleteBaremetalServerTags(BatchDeleteBaremetalServerTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.batchDeleteBaremetalServerTags);
+    }
+
+    /**
+     * 批量删除l裸金属服务器标签
+     * - 为指定云服务器批量删除标签。
+     *
+     * @param BatchDeleteBaremetalServerTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse> batchDeleteBaremetalServerTagsInvoker(BatchDeleteBaremetalServerTagsRequest request) {
+        return new SyncInvoker<BatchDeleteBaremetalServerTagsRequest, BatchDeleteBaremetalServerTagsResponse>(request, BmsMeta.batchDeleteBaremetalServerTags, hcClient);
+    }
+
+    /**
      * 重启裸金属服务器
      * 根据给定的裸金属服务器ID列表，批量重启裸金属服务器
      *
@@ -323,6 +367,28 @@ public class BmsClient {
      */
     public SyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> showBaremetalServerInterfaceAttachmentsInvoker(ShowBaremetalServerInterfaceAttachmentsRequest request) {
         return new SyncInvoker<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse>(request, BmsMeta.showBaremetalServerInterfaceAttachments, hcClient);
+    }
+
+    /**
+     * 查询裸金属服务器标签
+     * - 查询指定云服务器的标签信息。
+     *
+     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @return ShowBaremetalServerTagsResponse
+     */
+    public ShowBaremetalServerTagsResponse showBaremetalServerTags(ShowBaremetalServerTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.showBaremetalServerTags);
+    }
+
+    /**
+     * 查询裸金属服务器标签
+     * - 查询指定云服务器的标签信息。
+     *
+     * @param ShowBaremetalServerTagsRequest 请求对象
+     * @return SyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>
+     */
+    public SyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> showBaremetalServerTagsInvoker(ShowBaremetalServerTagsRequest request) {
+        return new SyncInvoker<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse>(request, BmsMeta.showBaremetalServerTags, hcClient);
     }
 
     /**

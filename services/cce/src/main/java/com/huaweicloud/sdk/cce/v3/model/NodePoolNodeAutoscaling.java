@@ -25,27 +25,27 @@ public class NodePoolNodeAutoscaling  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxNodeCount")
-    
-    private Integer maxNodeCount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="minNodeCount")
     
     private Integer minNodeCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
+    @JsonProperty(value="maxNodeCount")
     
-    private Integer priority;
+    private Integer maxNodeCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaleDownCooldownTime")
     
     private Integer scaleDownCooldownTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="priority")
+    
+    private Integer priority;
 
     public NodePoolNodeAutoscaling withEnable(Boolean enable) {
         this.enable = enable;
@@ -65,29 +65,6 @@ public class NodePoolNodeAutoscaling  {
 
     public void setEnable(Boolean enable) {
         this.enable = enable;
-    }
-
-    
-
-    public NodePoolNodeAutoscaling withMaxNodeCount(Integer maxNodeCount) {
-        this.maxNodeCount = maxNodeCount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 若开启自动扩缩容，最大能扩容的节点个数，应大于等于 minNodeCount，且不超过集群规格对应的节点数量上限。
-     * minimum: 0
-     * @return maxNodeCount
-     */
-    public Integer getMaxNodeCount() {
-        return maxNodeCount;
-    }
-
-    public void setMaxNodeCount(Integer maxNodeCount) {
-        this.maxNodeCount = maxNodeCount;
     }
 
     
@@ -115,8 +92,8 @@ public class NodePoolNodeAutoscaling  {
 
     
 
-    public NodePoolNodeAutoscaling withPriority(Integer priority) {
-        this.priority = priority;
+    public NodePoolNodeAutoscaling withMaxNodeCount(Integer maxNodeCount) {
+        this.maxNodeCount = maxNodeCount;
         return this;
     }
 
@@ -124,15 +101,16 @@ public class NodePoolNodeAutoscaling  {
 
 
     /**
-     * 节点池权重，更高的权重在扩容时拥有更高的优先级
-     * @return priority
+     * 若开启自动扩缩容，最大能扩容的节点个数，应大于等于 minNodeCount，且不超过集群规格对应的节点数量上限。
+     * minimum: 0
+     * @return maxNodeCount
      */
-    public Integer getPriority() {
-        return priority;
+    public Integer getMaxNodeCount() {
+        return maxNodeCount;
     }
 
-    public void setPriority(Integer priority) {
-        this.priority = priority;
+    public void setMaxNodeCount(Integer maxNodeCount) {
+        this.maxNodeCount = maxNodeCount;
     }
 
     
@@ -161,6 +139,28 @@ public class NodePoolNodeAutoscaling  {
 
     
 
+    public NodePoolNodeAutoscaling withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点池权重，更高的权重在扩容时拥有更高的优先级
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -171,24 +171,24 @@ public class NodePoolNodeAutoscaling  {
         }
         NodePoolNodeAutoscaling nodePoolNodeAutoscaling = (NodePoolNodeAutoscaling) o;
         return Objects.equals(this.enable, nodePoolNodeAutoscaling.enable) &&
-            Objects.equals(this.maxNodeCount, nodePoolNodeAutoscaling.maxNodeCount) &&
             Objects.equals(this.minNodeCount, nodePoolNodeAutoscaling.minNodeCount) &&
-            Objects.equals(this.priority, nodePoolNodeAutoscaling.priority) &&
-            Objects.equals(this.scaleDownCooldownTime, nodePoolNodeAutoscaling.scaleDownCooldownTime);
+            Objects.equals(this.maxNodeCount, nodePoolNodeAutoscaling.maxNodeCount) &&
+            Objects.equals(this.scaleDownCooldownTime, nodePoolNodeAutoscaling.scaleDownCooldownTime) &&
+            Objects.equals(this.priority, nodePoolNodeAutoscaling.priority);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enable, maxNodeCount, minNodeCount, priority, scaleDownCooldownTime);
+        return Objects.hash(enable, minNodeCount, maxNodeCount, scaleDownCooldownTime, priority);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodePoolNodeAutoscaling {\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-        sb.append("    maxNodeCount: ").append(toIndentedString(maxNodeCount)).append("\n");
         sb.append("    minNodeCount: ").append(toIndentedString(minNodeCount)).append("\n");
-        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    maxNodeCount: ").append(toIndentedString(maxNodeCount)).append("\n");
         sb.append("    scaleDownCooldownTime: ").append(toIndentedString(scaleDownCooldownTime)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

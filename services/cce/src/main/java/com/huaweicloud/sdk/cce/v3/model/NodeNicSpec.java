@@ -22,15 +22,44 @@ public class NodeNicSpec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="primaryNic")
+    
+    private NicSpec primaryNic;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extNics")
     
     private List<NicSpec> extNics = null;
     
+    public NodeNicSpec withPrimaryNic(NicSpec primaryNic) {
+        this.primaryNic = primaryNic;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="primaryNic")
+    public NodeNicSpec withPrimaryNic(Consumer<NicSpec> primaryNicSetter) {
+        if(this.primaryNic == null ){
+            this.primaryNic = new NicSpec();
+            primaryNicSetter.accept(this.primaryNic);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get primaryNic
+     * @return primaryNic
+     */
+    public NicSpec getPrimaryNic() {
+        return primaryNic;
+    }
+
+    public void setPrimaryNic(NicSpec primaryNic) {
+        this.primaryNic = primaryNic;
+    }
+
     
-    private NicSpec primaryNic;
 
     public NodeNicSpec withExtNics(List<NicSpec> extNics) {
         this.extNics = extNics;
@@ -68,35 +97,6 @@ public class NodeNicSpec  {
 
     
 
-    public NodeNicSpec withPrimaryNic(NicSpec primaryNic) {
-        this.primaryNic = primaryNic;
-        return this;
-    }
-
-    public NodeNicSpec withPrimaryNic(Consumer<NicSpec> primaryNicSetter) {
-        if(this.primaryNic == null ){
-            this.primaryNic = new NicSpec();
-            primaryNicSetter.accept(this.primaryNic);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get primaryNic
-     * @return primaryNic
-     */
-    public NicSpec getPrimaryNic() {
-        return primaryNic;
-    }
-
-    public void setPrimaryNic(NicSpec primaryNic) {
-        this.primaryNic = primaryNic;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,19 +106,19 @@ public class NodeNicSpec  {
             return false;
         }
         NodeNicSpec nodeNicSpec = (NodeNicSpec) o;
-        return Objects.equals(this.extNics, nodeNicSpec.extNics) &&
-            Objects.equals(this.primaryNic, nodeNicSpec.primaryNic);
+        return Objects.equals(this.primaryNic, nodeNicSpec.primaryNic) &&
+            Objects.equals(this.extNics, nodeNicSpec.extNics);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(extNics, primaryNic);
+        return Objects.hash(primaryNic, extNics);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodeNicSpec {\n");
-        sb.append("    extNics: ").append(toIndentedString(extNics)).append("\n");
         sb.append("    primaryNic: ").append(toIndentedString(primaryNic)).append("\n");
+        sb.append("    extNics: ").append(toIndentedString(extNics)).append("\n");
         sb.append("}");
         return sb.toString();
     }

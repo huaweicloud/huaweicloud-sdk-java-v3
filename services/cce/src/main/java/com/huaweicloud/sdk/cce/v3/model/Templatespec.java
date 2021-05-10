@@ -22,9 +22,15 @@ public class Templatespec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
+    @JsonProperty(value="type")
     
-    private String description;
+    private String type;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="require")
+    
+    private Boolean require;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,15 +52,9 @@ public class Templatespec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="require")
+    @JsonProperty(value="description")
     
-    private Boolean require;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
-    private String type;
+    private String description;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,8 +62,8 @@ public class Templatespec  {
     
     private List<Versions> versions = null;
     
-    public Templatespec withDescription(String description) {
-        this.description = description;
+    public Templatespec withType(String type) {
+        this.type = type;
         return this;
     }
 
@@ -71,15 +71,37 @@ public class Templatespec  {
 
 
     /**
-     * 模板描述
-     * @return description
+     * 模板类型（helm，static）
+     * @return type
      */
-    public String getDescription() {
-        return description;
+    public String getType() {
+        return type;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    
+
+    public Templatespec withRequire(Boolean require) {
+        this.require = require;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为必安装插件
+     * @return require
+     */
+    public Boolean getRequire() {
+        return require;
+    }
+
+    public void setRequire(Boolean require) {
+        this.require = require;
     }
 
     
@@ -164,8 +186,8 @@ public class Templatespec  {
 
     
 
-    public Templatespec withRequire(Boolean require) {
-        this.require = require;
+    public Templatespec withDescription(String description) {
+        this.description = description;
         return this;
     }
 
@@ -173,37 +195,15 @@ public class Templatespec  {
 
 
     /**
-     * 是否为必安装插件
-     * @return require
+     * 模板描述
+     * @return description
      */
-    public Boolean getRequire() {
-        return require;
+    public String getDescription() {
+        return description;
     }
 
-    public void setRequire(Boolean require) {
-        this.require = require;
-    }
-
-    
-
-    public Templatespec withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 模板类型（helm，static）
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     
@@ -253,28 +253,28 @@ public class Templatespec  {
             return false;
         }
         Templatespec templatespec = (Templatespec) o;
-        return Objects.equals(this.description, templatespec.description) &&
+        return Objects.equals(this.type, templatespec.type) &&
+            Objects.equals(this.require, templatespec.require) &&
             Objects.equals(this.labels, templatespec.labels) &&
             Objects.equals(this.logoURL, templatespec.logoURL) &&
             Objects.equals(this.readmeURL, templatespec.readmeURL) &&
-            Objects.equals(this.require, templatespec.require) &&
-            Objects.equals(this.type, templatespec.type) &&
+            Objects.equals(this.description, templatespec.description) &&
             Objects.equals(this.versions, templatespec.versions);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(description, labels, logoURL, readmeURL, require, type, versions);
+        return Objects.hash(type, require, labels, logoURL, readmeURL, description, versions);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Templatespec {\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    require: ").append(toIndentedString(require)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    logoURL: ").append(toIndentedString(logoURL)).append("\n");
         sb.append("    readmeURL: ").append(toIndentedString(readmeURL)).append("\n");
-        sb.append("    require: ").append(toIndentedString(require)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("}");
         return sb.toString();

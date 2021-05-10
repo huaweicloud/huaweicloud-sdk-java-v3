@@ -23,6 +23,30 @@ public class ListAddonTemplatesRequest  {
     
     private String addonTemplateName;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="base_update_addon_version")
+    
+    private String baseUpdateAddonVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cluster_id")
+    
+    private String clusterId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="newest")
+    
+    private String newest;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="version")
+    
+    private String version;
+
     public ListAddonTemplatesRequest withAddonTemplateName(String addonTemplateName) {
         this.addonTemplateName = addonTemplateName;
         return this;
@@ -45,6 +69,94 @@ public class ListAddonTemplatesRequest  {
 
     
 
+    public ListAddonTemplatesRequest withBaseUpdateAddonVersion(String baseUpdateAddonVersion) {
+        this.baseUpdateAddonVersion = baseUpdateAddonVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get baseUpdateAddonVersion
+     * @return baseUpdateAddonVersion
+     */
+    public String getBaseUpdateAddonVersion() {
+        return baseUpdateAddonVersion;
+    }
+
+    public void setBaseUpdateAddonVersion(String baseUpdateAddonVersion) {
+        this.baseUpdateAddonVersion = baseUpdateAddonVersion;
+    }
+
+    
+
+    public ListAddonTemplatesRequest withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get clusterId
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    
+
+    public ListAddonTemplatesRequest withNewest(String newest) {
+        this.newest = newest;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get newest
+     * @return newest
+     */
+    public String getNewest() {
+        return newest;
+    }
+
+    public void setNewest(String newest) {
+        this.newest = newest;
+    }
+
+    
+
+    public ListAddonTemplatesRequest withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get version
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -54,17 +166,25 @@ public class ListAddonTemplatesRequest  {
             return false;
         }
         ListAddonTemplatesRequest listAddonTemplatesRequest = (ListAddonTemplatesRequest) o;
-        return Objects.equals(this.addonTemplateName, listAddonTemplatesRequest.addonTemplateName);
+        return Objects.equals(this.addonTemplateName, listAddonTemplatesRequest.addonTemplateName) &&
+            Objects.equals(this.baseUpdateAddonVersion, listAddonTemplatesRequest.baseUpdateAddonVersion) &&
+            Objects.equals(this.clusterId, listAddonTemplatesRequest.clusterId) &&
+            Objects.equals(this.newest, listAddonTemplatesRequest.newest) &&
+            Objects.equals(this.version, listAddonTemplatesRequest.version);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(addonTemplateName);
+        return Objects.hash(addonTemplateName, baseUpdateAddonVersion, clusterId, newest, version);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAddonTemplatesRequest {\n");
         sb.append("    addonTemplateName: ").append(toIndentedString(addonTemplateName)).append("\n");
+        sb.append("    baseUpdateAddonVersion: ").append(toIndentedString(baseUpdateAddonVersion)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    newest: ").append(toIndentedString(newest)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

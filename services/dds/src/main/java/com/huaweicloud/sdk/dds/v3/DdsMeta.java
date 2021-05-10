@@ -712,6 +712,33 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAz2MigrateRequest, ListAz2MigrateResponse> listAz2Migrate = genForlistAz2Migrate();
+
+    private static HttpRequestDef<ListAz2MigrateRequest, ListAz2MigrateResponse> genForlistAz2Migrate() {
+        // basic
+        HttpRequestDef.Builder<ListAz2MigrateRequest, ListAz2MigrateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAz2MigrateRequest.class, ListAz2MigrateResponse.class)
+                .withName("ListAz2Migrate")
+                .withUri("/v3/{project_id}/instances/{instance_id}/migrate/az")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAz2MigrateRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForlistBackups();
 
     private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForlistBackups() {
@@ -1542,6 +1569,41 @@ public class DdsMeta {
             ListStorageTypeRequest.EngineNameEnum.class,
             f -> f.withMarshaller(ListStorageTypeRequest::getEngineName, (req, v) -> {
                 req.setEngineName(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<MigrateAzRequest, MigrateAzResponse> migrateAz = genFormigrateAz();
+
+    private static HttpRequestDef<MigrateAzRequest, MigrateAzResponse> genFormigrateAz() {
+        // basic
+        HttpRequestDef.Builder<MigrateAzRequest, MigrateAzResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, MigrateAzRequest.class, MigrateAzResponse.class)
+                .withName("MigrateAz")
+                .withUri("/v3/{project_id}/instances/{instance_id}/migrate")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(MigrateAzRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            MigrateAzRequestBody.class,
+            f -> f.withMarshaller(MigrateAzRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

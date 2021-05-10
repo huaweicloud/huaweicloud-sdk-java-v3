@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * NodePoolStatus
+ * 
  */
 public class NodePoolStatus  {
 
@@ -26,14 +26,8 @@ public class NodePoolStatus  {
     @JsonProperty(value="currentNode")
     
     private Integer currentNode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
-    private String jobId;
     /**
-     * 节点池状态，可为空。
+     * 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 
      */
     public static final class PhaseEnum {
 
@@ -135,6 +129,12 @@ public class NodePoolStatus  {
     
     private PhaseEnum phase;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="jobId")
+    
+    private String jobId;
+
     public NodePoolStatus withCurrentNode(Integer currentNode) {
         this.currentNode = currentNode;
         return this;
@@ -153,6 +153,28 @@ public class NodePoolStatus  {
 
     public void setCurrentNode(Integer currentNode) {
         this.currentNode = currentNode;
+    }
+
+    
+
+    public NodePoolStatus withPhase(PhaseEnum phase) {
+        this.phase = phase;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 
+     * @return phase
+     */
+    public PhaseEnum getPhase() {
+        return phase;
+    }
+
+    public void setPhase(PhaseEnum phase) {
+        this.phase = phase;
     }
 
     
@@ -179,28 +201,6 @@ public class NodePoolStatus  {
 
     
 
-    public NodePoolStatus withPhase(PhaseEnum phase) {
-        this.phase = phase;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 节点池状态，可为空。
-     * @return phase
-     */
-    public PhaseEnum getPhase() {
-        return phase;
-    }
-
-    public void setPhase(PhaseEnum phase) {
-        this.phase = phase;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -211,20 +211,20 @@ public class NodePoolStatus  {
         }
         NodePoolStatus nodePoolStatus = (NodePoolStatus) o;
         return Objects.equals(this.currentNode, nodePoolStatus.currentNode) &&
-            Objects.equals(this.jobId, nodePoolStatus.jobId) &&
-            Objects.equals(this.phase, nodePoolStatus.phase);
+            Objects.equals(this.phase, nodePoolStatus.phase) &&
+            Objects.equals(this.jobId, nodePoolStatus.jobId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(currentNode, jobId, phase);
+        return Objects.hash(currentNode, phase, jobId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodePoolStatus {\n");
         sb.append("    currentNode: ").append(toIndentedString(currentNode)).append("\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -13,10 +13,16 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Authentication
+ * 
  */
 public class Authentication  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="mode")
+    
+    private String mode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,11 +30,27 @@ public class Authentication  {
     
     private AuthenticatingProxy authenticatingProxy;
 
+    public Authentication withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
     
-    private String mode;
+
+
+    /**
+     * 集群认证模式。  - kubernetes 1.11及之前版本的集群支持“x509”、“rbac”和“authenticating_proxy”，默认取值为“x509”。 - kubernetes 1.13及以上版本的集群支持“rbac”和“authenticating_proxy”，默认取值为“rbac”。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    
 
     public Authentication withAuthenticatingProxy(AuthenticatingProxy authenticatingProxy) {
         this.authenticatingProxy = authenticatingProxy;
@@ -59,28 +81,6 @@ public class Authentication  {
 
     
 
-    public Authentication withMode(String mode) {
-        this.mode = mode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群认证模式。  - kubernetes 1.11及之前版本的集群支持“x509”、“rbac”和“authenticating_proxy”，默认取值为“x509”。 - kubernetes 1.13及以上版本的集群支持“rbac”和“authenticating_proxy”，默认取值为“rbac”。
-     * @return mode
-     */
-    public String getMode() {
-        return mode;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -90,19 +90,19 @@ public class Authentication  {
             return false;
         }
         Authentication authentication = (Authentication) o;
-        return Objects.equals(this.authenticatingProxy, authentication.authenticatingProxy) &&
-            Objects.equals(this.mode, authentication.mode);
+        return Objects.equals(this.mode, authentication.mode) &&
+            Objects.equals(this.authenticatingProxy, authentication.authenticatingProxy);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(authenticatingProxy, mode);
+        return Objects.hash(mode, authenticatingProxy);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Authentication {\n");
-        sb.append("    authenticatingProxy: ").append(toIndentedString(authenticatingProxy)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    authenticatingProxy: ").append(toIndentedString(authenticatingProxy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

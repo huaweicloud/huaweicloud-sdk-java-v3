@@ -19,34 +19,10 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * NodePoolSpec
+ * 
  */
 public class NodePoolSpec  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="autoscaling")
-    
-    private NodePoolNodeAutoscaling autoscaling;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initialNodeCount")
-    
-    private Integer initialNodeCount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeManagement")
-    
-    private NodeManagement nodeManagement;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeTemplate")
-    
-    private V3NodeSpec nodeTemplate;
     /**
      * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
      */
@@ -132,37 +108,32 @@ public class NodePoolSpec  {
     
     private TypeEnum type;
 
-    public NodePoolSpec withAutoscaling(NodePoolNodeAutoscaling autoscaling) {
-        this.autoscaling = autoscaling;
-        return this;
-    }
 
-    public NodePoolSpec withAutoscaling(Consumer<NodePoolNodeAutoscaling> autoscalingSetter) {
-        if(this.autoscaling == null ){
-            this.autoscaling = new NodePoolNodeAutoscaling();
-            autoscalingSetter.accept(this.autoscaling);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get autoscaling
-     * @return autoscaling
-     */
-    public NodePoolNodeAutoscaling getAutoscaling() {
-        return autoscaling;
-    }
-
-    public void setAutoscaling(NodePoolNodeAutoscaling autoscaling) {
-        this.autoscaling = autoscaling;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="nodeTemplate")
     
+    private V3NodeSpec nodeTemplate;
 
-    public NodePoolSpec withInitialNodeCount(Integer initialNodeCount) {
-        this.initialNodeCount = initialNodeCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="initialNodeCount")
+    
+    private Integer initialNodeCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="autoscaling")
+    
+    private NodePoolNodeAutoscaling autoscaling;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="nodeManagement")
+    
+    private NodeManagement nodeManagement;
+
+    public NodePoolSpec withType(TypeEnum type) {
+        this.type = type;
         return this;
     }
 
@@ -170,44 +141,15 @@ public class NodePoolSpec  {
 
 
     /**
-     * 节点池初始化节点个数。
-     * @return initialNodeCount
+     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
+     * @return type
      */
-    public Integer getInitialNodeCount() {
-        return initialNodeCount;
+    public TypeEnum getType() {
+        return type;
     }
 
-    public void setInitialNodeCount(Integer initialNodeCount) {
-        this.initialNodeCount = initialNodeCount;
-    }
-
-    
-
-    public NodePoolSpec withNodeManagement(NodeManagement nodeManagement) {
-        this.nodeManagement = nodeManagement;
-        return this;
-    }
-
-    public NodePoolSpec withNodeManagement(Consumer<NodeManagement> nodeManagementSetter) {
-        if(this.nodeManagement == null ){
-            this.nodeManagement = new NodeManagement();
-            nodeManagementSetter.accept(this.nodeManagement);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get nodeManagement
-     * @return nodeManagement
-     */
-    public NodeManagement getNodeManagement() {
-        return nodeManagement;
-    }
-
-    public void setNodeManagement(NodeManagement nodeManagement) {
-        this.nodeManagement = nodeManagement;
+    public void setType(TypeEnum type) {
+        this.type = type;
     }
 
     
@@ -241,8 +183,8 @@ public class NodePoolSpec  {
 
     
 
-    public NodePoolSpec withType(TypeEnum type) {
-        this.type = type;
+    public NodePoolSpec withInitialNodeCount(Integer initialNodeCount) {
+        this.initialNodeCount = initialNodeCount;
         return this;
     }
 
@@ -250,15 +192,73 @@ public class NodePoolSpec  {
 
 
     /**
-     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
-     * @return type
+     * 节点池初始化节点个数。
+     * @return initialNodeCount
      */
-    public TypeEnum getType() {
-        return type;
+    public Integer getInitialNodeCount() {
+        return initialNodeCount;
     }
 
-    public void setType(TypeEnum type) {
-        this.type = type;
+    public void setInitialNodeCount(Integer initialNodeCount) {
+        this.initialNodeCount = initialNodeCount;
+    }
+
+    
+
+    public NodePoolSpec withAutoscaling(NodePoolNodeAutoscaling autoscaling) {
+        this.autoscaling = autoscaling;
+        return this;
+    }
+
+    public NodePoolSpec withAutoscaling(Consumer<NodePoolNodeAutoscaling> autoscalingSetter) {
+        if(this.autoscaling == null ){
+            this.autoscaling = new NodePoolNodeAutoscaling();
+            autoscalingSetter.accept(this.autoscaling);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get autoscaling
+     * @return autoscaling
+     */
+    public NodePoolNodeAutoscaling getAutoscaling() {
+        return autoscaling;
+    }
+
+    public void setAutoscaling(NodePoolNodeAutoscaling autoscaling) {
+        this.autoscaling = autoscaling;
+    }
+
+    
+
+    public NodePoolSpec withNodeManagement(NodeManagement nodeManagement) {
+        this.nodeManagement = nodeManagement;
+        return this;
+    }
+
+    public NodePoolSpec withNodeManagement(Consumer<NodeManagement> nodeManagementSetter) {
+        if(this.nodeManagement == null ){
+            this.nodeManagement = new NodeManagement();
+            nodeManagementSetter.accept(this.nodeManagement);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get nodeManagement
+     * @return nodeManagement
+     */
+    public NodeManagement getNodeManagement() {
+        return nodeManagement;
+    }
+
+    public void setNodeManagement(NodeManagement nodeManagement) {
+        this.nodeManagement = nodeManagement;
     }
 
     
@@ -272,25 +272,25 @@ public class NodePoolSpec  {
             return false;
         }
         NodePoolSpec nodePoolSpec = (NodePoolSpec) o;
-        return Objects.equals(this.autoscaling, nodePoolSpec.autoscaling) &&
-            Objects.equals(this.initialNodeCount, nodePoolSpec.initialNodeCount) &&
-            Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement) &&
+        return Objects.equals(this.type, nodePoolSpec.type) &&
             Objects.equals(this.nodeTemplate, nodePoolSpec.nodeTemplate) &&
-            Objects.equals(this.type, nodePoolSpec.type);
+            Objects.equals(this.initialNodeCount, nodePoolSpec.initialNodeCount) &&
+            Objects.equals(this.autoscaling, nodePoolSpec.autoscaling) &&
+            Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(autoscaling, initialNodeCount, nodeManagement, nodeTemplate, type);
+        return Objects.hash(type, nodeTemplate, initialNodeCount, autoscaling, nodeManagement);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodePoolSpec {\n");
-        sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
-        sb.append("    initialNodeCount: ").append(toIndentedString(initialNodeCount)).append("\n");
-        sb.append("    nodeManagement: ").append(toIndentedString(nodeManagement)).append("\n");
-        sb.append("    nodeTemplate: ").append(toIndentedString(nodeTemplate)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    nodeTemplate: ").append(toIndentedString(nodeTemplate)).append("\n");
+        sb.append("    initialNodeCount: ").append(toIndentedString(initialNodeCount)).append("\n");
+        sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
+        sb.append("    nodeManagement: ").append(toIndentedString(nodeManagement)).append("\n");
         sb.append("}");
         return sb.toString();
     }

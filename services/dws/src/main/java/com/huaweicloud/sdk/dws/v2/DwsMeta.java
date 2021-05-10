@@ -181,7 +181,7 @@ public class DwsMeta {
         HttpRequestDef.Builder<ListNodeTypesRequest, ListNodeTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodeTypesRequest.class, ListNodeTypesResponse.class)
                 .withName("ListNodeTypes")
-                .withUri("/v1.0/{project_id}/node_types")
+                .withUri("/v2/{project_id}/node-types")
                 .withContentType("application/json");
 
         // requests

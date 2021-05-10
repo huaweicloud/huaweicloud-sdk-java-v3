@@ -12,16 +12,10 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CCEJobMetadata
+ * 
  */
 public class CCEJobMetadata  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creationTimestamp")
-    
-    private String creationTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,31 +25,15 @@ public class CCEJobMetadata  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="creationTimestamp")
+    
+    private String creationTimestamp;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updateTimestamp")
     
     private String updateTimestamp;
-
-    public CCEJobMetadata withCreationTimestamp(String creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 作业的创建时间。
-     * @return creationTimestamp
-     */
-    public String getCreationTimestamp() {
-        return creationTimestamp;
-    }
-
-    public void setCreationTimestamp(String creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
-    }
-
-    
 
     public CCEJobMetadata withUid(String uid) {
         this.uid = uid;
@@ -75,6 +53,28 @@ public class CCEJobMetadata  {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    
+
+    public CCEJobMetadata withCreationTimestamp(String creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 作业的创建时间。
+     * @return creationTimestamp
+     */
+    public String getCreationTimestamp() {
+        return creationTimestamp;
+    }
+
+    public void setCreationTimestamp(String creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
     }
 
     
@@ -110,20 +110,20 @@ public class CCEJobMetadata  {
             return false;
         }
         CCEJobMetadata ccEJobMetadata = (CCEJobMetadata) o;
-        return Objects.equals(this.creationTimestamp, ccEJobMetadata.creationTimestamp) &&
-            Objects.equals(this.uid, ccEJobMetadata.uid) &&
+        return Objects.equals(this.uid, ccEJobMetadata.uid) &&
+            Objects.equals(this.creationTimestamp, ccEJobMetadata.creationTimestamp) &&
             Objects.equals(this.updateTimestamp, ccEJobMetadata.updateTimestamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creationTimestamp, uid, updateTimestamp);
+        return Objects.hash(uid, creationTimestamp, updateTimestamp);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CCEJobMetadata {\n");
-        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -19,12 +19,24 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * PersistentVolumeClaimSpec
+ * 
  */
 public class PersistentVolumeClaimSpec  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="volumeID")
+    
+    private String volumeID;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="storageType")
+    
+    private String storageType;
     /**
-     * Gets or Sets accessModes
+     * 
      */
     public static final class AccessModesEnum {
 
@@ -110,27 +122,21 @@ public class PersistentVolumeClaimSpec  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
-    private ResourceRequirements resources;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="storageClassName")
     
     private String storageClassName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storageType")
+    @JsonProperty(value="volumeName")
     
-    private String storageType;
+    private String volumeName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeID")
+    @JsonProperty(value="resources")
     
-    private String volumeID;
+    private ResourceRequirements resources;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -138,11 +144,49 @@ public class PersistentVolumeClaimSpec  {
     
     private String volumeMode;
 
+    public PersistentVolumeClaimSpec withVolumeID(String volumeID) {
+        this.volumeID = volumeID;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeName")
     
-    private String volumeName;
+
+
+    /**
+     * 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS[、SFS-Turbo](tag:hws)，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
+     * @return volumeID
+     */
+    public String getVolumeID() {
+        return volumeID;
+    }
+
+    public void setVolumeID(String volumeID) {
+        this.volumeID = volumeID;
+    }
+
+    
+
+    public PersistentVolumeClaimSpec withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储，详情可参见[[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html)](tag:hws)[[使用云硬盘存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0044.html)](tag:hws_hk) 。 - nfs：SFS弹性文件存储，详情可参见[[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html)](tag:hws)[[使用文件存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0111.html)](tag:hws_hk) 。 - obs：OBS对象存储，详情可参见[[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html)](tag:hws)[[使用对象存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0160.html)](tag:hws_hk) 。 [- efs：SFS Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。](tag:hws)
+     * @return storageType
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    
 
     public PersistentVolumeClaimSpec withAccessModes(List<AccessModesEnum> accessModes) {
         this.accessModes = accessModes;
@@ -180,6 +224,50 @@ public class PersistentVolumeClaimSpec  {
 
     
 
+    public PersistentVolumeClaimSpec withStorageClassName(String storageClassName) {
+        this.storageClassName = storageClassName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * PVC的StorageClass名称
+     * @return storageClassName
+     */
+    public String getStorageClassName() {
+        return storageClassName;
+    }
+
+    public void setStorageClassName(String storageClassName) {
+        this.storageClassName = storageClassName;
+    }
+
+    
+
+    public PersistentVolumeClaimSpec withVolumeName(String volumeName) {
+        this.volumeName = volumeName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * PVC绑定的PV名称
+     * @return volumeName
+     */
+    public String getVolumeName() {
+        return volumeName;
+    }
+
+    public void setVolumeName(String volumeName) {
+        this.volumeName = volumeName;
+    }
+
+    
+
     public PersistentVolumeClaimSpec withResources(ResourceRequirements resources) {
         this.resources = resources;
         return this;
@@ -209,72 +297,6 @@ public class PersistentVolumeClaimSpec  {
 
     
 
-    public PersistentVolumeClaimSpec withStorageClassName(String storageClassName) {
-        this.storageClassName = storageClassName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * PVC的StorageClass名称
-     * @return storageClassName
-     */
-    public String getStorageClassName() {
-        return storageClassName;
-    }
-
-    public void setStorageClassName(String storageClassName) {
-        this.storageClassName = storageClassName;
-    }
-
-    
-
-    public PersistentVolumeClaimSpec withStorageType(String storageType) {
-        this.storageType = storageType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储，详情可参见[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html) 。 - nfs：SFS弹性文件存储，详情可参见[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html) 。 - obs：OBS对象存储，详情可参见[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html) 。 - efs：SFS Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。
-     * @return storageType
-     */
-    public String getStorageType() {
-        return storageType;
-    }
-
-    public void setStorageType(String storageType) {
-        this.storageType = storageType;
-    }
-
-    
-
-    public PersistentVolumeClaimSpec withVolumeID(String volumeID) {
-        this.volumeID = volumeID;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS、SFS-Turbo，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
-     * @return volumeID
-     */
-    public String getVolumeID() {
-        return volumeID;
-    }
-
-    public void setVolumeID(String volumeID) {
-        this.volumeID = volumeID;
-    }
-
-    
-
     public PersistentVolumeClaimSpec withVolumeMode(String volumeMode) {
         this.volumeMode = volumeMode;
         return this;
@@ -297,28 +319,6 @@ public class PersistentVolumeClaimSpec  {
 
     
 
-    public PersistentVolumeClaimSpec withVolumeName(String volumeName) {
-        this.volumeName = volumeName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * PVC绑定的PV名称
-     * @return volumeName
-     */
-    public String getVolumeName() {
-        return volumeName;
-    }
-
-    public void setVolumeName(String volumeName) {
-        this.volumeName = volumeName;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -328,29 +328,29 @@ public class PersistentVolumeClaimSpec  {
             return false;
         }
         PersistentVolumeClaimSpec persistentVolumeClaimSpec = (PersistentVolumeClaimSpec) o;
-        return Objects.equals(this.accessModes, persistentVolumeClaimSpec.accessModes) &&
-            Objects.equals(this.resources, persistentVolumeClaimSpec.resources) &&
-            Objects.equals(this.storageClassName, persistentVolumeClaimSpec.storageClassName) &&
+        return Objects.equals(this.volumeID, persistentVolumeClaimSpec.volumeID) &&
             Objects.equals(this.storageType, persistentVolumeClaimSpec.storageType) &&
-            Objects.equals(this.volumeID, persistentVolumeClaimSpec.volumeID) &&
-            Objects.equals(this.volumeMode, persistentVolumeClaimSpec.volumeMode) &&
-            Objects.equals(this.volumeName, persistentVolumeClaimSpec.volumeName);
+            Objects.equals(this.accessModes, persistentVolumeClaimSpec.accessModes) &&
+            Objects.equals(this.storageClassName, persistentVolumeClaimSpec.storageClassName) &&
+            Objects.equals(this.volumeName, persistentVolumeClaimSpec.volumeName) &&
+            Objects.equals(this.resources, persistentVolumeClaimSpec.resources) &&
+            Objects.equals(this.volumeMode, persistentVolumeClaimSpec.volumeMode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accessModes, resources, storageClassName, storageType, volumeID, volumeMode, volumeName);
+        return Objects.hash(volumeID, storageType, accessModes, storageClassName, volumeName, resources, volumeMode);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PersistentVolumeClaimSpec {\n");
-        sb.append("    accessModes: ").append(toIndentedString(accessModes)).append("\n");
-        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
-        sb.append("    storageClassName: ").append(toIndentedString(storageClassName)).append("\n");
-        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
         sb.append("    volumeID: ").append(toIndentedString(volumeID)).append("\n");
-        sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
+        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
+        sb.append("    accessModes: ").append(toIndentedString(accessModes)).append("\n");
+        sb.append("    storageClassName: ").append(toIndentedString(storageClassName)).append("\n");
         sb.append("    volumeName: ").append(toIndentedString(volumeName)).append("\n");
+        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

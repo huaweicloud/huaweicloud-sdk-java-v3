@@ -19,37 +19,15 @@ public class UserPassword  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
-    private String password;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="username")
     
     private String username;
 
-    public UserPassword withPassword(String password) {
-        this.password = password;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="password")
     
-
-
-    /**
-     * 登录密码，取值请参见[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212668.html)中**adminPass**参数的描述。若创建节点通过用户名密码方式，即使用该字段，则响应体中该字段作屏蔽展示。创建节点时password字段需要加盐加密，具体方法请参见[创建节点时password字段加盐加密](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0058.html)。 
-     * @return password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    
+    private String password;
 
     public UserPassword withUsername(String username) {
         this.username = username;
@@ -73,6 +51,28 @@ public class UserPassword  {
 
     
 
+    public UserPassword withPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 登录密码，取值请参见[[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212668.html)](tag:hws)[[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0020212668.html)](tag:hws_hk)中**adminPass**参数的描述。若创建节点通过用户名密码方式，即使用该字段，则响应体中该字段作屏蔽展示。创建节点时password字段需要加盐加密，具体方法请参见[[创建节点时password字段加盐加密](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0058.html)](tag:hws)[[创建节点时password字段加盐加密](https://support.huaweicloud.com/intl/zh-cn/bestpractice-cce/cce_bestpractice_0058.html)](tag:hws_hk)。 
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,19 +82,19 @@ public class UserPassword  {
             return false;
         }
         UserPassword userPassword = (UserPassword) o;
-        return Objects.equals(this.password, userPassword.password) &&
-            Objects.equals(this.username, userPassword.username);
+        return Objects.equals(this.username, userPassword.username) &&
+            Objects.equals(this.password, userPassword.password);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(password, username);
+        return Objects.hash(username, password);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UserPassword {\n");
-        sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("}");
         return sb.toString();
     }
