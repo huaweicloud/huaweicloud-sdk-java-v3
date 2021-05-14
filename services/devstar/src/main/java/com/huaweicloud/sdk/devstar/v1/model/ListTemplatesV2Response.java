@@ -30,6 +30,12 @@ public class ListTemplatesV2Response extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="invalid_count")
+    
+    private Integer invalidCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="templates")
     
     private List<TemplateInfo> templates = null;
@@ -43,7 +49,7 @@ public class ListTemplatesV2Response extends SdkResponse {
 
 
     /**
-     * 返回模板的数量
+     * 返回模板的数量。
      * @return count
      */
     public Integer getCount() {
@@ -52,6 +58,28 @@ public class ListTemplatesV2Response extends SdkResponse {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    
+
+    public ListTemplatesV2Response withInvalidCount(Integer invalidCount) {
+        this.invalidCount = invalidCount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 返回关联了失效资源的模板数量。
+     * @return invalidCount
+     */
+    public Integer getInvalidCount() {
+        return invalidCount;
+    }
+
+    public void setInvalidCount(Integer invalidCount) {
+        this.invalidCount = invalidCount;
     }
 
     
@@ -79,7 +107,7 @@ public class ListTemplatesV2Response extends SdkResponse {
     }
 
     /**
-     * 返回模板的列表
+     * 返回模板的列表。
      * @return templates
      */
     public List<TemplateInfo> getTemplates() {
@@ -102,17 +130,19 @@ public class ListTemplatesV2Response extends SdkResponse {
         }
         ListTemplatesV2Response listTemplatesV2Response = (ListTemplatesV2Response) o;
         return Objects.equals(this.count, listTemplatesV2Response.count) &&
+            Objects.equals(this.invalidCount, listTemplatesV2Response.invalidCount) &&
             Objects.equals(this.templates, listTemplatesV2Response.templates);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, templates);
+        return Objects.hash(count, invalidCount, templates);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTemplatesV2Response {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    invalidCount: ").append(toIndentedString(invalidCount)).append("\n");
         sb.append("    templates: ").append(toIndentedString(templates)).append("\n");
         sb.append("}");
         return sb.toString();

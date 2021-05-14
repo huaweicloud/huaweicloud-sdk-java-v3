@@ -43,7 +43,7 @@ public class ListPublishedTemplatesResponse extends SdkResponse {
 
 
     /**
-     * 返回模板的数量
+     * 返回模板的数量。
      * @return count
      */
     public Integer getCount() {
@@ -79,7 +79,7 @@ public class ListPublishedTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 返回模板的列表
+     * 返回模板的列表。
      * @return templates
      */
     public List<TemplateSimpleInfo> getTemplates() {

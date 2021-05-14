@@ -234,6 +234,12 @@ public class TemplateInfo  {
     
     private Boolean isSupportCloudide;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="has_notices")
+    
+    private Boolean hasNotices;
+
     public TemplateInfo withId(String id) {
         this.id = id;
         return this;
@@ -243,7 +249,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板id
+     * 模板id。
      * @return id
      */
     public String getId() {
@@ -265,7 +271,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板名
+     * 模板名。
      * @return title
      */
     public String getTitle() {
@@ -287,7 +293,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板描述
+     * 模板描述。
      * @return description
      */
     public String getDescription() {
@@ -323,7 +329,7 @@ public class TemplateInfo  {
     }
 
     /**
-     * 模板关联的所有云服务（产品短名）
+     * 模板关联的所有云服务（产品短名）。
      * @return productshorts
      */
     public List<String> getProductshorts() {
@@ -359,7 +365,7 @@ public class TemplateInfo  {
     }
 
     /**
-     * 模板关联的云产品
+     * 模板关联的云产品。
      * @return products
      */
     public List<TemplateProductExt> getProducts() {
@@ -395,7 +401,7 @@ public class TemplateInfo  {
     }
 
     /**
-     * 模板标签
+     * 模板标签。
      * @return topic
      */
     public List<TopicCategory> getTopic() {
@@ -417,7 +423,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板创建者id
+     * 模板创建者id。
      * @return creatorId
      */
     public String getCreatorId() {
@@ -439,7 +445,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板创建者,有别名返回别名
+     * 模板创建者,有别名返回别名。
      * @return creator
      */
     public String getCreator() {
@@ -461,7 +467,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板创建者,有别名返回别名
+     * 模板创建者,有别名返回别名。
      * @return nickname
      */
     public String getNickname() {
@@ -483,7 +489,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板评分（点赞数）
+     * 模板评分（点赞数）。
      * @return score
      */
     public Integer getScore() {
@@ -505,7 +511,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板标签（new、hot等）
+     * 模板标签（new、hot等）。
      * @return label
      */
     public String getLabel() {
@@ -527,7 +533,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 代码存储位置
+     * 代码存储位置。
      * @return store
      */
     public Integer getStore() {
@@ -549,7 +555,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 获取代码模版所需的信息
+     * 获取代码模版所需的信息。
      * @return storeInfo
      */
     public String getStoreInfo() {
@@ -571,7 +577,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板状态（0:审核中 1: 已上架 2: 未上架（已下架）3: 未上架（合规检查不通过）4：未上架（待上架）5：已删除）
+     * 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 
      * @return status
      */
     public Integer getStatus() {
@@ -593,7 +599,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 访问量
+     * 访问量。
      * @return viewCount
      */
     public Integer getViewCount() {
@@ -615,7 +621,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 引用量
+     * 引用量。
      * @return usageCount
      */
     public Integer getUsageCount() {
@@ -637,7 +643,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -659,7 +665,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -681,7 +687,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板上架时间
+     * 模板上架时间。
      * @return publishedAt
      */
     public String getPublishedAt() {
@@ -703,7 +709,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 点赞状态(1：点赞，0：未点赞)
+     * 点赞状态： - 1：点赞 - 0：未点赞 
      * @return favoriteState
      */
     public Integer getFavoriteState() {
@@ -739,7 +745,7 @@ public class TemplateInfo  {
     }
 
     /**
-     * 模板标签
+     * 模板标签。
      * @return tags
      */
     public List<TagInfo> getTags() {
@@ -761,7 +767,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板类型（0:doc、1:code、2:pipeline、3:devops四种）
+     * 模板类型： - 0：doc - 1：code - 2：pipeline - 3：devops 四种 
      * @return type
      */
     public Integer getType() {
@@ -783,7 +789,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 动、静态代码模板标识（0：动态模板codetemplate，1：静态模板codesample）
+     * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
      * @return isStatic
      */
     public Integer getIsStatic() {
@@ -819,7 +825,7 @@ public class TemplateInfo  {
     }
 
     /**
-     * 模板相关联的所有维护人账号名称
+     * 模板相关联的所有维护人账号名称。
      * @return maintainers
      */
     public List<String> getMaintainers() {
@@ -870,7 +876,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 平台来源（0:codelabs、1:devstar）
+     * 平台来源： - 0：codelabs - 1：devstar 
      * @return platformSource
      */
     public Integer getPlatformSource() {
@@ -906,7 +912,7 @@ public class TemplateInfo  {
     }
 
     /**
-     * 相关文档，示例，帖子
+     * 相关文档，示例，帖子。
      * @return references
      */
     public List<Reference> getReferences() {
@@ -928,7 +934,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板自定义参数列表
+     * 模板自定义参数列表。
      * @return properties
      */
     public Object getProperties() {
@@ -964,7 +970,7 @@ public class TemplateInfo  {
     }
 
     /**
-     * dependency信息
+     * dependency信息。
      * @return dependencies
      */
     public List<Object> getDependencies() {
@@ -986,7 +992,7 @@ public class TemplateInfo  {
 
 
     /**
-     * dependency类型
+     * dependency类型。
      * @return dependencyType
      */
     public String getDependencyType() {
@@ -1008,7 +1014,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 关联论坛板块id
+     * 关联论坛板块id。
      * @return forumId
      */
     public Integer getForumId() {
@@ -1030,7 +1036,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板文件解压缩之后的大小(单位:KB)
+     * 模板文件解压缩之后的大小(单位:KB)。
      * @return fileSize
      */
     public Integer getFileSize() {
@@ -1052,7 +1058,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 部署信息
+     * 部署信息。
      * @return deployment
      */
     public Object getDeployment() {
@@ -1074,7 +1080,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 模板关联更新态Id
+     * 模板关联更新态Id。
      * @return updateId
      */
     public String getUpdateId() {
@@ -1096,7 +1102,7 @@ public class TemplateInfo  {
 
 
     /**
-     * 是否支持使用CloudIDE运行源码
+     * 是否支持使用CloudIDE运行源码。
      * @return isSupportCloudide
      */
     public Boolean getIsSupportCloudide() {
@@ -1105,6 +1111,28 @@ public class TemplateInfo  {
 
     public void setIsSupportCloudide(Boolean isSupportCloudide) {
         this.isSupportCloudide = isSupportCloudide;
+    }
+
+    
+
+    public TemplateInfo withHasNotices(Boolean hasNotices) {
+        this.hasNotices = hasNotices;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否有消息
+     * @return hasNotices
+     */
+    public Boolean getHasNotices() {
+        return hasNotices;
+    }
+
+    public void setHasNotices(Boolean hasNotices) {
+        this.hasNotices = hasNotices;
     }
 
     
@@ -1152,11 +1180,12 @@ public class TemplateInfo  {
             Objects.equals(this.fileSize, templateInfo.fileSize) &&
             Objects.equals(this.deployment, templateInfo.deployment) &&
             Objects.equals(this.updateId, templateInfo.updateId) &&
-            Objects.equals(this.isSupportCloudide, templateInfo.isSupportCloudide);
+            Objects.equals(this.isSupportCloudide, templateInfo.isSupportCloudide) &&
+            Objects.equals(this.hasNotices, templateInfo.hasNotices);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, productshorts, products, topic, creatorId, creator, nickname, score, label, store, storeInfo, status, viewCount, usageCount, createdAt, updatedAt, publishedAt, favoriteState, tags, type, isStatic, maintainers, pipelineTemplate, platformSource, references, properties, dependencies, dependencyType, forumId, fileSize, deployment, updateId, isSupportCloudide);
+        return Objects.hash(id, title, description, productshorts, products, topic, creatorId, creator, nickname, score, label, store, storeInfo, status, viewCount, usageCount, createdAt, updatedAt, publishedAt, favoriteState, tags, type, isStatic, maintainers, pipelineTemplate, platformSource, references, properties, dependencies, dependencyType, forumId, fileSize, deployment, updateId, isSupportCloudide, hasNotices);
     }
     @Override
     public String toString() {
@@ -1197,6 +1226,7 @@ public class TemplateInfo  {
         sb.append("    deployment: ").append(toIndentedString(deployment)).append("\n");
         sb.append("    updateId: ").append(toIndentedString(updateId)).append("\n");
         sb.append("    isSupportCloudide: ").append(toIndentedString(isSupportCloudide)).append("\n");
+        sb.append("    hasNotices: ").append(toIndentedString(hasNotices)).append("\n");
         sb.append("}");
         return sb.toString();
     }

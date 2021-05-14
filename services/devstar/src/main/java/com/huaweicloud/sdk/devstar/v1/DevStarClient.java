@@ -18,8 +18,8 @@ public class DevStarClient {
 
 
     /**
-     * 下载代码工程
-     * 通过任务ID下载ZIP格式的代码工程。
+     * 下载模板产物
+     * 下载模板产物。
      *
      * @param DownloadApplicationCodeRequest 请求对象
      * @return DownloadApplicationCodeResponse
@@ -29,8 +29,8 @@ public class DevStarClient {
     }
 
     /**
-     * 下载代码工程
-     * 通过任务ID下载ZIP格式的代码工程。
+     * 下载模板产物
+     * 下载模板产物。
      *
      * @param DownloadApplicationCodeRequest 请求对象
      * @return SyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse>
@@ -41,7 +41,7 @@ public class DevStarClient {
 
     /**
      * CodeHub 模板生成代码
-     * 通过 Codehub 的模板进行应用代码创建  通过 Codehub 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中或者生成代码压缩包，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     * 使用CodeHub模板创建应用代码。  通过 Codehub 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中或者生成代码压缩包，可以通过返回的任务 ID 查询相关任务状态。  - 接口鉴权方式 通过华为云服务获取的用户token。  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      *
      * @param RunCodehubTemplateJobRequest 请求对象
      * @return RunCodehubTemplateJobResponse
@@ -52,7 +52,7 @@ public class DevStarClient {
 
     /**
      * CodeHub 模板生成代码
-     * 通过 Codehub 的模板进行应用代码创建  通过 Codehub 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中或者生成代码压缩包，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     * 使用CodeHub模板创建应用代码。  通过 Codehub 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中或者生成代码压缩包，可以通过返回的任务 ID 查询相关任务状态。  - 接口鉴权方式 通过华为云服务获取的用户token。  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      *
      * @param RunCodehubTemplateJobRequest 请求对象
      * @return SyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse>
@@ -63,7 +63,7 @@ public class DevStarClient {
 
     /**
      * Devstar 模板生成代码
-     * 通过DevStar的模板进行应用代码创建  通过 DevStar 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     * 使用DevStar的模板创建应用代码。  通过 DevStar 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中，可以通过返回的任务 ID 查询相关任务状态。  - 接口鉴权方式 通过华为云服务获取的用户token。  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      *
      * @param RunDevstarTemplateJobRequest 请求对象
      * @return RunDevstarTemplateJobResponse
@@ -74,7 +74,7 @@ public class DevStarClient {
 
     /**
      * Devstar 模板生成代码
-     * 通过DevStar的模板进行应用代码创建  通过 DevStar 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     * 使用DevStar的模板创建应用代码。  通过 DevStar 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中，可以通过返回的任务 ID 查询相关任务状态。  - 接口鉴权方式 通过华为云服务获取的用户token。  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      *
      * @param RunDevstarTemplateJobRequest 请求对象
      * @return SyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse>
@@ -85,7 +85,7 @@ public class DevStarClient {
 
     /**
      * 查询任务详情
-     * 查询任务的详情  通过任务ID可以查看任务的状态 当任务结束时返回应用代码存放的位置  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址
+     * 查询任务的详情。  通过任务ID可以查看任务的状态 当任务结束时返回应用代码存放的位置。  - 接口鉴权方式 通过华为云服务获取的用户token。  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      *
      * @param ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
@@ -96,7 +96,7 @@ public class DevStarClient {
 
     /**
      * 查询任务详情
-     * 查询任务的详情  通过任务ID可以查看任务的状态 当任务结束时返回应用代码存放的位置  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址
+     * 查询任务的详情。  通过任务ID可以查看任务的状态 当任务结束时返回应用代码存放的位置。  - 接口鉴权方式 通过华为云服务获取的用户token。  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      *
      * @param ShowJobDetailRequest 请求对象
      * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
@@ -107,7 +107,7 @@ public class DevStarClient {
 
     /**
      * 读取模板文件
-     * 读取模板文件
+     * 该接口可以用于模板作者或模板维护人读取模板文件内容。
      *
      * @param ShowTemplateFileRequest 请求对象
      * @return ShowTemplateFileResponse
@@ -118,7 +118,7 @@ public class DevStarClient {
 
     /**
      * 读取模板文件
-     * 读取模板文件
+     * 该接口可以用于模板作者或模板维护人读取模板文件内容。
      *
      * @param ShowTemplateFileRequest 请求对象
      * @return SyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse>
@@ -128,8 +128,8 @@ public class DevStarClient {
     }
 
     /**
-     * 生成模板浏览历史记录
-     * 生成模板浏览记录 
+     * 同步模板浏览记录
+     * 未登录状态下，将用户浏览过的模板缓存在浏览器中，登录时，调用该接口同步模板浏览记录。 
      *
      * @param CreateTemplateViewHistoriesRequest 请求对象
      * @return CreateTemplateViewHistoriesResponse
@@ -139,8 +139,8 @@ public class DevStarClient {
     }
 
     /**
-     * 生成模板浏览历史记录
-     * 生成模板浏览记录 
+     * 同步模板浏览记录
+     * 未登录状态下，将用户浏览过的模板缓存在浏览器中，登录时，调用该接口同步模板浏览记录。 
      *
      * @param CreateTemplateViewHistoriesRequest 请求对象
      * @return SyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse>
@@ -150,8 +150,8 @@ public class DevStarClient {
     }
 
     /**
-     * 查询模板列表
-     * 查询模板列表
+     * 查询模板列表（V1）
+     * 查询模板列表，推荐使用V2版本接口。
      *
      * @param ListPublishedTemplatesRequest 请求对象
      * @return ListPublishedTemplatesResponse
@@ -161,8 +161,8 @@ public class DevStarClient {
     }
 
     /**
-     * 查询模板列表
-     * 查询模板列表
+     * 查询模板列表（V1）
+     * 查询模板列表，推荐使用V2版本接口。
      *
      * @param ListPublishedTemplatesRequest 请求对象
      * @return SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>
@@ -173,7 +173,7 @@ public class DevStarClient {
 
     /**
      * 我浏览的模板记录
-     * 查询用户浏览过的模板(只返回最近浏览的5个模板) 
+     * 查询DevStar或者CodeLabs登录用户浏览过的模板（只返回最近浏览的5个模板）。 
      *
      * @param ListTemplateViewHistoriesRequest 请求对象
      * @return ListTemplateViewHistoriesResponse
@@ -184,7 +184,7 @@ public class DevStarClient {
 
     /**
      * 我浏览的模板记录
-     * 查询用户浏览过的模板(只返回最近浏览的5个模板) 
+     * 查询DevStar或者CodeLabs登录用户浏览过的模板（只返回最近浏览的5个模板）。 
      *
      * @param ListTemplateViewHistoriesRequest 请求对象
      * @return SyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>
@@ -194,8 +194,8 @@ public class DevStarClient {
     }
 
     /**
-     * 查询模板列表
-     * 查询模板列表
+     * 查询模板列表（V2）
+     * 查询模板列表。
      *
      * @param ListTemplatesV2Request 请求对象
      * @return ListTemplatesV2Response
@@ -205,8 +205,8 @@ public class DevStarClient {
     }
 
     /**
-     * 查询模板列表
-     * 查询模板列表
+     * 查询模板列表（V2）
+     * 查询模板列表。
      *
      * @param ListTemplatesV2Request 请求对象
      * @return SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>
@@ -216,8 +216,8 @@ public class DevStarClient {
     }
 
     /**
-     * 模板详情
-     * 获取模板详情-模板id、名称、描述、作者、标签、上架时间等信息。 
+     * 查询模板详情（V3）
+     * 获取指定模板详情，包括模板id、名称、描述、作者、标签、上架时间等信息。 
      *
      * @param ShowTemplateV3Request 请求对象
      * @return ShowTemplateV3Response
@@ -227,8 +227,8 @@ public class DevStarClient {
     }
 
     /**
-     * 模板详情
-     * 获取模板详情-模板id、名称、描述、作者、标签、上架时间等信息。 
+     * 查询模板详情（V3）
+     * 获取指定模板详情，包括模板id、名称、描述、作者、标签、上架时间等信息。 
      *
      * @param ShowTemplateV3Request 请求对象
      * @return SyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response>
@@ -238,8 +238,8 @@ public class DevStarClient {
     }
 
     /**
-     * 查询模板详情
-     * 查询模板详情
+     * 查询模板详情（V1）
+     * 查询模板详情，推荐使用V3版本接口。
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return ShowTemplateDetailResponse
@@ -249,8 +249,8 @@ public class DevStarClient {
     }
 
     /**
-     * 查询模板详情
-     * 查询模板详情
+     * 查询模板详情（V1）
+     * 查询模板详情，推荐使用V3版本接口。
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return SyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>

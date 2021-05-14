@@ -38,7 +38,7 @@ public class OpExtendInfoVaultDelete  {
 
 
     /**
-     * 删除失败的资源ID列表
+     * 删除失败的资源数量
      * @return failCount
      */
     public Integer getFailCount() {

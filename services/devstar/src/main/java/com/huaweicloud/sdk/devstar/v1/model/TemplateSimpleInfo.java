@@ -44,7 +44,7 @@ public class TemplateSimpleInfo  {
 
 
     /**
-     * 模板id
+     * 模板id。
      * @return id
      */
     public String getId() {
@@ -66,7 +66,7 @@ public class TemplateSimpleInfo  {
 
 
     /**
-     * 模板名
+     * 模板名。
      * @return title
      */
     public String getTitle() {
@@ -88,7 +88,7 @@ public class TemplateSimpleInfo  {
 
 
     /**
-     * 模板描述
+     * 模板描述。
      * @return description
      */
     public String getDescription() {

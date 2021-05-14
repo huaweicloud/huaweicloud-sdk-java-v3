@@ -1545,7 +1545,7 @@ public class RdsMeta {
         );
         builder.withRequestField("type",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             ListSlowlogStatisticsRequest.TypeEnum.class,
             f -> f.withMarshaller(ListSlowlogStatisticsRequest::getType, (req, v) -> {
                 req.setType(v);

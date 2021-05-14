@@ -194,7 +194,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板id
+     * 模板id。
      * @return id
      */
     public String getId() {
@@ -216,7 +216,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板名称
+     * 模板名称。
      * @return title
      */
     public String getTitle() {
@@ -238,7 +238,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板描述
+     * 模板描述。
      * @return description
      */
     public String getDescription() {
@@ -260,7 +260,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板创建者id
+     * 模板创建者id。
      * @return creatorId
      */
     public String getCreatorId() {
@@ -282,7 +282,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板创建者,有别名返回别名
+     * 模板创建者，有别名返回别名。
      * @return creator
      */
     public String getCreator() {
@@ -304,7 +304,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板创建者,有别名返回别名
+     * 模板创建者，有别名返回别名。
      * @return nickname
      */
     public String getNickname() {
@@ -326,7 +326,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板评分（点赞数）
+     * 模板评分（点赞数）。
      * @return score
      */
     public Integer getScore() {
@@ -348,7 +348,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板状态（0:审核中 1: 已上架 2: 未上架（已下架）3: 未上架（合规检查不通过）4：未上架（待上架）5：已删除）
+     * 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 
      * @return status
      */
     public Integer getStatus() {
@@ -370,7 +370,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 访问量
+     * 访问量。
      * @return viewCount
      */
     public Integer getViewCount() {
@@ -392,7 +392,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 引用量
+     * 引用量。
      * @return usageCount
      */
     public Integer getUsageCount() {
@@ -414,7 +414,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -436,7 +436,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -458,7 +458,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 上架时间
+     * 上架时间。
      * @return publishedAt
      */
     public String getPublishedAt() {
@@ -480,7 +480,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 点赞状态(1：点赞，0：未点赞)
+     * 点赞状态： - 1：点赞 - 0：未点赞 
      * @return favoriteState
      */
     public Integer getFavoriteState() {
@@ -516,7 +516,7 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     /**
-     * 模板相关联的所有维护人账号名称
+     * 模板相关联的所有维护人账号名称。
      * @return maintainers
      */
     public List<String> getMaintainers() {
@@ -538,7 +538,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 平台来源（0:codelabs、1:devstar）
+     * 平台来源： - 0：codelabs - 1：devstar 
      * @return platformSource
      */
     public Integer getPlatformSource() {
@@ -560,7 +560,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板自定义参数列表
+     * 模板自定义参数列表。
      * @return properties
      */
     public Object getProperties() {
@@ -596,7 +596,7 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     /**
-     * dependency信息
+     * dependency信息。
      * @return dependencies
      */
     public List<Object> getDependencies() {
@@ -618,7 +618,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * dependency类型('0':非分组的依赖类型,'1':分组依赖类型)
+     * dependency类型： - '0'：非分组的依赖类型 - '1'：分组依赖类型 
      * @return dependencyType
      */
     public String getDependencyType() {
@@ -640,7 +640,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 代码存储位置(0:codehub;1:Obs;2:efs;3:网络公开代码仓;)
+     * 代码存储位置： - 0：codehub - 1：Obs - 2：efs - 3：网络公开代码仓 
      * @return store
      */
     public Integer getStore() {
@@ -662,7 +662,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 获取代码模版所需的信息
+     * 获取代码模版所需的信息。
      * @return storeInfo
      */
     public String getStoreInfo() {
@@ -684,7 +684,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板文件解压缩之后的大小(单位:KB)
+     * 模板文件解压缩之后的大小(单位:KB)。
      * @return fileSize
      */
     public Integer getFileSize() {
@@ -706,7 +706,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 部署信息
+     * 部署信息。
      * @return deployment
      */
     public Object getDeployment() {
@@ -728,7 +728,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 动、静态代码模板标识（0：动态模板codetemplate，1：静态模板codesample）
+     * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
      * @return isStatic
      */
     public Integer getIsStatic() {
@@ -750,7 +750,7 @@ public class ShowTemplateV3Response extends SdkResponse {
 
 
     /**
-     * 模板关联更新态Id
+     * 模板关联更新态Id。
      * @return updateId
      */
     public String getUpdateId() {
@@ -786,7 +786,7 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     /**
-     * 模板标签
+     * 模板标签。
      * @return topic
      */
     public List<TopicCategory> getTopic() {
@@ -822,7 +822,7 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     /**
-     * 模板标签
+     * 自定义标签。
      * @return tags
      */
     public List<TagInfo> getTags() {

@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.devstar.v1.model.PropertiesInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -80,8 +79,26 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="properties")
     
-    private List<PropertiesInfo> properties = null;
+    private List<Object> properties = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dependencies")
+    
+    private List<Object> dependencies = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dependency_type")
+    
+    private String dependencyType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="deployment")
+    
+    private Object deployment;
+
     public ShowTemplateDetailResponse withId(String id) {
         this.id = id;
         return this;
@@ -91,7 +108,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板的id
+     * 模板的id。
      * @return id
      */
     public String getId() {
@@ -113,7 +130,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板的名称
+     * 模板的名称。
      * @return title
      */
     public String getTitle() {
@@ -135,7 +152,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板的描述信息
+     * 模板的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -157,7 +174,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板关联的region host id
+     * 模板关联的region host id。
      * @return regionId
      */
     public String getRegionId() {
@@ -179,7 +196,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板关联的repo id
+     * 模板关联的repo id。
      * @return repostoryId
      */
     public String getRepostoryId() {
@@ -201,7 +218,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板https下载路径
+     * 模板https下载路径。
      * @return codeUrl
      */
     public String getCodeUrl() {
@@ -223,7 +240,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板ssh下载路径
+     * 模板ssh下载路径。
      * @return sshUrl
      */
     public String getSshUrl() {
@@ -245,7 +262,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 项目id
+     * 项目id。
      * @return projectUuid
      */
     public String getProjectUuid() {
@@ -267,7 +284,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     /**
-     * 模板状态
+     * 模板状态。
      * @return status
      */
     public Integer getStatus() {
@@ -280,13 +297,13 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     
 
-    public ShowTemplateDetailResponse withProperties(List<PropertiesInfo> properties) {
+    public ShowTemplateDetailResponse withProperties(List<Object> properties) {
         this.properties = properties;
         return this;
     }
 
     
-    public ShowTemplateDetailResponse addPropertiesItem(PropertiesInfo propertiesItem) {
+    public ShowTemplateDetailResponse addPropertiesItem(Object propertiesItem) {
         if(this.properties == null) {
             this.properties = new ArrayList<>();
         }
@@ -294,7 +311,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ShowTemplateDetailResponse withProperties(Consumer<List<PropertiesInfo>> propertiesSetter) {
+    public ShowTemplateDetailResponse withProperties(Consumer<List<Object>> propertiesSetter) {
         if(this.properties == null) {
             this.properties = new ArrayList<>();
         }
@@ -303,15 +320,95 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * Get properties
+     * 源数据信息： - key：元数据标识 - defaultValue：用户输入值的默认值 - isShow：前台界面组件是否展示该元数据 - isProjectName：是否使用作为项目名称 - label：前台界面组件展示名称 - type：前台界面组件类型 - helpText：前台界面组件帮助文本 - readOnly：前台界面组件是否可修改 - required：前台界面组件是否展示必填 - regType：该元数据进行正则校验类型；简化模板编码使用 - regPattern：该元数据对应js语法正则表达式 - regTip：该元数据正则校验提示信息 - visibleRule：该元数据可见规则 - isRequired：是否必填 - isReadOnly：是否只读 - options：option对象集合   - displayName：前台界面展示字符串   - value：该选项值 - eventOnchange：联动属性集合   - associatedProperty：被关联Property的key值   - associatedValue：被关联的value - fold：是否折叠 - show：是否展示该Property 
      * @return properties
      */
-    public List<PropertiesInfo> getProperties() {
+    public List<Object> getProperties() {
         return properties;
     }
 
-    public void setProperties(List<PropertiesInfo> properties) {
+    public void setProperties(List<Object> properties) {
         this.properties = properties;
+    }
+
+    
+
+    public ShowTemplateDetailResponse withDependencies(List<Object> dependencies) {
+        this.dependencies = dependencies;
+        return this;
+    }
+
+    
+    public ShowTemplateDetailResponse addDependenciesItem(Object dependenciesItem) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
+        this.dependencies.add(dependenciesItem);
+        return this;
+    }
+
+    public ShowTemplateDetailResponse withDependencies(Consumer<List<Object>> dependenciesSetter) {
+        if(this.dependencies == null) {
+            this.dependencies = new ArrayList<>();
+        }
+        dependenciesSetter.accept(this.dependencies);
+        return this;
+    }
+
+    /**
+     * dependency信息： - id：依赖全局唯一标识 - name：依赖展示名称 - description：依赖展示描述 - recommended：是否推荐使用该依赖 - versionProperty：该依赖版本被关联Property的key值 - versionRange：该依赖版本适用范围 - groupName：分组名称 - items：分组列表 
+     * @return dependencies
+     */
+    public List<Object> getDependencies() {
+        return dependencies;
+    }
+
+    public void setDependencies(List<Object> dependencies) {
+        this.dependencies = dependencies;
+    }
+
+    
+
+    public ShowTemplateDetailResponse withDependencyType(String dependencyType) {
+        this.dependencyType = dependencyType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * dependency类型： - 0：分组 - 1：不分组 - null：无分组信息 
+     * @return dependencyType
+     */
+    public String getDependencyType() {
+        return dependencyType;
+    }
+
+    public void setDependencyType(String dependencyType) {
+        this.dependencyType = dependencyType;
+    }
+
+    
+
+    public ShowTemplateDetailResponse withDeployment(Object deployment) {
+        this.deployment = deployment;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 部署信息： - param：参数对象   - build：构建类型   - runtime：函数运行时   - handler：函数执行入口   - outputFile：构建产物文件路径 - target：部署环境 
+     * @return deployment
+     */
+    public Object getDeployment() {
+        return deployment;
+    }
+
+    public void setDeployment(Object deployment) {
+        this.deployment = deployment;
     }
 
     
@@ -334,11 +431,14 @@ public class ShowTemplateDetailResponse extends SdkResponse {
             Objects.equals(this.sshUrl, showTemplateDetailResponse.sshUrl) &&
             Objects.equals(this.projectUuid, showTemplateDetailResponse.projectUuid) &&
             Objects.equals(this.status, showTemplateDetailResponse.status) &&
-            Objects.equals(this.properties, showTemplateDetailResponse.properties);
+            Objects.equals(this.properties, showTemplateDetailResponse.properties) &&
+            Objects.equals(this.dependencies, showTemplateDetailResponse.dependencies) &&
+            Objects.equals(this.dependencyType, showTemplateDetailResponse.dependencyType) &&
+            Objects.equals(this.deployment, showTemplateDetailResponse.deployment);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, regionId, repostoryId, codeUrl, sshUrl, projectUuid, status, properties);
+        return Objects.hash(id, title, description, regionId, repostoryId, codeUrl, sshUrl, projectUuid, status, properties, dependencies, dependencyType, deployment);
     }
     @Override
     public String toString() {
@@ -354,6 +454,9 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         sb.append("    projectUuid: ").append(toIndentedString(projectUuid)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
+        sb.append("    dependencyType: ").append(toIndentedString(dependencyType)).append("\n");
+        sb.append("    deployment: ").append(toIndentedString(deployment)).append("\n");
         sb.append("}");
         return sb.toString();
     }

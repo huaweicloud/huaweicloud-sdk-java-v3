@@ -38,7 +38,7 @@ public class TemplateViewHistory  {
 
 
     /**
-     * 模板的id
+     * 模板的id。
      * @return templateId
      */
     public String getTemplateId() {
@@ -60,7 +60,7 @@ public class TemplateViewHistory  {
 
 
     /**
-     * 模板的名称
+     * 模板的名称。
      * @return templateTitle
      */
     public String getTemplateTitle() {

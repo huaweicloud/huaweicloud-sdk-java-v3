@@ -52,7 +52,7 @@ public class ShowJobDetailResponse extends SdkResponse {
 
 
     /**
-     * 任务的id
+     * 任务的id。
      * @return id
      */
     public String getId() {
@@ -74,7 +74,7 @@ public class ShowJobDetailResponse extends SdkResponse {
 
 
     /**
-     * 任务的名称
+     * 任务的名称。
      * @return name
      */
     public String getName() {
@@ -96,7 +96,7 @@ public class ShowJobDetailResponse extends SdkResponse {
 
 
     /**
-     * 任务的状态
+     * 任务的状态。
      * @return jobStatus
      */
     public Object getJobStatus() {
@@ -118,7 +118,7 @@ public class ShowJobDetailResponse extends SdkResponse {
 
 
     /**
-     * 任务结果信息
+     * 任务结果信息。
      * @return jobResult
      */
     public String getJobResult() {

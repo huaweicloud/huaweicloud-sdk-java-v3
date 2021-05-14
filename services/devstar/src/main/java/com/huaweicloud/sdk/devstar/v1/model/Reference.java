@@ -41,6 +41,12 @@ public class Reference  {
     
     private String productshort;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_valid")
+    
+    private Boolean isValid;
+
     public Reference withTitle(String title) {
         this.title = title;
         return this;
@@ -50,7 +56,7 @@ public class Reference  {
 
 
     /**
-     * 标题名称
+     * 标题名称。
      * @return title
      */
     public String getTitle() {
@@ -72,7 +78,7 @@ public class Reference  {
 
 
     /**
-     * 链接地址
+     * 链接地址。
      * @return url
      */
     public String getUrl() {
@@ -94,7 +100,7 @@ public class Reference  {
 
 
     /**
-     * 关联类型
+     * 关联类型。
      * @return type
      */
     public Integer getType() {
@@ -116,7 +122,7 @@ public class Reference  {
 
 
     /**
-     * 产品短名
+     * 产品短名。
      * @return productshort
      */
     public String getProductshort() {
@@ -125,6 +131,28 @@ public class Reference  {
 
     public void setProductshort(String productshort) {
         this.productshort = productshort;
+    }
+
+    
+
+    public Reference withIsValid(Boolean isValid) {
+        this.isValid = isValid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否有效
+     * @return isValid
+     */
+    public Boolean getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Boolean isValid) {
+        this.isValid = isValid;
     }
 
     
@@ -141,11 +169,12 @@ public class Reference  {
         return Objects.equals(this.title, reference.title) &&
             Objects.equals(this.url, reference.url) &&
             Objects.equals(this.type, reference.type) &&
-            Objects.equals(this.productshort, reference.productshort);
+            Objects.equals(this.productshort, reference.productshort) &&
+            Objects.equals(this.isValid, reference.isValid);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(title, url, type, productshort);
+        return Objects.hash(title, url, type, productshort, isValid);
     }
     @Override
     public String toString() {
@@ -155,6 +184,7 @@ public class Reference  {
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    productshort: ").append(toIndentedString(productshort)).append("\n");
+        sb.append("    isValid: ").append(toIndentedString(isValid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

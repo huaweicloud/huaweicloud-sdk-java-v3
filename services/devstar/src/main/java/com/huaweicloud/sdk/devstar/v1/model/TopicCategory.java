@@ -50,7 +50,7 @@ public class TopicCategory  {
 
 
     /**
-     * topic的id
+     * topic的id。
      * @return topicId
      */
     public String getTopicId() {
@@ -72,7 +72,7 @@ public class TopicCategory  {
 
 
     /**
-     * topic的名称
+     * topic的名称。
      * @return topicName
      */
     public String getTopicName() {
@@ -94,7 +94,7 @@ public class TopicCategory  {
 
 
     /**
-     * topic对应的类别的id
+     * topic对应的类别的id。
      * @return categoryId
      */
     public String getCategoryId() {
@@ -116,7 +116,7 @@ public class TopicCategory  {
 
 
     /**
-     * topic对应的类别的名称
+     * topic对应的类别的名称。
      * @return categoryName
      */
     public String getCategoryName() {

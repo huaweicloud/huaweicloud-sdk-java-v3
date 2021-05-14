@@ -74,7 +74,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * 产品id
+     * 产品id。
      * @return id
      */
     public String getId() {
@@ -96,7 +96,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * 产品短名
+     * 产品短名。
      * @return productshort
      */
     public String getProductshort() {
@@ -118,7 +118,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * 产品名
+     * 产品名。
      * @return productName
      */
     public String getProductName() {
@@ -140,7 +140,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * 首页链接
+     * 首页链接。
      * @return homeLink
      */
     public String getHomeLink() {
@@ -162,7 +162,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * api调试链接
+     * api调试链接。
      * @return apiLink
      */
     public String getApiLink() {
@@ -184,7 +184,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * sdk下载链接
+     * sdk下载链接。
      * @return sdkLink
      */
     public String getSdkLink() {
@@ -206,7 +206,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * 文档链接
+     * 文档链接。
      * @return docLink
      */
     public String getDocLink() {
@@ -228,7 +228,7 @@ public class TemplateProductExt  {
 
 
     /**
-     * logo链接
+     * logo链接。
      * @return logoLink
      */
     public String getLogoLink() {

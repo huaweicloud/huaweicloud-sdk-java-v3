@@ -57,7 +57,7 @@ public class CreateTemplateViewHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 我浏览的模板
+     * 我浏览的模板。
      * @return templates
      */
     public List<TemplateViewHistory> getTemplates() {
@@ -79,7 +79,7 @@ public class CreateTemplateViewHistoriesResponse extends SdkResponse {
 
 
     /**
-     * 我浏览的模板数量
+     * 我浏览的模板数量。
      * @return count
      */
     public Integer getCount() {

@@ -54,7 +54,7 @@ public class TemplatesInfo  {
     }
 
     /**
-     * 模板ID列表
+     * 模板ID列表。
      * @return templateIds
      */
     public List<String> getTemplateIds() {
@@ -76,7 +76,7 @@ public class TemplatesInfo  {
 
 
     /**
-     * 平台来源（0:codelabs、1:devstar）
+     * 平台来源： - 0：codelabs - 1：devstar 
      * @return platformSource
      */
     public Integer getPlatformSource() {

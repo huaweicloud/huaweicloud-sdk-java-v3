@@ -175,7 +175,7 @@ public class CbrAsyncClient {
 
     /**
      * 创建策略
-     * [创建策略，策略分为备份策略和复制策略。](tag:hws,hws_hk) [创建备份策略。](tag:dt,ocb,tlf,sbc,fcs_vm,ctc)
+     * 创建策略，策略分为备份策略和复制策略。
      *
      * @param CreatePolicyRequest 请求对象
      * @return CompletableFuture<CreatePolicyResponse>
@@ -186,7 +186,7 @@ public class CbrAsyncClient {
 
     /**
      * 创建策略
-     * [创建策略，策略分为备份策略和复制策略。](tag:hws,hws_hk) [创建备份策略。](tag:dt,ocb,tlf,sbc,fcs_vm,ctc)
+     * 创建策略，策略分为备份策略和复制策略。
      *
      * @param CreatePolicyRequest 请求对象
      * @return AsyncInvoker<CreatePolicyRequest, CreatePolicyResponse>

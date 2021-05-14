@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ImageDetectionResultDetailPorn
+ * 反黄，暴恐，广告检测详情
  */
-public class ImageDetectionResultDetailPorn  {
+public class ImageDetectionResultSimpleDetail  {
 
 
 
@@ -29,7 +29,7 @@ public class ImageDetectionResultDetailPorn  {
     
     private String label;
 
-    public ImageDetectionResultDetailPorn withConfidence(Float confidence) {
+    public ImageDetectionResultSimpleDetail withConfidence(Float confidence) {
         this.confidence = confidence;
         return this;
     }
@@ -51,7 +51,7 @@ public class ImageDetectionResultDetailPorn  {
 
     
 
-    public ImageDetectionResultDetailPorn withLabel(String label) {
+    public ImageDetectionResultSimpleDetail withLabel(String label) {
         this.label = label;
         return this;
     }
@@ -81,9 +81,9 @@ public class ImageDetectionResultDetailPorn  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ImageDetectionResultDetailPorn imageDetectionResultDetailPorn = (ImageDetectionResultDetailPorn) o;
-        return Objects.equals(this.confidence, imageDetectionResultDetailPorn.confidence) &&
-            Objects.equals(this.label, imageDetectionResultDetailPorn.label);
+        ImageDetectionResultSimpleDetail imageDetectionResultSimpleDetail = (ImageDetectionResultSimpleDetail) o;
+        return Objects.equals(this.confidence, imageDetectionResultSimpleDetail.confidence) &&
+            Objects.equals(this.label, imageDetectionResultSimpleDetail.label);
     }
     @Override
     public int hashCode() {
@@ -92,7 +92,7 @@ public class ImageDetectionResultDetailPorn  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ImageDetectionResultDetailPorn {\n");
+        sb.append("class ImageDetectionResultSimpleDetail {\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("}");

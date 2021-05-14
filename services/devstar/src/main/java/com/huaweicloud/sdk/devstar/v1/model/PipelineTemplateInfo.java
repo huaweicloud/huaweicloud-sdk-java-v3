@@ -44,7 +44,7 @@ public class PipelineTemplateInfo  {
 
 
     /**
-     * 流水线模板的id
+     * 流水线模板的id。
      * @return id
      */
     public String getId() {
@@ -66,7 +66,7 @@ public class PipelineTemplateInfo  {
 
 
     /**
-     * 流水线模板的名称
+     * 流水线模板的名称。
      * @return name
      */
     public String getName() {
@@ -88,7 +88,7 @@ public class PipelineTemplateInfo  {
 
 
     /**
-     * 流水线模板的详细信息
+     * 流水线模板的详细信息。
      * @return detail
      */
     public String getDetail() {

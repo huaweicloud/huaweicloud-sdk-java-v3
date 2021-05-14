@@ -117,6 +117,12 @@ public class Datastore  {
     
     private String version;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="complete_version")
+    
+    private String completeVersion;
+
     public Datastore withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -161,6 +167,28 @@ public class Datastore  {
 
     
 
+    public Datastore withCompleteVersion(String completeVersion) {
+        this.completeVersion = completeVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库完整版本号。仅在数据库引擎是”PostgreSQL”时返回。
+     * @return completeVersion
+     */
+    public String getCompleteVersion() {
+        return completeVersion;
+    }
+
+    public void setCompleteVersion(String completeVersion) {
+        this.completeVersion = completeVersion;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -171,11 +199,12 @@ public class Datastore  {
         }
         Datastore datastore = (Datastore) o;
         return Objects.equals(this.type, datastore.type) &&
-            Objects.equals(this.version, datastore.version);
+            Objects.equals(this.version, datastore.version) &&
+            Objects.equals(this.completeVersion, datastore.completeVersion);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, version);
+        return Objects.hash(type, version, completeVersion);
     }
     @Override
     public String toString() {
@@ -183,6 +212,7 @@ public class Datastore  {
         sb.append("class Datastore {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    completeVersion: ").append(toIndentedString(completeVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

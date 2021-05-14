@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetailPolitics;
-import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetailPorn;
+import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultSimpleDetail;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -31,19 +31,19 @@ public class ImageDetectionResultDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="porn")
     
-    private List<ImageDetectionResultDetailPorn> porn = null;
+    private List<ImageDetectionResultSimpleDetail> porn = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="terrorism")
     
-    private List<ImageDetectionResultDetailPorn> terrorism = null;
+    private List<ImageDetectionResultSimpleDetail> terrorism = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ad")
     
-    private List<ImageDetectionResultDetailPorn> ad = null;
+    private List<ImageDetectionResultSimpleDetail> ad = null;
     
     public ImageDetectionResultDetail withPolitics(List<ImageDetectionResultDetailPolitics> politics) {
         this.politics = politics;
@@ -81,13 +81,13 @@ public class ImageDetectionResultDetail  {
 
     
 
-    public ImageDetectionResultDetail withPorn(List<ImageDetectionResultDetailPorn> porn) {
+    public ImageDetectionResultDetail withPorn(List<ImageDetectionResultSimpleDetail> porn) {
         this.porn = porn;
         return this;
     }
 
     
-    public ImageDetectionResultDetail addPornItem(ImageDetectionResultDetailPorn pornItem) {
+    public ImageDetectionResultDetail addPornItem(ImageDetectionResultSimpleDetail pornItem) {
         if(this.porn == null) {
             this.porn = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class ImageDetectionResultDetail  {
         return this;
     }
 
-    public ImageDetectionResultDetail withPorn(Consumer<List<ImageDetectionResultDetailPorn>> pornSetter) {
+    public ImageDetectionResultDetail withPorn(Consumer<List<ImageDetectionResultSimpleDetail>> pornSetter) {
         if(this.porn == null) {
             this.porn = new ArrayList<>();
         }
@@ -107,23 +107,23 @@ public class ImageDetectionResultDetail  {
      * 涉黄检测结果。
      * @return porn
      */
-    public List<ImageDetectionResultDetailPorn> getPorn() {
+    public List<ImageDetectionResultSimpleDetail> getPorn() {
         return porn;
     }
 
-    public void setPorn(List<ImageDetectionResultDetailPorn> porn) {
+    public void setPorn(List<ImageDetectionResultSimpleDetail> porn) {
         this.porn = porn;
     }
 
     
 
-    public ImageDetectionResultDetail withTerrorism(List<ImageDetectionResultDetailPorn> terrorism) {
+    public ImageDetectionResultDetail withTerrorism(List<ImageDetectionResultSimpleDetail> terrorism) {
         this.terrorism = terrorism;
         return this;
     }
 
     
-    public ImageDetectionResultDetail addTerrorismItem(ImageDetectionResultDetailPorn terrorismItem) {
+    public ImageDetectionResultDetail addTerrorismItem(ImageDetectionResultSimpleDetail terrorismItem) {
         if(this.terrorism == null) {
             this.terrorism = new ArrayList<>();
         }
@@ -131,7 +131,7 @@ public class ImageDetectionResultDetail  {
         return this;
     }
 
-    public ImageDetectionResultDetail withTerrorism(Consumer<List<ImageDetectionResultDetailPorn>> terrorismSetter) {
+    public ImageDetectionResultDetail withTerrorism(Consumer<List<ImageDetectionResultSimpleDetail>> terrorismSetter) {
         if(this.terrorism == null) {
             this.terrorism = new ArrayList<>();
         }
@@ -143,23 +143,23 @@ public class ImageDetectionResultDetail  {
      * 涉政、暴恐检测结果。
      * @return terrorism
      */
-    public List<ImageDetectionResultDetailPorn> getTerrorism() {
+    public List<ImageDetectionResultSimpleDetail> getTerrorism() {
         return terrorism;
     }
 
-    public void setTerrorism(List<ImageDetectionResultDetailPorn> terrorism) {
+    public void setTerrorism(List<ImageDetectionResultSimpleDetail> terrorism) {
         this.terrorism = terrorism;
     }
 
     
 
-    public ImageDetectionResultDetail withAd(List<ImageDetectionResultDetailPorn> ad) {
+    public ImageDetectionResultDetail withAd(List<ImageDetectionResultSimpleDetail> ad) {
         this.ad = ad;
         return this;
     }
 
     
-    public ImageDetectionResultDetail addAdItem(ImageDetectionResultDetailPorn adItem) {
+    public ImageDetectionResultDetail addAdItem(ImageDetectionResultSimpleDetail adItem) {
         if(this.ad == null) {
             this.ad = new ArrayList<>();
         }
@@ -167,7 +167,7 @@ public class ImageDetectionResultDetail  {
         return this;
     }
 
-    public ImageDetectionResultDetail withAd(Consumer<List<ImageDetectionResultDetailPorn>> adSetter) {
+    public ImageDetectionResultDetail withAd(Consumer<List<ImageDetectionResultSimpleDetail>> adSetter) {
         if(this.ad == null) {
             this.ad = new ArrayList<>();
         }
@@ -179,11 +179,11 @@ public class ImageDetectionResultDetail  {
      * 广告检测结果。
      * @return ad
      */
-    public List<ImageDetectionResultDetailPorn> getAd() {
+    public List<ImageDetectionResultSimpleDetail> getAd() {
         return ad;
     }
 
-    public void setAd(List<ImageDetectionResultDetailPorn> ad) {
+    public void setAd(List<ImageDetectionResultSimpleDetail> ad) {
         this.ad = ad;
     }
 

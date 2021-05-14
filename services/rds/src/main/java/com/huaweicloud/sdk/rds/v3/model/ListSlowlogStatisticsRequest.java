@@ -167,6 +167,11 @@ public class ListSlowlogStatisticsRequest  {
          */
         public static final TypeEnum CREATE = new TypeEnum("CREATE");
         
+        /**
+         * Enum ALL for value: "ALL"
+         */
+        public static final TypeEnum ALL = new TypeEnum("ALL");
+        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -177,6 +182,7 @@ public class ListSlowlogStatisticsRequest  {
             map.put("SELECT", SELECT);
             map.put("DELETE", DELETE);
             map.put("CREATE", CREATE);
+            map.put("ALL", ALL);
             return Collections.unmodifiableMap(map);
         }
 

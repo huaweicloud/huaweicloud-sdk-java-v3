@@ -13,6 +13,8 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,7 +32,7 @@ import java.util.Objects;
 public class BillingCreate  {
 
     /**
-     * [云平台，云平台，公有云或者混合云](tag:hws,hws_hk,fcs_vm,ctc) [云平台，云平台，公有云](tag:dt,ocb,tlf,sbc)
+     * 云平台，公有云或者混合云
      */
     public static final class CloudTypeEnum {
 
@@ -113,12 +115,90 @@ public class BillingCreate  {
     @JsonProperty(value="cloud_type")
     
     private CloudTypeEnum cloudType;
+    /**
+     * 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+     */
+    public static final class ConsistentLevelEnum {
+
+        
+        /**
+         * Enum APP_CONSISTENT for value: "app_consistent"
+         */
+        public static final ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
+        
+        /**
+         * Enum CRASH_CONSISTENT for value: "crash_consistent"
+         */
+        public static final ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
+        
+
+        private static final Map<String, ConsistentLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConsistentLevelEnum> createStaticFields() {
+            Map<String, ConsistentLevelEnum> map = new HashMap<>();
+            map.put("app_consistent", APP_CONSISTENT);
+            map.put("crash_consistent", CRASH_CONSISTENT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConsistentLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConsistentLevelEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ConsistentLevelEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ConsistentLevelEnum(value);
+            }
+            return result;
+        }
+
+        public static ConsistentLevelEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ConsistentLevelEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ConsistentLevelEnum) {
+                return this.value.equals(((ConsistentLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consistent_level")
     
-    private String consistentLevel;
+    private ConsistentLevelEnum consistentLevel;
     /**
      * 对象类型：云服务器（server），云硬盘（disk），文件系统（turbo）。
      */
@@ -507,7 +587,7 @@ public class BillingCreate  {
 
 
     /**
-     * [云平台，云平台，公有云或者混合云](tag:hws,hws_hk,fcs_vm,ctc) [云平台，云平台，公有云](tag:dt,ocb,tlf,sbc)
+     * 云平台，公有云或者混合云
      * @return cloudType
      */
     public CloudTypeEnum getCloudType() {
@@ -520,7 +600,7 @@ public class BillingCreate  {
 
     
 
-    public BillingCreate withConsistentLevel(String consistentLevel) {
+    public BillingCreate withConsistentLevel(ConsistentLevelEnum consistentLevel) {
         this.consistentLevel = consistentLevel;
         return this;
     }
@@ -529,14 +609,14 @@ public class BillingCreate  {
 
 
     /**
-     * [规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）](tag:hws,hws_hk,fcs_vm,ctc) [规格，默认为崩溃一致性（crash_consistent）](tag:dt,ocb,tlf,sbc)
+     * 规格，崩溃一致性（crash_consistent）或应用一致性（app_consistent）
      * @return consistentLevel
      */
-    public String getConsistentLevel() {
+    public ConsistentLevelEnum getConsistentLevel() {
         return consistentLevel;
     }
 
-    public void setConsistentLevel(String consistentLevel) {
+    public void setConsistentLevel(ConsistentLevelEnum consistentLevel) {
         this.consistentLevel = consistentLevel;
     }
 

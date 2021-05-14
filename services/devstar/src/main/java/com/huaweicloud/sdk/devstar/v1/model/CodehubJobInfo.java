@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -31,6 +29,18 @@ public class CodehubJobInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="privately")
+    
+    private Boolean privately;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="short_id")
+    
+    private String shortId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="code_url")
     
     private String codeUrl;
@@ -40,90 +50,12 @@ public class CodehubJobInfo  {
     @JsonProperty(value="region_id")
     
     private String regionId;
-    /**
-     * 0 - 将生成的应用代码存储于 repo_info 指定的 CodeHub 仓库中。1 - 将生成的应用代码存储到华为云，任务创建人可以通过 ExportApplicationCode 下载代码压缩包
-     */
-    public static final class RepoTypeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final RepoTypeEnum NUMBER_0 = new RepoTypeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final RepoTypeEnum NUMBER_1 = new RepoTypeEnum(1);
-        
-
-        private static final Map<Integer, RepoTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, RepoTypeEnum> createStaticFields() {
-            Map<Integer, RepoTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        RepoTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RepoTypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            RepoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RepoTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static RepoTypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            RepoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RepoTypeEnum) {
-                return this.value.equals(((RepoTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="repo_type")
     
-    private RepoTypeEnum repoType;
+    private Integer repoType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -146,7 +78,7 @@ public class CodehubJobInfo  {
 
 
     /**
-     * 应用名称
+     * 应用名称。
      * @return applicationName
      */
     public String getApplicationName() {
@@ -155,6 +87,50 @@ public class CodehubJobInfo  {
 
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
+    }
+
+    
+
+    public CodehubJobInfo withPrivately(Boolean privately) {
+        this.privately = privately;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 仓库是否私有
+     * @return privately
+     */
+    public Boolean getPrivately() {
+        return privately;
+    }
+
+    public void setPrivately(Boolean privately) {
+        this.privately = privately;
+    }
+
+    
+
+    public CodehubJobInfo withShortId(String shortId) {
+        this.shortId = shortId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 仓库短id
+     * @return shortId
+     */
+    public String getShortId() {
+        return shortId;
+    }
+
+    public void setShortId(String shortId) {
+        this.shortId = shortId;
     }
 
     
@@ -168,7 +144,7 @@ public class CodehubJobInfo  {
 
 
     /**
-     * 代码存放的ssh地址
+     * 代码存放的ssh地址。
      * @return codeUrl
      */
     public String getCodeUrl() {
@@ -190,7 +166,7 @@ public class CodehubJobInfo  {
 
 
     /**
-     * CodeHub 仓库所在的 Region ID。华南-广州: cn-south-1, 华东-上海二：cn-east-2，华北-北京一： cn-north-1 ，华北-北京四：cn-north-4
+     * CodeHub 仓库所在的 Region ID： - 华南-广州：cn-south-1 - 华东-上海二：cn-east-2 - 华北-北京一：cn-north-1 - 华北-北京四：cn-north-4 
      * @return regionId
      */
     public String getRegionId() {
@@ -203,7 +179,7 @@ public class CodehubJobInfo  {
 
     
 
-    public CodehubJobInfo withRepoType(RepoTypeEnum repoType) {
+    public CodehubJobInfo withRepoType(Integer repoType) {
         this.repoType = repoType;
         return this;
     }
@@ -212,14 +188,14 @@ public class CodehubJobInfo  {
 
 
     /**
-     * 0 - 将生成的应用代码存储于 repo_info 指定的 CodeHub 仓库中。1 - 将生成的应用代码存储到华为云，任务创建人可以通过 ExportApplicationCode 下载代码压缩包
+     * - 0 - 将生成的应用代码存储于 repo_info 指定的 CodeHub 仓库中。 - 1 - 将生成的应用代码存储到华为云，任务创建人可以通过 ExportApplicationCode 下载代码压缩包。 
      * @return repoType
      */
-    public RepoTypeEnum getRepoType() {
+    public Integer getRepoType() {
         return repoType;
     }
 
-    public void setRepoType(RepoTypeEnum repoType) {
+    public void setRepoType(Integer repoType) {
         this.repoType = repoType;
     }
 
@@ -248,7 +224,7 @@ public class CodehubJobInfo  {
         return this;
     }
     /**
-     * 可以根据 template-metadata.json 获取动态参数 ID 以及规则
+     * 可以根据 template-metadata.json 获取动态参数 ID 以及规则。
      * @return properties
      */
     public Map<String, String> getProperties() {
@@ -300,6 +276,8 @@ public class CodehubJobInfo  {
         }
         CodehubJobInfo codehubJobInfo = (CodehubJobInfo) o;
         return Objects.equals(this.applicationName, codehubJobInfo.applicationName) &&
+            Objects.equals(this.privately, codehubJobInfo.privately) &&
+            Objects.equals(this.shortId, codehubJobInfo.shortId) &&
             Objects.equals(this.codeUrl, codehubJobInfo.codeUrl) &&
             Objects.equals(this.regionId, codehubJobInfo.regionId) &&
             Objects.equals(this.repoType, codehubJobInfo.repoType) &&
@@ -308,13 +286,15 @@ public class CodehubJobInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(applicationName, codeUrl, regionId, repoType, properties, repoInfo);
+        return Objects.hash(applicationName, privately, shortId, codeUrl, regionId, repoType, properties, repoInfo);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CodehubJobInfo {\n");
         sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+        sb.append("    privately: ").append(toIndentedString(privately)).append("\n");
+        sb.append("    shortId: ").append(toIndentedString(shortId)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    repoType: ").append(toIndentedString(repoType)).append("\n");

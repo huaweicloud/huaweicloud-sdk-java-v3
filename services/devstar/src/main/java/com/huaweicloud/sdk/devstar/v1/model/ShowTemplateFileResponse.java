@@ -58,7 +58,7 @@ public class ShowTemplateFileResponse extends SdkResponse {
 
 
     /**
-     * 文件内容
+     * 文件内容（返回的文件内容为encoding指定的编码格式编码后的内容）。
      * @return content
      */
     public String getContent() {
@@ -80,7 +80,7 @@ public class ShowTemplateFileResponse extends SdkResponse {
 
 
     /**
-     * 内容编码格式(固定base64)
+     * 内容编码格式(固定base64)。
      * @return encoding
      */
     public String getEncoding() {
@@ -102,7 +102,7 @@ public class ShowTemplateFileResponse extends SdkResponse {
 
 
     /**
-     * 文件名
+     * 文件名。
      * @return fileName
      */
     public String getFileName() {
@@ -124,7 +124,7 @@ public class ShowTemplateFileResponse extends SdkResponse {
 
 
     /**
-     * 文件相对路径
+     * 文件相对路径。
      * @return filePath
      */
     public String getFilePath() {
@@ -146,7 +146,7 @@ public class ShowTemplateFileResponse extends SdkResponse {
 
 
     /**
-     * 文件类型
+     * 文件类型。
      * @return fileType
      */
     public String getFileType() {

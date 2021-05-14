@@ -38,7 +38,7 @@ public class TagInfo  {
 
 
     /**
-     * 自定义标签id
+     * 自定义标签id。
      * @return id
      */
     public String getId() {
@@ -60,7 +60,7 @@ public class TagInfo  {
 
 
     /**
-     * 自定义标签名称
+     * 自定义标签名称。
      * @return name
      */
     public String getName() {

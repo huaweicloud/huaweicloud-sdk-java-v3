@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.devstar.v1.model.FileTreeNode;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,6 +28,12 @@ public class RunCodehubTemplateJobResponse extends SdkResponse {
     
     private String jobId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="file_list")
+    
+    private List<FileTreeNode> fileList = null;
+    
     public RunCodehubTemplateJobResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -34,7 +43,7 @@ public class RunCodehubTemplateJobResponse extends SdkResponse {
 
 
     /**
-     * 任务id
+     * 任务id。
      * @return jobId
      */
     public String getJobId() {
@@ -43,6 +52,42 @@ public class RunCodehubTemplateJobResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    
+
+    public RunCodehubTemplateJobResponse withFileList(List<FileTreeNode> fileList) {
+        this.fileList = fileList;
+        return this;
+    }
+
+    
+    public RunCodehubTemplateJobResponse addFileListItem(FileTreeNode fileListItem) {
+        if(this.fileList == null) {
+            this.fileList = new ArrayList<>();
+        }
+        this.fileList.add(fileListItem);
+        return this;
+    }
+
+    public RunCodehubTemplateJobResponse withFileList(Consumer<List<FileTreeNode>> fileListSetter) {
+        if(this.fileList == null) {
+            this.fileList = new ArrayList<>();
+        }
+        fileListSetter.accept(this.fileList);
+        return this;
+    }
+
+    /**
+     * 文件列表。
+     * @return fileList
+     */
+    public List<FileTreeNode> getFileList() {
+        return fileList;
+    }
+
+    public void setFileList(List<FileTreeNode> fileList) {
+        this.fileList = fileList;
     }
 
     
@@ -56,17 +101,19 @@ public class RunCodehubTemplateJobResponse extends SdkResponse {
             return false;
         }
         RunCodehubTemplateJobResponse runCodehubTemplateJobResponse = (RunCodehubTemplateJobResponse) o;
-        return Objects.equals(this.jobId, runCodehubTemplateJobResponse.jobId);
+        return Objects.equals(this.jobId, runCodehubTemplateJobResponse.jobId) &&
+            Objects.equals(this.fileList, runCodehubTemplateJobResponse.fileList);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, fileList);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunCodehubTemplateJobResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    fileList: ").append(toIndentedString(fileList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -63,6 +63,12 @@ public class TemplateQueryV2  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="has_notices")
+    
+    private Boolean hasNotices;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="productshorts")
     
     private List<String> productshorts = null;
@@ -132,7 +138,7 @@ public class TemplateQueryV2  {
     }
 
     /**
-     * 模板分类数组
+     * 模板分类数组。
      * @return category
      */
     public List<String> getCategory() {
@@ -154,7 +160,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 搜索关键字,支持按名称和描述搜索，默认null
+     * 搜索关键字，支持按名称和描述搜索，默认null。
      * @return keyword
      */
     public String getKeyword() {
@@ -176,7 +182,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 排序字段和排序顺序指定. 比如: desc(created_at),desc(usage_count)
+     * 排序字段和排序顺序指定。比如： - desc(created_at)：根据创建时间降序 - desc(usage_count)：根据引用次数降序 
      * @return sortBy
      */
     public String getSortBy() {
@@ -198,7 +204,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 标签（all，new，hot，推荐recommend）
+     * 标签： - all：全部 - new：最新 - hot：热门 - recommend：推荐 
      * @return label
      */
     public String getLabel() {
@@ -220,7 +226,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 是否查询用户自己创建的模板，默认查所有模板
+     * 是否查询用户自己创建的模板，默认查所有模板。
      * @return myTemplates
      */
     public Boolean getMyTemplates() {
@@ -242,7 +248,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 查所有模板时只处理上架的；查用户模板，需支持按状态查询，状态：0审核中，1上架，2下架，不传表示查所有的（默认）
+     * 查所有模板时只处理上架的；查用户模板，需支持按状态查询，状态： - 0：审核中 - 1：上架 - 2：下架 不传表示查所有的（默认） 
      * @return status
      */
     public Integer getStatus() {
@@ -278,7 +284,7 @@ public class TemplateQueryV2  {
     }
 
     /**
-     * 模板状态数组
+     * 模板状态数组。
      * @return statusArray
      */
     public List<Integer> getStatusArray() {
@@ -287,6 +293,28 @@ public class TemplateQueryV2  {
 
     public void setStatusArray(List<Integer> statusArray) {
         this.statusArray = statusArray;
+    }
+
+    
+
+    public TemplateQueryV2 withHasNotices(Boolean hasNotices) {
+        this.hasNotices = hasNotices;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否查询有消息的模板，默认查所有模板。
+     * @return hasNotices
+     */
+    public Boolean getHasNotices() {
+        return hasNotices;
+    }
+
+    public void setHasNotices(Boolean hasNotices) {
+        this.hasNotices = hasNotices;
     }
 
     
@@ -314,7 +342,7 @@ public class TemplateQueryV2  {
     }
 
     /**
-     * 模板关联的云产品(产品短名)列表
+     * 模板关联的云产品(产品短名)列表。
      * @return productshorts
      */
     public List<String> getProductshorts() {
@@ -336,7 +364,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 偏移量, 表示从此偏移量开始查询, offset大于等于0
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0。
      * @return offset
      */
     public Integer getOffset() {
@@ -358,7 +386,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 每页的模板条数
+     * 每页的模板条数。
      * @return limit
      */
     public Integer getLimit() {
@@ -394,7 +422,7 @@ public class TemplateQueryV2  {
     }
 
     /**
-     * 模板关联的自定义标签列表
+     * 模板关联的自定义标签列表。
      * @return tagIds
      */
     public List<String> getTagIds() {
@@ -430,7 +458,7 @@ public class TemplateQueryV2  {
     }
 
     /**
-     * 模板类型（0:doc、1:code、2:pipeline、3:devops四种）
+     * 模板类型： - 0：doc - 1：code - 2：pipeline - 3：devops 
      * @return types
      */
     public List<Integer> getTypes() {
@@ -452,7 +480,7 @@ public class TemplateQueryV2  {
 
 
     /**
-     * 动、静态代码模板标识（0：动态模板codetemplate，1：静态模板codesample）
+     * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
      * @return isStatic
      */
     public Integer getIsStatic() {
@@ -488,7 +516,7 @@ public class TemplateQueryV2  {
     }
 
     /**
-     * 平台来源（0:codelabs、1:devstar）
+     * 平台来源： - 0：codelabs - 1：devstar 
      * @return platformSource
      */
     public List<Integer> getPlatformSource() {
@@ -524,7 +552,7 @@ public class TemplateQueryV2  {
     }
 
     /**
-     * 模板关联的标签名称列表
+     * 模板关联的标签名称列表。
      * @return tagNames
      */
     public List<String> getTagNames() {
@@ -553,6 +581,7 @@ public class TemplateQueryV2  {
             Objects.equals(this.myTemplates, templateQueryV2.myTemplates) &&
             Objects.equals(this.status, templateQueryV2.status) &&
             Objects.equals(this.statusArray, templateQueryV2.statusArray) &&
+            Objects.equals(this.hasNotices, templateQueryV2.hasNotices) &&
             Objects.equals(this.productshorts, templateQueryV2.productshorts) &&
             Objects.equals(this.offset, templateQueryV2.offset) &&
             Objects.equals(this.limit, templateQueryV2.limit) &&
@@ -564,7 +593,7 @@ public class TemplateQueryV2  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(category, keyword, sortBy, label, myTemplates, status, statusArray, productshorts, offset, limit, tagIds, types, isStatic, platformSource, tagNames);
+        return Objects.hash(category, keyword, sortBy, label, myTemplates, status, statusArray, hasNotices, productshorts, offset, limit, tagIds, types, isStatic, platformSource, tagNames);
     }
     @Override
     public String toString() {
@@ -577,6 +606,7 @@ public class TemplateQueryV2  {
         sb.append("    myTemplates: ").append(toIndentedString(myTemplates)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusArray: ").append(toIndentedString(statusArray)).append("\n");
+        sb.append("    hasNotices: ").append(toIndentedString(hasNotices)).append("\n");
         sb.append("    productshorts: ").append(toIndentedString(productshorts)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

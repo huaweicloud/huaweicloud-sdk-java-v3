@@ -58,7 +58,7 @@ public class NovaKeypairDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
+    private Integer id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -210,7 +210,7 @@ public class NovaKeypairDetail  {
 
     
 
-    public NovaKeypairDetail withId(String id) {
+    public NovaKeypairDetail withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -222,11 +222,11 @@ public class NovaKeypairDetail  {
      * 密钥ID。
      * @return id
      */
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
